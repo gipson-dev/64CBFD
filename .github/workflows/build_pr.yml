@@ -13,7 +13,7 @@ jobs:
       CONKER_BASEROM_US: ${{ secrets.CONKER_BASEROM_US }}
     steps:
       - name: Checkout this repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           ref: ${{ github.event.pull_request.head.ref }}
@@ -25,7 +25,7 @@ jobs:
           echo "::notice::Add those repository secrets to enable the baserom checkout and full matching build."
       - name: Checkout baserom
         if: ${{ env.PRIVATE_REPO_ACCESS != '' && env.CONKER_BASEROM_US != '' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: mkst/conker-private
           token: ${{ env.PRIVATE_REPO_ACCESS }}
