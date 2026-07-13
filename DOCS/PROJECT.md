@@ -108,6 +108,15 @@ These notes are most relevant when the checkout lives on a Windows filesystem an
 - Submodule ownership: devcontainers can report "dubious ownership" when container users do not match mounted file owners. The devcontainer config adds `safe.directory '*'` automatically.
 - Python pins: the top-level `requirements.txt` pins known-sensitive dependencies such as `spimdisasm==1.33.0` and `pycparser<3`.
 
+## GitHub Actions
+
+The full ROM build needs private baserom material and will only run when these repository secrets are configured:
+
+- `PRIVATE_REPO_ACCESS`: token that can read the private baserom repository.
+- `CONKER_BASEROM_US`: passphrase used to decrypt `baserom.us.z64.aes`.
+
+If either secret is missing, CI checks out the repository and reports a notice, then skips the baserom-dependent build steps. This keeps forks and fresh repo setups green without exposing or requiring ROM files.
+
 ## Current progress
 
 This project is still early. Current work includes:
