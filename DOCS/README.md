@@ -8,6 +8,7 @@ Start here if you are new to this repository or coming back after a while.
 2. [Code sub-project](CODE_SUBPROJECT.md) - how the `conker/` code build fits into the full ROM build.
 3. [Compressed config sections](CONFIG.md) - how the `config/` YAML files are used for compressed ROM chunks.
 4. [IDO 5.3 recomp toolchain](IDO_RECOMP.md) - where the bundled compiler files come from.
+5. [Update log](UPDATE_LOG.md) - repository documentation, workflow, and maintenance changes.
 
 ## Quick notes
 

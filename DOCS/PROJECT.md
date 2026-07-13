@@ -39,7 +39,7 @@ make -C conker progress
 |   `-- *.py             Project-specific scripts
 |-- ido/                 Recompiled IDO compiler used for byte-matching builds
 |-- assets/              Extracted ROM assets, generated locally and ignored by git
-|-- DOCS/                Repository documentation
+|-- DOCS/                Repository documentation and update log
 |-- *.yaml               n64splat configs for each ROM version
 |-- Makefile             Top-level build orchestration
 |-- Dockerfile           Build environment definition
@@ -47,6 +47,7 @@ make -C conker progress
 ```
 
 For more detail on the `conker/` directory, see [Code sub-project](CODE_SUBPROJECT.md).
+For repository-facing documentation and workflow changes, see the [Update log](UPDATE_LOG.md).
 
 ## Build requirements
 
