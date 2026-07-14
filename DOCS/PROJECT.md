@@ -24,26 +24,34 @@ make -C conker progress
 
 ```text
 .
+|-- .devcontainer/       VS Code devcontainer setup
+|-- .github/workflows/   GitHub Actions CI workflows
+|-- config/              YAML configs for compressed ROM chunks and assets
 |-- conker/              Code sub-project for init, game, and debugger sections
-|   |-- src/             Decompiled C source
 |   |-- include/         Headers, structs, variables, and function declarations
-|   |-- asm/             Generated assembly for not-yet-matched functions
-|   `-- Makefile
-|-- config/              YAML configs for compressed ROM chunks without offset tables
+|   |-- src/             Decompiled C source
+|   |-- tools/           Code sub-project helper scripts
+|   |-- *.yaml           n64splat configs for code sections by ROM version
+|   |-- symbol_addrs.*   Version-specific symbol address files
+|   |-- undefined_*.*    Version-specific undefined function and symbol lists
+|   `-- Makefile         Code sub-project build orchestration
+|-- DOCS/                Repository documentation and update log
+|-- ido/                 Recompiled IDO compiler used for byte-matching builds
 |-- tools/               Build and decompilation tools
 |   |-- n64splat/        ROM splitter and segment tooling (submodule)
 |   |-- asm-differ/      Assembly comparison tool (submodule)
 |   |-- asm-processor/   Supports GLOBAL_ASM blocks inside C files (submodule)
 |   |-- mips_to_c/       First-pass MIPS-to-C translation helper (submodule)
-|   |-- decomp-permuter/ Optional matching helper, ignored by git
+|   |-- splat_ext/       Project-specific n64splat extensions
+|   |-- gzip             Matching compression helper
 |   `-- *.py             Project-specific scripts
-|-- ido/                 Recompiled IDO compiler used for byte-matching builds
-|-- assets/              Extracted ROM assets, generated locally and ignored by git
-|-- DOCS/                Repository documentation and update log
-|-- *.yaml               n64splat configs for each ROM version
-|-- Makefile             Top-level build orchestration
+|-- *.yaml               Top-level n64splat and rzip configs by ROM version
+|-- *.sha1               Expected hashes for extracted code sections
+|-- .gitattributes       Line-ending rules for Docker and Linux tooling
 |-- Dockerfile           Build environment definition
-`-- baserom.*.z64        Your local ROM files, not included and ignored by git
+|-- Makefile             Top-level build orchestration
+|-- packages.txt         System packages for the build environment
+`-- requirements.txt     Python package pins for build and tooling scripts
 ```
 
 For more detail on the `conker/` directory, see [Code sub-project](CODE_SUBPROJECT.md).
