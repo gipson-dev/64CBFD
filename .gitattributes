@@ -1,0 +1,6 @@
+# Keep files consumed inside the Linux dev container as LF so CRLF from
+# Windows checkouts doesn't break the Docker build (e.g. apt package lists).
+*.txt text eol=lf
+*.sh text eol=lf
+.bash_aliases text eol=lf
+Dockerfile text eol=lf

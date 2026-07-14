@@ -7,7 +7,7 @@
 		"context": "..",
 		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 		"dockerfile": "../Dockerfile"
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -15,8 +15,19 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
-	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "cat /etc/os-release",
+	// Marks all directories (including submodules) as safe for git, which is
+	// otherwise reset on every container rebuild since /root is not persisted.
+	// Needed because the workspace is a 9p/drvfs mount of the Windows host
+	// filesystem, so git sees it as owned by a different uid and refuses to
+	// operate on it without this.
+	"postCreateCommand": "git config --global --add safe.directory '*'",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"openai.chatgpt"
+			]
+		}
+	},
 
 	// Configure tool-specific properties.
 	// "customizations": {},
