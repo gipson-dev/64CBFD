@@ -22,20 +22,17 @@ u8* func_16001AD0(u8 *arg0, u8 *arg1, u32 arg2) {
     return arg0;
 }
 
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 s32 func_16001B00(u8 *arg0) { // strlen
     s32 count;
     u8 *p;
-    u8 next;
 
     p = arg0;
     count = 0;
     if (*arg0 != 0) {
         do {
-            next = p[1];
             count += 1;
             p += 1;
-        } while (next != 0);
+        } while (p[0] != 0);
     }
     return count;
 }

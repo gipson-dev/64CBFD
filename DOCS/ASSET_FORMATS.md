@@ -132,6 +132,22 @@ A single decompressed block from `assets06` file 0 mixes, in order:
 
 So `assets06` is **entity / script data**.
 
+**Per-dialogue-line data confirmed via differential ROMs (Strong, 2026-07-14):**
+two independent US romhacks corroborate that `assets06` carries per-line
+dialogue data (subtitle text and/or timing metadata):
+
+- The "Uncensored" hack (restores censored voice lines; byte-identical to
+  retail US outside asset data) changes exactly **15 of the 50 `assets06`
+  files** - indices 1, 4, 6, 7, 8, 12, 14, 15, 16, 22, 30, 33, 40, 47, 48 -
+  and leaves the container offset table byte-identical (files replaced
+  strictly in place). The changed files keep identical headers and diverge
+  later in the payload. The same hack replaces 23 `assets16` audio files
+  (§6), so these 15 files are the natural samples for reversing the bundle
+  schema: we know exactly which dialogue they belong to.
+- A Spanish fan-translation hack rewrites ~396 KB across `assets06` (about
+  10x what censorship alone accounts for) while leaving `assets16` audio at
+  retail - exactly what a subtitle translation has to touch.
+
 **assets08** is a related but simpler bundle: one block per game chapter, each
 holding 20-byte records plus an ASCII name. The names are the actual CBFD chapter
 titles - **Hungover, Windy, Bats Tower, Barn Boys, Sloprano, Ugga Bugga, Spooky,
@@ -214,7 +230,13 @@ solid texture region looks like in RGBA16.
 - **assets16 - streamed audio: MP3 (Confirmed).** Every file begins with an
   MPEG audio frame sync (`0xFFF3…`). These are standard MPEG-1/2 Layer III
   frames and play/convert with normal MP3 tooling. This is the game's large
-  speech/music streaming bank (~900 files in the debug proto).
+  speech/music streaming bank (~900 files in the debug proto; 453 in retail
+  US). Confirmed as specifically the **dialogue** bank by the "Uncensored"
+  romhack (2026-07-14): it swaps exactly 23 of the 453 files wholesale, in
+  place (indices 5, 19, 20, 27, 34, 35, 36, 47, 83, 119, 126, 143, 149, 150,
+  175, 287, 289, 325, 341, 384, 387, 426, 439 - the censored voice lines),
+  with the offset table untouched. The same hack's `assets06` changes (§4)
+  identify the matching per-line metadata.
 - **assets17 - audio bank / sequenced audio (`"B1"`) (Confirmed header).** Files
   start with the ASCII magic `"B1"` (`0x4231`). This is Rare's own bank format,
   **not** a standard libultra `.m64`. The header (retail US, `assets17` file 0)
@@ -276,7 +298,9 @@ Sections not listed have not been classified in detail yet; most non-audio
   definitions in `conker/include/2.0L/PR/gbi.h`).
 - **assets06 bundle schema.** Work out how the header record and sub-resource
   ordering describe an object (which arrays are positions vs float params vs the
-  string table), and tie it to the script/entity code.
+  string table), and tie it to the script/entity code. Best starting samples:
+  the 15 files the Uncensored hack changes (§4) - diff retail vs hack per file
+  to isolate exactly the per-dialogue-line fields.
 - **assets17 (`"B1"`).** Decode table-2 (the event/region data after `0x2C0`) and
   the per-sample codec; identify what `+0x04 = 8` and `+0x14 = 700` count.
 - **Textures.** Find where image width/height/format is specified, and check for

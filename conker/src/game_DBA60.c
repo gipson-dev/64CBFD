@@ -64,16 +64,19 @@ void func_150AED4C(struct114 *arg0) {
 
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 s32 func_150AED9C(struct202 *arg0) {
-    s32 val = arg0->unk1C * 8;
+    u8 *p;
+    s32 val;
 
+    p = (u8 *) arg0->unk98;
+    val = arg0->unk1C * 8;
     if (val >= 0x100) {
         val = 0xFF;
     }
-    ((u8 *) arg0->unk98)[0x1B] = val;
-    if ((u8) val >= 0) {
-        return 1;
+    p[0x1B] = val;
+    if ((u8) val < 0) {
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 s32 func_150AEDD8(struct202 *arg0) {

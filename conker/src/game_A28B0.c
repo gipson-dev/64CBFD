@@ -1343,12 +1343,17 @@ void func_1507A3CC(void) {
 
 //  what is up with these??
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+// NON-MATCHING (logic verified): retail evaluates the four | terms strictly
+// left-to-right with or(A,B) operand order and per-load lui/lbu pairs kept
+// adjacent with fresh dest regs; our cfe evaluates the innermost pair
+// right-first (b1 before b0). Tried: term reordering (fixes loads, swaps or
+// operands), a |= statement chain (right or-order but accumulator becomes a
+// named var in v1 instead of temps), volatile declarations (changes address
+// computation shape entirely). All 16 words present, only temp registers and
+// scheduling differ.
 s32 func_1507A3E8(void) {
     return (D_800D1890 << 0x18) | (D_800D1891 << 0x10) | (D_800D1892 << 8) | D_800D1893;
 }
-// s32 func_1507A3E8(void) {
-//     return (D_800D1890 << 0x18) | (D_800D1891 << 0x10) | (D_800D1892 << 8) | D_800D1893;
-// }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507A428.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507A47C.s")

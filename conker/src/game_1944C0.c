@@ -142,25 +142,37 @@ s32 func_15169668(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return arg0;
 }
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-void func_1516968C(struct102 *arg0, u8 *arg1, s32 arg2) {
+// NON-MATCHING (logic verified, 2 words left): only the two lbu operands of
+// the equality are swapped - retail loads *arg1 before arg0->unkC; cfe
+// canonicalizes the comparison so both source operand orders emit the
+// a0-based load first. The u8 arg2 prologue and lbu unkC (struct102.unkC
+// split to u8) already match retail exactly.
+void func_1516968C(struct102 *arg0, u8 *arg1, u8 arg2) {
     if (((arg2 == 0xF) || (arg2 == 0x10)) && (*arg1 == arg0->unkC)) {
         func_1516972C(arg0);
     }
 }
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+// NON-MATCHING (logic verified, 1 word left): identical except IDO evicts
+// arg0 from a0 (extra `move a1,a0` prologue word) and allocates `slot` to a0;
+// retail keeps arg0 in a0 with slot in a1. Same allocator-choice class as
+// func_1504BA38's note in game_77AD0.c. Declaration order and cast-free
+// forms compile identically.
 void func_151696DC(void *arg0) {
     s8 i;
+    s8 count;
     void **slot;
 
     i = 0;
-    if (D_800DD190 > 0) {
+    count = D_800DD190;
+    if (count > 0) {
         do {
             slot = &D_800DD198[i];
             i++;
             if (arg0 == *slot) {
                 *slot = *(void **) ((u8 *) arg0 + 8);
             }
-        } while (i < D_800DD190);
+        } while (i < count);
     }
 }
 

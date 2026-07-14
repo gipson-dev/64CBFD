@@ -1297,7 +1297,7 @@ extern s32  D_800DCDC4; // probably wrong type
 extern u8   D_800DCDD0;
 extern u8   D_800DCE50[0x340]; // 2 rows, row stride 0x1A0, indexed by 4-byte column offset; layout not yet fully understood
 extern s8   D_800DD190;
-extern u8   D_800DD198[]; // 24 bytes
+extern void *D_800DD198[]; // 24 bytes (6 pointers)
 extern f32  D_800DD1D8[];
 extern f32  D_800DD1E8[];
 

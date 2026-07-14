@@ -1337,7 +1337,12 @@ void func_15071FB0(void) {
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15071FDC.s")
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+// NON-MATCHING (logic verified): retail computes both shift subexpressions
+// into temps (t6=v>>8 before t7=v>>16, LIFO order) and masks directly into
+// the arg registers with no moves, keeping the loaded global in v1; our cfe
+// stages the shifts in the arg registers and fixes up via temps+moves (2
+// extra words). Tried: explicit &0xFF vs (u8) casts, u8 vs s32 prototype
+// params, named locals for both globals - all compile byte-identically.
 void func_150721A4(void) {
     func_1506160C(D_800D154C, (D_800D1580 >> 0x10) & 0xFF, D_800D1580 & 0xFF, (D_800D1580 >> 8) & 0xFF, 0);
 }

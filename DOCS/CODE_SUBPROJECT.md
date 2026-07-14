@@ -51,3 +51,13 @@ When working on a function, the usual rhythm is:
 5. Compare mismatches with `tools/asm-differ`.
 
 This loop is expected to produce mismatches until the edited function matches the original assembly exactly.
+
+**Caution about asm-differ's whole-binary mode:** a pre-existing byte
+divergence early in the rebuilt `init` section means asm-differ's default
+whole-binary comparison can show garbled or empty diffs for `game`/`debugger`
+functions that are actually byte-perfect. Until that drift is root-caused,
+verify functions by comparing the *linked ELF's* disassembly (keyed by
+function symbol) against ground-truth bytes read from the pristine
+`conker/conker.us.bin` at the function's VRAM-derived offset. The recipe,
+segment constants, and a list of compiler idioms that resolve most register
+allocation mismatches are in [Working notes](WORKING_NOTES.md).

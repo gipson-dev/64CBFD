@@ -10,6 +10,57 @@ make -C conker progress
 
 ## 2026-07-14
 
+### ROM library, EU pipeline, and censorship analysis
+
+- All four target versions (`us`, `eu`, `debug`, `ects`) now have
+  hash-verified baseroms available locally for the first time. The EU ROM
+  arrived as a byte-swapped `.n64`; converted to big-endian and verified
+  against `conker.eu.sha1`. (The local ROM store was reorganized mid-way and
+  temporarily lost the us/ects copies; the recovery, including hash
+  identification of every file in the store, is logged in
+  [`DOCS/WORKING_NOTES.md`](WORKING_NOTES.md).)
+- Modernized `conker.eu.yaml`/`game.eu.rzip.yaml` (and `conker/conker.eu.yaml`)
+  to current splat format with version-separated output paths
+  (`asm_eu`/`assets_eu`/`src_eu`), so `make extract VERSION=eu` runs clean and
+  the decompressed EU code image verifies against `conker/conker.eu.sha1`.
+  EU disassembly (5,759 functions) now extractable as a third matched-code
+  reference alongside the `debug_proto`/`ects_proto` trees.
+  `conker.debug.yaml`/`conker.ects.yaml` still need the same two-line fix.
+- Analyzed the "Uncensored" US romhack as a differential probe for asset
+  formats: it replaces exactly 15 of 50 `assets06` files and 23 of 453
+  `assets16` files strictly in place (offset tables byte-identical). This
+  confirms `assets16` as the dialogue-audio MP3 bank and pins down which
+  `assets06` files carry per-dialogue-line data. A Spanish translation hack
+  independently corroborates this (it rewrites `assets06` far beyond the
+  censored lines - subtitle text lives there). Findings folded into
+  [`DOCS/ASSET_FORMATS.md`](ASSET_FORMATS.md).
+
+### Windows/WSL build environment for this checkout
+
+- Set up and documented building directly from this Windows checkout through
+  WSL (Debian distro, project venv, `binutils-mips-linux-gnu`; the bundled
+  IDO recomp binaries run fine from `/mnt/c`). Exact steps and the
+  incremental rebuild/verify loop are in
+  [`DOCS/WORKING_NOTES.md`](WORKING_NOTES.md).
+- The CRLF/symlink checkout corruption documented below recurred (suspected
+  OneDrive interaction) and was re-fixed; diagnosis shortcut now documented:
+  splat failing with `could not load segment type 'rzip'` means
+  `tools/splat_ext/rareunzip.py` (a git symlink) got checked out as a text
+  stub again.
+
+### Function matching (continued)
+
+- Resolved 6 more of the remaining ECTS-ported non-matching functions:
+  5 now byte-exact (`func_16001B00`, `func_15060BA4`, `func_1506196C`,
+  `func_150AED9C`, `func_15142A5C`), 1 logically complete pending callees
+  (`func_1504CA60`). 26 remain. Two stubborn functions are documented
+  non-matching with in-source comments (`func_1514143C`, `func_1507A3E8`).
+- Wrote up six reusable IDO/cfe codegen idioms (register-class rules for
+  named locals vs temps, `u8` field-update codegen, branch-vs-`slt` return
+  forms, operand evaluation order, mips_to_c artifact locals, pointer
+  folding) in [`DOCS/WORKING_NOTES.md`](WORKING_NOTES.md) - read these
+  before brute-forcing rewrites on the rest.
+
 ### Build environment and decomp progress
 
 - Fixed a broken local build environment (pre-existing, not caused by this

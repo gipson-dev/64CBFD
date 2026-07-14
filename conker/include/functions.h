@@ -1128,7 +1128,7 @@ void func_151F3C4C(void);
 void func_151FA130(void);
 void func_1019EA88(void);
 void func_15168B10(s32 arg0, s32 arg1);
-void func_1516968C(struct102 *arg0, u8 *arg1, s32 arg2);
+void func_1516968C(struct102 *arg0, u8 *arg1, u8 arg2);
 void func_15169070(s32 arg0, s32 arg1, s32 arg2, u8 arg3);
 f32 func_1505210C(struct127 *arg0, f32 arg1, f32 arg2, f32 *arg3, f32 arg4);
 #endif

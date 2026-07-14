@@ -96,12 +96,13 @@ s32 func_151422F8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15142914.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_151429E0.s")
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us -
-// retail compiles this comparison via a plain (non-likely) blez branch that we haven't
-// been able to reproduce; several logically-equivalent rewrites were tried (see git
-// history around 2026-07-14) without matching the exact branch form/register choice.
 s32 func_15142A5C(struct127 *arg0) {
-    return arg0->unk2D0->unk3C > 0;
+    struct197 *tmp = arg0->unk2D0;
+
+    if (tmp->unk3C > 0) {
+        return 1;
+    }
+    return 0;
 }
 f32 func_15142A80(f32 arg0) {
     return (1.0f - arg0) * (arg0 - 2.0f) * arg0 * D_800A5624;

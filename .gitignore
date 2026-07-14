@@ -32,6 +32,11 @@ conker/ctx.c
 *.ld
 *_auto.txt
 
+# local workspace material
+
+.vscode/
+rom backup/
+
 # optional tools
 
 tools/decomp-permuter

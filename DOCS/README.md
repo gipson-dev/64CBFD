@@ -2,6 +2,22 @@
 
 Start here if you are new to this repository or coming back after a while.
 
+## Current progress
+
+Decompilation snapshot as of 2026-07-14 (functions converted from raw
+assembly to C; byte-matching passes on converted functions are tracked
+separately in [Working notes](WORKING_NOTES.md)):
+
+| Section | Progress bytes | Functions |
+| --- | --- | --- |
+| total | `[##----------------------]` 6.77% | 1553 / 7644 (20.32%) |
+| init | `[#####-------------------]` 20.16% | 232 / 547 (42.41%) |
+| game | `[#-----------------------]` 5.11% | 1151 / 6915 (16.64%) |
+| debugger | `[#################-------]` 70.26% | 170 / 182 (93.41%) |
+
+Regenerate with `make -C conker progress NON_MATCHING=1` and update both
+this table and the one in [Project overview](PROJECT.md).
+
 ## Reading order
 
 1. [Project overview](PROJECT.md) - what this repo is, how it is laid out, and how to build it.

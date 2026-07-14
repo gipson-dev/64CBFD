@@ -1028,16 +1028,12 @@ void func_15060B70(s32 arg0, void *arg1) {
     func_10010154(arg0, arg1, 0x6D60, 0x1F4, 0x9C4);
 }
 
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 s32 func_15060BA4(struct127 *arg0, s32 arg1) {
-    u8 temp;
-
     if (arg0->health == 6) {
         return 0;
     }
-    temp = arg0->health + arg1;
-    arg0->health = temp;
-    if (temp >= 7) {
+    arg0->health += arg1;
+    if (arg0->health >= 7) {
         arg0->health = 6;
     }
     return 1;
@@ -1060,12 +1056,14 @@ void func_150615DC(struct127 *arg0) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1506160C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_150617BC.s")
 // ???
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 s32 func_1506196C(u8 *arg0, s32 arg1) {
-    s32 product = arg0[arg1 + 0xB] * arg0[7];
-    s32 result = product >> 8;
-    if (product == 0xFE01) {
+    s32 result;
+
+    result = arg0[7] * (arg0 + arg1)[0xB];
+    if (result == 0xFE01) {
         result = 0xFF;
+    } else {
+        result = result >> 8;
     }
     return result;
 }

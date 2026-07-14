@@ -636,26 +636,31 @@ f32 func_1504B0FC(struct127 *arg0, f32 arg1) {
     return sp68;
 }
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+// NON-MATCHING (logic verified): all 12 remaining diffs are pure register
+// renames - retail allocates temp_v1(ptr)->v1, temp_a1->a1, temp_v0->v0,
+// while ours coalesces temp_a1/temp_v0 into v1 and puts the pointer in v0.
+// Tried: declaration reorder, block-scoping temp_a1, early-return vs
+// if/else nesting - allocation identical in every variant.
 void func_1504BA38(struct127 *arg0) {
+    s8 temp_v0;
     struct261 *temp_v1;
     s8 temp_a1;
-    s8 temp_v0;
 
     if (arg0->unk28 > 10.0f) {
         arg0->unkCE = 0;
-        return;
+    } else {
+        temp_v1 = &D_80099140[arg0->unk184 & 0x1F];
+        temp_a1 = temp_v1->unk2;
+        if ((temp_a1 != 0) && (arg0->unkAA == 0)) {
+            arg0->unkAA = (u8) temp_a1;
+        }
+        temp_v0 = temp_v1->unk1;
+        if (temp_v0 == 0) {
+            arg0->unkCE = (s16) temp_v1->unk0;
+        } else {
+            arg0->unkCE = (s16) (s32) ((f32) temp_v0 * D_800991D4 * ((f32) temp_v1->unk0 - arg0->xz_velocity));
+        }
     }
-    temp_v1 = &D_80099140[arg0->unk184 & 0x1F];
-    temp_a1 = temp_v1->unk2;
-    if ((temp_a1 != 0) && (arg0->unkAA == 0)) {
-        arg0->unkAA = (u8) temp_a1;
-    }
-    temp_v0 = temp_v1->unk1;
-    if (temp_v0 == 0) {
-        arg0->unkCE = (s16) temp_v1->unk0;
-        return;
-    }
-    arg0->unkCE = (s16) (s32) ((f32) temp_v0 * D_800991D4 * ((f32) temp_v1->unk0 - arg0->xz_velocity));
 }
 // NON-MATCHING: starts to fall apart towards the end
 // void func_1504BA38(struct127 *arg0) {
@@ -948,26 +953,21 @@ void func_1504C9E4(struct127 *arg0, s8 arg1, u8 arg2) {
 
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 void func_1504CA60(struct127 *arg0) {
-    f32 sp2C;
-    f32 sp28;
-    f32 temp_f0 = arg0->unk28;
     f32 var_f12 = 18.0f;
     f32 var_f2 = arg0->unk180 + 20.0f;
 
     arg0->unk1CC = arg0->y_position;
-    if (temp_f0 > 30.0f) {
+    if (arg0->unk28 > 30.0f) {
         var_f12 = 80.0f;
     }
     if (arg0->unk81 != 0) {
         var_f12 = 80.0f;
         var_f2 -= 30.0f;
-        if ((temp_f0 < 5.0f) && (arg0->y_velocity < 0.0f)) {
+        if ((arg0->unk28 < 5.0f) && (arg0->y_velocity < 0.0f)) {
             arg0->unk81 = 0;
             arg0->y_velocity = 45.0f;
         }
-    } else if (temp_f0 < 20.0f) {
-        sp28 = var_f2;
-        sp2C = var_f12;
+    } else if (arg0->unk28 < 20.0f) {
         if (!(func_150ADA20() & 0x3F)) {
             arg0->y_velocity = 25.0f;
         }

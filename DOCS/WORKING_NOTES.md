@@ -25,7 +25,16 @@ summary or removed.
 
 ## Current focus
 
-**Status:** build works end-to-end (extract → compile → link → replace →
+**Update (2026-07-14, second session):** all baseroms and generated
+artifacts (`asm/`, `build/`, `assets/`, `conker/conker.us.bin`) vanished
+from the workspace between sessions during a `rom backup/` reorganization.
+**Resolved for all four versions**: hash-verified baseroms re-installed at
+repo root (`baserom.us.z64` recovered by the user into `rom backup/`;
+`baserom.ects.z64` found in `rom backup/initial ROMs/` - see Session log).
+Generated artifacts need a fresh `make extract` before resuming matching
+work. Details in the Session log.
+
+**Status (first session):** build works end-to-end (extract → compile → link → replace →
 reassemble ROM). Ran a real matching pass on the 44 ECTS-ported functions
 using both the linked ELF and a custom ground-truth-vs-compiled-bytes
 comparison script (asm-differ's whole-binary `-m` mode is unreliable right
@@ -34,11 +43,15 @@ were already matching but an earlier verification method gave false
 negatives), and 6 more are confirmed logically complete (their only
 remaining diff is a call to a still-unmatched function elsewhere - nothing
 left to fix in those functions themselves). 32 genuinely still need work.
-**Working on:** Function-matching passes on the remaining 32. Two real
-fixes so far worth knowing about (see Session log): `func_15079A58` needed
-`D_800D2110`'s declared type corrected from `s16[]` to `s16*` (ECTS agreed);
-several others hit register-allocation quirks in IDO that resisted a few
-rewrite attempts and were left as-is rather than sunk-cost-chased further.
+**Working on:** Function-matching passes on the remaining **25** (was 32 -
+third session resolved 7, see its Session log entry, which also has a
+list of reusable IDO/cfe codegen idioms worth reading before attempting
+any rewrite). Persistent non-matchers are documented with comments in
+the source (`func_1514143C`, `func_1507A3E8`, `func_150721A4`,
+`func_1504BA38`, `func_151696DC`, `func_1516968C` - the last three are
+within 1-2 words, all pure register-allocation residue). Earlier finding
+still relevant: `func_15079A58` needed `D_800D2110`'s declared type
+corrected from `s16[]` to `s16*` (ECTS agreed).
 **Files touched (infra fixes):**
 
 - `conker/conker.us.yaml`: added `asm_nonmatching_label_macro: ""`,
@@ -234,6 +247,196 @@ git checkout -- .
 ```
 
 ## Session log
+
+### 2026-07-14 (third session - matching pass resumed, 6 more resolved)
+
+- Re-established the verification tooling from the second-session notes
+  (scripts in scratchpad again, not committed: `verify_funcs.py` compares
+  linked-ELF disassembly per symbol vs pristine-bin ground truth;
+  `dump_func.py` prints ours-vs-truth side by side). Fresh baseline exactly
+  reproduced the previous session's numbers (32 real-diff functions).
+- **5 more functions byte-exact:** `func_16001B00` (debugger_257350.c),
+  `func_15060BA4`, `func_1506196C` (game_83300.c), `func_150AED9C`
+  (game_DBA60.c), `func_15142A5C` (game_16EE20.c - previously resisted 3
+  rewrites). **1 more logically complete:** `func_1504CA60` (game_77AD0.c),
+  now blocked only on callees `func_150ADA20`/`func_15058EA4`.
+  **26 real-diff functions remain.**
+- **IDO/cfe idioms learned (apply these before brute-forcing rewrites):**
+  1. In leaf functions, *named locals* get `v0`/`v1` (in order of first
+     assignment); *expression temps* get `t6`,`t7`,... A local still live
+     at `return` gets `v1` (v0 stays free for return staging). So: truth
+     using `v0`/`v1` for a value = introduce a named local; truth using
+     `t6+` = fold the local into the expression. (Fixed `func_16001B00`,
+     `func_15142A5C`, `func_150AED9C`, `func_1506196C` this way.)
+  2. `u8` field updates: write through the field (`s->f += x`) - IDO
+     stores the raw sum (`sb`) and re-derives the masked value via `andi`
+     for later comparisons. A `u8 temp` local masks first and reuses one
+     register for both (wrong). (Fixed `func_15060BA4`.)
+  3. `return x > 0;` compiles to the `slt` idiom; `if (x > 0) return 1;
+     return 0;` compiles to the branchy `blez` form. Branch polarity picks
+     which return block is placed last: put the return the branch *jumps
+     to* in the tail position (`if (c) return A; return B;` puts B's block
+     last).
+  4. cfe evaluates a binary op's *right* operand first (seen on `*` and on
+     the innermost `|` of a chain). If truth's first-allocated temp
+     belongs to the source's left operand, swap the operands (watch addu
+     operand order for `a[i+k]`-style addressing: `(a + i)[k]` vs
+     `a[i + k]` flips it). (Fixed `func_1506196C`.)
+  5. mips_to_c artifacts: `spXX` f32 locals that are only ever *assigned*
+     are caller-save spill slots - delete them. `temp_fN` names are cfe CSE
+     temps - inline the expression instead of declaring a local; a declared
+     f32 local costs a stack slot (frame size) even when never spilled.
+     (Fixed `func_1504CA60`'s 0x40-vs-0x30 frame this way.)
+  6. IDO aggressively folds `base+const` pointer locals into direct field
+     offsets: block-scope locals, `(u8*)`/`(s32)` casts, and struct-member
+     views all fold back to `lw off(a0)`. Could NOT reproduce retail's
+     materialized `addiu v0,a0,0x110` in `func_1514143C` - documented in a
+     comment on the function; revisit with fresh ideas (maybe the real
+     sub-struct type at 0x110 matters, or retail passed `&arg0->unk110`
+     somewhere nearby so the address had other uses).
+- `func_1507A3E8` (byte-packing) also left documented-non-matching: retail
+  evaluates the four `|` terms strictly left-to-right with `or(A,B)`
+  operand order and per-load `lui`/`lbu` pairs adjacent; every attempted
+  form (term reorder, `|=` chain, volatile) moves one property and breaks
+  another. Both functions' comments carry the full details.
+- Verification-cycle recipe for this machine (WSL): recreate `/tmp/rv.sh`
+  from the scratchpad each time (WSL /tmp does not survive distro
+  auto-shutdown between invocations), then
+  `bash /tmp/rv.sh [func names...]` = incremental `make -C conker -j
+  NON_MATCHING=1` + verify. Full cycle ~60-90s through /mnt/c. The script
+  now fails loudly on compile errors (an earlier version piped make through
+  grep/tail, which silently swallowed a build failure and verified a stale
+  ELF - three "identical results" from three different sources was the
+  telltale).
+- **Continuation (same session): 1 more byte-exact, 2 real type-level bugs
+  fixed, several near-matches.**
+  - `func_150C251C` (game_EF410.c) byte-exact - it is an exact twin of
+    `func_150AED9C`; the same rewrite applied verbatim. **7 resolved
+    total this session; 25 real-diff functions remain.**
+  - Type fixes with cross-function payoff (both in previously-unmatched
+    code only - verified zero collateral in matched functions by diffing
+    whole-object disassembly before/after):
+    `func_1516968C`'s arg2 is really `u8` (its prologue
+    `sw a2/andi/move` now matches exactly) and `struct102.unkC` is really
+    `u8` at 0xC (was s16; retail uses `lbu`) - together 15→2 diffs on that
+    function; `D_800DD198` is really `void*[6]` (was `u8[]`; retail
+    indexes it `i*4`) - a genuine logic bug in the ECTS port, and fixing
+    it plus the u8 arg dropped `func_15169070` from 110→71 diffs and got
+    `func_151696DC` to within 1 word.
+  - Documented-non-matching (comments on the functions carry details):
+    `func_150721A4` (cfe stages call-arg shift+mask through the arg regs
+    with fixup moves; retail uses temps then masks straight into arg regs
+    - every source form tried compiles byte-identically),
+    `func_151696DC` and `func_1504BA38` (same class: IDO evicts a live
+    value to a different register than retail chose),
+    `func_1516968C` (only the two lbu operands of `==` are ordered
+    a1-base-first in retail; cfe canonicalizes both source orders to
+    a0-base-first).
+  - New idiom observed (add to the list above): **when a call target's
+    param is `u8`/`u16`, passing an unmasked expression lets the
+    conversion generate the `andi` directly into the arg register;
+    an explicit `& 0xFF` in the caller often compiles the same - but the
+    *callee-side* `u8` parameter type is what produces the
+    `sw aN/andi/move` prologue** (that prologue in ground truth = the
+    parameter is narrow-typed, fix the signature before anything else).
+
+### 2026-07-14 (second session - ROM inventory after `rom backup/` reshuffle)
+
+- The workspace lost all root-level baseroms AND all generated artifacts
+  (`asm/`, `build/`, `assets/`, `conker/conker.us.bin` etc.) since the
+  previous session. `rom backup/` was reorganized with a new set of files
+  (the old `[DC].rom` files and the EU `.n64` are gone; everything is now
+  native big-endian `.z64` - verified magic `80 37 12 40` on all).
+- **Full hash inventory of `rom backup/`** (PowerShell gotcha: `[...]` in
+  the filenames is a wildcard to `Get-FileHash -Path`; must use
+  `-LiteralPath` or the hashes come out silently wrong/stale):
+  - `Conker's Bad Fur Day (Europe).z64` = `ee7bc665...` **= expected EU
+    baserom** (already byteswapped, unlike last session's v64 copy).
+    Re-installed as `baserom.eu.z64`, hash re-verified.
+  - `Conkers Bad Fur Day [ntsc][debug][DC].z64` = `3b99222e...`
+    **= expected debug baserom**. Re-installed as `baserom.debug.z64`,
+    hash re-verified.
+  - `Conker's Bad Fur Day (Uncensored).z64` = `4df27756...` - same US-based
+    romhack analyzed last session, unchanged.
+  - `Conker's Bad Fur Day [ects][DC].z64` (sha1 `598d9d9f...`, header CRC
+    `A08D0F77`) and `Conkers Bad Fur Day [ECTS Demo][EC].z64` (sha1
+    `2cc98818...`, header CRC `094D7111`): both genuine ECTS demo builds
+    (internal name `CBFD ECTS`) but **two different dumps, neither matching
+    `conker.ects.sha1` (`06597dc9...`)**. The old `[ects][DC].rom` that DID
+    match is gone.
+  - `Conkers Bad Fur Day [Debug][EC].z64`: garbage internal header
+    (non-ASCII name/ID) - scrambled or bad dump, matches nothing, don't use.
+  - `Conker's Bad Fur Day [Español].z64` (sha1 `52e4355f...`): Spanish
+    translation hack, US-based (keeps retail header CRCs like the
+    Uncensored hack does).
+  - Plus `Uncensored Patches/` (.bps + .xdelta, ~2 MB each; the .bps footer
+    says source crc32 `CE8CC172` → target crc32 `E1B9019B`, and the target
+    crc32 matches the Uncensored .z64 here exactly - so the patch source,
+    crc32 `CE8CC172`, is the missing retail US ROM) and the Bradygames
+    strategy guide PDF.
+- **Tried and failed: reconstructing retail US from the two hacks.**
+  Idea: Uncensored = retail everywhere except assets06/assets16 (proven
+  last session), so splice those two segments in from Español and check
+  sha1. Result: no match. Diagnostics show why: Español vs Uncensored
+  differ by 427 bytes outside the two segments (Spanish text elsewhere,
+  fine), 2,020,358 bytes in assets16 - **exactly** the Uncensored-vs-retail
+  count from last session, so Español's assets16 is almost certainly retail
+  audio - but 396,111 bytes in assets06, ~10x the 39,919 the censorship
+  accounts for: the translation rewrites the dialogue/subtitle data living
+  in assets06, so retail assets06 is not recoverable from these two ROMs.
+  (Side finding worth keeping: this independently confirms assets06 holds
+  per-line text/metadata - it's the segment a subtitle translation has to
+  rewrite.) The BPS patch can't recover it either - BPS stores only new
+  bytes for changed regions, not the old ones.
+- **`rom backup/initial ROMs/` resolved the remaining gaps.** The user
+  pointed out this subfolder holding the *original* pre-reshuffle files:
+  `Conker's Bad Fur Day [ects][DC].rom` (sha1 `06597dc9...` **= expected
+  ECTS baserom**, installed as `baserom.ects.z64`), the debug `[DC].rom`
+  (same hash as already installed), and the two source archives the
+  loose ROMs came from - `Conker's Bad Fur Day (Aug 26, 2000
+  prototype).zip` (contains the ects `[DC].rom` + an alternate
+  `[ECTS Demo][EC].v64` dump in v64 order) and `(Oct 25, 2000
+  prototype).zip` (debug `[DC].rom` + `[Debug][EC].v64`). This explains
+  the odd `[EC]` files in the main folder: they're v64-order alternate
+  dumps of the same two prototypes, and the loose
+  `[Debug][EC].z64`'s garbage header is just a botched v64→z64
+  conversion of one - ignore them; the `[DC]` dumps are canonical.
+- **Build environment on this machine (was undocumented - expensive to
+  re-derive):** builds run inside the local WSL2 distro **`PSBBN`**
+  (Debian 13), operating directly on the repo via
+  `/mnt/c/Users/grego/OneDrive/Desktop/.vscode/64CBFD`. Set up this
+  session: python venv at **`~/conker-venv`** (inside WSL) holding both
+  `requirements.txt` and `tools/n64splat/requirements.txt` deps (the
+  splat submodule needs its own requirements file too - `intervaltree`
+  etc. - or you get a bare `ModuleNotFoundError`), plus apt packages
+  `binutils-mips-linux-gnu build-essential libglib2.0-0`. Invoke as:
+  `PATH="$HOME/conker-venv/bin:$PATH" make ...` from the repo dir in WSL.
+  The IDO 5.3 recomp binaries in `ido/` run fine from /mnt/c.
+- **Checkout corruption regressed and was re-fixed.** `core.symlinks` was
+  back to `false` and `core.autocrlf` to `true` (cause unknown - possibly
+  OneDrive), which turned `tools/splat_ext/rareunzip.py` (a git symlink)
+  into a 15-byte text file. That is what splat's opaque
+  `could not load segment type 'rzip'` error actually means - the
+  extension loader swallows the underlying ImportError
+  (`segment.py:161`, bare `except Exception: return None`). Re-applied
+  the documented fix (config + full re-checkout, WORKING_NOTES edits
+  stashed/restored around it); all 3 repo symlinks are real again and
+  line endings are LF. If `rzip` fails to load again, check this first.
+- **Full build chain re-verified end-to-end** after extraction: `make -C
+  conker -j` compiles and links `build/conker.us.elf` (its verify step
+  says `build/conker.us.bin: FAILED`, which is the expected non-matching
+  result at ~20% - use `NON_MATCHING=1` to skip), then `make -C conker
+  replace NON_MATCHING=1` and root `make NON_MATCHING=1` produce
+  `build/conker.us.z64`. Same state as last session's "last known good".
+- **Net state:** all four versions are buildable again -
+  `baserom.us.z64`, `baserom.eu.z64`, `baserom.debug.z64`,
+  `baserom.ects.z64` at repo root, every one verified against its
+  `conker.<ver>.sha1`. Everything generated must be re-extracted
+  (`make extract` etc.) - see the first-session notes below for the
+  splat/config fixes that are already committed and should make that
+  clean. (Reminder from those notes: `conker.debug.yaml` /
+  `conker.ects.yaml` still need the same config modernization us/eu got
+  before *those* versions can extract.)
 
 ### 2026-07-14
 

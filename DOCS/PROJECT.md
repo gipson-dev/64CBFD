@@ -14,6 +14,14 @@ For most contributors, the usual flow is:
 4. Build the code sub-project.
 5. Rebuild the ROM and compare it against the original.
 
+The other target versions use the same pattern (`baserom.eu.z64`,
+`baserom.debug.z64`, `baserom.ects.z64` with `make check VERSION=<ver>`);
+expected hashes are the root-level `conker.<ver>.sha1` files. ROMs must be
+big-endian (`.z64` byte order, first bytes `80 37 12 40`) - byte-swapped
+`.n64`/`.v64` dumps need converting first. The `eu` extraction pipeline is
+modernized and verified; `debug`/`ects` configs still need the same splat
+format update (see [Working notes](WORKING_NOTES.md)).
+
 Run this any time you want a local progress summary:
 
 ```sh
@@ -113,7 +121,8 @@ A mismatch is normal during active decompilation work. It means some code is not
 These notes are most relevant when the checkout lives on a Windows filesystem and is used through WSL2 or a devcontainer.
 
 - Line endings: this repo expects LF line endings. If a fresh clone shows many modified files, set `core.autocrlf=input` locally.
-- Symlinks: if `core.symlinks` is `false`, symlinked tooling files may check out as plain text and break extension loading. Set `core.symlinks=true`.
+- Symlinks: if `core.symlinks` is `false`, symlinked tooling files may check out as plain text and break extension loading. Set `core.symlinks=true`. Telltale symptom: splat fails with `could not load segment type 'rzip'` because `tools/splat_ext/rareunzip.py` (a symlink) checked out as a 15-byte text file. Full recovery steps are in [Working notes](WORKING_NOTES.md) - this corruption has recurred on OneDrive-synced checkouts, so re-check both settings if extraction suddenly breaks.
+- WSL specifics: any WSL2 distro works against a checkout on the Windows filesystem (`/mnt/c/...`). Install the packages from `packages.txt`, put the Python deps (both `requirements.txt` and `tools/n64splat/requirements.txt`) in a venv inside WSL, and prefix builds with that venv on `PATH`. A worked setup for this machine is logged in [Working notes](WORKING_NOTES.md).
 - Submodule ownership: devcontainers can report "dubious ownership" when container users do not match mounted file owners. The devcontainer config adds `safe.directory '*'` automatically.
 - Python pins: the top-level `requirements.txt` pins known-sensitive dependencies such as `spimdisasm==1.33.0` and `pycparser<3`.
 
@@ -139,6 +148,9 @@ Run `make -C conker progress` for current local numbers.
 
 ### Code decompilation snapshot
 
+Last regenerated: 2026-07-14, from a fully working `.map`-based build
+(`make -C conker progress NON_MATCHING=1`).
+
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
 | total | `[##----------------------]` 6.77% | 1553 / 7644 (20.32%) |
@@ -146,12 +158,17 @@ Run `make -C conker progress` for current local numbers.
 | game | `[#-----------------------]` 5.11% | 1151 / 6915 (16.64%) |
 | debugger | `[#################-------]` 70.26% | 170 / 182 (93.41%) |
 
-These numbers come from the first `.map`-based build this repository has actually produced end
-to end (`make -C conker progress NON_MATCHING=1`, since the ROM does not yet byte-match - see
-[UPDATE_LOG.md](UPDATE_LOG.md) for 2026-07-14). Earlier snapshots quoted here were carried over
-from documentation and were never actually re-verified against a working build in this checkout;
-treat this one as the first trustworthy baseline and regenerate from `make -C conker progress`
-going forward.
+Two caveats about what this table measures:
+
+- A function counts as "done" here when it has been converted from raw
+  assembly to C (no `GLOBAL_ASM` pragma), **not** when it byte-matches the
+  retail ROM. The ongoing byte-matching passes (see
+  [Working notes](WORKING_NOTES.md)) refine already-converted functions, so
+  they improve ROM accuracy without moving these numbers.
+- Earlier snapshots quoted in past revisions of this file were carried over
+  from documentation and never re-verified against a working build in this
+  checkout; the 2026-07-14 baseline above is the first trustworthy one.
+  Regenerate with `make -C conker progress NON_MATCHING=1` going forward.
 
 Progress is measured by matched bytes and matched functions. Detailed CSV files can be regenerated with:
 
