@@ -308,6 +308,18 @@ git checkout -- .
   grep/tail, which silently swallowed a build failure and verified a stale
   ELF - three "identical results" from three different sources was the
   telltale).
+- **The verification method is now committed tooling:** `make -C conker
+  match-progress NON_MATCHING=1` (add `LIST=1` for per-function output)
+  runs `tools/match_progress.py` over *every* C-converted function from
+  `progress.csv` and classifies each as byte-exact / blocked-on-callees /
+  still-differing. First whole-project numbers: 379/1553 byte-exact
+  (24.40%) - init 201/232 (86.64%), game 167/1151 (14.51%), debugger
+  11/170 (6.47%). Snapshot tables published in the root README,
+  DOCS/README.md, and DOCS/PROJECT.md. The debugger section's low
+  byte-exact rate despite 93% conversion is the most surprising number -
+  those 159 differing functions were converted long ago and never
+  byte-verified; worth a dedicated look (may share one systematic cause,
+  e.g. a compile-flag or header difference).
 - **Continuation (same session): 1 more byte-exact, 2 real type-level bugs
   fixed, several near-matches.**
   - `func_150C251C` (game_EF410.c) byte-exact - it is an exact twin of

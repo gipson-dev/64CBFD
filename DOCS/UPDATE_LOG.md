@@ -48,6 +48,20 @@ make -C conker progress
   `tools/splat_ext/rareunzip.py` (a git symlink) got checked out as a text
   stub again.
 
+### Byte-matching progress tooling
+
+- Added `tools/match_progress.py` and a `make -C conker match-progress`
+  target (add `LIST=1` for a per-function listing): for every C-converted
+  function in `progress.csv`, it compares the linked ELF's disassembly
+  (keyed by function symbol, so immune to the known init-section layout
+  drift) against ground-truth bytes from the pristine `conker.us.bin`, and
+  classifies each as byte-exact, blocked-on-callees (only `j`/`jal` targets
+  differ), or still differing. This productizes the session's scratchpad
+  verification method. First run: **379 / 1553 C functions byte-exact
+  (24.40%)** - init 201/232, game 167/1151, debugger 11/170 - now published
+  as a second snapshot table in the root `README.md`,
+  [`DOCS/README.md`](README.md), and [`DOCS/PROJECT.md`](PROJECT.md).
+
 ### Function matching (continued)
 
 - Resolved 6 more of the remaining ECTS-ported non-matching functions:

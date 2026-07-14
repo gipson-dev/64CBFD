@@ -162,13 +162,32 @@ Two caveats about what this table measures:
 
 - A function counts as "done" here when it has been converted from raw
   assembly to C (no `GLOBAL_ASM` pragma), **not** when it byte-matches the
-  retail ROM. The ongoing byte-matching passes (see
-  [Working notes](WORKING_NOTES.md)) refine already-converted functions, so
-  they improve ROM accuracy without moving these numbers.
+  retail ROM. Byte-matching is tracked separately below.
 - Earlier snapshots quoted in past revisions of this file were carried over
   from documentation and never re-verified against a working build in this
   checkout; the 2026-07-14 baseline above is the first trustworthy one.
   Regenerate with `make -C conker progress NON_MATCHING=1` going forward.
+
+### Byte-matching snapshot
+
+Of the C-converted functions above, how many compile to the exact retail
+bytes (last regenerated 2026-07-14, via
+`make -C conker match-progress NON_MATCHING=1`):
+
+| Section | Byte-exact | Blocked on callees | Still differ |
+| --- | --- | --- | --- |
+| total | 379 / 1553 (24.40%) | 125 | 1049 |
+| init | 201 / 232 (86.64%) | 3 | 28 |
+| game | 167 / 1151 (14.51%) | 122 | 862 |
+| debugger | 11 / 170 (6.47%) | 0 | 159 |
+
+"Blocked on callees" means the only remaining differences are `j`/`jal`
+target addresses - those functions need no further edits and will
+self-resolve as the functions they reference get matched. Add `LIST=1` to
+print every non-exact function, smallest diff first. Note the "still
+differ" column is a worst-case count: a function whose only problem is a
+reference to a symbol at a drifted address will show as differing even
+though its source is correct.
 
 Progress is measured by matched bytes and matched functions. Detailed CSV files can be regenerated with:
 

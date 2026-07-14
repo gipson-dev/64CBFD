@@ -4,9 +4,8 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Decompilation snapshot as of 2026-07-14 (functions converted from raw
-assembly to C; byte-matching passes on converted functions are tracked
-separately in [Working notes](WORKING_NOTES.md)):
+Snapshot as of 2026-07-14. Functions converted from raw assembly to C
+(`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
@@ -15,8 +14,20 @@ separately in [Working notes](WORKING_NOTES.md)):
 | game | `[#-----------------------]` 5.11% | 1151 / 6915 (16.64%) |
 | debugger | `[#################-------]` 70.26% | 170 / 182 (93.41%) |
 
-Regenerate with `make -C conker progress NON_MATCHING=1` and update both
-this table and the one in [Project overview](PROJECT.md).
+Of those C-converted functions, the share that already compiles to the
+exact retail bytes (`make -C conker match-progress NON_MATCHING=1`;
+"blocked" = only `j`/`jal` targets differ, self-resolves as referenced
+functions get matched):
+
+| Section | Byte-exact | Blocked on callees | Still differ |
+| --- | --- | --- | --- |
+| total | 379 / 1553 (24.40%) | 125 | 1049 |
+| init | 201 / 232 (86.64%) | 3 | 28 |
+| game | 167 / 1151 (14.51%) | 122 | 862 |
+| debugger | 11 / 170 (6.47%) | 0 | 159 |
+
+When regenerating, update both tables together with the copies in the
+[root README](../README.md) and [Project overview](PROJECT.md).
 
 ## Reading order
 

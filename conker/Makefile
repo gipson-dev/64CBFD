@@ -179,6 +179,16 @@ verify: $(TARGET).ok
 
 progress: $(VERIFY) progress.csv
 
+# Byte-matching progress: how many C-converted functions compile to the
+# exact retail bytes (progress.csv only counts conversion to C). Compares
+# the linked ELF per function symbol against the pristine code image, so
+# it works even while the rebuilt binary has layout drift. Use
+# LIST=1 to print every non-exact function, smallest diff first.
+match-progress: $(VERIFY) progress.csv $(TARGET).elf
+	$(PYTHON) ../tools/match_progress.py progress.csv $(TARGET).elf \
+		$(BASENAME).$(VERSION).bin --version $(VERSION) \
+		--objdump $(CROSS)objdump $(if $(LIST),--list)
+
 # replace original binaries
 replace: $(VERIFY) $(TARGET).header.bin $(TARGET).boot.bin $(TARGET).init.bin $(TARGET_GAME_BIN) $(TARGET).debugger.bin
 	cp $(TARGET).header.bin ../assets/header.$(VERSION).bin

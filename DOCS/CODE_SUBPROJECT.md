@@ -35,7 +35,7 @@ What each step does:
 `NON_MATCHING=1` skips the code sub-project's own byte-exact sha1 check
 before `replace` runs. Without it, `make replace` fails outright (rather
 than proceeding) as soon as any section doesn't match, which - with most of
-`game` still unmatched - is the normal state right now. `make -C .. ` still
+`game` still unmatched - is the normal state right now. `make -C ..` still
 reports `build/conker.us.z64: FAILED` in that case; that failure is expected
 per [Project overview](PROJECT.md) and isn't specific to this step. The same
 flag works with `make progress` (see below) for the same reason.
@@ -56,8 +56,10 @@ This loop is expected to produce mismatches until the edited function matches th
 divergence early in the rebuilt `init` section means asm-differ's default
 whole-binary comparison can show garbled or empty diffs for `game`/`debugger`
 functions that are actually byte-perfect. Until that drift is root-caused,
-verify functions by comparing the *linked ELF's* disassembly (keyed by
-function symbol) against ground-truth bytes read from the pristine
-`conker/conker.us.bin` at the function's VRAM-derived offset. The recipe,
-segment constants, and a list of compiler idioms that resolve most register
-allocation mismatches are in [Working notes](WORKING_NOTES.md).
+verify functions with `make match-progress NON_MATCHING=1` (add `LIST=1`
+for a per-function listing) - it compares the *linked ELF's* disassembly
+(keyed by function symbol, immune to the drift) against ground-truth bytes
+read from the pristine `conker.us.bin` at each function's VRAM-derived
+offset; see `tools/match_progress.py`. A list of compiler idioms that
+resolve most register-allocation mismatches is in
+[Working notes](WORKING_NOTES.md).
