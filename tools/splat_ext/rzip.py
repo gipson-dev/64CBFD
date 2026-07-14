@@ -14,8 +14,8 @@ import rareunzip
 # Rare zip format:
 # 4 byte uncompressed length followed by deflate level 9 raw payload
 class N64SegRzip(Segment):
-    def __init__(self, rom_start, rom_end, type, name, vram_start, args, yaml):
-        super().__init__(rom_start, rom_end, type, name, vram_start, args=args, yaml=yaml)
+    def __init__(self, rom_start, rom_end, type, name, vram_start, args, yaml, **kwargs):
+        super().__init__(rom_start, rom_end, type, name, vram_start, args=args, yaml=yaml, **kwargs)
         self.has_subsegments = "subsegments" in yaml
         self.yaml = yaml
         self.xor = yaml.get("xor", None)

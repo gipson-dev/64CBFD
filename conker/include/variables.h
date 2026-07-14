@@ -345,6 +345,7 @@ extern u8   D_800428C6[];
 extern u8   D_800428C8[];
 extern s32  D_800428E0;
 extern s32 *D_800428F8;
+extern s32  D_80042A4C;
 
 // BSS ENDS AT D_80043B40
 
@@ -569,12 +570,24 @@ extern f32 D_80098DB4; // 0.008726646192371845
 
 extern f32 D_800990B0; // 0.6931471824645996f
 extern f32 D_800990B4; // 0.6931471824645996f
-extern s8  D_80099140[];
+extern struct261 D_80099140[];
 extern u16 D_8009919C[6];
 extern f32 D_800991A8;
 extern f32 D_800991AC;
 extern f32 D_800991B0;
+extern f32 D_800991B4;
+extern f32 D_800991B8;
+extern f32 D_800991BC;
+extern f32 D_800991C0;
+extern f32 D_800991C4;
+extern f32 D_800991C8;
+extern f32 D_800991CC;
+extern f32 D_800991D0;
 extern f32 D_800991D4; // 0.10000000149011612f
+extern f32 D_800991D8;
+extern f32 D_80099330;
+extern f32 D_80099334;
+extern f32 D_80099338;
 extern f32 D_80099408;
 extern f32 D_8009940C;
 extern f32 D_80099410;
@@ -688,6 +701,8 @@ extern s32 D_800A4AA0; //?
 extern f32 D_800A5168;
 extern f32 D_800A5178;
 extern f32 D_800A45B4;
+extern f32 D_800A5624;
+extern f32 D_800A5628;
 extern f32 D_800A5644;
 extern f32 D_800A56A8;
 extern f32 D_800A56AC;
@@ -995,6 +1010,8 @@ extern f32 D_800CC2C4;
 extern f32 D_800CC2C8;
 
 extern u8  D_800CC2B0;
+extern s16 D_800CC2B2;
+extern f32 D_800CC2B4;
 extern u8  D_800CC2B8;
 extern s32 D_800CC2BA;
 extern s32 D_800CC2BC;
@@ -1075,7 +1092,7 @@ extern struct258 *D_800D20FC;
 
 extern s32 *D_800D2104;
 extern u8  D_800D2108[];
-extern s16 D_800D2110[];
+extern s16 *D_800D2110;
 extern s32 D_800D2120;
 extern s32 D_800D2124;
 extern s32 D_800D2128;
@@ -1128,6 +1145,7 @@ extern struct102 *D_800D2E4C;
 extern u8  D_800D2F3C;
 extern u16 *D_800D2F40;
 extern struct250 D_800D2F48; // bzero'd 0xC
+extern u8  D_800D2DAB;
 extern f32 D_800D2DB0;
 extern s32 D_800D2DB4;
 
@@ -1277,6 +1295,7 @@ extern u8 D_800DCD28[3];
 
 extern s32  D_800DCDC4; // probably wrong type
 extern u8   D_800DCDD0;
+extern u8   D_800DCE50[0x340]; // 2 rows, row stride 0x1A0, indexed by 4-byte column offset; layout not yet fully understood
 extern s8   D_800DD190;
 extern u8   D_800DD198[]; // 24 bytes
 extern f32  D_800DD1D8[];
@@ -1415,6 +1434,18 @@ extern u8   D_160047D0[];
 extern u8   D_160047D4[];
 extern u8   D_160047DC[];
 extern u8   D_160047E0[];
+extern u8   D_16004870[]; // "e" / "E" format error string
+extern u8   D_16004874[]; // generic format error string
+extern u8   D_16004878[]; // default digit string when no digits were generated ("0")
+extern u8   D_16003CB8[]; // lowercase digit table (0-9a-f) for radix conversion
+extern u8   D_16003CCC[]; // uppercase digit table (0-9A-F) for radix conversion
+extern u8   D_16003C70[]; // space-fill buffer used for field-width padding
+extern u8   D_16003C94[]; // '0'-fill buffer used for zero-padding numbers
+extern u8   D_16004800[]; // length-modifier chars (e.g. "hl")
+extern u8   D_16004804[]; // printf flag chars (e.g. "-+ 0#")
+extern s32  D_1600480C[]; // flag-bit values parallel to D_16004804
+extern f64  D_16004828[]; // powers-of-ten-by-repeated-squaring table: 10^1, 10^2, 10^4, 10^8, ...
+extern f64  D_16004950; // 1e-8 scaling constant used by the float formatter
 
 /* other */
 

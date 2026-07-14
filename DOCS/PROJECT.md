@@ -17,7 +17,7 @@ For most contributors, the usual flow is:
 Run this any time you want a local progress summary:
 
 ```sh
-make -C conker progress
+make -C conker progress NON_MATCHING=1
 ```
 
 ## Repository layout
@@ -141,10 +141,17 @@ Run `make -C conker progress` for current local numbers.
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 9.60% | 2003 / 8062 (24.84%) |
-| init | `[##########--------------]` 41.16% | 348 / 619 (56.22%) |
-| game | `[##----------------------]` 6.32% | 1475 / 7261 (20.31%) |
-| debugger | `[######################--]` 90.74% | 180 / 182 (98.90%) |
+| total | `[##----------------------]` 6.77% | 1553 / 7644 (20.32%) |
+| init | `[#####-------------------]` 20.16% | 232 / 547 (42.41%) |
+| game | `[#-----------------------]` 5.11% | 1151 / 6915 (16.64%) |
+| debugger | `[#################-------]` 70.26% | 170 / 182 (93.41%) |
+
+These numbers come from the first `.map`-based build this repository has actually produced end
+to end (`make -C conker progress NON_MATCHING=1`, since the ROM does not yet byte-match - see
+[UPDATE_LOG.md](UPDATE_LOG.md) for 2026-07-14). Earlier snapshots quoted here were carried over
+from documentation and were never actually re-verified against a working build in this checkout;
+treat this one as the first trustworthy baseline and regenerate from `make -C conker progress`
+going forward.
 
 Progress is measured by matched bytes and matched functions. Detailed CSV files can be regenerated with:
 

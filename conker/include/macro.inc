@@ -19,3 +19,9 @@
     .global \label
     \label:
 .endm
+
+.macro endlabel label
+.endm
+
+.macro enddlabel label
+.endm

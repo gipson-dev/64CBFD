@@ -7,7 +7,50 @@
 void func_15052F9C(struct127 *arg0, f32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9);
 void func_1505327C(struct127 *arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504A620.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+f32 func_1504A620(f32 arg0) {
+    f32 mantissa;
+    f32 exponent;
+    f32 term;
+    f32 ratio;
+    f32 ratioSq;
+    s32 i;
+    f32 result;
+
+    if (arg0 < 0.0f) {
+        return 0.0f;
+    }
+    if (arg0 == 0.0f) {
+        return 0.0f;
+    }
+
+    mantissa = arg0;
+    exponent = 0.0f;
+
+    while (mantissa >= 2.0f) {
+        mantissa *= 0.5f;
+        exponent += D_800990B0;
+    }
+
+    while (mantissa < 1.0f) {
+        mantissa *= 2.0f;
+        exponent -= D_800990B4;
+    }
+
+    ratio = (mantissa - 1.0f) / (mantissa + 1.0f);
+    ratioSq = ratio * ratio;
+    term = 2.0f * ratio;
+    i = 1;
+
+    do {
+        result = exponent;
+        exponent += term / (f32) i;
+        term *= ratioSq;
+        i += 2;
+    } while (exponent != result);
+
+    return exponent;
+}
 // NON-MATCHING: work-in-progress...
 // f32 func_1504A620(f32 arg0) {
 //     f32 temp_f14;
@@ -264,7 +307,36 @@ void func_1505327C(struct127 *arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4);
 //     D_800D35DC = (u8)0;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504ADD0.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+void func_1504ADD0(void) {
+    struct127 *obj;
+    u8 sp48[6];
+    u8 i;
+
+    i = 0;
+    if (D_800C35EA != 1) {
+        obj = D_800CC2D0;
+        do {
+            if (obj->interaction_state != 0) {
+                D_800C3E78 = i;
+                D_800D154C = obj;
+                if ((s32) i < D_8008FD8C) {
+                    if (i < 4) {
+                        D_800CC284 = (*(s32 **) D_800BE728)[i];
+                    } else {
+                        bzero(sp48, 6);
+                        D_800CC284 = (s32) sp48;
+                    }
+                }
+                if ((obj->id == 0x28) || (obj->id == 0x77)) {
+                    func_150ED578(obj);
+                }
+            }
+            i++;
+            obj++;
+        } while (i != 0x19);
+    }
+}
 // NON-MATCHING: whats up with sp48
 // void func_1504ADD0(void) {
 //     struct127 *tmp;
@@ -302,10 +374,289 @@ s32 func_1504AEF4(s32 arg0, s32 arg1) {
 }
 
 // bleurgh
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504AF10.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+void func_1504AF10(struct127 *arg0, s32 arg1, s32 arg2) {
+    u16 flags = arg0->unk92;
+    s32 idx;
+    s32 sp28;
+    struct131 *entry;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504B0FC.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504BA38.s")
+    if ((flags != 0) && ((arg1 != 0) || (((s32) flags >> 0xF) == 0))) {
+        idx = (flags >> 0xC) & 7;
+        if (idx == 0) {
+            idx = func_1504AEF4(flags & 0x7FFF, (s32) &sp28);
+            if (idx != 0) {
+                arg0->unk92 = (idx << 0xC) | sp28;
+            }
+        }
+        sp28 = arg0->unk92 & 0xFFF;
+        if (idx == 3) {
+            if (arg2 != 0) {
+                D_800DBEF4[sp28].unk4E = 0;
+                arg0->unk92 = 0;
+                return;
+            }
+            D_800DBEF4[sp28].unk4E = (arg0 - D_800CC2D0) + 0x64;
+            if (arg1 != 0) {
+                D_800DBEF4[sp28].unk4E = 0;
+                return;
+            }
+            entry = &D_800DBEF4[sp28];
+            entry->unk4F = entry->unk4F & 0xFF9F;
+            entry = &D_800DBEF4[sp28];
+            entry->unk4F = entry->unk4F | 0x20;
+            D_800DBEF4[sp28].unk10 = (s16) arg0->x_position;
+            D_800DBEF4[sp28].unk12 = (s16) (arg0->y_position + arg0->unk90);
+            D_800DBEF4[sp28].unk14 = (s16) arg0->z_position;
+        }
+    }
+}
+
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+f32 func_1504B0FC(struct127 *arg0, f32 arg1) {
+    f32 sp70;
+    f32 sp6C;
+    f32 sp68 = 0.0f;
+    s8 sp67;
+    f32 sp58;
+    f32 sp54;
+    f32 sp50;
+    f32 sp4C;
+    f32 sp48;
+    f32 temp_f0;
+    f32 temp_f2;
+    f32 var_f0;
+    f32 var_f12;
+    f32 var_f14;
+    f32 var_f2;
+    s32 temp_v0_3;
+    s32 var_v0;
+    s8 var_a0 = 0;
+    struct126 *temp_v0_4;
+    u16 temp_t6;
+    u16 temp_v0;
+    u8 temp_a0;
+    u8 temp_v1;
+
+    arg0->unk31C->unk68 = 0;
+    arg0->unk110 = 0;
+    if ((arg0->stunned == 0) && (arg0->health != 0) && (arg0->unk31C->unk198 == 0)) {
+        sp67 = ((s8 *) D_800CC284)[2];
+        var_a0 = ((s8 *) D_800CC284)[3];
+    } else {
+        sp67 = 0;
+    }
+    if (arg0->unk31C->pad20[2] >= 0x65) {
+        var_a0 = 0x50;
+    }
+    var_f12 = 2.0f * (arg0->y_position - ((arg0->unk118 - 60.0f) - 170.0f));
+    if ((arg0->unk31C->pad20[0] & 1) || (arg0->unk31C->pad20[1] != 0)) {
+        arg0->unkB2 = 0;
+        if (var_f12 < 400.0f) {
+            var_f0 = 8.0f * *D_800D1550;
+            if (var_a0 >= 0xB) {
+                var_a0 = 0xA;
+            }
+            if ((var_f12 + var_f0) > 400.0f) {
+                var_f0 = 400.0f - var_f12;
+            }
+            arg0->y_position += var_f0;
+        }
+    }
+    if (arg0->in_water == 1) {
+        temp_f0 = arg0->y_position;
+        temp_f2 = arg0->unk118;
+        arg0->unk1CC = temp_f0;
+        if (D_800991B4 == temp_f2) {
+            func_15052408(arg0);
+            return 0.0f;
+        }
+        if ((var_a0 != 0) || (((temp_f2 - 60.0f) - 175.0f) < temp_f0)) {
+            sp70 = (f32) var_a0 * 2.25f;
+        } else {
+            sp70 = arg0->unkB8;
+        }
+        if (arg0->unk31C->pad20[1] != 0) {
+            sp70 = 0.0f;
+        }
+        sp6C = var_f12;
+        func_15059444(arg0);
+        if (((arg0->stunned != 0) && ((arg0->health != 0) || (arg0->y_velocity >= 60.0f))) || ((temp_v0 = arg0->unk84.uh), (temp_v0 == 0x262))) {
+            return 0.0f;
+        }
+        if ((var_f12 > 0.0f) && (temp_v0 != 0x22)) {
+            if (var_f12 > 300.0f) {
+                var_f12 = 300.0f;
+            }
+            arg0->y_position += var_f12 * arg1 * D_800991B8;
+        }
+    } else {
+        temp_f0 = arg0->gravity;
+        if (((temp_f0 < 0.0f) && (arg0->y_velocity > 0.0f)) || ((temp_f0 > 0.0f) && (arg0->y_velocity < 0.0f))) {
+            arg0->gravity = 0.0f;
+            arg0->y_velocity = 0.0f;
+        }
+    }
+    if ((arg0->in_water != 1) || (arg0->unk28 >= 10.0f) || (arg0->y_position < ((arg0->unk118 - 60.0f) + 20.0f))) {
+        if (arg0->in_water == 1) {
+            if ((((arg0->unk118 - 50.0f) < (f32) arg0->unk1A6) || (arg0->unk31C->pad20[0] & 1)) && (arg0->health != 0)) {
+                temp_v0_3 = arg0->unkB2;
+                if (temp_v0_3 >= 0x1F) {
+                    if (temp_v0_3 >= 0x5DD) {
+                        func_15060A30(0x1A7, arg0);
+                    } else if (temp_v0_3 >= 0x2D1) {
+                        func_15060A30(0x168, arg0);
+                    }
+                }
+                arg0->unkB2 = 0;
+            } else {
+                temp_t6 = arg0->unkB2 + D_800BE9E4;
+                temp_v0_3 = temp_t6 & 0xFFFF;
+                arg0->unkB2 = temp_t6;
+                if ((temp_v0_3 >= 0x619) || (((temp_a0 = arg0->health) == 0) && (arg0->unk31C->unk120 == 0))) {
+                    temp_v1 = arg0->health;
+                    arg0->unkB2 = temp_v0_3 - 0x3C;
+                    if (temp_v1 >= 2) {
+                        if (temp_v1 == 4) {
+                            func_15060A30(0x499, arg0);
+                        }
+                        arg0->health -= 1;
+                    } else {
+                        arg0->health = 0;
+                        if (arg0->stunned != 0) {
+                            arg0->gravity = 0.0f;
+                            func_1507CD64(arg0, 4);
+                        } else {
+                            func_1507CD64(arg0, 3);
+                        }
+                    }
+                } else if ((temp_v0_3 >= 0x5A1) && (temp_v0_3 < 0x5DC)) {
+                    arg0->unkB2 = temp_v0_3 + 0x78;
+                    if (temp_a0 < 4) {
+                        func_15060A30(0x499, arg0);
+                    }
+                }
+            }
+            temp_f0 = arg0->y_velocity;
+            if (((temp_f0 != 0.0f) || (arg0->gravity != 0.0f)) && (arg0->gravity < 0.0f) && (temp_f0 > 0.0f)) {
+                arg0->gravity = 0.0f;
+                arg0->y_velocity = 0.0f;
+            }
+            var_f14 = arg0->unk118 - 60.0f;
+            temp_v0_4 = arg0->unk31C;
+            if (((var_f14 - 175.0f) < arg0->y_position) && (arg0->unk84.uh != 0x28)) {
+                var_f2 = temp_v0_4->unk1C;
+                if (var_f2 < 2.5f) {
+                    temp_v0_4->unk1C = var_f2 + D_800991BC;
+                    var_f14 = arg0->unk118 - 60.0f;
+                } else {
+                    var_f2 = arg0->unk31C->unk1C;
+                }
+            } else {
+                temp_v0_4->unk1C = 0.0f;
+                var_f14 = arg0->unk118 - 60.0f;
+                var_f2 = arg0->unk31C->unk1C;
+            }
+            arg0->y_position += var_f2 * *D_800D1550;
+            temp_f0 = arg0->y_position;
+            var_f12 = temp_f0 - (var_f14 + 14.0f);
+            if (var_f12 > 0.0f) {
+                var_f12 *= D_800991C0;
+                arg0->y_position = temp_f0 - var_f12;
+                arg0->unk31C->unk1C = 0.0f;
+                var_f14 = arg0->unk118 - 60.0f;
+            }
+            if ((var_f14 - 75.0f) < arg0->y_position) {
+                sp70 -= 30.0f;
+            }
+        }
+        if ((arg0->unk84.uh == 0x22) && (sp70 < -20.0f)) {
+            sp70 = -20.0f;
+        }
+        if (arg0->unk28 < 40.0f) {
+            func_1510F820(var_f12, arg0->pad188, &arg0->unk18C, &sp58, &sp54, &sp50, &sp4C, &sp48);
+            sp4C = func_1505210C(arg0, sp4C, sp48, &sp48, 180.0f);
+            temp_f2 = arg0->unkB8;
+            if (sp48 < temp_f2) {
+                arg0->unkB8 = temp_f2 + ((sp48 - temp_f2) * D_800991C4);
+            }
+        }
+        temp_f2 = sp70 - arg0->unkB8;
+        arg0->padBC = temp_f2;
+        if (fabsf(temp_f2) < (D_800991C8 * *D_800D1550)) {
+            arg0->unkB8 = sp70;
+        } else {
+            if (D_800991C8 < arg0->padBC) {
+                arg0->padBC = D_800991C8;
+            }
+            if (arg0->padBC < D_800991CC) {
+                arg0->padBC = D_800991CC;
+            }
+            arg0->unkB8 += arg0->padBC * *D_800D1550;
+        }
+        if (arg0->unkB8 < -90.0f) {
+            arg0->unkB8 = -90.0f;
+        }
+        if (arg0->unkB8 > 90.0f) {
+            arg0->unkB8 = 90.0f;
+        }
+        if (arg0->unk31C->pad20[1] == 0) {
+            temp_v0_3 = (sp67 + 8) / 18;
+            if (temp_v0_3 != 0) {
+                arg0->unk7E = 0x17;
+                arg0->unk76 -= (s16) ((temp_v0_3 * D_800CC264) << 8) / 100;
+            }
+            sp68 = arg0->target_speed;
+        }
+        arg0->unk80 = 1;
+    } else {
+        func_15052408(arg0);
+        if (arg0->xz_velocity > 16.0f) {
+            arg0->xz_velocity = 16.0f;
+        }
+        sp68 = arg0->xz_velocity;
+    }
+    if (arg0->unk31C->unk95 != 0) {
+        temp_f2 = arg0->unk118;
+        arg0->y_position = arg0->old_y_position;
+        var_v0 = 0;
+        if (D_800991D0 != temp_f2) {
+            var_v0 = 1;
+        }
+        if (var_v0 != 0) {
+            var_v0 = 0;
+            if (arg0->y_position < (temp_f2 - 60.0f)) {
+                var_v0 = 1;
+            }
+        }
+        if (var_v0 == 0) {
+            arg0->in_water = 0;
+        }
+    }
+    return sp68;
+}
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+void func_1504BA38(struct127 *arg0) {
+    struct261 *temp_v1;
+    s8 temp_a1;
+    s8 temp_v0;
+
+    if (arg0->unk28 > 10.0f) {
+        arg0->unkCE = 0;
+        return;
+    }
+    temp_v1 = &D_80099140[arg0->unk184 & 0x1F];
+    temp_a1 = temp_v1->unk2;
+    if ((temp_a1 != 0) && (arg0->unkAA == 0)) {
+        arg0->unkAA = (u8) temp_a1;
+    }
+    temp_v0 = temp_v1->unk1;
+    if (temp_v0 == 0) {
+        arg0->unkCE = (s16) temp_v1->unk0;
+        return;
+    }
+    arg0->unkCE = (s16) (s32) ((f32) temp_v0 * D_800991D4 * ((f32) temp_v1->unk0 - arg0->xz_velocity));
+}
 // NON-MATCHING: starts to fall apart towards the end
 // void func_1504BA38(struct127 *arg0) {
 //     s8 temp_a1;
@@ -439,7 +790,69 @@ void func_1504BC38(struct127 *arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504BE2C.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+void func_1504BE2C(struct127 *arg0, u16 *arg1, f32 *arg2, s8 *arg3) {
+    f32 sp1C;
+    f32 temp_f12;
+    f32 var_f6;
+    struct126 *temp_v0;
+    struct126 *var_v0;
+    u16 temp_v0_2;
+    u8 temp_t7;
+    u8 temp_v1;
+
+    temp_t7 = arg0->unk31C->padA[1];
+    var_f6 = (f32) temp_t7;
+    if ((s32) temp_t7 < 0) {
+        var_f6 += 4294967296.0f;
+    }
+    temp_f12 = var_f6 * D_800991D8;
+    D_800CC2B4 = 16.0f;
+    var_v0 = arg0->unk31C;
+    temp_v1 = var_v0->unk16;
+    if ((temp_v1 != 0) && (temp_v1 == 0)) {
+        sp1C = temp_f12;
+        func_1507EB2C(temp_f12);
+        arg0->unk31C->unk8 = 0;
+        var_v0 = arg0->unk31C;
+    }
+    if (var_v0->unkE == 0) {
+        var_v0->unkE = 0xA6;
+        var_v0 = arg0->unk31C;
+    }
+    var_v0->pad3C[0] = 5;
+    if ((*arg2 > 4.0f) && (arg0->unk84.uh == 0xAA)) {
+        arg0->unk31C->pad3C[0] = 1;
+        arg0->unk31C->unk10 = (s16) *arg1;
+    }
+    func_150AD78C(temp_f12);
+    temp_v0 = arg0->unk31C;
+    temp_v0->padA[1] += 2;
+    if (arg0->unk31C->unk16 != 0) {
+        arg0->unkAA = 0x19;
+    } else if (arg0->unk84.uh == 0xA7) {
+        arg0->unkAA = 0x32;
+    } else {
+        arg0->unkAA = 0x20;
+    }
+    temp_v0_2 = arg0->unk84.uh;
+    arg0->pad54 *= 0.5f;
+    if ((temp_v0_2 == 0x2C) || (temp_v0_2 == 0xE0)) {
+        *arg3 = (s8) (((s8 *) D_800CC284)[3] >> 1);
+    } else {
+        if (!(func_150ADA20() & 0x3F)) {
+            arg0->unk31C->unk14 = (s16) ((func_150ADA20() % 25000U) - 0x30D4);
+        }
+        D_800CC2B2 = arg0->unk31C->unk14;
+        if (arg0->unk31C->unk16 != 0) {
+            D_800CC2B2 = (s16) (D_800CC2B2 / 3);
+        }
+    }
+    if ((D_800C35EA == 0) && (arg0->unk31C->unk16 == 0)) {
+        arg0->unk282 = 0x1E;
+        arg0->unk276 = 0;
+    }
+}
 
 s32 func_1504C078(void) {
     if (D_800D154C->unk31C->unk58 != 1) {
@@ -473,7 +886,35 @@ void func_1504C854(struct127 *arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504C8BC.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+s32 func_1504C8BC(struct127 *arg0) {
+    struct126 *temp = arg0->unk31C;
+
+    if (temp == NULL) {
+        return 1;
+    }
+    if ((arg0->unk1D4 != NULL) || (D_800BE9F0 == 0x33) || (arg0->interaction_state == 0x25)) {
+        arg0->unk31C->unk1A8 = 0;
+        return 1;
+    }
+    if (D_800CC2B8 == (arg0->unk127 & 1)) {
+        if (temp->unk1A8 != 0) {
+            D_800CC2BA = (s16) D_800BE9E4;
+            D_800BE9E4 = D_800BE9E4 + arg0->unk31C->unk1A8;
+            D_800BE9A4 = (f32) D_800BE9E4 * 0.5f;
+            if (D_800BE9A4 != 0.0f) {
+                D_800BE9A8 = 1.0f / D_800BE9A4;
+            } else {
+                D_800BE9A8 = 0.0f;
+            }
+            arg0->unk31C->unk1A8 = 0;
+            return 2;
+        }
+        return 1;
+    }
+    temp->unk1A8 = temp->unk1A8 + D_800BE9E4;
+    return 0;
+}
 
 void func_1504C9E4(struct127 *arg0, s8 arg1, u8 arg2) {
     u8 phi_a2;
@@ -505,11 +946,74 @@ void func_1504C9E4(struct127 *arg0, s8 arg1, u8 arg2) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504CA60.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+void func_1504CA60(struct127 *arg0) {
+    f32 sp2C;
+    f32 sp28;
+    f32 temp_f0 = arg0->unk28;
+    f32 var_f12 = 18.0f;
+    f32 var_f2 = arg0->unk180 + 20.0f;
+
+    arg0->unk1CC = arg0->y_position;
+    if (temp_f0 > 30.0f) {
+        var_f12 = 80.0f;
+    }
+    if (arg0->unk81 != 0) {
+        var_f12 = 80.0f;
+        var_f2 -= 30.0f;
+        if ((temp_f0 < 5.0f) && (arg0->y_velocity < 0.0f)) {
+            arg0->unk81 = 0;
+            arg0->y_velocity = 45.0f;
+        }
+    } else if (temp_f0 < 20.0f) {
+        sp28 = var_f2;
+        sp2C = var_f12;
+        if (!(func_150ADA20() & 0x3F)) {
+            arg0->y_velocity = 25.0f;
+        }
+    }
+    func_15058EA4(arg0, var_f2, 3.8f, var_f2, -3.5f, 80.0f, -var_f12);
+    arg0->unk80 = 1;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504CB98.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_150511E8.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_15051558.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1505210C.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+f32 func_1505210C(struct127 *arg0, f32 arg1, f32 arg2, f32 *arg3, f32 arg4) {
+    f32 sin40;
+    f32 cos40;
+    f32 rad40 = arg0->unk40 * D_80099330;
+    f32 negArg2 = -arg2;
+    f32 negArg4 = -arg4;
+    f32 result1;
+    f32 result2;
+
+    sin40 = func_150AD780(rad40);
+    cos40 = func_150AD78C(rad40);
+    result1 = func_150484A0((arg1 * sin40) + (negArg2 * cos40), 1.0f) * D_80099334;
+    result2 = func_150484A0((-arg1 * cos40) + (negArg2 * sin40), 1.0f) * D_80099338;
+
+    if (result1 >= 180.0f) {
+        result1 -= 360.0f;
+    }
+    if (result2 >= 180.0f) {
+        result2 -= 360.0f;
+    }
+    if (arg4 < result1) {
+        result1 = arg4;
+    }
+    if (result1 < negArg4) {
+        result1 = negArg4;
+    }
+    if (arg4 < result2) {
+        result2 = arg4;
+    }
+    if (result2 < negArg4) {
+        result2 = negArg4;
+    }
+    *arg3 = result2;
+    return result1;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_15052260.s")
 
 void func_15052408(struct127 *arg0) {

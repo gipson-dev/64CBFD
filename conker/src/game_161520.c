@@ -90,7 +90,8 @@ void func_1513477C(struct102 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151347CC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151348F0.s")
+void func_151348F0(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134908.s")
 
@@ -98,7 +99,8 @@ void func_1513477C(struct102 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134C98.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134CD4.s")
+void func_15134CD4(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134CEC.s")
 
@@ -106,9 +108,17 @@ void func_1513477C(struct102 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15134E48.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151352EC.s")
+// NON-MATCHING: only differs from us by the jal target address of the still-unmatched
+// func_15169804 - this function's own code is verified byte-identical otherwise.
+void func_151352EC(struct102 *arg0) {
+    func_15169804(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_1513530C.s")
+// NON-MATCHING: only differs from us by the jal target address of the still-unmatched
+// func_15169824 - this function's own code is verified byte-identical otherwise.
+void func_1513530C(struct102 *arg0) {
+    func_15169824(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_1513532C.s")
 
@@ -122,7 +132,10 @@ void func_1513477C(struct102 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_151355B8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15135658.s")
+s32 func_15135658(struct102 *arg0) {
+    arg0->unk74 = 1.0f;
+    return 1;
+}
 
 f32 func_15135670(s32 arg0) {
     // "power", "../Effects/Blood/blood.c"
@@ -143,7 +156,17 @@ f32 func_15135670(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15136918.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15136A1C.s")
+s32 func_15136A1C(struct102 *arg0) {
+    s16 temp_v0 = arg0->unk1C;
+    s32 temp_v1;
+    if (temp_v0 < 32) {
+        temp_v1 = temp_v0 * 8;
+        if (temp_v1 < arg0->unk28) {
+            arg0->unk28 = temp_v1;
+        }
+    }
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15136A50.s")
 

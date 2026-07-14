@@ -975,7 +975,20 @@ f32 func_1505D34C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 *arg4) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505E874.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505ED34.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505EEB0.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+struct127 *func_1505EEB0(s32 state, s32 *arg1) {
+    s32 i = 0;
+    struct127 *obj = D_800CC2D0;
+
+    if (state != D_800CC2D0->interaction_state) {
+        do {
+            i++;
+            obj++;
+        } while ((i < 0x19) && (state != obj->interaction_state));
+    }
+    *arg1 = i;
+    return obj;
+}
 // I HATE LOOPS.
 // struct127 *func_1505EEB0(s32 state, s32 *arg1) {
 //     struct127 *tmp = D_800CC2D0;
@@ -1015,7 +1028,20 @@ void func_15060B70(s32 arg0, void *arg1) {
     func_10010154(arg0, arg1, 0x6D60, 0x1F4, 0x9C4);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15060BA4.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+s32 func_15060BA4(struct127 *arg0, s32 arg1) {
+    u8 temp;
+
+    if (arg0->health == 6) {
+        return 0;
+    }
+    temp = arg0->health + arg1;
+    arg0->health = temp;
+    if (temp >= 7) {
+        arg0->health = 6;
+    }
+    return 1;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15060BE0.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15060D54.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15060F28.s")
@@ -1034,7 +1060,15 @@ void func_150615DC(struct127 *arg0) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1506160C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_150617BC.s")
 // ???
-#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1506196C.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+s32 func_1506196C(u8 *arg0, s32 arg1) {
+    s32 product = arg0[arg1 + 0xB] * arg0[7];
+    s32 result = product >> 8;
+    if (product == 0xFE01) {
+        result = 0xFF;
+    }
+    return result;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_150619A8.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15061B4C.s")

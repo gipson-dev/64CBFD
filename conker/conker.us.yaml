@@ -15,8 +15,27 @@ options:
   auto_link_sections: []
   string_encoding: ASCII
 
+  # Current splat defaults this to true and regenerates conker/include/macro.inc
+  # (and other generated_asm_macros_directory files) on every extract, using a
+  # newer .ent/.aent-based template that differs from this project's own
+  # hand-maintained macro.inc. Disabling keeps the committed file authoritative.
+  generate_asm_macros_files: false
+
   # asm_jtbl_label_macro: jlabel
   # asm_data_macro: dlabel
+  # Disabled: the pinned tools/asm-processor prelude.inc (glabel/dlabel/jlabel
+  # only) and this project's include/macro.inc don't define a `nonmatching`
+  # macro, so splat's newer default NON_MATCHING size-annotation line breaks
+  # asm-processor with ".text block without an initial glabel". Not used by
+  # tools/progress.py, so disabling it is safe.
+  asm_nonmatching_label_macro: ""
+  # Same reasoning: the pinned tools/asm-processor only special-cases the
+  # literal words "glabel"/"dlabel"/"jlabel"/"endlabel" when pre-computing
+  # section sizes (see its process_line()), so "alabel" lines get silently
+  # miscounted as regular instructions -> "incorrectly computed size for
+  # section .text" on any function with an alternate entry point. Emitting
+  # glabel instead is recognized correctly and is otherwise equivalent here.
+  asm_function_alt_macro: glabel
 
 segments:
   - name:  header
@@ -207,23 +226,23 @@ segments:
     subsegments:
       - [0x290D0, data] # could be larger/smaller
 
-      - [0x2BF20, rodata]
-      - [0x2C080, rodata]
-      - [0x2C0A0, rodata]
+      - [0x2BF20, bin]
+      - [0x2C080, bin]
+      - [0x2C0A0, bin]
       - [0x2C0C0, rodata]
       - [0x2C120, rodata]
       - [0x2C1B0, rodata]
       - [0x2C200, rodata]
       - [0x2C240, rodata]
-      - [0x2C250, rodata]
+      - [0x2C250, bin]
       - [0x2C450, .rodata, libultra/audio/init_128D0]
-      - [0x2C460, rodata]
-      - [0x2C6B0, rodata]
+      - [0x2C460, bin]
+      - [0x2C6B0, bin]
       - [0x2C750, rodata]
       - [0x2C760, .rodata, libultra/audio/cents2ratio]
       - [0x2C770, rodata]
       - [0x2C790, .rodata, libultra/audio/init_1D900]
-      - [0x2C7A0, rodata]
+      - [0x2C7A0, bin]
       - [0x2C820, rodata]
       - [0x2C830, rodata]
       - [0x2C850, rodata]
@@ -977,20 +996,22 @@ segments:
       - [0x234A70, rodata]
       - [0x234C10, rodata]
       - [0x234CB0, rodata]
-      - [0x236430, rodata]
+      - [0x236430, data]
+      - [0x236510, bin]
+      - [0x236578, data]
       - [0x2365B0, rodata]
       - [0x2367E0, rodata]
       - [0x23A490, rodata]
       - [0x23A4A0, rodata]
-      - [0x23A4C0, rodata]
-      - [0x23A4F0, rodata] # , game/entrypoint] # jumptable 0x80095A30
-      - [0x23A510, rodata]
+      - [0x23A4C0, bin]
+      - [0x23A4F0, bin] # , game/entrypoint] # jumptable 0x80095A30
+      - [0x23A510, bin]
       - [0x23A5D0, rodata]
       - [0x23A600, rodata]
-      - [0x23A630, rodata]
+      - [0x23A630, bin]
       - [0x23A6A0, rodata]
       - [0x23A7A0, rodata]
-      - [0x23AA60, rodata]
+      - [0x23AA60, bin]
       - [0x23AD10, rodata]
       - [0x23ADE0, rodata]
       - [0x23AE60, rodata]
@@ -1002,7 +1023,7 @@ segments:
       - [0x23B010, rodata]
       - [0x23B020, rodata]
       - [0x23B030, rodata]
-      - [0x23B040, rodata]
+      - [0x23B040, bin]
       - [0x23B370, rodata]
       - [0x23B380, rodata]
       - [0x23B390, rodata]
@@ -1023,9 +1044,9 @@ segments:
       - [0x23D1B0, rodata]
       - [0x23D320, rodata]
       - [0x23D3F0, rodata]
-      - [0x23D420, rodata] # jump table
+      - [0x23D420, bin] # jump table
       - [0x23D570, rodata]
-      - [0x23D650, rodata]
+      - [0x23D650, bin]
       - [0x23D730, rodata]
       - [0x23D830, rodata]
       - [0x23D850, rodata]
@@ -1041,11 +1062,11 @@ segments:
       - [0x23DB60, rodata]
       - [0x23DB70, rodata]
       - [0x23DB80, rodata]
-      - [0x23DC00, rodata]
+      - [0x23DC00, bin]
       - [0x23E160, rodata]
       - [0x23E4D0, rodata]
-      - [0x23E4F0, rodata]
-      - [0x23EBE0, rodata]
+      - [0x23E4F0, bin]
+      - [0x23EBE0, bin]
       - [0x240360, rodata]
       - [0x240370, rodata]
       - [0x2405A0, rodata]
@@ -1211,7 +1232,7 @@ segments:
       - [0x2424A0, rodata]
       - [0x2424E0, rodata]
       - [0x242740, rodata]
-      - [0x242750, rodata]
+      - [0x242750, bin]
       - [0x242960, rodata]
       - [0x242970, rodata]
       - [0x242F30, rodata]
@@ -1380,12 +1401,12 @@ segments:
       - [0x248320, rodata]
       - [0x248340, rodata]
       - [0x2486F0, rodata]
-      - [0x248E10, rodata, game_161520]
-      - [0x249110, rodata]
+      - [0x248E10, bin, game_161520]
+      - [0x249110, bin]
       - [0x249480, rodata]
-      - [0x249560, rodata]
-      - [0x249CC0, rodata]
-      - [0x249F40, rodata]
+      - [0x249560, bin]
+      - [0x249CC0, bin]
+      - [0x249F40, bin]
       - [0x24A190, rodata]
       - [0x24A220, rodata]
       - [0x24A230, rodata]
@@ -1405,7 +1426,7 @@ segments:
       - [0x24B150, rodata]
       - [0x24B180, rodata]
       - [0x24B1F0, rodata]
-      - [0x24B280, rodata]
+      - [0x24B280, bin]
       - [0x24B5E0, rodata]
       - [0x24B730, rodata]
       - [0x24B760, rodata]

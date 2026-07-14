@@ -62,7 +62,19 @@ void func_150AED4C(struct114 *arg0) {
     arg0->unk36 = arg0->unk34;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_DBA60/func_150AED9C.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+s32 func_150AED9C(struct202 *arg0) {
+    s32 val = arg0->unk1C * 8;
+
+    if (val >= 0x100) {
+        val = 0xFF;
+    }
+    ((u8 *) arg0->unk98)[0x1B] = val;
+    if ((u8) val >= 0) {
+        return 1;
+    }
+    return 0;
+}
 
 s32 func_150AEDD8(struct202 *arg0) {
     if (arg0->unk1C < 0x20) {

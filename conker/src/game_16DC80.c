@@ -22,7 +22,14 @@ void func_151411C4(struct210 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151412BC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_1514143C.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+void func_1514143C(struct210 *arg0) {
+    if (arg0->unk154 != NULL) {
+        arg0->unk154->x = arg0->unk34;
+        arg0->unk154->y = arg0->unk38;
+        arg0->unk154->z = arg0->unk3C;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_15141478.s")
 

@@ -21,7 +21,7 @@ Run these commands from inside the `conker/` directory:
 ```sh
 make extract
 make --jobs
-make replace
+make replace NON_MATCHING=1
 make -C ..
 ```
 
@@ -31,6 +31,14 @@ What each step does:
 2. `make --jobs` compiles the code sub-project.
 3. `make replace` writes the newly compiled code sections back into the split ROM output.
 4. `make -C ..` returns to the repository root build and rebuilds the full ROM.
+
+`NON_MATCHING=1` skips the code sub-project's own byte-exact sha1 check
+before `replace` runs. Without it, `make replace` fails outright (rather
+than proceeding) as soon as any section doesn't match, which - with most of
+`game` still unmatched - is the normal state right now. `make -C .. ` still
+reports `build/conker.us.z64: FAILED` in that case; that failure is expected
+per [Project overview](PROJECT.md) and isn't specific to this step. The same
+flag works with `make progress` (see below) for the same reason.
 
 ## Common contributor loop
 

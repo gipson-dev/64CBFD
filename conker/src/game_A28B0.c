@@ -1212,7 +1212,9 @@ void func_15079A28(void) {
     D_800D154C->unk253 = D_800D1891;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15079A58.s")
+void func_15079A58(void) {
+    D_800D2110[D_800D154C->unk13F] = (D_800D1890 << 8) + D_800D1891;
+}
 // void func_15079A58(void) {
 //     s16 tmp = (D_800D1890 << 8) + D_800D1891;
 //     D_800D2110[D_800D154C->unk13F] = tmp;
@@ -1340,7 +1342,10 @@ void func_1507A3CC(void) {
 }
 
 //  what is up with these??
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507A3E8.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+s32 func_1507A3E8(void) {
+    return (D_800D1890 << 0x18) | (D_800D1891 << 0x10) | (D_800D1892 << 8) | D_800D1893;
+}
 // s32 func_1507A3E8(void) {
 //     return (D_800D1890 << 0x18) | (D_800D1891 << 0x10) | (D_800D1892 << 8) | D_800D1893;
 // }

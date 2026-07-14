@@ -1337,7 +1337,10 @@ void func_15071FB0(void) {
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15071FDC.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_150721A4.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+void func_150721A4(void) {
+    func_1506160C(D_800D154C, (D_800D1580 >> 0x10) & 0xFF, D_800D1580 & 0xFF, (D_800D1580 >> 8) & 0xFF, 0);
+}
 
 struct127 *func_150721E8(struct127 *arg0) {
     return func_15072208(arg0, 0);
@@ -1449,7 +1452,10 @@ void func_15072AF8(void) {
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15072B44.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15072DA0.s")
+void func_15072DA0(void) {
+    D_800D154C->unk2F8 &= 0xFFF8;
+    D_800D154C->unk2F8 |= D_800D1580;
+}
 
 void func_15072DD8(void) {
     func_15083568(D_800D154C, D_800D1580, 1.0f, 0);

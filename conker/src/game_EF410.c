@@ -101,7 +101,19 @@
 // }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2424.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C251C.s")
+// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+s32 func_150C251C(struct202 *arg0) {
+    s32 val = arg0->unk1C * 8;
+
+    if (val >= 0x100) {
+        val = 0xFF;
+    }
+    ((u8 *) arg0->unk98)[0x1B] = val;
+    if ((u8) val >= 0) {
+        return 1;
+    }
+    return 0;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2558.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2700.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2804.s")
