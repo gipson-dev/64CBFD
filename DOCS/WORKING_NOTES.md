@@ -40,6 +40,7 @@ fixes so far worth knowing about (see Session log): `func_15079A58` needed
 several others hit register-allocation quirks in IDO that resisted a few
 rewrite attempts and were left as-is rather than sunk-cost-chased further.
 **Files touched (infra fixes):**
+
 - `conker/conker.us.yaml`: added `asm_nonmatching_label_macro: ""`,
   `asm_function_alt_macro: glabel`, and `generate_asm_macros_files: false`
   to `options:`; changed 26 standalone `rodata` subsegments to `bin` (see
@@ -400,3 +401,74 @@ git checkout -- .
     `0x16000000`, rom `0x255880` - both from `conker.us.yaml`). Decode each
     differing word's top 6 bits to classify jump/call-class opcodes (2, 3)
     separately from real differences.
+- Inspected two new ROMs dropped into `rom backup/`:
+  - **`Conker's Bad Fur Day (Europe).n64` is the missing EU baserom.**
+    Despite the `.n64` extension it's v64 (16-bit byte-swapped) order;
+    byteswapped to big-endian z64 its SHA1 is
+    `ee7bc6656fd1e1d9ffb3d19add759f28b88df710`, exactly matching the
+    repo's expected root-level `conker.eu.sha1`. Installed the converted
+    copy as `baserom.eu.z64` (repo root, untracked like the other
+    baseroms); `make check VERSION=eu` passes. All four target versions
+    (us / eu / debug / ects) now have hash-verified baseroms available
+    locally (debug and ects match the two `[DC].rom` files already in
+    `rom backup/`).
+  - **EU extraction pipeline now works end to end:** `conker.eu.yaml` and
+    `game.eu.rzip.yaml` were still in pre-modernization splat format
+    (missing `platform`/`basename`, `sha1` nested under `options`) - the
+    same class of splat-version fix already applied to the `us` configs.
+    After fixing both, `make extract VERSION=eu` runs clean and the
+    decompressed code image `conker/conker.eu.bin` **verifies OK** against
+    `conker/conker.eu.sha1`. Note `conker.debug.yaml` / `conker.ects.yaml`
+    at the repo root still have the old format and will need the identical
+    two-line fix before extracting those versions. What EU enables: a
+    third matched-code reference (alongside `debug_proto`/`ects_proto`)
+    for cross-version function matching - `symbol_addrs.eu.txt`,
+    `undefined_funcs.eu.txt` and the `src_eu` build path already exist in
+    `conker/`, so the scaffolding was always intended for this.
+  - **`Conker's Bad Fur Day (Uncensored).z64` is a US romhack, not a
+    baserom** (SHA1 `4df27756ef604e82c6874aade21075b5bc8d405a`, matches no
+    expected hash - don't use it as one). It is byte-identical to
+    `baserom.us.z64` except for ~2.06 MB confined to exactly two asset
+    segments: `assets06` (39,919 bytes differ, 7.4% of the segment) and
+    `assets16` - the segment `conker.us.yaml` already annotates as
+    "MP3s" - (2,020,358 bytes, 8.6%). Its header CRCs are unchanged from
+    retail yet still boot-valid because the CIC checksum only covers ROM
+    `0x1000`-`0x101000`, which the hack never touches.
+    **What it's useful for:** it's a ready-made differential probe for the
+    asset-format work - decompressing `assets06`/`assets16` from both ROMs
+    and diffing file-by-file (via the `assets_offsets_table` at
+    `0xAB1950`) pinpoints exactly which files are censored voice lines,
+    confirming assets16 = dialogue audio bank and revealing what
+    per-line metadata lives in assets06. Not usable for code work (no
+    code differs).
+- Pulled both (same session):
+  - **EU disassembly extracted.** Modernized `conker/conker.eu.yaml` the
+    same way `conker/conker.us.yaml` was (top-level `sha1`,
+    `platform: n64`, `generate_asm_macros_files: false`,
+    `asm_nonmatching_label_macro: ""`, `asm_function_alt_macro: glabel`;
+    dropped the removed `find_file_boundaries`/`create_detected_syms`/
+    `cpp_args`/`undefined_syms_path` options), **plus version-separated
+    output paths** (`asm_path: asm_eu`, `asset_path: assets_eu`,
+    `src_path: src_eu`) so extracting EU never clobbers the us `asm/` /
+    `assets/` / `src/` trees in this same checkout - note the us and eu
+    configs would otherwise write to the same default paths. Running
+    `python3 ../tools/n64splat/split.py conker.eu.yaml` from `conker/`
+    produced `conker/asm_eu/` with 651 `.s` files and 5,759 disassembled
+    functions across init/game/debugger. `include/macro.inc` confirmed
+    untouched. These dirs are generated artifacts (like `asm/`) - regen
+    with the command above, don't commit.
+  - **Censored-file list pinned down.** File-level diff of the two rzip
+    containers (walking each segment's leading `(offset, type|length)`
+    pair table per `tools/splat_ext/rzip.py`) shows the offset tables are
+    byte-identical - the hack replaces files strictly in place. Changed:
+    **15 of 50 files in `assets06`** (indices 1, 4, 6, 7, 8, 12, 14, 15,
+    16, 22, 30, 33, 40, 47, 48) and **23 of 453 files in `assets16`**
+    (indices 5, 19, 20, 27, 34, 35, 36, 47, 83, 119, 126, 143, 149, 150,
+    175, 287, 289, 325, 341, 384, 387, 426, 439). The assets16 files
+    begin with an `0xFFF3` MPEG audio frame sync in both ROMs - they are
+    raw MPEG-2 Layer III (MP3) streams stored uncompressed, replaced
+    wholesale with uncensored takes. The changed assets06 files keep
+    identical headers and diverge later - so assets06 holds some
+    per-line structured data (subtitle text? timing/metadata tables?)
+    worth reversing next; the 15 changed ones are the natural samples to
+    stare at since we know exactly which dialogue they belong to.

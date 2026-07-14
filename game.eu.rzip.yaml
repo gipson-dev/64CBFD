@@ -1,4 +1,6 @@
 options:
+  platform: n64
+  basename: game
   target_path: assets/game.eu.rzip.bin
   base_path: .
   asset_path: assets/game

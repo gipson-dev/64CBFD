@@ -1,21 +1,36 @@
+sha1: c3904f30d9248dae6cb1cd946207a13c1dc96a96
+
 options:
+  platform: n64
   basename: conker
   target_path: conker.eu.bin
   base_path: .
-  find_file_boundaries: yes
   compiler: IDO
-  cpp_args:
-  - "-Iinclude"
-  - "-Iinclude/2.0L"
-  - "-D_LANGUAGE_C"
-  - "-D_FINALROM"
   generated_c_preamble: |
     #include <ultra64.h>
     #include "functions.h"
     #include "variables.h"
-  create_detected_syms: yes
-  undefined_syms_path: undefined_syms.eu.txt
   symbol_addrs_path:   symbol_addrs.eu.txt
+
+  # Keep EU extraction output separate from the us tree (asm/, assets/, src/)
+  # so extracting one version never clobbers the other in this checkout.
+  asm_path: asm_eu
+  asset_path: assets_eu
+  src_path: src_eu
+
+  auto_link_sections: []
+  string_encoding: ASCII
+
+  # Current splat defaults this to true and regenerates conker/include/macro.inc
+  # (and other generated_asm_macros_directory files) on every extract, using a
+  # newer .ent/.aent-based template that differs from this project's own
+  # hand-maintained macro.inc. Disabling keeps the committed file authoritative.
+  generate_asm_macros_files: false
+
+  # See conker.us.yaml for why these two are overridden (pinned asm-processor
+  # only understands glabel/dlabel/jlabel/endlabel).
+  asm_nonmatching_label_macro: ""
+  asm_function_alt_macro: glabel
 segments:
   - name:  header
     type:  header

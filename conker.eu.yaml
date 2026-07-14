@@ -1,10 +1,16 @@
+sha1: ee7bc6656fd1e1d9ffb3d19add759f28b88df710
+
 options:
+  platform: n64
   basename: conker
   target_path: baserom.eu.z64
   base_path: .
   compiler: IDO
   extensions_path: tools/splat_ext
-  sha1: ee7bc6656fd1e1d9ffb3d19add759f28b88df710
+
+  create_undefined_funcs_auto: no
+  create_undefined_syms_auto: no
+
 segments:
   - name:  header.eu
     type:  bin
