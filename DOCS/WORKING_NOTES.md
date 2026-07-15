@@ -25,6 +25,40 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-15, eleventh session part 2 - the %-engine's blocking
+idiom identified and characterized; func_16002D2C structure verified).**
+Worked `debugger_257350.c`'s five size-wrong functions. Results:
+
+- `func_16002D2C` (the IEEE-double exponent classifier): full structural
+  rematch - the entire lower half (normal/zero/negative-exponent paths)
+  is now instruction-exact, 41/46 words. The remaining 5-word deficit is
+  ONE compiler idiom, precisely characterized and (so far) uncrackable:
+  in the Inf/NaN branch retail emits an **unfolded (s16) conversion of a
+  constant** (`li v1,2; sll v0,v1,16; sra t4,v0,16`) eagerly after each
+  of the two `ret = 2` / `ret = 1` assignments, plus a dead `li v1,1`
+  from beqzl delay-slot duplication. Our IDO 5.3 always either folds the
+  conversion into `li v0,2` or elides it as a no-op. Tried and ruled out:
+  plain s16 local, reusing `exp` (s16) or `val` (u16, lhu-tainted web),
+  s32 + explicit `(s16)` cast, single-return phi (produces ONE merged
+  conversion with bnezl tests - closest shape so far), two returns,
+  if/else arms, `-O1` for the file (everything bloats ~35%, definitively
+  wrong - the file IS -O2), `-cckr` (+1 word, wrong shape). The debug ROM
+  (Oct 2000) contains this function **word-for-word identical** to retail
+  US (found at ROM 0x1936FC by scanning for the 0x7FF0 mask), so the
+  codegen is deterministic, not a build fluke. Whatever the source does,
+  it defeats uopt's constant folding through the phi web - suspect an
+  interaction with something else in the original translation unit.
+- `func_1600288C` (the %f/%e/%g formatter, 296 insns): diverges at the
+  prologue itself - retail uses frame 0xD8 saving s0-s5, ours 0xF8 saving
+  s0-s6, i.e. our decompiled C keeps at least one more value live than
+  the original. Deep restructure needed, not a local tweak. Parked.
+- The other three (`func_16001BB4` -0x8C, `func_16002DE4` +0x78,
+  `func_160033A8` -0x44) share the same s16-heavy engine style and likely
+  the same idiom problem; not attempted this pass.
+- Practical note for whoever resumes: rebuilding this file requires
+  `rm build/src/debugger_257350.c.o` when experimenting with per-object
+  Makefile flag overrides - make doesn't rebuild on flag changes.
+
 **Update (2026-07-15, eleventh session - six debugger functions matched
 byte-exact; debugger overlay code-drift eliminated through 0x16001BB4).**
 Matched, all verified 0 real diffs at their name-implied retail bytes:

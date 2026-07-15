@@ -481,24 +481,38 @@ void func_1600288C(struct262 *arg0, u8 arg1) {
 }
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 s32 func_16002D2C(s16 *arg0, u16 *arg1) {
-    s32 exp;
     u16 val;
+    s16 exp;
 
     val = arg1[0];
-    exp = (s32) (val & 0x7FF0) >> 4;
-    if ((s16) exp == 0x7FF) {
+    exp = (val & 0x7FF0) >> 4;
+    // NON-MATCHING (5 words short, 41/46): everything from the blez tail
+    // down is instruction-exact; the deficit is entirely in this branch,
+    // where retail emits an UNFOLDED (s16) conversion (li 2; sll 16; sra 16)
+    // eagerly after each assignment - one hoisted above the mantissa tests,
+    // one after the val=1 arm - plus a dead li-1 left by beqzl delay-slot
+    // duplication. Every attempt to stop IDO folding/eliding the conversion
+    // failed: s16 var (elided), exp/val reuse (folded), s32 + explicit
+    // (s16) cast with single return (one merged conversion, bnezl tests),
+    // two returns (folded to li v0,2/1), if/else arms (folded), -O1 (whole
+    // file bloats ~35%, definitively wrong), -cckr (+1 word, wrong shape).
+    // Whatever retail's source does defeats uopt's constant prop through
+    // the phi - possibly an idiom elsewhere in the original file changing
+    // the variable's web. Revisit alongside func_16001BB4/func_16002DE4.
+    if (exp == 0x7FF) {
         *arg0 = 0;
-        if ((arg1[0] & 0xF) || (arg1[1] != 0) || (arg1[2] != 0) || (arg1[3] != 0)) {
-            return 2;
+        exp = 2;
+        if (!(arg1[0] & 0xF) && (arg1[1] == 0) && (arg1[2] == 0) && (arg1[3] == 0)) {
+            exp = 1;
         }
-        return 1;
+        return exp;
     }
-    if ((s16) exp > 0) {
+    if (exp > 0) {
         arg1[0] = (val & 0x800F) | 0x3FF0;
-        *arg0 = (s16) exp - 0x3FE;
+        *arg0 = exp - 0x3FE;
         return -1;
     }
-    if ((s16) exp < 0) {
+    if (exp < 0) {
         return 2;
     }
     *arg0 = 0;
