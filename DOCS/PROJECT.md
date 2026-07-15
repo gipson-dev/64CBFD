@@ -171,15 +171,15 @@ Two caveats about what this table measures:
 ### Byte-matching snapshot
 
 Of the C-converted functions above, how many compile to the exact retail
-bytes (last regenerated 2026-07-14, via
+bytes (last regenerated 2026-07-15, via
 `make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on callees | Still differ |
 | --- | --- | --- | --- |
-| total | 379 / 1553 (24.40%) | 125 | 1049 |
-| init | 201 / 232 (86.64%) | 3 | 28 |
-| game | 167 / 1151 (14.51%) | 122 | 862 |
-| debugger | 11 / 170 (6.47%) | 0 | 159 |
+| total | 435 / 1553 (28.01%) | 145 | 973 |
+| init | 223 / 232 (96.12%) | 4 | 5 |
+| game | 197 / 1151 (17.12%) | 141 | 813 |
+| debugger | 15 / 170 (8.82%) | 0 | 155 |
 
 "Blocked on callees" means the only remaining differences are `j`/`jal`
 target addresses - those functions need no further edits and will
@@ -188,6 +188,19 @@ print every non-exact function, smallest diff first. Note the "still
 differ" column is a worst-case count: a function whose only problem is a
 reference to a symbol at a drifted address will show as differing even
 though its source is correct.
+
+**2026-07-15 correction:** `tools/match_progress.py`'s `classify()` was
+over-strict about function length - it declared "diff" for any length
+mismatch before comparing content, but a retail symbol's declared length
+(`next_symbol_addr - this_addr`) can include a few trailing
+inter-function alignment nops that splat's boundary detection folded into
+the *preceding* function rather than genuinely being part of it. Fixed by
+trimming trailing all-zero words from `truth` before comparing when
+`ours` is shorter. This alone moved 56 functions project-wide from "diff"
+to "exact" with no source changes (init 201→223, game 167→197, debugger
+11→15) - if you're chasing a "diff" function with a small `nwords`
+mismatch and an all-zero tail in the ground truth, check this class of
+false positive before touching the source.
 
 Progress is measured by matched bytes and matched functions. Detailed CSV files can be regenerated with:
 

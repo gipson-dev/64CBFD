@@ -21,10 +21,10 @@ functions get matched):
 
 | Section | Byte-exact | Blocked on callees | Still differ |
 | --- | --- | --- | --- |
-| total | 379 / 1553 (24.40%) | 125 | 1049 |
-| init | 201 / 232 (86.64%) | 3 | 28 |
-| game | 167 / 1151 (14.51%) | 122 | 862 |
-| debugger | 11 / 170 (6.47%) | 0 | 159 |
+| total | 435 / 1553 (28.01%) | 145 | 973 |
+| init | 223 / 232 (96.12%) | 4 | 5 |
+| game | 197 / 1151 (17.12%) | 141 | 813 |
+| debugger | 15 / 170 (8.82%) | 0 | 155 |
 
 When regenerating, update both tables together with the copies in the
 [root README](../README.md) and [Project overview](PROJECT.md).

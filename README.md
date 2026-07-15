@@ -23,10 +23,10 @@ exact retail bytes (`make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on callees | Still differ |
 | --- | --- | --- | --- |
-| total | 379 / 1553 (24.40%) | 125 | 1049 |
-| init | 201 / 232 (86.64%) | 3 | 28 |
-| game | 167 / 1151 (14.51%) | 122 | 862 |
-| debugger | 11 / 170 (6.47%) | 0 | 159 |
+| total | 435 / 1553 (28.01%) | 145 | 973 |
+| init | 223 / 232 (96.12%) | 4 | 5 |
+| game | 197 / 1151 (17.12%) | 141 | 813 |
+| debugger | 15 / 170 (8.82%) | 0 | 155 |
 
 "Blocked on callees" functions only differ in `j`/`jal` target addresses
 and will self-resolve as the functions they reference get matched. When

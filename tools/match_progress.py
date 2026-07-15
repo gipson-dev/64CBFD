@@ -60,6 +60,12 @@ def is_jump(word_a, word_b):
 
 
 def classify(ours, truth):
+    if len(ours) < len(truth) and all(w == 0 for w in truth[len(ours):]):
+        # Trailing words are inter-function alignment nops that splat's
+        # boundary detection folded into this symbol's declared length -
+        # they aren't part of the function itself, so don't let them force
+        # a "diff" verdict on an otherwise byte-exact function.
+        truth = truth[:len(ours)]
     if len(ours) != len(truth):
         return "diff", max(abs(len(ours) - len(truth)), 1)
     real = jump = 0
