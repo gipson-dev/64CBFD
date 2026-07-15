@@ -662,54 +662,58 @@ void func_16002DE4(struct262 *arg0, u8 arg1, u8 *arg2, s16 arg3, s16 arg4) {
         }
     }
 }
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-void func_160033A8(struct262 *arg0, s32 arg1) {
+// %d/%i/%o/%x/%X: 64-bit integer to string via repeated division.
+// NON-MATCHING (159/170 words) but structurally verified against retail:
+// the u8 arg1 (entry andi+home-store), pos -= 1 (keeps the buf index a
+// register expression - `pos = 23` folds into an sp-offset store, retail
+// doesn't), if/else + negated inner ternary for radix, per-iteration
+// `value = arg0->num.value` reload (reuses value's slot as the lldiv arg),
+// and this declaration order are all confirmed against the retail listing.
+// Remaining delta is register allocation: retail holds &buf in s2 and
+// SPILLS radix to a stack home (0x70) around each libcall, while our build
+// gives radix the saved reg and folds buf addressing into sp offsets -
+// tried an explicit bufp pointer local, no change. Frame 0xA0 vs 0x90.
+void func_160033A8(struct262 *arg0, u8 arg1) {
     u8 buf[24];
-    u8 *table;
     s32 radix;
-    s32 pos;
-    s64 value;
     u64 uvalue;
     lldiv_t qr;
+    s32 pos;
+    s64 value;
+    u8 *table;
     s32 total;
     s32 extra;
 
-    if ((arg1 & 0xFF) == 'X') {
+    if (arg1 == 'X') {
         table = &D_16003CCC;
     } else {
         table = &D_16003CB8;
     }
-    pos = 0x18;
-    if ((arg1 & 0xFF) == 'o') {
+    pos = 24;
+    if (arg1 == 'o') {
         radix = 8;
     } else {
-        radix = 0x10;
-        if ((arg1 & 0xFF) != 'x' && (arg1 & 0xFF) != 'X') {
-            radix = 0xA;
-        }
+        radix = (arg1 != 'x' && arg1 != 'X') ? 10 : 16;
     }
     value = arg0->num.value;
-    if (((arg1 & 0xFF) == 'd' || (arg1 & 0xFF) == 'i') && value < 0) {
-        value = -value;
-    }
-    if ((value != 0) || (arg0->width != 0)) {
-        pos = 0x17;
-        uvalue = value;
-        buf[0x17] = table[uvalue % (u32) radix];
-    }
     uvalue = value;
-    value = uvalue / (u32) radix;
-    arg0->num.value = value;
-    if ((value > 0) && (pos > 0)) {
-        do {
-            qr = lldiv(value, radix);
-            pos -= 1;
-            arg0->num.value = qr.quot;
-            buf[pos] = table[(u32) qr.rem];
-            value = arg0->num.value;
-        } while ((value > 0) && (pos > 0));
+    if ((arg1 == 'd' || arg1 == 'i') && value < 0) {
+        uvalue = -value;
     }
-    total = 0x18 - pos;
+    if ((uvalue != 0) || (arg0->width != 0)) {
+        pos -= 1;
+        buf[pos] = table[uvalue % radix];
+    }
+    arg0->num.value = uvalue / radix;
+    value = arg0->num.value;
+    while ((value > 0) && (pos > 0)) {
+        qr = lldiv(value, radix);
+        pos -= 1;
+        arg0->num.value = qr.quot;
+        buf[pos] = table[qr.rem];
+        value = arg0->num.value;
+    }
+    total = 24 - pos;
     arg0->len = total;
     func_16001AD0(arg0->dest, &buf[pos], total);
     if (arg0->len < arg0->width) {

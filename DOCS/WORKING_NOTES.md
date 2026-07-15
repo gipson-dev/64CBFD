@@ -25,6 +25,46 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-15, eleventh session part 3 - THE BLOCKING IDIOM IS
+CRACKED; func_16002D2C byte-exact; func_160033A8 structurally rebuilt.)**
+
+- **The unfolded-(s16) idiom, solved**: retail's `li 2; sll 16; sra 16`
+  pairs come from **`return (s16) (cond ? 2 : 1);`** - IDO 5.3's cfe
+  lowers a cast-of-ternary by converting **each arm at its own definition
+  site**, and uopt never constant-folds those conversions. Every
+  plain-variable form (s16 local, s32 + cast, two returns, if/else arms)
+  gets folded to `li v0,N`. Corollary discovered on the same function:
+  reading `arg1[0]` directly everywhere (no `val` local) is also required
+  - CSE supplies the single lhu in a2, while a named u16 local flips the
+  a2/v1 register assignment or materializes a spurious `andi 0xFFFF`.
+  With both, **func_16002D2C is byte-exact (46/46)**. Committed.
+- **Ruled out compiler differences definitively**: IDO 7.1 (fetched
+  decompals ido-static-recomp, user-approved) produces an in-place
+  `sra a2/sll a2/sra a2` entry conversion that contradicts retail's
+  three-register form - the file is IDO 5.3. `-cckr` produces `srl` for
+  the u16 exponent shift where retail has `sra` - the file is ANSI mode.
+  `-O1` bloats everything ~35%. So: **5.3, ANSI, -O2, as configured.**
+- **New idiom catalogue from func_160033A8** (all verified against the
+  retail listing, function now 159/170 words with a fully-matching entry
+  and radix-selection region): `u8`-typed parameters produce the entry
+  `andi 0xFF` + home-slot store (same convention as func_16002DE4's known
+  signature); `pos -= 1` instead of `pos = 23` keeps the buffer index a
+  register expression (a constant assignment folds the store into a fixed
+  sp offset, retail computes base+index); the radix selection is
+  `if (c=='o') radix = 8; else radix = (c!='x' && c!='X') ? 10 : 16;`
+  (outer if/else + NEGATED inner ternary - arm order follows source
+  order); `uvalue % radix` / `uvalue / radix` with **no (u32) casts**
+  (s32 radix promotes to s64 with sign-extension: `sra a2,t1,31` before
+  __ull_rem/__ull_div); the loop re-reads `arg0->num.value` into `value`
+  each iteration (reuses value's stack slot as the lldiv argument).
+  Remaining delta is pure register allocation (retail: &buf in s2, radix
+  spilled to 0x70; ours: radix in s2, buf sp-folded) - an explicit bufp
+  local didn't change it; parked with a detailed comment in the source.
+- Fast iteration harness for single-function experiments (compiles one
+  file with exact project flags, diffs one function against retail bytes
+  positionally): `scratchpad/quicktest.sh` - recreate from the session
+  transcript if needed; ~5s per experiment vs ~40s full make.
+
 **Update (2026-07-15, eleventh session part 2 - the %-engine's blocking
 idiom identified and characterized; func_16002D2C structure verified).**
 Worked `debugger_257350.c`'s five size-wrong functions. Results:
