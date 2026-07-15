@@ -25,6 +25,30 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-15, seventh session):** converting raw-`GLOBAL_ASM`
+debugger functions to C (user asked to work on functions still needing
+conversion). Set up `mips_to_c` in this environment (pycparser version
+mismatch - fixed with `pip install --break-system-packages pycparser==2.21`
+- and `conker/tools/ctx.py` for the type-context file, both undocumented
+before now). Converted 2 of debugger's 12 remaining raw functions
+(`func_1600160C`, `func_16001678`); found one (`func_16003650`) is
+genuinely hand-written CP0/TLB code with no C equivalent, permanently
+skip it. **Unexpected big win:** converting those 2 functions fixed a
+pre-existing symbol-address-placement bug affecting several `D_1600xxxx`
+globals in `debugger/debugger.c`, which was silently blocking byte-matches
+for *other, unrelated, already-converted* functions in the same file -
+debugger's byte-exact rate jumped 8.82%→74.42% (15→128 of 172) from that
+one fix, not from the 2 conversions themselves being byte-perfect (they
+aren't, see Session log). 10 raw functions remain in debugger (1 of which,
+`func_16003650`, will never convert); `init` has 315 remaining (many
+trivial libultra stubs) and `game` has 5,764 (the long tail, plus a lot of
+`.L..._game_data` entries in `progress.csv` that are data-label artifacts,
+not real functions - worth filtering out before trusting that raw count).
+Tables updated in PROJECT.md/README.md/DOCS/README.md. Full detail,
+including two still-open blockers (`func_16001B34`'s float-argument gap
+affects `func_16000F8C`/`func_1600078C`; register-allocation/operand-order
+tuning needed on the 2 converted functions), in the Session log.
+
 **Update (2026-07-15, sixth session):** picked up init-segment matching.
 Found `conker/conker.ld` (gitignored, splat-generated) had been silently
 clobbered by the EU extraction two sessions ago - it isn't
@@ -289,6 +313,113 @@ git checkout -- .
 ```
 
 ## Session log
+
+### 2026-07-15 (seventh session - raw-asm-to-C conversion pass, debugger)
+
+- User asked to work on functions still needing conversion from raw
+  assembly to C (as opposed to the previous session's *matching* pass on
+  already-converted functions). Surveyed remaining raw counts via
+  `progress.csv` (`language != "c"` rows) per section: **init 315,
+  game 5764, debugger 12.** Game's raw count is inflated by data-label
+  artifacts (`.L15032138_game_data` etc. - 1-2 "word" entries that are
+  jump-table/data labels caught in the same CSV, not real functions);
+  didn't filter these out this session, but don't trust the raw 5764
+  figure as "functions to convert" without doing so first. Debugger's 12
+  is small and bounded (all real functions, 27-420 words) - picked it as
+  this session's target since finishing it is an achievable milestone.
+- **Set up `mips_to_c` (undocumented in this repo before now):**
+  `tools/mips_to_c/m2c.py` failed with `ModuleNotFoundError:
+  pycparser.plyparser` - the environment had `pycparser` 3.0 installed but
+  `pyproject.toml` pins `^2.21`, and 3.0 removed the `plyparser` submodule.
+  Fixed with `pip install --break-system-packages pycparser==2.21`. Also
+  needed a type-context file: `conker/tools/ctx.py path/to/some.c`
+  preprocesses that file (and its includes) into `conker/ctx.c`, which
+  `m2c.py --context conker/ctx.c` reads for struct/global/function-signature
+  info - generated one from `src/debugger/debugger.c` (pulls in
+  `functions.h`/`variables.h` transitively). Deleted the generated
+  `ctx.c` afterward (regenerate on demand, don't commit it - same
+  category as `asm/`/`assets/`/`build/`).
+- **`func_1600160C` (27 words) converted.** Raw asm proved it takes an
+  `s32 arg0` (`andi $v0,$a0,...`), but its only call site
+  (`src/debugger/debugger.c`, inside `func_160012B0`) was
+  `func_1600160C()` - zero args, no prototype existed anywhere. This is
+  the same class of bug as last session's `func_151696DC` call-site fix:
+  the call happened to already compile correctly because `arg0` (the
+  caller's own first param) was still sitting in `$a0` un-clobbered at
+  that point, so the missing argument was silently free. Fixed the call
+  site to `func_1600160C(arg0)` explicitly (verified this doesn't change
+  `func_160012B0`'s own already-exact codegen) and added a real prototype
+  to `functions.h`.
+- **`func_16001678` (31 words) converted.** A framebuffer-region fill loop
+  (writes the repeating word `0x10001` in 4-word bursts). No prior call
+  sites reference it (dead code from the game's perspective, or
+  called via a function pointer table not yet identified) so no call-site
+  bug to fix here.
+- **`func_16003650` (40 words) is genuinely not a C-conversion target.**
+  Its `.s` file is headed `/* Handwritten function */` and contains raw
+  `mtc0`/`tlbr`/`mfc0` (COP0/TLB) instructions reading all 32 TLB entries'
+  EntryHi/EntryLo0/EntryLo1/PageMask into four output arrays - no C
+  compiler emits these opcodes, so there's no source form that would
+  "match" it by compiling. 32 other top-level (non-`nonmatchings`) `.s`
+  files repo-wide share this `/* Handwritten function */` marker (grep for
+  it in `asm/`) - same story for all of them. Left as `GLOBAL_ASM`
+  permanently; doesn't count against real conversion progress once
+  someone decides how to annotate "not applicable" functions (not
+  attempted here - `progress.py`/`match_progress.py` don't currently
+  special-case this).
+- **Major incidental discovery: fixed a symbol-address-placement bug
+  affecting the whole file.** Investigating why the two newly-converted
+  functions weren't byte-exact, found `lui/lw` pairs loading
+  `D_160038A8`/`D_16003888` from the wrong address - `nm
+  build/conker.us.elf` showed both symbols linked ~16 bytes *before* the
+  address their own `D_<hex>` name encodes (e.g. `D_16003888` resolved to
+  `0x16003878`). No `symbol_addrs.us.txt` or `undefined_syms_auto.txt`
+  entry existed for either - same unexplained-linker-placement class of
+  bug as last session's init literal-pool drift, but for a raw data
+  region instead of compiler-emitted float constants. **After converting
+  the 2 functions (replacing their `GLOBAL_ASM` pragmas with real C),
+  this resolved itself** - re-`nm`'d and both symbols now land exactly on
+  their name-implied addresses. Re-ran match-progress and found this
+  wasn't cosmetic: `func_16000424`, `func_16000058`, `func_16000000` (all
+  pre-existing, already-converted functions using these same globals,
+  previously showing as "diff") flipped to byte-exact with zero edits to
+  them. **Debugger's byte-exact count jumped 15→128 of 172 (8.82%→74.42%)
+  from this one side effect** - dwarfing the 2 functions actually
+  converted. Root mechanism not identified (didn't dig into *why*
+  replacing the `GLOBAL_ASM` stub fixed the neighboring data layout) -
+  worth remembering as a technique: if a file has multiple
+  address-drift-looking diffs across unrelated functions, try converting
+  a neighboring still-raw function before hunting the "real" cause.
+- **The 2 converted functions are themselves still not byte-exact** (18
+  and 27 real diffs respectively, down from being entirely un-comparable
+  as raw asm) - both are pure register-allocation/operand-order
+  differences now, not logic bugs (every load address and control-flow
+  edge matches; only instruction *scheduling* for a multiply-by-constant
+  sub-expression differs). Tried three source rewrites for
+  `func_1600160C`'s `(pos>>2) * (D_160038A8*2)` term chasing retail's
+  exact `sra`-then-`sll`-then-`multu` order (plain inline expression,
+  explicit named `stride` temp, swapped multiplicand order) - best result
+  (16 remaining diffs, kept in source) still doesn't match; IDO's
+  constant-multiply strength reduction seems to override source-level
+  operand order here. Not resolved - next attempt should try forcing the
+  doubling via `<<1` instead of `*2`, or splitting `pos` itself into a
+  temp before the shift.
+- **Not converted, left for later:** `func_16000F8C` and `func_1600078C`
+  (both already had partial commented-out drafts from an earlier session,
+  marked "lots to figure out"/"close but still some stuff") - both call
+  `func_16001B34` in a way that needs a 5th `f64` argument, but
+  `func_16001B34`'s current declared signature (in `debugger_257350.c`,
+  itself already flagged `// NON-MATCHING: ported from ects_proto`) only
+  takes 4 params. Fixing either properly means first extending
+  `func_16001B34`'s signature and its callee `func_16001BB4`'s
+  format-string handling to support float/double formatting - a separate,
+  larger task, not attempted. `func_160006CC`, `func_160014F0`,
+  `func_16000590`, `func_16001390`, `func_16001044`, `func_16000B14`
+  (debugger.c) and `func_160021FC` (debugger_257350.c) were not started -
+  `func_16001044` (155 words) is a 3-mode number formatter (hex/decimal/
+  float) worth doing first among these since several already-converted
+  functions call it with an still-unverified signature; its float mode
+  also calls `func_16001B34`, same blocker as above.
 
 ### 2026-07-15 (sixth session - init-segment matching pass)
 

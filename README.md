@@ -13,20 +13,20 @@ Snapshot as of 2026-07-14. Functions converted from raw assembly to C
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.77% | 1553 / 7644 (20.32%) |
+| total | `[##----------------------]` 6.77% | 1555 / 7644 (20.34%) |
 | init | `[#####-------------------]` 20.16% | 232 / 547 (42.41%) |
 | game | `[#-----------------------]` 5.11% | 1151 / 6915 (16.64%) |
-| debugger | `[#################-------]` 70.26% | 170 / 182 (93.41%) |
+| debugger | `[#################-------]` 70.26% | 172 / 182 (94.51%) |
 
 Of those C-converted functions, the share that already compiles to the
 exact retail bytes (`make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on callees | Still differ |
 | --- | --- | --- | --- |
-| total | 435 / 1553 (28.01%) | 145 | 973 |
+| total | 548 / 1555 (35.24%) | 145 | 862 |
 | init | 223 / 232 (96.12%) | 4 | 5 |
 | game | 197 / 1151 (17.12%) | 141 | 813 |
-| debugger | 15 / 170 (8.82%) | 0 | 155 |
+| debugger | 128 / 172 (74.42%) | 0 | 44 |
 
 "Blocked on callees" functions only differ in `j`/`jal` target addresses
 and will self-resolve as the functions they reference get matched. When

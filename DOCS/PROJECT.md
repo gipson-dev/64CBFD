@@ -148,15 +148,15 @@ Run `make -C conker progress` for current local numbers.
 
 ### Code decompilation snapshot
 
-Last regenerated: 2026-07-14, from a fully working `.map`-based build
+Last regenerated: 2026-07-15, from a fully working `.map`-based build
 (`make -C conker progress NON_MATCHING=1`).
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.77% | 1553 / 7644 (20.32%) |
+| total | `[##----------------------]` 6.77% | 1555 / 7644 (20.34%) |
 | init | `[#####-------------------]` 20.16% | 232 / 547 (42.41%) |
 | game | `[#-----------------------]` 5.11% | 1151 / 6915 (16.64%) |
-| debugger | `[#################-------]` 70.26% | 170 / 182 (93.41%) |
+| debugger | `[#################-------]` 70.26% | 172 / 182 (94.51%) |
 
 Two caveats about what this table measures:
 
@@ -176,10 +176,10 @@ bytes (last regenerated 2026-07-15, via
 
 | Section | Byte-exact | Blocked on callees | Still differ |
 | --- | --- | --- | --- |
-| total | 435 / 1553 (28.01%) | 145 | 973 |
+| total | 548 / 1555 (35.24%) | 145 | 862 |
 | init | 223 / 232 (96.12%) | 4 | 5 |
 | game | 197 / 1151 (17.12%) | 141 | 813 |
-| debugger | 15 / 170 (8.82%) | 0 | 155 |
+| debugger | 128 / 172 (74.42%) | 0 | 44 |
 
 "Blocked on callees" means the only remaining differences are `j`/`jal`
 target addresses - those functions need no further edits and will
@@ -201,6 +201,24 @@ to "exact" with no source changes (init 201→223, game 167→197, debugger
 11→15) - if you're chasing a "diff" function with a small `nwords`
 mismatch and an all-zero tail in the ground truth, check this class of
 false positive before touching the source.
+
+**2026-07-15, same day: debugger jumped 15→128 byte-exact from converting
+just 2 raw functions.** Converting `func_1600160C`/`func_16001678` (the
+two smallest remaining `GLOBAL_ASM` functions in `debugger/debugger.c`)
+from raw assembly to C incidentally fixed a pre-existing symbol-placement
+bug: several `D_1600xxxx` globals in that file (`D_16003888`,
+`D_16003898`, `D_160038A8`, ...) were linking ~16 bytes off from the
+addresses their own names encode (confirmed via `nm build/conker.us.elf`
+before/after). Every other already-converted function in the file that
+referenced those globals (e.g. `func_16000424`, `func_16000058`,
+`func_16000000`) was silently failing to byte-match because of it, even
+though their own C was already correct. Root mechanism not fully pinned
+down - likely the same class of splat boundary-detection issue as the
+init-segment literal-pool drift below, but for raw-`.s`-adjacent data
+symbols instead of compiler-emitted float literals. Lesson: when a file
+has unexplained address-drift-looking diffs across *multiple* unrelated
+functions, converting a neighboring still-`GLOBAL_ASM` function can be a
+higher-leverage fix than chasing each symptom individually.
 
 Progress is measured by matched bytes and matched functions. Detailed CSV files can be regenerated with:
 
