@@ -6,101 +6,88 @@
 
 void func_160018BC(void);
 
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+// synchronous controller poll for the crash debugger: packs and sends the
+// PIF read command, busy-waiting on osGetCount instead of the OS event
+// queue (the debugger can't rely on the scheduler after a crash)
 s32 func_16001700(void) {
-    s32 sp24;
+    s32 ret;
     u8 *fill;
-    s32 s0;
-    u32 target;
+    u8 *end;
+    s32 t;
+    u32 timeout;
 
-    if (__osContLastCmd != 1) {
+    if (__osContLastCmd != CONT_CMD_READ_BUTTON) {
         func_160018BC();
-        func_160019A8(1, &__osContPifRam);
-        s0 = 0;
-        target = osGetCount() + 0x30D40;
-        if (osGetCount() < target) {
-            do {
-                s0 = func_160016F4(s0);
-            } while (osGetCount() < target);
+        func_160019A8(OS_WRITE, &__osContPifRam);
+        t = 0;
+        timeout = osGetCount() + 0x30D40;
+        while (osGetCount() < timeout) {
+            t = func_160016F4(t);
         }
-        func_160016F4(s0);
+        func_160016F4(t);
     }
 
-    fill = (u8 *) &__osContPifRam;
+    t = 0;
     do {
-        fill += 4;
-        *(u32 *)(fill - 4) = 0xFF;
-    } while (fill < (u8 *) &__osContLastCmd);
-
-    D_80042A4C = 0;
-    sp24 = func_160019A8(0, &__osContPifRam);
-    __osContLastCmd = 1;
-    s0 = 0;
-    target = osGetCount() + 0xC3500;
-    if (osGetCount() < target) {
-        do {
-            s0 = func_160016F4(s0);
-        } while (osGetCount() < target);
+        ((u32 *) &__osContPifRam)[t] = CONT_CMD_NOP;
+        t++;
+    } while (t < ARRLEN(__osContPifRam.ramarray) + 1);
+    __osContPifRam.pifstatus = 0;
+    ret = func_160019A8(OS_READ, &__osContPifRam);
+    __osContLastCmd = CONT_CMD_READ_BUTTON;
+    t = 0;
+    timeout = osGetCount() + 0xC3500;
+    while (osGetCount() < timeout) {
+        t = func_160016F4(t);
     }
-    func_160016F4(s0);
-    return sp24;
+    func_160016F4(t);
+    return ret;
 }
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-void func_16001830(OSContPad *arg0) {
-    __OSContReadFormat *var_v0;
-    s32 var_v1;
-
-    var_v0 = (__OSContReadFormat *) &__osContPifRam;
-    var_v1 = 0;
-    if ((s32) __osMaxControllers > 0) {
-        do {
-            arg0->errno = (var_v0->rxsize & CHNL_ERR_MASK) >> 4;
-            if (!arg0->errno) {
-                arg0->button = var_v0->button;
-                arg0->stick_x = var_v0->stick_x;
-                arg0->stick_y = var_v0->stick_y;
-            }
-            var_v1 += 1;
-            var_v0 = (__OSContReadFormat *)((u8 *) var_v0 + 8);
-            arg0 = (OSContPad *)((u8 *) arg0 + 6);
-        } while (var_v1 < (s32) __osMaxControllers);
-    }
-}
-// builds the PIF controller-read command block (osContStartReadData equivalent)
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-void func_160018BC(void) {
-    u8 *fill;
-    s32 n;
+// __osContGetReadData - retail is compiled from the stock libultra source
+// (by-value struct copy through a stack temp, which is what generates the
+// lwl/lwr pairs), not the ects_proto pointer-walk shape
+void func_16001830(OSContPad *data) {
+    u8 *ptr;
+    __OSContReadFormat requestformat;
     s32 i;
-    __OSContReadFormat template;
-    __OSContReadFormat *dest;
 
-    fill = (u8 *) &__osContPifRam;
-    do {
-        fill += 4;
-        *(u32 *)(fill - 4) = 0;
-    } while (fill < (u8 *) &__osContLastCmd);
-
-    __osContPifRam.pifstatus = 1;
-    template.dummy = 0xFF;
-    template.txsize = 1;
-    template.rxsize = 4;
-    template.cmd = 1;
-    template.button = 0xFFFF;
-    template.stick_x = -1;
-    template.stick_y = -1;
-
-    n = __osMaxControllers;
-    dest = (__OSContReadFormat *) &__osContPifRam;
-    i = 0;
-    if (n > 0) {
-        do {
-            i += 1;
-            dest += 1;
-            *(dest - 1) = template;
-        } while (i < n);
+    ptr = (u8 *) &__osContPifRam;
+    for (i = 0; i < __osMaxControllers; i++, ptr += sizeof(requestformat), data++) {
+        requestformat = *(__OSContReadFormat *) ptr;
+        data->errno = CHNL_ERR(requestformat);
+        if (data->errno == 0) {
+            data->button = requestformat.button;
+            data->stick_x = requestformat.stick_x;
+            data->stick_y = requestformat.stick_y;
+        }
     }
-    *(u8 *) dest = 0xFE;
+}
+// __osPackReadData - retail is compiled from the stock libultra source (the
+// template struct lives on the stack and is copied per controller with
+// swl/swr); note the zero-fill covers the full OSPifRam (16 words including
+// pifstatus), one word more than stock libultra's ramarray-only loop
+void func_160018BC(void) {
+    u8 *ptr;
+    __OSContReadFormat readformat;
+    s32 i;
+
+    ptr = (u8 *) &__osContPifRam;
+    for (i = 0; i < ARRLEN(__osContPifRam.ramarray) + 1; i++) {
+        ((u32 *) &__osContPifRam)[i] = 0;
+    }
+    __osContPifRam.pifstatus = CONT_CMD_EXE;
+    readformat.dummy = CONT_CMD_NOP;
+    readformat.txsize = CONT_CMD_READ_BUTTON_TX;
+    readformat.rxsize = CONT_CMD_READ_BUTTON_RX;
+    readformat.cmd = CONT_CMD_READ_BUTTON;
+    readformat.button = 0xFFFF;
+    readformat.stick_x = -1;
+    readformat.stick_y = -1;
+    for (i = 0; i < __osMaxControllers; i++) {
+        *(__OSContReadFormat *) ptr = readformat;
+        ptr += sizeof(__OSContReadFormat);
+    }
+    *ptr = CONT_CMD_END;
 }
 
 // another __osSiDeviceBusy function

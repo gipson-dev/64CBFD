@@ -25,6 +25,74 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-15, eleventh session - six debugger functions matched
+byte-exact; debugger overlay code-drift eliminated through 0x16001BB4).**
+Matched, all verified 0 real diffs at their name-implied retail bytes:
+
+- `func_16001700` / `func_16001830` / `func_160018BC`
+  (`debugger_256F80.c`): retail is compiled from **stock libultra
+  controller source**, not the ects_proto decompiler shapes -
+  `func_16001830` is `__osContGetReadData` (the by-value
+  `__OSContReadFormat requestformat = *(__OSContReadFormat *)ptr;` struct
+  copy through a stack temp is what generates the lwl/lwr pairs),
+  `func_160018BC` is `__osPackReadData` (stack-resident template struct
+  copied per controller with swl/swr; note its zero-fill covers all 16
+  OSPifRam words including pifstatus, one more than stock libultra's
+  ramarray-only loop - hence `ARRLEN(ramarray) + 1`), and `func_16001700`
+  is a synchronous osContInit-style poll. Two hard-won idioms in 1700:
+  the 0xFF fill loop only matches as an **indexed do-while reusing the
+  busy-wait counter variable as the index** (`t = 0; do { ((u32 *)
+  &__osContPifRam)[t] = CONT_CMD_NOP; t++; } while (t < ...)`) - a
+  pointer-walk version CSEs `&__osContPifRam` into a1 across the loop,
+  the pifstatus store, and the following call (2 insns shorter than
+  retail, which rematerializes the address each time), and an indexed
+  for-loop with a separate `i` gets unrolled 4x. Reusing `t` also puts
+  retail's `move s0,zero` reset in the jal delay slot exactly.
+- `func_16001678` (`debugger.c`): retail is **void** - the old
+  `u32`-returning version cost exactly 4 extra insns (merged-exit `move
+  v0`/`addiu v0`/second `jr` block) and was the sole source of the +0x10
+  text drift that had shifted everything from `func_160016F4` to
+  `func_16001B00`. Sole caller `func_16000B14` clobbers v0 immediately
+  (verified in the asm), so the return value was fiction. Also `>> 1` on
+  `D_160038A8` is arithmetic (s32), not the old `(u32)` cast's srl.
+- `func_1600160C` (`debugger.c`): matches only as sequential
+  compound-assignment statements accumulating into `pos` (`pos >>= 2;
+  pos *= D_160038A8 << 1; pos += ...; pos += ...; pos += 0x10;` then
+  `return D_8002AAE8[D_16003888] + pos;`). Three separate IDO behaviors
+  had to be steered: parens do NOT stop reassociation of integer `+`
+  (needed the named-variable accumulation to force `addu v1,v1,x`
+  chains), `* 2` gets hoisted out of a multu into a post-mflo `sll` but
+  **`<< 1` stays inline as the multu operand**, and reusing `pos` itself
+  (rather than a fresh `off`/`stride` local) is what lands the retail
+  register assignment.
+- `func_16001B34` (`debugger_257350.c`): **it's a true varargs function**
+  - `s32 func_16001B34(u8 *arg0, u8 *arg1, ...)` with
+  `va_start(ap, arg1)` passed straight to `func_16001BB4`. This is the
+  final word on the two-session 4-vs-5-argument saga: IDO's varargs
+  codegen homes all four register args at entry (frame 0x20, args at
+  0x20-0x2C, reloads a1/a2 from home slots for the call), which neither
+  K&R definitions nor address-taken params reproduce (both were tried
+  and produce the old 13-diff shape). The va_list == `&arg2` home slot,
+  so callers passing the `%f` f64 need no prototype tricks at all -
+  though `functions.h` still deliberately omits the prototype (now
+  merely optional rather than load-bearing; could be added back as
+  `(u8 *, u8 *, ...)` if wanted).
+- `func_16001B00` (strlen): confirmed already byte-exact - the "3 diffs"
+  in the previous session's list was stale.
+
+**Current debugger overlay state**: zero code drift from 0x16000000
+through `func_16001BB4`'s start; every function before it is either
+byte-exact or (for `func_16001044`, 146 diffs, correct size) content-only.
+Remaining -0x60 data-section displacement (rodata linked 0x60 low, so any
+function referencing `D_16003xxx`+ shows a few phantom %lo diffs -
+including the GLOBAL_ASM ones, which proves it's placement not code) is
+fully accounted for by five size-wrong functions in `debugger_257350.c`:
+`func_16001BB4` (-0x8C), `func_1600288C` (+0x8), `func_16002D2C` (-0x14),
+`func_16002DE4` (+0x78), `func_160033A8` (-0x44). Match those five and the
+whole overlay's data heals. Verification script recreated at
+`diffcheck.py` (see 2026-07-15 method note; now drift-aware: compares
+built words against retail bytes at the **name-implied** address).
+
 **Update (2026-07-15, tenth session continued - func_16001B34 fixed,
 func_16001044 safely re-converted).** Followed up on the tenth session's
 "net wash" ending by tackling its top recommended next step: found and

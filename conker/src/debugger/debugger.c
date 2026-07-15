@@ -461,18 +461,25 @@ void func_16001338(u8 arg0, u8 arg1, u8 arg2) {
 // }
 #pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_160014F0.s")
 
-// splat into framebuffer
+// text position -> framebuffer address
 s32 func_1600160C(s32 arg0) {
     s32 pos = arg0 & 0xFFE0;
 
     if (D_160038A8 != 0x124) {
         pos = (pos >> 2) + pos;
     }
-    return D_8002AAE8[D_16003888] + ((D_160038A8 * 2) * (pos >> 2)) + ((arg0 & 0x1F) * 0x10) + (D_160038A8 * 4) + 0x10;
+    pos >>= 2;
+    pos *= D_160038A8 << 1;
+    pos += (arg0 & 0x1F) * 0x10;
+    pos += D_160038A8 * 4;
+    pos += 0x10;
+    return D_8002AAE8[D_16003888] + pos;
 }
 
-// contains delay slot
-u32 func_16001678(void) {
+// clear the framebuffer to 0x0001 pixels (4x-unrolled fill); retail is void
+// (the sole caller, func_16000B14, ignores v0) - a returned value costs 4
+// extra instructions for the merged exit and breaks the section layout
+void func_16001678(void) {
     s32 fb;
     s32 end;
     s32 width;
@@ -483,7 +490,7 @@ u32 func_16001678(void) {
     } else {
         width = 0x108;
     }
-    end = fb + (((u32) D_160038A8 >> 1) * width * 4);
+    end = fb + ((D_160038A8 >> 1) * width * 4);
     if ((u32) fb < (u32) end) {
         do {
             fb += 0x10;
@@ -492,9 +499,7 @@ u32 func_16001678(void) {
             *(u32 *)(fb - 0x8) = 0x10001;
             *(u32 *)(fb - 0x4) = 0x10001;
         } while ((u32) fb < (u32) end);
-        return fb;
     }
-    return fb + 0x10;
 }
 
 s32 func_160016F4(s32 arg0) {

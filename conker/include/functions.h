@@ -846,7 +846,7 @@ s32  func_160014F0(s32 arg0, s32 arg1);
 void func_16001338(u8 arg0, u8 arg1, u8 arg2);
 s32  func_1600160C(s32 arg0);
 void func_16001390(s16 arg0, s16 arg1, s16 arg2, s16 arg3);
-u32  func_16001678(void);
+void func_16001678(void);
 s32  func_160016F4(s32 arg0);
 s32  func_16001984();
 s32  func_160019A8(s32 direction, void *dramAddr);
