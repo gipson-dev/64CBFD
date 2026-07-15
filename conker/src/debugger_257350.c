@@ -480,35 +480,25 @@ void func_1600288C(struct262 *arg0, u8 arg1) {
     func_16002DE4(arg0, arg1, s2, (s16) round_pos, exp10);
 }
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+// classify an IEEE double via its first u16: >0 normal (exponent extracted
+// to *arg0, mantissa top rebased to 1.0-2.0), 0 zero, 1 Inf, 2 NaN/denormal.
+// The (s16)(ternary) return is load-bearing: cfe converts each ternary arm
+// to s16 at its own definition site and uopt never folds those conversions,
+// which is the only source shape that reproduces retail's li/sll/sra pairs
+// (a plain variable or two returns gets constant-folded to li v0,2/1).
+// Reading arg1[0] directly everywhere (no local copy) is also load-bearing:
+// CSE supplies the single lhu in a2; a named local flips the a2/v1 register
+// assignment or materializes an extra andi 0xFFFF.
 s32 func_16002D2C(s16 *arg0, u16 *arg1) {
-    u16 val;
     s16 exp;
 
-    val = arg1[0];
-    exp = (val & 0x7FF0) >> 4;
-    // NON-MATCHING (5 words short, 41/46): everything from the blez tail
-    // down is instruction-exact; the deficit is entirely in this branch,
-    // where retail emits an UNFOLDED (s16) conversion (li 2; sll 16; sra 16)
-    // eagerly after each assignment - one hoisted above the mantissa tests,
-    // one after the val=1 arm - plus a dead li-1 left by beqzl delay-slot
-    // duplication. Every attempt to stop IDO folding/eliding the conversion
-    // failed: s16 var (elided), exp/val reuse (folded), s32 + explicit
-    // (s16) cast with single return (one merged conversion, bnezl tests),
-    // two returns (folded to li v0,2/1), if/else arms (folded), -O1 (whole
-    // file bloats ~35%, definitively wrong), -cckr (+1 word, wrong shape).
-    // Whatever retail's source does defeats uopt's constant prop through
-    // the phi - possibly an idiom elsewhere in the original file changing
-    // the variable's web. Revisit alongside func_16001BB4/func_16002DE4.
+    exp = (arg1[0] & 0x7FF0) >> 4;
     if (exp == 0x7FF) {
         *arg0 = 0;
-        exp = 2;
-        if (!(arg1[0] & 0xF) && (arg1[1] == 0) && (arg1[2] == 0) && (arg1[3] == 0)) {
-            exp = 1;
-        }
-        return exp;
+        return (s16) (((arg1[0] & 0xF) || (arg1[1] != 0) || (arg1[2] != 0) || (arg1[3] != 0)) ? 2 : 1);
     }
     if (exp > 0) {
-        arg1[0] = (val & 0x800F) | 0x3FF0;
+        arg1[0] = (arg1[0] & 0x800F) | 0x3FF0;
         *arg0 = exp - 0x3FE;
         return -1;
     }
