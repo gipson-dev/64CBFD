@@ -386,6 +386,31 @@ git checkout -- .
 
 ## Session log
 
+### 2026-07-15 (ninth session, continued - USF sound rip found in rom backup/)
+
+- User pointed at `rom backup/Conker's Bad Fur Day sound files/` - a
+  community USF (Ultra64 Sound Format) rip: `NUS-NFUE-USA.usflib` (7.4 MB
+  shared library, `NUS-NFUE-USA` = CBFD's real N64 cartridge product code)
+  + 173 `.miniusf` pointer files, tagged `artist=Robin Beanland`,
+  `usfby=Josh W. / hcs`, `copyright=Rare`. Confirmed genuine PSF-family
+  files (`PSF!` magic = `"PSF"` + version byte `0x21`, the registered USF
+  tag).
+  - Filenames are `sparseNN[a-g].miniusf`, `NN` **hex**. Extracted 148
+    unique base indices, exactly contiguous `0x01`-`0x94` with no gaps and
+    no `0x00` - independently corroborates the `assets17/0003` "149
+    entries" figure from the wiki (§6 in ASSET_FORMATS.md, added earlier
+    this session) if index 0 is a silence/no-music slot. Folded into
+    ASSET_FORMATS.md §6 as a cross-reference.
+  - These are real playable audio (any PSF-family player, e.g. foobar2000
+    + `in_usf`) - noted as a listening reference for identifying which
+    sequence index plays where in-game, and flagged that
+    `NUS-NFUE-USA.usflib` may embed the same sample/sequence memory image
+    as `assets17`'s `0002`/`0003` sub-files - worth diffing against if
+    anyone picks the container format work back up.
+  - Not attempted: actually playing/diffing the USF data against the
+    ROM's `assets17` content, or writing an extractor. This was a
+    cross-reference/documentation pass only.
+
 ### 2026-07-15 (ninth session - reference sweep: N64ops03.txt, project wiki)
 
 - User pointed at `rom backup/N64ops03.txt` (a generic 1998 MIPS/N64 opcode

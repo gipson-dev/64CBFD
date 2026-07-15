@@ -402,6 +402,27 @@ solid texture region looks like in RGBA16.
     files" description). This is a **separate container format** from the B1
     bank documented above - don't assume `assets17`'s sub-files share one
     schema.
+    **Independent confirmation (2026-07-15):** a community USF rip
+    (`rom backup/Conker's Bad Fur Day sound files/`, `NUS-NFUE-USA.usflib` +
+    173 `.miniusf` pointer files, `usfby=Josh W. / hcs`, `artist=Robin
+    Beanland`) names its tracks `sparseNN[a-g].miniusf` where `NN` is a
+    **hex** index - 148 unique base indices, **contiguous `0x01`-`0x94`,
+    zero gaps, no `0x00`**. That's one short of the 149-entry table above in
+    exactly the way you'd expect if index `0` is a "no music"/silence slot
+    (nothing to rip) and `1`-`148` are the real sequences - strong,
+    independently-sourced corroboration of the 149 count from a completely
+    different source than the wiki page. The `[a-g]` letter suffixes on
+    some indices (e.g. `sparse01a`-`sparse01e`, six variants of track 1)
+    are presumably alternate mixes/loop points for the game's adaptive
+    "sparse" instrumentation system (Rare's dynamic layered-music
+    technique), not separate sequences - i.e. the ROM-side count of 149
+    logical entries should still hold even though the rip has more files
+    than that. USF files are actual playable audio (via any PSF-family
+    player, e.g. foobar2000 + `in_usf`) - useful as a real listening
+    reference when trying to identify which track index corresponds to
+    which in-game context, and `NUS-NFUE-USA.usflib` may itself embed the
+    same sample-bank memory image as `assets17/0002`/`0003` - worth diffing
+    against if the container format work continues.
   - `0000`/`0001`/`0004`–`0006` remain undetermined; the wiki's own file
     numbering for which one carries the B1 header is internally inconsistent
     (heading says `0001`, the shown command runs on `0000.bin`) - re-verify
