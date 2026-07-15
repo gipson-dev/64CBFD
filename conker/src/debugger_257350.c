@@ -509,156 +509,136 @@ s32 func_16002D2C(s16 *arg0, u16 *arg1) {
     return 0;
 }
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+// %f/%e/%g digit placement: lays out the converted digit string (arg2,
+// arg3 digits) and exponent (arg4) into the output record.
+// NON-MATCHING (368/369 words) but structurally aligned with retail:
+// frame 0x20, arg2 copied into one long-lived pointer (s1) that is REUSED
+// for the exponent digit emission (that reuse is what earns it the saved
+// register - separate src/ep/p locals go memory-resident), arg3/arg4
+// updated in place (their spills land in the arg home slots, matching
+// retail's sh 0x2E/0x32), exponent math in plain s32. Remainder: an extra
+// speculative lh in the first beql delay, div-by-constant break-check
+// scheduling, and register-number renames.
 void func_16002DE4(struct262 *arg0, u8 arg1, u8 *arg2, s16 arg3, s16 arg4) {
-    u8 *var_s1;
-    s16 var_a3;
-    s16 var_t0;
-    s32 var_v0;
-    s32 temp_v0;
-    s32 temp_v1;
-    u8 *ep;
-    u8 *p;
-    s16 e;
+    u8 *src;
+    s16 zeros;
+    s32 e;
+    s32 total;
 
-    var_a3 = arg3;
-    var_s1 = arg2;
-    if (var_a3 <= 0) {
-        var_s1 = D_16004878;
-        var_a3 = 1;
+    src = arg2;
+    if (arg3 <= 0) {
+        src = D_16004878;
+        arg3 = 1;
     }
     if ((arg1 == 'f') || (((arg1 == 'g') || (arg1 == 'G')) && (arg4 >= -4) && (arg4 < arg0->width))) {
-        var_t0 = arg4 + 1;
+        arg4 += 1;
         if (arg1 != 'f') {
-            var_v0 = arg0->width;
-            if (!(arg0->flags & 8) && (var_a3 < var_v0)) {
-                arg0->width = (s32) var_a3;
-                var_v0 = (s32) var_a3;
+            if (!(arg0->flags & 8) && (arg3 < arg0->width)) {
+                arg0->width = arg3;
             }
-            temp_v0 = var_v0 - var_t0;
-            arg0->width = temp_v0;
-            if (temp_v0 < 0) {
+            arg0->width -= arg4;
+            if (arg0->width < 0) {
                 arg0->width = 0;
             }
         }
-        if (var_t0 <= 0) {
-            s16 var_v1 = -var_t0;
+        if (arg4 <= 0) {
+            zeros = -arg4;
             arg0->dest[arg0->len] = '0';
-            arg0->len = arg0->len + 1;
+            arg0->len += 1;
             if ((arg0->width > 0) || (arg0->flags & 8)) {
                 arg0->dest[arg0->len] = '.';
-                arg0->len = arg0->len + 1;
+                arg0->len += 1;
             }
-            if (arg0->width < var_v1) {
-                var_t0 = (s16) arg0->width * -1;
-                var_v1 = -var_t0;
+            if (arg0->width < zeros) {
+                arg4 = -(s16) arg0->width;
+                zeros = -arg4;
             }
-            temp_v0 = arg0->width + var_t0;
-            arg0->unk18 = (s32) var_v1;
-            arg0->width = temp_v0;
-            if (temp_v0 < var_a3) {
-                var_a3 = (s16) temp_v0;
+            arg0->unk18 = zeros;
+            arg0->width += arg4;
+            if (arg0->width < arg3) {
+                arg3 = arg0->width;
             }
-            arg0->unk1C = (s32) var_a3;
-            arg3 = var_a3;
-            func_16001AD0(arg0->dest + arg0->len, var_s1, (u32) var_a3);
-            arg0->unk20 = (s32) (arg0->width - arg3);
-        } else if (var_a3 < var_t0) {
-            s16 var_a3_2;
-            arg4 = var_t0;
-            arg3 = var_a3;
-            func_16001AD0(arg0->dest + arg0->len, var_s1, (u32) var_a3);
-            arg0->len = arg0->len + arg3;
-            arg0->unk18 = (s32) (arg4 - arg3);
+            arg0->unk1C = arg3;
+            func_16001AD0(arg0->dest + arg0->len, src, arg3);
+            arg0->unk20 = arg0->width - arg3;
+        } else if (arg3 < arg4) {
+            func_16001AD0(arg0->dest + arg0->len, src, arg3);
+            arg0->len += arg3;
+            arg0->unk18 = arg4 - arg3;
             if ((arg0->width > 0) || (arg0->flags & 8)) {
                 arg0->dest[arg0->len] = '.';
-                arg0->unk1C = arg0->unk1C + 1;
+                arg0->unk1C += 1;
             }
             arg0->unk20 = arg0->width;
         } else {
-            s16 var_a3_2;
-            arg4 = var_t0;
-            arg3 = var_a3;
-            func_16001AD0(arg0->dest + arg0->len, var_s1, (u32) var_t0);
-            arg0->len = arg0->len + arg4;
-            var_a3_2 = arg3 - arg4;
+            func_16001AD0(arg0->dest + arg0->len, src, arg4);
+            arg0->len += arg4;
+            arg3 -= arg4;
             if ((arg0->width > 0) || (arg0->flags & 8)) {
                 arg0->dest[arg0->len] = '.';
-                arg0->len = arg0->len + 1;
+                arg0->len += 1;
             }
-            if ((s16) arg0->width < var_a3_2) {
-                var_a3_2 = (s16) arg0->width;
+            if ((s16) arg0->width < arg3) {
+                arg3 = arg0->width;
             }
-            arg3 = var_a3_2;
-            func_16001AD0(arg0->dest + arg0->len, &var_s1[arg4], (u32) var_a3_2);
-            arg0->len = arg0->len + arg3;
-            arg0->unk18 = (s32) (arg0->width - arg3);
+            func_16001AD0(arg0->dest + arg0->len, src + arg4, arg3);
+            arg0->len += arg3;
+            arg0->unk18 = arg0->width - arg3;
         }
     } else {
-        s16 var_t0_2;
-        s32 var_v0_2;
-        s32 temp_t9;
-
-        var_t0_2 = arg4;
         if ((arg1 == 'g') || (arg1 == 'G')) {
-            var_v0_2 = arg0->width;
-            if (var_a3 < var_v0_2) {
-                arg0->width = (s32) var_a3;
-                var_v0_2 = (s32) var_a3;
+            if (arg3 < arg0->width) {
+                arg0->width = arg3;
             }
-            temp_t9 = var_v0_2 - 1;
-            arg0->width = temp_t9;
-            if (temp_t9 < 0) {
+            arg0->width -= 1;
+            if (arg0->width < 0) {
                 arg0->width = 0;
             }
             arg1 = (arg1 == 'g') ? 'e' : 'E';
         }
-        arg0->dest[arg0->len] = *var_s1;
-        arg0->len = arg0->len + 1;
+        arg0->dest[arg0->len] = *src;
+        arg0->len += 1;
         if ((arg0->width > 0) || (arg0->flags & 8)) {
             arg0->dest[arg0->len] = '.';
-            arg0->len = arg0->len + 1;
+            arg0->len += 1;
         }
         if ((s16) arg0->width > 0) {
-            s16 var_a3_3 = var_a3 - 1;
-            if ((s16) arg0->width < var_a3_3) {
-                var_a3_3 = (s16) arg0->width;
+            arg3 -= 1;
+            if ((s16) arg0->width < arg3) {
+                arg3 = arg0->width;
             }
-            arg3 = var_a3_3;
-            func_16001AD0(arg0->dest + arg0->len, var_s1 + 1, (u32) var_a3_3);
-            var_t0_2 = arg4;
-            arg0->len = arg0->len + arg3;
-            arg0->unk18 = (s32) (arg0->width - arg3);
+            func_16001AD0(arg0->dest + arg0->len, src + 1, arg3);
+            arg0->len += arg3;
+            arg0->unk18 = arg0->width - arg3;
         }
-        ep = arg0->dest + arg0->len + 1;
-        ep[-1] = arg1;
-        if (var_t0_2 >= 0) {
-            ep[0] = '+';
-            p = ep + 1;
+        src = arg0->dest + arg0->len + 1;
+        src[-1] = arg1;
+        if (arg4 >= 0) {
+            src[0] = '+';
         } else {
-            ep[0] = '-';
-            p = ep + 1;
-            var_t0_2 *= -1;
+            src[0] = '-';
+            arg4 = -arg4;
         }
-        e = var_t0_2;
+        src += 1;
+        e = arg4;
         if (e >= 100) {
             if (e >= 1000) {
-                *p = (u8) (e / 1000 + '0');
-                e = (s16) (e % 1000);
-                p += 1;
+                *src = e / 1000 + '0';
+                e = e % 1000;
+                src += 1;
             }
-            *p = (u8) (e / 100 + '0');
-            e = (s16) (e % 100);
-            p += 1;
+            *src = e / 100 + '0';
+            e = e % 100;
+            src += 1;
         }
-        p[0] = (u8) (e / 10 + '0');
-        p[1] = (u8) ((s16) (e % 10) + '0');
-        arg0->unk1C = (s32) (((p + 2) - arg0->dest) - arg0->len);
+        src[0] = e / 10 + '0';
+        src[1] = e % 10 + '0';
+        arg0->unk1C = ((src + 2) - arg0->dest) - arg0->len;
     }
     if ((arg0->flags & 0x14) == 0x10) {
-        temp_v1 = arg0->unk28;
-        temp_v0 = arg0->unkC + arg0->len + arg0->unk18 + arg0->unk1C + arg0->unk20;
-        if (temp_v0 < temp_v1) {
-            arg0->padWidth = (s32) (temp_v1 - temp_v0);
+        total = arg0->unkC + arg0->len + arg0->unk18 + arg0->unk1C + arg0->unk20;
+        if (total < arg0->unk28) {
+            arg0->padWidth = arg0->unk28 - total;
         }
     }
 }
