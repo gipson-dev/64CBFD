@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "string.h"
 
 #include "functions.h"
 #include "variables.h"
@@ -163,8 +164,80 @@ void func_16000424(struct118 *arg0) {
     }
 }
 
+// reverted to GLOBAL_ASM 2026-07-15: 1 word short of retail (a loop-exit
+// condition codegen quirk - retail materializes "i<16" into a register
+// with a separate slti before the branch, tried both a plain for-loop and
+// a do-while, neither reproduced it) - the deficit alone is enough to
+// cascade into breaking already-matched functions elsewhere in this file
+// (confirmed: func_16000424/func_16000058/func_16000000 regressed with
+// this enabled, back to 0 diffs with it reverted). Draft below is
+// otherwise logically correct including the func_16001044 float-mode
+// calls, which now work correctly since func_16001B34's calling
+// convention was fixed this session - only this loop's exact shape is
+// missing.
+// void func_16000590(void *arg0) {
+//     s32 s2 = *(s32 *) ((u8 *) arg0 + 0x12C);
+//     s32 bits;
+//     s32 pos = 0x2C;
+//     s32 i;
+//     s32 v0;
+//     s32 s4 = 0;
+//     s32 val;
+//     u8 *s3;
+//
+//     func_160012B0(3, D_160047A4);
+//     func_16001044(0xA, 0, s2);
+//
+//     bits = (u32) s2 >> 12;
+//     for (i = 0; i < 6; i++) {
+//         if (bits & 1) {
+//             func_160012B0(pos, D_16003B30[i]);
+//             pos += 0x20;
+//         }
+//         bits >>= 1;
+//     }
+//
+//     if (D_16003B28 == 1) {
+//         pos = 0xC3;
+//         v0 = 0x4C;
+//     } else {
+//         v0 = 0x6C;
+//         s4 = 0x10;
+//     }
+//     val = s4;
+//     s3 = (u8 *) arg0 + v0 * 4;
+//     for (i = 0; i < 0x10; i++) {
+//         func_160012B0(pos, D_160047AC);
+//         func_16001044(pos + 2, 1, val);
+//         func_16001044(pos + 5, 2, *(s32 *) (s3 + 4));
+//         s3 += 8;
+//         pos += 0x20;
+//         val += 1;
+//     }
+// }
 #pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_16000590.s")
 
+// reverted to GLOBAL_ASM 2026-07-15: 1 word short of retail (calls the
+// still-reverted func_16001044), part of the same drift investigation as
+// func_16000590/func_16001044 above. Draft below believed correct.
+// void func_160006CC(void *arg0) {
+//     s32 sp3C = D_16003B48; // dead value, always overwritten below - kept for matching
+//     u8 *label = (u8 *) &sp3C;
+//     u8 *entry = D_160037F0;
+//     s32 pos = 0x123;
+//
+//     func_16001338(0xC0, 0xC0, 0xFF);
+//     label[0] = D_160037F0[0];
+//     do {
+//         label[1] = entry[1];
+//         func_160012B0(pos, label);
+//         pos += 3;
+//         func_16001044(pos, 0, ((s32 *) arg0)[entry[2] + 1]);
+//         pos += 0xD;
+//         label[0] = entry[3];
+//         entry += 3;
+//     } while (label[0] != 0);
+// }
 #pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_160006CC.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_1600078C.s")
 // NON-MATCHING: close but still some stuff to figure out
@@ -281,7 +354,60 @@ s32 func_16000A5C(void) {
 //     }
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_16001044.s")
+// draw a number at a screen position: mode 0=hex, 1=decimal, 2=float
+void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
+    s32 sp78[10];
+    s32 fb;
+    s32 i;
+
+    for (i = 0; i < 10; i++) {
+        sp78[i] = D_16003B50[i];
+    }
+
+    if (arg0 >= (D_160038A0 << 5) && arg0 < 0x341) {
+        fb = func_1600160C(arg0);
+        if (arg1 == 0) {
+            s32 i;
+            fb += 0x70;
+            for (i = 0; i < 8; i++) {
+                s32 nibble = arg2 & 0xF;
+                s32 c = (nibble < 10 ? nibble : nibble + 7) + 0x30;
+                fb = func_160014F0(fb, c);
+                arg2 = arg2 >> 4;
+                fb -= 0x10;
+            }
+        } else if (arg1 == 1) {
+            s32 printed = 0;
+            s32 *p;
+
+            if (arg2 < 0) {
+                fb = func_160014F0(fb, '-');
+                arg2 = -arg2;
+            }
+            p = &sp78[9];
+            do {
+                s32 divisor = *p;
+                s32 digit = arg2 / divisor;
+                arg2 = arg2 % divisor;
+                if (digit > 0 || printed || p == sp78) {
+                    fb = func_160014F0(fb, digit + 0x30);
+                    printed = 1;
+                }
+                p--;
+            } while (p >= sp78);
+        } else if (arg1 == 2) {
+            u32 exp = ((u32) arg2 & 0x7F800000) >> 23;
+            if ((exp > 0 && exp < 0xFF) || (exp == 0 && (arg2 << 9) == 0)) {
+                u8 buf[40];
+                f32 f = *(f32 *) &arg2;
+                func_16001B34(buf, D_160047E8, D_160047F0, D_160047F4, (f64) f);
+                func_160012B0(arg0, buf);
+            } else {
+                func_160012B0(arg0, D_160047E4);
+            }
+        }
+    }
+}
 
 void func_160012B0(s32 arg0, u8 *arg1) {
     if (arg1 && (arg0 >= (D_160038A0 << 5)) && (arg0 < 833)) {
@@ -297,7 +423,42 @@ void func_16001338(u8 arg0, u8 arg1, u8 arg2) {
     D_1600388C = ((arg0 & 0xF8) << 8) | ((arg1 & 0xF8) << 3) | ((arg2 & 0xF8) >> 2) | 1;
 }
 
+// fill a rectangle with the current color (D_1600388C) - reverted to
+// GLOBAL_ASM 2026-07-15: converted version was 6 words short of retail
+// (missing its remainder-then-4x-unrolled fill pattern, same idiom class
+// as func_160014F0), which cascaded into breaking several already-matched
+// functions' data-symbol addresses elsewhere in this file. No existing
+// caller, so low value / high risk to leave half-converted - revisit with
+// the unrolled-loop idiom worked out properly before re-attempting.
 #pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_16001390.s")
+// reverted to GLOBAL_ASM 2026-07-15: 1 word short of retail (missing
+// retail's exact unrolled-inner-loop shape, same idiom class as
+// func_16001390 above - a plain unrolled attempt made it worse, not
+// better, see WORKING_NOTES). Called by func_160012B0/func_16001678
+// (both already-matched) - blit an 8x8 glyph into the framebuffer,
+// returning the position of the next glyph.
+// s32 func_160014F0(s32 arg0, s32 arg1) {
+//     s16 *dst = (s16 *) arg0;
+//     s32 c = arg1 & 0xFF;
+//     u8 *glyph;
+//     s32 row;
+//
+//     if (c < 0x20) {
+//         c = 0x20;
+//     }
+//     glyph = &D_16003CE0[(c - 0x20) * 8];
+//     for (row = 0; row < 8; row++) {
+//         u8 bits = *glyph;
+//         s32 col;
+//         for (col = 0; col < 8; col++) {
+//             *dst++ = (bits & 0x80) ? D_1600388C : 1;
+//             bits <<= 1;
+//         }
+//         glyph++;
+//         dst += D_160038A8 - 8;
+//     }
+//     return arg0 + 0x10;
+// }
 #pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_160014F0.s")
 
 // splat into framebuffer

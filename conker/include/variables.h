@@ -1398,6 +1398,8 @@ extern s32  *D_800E9D10; // probably not struct54
 extern s32  D_16001B8C; // a struct
 extern s8   D_160036F3; // control stick Y-axis ?
 extern s32  D_16003848[];
+extern s32  D_16003B48; // fallback initial value for func_160006CC's 2-char label buffer
+extern u8   D_160037F0[]; // stride-3 records: {char0, char1, arg0-array-index}, 0-terminated
 extern u8   D_16003888;
 extern u16  D_1600388C;
 extern s32  D_160038A0;
@@ -1409,8 +1411,11 @@ extern u8   D_16003AF4;
 extern s8   D_16003B1C;
 extern s32  D_16003B20[]; // array containing 0x20 structs?
 extern s8   D_16003B28;
+extern u8  *D_16003B30[]; // 6 label strings for a stat display
 extern s32  D_16003B4C;
 extern struct118 *D_1600389C; // array or struct?
+extern u8   D_16003CE0[]; // 8x8 bitmap font, 8 bytes/glyph, printable ASCII 0x20-0x7F
+extern s32  D_16003B50[10]; // descending powers of ten, [0]=1 (units) .. [9]=1000000000
 
 extern u8   D_160046AC[]; // data
 extern u8   D_160046D0[];
@@ -1427,6 +1432,8 @@ extern u8   D_16004734[];
 extern u8   D_16004738[];
 extern u8   D_16004740[];
 extern u8   D_16004748[];
+extern u8   D_160047A4[];
+extern u8   D_160047AC[];
 extern u8   D_160047B0[];
 extern u8   D_160047BC[];
 extern u8   D_160047C0[];
@@ -1434,6 +1441,10 @@ extern u8   D_160047D0[];
 extern u8   D_160047D4[];
 extern u8   D_160047DC[];
 extern u8   D_160047E0[];
+extern u8   D_160047E4[];
+extern u8   D_160047E8[];
+extern u8   D_160047F0[];
+extern u8   D_160047F4[];
 extern u8   D_16004870[]; // "e" / "E" format error string
 extern u8   D_16004874[]; // generic format error string
 extern u8   D_16004878[]; // default digit string when no digits were generated ("0")

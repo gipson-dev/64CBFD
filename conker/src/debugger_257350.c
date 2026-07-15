@@ -44,7 +44,24 @@ s32 func_16001B00(u8 *arg0) { // strlen
 // }
 
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-s32 func_16001B34(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
+// 2026-07-15: confirmed via ground-truth bytes at this function's own
+// name-implied address (0x16001B34, read directly from conker.us.bin -
+// immune to any build-time drift) that retail's real implementation is
+// exactly this 4-parameter, 32-byte-frame shape (22 words). Do NOT add a
+// 5th (f64) parameter here even though callers like func_16001044's
+// float-mode path pass one via the stack - the standard MIPS O32 ABI
+// shadow-space convention means that 5th argument already lands at
+// exactly the right memory offset (immediately after arg3's spilled
+// home slot) for func_16001BB4's va_list walk (`&arg2` onward,
+// confirmed by that function explicitly advancing its `s32 *arg3`
+// parameter through memory as a hand-rolled va_list) to find it while
+// parsing "%f" - no code in *this* function needs to reference it at
+// all. The fix belongs entirely at each call site: declare this
+// function's prototype so the compiler accepts (and correctly places)
+// a 5th argument even though the C body only reads 4, e.g. by NOT giving
+// it a strict prototype at those call sites, or some other mechanism -
+// not worked out this pass. See func_16001044 in debugger/debugger.c.
+s32 func_16001B34(u8 *arg0, u8 *arg1, s32 arg2, s32 arg3) {
     s32 idx = func_16001BB4(func_16001B8C, arg0, arg1, &arg2);
     if (idx >= 0) {
         arg0[idx] = 0;

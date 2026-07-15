@@ -420,13 +420,45 @@ solid texture region looks like in RGBA16.
     than that. USF files are actual playable audio (via any PSF-family
     player, e.g. foobar2000 + `in_usf`) - useful as a real listening
     reference when trying to identify which track index corresponds to
-    which in-game context, and `NUS-NFUE-USA.usflib` may itself embed the
-    same sample-bank memory image as `assets17/0002`/`0003` - worth diffing
-    against if the container format work continues.
-  - `0000`/`0001`/`0004`–`0006` remain undetermined; the wiki's own file
-    numbering for which one carries the B1 header is internally inconsistent
-    (heading says `0001`, the shown command runs on `0000.bin`) - re-verify
-    the actual index before relying on it.
+    which in-game context.
+
+    **Tried diffing `.miniusf` contents against the ROM container - no
+    direct byte match, and that's informative, not a dead end.** USF's
+    `.miniusf`/`.usflib` "reserved" area (PSF version byte `0x21`) is
+    *not* zlib-compressed like the `.usflib`'s own outer PSF wrapper might
+    suggest - it's raw, tagged `SR64`, and decodes cleanly as a flat
+    sequence of `(u32 length, u32 address, length bytes of data)` sparse
+    RDRAM-write blocks (326 blocks for `sparse01.miniusf`, consuming the
+    entire reserved area with no leftover bytes - confirms the parse is
+    right). Matches the "sparse" naming: a sparse set of memory pokes, not
+    a full RAM dump. Extracted sequence-bank entry `[1]` from
+    `assets17/0003.bin` (offset 1296, length 30462, per its own
+    offset-table) and searched for it byte-for-byte in `sparse01.miniusf`'s
+    blocks (individually and concatenated) - **no match**, not even an
+    8-byte prefix. Same negative result testing the largest blocks (seven
+    consecutive 4096-byte pages at `0x2221ac`-`0x2281ac`, clearly sample
+    audio data by entropy) against the raw sample bank `assets17/0002.bin`.
+    **Conclusion: the USF rip captures post-processing runtime state**
+    (decompressed samples and parsed sequence structures as the game's own
+    audio driver leaves them in RDRAM immediately before playback), **not
+    a copy of the ROM's compressed/encoded container format** - the two
+    are different pipeline stages and won't byte-match by design. Don't
+    retry a direct diff; if this USF data gets used for verification, it
+    would need to be compared against this project's own *decoded* output
+    (once the sample codec and sequence format are understood), not the
+    raw container bytes.
+  - **File-index ambiguity resolved (2026-07-15):** checked this repo's
+    own extraction directly (`assets/rzip/assets17/*.bin`) rather than
+    trust the wiki's internally-inconsistent labeling. **`0000.bin` has
+    the `B1` header** (`assets17` file 0, as this doc's own §6 text always
+    said), **`0003.bin` has the `S1` header** confirming the sequence-bank
+    breakdown above. `0001`/`0004`/`0005`/`0006` remain undetermined -
+    `0004.bin` (144 bytes) looks like a small offset table itself (regular
+    4-byte big-endian values), `0005.bin` (17408 bytes) is all zero bytes
+    in its first 0x400+ (possibly padding or a mostly-empty table),
+    `0006.bin` starts with small paired byte values (`02 01 ff ff 00 00
+    00 00 01 02 ff ff ...`) that could be a per-note/per-channel mapping
+    table - none decoded further this pass.
 
 ## 7. Data / text tables (Tentative)
 

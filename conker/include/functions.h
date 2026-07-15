@@ -838,9 +838,14 @@ void func_1600030C(void);
 void func_16000314(void);
 s32  func_16000384(void);
 void func_16000424(struct118 *arg0);
+void func_16000590(void *arg0);
+void func_160006CC(void *arg0);
+void func_16001044(s32 arg0, s32 arg1, s32 arg2);
 void func_160012B0(s32 arg0, u8 *arg1);
+s32  func_160014F0(s32 arg0, s32 arg1);
 void func_16001338(u8 arg0, u8 arg1, u8 arg2);
 s32  func_1600160C(s32 arg0);
+void func_16001390(s16 arg0, s16 arg1, s16 arg2, s16 arg3);
 u32  func_16001678(void);
 s32  func_160016F4(s32 arg0);
 s32  func_16001984();
@@ -849,6 +854,15 @@ void func_16001A64(void);
 s32  func_16001A6C(f32 arg0);
 void func_16001AB0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 u8*  func_16001AD0(u8 *arg0, u8 *arg1, u32 arg2);
+// func_16001B34 deliberately has NO prototype here - its real definition
+// (debugger_257350.c) takes 4 params, but func_16001044's float-mode call
+// site needs to pass a 5th (f64) argument that the callee never reads as
+// a named parameter (see the long comment on the definition) - an
+// explicit prototype would make the compiler reject the extra argument.
+// Leaving it undeclared lets each call site's own implicit declaration
+// accept whatever it passes, matching how several other functions in
+// this codebase already rely on implicit declarations (see WORKING_NOTES
+// for prior instances of this pattern, both accidental and deliberate).
 s32  func_16001B8C(u8 *arg0, u8 *arg1, u32 arg2);
 
 

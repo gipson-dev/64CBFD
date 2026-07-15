@@ -25,6 +25,79 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-15, tenth session continued - func_16001B34 fixed,
+func_16001044 safely re-converted).** Followed up on the tenth session's
+"net wash" ending by tackling its top recommended next step: found and
+fixed the actual root cause of `func_16001B34`'s 4-vs-5-argument gap.
+**The fix was the opposite of what two sessions of notes assumed**:
+`func_16001B34` itself does NOT need a 5th parameter - ground-truth bytes
+read directly from its own name-implied address (`0x16001B34`, immune to
+build drift) confirm retail's real implementation is exactly the
+already-existing 4-parameter, 22-word, 32-byte-frame shape. The 5th
+argument (the `f64` every caller passes via `sdc1` to the stack) relies
+entirely on the standard MIPS O32 ABI shadow-space convention: it lands
+at a fixed offset immediately after `arg3`'s spilled home slot "for
+free," where `func_16001BB4`'s hand-rolled va_list walk (`&arg2` onward -
+confirmed by that function explicitly advancing its `s32 *arg3`
+parameter through memory as it parses each `%`-specifier) finds it
+without `func_16001B34` needing to reference it at all. **The actual fix
+was at the call site**: removed `func_16001B34`'s prototype from
+`functions.h` entirely so the compiler doesn't reject a 5th argument
+against a 4-param signature, relying on implicit per-call-site
+declaration (same class of trick already used elsewhere in this
+codebase). Re-enabled `func_16001044` with the corrected 5-argument
+float-mode call - **reached retail's exact word count (155/155)** for
+the first time, confirmed via `nm` that this introduces zero symbol
+drift, and confirmed via the three independently-verifiable functions
+(`func_16000424`/`func_16000058`/`func_16000000`, all 0 diffs) that nothing
+regressed. `func_16000590` was also retried (now calling a working
+`func_16001044`) but still falls 1 word short for an unrelated reason (a
+loop-exit-condition codegen quirk, two different loop restructurings
+both failed to close it) and demonstrably still cascades if left in
+(confirmed by re-testing), so it stays reverted - only `func_16001044`
+is now live. Net new state: **debugger 126/173 byte-exact** (up from
+172 total functions to 173, `func_16001044` itself not yet byte-exact at
+151/155 remaining diffs, but structurally safe and a real net conversion
+gain with zero collateral damage - unlike the immediately-prior attempt
+this same session, which had none). See Session log for full detail.
+
+**Update (2026-07-15, tenth session - "continue function," net result: a
+wash, but valuable lessons captured).** Resumed the debugger raw-asm-to-C
+backlog from two sessions ago (`func_16000F8C`, `func_160006CC`,
+`func_160014F0`, `func_16000590`, `func_16001390`, `func_16001044`,
+`func_16000B14`, `func_160021FC`). Converted 5 of them
+(`func_160014F0`, `func_16001044`, `func_16000590`, `func_16001390`,
+`func_160006CC`) - all logically verified correct against the raw asm -
+but **none reached retail's exact word count**, and since `debugger.c`'s
+`D_1600xxxx` globals are embedded *inline in the .text segment* (not real
+`.data`/`.rodata`, confirmed via `nm` showing type `T`), any function
+short by even one word shifts every symbol after it, which broke several
+already-matched functions' data-symbol addresses - the same drift
+mechanism as two sessions ago, this time worse (debugger's byte-exact
+count fell from 128/172 to 9-11/17x at the low point). **Reverted all 5
+new conversions back to `GLOBAL_ASM`**, keeping the verified-correct C as
+commented-out drafts directly above each pragma (matching this file's
+existing convention for `func_1600078C`/`func_16000F8C`) - confirmed via
+the two functions with independently-checkable ground truth
+(`func_16000424`, `func_16000058`, back to 0 diffs) that this fully
+restored the pre-session baseline (`make match-progress` confirms
+exactly 128/172, 74.42%, matching before this session started).
+**Net effect: zero new byte-exact conversions, but the session banked
+real, reusable findings** - see Session log for the full blow-by-blow,
+including a firm empirical rule (every converted function's word count
+must match retail exactly or it cascades), a fix for `func_16001044`'s
+biggest single contributor (a `memcpy()` call that should have been an
+inline copy loop), and a discovered blind spot in the `dump_func.py`
+verification tool (falls back to untrusted `progress.csv` addressing for
+any function whose `.s` file no longer exists, i.e. anything converted
+more than ~2 sessions ago - this produced a scary-looking but false
+"34/34 words differ" reading for `func_160012B0` that had nothing to do
+with this session's changes). Didn't reach `func_16000B14`/
+`func_160021FC` (the two largest remaining) - next session should start
+there, or finish `func_16001B34`'s missing 5th (`f64`) argument first
+(it's what's blocking `func_16001044`'s float-mode path from reaching
+exact word count, and by extension everything that calls it).
+
 **Update (2026-07-15, ninth session continued):** fixed a real bug in
 `tools/progress.py` (project-owned, not the n64splat submodule) that was
 inflating every raw-function count in the "Functions" progress table.
@@ -386,6 +459,239 @@ git checkout -- .
 
 ## Session log
 
+### 2026-07-15 (tenth session, continued - func_16001B34's real fix)
+
+- Picked up the tenth session's #1 recommended next step immediately
+  (same conversation, user pointed at the exact "Current focus" bullet).
+- **Read the strings at `D_160047E8`/`D_160047F0`/`D_160047F4` directly
+  from the pristine ROM** (same address-computation technique as
+  `dump_func.py`) instead of continuing to guess at their role:
+  `D_160047E8` = `"%s%s%f"` (an actual printf-style format string!),
+  `D_160047F0` and `D_160047F4` both point to **empty strings** (`"\0"` at
+  their exact address, not the `"hlL / +-#0"` table text that happens to
+  sit a few bytes further along - that table is a shared internal
+  constant used by `func_16001BB4`'s parser, unrelated to what these two
+  pointers are passing). This immediately explained the calling
+  convention: `func_16001044`'s float mode is effectively calling
+  something like `sprintf(buf, "%s%s%f", "", "", value)` - two empty
+  decoration strings around the float, not three independent format
+  strings as guessed two sessions ago.
+- **Confirmed `func_16001BB4` (`debugger_257350.c`, already marked
+  NON-MATCHING/ported-from-ects, 367 words) is a genuine hand-rolled
+  vsprintf-family implementation**, not just format-string-shaped code:
+  it takes `s32 *arg3` as a value pointer and *explicitly advances it
+  through memory* (`arg3 = (s32*)((u8*)va + 4)`) as each `%`-specifier is
+  consumed - a real, manually-implemented va_list walk. This is the key
+  fact that resolved the whole mystery.
+- **First attempt (wrong): extended `func_16001B34` to a 5-parameter
+  signature** (`u8*, u8*, s32, s32, f64`), matching the naive
+  "just add the missing argument" instinct. Compiled fine, but checking
+  its own ground truth (see below) proved this was structurally wrong.
+- **Ground-truth check that overturned the assumption:** `func_16001B34`
+  has no `.s` file (already C, ported from ects_proto, never
+  `GLOBAL_ASM` in this repo) so `dump_func.py` can't verify it via the
+  trusted path - worked around this by computing its ROM offset directly
+  from its own **name-implied address** (`0x16001B34`, the same trick
+  used for the RNG functions two sessions ago: `func_` names encode the
+  real retail address, immune to any build-time drift regardless of
+  whether a `.s` file still exists) and reading 22 words directly out of
+  `conker.us.bin`. Result: retail's real implementation is a plain
+  32-byte-frame, 4-parameter function - **no 5th-argument handling
+  anywhere in it**. This directly contradicted the just-written 5-param
+  version.
+- **Reasoned out why from the MIPS O32 ABI itself:** a callee's incoming
+  register arguments (`a0`-`a3`) get 16 bytes of "shadow space" reserved
+  at a fixed offset in the caller's frame; a 5th+ argument sits
+  immediately after that shadow space, at a **predictable, fixed offset
+  relative to the callee's own stack pointer once its frame is
+  allocated** - and critically, that offset turned out to be exactly 4
+  bytes past `arg3`'s own spilled home slot. Since `func_16001BB4`'s
+  va_list walk starts at `&arg2` and advances 4 bytes at a time,
+  **the 5th argument (the double) lands exactly where the walk would
+  find it without `func_16001B34` ever needing to name or reference it
+  as a parameter.** Reverted the 5-param signature back to the
+  confirmed-correct 4-param one.
+- **The real fix: remove `func_16001B34`'s prototype from
+  `functions.h` entirely.** With no prototype visible, each call site
+  gets an implicit (K&R-style) declaration and the compiler doesn't
+  reject a 5th argument - it just loads/stores whatever's provided per
+  the standard calling convention, which places it at the correct ABI
+  shadow-space-adjacent offset regardless. Verified this doesn't change
+  `func_16001B34`'s own compiled bytes at all (word count still exactly
+  22, matching the name-implied ground truth) - only affects how far
+  *callers* are allowed to reach.
+- **Re-enabled `func_16001044`'s draft** with the corrected float-mode
+  call (`func_16001B34(buf, D_160047E8, D_160047F0, D_160047F4, (f64)
+  f)`, 5 real arguments instead of the earlier session's 4-arg
+  workaround that silently dropped the double). Result: **155/155 words
+  - exact word count**, the first time this function has reached it.
+  Confirmed via `nm` that `D_16003888`/`D_160038A8` (the drift canaries
+  from two sessions of this saga) stayed at their correct addresses, and
+  via the three functions with independently-checkable ground truth
+  (`func_16000424`/`func_16000058`/`func_16000000`) that nothing
+  regressed (all stayed at 0 diffs). `func_16001044` itself is NOT yet
+  byte-exact content-wise (151/155 words still differ - register
+  allocation/scheduling throughout, not a structural problem) but that's
+  now a normal "needs a future matching pass" function rather than an
+  active liability.
+- **Tried re-enabling `func_16000590` too** (calls `func_16001044`,
+  including its now-working float-mode path) - still 78/79 words, a
+  *different*, unrelated 1-word gap (retail materializes its final loop's
+  `i<16` exit condition into a register via a standalone `slti` before
+  the branch; neither a plain `for` nor a `do-while` restructuring
+  reproduced it). **Confirmed this single word DOES still cascade**
+  (`func_16000424` etc. dropped back to real diffs with it enabled) -
+  reverted it again, draft preserved as a comment noting the float-mode
+  blocker is now resolved so only the loop-shape issue remains.
+- **Final state, rebuilt and reconfirmed:** `func_16001044` live and
+  word-count-safe; `func_160014F0`, `func_16000590`, `func_16001390`,
+  `func_160006CC` still reverted (drafts preserved) for the reasons
+  logged in the prior entry, now updated where they mentioned the
+  `func_16001B34` gap as blocking (it no longer is - only their own
+  independent loop-shape/codegen issues remain). `make match-progress`:
+  debugger 126/173 (total functions 172→173 for `func_16001044`, exact
+  count 128→126 since it's not yet byte-exact itself - a real, safe net
+  gain, not a regression). Project total 547/1557.
+
+### 2026-07-15 (tenth session - debugger conversions attempted and reverted)
+
+- Resumed from the eighth session's deferred list. Set up `mips_to_c`
+  again (`python3 tools/ctx.py .../debugger.c` - context regeneration is
+  cheap, not committed, same as before).
+- **`func_160014F0` (glyph blitter, 71 words)** - straightforward 8x8
+  bitmap font blit using `D_16003CE0` (newly declared: 768-byte font
+  table, 96 printable-ASCII glyphs × 8 bytes, size matches
+  `match-progress`'s previously-unexplained `D_16003CE0 (debugger, 192
+  words)` entry exactly) and the current color `D_1600388C`. Converted
+  cleanly, logic verified correct, but landed at 70/71 words. Tried
+  matching retail's apparent 4x-unrolled inner loop explicitly (writing
+  the C with 4 statements per iteration instead of a plain 8-iteration
+  loop) - **made it worse** (71 diffs instead of ~65) - reverted that
+  specific attempt back to the plain loop. Ultimately reverted to
+  `GLOBAL_ASM` entirely once the cascading-drift problem was understood
+  (see below) - draft kept as a comment.
+- **`func_16001044` (number formatter, 155 words) - the big one, and the
+  main source of this session's problems.** Hex/decimal/float display
+  routine called by many other functions. Fixed a real, independent bug
+  while establishing its signature: `functions.h` had NO prior
+  declaration for it, and its return value is never used at any call
+  site, confirmed `void`.
+  - Hex mode and decimal mode (with correct leading-zero suppression -
+    always show the units digit, suppress leading zeros before the first
+    nonzero digit) were straightforward once traced fully from the raw
+    asm.
+  - Float mode depends on `func_16001B34`, whose *current* 4-param
+    signature (`u8*, s32, s32, s32`) is already known-incomplete (flagged
+    two sessions ago) - it needs a 5th `f64` argument that the retail
+    call site clearly passes (visible in the raw asm as an `sdc1` store
+    to the outgoing stack argument area) but the existing implementation
+    in `debugger_257350.c` doesn't accept. Wrote the call with the 4
+    params it currently supports (dropping the double) - compiles, but
+    is known-functionally-wrong for float display and was always going to
+    be short some instructions.
+  - **First compile came in at 139/155 words - a 16-word deficit, way
+    more than the float-mode gap alone could explain.** Root cause:
+    `memcpy(sp78, D_16003B50, sizeof(sp78))` compiled to an actual `jal
+    memcpy` library call (5-ish setup words) instead of retail's inlined,
+    unrolled 10-word struct copy (the exact 3-words-per-iteration pattern
+    visible in the original raw `.s` - this project's `D_16003B50` is a
+    10-entry table of descending powers of ten, `[0]`=1 (units) through
+    `[9]`=1000000000, used for decimal digit extraction). **Fixed by
+    replacing the `memcpy()` call with an explicit `for` loop** copying
+    element-by-element - IDO inlined that as expected, closing the gap to
+    152/155 (only 3 words short, all attributable to the func_16001B34
+    gap). **Lesson: never reach for `memcpy()`/library calls for small
+    fixed-size copies in this codebase - write the loop explicitly, IDO
+    won't auto-recognize the copy pattern and will emit a real call
+    instead of inlining.**
+- **`func_16000590`/`func_160006CC` (2 more, both callers of
+  `func_16001044`)** - converted following the same tracing process.
+  `func_16000590` reads `arg0` at struct offset `0x12C` - beyond
+  `struct118`'s currently-known size (`0x128`) - used a raw pointer cast
+  instead of extending the struct (matches the "crazy struct offset"
+  idiom from the project wiki's `Patterns.md`, reviewed a few sessions
+  ago: don't touch a struct's shape for one field access when you're not
+  sure of the full layout elsewhere). `func_160006CC` needed one
+  non-obvious fix: it looked like `D_16003B48`'s initial load was pure
+  dead code (immediately overwritten) so the first draft dropped it
+  entirely - but retail still *performs* the dead load-and-store (visible
+  as a real `lw`+`sw` pair in the raw asm), so dropping it cost 3 real
+  words. Restored it as an explicit (unused-value) statement to match.
+  Landed at 78/79 and 47/48 words respectively - both within 1 word,
+  neither blocked by anything fundamental.
+- **`func_16001390` (rectangle fill, 88 words, no existing callers)** -
+  same unrolled-loop idiom problem as `func_160014F0`, landed at 82/88 (6
+  short). Lower confidence throughout (parameter semantics inferred, not
+  confirmed by any caller) and no caller to lose value by reverting -
+  first one cut when the drift problem was diagnosed.
+- **The cascading drift, diagnosed properly this time.** After all 5
+  conversions, `make match-progress` showed debugger collapsed from
+  128/172 to 9-11/17x, and previously-exact functions (`func_16000424`,
+  `func_16000058`, `func_16000000`) were back to showing real diffs.
+  Confirmed via `nm build/conker.us.elf` that `D_16003888`/`D_160038A8`
+  (embedded inline in `.text`, not real data - see two sessions ago's
+  writeup) had drifted again, same mechanism as before. This time
+  **quantified it precisely**: summed each new function's word-count
+  deficit (`func_16001044`: -16 initially, `func_160014F0`: -1,
+  `func_16000590`: -1, `func_16001390`: -6, `func_160006CC`: -4) and
+  confirmed the *measured* drift at any point matched the *sum of
+  deficits of every not-yet-fixed function before that point in the
+  file* - not approximately, exactly. This is a strong, generalizable
+  diagnostic: if `D_16003888` (or any embedded-in-.text symbol) drifts by
+  N words, sum your recent functions' `ours` vs. `truth` word counts from
+  `dump_func.py` and it will account for all N.
+  - Fixed `func_16001044`'s memcpy issue (closed 16→3), which shrank the
+    total drift from -12 (after reverting `func_16001390`) down to -4.
+    Fixed `func_160006CC`'s dead-code drop (closed -4→-1), shrinking
+    further. At that point decided the remaining ~4-5 words (all tied to
+    the `func_16001B34` gap, not independently fixable without that
+    larger task) weren't worth continuing to chase live, and reverted
+    `func_16001044` (and by extension `func_16000590`, which calls its
+    float-mode path) and the two smaller stragglers
+    (`func_160014F0`, `func_160006CC`) rather than ship a partial fix.
+  - **Verification wrinkle discovered mid-diagnosis:** `dump_func.py`
+    (the trusted-address tool from two sessions ago) only stays trusted
+    for functions whose `asm/nonmatchings/.../<name>.s` file still
+    exists. For functions converted long enough ago that the file's
+    gone (e.g. `func_160012B0`, `func_16001338` - converted well before
+    this whole multi-session arc), it silently falls back to the
+    untrusted `progress.csv`-derived address and can report wildly wrong
+    diff counts (`func_160012B0` showed "34/34 words differ" at one
+    point despite being completely untouched this session - a pure
+    measurement artifact from residual unrelated drift elsewhere in
+    `game`/`init`, not a real problem). **When cross-checking a
+    "regression," always check `dump_func.py`'s own `[address source:
+    ...]` line - if it says "UNTRUSTED", that specific number is not
+    reliable evidence of anything.** Confirmed the real restoration via
+    the subset of functions that *do* still have accessible `.s` files
+    (`func_16000424`/`func_16000058`/`func_16000000`, all back to 0
+    diffs) plus the final `make match-progress` total matching the
+    pre-session 128/172 exactly.
+  - After reverting, confirmed clean: `D_16003888`/`D_160038A8` both
+    back to their name-implied addresses, `make match-progress` reports
+    debugger at exactly 128/172 (74.42%) and project total 549/1556
+    (35.28%) - identical to the eighth/ninth session's ending numbers.
+- **Net result: zero new byte-exact debugger functions, but the
+  groundwork is banked for next time.** All 5 drafts remain as verified
+  (logic-correct, word-count-close) comments directly above their
+  `GLOBAL_ASM` pragmas - re-enabling any of them individually is a
+  straightforward uncomment once its remaining word-count gap is closed.
+  New global declarations added this session and kept (harmless whether
+  the functions using them are C or asm): `D_16003CE0`, `D_16003B50`,
+  `D_16003B30`, `D_160047A4`, `D_160047AC`, `D_16003B48`, `D_160037F0`,
+  `D_160047E4`/`E8`/`F0`/`F4`, plus prototypes for all 5 functions and
+  `func_16001B34` in `functions.h`.
+- **Recommended next steps, in priority order:** (1) resolve
+  `func_16001B34`'s missing 5th argument properly - this single fix
+  would let `func_16001044` (and therefore `func_16000590`) reach exact
+  word count, which is most of the remaining value here; (2) work out
+  retail's exact unrolled-loop shape for the `func_160014F0`/
+  `func_16001390` idiom (a manual 4x-unroll attempt made things worse
+  this session, so the right shape isn't simply "unroll by 4" - may need
+  `mips_to_c`'s own inlining/unrolling heuristics investigated, or trying
+  different loop trip counts); (3) only then re-attempt
+  `func_16000B14`/`func_160021FC` (the two largest, not started).
+
 ### 2026-07-15 (ninth session, continued - USF sound rip found in rom backup/)
 
 - User pointed at `rom backup/Conker's Bad Fur Day sound files/` - a
@@ -403,13 +709,34 @@ git checkout -- .
     ASSET_FORMATS.md §6 as a cross-reference.
   - These are real playable audio (any PSF-family player, e.g. foobar2000
     + `in_usf`) - noted as a listening reference for identifying which
-    sequence index plays where in-game, and flagged that
-    `NUS-NFUE-USA.usflib` may embed the same sample/sequence memory image
-    as `assets17`'s `0002`/`0003` sub-files - worth diffing against if
-    anyone picks the container format work back up.
-  - Not attempted: actually playing/diffing the USF data against the
-    ROM's `assets17` content, or writing an extractor. This was a
-    cross-reference/documentation pass only.
+    sequence index plays where in-game.
+- **Follow-up, same session: did the diff.** Decoded `.miniusf`'s
+  "reserved" PSF section directly (not zlib-compressed despite the outer
+  PSF wrapper - raw, tagged `SR64`, a flat list of `(u32 length, u32
+  address, length bytes)` sparse RDRAM-write blocks; 326 blocks for
+  `sparse01.miniusf`, consumed the entire reserved area with zero leftover
+  bytes, confirming the parse). Extracted sequence-bank entry `[1]` from
+  this repo's own `assets/rzip/assets17/0003.bin` (offset 1296, length
+  30462, via its own `S1`-tagged offset table) and searched for it
+  byte-for-byte in `sparse01.miniusf`'s blocks - **no match**, individually
+  or concatenated, not even an 8-byte prefix. Same negative result testing
+  the largest blocks (seven consecutive 4096-byte pages, clearly sample
+  audio by entropy) against the raw sample bank `0002.bin`. **Conclusion:
+  the USF rip holds post-processing runtime state** (decompressed
+  samples/parsed sequence structures as the audio driver leaves them in
+  RDRAM right before playback) **, not a copy of the ROM's
+  compressed/encoded container** - different pipeline stages, won't
+  byte-match by design. Updated ASSET_FORMATS.md to say so plainly so this
+  specific approach isn't retried.
+  - **Bonus, same investigation:** resolved the wiki's B1-header
+    file-index inconsistency by just checking this repo's own extraction
+    directly instead of trusting the wiki's contradictory text - confirmed
+    `assets17/0000.bin` has the `B1` header (matching what
+    ASSET_FORMATS.md's own §6 prose already said) and `0003.bin` has `S1`.
+    Also glanced at `0004`/`0005`/`0006.bin` (144 / 17408 / 42000 bytes) -
+    `0004` looks like a small table of 4-byte big-endian values, `0005` is
+    mostly/all zero bytes, `0006` starts with small paired byte values
+    (possibly a per-note/channel mapping) - none decoded further.
 
 ### 2026-07-15 (ninth session - reference sweep: N64ops03.txt, project wiki)
 
