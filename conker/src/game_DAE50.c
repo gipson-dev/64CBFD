@@ -90,54 +90,19 @@
 //     return v0;
 // }
 
-// well this is a bastard
-#pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADA20.s")
-// s32 func_150ADA20() {
-//     // u32 tmp1;
-//     u64 tmp2;
-//     u64 tmp0;
-//
-//     // /* ADA20 850ADA20 3C048009 */  lui        $a0, 0x8009
-//     // /* ADA24 850ADA24 DC8485B0 */  ld         $a0, -0x7a50($a0)
-//     tmp0 = D_800885B0;
-//     // /* ADA28 850ADA28 000437FC */  dsll32     $a2, $a0, 0x1f
-//     // tmp2 = tmp0 << 63;
-//     // /* ADA2C 850ADA2C 000637FA */  dsrl       $a2, $a2, 0x1f
-//     tmp2 = (u32) tmp0; //tmp2 >> 31;
-//     // /* ADA30 850ADA30 00042FF8 */  dsll       $a1, $a0, 0x1f
-//     // tmp1 = tmp0; // << 31;
-//     // /* ADA34 850ADA34 0005283E */  dsrl32     $a1, $a1, 0
-//     // tmp1 = tmp1 >> 0 + 32;
-//     // /* ADA38 850ADA38 00C53025 */  or         $a2, $a2, $a1
-//     tmp2 = tmp2 | (u32)(tmp0 >> 31) ;
-//     // /* ADA3C 850ADA3C 0004233C */  dsll32     $a0, $a0, 0xc
-//     tmp0 = tmp0 << 44;
-//     // /* ADA40 850ADA40 0004203E */  dsrl32     $a0, $a0, 0
-//     tmp0 = tmp0 >> 32;
-//     // /* ADA44 850ADA44 00C43026 */  xor        $a2, $a2, $a0
-//     tmp2 = tmp2 ^ tmp0;
-//     // /* ADA48 850ADA48 0006253A */  dsrl       $a0, $a2, 0x14
-//     tmp0 = tmp2 >> 20;
-//     // /* ADA4C 850ADA4C 30840FFF */  andi       $a0, $a0, 0xfff
-//     tmp0 = tmp0 & 0xfff;
-//     // /* ADA50 850ADA50 00862026 */  xor        $a0, $a0, $a2
-//     tmp0 = tmp0 ^ tmp2;
-//     // /* ADA54 850ADA54 3C018009 */  lui        $at, 0x8009
-//     // /* ADA58 850ADA58 FC2485B0 */  sd         $a0, -0x7a50($at)
-//     // D_800885B0 = tmp0;
-//     ///* ADA60 850ADA60 03E00008 */  jr         $ra
-//     * (u64 *) 0x800885B0 = tmp0;
-//     return tmp0;
-//     // /* ADA5C 850ADA5C 0004103C */  dsll32     $v0, $a0, 0
-//     // tmp0 = tmp0 << 0 + 32;
-//     // /* ADA64 850ADA64 0002103F */   dsra32    $v0, $v0, 0
-//     // tmp0 = tmp0 >> 0 + 32;
-// }
+// xorshift-style PRNG step, operating on the 64-bit seed D_800885B0
+s32 func_150ADA20(void) {
+    u64 seed = D_800885B0;
+    u64 mixed = ((seed << 63) >> 31) | ((seed << 31) >> 32);
+
+    mixed ^= (seed << 44) >> 32;
+    seed = ((mixed >> 20) & 0xFFF) ^ mixed;
+    D_800885B0 = seed;
+    return (s32) seed;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADA68.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADACC.s")
-// NON-MATCHING: hand-written function
-// void func_150ADACC(s64 arg0) {
-//     D_800885B0 = arg0 + 1;
-// }
+void func_150ADACC(s64 arg0) {
+    D_800885B0 = arg0 + 1;
+}

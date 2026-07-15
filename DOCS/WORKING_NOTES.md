@@ -25,6 +25,59 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-15, eighth session):** "knock out fast functions."
+**Critical finding, read this before trusting any single-function
+diff/word-count from `match_progress.py` or the `dump_func.py`-style
+verification pattern:** both tools compute a function's retail ROM
+address from `progress.csv`'s `offset` column - but that column is
+regenerated from the **current build's `.map` file** every time `make
+progress` runs, not from a fixed retail source. For any function whose
+build address has drifted from what its own name implies (extremely
+common in `game`, only 17% byte-exact, so most of it has some size
+mismatch upstream), this silently fetches "truth" bytes from the *wrong*
+ROM location and produces nonsense diffs - not a small-diff false
+positive like the padding bug two sessions ago, but complete garbage
+(confirmed on `func_150ADA20`: reported "truth" was unrelated code from
+768 bytes away). The **aggregate percentages in the byte-matching
+snapshot are still fine** (a real mismatch just shows as "diff" either
+way), but do not trust an *individual* function's reported diff content
+for anything in `game` without cross-checking against its `.s` file's own
+address comments first (fixed at extraction time, never drifts) - see the
+fixed `dump_func.py` in the Session log. Not fixed in `match_progress.py`
+itself this session (would need every function's true retail address from
+a source that doesn't reflect current build state - `symbol_addrs.us.txt`
+for named symbols, or parsing the name for `func_XXXXXXXX` ones - deeper
+fix, not attempted).
+
+Net conversions this session: 2 very-high-value functions,
+`func_150ADA20`/`func_150ADACC` (the game's PRNG - `func_150ADA20` alone
+is called from 100+ sites across a dozen files) - plus a real bug fix
+(its existing prototype declared `u8` return, silently truncating a
+32-bit PRNG value at every call site for who knows how long). Both are
+logically verified correct (algorithm matches retail instruction-by-
+instruction) but not yet byte-exact - register allocation differs, same
+class of remaining work as `func_1600160C` last session. Getting here
+required adding real, reusable build-system capability: this file needs
+native MIPS III 64-bit instructions (`dsll32`/`ld`/`sd`/...) that the
+project's global `-mips2` target can't emit (falls back to
+`__ll_lshift`/`__ull_rshift` software-emulation calls instead), so added
+a per-file `-mips3` override plus `--no-warn-mismatch` on the linker (ISA
+info in ELF `e_flags` alone, not a real 32-vs-64-bit ABI conflict despns
+what the error text implies) - see Session log, both are reusable for any
+other 64-bit function found later. Also tried and **reverted** converting
+a whole raw `.s` file (`asm/50D80.s` → `c` type) to reach one trivial
+function inside it - broke the link with the exact jump-table
+`.L`-label issue already documented from the "Link-time blocker" fix
+(different jlabel set, same root cause) - don't retry this without
+first checking whether the target file's own `.L...` labels are
+referenced from rodata elsewhere. `init`'s smallest remaining raw
+functions are mostly genuine hand-written libultra SDK code (confirmed
+via `/* Handwritten function */` markers and known real-SDK filenames
+like `setsr`/`getsr`) - low yield there, redirect future "fast function"
+hunts to `game`'s 4161-function backlog instead, specifically ones
+already living in split `asm/nonmatchings/` files (no yaml-splitting
+risk) - see Session log for the exact search method.
+
 **Update (2026-07-15, seventh session):** converting raw-`GLOBAL_ASM`
 debugger functions to C (user asked to work on functions still needing
 conversion). Set up `mips_to_c` in this environment (pycparser version
@@ -40,11 +93,12 @@ for *other, unrelated, already-converted* functions in the same file -
 debugger's byte-exact rate jumped 8.82%→74.42% (15→128 of 172) from that
 one fix, not from the 2 conversions themselves being byte-perfect (they
 aren't, see Session log). 10 raw functions remain in debugger (1 of which,
-`func_16003650`, will never convert); `init` has 315 remaining (many
-trivial libultra stubs) and `game` has 5,764 (the long tail, plus a lot of
-`.L..._game_data` entries in `progress.csv` that are data-label artifacts,
-not real functions - worth filtering out before trusting that raw count).
-Tables updated in PROJECT.md/README.md/DOCS/README.md. Full detail,
+`func_16003650`, will never convert); `init` has **306** real raw
+functions remaining (315 minus 9 `jlabel` artifacts) and `game` has
+**4161** (5764 minus 1603 `jlabel`/`dlabel` artifacts - filtered and
+confirmed same session, see Session log and PROJECT.md's "Functions"
+caveats for the reusable grep method). Tables updated in
+PROJECT.md/README.md/DOCS/README.md. Full detail,
 including two still-open blockers (`func_16001B34`'s float-argument gap
 affects `func_16000F8C`/`func_1600078C`; register-allocation/operand-order
 tuning needed on the 2 converted functions), in the Session log.
@@ -314,6 +368,138 @@ git checkout -- .
 
 ## Session log
 
+### 2026-07-15 (eighth session - "knock out fast functions")
+
+- **init's tiny candidates mostly aren't real conversion targets.**
+  Checked the smallest remaining raw `init` functions
+  (`__osSetSR`/`__osGetSR`/`func_10007DA0`/etc.) - `__osSetSR`/`__osGetSR`
+  are explicitly tagged `/* Handwritten function */` in their `.s` files
+  (raw `mtc0`/`mfc0` COP0 register moves, no C equivalent - same class as
+  last session's `func_16003650`). `__osSetFpcCsr`/`__osSpSetStatus` etc.
+  aren't tagged but match known real-SDK filenames
+  (`asm/libultra/os/setsr.s` etc., configured `asm` type in
+  `conker.us.yaml`, not `c`) - these correspond to files Nintendo/SGI
+  actually shipped as hand-written `.s` in the real N64 SDK, a
+  well-established fact in the wider decomp community. Didn't convert any
+  of these - redirected effort to `game` instead, which is Rare's own
+  compiled code and has a real 4161-function backlog.
+- **Attempted and reverted: splitting a whole raw `.s` file to reach one
+  trivial function inside it.** `asm/50D80.s` (segment `[0x50d80, asm]`
+  in `conker.us.yaml`, no `name:`) contains `func_150238D0`, an empty
+  function (`jr ra; nop`) - found via a regex sweep of the whole `asm/`
+  tree for the literal 2-instruction empty-function pattern (7 hits
+  total repo-wide, listed in `asm/142560.s`, `asm/18A8F0.s`,
+  `asm/20AE20.s`, `asm/50D80.s`, `asm/6B320.s`, `asm/71820.s`,
+  `asm/B3020.s` - none converted this session, see below for why). Since
+  the containing file was never split at function granularity, reaching
+  it meant changing `[0x50d80, asm]` → `[0x50d80, c, game_50D80]` and
+  re-running `make extract VERSION=us` - splat auto-inlined the trivial
+  function as real C directly (`void func_150238D0(void) {}`, no
+  `GLOBAL_ASM` stub needed) and stubbed the other ~10 functions in the
+  file normally. **Broke the link**: `undefined reference to
+  '.L15029BA0'` / `.L150288E4_game_data` etc. from
+  `build/asm/data/23B4E0.rodata.s.o` - this is the exact same
+  `.L`-prefixed-jump-table-label problem as the first session's
+  "Link-time blocker: RESOLVED" writeup (further up this file), just a
+  *different* rodata block (`23B4E0`) referencing labels that used to
+  live safely inside the monolithic `asm` block and lost their linkable
+  identity once split. Reverted cleanly (yaml line back to `asm`, deleted
+  the generated `src/game_50D80.c` and
+  `asm/nonmatchings/game_50D80/`, re-ran `make extract VERSION=us`,
+  confirmed clean rebuild). **Lesson for next time:** before converting
+  any whole raw `.s` file to unlock a function inside it, grep the file
+  for `jlabel` definitions first (`grep jlabel asm/<file>.s`) and check
+  whether any rodata block elsewhere references them by name - if so,
+  this will break the same way, and the real fix (converting that rodata
+  block to `bin` type per the original writeup) has to happen in the same
+  change.
+- **Found the safe "fast function" territory: functions in already-`c`-
+  type files.** Cross-referenced every raw (`language != c`) `glabel`
+  function's name against `asm/nonmatchings/**/*.s` (a single `find`,
+  not one call per row) to identify which raw functions live inside files
+  that are *already* split at function granularity (no yaml/extraction
+  risk, same safe workflow as last session's `debugger.c` work): **155 in
+  init, 721 in game.** This is the list to work from for future
+  low-risk conversions, sorted by size - smallest game ones start at 8
+  words (`func_150A7770`, itself hand-written per its `.s` comment) and
+  9 words (`func_150ADACC`, see below).
+- **Converted `func_150ADA20` and `func_150ADACC` (`game_DAE50.c`) - the
+  game's core PRNG.** `func_150ADA20()` is called from 100+ sites across
+  a dozen `src/*.c` files (grep confirmed), always with zero arguments,
+  so no call-site argument-count bug like earlier sessions' finds - but
+  its *existing* prototype in `functions.h` was wrong regardless:
+  `u8 func_150ADA20(void);` when the real return is a full 32-bit value
+  (confirmed from the raw asm's `dsll32`/`dsra32` sign-extension
+  sequence, and from callers like `% 25000U`/`% 0xFFFFU` that only make
+  sense on an untruncated value) - fixed to `s32`. This bug has been
+  silently truncating the PRNG's output to 0-255 at every one of those
+  100+ call sites for an unknown number of past sessions.
+  - `game_DAE50.c` already had detailed (commented-out, never enabled)
+    draft analysis of both functions from an earlier session ("well this
+    is a bastard" / "NON-MATCHING: hand-written function") - the bit-math
+    reasoning was mostly right; used it as a base, worked out the exact
+    op sequence directly from the raw `.s` instead of trusting the
+    draft's own arithmetic (it had some confused shift-amount comments).
+    Both are a straightforward 64-bit xorshift-style mix operating on the
+    global 64-bit seed `D_800885B0`.
+  - **Discovered mid-verification that this file needs `-mips3`, not the
+    project's global `-mips2` (`MIPSBIT` in `conker/Makefile`).** First
+    compile attempt produced 68 words instead of 18 for `func_150ADA20`
+    - IDO was calling `__ll_lshift`/`__ull_rshift` (software 64-bit-shift
+    emulation - these are literally two of the "trivial init functions"
+    from two sessions ago) instead of emitting native
+    `dsll32`/`dsrl`/`daddiu`/`ld`/`sd`, because MIPS II (the project-wide
+    default) has no 64-bit integer instructions at all - the file's own
+    top comment already said "// some mips3/64bit stuff going on here"
+    from a prior session, unactioned until now. Fixed with a target-
+    specific Makefile override (same established pattern already used
+    for per-file `OPT_FLAGS`, just applied to `MIPSBIT` instead):
+    `$(BUILD_DIR)/$(SRC_DIR)/game_DAE50.c.o: MIPSBIT := -mips3` (IDO
+    warns `-mips3 should not be used for ucode 32-bit compiles` - harmless
+    for us, we're not compiling RSP ucode). This alone fixed the
+    instruction *selection* (dsll32 etc. now appear, matching truth's
+    opcodes exactly) but broke the *link*: `mips-linux-gnu-ld: linking
+    32-bit code with 64-bit code` / `failed to merge target specific
+    data`. Root cause: `readelf -h` showed the object's `e_flags` ISA bit
+    set to `mips3` (`0x20000001`) vs every other object's `mips2`
+    (`0x10000001`) - both still `Class: ELF32` (not a real 32/64-bit ABI
+    class conflict despite the error wording), just an ISA-level
+    mismatch binutils refuses to link by default. Fixed by adding
+    `--no-warn-mismatch` to the project's global `LDFLAGS` - confirmed
+    this only relaxes the mismatch check, doesn't change any generated
+    code. **Both the `MIPSBIT` override and `--no-warn-mismatch` are now
+    permanent, reusable infrastructure** for any other function
+    discovered later that needs real 64-bit ops.
+  - **Verification tooling was giving false data for this function until
+    fixed mid-session** - see "Current focus" above for the critical
+    `progress.csv`-drift finding this surfaced. Rewrote `dump_func.py`
+    (scratchpad) to resolve ground-truth address/length from the
+    function's own `.s` file comments (fixed at extraction time) instead
+    of `progress.csv`'s `offset` column, falling back to the old
+    progress.csv method (now explicitly labeled untrusted in the output)
+    only when no `.s` file can be found.
+  - **Current state: both logically verified correct, not yet byte-
+    exact.** After the `-mips3` fix, `func_150ADA20` is 19 words
+    (truth 18) and `func_150ADACC` is 8 words (truth 6) - every
+    *instruction type* matches truth exactly (same ops, same operands
+    conceptually), remaining diffs are register-allocation/scheduling
+    choices (e.g. ours loads the global via a separate `lui`+`addiu`+`ld`
+    instead of retail's combined `lui`+`ld` with immediate offset). Tried
+    one rewrite (reading the global directly 3x instead of caching in a
+    local) - made `func_150ADA20` worse (20 words) - reverted. Same class
+    of remaining work as `func_1600160C` two sessions ago; not resolved,
+    flagged for a future targeted pass rather than guessed at further
+    here. This does NOT block the 100+ callers from being useful/typed
+    correctly - only the two functions' own byte-exactness is pending.
+  - `func_1000EB00` (the `init`-section function blocked on
+    `func_150ADA20` two sessions ago) is still `BLOCK`, not yet resolved
+    - expected, since `match_progress.py`'s blocked-classification needs
+    the *callee* to be byte-exact too, not just present as real C. Will
+    self-resolve once `func_150ADA20` itself matches.
+- Cleaned up `ctx.c`/`ctx.c.m2c` (mips_to_c cache artifacts) before
+  finishing - not committed, regenerate on demand per last session's
+  notes.
+
 ### 2026-07-15 (seventh session - raw-asm-to-C conversion pass, debugger)
 
 - User asked to work on functions still needing conversion from raw
@@ -327,6 +513,35 @@ git checkout -- .
   figure as "functions to convert" without doing so first. Debugger's 12
   is small and bounded (all real functions, 27-420 words) - picked it as
   this session's target since finishing it is an achievable milestone.
+- **Follow-up, same session: filtered the artifacts and got real counts.**
+  Every `.s` file under `asm/` tags each label as `glabel` (real
+  function), `jlabel` (internal jump-table target, not independently
+  convertible), or `dlabel` (data). Cross-referenced every raw
+  `progress.csv` row's name against `grep -rhoP '\bjlabel\s+\K\S+' asm/`
+  and the `dlabel` equivalent (first attempt used a variable-length regex
+  lookbehind - `grep: lookbehind assertion is not fixed length` - fixed by
+  switching to `\K` instead of `(?<=...)`). **Real remaining raw function
+  counts: game 4161 (not 5764 - 1601 `jlabel` + 2 `dlabel` artifacts,
+  the `dlabel` ones being `D_150A9C40` and, confusingly,
+  `func_150AA814` - a jump table stored as rodata that got a
+  function-shaped auto-generated name), init 306 (not 315 - all 9
+  artifacts are `jlabel`), debugger 10 (already accurate, no artifacts).**
+  Tried to extend the same method to sanity-check the C-converted
+  *numerator* too (e.g. is debugger's "172 converted" also inflated?) -
+  this doesn't work: a function's `glabel` line disappears from `asm/`
+  once it's actually converted (no more `.s` file backing it), so there's
+  nothing left to grep against. Also tripped over a real gotcha here:
+  naively excluding any `language: c` row whose name matched the `dlabel`
+  set caught 140 of debugger's 172 as "artifacts" - but those are
+  legitimate `extern` data-symbol declarations (`D_16003888` etc.), not
+  function-conversion noise; `progress.csv` intentionally tracks data
+  symbols alongside functions, so that exclusion was wrong, not a finding.
+  Full writeup and the reusable grep pair are in
+  [PROJECT.md](PROJECT.md)'s "Functions" caveats. **Net effect for
+  planning:** the game section's true raw-function backlog (4161) is
+  headroom for many future sessions - didn't start on it this session
+  (stayed with debugger, see below) - and the corrected counts are
+  what to plan against, not the raw `progress.csv` totals.
 - **Set up `mips_to_c` (undocumented in this repo before now):**
   `tools/mips_to_c/m2c.py` failed with `ModuleNotFoundError:
   pycparser.plyparser` - the environment had `pycparser` 3.0 installed but

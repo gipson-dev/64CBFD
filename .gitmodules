@@ -10,3 +10,6 @@
 [submodule "tools/mips_to_c"]
 	path = tools/mips_to_c
 	url = https://github.com/matt-kempster/mips_to_c.git
+[submodule "tools/CBFD_rabbitizer"]
+	path = tools/CBFD_rabbitizer
+	url = https://github.com/gipson-dev/CBFD_rabbitizer.git

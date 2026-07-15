@@ -50,6 +50,7 @@ make -C conker progress NON_MATCHING=1
 |   |-- asm-differ/      Assembly comparison tool (submodule)
 |   |-- asm-processor/   Supports GLOBAL_ASM blocks inside C files (submodule)
 |   |-- mips_to_c/       First-pass MIPS-to-C translation helper (submodule)
+|   |-- CBFD_rabbitizer/ MIPS instruction decoder, project fork of rabbitizer (submodule)
 |   |-- splat_ext/       Project-specific n64splat extensions
 |   |-- gzip             Matching compression helper
 |   `-- *.py             Project-specific scripts
@@ -153,9 +154,9 @@ Last regenerated: 2026-07-15, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.77% | 1555 / 7644 (20.34%) |
+| total | `[##----------------------]` 6.77% | 1557 / 7644 (20.37%) |
 | init | `[#####-------------------]` 20.16% | 232 / 547 (42.41%) |
-| game | `[#-----------------------]` 5.11% | 1151 / 6915 (16.64%) |
+| game | `[#-----------------------]` 5.11% | 1153 / 6915 (16.67%) |
 | debugger | `[#################-------]` 70.26% | 172 / 182 (94.51%) |
 
 Two caveats about what this table measures:
@@ -167,6 +168,29 @@ Two caveats about what this table measures:
   from documentation and never re-verified against a working build in this
   checkout; the 2026-07-14 baseline above is the first trustworthy one.
   Regenerate with `make -C conker progress NON_MATCHING=1` going forward.
+- **The raw (`GLOBAL_ASM`) side of the "Functions" column includes
+  non-function artifacts** - `.s` files under `asm/` can define three kinds
+  of label: `glabel` (a real function - the only kind that should ever get
+  a `GLOBAL_ASM` C stub), `jlabel` (an internal jump-table target *inside*
+  a function's own instruction stream - not independently convertible,
+  it's absorbed into whichever function contains it), and `dlabel` (a data
+  symbol that happens to be named like a function, e.g. a jump table
+  stored as rodata gets auto-named `func_XXXXXXXX` by splat even though
+  it's declared `dlabel`). `progress.csv` doesn't distinguish these, so
+  raw-count totals overstate real remaining function work. Checked
+  2026-07-15 (cross-referencing every raw `progress.csv` row's name
+  against `grep -rhoP '\bjlabel\s+\K\S+' asm/` /
+  `grep -rhoP '\bdlabel\s+\K\S+' asm/`): of the raw entries above, **game's
+  5764 includes 1603 artifacts (1601 `jlabel` + 2 `dlabel`, real count
+  4161)**; **init's 315 includes 9 `jlabel` artifacts (real count 306)**;
+  debugger's 12 had none (all real). This check only works for *still-raw*
+  entries (a converted function's `.s` file/`glabel` line is gone once it
+  has real C, so the same grep can't retroactively validate the
+  already-converted numerator) - don't try to "correct" the C-converted
+  counts the same way; `D_`-prefixed `language: c` rows there are
+  legitimately-tracked data-symbol declarations, not function-conversion
+  noise. Re-run the grep pair above (fast, whole-tree) before trusting a
+  raw-count total for planning a conversion pass.
 
 ### Byte-matching snapshot
 
@@ -176,9 +200,9 @@ bytes (last regenerated 2026-07-15, via
 
 | Section | Byte-exact | Blocked on callees | Still differ |
 | --- | --- | --- | --- |
-| total | 548 / 1555 (35.24%) | 145 | 862 |
+| total | 548 / 1557 (35.20%) | 145 | 862 |
 | init | 223 / 232 (96.12%) | 4 | 5 |
-| game | 197 / 1151 (17.12%) | 141 | 813 |
+| game | 197 / 1153 (17.09%) | 140 | 816 |
 | debugger | 128 / 172 (74.42%) | 0 | 44 |
 
 "Blocked on callees" means the only remaining differences are `j`/`jal`
