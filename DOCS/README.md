@@ -9,9 +9,9 @@ Snapshot as of 2026-07-15. Functions converted from raw assembly to C
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.77% | 1557 / 7644 (20.37%) |
-| init | `[#####-------------------]` 20.16% | 232 / 547 (42.41%) |
-| game | `[#-----------------------]` 5.11% | 1153 / 6915 (16.67%) |
+| total | `[##----------------------]` 6.77% | 1556 / 6033 (25.79%) |
+| init | `[#####-------------------]` 20.16% | 232 / 538 (43.12%) |
+| game | `[#-----------------------]` 5.11% | 1152 / 5313 (21.68%) |
 | debugger | `[#################-------]` 70.26% | 172 / 182 (94.51%) |
 
 Of those C-converted functions, the share that already compiles to the
@@ -21,9 +21,9 @@ functions get matched):
 
 | Section | Byte-exact | Blocked on callees | Still differ |
 | --- | --- | --- | --- |
-| total | 548 / 1557 (35.20%) | 145 | 862 |
-| init | 223 / 232 (96.12%) | 4 | 5 |
-| game | 197 / 1153 (17.09%) | 140 | 816 |
+| total | 549 / 1556 (35.28%) | 143 | 864 |
+| init | 224 / 232 (96.55%) | 3 | 5 |
+| game | 197 / 1152 (17.10%) | 140 | 815 |
 | debugger | 128 / 172 (74.42%) | 0 | 44 |
 
 When regenerating, update both tables together with the copies in the

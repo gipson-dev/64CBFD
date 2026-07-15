@@ -25,6 +25,24 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-15, ninth session continued):** fixed a real bug in
+`tools/progress.py` (project-owned, not the n64splat submodule) that was
+inflating every raw-function count in the "Functions" progress table.
+Its map-file parser tried to skip jump-table-target local labels
+(`.L15029BA0`-style) via `if new_function.startswith("L8")` - dead code,
+it never matched anything (missing the leading `.`, and written for
+unmodified real-address labels this project's remapped `0x10`/`0x15`/
+`0x16xxxxxx` addressing never produces anyway). Fixed to
+`.startswith(".L")` and regenerated: **`game` 6915→5313 total functions,
+`init` 547→538, `debugger` unaffected (172/182, was already clean)** -
+converted counts unchanged (1152/232/172), only the denominators got more
+honest. This supersedes the manual grep-based correction from earlier the
+same day (still useful as a spot-check method, no longer needed as a
+workaround). Tables updated project-wide. Two `dlabel`-tagged artifacts
+in `game` (data auto-named like functions) remain uncorrected - out of
+scope for this fix (`.L`-prefix filtering doesn't touch them), tiny
+residual (2 of several thousand), not worth a special-case hack.
+
 **Update (2026-07-15, eighth session):** "knock out fast functions."
 **Critical finding, read this before trusting any single-function
 diff/word-count from `match_progress.py` or the `dump_func.py`-style
@@ -367,6 +385,80 @@ git checkout -- .
 ```
 
 ## Session log
+
+### 2026-07-15 (ninth session - reference sweep: N64ops03.txt, project wiki)
+
+- User pointed at `rom backup/N64ops03.txt` (a generic 1998 MIPS/N64 opcode
+  reference - opcode/COP0/COP1 encoding tables, ROM header layout) and the
+  `64CBFD.wiki` submodule, asking for useful info. `N64ops03.txt` is
+  low-novelty (project tooling already handles instruction decoding) but a
+  handy human-readable cross-check for the ROM header layout.
+- The wiki had real, mostly non-redundant content. Folded two pieces into
+  [ASSET_FORMATS.md](ASSET_FORMATS.md) at the user's request:
+  - **New §2a**: a reported compressed-code-loading mechanism (4096-byte
+    on-demand chunks via a bad-virtual-address/TLB-miss trick, chunk table
+    at ROM `0x42454` XOR-encrypted with key `0x8039CCCA`, based at
+    `0x42450`) - distinct from the asset `rzip` containers in §2. Marked
+    Tentative - sourced from the wiki's `Useful-Info` page (originally a
+    Discord chat with `gamemasterplc`), not reproduced against this repo's
+    own extraction. `0x42450` falls in the `init`/boot ROM range - worth
+    checking against `conker.us.yaml`'s actual `init`/`init_data` split
+    before trusting the exact offsets.
+  - **§6 (`assets17`) extended**: confirmed `0x4231`/"B1" is the real
+    `AL_BANK_VERSION` libaudio.h constant (corroborates, doesn't change,
+    the header already decoded there); added that `assets17` sub-file
+    `0003` uses a *different* magic (`"S1"` = `AL_SEQBANK_VERSION`) and
+    format (a 149-entry offset+length table, likely `ALSeqFile` sequence
+    data) - a separate container schema from the B1 sample bank, and
+    `0002` (~21MB) is the raw sample bank with a known third-party
+    extraction path (N64 Midi Tool → DLS → SF2). Also marked Tentative -
+    same wiki source, unverified here, and the wiki's own file-index
+    labeling for the B1 header is internally inconsistent (worth
+    resolving before relying on it).
+  - Updated §9's open-questions bullets to point at both additions.
+  - Not folded in (lower confidence / already covered): `Patterns.md`'s
+    IDO/cfe idiom list (already has a project-native equivalent building up
+    in this file's own Session log entries).
+- **Not addressed**: the wiki submodule has substantial uncommitted local
+  changes (`git -C 64CBFD.wiki status` shows nearly every page modified,
+  plus `Contributing.md`/`Home.md`/`Using-Ghidra.md` showing as deleted
+  relative to its last commit) - flagged to the user, not investigated or
+  touched further this session since it wasn't asked for.
+- **Follow-up, same session: did the OS function name/address table diff.**
+  Parsed `Useful-Info.md`'s 115-entry `0x8000xxxx`-addressed table and
+  cross-referenced against `symbol_addrs.us.txt`. Address mapping: this
+  project's `init` segment uses an artificial vram (`0x10001000`+, splat
+  bookkeeping only) offset by exactly `-0x70000000` from the real N64
+  address the wiki's table uses (confirmed via `__osSetSR`'s own `.s`
+  file: real `0x80022a30` ↔ project `0x10022a30`) - subtract `0x70000000`
+  from any wiki address to look it up here. Result: **101/115 already
+  correctly named, zero mismatches** (good sign the existing naming is
+  trustworthy), **8 unique addresses genuinely missing** (14 raw entries
+  counting aliases - several wiki addresses list multiple real names for
+  one address, e.g. libultra functions that are byte-identical at that
+  specific address). Of those 8: three (`0x10024400`, `0x10026700`,
+  `0x10026750`) were confirmed-covered still-raw `GLOBAL_ASM` functions
+  using generic `func_XXXXXXXX` names - added real names to
+  `symbol_addrs.us.txt` (`osPiGetDeviceType` for the first, aliases noted
+  in `//` comments since splat's parser supports them; `__osSiRawReadIo`/
+  `__osSpRawWriteIo` for the other two, real SDK behavior - SI and SP
+  raw I/O share one implementation, not a coincidence). Re-ran
+  `make extract VERSION=us` to apply the new names, then rebuilt - one
+  stale cached `build/src/libultra/os/initialize.c.o` briefly showed
+  `undefined reference to 'func_10026700'` even though no source
+  referenced that name (a leftover object file from before the rename,
+  not a real problem - `rm`ing it and rebuilding fixed it immediately).
+  Confirmed no regressions and a small bonus: `init` byte-exact went
+  223→224 and blocked-on-callees 4→3, both counts otherwise stable. The
+  other 5 addresses (`osViModePalLan1`/`osViModeMpalLan1`/
+  `osViModeNtscLan1`/`__osRcpImTable`/`__libm_qnan_f`, ROM range
+  `~0x2be30`-`~0x2c920`) don't correspond to anything in the current
+  `conker.us.yaml`/`symbol_addrs.us.txt` at all despite falling within the
+  already-covered `init` code range - likely un-split data tables
+  currently absorbed into a surrounding rodata/bin blob rather than a
+  segment-boundary gap. Not added (would need understanding the current
+  subsegment structure around them first, same caution as the earlier
+  jump-table lesson this session) - left as a known lead.
 
 ### 2026-07-15 (eighth session - "knock out fast functions")
 

@@ -118,6 +118,8 @@ __osSpDeviceBusy                = 0x10023e80;
 __osSetTimerIntr                = 0x100240B4;
 __osInsertTimer                 = 0x10024128;
 __osViInit                      = 0x100242b0;
+// aliases: __osGetActiveQueue/__osViGetNextContext/__osGetCurrFaultedThread/__osViGetCurrentContext
+osPiGetDeviceType               = 0x10024400;
 __osViSwapContext               = 0x10024410;
 osGetCount                      = 0x10024770;
 __osDequeueThread               = 0x10024780;
@@ -161,6 +163,10 @@ osMapTLB                        = 0x10026310;
 osAiSetFrequency                = 0x100263d0;
 sqrtf                           = 0x10026530;
 __sinf                          = 0x10026540;
+// alias: __osSpRawReadIo
+__osSiRawReadIo                  = 0x10026700;
+// alias: __osSiRawWriteIo
+__osSpRawWriteIo                 = 0x10026750;
 osPiRawReadIo                   = 0x100267a0;
 __ull_rshift                    = 0x10026800;
 __ull_rem                       = 0x1002682c;

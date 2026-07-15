@@ -62,8 +62,15 @@ def parse_map(mapfile, section, ending=None):
                 offset = int(offset, 16)
             else:
                 continue
-            if new_function.startswith("L8"):
-                # skip label entries
+            if new_function.startswith(".L"):
+                # skip jump-table-target local labels (e.g. ".L15029BA0") -
+                # these are internal to whichever function contains them,
+                # not separate functions. The original check here was
+                # `startswith("L8")`, which assumed real-address-style
+                # local labels (".L80012345") without accounting for the
+                # leading "." - it never matched anything, real or
+                # remapped, and silently counted every jump-table target
+                # in `game`/`init`/`debugger` as its own "function".
                 continue
             if offset < previous_offset:
                 # sanity

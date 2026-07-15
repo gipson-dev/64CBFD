@@ -51,6 +51,7 @@ make -C conker progress NON_MATCHING=1
 |   |-- asm-processor/   Supports GLOBAL_ASM blocks inside C files (submodule)
 |   |-- mips_to_c/       First-pass MIPS-to-C translation helper (submodule)
 |   |-- CBFD_rabbitizer/ MIPS instruction decoder, project fork of rabbitizer (submodule)
+|   |-- texture2c/       N64 texture format to C converter (submodule)
 |   |-- splat_ext/       Project-specific n64splat extensions
 |   |-- gzip             Matching compression helper
 |   `-- *.py             Project-specific scripts
@@ -154,9 +155,9 @@ Last regenerated: 2026-07-15, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.77% | 1557 / 7644 (20.37%) |
-| init | `[#####-------------------]` 20.16% | 232 / 547 (42.41%) |
-| game | `[#-----------------------]` 5.11% | 1153 / 6915 (16.67%) |
+| total | `[##----------------------]` 6.77% | 1556 / 6033 (25.79%) |
+| init | `[#####-------------------]` 20.16% | 232 / 538 (43.12%) |
+| game | `[#-----------------------]` 5.11% | 1152 / 5313 (21.68%) |
 | debugger | `[#################-------]` 70.26% | 172 / 182 (94.51%) |
 
 Two caveats about what this table measures:
@@ -168,29 +169,40 @@ Two caveats about what this table measures:
   from documentation and never re-verified against a working build in this
   checkout; the 2026-07-14 baseline above is the first trustworthy one.
   Regenerate with `make -C conker progress NON_MATCHING=1` going forward.
-- **The raw (`GLOBAL_ASM`) side of the "Functions" column includes
-  non-function artifacts** - `.s` files under `asm/` can define three kinds
-  of label: `glabel` (a real function - the only kind that should ever get
-  a `GLOBAL_ASM` C stub), `jlabel` (an internal jump-table target *inside*
-  a function's own instruction stream - not independently convertible,
-  it's absorbed into whichever function contains it), and `dlabel` (a data
-  symbol that happens to be named like a function, e.g. a jump table
-  stored as rodata gets auto-named `func_XXXXXXXX` by splat even though
-  it's declared `dlabel`). `progress.csv` doesn't distinguish these, so
-  raw-count totals overstate real remaining function work. Checked
-  2026-07-15 (cross-referencing every raw `progress.csv` row's name
-  against `grep -rhoP '\bjlabel\s+\K\S+' asm/` /
-  `grep -rhoP '\bdlabel\s+\K\S+' asm/`): of the raw entries above, **game's
-  5764 includes 1603 artifacts (1601 `jlabel` + 2 `dlabel`, real count
-  4161)**; **init's 315 includes 9 `jlabel` artifacts (real count 306)**;
-  debugger's 12 had none (all real). This check only works for *still-raw*
-  entries (a converted function's `.s` file/`glabel` line is gone once it
-  has real C, so the same grep can't retroactively validate the
-  already-converted numerator) - don't try to "correct" the C-converted
-  counts the same way; `D_`-prefixed `language: c` rows there are
-  legitimately-tracked data-symbol declarations, not function-conversion
-  noise. Re-run the grep pair above (fast, whole-tree) before trusting a
-  raw-count total for planning a conversion pass.
+- **Fixed at the source, 2026-07-15: `tools/progress.py` was counting
+  jump-table-target local labels as their own "functions."** The table
+  above already reflects the fix - noted here so the history isn't lost.
+  `.s` files under `asm/` define two relevant kinds of label: `glabel` (a
+  real function) and `jlabel` (an internal jump-table target *inside* a
+  function's own instruction stream, e.g. `.L15029BA0` - not independently
+  convertible, it's absorbed into whichever function contains it).
+  `tools/progress.py`'s map-file parser had a check meant to skip these
+  (`if new_function.startswith("L8"):`) that never matched anything: it
+  assumed unmodified real-address-style local labels (`.L80012345`)
+  without accounting for the leading `.`, and this project remaps code
+  addresses to `0x10`/`0x15`/`0x16xxxxxx` besides. Every jump-table target
+  in `init`/`game`/`debugger` was silently counted as its own raw
+  "function," inflating every raw-count denominator (and total function
+  counts) in this table. Fixed the check to `.startswith(".L")`
+  (general, not tied to a specific address range) and regenerated -
+  **`game` dropped from 6915 to 5313 total functions (1153→1152
+  converted, same functions, smaller/more honest denominator), `init`
+  from 547 to 538 (232 converted, unchanged), `debugger` unaffected (was
+  already clean, no jlabel noise there)**. A same-day earlier pass had
+  found this same inflation by cross-referencing `progress.csv` against
+  `grep -rhoP '\bjlabel\s+\K\S+' asm/` as a manual workaround - that's no
+  longer needed for the raw-count side, the numbers are now correct at
+  the source. Two `dlabel` artifacts in `game` (data mis-auto-named like
+  functions, e.g. `func_150AA814` - a jump table stored as rodata) are
+  **not** caught by this fix (`.L`-prefix filtering only catches
+  `jlabel`, not `dlabel`-tagged `func_`/`D_`-named entries) - a residual,
+  much smaller inaccuracy (2 of several thousand) left undocumented-away
+  rather than hardcoded around.
+- **Don't try to "correct" the C-converted (`language: c`) side the same
+  way** - `D_`-prefixed `c` rows there are legitimately-tracked
+  data-symbol declarations (e.g. `extern u8 D_16003888;`), not
+  function-conversion noise; only the raw/`asm` side had the label-miscount
+  bug.
 
 ### Byte-matching snapshot
 
@@ -200,9 +212,9 @@ bytes (last regenerated 2026-07-15, via
 
 | Section | Byte-exact | Blocked on callees | Still differ |
 | --- | --- | --- | --- |
-| total | 548 / 1557 (35.20%) | 145 | 862 |
-| init | 223 / 232 (96.12%) | 4 | 5 |
-| game | 197 / 1153 (17.09%) | 140 | 816 |
+| total | 549 / 1556 (35.28%) | 143 | 864 |
+| init | 224 / 232 (96.55%) | 3 | 5 |
+| game | 197 / 1152 (17.10%) | 140 | 815 |
 | debugger | 128 / 172 (74.42%) | 0 | 44 |
 
 "Blocked on callees" means the only remaining differences are `j`/`jal`

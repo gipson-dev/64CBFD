@@ -62,6 +62,26 @@ assert len(out) == usize
 This matches `tools/splat_ext/rzip.py` and round-trips cleanly on every block
 tested. See also `tools/rareunzip.py` / `tools/rarezip.py`.
 
+### 2a. Compressed *code* loading (Tentative - not independently verified here)
+
+Distinct from the asset-container `rzip` usage above: per the project wiki's
+`Useful-Info` page (community find via Discord, `gamemasterplc`), compressed
+**code** is loaded on demand in 4096-byte decompressed chunks, triggered by
+deliberately abusing the CPU's bad-virtual-address exception handler (a
+TLB-miss-driven demand-paging trick, not the straightforward container
+walk `func_1502B9B4` does for assets in §3). Reported details:
+
+- One chunk sample sits at ROM `0x42C50`.
+- The chunk table is at ROM `0x42454`, encrypted with XOR key `0x8039CCCA`,
+  and its offsets are relative to ROM base `0x42450`.
+- A chunk-length field also lives at `0x42450`.
+
+Not reproduced or cross-checked against this repo's own extraction yet
+(`0x42450` falls inside the `init`/boot range per `conker.us.yaml` - worth
+comparing against how `init`/`init_data` are actually split before trusting
+the exact offsets). Recorded here so it doesn't need rediscovering; treat as
+a lead, not a confirmed mechanism.
+
 ## 3. The container / offset-table format (Confirmed)
 
 Model archives and many other files begin with a fixed directory of entries.
@@ -359,6 +379,33 @@ solid texture region looks like in RGBA16.
   the rest of the `assets17` section (~22 MB, ROM `0x29AE9E8`–`0x3F82170`). The
   per-sample codec and the table-2 event encoding still need the audio-driver
   code to decode fully.
+- **`0x4231` ("B1") is `AL_BANK_VERSION`** per the real `libaudio.h` constant
+  name (community find, 2026-07-15 via the project wiki's `Useful-Info` page,
+  sourced from a Discord chat with `gamemasterplc` - not independently
+  re-derived here, but consistent with and naming the header already decoded
+  above). The wiki also notes `0x4231` is referenced from a function at
+  `func_80012934` in an older (pre-address-remap) build of this project - not
+  yet re-located under this repo's current `0x1500xxxx`/`0x1600xxxx`
+  addressing, but worth grepping for if the audio-driver code is tackled.
+- **`assets17`'s numbered sub-files have distinct formats, only two decoded so
+  far (Tentative, wiki-sourced, not independently verified against this
+  ROM):**
+  - **`0002` (~21 MB): the raw sample/instrument bank** referenced by table 1
+    above. Extractable today with third-party tools: N64 Midi Tool → DLS →
+    Vienna/SynthFont → SF2, if anyone wants to actually listen to the game's
+    instrument samples rather than just parse the container format.
+  - **`0003` (~2.8 MB): a second, differently-tagged bank - magic `"S1"`
+    (`0x5331`), i.e. `AL_SEQBANK_VERSION`, not `AL_BANK_VERSION`.** Header:
+    `u16 count` (149 in the sample seen) followed by `count` `(u32 offset,
+    u32 length)` pairs, then the 149 payloads themselves (likely
+    `ALSeqFile`-formatted MIDI-like sequence data, matching the "149 music
+    files" description). This is a **separate container format** from the B1
+    bank documented above - don't assume `assets17`'s sub-files share one
+    schema.
+  - `0000`/`0001`/`0004`–`0006` remain undetermined; the wiki's own file
+    numbering for which one carries the B1 header is internally inconsistent
+    (heading says `0001`, the shown command runs on `0000.bin`) - re-verify
+    the actual index before relying on it.
 
 ## 7. Data / text tables (Tentative)
 
@@ -405,6 +452,14 @@ Sections not listed have not been classified in detail yet; most non-audio
   entry in the 8/15 files where it isn't the final one.
 - **assets17 (`"B1"`).** Decode table-2 (the event/region data after `0x2C0`) and
   the per-sample codec; identify what `+0x04 = 8` and `+0x14 = 700` count.
+  Also: verify the `"S1"`/`ALSeqFile` sub-file (§6) against this repo's own
+  extraction (wiki-sourced, unverified here), resolve its file-index
+  labeling inconsistency, and decode the still-undetermined sub-files
+  (`0000`/`0001`/`0004`–`0006`).
+- **Compressed code loading (§2a).** Reproduce/cross-check the reported
+  4096-byte on-demand chunk mechanism (XOR key `0x8039CCCA`, table at ROM
+  `0x42454`) against this repo's own `init`/`init_data` extraction -
+  currently only a recorded lead, not verified.
 - **Textures.** Find where image width/height/format is specified, and check for
   CI4/CI8 (palette) textures in other sections.
 - **Master asset offset table** at ROM `0xAB1950` (`assets_offsets_table` in

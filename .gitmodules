@@ -13,3 +13,6 @@
 [submodule "tools/CBFD_rabbitizer"]
 	path = tools/CBFD_rabbitizer
 	url = https://github.com/gipson-dev/CBFD_rabbitizer.git
+[submodule "tools/texture2c"]
+	path = tools/texture2c
+	url = https://github.com/Decompollaborate/texture2c.git
