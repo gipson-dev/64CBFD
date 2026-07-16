@@ -25,6 +25,437 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-16, eighteenth session part 4 - THE DEBUGGER OVERLAY
+DATA DISPLACEMENT IS HEALED: debugger 27 -> 147/172 byte-exact (85.47%),
+total 776 -> 895/1555 (57.56%).)**
+Closed out the size problem. The two remaining func_16001BB4 words are
+uopt scheduling coin-flips, not structure - our build produces the SAME
+double `beqz t9` branch pair and the same blocks; only the delay-fill
+choices differ (retail likely-converts branch 1 with the duplicated
+`addiu a3,s2,1`, and fills the loop-back `b` delay with an `lbu` preload
+of the loop top; ours fills the `b` delay with the addiu instead - the
+two choices interlock). Tried and ruled out at the source level:
+shared vs per-instance _PAD i/c pairs, assignment-in-condition,
+assignment-in-macro-argument, `(s32)` cast on the chunk expression,
+goto vs while(1) vs `for (;; fmt = fmt_ptr + 1)` - all compile
+byte-identical. Since the C is semantically verified and only 2 words
+off, converted `func_16001BB4` to **GLOBAL_ASM** (C kept in comments
+with a detailed note) so the function occupies its exact retail 402
+words. Verified via raw linked-ELF bytes vs retail ROM:
+**func_16001BB4 is 0/402 diffs**, and the whole debugger overlay's
+remaining text diffs are just `func_16001044` (151/155, the next
+target) and `func_1600288C` (21/294 - the exp stack-slot offset x~15
+plus qr; note its slot layout shifted again after the 16001BB4 pragma
+change, so re-tune AFTER other file edits settle, and beware:
+`match_progress.py`'s per-function diff counts are wrong for these rows
+(reported 226/363 where raw bytes show 21/0) - trust raw byte compares
+at name-implied offsets).
+
+Re-extraction gotchas hit on the way (WSL env): splat needed
+`pip3 install --break-system-packages colorama intervaltree spimdisasm
+tqdm n64img pygfxd crunch64 msgpack` (and re-pin `pycparser==2.21` for
+mips_to_c afterwards - requirements.txt upgraded it to 3.0). Splat only
+emits a nonmatchings `.s` for functions that are GLOBAL_ASM pragmas in
+the current `.c` (so set the pragma FIRST, then `make -C conker extract
+VERSION=us`). The extraction also regenerates
+`conker/undefined_funcs_auto.txt` and DROPS symbols referenced only from
+GLOBAL_ASM blocks inside `.c` files - the link then fails with
+`undefined reference to func_XXXXXXXX`; fix by appending
+`func_XXXXXXXX = 0xXXXXXXXX;` lines (name-implied addresses; this
+session needed func_10026700/func_10026750).
+
+Remaining debugger still-differ rows are now almost all **data**
+(`D_16003xxx`/`D_16004xxx` content diffs - the file's rodata/data blobs
+our compile emits vs retail's: string tables, the `_Litob` digit
+strings D_16003CB8/CCC, the jump table D_1600487C region, float pool
+D_16004950 etc.). That's the next debugger frontier after
+func_16001044: make debugger_257350.c's emitted data byte-match.
+
+**Update (2026-07-16, eighteenth session part 3 - the SDK source works:
+func_16002DE4 byte-exact, func_1600288C and func_16001BB4 nearly so; the
+debugger data displacement is down from -0x60 to -8.)**
+Followed the Plauger identification to its source: **the N64 SDK's libultra
+libc ships this exact code, and n64decomp/mk64 (`src/os/_Ldtob.c`,
+`src/os/_Printf.c`) and n64decomp/sm64 (`lib/src/`) carry IDO-matched
+copies.** Worked the three remaining size-wrong functions from those texts:
+
+- `func_16002DE4` = `_Genld`: transcribed mk64's text with our field names
+  (width=precision, len=part2_len, dest=buff, unkC=part1_len,
+  unk18=num_mid_zeros, unk1C=part3_len, unk20=num_trailing_zeros,
+  unk28=width, padWidth=num_leading_zeros, func_16001AD0=memcpy,
+  D_16004878="0"). **369/369 words, zero real diffs** after one statement
+  swap (retail assigns `arg2 = D_16004878;` before `arg3 = 1;`). Now
+  classified BLOCK. Key shapes: in-place `p`/`xexp` mutation, compound
+  `(px->width -= xexp) < 0` tests, `unk1C = arg3` embedded in the copy
+  call, comma statements, `u8 point = '.'` local.
+- `func_1600288C` = `_Ldtob`: **294/294 words, 26 remaining diffs, all
+  stack-slot offsets** (qr at 92 vs 100, exp at 152 vs 142; frame and
+  every other slot exact). Load-bearing finds: `err` is s32 (s16 adds a
+  caller-side sll/sra retail lacks); retail's 0.0/1.0 come from **f32
+  variables** (`fzero`/`one` - literals constant-fold to double pairs,
+  but f32 locals constant-propagate to single materializations +
+  cvt.d.s, exactly retail's `mtc1 zero,$f4; cvt.d.s` and
+  `lui at,0x3f80` forms); a **`volatile f64 zero2 = zero;`** copy is
+  what reproduces retail's memory-homed loop-backedge zero (a plain
+  copy coalesces into callee-saved $f22 - volatile blocks the coalesce;
+  possibly the original had something equivalent, or uopt's
+  constant-spill strategy differs subtly); `lo` top-level + `qr`
+  **block-scoped in the for** gives retail's `lw t2/move s1,t2`
+  backedge (top-level qr kills the move); declaration order controls
+  slot packing (moving `zero`/`fzero`/`one` declarations after `n2`
+  fixed zero2 to 160 and the frame to 216).
+- `func_16001BB4` = `_Printf`: rewritten with the SDK's **ATOI/_PROUT/
+  _PAD macros** - the pad emissions each have a distinct i/c local pair
+  (ten s32 locals), and the running total is **`st.pad2C`** (Plauger's
+  `_Pft.size` struct field), which resolves the thirteenth session's
+  "total in a stack slot 0xd4(sp)" mystery for free. Also found and
+  fixed a REAL bug: retail's `func_160021FC` (_Putfld) reads the length
+  modifier from **struct offset 0x34** (`lbu 0x34($s1)` x5), so
+  `u8 length` was added to struct262 and `st.length` replaces the old
+  `length_mod` local that never reached the callee (h/l/L modifiers were
+  silently dropped). **400/402 words, ~6 real diff instructions**: two
+  s32 dead pads (`pad1`, and `n` from an assignment-in-condition
+  experiment) restore the frame to 224 and collapse ~90 offset diffs.
+  Two single-word idioms remain: (1) retail computes the first chunk as
+  `subu v0` + `move s1,v0` (uopt web-split across the callback; ours
+  coalesces into s1 - assignment-in-condition did NOT reproduce it),
+  and (2) retail's last-_PAD skip is the classic IDO
+  **beqzl+beqz double branch on the same register** with
+  `fmt = fmt_ptr + 1` in the likely delay and a `lbu` loop-top preload
+  in the final `b 0x64` delay - goto-form and while(1)-form both compile
+  identical without it. These 2 missing words shift everything after
+  func_16001BB4 by **-8** (map confirms: func_160021FC at 0x160021F4
+  etc.), which is now the ONLY remaining displacement - down from -0x60.
+
+Verified snapshot: `776/1556` exact, `623` blocked, `157` still differ;
+debugger `28/173` exact (func_16002DE4 joined), `7` blocked, `138` still
+differ. `match_progress` currently over-reports func_1600288C (226) and
+func_16001BB4 (363) because of the -8 shift interacting with its
+counting; the `.o`-level diffs (26 and 14 including relocs) are the real
+numbers. **Next session: close func_16001BB4's two words** (that heals
+the whole overlay's data placement), then func_16001044 (151 diffs,
+correct size), then 288C's qr/exp slots. The debug ROM may help on the
+beqzl idiom (it contained func_16002D2C word-for-word).
+
+**Update (2026-07-16, eighteenth session part 2 - THE DEBUGGER FORMATTER IS
+PLAUGER'S STANDARD C LIBRARY; func_160033A8 code-exact via _Litob.)**
+Continued the size-wrong five with `func_160033A8`. The decisive discovery:
+**`debugger_257350.c`'s formatter engine is Rare's 64-bit adaptation of
+P.J. Plauger's "The Standard C Library" printf implementation.** Found by
+searching for the code shape (`table[uValue % radix]`) after the aligned
+diff kept resisting register-allocation guesses. The mapping:
+`func_16001BB4` = `_Printf`, `func_1600288C` = `_Ldtob`,
+`func_16002DE4` = `_Genld` (its `(struct262 *, u8 code, u8 *p, s16 nsig,
+s16 xexp)` signature is exactly `_Genld`'s), `func_160033A8` = `_Litob`,
+`func_16002D2C` (matched session 11) = `_Dtest`, and `func_160021FC` is
+likely `_Putfld`. **Work the remaining three from Plauger's published
+source, not from decompiler output.**
+
+Rewrote `func_160033A8` to `_Litob`'s exact shape and it now compiles
+**byte-identical to retail (168/168 words, frame 0x90, zero real diffs at
+the .o level)**; after a full build, `match_progress.py` reclassifies it
+from `DIFF` (125 real diffs) to `BLOCK` - its only remaining mismatches
+are `%lo(D_16003Cxx)` displacement, i.e. the known -0x60 data placement.
+The load-bearing Plauger idioms (all verified against retail bytes):
+- `table`/`radix` are **declaration initializers**; radix is the nested
+  ternary `(c == 'o') ? 8 : (c != 'x' && c != 'X') ? 10 : 16` (the inner
+  ternary's temp produces retail's `move t1,t0`; as an if/else statement
+  uopt coalesces it away, and `radix = base;` via a second variable
+  wrongly promotes radix to a callee-saved register).
+- `uvalue` initializes **directly from `arg0->num.value`** and the sign
+  test reads the struct again - there is NO `s64 value` local; retail's
+  64/68(sp) pair is cfe's 64-bit staging temp, not a variable.
+- The negate is `uvalue = -uvalue;` (retail negates the uvalue slots).
+- **`buf[--pos] = table[...]`** - the pre-decrement's temp is what stops
+  uopt from strength-reducing the indexing into a moving `out` pointer
+  (the fifteenth session's `out` was a wrong turn; reverted).
+- The loop is `while ((arg0->num.value > 0) && (pos > 0))` with
+  **`lldiv_t qr` block-scoped inside the loop** and
+  `lldiv(arg0->num.value, radix)` reading the struct directly.
+- `arg0->len = 24 - pos;` then passing `arg0->len` to the copy (no
+  `total` local - deleting it fixed the last +8 frame-size delta), and
+  the final width fixup **reuses `pos`** (Plauger reuses `i`).
+
+Verified snapshot after full rebuild: `775/1556` exact, **`622` blocked**,
+**`159` still differ**; debugger is `27/173` exact, `6` blocked, `140`
+still differ. Remaining real-diff debugger functions: `func_16001044`
+(151, correct size since session 10), `func_1600288C` (263 = `_Ldtob`),
+`func_16002DE4` (366 = `_Genld`), `func_16001BB4` (392 = `_Printf`).
+Once those three are size-correct the -0x60 data displacement heals and
+the ~130 blocked `D_16003xxx`/`D_16004xxx` rows plus the small blocked
+functions should all flip to exact.
+
+**Update (2026-07-16, eighteenth session - PRNG pair identified as
+hand-written assembly; both now byte-exact via GLOBAL_ASM.)**
+Closed out `func_150ADACC` (3 real diffs) and `func_150ADA20` (19 real
+diffs): they are **hand-written assembly in the original game**, not
+compiler output, so no C source shape can match them. Evidence, in
+decreasing order of strength: retail `func_150ADA20` is strictly
+source-order sequential where IDO -O2 provably reschedules (our build of
+the equivalent C interleaves the shift pairs); its loads/stores are the
+assembler's literal `ld a0, D_800885B0` / `sd a0, D_800885B0` macro
+expansions (`lui a0; ld a0,(a0)` self-base and `lui at; sd`); it reuses
+only a0/a1/a2 as scratch in a void-arg function; the `jr ra` delay slot
+holds a useful `dsra32`; and `func_150ADACC`'s dead `li a0,0; jr ra`
+ending is **unique in the entire ROM** (scanned - 1 hit). Tried and ruled
+out on the way: s64 local (daddiu lands in t7, dead store eliminated),
+ANSI and K&R u64 parameter (both home the a0/a1 pair via sw/sw/ld -
+retail has no homing), `(s64)arg0 + 1` expression (t7 again). Reverted
+both to `#pragma GLOBAL_ASM` (the extracted `.s` files were still intact)
+with the verified-correct C kept as comments, same convention as
+`func_16003650`. Restored the seventeenth session's `u32` prototype for
+`func_150ADACC` in `functions.h` so caller `func_1501905C` stays matched.
+Verified via ELF-at-symbol-address comparison: both functions byte-exact
+at their name-implied retail offsets. New verified snapshot:
+`775/1556` exact (denominator dropped by 2 - the pair moved out of the
+C-converted count), `621` blocked, **`160` still differ**; `game` is
+`525/1151` exact, `608` blocked, **`18` still differ**.
+
+Environment notes for future sessions on the Windows host: builds run via
+WSL distro `PSBBN` (`wsl.exe -e bash -lc`, strip UTF-16 NULs from output);
+the correct ELF for `match_progress.py` is `conker/build/conker.us.elf`,
+NOT the repo-root `build/conker.us.elf` (a data-only ROM-image ELF that
+silently yields 0/1558). Also guarded `tools/match_progress.py`'s SIGPIPE
+handler with `hasattr` - native Windows Python has no `signal.SIGPIPE`.
+
+**Update (2026-07-16, seventeenth session - address-drift noise reduced;
+seed setter/caller improved.)**
+Continued matching "as many as possible" after the sixteenth-session helper
+work. Improved `tools/match_progress.py` again:
+- Classifies external literal/data address drift as blocked when a mismatched
+  load/store or address-materializing `addiu`/`ori` has the same instruction
+  shape and a matching recent `lui` base. This moves the known debugger
+  `D_1600xxxx` low-half displacement functions (`func_16000000`,
+  `func_16000058`, `func_16000424`) out of the real source-diff queue.
+- Computes retail slice lengths from sorted symbol VRAMs (including asm rows)
+  instead of trusting shifted current-layout `progress.csv` lengths. This
+  fixed `func_15055D48`: the current map made it look 67 words long, but the
+  next name-implied symbol (`func_15055E50`) proves the retail slice is 66
+  words; the extra word was the next function's prologue after one alignment
+  nop. It is now correctly `BLOCK`.
+- Installed SIGPIPE default handling so `--list | head` no longer prints a
+  Python `BrokenPipeError` traceback.
+
+Source work: `func_1501905C`'s remaining real mismatch was a bad signature on
+`func_150ADACC`. Retail passes the seed constant in `a0`, while the old
+`s64` prototype forced a two-register call. Changed the declaration and
+definition to `u32`, and rewrote the setter as:
+`arg0 += 1; D_800885B0 = arg0;`. This moves `func_1501905C` to `BLOCK` and
+improves `func_150ADACC` from `7` real diffs (old `s64`) / `4` real diffs
+(`u32` one-expression form) to **`3` real diffs**. Remaining callee delta:
+retail uses `daddiu a0,a0,1`, stores `a0`, then has a dead `li a0,0` before
+`jr ra`; IDO's best C form found so far uses `addiu a0,a0,1`, stores `a0`,
+and omits the dead assignment. Adding `arg0 = 0;` after the store was
+optimized away.
+
+Verified snapshot after these changes: `775/1558` exact, `621` blocked on
+address drift, `162` still differ; `game` is `525/1153` exact, `608`
+blocked, `20` still differ; `debugger` is `27/173` exact, `5` blocked,
+`141` still differ.
+
+**Update (2026-07-16, sixteenth session - progress target checked;
+function-pointer drift classified; func_1516968C temp dead end.)**
+Ran the requested `make -C conker progress NON_MATCHING=1`; it was already
+up to date (`Nothing to be done for 'progress'`). Used the drift-aware
+`match_progress.py` listing for the actual candidate selection.
+
+Tooling fix: `func_15010680` and `func_150106B0` looked like one-real-diff
+`game` functions, but each is only assigning a global function pointer to a
+shifted callee (`func_150EA904` / `func_150EB430`). The only byte mismatch is
+the `%lo` half of the loaded function address (for example current
+`0x150EAC04` vs name-implied retail `0x150EA904`). Updated
+`tools/match_progress.py` to recognize `lui`+`addiu`/`ori` address
+materializations of `func_XXXXXXXX` symbols and classify those as blocked,
+like `j`/`jal` target drift. Verified snapshot now reports
+`775/1558` exact, `605` blocked, `178` still-differ; `game` is
+`525/1153` exact, `601` blocked, `27` still-differ.
+
+Source experiment tried and reverted: in `func_1516968C`, added a local
+`u8 value = *arg1` to try forcing retail's `a1`-base load before
+`arg0->unkC`. It worsened the function from `2` to `7` real diffs, so the
+source is back at the prior best form. The existing comment remains accurate:
+cfe canonicalizes the equality load order.
+
+**Update (2026-07-16, fifteenth session - func_160033A8 pointer form
+improved debugger progress.)**
+Continued the debugger function work after re-reading this file. Kept the
+fourteenth-session `match_progress.py` fix as the measurement baseline, then
+worked `func_160033A8` in `conker/src/debugger_257350.c`.
+
+Best measured source change: add a branch-local moving `out` pointer for the
+temporary decimal/octal/hex buffer. The first emitted digit now assigns
+`out = &buf[pos]` inside the nonzero/width branch (or the one-past end in
+the zero-width branch), the loop decrements `out`, and the final copy passes
+`out` to `func_16001AD0`. This keeps the better pointer live range and
+improves the corrected progress snapshot from `774/1558` total /
+`26/173` debugger to **`775/1558` total / `27/173` debugger**.
+`func_160033A8` is still non-matching, but improved from `154` to **`130`
+real diffs** (`171` words).
+
+Dead end tried and reverted: hoisting `out = &buf[pos]` before the first
+digit branch, then pre-decrementing it in the branch. That shrank the
+function back to `159` words but lost the real win: progress returned to
+`774/1558`, debugger `26/173`, and `func_160033A8` measured at `153` real
+diffs. Keep the branch-local `out` form unless a future experiment beats the
+`775/1558` snapshot.
+
+**Update (2026-07-16, fourteenth session - match-progress made truly
+drift-aware; func_16001BB4 experiments bounded.)**
+Re-read this file and continued the debugger function work. The
+`func_16001BB4` best source state from the thirteenth session is still the
+best measured one: the real `&arg3` va_list fix plus explicit
+`spacePad`/`zeroPad`/`flagChars`/`digitBase` locals. Re-tested several
+source-shape ideas and reverted them because none beat **369 words / 359
+real diffs**:
+- Reordering the long-lived locals/initializers to try to give
+  `digitBase` first claim on a saved register: no register or score change.
+- Dropping the `spacePad` alias while keeping `zeroPad`/`flagChars` and
+  `digitBase`: no score change, still hoisted `D_16003C70` into `s8`.
+- `register s32 digitBase`: no effect.
+- `volatile u8 length_mod`: forced stack-ish behavior in the length-modifier
+  area but bloated the function to `373 words / 371 real diffs`.
+
+Important tool fix: `tools/match_progress.py` did **not** actually do the
+name-implied-VRAM comparison that earlier notes described. It used
+`progress.csv`'s current shifted address, which made downstream debugger
+functions look worse or better depending on upstream size drift (for
+example `func_16002D2C` is truly exact, but was reported as 45 diffs; and
+`func_1600288C` looked like only 2 diffs because it was just a length
+mismatch at the wrong retail offset). Fixed the helper to use
+`func_XXXXXXXX` names as the retail VRAM anchor when possible, and to count
+length mismatch **in addition to** overlapping word diffs. New verified
+snapshot from `make -C conker match-progress NON_MATCHING=1`:
+`774/1558` total byte-exact, `603` blocked-on-callee, `181` still differ;
+debugger is now `26/173` byte-exact. With corrected accounting,
+`func_16002D2C` is no longer listed (exact), while the true nearby debugger
+targets are `func_160033A8` (154 diffs), `func_1600288C` (267 diffs),
+`func_16001BB4` (359 diffs), and `func_16002DE4` (364 diffs).
+
+Checked the apparent tiny debugger candidates too: `func_16000000`,
+`func_1600160C`, and `func_16001678` only differ in embedded `D_16003xxx`
+addresses caused by the still-open data-placement displacement, not in
+their source bodies. Do not spend source-matching time on them until the
+data displacement is healed.
+
+**Update (2026-07-16, thirteenth session - func_16001BB4 nudged to
+369 words / 359 real diffs; pressure dead ends recorded.)**
+Continued the twelfth-session `func_16001BB4` focus in
+`conker/src/debugger_257350.c`. Kept the real `va_list` bug fix
+(`func_160021FC(&st, &arg3, *scan, buf)`) and added explicit locals for
+the long-lived padding/flag strings plus decimal base:
+`spacePad = D_16003C70`, `zeroPad = D_16003C94`,
+`flagChars = D_16004804`, `digitBase = 10`. This is behavior-neutral, but
+it gives IDO a slightly more retail-like source shape around the flag scan,
+digit parsing, and padding callbacks. Verified with
+`make -C conker match-progress NON_MATCHING=1`: overall exact count stays
+`445/1558`, debugger exact count stays `25/173`, and
+`func_16001BB4` improves from the prior `369 words / 360 real diffs` to
+**`369 words / 359 real diffs`**.
+
+Dead ends tried and reverted:
+- `volatile s32 total` forced stack traffic but bloated the function to
+  `387 words / 382 real diffs`.
+- Reusing `st.pad2C` as the accumulator looked tempting because retail's
+  accumulator sits at `0xd4(sp)`, but IDO optimized it back into a register
+  in the wrong allocation shape and also landed at `387 words / 382 real
+  diffs`.
+- Adding a `lengthChars = D_16004800` alias for the length-modifier
+  `strchr` lost the one-diff improvement (`369 words / 360 real diffs`).
+
+Current best next step: do **not** chase `total` directly with `volatile`
+or `st.pad2C`. The remaining gap still looks like an original-source
+register-pressure/allocation idiom, but the productive lever is likely the
+expression/variable lifetime shape around the parse loops and padding
+emission, not a forced accumulator spill.
+
+**Update (2026-07-15, twelfth session - func_16001BB4's "impossible diff"
+explained; a real va_list bug found and fixed; 367->369/402 words.)**
+Picked up the session-eleven punch list's last untouched item,
+`func_16001BB4` (the hand-rolled vsprintf engine, `debugger_257350.c`).
+Naive `diff.py func_16001BB4` (and my own first pass reading it) produced
+garbage: the "target" column's first instructions read *already-populated*
+stack slots with no prologue in sight, which is impossible for a real
+function entry. Root cause: **this specific function is short enough
+(historically noted as -0x8C/-35 words) that our build's own
+`debugger_257350.c` text section has drifted +0x300 (768 bytes) from
+retail by the time it reaches `func_16001BB4`**, so the plain
+name-based/map-based address that `diff.py` resolves for the *retail* side
+is simply wrong by that amount - it was showing bytes ~192 instructions
+into the function's real body, not its start. Confirmed and measured the
+drift two independent ways: (1) `conker.us.yaml`'s uncompressed, fixed
+`debugger` segment mapping (`start: 0x255880` = `vram 0x16000000`, exact -
+no compression, no relocation table) gives retail's true file offset for
+any `func_XXXXXXXX` name directly (`0x255880 + (vram - 0x16000000)`), and
+reading that offset in `conker.us.bin` for `func_16001BB4` (`0x257434`)
+lands on a legit `addiu sp,sp,-0xe0` prologue; (2) a `jal` inside the
+region resolves to `0x160021FC`, matching `func_160021FC`'s *name* exactly
+- confirming retail's real `func_16001BB4` is 402 words (0x648 bytes),
+not the 367 our build had. **`diff.py`'s `--base-shift` flag fixes this
+completely**: `--base-shift=-0x300 func_16001BB4` (plus an explicit end
+address in the *current*-image address space, since `--base-shift` moves
+only the base/retail side) gives a real, readable, aligned diff. This
+`-0x300`/`vram-formula` trick is the same class of fact
+`match_progress.py` already encodes (it reads ground truth from the
+name-implied VRAM offset precisely to be drift-immune) - worth reusing
+`--base-shift` explicitly next time any of the other still-short debugger
+functions (or their downstream neighbors) look similarly nonsensical when
+diffed directly.
+- **Traced the aligned target assembly end-to-end** against the current
+  C source: every block (the literal-text copy loop, the `%`-flags
+  `strchr` loop, `*`-vs-digit-loop width/precision parsing x2, the
+  length-modifier `strchr` + `ll`->`L` check, all 6 padding-emission
+  do-while loops plus the 3 single-shot `unkC`/`len`/`unk1C` copies, and
+  the final `flags&4` pad_total block + loop-back) matches our C
+  structure block-for-block. One genuine bug found in that trace, not
+  just a byte-matching nicety: **retail passes `&arg3` (the address of
+  the local `s32 *arg3`, `addiu a1,sp,0xec`) to `func_160021FC`, not
+  `arg3`'s value** - our call site was
+  `func_160021FC(&st, arg3, *scan, buf)`. Since `func_160021FC` is a
+  hand-rolled va_list walker (confirmed in an earlier session: it must
+  consume the actual `%d`/`%s`/`%f` value argument, not just the
+  `*`-width/precision case `func_16001BB4` already handles inline), it
+  needs to advance the caller's va_list pointer *through* that address,
+  which our old value-passing call could never let it do - a real
+  functional bug for any multi-argument format string, independent of
+  matching. **Fixed**: `func_160021FC(&st, &arg3, *scan, buf);`. Verified
+  safe (taking `&arg3` forces the compiler to treat `arg3` as
+  memory-resident/reloaded-after-calls, which is exactly the standard C
+  semantics needed here since `func_160021FC` is opaque `GLOBAL_ASM`).
+- **Measured effect via `tools/match_progress.py`** (confirmed this is
+  the right tool for future sessions - it independently reimplements the
+  same name-implied-VRAM-offset technique, no need to hand-roll it again):
+  `func_16001BB4` went from 367 words/365 diffs to **369 words/360
+  diffs** against retail's true 402-word length - real, verified
+  progress, zero regressions (`445/1558` byte-exact overall, unchanged;
+  the tool's drift-immunity means resizing a still-`diff` function can't
+  regress an already-`exact` one).
+- **Remaining ~33-word gap, characterized but not closed**: retail keeps
+  `total` in a stack slot (`0xd4(sp)`, reloaded+stored around every
+  `arg0()` callback invocation and every early return) for the *entire*
+  function, where our version keeps it in a register (`s4`) throughout -
+  worth ~9 words (2 per accumulate site x9 call sites: the literal copy
+  plus the other 8 emission blocks) if reproduced. This is almost
+  certainly a **register-pressure spill**, not a source-shape choice:
+  retail simultaneously keeps `a3`=fmt, `s3`=dest, `s4`=callback,
+  `s5`=`D_16003C94`, `s6`=`D_16004804`, `s7`=`D_16003C70`, `s8`=10 all
+  live across the whole function (7 hoisted constants/params) plus
+  `s0`-`s2` for loop temps - all 9 callee-saved slots claimed, leaving
+  none for `total`. Our version doesn't hoist `D_16003C94`/`D_16003C70`
+  nearly as aggressively (saw redundant `lui+addiu` re-materializations
+  of `D_16003C94`'s address at at least 2 call sites where retail reuses
+  a single hoisted register) - so counterintuitively, *fixing* that
+  particular inefficiency would shrink us further from retail, not grow
+  us; the two effects are presumably related (whatever source shape
+  forces retail's compiler to hoist all 7 constants across the whole
+  function is probably the same shape that would also evict `total` to
+  memory). Same idiom-hunting problem class as the still-open
+  `func_1600160C` multiply-scheduling and `func_16002D2C`
+  unfolded-(s16) cases - not attempted further this session; next
+  attempt should try increasing the *simultaneous* live range of the
+  three global-pointer constants (e.g. referencing all three, or `st`'s
+  fields, in a way that discourages per-use rematerialization) rather
+  than touching `total` directly.
+
 **Update (2026-07-15, eleventh session part 3 - THE BLOCKING IDIOM IS
 CRACKED; func_16002D2C byte-exact; func_160033A8 structurally rebuilt.)**
 

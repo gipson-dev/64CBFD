@@ -2985,8 +2985,9 @@ typedef struct {
     s32 unk20;
     s32 width;    // unk24
     s32 unk28;
-    s32 pad2C;
+    s32 pad2C;    // running output total ("size" in Plauger's _Pft)
     s32 flags;    // unk30
+    u8  length;   // unk34 - length modifier (h/l/L); retail func_160021FC reads it
 } struct262;
 
 #endif

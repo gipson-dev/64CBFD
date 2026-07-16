@@ -4,34 +4,37 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Snapshot as of 2026-07-15. Functions converted from raw assembly to C
+Snapshot as of 2026-07-16. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.81% | 1558 / 6034 (25.82%) |
+| total | `[##----------------------]` 6.74% | 1555 / 6034 (25.77%) |
 | init | `[#####-------------------]` 20.16% | 232 / 538 (43.12%) |
-| game | `[#-----------------------]` 5.11% | 1153 / 5314 (21.70%) |
-| debugger | `[##################------]` 74.36% | 173 / 182 (95.05%) |
+| game | `[#-----------------------]` 5.11% | 1151 / 5314 (21.66%) |
+| debugger | `[################--------]` 66.46% | 172 / 182 (94.51%) |
 
 Of those C-converted functions, the share that already compiles to the
 exact retail bytes (`make -C conker match-progress NON_MATCHING=1`;
-"blocked" = only `j`/`jal` targets differ, self-resolves as referenced
-functions get matched):
+"blocked" = only `j`/`jal` targets or `%lo` halves of shifted symbol
+addresses differ, self-resolves as referenced functions/data get
+matched):
 
-| Section | Byte-exact | Blocked on callees | Still differ |
+| Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 445 / 1558 (28.56%) | 144 | 969 |
-| init | 223 / 232 (96.12%) | 4 | 5 |
-| game | 197 / 1153 (17.09%) | 140 | 816 |
-| debugger | 25 / 173 (14.45%) | 0 | 148 |
+| total | 895 / 1555 (57.56%) | 616 | 44 |
+| init | 223 / 232 (96.12%) | 8 | 1 |
+| game | 525 / 1151 (45.61%) | 608 | 18 |
+| debugger | 147 / 172 (85.47%) | 0 | 25 |
 
-The debugger byte-exact count is temporarily depressed: four
-`debugger_257350.c` functions are mid-rematch at non-retail sizes, which
-displaces the overlay's rodata, so every already-code-exact debugger
-function that references that data shows a few phantom `%lo` diffs and
-counts as "still differ". It snaps back once those four reach retail
-size (see WORKING_NOTES).
+The debugger overlay's long-standing rodata displacement healed on
+2026-07-16: its printf engine was identified as Plauger's Standard C
+Library (the N64 SDK's libc) and rematched at exact retail sizes, which
+snapped ~120 previously "still differ" rows back to byte-exact (see
+WORKING_NOTES). The small dips in the conversion table (1555 vs 1558
+functions) are `func_16001BB4` and the two hand-written PRNG functions
+returning to `GLOBAL_ASM` at retail bytes with their verified C kept in
+comments.
 
 When regenerating, update both tables together with the copies in the
 [root README](../README.md) and [Project overview](PROJECT.md).

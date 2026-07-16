@@ -1101,7 +1101,7 @@ f32  func_150AD78C(f32);
 f32  func_150AD900(f32 *arg0, f32 *arg1);
 f32  func_150AD930(f32 *arg0);
 s32  func_150ADA20(void);
-void func_150ADACC(s64 arg0);
+void func_150ADACC(u32 arg0);
 f32  func_150ADA68(void);
 void func_150E2EA4(struct127*, s32, s32, s32, f32, f32, f32, f32, f32, f32, s32, s32, s32, f32, f32, s32, f32);
 void func_150EA904(s32 arg0, s32 arg1);

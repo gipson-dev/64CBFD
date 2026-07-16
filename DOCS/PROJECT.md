@@ -150,15 +150,22 @@ Run `make -C conker progress` for current local numbers.
 
 ### Code decompilation snapshot
 
-Last regenerated: 2026-07-15, from a fully working `.map`-based build
+Last regenerated: 2026-07-16, from a fully working `.map`-based build
 (`make -C conker progress NON_MATCHING=1`).
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.81% | 1558 / 6034 (25.82%) |
+| total | `[##----------------------]` 6.74% | 1555 / 6034 (25.77%) |
 | init | `[#####-------------------]` 20.16% | 232 / 538 (43.12%) |
-| game | `[#-----------------------]` 5.11% | 1153 / 5314 (21.70%) |
-| debugger | `[##################------]` 74.36% | 173 / 182 (95.05%) |
+| game | `[#-----------------------]` 5.11% | 1151 / 5314 (21.66%) |
+| debugger | `[################--------]` 66.46% | 172 / 182 (94.51%) |
+
+(The small dips vs the 2026-07-15 snapshot - 1555 vs 1558 converted -
+are deliberate: `func_150ADA20`/`func_150ADACC` turned out to be
+hand-written assembly in the original game, and `func_16001BB4` is 2
+words short of byte-exact from C, so all three were returned to
+`GLOBAL_ASM` at exact retail bytes with their verified C kept in
+comments. See WORKING_NOTES, eighteenth session.)
 
 Two caveats about what this table measures:
 
@@ -207,30 +214,35 @@ Two caveats about what this table measures:
 ### Byte-matching snapshot
 
 Of the C-converted functions above, how many compile to the exact retail
-bytes (last regenerated 2026-07-15, via
+bytes (last regenerated 2026-07-16, via
 `make -C conker match-progress NON_MATCHING=1`):
 
-| Section | Byte-exact | Blocked on callees | Still differ |
+| Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 445 / 1558 (28.56%) | 144 | 969 |
-| init | 223 / 232 (96.12%) | 4 | 5 |
-| game | 197 / 1153 (17.09%) | 140 | 816 |
-| debugger | 25 / 173 (14.45%) | 0 | 148 |
+| total | 895 / 1555 (57.56%) | 616 | 44 |
+| init | 223 / 232 (96.12%) | 8 | 1 |
+| game | 525 / 1151 (45.61%) | 608 | 18 |
+| debugger | 147 / 172 (85.47%) | 0 | 25 |
 
-The debugger byte-exact count is temporarily depressed: four
-`debugger_257350.c` functions are mid-rematch at non-retail sizes, which
-displaces the overlay's rodata, so every already-code-exact debugger
-function that references that data shows a few phantom `%lo` diffs and
-counts as "still differ". It snaps back once those four reach retail
-size (see WORKING_NOTES).
+The debugger overlay's rodata displacement healed on 2026-07-16: the
+`debugger_257350.c` printf engine was identified as Plauger's Standard C
+Library (the N64 SDK's libc - `_Printf`/`_Ldtob`/`_Genld`/`_Litob`) and
+rematched at exact retail sizes, snapping ~120 previously "still differ"
+debugger rows back to byte-exact in one build (see WORKING_NOTES,
+eighteenth session). The remaining debugger "still differ" rows are
+mostly the overlay's data content plus `func_16001044`.
 
-"Blocked on callees" means the only remaining differences are `j`/`jal`
-target addresses - those functions need no further edits and will
-self-resolve as the functions they reference get matched. Add `LIST=1` to
-print every non-exact function, smallest diff first. Note the "still
-differ" column is a worst-case count: a function whose only problem is a
-reference to a symbol at a drifted address will show as differing even
-though its source is correct.
+"Blocked on address drift" means the only remaining differences are
+`j`/`jal` target addresses or `%lo` halves of shifted symbol addresses -
+those functions need no further edits and will self-resolve as the
+functions/data they reference get matched. Add `LIST=1` to print every
+non-exact function, smallest diff first. Note the "still differ" column
+is a worst-case count: a function whose only problem is a reference to a
+symbol at a drifted address the classifier can't pair with a recent
+`lui` will show as differing even though its source is correct - and
+per-function diff counts for a few rows are known to over-report; trust
+raw byte compares at name-implied offsets when working a specific
+function.
 
 **2026-07-15 correction:** `tools/match_progress.py`'s `classify()` was
 over-strict about function length - it declared "diff" for any length
