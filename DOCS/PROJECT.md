@@ -155,17 +155,17 @@ Last regenerated: 2026-07-16, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.74% | 1555 / 6034 (25.77%) |
+| total | `[##----------------------]` 6.71% | 1554 / 6034 (25.75%) |
 | init | `[#####-------------------]` 20.16% | 232 / 538 (43.12%) |
 | game | `[#-----------------------]` 5.11% | 1151 / 5314 (21.66%) |
-| debugger | `[################--------]` 66.46% | 172 / 182 (94.51%) |
+| debugger | `[###############---------]` 63.33% | 171 / 182 (93.96%) |
 
-(The small dips vs the 2026-07-15 snapshot - 1555 vs 1558 converted -
+(The small dips vs the 2026-07-15 snapshot - 1554 vs 1558 converted -
 are deliberate: `func_150ADA20`/`func_150ADACC` turned out to be
-hand-written assembly in the original game, and `func_16001BB4` is 2
-words short of byte-exact from C, so all three were returned to
-`GLOBAL_ASM` at exact retail bytes with their verified C kept in
-comments. See WORKING_NOTES, eighteenth session.)
+hand-written assembly in the original game, and `func_16001BB4`/
+`func_16001044` are each a few words short of byte-exact from C, so all
+four were returned to `GLOBAL_ASM` at exact retail bytes with their
+verified C kept in comments. See WORKING_NOTES, eighteenth session.)
 
 Two caveats about what this table measures:
 
@@ -219,10 +219,10 @@ bytes (last regenerated 2026-07-16, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 895 / 1555 (57.56%) | 616 | 44 |
+| total | 897 / 1554 (57.72%) | 616 | 41 |
 | init | 223 / 232 (96.12%) | 8 | 1 |
 | game | 525 / 1151 (45.61%) | 608 | 18 |
-| debugger | 147 / 172 (85.47%) | 0 | 25 |
+| debugger | 149 / 171 (87.13%) | 0 | 22 |
 
 The debugger overlay's rodata displacement healed on 2026-07-16: the
 `debugger_257350.c` printf engine was identified as Plauger's Standard C

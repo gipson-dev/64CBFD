@@ -355,59 +355,87 @@ s32 func_16000A5C(void) {
 // }
 
 // draw a number at a screen position: mode 0=hex, 1=decimal, 2=float
-void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
-    s32 sp78[10];
-    s32 fb;
-    s32 i;
+typedef struct {
+    s32 v[10];
+} Table1044; // for the divisor-table block copy below
 
-    for (i = 0; i < 10; i++) {
-        sp78[i] = D_16003B50[i];
-    }
-
-    if (arg0 >= (D_160038A0 << 5) && arg0 < 0x341) {
-        fb = func_1600160C(arg0);
-        if (arg1 == 0) {
-            s32 i;
-            fb += 0x70;
-            for (i = 0; i < 8; i++) {
-                s32 nibble = arg2 & 0xF;
-                s32 c = (nibble < 10 ? nibble : nibble + 7) + 0x30;
-                fb = func_160014F0(fb, c);
-                arg2 = arg2 >> 4;
-                fb -= 0x10;
-            }
-        } else if (arg1 == 1) {
-            s32 printed = 0;
-            s32 *p;
-
-            if (arg2 < 0) {
-                fb = func_160014F0(fb, '-');
-                arg2 = -arg2;
-            }
-            p = &sp78[9];
-            do {
-                s32 divisor = *p;
-                s32 digit = arg2 / divisor;
-                arg2 = arg2 % divisor;
-                if (digit > 0 || printed || p == sp78) {
-                    fb = func_160014F0(fb, digit + 0x30);
-                    printed = 1;
-                }
-                p--;
-            } while (p >= sp78);
-        } else if (arg1 == 2) {
-            u32 exp = ((u32) arg2 & 0x7F800000) >> 23;
-            if ((exp > 0 && exp < 0xFF) || (exp == 0 && (arg2 << 9) == 0)) {
-                u8 buf[40];
-                f32 f = *(f32 *) &arg2;
-                func_16001B34(buf, D_160047E8, D_160047F0, D_160047F4, (f64) f);
-                func_160012B0(arg0, buf);
-            } else {
-                func_160012B0(arg0, D_160047E4);
-            }
-        }
-    }
-}
+// NEARLY MATCHING (151/155 words, ~35 real diffs) - kept as GLOBAL_ASM so
+// the function occupies its exact retail size (this file's D_1600xxxx data
+// is inline in .text, so any size drift shifts every symbol after it).
+// Real idioms captured in the draft below, all verified against retail:
+// the divisor table copy is a struct assignment (IDO's $at 3-word block
+// copy), the hex digit is a u8 local (andi 0xff after every step), the
+// float reinterpret must go through the LOCAL's address (*(s32 *)&f =
+// arg2 - taking &arg2 forces the parameter stack-homed and costs ~30
+// diffs), the decimal loop uses separate base/stop pointer locals, and
+// exp is s32 (sra not srl). Remaining gap: uopt hoists one &sp78
+// materialization to entry (callee-saved) where retail rematerializes
+// per-site (addiu t9,sp,120 x2 + two moves for s4/s5), plus the same
+// value-copy micro-idioms as func_16001BB4 (see WORKING_NOTES).
+// void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
+//     s32 sp78[10];
+//     s32 fb;
+//     s32 i;
+//
+//     *(Table1044 *) sp78 = *(Table1044 *) D_16003B50;
+//
+//     if (arg0 >= (D_160038A0 << 5) && arg0 < 0x341) {
+//         fb = func_1600160C(arg0);
+//         if (arg1 == 0) {
+//             fb += 0x70;
+//             for (i = 0; i < 8; i++) {
+//                 u8 c = arg2 & 0xF;
+//
+//                 if (c >= 10) {
+//                     c += 7;
+//                 }
+//                 c += 0x30;
+//                 fb = func_160014F0(fb, c);
+//                 arg2 = arg2 >> 4;
+//                 fb -= 0x10;
+//             }
+//         } else if (arg1 == 1) {
+//             s32 printed;
+//             s32 *p;
+//             s32 *base;
+//             s32 *stop;
+//
+//             if (arg2 < 0) {
+//                 fb = func_160014F0(fb, '-');
+//                 arg2 = -arg2;
+//             }
+//             printed = 0;
+//             stop = sp78;
+//             base = sp78;
+//             p = &sp78[9];
+//             do {
+//                 s32 divisor = *p;
+//                 s32 digit = arg2 / divisor;
+//
+//                 arg2 = arg2 % divisor;
+//                 if (digit > 0 || printed || p == base) {
+//                     fb = func_160014F0(fb, (u8) (digit + 0x30));
+//                     printed = 1;
+//                 }
+//                 p--;
+//             } while (p >= stop);
+//         } else if (arg1 == 2) {
+//             s32 exp = (arg2 & 0x7F800000) >> 23;
+//
+//             if ((exp > 0 && exp < 0xFF) || (exp == 0 && (arg2 << 9) == 0)) {
+//                 u8 buf[40];
+//                 f32 f;
+//
+//                 *(s32 *) &f = arg2;
+//                 func_16001B34(buf, D_160047E8, D_160047F0, D_160047F4, (f64) f);
+//                 func_160012B0(arg0, buf);
+//             } else {
+//                 func_160012B0(arg0, D_160047E4);
+//             }
+//         }
+//     }
+// }
+#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_16001044.s")
 
 void func_160012B0(s32 arg0, u8 *arg1) {
     if (arg1 && (arg0 >= (D_160038A0 << 5)) && (arg0 < 833)) {

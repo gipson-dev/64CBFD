@@ -25,6 +25,37 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-16, eighteenth session part 5 - func_16001044 done;
+EVERY debugger overlay function is now byte-exact: 149/171 exact
+(87.13%), zero function rows left in the diff queue; total 897/1554
+(57.72%).)**
+Worked `func_16001044` (the mode 0/1/2 number renderer in
+`debugger/debugger.c`). Real idioms recovered and verified against
+retail (kept in the commented draft): the divisor-table copy is a
+**struct assignment** (IDO's `$at` 3-word block-copy loop - added a
+`Table1044` typedef), the hex digit is a **u8 local** (`andi 0xff` after
+every arithmetic step), the decimal loop uses separate `base`/`stop`
+pointer locals plus `printed = 0` positioned after the negative check,
+`exp` is s32 (`sra` not `srl`), and - the big one - **the f32
+reinterpret must go through the local's address** (`*(s32 *) &f = arg2;`;
+the old `*(f32 *) &arg2` took the parameter's address, forcing arg2
+stack-homed for the whole function at a cost of ~30 diffs). Got from
+151 real diffs to 151-words/~35-diffs - but 4 words SHORT (uopt hoists
+one `&sp78` materialization to a callee-saved at entry where retail
+rematerializes per site, the same value-copy micro-idioms as
+func_16001BB4), and since this file's `D_1600xxxx` data is inline in
+.text, wrong size is unacceptable. Converted to **GLOBAL_ASM** via the
+same pragma-then-`make extract` dance as func_16001BB4 (remember: the
+extraction clobbers `conker/undefined_funcs_auto.txt` again - re-append
+`func_10026700`/`func_10026750`). Verified 0/155 word diffs at the
+name-implied retail offset. Also tested and ruled out: compiling
+`debugger.c` at plain `-O2` without `-g3` (much worse - `-g3` is
+load-bearing for the existing matches).
+
+Remaining debugger still-differ rows (22) are now ALL data content
+(`D_16003xxx`/`D_16004xxx`). Progress tables in README.md /
+DOCS/README.md / DOCS/PROJECT.md regenerated end-of-day.
+
 **Update (2026-07-16, eighteenth session part 4 - THE DEBUGGER OVERLAY
 DATA DISPLACEMENT IS HEALED: debugger 27 -> 147/172 byte-exact (85.47%),
 total 776 -> 895/1555 (57.56%).)**
