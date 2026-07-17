@@ -98,23 +98,28 @@
 // `li a0,0` that is unique in the entire ROM. Verified-correct C equivalents
 // kept below for documentation.
 //
-// xorshift-style PRNG step, operating on the 64-bit seed D_800885B0:
-// s32 func_150ADA20(void) {
-//     u64 seed = D_800885B0;
-//     u64 mixed = ((seed << 63) >> 31) | ((seed << 31) >> 32);
-//
-//     mixed ^= (seed << 44) >> 32;
-//     seed = ((mixed >> 20) & 0xFFF) ^ mixed;
-//     D_800885B0 = seed;
-//     return (s32) seed;
-// }
-#pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADA20.s")
+// xorshift-style PRNG step, operating on the 64-bit seed D_800885B0.
+s32 func_150ADA20(void) {
+    u64 seed = D_800885B0;
+    u64 mixed = ((seed << 63) >> 31) | ((seed << 31) >> 32);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADA68.s")
+    mixed ^= (seed << 44) >> 32;
+    seed = ((mixed >> 20) & 0xFFF) ^ mixed;
+    D_800885B0 = seed;
+    return (s32) seed;
+}
+
+f32 func_150ADA68(void) {
+    u64 seed = D_800885B0;
+    u64 mixed = ((seed << 63) >> 31) | ((seed << 31) >> 32);
+
+    mixed ^= (seed << 44) >> 32;
+    seed = ((mixed >> 20) & 0xFFF) ^ mixed;
+    D_800885B0 = seed;
+    return (f32)((s32)seed & 0xFFFF) * D_8009F740;
+}
 
 // PRNG seed setter (see handwritten-assembly note above func_150ADA20):
-// void func_150ADACC(u32 arg0) {
-//     arg0 += 1;
-//     D_800885B0 = arg0;
-// }
-#pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADACC.s")
+void func_150ADACC(u32 arg0) {
+    D_800885B0 = arg0 + 1;
+}

@@ -4,6 +4,7 @@
 #include "variables.h"
 
 void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5);
+void func_15168A4C(void *arg0, u8 arg1);
 extern void (*D_8008CA20[])(void *);
 extern void (*D_8008CB64[])(void);
 
@@ -40,15 +41,58 @@ void func_1516706C(void) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_151671E8.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167310.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_151674F8.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167A68.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167AD8.s")
+void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5) {
+    u8 *ret;
+
+    ret = func_10003C6C(arg2, 1, arg3, 0, arg5);
+    if (ret != NULL) {
+        ret[1] = arg1;
+        func_15168A4C(ret, arg0);
+        ret[0xC] = arg4;
+    }
+
+    return ret;
+}
+
+void func_15167AD8(void *arg0, u8 arg1, s32 arg2) {
+    u8 *tmp;
+
+    tmp = func_15167A68(3, arg2, 0x28, 0, arg1, 1);
+    if (tmp != NULL) {
+        bcopy(arg0, tmp + 0x10, 0x18);
+        tmp[0x23] = 0xFF;
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167B44.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167C58.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167D84.s")
+void func_15167D84(void *arg0, s32 arg1, s32 arg2, s8 arg3, u8 arg4, s32 arg5) {
+    u8 *tmp;
+    s32 kind;
+
+    if (arg1 == 0) {
+        kind = 5;
+    } else {
+        kind = 0x42;
+    }
+
+    tmp = func_15167A68(kind, arg5, arg2 + 0x50, 0, arg4, 1);
+    if (tmp != NULL) {
+        bcopy(arg0, tmp + 0x10, 0x38);
+        tmp[0x48] = arg3;
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15167E0C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168118.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_1516865C.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168800.s")
+void *func_15168800(void *arg0, u8 arg1, s32 arg2) {
+    u8 *tmp;
+
+    tmp = func_15167A68(0xE, arg2, 0xB8, 1, arg1, 1);
+    if (tmp != NULL) {
+        bcopy(arg0, tmp + 0x10, 0xA8);
+    }
+    return tmp;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168870.s")
 // NON-MATCHING: only differs from us by the jal target address of func_15168B10
 // (not yet confirmed byte-matching itself) - this function's own code is verified
@@ -142,7 +186,15 @@ void func_15168E34(s32 *arg0, s32 arg1) {
     }
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168E54.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168F08.s")
+void func_15168F08(u8 *arg0, s32 arg1) {
+    u8 *cur;
+
+    for (cur = arg0; cur[0] != 0xDF; cur += 8) {
+        if ((cur[0] == 1) || ((cur[0] == 0xDC) && (cur[3] == 0xE))) {
+            *(s32 *)(cur + 4) = (*(s32 *)(cur + 4) & 0xFFFFFF) + arg1;
+        }
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1944C0/func_15168F84.s")
 // NON-MATCHING: only differs from us by the jal target address of the still-non-matching
 // func_15169070 - this function's own code is verified byte-identical otherwise.

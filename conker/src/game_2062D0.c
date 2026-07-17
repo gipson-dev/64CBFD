@@ -178,13 +178,36 @@ void func_151D9FC0(u8 arg0, f32 arg1, u8 arg2, s32 arg3, s32 arg4, u8 arg5, s32 
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA08C.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA368.s")
-// TODO when we know what arg0 is...
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA6A8.s")
+s32 func_151DA6A8(u8 *arg0) {
+    s32 i;
+    f32 scale;
+
+    if ((*(s32 *)(arg0 + 0x58) & 1) != 0) {
+        scale = *(f32 *)(arg0 + 0x13C);
+        for (i = D_800BE9E4; i != 0; i--) {
+            *(f32 *)(arg0 + 0x138) *= scale;
+        }
+    }
+    return 1;
+}
+
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA6F8.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA938.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DAA88.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DAB58.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DADA0.s")
+s32 func_151DADA0(u8 *arg0) {
+    u8 value;
+    f32 scale;
+
+    value = arg0[0x110] + ((s8)arg0[0x111] * D_800BE9E4);
+    arg0[0x110] = value;
+
+    scale = func_151423D8((value - 0x40) & 0xFF);
+    *(f32 *)(arg0 + 0x4C) = (*(f32 *)(arg0 + 0x114) * scale) + 1.0f;
+    *(f32 *)(arg0 + 0x50) = D_800AB4B0 - (*(f32 *)(arg0 + 0x118) * scale);
+    return 1;
+}
+
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DAE28.s")
 
 void func_151DB004(struct218 *arg0) {

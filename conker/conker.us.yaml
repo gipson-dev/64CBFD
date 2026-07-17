@@ -780,7 +780,7 @@ segments:
       - [0x21ccb0, asm] # gu function
       - [0x21ce70, asm] # modified osSetTimer ?
       - [0x21cf50, asm, libultra/io/contreaddata2]
-      - [0x21d1b0, asm] # more matrix funcs
+      - [0x21d1b0, c, libultra/gu/mtxutil2] # more matrix funcs
       - [0x21D420, asm]
       - [0x21d4a0, c, libultra/gu/guNormalize]
       - [0x21d530, c, libultra/gu/mtxcatl]

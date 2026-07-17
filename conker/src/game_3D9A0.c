@@ -2,9 +2,19 @@
 #include "functions.h"
 #include "variables.h"
 
+u8 *func_151149AC(u32);
 
-// ???
-#pragma GLOBAL_ASM("asm/nonmatchings/game_3D9A0/func_150104F0.s")
+void func_150104F0(void) {
+    u8 *tmp;
+
+    D_800D9950[1] = 0;
+    D_800D9950[0] = 0;
+    D_800D9950[2] = 0;
+
+    tmp = func_151149AC(0xF6);
+    *(f32 *)(tmp + 0x7C) = 2.0f;
+    D_80088980 = 0;
+}
 
 void func_15010538(struct127 *arg0) {
     struct175 tmp;
@@ -25,7 +35,9 @@ dummy_label_927029:
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_3D9A0/func_15010600.s")
+void func_15010600(void) {
+    bzero(&D_800D9920, 0x27);
+}
 // NON-MATCHING: addresses are wrong :(
 // void func_15010600(void) {
 //     s32 i;

@@ -428,6 +428,8 @@ extern s32 D_80089534[];
 extern s16 D_80089550;
 extern void (*D_80089AAC[10])(void);
 extern void (*D_80089AD4[10])(void);
+extern void (*D_80089B70[])(void *);
+extern void (*D_80089B88[])(void *);
 extern void (*D_80089C44[])(void);
 extern void (*D_80089C54[])(void);
 extern void (*D_80089EE8[])(void);
@@ -435,6 +437,8 @@ extern void (*D_80089EF0[])(void);
 extern void (*D_80089EF8[])(void);
 extern void (*D_80089F2C[])(void);
 extern void (*D_80089F60[])(s32, s32, u8);
+extern void (*D_80089F9C[])(void *, void *);
+extern void (*D_80089FE4[])(void *, void *);
 extern s32 D_8008A074[2];
 extern struct32 D_8008A0B4[];
 extern s32  D_8008A084[];
@@ -637,6 +641,7 @@ extern f32 D_80099C44;
 
 extern f32 D_80099D44;
 extern f32 D_80099D4C;
+extern f32 D_80099D50;
 extern f32 D_80099DA0;
 extern f32 D_80099DA4;
 extern f32 D_80099DA8;
@@ -678,6 +683,7 @@ extern s32 D_8009DCE0;
 extern s32 D_8009DCCC;
 
 extern f32 D_8009F6C0; // 0.01745329238474369f
+extern f32 D_8009F740;
 
 /* 800A0000 */
 extern f32 D_800A028C;
@@ -706,6 +712,9 @@ extern f32 D_800A45B4;
 extern f32 D_800A5624;
 extern f32 D_800A5628;
 extern f32 D_800A5644;
+extern f32 D_800A4828;
+extern f32 D_800A5694;
+extern f32 D_800A56A4;
 extern f32 D_800A56A8;
 extern f32 D_800A56AC;
 extern f32 D_800A56B4;
@@ -715,6 +724,8 @@ extern f32 D_800A56C0;
 extern f32 D_800A56C4;
 extern f32 D_800A56C8;
 extern s32 D_800A5770;
+
+extern u8 D_8008A160[];
 
 // in game_18D770.c
 extern u8  D_800A6690[5];  // "scale"
@@ -789,6 +800,7 @@ extern f32 D_800AB3EC; //-1.0f
 extern f32 D_800AB464;
 extern f32 D_800AB468;
 extern f32 D_800AB46C; // 0.0003000000142492354f
+extern f32 D_800AB4B0;
 extern f32 D_800AB4C0;
 extern f32 D_800AB4C4;
 extern f32 D_800AB4C8;
@@ -1174,6 +1186,7 @@ extern u8  D_800D9938;
 extern u8  D_800D9939;
 extern u8  D_800D992A[];
 extern u8  D_800D993A[];
+extern u8  D_800D9950[];
 
 extern s32 D_800D99D0[8];
 extern struct134 *D_800D9A20;
@@ -1256,6 +1269,7 @@ extern u8  D_800DBFF7;
 
 extern s32  D_800DC010;
 extern s32 D_800DC020;
+extern s32 D_800DC9F0;
 extern struct10 *D_800DC2A0; // TODO: find correct struct
 extern s32 D_800DC2B0;
 extern f32 *D_800DCC10[][4];
@@ -1304,6 +1318,8 @@ extern f32  D_800DD1D8[];
 extern f32  D_800DD1E8[];
 
 extern u8   D_800DD2C0;
+extern u32  D_800DD218;
+extern u32  D_800DD21C;
 extern u8   D_800DD2D0;
 extern u8   D_800DD2A0;
 extern u8   D_800DD2A1;

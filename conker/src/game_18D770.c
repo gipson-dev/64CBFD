@@ -55,6 +55,7 @@ void func_15163DEC(struct225 *arg0, struct228 *arg1);
 s32  func_15163F50(struct225 *arg0, struct225 *arg1);
 struct225 *func_15164208(s32 arg0, u8 arg1, u8 arg2, s32 arg3);
 s32  func_1516429C(struct237 *arg0);
+void func_1516434C(u8 *arg0, u8 *arg1, u8 arg2);
 void func_151643A8(struct225 *arg0, s32 arg1, u8 arg2);
 s32  func_151643F8(struct225 *arg0);
 void func_151644F4(struct242 *arg0, struct17 *arg1, s32 arg2, f32 arg3, f32 arg4);
@@ -916,14 +917,14 @@ struct225 *func_15163414(Header *header, f32* arg1, f32* arg2, f32* arg3, s8 arg
 //     return ret;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_151635A8.s")
 // NON-MATCHING: similar issue to func_15163504
-// void func_151635A8(struct225 *arg0, s32 arg1, u8 arg2) {
-//     s32 (*func)(s32) = D_8008B370[arg0->unk25];
-//     if (func != NULL) {
-//         func(arg2);
-//     }
-// }
+void func_151635A8(struct225 *arg0, s32 arg1, u8 arg2) {
+    s32 (*func)(s32) = D_8008B370[arg0->unk25];
+
+    if (func != NULL) {
+        func(arg2);
+    }
+}
 
 struct225 *func_15163604(s32 arg0, u8 arg1, u8 arg2, s16 arg3, u8 arg4, s32 arg5, u8 arg6, s32 arg7) {
     struct225 *temp_v0;
@@ -1131,7 +1132,19 @@ s32 func_15163F50(struct225 *arg0, struct225 *arg1) {
 
 // ???
 #pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_15163FEC.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_151640C0.s")
+
+void func_151640C0(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *src;
+    u8 *old;
+
+    if (arg2 == 0x29) {
+        src = *(u8 **)(arg1 + 4);
+        old = *(u8 **)(arg0 + 0x18);
+        if ((old == *(u8 **)src) || (src[4] == arg0[0x1C]) || (src[4] == old[0x3B])) {
+            func_1516972C(arg0);
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_15164134.s")
 
@@ -1162,7 +1175,16 @@ s32 func_1516429C(struct237 *arg0) {
 }
 
 // what structs?
-#pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_1516434C.s")
+void func_1516434C(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *dst = arg0 + 0x18;
+
+    if ((arg2 == 0x33) && (arg1[4] == dst[4])) {
+        *(f32 *)dst = *(f32 *)arg1;
+        (*(u8 **)(arg0 + 0x14))[5] = arg1[5];
+        (*(u8 **)(arg0 + 0x14))[6] = arg1[6];
+        (*(u8 **)(arg0 + 0x14))[7] = arg1[7];
+    }
+}
 
 void func_151643A8(struct225 *arg0, s32 arg1, u8 arg2) {
     struct227 *tmp;

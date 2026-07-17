@@ -5,6 +5,9 @@
 
 #include "macros.h"
 
+void func_15002560(u8 *arg0, u8 *arg1);
+s32 func_150027F8(s8 *arg0);
+
 void func_15000AC0(void) {
     D_800D9E64 = (u8)0;
 }
@@ -209,7 +212,35 @@ u16 *func_15001DE0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
 // 3 loops
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_15002008.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_15002248.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_15002560.s")
+
+void func_15002560(u8 *arg0, u8 *arg1) {
+    u8 *next;
+    u8 *sibling;
+
+    while (arg0 != NULL) {
+        if (*(s16 *)(arg0 + 4) == 0) {
+            if (arg1 != NULL) {
+                *(s16 *)(arg0 + 4) = arg1 - arg0;
+            } else {
+                *(s16 *)(arg0 + 4) = 0;
+            }
+        }
+
+        if (*(s16 *)(arg0 + 0xC) == 0) {
+            return;
+        }
+
+        next = arg0 + *(s16 *)(arg0 + 0xC);
+        if (*(s16 *)(next + 4) != 0) {
+            do {
+                sibling = next + *(s16 *)(next + 4);
+                func_15002560(next, sibling);
+                next = sibling;
+            } while (*(s16 *)(next + 4) != 0);
+        }
+        arg0 = next;
+    }
+}
 
 void func_150025FC(void) {
     s32 tmp0;
@@ -246,10 +277,49 @@ void func_15002724(s32 arg0) {
     D_800DBE38 += func_150027F8(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_15002754.s")
+void func_15002754(void) {
+    s32 aligned;
+    s32 index = D_800DBE50;
+    s32 count = D_800DBE38;
+
+    aligned = (D_800B0DC0 + 3) & ~3;
+    D_800B0DC0 = aligned;
+    D_800DBDD8[index] = aligned;
+    aligned += count * 12;
+    D_800B0DC0 = aligned;
+    D_800DBDE8[index] = aligned;
+    aligned += count * 8;
+    D_800B0DC0 = aligned;
+    D_800DBDF8[index] = aligned;
+    D_800B0DC0 = aligned + (count * 4);
+    func_1510F800(index);
+    D_800DBE38 = 0;
+}
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_150027F8.s")
+s32 func_150027F8(s8 *arg0) {
+    s8 value;
+    s32 count = 0;
+    s32 ret = 0;
+
+    if (arg0 == NULL) {
+        return 0;
+    }
+
+    value = arg0[0];
+    while (value != -0x21) {
+        count++;
+        if ((value >> 4) == 1) {
+            ret += 4;
+        } else if (value == 6) {
+            ret += 2;
+        } else if (value == 5) {
+            ret += 1;
+        }
+        value = arg0[count * 8];
+    }
+    return ret;
+}
 
 s32 func_15002878(void) {
     s32 i;

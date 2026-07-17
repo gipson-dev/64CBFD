@@ -5,7 +5,15 @@
 
 
 // need to figure out D_800D2460
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_1508F060.s")
+void func_1508F060(void) {
+    D_800D246D = 0;
+    D_800D247D = 0;
+    D_800D2460[1][13] = 0;
+    D_800D2460[2][13] = 0;
+    D_800D2460[3][13] = 0;
+    D_800D2460[0][13] = 0;
+    D_800D24C0 = 0;
+}
 
 void func_1508F0A4(void) {
     func_1508F0D4();

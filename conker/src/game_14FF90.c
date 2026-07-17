@@ -459,21 +459,37 @@ s32 func_151253CC(struct108 *arg0) {
 }
 
 // no idea what going on here
-#pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_15125490.s")
+void *func_15125490(u8 *arg0) {
+    u8 *obj = *(u8 **)(arg0 + 0x3D0);
+    s32 diff;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_151254F4.s")
+    if (obj[0xAD] != 1) {
+        return NULL;
+    }
+
+    diff = (s32) fabsf(*(f32 *)(obj + 0x18) - *(f32 *)(obj + 0x118));
+    if (diff < 100) {
+        return NULL;
+    }
+    if (diff >= 301) {
+        return (void *)1;
+    }
+    return obj;
+}
+
 // NON-MATCHING: first statements in wrong order
-// void func_151254F4(struct108 *arg0, s32 arg1) {
-//     f32 tmp = D_800A352C;
-//     arg0->unk3A0 = tmp * arg0->unk380;
-//     arg0->unk398 = tmp * arg0->unk388;
-//     func_15124AB4(arg0);
-//     func_151239CC(arg0, 1);
-//     arg0->unk3D4->unk198 = 0;
-//     arg0->unk73C = 0;
-//     arg0->unk3D0 = &D_800CC2D0[arg1];
-//     arg0->unk670 = 0.0f;
-// }
+void func_151254F4(struct108 *arg0, s32 arg1) {
+    f32 tmp = D_800A352C;
+
+    arg0->unk3A0 = tmp * arg0->unk380;
+    arg0->unk398 = tmp * arg0->unk388;
+    func_15124AB4(arg0);
+    func_151239CC(arg0, 1);
+    arg0->unk3D4->unk198 = 0;
+    arg0->unk73C = 0;
+    arg0->unk3D0 = &D_800CC2D0[arg1];
+    arg0->unk670 = 0.0f;
+}
 
 void func_15125594(struct108 *arg0) {
     f32 temp_f0;
@@ -508,21 +524,20 @@ void func_15125608(struct108 *arg0) {
 // of the 8 accesses references a *distinct* symbol (single-use), which no
 // plausible source has. The .s below reproduces retail byte-exactly.
 // Equivalent C, logic-verified:
-// void func_15125628(void) {
-//     if (D_800DBFF4[0] != 0) {
-//         D_800DBFF4[0]--;
-//     }
-//     if (D_800DBFF5 != 0) {
-//         D_800DBFF5--;
-//     }
-//     if (D_800DBFF6 != 0) {
-//         D_800DBFF6--;
-//     }
-//     if (D_800DBFF7 != 0) {
-//         D_800DBFF7--;
-//     }
-// }
-#pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_15125628.s")
+void func_15125628(void) {
+    if (D_800DBFF4[0] != 0) {
+        D_800DBFF4[0]--;
+    }
+    if (D_800DBFF5 != 0) {
+        D_800DBFF5--;
+    }
+    if (D_800DBFF6 != 0) {
+        D_800DBFF6--;
+    }
+    if (D_800DBFF7 != 0) {
+        D_800DBFF7--;
+    }
+}
 
 void func_15125690(struct108 *arg0, s32 arg1) {
     u8 *temp_v0 = &D_800DBFF4[arg0->unk23D];
@@ -662,7 +677,24 @@ void func_15127FEC(struct108 *arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_15128030.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_151283B8.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_151284C4.s")
+void func_151284C4(struct108 *arg0) {
+    u8 counter;
+
+    func_1512C490(arg0);
+    arg0->unk2B0 = arg0->unk3D0->x_position;
+    arg0->unk2B4 = arg0->unk3D0->y_position;
+    arg0->unk2B8 = arg0->unk3D0->z_position;
+
+    counter = arg0->unk23C;
+    if (counter != 0) {
+        arg0->unk23C = counter - 1;
+    }
+
+    if (((arg0->unk84 & 8) != 0) && (arg0->unk5FE <= 0)) {
+        arg0->unk5FE = 0x3C;
+        func_15128774(arg0, arg0->unk3D0);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_15128540.s")
 
 void func_15128680(struct108 *arg0) {

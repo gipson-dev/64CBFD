@@ -4,7 +4,19 @@
 #include "variables.h"
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_D5030/func_150A7B80.s")
+void func_150A7B80(u64 *arg0) {
+    s16 *diag = (s16 *)arg0;
+    s32 i;
+
+    for (i = 0; i < 8; i++) {
+        arg0[i] = 0;
+    }
+
+    diag[0] = 1;
+    diag[5] = 1;
+    diag[10] = 1;
+    diag[15] = 1;
+}
 
 // struct WORD {
 //     s64 unk0;

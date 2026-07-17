@@ -18,9 +18,25 @@ void func_151411C4(struct210 *arg0) {
     func_1513CAA0(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151411E4.s")
+void func_151411E4(void *arg0) {
+    void *tmp = *(void **)((u8 *)arg0 + 0x154);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_15141250.s")
+    if (tmp != NULL) {
+        func_1517E134(tmp, arg0);
+    }
+    D_800DC9F0--;
+    D_80089F9C[*(u8 *)((u8 *)arg0 + 0x168)](arg0, arg0);
+}
+
+void func_15141250(void *arg0) {
+    void *tmp = *(void **)((u8 *)arg0 + 0x154);
+
+    if (tmp != NULL) {
+        func_1517E134(tmp, arg0);
+    }
+    D_800DC9F0--;
+    D_80089FE4[*(u8 *)((u8 *)arg0 + 0x168)](arg0, arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151412BC.s")
 
@@ -40,7 +56,14 @@ void func_1514143C(struct210 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_15141478.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_15141564.s")
+s32 func_15141564(u8 *arg0) {
+    u8 *base = arg0 + 0x170;
+
+    *(f32 *)(arg0 + 0x158) = *(f32 *)(base + 0) + (*(f32 *)(base + 4) * sinf(*(f32 *)(arg0 + 0x178)));
+    *(f32 *)(base + 8) += *(f32 *)(base + 0xC) * D_800BE9A4;
+    *(f32 *)(base + 8) = func_15144B68(*(f32 *)(base + 8));
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151415D4.s")
 
