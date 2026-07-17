@@ -4,15 +4,15 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Snapshot as of 2026-07-16 after the latest layout pass. Functions converted from raw assembly to C
+Snapshot as of 2026-07-17 after the latest raw-conversion pass. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.57% | 1550 / 6034 (25.69%) |
-| init | `[#####-------------------]` 20.16% | 232 / 538 (43.12%) |
-| game | `[#-----------------------]` 4.95% | 1147 / 5314 (21.58%) |
-| debugger | `[###############---------]` 63.33% | 171 / 182 (93.96%) |
+| total | `[##----------------------]` 7.27% | 1631 / 6034 (27.03%) |
+| init | `[######------------------]` 25.18% | 297 / 538 (55.20%) |
+| game | `[#-----------------------]` 4.99% | 1153 / 5314 (21.70%) |
+| debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Of those C-converted functions, the share that already compiles to the
 exact retail bytes (`make -C conker match-progress NON_MATCHING=1`;
@@ -22,21 +22,25 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1466 / 1550 (94.58%) | 50 | 34 |
-| init | 227 / 232 (97.84%) | 4 | 1 |
-| game | 1090 / 1147 (95.03%) | 46 | 11 |
-| debugger | 149 / 171 (87.13%) | 0 | 22 |
+| total | 914 / 1631 (56.04%) | 495 | 222 |
+| init | 77 / 297 (25.93%) | 159 | 61 |
+| game | 816 / 1153 (70.77%) | 323 | 14 |
+| debugger | 21 / 181 (11.60%) | 13 | 147 |
 
 The debugger overlay's long-standing rodata displacement healed on
 2026-07-16: its printf engine was identified as Plauger's Standard C
 Library (the N64 SDK's libc) and rematched at exact retail sizes. Later
 game-section layout fixes (`func_1504B0FC`, `func_1504BE2C`, and
-`func_150721A4`) collapsed most address-drift blockers, so only 50
-C-converted rows remain blocked. The small dips in the conversion table
-(1550 vs 1558 functions) are deliberate byte-verified `GLOBAL_ASM`
-fallbacks with their verified C kept in comments. Every debugger overlay
-*function* is now byte-exact or drift-blocked-free; the remaining debugger
-rows are data content.
+`func_150721A4`) collapsed most address-drift blockers. The latest passes
+then traded some byte-match cleanliness for +6 game functions, +10 debugger
+functions, and +65 init/libultra functions converted from raw asm to C.
+Debugger raw conversion is now complete except `func_16003650`, a CP0/TLB
+reader that uses `tlbr`/CP0 register instructions and is intentionally left
+as raw assembly. The new C bodies are raw-progress placeholders, so the
+byte-match table is expected to stay lower until those functions are
+size-matched or padded back into retail layout. The latest init/libultra
+push also replaced early-link OS/PI/SI/AI helpers, so many otherwise-good
+rows are temporarily classified as address-drift blocked.
 
 When regenerating, update both tables together with the copies in the
 [root README](../README.md) and [Project overview](PROJECT.md).

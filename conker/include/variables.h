@@ -93,6 +93,7 @@ extern s32  D_8000031C[16]; // 64 bytes
 extern u8   D_8002AAE0;
 extern u8   D_8002AAE4;
 extern s32  D_8002AAE8[2]; // pointer to framebuffer
+extern s32 *D_8002BDE0;
 extern u8   D_8002AB40;
 extern OSViMode D_8002AB90;
 extern OSViMode D_8002ABE0;
@@ -247,6 +248,7 @@ extern s32  D_8003BE94;
 
 extern s32  D_8003C858;
 extern s32  D_8003C8E0;
+extern s32  D_8003C8E8[];
 extern struct26 *D_8003C900[];
 extern struct14 *D_8003CD40;
 extern struct247  D_8003CD48[];
@@ -1396,6 +1398,7 @@ extern s32  *D_800E9D10; // probably not struct54
 /* debugger variables */
 
 extern s32  D_16001B8C; // a struct
+extern struct263 D_160036F0;
 extern s8   D_160036F3; // control stick Y-axis ?
 extern s32  D_16003848[];
 extern s32  D_16003B48; // fallback initial value for func_160006CC's 2-char label buffer
@@ -1406,8 +1409,18 @@ extern s32  D_160038A0;
 extern u8   D_160038A4;
 extern s32  D_160038A8;
 extern s32  D_16003890;
+extern s32  D_16003894;
+extern s32  D_16003898;
+extern s32  D_160038AC[];
+extern s32  D_1600392C[];
+extern s32  D_160039AC[];
+extern s32  D_160039E8;
+extern s32  D_16003A2C[];
+extern s32  D_16003A68;
 extern s32  D_16003AF0;
 extern u8   D_16003AF4;
+extern void (*D_16003AF8[])(void);
+extern s32  (*D_16003B08[])(void);
 extern s8   D_16003B1C;
 extern s32  D_16003B20[]; // array containing 0x20 structs?
 extern s8   D_16003B28;

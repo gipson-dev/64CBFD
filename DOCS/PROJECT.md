@@ -151,23 +151,23 @@ Run `make -C conker progress` for current local numbers.
 
 ### Code decompilation snapshot
 
-Last regenerated: 2026-07-16, from a fully working `.map`-based build
+Last regenerated: 2026-07-17, from a fully working `.map`-based build
 (`make -C conker progress NON_MATCHING=1`).
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.57% | 1550 / 6034 (25.69%) |
-| init | `[#####-------------------]` 20.16% | 232 / 538 (43.12%) |
-| game | `[#-----------------------]` 4.95% | 1147 / 5314 (21.58%) |
-| debugger | `[###############---------]` 63.33% | 171 / 182 (93.96%) |
+| total | `[##----------------------]` 7.27% | 1631 / 6034 (27.03%) |
+| init | `[######------------------]` 25.18% | 297 / 538 (55.20%) |
+| game | `[#-----------------------]` 4.99% | 1153 / 5314 (21.70%) |
+| debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
-(The small dips vs the 2026-07-15 snapshot - 1550 vs 1558 converted -
-are deliberate: several functions turned out to be hand-written or
-unprofitable-from-C assembly in retail, so they were returned to
-`GLOBAL_ASM` at exact retail bytes with their verified C kept in comments.
-This includes the PRNG pair, the debugger pair, and the later
-`func_1505EEB0`/`func_15125628`/`func_1504B0FC`/`func_150721A4`
-fallbacks. See WORKING_NOTES.)
+The latest passes moved 65 init/libultra helpers, 10 debugger functions, and
+6 game functions out of raw assembly. Debugger raw conversion is complete
+except `func_16003650`, a hardware CP0/TLB reader that executes `tlbr` and
+CP0 register moves and is intentionally left as raw assembly. The newly
+converted functions are C-shaped recovery bodies, not yet byte-matched
+retail code; see the byte-matching snapshot below before using them as
+examples of final matched source.
 
 Two caveats about what this table measures:
 
@@ -216,23 +216,27 @@ Two caveats about what this table measures:
 ### Byte-matching snapshot
 
 Of the C-converted functions above, how many compile to the exact retail
-bytes (last regenerated 2026-07-16, via
+bytes (last regenerated 2026-07-17, via
 `make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1466 / 1550 (94.58%) | 50 | 34 |
-| init | 227 / 232 (97.84%) | 4 | 1 |
-| game | 1090 / 1147 (95.03%) | 46 | 11 |
-| debugger | 149 / 171 (87.13%) | 0 | 22 |
+| total | 914 / 1631 (56.04%) | 495 | 222 |
+| init | 77 / 297 (25.93%) | 159 | 61 |
+| game | 816 / 1153 (70.77%) | 323 | 14 |
+| debugger | 21 / 181 (11.60%) | 13 | 147 |
 
 The debugger overlay's rodata displacement healed on 2026-07-16: the
 `debugger_257350.c` printf engine was identified as Plauger's Standard C
 Library (the N64 SDK's libc - `_Printf`/`_Ldtob`/`_Genld`/`_Litob`) and
 rematched at exact retail sizes. Later game-section layout fixes collapsed
-the dominant address-drift plateaus, taking the project from 897 to 1466
-byte-exact C-converted rows on 2026-07-16. The remaining debugger "still
-differ" rows are mostly the overlay's data content.
+the dominant address-drift plateaus. The latest raw-conversion passes then
+moved six more game functions, ten debugger functions, and 65 init/libultra
+functions out of `GLOBAL_ASM`/raw asm; those new C bodies shift layout and
+intentionally increase the still-differ count until they are size-matched or
+padded. This pass included early-link OS/PI/SI/AI helpers, so many otherwise
+good rows are temporarily classified as address-drift blocked. Init and
+debugger byte-matching are the next cleanup frontiers.
 
 "Blocked on address drift" means the only remaining differences are
 `j`/`jal` target addresses or `%lo` halves of shifted symbol addresses -

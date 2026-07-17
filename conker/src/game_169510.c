@@ -413,44 +413,44 @@ void func_1513E084(struct210 *arg0, struct212 *arg1, u8 arg2) {
 void func_1513E134(void) {
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513E13C.s")
-// void func_1513E13C(struct210 *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, u8 arg6) {
-//     f32 sp48;
-//     f32 sp30;
-//     f32 sp1C;
-//
-//     f32 temp_f0;
-//     f32 temp_f12;
-//     f32 temp_f14;
-//     f32 temp_f16;
-//     f32 temp_f18;
-//     f32 temp_f2;
-//     s32 temp_f10;
-//
-//     sp48 = func_151423D8((arg6 - 0x40));
-//     temp_f0 = func_151423D8(arg6);
-//     temp_f12 = arg5 * sp48;
-//     temp_f14 = arg4 * temp_f0;
-//     temp_f18 = arg1 + temp_f14;
-//     arg0->unk40 = temp_f18 - temp_f12;
-//     temp_f10 = arg2;
-//     arg0->unk42 = temp_f10;
-//     temp_f16 = arg5 * temp_f0;
-//     temp_f2 = arg4 * sp48;
-//     sp1C = arg3 + temp_f16;
-//     sp30 = arg1 - temp_f14;
-//     arg0->unk44 = sp1C + temp_f2;
-//     arg0->unk52 = temp_f10;
-//     arg0->unk50 = sp30 - temp_f12;
-//     arg0->unk54 = sp1C - temp_f2;
-//     arg0->unk62 = temp_f10;
-//     arg0->unk60 = sp30 + temp_f12;
-//     arg0->unk72 = temp_f10;
-//     arg0->unk70 = temp_f18 + temp_f12;
-//     sp30 = arg3 - temp_f16;
-//     arg0->unk64 = sp30 - temp_f2;
-//     arg0->unk74 = sp30 + temp_f2;
-// }
+// NON-MATCHING: register scheduling only
+void func_1513E13C(struct210 *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, u8 arg6) {
+    f32 sp48;
+    f32 sp30;
+    f32 sp1C;
+
+    f32 temp_f0;
+    f32 temp_f12;
+    f32 temp_f14;
+    f32 temp_f16;
+    f32 temp_f18;
+    f32 temp_f2;
+    s32 temp_f10;
+
+    sp48 = func_151423D8((arg6 - 0x40));
+    temp_f0 = func_151423D8(arg6);
+    temp_f12 = arg5 * sp48;
+    temp_f14 = arg4 * temp_f0;
+    temp_f18 = arg1 + temp_f14;
+    arg0->unk40 = temp_f18 - temp_f12;
+    temp_f10 = arg2;
+    arg0->unk42 = temp_f10;
+    temp_f16 = arg5 * temp_f0;
+    temp_f2 = arg4 * sp48;
+    sp1C = arg3 + temp_f16;
+    sp30 = arg1 - temp_f14;
+    arg0->unk44 = sp1C + temp_f2;
+    arg0->unk52 = temp_f10;
+    arg0->unk50 = sp30 - temp_f12;
+    arg0->unk54 = sp1C - temp_f2;
+    arg0->unk62 = temp_f10;
+    arg0->unk60 = sp30 + temp_f12;
+    arg0->unk72 = temp_f10;
+    arg0->unk70 = temp_f18 + temp_f12;
+    sp30 = arg3 - temp_f16;
+    arg0->unk64 = sp30 - temp_f2;
+    arg0->unk74 = sp30 + temp_f2;
+}
 
 void func_1513E2A4(void) {
 }
@@ -531,13 +531,30 @@ void func_1513F6C0(struct210 *arg0, u8 arg1, u8 arg2) {
     arg0->unk81 = arg2;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513F6E8.s")
+// NON-MATCHING: stackless retail scheduling
+s32 func_1513F6E8(struct210 *arg0) {
+    arg0->unk2C += arg0->unk128 * D_800BE9A4;
+    arg0->unk30 += arg0->unk128 * D_800BE9A4;
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513F728.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513FA2C.s")
+void func_1513FA2C(struct210 *arg0, s16 arg1) {
+    f32 tmp[2];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513FA70.s")
+    tmp[0] = 1.0f;
+    tmp[1] = 1.0f;
+    func_1513FAB4(arg0, 0, tmp, arg1);
+}
+
+void func_1513FA70(struct210 *arg0, s16 arg1) {
+    f32 tmp[2];
+
+    tmp[0] = 1.0f;
+    tmp[1] = 1.0f;
+    func_1513FAB4(arg0, 1, tmp, arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513FAB4.s")
 

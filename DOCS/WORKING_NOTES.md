@@ -25,6 +25,109 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-17, finish-what-is-possible init/libultra pass - +16 more
+functions converted and one lingering libultra `GLOBAL_ASM` removed).** Added
+C and wired `conker.us.yaml`/local `conker.ld` entries for `osRecvMesg`,
+`osSendMesg`, `osJamMesg`, `osStartThread`, `osSetThreadPri`,
+`osStopThread`, `osDestroyThread`, `osVirtualToPhysical`, `osPiRawReadIo`,
+`osPiRawStartDma`, `osEPiRawStartDma`, `__osSpRawStartDma`,
+`__osSiRawStartDma`, `bzero`, and `bcopy`; also replaced the
+`osAiSetNextBuffer` `GLOBAL_ASM` body with C using the existing
+`hdwrBugFlag` data label. Verified all new/touched objects compile and
+`build/conker.us.elf` links with `NON_MATCHING=1`, then regenerated
+progress. Total raw conversion is now `1631 / 6034 (27.03%)`, init is
+`297 / 538 (55.20%)`, byte-weighted total raw conversion is `7.27%`, and
+byte-weighted init raw conversion is `25.18%`. Current `match-progress`:
+`914 / 1631 (56.04%)`, blocked `495`, differ `222`; init is
+`77 / 297 (25.93%)`, blocked `159`, differ `61`; game is
+`816 / 1153 (70.77%)`, blocked `323`, differ `14`; debugger remains
+`21 / 181 (11.60%)`, blocked `13`, differ `147`. The exact-match drop is
+expected for this pass because several newly converted init/libultra rows sit
+early in the link and moved downstream addresses; the new C is raw-progress
+source, not final size-matched source.
+
+**Update (2026-07-16, bigger stock init/libultra pass - +9 more functions
+converted).** Added C and wired `conker.us.yaml`/local `conker.ld` entries
+for `lldiv`, `ldiv`, `_Litob`, `__osTimerServicesInit`,
+`__osTimerInterrupt`, `__osSetTimerIntr`, `__osInsertTimer`, `osSetTimer`,
+and `osGetTime`. The timer cluster uses the ROM's existing `D_8002BD70` /
+`D_800429B0` / `D_800429B8` / `D_800429BC` / `D_800429C0` storage labels
+rather than introducing new stock `__os*` data symbols. Verified all new
+objects compile and `build/conker.us.elf` links with `NON_MATCHING=1`, then
+regenerated progress. Total raw conversion is now
+`1615 / 6034 (26.76%)`, init is `281 / 538 (52.23%)`, byte-weighted total
+raw conversion is `7.14%`, and byte-weighted init raw conversion is
+`23.16%`. Current `match-progress`: `1085 / 1615 (67.18%)`, blocked `324`,
+differ `206`; init is `207 / 281 (73.67%)`, blocked `29`, differ `45`.
+`init_5AB0` still needs a different treatment because it is one large
+handwritten asm segment; tiny plain-memory candidates such as
+`func_10007A24` and `func_10005BE0` are visible, but pulling them out
+cleanly requires splitting that segment around the converted C.
+
+**Update (2026-07-16, init raw conversion continuation - +12 more stock
+libultra functions converted).** Added C and wired `conker.us.yaml`/local
+`conker.ld` entries for `osPiGetStatus`, `osPiGetDeviceType`,
+`__osSpGetStatus`, `__osSpSetStatus`, `__osSpSetPc`, `__osSpDeviceBusy`,
+`__osSiDeviceBusy`, `__osSiRawReadIo`, `__osSpRawWriteIo`,
+`osSpTaskYield`, `osSpTaskYielded`, and `__osDequeueThread`. Verified the
+new objects compile and `build/conker.us.elf` links with `NON_MATCHING=1`.
+Regenerated progress: total raw conversion is now `1602 / 6034 (26.55%)`,
+init is `268 / 538 (49.81%)`, and byte-weighted init raw conversion is
+`21.49%`. Current `match-progress`: `1085 / 1602 (67.73%)`, blocked `324`,
+differ `193`; init is `207 / 268 (77.24%)`, blocked `29`, differ `32`.
+Remaining tiny init asm rows are mostly CP0/cache/TLB/math instructions or
+custom startup functions, so keep using stock libultra source where the C
+is real and leave pure hardware instruction shims as raw asm.
+
+**Update (2026-07-16, init raw conversion pass - +24 stock libultra/libc
+functions converted).** Converted stock init-section helpers by adding C
+sources and flipping their `conker.us.yaml`/`conker.ld` subsegments from
+raw asm to C: `memcpy`, `strlen`, `strchr`, `__ull_rshift`, `__ull_rem`,
+`__ull_div`, `__ll_lshift`, `__ll_rem`, `__ll_div`, `__ll_mul`,
+`__ull_divremi`, `__ll_mod`, `__ll_rshift`,
+`__osPiCreateAccessQueue`, `__osPiGetAccess`, `__osPiRelAccess`,
+`osCreateMesgQueue`, `__osSiCreateAccessQueue`, `__osSiGetAccess`,
+`__osSiRelAccess`, `osViSwapBuffer`, `osViGetCurrentFramebuffer`,
+`osViGetNextFramebuffer`, and `osPiGetCmdQueue`. Verified the new objects
+compile and `build/conker.us.elf` links with `NON_MATCHING=1`. Regenerated
+progress: total raw conversion is now `1590 / 6034 (26.35%)`, init is
+`256 / 538 (47.58%)`, and byte-weighted init raw conversion is `21.14%`.
+Current `match-progress`: `1085 / 1590 (68.24%)`, blocked `323`, differ
+`182`; init is `207 / 256 (80.86%)`, blocked `28`, differ `21`. The
+byte-match dip is expected because this was a raw-conversion pass, not a
+size-matching pass.
+
+**Update (2026-07-16, debugger raw conversion finish - 10 debugger
+functions converted; one hardware asm exception remains).** Converted the
+remaining debugger raw queue to C except `func_16003650`:
+`func_16000590`, `func_160006CC`, `func_1600078C`, `func_16000B14`,
+`func_16000F8C`, `func_16001044`, `func_16001390`, `func_160014F0`,
+`func_16001BB4`, and `func_160021FC`. Added `struct263`, split
+`struct118`'s debugger fields, and declared the debugger globals needed by
+the recovered C. Verified `build/src/debugger/debugger.c.o`,
+`build/src/debugger_257350.c.o`, and `build/conker.us.elf` with
+`NON_MATCHING=1`. Regenerated progress: total raw conversion is now
+`1566 / 6034 (25.95%)`, debugger is `181 / 182 (99.45%)`, and
+byte-weighted debugger raw conversion is `99.19%`. `func_16003650` remains
+`GLOBAL_ASM` because it is a real CP0/TLB reader (`tlbr` plus CP0 register
+moves), not safely representable as pure C with this compiler. Current
+`match-progress`: `1106 / 1566 (70.63%)`, blocked `298`, differ `162`;
+the debugger byte-match dip (`21 / 181`, 13 blocked, 147 differ) is expected
+because these new C bodies are raw-progress placeholders, not size-matched
+retail code yet.
+
+**Update (2026-07-16, raw conversion pass - +6 game functions converted
+from raw assembly to C).** Converted `func_15074A94`, `func_1514672C`,
+`func_1513E13C`, `func_1513F6E8`, `func_1513FA2C`, and `func_1513FA70`
+from `GLOBAL_ASM` to C, and split `struct210`'s `0x128` float out of
+padding as `unk128` for `func_1513F6E8`. Verified `build/conker.us.elf`
+links, then regenerated `progress.csv`: total raw conversion is now
+`1556 / 6034 (25.79%)`, game is `1153 / 5314 (21.70%)`, byte-weighted
+total is `6.61%`. `make -C conker match-progress NON_MATCHING=1` reports
+`1234 / 1556 (79.31%)`, blocked `285`, differ `37`; the raw-conversion
+win intentionally shifts game-section layout until these C bodies are
+size-matched or padded back.
+
 **Update (2026-07-16, nineteenth session - two more hand-written-asm
 functions identified and made byte-exact; match_progress now anchors
 named symbols; verified snapshot after progress.csv regen: 897/1552

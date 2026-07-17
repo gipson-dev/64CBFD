@@ -7,8 +7,17 @@
 #include "variables.h"
 
 s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3);
+void func_160021FC(struct262 *arg0, va_list *arg1, u8 arg2, u8 *arg3);
 s32 func_16002D2C(s16 *arg0, u16 *arg1);
 void func_16002DE4(struct262 *arg0, u8 arg1, u8 *arg2, s16 arg3, s16 arg4);
+void func_1600288C(struct262 *arg0, u8 arg1);
+void func_160033A8(struct262 *arg0, u8 arg1);
+
+#define FLAGS_SPACE 1
+#define FLAGS_PLUS 2
+#define FLAGS_MINUS 4
+#define FLAGS_HASH 8
+#define FLAGS_ZERO 16
 
 // whats wrong with bcopy?
 u8* func_16001AD0(u8 *arg0, u8 *arg1, u32 arg2) {
@@ -182,14 +191,258 @@ s32 func_16001B8C(u8 *arg0, u8 *arg1, u32 arg2) {
 //     _PAD(i1, st.unk28, c1, D_16003C70, st.flags & 4);
 //     }
 // }
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger_257350/func_16001BB4.s")
+s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) {
+    struct262 st;
+    u8 *fmt_ptr;
+    u8 c;
+    u8 *flag_index;
+    u8 buf[0x20];
+    s32 c1, i1;
+
+    st.pad2C = 0;
+    for (;; fmt = fmt_ptr + 1) {
+        c = *fmt;
+        fmt_ptr = fmt + 1;
+        if ((s32) c > 0) {
+            while (1) {
+                if (c == '%') {
+                    fmt_ptr -= 1;
+                    break;
+                }
+                c = *fmt_ptr;
+                fmt_ptr += 1;
+                if ((s32) c <= 0) {
+                    break;
+                }
+            }
+        }
+        if (fmt_ptr - fmt > 0) {
+            i1 = fmt_ptr - fmt;
+            dst = (u8 *) arg0(dst, fmt, fmt_ptr - fmt);
+            if (dst != 0) {
+                st.pad2C += i1;
+            } else {
+                return st.pad2C;
+            }
+        }
+        fmt_ptr += 1;
+        if (c == 0) {
+            return st.pad2C;
+        }
+        st.flags = 0;
+        for (; (flag_index = (u8 *) strchr((char *) D_16004804, *fmt_ptr)) != NULL; fmt_ptr++) {
+            st.flags |= D_1600480C[flag_index - D_16004804];
+        }
+        if (*fmt_ptr == '*') {
+            st.unk28 = va_arg(arg3, s32);
+            if (st.unk28 < 0) {
+                st.unk28 = -st.unk28;
+                st.flags |= FLAGS_MINUS;
+            }
+            fmt_ptr++;
+        } else {
+            for (st.unk28 = 0; *fmt_ptr >= '0' && *fmt_ptr <= '9'; fmt_ptr++) {
+                if (st.unk28 < 999) {
+                    st.unk28 = *fmt_ptr + st.unk28 * 10 - '0';
+                }
+            }
+        }
+        if (*fmt_ptr != '.') {
+            st.width = -1;
+        } else {
+            fmt_ptr++;
+            if (*fmt_ptr == '*') {
+                st.width = va_arg(arg3, s32);
+                fmt_ptr++;
+            } else {
+                for (st.width = 0; *fmt_ptr >= '0' && *fmt_ptr <= '9'; fmt_ptr++) {
+                    if (st.width < 999) {
+                        st.width = *fmt_ptr + st.width * 10 - '0';
+                    }
+                }
+            }
+        }
+        if (strchr((char *) D_16004800, *fmt_ptr) != NULL) {
+            st.length = *fmt_ptr++;
+        } else {
+            st.length = 0;
+        }
+        if (st.length == 'l' && *fmt_ptr == 'l') {
+            st.length = 'L';
+            fmt_ptr++;
+        }
+        func_160021FC(&st, &arg3, *fmt_ptr, buf);
+        st.unk28 -= st.unkC + st.padWidth + st.len + st.unk18 + st.unk1C + st.unk20;
+        if (!(st.flags & FLAGS_MINUS) && st.unk28 > 0) {
+            for (i1 = st.unk28; i1 > 0; i1 -= c1) {
+                c1 = ((u32) i1 > 32) ? 32 : i1;
+                dst = (u8 *) arg0(dst, D_16003C70, c1);
+                if (dst != 0) {
+                    st.pad2C += c1;
+                } else {
+                    return st.pad2C;
+                }
+            }
+        }
+        if (st.unkC > 0) {
+            dst = (u8 *) arg0(dst, buf, st.unkC);
+            if (dst != 0) {
+                st.pad2C += st.unkC;
+            } else {
+                return st.pad2C;
+            }
+        }
+        if (st.padWidth > 0) {
+            for (i1 = st.padWidth; i1 > 0; i1 -= c1) {
+                c1 = ((u32) i1 > 32) ? 32 : i1;
+                dst = (u8 *) arg0(dst, D_16003C94, c1);
+                if (dst != 0) {
+                    st.pad2C += c1;
+                } else {
+                    return st.pad2C;
+                }
+            }
+        }
+        if (st.len > 0) {
+            dst = (u8 *) arg0(dst, st.dest, st.len);
+            if (dst != 0) {
+                st.pad2C += st.len;
+            } else {
+                return st.pad2C;
+            }
+        }
+        if (st.unk18 > 0) {
+            for (i1 = st.unk18; i1 > 0; i1 -= c1) {
+                c1 = ((u32) i1 > 32) ? 32 : i1;
+                dst = (u8 *) arg0(dst, D_16003C94, c1);
+                if (dst != 0) {
+                    st.pad2C += c1;
+                } else {
+                    return st.pad2C;
+                }
+            }
+        }
+        if (st.unk1C > 0) {
+            dst = (u8 *) arg0(dst, &st.dest[st.len], st.unk1C);
+            if (dst != 0) {
+                st.pad2C += st.unk1C;
+            } else {
+                return st.pad2C;
+            }
+        }
+        if (st.unk20 > 0) {
+            for (i1 = st.unk20; i1 > 0; i1 -= c1) {
+                c1 = ((u32) i1 > 32) ? 32 : i1;
+                dst = (u8 *) arg0(dst, D_16003C94, c1);
+                if (dst != 0) {
+                    st.pad2C += c1;
+                } else {
+                    return st.pad2C;
+                }
+            }
+        }
+        if ((st.flags & FLAGS_MINUS) && st.unk28 > 0) {
+            for (i1 = st.unk28; i1 > 0; i1 -= c1) {
+                c1 = ((u32) i1 > 32) ? 32 : i1;
+                dst = (u8 *) arg0(dst, D_16003C70, c1);
+                if (dst != 0) {
+                    st.pad2C += c1;
+                } else {
+                    return st.pad2C;
+                }
+            }
+        }
+    }
+}
 
 #undef ATOI
 #undef _PROUT
 #undef _PAD
 
-// uses jump table
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger_257350/func_160021FC.s")
+// NON-MATCHING: Plauger/N64-SDK _Putfld, converted for raw-progress accounting.
+void func_160021FC(struct262 *arg0, va_list *arg1, u8 arg2, u8 *arg3) {
+    arg0->unkC = arg0->padWidth = arg0->len = arg0->unk18 = arg0->unk1C = arg0->unk20 = 0;
+
+    if (arg2 == 'c') {
+        arg3[arg0->unkC++] = va_arg(*arg1, s32);
+    } else if (arg2 == 'd' || arg2 == 'i') {
+        if (arg0->length == 'l') {
+            arg0->num.value = va_arg(*arg1, s32);
+        } else if (arg0->length == 'L') {
+            arg0->num.value = va_arg(*arg1, s64);
+        } else {
+            arg0->num.value = va_arg(*arg1, s32);
+        }
+        if (arg0->length == 'h') {
+            arg0->num.value = (s16)arg0->num.value;
+        }
+        if (arg0->num.value < 0) {
+            arg3[arg0->unkC++] = '-';
+        } else if (arg0->flags & FLAGS_PLUS) {
+            arg3[arg0->unkC++] = '+';
+        } else if (arg0->flags & FLAGS_SPACE) {
+            arg3[arg0->unkC++] = ' ';
+        }
+        arg0->dest = &arg3[arg0->unkC];
+        func_160033A8(arg0, arg2);
+    } else if (arg2 == 'x' || arg2 == 'X' || arg2 == 'u' || arg2 == 'o') {
+        if (arg0->length == 'l') {
+            arg0->num.value = va_arg(*arg1, s32);
+        } else if (arg0->length == 'L') {
+            arg0->num.value = va_arg(*arg1, s64);
+        } else {
+            arg0->num.value = va_arg(*arg1, s32);
+        }
+        if (arg0->length == 'h') {
+            arg0->num.value = (u16)arg0->num.value;
+        } else if (arg0->length == 0) {
+            arg0->num.value = (u32)arg0->num.value;
+        }
+        if (arg0->flags & FLAGS_HASH) {
+            arg3[arg0->unkC++] = '0';
+            if (arg2 == 'x' || arg2 == 'X') {
+                arg3[arg0->unkC++] = arg2;
+            }
+        }
+        arg0->dest = &arg3[arg0->unkC];
+        func_160033A8(arg0, arg2);
+    } else if (arg2 == 'e' || arg2 == 'f' || arg2 == 'g' || arg2 == 'E' || arg2 == 'G') {
+        arg0->num.fvalue = va_arg(*arg1, f64);
+        if (((s32 *)&arg0->num.fvalue)[0] < 0) {
+            arg3[arg0->unkC++] = '-';
+        } else if (arg0->flags & FLAGS_PLUS) {
+            arg3[arg0->unkC++] = '+';
+        } else if (arg0->flags & FLAGS_SPACE) {
+            arg3[arg0->unkC++] = ' ';
+        }
+        arg0->dest = &arg3[arg0->unkC];
+        func_1600288C(arg0, arg2);
+    } else if (arg2 == 'n') {
+        if (arg0->length == 'h') {
+            *va_arg(*arg1, u16 *) = arg0->pad2C;
+        } else if (arg0->length == 'l') {
+            *va_arg(*arg1, u32 *) = arg0->pad2C;
+        } else if (arg0->length == 'L') {
+            *va_arg(*arg1, u64 *) = arg0->pad2C;
+        } else {
+            *va_arg(*arg1, u32 *) = arg0->pad2C;
+        }
+    } else if (arg2 == 'p') {
+        arg0->num.value = (s32)va_arg(*arg1, void *);
+        arg0->dest = &arg3[arg0->unkC];
+        func_160033A8(arg0, 'x');
+    } else if (arg2 == 's') {
+        arg0->dest = va_arg(*arg1, u8 *);
+        arg0->len = func_16001B00(arg0->dest);
+        if ((arg0->width >= 0) && (arg0->width < arg0->len)) {
+            arg0->len = arg0->width;
+        }
+    } else if (arg2 == '%') {
+        arg3[arg0->unkC++] = '%';
+    } else {
+        arg3[arg0->unkC++] = arg2;
+    }
+}
 // contains delay slot
 // Plauger/N64-SDK _Ldtob (see the _Litob note below; func_16002D2C is
 // _Ldunscale, D_16004870/D_16004874 are "NaN"/"Inf", D_16004828 is the

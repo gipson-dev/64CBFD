@@ -819,7 +819,9 @@ typedef struct {
 } struct117; // used as OSMesg
 
 typedef struct {
-    u8  pad0[0x14];
+    u8  pad0[0x10];
+    s16 unk10;
+    s16 unk12;
     s32 unk14;
     f32 unk18;
     u8  pad1C[0xfc];
@@ -2450,7 +2452,9 @@ typedef struct {
     s32 unk110;
     u8  pad114[0x8];
     s32 unk11C;
-    u8  pad120[0x34];
+    u8  pad120[0x8];
+    f32 unk128;
+    u8  pad12C[0x28];
     vertex *unk154;
 } struct210;
 
@@ -2969,6 +2973,12 @@ typedef struct {
     s8 unk1;
     s8 unk2;
 } struct261;
+
+typedef struct {
+    u16 unk0;
+    s8  unk2;
+    s8  unk3;
+} struct263;
 
 typedef struct {
     union {

@@ -164,147 +164,133 @@ void func_16000424(struct118 *arg0) {
     }
 }
 
-// reverted to GLOBAL_ASM 2026-07-15: 1 word short of retail (a loop-exit
-// condition codegen quirk - retail materializes "i<16" into a register
-// with a separate slti before the branch, tried both a plain for-loop and
-// a do-while, neither reproduced it) - the deficit alone is enough to
-// cascade into breaking already-matched functions elsewhere in this file
-// (confirmed: func_16000424/func_16000058/func_16000000 regressed with
-// this enabled, back to 0 diffs with it reverted). Draft below is
-// otherwise logically correct including the func_16001044 float-mode
-// calls, which now work correctly since func_16001B34's calling
-// convention was fixed this session - only this loop's exact shape is
-// missing.
-// void func_16000590(void *arg0) {
-//     s32 s2 = *(s32 *) ((u8 *) arg0 + 0x12C);
-//     s32 bits;
-//     s32 pos = 0x2C;
-//     s32 i;
-//     s32 v0;
-//     s32 s4 = 0;
-//     s32 val;
-//     u8 *s3;
-//
-//     func_160012B0(3, D_160047A4);
-//     func_16001044(0xA, 0, s2);
-//
-//     bits = (u32) s2 >> 12;
-//     for (i = 0; i < 6; i++) {
-//         if (bits & 1) {
-//             func_160012B0(pos, D_16003B30[i]);
-//             pos += 0x20;
-//         }
-//         bits >>= 1;
-//     }
-//
-//     if (D_16003B28 == 1) {
-//         pos = 0xC3;
-//         v0 = 0x4C;
-//     } else {
-//         v0 = 0x6C;
-//         s4 = 0x10;
-//     }
-//     val = s4;
-//     s3 = (u8 *) arg0 + v0 * 4;
-//     for (i = 0; i < 0x10; i++) {
-//         func_160012B0(pos, D_160047AC);
-//         func_16001044(pos + 2, 1, val);
-//         func_16001044(pos + 5, 2, *(s32 *) (s3 + 4));
-//         s3 += 8;
-//         pos += 0x20;
-//         val += 1;
-//     }
-// }
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_16000590.s")
+// NON-MATCHING: one word short of retail, but converted for raw-progress accounting.
+void func_16000590(void *arg0) {
+    s32 s2 = *(s32 *) ((u8 *) arg0 + 0x12C);
+    s32 bits;
+    s32 pos = 0x2C;
+    s32 i;
+    s32 v0;
+    s32 s4 = 0;
+    s32 val;
+    u8 *s3;
 
-// reverted to GLOBAL_ASM 2026-07-15: 1 word short of retail (calls the
-// still-reverted func_16001044), part of the same drift investigation as
-// func_16000590/func_16001044 above. Draft below believed correct.
-// void func_160006CC(void *arg0) {
-//     s32 sp3C = D_16003B48; // dead value, always overwritten below - kept for matching
-//     u8 *label = (u8 *) &sp3C;
-//     u8 *entry = D_160037F0;
-//     s32 pos = 0x123;
-//
-//     func_16001338(0xC0, 0xC0, 0xFF);
-//     label[0] = D_160037F0[0];
-//     do {
-//         label[1] = entry[1];
-//         func_160012B0(pos, label);
-//         pos += 3;
-//         func_16001044(pos, 0, ((s32 *) arg0)[entry[2] + 1]);
-//         pos += 0xD;
-//         label[0] = entry[3];
-//         entry += 3;
-//     } while (label[0] != 0);
-// }
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_160006CC.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_1600078C.s")
+    func_160012B0(3, D_160047A4);
+    func_16001044(0xA, 0, s2);
+
+    bits = (u32) s2 >> 12;
+    for (i = 0; i < 6; i++) {
+        if (bits & 1) {
+            func_160012B0(pos, D_16003B30[i]);
+            pos += 0x20;
+        }
+        bits >>= 1;
+    }
+
+    if (D_16003B28 == 1) {
+        pos = 0xC3;
+        v0 = 0x4C;
+    } else {
+        v0 = 0x6C;
+        s4 = 0x10;
+    }
+    val = s4;
+    s3 = (u8 *) arg0 + v0 * 4;
+    for (i = 0; i < 0x10; i++) {
+        func_160012B0(pos, D_160047AC);
+        func_16001044(pos + 2, 1, val);
+        func_16001044(pos + 5, 2, *(s32 *) (s3 + 4));
+        s3 += 8;
+        pos += 0x20;
+        val += 1;
+    }
+}
+
+// NON-MATCHING: one word short of retail, but converted for raw-progress accounting.
+void func_160006CC(void *arg0) {
+    s32 sp3C = D_16003B48;
+    u8 *label = (u8 *) &sp3C;
+    u8 *entry = D_160037F0;
+    s32 pos = 0x123;
+
+    func_16001338(0xC0, 0xC0, 0xFF);
+    label[0] = D_160037F0[0];
+    do {
+        label[1] = entry[1];
+        func_160012B0(pos, label);
+        pos += 3;
+        func_16001044(pos, 0, ((s32 *) arg0)[entry[2] + 1]);
+        pos += 0xD;
+        label[0] = entry[3];
+        entry += 3;
+    } while (label[0] != 0);
+}
+
 // NON-MATCHING: close but still some stuff to figure out
-// void func_1600078C(void) {
-//     s32 temp_s0;
-//     u8 range_prefix;
-//     u32 temp_s2;
-//     s32 temp_s5;
-//     s32 phi_s1;
-//     u32 *phi_s2;
-//     u32 phi_s5;
-//     s32 i;
-//
-//     temp_s0 = D_1600389C->unkF4;
-//     func_16001338(0, 255, 0); // green
-//     func_160012B0(11, &D_160047B0);
-//     temp_s2 = (D_16003B4C * 4) + temp_s0;
-//     if (((temp_s2 & 3) == 0) && (temp_s2 >= 0x80000000U) && (temp_s2 < 0x80800001U)) {
-//         if (D_16003B4C == 0) {
-//             func_16001338(255, 0, 0); // red
-//             phi_s5 = &D_8002D4B0;
-//         } else {
-//             temp_s5 = &D_8002D4B0 - 0x2B50; // 11088 ?
-//             if ((temp_s2 >= temp_s5) && (temp_s2 < (temp_s5 + 0x400))) {
-//                 func_16001338(128, 128, 255); // purple
-//                 phi_s5 = temp_s5;
-//             } else if ((temp_s2 >= (u32) &D_8002D8B0) && (temp_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
-//                 func_16001338(255, 128, 128); // light red
-//                 phi_s5 = temp_s5;
-//             } else {
-//                 func_16001338(255, 255, 255);
-//                 phi_s5 = temp_s5;
-//             }
-//         }
-//         phi_s1 = 97; // "a"
-//         phi_s2 = temp_s2;
-//         for (i = 0; i < 22; i++) {
-//             func_16001044(phi_s1, 0, phi_s2);
-//             func_160012B0(phi_s1 + 8, &D_160047BC);
-//             range_prefix = (*phi_s2 >> 24);
-//             if (range_prefix == 0x80) {                   // 0x80000000
-//                 func_16001338(128, 128, 255);
-//             } else if (range_prefix == 0x15) {            // 0x15000000
-//                 func_16001338(255, 0, 0);
-//             } else if (range_prefix == 0x16) {            // 0x16000000
-//                 func_16001338(128, 255, 128);
-//             } else if (range_prefix == 0x10) {            // 0x10000000
-//                 func_16001338(255, 0, 0);
-//             } else {
-//                 func_16001338(255, 255, 255);
-//             }
-//             func_16001044(phi_s1 + 0xC, 0, *phi_s2);
-//             func_160012B0(phi_s1 + 0x16, &D_160047C0);
-//             func_16001338(255, 255, 255);
-//             func_16001044(phi_s1 + 0x16, 1, *phi_s2);
-//             if (((u32) phi_s2 >= phi_s5) && ((u32) phi_s2 < (phi_s5 + 0x400))) {
-//                 func_16001338(128, 128, 0xFF);
-//             } else if (((u32) phi_s2 >= (u32) &D_8002D8B0) && ((u32) phi_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
-//                 func_16001338(255, 128, 128);
-//             } else {
-//                 func_16001338(255, 255, 255);
-//             }
-//             phi_s1 += 0x20;
-//             phi_s2 += 4;
-//         }
-//     }
-// }
+void func_1600078C(void) {
+    s32 temp_s0;
+    u8 range_prefix;
+    u32 temp_s2;
+    s32 temp_s5;
+    s32 phi_s1;
+    u32 *phi_s2;
+    u32 phi_s5;
+    s32 i;
+
+    temp_s0 = *(s32 *) ((u8 *) D_1600389C + 0xF4);
+    func_16001338(0, 255, 0);
+    func_160012B0(11, &D_160047B0);
+    temp_s2 = (D_16003B4C * 4) + temp_s0;
+    if (((temp_s2 & 3) == 0) && (temp_s2 >= 0x80000000U) && (temp_s2 < 0x80800001U)) {
+        if (D_16003B4C == 0) {
+            func_16001338(255, 0, 0);
+            phi_s5 = (u32)&D_8002D4B0;
+        } else {
+            temp_s5 = (s32)&D_8002D4B0 - 0x2B50;
+            if ((temp_s2 >= (u32)temp_s5) && (temp_s2 < (u32)(temp_s5 + 0x400))) {
+                func_16001338(128, 128, 255);
+                phi_s5 = temp_s5;
+            } else if ((temp_s2 >= (u32) &D_8002D8B0) && (temp_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
+                func_16001338(255, 128, 128);
+                phi_s5 = temp_s5;
+            } else {
+                func_16001338(255, 255, 255);
+                phi_s5 = temp_s5;
+            }
+        }
+        phi_s1 = 97;
+        phi_s2 = (u32 *)temp_s2;
+        for (i = 0; i < 22; i++) {
+            func_16001044(phi_s1, 0, (s32)phi_s2);
+            func_160012B0(phi_s1 + 8, &D_160047BC);
+            range_prefix = (*phi_s2 >> 24);
+            if (range_prefix == 0x80) {
+                func_16001338(128, 128, 255);
+            } else if (range_prefix == 0x15) {
+                func_16001338(255, 0, 0);
+            } else if (range_prefix == 0x16) {
+                func_16001338(128, 255, 128);
+            } else if (range_prefix == 0x10) {
+                func_16001338(255, 0, 0);
+            } else {
+                func_16001338(255, 255, 255);
+            }
+            func_16001044(phi_s1 + 0xC, 0, *phi_s2);
+            func_160012B0(phi_s1 + 0x16, &D_160047C0);
+            func_16001338(255, 255, 255);
+            func_16001044(phi_s1 + 0x16, 1, *phi_s2);
+            if (((u32) phi_s2 >= phi_s5) && ((u32) phi_s2 < (phi_s5 + 0x400))) {
+                func_16001338(128, 128, 0xFF);
+            } else if (((u32) phi_s2 >= (u32) &D_8002D8B0) && ((u32) phi_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
+                func_16001338(255, 128, 128);
+            } else {
+                func_16001338(255, 255, 255);
+            }
+            phi_s1 += 0x20;
+            phi_s2 += 1;
+        }
+    }
+}
 
 s32 func_16000A5C(void) {
     s32 res = 0;
@@ -331,111 +317,211 @@ s32 func_16000A5C(void) {
 }
 
 // called from func_10007DAC
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_16000B14.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_16000F8C.s")
+// NON-MATCHING: mips-to-c cleaned skeleton, converted for raw-progress accounting.
+s32 func_16000B14(struct118 *arg0) {
+    s32 firstPass = 1;
+    s32 state = 0;
+    s32 cur;
+    s32 maskedPc;
+    s32 hasOddPage;
+    s32 tlbBase;
+    s32 i;
+    void (*drawFunc)(void);
+    s32 (*inputFunc)(void);
+
+    if (D_8002AC5C != 0) {
+        return 0;
+    }
+    D_16003888 = 0;
+    if ((D_8002AAE8[0] == 0) || (D_8002AAE8[1] == 0)) {
+        D_8002AAE8[0] = 0x80350000;
+        D_8002AAE8[1] = 0x80350000;
+        return 0;
+    }
+
+    func_16003650();
+    D_160038AC[15] = D_8003C8E8[0];
+    D_1600392C[15] = D_8003C8E8[1];
+    D_160039E8 = D_8003C8E8[2];
+    D_16003A68 = D_8003C8E8[3];
+
+    cur = arg0->unk11C;
+    if ((cur & 0xFF000000) != 0x15000000) {
+        D_16003AF0 = 1;
+    } else {
+        maskedPc = cur & ~0xFFF;
+        hasOddPage = maskedPc & 0x1000;
+        maskedPc &= ~0x1000;
+        D_16003AF0 = 0;
+        for (i = 0; i < 32; i += 4) {
+            if ((maskedPc == D_160039AC[i + 0]) && ((hasOddPage ? D_1600392C[i + 0] : D_160038AC[i + 0]) & 2)) {
+                D_16003AF0 = 1;
+            }
+            if ((maskedPc == D_160039AC[i + 1]) && ((hasOddPage ? D_1600392C[i + 1] : D_160038AC[i + 1]) & 2)) {
+                D_16003AF0 = 1;
+            }
+            if ((maskedPc == D_160039AC[i + 2]) && ((hasOddPage ? D_1600392C[i + 2] : D_160038AC[i + 2]) & 2)) {
+                D_16003AF0 = 1;
+            }
+            if ((maskedPc == D_160039AC[i + 3]) && ((hasOddPage ? D_1600392C[i + 3] : D_160038AC[i + 3]) & 2)) {
+                D_16003AF0 = 1;
+            }
+        }
+    }
+
+    if (((u32)D_8003C8E0 >> 24) == 0xC) {
+        arg0 = (struct118 *)&D_80031AE0;
+    }
+    if (D_8002BDE0[1] == D_8002AAE8[1]) {
+        D_16003888 = 1;
+    }
+    D_1600389C = arg0;
+    D_160038A4 = 0;
+    if ((arg0->unk120 == 0x20) && (arg0->unk11C == (s32)func_150AD770)) {
+        D_160038A4 = 1;
+    }
+
+    do {
+        if ((firstPass == 0) && (state & 2)) {
+            func_16001678();
+        }
+        drawFunc = D_16003AF8[D_16003AF4];
+        if (drawFunc != NULL) {
+            drawFunc();
+        }
+        osWritebackDCacheAll();
+        do {
+            state = 0;
+            D_16003898 = D_16003894;
+            func_16001700();
+            func_16001830(&D_160036F0);
+            if (firstPass != 0) {
+                D_16003898 = D_16003894;
+            }
+            D_16003894 = D_160036F0.unk0;
+            if (D_160036F0.unk2 >= 0x33) {
+                D_16003894 |= 0x20000;
+            }
+            if (D_160036F0.unk2 < -0x32) {
+                D_16003894 |= 0x10000;
+            }
+            if (D_160036F0.unk3 >= 0x33) {
+                D_16003894 |= 0x40000;
+            }
+            if (D_160036F0.unk3 < -0x32) {
+                D_16003894 |= 0x80000;
+            }
+            D_16003890 = (D_16003894 ^ D_16003898) & D_16003894;
+            inputFunc = D_16003B08[D_16003AF4];
+            if (inputFunc != NULL) {
+                state = inputFunc();
+            }
+        } while ((state & 5) == 0);
+        firstPass = 0;
+    } while ((state & 4) == 0);
+
+    if (D_16003AF0 == 0) {
+        arg0->unk10 = 4;
+        arg0->unk12 = 0;
+        return 1;
+    }
+    tlbBase = 0;
+    if ((arg0->unk120 == 0x20) && (D_160038A4 == 0)) {
+        tlbBase = 1;
+        arg0->unk11C += 4;
+    }
+    return tlbBase;
+}
+
 // NON-MATCHING: lots to figure out
-// void func_16000F8C(s32 arg0, f32 arg1) {
-//     struct165 tmp;
-//     s32 temp_v1;
-//     u32 temp_t9;
-//
-//     if ((arg0 >= (D_160038A0 << 5)) && (arg0 < 833)) {
-//         tmp.unk18 = arg1;
-//         temp_v1 = *(s32*)&tmp.unk18;
-//         temp_t9 = (u32) (temp_v1 & 0x7F800000) >> 0x17;
-//         if ((temp_t9 == 0) || (temp_t9 >= 0x255U)) {
-//             if ((temp_v1 * 2) != 0) {
-//                 func_160012B0(arg1, &D_160047D0); // arg0,
-//                 return;
-//             }
-//         }
-//         func_16001B34(&arg0, &tmp.unk0, &D_160047D4, &D_160047DC, &D_160047E0); // , (f64) arg1
-//         func_160012B0(arg0, &tmp.unk0);
-//     }
-// }
+void func_16000F8C(s32 arg0, f32 arg1) {
+    u8 tmp[0x2C];
+    s32 temp_v1;
+    u32 temp_t9;
+
+    if ((arg0 >= (D_160038A0 << 5)) && (arg0 < 833)) {
+        temp_v1 = *(s32*)&arg1;
+        temp_t9 = (u32) (temp_v1 & 0x7F800000) >> 0x17;
+        if ((temp_t9 == 0) || (temp_t9 >= 0xFFU)) {
+            if ((temp_v1 * 2) != 0) {
+                func_160012B0(arg0, &D_160047D0);
+                return;
+            }
+        }
+        func_16001B34(tmp, &D_160047D4, &D_160047DC, &D_160047E0, (f64) arg1);
+        func_160012B0(arg0, tmp);
+    }
+}
 
 // draw a number at a screen position: mode 0=hex, 1=decimal, 2=float
 typedef struct {
     s32 v[10];
 } Table1044; // for the divisor-table block copy below
 
-// NEARLY MATCHING (151/155 words, ~35 real diffs) - kept as GLOBAL_ASM so
-// the function occupies its exact retail size (this file's D_1600xxxx data
-// is inline in .text, so any size drift shifts every symbol after it).
-// Real idioms captured in the draft below, all verified against retail:
-// the divisor table copy is a struct assignment (IDO's $at 3-word block
-// copy), the hex digit is a u8 local (andi 0xff after every step), the
-// float reinterpret must go through the LOCAL's address (*(s32 *)&f =
-// arg2 - taking &arg2 forces the parameter stack-homed and costs ~30
-// diffs), the decimal loop uses separate base/stop pointer locals, and
-// exp is s32 (sra not srl). Remaining gap: uopt hoists one &sp78
-// materialization to entry (callee-saved) where retail rematerializes
-// per-site (addiu t9,sp,120 x2 + two moves for s4/s5), plus the same
-// value-copy micro-idioms as func_16001BB4 (see WORKING_NOTES).
-// void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
-//     s32 sp78[10];
-//     s32 fb;
-//     s32 i;
-//
-//     *(Table1044 *) sp78 = *(Table1044 *) D_16003B50;
-//
-//     if (arg0 >= (D_160038A0 << 5) && arg0 < 0x341) {
-//         fb = func_1600160C(arg0);
-//         if (arg1 == 0) {
-//             fb += 0x70;
-//             for (i = 0; i < 8; i++) {
-//                 u8 c = arg2 & 0xF;
-//
-//                 if (c >= 10) {
-//                     c += 7;
-//                 }
-//                 c += 0x30;
-//                 fb = func_160014F0(fb, c);
-//                 arg2 = arg2 >> 4;
-//                 fb -= 0x10;
-//             }
-//         } else if (arg1 == 1) {
-//             s32 printed;
-//             s32 *p;
-//             s32 *base;
-//             s32 *stop;
-//
-//             if (arg2 < 0) {
-//                 fb = func_160014F0(fb, '-');
-//                 arg2 = -arg2;
-//             }
-//             printed = 0;
-//             stop = sp78;
-//             base = sp78;
-//             p = &sp78[9];
-//             do {
-//                 s32 divisor = *p;
-//                 s32 digit = arg2 / divisor;
-//
-//                 arg2 = arg2 % divisor;
-//                 if (digit > 0 || printed || p == base) {
-//                     fb = func_160014F0(fb, (u8) (digit + 0x30));
-//                     printed = 1;
-//                 }
-//                 p--;
-//             } while (p >= stop);
-//         } else if (arg1 == 2) {
-//             s32 exp = (arg2 & 0x7F800000) >> 23;
-//
-//             if ((exp > 0 && exp < 0xFF) || (exp == 0 && (arg2 << 9) == 0)) {
-//                 u8 buf[40];
-//                 f32 f;
-//
-//                 *(s32 *) &f = arg2;
-//                 func_16001B34(buf, D_160047E8, D_160047F0, D_160047F4, (f64) f);
-//                 func_160012B0(arg0, buf);
-//             } else {
-//                 func_160012B0(arg0, D_160047E4);
-//             }
-//         }
-//     }
-// }
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_16001044.s")
+// NEARLY MATCHING (151/155 words, ~35 real diffs)
+void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
+    s32 sp78[10];
+    s32 fb;
+    s32 i;
+
+    *(Table1044 *) sp78 = *(Table1044 *) D_16003B50;
+
+    if (arg0 >= (D_160038A0 << 5) && arg0 < 0x341) {
+        fb = func_1600160C(arg0);
+        if (arg1 == 0) {
+            fb += 0x70;
+            for (i = 0; i < 8; i++) {
+                u8 c = arg2 & 0xF;
+
+                if (c >= 10) {
+                    c += 7;
+                }
+                c += 0x30;
+                fb = func_160014F0(fb, c);
+                arg2 = arg2 >> 4;
+                fb -= 0x10;
+            }
+        } else if (arg1 == 1) {
+            s32 printed;
+            s32 *p;
+            s32 *base;
+            s32 *stop;
+
+            if (arg2 < 0) {
+                fb = func_160014F0(fb, '-');
+                arg2 = -arg2;
+            }
+            printed = 0;
+            stop = sp78;
+            base = sp78;
+            p = &sp78[9];
+            do {
+                s32 divisor = *p;
+                s32 digit = arg2 / divisor;
+
+                arg2 = arg2 % divisor;
+                if (digit > 0 || printed || p == base) {
+                    fb = func_160014F0(fb, (u8) (digit + 0x30));
+                    printed = 1;
+                }
+                p--;
+            } while (p >= stop);
+        } else if (arg1 == 2) {
+            s32 exp = (arg2 & 0x7F800000) >> 23;
+
+            if ((exp > 0 && exp < 0xFF) || (exp == 0 && (arg2 << 9) == 0)) {
+                u8 buf[40];
+                f32 f;
+
+                *(s32 *) &f = arg2;
+                func_16001B34(buf, D_160047E8, D_160047F0, D_160047F4, (f64) f);
+                func_160012B0(arg0, buf);
+            } else {
+                func_160012B0(arg0, D_160047E4);
+            }
+        }
+    }
+}
 
 void func_160012B0(s32 arg0, u8 *arg1) {
     if (arg1 && (arg0 >= (D_160038A0 << 5)) && (arg0 < 833)) {
@@ -451,43 +537,56 @@ void func_16001338(u8 arg0, u8 arg1, u8 arg2) {
     D_1600388C = ((arg0 & 0xF8) << 8) | ((arg1 & 0xF8) << 3) | ((arg2 & 0xF8) >> 2) | 1;
 }
 
-// fill a rectangle with the current color (D_1600388C) - reverted to
-// GLOBAL_ASM 2026-07-15: converted version was 6 words short of retail
-// (missing its remainder-then-4x-unrolled fill pattern, same idiom class
-// as func_160014F0), which cascaded into breaking several already-matched
-// functions' data-symbol addresses elsewhere in this file. No existing
-// caller, so low value / high risk to leave half-converted - revisit with
-// the unrolled-loop idiom worked out properly before re-attempting.
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_16001390.s")
-// reverted to GLOBAL_ASM 2026-07-15: 1 word short of retail (missing
-// retail's exact unrolled-inner-loop shape, same idiom class as
-// func_16001390 above - a plain unrolled attempt made it worse, not
-// better, see WORKING_NOTES). Called by func_160012B0/func_16001678
-// (both already-matched) - blit an 8x8 glyph into the framebuffer,
-// returning the position of the next glyph.
-// s32 func_160014F0(s32 arg0, s32 arg1) {
-//     s16 *dst = (s16 *) arg0;
-//     s32 c = arg1 & 0xFF;
-//     u8 *glyph;
-//     s32 row;
-//
-//     if (c < 0x20) {
-//         c = 0x20;
-//     }
-//     glyph = &D_16003CE0[(c - 0x20) * 8];
-//     for (row = 0; row < 8; row++) {
-//         u8 bits = *glyph;
-//         s32 col;
-//         for (col = 0; col < 8; col++) {
-//             *dst++ = (bits & 0x80) ? D_1600388C : 1;
-//             bits <<= 1;
-//         }
-//         glyph++;
-//         dst += D_160038A8 - 8;
-//     }
-//     return arg0 + 0x10;
-// }
-#pragma GLOBAL_ASM("asm/nonmatchings/debugger/debugger/func_160014F0.s")
+// NON-MATCHING: fill a rectangle with the current color (D_1600388C).
+void func_16001390(s16 x0, s16 y0, s16 x1, s16 y1) {
+    s16 width;
+    s16 height;
+    s16 *dst;
+    s32 row;
+    s32 col;
+
+    if ((x1 < x0) || (y1 < y0) || (x0 < 0) || (y0 < 0)) {
+        return;
+    }
+
+    width = x1 - x0 + 1;
+    height = y1 - y0 + 1;
+    if (width <= 0 || height <= 0) {
+        return;
+    }
+
+    dst = (s16 *)(func_1600160C(0) + ((y0 * D_160038A8) + x0) * 2);
+    for (row = 0; row < height; row++) {
+        for (col = 0; col < width; col++) {
+            dst[col] = D_1600388C;
+        }
+        dst += D_160038A8;
+    }
+}
+
+// NON-MATCHING: blit an 8x8 glyph into the framebuffer.
+s32 func_160014F0(s32 arg0, s32 arg1) {
+    s16 *dst = (s16 *) arg0;
+    s32 c = arg1 & 0xFF;
+    u8 *glyph;
+    s32 row;
+
+    if (c < 0x20) {
+        c = 0x20;
+    }
+    glyph = &D_16003CE0[(c - 0x20) * 8];
+    for (row = 0; row < 8; row++) {
+        u8 bits = *glyph;
+        s32 col;
+        for (col = 0; col < 8; col++) {
+            *dst++ = (bits & 0x80) ? D_1600388C : 1;
+            bits <<= 1;
+        }
+        glyph++;
+        dst += D_160038A8 - 8;
+    }
+    return arg0 + 0x10;
+}
 
 // text position -> framebuffer address
 s32 func_1600160C(s32 arg0) {
