@@ -156,14 +156,14 @@ Last regenerated: 2026-07-17, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 8.23% | 1700 / 6034 (28.17%) |
+| total | `[##----------------------]` 8.86% | 1807 / 6035 (29.94%) |
 | init | `[######------------------]` 25.18% | 297 / 538 (55.20%) |
-| game | `[#-----------------------]` 6.02% | 1222 / 5314 (23.00%) |
+| game | `[##----------------------]` 6.71% | 1329 / 5313 (25.01%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
-The latest passes moved 65 init/libultra helpers, 10 debugger functions, and
-20 game functions in the current game push out of raw assembly. Debugger raw
-conversion is complete
+Recent passes moved 65 init/libultra helpers and 10 debugger functions out of
+raw assembly, and the latest game push carried game raw conversion to
+`1329 / 5313 (25.01%)`. Debugger raw conversion is complete
 except `func_16003650`, a hardware CP0/TLB reader that executes `tlbr` and
 CP0 register moves and is intentionally left as raw assembly. The newly
 converted functions are C-shaped recovery bodies, not yet byte-matched
@@ -222,9 +222,9 @@ bytes (last regenerated 2026-07-17, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 693 / 1700 (40.76%) | 826 | 181 |
-| init | 76 / 297 (25.59%) | 160 | 61 |
-| game | 495 / 1222 (40.51%) | 653 | 74 |
+| total | 692 / 1807 (38.30%) | 840 | 275 |
+| init | 74 / 297 (24.92%) | 162 | 61 |
+| game | 496 / 1329 (37.32%) | 665 | 168 |
 | debugger | 122 / 181 (67.40%) | 13 | 46 |
 
 The debugger overlay's rodata displacement healed on 2026-07-16: the
@@ -232,7 +232,7 @@ The debugger overlay's rodata displacement healed on 2026-07-16: the
 Library (the N64 SDK's libc - `_Printf`/`_Ldtob`/`_Genld`/`_Litob`) and
 rematched at exact retail sizes. Later game-section layout fixes collapsed
 the dominant address-drift plateaus. The latest raw-conversion passes then
-moved 20 more game functions in the current push, ten debugger functions, and
+crossed the 25% game C milestone, moved ten debugger functions, and moved
 65 init/libultra functions out of `GLOBAL_ASM`/raw asm; those new C bodies shift layout and
 intentionally increase the still-differ count until they are size-matched or
 padded. This pass included early-link OS/PI/SI/AI helpers, so many otherwise

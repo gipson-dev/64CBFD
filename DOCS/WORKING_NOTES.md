@@ -25,6 +25,18 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-17, 25% game C progress snapshot).** Updated the current
+progress tables in `README.md`, `DOCS/README.md`, `DOCS/PROJECT.md`, and
+`DOCS/PC_PORT_ROADMAP.md` after the game raw-conversion milestone. Current
+raw conversion is total `1807 / 6035 (29.94%)`, init `297 / 538 (55.20%)`,
+game `1329 / 5313 (25.01%)`, and debugger `181 / 182 (99.45%)`.
+Byte-weighted raw conversion is total `8.86%`, init `25.18%`, game `6.71%`,
+and debugger `99.19%`. Current `match-progress`: total
+`692 / 1807 (38.30%)`, blocked `840`, differ `275`; init
+`74 / 297 (24.92%)`, blocked `162`, differ `61`; game
+`496 / 1329 (37.32%)`, blocked `665`, differ `168`; debugger
+`122 / 181 (67.40%)`, blocked `13`, differ `46`.
+
 **Update (2026-07-17, tool submodule refresh).** Checked GitHub upstream HEADs
 for the active tools. `n64splat`, `CBFD_rabbitizer`, `texture2c`, and
 `ultralib` were already current. Advanced `tools/asm-differ` from `093360a` to

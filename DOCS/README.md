@@ -4,14 +4,14 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Snapshot as of 2026-07-17 after the ROM-mapping cleanup. Functions converted from raw assembly to C
+Snapshot as of 2026-07-17 after the 25% game C milestone. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 8.23% | 1700 / 6034 (28.17%) |
+| total | `[##----------------------]` 8.86% | 1807 / 6035 (29.94%) |
 | init | `[######------------------]` 25.18% | 297 / 538 (55.20%) |
-| game | `[#-----------------------]` 6.02% | 1222 / 5314 (23.00%) |
+| game | `[##----------------------]` 6.71% | 1329 / 5313 (25.01%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Of those C-converted functions, the share that already compiles to the
@@ -22,20 +22,19 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 693 / 1700 (40.76%) | 826 | 181 |
-| init | 76 / 297 (25.59%) | 160 | 61 |
-| game | 495 / 1222 (40.51%) | 653 | 74 |
+| total | 692 / 1807 (38.30%) | 840 | 275 |
+| init | 74 / 297 (24.92%) | 162 | 61 |
+| game | 496 / 1329 (37.32%) | 665 | 168 |
 | debugger | 122 / 181 (67.40%) | 13 | 46 |
 
 The debugger overlay's long-standing rodata displacement healed on
 2026-07-16: its printf engine was identified as Plauger's Standard C
 Library (the N64 SDK's libc) and rematched at exact retail sizes. Later
 game-section layout fixes (`func_1504B0FC`, `func_1504BE2C`, and
-`func_150721A4`) collapsed most address-drift blockers. The latest passes
-then traded some byte-match cleanliness for +20 more game functions in the
-current push, +10 debugger functions, and +65 init/libultra functions
-converted from raw asm to C. Game raw conversion is now 136 functions short
-of the 25% target.
+`func_150721A4`) collapsed most address-drift blockers. The latest game
+decomp push then traded some byte-match cleanliness for 107 more game
+functions converted from raw asm to C, crossing the 25% game raw-conversion
+target.
 Debugger raw conversion is now complete except `func_16003650`, a CP0/TLB
 reader that uses `tlbr`/CP0 register instructions and is intentionally left
 as raw assembly. The new C bodies are raw-progress placeholders, so the
