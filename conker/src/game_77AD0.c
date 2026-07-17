@@ -309,9 +309,9 @@ f32 func_1504A620(f32 arg0) {
 
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 void func_1504ADD0(void) {
+    s32 i;
     struct127 *obj;
     u8 sp48[6];
-    u8 i;
 
     i = 0;
     if (D_800C35EA != 1) {
@@ -406,23 +406,20 @@ void func_1504AF10(struct127 *arg0, s32 arg1, s32 arg2) {
             entry = &D_800DBEF4[sp28];
             entry->unk4F = entry->unk4F | 0x20;
             D_800DBEF4[sp28].unk10 = (s16) arg0->x_position;
-            D_800DBEF4[sp28].unk12 = (s16) (arg0->y_position + arg0->unk90);
+            D_800DBEF4[sp28].unk12 = (s16) (arg0->y_position + (s16) arg0->unk90);
             D_800DBEF4[sp28].unk14 = (s16) arg0->z_position;
         }
     }
 }
 
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+// Reverted to GLOBAL_ASM (2026-07-16): the C port is still over 650 real diffs
+// and oversized enough to drive most of the game-section address drift. Keep
+// the improved C body below as the next source-matching baseline.
+#if 0
 f32 func_1504B0FC(struct127 *arg0, f32 arg1) {
     f32 sp70;
-    f32 sp6C;
     f32 sp68 = 0.0f;
     s8 sp67;
-    f32 sp58;
-    f32 sp54;
-    f32 sp50;
-    f32 sp4C;
-    f32 sp48;
     f32 temp_f0;
     f32 temp_f2;
     f32 var_f0;
@@ -479,7 +476,6 @@ f32 func_1504B0FC(struct127 *arg0, f32 arg1) {
         if (arg0->unk31C->pad20[1] != 0) {
             sp70 = 0.0f;
         }
-        sp6C = var_f12;
         func_15059444(arg0);
         if (((arg0->stunned != 0) && ((arg0->health != 0) || (arg0->y_velocity >= 60.0f))) || ((temp_v0 = arg0->unk84.uh), (temp_v0 == 0x262))) {
             return 0.0f;
@@ -574,7 +570,13 @@ f32 func_1504B0FC(struct127 *arg0, f32 arg1) {
             sp70 = -20.0f;
         }
         if (arg0->unk28 < 40.0f) {
-            func_1510F820(var_f12, arg0->pad188, &arg0->unk18C, &sp58, &sp54, &sp50, &sp4C, &sp48);
+            f32 sp58;
+            f32 sp54;
+            f32 sp50;
+            f32 sp4C;
+            f32 sp48;
+
+            func_1510F820(arg0->pad188, &arg0->unk18C, &sp58, &sp54, &sp50, &sp4C, &sp48);
             sp4C = func_1505210C(arg0, sp4C, sp48, &sp48, 180.0f);
             temp_f2 = arg0->unkB8;
             if (sp48 < temp_f2) {
@@ -635,12 +637,18 @@ f32 func_1504B0FC(struct127 *arg0, f32 arg1) {
     }
     return sp68;
 }
+#endif
+#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1504B0FC.s")
+
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 // NON-MATCHING (logic verified): all 12 remaining diffs are pure register
 // renames - retail allocates temp_v1(ptr)->v1, temp_a1->a1, temp_v0->v0,
 // while ours coalesces temp_a1/temp_v0 into v1 and puts the pointer in v0.
 // Tried: declaration reorder, block-scoping temp_a1, early-return vs
-// if/else nesting - allocation identical in every variant.
+// if/else nesting - allocation identical in every variant. Also tried
+// (2026-07-16): reusing an unused 2nd parameter as temp_a1 to bait the a1
+// assignment - K&R s8, ANSI s8, and ANSI s32 forms all home a1 to the
+// stack at entry (sw a1,4(sp)) that retail lacks; reverted.
 void func_1504BA38(struct127 *arg0) {
     s8 temp_v0;
     struct261 *temp_v1;
@@ -799,7 +807,6 @@ void func_1504BC38(struct127 *arg0) {
 void func_1504BE2C(struct127 *arg0, u16 *arg1, f32 *arg2, s8 *arg3) {
     f32 sp1C;
     f32 temp_f12;
-    f32 var_f6;
     struct126 *temp_v0;
     struct126 *var_v0;
     u16 temp_v0_2;
@@ -807,11 +814,7 @@ void func_1504BE2C(struct127 *arg0, u16 *arg1, f32 *arg2, s8 *arg3) {
     u8 temp_v1;
 
     temp_t7 = arg0->unk31C->padA[1];
-    var_f6 = (f32) temp_t7;
-    if ((s32) temp_t7 < 0) {
-        var_f6 += 4294967296.0f;
-    }
-    temp_f12 = var_f6 * D_800991D8;
+    temp_f12 = (f32) temp_t7 * D_800991D8;
     D_800CC2B4 = 16.0f;
     var_v0 = arg0->unk31C;
     temp_v1 = var_v0->unk16;
@@ -891,7 +894,15 @@ void func_1504C854(struct127 *arg0) {
     }
 }
 
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+// Load-bearing shapes (2026-07-16): the second-if store must be spelled
+// `temp->unk1A8` (an `arg0->unk31C->` spelling creates a second register
+// identity and a `move v1,a1` at entry); D_800CC2BA is s16 (direct sh -
+// s32 + (s16) cast emits sll/sra/sw); the unk127 test is written
+// `(arg0->unk127 & 1) == D_800CC2B8` because cfe evaluates the RIGHT
+// operand of == first (retail numbers D_800CC2B8's temps first); the
+// accumulate is `+=` so the reused D_800BE9E4 value lands first in the
+// addu. The `arg0->unk31C->` spellings in the third-if body are also
+// load-bearing: the sh/swc1 global stores make IDO reload the pointer.
 s32 func_1504C8BC(struct127 *arg0) {
     struct126 *temp = arg0->unk31C;
 
@@ -899,13 +910,13 @@ s32 func_1504C8BC(struct127 *arg0) {
         return 1;
     }
     if ((arg0->unk1D4 != NULL) || (D_800BE9F0 == 0x33) || (arg0->interaction_state == 0x25)) {
-        arg0->unk31C->unk1A8 = 0;
+        temp->unk1A8 = 0;
         return 1;
     }
-    if (D_800CC2B8 == (arg0->unk127 & 1)) {
+    if ((arg0->unk127 & 1) == D_800CC2B8) {
         if (temp->unk1A8 != 0) {
-            D_800CC2BA = (s16) D_800BE9E4;
-            D_800BE9E4 = D_800BE9E4 + arg0->unk31C->unk1A8;
+            D_800CC2BA = D_800BE9E4;
+            D_800BE9E4 += arg0->unk31C->unk1A8;
             D_800BE9A4 = (f32) D_800BE9E4 * 0.5f;
             if (D_800BE9A4 != 0.0f) {
                 D_800BE9A8 = 1.0f / D_800BE9A4;

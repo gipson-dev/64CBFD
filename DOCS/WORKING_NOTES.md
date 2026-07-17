@@ -25,6 +25,66 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-16, nineteenth session - two more hand-written-asm
+functions identified and made byte-exact; match_progress now anchors
+named symbols; verified snapshot after progress.csv regen: 897/1552
+(57.80%), game 525/1149, still-differ 41 -> 37. The denominator dropped
+by 2 - the two conversions moved out of the C-converted count into asm,
+same accounting as the session-18 PRNG pair; before the regen the same
+build measured 899/1554 with both counted exact.)**
+Continued the `game` still-differ queue ("continue with functions").
+Results:
+
+- **Tool fix (match_progress.py)**: implemented the eighth session's
+  deferred "deeper fix" - for named (non-`func_XXXXXXXX`) symbols the
+  retail VRAM anchor now comes from `symbol_addrs.<version>.txt` (new
+  `--symbol-addrs` flag, auto-found next to progress.csv) instead of
+  progress.csv's current-build offset. `guMtxCatL`/`guMtxXFML`
+  immediately reclassified DIFF->BLOCK: both are already source-matched
+  (stock libultra mtxcatl.c shape); their only diffs are jal targets to
+  `guMtxL2F`/`guMtxXFMF`/`guMtxCatF`/`guMtxF2L2`, which sit +0x300 from
+  retail in our build. The same alias resolution was added to
+  `is_symbol_addr_drift` so lui/addiu references to named symbols
+  classify as drift too.
+- **func_15125628 (game_14FF90.c) byte-exact via hand-authored
+  GLOBAL_ASM**: the 4-timer-byte decrementer is almost certainly
+  hand-written asm in retail - every access is an assembler-macro
+  expansion (self-base `lbu $v0, sym` loads, `lui $at` stores, two
+  independent %hi per block). Proved by experiment that IDO only emits
+  that shape when each of the 8 accesses references a distinct
+  single-use symbol (8 distinct externs compile byte-identical
+  structurally; any same-symbol pair CSEs into lui+addiu+0(rN)).
+  Tried and ruled out: volatile casts (double-loads), literal-address
+  casts (lui+ori CSE), offset spellings off the 3 neighboring scalars
+  (multi-use symbols re-materialize into registers). Since no plausible
+  C exists, wrote `asm/nonmatchings/game_14FF90/func_15125628.s` BY HAND
+  from the retail bytes (26 words; no re-extraction dance needed - much
+  cheaper than the session-18 pragma-then-extract route, and doesn't
+  clobber undefined_funcs_auto.txt). Verified 0/26 at the name-implied
+  address.
+- **func_1505EEB0 (game_83300.c) byte-exact the same way** (17 words,
+  0/17): same non-CSE signature (self-base `lw` of D_800CC2D0->
+  interaction_state PLUS a separate lui/addiu of the same symbol), plus
+  an unfilled jr-delay nop with the return move scheduled before it -
+  IDO never does either. Tried first: pointer do-while (18 diffs),
+  D_800CC2D0[i] indexing (no strength reduction - multu by 812),
+  scalar-struct extern (still CSEs). Hand-authored .s, C kept in
+  comments.
+- Dead ends recorded in-source: func_1504BA38 (12 rename diffs - tried
+  baiting retail's a1 with an unused 2nd parameter; K&R s8, ANSI s8,
+  ANSI s32 all home a1 to the stack at entry); func_1507A3E8 (u8 locals
+  fix load order but demote temps to named regs; innermost-pair swap
+  leaves lui-pairing wrong); func_151696DC (2-diff scheduling coin-flip:
+  both `i = 0` reorders regress to 11 diffs).
+- Remaining game still-differ (14): the 2-diff pair
+  func_1516968C/func_151696DC (cfe canonicalization / scheduler
+  coin-flip), four documented-dead-end small ones, and the
+  game_77AD0.c cluster (func_1504A620/ADD0/AF10/B0FC/BE2C/C8BC,
+  func_1505210C, func_15169070) - the big ones are fresh territory for
+  a future session. Watch for more hand-written-asm signatures there
+  (self-base loads + lui-at stores + same-symbol double %hi = convert,
+  don't chase).
+
 **Update (2026-07-16, eighteenth session part 5 - func_16001044 done;
 EVERY debugger overlay function is now byte-exact: 149/171 exact
 (87.13%), zero function rows left in the diff queue; total 897/1554
@@ -2316,3 +2376,341 @@ git checkout -- .
     per-line structured data (subtitle text? timing/metadata tables?)
     worth reversing next; the 15 changed ones are the natural samples to
     stare at since we know exactly which dialogue they belong to.
+
+**Update (2026-07-16, nineteenth session - game-section candidate pass):**
+
+- Worked the fresh game candidates from the handoff list.
+  - `func_15125628`: added the missing linker symbol
+    `D_800DBFF7 = 0x800DBFF7` to `conker/undefined_syms.us.txt` and changed
+    the fourth cooldown decrement from `(&D_800DBFF6)[1]` to named
+    `D_800DBFF7`. This is source-clearer and link-safe now. Focused raw-word
+    compare reports `26 words, 16 diffs` (previous handoff target was
+    `26 words, 20 diffs`). The remaining mismatch is still the IDO global
+    byte load/store shape: retail uses `lbu v0,%lo(sym)(v0)` plus `sb
+    ..., %lo(sym)(at)`, while current C keeps an address register and stores
+    through offset zero. A volatile-cast test was worse (`34 words, 32
+    diffs`) and was reverted.
+  - `func_1505EEB0`: tried a retail-shaped rewrite that put the object
+    pointer in `v1` and the index in `a2`, but IDO produced extra branch/store
+    scheduling (`22 words, 22 diffs`). Restored the baseline source; focused
+    compare is back to `18 words, 18 diffs`.
+  - Stock `guMtxXFML` / `guMtxCatL`: the current source is the expected
+    stock wrapper shape. Focused compare shows only callee-address drift
+    (`guMtxXFML`: 2 `jal` diffs, `guMtxCatL`: 4 `jal` diffs), so no source
+    rewrite was useful here.
+  - `func_1504CA60`: focused compare still shows only two `jal` target diffs
+    (`func_150ADA20`, `func_15058EA4`), so it remains logically complete and
+    blocked on address drift.
+- Verification:
+  - `make build/src/game_83300.c.o build/src/game_14FF90.c.o
+    build/conker.us.elf NON_MATCHING=1`
+  - `make match-progress NON_MATCHING=1 LIST=1`
+  - Overall byte-exact summary unchanged at `897 / 1554 (57.72%)`; game
+    remains `525 / 1151 (45.61%)`, with 18 still-differ game rows.
+
+**Continuation (2026-07-16, same session):**
+
+- Continued smallest-first game candidates after the `D_800DBFF7` improvement.
+  - `func_1504BA38`: re-tested two register-allocation nudges (`s8 *` table
+    pointer form and split base+index pointer construction). The byte-pointer
+    form got worse (`47 words, 28 diffs`) and the split pointer form was
+    identical to baseline (`46 words, 12 diffs`). Restored the original source.
+  - `func_1504C8BC`: tried a nested `if (temp != NULL) { ... } return 1;`
+    shape to chase retail's entry `bnezl`/delay-slot load. It made the whole
+    function worse (`76 words, 51 diffs`, baseline `50 diffs`), so restored
+    the original structure.
+  - `func_15125628`: explicit assignment (`x = x - 1`) generated the same
+    `26 words, 16 diffs` as `x--`; kept the shorter post-decrement spelling.
+  - `func_1507A3E8`: local byte temporaries loaded bytes in source order but
+    worsened to `14 diffs` (baseline `13 diffs`), so restored the one-line
+    expression.
+
+**Continuation (2026-07-16, game_1944C0 small rows):**
+
+- `func_1516968C`: tried guarded one-local and two-local byte-load rewrites to
+  force retail's `*arg1` load before `arg0->unkC`. Both changed temp registers
+  to `v0`/`v1` and worsened the focused compare to `4 diffs`; restored the
+  original expression. Baseline remains `20 words, 3 focused diffs` here
+  (two swapped `lbu`s plus the shifted `jal func_1516972C` target).
+- `func_151696DC`: changed the loop from a per-iteration `slot` pointer local
+  to an indexed `slots[i]` form. This keeps `arg0` in `a0` and the current slot
+  in `a1`, matching retail's allocator choice. Focused compare improved from
+  the noisy allocator mismatch to `20 words, 2 diffs`; the only remaining
+  difference is the schedule order of `i = 0` and `slots = D_800DD198` around
+  the count branch. Moving `i = 0` after `slots` or inside the branch worsened
+  to `11 diffs`, so the 2-diff ordering is the keeper.
+
+**Continuation (2026-07-16, game_77AD0 cluster pass):**
+
+- `func_1504ADD0`: changed the local declaration layout to `s32 i;
+  struct127 *obj; u8 sp48[6];`. The earlier `u8 i` form forced the loop
+  counter through an `andi`; the first `s32 i` test removed that mask but left
+  the stack temp at `sp+0x4c`. Moving `sp48` after the pointer gives the retail
+  `sp+0x48` temp and keeps the clean signed loop counter. Linked
+  `match-progress` now reports `73 words, 52 real diffs` (handoff target was
+  57). Remaining shape is still a register-allocation swap (`i` in `s1`,
+  object in `s0`; retail has `s0`/`s1`) plus the direct `D_800D154C` store and
+  loop-bound register choice. Tried and rejected: explicit `limit = 0x19`
+  (spilled the bound and moved temp to `sp+0x44`) and `register` locals
+  (identical codegen).
+- `func_1504AF10`: kept a signed field cast in the y-position store:
+  `arg0->y_position + (s16) arg0->unk90`. Retail uses `lh` for `unk90`; the
+  previous source treated the `u16` struct field as unsigned and emitted the
+  large unsigned-to-float correction path. This drops the function from 118 to
+  `123 words, 116 real diffs`. Reordering `sp28`/`idx` compiled identically and
+  was reverted.
+- `func_1504A620`: tried the tempting in-place-argument rewrite (normalizing
+  `arg0` directly instead of a `mantissa` local) to chase retail's FPR layout.
+  It worsened from 63 to 64 real diffs, so the original source is restored.
+- `func_1505210C`: retail saves `arg1`/`-arg2` in callee-saved FPRs
+  (`f22`/`f20`) across the trig calls. A small `arg1Copy` long-lived-local
+  test made the function worse (`81 -> 82`), so it was reverted. Needs a deeper
+  FPR-live-range rewrite rather than a simple alias.
+- `func_15169070`: raw retail/current disassembly shows the C structure is
+  close, but the saved-register frame is shifted (`arg2`/`arg3` in `s3`/`s4`
+  current vs `s2`/`s3` retail, with `D_800DD190` address correspondingly
+  shifted). No safe small source keeper found in this pass; still
+  `124 words, 74 real diffs`.
+- `func_1504BE2C` / `func_1504B0FC`: inspected as remaining cluster tail.
+  Both are still broad allocator/control-flow problems (`191` and `664` real
+  diffs respectively), not quick declaration/cast fixes.
+- Verification snapshot:
+  - Object rebuilds: `make build/src/game_77AD0.c.o
+    build/src/game_1944C0.c.o NON_MATCHING=1`
+  - Direct link used after the object build because `make build/conker.us.elf`
+    tries to refresh a long libultra generated-object chain and timed out in
+    this workspace: `mips-linux-gnu-ld -T build/conker.ld -Map
+    build/conker.us.map -T undefined_syms.us.txt -T undefined_funcs.us.txt -T
+    undefined_syms_auto.txt -T undefined_funcs_auto.txt --no-check-sections
+    --no-warn-mismatch -o build/conker.us.elf`, followed by `objcopy`.
+  - `make match-progress NON_MATCHING=1 LIST=1`: total `898 / 1552 (57.86%)`,
+    init `223 / 232`, game `526 / 1149 (45.78%)`, debugger `149 / 171`;
+    game still-differ rows are now 13.
+
+**Continuation (2026-07-16, game_1944C0 / cluster cleanup):**
+
+- `func_15169070`: added an intentional `u8 pad[16]` local to force IDO's
+  stack frame to retail's `0x58` bytes. This aligns the homed argument offsets
+  (`sp+0x58`, `sp+0x5c`, `sp+0x64`) and drops the function from 74 to
+  `124 words, 67 real diffs`. A plain local array is enough; `volatile` is not
+  needed. Tried explicit `arg2Copy`/`arg3Copy` locals to chase retail's
+  `s2`/`s3` allocation, but that regressed the row back to 74 diffs, so only
+  the padding keeper remains. Remaining mismatch is mostly saved-register
+  assignment (`arg2`/`arg3` still in `s3`/`s4`, while retail uses `s2`/`s3`,
+  and `D_800DD190` still lands in `s2` instead of retail `s4`).
+- `func_1505210C`: tested `register` on the result locals (score unchanged)
+  and on the long-lived incoming float values (`81 -> 82`, worse). Restored
+  the baseline source; the retail `f20`/`f22` save shape needs a deeper
+  rewrite than local aliasing.
+- `func_1504AF10`: tested a signed local `yOffset` for `unk90`; worsened
+  `116 -> 120`, so restored the direct `(s16) arg0->unk90` cast.
+- Verification snapshot after this continuation:
+  - `make build/src/game_77AD0.c.o build/src/game_1944C0.c.o NON_MATCHING=1`
+  - direct `mips-linux-gnu-ld` plus `objcopy` as above
+  - `make match-progress NON_MATCHING=1 LIST=1`: total unchanged at
+    `898 / 1552 (57.86%)`; game remains `526 / 1149 (45.78%)` with 13
+    still-differ rows. Cluster rows now: `func_1504ADD0` 52,
+    `func_1504A620` 63, `func_15169070` 67, `func_1505210C` 81,
+    `func_1504AF10` 116, `func_1504BE2C` 191, `func_1504B0FC` 664.
+
+**Continuation (2026-07-16, ultralib reference added):**
+
+- Added `decompals/ultralib` as the `tools/ultralib` submodule. This is a
+  reference source tree for stock libultra/libgultra matching work (especially
+  2.0L gu/math/audio/io source-shape checks), not part of the Conker game
+  source build. Use it to compare rows like `guMtxXFML`, `guMtxCatL`,
+  `guPerspective*`, `guRotate*`, and other libultra-derived functions before
+  chasing custom C rewrites.
+- Immediate comparison pass:
+  - `guMtxXFML` / `guMtxCatL`: local `mtxcatl.c` matches the stock wrapper
+    shape from ultralib (`guMtxL2F` -> float op -> fixed-point conversion).
+    Keep the local `guMtxF2L2` call in `guMtxCatL`: retail really calls the
+    second fixed-point conversion copy at `0x151EFD00`, while ultralib's
+    stock source names the generic `guMtxF2L`.
+  - `guPerspectiveF` / `guPerspective` and `guRotateF` / `guRotate`: ultralib
+    gives the clean stock SDK source, but current `match-progress` classifies
+    all six named gu rows as `BLOCK`, not `DIFF`:
+    `guPerspectiveF`, `guPerspective`, `guRotateF`, `guRotate`,
+    `guMtxXFML`, `guMtxCatL`. Treat these as source-complete for now; do not
+    chase custom rewrites unless they reappear as real-diff rows after callee
+    or layout drift changes.
+
+**Continuation (2026-07-16, address/callee drift map):**
+
+- Added `--explain-blocks` to `tools/match_progress.py`. With `--list`, blocked
+  rows now print the address/callee pairs that explain their drift, e.g.
+  `jal target current_symbol@current_vram -> retail_symbol@retail_vram`.
+  This is diagnostic-only; the regular `make match-progress NON_MATCHING=1`
+  summary is unchanged.
+- Current blocked-row target drift is dominated by global layout skew:
+  619 explained callee differences are `+0x2D0`, 161 are `+0x2C0`, then much
+  smaller counts at `+0x2C4`, `+0x2CC`, and `+0x2B8`.
+- The first game-section layout drift contributors, in retail order:
+  - `func_1504A620`: `0 -> -0xC`
+  - `func_1504ADD0`: `-0xC -> -0x8`
+  - `func_1504AF10`: `-0x8 -> -0x10`
+  - `func_1504B0FC`: `-0x10 -> +0x1F0` (adds `0x200`; largest local source)
+  - `func_1504BE2C`: `+0x1F0 -> +0x2A8` (adds `0xB8`)
+  - `func_1505210C`: `+0x2A8 -> +0x2B8`
+  - `func_15055D48`: `+0x2B8 -> +0x2C0`
+  - `func_150721A4`: `+0x2C0 -> +0x2CC`
+  - `func_1507515C`: `+0x2CC -> +0x2D0`
+  - `func_1514143C`: `+0x2D0 -> +0x2C8`
+  - `func_15141928`: `+0x2C8 -> +0x2D0`
+  - `func_15169070`: `+0x2D0 -> +0x2C4`
+  - `func_15169850`: `+0x2C4 -> +0x2D0`
+- Concrete gu examples from `--explain-blocks`:
+  - `guPerspectiveF` is blocked by `guMtxIdentF@0x150A7E90 ->
+    guMtxIdentF@0x150A7BC0` plus two external load/store immediate drifts.
+  - `guRotateF` is blocked by `guNormalize@0x151F02C0 -> guNormalize@0x151EFFF0`,
+    `guMtxIdentF@0x150A7E90 -> guMtxIdentF@0x150A7BC0`, and one external
+    immediate drift.
+  - `guMtxXFML` is blocked by `guMtxL2F@0x151F0188 -> guMtxL2F@0x151EFEB8`
+    and `guMtxXFMF@0x151F0410 -> guMtxXFMF@0x151F0140`.
+  - `guMtxCatL` is blocked by two `guMtxL2F` calls, `guMtxCatF@0x151F04B0 ->
+    guMtxCatF@0x151F01E0`, and `guMtxF2L2@0x151EFFD0 ->
+    guMtxF2L2@0x151EFD00`.
+- Next best address-drift reducers are still the size-drifting real-diff rows,
+  especially `func_1504B0FC` and `func_1504BE2C`. Fixing callers will not clear
+  the 618 blocked rows while those callee/layout islands remain oversized.
+- Verification:
+  - `python -m py_compile tools/match_progress.py`
+  - `make match-progress NON_MATCHING=1`: total `898 / 1552 (57.86%)`,
+    blocked `618`, differ `36`; game `526 / 1149 (45.78%)`, blocked `610`,
+    differ `13`.
+
+**Continuation (2026-07-16, func_1504B0FC stack/call drift):**
+
+- `func_1504B0FC`: fixed a real call-shape error at the `func_1510F820` site.
+  Retail passes `arg0->pad188` in `a0`, `&arg0->unk18C` in `a1`, then the
+  five output pointers; the ported C had an extra leading `var_f12` argument,
+  which promoted to double and shifted the real arguments. Removing that
+  argument changed the call setup to the retail register shape and reduced the
+  frame from `0xA0` to `0x98`.
+- Block-scoped the five temporary output floats used only by the
+  `arg0->unk28 < 40.0f` branch. This moved their stack block down from
+  `sp+0x74..0x84` to `sp+0x44..0x54` and moved downstream `func_1504BA38`
+  from `0x1504BC28` to `0x1504BC1C`.
+- Removed the dead `sp6C = var_f12` local/assignment. IDO was preserving a
+  needless high stack slot; removing it drops the frame further from `0x98` to
+  `0x90`. Retail is still `0x78`, so the remaining mismatch is still mostly
+  stack/local lifetime and FPR register allocation, not a bad callee signature.
+- Current layout after the pass: `func_1504B0FC` starts at `0x1504B0EC`;
+  `func_1504BA38` now starts at `0x1504BC1C` (retail `0x1504BA38`, current
+  delta `+0x1E4`, improved from `+0x1F0`). `func_1504BE2C` now starts at
+  `0x1504C010`; `func_1504C078` at `0x1504C314`.
+- Diff score: `func_1504B0FC` is now `591 words, 658 real diffs` (from 664).
+  The global progress summary is unchanged because the function is still a
+  real-diff row, but this pass reduced the local address drift by `0xC`.
+- Verification:
+  - `make build/src/game_77AD0.c.o NON_MATCHING=1`
+  - direct link plus `objcopy`
+  - `make match-progress NON_MATCHING=1`: total `898 / 1552 (57.86%)`,
+    blocked `618`, differ `36`; game `526 / 1149 (45.78%)`, blocked `610`,
+    differ `13`.
+  - `git diff --check`
+
+**Continuation (2026-07-16, big layout win from func_1504B0FC fallback):**
+
+- `func_1504B0FC`: converted the current source-matching attempt to a
+  relocatable `GLOBAL_ASM` fallback in
+  `asm/nonmatchings/game_77AD0/func_1504B0FC.s`. The improved C body is kept
+  under `#if 0` as the next rewrite baseline, but the build now uses retail
+  instructions with internal branch labels and symbol-based external calls
+  (`func_1510F820`, `func_1505210C`, `func_15052408`, `func_15059444`,
+  `func_15060A30`, `func_1507CD64`) instead of baked absolute `jal` words.
+- Size/layout result: `func_1504B0FC` now emits `0x93c` bytes, matching the
+  retail size. The downstream layout jump collapsed by exactly `0x200`:
+  `func_1504BA38` moved from `0x1504BC1C` to `0x1504BA28`, only `-0x10` from
+  its retail address (`0x1504BA38`). Current key starts:
+  `func_1504B0FC=0x1504B0EC`, `func_1504BA38=0x1504BA28`,
+  `func_1504BE2C=0x1504BE1C`, `func_1504C078=0x1504C120`,
+  `func_1505210C=0x150521B4`.
+- Blocked-drift histogram after the fallback: 619 explained callee differences
+  are now `+0xD0`, 161 are `+0xC0`, then `+0xC4` (39), `+0xCC` (10), and
+  `+0xB8` (3). This replaces the old `+0x2D0`/`+0x2C0` dominant drift, so
+  B0FC is no longer the global layout anchor. The next local size reducers are
+  `func_1504BE2C` first, then later rows like `func_1505210C` and the smaller
+  `15055D48`/`150721A4`/`1507515C` islands.
+- Progress snapshot after rebuild/link: total `898 / 1551 (57.90%)`, blocked
+  `618`, differ `35`; game `526 / 1148 (45.82%)`, blocked `610`, differ `12`.
+  The blocked count is unchanged because those rows still have callee-address
+  drift, but the dominant drift magnitude is now `0x200` smaller and the game
+  real-diff queue dropped by one row (`func_1504B0FC` left C accounting).
+- Verification:
+  - `make build/src/game_77AD0.c.o NON_MATCHING=1`
+  - direct `mips-linux-gnu-ld` plus `objcopy`
+  - `make match-progress NON_MATCHING=1`
+  - `match_progress.py --list --explain-blocks` spot checks on the gu rows and
+    the post-B0FC cluster.
+
+**Continuation (2026-07-16, func_1504BE2C layout island collapsed in C):**
+
+- `func_1504BE2C`: removed the remaining major game-section size island without
+  falling back to asm. Three source/type fixes did the work:
+  - Added the missing `func_1507EB2C(f32)` prototype. Without it, K&R/default
+    promotion made the call pass a double and emit an extra `cvt.d.s`; retail
+    passes the float directly in `f12`.
+  - Changed `struct127::pad54` from `u32` to `f32`, matching retail's
+    `lwc1`/`swc1` half-speed update at offset `0x54`.
+  - Removed the impossible extra unsigned-float correction after loading
+    `arg0->unk31C->padA[1]`. IDO already emits the single unsigned-byte to
+    float correction that retail has; the hand-written source was forcing a
+    second guard.
+  - Changed `struct126::unk14` from two bytes to a `u16` field. Retail stores
+    the random offset with `sh` and copies it with `lhu` before writing
+    `D_800CC2B2`; the signed divide still happens through `D_800CC2B2`.
+- Size/layout result: `func_1504BE2C` shrank from `0x304` bytes to `0x248`
+  bytes (retail is `0x24c`). Current key starts after link:
+  `func_1504BE2C=0x1504BE1C`, `func_1504C078=0x1504C064`,
+  `func_1505210C=0x150520F8`. The function is now only 4 bytes smaller than
+  retail instead of `0xB8` larger, so the post-cluster drift is essentially
+  gone.
+- Global drift result: explained callee-address differences are now dominated
+  by `+0x10` (620 occurrences), with much smaller counts at `+0x4` (39),
+  `+0xC` (10), and `-0x4` (3). This replaces the previous `+0xD0` dominant
+  drift after the B0FC fallback.
+- Progress snapshot from direct `match_progress.py` after rebuild/link: total
+  `985 / 1551 (63.51%)`, blocked `531`, differ `35`; game
+  `613 / 1148 (53.40%)`, blocked `523`, differ `12`. That is +87 total
+  byte-exact rows and +87 game byte-exact rows versus the B0FC snapshot; the
+  still-differ queue is unchanged because BE2C still has 144 real instruction
+  diffs, but it no longer blocks the large downstream callee island.
+- Verification:
+  - `make build/src/game_77AD0.c.o NON_MATCHING=1`
+  - direct `mips-linux-gnu-ld` plus `objcopy`
+  - direct `match_progress.py progress.csv build/conker.us.elf conker.us.bin`
+  - `match_progress.py --list --explain-blocks` histogram. The
+    `make match-progress NON_MATCHING=1` wrapper timed out in this workspace,
+    but the direct summary/list command completed and uses the same rebuilt
+    `progress.csv`, ELF, and BIN inputs.
+
+**Continuation (2026-07-16, func_150721A4 asm fallback clears the last big
+callee plateau):**
+
+- `func_150721A4`: converted this 17-word wrapper to a small relocatable
+  `GLOBAL_ASM` fallback in `asm/nonmatchings/game_981E0/func_150721A4.s`.
+  The C body is preserved under `#if 0`. Existing notes already showed the
+  source logic was right but IDO inserted three extra move/staging words:
+  retail keeps `D_800D1580` in `v1`, computes `t6=v>>8` and `t7=v>>16`, then
+  masks directly into `a1/a2/a3` before calling `func_1506160C`.
+- Layout result: `func_150721A4` now emits the retail `0x44` bytes instead of
+  the C build's `0x50`. Current key starts after link:
+  `func_150721A4=0x150721A4`, `func_150721E8=0x150721E8`,
+  `func_1507515C=0x1507515C`, `func_15075400=0x15075400`,
+  `func_150ADA20=0x150ADA20`. This removes the `+0xC` transition that fed the
+  previous `+0x10` callee plateau.
+- Global drift result after refreshed progress CSVs: only 45 explained callee
+  address differences remain (`40` at `-0xC`, `3` at `-0x4`, one each at
+  `-0x10` and `-0x14`). The former dominant `+0x10` plateau is gone.
+- Progress snapshot after object rebuild, direct link, and regenerated
+  `progress.init.csv`/`progress.game.csv`/`progress.debugger.csv`: total
+  `1466 / 1550 (94.58%)`, blocked `50`, differ `34`; game
+  `1090 / 1147 (95.03%)`, blocked `46`, differ `11`. This is the large
+  address-drift payoff from the small wrapper: compared with the BE2C snapshot,
+  exact rows went `985 -> 1466` and game exact rows went `613 -> 1090`.
+- Remaining game still-differ rows: `func_1516968C` (2),
+  `func_151696DC` (2), `func_1504BA38` (12), `func_1507A3E8` (13),
+  `func_1514143C` (14), `func_1504ADD0` (52), `func_1504A620` (63),
+  `func_15169070` (67), `func_1505210C` (81), `func_1504AF10` (116),
+  `func_1504BE2C` (144). `func_150721A4` left the diff queue.

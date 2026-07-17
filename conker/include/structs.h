@@ -920,8 +920,7 @@ typedef struct {
     u16 unkE;
     s16 unk10;
     s16 unk12;
-    u8  unk14;
-    u8  pad15;
+    u16 unk14;
     u8  unk16;
     u8  pad17[0x5];
     f32 unk1C;
@@ -1078,7 +1077,7 @@ struct struct127 {
     f32 unk48;
     /* 0x4C */  f32 animation_speed;
     u32 pad50;
-    u32 pad54;
+    f32 pad54;
     u32 pad58;
     s32 unk5C;  // used
     s32 unk60;

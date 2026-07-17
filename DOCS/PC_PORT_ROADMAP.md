@@ -21,7 +21,8 @@ Before Phase 1 tooling work starts, pick one approach:
   (SDL2/GLFW + OpenGL/Vulkan), function by function, discarding libultra.
   This is the traditional path older N64 PC ports used. It only works well
   for code that has already been decompiled and matched, so it's gated by
-  decomp progress (currently 9.60% total, see PROJECT.md).
+  decomp progress (currently 6.57% by converted bytes and 25.69% by tracked
+  functions, see PROJECT.md).
 - **Static recompilation** - run a MIPS-to-C recompiler (the approach used by
   projects such as N64Recomp/Zelda64Recomp and the sm64 static-recomp forks)
   over the ROM's compiled code, then pair the recompiled output with

@@ -16,3 +16,6 @@
 [submodule "tools/texture2c"]
 	path = tools/texture2c
 	url = https://github.com/Decompollaborate/texture2c.git
+[submodule "tools/ultralib"]
+	path = tools/ultralib
+	url = https://github.com/decompals/ultralib.git

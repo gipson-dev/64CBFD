@@ -4,14 +4,14 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Snapshot as of 2026-07-16 (end of day). Functions converted from raw assembly to C
+Snapshot as of 2026-07-16 after the latest layout pass. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.71% | 1554 / 6034 (25.75%) |
+| total | `[##----------------------]` 6.57% | 1550 / 6034 (25.69%) |
 | init | `[#####-------------------]` 20.16% | 232 / 538 (43.12%) |
-| game | `[#-----------------------]` 5.11% | 1151 / 5314 (21.66%) |
+| game | `[#-----------------------]` 4.95% | 1147 / 5314 (21.58%) |
 | debugger | `[###############---------]` 63.33% | 171 / 182 (93.96%) |
 
 Of those C-converted functions, the share that already compiles to the
@@ -22,21 +22,21 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 897 / 1554 (57.72%) | 616 | 41 |
-| init | 223 / 232 (96.12%) | 8 | 1 |
-| game | 525 / 1151 (45.61%) | 608 | 18 |
+| total | 1466 / 1550 (94.58%) | 50 | 34 |
+| init | 227 / 232 (97.84%) | 4 | 1 |
+| game | 1090 / 1147 (95.03%) | 46 | 11 |
 | debugger | 149 / 171 (87.13%) | 0 | 22 |
 
 The debugger overlay's long-standing rodata displacement healed on
 2026-07-16: its printf engine was identified as Plauger's Standard C
-Library (the N64 SDK's libc) and rematched at exact retail sizes, which
-snapped ~120 previously "still differ" rows back to byte-exact (see
-WORKING_NOTES). The small dips in the conversion table (1554 vs 1558
-functions) are `func_16001BB4`, `func_16001044`, and the two hand-written
-PRNG functions returning to `GLOBAL_ASM` at retail bytes with their
-verified C kept in comments. Every debugger overlay *function* is now
-byte-exact or drift-blocked-free; the remaining debugger rows are data
-content.
+Library (the N64 SDK's libc) and rematched at exact retail sizes. Later
+game-section layout fixes (`func_1504B0FC`, `func_1504BE2C`, and
+`func_150721A4`) collapsed most address-drift blockers, so only 50
+C-converted rows remain blocked. The small dips in the conversion table
+(1550 vs 1558 functions) are deliberate byte-verified `GLOBAL_ASM`
+fallbacks with their verified C kept in comments. Every debugger overlay
+*function* is now byte-exact or drift-blocked-free; the remaining debugger
+rows are data content.
 
 When regenerating, update both tables together with the copies in the
 [root README](../README.md) and [Project overview](PROJECT.md).

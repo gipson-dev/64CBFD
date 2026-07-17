@@ -10,6 +10,16 @@ extracted/
 html/
 junk/
 nonmatchings
+!conker/asm/
+conker/asm/*
+!conker/asm/nonmatchings/
+conker/asm/nonmatchings/*
+!conker/asm/nonmatchings/game_77AD0/
+conker/asm/nonmatchings/game_77AD0/*
+!conker/asm/nonmatchings/game_77AD0/func_1504B0FC.s
+!conker/asm/nonmatchings/game_981E0/
+conker/asm/nonmatchings/game_981E0/*
+!conker/asm/nonmatchings/game_981E0/func_150721A4.s
 py/
 rodata/
 rzip/

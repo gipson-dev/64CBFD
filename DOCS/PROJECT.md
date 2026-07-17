@@ -52,6 +52,7 @@ make -C conker progress NON_MATCHING=1
 |   |-- mips_to_c/       First-pass MIPS-to-C translation helper (submodule)
 |   |-- CBFD_rabbitizer/ MIPS instruction decoder, project fork of rabbitizer (submodule)
 |   |-- texture2c/       N64 texture format to C converter (submodule)
+|   |-- ultralib/        Stock libultra reverse-engineering reference (submodule)
 |   |-- splat_ext/       Project-specific n64splat extensions
 |   |-- gzip             Matching compression helper
 |   `-- *.py             Project-specific scripts
@@ -155,17 +156,18 @@ Last regenerated: 2026-07-16, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 6.71% | 1554 / 6034 (25.75%) |
+| total | `[##----------------------]` 6.57% | 1550 / 6034 (25.69%) |
 | init | `[#####-------------------]` 20.16% | 232 / 538 (43.12%) |
-| game | `[#-----------------------]` 5.11% | 1151 / 5314 (21.66%) |
+| game | `[#-----------------------]` 4.95% | 1147 / 5314 (21.58%) |
 | debugger | `[###############---------]` 63.33% | 171 / 182 (93.96%) |
 
-(The small dips vs the 2026-07-15 snapshot - 1554 vs 1558 converted -
-are deliberate: `func_150ADA20`/`func_150ADACC` turned out to be
-hand-written assembly in the original game, and `func_16001BB4`/
-`func_16001044` are each a few words short of byte-exact from C, so all
-four were returned to `GLOBAL_ASM` at exact retail bytes with their
-verified C kept in comments. See WORKING_NOTES, eighteenth session.)
+(The small dips vs the 2026-07-15 snapshot - 1550 vs 1558 converted -
+are deliberate: several functions turned out to be hand-written or
+unprofitable-from-C assembly in retail, so they were returned to
+`GLOBAL_ASM` at exact retail bytes with their verified C kept in comments.
+This includes the PRNG pair, the debugger pair, and the later
+`func_1505EEB0`/`func_15125628`/`func_1504B0FC`/`func_150721A4`
+fallbacks. See WORKING_NOTES.)
 
 Two caveats about what this table measures:
 
@@ -219,18 +221,18 @@ bytes (last regenerated 2026-07-16, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 897 / 1554 (57.72%) | 616 | 41 |
-| init | 223 / 232 (96.12%) | 8 | 1 |
-| game | 525 / 1151 (45.61%) | 608 | 18 |
+| total | 1466 / 1550 (94.58%) | 50 | 34 |
+| init | 227 / 232 (97.84%) | 4 | 1 |
+| game | 1090 / 1147 (95.03%) | 46 | 11 |
 | debugger | 149 / 171 (87.13%) | 0 | 22 |
 
 The debugger overlay's rodata displacement healed on 2026-07-16: the
 `debugger_257350.c` printf engine was identified as Plauger's Standard C
 Library (the N64 SDK's libc - `_Printf`/`_Ldtob`/`_Genld`/`_Litob`) and
-rematched at exact retail sizes, snapping ~120 previously "still differ"
-debugger rows back to byte-exact in one build (see WORKING_NOTES,
-eighteenth session). The remaining debugger "still differ" rows are
-mostly the overlay's data content plus `func_16001044`.
+rematched at exact retail sizes. Later game-section layout fixes collapsed
+the dominant address-drift plateaus, taking the project from 897 to 1466
+byte-exact C-converted rows on 2026-07-16. The remaining debugger "still
+differ" rows are mostly the overlay's data content.
 
 "Blocked on address drift" means the only remaining differences are
 `j`/`jal` target addresses or `%lo` halves of shifted symbol addresses -
@@ -329,5 +331,6 @@ External tools:
 - [asm-differ](https://github.com/simonlindholm/asm-differ): compares compiled assembly against the original ROM.
 - [asm-processor](https://github.com/simonlindholm/asm-processor): allows `GLOBAL_ASM` blocks inside C files.
 - [n64splat](https://github.com/ethteck/n64splat): splits the ROM into segments.
+- [ultralib](https://github.com/decompals/ultralib): reference source for stock libultra/libgultra 2.0L matching work.
 - [ido-static-recomp](https://github.com/Emill/ido-static-recomp): provides the IDO compiler.
 - [gzip](https://github.com/mkst/gzip): provides the specific pre-1.5 `memzero` behavior needed for matching compression.

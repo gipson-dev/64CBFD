@@ -1350,7 +1350,11 @@ void func_1507A3CC(void) {
 // operands), a |= statement chain (right or-order but accumulator becomes a
 // named var in v1 instead of temps), volatile declarations (changes address
 // computation shape entirely). All 16 words present, only temp registers and
-// scheduling differ.
+// scheduling differ. Also tried (2026-07-16): four u8 locals (fixes load
+// order but demotes the temps to named regs v1/a0/a1/a2), and swapping the
+// innermost pair (load order right, or-operands swapped; lui pairing still
+// differs - ours hoists two luis together where retail keeps each lui/lbu
+// adjacent). Reverted to the plain left-to-right form.
 s32 func_1507A3E8(void) {
     return (D_800D1890 << 0x18) | (D_800D1891 << 0x10) | (D_800D1892 << 8) | D_800D1893;
 }

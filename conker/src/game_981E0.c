@@ -1343,9 +1343,15 @@ void func_15071FB0(void) {
 // stages the shifts in the arg registers and fixes up via temps+moves (2
 // extra words). Tried: explicit &0xFF vs (u8) casts, u8 vs s32 prototype
 // params, named locals for both globals - all compile byte-identically.
+// Reverted to GLOBAL_ASM (2026-07-16): this small wrapper is 3 words oversized
+// in C because IDO stages the bitfield args through extra moves. Retail keeps
+// D_800D1580 in v1 and masks directly into the call registers.
+#if 0
 void func_150721A4(void) {
     func_1506160C(D_800D154C, (D_800D1580 >> 0x10) & 0xFF, D_800D1580 & 0xFF, (D_800D1580 >> 8) & 0xFF, 0);
 }
+#endif
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_150721A4.s")
 
 struct127 *func_150721E8(struct127 *arg0) {
     return func_15072208(arg0, 0);

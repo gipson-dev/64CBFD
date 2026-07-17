@@ -975,20 +975,30 @@ f32 func_1505D34C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 *arg4) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505E874.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505ED34.s")
 
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-struct127 *func_1505EEB0(s32 state, s32 *arg1) {
-    s32 i = 0;
-    struct127 *obj = D_800CC2D0;
-
-    if (state != D_800CC2D0->interaction_state) {
-        do {
-            i++;
-            obj++;
-        } while ((i < 0x19) && (state != obj->interaction_state));
-    }
-    *arg1 = i;
-    return obj;
-}
+// Likely hand-written assembly in the original game (same class as the
+// func_150ADA20/func_150ADACC PRNG pair and func_15125628): retail
+// materializes %hi(D_800CC2D0) twice (a self-base lw for the entry test
+// plus a separate lui/addiu pointer) where IDO-compiled C always CSEs the
+// two into one register, and it leaves the jr delay slot as a nop with the
+// return-value move scheduled before it, which IDO never does. Tried:
+// pointer do-while (18 diffs, address CSE + register renames), array
+// indexing D_800CC2D0[i] (no strength reduction, multu by 812 appears),
+// scalar-struct extern declaration (still CSEs). The .s reproduces retail
+// byte-exactly. Equivalent C, logic-verified:
+// struct127 *func_1505EEB0(s32 state, s32 *arg1) {
+//     s32 i = 0;
+//     struct127 *obj = D_800CC2D0;
+//
+//     if (state != D_800CC2D0->interaction_state) {
+//         do {
+//             i++;
+//             obj++;
+//         } while ((i < 0x19) && (state != obj->interaction_state));
+//     }
+//     *arg1 = i;
+//     return obj;
+// }
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505EEB0.s")
 // I HATE LOOPS.
 // struct127 *func_1505EEB0(s32 state, s32 *arg1) {
 //     struct127 *tmp = D_800CC2D0;

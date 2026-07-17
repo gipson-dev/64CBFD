@@ -1013,7 +1013,7 @@ extern u8  D_800CC2B0;
 extern s16 D_800CC2B2;
 extern f32 D_800CC2B4;
 extern u8  D_800CC2B8;
-extern s32 D_800CC2BA;
+extern s16 D_800CC2BA;
 extern s32 D_800CC2BC;
 extern struct127 D_800CC2D0[26]; // objects
 extern u8  D_800CC2D4[];

@@ -697,6 +697,7 @@ void func_150750C4(struct127 *arg0, struct127 *arg1, u8 *arg2);
 void func_15075498(void);
 void func_15075A50(void);
 void func_15075B60(void) ;
+void func_1507EB2C(f32 arg0);
 
 void func_1508F9C4(void);
 

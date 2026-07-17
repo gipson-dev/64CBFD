@@ -19,15 +19,17 @@ Usage:
                     [--objdump mips-linux-gnu-objdump] [--list]
 
 progress.csv is the file `make -C conker progress` generates. --list prints
-one line per non-exact function, smallest real diff first.
+one line per non-exact function, smallest real diff first. --explain-blocks
+adds short target summaries to blocked rows.
 """
 import argparse
 import csv
+import os
 import re
 import signal
 import subprocess
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 if hasattr(signal, "SIGPIPE"):
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
@@ -46,6 +48,7 @@ def load_elf_functions(elf_path, objdump):
     out = subprocess.run([objdump, "-d", elf_path],
                          capture_output=True, text=True, check=True).stdout
     funcs = {}
+    func_addrs = {}
     symbols_by_addr = {}
     cur = None
     for line in out.splitlines():
@@ -54,12 +57,13 @@ def load_elf_functions(elf_path, objdump):
             addr = int(m.group(1), 16)
             cur = m.group(2)
             funcs[cur] = []
+            func_addrs[cur] = addr
             symbols_by_addr[addr] = cur
             continue
         m = re.match(r"^\s*[0-9a-f]+:\s+([0-9a-f]{8})\s", line)
         if m and cur is not None:
             funcs[cur].append(int(m.group(1), 16))
-    return funcs, symbols_by_addr
+    return funcs, symbols_by_addr, func_addrs
 
 
 def is_jump(word_a, word_b):
@@ -67,11 +71,33 @@ def is_jump(word_a, word_b):
     return op_a == op_b and op_a in (2, 3)  # j, jal
 
 
+def jump_target(word, pc):
+    return ((pc + 4) & 0xF0000000) | ((word & 0x03FFFFFF) << 2)
+
+
+def jump_name(word):
+    return {2: "j", 3: "jal"}.get(word >> 26, "jump")
+
+
 def name_implied_vram(name):
     m = re.fullmatch(r"func_([0-9A-Fa-f]{8})", name)
     if m:
         return int(m.group(1), 16)
     return None
+
+
+def load_symbol_addrs(path):
+    """Retail VRAM anchors for named (non-func_XXXXXXXX) symbols."""
+    addrs = {}
+    try:
+        with open(path) as f:
+            for line in f:
+                m = re.match(r"^\s*(\w+)\s*=\s*0x([0-9A-Fa-f]+)\s*;", line)
+                if m:
+                    addrs[m.group(1)] = int(m.group(2), 16)
+    except FileNotFoundError:
+        pass
+    return addrs
 
 
 def decode_addr_pair(hi_word, lo_word):
@@ -94,7 +120,7 @@ def decode_addr_pair(hi_word, lo_word):
     return None
 
 
-def is_symbol_addr_drift(ours, truth, i, symbols_by_addr):
+def is_symbol_addr_drift(ours, truth, i, symbols_by_addr, symbol_addrs):
     if i + 1 >= len(ours) or i + 1 >= len(truth):
         return 0
     if ours[i] == truth[i] and ours[i + 1] == truth[i + 1]:
@@ -107,6 +133,8 @@ def is_symbol_addr_drift(ours, truth, i, symbols_by_addr):
     if target is None:
         return 0
     implied = name_implied_vram(target)
+    if implied is None:
+        implied = symbol_addrs.get(target)
     if implied != truth_addr:
         return 0
     return int(ours[i] != truth[i]) + int(ours[i + 1] != truth[i + 1])
@@ -157,7 +185,7 @@ def is_external_addr_drift(ours, truth, i):
     return False
 
 
-def classify(ours, truth, symbols_by_addr):
+def classify(ours, truth, symbols_by_addr, symbol_addrs):
     if len(ours) < len(truth) and all(w == 0 for w in truth[len(ours):]):
         # Trailing words are inter-function alignment nops that splat's
         # boundary detection folded into this symbol's declared length -
@@ -172,10 +200,12 @@ def classify(ours, truth, symbols_by_addr):
         if a != b:
             if is_jump(a, b):
                 jump += 1
-            elif (drift := is_symbol_addr_drift(ours, truth, i, symbols_by_addr)):
+            elif (drift := is_symbol_addr_drift(ours, truth, i,
+                                                symbols_by_addr, symbol_addrs)):
                 jump += drift
                 i += 1
-            elif i > 0 and is_symbol_addr_drift(ours, truth, i - 1, symbols_by_addr):
+            elif i > 0 and is_symbol_addr_drift(ours, truth, i - 1,
+                                                symbols_by_addr, symbol_addrs):
                 jump += 1
             elif is_external_addr_drift(ours, truth, i):
                 jump += 1
@@ -190,16 +220,71 @@ def classify(ours, truth, symbols_by_addr):
     return "exact", 0
 
 
-def function_vram(row):
-    """Use name-implied VRAM when possible so upstream size drift is harmless."""
+def target_label(addr, symbols_by_addr):
+    name = symbols_by_addr.get(addr)
+    if name:
+        return f"{name}@0x{addr:08X}"
+    return f"0x{addr:08X}"
+
+
+def explain_block(ours, truth, ours_vaddr, retail_vaddr, current_symbols,
+                  retail_symbols, symbol_addrs):
+    if len(ours) < len(truth) and all(w == 0 for w in truth[len(ours):]):
+        truth = truth[:len(ours)]
+    reasons = Counter()
+    i = 0
+    while i < min(len(ours), len(truth)):
+        a, b = ours[i], truth[i]
+        if a != b:
+            if is_jump(a, b):
+                ours_target = jump_target(a, ours_vaddr + i * 4)
+                truth_target = jump_target(b, retail_vaddr + i * 4)
+                reasons[
+                    f"{jump_name(a)} target "
+                    f"{target_label(ours_target, current_symbols)} -> "
+                    f"{target_label(truth_target, retail_symbols)}"
+                ] += 1
+            elif (drift := is_symbol_addr_drift(ours, truth, i,
+                                                current_symbols,
+                                                symbol_addrs)):
+                ours_addr = decode_addr_pair(ours[i], ours[i + 1])
+                truth_addr = decode_addr_pair(truth[i], truth[i + 1])
+                reasons[
+                    "addr pair "
+                    f"{target_label(ours_addr, current_symbols)} -> "
+                    f"{target_label(truth_addr, retail_symbols)}"
+                ] += drift
+                i += 1
+            elif i > 0 and is_symbol_addr_drift(ours, truth, i - 1,
+                                                current_symbols,
+                                                symbol_addrs):
+                pass
+            elif is_external_addr_drift(ours, truth, i):
+                reasons["external load/store immediate drift"] += 1
+            else:
+                reasons["unclassified drift"] += 1
+        i += 1
+    if len(ours) != len(truth):
+        reasons[f"length drift {len(ours)} -> {len(truth)} words"] += abs(
+            len(ours) - len(truth))
+    return reasons
+
+
+def function_vram(row, symbol_addrs):
+    """Use name-implied VRAM (or symbol_addrs.<version>.txt for named
+    symbols) so upstream size drift is harmless. progress.csv's offset
+    column reflects the *current build's* layout and is only a last
+    resort."""
     name = row["function"]
     m = re.fullmatch(r"func_([0-9A-Fa-f]{8})", name)
     if m:
         return int(m.group(1), 16)
+    if name in symbol_addrs:
+        return symbol_addrs[name]
     return int(row["offset"])
 
 
-def add_retail_lengths(rows, version):
+def add_retail_lengths(rows, version, symbol_addrs):
     by_section = defaultdict(list)
     for row in rows:
         if row.get("version") != version:
@@ -207,7 +292,7 @@ def add_retail_lengths(rows, version):
         section = row["section"]
         if section not in SEGMENTS[version]:
             continue
-        vaddr = function_vram(row)
+        vaddr = function_vram(row, symbol_addrs)
         by_section[section].append((vaddr, row))
 
     for entries in by_section.values():
@@ -221,6 +306,18 @@ def add_retail_lengths(rows, version):
             row["_retail_nwords"] = nwords
 
 
+def retail_symbols_for_rows(rows, version, symbol_addrs):
+    symbols = {v: k for k, v in symbol_addrs.items()}
+    for row in rows:
+        if row.get("version") != version:
+            continue
+        try:
+            symbols[function_vram(row, symbol_addrs)] = row["function"]
+        except (KeyError, ValueError):
+            pass
+    return symbols
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("progress_csv")
@@ -228,8 +325,14 @@ def main():
     ap.add_argument("pristine_bin")
     ap.add_argument("--version", default="us")
     ap.add_argument("--objdump", default="mips-linux-gnu-objdump")
+    ap.add_argument("--symbol-addrs", default=None,
+                    help="retail VRAM anchors for named symbols (default: "
+                         "symbol_addrs.<version>.txt next to progress.csv)")
     ap.add_argument("--list", action="store_true",
                     help="list non-exact functions, smallest diff first")
+    ap.add_argument("--explain-blocks", action="store_true",
+                    help="with --list, show why blocked rows are classified "
+                         "as address/callee drift")
     args = ap.parse_args()
 
     if args.version not in SEGMENTS:
@@ -238,11 +341,17 @@ def main():
     segments = SEGMENTS[args.version]
 
     rom = open(args.pristine_bin, "rb").read()
-    elf, symbols_by_addr = load_elf_functions(args.elf, args.objdump)
+    elf, symbols_by_addr, func_addrs = load_elf_functions(args.elf,
+                                                          args.objdump)
+
+    symbol_addrs = load_symbol_addrs(args.symbol_addrs or os.path.join(
+        os.path.dirname(args.progress_csv) or ".",
+        f"symbol_addrs.{args.version}.txt"))
 
     with open(args.progress_csv, newline="") as f:
         rows = list(csv.DictReader(f))
-    add_retail_lengths(rows, args.version)
+    add_retail_lengths(rows, args.version, symbol_addrs)
+    retail_symbols = retail_symbols_for_rows(rows, args.version, symbol_addrs)
 
     stats = defaultdict(lambda: defaultdict(int))  # section -> class -> n
     nonexact = []
@@ -253,7 +362,7 @@ def main():
         if section not in segments:
             continue
         name = row["function"]
-        vaddr = function_vram(row)
+        vaddr = function_vram(row, symbol_addrs)
         nwords = row.get("_retail_nwords", int(row["length"]) // 4)
         vram, rom_start = segments[section]
         off = vaddr - vram + rom_start
@@ -263,10 +372,15 @@ def main():
         if ours is None:
             kind, ndiff = "diff", nwords
         else:
-            kind, ndiff = classify(ours, truth, symbols_by_addr)
+            kind, ndiff = classify(ours, truth, symbols_by_addr, symbol_addrs)
         stats[section][kind] += 1
         if kind != "exact":
-            nonexact.append((ndiff, kind, section, name, nwords))
+            reasons = None
+            if args.explain_blocks and kind == "blocked" and ours is not None:
+                reasons = explain_block(
+                    ours, truth, func_addrs.get(name, vaddr), vaddr,
+                    symbols_by_addr, retail_symbols, symbol_addrs)
+            nonexact.append((ndiff, kind, section, name, nwords, reasons))
 
     order = [s for s in ("init", "game", "debugger") if s in stats]
     print("| Section | Byte-exact | Blocked on address drift | Still differ |")
@@ -289,9 +403,12 @@ def main():
     if args.list and nonexact:
         print()
         nonexact.sort(key=lambda t: (t[1] != "blocked", t[0]))
-        for ndiff, kind, section, name, nwords in nonexact:
+        for ndiff, kind, section, name, nwords, reasons in nonexact:
             if kind == "blocked":
                 print(f"BLOCK {name} ({section}, {nwords} words)")
+                if args.explain_blocks and reasons:
+                    for reason, count in reasons.most_common(4):
+                        print(f"      {count}x {reason}")
             else:
                 print(f"DIFF  {name} ({section}, {nwords} words): "
                       f"{ndiff} real diffs")
