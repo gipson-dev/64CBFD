@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+f32 func_1514182C(void *arg0, void *arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5);
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151407D0.s")
 
@@ -44,8 +46,15 @@ void func_1514143C(struct210 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151416E8.s")
 
-// ???
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151417C4.s")
+void func_151417C4(s32 arg0, u8 arg1) {
+    s32 tmp[2];
+    u8 byte;
+
+    tmp[0] = D_8008A074[0];
+    tmp[1] = D_8008A074[1];
+    byte = arg0;
+    func_15169260((s32) tmp, 2, (s32) &byte, arg1);
+}
 
 s32 func_15141818(s32 arg0, s32 arg1) {
     return 0;
@@ -75,9 +84,9 @@ s32 func_15141818(s32 arg0, s32 arg1) {
 //     return temp_f0;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_15141928.s")
-// s32 func_15141928(void *arg0) {
-//     void *temp_v0 = arg0->unk178;
-//     func_1514182C(arg0, arg0->unk17C, arg0->unk170, arg0->unk174, temp_v0->unk0, temp_v0->unk8);
-//     return 1;
-// }
+s32 func_15141928(void *arg0) {
+    void *temp_v0 = *(void **) ((u8 *) arg0 + 0x178);
+
+    func_1514182C(arg0, (u8 *) arg0 + 0x17C, *(s32 *) ((u8 *) arg0 + 0x170), *(f32 *) ((u8 *) arg0 + 0x174), *(f32 *) temp_v0, *(f32 *) ((u8 *) temp_v0 + 8));
+    return 1;
+}

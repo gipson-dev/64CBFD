@@ -5,6 +5,7 @@
 
 void func_151D3354(struct224 *arg0);
 void func_151D3308(struct224 *arg0);
+struct224 *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5);
 
 void func_151D2AB0(s32 arg0) {
     u32 tmp;
@@ -26,24 +27,22 @@ void func_151D2B4C(s32 arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1FFF60/func_151D2BA4.s")
-// s32 func_15167A68(s32, s32, s32, s32, s32, s32);
 // NON-MATCHING: JUSTREG
-// struct224 *func_151D2BA4(s32 arg0, struct00 *arg1, s32 arg2, u8 arg3, s32 arg4) {
-//     struct224 *tmp = func_15167A68(0x3D, arg4, arg2 + 0x48, 1, arg3, 1);
-//
-//     if (tmp == 0) {
-//         return NULL;
-//     }
-//
-//     memcpy(&tmp->unk10, arg0, 36);
-//     tmp->unk34 = arg1->unk0;
-//     tmp->unk38 = arg1->unk4;
-//     tmp->unk3C = arg1->unk8;
-//
-//     func_151D3308(tmp);
-//     return tmp;
-// }
+struct224 *func_151D2BA4(s32 arg0, struct00 *arg1, s32 arg2, u8 arg3, s32 arg4) {
+    struct224 *tmp = func_15167A68(0x3D, arg4, arg2 + 0x48, 1, arg3, 1);
+
+    if (tmp == NULL) {
+        return NULL;
+    }
+
+    memcpy(&tmp->unk10, arg0, 36);
+    tmp->unk34 = arg1->unk0;
+    tmp->unk38 = arg1->unk4;
+    tmp->unk3C = arg1->unk8;
+
+    func_151D3308(tmp);
+    return tmp;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1FFF60/func_151D2C40.s")
 
@@ -73,31 +72,30 @@ void func_151D2E14(struct102 *arg0) {
     func_15169824(tmp);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1FFF60/func_151D2E5C.s")
 // NON-MATCHING: JUSTREG (mostly)
-// s32 func_151D2E5C(struct16 *arg0, struct223 *arg1, u8 arg2) {
-//     s32 temp_v0;
-//     u8 temp_a2;
-//     u8 temp_a3;
-//
-//     if (arg2 == 0) {
-//         temp_v0 = arg0->unk10;
-//         temp_a2 = arg0->unk14;
-//         temp_a3 = arg1->unk4.ub;
-//         if ((temp_v0 == arg1->unk0) || (temp_a3 == temp_a2)) {
-//             func_1516972C(temp_a2);
-//         }
-//     } else if (arg2 == 0x2D) {
-//         temp_v0 = arg1->unk0;
-//         if (temp_v0 == arg0->unk10) {
-//             arg0->unk10 = arg1->unk4.w;
-//             arg0->unk14 = arg1->unk9;
-//         } else if (arg1->unk4.w == arg0->unk10) {
-//             arg0->unk10 = temp_v0;
-//             arg0->unk14 = arg1->unk8;
-//         }
-//     }
-// }
+void func_151D2E5C(struct16 *arg0, struct223 *arg1, u8 arg2) {
+    s32 temp_v0;
+    u8 temp_a2;
+    u8 temp_a3;
+
+    if (arg2 == 0) {
+        temp_v0 = arg0->unk10;
+        temp_a2 = arg0->unk14;
+        temp_a3 = arg1->unk4.ub;
+        if ((temp_v0 == arg1->unk0) || (temp_a3 == temp_a2)) {
+            func_1516972C(temp_a2);
+        }
+    } else if (arg2 == 0x2D) {
+        temp_v0 = arg1->unk0;
+        if (temp_v0 == arg0->unk10) {
+            arg0->unk10 = arg1->unk4.w;
+            arg0->unk14 = arg1->unk9;
+        } else if (arg1->unk4.w == arg0->unk10) {
+            arg0->unk10 = temp_v0;
+            arg0->unk14 = arg1->unk8;
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1FFF60/func_151D2F00.s")
 
@@ -181,9 +179,10 @@ void func_151D33FC(struct224 *arg0, struct223 *arg1) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1FFF60/func_151D343C.s")
 // NON-MATCHING: ops in wrong order
-// void func_151D343C(s32 arg0, u8 arg1) {
-//     s32 sp1C[1] = D_800AB168;
-//     func_15169260(sp1C, 1, arg0, arg1);
-// }
+void func_151D343C(s32 arg0, u8 arg1) {
+    s32 tmp[1];
+
+    tmp[0] = D_800AB168[0];
+    func_15169260((s32) tmp, 1, arg0, arg1);
+}

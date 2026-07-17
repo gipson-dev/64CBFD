@@ -1389,184 +1389,182 @@ void func_15054A5C(struct127 *arg0, struct127 *arg1) {
 //     }
 // }
 
-void func_15055260(s32 arg0, s32 arg1, s32 arg2) {
+void func_15055260(struct127 *arg0, s32 arg1, s32 arg2) {
     func_150335C8(arg0, arg1, 0x4D, arg2, 0, 0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1505528C.s")
 // NON-MATCHING: 80% there
-// void func_1505528C(struct127 *arg0) {
-//     f32 sp84;
-//     f32 sp80;
-//     f32 sp7C;
-//     s32 sp74;
-//     f32 sp70;
-//     s32 sp6C;
-//     s32 sp64;
-//
-//     struct17 tmp0;
-//
-//     f32 temp_f0;
-//     f32 temp_f12;
-//     f32 temp_f14;
-//     f32 temp_f2;
-//     f32 temp_f6;
-//     s32 temp_v0;
-//     u16 temp_t6;
-//     u8 temp_t3;
-//     u8 temp_v1;
-//     s32 temp_a0;
-//     struct108 *temp_a0_2;
-//     f32 phi_f0;
-//     s32 phi_a2;
-//
-//     sp74 = (u16)arg0->unk278;
-//     sp6C = 0;
-//     sp70 = 0.0f;
-//
-//     switch (sp74) {
-//         case 0x1F:
-//             arg0->unkB8 = (arg0->unkB8 + (arg0->xz_velocity * (f32) D_800BE9E4));
-//             if (arg0->unk2E4 == 1) {
-//                 func_10010344(0x230, arg0, 0x7D00, 0x1F4, 0x9C4);
-//                 arg0->unk2E4 = 0;
-//             }
-//             break;
-//         case 0x35:
-//             arg0->unkB8 = (arg0->unkB8 + (f32) (D_800BE9E4 * 0x10));
-//             break;
-//         case 0x42:
-//             sp70 = 25.0f;
-//             if (arg0->gravity != 0.0f) {
-//                 temp_f12 = arg0->y_velocity;
-//                 if ((temp_f12 > 0.0f) || (arg0->unk28 > 25.0f)) {
-//                     arg0->unkB8 = (-func_150484A0(temp_f12, arg0->xz_velocity) * D_80099408);
-//                 }
-//             }
-//             temp_v0 = func_15081574(arg0, 40.0f, 10.0f, &sp64, 0xF, 0x53);
-//             if (temp_v0 != 0) {
-//                 func_15055260(arg0, sp64, temp_v0 - 1);
-//                 func_15060F28(arg0, 1);
-//                 return;
-//             }
-//             break;
-//         case 0x4E:
-//             sp70 = 25.0f;
-//             if (arg0->unk28 > 25.0f) {
-//                 arg0->unkB8 = (arg0->unkB8 + (f32) (D_800BE9E4 * 3));
-//             }
-//             break;
-//         case 0x88:
-//             temp_f6 = -func_150484A0(arg0->y_velocity, arg0->xz_velocity) * D_8009940C;
-//             arg0->unkD0 = 0x10;
-//             arg0->unkB8 = temp_f6;
-//             if (func_1505C7D8(arg0, D_800C3E78) != 0) {
-//                 func_15060F28(arg0, 1);
-//                 return;
-//             }
-//     }
-//     func_15059C84(arg0);
-//     arg0->stunned = 1;
-//     func_1505A770(arg0);
-//     sp84 = arg0->unk14;
-//     sp80 = arg0->unk18;
-//     sp7C = arg0->unk1C;
-//     func_15058898(arg0, arg0->unk30);
-//     temp_f0 = arg0->unk118;
-//     if ((temp_f0 != D_80099410) && (arg0->unk18 <= temp_f0) && (temp_f0 <= *(f32*)&arg0->unk30)) {
-//         arg0->unk2E4 = 2;
-//         arg0->gravity = 0.0f;
-//         arg0->y_velocity = -3.0f;
-//         arg0->xz_velocity *= D_80099414;
-//     } else if ((sp84 != arg0->unk14) || (sp80 != arg0->unk18) || (sp7C != arg0->unk1C)) {
-//         sp6C = 1;
-//         if ((sp74 == 0x1F) && (arg0->unk2E4 != 2)) {
-//             func_10010344(((func_150ADA20() % 5U) + 0x3A4), arg0, 0x7D00, 0x1F4, 0x9C4);
-//         }
-//     }
-//     func_1505B5F8(arg0, arg0->unk180);
-//     if (arg0->unk28 <= sp70) {
-//         temp_a0 = arg0->unk14;
-//         arg0->unk7F = (u8) (arg0->unk7F + 1);
-//         sp6C = sp6C | 2;
-//         if ((arg0->unk184 & 0x1F) == 0xE) {
-//             func_1514AD9C(temp_a0, 0xFF, 0); // actually f32?
-//             func_15060F28(arg0, 1);
-//             return;
-//         }
-//         if (sp74 == 0x42) {
-//             D_800D1580 = 0xFF0100B0; // ?
-//             if (arg0->gravity != 0.0f) {
-//                 func_1506E5FC();
-//             }
-//             arg0->gravity = 0.0f;
-//             temp_f12 = *(f32*)&arg0->unk30;
-//             temp_f0 = arg0->unk18 - temp_f12;
-//             arg0->y_velocity = 0.0f;
-//             arg0->xz_velocity = 0.0f;
-//             arg0->unk18 = (*(f32*)&arg0->unk180 + sp70);
-//             if (temp_f0 != 0.0f) {
-//                 phi_f0 = (arg0->unk18 - temp_f12) / temp_f0;
-//             } else {
-//                 phi_f0 = 0.0f;
-//             }
-//             temp_f2 = arg0->unk2C;
-//             temp_f12 = arg0->unk34;
-//             arg0->unk14 = temp_f2 + ((arg0->unk14 - temp_f2) * phi_f0);
-//             arg0->unk1C = temp_f12 + ((arg0->unk1C - temp_f12) * phi_f0);
-//         } else if (arg0->unk18 < arg0->unk118) {
-//             arg0->gravity = 0.0f;
-//             arg0->y_velocity = 0.0f;
-//             arg0->xz_velocity = 0.0f;
-//         } else if ((arg0->y_velocity > 5.0f) && (sp74 == 0x1F) && (arg0->unk2E4 != 2)) {
-//             func_10010344(0x39E, arg0, 0x7D00, 0x1F4, 0x9C4);
-//             arg0->unk2E4 = 2;
-//         }
-//     }
-//     arg0->unk40 = ((arg0->unk76 + 0x4000) * 0.005493164f);
-//     if ((sp6C != 0) && (sp74 == 0x35)) {
-//         func_10010630(0x360, arg0, 0x4E20, 0x1F4, 0x9C4);
-//         if (arg0->unk118 < arg0->unk18) {
-//             tmp0.unk0 = arg0->unk14;
-//             tmp0.unk4 = arg0->unk18 + 20.0f;
-//             tmp0.unk8 = arg0->unk1C;
-//             func_151DCDE0(&tmp0, 0xFF, 1);
-//         }
-//         func_15060F28(arg0, 1);
-//         return;
-//     }
-//     temp_t3 = arg0->unk83 - 1;
-//     temp_v0 = temp_t3 & 0xFF;
-//     arg0->unk83 = temp_t3;
-//     if ((temp_v0 == 0) || (arg0->unk7F >= 0x1F)) {
-//         func_15060F28(arg0, 1);
-//         return;
-//     }
-//
-//     temp_v1 = arg0->unk7F;
-//     if (temp_v0 < 0xA) {
-//         phi_a2 = (s32) (temp_v0 * 0xFF) / 0xA;
-//     } else {
-//         phi_a2 = 0xFF;
-//         if (temp_v1 >= 0x15) {
-//             phi_a2 = (s32) ((-(s32) temp_v1 * 0xFF) + 0x1DE2) / 0xA;
-//         }
-//     }
-//     func_1503192C(arg0, sp74, phi_a2, 0);
-//     if (sp74 == 0x1F) {
-//         temp_a0_2 = D_800DBFF0;
-//         temp_f0 = temp_a0_2->unk2F8 - arg0->unk14;
-//         temp_f2 = temp_a0_2->unk2FC - arg0->unk18;
-//         temp_f12 = temp_a0_2->unk300 - arg0->unk1C;
-//         temp_f14 = (temp_f0 * temp_f0) + (temp_f2 * temp_f2) + (temp_f12 * temp_f12);
-//         if (temp_f14 < 900.0f) {
-//             func_1512D748(temp_f12, temp_f14, temp_a0_2, 8, 0);
-//             func_10010F88(0x2E1, 0x6D60, 0, 0, 0, arg0->unk14, arg0->unk18, arg0->unk1C, 0x1F4, 0x3E8);
-//             func_10010A3C(arg0);
-//             func_15060F28(arg0, 1);
-//         }
-//     }
-// }
+void func_1505528C(struct127 *arg0) {
+    f32 sp84;
+    f32 sp80;
+    f32 sp7C;
+    s32 sp74;
+    f32 sp70;
+    s32 sp6C;
+    s32 sp64;
+
+    struct17 tmp0;
+
+    f32 temp_f0;
+    f32 temp_f12;
+    f32 temp_f14;
+    f32 temp_f2;
+    f32 temp_f6;
+    s32 temp_v0;
+    u8 temp_t3;
+    u8 temp_v1;
+    s32 temp_a0;
+    struct108 *temp_a0_2;
+    f32 phi_f0;
+    s32 phi_a2;
+
+    sp74 = (u16)arg0->unk278;
+    sp6C = 0;
+    sp70 = 0.0f;
+
+    switch (sp74) {
+        case 0x1F:
+            arg0->unkB8 = (arg0->unkB8 + (arg0->xz_velocity * (f32) D_800BE9E4));
+            if (arg0->unk2E4 == 1) {
+                func_10010344(0x230, arg0, 0x7D00, 0x1F4, 0x9C4);
+                arg0->unk2E4 = 0;
+            }
+            break;
+        case 0x35:
+            arg0->unkB8 = (arg0->unkB8 + (f32) (D_800BE9E4 * 0x10));
+            break;
+        case 0x42:
+            sp70 = 25.0f;
+            if (arg0->gravity != 0.0f) {
+                temp_f12 = arg0->y_velocity;
+                if ((temp_f12 > 0.0f) || (arg0->unk28 > 25.0f)) {
+                    arg0->unkB8 = (-func_150484A0(temp_f12, arg0->xz_velocity) * D_80099408);
+                }
+            }
+            temp_v0 = func_15081574(arg0, 40.0f, 10.0f, &sp64, 0xF, 0x53);
+            if (temp_v0 != 0) {
+                func_15055260(arg0, sp64, temp_v0 - 1);
+                func_15060F28(arg0, 1);
+                return;
+            }
+            break;
+        case 0x4E:
+            sp70 = 25.0f;
+            if (arg0->unk28 > 25.0f) {
+                arg0->unkB8 = (arg0->unkB8 + (f32) (D_800BE9E4 * 3));
+            }
+            break;
+        case 0x88:
+            temp_f6 = -func_150484A0(arg0->y_velocity, arg0->xz_velocity) * D_8009940C;
+            arg0->unkD0 = 0x10;
+            arg0->unkB8 = temp_f6;
+            if (func_1505C7D8(arg0, D_800C3E78) != 0) {
+                func_15060F28(arg0, 1);
+                return;
+            }
+    }
+    func_15059C84(arg0);
+    arg0->stunned = 1;
+    func_1505A770(arg0);
+    sp84 = arg0->x_position;
+    sp80 = arg0->y_position;
+    sp7C = arg0->z_position;
+    func_15058898(arg0, arg0->old_y_position);
+    temp_f0 = arg0->unk118;
+    if ((temp_f0 != D_80099410) && (arg0->y_position <= temp_f0) && (temp_f0 <= arg0->old_y_position)) {
+        arg0->unk2E4 = 2;
+        arg0->gravity = 0.0f;
+        arg0->y_velocity = -3.0f;
+        arg0->xz_velocity *= D_80099414;
+    } else if ((sp84 != arg0->x_position) || (sp80 != arg0->y_position) || (sp7C != arg0->z_position)) {
+        sp6C = 1;
+        if ((sp74 == 0x1F) && (arg0->unk2E4 != 2)) {
+            func_10010344(((func_150ADA20() % 5U) + 0x3A4), arg0, 0x7D00, 0x1F4, 0x9C4);
+        }
+    }
+    func_1505B5F8(arg0, arg0->unk180);
+    if (arg0->unk28 <= sp70) {
+        temp_a0 = arg0->x_position;
+        arg0->unk7F = (u8) (arg0->unk7F + 1);
+        sp6C = sp6C | 2;
+        if ((arg0->unk184 & 0x1F) == 0xE) {
+            func_1514AD9C(temp_a0, 0xFF, 0);
+            func_15060F28(arg0, 1);
+            return;
+        }
+        if (sp74 == 0x42) {
+            D_800D1580 = 0xFF0100B0;
+            if (arg0->gravity != 0.0f) {
+                func_1506E5FC();
+            }
+            arg0->gravity = 0.0f;
+            temp_f12 = arg0->old_y_position;
+            temp_f0 = arg0->y_position - temp_f12;
+            arg0->y_velocity = 0.0f;
+            arg0->xz_velocity = 0.0f;
+            arg0->y_position = (arg0->unk180 + sp70);
+            if (temp_f0 != 0.0f) {
+                phi_f0 = (arg0->y_position - temp_f12) / temp_f0;
+            } else {
+                phi_f0 = 0.0f;
+            }
+            temp_f2 = arg0->old_x_position;
+            temp_f12 = arg0->old_z_position;
+            arg0->x_position = temp_f2 + ((arg0->x_position - temp_f2) * phi_f0);
+            arg0->z_position = temp_f12 + ((arg0->z_position - temp_f12) * phi_f0);
+        } else if (arg0->y_position < arg0->unk118) {
+            arg0->gravity = 0.0f;
+            arg0->y_velocity = 0.0f;
+            arg0->xz_velocity = 0.0f;
+        } else if ((arg0->y_velocity > 5.0f) && (sp74 == 0x1F) && (arg0->unk2E4 != 2)) {
+            func_10010344(0x39E, arg0, 0x7D00, 0x1F4, 0x9C4);
+            arg0->unk2E4 = 2;
+        }
+    }
+    arg0->unk40 = ((arg0->unk76 + 0x4000) * 0.005493164f);
+    if ((sp6C != 0) && (sp74 == 0x35)) {
+        func_10010630(0x360, arg0, 0x4E20, 0x1F4, 0x9C4);
+        if (arg0->unk118 < arg0->y_position) {
+            tmp0.unk0 = arg0->x_position;
+            tmp0.unk4 = arg0->y_position + 20.0f;
+            tmp0.unk8 = arg0->z_position;
+            func_151DCDE0(&tmp0, 0xFF, 1);
+        }
+        func_15060F28(arg0, 1);
+        return;
+    }
+    temp_t3 = arg0->unk83 - 1;
+    temp_v0 = temp_t3 & 0xFF;
+    arg0->unk83 = temp_t3;
+    if ((temp_v0 == 0) || (arg0->unk7F >= 0x1F)) {
+        func_15060F28(arg0, 1);
+        return;
+    }
+
+    temp_v1 = arg0->unk7F;
+    if (temp_v0 < 0xA) {
+        phi_a2 = (s32) (temp_v0 * 0xFF) / 0xA;
+    } else {
+        phi_a2 = 0xFF;
+        if (temp_v1 >= 0x15) {
+            phi_a2 = (s32) ((-(s32) temp_v1 * 0xFF) + 0x1DE2) / 0xA;
+        }
+    }
+    func_1503192C(arg0, sp74, phi_a2, 0);
+    if (sp74 == 0x1F) {
+        temp_a0_2 = D_800DBFF0;
+        temp_f0 = temp_a0_2->unk2F8 - arg0->x_position;
+        temp_f2 = temp_a0_2->unk2FC - arg0->y_position;
+        temp_f12 = temp_a0_2->unk300 - arg0->z_position;
+        temp_f14 = (temp_f0 * temp_f0) + (temp_f2 * temp_f2) + (temp_f12 * temp_f12);
+        if (temp_f14 < 900.0f) {
+            func_1512D748(temp_a0_2, 8, 0);
+            func_10010F88(0x2E1, 0x6D60, 0, 0, 0, arg0->x_position, arg0->y_position, arg0->z_position, 0x1F4, 0x3E8);
+            func_10010A3C(arg0);
+            func_15060F28(arg0, 1);
+        }
+    }
+}
 
 void func_15055A2C(s32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4) {
     s32 phi_a0 = 1549;
