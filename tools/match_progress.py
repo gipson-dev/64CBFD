@@ -34,12 +34,27 @@ from collections import Counter, defaultdict
 if hasattr(signal, "SIGPIPE"):
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 
-# (vram_start, rom_start) per section, from conker/conker.us.yaml.
-SEGMENTS = {
+# Fallback (vram_start, rom_start) per section, from conker/conker.*.yaml.
+DEFAULT_SEGMENTS = {
     "us": {
         "init": (0x10001000, 0x1000),
         "game": (0x15000000, 0x2D4B0),
         "debugger": (0x16000000, 0x255880),
+    },
+    "eu": {
+        "init": (0x10001000, 0x1000),
+        "game": (0x15000000, 0x2D810),
+        "debugger": (0x16000000, 0x256450),
+    },
+    "ects": {
+        "init": (0x10001000, 0x1000),
+        "game": (0x15000000, 0xCAF0),
+        "debugger": (0x16000000, 0x224500),
+    },
+    "debug": {
+        "init": (0x10001000, 0x1000),
+        "game": (0x15000000, 0xD2B0),
+        "debugger": (0x16000000, 0x248510),
     },
 }
 
@@ -80,10 +95,90 @@ def jump_name(word):
 
 
 def name_implied_vram(name):
-    m = re.fullmatch(r"func_([0-9A-Fa-f]{8})", name)
+    m = re.fullmatch(r"(?:func|D)_([0-9A-Fa-f]{8})", name)
     if m:
         return int(m.group(1), 16)
     return None
+
+
+def candidate_project_dirs(*paths):
+    dirs = []
+    for path in paths:
+        if not path:
+            continue
+        path = os.path.abspath(path)
+        if os.path.isdir(path):
+            cur = path
+        else:
+            cur = os.path.dirname(path)
+        while cur and cur not in dirs:
+            dirs.append(cur)
+            parent = os.path.dirname(cur)
+            if parent == cur:
+                break
+            cur = parent
+    cwd = os.getcwd()
+    if cwd not in dirs:
+        dirs.append(cwd)
+    return dirs
+
+
+def load_segments(version, *paths):
+    yaml_name = f"conker.{version}.yaml"
+    for directory in candidate_project_dirs(*paths):
+        path = os.path.join(directory, yaml_name)
+        if not os.path.exists(path):
+            continue
+        segments = {}
+        current = None
+        current_type = None
+        current_start = None
+        current_vram = None
+        with open(path) as f:
+            for line in f:
+                m = re.match(r"\s*-\s+name:\s*(\w+)\s*(?:#.*)?$", line)
+                if m:
+                    if (current in ("init", "game", "debugger") and
+                            current_type == "code" and
+                            current_start is not None and
+                            current_vram is not None):
+                        segments[current] = (current_vram, current_start)
+                    current = m.group(1)
+                    current_type = None
+                    current_start = None
+                    current_vram = None
+                    continue
+                if current is None:
+                    continue
+                m = re.match(r"\s*type:\s*(\w+)", line)
+                if m:
+                    current_type = m.group(1)
+                    continue
+                m = re.match(r"\s*start:\s*(0x[0-9A-Fa-f]+)", line)
+                if m:
+                    current_start = int(m.group(1), 16)
+                    continue
+                m = re.match(r"\s*vram:\s*(0x[0-9A-Fa-f]+)", line)
+                if m:
+                    current_vram = int(m.group(1), 16)
+                    continue
+        if (current in ("init", "game", "debugger") and
+                current_type == "code" and current_start is not None and
+                current_vram is not None):
+            segments[current] = (current_vram, current_start)
+        if segments:
+            return segments
+    return DEFAULT_SEGMENTS.get(version)
+
+
+def default_symbol_addrs_path(version, progress_csv, elf_path, pristine_bin):
+    filename = f"symbol_addrs.{version}.txt"
+    for directory in candidate_project_dirs(progress_csv, pristine_bin,
+                                            elf_path):
+        path = os.path.join(directory, filename)
+        if os.path.exists(path):
+            return path
+    return os.path.join(os.path.dirname(progress_csv) or ".", filename)
 
 
 def load_symbol_addrs(path):
@@ -271,26 +366,26 @@ def explain_block(ours, truth, ours_vaddr, retail_vaddr, current_symbols,
 
 
 def function_vram(row, symbol_addrs):
-    """Use name-implied VRAM (or symbol_addrs.<version>.txt for named
-    symbols) so upstream size drift is harmless. progress.csv's offset
-    column reflects the *current build's* layout and is only a last
+    """Use name-implied VRAM (or symbol_addrs.<version>.txt for other
+    named symbols) so upstream size drift is harmless. progress.csv's
+    offset column reflects the *current build's* layout and is only a last
     resort."""
     name = row["function"]
-    m = re.fullmatch(r"func_([0-9A-Fa-f]{8})", name)
-    if m:
-        return int(m.group(1), 16)
+    implied = name_implied_vram(name)
+    if implied is not None:
+        return implied
     if name in symbol_addrs:
         return symbol_addrs[name]
     return int(row["offset"])
 
 
-def add_retail_lengths(rows, version, symbol_addrs):
+def add_retail_lengths(rows, version, segments, symbol_addrs):
     by_section = defaultdict(list)
     for row in rows:
         if row.get("version") != version:
             continue
         section = row["section"]
-        if section not in SEGMENTS[version]:
+        if section not in segments:
             continue
         vaddr = function_vram(row, symbol_addrs)
         by_section[section].append((vaddr, row))
@@ -306,10 +401,12 @@ def add_retail_lengths(rows, version, symbol_addrs):
             row["_retail_nwords"] = nwords
 
 
-def retail_symbols_for_rows(rows, version, symbol_addrs):
+def retail_symbols_for_rows(rows, version, segments, symbol_addrs):
     symbols = {v: k for k, v in symbol_addrs.items()}
     for row in rows:
         if row.get("version") != version:
+            continue
+        if row.get("section") not in segments:
             continue
         try:
             symbols[function_vram(row, symbol_addrs)] = row["function"]
@@ -335,23 +432,26 @@ def main():
                          "as address/callee drift")
     args = ap.parse_args()
 
-    if args.version not in SEGMENTS:
+    segments = load_segments(args.version, args.progress_csv, args.elf,
+                             args.pristine_bin)
+    if not segments:
         sys.exit(f"no segment table for version '{args.version}' - "
-                 f"add it to SEGMENTS in {sys.argv[0]}")
-    segments = SEGMENTS[args.version]
+                 f"add it to DEFAULT_SEGMENTS or conker.{args.version}.yaml")
 
     rom = open(args.pristine_bin, "rb").read()
     elf, symbols_by_addr, func_addrs = load_elf_functions(args.elf,
                                                           args.objdump)
 
-    symbol_addrs = load_symbol_addrs(args.symbol_addrs or os.path.join(
-        os.path.dirname(args.progress_csv) or ".",
-        f"symbol_addrs.{args.version}.txt"))
+    symbol_addrs = load_symbol_addrs(args.symbol_addrs or
+                                     default_symbol_addrs_path(
+                                         args.version, args.progress_csv,
+                                         args.elf, args.pristine_bin))
 
     with open(args.progress_csv, newline="") as f:
         rows = list(csv.DictReader(f))
-    add_retail_lengths(rows, args.version, symbol_addrs)
-    retail_symbols = retail_symbols_for_rows(rows, args.version, symbol_addrs)
+    add_retail_lengths(rows, args.version, segments, symbol_addrs)
+    retail_symbols = retail_symbols_for_rows(rows, args.version, segments,
+                                             symbol_addrs)
 
     stats = defaultdict(lambda: defaultdict(int))  # section -> class -> n
     nonexact = []

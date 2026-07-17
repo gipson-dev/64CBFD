@@ -557,3 +557,8 @@ python tools/asset_dump.py list                  # known sections + ROM offsets
 python tools/asset_dump.py dump assets13 out/    # every file in a section
 python tools/asset_dump.py dump assets17 out/ --idx 0   # a single file
 ```
+
+For raw image and texture payloads, check `n64img`/n64splat image decoding
+first. `tools/n64splat/requirements.txt` already pulls in `n64img>=0.1.4`, so
+new custom code should focus on CBFD-specific containers, dimensions, and
+resource wiring rather than reimplementing standard N64 image formats.

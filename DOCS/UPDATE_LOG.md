@@ -8,6 +8,23 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-07-17
+
+### Tool reference triage
+
+- Recorded `n64img` as the preferred N64 image-format reference through the
+  existing n64splat dependency path (`tools/n64splat/requirements.txt` already
+  requires it), avoiding a redundant standalone submodule.
+- Added `N64-IPL` as a reference-only upstream for boot/IPL/header/checksum
+  context.
+- Left `mips-gcc-2.7.2` out of the active toolchain for now; it is useful if a
+  KMC/GCC-compiled island is identified, but current matching work is still
+  IDO 5.3 based.
+- Updated active helper submodules after checking upstream HEADs:
+  `tools/asm-differ` to `fdf9c6c`, `tools/asm-processor` to `b29ff12`, and
+  the parent repo's `tools/mips_to_c` pointer to the already-checked-out
+  `m2c` upstream `554de36`.
+
 ## 2026-07-14
 
 ### ROM library, EU pipeline, and censorship analysis

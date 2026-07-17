@@ -25,6 +25,50 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-17, tool submodule refresh).** Checked GitHub upstream HEADs
+for the active tools. `n64splat`, `CBFD_rabbitizer`, `texture2c`, and
+`ultralib` were already current. Advanced `tools/asm-differ` from `093360a` to
+`fdf9c6c`, `tools/asm-processor` from `42e7cca` to `b29ff12`, and kept the
+already-updated `tools/mips_to_c` checkout at `554de36` while preserving the
+`.gitmodules` URL switch to `https://github.com/matt-kempster/m2c.git`.
+Validation after the refresh: `git diff --check`, WSL `make -C conker -j
+NON_MATCHING=1`, `make -C conker progress NON_MATCHING=1`, and `make -C conker
+match-progress NON_MATCHING=1`. Raw conversion stayed `1700 / 6034 (28.17%)`;
+byte-matching stayed total `693 / 1700 (40.76%)`, init `76 / 297 (25.59%)`,
+game `495 / 1222 (40.51%)`, debugger `122 / 181 (67.40%)`.
+
+**Update (2026-07-17, decompals reference/tooling triage).** Checked the
+suggested decompals repos before adding anything new. `n64img` is useful, but
+it is already part of this checkout's tooling path through
+`tools/n64splat/requirements.txt` (`n64img>=0.1.4`), so do not add a separate
+`tools/n64img` submodule unless we need to patch/fork it. Use it through
+n64splat image handling for texture/image decode probes before writing custom
+N64 image-format code. `N64-IPL` is worth keeping as a reference for boot/IPL,
+header, and checksum context, but not as active game-decomp tooling.
+`mips-gcc-2.7.2` stays reference-only/low-priority unless a KMC/GCC-compiled
+code island turns up; current matching work is IDO 5.3 based.
+
+**Update (2026-07-17, ROM mapping finished for match-progress).** Fixed
+`tools/match_progress.py` so retail byte lookups no longer depend on stale or
+temporary `progress.csv` placement. The helper now:
+- reads `init`/`game`/`debugger` ROM-start and VRAM mappings from
+  `conker.<version>.yaml` (with fallback tables for `us`/`eu`/`ects`/`debug`);
+- resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM, the
+  same way `func_XXXXXXXX` labels already worked;
+- searches the ROM/ELF working directories for `symbol_addrs.<version>.txt`,
+  so scratch CSVs in `/tmp` no longer lose named-symbol anchors.
+
+This reclassifies the debugger data rows honestly instead of comparing them at
+shifted build offsets. Fresh current-map snapshot after the mapping fix:
+raw conversion total `1700 / 6034 (28.17%)`, game `1222 / 5314 (23.00%)`,
+byte-weighted total `8.23%`, game bytes `6.02%`. `match-progress` from a
+fresh temp CSV now reports total `693 / 1700 (40.76%)`, blocked `826`,
+differ `181`; init `76 / 297 (25.59%)`, blocked `160`, differ `61`; game
+`495 / 1222 (40.51%)`, blocked `653`, differ `74`; debugger
+`122 / 181 (67.40%)`, blocked `13`, differ `46`. Verified `py_compile`,
+direct temp-CSV `match_progress.py`, direct checked-in-CSV
+`match_progress.py`, and `git diff --check`.
+
 **Update (2026-07-17, game raw-conversion push toward 25% - +20 functions).**
 Converted 20 more game functions from raw assembly to C across
 `game_83300.c` and `game_A28B0.c`, raising game raw conversion to

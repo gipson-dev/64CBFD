@@ -156,9 +156,9 @@ Last regenerated: 2026-07-17, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 7.72% | 1671 / 6034 (27.69%) |
+| total | `[##----------------------]` 8.23% | 1700 / 6034 (28.17%) |
 | init | `[######------------------]` 25.18% | 297 / 538 (55.20%) |
-| game | `[#-----------------------]` 5.48% | 1193 / 5314 (22.45%) |
+| game | `[#-----------------------]` 6.02% | 1222 / 5314 (23.00%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 The latest passes moved 65 init/libultra helpers, 10 debugger functions, and
@@ -222,10 +222,10 @@ bytes (last regenerated 2026-07-17, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 591 / 1671 (35.37%) | 825 | 255 |
+| total | 693 / 1700 (40.76%) | 826 | 181 |
 | init | 76 / 297 (25.59%) | 160 | 61 |
-| game | 494 / 1193 (41.41%) | 652 | 47 |
-| debugger | 21 / 181 (11.60%) | 13 | 147 |
+| game | 495 / 1222 (40.51%) | 653 | 74 |
+| debugger | 122 / 181 (67.40%) | 13 | 46 |
 
 The debugger overlay's rodata displacement healed on 2026-07-16: the
 `debugger_257350.c` printf engine was identified as Plauger's Standard C
@@ -238,6 +238,9 @@ intentionally increase the still-differ count until they are size-matched or
 padded. This pass included early-link OS/PI/SI/AI helpers, so many otherwise
 good rows are temporarily classified as address-drift blocked. Init and
 debugger byte-matching are the next cleanup frontiers.
+The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
+finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
+and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.
 
 "Blocked on address drift" means the only remaining differences are
 `j`/`jal` target addresses or `%lo` halves of shifted symbol addresses -
@@ -336,6 +339,12 @@ External tools:
 - [asm-differ](https://github.com/simonlindholm/asm-differ): compares compiled assembly against the original ROM.
 - [asm-processor](https://github.com/simonlindholm/asm-processor): allows `GLOBAL_ASM` blocks inside C files.
 - [n64splat](https://github.com/ethteck/n64splat): splits the ROM into segments.
+- [n64img](https://github.com/decompals/n64img): N64 image-format helper used through n64splat's image segment support. Prefer it for texture/image decode probes before writing project-specific image parsing.
 - [ultralib](https://github.com/decompals/ultralib): reference source for stock libultra/libgultra 2.0L matching work.
 - [ido-static-recomp](https://github.com/Emill/ido-static-recomp): provides the IDO compiler.
 - [gzip](https://github.com/mkst/gzip): provides the specific pre-1.5 `memzero` behavior needed for matching compression.
+
+Reference-only upstreams:
+
+- [N64-IPL](https://github.com/decompals/N64-IPL): matching IPL disassemblies. Useful for boot/IPL/header/checksum context, but not vendored into this project's game-code decomp workflow.
+- [mips-gcc-2.7.2](https://github.com/decompals/mips-gcc-2.7.2): KMC/GCC-oriented compiler reference. Keep out of the active toolchain unless evidence turns up for a GCC/KMC-compiled code island; this project currently matches against IDO 5.3.

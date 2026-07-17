@@ -4,14 +4,14 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Snapshot as of 2026-07-17 after the latest raw-conversion pass. Functions converted from raw assembly to C
+Snapshot as of 2026-07-17 after the ROM-mapping cleanup. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 7.72% | 1671 / 6034 (27.69%) |
+| total | `[##----------------------]` 8.23% | 1700 / 6034 (28.17%) |
 | init | `[######------------------]` 25.18% | 297 / 538 (55.20%) |
-| game | `[#-----------------------]` 5.48% | 1193 / 5314 (22.45%) |
+| game | `[#-----------------------]` 6.02% | 1222 / 5314 (23.00%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Of those C-converted functions, the share that already compiles to the
@@ -22,10 +22,10 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 591 / 1671 (35.37%) | 825 | 255 |
+| total | 693 / 1700 (40.76%) | 826 | 181 |
 | init | 76 / 297 (25.59%) | 160 | 61 |
-| game | 494 / 1193 (41.41%) | 652 | 47 |
-| debugger | 21 / 181 (11.60%) | 13 | 147 |
+| game | 495 / 1222 (40.51%) | 653 | 74 |
+| debugger | 122 / 181 (67.40%) | 13 | 46 |
 
 The debugger overlay's long-standing rodata displacement healed on
 2026-07-16: its printf engine was identified as Plauger's Standard C
@@ -43,6 +43,9 @@ byte-match table is expected to stay lower until those functions are
 size-matched or padded back into retail layout. The latest init/libultra
 push also replaced early-link OS/PI/SI/AI helpers, so many otherwise-good
 rows are temporarily classified as address-drift blocked.
+The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
+finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
+and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.
 
 When regenerating, update both tables together with the copies in the
 [root README](../README.md) and [Project overview](PROJECT.md).
