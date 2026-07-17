@@ -25,6 +25,21 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-17, game raw-conversion push toward 25% - +20 functions).**
+Converted 20 more game functions from raw assembly to C across
+`game_83300.c` and `game_A28B0.c`, raising game raw conversion to
+`1193 / 5314 (22.45%)`. Byte-weighted progress is now total `7.72%`, init
+`25.18%`, game `5.48%`, and debugger `99.19%`; function-count progress is
+total `1671 / 6034 (27.69%)`, init `297 / 538 (55.20%)`, game
+`1193 / 5314 (22.45%)`, and debugger `181 / 182 (99.45%)`. Game raw
+conversion is 136 functions short of the 25% target (`1329 / 5314`).
+Current `match-progress`: total `591 / 1671 (35.37%)`, blocked `825`,
+differ `255`; init `76 / 297 (25.59%)`, blocked `160`, differ `61`; game
+`494 / 1193 (41.41%)`, blocked `652`, differ `47`; debugger
+`21 / 181 (11.60%)`, blocked `13`, differ `147`. The byte-match dip is
+expected address drift from the new non-matching game bodies. Verified
+`build/conker.us.elf`, `progress`, `match-progress`, and `git diff --check`.
+
 **Update (2026-07-17, finish-what-is-possible init/libultra pass - +16 more
 functions converted and one lingering libultra `GLOBAL_ASM` removed).** Added
 C and wired `conker.us.yaml`/local `conker.ld` entries for `osRecvMesg`,

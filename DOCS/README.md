@@ -9,9 +9,9 @@ Snapshot as of 2026-07-17 after the latest raw-conversion pass. Functions conver
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 7.27% | 1631 / 6034 (27.03%) |
+| total | `[##----------------------]` 7.72% | 1671 / 6034 (27.69%) |
 | init | `[######------------------]` 25.18% | 297 / 538 (55.20%) |
-| game | `[#-----------------------]` 4.99% | 1153 / 5314 (21.70%) |
+| game | `[#-----------------------]` 5.48% | 1193 / 5314 (22.45%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Of those C-converted functions, the share that already compiles to the
@@ -22,9 +22,9 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 914 / 1631 (56.04%) | 495 | 222 |
-| init | 77 / 297 (25.93%) | 159 | 61 |
-| game | 816 / 1153 (70.77%) | 323 | 14 |
+| total | 591 / 1671 (35.37%) | 825 | 255 |
+| init | 76 / 297 (25.59%) | 160 | 61 |
+| game | 494 / 1193 (41.41%) | 652 | 47 |
 | debugger | 21 / 181 (11.60%) | 13 | 147 |
 
 The debugger overlay's long-standing rodata displacement healed on
@@ -32,8 +32,10 @@ The debugger overlay's long-standing rodata displacement healed on
 Library (the N64 SDK's libc) and rematched at exact retail sizes. Later
 game-section layout fixes (`func_1504B0FC`, `func_1504BE2C`, and
 `func_150721A4`) collapsed most address-drift blockers. The latest passes
-then traded some byte-match cleanliness for +6 game functions, +10 debugger
-functions, and +65 init/libultra functions converted from raw asm to C.
+then traded some byte-match cleanliness for +20 more game functions in the
+current push, +10 debugger functions, and +65 init/libultra functions
+converted from raw asm to C. Game raw conversion is now 136 functions short
+of the 25% target.
 Debugger raw conversion is now complete except `func_16003650`, a CP0/TLB
 reader that uses `tlbr`/CP0 register instructions and is intentionally left
 as raw assembly. The new C bodies are raw-progress placeholders, so the

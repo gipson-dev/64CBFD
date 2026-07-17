@@ -156,13 +156,14 @@ Last regenerated: 2026-07-17, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 7.27% | 1631 / 6034 (27.03%) |
+| total | `[##----------------------]` 7.72% | 1671 / 6034 (27.69%) |
 | init | `[######------------------]` 25.18% | 297 / 538 (55.20%) |
-| game | `[#-----------------------]` 4.99% | 1153 / 5314 (21.70%) |
+| game | `[#-----------------------]` 5.48% | 1193 / 5314 (22.45%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 The latest passes moved 65 init/libultra helpers, 10 debugger functions, and
-6 game functions out of raw assembly. Debugger raw conversion is complete
+20 game functions in the current game push out of raw assembly. Debugger raw
+conversion is complete
 except `func_16003650`, a hardware CP0/TLB reader that executes `tlbr` and
 CP0 register moves and is intentionally left as raw assembly. The newly
 converted functions are C-shaped recovery bodies, not yet byte-matched
@@ -221,9 +222,9 @@ bytes (last regenerated 2026-07-17, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 914 / 1631 (56.04%) | 495 | 222 |
-| init | 77 / 297 (25.93%) | 159 | 61 |
-| game | 816 / 1153 (70.77%) | 323 | 14 |
+| total | 591 / 1671 (35.37%) | 825 | 255 |
+| init | 76 / 297 (25.59%) | 160 | 61 |
+| game | 494 / 1193 (41.41%) | 652 | 47 |
 | debugger | 21 / 181 (11.60%) | 13 | 147 |
 
 The debugger overlay's rodata displacement healed on 2026-07-16: the
@@ -231,8 +232,8 @@ The debugger overlay's rodata displacement healed on 2026-07-16: the
 Library (the N64 SDK's libc - `_Printf`/`_Ldtob`/`_Genld`/`_Litob`) and
 rematched at exact retail sizes. Later game-section layout fixes collapsed
 the dominant address-drift plateaus. The latest raw-conversion passes then
-moved six more game functions, ten debugger functions, and 65 init/libultra
-functions out of `GLOBAL_ASM`/raw asm; those new C bodies shift layout and
+moved 20 more game functions in the current push, ten debugger functions, and
+65 init/libultra functions out of `GLOBAL_ASM`/raw asm; those new C bodies shift layout and
 intentionally increase the still-differ count until they are size-matched or
 padded. This pass included early-link OS/PI/SI/AI helpers, so many otherwise
 good rows are temporarily classified as address-drift blocked. Init and
