@@ -25,6 +25,20 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, total and game raw conversion crossed 70%).**
+Added 44 more text-only game slices as generated non-matching C sources,
+moving 612 tracked functions out of raw assembly. The generated files contain
+615 C definitions because three exported labels are intentionally absent from
+`progress.csv`. Each selected assembly object was checked for embedded data,
+rodata, BSS, and word tables before replacement. Regenerated the retail-layout
+manifest and verified the layout-preserving build. Raw C conversion is now
+total `4258 / 6033 (70.58%)`, init `327 / 538 (60.78%)`, game
+`3750 / 5313 (70.58%)`, and debugger `181 / 182 (99.45%)`. Byte-weighted
+conversion is total `55.77%`, init `28.24%`, game `57.54%`, and debugger
+`99.19%`. Byte-exact progress is total `1585 / 4258 (37.22%)`, with 24
+address-blocked and 2649 differing functions; all prior exact matches were
+retained and one new exact function was recovered.
+
 **Update (2026-07-18, total raw conversion crossed 60%).**
 Added 25 more text-only game slices as generated non-matching C sources,
 moving 613 tracked functions out of raw assembly. Generated slice discovery is

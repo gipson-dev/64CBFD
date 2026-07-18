@@ -10,6 +10,17 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Total and game raw C conversion crossed 70%
+
+- Replaced 44 additional text-only game assembly slices with generated
+  non-matching C sources, moving 612 tracked functions into C.
+- Checked every selected slice for embedded data sections or word tables before
+  replacement, then regenerated the retail-layout manifest.
+- Published raw conversion at **4258 / 6033 functions (70.58%)** and **55.77%
+  by bytes**; the game section independently reached **3750 / 5313 (70.58%)**.
+- Preserved all prior exact matches and recovered one additional match, taking
+  byte-exact progress to **1585 / 4258 (37.22%)** with 24 address blockers.
+
 ### Total raw C conversion crossed 60%
 
 - Replaced 25 additional text-only game assembly slices with generated

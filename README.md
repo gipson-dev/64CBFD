@@ -8,14 +8,14 @@ your own legally obtained copy of the game to build it.
 
 ## Current progress
 
-Snapshot as of 2026-07-18 after the 60% total C milestone. Functions converted from raw assembly to C
+Snapshot as of 2026-07-18 after the 70% total C milestone. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[###########-------------]` 43.81% | 3646 / 6033 (60.43%) |
+| total | `[#############-----------]` 55.77% | 4258 / 6033 (70.58%) |
 | init | `[#######-----------------]` 28.24% | 327 / 538 (60.78%) |
-| game | `[###########-------------]` 44.51% | 3138 / 5313 (59.06%) |
+| game | `[##############----------]` 57.54% | 3750 / 5313 (70.58%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Of those C-converted functions, the share that already compiles to the
@@ -23,9 +23,9 @@ exact retail bytes (`make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1584 / 3646 (43.44%) | 24 | 2038 |
+| total | 1585 / 4258 (37.22%) | 24 | 2649 |
 | init | 236 / 327 (72.17%) | 4 | 87 |
-| game | 1182 / 3138 (37.67%) | 20 | 1936 |
+| game | 1183 / 3750 (31.55%) | 20 | 2547 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The debugger overlay's long-standing rodata displacement healed on
@@ -37,7 +37,9 @@ decomp push crossed the 25% game raw-conversion target, follow-up
 init passes pushed total raw conversion over 30%, and generated game-slice C
 placeholders pushed total raw conversion over 50%. A further 25 high-yield
 game slices then moved 613 functions into generated C and carried the total
-past 60%, while preserving the retail layout and adding one exact match.
+past 60%. The next 44 text-only slices moved another 612 tracked functions
+and carried both total and game conversion past 70%, while preserving the
+retail layout and adding another exact match.
 The first matching pass over those generated slices recovered 40 small
 retail functions exactly. The current layout-preservation pass then crossed
 the 50% byte-exact milestone by retaining every compiled instruction and
