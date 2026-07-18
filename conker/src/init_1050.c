@@ -24,7 +24,9 @@ void func_100010F8(s32 arg0) {
     do {} while(1);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1050/func_10001194.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1050/func_10001194.s. */
+void func_10001194(s32 arg0) {
+}
 // NON-MATCHING: start/end mostly ok, middle, not-so-much.
 // s32 *allocate_memory(s32, s32, s32, s32);
 // void func_10001194(s32 arg0) {

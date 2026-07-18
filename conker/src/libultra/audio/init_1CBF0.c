@@ -121,7 +121,9 @@ void func_1001CF38(ALLowPass *arg0, f32 arg1) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_1CBF0/n_alFxNew.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_1CBF0/n_alFxNew.s. */
+void n_alFxNew(ALFx **r, ALSynConfig *c, ALHeap *hp, s32 unknown) {
+}
 
 void alN_PVoiceNew(N_PVoice *mv, ALDMANew dmaNew, ALHeap *hp) {
     mv->dc_state = alHeapDBAlloc(0, 0, hp, 1, sizeof(ADPCM_STATE));

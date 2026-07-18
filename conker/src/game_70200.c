@@ -3,6 +3,12 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15043384(s32 arg0);
+s32 func_15043A20();
+s32 func_15043AC8();
+s32 func_15043CA4();
+/* End generated placeholder declarations. */
 
 void func_15042D50(void) {
     D_800CBD64 = 0;
@@ -70,7 +76,9 @@ void func_15042E3C(s32 arg0,
     sp24[15] = arg10;
     func_15042ECC(arg0, sp24);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/game_70200/func_15042ECC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15042ECC.s. */
+void func_15042ECC(s32 arg0, s32 *arg1) {
+}
 
 void func_150432BC(f32 arg0) {
     D_800CBD80 = arg0;
@@ -95,7 +103,10 @@ void func_1504332C(u8 arg0, u8 arg1, u8 arg2, u8 arg3) {
     D_800CBD63 = arg3;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_70200/func_15043384.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043384.s. */
+s32 func_15043384(s32 arg0) {
+    return 0;
+}
 
 void func_15043A00(struct105 *arg0, s32 arg1, s32 arg2) {
     if (arg0 != 0) {
@@ -107,8 +118,14 @@ void func_15043A00(struct105 *arg0, s32 arg1, s32 arg2) {
 }
 
 // something with memcpy
-#pragma GLOBAL_ASM("asm/nonmatchings/game_70200/func_15043A20.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_70200/func_15043AC8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043A20.s. */
+s32 func_15043A20() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043AC8.s. */
+s32 func_15043AC8() {
+    return 0;
+}
 
 s32 func_15043B70(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 tmp;
@@ -127,6 +144,11 @@ s32 func_15043B70(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
     return arg2;
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/game_70200/func_15043BB8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043BB8.s. */
+void func_15043BB8(struct105* arg0) {
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_70200/func_15043CA4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043CA4.s. */
+s32 func_15043CA4() {
+    return 0;
+}

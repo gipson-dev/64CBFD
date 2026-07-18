@@ -1,9 +1,17 @@
 #include "n_synthInternals.h"
 
+/* Generated placeholder declarations. */
+s32 func_10020000();
+s32 func_10020ABC();
+/* End generated placeholder declarations. */
+
 extern f32 D_8002C814;
 
 // relies on jump table
-#pragma GLOBAL_ASM("asm/nonmatchings/init_20000/func_10020000.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_20000/func_10020000.s. */
+s32 func_10020000() {
+    return 0;
+}
 
 s32 n_alEnvmixerParam(N_PVoice *filter, s32 paramID, void *param) {
     N_PVoice  *e = filter;
@@ -42,7 +50,10 @@ s32 n_alEnvmixerParam(N_PVoice *filter, s32 paramID, void *param) {
 }
 
 // _pullSubFrame
-#pragma GLOBAL_ASM("asm/nonmatchings/init_20000/func_10020ABC.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_20000/func_10020ABC.s. */
+s32 func_10020ABC() {
+    return 0;
+}
 // NON-MATCHING: pretty close but no cigar
 // struct21 *func_10020ABC(struct42 *arg0, struct119 *arg1, s32 arg2, s32 arg3, struct21 *arg4) {
 //     struct21 *sp34;

@@ -12,10 +12,20 @@ def generated_slice_replacement(name):
 
 
 def replace_generated_slices(text, project_dir):
+    asm_by_name = {}
+    for path in (project_dir / "asm").rglob("*.s"):
+        if "nonmatchings" not in path.parts:
+            asm_by_name.setdefault(path.stem, []).append(path)
     for source in (project_dir / "src" / "game").glob("generated_*.c"):
         name = source.stem.removeprefix("generated_")
+        candidates = asm_by_name.get(name, [])
+        if len(candidates) != 1:
+            raise ValueError(
+                f"expected one standalone asm slice for {name}, found {candidates}"
+            )
+        asm_path = candidates[0].relative_to(project_dir).as_posix()
         text = text.replace(
-            f"build/asm/{name}.s.o(.text);",
+            f"build/{asm_path}.o(.text);",
             generated_slice_replacement(name),
         )
     return text

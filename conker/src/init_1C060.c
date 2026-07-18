@@ -3,6 +3,10 @@
 #include <os_internal.h>
 #include <ultraerror.h>
 
+/* Generated placeholder declarations. */
+s32 func_1001C4F0();
+/* End generated placeholder declarations. */
+
 void n_alEvtqNew(ALEventQueue *evtq, N_ALEventListItem *items, s32 itemCount)
 {
     s32 i;
@@ -28,7 +32,10 @@ void n_alEvtqNew(ALEventQueue *evtq, N_ALEventListItem *items, s32 itemCount)
 
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1C060/n_alEvtqNextEvent.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1C060/n_alEvtqNextEvent.s. */
+ALMicroTime n_alEvtqNextEvent(ALEventQueue *evtq, N_ALEvent *evt) {
+    return 0;
+}
 // s32 n_alEvtqNextEvent(void *arg0, void *arg1) {
 //     void *sp2C;
 //     s32 sp28;
@@ -62,7 +69,9 @@ void n_alEvtqNew(ALEventQueue *evtq, N_ALEventListItem *items, s32 itemCount)
 //     return sp28;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1C060/n_alEvtqPostEvent.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1C060/n_alEvtqPostEvent.s. */
+void n_alEvtqPostEvent(ALEventQueue *evtq, N_ALEvent *evt, ALMicroTime delta, s32 foo) {
+}
 // void n_alEvtqPostEvent(void *arg0, s32 arg1, s32 arg2, s32 arg3) {
 //     void *sp3C;
 //     void *sp38;
@@ -151,7 +160,10 @@ void n_alEvtqNew(ALEventQueue *evtq, N_ALEventListItem *items, s32 itemCount)
 //     }
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1C060/func_1001C4F0.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1C060/func_1001C4F0.s. */
+s32 func_1001C4F0() {
+    return 0;
+}
 // s32 func_1001C4F0(void *arg0, s16 arg1) {
 //     void *sp3C;
 //     void *sp38;

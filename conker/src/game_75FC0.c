@@ -39,7 +39,10 @@ void func_15048B10(s32 arg0, s32 arg1) {
     func_150A7A48(&tmp.unk0,  &tmp.unk134, arg1);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_75FC0/func_15048C30.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_75FC0/func_15048C30.s. */
+f32 func_15048C30(f32 arg0) {
+    return 0.0f;
+}
 // NON-MATCHING: regs and ordering needs fixing
 // f32 func_15048C30(f32 arg0) {
 //     f32 temp_f0;

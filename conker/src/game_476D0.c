@@ -3,8 +3,21 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1501A220();
+s32 func_1501A39C();
+s32 func_1501A764();
+s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+s32 func_1501AE94();
+s32 func_1501AF44();
+s32 func_1501B0A0();
+s32 func_1501B22C();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_476D0/func_1501A220.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A220.s. */
+s32 func_1501A220() {
+    return 0;
+}
 // NON-MATCHING: 80% there
 // void func_1501A220(s32 arg0, s32 arg1) {
 //     s32 phi_s0;
@@ -47,7 +60,10 @@
 //     func_1510B070(arg1);
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_476D0/func_1501A39C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A39C.s. */
+s32 func_1501A39C() {
+    return 0;
+}
 // NON-MATCHING: something along these lines
 // extern Gfx* D_800BE9C8;
 // extern s32 D_8002C930;
@@ -64,7 +80,10 @@
 //     return tmp;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_476D0/func_1501A490.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A490.s. */
+s32 func_1501A490(s32 arg0, s16 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
+    return 0;
+}
 
 Gfx *func_1501A680(Gfx *arg0) {
     gDPSetColorImage(arg0++, G_IM_FMT_RGBA, G_IM_SIZ_16b, D_800BE620, D_8002AAE8[D_800BE9C0]);
@@ -90,7 +109,10 @@ Gfx *func_1501A6CC(Gfx *arg0, s32 a, s32 b, s32 c, s32 d) {
 }
 
 void func_150A7A00(f32 arg0, f32 arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5, f32* arg6, f32* arg7, f32* arg8, f32* arg9);
-#pragma GLOBAL_ASM("asm/nonmatchings/game_476D0/func_1501A764.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A764.s. */
+s32 func_1501A764() {
+    return 0;
+}
 // void func_1501A764(s16 arg0, f32 arg1, f32 arg2, f32 arg3, f32 *arg4, f32 *arg5, f32 *arg6) {
 //     f32 sp34;
 //     f32 sp30;
@@ -110,15 +132,30 @@ void func_150A7A00(f32 arg0, f32 arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5, f
 //     *arg6 = (((f32) temp_v0_2->unk4C + (sp2C * sp28 * (f32) temp_v0_2->unk44)) * 32.0f);
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_476D0/func_1501A8C0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A8C0.s. */
+s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_476D0/func_1501AE94.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501AE94.s. */
+s32 func_1501AE94() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_476D0/func_1501AF44.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501AF44.s. */
+s32 func_1501AF44() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_476D0/func_1501B0A0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501B0A0.s. */
+s32 func_1501B0A0() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_476D0/func_1501B22C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501B22C.s. */
+s32 func_1501B22C() {
+    return 0;
+}
 // JUSTREG: I think?
 // void func_1501B22C(s32 arg0) {
 //     f32 tmp0;

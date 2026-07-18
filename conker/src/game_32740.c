@@ -3,8 +3,16 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15005290();
+s32 func_150054C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+s32 func_15005818();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_32740/func_15005290.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_32740/func_15005290.s. */
+s32 func_15005290() {
+    return 0;
+}
 // NON-MATCHING: first half ok, second half needs work
 // void func_15005290(s32 arg0, s32 arg1) {
 //     s32 pad0;
@@ -34,7 +42,10 @@
 //     D_800DC010 = allocate_memory((D_80082FA0 * 0x9A0) + 0x9A0, 1, 2, 0);
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_32740/func_150054C4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_32740/func_150054C4.s. */
+s32 func_150054C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    return 0;
+}
 // NON-MATCHING: not a terrible start.
 // void func_150054C4(struct108 *arg0, s32 arg1, s16 arg2, s32 arg3) {
 //     f32 temp_f2;
@@ -133,7 +144,10 @@
 //     arg0->unk23C = (u8)1;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_32740/func_15005818.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_32740/func_15005818.s. */
+s32 func_15005818() {
+    return 0;
+}
 // void func_15005818(struct108 *arg0, void *arg1, void *arg2) {
 //     void *sp48;
 //     f32 temp_f0;

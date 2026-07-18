@@ -3,6 +3,14 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1500C2F0();
+s32 func_1500C8D0();
+s32 func_1500CE4C();
+s32 func_1500D3AC();
+s32 func_1500D8C8();
+s32 func_1500DE88();
+/* End generated placeholder declarations. */
 
 void func_1500C2A0(void) {
     s32 i;
@@ -17,11 +25,23 @@ void func_1500C2A0(void) {
 }
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_39750/func_1500C2F0.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_39750/func_1500C8D0.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_39750/func_1500CE4C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_39750/func_1500C2F0.s. */
+s32 func_1500C2F0() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_39750/func_1500C8D0.s. */
+s32 func_1500C8D0() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_39750/func_1500CE4C.s. */
+s32 func_1500CE4C() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_39750/func_1500D3AC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_39750/func_1500D3AC.s. */
+s32 func_1500D3AC() {
+    return 0;
+}
 // void func_1500D3AC(s32 arg0, f32 arg1) {
 //
 //     f32 temp_f0;
@@ -107,9 +127,15 @@ void func_1500C2A0(void) {
 //     }
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_39750/func_1500D8C8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_39750/func_1500D8C8.s. */
+s32 func_1500D8C8() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_39750/func_1500DE88.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_39750/func_1500DE88.s. */
+s32 func_1500DE88() {
+    return 0;
+}
 // NON-MATCHING: not a bad start..
 // void func_1500DE88(s32 arg0, f32 arg1) {
 //

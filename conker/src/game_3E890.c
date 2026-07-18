@@ -3,6 +3,11 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_150113E0();
+s32 func_1501175C();
+/* End generated placeholder declarations. */
+
 #if 0
 f32 D_800964C0 = 175.5;
 f32 D_800964C4 = 115.4000015258789;
@@ -81,7 +86,10 @@ f32 D_8009650C = 5.8676557540893555;
 //     s8 sp104;
 // } structaaa;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_3E890/func_150113E0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_3E890/func_150113E0.s. */
+s32 func_150113E0() {
+    return 0;
+}
 // void func_150113E0(void) {
 //     struct181 *temp_v0;
 //     structaaa tmp;
@@ -171,7 +179,10 @@ f32 D_8009650C = 5.8676557540893555;
 //     }
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_3E890/func_1501175C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_3E890/func_1501175C.s. */
+s32 func_1501175C() {
+    return 0;
+}
 
 void func_15011A78(struct127 *arg0, u8 arg1, s32 arg2) {
     struct182 tmp;

@@ -12,6 +12,11 @@ PRAGMA = re.compile(
     r'^[ \t]*#pragma[ \t]+GLOBAL_ASM\("([^"]+)"\)[ \t]*$',
     re.MULTILINE,
 )
+KEEP_RAW = re.compile(
+    r'/\* Keep raw assembly\. \*/\s*\n[ \t]*#pragma[ \t]+'
+    r'GLOBAL_ASM\("([^"]+)"\)',
+    re.MULTILINE,
+)
 MARKER = re.compile(r"/\* Non-matching C placeholders for ([^ ]+\.s)\. \*/")
 DECLARATION_BLOCK = re.compile(
     r"\n?/\* Generated placeholder declarations\. \*/\n.*?"
@@ -24,14 +29,29 @@ def name_parameters(parameters):
     parameters = parameters.strip()
     if not parameters or parameters == "void":
         return parameters
+    parts = []
+    start = 0
+    depth = 0
+    for index, char in enumerate(parameters):
+        if char == "(":
+            depth += 1
+        elif char == ")":
+            depth -= 1
+        elif char == "," and depth == 0:
+            parts.append(parameters[start:index].strip())
+            start = index + 1
+    parts.append(parameters[start:].strip())
     result = []
-    for index, parameter in enumerate(part.strip() for part in parameters.split(",")):
+    for index, parameter in enumerate(parts):
         if parameter == "...":
             result.append(parameter)
             continue
+        function_pointer_name = re.search(
+            r"\(\s*\*\s*[A-Za-z_]\w*\s*\)", parameter
+        )
         pointer_name = re.search(r"\*\s*[A-Za-z_]\w*\s*(?:\[[^]]*\])?$", parameter)
         words = re.findall(r"[A-Za-z_]\w*", parameter)
-        has_name = bool(pointer_name) or (
+        has_name = bool(function_pointer_name) or bool(pointer_name) or (
             "*" not in parameter
             and len(words) >= 2
             and not (words[0] == "struct" and len(words) == 2)
@@ -47,7 +67,7 @@ def name_parameters(parameters):
 
 def declared_signature(name, texts):
     pattern = re.compile(
-        rf"^[ \t]*(?:extern[ \t]+)?"
+        rf"^[ \t]*(?P<storage>(?:extern|static)[ \t]+)?"
         rf"(?P<return>(?:struct[ \t]+\w+|[A-Za-z_]\w*)(?:[ \t]*\*)?)"
         rf"[ \t]*{re.escape(name)}[ \t]*\((?P<parameters>[^;{{}}]*)\)[ \t]*;",
         re.MULTILINE,
@@ -57,6 +77,8 @@ def declared_signature(name, texts):
             return_type = match.group("return").strip()
             if return_type in {"return", "if", "while", "for", "switch"}:
                 continue
+            if (match.group("storage") or "").strip() == "static":
+                return_type = f"static {return_type}"
             return (
                 re.sub(r"\s*\*\s*$", " *", return_type),
                 name_parameters(match.group("parameters")),
@@ -107,7 +129,16 @@ def load_headers(project_dir):
 
 def layouts(project_dir, asm_names, source_text, headers):
     result = {}
-    search_texts = [DECLARATION_BLOCK.sub("", source_text), *headers]
+    local_headers = []
+    for include_name in re.findall(r'^#include\s+"([^"]+)"', source_text, re.MULTILINE):
+        candidates = list((project_dir / "src").rglob(Path(include_name).name))
+        if candidates:
+            local_headers.append(candidates[0].read_text())
+    search_texts = [
+        DECLARATION_BLOCK.sub("", source_text),
+        *local_headers,
+        *headers,
+    ]
     for asm_name in asm_names:
         entries = function_layout(project_dir / asm_name)
         for name, size in entries:
@@ -116,9 +147,7 @@ def layouts(project_dir, asm_names, source_text, headers):
             if signature is None:
                 return_type = "void" if size < 12 else "s32"
                 counts = call_argument_counts(name, search_texts[0])
-                if len(counts) > 1:
-                    raise ValueError(f"{name} is called with multiple argument counts: {counts}")
-                count = counts[0] if counts else 0
+                count = counts[0] if len(counts) == 1 else 0
                 parameters = ", ".join(f"s32 arg{index}" for index in range(count))
             else:
                 return_type, parameters = signature
@@ -144,7 +173,8 @@ def replace_existing_definitions(text, typed_layout):
             placeholder_definition(name, size, return_type, parameters)
         ).rstrip()
         pattern = re.compile(
-            rf"^[A-Za-z_]\w*(?:[ \t]*\*)?[ \t]*{re.escape(name)}\([^)]*\) \{{\n"
+            rf"^(?:static[ \t]+)?[A-Za-z_]\w*(?:[ \t]*\*)?[ \t]*{re.escape(name)}"
+            rf"\((?:[^()]|\([^()]*\))*\) \{{\n"
             rf"(?:    return [^;]+;\n)?\}}",
             re.MULTILINE,
         )
@@ -178,7 +208,11 @@ def add_missing_declarations(text, typed_layout):
 def convert(path, project_dir, headers, check_only=False):
     path = Path(path)
     text = path.read_text()
-    pragmas = list(PRAGMA.finditer(text))
+    keep_raw = set(KEEP_RAW.findall(text))
+    pragmas = [
+        match for match in PRAGMA.finditer(text)
+        if match.group(1) not in keep_raw
+    ]
     asm_names = [match.group(1) for match in pragmas]
     if not asm_names:
         asm_names = MARKER.findall(text)

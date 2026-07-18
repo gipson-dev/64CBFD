@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15017640();
+/* End generated placeholder declarations. */
 
 void func_150175E0(void) {
     if ((D_800BE616 == 0) && ((D_800D2E4C->unk18 & 1) == 0)) {
@@ -12,7 +15,10 @@ void func_150175E0(void) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_44A90/func_15017640.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_44A90/func_15017640.s. */
+s32 func_15017640() {
+    return 0;
+}
 // void func_15017640(void) {
 //     s32 i;
 //     D_800D2458 = 0;

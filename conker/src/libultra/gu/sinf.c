@@ -3,4 +3,7 @@
 #include "variables.h"
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/gu/sinf/sinf.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/gu/sinf/sinf.s. */
+float sinf(float angle) {
+    return 0;
+}

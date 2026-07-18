@@ -3,6 +3,11 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15017930();
+s32 func_15017B20();
+s32 func_15017FA4();
+/* End generated placeholder declarations. */
 
 void func_15017790(void) {
     func_1509C120();
@@ -39,6 +44,15 @@ void func_15017868(void) {
     func_1509B4A0(*(((s16*)&D_800BE9F0)+1), 1); // er?
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_44C40/func_15017930.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_44C40/func_15017B20.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_44C40/func_15017FA4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_44C40/func_15017930.s. */
+s32 func_15017930() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_44C40/func_15017B20.s. */
+s32 func_15017B20() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_44C40/func_15017FA4.s. */
+s32 func_15017FA4() {
+    return 0;
+}

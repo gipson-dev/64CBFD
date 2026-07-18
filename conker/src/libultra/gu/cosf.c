@@ -3,4 +3,7 @@
 #include "variables.h"
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/gu/cosf/cosf.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/gu/cosf/cosf.s. */
+float cosf(float angle) {
+    return 0;
+}

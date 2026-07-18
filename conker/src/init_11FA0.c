@@ -3,6 +3,10 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_10012020();
+/* End generated placeholder declarations. */
+
 #if 0
 u32 jtbl_8002C410[5] = {
     0x10012120,
@@ -44,7 +48,10 @@ void func_10011FEC(void) {
 }
 
 // jump table
-#pragma GLOBAL_ASM("asm/nonmatchings/init_11FA0/func_10012020.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_11FA0/func_10012020.s. */
+s32 func_10012020() {
+    return 0;
+}
 // f32 func_10012020(void) {
 //     f32 sp68;
 //     f32 sp60;

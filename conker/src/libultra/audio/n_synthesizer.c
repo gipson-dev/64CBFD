@@ -2,7 +2,9 @@
 
 extern f32 D_8002C750;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_synthesizer/n_alSynNew.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_synthesizer/n_alSynNew.s. */
+void n_alSynNew(ALSynConfig *c) {
+}
 // void n_alSynNew(struct07 *arg0) {
 //     s32 sp44;
 //     // s32 sp40;
@@ -116,7 +118,10 @@ extern f32 D_8002C750;
 //     D_8002BA44->unk3C = sp34;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_synthesizer/n_alAudioFrame.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_synthesizer/n_alAudioFrame.s. */
+Acmd * n_alAudioFrame(Acmd *cmdList, s32 *cmdLen, s16 *outBuf, s32 outLen) {
+    return 0;
+}
 // void *n_alAudioFrame(void *arg0, void *arg1, s32 arg2, u32 arg3) {
 //     void *sp3C;
 //     void *sp38;
@@ -203,7 +208,9 @@ void _n_freeParam(ALParam *param)
   n_syn->paramList = param;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_synthesizer/_n_collectPVoices.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_synthesizer/_n_collectPVoices.s. */
+void _n_collectPVoices(void) {
+}
 
 void _n_freePVoice(N_PVoice *pvoice) {
     if (pvoice->node.next != NULL) {

@@ -2,6 +2,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1509DDFC();
+/* End generated placeholder declarations. */
 
 s32 func_1509DD10(s32 arg0) {
     return 1;
@@ -33,7 +36,10 @@ s32 func_15084000(s32);
 void func_15178C34(u8, s32, s32, s32, s32);
 void func_15178BE4(u8, f32*, s32);
 s32 func_15178C9C(u8 arg0, s32 arg1);
-#pragma GLOBAL_ASM("asm/nonmatchings/game_CB1C0/func_1509DDFC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_CB1C0/func_1509DDFC.s. */
+s32 func_1509DDFC() {
+    return 0;
+}
 // NON-MATCHING: what is the logic here!?
 // s32 func_1509DDFC(s32 arg0, s32 arg1, struct215 *arg2) {
 //     // if (arg1 == 1) {

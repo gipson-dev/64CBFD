@@ -3,8 +3,14 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15008BF0();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_360A0/func_15008BF0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_360A0/func_15008BF0.s. */
+s32 func_15008BF0() {
+    return 0;
+}
 // NON-MATCHING: absolute mess
 // s32 func_15008BF0(struct110 *arg0) {
 //     struct109 tmp;

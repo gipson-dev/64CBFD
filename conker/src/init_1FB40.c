@@ -1,7 +1,13 @@
 #include <n_libaudio.h>
 
+/* Generated placeholder declarations. */
+s32 func_1001FB40();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1FB40/func_1001FB40.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1FB40/func_1001FB40.s. */
+s32 func_1001FB40() {
+    return 0;
+}
 // void *func_1001FB40(s32 arg0, void *arg1) {
 //     void *sp54;
 //     s32 sp50;

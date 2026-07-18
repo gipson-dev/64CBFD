@@ -67,7 +67,10 @@ f32 func_15048864(f32 arg0) {
     return (arg0 < 0.0f) ? (255.0f - temp_f14) : temp_f14;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_75C90/func_150488C8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_75C90/func_150488C8.s. */
+f32 func_150488C8(f32 arg0) {
+    return 0.0f;
+}
 // NON-MATCHING: needs more work
 // f32 func_150488C8(f32 arg0) {
 //     f32 temp_f16;

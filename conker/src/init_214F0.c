@@ -3,9 +3,21 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_100214F0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+s32 func_10021C40();
+s32 func_10021E4C();
+/* End generated placeholder declarations. */
+
 // struct21 *func_100214F0(struct42 *arg0, void *arg1, s32 arg2, void *struct21);
-#pragma GLOBAL_ASM("asm/nonmatchings/init_214F0/func_100214F0.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/init_214F0/func_10021C40.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_214F0/func_100214F0.s. */
+s32 func_100214F0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/init_214F0/func_10021C40.s. */
+s32 func_10021C40() {
+    return 0;
+}
 // ? func_10021C40(void *arg0, s32 arg1, s32 arg2) {
 //     s32 temp_s0;
 //     s32 temp_s0_2;
@@ -54,4 +66,7 @@
 //     return 0;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_214F0/func_10021E4C.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_214F0/func_10021E4C.s. */
+s32 func_10021E4C() {
+    return 0;
+}

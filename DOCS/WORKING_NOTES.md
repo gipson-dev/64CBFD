@@ -25,6 +25,23 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, total raw conversion crossed 99%).**
+Replaced 416 validated `GLOBAL_ASM` groups across 105 mixed sources and added
+40 typed standalone libultra slices representing 80 tracked functions. The
+standalone build path now resolves root and nested libultra assembly slices,
+preserves retail placement, avoids macro-shadowed function names, and indexes
+the assembly tree once when patching the linker script. Mixed-source signature
+discovery now handles nested function pointers, local `static` declarations,
+directly included source headers, and inconsistent legacy call arities. Raw C
+conversion is now total `5973 / 6033 (99.01%)`, init `508 / 538 (94.42%)`,
+game `5284 / 5313 (99.45%)`, and debugger `181 / 182 (99.45%)`.
+Byte-weighted conversion is total `98.34%`, init `90.79%`, game `98.93%`, and
+debugger `99.19%`. Byte-exact progress is `1581 / 5973 (26.47%)`, with 27
+address-blocked and 4365 differing functions. The 60-function raw remainder is
+explicit: `init_5AB0` (26), `D7980` (9), `D5650` (7), `D2570` (6),
+`game_2DF70` (6), `n_csplayer` (2), and one function each in
+`debugger_258ED0`, `D70F0`, init `sinf`, and init `sqrtf`.
+
 **Update (2026-07-18, total raw conversion crossed 90%).**
 Added 167 more safe standalone generated slices and converted all 246
 `GLOBAL_ASM` groups across the eight largest remaining mixed game sources:

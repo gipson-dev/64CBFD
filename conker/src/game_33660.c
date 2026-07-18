@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15006234();
+/* End generated placeholder declarations. */
 
 void func_150061B0(void) {
     osCreateMesgQueue(&D_800BE900, &D_800BE2D0, 8);
@@ -14,4 +17,7 @@ void func_150061B0(void) {
     func_15007644();
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33660/func_15006234.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_33660/func_15006234.s. */
+s32 func_15006234() {
+    return 0;
+}

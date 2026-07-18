@@ -2,6 +2,11 @@
 
 #include "macros.h"
 
+/* Generated placeholder declarations. */
+s32 func_10008180();
+s32 func_10008CE8();
+/* End generated placeholder declarations. */
+
 typedef struct {
   u8 pad0[0x760];
 } struct247; // something naudio related?
@@ -29,7 +34,10 @@ void func_10018D00(N_ALCSPlayer *arg0, s16 arg1);
 void func_10018D50(N_ALCSPlayer *seqp);
 
 // this one is a monster
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8180/func_10008180.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8180/func_10008180.s. */
+s32 func_10008180() {
+    return 0;
+}
 
 void func_100084D8(u8 idx) {
     if ((n_alCSPGetState(D_8003C900[idx]) == 0) || (n_alCSPGetState(D_8003C900[idx]) == 3)) {
@@ -174,7 +182,10 @@ void func_10008C6C(u8 idx, u8 arg1) {
     func_100186DC(&D_8003CA58[idx], (u8 *)&D_8003CD48[idx] + (arg1 * 0xEC));
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8180/func_10008CE8.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8180/func_10008CE8.s. */
+s32 func_10008CE8() {
+    return 0;
+}
 // NON-MATCHING: 80% of the way there
 // s32 func_10008CE8(u8 idx, u16 arg1) {
 //     s32 sp3C;

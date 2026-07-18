@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_150440A0();
+/* End generated placeholder declarations. */
 
 void func_15043D90(Mtx *m, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9) {
     f32 sp18[4][4];
@@ -68,4 +71,7 @@ void func_15043FF0(vertex *arg0, struct113 *arg1) {
     arg0->z += arg1->unk3C * 0.000015258789f;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_71240/func_150440A0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_71240/func_150440A0.s. */
+s32 func_150440A0() {
+    return 0;
+}

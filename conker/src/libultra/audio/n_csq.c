@@ -1,8 +1,19 @@
 #include <n_libaudio.h>
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csq/n_alCSeqNew.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csq/n_alCSeqNextEvent.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csq/__n_alCSeqGetTrackEvent.s")
+/* Generated placeholder declarations. */
+s32 __n_alCSeqGetTrackEvent();
+/* End generated placeholder declarations. */
+
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_csq/n_alCSeqNew.s. */
+void n_alCSeqNew(ALCSeq *seq, u8 *ptr) {
+}
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_csq/n_alCSeqNextEvent.s. */
+void n_alCSeqNextEvent(ALCSeq *seq, N_ALEvent *evt) {
+}
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_csq/__n_alCSeqGetTrackEvent.s. */
+s32 __n_alCSeqGetTrackEvent() {
+    return 0;
+}
 void func_100186DC(ALCSeq *seq, ALCSeqMarker *marker) {
     s32 i;
 
@@ -19,7 +30,9 @@ void func_100186DC(ALCSeq *seq, ALCSeqMarker *marker) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csq/func_10018790.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_csq/func_10018790.s. */
+void func_10018790(void *arg0, s32 arg1, u32 arg2, u32 arg3) {
+}
 
 u8 __getTrackByte(ALCSeq *seq, s32 track) {
     u8 theByte;

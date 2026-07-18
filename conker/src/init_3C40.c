@@ -3,13 +3,22 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_10004074(s32 arg0);
+/* End generated placeholder declarations. */
 
 s32 allocate_memory(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return func_10003C6C(arg0, arg1, arg2, 0, arg3);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_3C40/func_10003C6C.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/init_3C40/func_10004074.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_3C40/func_10003C6C.s. */
+s32 func_10003C6C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/init_3C40/func_10004074.s. */
+s32 func_10004074(s32 arg0) {
+    return 0;
+}
 
 void func_10004250(void) {
     s32 temp_v0;

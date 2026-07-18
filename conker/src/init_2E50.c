@@ -3,9 +3,15 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_10002E50();
+/* End generated placeholder declarations. */
 
 extern void (*jtbl_8002C080[])(void);
-#pragma GLOBAL_ASM("asm/nonmatchings/init_2E50/func_10002E50.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_2E50/func_10002E50.s. */
+s32 func_10002E50() {
+    return 0;
+}
 // NON-MATCHING: lots to figure out
 // void func_10002E50(struct158 *arg0) {
 //     s32 phi_s0;

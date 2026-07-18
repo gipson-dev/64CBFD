@@ -3,13 +3,31 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1001ED6C();
+s32 func_1001F28C();
+s32 func_1001F5A4();
+s32 func_1001F79C();
+s32 func_1001F978();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1E530/func_1001E530.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1E530/func_1001ED6C.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1E530/func_1001E530.s. */
+void func_1001E530(s32 arg0, void *arg1, s32 arg2) {
+}
+/* Non-matching C placeholders for asm/nonmatchings/init_1E530/func_1001ED6C.s. */
+s32 func_1001ED6C() {
+    return 0;
+}
 // _n_loadOutputBuffer ?
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1E530/func_1001F28C.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1E530/func_1001F28C.s. */
+s32 func_1001F28C() {
+    return 0;
+}
 // _n_loadBuffer ?
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1E530/func_1001F5A4.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1E530/func_1001F5A4.s. */
+s32 func_1001F5A4() {
+    return 0;
+}
 // void *func_1001F5A4(void *arg0, s32 arg1, u32 arg2, s32 arg3, s32 arg4, void *arg5) {
 //     void *sp34;
 //     s32 sp30;
@@ -52,7 +70,10 @@
 //     return sp34;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1E530/func_1001F79C.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1E530/func_1001F79C.s. */
+s32 func_1001F79C() {
+    return 0;
+}
 // void *func_1001F79C(void *arg0, s32 arg1, u32 arg2, s32 arg3, void *arg4) {
 //     void *sp34;
 //     s32 sp30;
@@ -95,7 +116,10 @@
 //     return sp34;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1E530/func_1001F978.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1E530/func_1001F978.s. */
+s32 func_1001F978() {
+    return 0;
+}
 // NON-MATCHING: lots of work still to do
 // struct56 *func_1001F978(struct55 *arg0, s32 arg1, s32 arg2, struct56 *arg3) {
 //     struct56 *sp24;

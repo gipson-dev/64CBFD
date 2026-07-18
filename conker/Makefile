@@ -51,7 +51,9 @@ SRC_DIRS := $(SRC_DIR) \
 						$(LIBULTRA_SRC_DIRS)
 
 GENERATED_SLICE_C_FILES := $(wildcard $(SRC_DIR)/game/generated_*.c)
-GENERATED_SLICE_ASM_FILES := $(patsubst $(SRC_DIR)/game/generated_%.c,asm/%.s,$(GENERATED_SLICE_C_FILES))
+generated_slice_asm = $(firstword $(wildcard asm/$(1).s asm/libultra/*/$(1).s))
+GENERATED_SLICE_ASM_FILES := $(foreach file,$(GENERATED_SLICE_C_FILES),\
+	$(call generated_slice_asm,$(patsubst generated_%,%,$(basename $(notdir $(file))))))
 
 S_FILES   = $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 S_FILES   := $(filter-out $(GENERATED_SLICE_ASM_FILES),$(S_FILES))
@@ -268,10 +270,11 @@ endif
 endif
 
 ifeq ($(VERSION),us)
+.SECONDEXPANSION:
 $(GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.o: \
-		$(SRC_DIR)/game/generated_%.c asm/%.s ../tools/pad_generated_object.py Makefile
+		$(SRC_DIR)/game/generated_%.c $$(call generated_slice_asm,$$*) ../tools/pad_generated_object.py Makefile
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
-	$(PYTHON) ../tools/pad_generated_object.py $@.compact asm/$*.s $@.padded.s
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
 

@@ -3,6 +3,17 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15006590();
+s32 func_15006BEC();
+s32 func_1500707C();
+s32 func_15007168();
+s32 func_1500727C();
+s32 func_15007360();
+s32 func_15007440();
+s32 func_15007558();
+s32 func_15007778();
+/* End generated placeholder declarations. */
 
 void func_150064E0(void) {
     s32 i = 0;
@@ -17,15 +28,39 @@ void func_150064E0(void) {
     D_800D2E45 = 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33990/func_15006590.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33990/func_15006BEC.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33990/func_1500707C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15006590.s. */
+s32 func_15006590() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15006BEC.s. */
+s32 func_15006BEC() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_1500707C.s. */
+s32 func_1500707C() {
+    return 0;
+}
 // requires jump table
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33990/func_15007168.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33990/func_1500727C.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33990/func_15007360.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33990/func_15007440.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33990/func_15007558.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15007168.s. */
+s32 func_15007168() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_1500727C.s. */
+s32 func_1500727C() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15007360.s. */
+s32 func_15007360() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15007440.s. */
+s32 func_15007440() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15007558.s. */
+s32 func_15007558() {
+    return 0;
+}
 
 void func_15007644(void) {
 }
@@ -74,7 +109,10 @@ void func_15007750(s32 arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_33990/func_15007778.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15007778.s. */
+s32 func_15007778() {
+    return 0;
+}
 // NON-MATCHING: should probably start over..
 // void func_15007778(void) {
 //     s32 phi_v0;

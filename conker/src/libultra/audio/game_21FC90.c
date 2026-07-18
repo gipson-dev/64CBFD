@@ -1,5 +1,17 @@
 #include <n_libaudio.h>
 
+/* Generated placeholder declarations. */
+s32 func_151F27E0();
+s32 func_151F2890();
+s32 func_151F2BE8();
+s32 func_151F2C4C();
+s32 func_151F2CDC();
+s32 func_151F2D6C();
+s32 func_151F2E88();
+s32 func_151F39E4();
+s32 func_151F3D78();
+/* End generated placeholder declarations. */
+
 extern s32  D_800E0E00;
 extern s32  D_800E0E04;
 extern s32  D_800E0E10;
@@ -20,9 +32,15 @@ extern s32  D_800E0DE4;
 extern s32  D_800E0DFC;
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F27E0.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F27E0.s. */
+s32 func_151F27E0() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F2890.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F2890.s. */
+s32 func_151F2890() {
+    return 0;
+}
 
 void func_151F2960(s32 arg0, s32 arg1) {
     if (D_800E0DFC == 0) {
@@ -79,13 +97,25 @@ void func_151F2BA8(void) {
     osSetIntMask(mask);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F2BE8.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F2BE8.s. */
+s32 func_151F2BE8() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F2C4C.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F2C4C.s. */
+s32 func_151F2C4C() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F2CDC.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F2CDC.s. */
+s32 func_151F2CDC() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F2D6C.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F2D6C.s. */
+s32 func_151F2D6C() {
+    return 0;
+}
 
 void func_151F2DFC(s32 arg0, s32 arg1) {
     if (arg0 >= 0x80) {
@@ -109,9 +139,15 @@ void func_151F2E4C(s32 arg0, s32 arg1) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F2E88.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F2E88.s. */
+s32 func_151F2E88() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F39E4.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F39E4.s. */
+s32 func_151F39E4() {
+    return 0;
+}
 
 void func_151F3C1C(s32 arg0) {
     D_800E0E00 = arg0;
@@ -121,6 +157,11 @@ void func_151F3C34(s32 arg0) {
     D_800E0DFC = arg0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F3C4C.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F3C4C.s. */
+void func_151F3C4C(void) {
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/game_21FC90/func_151F3D78.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F3D78.s. */
+s32 func_151F3D78() {
+    return 0;
+}

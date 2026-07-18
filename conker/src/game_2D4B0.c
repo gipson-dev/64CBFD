@@ -3,6 +3,11 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_150000B0();
+s32 func_150006E0();
+/* End generated placeholder declarations. */
+
 void func_15000000(void) {
     OSMesgQueue *msgQueue;
     s32 i;
@@ -23,7 +28,10 @@ void func_15000090(void) {
 }
 
 // maybe next year...
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2D4B0/func_150000B0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_2D4B0/func_150000B0.s. */
+s32 func_150000B0() {
+    return 0;
+}
 // void func_150000B0(void) {
 //     u8 sp6D;
 //     u8 sp6C;
@@ -417,7 +425,10 @@ void func_15000090(void) {
 //     func_10017944(1, sp6D);
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2D4B0/func_150006E0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_2D4B0/func_150006E0.s. */
+s32 func_150006E0() {
+    return 0;
+}
 // NON-MATCHING: almost only reg remaining
 // void func_150006E0(void) {
 //     s32 i;

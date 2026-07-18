@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_10002718();
+/* End generated placeholder declarations. */
 
 s32 func_10002070(s32 arg0, s32 arg1, s32 arg2) {
     return 1;
@@ -16,7 +19,12 @@ void func_10002088(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 }
 
 // this is a beast:
-#pragma GLOBAL_ASM("asm/nonmatchings/init_2070/func_100020D0.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_2070/func_100020D0.s. */
+void func_100020D0(s32 (*arg0)(s32, s32, s32), s32 arg1, s32 arg2, s32 *arg3) {
+}
 
 // contains a jump table
-#pragma GLOBAL_ASM("asm/nonmatchings/init_2070/func_10002718.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_2070/func_10002718.s. */
+s32 func_10002718() {
+    return 0;
+}

@@ -1,5 +1,12 @@
 #include <n_libaudio.h>
 
+/* Generated placeholder declarations. */
+s32 func_100155A0();
+s32 _n_handleEvent(s32 arg0);
+s32 func_10016F80(s32 arg0, s32 arg1, s32 arg2);
+s32 func_10017438();
+s32 func_10017780();
+/* End generated placeholder declarations. */
 
 typedef struct {
     s32 pad0;
@@ -36,7 +43,10 @@ void func_10015550(N_ALCSPlayer *csp, s32 arg1) {
     n_alEvtqPostEvent(&csp->evtq, &event, 0, 2);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_15550/func_100155A0.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_15550/func_100155A0.s. */
+s32 func_100155A0() {
+    return 0;
+}
 
 s32 func_10015878(N_ALSndPlayer *sp) {
     N_ALSndPlayer *alsp;
@@ -61,7 +71,10 @@ s32 func_10015878(N_ALSndPlayer *sp) {
 }
 
 // jump table
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_15550/_n_handleEvent.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_15550/_n_handleEvent.s. */
+s32 _n_handleEvent(s32 arg0) {
+    return 0;
+}
 
 void func_10016E90(N_ALUnknownStruct1 *arg0) {
     if ((arg0->unk53 & 4) != 0) {
@@ -86,7 +99,10 @@ void func_10016F00(struct154 *arg0) {
     n_alEvtqPostEvent(&D_8002BA2C->evtq, &event, 33333, 2);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_15550/func_10016F80.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_15550/func_10016F80.s. */
+s32 func_10016F80(s32 arg0, s32 arg1, s32 arg2) {
+    return 0;
+}
 // void func_10016F80(void *arg0, s32 arg1, u16 arg2) {
 //     void *sp3C;
 //     void *sp38;
@@ -233,7 +249,10 @@ s32 func_100173C4(N_ALUnknownEvent2 *arg0) {
     return ret;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_15550/func_10017438.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_15550/func_10017438.s. */
+s32 func_10017438() {
+    return 0;
+}
 // void *func_10017438(s32 arg0, s16 arg1, u16 arg2, u8 arg3, f32 arg4, u8 arg5, u8 arg6, void *arg7) {
 //     void *sp34;
 //     void *sp30;
@@ -327,7 +346,10 @@ void func_10017714(s32 arg0, s16 type, s32 arg2) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_15550/func_10017780.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_15550/func_10017780.s. */
+s32 func_10017780() {
+    return 0;
+}
 // NON-MATCHING: far from matching
 // void func_10017780(u8 arg0, u16 arg1) {
 //     s32 sp34;

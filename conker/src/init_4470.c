@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_100046E4();
+/* End generated placeholder declarations. */
 
 void func_10004470(void) {
     int i;
@@ -67,7 +70,10 @@ void func_10004674(void) {
     D_8003A571 = 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_4470/func_100046E4.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_4470/func_100046E4.s. */
+s32 func_100046E4() {
+    return 0;
+}
 // NON-MATCHING: stack isnt right
 // void func_100046E4(s32 devAddr, void *dramAddr, u32 size) {
 //     s32 _dramAddr;
@@ -106,7 +112,9 @@ void func_10004674(void) {
 //     }
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_4470/func_1000480C.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_4470/func_1000480C.s. */
+void func_1000480C(s32 devAddr, void *dramAddr, u32 size) {
+}
 // void func_1000480C(s32 devAddr, void *dramAddr, u32 size) {
 //     s32 sp38;
 //     s32 *temp_t0;

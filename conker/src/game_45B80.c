@@ -3,6 +3,16 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1501878C();
+s32 func_15019130();
+s32 func_15019464();
+s32 func_150195A0();
+s32 func_150198FC();
+s32 func_15019BB8();
+s32 func_15019CC8();
+s32 func_15019F20();
+/* End generated placeholder declarations. */
 
 void* func_151674F8(void *arg0, s32 arg1, s16 arg2, s32 arg3);
 
@@ -28,7 +38,10 @@ void func_150186D0(void) {
 }
 
 // something big and interesting
-#pragma GLOBAL_ASM("asm/nonmatchings/game_45B80/func_1501878C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_1501878C.s. */
+s32 func_1501878C() {
+    return 0;
+}
 
 void func_15018DFC(void) {
     func_150A09D0(D_800BE9E4);
@@ -97,7 +110,10 @@ void func_1501905C(void) {
 }
 
 // few loops
-#pragma GLOBAL_ASM("asm/nonmatchings/game_45B80/func_15019130.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019130.s. */
+s32 func_15019130() {
+    return 0;
+}
 
 void func_15019414(void) {
     if (D_800BEAC0 == 0) {
@@ -109,7 +125,10 @@ void func_15019414(void) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_45B80/func_15019464.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019464.s. */
+s32 func_15019464() {
+    return 0;
+}
 // NON-MATCHING: 70% of the way there... maybe.
 // s32 func_15019464(Gfx *arg0, s16 arg1) {
 //     s32 temp_s0;
@@ -135,11 +154,20 @@ void func_15019414(void) {
 //
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_45B80/func_150195A0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_150195A0.s. */
+s32 func_150195A0() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_45B80/func_150198FC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_150198FC.s. */
+s32 func_150198FC() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_45B80/func_15019BB8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019BB8.s. */
+s32 func_15019BB8() {
+    return 0;
+}
 // NON-MATCHING: need to figure out what is going on
 // void func_15019BB8(struct14 *arg0, s32 arg1) {
 //     s32 temp_v0;
@@ -162,7 +190,10 @@ void func_15019414(void) {
 //     func_151674F8(temp_v0, 4, sp2A, 1);
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_45B80/func_15019CC8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019CC8.s. */
+s32 func_15019CC8() {
+    return 0;
+}
 
 void func_15019E60(Gfx *arg0) {
     if (D_80082FA0 != 0) {
@@ -174,4 +205,7 @@ void func_15019E60(Gfx *arg0) {
     func_15043384(func_151E8620(func_1501A490(arg0, 0xFF, 0, 0, 0, 0)));
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_45B80/func_15019F20.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019F20.s. */
+s32 func_15019F20() {
+    return 0;
+}

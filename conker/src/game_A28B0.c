@@ -3,6 +3,19 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15075938();
+s32 func_1507602C();
+s32 func_15076768();
+s32 func_15077508();
+s32 func_15077F64();
+s32 func_150793D8();
+s32 func_15079B30();
+s32 func_15079FBC();
+s32 func_1507B974();
+s32 func_1507BB28();
+/* End generated placeholder declarations. */
+
 void func_1502EA60(struct127 *arg0, u8 arg1);
 void func_1502EA7C(struct127 *arg0, u8 arg1);
 f32 func_150489B0(u8 arg0);
@@ -144,7 +157,10 @@ void func_15075884(void) {
     D_800D154C->unk44 = 2.0f * (temp_f0 / D_800D1891);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15075938.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15075938.s. */
+s32 func_15075938() {
+    return 0;
+}
 // NON-MATCHING: 2nd half ok, 1st is a mystery
 // void func_15075938(void) {
 //     u8 tmp;
@@ -333,7 +349,10 @@ void func_15075F6C(void) {
     D_800D154C->unk3A = D_800D1893;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507602C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_1507602C.s. */
+s32 func_1507602C() {
+    return 0;
+}
 // NON-MATCHING: indexing is wrong
 // void func_1507602C(void) {
 //     f32 temp_f12;
@@ -482,7 +501,10 @@ void func_15076760(void) {
 }
 
 // ???
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15076768.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15076768.s. */
+s32 func_15076768() {
+    return 0;
+}
 
 
 // NON-MATCHING: JUSTREG
@@ -746,7 +768,10 @@ void func_150774B4(void) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15077508.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15077508.s. */
+s32 func_15077508() {
+    return 0;
+}
 
 // NON-MATCHING: close but not there yet
 void func_150778F0(void) {
@@ -888,7 +913,10 @@ void func_15077F34(void) {
     D_800D154C->unk250 = D_800D1891;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15077F64.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15077F64.s. */
+s32 func_15077F64() {
+    return 0;
+}
 // NON-MATCHING: what is D_800D2104 ???
 // void func_15056A00(s32, s32, u8);
 // void func_15077F64(void) {
@@ -1273,7 +1301,10 @@ void func_15079390(void) {
     func_1514D3B0(D_800D154C, tmp0, tmp1, tmp2);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_150793D8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_150793D8.s. */
+s32 func_150793D8() {
+    return 0;
+}
 
 // NON-MATCHING: JUSTREG - t1 not t0
 void func_15079570(void) {
@@ -1389,7 +1420,10 @@ u16 func_15079A98(s32 arg0) {
 }
 
 // requires jump table
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15079B30.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15079B30.s. */
+s32 func_15079B30() {
+    return 0;
+}
 
 void func_15079F24(void) {
     D_800D154C->unk48 = D_800D1898[D_800D1890];
@@ -1410,7 +1444,10 @@ void func_15079F6C(void) {
     D_800D154C->unk226 = D_800D1893;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15079FBC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15079FBC.s. */
+s32 func_15079FBC() {
+    return 0;
+}
 // NON-MATCHING: JUSTREG
 // void func_15079FBC(void) {
 //     s16 phi_v1;
@@ -1979,7 +2016,10 @@ void func_1507B958(void) {
     D_800D154C->unkB0 = D_800D1890;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507B974.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_1507B974.s. */
+s32 func_1507B974() {
+    return 0;
+}
 // NON-MATCHING: dont think D_800D2104 is correct
 // void func_1507B974(void) {
 //     struct127 *phi_v1;
@@ -2018,7 +2058,10 @@ void func_1507BB20(void) {
 }
 
 // scary loops
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_1507BB28.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_1507BB28.s. */
+s32 func_1507BB28() {
+    return 0;
+}
 
 void func_1507BC14(struct127 *arg0) {
 

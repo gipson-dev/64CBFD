@@ -3,6 +3,11 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_150AE790();
+s32 func_150AEB9C();
+s32 func_150AEDF8();
+/* End generated placeholder declarations. */
 
 void func_150AE5B0(struct108 *arg0) {
     if ((D_800D2E4C->unk4 & 0x80) == 0) {
@@ -37,9 +42,15 @@ void func_150AE5B0(struct108 *arg0) {
 }
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_DBA60/func_150AE790.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_DBA60/func_150AE790.s. */
+s32 func_150AE790() {
+    return 0;
+}
 // some funky xor going on
-#pragma GLOBAL_ASM("asm/nonmatchings/game_DBA60/func_150AEB9C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_DBA60/func_150AEB9C.s. */
+s32 func_150AEB9C() {
+    return 0;
+}
 
 void func_150AECCC(struct42 *arg0) {
     arg0->unk96 = arg0->unk96 + (arg0->unk94 * D_800BE9E4);
@@ -86,7 +97,10 @@ s32 func_150AEDD8(struct202 *arg0) {
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_DBA60/func_150AEDF8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_DBA60/func_150AEDF8.s. */
+s32 func_150AEDF8() {
+    return 0;
+}
 // void func_150AEDF8(void *arg0, void *arg1, s32 arg2) {
 //     s32 temp_a0;
 //     s32 temp_t6;

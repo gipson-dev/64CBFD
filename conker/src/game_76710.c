@@ -3,6 +3,10 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15049350();
+/* End generated placeholder declarations. */
+
 extern f32 D_80099080;
 void func_150AAD98(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8);
 
@@ -28,4 +32,7 @@ void func_150492CC(f32 arg0, f32 arg1, f32 arg2) {
 }
 
 // too many temp vars
-#pragma GLOBAL_ASM("asm/nonmatchings/game_76710/func_15049350.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_76710/func_15049350.s. */
+s32 func_15049350() {
+    return 0;
+}

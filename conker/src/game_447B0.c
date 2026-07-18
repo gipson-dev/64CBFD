@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_150174C0(s32 arg0);
+/* End generated placeholder declarations. */
 
 void func_15017300(s16 arg0, s16 arg1) {
     s32 i;
@@ -36,7 +39,10 @@ void func_15017498(void) {
 }
 
 // double-loop
-#pragma GLOBAL_ASM("asm/nonmatchings/game_447B0/func_150174C0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_447B0/func_150174C0.s. */
+s32 func_150174C0(s32 arg0) {
+    return 0;
+}
 
 void func_15017578(s32 arg0) {
     u32 tmp = 0;

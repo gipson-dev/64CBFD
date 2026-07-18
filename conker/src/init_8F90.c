@@ -3,8 +3,18 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_10008F90();
+s32 func_100095A0(s32 arg0, s32 arg1);
+s32 func_100099BC();
+s32 func_1000A03C();
+s32 func_1000A348();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8F90/func_10008F90.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10008F90.s. */
+s32 func_10008F90() {
+    return 0;
+}
 // NON-MATCHING: so much to do
 // void func_10008F90(struct15 *arg0, OSPri arg1, struct52 *arg2) {
 //     // ? sp160;
@@ -160,7 +170,9 @@ void func_100093CC(void) {
 }
 
 // audio thread
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8F90/func_10009400.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10009400.s. */
+void func_10009400(s32 arg0) {
+}
 // NON-MATCHING: a long way to go
 // void func_10009400(s32 arg0) {
 //     OSMesg *msg;
@@ -213,7 +225,10 @@ void func_100093CC(void) {
 //     }
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8F90/func_100095A0.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_100095A0.s. */
+s32 func_100095A0(s32 arg0, s32 arg1) {
+    return 0;
+}
 // NON-MATCHING: so far away
 // s32 func_100095A0(struct50 *arg0, struct51 *arg1) {
 //     s32 sp3C;
@@ -282,7 +297,10 @@ void func_100093CC(void) {
 //     return 1;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8F90/func_100097CC.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_100097CC.s. */
+s32 func_100097CC(u32 arg0, s32 arg1, s32 arg2) {
+    return 0;
+}
 // NON-MATCHING: another horrible function
 // s32 func_100097CC(u32 arg0, s32 arg1, s32 arg2) {
 //     s32 sp2C;
@@ -384,7 +402,10 @@ s32 func_10009980(s32 *arg0) {
     return func_100097CC;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8F90/func_100099BC.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_100099BC.s. */
+s32 func_100099BC() {
+    return 0;
+}
 
 void func_10009B2C(struct54 *arg0) {
     if (((s32)arg0 & 1) == 0) {
@@ -414,7 +435,9 @@ void func_10009B90(struct54 *arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8F90/func_10009BE4.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10009BE4.s. */
+void func_10009BE4(struct147 *arg0) {
+}
 // void func_10009BE4(struct00 *arg0) {
 //     struct00 *temp_a1;
 //     struct00 *temp_v0;
@@ -454,7 +477,10 @@ void func_10009B90(struct54 *arg0) {
 //     // return temp_v0;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8F90/func_10009CBC.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10009CBC.s. */
+s32 func_10009CBC(void *arg0, s32 arg1) {
+    return 0;
+}
 
 s32 func_10009FFC(void) {
     if (D_800406A0.unk0 == 0) {
@@ -467,5 +493,11 @@ s32 func_10009FFC(void) {
     return func_10009CBC;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8F90/func_1000A03C.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/init_8F90/func_1000A348.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_1000A03C.s. */
+s32 func_1000A03C() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_1000A348.s. */
+s32 func_1000A348() {
+    return 0;
+}

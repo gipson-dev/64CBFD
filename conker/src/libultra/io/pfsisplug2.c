@@ -2,13 +2,21 @@
 #include "controller.h"
 #include "siint.h"
 
+/* Generated placeholder declarations. */
+s32 osPfsIsPlug2(s32 arg0, s32 arg1);
+s32 __osPfsRequestData2();
+s32 __osPfsGetInitData2(s32 arg0, s32 arg1);
+/* End generated placeholder declarations. */
 
 extern OSPifRam __osPfsPifRam; // D_800429D0
 extern u8 _osLastSentSiCmd;   // D_80042A50
 extern u8 _osContNumControllers; // D_80042A51 (__osMaxControllers) ?
 // extern u8 __osMaxControllers; // D_80042A51
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/io/pfsisplug2/osPfsIsPlug2.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/io/pfsisplug2/osPfsIsPlug2.s. */
+s32 osPfsIsPlug2(s32 arg0, s32 arg1) {
+    return 0;
+}
 // s32 osPfsIsPlug2(OSMesgQueue *queue, u8 *pattern)
 // {
 //     s32 ret;
@@ -54,7 +62,10 @@ extern u8 _osContNumControllers; // D_80042A51 (__osMaxControllers) ?
 //     }
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/io/pfsisplug2/__osPfsRequestData2.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/io/pfsisplug2/__osPfsRequestData2.s. */
+s32 __osPfsRequestData2() {
+    return 0;
+}
 // void __osPfsRequestData2(u8 cmd) {
 //     u8 *ptr;
 //     __OSContRequesFormat requestformat;
@@ -84,7 +95,10 @@ extern u8 _osContNumControllers; // D_80042A51 (__osMaxControllers) ?
 //     *ptr = CONT_CMD_END;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/io/pfsisplug2/__osPfsGetInitData2.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/io/pfsisplug2/__osPfsGetInitData2.s. */
+s32 __osPfsGetInitData2(s32 arg0, s32 arg1) {
+    return 0;
+}
 // void __osPfsGetInitData2(u8 *pattern, OSContStatus *data)
 // {
 //     u8 *ptr;

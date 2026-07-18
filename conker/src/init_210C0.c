@@ -3,5 +3,11 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_100210C0();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_210C0/func_100210C0.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_210C0/func_100210C0.s. */
+s32 func_100210C0() {
+    return 0;
+}

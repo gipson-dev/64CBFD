@@ -87,5 +87,7 @@ void func_100052A0(s32 arg0) {
     while(1) {};
 }
 #else
-#pragma GLOBAL_ASM("asm/nonmatchings/init_50A0/func_100052A0.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_50A0/func_100052A0.s. */
+void func_100052A0(s32 arg0) {
+}
 #endif

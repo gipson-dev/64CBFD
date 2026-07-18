@@ -2,8 +2,15 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1512DD50();
+s32 func_1512DEA4();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_15B200/func_1512DD50.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_15B200/func_1512DD50.s. */
+s32 func_1512DD50() {
+    return 0;
+}
 // void func_1512DD50(struct108 *arg0) {
 //     s32 pad;
 //     struct17 tmp;
@@ -45,4 +52,7 @@
 //     temp_v0->unk0 = (s8) temp_v1->unk1C;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_15B200/func_1512DEA4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_15B200/func_1512DEA4.s. */
+s32 func_1512DEA4() {
+    return 0;
+}

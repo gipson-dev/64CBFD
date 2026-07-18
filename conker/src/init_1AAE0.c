@@ -1,5 +1,16 @@
 #include <n_libaudio.h>
 
+/* Generated placeholder declarations. */
+s32 __n_seqpReleaseVoice();
+s32 func_1001ADA4();
+s32 func_1001B07C();
+s32 func_1001B310();
+s32 __n_initFromBank();
+s32 func_1001B7D0();
+s32 func_1001BD34();
+s32 __n_seqpStopOsc();
+/* End generated placeholder declarations. */
+
 void __n_resetPerfChanState(N_ALSeqPlayer *seqp, s32 chan);
 
 void func_1001AAE0(N_ALSeqPlayer *seqp, N_ALVoice *voice) {
@@ -29,7 +40,10 @@ void func_1001AAE0(N_ALSeqPlayer *seqp, N_ALVoice *voice) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/__n_seqpReleaseVoice.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/__n_seqpReleaseVoice.s. */
+s32 __n_seqpReleaseVoice() {
+    return 0;
+}
 // void __n_seqpReleaseVoice(void *arg0, void *arg1, s32 arg2) {
 //     void *sp3C;
 //     s16 sp38;
@@ -88,7 +102,10 @@ void func_1001AAE0(N_ALSeqPlayer *seqp, N_ALVoice *voice) {
 //     n_alEvtqPostEvent(arg0 + 0x48, &sp38, arg2, 0);
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/func_1001ADA4.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/func_1001ADA4.s. */
+s32 func_1001ADA4() {
+    return 0;
+}
 
 N_ALVoiceState *__n_mapVoice(N_ALSeqPlayer *seqp, u8 key, u8 vel, u8 channel)
 {
@@ -137,7 +154,10 @@ N_ALVoiceState *func_1001AFEC(N_ALSeqPlayer *seqp, u8 key, u8 channel) {
     return NULL;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/func_1001B07C.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/func_1001B07C.s. */
+s32 func_1001B07C() {
+    return 0;
+}
 
 s16 __n_vsVol(N_ALVoiceState *vs, N_ALSeqPlayer *seqp)
 {
@@ -157,7 +177,10 @@ s16 __n_vsVol(N_ALVoiceState *vs, N_ALSeqPlayer *seqp)
     return t1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/func_1001B310.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/func_1001B310.s. */
+s32 func_1001B310() {
+    return 0;
+}
 // NON-MATCHING: missing a move
 // s32 func_1001B310(struct25 *arg0, struct26 *arg1) {
 //     s32 sp14;
@@ -199,7 +222,10 @@ ALPan __n_vsPan(N_ALVoiceState *vs, N_ALSeqPlayer *seqp)
 }
 
 // not vanilla
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/__n_initFromBank.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/__n_initFromBank.s. */
+s32 __n_initFromBank() {
+    return 0;
+}
 
 void __n_initChanState(N_ALSeqPlayer *seqp)
 {
@@ -231,8 +257,14 @@ void __n_resetPerfChanState(N_ALSeqPlayer *seqp, s32 chan) {
     seqp->chanState[chan].unk8 = 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/func_1001B7D0.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/func_1001BD34.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/func_1001B7D0.s. */
+s32 func_1001B7D0() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/func_1001BD34.s. */
+s32 func_1001BD34() {
+    return 0;
+}
 // s32 func_1001BD34(void *arg0, void *arg1, s32 arg2) {
 //     void *sp1C;
 //     s32 sp18;
@@ -266,4 +298,7 @@ void func_1001BE1C(u8 *arg0, s32 arg1, s32 arg2) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/__n_seqpStopOsc.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/__n_seqpStopOsc.s. */
+s32 __n_seqpStopOsc() {
+    return 0;
+}

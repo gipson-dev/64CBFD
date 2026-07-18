@@ -3,6 +3,20 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1508F0D4();
+s32 func_1508F9F4();
+s32 func_1508FD38();
+s32 func_150900F0();
+s32 func_15090630();
+s32 func_1509093C();
+s32 func_150911F4();
+s32 func_15091534();
+s32 func_150916B4();
+s32 func_150918EC();
+s32 func_150938BC();
+s32 func_15093B58();
+/* End generated placeholder declarations. */
 
 // need to figure out D_800D2460
 void func_1508F060(void) {
@@ -21,7 +35,10 @@ void func_1508F0A4(void) {
     func_1509093C();
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_1508F0D4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_1508F0D4.s. */
+s32 func_1508F0D4() {
+    return 0;
+}
 
 void func_1508F7BC(void) {
     f32 sp48[4][4];
@@ -50,15 +67,36 @@ void func_1508F9C4(void) {
     D_800D2410[D_800D2456++] = 0.0f;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_1508F9F4.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_1508FD38.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_150900F0.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_15090630.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_1509093C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_1508F9F4.s. */
+s32 func_1508F9F4() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_1508FD38.s. */
+s32 func_1508FD38() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_150900F0.s. */
+s32 func_150900F0() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_15090630.s. */
+s32 func_15090630() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_1509093C.s. */
+s32 func_1509093C() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_150911F4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_150911F4.s. */
+s32 func_150911F4() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_15091534.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_15091534.s. */
+s32 func_15091534() {
+    return 0;
+}
 // NON-MATCHING: needs some love
 // Gfx* func_15091534(Gfx* arg0, struct257 *arg1, u8 *arg2) {
 //     u32 temp_v0;
@@ -98,8 +136,14 @@ void func_1508F9C4(void) {
 //     return arg0;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_150916B4.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_150918EC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_150916B4.s. */
+s32 func_150916B4() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_150918EC.s. */
+s32 func_150918EC() {
+    return 0;
+}
 
 void func_15093818(s32 arg0) {
     if ((arg0 != 0) && (D_800D2458 == 0)) {
@@ -117,5 +161,11 @@ void func_15093878(void) {
     D_800D244C = allocate_memory(0x80, 1, 1, 0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_150938BC.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_15093B58.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_150938BC.s. */
+s32 func_150938BC() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_15093B58.s. */
+s32 func_15093B58() {
+    return 0;
+}

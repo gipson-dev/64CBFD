@@ -3,9 +3,17 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1000A420();
+s32 func_1000A750();
+s32 func_1000B060();
+/* End generated placeholder declarations. */
 
 void func_1000E40C(s32, s32);
-#pragma GLOBAL_ASM("asm/nonmatchings/init_A420/func_1000A420.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_A420/func_1000A420.s. */
+s32 func_1000A420() {
+    return 0;
+}
 // NON-MATCHING: mostly just regalloc
 // s32 func_150AD960(s32, s32, s32, s32);
 // s32 func_150AD9A0(s32, s32, s32);
@@ -75,8 +83,14 @@ void func_1000E40C(s32, s32);
 //     return ret;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_A420/func_1000A750.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/init_A420/func_1000B060.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_A420/func_1000A750.s. */
+s32 func_1000A750() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/init_A420/func_1000B060.s. */
+s32 func_1000B060() {
+    return 0;
+}
 // NON-MATCHING: fair amount to fix up
 // s32 func_1000B060(f32 arg0, f32 arg1, s32 arg2) {
 //     s16 phi_a1;

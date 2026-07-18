@@ -3,11 +3,23 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15003120();
+s32 func_150031EC();
+s32 func_15003570();
+s32 func_15003668();
+/* End generated placeholder declarations. */
 
 // what is this loop doing?
-#pragma GLOBAL_ASM("asm/nonmatchings/game_305D0/func_15003120.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_305D0/func_15003120.s. */
+s32 func_15003120() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_305D0/func_150031EC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_305D0/func_150031EC.s. */
+s32 func_150031EC() {
+    return 0;
+}
 
 s32 func_150034B4(void) {
       s32 i;
@@ -27,7 +39,10 @@ s32 func_150034B4(void) {
       }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_305D0/func_15003570.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_305D0/func_15003570.s. */
+s32 func_15003570() {
+    return 0;
+}
 // NON-MATCHING: something along these lines
 // void func_15003570(void) {
 //     s32 temp_s4;
@@ -61,7 +76,10 @@ s32 func_150034B4(void) {
 //     func_10004074(temp_s4);
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_305D0/func_15003668.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_305D0/func_15003668.s. */
+s32 func_15003668() {
+    return 0;
+}
 // NON-MATCHING: 40% there
 // void func_15003668(s32 arg0) {
 //     struct131 *temp_v0_2;

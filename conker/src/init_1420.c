@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_10001AA8();
+/* End generated placeholder declarations. */
 
 void func_10001420(void) {
     s32 *ptr = (s32 *)&D_80043B40;
@@ -45,7 +48,9 @@ void func_100014C4(s32 arg0) {
 }
 
 // this is a loopy mutha. contains delay slot so insert nop after .L1000183C
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1420/func_10001550.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1420/func_10001550.s. */
+void func_10001550(void *arg0, u8 arg1) {
+}
 
 s16 func_100019F0(s16 *arg0, struct05 *arg1) {
     s16 temp_v1 = (arg1->unk0 & 0x7FF0) >> 4;
@@ -76,7 +81,10 @@ s16 func_100019F0(s16 *arg0, struct05 *arg1) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1420/func_10001AA8.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_1420/func_10001AA8.s. */
+s32 func_10001AA8() {
+    return 0;
+}
 // some kind of memory allocation?
 // NON-MATCHING: 50% of the way there...
 // void func_10001AA8(struct246 *arg0, u8 arg1, u8 *arg2, s16 arg3, s16 arg4) {

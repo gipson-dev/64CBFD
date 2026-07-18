@@ -4,14 +4,14 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Snapshot as of 2026-07-18 after the 90% total C milestone. Functions converted from raw assembly to C
+Snapshot as of 2026-07-18 after the 99% total C milestone. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[####################----]` 84.09% | 5477 / 6033 (90.78%) |
-| init | `[#######-----------------]` 28.28% | 328 / 538 (60.97%) |
-| game | `[#####################---]` 88.37% | 4968 / 5313 (93.51%) |
+| total | `[########################]` 98.34% | 5973 / 6033 (99.01%) |
+| init | `[######################--]` 90.79% | 508 / 538 (94.42%) |
+| game | `[########################]` 98.93% | 5284 / 5313 (99.45%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Of those C-converted functions, the share that already compiles to the
@@ -22,9 +22,9 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1584 / 5477 (28.92%) | 24 | 3869 |
-| init | 236 / 328 (71.95%) | 4 | 88 |
-| game | 1182 / 4968 (23.79%) | 20 | 3766 |
+| total | 1581 / 5973 (26.47%) | 27 | 4365 |
+| init | 233 / 508 (45.87%) | 7 | 268 |
+| game | 1182 / 5284 (22.37%) | 20 | 4082 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The debugger overlay's long-standing rodata displacement healed on
@@ -45,6 +45,14 @@ pass then moved 385 functions through 167 standalone slices and replaced 246
 validated `GLOBAL_ASM` groups across eight large mixed C sources. Signature
 declarations needed for those legacy implicit calls perturb one previously
 exact caller; blockers remain unchanged.
+The 99% pass then replaced 416 validated `GLOBAL_ASM` groups across 105
+mixed sources and moved 80 tracked libultra functions through typed generated
+standalone slices. Signature discovery now handles function pointers, local
+`static` declarations, directly included source headers, macro-shadowed
+function names, and legacy calls with inconsistent arity. The 60-function raw
+remainder is deliberately constrained to handwritten TLB code, embedded data
+labels or four-byte slots, six mixed code/data functions, two static audio
+routines, and the debugger CP0 reader.
 The first matching pass over those generated slices recovered 40 small
 retail functions exactly. The current layout-preservation pass then crossed
 the 50% byte-exact milestone by retaining every compiled instruction and
@@ -54,7 +62,7 @@ and short trampolines, so they no longer displace later exact functions.
 Debugger raw conversion is now complete except `func_16003650`, a CP0/TLB
 reader that uses `tlbr`/CP0 register instructions and is intentionally left
 as raw assembly. Generated-slice jump labels are restored by the object-padding
-tool instead of a separately linked label object. Only 24 C functions remain
+tool instead of a separately linked label object. Only 27 C functions remain
 classified as address-drift blocked.
 The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
 finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,

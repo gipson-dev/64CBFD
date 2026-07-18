@@ -4,4 +4,6 @@
 #include "variables.h"
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/os/initialize/__osInitialize_common.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/os/initialize/__osInitialize_common.s. */
+void __osInitialize_common(void) {
+}

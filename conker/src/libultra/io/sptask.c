@@ -1,6 +1,13 @@
 #include <ultra64.h>
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/io/sptask/_VirtualToPhysicalTask.s")
+/* Generated placeholder declarations. */
+s32 _VirtualToPhysicalTask(s32 arg0);
+/* End generated placeholder declarations. */
+
+/* Non-matching C placeholders for asm/nonmatchings/libultra/io/sptask/_VirtualToPhysicalTask.s. */
+s32 _VirtualToPhysicalTask(s32 arg0) {
+    return 0;
+}
 
 void osSpTaskLoad(OSTask *intp)
 {

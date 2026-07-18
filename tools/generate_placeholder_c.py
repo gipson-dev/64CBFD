@@ -48,9 +48,10 @@ def function_layout(path):
 def placeholder_definition(name, size, return_type=None, parameters=""):
     if return_type is None:
         return_type = "void" if size < 12 else "s32"
-    if return_type == "void":
-        return [f"void {name}({parameters}) {{", "}", ""]
-    value = "0.0f" if return_type == "f32" else "0.0" if return_type == "f64" else "0"
+    value_type = return_type.removeprefix("static ").strip()
+    if value_type == "void":
+        return [f"{return_type} {name}({parameters}) {{", "}", ""]
+    value = "0.0f" if value_type == "f32" else "0.0" if value_type == "f64" else "0"
     return [f"{return_type} {name}({parameters}) {{", f"    return {value};", "}", ""]
 
 

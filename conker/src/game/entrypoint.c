@@ -3,9 +3,15 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15007830();
+/* End generated placeholder declarations. */
 
 // game entrypoint
-#pragma GLOBAL_ASM("asm/nonmatchings/game/entrypoint/func_15007830.s")
+/* Non-matching C placeholders for asm/nonmatchings/game/entrypoint/func_15007830.s. */
+s32 func_15007830() {
+    return 0;
+}
 // NON-MATCHING: need to better understand jump tables
 // void func_15007830(void) {
 //     func_15007A20();

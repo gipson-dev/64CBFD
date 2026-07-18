@@ -3,10 +3,27 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1513B5E0();
+s32 func_1513B798();
+s32 func_1513B83C();
+s32 func_1513BAE8();
+s32 func_1513BBFC();
+s32 func_1513BEB0();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_168A90/func_1513B5E0.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_168A90/func_1513B798.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_168A90/func_1513B83C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B5E0.s. */
+s32 func_1513B5E0() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B798.s. */
+s32 func_1513B798() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B83C.s. */
+s32 func_1513B83C() {
+    return 0;
+}
 
 s32 func_1513B968(s32 arg0, s32 arg1) {
     // FIXME: &arg0->unk_120[D_800BE9C0]
@@ -47,6 +64,15 @@ s32 func_1513BAD4(s32 arg0, s32 arg1) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_168A90/func_1513BAE8.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_168A90/func_1513BBFC.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_168A90/func_1513BEB0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513BAE8.s. */
+s32 func_1513BAE8() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513BBFC.s. */
+s32 func_1513BBFC() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513BEB0.s. */
+s32 func_1513BEB0() {
+    return 0;
+}

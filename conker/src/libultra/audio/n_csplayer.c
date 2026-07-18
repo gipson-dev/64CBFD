@@ -7,7 +7,6 @@
 #include "cseq.h"
 #include "n_cseqp.h"
 
-
        ALMicroTime      __n_CSPVoiceHandler(void *node);
 static void              __n_CSPHandleNextSeqEvent(N_ALCSPlayer *seqp);
 static void             __n_CSPHandleMIDIMsg(N_ALCSPlayer *seqp, N_ALEvent *event);
@@ -97,12 +96,17 @@ void n_alCSPNew(N_ALCSPlayer *seqp, ALSeqpConfig *c)
 }
 
 // jump table
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csplayer/__n_CSPVoiceHandler.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_csplayer/__n_CSPVoiceHandler.s. */
+ALMicroTime __n_CSPVoiceHandler(void *node) {
+    return 0;
+}
 
 extern void (*jtbl_8002C4CC[])(void);
 // jump table
+/* Keep raw assembly. */
 #pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csplayer/__n_CSPHandleNextSeqEvent.s")
 // jump table
+/* Keep raw assembly. */
 #pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csplayer/__n_CSPHandleMIDIMsg.s")
 
 void __n_CSPHandleMetaMsg(N_ALCSPlayer *seqp, N_ALEvent *event)
@@ -175,7 +179,9 @@ void __n_CSPHandleMetaMsg(N_ALCSPlayer *seqp, N_ALEvent *event)
   }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csplayer/__n_CSPRepostEvent.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_csplayer/__n_CSPRepostEvent.s. */
+void __n_CSPRepostEvent(ALEventQueue *evtq, N_ALEventListItem *item) {
+}
 
 void __n_setUsptFromTempo (N_ALCSPlayer *seqp, f32 tempo)
 {

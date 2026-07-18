@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_10003ACC(s32 arg0, s32 arg1, s32 arg2);
+/* End generated placeholder declarations. */
 
 void func_100039C0(void) {
     OSViMode *mode;
@@ -23,4 +26,7 @@ void func_100039C0(void) {
     osViSwapBuffer((void *)D_8002AAE8[D_800BE9C0 ^ 1]);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_39C0/func_10003ACC.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_39C0/func_10003ACC.s. */
+s32 func_10003ACC(s32 arg0, s32 arg1, s32 arg2) {
+    return 0;
+}

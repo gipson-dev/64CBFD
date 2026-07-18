@@ -3,4 +3,6 @@
 #include "variables.h"
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/gu/guNormalize/guNormalize.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/gu/guNormalize/guNormalize.s. */
+void guNormalize(float *x, float *y, float *z) {
+}

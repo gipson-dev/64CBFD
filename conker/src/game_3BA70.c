@@ -3,8 +3,16 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1500E5C0();
+s32 func_1500E738();
+s32 func_1500E8C0();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_3BA70/func_1500E5C0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_3BA70/func_1500E5C0.s. */
+s32 func_1500E5C0() {
+    return 0;
+}
 
 void func_1500E70C(s32 arg0) {
     if (arg0 == 0x2B) {
@@ -12,7 +20,10 @@ void func_1500E70C(s32 arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_3BA70/func_1500E738.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_3BA70/func_1500E738.s. */
+s32 func_1500E738() {
+    return 0;
+}
 
 void func_1500E890(void) {
     func_15008E00();
@@ -20,7 +31,10 @@ void func_1500E890(void) {
     func_15008E10(1);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_3BA70/func_1500E8C0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_3BA70/func_1500E8C0.s. */
+s32 func_1500E8C0() {
+    return 0;
+}
 // NON-MATCHING: fair bit to figure out
 // void func_1500E8C0(void) {
 //     struct145 tmp;

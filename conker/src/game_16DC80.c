@@ -3,12 +3,27 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_151407D0();
+s32 func_151408A4();
+s32 func_151412BC();
+s32 func_15141478();
+s32 func_151415D4();
+s32 func_151416E8();
+/* End generated placeholder declarations. */
+
 f32 func_1514182C(void *arg0, void *arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5);
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151407D0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151407D0.s. */
+s32 func_151407D0() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151408A4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151408A4.s. */
+s32 func_151408A4() {
+    return 0;
+}
 
 void func_151411A4(struct210 *arg0) {
     func_1513CA6C(arg0);
@@ -38,7 +53,10 @@ void func_15141250(void *arg0) {
     D_80089FE4[*(u8 *)((u8 *)arg0 + 0x168)](arg0, arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151412BC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151412BC.s. */
+s32 func_151412BC() {
+    return 0;
+}
 
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 // NON-MATCHING (logic verified): retail materializes base = arg0+0x110 inside the
@@ -54,7 +72,10 @@ void func_1514143C(struct210 *arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_15141478.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_15141478.s. */
+s32 func_15141478() {
+    return 0;
+}
 
 s32 func_15141564(u8 *arg0) {
     u8 *base = arg0 + 0x170;
@@ -65,9 +86,15 @@ s32 func_15141564(u8 *arg0) {
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151415D4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151415D4.s. */
+s32 func_151415D4() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151416E8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151416E8.s. */
+s32 func_151416E8() {
+    return 0;
+}
 
 void func_151417C4(s32 arg0, u8 arg1) {
     s32 tmp[2];
@@ -83,7 +110,10 @@ s32 func_15141818(s32 arg0, s32 arg1) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_1514182C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_1514182C.s. */
+f32 func_1514182C(void *arg0, void *arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5) {
+    return 0.0f;
+}
 // f32 func_1514182C(void *arg0, void *arg1, s32 arg2, f32 arg3, s32 arg4, s32 arg5) {
 //     f32 sp6C;
 //     f32 sp68;

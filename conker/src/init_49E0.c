@@ -3,9 +3,14 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_10004DB0();
+/* End generated placeholder declarations. */
 
 // contains jr
-#pragma GLOBAL_ASM("asm/nonmatchings/init_49E0/func_100049E0.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_49E0/func_100049E0.s. */
+void func_100049E0(s32 arg0) {
+}
 // void func_100049E0(s32 arg0) {
 //     u32 sp64;
 //     s32 sp5C;
@@ -127,7 +132,10 @@
 //     goto loop_1;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_49E0/func_10004DB0.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_49E0/func_10004DB0.s. */
+s32 func_10004DB0() {
+    return 0;
+}
 // NON-MATCHING: branching is not right
 // void func_10004DB0(void) {
 //     if (D_8003A582 == 0) {

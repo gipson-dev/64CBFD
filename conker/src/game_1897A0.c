@@ -3,6 +3,13 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1515C388();
+s32 func_1515C534();
+s32 func_1515C6F4();
+s32 func_1515D130();
+/* End generated placeholder declarations. */
+
 void *func_15147A80(void *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, u8 arg8, s32 arg9);
 
 void *func_1515C2F0(u8 *arg0, u8 *arg1, void *arg2, s32 arg3, u8 arg4, s32 arg5) {
@@ -17,9 +24,18 @@ void *func_1515C2F0(u8 *arg0, u8 *arg1, void *arg2, s32 arg3, u8 arg4, s32 arg5)
     return temp_v0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1897A0/func_1515C388.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1897A0/func_1515C534.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1897A0/func_1515C6F4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_1897A0/func_1515C388.s. */
+s32 func_1515C388() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_1897A0/func_1515C534.s. */
+s32 func_1515C534() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_1897A0/func_1515C6F4.s. */
+s32 func_1515C6F4() {
+    return 0;
+}
 s32 func_1515CF9C(u8 *arg0, u8 *arg1) {
     u8 *base;
     u8 *slot;
@@ -81,4 +97,7 @@ void *func_1515D088(u8 *arg0) {
 }
 
 // fat struct
-#pragma GLOBAL_ASM("asm/nonmatchings/game_1897A0/func_1515D130.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_1897A0/func_1515D130.s. */
+s32 func_1515D130() {
+    return 0;
+}

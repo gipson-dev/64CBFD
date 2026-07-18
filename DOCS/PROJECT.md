@@ -156,14 +156,18 @@ Last regenerated: 2026-07-18, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[####################----]` 84.09% | 5477 / 6033 (90.78%) |
-| init | `[#######-----------------]` 28.28% | 328 / 538 (60.97%) |
-| game | `[#####################---]` 88.37% | 4968 / 5313 (93.51%) |
+| total | `[########################]` 98.34% | 5973 / 6033 (99.01%) |
+| init | `[######################--]` 90.79% | 508 / 538 (94.42%) |
+| game | `[########################]` 98.93% | 5284 / 5313 (99.45%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Recent passes moved init/libultra helpers and debugger functions out of raw
-assembly, carried game raw conversion to `4968 / 5313 (93.51%)`, and pushed
-total raw conversion to `5477 / 6033 (90.78%)`. Debugger raw conversion is complete
+assembly, carried game raw conversion to `5284 / 5313 (99.45%)`, and pushed
+total raw conversion to `5973 / 6033 (99.01%)`. Only 60 tracked raw functions
+remain: 26 handwritten `init_5AB0` TLB functions, 23 functions in slices with
+embedded data or four-byte slots, six mixed code/data functions, two static
+audio routines, the init `sinf`/`sqrtf` pair, and the debugger CP0 reader.
+Debugger raw conversion is complete
 except `func_16003650`, a hardware CP0/TLB reader that executes `tlbr` and
 CP0 register moves and is intentionally left as raw assembly. The newly
 converted functions are C-shaped recovery bodies, not yet byte-matched
@@ -222,9 +226,9 @@ bytes (last regenerated 2026-07-18, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1584 / 5477 (28.92%) | 24 | 3869 |
-| init | 236 / 328 (71.95%) | 4 | 88 |
-| game | 1182 / 4968 (23.79%) | 20 | 3766 |
+| total | 1581 / 5973 (26.47%) | 27 | 4365 |
+| init | 233 / 508 (45.87%) | 7 | 268 |
+| game | 1182 / 5284 (22.37%) | 20 | 4082 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The first matching pass over the generated game slices made 40 small
@@ -239,8 +243,10 @@ rematched at exact retail sizes. Later game-section layout fixes collapsed
 the dominant address-drift plateaus. The latest raw-conversion passes then
 crossed the 25% game C milestone, moved ten debugger functions, and moved
 65 init/libultra functions out of `GLOBAL_ASM`/raw asm. Function/object
-re-spacing and symbol-derived linker anchors now preserve the retail layout;
-only 24 functions remain address-drift blocked.
+re-spacing and symbol-derived linker anchors now preserve the retail layout.
+The 99% conversion pass leaves 27 functions address-drift blocked and 1581
+byte-exact; typed legacy signatures changed three previously exact init
+callers, and the regression is recorded rather than hidden.
 The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
 finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
 and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.

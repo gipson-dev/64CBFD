@@ -1,6 +1,11 @@
 #include <n_libaudio.h>
 #include "n_sndp.h"
 
+/* Generated placeholder declarations. */
+s32 func_10019D98(s32 arg0, s32 arg1);
+s32 func_1001A030();
+s32 func_1001A508();
+/* End generated placeholder declarations. */
 
 void func_10019B50(N_ALCSPlayer *seqp, s32 arg1, s32 chan, s32 vol) {
     N_ALSoundState *state;
@@ -40,7 +45,10 @@ void func_10019D6C(N_ALCSPlayer *seqp, s32 arg1, s32 chan, s32 arg3) {
     seqp->chanState[chan].unk8 = arg3;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_19B50/func_10019D98.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_19B50/func_10019D98.s. */
+s32 func_10019D98(s32 arg0, s32 arg1) {
+    return 0;
+}
 
 void func_10019ED8(N_ALCSPlayer *seqp, s32 arg1, s32 chan, s32 arg3) {
     seqp->chanState[chan].unk14 = arg3;
@@ -62,7 +70,10 @@ void func_10019F98(N_ALCSPlayer *seqp, s32 arg1, s32 chan, s32 arg3) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_19B50/func_1001A030.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_19B50/func_1001A030.s. */
+s32 func_1001A030() {
+    return 0;
+}
 
 void func_1001A224(N_ALCSPlayer *seqp, s32 arg1, s32 chan, s32 arg3) {
     N_ALSoundState *state;
@@ -113,7 +124,10 @@ void func_1001A45C(N_ALCSPlayer *seqp, s32 chan) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_19B50/func_1001A508.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_19B50/func_1001A508.s. */
+s32 func_1001A508() {
+    return 0;
+}
 
 void func_1001A704(N_ALCSPlayer *seqp, s32 arg1, s32 chan, s32 arg3) {
     u8 sp2F;

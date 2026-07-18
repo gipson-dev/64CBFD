@@ -3,6 +3,10 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15040A78();
+s32 func_15040CC8();
+/* End generated placeholder declarations. */
 
 void func_15040350(void *arg0, u32 arg1) {
     s32 i;
@@ -18,7 +22,9 @@ void func_15040350(void *arg0, u32 arg1) {
 }
 
 // contains jump relative
-#pragma GLOBAL_ASM("asm/nonmatchings/game_6D800/func_150403C8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_6D800/func_150403C8.s. */
+void func_150403C8(void *arg0, u32 arg1, s32 arg2) {
+}
 
 s32 func_1504072C(s32 arg0) {
     if ((arg0 & 7) != 0) {
@@ -220,9 +226,15 @@ void func_15040A6C(s32 arg0) {
 }
 
 // contains delay slot
-#pragma GLOBAL_ASM("asm/nonmatchings/game_6D800/func_15040A78.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_6D800/func_15040A78.s. */
+s32 func_15040A78() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_6D800/func_15040CC8.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_6D800/func_15040CC8.s. */
+s32 func_15040CC8() {
+    return 0;
+}
 // NON-MATCHING: todo
 // void func_15040CC8(s32 *arg0) {
 //     s32 temp_a0_2;

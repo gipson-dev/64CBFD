@@ -1,7 +1,13 @@
 #include "n_synthInternals.h"
 
+/* Generated placeholder declarations. */
+s32 func_10022040();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_22040/func_10022040.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_22040/func_10022040.s. */
+s32 func_10022040() {
+    return 0;
+}
 // NON-MATCHING: 80% matching
 // struct21 *func_10022040(struct42 *arg0, struct119 *arg1, s32 arg2, struct21 *arg3) {
 //     struct21 *sp2C;

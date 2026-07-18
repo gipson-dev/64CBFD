@@ -2,9 +2,15 @@
 #include <ultraerror.h>
 #include "n_synthInternals.h"
 
+/* Generated placeholder declarations. */
+s32 _allocatePVoice(s32 arg0, s32 arg1);
+/* End generated placeholder declarations. */
 
 // s32 _allocatePVoice( N_PVoice **pvoice, s16 priority);
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_synallocvoice/n_alSynAllocVoice.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_synallocvoice/n_alSynAllocVoice.s. */
+s32 n_alSynAllocVoice(N_ALVoice *voice, ALVoiceConfig *vc) {
+    return 0;
+}
 // NON-MATCHING: plenty to figure out with the nlibaudio struct changes
 // s32 n_alSynAllocVoice( N_ALVoice *voice, ALVoiceConfig *vc)
 // {
@@ -120,4 +126,7 @@
 // }
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_synallocvoice/_allocatePVoice.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_synallocvoice/_allocatePVoice.s. */
+s32 _allocatePVoice(s32 arg0, s32 arg1) {
+    return 0;
+}

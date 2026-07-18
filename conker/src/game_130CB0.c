@@ -3,6 +3,11 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15103910();
+s32 func_15103AA0();
+s32 func_15103C14();
+/* End generated placeholder declarations. */
 
 void func_15103800(void) {
     bzero(D_800D9AB0, 8); // bzero
@@ -26,6 +31,15 @@ void func_15103828(void) {
 }
 
 // need to figure out the structs
-#pragma GLOBAL_ASM("asm/nonmatchings/game_130CB0/func_15103910.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_130CB0/func_15103AA0.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_130CB0/func_15103C14.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_130CB0/func_15103910.s. */
+s32 func_15103910() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_130CB0/func_15103AA0.s. */
+s32 func_15103AA0() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_130CB0/func_15103C14.s. */
+s32 func_15103C14() {
+    return 0;
+}

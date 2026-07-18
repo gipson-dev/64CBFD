@@ -1,3 +1,5 @@
+#include <ultra64.h>
+
 // #include <os_internal.h>
 // #include "piint.h"
 //
@@ -56,4 +58,6 @@
 // 	}
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/io/pimgr/osCreatePiManager.s")
+/* Non-matching C placeholders for asm/nonmatchings/libultra/io/pimgr/osCreatePiManager.s. */
+void osCreatePiManager(OSPri arg0, OSMesgQueue *arg1, OSMesg *arg2, s32 arg3) {
+}

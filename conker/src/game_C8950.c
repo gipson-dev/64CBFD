@@ -2,6 +2,15 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1509B5AC(s32 arg0, s32 arg1);
+s32 func_1509B764();
+s32 func_1509B810();
+s32 func_1509B950(s32 arg0);
+s32 func_1509BA04();
+s32 func_1509BBA0();
+s32 func_1509BE40();
+/* End generated placeholder declarations. */
 
 struct249 *func_1509B704(s16 arg0);
 void func_1509C120(void);
@@ -39,7 +48,10 @@ u16 *func_1509B570(s32 arg0) {
     return NULL;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509B5AC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509B5AC.s. */
+s32 func_1509B5AC(s32 arg0, s32 arg1) {
+    return 0;
+}
 
 struct249 *func_1509B704(s16 arg0) {
     struct249 *tmp;
@@ -57,9 +69,15 @@ struct249 *func_1509B704(s16 arg0) {
 }
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509B764.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509B764.s. */
+s32 func_1509B764() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509B810.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509B810.s. */
+s32 func_1509B810() {
+    return 0;
+}
 
 void func_1509B8FC(s16 arg0) {
     struct248 *temp_v0;
@@ -71,19 +89,35 @@ void func_1509B8FC(s16 arg0) {
     func_1509B950(temp_v0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509B950.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509B950.s. */
+s32 func_1509B950(s32 arg0) {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509BA04.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509BA04.s. */
+s32 func_1509BA04() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509BBA0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509BBA0.s. */
+s32 func_1509BBA0() {
+    return 0;
+}
 
 //
-#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509BE40.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509BE40.s. */
+s32 func_1509BE40() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509BFB0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509BFB0.s. */
+void func_1509BFB0(s32 num, s32 arg1, s32 arg2, ...) {
+}
 
 // need a bigger brain
-#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509C120.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509C120.s. */
+void func_1509C120(void) {
+}
 
 void func_1509C228(void) {
     if ((D_800D2E68 & 8) || (D_800D2E4C->unkF & 1)) {

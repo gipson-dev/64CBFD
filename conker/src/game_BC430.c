@@ -3,5 +3,11 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_1508EF80();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_BC430/func_1508EF80.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_BC430/func_1508EF80.s. */
+s32 func_1508EF80() {
+    return 0;
+}

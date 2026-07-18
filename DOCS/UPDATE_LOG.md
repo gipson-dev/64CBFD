@@ -10,6 +10,20 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Total raw C conversion crossed 99%
+
+- Replaced 416 validated `GLOBAL_ASM` groups across 105 mixed sources and
+  moved 80 tracked libultra functions through 40 typed standalone C slices.
+- Extended signature discovery for nested function pointers, local `static`
+  declarations, directly included source headers, macro-shadowed names, and
+  legacy functions called with inconsistent argument counts.
+- Generalized generated-slice Makefile and linker support to nested libultra
+  assembly paths, while retaining exact retail symbol placement.
+- Published raw conversion at **5973 / 6033 functions (99.01%)** and **98.34%
+  by bytes**; game conversion reached **5284 / 5313 (99.45%)**.
+- Recorded the complete 60-function raw remainder and the honest byte-exact
+  result: **1581 / 5973 (26.47%)**, with 27 address-drift blockers.
+
 ### Total raw C conversion crossed 90%
 
 - Added 167 validated standalone game slices and replaced 246 `GLOBAL_ASM`

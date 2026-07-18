@@ -2,10 +2,20 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15015F40();
+s32 func_15015FBC();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_433F0/func_15015F40.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_433F0/func_15015F40.s. */
+s32 func_15015F40() {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_433F0/func_15015FBC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_433F0/func_15015FBC.s. */
+s32 func_15015FBC() {
+    return 0;
+}
 // s32 func_15015FBC(s32 arg0, s32 arg1) {
 //     s16 temp_lo;
 //     s16 temp_lo_2;

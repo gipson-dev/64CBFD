@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15016588();
+/* End generated placeholder declarations. */
 
 void func_15016500(void) {
     D_800D1940 = (u8)0;
@@ -21,4 +24,7 @@ void func_15016500(void) {
 }
 
 // grim looking loop
-#pragma GLOBAL_ASM("asm/nonmatchings/game_439B0/func_15016588.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_439B0/func_15016588.s. */
+s32 func_15016588() {
+    return 0;
+}

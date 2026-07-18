@@ -1,8 +1,14 @@
 #include "n_synthInternals.h"
 
+/* Generated placeholder declarations. */
+s32 func_10022460();
+/* End generated placeholder declarations. */
 
 // modified n_alResamplePull
-#pragma GLOBAL_ASM("asm/nonmatchings/init_22460/func_10022460.s")
+/* Non-matching C placeholders for asm/nonmatchings/init_22460/func_10022460.s. */
+s32 func_10022460() {
+    return 0;
+}
 // NON-MATCHING: same issues as the other functions in this range
 // struct21 *func_10022460(struct42 *arg0, struct119 *arg1, struct21 *arg2) {
 //     struct21 *sp34;

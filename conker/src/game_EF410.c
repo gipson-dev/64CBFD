@@ -3,9 +3,33 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_150C1F60();
+s32 func_150C2290();
+s32 func_150C2424();
+s32 func_150C2558();
+s32 func_150C2700();
+s32 func_150C2804();
+s32 func_150C2898();
+s32 func_150C29F0();
+s32 func_150C2C00();
+s32 func_150C2FCC();
+s32 func_150C308C();
+s32 func_150C3160();
+s32 func_150C3230();
+s32 func_150C3574();
+s32 func_150C3994();
+s32 func_150C3D5C();
+/* End generated placeholder declarations. */
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C1F60.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2290.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C1F60.s. */
+s32 func_150C1F60() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2290.s. */
+s32 func_150C2290() {
+    return 0;
+}
 // TODO: figure out this struct!
 // void func_150C2290(s32 arg0) {
 //     s16 sp9A;
@@ -100,7 +124,10 @@
 //     func_15151A38(&sp18, arg0 & 0xFF, 1);
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2424.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2424.s. */
+s32 func_150C2424() {
+    return 0;
+}
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 s32 func_150C251C(struct202 *arg0) {
     u8 *p;
@@ -117,14 +144,38 @@ s32 func_150C251C(struct202 *arg0) {
     }
     return 1;
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2558.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2700.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2804.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2898.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C29F0.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2C00.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C2FCC.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C308C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2558.s. */
+s32 func_150C2558() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2700.s. */
+s32 func_150C2700() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2804.s. */
+s32 func_150C2804() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2898.s. */
+s32 func_150C2898() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C29F0.s. */
+s32 func_150C29F0() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2C00.s. */
+s32 func_150C2C00() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2FCC.s. */
+s32 func_150C2FCC() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C308C.s. */
+s32 func_150C308C() {
+    return 0;
+}
 // ? func_150C308C(void *arg0) {
 //     u8 sp1F;
 //     f32 temp_f0;
@@ -157,13 +208,28 @@ s32 func_150C251C(struct202 *arg0) {
 //     return 1;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C3160.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C3230.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C3574.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C3994.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3160.s. */
+s32 func_150C3160() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3230.s. */
+s32 func_150C3230() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3574.s. */
+s32 func_150C3574() {
+    return 0;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3994.s. */
+s32 func_150C3994() {
+    return 0;
+}
 
 s32 func_150C3D48(s32 arg0) {
     return arg0 + 0xEDCBA988;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C3D5C.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3D5C.s. */
+s32 func_150C3D5C() {
+    return 0;
+}

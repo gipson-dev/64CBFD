@@ -3,13 +3,19 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Generated placeholder declarations. */
+s32 func_15010880();
+/* End generated placeholder declarations. */
 
 void func_15010780(void) {
     func_15177410(1, 255,    0, 108, 0, 0.0f, 15000, 80.0f, 77, 15, 127, 127, 127, 127, 127, 127);
     func_15177410(0, 255, 6628, 108, 0, 0.0f, 15000, 80.0f, 77, 15, 127, 127, 127, 127, 127, 127);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_3DC30/func_15010880.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_3DC30/func_15010880.s. */
+s32 func_15010880() {
+    return 0;
+}
 // NON-MATCHING: ops in wrong order
 // void func_15010880(void) {
 //     struct177 tmp;
