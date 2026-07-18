@@ -222,25 +222,25 @@ bytes (last regenerated 2026-07-17, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 740 / 3033 (24.40%) | 836 | 1457 |
-| init | 76 / 327 (23.24%) | 164 | 87 |
-| game | 542 / 2525 (21.47%) | 659 | 1324 |
-| debugger | 122 / 181 (67.40%) | 13 | 46 |
+| total | 1583 / 3033 (52.19%) | 24 | 1426 |
+| init | 236 / 327 (72.17%) | 4 | 87 |
+| game | 1181 / 2525 (46.77%) | 20 | 1324 |
+| debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The first matching pass over the generated game slices made 40 small
-functions byte-exact, covering no-op callbacks, constant-return helpers,
-global/field stores, flag updates, and short getters. The debugger overlay's
+functions byte-exact. The retail-layout pass then moved total byte-exact
+progress above 50% by re-spacing compiled functions and relocations at their
+retail-relative addresses. Oversized non-matching functions execute through
+out-of-line bodies and short trampolines instead of shifting later code. The debugger overlay's
 rodata displacement healed on 2026-07-16: the
 `debugger_257350.c` printf engine was identified as Plauger's Standard C
 Library (the N64 SDK's libc - `_Printf`/`_Ldtob`/`_Genld`/`_Litob`) and
 rematched at exact retail sizes. Later game-section layout fixes collapsed
 the dominant address-drift plateaus. The latest raw-conversion passes then
 crossed the 25% game C milestone, moved ten debugger functions, and moved
-65 init/libultra functions out of `GLOBAL_ASM`/raw asm; those new C bodies shift layout and
-intentionally increase the still-differ count until they are size-matched or
-padded. This pass included early-link OS/PI/SI/AI helpers, so many otherwise
-good rows are temporarily classified as address-drift blocked. Init and
-debugger byte-matching are the next cleanup frontiers.
+65 init/libultra functions out of `GLOBAL_ASM`/raw asm. Function/object
+re-spacing and symbol-derived linker anchors now preserve the retail layout;
+only 24 functions remain address-drift blocked.
 The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
 finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
 and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.

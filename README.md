@@ -23,10 +23,10 @@ exact retail bytes (`make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 740 / 3033 (24.40%) | 836 | 1457 |
-| init | 76 / 327 (23.24%) | 164 | 87 |
-| game | 542 / 2525 (21.47%) | 659 | 1324 |
-| debugger | 122 / 181 (67.40%) | 13 | 46 |
+| total | 1583 / 3033 (52.19%) | 24 | 1426 |
+| init | 236 / 327 (72.17%) | 4 | 87 |
+| game | 1181 / 2525 (46.77%) | 20 | 1324 |
+| debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The debugger overlay's long-standing rodata displacement healed on
 2026-07-16: its printf engine was identified as Plauger's Standard C
@@ -37,15 +37,16 @@ decomp push crossed the 25% game raw-conversion target, follow-up
 init passes pushed total raw conversion over 30%, and generated game-slice C
 placeholders pushed total raw conversion over 50%.
 The first matching pass over those generated slices recovered 40 small
-retail functions exactly, including no-op callbacks, constant-return helpers,
-global/field stores, flag updates, and short getters.
+retail functions exactly. The current layout-preservation pass then crossed
+the 50% byte-exact milestone by retaining every compiled instruction and
+relocation while restoring retail-relative function and object addresses.
+Oversized non-matching functions remain executable through out-of-line bodies
+and short trampolines, so they no longer displace later exact functions.
 Debugger raw conversion is now complete except `func_16003650`, a CP0/TLB
 reader that uses `tlbr`/CP0 register instructions and is intentionally left
-as raw assembly. The new C bodies are raw-progress placeholders, so the
-byte-match table is expected to stay lower until those functions are
-size-matched or padded back into retail layout. The latest init/libultra
-push also replaced early-link OS/PI/SI/AI helpers, so many otherwise-good
-rows are temporarily classified as address-drift blocked.
+as raw assembly. Generated-slice jump labels are restored by the object-padding
+tool instead of a separately linked label object. Only 24 C functions remain
+classified as address-drift blocked.
 The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
 finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
 and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.

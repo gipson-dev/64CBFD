@@ -10,6 +10,19 @@ make -C conker progress
 
 ## 2026-07-17
 
+### Byte-exact progress crossed 50%
+
+- Added retail-layout manifests and build-time object re-spacing that preserve
+  C-compiled instruction words and relocations while restoring function and
+  object addresses.
+- Kept oversized non-matching functions executable in section-local overflow
+  regions through short retail-slot trampolines, preventing them from shifting
+  later exact code.
+- Restored generated-slice jump labels inside their padded C-derived objects
+  and reduced address-drift blockers from 836 to 24.
+- Published the new result: **1583 / 3033 C functions byte-exact (52.19%)**,
+  with raw C conversion unchanged at **3033 / 6033 (50.27%)**.
+
 ### Tool reference triage
 
 - Recorded `n64img` as the preferred N64 image-format reference through the

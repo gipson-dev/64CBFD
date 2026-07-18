@@ -25,6 +25,23 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-17, byte-exact progress crossed 50%; retail layout preserved).**
+Added a generated retail address manifest plus C-object re-spacing and linker
+anchoring. `pad_c_object.py` keeps compiled instruction words and MIPS
+relocations, restores each safely mapped function's retail-relative position,
+and moves oversized non-matching bodies to section-local overflow areas behind
+short jump trampolines. `pad_generated_object.py` applies the same layout rule
+to all 25 generated game slices and restores their exported jump labels, so
+the standalone `generated_jlabels.s` object is no longer linked. Linker object
+bases are derived from each ELF symbol's section offset, including assembly
+objects whose first function is omitted from `progress.csv`. Verified WSL
+`make -C conker -j NON_MATCHING=1`, `make -C conker progress NON_MATCHING=1`,
+`make -C conker match-progress NON_MATCHING=1`, and `git diff --check`. Raw C
+conversion remains `3033 / 6033 (50.27%)`. Byte-exact progress rose from
+`740 / 3033 (24.40%)` to `1583 / 3033 (52.19%)`; address-blocked rows fell
+from `836` to `24`. Section totals are init `236 / 327 (72.17%)`, game
+`1181 / 2525 (46.77%)`, and debugger `166 / 181 (91.71%)`.
+
 **Update (2026-07-17, generated-slice byte-matching pass; +40 exact functions).**
 Replaced raw `return 0` placeholders with behaviorally accurate C for 40
 small game functions across 14 generated-slice sources. The matched set

@@ -58,7 +58,6 @@ S_FILES   := $(filter-out asm/142560.s asm/179F30.s asm/B3020.s asm/1C2C60.s \
                          asm/5D2C0.s asm/1CC440.s asm/58F80.s asm/185560.s asm/133190.s \
                          asm/176A00.s asm/18A8F0.s asm/13D350.s asm/1D92F0.s asm/1B1600.s \
                          asm/AEB40.s,$(S_FILES))
-S_FILES   += src/game/generated_jlabels.s
 C_FILES   = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 H_FILES   = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.h))
 BIN_FILES = $(foreach dir,$(BIN_DIRS),$(wildcard $(dir)/*.bin))
@@ -104,6 +103,40 @@ endif
 GREP := grep -rl
 GLOBAL_ASM_C_FILES := $(shell $(GREP) GLOBAL_ASM $(SRC_DIR) </dev/null)
 GLOBAL_ASM_O_FILES := $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
+ifeq ($(VERSION),us)
+GENERATED_SLICE_C_FILES := $(wildcard $(SRC_DIR)/game/generated_*.c)
+GENERATED_SLICE_O_FILES := $(foreach file,$(GENERATED_SLICE_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
+RETAIL_LAYOUT := retail_layout.$(VERSION).txt
+# These objects either own allocatable non-text sections or do not have a
+# one-to-one function map in progress.csv. Keep their original object layout.
+RETAIL_PAD_SKIP_C_FILES := \
+	$(SRC_DIR)/debugger_258ED0.c \
+	$(SRC_DIR)/game_17AE1C.c \
+	$(SRC_DIR)/game_DAE50.c \
+	$(SRC_DIR)/game/entrypoint.c \
+	$(SRC_DIR)/libultra/audio/game_21FC90.c \
+	$(SRC_DIR)/libultra/audio/cents2ratio.c \
+	$(SRC_DIR)/libultra/audio/init_128D0.c \
+	$(SRC_DIR)/libultra/audio/init_1D900.c \
+	$(SRC_DIR)/libultra/gu/guPerspectiveF.c \
+	$(SRC_DIR)/libultra/gu/guRotateF.c \
+	$(SRC_DIR)/libultra/gu/sinf.c \
+	$(SRC_DIR)/game/done/game_75810.c \
+	$(SRC_DIR)/game/done/game_75950.c \
+	$(SRC_DIR)/init_50A0.c
+RETAIL_PAD_C_FILES := $(filter-out $(GENERATED_SLICE_C_FILES) $(RETAIL_PAD_SKIP_C_FILES),$(C_FILES))
+RETAIL_PAD_O_FILES := $(foreach file,$(RETAIL_PAD_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
+RETAIL_PAD_GLOBAL_ASM_O_FILES := $(filter $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES))
+RETAIL_PAD_PLAIN_O_FILES := $(filter-out $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES))
+UNPADDED_GLOBAL_ASM_O_FILES := $(filter-out $(RETAIL_PAD_O_FILES),$(GLOBAL_ASM_O_FILES))
+else
+GENERATED_SLICE_C_FILES :=
+GENERATED_SLICE_O_FILES :=
+RETAIL_PAD_O_FILES :=
+RETAIL_PAD_GLOBAL_ASM_O_FILES :=
+RETAIL_PAD_PLAIN_O_FILES :=
+UNPADDED_GLOBAL_ASM_O_FILES := $(GLOBAL_ASM_O_FILES)
+endif
 
 INCLUDE_CFLAGS := -I . -I include -I include/2.0L -I include/2.0L/PR -I include/libc -I src/libultra/os -I src/libultra/audio -I src/libultra/io
 
@@ -212,19 +245,45 @@ replace: $(VERIFY) $(TARGET).header.bin $(TARGET).boot.bin $(TARGET).init.bin $(
 
 ### Recipes
 
-$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) ../tools/patch_generated_slice_ld.py
+$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) ../tools/patch_generated_slice_ld.py $(O_FILES)
 	$(CPP) -P -DBUILD_DIR=$(BUILD_DIR) -o $@ $<
-	$(PYTHON) ../tools/patch_generated_slice_ld.py $@
+	$(PYTHON) ../tools/patch_generated_slice_ld.py $@ $(VERSION)
 
 $(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(GLOBAL_ASM_O_FILES)
 	$(LD) $(LDFLAGS) -o $@
 
 ifndef PERMUTER
-$(GLOBAL_ASM_O_FILES): $(BUILD_DIR)/%.c.o: %.c include/variables.h include/structs.h include/functions.h
+$(UNPADDED_GLOBAL_ASM_O_FILES): $(BUILD_DIR)/%.c.o: %.c include/variables.h include/structs.h include/functions.h
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< > $(BUILD_DIR)/$<
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(LOOP_UNROLL) $(MIPSBIT) -o $@ $(BUILD_DIR)/$<
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@ \
 		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
+
+ifeq ($(VERSION),us)
+$(RETAIL_PAD_GLOBAL_ASM_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py include/variables.h include/structs.h include/functions.h
+	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< > $(BUILD_DIR)/$<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(LOOP_UNROLL) $(MIPSBIT) -o $@.compact $(BUILD_DIR)/$<
+	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.compact \
+		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) $(basename $(notdir $<)) $@.padded.s
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.padded.s
+endif
+endif
+
+ifeq ($(VERSION),us)
+$(GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.o: \
+		$(SRC_DIR)/game/generated_%.c asm/%.s ../tools/pad_generated_object.py Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact asm/$*.s $@.padded.s
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.padded.s
+
+$(RETAIL_PAD_PLAIN_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) $(basename $(notdir $<)) $@.padded.s
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.padded.s
 endif
 
 $(BUILD_DIR)/%.c.o: %.c
