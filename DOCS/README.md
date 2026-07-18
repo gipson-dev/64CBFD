@@ -4,7 +4,7 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Snapshot as of 2026-07-18 after the 99% total C and 56% init byte-exact milestones. Functions converted from raw assembly to C
+Snapshot as of 2026-07-18 after the 99% total C, 72% init byte-exact, and 30% total byte-exact milestones. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
@@ -22,10 +22,10 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1735 / 5973 (29.05%) | 27 | 4211 |
-| init | 289 / 508 (56.89%) | 7 | 212 |
-| game | 1280 / 5284 (24.22%) | 20 | 3984 |
-| debugger | 166 / 181 (91.71%) | 0 | 15 |
+| total | `[#######-----------------]` 1850 / 5973 (30.97%) | 0 | 4123 |
+| init | `[#################-------]` 367 / 508 (72.24%) | 0 | 141 |
+| game | `[######------------------]` 1317 / 5284 (24.92%) | 0 | 3967 |
+| debugger | `[######################--]` 166 / 181 (91.71%) | 0 | 15 |
 
 The debugger overlay's long-standing rodata displacement healed on
 2026-07-16: its printf engine was identified as Plauger's Standard C
@@ -66,6 +66,10 @@ over 50% without changing the game, debugger, raw-conversion, or blocker totals.
 The latest init pass matched 26 more libultra, audio, string, and game helpers
 by completing the same profile and register-local recovery, raising init to
 56.89% and total byte-exact progress past 29% with no regressions.
+Subsequent init and game matching restored additional SDK routines, generated
+libultra slices, signed field and argument types, and compiler expression
+shapes. The verified result is now 367 / 508 init functions (72.24%),
+1317 / 5284 game functions (24.92%), and 1850 / 5973 overall (30.97%).
 The first matching pass over those generated slices recovered 40 small
 retail functions exactly. The current layout-preservation pass then crossed
 the 50% byte-exact milestone by retaining every compiled instruction and
@@ -75,7 +79,7 @@ and short trampolines, so they no longer displace later exact functions.
 Debugger raw conversion is now complete except `func_16003650`, a CP0/TLB
 reader that uses `tlbr`/CP0 register instructions and is intentionally left
 as raw assembly. Generated-slice jump labels are restored by the object-padding
-tool instead of a separately linked label object. Only 27 C functions remain
+tool instead of a separately linked label object. No C functions remain
 classified as address-drift blocked.
 The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
 finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
