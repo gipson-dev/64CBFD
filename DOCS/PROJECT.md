@@ -226,9 +226,9 @@ bytes (last regenerated 2026-07-18, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1581 / 5973 (26.47%) | 27 | 4365 |
+| total | 1616 / 5973 (27.06%) | 27 | 4330 |
 | init | 233 / 508 (45.87%) | 7 | 268 |
-| game | 1182 / 5284 (22.37%) | 20 | 4082 |
+| game | 1217 / 5284 (23.03%) | 20 | 4047 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The first matching pass over the generated game slices made 40 small
@@ -244,9 +244,12 @@ the dominant address-drift plateaus. The latest raw-conversion passes then
 crossed the 25% game C milestone, moved ten debugger functions, and moved
 65 init/libultra functions out of `GLOBAL_ASM`/raw asm. Function/object
 re-spacing and symbol-derived linker anchors now preserve the retail layout.
-The 99% conversion pass leaves 27 functions address-drift blocked and 1581
+The 99% conversion pass left 27 functions address-drift blocked and 1581
 byte-exact; typed legacy signatures changed three previously exact init
-callers, and the regression is recorded rather than hidden.
+callers, and the regression is recorded rather than hidden. The next matching
+pass reconstructed 35 small typed callbacks, constant-return handlers,
+accessors, and state setters, bringing the current result to 1616 byte-exact
+functions while leaving all blocker and raw-conversion counts unchanged.
 The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
 finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
 and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.

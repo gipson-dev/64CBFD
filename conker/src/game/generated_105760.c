@@ -2,8 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/105760.s. */
 
-s32 func_150D82B0() {
-    return 0;
+void func_150D82B0(s32 arg0) {
 }
 
 s32 func_150D82BC() {
@@ -30,8 +29,8 @@ s32 func_150D88E0() {
     return 0;
 }
 
-s32 func_150D8A20() {
-    return 0;
+s32 func_150D8A20(s32 arg0, s32 arg1) {
+    return 8;
 }
 
 s32 func_150D8A34() {

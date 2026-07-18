@@ -2,8 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/EC420.s. */
 
-s32 func_150BEF70() {
-    return 0;
+void func_150BEF70(s32 arg0) {
 }
 
 s32 func_150BEF7C() {

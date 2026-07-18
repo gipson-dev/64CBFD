@@ -6,8 +6,9 @@ s32 func_150E9FE0() {
     return 0;
 }
 
-s32 func_150EA10C() {
-    return 0;
+s32 func_150EA10C(u8 *arg0) {
+    *(s32 *)(arg0 + 0x80) = 0;
+    return 1;
 }
 
 s32 func_150EA11C() {

@@ -2,8 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/DF930.s. */
 
-s32 func_150B2480() {
-    return 0;
+s32 func_150B2480(s32 arg0, s32 arg1) {
+    return 0xA;
 }
 
 s32 func_150B2494() {

@@ -26,16 +26,14 @@ s32 func_1515B994() {
     return 0;
 }
 
-s32 func_1515BA10() {
-    return 0;
+void func_1515BA10(s32 arg0) {
 }
 
 s32 func_1515BA1C() {
     return 0;
 }
 
-s32 func_1515BA48() {
-    return 0;
+void func_1515BA48(s32 arg0) {
 }
 
 s32 func_1515BA54() {

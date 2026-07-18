@@ -46,8 +46,10 @@ s32 func_1510D7AC() {
     return 0;
 }
 
-s32 func_1510D864() {
-    return 0;
+extern u8 D_800D9ED0;
+
+void func_1510D864(void) {
+    D_800D9ED0 = 0;
 }
 
 s32 func_1510D874() {

@@ -10,6 +10,18 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Byte-exact progress crossed 27%
+
+- Reconstructed 35 small generated-slice functions as matching C, including
+  typed callbacks, constant-return handlers, nested accessors, arithmetic
+  helpers, and state setters.
+- Preserved IDO's retail argument-home behavior and register scheduling with
+  explicit calling-convention-width parameters and targeted `register`
+  annotations.
+- Published byte-exact progress at **1616 / 5973 functions (27.06%)**, with
+  address-drift blockers unchanged at 27 and raw C conversion unchanged at
+  **5973 / 6033 (99.01%)**.
+
 ### Total raw C conversion crossed 99%
 
 - Replaced 416 validated `GLOBAL_ASM` groups across 105 mixed sources and

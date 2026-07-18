@@ -62,7 +62,7 @@ s32 func_151317C8() {
     return 0;
 }
 
-s32 func_15131814() {
+s32 func_15131814(s32 arg0, s32 arg1) {
     return 0;
 }
 

@@ -23,9 +23,9 @@ exact retail bytes (`make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1581 / 5973 (26.47%) | 27 | 4365 |
+| total | 1616 / 5973 (27.06%) | 27 | 4330 |
 | init | 233 / 508 (45.87%) | 7 | 268 |
-| game | 1182 / 5284 (22.37%) | 20 | 4082 |
+| game | 1217 / 5284 (23.03%) | 20 | 4047 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The debugger overlay's long-standing rodata displacement healed on
@@ -54,6 +54,9 @@ function names, and legacy calls with inconsistent arity. The 60-function raw
 remainder is deliberately constrained to handwritten TLB code, embedded data
 labels or four-byte slots, six mixed code/data functions, two static audio
 routines, and the debugger CP0 reader.
+A dedicated byte-matching pass then recovered 35 small typed callbacks,
+constant-return handlers, accessors, and state setters, raising byte-exact
+progress to 27.06% without changing the matcher or raw-conversion totals.
 The first matching pass over those generated slices recovered 40 small
 retail functions exactly. The current layout-preservation pass then crossed
 the 50% byte-exact milestone by retaining every compiled instruction and

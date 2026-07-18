@@ -14,8 +14,8 @@ s32 func_150A0D8C() {
     return 0;
 }
 
-s32 func_150A1040() {
-    return 0;
+s32 func_150A1040(register s32 arg0) {
+    return arg0 + 0x400;
 }
 
 s32 func_150A104C() {

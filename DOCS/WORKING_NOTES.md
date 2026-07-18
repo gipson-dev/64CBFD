@@ -25,6 +25,17 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, byte-exact progress crossed 27%).**
+Reconstructed 35 small generated-slice functions as matching C: typed empty
+callbacks that preserve their argument home slots, constant-return handlers,
+register-only arithmetic/identity helpers, nested byte accessors, and global
+or object state setters. IDO-specific parameter widths and `register`
+annotations preserve the retail calling convention and instruction schedule.
+Byte-exact progress is now total `1616 / 5973 (27.06%)`, init
+`233 / 508 (45.87%)`, game `1217 / 5284 (23.03%)`, and debugger
+`166 / 181 (91.71%)`, with 27 address-blocked and 4330 differing functions.
+Raw C conversion remains `5973 / 6033 (99.01%)`.
+
 **Update (2026-07-18, total raw conversion crossed 99%).**
 Replaced 416 validated `GLOBAL_ASM` groups across 105 mixed sources and added
 40 typed standalone libultra slices representing 80 tracked functions. The

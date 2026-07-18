@@ -6,8 +6,8 @@ s32 func_150CB0E0() {
     return 0;
 }
 
-s32 func_150CB1E0() {
-    return 0;
+s32 func_150CB1E0(s32 arg0, s32 arg1) {
+    return 0xB;
 }
 
 s32 func_150CB1F4() {

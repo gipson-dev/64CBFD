@@ -18,8 +18,8 @@ s32 func_150BA930() {
     return 0;
 }
 
-s32 func_150BAA00() {
-    return 0;
+s32 func_150BAA00(s32 arg0, s32 arg1) {
+    return 9;
 }
 
 s32 func_150BAA14() {

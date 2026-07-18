@@ -42,8 +42,7 @@ s32 func_15194810() {
     return 0;
 }
 
-s32 func_151949E0() {
-    return 0;
+void func_151949E0(s32 arg0, s32 arg1, s32 arg2) {
 }
 
 s32 func_151949F4() {

@@ -14,8 +14,8 @@ s32 func_1517A1EC() {
     return 0;
 }
 
-s32 func_1517A394() {
-    return 0;
+s32 func_1517A394(register s32 arg0) {
+    return arg0;
 }
 
 s32 func_1517A3A0() {

@@ -50,8 +50,7 @@ s32 func_150F9720() {
     return 0;
 }
 
-s32 func_150F9788() {
-    return 0;
+void func_150F9788(s32 arg0) {
 }
 
 s32 func_150F9794() {

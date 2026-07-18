@@ -50,14 +50,13 @@ s32 func_1512C150() {
     return 0;
 }
 
-s32 func_1512C200() {
-    return 0;
+void func_1512C200(s32 arg0) {
 }
 
 s32 func_1512C20C() {
     return 0;
 }
 
-s32 func_1512C47C() {
-    return 0;
+s32 func_1512C47C(s32 arg0) {
+    return 1;
 }

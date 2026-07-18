@@ -10,8 +10,8 @@ s32 func_150AE280() {
     return 0;
 }
 
-s32 func_150AE35C() {
-    return 0;
+s32 func_150AE35C(s32 arg0) {
+    return 1;
 }
 
 s32 func_150AE36C() {

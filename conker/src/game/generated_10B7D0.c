@@ -2,8 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/10B7D0.s. */
 
-s32 func_150DE320() {
-    return 0;
+void func_150DE320(s32 arg0) {
 }
 
 s32 func_150DE32C() {
