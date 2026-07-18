@@ -23,8 +23,8 @@ exact retail bytes (`make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1701 / 5973 (28.48%) | 27 | 4245 |
-| init | 255 / 508 (50.20%) | 7 | 246 |
+| total | 1709 / 5973 (28.61%) | 27 | 4237 |
+| init | 263 / 508 (51.77%) | 7 | 238 |
 | game | 1280 / 5284 (24.22%) | 20 | 3984 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 

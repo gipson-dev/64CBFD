@@ -10,6 +10,20 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Init byte-exact progress reached 51.77%
+
+- Matched eight additional init functions: `ldiv`, `lldiv`,
+  `__osSpRawStartDma`, `osSpTaskYielded`, `osViSwapBuffer`,
+  `__osDequeueThread`, `__osTimerInterrupt`, and `__osSetTimerIntr`.
+- Recorded the retail IDO optimization profiles per object and restored the
+  original `register`-qualified thread-queue source shape.
+- Corrected `func_1001091C` to pass the retail pointer value instead of an
+  unrelated pointed-to field; the function remains one instruction from an
+  exact match.
+- Published init byte-exact progress at **263 / 508 functions (51.77%)** and
+  total byte-exact progress at **1709 / 5973 (28.61%)**. Address-drift blockers
+  remain 27 and raw C conversion remains **5973 / 6033 (99.01%)**.
+
 ### Init byte-exact progress crossed 50%
 
 - Matched 22 additional init functions, including native 64-bit compiler

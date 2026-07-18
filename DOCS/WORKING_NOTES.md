@@ -25,6 +25,17 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, init byte-exact progress reached 51.77%).**
+Matched eight more init functions by restoring their retail IDO object
+profiles: `ldiv`, `lldiv`, `__osSpRawStartDma`, `osSpTaskYielded`,
+`osViSwapBuffer`, `__osDequeueThread`, `__osTimerInterrupt`, and
+`__osSetTimerIntr`. Corrected `func_1001091C` to pass its pointer value rather
+than dereference an unrelated field; it remains a one-instruction near-match.
+Byte-exact progress is now total `1709 / 5973 (28.61%)`, init
+`263 / 508 (51.77%)`, game `1280 / 5284 (24.22%)`, and debugger
+`166 / 181 (91.71%)`, with 27 address-blocked and 4237 differing functions.
+Raw C conversion remains `5973 / 6033 (99.01%)`.
+
 **Update (2026-07-18, init byte-exact progress crossed 50%).**
 Matched 22 more init functions through their retail IDO build profiles and
 source shapes: eight native MIPS III 64-bit compiler helpers, PI/SI access and

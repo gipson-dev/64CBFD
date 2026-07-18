@@ -1,8 +1,8 @@
 #include <os_internal.h>
 
-void __osDequeueThread(OSThread **queue, OSThread *thread) {
-    OSThread *pred;
-    OSThread *succ;
+void __osDequeueThread(register OSThread **queue, register OSThread *thread) {
+    register OSThread *pred;
+    register OSThread *succ;
 
     pred = (OSThread *)queue;
     succ = pred->next;

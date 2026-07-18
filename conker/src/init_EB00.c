@@ -490,7 +490,7 @@ void func_1001091C(struct127 *arg0, struct15 *arg1) {
     if ((arg1 != NULL) && (arg0->interaction_state != 0)) {
         if (arg0->camera != 0) {
             if (arg0->unk8E != 0) {
-                func_1000F85C(arg0->unk8E, 8, arg1->unk1C);
+                func_1000F85C(arg0->unk8E, 8, (s32)arg1);
             }
         } else {
             index = func_1000FF90(func_1000EE70, arg0, arg0->unique_id | 0x10000);
