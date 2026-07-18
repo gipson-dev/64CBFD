@@ -25,6 +25,22 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, total raw conversion crossed 60%).**
+Added 25 more text-only game slices as generated non-matching C sources,
+moving 613 tracked functions out of raw assembly. Generated slice discovery is
+now automatic in both the Makefile and linker-script postprocessor instead of
+requiring another hardcoded file list. Added `tools/generate_placeholder_c.py`
+to reproduce the placeholder sources from their retained asm slices; functions
+with eight-byte retail slots use an empty body so their compiled stubs fit.
+Verified WSL `make -C conker -j NON_MATCHING=1`, `make -C conker progress
+NON_MATCHING=1`, and `make -C conker match-progress NON_MATCHING=1`. Raw C
+conversion is now total `3646 / 6033 (60.43%)`, init `327 / 538 (60.78%)`,
+game `3138 / 5313 (59.06%)`, and debugger `181 / 182 (99.45%)`.
+Byte-weighted conversion is total `43.81%`, init `28.24%`, game `44.51%`, and
+debugger `99.19%`. Byte-exact progress is total `1584 / 3646 (43.44%)`, with
+24 address-blocked and 2038 differing functions; the new slices preserved all
+existing exact matches and added one more.
+
 **Update (2026-07-17, byte-exact progress crossed 50%; retail layout preserved).**
 Added a generated retail address manifest plus C-object re-spacing and linker
 anchoring. `pad_c_object.py` keeps compiled instruction words and MIPS

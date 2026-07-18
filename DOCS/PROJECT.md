@@ -151,19 +151,19 @@ Run `make -C conker progress` for current local numbers.
 
 ### Code decompilation snapshot
 
-Last regenerated: 2026-07-17, from a fully working `.map`-based build
+Last regenerated: 2026-07-18, from a fully working `.map`-based build
 (`make -C conker progress NON_MATCHING=1`).
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[###---------------------]` 12.71% | 3033 / 6033 (50.27%) |
-| init | `[#######-----------------]` 27.89% | 327 / 538 (60.78%) |
-| game | `[##----------------------]` 10.06% | 2525 / 5313 (47.52%) |
+| total | `[###########-------------]` 43.81% | 3646 / 6033 (60.43%) |
+| init | `[#######-----------------]` 28.24% | 327 / 538 (60.78%) |
+| game | `[###########-------------]` 44.51% | 3138 / 5313 (59.06%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Recent passes moved init/libultra helpers and debugger functions out of raw
-assembly, carried game raw conversion to `2525 / 5313 (47.52%)`, and pushed
-total raw conversion to `3033 / 6033 (50.27%)`. Debugger raw conversion is complete
+assembly, carried game raw conversion to `3138 / 5313 (59.06%)`, and pushed
+total raw conversion to `3646 / 6033 (60.43%)`. Debugger raw conversion is complete
 except `func_16003650`, a hardware CP0/TLB reader that executes `tlbr` and
 CP0 register moves and is intentionally left as raw assembly. The newly
 converted functions are C-shaped recovery bodies, not yet byte-matched
@@ -217,14 +217,14 @@ Two caveats about what this table measures:
 ### Byte-matching snapshot
 
 Of the C-converted functions above, how many compile to the exact retail
-bytes (last regenerated 2026-07-17, via
+bytes (last regenerated 2026-07-18, via
 `make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1583 / 3033 (52.19%) | 24 | 1426 |
+| total | 1584 / 3646 (43.44%) | 24 | 2038 |
 | init | 236 / 327 (72.17%) | 4 | 87 |
-| game | 1181 / 2525 (46.77%) | 20 | 1324 |
+| game | 1182 / 3138 (37.67%) | 20 | 1936 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The first matching pass over the generated game slices made 40 small

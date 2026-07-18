@@ -8,6 +8,20 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-07-18
+
+### Total raw C conversion crossed 60%
+
+- Replaced 25 additional text-only game assembly slices with generated
+  non-matching C sources, moving 613 tracked functions into C.
+- Made generated-slice Makefile filtering and linker placement automatic so
+  future additions no longer require duplicated hardcoded slice lists.
+- Added a reproducible placeholder generator, including compact empty-body
+  stubs for functions whose retail slots are only eight bytes.
+- Published raw conversion at **3646 / 6033 functions (60.43%)** and **43.81%
+  by bytes**. Byte-exact progress is **1584 / 3646 (43.44%)**, with all prior
+  exact matches retained and one additional exact function recovered.
+
 ## 2026-07-17
 
 ### Byte-exact progress crossed 50%

@@ -7,43 +7,18 @@ import sys
 from pathlib import Path
 
 
-SLICE_SIZES = {
-    "49D30": 0x6FF0,
-    "58F80": 0x4340,
-    "5D2C0": 0x41D0,
-    "71820": 0x3890,
-    "AEB40": 0x3670,
-    "B3020": 0x9410,
-    "11C2B0": 0x34D0,
-    "133190": 0x2300,
-    "13D350": 0x5210,
-    "142560": 0xA8D0,
-    "176A00": 0x3530,
-    "179F30": 0x2BC0,
-    "17CAF0": 0x6140,
-    "185560": 0x2EE0,
-    "18A8F0": 0x2960,
-    "1B1600": 0x3D70,
-    "1BA1D0": 0x4EC0,
-    "1C2C60": 0x77C0,
-    "1CC440": 0x4400,
-    "1D6E80": 0x2470,
-    "1D92F0": 0x3780,
-    "1E73B0": 0x5D40,
-    "1F4650": 0x6120,
-    "1FA770": 0x5400,
-    "20AE20": 0xAB40,
-}
-
-
-def generated_slice_replacement(name, _size):
+def generated_slice_replacement(name):
     return f"build/src/game/generated_{name}.c.o(.text);"
 
 
-REPLACEMENTS = {
-    f"build/asm/{name}.s.o(.text);": generated_slice_replacement(name, size)
-    for name, size in SLICE_SIZES.items()
-}
+def replace_generated_slices(text, project_dir):
+    for source in (project_dir / "src" / "game").glob("generated_*.c"):
+        name = source.stem.removeprefix("generated_")
+        text = text.replace(
+            f"build/asm/{name}.s.o(.text);",
+            generated_slice_replacement(name),
+        )
+    return text
 
 OVERFLOW_SECTIONS = """
     /* Oversized non-matching C functions execute out-of-line so they cannot
@@ -208,12 +183,12 @@ def main() -> int:
     if version != "us":
         path.write_text(text)
         return 0
-    for old, new in REPLACEMENTS.items():
-        text = text.replace(old, new)
+    project_dir = path.parent.parent
+    text = replace_generated_slices(text, project_dir)
     text = text.replace("    /DISCARD/ :", OVERFLOW_SECTIONS + "    /DISCARD/ :")
-    layout_path = path.parent.parent / "retail_layout.us.txt"
+    layout_path = project_dir / "retail_layout.us.txt"
     text = anchor_objects(
-        text, load_object_layout(layout_path), path.parent.parent
+        text, load_object_layout(layout_path), project_dir
     )
     path.write_text(text)
     return 0
