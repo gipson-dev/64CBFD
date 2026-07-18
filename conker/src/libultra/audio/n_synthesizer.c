@@ -204,7 +204,23 @@ void _n_freeParam(ALParam *param)
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_synthesizer/_n_collectPVoices.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_synthesizer/_n_freePVoice.s")
+
+void _n_freePVoice(N_PVoice *pvoice) {
+    if (pvoice->node.next != NULL) {
+        pvoice->node.next->prev = pvoice->node.prev;
+    }
+
+    if (pvoice->node.prev != NULL) {
+        pvoice->node.prev->next = pvoice->node.next;
+    }
+
+    pvoice->node.next = n_syn->pLameList.next;
+    pvoice->node.prev = &n_syn->pLameList;
+    if (n_syn->pLameList.next != NULL) {
+        n_syn->pLameList.next->prev = &pvoice->node;
+    }
+    n_syn->pLameList.next = &pvoice->node;
+}
 
 s32 _n_timeToSamplesNoRound(s32 micros) {
     f32 tmp = (((f32) micros * (f32) n_syn->outputRate) / D_8002C750) + 0.5f; // 1000000.0f
@@ -216,43 +232,20 @@ s32 _n_timeToSamples( s32 micros)
   return _n_timeToSamplesNoRound( micros) & ~0xf;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_synthesizer/__n_nextSampleTime.s")
-// static s32 __n_nextSampleTime(ALPlayer **client)
-// {
-//   ALMicroTime temp,delta = 0x7fffffff;     /* max delta for s32 */
-//   ALPlayer *cl;
-//
-//   /*    assert(D_8002BA44->head); */
-//   *client = 0;
-//
-// #if 0
-//   for (cl = D_8002BA44->head; cl != 0; cl = cl->next) {
-//     if ((cl->samplesLeft - D_8002BA44->curSamples) < delta) {
-//       *client = cl;
-//       delta = cl->samplesLeft - D_8002BA44->curSamples;
-//     }
-//   }
-// #endif
-//
-//   if( D_8002BA44->n_sndp )
-//     if( (temp = D_8002BA44->n_sndp->samplesLeft - D_8002BA44->curSamples) < delta ) {
-//       *client = D_8002BA44->n_sndp;
-//       delta = temp;
-//     }
-//
-//   if( D_8002BA44->n_seqp1 )
-//     if( (temp = D_8002BA44->n_seqp1->samplesLeft - D_8002BA44->curSamples) < delta ) {
-//       *client = D_8002BA44->n_seqp1;
-//       delta = temp;
-//     }
-//
-//   if( D_8002BA44->n_seqp2 )
-//     if( (D_8002BA44->n_seqp2->samplesLeft - D_8002BA44->curSamples) < delta ) {
-//       *client = D_8002BA44->n_seqp2;
-//     }
-//
-//   return (*client)->samplesLeft;
-// }
+s32 __n_nextSampleTime(ALPlayer **client) {
+    ALPlayer *current;
+    u32 delta = 0x7FFFFFFF;
+
+    *client = NULL;
+    for (current = n_syn->head; current != NULL; current = current->next) {
+        if ((u32)(current->samplesLeft - n_syn->curSamples) < delta) {
+            *client = current;
+            delta = current->samplesLeft - n_syn->curSamples;
+        }
+    }
+
+    return (*client)->samplesLeft;
+}
 
 // s32 func_10019A04(void *arg0) {
 //     u32 sp4;

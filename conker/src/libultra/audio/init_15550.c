@@ -287,32 +287,26 @@ void func_10017594(N_ALUnknownStruct1 *arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_15550/func_10017604.s")
-// NON-MATCHING: stack isnt quite right
-// void func_10017604(u8 arg0) {
-//     s32 mask;
-//     struct31 *sp20;
-//     u16 foo;
-//     s16 sp1C;
-//     struct31 *sp18;
-//
-//     mask = osSetIntMask(1);
-//     sp18 = D_8002BA20;
-//     if (sp18 != 0) {
-//         do
-//         {
-//             sp1C = 1024;
-//             sp20 = sp18;
-//             if ((sp18->unk53 & arg0) == arg0) {
-//                 sp20->unk53 = sp20->unk53 & -0x11;
-//                 n_alEvtqPostEvent(D_8002BA2C + 20, &sp1C, 0, 2);
-//             }
-//             sp18 = sp18->unk0;
-//         }
-//         while (sp18);
-//     }
-//     osSetIntMask(mask);
-// }
+void func_10017604(u8 arg0) {
+    s32 mask;
+    N_ALEvent event;
+    N_ALUnknownStruct1 *current;
+
+    mask = osSetIntMask(1);
+    current = D_8002BA20;
+
+    while (current != NULL) {
+        event.type = 1024;
+        event.msg.unknown1.unk0 = current;
+        if ((current->unk53 & arg0) == arg0) {
+            current->unk53 &= ~0x10;
+            n_alEvtqPostEvent(&D_8002BA2C->evtq, &event, 0, 2);
+        }
+        current = current->node.next;
+    }
+
+    osSetIntMask(mask);
+}
 
 void func_100176C4(void) {
     func_10017604(1);

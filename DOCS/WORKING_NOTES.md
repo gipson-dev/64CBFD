@@ -25,6 +25,67 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-17, total raw conversion crossed 40%; larger generated game slices).**
+Added five more text-only game asm slices as generated non-matching C
+placeholder sources: `generated_1BA1D0.c`, `generated_20AE20.c`,
+`generated_1E73B0.c`, `generated_49D30.c`, and `generated_1FA770.c`.
+The original asm files remain in-tree, while `conker/Makefile` filters those
+slices out. The linker-script postprocessor now depends on
+`tools/patch_generated_slice_ld.py`, so `build/conker.ld` is regenerated when
+new generated-slice replacements are added. `generated_jlabels.s` now carries
+247 placeholder jump-label targets for the generated C slice replacements.
+Verified WSL `make -C conker -j NON_MATCHING=1`,
+`make -C conker progress NON_MATCHING=1`, and `make -C conker
+match-progress NON_MATCHING=1`. Current raw conversion is total
+`2427 / 6033 (40.23%)`, init `327 / 538 (60.78%)`, game
+`1919 / 5313 (36.12%)`, and debugger `181 / 182 (99.45%)`.
+Byte-weighted raw conversion is total `10.65%`, init `27.89%`, game
+`8.14%`, and debugger `99.19%`. Current `match-progress`: total
+`700 / 2427 (28.84%)`, blocked `836`, differ `891`; init
+`76 / 327 (23.24%)`, blocked `164`, differ `87`; game
+`502 / 1919 (26.16%)`, blocked `659`, differ `758`; debugger
+`122 / 181 (67.40%)`, blocked `13`, differ `46`.
+
+**Update (2026-07-17, total raw conversion crossed 35%; generated game slices).**
+Replaced four text-only game asm slices with generated non-matching C
+placeholder sources: `generated_142560.c`, `generated_179F30.c`,
+`generated_B3020.c`, and `generated_1C2C60.c`. The original asm files remain
+in-tree, while `conker/Makefile` filters those slices out and assembles
+`generated_jlabels.s` so split rodata jump-table labels still resolve.
+Verified WSL `make -C conker -j NON_MATCHING=1`,
+`make -C conker progress NON_MATCHING=1`, `make -C conker
+match-progress NON_MATCHING=1`, and `git diff --check`. Current raw
+conversion is total `2140 / 6033 (35.47%)`, init `327 / 538 (60.78%)`,
+game `1632 / 5313 (30.72%)`, and debugger `181 / 182 (99.45%)`.
+Byte-weighted raw conversion is total `9.79%`, init `27.89%`, game `7.37%`,
+and debugger `99.19%`. Current `match-progress`: total
+`700 / 2140 (32.71%)`, blocked `836`, differ `604`; init
+`76 / 327 (23.24%)`, blocked `164`, differ `87`; game
+`502 / 1632 (30.76%)`, blocked `659`, differ `471`; debugger
+`122 / 181 (67.40%)`, blocked `13`, differ `46`.
+
+**Update (2026-07-17, total raw conversion crossed 30%; continued init).**
+Converted 30 small init/audio helpers from raw assembly to C: `func_10001420`,
+`func_100038E0`, `func_10002088`, `func_100043B4`, `func_1000B1FC`,
+`func_10003BD0`, `func_10008C6C`, `func_1000CBF0`, `func_1000FF90`,
+`func_1000F4D8`, `func_1000FEF0`, `func_100100E0`, `func_10010F88`,
+`func_1000B294`, `func_1000FDF4`, `func_1000FE88`, `func_1001AFEC`,
+`func_1000F1A8`, `func_1000FD38`, `func_1001AAE0`, `func_1000DE1C`,
+`func_1000DEC4`, `func_1001BE1C`, `func_1001DA28`, `func_1001091C`,
+`func_1001A45C`, `_n_freePVoice`, `__n_nextSampleTime`, `func_100186DC`,
+and `func_10017604`.
+Verified WSL
+`make -C conker -j NON_MATCHING=1`, `make -C conker progress NON_MATCHING=1`,
+and `make -C conker match-progress NON_MATCHING=1`. Current raw conversion is
+total `1837 / 6035 (30.44%)`, init `327 / 538 (60.78%)`, game
+`1329 / 5313 (25.01%)`, and debugger `181 / 182 (99.45%)`.
+Byte-weighted raw conversion is total `9.06%`, init `27.89%`, game `6.71%`,
+and debugger `99.19%`. Current `match-progress`: total
+`700 / 1837 (38.11%)`, blocked `836`, differ `301`; init
+`76 / 327 (23.24%)`, blocked `164`, differ `87`; game
+`502 / 1329 (37.77%)`, blocked `659`, differ `168`; debugger
+`122 / 181 (67.40%)`, blocked `13`, differ `46`.
+
 **Update (2026-07-17, 25% game C progress snapshot).** Updated the current
 progress tables in `README.md`, `DOCS/README.md`, `DOCS/PROJECT.md`, and
 `DOCS/PC_PORT_ROADMAP.md` after the game raw-conversion milestone. Current

@@ -2,38 +2,32 @@
 
 void __n_resetPerfChanState(N_ALSeqPlayer *seqp, s32 chan);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/func_1001AAE0.s")
-// void func_1001AAE0(void *arg0, s32 arg1) {
-//     void *sp4;
-//     void *sp0;
-//     void *temp_t6;
-//
-//     sp4 = NULL;
-//     sp0 = arg0->unk64;
-//     if (sp0 != 0) {
-// loop_1:
-//         if ((sp0 + 4) == arg1) {
-//             if (sp4 != 0) {
-//                 *sp4 = (s32) *sp0;
-//             } else {
-//                 arg0->unk64 = (void *) *sp0;
-//             }
-//             if (arg0->unk68 == sp0) {
-//                 arg0->unk68 = sp4;
-//             }
-//             *sp0 = (void *) arg0->unk6C;
-//             arg0->unk6C = sp0;
-//             arg0->unk8D = (u8) (arg0->unk8D - 1);
-//             return;
-//         }
-//         sp4 = sp0;
-//         temp_t6 = *sp0;
-//         sp0 = temp_t6;
-//         if (temp_t6 != 0) {
-//             goto loop_1;
-//         }
-//     }
-// }
+void func_1001AAE0(N_ALSeqPlayer *seqp, N_ALVoice *voice) {
+    N_ALVoiceState *prev = NULL;
+    N_ALVoiceState *current = seqp->vAllocHead;
+
+    while (current != NULL) {
+        if (&current->voice == voice) {
+            if (prev != NULL) {
+                prev->next = current->next;
+            } else {
+                seqp->vAllocHead = current->next;
+            }
+
+            if (seqp->vAllocTail == current) {
+                seqp->vAllocTail = prev;
+            }
+
+            current->next = seqp->vFreeList;
+            seqp->vFreeList = current;
+            seqp->usedVoices--;
+            return;
+        }
+
+        prev = current;
+        current = current->next;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/__n_seqpReleaseVoice.s")
 // void __n_seqpReleaseVoice(void *arg0, void *arg1, s32 arg2) {
@@ -128,7 +122,20 @@ N_ALVoiceState *__n_mapVoice(N_ALSeqPlayer *seqp, u8 key, u8 vel, u8 channel)
     return vs;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/func_1001AFEC.s")
+N_ALVoiceState *func_1001AFEC(N_ALSeqPlayer *seqp, u8 key, u8 channel) {
+    N_ALVoiceState *voice;
+
+    for (voice = seqp->vAllocHead; voice != NULL; voice = voice->next) {
+        if ((voice->key == key) &&
+            (voice->channel == channel) &&
+            (voice->phase != 3) &&
+            (voice->phase != 4)) {
+            return voice;
+        }
+    }
+
+    return NULL;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/func_1001B07C.s")
 
@@ -248,13 +255,15 @@ void __n_resetPerfChanState(N_ALSeqPlayer *seqp, s32 chan) {
 //     return sp18;
 // }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/func_1001BE1C.s")
-// void func_1001BE1C(void *arg0, s32 arg1, s32 arg2) {
-//     if (arg2 == -1) {
-//         arg0->unk30(arg1);
-//     } else {
-//         arg0->unk30((arg1 + (arg2 * 4))->unk10);
-//     }
-// }
+void func_1001BE1C(u8 *arg0, s32 arg1, s32 arg2) {
+    void (*callback)(s32);
+
+    callback = (void (*)(s32))*(s32 *)(arg0 + 0x30);
+    if (arg2 == -1) {
+        callback(arg1);
+    } else {
+        callback(*(s32 *)((u8 *)arg1 + (arg2 * 4) + 0x10));
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/init_1AAE0/__n_seqpStopOsc.s")

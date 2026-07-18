@@ -3,33 +3,21 @@
 #pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csq/n_alCSeqNew.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csq/n_alCSeqNextEvent.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csq/__n_alCSeqGetTrackEvent.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csq/func_100186DC.s")
-// void func_100186DC(void *arg0, void *arg1) {
-//     s32 sp4;
-//     s32 temp_t0;
-//     s32 temp_t4;
-//     s32 temp_t5;
-//     s32 temp_t8;
-//
-//     arg0->unk4 = (s32) arg1->unk0;
-//     arg0->unkC = (s32) arg1->unk4;
-//     arg0->unk10 = (s32) arg1->unk8;
-//     sp4 = 0;
-// loop_1:
-//     temp_t0 = sp4 * 4;
-//     (arg0 + temp_t0)->unk18 = (s32) (arg1 + temp_t0)->unkC;
-//     temp_t5 = sp4 * 4;
-//     (arg0 + temp_t5)->unk58 = (s32) (arg1 + temp_t5)->unk4C;
-//     (arg0 + sp4)->unk98 = (u8) (arg1 + sp4)->unk8C;
-//     (arg0 + sp4)->unkA8 = (u8) (arg1 + sp4)->unk9C;
-//     temp_t8 = sp4 * 4;
-//     (arg0 + temp_t8)->unkB8 = (s32) (arg1 + temp_t8)->unkAC;
-//     temp_t4 = sp4 + 1;
-//     sp4 = temp_t4;
-//     if (temp_t4 < 0x10) {
-//         goto loop_1;
-//     }
-// }
+void func_100186DC(ALCSeq *seq, ALCSeqMarker *marker) {
+    s32 i;
+
+    seq->validTracks = marker->validTracks;
+    seq->lastTicks = marker->lastTicks;
+    seq->lastDeltaTicks = marker->lastDeltaTicks;
+
+    for (i = 0; i < 16; i++) {
+        seq->curLoc[i] = marker->curLoc[i];
+        seq->curBUPtr[i] = marker->curBUPtr[i];
+        seq->curBULen[i] = marker->curBULen[i];
+        seq->lastStatus[i] = marker->lastStatus[i];
+        seq->evtDeltaTicks[i] = marker->evtDeltaTicks[i];
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csq/func_10018790.s")
 

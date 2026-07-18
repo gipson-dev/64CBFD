@@ -33,18 +33,15 @@ s32 func_1001D9B0(s16 arg0) {
     }
 }
 
-// this is not right.
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_1D900/func_1001DA28.s")
-// s32 func_1001DA28(s16 arg0) {
-//     N_ALMainBus *sp4;
-//
-//     sp4 = n_syn->mainBus;
-//     if (sp4->filter.handler == func_1001E530) {
-//         return n_syn->auxBus[arg0].sources;
-//     } else {
-//         return 0;
-//     }
-// }
+s32 func_1001DA28(s16 arg0) {
+    N_ALMainBus *mainBus = n_syn->mainBus;
+
+    if (mainBus->filter.handler == func_1001E530) {
+        return *(s32 *)((u8 *)&n_syn->auxBus[arg0] + 0x40);
+    }
+
+    return 0;
+}
 
 void func_1001DAA0(s32 arg0, s16 arg1, s32 arg2) {
     s32 sp1C = arg0;

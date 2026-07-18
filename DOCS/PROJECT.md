@@ -1,4 +1,4 @@
-# Project Overview
+﻿# Project Overview
 
 This repository is a work-in-progress decompilation of *Conker's Bad Fur Day* for Nintendo 64.
 
@@ -156,14 +156,14 @@ Last regenerated: 2026-07-17, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[##----------------------]` 8.86% | 1807 / 6035 (29.94%) |
-| init | `[######------------------]` 25.18% | 297 / 538 (55.20%) |
-| game | `[##----------------------]` 6.71% | 1329 / 5313 (25.01%) |
+| total | `[###---------------------]` 10.65% | 2427 / 6033 (40.23%) |
+| init | `[#######-----------------]` 27.89% | 327 / 538 (60.78%) |
+| game | `[##----------------------]` 8.14% | 1919 / 5313 (36.12%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
-Recent passes moved 65 init/libultra helpers and 10 debugger functions out of
-raw assembly, and the latest game push carried game raw conversion to
-`1329 / 5313 (25.01%)`. Debugger raw conversion is complete
+Recent passes moved init/libultra helpers and debugger functions out of raw
+assembly, carried game raw conversion to `1919 / 5313 (36.12%)`, and pushed
+total raw conversion to `2427 / 6033 (40.23%)`. Debugger raw conversion is complete
 except `func_16003650`, a hardware CP0/TLB reader that executes `tlbr` and
 CP0 register moves and is intentionally left as raw assembly. The newly
 converted functions are C-shaped recovery bodies, not yet byte-matched
@@ -222,9 +222,9 @@ bytes (last regenerated 2026-07-17, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 692 / 1807 (38.30%) | 840 | 275 |
-| init | 74 / 297 (24.92%) | 162 | 61 |
-| game | 496 / 1329 (37.32%) | 665 | 168 |
+| total | 700 / 2427 (28.84%) | 836 | 891 |
+| init | 76 / 327 (23.24%) | 164 | 87 |
+| game | 502 / 1919 (26.16%) | 659 | 758 |
 | debugger | 122 / 181 (67.40%) | 13 | 46 |
 
 The debugger overlay's rodata displacement healed on 2026-07-16: the

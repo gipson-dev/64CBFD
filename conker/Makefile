@@ -52,6 +52,9 @@ SRC_DIRS := $(SRC_DIR) \
 
 
 S_FILES   = $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
+S_FILES   := $(filter-out asm/142560.s asm/179F30.s asm/B3020.s asm/1C2C60.s \
+                         asm/1BA1D0.s asm/20AE20.s asm/1E73B0.s asm/49D30.s asm/1FA770.s,$(S_FILES))
+S_FILES   += src/game/generated_jlabels.s
 C_FILES   = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 H_FILES   = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.h))
 BIN_FILES = $(foreach dir,$(BIN_DIRS),$(wildcard $(dir)/*.bin))
@@ -205,8 +208,9 @@ replace: $(VERIFY) $(TARGET).header.bin $(TARGET).boot.bin $(TARGET).init.bin $(
 
 ### Recipes
 
-$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
+$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) ../tools/patch_generated_slice_ld.py
 	$(CPP) -P -DBUILD_DIR=$(BUILD_DIR) -o $@ $<
+	$(PYTHON) ../tools/patch_generated_slice_ld.py $@
 
 $(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(GLOBAL_ASM_O_FILES)
 	$(LD) $(LDFLAGS) -o $@

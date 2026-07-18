@@ -101,7 +101,18 @@ void func_1001A3FC(struct24 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     func_1001263C(arg0->unk36 * 100 + arg3, 0x7FFF, 0x40);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_19B50/func_1001A45C.s")
+void func_1001A45C(N_ALCSPlayer *seqp, s32 chan) {
+    N_ALSoundState *state;
+    s16 vol;
+
+    for (state = seqp->vAllocHead; state != NULL; state = state->voice.node.next) {
+        if ((state->chan == (u8)chan) && (state->unk38 != 3)) {
+            vol = __n_vsVol(state, seqp);
+            n_alSynSetVol(&state->voice.node.prev, vol, __n_vsDelta(state, seqp->curTime));
+        }
+    }
+}
+
 #pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/init_19B50/func_1001A508.s")
 
 void func_1001A704(N_ALCSPlayer *seqp, s32 arg1, s32 chan, s32 arg3) {

@@ -54,13 +54,12 @@ void func_10004308(void) {
     osSetIntMask(mask);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/init_3C40/func_100043B4.s")
-// NON-MATCHING: missing an addiu
-// void func_100043B4(s32 *arg0, u32 arg1) {
-//     OSIntMask mask = osSetIntMask(1);
-//     *(arg0 - 1) = (arg1 << 24) | *(arg0 - 1) & 0xFFFFFF;
-//     osSetIntMask(mask);
-// }
+void func_100043B4(s32 *arg0, u32 arg1) {
+    OSIntMask mask = osSetIntMask(1);
+
+    arg0[-1] = (arg0[-1] & 0xFFFFFF) | (arg1 << 24);
+    osSetIntMask(mask);
+}
 
 void func_1000440C(void) {
     struct54 *foo;

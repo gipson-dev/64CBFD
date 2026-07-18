@@ -1,0 +1,295 @@
+#include <ultra64.h>
+
+/* Non-matching placeholders for the text-only asm slice asm/B3020.s. */
+
+s32 func_15085B70() {
+    return 0;
+}
+
+s32 func_15085BE8() {
+    return 0;
+}
+
+s32 func_15085DA8() {
+    return 0;
+}
+
+s32 func_15085DF8() {
+    return 0;
+}
+
+s32 func_15086098() {
+    return 0;
+}
+
+s32 func_15086364() {
+    return 0;
+}
+
+s32 func_15086BD0() {
+    return 0;
+}
+
+s32 func_15086C70() {
+    return 0;
+}
+
+s32 func_15086CBC() {
+    return 0;
+}
+
+s32 func_15086D48() {
+    return 0;
+}
+
+s32 func_15086D94() {
+    return 0;
+}
+
+s32 func_150870D0() {
+    return 0;
+}
+
+s32 func_15087350() {
+    return 0;
+}
+
+s32 func_15087CC0() {
+    return 0;
+}
+
+s32 func_15087DCC() {
+    return 0;
+}
+
+s32 func_15087E54() {
+    return 0;
+}
+
+s32 func_15087EF0() {
+    return 0;
+}
+
+s32 func_15087FC4() {
+    return 0;
+}
+
+s32 func_15087FEC() {
+    return 0;
+}
+
+s32 func_1508802C() {
+    return 0;
+}
+
+s32 func_150880F8() {
+    return 0;
+}
+
+s32 func_150881CC() {
+    return 0;
+}
+
+s32 func_15088218() {
+    return 0;
+}
+
+s32 func_15088270() {
+    return 0;
+}
+
+s32 func_150882B0() {
+    return 0;
+}
+
+s32 func_150882E4() {
+    return 0;
+}
+
+s32 func_150883B0() {
+    return 0;
+}
+
+s32 func_1508855C() {
+    return 0;
+}
+
+s32 func_150885EC() {
+    return 0;
+}
+
+s32 func_1508868C() {
+    return 0;
+}
+
+s32 func_15088780() {
+    return 0;
+}
+
+s32 func_150887F8() {
+    return 0;
+}
+
+s32 func_15088824() {
+    return 0;
+}
+
+s32 func_150888A8() {
+    return 0;
+}
+
+s32 func_15088A08() {
+    return 0;
+}
+
+s32 func_15088D58() {
+    return 0;
+}
+
+s32 func_15088F30() {
+    return 0;
+}
+
+s32 func_1508907C() {
+    return 0;
+}
+
+s32 func_150891E8() {
+    return 0;
+}
+
+s32 func_150896EC() {
+    return 0;
+}
+
+s32 func_15089BB0() {
+    return 0;
+}
+
+s32 func_15089BC0() {
+    return 0;
+}
+
+s32 func_15089F9C() {
+    return 0;
+}
+
+s32 func_1508A1BC() {
+    return 0;
+}
+
+s32 func_1508A6FC() {
+    return 0;
+}
+
+s32 func_1508B194() {
+    return 0;
+}
+
+s32 func_1508B1D4() {
+    return 0;
+}
+
+s32 func_1508B20C() {
+    return 0;
+}
+
+s32 func_1508B2A8() {
+    return 0;
+}
+
+s32 func_1508B3F8() {
+    return 0;
+}
+
+s32 func_1508B9BC() {
+    return 0;
+}
+
+s32 func_1508BC20() {
+    return 0;
+}
+
+s32 func_1508BF14() {
+    return 0;
+}
+
+s32 func_1508C194() {
+    return 0;
+}
+
+s32 func_1508C1A4() {
+    return 0;
+}
+
+s32 func_1508C5B8() {
+    return 0;
+}
+
+s32 func_1508C9CC() {
+    return 0;
+}
+
+s32 func_1508CA88() {
+    return 0;
+}
+
+s32 func_1508CAD8() {
+    return 0;
+}
+
+s32 func_1508D850() {
+    return 0;
+}
+
+s32 func_1508DA1C() {
+    return 0;
+}
+
+s32 func_1508DAEC() {
+    return 0;
+}
+
+s32 func_1508DC24() {
+    return 0;
+}
+
+s32 func_1508E6C8() {
+    return 0;
+}
+
+s32 func_1508E6D0() {
+    return 0;
+}
+
+s32 func_1508E780() {
+    return 0;
+}
+
+s32 func_1508E89C() {
+    return 0;
+}
+
+s32 func_1508EB90() {
+    return 0;
+}
+
+s32 func_1508EBF8() {
+    return 0;
+}
+
+s32 func_1508EC5C() {
+    return 0;
+}
+
+s32 func_1508ECC0() {
+    return 0;
+}
+
+s32 func_1508EDBC() {
+    return 0;
+}
+
+s32 func_1508EE0C() {
+    return 0;
+}
