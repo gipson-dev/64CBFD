@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1C2C60.s. */
 
+extern f32 D_800A8AA4;
+extern f32 D_800A8AAC;
+
 s32 func_151957B0() {
     return 0;
 }
@@ -70,16 +73,16 @@ s32 func_15197148() {
     return 0;
 }
 
-s32 func_151979F8() {
-    return 0;
+f32 func_151979F8(s32 arg0) {
+    return D_800A8AA4;
 }
 
 s32 func_15197A0C() {
     return 0;
 }
 
-s32 func_15197A68() {
-    return 0;
+f32 func_15197A68(s32 arg0) {
+    return D_800A8AAC;
 }
 
 s32 func_15197A7C() {
@@ -130,8 +133,7 @@ s32 func_15198D40() {
     return 0;
 }
 
-s32 func_15198D7C() {
-    return 0;
+void func_15198D7C(s32 arg0) {
 }
 
 s32 func_15198D88() {
@@ -230,8 +232,11 @@ s32 func_1519C22C() {
     return 0;
 }
 
-s32 func_1519C258() {
-    return 0;
+void func_1519C258(u8 *arg0) {
+    u8 *temp_v0;
+
+    temp_v0 = *(u8 **)(*(u8 **)(arg0 + 0x38) + 0x98);
+    *(s32 *)(temp_v0 + 0x148) = 0;
 }
 
 s32 func_1519C26C() {

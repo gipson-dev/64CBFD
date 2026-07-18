@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/B3020.s. */
 
+extern s32 D_800D23B0;
+
 s32 func_15085B70() {
     return 0;
 }
@@ -162,8 +164,8 @@ s32 func_150896EC() {
     return 0;
 }
 
-s32 func_15089BB0() {
-    return 0;
+void func_15089BB0() {
+    D_800D23B0 = 0;
 }
 
 s32 func_15089BC0() {
@@ -214,7 +216,7 @@ s32 func_1508BF14() {
     return 0;
 }
 
-s32 func_1508C194() {
+s32 func_1508C194(s32 arg0) {
     return 0;
 }
 
@@ -254,8 +256,7 @@ s32 func_1508DC24() {
     return 0;
 }
 
-s32 func_1508E6C8() {
-    return 0;
+void func_1508E6C8() {
 }
 
 s32 func_1508E6D0() {

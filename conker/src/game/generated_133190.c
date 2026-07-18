@@ -10,8 +10,8 @@ s32 func_1510608C() {
     return 0;
 }
 
-s32 func_151061E0() {
-    return 0;
+s32 func_151061E0(s32 arg0) {
+    return arg0 + 0x88;
 }
 
 s32 func_151061EC() {

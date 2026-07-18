@@ -86,8 +86,9 @@ s32 func_151BD2F8() {
     return 0;
 }
 
-s32 func_151BD42C() {
-    return 0;
+s32 func_151BD42C(u8 *arg0) {
+    *(s16 *)(arg0 + 0x80) = 0;
+    return 1;
 }
 
 s32 func_151BD43C() {

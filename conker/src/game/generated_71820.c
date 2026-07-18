@@ -2,8 +2,10 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/71820.s. */
 
-s32 func_15044370() {
-    return 0;
+extern s32 D_800CBD9C;
+
+void func_15044370() {
+    D_800CBD9C = 0;
 }
 
 s32 func_15044380() {
@@ -14,8 +16,7 @@ s32 func_1504452C() {
     return 0;
 }
 
-s32 func_15044658() {
-    return 0;
+void func_15044658() {
 }
 
 s32 func_15044660() {

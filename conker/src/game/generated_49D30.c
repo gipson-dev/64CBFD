@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/49D30.s. */
 
+extern u8 D_800C3510[];
+extern u8 D_800C354A[];
+
 s32 func_1501C880() {
     return 0;
 }
@@ -138,12 +141,12 @@ s32 func_150221E8() {
     return 0;
 }
 
-s32 func_15022234() {
-    return 0;
+void func_15022234(s32 arg0) {
+    D_800C3510[arg0] = 0;
 }
 
-s32 func_15022248() {
-    return 0;
+void func_15022248(s32 arg0) {
+    D_800C354A[arg0] = 0;
 }
 
 s32 func_1502225C() {

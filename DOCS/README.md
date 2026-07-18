@@ -22,9 +22,9 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 700 / 3033 (23.08%) | 836 | 1497 |
+| total | 740 / 3033 (24.40%) | 836 | 1457 |
 | init | 76 / 327 (23.24%) | 164 | 87 |
-| game | 502 / 2525 (19.88%) | 659 | 1364 |
+| game | 542 / 2525 (21.47%) | 659 | 1324 |
 | debugger | 122 / 181 (67.40%) | 13 | 46 |
 
 The debugger overlay's long-standing rodata displacement healed on
@@ -35,6 +35,9 @@ game-section layout fixes (`func_1504B0FC`, `func_1504BE2C`, and
 decomp push crossed the 25% game raw-conversion target, follow-up
 init passes pushed total raw conversion over 30%, and generated game-slice C
 placeholders pushed total raw conversion over 50%.
+The first matching pass over those generated slices recovered 40 small
+retail functions exactly, including no-op callbacks, constant-return helpers,
+global/field stores, flag updates, and short getters.
 Debugger raw conversion is now complete except `func_16003650`, a CP0/TLB
 reader that uses `tlbr`/CP0 register instructions and is intentionally left
 as raw assembly. The new C bodies are raw-progress placeholders, so the

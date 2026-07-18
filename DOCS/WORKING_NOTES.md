@@ -25,6 +25,23 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-17, generated-slice byte-matching pass; +40 exact functions).**
+Replaced raw `return 0` placeholders with behaviorally accurate C for 40
+small game functions across 14 generated-slice sources. The matched set
+includes argument-preserving and true no-op callbacks, constant/add/not
+returns, direct global and field stores, flag updates, linked-list insertion,
+float/global getters, and short nested-pointer stores. Retail instruction
+order and IDO register selection were recovered from the preserved asm;
+four nested-pointer stores needed named `temp_v0` locals to select `$v0`
+instead of `$t6`. Verified WSL `make -C conker -j NON_MATCHING=1`,
+`make -C conker progress NON_MATCHING=1`, `make -C conker match-progress
+NON_MATCHING=1`, and `git diff --check`. Raw conversion remains total
+`3033 / 6033 (50.27%)` and game `2525 / 5313 (47.52%)`. Byte-exact progress
+rose from total `700 / 3033 (23.08%)` to `740 / 3033 (24.40%)`, and game
+from `502 / 2525 (19.88%)` to `542 / 2525 (21.47%)`; blocked counts remain
+total `836` and game `659`, while real-diff counts fell to total `1457` and
+game `1324`.
+
 **Update (2026-07-17, total raw conversion crossed 50%; expanded generated game slices).**
 Added 16 more text-only game asm slices as generated non-matching C
 placeholder sources: `generated_1F4650.c`, `generated_11C2B0.c`,

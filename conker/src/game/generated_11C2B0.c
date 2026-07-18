@@ -74,8 +74,11 @@ s32 func_150F02EC() {
     return 0;
 }
 
-s32 func_150F0318() {
-    return 0;
+void func_150F0318(u8 *arg0) {
+    u8 *temp_v0;
+
+    temp_v0 = *(u8 **)(arg0 + 0x28);
+    *(s32 *)(temp_v0 + 0x134) = 0;
 }
 
 s32 func_150F0328() {
@@ -86,8 +89,11 @@ s32 func_150F0354() {
     return 0;
 }
 
-s32 func_150F0380() {
-    return 0;
+void func_150F0380(u8 *arg0) {
+    u8 *temp_v0;
+
+    temp_v0 = *(u8 **)(arg0 + 0x178);
+    *(s32 *)(temp_v0 + 0x138) = 0;
 }
 
 s32 func_150F0390() {
@@ -98,8 +104,11 @@ s32 func_150F03BC() {
     return 0;
 }
 
-s32 func_150F03E8() {
-    return 0;
+void func_150F03E8(u8 *arg0) {
+    u8 *temp_v0;
+
+    temp_v0 = *(u8 **)(arg0 + 0x18);
+    *(s32 *)(temp_v0 + 0x13C) = 0;
 }
 
 s32 func_150F03F8() {

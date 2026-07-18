@@ -222,12 +222,15 @@ bytes (last regenerated 2026-07-17, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 700 / 3033 (23.08%) | 836 | 1497 |
+| total | 740 / 3033 (24.40%) | 836 | 1457 |
 | init | 76 / 327 (23.24%) | 164 | 87 |
-| game | 502 / 2525 (19.88%) | 659 | 1364 |
+| game | 542 / 2525 (21.47%) | 659 | 1324 |
 | debugger | 122 / 181 (67.40%) | 13 | 46 |
 
-The debugger overlay's rodata displacement healed on 2026-07-16: the
+The first matching pass over the generated game slices made 40 small
+functions byte-exact, covering no-op callbacks, constant-return helpers,
+global/field stores, flag updates, and short getters. The debugger overlay's
+rodata displacement healed on 2026-07-16: the
 `debugger_257350.c` printf engine was identified as Plauger's Standard C
 Library (the N64 SDK's libc - `_Printf`/`_Ldtob`/`_Genld`/`_Litob`) and
 rematched at exact retail sizes. Later game-section layout fixes collapsed

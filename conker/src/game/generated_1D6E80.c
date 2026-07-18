@@ -34,8 +34,7 @@ s32 func_151AA09C() {
     return 0;
 }
 
-s32 func_151AA170() {
-    return 0;
+void func_151AA170(s32 arg0) {
 }
 
 s32 func_151AA17C() {
@@ -146,8 +145,7 @@ s32 func_151AB854() {
     return 0;
 }
 
-s32 func_151AB920() {
-    return 0;
+void func_151AB920(s32 arg0, s32 arg1) {
 }
 
 s32 func_151AB930() {

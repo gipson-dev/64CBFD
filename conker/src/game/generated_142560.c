@@ -2,8 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/142560.s. */
 
-s32 func_151150B0() {
-    return 0;
+void func_151150B0(s32 arg0) {
 }
 
 s32 func_151150BC() {
@@ -18,8 +17,7 @@ s32 func_151151FC() {
     return 0;
 }
 
-s32 func_1511529C() {
-    return 0;
+void func_1511529C(s32 arg0) {
 }
 
 s32 func_151152A8() {
@@ -78,8 +76,7 @@ s32 func_15116888() {
     return 0;
 }
 
-s32 func_15116924() {
-    return 0;
+void func_15116924(s32 arg0) {
 }
 
 s32 func_15116930() {
@@ -254,8 +251,7 @@ s32 func_1511BEBC() {
     return 0;
 }
 
-s32 func_1511C540() {
-    return 0;
+void func_1511C540() {
 }
 
 s32 func_1511C548() {

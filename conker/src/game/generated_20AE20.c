@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/20AE20.s. */
 
+extern s8 D_8008FDC8;
+extern u8 D_800E0B94;
+
 s32 func_151DD970() {
     return 0;
 }
@@ -10,8 +13,8 @@ s32 func_151DD9E4() {
     return 0;
 }
 
-s32 func_151DDB94() {
-    return 0;
+s32 func_151DDB94(s32 arg0) {
+    return ~arg0;
 }
 
 s32 func_151DDBA0() {
@@ -38,8 +41,7 @@ s32 func_151DE85C() {
     return 0;
 }
 
-s32 func_151DE8E8() {
-    return 0;
+void func_151DE8E8() {
 }
 
 s32 func_151DE8F0() {
@@ -126,8 +128,8 @@ s32 func_151E4BD8() {
     return 0;
 }
 
-s32 func_151E4DC4() {
-    return 0;
+void func_151E4DC4() {
+    D_800E0B94 = 10;
 }
 
 s32 func_151E4DD8() {
@@ -179,7 +181,7 @@ s32 func_151E562C() {
 }
 
 s32 func_151E564C() {
-    return 0;
+    return D_8008FDC8;
 }
 
 s32 func_151E565C() {

@@ -154,8 +154,11 @@ s32 func_15190400() {
     return 0;
 }
 
-s32 func_15190454() {
-    return 0;
+void func_15190454(u8 *arg0) {
+    u8 *temp_v0;
+
+    temp_v0 = *(u8 **)(arg0 + 0x40);
+    *(s32 *)(temp_v0 + 0x84) = 0;
 }
 
 s32 func_15190464() {

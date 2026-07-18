@@ -30,8 +30,7 @@ s32 func_1515D69C() {
     return 0;
 }
 
-s32 func_1515D6C8() {
-    return 0;
+void func_1515D6C8() {
 }
 
 s32 func_1515D6D0() {
@@ -94,8 +93,9 @@ s32 func_1515F1B0() {
     return 0;
 }
 
-s32 func_1515F25C() {
-    return 0;
+void func_1515F25C(u8 **arg0, u8 *arg1) {
+    *(u8 **)(arg1 + 0xC) = *arg0;
+    *arg0 = arg1;
 }
 
 s32 func_1515F270() {
