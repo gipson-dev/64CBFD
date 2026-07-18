@@ -10,6 +10,19 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Init byte-exact progress crossed 50%
+
+- Matched 22 additional init functions, including native 64-bit compiler
+  helpers, PI/SI access and raw-I/O routines, SP status helpers, VI framebuffer
+  accessors, message-queue helpers, `memcpy`, `strlen`, and one audio event
+  walker.
+- Restored retail IDO `-O1`/`-O2` profiles, native MIPS III code generation,
+  and original `register`-qualified source shapes where they determine exact
+  instruction scheduling.
+- Published init byte-exact progress at **255 / 508 functions (50.20%)** and
+  total byte-exact progress at **1701 / 5973 (28.48%)**. Address-drift blockers
+  remain 27 and raw C conversion remains **5973 / 6033 (99.01%)**.
+
 ### Byte-exact progress crossed 28%
 
 - Reconstructed 63 compact generated-slice functions as matching C,

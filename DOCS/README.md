@@ -4,7 +4,7 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Snapshot as of 2026-07-18 after the 99% total C milestone. Functions converted from raw assembly to C
+Snapshot as of 2026-07-18 after the 99% total C and 50% init byte-exact milestones. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
@@ -22,8 +22,8 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1679 / 5973 (28.11%) | 27 | 4267 |
-| init | 233 / 508 (45.87%) | 7 | 268 |
+| total | 1701 / 5973 (28.48%) | 27 | 4245 |
+| init | 255 / 508 (50.20%) | 7 | 246 |
 | game | 1280 / 5284 (24.22%) | 20 | 3984 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
@@ -59,6 +59,10 @@ progress to 27.06% without changing the matcher or raw-conversion totals.
 A second compact-function pass matched 63 more callbacks, scalar helpers,
 field initializers, accessors, and thin wrappers, carrying byte-exact progress
 past 28% while preserving the same raw-conversion and blocker counts.
+An init-focused pass then matched 22 more SDK and game functions by restoring
+their retail IDO optimization profiles, native MIPS III 64-bit operations,
+and original register-qualified source shapes. Init byte-exact progress is now
+over 50% without changing the game, debugger, raw-conversion, or blocker totals.
 The first matching pass over those generated slices recovered 40 small
 retail functions exactly. The current layout-preservation pass then crossed
 the 50% byte-exact milestone by retaining every compiled instruction and

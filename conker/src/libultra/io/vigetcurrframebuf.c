@@ -9,7 +9,7 @@ typedef struct {
 extern OSViContextHead *D_8002BDE0;
 
 void *osViGetCurrentFramebuffer(void) {
-    u32 saveMask;
+    register u32 saveMask;
     void *framep;
 
     saveMask = __osDisableInt();

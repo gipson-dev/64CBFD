@@ -2,9 +2,7 @@
 #include <rcp.h>
 
 s32 __osSpSetPc(u32 pc) {
-    u32 status;
-
-    status = IO_READ(SP_STATUS_REG);
+    register u32 status = IO_READ(SP_STATUS_REG);
     if (!(status & SP_STATUS_HALT)) {
         return -1;
     }

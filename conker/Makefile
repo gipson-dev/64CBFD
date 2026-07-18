@@ -171,6 +171,24 @@ $(BUILD_DIR)/$(SRC_DIR)/init_22460.c.o: OPT_FLAGS := -g
 $(BUILD_DIR)/$(SRC_DIR)/libultra/io/ai.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/libultra/io/aigetstat.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/libultra/io/aisetfreq.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/sp.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/si.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/spsetpc.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/vigetcurrframebuf.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/vigetnextframebuf.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/pigetcmdq.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/siacs.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/sprawread.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/sprawwrite.c.o: OPT_FLAGS := -O1
+
+$(BUILD_DIR)/$(SRC_DIR)/libultra/os/createmesgqueue.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/os/piacs.c.o: OPT_FLAGS := -O1
+
+$(BUILD_DIR)/$(SRC_DIR)/libultra/libc/string.c.o: OPT_FLAGS := -O2
+
+# These compiler-support routines are native 64-bit MIPS operations in retail.
+$(BUILD_DIR)/$(SRC_DIR)/libultra/libc/__ull_rshift.c.o: OPT_FLAGS := -O2
+$(BUILD_DIR)/$(SRC_DIR)/libultra/libc/__ull_rshift.c.o: MIPSBIT := -mips3 -o32
 
 $(BUILD_DIR)/$(SRC_DIR)/libultra/os/getthreadpri.c.o: OPT_FLAGS := -O1
 

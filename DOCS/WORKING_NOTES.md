@@ -25,6 +25,16 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, init byte-exact progress crossed 50%).**
+Matched 22 more init functions through their retail IDO build profiles and
+source shapes: eight native MIPS III 64-bit compiler helpers, PI/SI access and
+raw-I/O routines, SP status helpers, VI framebuffer accessors, message-queue
+helpers, `memcpy`, `strlen`, and one audio event walker. Byte-exact progress is
+now total `1701 / 5973 (28.48%)`, init `255 / 508 (50.20%)`, game
+`1280 / 5284 (24.22%)`, and debugger `166 / 181 (91.71%)`, with 27
+address-blocked and 4245 differing functions. Raw C conversion remains
+`5973 / 6033 (99.01%)`.
+
 **Update (2026-07-18, byte-exact progress crossed 28%).**
 Reconstructed 63 more compact generated-slice functions as matching C. The
 batch covers typed argument-homing callbacks, constant-return handlers,

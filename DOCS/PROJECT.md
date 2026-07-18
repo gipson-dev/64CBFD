@@ -226,8 +226,8 @@ bytes (last regenerated 2026-07-18, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1679 / 5973 (28.11%) | 27 | 4267 |
-| init | 233 / 508 (45.87%) | 7 | 268 |
+| total | 1701 / 5973 (28.48%) | 27 | 4245 |
+| init | 255 / 508 (50.20%) | 7 | 246 |
 | game | 1280 / 5284 (24.22%) | 20 | 3984 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 

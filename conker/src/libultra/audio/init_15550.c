@@ -318,7 +318,7 @@ void func_10017604(u8 arg0) {
         event.type = 1024;
         event.msg.unknown1.unk0 = current;
         if ((current->unk53 & arg0) == arg0) {
-            current->unk53 &= ~0x10;
+            event.msg.unknown1.unk0->unk53 &= ~0x10;
             n_alEvtqPostEvent(&D_8002BA2C->evtq, &event, 0, 2);
         }
         current = current->node.next;
