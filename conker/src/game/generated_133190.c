@@ -34,8 +34,8 @@ s32 func_15106510() {
     return 0;
 }
 
-s32 func_15106540() {
-    return 0;
+f32 func_15106540(register f32 arg0) {
+    return arg0 * arg0 * arg0;
 }
 
 s32 func_15106558() {

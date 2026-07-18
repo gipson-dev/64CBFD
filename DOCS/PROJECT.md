@@ -226,9 +226,9 @@ bytes (last regenerated 2026-07-18, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1616 / 5973 (27.06%) | 27 | 4330 |
+| total | 1679 / 5973 (28.11%) | 27 | 4267 |
 | init | 233 / 508 (45.87%) | 7 | 268 |
-| game | 1217 / 5284 (23.03%) | 20 | 4047 |
+| game | 1280 / 5284 (24.22%) | 20 | 3984 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The first matching pass over the generated game slices made 40 small
@@ -249,7 +249,10 @@ byte-exact; typed legacy signatures changed three previously exact init
 callers, and the regression is recorded rather than hidden. The next matching
 pass reconstructed 35 small typed callbacks, constant-return handlers,
 accessors, and state setters, bringing the current result to 1616 byte-exact
-functions while leaving all blocker and raw-conversion counts unchanged.
+functions. The following compact-function pass matched 63 more callbacks,
+scalar helpers, field initializers, accessors, and thin wrappers, bringing the
+current result to 1679 byte-exact functions while leaving all blocker and
+raw-conversion counts unchanged.
 The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
 finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
 and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.

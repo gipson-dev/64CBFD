@@ -2,6 +2,13 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/179F30.s. */
 
+s32 func_1514F194();
+s32 func_1514DCAC();
+s32 func_1516972C();
+s32 func_1515F10C();
+s32 func_1514E920();
+s32 func_1514E89C();
+
 s32 func_1514CA80() {
     return 0;
 }
@@ -60,8 +67,8 @@ s32 func_1514DB64() {
     return 0;
 }
 
-s32 func_1514DB98() {
-    return 0;
+void func_1514DB98() {
+    func_1514F194();
 }
 
 s32 func_1514DBB8() {
@@ -92,36 +99,36 @@ s32 func_1514DCF4() {
     return 0;
 }
 
-s32 func_1514DD2C() {
-    return 0;
+void func_1514DD2C() {
+    func_1514DCAC();
 }
 
-s32 func_1514DD4C() {
-    return 0;
+void func_1514DD4C() {
+    func_1514DCAC();
 }
 
-s32 func_1514DD6C() {
-    return 0;
+void func_1514DD6C() {
+    func_1514DCAC();
 }
 
-s32 func_1514DD8C() {
-    return 0;
+void func_1514DD8C() {
+    func_1514DCAC();
 }
 
-s32 func_1514DDAC() {
-    return 0;
+void func_1514DDAC() {
+    func_1514DCAC();
 }
 
-s32 func_1514DDCC() {
-    return 0;
+void func_1514DDCC() {
+    func_1514DCAC();
 }
 
-s32 func_1514DDEC() {
-    return 0;
+void func_1514DDEC() {
+    func_1514DCAC();
 }
 
-s32 func_1514DE0C() {
-    return 0;
+void func_1514DE0C() {
+    func_1514DCAC();
 }
 
 void func_1514DE2C(s32 arg0) {
@@ -183,16 +190,16 @@ s32 func_1514E7C8() {
 void func_1514E824(s32 arg0) {
 }
 
-s32 func_1514E830() {
-    return 0;
+void func_1514E830() {
+    func_1516972C();
 }
 
 s32 func_1514E850() {
     return 0;
 }
 
-s32 func_1514E87C() {
-    return 0;
+void func_1514E87C() {
+    func_1515F10C();
 }
 
 s32 func_1514E89C() {
@@ -203,24 +210,24 @@ s32 func_1514E920() {
     return 0;
 }
 
-s32 func_1514E9DC() {
-    return 0;
+void func_1514E9DC() {
+    func_1514E920();
 }
 
-s32 func_1514E9FC() {
-    return 0;
+void func_1514E9FC() {
+    func_1514E89C();
 }
 
 s32 func_1514EA1C() {
     return 0;
 }
 
-s32 func_1514EB6C() {
-    return 0;
+void func_1514EB6C() {
+    func_1514E89C();
 }
 
-s32 func_1514EB8C() {
-    return 0;
+s32 func_1514EB8C(s32 arg0, s32 arg1, s32 arg2) {
+    return 1;
 }
 
 s32 func_1514EBA4() {
@@ -255,8 +262,8 @@ s32 func_1514EECC() {
     return 0;
 }
 
-s32 func_1514F110() {
-    return 0;
+void func_1514F110() {
+    func_1514F194();
 }
 
 s32 func_1514F130() {

@@ -185,8 +185,12 @@ s32 func_151905BC() {
     return 0;
 }
 
-s32 func_151906C4() {
-    return 0;
+void func_151906C4(u8 *arg0) {
+    u8 *target = *(u8 **)(*(u8 **)(arg0 + 0x10) + 0x31C);
+
+    if (target != NULL) {
+        target[0x1AC] = 0;
+    }
 }
 
 s32 func_151906E0() {

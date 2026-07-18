@@ -10,6 +10,20 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Byte-exact progress crossed 28%
+
+- Reconstructed 63 compact generated-slice functions as matching C,
+  including callbacks, constant handlers, scalar helpers, field initializers,
+  table accessors, flag setters, and thin call wrappers.
+- Preserved retail incoming registers and call-delay-slot constants through
+  explicit legacy declarations, calling-convention-width parameters, and
+  targeted `register` annotations.
+- Reverted four exploratory near-matches so the published code batch contains
+  only confirmed exact improvements.
+- Published byte-exact progress at **1679 / 5973 functions (28.11%)**, with
+  address-drift blockers unchanged at 27 and raw C conversion unchanged at
+  **5973 / 6033 (99.01%)**.
+
 ### Byte-exact progress crossed 27%
 
 - Reconstructed 35 small generated-slice functions as matching C, including

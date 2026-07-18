@@ -14,8 +14,9 @@ s32 func_150806A8() {
     return 0;
 }
 
-s32 func_15080718() {
-    return 0;
+void func_15080718(register s32 arg0, s32 *arg1, s32 *arg2) {
+    *arg2 = 1 << (arg0 & 7);
+    *arg1 = arg0 >> 3;
 }
 
 s32 func_15080738() {

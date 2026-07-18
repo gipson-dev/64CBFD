@@ -6,12 +6,12 @@ s32 func_150C5370() {
     return 0;
 }
 
-s32 func_150C5430() {
-    return 0;
+void func_150C5430() {
+    func_15169804();
 }
 
-s32 func_150C5450() {
-    return 0;
+void func_150C5450() {
+    func_15169824();
 }
 
 s32 func_150C5470() {

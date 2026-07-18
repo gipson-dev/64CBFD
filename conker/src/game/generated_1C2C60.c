@@ -45,8 +45,11 @@ s32 func_15195FF0() {
     return 0;
 }
 
-s32 func_15196318() {
-    return 0;
+void func_15196318(u8 *arg0, s32 arg1, s32 arg2) {
+    if (arg0 != NULL) {
+        arg0[0x12] = arg1;
+        arg0[0x13] = arg2;
+    }
 }
 
 s32 func_15196330() {

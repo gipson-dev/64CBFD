@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/5D2C0.s. */
 
+s32 func_15030310();
+
 s32 func_1502FE10() {
     return 0;
 }
@@ -14,8 +16,8 @@ s32 func_15030158() {
     return 0;
 }
 
-s32 func_150302F0() {
-    return 0;
+void func_150302F0(register s32 arg0, register s32 arg1) {
+    func_15030310(arg0, arg1, 0xFF);
 }
 
 s32 func_15030310() {

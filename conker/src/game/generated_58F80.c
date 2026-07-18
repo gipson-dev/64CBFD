@@ -93,12 +93,16 @@ void func_1502EA50(u8 *arg0) {
     arg0[0xA4] = 5;
 }
 
-s32 func_1502EA60() {
-    return 0;
+void func_1502EA60(u8 *arg0, s32 arg1) {
+    arg0[0xA4] = 2;
+    arg0[0xA5] = 0xFF;
+    arg0[0xA6] = arg1;
 }
 
-s32 func_1502EA7C() {
-    return 0;
+void func_1502EA7C(u8 *arg0, s32 arg1) {
+    arg0[0xA4] = 3;
+    arg0[0xA5] = 0xFF;
+    arg0[0xA6] = arg1;
 }
 
 s32 func_1502EA98() {

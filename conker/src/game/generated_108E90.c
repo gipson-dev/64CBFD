@@ -42,8 +42,13 @@ s32 func_150DE12C() {
     return 0;
 }
 
-s32 func_150DE2A4() {
-    return 0;
+s32 func_150DE2A4(u8 *arg0) {
+    s16 value = *(s16 *)(arg0 + 0x1C);
+
+    if (value < 0x20) {
+        arg0[0x28] = value << 3;
+    }
+    return 1;
 }
 
 s32 func_150DE2C4() {

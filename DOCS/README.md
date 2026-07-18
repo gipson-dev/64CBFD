@@ -22,9 +22,9 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1616 / 5973 (27.06%) | 27 | 4330 |
+| total | 1679 / 5973 (28.11%) | 27 | 4267 |
 | init | 233 / 508 (45.87%) | 7 | 268 |
-| game | 1217 / 5284 (23.03%) | 20 | 4047 |
+| game | 1280 / 5284 (24.22%) | 20 | 3984 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The debugger overlay's long-standing rodata displacement healed on
@@ -56,6 +56,9 @@ routines, and the debugger CP0 reader.
 A dedicated byte-matching pass then recovered 35 small typed callbacks,
 constant-return handlers, accessors, and state setters, raising byte-exact
 progress to 27.06% without changing the matcher or raw-conversion totals.
+A second compact-function pass matched 63 more callbacks, scalar helpers,
+field initializers, accessors, and thin wrappers, carrying byte-exact progress
+past 28% while preserving the same raw-conversion and blocker counts.
 The first matching pass over those generated slices recovered 40 small
 retail functions exactly. The current layout-preservation pass then crossed
 the 50% byte-exact milestone by retaining every compiled instruction and

@@ -10,6 +10,6 @@ s32 func_150CF040() {
     return 0;
 }
 
-s32 func_150CF080() {
-    return 0;
+void func_150CF080(u8 *arg0) {
+    *(u32 *)(arg0 + 0x84) |= 0x4000;
 }

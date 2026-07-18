@@ -9,8 +9,7 @@ s32 func_151045F4(s32 arg0, s32 arg1) {
     return 1;
 }
 
-s32 func_15104608() {
-    return 0;
+void func_15104608(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
 }
 
 s32 func_15104620(s32 arg0, s32 arg1) {

@@ -30,8 +30,8 @@ s32 func_1510F720() {
     return 0;
 }
 
-s32 func_1510F800() {
-    return 0;
+void func_1510F800() {
+    func_150A49F4();
 }
 
 s32 func_1510F820() {

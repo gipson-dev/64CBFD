@@ -26,8 +26,10 @@ s32 func_150E6FAC() {
     return 0;
 }
 
-s32 func_150E70CC() {
-    return 0;
+void func_150E70CC(f32 *arg0, u8 *arg1) {
+    arg0[0] = *(f32 *)(arg1 + 0x14);
+    arg0[1] = *(f32 *)(arg1 + 0x18);
+    arg0[2] = *(f32 *)(arg1 + 0x1C);
 }
 
 s32 func_150E70EC() {

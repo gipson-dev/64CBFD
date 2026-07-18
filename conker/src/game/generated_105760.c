@@ -13,8 +13,10 @@ s32 func_150D83D8() {
     return 0;
 }
 
-s32 func_150D8590() {
-    return 0;
+u8 *func_150D8590(u16 *arg0, s32 arg1) {
+    arg0[0] = 0x42;
+    arg0[1] = 0;
+    return (u8 *)(arg0 + 2);
 }
 
 s32 func_150D85AC() {

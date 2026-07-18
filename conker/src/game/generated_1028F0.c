@@ -14,12 +14,12 @@ s32 func_150D596C() {
     return 0;
 }
 
-s32 func_150D5A2C() {
-    return 0;
+void func_150D5A2C() {
+    func_1514933C();
 }
 
-s32 func_150D5A4C() {
-    return 0;
+void func_150D5A4C() {
+    func_15149368();
 }
 
 s32 func_150D5A6C() {

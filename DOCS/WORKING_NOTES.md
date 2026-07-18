@@ -25,6 +25,18 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, byte-exact progress crossed 28%).**
+Reconstructed 63 more compact generated-slice functions as matching C. The
+batch covers typed argument-homing callbacks, constant-return handlers,
+scalar math, field initializers, table accessors, flag setters, and thin call
+wrappers whose incoming registers and delay-slot constants now reproduce the
+retail instructions exactly. Four exploratory near-matches were reverted so
+the published code batch contains only confirmed exact wins. Byte-exact
+progress is now total `1679 / 5973 (28.11%)`, init `233 / 508 (45.87%)`,
+game `1280 / 5284 (24.22%)`, and debugger `166 / 181 (91.71%)`, with 27
+address-blocked and 4267 differing functions. Raw C conversion remains
+`5973 / 6033 (99.01%)`.
+
 **Update (2026-07-18, byte-exact progress crossed 27%).**
 Reconstructed 35 small generated-slice functions as matching C: typed empty
 callbacks that preserve their argument home slots, constant-return handlers,

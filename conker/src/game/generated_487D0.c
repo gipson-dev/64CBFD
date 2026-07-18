@@ -6,8 +6,8 @@ s32 func_1501B320() {
     return 0;
 }
 
-s32 func_1501B640() {
-    return 0;
+void func_1501B640() {
+    func_1501B320();
 }
 
 s32 func_1501B660() {

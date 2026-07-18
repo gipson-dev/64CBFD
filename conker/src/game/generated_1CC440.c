@@ -82,8 +82,7 @@ s32 func_151A1010() {
     return 0;
 }
 
-s32 func_151A11CC() {
-    return 0;
+void func_151A11CC(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
 }
 
 s32 func_151A11E4() {
