@@ -25,6 +25,22 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, total raw conversion crossed 80%).**
+Added 82 more text-only game slices as generated non-matching C sources,
+moving 588 tracked functions out of raw assembly. Hardened
+`generate_placeholder_c.py` to recognize indented `glabel` entry points and
+to reject retail spans smaller than the compiler's minimum eight-byte stub.
+The complete selected set maps 666 source global entry points into C-derived
+symbols. Excluded `D7980` because it contains an embedded data label, and
+excluded `D2570`/`D5650` because each contains a four-byte entry span.
+Regenerated the retail-layout manifest and verified the layout build. Raw C
+conversion is now total `4846 / 6033 (80.32%)`, init `327 / 538 (60.78%)`,
+game `4338 / 5313 (81.65%)`, and debugger `181 / 182 (99.45%)`.
+Byte-weighted conversion is total `68.37%`, init `28.24%`, game `71.25%`, and
+debugger `99.19%`. Byte-exact progress is total `1585 / 4846 (32.71%)`, with
+24 address-blocked and 3237 differing functions; all prior exact matches were
+retained.
+
 **Update (2026-07-18, total and game raw conversion crossed 70%).**
 Added 44 more text-only game slices as generated non-matching C sources,
 moving 612 tracked functions out of raw assembly. The generated files contain

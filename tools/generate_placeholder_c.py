@@ -7,7 +7,9 @@ from pathlib import Path
 
 
 def function_layout(path):
-    label = re.compile(r"^glabel\s+(\S+)")
+    # Handwritten and spimdisasm-generated slices sometimes indent secondary
+    # global entry points even though they are independently tracked symbols.
+    label = re.compile(r"^\s*glabel\s+(\S+)")
     instruction = re.compile(
         r"/\*\s*[0-9A-Fa-f]+\s+([0-9A-Fa-f]{8})\s+[0-9A-Fa-f]{8}\s*\*/"
     )
@@ -52,6 +54,11 @@ def generate(source):
         "",
     ]
     for name, size in function_layout(source):
+        if size < 8:
+            raise ValueError(
+                f"{source}: {name} has a {size}-byte retail span; "
+                "the smallest C stub is 8 bytes"
+            )
         if size < 12:
             lines.extend((f"void {name}() {{", "}", ""))
         else:

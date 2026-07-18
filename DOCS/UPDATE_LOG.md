@@ -10,6 +10,18 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Total raw C conversion crossed 80%
+
+- Replaced 82 additional safe text-only game assembly slices with generated
+  non-matching C sources, moving 588 tracked functions into C.
+- Taught the placeholder generator to recognize indented global entry points
+  and reject retail slots smaller than the compiler's eight-byte minimum.
+- Excluded one mixed code/data slice and two slices with four-byte entry spans
+  instead of weakening the layout validator or dropping symbols.
+- Published raw conversion at **4846 / 6033 functions (80.32%)** and **68.37%
+  by bytes**; game conversion reached **4338 / 5313 (81.65%)**.
+- Retained all **1585** byte-exact functions and kept address blockers at 24.
+
 ### Total and game raw C conversion crossed 70%
 
 - Replaced 44 additional text-only game assembly slices with generated
