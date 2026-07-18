@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1CA420.s. */
 
+extern s32 D_800E0920;
+s32 func_1514933C();
+
 s32 func_1519CF70() {
     return 0;
 }
@@ -86,8 +89,9 @@ s32 func_1519E8F8() {
     return 0;
 }
 
-s32 func_1519E924() {
-    return 0;
+void func_1519E924(void) {
+    D_800E0920 = 0;
+    func_1514933C();
 }
 
 s32 func_1519E948() {

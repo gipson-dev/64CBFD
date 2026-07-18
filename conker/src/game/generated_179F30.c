@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/179F30.s. */
 
+void func_1500EE18();
+
 s32 func_1514F194();
 s32 func_1514DCAC();
 s32 func_1516972C();
@@ -75,8 +77,8 @@ s32 func_1514DBB8() {
     return 0;
 }
 
-s32 func_1514DC38() {
-    return 0;
+void func_1514DC38(s32 arg0) {
+    func_1500EE18(arg0, 0xFF, 1);
 }
 
 s32 func_1514DC5C() {

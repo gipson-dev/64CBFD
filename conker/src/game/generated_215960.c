@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "variables.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/215960.s. */
 
@@ -106,6 +107,6 @@ s32 func_151EEBE8() {
     return 0;
 }
 
-s32 func_151EEFF0() {
-    return 0;
+void func_151EEFF0(void) {
+    D_800E9D00 = 0;
 }

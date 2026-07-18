@@ -24,13 +24,12 @@ Before Phase 1 tooling work starts, pick one approach:
   decomp progress (currently 98.34% by converted bytes and 99.01% by tracked
   functions, see PROJECT.md).
 - **Static recompilation** - run a MIPS-to-C recompiler (the approach used by
-  projects such as N64Recomp/Zelda64Recomp and the sm64 static-recomp forks)
-  over the ROM's compiled code, then pair the recompiled output with
-  hand-written high-level implementations of the RSP graphics/audio
-  microcode and the libultra OS layer. This does **not** require the
-  underlying code to be decompiled first, so it can start earlier, at the
-  cost of the recompiled portions staying opaque MIPS-shaped C rather than
-  readable source.
+  projects such as [N64Recomp](https://github.com/N64Recomp/N64Recomp),
+  Zelda64Recomp, and the sm64 static-recomp forks) over the ROM's compiled
+  code, then connect the output to a PC-native runtime. This does **not**
+  require the underlying code to be decompiled first, so it can start earlier,
+  at the cost of the recompiled portions staying opaque MIPS-shaped C rather
+  than readable source.
 
 These aren't mutually exclusive: a common pattern is to statically recompile
 everything, then progressively replace recompiled functions with the
@@ -61,9 +60,11 @@ every later phase cheaper and safer:
 ## Phase 1 - Toolchain and build target
 
 - [ ] Decide hand-port vs. static recompilation (see above) and record the decision.
-- [ ] If static recompilation: evaluate N64Recomp (or an equivalent) against
-      this ROM's compiler (IDO 5.3) and RCP configuration; produce a first
-      recompiled build that at least links.
+- [ ] If static recompilation: evaluate N64Recomp and the
+      [N64 Modern Runtime](https://github.com/N64Recomp/N64ModernRuntime#ultramodern)
+      (`ultramodern` plus `librecomp`) against this ROM's compiler (IDO 5.3),
+      libultra usage, and RCP configuration; produce a first recompiled build
+      that at least links.
 - [ ] Stand up a separate PC build target (new top-level directory or
       sibling repo, e.g. `pc/` or `conker-pc/`) with its own CMake/Makefile,
       independent of the ROM-matching build in `conker/`.
@@ -75,10 +76,25 @@ every later phase cheaper and safer:
 
 ## Phase 2 - OS/runtime shim
 
-Replace what the game currently gets from libultra with PC equivalents,
-using the headers already extracted in `conker/include/2.0L/PR/` (`os.h`,
-`os_cont.h`, `os_ai.h`, `abi.h`, etc.) as the contract to satisfy:
+Do not start by rewriting the entire libultra layer. The
+[N64 Modern Runtime](https://github.com/N64Recomp/N64ModernRuntime#ultramodern)
+is a concrete candidate: `ultramodern` already covers threads, controllers,
+audio, message queues, timers, RSP task handling, and VI timing, while
+[`librecomp`](https://github.com/N64Recomp/N64ModernRuntime#librecomp) bridges
+N64Recomp output and supplies features such as overlays, PI DMA, and save
+storage. It still expects the game project to provide platform I/O callbacks
+and a graphics renderer. Keep it reference-only until a compatibility spike
+proves it can support Conker's Rare-specific code and microcode without
+forcing changes into the byte-matching ROM build.
 
+Whether reusing that runtime or filling its gaps locally, use the headers
+already extracted in `conker/include/2.0L/PR/` (`os.h`, `os_cont.h`, `os_ai.h`,
+`abi.h`, etc.) as the contract to satisfy:
+
+- [ ] Build a small compatibility inventory that maps every libultra call used
+      by Conker to `ultramodern`, `librecomp`, or a project-owned missing shim.
+- [ ] If the spike succeeds, pin the runtime in the separate PC build and keep
+      it out of the ROM-matching `conker/` dependency graph.
 - [ ] Threading/scheduler shim (`os_internal.h`, viManager/scheduler
       equivalents) - N64 games assume cooperative multi-threading; decide how
       that maps onto a PC main loop.
@@ -93,10 +109,13 @@ using the headers already extracted in `conker/include/2.0L/PR/` (`os.h`,
 
 ## Phase 3 - Graphics pipeline
 
-- [ ] Implement an RSP/RDP display-list interpreter (F3DEX2-family commands
-      from `gbi.h`/`gs2dex.h`) that walks the game's existing display lists
-      and issues modern draw calls - this is the single largest chunk of new
-      code in the whole roadmap.
+- [ ] Evaluate [RT64](https://github.com/rt64/rt64), the renderer recommended
+      by `ultramodern`, against Conker's actual display lists and Rare-specific
+      RSP microcode before designing a renderer from scratch.
+- [ ] Integrate a compatible renderer, or implement and upstream/document the
+      missing RSP/RDP commands needed to walk the game's display lists. A fully
+      custom interpreter remains the fallback and would be the single largest
+      chunk of new code in the roadmap.
 - [ ] Render at the original internal resolution and aspect ratio first;
       resolution/aspect changes are a Phase 8 concern.
 - [ ] Get textures loading directly from the documented RGBA5551 asset

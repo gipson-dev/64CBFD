@@ -10,6 +10,65 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Fast generated game sweep reached 26.02%
+
+- Matched 45 additional compact game functions across generated slices,
+  concentrating on direct wrappers, state setters, accessors, flag updates,
+  indexed writes, and global resets that reproduce retail IDO code cleanly.
+- Recovered exact short-function shapes through argument preservation, call
+  delay-slot constants, right-to-left expression ordering, volatile pointer
+  reloads where retail reads twice, and explicit field-width/sign choices.
+- Kept useful partial reductions for `func_150F02A0`, `func_150CBF5C`, and
+  `func_151D0128`; reverted the `func_151EFF70` experiment after its compiled
+  body exceeded the retail span.
+- Verified **1375 / 5284 game functions (26.02%)** and **1908 / 5973 overall
+  (31.94%)**, with zero address-drift blockers and no lost exact matches.
+
+### Difficult game near-matches recovered
+
+- Matched `func_150779D4` and `func_15079570`, two 51- and 59-instruction
+  routines that were already behaviorally correct but still differed in
+  floating-point temporary allocation and a final address-register choice.
+- Restored the retail expression shapes with explicit distance and threshold
+  temporaries plus the native `struct127.y_position` field access.
+- Matched the 54-instruction `func_1507879C` by separating its `struct197`
+  pointer load from the float access, restoring retail's `v0` reuse across
+  the indexed object lookup.
+- Reduced the 55-instruction `func_15135480` from seven real instruction
+  differences to two by restoring its reused object value and early-exit
+  comparison shape; the two remaining differences are commuted branch
+  operands.
+- Rejected and reverted experiments that worsened `guMtxCatF`,
+  `func_1505D024`, `func_1505841C`, `func_151254F4`, and `func_1514672C`.
+- Verified **1330 / 5284 game functions (25.17%)** and **1863 / 5973 overall
+  (31.19%)**, with zero address-drift blockers and no lost matches.
+
+### PC-port runtime reference
+
+- Evaluated N64 Modern Runtime as a useful Phase 1/2 candidate instead of a
+  generic reference: `ultramodern` covers much of the libultra OS surface and
+  `librecomp` bridges N64Recomp output plus ROM/save operations.
+- Added a compatibility-inventory step and kept the runtime reference-only
+  until Conker's Rare-specific code and microcode are proven compatible; no
+  dependency, submodule, or ROM-build change was made.
+- Added RT64 as the first renderer to evaluate before committing to a custom
+  RSP/RDP display-list interpreter.
+
+### Game byte-exact progress reached 25.11%
+
+- Matched ten additional game functions: `func_15014220`, `func_15015644`,
+  `func_15075884`, `func_15075AAC`, `func_1512D368`, `func_1514373C`,
+  `func_151927C0`, `func_151D2BA4`, `func_151EEFF0`, and `func_151EF080`.
+- Recovered four larger 35-45-word routines alongside compact math, state,
+  copy, and generated-slice helpers by restoring retail argument constants,
+  statement order, temporary-expression shapes, and the required IDO object
+  profile.
+- Rejected an optimization-setting tradeoff that would have lost an existing
+  exact function; the clean rebuild retains every prior match.
+- Published game byte-exact progress at **1327 / 5284 functions (25.11%)**
+  and total byte-exact progress at **1860 / 5973 (31.14%)**. Address-drift
+  blockers remain zero and raw C conversion remains **5973 / 6033 (99.01%)**.
+
 ### Init byte-exact progress reached 56.89%
 
 - Matched 26 additional init functions across PI/SI/SP raw I/O, VI state,

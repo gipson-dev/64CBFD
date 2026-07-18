@@ -224,7 +224,7 @@ s32 func_15014220(u8 *arg0) {
     data.unk4 = arg0;
     data.unk8 = 1;
 
-    temp_v0 = (u8 *)func_15149130(0x12C, -1, 0x26, -1, 0, 0, (struct37 *)0x24, 0xFF, 1);
+    temp_v0 = (u8 *)func_15149130(0x12C, -1, 0x26, -1, 0, 0x24, (struct37 *)0xC, 0xFF, 0);
     if (temp_v0 != NULL) {
         memcpy(temp_v0 + 0x28, &data, 0xC);
     }
@@ -337,8 +337,8 @@ s32 func_15015644(u8 *arg0) {
     } data;
     u8 *temp_v0;
 
-    arg0[0x14] = 1;
     arg0[0x16] |= 4;
+    arg0[0x14] = 1;
     data.unk0 = arg0;
     data.unk4 = func_15144598((struct134 *)arg0);
     func_1510F800(0);

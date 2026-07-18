@@ -455,8 +455,9 @@ void func_151436B4(f32 arg0, f32 arg1, f32 arg2, vertex *arg3) {
 }
 void func_1514373C(f32 arg0, f32 arg1, f32 *arg2, f32 *arg3) {
     f32 tmp = cosf(arg0);
+    f32 sin0 = sinf(arg0);
 
-    *arg2 = arg1 * sinf(arg0);
+    *arg2 = arg1 * sin0;
     *arg3 = arg1 * tmp;
 }
 // NON-MATCHING: only differs from us by the jal target address of the still-unmatched

@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1DF510.s. */
 
+s32 func_151B222C();
+
 s32 func_151B2060() {
     return 0;
 }
@@ -10,8 +12,8 @@ s32 func_151B2100() {
     return 0;
 }
 
-s32 func_151B220C() {
-    return 0;
+void func_151B220C(void) {
+    func_151B222C();
 }
 
 s32 func_151B222C() {
@@ -38,8 +40,12 @@ s32 func_151B2690() {
     return 0;
 }
 
-s32 func_151B2950() {
-    return 0;
+void func_151B2950(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **)(arg0 + 0x178);
+
+    if (temp_v0 != NULL) {
+        *(s32 *)(temp_v0 + (*(u8 *)(arg0 + 0x17C) * 4) + 0x38) = 0;
+    }
 }
 
 s32 func_151B2974() {
@@ -58,8 +64,12 @@ s32 func_151B2FA0() {
     return 0;
 }
 
-s32 func_151B2FD0() {
-    return 0;
+void func_151B2FD0(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **)(arg0 + 0x4C);
+
+    if (temp_v0 != NULL) {
+        *(s32 *)(temp_v0 + 0x44) = 0;
+    }
 }
 
 s32 func_151B2FE8() {

@@ -154,7 +154,8 @@ void func_15075884(void) {
     temp_f2 = temp_v1[1].x - D_800D154C->x_position;
     temp_f12 = temp_v1[1].z - D_800D154C->z_position;
     temp_f0 = sqrtf((temp_f2 * temp_f2) + (temp_f12 * temp_f12));
-    D_800D154C->unk44 = 2.0f * (temp_f0 / D_800D1891);
+    temp_f2 = D_800D1891;
+    D_800D154C->unk44 = 2.0f * (temp_f0 / temp_f2);
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15075938.s. */
@@ -222,10 +223,14 @@ void func_15075A50(void) {
 // what is D_800D2104?
 void func_15075AAC(void) {
     PathNode8 *temp_v0;
+    f32 x_diff;
+    f32 z_diff;
 
     func_15075548();
     temp_v0 = &((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1891];
-    if ((fabsf(temp_v0->x - D_800D154C->x_position) + fabsf(temp_v0->z - D_800D154C->z_position)) < 40.0f) {
+    x_diff = temp_v0->x - D_800D154C->x_position;
+    z_diff = temp_v0->z - D_800D154C->z_position;
+    if ((fabsf(x_diff) + fabsf(z_diff)) < 40.0f) {
         D_800D154C->unk21C = 0;
         D_800D154C->xz_velocity = 0.0f;
     }
@@ -794,9 +799,10 @@ void func_150779A8(void) {
     D_800D154C->unk223 = 0xB;
 }
 
-// NON-MATCHING: JUSTREG! using $f6 not $f2
 void func_150779D4(void) {
     struct127 *tmp;
+    f32 distance;
+    f32 threshold;
     u8 idx = 0;
 
     if (D_800D1892 != 0) {
@@ -804,7 +810,9 @@ void func_150779D4(void) {
     }
     tmp = &D_800CC2D0[idx];
     if ((D_800C3E78 != idx) && ((tmp->interaction_state != 1) || (tmp->unk65 == 0))) {
-        if (func_1505A6F8(D_800D154C, tmp) < (D_800D1893 * 8)) {
+        distance = func_1505A6F8(D_800D154C, tmp);
+        threshold = D_800D1893 * 8;
+        if (distance < threshold) {
             func_15075400(D_800D1890);
         }
     }
@@ -1088,7 +1096,8 @@ void func_15078544(void) {
 }
 
 void func_1507879C(void) {
-    f32 temp_f0 = ((struct197 *)D_800CC5A0[D_800D154C->unk222].interaction_state)->unk8;
+    struct197 *temp_v0 = (struct197 *)D_800CC5A0[D_800D154C->unk222].interaction_state;
+    f32 temp_f0 = temp_v0->unk8;
 
     if (((D_800D1892 == 0) && (temp_f0 < D_800D1891)) ||
         ((D_800D1892 == 1) && (D_800D1891 < temp_f0))) {
@@ -1306,7 +1315,6 @@ s32 func_150793D8() {
     return 0;
 }
 
-// NON-MATCHING: JUSTREG - t1 not t0
 void func_15079570(void) {
     f32 temp_f2;
 
@@ -1314,7 +1322,7 @@ void func_15079570(void) {
     D_800D154C->unk44 = D_800D154C->xz_velocity;
     temp_f2 = 2.0f * (temp_f2 / D_800D154C->unk44);
     D_800D154C->y_velocity = D_800D154C->gravity * temp_f2 * 0.5f;
-    D_800D154C->y_velocity += ((D_800CC2E8[D_800D154C->unk222 * 203] - D_800D154C->y_position) / temp_f2) * 2.0f;
+    D_800D154C->y_velocity += ((D_800CC2D0[D_800D154C->unk222].y_position - D_800D154C->y_position) / temp_f2) * 2.0f;
 }
 
 void func_1507965C(void) {

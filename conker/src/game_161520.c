@@ -281,9 +281,11 @@ void func_15135480(struct102 *arg0, s32 *arg1, u8 arg2) {
         if (v1 == v0) {
             *(s32*)((u8*)arg0 + 0x1C) = arg1[1];
             *(u8*)((u8*)arg0 + 0x18) = *(u8*)((u8*)arg1 + 9);
-        } else if (arg1[1] == v0) {
-            *(s32*)((u8*)arg0 + 0x1C) = v1;
-            *(u8*)((u8*)arg0 + 0x18) = *(u8*)((u8*)arg1 + 8);
+        } else {
+            if (arg1[1] == v0) {
+                *(s32*)((u8*)arg0 + 0x1C) = v1;
+                *(u8*)((u8*)arg0 + 0x18) = *(u8*)((u8*)arg1 + 8);
+            }
         }
     }
     v0 = *(u8*)((u8*)arg0 + 0x50);
@@ -298,9 +300,13 @@ void func_15135480(struct102 *arg0, s32 *arg1, u8 arg2) {
             if (arg2 != 0) {
                 break;
             }
-            if (arg1[0] == *(s32*)((u8*)arg0 + 0x1C) || *(u8*)((u8*)arg1 + 4) == *(u8*)((u8*)arg0 + 0x18)) {
-                func_1516972C(arg0);
+            v0 = *(s32*)((u8*)arg0 + 0x1C);
+            if (arg1[0] != v0) {
+                if (*(u8*)((u8*)arg1 + 4) != *(u8*)((u8*)arg0 + 0x18)) {
+                    break;
+                }
             }
+            func_1516972C(arg0);
             break;
     }
 }

@@ -225,6 +225,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_pfsisplug.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_pidma.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_vi.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_viswapcontext.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_21C4F0.c.o: OPT_FLAGS := -O1
 
 $(BUILD_DIR)/$(SRC_DIR)/libultra/libc/string.c.o: OPT_FLAGS := -O2
 $(BUILD_DIR)/$(SRC_DIR)/libultra/libc/ldiv.c.o: OPT_FLAGS := -O2

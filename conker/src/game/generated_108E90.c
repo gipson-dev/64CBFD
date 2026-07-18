@@ -30,8 +30,8 @@ s32 func_150DDED0() {
     return 0;
 }
 
-s32 func_150DDF88() {
-    return 0;
+void func_150DDF88(u8 *arg0) {
+    func_150DBD70(*(u8 *)(arg0 + 0x28), arg0);
 }
 
 s32 func_150DDFAC() {

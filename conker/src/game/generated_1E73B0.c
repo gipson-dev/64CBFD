@@ -187,8 +187,9 @@ s32 func_151BEB20() {
     return 0;
 }
 
-s32 func_151BEC94() {
-    return 0;
+s32 func_151BEC94(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {
+    *arg4 = 1;
+    return arg0;
 }
 
 s32 func_151BECB8() {

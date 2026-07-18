@@ -3,6 +3,12 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef struct {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+} ThreeWordCopy;
+
 /* Generated placeholder declarations. */
 s32 func_151D2C40();
 s32 func_151D2F00();
@@ -44,9 +50,7 @@ struct224 *func_151D2BA4(s32 arg0, struct00 *arg1, s32 arg2, u8 arg3, s32 arg4) 
     }
 
     memcpy(&tmp->unk10, arg0, 36);
-    tmp->unk34 = arg1->unk0;
-    tmp->unk38 = arg1->unk4;
-    tmp->unk3C = arg1->unk8;
+    *(ThreeWordCopy *)&tmp->unk34 = *(ThreeWordCopy *)arg1;
 
     func_151D3308(tmp);
     return tmp;

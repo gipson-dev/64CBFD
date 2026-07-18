@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/183640.s. */
 
+s32 func_151D5E30();
+s32 func_15157DEC();
+
 s32 func_15156190() {
     return 0;
 }
@@ -30,8 +33,8 @@ s32 func_15156D24() {
     return 0;
 }
 
-s32 func_15156F94() {
-    return 0;
+void func_15156F94(u8 *arg0) {
+    func_151D5E30(arg0 + 0x88, arg0);
 }
 
 s32 func_15156FB8() {
@@ -86,8 +89,9 @@ s32 func_15157D88() {
     return 0;
 }
 
-s32 func_15157DC8() {
-    return 0;
+s32 func_15157DC8(u8 *arg0) {
+    func_15157DEC(arg0, arg0 + 0x120);
+    return 1;
 }
 
 s32 func_15157DEC() {

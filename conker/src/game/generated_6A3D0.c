@@ -10,8 +10,12 @@ s32 func_1503D368() {
     return 0;
 }
 
-s32 func_1503D438() {
-    return 0;
+void func_1503D438(u32 *arg0, u32 arg1) {
+    u32 temp_v0 = *arg0;
+
+    if ((temp_v0 != 0) && ((temp_v0 & 0x0F000000) == 0)) {
+        *arg0 = temp_v0 + arg1;
+    }
 }
 
 s32 func_1503D45C() {

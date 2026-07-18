@@ -2,7 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/11C2B0.s. */
 
-s32 func_150F02A0();
+void func_150F02A0(u8 *arg0);
 
 s32 func_150EEE00() {
     return 0;
@@ -64,8 +64,10 @@ void func_150F0280(register u8 *arg0) {
     func_150F02A0(arg0);
 }
 
-s32 func_150F02A0() {
-    return 0;
+void func_150F02A0(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **)(arg0 + 0x60);
+
+    *(s32 *)(*(u8 **)(temp_v0 + 8) + (*(u8 *)(temp_v0 + 0xC) * 4) + 0x12C) = 0;
 }
 
 s32 func_150F02C0() {

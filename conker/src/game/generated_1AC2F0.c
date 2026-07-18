@@ -106,8 +106,8 @@ s32 func_15182670() {
     return 0;
 }
 
-s32 func_15182748() {
-    return 0;
+void func_15182748(u8 *arg0) {
+    *(u8 *)(arg0 + 0x2B) = *(s16 *)(arg0 + 0xE) * *(s16 *)(arg0 + 0x2E);
 }
 
 s32 func_15182768() {

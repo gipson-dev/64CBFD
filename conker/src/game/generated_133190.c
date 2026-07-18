@@ -90,8 +90,11 @@ s32 func_151072BC() {
     return 0;
 }
 
-s32 func_15107604() {
-    return 0;
+void func_15107604(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **)(arg0 + 0x60);
+    u8 *temp_v1 = *(u8 **)temp_v0 + 0x28;
+
+    *(s32 *)(temp_v1 + 8) = 0;
 }
 
 s32 func_1510761C() {

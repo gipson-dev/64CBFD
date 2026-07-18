@@ -226,9 +226,9 @@ bytes (last regenerated 2026-07-18, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | `[#######-----------------]` 1850 / 5973 (30.97%) | 0 | 4123 |
+| total | `[########----------------]` 1908 / 5973 (31.94%) | 0 | 4065 |
 | init | `[#################-------]` 367 / 508 (72.24%) | 0 | 141 |
-| game | `[######------------------]` 1317 / 5284 (24.92%) | 0 | 3967 |
+| game | `[######------------------]` 1375 / 5284 (26.02%) | 0 | 3909 |
 | debugger | `[######################--]` 166 / 181 (91.71%) | 0 | 15 |
 
 The first matching pass over the generated game slices made 40 small
@@ -255,10 +255,13 @@ current result to 1679 byte-exact functions while leaving all blocker and
 raw-conversion counts unchanged.
 Further init and game matching restored retail IDO profiles, SDK routines,
 generated libultra slices, signed field and argument types, and compiler
-expression shapes. The latest verified result is 1850 byte-exact functions
-overall (30.97%), including 367 / 508 init functions (72.24%) and
-1317 / 5284 game functions (24.92%). Address-drift blockers are now zero;
-raw-conversion totals remain unchanged.
+expression shapes. A game-focused pass then matched ten more functions,
+including four larger 35-45-word routines, without giving back any existing
+match. A fast generated-slice sweep then matched 45 compact wrappers,
+accessors, state setters, flag updates, and global resets. The latest verified
+result is 1908 byte-exact functions overall (31.94%), including 367 / 508 init
+functions (72.24%) and 1375 / 5284 game functions (26.02%). Address-drift
+blockers are now zero; raw-conversion totals remain unchanged.
 The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
 finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
 and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.

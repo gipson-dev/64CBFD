@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/64120.s. */
 
+extern u8 D_80098068[];
+
 s32 func_15036C70() {
     return 0;
 }
@@ -38,8 +40,8 @@ s32 func_15038620() {
     return 0;
 }
 
-s32 func_15039A54() {
-    return 0;
+u8 *func_15039A54(s32 arg0, s32 arg1) {
+    return D_80098068 + (arg1 * 0x18);
 }
 
 s32 func_15039A78() {
