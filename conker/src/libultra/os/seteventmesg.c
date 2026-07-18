@@ -4,7 +4,7 @@
 extern __OSEventState D_80042910[OS_NUM_EVENTS];
 
 void osSetEventMesg(OSEvent event, OSMesgQueue *mq, OSMesg msg) {
-    u32 saveMask;
+    register u32 saveMask;
     __OSEventState *state;
 
     saveMask = __osDisableInt();

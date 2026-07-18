@@ -240,8 +240,8 @@ s32 _n_timeToSamples( s32 micros)
 }
 
 s32 __n_nextSampleTime(ALPlayer **client) {
-    ALPlayer *current;
     u32 delta = 0x7FFFFFFF;
+    ALPlayer *current;
 
     *client = NULL;
     for (current = n_syn->head; current != NULL; current = current->next) {

@@ -7,7 +7,7 @@ OSTime osGetTime(void) {
     u32 tmptime;
     u32 elapsedCount;
     OSTime currentCount;
-    u32 saveMask;
+    register u32 saveMask;
 
     saveMask = __osDisableInt();
     tmptime = osGetCount();

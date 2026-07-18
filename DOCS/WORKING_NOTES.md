@@ -25,6 +25,18 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, init byte-exact progress reached 56.89%).**
+Matched 26 more init functions by restoring retail IDO `-O1` profiles,
+`register`-qualified hardware-status and interrupt-mask locals, two loop
+shapes, one chained assignment, an audio local order, and the matching
+`strchr` form. Exact wins span PI/SI/SP raw I/O, VI state, message queues,
+thread management, timers, audio, libc, and game code. `func_1000FE88` also
+improved from three real differences to two. Byte-exact progress is now total
+`1735 / 5973 (29.05%)`, init `289 / 508 (56.89%)`, game
+`1280 / 5284 (24.22%)`, and debugger `166 / 181 (91.71%)`, with 27
+address-blocked and 4211 differing functions. Raw C conversion remains
+`5973 / 6033 (99.01%)`.
+
 **Update (2026-07-18, init byte-exact progress reached 51.77%).**
 Matched eight more init functions by restoring their retail IDO object
 profiles: `ldiv`, `lldiv`, `__osSpRawStartDma`, `osSpTaskYielded`,

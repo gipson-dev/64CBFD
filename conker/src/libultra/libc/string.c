@@ -24,13 +24,14 @@ size_t strlen(const char *str) {
 }
 
 char *strchr(const char *str, s32 ch) {
-    u8 c = ch;
+    const u8 c = ch;
 
-    do {
-        if (*str == c) {
-            return (char *)str;
+    while (*(const u8 *)str != c) {
+        if (*(const u8 *)str == 0) {
+            return 0;
         }
-    } while (*str++ != 0);
+        str++;
+    }
 
-    return 0;
+    return (char *)str;
 }

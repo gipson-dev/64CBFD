@@ -10,6 +10,20 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Init byte-exact progress reached 56.89%
+
+- Matched 26 additional init functions across PI/SI/SP raw I/O, VI state,
+  message queues, thread management, timers, audio, libc, and game code.
+- Restored the retail IDO `-O1` object profiles and the original
+  `register`-qualified status, interrupt-mask, queue-index, and thread-walk
+  locals that control allocation and scheduling.
+- Reconstructed exact source shapes for `func_1000F1A8`, `func_1001AFEC`,
+  `__n_nextSampleTime`, `strchr`, and `osAiSetNextBuffer`; reduced
+  `func_1000FE88` from three real instruction differences to two.
+- Published init byte-exact progress at **289 / 508 functions (56.89%)** and
+  total byte-exact progress at **1735 / 5973 (29.05%)**. Address-drift
+  blockers remain 27 and raw C conversion remains **5973 / 6033 (99.01%)**.
+
 ### Init byte-exact progress reached 51.77%
 
 - Matched eight additional init functions: `ldiv`, `lldiv`,

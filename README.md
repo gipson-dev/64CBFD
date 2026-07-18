@@ -8,7 +8,7 @@ your own legally obtained copy of the game to build it.
 
 ## Current progress
 
-Snapshot as of 2026-07-18 after the 99% total C and 50% init byte-exact milestones. Functions converted from raw assembly to C
+Snapshot as of 2026-07-18 after the 99% total C and 56% init byte-exact milestones. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
@@ -23,8 +23,8 @@ exact retail bytes (`make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1709 / 5973 (28.61%) | 27 | 4237 |
-| init | 263 / 508 (51.77%) | 7 | 238 |
+| total | 1735 / 5973 (29.05%) | 27 | 4211 |
+| init | 289 / 508 (56.89%) | 7 | 212 |
 | game | 1280 / 5284 (24.22%) | 20 | 3984 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
@@ -64,6 +64,9 @@ An init-focused pass then matched 22 more SDK and game functions by restoring
 their retail IDO optimization profiles, native MIPS III 64-bit operations,
 and original register-qualified source shapes. Init byte-exact progress is now
 over 50% without changing the game, debugger, raw-conversion, or blocker totals.
+The latest init pass matched 26 more libultra, audio, string, and game helpers
+by completing the same profile and register-local recovery, raising init to
+56.89% and total byte-exact progress past 29% with no regressions.
 The first matching pass over those generated slices recovered 40 small
 retail functions exactly. The current layout-preservation pass then crossed
 the 50% byte-exact milestone by retaining every compiled instruction and

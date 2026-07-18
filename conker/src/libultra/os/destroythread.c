@@ -4,9 +4,9 @@
 extern void func_10007A38(void);
 
 void osDestroyThread(OSThread *t) {
-    u32 saveMask;
-    OSThread *pred;
-    OSThread *succ;
+    register u32 saveMask;
+    register OSThread *pred;
+    register OSThread *succ;
 
     saveMask = __osDisableInt();
 

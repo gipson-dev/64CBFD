@@ -5,8 +5,8 @@ extern void func_100078B4(OSThread **queue);
 extern OSThread *func_10007A24(OSThread **queue);
 
 s32 osSendMesg(OSMesgQueue *mq, OSMesg msg, s32 flags) {
-    u32 saveMask;
-    s32 last;
+    register u32 saveMask;
+    register s32 last;
 
     saveMask = __osDisableInt();
 

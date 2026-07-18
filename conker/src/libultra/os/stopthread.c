@@ -4,8 +4,8 @@
 extern void func_100078B4(OSThread **queue);
 
 void osStopThread(OSThread *t) {
-    u32 saveMask;
-    u16 state;
+    register u32 saveMask;
+    register u16 state;
 
     saveMask = __osDisableInt();
     state = (t == 0) ? OS_STATE_RUNNING : t->state;

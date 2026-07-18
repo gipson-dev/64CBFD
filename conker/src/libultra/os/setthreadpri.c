@@ -6,7 +6,7 @@ extern void func_100078B4(OSThread **queue);
 extern void func_100079D8(OSThread **queue, OSThread *thread);
 
 void osSetThreadPri(OSThread *t, OSPri pri) {
-    u32 saveMask;
+    register u32 saveMask;
 
     saveMask = __osDisableInt();
 

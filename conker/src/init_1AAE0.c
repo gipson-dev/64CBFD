@@ -142,13 +142,17 @@ N_ALVoiceState *__n_mapVoice(N_ALSeqPlayer *seqp, u8 key, u8 vel, u8 channel)
 N_ALVoiceState *func_1001AFEC(N_ALSeqPlayer *seqp, u8 key, u8 channel) {
     N_ALVoiceState *voice;
 
-    for (voice = seqp->vAllocHead; voice != NULL; voice = voice->next) {
-        if ((voice->key == key) &&
-            (voice->channel == channel) &&
-            (voice->phase != 3) &&
-            (voice->phase != 4)) {
-            return voice;
-        }
+    voice = seqp->vAllocHead;
+    if (voice != NULL) {
+        do {
+            if ((voice->key == key) &&
+                (voice->channel == channel) &&
+                (voice->phase != 3) &&
+                (voice->phase != 4)) {
+                return voice;
+            }
+            voice = voice->next;
+        } while (voice != NULL);
     }
 
     return NULL;

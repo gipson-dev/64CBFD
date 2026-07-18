@@ -7,7 +7,7 @@ typedef struct {
 extern OSViContextState *D_8002BDE4;
 
 void osViBlack(u8 active) {
-    u32 saveMask;
+    register u32 saveMask;
 
     saveMask = __osDisableInt();
     if (active) {

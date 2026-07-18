@@ -226,8 +226,8 @@ bytes (last regenerated 2026-07-18, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1709 / 5973 (28.61%) | 27 | 4237 |
-| init | 263 / 508 (51.77%) | 7 | 238 |
+| total | 1735 / 5973 (29.05%) | 27 | 4211 |
+| init | 289 / 508 (56.89%) | 7 | 212 |
 | game | 1280 / 5284 (24.22%) | 20 | 3984 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
@@ -253,6 +253,11 @@ functions. The following compact-function pass matched 63 more callbacks,
 scalar helpers, field initializers, accessors, and thin wrappers, bringing the
 current result to 1679 byte-exact functions while leaving all blocker and
 raw-conversion counts unchanged.
+Two init-focused passes then restored the retail IDO profiles and
+register-qualified local shapes for SDK, audio, libc, and game helpers. The
+latest verified result is 1735 byte-exact functions overall, including
+289 / 508 init functions (56.89%), with blocker and raw-conversion totals
+unchanged.
 The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
 finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
 and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.

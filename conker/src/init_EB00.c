@@ -149,8 +149,7 @@ void func_1000F1A8(void) {
 
     D_80041F50 = 0;
     func_100176EC();
-    D_80041F61 = 0;
-    D_80041F60 = 0;
+    D_80041F60 = D_80041F61 = 0;
 }
 
 void func_10017780(u8 arg0, u16 arg1);
@@ -351,7 +350,7 @@ s32 func_1000FE88(struct15 *arg0, s32 arg1, s32 *arg2) {
     struct15 *current;
 
     if (arg1 < *arg2) {
-        current = &arg0[arg1];
+        current = (struct15 *)((u8 *)arg0 + (arg1 * sizeof(struct15)));
         if (current->unk24 != 0) {
             func_100111C8(current->unk24);
         }

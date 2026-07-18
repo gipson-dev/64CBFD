@@ -13,7 +13,7 @@ typedef struct {
 extern OSViContextEvent *D_8002BDE4;
 
 void osViSetEvent(OSMesgQueue *mq, OSMesg msg, u32 retraceCount) {
-    u32 saveMask;
+    register u32 saveMask;
 
     saveMask = __osDisableInt();
     D_8002BDE4->msgq = mq;

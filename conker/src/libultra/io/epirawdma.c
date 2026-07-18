@@ -2,7 +2,7 @@
 #include <R4300.h>
 
 s32 osEPiRawStartDma(OSPiHandle *pihandle, s32 direction, u32 devAddr, void *dramAddr, u32 size) {
-    u32 stat;
+    register u32 stat;
 
     WAIT_ON_IOBUSY(stat);
     IO_WRITE(PI_DRAM_ADDR_REG, osVirtualToPhysical(dramAddr));

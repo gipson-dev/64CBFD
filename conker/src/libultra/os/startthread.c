@@ -8,7 +8,7 @@ extern OSThread *func_10007A24(OSThread **queue);
 extern void func_10007A38(void);
 
 void osStartThread(OSThread *t) {
-    u32 saveMask;
+    register u32 saveMask;
 
     saveMask = __osDisableInt();
 

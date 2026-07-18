@@ -11,7 +11,7 @@ typedef struct {
 extern OSViContextMode *D_8002BDE4;
 
 void osViSetMode(OSViMode *modep) {
-    u32 saveMask;
+    register u32 saveMask;
 
     saveMask = __osDisableInt();
     D_8002BDE4->modep = modep;
