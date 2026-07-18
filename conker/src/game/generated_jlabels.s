@@ -995,3 +995,1478 @@ jlabel .L151E5BB8_game_data
 jlabel .L151E5BD4
     jr $ra
      nop
+jlabel .L151C9C38_game_data
+    jr $ra
+     nop
+
+jlabel .L151C9C68_game_data
+    jr $ra
+     nop
+
+jlabel .L151C9C98_game_data
+    jr $ra
+     nop
+
+jlabel .L151C9CB4_game_data
+    jr $ra
+     nop
+
+jlabel .L151C9D98_game_data
+    jr $ra
+     nop
+
+jlabel .L151C9DC8
+    jr $ra
+     nop
+
+jlabel .L151C9DD4_game_data
+    jr $ra
+     nop
+
+jlabel .L15031AD4_game_data
+    jr $ra
+     nop
+
+jlabel .L15031AE4_game_data
+    jr $ra
+     nop
+
+jlabel .L15031B00_game_data
+    jr $ra
+     nop
+
+jlabel .L15031B10_game_data
+    jr $ra
+     nop
+
+jlabel .L15031B20_game_data
+    jr $ra
+     nop
+
+jlabel .L15031B38_game_data
+    jr $ra
+     nop
+
+jlabel .L15031B60_game_data
+    jr $ra
+     nop
+
+jlabel .L15031B98_game_data
+    jr $ra
+     nop
+
+jlabel .L15031BA8_game_data
+    jr $ra
+     nop
+
+jlabel .L15031BE4_game_data
+    jr $ra
+     nop
+
+jlabel .L15031C00
+    jr $ra
+     nop
+
+jlabel .L15031CD4_game_data
+    jr $ra
+     nop
+
+jlabel .L15031D18_game_data
+    jr $ra
+     nop
+
+jlabel .L15031D50_game_data
+    jr $ra
+     nop
+
+jlabel .L15031D78_game_data
+    jr $ra
+     nop
+
+jlabel .L15031DAC_game_data
+    jr $ra
+     nop
+
+jlabel .L15031DBC
+    jr $ra
+     nop
+
+jlabel .L15031DDC
+    jr $ra
+     nop
+
+jlabel .L15031DEC
+    jr $ra
+     nop
+
+jlabel .L15032034_game_data
+    jr $ra
+     nop
+
+jlabel .L150320AC_game_data
+    jr $ra
+     nop
+
+jlabel .L150320B4_game_data
+    jr $ra
+     nop
+
+jlabel .L15032138_game_data
+    jr $ra
+     nop
+
+jlabel .L15032140_game_data
+    jr $ra
+     nop
+
+jlabel .L15032148_game_data
+    jr $ra
+     nop
+
+jlabel .L15032150_game_data
+    jr $ra
+     nop
+
+jlabel .L15032158_game_data
+    jr $ra
+     nop
+
+jlabel .L15032160_game_data
+    jr $ra
+     nop
+
+jlabel .L15032168_game_data
+    jr $ra
+     nop
+
+jlabel .L15032170_game_data
+    jr $ra
+     nop
+
+jlabel .L15032178_game_data
+    jr $ra
+     nop
+
+jlabel .L15032180_game_data
+    jr $ra
+     nop
+
+jlabel .L15032188_game_data
+    jr $ra
+     nop
+
+jlabel .L15032190_game_data
+    jr $ra
+     nop
+
+jlabel .L15032198_game_data
+    jr $ra
+     nop
+
+jlabel .L150321A0_game_data
+    jr $ra
+     nop
+
+jlabel .L150321A8_game_data
+    jr $ra
+     nop
+
+jlabel .L150321C0
+    jr $ra
+     nop
+
+jlabel .L150321C8
+    jr $ra
+     nop
+
+jlabel .L150321F4_game_data
+    jr $ra
+     nop
+
+jlabel .L150322A8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032344_game_data
+    jr $ra
+     nop
+
+jlabel .L150323D0_game_data
+    jr $ra
+     nop
+
+jlabel .L150323D8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032474_game_data
+    jr $ra
+     nop
+
+jlabel .L150324F8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032500_game_data
+    jr $ra
+     nop
+
+jlabel .L15032508_game_data
+    jr $ra
+     nop
+
+jlabel .L15032510_game_data
+    jr $ra
+     nop
+
+jlabel .L15032518_game_data
+    jr $ra
+     nop
+
+jlabel .L15032520_game_data
+    jr $ra
+     nop
+
+jlabel .L15032528_game_data
+    jr $ra
+     nop
+
+jlabel .L15032530_game_data
+    jr $ra
+     nop
+
+jlabel .L15032538_game_data
+    jr $ra
+     nop
+
+jlabel .L15032540_game_data
+    jr $ra
+     nop
+
+jlabel .L15032548_game_data
+    jr $ra
+     nop
+
+jlabel .L15032550_game_data
+    jr $ra
+     nop
+
+jlabel .L15032558_game_data
+    jr $ra
+     nop
+
+jlabel .L15032560_game_data
+    jr $ra
+     nop
+
+jlabel .L15032568_game_data
+    jr $ra
+     nop
+
+jlabel .L15032570
+    jr $ra
+     nop
+
+jlabel .L15032578_game_data
+    jr $ra
+     nop
+
+jlabel .L150325A4_game_data
+    jr $ra
+     nop
+
+jlabel .L15032608_game_data
+    jr $ra
+     nop
+
+jlabel .L15032674
+    jr $ra
+     nop
+
+jlabel .L150326B0_game_data
+    jr $ra
+     nop
+
+jlabel .L150326B8_game_data
+    jr $ra
+     nop
+
+jlabel .L150326C0_game_data
+    jr $ra
+     nop
+
+jlabel .L150326C8_game_data
+    jr $ra
+     nop
+
+jlabel .L150326D0_game_data
+    jr $ra
+     nop
+
+jlabel .L150326D8_game_data
+    jr $ra
+     nop
+
+jlabel .L150326E0_game_data
+    jr $ra
+     nop
+
+jlabel .L150326E8_game_data
+    jr $ra
+     nop
+
+jlabel .L150326F0_game_data
+    jr $ra
+     nop
+
+jlabel .L150326F8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032700_game_data
+    jr $ra
+     nop
+
+jlabel .L15032708_game_data
+    jr $ra
+     nop
+
+jlabel .L15032710_game_data
+    jr $ra
+     nop
+
+jlabel .L15032718_game_data
+    jr $ra
+     nop
+
+jlabel .L15032720_game_data
+    jr $ra
+     nop
+
+jlabel .L15032728_game_data
+    jr $ra
+     nop
+
+jlabel .L15032730_game_data
+    jr $ra
+     nop
+
+jlabel .L15032738_game_data
+    jr $ra
+     nop
+
+jlabel .L15032740_game_data
+    jr $ra
+     nop
+
+jlabel .L15032748_game_data
+    jr $ra
+     nop
+
+jlabel .L15032750_game_data
+    jr $ra
+     nop
+
+jlabel .L15032758_game_data
+    jr $ra
+     nop
+
+jlabel .L15032760_game_data
+    jr $ra
+     nop
+
+jlabel .L15032768_game_data
+    jr $ra
+     nop
+
+jlabel .L15032770_game_data
+    jr $ra
+     nop
+
+jlabel .L15032778_game_data
+    jr $ra
+     nop
+
+jlabel .L15032780_game_data
+    jr $ra
+     nop
+
+jlabel .L15032788_game_data
+    jr $ra
+     nop
+
+jlabel .L15032790_game_data
+    jr $ra
+     nop
+
+jlabel .L15032798_game_data
+    jr $ra
+     nop
+
+jlabel .L150327A0_game_data
+    jr $ra
+     nop
+
+jlabel .L150327A8_game_data
+    jr $ra
+     nop
+
+jlabel .L150327B0_game_data
+    jr $ra
+     nop
+
+jlabel .L150327B8_game_data
+    jr $ra
+     nop
+
+jlabel .L150327C0_game_data
+    jr $ra
+     nop
+
+jlabel .L150327C8_game_data
+    jr $ra
+     nop
+
+jlabel .L150327D0_game_data
+    jr $ra
+     nop
+
+jlabel .L150327D8_game_data
+    jr $ra
+     nop
+
+jlabel .L150327E0_game_data
+    jr $ra
+     nop
+
+jlabel .L150327E8_game_data
+    jr $ra
+     nop
+
+jlabel .L150327F0_game_data
+    jr $ra
+     nop
+
+jlabel .L150327F8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032800_game_data
+    jr $ra
+     nop
+
+jlabel .L15032808_game_data
+    jr $ra
+     nop
+
+jlabel .L15032810_game_data
+    jr $ra
+     nop
+
+jlabel .L15032818_game_data
+    jr $ra
+     nop
+
+jlabel .L15032820_game_data
+    jr $ra
+     nop
+
+jlabel .L15032828_game_data
+    jr $ra
+     nop
+
+jlabel .L15032830_game_data
+    jr $ra
+     nop
+
+jlabel .L15032838_game_data
+    jr $ra
+     nop
+
+jlabel .L15032840_game_data
+    jr $ra
+     nop
+
+jlabel .L15032848_game_data
+    jr $ra
+     nop
+
+jlabel .L15032850_game_data
+    jr $ra
+     nop
+
+jlabel .L15032858_game_data
+    jr $ra
+     nop
+
+jlabel .L15032860_game_data
+    jr $ra
+     nop
+
+jlabel .L15032868_game_data
+    jr $ra
+     nop
+
+jlabel .L15032870_game_data
+    jr $ra
+     nop
+
+jlabel .L15032878_game_data
+    jr $ra
+     nop
+
+jlabel .L15032880_game_data
+    jr $ra
+     nop
+
+jlabel .L15032888_game_data
+    jr $ra
+     nop
+
+jlabel .L15032890_game_data
+    jr $ra
+     nop
+
+jlabel .L15032898_game_data
+    jr $ra
+     nop
+
+jlabel .L150328A0_game_data
+    jr $ra
+     nop
+
+jlabel .L150328A8_game_data
+    jr $ra
+     nop
+
+jlabel .L150328B0_game_data
+    jr $ra
+     nop
+
+jlabel .L150328B8_game_data
+    jr $ra
+     nop
+
+jlabel .L150328C0_game_data
+    jr $ra
+     nop
+
+jlabel .L150328C8_game_data
+    jr $ra
+     nop
+
+jlabel .L150328D0_game_data
+    jr $ra
+     nop
+
+jlabel .L150328D8_game_data
+    jr $ra
+     nop
+
+jlabel .L150328E0_game_data
+    jr $ra
+     nop
+
+jlabel .L150328E8_game_data
+    jr $ra
+     nop
+
+jlabel .L150328F0_game_data
+    jr $ra
+     nop
+
+jlabel .L150328F8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032900_game_data
+    jr $ra
+     nop
+
+jlabel .L15032908_game_data
+    jr $ra
+     nop
+
+jlabel .L15032910_game_data
+    jr $ra
+     nop
+
+jlabel .L15032918_game_data
+    jr $ra
+     nop
+
+jlabel .L15032920_game_data
+    jr $ra
+     nop
+
+jlabel .L15032928_game_data
+    jr $ra
+     nop
+
+jlabel .L15032930_game_data
+    jr $ra
+     nop
+
+jlabel .L15032938_game_data
+    jr $ra
+     nop
+
+jlabel .L15032940_game_data
+    jr $ra
+     nop
+
+jlabel .L15032948_game_data
+    jr $ra
+     nop
+
+jlabel .L15032950_game_data
+    jr $ra
+     nop
+
+jlabel .L15032958_game_data
+    jr $ra
+     nop
+
+jlabel .L15032960_game_data
+    jr $ra
+     nop
+
+jlabel .L15032970_game_data
+    jr $ra
+     nop
+
+jlabel .L15032978_game_data
+    jr $ra
+     nop
+
+jlabel .L15032980_game_data
+    jr $ra
+     nop
+
+jlabel .L15032988_game_data
+    jr $ra
+     nop
+
+jlabel .L15032990_game_data
+    jr $ra
+     nop
+
+jlabel .L15032998_game_data
+    jr $ra
+     nop
+
+jlabel .L150329A0_game_data
+    jr $ra
+     nop
+
+jlabel .L150329A8_game_data
+    jr $ra
+     nop
+
+jlabel .L150329B0_game_data
+    jr $ra
+     nop
+
+jlabel .L150329B8_game_data
+    jr $ra
+     nop
+
+jlabel .L150329C0_game_data
+    jr $ra
+     nop
+
+jlabel .L150329C8_game_data
+    jr $ra
+     nop
+
+jlabel .L150329D0_game_data
+    jr $ra
+     nop
+
+jlabel .L150329D8_game_data
+    jr $ra
+     nop
+
+jlabel .L150329E0_game_data
+    jr $ra
+     nop
+
+jlabel .L150329E8_game_data
+    jr $ra
+     nop
+
+jlabel .L150329F0_game_data
+    jr $ra
+     nop
+
+jlabel .L150329F8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A00_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A08_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A10_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A18_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A20_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A28_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A30_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A38_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A40_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A48_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A50_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A58_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A60_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A68_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A70_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A78_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A80_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A88_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A90_game_data
+    jr $ra
+     nop
+
+jlabel .L15032A98_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AA0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AA8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AB0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AB8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AC0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AC8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AD0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AD8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AE0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AE8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AF0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032AF8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B00_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B08_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B10_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B18_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B20_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B28_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B30_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B38_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B40_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B48_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B50_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B58_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B60_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B68_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B70_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B78_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B80_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B88_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B90_game_data
+    jr $ra
+     nop
+
+jlabel .L15032B98_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BA0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BA8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BB0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BB8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BC0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BC8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BD0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BD8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BE0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BE8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BF0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032BF8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C00_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C08_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C10_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C18_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C20_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C28_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C30_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C38_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C40_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C48_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C50_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C58_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C60_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C68_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C70_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C78_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C80_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C88_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C90_game_data
+    jr $ra
+     nop
+
+jlabel .L15032C98_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CA0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CA8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CB0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CB8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CC0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CC8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CD0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CD8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CE0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CE8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CF0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032CF8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D00_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D08_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D10_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D18_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D20_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D28_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D30_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D38_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D40_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D48_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D50_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D58_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D60_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D68_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D70_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D78_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D80_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D88_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D90_game_data
+    jr $ra
+     nop
+
+jlabel .L15032D98_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DA0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DA8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DB0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DB8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DC0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DC8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DD0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DD8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DE0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DE8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DF0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032DF8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032E54_game_data
+    jr $ra
+     nop
+
+jlabel .L15032EB8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032EE4_game_data
+    jr $ra
+     nop
+
+jlabel .L15032F6C_game_data
+    jr $ra
+     nop
+
+jlabel .L15032F90_game_data
+    jr $ra
+     nop
+
+jlabel .L15032F98_game_data
+    jr $ra
+     nop
+
+jlabel .L15032FA0_game_data
+    jr $ra
+     nop
+
+jlabel .L15032FA8_game_data
+    jr $ra
+     nop
+
+jlabel .L15032FB0
+    jr $ra
+     nop
+
+jlabel .L15032FB8_game_data
+    jr $ra
+     nop
+
+jlabel .L15033038_game_data
+    jr $ra
+     nop
+
+jlabel .L150330A8
+    jr $ra
+     nop
+
+jlabel .L1502DB54_game_data
+    jr $ra
+     nop
+
+jlabel .L1502DB6C
+    jr $ra
+     nop
+
+jlabel .L1502EB24_game_data
+    jr $ra
+     nop
+
+jlabel .L1502EB5C_game_data
+    jr $ra
+     nop
+
+jlabel .L1502EB8C
+    jr $ra
+     nop
+
+jlabel .L1502EBB0_game_data
+    jr $ra
+     nop
+
+jlabel .L1502EBFC_game_data
+    jr $ra
+     nop
+
+jlabel .L1502EC64_game_data
+    jr $ra
+     nop
+
+jlabel .L1502ED04_game_data
+    jr $ra
+     nop
+
+jlabel .L1502ED3C_game_data
+    jr $ra
+     nop
+
+jlabel .L1502EE24_game_data
+    jr $ra
+     nop
+
+jlabel .L151108FC_game_data
+    jr $ra
+     nop
+
+jlabel .L15110930_game_data
+    jr $ra
+     nop
+
+jlabel .L15110964_game_data
+    jr $ra
+     nop
+
+jlabel .L15110998_game_data
+    jr $ra
+     nop
+
+jlabel .L15110A0C_game_data
+    jr $ra
+     nop
+
+jlabel .L15110A88_game_data
+    jr $ra
+     nop
+
+jlabel .L15110A90_game_data
+    jr $ra
+     nop
+
+jlabel .L15110B08_game_data
+    jr $ra
+     nop
+
+jlabel .L15110BD8_game_data
+    jr $ra
+     nop
+
+jlabel .L15110C38_game_data
+    jr $ra
+     nop
+
+jlabel .L15110C6C_game_data
+    jr $ra
+     nop
+
+jlabel .L15110C74_game_data
+    jr $ra
+     nop
+
+jlabel .L15110C7C_game_data
+    jr $ra
+     nop
+
+jlabel .L15110CB0_game_data
+    jr $ra
+     nop
+
+jlabel .L15110CE4
+    jr $ra
+     nop
+
+jlabel .L15112060_game_data
+    jr $ra
+     nop
+
+jlabel .L151120B4_game_data
+    jr $ra
+     nop
+
+jlabel .L151120F8_game_data
+    jr $ra
+     nop
+
+jlabel .L15112128_game_data
+    jr $ra
+     nop
+
+jlabel .L15112158_game_data
+    jr $ra
+     nop
+
+jlabel .L15112188_game_data
+    jr $ra
+     nop
+
+jlabel .L15081EF4_game_data
+    jr $ra
+     nop
+
+jlabel .L15081EFC_game_data
+    jr $ra
+     nop
+
+jlabel .L15081F04_game_data
+    jr $ra
+     nop
+
+jlabel .L15081F0C_game_data
+    jr $ra
+     nop
+
+jlabel .L15081F14_game_data
+    jr $ra
+     nop
+
+jlabel .L15081F1C_game_data
+    jr $ra
+     nop
+
+jlabel .L15081F24_game_data
+    jr $ra
+     nop
+
+jlabel .L15081F50_game_data
+    jr $ra
+     nop
+
+jlabel .L15081FF4
+    jr $ra
+     nop
+
+jlabel .L1508202C
+    jr $ra
+     nop
+
+jlabel .L15082A30
+    jr $ra
+     nop
+
+jlabel .L15082A3C
+    jr $ra
+     nop
+
+jlabel .L150833B8_game_data
+    jr $ra
+     nop
+
+jlabel .L150833D0_game_data
+    jr $ra
+     nop
+
+jlabel .L150833E0_game_data
+    jr $ra
+     nop
+
+jlabel .L150833EC_game_data
+    jr $ra
+     nop
+
+jlabel .L150833F8_game_data
+    jr $ra
+     nop
+
+jlabel .L15083410_game_data
+    jr $ra
+     nop
+
+jlabel .L15083468_game_data
+    jr $ra
+     nop
+
+jlabel .L1508353C
+    jr $ra
+     nop

@@ -53,7 +53,11 @@ SRC_DIRS := $(SRC_DIR) \
 
 S_FILES   = $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 S_FILES   := $(filter-out asm/142560.s asm/179F30.s asm/B3020.s asm/1C2C60.s \
-                         asm/1BA1D0.s asm/20AE20.s asm/1E73B0.s asm/49D30.s asm/1FA770.s,$(S_FILES))
+                         asm/1BA1D0.s asm/20AE20.s asm/1E73B0.s asm/49D30.s asm/1FA770.s \
+                         asm/1F4650.s asm/11C2B0.s asm/71820.s asm/17CAF0.s asm/1D6E80.s \
+                         asm/5D2C0.s asm/1CC440.s asm/58F80.s asm/185560.s asm/133190.s \
+                         asm/176A00.s asm/18A8F0.s asm/13D350.s asm/1D92F0.s asm/1B1600.s \
+                         asm/AEB40.s,$(S_FILES))
 S_FILES   += src/game/generated_jlabels.s
 C_FILES   = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 H_FILES   = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.h))

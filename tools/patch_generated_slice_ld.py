@@ -17,6 +17,22 @@ REPLACEMENTS = {
     "build/asm/1E73B0.s.o(.text);": "build/src/game/generated_1E73B0.c.o(.text);",
     "build/asm/49D30.s.o(.text);": "build/src/game/generated_49D30.c.o(.text);",
     "build/asm/1FA770.s.o(.text);": "build/src/game/generated_1FA770.c.o(.text);",
+    "build/asm/1F4650.s.o(.text);": "build/src/game/generated_1F4650.c.o(.text);",
+    "build/asm/11C2B0.s.o(.text);": "build/src/game/generated_11C2B0.c.o(.text);",
+    "build/asm/71820.s.o(.text);": "build/src/game/generated_71820.c.o(.text);",
+    "build/asm/17CAF0.s.o(.text);": "build/src/game/generated_17CAF0.c.o(.text);",
+    "build/asm/1D6E80.s.o(.text);": "build/src/game/generated_1D6E80.c.o(.text);",
+    "build/asm/5D2C0.s.o(.text);": "build/src/game/generated_5D2C0.c.o(.text);",
+    "build/asm/1CC440.s.o(.text);": "build/src/game/generated_1CC440.c.o(.text);",
+    "build/asm/58F80.s.o(.text);": "build/src/game/generated_58F80.c.o(.text);",
+    "build/asm/185560.s.o(.text);": "build/src/game/generated_185560.c.o(.text);",
+    "build/asm/133190.s.o(.text);": "build/src/game/generated_133190.c.o(.text);",
+    "build/asm/176A00.s.o(.text);": "build/src/game/generated_176A00.c.o(.text);",
+    "build/asm/18A8F0.s.o(.text);": "build/src/game/generated_18A8F0.c.o(.text);",
+    "build/asm/13D350.s.o(.text);": "build/src/game/generated_13D350.c.o(.text);",
+    "build/asm/1D92F0.s.o(.text);": "build/src/game/generated_1D92F0.c.o(.text);",
+    "build/asm/1B1600.s.o(.text);": "build/src/game/generated_1B1600.c.o(.text);",
+    "build/asm/AEB40.s.o(.text);": "build/src/game/generated_AEB40.c.o(.text);",
 }
 
 

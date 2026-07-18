@@ -1,0 +1,151 @@
+#include <ultra64.h>
+
+/* Non-matching placeholders for the text-only asm slice asm/185560.s. */
+
+s32 func_151580B0() {
+    return 0;
+}
+
+s32 func_151581D8() {
+    return 0;
+}
+
+s32 func_15158224() {
+    return 0;
+}
+
+s32 func_151582C8() {
+    return 0;
+}
+
+s32 func_1515858C() {
+    return 0;
+}
+
+s32 func_15158684() {
+    return 0;
+}
+
+s32 func_15158920() {
+    return 0;
+}
+
+s32 func_15158A20() {
+    return 0;
+}
+
+s32 func_15158AA4() {
+    return 0;
+}
+
+s32 func_15158AD0() {
+    return 0;
+}
+
+s32 func_15158AFC() {
+    return 0;
+}
+
+s32 func_15158B3C() {
+    return 0;
+}
+
+s32 func_15158BD0() {
+    return 0;
+}
+
+s32 func_15158CD4() {
+    return 0;
+}
+
+s32 func_15158D00() {
+    return 0;
+}
+
+s32 func_15158D2C() {
+    return 0;
+}
+
+s32 func_15158FA4() {
+    return 0;
+}
+
+s32 func_15159084() {
+    return 0;
+}
+
+s32 func_15159120() {
+    return 0;
+}
+
+s32 func_15159184() {
+    return 0;
+}
+
+s32 func_15159230() {
+    return 0;
+}
+
+s32 func_151592B8() {
+    return 0;
+}
+
+s32 func_15159370() {
+    return 0;
+}
+
+s32 func_1515942C() {
+    return 0;
+}
+
+s32 func_15159594() {
+    return 0;
+}
+
+s32 func_151596BC() {
+    return 0;
+}
+
+s32 func_15159890() {
+    return 0;
+}
+
+s32 func_15159BB0() {
+    return 0;
+}
+
+s32 func_15159C08() {
+    return 0;
+}
+
+s32 func_1515A11C() {
+    return 0;
+}
+
+s32 func_1515A238() {
+    return 0;
+}
+
+s32 func_1515A60C() {
+    return 0;
+}
+
+s32 func_1515A78C() {
+    return 0;
+}
+
+s32 func_1515A920() {
+    return 0;
+}
+
+s32 func_1515A974() {
+    return 0;
+}
+
+s32 func_1515AA84() {
+    return 0;
+}
+
+s32 func_1515AB88() {
+    return 0;
+}

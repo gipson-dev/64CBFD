@@ -25,6 +25,29 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-17, total raw conversion crossed 50%; expanded generated game slices).**
+Added 16 more text-only game asm slices as generated non-matching C
+placeholder sources: `generated_1F4650.c`, `generated_11C2B0.c`,
+`generated_71820.c`, `generated_17CAF0.c`, `generated_1D6E80.c`,
+`generated_5D2C0.c`, `generated_1CC440.c`, `generated_58F80.c`,
+`generated_185560.c`, `generated_133190.c`, `generated_176A00.c`,
+`generated_18A8F0.c`, `generated_13D350.c`, `generated_1D92F0.c`,
+`generated_1B1600.c`, and `generated_AEB40.c`. The original asm files remain
+in-tree, while `conker/Makefile` filters those slices out and
+`tools/patch_generated_slice_ld.py` places the generated C objects at their
+original linker positions. `generated_jlabels.s` now preserves 616 exported
+jump-label targets across all generated slice replacements. Verified WSL
+`make -C conker -j NON_MATCHING=1`, `make -C conker progress NON_MATCHING=1`,
+`make -C conker match-progress NON_MATCHING=1`, and `git diff --check`.
+Current raw conversion is total `3033 / 6033 (50.27%)`, init
+`327 / 538 (60.78%)`, game `2525 / 5313 (47.52%)`, and debugger
+`181 / 182 (99.45%)`. Byte-weighted raw conversion is total `12.71%`, init
+`27.89%`, game `10.06%`, and debugger `99.19%`. Current
+`match-progress`: total `700 / 3033 (23.08%)`, blocked `836`, differ `1497`;
+init `76 / 327 (23.24%)`, blocked `164`, differ `87`; game
+`502 / 2525 (19.88%)`, blocked `659`, differ `1364`; debugger
+`122 / 181 (67.40%)`, blocked `13`, differ `46`.
+
 **Update (2026-07-17, total raw conversion crossed 40%; larger generated game slices).**
 Added five more text-only game asm slices as generated non-matching C
 placeholder sources: `generated_1BA1D0.c`, `generated_20AE20.c`,
