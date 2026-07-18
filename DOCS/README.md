@@ -4,14 +4,14 @@ Start here if you are new to this repository or coming back after a while.
 
 ## Current progress
 
-Snapshot as of 2026-07-18 after the 80% total C milestone. Functions converted from raw assembly to C
+Snapshot as of 2026-07-18 after the 90% total C milestone. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[################--------]` 68.37% | 4846 / 6033 (80.32%) |
-| init | `[#######-----------------]` 28.24% | 327 / 538 (60.78%) |
-| game | `[#################-------]` 71.25% | 4338 / 5313 (81.65%) |
+| total | `[####################----]` 84.09% | 5477 / 6033 (90.78%) |
+| init | `[#######-----------------]` 28.28% | 328 / 538 (60.97%) |
+| game | `[#####################---]` 88.37% | 4968 / 5313 (93.51%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Of those C-converted functions, the share that already compiles to the
@@ -22,9 +22,9 @@ matched):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1585 / 4846 (32.71%) | 24 | 3237 |
-| init | 236 / 327 (72.17%) | 4 | 87 |
-| game | 1183 / 4338 (27.27%) | 20 | 3135 |
+| total | 1584 / 5477 (28.92%) | 24 | 3869 |
+| init | 236 / 328 (71.95%) | 4 | 88 |
+| game | 1182 / 4968 (23.79%) | 20 | 3766 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The debugger overlay's long-standing rodata displacement healed on
@@ -40,7 +40,11 @@ past 60%. The next 44 text-only slices moved another 612 tracked functions
 and carried both total and game conversion past 70%, while preserving the
 retail layout and adding another exact match. A further 82 safe text-only
 slices moved 588 tracked functions and carried total conversion past 80% and
-game conversion past 81%, without losing any existing exact matches.
+game conversion past 81%, without losing any existing exact matches. The 90%
+pass then moved 385 functions through 167 standalone slices and replaced 246
+validated `GLOBAL_ASM` groups across eight large mixed C sources. Signature
+declarations needed for those legacy implicit calls perturb one previously
+exact caller; blockers remain unchanged.
 The first matching pass over those generated slices recovered 40 small
 retail functions exactly. The current layout-preservation pass then crossed
 the 50% byte-exact milestone by retaining every compiled instruction and

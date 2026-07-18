@@ -156,14 +156,14 @@ Last regenerated: 2026-07-18, from a fully working `.map`-based build
 
 | Section | Progress bytes | Functions |
 | --- | --- | --- |
-| total | `[################--------]` 68.37% | 4846 / 6033 (80.32%) |
-| init | `[#######-----------------]` 28.24% | 327 / 538 (60.78%) |
-| game | `[#################-------]` 71.25% | 4338 / 5313 (81.65%) |
+| total | `[####################----]` 84.09% | 5477 / 6033 (90.78%) |
+| init | `[#######-----------------]` 28.28% | 328 / 538 (60.97%) |
+| game | `[#####################---]` 88.37% | 4968 / 5313 (93.51%) |
 | debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Recent passes moved init/libultra helpers and debugger functions out of raw
-assembly, carried game raw conversion to `4338 / 5313 (81.65%)`, and pushed
-total raw conversion to `4846 / 6033 (80.32%)`. Debugger raw conversion is complete
+assembly, carried game raw conversion to `4968 / 5313 (93.51%)`, and pushed
+total raw conversion to `5477 / 6033 (90.78%)`. Debugger raw conversion is complete
 except `func_16003650`, a hardware CP0/TLB reader that executes `tlbr` and
 CP0 register moves and is intentionally left as raw assembly. The newly
 converted functions are C-shaped recovery bodies, not yet byte-matched
@@ -222,9 +222,9 @@ bytes (last regenerated 2026-07-18, via
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | 1585 / 4846 (32.71%) | 24 | 3237 |
-| init | 236 / 327 (72.17%) | 4 | 87 |
-| game | 1183 / 4338 (27.27%) | 20 | 3135 |
+| total | 1584 / 5477 (28.92%) | 24 | 3869 |
+| init | 236 / 328 (71.95%) | 4 | 88 |
+| game | 1182 / 4968 (23.79%) | 20 | 3766 |
 | debugger | 166 / 181 (91.71%) | 0 | 15 |
 
 The first matching pass over the generated game slices made 40 small

@@ -25,6 +25,23 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, total raw conversion crossed 90%).**
+Added 167 more safe standalone generated slices and converted all 246
+`GLOBAL_ASM` groups across the eight largest remaining mixed game sources:
+`game_83300.c`, `game_161520.c`, `game_981E0.c`, `game_16EE20.c`,
+`game_14FF90.c`, `game_169510.c`, `game_18D770.c`, and `game_2062D0.c`.
+Added `replace_global_asm_with_placeholders.py`, which validates each referenced
+asm fragment, reuses declared return/parameter types, infers consistent arity
+for legacy implicit calls, and is idempotent over generated placeholder blocks.
+The pass moved 631 tracked functions into C (385 standalone plus 246 mixed
+groups). Raw C conversion is now total `5477 / 6033 (90.78%)`, init
+`328 / 538 (60.97%)`, game `4968 / 5313 (93.51%)`, and debugger
+`181 / 182 (99.45%)`. Byte-weighted conversion is total `84.09%`, init
+`28.28%`, game `88.37%`, and debugger `99.19%`. Byte-exact progress is total
+`1584 / 5477 (28.92%)`, with 24 address-blocked and 3869 differing functions.
+Required explicit signatures perturb one previously exact game caller; the
+regression from 1585 to 1584 is recorded rather than hidden.
+
 **Update (2026-07-18, total raw conversion crossed 80%).**
 Added 82 more text-only game slices as generated non-matching C sources,
 moving 588 tracked functions out of raw assembly. Hardened

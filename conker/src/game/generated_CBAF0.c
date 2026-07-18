@@ -1,0 +1,19 @@
+#include <ultra64.h>
+
+/* Non-matching placeholders for the text-only asm slice asm/CBAF0.s. */
+
+s32 func_1509E640() {
+    return 0;
+}
+
+s32 func_1509E6F0() {
+    return 0;
+}
+
+s32 func_1509E730() {
+    return 0;
+}
+
+s32 func_1509E8A0() {
+    return 0;
+}

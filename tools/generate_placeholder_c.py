@@ -45,6 +45,29 @@ def function_layout(path):
     ]
 
 
+def placeholder_definition(name, size, return_type=None, parameters=""):
+    if return_type is None:
+        return_type = "void" if size < 12 else "s32"
+    if return_type == "void":
+        return [f"void {name}({parameters}) {{", "}", ""]
+    value = "0.0f" if return_type == "f32" else "0.0" if return_type == "f64" else "0"
+    return [f"{return_type} {name}({parameters}) {{", f"    return {value};", "}", ""]
+
+
+def placeholder_lines(source, return_types=None):
+    source = Path(source)
+    lines = []
+    for name, size in function_layout(source):
+        if size < 8:
+            raise ValueError(
+                f"{source}: {name} has a {size}-byte retail span; "
+                "the smallest C stub is 8 bytes"
+            )
+        return_type = return_types.get(name) if return_types else None
+        lines.extend(placeholder_definition(name, size, return_type))
+    return lines
+
+
 def generate(source):
     source = Path(source)
     lines = [
@@ -53,16 +76,7 @@ def generate(source):
         f"/* Non-matching placeholders for the text-only asm slice asm/{source.name}. */",
         "",
     ]
-    for name, size in function_layout(source):
-        if size < 8:
-            raise ValueError(
-                f"{source}: {name} has a {size}-byte retail span; "
-                "the smallest C stub is 8 bytes"
-            )
-        if size < 12:
-            lines.extend((f"void {name}() {{", "}", ""))
-        else:
-            lines.extend((f"s32 {name}() {{", "    return 0;", "}", ""))
+    lines.extend(placeholder_lines(source))
     return "\n".join(lines)
 
 

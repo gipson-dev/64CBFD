@@ -10,6 +10,17 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Total raw C conversion crossed 90%
+
+- Added 167 validated standalone game slices and replaced 246 `GLOBAL_ASM`
+  groups across the eight largest remaining mixed C sources.
+- Added a reproducible mixed-source converter that reuses declared signatures,
+  infers consistent legacy-call arity, and validates each referenced asm file.
+- Published raw conversion at **5477 / 6033 functions (90.78%)** and **84.09%
+  by bytes**; game conversion reached **4968 / 5313 (93.51%)**.
+- Kept address blockers at 24. Required legacy-call signatures perturb one
+  previously exact caller, leaving **1584 / 5477 (28.92%)** byte-exact.
+
 ### Total raw C conversion crossed 80%
 
 - Replaced 82 additional safe text-only game assembly slices with generated
