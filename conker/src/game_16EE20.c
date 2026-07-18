@@ -276,13 +276,13 @@ void func_151429E0(u8 arg0, u8 *arg1, u8 *arg2, u8 *arg3) {
     *arg3 = tmp[2];
 }
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-s32 func_15142A5C(struct127 *arg0) {
-    struct197 *tmp = arg0->unk2D0;
-
-    if (tmp->unk3C > 0) {
+s32 func_15142A5C(s32 *arg0) {
+    s32 *p = *(s32**)((u8*)arg0 + 0x2D0);
+    s32 v0 = 0;
+    if (*(s16*)((u8*)p + 0x3C) > 0) {
         return 1;
     }
-    return 0;
+    return v0;
 }
 f32 func_15142A80(f32 arg0) {
     return (1.0f - arg0) * (arg0 - 2.0f) * arg0 * D_800A5624;
@@ -379,7 +379,7 @@ Gfx *func_15142FBC(Gfx *arg0, u32 arg1, u32 arg2, u8 *arg3) {
     return arg0;
 }
 s16 func_15143044(u8 arg0, s32 arg1) {
-    return 0x7FFF - arg0;
+    return (s16)(0x7FFF - arg0);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_1514306C.s. */
 s32 func_1514306C() {
@@ -546,8 +546,11 @@ s16 func_15143E24(struct127 *arg0) {
     }
     return arg0->unk7A >> 8;
 }
-f32 func_15143E64(vertex *arg0) {
-    return sqrtf(arg0->x * arg0->x + arg0->y * arg0->y + arg0->z * arg0->z);
+f32 func_15143E64(f32 *arg0) {
+    f32 x = arg0[0];
+    f32 y = arg0[1];
+    f32 z = arg0[2];
+    return sqrtf(x * x + y * y + z * z);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15143E94.s. */
 s32 func_15143E94() {
@@ -625,8 +628,8 @@ f32 func_1514462C(s32 arg0) {
 s32 func_1514470C() {
     return 0;
 }
-f32 func_15144A74(vertex *arg0, vertex *arg1) {
-    return arg0->x * arg1->x + arg0->y * arg1->y + arg0->z * arg1->z;
+f32 func_15144A74(f32 *arg0, f32 *arg1) {
+    return arg0[0] * arg1[0] + arg0[1] * arg1[1] + arg1[2] * arg0[2];
 }
 f32 func_15144AA8(s32 arg0) {
     f32 ret = D_800DBFF0[arg0].unk380;

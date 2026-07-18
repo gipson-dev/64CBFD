@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "variables.h"
 
 
 #define PI 3.14159265358979323846f
@@ -14,7 +15,7 @@ void guRotateF(float m[4][4], f32 a, f32 x, f32 y, f32 z) {
     f32 zz;
 
     guNormalize(&x, &y, &z);
-    a *= PI / 180.0f;
+    a *= D_80098DC0;
     sin_a = sinf(a);
     cos_a = cosf(a);
 

@@ -1,101 +1,100 @@
+
 #include <os_internal.h>
 #include "osint.h"
 
-extern OSTimer *D_8002BD70;
-extern OSTime D_800429B0;
-extern u32 D_800429B8;
-extern u32 D_800429BC;
-extern u32 D_800429C0;
-
-void __osTimerServicesInit(void) {
-    D_800429B0 = 0;
-    D_800429B8 = 0;
-    D_800429BC = 0;
-    D_8002BD70->next = D_8002BD70->prev = D_8002BD70;
-    D_8002BD70->interval = D_8002BD70->value = 0;
-    D_8002BD70->mq = 0;
-    D_8002BD70->msg = 0;
+extern OSTimer *__osTimerList;
+extern OSTimer __osBaseTimer;
+extern OSTime __osCurrentTime;
+extern u32 __osBaseCounter;
+extern u32 __osViIntrCount;
+extern u32 __osTimerCounter;
+void __osTimerServicesInit(void)
+{
+	__osCurrentTime = 0;
+	__osBaseCounter = 0;
+	__osViIntrCount = 0;
+	__osTimerList->prev = __osTimerList;
+	__osTimerList->next = __osTimerList->prev;
+	__osTimerList->value = 0;
+	__osTimerList->interval = __osTimerList->value;
+	__osTimerList->mq = NULL;
+	__osTimerList->msg = 0;
 }
 
-void __osTimerInterrupt(void) {
-    OSTimer *t;
-    u32 count;
-    u32 elapsedCycles;
+void __osTimerInterrupt(void)
+{
+	OSTimer *t;
+	u32 count;
+	u32 elapsed_cycles;
 
-    if (D_8002BD70->next == D_8002BD70) {
-        return;
-    }
-
-    for (;;) {
-        t = D_8002BD70->next;
-
-        if (t == D_8002BD70) {
-            __osSetCompare(0);
-            D_800429C0 = 0;
-            break;
-        }
-
-        count = osGetCount();
-        elapsedCycles = count - D_800429C0;
-        D_800429C0 = count;
-
-        if (elapsedCycles < t->value) {
-            t->value -= elapsedCycles;
-            __osSetTimerIntr(t->value);
-            break;
-        }
-
-        t->prev->next = t->next;
-        t->next->prev = t->prev;
-        t->next = 0;
-        t->prev = 0;
-
-        if (t->mq != 0) {
-            osSendMesg(t->mq, t->msg, OS_MESG_NOBLOCK);
-        }
-
-        if (t->interval != 0) {
-            t->value = t->interval;
-            __osInsertTimer(t);
-        }
-    }
+	if (__osTimerList->next == __osTimerList)
+		return;
+	while (1)
+	{
+		t = __osTimerList->next;
+		if (t == __osTimerList)
+		{
+			__osSetCompare(0);
+			__osTimerCounter = 0;
+			break;
+		}
+		count = osGetCount();
+		elapsed_cycles = count - __osTimerCounter;
+		__osTimerCounter = count;
+		if (elapsed_cycles < t->value)
+		{
+			t->value -= elapsed_cycles;
+			__osSetTimerIntr(t->value);
+			return;
+		}
+		else
+		{
+			t->prev->next = t->next;
+			t->next->prev = t->prev;
+			t->next = NULL;
+			t->prev = NULL;
+			if (t->mq != NULL)
+			{
+				osSendMesg(t->mq, t->msg, OS_MESG_NOBLOCK);
+			}
+			if (t->interval != 0)
+			{
+				t->value = t->interval;
+				__osInsertTimer(t);
+			}
+		}
+	}
 }
-
-void __osSetTimerIntr(OSTime tim) {
-    OSTime newTime;
-    u32 savedMask;
-
-    savedMask = __osDisableInt();
-    D_800429C0 = osGetCount();
-    newTime = D_800429C0 + tim;
-    __osSetCompare(newTime);
-    __osRestoreInt(savedMask);
+//
+void __osSetTimerIntr(OSTime tim)
+{
+	OSTime NewTime;
+	u32 savedMask;
+	savedMask = __osDisableInt();
+	__osTimerCounter = osGetCount();
+	NewTime = tim + __osTimerCounter;
+	__osSetCompare(NewTime);
+	__osRestoreInt(savedMask);
 }
-
-OSTime __osInsertTimer(OSTimer *t) {
-    OSTimer *timep;
-    OSTime tim;
-    u32 savedMask;
-
-    savedMask = __osDisableInt();
-    timep = D_8002BD70->next;
-    tim = t->value;
-
-    while ((timep != D_8002BD70) && (tim > timep->value)) {
-        tim -= timep->value;
-        timep = timep->next;
-    }
-
-    t->value = tim;
-
-    if (timep != D_8002BD70) {
-        timep->value -= tim;
-    }
-
-    t->next = timep;
-    t->prev = timep->prev;
-    timep->prev->next = t;
-    timep->prev = t;
-    __osRestoreInt(savedMask);
-    return tim;
+OSTime __osInsertTimer(OSTimer *t)
+{
+	OSTimer *timep;
+	OSTime tim;
+	u32 savedMask;
+	savedMask = __osDisableInt();
+	for (timep = __osTimerList->next, tim = t->value;
+		 timep != __osTimerList && tim > timep->value;
+		 tim -= timep->value, timep = timep->next)
+	{
+		;
+	}
+	t->value = tim;
+	if (timep != __osTimerList)
+		timep->value -= tim;
+	t->next = timep;
+	t->prev = timep->prev;
+	timep->prev->next = t;
+	timep->prev = t;
+	__osRestoreInt(savedMask);
+	return tim;
 }

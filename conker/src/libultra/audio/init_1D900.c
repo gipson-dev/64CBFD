@@ -33,14 +33,15 @@ s32 func_1001D9B0(s16 arg0) {
     }
 }
 
-s32 func_1001DA28(s16 arg0) {
-    N_ALMainBus *mainBus = n_syn->mainBus;
+ALFxRef n_alSynGetOutputLPRef(s16 bus) {
+    N_ALMainBus *sp4;
 
-    if (mainBus->filter.handler == func_1001E530) {
-        return *(s32 *)((u8 *)&n_syn->auxBus[arg0] + 0x40);
+    sp4 = n_syn->mainBus;
+    if (sp4->filter.handler == func_1001E530) {
+        return n_syn->auxBus[bus].fx_array[7];
+    } else {
+        return 0;
     }
-
-    return 0;
 }
 
 void func_1001DAA0(s32 arg0, s16 arg1, s32 arg2) {
@@ -48,9 +49,11 @@ void func_1001DAA0(s32 arg0, s16 arg1, s32 arg2) {
     func_1001ED6C(sp1C, arg1, arg2);
 }
 
+extern f32 D_8002C790;
+
 void func_1001DAE4(ALVoiceConfig *arg0, s16 arg1, s32 *arg2) {
     if (arg1 == 8) {
-        arg0->fxBus = (f32) *arg2 * 0.1f;
+        arg0->fxBus = (f32) *arg2 * D_8002C790;
     } else if (arg1 == 9) {
         arg0->priority = *arg2;
     }

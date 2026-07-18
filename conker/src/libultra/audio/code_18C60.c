@@ -6,6 +6,6 @@
 void func_10018C60(N_ALSeqPlayer *seqp) {
     N_ALEvent evt;
 
-    evt.type = AL_TRACK_END;
+    evt.type = 0x12;
     n_alEvtqPostEvent(&seqp->evtq, &evt, 0, 2);
 }

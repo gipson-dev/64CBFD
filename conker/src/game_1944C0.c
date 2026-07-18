@@ -19,8 +19,8 @@ s32 func_15168E54();
 s32 func_15168F84();
 /* End generated placeholder declarations. */
 
-void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5);
-void func_15168A4C(void *arg0, u8 arg1);
+void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, u8 arg5);
+void func_15168A4C(void *arg0, s32 arg1);
 extern void (*D_8008CA20[])(void *);
 extern void (*D_8008CB64[])(void);
 
@@ -69,7 +69,7 @@ s32 func_15167310() {
 s32 func_151674F8() {
     return 0;
 }
-void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5) {
+void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, u8 arg5) {
     u8 *ret;
 
     ret = func_10003C6C(arg2, 1, arg3, 0, arg5);
@@ -146,7 +146,7 @@ s32 func_15168870() {
 void func_15168A2C(s32 arg0) {
     func_15168B10(arg0, 0);
 }
-void func_15168A4C(void *arg0, u8 arg1) {
+void func_15168A4C(void *arg0, s32 arg1) {
     void **slot;
     void *next;
 
@@ -230,8 +230,11 @@ s32 func_15168C4C() {
     return 0;
 }
 void func_15168E34(s32 *arg0, s32 arg1) {
-    if ((*arg0 & 0xF000000) == 0) {
-        *arg0 += arg1;
+    s32 temp_v0;
+
+    temp_v0 = *arg0;
+    if (!(temp_v0 & 0x0F000000)) {
+        *arg0 = temp_v0 + arg1;
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15168E54.s. */

@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "variables.h"
 
 
 void guPerspectiveF(f32 mf[4][4], u16 *perspNorm, f32 fovy, f32 aspect, f32 near, f32 far, f32 scale) {
@@ -6,10 +7,10 @@ void guPerspectiveF(f32 mf[4][4], u16 *perspNorm, f32 fovy, f32 aspect, f32 near
     s32 row, col;
 
     guMtxIdentF(mf);
-    aspect *= 0.008726646192371845f; // PI / 180.0f
+    aspect *= D_80098DB0;
     yscale = cosf(aspect) / sinf(aspect);
     mf[0][0] = yscale;
-    fovy *= 0.008726646192371845f;  // PI / 180.0f
+    fovy *= D_80098DB4;
     mf[1][1] = cosf(fovy) / sinf(fovy);
     mf[2][2] = (near + far) / (near - far);
     mf[2][3] = -1.0f;

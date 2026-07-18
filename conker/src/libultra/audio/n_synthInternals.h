@@ -55,9 +55,8 @@ typedef struct {
 
 typedef struct N_PVoice_s {
     ALLink               node;
-    struct N_ALVoice_s    *vvoice;
-    /* RARE CUSTOM */
-    u8                          pad[0x8];
+    ALLink               voiceLink;
+    struct N_ALVoice_s   *vvoice;
 /** ALLoadFilter *********************************/
     ADPCM_STATE                 *dc_state;
     ADPCM_STATE                 *dc_lstate;
@@ -123,6 +122,17 @@ typedef struct N_ALFilter_s {
 typedef struct N_ALMainBus_s {
     N_ALFilter           filter;
 } N_ALMainBus;
+
+struct auxbus44 {
+    s16 unk00;
+    s16 unk02;
+    s32 unk04;
+    s16 unk08[16];
+    u32 unk28;
+    POLEF_STATE *unk2c;
+    POLEF_STATE *unk30;
+    u32 unk34;
+};
 
 typedef struct N_ALAuxBus_s {
     ALFilter            filter;

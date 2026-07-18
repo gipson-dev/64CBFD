@@ -180,8 +180,48 @@ void __n_CSPHandleMetaMsg(N_ALCSPlayer *seqp, N_ALEvent *event)
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/libultra/audio/n_csplayer/__n_CSPRepostEvent.s. */
-void __n_CSPRepostEvent(ALEventQueue *evtq, N_ALEventListItem *item) {
+void __n_CSPRepostEvent(ALEventQueue *evtq, N_ALEventListItem *item)
+{
+	ALLink *node;
+	N_ALEventListItem *nextItem;
+	ALLink *element;
+	ALLink *after;
+	ALLink *element2;
+	ALLink *after2;
+
+	for (node = &evtq->allocList; node != 0; node = node->next) {
+		if (!node->next) {
+			element = (ALLink *)item;
+			after = node;
+			element->next = after->next;
+			element->prev = after;
+			if (after->next != NULL) {
+				after->next->prev = element;
+			}
+			after->next = element;
+			break;
+		} else {
+			nextItem = (N_ALEventListItem *)node->next;
+
+			if (item->delta < nextItem->delta) {
+				nextItem->delta -= item->delta;
+				element2 = (ALLink *)item;
+				after2 = node;
+				element2->next = after2->next;
+				element2->prev = after2;
+				if (after2->next != NULL) {
+					after2->next->prev = element2;
+				}
+				after2->next = element2;
+				break;
+			}
+
+			item->delta -= nextItem->delta;
+		}
+	}
+
 }
+
 
 void __n_setUsptFromTempo (N_ALCSPlayer *seqp, f32 tempo)
 {

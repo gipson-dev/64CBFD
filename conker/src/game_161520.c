@@ -7,19 +7,15 @@ s32 func_15134070();
 s32 func_1513418C();
 s32 func_151342BC();
 s32 func_151347CC();
-s32 func_15134908();
 s32 func_151349D0();
 s32 func_15134CEC();
-s32 func_15134DAC();
 s32 func_15134E48();
-s32 func_15135480();
 s32 func_151356D4();
 s32 func_15135BF8();
 s32 func_15135DD0();
 s32 func_15136404();
 s32 func_15136698();
 s32 func_15136918();
-s32 func_15136A50();
 s32 func_15136AE4();
 s32 func_15136C3C();
 s32 func_15136F50();
@@ -43,13 +39,22 @@ s32 func_1513A48C();
 s32 func_1513A5E0(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1513A6E0();
 s32 func_1513ABB8();
+
+void *func_15134908(void *arg0, s32 arg1, u8 arg2, s32 arg3);
+void *func_15134DAC(s32 arg0, s32 arg1);
+void func_15135480(struct102 *arg0, s32 *arg1, u8 arg2);
+void func_1513555C(struct102 *arg0, s32 *arg1, u8 arg2);
+void func_151355B8(struct102 *arg0, s32 *arg1, u8 arg2);
+void func_15136A50(s32 arg0, s32 arg1, s32 arg2, s16 arg3, u8 arg4, s32 arg5);
+void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, u8 arg5);
+f32 func_150ADA68(void);
+void func_15143134(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_100111C8(u16 arg0);
+void func_15145EA4(s32 *arg0, s32 *arg1, s32 arg2, s32 arg3);
 s32 func_1513B0F8();
 /* End generated placeholder declarations. */
 
 void func_151BC5A4(struct102 *arg0, s32 arg1, u8 arg2);
-void func_15143134(f32 *arg0, s32 arg1, s32 arg2);
-extern f32 D_800A3FD8[];
-
 // requires jump table
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15134070.s. */
 s32 func_15134070() {
@@ -145,11 +150,25 @@ s32 func_151347CC() {
     return 0;
 }
 void func_151348F0(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
+
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15134908.s. */
-s32 func_15134908() {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_151349D0.s. */
+void *func_15134908(void *arg0, s32 arg1, u8 arg2, s32 arg3) {
+    void *temp;
+    temp = func_15167A68(0x2A, arg3, arg1 + 0x40, 1, arg2, 1);
+    if (temp == NULL) {
+        return NULL;
+    }
+    *(u8*)((u8*)arg0 + 0x16) |= 2;
+    memcpy((u8*)temp + 0x10, arg0, 0x1C);
+    *(f32*)((u8*)temp + 0x2C) = *(f32*)(*(s32*)((u8*)temp + 0x10));
+    *(f32*)((u8*)temp + 0x30) = *(f32*)(*(s32*)((u8*)temp + 0x14));
+    *(f32*)((u8*)temp + 0x34) = *(f32*)(*(s32*)((u8*)temp + 0x18));
+    *(f32*)((u8*)temp + 0x38) = 1.0f / (2.0f * *(f32*)((u8*)temp + 0x1C));
+    *(f32*)((u8*)temp + 0x3C) = 0.0f;
+    return temp;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_151349D0.s. */
 s32 func_151349D0() {
     return 0;
 }
@@ -160,14 +179,44 @@ void func_15134C98(struct102 *arg0, s32 arg1, u8 arg2) {
 }
 
 void func_15134CD4(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
+
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15134CEC.s. */
-s32 func_15134CEC() {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15134DAC.s. */
-s32 func_15134DAC() {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15134E48.s. */
+s32 func_15134CEC(struct102 *arg0) {
+    f32 *sptr = &D_800BE9A4;
+    s32 alpha = *(u8*)((u8*)arg0 + 0x2E);
+
+    *(f32*)((u8*)arg0 + 0x70) += 0.125f * *sptr;
+    arg0->unk74 += D_800A45B0 * *sptr;
+    *(f32*)((u8*)arg0 + 0x14) += *(f32*)((u8*)arg0 + 0x70) * *sptr;
+    *(f32*)((u8*)arg0 + 0x1C) += arg0->unk74 * *sptr;
+
+    if (*(f32*)((u8*)arg0 + 0x14) > 130.0f) {
+        return 0;
+    }
+
+    alpha -= D_800BE9E4 * 2;
+    if (alpha < 0) {
+        return 0;
+    }
+    *(u8*)((u8*)arg0 + 0x2E) = alpha;
+    return 1;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15134DAC.s. */
+void *func_15134DAC(s32 arg0, s32 arg1) {
+    void *temp = func_15167A68(0x29, 0, arg1 + 0x80, 1, 0xFF, 1);
+    if (temp == NULL) {
+        return NULL;
+    }
+    memcpy((u8*)temp + 0x18, (void*)arg0, 0x3C); *(s16*)((u8*)temp + 0x54) = -*(s16*)(arg0 + 0x28);
+    *(s32*)((u8*)temp + 0x10) = 1;
+    *(s32*)((u8*)temp + 0x14) = 0;
+    *(f32*)((u8*)temp + 0x70) = 0.0f;
+    *(f32*)((u8*)temp + 0x74) = 0.0f;
+    *(f32*)((u8*)temp + 0x78) = 0.0f;
+    return temp;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15134E48.s. */
 s32 func_15134E48() {
     return 0;
 }
@@ -183,32 +232,32 @@ void func_1513530C(struct102 *arg0) {
     func_15169824(arg0);
 }
 
-void func_1513532C(u8 *arg0) {
-    u8 idx = arg0[0x50];
-    u16 handle;
-
-    if (idx >= 6) {
+void func_1513532C(struct102 *arg0) {
+    s32 pad;
+    s32 idx = arg0->unk50;
+    if (idx < 0) {
+        idx = 0;
+    } else if (idx >= 6) {
         idx = 0;
     }
-    handle = *(u16 *)(arg0 + 0x44);
-    if (handle != 0) {
-        func_100111C8(handle);
-        *(u16 *)(arg0 + 0x44) = 0;
+    if (arg0->unk44 != 0) {
+        func_100111C8(arg0->unk44);
+        arg0->unk44 = 0;
     }
     D_80089B70[idx](arg0);
 }
 
-void func_151353A8(u8 *arg0) {
-    u8 idx = arg0[0x50];
-    u16 handle;
-
-    if (idx >= 6) {
+void func_151353A8(struct102 *arg0) {
+    s32 pad;
+    s32 idx = arg0->unk50;
+    if (idx < 0) {
+        idx = 0;
+    } else if (idx >= 6) {
         idx = 0;
     }
-    handle = *(u16 *)(arg0 + 0x44);
-    if (handle != 0) {
-        func_100111C8(handle);
-        *(u16 *)(arg0 + 0x44) = 0;
+    if (arg0->unk44 != 0) {
+        func_100111C8(arg0->unk44);
+        arg0->unk44 = 0;
     }
     D_80089B88[idx](arg0);
 }
@@ -216,7 +265,6 @@ void func_151353A8(u8 *arg0) {
 void func_15135424(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     s32 sp20[2];
     s32 sp18[2];
-
     sp20[0] = arg1;
     sp20[1] = arg2;
     sp18[0] = arg3;
@@ -224,31 +272,65 @@ void func_15135424(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     func_15145EA4(sp20, sp18, arg0, 2);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15135480.s. */
-s32 func_15135480() {
-    return 0;
+void func_15135480(struct102 *arg0, s32 *arg1, u8 arg2) {
+    s32 v1;
+    s32 v0;
+    if (arg2 == 0x2D) {
+        v1 = arg1[0];
+        v0 = *(s32*)((u8*)arg0 + 0x1C);
+        if (v1 == v0) {
+            *(s32*)((u8*)arg0 + 0x1C) = arg1[1];
+            *(u8*)((u8*)arg0 + 0x18) = *(u8*)((u8*)arg1 + 9);
+        } else if (arg1[1] == v0) {
+            *(s32*)((u8*)arg0 + 0x1C) = v1;
+            *(u8*)((u8*)arg0 + 0x18) = *(u8*)((u8*)arg1 + 8);
+        }
+    }
+    v0 = *(u8*)((u8*)arg0 + 0x50);
+    switch (v0) {
+        case 1:
+            func_151355B8(arg0, arg1, arg2);
+            break;
+        case 2:
+            func_1513555C(arg0, arg1, arg2);
+            break;
+        default:
+            if (arg2 != 0) {
+                break;
+            }
+            if (arg1[0] == *(s32*)((u8*)arg0 + 0x1C) || *(u8*)((u8*)arg1 + 4) == *(u8*)((u8*)arg0 + 0x18)) {
+                func_1516972C(arg0);
+            }
+            break;
+    }
 }
-void func_1513555C(struct102 *arg0, u8 *arg1, u8 arg2) {
-    if ((arg2 == 0) || (arg2 == 0x12)) {
-        if ((*(s32 *)&arg1[0] == arg0->unk1C) || (arg1[4] == arg0->unk18)) {
+void func_1513555C(struct102 *arg0, s32 *arg1, u8 arg2) {
+    if (arg2 == 0 || arg2 == 0x12) {
+        if (arg1[0] == *(s32*)((u8*)arg0 + 0x1C) || *(u8*)((u8*)arg1 + 4) == *(u8*)((u8*)arg0 + 0x18)) {
             func_1516972C(arg0);
         }
     }
 }
 
-void func_151355B8(struct102 *arg0, u8 *arg1, u8 arg2) {
-    if (arg2 == 0) {
-        if ((*(s32 *)&arg1[0] == arg0->unk1C) || (arg1[4] == arg0->unk18)) {
-            func_1516972C(arg0);
-        }
-    } else if (arg2 == 3) {
-        if ((*(s32 *)&arg1[0] == arg0->unk1C) || (arg1[4] == arg0->unk18)) {
-            *(s32 *)((u8 *)arg0 + 0x10) &= ~1;
-        }
+void func_151355B8(struct102 *arg0, s32 *arg1, u8 arg2) {
+    switch (arg2) {
+        case 0:
+            if (arg1[0] == *(s32*)((u8*)arg0 + 0x1C) || *(u8*)((u8*)arg1 + 4) == *(u8*)((u8*)arg0 + 0x18)) {
+                func_1516972C(arg0);
+            }
+            break;
+        case 3:
+            if (arg1[0] == *(s32*)((u8*)arg0 + 0x1C) || *(u8*)((u8*)arg1 + 4) == *(u8*)((u8*)arg0 + 0x18)) {
+                s32 val = *(s32*)((u8*)arg0 + 0x10) & ~1;
+                *(s32*)((u8*)arg0 + 0x10) = val;
+                *(s32*)((u8*)arg0 + 0x10) = val;
+            }
+            break;
     }
 }
 
-s32 func_15135658(struct102 *arg0) {
-    arg0->unk74 = 1.0f;
+s32 func_15135658(s32 *arg0) {
+    *(f32*)((u8*)arg0 + 0x74) = 1.0f;
     return 1;
 }
 
@@ -273,20 +355,16 @@ s32 func_15136698() {
     return 0;
 }
 s32 func_151368A8(struct102 *arg0) {
-    f32 *step;
-    s16 idx = arg0->unk1C;
-    u8 *bytes = (u8 *)arg0;
-
-    if (idx < 32) {
-        u8 value = idx * 8;
-        if (value < bytes[0x5C]) {
-            bytes[0x5C] = value;
+    f32 *vel = &arg0->unk128;
+    s16 temp = arg0->unk1C;
+    if (temp < 32) {
+        s32 val = temp * 8;
+        if (val < arg0->unk5C) {
+            arg0->unk5C = (u8)val;
         }
     }
-
-    step = (f32 *)(bytes + 0x128);
-    *(f32 *)(bytes + 0x2C) += *step * D_800BE9A4;
-    *(f32 *)(bytes + 0x30) += *step * D_800BE9A4;
+    *(f32*)&arg0->unk2C += *vel * D_800BE9A4;
+    *(f32*)&arg0->unk30 += *vel * D_800BE9A4;
     return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15136918.s. */
@@ -295,9 +373,8 @@ s32 func_15136918() {
 }
 s32 func_15136A1C(struct102 *arg0) {
     s16 temp_v0 = arg0->unk1C;
-    s32 temp_v1;
     if (temp_v0 < 32) {
-        temp_v1 = temp_v0 * 8;
+        s32 temp_v1 = temp_v0 * 8;
         if (temp_v1 < arg0->unk28) {
             arg0->unk28 = temp_v1;
         }
@@ -305,9 +382,33 @@ s32 func_15136A1C(struct102 *arg0) {
     return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15136A50.s. */
-s32 func_15136A50() {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15136AE4.s. */
+void func_15136A50(s32 arg0, s32 arg1, s32 arg2, s16 arg3, u8 arg4, s32 arg5) {
+    struct {
+        s32 unk0;
+        s32 unk4;
+        s32 unk8;
+        f32 unkC;
+        f32 unk10;
+        s16 unk14;
+        u8 unk16;
+        u8 unk17;
+        u8 unk18;
+        s8 unk19;
+    } sp;
+
+    sp.unkC = D_800A461C;
+    sp.unk0 = arg0;
+    sp.unk4 = arg1;
+    sp.unk8 = arg2;
+    sp.unk10 = D_800A4620;
+    sp.unk14 = arg3;
+    sp.unk16 = 5;
+    sp.unk17 = 5;
+    sp.unk18 = 2;
+    sp.unk19 = -1;
+    func_15134908(&sp, 0, arg4, arg5);
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15136AE4.s. */
 s32 func_15136AE4() {
     return 0;
 }/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15136C3C.s. */
@@ -327,7 +428,7 @@ s32 func_15137C64() {
     return 0;
 }
 s32 func_15137E10(struct102 *arg0) {
-    arg0->unk74 = ((func_150ADA68() * 50.0f) + 580.0f) * D_800A4828;
+    arg0->unk74 = (func_150ADA68() * 50.0f + 580.0f) * D_800A4828;
     return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15137E60.s. */
@@ -337,16 +438,15 @@ s32 func_15137E60() {
 s32 func_15137F30() {
     return 0;
 }
-s32 func_151380B4(u8 *arg0, s32 arg1, s32 arg2) {
-    u8 *ptr = *(u8 **)(arg0 + 0x1D4);
-
-    if (ptr == NULL) {
+s32 func_151380B4(struct102 *arg0, s32 arg1, s32 arg2) {
+    s32 temp = arg0->unk1D4;
+    if (temp == 0) {
         return 0;
     }
-    if ((arg0[0x74] & 0xF) == 0xF) {
+    if ((*(u8*)((u8*)arg0 + 0x74) & 0xF) == 0xF) {
         return 0;
     }
-    func_15143134(&D_800A3FD8[arg1 * 4], arg2, (s32)(ptr + 0x300));
+    func_15143134((arg1 << 4) + (s32)&D_800A3FD8, arg2, temp + 0x300, arg1);
     return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15138120.s. */
@@ -399,14 +499,11 @@ s32 func_1513A6E0() {
 s32 func_1513ABB8() {
     return 0;
 }
-void func_1513B0B8(void *arg0, s32 arg1, u8 arg2) {
-    s32 *counter;
-
+void func_1513B0B8(struct102 *arg0, s32 arg1, u8 arg2) {
+    s32 *ptr = &arg0->unk170;
     if (arg2 == 0x45) {
-        counter = (s32 *) ((u8 *) arg0 + 0x170);
-        *counter -= 1;
-        if (*counter < 0) {
-            *(s32 *) ((u8 *) arg0 + 0x60) |= 0x80;
+        if (--*ptr < 0) {
+            arg0->unk60 |= 0x80;
         }
     }
 }

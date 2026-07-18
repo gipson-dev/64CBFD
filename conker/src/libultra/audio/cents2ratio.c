@@ -10,15 +10,17 @@
 
 #include <libaudio.h>
 
+extern f32 D_8002C760;
+extern f32 D_8002C764;
 
 f32 alCents2Ratio(s32 cents) {
     f32 x;
     f32 ratio = 1.0f;
 
     if (cents >= 0) {
-        x = 1.0005778074264526f; /* 2^(1/1200) */
+        x = D_8002C760; /* 2^(1/1200) */
     } else {
-        x = 0.999422550201416f;  /* 2^(-1/1200) */
+        x = D_8002C764;  /* 2^(-1/1200) */
         cents = -cents;
     }
     while (cents) {

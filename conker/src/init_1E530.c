@@ -1,3 +1,4 @@
+
 #include <ultra64.h>
 
 #include "functions.h"
@@ -8,7 +9,6 @@ s32 func_1001ED6C();
 s32 func_1001F28C();
 s32 func_1001F5A4();
 s32 func_1001F79C();
-s32 func_1001F978();
 /* End generated placeholder declarations. */
 
 /* Non-matching C placeholders for asm/nonmatchings/init_1E530/func_1001E530.s. */
@@ -117,8 +117,22 @@ s32 func_1001F79C() {
 // }
 
 /* Non-matching C placeholders for asm/nonmatchings/init_1E530/func_1001F978.s. */
-s32 func_1001F978() {
-    return 0;
+Gfx *func_1001F978(struct55 *arg0, s32 arg1, s32 arg2, Gfx *arg3) {
+    Gfx *sp24;
+    s16 sp22;
+    Gfx *sp1C;
+    Gfx *sp18;
+
+    sp24 = arg3;
+    sp22 = arg2 >> 8;
+    sp1C = sp24++;
+    sp1C->words.w0 = 0x0B000020;
+    sp1C->words.w1 = osVirtualToPhysical((s32)arg0 + 8);
+    sp18 = sp24++;
+    sp18->words.w0 = ((arg0->unk28 & 0xFF) << 0x10) | 0x0E000000 | (arg0->unk2 & 0xFFFF);
+    sp18->words.w1 = (osVirtualToPhysical(*(s32 *)((s32)arg0 + (arg1 * 4) + 0x2C)) & 0x00FFFFFF) | ((sp22 & 0xFF) << 0x18);
+    arg0->unk28 = 0;
+    return sp24;
 }
 // NON-MATCHING: lots of work still to do
 // struct56 *func_1001F978(struct55 *arg0, s32 arg1, s32 arg2, struct56 *arg3) {

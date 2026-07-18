@@ -1,19 +1,52 @@
-#include <ultra64.h>
+#include <os_internal.h>
 #include "controller.h"
+#include "siint.h"
 
-#ifdef osPfsInit
-#undef osPfsInit
-#endif
-#ifdef __osPfsGetStatus
-#undef __osPfsGetStatus
-#endif
+s32 osPfsInit(OSMesgQueue *queue, OSPfs *pfs, int channel)
+{
+    s32 ret;
+    ret = 0;
+    __osSiGetAccess();
+    ret = __osPfsGetStatus(queue, channel);
+    __osSiRelAccess();
+    if (ret != 0)
+        return ret;
 
-/* Non-matching C placeholders for C:/Users/grego/OneDrive/Desktop/.vscode/64CBFD/conker/asm/libultra/io/pfsinit.s. */
+    pfs->queue = queue;
+    pfs->channel = channel;
+    pfs->status = 0;
+    ERRCK(__osGetId(pfs));
 
-s32 osPfsInit(OSMesgQueue *arg0, OSPfs *arg1, int arg2) {
-    return 0;
+    ret = osPfsChecker(pfs);
+    pfs->status |= PFS_INITIALIZED;
+    return ret;
 }
 
-s32 __osPfsGetStatus(OSMesgQueue *queue, int channel) {
-    return 0;
+s32 __osPfsGetStatus(OSMesgQueue *queue, int channel)
+{
+    s32 ret;
+    OSMesg dummy;
+    u8 pattern;
+    OSContStatus data[MAXCONTROLLERS];
+
+    ret = 0;
+    __osPfsRequestData(CONT_CMD_REQUEST_STATUS);
+    ret = __osSiRawStartDma(OS_WRITE, &__osPfsPifRam);
+    osRecvMesg(queue, &dummy, OS_MESG_BLOCK);
+    ret = __osSiRawStartDma(OS_READ, &__osPfsPifRam);
+    osRecvMesg(queue, &dummy, OS_MESG_BLOCK);
+    __osPfsGetInitData(&pattern, data);
+
+    if (((data[channel].status & CONT_CARD_ON) != 0) &&
+        ((data[channel].status & CONT_CARD_PULL) != 0)) {
+        return PFS_ERR_NEW_PACK;
+    }
+    if ((data[channel].errno != 0) ||
+        ((data[channel].status & CONT_CARD_ON) == 0)) {
+        return PFS_ERR_NOPACK;
+    }
+    if ((data[channel].status & CONT_ADDR_CRC_ER) != 0) {
+        return PFS_ERR_CONTRFAIL;
+    }
+    return ret;
 }

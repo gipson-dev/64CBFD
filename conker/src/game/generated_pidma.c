@@ -1,12 +1,28 @@
-#include <ultra64.h>
-#include "controller.h"
+#include <os_internal.h>
+#include "piint.h"
 
-#ifdef osPiStartDma
-#undef osPiStartDma
-#endif
-
-/* Non-matching C placeholders for C:/Users/grego/OneDrive/Desktop/.vscode/64CBFD/conker/asm/libultra/io/pidma.s. */
-
-s32 osPiStartDma(OSIoMesg *arg0, s32 arg1, s32 arg2, u32 arg3, void *arg4, u32 arg5, OSMesgQueue *arg6) {
-    return 0;
+s32 osPiStartDma(OSIoMesg *mb, s32 priority, s32 direction, u32 devAddr, void *dramAddr, u32 size, OSMesgQueue *mq)
+{
+    register s32 ret;
+    if (!__osPiDevMgr.active)
+        return -1;
+    if (direction == OS_READ)
+        mb->hdr.type = OS_MESG_TYPE_DMAREAD;
+    else
+        mb->hdr.type = OS_MESG_TYPE_DMAWRITE;
+    mb->hdr.pri = priority;
+    mb->hdr.retQueue = mq;
+    mb->dramAddr = dramAddr;
+    mb->devAddr = devAddr;
+    mb->size = size;
+    mb->piHandle = NULL;
+    if (priority == OS_MESG_PRI_HIGH)
+    {
+        ret = osJamMesg(osPiGetCmdQueue(), (OSMesg)mb, OS_MESG_NOBLOCK);
+    }
+    else
+    {
+        ret = osSendMesg(osPiGetCmdQueue(), (OSMesg)mb, OS_MESG_NOBLOCK);
+    }
+    return ret;
 }

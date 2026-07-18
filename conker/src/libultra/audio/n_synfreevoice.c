@@ -50,6 +50,6 @@ void n_alSynFreeVoice( N_ALVoice *voice)
         voice->pvoice = 0;
     }
     if (voice->unk14 != 0) {
-        n_syn->dma(voice->unk14);
+        ((void (*)(void *))n_syn->unk2C)(voice->unk14);
     }
 }

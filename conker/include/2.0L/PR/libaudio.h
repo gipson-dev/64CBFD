@@ -296,11 +296,16 @@ typedef struct {
     s32                 maxPVoices;
     s32                 maxUpdates;
     s32                 maxFXbusses;
-    void                *dmaproc;
-    ALHeap              *heap;
-    s32                 outputRate;     /* output sample rate */
-    ALFxId              fxType;
-    s32                 *params;
+    void                *dmaproc;       /* 0x10 */
+    void                *unk14;         /* 0x14 */
+    void                *unk18;         /* 0x18 */
+    void                *unk1C;         /* 0x1C */
+    void                *unk20;         /* 0x20 */
+    void                *unk24;         /* 0x24 */
+    ALHeap              *heap;          /* 0x28 */
+    s32                 outputRate;     /* 0x2C */
+    u8                  fxTypes[4];     /* 0x30 */
+    s32                 *params[4];     /* 0x34 */
 } ALSynConfig;
 
 typedef struct ALPlayer_s {
@@ -430,6 +435,7 @@ enum ALMsg {
     AL_SEQP_PLAY_EVT,
     AL_SEQP_STOP_EVT,
     AL_SEQP_STOPPING_EVT,
+    AL_SEQP_UNUSED_EVT,
     AL_TRACK_END,
     AL_CSP_LOOPSTART,
     AL_CSP_LOOPEND,

@@ -3,6 +3,10 @@
 #include "functions.h"
 #include "variables.h"
 
+extern s32 func_151F2CDC_retail(void);
+extern void func_151F2BA8_retail(void);
+extern void func_151F2D6C_retail(s32 arg0, s32 arg1);
+extern void func_151F2E4C_retail(s32 arg0, s32 arg1);
 
 void func_10012560(s32 arg0) {
     func_15043BB8(&D_800427A0);
@@ -15,14 +19,14 @@ void func_10012588(s32 arg0) {
 }
 
 void func_100125CC(s32 arg0) {
-    s32 res = func_151F2CDC();
+    s32 res = func_151F2CDC_retail();
     if ((arg0 != 30) || (D_800BE9F8 != 27)) {
         if (res == 1) {
-            func_151F2D6C(0, 11010);
+            func_151F2D6C_retail(0, 11010);
             return;
         }
         if (res != 0) {
-            func_151F2BA8();
+            func_151F2BA8_retail();
         }
     }
 }
@@ -35,12 +39,12 @@ void func_1001263C(s32 arg0, s32 arg1, s32 arg2) {
     temp_v0 = func_1502B020(&sp18, 2, 22, arg0);
     D_800427F4 = (s16) arg0;
     if ((temp_v0 != 0) && (sp18 != 0)) {
-        func_151F2D6C(arg1, 0);
+        func_151F2D6C_retail(arg1, 0);
         func_151F2DFC(arg2, 1);
         if (arg0 != 0xD2) {
-            func_151F2E4C(10, 11000);
+            func_151F2E4C_retail(10, 11000);
         } else {
-            func_151F2E4C(0, 0);
+            func_151F2E4C_retail(0, 0);
         }
         func_151F2960(temp_v0, sp18);
     }
@@ -65,7 +69,7 @@ s32 func_10012718(u16 arg0, struct127 *arg1, s32 arg2, s16 arg3, u16 arg4) {
 }
 
 s32 func_100127D0(void) {
-    s32 tmp = func_151F2CDC();
+    s32 tmp = func_151F2CDC_retail();
 
     if (tmp == 1 || tmp == 2 || tmp == 5) {
         return 1;

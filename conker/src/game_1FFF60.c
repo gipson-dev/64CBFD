@@ -13,7 +13,7 @@ s32 func_151D324C();
 
 void func_151D3354(struct224 *arg0);
 void func_151D3308(struct224 *arg0);
-struct224 *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5);
+struct224 *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, u8 arg5);
 
 void func_151D2AB0(s32 arg0) {
     u32 tmp;

@@ -910,11 +910,11 @@ void func_1506EE38(void) {
 
 // NON-MATCHING: same issue as earlier
 void func_1506EE60(void) {
-    s32 temp_v0 = D_800D1580;
-    s32 temp_a1 = temp_v0 & 0xFFFF;
+    s32 temp_a1;
 
-    if (temp_v0 != 0) {
-        func_15188810(D_800D154C, temp_a1, temp_v0 >> 16);
+    temp_a1 = D_800D1580 & 0xFFFF;
+    if (D_800D1580 != 0) {
+        func_15188810(D_800D154C, temp_a1, (s32) D_800D1580 >> 0x10);
         return;
     }
     func_15188A9C(D_800D154C, temp_a1);
@@ -1164,11 +1164,11 @@ void func_150701F4(s32 arg0) {
 }
 
 void func_15070224(s32 arg0) {
-    u8 sp50[5];
+    s8 sp50[5];
     s32 sp44[3];
 
     sp50[0] = 3;
-    sp50[1] = 0xFF;
+    sp50[1] = -1;
     *(s16 *)&sp50[2] = (func_150ADA20() % 5U) + 4;
     sp50[4] = 0;
     sp44[0] = D_800D154C->x_position;
@@ -1272,7 +1272,7 @@ void func_15071278(s32 arg0) {
 }
 
 void func_150712AC(s32 arg0) {
-    u8 sp18[7];
+    s8 sp18[7];
 
     func_150FE860(D_800D154C, 0xFF, 1);
     if (D_800D154C->camera != NULL) {
@@ -1280,13 +1280,13 @@ void func_150712AC(s32 arg0) {
         *(s16 *)&sp18[2] = (func_150ADA20() % 7U) + 10;
         sp18[5] = 1 << D_800D154C->camera->unk23D;
         sp18[4] = (func_150ADA20() % 7U) + 2;
-        sp18[6] = 0xFF;
+        sp18[6] = -1;
         func_151D8868(sp18, 0, 0xFF, 1);
     }
 }
 
 void func_15071360(s32 arg0) {
-    u8 sp18[7];
+    s8 sp18[7];
 
     if (func_151044F4() != 0) {
         func_150FF084(D_800D154C, 0xFF, 1);
@@ -1299,7 +1299,7 @@ void func_15071360(s32 arg0) {
         *(s16 *)&sp18[2] = (func_150ADA20() % 5U) + 15;
         sp18[5] = 1 << D_800D154C->camera->unk23D;
         sp18[4] = (func_150ADA20() & 3) + 3;
-        sp18[6] = 0xFF;
+        sp18[6] = -1;
         func_151D8868(sp18, 0, 0xFF, 1);
     }
 }

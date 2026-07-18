@@ -113,8 +113,12 @@ void func_10012CFC(struct12 *arg0, s32 arg1, s32 arg2) {
     }
 }
 
+extern f32 D_8002C450;
+extern f32 D_8002C454;
+extern f32 D_8002C458;
+
 f32 func_10012D80(u8 arg0) {
-    f32 sp4 = 1.0309929847717285f;
+    f32 sp4 = D_8002C450;
     f32 sp0 = 1.0f;
 
     while (arg0)
@@ -179,7 +183,7 @@ s32 func_10012F94(struct124 *arg0, f32 *arg1) {
                 sp28->unk24 = 0;
             }
             sp2C = (f32)(u16)sp28->unk24 / (f32) (u16)sp28->unk22;
-            sp2C = sinf(sp2C * 6.2831854820251465f); // 2 * PI
+            sp2C = sinf(sp2C * D_8002C454); // 2 * PI
             sp2C = sp28->data.i.unk0 * sp2C;
             *arg1 = sp28->data.i.unk1 + sp2C;
             break;
@@ -190,7 +194,7 @@ s32 func_10012F94(struct124 *arg0, f32 *arg1) {
                 sp28->unk24 = 0;
             }
             sp2C = (f32)(u16) sp28->unk24 / (f32)(u16) sp28->unk22;
-            sp2C = sinf(sp2C * 6.2831854820251465f) * sp28->data.f.unk0;
+            sp2C = sinf(sp2C * D_8002C458) * sp28->data.f.unk0;
             *arg1 = alCents2Ratio(sp2C);
             break;
         default:

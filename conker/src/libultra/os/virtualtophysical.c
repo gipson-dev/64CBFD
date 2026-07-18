@@ -1,17 +1,20 @@
+
 #include <os_internal.h>
 #include <R4300.h>
+#include "osint.h"
 
-u32 osVirtualToPhysical(void *addr) {
-    u32 value;
-
-    value = (u32)addr;
-    if ((value >= 0x80000000) && (value < 0xA0000000)) {
-        return value & 0x1FFFFFFF;
+u32 osVirtualToPhysical(void *addr)
+{
+    if (IS_KSEG0(addr))
+    {
+        return K0_TO_PHYS(addr);
     }
-
-    if ((value >= 0xA0000000) && (value < 0xC0000000)) {
-        return value & 0x1FFFFFFF;
+    else if (IS_KSEG1(addr))
+    {
+        return K1_TO_PHYS(addr);
     }
-
-    return __osProbeTLB(addr);
+    else
+    {
+        return __osProbeTLB(addr);
+    }
 }

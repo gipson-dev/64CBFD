@@ -50,9 +50,11 @@ SRC_DIRS := $(SRC_DIR) \
 						$(GAME_SRC_DIRS) \
 						$(LIBULTRA_SRC_DIRS)
 
-GENERATED_SLICE_C_FILES := $(wildcard $(SRC_DIR)/game/generated_*.c)
+RETAIL_PAD_GENERATED_C_FILES := $(SRC_DIR)/game/generated_motor.c
+ALL_GENERATED_SLICE_C_FILES := $(wildcard $(SRC_DIR)/game/generated_*.c)
+GENERATED_SLICE_C_FILES := $(filter-out $(RETAIL_PAD_GENERATED_C_FILES),$(ALL_GENERATED_SLICE_C_FILES))
 generated_slice_asm = $(firstword $(wildcard asm/$(1).s asm/libultra/*/$(1).s))
-GENERATED_SLICE_ASM_FILES := $(foreach file,$(GENERATED_SLICE_C_FILES),\
+GENERATED_SLICE_ASM_FILES := $(foreach file,$(ALL_GENERATED_SLICE_C_FILES),\
 	$(call generated_slice_asm,$(patsubst generated_%,%,$(basename $(notdir $(file))))))
 
 S_FILES   = $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
@@ -110,7 +112,6 @@ RETAIL_LAYOUT := retail_layout.$(VERSION).txt
 RETAIL_PAD_SKIP_C_FILES := \
 	$(SRC_DIR)/debugger_258ED0.c \
 	$(SRC_DIR)/game_17AE1C.c \
-	$(SRC_DIR)/game_DAE50.c \
 	$(SRC_DIR)/game/entrypoint.c \
 	$(SRC_DIR)/libultra/audio/game_21FC90.c \
 	$(SRC_DIR)/libultra/audio/cents2ratio.c \
@@ -209,6 +210,21 @@ $(BUILD_DIR)/$(SRC_DIR)/libultra/os/startthread.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/libultra/os/stopthread.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/libultra/os/thread.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/libultra/os/timerintr.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/os/virtualtophysical.c.o: OPT_FLAGS := -O1
+
+# Stock libultra slices are compiled with the SDK's default -O1 profile.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_controller.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_contpfs.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_contramread.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_contramwrite.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_contreaddata.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_crc.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_pfschecker.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_pfsinit.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_pfsisplug.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_pidma.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_vi.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_viswapcontext.c.o: OPT_FLAGS := -O1
 
 $(BUILD_DIR)/$(SRC_DIR)/libultra/libc/string.c.o: OPT_FLAGS := -O2
 $(BUILD_DIR)/$(SRC_DIR)/libultra/libc/ldiv.c.o: OPT_FLAGS := -O2

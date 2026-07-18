@@ -338,7 +338,7 @@ extern s16  D_800427F4;
 extern struct120 D_800425E0[];
 extern struct124 *D_80042800;
 extern s32  D_80042804;
-extern u16  D_800428B8[];
+extern u16 *D_800428B8;
 extern u8   D_800428C0;
 extern u8   D_800428C1;
 extern u8   D_800428C2;
@@ -428,6 +428,10 @@ extern s32 D_80089534[];
 extern s16 D_80089550;
 extern void (*D_80089AAC[10])(void);
 extern void (*D_80089AD4[10])(void);
+extern f32 D_800A4828;
+extern f32 D_800A461C;
+extern f32 D_800A4620;
+extern s32 D_800A3FD8;
 extern void (*D_80089B70[])(void *);
 extern void (*D_80089B88[])(void *);
 extern void (*D_80089C44[])(void);
@@ -573,6 +577,18 @@ extern f32 D_80096904;
 extern f32 D_80098D90[];
 extern f32 D_80098DB0; // 0.008726646192371845
 extern f32 D_80098DB4; // 0.008726646192371845
+extern f32 D_80098DC0; // PI / 180.0f
+extern f32 D_80098DD0; // 32767.0f
+extern f32 D_80098DD4; // PI / 65535.0f
+extern f32 D_80098DD8; // 32767.0f
+extern f32 D_80098DDC; // PI / 65535.0f
+extern f32 D_80098DE0; // PI
+extern f32 D_80098DE4; // PI / 2.0f
+extern f32 D_80098DE8; // 3.0f * PI / 2.0f
+extern f32 D_80098DEC; // 2.0f * PI
+extern f32 D_80098DF0; // PI / 2.0f
+extern f32 D_80098DF4; // PI
+extern f32 D_80098DF8; // 2.0f * PI
 
 extern f32 D_800990B0; // 0.6931471824645996f
 extern f32 D_800990B4; // 0.6931471824645996f
@@ -708,6 +724,7 @@ extern u8 D_800A3FBC[]; // "../Effects/Blood/blood.c"
 extern s32 D_800A4AA0; //?
 extern f32 D_800A5168;
 extern f32 D_800A5178;
+extern f32 D_800A45B0;
 extern f32 D_800A45B4;
 extern f32 D_800A5624;
 extern f32 D_800A5628;

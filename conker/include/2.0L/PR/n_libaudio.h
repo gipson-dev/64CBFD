@@ -56,10 +56,13 @@ typedef struct {
     ALLink      pLameList;      /* list of voices ready to be freed     */
     /* 0x1C */  s32         paramSamples;
     /* 0x20 */  s32         curSamples;     /* samples from start of game           */
-    /* 0x24 */  u8          pad24[0x8];
-    /* 0x2C */  ALDMANew    dma;
-    ALHeap      *heap;
-    u8 pad[0xC];
+    /* 0x24 */  ALDMANew    dma;
+    /* 0x28 */  void        *unk28;
+    /* 0x2C */  void        *unk2C;
+    /* 0x30 */  void        *unk30;
+    /* 0x34 */  void        *unk34;
+    /* 0x38 */  void        *unk38;
+    /* 0x3C */  ALHeap      *heap;
     /* 0x40 */  struct ALParam_s      *paramList;
     /* 0x44 */  struct N_ALMainBus_s  *mainBus;
     /* 0x48 */  struct N_ALAuxBus_s   *auxBus;
@@ -67,8 +70,6 @@ typedef struct {
     s32         maxAuxBusses;
     /* 0x54 */ s32         outputRate;
     s32         maxOutSamples;
-    s32         sv_dramout;
-    s32         sv_first;
 } N_ALSynth;
 
 
@@ -292,6 +293,12 @@ typedef struct {
     /* 0x8D */  u8  unk8D;
 } N_ALCSPlayer;
 
+typedef struct N_ALCSPExtraChanState {
+    u8 pad0[0x24];
+    s32 releaseTime;
+    u8 useCustomReleaseTime;
+} N_ALCSPExtraChanState;
+
 
 /*
  * Sequence data representation routines
@@ -300,7 +307,7 @@ void    n_alSeqNextEvent(ALSeq *seq, N_ALEvent *event);
 void    n_alSeqNewMarker(ALSeq *seq, ALSeqMarker *m, u32 ticks);
 
 void    n_alCSeqNew(ALCSeq *seq, u8 *ptr);
-void    n_alCSeqNextEvent(ALCSeq *seq, N_ALEvent *evt);
+void    n_alCSeqNextEvent(ALCSeq *seq, N_ALEvent *evt, s32 arg2);
 void    n_alCSeqNewMarker(ALCSeq *seq, ALCSeqMarker *m, u32 ticks);
 
 
@@ -376,6 +383,58 @@ typedef struct {
     /* 0x4C */  ALMicroTime         nextDelta;      /* microseconds to next callback    */
     /* 0x50 */  ALMicroTime         curTime;
 } N_ALSndPlayer;
+
+typedef struct N_ALSndpSoundState {
+    /* 0x00 */ ALLink node;
+    /* 0x08 */ u8 pad8[0x4];
+    /* 0x0C */ ALSound *sound;
+    /* 0x10 */ u8 voice[0x20];
+    /* 0x30 */ f32 basePitch;
+    /* 0x34 */ f32 pitch;
+    /* 0x38 */ struct N_ALSndpSoundState **handle;
+    /* 0x3C */ ALBank *bank;
+    /* 0x40 */ s32 retryCount;
+    /* 0x44 */ u16 vol;
+    /* 0x46 */ u8 pad46[0x6];
+    /* 0x4C */ s16 soundNum;
+    /* 0x4E */ s8 priority;
+    /* 0x4F */ u8 pan;
+    /* 0x50 */ u8 fxmix;
+    /* 0x51 */ u8 fxbus;
+    /* 0x52 */ u8 pad52;
+    /* 0x53 */ u8 flags;
+    /* 0x54 */ u8 state;
+} N_ALSndpSoundState;
+
+typedef struct {
+    /* 0x00 */ ALPlayer node;
+    /* 0x14 */ ALEventQueue evtq;
+    /* 0x28 */ N_ALEvent nextEvent;
+    /* 0x38 */ N_ALSynth *drvr;
+    /* 0x3C */ s32 target;
+    /* 0x40 */ N_ALSndpSoundState *sndState;
+    /* 0x44 */ s32 maxSounds;
+    /* 0x48 */ ALMicroTime frameTime;
+    /* 0x4C */ ALMicroTime nextDelta;
+    /* 0x50 */ ALMicroTime curTime;
+    /* 0x54 */ s32 soundTableCount;
+} N_ALSndPlayerExtended;
+
+typedef struct {
+    s16 type;
+    u8 pad2[2];
+    N_ALSndpSoundState *state;
+    u8 pad8[8];
+} N_ALSndpEventPayload;
+
+typedef struct {
+    s32 maxStates;
+    s32 maxEvents;
+    s32 maxSounds;
+    ALHeap *heap;
+    s32 soundTableCount;
+    u16 maxVolumes;
+} N_ALSndpConfig;
 
 void     n_alSndpNew(N_ALSndPlayer *sndp, ALSndpConfig *c);
 void     n_alSndpDelete(void);

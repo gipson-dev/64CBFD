@@ -1,3 +1,4 @@
+
 #include <ultra64.h>
 
 #include "functions.h"
@@ -6,7 +7,6 @@
 /* Generated placeholder declarations. */
 s32 func_1000B3D4();
 s32 func_1000B638();
-s32 func_1000BAFC();
 s32 func_1000BCBC();
 s32 func_1000BF60();
 s32 func_1000C350();
@@ -19,7 +19,6 @@ s32 func_1000D2F8();
 s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1000E17C();
 s32 func_1000E2F4();
-s32 func_1000E7A0();
 s32 func_1000E934();
 /* End generated placeholder declarations. */
 
@@ -200,8 +199,23 @@ s32 func_1000BA18(u32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000BAFC.s. */
-s32 func_1000BAFC() {
-    return 0;
+s32 func_1000BAFC(u32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    u32 sp44;
+    s32 sp40;
+    s32 sp3C;
+
+    sp44 = 0;
+    sp3C = arg0 & 0x00FFFFFF;
+    arg0 = arg0 & 0xFF000000;
+    func_100114D0(0, 0, 0, 0x7FF8, 0xE74, 0xA28, &sp40, &sp44, 0);
+    sp44 = ((0x7FFF - sp44) << 16) & 0xFF000000;
+    if (arg0 != sp44) {
+        arg0 = sp44;
+        func_1000E588(0x93, arg0 >> 24, 0x6000);
+    }
+    sp3C = func_1000C530(sp3C, arg1, arg2, arg3, arg4) & 0xFFFFFF;
+    sp44 = sp3C & 0xFFFFFFFFFFFFFFFF;
+    return arg0 | sp44;
 }
 
 s32 func_1000BBE8(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
@@ -570,8 +584,28 @@ s32 func_1000E770(s32 *arg0, s32 *arg1) {
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000E7A0.s. */
-s32 func_1000E7A0() {
-    return 0;
+void func_1000E7A0(u32 arg0, s32 arg1) {
+    if ((arg0 & 1) == 1) {
+        D_80041F04 |= 1;
+    } else if (arg0 & 2) {
+        D_80041F08 += arg1;
+        D_80041F0C += 1;
+    } else if (arg0 & 4) {
+        D_80041F08 = arg1 + 1;
+        D_80041F04 |= 4;
+    } else if (arg0 & 8) {
+        D_80041F0C = arg1 >> 8;
+        arg1 &= 0xFF;
+        if ((arg1 == 0) || (arg1 == 4) || (arg1 == 5)) {
+            D_80041F08 = 2;
+        } else if (arg1 == 10) {
+            D_80041F08 = 1;
+        } else {
+            D_80041F08 = 3;
+        }
+    } else if (arg0 & 0x10) {
+        D_80041F04 |= 0x10;
+    }
 }
 // NON-MATCHING: mostly just wrong registers
 // void func_1000E7A0(u32 arg0, s32 arg1) {

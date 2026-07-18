@@ -1072,7 +1072,7 @@ void func_1505E060(u8 *arg0) {
     *(f32 *)(arg0 + 0x14) = *(f32 *)(arg0 + 0x10);
     *(f32 *)(arg0 + 0x24) = *(f32 *)(arg0 + 0x20);
     *(f32 *)(arg0 + 0x1C) = *(f32 *)(arg0 + 0x18);
-    arg0[0x39] = arg0[0x38];
+    arg0[0x39] = ((s8 *)arg0)[0x38];
     *(s32 *)(arg0 + 0x2C) = *(s32 *)(arg0 + 0x28);
     bcopy(arg0 + 0x40, arg0 + 0x210, 0x1D0);
 }
