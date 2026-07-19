@@ -24,7 +24,10 @@ s32 func_150EF38C() {
     return 0;
 }
 
-s32 func_150EF784() {
+s32 func_150EF784(u8 *arg0, u8 arg1, u8 arg2) {
+    if (*(arg0 + 4) == 0x28) {
+        return 1;
+    }
     return 0;
 }
 

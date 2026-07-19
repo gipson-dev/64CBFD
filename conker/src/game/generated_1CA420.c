@@ -5,24 +5,19 @@
 extern s32 D_800E0920;
 s32 func_1514933C();
 
-s32 func_1519CF70() {
-    return 0;
+void func_1519CF70(u8 arg0) {
+    u8 value = arg0;
+
+    func_15147D64(&value, 6);
 }
 
 void func_1519CFA0(u8 *arg0) {
-    u16 temp_t6 = *(u16 *)(arg0 + 0x1E);
-    u8 *temp_v0 = *(u8 **)(arg0 + 0x98);
-    s32 temp_t8;
-    s32 temp_t0;
-    s32 temp_t1;
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
 
-    *(u8 *)(arg0 + 0x30) = 0;
-    *(u16 *)(arg0 + 0x1E) = temp_t6 & 0xFFFD;
-    temp_t8 = *(u8 *)(temp_v0 + 6);
-    temp_t0 = temp_t8 | 1;
-    temp_t1 = temp_t0 | 4;
-    *(u8 *)(temp_v0 + 6) = temp_t0;
-    *(u8 *)(temp_v0 + 6) = temp_t1;
+    *(u16 *) (arg0 + 0x1E) &= 0xFFFD;
+    *(arg0 + 0x30) = 0;
+    *(temp_v0 + 6) |= 1;
+    *(temp_v0 + 6) |= 4;
 }
 
 void func_1519CFD0(u8 *arg0) {
@@ -79,12 +74,15 @@ s32 func_1519E61C() {
     return 0;
 }
 
-s32 func_1519E65C() {
-    return 0;
+void func_1519E65C(u8 arg0) {
+    func_1519CF70(3);
+    func_1519CF70(4);
 }
 
-s32 func_1519E688() {
-    return 0;
+void func_1519E688(void) {
+    func_1519CF70(3);
+    func_1519CF70(4);
+    func_15147D64(0, 9);
 }
 
 s32 func_1519E6BC() {
@@ -114,6 +112,7 @@ void func_1519E924(void) {
     func_1514933C();
 }
 
-s32 func_1519E948() {
-    return 0;
+void func_1519E948(void) {
+    D_800E0920 = 0;
+    func_15149368();
 }

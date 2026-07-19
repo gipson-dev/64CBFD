@@ -151,6 +151,11 @@ LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -Map $(TARGET).map -T undefined_syms.$(VE
 
 ### Overrides
 
+# Generated game slices whose retail objects were built without -g3
+# (delay slots filled; -O2 scheduling order).
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_21D420.c.o: OPT_FLAGS := -O2
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_21C4F0.c.o: OPT_FLAGS := -O2
+
 $(BUILD_DIR)/$(SRC_DIR)/libultra/audio/%.o: OPT_FLAGS := -g
 
 # TODO: blindly move all of this into libultra/audio

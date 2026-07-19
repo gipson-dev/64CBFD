@@ -2,7 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/AB760.s. */
 
-s32 func_1507EB4C();
+void func_1507EB4C();
 
 s32 func_1507E2B0() {
     return 0;
@@ -59,6 +59,9 @@ void func_1507EB2C(register s32 arg0) {
     func_1507EB4C(arg0, 0);
 }
 
-s32 func_1507EB4C() {
-    return 0;
+void func_1507EB4C(u8 *arg0, s32 arg1) {
+    if (arg1 != *(arg0 + 0x70)) {
+        *(arg0 + 0x70) = arg1;
+        func_1507EABC(arg0);
+    }
 }

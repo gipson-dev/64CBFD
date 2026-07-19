@@ -1,4 +1,8 @@
 #include <ultra64.h>
+extern u8 D_8008FD84;
+extern s32 D_800E0BA8[];
+extern s32 D_800E0BA0[];
+extern u8 D_80084060[];
 
 /* Non-matching placeholders for the text-only asm slice asm/20AE20.s. */
 
@@ -177,8 +181,11 @@ s32 func_151E53E8() {
     return 0;
 }
 
-s32 func_151E557C() {
-    return 0;
+void func_151E557C(void) {
+    D_80084060[0] = 0;
+    D_80084060[1] = 1;
+    D_80084060[2] = 2;
+    D_80084060[3] = 3;
 }
 
 s32 func_151E55A8() {
@@ -241,6 +248,8 @@ s32 func_151E7F60() {
     return 0;
 }
 
+/* Retail pairs lui- stores across TU-local data symbols; not
+   reproducible with extern declarations, so keep a placeholder. */
 s32 func_151E81EC() {
     return 0;
 }

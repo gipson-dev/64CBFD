@@ -122,8 +122,10 @@ s32 func_1514BE20() {
     return 0;
 }
 
-s32 func_1514BF50() {
-    return 0;
+void func_1514BF50(u8 *arg0) {
+    *(f32 *) (arg0 + 0x40) = *(f32 *) (arg0 + 0x34);
+    *(f32 *) (arg0 + 0x44) = *(f32 *) (arg0 + 0x38) + 100.0f;
+    *(f32 *) (arg0 + 0x48) = *(f32 *) (arg0 + 0x3C);
 }
 
 void func_1514BF7C(register u8 *arg0) {

@@ -23,8 +23,13 @@ s32 func_150D85AC() {
     return 0;
 }
 
-s32 func_150D88AC() {
-    return 0;
+s32 func_150D88AC(u8 *arg0) {
+    if (*(u8 *) (*(u8 **) (arg0 + 0x18) + 0x6F) != 0) {
+        *(u8 *) (*(u8 **) (arg0 + 0x14) + 9) = 0;
+    } else {
+        *(u8 *) (*(u8 **) (arg0 + 0x14) + 9) = 1;
+    }
+    return 1;
 }
 
 s32 func_150D88E0() {

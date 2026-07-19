@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern s32 D_800D2CA0;
+extern u8 D_800873D0[];
 
 /* Non-matching placeholders for the text-only asm slice asm/C1D70.s. */
 
@@ -20,8 +22,14 @@ s32 func_15094EA0() {
     return 0;
 }
 
-s32 func_15094F40() {
-    return 0;
+u32 *func_15094F40(u32 *arg0) {
+    u32 *temp_v1 = arg0;
+
+    arg0 += 2;
+    temp_v1[0] = 0xDE000000;
+    temp_v1[1] = (u32) D_800873D0;
+    D_800D2CA0 = 0;
+    return arg0;
 }
 
 s32 func_15094F70() {

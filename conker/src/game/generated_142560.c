@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/142560.s. */
 
+s32 func_151169B4();
+
 f32 func_151172D8(u8 *arg0, f32 arg1);
 f32 func_15117518(u8 *arg0, f32 arg1);
 
@@ -89,8 +91,10 @@ s32 func_15116930() {
     return 0;
 }
 
-s32 func_15116984() {
-    return 0;
+void func_15116984(u8 *arg0) {
+    if (*(arg0 + 0x73) & 2) {
+        func_151169B4(arg0);
+    }
 }
 
 s32 func_151169B4() {

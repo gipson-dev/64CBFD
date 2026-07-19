@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 *D_800DCD78;
 
 /* Non-matching placeholders for the text-only asm slice asm/18A8F0.s. */
 
@@ -26,8 +27,16 @@ s32 func_1515D5F8() {
     return 0;
 }
 
-s32 func_1515D69C() {
-    return 0;
+void func_1515D69C(void) {
+    u8 *ptr = D_800DCD78;
+
+    if (ptr != 0) {
+        do {
+            ptr[0xC] = 0;
+            ptr[0x30] = 0;
+            ptr = *(u8 **) ptr;
+        } while (ptr != 0);
+    }
 }
 
 void func_1515D6C8() {
@@ -122,8 +131,11 @@ s32 func_1515F850() {
     return 0;
 }
 
-s32 func_1515FB70() {
-    return 0;
+void func_1515FB70(u8 *arg0, u8 *arg1) {
+    if (*(arg0 + 0x3B) == 1) {
+        if (*(volatile s32 *) (arg1 + 0x1C) >= 0) {
+        }
+    }
 }
 
 void func_1515FB94(u8 *arg0, s32 arg1) {
@@ -134,8 +146,8 @@ s32 func_1515FBC4() {
     return 0;
 }
 
-s32 func_1515FC34() {
-    return 0;
+void func_1515FC34(s32 arg0, u8 arg1) {
+    func_1505D024(arg0, 0x33, 0xC000, -1);
 }
 
 s32 func_1515FC60() {

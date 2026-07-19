@@ -1,8 +1,10 @@
 #include <ultra64.h>
+extern s32 D_800BE9E4;
 
 /* Non-matching placeholders for the text-only asm slice asm/15D730.s. */
 
 s32 func_151318E8();
+
 s32 func_15131918();
 s32 func_15131958();
 
@@ -12,11 +14,11 @@ s32 func_15130280() {
     return 0;
 }
 
-s32 func_15130374() {
+s32 func_15130374(s32 arg0, u8 arg1, s32 arg2, s32 arg3, s32 arg4) {
     return 0;
 }
 
-s32 func_151303BC(s32 arg0, u8 arg1, s32 arg2) {
+void func_151303BC(s32 arg0, u8 arg1, s32 arg2) {
     func_15130374(arg0, arg1, arg2, 0xFF, 0);
 }
 
@@ -85,6 +87,8 @@ s32 func_15131828() {
     return 0;
 }
 
+/* Retail signature is (f32 *, f32) but exact caller func_151316AC passes raw
+   s32 bits and must not see that prototype; keep a placeholder in this TU. */
 s32 func_151318E8() {
     return 0;
 }

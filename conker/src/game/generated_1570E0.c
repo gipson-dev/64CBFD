@@ -6,6 +6,6 @@ s32 func_15129C30() {
     return 0;
 }
 
-s32 func_1512A360() {
-    return 0;
+void func_1512A360(u8 *arg0) {
+    func_151E6C1C(*(arg0 + 0x23D));
 }

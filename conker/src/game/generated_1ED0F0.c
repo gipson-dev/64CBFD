@@ -88,8 +88,8 @@ s32 func_151C1860() {
     return 0;
 }
 
-s32 func_151C1940() {
-    return 0;
+void func_151C1940(s32 arg0, s32 arg1, s32 *arg2) {
+    func_151C02E4(arg0, arg1, arg2[0], &arg2[1]);
 }
 
 s32 func_151C196C() {

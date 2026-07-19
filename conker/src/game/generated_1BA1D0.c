@@ -32,8 +32,9 @@ s32 func_1518E3C4() {
     return 0;
 }
 
-s32 func_1518E4A0() {
-    return 0;
+void func_1518E4A0(u8 *arg0) {
+    func_1518E308(arg0);
+    func_1514EDF0(arg0, *(s32 *) (arg0 + 0x18));
 }
 
 s32 func_1518E4CC(s32 arg0) {
@@ -150,8 +151,9 @@ s32 func_1519021C() {
     return 0;
 }
 
-s32 func_151903D0() {
-    return 0;
+void func_151903D0(u8 *arg0) {
+    func_15163DEC(arg0, arg0 + 0x20);
+    func_15163F50(arg0, arg0 + 0x18);
 }
 
 s32 func_15190400() {

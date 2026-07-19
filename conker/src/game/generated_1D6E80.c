@@ -112,14 +112,14 @@ s32 func_151AABC4() {
 }
 
 s32 func_151AADBC(u8 *arg0) {
-    s32 value = *(s16 *) (arg0 + 0x1C) << 4;
-    u8 *target = *(u8 **) (arg0 + 0x98);
+    s32 temp_v1 = *(s16 *) (arg0 + 0x1C) << 4;
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
 
-    if (value >= 0x100) {
-        value = 0xFF;
+    if (temp_v1 >= 0x100) {
+        temp_v1 = 0xFF;
     }
-    if (value < target[0x1B]) {
-        target[0x1B] = value;
+    if (temp_v1 < *(temp_v0 + 0x1B)) {
+        *(temp_v0 + 0x1B) = temp_v1;
     }
     return 1;
 }
@@ -160,8 +160,8 @@ s32 func_151AB7D8() {
     return 0;
 }
 
-s32 func_151AB828() {
-    return 0;
+void func_151AB828(u8 *arg0) {
+    func_15141DA4(*(s32 *) (arg0 + 0x18), 0, 4);
 }
 
 s32 func_151AB854() {

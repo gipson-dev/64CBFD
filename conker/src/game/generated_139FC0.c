@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern s8 D_800BC448[];
 
 /* Non-matching placeholders for the text-only asm slice asm/139FC0.s. */
 
@@ -26,8 +27,13 @@ s32 func_1510D404() {
     return 0;
 }
 
-s32 func_1510D608() {
-    return 0;
+void func_1510D608(s32 arg0, s32 arg1) {
+    s8 *temp_v0 = D_800BC448 + arg0;
+    s8 temp_v1 = *temp_v0;
+
+    if (temp_v1 != 0) {
+        *temp_v0 = (temp_v1 & 0x40) | arg1;
+    }
 }
 
 s32 func_1510D630() {

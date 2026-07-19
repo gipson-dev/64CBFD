@@ -26,8 +26,17 @@ s32 func_1507EEF4() {
     return 0;
 }
 
-s32 func_1507EFA0() {
-    return 0;
+void func_1507EFA0(s32 arg0, u8 *arg1) {
+    s32 i = 4;
+    u8 *ptr = arg1 + 4;
+
+    for (; i >= 0; i--) {
+        if (arg0 == *ptr) {
+            *ptr = 0;
+            return;
+        }
+        ptr--;
+    }
 }
 
 s32 func_1507EFD0() {

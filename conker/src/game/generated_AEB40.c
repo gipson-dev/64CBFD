@@ -106,8 +106,13 @@ s32 func_15084558() {
     return 0;
 }
 
-s32 func_150849A0() {
-    return 0;
+s32 func_150849A0(u8 *arg0) {
+    u8 temp_v1 = arg0[0x1C9];
+
+    if (temp_v1 != 0) {
+        return (*(u8 **) (arg0 + 0x2C4))[temp_v1 - 1];
+    }
+    return **(u8 **) (arg0 + 0x2C4);
 }
 
 s32 func_150849CC() {

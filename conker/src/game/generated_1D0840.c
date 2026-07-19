@@ -61,19 +61,12 @@ s32 func_151A4E34() {
 }
 
 void func_151A4E9C(u8 *arg0) {
-    u16 temp_t6 = *(u16 *)(arg0 + 0x1E);
-    u8 *temp_v0 = *(u8 **)(arg0 + 0x98);
-    s32 temp_t8;
-    s32 temp_t0;
-    s32 temp_t1;
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
 
-    *(u8 *)(arg0 + 0x30) = 0;
-    *(u16 *)(arg0 + 0x1E) = temp_t6 & 0xFFFD;
-    temp_t8 = *(u8 *)(temp_v0 + 0x30);
-    temp_t0 = temp_t8 | 1;
-    temp_t1 = temp_t0 | 4;
-    *(u8 *)(temp_v0 + 0x30) = temp_t0;
-    *(u8 *)(temp_v0 + 0x30) = temp_t1;
+    *(u16 *) (arg0 + 0x1E) &= 0xFFFD;
+    *(arg0 + 0x30) = 0;
+    *(temp_v0 + 0x30) |= 1;
+    *(temp_v0 + 0x30) |= 4;
 }
 
 s32 func_151A4ECC() {

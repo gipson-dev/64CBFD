@@ -17,43 +17,51 @@ s32 func_151061E0(s32 arg0) {
 }
 
 u8 *func_151061EC(u8 *arg0) {
-    return arg0 + *(s32 *) (arg0 + 0x48) * 0x34 + 0x88;
+    s32 temp_v1 = *(s32 *) (arg0 + 0x48);
+
+    return arg0 + temp_v1 * 0x34 + 0x88;
 }
 
 s32 func_15106214() {
     return 0;
 }
 
-s32 func_151064B4() {
-    return 0;
+f32 func_151064B4(f32 arg0) {
+    f32 temp = 1.0f - arg0;
+
+    return temp * temp * temp;
 }
 
-s32 func_151064DC() {
-    return 0;
+f32 func_151064DC(f32 arg0) {
+    f32 temp = 1.0f - arg0;
+
+    return 3.0f * arg0 * temp * temp;
 }
 
-s32 func_15106510() {
-    return 0;
+f32 func_15106510(f32 arg0) {
+    return 3.0f * arg0 * arg0 * (1.0f - arg0);
 }
 
 f32 func_15106540(register f32 arg0) {
     return arg0 * arg0 * arg0;
 }
 
-s32 func_15106558() {
-    return 0;
+f32 func_15106558(f32 arg0) {
+    f32 temp = 1.0f - arg0;
+
+    return -3.0f * temp * temp;
 }
 
 s32 func_15106584() {
     return 0;
 }
 
-s32 func_151065BC() {
-    return 0;
+f32 func_151065BC(f32 arg0) {
+    return -9.0f * arg0 * arg0 + 6.0f * arg0;
 }
 
-s32 func_151065EC() {
-    return 0;
+f32 func_151065EC(f32 arg0) {
+    return 3.0f * arg0 * arg0;
 }
 
 s32 func_15106610() {

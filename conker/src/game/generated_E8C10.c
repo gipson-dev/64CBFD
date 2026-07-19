@@ -34,6 +34,12 @@ s32 func_150BD954() {
     return 0;
 }
 
-s32 func_150BDB3C() {
-    return 0;
+s32 func_150BDB3C(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
+    s32 temp_v1 = *(s16 *) (arg0 + 0x1C);
+
+    if ((temp_v1 << 3) < *(temp_v0 + 0x1B)) {
+        *(temp_v0 + 0x1B) = temp_v1 << 3;
+    }
+    return 1;
 }

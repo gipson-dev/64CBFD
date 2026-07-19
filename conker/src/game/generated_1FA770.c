@@ -58,15 +58,19 @@ void func_151CE47C(u8 *arg0) {
 }
 
 void func_151CE49C(u8 *arg0) {
-    s32 value = *(s32 *) (*(u8 **) (arg0 + 0x98) + 0x48);
+    s32 value;
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
 
+    value = *(s32 *) (temp_v0 + 0x48);
     func_151494E0(&value, 0x23);
     func_151478F4(arg0);
 }
 
 void func_151CE4DC(u8 *arg0) {
-    s32 value = *(s32 *) (*(u8 **) (arg0 + 0x98) + 0x48);
+    s32 value;
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
 
+    value = *(s32 *) (temp_v0 + 0x48);
     func_151494E0(&value, 0x23);
     func_15147928(arg0);
 }
@@ -133,11 +137,9 @@ s32 func_151D0058() {
 
 void func_151D0128(u8 *arg0) {
     u8 *temp_v0 = *(u8 **)(arg0 + 0x28);
-    u16 temp_t7 = *(u16 *)(arg0 + 0x2E);
-    s16 temp_t8 = -1;
 
-    if (*(u16 *)(temp_v0 + 0x84) != temp_t7) {
-        *(s16 *)(arg0 + 0xE) = temp_t8;
+    if (*(u16 *)(temp_v0 + 0x84) != *(u16 *)(arg0 + 0x2E)) {
+        *(s16 *)(arg0 + 0xE) = -1;
     }
 }
 
@@ -175,8 +177,11 @@ s32 func_151D0F60() {
     return 0;
 }
 
-s32 func_151D1074() {
-    return 0;
+s32 func_151D1074(u8 *arg0, f32 *arg1) {
+    arg1[0] = *(f32 *) (arg0 + 0x14);
+    arg1[1] = *(f32 *) (arg0 + 0x180) + 8.0f;
+    arg1[2] = *(f32 *) (arg0 + 0x1C);
+    return 1;
 }
 
 void func_151D10A4(s32 arg0, s32 arg1) {

@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern f32 D_800A0FB0;
 
 /* Non-matching placeholders for the text-only asm slice asm/10CD70.s. */
 
@@ -18,8 +19,12 @@ s32 func_150DFCA8() {
     return 0;
 }
 
-s32 func_150DFDA4() {
-    return 0;
+void func_150DFDA4(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x1D4) + 0x40;
+
+    *(f32 *) (temp_v0 + 0x30) = *(f32 *) (arg0 + 0x14);
+    *(f32 *) (temp_v0 + 0x34) = D_800A0FB0;
+    *(f32 *) (temp_v0 + 0x38) = *(f32 *) (arg0 + 0x1C);
 }
 
 s32 func_150DFDD0() {

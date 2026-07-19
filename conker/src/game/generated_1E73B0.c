@@ -55,10 +55,12 @@ s32 func_151BC370() {
 }
 
 s32 func_151BC580(u8 *arg0) {
-    if (**(s32 **) (arg0 + 0x40) != 0) {
-        return 1;
+    s32 *temp_v0 = *(s32 **) (arg0 + 0x40);
+
+    if (*temp_v0 == 0) {
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 s32 func_151BC5A4() {

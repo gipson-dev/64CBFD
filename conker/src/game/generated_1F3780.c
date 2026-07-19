@@ -2,16 +2,18 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1F3780.s. */
 
+s32 func_151C69CC();
+
 s32 func_151C62D0() {
     return 0;
 }
 
-s32 func_151C6974() {
-    return 0;
+void func_151C6974(s32 arg0, u8 arg1, s32 arg2) {
+    func_151C69CC(arg0, arg2, 0, arg2);
 }
 
-s32 func_151C69A0() {
-    return 0;
+void func_151C69A0(s32 arg0, u8 arg1, s32 arg2) {
+    func_151C69CC(arg0, arg2, 1, arg2);
 }
 
 s32 func_151C69CC() {

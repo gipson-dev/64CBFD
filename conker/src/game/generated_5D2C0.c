@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/5D2C0.s. */
 
+s32 func_1503195C();
+
 s32 func_15030310();
 
 s32 func_1502FE10() {
@@ -56,8 +58,12 @@ s32 func_150311C4() {
     return 0;
 }
 
-s32 func_1503192C() {
-    return 0;
+void func_1503192C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    u8 *temp_v0 = (u8 *) func_1503195C(arg0, arg1, arg3);
+
+    if (temp_v0 != 0) {
+        temp_v0[3] = arg2;
+    }
 }
 
 s32 func_1503195C() {

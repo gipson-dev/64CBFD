@@ -26,8 +26,15 @@ s32 func_1512B53C() {
     return 0;
 }
 
-s32 func_1512B5FC() {
-    return 0;
+void func_1512B5FC(u8 *arg0, s32 arg1, s32 arg2) {
+    *(arg0 + 2) = *(arg0 + 1);
+    if (*(s32 *) (arg0 + 4) < arg1) {
+        *(arg0 + 1) = 0;
+    } else {
+        *(arg0 + 1) = 1;
+    }
+    *(s32 *) (arg0 + 8) = arg2;
+    *(s32 *) (arg0 + 4) = arg1;
 }
 
 s32 func_1512B630() {

@@ -120,11 +120,11 @@ s32 func_1510281C() {
     return 0;
 }
 
-s32 func_15102884(u8 *arg0, s32 arg1) {
-    if (arg0[0xAC] & 1) {
-        return 1;
+s32 func_15102884(u8 *arg0, u8 arg1) {
+    if (!(*(arg0 + 0xAC) & 1)) {
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 s32 func_151028AC() {

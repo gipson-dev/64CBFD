@@ -35,7 +35,9 @@ s32 func_150CFBEC() {
 }
 
 s32 func_150CFC38(f32 arg0) {
-    func_1515572C(&arg0, 0x52);
+    f32 value = arg0;
+
+    func_1515572C(&value, 0x52);
 }
 
 s32 func_150CFC60() {
@@ -46,12 +48,20 @@ s32 func_150CFD20() {
     return 0;
 }
 
-s32 func_150CFD5C() {
-    return 0;
+u8 *func_150CFD5C(u8 *arg0) {
+    if (*arg0 != 0) {
+        do {
+            arg0++;
+        } while (*arg0 != 0);
+    }
+    return arg0;
 }
 
-s32 func_150CFD84() {
-    return 0;
+s32 func_150CFD84(u8 *arg0, u8 **arg1) {
+    u8 *end = (u8 *) func_150CFD20(arg0);
+
+    *arg1 = end;
+    return end - arg0;
 }
 
 s32 func_150CFDB8() {

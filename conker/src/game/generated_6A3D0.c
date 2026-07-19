@@ -18,8 +18,11 @@ void func_1503D438(u32 *arg0, u32 arg1) {
     }
 }
 
-s32 func_1503D45C() {
-    return 0;
+void func_1503D45C(s32 *arg0, s32 arg1) {
+    while (*arg0 != 0) {
+        *arg0 = *arg0 + arg1;
+        arg0 = arg0 + 2;
+    }
 }
 
 s32 func_1503D484() {

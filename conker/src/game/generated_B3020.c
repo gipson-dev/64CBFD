@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 *D_800872A0;
 
 /* Non-matching placeholders for the text-only asm slice asm/B3020.s. */
 
@@ -73,8 +74,12 @@ s32 func_15087EF0() {
     return 0;
 }
 
-s32 func_15087FC4() {
-    return 0;
+void func_15087FC4(s32 arg0, s32 arg1) {
+    u8 *temp_v0 = D_800872A0;
+
+    if (temp_v0 != 0) {
+        *(u8 *) (arg0 * 0x84 + (s32) temp_v0 + 0x31) = arg1;
+    }
 }
 
 s32 func_15087FEC() {
@@ -101,8 +106,13 @@ s32 func_15088270() {
     return 0;
 }
 
-s32 func_150882B0() {
-    return 0;
+s32 func_150882B0(s32 arg0) {
+    u8 *temp_v1 = D_800872A0;
+
+    if (temp_v1 == 0) {
+        return 0;
+    }
+    return *(s8 *) (arg0 * 0x84 + (s32) temp_v1 + 0x27);
 }
 
 s32 func_150882E4() {
@@ -129,8 +139,13 @@ s32 func_15088780() {
     return 0;
 }
 
-s32 func_150887F8() {
-    return 0;
+s32 func_150887F8(void) {
+    u8 *temp_v1 = D_800872A0;
+
+    if (temp_v1 == 0) {
+        return 0;
+    }
+    return temp_v1[0x46] == 0xFF;
 }
 
 s32 func_15088824() {

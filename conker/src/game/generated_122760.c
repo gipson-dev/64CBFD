@@ -6,6 +6,6 @@ s32 func_150F52B0() {
     return 0;
 }
 
-s32 func_150F5310() {
-    return 0;
+void func_150F5310(u8 arg0) {
+    func_151827D0();
 }

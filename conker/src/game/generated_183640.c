@@ -4,13 +4,15 @@
 
 s32 func_151D5E30();
 s32 func_15157DEC();
+void func_15169260(s32, s32, s32, u8);
+s32 func_15156190(s32 arg0, u8 arg1, s32 arg2, s32 arg3, s32 arg4);
 extern u8 D_800A6060[];
 
-s32 func_15156190() {
+s32 func_15156190(s32 arg0, u8 arg1, s32 arg2, s32 arg3, s32 arg4) {
     return 0;
 }
 
-s32 func_15156388(s32 arg0, u8 arg1, s32 arg2) {
+void func_15156388(s32 arg0, u8 arg1, s32 arg2) {
     func_15156190(arg0, arg1, arg2, 0xFF, 0);
 }
 
@@ -115,6 +117,6 @@ s32 func_15157FE8() {
     return 0;
 }
 
-s32 func_15158078(s32 arg0, u8 arg1) {
-    func_15169260(D_800A6060, 3, arg0, arg1);
+void func_15158078(s32 arg0, u8 arg1) {
+    func_15169260((s32) D_800A6060, 3, arg0, arg1);
 }

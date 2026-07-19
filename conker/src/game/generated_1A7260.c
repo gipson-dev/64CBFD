@@ -42,6 +42,10 @@ s32 func_1517AA20() {
     return 0;
 }
 
-s32 func_1517AB7C() {
-    return 0;
+void func_1517AB7C(arg0, arg1, arg2)
+s32 arg0;
+s16 arg1;
+s16 arg2;
+{
+    func_1510B7B4(arg0, arg2);
 }

@@ -54,7 +54,12 @@ s32 func_151C95D8() {
     return 0;
 }
 
-s32 func_151C96DC() {
+s32 func_151C96DC(u8 *arg0, u8 arg1) {
+    u8 *ptr = *(u8 **) (arg0 + 0x170) + 0x110;
+
+    if (*(ptr + 0x86) & 2) {
+        return 1;
+    }
     return 0;
 }
 
@@ -150,8 +155,10 @@ s32 func_151CC1D4() {
     return 0;
 }
 
-s32 func_151CC290() {
-    return 0;
+void func_151CC290(void *arg0) {
+    void *value = arg0;
+
+    func_1515572C(&value, 0x46);
 }
 
 s32 func_151CC2BC() {

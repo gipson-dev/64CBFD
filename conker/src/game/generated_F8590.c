@@ -47,9 +47,6 @@ s32 func_150CBE88() {
 }
 
 void func_150CBF5C(u8 *arg0) {
-    u32 temp_t6 = *(u32 *)(arg0 + 0x58);
-    s32 temp_t8 = 0x20;
-
-    *(s16 *)(arg0 + 0x1C) = temp_t8;
-    *(u32 *)(arg0 + 0x58) = temp_t6 | 1;
+    *(u32 *)(arg0 + 0x58) |= 1;
+    *(s16 *)(arg0 + 0x1C) = 0x20;
 }

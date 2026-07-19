@@ -26,8 +26,12 @@ s32 func_150E2EA4() {
     return 0;
 }
 
-s32 func_150E2F90() {
-    return 0;
+void func_150E2F90(arg0, arg1, arg2)
+s32 arg0;
+s16 arg1;
+s16 arg2;
+{
+    func_150E2DA4(arg0, arg2);
 }
 
 s32 func_150E2FC0() {

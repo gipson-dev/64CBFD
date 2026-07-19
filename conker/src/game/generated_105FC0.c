@@ -3,6 +3,7 @@
 /* Non-matching placeholders for the text-only asm slice asm/105FC0.s. */
 
 s32 func_15131828();
+void func_100111C8(u16 arg0);
 s32 func_15131958();
 
 void func_150D8B10(f32 *arg0, f32 *arg1) {
@@ -23,8 +24,12 @@ s32 func_150D8D84() {
     return 0;
 }
 
-s32 func_150D8E1C() {
-    return 0;
+void func_150D8E1C(u8 *arg0) {
+    *(u16 *) (arg0 + 0x1E) &= 0xFFFD;
+    *(arg0 + 0x30) = 0;
+    *(u16 *) (arg0 + 0x1E) |= 8;
+    *(u16 *) (arg0 + 0x1E) |= 1;
+    *(s16 *) (arg0 + 0x1C) = 0x28;
 }
 
 s32 func_150D8E4C() {
@@ -43,12 +48,15 @@ s32 func_150D9C7C() {
     return 0;
 }
 
-void func_150DA484(u8 *arg0) {
+void func_150DA484(arg0, arg1)
+u8 *arg0;
+s32 arg1;
+{
     u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
-    u16 value = *(u16 *) (temp_v0 + 0x30);
 
-    if (value != 0) {
-        func_140111C8(value);
+    arg1 = *(u16 *) (temp_v0 + 0x30);
+    if (arg1 != 0) {
+        func_100111C8(arg1);
     }
 }
 

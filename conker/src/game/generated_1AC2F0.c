@@ -10,7 +10,10 @@ s32 func_1517EF00() {
     return 0;
 }
 
-s32 func_1517EFAC() {
+s32 func_1517EFAC(void) {
+    if (func_1517EF00() == 0xFF) {
+        return 1;
+    }
     return 0;
 }
 

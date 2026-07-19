@@ -67,19 +67,21 @@ s32 func_1516F864() {
 }
 
 void func_1516F8EC(u8 *arg0, u32 arg1) {
-    s32 temp_v0 = ((*(s8 *)(arg0 + 0x26) << 8) + *(u8 *)(arg0 + 0x27)) * arg1;
-    s32 temp_t0 = temp_v0 >> 8;
+    s32 val = *(s8 *) (arg0 + 0x26);
 
-    *(u8 *)(arg0 + 0x26) = temp_t0 >> 8;
-    *(u8 *)(arg0 + 0x27) = temp_t0;
+    val = (val << 8) + *(arg0 + 0x27);
+    val = val * arg1;
+    *(s8 *) (arg0 + 0x26) = (val >> 8) >> 8;
+    *(arg0 + 0x27) = val >> 8;
 }
 
 void func_1516F91C(u8 *arg0, u32 arg1) {
-    s32 temp_v0 = ((*(s8 *)(arg0 + 0x28) << 8) + *(u8 *)(arg0 + 0x29)) * arg1;
-    s32 temp_t0 = temp_v0 >> 8;
+    s32 val = *(s8 *) (arg0 + 0x28);
 
-    *(u8 *)(arg0 + 0x28) = temp_t0 >> 8;
-    *(u8 *)(arg0 + 0x29) = temp_t0;
+    val = (val << 8) + *(arg0 + 0x29);
+    val = val * arg1;
+    *(s8 *) (arg0 + 0x28) = (val >> 8) >> 8;
+    *(arg0 + 0x29) = val >> 8;
 }
 
 s32 func_1516F94C() {

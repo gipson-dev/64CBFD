@@ -34,8 +34,11 @@ s32 func_150F85A0() {
     return 0;
 }
 
-s32 func_150F884C() {
-    return 0;
+void func_150F884C(u8 arg0, s32 arg1) {
+    s32 value[1];
+
+    value[0] = arg1;
+    func_151494E0(value, 0x3F);
 }
 
 s32 func_150F887C() {

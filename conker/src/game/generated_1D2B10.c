@@ -1,33 +1,31 @@
 #include <ultra64.h>
+void func_100111C8(u16 arg0);
+void func_151A5D2C();
 
 /* Non-matching placeholders for the text-only asm slice asm/1D2B10.s. */
-
-s32 func_151A5D2C();
 
 s32 func_151A5660() {
     return 0;
 }
 
 void func_151A5CAC(u8 *arg0) {
-    u16 value = *(u16 *) (arg0 + 0x6C);
-
-    if (value != 0) {
-        func_151A5D2C(value);
+    if (*(volatile u16 *) (arg0 + 0x6C) != 0) {
+        func_151A5D2C(*(volatile u16 *) (arg0 + 0x6C));
     }
     func_1514933C(arg0);
 }
 
 void func_151A5CEC(u8 *arg0) {
-    u16 value = *(u16 *) (arg0 + 0x6C);
-
-    if (value != 0) {
-        func_151A5D2C(value);
+    if (*(volatile u16 *) (arg0 + 0x6C) != 0) {
+        func_151A5D2C(*(volatile u16 *) (arg0 + 0x6C));
     }
     func_15149368(arg0);
 }
 
-s32 func_151A5D2C() {
-    return 0;
+void func_151A5D2C(arg0)
+u16 arg0;
+{
+    func_100111C8(arg0);
 }
 
 s32 func_151A5D58() {

@@ -13,14 +13,14 @@ s32 func_151AC078() {
 }
 
 s32 func_151AC3CC(u8 *arg0) {
-    s32 value = *(s16 *) (arg0 + 0x1C) << 3;
-    u8 *target = *(u8 **) (arg0 + 0x98);
+    s32 temp_v1 = *(s16 *) (arg0 + 0x1C) << 3;
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
 
-    if (value >= 0x100) {
-        value = 0xFF;
+    if (temp_v1 >= 0x100) {
+        temp_v1 = 0xFF;
     }
-    if (value < target[0x1B]) {
-        target[0x1B] = value;
+    if (temp_v1 < *(temp_v0 + 0x1B)) {
+        *(temp_v0 + 0x1B) = temp_v1;
     }
     return 1;
 }

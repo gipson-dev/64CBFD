@@ -4,6 +4,7 @@
 
 s32 func_151D5E30();
 s32 func_1514795C();
+void func_15169260(s32, s32, s32, u8);
 extern u8 D_800A5760[];
 
 s32 func_15147740() {
@@ -50,6 +51,6 @@ s32 func_15147D1C() {
     return 0;
 }
 
-s32 func_15147D64(s32 arg0, u8 arg1) {
-    func_15169260(D_800A5760, 2, arg0, arg1);
+void func_15147D64(s32 arg0, u8 arg1) {
+    func_15169260((s32) D_800A5760, 2, arg0, arg1);
 }
