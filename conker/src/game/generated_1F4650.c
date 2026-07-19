@@ -18,15 +18,29 @@ s32 func_151C82D0() {
     return 0;
 }
 
-s32 func_151C8674() {
-    return 0;
+void func_151C8674(s32 arg0, s32 arg1) {
+    struct {
+        s32 a;
+        s32 b;
+    } rec;
+
+    if (arg0 != 0) {
+        rec.a = arg0;
+        rec.b = arg1;
+        func_151403A8(&rec, 0x20);
+    }
 }
 
 s32 func_151C86AC() {
     return 0;
 }
 
-s32 func_151C87AC() {
+s32 func_151C87AC(u8 *arg0, u8 arg1, u8 arg2, u8 arg3, s32 arg4, s32 arg5, u16 *arg6) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x18);
+
+    if (!(*(temp_v0 + 0x86) & 2)) {
+        *arg6 = 0;
+    }
     return 0;
 }
 
@@ -63,8 +77,15 @@ s32 func_151C96DC(u8 *arg0, u8 arg1) {
     return 0;
 }
 
-s32 func_151C970C() {
-    return 0;
+void func_151C970C(s32 arg0, s32 arg1) {
+    struct {
+        s32 value;
+        u8 code;
+    } rec;
+
+    rec.value = arg1;
+    rec.code = arg0;
+    func_151403A8(&rec, 0x3A);
 }
 
 s32 func_151C9740() {
@@ -75,12 +96,25 @@ s32 func_151C9AC0() {
     return 0;
 }
 
-s32 func_151C9B30() {
-    return 0;
+s32 func_151C9B30(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x18);
+
+    if (*(temp_v0 + 0x6F) == 0) {
+        *(u8 *) (*(u8 **) (arg0 + 0x14) + 9) = 0;
+    } else {
+        *(u8 *) (*(u8 **) (arg0 + 0x14) + 9) = 1;
+    }
+    return 1;
 }
 
-s32 func_151C9B64() {
-    return 0;
+s32 func_151C9B64(u8 *arg0, u8 *arg1) {
+    if (*(*(u8 **) (arg0 + 0x188) + 0x6F) == 0) {
+        *(u32 *) (arg0 + 0x58) &= ~2;
+        *arg1 = 0;
+    } else {
+        *arg1 = 1;
+    }
+    return 1;
 }
 
 s32 func_151C9BA0() {

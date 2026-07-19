@@ -1,4 +1,9 @@
 #include <ultra64.h>
+extern void (*D_80086014[])();
+extern f32 D_800C35A0;
+extern s16 D_800C3598[];
+extern u16 *D_800C35D8[];
+extern u8 D_800C363A[];
 
 /* Non-matching placeholders for the text-only asm slice asm/49D30.s. */
 
@@ -23,8 +28,21 @@ s32 func_1501CE54() {
     return 0;
 }
 
-s32 func_1501CFF8() {
-    return 0;
+s32 func_1501CFF8(s32 arg0) {
+    s32 count = D_800C363A[arg0];
+    s32 sum = 0;
+    s32 i = 0;
+
+    if (count > 0) {
+        u16 *ptr = D_800C35D8[arg0];
+
+        do {
+            sum += *ptr;
+            i += 1;
+            ptr += 1;
+        } while (i < count);
+    }
+    return sum;
 }
 
 s32 func_1501D044() {
@@ -139,8 +157,11 @@ s32 func_15022190() {
     return 0;
 }
 
-s32 func_150221E8() {
-    return 0;
+void func_150221E8(s16 arg0, s16 arg1, s16 arg2, f32 arg3) {
+    D_800C35A0 = arg3;
+    D_800C3598[0] = arg0;
+    D_800C3598[1] = arg1;
+    D_800C3598[2] = arg2;
 }
 
 void func_15022234(s32 arg0) {
@@ -191,8 +212,16 @@ s32 func_150228E4() {
     return 0;
 }
 
-s32 func_15022998() {
-    return 0;
+void func_15022998(s32 *arg0) {
+    s32 temp_v0 = *arg0;
+
+    if ((temp_v0 == 0x1B) || (temp_v0 == 4)) {
+        void (*temp_v1)() = D_80086014[temp_v0];
+
+        if (temp_v1 != 0) {
+            temp_v1();
+        }
+    }
 }
 
 s32 func_150229E4() {

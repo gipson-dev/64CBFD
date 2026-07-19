@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "variables.h"
+extern s16 D_8008FDCC;
 
 /* Non-matching placeholders for the text-only asm slice asm/215960.s. */
 
@@ -39,8 +40,13 @@ s32 func_151EB06C() {
     return 0;
 }
 
-s32 func_151EB930() {
-    return 0;
+u8 *func_151EB930(u8 *arg0) {
+    s16 temp = D_8008FDCC;
+
+    if (temp != 0) {
+        arg0 = (u8 *) func_151EA15C(arg0, 0x6A, temp, 0);
+    }
+    return arg0;
 }
 
 s32 func_151EB96C() {

@@ -30,6 +30,6 @@ s32 func_151925C4() {
     return 0;
 }
 
-s32 func_1519277C() {
-    return 0;
+void func_1519277C(u8 *arg0, s32 arg1, u8 arg2) {
+    func_15169850(arg1, arg2, arg0 + 0x28, arg0 + 0x2C, arg0);
 }

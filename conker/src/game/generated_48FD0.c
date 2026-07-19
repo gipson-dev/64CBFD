@@ -34,8 +34,14 @@ s32 func_1501C1B0() {
     return 0;
 }
 
-s32 func_1501C53C() {
-    return 0;
+void func_1501C53C(void) {
+    s32 i = 0;
+
+    do {
+        func_1501C17C(i & 0xFF);
+        i += 1;
+        i = i & 0xFF;
+    } while (i < 4);
 }
 
 s32 func_1501C57C() {

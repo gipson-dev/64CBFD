@@ -38,6 +38,8 @@ s32 func_15178DA4() {
     return 0;
 }
 
-s32 func_15178E14() {
-    return 0;
+void func_15178E14(arg0)
+u8 arg0;
+{
+    func_15178DA4(func_15178B98(arg0));
 }

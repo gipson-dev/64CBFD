@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 D_800BE9C0;
 
 /* Non-matching placeholders for the text-only asm slice asm/183640.s. */
 
@@ -80,8 +81,11 @@ s32 func_15157420() {
     return 0;
 }
 
-s32 func_15157860() {
-    return 0;
+s32 func_15157860(u8 *arg0) {
+    u8 *ptr = arg0;
+
+    guMtxIdentF(ptr + (D_800BE9C0 << 6) + 0x7C);
+    return 1;
 }
 
 s32 func_15157898() {

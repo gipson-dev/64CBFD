@@ -34,6 +34,11 @@ s32 func_15183D28() {
     return 0;
 }
 
-s32 func_15184118() {
+s32 func_15184118(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x31C);
+
+    if ((temp_v0 != 0) && (*(temp_v0 + 0x57) != 0)) {
+        return 1;
+    }
     return 0;
 }

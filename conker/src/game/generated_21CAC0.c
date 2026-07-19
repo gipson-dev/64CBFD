@@ -5,6 +5,8 @@ extern u32 D_80091970;
 
 u32 func_151EF610(void) {
     u32 temp = D_80091970 * 4;
+    u32 result = (temp + 2) * (temp + 3) / 4;
 
-    return D_80091970 = (temp + 2) * (temp + 3) / 4;
+    D_80091970 = result;
+    return result;
 }

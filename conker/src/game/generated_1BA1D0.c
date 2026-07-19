@@ -1,6 +1,14 @@
 #include <ultra64.h>
+f32 func_150ADA68();
+extern void (*D_8008D680[])();
+typedef struct { s32 a, b, c; } ThreeWord1BA1D0;
+void func_15169260(s32, s32, s32, u8);
+extern u8 D_800A74D4[];
+typedef struct { s32 val; } OneWord1BA1D0;
 
 /* Non-matching placeholders for the text-only asm slice asm/1BA1D0.s. */
+
+s32 func_1518F8E0();
 
 s32 func_15191400();
 
@@ -24,8 +32,11 @@ s32 func_1518E308() {
     return 0;
 }
 
-s32 func_1518E37C() {
-    return 0;
+void func_1518E37C(u8 *arg0, u8 arg1) {
+    if (arg1 != *(arg0 + 0x22)) {
+        func_1518E308(arg0);
+        *(arg0 + 0x22) = arg1;
+    }
 }
 
 s32 func_1518E3C4() {
@@ -83,8 +94,14 @@ s32 func_1518F108() {
     return 0;
 }
 
-s32 func_1518F15C() {
-    return 0;
+s32 func_1518F15C(u8 *arg0) {
+    s32 temp_v0 = *(s16 *) (arg0 + 0x1C);
+
+    *(f32 *) (arg0 + 0x30) = *(f32 *) (arg0 + 0x30) - *(f32 *) (arg0 + 0x30) * *(f32 *) (arg0 + 0x154);
+    if (temp_v0 < *(s16 *) (arg0 + 0x158)) {
+        *(arg0 + 0x5C) = (u32) *(s16 *) (arg0 + 0x15A) * temp_v0;
+    }
+    return 1;
 }
 
 s32 func_1518F1A0() {
@@ -95,8 +112,11 @@ s32 func_1518F384() {
     return 0;
 }
 
-s32 func_1518F45C() {
-    return 0;
+void func_1518F45C(s32 arg0, u8 arg1) {
+    s32 tmp[1];
+
+    tmp[0] = *(s32 *) D_800A74D4;
+    func_15169260(tmp, 1, arg0, arg1);
 }
 
 s32 func_1518F49C() {
@@ -115,24 +135,39 @@ s32 func_1518F7C4() {
     return 0;
 }
 
-s32 func_1518F858() {
-    return 0;
+void func_1518F858(u8 *arg0) {
+    if (*(s8 *) (arg0 + 0x89) != -1) {
+        D_8008D680[*(s8 *) (arg0 + 0x89)]();
+    }
 }
 
-s32 func_1518F89C() {
-    return 0;
+void func_1518F89C(u8 *arg0) {
+    u8 *temp_v0;
+    f32 r = func_150ADA68();
+
+    temp_v0 = arg0 + 0x30;
+    *(f32 *) temp_v0 = r * *(f32 *) (temp_v0 + 0x10) + *(f32 *) (temp_v0 + 0xC);
+    func_1518F8E0(arg0);
 }
 
 s32 func_1518F8E0() {
     return 0;
 }
 
-s32 func_1518FC04() {
-    return 0;
+s32 func_1518FC04(u8 *arg0, ThreeWord1BA1D0 *arg1) {
+    u8 *temp = *(u8 **) (arg0 + 0x2C);
+
+    *(ThreeWord1BA1D0 *) (temp + 0x34) = *arg1;
+    func_1514BE20(temp);
+    return 1;
 }
 
-s32 func_1518FC44() {
-    return 0;
+s32 func_1518FC44(u8 *arg0, ThreeWord1BA1D0 *arg1) {
+    u8 *temp = *(u8 **) (arg0 + 0x2C);
+
+    *(ThreeWord1BA1D0 *) (temp + 0x34) = *arg1;
+    func_1514BF50(temp);
+    return 1;
 }
 
 s32 func_1518FC84() {
@@ -181,8 +216,15 @@ s32 func_151904BC() {
     return 0;
 }
 
-s32 func_15190518() {
-    return 0;
+void func_15190518(u8 *arg0) {
+    struct {
+        u8 *target;
+        u8 code;
+    } rec;
+
+    rec.target = arg0;
+    rec.code = *(arg0 + 0x3B);
+    func_1516944C(0x3E, &rec, 0x2A);
 }
 
 s32 func_15190550() {
@@ -207,15 +249,14 @@ s32 func_151906E0() {
 
 void func_1519072C(u8 *arg0) {
     struct {
-        u8 *ptr;
-        u8 value;
-    } temp;
-    void *record = &temp;
+        u8 *target;
+        u8 code;
+    } rec;
 
-    temp.ptr = arg0;
-    temp.value = arg0[0x3B];
-    func_151D343C(record, 0x2A);
-    func_1518F45C(record, 0x49);
+    rec.target = arg0;
+    rec.code = *(arg0 + 0x3B);
+    func_151D343C(&rec, 0x2A);
+    func_1518F45C(&rec, 0x49);
 }
 
 s32 func_15190770() {
@@ -252,8 +293,17 @@ s32 func_15191520() {
     return 0;
 }
 
-s32 func_1519187C() {
-    return 0;
+s32 func_1519187C(u8 *arg0) {
+    s32 temp_v0 = *(s16 *) (arg0 + 0x1C);
+
+    if (temp_v0 < *(s16 *) (arg0 + 0x124)) {
+        s32 temp_v1 = (u32) *(s16 *) (arg0 + 0x126) * temp_v0;
+
+        if (temp_v1 < *(arg0 + 0x5C)) {
+            *(arg0 + 0x5C) = temp_v1;
+        }
+    }
+    return 1;
 }
 
 s32 func_151918BC() {

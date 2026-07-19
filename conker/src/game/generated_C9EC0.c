@@ -1,6 +1,11 @@
 #include <ultra64.h>
+extern s32 D_8008743C[];
+extern u8 *D_800D2FB0;
 
 /* Non-matching placeholders for the text-only asm slice asm/C9EC0.s. */
+
+void func_1509CCB4();
+s32 func_1509CE64();
 
 extern u8 D_8008743A[];
 
@@ -12,7 +17,6 @@ typedef struct {
 } GeneratedC9EC0Entry;
 
 extern GeneratedC9EC0Entry D_80087430[];
-s32 func_1509CCB4();
 
 s32 func_1509CA10(register s32 arg0) {
     return D_80087430[arg0].field0;
@@ -46,8 +50,8 @@ void func_1509CC94() {
     func_1509CCB4();
 }
 
-s32 func_1509CCB4() {
-    return 0;
+void func_1509CCB4(s32 arg0) {
+    func_1509CE64(*(s32 *) ((u8 *) D_8008743C + arg0 * 20), func_1509CCB4);
 }
 
 s32 func_1509CCF4() {
@@ -66,8 +70,13 @@ s32 func_1509CF28() {
     return 0;
 }
 
-s32 func_1509D054() {
-    return 0;
+void func_1509D054(void) {
+    u8 *temp_v0 = D_800D2FB0;
+
+    if (temp_v0 != 0) {
+        func_10004074(temp_v0);
+        D_800D2FB0 = 0;
+    }
 }
 
 s32 func_1509D08C() {

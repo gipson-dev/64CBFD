@@ -42,6 +42,8 @@ s32 func_150B5088() {
     return 0;
 }
 
-s32 func_150B538C() {
-    return 0;
+void func_150B538C(u8 *arg0, u8 arg1, u8 arg2) {
+    if (arg2 == 5) {
+        func_150B5060(arg0);
+    }
 }

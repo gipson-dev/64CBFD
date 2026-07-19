@@ -30,6 +30,11 @@ s32 func_151C61A0() {
     return 0;
 }
 
-s32 func_151C6290() {
-    return 0;
+s32 func_151C6290(u8 *arg0, u8 arg1, u8 arg2) {
+    u8 temp_v0 = *(arg0 + 4);
+
+    if ((temp_v0 == 0x5A) || (temp_v0 == 0x74) || (temp_v0 == 0x7A)) {
+        return 0;
+    }
+    return 1;
 }

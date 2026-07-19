@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern u8 *D_8008FDD4;
+extern s8 D_8008FD90;
 extern u8 *D_800872A0;
 
 /* Non-matching placeholders for the text-only asm slice asm/B3020.s. */
@@ -82,8 +84,12 @@ void func_15087FC4(s32 arg0, s32 arg1) {
     }
 }
 
-s32 func_15087FEC() {
-    return 0;
+void func_15087FEC(s32 arg0, s32 arg1) {
+    u8 *temp_v0 = D_800872A0;
+
+    if (temp_v0 != 0) {
+        *(f32 *) (arg0 * 0x84 + (s32) temp_v0 + 4) = arg1 * 0.00390625f;
+    }
 }
 
 s32 func_1508802C() {
@@ -107,12 +113,15 @@ s32 func_15088270() {
 }
 
 s32 func_150882B0(s32 arg0) {
+    s32 idx = arg0;
     u8 *temp_v1 = D_800872A0;
+    u8 *ptr;
 
     if (temp_v1 == 0) {
         return 0;
     }
-    return *(s8 *) (arg0 * 0x84 + (s32) temp_v1 + 0x27);
+    ptr = (u8 *) (idx * 0x84 + (s32) temp_v1);
+    return *(s8 *) (ptr + 0x27);
 }
 
 s32 func_150882E4() {
@@ -200,12 +209,17 @@ s32 func_1508A6FC() {
     return 0;
 }
 
-s32 func_1508B194() {
+s32 func_1508B194(s32 arg0) {
+    if (arg0 < D_8008FD90) {
+        return *(s16 *) (D_8008FDD4 + arg0 * 12 + 0x70);
+    }
     return 0;
 }
 
-s32 func_1508B1D4() {
-    return 0;
+void func_1508B1D4(s32 arg0) {
+    if (arg0 < D_8008FD90) {
+        *(u16 *) (D_8008FDD4 + arg0 * 12 + 0x70) = 0;
+    }
 }
 
 s32 func_1508B20C() {

@@ -1,4 +1,6 @@
 #include <ultra64.h>
+void func_151CF898(u8 *, f32, f32);
+extern u8 D_800CC2D0[];
 
 /* Non-matching placeholders for the text-only asm slice asm/FC5F0.s. */
 
@@ -10,8 +12,8 @@ s32 func_150CF484() {
     return 0;
 }
 
-s32 func_150CF530() {
-    return 0;
+void func_150CF530(s32 arg0) {
+    func_151CF898(D_800CC2D0, *(f32 *) (D_800CC2D0 + 0x18) + 300.0f, -10000.0f);
 }
 
 s32 func_150CF578() {

@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern s32 D_800D9A20[];
 
 /* Non-matching placeholders for the text-only asm slice asm/113D60.s. */
 
@@ -14,8 +15,8 @@ s32 func_150E6E34() {
     return 0;
 }
 
-s32 func_150E6ED8() {
-    return 0;
+void func_150E6ED8(u8 *arg0) {
+    func_1514470C(D_800D9A20[func_150ADA20() & 1], arg0);
 }
 
 s32 func_150E6F18() {

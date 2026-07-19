@@ -82,8 +82,18 @@ s32 func_1514B364() {
     return 0;
 }
 
-s32 func_1514B844() {
-    return 0;
+s32 func_1514B844(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
+    s32 temp_v1 = *(s16 *) (arg0 + 0x1C);
+
+    if (temp_v1 < 0x10) {
+        s32 shifted = temp_v1 << 4;
+
+        if (shifted < *(temp_v0 + 0x1B)) {
+            *(temp_v0 + 0x1B) = shifted;
+        }
+    }
+    return 1;
 }
 
 s32 func_1514B87C(f32 *arg0) {
@@ -148,8 +158,13 @@ s32 func_1514C288(s32 arg0) {
     return 1;
 }
 
-s32 func_1514C2B8() {
-    return 0;
+s32 func_1514C2B8(u8 *arg0) {
+    *(arg0 + 0x72) = 0;
+    *(arg0 + 0x71) = 0x24;
+    *(s16 *) (arg0 + 0x1C) = *(s16 *) (arg0 + 0x164);
+    *(u32 *) (arg0 + 0x58) |= 0x8000000;
+    *(f32 *) (arg0 + 0x154) = *(f32 *) (arg0 + 0x160);
+    return 1;
 }
 
 s32 func_1514C2F0() {

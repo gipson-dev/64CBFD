@@ -43,8 +43,8 @@ s32 func_15195DD4() {
     return 0;
 }
 
-s32 func_15195FB0() {
-    return 0;
+void func_15195FB0(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
+    func_15195DD4(*(s32 *) (arg0 + 0x1C), arg1, arg2, arg3, arg4, arg5, arg6);
 }
 
 s32 func_15195FF0() {
@@ -147,8 +147,16 @@ s32 func_15198C90() {
     return 0;
 }
 
-s32 func_15198D40() {
-    return 0;
+void func_15198D40(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
+
+    if (*(s8 *) (arg0 + 0x2C) != 0) {
+        u16 value = *(u16 *) (temp_v0 + 0x66);
+
+        if (value != 0) {
+            func_100111C8(value);
+        }
+    }
 }
 
 void func_15198D7C(s32 arg0) {
@@ -295,8 +303,17 @@ s32 func_1519C56C() {
     return 0;
 }
 
-s32 func_1519C910() {
-    return 0;
+s32 func_1519C910(u8 *arg0, s32 arg1) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
+    u8 *temp_v1 = *(u8 **) temp_v0;
+
+    arg1 = *(u16 *) (temp_v1 + 0x84);
+    if (*(u32 *) (temp_v0 + 0x158) != arg1) {
+        if (*(u32 *) (temp_v0 + 0x15C) != arg1) {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 s32 func_1519C948(s32 arg0) {

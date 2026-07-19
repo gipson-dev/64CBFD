@@ -130,8 +130,8 @@ s32 func_15114D24() {
     return 0;
 }
 
-s32 func_15114F04() {
-    return 0;
+void func_15114F04(s32 arg0, s32 arg1, s32 arg2) {
+    func_1001001C(func_15114CC4, arg0, 0, arg1, arg2);
 }
 
 s32 func_15114F44() {

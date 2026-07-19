@@ -6,9 +6,10 @@ extern s32 D_800E0920;
 s32 func_1514933C();
 
 void func_1519CF70(u8 arg0) {
-    u8 value = arg0;
+    u8 value[1];
 
-    func_15147D64(&value, 6);
+    value[0] = arg0;
+    func_15147D64(value, 6);
 }
 
 void func_1519CFA0(u8 *arg0) {
@@ -70,8 +71,10 @@ s32 func_1519E570() {
     return 0;
 }
 
-s32 func_1519E61C() {
-    return 0;
+void func_1519E61C(u8 *arg0, s32 arg1, u8 arg2) {
+    if ((arg2 == 0) || (arg2 == 9)) {
+        func_1516972C(arg0);
+    }
 }
 
 void func_1519E65C(u8 arg0) {

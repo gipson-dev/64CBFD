@@ -18,8 +18,15 @@ s32 func_1519F1C8() {
     return 0;
 }
 
-s32 func_1519F3B8() {
-    return 0;
+void func_1519F3B8(u8 *arg0) {
+    u8 *temp_v1;
+    s32 r = func_1519F1C8(arg0, 6);
+
+    temp_v1 = arg0 + 0x58;
+    *(s32 *) temp_v1 = r;
+    *(s32 *) (temp_v1 + 4) = 0;
+    *(s32 *) (temp_v1 + 8) = func_1519F1C8(arg0, 7);
+    *(s32 *) (temp_v1 + 0xC) = 0;
 }
 
 s32 func_1519F400() {

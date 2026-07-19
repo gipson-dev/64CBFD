@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 *D_800DBEF4;
 
 /* Non-matching placeholders for the text-only asm slice asm/117490.s. */
 
@@ -33,8 +34,12 @@ void func_150EA8E0(s32 arg0) {
     func_150E5AE0();
 }
 
-s32 func_150EA904() {
-    return 0;
+void func_150EA904(u8 arg0, s32 arg1) {
+    u8 *temp_v0 = D_800DBEF4 + arg1 * 0xA0;
+
+    if (*(temp_v0 + 0x72) == 0xE0) {
+        *(temp_v0 + 0x73) |= 3;
+    }
 }
 
 s32 func_150EA944() {

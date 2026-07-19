@@ -177,8 +177,19 @@ s32 func_15118F24() {
     return 0;
 }
 
-s32 func_151193AC() {
-    return 0;
+void func_151193AC(u8 *arg0, u8 *arg1) {
+    if (*(s32 *) arg1 == 1) {
+        if (*(arg1 + 0x65) == 0) {
+            u8 temp_v0 = *(arg0 + 0x73);
+
+            if (!(temp_v0 & 3)) {
+                if (!(temp_v0 & 4)) {
+                    *(arg0 + 0x73) = temp_v0 & 0xFFFC;
+                    *(arg0 + 0x73) |= 2;
+                }
+            }
+        }
+    }
 }
 
 s32 func_151193F4() {
@@ -209,8 +220,11 @@ s32 func_1511A494() {
     return 0;
 }
 
-s32 func_1511A6FC() {
-    return 0;
+void func_1511A6FC(u8 *arg0) {
+    if (*(s32 *) (arg0 + 0x3C) != 0) {
+        func_15116110(arg0);
+    }
+    func_1511A494(arg0, arg0 + 0x80, arg0 + 0x84);
 }
 
 s32 func_1511A738() {

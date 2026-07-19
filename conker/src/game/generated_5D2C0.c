@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 *D_800C3EE0;
 
 /* Non-matching placeholders for the text-only asm slice asm/5D2C0.s. */
 

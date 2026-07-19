@@ -52,8 +52,8 @@ f32 func_15106558(f32 arg0) {
     return -3.0f * temp * temp;
 }
 
-s32 func_15106584() {
-    return 0;
+f32 func_15106584(f32 arg0) {
+    return 9.0f * arg0 * arg0 - 12.0f * arg0 + 3.0f;
 }
 
 f32 func_151065BC(f32 arg0) {
@@ -169,10 +169,10 @@ s32 func_15107E48() {
     return 0;
 }
 
-s32 func_15107F54() {
-    return 0;
+void func_15107F54(u8 *arg0, u8 arg1, u8 *arg2, u8 *arg3) {
+    func_15143134(arg2, arg3, *(u32 *) (arg0 + 0x1D4) + (arg1 << 6));
 }
 
-s32 func_15107F98() {
-    return 0;
+void func_15107F98(u8 *arg0, s32 arg1, u8 arg2) {
+    func_15169850(arg1, arg2, *(u8 **) (arg0 + 0x60), *(u8 **) (arg0 + 0x60) + 4, arg0);
 }

@@ -84,12 +84,14 @@ void func_1516F91C(u8 *arg0, u32 arg1) {
     *(arg0 + 0x29) = val >> 8;
 }
 
-s32 func_1516F94C() {
-    return 0;
+void func_1516F94C(u8 *arg0, u32 arg1) {
+    func_1516F8EC(arg0, arg1);
+    func_1516F91C(arg0, arg1);
 }
 
-s32 func_1516F984() {
-    return 0;
+void func_1516F984(u8 *arg0, u32 arg1) {
+    func_1516F94C(arg0, arg1);
+    *(s16 *) (arg0 + 0x18) = (s32) (*(s16 *) (arg0 + 0x18) * arg1) >> 8;
 }
 
 s32 func_1516F9C4() {

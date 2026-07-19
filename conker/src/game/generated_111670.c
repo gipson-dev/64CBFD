@@ -10,8 +10,9 @@ s32 func_150E42F8() {
     return 0;
 }
 
-s32 func_150E4514() {
-    return 0;
+void func_150E4514(s32 arg0) {
+    func_150E41C0();
+    func_150E42F8(arg0 / 0x1E);
 }
 
 s32 func_150E4550() {

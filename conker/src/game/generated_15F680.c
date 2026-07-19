@@ -1,4 +1,7 @@
 #include <ultra64.h>
+void func_15169260(s32, s32, s32, u8);
+extern u8 D_800A3860[];
+typedef struct { s32 a, b; } TwoWord15F680;
 
 /* Non-matching placeholders for the text-only asm slice asm/15F680.s. */
 
@@ -39,8 +42,8 @@ s32 func_1513264C() {
     return 0;
 }
 
-s32 func_15132A4C() {
-    return 0;
+void func_15132A4C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5) {
+    func_1513264C(arg0, arg1, arg2, 0, arg3, arg4, arg5);
 }
 
 s32 func_15132A88() {
@@ -87,8 +90,15 @@ s32 func_151339D4() {
     return 0;
 }
 
-s32 func_15133A50() {
-    return 0;
+s32 func_15133A50(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4) {
+    *(f32 *) (arg0 + 0x44) = 0.0f;
+    *(f32 *) (arg0 + 0x48) = 0.0f;
+    *(f32 *) (arg0 + 0x3C) = *(f32 *) (arg0 + 0x10) + arg4;
+    *(f32 *) (arg0 + 0x4C) = 0.0f;
+    *(f32 *) (arg0 + 0x50) = 0.0f;
+    *(f32 *) (arg0 + 0x54) = 0.0f;
+    *(f32 *) (arg0 + 0x58) = 0.0f;
+    return 1;
 }
 
 s32 func_15133A94() {
@@ -111,8 +121,12 @@ s32 func_15133DE8() {
     return 0;
 }
 
-s32 func_15133E3C() {
-    return 0;
+void func_15133E3C(s32 arg0, u8 arg1) {
+    s32 tmp[2];
+
+    tmp[0] = *(s32 *) D_800A3860;
+    tmp[1] = *(s32 *) (D_800A3860 + 4);
+    func_15169260(tmp, 2, arg0, arg1);
 }
 
 s32 func_15133E84(s32 arg0, u8 *arg1, s32 arg2) {

@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 D_800CC406[];
 
 /* Non-matching placeholders for the text-only asm slice asm/58F80.s. */
 
@@ -22,8 +23,13 @@ s32 func_1502C380() {
     return 0;
 }
 
-s32 func_1502C3BC() {
-    return 0;
+s32 func_1502C3BC(s32 arg0) {
+    s32 temp_v1 = *(D_800CC406 + arg0 * 0x32C);
+
+    if (temp_v1 >= 0x46) {
+        temp_v1 = 0xB;
+    }
+    return temp_v1;
 }
 
 s32 func_1502C408() {
@@ -85,8 +91,12 @@ s32 func_1502E4C4() {
 void func_1502E9FC(s32 arg0, s32 arg1) {
 }
 
-s32 func_1502EA0C() {
-    return 0;
+void func_1502EA0C(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
+    arg0[0xA4] = 4;
+    arg0[0xA5] = 0;
+    arg0[0xA6] = arg5;
+    arg0[0xA7] = 0xFF;
+    *(u32 *) (arg0 + 0xA0) = (arg4 << 24) | (arg1 << 16) | (arg2 << 8) | arg3;
 }
 
 void func_1502EA50(u8 *arg0) {

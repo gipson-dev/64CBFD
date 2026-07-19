@@ -50,8 +50,8 @@ s32 func_1509F660() {
     return 0;
 }
 
-s32 func_1509F6B0() {
-    return 0;
+void func_1509F6B0(s32 arg0, u16 arg1, s16 arg2, u8 arg3) {
+    func_10010F30(arg0, arg1, arg3, arg2, 0);
 }
 
 s32 func_1509F6E8() {
@@ -66,6 +66,7 @@ s32 func_1509F800(s32 arg0, s32 arg1, s32 arg2) {
     return 0;
 }
 
-s32 func_1509F818() {
+s32 func_1509F818(u8 arg0, u8 arg1, u8 arg2) {
+    func_150AD770();
     return 0;
 }

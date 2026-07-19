@@ -44,8 +44,17 @@ s32 func_15158AD0(s32 arg0) {
     func_15169824(arg0);
 }
 
-s32 func_15158AFC() {
-    return 0;
+s32 func_15158AFC(u8 *arg0) {
+    s32 temp_v0 = *(s16 *) (arg0 + 0x14);
+
+    if (temp_v0 < *(s16 *) (arg0 + 0xF8)) {
+        s32 temp_v1 = *(u32 *) (arg0 + 0xFC) * temp_v0;
+
+        if (temp_v1 < *(arg0 + 0x3B)) {
+            *(arg0 + 0x3B) = temp_v1;
+        }
+    }
+    return 1;
 }
 
 s32 func_15158B3C() {

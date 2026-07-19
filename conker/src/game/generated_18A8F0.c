@@ -1,10 +1,14 @@
 #include <ultra64.h>
+extern void (*D_8008B090[])();
 extern u8 *D_800DCD78;
 
 /* Non-matching placeholders for the text-only asm slice asm/18A8F0.s. */
 
-s32 func_1515D440() {
-    return 0;
+u8 *func_1515D440(void) {
+    u8 *temp_v0 = (u8 *) allocate_memory(0x10, 1, 2, 0);
+
+    bzero(temp_v0, 0x10);
+    return temp_v0;
 }
 
 s32 func_1515D480() {
@@ -78,8 +82,13 @@ s32 func_1515EF74() {
     return 0;
 }
 
-s32 func_1515F008() {
-    return 0;
+f32 func_1515F008(u8 *arg0, s32 arg1) {
+    s32 temp_v0;
+    u8 *temp_v1 = arg0 + arg1 * 2;
+
+    temp_v0 = *(s16 *) temp_v1;
+    temp_v0 = *(u16 *) (temp_v1 + 0x20) | (temp_v0 << 16);
+    return temp_v0 * 1.52587890625e-05f;
 }
 
 s32 func_1515F040() {
@@ -94,8 +103,17 @@ s32 func_1515F10C() {
     return 0;
 }
 
-s32 func_1515F170() {
-    return 0;
+void func_1515F170(s32 arg0, u8 arg1) {
+    u8 *ptr = D_800DCD78;
+
+    if (ptr != 0) {
+        do {
+            if (arg0 == *(ptr + 0xB)) {
+                *(ptr + 9) = arg1;
+            }
+            ptr = *(u8 **) ptr;
+        } while (ptr != 0);
+    }
 }
 
 s32 func_1515F1B0() {

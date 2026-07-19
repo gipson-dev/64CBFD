@@ -72,6 +72,16 @@ s32 func_151897A4() {
     return 0;
 }
 
-s32 func_151898C0() {
-    return 0;
+void func_151898C0(s32 arg0, s32 arg1) {
+    u8 *ptr = D_800DF7C8;
+
+    if (ptr != 0) {
+        do {
+            if (arg0 == *(s32 *) (ptr + 0x10)) {
+                *(s32 *) (ptr + 0x14) = arg1;
+                return;
+            }
+            ptr = *(u8 **) (ptr + 0xC);
+        } while (ptr != 0);
+    }
 }

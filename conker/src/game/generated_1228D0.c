@@ -2,14 +2,20 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1228D0.s. */
 
+s32 func_150F55C8();
+
 s32 func_15179008();
 
 s32 func_150F5420() {
     return 0;
 }
 
-s32 func_150F5590() {
-    return 0;
+void func_150F5590(u8 *arg0) {
+    s32 val = 0x1000 - (*(s16 *) (arg0 + 0x24) << 2);
+
+    *(s16 *) (arg0 + 0x38) = val;
+    *(s16 *) (arg0 + 0x3A) = *(s16 *) (arg0 + 0x38);
+    func_150F55C8(arg0);
 }
 
 s32 func_150F55C8() {

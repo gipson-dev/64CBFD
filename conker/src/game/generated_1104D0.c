@@ -18,7 +18,13 @@ s32 func_150E3340() {
     return 0;
 }
 
-s32 func_150E33CC() {
+s32 func_150E33CC(s32 arg0, s32 arg1, s32 *arg2, s32 arg3) {
+    s32 temp_v0 = *arg2;
+
+    if (temp_v0 == 0) {
+        return 1;
+    }
+    func_1000E7A0(2, temp_v0);
     return 0;
 }
 

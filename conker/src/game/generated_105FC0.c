@@ -74,8 +74,17 @@ s32 func_150DA50C() {
     return 0;
 }
 
-s32 func_150DA5EC() {
-    return 0;
+void func_150DA5EC(u8 *arg0, f32 arg1) {
+    struct {
+        u8 *target;
+        u8 code;
+        f32 value;
+    } rec;
+
+    rec.target = arg0;
+    rec.code = *(arg0 + 0x3B);
+    rec.value = arg1;
+    func_15147D64(&rec, 0x44);
 }
 
 s32 func_150DA628(u8 *arg0, s32 arg1) {

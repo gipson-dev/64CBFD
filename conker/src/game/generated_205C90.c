@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 D_800E0A00;
 
 /* Non-matching placeholders for the text-only asm slice asm/205C90.s. */
 
@@ -48,6 +49,7 @@ void func_151D8DB4(s32 arg0, u8 arg1) {
     func_15169260((s32) D_800AB300, 1, arg0, arg1);
 }
 
-s32 func_151D8DE8() {
-    return 0;
+void func_151D8DE8(void) {
+    D_800E0A00 = 1;
+    func_151D8DB4(0, 0x58);
 }

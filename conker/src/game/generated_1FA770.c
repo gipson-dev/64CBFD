@@ -1,4 +1,5 @@
 #include <ultra64.h>
+typedef struct { s32 a, b, c; } ThreeWord1FA770;
 
 /* Non-matching placeholders for the text-only asm slice asm/1FA770.s. */
 
@@ -95,8 +96,15 @@ s32 func_151CEAAC() {
     return 0;
 }
 
-s32 func_151CEC10() {
-    return 0;
+s32 func_151CEC10(f32 *arg0, u8 *arg1, u8 *arg2) {
+    if (arg2 != 0) {
+        *(ThreeWord1FA770 *) arg0 = *(ThreeWord1FA770 *) (arg2 + 0x40);
+    } else {
+        arg0[0] = *(f32 *) (arg1 + 0x14);
+        arg0[1] = *(f32 *) (arg1 + 0x18);
+        arg0[2] = *(f32 *) (arg1 + 0x1C);
+    }
+    return 1;
 }
 
 s32 func_151CEC54() {

@@ -12,8 +12,17 @@ s32 func_150EEE00() {
     return 0;
 }
 
-s32 func_150EEF40() {
-    return 0;
+void func_150EEF40(u8 *arg0, u8 arg1) {
+    struct {
+        u8 *target;
+        u8 code;
+        u8 value;
+    } rec;
+
+    rec.target = arg0;
+    rec.code = *(arg0 + 0x3B);
+    rec.value = arg1;
+    func_151403A8(&rec, 0x43);
 }
 
 s32 func_150EEF80() {

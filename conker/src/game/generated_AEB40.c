@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 D_800CC2D0[];
 
 /* Non-matching placeholders for the text-only asm slice asm/AEB40.s. */
 
@@ -82,8 +83,13 @@ s32 func_15083FB0() {
     return 0;
 }
 
-s32 func_15084000() {
-    return 0;
+s32 func_15084000(void) {
+    s32 temp_v0 = func_1505EEF4();
+
+    if (temp_v0 != 0) {
+        return (temp_v0 - (s32) D_800CC2D0) / 0x32C;
+    }
+    return -1;
 }
 
 s32 func_15084044() {

@@ -2,8 +2,11 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/AC030.s. */
 
-s32 func_1507EB80() {
-    return 0;
+void func_1507EB80(u8 *arg0, s32 *arg1, u8 arg2) {
+    if (*arg1 + 1 < 0x28) {
+        arg0[*arg1] = arg2;
+        *arg1 = *arg1 + 1;
+    }
 }
 
 s32 func_1507EBB8() {
@@ -69,15 +72,14 @@ s32 func_1507FEA0() {
 
 void func_1507FF94(u8 *arg0) {
     struct {
-        u8 *ptr;
-        u8 value;
-    } temp;
-    void *record = &temp;
+        u8 *target;
+        u8 code;
+    } rec;
 
-    temp.ptr = arg0;
-    temp.value = arg0[0x3B];
-    func_15191B8C(record, 0xD);
-    func_151494E0(record, 0xD);
+    rec.target = arg0;
+    rec.code = *(arg0 + 0x3B);
+    func_15191B8C(&rec, 0xD);
+    func_151494E0(&rec, 0xD);
 }
 
 s32 func_1507FFD8() {

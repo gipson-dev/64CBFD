@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 D_800C3FFA;
 
 /* Non-matching placeholders for the text-only asm slice asm/64120.s. */
 
@@ -68,8 +69,13 @@ s32 func_1503A678() {
     return 0;
 }
 
-s32 func_1503A7F0() {
-    return 0;
+void func_1503A7F0(void) {
+    s32 saved = D_800C3FFA;
+
+    D_800C3FFA = 0;
+    func_15036F34();
+    D_800C3FFA = saved;
+    func_1503A678();
 }
 
 s32 func_1503A830() {

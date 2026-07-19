@@ -1,4 +1,5 @@
 #include <ultra64.h>
+void func_151CF898(s32, f32, f32);
 
 /* Non-matching placeholders for the text-only asm slice asm/DC6B0.s. */
 
@@ -9,8 +10,10 @@ s32 func_150AF200() {
     return 0;
 }
 
-s32 func_150AF2E0() {
-    return 0;
+void func_150AF2E0(s32 arg0, u8 *arg1) {
+    s32 temp_v0 = *(s16 *) (arg1 + 2);
+
+    func_151CF898(arg0, (f32) (*(s16 *) (arg1 + 8) + temp_v0), (f32) temp_v0);
 }
 
 s32 func_150AF328() {

@@ -1,5 +1,5 @@
 #include <ultra64.h>
-void func_151B47D8(u8 *, u8 *, s32, u8);
+void func_151B47D8(u8 *, u8 *, s16, u8);
 
 /* Non-matching placeholders for the text-only asm slice asm/1DF510.s. */
 
@@ -63,7 +63,7 @@ s32 func_151B2F04() {
     return 0;
 }
 
-void func_151B2FA0(u8 *arg0, u16 arg1, u8 arg2) {
+void func_151B2FA0(u8 *arg0, s16 arg1, u8 arg2) {
     func_151B47D8(arg0, arg0 + 0x150, arg1, arg2);
 }
 

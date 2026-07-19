@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern s32 D_8002BE20;
+extern OSMesgQueue D_80042AA8;
 #include "controller.h"
 
 #ifdef __osSiCreateAccessQueue2
@@ -17,8 +19,13 @@ s32 __osSiCreateAccessQueue2() {
     return 0;
 }
 
-s32 __osSiGetAccess2() {
-    return 0;
+void __osSiGetAccess2(void) {
+    OSMesg mesg;
+
+    if (D_8002BE20 == 0) {
+        __osSiCreateAccessQueue();
+    }
+    osRecvMesg(&D_80042AA8, &mesg, 1);
 }
 
 s32 __osSiRelAccess2() {

@@ -1,10 +1,27 @@
 #include <ultra64.h>
+extern s8 D_8008FD90;
+extern s8 D_8008FD8C;
+extern s8 D_800E0BEB;
+extern s8 D_800E0C00[];
+extern u8 D_800BE616;
+extern u8 D_8008FE28;
+extern u8 D_800E0B98;
+extern u8 D_800E0B97;
+extern s32 D_800E0A90;
+extern u8 D_800E0B96;
+extern u8 D_8008FD74;
+extern s8 D_8008FE30;
+extern u8 D_8008FD80;
 extern u8 D_8008FD84;
 extern s32 D_800E0BA8[];
 extern s32 D_800E0BA0[];
 extern u8 D_80084060[];
 
 /* Non-matching placeholders for the text-only asm slice asm/20AE20.s. */
+
+s32 func_151E43DC();
+s32 func_151E530C();
+s32 func_151DE85C();
 
 extern s16 D_800E0B9A;
 extern u8 D_800E0B94;
@@ -40,12 +57,21 @@ s32 func_151DE6D4() {
     return 0;
 }
 
-s32 func_151DE7D4() {
-    return 0;
+void func_151DE7D4(void) {
+    D_800E0A90 = 0;
+    D_800E0B97 = 0;
+    D_800E0B98 = 0;
+    D_800E0A8C = 0;
+    D_8008FE28 = 2;
+    func_151DE85C();
 }
 
-s32 func_151DE81C() {
-    return 0;
+void func_151DE81C(void) {
+    D_8008FD74 = 4;
+    D_800E0B96 = 0;
+    if (D_8008FE30 == 0) {
+        func_1500764C();
+    }
 }
 
 s32 func_151DE85C() {
@@ -91,8 +117,11 @@ s32 func_151E1744() {
     return 0;
 }
 
-s32 func_151E2284() {
-    return 0;
+void func_151E2284(void) {
+    D_8008FD80 = 3;
+    func_151E530C();
+    func_151E43DC();
+    D_8008FD80 = 0;
 }
 
 s32 func_151E22BC() {
@@ -206,12 +235,30 @@ s32 func_151E565C() {
     return 0;
 }
 
-s32 func_151E5F64() {
-    return 0;
+s32 func_151E5F64(s32 arg0) {
+    s8 temp_v1;
+
+    if (D_800BE616 == 0) {
+        if (D_800E0B94 == 0) {
+            return arg0;
+        }
+    }
+    temp_v1 = D_800E0C00[arg0];
+    if (temp_v1 < 0) {
+        temp_v1 = 0;
+    }
+    return temp_v1;
 }
 
-s32 func_151E5FAC() {
-    return 0;
+s32 func_151E5FAC(void) {
+    if (D_800E0BEB != 0) {
+        s8 temp_v1 = D_8008FD8C;
+
+        if (temp_v1 < 5) {
+            return temp_v1;
+        }
+    }
+    return D_8008FD90;
 }
 
 s32 func_151E5FF4() {

@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern u8 D_800D98A4[];
+extern u8 D_800D9898[];
+extern s32 D_800BE9E4;
 
 /* Non-matching placeholders for the text-only asm slice asm/E4070.s. */
 
@@ -13,16 +16,31 @@ s32 func_150B6C90() {
     return 0;
 }
 
-s32 func_150B6D34() {
-    return 0;
+void func_150B6D34(void) {
+    u8 *ptr = D_800D9898;
+    u8 *end = D_800D98A4;
+    s32 val = 1;
+
+    do {
+        u8 *p = *(u8 **) (ptr + 0x14);
+
+        ptr += 4;
+        if (p != 0) {
+            *(s32 *) (p + 0x20) = val;
+        }
+    } while (ptr != end);
+    D_800D9890 = 3;
 }
 
 s32 func_150B6D78() {
     return 0;
 }
 
-s32 func_150B6DFC() {
-    return 0;
+void func_150B6DFC(u8 *arg0) {
+    *(s16 *) (arg0 + 0x34) = *(s16 *) (arg0 + 0x34) + D_800BE9E4 * 48;
+    if (*(s16 *) (arg0 + 0x34) >= 0x801) {
+        *(s16 *) (arg0 + 0x34) = -0xC00;
+    }
 }
 
 s32 func_150B6E3C() {

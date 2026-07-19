@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern void (*D_8008A390[])();
 
 /* Non-matching placeholders for the text-only asm slice asm/174BF0.s. */
 
@@ -47,8 +48,12 @@ s32 func_15147C4C() {
     return 0;
 }
 
-s32 func_15147D1C() {
-    return 0;
+void func_15147D1C(u8 *arg0, s32 arg1, u8 arg2) {
+    void (*temp_v0)() = D_8008A390[*(s32 *) (arg0 + 0x20)];
+
+    if (temp_v0 != 0) {
+        temp_v0();
+    }
 }
 
 void func_15147D64(s32 arg0, u8 arg1) {

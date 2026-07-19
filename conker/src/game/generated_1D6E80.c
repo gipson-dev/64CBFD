@@ -112,8 +112,8 @@ s32 func_151AABC4() {
 }
 
 s32 func_151AADBC(u8 *arg0) {
-    s32 temp_v1 = *(s16 *) (arg0 + 0x1C) << 4;
     u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
+    s32 temp_v1 = *(s16 *) (arg0 + 0x1C) << 4;
 
     if (temp_v1 >= 0x100) {
         temp_v1 = 0xFF;
@@ -132,7 +132,14 @@ s32 func_151AB090() {
     return 0;
 }
 
-s32 func_151AB180() {
+s32 func_151AB180(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0xB0);
+
+    *(s32 *) (temp_v0 + 0x70) = 0;
+    *(u32 *) (arg0 + 0xB0) = 0;
+    *(u32 *) (arg0 + 0x18) |= 2;
+    temp_v0 += 0x58;
+    func_1513F6C0(arg0, 0, 0);
     return 0;
 }
 
@@ -183,6 +190,13 @@ s32 func_151ABD54() {
     return 0;
 }
 
-s32 func_151ABE00() {
-    return 0;
+void func_151ABE00(u8 *arg0) {
+    struct {
+        u8 *target;
+        u8 code;
+    } rec;
+
+    rec.target = arg0;
+    rec.code = *(arg0 + 0x3B);
+    func_1516944C(0x20, &rec, 0xC);
 }

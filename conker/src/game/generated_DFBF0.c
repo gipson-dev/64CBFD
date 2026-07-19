@@ -19,8 +19,8 @@ s32 func_150B36AC() {
 }
 
 s32 func_150B378C(u8 *arg0) {
-    s32 temp_v1 = *(s16 *) (arg0 + 0x1C) << 4;
     u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
+    s32 temp_v1 = *(s16 *) (arg0 + 0x1C) << 4;
 
     if (temp_v1 >= 0x100) {
         temp_v1 = 0xFF;
