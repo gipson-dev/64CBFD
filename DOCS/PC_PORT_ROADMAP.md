@@ -9,9 +9,10 @@ pipeline. Nothing described below has been started unless a step is marked
 The phases are ordered by dependency, not by date. There are no target dates
 here on purpose - decomp projects like this progress in bursts tied to
 contributor time, not calendar time. For live decomp completion numbers, run
-`make -C conker progress` or see [PROJECT.md](PROJECT.md#current-progress).
-For what's actively being worked on right now, see
-[WORKING_NOTES.md](WORKING_NOTES.md).
+`make -C conker progress NON_MATCHING=1` or see
+[PROJECT.md](PROJECT.md#current-progress). Published milestones are in the
+[update log](UPDATE_LOG.md); temporary recovery details are in
+[working notes](WORKING_NOTES.md).
 
 ## Guiding decision: hand-port vs. static recompilation
 
@@ -44,7 +45,7 @@ This is the decompilation project as it exists today. It isn't blocking to
 every later phase cheaper and safer:
 
 - [ ] Continue matching `init`/`game`/`debugger` sections (`make -C conker progress`).
-- [ ] Finish mapping the ROM layout (see the layout notes in [PROJECT.md](PROJECT.md#rom-layout-notes)).
+- [ ] Finish mapping the ROM layout (see the layout notes in [PROJECT.md](PROJECT.md#rom-layout)).
 - [ ] Document the RSP microcode(s) in use (F3DEX-family display lists,
       `libultra`'s `gbi.h`/`gs2dex.h` already in `conker/include/2.0L/PR/`)
       well enough to know which graphics commands a renderer needs to support.

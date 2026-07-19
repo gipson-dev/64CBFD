@@ -42,24 +42,20 @@ flag works with `make progress` (see below) for the same reason.
 
 ## Common contributor loop
 
-When working on a function, the usual rhythm is:
+Edit C under `conker/src/`, build the affected object or the complete code
+project, then verify it with the symbol-based matcher. The authoritative
+project-wide check is:
 
-1. Edit the C source in `conker/src/`.
-2. Build with `make --jobs`.
-3. Replace the section with `make replace`.
-4. Rebuild the full ROM with `make -C ..`.
-5. Compare mismatches with `tools/asm-differ`.
+```sh
+make match-progress NON_MATCHING=1
+```
 
-This loop is expected to produce mismatches until the edited function matches the original assembly exactly.
+Add `LIST=1` to list non-exact functions from the smallest real diff upward.
+The matcher compares linked functions with pristine retail bytes at their
+name-implied addresses, so it remains useful when an earlier whole-binary
+difference shifts later code.
 
-**Caution about asm-differ's whole-binary mode:** a pre-existing byte
-divergence early in the rebuilt `init` section means asm-differ's default
-whole-binary comparison can show garbled or empty diffs for `game`/`debugger`
-functions that are actually byte-perfect. Until that drift is root-caused,
-verify functions with `make match-progress NON_MATCHING=1` (add `LIST=1`
-for a per-function listing) - it compares the *linked ELF's* disassembly
-(keyed by function symbol, immune to the drift) against ground-truth bytes
-read from the pristine `conker.us.bin` at each function's VRAM-derived
-offset; see `tools/match_progress.py`. A list of compiler idioms that
-resolve most register-allocation mismatches is in
-[Working notes](WORKING_NOTES.md).
+The complete selection, reconstruction, compiler-pattern, and validation
+workflow lives in the
+[contributor and byte-matching guide](CONTRIBUTING.md). Keep this page focused
+on how the `conker/` sub-project fits into the full ROM build.

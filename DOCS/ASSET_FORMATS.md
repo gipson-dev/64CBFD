@@ -12,18 +12,30 @@ Findings are labelled by confidence:
   likely correct but not yet cross-checked against game code.
 - **Tentative** - a working hypothesis that still needs confirmation.
 
-Findings were derived from two independent extractions and cross-checked between
-them: the `debug` prototype under `debug_proto/assets/rzip/`, and the retail
-**US** ROM (`baserom.us.z64`, SHA-1 `4cbadd3c…`) read directly at the section
-offsets in `conker.us.yaml`. Both versions use identical formats; only the data
-differs. Offsets and section names below match `conker.us.yaml`.
+The primary reproducible source is the retail **US** ROM (`baserom.us.z64`,
+SHA-1 `4cbadd3c4e0729dec46af64ad018050eada4f47a`) read at the section offsets in
+`conker.us.yaml`. Earlier research also compared an extracted debug-prototype
+corpus under `debug_proto/assets/rzip/`; that corpus is not tracked in this
+checkout, so debug/retail equivalence is supporting evidence rather than a
+blanket guarantee for every payload. Version-specific differences should be
+recorded explicitly as they are found.
+
+Terminology used below:
+
+- **Section archive** - one top-level `assetsNN` ROM range described by the
+  master table at `0xAB1950`.
+- **Archive entry** - one file inside a section archive.
+- **Container** - a payload that begins with the reusable 8-byte-entry offset
+  table described in section 3.
+- **Leaf payload** - the final texture, audio stream, vertex array, string, or
+  structured record after all container and compression layers are removed.
 
 ## 1. The asset pipeline
 
 ```text
 ROM
- └─ rzip section (e.g. 0x1A37E0, or each assetsNN section)   ← outer compression
-     └─ archive: a run of independently compressed files
+ └─ section archive (e.g. 0x1A37E0, or each assetsNN section)
+     └─ offset table → independently stored or rzip-compressed files
          └─ file (.bin, already decompressed by splat)
              ├─ raw payload          (MP3, audio bank, image, table), OR
              └─ container            (offset table → nested rzip blocks)
@@ -31,8 +43,9 @@ ROM
                      └─ inner container (offset table → sub-resource arrays)
 ```
 
-Two independent things are called "compression" here, and both use the same
-**rzip** codec:
+The project's `rzip` segment type is an archive walker as well as a decompressor:
+the complete section is not necessarily one DEFLATE stream. Two independent
+layers can use the same **rzip** leaf codec:
 
 1. The ROM-level `rzip` segments, split by splat into individual files.
 2. One or more *inner* rzip layers inside the containers (sections 4/4a) - up to
@@ -43,7 +56,7 @@ Two independent things are called "compression" here, and both use the same
 
 Rare's format is a stripped-down gzip: the gzip header/trailer are removed and
 replaced with a 4-byte big-endian uncompressed length, followed by a raw
-DEFLATE (level 9) payload.
+DEFLATE payload.
 
 ```text
 +0x00  u32  uncompressed_size (big-endian)
@@ -59,28 +72,34 @@ out   = zlib.decompress(data[4:], -15)
 assert len(out) == usize
 ```
 
-This matches `tools/splat_ext/rzip.py` and round-trips cleanly on every block
-tested. See also `tools/rareunzip.py` / `tools/rarezip.py`.
+This matches `tools/splat_ext/rzip.py` and decodes cleanly on every block
+tested. Compression level is not stored in the DEFLATE stream as a reliable
+format field; byte-identical project recompression uses the bundled legacy
+`gzip -9` path in `tools/rarezip.py`. See also `tools/rareunzip.py`.
 
-### 2a. Compressed *code* loading (Tentative - not independently verified here)
+### 2a. Compressed game-code archive (Confirmed layout; runtime paging tentative)
 
-Distinct from the asset-container `rzip` usage above: per the project wiki's
-`Useful-Info` page (community find via Discord, `gamemasterplc`), compressed
-**code** is loaded on demand in 4096-byte decompressed chunks, triggered by
-deliberately abusing the CPU's bad-virtual-address exception handler (a
-TLB-miss-driven demand-paging trick, not the straightforward container
-walk `func_1502B9B4` does for assets in §3). Reported details:
+The game-code archive begins at ROM `0x42450`, where `conker.us.yaml` labels
+`game.us.rzip`. Its table layout is distinct from the asset-container table in
+section 3:
 
-- One chunk sample sits at ROM `0x42C50`.
-- The chunk table is at ROM `0x42454`, encrypted with XOR key `0x8039CCCA`,
-  and its offsets are relative to ROM base `0x42450`.
-- A chunk-length field also lives at `0x42450`.
+```text
++0x00  u32  archive/data length field
++0x04  u32[] XOR-encoded chunk offsets
+              decoded_offset = encoded_offset ^ 0x8039CCCA
+              offsets are relative to archive base 0x42450
+        u32   zero terminator
+```
 
-Not reproduced or cross-checked against this repo's own extraction yet
-(`0x42450` falls inside the `init`/boot range per `conker.us.yaml` - worth
-comparing against how `init`/`init_data` are actually split before trusting
-the exact offsets). Recorded here so it doesn't need rediscovering; treat as
-a lead, not a confirmed mechanism.
+`game.us.rzip.yaml` supplies the XOR key and
+`N64SegRzip.get_game_offsets()` in `tools/splat_ext/rzip.py` implements this
+table walk. The first compressed code payload begins at ROM `0x42C50`.
+
+The **runtime interpretation** remains tentative: project-wiki research reports
+that the game requests 4096-byte decompressed chunks through a TLB-miss or
+bad-virtual-address exception path, effectively demand-paging code. The archive
+and XOR table are locally reproducible; the precise exception-driven loading
+mechanism still needs a documented trace through the init/TLB routines.
 
 ## 3. The container / offset-table format (Confirmed)
 
@@ -91,21 +110,29 @@ This layout is the same one `N64SegRzip.get_files_from_offsets` in
 ```text
 Entry (8 bytes), repeated:
   +0x00  u32  data_offset   (offset from the start of the container/file)
-  +0x04  u8   flags
-         u24  length        (bytes of payload; combined field = compressed>>24 / &0x0FFFFFFF)
+  +0x04  u32  packed
+               bit 31      final-entry marker
+               bits 30-28  payload type (1 = rzip-compressed)
+               bits 27-0   payload length in bytes
 ```
 
-- `flags & 0x10` (i.e. the high halfword reads `0x1000`) marks the block as
-  **rzip-compressed**; otherwise it is stored raw.
+- `type = (packed >> 28) & 0x7`; type `1` is **rzip-compressed**, while type
+  `0` is stored raw. Existing tools expose the top byte as `flags`, where
+  `flags & 0x10` is the same type-1 test.
+- `length = packed & 0x0FFFFFFF`.
+- `is_final = (packed & 0x80000000) != 0`.
 - The **first word doubles as the table size**: `data_offset` of entry 0 equals
   the byte length of the whole table, so `entries = table_size / 8`.
 - Unused trailing slots point at end-of-file with `length = 0`.
-- The final slot carries flag `0x80` (`0x8000` in the halfword) as a terminator.
-- Every block is **padded to an 8-byte boundary**.
+- The final-entry bit can be attached to a real, non-empty payload. It is not
+  necessarily a separate zero-length terminator.
+- Payload starts are **8-byte aligned**. Alignment padding is outside the
+  declared payload length.
 
-This is confirmed by the decompiled game code in
-[`conker/src/game_57FA0.c`](../conker/src/game_57FA0.c) (`func_1502B9B4`), which
-walks the master asset offset table at `0xAB1950` and does:
+This is confirmed by `N64SegRzip.get_files_from_offsets`, direct inspection of
+the retail tables, and retained reconstruction notes for `func_1502B9B4` in
+[`conker/src/game_57FA0.c`](../conker/src/game_57FA0.c), which use the same
+28-bit length and three-bit type masks:
 
 ```c
 more = *entry & 0xFFFFFFF;                 // 28-bit length
@@ -113,10 +140,23 @@ if ((*entry & 0x70000000) == 0x10000000)   // type field, 0x1 => compressed
     func_10004514(...);                    // -> decompressor
 ```
 
-So the top byte is a 3-bit type/flag field (mask `0x70000000`), value `0x1` means
-the block is rzip-compressed, and the low 28 bits are the length. The same
-entry layout is reused for the master table, the per-section archives, and the
+The same entry layout is reused for the master table, per-section archives, and
 inner containers.
+
+### Master section table at `0xAB1950`
+
+The US master table is `0xF0` bytes long and contains 30 entries:
+
+- entries `0-28` map directly to `assets00-assets1C`;
+- entry `29` is the final `0x90`-byte block at ROM `0x03F8B770`;
+- every master entry is stored raw (`type = 0`);
+- the final-entry bit is set only on entry 29;
+- each entry's absolute ROM start is `0xAB1950 + data_offset`.
+
+The first entry therefore resolves to `assets00` at `0x00AB1A40`, and entry 28
+resolves to `assets1C` at `0x03F8AB18`. This table is the authoritative source
+for section boundaries; `conker.us.yaml` currently records the same ranges
+manually.
 
 Examples (retail US ROM): `assets06` file 0 uses a `0x140`-byte table (40 slots,
 13 live compressed blocks); `assets17` file 0 has its top-level flag set to `0x1`
@@ -218,8 +258,7 @@ assets06/NNNN.bin (raw file, top-level §3 table, ~40 slots)
  └─ entry 1 (rzip-compressed, per §2) - decompressing yields ANOTHER
     §3-format container, whose entries are the position/param/float
     records already described above, plus...
-     └─ the LAST entry (flags 0x80 - the §3 terminator bit doubles as
-        "final real entry" here, it is not always zero-length) -
+     └─ the LAST entry (`packed` bit 31 set - the §3 final-entry marker) -
         **the subtitle/dialogue text string itself**, plain ASCII,
         `0x0A` = line break within the subtitle, null-padded to the
         record's declared length.
@@ -289,10 +328,16 @@ A decoded record is a **plain vertex array**:
   color, or normal is stored inline (so those are supplied elsewhere - a separate
   block and the §5 textures).
 - The array is `V` vertices (`6·V` bytes) **zero-padded up to a 16-byte
-  boundary**. `V` is recoverable as `floor(payload/6)`.
+  boundary**. The padded payload length alone does **not** always identify `V`:
+  padding can be 6 bytes or more (for example, 14 vertices use 84 bytes but pad
+  to 96, and `floor(96/6)` would incorrectly report 16). Exact counts need the
+  referencing metadata or a validated per-record count; zero-valued trailing
+  vertices cannot safely be distinguished from padding by stripping zeros.
 
 This was checked against **all 69 records** in `assets13`: 69/69 decompress to a
-16-byte-aligned length with trailing zero padding, and `V` ranges 13–338.
+16-byte-aligned length with trailing zero padding. Earlier provisional counts
+using `floor(payload/6)` ranged 13-338, but records with six or more padding
+bytes need recounting once their metadata field is identified.
 Coordinates are small and **bilaterally symmetric** (e.g. `(-23, 28, 33)` paired
 with `(23, 28, 33)`), exactly as expected for a centered model.
 
@@ -306,7 +351,7 @@ Decode one record:
 
 ```python
 import struct
-V = len(rec) // 6                      # trailing bytes are zero pad to 16
+V = vertex_count_from_metadata         # do not infer this from padded size alone
 verts = [struct.unpack(">hhh", rec[i*6:i*6+6]) for i in range(V)]
 ```
 
@@ -328,80 +373,91 @@ distinct `10 00 00 00 …` header). Pinning down the topology source is best don
 from the model-drawing code in `conker/src` that consumes these vertex streams,
 not from the data alone - see §9.
 
-## 5. Textures / images (Strong for encoding, Tentative for dimensions)
+## 5. Textures / images (Partial; per-file formats not yet inventoried)
 
-**assets00–assets05** are **not** containers - they are uncompressed raster
-blocks. Sampled pixels are 16-bit **RGBA5551** values: e.g. `assets00/0005.bin`
-contains long runs of `0x4210` (R=G=B=8, A=0, a flat gray fill), exactly what a
-solid texture region looks like in RGBA16.
+The extracted numbered files in **assets00-assets05** are leaf payloads rather
+than nested §3 containers, and all currently extracted file sizes are even.
+That is consistent with 16-bit pixels or palette records, but it is not enough
+to classify every file as RGBA5551.
 
-- Encoding: **RGBA5551, 2 bytes/pixel, big-endian** (Strong).
-- File sizes seen: 12800 (= 80×80 @ 16bpp), 17600, 21120 bytes.
-- **Tentative:** dimensions are *not* stored in the file. 80×80 fits 12800
-  cleanly, but the non-square sizes mean width/height must come from elsewhere
-  (a header table or the referencing code). CI4/CI8 (palette-indexed) variants
-  for other sections have not been ruled out.
+Current US extraction inventory:
+
+| Section | Numbered files | Smallest | Largest |
+| --- | ---: | ---: | ---: |
+| assets00 | 56 | 2,560 | 28,160 |
+| assets01 | 183 | 120 | 50,840 |
+| assets02 | 145 | 32 | 901,040 |
+| assets03 | 77 | 184 | 4,792 |
+| assets04 | 59 | 872 | 225,664 |
+| assets05 | 39 | 376 | 48,040 |
+
+`assets00/0005.bin` contains long runs of big-endian `0x4210`, which decodes as
+an RGBA5551 gray value and is consistent with a flat raster region. Several
+common sizes also fit 16-bit images (`12,800 = 80 × 80 × 2`), so RGBA5551 is a
+**strong per-sample interpretation**, not yet a section-wide specification.
+
+Still needed:
+
+- locate width, height, format, and palette metadata in the referencing tables
+  or rendering code;
+- render every plausible RGBA16 file and reject obviously structured data;
+- test for CI4/CI8 plus palette pairs, intensity formats, masks, mip levels, and
+  atlases;
+- explain the very small records and the 901,040-byte `assets02` payload before
+  labeling the full `assets00-assets05` range as textures.
 
 ## 6. Audio (Confirmed / Strong)
 
-- **assets16 - streamed audio: MP3 (Confirmed).** Every file begins with an
-  MPEG audio frame sync (`0xFFF3…`). These are standard MPEG-1/2 Layer III
-  frames and play/convert with normal MP3 tooling. This is the game's large
-  speech/music streaming bank (~900 files in the debug proto; 453 in retail
-  US). Confirmed as specifically the **dialogue** bank by the "Uncensored"
+- **assets16 - streamed dialogue: MPEG-2 Layer III (Confirmed).** All 453
+  numbered retail-US files begin with frame header `0xFFF3`, whose version and
+  layer bits identify MPEG-2 Layer III. They play and convert with standard MP3
+  tooling. `ffprobe` reports the checked `0000.bin` sample as 22,050 Hz, mono,
+  24 kbps; a full corpus-level rate/channel inventory is still worth adding.
+  The debug prototype contains roughly 900 files. The retail bank is confirmed
+  as specifically **dialogue** by the "Uncensored"
   romhack (2026-07-14): it swaps exactly 23 of the 453 files wholesale, in
   place (indices 5, 19, 20, 27, 34, 35, 36, 47, 83, 119, 126, 143, 149, 150,
   175, 287, 289, 325, 341, 384, 387, 426, 439 - the censored voice lines),
   with the offset table untouched. The same hack's `assets06` changes (§4)
   identify the matching per-line metadata.
-- **assets17 - audio bank / sequenced audio (`"B1"`) (Confirmed header).** Files
-  start with the ASCII magic `"B1"` (`0x4231`). This is Rare's own bank format,
-  **not** a standard libultra `.m64`. The header (retail US, `assets17` file 0)
-  decodes as:
+- **assets17/0000 - libaudio-compatible instrument bank (`"B1"`) (Confirmed
+  root structures).** `0x4231` is `AL_BANK_VERSION`, defined in this repo's
+  `conker/include/2.0L/PR/libaudio.h`. The beginning of `0000.bin` is a standard
+  `ALBankFile` followed by an `ALBank`:
 
   ```text
-  +0x00  char[2]  magic     "B1"
-  +0x02  u16      version   0x0001
-  +0x04  u32      0x00000008   (fixed; entry stride / header size?)
-  +0x08  u16      count     0x00AA = 170   (entries in table 1)
-  +0x0A  u16      0
-  +0x0C  u32      0x00005622 = 22050        (sample rate, Hz)
-  +0x10  u32      0
-  +0x14  u32      0x000002BC = 700          (secondary count?)
-  +0x18  u32[170] table 1 - monotonically increasing entries, each
-                  (u24 offset, u8 type/flags), e.g. 0x006CB91F, 0x006D9F05…
-                  ends at 0x2C0
-  0x2C0  …        table 2 - further increasing entries (event / region data)
+  +0x00  s16  ALBankFile.revision       0x4231 = "B1"
+  +0x02  s16  ALBankFile.bankCount      1
+  +0x04  u32  ALBankFile.bankArray[0]   0x00000008
+  +0x08  s16  ALBank.instCount          0x00AA = 170
+  +0x0A  u8   ALBank.flags              0
+  +0x0B  u8   ALBank.pad                0
+  +0x0C  s32  ALBank.sampleRate         22050
+  +0x10  u32  ALBank.percussion         0
+  +0x14  u32  ALBank.instArray[0]       0x000002BC
   ```
 
-  The `22050` sample rate and the sorted `(offset, type)` table identify this as
-  a **sample/instrument bank** whose entries point into the large sample data in
-  the rest of the `assets17` section (~22 MB, ROM `0x29AE9E8`–`0x3F82170`). The
-  per-sample codec and the table-2 event encoding still need the audio-driver
-  code to decode fully.
-- **`0x4231` ("B1") is `AL_BANK_VERSION`** per the real `libaudio.h` constant
-  name (community find, 2026-07-15 via the project wiki's `Useful-Info` page,
-  sourced from a Discord chat with `gamemasterplc` - not independently
-  re-derived here, but consistent with and naming the header already decoded
-  above). The wiki also notes `0x4231` is referenced from a function at
-  `func_80012934` in an older (pre-address-remap) build of this project - not
-  yet re-located under this repo's current `0x1500xxxx`/`0x1600xxxx`
-  addressing, but worth grepping for if the audio-driver code is tackled.
-- **`assets17`'s numbered sub-files have distinct formats, only two decoded so
-  far (Tentative, wiki-sourced, not independently verified against this
-  ROM):**
-  - **`0002` (~21 MB): the raw sample/instrument bank** referenced by table 1
-    above. Extractable today with third-party tools: N64 Midi Tool → DLS →
+  The game calls `func_10012934(ALBankFile *, u8 *table, s32)` to validate the
+  `B1` revision and relocate its banks. That function is explicitly marked as
+  a non-vanilla `alBnkfNew`: the root structures are standard libaudio, while
+  later instrument/sample pointer packing includes game-specific behavior.
+  `0002.bin` is the associated ~21 MB sample data. The individual sample codec
+  and the meaning of the custom encoded instrument pointers remain open.
+- **`assets17` contains several distinct sub-file formats; two are structurally
+  identified in the current retail extraction:**
+  - **`0002` (~21 MB): the raw sample/instrument bank** referenced by pointers
+    reached from the `B1` instrument bank. Extractable today with
+    third-party tools: N64 Midi Tool → DLS →
     Vienna/SynthFont → SF2, if anyone wants to actually listen to the game's
     instrument samples rather than just parse the container format.
   - **`0003` (~2.8 MB): a second, differently-tagged bank - magic `"S1"`
     (`0x5331`), i.e. `AL_SEQBANK_VERSION`, not `AL_BANK_VERSION`.** Header:
-    `u16 count` (149 in the sample seen) followed by `count` `(u32 offset,
-    u32 length)` pairs, then the 149 payloads themselves (likely
-    `ALSeqFile`-formatted MIDI-like sequence data, matching the "149 music
-    files" description). This is a **separate container format** from the B1
-    bank documented above - don't assume `assets17`'s sub-files share one
-    schema.
+    `ALSeqFile.revision = 0x5331`, `ALSeqFile.seqCount = 149`, followed by 149
+    `(u32 offset, s32 length)` `ALSeqData` records and their payloads. The root
+    container therefore matches the libaudio `ALSeqFile` definition exactly;
+    the individual sequence command encoding is still tentative. This is a
+    separate container from the B1 bank documented above - do not assume
+    `assets17`'s sub-files share one schema.
     **Independent confirmation (2026-07-15):** a community USF rip
     (`rom backup/Conker's Bad Fur Day sound files/`, `NUS-NFUE-USA.usflib` +
     173 `.miniusf` pointer files, `usfby=Josh W. / hcs`, `artist=Robin
@@ -471,19 +527,24 @@ solid texture region looks like in RGBA16.
 
 ## 8. Section summary
 
-| Section       | Kind (yaml note)        | Format (this doc)                                       |
-| ------------- | ----------------------- | ------------------------------------------------------- |
-| assets00–05   | —                       | Uncompressed RGBA5551 raster (§5)                       |
-| assets06      | —                       | Container → nested rzip → object/script bundle (§3, §4) |
-| assets08      | —                       | Chapter / menu metadata table (§4)                      |
-| assets13      | —                       | 3D model geometry: `s16` XYZ vertex arrays (§4a)        |
-| assets16      | "MP3s"                  | MPEG Layer III audio frames (§6)                        |
-| assets17      | "m64? files"            | `"B1"` audio bank (§6)                                  |
-| assets1A      | "the `<LANGUAGE>` …"    | 8-byte record table (§7)                                |
-| assets1C      | "text, credits etc"     | Float layout table + string files (§7)                  |
-
-Sections not listed have not been classified in detail yet; most non-audio
-`assetsNN` files follow either the container (§3) or raw-raster (§5) pattern.
+| Section | Current classification | Confidence |
+| --- | --- | --- |
+| assets00-05 | Image/texture candidates plus small or oversized records; RGBA5551 confirmed only for samples (§5) | Partial |
+| assets06 | Container → nested rzip → entity/script/dialogue bundle (§3, §4) | Strong |
+| assets07 | Tiny 0x50-byte section | Unknown |
+| assets08 | Chapter / menu metadata (§4) | Strong |
+| assets09-11 | Not classified | Unknown |
+| assets12 | Repeating four-byte records; possible geometry companion | Tentative |
+| assets13 | Animated `s16` XYZ position arrays; topology stored elsewhere (§4a) | Confirmed payload, count metadata open |
+| assets14-15 | Not classified; likely related resource tables | Unknown |
+| assets16 | 453 MPEG-2 Layer III dialogue streams (§6) | Confirmed |
+| assets17 | Mixed audio package: `B1` instrument bank, sample data, `S1` sequence bank, and support tables (§6) | Root structures confirmed |
+| assets18 | Contains another compressed payload | Tentative |
+| assets19 | Not classified | Unknown |
+| assets1A | Fixed eight-byte records, language-related per YAML note (§7) | Tentative |
+| assets1B | Not classified | Unknown |
+| assets1C | Float layout table plus credit/text files (§7) | Tentative |
+| post-assets block | Final 0x90-byte master-table entry at `0x03F8B770` | Unknown |
 
 ## 9. Open questions / next steps
 
@@ -492,7 +553,8 @@ Sections not listed have not been classified in detail yet; most non-audio
   where triangle indexing, UV/normal/material binding, and per-frame timing live -
   a separate resource or runtime-generated. Trace this from the model-drawing code
   in `conker/src` that reads these vertex streams (start from the `Gfx`/`Vtx`
-  definitions in `conker/include/2.0L/PR/gbi.h`).
+  definitions in `conker/include/2.0L/PR/gbi.h`). Also locate the authoritative
+  vertex-count metadata and recompute the provisional 13-338 count range.
 - **assets06 bundle schema - dialogue text located (§4), rest still open.**
   The subtitle/dialogue string entry is now identified (plain ASCII, last
   nested-table entry in 7/15 censored samples) and the censorship glyph
@@ -503,35 +565,37 @@ Sections not listed have not been classified in detail yet; most non-audio
   record ties sub-entries together into one logical object, the exact
   placeholder-glyph selection rule, and locating the censored line's
   entry in the 8/15 files where it isn't the final one.
-- **assets17 (`"B1"`).** Decode table-2 (the event/region data after `0x2C0`) and
-  the per-sample codec; identify what `+0x04 = 8` and `+0x14 = 700` count.
-  Also: verify the `"S1"`/`ALSeqFile` sub-file (§6) against this repo's own
-  extraction (wiki-sourced, unverified here), resolve its file-index
-  labeling inconsistency, and decode the still-undetermined sub-files
-  (`0000`/`0001`/`0004`–`0006`).
-- **Compressed code loading (§2a).** Reproduce/cross-check the reported
-  4096-byte on-demand chunk mechanism (XOR key `0x8039CCCA`, table at ROM
-  `0x42454`) against this repo's own `init`/`init_data` extraction -
-  currently only a recorded lead, not verified.
-- **Textures.** Find where image width/height/format is specified, and check for
-  CI4/CI8 (palette) textures in other sections.
-- **Master asset offset table** at ROM `0xAB1950` (`assets_offsets_table` in
-  `conker.us.yaml`, walked by `func_1502B9B4`) still needs a written spec.
+- **assets17 audio internals.** Decode the custom packed instrument pointers
+  processed by `func_10012934`, identify the sample codec in `0002`, decode the
+  individual `S1` sequence command streams, and classify `0001`/`0004-0006`.
+- **Compressed-code runtime loading (§2a).** The archive/XOR layout is confirmed;
+  trace the reported 4096-byte TLB-miss demand-paging mechanism through the
+  current init exception and TLB routines.
+- **Textures.** Build a corpus scanner for width/height/format candidates,
+  render plausible RGBA16 files, and test CI4/CI8 palette pairings before
+  assigning formats to complete sections.
+- **Unclassified sections.** Inventory assets07, assets09-12, assets14-15,
+  assets18-19, assets1B, and the final 0x90-byte master-table payload.
 
 ## 10. Reproducing this analysis
 
-From an extraction (e.g. `debug_proto/assets/rzip/`):
+From the tracked retail extraction under `assets/rzip/`:
 
 ```python
 import struct, zlib
 
 def read_table(data):
-    """Parse the §3 offset table; return list of (offset, flags, length)."""
+    """Parse the §3 table; return (offset, type, final, length) rows."""
     tsize = struct.unpack(">I", data[:4])[0]
     out = []
     for i in range(tsize // 8):
         off, packed = struct.unpack(">II", data[i*8:i*8+8])
-        out.append((off, packed >> 24, packed & 0x0FFFFFFF))
+        out.append((
+            off,
+            (packed >> 28) & 0x7,
+            bool(packed & 0x80000000),
+            packed & 0x0FFFFFFF,
+        ))
     return out
 
 def unrzip(block):
@@ -542,18 +606,18 @@ def unrzip(block):
     return out
 
 data = open("assets06/0000.bin", "rb").read()
-for off, flags, length in read_table(data):
+for off, payload_type, is_final, length in read_table(data):
     if length == 0:
         continue
     block = data[off:off+length]
-    inner = unrzip(block) if flags & 0x10 else block   # nested container / geometry
+    inner = unrzip(block) if payload_type == 1 else block
 ```
 
 To pull files straight from a ROM instead (verified against the retail US ROM),
 use the bundled tool - it walks the archive and applies the §2/§3 decode:
 
 ```sh
-python tools/asset_dump.py list                  # known sections + ROM offsets
+python tools/asset_dump.py list                  # all master-table sections
 python tools/asset_dump.py dump assets13 out/    # every file in a section
 python tools/asset_dump.py dump assets17 out/ --idx 0   # a single file
 ```

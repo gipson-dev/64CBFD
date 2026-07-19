@@ -2,16 +2,18 @@
 """Walk and dump Conker asset archives directly from a ROM.
 
 The asset sections are offset-table containers (see DOCS/ASSET_FORMATS.md).
-Each entry is (u32 data_offset, u8 flags, u24 length); flag bit 0x10 marks the
-payload as rzip-compressed (4-byte big-endian uncompressed size + raw DEFLATE).
+Each entry is `(u32 data_offset, u32 packed)`. In `packed`, bit 31 marks the
+final entry, bits 30-28 select the payload type (1 = rzip-compressed), and bits
+27-0 contain the payload length. An rzip payload is a four-byte big-endian
+uncompressed size followed by raw DEFLATE.
 
 Usage:
-    python tools/asset_dump.py list                       # list known sections
+    python tools/asset_dump.py list                       # list master sections
     python tools/asset_dump.py dump assets13 out/         # dump every file
     python tools/asset_dump.py dump assets13 out/ --idx 0 # dump one file
 
-ROM path defaults to ./baserom.us.z64 (override with --rom).
-Section offsets below are the US ROM values from conker.us.yaml.
+ROM path defaults to ./baserom.us.z64 (override with --rom). US section
+boundaries are read directly from the master table at ROM 0xAB1950.
 """
 import argparse
 import os
@@ -19,27 +21,59 @@ import struct
 import sys
 import zlib
 
-# name: (start, end) in the US ROM
-US_SECTIONS = {
-    "assets00": (0x00AB1A40, 0x00AF4918),
-    "assets01": (0x00AF4918, 0x00BB1BA0),
-    "assets06": (0x0117FE50, 0x012043B0),  # scripted cutscene / dialogue data
-    "assets08": (0x01204400, 0x01204780),  # chapter / menu metadata
-    "assets13": (0x01300188, 0x01304F00),  # 3D model data (textures + geometry)
-    "assets16": (0x01330478, 0x029AE9E8),  # streamed MP3 audio
-    "assets17": (0x029AE9E8, 0x03F82170),  # audio subsystem (banks + samples)
-    "assets1C": (0x03F8AB18, 0x03F8B770),  # text / credits
+MASTER_TABLE_BASE = 0x00AB1950
+ASSET_SECTION_COUNT = 0x1D  # assets00 through assets1C
+
+SECTION_NOTES = {
+    "assets06": "scripted entity / cutscene / dialogue data",
+    "assets08": "chapter / menu metadata",
+    "assets13": "animated s16 XYZ position arrays",
+    "assets16": "streamed MPEG-2 Layer III dialogue",
+    "assets17": "audio banks, samples, sequences, and support tables",
+    "assets1A": "language-related structured records",
+    "assets1C": "credits/text layout and strings",
 }
 
 
 def read_table(data):
-    """Parse an offset-table container header -> [(offset, flags, length)]."""
+    """Parse a container header -> (offset, type, final, length) rows."""
     table_size = struct.unpack(">I", data[:4])[0]
+    if table_size == 0 or table_size % 8 != 0 or table_size > len(data):
+        raise ValueError(f"invalid table size 0x{table_size:X}")
     rows = []
     for i in range(table_size // 8):
         off, packed = struct.unpack(">II", data[i * 8:i * 8 + 8])
-        rows.append((off, packed >> 24, packed & 0x0FFFFFFF))
+        rows.append((
+            off,
+            (packed >> 28) & 0x7,
+            bool(packed & 0x80000000),
+            packed & 0x0FFFFFFF,
+        ))
     return rows
+
+
+def get_us_sections(rom):
+    """Read assets00-assets1C boundaries from the retail-US master table."""
+    table_size = struct.unpack(">I", rom[MASTER_TABLE_BASE:MASTER_TABLE_BASE + 4])[0]
+    table = rom[MASTER_TABLE_BASE:MASTER_TABLE_BASE + table_size]
+    rows = read_table(table)
+    if len(rows) < ASSET_SECTION_COUNT:
+        raise ValueError(
+            f"master table has {len(rows)} rows; expected at least "
+            f"{ASSET_SECTION_COUNT}"
+        )
+
+    sections = {}
+    for index, (off, payload_type, _is_final, length) in enumerate(
+            rows[:ASSET_SECTION_COUNT]):
+        if payload_type != 0:
+            raise ValueError(
+                f"master entry {index} has unexpected type {payload_type}"
+            )
+        name = f"assets{index:02X}"
+        start = MASTER_TABLE_BASE + off
+        sections[name] = (start, start + length)
+    return sections, rows[ASSET_SECTION_COUNT:]
 
 
 def unrzip(block):
@@ -52,7 +86,7 @@ def unrzip(block):
 
 
 def walk_archive(rom, base, end):
-    """Yield (start, flags, length) for each file in a container section."""
+    """Yield (start, payload_type, final, length) for a section's files."""
     files = []
     i = 0
     prev = -1
@@ -63,7 +97,8 @@ def walk_archive(rom, base, end):
         off, packed = struct.unpack(">II", rec)
         i += 1
         start = base + off
-        flags = packed >> 24
+        payload_type = (packed >> 28) & 0x7
+        is_final = bool(packed & 0x80000000)
         length = packed & 0x0FFFFFFF
         if off == 0 and packed == 0:
             break
@@ -74,15 +109,17 @@ def walk_archive(rom, base, end):
         if start < prev:
             break
         prev = start
-        files.append((start, flags, length))
+        files.append((start, payload_type, is_final, length))
+        if is_final:
+            break
     return files
 
 
-def get_file(rom, section, idx):
-    base, end = US_SECTIONS[section]
-    start, flags, length = walk_archive(rom, base, end)[idx]
+def get_file(rom, sections, section, idx):
+    base, end = sections[section]
+    start, payload_type, _is_final, length = walk_archive(rom, base, end)[idx]
     raw = rom[start:start + length]
-    return unrzip(raw) if (flags & 0x10) else raw
+    return unrzip(raw) if payload_type == 1 else raw
 
 
 def main():
@@ -95,20 +132,34 @@ def main():
     ap.add_argument("--idx", type=int, default=None)
     args = ap.parse_args()
 
+    rom = open(args.rom, "rb").read()
+    sections, trailing_entries = get_us_sections(rom)
+
     if args.cmd == "list":
-        for name, (s, e) in US_SECTIONS.items():
-            print(f"{name}: 0x{s:X}-0x{e:X}")
+        for name, (s, e) in sections.items():
+            note = SECTION_NOTES.get(name, "unclassified")
+            print(f"{name}: 0x{s:08X}-0x{e:08X} ({e - s:>9} bytes)  {note}")
+        for index, (off, payload_type, is_final, length) in enumerate(
+                trailing_entries, start=ASSET_SECTION_COUNT):
+            start = MASTER_TABLE_BASE + off
+            print(
+                f"master[{index:02d}]: 0x{start:08X}-0x{start + length:08X} "
+                f"({length:>9} bytes)  type={payload_type} final={is_final}"
+            )
         return
 
     if not args.section or not args.outdir:
         ap.error("dump requires SECTION and OUTDIR")
-    rom = open(args.rom, "rb").read()
-    base, end = US_SECTIONS[args.section]
+    if args.section not in sections:
+        ap.error(
+            f"unknown section {args.section!r}; expected assets00-assets1C"
+        )
+    base, end = sections[args.section]
     files = walk_archive(rom, base, end)
     os.makedirs(args.outdir, exist_ok=True)
     indices = [args.idx] if args.idx is not None else range(len(files))
     for i in indices:
-        data = get_file(rom, args.section, i)
+        data = get_file(rom, sections, args.section, i)
         path = os.path.join(args.outdir, f"{args.section}_{i:04d}.bin")
         open(path, "wb").write(data)
         print(f"wrote {path} ({len(data)} bytes)")

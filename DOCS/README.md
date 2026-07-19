@@ -1,110 +1,66 @@
 # Documentation
 
-Start here if you are new to this repository or coming back after a while.
+Use this page as the documentation index. Each subject has one primary home so
+build instructions, matching guidance, research notes, and milestone history
+do not compete with one another.
 
-## Current progress
+## Start here
 
-Snapshot as of 2026-07-18 after the 99% total C, 72% init byte-exact, and 36% total byte-exact milestones. Functions converted from raw assembly to C
-(`make -C conker progress NON_MATCHING=1`):
+| Goal | Read this |
+| --- | --- |
+| Understand the repository and build it | [Project overview](PROJECT.md) |
+| Work specifically in `conker/` | [Code sub-project](CODE_SUBPROJECT.md) |
+| Match or convert a function | [Contributor and byte-matching guide](CONTRIBUTING.md) |
+| Inspect the latest headline progress | [Root README](../README.md#project-status) |
 
-| Section | Progress bytes | Functions |
-| --- | --- | --- |
-| total | `[########################]` 98.34% | 5973 / 6033 (99.01%) |
-| init | `[######################--]` 90.79% | 508 / 538 (94.42%) |
-| game | `[########################]` 98.93% | 5284 / 5313 (99.45%) |
-| debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
+New contributors should read the project overview first, then the contributor
+guide. The root README is intentionally brief; `PROJECT.md` owns detailed build
+and progress explanations.
 
-Of those C-converted functions, the share that already compiles to the
-exact retail bytes (`make -C conker match-progress NON_MATCHING=1`;
-"blocked" = only `j`/`jal` targets or `%lo` halves of shifted symbol
-addresses differ, self-resolves as referenced functions/data get
-matched):
+## Build and development
 
-| Section | Byte-exact | Blocked on address drift | Still differ |
-| --- | --- | --- | --- |
-| total | `[#########---------------]` 2167 / 5973 (36.28%) | 0 | 3806 |
-| init | `[#################-------]` 367 / 508 (72.24%) | 0 | 141 |
-| game | `[#######-----------------]` 1634 / 5284 (30.92%) | 0 | 3650 |
-| debugger | `[######################--]` 166 / 181 (91.71%) | 0 | 15 |
+- [Project overview](PROJECT.md) — prerequisites, repository layout, supported
+  environments, ROM setup, normal builds, CI behavior, and progress metrics.
+- [Code sub-project](CODE_SUBPROJECT.md) — the `init`, `game`, and `debugger`
+  sections and how they are compiled and replaced in the ROM.
+- [Contributor and byte-matching guide](CONTRIBUTING.md) — selecting work,
+  comparing retail instructions, compiler-sensitive C patterns, validation,
+  and clean commit scope.
+- [IDO 5.3 recomp toolchain](IDO_RECOMP.md) — reproducing the compiler used by
+  byte-matching builds.
 
-The debugger overlay's long-standing rodata displacement healed on
-2026-07-16: its printf engine was identified as Plauger's Standard C
-Library (the N64 SDK's libc) and rematched at exact retail sizes. Later
-game-section layout fixes (`func_1504B0FC`, `func_1504BE2C`, and
-`func_150721A4`) collapsed most address-drift blockers. The latest game
-decomp push crossed the 25% game raw-conversion target, follow-up
-init passes pushed total raw conversion over 30%, and generated game-slice C
-placeholders pushed total raw conversion over 50%. A further 25 high-yield
-game slices then moved 613 functions into generated C and carried the total
-past 60%. The next 44 text-only slices moved another 612 tracked functions
-and carried both total and game conversion past 70%, while preserving the
-retail layout and adding another exact match. A further 82 safe text-only
-slices moved 588 tracked functions and carried total conversion past 80% and
-game conversion past 81%, without losing any existing exact matches. The 90%
-pass then moved 385 functions through 167 standalone slices and replaced 246
-validated `GLOBAL_ASM` groups across eight large mixed C sources. Signature
-declarations needed for those legacy implicit calls perturb one previously
-exact caller; blockers remain unchanged.
-The 99% pass then replaced 416 validated `GLOBAL_ASM` groups across 105
-mixed sources and moved 80 tracked libultra functions through typed generated
-standalone slices. Signature discovery now handles function pointers, local
-`static` declarations, directly included source headers, macro-shadowed
-function names, and legacy calls with inconsistent arity. The 60-function raw
-remainder is deliberately constrained to handwritten TLB code, embedded data
-labels or four-byte slots, six mixed code/data functions, two static audio
-routines, and the debugger CP0 reader.
-A dedicated byte-matching pass then recovered 35 small typed callbacks,
-constant-return handlers, accessors, and state setters, raising byte-exact
-progress to 27.06% without changing the matcher or raw-conversion totals.
-A second compact-function pass matched 63 more callbacks, scalar helpers,
-field initializers, accessors, and thin wrappers, carrying byte-exact progress
-past 28% while preserving the same raw-conversion and blocker counts.
-An init-focused pass then matched 22 more SDK and game functions by restoring
-their retail IDO optimization profiles, native MIPS III 64-bit operations,
-and original register-qualified source shapes. Init byte-exact progress is now
-over 50% without changing the game, debugger, raw-conversion, or blocker totals.
-The latest init pass matched 26 more libultra, audio, string, and game helpers
-by completing the same profile and register-local recovery, raising init to
-56.89% and total byte-exact progress past 29% with no regressions.
-Subsequent init and game matching restored additional SDK routines, generated
-libultra slices, signed field and argument types, and compiler expression
-shapes. A game-focused pass then matched ten more functions, including four
-larger 35-45-word routines, without giving back any existing match. A fast
-generated-slice sweep then matched 45 more compact game routines spanning
-wrappers, state setters, accessors, flag updates, and global resets. The
-verified result is now 367 / 508 init functions (72.24%), 1634 / 5284 game
-functions (30.92%), and 2167 / 5973 overall (36.28%).
-The first matching pass over those generated slices recovered 40 small
-retail functions exactly. The current layout-preservation pass then crossed
-the 50% byte-exact milestone by retaining every compiled instruction and
-relocation while restoring retail-relative function and object addresses.
-Oversized non-matching functions remain executable through out-of-line bodies
-and short trampolines, so they no longer displace later exact functions.
-Debugger raw conversion is now complete except `func_16003650`, a CP0/TLB
-reader that uses `tlbr`/CP0 register instructions and is intentionally left
-as raw assembly. Generated-slice jump labels are restored by the object-padding
-tool instead of a separately linked label object. No C functions remain
-classified as address-drift blocked.
-The ROM mapping helper now reads code-section starts from `conker.<version>.yaml`,
-finds `symbol_addrs.<version>.txt` even when using a temporary progress CSV,
-and resolves `D_XXXXXXXX` data labels from their name-implied retail VRAM.
+## ROM formats and research
 
-When regenerating, update both tables together with the copies in the
-[root README](../README.md) and [Project overview](PROJECT.md).
+- [Asset formats](ASSET_FORMATS.md) — `rzip`, archive tables, models, textures,
+  audio, data tables, confidence levels, and open research questions.
+- [Compressed config sections](CONFIG.md) — extracting and rebuilding chunks
+  described by `config/*.yaml`.
 
-## Reading order
+Format conclusions belong in these durable pages once verified. Temporary
+hypotheses and one-session diagnostics belong in working notes until they are
+confirmed.
 
-1. [Project overview](PROJECT.md) - what this repo is, how it is laid out, and how to build it.
-2. [Code sub-project](CODE_SUBPROJECT.md) - how the `conker/` code build fits into the full ROM build.
-3. [Compressed config sections](CONFIG.md) - how the `config/` YAML files are used for compressed ROM chunks.
-4. [IDO 5.3 recomp toolchain](IDO_RECOMP.md) - where the bundled compiler files come from.
-5. [Asset formats](ASSET_FORMATS.md) - compression, archive containers, and model/texture/sound payloads.
-6. [Working notes](WORKING_NOTES.md) - live log of in-progress work, kept so a crashed session can be resumed.
-7. [PC port roadmap](PC_PORT_ROADMAP.md) - phased plan for a keyboard/mouse/controller PC port and a later modern-graphics update.
-8. [Update log](UPDATE_LOG.md) - repository documentation, workflow, and maintenance changes.
+## Planning and history
 
-## Quick notes
+- [PC port roadmap](PC_PORT_ROADMAP.md) — phased plan for a native port and
+  later modernization work.
+- [Update log](UPDATE_LOG.md) — repository-facing milestones, workflow changes,
+  and published progress snapshots.
+- [Working notes](WORKING_NOTES.md) — recovery notes, failed experiments, and
+  detailed session history. This is an archive and scratchpad, not onboarding
+  documentation.
 
-- You need your own legally obtained ROM. This repository does not include one.
-- Build and extraction commands are expected to run from Linux, WSL, or Docker.
-- The `tools/` directories are submodules and keep their own upstream documentation.
+## Where information belongs
+
+| Information | Primary file |
+| --- | --- |
+| Installation, build, CI, repository layout | `PROJECT.md` |
+| Function conversion and byte matching | `CONTRIBUTING.md` |
+| `conker/` section build mechanics | `CODE_SUBPROJECT.md` |
+| Confirmed ROM and asset behavior | `ASSET_FORMATS.md` or `CONFIG.md` |
+| Future PC-port decisions | `PC_PORT_ROADMAP.md` |
+| Completed milestones and public changes | `UPDATE_LOG.md` |
+| Temporary findings and abandoned attempts | `WORKING_NOTES.md` |
+
+The `tools/` subdirectories are mostly submodules and retain their own upstream
+documentation. Do not move or rewrite those READMEs as project documentation.

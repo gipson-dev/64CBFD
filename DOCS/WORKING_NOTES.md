@@ -1,35 +1,52 @@
 # Working Notes
 
-A running log of in-progress work. The point of this file is recovery: if an
-editor, terminal, or assistant session crashes mid-task, the next session
-(human or AI) can read this file and pick up where things left off without
-re-deriving context from scratch.
+A recovery log for in-progress work, failed experiments, and detailed session
+history. It is intentionally archival and may contain stale snapshots.
 
-This is a scratch/log document, not polished documentation. Entries are
-allowed to be rough. Once a piece of work is finished and stable, its
-findings belong in [ASSET_FORMATS.md](ASSET_FORMATS.md), [PROJECT.md](PROJECT.md),
-or another permanent doc, and the entry here can be trimmed down to a one-line
-summary or removed.
+Do not use this file as onboarding documentation or as the source of current
+progress numbers. Once a finding is stable, move it to the relevant subject
+page and leave only the historical record here.
+
+## Topic index
+
+- Build setup, ROM versions, CI, and current metrics:
+  [Project overview](PROJECT.md)
+- Function selection, byte matching, compiler patterns, and validation:
+  [Contributor guide](CONTRIBUTING.md)
+- `conker/` section build mechanics: [Code sub-project](CODE_SUBPROJECT.md)
+- Confirmed compression and asset research: [Asset formats](ASSET_FORMATS.md)
+  and [compressed config sections](CONFIG.md)
+- Completed public milestones: [Update log](UPDATE_LOG.md)
+- Future PC work: [PC port roadmap](PC_PORT_ROADMAP.md)
 
 ## How to use this file
 
-1. Before starting a non-trivial task, add or update the **Current focus**
-   section below with what you're about to do and why.
+1. Replace the **Current focus** entry with the active task, verified baseline,
+   and immediate next step. Do not accumulate completed milestones there.
 2. While working, jot down anything that would be expensive to re-discover:
    the file/function you were in, a command that reproduced a bug, a
    hypothesis you ruled out, a partially-written patch that isn't committed.
-3. When you stop (task done, or interrupted), update the entry with the
-   actual end state: what's done, what's half-done, what's next.
-4. Start a new dated entry in the **Session log** for each distinct work
-   session; keep the newest entry at the top.
+3. When you stop, record what is done, what remains, and the exact command or
+   evidence needed to resume.
+4. Move durable conclusions to the owning subject document and published
+   milestones to `UPDATE_LOG.md`.
+5. Keep detailed old material below under archived focus snapshots or the
+   session log rather than expanding the active entry.
 
 ## Current focus
 
-**Update (2026-07-18, repeated wrapper sweep reached 36.28%).** Matched 13
-additional game functions across repeated cleanup, argument-forwarding,
-indexed-lookup, event-setup, and stack-local dispatch families. Verified total
-`2167 / 5973 (36.28%)`, game `1634 / 5284 (30.92%)`, init
-`367 / 508 (72.24%)`, debugger `166 / 181 (91.71%)`, and zero blockers.
+No active recovery item. The latest completed task consolidated the root README
+and documentation by subject, added the contributor guide, and separated this
+file's active recovery area from archived snapshots. The verified byte-matching
+baseline remains total `2167 / 5973 (36.28%)`, game
+`1634 / 5284 (30.92%)`, init `367 / 508 (72.24%)`, debugger
+`166 / 181 (91.71%)`, with zero blockers.
+
+## Archived focus snapshots
+
+The entries below are retained for recovery and historical context. Their
+counts and hypotheses may be obsolete; consult the subject pages above for
+current instructions.
 
 **Update (2026-07-18, init byte-exact progress reached 56.89%).**
 Matched 26 more init functions by restoring retail IDO `-O1` profiles,
@@ -1555,7 +1572,7 @@ xargs -a /tmp/tracked.txt -d '\n' rm -f
 git checkout -- .
 ```
 
-## Session log
+## Detailed session log
 
 ### 2026-07-15 (tenth session, continued - func_16001B34's real fix)
 

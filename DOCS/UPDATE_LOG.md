@@ -10,6 +10,26 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Documentation topics consolidated
+
+- Rebuilt the root README as a concise project entry point with a clearer
+  status explanation, supported build overview, contribution path, and
+  purpose-based documentation links.
+- Reorganized `DOCS/README.md` into a subject index and made `PROJECT.md` the
+  detailed source for build, environment, CI, ROM-layout, and progress
+  explanations.
+- Added `DOCS/CONTRIBUTING.md` as the durable home for function selection,
+  byte-matching workflow, IDO-sensitive source patterns, retail-span rules,
+  and required validation.
+- Labeled `WORKING_NOTES.md` as an archive/scratchpad, added a topic index, and
+  separated the current recovery entry from historical focus snapshots.
+- Corrected and expanded the asset specification: documented the real packed
+  entry bitfield and 30-entry master table, libaudio `B1`/`S1` structures,
+  confirmed game-code archive/XOR layout, vertex-count ambiguity, scoped
+  texture evidence, and the complete known/unknown section inventory.
+- Updated `tools/asset_dump.py` to derive all `assets00-assets1C` boundaries
+  from the retail master table instead of maintaining a partial hardcoded list.
+
 ### Repeated wrapper sweep reached 36.28% overall
 
 - Matched 13 more game functions across four repeated two-function families
