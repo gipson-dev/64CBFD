@@ -25,6 +25,12 @@ summary or removed.
 
 ## Current focus
 
+**Update (2026-07-18, repeated wrapper sweep reached 36.28%).** Matched 13
+additional game functions across repeated cleanup, argument-forwarding,
+indexed-lookup, event-setup, and stack-local dispatch families. Verified total
+`2167 / 5973 (36.28%)`, game `1634 / 5284 (30.92%)`, init
+`367 / 508 (72.24%)`, debugger `166 / 181 (91.71%)`, and zero blockers.
+
 **Update (2026-07-18, init byte-exact progress reached 56.89%).**
 Matched 26 more init functions by restoring retail IDO `-O1` profiles,
 `register`-qualified hardware-status and interrupt-mask locals, two loop

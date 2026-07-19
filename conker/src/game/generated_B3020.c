@@ -3,6 +3,7 @@
 /* Non-matching placeholders for the text-only asm slice asm/B3020.s. */
 
 extern s32 D_800D23B0;
+extern u8 D_800CC40F[];
 
 s32 func_15085B70() {
     return 0;
@@ -275,12 +276,16 @@ s32 func_1508EB90() {
     return 0;
 }
 
-s32 func_1508EBF8() {
-    return 0;
+void func_1508EBF8(s32 arg0, s32 arg1) {
+    s32 temp_v0 = D_800CC40F[arg0 * 0x32C];
+
+    func_1509BFB0(1, temp_v0 | 0x2000, 0x14, arg1);
 }
 
-s32 func_1508EC5C() {
-    return 0;
+void func_1508EC5C(s32 arg0, s32 arg1) {
+    s32 temp_v0 = D_800CC40F[arg0 * 0x32C];
+
+    func_1509BFB0(1, temp_v0 | 0x2000, 0x61, arg1);
 }
 
 s32 func_1508ECC0() {

@@ -3,6 +3,8 @@
 /* Non-matching placeholders for the text-only asm slice asm/17CAF0.s. */
 
 extern void (*D_8008AD04[])(u8 *, s32, u8);
+s32 func_1514FF44(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
+s32 func_15153CCC(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
 
 s32 func_1514F640() {
     return 0;
@@ -32,11 +34,14 @@ s32 func_1514FCE8() {
     return 0;
 }
 
-s32 func_1514FEFC() {
-    return 0;
+void func_1514FEFC(s32 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
+    u8 temp[0x2C];
+
+    func_1514F640(arg0, temp);
+    func_1514FF44(temp, arg1, arg2, arg3, arg4);
 }
 
-s32 func_1514FF44() {
+s32 func_1514FF44(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
     return 0;
 }
 
@@ -112,11 +117,14 @@ s32 func_151539B4() {
     return 0;
 }
 
-s32 func_15153C84() {
-    return 0;
+void func_15153C84(s32 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
+    u8 temp[0x2C];
+
+    func_1514F640(arg0, temp);
+    func_15153CCC(temp, arg1, arg2, arg3, arg4);
 }
 
-s32 func_15153CCC() {
+s32 func_15153CCC(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
     return 0;
 }
 

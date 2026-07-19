@@ -13,8 +13,8 @@ s32 func_150C44A4() {
 s32 func_150C4AD8(u8 *arg0) {
     u8 *temp_a1 = arg0;
 
-    if (*(s32 *)(temp_a1 + 0x34) != 0) {
-        func_1516972C(*(s32 *)(temp_a1 + 0x34));
+    if (*(s32 volatile *)(temp_a1 + 0x34) != 0) {
+        func_1516972C(*(s32 volatile *)(temp_a1 + 0x34));
     }
 }
 

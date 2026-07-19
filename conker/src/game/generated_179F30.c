@@ -10,6 +10,9 @@ s32 func_1516972C();
 s32 func_1515F10C();
 s32 func_1514E920();
 s32 func_1514E89C();
+s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2);
+extern u8 D_800A5920[];
+extern u8 D_800A5988[];
 
 s32 func_1514CA80() {
     return 0;
@@ -185,8 +188,10 @@ s32 func_1514E718() {
     return 0;
 }
 
-s32 func_1514E7C8() {
-    return 0;
+void func_1514E7C8(s32 arg0) {
+    s32 temp_v0 = func_1518D1C0(arg0, 7, 0, 1, 0xFF, 1, D_800A5920);
+
+    func_1514EC1C(temp_v0, arg0, 0xF);
 }
 
 void func_1514E824(s32 arg0) {
@@ -237,7 +242,7 @@ s32 func_1514EBA4() {
     return 0;
 }
 
-s32 func_1514EC1C() {
+s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2) {
     return 0;
 }
 
@@ -285,8 +290,10 @@ s32 func_1514F3CC() {
     return 0;
 }
 
-s32 func_1514F44C() {
-    return 0;
+void func_1514F44C(s32 arg0) {
+    s32 temp_v0 = func_1518D1C0(arg0, 5, 0, 1, 0xFF, 1, D_800A5988);
+
+    func_1514EC1C(temp_v0, arg0, 0xD);
 }
 
 s32 func_1514F4A8(s32 arg0) {

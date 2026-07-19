@@ -49,12 +49,14 @@ s32 func_1506AAE0() {
     return 0;
 }
 
-s32 func_1506AB7C() {
-    return 0;
+void func_1506AB7C(s32 arg0, u8 *arg1) {
+    func_15103E40(arg0, *(s32 *)arg1, arg1 + 4, 1,
+                  *(s32 *)(arg1 + 0x10), 0xFF, 1);
 }
 
-s32 func_1506ABC4() {
-    return 0;
+void func_1506ABC4(s32 arg0, u8 *arg1) {
+    func_15103E40(arg0, *(s32 *)arg1, arg1 + 4, 2,
+                  *(s32 *)(arg1 + 0x10), 0xFF, 1);
 }
 
 s32 func_1506AC0C() {

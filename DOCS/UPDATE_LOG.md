@@ -10,6 +10,17 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Repeated wrapper sweep reached 36.28% overall
+
+- Matched 13 more game functions across four repeated two-function families
+  and one five-function cleanup family.
+- Recovered exact retail argument forwarding, indexed byte lookup, stack-local
+  record dispatch, and deliberate repeated volatile field reads in call delay
+  slots.
+- Verified **1634 / 5284 game functions (30.92%)** and **2167 / 5973 overall
+  (36.28%)**, with **0** address-drift blockers. Raw C conversion remains
+  **5973 / 6033 functions (99.01%)**.
+
 ### Fast byte-matching sweep passed 35% overall
 
 - Matched 246 additional game functions across generated slices, emphasizing
