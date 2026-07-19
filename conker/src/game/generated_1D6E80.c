@@ -83,12 +83,18 @@ s32 func_151AAABC() {
     return 0;
 }
 
-s32 func_151AAB50() {
-    return 0;
+s32 func_151AAB50(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **)(arg0 + 0x80) + 0x58;
+
+    *(s32 *)(temp_v0 + 0x14) = 0;
+    func_151352EC(arg0);
 }
 
-s32 func_151AAB78() {
-    return 0;
+s32 func_151AAB78(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **)(arg0 + 0x80) + 0x58;
+
+    *(s32 *)(temp_v0 + 0x14) = 0;
+    func_1513530C(arg0);
 }
 
 s32 func_151AABA0(u8 *arg0) {
@@ -105,8 +111,17 @@ s32 func_151AABC4() {
     return 0;
 }
 
-s32 func_151AADBC() {
-    return 0;
+s32 func_151AADBC(u8 *arg0) {
+    s32 value = *(s16 *) (arg0 + 0x1C) << 4;
+    u8 *target = *(u8 **) (arg0 + 0x98);
+
+    if (value >= 0x100) {
+        value = 0xFF;
+    }
+    if (value < target[0x1B]) {
+        target[0x1B] = value;
+    }
+    return 1;
 }
 
 s32 func_151AADF8() {

@@ -3,6 +3,7 @@
 /* Non-matching placeholders for the text-only asm slice asm/205C90.s. */
 
 s32 func_151D8C00();
+extern u8 D_800AB300[];
 
 s32 func_151D87E0() {
     return 0;
@@ -20,12 +21,14 @@ s32 func_151D8B24() {
     return 0;
 }
 
-s32 func_151D8B88() {
-    return 0;
+s32 func_151D8B88(s32 arg0) {
+    func_151D8B24(arg0);
+    func_15169804(arg0);
 }
 
-s32 func_151D8BB4() {
-    return 0;
+s32 func_151D8BB4(s32 arg0) {
+    func_151D8B24(arg0);
+    func_15169824(arg0);
 }
 
 void func_151D8BE0(u8 *arg0) {
@@ -40,8 +43,8 @@ s32 func_151D8D5C() {
     return 0;
 }
 
-s32 func_151D8DB4() {
-    return 0;
+s32 func_151D8DB4(s32 arg0, u8 arg1) {
+    func_15169260(D_800AB300, 1, arg0, arg1);
 }
 
 s32 func_151D8DE8() {

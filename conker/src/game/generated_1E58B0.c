@@ -10,8 +10,8 @@ s32 func_151B85AC() {
     return 0;
 }
 
-s32 func_151B863C() {
-    return 0;
+s32 func_151B863C(s32 arg0, s16 arg1) {
+    func_1513FA70(arg0, arg1);
 }
 
 s32 func_151B8668() {

@@ -46,8 +46,14 @@ s32 func_151A084C() {
     return 0;
 }
 
-s32 func_151A0928() {
-    return 0;
+void func_151A0928(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x28) + 0x58;
+
+    if (arg0[0x2C] == 6) {
+        *(s32 *) (temp_v0 + 4) = 0;
+    } else {
+        *(s32 *) (temp_v0 + 0xC) = 0;
+    }
 }
 
 s32 func_151A0950() {

@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1D92F0.s. */
 
+extern f32 D_800BE9A4;
+
 s32 func_151ABE40() {
     return 0;
 }
@@ -10,8 +12,17 @@ s32 func_151AC078() {
     return 0;
 }
 
-s32 func_151AC3CC() {
-    return 0;
+s32 func_151AC3CC(u8 *arg0) {
+    s32 value = *(s16 *) (arg0 + 0x1C) << 3;
+    u8 *target = *(u8 **) (arg0 + 0x98);
+
+    if (value >= 0x100) {
+        value = 0xFF;
+    }
+    if (value < target[0x1B]) {
+        target[0x1B] = value;
+    }
+    return 1;
 }
 
 s32 func_151AC408() {
@@ -30,8 +41,12 @@ s32 func_151AC810() {
     return 0;
 }
 
-s32 func_151AC9EC() {
-    return 0;
+s32 func_151AC9EC(f32 *arg0) {
+    f32 delta = arg0[0x4C / 4] * D_800BE9A4;
+
+    arg0[0x2C / 4] += delta;
+    arg0[0x30 / 4] += delta;
+    return 1;
 }
 
 s32 func_151ACA20() {
@@ -42,16 +57,22 @@ s32 func_151ACA60() {
     return 0;
 }
 
-s32 func_151ACB38() {
-    return 0;
+s32 func_151ACB38(u8 *arg0, u8 *arg1) {
+    s32 result = 0;
+
+    if (arg0[0x3B] == 1) {
+        *arg1 = 1;
+        result = 1;
+    }
+    return result;
 }
 
 s32 func_151ACB60() {
     return 0;
 }
 
-s32 func_151ACB94() {
-    return 0;
+void func_151ACB94(u8 *arg0, s32 arg1, u8 arg2) {
+    func_15169850(arg1, arg2, (s32) (arg0 + 0x1C), (s32) (arg0 + 0x20), (s32) arg0);
 }
 
 s32 func_151ACBD4() {

@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1BA1D0.s. */
 
+s32 func_15191400();
+
 s32 func_1518CD20() {
     return 0;
 }
@@ -34,12 +36,14 @@ s32 func_1518E4A0() {
     return 0;
 }
 
-s32 func_1518E4CC() {
-    return 0;
+s32 func_1518E4CC(s32 arg0) {
+    func_1518E4A0(arg0);
+    func_15169804(arg0);
 }
 
-s32 func_1518E4F8() {
-    return 0;
+s32 func_1518E4F8(s32 arg0) {
+    func_1518E4A0(arg0);
+    func_15169824(arg0);
 }
 
 s32 func_1518E524() {
@@ -161,12 +165,14 @@ void func_15190454(u8 *arg0) {
     *(s32 *)(temp_v0 + 0x84) = 0;
 }
 
-s32 func_15190464() {
-    return 0;
+s32 func_15190464(s32 arg0) {
+    func_15190454(arg0);
+    func_151617C4(arg0);
 }
 
-s32 func_15190490() {
-    return 0;
+s32 func_15190490(s32 arg0) {
+    func_15190454(arg0);
+    func_151617E4(arg0);
 }
 
 s32 func_151904BC() {
@@ -197,20 +203,31 @@ s32 func_151906E0() {
     return 0;
 }
 
-s32 func_1519072C() {
-    return 0;
+void func_1519072C(u8 *arg0) {
+    struct {
+        u8 *ptr;
+        u8 value;
+    } temp;
+    void *record = &temp;
+
+    temp.ptr = arg0;
+    temp.value = arg0[0x3B];
+    func_151D343C(record, 0x2A);
+    func_1518F45C(record, 0x49);
 }
 
 s32 func_15190770() {
     return 0;
 }
 
-s32 func_15190840() {
-    return 0;
+s32 func_15190840(s32 arg0) {
+    func_15191400(arg0);
+    func_15169804(arg0);
 }
 
-s32 func_1519086C() {
-    return 0;
+s32 func_1519086C(s32 arg0) {
+    func_15191400(arg0);
+    func_15169824(arg0);
 }
 
 s32 func_15190898() {

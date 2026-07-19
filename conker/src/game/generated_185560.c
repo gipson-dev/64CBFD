@@ -34,12 +34,14 @@ s32 func_15158A20() {
     return 0;
 }
 
-s32 func_15158AA4() {
-    return 0;
+s32 func_15158AA4(s32 arg0) {
+    func_15158A20(arg0);
+    func_15169804(arg0);
 }
 
-s32 func_15158AD0() {
-    return 0;
+s32 func_15158AD0(s32 arg0) {
+    func_15158A20(arg0);
+    func_15169824(arg0);
 }
 
 s32 func_15158AFC() {
@@ -54,12 +56,14 @@ s32 func_15158BD0() {
     return 0;
 }
 
-s32 func_15158CD4() {
-    return 0;
+s32 func_15158CD4(u8 *arg0) {
+    func_1514EDF0(arg0, *(s32 *)(arg0 + 0x18));
+    func_15169804(arg0);
 }
 
-s32 func_15158D00() {
-    return 0;
+s32 func_15158D00(u8 *arg0) {
+    func_1514EDF0(arg0, *(s32 *)(arg0 + 0x18));
+    func_15169824(arg0);
 }
 
 s32 func_15158D2C() {

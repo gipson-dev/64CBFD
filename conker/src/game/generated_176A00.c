@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/176A00.s. */
 
+extern f32 D_800BE9A4;
+
 s32 func_1514BC08();
 
 s32 func_15149550() {
@@ -84,12 +86,24 @@ s32 func_1514B844() {
     return 0;
 }
 
-s32 func_1514B87C() {
-    return 0;
+s32 func_1514B87C(f32 *arg0) {
+    f32 delta = arg0[0x4C / 4] * D_800BE9A4;
+
+    arg0[0x2C / 4] += delta;
+    arg0[0x30 / 4] += delta;
+    return 1;
 }
 
-s32 func_1514B8B0() {
-    return 0;
+s32 func_1514B8B0(u8 *arg0) {
+    s32 temp_v0 = *(s16 *)(arg0 + 0x1C);
+
+    if (temp_v0 < 0x10) {
+        s32 temp_v1 = temp_v0 << 4;
+        if (temp_v1 < *(u8 *)(arg0 + 0x5C)) {
+            *(u8 *)(arg0 + 0x5C) = temp_v1;
+        }
+    }
+    return 1;
 }
 
 s32 func_1514B8E4() {
@@ -120,12 +134,16 @@ s32 func_1514BF9C() {
     return 0;
 }
 
-s32 func_1514C258() {
-    return 0;
+s32 func_1514C258(s32 arg0) {
+    func_1514BF9C(arg0);
+    func_1514BE20(arg0);
+    return 1;
 }
 
-s32 func_1514C288() {
-    return 0;
+s32 func_1514C288(s32 arg0) {
+    func_1514BF9C(arg0);
+    func_1514BF50(arg0);
+    return 1;
 }
 
 s32 func_1514C2B8() {

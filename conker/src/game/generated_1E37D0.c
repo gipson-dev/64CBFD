@@ -62,10 +62,12 @@ s32 func_151B8370() {
     return 0;
 }
 
-s32 func_151B83A0() {
-    return 0;
+s32 func_151B83A0(s32 arg0) {
+    func_151B8370(arg0);
+    func_151478F4(arg0);
 }
 
-s32 func_151B83CC() {
-    return 0;
+s32 func_151B83CC(s32 arg0) {
+    func_151B8370(arg0);
+    func_15147928(arg0);
 }

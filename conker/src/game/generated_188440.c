@@ -29,21 +29,21 @@ s32 func_1515B994() {
 void func_1515BA10(s32 arg0) {
 }
 
-s32 func_1515BA1C() {
-    return 0;
+s32 func_1515BA1C(s16 arg0) {
+    func_1515AF90(arg0);
 }
 
 void func_1515BA48(s32 arg0) {
 }
 
-s32 func_1515BA54() {
-    return 0;
+s32 func_1515BA54(s16 arg0) {
+    func_1515B674(arg0);
 }
 
-s32 func_1515BA80() {
-    return 0;
+s32 func_1515BA80(s16 arg0) {
+    func_1515B5F4(arg0);
 }
 
-s32 func_1515BAAC() {
-    return 0;
+s32 func_1515BAAC(s16 arg0) {
+    func_1515B5F4(arg0);
 }

@@ -9,12 +9,22 @@ s32 func_151CD2C0() {
     return 0;
 }
 
-s32 func_151CD35C() {
-    return 0;
+void func_151CD35C(s32 arg0) {
+    s32 value;
+
+    if ((arg0 >= 0) && (arg0 < 4)) {
+        value = arg0;
+        func_151494E0(&value, 0x17);
+    }
 }
 
-s32 func_151CD394() {
-    return 0;
+void func_151CD394(s32 arg0) {
+    s32 value;
+
+    if ((arg0 >= 0) && (arg0 < 4)) {
+        value = arg0;
+        func_151494E0(&value, 0x18);
+    }
 }
 
 s32 func_151CD3CC() {
@@ -47,12 +57,18 @@ void func_151CE47C(u8 *arg0) {
     *(u16 *)(arg0 + 0x1E) |= 8;
 }
 
-s32 func_151CE49C() {
-    return 0;
+void func_151CE49C(u8 *arg0) {
+    s32 value = *(s32 *) (*(u8 **) (arg0 + 0x98) + 0x48);
+
+    func_151494E0(&value, 0x23);
+    func_151478F4(arg0);
 }
 
-s32 func_151CE4DC() {
-    return 0;
+void func_151CE4DC(u8 *arg0) {
+    s32 value = *(s32 *) (*(u8 **) (arg0 + 0x98) + 0x48);
+
+    func_151494E0(&value, 0x23);
+    func_15147928(arg0);
 }
 
 s32 func_151CE51C() {
@@ -103,8 +119,12 @@ s32 func_151CFA4C() {
     return 0;
 }
 
-s32 func_151D0024() {
-    return 0;
+s32 func_151D0024(u8 *arg0) {
+    struct { u8 *ptr; u8 value; } temp;
+
+    temp.ptr = arg0;
+    temp.value = *(u8 *)(arg0 + 0x3B);
+    func_151494E0(&temp, 0x18);
 }
 
 s32 func_151D0058() {
@@ -133,16 +153,22 @@ s32 func_151D09A8() {
     return 0;
 }
 
-s32 func_151D0ED8() {
-    return 0;
+s32 func_151D0ED8(u8 *arg0) {
+    u8 *temp_a1 = arg0;
+
+    if (*(s32 *)(temp_a1 + 0xA8) != 0) {
+        func_1516972C(*(s32 *)(temp_a1 + 0xA8));
+    }
 }
 
-s32 func_151D0F08() {
-    return 0;
+s32 func_151D0F08(s32 arg0) {
+    func_151D0ED8(arg0);
+    func_1513173C(arg0);
 }
 
-s32 func_151D0F34() {
-    return 0;
+s32 func_151D0F34(s32 arg0) {
+    func_151D0ED8(arg0);
+    func_1513175C(arg0);
 }
 
 s32 func_151D0F60() {
@@ -169,20 +195,22 @@ s32 func_151D1138() {
     return 0;
 }
 
-s32 func_151D1328() {
-    return 0;
+void func_151D1328(u8 *arg0, s32 arg1, u8 arg2) {
+    func_15169850(arg1, arg2, (s32) (arg0 + 0x28), (s32) (arg0 + 0x2C), (s32) arg0);
 }
 
-void func_151D1368(void) {
+void func_151D1368() {
     func_151D13E0();
 }
 
-s32 func_151D1388() {
-    return 0;
+s32 func_151D1388(s32 arg0) {
+    func_151D1368(arg0);
+    func_1514933C(arg0);
 }
 
-s32 func_151D13B4() {
-    return 0;
+s32 func_151D13B4(s32 arg0) {
+    func_151D1368(arg0);
+    func_15149368(arg0);
 }
 
 s32 func_151D13E0() {
@@ -214,12 +242,14 @@ void func_151D223C(u8 *arg0) {
     }
 }
 
-s32 func_151D2258() {
-    return 0;
+s32 func_151D2258(s32 arg0) {
+    func_151D223C(arg0);
+    func_151478F4(arg0);
 }
 
-s32 func_151D2284() {
-    return 0;
+s32 func_151D2284(s32 arg0) {
+    func_151D223C(arg0);
+    func_15147928(arg0);
 }
 
 s32 func_151D22B0() {

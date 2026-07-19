@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/C9EC0.s. */
 
+extern u8 D_8008743A[];
+
 typedef struct {
     s32 field0;
     s32 field4;
@@ -20,8 +22,8 @@ u16 func_1509CA30(register s32 arg0) {
     return D_80087430[arg0].field8;
 }
 
-s32 func_1509CA50() {
-    return 0;
+s32 func_1509CA50(s32 arg0) {
+    return *(u16 *) (D_8008743A + arg0 * 0x14) & 0xFFF;
 }
 
 s32 func_1509CA78(register s32 arg0) {

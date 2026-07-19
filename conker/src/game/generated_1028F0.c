@@ -50,8 +50,10 @@ s32 func_150D6730() {
     return 0;
 }
 
-s32 func_150D6C98() {
-    return 0;
+void func_150D6C98(f32 *arg0, f32 *arg1) {
+    arg1[0] = arg0[5];
+    arg1[1] = arg0[6] + 60.0f;
+    arg1[2] = arg0[7];
 }
 
 s32 func_150D6CC4() {

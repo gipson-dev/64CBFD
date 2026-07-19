@@ -30,8 +30,8 @@ s32 func_150DFEFC() {
     return 0;
 }
 
-s32 func_150E02C0() {
-    return 0;
+void func_150E02C0(u8 *arg0, s32 arg1, u8 arg2) {
+    func_15149514(arg1, arg2, (s32) (arg0 + 0x28), (s32) (arg0 + 0x2C), (s32) arg0);
 }
 
 s32 func_150E0300() {

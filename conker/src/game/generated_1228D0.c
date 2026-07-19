@@ -36,8 +36,8 @@ s32 func_150F5C98() {
     return 0;
 }
 
-s32 func_150F6138() {
-    return 0;
+void func_150F6138(u8 *arg0, s32 arg1, u8 arg2) {
+    func_15149514(arg1, arg2, (s32) (arg0 + 0x28), (s32) (arg0 + 0x2C), (s32) arg0);
 }
 
 s32 func_150F6178() {
@@ -48,16 +48,18 @@ s32 func_150F631C() {
     return 0;
 }
 
-s32 func_150F6368() {
-    return 0;
+s32 func_150F6368(s32 arg0) {
+    func_150F631C(arg0);
+    func_1514933C(arg0);
 }
 
-s32 func_150F6394() {
-    return 0;
+s32 func_150F6394(s32 arg0) {
+    func_150F631C(arg0);
+    func_15149368(arg0);
 }
 
-s32 func_150F63C0() {
-    return 0;
+void func_150F63C0(u8 *arg0, s32 arg1, u8 arg2) {
+    func_15169850(arg1, arg2, (s32) (arg0 + 0x28), (s32) (arg0 + 0x2C), (s32) arg0);
 }
 
 void func_150F6400(u8 *arg0) {
@@ -69,31 +71,35 @@ void func_150F6400(u8 *arg0) {
     }
 }
 
-s32 func_150F6420() {
-    return 0;
+s32 func_150F6420(s32 arg0) {
+    func_150F6400(arg0);
+    func_1513CA6C(arg0);
 }
 
-s32 func_150F644C() {
-    return 0;
+s32 func_150F644C(s32 arg0) {
+    func_150F6400(arg0);
+    func_1513CAA0(arg0);
 }
 
 void func_150F6478(s32 arg0) {
 }
 
-s32 func_150F6484() {
-    return 0;
+s32 func_150F6484(s32 arg0) {
+    func_150F6478(arg0);
+    func_151411A4(arg0);
 }
 
-s32 func_150F64B0() {
-    return 0;
+s32 func_150F64B0(s32 arg0) {
+    func_150F6478(arg0);
+    func_151411C4(arg0);
 }
 
 s32 func_150F64DC() {
     return 0;
 }
 
-s32 func_150F6850() {
-    return 0;
+void func_150F6850(u8 *arg0, s32 arg1, u8 arg2) {
+    func_15169850(arg1, arg2, (s32) (arg0 + 0x28), (s32) (arg0 + 0x2C), (s32) arg0);
 }
 
 s32 func_150F6890() {

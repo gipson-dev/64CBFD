@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/142560.s. */
 
+f32 func_151172D8(u8 *arg0, f32 arg1);
+f32 func_15117518(u8 *arg0, f32 arg1);
+
 extern f32 D_800A31F4;
 s32 func_151189AC();
 
@@ -106,32 +109,32 @@ s32 func_15116EA4() {
     return 0;
 }
 
-s32 func_151172D8() {
-    return 0;
+f32 func_151172D8(u8 *arg0, f32 arg1) {
+    return 0.0f;
 }
 
-s32 func_151174A0() {
-    return 0;
+void func_151174A0(u8 *arg0) {
+    *(f32 *)(arg0 + 8) = func_151172D8(arg0, *(f32 *)(arg0 + 8));
 }
 
-s32 func_151174C8() {
-    return 0;
+void func_151174C8(u8 *arg0) {
+    *(f32 *)(arg0 + 4) = func_151172D8(arg0, *(f32 *)(arg0 + 4));
 }
 
-s32 func_151174F0() {
-    return 0;
+void func_151174F0(u8 *arg0) {
+    *(f32 *)(arg0 + 0) = func_151172D8(arg0, *(f32 *)(arg0 + 0));
 }
 
-s32 func_15117518() {
-    return 0;
+f32 func_15117518(u8 *arg0, f32 arg1) {
+    return 0.0f;
 }
 
-s32 func_15117770() {
-    return 0;
+void func_15117770(u8 *arg0) {
+    *(f32 *)(arg0 + 0) = func_15117518(arg0, *(f32 *)(arg0 + 0));
 }
 
-s32 func_15117798() {
-    return 0;
+void func_15117798(u8 *arg0) {
+    *(f32 *)(arg0 + 8) = func_15117518(arg0, *(f32 *)(arg0 + 8));
 }
 
 s32 func_151177C0() {

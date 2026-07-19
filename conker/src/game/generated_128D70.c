@@ -26,14 +26,20 @@ s32 func_150FC930() {
     return 0;
 }
 
-s32 func_150FC974() {
-    return 0;
+s32 func_150FC974(u8 *arg0) {
+    u8 *temp_a1 = arg0;
+
+    if (*(s32 *)(temp_a1 + 0x38) != 0) {
+        func_1516972C(*(s32 *)(temp_a1 + 0x38));
+    }
 }
 
-s32 func_150FC9A4() {
-    return 0;
+s32 func_150FC9A4(s32 arg0) {
+    func_150FC974(arg0);
+    func_1514933C(arg0);
 }
 
-s32 func_150FC9D0() {
-    return 0;
+s32 func_150FC9D0(s32 arg0) {
+    func_150FC974(arg0);
+    func_15149368(arg0);
 }

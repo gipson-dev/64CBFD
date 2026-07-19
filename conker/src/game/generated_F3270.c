@@ -36,12 +36,18 @@ s32 func_150C63EC(u8 *arg0) {
     return result;
 }
 
-s32 func_150C6410() {
-    return 0;
+s32 func_150C6410(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **)(arg0 + 0x58) + 0x58;
+
+    *(s32 *)(temp_v0 + 0x4) = 0;
+    func_151346EC(arg0);
 }
 
-s32 func_150C6438() {
-    return 0;
+s32 func_150C6438(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **)(arg0 + 0x58) + 0x58;
+
+    *(s32 *)(temp_v0 + 0x4) = 0;
+    func_1513470C(arg0);
 }
 
 s32 func_150C6460() {

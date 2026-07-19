@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/C1D70.s. */
 
+s32 func_15095D34();
+
 s32 func_150948C0() {
     return 0;
 }
@@ -62,8 +64,8 @@ s32 func_15095B08() {
     return 0;
 }
 
-s32 func_15095D0C() {
-    return 0;
+s32 func_15095D0C(s32 arg0, s32 arg1) {
+    func_15095D34(arg0, arg1, 0, 0, 0);
 }
 
 s32 func_15095D34() {

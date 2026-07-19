@@ -34,8 +34,8 @@ s32 func_150CFBEC() {
     return 0;
 }
 
-s32 func_150CFC38() {
-    return 0;
+s32 func_150CFC38(f32 arg0) {
+    func_1515572C(&arg0, 0x52);
 }
 
 s32 func_150CFC60() {

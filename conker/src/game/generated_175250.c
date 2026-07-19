@@ -30,8 +30,11 @@ s32 func_15148DE0() {
     return 0;
 }
 
-s32 func_15148EF8() {
-    return 0;
+s32 func_15148EF8(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
+    u8 *temp_v1 = *(u8 **) (arg0 + 0x98);
+
+    temp_v1[0x20] = 4;
+    return 1;
 }
 
 s32 func_15148F1C() {

@@ -58,8 +58,17 @@ s32 func_1507FEA0() {
     return 0;
 }
 
-s32 func_1507FF94() {
-    return 0;
+void func_1507FF94(u8 *arg0) {
+    struct {
+        u8 *ptr;
+        u8 value;
+    } temp;
+    void *record = &temp;
+
+    temp.ptr = arg0;
+    temp.value = arg0[0x3B];
+    func_15191B8C(record, 0xD);
+    func_151494E0(record, 0xD);
 }
 
 s32 func_1507FFD8() {

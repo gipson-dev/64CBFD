@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/191C30.s. */
 
+extern u8 D_800DCDE0[];
+
 s32 func_15164780() {
     return 0;
 }
@@ -14,8 +16,8 @@ s32 func_1516489C() {
     return 0;
 }
 
-s32 func_15164EE4() {
-    return 0;
+void func_15164EE4(void) {
+    bzero(D_800DCDE0, 0x60);
 }
 
 s32 func_15164F0C() {

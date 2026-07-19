@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/17CAF0.s. */
 
+extern void (*D_8008AD04[])(u8 *, s32, u8);
+
 s32 func_1514F640() {
     return 0;
 }
@@ -154,8 +156,12 @@ s32 func_1515548C() {
     return 0;
 }
 
-s32 func_15155564() {
-    return 0;
+void func_15155564(u8 *arg0, s32 arg1, u8 arg2) {
+    void (*callback)(u8 *, s32, u8) = D_8008AD04[arg0[0x2A]];
+
+    if (callback != NULL) {
+        callback(arg0, arg1, arg2);
+    }
 }
 
 s32 func_151555AC() {

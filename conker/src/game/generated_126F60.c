@@ -62,12 +62,16 @@ s32 func_150FB240() {
     return 0;
 }
 
-s32 func_150FB29C() {
-    return 0;
+s32 func_150FB29C(u8 *arg0) {
+    func_150FB240(arg0 + 0x43, *(s16 *) (arg0 + 0x16), *(s16 *) (arg0 + 0x120),
+                  *(s16 *) (arg0 + 0x64), *(s16 *) (arg0 + 0x66));
+    return 1;
 }
 
-s32 func_150FB2E0() {
-    return 0;
+s32 func_150FB2E0(u8 *arg0) {
+    func_150FB240(arg0 + 0x2E, *(s16 *) (arg0 + 0x22), *(s16 *) (arg0 + 0x70),
+                  *(s16 *) (arg0 + 0x26), *(s16 *) (arg0 + 0x28));
+    return 1;
 }
 
 s32 func_150FB324() {

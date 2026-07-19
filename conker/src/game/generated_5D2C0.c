@@ -140,7 +140,10 @@ s32 func_15033BDC() {
     return 0;
 }
 
-s32 func_15033E00() {
+s32 func_15033E00(s32 arg0, u8 *arg1) {
+    if (arg1[5] == 3) {
+        return 1;
+    }
     return 0;
 }
 

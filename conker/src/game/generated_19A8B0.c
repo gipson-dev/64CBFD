@@ -66,12 +66,20 @@ s32 func_1516F864() {
     return 0;
 }
 
-s32 func_1516F8EC() {
-    return 0;
+void func_1516F8EC(u8 *arg0, u32 arg1) {
+    s32 temp_v0 = ((*(s8 *)(arg0 + 0x26) << 8) + *(u8 *)(arg0 + 0x27)) * arg1;
+    s32 temp_t0 = temp_v0 >> 8;
+
+    *(u8 *)(arg0 + 0x26) = temp_t0 >> 8;
+    *(u8 *)(arg0 + 0x27) = temp_t0;
 }
 
-s32 func_1516F91C() {
-    return 0;
+void func_1516F91C(u8 *arg0, u32 arg1) {
+    s32 temp_v0 = ((*(s8 *)(arg0 + 0x28) << 8) + *(u8 *)(arg0 + 0x29)) * arg1;
+    s32 temp_t0 = temp_v0 >> 8;
+
+    *(u8 *)(arg0 + 0x28) = temp_t0 >> 8;
+    *(u8 *)(arg0 + 0x29) = temp_t0;
 }
 
 s32 func_1516F94C() {

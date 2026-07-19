@@ -102,8 +102,8 @@ s32 func_1515F270() {
     return 0;
 }
 
-s32 func_1515F2B8() {
-    return 0;
+void func_1515F2B8(u8 *arg0, s32 arg1) {
+    func_1505D024(arg0, 0x6001D, *(u16 *) (arg0 + 0x7A), -1);
 }
 
 s32 func_1515F2E8() {
@@ -126,8 +126,8 @@ s32 func_1515FB70() {
     return 0;
 }
 
-s32 func_1515FB94() {
-    return 0;
+void func_1515FB94(u8 *arg0, s32 arg1) {
+    func_1505D024(arg0, 0x6002D, *(u16 *) (arg0 + 0x7A), -1);
 }
 
 s32 func_1515FBC4() {

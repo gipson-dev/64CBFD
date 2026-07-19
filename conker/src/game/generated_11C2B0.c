@@ -2,6 +2,10 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/11C2B0.s. */
 
+void func_150F0318();
+void func_150F0380();
+void func_150F03E8();
+
 void func_150F02A0(u8 *arg0);
 
 s32 func_150EEE00() {
@@ -70,12 +74,14 @@ void func_150F02A0(u8 *arg0) {
     *(s32 *)(*(u8 **)(temp_v0 + 8) + (*(u8 *)(temp_v0 + 0xC) * 4) + 0x12C) = 0;
 }
 
-s32 func_150F02C0() {
-    return 0;
+s32 func_150F02C0(s32 arg0) {
+    func_150F0318(arg0);
+    func_1514933C(arg0);
 }
 
-s32 func_150F02EC() {
-    return 0;
+s32 func_150F02EC(s32 arg0) {
+    func_150F0318(arg0);
+    func_15149368(arg0);
 }
 
 void func_150F0318(u8 *arg0) {
@@ -85,12 +91,14 @@ void func_150F0318(u8 *arg0) {
     *(s32 *)(temp_v0 + 0x134) = 0;
 }
 
-s32 func_150F0328() {
-    return 0;
+s32 func_150F0328(s32 arg0) {
+    func_150F0380(arg0);
+    func_151411A4(arg0);
 }
 
-s32 func_150F0354() {
-    return 0;
+s32 func_150F0354(s32 arg0) {
+    func_150F0380(arg0);
+    func_151411C4(arg0);
 }
 
 void func_150F0380(u8 *arg0) {
@@ -100,12 +108,14 @@ void func_150F0380(u8 *arg0) {
     *(s32 *)(temp_v0 + 0x138) = 0;
 }
 
-s32 func_150F0390() {
-    return 0;
+s32 func_150F0390(s32 arg0) {
+    func_150F03E8(arg0);
+    func_151617C4(arg0);
 }
 
-s32 func_150F03BC() {
-    return 0;
+s32 func_150F03BC(s32 arg0) {
+    func_150F03E8(arg0);
+    func_151617E4(arg0);
 }
 
 void func_150F03E8(u8 *arg0) {

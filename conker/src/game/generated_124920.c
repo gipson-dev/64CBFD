@@ -14,8 +14,8 @@ s32 func_150F7E20() {
     return 0;
 }
 
-s32 func_150F7F58() {
-    return 0;
+void func_150F7F58(u8 *arg0, s16 arg1) {
+    func_15140410(arg0, arg0 + 0x110, arg0 + 0x11C, arg1);
 }
 
 s32 func_150F7F8C() {
@@ -53,12 +53,14 @@ s32 func_150F9720() {
 void func_150F9788(s32 arg0) {
 }
 
-s32 func_150F9794() {
-    return 0;
+s32 func_150F9794(s32 arg0) {
+    func_150F9788(arg0);
+    func_1514933C(arg0);
 }
 
-s32 func_150F97C0() {
-    return 0;
+s32 func_150F97C0(s32 arg0) {
+    func_150F9788(arg0);
+    func_15149368(arg0);
 }
 
 s32 func_150F97EC() {

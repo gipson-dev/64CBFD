@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/49D30.s. */
 
+extern u8 D_800C3CA0[];
+
 extern u8 D_800C3510[];
 extern u8 D_800C354A[];
 
@@ -209,8 +211,8 @@ s32 func_15023264() {
     return 0;
 }
 
-s32 func_150233BC() {
-    return 0;
+void func_150233BC(void) {
+    bzero(D_800C3CA0, 0xA8);
 }
 
 s32 func_150233E4() {

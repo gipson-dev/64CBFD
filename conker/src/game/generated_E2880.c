@@ -16,12 +16,14 @@ void func_150B57C4(s32 arg0) {
     func_151D2B4C(6);
 }
 
-s32 func_150B57E8() {
-    return 0;
+s32 func_150B57E8(s32 arg0) {
+    func_150B57C4(arg0);
+    func_1514933C(arg0);
 }
 
-s32 func_150B5814() {
-    return 0;
+s32 func_150B5814(s32 arg0) {
+    func_150B57C4(arg0);
+    func_15149368(arg0);
 }
 
 s32 func_150B5840() {

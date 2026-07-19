@@ -3,6 +3,7 @@
 /* Non-matching placeholders for the text-only asm slice asm/12C1E0.s. */
 
 s32 func_1503195C();
+extern f32 D_800A211C;
 
 s32 func_150FED30() {
     return 0;

@@ -8,7 +8,7 @@ your own legally obtained copy of the game to build it.
 
 ## Current progress
 
-Snapshot as of 2026-07-18 after the 99% total C, 72% init byte-exact, and 31% total byte-exact milestones. Functions converted from raw assembly to C
+Snapshot as of 2026-07-18 after the 99% total C, 72% init byte-exact, and 36% total byte-exact milestones. Functions converted from raw assembly to C
 (`make -C conker progress NON_MATCHING=1`):
 
 | Section | Progress bytes | Functions |
@@ -23,9 +23,9 @@ exact retail bytes (`make -C conker match-progress NON_MATCHING=1`):
 
 | Section | Byte-exact | Blocked on address drift | Still differ |
 | --- | --- | --- | --- |
-| total | `[########----------------]` 1908 / 5973 (31.94%) | 0 | 4065 |
+| total | `[#########---------------]` 2154 / 5973 (36.06%) | 0 | 3819 |
 | init | `[#################-------]` 367 / 508 (72.24%) | 0 | 141 |
-| game | `[######------------------]` 1375 / 5284 (26.02%) | 0 | 3909 |
+| game | `[#######-----------------]` 1621 / 5284 (30.68%) | 0 | 3663 |
 | debugger | `[######################--]` 166 / 181 (91.71%) | 0 | 15 |
 
 The debugger overlay's long-standing rodata displacement healed on
@@ -73,8 +73,8 @@ shapes. A game-focused pass then matched ten more functions, including four
 larger 35-45-word routines, without giving back any existing match. A fast
 generated-slice sweep then matched 45 more compact game routines spanning
 wrappers, state setters, accessors, flag updates, and global resets. The
-verified result is now 367 / 508 init functions (72.24%), 1375 / 5284 game
-functions (26.02%), and 1908 / 5973 overall (31.94%).
+verified result is now 367 / 508 init functions (72.24%), 1621 / 5284 game
+functions (30.68%), and 2154 / 5973 overall (36.06%).
 The first matching pass over those generated slices recovered 40 small
 retail functions exactly. The current layout-preservation pass then crossed
 the 50% byte-exact milestone by retaining every compiled instruction and

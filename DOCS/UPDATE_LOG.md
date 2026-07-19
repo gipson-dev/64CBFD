@@ -10,6 +10,20 @@ make -C conker progress
 
 ## 2026-07-18
 
+### Fast byte-matching sweep passed 35% overall
+
+- Matched 246 additional game functions across generated slices, emphasizing
+  repeated two-call wrappers, field setters, callback dispatchers, compact
+  predicates, argument-forwarding helpers, and fixed-point/float leaves.
+- Restored retail IDO schedules with exact argument widths, explicit temporary
+  loads, direct boolean expressions, name-implied retail globals, and repeated
+  wrapper templates; rejected experiments that exceeded their retail spans.
+- Added the missing external routine symbol at `0x140111C8`, allowing two
+  retail handle-release wrappers to link and be measured normally.
+- Verified **1621 / 5284 game functions (30.68%)** and **2154 / 5973 overall
+  (36.06%)**, with **0** address-drift blockers. Raw C conversion remains
+  **5973 / 6033 functions (99.01%)**.
+
 ### Fast generated game sweep reached 26.02%
 
 - Matched 45 additional compact game functions across generated slices,

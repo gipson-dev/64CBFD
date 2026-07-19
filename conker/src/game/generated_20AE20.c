@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/20AE20.s. */
 
+extern s16 D_800E0B9A;
+extern u8 D_800E0B94;
+
 extern s8 D_8008FDC8;
 extern s32 D_8008FDD8;
 extern u8 D_800E0A8C;
@@ -136,8 +139,10 @@ void func_151E4DC4() {
     D_800E0B94 = 10;
 }
 
-s32 func_151E4DD8() {
-    return 0;
+void func_151E4DD8() {
+    if (D_800E0B9A & 0x8020) {
+        D_800E0B94 = 4;
+    }
 }
 
 s32 func_151E4E00() {

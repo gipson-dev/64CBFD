@@ -42,12 +42,16 @@ s32 func_15189118() {
     return 0;
 }
 
-s32 func_151895A4() {
-    return 0;
+s32 func_151895A4(u8 *arg0) {
+    u8 *temp_a2 = arg0;
+
+    func_100043B4(*(s32 *)(temp_a2 + 8), 2);
 }
 
-s32 func_151895CC() {
-    return 0;
+s32 func_151895CC(u8 *arg0) {
+    u8 *temp_a2 = arg0;
+
+    func_100043B4(*(s32 *)(temp_a2 + 8), 2);
 }
 
 s32 func_151895F4() {

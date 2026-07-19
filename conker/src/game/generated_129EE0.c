@@ -40,10 +40,12 @@ s32 func_150FDC2C() {
     return 0;
 }
 
-s32 func_150FDCAC() {
-    return 0;
+s32 func_150FDCAC(s32 arg0) {
+    func_150FDC2C(arg0);
+    func_1513CA6C(arg0);
 }
 
-s32 func_150FDCD8() {
-    return 0;
+s32 func_150FDCD8(s32 arg0) {
+    func_150FDC2C(arg0);
+    func_1513CAA0(arg0);
 }

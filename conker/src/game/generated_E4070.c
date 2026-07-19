@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/E4070.s. */
 
+extern u8 D_800D9890;
+s32 func_150B76BC();
+
 s32 func_150B6BC0() {
     return 0;
 }
@@ -50,12 +53,14 @@ s32 func_150B7560() {
     return 0;
 }
 
-s32 func_150B765C() {
-    return 0;
+s32 func_150B765C(void) {
+    func_150B76BC(0x3C, 1);
+    D_800D9890 = 3;
 }
 
-s32 func_150B768C() {
-    return 0;
+s32 func_150B768C(void) {
+    func_150B76BC(0xE6, 2);
+    D_800D9890 = 3;
 }
 
 s32 func_150B76BC() {
