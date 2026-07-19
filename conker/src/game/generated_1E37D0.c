@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern void (*D_8008FB98[])();
 
 /* Non-matching placeholders for the text-only asm slice asm/1E37D0.s. */
 
@@ -50,8 +51,12 @@ s32 func_151B7C38() {
     return 0;
 }
 
-s32 func_151B82CC() {
-    return 0;
+void func_151B82CC(u8 *arg0, s32 arg1, u8 arg2) {
+    void (*temp_v1)() = D_8008FB98[*(*(u8 **) (arg0 + 0x98) + 8)];
+
+    if (temp_v1 != 0) {
+        temp_v1();
+    }
 }
 
 s32 func_151B8318() {

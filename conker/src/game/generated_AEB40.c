@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern u16 D_800BE598[];
+extern u8 D_800BE590;
 extern u8 D_800CC2D0[];
 
 /* Non-matching placeholders for the text-only asm slice asm/AEB40.s. */
@@ -79,8 +81,13 @@ s32 func_15083E90() {
     return 0;
 }
 
-s32 func_15083FB0() {
-    return 0;
+s32 func_15083FB0(u8 arg0) {
+    s32 temp_v0 = func_15083E90(arg0);
+
+    if (temp_v0 != 0) {
+        return (temp_v0 - (s32) D_800CC2D0) / 0x32C;
+    }
+    return -1;
 }
 
 s32 func_15084000(void) {
@@ -133,6 +140,22 @@ s32 func_15084C30() {
     return 0;
 }
 
-s32 func_15084CB0() {
-    return 0;
+s32 func_15084CB0(s32 arg0) {
+    s32 count = D_800BE590;
+    s32 found = 0;
+    s32 i = 0;
+
+    if (count > 0) {
+        u16 *ptr = D_800BE598;
+
+        do {
+            if (arg0 == *ptr) {
+                found = i;
+                break;
+            }
+            i += 1;
+            ptr += 1;
+        } while (i < count);
+    }
+    return found;
 }

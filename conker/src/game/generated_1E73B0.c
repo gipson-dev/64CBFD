@@ -229,8 +229,19 @@ s32 func_151BECB8() {
     return 0;
 }
 
-s32 func_151BEE94() {
-    return 0;
+s32 func_151BEE94(u8 *arg0) {
+    s32 temp_v0 = 0xFF;
+
+    if (temp_v0 == *(arg0 + 0x127)) {
+        return 0;
+    }
+    if (*(s32 *) arg0 == 0) {
+        return 0;
+    }
+    if (temp_v0 == *(arg0 + 4)) {
+        return 0;
+    }
+    return 1;
 }
 
 s32 func_151BEEE0() {

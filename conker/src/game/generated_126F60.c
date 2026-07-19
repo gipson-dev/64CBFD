@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 *D_800D3098;
 
 /* Non-matching placeholders for the text-only asm slice asm/126F60.s. */
 
@@ -36,12 +37,18 @@ void func_150FACE4(u8 *arg0, u8 arg1, u8 arg2) {
     }
 }
 
-s32 func_150FAD28() {
-    return 0;
+void func_150FAD28(void) {
+    func_1515F170(8, 0);
+    func_1515F170(0xB, 1);
+    func_151494E0(D_800D3098 + 0x514, 0x30);
+    func_151494E0(0, 0x4D);
 }
 
-s32 func_150FAD78() {
-    return 0;
+void func_150FAD78(void) {
+    func_1515F170(8, 1);
+    func_1515F170(7, 0);
+    func_151494E0(D_800D3098 + 0x514, 0x31);
+    func_151494E0(0, 0x4C);
 }
 
 s32 func_150FADC8() {

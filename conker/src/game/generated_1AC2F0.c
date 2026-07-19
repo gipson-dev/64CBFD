@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern u16 D_800DDE10[];
+extern u8 D_800DDD9C[];
+extern u8 D_800DDD90[];
 extern s32 D_800BE9E4;
 extern u8 D_800DDD8C;
 extern u8 D_800DDD8B;
@@ -55,8 +58,14 @@ void func_1517F448(s32 arg0) {
     }
 }
 
-s32 func_1517F488() {
-    return 0;
+void func_1517F488(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
+    u8 *ptr = D_800DDD90 + arg5 * 3;
+
+    ptr[0] = arg0;
+    ptr[1] = arg1;
+    ptr[2] = arg2;
+    D_800DDD9C[arg5] = arg3;
+    D_800DDE10[arg5] = arg4;
 }
 
 s32 func_1517F4D8() {

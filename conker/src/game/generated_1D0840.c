@@ -110,8 +110,8 @@ void func_151A55D4(u8 *arg0, s32 arg1, u8 arg2) {
 }
 
 void func_151A561C(s32 arg0, u8 arg1) {
-    OneWord1D0840 tmp;
+    s32 tmp[1];
 
-    tmp = *(OneWord1D0840 *) D_800A8D70;
-    func_15169260(&tmp, 1, arg0, arg1);
+    tmp[0] = *(s32 *) D_800A8D70;
+    func_15169260(tmp, 1, arg0, arg1);
 }

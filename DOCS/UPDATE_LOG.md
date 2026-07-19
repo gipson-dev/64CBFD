@@ -8,6 +8,29 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-07-19
+
+### Byte-exact matching crossed 40% overall
+
+- Matched roughly 230 more game functions by reconstructing small
+  generated-slice placeholders directly against retail instructions, focusing
+  on repeated families: typed argument-forwarding wrappers, predicates,
+  stack-local event records, jump-table dispatchers, linked-list walkers,
+  clamped-store helpers, and float accumulate/scale routines.
+- Root-caused a large class of mismatches to missing local prototypes in
+  generated slices (implicit declarations reload narrow arguments from home
+  slots instead of masking in place) and fixed whole families by adding
+  per-file prototypes.
+- Identified per-slice retail compile profiles: two slices build with plain
+  `-O2` (filled jr-delay slots) and four need `-Wo,-loopunroll,0`; recorded the
+  overrides in `conker/Makefile`.
+- Corrected two wrong callee identities (`func_100111C8` vs a stale
+  `func_140111C8` symbol, and `memcpy`/`bzero`/`allocate_memory`/Pi-access
+  libultra callees referenced by name-implied placeholder ids).
+- Verified **1860 / 5284 game functions (35.20%)** and **2393 / 5973 overall
+  (40.06%)** byte-exact, with one address-drift blocker and no regressions in
+  init or debugger sections.
+
 ## 2026-07-18
 
 ### Documentation topics consolidated

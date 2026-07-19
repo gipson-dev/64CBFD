@@ -6,8 +6,8 @@ s32 func_151580B0() {
     return 0;
 }
 
-s32 func_151581D8() {
-    return 0;
+void func_151581D8(s32 arg0, u8 arg1, s32 arg2, u8 arg3, s32 arg4) {
+    func_151580B0(arg0, 0, 0, arg1, arg2, arg3, arg4);
 }
 
 s32 func_15158224() {

@@ -15,7 +15,7 @@ The codebase is nearly fully represented in C, but byte matching is a separate
 measurement. "Converted" means a function has C source; "byte-exact" means the
 compiled instructions match the retail game exactly.
 
-Snapshot verified on 2026-07-18:
+Snapshot verified on 2026-07-19:
 
 | Section | Converted functions | Converted bytes |
 | --- | ---: | ---: |
@@ -26,12 +26,12 @@ Snapshot verified on 2026-07-18:
 
 | Section | Byte-exact | Still different |
 | --- | ---: | ---: |
-| Total | `[#########---------------]` 2,255 / 5,973 (37.75%) | 3,718 |
+| Total | `[##########--------------]` 2,393 / 5,973 (40.06%) | 3,579 |
 | Init | `[#################-------]` 367 / 508 (72.24%) | 141 |
-| Game | `[########----------------]` 1,722 / 5,284 (32.59%) | 3,562 |
+| Game | `[########----------------]` 1,860 / 5,284 (35.20%) | 3,423 |
 | Debugger | `[######################--]` 166 / 181 (91.71%) | 15 |
 
-There are currently no functions blocked only by address drift. Regenerate the
+One game function is currently blocked only by address drift. Regenerate the
 measurements with:
 
 ```sh

@@ -63,8 +63,10 @@ s32 func_151C43E0() {
     return 0;
 }
 
-s32 func_151C4510() {
-    return 0;
+void func_151C4510(u8 *arg0, f32 *arg1, f32 arg2) {
+    *(f32 *) (arg0 + 0x34) = *(f32 *) (arg0 + 0x34) + arg1[1] * arg2;
+    *(f32 *) (arg0 + 0x38) = *(f32 *) (arg0 + 0x38) + arg1[2] * arg2;
+    *(f32 *) (arg0 + 0x3C) = *(f32 *) (arg0 + 0x3C) + arg1[3] * arg2;
 }
 
 s32 func_151C455C() {

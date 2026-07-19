@@ -186,7 +186,7 @@ Progress is reported in two different ways:
 - **Converted:** the function has C source instead of raw assembly.
 - **Byte-exact:** the compiled function instructions match the retail ROM.
 
-Snapshot verified on 2026-07-18 with:
+Snapshot verified on 2026-07-19 with:
 
 ```sh
 make -C conker progress NON_MATCHING=1
@@ -210,9 +210,9 @@ hardware CP0 operations that are not ordinary C conversion targets.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#########---------------]` 2,167 / 5,973 (36.28%) | 0 | 3,806 |
+| Total | `[##########--------------]` 2,393 / 5,973 (40.06%) | 1 | 3,579 |
 | Init | `[#################-------]` 367 / 508 (72.24%) | 0 | 141 |
-| Game | `[#######-----------------]` 1,634 / 5,284 (30.92%) | 0 | 3,650 |
+| Game | `[########----------------]` 1,860 / 5,284 (35.20%) | 1 | 3,423 |
 | Debugger | `[######################--]` 166 / 181 (91.71%) | 0 | 15 |
 
 `match-progress` compares linked functions by symbol against pristine retail

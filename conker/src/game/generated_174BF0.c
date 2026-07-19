@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern void (*D_8008A340[])();
+extern void (*D_8008A2F0[])();
 extern void (*D_8008A390[])();
 
 /* Non-matching placeholders for the text-only asm slice asm/174BF0.s. */
@@ -32,12 +34,26 @@ s32 func_1514795C() {
     return 0;
 }
 
-s32 func_151479E0() {
-    return 0;
+void func_151479E0(u8 *arg0) {
+    s32 idx = *(s32 *) (arg0 + 0x20);
+
+    if (idx < 0) {
+        idx = 0;
+    } else if (idx >= 0x14) {
+        idx = 0;
+    }
+    D_8008A2F0[idx]();
 }
 
-s32 func_15147A30() {
-    return 0;
+void func_15147A30(u8 *arg0) {
+    s32 idx = *(s32 *) (arg0 + 0x20);
+
+    if (idx < 0) {
+        idx = 0;
+    } else if (idx >= 0x14) {
+        idx = 0;
+    }
+    D_8008A340[idx]();
 }
 
 s32 func_15147A80() {

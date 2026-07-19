@@ -80,8 +80,21 @@ s32 func_151C1798() {
     return 0;
 }
 
-s32 func_151C1814() {
-    return 0;
+void func_151C1814(u8 *arg0, s32 *arg1, u8 arg2) {
+    u8 *temp_v0 = arg0 + 0x170;
+
+    if (arg2 == 0x2D) {
+        s32 temp_v1 = arg1[0];
+        s32 temp_a2 = *(s32 *) (temp_v0 + 0x6C);
+
+        if (temp_v1 == temp_a2) {
+            *(s32 *) (temp_v0 + 0x6C) = arg1[1];
+            return;
+        }
+        if (temp_a2 == arg1[1]) {
+            *(s32 *) (temp_v0 + 0x6C) = temp_v1;
+        }
+    }
 }
 
 s32 func_151C1860() {

@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern void (*D_800899D4[])();
+extern void (*D_800899B0[])();
 void func_15169260(s32, s32, s32, u8);
 extern u8 D_800A3860[];
 typedef struct { s32 a, b; } TwoWord15F680;
@@ -12,12 +14,16 @@ s32 func_151321D0() {
     return 0;
 }
 
-s32 func_151323AC() {
-    return 0;
+s32 func_151323AC(u8 *arg0) {
+    s32 idx = (*(u32 *) (arg0 + 0x60) & 0x100) ? *(arg0 + 0x68) : 0;
+
+    D_800899B0[idx]();
 }
 
-s32 func_151323F8() {
-    return 0;
+s32 func_151323F8(u8 *arg0) {
+    s32 idx = (*(u32 *) (arg0 + 0x60) & 0x100) ? *(arg0 + 0x68) : 0;
+
+    D_800899D4[idx]();
 }
 
 s32 func_15132444() {

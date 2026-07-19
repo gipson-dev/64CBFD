@@ -1,4 +1,8 @@
 #include <ultra64.h>
+extern u8 *D_800D23C0;
+extern u32 D_80087380;
+extern s16 D_80087290;
+extern u8 *D_800D2350;
 extern u8 *D_8008FDD4;
 extern s8 D_8008FD90;
 extern u8 *D_800872A0;
@@ -36,16 +40,35 @@ s32 func_15086BD0() {
     return 0;
 }
 
-s32 func_15086C70() {
-    return 0;
+void func_15086C70(arg0)
+s32 arg0;
+{
+    u8 *temp_v0 = (u8 *) ((s32) D_800D2350 + arg0 * 16);
+    s32 temp_v1 = *(s16 *) (temp_v0 + 4);
+
+    func_150A3194(3, 0xB, *(s16 *) temp_v0, *(s16 *) (temp_v0 + 2), temp_v1);
 }
 
 s32 func_15086CBC() {
     return 0;
 }
 
-s32 func_15086D48() {
-    return 0;
+s32 func_15086D48(s32 arg0) {
+    s32 temp_v0 = *(s16 *) &D_80087290;
+    s32 i = 0;
+
+    if (temp_v0 > 0) {
+        u8 *ptr = D_800D2350;
+
+        do {
+            if (arg0 == *(ptr + 7)) {
+                return i;
+            }
+            i += 1;
+            ptr += 0x10;
+        } while (i < temp_v0);
+    }
+    return 0xFF;
 }
 
 s32 func_15086D94() {
@@ -321,8 +344,14 @@ s32 func_1508ECC0() {
     return 0;
 }
 
-s32 func_1508EDBC() {
-    return 0;
+void func_1508EDBC(u32 arg0) {
+    if (arg0 < D_80087380) {
+        s32 off = arg0 * 24;
+
+        *(u16 *) (D_800D23C0 + off + 2) = 0;
+        *(u32 *) (D_800D23C0 + off + 4) = 0;
+        *(u16 *) (D_800D23C0 + off) = 0;
+    }
 }
 
 s32 func_1508EE0C() {

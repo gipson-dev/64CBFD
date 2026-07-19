@@ -51,6 +51,12 @@ s32 func_150DE2A4(u8 *arg0) {
     return 1;
 }
 
-s32 func_150DE2C4() {
-    return 0;
+void func_150DE2C4(u8 *arg0) {
+    *(s16 *) (arg0 + 0x34) = *(s16 *) (arg0 + 0x34) - 0x1A;
+    *(s16 *) (arg0 + 0x36) = *(s16 *) (arg0 + 0x36) - 0x1A;
+    if (*(s16 *) (arg0 + 0x34) < 0xA) {
+        *(s16 *) (arg0 + 0x38) = 0;
+    } else if (*(s16 *) (arg0 + 0x36) < 0xA) {
+        *(s16 *) (arg0 + 0x38) = 0;
+    }
 }

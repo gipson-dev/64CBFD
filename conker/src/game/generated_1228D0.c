@@ -50,8 +50,13 @@ s32 func_150F6178() {
     return 0;
 }
 
-s32 func_150F631C() {
-    return 0;
+void func_150F631C(u8 *arg0) {
+    if (*(u32 *) (arg0 + 0x30) != 0) {
+        func_1516972C(*(u32 *) (arg0 + 0x30));
+    }
+    if (*(u32 *) (arg0 + 0x34) != 0) {
+        func_1516972C(*(u32 *) (arg0 + 0x34));
+    }
 }
 
 s32 func_150F6368(s32 arg0) {

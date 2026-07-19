@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern u8 D_800C35E8;
+extern u8 D_800C35EA;
 extern s32 (*D_8008ADA8)();
 
 /* Non-matching placeholders for the text-only asm slice asm/F21D0.s. */
@@ -15,7 +17,14 @@ s32 func_150C522C() {
     return 0;
 }
 
-s32 func_150C5280() {
+s32 func_150C5280(void) {
+    if (D_800C35EA == 1) {
+        u8 temp_v0 = D_800C35E8;
+
+        if ((temp_v0 == 0xB) || (temp_v0 == 0xC) || (temp_v0 == 0xD)) {
+            return 1;
+        }
+    }
     return 0;
 }
 

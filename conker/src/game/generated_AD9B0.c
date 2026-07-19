@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 D_800BE580[];
 extern u8 D_800D1941;
 
 /* Non-matching placeholders for the text-only asm slice asm/AD9B0.s. */
@@ -20,7 +21,16 @@ void func_15080718(register s32 arg0, s32 *arg1, s32 *arg2) {
     *arg1 = arg0 >> 3;
 }
 
-s32 func_15080738() {
+s32 func_15080738(arg0)
+s32 arg0;
+{
+    s32 spA;
+    s32 spB;
+
+    func_15080718(arg0, &spA, &spB);
+    if (D_800BE580[spA] & spB) {
+        return 1;
+    }
     return 0;
 }
 

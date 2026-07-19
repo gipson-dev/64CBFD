@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 D_8009D910[];
 
 /* Non-matching placeholders for the text-only asm slice asm/AB760.s. */
 
@@ -43,7 +44,16 @@ s32 func_1507E968() {
 void func_1507E9E8(s32 arg0, s32 arg1) {
 }
 
-s32 func_1507E9F8() {
+u8 *func_1507E9F8(u8 *arg0, s32 *arg1) {
+    if (func_150849A0(arg0) == 0) {
+        if (arg1 != 0) {
+            *arg1 = 5;
+        }
+        return D_8009D910;
+    }
+    if (arg1 != 0) {
+        *arg1 = 0;
+    }
     return 0;
 }
 

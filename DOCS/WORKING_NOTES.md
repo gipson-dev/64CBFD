@@ -35,14 +35,47 @@ page and leave only the historical record here.
 
 ## Current focus
 
-No active recovery item. The latest completed task consolidated the root README
-and documentation by subject, added the contributor guide, and separated this
-file's active recovery area from archived snapshots. The verified byte-matching
-baseline remains total `2167 / 5973 (36.28%)`, game
-`1634 / 5284 (30.92%)`, init `367 / 508 (72.24%)`, debugger
-`166 / 181 (91.71%)`, with zero blockers.
+No active recovery item. The latest session pushed total byte-exact matching
+past the 40% milestone. The verified baseline is total `2393 / 5973 (40.06%)`,
+game `1860 / 5284 (35.20%)`, init `367 / 508 (72.24%)`, debugger
+`166 / 181 (91.71%)`, with one address-drift blocker (`func_1509E6F0`, waiting
+on `func_151F2CDC` placement).
 
 ## Archived focus snapshots
+
+**Update (2026-07-19, total byte-exact matching crossed 40%).**
+Matched roughly 230 more game functions (2167 -> 2393 exact) by reconstructing
+small generated-slice placeholders against retail bytes. New durable findings:
+
+- **Missing local prototypes were the top mismatch cause.** Generated slices do
+  not include `functions.h`, so calls were implicit and narrow (`u8`/`u16`)
+  arguments were reloaded from home slots instead of masked with `andi`. Adding
+  per-file prototypes (or typing the placeholder definitions) fixed whole
+  wrapper families at once.
+- **Two retail compile profiles exist inside the game section.** Most slices
+  match `-O2 -g3` (no jr-delay fill), but `generated_21D420`/`generated_21C4F0`
+  need plain `-O2` (filled delay slots, different scheduling), and several
+  slices (`E4070`, `49D30`, `B3020`, `3FC60`) need `-Wo,-loopunroll,0`.
+  Overrides live in `conker/Makefile`; `tools`-side probing compared both
+  profiles per file with relocations wildcarded.
+- **Recurring source shapes:** dead-parameter locals reproduce retail's
+  argument-register allocation (`func_150DA484` family); predicates compile as
+  preset-else-value plus inverse branch, so then/else order must match retail;
+  ternary conditional indexes reproduce `b`+delay table dispatch
+  (`func_1513177C` family); event records are local structs, with a one-word
+  `s32 tmp[1]` element copy matching but multi-word `$at` block copies only
+  matching through struct assignment when the destination is a pointer;
+  `do { p++; } while (*p)`-style rotation matches `bnel` walkers; manual
+  4x-unrolled byte clears reproduce retail's `memset` loops.
+- Parked near-misses (1-2 diffs each): `multu`/`addu`/`mul.s` operand order
+  where the named operand must come first (`func_15158AFC`, `func_1519187C`,
+  `func_150BB450`, `func_1518F15C`, `func_15144A74`), the `&rec` spill in the
+  two-call record family (`func_1507FF94`, `func_1519072C`), and lui-`$at`
+  paired stores over TU-local data (`func_151E81EC`, `func_15080200`,
+  `func_1519582C`) which cannot be reproduced with extern declarations.
+- `tools/`-side helpers used this session live in the session scratchpad
+  (`dump_retail.py`, `cmp_func.py`, `probe_flags.py`); consider promoting a
+  retail-disassembly dumper into `tools/` for future sessions.
 
 The entries below are retained for recovery and historical context. Their
 counts and hypotheses may be obsolete; consult the subject pages above for

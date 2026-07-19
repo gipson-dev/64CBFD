@@ -44,11 +44,30 @@ void func_1516D2E0(u8 *arg0) {
     }
 }
 
-s32 func_1516D328() {
-    return 0;
+void func_1516D328(u8 *arg0) {
+    u8 *temp_v0;
+
+    if (arg0 != 0) {
+        if (*arg0 == 0x51) {
+            temp_v0 = *(u8 **) (arg0 + 0x10);
+            *(u32 *) temp_v0 |= 0x100;
+            temp_v0 = *(u8 **) (arg0 + 0x10);
+            *(u32 *) temp_v0 &= ~0x400;
+            *(arg0 + 0x20) = *(*(u8 **) (arg0 + 0x10) + 8);
+        }
+    }
 }
 
-s32 func_1516D378() {
+u8 *func_1516D378(u8 *arg0) {
+    u8 *temp_v1;
+
+    if ((arg0 != 0) && (*arg0 == 0x51)) {
+        temp_v1 = *(u8 **) (arg0 + 0x10);
+        *(u32 *) temp_v1 |= 0x100;
+        temp_v1 = *(u8 **) (arg0 + 0x10);
+        *(u32 *) temp_v1 &= ~0x400;
+        return arg0;
+    }
     return 0;
 }
 

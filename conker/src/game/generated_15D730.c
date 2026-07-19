@@ -1,4 +1,9 @@
 #include <ultra64.h>
+void func_15169260(s32, s32, s32, u8);
+extern u8 D_800A37F0[];
+typedef struct { s32 a, b, c; } ThreeWord15D730;
+extern void (*D_80089844[])();
+extern void (*D_80089814[])();
 extern s32 D_800BE9E4;
 
 /* Non-matching placeholders for the text-only asm slice asm/15D730.s. */
@@ -71,12 +76,16 @@ void func_1513175C() {
     func_15169824();
 }
 
-s32 func_1513177C() {
-    return 0;
+s32 func_1513177C(u8 *arg0) {
+    s32 idx = (*(u32 *) (arg0 + 0x68) & 0x4000) ? *(arg0 + 0x75) : 0;
+
+    D_80089814[idx]();
 }
 
-s32 func_151317C8() {
-    return 0;
+s32 func_151317C8(u8 *arg0) {
+    s32 idx = (*(u32 *) (arg0 + 0x68) & 0x4000) ? *(arg0 + 0x75) : 0;
+
+    D_80089844[idx]();
 }
 
 s32 func_15131814(s32 arg0, s32 arg1) {
@@ -131,8 +140,13 @@ s32 func_15131C84() {
     return 0;
 }
 
-s32 func_15131D4C() {
-    return 0;
+void func_15131D4C(s32 arg0, u8 arg1) {
+    s32 tmp[3];
+
+    tmp[0] = *(s32 *) D_800A37F0;
+    tmp[1] = *(s32 *) (D_800A37F0 + 4);
+    tmp[2] = *(s32 *) (D_800A37F0 + 8);
+    func_15169260(tmp, 3, arg0, arg1);
 }
 
 s32 func_15131D9C() {

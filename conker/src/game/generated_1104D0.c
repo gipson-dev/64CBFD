@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern f32 D_800BE9A4;
 
 /* Non-matching placeholders for the text-only asm slice asm/1104D0.s. */
 
@@ -56,6 +57,8 @@ s32 func_150E411C() {
     return 0;
 }
 
-s32 func_150E4174() {
-    return 0;
+s32 func_150E4174(u8 *arg0) {
+    *(f32 *) (arg0 + 0x2C) = *(f32 *) (arg0 + 0x4C) * D_800BE9A4 + *(f32 *) (arg0 + 0x2C);
+    *(f32 *) (arg0 + 0x30) = *(f32 *) (arg0 + 0x54) * D_800BE9A4 + *(f32 *) (arg0 + 0x30);
+    return 1;
 }

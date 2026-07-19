@@ -1,4 +1,8 @@
 #include <ultra64.h>
+void func_15145740(s32, f32 *, f32 *, s32, f32);
+extern f32 D_800A0B44;
+extern f32 D_800A0B40;
+extern u8 D_800BE616;
 
 /* Non-matching placeholders for the text-only asm slice asm/105FC0.s. */
 
@@ -12,8 +16,10 @@ void func_150D8B10(f32 *arg0, f32 *arg1) {
     arg1[2] = arg0[7];
 }
 
-s32 func_150D8B3C() {
-    return 0;
+void func_150D8B3C(s32 arg0, s32 arg1) {
+    f32 spA[3];
+    f32 spB[3];
+    func_15145740(arg0, spA, spB, arg1, (D_800BE616 != 0) ? D_800A0B40 : D_800A0B44);
 }
 
 s32 func_150D8B88() {

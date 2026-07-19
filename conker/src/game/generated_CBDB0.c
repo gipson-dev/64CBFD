@@ -38,8 +38,8 @@ s32 func_1509F4E8() {
     return 0;
 }
 
-s32 func_1509F5A8() {
-    return 0;
+void func_1509F5A8(s32 arg0, s32 arg1, u16 arg2) {
+    func_10010F30(func_1000F568(arg0, (u8) (arg1 - arg0 + 1)), arg2, 0x40, 0, 0);
 }
 
 s32 func_1509F5F4() {
