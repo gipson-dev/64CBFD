@@ -51,3 +51,12 @@ rom backup/
 
 tools/decomp-permuter
 tools/gfxdis
+
+# graphify (knowledge-graph tooling & output — kept out of the repo)
+
+graphify-out/
+.graphifyignore
+.claude/skills/graphify/
+.claude/settings.json
+.claude/CLAUDE.md
+/CLAUDE.md
