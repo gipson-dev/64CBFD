@@ -24,7 +24,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"openai.chatgpt"
+				"openai.chatgpt",
+				"Ollama.ollama"
 			]
 		}
 	},

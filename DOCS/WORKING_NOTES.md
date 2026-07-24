@@ -35,11 +35,211 @@ page and leave only the historical record here.
 
 ## Current focus
 
-No active recovery item. The latest session pushed total byte-exact matching
-past the 40% milestone. The verified baseline is total `2393 / 5973 (40.06%)`,
-game `1860 / 5284 (35.20%)`, init `367 / 508 (72.24%)`, debugger
-`166 / 181 (91.71%)`, with one address-drift blocker (`func_1509E6F0`, waiting
-on `func_151F2CDC` placement).
+Verified baseline after this session: total `2423 / 5973 (40.57%)`, game
+`1890 / 5284 (35.77%)`, init `367 / 508 (72.24%)`, debugger
+`166 / 181 (91.71%)`, one address-drift blocker (`func_1509E6F0`, still
+waiting on `func_151F2CDC` - see the bulk-conversion note below, it did not
+clear this time either).
+
+**Update (2026-07-24, func_151150BC decompiled, signature confirmed).** See
+the workflow entry above this one for the func_151150BC / func_150C7930 /
+func_150C78E0 investigation. Net: +1 exact function (func_151150BC only);
+baseline moved 2396->2397 / 1863->1864 before the batch below.
+
+**Update (2026-07-24, bulk stub-conversion batch, +26 exact, partial run -
+hit account spend limit mid-way).** Scanned the whole codebase for small
+(<=150 byte retail size) functions that were still raw `return 0;`/empty
+placeholders and clustered densely by file (a much better lever than chasing
+individual near-miss diffs one at a time). Selected 26 files with >=6 such
+candidates each (229 functions total) and ran one conversion pass per file
+(mips_to_c decompile + hand-verification + implement + build/link/diff-check
+each function individually). **The run hit the account's monthly spend limit
+partway through** - all 26 per-file agents (plus the final-verify agent)
+errored out with no returned report, but since they edit the real checkout
+directly (not a sandbox), whatever each agent had done up to that point was
+already on disk. 14 of the 26 files had received real edits before the cutoff
+(`generated_142560`, `generated_18A8F0`, `generated_1C1150`, `generated_1C2C60`,
+`generated_1E73B0`, `generated_1ED0F0`, `generated_204660`, `generated_20AE20`,
+`generated_5D2C0`, `generated_AEB40`, `generated_B3020`, `generated_CBDB0`,
+`generated_FC5F0`, `game_21FC90`); the other 12 (`generated_15D730`,
+`generated_179F30`, `generated_1AC2F0`, `generated_1D4E00`, `generated_1D6E80`,
+`generated_185560`, `generated_1BA1D0`, `generated_1CC440`, `generated_49D30`,
+`generated_71820`, `generated_1F4650`, `generated_13D350`) never got touched at
+all and still have their original raw stubs - worth resuming there first next
+time, not re-scanning from scratch.
+
+Recovery needed after the failure (do this class of check *every time* a
+batch job dies mid-way, before trusting anything it reports):
+- A full rebuild immediately failed with `pad_generated_object.py` "compiled
+  func_X is 0x?? bytes but its retail span is only 0x??" errors - several
+  functions were mid-iteration (a genuinely-correct-looking body that just
+  hadn't been trimmed to fit yet) when the agent got cut off. Found and fixed
+  by rebuilding each touched file in a loop, reverting whichever specific
+  function the error named back to a minimal stub (return 0/empty/0.0f
+  matching its declared return type), and repeating until each file's object
+  built clean. This surfaced **more than one** oversized function per file in
+  several cases (`generated_1C2C60`, `generated_20AE20`, `generated_5D2C0`,
+  `generated_AEB40`, `generated_CBDB0` each had 3-4) - `make` only reports the
+  first span violation per file per attempt, so checking once per file is not
+  enough; loop until a file is genuinely clean.
+- After every file's object built individually, the **full link** still
+  failed separately with `undefined reference to '.rodata'` for three
+  functions (`func_150829D8` in `generated_AEB40`, `func_15194320` and
+  `func_15194394` in `generated_1C1150`, and later `func_15194794` in the same
+  file once the first two were reverted - link errors only surface one at a
+  time as each gets fixed, so re-run the full link repeatedly until it's
+  clean, don't stop after the first fix). **Root cause: `switch` statements
+  in these "generated slice" files compile to a jump table placed in
+  `.rodata`, which these standalone per-function-padded objects have no real
+  rodata segment to resolve against.** Do not write a C `switch` in any
+  `generated_*.c` file in this codebase - rewrite as an if/else-if chain
+  instead, or the link will fail. Reverted all three to stubs rather than
+  rewrite, given the batch's time budget was already spent. This is a durable
+  rule worth moving to CONTRIBUTING.md's compiler-sensitive patterns list.
+- One function, `func_1515F040` in `generated_18A8F0.c`, had genuinely
+  correct-looking retail-matching logic (a two-stage float clamp,
+  hand-verified against `asm/18A8F0.s` instruction-by-instruction) but
+  compiled 1 word (4 bytes) larger than its retail span no matter how the
+  if/else was restructured (`if/else` nested, flipped to `if/else-if`,
+  literal-vs-variable comparison operand - all three produced the identical
+  28-word body; retail is 27). The extra word is a scheduling artifact (a
+  `nop` filling a floating-point-compare hazard slot that retail's compile
+  filled with a real, reorderable instruction instead) - not something the
+  three C-shape variants tried here could influence. Reverted to a stub;
+  flagging as a real IDO-scheduling puzzle for next time rather than a
+  quick fix.
+- After all of the above, independently re-verified (not just trusting any
+  self-report) with a full clean `make -j NON_MATCHING=1` + full
+  `match_progress.py` run: **26 of the 229 targeted functions are confirmed
+  byte-exact** (`func_151F2BE8`, `func_151F2C4C`, `func_151F2CDC`,
+  `func_1509F47C`, `func_150CFD20`, `func_150D00C0`, `func_1519CD64`,
+  `func_15033F0C`, `func_15085DA8`, `func_1508EB90`, `func_15088824`,
+  `func_15086CBC`, `func_1515F270`, `func_1515EF74`, `func_15081E0C`,
+  `func_15194A68`, `func_15194E54`, `func_15194B94`, `func_151949F4`,
+  `func_15194B1C`, `func_151BD79C`, `func_151BC074`, `func_151C05A4`,
+  `func_151C05F0`, `func_151C0644`, `func_151C02E4`). The other 203 targeted
+  functions are back to their original raw stub (safe, buildable, honestly
+  not-yet-converted) - this is a normal, accepted state in this codebase, not
+  a regression. `func_151F2CDC` (one of the targets) is the function
+  `func_1509E6F0`'s address-drift blocker was waiting on; it is now itself
+  byte-exact, but the blocker is still open (address drift-immune per-function
+  check confirms `func_151F2CDC`'s bytes are correct, but *where* it currently
+  links to still differs from its retail-implied address by `0x98` - some
+  other, still-unmatched function upstream of it is still oversized/undersized
+  relative to retail and shifting everything after it; not chased further
+  this session).
+- Verification commands used: `make -j$(nproc) NON_MATCHING=1` (full, clean),
+  `python3 tools/match_progress.py conker/progress.csv
+  conker/build/conker.us.elf conker/conker.us.bin --version us --objdump
+  mips-linux-gnu-objdump` (with and without `--list`), `git diff --check`,
+  `git status --short`.
+- Lesson for next time running many parallel subagents against a real (not
+  sandboxed) checkout: **always re-verify with a full clean build + full
+  match-progress run before trusting *any* multi-agent batch's self-report**,
+  especially if the run errors out instead of completing normally - partial,
+  mid-iteration edits can be sitting on disk that look plausible but don't
+  compile or don't link, and the failure mode (spend limit, timeout, etc.)
+  gives zero warning about which files got how far.
+function to exact.
+
+**Update (2026-07-24, `game_45B80.c` continuation, no new exact rows).**
+
+- `func_15019464`: retail's target `.s` combines `D_800BEAC0 != 0 ||
+  D_80084480 != 0` into one branch in the C source we had, but
+  `m2c.py --context ctx.c` (regenerate with `python3 tools/ctx.py
+  src/game_45B80.c`, see [CONTRIBUTING.md](CONTRIBUTING.md)) decompiles it as
+  **two** separate `if` returns. Splitting the combined `||` into
+  `if (D_800BEAC0 != 0) return temp_s0; if (D_80084480 != 0) return temp_s0;`
+  dropped the real-diff count `66 -> 54` (still not exact) - kept as the new
+  baseline source. The second combined condition later in the same function
+  (`func_1517EFAC(arg1) || (D_800D18A0 & (1 << arg1))`) decompiles as a single
+  OR in `m2c.py` too, so it was left alone. Remaining 54-word mismatch is a
+  register-allocation shape: retail keeps **two** values live across every
+  `jal` in callee-saved regs (`s0` = the `Gfx *arg0` pointer, never
+  incremented until after both viewport-word stores; `s1` = a sign-extended
+  copy of `arg1`, re-extended via `sll`/`sra` from `s1` at every call site
+  even though it is already clean), while our build only promotes `arg1` to a
+  saved register (`s0`) and stack-spills `arg0` (`sw a0,48(sp)` /
+  `lw a0,48(sp)` around the `func_1510B958` call) instead of giving it a
+  second saved register. Tried and reverted: an explicit `Gfx *ptr = arg0;`
+  local alone (66 -> 77, worse), and explicit locals for **both** `arg0` and
+  `arg1` together (`s32 sp18 = arg1; Gfx *sp1C = arg0;`, 66 -> 71, still worse
+  than the 54 baseline). No source shape found yet that gives `arg0` a second
+  saved register the way retail's compile did.
+- `func_15019BB8`: already-committed source is `7 real diffs`, all traced to
+  one root cause - our frame is `0x38` (56) bytes, retail's is `0x30` (48),
+  and the 8-byte gap flips one `addu` pair's temp registers (`t7`/`t8`
+  swapped) in the `D_800BE628 + (arg1 * 0x180) + ...` viewport-address calc
+  (identical expression to `func_15019464`'s, which does not show this
+  swap). Tried and reverted: introducing a named `s32 temp_v1 = 1 << arg1;`
+  local for the reused `1 << arg1` subexpression (made it worse, 56 -> 64,
+  i.e. **each** extra declared local at `-O2 -g3` appears to cost another
+  full 8-byte reserved stack chunk in this function, whether or not the
+  local is ever actually spilled - no store to the new slot was emitted);
+  and removing the `s32 temp_v0` intermediate entirely in favor of
+  reassigning `arg0` directly through the call chain (no change: still
+  56 bytes, still 7 real diffs, just a 4-byte-shifted internal offset for
+  the `sp2A` slot). Root cause not found; do not keep repeating the same two
+  experiments.
+- New puzzle worth flagging for whoever picks this up:
+  `game/generated_F4D20.c`'s `func_150C7930` and `func_150C78E0` both call
+  `func_151150BC(arg0, temp_v0 + 0x1E0)` (temp_v0 = `D_800DBEF4`) in our
+  source, but retail's disassembly computes `temp_v0 + 0x1E0` **directly
+  into `v0`** (`addiu v0,v0,480`) and never moves it to `a1` before the
+  `jal` - confirmed byte-for-byte against `conker.us.bin` directly (not just
+  the linked ELF), so it is not a layout-drift artifact. Either
+  `func_151150BC` genuinely takes only one argument (`arg0`) and this
+  pointer is dead-looking on the caller side (needs `func_151150BC`'s own
+  body, currently an unconverted `s32 func_151150BC() { return 0; }` stub in
+  `game/generated_142560.c`, decompiled first to settle its real
+  signature), or there is a still-undiscovered second explanation. Do not
+  spend more time guessing at the call site without decompiling the callee
+  first.
+- Tried (again) three of the prior session's already-**parked** 1-2-diff
+  rows from the note below (`func_150AF2E0`, `func_151061EC`,
+  `func_15144A74`) with fresh operand-order rewrites; all reproduced the
+  same parked outcome (no textual reorder changes the emitted operand
+  order, or makes it worse). Confirms these need the callee's real
+  signature/type info, not more source-shape guessing - do not retry blind
+  swaps on the parked list again.
+- Verification: `make -C conker -j NON_MATCHING=1` (full project, clean),
+  `python3 tools/match_progress.py conker/progress.csv
+  conker/build/conker.us.elf conker/conker.us.bin --version us --objdump
+  mips-linux-gnu-objdump`, `git diff --check`.
+
+**Update (2026-07-24, func_151150BC decompiled, signature confirmed).**
+
+- `func_151150BC`'s real signature is confirmed: **one argument**
+  (`void func_151150BC(s32 arg0)`, return value unused), matching the
+  callee-body proof that `$a1` is never read anywhere in retail's
+  disassembly. It is now byte-exact (no longer appears in
+  `match_progress.py --list`; `diff_func.py` shows zero `**` lines against
+  `conker.us.bin`). Body is angle-wrap logic: `delta = ((s32
+  *)(arg0+0x3C) >> 16) * D_800BE9E4` converted to float and scaled by
+  1/256, stored at `arg0+0x68`, accumulated into `arg0+0x8`, then a
+  single-pass 0-360 wrap (subtract/add 360 once, no loop).
+- Its two callers in `game/generated_F4D20.c` were updated to the
+  confirmed one-argument call (`func_151150BC(arg0)`, dropping the
+  disproven `temp_v0 + 0x1E0` second argument), but neither reached
+  byte-exact: `func_150C7930` is `7 real diffs` (14 words), `func_150C78E0`
+  is `15 real diffs` (20 words). Root cause isolated: retail computes
+  `temp_v0 + 0x1E0` into `v0` and then genuinely discards it with zero
+  further instructions - every C shape tried to reproduce that (plain
+  unused local, discarded expression-statement, self-reassignment,
+  `register`-qualified local, comma-operator discard, folding into the
+  next load address) gets fully dead-code-eliminated by this IDO 5.3
+  build, while every shape that survives DCE (address-taken local,
+  one-element array) also emits a genuine stack store retail's span does
+  not have. Left as an open, unresolved puzzle - the callee's signature is
+  now settled, but the caller-side dead-expression-materialization is not
+  yet reproducible in source. Do not spend more time guessing at these two
+  call sites without a new idea beyond the list above.
+- New verified baseline (unchanged build/verify commands above): total
+  `2397 / 5973 (40.13%)`, game `1864 / 5284 (35.28%)`, init
+  `367 / 508 (72.24%)`, debugger `166 / 181 (91.71%)`, still the same one
+  address-drift blocker (`func_1509E6F0`) - a net +1 exact function
+  (`func_151150BC` itself; both callers remain non-exact) vs. this
+  session's prior 40.11%/35.26% snapshot.
 
 ## Archived focus snapshots
 

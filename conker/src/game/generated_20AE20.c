@@ -33,8 +33,37 @@ extern u8 D_800E0B94;
 extern u8 D_800E0BD3;
 extern s32 D_800E0BD4;
 
-s32 func_151DD970() {
-    return 0;
+extern u8 D_800D2E40;
+extern u8 D_8008FDA4;
+extern u8 D_800BEAC1;
+extern s16 D_8008FDCC;
+extern s32 D_800BE9E4;
+extern s32 D_800E0A88;
+extern s8 D_800E0BE9;
+extern u8 *D_8008FDD4;
+extern u8 D_8008FE54;
+extern u8 D_8008FE55;
+extern u8 D_8008FE56;
+extern u8 D_8008FE57;
+extern u8 D_8008FE6B;
+extern u8 D_800E0BE0;
+extern u8 D_800E0BE1;
+extern u8 D_800E0BE2;
+extern u8 D_800E0BE3;
+
+void func_151E557C(void);
+s32 func_151E55A8();
+
+void func_151DD970(void) {
+    u8 *src = &D_8008FE54;
+    u8 *dst = &D_800E0BE0;
+    s32 i;
+
+    for (i = 23; i > 0; i--) {
+        *dst = *src;
+        dst++;
+        src++;
+    }
 }
 
 s32 func_151DD9E4() {
@@ -295,8 +324,6 @@ s32 func_151E7F60() {
     return 0;
 }
 
-/* Retail pairs lui- stores across TU-local data symbols; not
-   reproducible with extern declarations, so keep a placeholder. */
 s32 func_151E81EC() {
     return 0;
 }

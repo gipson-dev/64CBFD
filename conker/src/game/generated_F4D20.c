@@ -12,7 +12,7 @@ void func_150C78E0(u8 *arg0) {
         u8 *temp_v0 = D_800DBEF4;
 
         *(u32 *) (arg0 + 0x3C) = -(s32) (*(u32 *) (temp_v0 + 0x21C) & 0xFFFF0000) & 0xFFFF0000;
-        func_151150BC(arg0, temp_v0 + 0x1E0);
+        func_151150BC(arg0);
     }
 }
 
@@ -20,7 +20,7 @@ void func_150C7930(u8 *arg0) {
     u8 *temp_v0 = D_800DBEF4;
 
     *(u32 *) (arg0 + 0x3C) = *(u32 *) (temp_v0 + 0x21C) & 0xFFFF0000;
-    func_151150BC(arg0, temp_v0 + 0x1E0);
+    func_151150BC(arg0);
 }
 
 s32 func_150C7968() {

@@ -6,15 +6,37 @@
 /* Generated placeholder declarations. */
 s32 func_1501878C();
 s32 func_15019130();
-s32 func_15019464();
 s32 func_150195A0();
 s32 func_150198FC();
-s32 func_15019BB8();
 s32 func_15019CC8();
 s32 func_15019F20();
 /* End generated placeholder declarations. */
 
 void* func_151674F8(void *arg0, s32 arg1, s16 arg2, s32 arg3);
+
+/* Helper declarations not present in functions.h. */
+s32  func_1510FEA0(s32 arg0, s32 arg1);
+s32  func_1517F4D8(s32 arg0, s32 arg1);
+s32  func_1517F3A0(s32 arg0, s32 arg1);
+s32  func_15180580(s32 arg0, s32 arg1);
+s32  func_1507DB6C(s32 arg0, s32 arg1);
+s32  func_1510B7B4(s32 arg0, s32 arg1);
+s32  func_151135C4(s32 arg0, s32 arg1, s16 arg2);
+s32  func_151D6778(s32 arg0);
+s32  func_15186794(s32 arg0, s32 arg1);
+s32  func_1502BAD0(s32 arg0, s32 arg1, s16 arg2);
+s32  func_15035FE8(s32 arg0, s32 arg1);
+s32  func_15188D00(s32 arg0, s32 arg1, s16 arg2);
+s32  func_151D5E90(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+s32  func_151D61B0(s32 arg0);
+s32  func_1501A680(s32 arg0);
+s32  func_1517E28C(s32 arg0, s32 arg1);
+s32  func_15172F70(s32 arg0);
+s32  func_15181EE0(s32 arg0);
+s32  func_1517F564(s32 arg0);
+s32  func_1508FD38(s32 arg0);
+s32  func_15096934(s32 arg0);
+s32  func_150A019C(void);
 
 
 void func_150186D0(void) {
@@ -126,33 +148,28 @@ void func_15019414(void) {
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019464.s. */
-s32 func_15019464() {
-    return 0;
+s32 func_15019464(Gfx *arg0, s16 arg1) {
+    s32 temp_s0;
+
+    func_1510B958(arg1);
+    gSPViewport(arg0++, (D_800BE628 + (arg1 * 0x180) + (D_800BE9C0 * 0x10) + 0x40));
+    temp_s0 = func_1501A490(arg0, arg1, 0, 0, 0, 0);
+    if (D_800BEAC0 != 0) {
+        return temp_s0;
+    }
+    if (D_80084480 != 0) {
+        return temp_s0;
+    }
+
+    temp_s0 = func_1510FEA0(temp_s0, D_800BE9F0);
+    if ((func_1517EFAC(arg1) != 0) || ((D_800D18A0 & (1 << arg1)) != 0)) {
+        return temp_s0;
+    }
+
+    temp_s0 = func_1515D6D0(temp_s0, arg1);
+    temp_s0 = func_1510B9D0(temp_s0, arg1);
+    return temp_s0;
 }
-// NON-MATCHING: 70% of the way there... maybe.
-// s32 func_15019464(Gfx *arg0, s16 arg1) {
-//     s32 temp_s0;
-//     s32 ret;
-//
-//     func_1510B958(arg1);
-//     gSPViewport(arg0++, (D_800BE628 + (arg1 * 0x180) + (D_800BE9C0 * 0x10) + 0x40));
-//     // arg0->unk0 = 0xDC080008;
-//     // arg0->unk4 = (s32) (D_800BE628 + (temp_t6 * 0x180) + (D_800BE9C0 * 0x10) + 0x40);
-//     temp_s0 = func_1501A490(arg0, arg1, 0, 0, 0, 0);
-//     if ((D_800BEAC0 != 0) || (D_80084480 != 0)) {
-//         return temp_s0;
-//     }
-//
-//     temp_s0 = func_1510FEA0(temp_s0, D_800BE9F0);
-//     if ((func_1517EFAC(arg1) != 0) || ((D_800D18A0 & (1 << arg1)) != 0)){
-//         return temp_s0;
-//     }
-//
-//     temp_s0 = func_1515D6D0(temp_s0, arg1);
-//     temp_s0 = func_1510B9D0(temp_s0, arg1);
-//     return temp_s0;
-//
-// }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_150195A0.s. */
 s32 func_150195A0() {
@@ -165,30 +182,22 @@ s32 func_150198FC() {
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019BB8.s. */
-s32 func_15019BB8() {
-    return 0;
+void func_15019BB8(Gfx *arg0, s32 arg1) {
+    s32 temp_v0;
+    s16 sp2A;
+
+    sp2A = arg1;
+    gSPViewport(arg0++, (D_800BE628 + (arg1 * 0x180) + (D_800BE9C0 * 0x10) + 0x40));
+    temp_v0 = func_1501A490(arg0, sp2A, 0, 0, 0, 0);
+    temp_v0 = func_1517F4D8(temp_v0, arg1);
+    temp_v0 = func_1517F3A0(temp_v0, arg1);
+    temp_v0 = func_15180580(temp_v0, arg1);
+    if (((D_800D18A0 & (1 << arg1)) != 0) || ((D_800D18A2 & (1 << arg1)) != 0)) {
+        temp_v0 = func_1507DB6C(temp_v0, arg1);
+    }
+    temp_v0 = func_151674F8((void *)temp_v0, 4, sp2A, 0);
+    func_151674F8((void *)temp_v0, 4, sp2A, 1);
 }
-// NON-MATCHING: need to figure out what is going on
-// void func_15019BB8(struct14 *arg0, s32 arg1) {
-//     s32 temp_v0;
-//     s32 sp2A;
-//     s16 sp28;
-//
-//     arg0->unk0 = 0xDC080008;
-//     arg0->unk4 = &D_800BE628[arg1].unk40[D_800BE9C0];
-//     sp28 = arg1;
-//
-//     temp_v0 = func_1501A490(&arg0->unk8, &sp28, 0, 0, 0, 0);
-//     temp_v0 = func_1517F4D8(temp_v0, arg1);
-//     temp_v0 = func_1517F3A0(temp_v0, arg1);
-//     temp_v0 = func_15180580(temp_v0, arg1);
-//     // temp_v1 = 1 << arg1;
-//     if (((D_800D18A0 & (1 << arg1)) != 0) || ( ((D_800D18A2 & (1 << arg1)) != 0))) {
-//         temp_v0 = func_1507DB6C(temp_v0, arg1);
-//     }
-//     temp_v0 = func_151674F8(temp_v0, 4, sp2A, 0);
-//     func_151674F8(temp_v0, 4, sp2A, 1);
-// }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019CC8.s. */
 s32 func_15019CC8() {

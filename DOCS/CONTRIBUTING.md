@@ -143,6 +143,16 @@ Use the correct `D_XXXXXXXX` symbol instead of a literal pointer. The matcher
 resolves those names at their retail VRAM addresses and can distinguish a
 source mismatch from linked address drift.
 
+### No `switch` in generated-slice files
+
+Do not write a C `switch` statement in any `generated_*.c` file. IDO compiles
+a multi-case `switch` to a jump table placed in `.rodata`; these files build
+as standalone per-function objects padded to their retail span with no real
+rodata segment behind them, so the link fails with `undefined reference to
+'.rodata'` (the padding/compile step succeeds - this only surfaces at the full
+link, so it's easy to miss until the whole project is relinked). Rewrite as an
+if/else-if chain instead.
+
 ## Avoid false wins
 
 - A successful compile does not prove a match.

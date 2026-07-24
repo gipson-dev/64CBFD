@@ -1,5 +1,7 @@
 #include <ultra64.h>
 
+extern s32 D_800BE9E4;
+
 /* Non-matching placeholders for the text-only asm slice asm/142560.s. */
 
 s32 func_151169B4();
@@ -13,8 +15,19 @@ s32 func_151189AC();
 void func_151150B0(s32 arg0) {
 }
 
-s32 func_151150BC() {
-    return 0;
+void func_151150BC(u8 *arg0) {
+    f32 temp;
+
+    *(f32 *) (arg0 + 0x68) = (f32)((*(s32 *) (arg0 + 0x3C) >> 16) * D_800BE9E4) * 0.00390625f;
+    *(f32 *) (arg0 + 0x8) = *(volatile f32 *) (arg0 + 0x68) + *(f32 *) (arg0 + 0x8);
+    temp = *(volatile f32 *) (arg0 + 0x8);
+    if (temp < 0.0f) {
+        *(f32 *) (arg0 + 0x8) = temp + 360.0f;
+        return;
+    }
+    if (temp >= 360.0f) {
+        *(f32 *) (arg0 + 0x8) = temp - 360.0f;
+    }
 }
 
 s32 func_1511515C() {

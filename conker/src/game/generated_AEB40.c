@@ -2,6 +2,13 @@
 extern u16 D_800BE598[];
 extern u8 D_800BE590;
 extern u8 D_800CC2D0[];
+extern u8 D_800BE616;
+extern s32 D_800BE9F0;
+extern u8 D_800D2100;
+extern u8 D_800D2101;
+extern s32 func_1507DF10();
+extern s32 func_150ADA20();
+s32 func_150843AC();
 
 /* Non-matching placeholders for the text-only asm slice asm/AEB40.s. */
 
@@ -13,8 +20,16 @@ s32 func_15081C20() {
     return 0;
 }
 
-s32 func_15081E0C() {
-    return 0;
+s32 func_15081E0C(u8 *arg0, u16 arg1, u8 arg2) {
+    if (D_800BE616 != 0) {
+        return;
+    }
+    if (arg0[0x1CA] != 0) {
+        arg0[0x1CA] = 7;
+    }
+    if ((arg2 == 0) || (arg1 != 0xA)) {
+        func_1507DF10(arg0, arg1);
+    }
 }
 
 s32 func_15081E78() {
@@ -25,11 +40,11 @@ s32 func_150825C0() {
     return 0;
 }
 
-s32 func_1508295C() {
+s32 func_1508295C(s32 arg0, u8 *arg1, s32 arg2) {
     return 0;
 }
 
-s32 func_150829D8() {
+s32 func_150829D8(u8 *arg0) {
     return 0;
 }
 
@@ -103,7 +118,7 @@ s32 func_15084044() {
     return 0;
 }
 
-s32 func_1508434C() {
+s32 func_1508434C(u8 *arg0) {
     return 0;
 }
 
@@ -128,7 +143,7 @@ s32 func_150849A0(u8 *arg0) {
     return **(u8 **) (arg0 + 0x2C4);
 }
 
-s32 func_150849CC() {
+s32 func_150849CC(u8 *arg0, s32 *arg1) {
     return 0;
 }
 
@@ -136,7 +151,7 @@ s32 func_15084A18() {
     return 0;
 }
 
-s32 func_15084C30() {
+s32 func_15084C30(u8 *arg0) {
     return 0;
 }
 

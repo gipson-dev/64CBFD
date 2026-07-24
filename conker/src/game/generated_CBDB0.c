@@ -14,8 +14,11 @@ s32 func_1509EFF0() {
     return 0;
 }
 
-s32 func_1509F248() {
-    return 0;
+s32 func_1509F248(s32 arg0, u8 *arg1) {
+    if (arg0 != 0) {
+        func_100111C8((*(s32 *) (arg1 + 0x0) & 0xFFFF0000) >> 16);
+    }
+    return 1;
 }
 
 s32 func_1509F284() {
@@ -30,8 +33,9 @@ s32 func_1509F354() {
     return 0;
 }
 
-s32 func_1509F47C() {
-    return 0;
+s32 func_1509F47C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s16 arg4, s32 arg5) {
+    s32 temp_v0 = func_151149AC((u8) arg3);
+    return func_15114D24(temp_v0, func_1000F568(arg0, (u8) (arg1 - arg0 + 1)), arg2, arg4, arg5, 0);
 }
 
 s32 func_1509F4E8() {
@@ -42,23 +46,21 @@ void func_1509F5A8(s32 arg0, s32 arg1, u16 arg2) {
     func_10010F30(func_1000F568(arg0, (u8) (arg1 - arg0 + 1)), arg2, 0x40, 0, 0);
 }
 
-s32 func_1509F5F4() {
-    return 0;
+void func_1509F5F4(u16 arg0, s32 arg1, s32 arg2, s16 arg3, s32 arg4, s32 arg5) {
 }
 
-s32 func_1509F660() {
-    return 0;
+void func_1509F660(s32 arg0, s32 arg1) {
 }
 
 void func_1509F6B0(s32 arg0, u16 arg1, s16 arg2, u8 arg3) {
     func_10010F30(arg0, arg1, arg3, arg2, 0);
 }
 
-s32 func_1509F6E8() {
+s32 func_1509F6E8(s32 arg0, s32 arg1, u16 arg2, s32 arg3, s32 arg4) {
     return 0;
 }
 
-s32 func_1509F77C() {
+s32 func_1509F77C(u16 arg0, s32 arg1, s16 arg2, s32 arg3, s32 arg4) {
     return 0;
 }
 
