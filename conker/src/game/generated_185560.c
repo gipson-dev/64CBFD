@@ -1,5 +1,16 @@
 #include <ultra64.h>
 
+typedef struct {
+    u8 pad0[0x14];
+    s16 timer;
+    u8 pad16[0x25];
+    u8 value;
+    u8 pad3C[0xBC];
+    s16 limit;
+    u8 padFA[2];
+    u32 scale;
+} Generated185560Record;
+
 /* Non-matching placeholders for the text-only asm slice asm/185560.s. */
 
 s32 func_151580B0() {
@@ -45,13 +56,14 @@ s32 func_15158AD0(s32 arg0) {
 }
 
 s32 func_15158AFC(u8 *arg0) {
-    s32 temp_v0 = *(s16 *) (arg0 + 0x14);
+    Generated185560Record *self = (void *) arg0;
+    s32 temp_v0 = self->timer;
 
-    if (temp_v0 < *(s16 *) (arg0 + 0xF8)) {
-        s32 temp_v1 = *(u32 *) (arg0 + 0xFC) * temp_v0;
+    if (temp_v0 < self->limit) {
+        s32 temp_v1 = temp_v0 * self->scale;
 
-        if (temp_v1 < *(arg0 + 0x3B)) {
-            *(arg0 + 0x3B) = temp_v1;
+        if (temp_v1 < self->value) {
+            self->value = temp_v1;
         }
     }
     return 1;

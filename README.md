@@ -26,13 +26,13 @@ Snapshot verified on 2026-07-25:
 
 | Section | Byte-exact | Still different |
 | --- | ---: | ---: |
-| Total | `[##########--------------]` 2,474 / 5,973 (41.42%) | 3,498 |
+| Total | `[##########--------------]` 2,482 / 5,973 (41.55%) | 3,491 |
 | Init | `[#################-------]` 370 / 508 (72.83%) | 138 |
-| Game | `[#########---------------]` 1,938 / 5,284 (36.68%) | 3,345 |
+| Game | `[#########---------------]` 1,946 / 5,284 (36.83%) | 3,338 |
 | Debugger | `[######################--]` 166 / 181 (91.71%) | 15 |
 
-One game function is currently blocked only by address drift. Regenerate the
-measurements with:
+No function in this stable progress corpus is currently blocked only by
+address drift. Regenerate the measurements with:
 
 ```sh
 make -C conker progress NON_MATCHING=1

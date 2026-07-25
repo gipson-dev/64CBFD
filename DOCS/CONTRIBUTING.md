@@ -177,12 +177,32 @@ types and symbol aliases while still using the completed decomp as evidence.
 
 If one function inside a larger translation unit needs a different compiler
 profile, isolate it as its own extraction subsegment and object instead of
-changing the shared override. Batch 3's `func_151F27E0` requires Banjo's
-`-O1` profile while the following audio code requires `-g`; splitting at the
-retail boundary preserves both profiles. Record the split in the tracked
-version YAML, keep the objects in retail order, then run a fresh extraction,
-full rebuild, and neighbor scan so generated linker-script layout and nearby
-exact functions are both verified.
+changing the shared override. The controller address and data CRCs,
+`func_151F27E0` and `func_151F2890`, require Banjo's `-O1` profile while the
+following audio code requires `-g`; splitting at both retail boundaries
+preserves the profiles. Restoring a complete omitted span can also repair
+linked call targets outside the edited object, so count direct matches and
+address-drift repairs separately. Record every split in the tracked version
+YAML, keep the objects in retail order, then run a fresh extraction, full
+rebuild, and neighbor scan so generated linker-script layout and nearby exact
+functions are both verified.
+
+### Recover record types before forcing operand order
+
+Raw byte-pointer arithmetic can be behaviorally correct while hiding the
+source structure IDO used for register allocation. If several offsets clearly
+belong to one object, define a minimal record with padding and fields at the
+verified offsets, cast the incoming pointer once, and express array indexing
+or field access through that type.
+
+This fixed a family where reversing multiplication operands, adding
+temporaries, using compound assignment, and adding volatile qualifiers could
+each change one instruction but not preserve the required result register.
+Typed timer, limit, scale, value, matrix-array, and float fields reproduced
+both `multu`/`mul.s` operand order and destination registers. Check every
+field offset and the record stride against retail before relying on this
+technique; a convenient but incorrect layout can still compile plausible
+code.
 
 ### Stack-local records
 

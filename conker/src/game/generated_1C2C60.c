@@ -1,5 +1,19 @@
 #include <ultra64.h>
 
+typedef struct {
+    u8 pad0[0x1C];
+    s16 timer;
+    u8 pad1E[0xE];
+    f32 value2C;
+    f32 value30;
+    u8 pad34[0x28];
+    u8 value5C;
+    u8 pad5D[0x107];
+    f32 factor;
+    s16 limit;
+    s16 scale;
+} Generated1C2C60Record;
+
 /* Non-matching placeholders for the text-only asm slice asm/1C2C60.s. */
 
 s32 func_1519CDB0(s32 arg0, f32 arg1, s32 arg2);
@@ -167,15 +181,16 @@ s32 func_15197AB4() {
 }
 
 s32 func_15197BBC(u8 *arg0) {
-    f32 temp_f0 = *(f32 *) (arg0 + 0x30);
-    f32 temp_f2 = *(f32 *) (arg0 + 0x164);
-    f32 temp_f12 = *(f32 *) (arg0 + 0x2C);
-    s16 temp_v0 = *(s16 *) (arg0 + 0x1C);
+    Generated1C2C60Record *self = (void *) arg0;
+    f32 temp_f0 = self->value30;
+    f32 temp_f2 = self->factor;
+    f32 temp_f12 = self->value2C;
+    s16 temp_v0 = self->timer;
 
-    *(f32 *) (arg0 + 0x30) = temp_f0 - temp_f0 * temp_f2;
-    *(f32 *) (arg0 + 0x2C) = temp_f12 - temp_f12 * temp_f2;
-    if (temp_v0 < *(s16 *) (arg0 + 0x168)) {
-        *(u8 *) (arg0 + 0x5C) = (u8) (temp_v0 * *(s16 *) (arg0 + 0x16A));
+    self->value30 = temp_f0 - temp_f0 * temp_f2;
+    self->value2C = temp_f12 - temp_f12 * temp_f2;
+    if (temp_v0 < self->limit) {
+        self->value5C = temp_v0 * (u32) self->scale;
     }
     return 1;
 }

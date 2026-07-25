@@ -5,6 +5,27 @@ typedef struct { s32 a, b, c; } ThreeWord1BA1D0;
 void func_15169260(s32, s32, s32, u8);
 extern u8 D_800A74D4[];
 typedef struct { s32 val; } OneWord1BA1D0;
+typedef struct {
+    u8 pad0[0x1C];
+    s16 timer;
+    u8 pad1E[0x3E];
+    u8 value;
+    u8 pad5D[0xC7];
+    s16 limit;
+    s16 scale;
+} Generated1BA1D0Record;
+typedef struct {
+    u8 pad0[0x1C];
+    s16 timer;
+    u8 pad1E[0x12];
+    f32 value30;
+    u8 pad34[0x28];
+    u8 value5C;
+    u8 pad5D[0xF7];
+    f32 factor;
+    s16 limit;
+    s16 scale;
+} Generated1BA1D0Record154;
 
 /* Non-matching placeholders for the text-only asm slice asm/1BA1D0.s. */
 
@@ -95,11 +116,12 @@ s32 func_1518F108() {
 }
 
 s32 func_1518F15C(u8 *arg0) {
-    s32 temp_v0 = *(s16 *) (arg0 + 0x1C);
+    Generated1BA1D0Record154 *self = (void *) arg0;
+    s32 temp_v0 = self->timer;
 
-    *(f32 *) (arg0 + 0x30) = *(f32 *) (arg0 + 0x30) - *(f32 *) (arg0 + 0x30) * *(f32 *) (arg0 + 0x154);
-    if (temp_v0 < *(s16 *) (arg0 + 0x158)) {
-        *(arg0 + 0x5C) = (u32) *(s16 *) (arg0 + 0x15A) * temp_v0;
+    self->value30 = self->value30 - self->value30 * self->factor;
+    if (temp_v0 < self->limit) {
+        self->value5C = temp_v0 * (u32) self->scale;
     }
     return 1;
 }
@@ -307,13 +329,14 @@ s32 func_15191520() {
 }
 
 s32 func_1519187C(u8 *arg0) {
-    s32 temp_v0 = *(s16 *) (arg0 + 0x1C);
+    Generated1BA1D0Record *self = (void *) arg0;
+    s32 temp_v0 = self->timer;
 
-    if (temp_v0 < *(s16 *) (arg0 + 0x124)) {
-        s32 temp_v1 = (u32) *(s16 *) (arg0 + 0x126) * temp_v0;
+    if (temp_v0 < self->limit) {
+        s32 temp_v1 = temp_v0 * (u32) self->scale;
 
-        if (temp_v1 < *(arg0 + 0x5C)) {
-            *(arg0 + 0x5C) = temp_v1;
+        if (temp_v1 < self->value) {
+            self->value = temp_v1;
         }
     }
     return 1;

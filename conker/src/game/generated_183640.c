@@ -82,9 +82,12 @@ s32 func_15157420() {
 }
 
 s32 func_15157860(u8 *arg0) {
-    u8 *ptr = arg0;
+    struct {
+        u8 pad[0x7C];
+        f32 matrices[1][4][4];
+    } *ptr = (void *) arg0;
 
-    guMtxIdentF(ptr + (D_800BE9C0 << 6) + 0x7C);
+    guMtxIdentF(ptr->matrices[D_800BE9C0]);
     return 1;
 }
 

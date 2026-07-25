@@ -35,26 +35,35 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-07-25, reuse every applicable Banjo-Kazooie decomp
-finding).** Batches 1 through 3 in
-[`TEMP_BANJO_CROSSPORT_TODO.md`](TEMP_BANJO_CROSSPORT_TODO.md) are complete.
-Batch 3 made all 14 duplicated PFS SDK routines and `func_151F27E0`
-byte-exact. The immediate next step is a broader audit of Banjo functions
-whose structure, signatures, constants, or compiler profiles can improve
-Conker even when the retail bodies are not identical.
+**Active (2026-07-25, regular byte matching after the Banjo sweep).** Six
+small-diff game functions are newly byte-exact: `func_15157860`,
+`func_15158AFC`, `func_150BB450`, `func_1519187C`, `func_15197BBC`, and
+`func_1518F15C`.
 
-The PFS routines reused Conker's exact primary SDK source under Banjo's
-confirmed `-O1` profile. `func_151F27E0` reused Banjo's
-`__osContAddressCrc`, also under `-O1`; it was split out of the surrounding
-`-g` audio translation unit through the tracked extraction config so both
-profiles remain reproducible after a fresh extraction. All 15 targets and the
-checked neighboring exact functions survived the full rebuild and linked
-scan.
+All six were type-recovery fixes. Raw byte-pointer arithmetic and offset
+casts expressed the right behavior, but IDO chose the wrong operand or result
+register. Minimal record layouts with fields at the verified offsets made
+the compiler see matrix-array indexing, timer/limit/scale fields, and float
+state directly; this reproduced the retail integer and floating-point
+instruction order without compiler-specific hacks.
 
-Verified baseline after the full extraction, normal rebuild, and retail-ROM
-scan: total `2474 / 5973 (41.42%)`, game `1938 / 5284 (36.68%)`, init
-`370 / 508 (72.83%)`, debugger `166 / 181 (91.71%)`, with the same one
-address-drift blocker.
+Tried and reverted while isolating the pattern: reversing multiplication
+source operands, compound assignment, an optimized-away `^ 0`, volatile
+field loads, explicit address temporaries, and comparison-order swaps.
+Compound assignment corrected `multu` operand order but changed the `mflo`
+destination; raw expression reordering was otherwise canonicalized away.
+For this family, recover the record type instead of repeating those source
+shapes.
+
+Verified stable baseline after a full relink and retail-ROM regression scan:
+total `2482 / 5973 (41.55%)`, game `1946 / 5284 (36.83%)`, init
+`370 / 508 (72.83%)`, debugger `166 / 181 (91.71%)`, with no address-drift
+blocker in that corpus. The freshly generated diagnostic corpus reports
+`2485 / 5978 (41.57%)`, including its one generated-helper address blocker.
+
+The Banjo cross-port sweep remains exhausted at Batch 4. Reuse it manually
+for specific semantic or SDK questions, but continue normal work from the
+smallest unparked instruction diffs and prioritize missing type information.
 
 **Update (2026-07-24, func_151150BC decompiled, signature confirmed).** See
 the workflow entry above this one for the func_151150BC / func_150C7930 /

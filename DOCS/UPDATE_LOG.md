@@ -10,6 +10,44 @@ make -C conker progress
 
 ## 2026-07-25
 
+### Six regular matches from record-layout recovery
+
+- Made `func_15157860`, `func_15158AFC`, `func_150BB450`,
+  `func_1519187C`, `func_15197BBC`, and `func_1518F15C` byte-exact.
+- Replaced raw byte-pointer offset expressions with minimal typed record
+  layouts. Matrix-array indexing and named timer, limit, scale, value, and
+  float fields made IDO reproduce the retail operand and destination-register
+  choices.
+- Confirmed that expression reversal, compound assignment, volatile loads,
+  and artificial temporaries do not solve this family reliably. The missing
+  record type was the common cause.
+- Full relink and retail-ROM regression scan passed. Verified canonical
+  progress is now **2482 / 5973 overall (41.55%)**, **370 / 508 init
+  (72.83%)**, **1946 / 5284 game (36.83%)**, and **166 / 181 debugger
+  (91.71%)**, with no stable-corpus address blocker.
+
+### Banjo cross-port Batch 4: final automatic C candidate exact
+
+- Completed a second exhaustive comparison of all remaining non-exact Conker
+  C bodies against the verified Banjo US v1.0 ELF: exact bodies,
+  relocation-masked bodies, opcode/control-flow structure, and same-name SDK
+  rankings.
+- Ported `func_151F2890` from Banjo's `__osContDataCrc`. Its byte-identical
+  `-O1` body now occupies a tracked extraction subsegment beside
+  `func_151F27E0`, while the following audio unit retains its original `-g`
+  profile.
+- A fresh extraction and full dependency-driven rebuild verified the CRC and
+  neighboring functions. Restoring the complete CRC span also repaired a
+  downstream call target, producing a canonical gain of two exact functions
+  and removing the last address-drift blocker from the stable corpus.
+- Verified canonical progress is now **2476 / 5973 overall (41.45%)**,
+  **370 / 508 init (72.83%)**, **1940 / 5284 game (36.71%)**, and
+  **166 / 181 debugger (91.71%)**.
+- No further safe C port remains in the automatic comparison pool. The
+  remaining exact shared routines are handwritten SDK assembly and remain
+  useful only as reference evidence; looser candidates are different
+  implementations or SDK variants.
+
 ### Banjo cross-port Batch 3: 15 duplicated PFS/CRC functions exact
 
 - Completed all 15 Batch 3 targets: `__osSumcalc2`, `__osIdCheckSum2`,
