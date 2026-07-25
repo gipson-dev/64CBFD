@@ -131,6 +131,28 @@ byte matching. Operand order can change floating-point registers, delay slots,
 and final instruction operands. Multi-argument calls may also require a named
 temporary so IDO assigns the retail register before the call.
 
+### Physical source-line layout
+
+IDO can schedule identical C differently when statements occupy different
+physical source lines. In `func_151E50C8`, putting the complete 23-byte copy
+loop on one line changed the four-way unrolled body from the helper's
+`1, 2, 3, 0` load order to retail's `0, 1, 2, 3` order. An algebraically
+neutral expression such as `condition ^ 0` can likewise preserve later
+register allocation. Use these only for a measured final scheduling mismatch;
+the decomp permuter's same-line and expression passes can search this space.
+
+### Generated-slice BSS ownership
+
+IDO's address coalescing depends on which globals it believes the current
+translation unit owns. A correctly-sized definition can therefore be needed
+to reproduce retail `%hi` reuse even when the final link already supplies the
+symbol. For generated slices, `pad_generated_object.py` emits only compiled
+text and text relocations, so the compact object's temporary `.bss` storage is
+discarded and the final symbol still resolves through the project's linker
+symbols. Always verify this pattern through the production padded-object
+recipe and a full link; do not use it for ordinary objects whose `.bss` is
+linked normally.
+
 ### Stack-local records
 
 Small event or command records often appear as a local structure passed to two
@@ -189,4 +211,3 @@ Record published milestones in [UPDATE_LOG.md](UPDATE_LOG.md). Put temporary
 experiments, rejected source shapes, and crash-recovery details in
 [WORKING_NOTES.md](WORKING_NOTES.md), then move durable conclusions back into
 this guide or the relevant subject document.
-

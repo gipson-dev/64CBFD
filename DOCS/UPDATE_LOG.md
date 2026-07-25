@@ -8,6 +8,30 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-07-25
+
+### Three-function byte-matching target completed
+
+- Completed the requested
+  `[########################] 3 / 3 (100.00%)` target:
+  `func_151E50C8`, `func_15017498`, and `func_15007A70` are all independently
+  byte-exact.
+- Reconstructed `func_151E50C8`'s complete behavior and matched its retail
+  `0x124`-byte body. The adjacent `func_151DD970` 23-byte copy helper also
+  became exact at `0x74` bytes.
+- Used the verified Banjo-Kazooie decompilation to confirm that IDO code
+  generation depends on same-translation-unit BSS ownership. In Conker's
+  generated-slice build, a correctly-sized destination definition guides IDO
+  address coalescing while `pad_generated_object.py` discards the compact
+  object's `.bss` and retains only text/relocations.
+- Resolved the last scheduling difference with the decomp permuter: the
+  matching form keeps the copy loop on one physical source line and uses an
+  optimized-away `^ 0` to retain the retail register allocation.
+- Verified a full production relink and drift-aware match scan. Byte-exact
+  progress is now **1904 / 5284 game functions (36.03%)** and
+  **2437 / 5973 overall (40.80%)**, with the same one address-drift blocker
+  and no regressions.
+
 ## 2026-07-24 (continued, fourth pass - scoping a push toward 42%)
 
 ### Two more matched; the easy-win pool is now mostly exhausted

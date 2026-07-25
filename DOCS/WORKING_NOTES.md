@@ -35,8 +35,23 @@ page and leave only the historical record here.
 
 ## Current focus
 
-Verified baseline after this session: total `2423 / 5973 (40.57%)`, game
-`1890 / 5284 (35.77%)`, init `367 / 508 (72.24%)`, debugger
+**Completed (2026-07-25, byte matching for `func_151E50C8`,
+`func_15017498`, and `func_15007A70`).** Target status is now
+`[########################] 3 / 3 (100.00%)`. `func_15017498` and
+`func_15007A70` remained independently byte-exact. `func_151E50C8` now
+matches its full retail `0x124`-byte span, and the adjacent 23-byte-copy
+helper `func_151DD970` now matches its `0x74`-byte span as well.
+
+The durable IDO findings were moved to `CONTRIBUTING.md`: the generated slice
+needs a same-translation-unit destination definition to recover retail BSS
+address coalescing, while physical source-line layout controls the final
+unrolled-loop schedule. The winning `func_151E50C8` form keeps the copy loop
+on one physical line and retains an optimized-away `^ 0` on the later
+comparison to preserve register allocation.
+
+Verified baseline after a full relink and `match_progress.py --list`: total
+`2437 / 5973 (40.80%)`, game `1904 / 5284 (36.03%)`, init
+`367 / 508 (72.24%)`, debugger
 `166 / 181 (91.71%)`, one address-drift blocker (`func_1509E6F0`, still
 waiting on `func_151F2CDC` - see the bulk-conversion note below, it did not
 clear this time either).
