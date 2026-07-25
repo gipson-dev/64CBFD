@@ -35,7 +35,40 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-07-25, broadened DK64 pass complete).** The verified DK64
+**Active (2026-07-25, debugger completion pass).** The linked US debugger
+overlay is now `173 / 181 (95.58%)` byte-exact after restoring the SDK
+`_Putfld` switch in `func_160021FC`, matching SDK `_Ldtob`
+`func_1600288C`, and closing `func_160006CC`. The full corpus is
+`2513 / 5978 (42.04%)`; init and game are unchanged, and
+`func_10012588` remains the sole unrelated address-only blocker.
+
+Banjo's completed `xprintf.c` and `xldtob.c` are the primary source references.
+The `_Putfld` switch generated the expected retail jump table, so
+`debugger_257350.c.o` now anchors compact `.rodata` at `D_1600487C` during
+retail padding. `func_16001BB4` has been restored to its SDK macro shape and
+now compiles to 401 of retail's 402 words. An unsigned `n` for the first
+literal chunk reproduced retail's `fmt_ptr - fmt` definition in `v0` and its
+copy to saved `s1`. The sole remaining word is the final `_PAD`/loop-back
+scheduling choice: retail uses the duplicated `beqzl`/`beqz` pair, places
+`fmt = fmt_ptr + 1` in the likely delay, and preloads the next byte in the
+loop-back delay.
+
+The current near matches after the latest linked scan are
+`func_16001390` (2 real diffs), `func_16000F8C` (5), and
+`func_160014F0` (19, down from 70 at the start of this pass).
+`func_16001390` now has the exact 88-word size, saved-`s0` parameter lifetime,
+four-pixel unroll, and loop-back delay slot; only two independent scheduling
+words remain. `func_160014F0` now has the exact 71-word size and strength-
+reduced `t0` glyph pointer. The ANSI `u8` callee signature requires the
+`func_160014F0_wide` link alias for the already-exact `func_160012B0` caller.
+
+The complete remaining queue, verified commands, and failed/local experiments
+are in [TEMP_DEBUGGER_TODO.md](TEMP_DEBUGGER_TODO.md). Resume with
+`func_16001390`'s two scheduling words, `func_16000F8C`'s five register-color
+words, or the one-word structural `func_16001BB4` tail schedule, then relink
+before changing public progress numbers.
+
+**Archived focus (2026-07-25, broadened DK64 pass complete).** The verified DK64
 decompilation has now supplied 20 direct C ports across the initial and
 broadened passes. The final structural sweep added ten sequence/audio
 functions and the complete six-function EEPROM family; see

@@ -105,7 +105,7 @@ s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) 
     s32 pad1;
 
     st.pad2C = 0;
-    for (;; fmt = fmt_ptr + 1) {
+    while (1) {
     c = *fmt;
     fmt_ptr = fmt + 1;
     if ((s32) c > 0) {
@@ -176,7 +176,10 @@ s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) 
     _PAD(i1, st.unk18, c1, D_16003C94, 1);
     _PROUT(dst, &st.dest[st.len], st.unk1C);
     _PAD(i1, st.unk20, c1, D_16003C94, 1);
-    _PAD(i1, st.unk28, c1, D_16003C70, st.flags & 4);
+    if (st.flags & 4) {
+        _PAD(i1, st.unk28, c1, D_16003C70, 1);
+    }
+    fmt = fmt_ptr + 1;
     }
 }
 
@@ -298,19 +301,15 @@ void func_1600288C(struct262 *arg0, u8 arg1) {
     volatile f64 zero2;
     s32 err;
     s16 nsig;
-    s16 exp;
-    f64 factor;
-    u8 drop;
-    s32 n2;
-    f64 zero;
-    f32 fzero;
+    f32 zero;
     f32 one;
 
+    {
+    s16 exp;
     ptr = buf;
     val = arg0->num.fvalue;
-    fzero = 0;
+    zero = 0;
     one = 1;
-    zero = fzero;
     zero2 = zero;
     if (arg0->width < 0) {
         arg0->width = 6;
@@ -326,88 +325,98 @@ void func_1600288C(struct262 *arg0, u8 arg1) {
         nsig = 0;
         exp = 0;
     } else {
-        s32 i;
-        s32 n;
-        s32 gen;
-        s32 j;
-        s32 lo;
+        {
+            s32 i;
+            s32 n;
 
-        if (val < zero) {
-            val = -val;
-        }
-        exp = exp * 30103 / 0x000186A0 - 4;
-        if (exp < 0) {
-            n = (3 - exp) & ~3;
-            exp = -n;
-            for (i = 0; n > 0; n >>= 1, i++) {
-                if ((n & 1) != 0) {
-                    val *= D_16004828[i];
-                }
+            if (val < zero) {
+                val = -val;
             }
-        } else if (exp > 0) {
-            factor = one;
-            exp &= ~3;
-            for (n = exp, i = 0; n > 0; n >>= 1, i++) {
-                if ((n & 1) != 0) {
-                    factor *= D_16004828[i];
+            exp = exp * 30103 / 0x000186A0 - 4;
+            if (exp < 0) {
+                n = (3 - exp) & ~3;
+                exp = -n;
+                for (i = 0; n > 0; n >>= 1, i++) {
+                    if ((n & 1) != 0) {
+                        val *= D_16004828[i];
+                    }
                 }
+            } else if (exp > 0) {
+                f64 factor = one;
+
+                exp &= ~3;
+                for (n = exp, i = 0; n > 0; n >>= 1, i++) {
+                    if ((n & 1) != 0) {
+                        factor *= D_16004828[i];
+                    }
+                }
+                val /= factor;
             }
-            val /= factor;
         }
-        gen = ((arg1 == 'f') ? exp + 10 : 6) + arg0->width;
-        if (gen > 0x13) {
-            gen = 0x13;
-        }
-        *ptr++ = '0';
-        if (gen > 0 && zero < val) {
-            do {
-                lo = val;
-                if ((gen -= 8) > 0) {
-                    val = (val - lo) * D_16004950;
-                }
-                ptr = ptr + 8;
-                for (j = 8; lo > 0 && --j >= 0;) {
-                    ldiv_t qr = ldiv(lo, 10);
+        {
+            s32 gen;
+            s32 j;
+            s32 lo;
 
-                    *--ptr = qr.rem + '0';
-                    lo = qr.quot;
-                }
-                while (--j >= 0) {
-                    ptr--;
-                    *ptr = '0';
-                }
-                ptr += 8;
-            } while (gen > 0 && zero2 < val);
-        }
+            gen = ((arg1 == 'f') ? exp + 10 : 6) + arg0->width;
+            if (gen > 0x13) {
+                gen = 0x13;
+            }
+            *ptr++ = '0';
+            if (gen > 0 && zero < val) {
+                do {
+                    lo = val;
+                    if ((gen -= 8) > 0) {
+                        val = (val - lo) * D_16004950;
+                    }
+                    ptr = ptr + 8;
+                    for (j = 8; lo > 0 && --j >= 0;) {
+                        ldiv_t qr = ldiv(lo, 10);
 
-        gen = ptr - &buf[1];
-        for (ptr = &buf[1], exp += 7; *ptr == '0'; ptr++) {
-            --gen, --exp;
-        }
-
-        nsig = ((arg1 == 'f') ? exp + 1 : ((arg1 == 'e' || arg1 == 'E') ? 1 : 0)) + arg0->width;
-        if (gen < nsig) {
-            nsig = gen;
-        }
-        if (nsig > 0) {
-            if (nsig < gen && ptr[nsig] > '4') {
-                drop = '9';
-            } else {
-                drop = '0';
+                        *--ptr = qr.rem + '0';
+                        lo = qr.quot;
+                    }
+                    while (--j >= 0) {
+                        ptr--;
+                        *ptr = '0';
+                    }
+                    ptr += 8;
+                } while (gen > 0 && zero2 < val);
             }
 
-            for (n2 = nsig; ptr[--n2] == drop;) {
-                nsig--;
+            gen = ptr - &buf[1];
+            for (ptr = &buf[1], exp += 7; *ptr == '0'; ptr++) {
+                --gen, --exp;
             }
-            if (drop == '9') {
-                ptr[n2]++;
+
+            nsig = ((arg1 == 'f') ? exp + 1 : ((arg1 == 'e' || arg1 == 'E') ? 1 : 0)) + arg0->width;
+            if (gen < nsig) {
+                nsig = gen;
             }
-            if (n2 < 0) {
-                --ptr, ++nsig, ++exp;
+            if (nsig > 0) {
+                u8 drop;
+                s32 n2;
+
+                if (nsig < gen && ptr[nsig] > '4') {
+                    drop = '9';
+                } else {
+                    drop = '0';
+                }
+
+                for (n2 = nsig; ptr[--n2] == drop;) {
+                    nsig--;
+                }
+                if (drop == '9') {
+                    ptr[n2]++;
+                }
+                if (n2 < 0) {
+                    --ptr, ++nsig, ++exp;
+                }
             }
         }
     }
     func_16002DE4(arg0, arg1, ptr, nsig, exp);
+    }
 }
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 // classify an IEEE double via its first u16: >0 normal (exponent extracted

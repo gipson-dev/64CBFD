@@ -25,7 +25,9 @@
 		"vscode": {
 			"extensions": [
 				"openai.chatgpt",
-				"Ollama.ollama"
+				"Ollama.ollama",
+				"moonshot-ai.kimi-code",
+				"Anthropic.claude-code"
 			]
 		}
 	},

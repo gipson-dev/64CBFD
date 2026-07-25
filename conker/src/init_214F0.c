@@ -1,6 +1,6 @@
 #include <ultra64.h>
 
-#include "functions.h"
+#include "n_synthInternals.h"
 #include "variables.h"
 
 typedef struct {
@@ -21,7 +21,7 @@ typedef struct {
 
 /* Generated placeholder declarations. */
 s32 func_100214F0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-s32 func_10021C40();
+s32 func_10021C40(N_PVoice *, s32, void *);
 Acmd *func_10021E4C(Acmd *, RareDecoderVoice *, s32, s32, s16, s16, s32);
 /* End generated placeholder declarations. */
 
@@ -30,8 +30,56 @@ Acmd *func_10021E4C(Acmd *, RareDecoderVoice *, s32, s32, s16, s16, s32);
 s32 func_100214F0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_214F0/func_10021C40.s. */
-s32 func_10021C40() {
+// modified n_alLoadParam
+s32 func_10021C40(N_PVoice *filter, s32 paramID, void *param) {
+    switch (paramID) {
+        case AL_FILTER_SET_WAVETABLE:
+            filter->dc_table = (ALWaveTable *)param;
+            filter->dc_memin = (s32)filter->dc_table->base;
+            filter->dc_sample = 0;
+            filter->dc_table->len = 9 * (filter->dc_table->len / 9);
+
+            if (((u32)filter->dc_table->waveInfo.adpcmWave.book &
+                 0xFF000003) != 0x80000000) {
+                filter->dc_loop.start =
+                    filter->dc_loop.end = filter->dc_loop.count = 0;
+                break;
+            } else {
+                filter->dc_bookSize =
+                    2 * filter->dc_table->waveInfo.adpcmWave.book->order *
+                    filter->dc_table->waveInfo.adpcmWave.book->npredictors *
+                    ADPCMVSIZE;
+            }
+
+            if (filter->dc_table->waveInfo.adpcmWave.loop) {
+                filter->dc_loop.start =
+                    filter->dc_table->waveInfo.adpcmWave.loop->start;
+                filter->dc_loop.end =
+                    filter->dc_table->waveInfo.adpcmWave.loop->end;
+                filter->dc_loop.count =
+                    filter->dc_table->waveInfo.adpcmWave.loop->count;
+
+                bcopy(filter->dc_table->waveInfo.adpcmWave.loop->state,
+                      filter->dc_lstate, sizeof(ADPCM_STATE));
+            } else {
+                filter->dc_loop.start =
+                    filter->dc_loop.end = filter->dc_loop.count = 0;
+            }
+            break;
+        case AL_FILTER_RESET:
+            filter->dc_lastsam = 0;
+            filter->dc_first = 1;
+            filter->dc_sample = 0;
+
+            if (filter->dc_table) {
+                filter->dc_memin = (s32)filter->dc_table->base;
+                filter->dc_loop.count = 0;
+            }
+            break;
+        default:
+            break;
+    }
+
     return 0;
 }
 // ? func_10021C40(void *arg0, s32 arg1, s32 arg2) {

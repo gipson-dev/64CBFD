@@ -26,10 +26,10 @@ Snapshot verified on 2026-07-25:
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[##########--------------]` 2,510 / 5,978 (41.99%) | 1 | 3,467 |
+| Total | `[##########--------------]` 2,513 / 5,978 (42.04%) | 1 | 3,464 |
 | Init | `[##################------]` 383 / 508 (75.39%) | 1 | 124 |
 | Game | `[#########---------------]` 1,957 / 5,289 (37.00%) | 0 | 3,332 |
-| Debugger | `[#######################-]` 170 / 181 (93.92%) | 0 | 11 |
+| Debugger | `[#######################-]` 173 / 181 (95.58%) | 0 | 8 |
 
 The sole address-only blocker is `func_10012588`; its C instructions match,
 but its call still resolves to the wrong linked target. Regenerate the

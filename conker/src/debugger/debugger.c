@@ -217,28 +217,30 @@ typedef struct {
 
 void func_160006CC(void *arg0) {
     struct {
-        s32 pad[2];
         DebugLabel label;
     } storage;
     u8 *label;
     u8 *entry;
     s32 pos;
-    s32 next;
+    register s32 next;
 
     storage.label = *(DebugLabel *)&D_16003B48;
     label = (u8 *)&storage.label;
-    entry = D_160037F0;
     pos = 0x123;
+    entry = D_160037F0;
     func_16001338(0xC0, 0xC0, 0xFF);
-    label[0] = D_160037F0[0];
+    next = *(u8 *)(u32)D_160037F0;
     do {
+        label[0] = next;
         label[1] = entry[1];
         func_160012B0(pos, label);
-        pos += 3;
-        func_16001044(pos, 0, ((s32 *) arg0)[entry[2] + 1]);
+        {
+            u8 index = entry[2];
+            pos += 3;
+        func_16001044(pos, 0, ((s32 *) arg0)[index + 1]);
+        }
         pos += 0xD;
         next = entry[3];
-        label[0] = next;
         entry += 3;
     } while (next != 0);
 }
@@ -452,21 +454,28 @@ s32 func_16000B14(struct118 *arg0) {
 
 // NON-MATCHING: lots to figure out
 void func_16000F8C(s32 arg0, f32 arg1) {
-    u8 tmp[0x2C];
-    s32 temp_v1;
-    u32 temp_t9;
+    struct F8Storage {
+        u8 tmp[0x2C];
+        union {
+            f32 f;
+            s32 i;
+        } value;
+    };
+    struct F8Storage storage;
 
     if ((arg0 >= (D_160038A0 << 5)) && (arg0 < 833)) {
-        temp_v1 = *(s32*)&arg1;
-        temp_t9 = (u32) (temp_v1 & 0x7F800000) >> 0x17;
-        if ((temp_t9 == 0) || (temp_t9 >= 0xFFU)) {
+        s32 temp_v1;
+        storage.value.f = arg1;
+        temp_v1 = storage.value.i;
+        if ((((u32)(temp_v1 & 0x7F800000) >> 0x17) == 0) ||
+            (((u32)(temp_v1 & 0x7F800000) >> 0x17) >= 0xFFU)) {
             if ((temp_v1 * 2) != 0) {
                 func_160012B0(arg0, &D_160047D0);
                 return;
             }
         }
-        func_16001B34(tmp, &D_160047D4, &D_160047DC, &D_160047E0, (f64) arg1);
-        func_160012B0(arg0, tmp);
+        func_16001B34(storage.tmp, &D_160047D4, &D_160047DC, &D_160047E0, (f64) arg1);
+        func_160012B0(arg0, storage.tmp);
     }
 }
 
@@ -544,7 +553,7 @@ void func_160012B0(s32 arg0, u8 *arg1) {
     if (arg1 && (arg0 >= (D_160038A0 << 5)) && (arg0 < 833)) {
         s32 fb = func_1600160C(arg0);
         while (*arg1 != 0) {
-            fb = func_160014F0(fb, *arg1 & 0xFF);
+            fb = func_160014F0_wide(fb, *arg1 & 0xFF);
             *arg1++;
         }
     }
@@ -555,52 +564,59 @@ void func_16001338(u8 arg0, u8 arg1, u8 arg2) {
 }
 
 // NON-MATCHING: fill a rectangle with the current color (D_1600388C).
-void func_16001390(s16 x0, s16 y0, s16 x1, s16 y1) {
-    s16 width;
-    s16 height;
+void func_16001390(s16 x0, s16 y0, register s16 x1, s16 y1) {
     s16 *dst;
-    s32 row;
-    s32 col;
 
-    if ((x1 < x0) || (y1 < y0) || (x0 < 0) || (y0 < 0)) {
+    if ((x1 < x0) || (y1 < y0)) {
+        return;
+    }
+    if ((x0 < 0) || (y0 < 0)) {
         return;
     }
 
-    width = x1 - x0 + 1;
-    height = y1 - y0 + 1;
-    if (width <= 0 || height <= 0) {
-        return;
-    }
-
-    dst = (s16 *)(func_1600160C(0) + ((y0 * D_160038A8) + x0) * 2);
-    for (row = 0; row < height; row++) {
-        for (col = 0; col < width; col++) {
-            dst[col] = D_1600388C;
+    x1++;
+    y1++;
+    dst = (s16 *)func_1600160C(0);
+    dst += x0 + (y0 * D_160038A8);
+    x1 -= x0;
+    y1 -= y0;
+    if (y1 > 0) {
+        do {
+            s32 count = x1;
+            if (x1 > 0) {
+                do {
+                    *dst++ = D_1600388C;
+                    count--;
+                } while (count != 0);
+            }
+        } while ((y1 -= 1, dst += D_160038A8 - x1, y1) > 0);
         }
-        dst += D_160038A8;
-    }
 }
 
 // NON-MATCHING: blit an 8x8 glyph into the framebuffer.
-s32 func_160014F0(s32 arg0, s32 arg1) {
+s32 func_160014F0(s32 arg0, u8 arg1) {
     s16 *dst = (s16 *) arg0;
-    s32 c = arg1 & 0xFF;
-    u8 *glyph;
+    s32 color;
+    s32 c;
+    s32 glyphIndex;
     s32 row;
+    s32 col;
+    u16 bits;
 
-    if (c < 0x20) {
+    color = D_1600388C;
+    c = arg1;
+    if (arg1 < 0x20) {
         c = 0x20;
     }
-    glyph = &D_16003CE0[(c - 0x20) * 8];
-    for (row = 0; row < 8; row++) {
-        u8 bits = *glyph;
-        s32 col;
-        for (col = 0; col < 8; col++) {
-            *dst++ = (bits & 0x80) ? D_1600388C : 1;
+    for (glyphIndex = (c - 0x20) << 3, row = 0; row < 8;
+         row++, glyphIndex++, dst += D_160038A8 - 8) {
+        col = 0;
+        bits = D_16003CE0[glyphIndex];
+        do {
+            *dst++ = (u16)((bits & 0x80) ? (color & 0xFFFF) : 1);
             bits <<= 1;
-        }
-        glyph++;
-        dst += D_160038A8 - 8;
+            col++;
+        } while (col < 8);
     }
     return arg0 + 0x10;
 }

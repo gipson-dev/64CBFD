@@ -10,6 +10,19 @@ make -C conker progress
 
 ## 2026-07-25
 
+### Debugger SDK recovery and byte-matching pass
+
+- Recovered the SDK `_Putfld` switch, Banjo/SDK `_Ldtob` lifetimes, and the
+  debugger table-loop source shape, making `func_160021FC`,
+  `func_1600288C`, and `func_160006CC` byte-exact.
+- Reduced `func_16001390` to 2 real instruction differences and
+  `func_160014F0` to 19 while reproducing their retail sizes, IDO unrolls,
+  saved-register lifetimes, and delay slots.
+- Full linked retail scan reports **2513 / 5978 overall (42.04%)** and
+  **173 / 181 debugger (95.58%)**. Init remains **383 / 508 (75.39%)**,
+  game remains **1957 / 5289 (37.00%)**, and `func_10012588` remains the sole
+  address-only blocker.
+
 ### Broadened DK64 pass: 16 C matches and matcher correction
 
 - Re-scanned the verified DK64 retail ELF with register-normalized opcodes,

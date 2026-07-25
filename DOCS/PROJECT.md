@@ -210,10 +210,10 @@ hardware CP0 operations that are not ordinary C conversion targets.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[##########--------------]` 2,510 / 5,978 (41.99%) | 1 | 3,467 |
+| Total | `[##########--------------]` 2,513 / 5,978 (42.04%) | 1 | 3,464 |
 | Init | `[##################------]` 383 / 508 (75.39%) | 1 | 124 |
 | Game | `[#########---------------]` 1,957 / 5,289 (37.00%) | 0 | 3,332 |
-| Debugger | `[#######################-]` 170 / 181 (93.92%) | 0 | 11 |
+| Debugger | `[#######################-]` 173 / 181 (95.58%) | 0 | 8 |
 
 `match-progress` compares linked functions by symbol against pristine retail
 bytes at name-implied addresses. Add `LIST=1` to list every non-exact function
