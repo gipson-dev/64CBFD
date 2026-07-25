@@ -19,20 +19,21 @@ Snapshot verified on 2026-07-25:
 
 | Section | Converted functions | Converted bytes |
 | --- | ---: | ---: |
-| Total | 5,973 / 6,033 (99.01%) | 98.34% |
+| Total | 5,978 / 6,038 (99.01%) | 98.34% |
 | Init | 508 / 538 (94.42%) | 90.79% |
-| Game | 5,284 / 5,313 (99.45%) | 98.93% |
+| Game | 5,289 / 5,318 (99.45%) | 98.93% |
 | Debugger | 181 / 182 (99.45%) | 99.19% |
 
-| Section | Byte-exact | Still different |
-| --- | ---: | ---: |
-| Total | `[##########--------------]` 2,482 / 5,973 (41.55%) | 3,491 |
-| Init | `[#################-------]` 370 / 508 (72.83%) | 138 |
-| Game | `[#########---------------]` 1,946 / 5,284 (36.83%) | 3,338 |
-| Debugger | `[######################--]` 166 / 181 (91.71%) | 15 |
+| Section | Byte-exact | Address drift | Still different |
+| --- | ---: | ---: | ---: |
+| Total | `[##########--------------]` 2,510 / 5,978 (41.99%) | 1 | 3,467 |
+| Init | `[##################------]` 383 / 508 (75.39%) | 1 | 124 |
+| Game | `[#########---------------]` 1,957 / 5,289 (37.00%) | 0 | 3,332 |
+| Debugger | `[#######################-]` 170 / 181 (93.92%) | 0 | 11 |
 
-No function in this stable progress corpus is currently blocked only by
-address drift. Regenerate the measurements with:
+The sole address-only blocker is `func_10012588`; its C instructions match,
+but its call still resolves to the wrong linked target. Regenerate the
+measurements with:
 
 ```sh
 make -C conker progress NON_MATCHING=1

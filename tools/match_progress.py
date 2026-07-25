@@ -60,7 +60,11 @@ DEFAULT_SEGMENTS = {
 
 
 def load_elf_functions(elf_path, objdump):
-    out = subprocess.run([objdump, "-d", elf_path],
+    # Keep zero-filled instruction runs in the disassembly.  IDO emits
+    # deliberate multi-nop sequences (for example around integer division),
+    # and objdump otherwise replaces them with "..." so exact functions look
+    # artificially short.
+    out = subprocess.run([objdump, "-d", "-z", elf_path],
                          capture_output=True, text=True, check=True).stdout
     funcs = {}
     func_addrs = {}

@@ -1019,7 +1019,7 @@ void func_10018790(void *arg0, s32 arg1, u32 arg2, u32 arg3);
 //func_1001B200
 // s32  func_1001B310(void *arg0, void *arg1);
 // u8   func_1001B450(void *arg0, void *arg1);
-void func_1001E530(s32 arg0, void *arg1, s32 arg2);
+Acmd *func_1001E530(s32 sampleOffset, Acmd *p, s32 bus);
 //func_1019EA88
 //func_1019EAB0
 //func_1019EAE0

@@ -10,6 +10,56 @@ make -C conker progress
 
 ## 2026-07-25
 
+### Broadened DK64 pass: 16 C matches and matcher correction
+
+- Re-scanned the verified DK64 retail ELF with register-normalized opcodes,
+  control-flow n-grams, constants, calls, and field offsets after the initial
+  exact/relocation pools were exhausted.
+- Restored ten Rare audio/sequence functions:
+  `func_10018790`, `func_1001ED6C`, `n_alFxNew`, `func_1001B07C`,
+  `n_alCSeqNextEvent`, `func_10022460`, `func_10021E4C`,
+  `func_10022040`, `func_1001E530`, and `func_10020ABC`. The larger ports
+  preserve Conker-specific null guards, `N_PVoice` offsets, reverb layout,
+  pull-counter initialization, and deliberate IDO scheduling gaps.
+- Restored the complete six-function EEPROM read/write family:
+  `func_151DD140`, `func_151DD304`, `func_151DD460`, `func_151DD4E0`,
+  `func_151DD65C`, and `func_151DD710`.
+- Extended compact-object padding with an optional retail `.rodata` anchor.
+  `init_1E530` now anchors at `D_8002C7A0`, preserving the gain constant and
+  following switch table at their retail addresses.
+- Fixed `match_progress.py` to disassemble with `-z`. Preserving explicit zero
+  words recovered five pre-existing exact rows that `objdump` had collapsed
+  into `...`, while also measuring `func_1001ED6C` correctly.
+- Full relink and retail-ROM instruction scan report
+  **2510 / 5978 overall (41.99%)**, **383 / 508 init (75.39%)**,
+  **1957 / 5289 game (37.00%)**, and **170 / 181 debugger (93.92%)**.
+  `func_10012588` is the sole address-only blocker. The refreshed conversion
+  corpus is **5978 / 6038 functions (99.01%)**.
+
+### DK64 cross-port: three Rare audio helpers and guMtxXFMF exact
+
+- SHA-1 verified and decompressed the DK64 US ROM, built its decompilation
+  with the pinned toolchain, and passed its full uncompressed-ROM verification
+  target. This made its linked function bodies retail-authoritative.
+- Compared every remaining non-exact Conker C row against 8,100 DK64
+  functions using exact, call-relocated, and address-relocated body
+  signatures. Eighteen matches survived; four were genuine reusable C and
+  the rest were handwritten assembly or a one-word coincidence.
+- Ported DK64's `_n_loadOutputBuffer`, `_n_loadBuffer`, and `_n_saveBuffer`
+  source as `func_1001F28C`, `func_1001F5A4`, and `func_1001F79C`. Recovered
+  Rare's two-channel `ALFx`/resampler layout and identified
+  `func_1001FA78` as `_doModFunc`, fixing the output helper's callee target.
+- Recovered DK64's `-O3` profile and original source shape for the matrix
+  object. `guMtxXFMF` is now exact and the neighboring `guMtxCatF` remains
+  exact.
+- Confirmed the originally requested `func_151E50C8`, `func_15017498`, and
+  `func_15007A70` are exact in the final linked ELF.
+- Full relink and retail-ROM regression scan passed. Stable progress is now
+  **2486 / 5973 overall (41.62%)**, **373 / 508 init (73.43%)**,
+  **1947 / 5284 game (36.85%)**, and **166 / 181 debugger (91.71%)**, with
+  no stable-corpus address blocker. The refreshed 5,978-row diagnostic is
+  **2489 / 5978 (41.64%)** with one unrelated generated-helper blocker.
+
 ### Six regular matches from record-layout recovery
 
 - Made `func_15157860`, `func_15158AFC`, `func_150BB450`,

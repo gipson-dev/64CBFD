@@ -162,6 +162,23 @@ object's compiler profile. The first Banjo-Kazooie cross-port batch showed
 valid matches under plain `-O2`, `-O1`, and `-O3`; compiling every copied
 function with Conker's default `-O2 -g3` did not reproduce retail.
 
+DK64 adds a stronger validation option: when its uncompressed-ROM verification
+passes, every linked function body can be treated as retail-authoritative even
+when the source file still contains `GLOBAL_ASM`. Separate genuine C ports
+from handwritten assembly before counting progress. The DK64 scan found exact
+cache, CP0, `bcopy`, and Rare fast-trigonometry bodies, but those are reference
+evidence rather than C decompilation gains.
+
+After exact words and relocation-masked comparisons are exhausted, compare
+retail assembly with register-normalized opcode/control-flow fingerprints.
+Do not fingerprint the current padded ELF's in-slot trampolines: nonmatching
+C may live in overflow while the retail assembly remains in `asm/`. Treat a
+loose hit only as a lead, then verify its signature, constants, callees,
+branches, and field offsets before porting. This broader DK64 pass recovered
+sequence, Rare audio, and EEPROM families, while correctly rejecting larger
+audio routines whose overall algorithms are related but whose retail bodies
+have diverged.
+
 Headers can also change code generation. For example, Conker's broad graphics
 header marks `sqrtf` intrinsic, while the matching `guNormalize` object calls
 `sqrtf`; that source therefore includes only the needed math declaration.
@@ -203,6 +220,41 @@ both `multu`/`mul.s` operand order and destination registers. Check every
 field offset and the record stride against retail before relying on this
 technique; a convenient but incorrect layout can still compile plausible
 code.
+
+The Rare n_audio reverb is a concrete cross-game example. Its `ALFx` layout is
+not the stock layout in Conker's broad SDK header: length is at `0x00`, the
+two base pointers begin at `0x20`, and the two input pointers begin at `0x28`.
+Its resampler also owns two state pointers. A small local layout recovered
+three exact helpers without changing shared SDK types. DK64's `_doModFunc`
+body further showed that Conker's semantic equivalent is `func_1001FA78`;
+always verify relocated call targets as well as the surrounding instructions.
+
+For Rare audio forks, expect small game-specific additions around a shared
+core: null instrument or track guards, DMA-failure recovery, wave-table flag
+writes, and wet/dry refreshes. Preserve those from Conker retail assembly
+instead of copying the reference function blindly. An intentionally empty
+`if (1) {}` can be the source-level scheduling artifact that keeps a store out
+of a branch delay slot; use it only when the instruction diff proves that
+single scheduling gap.
+
+### Preserve explicit zero instructions
+
+Run GNU `objdump` with `-z` when instruction bytes are the measurement input.
+Without it, long runs of zero words are printed as `...`, and a parser may
+mistake deliberate `nop` sequences for missing instructions. The project
+matcher does this by default. A matcher-format correction can change the
+reported numerator without changing code, so name those recovered rows
+separately from new source matches in progress notes.
+
+### Compact-object rodata anchors
+
+`pad_c_object.py` can remap compact `.rodata` relocations to a retail symbol
+for an ordinary multi-function object whose text is re-spaced. Anchor the
+compact block at its earliest retail constant. In `init_1E530`, the reverb gain
+constant is `D_8002C7A0` and the switch table begins four bytes later at
+`jtbl_8002C7A4_init`; anchoring at the jump table shifts every compact
+relocation by four bytes. Rebuild and scan every function in the object after
+changing an anchor.
 
 ### Stack-local records
 

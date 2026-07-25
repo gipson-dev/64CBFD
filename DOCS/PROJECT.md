@@ -197,9 +197,9 @@ make -C conker match-progress NON_MATCHING=1
 
 | Section | Progress bytes | Functions |
 | --- | ---: | ---: |
-| Total | `[########################]` 98.34% | 5,973 / 6,033 (99.01%) |
+| Total | `[########################]` 98.34% | 5,978 / 6,038 (99.01%) |
 | Init | `[######################--]` 90.79% | 508 / 538 (94.42%) |
-| Game | `[########################]` 98.93% | 5,284 / 5,313 (99.45%) |
+| Game | `[########################]` 98.93% | 5,289 / 5,318 (99.45%) |
 | Debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 Sixty tracked raw functions remain. Most are handwritten TLB code, embedded or
@@ -210,14 +210,15 @@ hardware CP0 operations that are not ordinary C conversion targets.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[##########--------------]` 2,482 / 5,973 (41.55%) | 0 | 3,491 |
-| Init | `[#################-------]` 370 / 508 (72.83%) | 0 | 138 |
-| Game | `[#########---------------]` 1,946 / 5,284 (36.83%) | 0 | 3,338 |
-| Debugger | `[######################--]` 166 / 181 (91.71%) | 0 | 15 |
+| Total | `[##########--------------]` 2,510 / 5,978 (41.99%) | 1 | 3,467 |
+| Init | `[##################------]` 383 / 508 (75.39%) | 1 | 124 |
+| Game | `[#########---------------]` 1,957 / 5,289 (37.00%) | 0 | 3,332 |
+| Debugger | `[#######################-]` 170 / 181 (93.92%) | 0 | 11 |
 
 `match-progress` compares linked functions by symbol against pristine retail
 bytes at name-implied addresses. Add `LIST=1` to list every non-exact function
-from the smallest real diff upward.
+from the smallest real diff upward. The current sole address-only blocker is
+`func_10012588`.
 
 Historical milestones and matcher corrections are recorded in the
 [update log](UPDATE_LOG.md). Matching technique and validation requirements

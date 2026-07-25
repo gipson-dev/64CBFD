@@ -35,35 +35,44 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-07-25, regular byte matching after the Banjo sweep).** Six
-small-diff game functions are newly byte-exact: `func_15157860`,
-`func_15158AFC`, `func_150BB450`, `func_1519187C`, `func_15197BBC`, and
-`func_1518F15C`.
+**Active (2026-07-25, broadened DK64 pass complete).** The verified DK64
+decompilation has now supplied 20 direct C ports across the initial and
+broadened passes. The final structural sweep added ten sequence/audio
+functions and the complete six-function EEPROM family; see
+`TEMP_DK64_CROSSPORT_TODO.md` for the per-batch list and mappings.
 
-All six were type-recovery fixes. Raw byte-pointer arithmetic and offset
-casts expressed the right behavior, but IDO chose the wrong operand or result
-register. Minimal record layouts with fields at the verified offsets made
-the compiler see matrix-array indexing, timer/limit/scale fields, and float
-state directly; this reproduced the retail integer and floating-point
-instruction order without compiler-specific hacks.
+The decisive second-pass method was to compare retail assembly rather than
+Conker's padded overflow stubs, then rank register-normalized opcode/control
+flow while checking constants, calls, signatures, and record offsets
+manually. This found source relationships missed by exact-word and
+relocation-masked scans. The safe ports retain Conker-specific null guards,
+the extended `N_PVoice` layout, a zero rather than one reverb pull counter,
+and deliberate empty blocks needed for IDO delay-slot scheduling.
 
-Tried and reverted while isolating the pattern: reversing multiplication
-source operands, compound assignment, an optimized-away `^ 0`, volatile
-field loads, explicit address temporaries, and comparison-order swaps.
-Compound assignment corrected `multu` operand order but changed the `mflo`
-destination; raw expression reordering was otherwise canonicalized away.
-For this family, recover the record type instead of repeating those source
-shapes.
+`func_1001E530` also exposed a compact-object `.rodata` rule: its restored
+gain constant is at `D_8002C7A0`, four bytes before the existing switch table.
+The optional `pad_c_object.py --rodata-symbol` anchor therefore points at the
+earliest retail object constant, not the jump table. Anchoring the whole block
+at `D_8002C7A0` makes both `func_1001E530` and the following
+`func_1001ED6C` exact.
 
-Verified stable baseline after a full relink and retail-ROM regression scan:
-total `2482 / 5973 (41.55%)`, game `1946 / 5284 (36.83%)`, init
-`370 / 508 (72.83%)`, debugger `166 / 181 (91.71%)`, with no address-drift
-blocker in that corpus. The freshly generated diagnostic corpus reports
-`2485 / 5978 (41.57%)`, including its one generated-helper address blocker.
+The matcher now invokes `objdump -d -z`. Without `-z`, explicit runs of zero
+instructions appear as `...`, which falsely marked four debugger data/code
+rows, `__n_vsVol`, and the newly restored `func_1001ED6C` non-exact. Five of
+those were pre-existing matches, so the final gain is 16 source matches plus
+five corrected recognitions.
 
-The Banjo cross-port sweep remains exhausted at Batch 4. Reuse it manually
-for specific semantic or SDK questions, but continue normal work from the
-smallest unparked instruction diffs and prioritize missing type information.
+Current refreshed US corpus after a full relink and retail instruction scan:
+total `2510 / 5978 (41.99%)`, init `383 / 508 (75.39%)`, game
+`1957 / 5289 (37.00%)`, and debugger `170 / 181 (93.92%)`.
+`func_10012588` is the sole address-only blocker. Conversion is
+`5978 / 6038 (99.01%)`. The original targets `func_151E50C8`,
+`func_15017498`, and `func_15007A70` remain exact.
+
+The broader automatic DK64 pool is now exhausted. Resume regular byte matching
+with `func_100214F0`, `func_10020000`, `func_100210C0`, or
+`func_10021C40`; DK64 remains useful for source structure, but those retail
+bodies diverge too far for safe whole-function ports.
 
 **Update (2026-07-24, func_151150BC decompiled, signature confirmed).** See
 the workflow entry above this one for the func_151150BC / func_150C7930 /

@@ -1,7 +1,33 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/20A910.s. */
+void __osSiGetAccess(void);
+void __osSiRelAccess(void);
+s32 func_151DD710(OSMesgQueue *, OSContStatus *);
 
-s32 func_151DD460() {
-    return 0;
+s32 func_151DD460(OSMesgQueue *mq) {
+    s32 ret;
+    u16 type;
+    OSContStatus sdata;
+
+    ret = 0;
+    __osSiGetAccess();
+    ret = func_151DD710(mq, &sdata);
+    type = sdata.type & (CONT_EEPROM | CONT_EEP16K);
+    if (ret != 0) {
+        ret = 0;
+    } else {
+        switch (type) {
+        case CONT_EEPROM:
+            ret = EEPROM_TYPE_4K;
+            break;
+        case CONT_EEPROM | CONT_EEP16K:
+            ret = EEPROM_TYPE_16K;
+            break;
+        default:
+            ret = 0;
+            break;
+        }
+    }
+    __osSiRelAccess();
+    return ret;
 }

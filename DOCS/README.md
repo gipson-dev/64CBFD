@@ -45,6 +45,9 @@ confirmed.
 - [Temporary Banjo cross-port TODO](TEMP_BANJO_CROSSPORT_TODO.md) — completed
   four-batch checklist and residual reference list for compatible code and
   compiler findings from the completed Banjo-Kazooie decompilation.
+- [Temporary DK64 cross-port TODO](TEMP_DK64_CROSSPORT_TODO.md) — verified
+  DK64 retail-body audit, three port batches, broadened structural pass,
+  matcher correction, and residual reference matches.
 - [PC port roadmap](PC_PORT_ROADMAP.md) — phased plan for a native port and
   later modernization work.
 - [Update log](UPDATE_LOG.md) — repository-facing milestones, workflow changes,
@@ -65,6 +68,7 @@ confirmed.
 | Completed milestones and public changes | `UPDATE_LOG.md` |
 | Temporary findings and abandoned attempts | `WORKING_NOTES.md` |
 | Banjo cross-port sweep and residual references | `TEMP_BANJO_CROSSPORT_TODO.md` |
+| DK64 cross-port sweep and residual references | `TEMP_DK64_CROSSPORT_TODO.md` |
 
 The `tools/` subdirectories are mostly submodules and retain their own upstream
 documentation. Do not move or rewrite those READMEs as project documentation.

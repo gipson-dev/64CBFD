@@ -121,8 +121,115 @@ void func_1001CF38(ALLowPass *arg0, f32 arg1) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/init_1CBF0/n_alFxNew.s. */
-void n_alFxNew(ALFx **r, ALSynConfig *c, ALHeap *hp, s32 unknown) {
+typedef struct {
+    u8 pad0[0x14];
+    void *state[2];
+    f32 ratio;
+    s32 upitch;
+    f32 delta;
+    s32 first;
+    u8 pad2C[0xC];
+} RareFxResampler;
+
+typedef struct {
+    s16 fc;
+    u8 pad2[0x2A];
+    void *state[2];
+    u32 pad34;
+} RareFxLowPass;
+
+typedef struct {
+    u32 input;
+    u32 output;
+    s16 ffcoef;
+    s16 fbcoef;
+    s16 gain;
+    u16 padE;
+    f32 rsinc;
+    f32 rsval;
+    s32 rsdelta;
+    f32 rsgain;
+    RareFxLowPass *lp;
+    RareFxResampler *rs;
+} RareFxDelay;
+
+typedef struct {
+    u32 length;
+    RareFxDelay *delay;
+    u8 section_count;
+    u8 pad9[0x17];
+    s16 *base[2];
+    s16 *input[2];
+} RareFx;
+
+extern s32 D_8002BBE0[];
+
+void n_alFxNew(ALFx **arg0, ALSynConfig *arg1, s16 arg2, ALHeap *arg3) {
+    u16 i, j, k;
+    s32 *sp2C;
+    RareFxDelay *sp28;
+    RareFx *sp24;
+
+    sp2C = NULL;
+    sp24 = alHeapAlloc(arg3, 1U, 0x30);
+    *arg0 = (ALFx *)sp24;
+    switch (arg1->fxTypes[arg2]) {
+    case 6:
+        sp2C = arg1->params[arg2];
+        break;
+    default:
+        sp2C = D_8002BBE0;
+        break;
+    }
+    j = 0;
+    sp24->section_count = sp2C[j++];
+    sp24->length = sp2C[j++];
+    sp24->delay = alHeapAlloc(arg3, sp24->section_count, 0x28);
+    sp24->base[0] = alHeapAlloc(arg3, sp24->length, 2);
+    sp24->input[0] = sp24->base[0];
+    sp24->base[1] = alHeapAlloc(arg3, sp24->length, 2);
+    sp24->input[1] = sp24->base[1];
+    for (k = 0; k < sp24->length; k++) {
+        sp24->base[1][k] = 0;
+        sp24->base[0][k] = sp24->base[1][k];
+    }
+    for (i = 0; i < sp24->section_count; i++) {
+        sp28 = &sp24->delay[i];
+        sp28->input = sp2C[j++];
+        sp28->output = sp2C[j++];
+        sp28->fbcoef = sp2C[j++];
+        sp28->ffcoef = sp2C[j++];
+        sp28->gain = sp2C[j++];
+        if (sp2C[j]) {
+            sp28->rsinc =
+                ((sp2C[j++] / 1000.0f) * 2.0f) / arg1->outputRate;
+            sp28->rsgain =
+                (sp2C[j++] / D_8002C788) *
+                (u32)(sp28->output - sp28->input);
+            sp28->rsval = 1.0f;
+            sp28->rsdelta = 0;
+            sp28->rs = alHeapAlloc(arg3, 1U, 0x38);
+            sp28->rs->state[0] = alHeapAlloc(arg3, 1U, 0x20);
+            sp28->rs->state[1] = alHeapAlloc(arg3, 1U, 0x20);
+            sp28->rs->delta = 0.0f;
+            sp28->rs->first = 1;
+        } else {
+            sp28->rs = NULL;
+            j++;
+            j++;
+        }
+        if (sp2C[j]) {
+            sp28->lp = alHeapAlloc(arg3, 1U, 0x38);
+            sp28->lp->state[0] = alHeapAlloc(arg3, 1U, 8);
+            sp28->lp->state[1] = alHeapAlloc(arg3, 1U, 8);
+            sp28->lp->fc = (s16)sp2C[j];
+            j++;
+            init_lpfilter((ALLowPass *)sp28->lp);
+        } else {
+            sp28->lp = NULL;
+            j++;
+        }
+    }
 }
 
 void alN_PVoiceNew(N_PVoice *mv, ALDMANew dmaNew, ALHeap *hp) {

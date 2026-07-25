@@ -98,7 +98,7 @@ typedef struct N_PVoice_s {
     s32            offset;
     /* RARE CUSTOM */
     /* 0x94 */ u8             pad94[0x5];
-    /* 0x99 */ s8             unk99;
+    /* 0x99 */ u8             unk99;
     /* 0x9A */ u8             pad9A[0x6];
     /* 0xA0 */ s16            unkA0;
     /* 0xA2 */ s16            unkA2;
@@ -167,7 +167,7 @@ Acmd *n_alAuxBusPull( s32 sampleOffset, Acmd *p);
 
 Acmd *n_alFxPull( s32 sampleOffset, Acmd *p);
 s32 n_alFxParamHdl(void *filter, s32 paramID, void *param);
-void n_alFxNew(ALFx **r, ALSynConfig *c, ALHeap *hp, s32 unknown);
+void n_alFxNew(ALFx **r, ALSynConfig *c, s16 bus, ALHeap *hp);
 
 Acmd *n_alMainBusPull( s32 sampleOffset, Acmd *p);
 s32 n_alMainBusParam( s32 paramID, void *param);

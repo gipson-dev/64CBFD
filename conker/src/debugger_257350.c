@@ -94,264 +94,89 @@ s32 func_16001B8C(u8 *arg0, u8 *arg1, u32 arg2) {
             _PROUT(dst, src, c);      \
         }
 
-// NEARLY MATCHING (400/402 words, ~6 real diff instructions) - kept as
-// GLOBAL_ASM below so the function occupies its exact retail size, which
-// heals the debugger overlay's data displacement. Two 1-word uopt
-// scheduling idioms remain unsolved in C (see WORKING_NOTES eighteenth
-// session part 3): (1) retail computes the first chunk via
-// `subu v0` + `move s1,v0` (a web-split across the callback call that
-// our uopt always coalesces), and (2) retail likely-converts the last
-// _PAD's skip branch (beqzl + duplicated addiu in its delay) and fills
-// the loop-back `b` delay with an `lbu` preload of the loop top, where
-// ours fills it with the fmt update instead. Both double-branch
-// structures exist in our build too - only the delay-fill choices
-// differ. Re-enable this C (and delete the pragma) to keep hunting.
-// s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) {
-//     struct262 st;
-//     u8 *fmt_ptr;
-//     u8 c;
-//     u8 *flag_index;
-//     u8 buf[0x20];
-//     s32 c1, i1, c2, i2, c3, i3, c4, i4, c5, i5;
-//     s32 n;
-//     s32 pad1;
-//
-//     st.pad2C = 0;
-//     for (;; fmt = fmt_ptr + 1) {
-//     c = *fmt;
-//     fmt_ptr = fmt + 1;
-//     if ((s32) c > 0) {
-//         while (1) {
-//             if (c == '%') {
-//                 fmt_ptr -= 1;
-//                 break;
-//             }
-//             c = *fmt_ptr;
-//             fmt_ptr += 1;
-//             if ((s32) c <= 0) {
-//                 break;
-//             }
-//         }
-//     }
-//     if (fmt_ptr - fmt > 0) {
-//         i1 = fmt_ptr - fmt;
-//         dst = (u8 *) arg0(dst, fmt, fmt_ptr - fmt);
-//         if (dst != 0)
-//             st.pad2C += i1;
-//         else
-//             return st.pad2C;
-//     }
-//     fmt_ptr += 1;
-//     if (c == 0) {
-//         return st.pad2C;
-//     }
-//     st.flags = 0;
-//     for (; (flag_index = (u8 *) strchr((char *) D_16004804, *fmt_ptr)) != NULL; fmt_ptr++) {
-//         st.flags |= D_1600480C[flag_index - D_16004804];
-//     }
-//     if (*fmt_ptr == '*') {
-//         st.unk28 = va_arg(arg3, s32);
-//         if (st.unk28 < 0) {
-//             st.unk28 = -st.unk28;
-//             st.flags |= 4;
-//         }
-//         fmt_ptr++;
-//     } else {
-//         ATOI(st.unk28, fmt_ptr);
-//     }
-//     if (*fmt_ptr != '.') {
-//         st.width = -1;
-//     } else {
-//         fmt_ptr++;
-//         if (*fmt_ptr == '*') {
-//             st.width = va_arg(arg3, s32);
-//             fmt_ptr++;
-//         } else {
-//             ATOI(st.width, fmt_ptr);
-//         }
-//     }
-//     if (strchr((char *) D_16004800, *fmt_ptr) != NULL) {
-//         st.length = *fmt_ptr++;
-//     } else {
-//         st.length = 0;
-//     }
-//     if (st.length == 'l' && *fmt_ptr == 'l') {
-//         st.length = 'L';
-//         fmt_ptr++;
-//     }
-//     func_160021FC(&st, &arg3, *fmt_ptr, buf);
-//     st.unk28 -= st.unkC + st.padWidth + st.len + st.unk18 + st.unk1C + st.unk20;
-//     _PAD(i1, st.unk28, c1, D_16003C70, !(st.flags & 4));
-//     _PROUT(dst, buf, st.unkC);
-//     _PAD(i1, st.padWidth, c1, D_16003C94, 1);
-//     _PROUT(dst, st.dest, st.len);
-//     _PAD(i1, st.unk18, c1, D_16003C94, 1);
-//     _PROUT(dst, &st.dest[st.len], st.unk1C);
-//     _PAD(i1, st.unk20, c1, D_16003C94, 1);
-//     _PAD(i1, st.unk28, c1, D_16003C70, st.flags & 4);
-//     }
-// }
 s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) {
     struct262 st;
     u8 *fmt_ptr;
     u8 c;
     u8 *flag_index;
     u8 buf[0x20];
-    s32 c1, i1;
+    s32 c1, i1, c2, i2, c3, i3, c4, i4, c5, i5;
+    u32 n;
+    s32 pad1;
 
     st.pad2C = 0;
     for (;; fmt = fmt_ptr + 1) {
-        c = *fmt;
-        fmt_ptr = fmt + 1;
-        if ((s32) c > 0) {
-            while (1) {
-                if (c == '%') {
-                    fmt_ptr -= 1;
-                    break;
-                }
-                c = *fmt_ptr;
-                fmt_ptr += 1;
-                if ((s32) c <= 0) {
-                    break;
-                }
+    c = *fmt;
+    fmt_ptr = fmt + 1;
+    if ((s32) c > 0) {
+        while (1) {
+            if (c == '%') {
+                fmt_ptr -= 1;
+                break;
+            }
+            c = *fmt_ptr;
+            fmt_ptr += 1;
+            if ((s32) c <= 0) {
+                break;
             }
         }
-        if (fmt_ptr - fmt > 0) {
-            i1 = fmt_ptr - fmt;
-            dst = (u8 *) arg0(dst, fmt, fmt_ptr - fmt);
-            if (dst != 0) {
-                st.pad2C += i1;
-            } else {
-                return st.pad2C;
-            }
-        }
-        fmt_ptr += 1;
-        if (c == 0) {
+    }
+    if (fmt_ptr - fmt > 0) {
+        n = fmt_ptr - fmt;
+        dst = (u8 *)arg0(dst, fmt, n);
+        if (dst != 0)
+            st.pad2C += n;
+        else
             return st.pad2C;
+    }
+    fmt_ptr += 1;
+    if (c == 0) {
+        return st.pad2C;
+    }
+    st.flags = 0;
+    for (; (flag_index = (u8 *) strchr((char *) D_16004804, *fmt_ptr)) != NULL; fmt_ptr++) {
+        st.flags |= D_1600480C[flag_index - D_16004804];
+    }
+    if (*fmt_ptr == '*') {
+        st.unk28 = va_arg(arg3, s32);
+        if (st.unk28 < 0) {
+            st.unk28 = -st.unk28;
+            st.flags |= 4;
         }
-        st.flags = 0;
-        for (; (flag_index = (u8 *) strchr((char *) D_16004804, *fmt_ptr)) != NULL; fmt_ptr++) {
-            st.flags |= D_1600480C[flag_index - D_16004804];
-        }
+        fmt_ptr++;
+    } else {
+        ATOI(st.unk28, fmt_ptr);
+    }
+    if (*fmt_ptr != '.') {
+        st.width = -1;
+    } else {
+        fmt_ptr++;
         if (*fmt_ptr == '*') {
-            st.unk28 = va_arg(arg3, s32);
-            if (st.unk28 < 0) {
-                st.unk28 = -st.unk28;
-                st.flags |= FLAGS_MINUS;
-            }
+            st.width = va_arg(arg3, s32);
             fmt_ptr++;
         } else {
-            for (st.unk28 = 0; *fmt_ptr >= '0' && *fmt_ptr <= '9'; fmt_ptr++) {
-                if (st.unk28 < 999) {
-                    st.unk28 = *fmt_ptr + st.unk28 * 10 - '0';
-                }
-            }
+            ATOI(st.width, fmt_ptr);
         }
-        if (*fmt_ptr != '.') {
-            st.width = -1;
-        } else {
-            fmt_ptr++;
-            if (*fmt_ptr == '*') {
-                st.width = va_arg(arg3, s32);
-                fmt_ptr++;
-            } else {
-                for (st.width = 0; *fmt_ptr >= '0' && *fmt_ptr <= '9'; fmt_ptr++) {
-                    if (st.width < 999) {
-                        st.width = *fmt_ptr + st.width * 10 - '0';
-                    }
-                }
-            }
-        }
-        if (strchr((char *) D_16004800, *fmt_ptr) != NULL) {
-            st.length = *fmt_ptr++;
-        } else {
-            st.length = 0;
-        }
-        if (st.length == 'l' && *fmt_ptr == 'l') {
-            st.length = 'L';
-            fmt_ptr++;
-        }
-        func_160021FC(&st, &arg3, *fmt_ptr, buf);
-        st.unk28 -= st.unkC + st.padWidth + st.len + st.unk18 + st.unk1C + st.unk20;
-        if (!(st.flags & FLAGS_MINUS) && st.unk28 > 0) {
-            for (i1 = st.unk28; i1 > 0; i1 -= c1) {
-                c1 = ((u32) i1 > 32) ? 32 : i1;
-                dst = (u8 *) arg0(dst, D_16003C70, c1);
-                if (dst != 0) {
-                    st.pad2C += c1;
-                } else {
-                    return st.pad2C;
-                }
-            }
-        }
-        if (st.unkC > 0) {
-            dst = (u8 *) arg0(dst, buf, st.unkC);
-            if (dst != 0) {
-                st.pad2C += st.unkC;
-            } else {
-                return st.pad2C;
-            }
-        }
-        if (st.padWidth > 0) {
-            for (i1 = st.padWidth; i1 > 0; i1 -= c1) {
-                c1 = ((u32) i1 > 32) ? 32 : i1;
-                dst = (u8 *) arg0(dst, D_16003C94, c1);
-                if (dst != 0) {
-                    st.pad2C += c1;
-                } else {
-                    return st.pad2C;
-                }
-            }
-        }
-        if (st.len > 0) {
-            dst = (u8 *) arg0(dst, st.dest, st.len);
-            if (dst != 0) {
-                st.pad2C += st.len;
-            } else {
-                return st.pad2C;
-            }
-        }
-        if (st.unk18 > 0) {
-            for (i1 = st.unk18; i1 > 0; i1 -= c1) {
-                c1 = ((u32) i1 > 32) ? 32 : i1;
-                dst = (u8 *) arg0(dst, D_16003C94, c1);
-                if (dst != 0) {
-                    st.pad2C += c1;
-                } else {
-                    return st.pad2C;
-                }
-            }
-        }
-        if (st.unk1C > 0) {
-            dst = (u8 *) arg0(dst, &st.dest[st.len], st.unk1C);
-            if (dst != 0) {
-                st.pad2C += st.unk1C;
-            } else {
-                return st.pad2C;
-            }
-        }
-        if (st.unk20 > 0) {
-            for (i1 = st.unk20; i1 > 0; i1 -= c1) {
-                c1 = ((u32) i1 > 32) ? 32 : i1;
-                dst = (u8 *) arg0(dst, D_16003C94, c1);
-                if (dst != 0) {
-                    st.pad2C += c1;
-                } else {
-                    return st.pad2C;
-                }
-            }
-        }
-        if ((st.flags & FLAGS_MINUS) && st.unk28 > 0) {
-            for (i1 = st.unk28; i1 > 0; i1 -= c1) {
-                c1 = ((u32) i1 > 32) ? 32 : i1;
-                dst = (u8 *) arg0(dst, D_16003C70, c1);
-                if (dst != 0) {
-                    st.pad2C += c1;
-                } else {
-                    return st.pad2C;
-                }
-            }
-        }
+    }
+    if (strchr((char *) D_16004800, *fmt_ptr) != NULL) {
+        st.length = *fmt_ptr++;
+    } else {
+        st.length = 0;
+    }
+    if (st.length == 'l' && *fmt_ptr == 'l') {
+        st.length = 'L';
+        fmt_ptr += 1;
+    }
+    func_160021FC(&st, &arg3, *fmt_ptr, buf);
+    st.unk28 -= st.unkC + st.padWidth + st.len + st.unk18 + st.unk1C + st.unk20;
+    _PAD(i1, st.unk28, c1, D_16003C70, !(st.flags & 4));
+    _PROUT(dst, buf, st.unkC);
+    _PAD(i1, st.padWidth, c1, D_16003C94, 1);
+    _PROUT(dst, st.dest, st.len);
+    _PAD(i1, st.unk18, c1, D_16003C94, 1);
+    _PROUT(dst, &st.dest[st.len], st.unk1C);
+    _PAD(i1, st.unk20, c1, D_16003C94, 1);
+    _PAD(i1, st.unk28, c1, D_16003C70, st.flags & 4);
     }
 }
 
@@ -359,88 +184,107 @@ s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) 
 #undef _PROUT
 #undef _PAD
 
-// NON-MATCHING: Plauger/N64-SDK _Putfld, converted for raw-progress accounting.
 void func_160021FC(struct262 *arg0, va_list *arg1, u8 arg2, u8 *arg3) {
     arg0->unkC = arg0->padWidth = arg0->len = arg0->unk18 = arg0->unk1C = arg0->unk20 = 0;
 
-    if (arg2 == 'c') {
-        arg3[arg0->unkC++] = va_arg(*arg1, s32);
-    } else if (arg2 == 'd' || arg2 == 'i') {
-        if (arg0->length == 'l') {
-            arg0->num.value = va_arg(*arg1, s32);
-        } else if (arg0->length == 'L') {
-            arg0->num.value = va_arg(*arg1, s64);
-        } else {
-            arg0->num.value = va_arg(*arg1, s32);
-        }
-        if (arg0->length == 'h') {
-            arg0->num.value = (s16)arg0->num.value;
-        }
-        if (arg0->num.value < 0) {
-            arg3[arg0->unkC++] = '-';
-        } else if (arg0->flags & FLAGS_PLUS) {
-            arg3[arg0->unkC++] = '+';
-        } else if (arg0->flags & FLAGS_SPACE) {
-            arg3[arg0->unkC++] = ' ';
-        }
-        arg0->dest = &arg3[arg0->unkC];
-        func_160033A8(arg0, arg2);
-    } else if (arg2 == 'x' || arg2 == 'X' || arg2 == 'u' || arg2 == 'o') {
-        if (arg0->length == 'l') {
-            arg0->num.value = va_arg(*arg1, s32);
-        } else if (arg0->length == 'L') {
-            arg0->num.value = va_arg(*arg1, s64);
-        } else {
-            arg0->num.value = va_arg(*arg1, s32);
-        }
-        if (arg0->length == 'h') {
-            arg0->num.value = (u16)arg0->num.value;
-        } else if (arg0->length == 0) {
-            arg0->num.value = (u32)arg0->num.value;
-        }
-        if (arg0->flags & FLAGS_HASH) {
-            arg3[arg0->unkC++] = '0';
-            if (arg2 == 'x' || arg2 == 'X') {
-                arg3[arg0->unkC++] = arg2;
+    switch (arg2) {
+        case 'c':
+            arg3[arg0->unkC++] = va_arg(*arg1, s32);
+            break;
+        case 'd':
+        case 'i':
+            if (arg0->length == 'l') {
+                arg0->num.value = va_arg(*arg1, long);
+            } else if (arg0->length == 'L') {
+                arg0->num.value = va_arg(*arg1, long long);
+            } else {
+                arg0->num.value = va_arg(*arg1, s32);
             }
-        }
-        arg0->dest = &arg3[arg0->unkC];
-        func_160033A8(arg0, arg2);
-    } else if (arg2 == 'e' || arg2 == 'f' || arg2 == 'g' || arg2 == 'E' || arg2 == 'G') {
-        arg0->num.fvalue = va_arg(*arg1, f64);
-        if (((s32 *)&arg0->num.fvalue)[0] < 0) {
-            arg3[arg0->unkC++] = '-';
-        } else if (arg0->flags & FLAGS_PLUS) {
-            arg3[arg0->unkC++] = '+';
-        } else if (arg0->flags & FLAGS_SPACE) {
-            arg3[arg0->unkC++] = ' ';
-        }
-        arg0->dest = &arg3[arg0->unkC];
-        func_1600288C(arg0, arg2);
-    } else if (arg2 == 'n') {
-        if (arg0->length == 'h') {
-            *va_arg(*arg1, u16 *) = arg0->pad2C;
-        } else if (arg0->length == 'l') {
-            *va_arg(*arg1, u32 *) = arg0->pad2C;
-        } else if (arg0->length == 'L') {
-            *va_arg(*arg1, u64 *) = arg0->pad2C;
-        } else {
-            *va_arg(*arg1, u32 *) = arg0->pad2C;
-        }
-    } else if (arg2 == 'p') {
-        arg0->num.value = (s32)va_arg(*arg1, void *);
-        arg0->dest = &arg3[arg0->unkC];
-        func_160033A8(arg0, 'x');
-    } else if (arg2 == 's') {
-        arg0->dest = va_arg(*arg1, u8 *);
-        arg0->len = func_16001B00(arg0->dest);
-        if ((arg0->width >= 0) && (arg0->width < arg0->len)) {
-            arg0->len = arg0->width;
-        }
-    } else if (arg2 == '%') {
-        arg3[arg0->unkC++] = '%';
-    } else {
-        arg3[arg0->unkC++] = arg2;
+            if (arg0->length == 'h') {
+                arg0->num.value = (s16)arg0->num.value;
+            }
+            if (arg0->num.value < 0) {
+                arg3[arg0->unkC++] = '-';
+            } else if (arg0->flags & FLAGS_PLUS) {
+                arg3[arg0->unkC++] = '+';
+            } else if (arg0->flags & FLAGS_SPACE) {
+                arg3[arg0->unkC++] = ' ';
+            }
+            arg0->dest = &arg3[arg0->unkC];
+            func_160033A8(arg0, arg2);
+            break;
+        case 'x':
+        case 'X':
+        case 'u':
+        case 'o':
+            if (arg0->length == 'l') {
+                arg0->num.value = va_arg(*arg1, long);
+            } else if (arg0->length == 'L') {
+                arg0->num.value = va_arg(*arg1, long long);
+            } else {
+                arg0->num.value = va_arg(*arg1, int);
+            }
+            if (arg0->length == 'h') {
+                arg0->num.value = (u16)arg0->num.value;
+            } else if (arg0->length == 0) {
+                arg0->num.value = (u32)arg0->num.value;
+            }
+            if (arg0->flags & FLAGS_HASH) {
+                arg3[arg0->unkC++] = '0';
+                if (arg2 == 'x' || arg2 == 'X') {
+                    arg3[arg0->unkC++] = arg2;
+                }
+            }
+            arg0->dest = &arg3[arg0->unkC];
+            func_160033A8(arg0, arg2);
+            break;
+        case 'e':
+        case 'f':
+        case 'g':
+        case 'E':
+        case 'G':
+            arg0->num.fvalue = arg0->length == 'L'
+                ? va_arg(*arg1, long double)
+                : va_arg(*arg1, double);
+            if (((u16 *)&arg0->num.fvalue)[0] & 0x8000) {
+                arg3[arg0->unkC++] = '-';
+            } else if (arg0->flags & FLAGS_PLUS) {
+                arg3[arg0->unkC++] = '+';
+            } else if (arg0->flags & FLAGS_SPACE) {
+                arg3[arg0->unkC++] = ' ';
+            }
+            arg0->dest = &arg3[arg0->unkC];
+            func_1600288C(arg0, arg2);
+            break;
+        case 'n':
+            if (arg0->length == 'h') {
+                *va_arg(*arg1, unsigned short *) = arg0->pad2C;
+            } else if (arg0->length == 'l') {
+                *va_arg(*arg1, unsigned long *) = arg0->pad2C;
+            } else if (arg0->length == 'L') {
+                *va_arg(*arg1, unsigned long long *) = (u64)(u32)arg0->pad2C;
+            } else {
+                *va_arg(*arg1, unsigned int *) = arg0->pad2C;
+            }
+            break;
+        case 'p':
+            arg0->num.value = (long)va_arg(*arg1, void *);
+            arg0->dest = &arg3[arg0->unkC];
+            func_160033A8(arg0, 'x');
+            break;
+        case 's':
+            arg0->dest = va_arg(*arg1, u8 *);
+            arg0->len = func_16001B00(arg0->dest);
+            if (arg0->width >= 0 && arg0->width < arg0->len) {
+                arg0->len = arg0->width;
+            }
+            break;
+        case '%':
+            arg3[arg0->unkC++] = '%';
+            break;
+        default:
+            arg3[arg0->unkC++] = arg2;
+            break;
     }
 }
 // contains delay slot

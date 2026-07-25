@@ -4,7 +4,7 @@
 
 /* Generated placeholder declarations. */
 s32 func_1001ADA4();
-s32 func_1001B07C();
+ALSound *func_1001B07C(N_ALSeqPlayer *, u8, u8, u8);
 s32 func_1001B310();
 s32 func_1001B7D0();
 s32 func_1001BD34();
@@ -229,9 +229,36 @@ N_ALVoiceState *func_1001AFEC(N_ALSeqPlayer *seqp, u8 key, u8 channel) {
     return NULL;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/func_1001B07C.s. */
-s32 func_1001B07C() {
-    return 0;
+ALSound *func_1001B07C(N_ALSeqPlayer *seqp, u8 key, u8 vel, u8 chan) {
+    ALInstrument *inst = seqp->chanState[chan].instrument;
+    s32 l = 1;
+    s32 r;
+    s32 i;
+    ALKeyMap *keymap;
+
+    if (inst == NULL) {
+        return NULL;
+    }
+
+    r = inst->soundCount;
+
+    while (r >= l) {
+        i = (l + r) / 2;
+
+        keymap = inst->soundArray[i - 1]->keyMap;
+
+        if (key >= keymap->keyMin && key <= keymap->keyMax &&
+            vel >= keymap->velocityMin && vel <= keymap->velocityMax) {
+            return inst->soundArray[i - 1];
+        } else if (key < keymap->keyMin ||
+                   (vel < keymap->velocityMin && key <= keymap->keyMax)) {
+            r = i - 1;
+        } else {
+            l = i + 1;
+        }
+    }
+
+    return NULL;
 }
 
 s16 __n_vsVol(N_ALVoiceState *vs, N_ALSeqPlayer *seqp)

@@ -1,11 +1,12 @@
 #include "n_synthInternals.h"
 
-/* Generated placeholder declarations. */
 s32 func_10020000();
-s32 func_10020ABC();
-/* End generated placeholder declarations. */
+Acmd *func_10022040(N_PVoice *, s16 *, s32, Acmd *);
+s16 _getRate(f32, f32, s32, u16 *);
 
 extern f32 D_8002C814;
+extern s16 D_8002BC10[];
+extern s16 D_8002BD0E[];
 
 // relies on jump table
 /* Non-matching C placeholders for asm/nonmatchings/init_20000/func_10020000.s. */
@@ -49,10 +50,78 @@ s32 n_alEnvmixerParam(N_PVoice *filter, s32 paramID, void *param) {
   return 0;
 }
 
-// _pullSubFrame
-/* Non-matching C placeholders for asm/nonmatchings/init_20000/func_10020ABC.s. */
-s32 func_10020ABC() {
-    return 0;
+Acmd *func_10020ABC(N_PVoice *arg0, s16 *arg1, s16 *arg2, s32 arg3,
+                    Acmd *arg4) {
+    Acmd *sp34;
+    N_PVoice *sp30;
+    Acmd *sp2C;
+    Acmd *sp28;
+    Acmd *sp24;
+    Acmd *sp20;
+    Acmd *sp1C;
+
+    sp34 = arg4;
+    sp30 = arg0;
+    if (sp30->dc_table != 0) {
+        ((u8 *)sp30->dc_table)[0xA] = 1;
+    }
+    if ((sp30->em_motion != AL_PLAYING) || (arg3 == 0)) {
+        return sp34;
+    }
+
+    sp34 = func_10022040(sp30, arg1, arg3, arg4);
+    if (sp30->em_first) {
+        sp30->em_first = 0;
+        sp30->em_ltgt =
+            (D_8002BC10[(s16)sp30->em_pan] *
+             (s16)sp30->em_volume) >> 15;
+        sp30->em_lratm =
+            _getRate((s16)sp30->em_cvolL, (s16)sp30->em_ltgt,
+                     sp30->em_segEnd, &sp30->em_lratl);
+        sp30->em_rtgt =
+            (D_8002BD0E[-(s16)sp30->em_pan] *
+             (s16)sp30->em_volume) >> 15;
+        sp30->em_rratm =
+            _getRate((s16)sp30->em_cvolR, (s16)sp30->em_rtgt,
+                     sp30->em_segEnd, &sp30->em_rratl);
+
+        sp2C = sp34++;
+        sp2C->words.w0 = ((s16)sp30->em_cvolL & 0xFFFF) | 0x09060000;
+        sp2C->words.w1 =
+            (((s16)sp30->em_dryamt & 0xFFFF) << 16) |
+            ((s16)sp30->em_wetamt & 0xFFFF);
+
+        sp28 = sp34++;
+        sp28->words.w0 = ((s16)sp30->em_rtgt & 0xFFFF) | 0x09040000;
+        sp28->words.w1 =
+            (((s16)sp30->em_rratm & 0xFFFF) << 16) |
+            (sp30->em_rratl & 0xFFFF);
+
+        sp24 = sp34++;
+        sp24->words.w0 = ((s16)sp30->em_ltgt & 0xFFFF) | 0x09000000;
+        sp24->words.w1 =
+            (((s16)sp30->em_lratm & 0xFFFF) << 16) |
+            (sp30->em_lratl & 0xFFFF);
+
+        sp20 = sp34++;
+        sp20->words.w0 = ((s16)sp30->em_cvolR & 0xFFFF) | 0x03010000;
+        sp20->words.w1 = osVirtualToPhysical(sp30->em_state);
+        if (1) {
+        }
+    } else {
+        sp1C = sp34++;
+        sp1C->words.w0 = 0x03000000;
+        sp1C->words.w1 = osVirtualToPhysical(sp30->em_state);
+    }
+
+    *arg1 += 0x170;
+    sp30->em_delta += 184;
+    if (((s16)sp30->em_dryamt & 2) || ((s16)sp30->em_wetamt & 2)) {
+        sp30->em_dryamt &= -3;
+        sp30->em_wetamt &= -3;
+        sp30->em_first = 1;
+    }
+    return sp34;
 }
 // NON-MATCHING: pretty close but no cigar
 // struct21 *func_10020ABC(struct42 *arg0, struct119 *arg1, s32 arg2, s32 arg3, struct21 *arg4) {

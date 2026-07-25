@@ -38,7 +38,9 @@ def load_layout(path, filename):
     return sorted(rows, key=lambda row: row["address"])
 
 
-def emit_padded_assembly(object_path, layout_path, filename):
+def emit_padded_assembly(
+    object_path, layout_path, filename, rodata_symbol=None
+):
     text, compiled, relocations = parse_object(object_path)
     retail = load_layout(layout_path, filename)
     retail_names = {row["name"] for row in retail}
@@ -108,6 +110,11 @@ def emit_padded_assembly(object_path, layout_path, filename):
                 for relocation_name, relocation_symbol in relocations.get(
                     compact_offset, []
                 ):
+                    if (
+                        rodata_symbol is not None
+                        and relocation_symbol == ".rodata"
+                    ):
+                        relocation_symbol = rodata_symbol
                     output.append(
                         f".reloc ., {relocation_name}, {relocation_symbol}"
                     )
@@ -131,6 +138,11 @@ def emit_padded_assembly(object_path, layout_path, filename):
                 for relocation_name, relocation_symbol in relocations.get(
                     compact_offset, []
                 ):
+                    if (
+                        rodata_symbol is not None
+                        and relocation_symbol == ".rodata"
+                    ):
+                        relocation_symbol = rodata_symbol
                     output.append(
                         f".reloc ., {relocation_name}, {relocation_symbol}"
                     )
@@ -149,9 +161,18 @@ def main():
     parser.add_argument("layout", help="retail function layout CSV")
     parser.add_argument("filename", help="progress filename key")
     parser.add_argument("output", help="padded assembly output")
+    parser.add_argument(
+        "--rodata-symbol",
+        help="retail symbol corresponding to offset zero of compact .rodata",
+    )
     args = parser.parse_args()
     Path(args.output).write_text(
-        emit_padded_assembly(args.object, args.layout, args.filename),
+        emit_padded_assembly(
+            args.object,
+            args.layout,
+            args.filename,
+            rodata_symbol=args.rodata_symbol,
+        ),
         newline="\n",
     )
 

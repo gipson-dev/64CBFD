@@ -164,55 +164,71 @@ void func_16000424(struct118 *arg0) {
     }
 }
 
-// NON-MATCHING: one word short of retail, but converted for raw-progress accounting.
 void func_16000590(void *arg0) {
-    s32 s2 = *(s32 *) ((u8 *) arg0 + 0x12C);
-    s32 bits;
-    s32 pos = 0x2C;
-    s32 i;
-    s32 v0;
-    s32 s4 = 0;
-    s32 val;
-    u8 *s3;
+    register u8 *var_s5 = arg0;
+    s32 temp_s2 = *(s32 *) (var_s5 + 0x12C);
+    u32 var_s2;
+    s32 var_s0;
+    s32 var_s1;
+    s32 var_v0;
+    s32 var_s4 = 0;
+    s32 var_s2_2;
+    u8 *var_s3;
 
     func_160012B0(3, D_160047A4);
-    func_16001044(0xA, 0, s2);
+    func_16001044(0xA, 0, temp_s2);
 
-    bits = (u32) s2 >> 12;
-    for (i = 0; i < 6; i++) {
-        if (bits & 1) {
-            func_160012B0(pos, D_16003B30[i]);
-            pos += 0x20;
+    var_s2 = (u32) temp_s2 >> 12;
+    var_s0 = 0x2C;
+    var_s1 = 0;
+    do {
+        if (var_s2 & 1) {
+            func_160012B0(var_s0, D_16003B30[var_s1]);
+            var_s0 += 0x20;
         }
-        bits >>= 1;
-    }
+        var_s1 += 1;
+        var_s2 >>= 1;
+    } while (var_s1 < 6);
 
+    var_s1 = 0;
+    var_s0 = 0xC3;
     if (D_16003B28 == 1) {
-        pos = 0xC3;
-        v0 = 0x4C;
+        var_v0 = 0x4C;
     } else {
-        v0 = 0x6C;
-        s4 = 0x10;
+        var_v0 = 0x6C;
+        var_s4 = 0x10;
     }
-    val = s4;
-    s3 = (u8 *) arg0 + v0 * 4;
-    for (i = 0; i < 0x10; i++) {
-        func_160012B0(pos, D_160047AC);
-        func_16001044(pos + 2, 1, val);
-        func_16001044(pos + 5, 2, *(s32 *) (s3 + 4));
-        s3 += 8;
-        pos += 0x20;
-        val += 1;
-    }
+    var_s2_2 = var_s1 + var_s4;
+    var_s3 = var_s5 + var_v0 * 4;
+    do {
+        func_160012B0(var_s0, D_160047AC);
+        func_16001044(var_s0 + 2, 1, var_s2_2);
+        func_16001044(var_s0 + 5, 2, *(s32 *) (var_s3 + 4));
+        var_s1 += 1;
+        var_s3 += 8;
+        var_s0 += 0x20;
+        var_s2_2 += 1;
+    } while (var_s1 < 0x10);
 }
 
-// NON-MATCHING: one word short of retail, but converted for raw-progress accounting.
-void func_160006CC(void *arg0) {
-    s32 sp3C = D_16003B48;
-    u8 *label = (u8 *) &sp3C;
-    u8 *entry = D_160037F0;
-    s32 pos = 0x123;
+typedef struct {
+    s32 value;
+} DebugLabel;
 
+void func_160006CC(void *arg0) {
+    struct {
+        s32 pad[2];
+        DebugLabel label;
+    } storage;
+    u8 *label;
+    u8 *entry;
+    s32 pos;
+    s32 next;
+
+    storage.label = *(DebugLabel *)&D_16003B48;
+    label = (u8 *)&storage.label;
+    entry = D_160037F0;
+    pos = 0x123;
     func_16001338(0xC0, 0xC0, 0xFF);
     label[0] = D_160037F0[0];
     do {
@@ -221,9 +237,10 @@ void func_160006CC(void *arg0) {
         pos += 3;
         func_16001044(pos, 0, ((s32 *) arg0)[entry[2] + 1]);
         pos += 0xD;
-        label[0] = entry[3];
+        next = entry[3];
+        label[0] = next;
         entry += 3;
-    } while (label[0] != 0);
+    } while (next != 0);
 }
 
 // NON-MATCHING: close but still some stuff to figure out
