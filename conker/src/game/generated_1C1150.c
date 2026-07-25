@@ -127,7 +127,7 @@ void func_15194DA4(s32 arg0, s32 arg1, s32 arg2) {
 }
 
 void func_15194DC8(s32 arg0, u8 *arg1, s32 arg2) {
-    f32 sp2C[3];
+    f32 sp2C[9];
 
     if (D_800BE616 != 0) {
         func_15194DA4(arg0, arg1, arg2);
@@ -179,9 +179,9 @@ void func_15195738(s32 arg0, s32 arg1, s32 arg2) {
     s8 sp18[7];
 
     sp18[0] = 1;
-    *(s16 *)&sp18[2] = (func_150ADA20() % 0xB) + 0x14;
+    *(s16 *)&sp18[2] = (func_150ADA20() % 0xBU) + 0x14;
     sp18[4] = 8;
-    sp18[5] = 1;
     sp18[6] = -1;
+    sp18[5] = 1;
     func_151D8868(sp18, 0, 0xFF, 0);
 }

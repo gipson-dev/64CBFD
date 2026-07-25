@@ -1,5 +1,10 @@
 #include <ultra64.h>
 extern u8 D_800CC406[];
+extern s32 D_800C3E80[];
+extern u8 D_800BE9C0;
+extern s32 D_800C3E88;
+extern s32 D_800C3E8C;
+extern s16 D_800C3E7A;
 
 /* Non-matching placeholders for the text-only asm slice asm/58F80.s. */
 
@@ -19,8 +24,12 @@ s32 func_1502C1A4() {
     return 0;
 }
 
-s32 func_1502C380() {
-    return 0;
+void func_1502C380(void) {
+    s32 val = D_800C3E80[D_800BE9C0];
+
+    D_800C3E88 = val;
+    D_800C3E8C = val;
+    D_800C3E7A = 0;
 }
 
 s32 func_1502C3BC(s32 arg0) {

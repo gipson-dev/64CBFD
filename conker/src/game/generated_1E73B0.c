@@ -101,9 +101,9 @@ s32 func_151BD2BC(u8 *arg0) {
         return 0;
     }
     if (*(arg0 + 0x2C) != *(temp_v0 + 0x3B)) {
-        return 1;
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 s32 func_151BD2F8() {

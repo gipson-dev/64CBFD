@@ -1,6 +1,7 @@
 #include <ultra64.h>
 extern s32 D_8002BE20;
 extern OSMesgQueue D_80042AA8;
+extern OSMesg D_800E0D20[1];
 #include "controller.h"
 
 #ifdef __osSiCreateAccessQueue2
@@ -15,8 +16,10 @@ extern OSMesgQueue D_80042AA8;
 
 /* Non-matching C placeholders for C:/Users/grego/OneDrive/Desktop/.vscode/64CBFD/conker/asm/libultra/io/siacs2.s. */
 
-s32 __osSiCreateAccessQueue2() {
-    return 0;
+void __osSiCreateAccessQueue2(void) {
+    D_8002BE20 = 1;
+    osCreateMesgQueue(&D_80042AA8, D_800E0D20, 1);
+    osSendMesg(&D_80042AA8, NULL, 0);
 }
 
 void __osSiGetAccess2(void) {
@@ -28,6 +31,6 @@ void __osSiGetAccess2(void) {
     osRecvMesg(&D_80042AA8, &mesg, 1);
 }
 
-s32 __osSiRelAccess2() {
-    return 0;
+void __osSiRelAccess2(void) {
+    osSendMesg(&D_80042AA8, NULL, 0);
 }

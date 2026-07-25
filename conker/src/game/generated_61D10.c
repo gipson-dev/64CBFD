@@ -20,8 +20,17 @@ s32 func_15034F30() {
     return 0;
 }
 
-s32 func_150356C8() {
-    return 0;
+u8 *func_150356C8(void) {
+    extern u8 D_800C3F08[];
+    u8 val = D_800C3F00;
+    u8 next;
+
+    if (val == 15) {
+        return 0;
+    }
+    next = val + 1;
+    D_800C3F00 = next;
+    return D_800C3F08 + (next - 1) * 12;
 }
 
 s32 func_15035714() {

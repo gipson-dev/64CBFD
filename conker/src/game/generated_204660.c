@@ -75,11 +75,11 @@ s32 func_151D75C4() {
 
 s32 func_151D7724(u8 *arg0) {
     u8 *temp_v0 = *(u8 **)(arg0 + 0x40);
+    u8 *temp_v1 = arg0 + 0x28;
 
     if ((*(s32 *)(temp_v0 + 0x94) & 2) != 0 || *(u16 *)(temp_v0 + 0x84) == 4 ||
         *(u16 *)(temp_v0 + 0x84) == 0xA || *(u16 *)(temp_v0 + 0x84) == 0xC) {
-        u8 *temp_v1 = arg0 + 0x28;
-        temp_v1[5] &= 0xFE;
+        temp_v1[5] &= 0xFFFE;
     }
     return 1;
 }

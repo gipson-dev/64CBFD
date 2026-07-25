@@ -184,10 +184,10 @@ void func_151F2D6C(s32 arg0, s32 arg1) {
     u32 mask = osSetIntMask(1);
     if (arg0 < 0) {
         D_800E0E08 = 0;
-    } else if (arg0 < 0x8000) {
-        D_800E0E08 = arg0;
-    } else {
+    } else if (arg0 >= 0x8000) {
         D_800E0E08 = 0x7FFF;
+    } else {
+        D_800E0E08 = arg0;
     }
     D_800E0E10 = arg1;
     osSetIntMask(mask);

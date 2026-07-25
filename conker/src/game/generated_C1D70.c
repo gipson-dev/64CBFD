@@ -85,6 +85,14 @@ s32 func_1509629C() {
     return 0;
 }
 
-s32 func_15096934() {
-    return 0;
+u8 *func_15096934(u8 *arg0) {
+    extern u32 D_80087408;
+    extern u8 D_800D2DAB;
+    u8 *ptr = arg0;
+
+    *(u32 *) (ptr + 0) = 0xde000000;
+    *(u32 *) (ptr + 4) = (u32) &D_80087408;
+    arg0 = arg0 + 8;
+    D_800D2DAB = 0;
+    return arg0;
 }

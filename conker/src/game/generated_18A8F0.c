@@ -155,10 +155,10 @@ void func_1515F10C(u8 *arg0) {
             node = *(u8 **) node;
         } while (node != arg0);
     }
-    if (prev == 0) {
-        D_800DCD78 = *(u8 **) node;
-    } else {
+    if (prev != 0) {
         *(u8 **) prev = *(u8 **) node;
+    } else {
+        D_800DCD78 = *(u8 **) node;
     }
     func_10004074(node);
 }
@@ -237,9 +237,9 @@ void func_1515FB94(u8 *arg0, s32 arg1) {
 }
 
 void func_1515FBC4(u8 *arg0, s32 arg1) {
+    s32 index;
     s32 temp_v1 = 0;
     s32 temp_v0 = func_15105C24(arg1);
-    s32 index;
 
     if (temp_v0 != 0) {
         temp_v1 = *(s32 *) (temp_v0 + 0x98);

@@ -8,6 +8,195 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-07-24 (continued, fourth pass - scoping a push toward 42%)
+
+### Two more matched; the easy-win pool is now mostly exhausted
+
+- `func_1503DF0C` and `func_150A0374` reached byte-exact: a struct-field
+  read-modify-write against the already-typed `struct106 D_800C6660[]`
+  array (needed the byte-index-14 field widened past `struct106`'s
+  anonymous `pad[3]`), and another instance of the then/else physical-layout
+  swap pattern (now fixed four times this session).
+- **Scale check, since the ask was a specific percentage target:** a bulk
+  scan of every non-exact C function (`ours` compiled length vs `truth`
+  retail length) found roughly **3,080 functions that are still literal
+  `return 0;` placeholders** with a real retail body waiting to be
+  reconstructed - the actual remaining backlog is almost entirely this, not
+  small scheduling diffs. Reaching 42% needs 73 more exact functions from
+  a session baseline of 2,433; each one still requires the same
+  manual cycle (read retail words, infer the C shape, guess field/array
+  types from the few already-typed structs, build, diff, iterate) with no
+  found way to batch it - a promising-looking family of ~62 near-identical
+  "dispatch through a function-pointer table, then two fixed calls"
+  handlers (`func_151A8584`/`func_151A85D4` and siblings in
+  `generated_1D4E00.c`) turned out to hit the same argument-homing-timing
+  wall as `func_151ACB60` (retail homes the incoming pointer lazily, in a
+  `jalr` delay slot; our compile homes it eagerly at entry) once actually
+  tried, so it isn't the multiplier it looked like.
+- Reconstructed real (but not yet byte-exact) bodies for four more former
+  stubs while investigating - `func_15096934`/`func_1510E634` (write a
+  2-word "magic tag + pointer" node header, matching the game's node/list
+  init idiom), `func_1507EEB8` (5-byte ring-buffer push/shift), and
+  `func_1502C380` (read an indexed lookup table entry, fan it out to two
+  fields plus a cleared counter) - all confirmed logically correct against
+  retail's instructions but still differ by register choice or instruction
+  order, the same resistant classes from earlier in this session. Left
+  as-is rather than reverted to `return 0;`, since a real, instruction-level
+  verified implementation is strictly more useful to the next session than
+  a placeholder, even short of byte-exact.
+- Re-tried the previously-parked `func_151E81EC` global-clear family
+  (`DOCS/WORKING_NOTES.md`'s "lui-$at paired stores... cannot be reproduced
+  with extern declarations") with both a scalar-externs shape and an
+  array-element shape; both confirmed the same finding again - IDO emits a
+  fresh `lui` per external symbol access and never reuses one `%hi` load
+  across consecutive stores to different symbols the way retail's build
+  did, regardless of declaration style. Still unsolved; not a source-shape
+  problem.
+- Verified **1902 / 5284 game functions (36.00%)** and **2435 / 5973 overall
+  (40.77%)** byte-exact, same one address-drift blocker, no regressions.
+  Raw C conversion remains **5973 / 6033 (99.01%)**. At the pace of this
+  session (roughly 2-5 confirmed exact functions per focused pass, after
+  screening out many more that hit resistant compiler-behavior classes),
+  reaching 42% is a real but multi-session undertaking, not a single push -
+  see the bulk-stub-scan finding above for where the remaining work
+  actually lives.
+
+## 2026-07-24 (continued, third pass)
+
+### Five more functions matched: two libultra stubs implemented, two struct-size bugs found
+
+- `__osSiRelAccess2` and `__osSiCreateAccessQueue2` (`game/generated_siacs2.c`)
+  were still raw `return 0;` placeholders. Their non-"2" siblings
+  (`__osSiRelAccess`/`__osSiCreateAccessQueue` in `libultra/io/siacs.c`) were
+  already matched real implementations using the same
+  `osSendMesg`/`osCreateMesgQueue`/`D_8002BE20`/`D_80042AA8` idiom; copied the
+  pattern onto the "2" queue's own globals (`D_800E0D20` message buffer,
+  confirmed via the linked ELF's `osCreateMesgQueue`/`osSendMesg` call targets
+  at their name-implied addresses) and both went byte-exact immediately.
+  `func_15149104` was the same class - an unconverted stub whose retail body
+  is a single forwarding call (`func_151478F4(arg0)`, confirmed against that
+  function's real signature from its other call sites) with no visible
+  argument setup, meaning it just passes its own incoming `a0` straight
+  through.
+- `func_15194DC8`: retail's stack frame is 80 bytes, but the placeholder's
+  local buffer (`f32 sp2C[3]`, passed to two undecompiled callees) only
+  produced 56. Growing the buffer to `f32 sp2C[9]` (matching the 24-byte /
+  6-word gap exactly) reached byte-exact in one try - the callee apparently
+  writes a larger record than the `struct17` (3-float vec3) guess used at
+  other call sites of the first callee, `func_1504715C`; worth revisiting
+  those other sites' type later.
+- `func_15195738` pattern repeats: `func_1000FE88` and `func_15019BB8` are
+  the same stack-slot/frame-size class as previously-fixed
+  `func_1515FBC4`/`func_15194DC8` but resisted the same tricks (adding a
+  local grew the frame past retail's size instead of reusing slack); left
+  for a future session.
+- `func_151D7724`: retail computes `arg0 + 0x28` before evaluating the
+  four-way OR condition and reuses it in the delay slot of the first
+  `bnezl`, but the placeholder computed it only inside the `if` body once
+  the condition was already known true. Hoisting the local's declaration to
+  match retail's unconditional-early-computation order fixed the placement;
+  a second, unrelated diff remained (`andi ...,0xfe` vs `andi ...,0xfffe`)
+  that turned out to be a harmless mask-width difference - both produce the
+  same result once the value's already come from an 8-bit `lbu`, so widening
+  our literal to `0xFFFE` matched retail's source exactly with no behavior
+  change. The two sibling functions in the same file (`func_151D7770`,
+  `func_151D779C`) show the same `0xfe`-vs-`0xfffe` mask pattern in their own
+  diffs - worth checking first next time, they may be one-line fixes.
+- Tried and reverted several more candidates, all confirming already-known
+  resistant classes rather than new ones: `func_1514672C` and
+  `func_151254F4`/`__osSiGetAccess2` (independent-instruction/prologue
+  reorder - explicit temps don't change IDO's chosen order), `func_1509D054`
+  and `func_151B2FA0` (retail routes a call argument through an extra
+  register/stack round-trip our compile elides), `func_1000FE88` (stack-slot
+  class with only one real local, no reorder candidate), `func_1515FB70` and
+  `func_100043B4` (retail computes a value it then provably discards - the
+  same "dead code IDO won't reproduce" puzzle as `func_150C7930`), and
+  `func_150A7770`/`func_10001420` (both are `__retail_overflow_*` trampolines
+  - our correct-looking C loop body doesn't fit the tiny 8-9 word retail
+  span even with `-Wo,-loopunroll,0`; retail's tight `bnezl`-based loop is
+  almost certainly genuinely hand-written SDK code, same class as the COP0
+  accessors and the `sin`/`cos` fallthrough trampoline from the last
+  session).
+- Verified **1900 / 5284 game functions (35.96%)** and **2433 / 5973 overall
+  (40.73%)** byte-exact, same one address-drift blocker, no regressions in
+  init or debugger. Raw C conversion remains **5973 / 6033 (99.01%)**.
+
+## 2026-07-24 (continued)
+
+### Three more game functions matched; two more real bugs found
+
+- `func_1515F10C` (linked-list node removal) and `func_151F2D6C` (audio pitch
+  clamp) both had the same shape: an `if`/`else` whose source order matched
+  the *logic* but not retail's *physical instruction layout* - IDO put the
+  other branch at the fallthrough position and this one at the jump target.
+  Swapping the branch condition and its body order (same trick that fixed
+  `func_151BD2BC` earlier today) made both byte-exact.
+- `func_15195738`: two independent bugs in one stack-local record init.
+  (1) `func_150ADA20() % 0xB` used signed division; retail's `divu` proves the
+  modulus needs an unsigned operand (`% 0xBU`), matching the `% 3U` idiom
+  already used elsewhere in the codebase for the same PRNG call. (2) the two
+  final field writes (`sp18[5] = 1; sp18[6] = -1;`) had the right values but
+  the wrong evaluation order - retail assigns index 6 before index 5. Fixing
+  both (division operand type, then statement order) reached byte-exact.
+- Tried and reverted three more candidates, each confirming a resistant class
+  already on record: `func_1514672C` (independent-load reorder feeding a
+  float compare - explicit temp did not change it, worse when tried harder),
+  `func_1509D054` and `func_151B2FA0` (retail routes a call argument through
+  an extra register/stack round-trip that our compile elides - adding a
+  prototype for the untyped callee did not change it). `func_1000FE88` (init)
+  is the same stack-slot-offset class already fixed twice elsewhere, but here
+  the function has only one real local and no reordering candidate; adding a
+  matching second local shifted the slot but grew the frame past retail's 32
+  bytes, so reverted. `func_150AD780` turned out to be a shared fallthrough
+  trampoline (`sin(x) = cos(x + pi/2)`, no `jr ra` of its own - it falls
+  straight into `func_150AD78C`'s body), the same "not really its own
+  function" class as `func_150A6354` from the last session.
+- Verified **1895 / 5284 game functions (35.86%)** and **2428 / 5973 overall
+  (40.65%)** byte-exact, same one address-drift blocker, no regressions in
+  init or debugger. Raw C conversion remains **5973 / 6033 (99.01%)**.
+
+## 2026-07-24
+
+### Two more game functions matched; one real logic bug fixed
+
+- `func_151BD2BC`: found and fixed an inverted-comparison bug, not just a
+  matching artifact. The existing placeholder returned 1 when two byte fields
+  were *unequal* and 0 when equal; retail's preset/override pattern
+  (`li v0,1` before the compare, `move v0,zero` in the fallthrough) proves the
+  real predicate returns 1 on equality. Swapping the comparison and return
+  values makes the function byte-exact.
+- `func_1515FBC4`: reordering the `index`/`temp_v1` local declarations shifted
+  `temp_v1`'s stack slot from `sp+28` to retail's `sp+24`, the only remaining
+  difference. Now byte-exact.
+- Surveyed the smallest remaining diffs (1-3 real instruction words) for more
+  candidates. Most of the rest are one of two resistant, already-documented
+  classes and were reverted after confirming no source-level rewrite changes
+  the output: (1) commutative-operand / independent-instruction canonicalization
+  (`addu`/`multu`/`bne`/`beq` operand order, or the order of two independent
+  address computations) that IDO reorders the same way regardless of source
+  expression or declaration order; (2) register-choice artifacts where IDO
+  picks a different scratch register for a dead value than retail
+  (`func_15087FC4`/`func_15087FEC`, `func_15079F6C`, `func_15199980`). A
+  fix for `func_151733D8` (adding its real 2-argument signature plus a
+  per-file `-O2` no-`-g3` override to get the retail-filled branch-delay
+  slot) only works by changing the whole file's compile profile, which flips
+  the file's one already-exact function (`func_15173994`) to non-exact - a
+  net wash, reverted per the "no regressions" rule.
+- New findings for future sessions: `func_150AC9B0`'s retail body is a bare
+  `j func_150AC2D8` (no `jal`, no frame) - a real tail call, but a plain
+  `return func_150AC2D8();` compiles to a full `jal`+move+`jr` sequence (2x
+  the retail size); this is the only function in the entire retail corpus
+  with that exact bare-tail-jump shape, so it's likely not reachable through
+  normal C. `func_150A6354` is not an independent callable function at all -
+  retail's own `func_150A6210` reaches it via raw `j func_150A6354` (twice,
+  as a shared exit path) rather than `jal`, so it's a shared epilogue
+  fragment of `func_150A6210`, not a real leaf routine with its own C
+  signature.
+- Verified **1892 / 5284 game functions (35.81%)** and **2425 / 5973 overall
+  (40.60%)** byte-exact, with the same one address-drift blocker and no
+  regressions in init or debugger. Raw C conversion remains
+  **5973 / 6033 (99.01%)**.
+
 ## 2026-07-19
 
 ### Byte-exact matching crossed 40% overall

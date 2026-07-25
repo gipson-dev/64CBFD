@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "variables.h"
 s32 func_1503EB78(s32, f32, f32, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/6B320.s. */
@@ -7,8 +8,13 @@ s32 func_1503DE70() {
     return 0;
 }
 
-s32 func_1503DF0C() {
-    return 0;
+void func_1503DF0C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    struct106 *ptr = &D_800C6660[arg0];
+
+    ptr->unk4 |= arg2;
+    ptr->unk8 |= arg3;
+    ((u8 *) ptr)[0xE] = arg1;
+    ptr->unkF = 2;
 }
 
 s32 func_1503DF48() {
