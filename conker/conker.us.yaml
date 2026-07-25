@@ -793,7 +793,9 @@ segments:
       - [0x21F1C0, c,   libultra/io/pfsisplug2]      # dupe of libultra/io/pfsisplug
       - [0x21F530, asm, libultra/io/contramread2]    # dupe of libultra/io/contramread
       - [0x21f8e0, asm, libultra/io/contramwrite2]   # dupe of libultra/io/contramwrite
-      - [0x21fc90, c,   libultra/audio/game_21FC90]  # -g
+      - [0x21fc90, c,   libultra/audio/func_151F27E0] # -O1
+      - [0x21fd40, c,   libultra/audio/func_151F2890] # -O1
+      - [0x21fe10, c,   libultra/audio/game_21FC90]   # -g
       - [0x221290, c, game_221290]
       - [0x225d20, asm]
       - [0x2270a0, asm]

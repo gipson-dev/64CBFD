@@ -1,8 +1,6 @@
 #include <n_libaudio.h>
 
 /* Generated placeholder declarations. */
-s32 func_151F27E0();
-s32 func_151F2890();
 void func_151F2BE8();
 void func_151F2C4C();
 s32 func_151F2CDC();
@@ -61,37 +59,6 @@ extern s32  D_800E0DF4[];
 extern s32  D_800E0DF8;
 extern u8   D_800E0E19;
 
-
-s32 func_151F27E0(s32 arg0) {
-    u8 var_e;
-    u8 var_f;
-    s32 i;
-
-    arg0 &= 0xFFFF;
-    var_f = 0;
-    i = 0;
-    do {
-        s32 bit;
-
-        if (var_f & 0x10) {
-            var_e = 0x15;
-        } else {
-            var_e = 0;
-        }
-        var_f <<= 1;
-        bit = (arg0 & 0x400) ? 1 : 0;
-        var_f = (var_f & 0xFF) | bit;
-        arg0 = (arg0 << 1) & 0xFFFF;
-        var_f = (var_f & 0xFF) ^ var_e;
-        i++;
-    } while (i < 0x10);
-    return var_f & 0x1F;
-}
-
-/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F2890.s. */
-s32 func_151F2890() {
-    return 0;
-}
 
 void func_151F2960(s32 arg0, s32 arg1) {
     if (D_800E0DFC == 0) {

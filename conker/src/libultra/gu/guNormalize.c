@@ -1,8 +1,11 @@
-#include <ultra64.h>
-#include "functions.h"
-#include "variables.h"
+#include "libc/math.h"
 
+void guNormalize(float *x, float *y, float *z)
+{
+    float	m;
 
-/* Non-matching C placeholders for asm/nonmatchings/libultra/gu/guNormalize/guNormalize.s. */
-void guNormalize(float *x, float *y, float *z) {
+	m = 1/sqrtf((*x)*(*x) + (*y)*(*y) + (*z)*(*z));
+    *x *= m;
+    *y *= m;
+    *z *= m;
 }

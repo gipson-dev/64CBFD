@@ -4,21 +4,18 @@
 
 extern OSTimer *__osTimerList;
 extern OSTimer __osBaseTimer;
-extern OSTime __osCurrentTime;
+OSTime __osCurrentTime;
 extern u32 __osBaseCounter;
 extern u32 __osViIntrCount;
 extern u32 __osTimerCounter;
-void __osTimerServicesInit(void)
-{
-	__osCurrentTime = 0;
-	__osBaseCounter = 0;
-	__osViIntrCount = 0;
-	__osTimerList->prev = __osTimerList;
-	__osTimerList->next = __osTimerList->prev;
-	__osTimerList->value = 0;
-	__osTimerList->interval = __osTimerList->value;
-	__osTimerList->mq = NULL;
-	__osTimerList->msg = 0;
+void __osTimerServicesInit(void) {
+    __osCurrentTime = 0;
+    __osBaseCounter = 0;
+    __osViIntrCount = 0;
+    __osTimerList->next = __osTimerList->prev = __osTimerList;
+    __osTimerList->interval = __osTimerList->value = 0;
+    __osTimerList->mq = NULL;
+    __osTimerList->msg = 0;
 }
 
 void __osTimerInterrupt(void)

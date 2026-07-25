@@ -35,26 +35,26 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Completed (2026-07-25, byte matching for `func_151E50C8`,
-`func_15017498`, and `func_15007A70`).** Target status is now
-`[########################] 3 / 3 (100.00%)`. `func_15017498` and
-`func_15007A70` remained independently byte-exact. `func_151E50C8` now
-matches its full retail `0x124`-byte span, and the adjacent 23-byte-copy
-helper `func_151DD970` now matches its `0x74`-byte span as well.
+**Active (2026-07-25, reuse every applicable Banjo-Kazooie decomp
+finding).** Batches 1 through 3 in
+[`TEMP_BANJO_CROSSPORT_TODO.md`](TEMP_BANJO_CROSSPORT_TODO.md) are complete.
+Batch 3 made all 14 duplicated PFS SDK routines and `func_151F27E0`
+byte-exact. The immediate next step is a broader audit of Banjo functions
+whose structure, signatures, constants, or compiler profiles can improve
+Conker even when the retail bodies are not identical.
 
-The durable IDO findings were moved to `CONTRIBUTING.md`: the generated slice
-needs a same-translation-unit destination definition to recover retail BSS
-address coalescing, while physical source-line layout controls the final
-unrolled-loop schedule. The winning `func_151E50C8` form keeps the copy loop
-on one physical line and retains an optimized-away `^ 0` on the later
-comparison to preserve register allocation.
+The PFS routines reused Conker's exact primary SDK source under Banjo's
+confirmed `-O1` profile. `func_151F27E0` reused Banjo's
+`__osContAddressCrc`, also under `-O1`; it was split out of the surrounding
+`-g` audio translation unit through the tracked extraction config so both
+profiles remain reproducible after a fresh extraction. All 15 targets and the
+checked neighboring exact functions survived the full rebuild and linked
+scan.
 
-Verified baseline after a full relink and `match_progress.py --list`: total
-`2437 / 5973 (40.80%)`, game `1904 / 5284 (36.03%)`, init
-`367 / 508 (72.24%)`, debugger
-`166 / 181 (91.71%)`, one address-drift blocker (`func_1509E6F0`, still
-waiting on `func_151F2CDC` - see the bulk-conversion note below, it did not
-clear this time either).
+Verified baseline after the full extraction, normal rebuild, and retail-ROM
+scan: total `2474 / 5973 (41.42%)`, game `1938 / 5284 (36.68%)`, init
+`370 / 508 (72.83%)`, debugger `166 / 181 (91.71%)`, with the same one
+address-drift blocker.
 
 **Update (2026-07-24, func_151150BC decompiled, signature confirmed).** See
 the workflow entry above this one for the func_151150BC / func_150C7930 /

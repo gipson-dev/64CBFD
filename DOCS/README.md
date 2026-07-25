@@ -42,6 +42,9 @@ confirmed.
 
 ## Planning and history
 
+- [Temporary Banjo cross-port TODO](TEMP_BANJO_CROSSPORT_TODO.md) — active
+  checklist for reusing compatible code and compiler findings from the
+  completed Banjo-Kazooie decompilation.
 - [PC port roadmap](PC_PORT_ROADMAP.md) — phased plan for a native port and
   later modernization work.
 - [Update log](UPDATE_LOG.md) — repository-facing milestones, workflow changes,
@@ -61,6 +64,7 @@ confirmed.
 | Future PC-port decisions | `PC_PORT_ROADMAP.md` |
 | Completed milestones and public changes | `UPDATE_LOG.md` |
 | Temporary findings and abandoned attempts | `WORKING_NOTES.md` |
+| Active Banjo cross-port sweep | `TEMP_BANJO_CROSSPORT_TODO.md` |
 
 The `tools/` subdirectories are mostly submodules and retain their own upstream
 documentation. Do not move or rewrite those READMEs as project documentation.

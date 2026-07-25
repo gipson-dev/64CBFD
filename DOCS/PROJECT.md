@@ -210,9 +210,9 @@ hardware CP0 operations that are not ordinary C conversion targets.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[##########--------------]` 2,437 / 5,973 (40.80%) | 1 | 3,535 |
-| Init | `[#################-------]` 367 / 508 (72.24%) | 0 | 141 |
-| Game | `[#########---------------]` 1,904 / 5,284 (36.03%) | 1 | 3,379 |
+| Total | `[##########--------------]` 2,474 / 5,973 (41.42%) | 1 | 3,498 |
+| Init | `[#################-------]` 370 / 508 (72.83%) | 0 | 138 |
+| Game | `[#########---------------]` 1,938 / 5,284 (36.68%) | 1 | 3,345 |
 | Debugger | `[######################--]` 166 / 181 (91.71%) | 0 | 15 |
 
 `match-progress` compares linked functions by symbol against pristine retail

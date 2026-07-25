@@ -23,12 +23,11 @@ void __osSiCreateAccessQueue2(void) {
 }
 
 void __osSiGetAccess2(void) {
-    OSMesg mesg;
-
-    if (D_8002BE20 == 0) {
+    OSMesg dummyMesg;
+    if (!D_8002BE20) {
         __osSiCreateAccessQueue();
     }
-    osRecvMesg(&D_80042AA8, &mesg, 1);
+    osRecvMesg(&D_80042AA8, &dummyMesg, OS_MESG_BLOCK);
 }
 
 void __osSiRelAccess2(void) {

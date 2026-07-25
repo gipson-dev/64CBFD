@@ -153,6 +153,37 @@ symbols. Always verify this pattern through the production padded-object
 recipe and a full link; do not use it for ordinary objects whose `.bss` is
 linked normally.
 
+### Reference decomp source and compile profiles
+
+A completed decompilation of another game built with the same SDK can provide
+more than semantic reference code. Compare retail instruction bodies with
+relocation operands masked, then port both the source shape and the owning
+object's compiler profile. The first Banjo-Kazooie cross-port batch showed
+valid matches under plain `-O2`, `-O1`, and `-O3`; compiling every copied
+function with Conker's default `-O2 -g3` did not reproduce retail.
+
+Headers can also change code generation. For example, Conker's broad graphics
+header marks `sqrtf` intrinsic, while the matching `guNormalize` object calls
+`sqrtf`; that source therefore includes only the needed math declaration.
+Keep such exceptions local to the object and verify all neighboring functions
+after changing a shared compiler override.
+
+When a target is a second copy of an SDK routine, check the project's
+already-exact primary copy before importing external source. Batch 2's
+controller, PFS, timer, SI DMA, and time routines matched by reusing those
+local bodies with only duplicate function/helper names changed; Banjo then
+confirmed the SDK version and `-O1` profile. This preserves project-local
+types and symbol aliases while still using the completed decomp as evidence.
+
+If one function inside a larger translation unit needs a different compiler
+profile, isolate it as its own extraction subsegment and object instead of
+changing the shared override. Batch 3's `func_151F27E0` requires Banjo's
+`-O1` profile while the following audio code requires `-g`; splitting at the
+retail boundary preserves both profiles. Record the split in the tracked
+version YAML, keep the objects in retail order, then run a fresh extraction,
+full rebuild, and neighbor scan so generated linker-script layout and nearby
+exact functions are both verified.
+
 ### Stack-local records
 
 Small event or command records often appear as a local structure passed to two

@@ -10,6 +10,64 @@ make -C conker progress
 
 ## 2026-07-25
 
+### Banjo cross-port Batch 3: 15 duplicated PFS/CRC functions exact
+
+- Completed all 15 Batch 3 targets: `__osSumcalc2`, `__osIdCheckSum2`,
+  `__osRepairPackId2`, `__osCheckPackId2`, `__osGetId2`, `__osCheckId2`,
+  `__osPfsRWInode2`, `__osPfsSelectBank2`, `osPfsChecker2`,
+  `corrupted_init2`, `corrupted2`, `osPfsIsPlug2`,
+  `__osPfsRequestData2`, `__osPfsGetInitData2`, and `func_151F27E0`.
+- Reused Conker's exact primary PFS source for the 14 duplicated routines,
+  with Banjo confirming the SDK implementation and `-O1` object profile.
+  `func_151F27E0` uses Banjo's byte-identical `__osContAddressCrc` source.
+- Split the CRC routine into its own tracked extraction subsegment and `-O1`
+  object ahead of the remaining `-g` audio unit. A fresh extraction and full
+  dependency-driven rebuild reproduced the layout and all 15 matches without
+  regressing the checked neighboring exact functions.
+- Verified linked retail-ROM progress is now **2474 / 5973 overall
+  (41.42%)**, **370 / 508 init (72.83%)**, **1938 / 5284 game (36.68%)**,
+  and **166 / 181 debugger (91.71%)**, with the same one address-drift
+  blocker.
+
+### Banjo cross-port Batch 2: 14 duplicated SDK functions exact
+
+- Completed all 12 controller, SI, timer, and matrix targets in Batch 2:
+  `func_151EF090`, `func_151EF288`, `func_151EF358`, `func_151EF504`,
+  `func_151EF640`, `func_151EF800`, `func_151EF954`, `func_151EF9C0`,
+  `osContStartReadData2`, `osContGetReadData2`, `__osSiRawStartDma2`, and
+  `getTime2`.
+- Recovered the adjacent `osPfsInit2` and `__osPackReadData2` copies during
+  the same sweep, for a net gain of 14 byte-exact functions.
+- Reused Conker's already-exact primary SDK source where available and used
+  Banjo to verify the SDK implementation and compiler profile. Banjo supplied
+  the missing VI-special-features and orthographic-matrix bodies directly.
+  SDK I/O/OS objects matched with `-O1`, while the GU object matched with
+  `-O3`.
+- Verified a clean dependency-driven full rebuild followed by the linked
+  retail-ROM scan: **2459 / 5973 overall (41.17%)**, **370 / 508 init
+  (72.83%)**, **1923 / 5284 game (36.39%)**, and **166 / 181 debugger
+  (91.71%)**, with the same one address-drift blocker.
+
+### Banjo cross-port sweep started: first eight functions exact
+
+- Added a temporary, evidence-ranked TODO for using every applicable source,
+  compile-profile, signature, and SDK finding from the completed
+  Banjo-Kazooie decompilation. The remaining work is grouped into controller,
+  SI, timer, matrix, and PFS batches; handwritten assembly matches are
+  reference-only.
+- Completed the first eight ports: `func_15012F90`, `guMtxCatF`,
+  `__osSiGetAccess2`, `guMtxL2F`, `__ull_divremi`, `__ll_mod`, `guNormalize`,
+  and `__osTimerServicesInit`.
+- Recovered the necessary object profiles from Banjo (`-O1`, plain `-O2`, or
+  `-O3` depending on the object), avoided the graphics-header `sqrtf`
+  intrinsic for `guNormalize`, and reproduced timer initialization's
+  same-translation-unit 64-bit global coalescing.
+- Verified the normal full build and retail-ROM scan with no neighboring
+  regressions: **2445 / 5973 overall (40.93%)**, **370 / 508 init (72.83%)**,
+  **1909 / 5284 game (36.13%)**, and **166 / 181 debugger (91.71%)**. This is
+  a net gain of eight byte-exact functions with the same one address-drift
+  blocker.
+
 ### Three-function byte-matching target completed
 
 - Completed the requested

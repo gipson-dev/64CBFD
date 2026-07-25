@@ -1,7 +1,22 @@
-#include <ultra64.h>
+#include <os_internal.h>
+#include "osint.h"
 
-/* Non-matching placeholders for the text-only asm slice asm/21CE70.s. */
+extern OSTimer *D_8002BD70;
 
-s32 func_151EF9C0() {
+int func_151EF9C0(OSTimer *t, OSTime countdown, OSTime interval, OSMesgQueue *mq, OSMesg msg) {
+    OSTime time;
+
+    t->next = 0;
+    t->prev = 0;
+    t->interval = interval;
+    t->value = (countdown != 0) ? countdown : interval;
+    t->mq = mq;
+    t->msg = msg;
+
+    time = __osInsertTimer(t);
+    if (D_8002BD70->next == t) {
+        __osSetTimerIntr(time);
+    }
+
     return 0;
 }

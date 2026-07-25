@@ -113,6 +113,8 @@ RETAIL_PAD_SKIP_C_FILES := \
 	$(SRC_DIR)/debugger_258ED0.c \
 	$(SRC_DIR)/game_17AE1C.c \
 	$(SRC_DIR)/game/entrypoint.c \
+	$(SRC_DIR)/libultra/audio/func_151F27E0.c \
+	$(SRC_DIR)/libultra/audio/func_151F2890.c \
 	$(SRC_DIR)/libultra/audio/game_21FC90.c \
 	$(SRC_DIR)/libultra/audio/cents2ratio.c \
 	$(SRC_DIR)/libultra/audio/init_128D0.c \
@@ -159,7 +161,24 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_21C4F0.c.o: OPT_FLAGS := -O2
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_E4070.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_49D30.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
-$(BUILD_DIR)/$(SRC_DIR)/game/generated_3FC60.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_3FC60.c.o: OPT_FLAGS := -O2
+$(BUILD_DIR)/$(SRC_DIR)/game_21D5F0.c.o: OPT_FLAGS := -O2
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_siacs2.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_21C540.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/gu/mtxutil2.c.o: OPT_FLAGS := -O3
+$(BUILD_DIR)/$(SRC_DIR)/libultra/gu/guNormalize.c.o: OPT_FLAGS := -O3
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_pfsinit2.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_21CAF0.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_21CCB0.c.o: OPT_FLAGS := -O3
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_21CE70.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_contreaddata2.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_sirawdma2.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_gettime2.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_contpfs2.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/pfschecker2.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/io/pfsisplug2.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/audio/func_151F27E0.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/libultra/audio/func_151F2890.c.o: OPT_FLAGS := -O1
 
 $(BUILD_DIR)/$(SRC_DIR)/libultra/audio/%.o: OPT_FLAGS := -g
 
@@ -242,7 +261,7 @@ $(BUILD_DIR)/$(SRC_DIR)/libultra/libc/ldiv.c.o: OPT_FLAGS := -O2
 $(BUILD_DIR)/$(SRC_DIR)/libultra/libc/lldiv.c.o: OPT_FLAGS := -O2
 
 # These compiler-support routines are native 64-bit MIPS operations in retail.
-$(BUILD_DIR)/$(SRC_DIR)/libultra/libc/__ull_rshift.c.o: OPT_FLAGS := -O2
+$(BUILD_DIR)/$(SRC_DIR)/libultra/libc/__ull_rshift.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/libultra/libc/__ull_rshift.c.o: MIPSBIT := -mips3 -o32
 
 $(BUILD_DIR)/$(SRC_DIR)/libultra/os/getthreadpri.c.o: OPT_FLAGS := -O1
