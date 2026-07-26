@@ -8,6 +8,24 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-07-26
+
+### DK64-informed decoder and envelope mixer exact
+
+- Recovered `func_100214F0` from DK64's `n_alAdpcmPull` structure while
+  preserving Conker's missing-wave-table zero fill and ADPCM-book
+  physical-address diagnostic.
+- Recovered `func_10020000` from DK64's `n_alEnvmixerPull`, including
+  Conker's extended event layout, two-bit stereo phase state, pan-dependent
+  flags, audio-mode globals, and control-list behavior.
+- Anchored the mixer's generated switch table at retail
+  `jtbl_8002C7D0_init`. All four previously divergent DK64-informed audio
+  candidates are now byte-exact.
+- The full linked scan reports **2517 / 5978 overall (42.10%)** and
+  **387 / 508 init (76.18%)**. Game remains **1957 / 5289 (37.00%)**,
+  debugger remains **173 / 181 (95.58%)**, and `func_10012588` remains the
+  sole address-only blocker.
+
 ## 2026-07-25
 
 ### DK64 audio continuation: load-parameter and aux-bus pull exact

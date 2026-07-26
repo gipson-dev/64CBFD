@@ -1,17 +1,238 @@
 #include "n_synthInternals.h"
 
-s32 func_10020000();
+Acmd *func_10020000(N_PVoice *, s32, Acmd *);
 Acmd *func_10022040(N_PVoice *, s16 *, s32, Acmd *);
+Acmd *func_10020ABC(N_PVoice *, s16 *, s16 *, s32, Acmd *);
+s32 func_10021C40(N_PVoice *, s32, void *);
 s16 _getRate(f32, f32, s32, u16 *);
+s16 _getVol(s16, s32, s16, u16);
 
 extern f32 D_8002C814;
 extern s16 D_8002BC10[];
 extern s16 D_8002BD0E[];
+extern u8 D_800428C0;
+extern u8 D_800428C1;
+extern u8 D_800428C2;
 
-// relies on jump table
-/* Non-matching C placeholders for asm/nonmatchings/init_20000/func_10020000.s. */
-s32 func_10020000() {
-    return 0;
+// modified n_alEnvmixerPull
+Acmd *func_10020000(N_PVoice *arg0, s32 arg1, Acmd *arg2) {
+    Acmd *sp54;
+    N_PVoice *sp50;
+    s16 sp4E;
+    s32 sp48;
+    s32 sp44;
+    s32 sp40;
+    s16 sp3E;
+    s32 sp38;
+    ALParam *sp34;
+    s32 sp30;
+    ALStartParamAlt *sp2C;
+    s32 sp28;
+    ALStartParam *sp24;
+    N_ALFreeParam *sp20;
+
+    sp54 = arg2;
+    sp50 = arg0;
+    sp44 = arg1;
+    sp3E = 0;
+    sp30 = 0xB8;
+    sp4E = 0;
+
+    while (sp50->em_ctrlList) {
+        sp48 = sp44;
+        sp44 = sp50->em_ctrlList->delta;
+        sp40 = (((u32)(sp44 - sp48) + 0xB7) / 184) * 0xB8;
+        if (sp40 == 0) {
+            sp44 = sp48;
+        }
+        if (sp40 > sp30) {
+            break;
+        }
+
+        switch (sp50->em_ctrlList->type) {
+            case 13:
+                sp2C = (ALStartParamAlt *)sp50->em_ctrlList;
+                if (sp2C->unity != 0) {
+                    sp50->rs_upitch = 1;
+                }
+                func_10021C40(sp50, 5, sp2C->wave);
+                sp50->em_motion = 1;
+                sp50->em_first = 1;
+                sp50->em_delta = 0;
+                sp50->em_segEnd =
+                    (((sp2C->samples + 0xB7) / 184) * 0xB8);
+                sp28 = (sp2C->volume + sp2C->volume) / 2;
+                sp50->em_volume = sp28;
+                sp50->em_pan = sp2C->pan;
+                sp50->em_dryamt =
+                    D_8002BC10[sp2C->fxMix & 0x7F] & 0xFFFC;
+                if (D_800428C0 != 0) {
+                    sp50->em_dryamt |= sp2C->fxMix >> 7;
+                }
+                sp50->em_wetamt =
+                    D_8002BD0E[-(sp2C->fxMix & 0x7F)] & 0xFFFC;
+                if (D_800428C2 != 0) {
+                    sp50->em_pan = (sp50->em_pan >> 1) + 0x20;
+                } else if (D_800428C1 != 0) {
+                    sp50->em_pan = 0x40;
+                }
+                if (sp2C->samples != 0) {
+                    sp50->em_cvolL = 1;
+                    sp50->em_cvolR = 1;
+                } else {
+                    sp50->em_cvolL =
+                        (D_8002BC10[sp50->em_pan] *
+                         sp50->em_volume) >> 15;
+                    sp50->em_cvolR =
+                        (D_8002BD0E[-sp50->em_pan] *
+                         sp50->em_volume) >> 15;
+                }
+                sp50->rs_ratio = sp2C->pitch;
+                sp50->unkA2 = sp2C->unk15;
+                sp50->unkA0 = (s32)sp2C->unk18;
+                sp50->unkC8 = 1;
+                sp50->unk99 = sp2C->unk14;
+                break;
+
+            case 11:
+            case 12:
+            case 16:
+                sp54 =
+                    func_10020ABC(sp50, &sp4E, &sp3E, sp40, sp54);
+                if (sp50->em_delta >= sp50->em_segEnd) {
+                    sp50->em_ltgt =
+                        (D_8002BC10[sp50->em_pan] *
+                         sp50->em_volume) >> 15;
+                    sp50->em_rtgt =
+                        (D_8002BD0E[-sp50->em_pan] *
+                         sp50->em_volume) >> 15;
+                    sp50->em_delta = sp50->em_segEnd;
+                    sp50->em_cvolL = sp50->em_ltgt;
+                    sp50->em_cvolR = sp50->em_rtgt;
+                } else {
+                    sp50->em_cvolL =
+                        _getVol(sp50->em_cvolL, sp50->em_delta,
+                                sp50->em_lratm, sp50->em_lratl);
+                    sp50->em_cvolR =
+                        _getVol(sp50->em_cvolR, sp50->em_delta,
+                                sp50->em_rratm, sp50->em_rratl);
+                }
+                if (sp50->em_cvolL == 0) {
+                    sp50->em_cvolL = 1;
+                }
+                if (sp50->em_cvolR == 0) {
+                    sp50->em_cvolR = 1;
+                }
+                if (sp50->em_ctrlList->type == 12) {
+                    if (D_800428C2 != 0) {
+                        sp50->em_pan =
+                            ((s16)sp50->em_ctrlList->data.i >> 1) + 0x20;
+                    } else if (D_800428C1 != 0) {
+                        sp50->em_pan = 0x40;
+                    } else {
+                        sp50->em_pan = sp50->em_ctrlList->data.i;
+                    }
+                }
+                if (sp50->em_ctrlList->type == 11) {
+                    sp50->em_delta = 0;
+                    sp38 = sp50->em_ctrlList->data.i;
+                    sp38 = (sp38 + sp38) / 2;
+                    sp50->em_volume = sp38;
+                    sp50->em_segEnd =
+                        (((sp50->em_ctrlList->moredata.i + 0xB7) / 184) *
+                         0xB8);
+                }
+                if (sp50->em_ctrlList->type == 16) {
+                    if ((((sp50->em_dryamt & 1) ^
+                          (sp50->em_wetamt & 1) ^
+                          ((sp50->em_ctrlList->data.i + 1) >> 7)) != 0) &&
+                        (D_800428C0 != 0)) {
+                        if (sp50->em_pan >= 0x41) {
+                            sp50->em_dryamt ^= 1;
+                            if (sp50->em_pan < 0x6F) {
+                                sp50->em_dryamt |= 2;
+                            }
+                        } else {
+                            sp50->em_wetamt ^= 1;
+                            if (sp50->em_pan >= 0x11) {
+                                sp50->em_wetamt |= 2;
+                            }
+                        }
+                    }
+                    sp50->em_dryamt =
+                        (D_8002BC10[sp50->em_ctrlList->data.i & 0x7F] &
+                         0xFFFC) |
+                        (sp50->em_dryamt & 3);
+                    sp50->em_wetamt =
+                        (D_8002BD0E[-(sp50->em_ctrlList->data.i & 0x7F)] &
+                         0xFFFC) |
+                        (sp50->em_wetamt & 3);
+                }
+                sp50->em_first = 1;
+                break;
+
+            case 14:
+                sp24 = (ALStartParam *)sp50->em_ctrlList;
+                if (sp24->unity != 0) {
+                    sp50->rs_upitch = 1;
+                }
+                func_10021C40(sp50, 5, sp24->wave);
+                sp50->em_motion = 1;
+                break;
+
+            case 15:
+                sp54 =
+                    func_10020ABC(sp50, &sp4E, &sp3E, sp40, sp54);
+                n_alEnvmixerParam(sp50, 4, 0);
+                break;
+
+            case 0:
+                sp20 = (N_ALFreeParam *)sp50->em_ctrlList;
+                sp20->pvoice->offset = 0;
+                _n_freePVoice(sp20->pvoice);
+                break;
+
+            case 7:
+                sp54 =
+                    func_10020ABC(sp50, &sp4E, &sp3E, sp40, sp54);
+                sp50->rs_ratio = sp50->em_ctrlList->data.f;
+                break;
+
+            case 8:
+                sp54 =
+                    func_10020ABC(sp50, &sp4E, &sp3E, sp40, sp54);
+                sp50->rs_upitch = 1;
+                break;
+
+            case 5:
+                sp54 =
+                    func_10020ABC(sp50, &sp4E, &sp3E, sp40, sp54);
+                func_10021C40(sp50, 5, (void *)sp50->em_ctrlList->data.i);
+                break;
+
+            default:
+                sp54 =
+                    func_10020ABC(sp50, &sp4E, &sp3E, sp40, sp54);
+                n_alEnvmixerParam(sp50, sp50->em_ctrlList->type,
+                                  (void *)sp50->em_ctrlList->data.i);
+                break;
+        }
+
+        sp3E += sp40 * 2;
+        sp30 -= sp40;
+        sp34 = sp50->em_ctrlList;
+        sp50->em_ctrlList = sp50->em_ctrlList->next;
+        if (sp50->em_ctrlList == NULL) {
+            sp50->em_ctrlTail = 0;
+        }
+        _n_freeParam(sp34);
+    }
+
+    sp54 = func_10020ABC(sp50, &sp4E, &sp3E, sp30, sp54);
+    if (sp50->em_delta > sp50->em_segEnd) {
+        sp50->em_delta = sp50->em_segEnd;
+    }
+    return sp54;
 }
 
 s32 n_alEnvmixerParam(N_PVoice *filter, s32 paramID, void *param) {

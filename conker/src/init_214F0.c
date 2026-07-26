@@ -20,15 +20,161 @@ typedef struct {
 } RareDecoderVoice;
 
 /* Generated placeholder declarations. */
-s32 func_100214F0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+Acmd *func_100214F0(N_PVoice *, s16 *, s32, Acmd *);
 s32 func_10021C40(N_PVoice *, s32, void *);
 Acmd *func_10021E4C(Acmd *, RareDecoderVoice *, s32, s32, s16, s16, s32);
 /* End generated placeholder declarations. */
 
-// struct21 *func_100214F0(struct42 *arg0, void *arg1, s32 arg2, void *struct21);
-/* Non-matching C placeholders for asm/nonmatchings/init_214F0/func_100214F0.s. */
-s32 func_100214F0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    return 0;
+// modified n_alAdpcmPull
+Acmd *func_100214F0(N_PVoice *filter, s16 *outp, s32 outCount, Acmd *p) {
+    Acmd *ptr = p;
+    s16 inp;
+    s32 tsam;
+    s32 nframes;
+    s32 nbytes;
+    s32 overFlow;
+    s32 startZero;
+    s32 nOver;
+    s32 nSam;
+    s32 op;
+    s32 nLeft;
+    s32 bEnd;
+    s32 decoded = 0;
+    s32 looped = 0;
+    N_PVoice *f = filter;
+
+    if (outCount == 0) {
+        return ptr;
+    }
+
+    inp = N_AL_DECODER_IN;
+
+    if (f->dc_table == NULL) {
+        aClearBuffer(ptr++, *outp, outCount << 1);
+        return ptr;
+    }
+
+    if ((((u32)f->dc_table->waveInfo.adpcmWave.book->book &
+          0x1FFFFFFF) >= 0x800001)) {
+        D_8003C8E0 = 0x0F000003;
+        func_10007DA0();
+    }
+
+    aLoadADPCM(ptr++, f->dc_bookSize,
+               ((u32)f->dc_table->waveInfo.adpcmWave.book->book &
+                0x1FFFFFFF));
+
+    looped = (outCount + f->dc_sample > f->dc_loop.end) &&
+             (f->dc_loop.count != 0);
+
+    if (looped) {
+        nSam = f->dc_loop.end - f->dc_sample;
+    } else {
+        nSam = outCount;
+    }
+
+    if (f->dc_lastsam) {
+        nLeft = ADPCMFSIZE - f->dc_lastsam;
+    } else {
+        nLeft = 0;
+    }
+
+    tsam = nSam - nLeft;
+    if (tsam < 0) {
+        tsam = 0;
+    }
+
+    nframes = (tsam + ADPCMFSIZE - 1) >> 4;
+    nbytes = nframes * 9;
+
+    if (looped) {
+        ptr = func_10021E4C(ptr, (RareDecoderVoice *)f, tsam, nbytes,
+                            *outp, inp, f->dc_first);
+
+        if (f->dc_lastsam) {
+            *outp += f->dc_lastsam << 1;
+        } else {
+            *outp += ADPCMFSIZE << 1;
+        }
+
+        f->dc_lastsam = f->dc_loop.start & 0xF;
+        f->dc_memin =
+            (s32)f->dc_table->base +
+            9 * ((s32)(f->dc_loop.start >> 4) + 1);
+        f->dc_sample = f->dc_loop.start;
+        bEnd = *outp;
+
+        while (outCount > nSam) {
+            outCount -= nSam;
+            op = (bEnd + ((nframes + 1) << 5) + 16) & ~0x1F;
+            bEnd += nSam << 1;
+
+            if (f->dc_loop.count != -1 && f->dc_loop.count != 0) {
+                f->dc_loop.count--;
+            }
+
+            nSam = MIN(outCount, f->dc_loop.end - f->dc_loop.start);
+            tsam = nSam - ADPCMFSIZE + f->dc_lastsam;
+            if (tsam < 0) {
+                tsam = 0;
+            }
+
+            nframes = (tsam + ADPCMFSIZE - 1) >> 4;
+            nbytes = nframes * 9;
+            ptr = func_10021E4C(ptr, (RareDecoderVoice *)f, tsam, nbytes,
+                                op, inp, f->dc_first | A_LOOP);
+            aDMEMMove(ptr++, op + (f->dc_lastsam << 1), bEnd, nSam << 1);
+        }
+
+        f->dc_lastsam = (outCount + f->dc_lastsam) & 0xF;
+        f->dc_sample += outCount;
+        f->dc_memin += 9 * nframes;
+        return ptr;
+    }
+
+    nSam = nframes << 4;
+    overFlow = f->dc_memin + nbytes -
+               (s32)(f->dc_table->base + f->dc_table->len);
+    if (overFlow < 0) {
+        overFlow = 0;
+    }
+
+    nOver = (overFlow / 9) << 4;
+    if (nOver > nSam + nLeft) {
+        nOver = nSam + nLeft;
+    }
+    nbytes -= overFlow;
+
+    if (nOver - (nOver & 0xF) < outCount) {
+        decoded = 1;
+        ptr = func_10021E4C(ptr, (RareDecoderVoice *)f, nSam - nOver,
+                            nbytes, *outp, inp, f->dc_first);
+
+        if (f->dc_lastsam) {
+            *outp += f->dc_lastsam << 1;
+        } else {
+            *outp += ADPCMFSIZE << 1;
+        }
+
+        f->dc_lastsam = (outCount + f->dc_lastsam) & 0xF;
+        f->dc_sample += outCount;
+        f->dc_memin += 9 * nframes;
+    } else {
+        f->dc_lastsam = 0;
+        f->dc_memin += 9 * nframes;
+    }
+
+    if (nOver) {
+        f->dc_lastsam = 0;
+        if (decoded) {
+            startZero = (nLeft + nSam - nOver) << 1;
+        } else {
+            startZero = 0;
+        }
+        aClearBuffer(ptr++, startZero + *outp, nOver << 1);
+    }
+
+    return ptr;
 }
 // modified n_alLoadParam
 s32 func_10021C40(N_PVoice *filter, s32 paramID, void *param) {

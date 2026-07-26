@@ -35,20 +35,18 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-07-25, DK64-informed audio continuation).** Two of the four
-divergent audio candidates are now byte-exact. `func_10021C40` uses DK64's
-`n_alLoadParam` structure with Conker's ADPCM-length rule, validated book
-pointer, invalid-state reset, and explicit retail branch shape.
-`func_100210C0` uses DK64's `n_alAuxBusPull` algorithm with Conker's
-`ALLink`-backed voice list, two priority passes, pull-count behavior, and
-normalization commands. Its translation unit requires IDO 7.1 `-g`.
+**Active (2026-07-26, broader Banjo recheck next).** All four divergent
+DK64-informed audio candidates are now byte-exact. The final pair recovered
+`func_100214F0` from `n_alAdpcmPull` with Conker's two safety paths and
+`func_10020000` from `n_alEnvmixerPull` with Conker's two-bit stereo phase
+rules. The mixer switch table is anchored at `jtbl_8002C7D0_init`.
 
-The full linked checkpoint is total `2515 / 5978 (42.07%)`, init
-`385 / 508 (75.79%)`, game `1957 / 5289 (37.00%)`, and debugger
+The full linked checkpoint is total `2517 / 5978 (42.10%)`, init
+`387 / 508 (76.18%)`, game `1957 / 5289 (37.00%)`, and debugger
 `173 / 181 (95.58%)`. `func_10012588` remains the sole address-only blocker.
-The remaining DK64-informed audio queue is `func_100214F0`
-(`n_alAdpcmPull` family) and `func_10020000` (`n_alEnvmixerPull` family);
-both require normal assembly-guided matching rather than direct ports.
+The next cross-game task is Banjo Batch 5: extract the US v1.1 binary corpus
+and run the normalized basic-block and shared-fragment search described in
+`TEMP_BANJO_CROSSPORT_TODO.md`, cross-checking survivors against DK64.
 
 **Archived focus (2026-07-25, debugger completion pass).** The linked US debugger
 overlay is now `173 / 181 (95.58%)` byte-exact after restoring the SDK
