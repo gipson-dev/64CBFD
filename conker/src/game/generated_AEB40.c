@@ -41,7 +41,25 @@ s32 func_150825C0() {
 }
 
 s32 func_1508295C(s32 arg0, u8 *arg1, s32 arg2) {
-    return 0;
+    s32 start;
+    s32 i;
+    s32 end;
+
+    if (arg2 != 0) {
+        start = 0;
+        end = D_800D2101;
+    } else {
+        start = D_800D2101;
+        end = D_800D2100;
+    }
+
+    if (start < end) {
+        i = start;
+        do {
+            func_150825C0(i, arg1);
+            i++;
+        } while (i != end);
+    }
 }
 
 s32 func_150829D8(u8 *arg0) {

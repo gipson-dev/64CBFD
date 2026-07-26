@@ -35,18 +35,21 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-07-26, broader Banjo recheck next).** All four divergent
-DK64-informed audio candidates are now byte-exact. The final pair recovered
-`func_100214F0` from `n_alAdpcmPull` with Conker's two safety paths and
-`func_10020000` from `n_alEnvmixerPull` with Conker's two-bit stereo phase
-rules. The mixer switch table is anchored at `jtbl_8002C7D0_init`.
+**Active (2026-07-26, Banjo Batch 5 complete).** Both verified Banjo US
+revisions have now been searched below whole-function equality. The
+repository's US v1.1 build route lacks its decompressed YAML and symbol files,
+so all 16 code/data pairs were recovered directly as a binary-only Rarezip
+corpus. Exact, relocation-masked, ordered-window, and register-normalized
+searches recovered four game functions: the `guLookAt`/`guLookAtReflect`
+wrappers `func_15047688` and `func_15047B80`, the range walker
+`func_1508295C`, and the pointer-backed cleanup loop `func_15004A4C`.
 
-The full linked checkpoint is total `2517 / 5978 (42.10%)`, init
-`387 / 508 (76.18%)`, game `1957 / 5289 (37.00%)`, and debugger
+The full linked checkpoint is total `2521 / 5978 (42.17%)`, init
+`387 / 508 (76.18%)`, game `1961 / 5289 (37.08%)`, and debugger
 `173 / 181 (95.58%)`. `func_10012588` remains the sole address-only blocker.
-The next cross-game task is Banjo Batch 5: extract the US v1.1 binary corpus
-and run the normalized basic-block and shared-fragment search described in
-`TEMP_BANJO_CROSSPORT_TODO.md`, cross-checking survivors against DK64.
+The remaining Banjo hits are retained as source-shape, semantic, SDK-variant,
+or handwritten reference evidence in `TEMP_BANJO_CROSSPORT_TODO.md`; ordinary
+byte-exact matching can resume from this checkpoint.
 
 **Archived focus (2026-07-25, debugger completion pass).** The linked US debugger
 overlay is now `173 / 181 (95.58%)` byte-exact after restoring the SDK

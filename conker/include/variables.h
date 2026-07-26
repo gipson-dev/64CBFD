@@ -1272,8 +1272,8 @@ extern u8  D_800DBE63;
 extern f32 D_800DBE64;
 extern s32 D_800DBEF0;
 extern struct131 *D_800DBEF4; // ???
-extern s32 D_800DBEF8[];
-extern s8  D_800DBEFC[];
+extern s32 *D_800DBEF8;
+extern s8 *D_800DBEFC;
 extern u8  D_800DBF00;
 extern u8  D_800DBF88;
 extern s32 D_800DBF8C;

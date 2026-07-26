@@ -1,4 +1,4 @@
-# PC Port Roadmap
+# PC Port Roadmap located in another project folder
 
 This is a forward-looking plan, not a status report. As of this writing the
 repository is a ROM decompilation project only: there is no PC build target,

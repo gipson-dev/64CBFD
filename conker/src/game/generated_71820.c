@@ -5,6 +5,11 @@
 extern s32 D_800CBD9C;
 extern u8 D_800CC2D0[];
 
+void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye,
+                   f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
+void func_15047700(f32 mf[4][4], LookAt *l, f32 xEye, f32 yEye, f32 zEye,
+                   f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
+
 void func_15044370() {
     D_800CBD9C = 0;
 }
@@ -166,18 +171,26 @@ s32 func_150472C0() {
     return 0;
 }
 
-s32 func_15047390() {
-    return 0;
+void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye, f32 xAt,
+                   f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp) {
 }
 
-s32 func_15047688() {
-    return 0;
+void func_15047688(Mtx *m, f32 xEye, f32 yEye, f32 zEye, f32 xAt, f32 yAt,
+                   f32 zAt, f32 xUp, f32 yUp, f32 zUp) {
+    f32 mf[4][4];
+
+    func_15047390(mf, xEye, yEye, zEye, xAt, yAt, zAt, xUp, yUp, zUp);
+    guMtxF2L(mf, m);
 }
 
-s32 func_15047700() {
-    return 0;
+void func_15047700(f32 mf[4][4], LookAt *l, f32 xEye, f32 yEye, f32 zEye,
+                   f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp) {
 }
 
-s32 func_15047B80() {
-    return 0;
+void func_15047B80(Mtx *m, LookAt *l, f32 xEye, f32 yEye, f32 zEye,
+                   f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp) {
+    f32 mf[4][4];
+
+    func_15047700(mf, l, xEye, yEye, zEye, xAt, yAt, zAt, xUp, yUp, zUp);
+    guMtxF2L(mf, m);
 }

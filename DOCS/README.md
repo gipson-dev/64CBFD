@@ -42,9 +42,9 @@ confirmed.
 
 ## Planning and history
 
-- [Temporary Banjo cross-port TODO](TEMP_BANJO_CROSSPORT_TODO.md) — four
-  completed port batches plus the planned US v1.0/v1.1 normalized-block and
-  shared-fragment recheck.
+- [Temporary Banjo cross-port TODO](TEMP_BANJO_CROSSPORT_TODO.md) — five
+  completed port batches, including the US v1.0/v1.1 normalized-block and
+  shared-fragment recheck, plus retained source-shape references.
 - [Temporary DK64 cross-port TODO](TEMP_DK64_CROSSPORT_TODO.md) — verified
   DK64 retail-body audit, three port batches, broadened structural pass,
   matcher correction, four additional divergent audio matches, residual

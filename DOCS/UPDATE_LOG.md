@@ -10,6 +10,27 @@ make -C conker progress
 
 ## 2026-07-26
 
+### Banjo Batch 5: revision and shared-fragment recheck
+
+- Verified both Banjo US ROM revisions and recovered all 16 US v1.1
+  code/data pairs directly from their Rarezip ranges. The repository's
+  documented `VERSION=us.v11` path is incomplete, so the revision remains a
+  binary-only corpus with no unverified source symbols assigned.
+- Re-scanned all remaining Conker C functions using exact bodies,
+  relocation-masked bodies, ordered instruction windows, and
+  register-normalized block signatures that retain branch shape, constants,
+  load/store widths, and structure-field offsets.
+- Recovered the matrix wrappers `func_15047688` and `func_15047B80` from the
+  shared `guLookAt`/`guLookAtReflect` family. DK64's linked `guLookAt` and
+  Banjo's `guLookAtReflect` independently confirm the source shapes.
+- Recovered `func_1508295C` from a shared range-walker loop and corrected
+  `D_800DBEF8`/`D_800DBEFC` to pointer globals, making the existing
+  `func_15004A4C` cleanup loop exact.
+- A full relink and retail instruction scan reports **2521 / 5978 overall
+  (42.17%)**, **387 / 508 init (76.18%)**, **1961 / 5289 game (37.08%)**,
+  and **173 / 181 debugger (95.58%)**. `func_10012588` remains the sole
+  address-only blocker.
+
 ### DK64-informed decoder and envelope mixer exact
 
 - Recovered `func_100214F0` from DK64's `n_alAdpcmPull` structure while
