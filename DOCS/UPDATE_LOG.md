@@ -10,6 +10,20 @@ make -C conker progress
 
 ## 2026-07-25
 
+### DK64 audio continuation: load-parameter and aux-bus pull exact
+
+- Recovered `func_10021C40` from DK64's `n_alLoadParam` algorithm while
+  preserving Conker's ADPCM-length rule, book-pointer validation, reset
+  behavior, and branch structure.
+- Recovered `func_100210C0` from DK64's `n_alAuxBusPull`, adapted to Conker's
+  linked voice representation, two priority passes, pull-count semantics, and
+  normalization commands. Restored the translation unit's IDO 7.1 `-g`
+  profile.
+- A full relink and retail instruction scan reports **2515 / 5978 overall
+  (42.07%)** and **385 / 508 init (75.79%)**. Game remains **1957 / 5289
+  (37.00%)**, debugger remains **173 / 181 (95.58%)**, and
+  `func_10012588` remains the sole address-only blocker.
+
 ### Debugger SDK recovery and byte-matching pass
 
 - Recovered the SDK `_Putfld` switch, Banjo/SDK `_Ldtob` lifetimes, and the

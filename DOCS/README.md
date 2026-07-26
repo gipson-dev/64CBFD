@@ -47,8 +47,8 @@ confirmed.
   shared-fragment recheck.
 - [Temporary DK64 cross-port TODO](TEMP_DK64_CROSSPORT_TODO.md) — verified
   DK64 retail-body audit, three port batches, broadened structural pass,
-  matcher correction, residual references, and the current cross-game
-  continuation checkpoint.
+  matcher correction, two additional divergent audio matches, residual
+  references, and the current cross-game continuation checkpoint.
 - [Temporary debugger byte-matching TODO](TEMP_DEBUGGER_TODO.md) — live
   173/181 checkpoint, remaining function queue, SDK source mappings, and
   compiler-shape experiments needed to finish the debugger overlay.

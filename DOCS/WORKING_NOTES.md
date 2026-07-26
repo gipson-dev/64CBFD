@@ -35,7 +35,22 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-07-25, debugger completion pass).** The linked US debugger
+**Active (2026-07-25, DK64-informed audio continuation).** Two of the four
+divergent audio candidates are now byte-exact. `func_10021C40` uses DK64's
+`n_alLoadParam` structure with Conker's ADPCM-length rule, validated book
+pointer, invalid-state reset, and explicit retail branch shape.
+`func_100210C0` uses DK64's `n_alAuxBusPull` algorithm with Conker's
+`ALLink`-backed voice list, two priority passes, pull-count behavior, and
+normalization commands. Its translation unit requires IDO 7.1 `-g`.
+
+The full linked checkpoint is total `2515 / 5978 (42.07%)`, init
+`385 / 508 (75.79%)`, game `1957 / 5289 (37.00%)`, and debugger
+`173 / 181 (95.58%)`. `func_10012588` remains the sole address-only blocker.
+The remaining DK64-informed audio queue is `func_100214F0`
+(`n_alAdpcmPull` family) and `func_10020000` (`n_alEnvmixerPull` family);
+both require normal assembly-guided matching rather than direct ports.
+
+**Archived focus (2026-07-25, debugger completion pass).** The linked US debugger
 overlay is now `173 / 181 (95.58%)` byte-exact after restoring the SDK
 `_Putfld` switch in `func_160021FC`, matching SDK `_Ldtob`
 `func_1600288C`, and closing `func_160006CC`. The full corpus is
