@@ -106,6 +106,10 @@ GLOBAL_ASM_C_FILES := $(shell $(GREP) GLOBAL_ASM $(SRC_DIR) </dev/null)
 GLOBAL_ASM_O_FILES := $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
 ifeq ($(VERSION),us)
 GENERATED_SLICE_O_FILES := $(foreach file,$(GENERATED_SLICE_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
+MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o
+STANDARD_GENERATED_SLICE_O_FILES := \
+	$(filter-out $(MIXED_PROFILE_GENERATED_SLICE_O_FILES),$(GENERATED_SLICE_O_FILES))
 RETAIL_LAYOUT := retail_layout.$(VERSION).txt
 # These objects either own allocatable non-text sections or do not have a
 # one-to-one function map in progress.csv. Keep their original object layout.
@@ -368,12 +372,24 @@ endif
 
 ifeq ($(VERSION),us)
 .SECONDEXPANSION:
-$(GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.o: \
+$(STANDARD_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.o: \
 		$(SRC_DIR)/game/generated_%.c $$(call generated_slice_asm,$$*) ../tools/pad_generated_object.py Makefile
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
 	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
+
+# This generated slice crosses an original object-profile boundary:
+# func_151733D8 is the non-debug identity helper immediately before a -g3
+# body. Compile both profiles and select only that helper from the -O2 object.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o: \
+		$(SRC_DIR)/game/generated_1A0790.c $$(call generated_slice_asm,1A0790) ../tools/pad_generated_object.py Makefile
+	$(CC) -c -32 $(CFLAGS) -O2 -g3 $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) -O2 $(MIPSBIT) -o $@.nodebug.compact $<
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,1A0790) $@.padded.s \
+		--function-object func_151733D8=$@.nodebug.compact
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.nodebug.compact $@.padded.s
 
 $(RETAIL_PAD_PLAIN_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<

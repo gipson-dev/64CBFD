@@ -35,21 +35,30 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-07-26, Banjo Batch 5 complete).** Both verified Banjo US
-revisions have now been searched below whole-function equality. The
-repository's US v1.1 build route lacks its decompressed YAML and symbol files,
-so all 16 code/data pairs were recovered directly as a binary-only Rarezip
-corpus. Exact, relocation-masked, ordered-window, and register-normalized
-searches recovered four game functions: the `guLookAt`/`guLookAtReflect`
-wrappers `func_15047688` and `func_15047B80`, the range walker
-`func_1508295C`, and the pointer-backed cleanup loop `func_15004A4C`.
+**Active (2026-07-26, ordinary byte matching resumed).** `func_151733D8` is
+now exact with its real `s32 (s32, s32)` identity signature. Its three-word
+retail body requires IDO 5.3 `-O2` without `-g3`, while the neighboring exact
+`func_15173994` requires `-g3`. `pad_generated_object.py` can now select one
+named function from a separately compiled object, and the `1A0790` build uses
+that facility to preserve both profiles without splitting or displacing the
+retail slice.
 
-The full linked checkpoint is total `2521 / 5978 (42.17%)`, init
-`387 / 508 (76.18%)`, game `1961 / 5289 (37.08%)`, and debugger
+The full linked checkpoint is total `2522 / 5978 (42.19%)`, init
+`387 / 508 (76.18%)`, game `1962 / 5289 (37.10%)`, and debugger
 `173 / 181 (95.58%)`. `func_10012588` remains the sole address-only blocker.
-The remaining Banjo hits are retained as source-shape, semantic, SDK-variant,
-or handwritten reference evidence in `TEMP_BANJO_CROSSPORT_TODO.md`; ordinary
-byte-exact matching can resume from this checkpoint.
+Continue from the smallest genuine C diffs, checking mixed object profiles
+before repeating commutative-expression rewrites that IDO canonicalizes.
+
+**Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
+from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size
+compression wrapper and `ROMID`-keyed manifests are not Conker Rarezip or
+Conker asset schemas. They are guarded, reference-only, and excluded from the
+build. `mkrawobject` and `mksimpleelf` were made project-native and are covered
+by the ROM-independent `make tools-check` fixture.
+The later `vertconvert.py` addition is project-usable only for standard
+16-byte SDK `Vtx` data; `assets13` remains a distinct six-byte
+position-only format. Its signed-coordinate and malformed-record behavior is
+also covered by `make tools-check`.
 
 **Archived focus (2026-07-25, debugger completion pass).** The linked US debugger
 overlay is now `173 / 181 (95.58%)` byte-exact after restoring the SDK

@@ -26,6 +26,8 @@ and progress explanations.
 - [Contributor and byte-matching guide](CONTRIBUTING.md) — selecting work,
   comparing retail instructions, compiler-sensitive C patterns, validation,
   and clean commit scope.
+- [Project tools](TOOLS.md) — local wrappers, smoke tests, toolchain
+  overrides, active Conker asset utilities, and reference-only generators.
 - [IDO 5.3 recomp toolchain](IDO_RECOMP.md) — reproducing the compiler used by
   byte-matching builds.
 
@@ -66,6 +68,7 @@ confirmed.
 | --- | --- |
 | Installation, build, CI, repository layout | `PROJECT.md` |
 | Function conversion and byte matching | `CONTRIBUTING.md` |
+| Local tool usage and compatibility | `TOOLS.md` |
 | `conker/` section build mechanics | `CODE_SUBPROJECT.md` |
 | Confirmed ROM and asset behavior | `ASSET_FORMATS.md` or `CONFIG.md` |
 | Future PC-port decisions | `PC_PORT_ROADMAP.md` |

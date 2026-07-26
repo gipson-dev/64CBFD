@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+    echo "usage: tools/mksimpleelf INPUT_OBJECT OUTPUT_ELF [BASE_ADDRESS]" >&2
+    echo "Link a big-endian MIPS object into a minimal ELF (default base: 0)." >&2
+}
+
+if [[ ${1:-} == "-h" || ${1:-} == "--help" ]]; then
+    usage
+    exit 0
+fi
+
+if [[ $# -lt 2 || $# -gt 3 ]]; then
+    usage
+    exit 2
+fi
+
+input=$1
+output=$2
+base_address=${3:-0}
+
+if [[ ! -f $input ]]; then
+    echo "mksimpleelf: input object not found: $input" >&2
+    exit 1
+fi
+if [[ ! $base_address =~ ^(0[xX][0-9A-Fa-f]+|[0-9]+)$ ]]; then
+    echo "mksimpleelf: base address must be a non-negative integer: $base_address" >&2
+    exit 2
+fi
+
+tool_prefix=${CROSS:-mips-linux-gnu-}
+if [[ $tool_prefix != *- ]]; then
+    tool_prefix="${tool_prefix}-"
+fi
+linker=${MIPS_LD:-${tool_prefix}ld}
+if ! command -v "$linker" >/dev/null 2>&1; then
+    echo "mksimpleelf: linker not found: $linker" >&2
+    exit 127
+fi
+
+output_dir=$(dirname "$output")
+mkdir -p "$output_dir"
+
+temp_dir=$(mktemp -d)
+trap 'rm -rf "$temp_dir"' EXIT
+
+linker_script=$temp_dir/simple.ld
+{
+    echo 'OUTPUT_ARCH(mips)'
+    echo 'SECTIONS'
+    echo '{'
+    echo "    . = $base_address;"
+    echo '    .text : { *(.text .text.*) }'
+    echo '    .rodata : { *(.rodata .rodata.*) }'
+    echo '    .data : { *(.data .data.*) }'
+    echo '    .bss (NOLOAD) : { *(.bss .bss.*) *(COMMON) }'
+    echo '    /DISCARD/ : { *(.MIPS.abiflags) *(.reginfo) *(.pdr) *(.comment) *(.note*) }'
+    echo '}'
+} > "$linker_script"
+
+"$linker" -EB -T "$linker_script" -o "$output" "$input"

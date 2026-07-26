@@ -26,9 +26,9 @@ Snapshot verified on 2026-07-26:
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[##########--------------]` 2,521 / 5,978 (42.17%) | 1 | 3,456 |
+| Total | `[##########--------------]` 2,522 / 5,978 (42.19%) | 1 | 3,455 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[#########---------------]` 1,961 / 5,289 (37.08%) | 0 | 3,328 |
+| Game | `[#########---------------]` 1,962 / 5,289 (37.10%) | 0 | 3,327 |
 | Debugger | `[#######################-]` 173 / 181 (95.58%) | 0 | 8 |
 
 The sole address-only blocker is `func_10012588`; its C instructions match,
@@ -66,6 +66,10 @@ make -C conker --jobs
 make -C conker replace NON_MATCHING=1
 make --jobs
 ```
+
+Validate the repository-local MIPS object wrappers independently with
+`make tools-check`; this does not require a ROM. See
+[project tools](DOCS/TOOLS.md) for usage and compatibility notes.
 
 An unmatched development build may end with `build/conker.us.z64: FAILED`.
 That means the rebuilt ROM differs from retail; it does not necessarily mean

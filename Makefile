@@ -62,6 +62,9 @@ decompress: $(EXTRACT_DIR)/00000000.bin
 verify: $(TARGET).z64
 	@echo "$$(cat $(BASENAME).$(VERSION).sha1)  $<" | sha1sum --check
 
+tools-check:
+	$(PYTHON) tools/check_project_tools.py
+
 ### Recipes
 
 $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
@@ -107,5 +110,5 @@ $(EXTRACT_DIR)/00000000.bin:
 	$(PYTHON) tools/extract_compressed.py config/compressed.$(VERSION).yaml $(BIN_DIR)/compressed.bin $(EXTRACT_DIR)
 
 # settings
-.PHONY: all clean default
+.PHONY: all clean default tools-check
 SHELL = /bin/bash -e -o pipefail

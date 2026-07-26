@@ -13,8 +13,8 @@ s32 func_151732E0() {
     return 0;
 }
 
-s32 func_151733D8() {
-    return 0;
+s32 func_151733D8(s32 arg0, s32 arg1) {
+    return arg0;
 }
 
 s32 func_151733E4() {

@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+    echo "usage: tools/mkrawobject INPUT OUTPUT [ALIGNMENT]" >&2
+    echo "Wrap INPUT in a big-endian MIPS relocatable object (default alignment: 0x10)." >&2
+}
+
+if [[ ${1:-} == "-h" || ${1:-} == "--help" ]]; then
+    usage
+    exit 0
+fi
+
+if [[ $# -lt 2 || $# -gt 3 ]]; then
+    usage
+    exit 2
+fi
+
+input=$1
+output=$2
+alignment=${3:-0x10}
+
+if [[ ! -f $input ]]; then
+    echo "mkrawobject: input file not found: $input" >&2
+    exit 1
+fi
+if [[ ! $alignment =~ ^(0[xX][0-9A-Fa-f]+|[0-9]+)$ ]]; then
+    echo "mkrawobject: alignment must be a positive integer: $alignment" >&2
+    exit 2
+fi
+
+alignment_value=$((alignment))
+if (( alignment_value <= 0 || (alignment_value & (alignment_value - 1)) != 0 )); then
+    echo "mkrawobject: alignment must be a power of two: $alignment" >&2
+    exit 2
+fi
+
+tool_prefix=${CROSS:-mips-linux-gnu-}
+if [[ $tool_prefix != *- ]]; then
+    tool_prefix="${tool_prefix}-"
+fi
+assembler=${MIPS_AS:-${tool_prefix}as}
+if ! command -v "$assembler" >/dev/null 2>&1; then
+    echo "mkrawobject: assembler not found: $assembler" >&2
+    exit 127
+fi
+
+input_abs=$(realpath "$input")
+escaped_input=${input_abs//\\/\\\\}
+escaped_input=${escaped_input//\"/\\\"}
+output_dir=$(dirname "$output")
+mkdir -p "$output_dir"
+
+temp_dir=$(mktemp -d)
+trap 'rm -rf "$temp_dir"' EXIT
+
+assembly=$temp_dir/raw-object.s
+{
+    echo '.section .data, "aw", @progbits'
+    echo ".balign $alignment"
+    echo ".incbin \"$escaped_input\""
+    echo ".balign $alignment"
+} > "$assembly"
+
+"$assembler" -EB -mabi=32 -march=vr4300 -mtune=vr4300 \
+    -o "$output" "$assembly"

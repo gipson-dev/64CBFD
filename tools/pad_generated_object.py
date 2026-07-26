@@ -163,9 +163,26 @@ def parse_retail_slice(path):
     return min(addresses), max(addresses) + 4, functions, jump_labels
 
 
-def emit_padded_assembly(object_path, retail_path):
+def emit_padded_assembly(object_path, retail_path, function_objects=None):
     text, compiled, relocations = parse_object(object_path)
     retail_start, retail_end, retail, jump_labels = parse_retail_slice(retail_path)
+    function_sources = {
+        name: (text, symbol, relocations)
+        for name, symbol in compiled.items()
+    }
+    for name, override_path in (function_objects or {}).items():
+        override_text, override_functions, override_relocations = parse_object(
+            override_path
+        )
+        if name not in override_functions:
+            raise ValueError(f"{name} not found in override object {override_path}")
+        if name not in compiled:
+            raise ValueError(f"{name} not found in primary object {object_path}")
+        function_sources[name] = (
+            override_text,
+            override_functions[name],
+            override_relocations,
+        )
 
     missing = sorted(set(retail) - set(compiled))
     extra = sorted(set(compiled) - set(retail))
@@ -175,7 +192,10 @@ def emit_padded_assembly(object_path, retail_path):
         )
 
     functions = sorted(
-        ((address - retail_start, name, compiled[name]) for name, address in retail.items())
+        (
+            (address - retail_start, name, *function_sources[name])
+            for name, address in retail.items()
+        )
     )
     label_offsets = {
         address - retail_start: names for address, names in jump_labels.items()
@@ -214,7 +234,9 @@ def emit_padded_assembly(object_path, retail_path):
             output.append(f".space 0x{target - current:X}, 0")
             current = target
 
-    for index, (target, name, symbol) in enumerate(functions):
+    for index, (target, name, source_text, symbol, source_relocations) in enumerate(
+        functions
+    ):
         pad_to(target)
         emit_labels(target)
         next_target = functions[index + 1][0] if index + 1 < len(functions) else slice_size
@@ -229,11 +251,15 @@ def emit_padded_assembly(object_path, retail_path):
         for relative in range(0, symbol["size"], 4):
             emit_labels(target + relative)
             compact_offset = start + relative
-            for relocation_name, relocation_symbol in relocations.get(compact_offset, []):
+            for relocation_name, relocation_symbol in source_relocations.get(
+                compact_offset, []
+            ):
                 output.append(
                     f".reloc ., {relocation_name}, {relocation_symbol}"
                 )
-            word = int.from_bytes(text[compact_offset:compact_offset + 4], "big")
+            word = int.from_bytes(
+                source_text[compact_offset:compact_offset + 4], "big"
+            )
             output.append(f".word 0x{word:08X}")
         output.append(f".size {name}, . - {name}")
         output.append("")
@@ -254,9 +280,27 @@ def main():
     parser.add_argument("object", help="compact C-compiled relocatable object")
     parser.add_argument("retail_asm", help="preserved raw assembly slice")
     parser.add_argument("output", help="padded assembly output")
+    parser.add_argument(
+        "--function-object",
+        action="append",
+        default=[],
+        metavar="NAME=OBJECT",
+        help="take one function from a separately compiled object",
+    )
     args = parser.parse_args()
+    function_objects = {}
+    for value in args.function_object:
+        if "=" not in value:
+            parser.error("--function-object must be NAME=OBJECT")
+        name, path = value.split("=", 1)
+        if not name or not path:
+            parser.error("--function-object must be NAME=OBJECT")
+        function_objects[name] = path
     Path(args.output).write_text(
-        emit_padded_assembly(args.object, args.retail_asm), newline="\n"
+        emit_padded_assembly(
+            args.object, args.retail_asm, function_objects=function_objects
+        ),
+        newline="\n",
     )
 
 

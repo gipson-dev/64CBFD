@@ -10,6 +10,43 @@ make -C conker progress
 
 ## 2026-07-26
 
+### Added-tool audit and project preparation
+
+- Audited the newly added `assetmgr`, raw-object, simple-ELF, and texture
+  scripts. The asset generators use a different Rare-game schema and
+  incompatible `0x1173`/three-byte-size compression header, so they are now
+  explicitly guarded and retained as reference-only inputs rather than being
+  connected to the Conker build.
+- Reworked `tools/mkrawobject` and `tools/mksimpleelf` into self-contained
+  Conker project utilities. They now validate arguments, use the repository's
+  default big-endian MIPS binutils, accept toolchain overrides, create safe
+  temporary directories, and no longer require `ROMID`, `TOOLCHAIN`,
+  `src/include`, or the missing `ld/zero.ld`.
+- Added `make tools-check`, which builds and validates an isolated aligned
+  raw object and a minimal ELF at `0x80000000`. Added `DOCS/TOOLS.md` and
+  nearby reference-generator guidance.
+- Hardened the subsequently added `tools/vertconvert.py` into a validated CLI
+  for standard 16-byte N64 SDK `Vtx` records, with file/stdin support and
+  optional C array output. Added known-record and malformed-record coverage to
+  `make tools-check`; documented that the converter does not apply to
+  Conker's six-byte `assets13` model vertices.
+
+### Mixed-profile identity helper exact
+
+- Recovered the real two-argument identity body for `func_151733D8`.
+  Retail compiles this three-word helper with IDO 5.3 `-O2` and no debug
+  profile, while the neighboring `func_15173994` requires the slice's
+  existing `-g3` profile.
+- Extended generated-slice padding so one named function can be selected from
+  a separately compiled object. The `1A0790` build now combines only
+  `func_151733D8` from the non-debug object with the remaining functions from
+  the normal `-g3` object, avoiding the previously observed net-wash
+  regression.
+- A full relink and retail instruction scan reports **2522 / 5978 overall
+  (42.19%)**, **387 / 508 init (76.18%)**, **1962 / 5289 game (37.10%)**,
+  and **173 / 181 debugger (95.58%)**. `func_10012588` remains the sole
+  address-only blocker.
+
 ### Banjo Batch 5: revision and shared-fragment recheck
 
 - Verified both Banjo US ROM revisions and recovered all 16 US v1.1
@@ -417,7 +454,9 @@ make -C conker progress
   per-file `-O2` no-`-g3` override to get the retail-filled branch-delay
   slot) only works by changing the whole file's compile profile, which flips
   the file's one already-exact function (`func_15173994`) to non-exact - a
-  net wash, reverted per the "no regressions" rule.
+  net wash, reverted per the "no regressions" rule. This limitation was
+  superseded on 2026-07-26 by selecting just that function from a separately
+  compiled non-debug object.
 - New findings for future sessions: `func_150AC9B0`'s retail body is a bare
   `j func_150AC2D8` (no `jal`, no frame) - a real tail call, but a plain
   `return func_150AC2D8();` compiles to a full `jal`+move+`jr` sequence (2x

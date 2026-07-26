@@ -355,6 +355,10 @@ V = vertex_count_from_metadata         # do not infer this from padded size alon
 verts = [struct.unpack(">hhh", rec[i*6:i*6+6]) for i in range(V)]
 ```
 
+`tools/vertconvert.py` is not applicable to these records. It converts the
+standard 16-byte N64 SDK `Vtx` structure, not this six-byte position-only
+format.
+
 ### Where are the faces?
 
 `assets13` holds **only vertex positions** - the topology is not here. Evidence
@@ -626,3 +630,9 @@ For raw image and texture payloads, check `n64img`/n64splat image decoding
 first. `tools/n64splat/requirements.txt` already pulls in `n64img>=0.1.4`, so
 new custom code should focus on CBFD-specific containers, dimensions, and
 resource wiring rather than reimplementing standard N64 image formats.
+
+The imported `tools/assetmgr/` generators and top-level `tools/mktextures`
+must not be used to rebuild these assets. They expect a different Rare-game
+schema and compression header (`0x1173` plus a three-byte size), not the
+four-byte-size-header Rarezip format documented above. They are guarded and
+reference-only; see [Project tools](TOOLS.md#reference-only-imported-asset-generators).
