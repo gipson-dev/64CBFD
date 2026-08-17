@@ -395,13 +395,12 @@ s32 func_1519C56C() {
     return 0;
 }
 
-s32 func_1519C910(u8 *arg0, s32 arg1) {
+s32 func_1519C910(u8 *arg0) {
     u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
     u8 *temp_v1 = *(u8 **) temp_v0;
 
-    arg1 = *(u16 *) (temp_v1 + 0x84);
-    if ((*(u32 *) (temp_v0 + 0x158) - arg1) != 0) {
-        if ((*(u32 *) (temp_v0 + 0x15C) - arg1) != 0) {
+    if (*(u32 *) (temp_v0 + 0x158) != *(u16 *) (temp_v1 + 0x84)) {
+        if (*(u32 *) (temp_v0 + 0x15C) != *(u16 *) (temp_v1 + 0x84)) {
             return 0;
         }
     }

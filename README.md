@@ -41,7 +41,9 @@ make -C conker match-progress NON_MATCHING=1
 ```
 
 See the [project overview](DOCS/PROJECT.md#current-progress) for measurement
-details and the [update log](DOCS/UPDATE_LOG.md) for milestone history.
+details, the [update log](DOCS/UPDATE_LOG.md) for milestone history, and the
+[plan to 100%](DOCS/PLAN_TO_100.md) for the phased path to a fully matching
+ROM.
 
 ## Build overview
 

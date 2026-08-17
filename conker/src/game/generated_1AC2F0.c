@@ -51,9 +51,9 @@ s32 func_1517F40C(s32 arg0) {
 
 void func_1517F448(s32 arg0) {
     s32 *ptr = &D_800DDDB0[arg0];
-    s32 value = *ptr;
+    s32 value;
 
-    if (D_800DDE28[arg0] != value) {
+    if (D_800DDE28[arg0] != (value = *ptr)) {
         *ptr = value + D_800BE9E4;
     }
 }

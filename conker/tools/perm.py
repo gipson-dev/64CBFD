@@ -15,6 +15,7 @@ Variant strategies (applied combinatorially, capped):
  - reorder sequential loads/statements (swap independent statements)
 """
 import argparse
+import os
 import csv
 import itertools
 import re
@@ -183,15 +184,18 @@ def main():
         lines.append(b2 + "\n")
         ranges.append((start_line, nlcount(lines)))
 
+    ptest_c = os.environ.get("PERM_TAG_FILE", "build/perm_test.c")
+    ptest_o = ptest_c.replace(".c", ".o")
+    ptest_name = ptest_c.split("/")[-1]
     while True:
-        Path("build/perm_test.c").write_text("".join(lines))
-        cmd = [CC] + CFLAGS + (args.flags.split() if args.flags else OPT) + ["-o", "build/perm_test.o", "build/perm_test.c"]
+        Path(ptest_c).write_text("".join(lines))
+        cmd = [CC] + CFLAGS + (args.flags.split() if args.flags else OPT) + ["-o", ptest_o, ptest_c]
         r = subprocess.run(cmd, capture_output=True, text=True)
         if r.returncode == 0:
             break
         # drop variants on failing lines
         bad = set()
-        for em in re.finditer(r"perm_test\.c, line (\d+):", r.stderr):
+        for em in re.finditer(re.escape(ptest_name) + r", line (\d+):", r.stderr):
             ln = int(em.group(1))
             for idx, (a, b) in enumerate(ranges):
                 if a <= ln <= b:
@@ -212,9 +216,11 @@ def main():
         if not vs:
             sys.exit("all variants failed to compile")
 
-    out = subprocess.run(["mips-linux-gnu-objdump", "-d", "-z", "build/perm_test.o"],
+    ptest_c = os.environ.get("PERM_TAG_FILE", "build/perm_test.c")
+    ptest_o = ptest_c.replace(".c", ".o")
+    out = subprocess.run(["mips-linux-gnu-objdump", "-d", "-z", ptest_o],
                          capture_output=True, text=True).stdout
-    relocs = subprocess.run(["mips-linux-gnu-objdump", "-r", "build/perm_test.o"],
+    relocs = subprocess.run(["mips-linux-gnu-objdump", "-r", ptest_o],
                             capture_output=True, text=True).stdout
     reloc_by_func = {}
     cur = None
