@@ -310,7 +310,7 @@ s32 func_15199980(u8 *arg0) {
         D_8008F8B4[temp_v0](arg0);
     }
     if (*(s32 *) (temp_v1 + 0x148) != 0) {
-        func_1516972C();
+        func_1516972C(*(s32 *) (temp_v1 + 0x148));
     }
 }
 
@@ -400,8 +400,8 @@ s32 func_1519C910(u8 *arg0, s32 arg1) {
     u8 *temp_v1 = *(u8 **) temp_v0;
 
     arg1 = *(u16 *) (temp_v1 + 0x84);
-    if (*(u32 *) (temp_v0 + 0x158) != arg1) {
-        if (*(u32 *) (temp_v0 + 0x15C) != arg1) {
+    if ((*(u32 *) (temp_v0 + 0x158) - arg1) != 0) {
+        if ((*(u32 *) (temp_v0 + 0x15C) - arg1) != 0) {
             return 0;
         }
     }

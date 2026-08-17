@@ -3489,3 +3489,55 @@ callee plateau):**
   `func_1514143C` (14), `func_1504ADD0` (52), `func_1504A620` (63),
   `func_15169070` (67), `func_1505210C` (81), `func_1504AF10` (116),
   `func_1504BE2C` (144). `func_150721A4` left the diff queue.
+
+## 2026-08-17
+
+### Empirical IDO operand/idiom rules (session batch: +7 exact)
+
+Verified byte-exact recoveries: `func_150AF2E0`, `func_151061EC`,
+`func_15144A74`, `func_151906E0`, `func_151C1814`, `func_1516968C`,
+`func_15199980`. Full relink scan: total `2529 / 5978 (42.31%)`, init
+`387 / 508`, game `1969 / 5289`, debugger `173 / 181`; no regressions;
+`func_10012588` remains the sole address-only blocker.
+
+Patterns confirmed by compiling variant matrices against retail bytes:
+
+- **Integer `addu` operand order is not source-order-stable.** For
+  `leaf + leaf` both fresh loads, IDO emitted `addu rd, right_src, left_src`
+  (mirrored). For `param + mult`, the mirror did not apply; the fix that
+  matched retail (`func_151061EC`) was reassociating the constant first:
+  `arg0 + 0x88 + temp * 0x34` — not `arg0 + temp * 0x34 + 0x88`.
+- **Float sums need explicit association.** `func_15144A74` required
+  `A + (B + C)` grouping with the load order chosen so the first two products
+  sum into `f4` (144 variant permutations; only one matched all 13 words).
+- **Branch operand order often comes from a subtraction idiom.** Writing
+  `if ((a - b) == 0)` (or `(a - b) != 0`) puts `a`'s register in the branch's
+  rs slot even when plain `a == b` compiles mirrored. Fixed
+  `func_151906E0`, `func_151C1814`, `func_1516968C` (all comparisons,
+  including `arg2 - 0xF`, were subtraction idioms in
+  `func_1516968C`'s retail source).
+- **A zero-arg call may still receive an argument.** `func_15199980`'s retail
+  body loads the tested value into `a0` and calls `func_1516972C(a0_value)`;
+  passing the load result as a call argument reproduced the `beql a0, zero`
+  shape and made the function exact.
+- **Register-allocation micro-diffs are not idiom-fixable so far.** Cases
+  where retail allocates `t7`/`v0`/`v1` and the current C allocates
+  `t8`/`a0`/`t7` (`func_1519C910` second compare, `func_1509D054` global in
+  `v0` with `or a0, v0, zero` in the `jal` delay slot, `func_15087FC4`
+  sum in `v1`) resisted operand swaps, subtraction idioms, temp locals,
+  CSE rewrites, assignment-conditions, and every `-O1/-O2/-O3/-g/-g3`
+  profile. The `jal; or a0, v0, zero` delay-move pattern does not occur in
+  any currently exact function, so no known source shape reproduces it yet.
+- **Dead argument homing** (`func_151ACB60`: retail `sw a0, home` in the
+  `jal` delay slot with no reload) also has no known source trigger; the
+  empty-callback homing trick does not apply when the argument is live.
+
+Tooling added under `conker/tools/`: `fdiff.py` (per-function
+side-by-side linked-vs-retail diff), `perm.py` (micro-permuter: applies the
+idiom transforms, compiles variants in one object, scores against retail with
+relocation masking, `--apply` writes winners back), `batch_perm.py` (runs the
+permuter across the non-exact list), `cluster_stubs.py` (stubs cluster audit:
+3,086 stubs split into 2,980 opcode-pattern clusters - no large templateable
+families), `objcheck.py` (compare object words to a retail list). Local
+untracked helpers: `q.sh` (rebuild-object + relink + check loop via the
+amd64 build container), `stubs.txt`/`nonexact.txt` (generated worklists).

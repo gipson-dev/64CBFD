@@ -19,7 +19,7 @@ s32 func_151061E0(s32 arg0) {
 u8 *func_151061EC(u8 *arg0) {
     s32 temp_v1 = *(s32 *) (arg0 + 0x48);
 
-    return arg0 + temp_v1 * 0x34 + 0x88;
+    return arg0 + 0x88 + temp_v1 * 0x34;
 }
 
 s32 func_15106214() {

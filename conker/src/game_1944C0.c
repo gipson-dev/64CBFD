@@ -350,7 +350,7 @@ s32 func_15169668(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 // two-local byte loads; both force source load order but allocate v0/v1 and
 // increase the diff count.
 void func_1516968C(struct102 *arg0, u8 *arg1, u8 arg2) {
-    if (((arg2 == 0xF) || (arg2 == 0x10)) && (*arg1 == arg0->unkC)) {
+    if ((((arg2 - 0xF) == 0) || ((arg2 - 0x10) == 0)) && ((*arg1 - arg0->unkC) == 0)) {
         func_1516972C(arg0);
     }
 }
