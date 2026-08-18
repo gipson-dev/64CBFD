@@ -36,13 +36,10 @@ s32 func_150BD954() {
 
 s32 func_150BDB3C(u8 *arg0) {
     u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
-    s32 temp_v1 = *(s16 *) (arg0 + 0x1C);
-    {
-        s32 shifted = temp_v1 << 3;
+    s32 shifted = *(s16 *) (arg0 + 0x1C) << 3;
 
-        if (shifted < *(temp_v0 + 0x1B)) {
-            *(temp_v0 + 0x1B) = shifted;
-        }
+    if (shifted < *(temp_v0 + 0x1B)) {
+        *(temp_v0 + 0x1B) = shifted;
     }
     return 1;
 }

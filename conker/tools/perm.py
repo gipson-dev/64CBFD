@@ -155,6 +155,8 @@ def main():
     ap.add_argument("func")
     ap.add_argument("--flags", default=None, help="extra flags: e.g. -O1")
     ap.add_argument("--show", type=int, default=3)
+    ap.add_argument("--apply", action="store_true",
+                    help="write an exact winning variant back into the source")
     args = ap.parse_args()
 
     fname, lang = find_function(args.func)

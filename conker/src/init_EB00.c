@@ -404,14 +404,11 @@ void func_1000FDF4(u16 arg0) {
 }
 
 s32 func_1000FE88(struct15 *arg0, s32 arg1, s32 *arg2) {
-    struct15 *current;
-
     if (arg1 < *arg2) {
-        current = (struct15 *)((u8 *)arg0 + (arg1 * sizeof(struct15)));
-        if (current->unk24 != 0) {
-            func_100111C8(current->unk24);
+        if (arg0[arg1].unk24 != 0) {
+            func_100111C8(arg0[arg1].unk24);
         }
-        current->unk10 |= 0x80;
+        arg0[arg1].unk10 |= 0x80;
         return 0;
     }
 
