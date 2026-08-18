@@ -3541,3 +3541,50 @@ permuter across the non-exact list), `cluster_stubs.py` (stubs cluster audit:
 families), `objcheck.py` (compare object words to a retail list). Local
 untracked helpers: `q.sh` (rebuild-object + relink + check loop via the
 amd64 build container), `stubs.txt`/`nonexact.txt` (generated worklists).
+
+## 2026-08-18
+
+### Subagent wave results (+27 exact across three commits)
+
+Waves 1-3 via disjoint-file subagents, centrally verified by object fcheck
+plus full relink matcher: `2529 -> 2556 / 5978 (42.76%)`, init
+`387 -> 388`, game `1969 -> 1995`; no regressions; `func_10012588` still
+the sole address blocker.
+
+New verified techniques (add to the toolbox before the next wave):
+
+- **Guard-on-global + CSE recompute** (3 wins, B3020): guard the raw global
+  `if (GLOBAL == 0) return;` then *re-mention* it in the record-pointer
+  expression so IDO CSEs to one load in `v0`; the record pointer lands in
+  `v1` with retail's `addu v1, t6, v0` order.
+- **Assignment-in-condition** (func_1517F448): `if (OTHER[i] != (v = *ptr))`
+  evaluates the left address before the right load's address, swapping the
+  two-addu order.
+- **Load-vs-load compares** (func_1519C910): inline both loads in the
+  comparison and delete param reassignment entirely — temps and subtraction
+  idioms burn an invisible register; dropping the unused param kills the
+  homing spill.
+- **Direct indexing instead of pointer temp** (func_1000FE88) moves homing
+  slot offsets; **temp width u8->s32** (func_150849A0) flips allocation.
+- **1-bit bitfield store** (func_150F33B0): `u8 :7; u8 unk:1;` struct cast
+  emits exactly `andi 0xFFFE`/`ori 1` MSB-first and burns a temp that shifts
+  else-path allocation; no plain `&=/|=` form does this.
+- **u64 shift constants** (func_1501D258): `(u64)1 << n` marshals the
+  `__ll_lshift` call args as (0,1); `0x100000000 << n` as (1,0).
+- **volatile guard reload** (func_151904BC): `*(s32 volatile*)` breaks
+  load-CSE to reproduce a reload pattern.
+- **Extra call args for register targeting** (func_15190400): passing more
+  args than the callee reads still homes them into a0-a3, reproducing retail
+  arg-register stores.
+- **Dead-load retention** (func_1515FB70 near-miss): an `s32` function with
+  no return keeps a dead `lw` that a `void` version deletes.
+
+Confirmed non-C-reproducible (add to the Phase-3 flip list in
+PLAN_TO_100.md): `func_150A7A00` (t9/ra trampoline `j`), `func_150AD78C`-
+family thunk `func_150AD780` (fallthrough + `$f12`), `func_150AD770`
+(literal `syscall`), `func_150A6354` (epilogue half of a leaf pair),
+`func_150AC9B0` (goto-epilogue trampoline, IDO has no tail calls).
+Parked after deep attempts: `func_15079F6C`, `func_15135480`,
+`func_1514672C`, `func_150636A4`, `func_16001390`, `func_151254F4`,
+`func_151696DC`, `func_151E81EC` (cross-pair lui sharing needs TU-local
+data), `func_1515FB70` (evaporated-assert shape).

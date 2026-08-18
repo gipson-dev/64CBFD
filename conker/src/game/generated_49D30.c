@@ -12,6 +12,23 @@ extern u8 D_800C3CA0[];
 extern u8 D_800C3510[];
 extern u8 D_800C354A[];
 
+extern f32 D_800C3594;
+extern s16 D_800C358C[];
+extern u8 D_800C3663;
+extern u8 D_800C3670;
+extern u64 D_800C3A60[];
+extern u8 D_800C3D48[];
+extern void func_1516D2E0();
+extern void func_1516D328();
+
+typedef struct {
+    s16 unk00;
+    s8 pad02[0xA];
+    u8 unk0C;
+    s8 pad0D[0x27];
+    void *unk34;
+} Rec;
+
 s32 func_1501C880() {
     return 0;
 }
@@ -53,8 +70,10 @@ s32 func_1501D1D4() {
     return 0;
 }
 
-s32 func_1501D258() {
-    return 0;
+void func_1501D258(s32 arg0, s32 arg1) {
+    if (D_800C3670 == 0) {
+        D_800C3A60[arg0] |= (u64)1 << arg1;
+    }
 }
 
 s32 func_1501D2C4() {
@@ -153,8 +172,12 @@ s32 func_15022024() {
     return 0;
 }
 
-s32 func_15022190() {
-    return 0;
+void func_15022190(s16 arg0, s16 arg1, s16 arg2, f32 arg3) {
+    D_800C3594 = arg3;
+    D_800C358C[0] = arg0;
+    D_800C358C[1] = arg1;
+    D_800C358C[2] = arg2;
+    D_800C3663 = 1;
 }
 
 void func_150221E8(s16 arg0, s16 arg1, s16 arg2, f32 arg3) {
@@ -196,8 +219,13 @@ s32 func_150226BC() {
     return 0;
 }
 
-s32 func_15022754() {
-    return 0;
+void func_15022754(s32 arg0) {
+    s32 i = 0;
+
+    while (i < D_800C363A[arg0]) {
+        func_150226BC(i, arg0);
+        i += 1;
+    }
 }
 
 s32 func_150227BC() {
@@ -244,12 +272,29 @@ void func_150233BC(void) {
     bzero(D_800C3CA0, 0xA8);
 }
 
-s32 func_150233E4() {
-    return 0;
+void func_150233E4(void) {
+    Rec *rec = (Rec *)D_800C3CA0;
+
+    do {
+        if (rec->unk00 != 0) {
+            func_1516D2E0(rec->unk34);
+            rec->unk34 = 0;
+            rec->unk00 = 0;
+        }
+        rec++;
+    } while (rec != (Rec *)D_800C3D48);
 }
 
-s32 func_15023440() {
-    return 0;
+void func_15023440(Rec *arg0, s32 arg1) {
+    if (arg1 != 0) {
+        func_1516D2E0(arg0->unk34);
+        arg0->unk34 = 0;
+    } else if (arg0->unk0C != 0) {
+        func_1516D328(arg0->unk34);
+    } else {
+        arg0->unk34 = 0;
+    }
+    arg0->unk00 = 0;
 }
 
 s32 func_150234A4() {
