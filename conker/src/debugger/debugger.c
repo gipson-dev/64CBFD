@@ -265,7 +265,7 @@ void func_1600078C(void) {
             func_16001338(255, 0, 0);
             phi_s5 = (u32)&D_8002D4B0;
         } else {
-            temp_s5 = (s32)&D_8002D4B0 - 0x2B50;
+            temp_s5 = (s32) &D_8002D4B0;
             if ((temp_s2 >= (u32)temp_s5) && (temp_s2 < (u32)(temp_s5 + 0x400))) {
                 func_16001338(128, 128, 255);
                 phi_s5 = temp_s5;
@@ -335,15 +335,19 @@ s32 func_16000A5C(void) {
     return res;
 }
 
+// agP: local prototypes (missing from functions.h; void returns matter for IDO temp allocation)
+void func_16003650(void);
+void func_16001700(void);
+void func_16001830(struct263 *);
+
 // called from func_10007DAC
 // NON-MATCHING: mips-to-c cleaned skeleton, converted for raw-progress accounting.
 s32 func_16000B14(struct118 *arg0) {
-    s32 firstPass = 1;
     s32 state = 0;
-    s32 cur;
+    s32 firstPass = 1;
     s32 maskedPc;
     s32 hasOddPage;
-    s32 tlbBase;
+    s32 temp_bde;
     s32 i;
     void (*drawFunc)(void);
     s32 (*inputFunc)(void);
@@ -364,13 +368,12 @@ s32 func_16000B14(struct118 *arg0) {
     D_160039E8 = D_8003C8E8[2];
     D_16003A68 = D_8003C8E8[3];
 
-    cur = arg0->unk11C;
-    if ((cur & 0xFF000000) != 0x15000000) {
+    if ((arg0->unk11C & 0xFF000000) != 0x15000000) {
         D_16003AF0 = 1;
     } else {
-        maskedPc = cur & ~0xFFF;
+        maskedPc = arg0->unk11C & ~0xFFF;
         hasOddPage = maskedPc & 0x1000;
-        maskedPc &= ~0x1000;
+        maskedPc = maskedPc & ~0x1000;
         D_16003AF0 = 0;
         for (i = 0; i < 32; i += 4) {
             if ((maskedPc == D_160039AC[i + 0]) && ((hasOddPage ? D_1600392C[i + 0] : D_160038AC[i + 0]) & 2)) {
@@ -388,10 +391,11 @@ s32 func_16000B14(struct118 *arg0) {
         }
     }
 
-    if (((u32)D_8003C8E0 >> 24) == 0xC) {
+    if ((((u32)D_8003C8E0 >> 24) & 0xFF) == 0xC) {
         arg0 = (struct118 *)&D_80031AE0;
     }
-    if (D_8002BDE0[1] == D_8002AAE8[1]) {
+    temp_bde = D_8002BDE0[1];
+    if (temp_bde == D_8002AAE8[1]) {
         D_16003888 = 1;
     }
     D_1600389C = arg0;
@@ -444,12 +448,11 @@ s32 func_16000B14(struct118 *arg0) {
         arg0->unk12 = 0;
         return 1;
     }
-    tlbBase = 0;
     if ((arg0->unk120 == 0x20) && (D_160038A4 == 0)) {
-        tlbBase = 1;
         arg0->unk11C += 4;
+        return 1;
     }
-    return tlbBase;
+    return 0;
 }
 
 // NON-MATCHING: lots to figure out
@@ -490,7 +493,8 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
     s32 fb;
     s32 i;
 
-    *(Table1044 *) sp78 = *(Table1044 *) D_16003B50;
+    sp78[0] = D_16003B50[0];
+    *(Table1044 *) &sp78[1] = *(const Table1044 *) &D_16003B50[1];
 
     if (arg0 >= (D_160038A0 << 5) && arg0 < 0x341) {
         fb = func_1600160C(arg0);
