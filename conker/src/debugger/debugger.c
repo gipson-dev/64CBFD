@@ -342,7 +342,17 @@ void func_16001830(struct263 *);
 
 // called from func_10007DAC
 // NON-MATCHING: mips-to-c cleaned skeleton, converted for raw-progress accounting.
+// agR: dead f64 phantom local; IDO reserves its 8-byte chunk at 0x48(sp), giving the
+// retail 0x50 frame with firstPass@0x40 / arg0-spill@0x50. Produces no code.
+// Remaining 2-word overage: IDO rematerializes `li t9,1`/`li t8,1` at the two post-loop
+// `sb` sites; retail reuses t1=1 from the loop preheader. Tried & fails: flag temp in
+// either/both if-arms (uopt const-folds phi(1,1) -> per-use remat), flag def in
+// for-init/increment (web survives but +1 preheader li), uninit-on-arm flag (web survives
+// but IDO memory-homes it: chunk + garbage `lw` that displaces the arm store from the
+// branch delay; nets 287 best-case). Retail needs a no-chunk register web - likely a
+// different temp structure at the sb sites.
 s32 func_16000B14(struct118 *arg0) {
+    f64 dphantom;
     s32 state = 0;
     s32 firstPass = 1;
     s32 maskedPc;
