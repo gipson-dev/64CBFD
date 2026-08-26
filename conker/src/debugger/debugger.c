@@ -166,19 +166,18 @@ void func_16000424(struct118 *arg0) {
 
 void func_16000590(void *arg0) {
     register u8 *var_s5 = arg0;
-    s32 temp_s2 = *(s32 *) (var_s5 + 0x12C);
     u32 var_s2;
     s32 var_s0;
     s32 var_s1;
     s32 var_v0;
     s32 var_s4 = 0;
-    s32 var_s2_2;
     u8 *var_s3;
 
+    var_s2 = *(u32 *) (var_s5 + 0x12C);
     func_160012B0(3, D_160047A4);
-    func_16001044(0xA, 0, temp_s2);
+    func_16001044(0xA, 0, var_s2);
 
-    var_s2 = (u32) temp_s2 >> 12;
+    var_s2 = var_s2 >> 12;
     var_s0 = 0x2C;
     var_s1 = 0;
     do {
@@ -198,16 +197,16 @@ void func_16000590(void *arg0) {
         var_v0 = 0x6C;
         var_s4 = 0x10;
     }
-    var_s2_2 = var_s1 + var_s4;
+    var_s2 = var_s1 + var_s4;
     var_s3 = var_s5 + var_v0 * 4;
     do {
         func_160012B0(var_s0, D_160047AC);
-        func_16001044(var_s0 + 2, 1, var_s2_2);
+        func_16001044(var_s0 + 2, 1, var_s2);
         func_16001044(var_s0 + 5, 2, *(s32 *) (var_s3 + 4));
         var_s1 += 1;
         var_s3 += 8;
         var_s0 += 0x20;
-        var_s2_2 += 1;
+        var_s2 += 1;
     } while (var_s1 < 0x10);
 }
 
@@ -344,18 +343,27 @@ void func_16001830(struct263 *);
 // NON-MATCHING: mips-to-c cleaned skeleton, converted for raw-progress accounting.
 // agR: dead f64 phantom local; IDO reserves its 8-byte chunk at 0x48(sp), giving the
 // retail 0x50 frame with firstPass@0x40 / arg0-spill@0x50. Produces no code.
-// Remaining 2-word overage: IDO rematerializes `li t9,1`/`li t8,1` at the two post-loop
-// `sb` sites; retail reuses t1=1 from the loop preheader. Tried & fails: flag temp in
-// either/both if-arms (uopt const-folds phi(1,1) -> per-use remat), flag def in
-// for-init/increment (web survives but +1 preheader li), uninit-on-arm flag (web survives
-// but IDO memory-homes it: chunk + garbage `lw` that displaces the arm store from the
-// branch delay; nets 287 best-case). Retail needs a no-chunk register web - likely a
-// different temp structure at the sb sites.
+// agR: SIZE NOW SOLVED (286/286, 63 diffs from 108). Root cause of the old 2-word
+// overage: uopt const-folds any web whose reaching defs are all the same constant
+// (phi(1,1) -> per-use remat), and a web uninit on one path gets memory-homed
+// (stack chunk + garbage lw restore). Fix: `s32 one` web with a NON-CONST runtime-1
+// def in each arm: arm `one = (arg0 != NULL)` (sltu t3,zero,t8 @c04, arg0 always
+// non-null) and else `one = (maskedPc != 0)` (sltu @preheader; maskedPc=pc&~0x1FFF
+// never 0 for real addresses). Fold can't fire, web spans loop + both post-loop sb
+// sites (`sb t3`), no home. Decl must sit after firstPass (frame: one@0x44 padding).
+// Remaining 63 diffs = one register domino: the else sltu result temp takes a2,
+// displacing hasOddPage a2->a3, 38AC-base a3->t0, 392C-base t0->t1, pc t1->t2, plus
+// a `move t3,a2` web copy (retail: both defs are li t1,1, no copy). Getting li-form
+// defs without the const-fold appears impossible under -O2 uopt (flow-sensitive SCCP
+// + copy-prop-before-const-prop); fixing the domino needs the sltu to coalesce
+// directly into the web register, which IDO's allocator only did on the arm path.
+
 s32 func_16000B14(struct118 *arg0) {
     f64 dphantom;
     s32 state = 0;
     s32 firstPass = 1;
     s32 maskedPc;
+    s32 one;
     s32 hasOddPage;
     s32 temp_bde;
     s32 i;
@@ -379,24 +387,26 @@ s32 func_16000B14(struct118 *arg0) {
     D_16003A68 = D_8003C8E8[3];
 
     if ((arg0->unk11C & 0xFF000000) != 0x15000000) {
-        D_16003AF0 = 1;
+        one = (arg0 != NULL);
+        D_16003AF0 = one;
     } else {
         maskedPc = arg0->unk11C & ~0xFFF;
         hasOddPage = maskedPc & 0x1000;
         maskedPc = maskedPc & ~0x1000;
         D_16003AF0 = 0;
+        one = (maskedPc != 0);
         for (i = 0; i < 32; i += 4) {
             if ((maskedPc == D_160039AC[i + 0]) && ((hasOddPage ? D_1600392C[i + 0] : D_160038AC[i + 0]) & 2)) {
-                D_16003AF0 = 1;
+                D_16003AF0 = one;
             }
             if ((maskedPc == D_160039AC[i + 1]) && ((hasOddPage ? D_1600392C[i + 1] : D_160038AC[i + 1]) & 2)) {
-                D_16003AF0 = 1;
+                D_16003AF0 = one;
             }
             if ((maskedPc == D_160039AC[i + 2]) && ((hasOddPage ? D_1600392C[i + 2] : D_160038AC[i + 2]) & 2)) {
-                D_16003AF0 = 1;
+                D_16003AF0 = one;
             }
             if ((maskedPc == D_160039AC[i + 3]) && ((hasOddPage ? D_1600392C[i + 3] : D_160038AC[i + 3]) & 2)) {
-                D_16003AF0 = 1;
+                D_16003AF0 = one;
             }
         }
     }
@@ -406,12 +416,12 @@ s32 func_16000B14(struct118 *arg0) {
     }
     temp_bde = D_8002BDE0[1];
     if (temp_bde == D_8002AAE8[1]) {
-        D_16003888 = 1;
+        D_16003888 = one;
     }
     D_1600389C = arg0;
     D_160038A4 = 0;
     if ((arg0->unk120 == 0x20) && (arg0->unk11C == (s32)func_150AD770)) {
-        D_160038A4 = 1;
+        D_160038A4 = one;
     }
 
     do {
@@ -499,12 +509,19 @@ typedef struct {
 
 // NEARLY MATCHING (151/155 words, ~35 real diffs)
 void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
-    s32 sp78[10];
     s32 fb;
     s32 i;
+    s32 printed;
+    s32 *p;
+    s32 *base;
+    s32 *stop;
+    s32 sp78[10];
+    s32 exp;
+    s32 divisor;
+    f32 f;
+    u8 buf[36];
 
-    sp78[0] = D_16003B50[0];
-    *(Table1044 *) &sp78[1] = *(const Table1044 *) &D_16003B50[1];
+    *(Table1044 *) sp78 = *(const Table1044 *) D_16003B50;
 
     if (arg0 >= (D_160038A0 << 5) && arg0 < 0x341) {
         fb = func_1600160C(arg0);
@@ -517,27 +534,24 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
                     c += 7;
                 }
                 c += 0x30;
-                fb = func_160014F0(fb, c);
+                func_160014F0(fb, c);
                 arg2 = arg2 >> 4;
                 fb -= 0x10;
             }
         } else if (arg1 == 1) {
-            s32 printed;
-            s32 *p;
-            s32 *base;
-            s32 *stop;
+            s32 digit;
 
             if (arg2 < 0) {
                 fb = func_160014F0(fb, '-');
                 arg2 = -arg2;
             }
             printed = 0;
-            stop = sp78;
             base = sp78;
+            stop = sp78;
             p = &sp78[9];
             do {
-                s32 divisor = *p;
-                s32 digit = arg2 / divisor;
+                divisor = *p;
+                digit = arg2 / divisor;
 
                 arg2 = arg2 % divisor;
                 if (digit > 0 || printed || p == base) {
@@ -547,12 +561,9 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
                 p--;
             } while (p >= stop);
         } else if (arg1 == 2) {
-            s32 exp = (arg2 & 0x7F800000) >> 23;
+            exp = (arg2 & 0x7F800000) >> 23;
 
             if ((exp > 0 && exp < 0xFF) || (exp == 0 && (arg2 << 9) == 0)) {
-                u8 buf[40];
-                f32 f;
-
                 *(s32 *) &f = arg2;
                 func_16001B34(buf, D_160047E8, D_160047F0, D_160047F4, (f64) f);
                 func_160012B0(arg0, buf);
@@ -612,7 +623,7 @@ s32 func_160014F0(s32 arg0, u8 arg1) {
     s16 *dst = (s16 *) arg0;
     s32 color;
     s32 c;
-    s32 glyphIndex;
+    u8 *glyph;
     s32 row;
     s32 col;
     u16 bits;
@@ -622,10 +633,11 @@ s32 func_160014F0(s32 arg0, u8 arg1) {
     if (arg1 < 0x20) {
         c = 0x20;
     }
-    for (glyphIndex = (c - 0x20) << 3, row = 0; row < 8;
-         row++, glyphIndex++, dst += D_160038A8 - 8) {
+    col = 0;
+    row = 0, glyph = D_16003CE0 + ((c - 0x20) << 3);
+    for (; row < 8; row++, glyph++, dst += D_160038A8 - 8) {
         col = 0;
-        bits = D_16003CE0[glyphIndex];
+        bits = *glyph;
         do {
             *dst++ = (u16)((bits & 0x80) ? (color & 0xFFFF) : 1);
             bits <<= 1;

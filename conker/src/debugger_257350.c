@@ -94,10 +94,30 @@ s32 func_16001B8C(u8 *arg0, u8 *arg1, u32 arg2) {
             _PROUT(dst, src, c);      \
         }
 
+// The loop is deliberately ROTATED vs the textbook _Printf shape, and all
+// three rotations are load-bearing for the retail tail schedule:
+//  - `c = *fmt;` sits PRE-loop and again at the loop END (in a do{}while(0)),
+//    so the tail load is live loop-carried data, not a dead load (IDO's DCE
+//    deletes a plain dead `c = *fmt;` there). uopt moves it into the back-
+//    branch delay slot as `lbu s0,0(a3)` and the branch targets 0x64.
+//  - the do{}while(0) block boundary stops uopt folding the load address
+//    into `lbu 1(s2)` (retail wants the unfolded `lbu 0(a3)`), and keeping
+//    `fmt = fmt_ptr + 1` as a real tail instruction lets the last _PAD's
+//    guard fill its likely delay with a copy of it (the beql/addiu pair).
+//  - `c` must be s32: with u8 the (s32) casts at the scan guard split c's
+//    web ({head,tail}->v0 + `move s0,v0` bridged into the blez delay, +1
+//    word); s32 keeps one callee-saved web in s0 across the callbacks.
+// Remaining diffs (17) are all in the entry scheduling window (words 16-38):
+// our uopt emits [sw][lui*3][A][addiu*3][li fp][blez with B in its delay]
+// where retail has [lui*3][sw][addiu*3][li fp][A][B][li '%'][blez with
+// move a0,s3 in its delay] - the preheader hoist interleave, the li-'%'
+// position relative to the guard, and the bnel v1,s0 operand order. All
+// source-level variants tried (loop forms, casts, guards, const locals,
+// volatile, decl order, dead statements) compile byte-identical to this.
 s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) {
     struct262 st;
     u8 *fmt_ptr;
-    u8 c;
+    s32 c;
     u8 *flag_index;
     u8 buf[0x20];
     s32 c1, i1, c2, i2, c3, i3, c4, i4, c5, i5;
@@ -105,8 +125,8 @@ s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) 
     s32 pad1;
 
     st.pad2C = 0;
-    while (1) {
     c = *fmt;
+    while (1) {
     fmt_ptr = fmt + 1;
     if ((s32) c > 0) {
         while (1) {
@@ -180,6 +200,9 @@ s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) 
         _PAD(i1, st.unk28, c1, D_16003C70, 1);
     }
     fmt = fmt_ptr + 1;
+    do {
+        c = *fmt;
+    } while (0);
     }
 }
 
