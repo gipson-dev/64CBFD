@@ -908,3 +908,24 @@ make -C conker progress
 - Rewrote the project overview, code sub-project notes, compressed config notes, and IDO toolchain notes for clearer reading.
 - Added this update log.
 - Added `DOCS/ASSET_FORMATS.md` documenting the rzip codec, the offset-table archive container (including the previously undocumented nested-compression layer inside model files), and the model/texture/audio/table payload formats.
+
+## 2026-08-20
+
+### Matching sessions: +35 byte-exact, debugger to 96.13%
+
+- Six-function batch from operand-order and float-association recoveries,
+  plus a seven-function wave from guard-on-global CSE,
+  assignment-in-condition ordering, load-vs-load compares, and bitfield
+  stores (`func_15087DCC` family, `func_1517F448`, `func_1519C910`,
+  `func_1000FE88`, `func_150F33B0`, `func_150BDB3C`).
+- First stub-decompilation wave over four generated slices (17 byte-exact
+  including `func_1501D258`'s `__ll_lshift` constant marshaling and the
+  `func_150233E4`/`func_15023440` record family).
+- Debugger overlay: `func_160014F0` byte-exact; overflow displacement of
+  `func_1600078C` and `func_16000B14` repaired; `func_16001BB4` tail
+  recovered via loop rotation; remaining seven functions reduced to
+  mapped single-cause blockers (8–132 diffs each) with experiment logs
+  recorded at each function and in the working notes.
+- Verified snapshot: total `2557 / 5978 (42.77%)`, init `388 / 508`,
+  game `1995 / 5289`, debugger `174 / 181`; `func_10012588` remains the
+  sole address-only blocker.

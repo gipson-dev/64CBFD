@@ -1,8 +1,9 @@
 # Plan to 100% — Byte-For-Byte US ROM
 
 Working checklist for finishing the US build. Numbers below are the verified
-snapshot from 2026-08-17 (commit `512fe07`). Regenerate all numbers before
-planning a session; do not trust this file's counts after any landed batch.
+snapshot from 2026-08-20 (commit range through the debugger deep-dive).
+Regenerate all numbers before planning a session; do not trust this file's
+counts after any landed batch.
 
 ## Goal and ground rules
 
@@ -18,21 +19,21 @@ planning a session; do not trust this file's counts after any landed batch.
 - Commit only tracked source/config/docs; worklists and build output stay
   untracked.
 
-## Current state (2026-08-17)
+## Current state (2026-08-20)
 
 | Section | Byte-exact | Blocked | Differ |
 | --- | ---: | ---: | ---: |
-| total | 2529 / 5978 (42.31%) | 1 | 3448 |
-| init | 387 / 508 | 1 | 120 |
-| game | 1969 / 5289 | 0 | 3320 |
-| debugger | 173 / 181 | 0 | 8 |
+| total | 2557 / 5978 (42.77%) | 1 | 3420 |
+| init | 388 / 508 (76.38%) | 1 | 119 |
+| game | 1995 / 5289 (37.72%) | 0 | 3294 |
+| debugger | 174 / 181 (96.13%) | 0 | 7 |
 
-Work inventory behind those 3,449 non-exact rows:
+Work inventory behind those 3,421 non-exact rows:
 
 | Bucket | Count | Nature |
 | --- | ---: | --- |
-| Real C, small diffs | ~363 | compiled code differs by 1–20 words |
-| `return 0;` stubs | 3,086 | placeholder writes wrong bytes into ROM |
+| Real C, small diffs | ~360 | compiled code differs by 1–20 words |
+| `return 0;` stubs | ~3,070 | placeholder writes wrong bytes into ROM |
 | of which touch COP0 | 11 | cannot be C under IDO (see Phase 3) |
 
 Stub sizes: 157 are ≤24 words, most are 25–150 words; 435 source files hold
