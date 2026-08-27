@@ -3588,3 +3588,49 @@ Parked after deep attempts: `func_15079F6C`, `func_15135480`,
 `func_1514672C`, `func_150636A4`, `func_16001390`, `func_151254F4`,
 `func_151696DC`, `func_151E81EC` (cross-pair lui sharing needs TU-local
 data), `func_1515FB70` (evaporated-assert shape).
+
+## 2026-08-19/20
+
+### Debugger deep-dive (+1 exact, 7 remainders 277/118/52/27/19/5/2 -> 8/40/45/17/132/5/2)
+
+`func_160014F0` exact. Full-linked scan: debugger `174/181 (96.13%)`,
+total `2557/5978 (42.77%)`. Commits 4a2feb7..27c0826.
+
+New IDO 5.3 lore (all compile-verified; see per-function `// agR:` comment
+blocks in debugger.c for full experiment logs):
+
+- **Register homes are assigned in source-def order and NOT released** — a
+  dead-by-DCE `col = 0;` still owns a1 if it was a live def at allocation;
+  used to steer glyph pointer to t0 (14F0 win).
+- **Comma-statement scheduling**: `row = 0, glyph = ...;` makes uopt
+  schedule within the expression by critical-path priority, fixing
+  otherwise-impossible orderings (14F0 tail).
+- **const-web fold rules**: a web whose reaching defs are all the same
+  constant is phi-folded to per-use remats at every block boundary
+  (same-block uses still read the web). Runtime-1 defs (`x != 0` sltu)
+  keep the web but reserve registers differently than retail's literal
+  defs — the 0B14 floor (8 diffs) is exactly this provenance gap.
+- **sltu def coalescing**: an `x != 0` def reads the SOURCE's home
+  directly into the web register when defined before the source's
+  redefinition; reading a pending temp reintroduces a full register
+  domino (0B14 63->8).
+- **uopt LICM has a loop-complexity threshold**: dead else-if arms
+  containing calls (fully removed later) push a loop over the threshold
+  and STOP constant-bound hoisting — retail's in-loop `li at,22`
+  reproduced exactly (078C 94->40).
+- **Loop rotation + liveness**: a dead `c = *fmt` tail load is DCE'd; the
+  same load ROTATED (pre-loop def + live loop-carried back-edge) keeps
+  its web and reproduces retail's dup-filled delay slots. An `s32` local
+  (not u8) prevents the web-split; a `do {} while (0)` block boundary
+  breaks cfe address-propagation (1BB4 tail byte-exact, 27->17).
+- **Web-reference depth threshold**: IDO homes an incoming pointer param
+  only if its web has a reference at loop depth >= 1 (0590's arg0/s5).
+- **Return-value ignoring**: retail's hex loop never consumes
+  `func_160014F0`'s return — calling with the return ignored plus manual
+  `fb -= 0x10` fixed the s1/s2 swap in 1044's hex loop.
+- Remaining mapped-but-unreached shapes: const-def'd web with register
+  reads (0B14), scheduling-window opposition (1BB4 HY2/HY3), v0
+  value-root reservation without word budget (0F8C), mid-expression
+  s16->s32 conversion flush (1390), s5 prologue CSE (1044), depth-1
+  homing without IV side-effects (0590), phi s1/s2 swap (078C).
+  Next tools: upstream decomp-permuter, or uopt driver-flag research.
