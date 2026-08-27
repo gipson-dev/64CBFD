@@ -114,6 +114,32 @@ s32 func_16001B8C(u8 *arg0, u8 *arg1, u32 arg2) {
 // position relative to the guard, and the bnel v1,s0 operand order. All
 // source-level variants tried (loop forms, casts, guards, const locals,
 // volatile, decl order, dead statements) compile byte-identical to this.
+//
+// Update (for-init/increment session): the window is TWO independently
+// reproducible halves that uopt refuses to emit together:
+//  - words [16]-[28] (sw after the lui group, A last, B real at loop top,
+//    li-'%' before the guard, move a0,s3 in the blez delay) ALL match when
+//    the c-load is the scan for's INIT instead of a pre-loop statement:
+//      fmt_ptr = fmt + 1;
+//      for (c = *fmt; (s32) c > 0;) { if (c=='%'){fmt_ptr-=1;break;}
+//                                    c = *fmt_ptr; fmt_ptr += 1; }
+//    but uopt then deletes the tail do{}while(0) load as redundant with the
+//    for-init (head load wins), losing [389]'s back-edge delay fill (-1 word,
+//    28 diffs). No tail form survives it (plain/do-while/assign-in-deref all
+//    die; keeping both loads triples them to 408 words).
+//  - the tail ([362] beqzl + addiu fill, [387] addiu real, [388] b, [389]
+//    lbu delay, back edge to B) ALL match with an outer for-increment:
+//      for (c = *fmt; ; fmt = fmt_ptr + 1, c = *fmt) { ... }
+//    (18 diffs: A lands one slot early at [23] and B sinks back into the
+//    blez delay; the increment's load also folds to lbu 1(s2) - the same
+//    fold the do{}while(0) boundary used to prevent).
+//  So retail's real source had both a for-init-shaped head load AND a live
+//  tail load; the missing piece is whatever stops uopt's head/tail load
+//  redundancy kill (block boundary that survives the for-init, or a
+//  different loop rotation input).
+//  bnel v1,s0 (const-first): reproduces ONLY via `(c & 0xFF) == '%'`, but
+//  the andi stays in the loop (+1 word) and re-splits c's web into s6 -
+//  same type-locked opposition as the u8 attempt.
 s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) {
     struct262 st;
     u8 *fmt_ptr;

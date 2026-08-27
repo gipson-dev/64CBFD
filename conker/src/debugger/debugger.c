@@ -343,20 +343,26 @@ void func_16001830(struct263 *);
 // NON-MATCHING: mips-to-c cleaned skeleton, converted for raw-progress accounting.
 // agR: dead f64 phantom local; IDO reserves its 8-byte chunk at 0x48(sp), giving the
 // retail 0x50 frame with firstPass@0x40 / arg0-spill@0x50. Produces no code.
-// agR: SIZE NOW SOLVED (286/286, 63 diffs from 108). Root cause of the old 2-word
-// overage: uopt const-folds any web whose reaching defs are all the same constant
-// (phi(1,1) -> per-use remat), and a web uninit on one path gets memory-homed
-// (stack chunk + garbage lw restore). Fix: `s32 one` web with a NON-CONST runtime-1
-// def in each arm: arm `one = (arg0 != NULL)` (sltu t3,zero,t8 @c04, arg0 always
-// non-null) and else `one = (maskedPc != 0)` (sltu @preheader; maskedPc=pc&~0x1FFF
-// never 0 for real addresses). Fold can't fire, web spans loop + both post-loop sb
-// sites (`sb t3`), no home. Decl must sit after firstPass (frame: one@0x44 padding).
-// Remaining 63 diffs = one register domino: the else sltu result temp takes a2,
-// displacing hasOddPage a2->a3, 38AC-base a3->t0, 392C-base t0->t1, pc t1->t2, plus
-// a `move t3,a2` web copy (retail: both defs are li t1,1, no copy). Getting li-form
-// defs without the const-fold appears impossible under -O2 uopt (flow-sensitive SCCP
-// + copy-prop-before-const-prop); fixing the domino needs the sltu to coalesce
-// directly into the web register, which IDO's allocator only did on the arm path.
+// agR: DOMINO SOLVED (286/286, 8 diffs from 63 / 108). Two rules found:
+// (1) the else `one = (maskedPc != 0)` MUST sit BEFORE the `maskedPc &= ~0x1000`
+// redef so the sltu reads maskedPc's HOME a1 -> uopt writes the web home t1
+// directly (`sltu t1,zero,a1`). Reading the redef's pending temp t4 (any def
+// placed after the redef) makes the sltu take a temp + `move home,temp` and the
+// full a2/a3/t0/t1 displacement domino returns (verified). (2) the arm def
+// `one = (arg0->unk11C != 0)` must read pc's reg t2, NOT arg0's t8: a t8 read
+// perturbs uopt's temp freelist and flips a systematic t8<->t9 swap through
+// the whole loop + do-while (~38 diffs). With both: one home = t1 (retail reg),
+// hasOddPage a2, 38AC a3, 392C t0, t3 = &D_16003AF0 hoisted, `sw t1,0(t3)`
+// loop stores, beqzl shapes - all retail.
+// Remaining 8 (structural for a non-const web): [53,56,65] pc in t2 not t1
+// (one-web reserves t1 from the arm def @c04; pc lives c00-c18 and retail had
+// no web there - li remats); [60] `sltu t1,zero,t2` vs `li t1,1` (li defs
+// const-fold, so a compute def is unavoidable); [70,71,74,75] preheader order -
+// the a1-reading sltu must precede the redef's `move a1,t4`, so it lands at c2c
+// where retail has `and t4`, while retail's dep-free li sits last @c48.
+// Dead ends: mixed li+sltu defs (flow-sensitive SCCP remats, 289 words), loop
+// bound via D_16003A2C symbol (breaks rotation), explicit pc local (+1 frame
+// word), decl reorder (no effect).
 
 s32 func_16000B14(struct118 *arg0) {
     f64 dphantom;
@@ -387,14 +393,14 @@ s32 func_16000B14(struct118 *arg0) {
     D_16003A68 = D_8003C8E8[3];
 
     if ((arg0->unk11C & 0xFF000000) != 0x15000000) {
-        one = (arg0 != NULL);
+        one = (arg0->unk11C != 0);
         D_16003AF0 = one;
     } else {
         maskedPc = arg0->unk11C & ~0xFFF;
         hasOddPage = maskedPc & 0x1000;
+        one = (maskedPc != 0);
         maskedPc = maskedPc & ~0x1000;
         D_16003AF0 = 0;
-        one = (maskedPc != 0);
         for (i = 0; i < 32; i += 4) {
             if ((maskedPc == D_160039AC[i + 0]) && ((hasOddPage ? D_1600392C[i + 0] : D_160038AC[i + 0]) & 2)) {
                 D_16003AF0 = one;
