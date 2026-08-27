@@ -44,6 +44,10 @@ confirmed.
 
 ## Planning and history
 
+- [Plan to 100%](PLAN_TO_100.md) — phased checklist from the current
+  byte-exact snapshot to a fully matching US ROM: work inventory, per-session
+  runbook, stub-decompilation strategy, COP0 flip decision, endgame
+  validation, and research backlog.
 - [Temporary Banjo cross-port TODO](TEMP_BANJO_CROSSPORT_TODO.md) — five
   completed port batches, including the US v1.0/v1.1 normalized-block and
   shared-fragment recheck, plus retained source-shape references.
@@ -71,6 +75,7 @@ confirmed.
 | Local tool usage and compatibility | `TOOLS.md` |
 | `conker/` section build mechanics | `CODE_SUBPROJECT.md` |
 | Confirmed ROM and asset behavior | `ASSET_FORMATS.md` or `CONFIG.md` |
+| Roadmap from current state to a matching ROM | `PLAN_TO_100.md` |
 | Future PC-port decisions | `PC_PORT_ROADMAP.md` |
 | Completed milestones and public changes | `UPDATE_LOG.md` |
 | Temporary findings and abandoned attempts | `WORKING_NOTES.md` |

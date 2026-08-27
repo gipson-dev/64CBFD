@@ -67,8 +67,17 @@ s32 func_151DDB94(s32 arg0) {
     return ~arg0;
 }
 
-s32 func_151DDBA0() {
-    return 0;
+void func_151DDBA0(void) {
+    D_800D2E40 = 0;
+    func_1501C730(6, 0x1D, 0, 0, 1);
+    D_800E0B94 = 3;
+    D_8008FDA4 = 0;
+    D_800BEAC1 = 0;
+    func_151E557C();
+    func_1000F1A8();
+    func_1000E934();
+    D_8008FD8C = 1;
+    D_8008FD90 = 1;
 }
 
 s32 func_151DDC20() {
@@ -200,8 +209,14 @@ void func_151E4DD8() {
     }
 }
 
-s32 func_151E4E00() {
-    return 0;
+void func_151E4E00(void) {
+    D_8008FDCC = 0;
+    func_151E557C();
+    D_800E0B94 = 3;
+    D_8008FDA4 = 0;
+    D_8008FD80 = 0;
+    D_800D2E40 = 0;
+    func_1501C730(6, 0x1D, 0, 0, 1);
 }
 
 s32 func_151E4E64() {
@@ -325,12 +340,33 @@ s32 func_151E7DC0() {
     return 0;
 }
 
-s32 func_151E7E9C() {
-    return 0;
+void func_151E7E9C(void) {
+    s8 var;
+
+    var = D_800E0BE9;
+    if (var == 2) {
+        func_10017870(1);
+        return;
+    }
+    if (var == 0) {
+        func_10017870(2);
+        return;
+    }
+    func_10017870(4);
 }
 
-s32 func_151E7EF8() {
-    return 0;
+void func_151E7EF8(void) {
+    s32 *iter;
+    s32 sum;
+
+    func_151E7E9C();
+    sum = 0;
+    for (iter = (s32 *)&func_151DDC20; iter < (s32 *)&func_151DE7D4; iter++) {
+        sum += *iter;
+    }
+    if (sum != 0xBFC924E3) {
+        *(s32 *)&osSpTaskLoad = 0;
+    }
 }
 
 s32 func_151E7F60() {

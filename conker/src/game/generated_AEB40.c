@@ -153,7 +153,7 @@ s32 func_15084558() {
 }
 
 s32 func_150849A0(u8 *arg0) {
-    u8 temp_v1 = arg0[0x1C9];
+    s32 temp_v1 = arg0[0x1C9];
 
     if (temp_v1 != 0) {
         return (*(u8 **) (arg0 + 0x2C4))[temp_v1 - 1];

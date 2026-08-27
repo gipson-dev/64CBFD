@@ -963,7 +963,7 @@ s32 func_1505D024(struct127 *arg0, s32 arg1, u16 arg2, s32 arg3) {
         sp30 = func_1505C1A4(D_800D154C);
     }
 
-    temp_lo = ((s32)arg0 - (s32)D_800CC2D0) / (s32)sizeof(struct127);
+    temp_lo = arg0 - D_800CC2D0;
     ret = 1 << temp_lo;
     if (arg1 & 0x80000) {
         ret = func_1505C1E4(&D_800D121C, arg0, sp30, arg1 & 0xFF, temp_lo + 1, 0, 7);

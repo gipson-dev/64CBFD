@@ -126,13 +126,13 @@ s32 func_15087CC0() {
 }
 
 void func_15087DCC(s32 arg0, s32 arg1) {
-    u8 *rec = D_800872A0;
+    u8 *rec;
     s32 value;
 
-    if (rec == 0) {
+    if (D_800872A0 == 0) {
         return;
     }
-    rec = (u8 *) (arg0 * 0x84 + (s32) rec);
+    rec = (u8 *) (arg0 * 0x84 + (s32) D_800872A0);
     if (*(s8 *) (rec + 0x2F) == arg1) {
         return;
     }
@@ -154,19 +154,23 @@ s32 func_15087EF0() {
 }
 
 void func_15087FC4(s32 arg0, s32 arg1) {
-    u8 *temp_v0 = D_800872A0;
+    u8 *rec;
 
-    if (temp_v0 != 0) {
-        *(u8 *) (arg0 * 0x84 + (s32) temp_v0 + 0x31) = arg1;
+    if (D_800872A0 == 0) {
+        return;
     }
+    rec = (u8 *) (arg0 * 0x84 + (s32) D_800872A0);
+    rec[0x31] = arg1;
 }
 
 void func_15087FEC(s32 arg0, s32 arg1) {
-    u8 *temp_v0 = D_800872A0;
+    u8 *rec;
 
-    if (temp_v0 != 0) {
-        *(f32 *) (arg0 * 0x84 + (s32) temp_v0 + 4) = arg1 * 0.00390625f;
+    if (D_800872A0 == 0) {
+        return;
     }
+    rec = (u8 *) (arg0 * 0x84 + (s32) D_800872A0);
+    *(f32 *) (rec + 4) = arg1 * 0.00390625f;
 }
 
 s32 func_1508802C() {

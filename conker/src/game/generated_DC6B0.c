@@ -11,9 +11,7 @@ s32 func_150AF200() {
 }
 
 void func_150AF2E0(s32 arg0, u8 *arg1) {
-    s32 temp_v0 = *(s16 *) (arg1 + 2);
-
-    func_151CF898(arg0, (f32) (*(s16 *) (arg1 + 8) + temp_v0), (f32) temp_v0);
+    func_151CF898(arg0, (f32) (*(s16 *) (arg1 + 8) + *(s16 *) (arg1 + 2)), (f32) *(s16 *) (arg1 + 2));
 }
 
 s32 func_150AF328() {

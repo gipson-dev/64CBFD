@@ -15,7 +15,7 @@ The codebase is nearly fully represented in C, but byte matching is a separate
 measurement. "Converted" means a function has C source; "byte-exact" means the
 compiled instructions match the retail game exactly.
 
-Snapshot verified on 2026-07-26:
+Snapshot verified on 2026-08-20:
 
 | Section | Converted functions | Converted bytes |
 | --- | ---: | ---: |
@@ -26,10 +26,10 @@ Snapshot verified on 2026-07-26:
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[##########--------------]` 2,522 / 5,978 (42.19%) | 1 | 3,455 |
-| Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[#########---------------]` 1,962 / 5,289 (37.10%) | 0 | 3,327 |
-| Debugger | `[#######################-]` 173 / 181 (95.58%) | 0 | 8 |
+| Total | `[##########--------------]` 2,557 / 5,978 (42.77%) | 1 | 3,420 |
+| Init | `[##################------]` 388 / 508 (76.38%) | 1 | 119 |
+| Game | `[#########---------------]` 1,995 / 5,289 (37.72%) | 0 | 3,294 |
+| Debugger | `[#######################-]` 174 / 181 (96.13%) | 0 | 7 |
 
 The sole address-only blocker is `func_10012588`; its C instructions match,
 but its call still resolves to the wrong linked target. Regenerate the
@@ -41,7 +41,9 @@ make -C conker match-progress NON_MATCHING=1
 ```
 
 See the [project overview](DOCS/PROJECT.md#current-progress) for measurement
-details and the [update log](DOCS/UPDATE_LOG.md) for milestone history.
+details, the [update log](DOCS/UPDATE_LOG.md) for milestone history, and the
+[plan to 100%](DOCS/PLAN_TO_100.md) for the phased path to a fully matching
+ROM.
 
 ## Build overview
 

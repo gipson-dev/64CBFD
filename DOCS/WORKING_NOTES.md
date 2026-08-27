@@ -3489,3 +3489,148 @@ callee plateau):**
   `func_1514143C` (14), `func_1504ADD0` (52), `func_1504A620` (63),
   `func_15169070` (67), `func_1505210C` (81), `func_1504AF10` (116),
   `func_1504BE2C` (144). `func_150721A4` left the diff queue.
+
+## 2026-08-17
+
+### Empirical IDO operand/idiom rules (session batch: +7 exact)
+
+Verified byte-exact recoveries: `func_150AF2E0`, `func_151061EC`,
+`func_15144A74`, `func_151906E0`, `func_151C1814`, `func_1516968C`,
+`func_15199980`. Full relink scan: total `2529 / 5978 (42.31%)`, init
+`387 / 508`, game `1969 / 5289`, debugger `173 / 181`; no regressions;
+`func_10012588` remains the sole address-only blocker.
+
+Patterns confirmed by compiling variant matrices against retail bytes:
+
+- **Integer `addu` operand order is not source-order-stable.** For
+  `leaf + leaf` both fresh loads, IDO emitted `addu rd, right_src, left_src`
+  (mirrored). For `param + mult`, the mirror did not apply; the fix that
+  matched retail (`func_151061EC`) was reassociating the constant first:
+  `arg0 + 0x88 + temp * 0x34` — not `arg0 + temp * 0x34 + 0x88`.
+- **Float sums need explicit association.** `func_15144A74` required
+  `A + (B + C)` grouping with the load order chosen so the first two products
+  sum into `f4` (144 variant permutations; only one matched all 13 words).
+- **Branch operand order often comes from a subtraction idiom.** Writing
+  `if ((a - b) == 0)` (or `(a - b) != 0`) puts `a`'s register in the branch's
+  rs slot even when plain `a == b` compiles mirrored. Fixed
+  `func_151906E0`, `func_151C1814`, `func_1516968C` (all comparisons,
+  including `arg2 - 0xF`, were subtraction idioms in
+  `func_1516968C`'s retail source).
+- **A zero-arg call may still receive an argument.** `func_15199980`'s retail
+  body loads the tested value into `a0` and calls `func_1516972C(a0_value)`;
+  passing the load result as a call argument reproduced the `beql a0, zero`
+  shape and made the function exact.
+- **Register-allocation micro-diffs are not idiom-fixable so far.** Cases
+  where retail allocates `t7`/`v0`/`v1` and the current C allocates
+  `t8`/`a0`/`t7` (`func_1519C910` second compare, `func_1509D054` global in
+  `v0` with `or a0, v0, zero` in the `jal` delay slot, `func_15087FC4`
+  sum in `v1`) resisted operand swaps, subtraction idioms, temp locals,
+  CSE rewrites, assignment-conditions, and every `-O1/-O2/-O3/-g/-g3`
+  profile. The `jal; or a0, v0, zero` delay-move pattern does not occur in
+  any currently exact function, so no known source shape reproduces it yet.
+- **Dead argument homing** (`func_151ACB60`: retail `sw a0, home` in the
+  `jal` delay slot with no reload) also has no known source trigger; the
+  empty-callback homing trick does not apply when the argument is live.
+
+Tooling added under `conker/tools/`: `fdiff.py` (per-function
+side-by-side linked-vs-retail diff), `perm.py` (micro-permuter: applies the
+idiom transforms, compiles variants in one object, scores against retail with
+relocation masking, `--apply` writes winners back), `batch_perm.py` (runs the
+permuter across the non-exact list), `cluster_stubs.py` (stubs cluster audit:
+3,086 stubs split into 2,980 opcode-pattern clusters - no large templateable
+families), `objcheck.py` (compare object words to a retail list). Local
+untracked helpers: `q.sh` (rebuild-object + relink + check loop via the
+amd64 build container), `stubs.txt`/`nonexact.txt` (generated worklists).
+
+## 2026-08-18
+
+### Subagent wave results (+27 exact across three commits)
+
+Waves 1-3 via disjoint-file subagents, centrally verified by object fcheck
+plus full relink matcher: `2529 -> 2556 / 5978 (42.76%)`, init
+`387 -> 388`, game `1969 -> 1995`; no regressions; `func_10012588` still
+the sole address blocker.
+
+New verified techniques (add to the toolbox before the next wave):
+
+- **Guard-on-global + CSE recompute** (3 wins, B3020): guard the raw global
+  `if (GLOBAL == 0) return;` then *re-mention* it in the record-pointer
+  expression so IDO CSEs to one load in `v0`; the record pointer lands in
+  `v1` with retail's `addu v1, t6, v0` order.
+- **Assignment-in-condition** (func_1517F448): `if (OTHER[i] != (v = *ptr))`
+  evaluates the left address before the right load's address, swapping the
+  two-addu order.
+- **Load-vs-load compares** (func_1519C910): inline both loads in the
+  comparison and delete param reassignment entirely — temps and subtraction
+  idioms burn an invisible register; dropping the unused param kills the
+  homing spill.
+- **Direct indexing instead of pointer temp** (func_1000FE88) moves homing
+  slot offsets; **temp width u8->s32** (func_150849A0) flips allocation.
+- **1-bit bitfield store** (func_150F33B0): `u8 :7; u8 unk:1;` struct cast
+  emits exactly `andi 0xFFFE`/`ori 1` MSB-first and burns a temp that shifts
+  else-path allocation; no plain `&=/|=` form does this.
+- **u64 shift constants** (func_1501D258): `(u64)1 << n` marshals the
+  `__ll_lshift` call args as (0,1); `0x100000000 << n` as (1,0).
+- **volatile guard reload** (func_151904BC): `*(s32 volatile*)` breaks
+  load-CSE to reproduce a reload pattern.
+- **Extra call args for register targeting** (func_15190400): passing more
+  args than the callee reads still homes them into a0-a3, reproducing retail
+  arg-register stores.
+- **Dead-load retention** (func_1515FB70 near-miss): an `s32` function with
+  no return keeps a dead `lw` that a `void` version deletes.
+
+Confirmed non-C-reproducible (add to the Phase-3 flip list in
+PLAN_TO_100.md): `func_150A7A00` (t9/ra trampoline `j`), `func_150AD78C`-
+family thunk `func_150AD780` (fallthrough + `$f12`), `func_150AD770`
+(literal `syscall`), `func_150A6354` (epilogue half of a leaf pair),
+`func_150AC9B0` (goto-epilogue trampoline, IDO has no tail calls).
+Parked after deep attempts: `func_15079F6C`, `func_15135480`,
+`func_1514672C`, `func_150636A4`, `func_16001390`, `func_151254F4`,
+`func_151696DC`, `func_151E81EC` (cross-pair lui sharing needs TU-local
+data), `func_1515FB70` (evaporated-assert shape).
+
+## 2026-08-19/20
+
+### Debugger deep-dive (+1 exact, 7 remainders 277/118/52/27/19/5/2 -> 8/40/45/17/132/5/2)
+
+`func_160014F0` exact. Full-linked scan: debugger `174/181 (96.13%)`,
+total `2557/5978 (42.77%)`. Commits 4a2feb7..27c0826.
+
+New IDO 5.3 lore (all compile-verified; see per-function `// agR:` comment
+blocks in debugger.c for full experiment logs):
+
+- **Register homes are assigned in source-def order and NOT released** — a
+  dead-by-DCE `col = 0;` still owns a1 if it was a live def at allocation;
+  used to steer glyph pointer to t0 (14F0 win).
+- **Comma-statement scheduling**: `row = 0, glyph = ...;` makes uopt
+  schedule within the expression by critical-path priority, fixing
+  otherwise-impossible orderings (14F0 tail).
+- **const-web fold rules**: a web whose reaching defs are all the same
+  constant is phi-folded to per-use remats at every block boundary
+  (same-block uses still read the web). Runtime-1 defs (`x != 0` sltu)
+  keep the web but reserve registers differently than retail's literal
+  defs — the 0B14 floor (8 diffs) is exactly this provenance gap.
+- **sltu def coalescing**: an `x != 0` def reads the SOURCE's home
+  directly into the web register when defined before the source's
+  redefinition; reading a pending temp reintroduces a full register
+  domino (0B14 63->8).
+- **uopt LICM has a loop-complexity threshold**: dead else-if arms
+  containing calls (fully removed later) push a loop over the threshold
+  and STOP constant-bound hoisting — retail's in-loop `li at,22`
+  reproduced exactly (078C 94->40).
+- **Loop rotation + liveness**: a dead `c = *fmt` tail load is DCE'd; the
+  same load ROTATED (pre-loop def + live loop-carried back-edge) keeps
+  its web and reproduces retail's dup-filled delay slots. An `s32` local
+  (not u8) prevents the web-split; a `do {} while (0)` block boundary
+  breaks cfe address-propagation (1BB4 tail byte-exact, 27->17).
+- **Web-reference depth threshold**: IDO homes an incoming pointer param
+  only if its web has a reference at loop depth >= 1 (0590's arg0/s5).
+- **Return-value ignoring**: retail's hex loop never consumes
+  `func_160014F0`'s return — calling with the return ignored plus manual
+  `fb -= 0x10` fixed the s1/s2 swap in 1044's hex loop.
+- Remaining mapped-but-unreached shapes: const-def'd web with register
+  reads (0B14), scheduling-window opposition (1BB4 HY2/HY3), v0
+  value-root reservation without word budget (0F8C), mid-expression
+  s16->s32 conversion flush (1390), s5 prologue CSE (1044), depth-1
+  homing without IV side-effects (0590), phi s1/s2 swap (078C).
+  Next tools: upstream decomp-permuter, or uopt driver-flag research.

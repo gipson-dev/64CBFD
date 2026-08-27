@@ -4,6 +4,9 @@ extern void (*D_8008D680[])();
 typedef struct { s32 a, b, c; } ThreeWord1BA1D0;
 void func_15169260(s32, s32, s32, u8);
 extern u8 D_800A74D4[];
+extern u8 D_800A8010[];
+extern u8 D_800A7460[];
+extern u8 D_800A749C[];
 typedef struct { s32 val; } OneWord1BA1D0;
 typedef struct {
     u8 pad0[0x1C];
@@ -26,6 +29,19 @@ typedef struct {
     s16 limit;
     s16 scale;
 } Generated1BA1D0Record154;
+typedef struct {
+    u8 pad0[0x1C];
+    s16 timer;
+    u8 pad1E[0xE];
+    f32 value2C;
+    f32 value30;
+    u8 pad34[0x28];
+    u8 value5C;
+    u8 pad5D[0xF7];
+    f32 factor;
+    s16 limit;
+    s16 scale;
+} Generated1BA1D0Record108;
 
 /* Non-matching placeholders for the text-only asm slice asm/1BA1D0.s. */
 
@@ -87,11 +103,17 @@ s32 func_1518E5D8() {
     return 0;
 }
 
-s32 func_1518E66C() {
+s32 func_1518E66C(u8 *arg0) {
+    func_1518D1C0(*(s32 *) (arg0 + 0x18), 3, 0, 0, *(arg0 + 0xC), *(arg0 + 1), D_800A7460);
+    *(s16 *) (arg0 + 0x1E) = 0x80;
+    *(s8 *) (arg0 + 0x21) = -1;
     return 0;
 }
 
-s32 func_1518E6D4() {
+s32 func_1518E6D4(u8 *arg0) {
+    func_1518D1C0(*(s32 *) (arg0 + 0x18), 4, 0, 0, *(arg0 + 0xC), *(arg0 + 1), D_800A749C);
+    *(s16 *) (arg0 + 0x1E) = 0x80;
+    *(s8 *) (arg0 + 0x21) = -1;
     return 0;
 }
 
@@ -111,8 +133,16 @@ s32 func_1518F058() {
     return 0;
 }
 
-s32 func_1518F108() {
-    return 0;
+s32 func_1518F108(u8 *arg0) {
+    Generated1BA1D0Record108 *self = (void *) arg0;
+    s32 temp_v0 = self->timer;
+
+    self->value30 = self->value30 - self->value30 * self->factor;
+    self->value2C = self->value2C - self->value2C * self->factor;
+    if (temp_v0 < self->limit) {
+        self->value5C = temp_v0 * (u32) self->scale;
+    }
+    return 1;
 }
 
 s32 func_1518F15C(u8 *arg0) {
@@ -213,8 +243,17 @@ void func_151903D0(u8 *arg0) {
     func_15163F50(arg0, arg0 + 0x18);
 }
 
-s32 func_15190400() {
-    return 0;
+void func_15190400(u8 *arg0, u8 *arg1, u8 arg2) {
+    if (arg2 == 0) {
+        s32 temp_w1 = *(s32 *) (arg0 + 0x18);
+        s32 temp_w2 = *(s32 *) arg1;
+        s32 temp_a = *(arg0 + 0x1C);
+        s32 temp_b = *(u8 *) (arg1 + 4);
+
+        if (temp_w1 == temp_w2 || temp_b == temp_a) {
+            func_1516972C(arg0, arg1, temp_a, temp_b);
+        }
+    }
 }
 
 void func_15190454(u8 *arg0) {
@@ -234,8 +273,14 @@ s32 func_15190490(s32 arg0) {
     func_151617E4(arg0);
 }
 
-s32 func_151904BC() {
-    return 0;
+void func_151904BC(u8 *arg0) {
+    u8 *temp_v0 = arg0 + 0x30;
+
+    if (*(s32 volatile *) (arg0 + 0x84) != 0) {
+        func_1516972C(*(s32 *) (temp_v0 + 0x54));
+    }
+    func_1000FD38(func_1518E298, arg0, *(s32 *) (arg0 + 0x10));
+    func_151D2B4C(*(u8 **) (temp_v0 + 0x48));
 }
 
 void func_15190518(u8 *arg0) {
@@ -276,7 +321,7 @@ void func_151906E0(u8 *arg0, s32 *arg1, u8 arg2) {
             *(s32 *) (temp_v0 + 8) = arg1[1];
             return;
         }
-        if (temp_a2 == arg1[1]) {
+        if ((arg1[1] - temp_a2) == 0) {
             *(s32 *) (temp_v0 + 8) = temp_v1;
         }
     }
@@ -354,6 +399,10 @@ s32 func_15191A84() {
     return 0;
 }
 
-s32 func_15191B8C() {
-    return 0;
+void func_15191B8C(s32 arg0, u8 arg1) {
+    s32 tmp[1];
+
+    tmp[0] = *(s32 *) D_800A8010;
+    func_151494E0(arg0, arg1);
+    func_15169260(tmp, 1, arg0, arg1);
 }

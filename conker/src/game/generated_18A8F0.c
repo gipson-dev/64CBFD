@@ -225,10 +225,13 @@ s32 func_1515F850() {
     return 0;
 }
 
-void func_1515FB70(u8 *arg0, u8 *arg1) {
-    if (*(arg0 + 0x3B) == 1) {
-        if (*(volatile s32 *) (arg1 + 0x1C) >= 0) {
-        }
+s32 func_1515FB70(u8 *arg0, u8 *arg1) {
+    s32 t;
+    if (*(arg0 + 0x3B) != 1) {
+        return;
+    }
+    t = *(s32 *) (arg1 + 0x1C);
+    if (t >= 0) {
     }
 }
 

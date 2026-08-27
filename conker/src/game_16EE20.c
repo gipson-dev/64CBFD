@@ -630,7 +630,7 @@ s32 func_1514470C() {
     return 0;
 }
 f32 func_15144A74(f32 *arg0, f32 *arg1) {
-    return arg0[0] * arg1[0] + arg0[1] * arg1[1] + arg1[2] * arg0[2];
+    return arg0[2] * arg1[2] + (arg0[1] * arg1[1] + arg1[0] * arg0[0]);
 }
 f32 func_15144AA8(s32 arg0) {
     f32 ret = D_800DBFF0[arg0].unk380;

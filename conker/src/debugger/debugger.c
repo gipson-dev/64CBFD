@@ -166,24 +166,24 @@ void func_16000424(struct118 *arg0) {
 
 void func_16000590(void *arg0) {
     register u8 *var_s5 = arg0;
-    s32 temp_s2 = *(s32 *) (var_s5 + 0x12C);
     u32 var_s2;
     s32 var_s0;
     s32 var_s1;
     s32 var_v0;
     s32 var_s4 = 0;
-    s32 var_s2_2;
-    u8 *var_s3;
+    register u32 *var_s3;
 
+    var_s2 = *(u32 *) (var_s5 + 0x12C);
     func_160012B0(3, D_160047A4);
-    func_16001044(0xA, 0, temp_s2);
+    func_16001044(0xA, 0, var_s2);
 
-    var_s2 = (u32) temp_s2 >> 12;
+    var_s2 = var_s2 >> 12;
     var_s0 = 0x2C;
     var_s1 = 0;
+    var_s3 = D_16003B30;
     do {
         if (var_s2 & 1) {
-            func_160012B0(var_s0, D_16003B30[var_s1]);
+            func_160012B0(var_s0, (u8 *) var_s3[var_s1]);
             var_s0 += 0x20;
         }
         var_s1 += 1;
@@ -198,16 +198,14 @@ void func_16000590(void *arg0) {
         var_v0 = 0x6C;
         var_s4 = 0x10;
     }
-    var_s2_2 = var_s1 + var_s4;
-    var_s3 = var_s5 + var_v0 * 4;
+    var_s3 = (u32 *) (var_s5 + var_v0 * 4);
     do {
         func_160012B0(var_s0, D_160047AC);
-        func_16001044(var_s0 + 2, 1, var_s2_2);
-        func_16001044(var_s0 + 5, 2, *(s32 *) (var_s3 + 4));
+        func_16001044(var_s0 + 2, 1, var_s1 + var_s4);
+        func_16001044(var_s0 + 5, 2, var_s3[1]);
         var_s1 += 1;
-        var_s3 += 8;
+        var_s3 += 2;
         var_s0 += 0x20;
-        var_s2_2 += 1;
     } while (var_s1 < 0x10);
 }
 
@@ -247,67 +245,86 @@ void func_160006CC(void *arg0) {
 
 // NON-MATCHING: close but still some stuff to figure out
 void func_1600078C(void) {
-    s32 temp_s0;
+    register s32 temp_s0;
     u8 range_prefix;
-    u32 temp_s2;
-    s32 temp_s5;
-    s32 phi_s1;
-    u32 *phi_s2;
-    u32 phi_s5;
-    s32 i;
+    register s32 phi_s1;
+    register u32 phi_s2;
+    register u32 phi_s3;
+    register u32 phi_s5;
+    register s32 i;
+    s32 dead_flag = 0;
 
     temp_s0 = *(s32 *) ((u8 *) D_1600389C + 0xF4);
     func_16001338(0, 255, 0);
     func_160012B0(11, &D_160047B0);
-    temp_s2 = (D_16003B4C * 4) + temp_s0;
-    if (((temp_s2 & 3) == 0) && (temp_s2 >= 0x80000000U) && (temp_s2 < 0x80800001U)) {
+    phi_s2 = (D_16003B4C * 4) + temp_s0;
+    if (((phi_s2 & 3) == 0) && (phi_s2 >= 0x80000000U) && (phi_s2 < 0x80800001U)) {
         if (D_16003B4C == 0) {
             func_16001338(255, 0, 0);
             phi_s5 = (u32)&D_8002D4B0;
         } else {
-            temp_s5 = (s32)&D_8002D4B0 - 0x2B50;
-            if ((temp_s2 >= (u32)temp_s5) && (temp_s2 < (u32)(temp_s5 + 0x400))) {
+            phi_s5 = (u32)&D_8002D4B0;
+            if ((phi_s2 >= phi_s5) && (phi_s2 < (phi_s5 + 0x400))) {
                 func_16001338(128, 128, 255);
-                phi_s5 = temp_s5;
-            } else if ((temp_s2 >= (u32) &D_8002D8B0) && (temp_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
+            } else if ((phi_s2 >= (u32) &D_8002D8B0) && (phi_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
                 func_16001338(255, 128, 128);
-                phi_s5 = temp_s5;
             } else {
                 func_16001338(255, 255, 255);
-                phi_s5 = temp_s5;
             }
         }
         phi_s1 = 97;
-        phi_s2 = (u32 *)temp_s2;
-        for (i = 0; i < 22; i++) {
-            func_16001044(phi_s1, 0, (s32)phi_s2);
+        i = 0;
+        do {
+            func_16001044(phi_s1, 0, phi_s2);
             func_160012B0(phi_s1 + 8, &D_160047BC);
-            range_prefix = (*phi_s2 >> 24);
+            phi_s3 = *(u32 *) phi_s2;
+            range_prefix = (phi_s3 >> 24);
             if (range_prefix == 0x80) {
                 func_16001338(128, 128, 255);
             } else if (range_prefix == 0x15) {
                 func_16001338(255, 0, 0);
             } else if (range_prefix == 0x16) {
                 func_16001338(128, 255, 128);
+            } else if (dead_flag != 0) {
+                func_16001338(9, 9, 9);
+                func_16001338(9, 9, 9);
+            } else if (dead_flag != 0) {
+                func_16001338(8, 8, 8);
+                func_16001338(8, 8, 8);
+            } else if (dead_flag != 0) {
+                func_16001338(7, 7, 7);
+                func_16001338(7, 7, 7);
+            } else if (dead_flag != 0) {
+                func_16001338(6, 6, 6);
+                func_16001338(6, 6, 6);
+            } else if (dead_flag != 0) {
+                func_16001338(5, 5, 5);
+                func_16001338(5, 5, 5);
+            } else if (dead_flag != 0) {
+                func_16001338(4, 4, 4);
+                func_16001338(4, 4, 4);
+            } else if (dead_flag != 0) {
+                func_16001338(3, 3, 3);
+                func_16001338(3, 3, 3);
             } else if (range_prefix == 0x10) {
                 func_16001338(255, 0, 0);
             } else {
                 func_16001338(255, 255, 255);
             }
-            func_16001044(phi_s1 + 0xC, 0, *phi_s2);
+            func_16001044(phi_s1 + 0xC, 0, phi_s3);
             func_160012B0(phi_s1 + 0x16, &D_160047C0);
             func_16001338(255, 255, 255);
-            func_16001044(phi_s1 + 0x16, 1, *phi_s2);
-            if (((u32) phi_s2 >= phi_s5) && ((u32) phi_s2 < (phi_s5 + 0x400))) {
+            func_16001044(phi_s1 + 0x16, 1, phi_s3);
+            if ((phi_s2 >= phi_s5) && (phi_s2 < (phi_s5 + 0x400))) {
                 func_16001338(128, 128, 0xFF);
-            } else if (((u32) phi_s2 >= (u32) &D_8002D8B0) && ((u32) phi_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
+            } else if ((phi_s2 >= (u32) &D_8002D8B0) && (phi_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
                 func_16001338(255, 128, 128);
             } else {
                 func_16001338(255, 255, 255);
             }
             phi_s1 += 0x20;
-            phi_s2 += 1;
-        }
+            phi_s2 += 4;
+        } while (++i != 22);
     }
 }
 
@@ -335,15 +352,75 @@ s32 func_16000A5C(void) {
     return res;
 }
 
+// agP: local prototypes (missing from functions.h; void returns matter for IDO temp allocation)
+void func_16003650(void);
+void func_16001700(void);
+void func_16001830(struct263 *);
+
 // called from func_10007DAC
 // NON-MATCHING: mips-to-c cleaned skeleton, converted for raw-progress accounting.
+// agR: dead f64 phantom local; IDO reserves its 8-byte chunk at 0x48(sp), giving the
+// retail 0x50 frame with firstPass@0x40 / arg0-spill@0x50. Produces no code.
+// agR: DOMINO SOLVED (286/286, 8 diffs from 63 / 108). Two rules found:
+// (1) the else `one = (maskedPc != 0)` MUST sit BEFORE the `maskedPc &= ~0x1000`
+// redef so the sltu reads maskedPc's HOME a1 -> uopt writes the web home t1
+// directly (`sltu t1,zero,a1`). Reading the redef's pending temp t4 (any def
+// placed after the redef) makes the sltu take a temp + `move home,temp` and the
+// full a2/a3/t0/t1 displacement domino returns (verified). (2) the arm def
+// `one = (arg0->unk11C != 0)` must read pc's reg t2, NOT arg0's t8: a t8 read
+// perturbs uopt's temp freelist and flips a systematic t8<->t9 swap through
+// the whole loop + do-while (~38 diffs). With both: one home = t1 (retail reg),
+// hasOddPage a2, 38AC a3, 392C t0, t3 = &D_16003AF0 hoisted, `sw t1,0(t3)`
+// loop stores, beqzl shapes - all retail.
+// Remaining 8 (structural for a non-const web): [53,56,65] pc in t2 not t1
+// (one-web reserves t1 from the arm def @c04; pc lives c00-c18 and retail had
+// no web there - li remats); [60] `sltu t1,zero,t2` vs `li t1,1` (li defs
+// const-fold, so a compute def is unavoidable); [70,71,74,75] preheader order -
+// the a1-reading sltu must precede the redef's `move a1,t4`, so it lands at c2c
+// where retail has `and t4`, while retail's dep-free li sits last @c48.
+// Dead ends: mixed li+sltu defs (flow-sensitive SCCP remats, 289 words), loop
+// bound via D_16003A2C symbol (breaks rotation), explicit pc local (+1 frame
+// word), decl reorder (no effect).
+// agR: SESSION 3 EXHAUSTIVE LI-HUNT (still 8 diffs; floor analysis below).
+// Goal was retail's `li t1,1` defs @c04+c48 with the t1 web intact (4x loop
+// `sw t1,0(t3)`, 2x sb t1) and NO per-use remat. EVERY const provenance folds
+// and remats (292/200-diff cascade: loop stores become per-site beq+li+lui+sw,
+// &D_16003888 s1-hoist dies, whole-function rotation):
+//  (1) s32 literals both arms; (2) direct const stores (no `one` var, 108
+//  diffs); (3) path-condition exprs (`(pc&0xFF000000)==0x15000000` per arm) -
+//  uopt has NO path sensitivity, stays runtime (+3 words + rotation);
+//  (4) memory provenance `one = firstPass` (firstPass==1 in slot 64(sp)) -
+//  uopt const-props THROUGH stack slots and remats; (5) `register s32 one`;
+//  (6) s8 one (narrow types fold too); (7) `one = (&D_16003AF0 != 0)` - cfe
+//  folds address-vs-null; (8) `one = pc - pc + 1` - cfe folds x-x.
+// MIXED defs both orders: li-then/slut-else = 287w (web li t3@c04 + remat li
+// t1 for the c10 sw = double-li, pc stays t2); slut-then/li-else = 289w (pc
+// DOES get t1! one=t2, loop remats). KEY REMAT RULE learned: remat is
+// flow-sensitive per-use at BLOCK boundaries - same-block use (c10 sw) reads
+// the web even with a const def; any use in a different block (the loop)
+// remats per-site, and IDO never LICM-hoists a const materialization into a
+// preheader. uopt webs are linear-disjoint: one[c04..w170] and pc[53..c18]
+// can NEVER share t1 in our builds, yet retail shares (its li-def "web" is
+// not allocation-constrained) - this sharing is the unreachable part.
+// SCHEDULING map: dep-free sltu (pc-read else-def) floats EARLY (c24), not
+// last like retail's dep-free li (only pure consts sink to c48); reading the
+// redef's NEW value = domino (sltu takes temp, hasOddPage a2->a3, 27 diffs);
+// savedPc copy materializes `or`+2 words; reading the compare temp (t9)
+// extends its life across the beq -> rotation. FLOOR = 8 diffs: [53,56,65]
+// pc home (needs t1/t1 sharing), [60] li form, [70,71,74,75] the single c2c
+// sltu displacement (fixes itself if the def ever moves past the preheader
+// head). All 8 trace to ONE root: retail's const-li web defs. NOTE: else-path
+// one is EXACTLY 1 (pc&0xFF000000==0x15000000 implies maskedPc!=0); then-path
+// diverges only when arg0->unk11C == 0 exactly (one=0 vs retail 1).
+
 s32 func_16000B14(struct118 *arg0) {
-    s32 firstPass = 1;
+    f64 dphantom;
     s32 state = 0;
-    s32 cur;
+    s32 firstPass = 1;
     s32 maskedPc;
+    s32 one;
     s32 hasOddPage;
-    s32 tlbBase;
+    s32 temp_bde;
     s32 i;
     void (*drawFunc)(void);
     s32 (*inputFunc)(void);
@@ -364,40 +441,42 @@ s32 func_16000B14(struct118 *arg0) {
     D_160039E8 = D_8003C8E8[2];
     D_16003A68 = D_8003C8E8[3];
 
-    cur = arg0->unk11C;
-    if ((cur & 0xFF000000) != 0x15000000) {
-        D_16003AF0 = 1;
+    if ((arg0->unk11C & 0xFF000000) != 0x15000000) {
+        one = (arg0->unk11C != 0);
+        D_16003AF0 = one;
     } else {
-        maskedPc = cur & ~0xFFF;
+        maskedPc = arg0->unk11C & ~0xFFF;
         hasOddPage = maskedPc & 0x1000;
-        maskedPc &= ~0x1000;
+        one = (maskedPc != 0);
+        maskedPc = maskedPc & ~0x1000;
         D_16003AF0 = 0;
         for (i = 0; i < 32; i += 4) {
             if ((maskedPc == D_160039AC[i + 0]) && ((hasOddPage ? D_1600392C[i + 0] : D_160038AC[i + 0]) & 2)) {
-                D_16003AF0 = 1;
+                D_16003AF0 = one;
             }
             if ((maskedPc == D_160039AC[i + 1]) && ((hasOddPage ? D_1600392C[i + 1] : D_160038AC[i + 1]) & 2)) {
-                D_16003AF0 = 1;
+                D_16003AF0 = one;
             }
             if ((maskedPc == D_160039AC[i + 2]) && ((hasOddPage ? D_1600392C[i + 2] : D_160038AC[i + 2]) & 2)) {
-                D_16003AF0 = 1;
+                D_16003AF0 = one;
             }
             if ((maskedPc == D_160039AC[i + 3]) && ((hasOddPage ? D_1600392C[i + 3] : D_160038AC[i + 3]) & 2)) {
-                D_16003AF0 = 1;
+                D_16003AF0 = one;
             }
         }
     }
 
-    if (((u32)D_8003C8E0 >> 24) == 0xC) {
+    if ((((u32)D_8003C8E0 >> 24) & 0xFF) == 0xC) {
         arg0 = (struct118 *)&D_80031AE0;
     }
-    if (D_8002BDE0[1] == D_8002AAE8[1]) {
-        D_16003888 = 1;
+    temp_bde = D_8002BDE0[1];
+    if (temp_bde == D_8002AAE8[1]) {
+        D_16003888 = one;
     }
     D_1600389C = arg0;
     D_160038A4 = 0;
     if ((arg0->unk120 == 0x20) && (arg0->unk11C == (s32)func_150AD770)) {
-        D_160038A4 = 1;
+        D_160038A4 = one;
     }
 
     do {
@@ -444,12 +523,11 @@ s32 func_16000B14(struct118 *arg0) {
         arg0->unk12 = 0;
         return 1;
     }
-    tlbBase = 0;
     if ((arg0->unk120 == 0x20) && (D_160038A4 == 0)) {
-        tlbBase = 1;
         arg0->unk11C += 4;
+        return 1;
     }
-    return tlbBase;
+    return 0;
 }
 
 // NON-MATCHING: lots to figure out
@@ -486,11 +564,19 @@ typedef struct {
 
 // NEARLY MATCHING (151/155 words, ~35 real diffs)
 void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
-    s32 sp78[10];
     s32 fb;
     s32 i;
+    s32 printed;
+    s32 *p;
+    s32 *base;
+    s32 *stop;
+    s32 sp78[10];
+    s32 exp;
+    s32 divisor;
+    f32 f;
+    u8 buf[36];
 
-    *(Table1044 *) sp78 = *(Table1044 *) D_16003B50;
+    *(Table1044 *) sp78 = *(const Table1044 *) D_16003B50;
 
     if (arg0 >= (D_160038A0 << 5) && arg0 < 0x341) {
         fb = func_1600160C(arg0);
@@ -503,15 +589,12 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
                     c += 7;
                 }
                 c += 0x30;
-                fb = func_160014F0(fb, c);
+                func_160014F0(fb, c);
                 arg2 = arg2 >> 4;
                 fb -= 0x10;
             }
         } else if (arg1 == 1) {
-            s32 printed;
-            s32 *p;
-            s32 *base;
-            s32 *stop;
+            s32 digit;
 
             if (arg2 < 0) {
                 fb = func_160014F0(fb, '-');
@@ -522,8 +605,8 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
             base = sp78;
             p = &sp78[9];
             do {
-                s32 divisor = *p;
-                s32 digit = arg2 / divisor;
+                divisor = *p;
+                digit = arg2 / divisor;
 
                 arg2 = arg2 % divisor;
                 if (digit > 0 || printed || p == base) {
@@ -533,12 +616,9 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
                 p--;
             } while (p >= stop);
         } else if (arg1 == 2) {
-            s32 exp = (arg2 & 0x7F800000) >> 23;
+            exp = (arg2 & 0x7F800000) >> 23;
 
             if ((exp > 0 && exp < 0xFF) || (exp == 0 && (arg2 << 9) == 0)) {
-                u8 buf[40];
-                f32 f;
-
                 *(s32 *) &f = arg2;
                 func_16001B34(buf, D_160047E8, D_160047F0, D_160047F4, (f64) f);
                 func_160012B0(arg0, buf);
@@ -598,7 +678,7 @@ s32 func_160014F0(s32 arg0, u8 arg1) {
     s16 *dst = (s16 *) arg0;
     s32 color;
     s32 c;
-    s32 glyphIndex;
+    u8 *glyph;
     s32 row;
     s32 col;
     u16 bits;
@@ -608,10 +688,11 @@ s32 func_160014F0(s32 arg0, u8 arg1) {
     if (arg1 < 0x20) {
         c = 0x20;
     }
-    for (glyphIndex = (c - 0x20) << 3, row = 0; row < 8;
-         row++, glyphIndex++, dst += D_160038A8 - 8) {
+    col = 0;
+    row = 0, glyph = D_16003CE0 + ((c - 0x20) << 3);
+    for (; row < 8; row++, glyph++, dst += D_160038A8 - 8) {
         col = 0;
-        bits = D_16003CE0[glyphIndex];
+        bits = *glyph;
         do {
             *dst++ = (u16)((bits & 0x80) ? (color & 0xFFFF) : 1);
             bits <<= 1;

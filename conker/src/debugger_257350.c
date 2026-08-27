@@ -94,10 +94,56 @@ s32 func_16001B8C(u8 *arg0, u8 *arg1, u32 arg2) {
             _PROUT(dst, src, c);      \
         }
 
+// The loop is deliberately ROTATED vs the textbook _Printf shape, and all
+// three rotations are load-bearing for the retail tail schedule:
+//  - `c = *fmt;` sits PRE-loop and again at the loop END (in a do{}while(0)),
+//    so the tail load is live loop-carried data, not a dead load (IDO's DCE
+//    deletes a plain dead `c = *fmt;` there). uopt moves it into the back-
+//    branch delay slot as `lbu s0,0(a3)` and the branch targets 0x64.
+//  - the do{}while(0) block boundary stops uopt folding the load address
+//    into `lbu 1(s2)` (retail wants the unfolded `lbu 0(a3)`), and keeping
+//    `fmt = fmt_ptr + 1` as a real tail instruction lets the last _PAD's
+//    guard fill its likely delay with a copy of it (the beql/addiu pair).
+//  - `c` must be s32: with u8 the (s32) casts at the scan guard split c's
+//    web ({head,tail}->v0 + `move s0,v0` bridged into the blez delay, +1
+//    word); s32 keeps one callee-saved web in s0 across the callbacks.
+// Remaining diffs (17) are all in the entry scheduling window (words 16-38):
+// our uopt emits [sw][lui*3][A][addiu*3][li fp][blez with B in its delay]
+// where retail has [lui*3][sw][addiu*3][li fp][A][B][li '%'][blez with
+// move a0,s3 in its delay] - the preheader hoist interleave, the li-'%'
+// position relative to the guard, and the bnel v1,s0 operand order. All
+// source-level variants tried (loop forms, casts, guards, const locals,
+// volatile, decl order, dead statements) compile byte-identical to this.
+//
+// Update (for-init/increment session): the window is TWO independently
+// reproducible halves that uopt refuses to emit together:
+//  - words [16]-[28] (sw after the lui group, A last, B real at loop top,
+//    li-'%' before the guard, move a0,s3 in the blez delay) ALL match when
+//    the c-load is the scan for's INIT instead of a pre-loop statement:
+//      fmt_ptr = fmt + 1;
+//      for (c = *fmt; (s32) c > 0;) { if (c=='%'){fmt_ptr-=1;break;}
+//                                    c = *fmt_ptr; fmt_ptr += 1; }
+//    but uopt then deletes the tail do{}while(0) load as redundant with the
+//    for-init (head load wins), losing [389]'s back-edge delay fill (-1 word,
+//    28 diffs). No tail form survives it (plain/do-while/assign-in-deref all
+//    die; keeping both loads triples them to 408 words).
+//  - the tail ([362] beqzl + addiu fill, [387] addiu real, [388] b, [389]
+//    lbu delay, back edge to B) ALL match with an outer for-increment:
+//      for (c = *fmt; ; fmt = fmt_ptr + 1, c = *fmt) { ... }
+//    (18 diffs: A lands one slot early at [23] and B sinks back into the
+//    blez delay; the increment's load also folds to lbu 1(s2) - the same
+//    fold the do{}while(0) boundary used to prevent).
+//  So retail's real source had both a for-init-shaped head load AND a live
+//  tail load; the missing piece is whatever stops uopt's head/tail load
+//  redundancy kill (block boundary that survives the for-init, or a
+//  different loop rotation input).
+//  bnel v1,s0 (const-first): reproduces ONLY via `(c & 0xFF) == '%'`, but
+//  the andi stays in the loop (+1 word) and re-splits c's web into s6 -
+//  same type-locked opposition as the u8 attempt.
 s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) {
     struct262 st;
     u8 *fmt_ptr;
-    u8 c;
+    s32 c;
     u8 *flag_index;
     u8 buf[0x20];
     s32 c1, i1, c2, i2, c3, i3, c4, i4, c5, i5;
@@ -105,8 +151,8 @@ s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) 
     s32 pad1;
 
     st.pad2C = 0;
-    while (1) {
     c = *fmt;
+    while (1) {
     fmt_ptr = fmt + 1;
     if ((s32) c > 0) {
         while (1) {
@@ -180,6 +226,9 @@ s32 func_16001BB4(s32 (*arg0)(u8 *, u8 *, u32), u8 *dst, u8 *fmt, va_list arg3) 
         _PAD(i1, st.unk28, c1, D_16003C70, 1);
     }
     fmt = fmt_ptr + 1;
+    do {
+        c = *fmt;
+    } while (0);
     }
 }
 
