@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Original synthetic-return trampoline restored
+
+- Replaced false zero-return C placeholder `func_150A7A00` with its original
+  five-word assembly trampoline, preserving its `t9` return-address save,
+  synthetic `func_150A7A14` return address, and jump into `func_150A7960`.
+- Direct comparison reports **5 / 5** retail words exact. This is a
+  classification correction, so the exact numerator remains **2547**; the
+  fresh scan is **2547 / 5492 (46.38%)** overall and
+  **1979 / 4803 (41.20%)** game.
+
 ### Game optional-pointer call byte-exact
 
 - Completed `func_1509D054`: 14 words and zero linked differences.

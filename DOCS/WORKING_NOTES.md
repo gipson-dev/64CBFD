@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, optional-pointer call byte-exact).** The current linked
-checkpoint is `2547 / 5493 (46.37%)` exact C functions, with one
-address-drift blocker and 2,945 genuinely different C functions. The tree
-contains 545 raw-assembly functions, so the higher percentage than July is
+**Active (2026-09-25, synthetic-return trampoline restored).** The current
+linked checkpoint is `2547 / 5492 (46.38%)` exact C functions, with one
+address-drift blocker and 2,944 genuinely different C functions. The tree
+contains 546 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
 
@@ -116,7 +116,8 @@ guarded call-argument register normalization, `func_15071A64` now matches from
 corrected stack-local declaration order, `func_15087DCC` now matches by
 separating its global base load from the indexed record pointer, and
 `func_1509D054` now matches through guarded call-argument lifetime
-normalization. Continue at 5-word `func_150A7A00`. Keep
+normalization, and false C placeholder `func_150A7A00` is restored to its
+original synthetic-return trampoline. Continue at 9-word `func_150ADACC`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -168,6 +169,8 @@ The completed global-base pointer lifetime is in
 [Working Note 027](WORKING_NOTES/027-game-global-base-pointer-match-20260925.md).
 The completed optional-pointer call lifetime is in
 [Working Note 028](WORKING_NOTES/028-game-optional-pointer-call-match-20260925.md).
+The restored synthetic-return trampoline is in
+[Working Note 029](WORKING_NOTES/029-game-synthetic-return-trampoline-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

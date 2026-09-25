@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,493 / 6,038 (90.97%) | 2,547 / 5,493 (46.37%) | 1 | 2,945 |
+| Total | 5,492 / 6,038 (90.96%) | 2,547 / 5,492 (46.38%) | 1 | 2,944 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,804 / 5,318 (90.33%) | 1,979 / 4,804 (41.19%) | 0 | 2,825 |
+| Game | 4,803 / 5,318 (90.32%) | 1,979 / 4,803 (41.20%) | 0 | 2,824 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -63,6 +63,9 @@ The following source-level pointer-lifetime pass completed `func_15087DCC`; see
 [Working Note 027](WORKING_NOTES/027-game-global-base-pointer-match-20260925.md).
 The next guarded register-lifetime pass completed `func_1509D054`; see
 [Working Note 028](WORKING_NOTES/028-game-optional-pointer-call-match-20260925.md).
+The following classification pass restored `func_150A7A00` as its original
+synthetic-return assembly trampoline; see
+[Working Note 029](WORKING_NOTES/029-game-synthetic-return-trampoline-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
