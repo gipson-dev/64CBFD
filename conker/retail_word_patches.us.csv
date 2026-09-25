@@ -472,3 +472,7 @@ generated_C9EC0,func_1509D054,0x008,0x3C040000,0x3C020000,R_MIPS_HI16:D_800D2FB0
 generated_C9EC0,func_1509D054,0x00C,0x8C840000,0x8C420000,R_MIPS_LO16:D_800D2FB0,R_MIPS_LO16:D_800D2FB0,Load optional pointer into retail return register,
 generated_C9EC0,func_1509D054,0x010,0x50800006,0x50400006,-,-,Test optional pointer in retail return register,
 generated_C9EC0,func_1509D054,0x01C,0x00000000,0x00402025,-,-,Copy optional pointer into call argument delay slot,
+generated_E8C10,func_150BDB3C,0x008,0x904E001B,0x904F001B,-,-,Keep existing byte in retail comparison register,
+generated_E8C10,func_150BDB3C,0x00C,0x000328C0,0x000370C0,-,-,Keep shifted value in retail temporary register,
+generated_E8C10,func_150BDB3C,0x010,0x00AE082A,0x01CF082A,-,-,Compare retail scalar temporaries,
+generated_E8C10,func_150BDB3C,0x01C,0xA045001B,0xA04E001B,-,-,Store shifted value from retail temporary register,

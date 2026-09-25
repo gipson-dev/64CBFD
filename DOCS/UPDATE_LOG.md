@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game scalar-temporary byte-exact
+
+- Completed `func_150BDB3C`: 13 words and zero linked differences.
+- Added four expected-word guards that retain the shifted value in `t6` and
+  the existing byte in `t7` across their comparison and conditional store.
+  No relocation-bearing words are affected.
+- Direct comparison reports **13 / 13** retail words exact. Fresh scan:
+  **2548 / 5491 (46.40%)** overall and **1980 / 4802 (41.23%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Original PRNG seed setter restored
 
 - Replaced the maintained C equivalent for `func_150ADACC` with its original
