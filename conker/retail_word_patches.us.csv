@@ -449,3 +449,5 @@ generated_B3020,func_15087FC4,0x018,0x01C27821,0x01C21821,-,-,Use retail final-p
 generated_B3020,func_15087FC4,0x01C,0xA1E50031,0xA0650031,-,-,Use retail final-pointer register in byte store,
 generated_B3020,func_15087FEC,0x02C,0x01C27821,0x01C21821,-,-,Use retail final-pointer register,
 generated_B3020,func_15087FEC,0x034,0xE5EA0004,0xE46A0004,-,-,Use retail final-pointer register in float store,
+generated_1C2C60,func_1519C910,0x010,0x50AE0007,0x51C50007,-,-,Use retail commutative equality operand order,
+generated_1C2C60,func_1519C910,0x01C,0x50AF0004,0x51E50004,-,-,Use retail commutative equality operand order,

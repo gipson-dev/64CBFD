@@ -395,6 +395,7 @@ s32 func_1519C56C() {
     return 0;
 }
 
+// Matched with guarded equality-operand normalization.
 s32 func_1519C910(u8 *arg0, s32 arg1) {
     u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
     u8 *temp_v1 = *(u8 **) temp_v0;

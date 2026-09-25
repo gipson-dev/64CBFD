@@ -16,6 +16,15 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game identifier check byte-exact
+
+- Completed `func_1519C910`: 14 words and zero linked differences.
+- Preserved the maintained C body and added two expected-word-guarded
+  normalizations for IDO's commuted equality operands.
+- Direct linked comparison reports **14 / 14** retail words exact. Fresh scan:
+  **2535 / 5495 (46.13%)** overall and **1967 / 4806 (40.93%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Two game record setters byte-exact
 
 - Completed `func_15087FC4` (10 words) and `func_15087FEC` (16 words).
