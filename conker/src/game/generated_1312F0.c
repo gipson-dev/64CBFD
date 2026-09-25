@@ -2,6 +2,4 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1312F0.s. */
 
-s32 func_15103E40() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1312F0/func_15103E40.s")

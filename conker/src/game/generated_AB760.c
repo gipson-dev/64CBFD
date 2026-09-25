@@ -5,41 +5,23 @@ extern u8 D_8009D910[];
 
 void func_1507EB4C();
 
-s32 func_1507E2B0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E2B0.s")
 
-s32 func_1507E3C0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E3C0.s")
 
-s32 func_1507E500() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E500.s")
 
-s32 func_1507E5C8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E5C8.s")
 
-s32 func_1507E6B8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E6B8.s")
 
-s32 func_1507E73C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E73C.s")
 
-s32 func_1507E7E4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E7E4.s")
 
-s32 func_1507E908() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E908.s")
 
-s32 func_1507E968() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E968.s")
 
 void func_1507E9E8(s32 arg0, s32 arg1) {
 }
@@ -57,13 +39,9 @@ u8 *func_1507E9F8(u8 *arg0, s32 *arg1) {
     return 0;
 }
 
-s32 func_1507EA44() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507EA44.s")
 
-s32 func_1507EABC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507EABC.s")
 
 void func_1507EB2C(register s32 arg0) {
     func_1507EB4C(arg0, 0);

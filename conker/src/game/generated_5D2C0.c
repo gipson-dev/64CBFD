@@ -86,31 +86,7 @@ void func_1503192C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-s32 func_1503195C(u8 *arg0, s32 arg1, s32 arg2) {
-    u8 *node;
-    u8 type;
-
-    type = arg0[0x3B];
-    if (type == 0) {
-        return 0;
-    }
-    node = D_800C3EE0;
-    if (node == 0) {
-        return 0;
-    }
-    do {
-        if (type == node[0]) {
-            if (arg1 == node[6]) {
-                if (arg2 == 0) {
-                    return (s32) node;
-                }
-                arg2 = arg2 - 1;
-            }
-        }
-        node = *(u8 **) (node + 0x54);
-    } while (node != 0);
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_5D2C0/func_1503195C.s")
 
 s32 func_150319CC(s32 arg0, u8 *arg1) {
     u8 *node;
@@ -185,6 +161,19 @@ s32 func_1503327C() {
 }
 
 s32 func_15033328(u8 *arg0, u8 *arg1) {
+    /* Retail swimming-attachment lifetime callback (15033328..150333A7). */
+    if (D_800C35EA == 1) {
+        return 0;
+    }
+    if (arg1[0xAD] == 0 && *(f32 *)(arg1 + 0x118) < *(f32 *)(arg1 + 0x180)) {
+        if (D_800BE9E4 < *(s32 *)(arg0 + 0x38)) {
+            *(s32 *)(arg0 + 0x38) -= D_800BE9E4;
+        } else {
+            return 1;
+        }
+    } else {
+        *(s32 *)(arg0 + 0x38) = 30;
+    }
     return 0;
 }
 
@@ -245,21 +234,7 @@ s32 func_15033E00(s32 arg0, u8 *arg1) {
     return 0;
 }
 
-s32 func_15033E28(u8 *arg0, u8 **arg1) {
-    u8 *node = D_800C3EE0;
-    s32 count = 0;
-
-    if (node != 0) {
-        do {
-            if (arg0[0x3B] == node[0]) {
-                arg1[count] = node;
-                count = count + 1;
-            }
-            node = *(u8 **) (node + 0x54);
-        } while (node != 0);
-    }
-    return count;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_5D2C0/func_15033E28.s")
 
 s32 func_15033E84(u8 *arg0) {
     u8 *node = D_800C3EE0;
@@ -277,9 +252,7 @@ s32 func_15033E84(u8 *arg0) {
     return 0;
 }
 
-s32 func_15033EC4(s32 arg0, s32 arg1) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_5D2C0/func_15033EC4.s")
 
 s32 func_15033F0C(u8 *arg0, u8 *arg1) {
     u8 *ptr;

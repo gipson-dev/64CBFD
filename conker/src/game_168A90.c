@@ -52,10 +52,10 @@ void func_1513BA44(struct132 *arg0) {
 void func_1513BA78(struct132 *arg0, s32 arg1, u8 arg2) {
     switch (arg0->unk48) {
         case 1:
-            func_15109064(arg2);
+            func_15109064(arg0, arg1, arg2);
             break;
         case 2:
-            func_151BA468(arg2);
+            func_151BA468(arg0, arg1, arg2);
             break;
     }
 }

@@ -2,25 +2,15 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/128D70.s. */
 
-s32 func_150FB8C0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_128D70/func_150FB8C0.s")
 
-s32 func_150FC368() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_128D70/func_150FC368.s")
 
-s32 func_150FC438() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_128D70/func_150FC438.s")
 
-s32 func_150FC614() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_128D70/func_150FC614.s")
 
-s32 func_150FC818() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_128D70/func_150FC818.s")
 
 s32 func_150FC930(u8 *arg0, u8 arg1, u8 arg2) {
     u8 temp_v0 = *(arg0 + 4);

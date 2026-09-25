@@ -704,9 +704,8 @@ s32 func_151277B0() {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151279A0.s. */
-s32 func_151279A0() {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15127EB8.s. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_151279A0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15127EB8.s. */
 void func_15127EB8(struct108 *arg0) {
 }
 // NON-MATCHING: not too far away
@@ -740,7 +739,7 @@ void func_15127FEC(struct108 *arg0, s32 arg1, s32 arg2) {
     arg0->unk7F8 = arg0->unk2A4;
     arg0->unk7FC = arg0->unk2A8;
     arg0->unk800 = *(f32*)&arg0->unk2AC;
-    func_1512A390();
+    func_1512A390(arg0);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15128030.s. */
 s32 func_15128030() {

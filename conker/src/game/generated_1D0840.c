@@ -97,9 +97,7 @@ s16 arg2;
     D_8008F900[*(arg1 + 0x14)]();
 }
 
-s32 func_151A5170() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D0840/func_151A5170.s")
 
 void func_151A55D4(u8 *arg0, s32 arg1, u8 arg2) {
     void (*callback)(u8 *, s32, u8) = D_8008F904[arg0[0x19]];

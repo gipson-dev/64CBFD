@@ -2,14 +2,10 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/12BD10.s. */
 
-s32 func_150FE860() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_12BD10/func_150FE860.s")
 
-s32 func_150FEBC8() {
-    return 0;
-}
 
-s32 func_150FEC28() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_12BD10/func_150FEBC8.s")
+
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_12BD10/func_150FEC28.s")

@@ -145,7 +145,7 @@ s32 func_15043B70(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return arg2;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043BB8.s. */
-void func_15043BB8(struct105* arg0) {
+void func_15043BB8(struct105* arg0, void *arg1, s32 arg2) {
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043CA4.s. */

@@ -51,9 +51,7 @@ extern u16 D_800C4ED0[];
 u8  func_1505B9C4(void *arg0, struct127 *arg1, struct252 *arg2, struct252 *arg3, u8 arg4, s32 arg5, u8 arg6);
 s32 func_1505C1E4(void *arg0, struct127 *arg1, void *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15055E50.s. */
-s32 func_15055E50(s32 arg0, s32 arg1) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15055E50.s")
 void func_15056150(struct127 *arg0) {
     f32 temp_f0;
     f32 temp_f12;
@@ -106,9 +104,7 @@ void func_15056258(struct127 *arg0) {
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_150562FC.s. */
-s32 func_150562FC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_150562FC.s")
 // NON-MATCHING: 10% of the way there...
 // void func_150562FC(struct127 *arg0) {
 //     f32 sp70;
@@ -454,9 +450,7 @@ void func_150585F0(struct127 *arg0) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15058898.s. */
-void func_15058898(struct127 *arg0, f32 arg1) {
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15058898.s")
 void func_15058EA4(struct127 *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6) {
     if (arg1 < arg0->y_position) {
         arg0->gravity = arg2;
@@ -709,51 +703,9 @@ s32 func_150597FC() {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_150599C8.s. */
-u8 func_150599C8(struct127 *arg0, u8 arg1, u16 arg2) {
-    return 0;
-}
-// NON-MATCHING: 90% there, missing an s16 cast
-u8 func_15059B54(struct127 *arg0, u16 arg1) {
-    s16 temp_t8;
-    s16 temp_t8_2;
-    s16 temp_t2;
-    s32 temp_lo;
-    s16 phi_a2;
-
-    temp_t8 = arg0->unk78 - arg0->unk76;
-    phi_a2 = temp_t8;
-    if (phi_a2 < 0) {
-        phi_a2 = phi_a2 ^ 0xFFFF;
-    }
-    if (arg0->unk1EA != 0) {
-        temp_lo = (s32) (arg0->unk1EA * D_800CC264) / 0x64;
-        temp_t8_2 = arg0->unk1EC + temp_lo;
-        temp_t2 = arg0->unk1EC - temp_lo;
-        if (temp_t8_2 < temp_t8) {
-            temp_t8 = temp_t8_2;
-        }
-        if (temp_t8 < temp_t2) {
-            temp_t8 = temp_t2;
-        }
-    }
-
-    if (temp_t8 < 0) {
-        temp_t8 ^= 0xFFFF;
-    }
-    if (temp_t8 < arg1) {
-        arg1 = temp_t8;
-    }
-    if ((arg0->unkF4 & 1) == 0) {
-        if (temp_t8 < 0) {
-            arg0->unk76 -= arg1;
-            arg0->unk1EC = -arg1;
-        } else {
-            arg0->unk76 += arg1;
-            arg0->unk1EC = arg1;
-        }
-    }
-    return phi_a2 >> 8;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_150599C8.s")
+/* Original signed turn direction, including acceleration-limited turns. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15059B54.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15059C84.s. */
 s32 func_15059C84(s32 arg0) {
     return 0;
@@ -830,78 +782,10 @@ s32 func_1505A770(s32 arg0) {
 s32 func_1505A9AC() {
     return 0;
 }
-void func_1505B5F8(struct127 *arg0, f32 arg1) {
-    f32 tmp;
-    u8 temp_v0_2;
-
-    if ((arg0->unkF8 & 0x8000) == 0) {
-        if (arg0->unk252 != 0) {
-            if ((arg0->unk253 * 8) < (arg0->unk1CC - arg0->y_position)) {
-                if (arg0->stunned == 0) {
-                    arg0->stunned = (u8)0xFEU;
-                    arg0->unk105 = (u8)0;
-                    arg0->unk106 = func_1505E7CC(arg0->unk252, arg0);
-                    arg0->unk84.uh = (u16)0xFF;
-                    func_1505E874(D_800C3E78, arg0);
-                    arg0->y_position = (f32) arg0->old_y_position;
-                }
-            }
-        }
-        arg0->unk28 = arg0->y_position - arg1;
-        if (arg0->y_position <= arg1) {
-            arg0->unkF4 |= 0x8000;
-            temp_v0_2 = D_800B0DF0->unk13;
-            if (temp_v0_2 != 0) {
-                if (arg0->unk28 != 0.0f) {
-                    func_15174690(D_800C3E78, 0, 0x1000 / (s32) temp_v0_2, 0, 0x199, 4, 0xAA, 0xFF, 0);
-                }
-            }
-            arg0->y_position = arg1;
-            tmp = arg0->unk28;
-            arg0->unk28 = 0.0f;
-            if ((arg0->stunned != 0) || ((arg0->unkF8 << 0xF) >= 0)) {
-                if (arg0->interaction_state == 1) {
-                    if (arg0->y_velocity < -6.0f) {
-                        arg0->y_velocity = -6.0f;
-                    }
-                } else {
-                    if ((arg0->unk1CC - arg0->y_position) > 450.0f) {
-                        if (arg0->health > 0) {
-                            if ((arg0->unk144 != 0) && ((arg0->unk144->unkE & 0x80) == 0)) {
-                                arg0->health = (u8) (arg0->health - 1);
-                            }
-                        }
-                    }
-                    arg0->unk1CC = arg1;
-                    if ((arg0->stunned == 0) && (arg0->gravity > 0.5f)) {
-                        if (((arg0->unkF8 & 0x800) != 0) && (tmp != 0.0f) && ((arg0->y_velocity < (-4.0f * arg0->gravity * D_800D1550[0])))) {
-                            arg0->y_velocity = ((0.0f - arg0->y_velocity) * ((f32) arg0->unk2CB * D_8009950C));
-                            if ((arg0->unk2CC != 0) && (arg0->y_velocity > 5.0f)) {
-                                D_800D1580 = arg0->unk2CC;
-                                func_1506E5FC();
-                            }
-                        } else if (arg0->interaction_state != 7) {
-                            arg0->y_velocity = -4.0f * D_800D1550[0];
-                        }
-                    } else {
-                        if ((arg0->unkF4 & 0x80) != 0) {
-                            arg0->y_velocity = -4.0f;
-                        } else if ((tmp == 0.0f) || (((-1.5f * arg0->gravity * D_800D1550[0]) < arg0->y_velocity))) {
-                            arg0->y_velocity = 0.0f;
-                        } else {
-                            arg0->y_velocity = (0.0f - arg0->y_velocity) * ((f32) arg0->unk2CB * D_80099510);
-                        }
-                        arg0->xz_velocity *= D_80099514;
-                    }
-                }
-            }
-        }
-    }
-}
+/* Original floor contact preserves the previous actor height for landing response. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505B5F8.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505B9C4.s. */
-u8 func_1505B9C4(void *arg0, struct127 *arg1, struct252 *arg2, struct252 *arg3, u8 arg4, s32 arg5, u8 arg6) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505B9C4.s")
 s16 func_1505C140(struct127 *arg0, struct127 *arg1) {
     s16 ret = func_1505A630(arg0->x_position - arg1->x_position, arg1->z_position - arg0->z_position, 0);
     ret -= arg1->unk7A;
@@ -925,13 +809,9 @@ struct252 *func_1505C1A4(struct127 *arg0) {
     return ret;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505C1E4.s. */
-s32 func_1505C1E4(void *arg0, struct127 *arg1, void *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505C1E4.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505C7D8.s. */
-s32 func_1505C7D8(s32 arg0, s32 arg1) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505C7D8.s")
 // NON-MATCHING: 1 line + regalloc
 s32 func_1505D024(struct127 *arg0, s32 arg1, u16 arg2, s32 arg3) {
     s32 pad;
@@ -1026,29 +906,19 @@ f32 func_1505D34C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 *arg4) {
     return (arg1 * sp24) + arg2 * temp_f0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505D408.s. */
-s32 func_1505D408() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505D408.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505D5D0.s. */
-s32 func_1505D5D0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505D5D0.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505D6F0.s. */
-s32 func_1505D6F0(s32 arg0, s32 arg1) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505D6F0.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505DADC.s. */
-s32 func_1505DADC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505DADC.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505DDA8.s. */
 s32 func_1505DDA8() {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505DF10.s. */
-s32 func_1505DF10() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505DF10.s")
 void func_1505DFDC(u8 *arg0) {
     u8 *data = *(u8 **)(arg0 + 0x2D0);
     u8 idx;
@@ -1080,9 +950,7 @@ void func_1505E060(u8 *arg0) {
 s32 func_1505E0C4() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505E650.s. */
-void func_1505E650(struct127 *arg0, u16 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, s32 arg6) {
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505E650.s")
 u32 func_1505E7CC(s32 arg0, struct127 *arg1) {
     u8 id = arg1->id;
     u8 *table;
@@ -1118,8 +986,7 @@ u32 func_1505E7CC(s32 arg0, struct127 *arg1) {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505E874.s. */
-void func_1505E874(u8 arg0, struct127*arg1) {
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505E874.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505ED34.s. */
 s32 func_1505ED34() {
     return 0;
@@ -1148,23 +1015,7 @@ s32 func_1505ED34() {
 //     return obj;
 // }
 // I HATE LOOPS.
-struct127 *func_1505EEB0(s32 state, s32 *arg1) {
-    struct127 *tmp = D_800CC2D0;
-    s32 i = 0;
-
-    if (state != tmp->interaction_state) {
-        do {
-            i++;
-            tmp++;
-            if (i >= 25) {
-                break;
-            }
-        } while (state != tmp->interaction_state);
-    }
-
-    *arg1 = i;
-    return tmp;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505EEB0.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505EEF4.s. */
 s32 func_1505EEF4() {
     return 0;
@@ -1189,8 +1040,46 @@ s32 func_1505F298() {
 s32 func_1506045C() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15060778.s. */
+/* Original actor sound adapter: cached handles, material effect and spatial updates. */
 void func_15060778(s32 arg0, struct127 *arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
+    u16 *slot = NULL;
+    u16 handle = 0;
+    s32 effect = (arg6 & 8) ? 0 : (((u32)arg1->unk184 >> 3) & 0x30);
+    s32 mode = arg6 & 3;
+    u16 volume = arg2 + effect * 50;
+    u16 result;
+
+    if (mode == 1) {
+        slot = &arg1->unk8C;
+        handle = *slot;
+    } else if ((mode == 2) || (mode == 3)) {
+        slot = &arg1->unk8E;
+        handle = *slot;
+        if (mode == 3) {
+            if (func_1001147C(handle) == arg0) {
+                if (arg6 & 4) {
+                    func_1000F91C(handle, volume, arg3 + arg1->unk13F * 10,
+                        effect, 0, (s32)arg1->x_position, (s32)arg1->y_position,
+                        (s32)arg1->z_position, arg4, arg5);
+                } else {
+                    func_1000F85C(handle, 0x10, arg3);
+                    func_1000F85C(handle, 8, volume);
+                }
+                return;
+            }
+            arg0 |= 0x8000;
+        }
+    }
+    if (arg6 & 4) {
+        result = func_10010E78(handle, arg0, volume, arg3, effect, 0,
+            (s32)arg1->x_position, (s32)arg1->y_position,
+            (s32)arg1->z_position, arg4, arg5);
+    } else {
+        result = func_10010BE8(handle, arg0, volume, 0x40, arg3, effect, 1);
+    }
+    if (slot != NULL) {
+        *slot = result;
+    }
 }
 void func_15060A30(s32 arg0, struct127 *arg1) {
     if (arg1->camera == NULL) {
@@ -1295,9 +1184,7 @@ void func_150627D4(struct127 *arg0) {
     func_15039CC8(arg0);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15062800.s. */
-s32 func_15062800() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15062800.s")
 void func_15062AC4(struct127 *arg0) {
     if (arg0->unkE6 && arg0->unkE4) {
         f32 tmp = arg0->unkE4;
@@ -1359,9 +1246,7 @@ s32 func_15062FC0() {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15063168.s. */
-s32 func_15063168() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15063168.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15063254.s. */
 s32 func_15063254() {
     return 0;

@@ -5,41 +5,27 @@
 s32 func_15131828();
 s32 func_15131958();
 
-s32 func_151D3480() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D3480.s")
 
 s32 func_151D3D50() {
     return 0;
 }
 
-s32 func_151D3E04() {
-    return 0;
-}
 
-s32 func_151D3E6C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D3E04.s")
 
-s32 func_151D3F14() {
-    return 0;
-}
 
-s32 func_151D3FF4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D3E6C.s")
 
-s32 func_151D40D4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D3F14.s")
 
-s32 func_151D42E8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D3FF4.s")
 
-s32 func_151D4408() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D40D4.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D42E8.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D4408.s")
 
 s32 func_151D4668(u8 *arg0) {
     struct { u8 *ptr; u8 value; } temp;
@@ -49,13 +35,13 @@ s32 func_151D4668(u8 *arg0) {
     func_151494E0(&temp, 0x3C);
 }
 
-s32 func_151D469C() {
-    return 0;
-}
 
-s32 func_151D4794() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D469C.s")
+
+
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D4794.s")
+
 
 s32 func_151D4C38() {
     return 0;
@@ -73,9 +59,7 @@ s32 func_151D4D58() {
     return 0;
 }
 
-s32 func_151D4DAC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D4DAC.s")
 
 void func_151D5148(u8 *arg0) {
     u8 *temp_v0 = *(u8 **) (arg0 + 0x31C);
@@ -88,21 +72,13 @@ void func_151D5148(u8 *arg0) {
     (*(s16 *) (temp_v0 + 0x1AA))++;
 }
 
-s32 func_151D5174() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D5174.s")
 
-s32 func_151D5334() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D5334.s")
 
-s32 func_151D5404() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D5404.s")
 
-s32 func_151D5514() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D5514.s")
 
 s32 func_151D5648() {
     return 0;
@@ -112,21 +88,13 @@ s32 func_151D5714() {
     return 0;
 }
 
-s32 func_151D57F8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D57F8.s")
 
-s32 func_151D5A18() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D5A18.s")
 
-s32 func_151D5B6C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D5B6C.s")
 
-s32 func_151D5D60() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D5D60.s")
 
 s32 func_151D5E30() {
     return 0;

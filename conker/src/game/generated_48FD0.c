@@ -12,13 +12,9 @@ s32 func_1501BBB8() {
     return 0;
 }
 
-s32 func_1501C010() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_48FD0/func_1501C010.s")
 
-s32 func_1501C0F0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_48FD0/func_1501C0F0.s")
 
 void func_1501C17C(arg0)
 u8 arg0;

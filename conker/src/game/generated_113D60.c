@@ -61,21 +61,15 @@ s32 func_150E7C9C() {
     return 0;
 }
 
-s32 func_150E7FEC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_113D60/func_150E7FEC.s")
 
 s32 func_150E81A8() {
     return 0;
 }
 
-s32 func_150E83AC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_113D60/func_150E83AC.s")
 
-s32 func_150E8470() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_113D60/func_150E8470.s")
 
 s32 func_150E8824(u8 *arg0, u8 arg1) {
     func_15131828(arg0, arg0 + 0xAC, arg0 + 0xA8, arg0 + 0xAA);

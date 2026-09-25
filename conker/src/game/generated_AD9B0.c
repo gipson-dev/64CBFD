@@ -8,9 +8,7 @@ s32 func_15080500() {
     return 0;
 }
 
-s32 func_15080620() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AD9B0/func_15080620.s")
 
 s32 func_150806A8() {
     return 0;

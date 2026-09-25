@@ -13,8 +13,8 @@ s32 func_151B2100() {
     return 0;
 }
 
-void func_151B220C() {
-    func_151B222C();
+void func_151B220C(u8 *arg0) {
+    func_151B222C(arg0);
 }
 
 s32 func_151B222C() {

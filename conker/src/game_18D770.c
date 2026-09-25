@@ -129,11 +129,8 @@ void func_151603FC(struct225 *arg0) {
     }
 }
 
-// requires jump table
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_151604A0.s. */
-s32 func_151604A0() {
-    return 0;
-}
+/* Original class-53 event handler; assembly uses the relocated table asset. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_151604A0.s")
 s32 func_15160600(struct225 *arg0) {
     arg0->unk14->unk2F = func_151422DC(0, &D_800A6690, 0, 0xFF, 0xFF, &D_800A6698, 575);
     return 1;
@@ -270,9 +267,7 @@ s32 func_15160A58(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s3
 
 // ??
 /* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15160B74.s. */
-s32 func_15160B74() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_15160B74.s")
 // another struct definition
 /* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15160CDC.s. */
 s32 func_15160CDC() {

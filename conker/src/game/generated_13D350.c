@@ -122,13 +122,11 @@ s32 func_15114B94() {
     return 0;
 }
 
-s32 func_15114CC4() {
-    return 0;
-}
+extern s32 func_15114CC4();
 
-s32 func_15114D24() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_13D350/func_15114CC4.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_13D350/func_15114D24.s")
 
 void func_15114F04(s32 arg0, s32 arg1, s32 arg2) {
     func_1001001C(func_15114CC4, arg0, 0, arg1, arg2);

@@ -93,10 +93,8 @@ s32 func_150911F4() {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_15091534.s. */
-s32 func_15091534() {
-    return 0;
-}
+/* Original ROM HUD texture and palette setup. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_15091534.s")
 // NON-MATCHING: needs some love
 // Gfx* func_15091534(Gfx* arg0, struct257 *arg1, u8 *arg2) {
 //     u32 temp_v0;
@@ -137,9 +135,7 @@ s32 func_15091534() {
 // }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_150916B4.s. */
-s32 func_150916B4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_BC510/func_150916B4.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_BC510/func_150918EC.s. */
 s32 func_150918EC() {
     return 0;

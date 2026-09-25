@@ -124,9 +124,7 @@ void func_1502EA7C(u8 *arg0, s32 arg1) {
     arg0[0xA6] = arg1;
 }
 
-s32 func_1502EA98() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_58F80/func_1502EA98.s")
 
 s32 func_1502EAFC() {
     return 0;

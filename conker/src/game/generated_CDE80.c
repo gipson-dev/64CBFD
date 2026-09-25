@@ -62,13 +62,11 @@ s32 func_150A2AEC() {
     return 0;
 }
 
-s32 func_150A2CA4() {
-    return 0;
-}
+/* Original active-actor volume occupancy; OGL Note 640. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_CDE80/func_150A2CA4.s")
 
-s32 func_150A2D84() {
-    return 0;
-}
+/* Original view-volume query; OGL Note 545. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_CDE80/func_150A2D84.s")
 
 s32 func_150A2E4C() {
     return 0;

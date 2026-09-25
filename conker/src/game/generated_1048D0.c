@@ -22,13 +22,9 @@ void func_150D7630(s32 arg0) {
     }
 }
 
-s32 func_150D765C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1048D0/func_150D765C.s")
 
-s32 func_150D7790() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1048D0/func_150D7790.s")
 
 s32 func_150D7928() {
     return 0;

@@ -310,7 +310,7 @@ s32 func_15199980(u8 *arg0) {
         D_8008F8B4[temp_v0](arg0);
     }
     if (*(s32 *) (temp_v1 + 0x148) != 0) {
-        func_1516972C();
+        func_1516972C(*(void **)(temp_v1 + 0x148));
     }
 }
 

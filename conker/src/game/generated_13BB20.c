@@ -18,9 +18,7 @@ s32 func_1510E8BC() {
     return 0;
 }
 
-s32 func_1510E950() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_13BB20/func_1510E950.s")
 
 s32 func_1510F648() {
     return 0;

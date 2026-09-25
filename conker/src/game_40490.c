@@ -19,9 +19,10 @@ s32 func_150151D4();
 s32 func_15015354();
 s32 func_150156F4();
 /* End generated placeholder declarations. */
+struct17 *func_1515F1B0(u8 *arg0);
 
 s32 func_151BE850(struct17 *arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, u8 arg5, u8 arg6);
-void func_151A9390(u8 arg0, u8 arg1, f32 arg2, f32 arg3, s32 arg4, u8 arg5, s32 arg6);
+void func_151A9390(u8 arg0, u8 arg1, const void *position, const f32 *floatPosition, f32 arg4, f32 arg5, s32 arg6, u8 arg7, s32 arg8);
 
 void func_15012FE0(void) {
     D_800BE570 = 0;
@@ -206,7 +207,7 @@ s32 func_15014144(u8 *arg0) {
         flags |= 0x10;
     }
 
-    func_151A9390(flags, arg0[0x1F], *(f32 *)&D_8009667C, 100.0f, -1, 0xFF, 1);
+    func_151A9390(flags, arg0[0x1F], arg0, NULL, *(f32 *)&D_8009667C, 100.0f, -1, 0xFF, 1);
     return 1;
 }
 
@@ -261,8 +262,8 @@ s32 func_15014F6C() {
     return 0;
 }
 
-s32 func_150150A4(void) {
-    struct17 *temp_v0 = func_1515F1B0();
+s32 func_150150A4(u8 *arg0) {
+    struct17 *temp_v0 = func_1515F1B0(arg0);
     if (temp_v0 == NULL) {
         return 1;
     }
@@ -302,9 +303,7 @@ s32 func_15015104(u8 *arg0) {
     return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_40490/func_150151D4.s. */
-s32 func_150151D4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_40490/func_150151D4.s")
 
 s32 func_15015300(struct134 *arg0) {
     void (*func)(void);
@@ -324,9 +323,7 @@ s32 func_15015300(struct134 *arg0) {
 
 
 /* Non-matching C placeholders for asm/nonmatchings/game_40490/func_15015354.s. */
-s32 func_15015354() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_40490/func_15015354.s")
 s32 func_15015644(u8 *arg0) {
     struct {
         void *unk0;

@@ -68,3 +68,166 @@ DOCS/TEMP_DEBUGGER_TODO.md
 DOCS/TEMP_DK64_CROSSPORT_TODO.md
 DOCS/TEMP_DK64_CROSSPORT_TODO.md
 DOCS/TEMP_DK64_CROSSPORT_TODO.md
+
+# Original Tank timed-object callback restored in Note 473.
+!conker/asm/nonmatchings/generated_142560/
+conker/asm/nonmatchings/generated_142560/*
+!conker/asm/nonmatchings/generated_142560/func_1511F3E8.s
+
+# Original Tank shared-turret routines restored in Note 475.
+!conker/asm/nonmatchings/game_11A680/
+conker/asm/nonmatchings/game_11A680/*
+!conker/asm/nonmatchings/game_11A680/func_150ED578.s
+!conker/asm/nonmatchings/game_11A680/func_150EEC84.s
+!conker/asm/nonmatchings/game_11A680/func_150EEDA8.s
+
+# Note 482: original Tank firing and impact routines.
+!conker/asm/nonmatchings/game_981E0/func_15070300.s
+!conker/asm/nonmatchings/generated_1ED0F0/
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C1FB8.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C0698.s
+!conker/asm/nonmatchings/game_981E0/func_1506CE6C.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C1860.s
+!conker/asm/nonmatchings/generated_1E58B0/
+!conker/asm/nonmatchings/generated_1E58B0/func_151B8400.s
+!conker/asm/nonmatchings/generated_1E58B0/func_151B8668.s
+!conker/asm/nonmatchings/generated_1E58B0/func_151B8908.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C1798.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C196C.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C1D5C.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C110C.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C1180.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C1570.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151C1654.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151BFDA0.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151BFE84.s
+!conker/asm/nonmatchings/generated_200930/
+!conker/asm/nonmatchings/generated_200930/func_151D42E8.s
+!conker/asm/nonmatchings/generated_17CAF0/
+!conker/asm/nonmatchings/generated_17CAF0/func_1514FB98.s
+!conker/asm/nonmatchings/generated_17CAF0/func_1514FBFC.s
+!conker/asm/nonmatchings/generated_1ED0F0/func_151BFC40.s
+!conker/asm/nonmatchings/generated_17CAF0/func_1514F8F8.s
+!conker/asm/nonmatchings/generated_1CC440/
+!conker/asm/nonmatchings/generated_1CC440/func_151A2AD4.s
+
+# Note 506: original category-32/33 pickup effect producer.
+!conker/asm/nonmatchings/generated_1028F0/
+!conker/asm/nonmatchings/generated_1028F0/func_150D6730.s
+
+# Note 507: original Race animated texture segment builder.
+!conker/asm/nonmatchings/generated_1048D0/
+!conker/asm/nonmatchings/generated_1048D0/func_150D765C.s
+
+# Note 508: original Race per-viewport camera callback.
+!conker/asm/nonmatchings/generated_FE9E0/
+!conker/asm/nonmatchings/generated_FE9E0/func_150D1530.s
+
+# Note 509: original Race Booster and Rocket activation.
+!conker/asm/nonmatchings/generated_1048D0/func_150D7790.s
+
+# Note 509: guest Rocket targeting counterparts.
+!conker/asm/nonmatchings/generated_B3020/
+!conker/asm/nonmatchings/generated_B3020/func_150885EC.s
+!conker/asm/nonmatchings/generated_B3020/func_1508868C.s
+
+# Note 511: original Race death fragments and companion effects.
+!conker/asm/nonmatchings/generated_1028F0/func_150D5A6C.s
+!conker/asm/nonmatchings/generated_1028F0/func_150D6388.s
+!conker/asm/nonmatchings/generated_1028F0/func_150D6434.s
+!conker/asm/nonmatchings/generated_1028F0/func_150D65F0.s
+!conker/asm/nonmatchings/generated_1028F0/func_150D66A4.s
+!conker/asm/nonmatchings/generated_17CAF0/func_15154884.s
+!conker/asm/nonmatchings/generated_17CAF0/func_15154A88.s
+!conker/asm/nonmatchings/generated_1D2B10/func_151A5D58.s
+
+# Note 513: original per-player script dispatch used by Race respawn.
+!conker/asm/nonmatchings/game_A9D90/
+conker/asm/nonmatchings/game_A9D90/*
+!conker/asm/nonmatchings/game_A9D90/func_1507D158.s
+!conker/asm/nonmatchings/game_C8950/
+conker/asm/nonmatchings/game_C8950/*
+!conker/asm/nonmatchings/game_C8950/func_1509BFB0.s
+
+# Note 514: original Race board sound and effect lifecycle.
+!conker/asm/nonmatchings/generated_100810/
+conker/asm/nonmatchings/generated_100810/*
+!conker/asm/nonmatchings/generated_100810/func_150D3360.s
+!conker/asm/nonmatchings/generated_100810/func_150D3A68.s
+!conker/asm/nonmatchings/generated_100810/func_150D3FD4.s
+!conker/asm/nonmatchings/generated_100810/func_150D4300.s
+!conker/asm/nonmatchings/generated_100810/func_150D49C0.s
+!conker/asm/nonmatchings/generated_100810/func_150D4AE0.s
+!conker/asm/nonmatchings/generated_100810/func_150D4C2C.s
+!conker/asm/nonmatchings/generated_100810/func_150D4CC4.s
+!conker/asm/nonmatchings/generated_100810/func_150D4D58.s
+!conker/asm/nonmatchings/generated_100810/func_150D5124.s
+
+# Note 518: original Race timer drawing helper.
+!conker/asm/nonmatchings/game_BC510/
+conker/asm/nonmatchings/game_BC510/*
+!conker/asm/nonmatchings/game_BC510/func_150916B4.s
+
+# Note 519: original Race finish transition and order latch.
+!conker/asm/nonmatchings/generated_B3020/
+!conker/asm/nonmatchings/generated_B3020/func_1508802C.s
+!conker/asm/nonmatchings/generated_B3020/func_150880F8.s
+
+# Note 524: original actor-script property and animation command.
+!conker/asm/nonmatchings/game_A28B0/
+conker/asm/nonmatchings/game_A28B0/*
+!conker/asm/nonmatchings/game_A28B0/func_15079B30.s
+
+# Original actor turn lean (Note 526).
+!conker/asm/nonmatchings/game_77AD0/
+conker/asm/nonmatchings/game_77AD0/*
+!conker/asm/nonmatchings/game_77AD0/func_15052760.s
+
+# Notes 613-614: original bomb lifecycle and fuse-effect assembly.
+!conker/asm/nonmatchings/game_EF410/
+conker/asm/nonmatchings/game_EF410/*
+!conker/asm/nonmatchings/game_EF410/func_150C3230.s
+!conker/asm/nonmatchings/generated_188F90/
+conker/asm/nonmatchings/generated_188F90/*
+!conker/asm/nonmatchings/generated_188F90/func_1515C0F8.s
+!conker/asm/nonmatchings/generated_1EF500/
+conker/asm/nonmatchings/generated_1EF500/*
+!conker/asm/nonmatchings/generated_1EF500/func_151C36D8.s
+!conker/asm/nonmatchings/generated_5D2C0/
+conker/asm/nonmatchings/generated_5D2C0/*
+!conker/asm/nonmatchings/generated_5D2C0/func_1503195C.s
+!conker/asm/nonmatchings/generated_90840/
+conker/asm/nonmatchings/generated_90840/*
+!conker/asm/nonmatchings/generated_90840/func_15063C60.s
+!conker/asm/nonmatchings/generated_A9260/
+conker/asm/nonmatchings/generated_A9260/*
+!conker/asm/nonmatchings/generated_A9260/func_1507C324.s
+!conker/asm/nonmatchings/generated_F15D0/
+conker/asm/nonmatchings/generated_F15D0/*
+!conker/asm/nonmatchings/generated_F15D0/func_150C4120.s
+!conker/asm/nonmatchings/generated_F15D0/func_150C44A4.s
+!conker/asm/nonmatchings/generated_F15D0/func_150C4B60.s
+!conker/asm/nonmatchings/generated_15D730/
+conker/asm/nonmatchings/generated_15D730/*
+!conker/asm/nonmatchings/generated_15D730/func_15131D9C.s
+
+# Note 615: original previous-height floor contact.
+!conker/asm/nonmatchings/game_83300/
+conker/asm/nonmatchings/game_83300/*
+!conker/asm/nonmatchings/game_83300/func_1505B5F8.s
+
+
+# Bunker bathroom stream: original ROM routines.
+!conker/asm/nonmatchings/generated_105FC0/
+conker/asm/nonmatchings/generated_105FC0/*
+!conker/asm/nonmatchings/generated_105FC0/func_150D8B88.s
+!conker/asm/nonmatchings/generated_105FC0/func_150D8D84.s
+!conker/asm/nonmatchings/generated_105FC0/func_150D8E4C.s
+!conker/asm/nonmatchings/generated_105FC0/func_150D8FAC.s
+!conker/asm/nonmatchings/generated_105FC0/func_150D942C.s
+!conker/asm/nonmatchings/generated_105FC0/func_150D9C7C.s
+!conker/asm/nonmatchings/generated_105FC0/func_150DA67C.s
+!conker/asm/nonmatchings/generated_105FC0/func_150DA50C.s
+!conker/asm/nonmatchings/generated_71820/
+conker/asm/nonmatchings/generated_71820/*
+!conker/asm/nonmatchings/generated_71820/func_150472C0.s

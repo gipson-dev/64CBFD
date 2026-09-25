@@ -2,9 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/124920.s. */
 
-s32 func_150F7470() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_124920/func_150F7470.s")
 
 s32 func_150F78B4() {
     return 0;

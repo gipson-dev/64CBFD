@@ -1,7 +1,5 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/135490.s. */
+/* Original Raptor camera callback; preserve guest instruction scheduling. */
 
-s32 func_15107FE0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_135490/func_15107FE0.s")

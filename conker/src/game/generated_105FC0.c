@@ -22,13 +22,9 @@ void func_150D8B3C(s32 arg0, s32 arg1) {
     func_15145740(arg0, spA, spB, arg1, (D_800BE616 != 0) ? D_800A0B40 : D_800A0B44);
 }
 
-s32 func_150D8B88() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_105FC0/func_150D8B88.s")
 
-s32 func_150D8D84() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_105FC0/func_150D8D84.s")
 
 void func_150D8E1C(u8 *arg0) {
     *(u16 *) (arg0 + 0x1E) &= 0xFFFD;
@@ -38,21 +34,13 @@ void func_150D8E1C(u8 *arg0) {
     *(s16 *) (arg0 + 0x1C) = 0x28;
 }
 
-s32 func_150D8E4C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_105FC0/func_150D8E4C.s")
 
-s32 func_150D8FAC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_105FC0/func_150D8FAC.s")
 
-s32 func_150D942C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_105FC0/func_150D942C.s")
 
-s32 func_150D9C7C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_105FC0/func_150D9C7C.s")
 
 void func_150DA484(arg0, arg1)
 u8 *arg0;
@@ -76,9 +64,7 @@ s32 func_150DA4E0(s32 arg0) {
     func_15147928(arg0);
 }
 
-s32 func_150DA50C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_105FC0/func_150DA50C.s")
 
 void func_150DA5EC(u8 *arg0, f32 arg1) {
     struct {
@@ -101,6 +87,4 @@ s32 func_150DA628(u8 *arg0, s32 arg1) {
     return 1;
 }
 
-s32 func_150DA67C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_105FC0/func_150DA67C.s")

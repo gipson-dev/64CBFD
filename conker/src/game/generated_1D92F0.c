@@ -6,13 +6,11 @@ s32 func_151AE3A8();
 
 extern f32 D_800BE9A4;
 
-s32 func_151ABE40() {
-    return 0;
-}
+/* Note 313: original ROM implementation, retained as assembly until C conversion. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151ABE40.s")
 
-s32 func_151AC078() {
-    return 0;
-}
+/* Note 313: original ROM implementation, retained as assembly until C conversion. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AC078.s")
 
 s32 func_151AC3CC(u8 *arg0) {
     u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
@@ -35,9 +33,8 @@ s32 func_151AC550() {
     return 0;
 }
 
-s32 func_151AC61C() {
-    return 0;
-}
+/* Note 313: original ROM implementation, retained as assembly until C conversion. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AC61C.s")
 
 s32 func_151AC810() {
     return 0;
@@ -111,9 +108,7 @@ s32 func_151AE0E4() {
     return 0;
 }
 
-s32 func_151AE264() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AE264.s")
 
 s32 func_151AE2BC() {
     return 0;
@@ -151,9 +146,8 @@ s32 func_151AEAB4() {
     return 0;
 }
 
-s32 func_151AECA0() {
-    return 0;
-}
+/* Note 362: original ROM blood effect and dependencies. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AECA0.s")
 
 s32 func_151AF270() {
     return 0;
@@ -167,6 +161,5 @@ s32 func_151AF388() {
     return 0;
 }
 
-s32 func_151AF4D0() {
-    return 0;
-}
+/* Note 362: original ROM blood effect and dependencies. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AF4D0.s")

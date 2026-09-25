@@ -3,9 +3,7 @@ extern u8 *D_800DD0E0;
 
 /* Non-matching placeholders for the text-only asm slice asm/1FFB70.s. */
 
-s32 func_151D26C0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1FFB70/func_151D26C0.s")
 
 void func_151D2718(arg0)
 s16 arg0;
@@ -23,10 +21,6 @@ s16 arg0;
     }
 }
 
-s32 func_151D275C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1FFB70/func_151D275C.s")
 
-s32 func_151D2830() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1FFB70/func_151D2830.s")

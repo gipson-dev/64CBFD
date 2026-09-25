@@ -9,7 +9,7 @@ s32 func_1506B3B8();
 s32 func_1506B634(s32 arg0);
 s32 func_1506BCC8();
 s32 func_1506BF5C();
-s32 func_1506C32C();
+void func_1506C32C(void);
 s32 func_1506CE6C();
 s32 func_1506D2E8();
 s32 func_1506D584();
@@ -31,7 +31,7 @@ s32 func_15071FDC();
 s32 func_15072420();
 s32 func_1507266C();
 s32 func_150727F0();
-s32 func_15072B44();
+void func_15072B44(void);
 s32 func_15072F10();
 s32 func_15073118();
 s32 func_1507342C();
@@ -442,9 +442,43 @@ void func_1506BF1C(void) {
 s32 func_1506BF5C() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506C32C.s. */
-s32 func_1506C32C() {
-    return 0;
+/* ROM animation command 0x0A: choose an authored alternative for the
+ * pending sound, preserving the original packed flag and index semantics. */
+extern u32 D_800D187C;
+extern s32 func_1000F568(s32 arg0, s32 arg1);
+void func_1506C32C(void) {
+    u32 choices[4];
+    u32 packed;
+    s32 count;
+    s32 selected;
+
+    if (D_800D187C == 0) {
+        return;
+    }
+    D_800D187C--;
+    packed = D_800D1580;
+    choices[0] = D_800D187C & 0x7FF;
+    choices[1] = packed & 0x7FF;
+    choices[2] = ((s32)packed >> 11) & 0x7FF;
+    choices[3] = ((s32)packed >> 22) & 0x7FF;
+    if (choices[3] != 0) {
+        count = 4;
+    } else if (choices[2] != 0) {
+        count = 3;
+    } else if (choices[1] != 0) {
+        count = 2;
+    } else {
+        count = 0;
+    }
+    selected = 0;
+    if (count != 0) {
+        selected = func_1000F568(choices[0], count) - choices[0];
+    }
+    if (choices[selected] != 0) {
+        D_800D187C &= 0xFFFEF800;
+        D_800D1580 = choices[selected] | D_800D187C;
+        func_1506BF5C();
+    }
 }
 void func_1506C418(void) {
     func_10010A3C(D_800D154C);
@@ -454,18 +488,16 @@ void func_1506C43C(void) {
     func_100109D0(D_800D154C);
 }
 
-// requires jump table
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506C460.s. */
-void func_1506C460(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4, s32 arg5, f32 arg6, f32 arg7, s32 arg8, s32 arg9, s32 arg10) {
-}
+/* Original projectile constructor; preserve both retail jump tables. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_1506C460.s")
 // requires jump table
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506CE6C.s. */
-s32 func_1506CE6C() {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506D2E8.s. */
-s32 func_1506D2E8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_1506CE6C.s")
+
+/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506D2E8.s. */
+/* Includes the original separate no-op entry at 1506D4EC, used by the
+ * animation-event table. Retain the complete original containing span. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_1506D2E8.s")
 // NON-MATCHING: plenty to figure out here
 // void func_1506D2E8(void) {
 //     f32 sp40;
@@ -524,9 +556,7 @@ void func_1506D570(void) {
     D_800D154C->unk6E = 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506D584.s. */
-s32 func_1506D584() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_1506D584.s")
 // ???
 void func_1506D6B4(void) {
     f32 floor = D_800D154C->unk118;
@@ -1177,9 +1207,7 @@ void func_15070224(s32 arg0) {
     func_151602C0(sp50, sp44, (func_150ADA20() % 3U) + 4, 0xFF, 0xFF, 0xFF, 0xFF, 0, 0, 0xFF, 1);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15070300.s. */
-s32 func_15070300() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15070300.s")
 void func_15070690(s32 arg0) {
     func_150EEE00(D_800D154C, (arg0 - 0x3E) & 0xFF, arg0);
 }
@@ -1434,22 +1462,20 @@ void func_15071A34(s32 arg0) {
 }
 
 void func_15071A64(s32 arg0) {
-    struct17 sp28;
+    u32 sp28[9];
     struct17 sp4C;
 
     if ((func_150ADA20() & 1) == 0) {
         if ((D_800D154C->unk1D4 != NULL) && ((D_800D154C->unk74 & 0xF) != 0xF) &&
             (D_800CC2D0[0].stunned != 0) && (D_800CC2D0[0].health > 0)) {
-            func_1504715C(&sp28);
+            func_1504715C(&sp28, D_800D154C);
             func_15143134(&D_80099BBC, &sp4C, (s32)D_800D154C->unk1D4 + 0x3C0);
             func_151DC484(&sp4C, &sp28, 0, 0xFF, 1);
         }
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15071B18.s. */
-s32 func_15071B18() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15071B18.s")
 void func_15071D08(s32 arg0) {
     func_150F2230(D_800D154C, 0xFF, 1);
 }
@@ -1580,13 +1606,11 @@ void func_150723E0(void) {
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15072420.s. */
-s32 func_15072420() {
-    return 0;
-}
+/* Note 454: original carried actor creation and owned script event. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15072420.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1507266C.s. */
-s32 func_1507266C() {
-    return 0;
-}
+/* Note 454: original carried actor attachment/effect. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_1507266C.s")
 void func_15072740(void) {
     s32 temp_v0;
     struct127 *temp_v1;
@@ -1603,9 +1627,8 @@ void func_150727AC(void) {
     D_800D154C->unk2D0->unk10 = D_800D154C->animation_speed;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_150727F0.s. */
-s32 func_150727F0() {
-    return 0;
-}
+/* Note 454: original carried actor creation and owned script event. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_150727F0.s")
 void func_15072918(void) {
     func_15060F28(D_800D154C, 0);
 }
@@ -1652,10 +1675,8 @@ void func_15072A7C(void) {
 void func_15072AF8(void) {
     func_1505E650(D_800D154C, D_800D154C->unk84.uh + 1, 1.0f, 6.0f, 0.0f, 0.0f, 0);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15072B44.s. */
-s32 func_15072B44() {
-    return 0;
-}
+/* Original animation completion dispatcher restored; OGL Note 350. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15072B44.s")
 void func_15072DA0(void) {
     D_800D154C->unk2F8 &= 0xFFF8;
     D_800D154C->unk2F8 |= D_800D1580;
@@ -1772,9 +1793,8 @@ void func_15073A28(void) {
     D_800D154C->unk44 = (f32) D_800D1580;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15073A50.s. */
-s32 func_15073A50() {
-    return 0;
-}
+/* Original held-actor release, used by the Training Gargoyle at animation frame 106. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15073A50.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15073B38.s. */
 s32 func_15073B38() {
     return 0;
@@ -1852,10 +1872,8 @@ void func_15073F5C(void) {
 void func_15073F78(void) {
     D_800D154C->unk10B &= ~D_800D1580;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15073FA0.s. */
-s32 func_15073FA0() {
-    return 0;
-}
+/* Original ROM projectile release, including multiplayer fuse and owner state. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15073FA0.s")
 void func_15074644(void) {
     D_800D154C->unk31C->unk11A = (s8) D_800D1580;
 }
@@ -1995,7 +2013,7 @@ void func_15074C00(s32 arg0, struct127 *arg1, s32 arg2) {
     struct199 tmp; // is this actually 2 structs?
 
     if (((u8)arg1->unk239 & 0x7F) == 5) {
-        func_1504715C(&tmp);
+        func_1504715C(&tmp, arg1);
         tmp.unk24 = D_800CC2C0;
         tmp.unk28 = D_800CC2C4;
         tmp.unk2C = D_800CC2C8;
@@ -2003,9 +2021,9 @@ void func_15074C00(s32 arg0, struct127 *arg1, s32 arg2) {
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15074C80.s. */
-s32 func_15074C80() {
-    return 0;
-}
+/* Note 362: original ROM hit effect dispatch. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15074C80.s")
+
 void func_15074DEC(struct127 *arg0, s32 arg1, s32 arg2) {
     arg0->unk2E8 = 1;
 }
@@ -2046,7 +2064,7 @@ void func_15074F48(struct127 *arg0, struct127 *arg1, s32 arg2) {
 
     arg1->unk76 = func_1505A630(temp_f12, temp_f14, 0);
     arg1->xz_velocity = sqrtf((temp_f12 * temp_f12) + (temp_f14 * temp_f14)) * D_8009A110;
-    func_15194408(arg0);
+    func_15194408(arg0, arg1);
 }
 
 void func_15074FD4(struct127 *arg0, struct127 *arg1, s32 arg2) {
@@ -2089,6 +2107,4 @@ void func_150750C4(struct127 *arg0, struct127 *arg1, u8 *arg2) {
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1507515C.s. */
-s32 func_1507515C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_1507515C.s")

@@ -2,6 +2,4 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/EB020.s. */
 
-s32 func_150BDB70() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_EB020/func_150BDB70.s")

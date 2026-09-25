@@ -14,8 +14,8 @@ void func_150C5430() {
     func_15169804();
 }
 
-void func_150C5450() {
-    func_15169824();
+void func_150C5450(u8 *arg0) {
+    func_15169824(arg0);
 }
 
 void func_150C5470(u8 *arg0) {

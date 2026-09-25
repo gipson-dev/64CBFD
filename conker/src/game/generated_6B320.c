@@ -33,9 +33,7 @@ s32 func_1503E3C4() {
     return 0;
 }
 
-s32 func_1503E5F8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_6B320/func_1503E5F8.s")
 
 s32 func_1503E82C() {
     return 0;

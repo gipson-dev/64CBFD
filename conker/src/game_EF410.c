@@ -16,7 +16,7 @@ s32 func_150C2C00();
 s32 func_150C2FCC();
 s32 func_150C308C();
 s32 func_150C3160();
-s32 func_150C3230();
+void func_150C3230();
 s32 func_150C3574();
 s32 func_150C3994();
 s32 func_150C3D5C();
@@ -212,10 +212,8 @@ s32 func_150C308C() {
 s32 func_150C3160() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3230.s. */
-s32 func_150C3230() {
-    return 0;
-}
+/* Original bomb animation, fuse and explosion lifecycle. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C3230.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3574.s. */
 s32 func_150C3574() {
     return 0;

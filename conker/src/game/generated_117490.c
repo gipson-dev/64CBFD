@@ -5,30 +5,20 @@ extern u8 *D_800DBEF4;
 
 s32 func_150E5AE0();
 
-s32 func_150E9FE0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_117490/func_150E9FE0.s")
 
 s32 func_150EA10C(u8 *arg0) {
     *(s32 *)(arg0 + 0x80) = 0;
     return 1;
 }
 
-s32 func_150EA11C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_117490/func_150EA11C.s")
 
-s32 func_150EA490() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_117490/func_150EA490.s")
 
-s32 func_150EA500() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_117490/func_150EA500.s")
 
-s32 func_150EA5CC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_117490/func_150EA5CC.s")
 
 void func_150EA8E0(s32 arg0) {
     func_150E5AE0();

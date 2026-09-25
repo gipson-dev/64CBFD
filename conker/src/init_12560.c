@@ -8,8 +8,8 @@ extern void func_151F2BA8_retail(void);
 extern void func_151F2D6C_retail(s32 arg0, s32 arg1);
 extern void func_151F2E4C_retail(s32 arg0, s32 arg1);
 
-void func_10012560(s32 arg0) {
-    func_15043BB8(&D_800427A0);
+void func_10012560(s32 arg0, void *arg1, s32 arg2) {
+    func_15043BB8(&D_800427A0, arg1, arg2);
 }
 
 void func_10012588(s32 arg0) {

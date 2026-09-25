@@ -2,13 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/F15D0.s. */
 
-s32 func_150C4120() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_F15D0/func_150C4120.s")
 
-s32 func_150C44A4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_F15D0/func_150C44A4.s")
 
 s32 func_150C4AD8(u8 *arg0) {
     u8 *temp_a1 = arg0;
@@ -28,6 +24,4 @@ s32 func_150C4B34(s32 arg0) {
     func_15149368(arg0);
 }
 
-s32 func_150C4B60() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_F15D0/func_150C4B60.s")

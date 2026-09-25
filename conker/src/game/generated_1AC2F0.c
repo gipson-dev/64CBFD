@@ -23,8 +23,8 @@ s32 func_1517EF00() {
     return 0;
 }
 
-s32 func_1517EFAC(void) {
-    if (func_1517EF00() == 0xFF) {
+s32 func_1517EFAC(s32 arg0) {
+    if (func_1517EF00(arg0) == 0xFF) {
         return 1;
     }
     return 0;
@@ -140,9 +140,7 @@ s32 func_15181EE0() {
     return 0;
 }
 
-s32 func_15182670() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1AC2F0/func_15182670.s")
 
 void func_15182748(u8 *arg0) {
     *(u8 *)(arg0 + 0x2B) = *(s16 *)(arg0 + 0xE) * *(s16 *)(arg0 + 0x2E);

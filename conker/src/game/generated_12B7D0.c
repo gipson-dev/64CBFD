@@ -5,22 +5,14 @@ extern u8 D_800A1FC8[];
 
 /* Non-matching placeholders for the text-only asm slice asm/12B7D0.s. */
 
-s32 func_150FE320() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_12B7D0/func_150FE320.s")
 
-s32 func_150FE49C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_12B7D0/func_150FE49C.s")
 
-s32 func_150FE604() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_12B7D0/func_150FE604.s")
 
 void func_150FE794(s32 arg0, s32 arg1, s32 arg2) {
     func_151D3E04(arg0, arg2, D_800A1FC8, D_80088B94, 0.0f);
 }
 
-s32 func_150FE7D4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_12B7D0/func_150FE7D4.s")

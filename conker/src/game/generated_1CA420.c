@@ -110,12 +110,12 @@ s32 func_1519E8F8(u8 *arg0) {
     func_15149368(arg0);
 }
 
-void func_1519E924(void) {
+void func_1519E924(u8 *arg0) {
     D_800E0920 = 0;
-    func_1514933C();
+    func_1514933C(arg0);
 }
 
-void func_1519E948(void) {
+void func_1519E948(u8 *arg0) {
     D_800E0920 = 0;
-    func_15149368();
+    func_15149368(arg0);
 }

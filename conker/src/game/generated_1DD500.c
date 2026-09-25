@@ -10,9 +10,8 @@ s32 func_151B01B8() {
     return 0;
 }
 
-s32 func_151B03B8() {
-    return 0;
-}
+/* Note 362: original ROM blood effect and dependencies. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1DD500/func_151B03B8.s")
 
 s32 func_151B09BC() {
     return 0;

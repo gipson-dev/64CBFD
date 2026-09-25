@@ -6,9 +6,7 @@ void func_151CF898(s32, f32, f32);
 s32 func_15131828();
 s32 func_15131958();
 
-s32 func_150AF200() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_DC6B0/func_150AF200.s")
 
 void func_150AF2E0(s32 arg0, u8 *arg1) {
     s32 temp_v0 = *(s16 *) (arg1 + 2);
@@ -56,9 +54,7 @@ s32 func_150AFE64() {
     return 0;
 }
 
-s32 func_150B003C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_DC6B0/func_150B003C.s")
 
 s32 func_150B0094() {
     return 0;

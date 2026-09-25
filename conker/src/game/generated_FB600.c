@@ -18,6 +18,4 @@ s32 func_150CE694() {
     return 0;
 }
 
-s32 func_150CE740() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_FB600/func_150CE740.s")

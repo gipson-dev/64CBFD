@@ -46,8 +46,8 @@ s32 func_1509CBD4() {
     return 0;
 }
 
-void func_1509CC94() {
-    func_1509CCB4();
+void func_1509CC94(s32 arg0) {
+    func_1509CCB4(arg0);
 }
 
 void func_1509CCB4(s32 arg0) {

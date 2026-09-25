@@ -212,8 +212,8 @@ void func_151D1328(u8 *arg0, s32 arg1, u8 arg2) {
     func_15169850(arg1, arg2, (s32) (arg0 + 0x28), (s32) (arg0 + 0x2C), (s32) arg0);
 }
 
-void func_151D1368() {
-    func_151D13E0();
+void func_151D1368(u8 *arg0) {
+    func_151D13E0(arg0);
 }
 
 s32 func_151D1388(s32 arg0) {

@@ -99,13 +99,9 @@ s32 func_15159084() {
     return 0;
 }
 
-s32 func_15159120() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_15159120.s")
 
-s32 func_15159184() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_15159184.s")
 
 s32 func_15159230() {
     return 0;
@@ -123,9 +119,9 @@ s32 func_1515942C() {
     return 0;
 }
 
-s32 func_15159594() {
-    return 0;
-}
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_15159594.s")
+
 
 s32 func_151596BC() {
     return 0;
@@ -147,21 +143,15 @@ s32 func_1515A11C() {
     return 0;
 }
 
-s32 func_1515A238() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_1515A238.s")
 
-s32 func_1515A60C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_1515A60C.s")
 
 s32 func_1515A78C() {
     return 0;
 }
 
-s32 func_1515A920() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_1515A920.s")
 
 s32 func_1515A974() {
     return 0;

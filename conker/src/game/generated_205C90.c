@@ -7,21 +7,13 @@ s32 func_151D8C00();
 void func_15169260(s32, s32, s32, u8);
 extern u8 D_800AB300[];
 
-s32 func_151D87E0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D87E0.s")
 
-s32 func_151D8868() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8868.s")
 
-s32 func_151D8A24() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8A24.s")
 
-s32 func_151D8B24() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8B24.s")
 
 s32 func_151D8B88(s32 arg0) {
     func_151D8B24(arg0);
@@ -33,13 +25,9 @@ s32 func_151D8BB4(s32 arg0) {
     func_15169824(arg0);
 }
 
-void func_151D8BE0(u8 *arg0) {
-    func_151D8C00(arg0, arg0 + 0x18);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8BE0.s")
 
-s32 func_151D8C00() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8C00.s")
 
 s32 func_151D8D5C() {
     return 0;

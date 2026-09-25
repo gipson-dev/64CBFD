@@ -14,9 +14,8 @@ s32 func_151B4EA4() {
     return 0;
 }
 
-s32 func_151B4FE0() {
-    return 0;
-}
+/* Note 454: original carried actor attachment/effect. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1E2180/func_151B4FE0.s")
 
 s32 func_151B50A4() {
     return 0;

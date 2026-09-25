@@ -14,13 +14,11 @@ s32 func_151C56A4() {
     return 0;
 }
 
-s32 func_151C577C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1F2730/func_151C577C.s")
 
-s32 func_151C5E74() {
-    return 0;
-}
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1F2730/func_151C5E74.s")
+
 
 s32 func_151C5F44() {
     return 0;

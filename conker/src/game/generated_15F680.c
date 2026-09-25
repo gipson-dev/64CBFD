@@ -84,13 +84,9 @@ s32 func_15133760() {
     return 0;
 }
 
-s32 func_151337C0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_151337C0.s")
 
-s32 func_15133894() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_15133894.s")
 
 s32 func_151339D4() {
     return 0;
@@ -111,17 +107,13 @@ s32 func_15133A94() {
     return 0;
 }
 
-s32 func_15133B98() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_15133B98.s")
 
 s32 func_15133C58() {
     return 0;
 }
 
-s32 func_15133D20() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_15133D20.s")
 
 s32 func_15133DE8() {
     return 0;

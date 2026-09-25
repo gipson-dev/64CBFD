@@ -72,9 +72,7 @@ void func_1515D5AC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s
     func_1515D5F8(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 }
 
-s32 func_1515D5F8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_18A8F0/func_1515D5F8.s")
 
 void func_1515D69C(void) {
     u8 *ptr = D_800DCD78;
@@ -145,23 +143,7 @@ void func_1515F040(f32 arg0, s32 arg1) {
 void func_1515F0AC(f32 arg0, s32 arg1) {
 }
 
-void func_1515F10C(u8 *arg0) {
-    u8 *node = D_800DCD78;
-    u8 *prev = 0;
-
-    if (node != arg0) {
-        do {
-            prev = node;
-            node = *(u8 **) node;
-        } while (node != arg0);
-    }
-    if (prev != 0) {
-        *(u8 **) prev = *(u8 **) node;
-    } else {
-        D_800DCD78 = *(u8 **) node;
-    }
-    func_10004074(node);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_18A8F0/func_1515F10C.s")
 
 void func_1515F170(s32 arg0, u8 arg1) {
     u8 *ptr = D_800DCD78;

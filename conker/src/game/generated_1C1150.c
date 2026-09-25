@@ -11,9 +11,9 @@ extern u8 D_800A8244[];
 
 s32 func_15194FF4();
 
-s32 func_15193CA0() {
-    return 0;
-}
+/* Note 362: original ROM hit effect dispatch. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1C1150/func_15193CA0.s")
+
 
 void func_151942B0(arg0, arg1, arg2)
 u8 arg0;
@@ -114,9 +114,7 @@ void func_15194B94(s32 arg0, u8 *arg1, s32 arg2) {
     }
 }
 
-s32 func_15194BF0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1C1150/func_15194BF0.s")
 
 void func_15194D80(s32 arg0, s32 arg1, s32 arg2) {
     func_15194FF4(arg0, arg1, 0);
@@ -146,17 +144,11 @@ void func_15194E54(s32 arg0, u8 *arg1, s32 arg2) {
     }
 }
 
-s32 func_15194EA8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1C1150/func_15194EA8.s")
 
-s32 func_15194F48() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1C1150/func_15194F48.s")
 
-s32 func_15194FF4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_1C1150/func_15194FF4.s")
 
 s32 func_151951E0() {
     return 0;

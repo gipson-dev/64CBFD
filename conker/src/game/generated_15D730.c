@@ -15,9 +15,9 @@ s32 func_15131958();
 
 s32 func_151319C4();
 
-s32 func_15130280() {
-    return 0;
-}
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_15D730/func_15130280.s")
+
 
 s32 func_15130374(s32 arg0, u8 arg1, s32 arg2, s32 arg3, s32 arg4) {
     return 0;
@@ -72,8 +72,8 @@ void func_1513173C() {
     func_15169804();
 }
 
-void func_1513175C() {
-    func_15169824();
+void func_1513175C(u8 *arg0) {
+    func_15169824(arg0);
 }
 
 s32 func_1513177C(u8 *arg0) {
@@ -149,9 +149,7 @@ void func_15131D4C(s32 arg0, u8 arg1) {
     func_15169260(tmp, 3, arg0, arg1);
 }
 
-s32 func_15131D9C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_15D730/func_15131D9C.s")
 
 s32 func_15131DEC() {
     return 0;

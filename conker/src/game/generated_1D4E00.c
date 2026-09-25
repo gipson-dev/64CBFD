@@ -68,7 +68,7 @@ s32 func_151A8F6C() {
 
 void func_151A9024(u8 *arg0, s32 arg1, u8 arg2) {
     if (*(arg0 + 0x4C) == 1) {
-        func_151A931C(arg0);
+        func_151A931C(arg0, arg1, arg2);
     }
 }
 

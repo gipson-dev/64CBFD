@@ -1059,10 +1059,9 @@ f32 func_1505210C(struct127 *arg0, f32 arg1, f32 arg2, f32 *arg3, f32 arg4) {
     *arg3 = result2;
     return result1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_77AD0/func_15052260.s. */
-s32 func_15052260() {
-    return 0;
-}
+/* Retail handle attachment/release physics. The former return-only placeholder
+ * left Conker suspended after the Training lever opened the door. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_15052260.s")
 
 void func_15052408(struct127 *arg0) {
     arg0->unkB2 = 0;
@@ -1123,9 +1122,7 @@ s32 func_15052590() {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_77AD0/func_15052760.s. */
-s32 func_15052760() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_15052760.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_77AD0/func_150528C8.s. */
 s32 func_150528C8() {
     return 0;
@@ -1252,8 +1249,7 @@ void func_15052F9C(struct127 *arg0, f32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 
 
 
 /* Non-matching C placeholders for asm/nonmatchings/game_77AD0/func_1505327C.s. */
-void func_1505327C(struct127 *arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4) {
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_1505327C.s")
 // NON-MATCHING: plenty still to do here
 // void func_1505327C(struct127 *arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4) {
 //     // s32 sp44;
@@ -1288,9 +1284,9 @@ void func_1505327C(struct127 *arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4) {
 //     }
 // }
 
-s32 func_15053430(void);
+s32 func_15053430(struct127 *arg0);
 /* Non-matching C placeholders for asm/nonmatchings/game_77AD0/func_15053430.s. */
-s32 func_15053430(void) {
+s32 func_15053430(struct127 *arg0) {
     return 0;
 }
 
@@ -1306,7 +1302,7 @@ s32 func_150535F4(struct127 *arg0) {
         if (((tmp & 0x10) != 0) ||
             (((tmp & 8) != 0) && (arg0->unk28 == 0.0f)) ||
             (arg0->unk10F == 0)) {
-            return func_15053430();
+            return func_15053430(arg0);
         }
     }
     return 0;
@@ -1347,10 +1343,7 @@ void func_15053894(struct127 *arg0) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_77AD0/func_150538CC.s. */
-s32 func_150538CC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_77AD0/func_150538CC.s")
 
 void func_150548D8(s32 arg0) {
 }

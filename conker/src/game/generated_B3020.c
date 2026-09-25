@@ -169,13 +169,9 @@ void func_15087FEC(s32 arg0, s32 arg1) {
     }
 }
 
-s32 func_1508802C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_1508802C.s")
 
-s32 func_150880F8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_150880F8.s")
 
 s32 func_150881CC(s32 arg0) {
     u8 *temp_v1 = D_800872A0;
@@ -260,13 +256,9 @@ s32 func_1508855C(s32 arg0) {
     return -1;
 }
 
-s32 func_150885EC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_150885EC.s")
 
-s32 func_1508868C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_1508868C.s")
 
 void func_15088780(s32 arg0) {
     s32 idx;

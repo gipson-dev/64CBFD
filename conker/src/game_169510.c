@@ -28,9 +28,7 @@ s32 func_151406AC();
 s32 func_1513C060() {
     return 0;
 }/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513C350.s. */
-struct210 * func_1513C350(struct210 *arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, s32 arg5, s32 arg6, struct167 *arg7, s32 arg8, u8 arg9, s32 argA) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513C350.s")
 // NON-MATCHING: JUSTREG: final 3 lines :(
 // struct210 *func_1513C350(struct210 *arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, s32 arg5, s32 arg6, struct167 *arg7, s32 arg8, u8 arg9, s32 argA) {
 //     struct210 *temp_v0;
@@ -487,9 +485,8 @@ void func_1513E13C(struct210 *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 
 void func_1513E2A4(void) {
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513E2AC.s. */
-s32 func_1513E2AC(s32 arg0, s32 arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, s32 arg8) {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513E6E8.s. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513E2AC.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513E6E8.s. */
 s32 func_1513E6E8() {
     return 0;
 }
@@ -601,12 +598,10 @@ void func_1513FA70(struct210 *arg0, s16 arg1) {
 s32 func_1513FAB4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return 0;
 }/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513FFF4.s. */
-s32 func_1513FFF4(s32 arg0, s32 arg1, s32 arg2) {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_151400D0.s. */
-s32 func_151400D0(s32 arg0, s32 arg1) {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_15140190.s. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513FFF4.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_151400D0.s. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_151400D0.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_15140190.s. */
 s32 func_15140190() {
     return 0;
 }

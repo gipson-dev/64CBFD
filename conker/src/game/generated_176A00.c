@@ -175,9 +175,8 @@ s32 func_1514C470() {
     return 0;
 }
 
-s32 func_1514C678() {
-    return 0;
-}
+/* Note 313: original ROM implementation, retained as assembly until C conversion. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_176A00/func_1514C678.s")
 
 s32 func_1514C858() {
     return 0;

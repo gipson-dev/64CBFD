@@ -38,10 +38,25 @@ void func_15017498(void) {
     bzero(&D_800D2138, 524);
 }
 
-// double-loop
-/* Non-matching C placeholders for asm/nonmatchings/game_447B0/func_150174C0.s. */
 s32 func_150174C0(s32 arg0) {
-    return 0;
+    s32 descriptor_index;
+    s32 entry_index;
+    s32 descriptor;
+    s32 entry;
+    u16 value;
+
+    for (descriptor_index = 0; descriptor_index < D_80087380; descriptor_index++) {
+        descriptor = D_800D23C0 + descriptor_index * 24;
+        for (entry_index = 0; entry_index < *(u16 *) (descriptor + 2); entry_index++) {
+            entry = descriptor + 8 + entry_index * 2;
+            value = *(u16 *) entry;
+            if ((value >> 12) == 2) {
+                *(u16 *) entry = value + arg0;
+            }
+        }
+    }
+
+    return descriptor_index;
 }
 
 void func_15017578(s32 arg0) {

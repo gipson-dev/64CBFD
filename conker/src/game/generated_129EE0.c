@@ -20,25 +20,15 @@ void func_150FCFB0(s32 arg0) {
     func_15103828();
 }
 
-s32 func_150FCFD4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_129EE0/func_150FCFD4.s")
 
-s32 func_150FD514() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_129EE0/func_150FD514.s")
 
-s32 func_150FDB0C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_129EE0/func_150FDB0C.s")
 
-s32 func_150FDBA0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_129EE0/func_150FDBA0.s")
 
-s32 func_150FDC2C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_129EE0/func_150FDC2C.s")
 
 s32 func_150FDCAC(s32 arg0) {
     func_150FDC2C(arg0);

@@ -6,6 +6,4 @@ s32 func_15100340() {
     return 0;
 }
 
-s32 func_15100464() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_12D7F0/func_15100464.s")

@@ -14,17 +14,12 @@ s32 func_15034340() {
     return 0;
 }
 
-s32 func_150343B0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_61490/func_150343B0.s")
 
-s32 func_15034420() {
-    return 0;
-}
+/* Original mounted-gun bone command writer; OGL Note 653. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_61490/func_15034420.s")
 
-s32 func_150344A0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_61490/func_150344A0.s")
 
 s32 func_1503453C() {
     return 0;

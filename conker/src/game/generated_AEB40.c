@@ -12,13 +12,9 @@ s32 func_150843AC();
 
 /* Non-matching placeholders for the text-only asm slice asm/AEB40.s. */
 
-s32 func_15081690() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AEB40/func_15081690.s")
 
-s32 func_15081C20() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AEB40/func_15081C20.s")
 
 s32 func_15081E0C(u8 *arg0, u16 arg1, u8 arg2) {
     if (D_800BE616 != 0) {
@@ -32,9 +28,7 @@ s32 func_15081E0C(u8 *arg0, u16 arg1, u8 arg2) {
     }
 }
 
-s32 func_15081E78() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_AEB40/func_15081E78.s")
 
 s32 func_150825C0() {
     return 0;
@@ -123,8 +117,8 @@ s32 func_15083FB0(u8 arg0) {
     return -1;
 }
 
-s32 func_15084000(void) {
-    s32 temp_v0 = func_1505EEF4();
+s32 func_15084000(s32 arg0) {
+    s32 temp_v0 = func_1505EEF4(arg0);
 
     if (temp_v0 != 0) {
         return (temp_v0 - (s32) D_800CC2D0) / 0x32C;

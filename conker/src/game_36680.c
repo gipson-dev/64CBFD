@@ -68,9 +68,7 @@ void func_150092DC(void) {
 
 // requires jumptable
 /* Non-matching C placeholders for asm/nonmatchings/game_36680/func_15009334.s. */
-s32 func_15009334(s32 arg0) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_36680/func_15009334.s")
 
 void func_150095D8(s32 arg0, s32 arg1) {
     func_1516127C(arg0, 0xFF, 1);

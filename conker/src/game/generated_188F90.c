@@ -32,9 +32,7 @@ void func_1515C0B8(u8 *arg0, s32 arg1, u8 arg2) {
     func_15169850(arg1, arg2, (s32) (arg0 + 0x18), (s32) (arg0 + 0x1C), (s32) arg0);
 }
 
-s32 func_1515C0F8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_188F90/func_1515C0F8.s")
 
 s32 func_1515C158() {
     return 0;

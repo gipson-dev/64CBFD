@@ -18,21 +18,13 @@ s32 func_1514F808() {
     return 0;
 }
 
-s32 func_1514F8F8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_1514F8F8.s")
 
-s32 func_1514FB98() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_1514FB98.s")
 
-s32 func_1514FBFC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_1514FBFC.s")
 
-s32 func_1514FCE8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_1514FCE8.s")
 
 void func_1514FEFC(s32 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
     u8 temp[0x2C];
@@ -77,9 +69,7 @@ s32 func_15151A38() {
     return 0;
 }
 
-s32 func_15151D6C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15151D6C.s")
 
 s32 func_15152190() {
     return 0;
@@ -109,9 +99,7 @@ s32 func_15153298() {
     return 0;
 }
 
-s32 func_15153634() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15153634.s")
 
 s32 func_151539B4() {
     return 0;
@@ -132,25 +120,17 @@ s32 func_15153F18() {
     return 0;
 }
 
-s32 func_151541B8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_151541B8.s")
 
-s32 func_1515452C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_1515452C.s")
 
 s32 func_15154684() {
     return 0;
 }
 
-s32 func_15154884() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15154884.s")
 
-s32 func_15154A88() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15154A88.s")
 
 s32 func_15154C90() {
     return 0;
@@ -160,9 +140,7 @@ s32 func_15154D80() {
     return 0;
 }
 
-s32 func_1515548C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_1515548C.s")
 
 void func_15155564(u8 *arg0, s32 arg1, u8 arg2) {
     void (*callback)(u8 *, s32, u8) = D_8008AD04[arg0[0x2A]];
@@ -172,9 +150,7 @@ void func_15155564(u8 *arg0, s32 arg1, u8 arg2) {
     }
 }
 
-s32 func_151555AC() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_151555AC.s")
 
 s32 func_1515572C() {
     return 0;

@@ -1429,9 +1429,7 @@ u16 func_15079A98(s32 arg0) {
 
 // requires jump table
 /* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15079B30.s. */
-s32 func_15079B30() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_A28B0/func_15079B30.s")
 
 void func_15079F24(void) {
     D_800D154C->unk48 = D_800D1898[D_800D1890];

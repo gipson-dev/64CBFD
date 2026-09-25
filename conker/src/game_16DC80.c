@@ -33,15 +33,7 @@ void func_151411C4(struct210 *arg0) {
     func_1513CAA0(arg0);
 }
 
-void func_151411E4(void *arg0) {
-    void *tmp = *(void **)((u8 *)arg0 + 0x154);
-
-    if (tmp != NULL) {
-        func_1517E134(tmp, arg0);
-    }
-    D_800DC9F0--;
-    D_80089F9C[*(u8 *)((u8 *)arg0 + 0x168)](arg0, arg0);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151411E4.s")
 
 void func_15141250(void *arg0) {
     void *tmp = *(void **)((u8 *)arg0 + 0x154);

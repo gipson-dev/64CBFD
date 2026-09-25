@@ -385,10 +385,8 @@ s16 func_15143044(u8 arg0, s32 arg1) {
 s32 func_1514306C() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15143134.s. */
-s32 func_15143134() {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151432BC.s. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15143134.s")
+/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151432BC.s. */
 s32 func_151432BC() {
     return 0;
 }
@@ -702,9 +700,9 @@ s32 func_15144CEC() {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15144E80.s. */
-s32 func_15144E80() {
-    return 0;
-}
+/* Note 374: original surface splash construction and triangle basis. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15144E80.s")
+
 void func_151450B4(struct17 *arg0, struct17 *arg1, struct17 *arg2) {
     arg2->unk0 = arg0->unk4 * arg1->unk8 - arg0->unk8 * arg1->unk4;
     arg2->unk4 = arg0->unk8 * arg1->unk0 - arg0->unk0 * arg1->unk8;
@@ -742,9 +740,7 @@ s32 func_151451F0() {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151452C4.s. */
-s32 func_151452C4() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_151452C4.s")
 s32 func_151454BC(u8 arg0, f32 arg1, struct17 *arg2) {
     f32 tmp1;
     f32 tmp2;
@@ -813,9 +809,7 @@ s32 func_1514563C(struct17 *arg0, struct17 *arg1, struct17 *arg2, struct17 *arg3
     return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15145740.s. */
-s32 func_15145740() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15145740.s")
 // NON-MATCHING: 90% there
 // void func_15145740(struct127 *arg0, struct17 *arg1, struct17 *arg2, struct17 *arg3, f32 arg4) {
 //     struct194 tmp;
@@ -935,9 +929,7 @@ s32 func_15145EA4() {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15146078.s. */
-s32 func_15146078() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15146078.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151462C8.s. */
 s32 func_151462C8() {
     return 0;

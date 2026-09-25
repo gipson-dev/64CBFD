@@ -68,6 +68,4 @@ void func_1506AC58(s32 arg0, u8 arg1) {
     func_151CEAAC(arg0, 0, 1, 0xFF, 1);
 }
 
-s32 func_1506AC8C() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_97AA0/func_1506AC8C.s")

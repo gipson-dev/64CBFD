@@ -110,9 +110,8 @@ s32 func_1509BE40() {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509BFB0.s. */
-void func_1509BFB0(s32 num, s32 arg1, s32 arg2, ...) {
-}
+/* Retail variable-argument script dispatcher, also used by Race respawn. */
+#pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509BFB0.s")
 
 // need a bigger brain
 /* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509C120.s. */

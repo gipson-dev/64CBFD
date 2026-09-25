@@ -75,9 +75,7 @@ void func_15044E88() {
     }
 }
 
-s32 func_15044ED0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15044ED0.s")
 
 s32 func_150450CC() {
     return 0;
@@ -99,49 +97,37 @@ s32 func_15045714() {
     return 0;
 }
 
-s32 func_15045780() {
-    return 0;
-}
+/* Note 313: original ROM implementation, retained as assembly until C conversion. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15045780.s")
 
-s32 func_15045800() {
-    return 0;
-}
+/* Note 313: original ROM implementation, retained as assembly until C conversion. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15045800.s")
 
-s32 func_15045880() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15045880.s")
 
 s32 func_15045AE4() {
     return 0;
 }
 
-s32 func_15045D48() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15045D48.s")
 
 s32 func_15045F8C() {
     return 0;
 }
 
-s32 func_150461D0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_150461D0.s")
 
 s32 func_15046460() {
     return 0;
 }
 
-s32 func_150466F8() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_150466F8.s")
 
 s32 func_1504697C() {
     return 0;
 }
 
-s32 func_15046C00() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15046C00.s")
 
 s32 func_15046C80() {
     return 0;
@@ -159,17 +145,13 @@ s32 func_15047004() {
     return 0;
 }
 
-s32 func_150470B0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_150470B0.s")
 
 s32 func_1504715C() {
     return 0;
 }
 
-s32 func_150472C0() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_150472C0.s")
 
 void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye, f32 xAt,
                    f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp) {
