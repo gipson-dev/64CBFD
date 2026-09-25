@@ -480,3 +480,7 @@ generated_11FF10,func_150F33B0,0x020,0x9099004F,0x9088004F,-,-,Load set-bit byte
 generated_11FF10,func_150F33B0,0x034,0x9099004F,0x9088004F,-,-,Keep unreachable duplicate load in retail temporary register,
 generated_11FF10,func_150F33B0,0x038,0x37280001,0x35090001,-,-,Set flag bit in retail result register,
 generated_11FF10,func_150F33B0,0x03C,0xA088004F,0xA089004F,-,-,Store set-bit result from retail temporary register,
+game_14FF90,func_151254F4,0x004,0xAFBF0014,0x3C010000,-,R_MIPS_HI16:D_800A352C,Schedule scale high half before frame saves,
+game_14FF90,func_151254F4,0x008,0xAFA5001C,0xC4200000,-,R_MIPS_LO16:D_800A352C,Schedule scale load before frame saves,
+game_14FF90,func_151254F4,0x00C,0x3C010000,0xAFBF0014,R_MIPS_HI16:D_800A352C,-,Save return address after scale load,
+game_14FF90,func_151254F4,0x010,0xC4200000,0xAFA5001C,R_MIPS_LO16:D_800A352C,-,Save second argument after scale load,

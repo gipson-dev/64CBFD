@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, set-bit temporary match complete).** The current linked
-checkpoint is `2549 / 5491 (46.42%)` exact C functions, with one
-address-drift blocker and 2,941 genuinely different C functions. The tree
+**Active (2026-09-25, opening-load schedule match complete).** The current
+linked checkpoint is `2550 / 5491 (46.44%)` exact C functions, with one
+address-drift blocker and 2,940 genuinely different C functions. The tree
 contains 547 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -120,8 +120,9 @@ normalization, false C placeholder `func_150A7A00` is restored to its original
 synthetic-return trampoline, and `func_150ADACC` is restored to its handwritten
 PRNG seed-setter body, and `func_150BDB3C` now matches through guarded
 scalar-temporary normalization, and `func_150F33B0` now matches through
-guarded set-bit temporary normalization. Continue at 40-word
-`func_151254F4`. Keep
+guarded set-bit temporary normalization, and `func_151254F4` now matches
+through guarded relocation-preserving opening-load scheduling. Continue at
+nine-word `func_1515FB70`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -181,6 +182,8 @@ The completed scalar-temporary normalization is in
 [Working Note 031](WORKING_NOTES/031-game-scalar-temporary-match-20260925.md).
 The completed set-bit temporary normalization is in
 [Working Note 032](WORKING_NOTES/032-game-set-bit-temporary-match-20260925.md).
+The completed opening-load scheduling normalization is in
+[Working Note 033](WORKING_NOTES/033-game-opening-load-schedule-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

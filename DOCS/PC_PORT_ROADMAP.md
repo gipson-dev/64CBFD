@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,491 / 6,038 (90.94%) | 2,549 / 5,491 (46.42%) | 1 | 2,941 |
+| Total | 5,491 / 6,038 (90.94%) | 2,550 / 5,491 (46.44%) | 1 | 2,940 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,802 / 5,318 (90.30%) | 1,981 / 4,802 (41.25%) | 0 | 2,821 |
+| Game | 4,802 / 5,318 (90.30%) | 1,982 / 4,802 (41.27%) | 0 | 2,820 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -73,6 +73,9 @@ The following guarded scalar-temporary pass completed `func_150BDB3C`; see
 [Working Note 031](WORKING_NOTES/031-game-scalar-temporary-match-20260925.md).
 The next guarded set-bit temporary pass completed `func_150F33B0`; see
 [Working Note 032](WORKING_NOTES/032-game-set-bit-temporary-match-20260925.md).
+The following relocation-preserving scheduling pass completed
+`func_151254F4`; see
+[Working Note 033](WORKING_NOTES/033-game-opening-load-schedule-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

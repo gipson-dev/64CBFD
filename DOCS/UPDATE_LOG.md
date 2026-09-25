@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game opening-load schedule byte-exact
+
+- Completed `func_151254F4`: 40 words and zero linked differences.
+- Added four expected-word guards that move the `D_800A352C` HI16/LO16 load
+  pair ahead of the return-address and second-argument saves. Both relocations
+  move with their instructions; the remaining 36 words are unchanged.
+- Direct comparison reports **40 / 40** retail words exact. Fresh scan:
+  **2550 / 5491 (46.44%)** overall and **1982 / 4802 (41.27%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Game set-bit temporary byte-exact
 
 - Completed `func_150F33B0`: 18 words and zero linked differences.

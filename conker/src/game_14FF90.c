@@ -520,7 +520,7 @@ void *func_15125490(u8 *arg0) {
     return obj;
 }
 
-// NON-MATCHING: first statements in wrong order
+// Matched with guarded relocation-preserving opening-load scheduling.
 void func_151254F4(struct108 *arg0, s32 arg1) {
     f32 tmp = D_800A352C;
 

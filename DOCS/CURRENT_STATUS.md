@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,549 / 5,491 (46.42%) | 1 | 2,941 |
+| Total | 2,550 / 5,491 (46.44%) | 1 | 2,940 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,981 / 4,802 (41.25%) | 0 | 2,821 |
+| Game | 1,982 / 4,802 (41.27%) | 0 | 2,820 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,549, while
+denominator driven: the exact count is now 2,550, while
 487 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -54,8 +54,9 @@ pass completed `func_15135480`, the final four one-difference game rows, and
 the subsequent small game queue through `func_1509D054`; `func_150A7A00` was
 then correctly restored from a false C placeholder to its original trampoline,
 followed by handwritten PRNG seed setter `func_150ADACC`, the guarded
-scalar-temporary match for `func_150BDB3C`, and the guarded set-bit temporary
-match for `func_150F33B0`.
+scalar-temporary match for `func_150BDB3C`, the guarded set-bit temporary
+match for `func_150F33B0`, and the relocation-preserving opening-load match
+for `func_151254F4`.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -95,7 +96,9 @@ end-to-end gameplay acceptance.
    `func_150ADACC` is restored as handwritten assembly, `func_150BDB3C` is
    byte-exact through guarded scalar-temporary normalization, and
    `func_150F33B0` is byte-exact through guarded set-bit temporary
-   normalization. Continue at 40-word `func_151254F4`.
+   normalization, and `func_151254F4` is byte-exact through guarded
+   relocation-preserving opening-load scheduling. Continue at nine-word
+   `func_1515FB70`.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -151,5 +154,7 @@ The completed scalar-temporary normalization is in
 [Working Note 031](WORKING_NOTES/031-game-scalar-temporary-match-20260925.md).
 The completed set-bit temporary normalization is in
 [Working Note 032](WORKING_NOTES/032-game-set-bit-temporary-match-20260925.md).
+The completed opening-load scheduling normalization is in
+[Working Note 033](WORKING_NOTES/033-game-opening-load-schedule-match-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
