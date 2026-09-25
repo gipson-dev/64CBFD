@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, original game trig slice restored).** The current linked
-checkpoint is `2539 / 5493 (46.22%)` exact C functions, with one
-address-drift blocker and 2,953 genuinely different C functions. The tree
+**Active (2026-09-25, indexed byte lookup byte-exact).** The current linked
+checkpoint is `2540 / 5493 (46.24%)` exact C functions, with one
+address-drift blocker and 2,952 genuinely different C functions. The tree
 contains 545 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -107,7 +107,8 @@ one-difference game rows, record setters `func_15087FC4` and
 `func_1516968C`, and slot-table update `func_151696DC` now match retail. The
 two-difference game queue is complete. The false C placeholders at
 `func_150AD780` and `func_150AD78C` are restored to their original contiguous
-sine/cosine assembly slice. Continue at 11-word `func_150849A0`. Keep
+sine/cosine assembly slice, and `func_150849A0` now matches from a source-level
+index-lifetime fix. Continue at 19-word `func_150636A4`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -142,6 +143,8 @@ The completed two-difference game queue and next-candidate boundary are in
 [Working Note 019](WORKING_NOTES/019-final-two-difference-game-matches-20260925.md).
 The restored sine/cosine assembly ownership and fallthrough evidence are in
 [Working Note 020](WORKING_NOTES/020-game-trigonometry-assembly-restoration-20260925.md).
+The completed indexed-byte lookup and register-lifetime evidence are in
+[Working Note 021](WORKING_NOTES/021-game-indexed-byte-lookup-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

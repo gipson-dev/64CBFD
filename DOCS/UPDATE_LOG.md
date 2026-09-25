@@ -16,6 +16,15 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game indexed-byte lookup byte-exact
+
+- Completed `func_150849A0`: 11 words and zero linked differences.
+- Widening its local byte index from `u8` to `s32` keeps the index in `v1`,
+  reserving `v0` for the return byte exactly as retail does.
+- Direct comparison reports **11 / 11** retail words exact. Fresh scan:
+  **2540 / 5493 (46.24%)** overall and **1972 / 4804 (41.05%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Original game trigonometry slice restored
 
 - Replaced false zero-return C placeholders for `func_150AD780` and
