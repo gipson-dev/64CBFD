@@ -186,7 +186,7 @@ Progress is reported in two different ways:
 - **Converted:** the function has C source instead of raw assembly.
 - **Byte-exact:** the compiled function instructions match the retail ROM.
 
-Snapshot verified on 2026-07-26 with:
+Snapshot verified on 2026-09-24 with:
 
 ```sh
 make -C conker progress NON_MATCHING=1
@@ -197,28 +197,35 @@ make -C conker match-progress NON_MATCHING=1
 
 | Section | Progress bytes | Functions |
 | --- | ---: | ---: |
-| Total | `[########################]` 98.34% | 5,978 / 6,038 (99.01%) |
+| Total | `[#####################---]` 85.67% | 5,497 / 6,038 (91.04%) |
 | Init | `[######################--]` 90.79% | 508 / 538 (94.42%) |
-| Game | `[########################]` 98.93% | 5,289 / 5,318 (99.45%) |
+| Game | `[####################----]` 85.13% | 4,808 / 5,318 (90.41%) |
 | Debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
-Sixty tracked raw functions remain. Most are handwritten TLB code, embedded or
-mixed code/data slices, tiny four-byte slots, static audio routines, or
-hardware CP0 operations that are not ordinary C conversion targets.
+There are 541 tracked raw-assembly functions. The increase from July reflects
+broad restoration of original assembly in the current working tree. Some rows
+are handwritten SDK or CP0 code, embedded or mixed code/data slices, static
+audio routines, or intentionally restored port-support bodies; inspect each
+candidate before treating it as an ordinary C conversion target.
 
 ### Byte-exact matching
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[##########--------------]` 2,522 / 5,978 (42.19%) | 1 | 3,455 |
+| Total | `[###########-------------]` 2,517 / 5,497 (45.79%) | 1 | 2,979 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[#########---------------]` 1,962 / 5,289 (37.10%) | 0 | 3,327 |
+| Game | `[##########--------------]` 1,957 / 4,808 (40.70%) | 0 | 2,851 |
 | Debugger | `[#######################-]` 173 / 181 (95.58%) | 0 | 8 |
 
 `match-progress` compares linked functions by symbol against pristine retail
 bytes at name-implied addresses. Add `LIST=1` to list every non-exact function
 from the smallest real diff upward. The current sole address-only blocker is
 `func_10012588`.
+
+The exact count is five lower than the July snapshot. The higher percentage is
+caused by the smaller C denominator and must not be reported as matching
+progress. See [CURRENT_STATUS.md](CURRENT_STATUS.md) for the current resume
+boundary and validation limits.
 
 Historical milestones and matcher corrections are recorded in the
 [update log](UPDATE_LOG.md). Matching technique and validation requirements
@@ -283,6 +290,9 @@ Important external tools and references:
 - [N64ModernRuntime](https://github.com/N64Recomp/N64ModernRuntime#ultramodern) —
   PC-runtime architecture reference; tracked as a reference, not an active
   dependency.
+- [Pillow](https://pillow.readthedocs.io/en/stable/installation/basic-installation.html) -
+  required by `tools/render_rgba5551.py`; install it with
+  `python3 -m pip install --upgrade Pillow`.
 
 The `tools/` submodules keep their upstream READMEs. Project-specific guidance
 stays under `DOCS/`.

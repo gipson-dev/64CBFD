@@ -1,10 +1,16 @@
 # PC Port Roadmap located in another project folder
 
-This is a forward-looking plan, not a status report. As of this writing the
-repository is a ROM decompilation project only: there is no PC build target,
-no windowing/input code, and no renderer outside the original N64 RCP
-pipeline. Nothing described below has been started unless a step is marked
-`[done]`.
+## PC-port cross-project update - 2026-09-23
+
+The sibling `64CBFDOGL` host port now completes Training through the natural Windy entrance and a fresh retained-save reload in RelWithDebInfo; repeat traversal used FLY. The user has **VERIFIED the second-level Chapters unlock**. The Gargoyle held-release repair uses original `func_15073A50` (232 bytes); guest/ROM builds and exact-byte checks are recorded in [host Note 738](../../64CBFDOGL/DOCS/WORKING_NOTES/738-gargoyle-actor-and-original-held-release-20260923.md). This is scoped progression evidence, not complete retail presentation or full-game acceptance.
+
+The host-only `conker_settings.exe` is implemented with four-port device assignments, shared keyboard/controller bindings, Save and input hot reload; Video/Audio/Paths remain placeholders. It does not add an N64-ROM settings executable or replace Ares settings. See [host settings guide](../../64CBFDOGL/DOCS/CONKER_SETTINGS.md), [current host status](../../64CBFDOGL/DOCS/CURRENT_STATUS.md) and [active host roadmap](../../64CBFDOGL/DOCS/roadmap.md). Host Release is frozen after the requested 2026-09-23 `conker_pc` build; the latest Training suite retains its documented baseline failures/errors. No guest matching percentage is inferred from these host milestones.
+
+The plan below is a historical proposal for the ROM-decompilation repository.
+The PC implementation now lives in sibling `64CBFDOGL`; use the active host
+roadmap linked above for implementation status. Unchecked items below do not
+mean the corresponding host feature is absent. This repository continues to
+own guest decompilation, original-byte validation and ROM builds.
 
 The phases are ordered by dependency, not by date. There are no target dates
 here on purpose - decomp projects like this progress in bursts tied to

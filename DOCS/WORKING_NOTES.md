@@ -1,5 +1,58 @@
 # Working Notes
 
+## PC-port cross-project update - 2026-09-23
+
+The sibling `64CBFDOGL` host port now completes Training through the natural Windy entrance and a fresh retained-save reload in RelWithDebInfo; repeat traversal used FLY. The user has **VERIFIED the second-level Chapters unlock**. The Gargoyle held-release repair uses original `func_15073A50` (232 bytes); guest/ROM builds and exact-byte checks are recorded in [host Note 738](../../64CBFDOGL/DOCS/WORKING_NOTES/738-gargoyle-actor-and-original-held-release-20260923.md). This is scoped progression evidence, not complete retail presentation or full-game acceptance.
+
+The host-only `conker_settings.exe` is implemented with four-port device assignments, shared keyboard/controller bindings, Save and input hot reload; Video/Audio/Paths remain placeholders. It does not add an N64-ROM settings executable or replace Ares settings. See [host settings guide](../../64CBFDOGL/DOCS/CONKER_SETTINGS.md), [current host status](../../64CBFDOGL/DOCS/CURRENT_STATUS.md) and [active host roadmap](../../64CBFDOGL/DOCS/roadmap.md). Host Release is frozen after the requested 2026-09-23 `conker_pc` build; the latest Training suite retains its documented baseline failures/errors. No guest matching percentage is inferred from these host milestones.
+
+2026-09-16 ([OGL Note 590](../../64CBFDOGL/DOCS/WORKING_NOTES/590-war-teammate-transfer-restoration-20260916.md)): Original780 bytes restore native/guest teammate actor transfer and owner-list repair. Eight executable cases fail old stubs and pass donor/fixed; normal RWD, guest and full ROM builds pass, all940 audited bytes match. Full1934 retains four known failures/eight skips. Fresh original transfer and partial recovery are captured; native matches end with the human alive, so native transfer/recovered input remain unverified. Heaps30/31 retain a free-next failure; armed checker negative. All25 protected records pass expected changes; games exit0. Release/real saves preserved; full multiplayer remains open.
+
+
+2026-09-16 ([OGL Note 589](../../64CBFDOGL/DOCS/WORKING_NOTES/589-war-original-teammate-handoff-and-finite-life-test-boundary-20260916.md)): Original one-life War transfers P0 to surviving ally2: health, position and extra pointers exchange while camera/controller stay with P0. Native eligibility and recovered post-transfer movement remain unqualified; bounded attempts ended or hit geometry. All22 protected hashes match. Heaps40/41 retain one free-head failure; armed live checker negative. Both games exit0. No production edit/build; Release and real saves preserved. Collector/handoff and full multiplayer remain open.
+
+
+2026-09-16 ([OGL Note 588](../../64CBFDOGL/DOCS/WORKING_NOTES/588-war-ending-light-direction-orientation-restored-20260916.md)): Host-only HLSL++/RT64 light-direction orientation corrected from original RSP DMEM witnesses. Original IMEM300..37B matches124 ROM bytes at32BC0; the guest already uses that transform, so no IDO source patch or guest rebuild applies. Normal RWD visibly restores the dark War ending actor and passes paired Tank night lighting/lifecycle checks. Exact shading remains open; Release/real saves preserved.
+
+
+2026-09-16 ([OGL Note 587](../../64CBFDOGL/DOCS/WORKING_NOTES/587-war-timed-ending-and-collector-role-lifecycle-20260916.md)): Fresh normal RWD/original Infinite-lives10-minute War runs pass timer expiry, Tediz victory, YOU LOSE/second and automatic join return. Collector role/death/respawn appears in both, but no pickup/delivery is captured (3820/3553 rows). Ending Tediz is visibly darker in the port despite matching global colors/six regions/15 lights; actor lighting is the next repair boundary. All22 protected hashes pass; heaps117/118 retain a teardown free-next failure, armed live checker negative. Games exit0, no production edit/build, Release/saves preserved; full multiplayer open.
+
+2026-09-16 ([OGL Note 586](../../64CBFDOGL/DOCS/WORKING_NOTES/586-war-ai-heap-allocation-boundary-replay-20260916.md)): Original/current-native allocator replays reproduce Note585's entire rejected heap immediately after store10003ECC; all27 stores and completed8MiB match, with valid final heaps. The constructed input changes one backlink; historical live writer/read timing remains unproven and the failed capture stays rejected. All22 protected hashes match; private RWD diagnostics only, no production edit/game build/launch. Release/real saves preserved. Next is a matched live Collector cycle with Infinite lives, then teammate handoff; full multiplayer remains open.
+
+2026-09-16 ([OGL Note 585](../../64CBFDOGL/DOCS/WORKING_NOTES/585-war-bot-combat-collector-and-finite-team-results-20260916.md)): Unchanged normal RWD/original War bots demonstrate combat and human death/recovery; their 19,854-byte BA scripts match. Native Collector delivery/gas and finite-team endings are observed. Native Squirrel victory shows human loss/second; a separate original Squirrel-player win shows first, both returning to join. Input overlap and failed menu/phase attempts are retained with scope limits. All22 protected hashes match; games exit0. Heaps79/80 retain one free-previous failure, armed live checker negative. No production edit/build; Release/real saves preserved. Matched Collector/handoff, heap-read cause, exact parity and full multiplayer remain open.
+
+2026-09-16 ([OGL Note 584](../../64CBFDOGL/DOCS/WORKING_NOTES/584-war-masked-gas-and-carrier-death-return-20260916.md)): Unchanged normal RWD and original ROM pass southern masked green haze/fade, full-health survival, carrier death/ownership clear, timed return and actual reacquisition. Both pass active-carrier Restart, recovered movement and Quit; games exit0. All22 protected hashes match, Release/real saves preserved. Native heaps81/83 retain two external-read failures; armed live checker reports no corruption. No production edit/build. Exact burst/shading parity, remaining carrier variants, AI/endings and full multiplayer stay open.
+
+2026-09-16 ([OGL Note 583](../../64CBFDOGL/DOCS/WORKING_NOTES/583-war-gas-overlay-restored-and-opposite-team-objectives-20260916.md)): Three original gas-overlay routines /940 bytes restored in native and guest. Fresh normal RWD visibly renders player-owned green haze, fades/retires it, and passes death/respawn, movement, Restart and Quit. Paired original/native Tediz southern pickup/delivery and southern-mask survival pass. All46 focused checks pass; full1923 retains four known failures/eight skips. RWD/guest/ROM builds and all1008 linked/packaged bytes pass. Fixed heaps42/42; baseline47/48 retains one external-read failure. All22 protected records pass expected-change checks; games exit0, Release/real saves preserved. Masked fixed presentation, carrier-loss/AI/endings, exact shading and full multiplayer remain open.
+
+2026-09-16 ([OGL Note 582](../../64CBFDOGL/DOCS/WORKING_NOTES/582-war-quit-heap-mixed-time-read-replay-20260916.md)): Original/current-native allocation replays match all 32 stores and completed 8 MiB RAM. No atomic intermediate matches Note 581's rejected heap; a synthetic ascending read spanning valid pre/post states reproduces every heap/root byte and its single failure. This supports non-atomic capture timing without proving the historical writer/read schedule. All 22 protected records match; failed capture retained, no production edit/game build/launch, no game process remains. Release/real saves preserved. Next: opposite-team Total War objectives; exact shading and full multiplayer remain open.
+
+2026-09-16 ([OGL Note 581](../../64CBFDOGL/DOCS/WORKING_NOTES/581-war-local-ambient-regions-and-character-brightness-restored-20260916.md)): War kind15 ambient-region restoration changes the host gate only. Existing guest15009334 already selects original assembly; fresh original, linked and packaged676 bytes match SHA256612b0077c3c367611284d6b2872e16a8719104e2acb68a2f04029996cf8f2577. No guest patch/build applies. Normal RWD restores six original region records and brighter actors; exact shading and one non-atomic heap sample remain open. Release and real saves preserved.
+
+
+2026-09-16 ([OGL Note 580](../../64CBFDOGL/DOCS/WORKING_NOTES/580-war-directional-command-admission-and-actor-shading-boundary-20260916.md)): War directional kind16 admission is a host-only gate repair. Existing guest15009334 at game_36680.c:71 already selects the original676-byte assembly; fresh original, linked and packaged bytes match SHA256612b0077c3c367611284d6b2872e16a8719104e2acb68a2f04029996cf8f2577. No guest source/build change applies. Native globals now match original; visible actor darkness and broader guest light-selector qualification remain open. Release/real saves preserved.
+
+
+2026-09-16 War authored lighting audit: existing game_36680 original15009334 assembly still matches all676 fresh-ROM, linked and packaged bytes. Native admission gate/RT64 scope repaired in 64CBFDOGL Note579; no guest counterpart/build needed. Broader guest light selectors and actor brightness remain unqualified.
+
+2026-09-16 Total War gas-mask barrier: generated_142560 now restores original1511EC50 through matching assembly (308 bytes). Guest replacement and outer NON_MATCHING builds pass; linked and packaged bytes equal the original ROM. Native RWD and original live mask opening/pickup/survival/closure evidence is recorded in 64CBFDOGL Note578. This does not qualify full guest gameplay.
+
+2026-09-09 multiplayer pickup restoration: generated_142560 now restores original
+1511DD98 and 1511DF6C assembly. Existing jtbl_800A3218_game alias preserves the
+retail sound-table address. Guest replacement and full NON_MATCHING builds pass;
+all 2,536 linked/packaged bytes match ROM. Native collection evidence and limits:
+64CBFDOGL/DOCS/WORKING_NOTES/336-multiplayer-pickup-lifecycle-restored-20260909.md.
+
+
+2026-09-09 shared multiplayer collision region: generated_D86A0 now restores
+36 original assembly entries spanning 150AB1F0..150AC9C0. R_MIPS_PC16 preservation
+in pad_generated_object.py is covered by a linker test that moves the target
+to its retail offset. `make replace NON_MATCHING=1 -j4` and outer ROM build pass;
+all 6,096 linked and packaged bytes equal the original ROM. Native shared-frame
+adapter stays in 64CBFDOGL. See its Note 334 for runtime witnesses and remaining
+multiplayer scope; this does not establish full guest gameplay completion.
+
+
 A recovery log for in-progress work, failed experiments, and detailed session
 history. It is intentionally archival and may contain stale snapshots.
 
@@ -35,19 +88,22 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-07-26, ordinary byte matching resumed).** `func_151733D8` is
-now exact with its real `s32 (s32, s32)` identity signature. Its three-word
-retail body requires IDO 5.3 `-O2` without `-g3`, while the neighboring exact
-`func_15173994` requires `-g3`. `pad_generated_object.py` can now select one
-named function from a separately compiled object, and the `1A0790` build uses
-that facility to preserve both profiles without splitting or displacing the
-retail slice.
+**Active (2026-09-24, status re-established).** The current linked checkpoint
+is `2517 / 5497 (45.79%)` exact C functions, with one address-drift blocker and
+2,979 genuinely different C functions. The tree contains 541 raw-assembly
+functions, so the higher percentage than July is denominator-driven and is
+not a matching gain. The non-matching replacement build, outer build, and
+tool checks pass; fresh gameplay was not run.
 
-The full linked checkpoint is total `2522 / 5978 (42.19%)`, init
-`387 / 508 (76.18%)`, game `1962 / 5289 (37.10%)`, and debugger
-`173 / 181 (95.58%)`. `func_10012588` remains the sole address-only blocker.
-Continue from the smallest genuine C diffs, checking mixed object profiles
-before repeating commutative-expression rewrites that IDO canonicalizes.
+The broad restoration baseline is now banked as separate build-support,
+guest-restoration, reference-tooling, asset-tooling, and documentation commits.
+Start subsequent byte-matching or conversion work in a new focused commit.
+
+Resume with paired one-difference functions `func_151906E0` and
+`func_151C1814`, then debugger `func_16001390` if the pair needs wider type
+recovery. Keep raw-assembly conversion as a separate workstream. The complete
+measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with commands and
+candidate details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size
@@ -3489,3 +3545,60 @@ callee plateau):**
   `func_1514143C` (14), `func_1504ADD0` (52), `func_1504A620` (63),
   `func_15169070` (67), `func_1505210C` (81), `func_1504AF10` (116),
   `func_1504BE2C` (144). `func_150721A4` left the diff queue.
+
+**PC port (2026-07-26, Phase 3e): display-list submission chain fully
+hand-ported in the sibling `64CBFDOGL` repo:**
+
+- This session's PC-port work used this repo's freshly rebuilt map and asm
+  listings (`conker/asm/49D30.s`, `conker/asm/nonmatchings/game_34F20/`) as
+  the port source. The downstream `recomp/conker_us_symbols.toml` was
+  regenerated from the rebuilt map: **5898 functions** (was 5893;
+  `func_15043A00` new, `func_150AD9A0`/`func_150ADA20` re-split, the
+  `func_151F27E0`-`func_151F3D78` cluster re-anchored).
+- Hand-ported into `64CBFDOGL/recomp_out/.c` (C89, `ctx->r*`/`MEM_W`
+  conventions): `func_1000480C` (small-transfer polled-PIO PI read, backed
+  by a new `conker_pio_rom_read()` host helper), `func_1501CC3C` (segment
+  loader, from `49D30.s:262-364`), `func_1501C880` (M_GFXTASK submission,
+  from `49D30.s:11-261`), and a minimal guarded `func_15007B3C` (spine
+  only, not the retail body — sanity-checks the DL-buffer globals before
+  submitting).
+- Key discovery for the port: the compiled `func_10004F00` does
+  `osSpTaskLoad(slot + 0x18)`, so the `OSTask` lives at offset 0x18 in the
+  96-byte task slots at `0x800BEAD8`. Also confirmed Conker's PI `devAddr`
+  convention is a raw ROM file offset (librecomp ORs `recomp::rom_base`
+  onto the low 28 bits).
+- Still stubbed downstream: `func_1501A39C` (overflow-reset path) and
+  `func_1501878C` (retail's only `func_1501C880` caller). Runtime
+  verification (first `M_GFXTASK` reaching `send_dl()` / RT64
+  `loadUCodeGBI`) is pending; detail lives in `64CBFDOGL/roadmap.md`
+  Phase 3.
+
+  **2026-08-16 correction:** the sibling OGL runtime is far beyond this pending
+  checkpoint. `64CBFDOGL` now reaches Release title/menu with visible logo and
+  cast animation, accepted rumble prompt behavior, and Training-level entry
+  evidence; see its `DOCS/WORKING_NOTES/53` through `56`. Do not use this
+  2026-07-26 paragraph as current OGL runtime status. For `64CBFD`, the recent
+  logo/menu repair required no source import: `func_1505E650` is already exact
+  retail assembly here, and the RT64 float-MODELVIEW repair is host-side OGL
+  code.
+
+
+## 2026-09-05 native Game 3 saved-card formatter audit
+
+OGL Note 265 restores retail init printf functions 10001550, 10001AA8,
+100020D0, 10002718 and emits _Litob at 100230F0. The exact assembly is retained
+in this decomp; 100019F0 already agrees. Nonmatching C placeholders in
+init_2070/init_1420 are unsuitable as executable PC donor code for saved-card
+time rendering. This is a generated/reference-only transfer: no host-context
+body or PC read-only data loader is inserted into IDO sources. See
+`../64CBFDOGL/recomp/retail_save_formatter.json` and OGL Note 265 for extents,
+ROM provenance and native runtime acceptance. Game 2 and Game 3 saves are
+preserved throughout; the older Game-2-only fixture must not overwrite them.
+
+
+Validation for this audit: `make build/conker.us.bin` reports up to date.
+The default `make` target fails its ROM SHA1 comparison; no sibling game code
+was changed here. OGL's RelWithDebInfo build and focused formatter execution
+pass. Game 3 New Game and saved introductory-chapter PLAY reach Training with
+visible W/S, and the Game 2 card remains stable. The final combined save and
+backup are preserved at SHA256 35190CA4...1137C3CD (full hash in OGL Note 265).

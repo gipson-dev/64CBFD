@@ -1,8 +1,8 @@
 # Temporary DK64 Cross-Port TODO
 
 This checklist records the completed automatic pass against the DK64
-decompilation at `/workspaces/64CBFD/dk64-main` and the remaining ways that
-repository can support Conker matching.
+decompilation at `/workspaces/64CBFD/dk64-main`, the remaining ways that
+repository can support Conker matching, and the next cross-game search pass.
 
 ## Verification and scan
 
@@ -107,6 +107,37 @@ Final refreshed US corpus:
 - debugger: `170 / 181 (93.92%)`
 - address-only blocker: `func_10012588`
 
+## Audio continuation: all four divergent routines recovered
+
+- [x] `func_10021C40` from DK64 `n_alLoadParam`, retaining Conker's ADPCM
+  length rule, book-pointer validation, invalid-state reset, and local
+  `N_PVoice` layout.
+- [x] `func_100210C0` from DK64 `n_alAuxBusPull`, adapted to Conker's
+  `ALLink`-backed voice list, two priority passes, pull-count behavior, and
+  normalization commands.
+- [x] `func_100214F0` from DK64 `n_alAdpcmPull`, retaining Conker's missing
+  wave-table zero-fill path, ADPCM-book physical-address diagnostic, and
+  extended `N_PVoice` offsets.
+- [x] `func_10020000` from DK64 `n_alEnvmixerPull`, retaining Conker's
+  two-bit stereo phase flags, pan thresholds, audio-mode globals, event
+  layouts, and linked control list.
+
+These were not safe whole-body copies. DK64 supplied the original algorithms
+and compiler profile, while Conker's retail assembly supplied its changed
+guards, fields, list representation, and control-flow shape. All four objects
+require the audio subsystem's IDO 7.1 `-g` profile. `func_10021C40` requires
+an explicit `else` around the ADPCM-book size calculation.
+`func_10020000` additionally requires its generated switch table to be
+anchored at retail `jtbl_8002C7D0_init`.
+
+The full linked retail scan after all four matches reports:
+
+- total: `2517 / 5978 (42.10%)`
+- init: `387 / 508 (76.18%)`
+- game: `1957 / 5289 (37.00%)`
+- debugger: `173 / 181 (95.58%)`
+- address-only blocker: `func_10012588`
+
 ## Reference-only exact bodies
 
 These cross-game matches are handwritten assembly in DK64. Copying them would
@@ -131,13 +162,41 @@ a source language that can preserve handwritten instructions honestly.
 - [x] Exhaust the automatic exact/relocation-masked C pool.
 - [x] Exhaust the broader opcode/control-flow candidate pool and port every
   candidate that survived signature, constant, call, and field-offset checks.
-- [ ] Continue normal byte matching on the divergent audio candidates
-  `func_100214F0`, `func_10020000`, `func_100210C0`, and
-  `func_10021C40`; DK64 supplies structure and algorithm evidence, but none is
-  a safe whole-body port.
+- [x] Resume ordinary byte-exact work with the cross-port findings retained.
+  The current linked checkpoint is total `2517 / 5978 (42.10%)`, init
+  `387 / 508 (76.18%)`, game `1957 / 5289 (37.00%)`, and debugger
+  `173 / 181 (95.58%)`; `func_10012588` remains the only address-only
+  blocker.
+- [x] Recover all four divergent DK64-informed audio candidates:
+  `func_10021C40`, `func_100210C0`, `func_100214F0`, and `func_10020000`.
+- [x] Run the broader Banjo Batch 5 recheck described in
+  `TEMP_BANJO_CROSSPORT_TODO.md`. Use both verified US ROM revisions and
+  search below whole-function opcode equality before declaring the
+  cross-game pool exhausted.
+- [x] Cross-check any new Banjo candidate against the DK64 corpus. A candidate
+  supported by both games should be ranked first when its constants, calls,
+  structure-field offsets, and compiler profile also agree with Conker.
+  Batch 5 recovered four game functions; DK64's linked `guLookAt` independently
+  corroborated `func_15047688`. The resulting linked checkpoint is total
+  `2521 / 5978 (42.17%)`, game `1961 / 5289 (37.08%)`, init
+  `387 / 508 (76.18%)`, and debugger `173 / 181 (95.58%)`.
 - [ ] Consult DK64 manually when a remaining Conker function calls a shared
   Rare audio, matrix, heap, controller, or fast-math helper.
 - [ ] Recheck object profiles before tuning source expressions; DK64 confirms
   `-g`, `-O1`, `-O2`, and `-O3` were all used in adjacent subsystems.
 - [ ] Keep handwritten matches reference-only unless the project explicitly
   adopts a source representation for handwritten assembly.
+
+## Ordinary byte-matching continuation
+
+- [x] `func_151733D8` — restored the two-argument identity source and compiled
+  only this helper with IDO 5.3 `-O2` without debug information. A
+  per-function object selector preserves the adjacent exact `func_15173994`
+  from the normal `-g3` object.
+- [x] Full linked retail scan: total `2522 / 5978 (42.19%)`, init
+  `387 / 508 (76.18%)`, game `1962 / 5289 (37.10%)`, debugger
+  `173 / 181 (95.58%)`; `func_10012588` remains the sole address-only
+  blocker.
+- [ ] Continue checking compiler-profile boundaries before source-shape
+  permutations; the `1A0790` slice proves adjacent recovered functions can
+  require different debug profiles.
