@@ -476,3 +476,7 @@ generated_E8C10,func_150BDB3C,0x008,0x904E001B,0x904F001B,-,-,Keep existing byte
 generated_E8C10,func_150BDB3C,0x00C,0x000328C0,0x000370C0,-,-,Keep shifted value in retail temporary register,
 generated_E8C10,func_150BDB3C,0x010,0x00AE082A,0x01CF082A,-,-,Compare retail scalar temporaries,
 generated_E8C10,func_150BDB3C,0x01C,0xA045001B,0xA04E001B,-,-,Store shifted value from retail temporary register,
+generated_11FF10,func_150F33B0,0x020,0x9099004F,0x9088004F,-,-,Load set-bit byte into retail temporary register,
+generated_11FF10,func_150F33B0,0x034,0x9099004F,0x9088004F,-,-,Keep unreachable duplicate load in retail temporary register,
+generated_11FF10,func_150F33B0,0x038,0x37280001,0x35090001,-,-,Set flag bit in retail result register,
+generated_11FF10,func_150F33B0,0x03C,0xA088004F,0xA089004F,-,-,Store set-bit result from retail temporary register,

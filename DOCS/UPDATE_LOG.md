@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game set-bit temporary byte-exact
+
+- Completed `func_150F33B0`: 18 words and zero linked differences.
+- Added four expected-word guards that retain the branch-likely byte in `t0`
+  and its set-bit result in `t1`. The global-pointer relocations and branch
+  encoding are unchanged.
+- Direct comparison reports **18 / 18** retail words exact. Fresh scan:
+  **2549 / 5491 (46.42%)** overall and **1981 / 4802 (41.25%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Game scalar-temporary byte-exact
 
 - Completed `func_150BDB3C`: 13 words and zero linked differences.

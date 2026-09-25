@@ -31,6 +31,7 @@ void func_150F337C(u8 *arg0, s16 arg1) {
     func_15140410(arg0, arg0 + 0x12C, arg0 + 0x138, arg1);
 }
 
+// Matched with guarded set-bit temporary register normalization.
 void func_150F33B0(u8 *arg0) {
     if (*(f32 *) (D_800DBFF0 + 0x300) < -2000.0f) {
         *(arg0 + 0x4F) &= 0xFFFE;
