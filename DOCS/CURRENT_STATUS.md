@@ -21,7 +21,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Fresh `progress.csv` and linked retail comparison on 2026-09-24:
+Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
@@ -32,13 +32,13 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-24:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,525 / 5,497 (45.93%) | 1 | 2,971 |
+| Total | 2,526 / 5,497 (45.95%) | 1 | 2,970 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
 | Game | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | 179 / 181 (98.90%) | 0 | 2 |
+| Debugger | 180 / 181 (99.45%) | 0 | 1 |
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,524, two above July's count, while
+denominator driven: the exact count is now 2,526, while
 481 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, and context-display passes added one each after the
@@ -64,8 +64,8 @@ end-to-end gameplay acceptance.
 
 1. The restoration baseline is banked. Do not fold a broad conversion batch
    into it; future work should start from a new focused commit.
-2. Resume debugger `func_1600078C`, currently 180 real differences across 180
-   words. The final debugger target after it is `func_16000B14`.
+2. Resume the final debugger target, `func_16000B14`, currently 277 real
+   differences across 286 words.
 3. Keep `func_15135480` as a game follow-up candidate. It has the same
    branch-operand mismatch solved in the paired event-swap routines, plus one
    additional difference that still needs isolation.
@@ -82,3 +82,5 @@ The completed debugger rectangle fill and guarded scheduling normalization are
 in [Working Note 003](WORKING_NOTES/003-debugger-rectangle-fill-byte-match-20260924.md).
 The completed context display and its guarded allocation normalization are in
 [Working Note 007](WORKING_NOTES/007-debugger-context-display-byte-match-20260925.md).
+The completed memory viewer and its restored address/data lifetimes are in
+[Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

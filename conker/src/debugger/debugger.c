@@ -244,68 +244,67 @@ void func_160006CC(void *arg0) {
     } while (next != 0);
 }
 
-// NON-MATCHING: close but still some stuff to figure out
 void func_1600078C(void) {
     s32 temp_s0;
     u8 range_prefix;
     u32 temp_s2;
-    s32 temp_s5;
     s32 phi_s1;
-    u32 *phi_s2;
-    u32 phi_s5;
-    s32 i;
+    u32 base;
 
     temp_s0 = *(s32 *) ((u8 *) D_1600389C + 0xF4);
     func_16001338(0, 255, 0);
     func_160012B0(11, &D_160047B0);
     temp_s2 = (D_16003B4C * 4) + temp_s0;
     if (((temp_s2 & 3) == 0) && (temp_s2 >= 0x80000000U) && (temp_s2 < 0x80800001U)) {
+        base = (u32)&D_8002D4B0;
         if (D_16003B4C == 0) {
             func_16001338(255, 0, 0);
-            phi_s5 = (u32)&D_8002D4B0;
         } else {
-            temp_s5 = (s32)&D_8002D4B0 - 0x2B50;
-            if ((temp_s2 >= (u32)temp_s5) && (temp_s2 < (u32)(temp_s5 + 0x400))) {
+            base -= 0x2B50;
+            if ((temp_s2 >= base) && (temp_s2 < (base + 0x400))) {
                 func_16001338(128, 128, 255);
-                phi_s5 = temp_s5;
             } else if ((temp_s2 >= (u32) &D_8002D8B0) && (temp_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
                 func_16001338(255, 128, 128);
-                phi_s5 = temp_s5;
             } else {
                 func_16001338(255, 255, 255);
-                phi_s5 = temp_s5;
             }
         }
         phi_s1 = 97;
-        phi_s2 = (u32 *)temp_s2;
-        for (i = 0; i < 22; i++) {
-            func_16001044(phi_s1, 0, (s32)phi_s2);
-            func_160012B0(phi_s1 + 8, &D_160047BC);
-            range_prefix = (*phi_s2 >> 24);
-            if (range_prefix == 0x80) {
-                func_16001338(128, 128, 255);
-            } else if (range_prefix == 0x15) {
-                func_16001338(255, 0, 0);
-            } else if (range_prefix == 0x16) {
-                func_16001338(128, 255, 128);
-            } else if (range_prefix == 0x10) {
-                func_16001338(255, 0, 0);
-            } else {
+        {
+            s32 value;
+            u32 i = 0;
+
+            do {
+                func_16001044(phi_s1, 0, temp_s2);
+                func_160012B0(phi_s1 + 8, &D_160047BC);
+                value = *(s32 *)temp_s2;
+                range_prefix = ((u32)value >> 24);
+                if (range_prefix == 0x80) {
+                    func_16001338(128, 128, 255);
+                } else if (range_prefix == 0x15) {
+                    func_16001338(255, 0, 0);
+                } else if (range_prefix == 0x16) {
+                    func_16001338(128, 255, 128);
+                } else if (range_prefix == 0x10) {
+                    func_16001338(255, 0, 0);
+                } else {
+                    func_16001338(255, 255, 255);
+                }
+                func_16001044(phi_s1 + 0xC, 0, value);
+                func_160012B0(phi_s1 + 0x16, &D_160047C0);
                 func_16001338(255, 255, 255);
-            }
-            func_16001044(phi_s1 + 0xC, 0, *phi_s2);
-            func_160012B0(phi_s1 + 0x16, &D_160047C0);
-            func_16001338(255, 255, 255);
-            func_16001044(phi_s1 + 0x16, 1, *phi_s2);
-            if (((u32) phi_s2 >= phi_s5) && ((u32) phi_s2 < (phi_s5 + 0x400))) {
-                func_16001338(128, 128, 0xFF);
-            } else if (((u32) phi_s2 >= (u32) &D_8002D8B0) && ((u32) phi_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
-                func_16001338(255, 128, 128);
-            } else {
-                func_16001338(255, 255, 255);
-            }
-            phi_s1 += 0x20;
-            phi_s2 += 1;
+                func_16001044(phi_s1 + 0x16, 1, value);
+                if ((temp_s2 >= base) && (temp_s2 < (base + 0x400))) {
+                    func_16001338(128, 128, 0xFF);
+                } else if ((temp_s2 >= (u32) &D_8002D8B0) && (temp_s2 < ((u32)&D_8002D8B0 + 0x4000))) {
+                    func_16001338(255, 128, 128);
+                } else {
+                    func_16001338(255, 255, 255);
+                }
+                i += 1;
+                phi_s1 += 0x20;
+                temp_s2 += 4;
+            } while (i != 22);
         }
     }
 }

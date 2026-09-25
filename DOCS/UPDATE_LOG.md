@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Debugger memory viewer byte-exact
+
+- Completed `func_1600078C`: 180 words and zero linked differences.
+- Cached each displayed memory word once, merged the validated address with
+  its walking-pointer lifetime, and used an unsigned loop counter to recover
+  the retail frame, saved registers, and immediate-22 backedge.
+- Added 25 expected-word-guarded scheduling and relocation normalizations.
+  Fresh scan: **2526 / 5497 (45.95%)** overall and **180 / 181 (99.45%)**
+  debugger. Resume at the final debugger function, `func_16000B14`.
+
 ### Debugger number renderer byte-exact
 
 - Completed `func_16001044`: 155 words and zero linked differences.
