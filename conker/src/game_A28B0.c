@@ -1439,7 +1439,7 @@ void func_15079F50(void) {
     D_800D154C->unk23B = D_800D1890;
 }
 
-// NON-MATCHING: JUSTREG
+// Matched with guarded temporary-register normalization.
 void func_15079F6C(void) {
     u16 tmp0;
     u16 tmp1;

@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game packed-field writer byte-exact
+
+- Completed `func_15079F6C`: 20 words and zero linked differences.
+- Preserved the maintained C body and added two expected-word-guarded
+  normalizations for one byte temporary's register lifetime. The load guard
+  preserves its `R_MIPS_LO16:D_800D1891` relocation.
+- Direct linked comparison reports **20 / 20** retail words exact. Fresh scan:
+  **2537 / 5495 (46.17%)** overall and **1969 / 4806 (40.97%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Game indexed counter update byte-exact
 
 - Completed `func_1517F448`: 16 words and zero linked differences.

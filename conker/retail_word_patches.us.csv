@@ -453,3 +453,5 @@ generated_1C2C60,func_1519C910,0x010,0x50AE0007,0x51C50007,-,-,Use retail commut
 generated_1C2C60,func_1519C910,0x01C,0x50AF0004,0x51E50004,-,-,Use retail commutative equality operand order,
 generated_1AC2F0,func_1517F448,0x010,0x004E1821,0x01E27821,-,-,Schedule retail second-array address first,
 generated_1AC2F0,func_1517F448,0x014,0x01E27821,0x004E1821,-,-,Schedule retail first-array address second,
+game_A28B0,func_15079F6C,0x014,0x90630000,0x906E0000,R_MIPS_LO16:D_800D1891,R_MIPS_LO16:D_800D1891,Use retail byte temporary register,
+game_A28B0,func_15079F6C,0x020,0x01E3C025,0x01EEC025,-,-,Use retail byte temporary in packed halfword,

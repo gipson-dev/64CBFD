@@ -212,9 +212,9 @@ candidate before treating it as an ordinary C conversion target.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,536 / 5,495 (46.15%) | 1 | 2,958 |
+| Total | `[###########-------------]` 2,537 / 5,495 (46.17%) | 1 | 2,957 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 1,968 / 4,806 (40.95%) | 0 | 2,838 |
+| Game | `[##########--------------]` 1,969 / 4,806 (40.97%) | 0 | 2,837 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The debugger section is fully complete: 181 C-classified rows match through
@@ -227,7 +227,7 @@ bytes at name-implied addresses. Add `LIST=1` to list every non-exact function
 from the smallest real diff upward. The current sole address-only blocker is
 `func_10012588`.
 
-The exact count is seven above the July snapshot. The higher percentage is still
+The exact count is eight above the July snapshot. The higher percentage is still
 primarily caused by the smaller C denominator; focused event-swap and debugger
 passes have added ten exact functions after the restoration baseline. See
 [CURRENT_STATUS.md](CURRENT_STATUS.md) for the current resume boundary and
