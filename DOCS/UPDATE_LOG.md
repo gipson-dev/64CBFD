@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game indexed-slot clear byte-exact
+
+- Completed all 8 words of `func_150F02A0`. Explicit base-pointer and index
+  lifetimes reduced the compiler mismatch from five words to four before
+  guarded temporary-register normalization.
+- The four expected-word guards contain no relocations. The patch table now
+  has 494 rows and no duplicate filename/function/offset keys.
+- Independent comparison of the complete 32-byte linked and retail spans
+  produced SHA-256
+  `88702e620c68fd1e29b4ba1ede612864ee03fdc06a41eddb8eefcda46250e665`.
+  Fresh scan: **2552 / 5490 (46.48%)** overall and
+  **1984 / 4801 (41.32%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game motion-scale calculation byte-exact
 
 - Completed `func_1505841C`: 117 words and zero linked differences.

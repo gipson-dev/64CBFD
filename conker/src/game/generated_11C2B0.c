@@ -80,10 +80,13 @@ void func_150F0280(register u8 *arg0) {
     func_150F02A0(arg0);
 }
 
+// Matched with a base-pointer lifetime and guarded index-register normalization.
 void func_150F02A0(u8 *arg0) {
     u8 *temp_v0 = *(u8 **)(arg0 + 0x60);
+    u8 *base = *(u8 **)(temp_v0 + 8);
+    u8 index = *(u8 *)(temp_v0 + 0xC);
 
-    *(s32 *)(*(u8 **)(temp_v0 + 8) + (*(u8 *)(temp_v0 + 0xC) * 4) + 0x12C) = 0;
+    *(s32 *)(base + (index * 4) + 0x12C) = 0;
 }
 
 s32 func_150F02C0(s32 arg0) {

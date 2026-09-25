@@ -489,3 +489,7 @@ game_83300,func_1505841C,0x0C4,0x46101003,0x46001403,-,-,Keep quotient in retail
 game_83300,func_1505841C,0x0CC,0x46120000,0x46128000,-,-,Add global offset from retail quotient temporary,
 game_83300,func_1505841C,0x160,0x3C020000,0x3C190000,R_MIPS_HI16:D_800419A0,R_MIPS_HI16:D_800419A0,Load timer-table index base in retail register,
 game_83300,func_1505841C,0x170,0x90590000,0x93390000,R_MIPS_LO16:D_800419A0,R_MIPS_LO16:D_800419A0,Load timer-table index through retail register,
+generated_11C2B0,func_150F02A0,0x004,0x9045000C,0x904E000C,-,-,Load slot index into retail temporary register,
+generated_11C2B0,func_150F02A0,0x00C,0x00057080,0x000E7880,-,-,Scale slot index in retail temporary chain,
+generated_11C2B0,func_150F02A0,0x010,0x006E7821,0x006FC021,-,-,Form slot address in retail temporary register,
+generated_11C2B0,func_150F02A0,0x014,0xADE0012C,0xAF00012C,-,-,Clear slot field through retail address register,
