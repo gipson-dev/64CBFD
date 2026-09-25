@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game optional-pointer call byte-exact
+
+- Completed `func_1509D054`: 14 words and zero linked differences.
+- Added four expected-word guards that keep the optional global pointer in
+  `v0`, test it there, and copy it to `a0` in the call delay slot. The global
+  HI16/LO16 relocations are preserved on the normalized load pair.
+- Direct comparison reports **14 / 14** retail words exact. Fresh scan:
+  **2547 / 5493 (46.37%)** overall and **1979 / 4804 (41.19%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Game global-base pointer byte-exact
 
 - Completed `func_15087DCC`: 34 words and zero linked differences.

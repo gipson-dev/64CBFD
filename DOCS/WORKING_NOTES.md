@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, global-base pointer byte-exact).** The current linked
-checkpoint is `2546 / 5493 (46.35%)` exact C functions, with one
-address-drift blocker and 2,946 genuinely different C functions. The tree
+**Active (2026-09-25, optional-pointer call byte-exact).** The current linked
+checkpoint is `2547 / 5493 (46.37%)` exact C functions, with one
+address-drift blocker and 2,945 genuinely different C functions. The tree
 contains 545 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -113,9 +113,10 @@ nested-pointer register lifetime, `func_1514672C` now matches through a
 guarded relocation-preserving load reorder, `func_15199980` now matches from
 an explicit callback-pointer lifetime, `func_1505D024` now matches through
 guarded call-argument register normalization, `func_15071A64` now matches from
-corrected stack-local declaration order, and `func_15087DCC` now matches by
-separating its global base load from the indexed record pointer. Continue at
-14-word `func_1509D054`. Keep
+corrected stack-local declaration order, `func_15087DCC` now matches by
+separating its global base load from the indexed record pointer, and
+`func_1509D054` now matches through guarded call-argument lifetime
+normalization. Continue at 5-word `func_150A7A00`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -165,6 +166,8 @@ The completed stack-local layout correction is in
 [Working Note 026](WORKING_NOTES/026-game-stack-local-layout-match-20260925.md).
 The completed global-base pointer lifetime is in
 [Working Note 027](WORKING_NOTES/027-game-global-base-pointer-match-20260925.md).
+The completed optional-pointer call lifetime is in
+[Working Note 028](WORKING_NOTES/028-game-optional-pointer-call-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,546 / 5,493 (46.35%) | 1 | 2,946 |
+| Total | 2,547 / 5,493 (46.37%) | 1 | 2,945 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,978 / 4,804 (41.17%) | 0 | 2,826 |
+| Game | 1,979 / 4,804 (41.19%) | 0 | 2,825 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,13 +45,13 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,546, while
+denominator driven: the exact count is now 2,547, while
 485 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
 pass completed `func_15135480`, the final four one-difference game rows, and
-the subsequent small game queue through `func_15087DCC`.
+the subsequent small game queue through `func_1509D054`.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -85,7 +85,8 @@ end-to-end gameplay acceptance.
    guarded call-argument register normalization, and `func_15071A64` is
    byte-exact from corrected stack-local declaration order, and
    `func_15087DCC` is byte-exact from separating the global base load from the
-   indexed record pointer. Continue at 14-word `func_1509D054`.
+   indexed record pointer, and `func_1509D054` is byte-exact through guarded
+   call-argument lifetime normalization. Continue at 5-word `func_150A7A00`.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -131,5 +132,7 @@ The completed stack-local layout correction is in
 [Working Note 026](WORKING_NOTES/026-game-stack-local-layout-match-20260925.md).
 The completed global-base pointer lifetime is in
 [Working Note 027](WORKING_NOTES/027-game-global-base-pointer-match-20260925.md).
+The completed optional-pointer call lifetime is in
+[Working Note 028](WORKING_NOTES/028-game-optional-pointer-call-match-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

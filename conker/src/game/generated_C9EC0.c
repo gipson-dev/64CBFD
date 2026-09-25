@@ -70,6 +70,7 @@ s32 func_1509CF28() {
     return 0;
 }
 
+// Matched with guarded call-argument lifetime normalization.
 void func_1509D054(void) {
     u8 *temp_v0 = D_800D2FB0;
 
