@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,489 / 6,038 (90.91%) | 2,555 / 5,489 (46.55%) | 1 | 2,933 |
+| Total | 5,489 / 6,038 (90.91%) | 2,558 / 5,489 (46.60%) | 1 | 2,930 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,800 / 5,318 (90.26%) | 1,987 / 4,800 (41.40%) | 0 | 2,813 |
+| Game | 4,800 / 5,318 (90.26%) | 1,990 / 4,800 (41.46%) | 0 | 2,810 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -92,6 +92,9 @@ The following classification pass restored handwritten byte-fill loop
 [Working Note 039](WORKING_NOTES/039-game-handwritten-byte-fill-restoration-20260925.md).
 The next guarded pointer/value register pass completed `func_1515F008`; see
 [Working Note 040](WORKING_NOTES/040-game-packed-fixed-point-reader-match-20260925.md).
+The following packed-value scaling pass completed `func_1516F8EC`,
+`func_1516F91C`, and `func_1516F984`; see
+[Working Note 041](WORKING_NOTES/041-game-packed-value-scaling-cluster-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

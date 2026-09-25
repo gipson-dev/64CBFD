@@ -66,6 +66,7 @@ s32 func_1516F864() {
     return 0;
 }
 
+// Matched with guarded packed-byte temporary register normalization.
 void func_1516F8EC(u8 *arg0, u32 arg1) {
     s32 val = *(s8 *) (arg0 + 0x26);
 
@@ -75,6 +76,7 @@ void func_1516F8EC(u8 *arg0, u32 arg1) {
     *(arg0 + 0x27) = val >> 8;
 }
 
+// Matched with guarded packed-byte temporary register normalization.
 void func_1516F91C(u8 *arg0, u32 arg1) {
     s32 val = *(s8 *) (arg0 + 0x28);
 
@@ -89,9 +91,15 @@ void func_1516F94C(u8 *arg0, u32 arg1) {
     func_1516F91C(arg0, arg1);
 }
 
+// Matched by preserving the scaled field's source-level lifetime.
 void func_1516F984(u8 *arg0, u32 arg1) {
+    s32 val;
+
     func_1516F94C(arg0, arg1);
-    *(s16 *) (arg0 + 0x18) = (s32) (*(s16 *) (arg0 + 0x18) * arg1) >> 8;
+    val = *(s16 *) (arg0 + 0x18);
+    val = val * arg1;
+    val = val >> 8;
+    *(s16 *) (arg0 + 0x18) = val;
 }
 
 s32 func_1516F9C4() {

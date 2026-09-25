@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game packed-value scaling cluster byte-exact
+
+- Completed `func_1516F8EC` and `func_1516F91C` at 12 words each with six
+  symmetric, non-relocating temporary-register guards per function.
+- Completed all 16 words of `func_1516F984` without guards by splitting its
+  scaled-field load, multiply, shift, and store into one explicit lifetime.
+- Independent linked/retail SHA-256 values are
+  `14f75b532b0413ab490bcefb7a8284c1b024c1f476b4d4ec44fd8863a6faf20c`,
+  `945027373a1829e0654f87630cee13b194b1c9dbc9223732fe401112ae258580`, and
+  `b5801f5ad4d78f055901441ec1f91ee55401dae43b813741b7d87d3b5a2ba1c5`.
+- Fresh scan: **2558 / 5489 (46.60%)** overall and
+  **1990 / 4800 (41.46%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game packed fixed-point reader byte-exact
 
 - Completed all 14 words of `func_1515F008` with six expected-word guards for
