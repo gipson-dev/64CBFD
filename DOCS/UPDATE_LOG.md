@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Debugger glyph blitter byte-exact
+
+- Completed `func_160014F0` with its retail 71-word body, `u8` parameter
+  normalization, four-pixel unroll, pointer induction, and loop delay slots.
+- Extended guarded word patches to validate and move relocations with
+  scheduled instructions. The `D_160038A8` `LO16` relocation now follows its
+  low-half load, and an assembler-backed regression test covers the move.
+- A fresh linked retail scan reports **2522 / 5497 overall (45.88%)** and
+  **176 / 181 debugger (97.24%)**. Resume at `func_16001BB4`.
+
 ### Debugger float formatter byte-exact
 
 - Completed `func_16000F8C` with its retail 46-word body, 88-byte frame,

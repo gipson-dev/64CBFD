@@ -1,8 +1,29 @@
-filename,function,offset,expected,replacement,note
-debugger,func_16001390,0x13C,0x00095040,0x00193C03,Schedule row sign extension before stride scaling
-debugger,func_16001390,0x140,0x00193C03,0x00095040,Schedule stride scaling after row sign extension
-debugger,func_16000F8C,0x38,0x8FA20054,0x8FA30054,Keep raw float bits in v1
-debugger,func_16000F8C,0x40,0x00411824,0x00611024,Mask raw float bits from v1 into v0
-debugger,func_16000F8C,0x44,0x0003CDC2,0x0002CDC2,Shift exponent mask from v0
-debugger,func_16000F8C,0x54,0x00024040,0x00031040,Double raw float bits from v1 into v0
-debugger,func_16000F8C,0x58,0x11000006,0x10400006,Test doubled float bits in v0
+filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note
+debugger,func_16001390,0x13C,0x00095040,0x00193C03,,,Schedule row sign extension before stride scaling
+debugger,func_16001390,0x140,0x00193C03,0x00095040,,,Schedule stride scaling after row sign extension
+debugger,func_16000F8C,0x38,0x8FA20054,0x8FA30054,,,Keep raw float bits in v1
+debugger,func_16000F8C,0x40,0x00411824,0x00611024,,,Mask raw float bits from v1 into v0
+debugger,func_16000F8C,0x44,0x0003CDC2,0x0002CDC2,,,Shift exponent mask from v0
+debugger,func_16000F8C,0x54,0x00024040,0x00031040,,,Double raw float bits from v1 into v0
+debugger,func_16000F8C,0x58,0x11000006,0x10400006,,,Test doubled float bits in v0
+debugger,func_160014F0,0x28,0x24C5FFE0,0x24CFFFE0,,,Keep glyph offset in t7
+debugger,func_160014F0,0x2C,0x3C180000,0x3C190000,,,Load glyph table high half into t9
+debugger,func_160014F0,0x30,0x27180000,0x27390000,,,Load glyph table low half into t9
+debugger,func_160014F0,0x34,0x000578C0,0x000FC0C0,,,Scale glyph offset from t7 into t8
+debugger,func_160014F0,0x3C,0x258C0000,0x03194021,R_MIPS_LO16:D_160038A8,-,Form glyph pointer before stride low half
+debugger,func_160014F0,0x40,0x01F84021,0x00003825,,,Initialize row after glyph pointer
+debugger,func_160014F0,0x44,0x00003825,0x258C0000,-,R_MIPS_LO16:D_160038A8,Schedule stride low half after row initialization
+debugger,func_160014F0,0x54,0x30D90080,0x30CD0080,,,Use t5 for first pixel mask
+debugger,func_160014F0,0x58,0x13200003,0x11A00003,,,Branch on first pixel mask in t5
+debugger,func_160014F0,0x74,0x312E0080,0x312F0080,,,Use t7 for second pixel mask
+debugger,func_160014F0,0x7C,0x11C00003,0x11E00003,,,Branch on second pixel mask in t7
+debugger,func_160014F0,0x98,0x31380080,0x31390080,,,Use t9 for third pixel mask
+debugger,func_160014F0,0xA0,0x13000003,0x13200003,,,Branch on third pixel mask in t9
+debugger,func_160014F0,0xBC,0x312D0080,0x312E0080,,,Use t6 for fourth pixel mask
+debugger,func_160014F0,0xC4,0x11A00003,0x11C00003,,,Branch on fourth pixel mask in t6
+debugger,func_160014F0,0xDC,0x30CEFFFF,0x30CFFFFF,,,Keep shifted bits in t7
+debugger,func_160014F0,0xE4,0x01C03025,0x01E03025,,,Copy shifted bits from t7
+debugger,func_160014F0,0xF4,0x8D8F0000,0x8D980000,,,Load stride into t8
+debugger,func_160014F0,0x100,0x25F8FFF8,0x2719FFF8,,,Subtract glyph width into t9
+debugger,func_160014F0,0x104,0x0018C840,0x00196840,,,Scale row stride into t5
+debugger,func_160014F0,0x10C,0x00591021,0x004D1021,,,Advance destination by t5

@@ -9,7 +9,9 @@ filled gaps before functions at their retail-relative addresses. Oversized
 non-matching functions keep their full compiled bodies in section-local
 overflow regions and use short in-slot jump trampolines, preventing them from
 displacing later functions. An optional guarded table can replace known
-compiler-scheduling words after verifying the compiled input value.
+compiler-scheduling words after verifying the compiled input value. Patches
+may also move relocations when both the expected and replacement lists are
+declared explicitly.
 """
 
 import argparse
@@ -56,9 +58,36 @@ def load_word_patches(path, filename):
             patches[key] = {
                 "expected": int(row["expected"], 0),
                 "replacement": int(row["replacement"], 0),
+                "expected_relocations": parse_relocation_spec(
+                    row.get("expected_relocations")
+                ),
+                "replacement_relocations": parse_relocation_spec(
+                    row.get("replacement_relocations")
+                ),
                 "note": row.get("note", ""),
             }
+            if ((patches[key]["expected_relocations"] is None) !=
+                    (patches[key]["replacement_relocations"] is None)):
+                raise ValueError(
+                    f"word patch for {key[0]} at 0x{key[1]:X} must declare "
+                    "both relocation fields"
+                )
     return patches
+
+
+def parse_relocation_spec(value):
+    if value is None or not value.strip():
+        return None
+    if value.strip() == "-":
+        return []
+
+    relocations = []
+    for item in value.split(";"):
+        relocation_type, separator, symbol = item.strip().partition(":")
+        if not separator or not relocation_type or not symbol:
+            raise ValueError(f"invalid relocation specification: {value}")
+        relocations.append((relocation_type, symbol))
+    return relocations
 
 
 def emit_padded_assembly(
@@ -132,17 +161,7 @@ def emit_padded_assembly(
         else:
             for relative in range(0, symbol["size"], 4):
                 compact_offset = start + relative
-                for relocation_name, relocation_symbol in relocations.get(
-                    compact_offset, []
-                ):
-                    if (
-                        rodata_symbol is not None
-                        and relocation_symbol == ".rodata"
-                    ):
-                        relocation_symbol = rodata_symbol
-                    output.append(
-                        f".reloc ., {relocation_name}, {relocation_symbol}"
-                    )
+                word_relocations = list(relocations.get(compact_offset, []))
                 word = int.from_bytes(
                     text[compact_offset:compact_offset + 4], "big"
                 )
@@ -155,8 +174,27 @@ def emit_padded_assembly(
                             f"expected 0x{patch['expected']:08X}, "
                             f"compiled 0x{word:08X}"
                         )
+                    expected_relocations = patch["expected_relocations"]
+                    if (expected_relocations is not None and
+                            word_relocations != expected_relocations):
+                        raise ValueError(
+                            f"stale relocations for {name}+0x{relative:X}: "
+                            f"expected {expected_relocations}, "
+                            f"compiled {word_relocations}"
+                        )
+                    if expected_relocations is not None:
+                        word_relocations = patch["replacement_relocations"]
                     word = patch["replacement"]
                     applied_patches.add(patch_key)
+                for relocation_name, relocation_symbol in word_relocations:
+                    if (
+                        rodata_symbol is not None
+                        and relocation_symbol == ".rodata"
+                    ):
+                        relocation_symbol = rodata_symbol
+                    output.append(
+                        f".reloc ., {relocation_name}, {relocation_symbol}"
+                    )
                 output.append(f".word 0x{word:08X}")
             emitted_size = symbol["size"]
         output.extend((f".size {name}, . - {name}", ""))

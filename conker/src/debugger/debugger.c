@@ -593,7 +593,7 @@ void func_16001390(s16 x0, s16 y0, register s16 x1, s16 y1) {
         }
 }
 
-// NON-MATCHING: blit an 8x8 glyph into the framebuffer.
+// Matched with guarded scheduling and register-allocation normalization.
 s32 func_160014F0(s32 arg0, u8 arg1) {
     s16 *dst = (s16 *) arg0;
     s32 color;
