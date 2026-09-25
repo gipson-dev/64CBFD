@@ -126,13 +126,13 @@ s32 func_15087CC0() {
 }
 
 void func_15087DCC(s32 arg0, s32 arg1) {
-    u8 *rec = D_800872A0;
+    u8 *rec;
     s32 value;
 
-    if (rec == 0) {
+    if (D_800872A0 == 0) {
         return;
     }
-    rec = (u8 *) (arg0 * 0x84 + (s32) rec);
+    rec = (u8 *) (arg0 * 0x84 + (s32) D_800872A0);
     if (*(s8 *) (rec + 0x2F) == arg1) {
         return;
     }

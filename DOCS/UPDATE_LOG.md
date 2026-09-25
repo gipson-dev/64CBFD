@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game global-base pointer byte-exact
+
+- Completed `func_15087DCC`: 34 words and zero linked differences.
+- Testing `D_800872A0` directly before assigning the indexed `rec` pointer
+  keeps the global base in retail register `v0` and the computed record in
+  `v1`. The original frame and spill offsets remain intact.
+- Direct comparison reports **34 / 34** retail words exact. Fresh scan:
+  **2546 / 5493 (46.35%)** overall and **1978 / 4804 (41.17%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Game stack-local layout byte-exact
 
 - Completed `func_15071A64`: 45 words and zero linked differences.
