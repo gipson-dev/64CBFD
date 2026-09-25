@@ -32,6 +32,9 @@ RELOCATION_NAMES = {
     4: "R_MIPS_26",
     5: "R_MIPS_HI16",
     6: "R_MIPS_LO16",
+    # Original shared collision frames branch to labels in neighboring bodies.
+    # Preserve the linker-relative branch so padding can relocate both ends.
+    10: "R_MIPS_PC16",
 }
 
 
