@@ -19,6 +19,7 @@ s32 func_15063570() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_90840/func_15063628.s")
 
+// Matched with guarded nested-pointer register normalization.
 void func_150636A4(u8 *arg0) {
     u8 *temp_v0 = *(u8 **) (*(u32 *) (arg0 + 0x31C) + 0xB0);
 

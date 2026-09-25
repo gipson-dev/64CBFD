@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,493 / 6,038 (90.97%) | 2,540 / 5,493 (46.24%) | 1 | 2,952 |
+| Total | 5,493 / 6,038 (90.97%) | 2,541 / 5,493 (46.26%) | 1 | 2,951 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,804 / 5,318 (90.33%) | 1,972 / 4,804 (41.05%) | 0 | 2,832 |
+| Game | 4,804 / 5,318 (90.33%) | 1,973 / 4,804 (41.07%) | 0 | 2,831 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -48,6 +48,8 @@ The next triage restored the original sine/cosine assembly slice beginning at
 [Working Note 020](WORKING_NOTES/020-game-trigonometry-assembly-restoration-20260925.md).
 The following source-level pass completed `func_150849A0`; see
 [Working Note 021](WORKING_NOTES/021-game-indexed-byte-lookup-match-20260925.md).
+The next guarded register-lifetime pass completed `func_150636A4`; see
+[Working Note 022](WORKING_NOTES/022-game-nested-pointer-update-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

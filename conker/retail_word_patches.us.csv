@@ -459,3 +459,6 @@ game_1944C0,func_1516968C,0x028,0x908F000C,0x90AF0000,-,-,Load comparison byte f
 game_1944C0,func_1516968C,0x02C,0x90B80000,0x9098000C,-,-,Load comparison byte from arg0 second,
 game_1944C0,func_151696DC,0x00C,0x00001025,0x24C60000,-,R_MIPS_LO16:D_800DD198,Schedule slot-table low half before count branch,
 game_1944C0,func_151696DC,0x014,0x24C60000,0x00001025,R_MIPS_LO16:D_800DD198,-,Initialize loop index in count-branch delay slot,
+generated_90840,func_150636A4,0x010,0x8C43031C,0x8C45031C,-,-,Keep nested pointer in retail argument register,
+generated_90840,func_150636A4,0x01C,0x10600009,0x10A00009,-,-,Test nested pointer in retail argument register,
+generated_90840,func_150636A4,0x030,0xA06F0195,0xA0AF0195,-,-,Store through nested pointer in retail argument register,

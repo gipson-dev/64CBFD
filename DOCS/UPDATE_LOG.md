@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game nested-pointer update byte-exact
+
+- Completed `func_150636A4`: 19 words and zero linked differences.
+- Preserved its maintained one-argument C body and added three
+  expected-word-guarded normalizations that keep the nested object pointer in
+  retail register `a1` across its null test and byte store.
+- Direct comparison reports **19 / 19** retail words exact. Fresh scan:
+  **2541 / 5493 (46.26%)** overall and **1973 / 4804 (41.07%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Game indexed-byte lookup byte-exact
 
 - Completed `func_150849A0`: 11 words and zero linked differences.
