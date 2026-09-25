@@ -37,6 +37,13 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 | Game | 1,964 / 4,808 (40.85%) | 0 | 2,844 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+The full debugger inventory is complete: all 181 C-classified tracked rows are
+linked byte-exact, and the sole remaining assembly row, the original
+handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
+40 retail words. It remains assembly by design because IDO C cannot emit its
+`mtc0`, `tlbr`, and `mfc0` instruction sequence. Thus all 182 debugger rows
+are accounted for and exact; 181 / 181 is only the C-matcher denominator.
+
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,532, while
 481 functions moved from C back to assembly. The paired event-swap pass added
@@ -65,8 +72,9 @@ end-to-end gameplay acceptance.
 
 1. The restoration baseline is banked. Do not fold a broad conversion batch
    into it; future work should start from a new focused commit.
-2. Debugger is complete at 181 / 181 linked byte-exact C functions. Preserve
-   the guarded `func_16000B14` normalization while broader matching continues.
+2. Debugger is complete: 181 / 181 C-classified rows and the one handwritten
+   assembly routine are linked byte-exact. Preserve the guarded
+   `func_16000B14` normalization while broader matching continues.
 3. `func_15135480` and the four former one-difference game rows are complete.
    Re-triage the two-difference game queue, beginning with the smallest
    non-placeholder bodies, before adding another guarded normalization.
@@ -85,5 +93,7 @@ The completed context display and its guarded allocation normalization are in
 [Working Note 007](WORKING_NOTES/007-debugger-context-display-byte-match-20260925.md).
 The four completed game near-matches and generated-slice patch support are in
 [Working Note 012](WORKING_NOTES/012-generated-near-match-normalization-20260925.md).
+The final debugger inventory and handwritten-routine byte audit are in
+[Working Note 013](WORKING_NOTES/013-debugger-completion-audit-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

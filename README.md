@@ -114,6 +114,10 @@ not a regression in buildability or a byte-matching gain.
 | Game | `[##########--------------]` 1,964 / 4,808 (40.85%) | 0 | 2,844 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
+Debugger is complete across its full 182-row inventory. The one row outside
+the C denominator is the original handwritten CP0/TLB routine
+`func_16003650`; its complete 40-word linked extent also matches retail.
+
 The sole address-only blocker is `func_10012588`; its C instructions match,
 but its call still resolves to the wrong linked target. Regenerate the
 measurements with:

@@ -217,6 +217,11 @@ candidate before treating it as an ordinary C conversion target.
 | Game | `[##########--------------]` 1,964 / 4,808 (40.85%) | 0 | 2,844 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
+The debugger section is fully complete: 181 C-classified rows match through
+the linked scanner, and the sole original handwritten assembly row,
+`func_16003650`, independently matches all 40 retail words. Its retained
+assembly representation is intentional CP0/TLB code, not unfinished C work.
+
 `match-progress` compares linked functions by symbol against pristine retail
 bytes at name-implied addresses. Add `LIST=1` to list every non-exact function
 from the smallest real diff upward. The current sole address-only blocker is

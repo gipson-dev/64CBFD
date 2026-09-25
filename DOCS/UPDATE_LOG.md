@@ -16,6 +16,14 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Debugger completion accounting verified
+
+- Audited all 182 tracked debugger rows: 181 C-classified rows are linked
+  byte-exact and the sole assembly row is original handwritten CP0/TLB code.
+- Compared the complete 40-word `func_16003650` linked extent directly with
+  retail; all 40 words match. There is no remaining debugger work hidden by
+  the 181 / 182 raw-conversion figure.
+
 ### Four game near-matches byte-exact
 
 - Completed `func_150AF2E0`, `func_151061EC`, `func_15144A74`, and

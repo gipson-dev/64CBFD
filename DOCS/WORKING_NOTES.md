@@ -119,6 +119,9 @@ The context-display result is in
 [Working Note 007](WORKING_NOTES/007-debugger-context-display-byte-match-20260925.md).
 The completed one-difference game queue is in
 [Working Note 012](WORKING_NOTES/012-generated-near-match-normalization-20260925.md).
+The final debugger inventory audit, including the exact handwritten CP0/TLB
+routine, is in
+[Working Note 013](WORKING_NOTES/013-debugger-completion-audit-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

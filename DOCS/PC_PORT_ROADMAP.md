@@ -13,6 +13,12 @@ measured decomp checkpoint is:
 | Game | 4,808 / 5,318 (90.41%) | 1,964 / 4,808 (40.85%) | 0 | 2,844 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
+Debugger is fully accounted for across all 182 rows. The table keeps the raw
+conversion distinction because `func_16003650` is original handwritten
+CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
+its words match retail. There is no remaining debugger conversion or matching
+work.
+
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
 `func_16000590`, `func_16001044`, `func_1600078C`, and `func_16000B14` are
@@ -21,6 +27,8 @@ game routine `func_15135480` and former one-difference rows `func_150AF2E0`,
 `func_151061EC`, `func_15144A74`, and `func_151ACB60` are also byte-exact. See
 [Current Decomp Status](CURRENT_STATUS.md) and
 [Working Note 012](WORKING_NOTES/012-generated-near-match-normalization-20260925.md).
+The complete debugger accounting is recorded in
+[Working Note 013](WORKING_NOTES/013-debugger-completion-audit-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
