@@ -1,8 +1,6 @@
-# 64CBFD
+# Conker's Bad Fur Day (N64) Decompilation
 
 DOCS/PC_PORT_ROADMAP.md
-
-# Conker's Bad Fur Day (N64) Decompilation
 
 A work-in-progress decompilation of *Conker's Bad Fur Day* for Nintendo 64.
 The project reconstructs the original game code and data in a form that can be
