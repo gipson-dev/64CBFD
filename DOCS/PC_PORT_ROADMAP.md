@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,492 / 6,038 (90.96%) | 2,547 / 5,492 (46.38%) | 1 | 2,944 |
+| Total | 5,491 / 6,038 (90.94%) | 2,547 / 5,491 (46.38%) | 1 | 2,943 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,803 / 5,318 (90.32%) | 1,979 / 4,803 (41.20%) | 0 | 2,824 |
+| Game | 4,802 / 5,318 (90.30%) | 1,979 / 4,802 (41.21%) | 0 | 2,823 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -66,6 +66,9 @@ The next guarded register-lifetime pass completed `func_1509D054`; see
 The following classification pass restored `func_150A7A00` as its original
 synthetic-return assembly trampoline; see
 [Working Note 029](WORKING_NOTES/029-game-synthetic-return-trampoline-20260925.md).
+The next classification pass restored handwritten PRNG seed setter
+`func_150ADACC`; see
+[Working Note 030](WORKING_NOTES/030-game-prng-seed-setter-restoration-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

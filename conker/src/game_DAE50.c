@@ -125,7 +125,5 @@ f32 func_150ADA68(void) {
     return (f32)((s32)seed & 0xFFFF) * D_8009F740;
 }
 
-// PRNG seed setter (see handwritten-assembly note above func_150ADA20):
-void func_150ADACC(u32 arg0) {
-    D_800885B0 = arg0 + 1;
-}
+// PRNG seed setter (see handwritten-assembly note above func_150ADA20).
+#pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADACC.s")

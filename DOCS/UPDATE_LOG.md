@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Original PRNG seed setter restored
+
+- Replaced the maintained C equivalent for `func_150ADACC` with its original
+  handwritten nine-word assembly extent. This preserves retail's `daddiu`,
+  relocated 64-bit seed store, otherwise dead `li a0, 0`, and alignment words.
+- Direct comparison reports **9 / 9** retail words exact. This is a
+  classification correction, so the exact numerator remains **2547**; the
+  fresh scan is **2547 / 5491 (46.38%)** overall and
+  **1979 / 4802 (41.21%)** game.
+
 ### Original synthetic-return trampoline restored
 
 - Replaced false zero-return C placeholder `func_150A7A00` with its original

@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, synthetic-return trampoline restored).** The current
-linked checkpoint is `2547 / 5492 (46.38%)` exact C functions, with one
-address-drift blocker and 2,944 genuinely different C functions. The tree
-contains 546 raw-assembly functions, so the higher percentage than July is
+**Active (2026-09-25, handwritten PRNG setter restored).** The current linked
+checkpoint is `2547 / 5491 (46.38%)` exact C functions, with one
+address-drift blocker and 2,943 genuinely different C functions. The tree
+contains 547 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
 
@@ -116,8 +116,9 @@ guarded call-argument register normalization, `func_15071A64` now matches from
 corrected stack-local declaration order, `func_15087DCC` now matches by
 separating its global base load from the indexed record pointer, and
 `func_1509D054` now matches through guarded call-argument lifetime
-normalization, and false C placeholder `func_150A7A00` is restored to its
-original synthetic-return trampoline. Continue at 9-word `func_150ADACC`. Keep
+normalization, false C placeholder `func_150A7A00` is restored to its original
+synthetic-return trampoline, and `func_150ADACC` is restored to its handwritten
+PRNG seed-setter body. Continue at 13-word `func_150BDB3C`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -171,6 +172,8 @@ The completed optional-pointer call lifetime is in
 [Working Note 028](WORKING_NOTES/028-game-optional-pointer-call-match-20260925.md).
 The restored synthetic-return trampoline is in
 [Working Note 029](WORKING_NOTES/029-game-synthetic-return-trampoline-20260925.md).
+The restored handwritten PRNG seed setter is in
+[Working Note 030](WORKING_NOTES/030-game-prng-seed-setter-restoration-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size
