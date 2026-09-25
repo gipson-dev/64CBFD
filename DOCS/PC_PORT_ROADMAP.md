@@ -1,5 +1,53 @@
 # PC Port Roadmap located in another project folder
 
+## Cross-project progress - 2026-09-25
+
+The active Windows port remains in sibling `64CBFDOGL`; this repository owns
+the guest decompilation and retail-byte evidence used by that port. The current
+measured decomp checkpoint is:
+
+| Section | C functions | Byte-exact C | Address drift | Still different |
+| --- | ---: | ---: | ---: | ---: |
+| Total | 5,497 / 6,038 (91.04%) | 2,526 / 5,497 (45.95%) | 1 | 2,970 |
+| Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
+| Game | 4,808 / 5,318 (90.41%) | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
+| Debugger | 181 / 182 (99.45%) | 180 / 181 (99.45%) | 0 | 1 |
+
+The current debugger restoration batch is banked in focused commits.
+`func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
+`func_16000590`, `func_16001044`, and `func_1600078C` are byte-exact in the
+linked ELF. The last debugger target is `func_16000B14`, with 277 real
+differences across its 286-word retail body. See
+[Current Decomp Status](CURRENT_STATUS.md) and
+[Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
+
+Current host-port progression and acceptance boundaries:
+
+- Training reaches Windy in normal `RelWithDebInfo`; the retained save reloads
+  and the second-level Chapters unlock was user-verified.
+- Windy's east-pool collision and swimming path are restored. Authored water,
+  current and natural dry-ground exit were verified; this was a host-only
+  repair and does not require a guest-decomp transplant. See
+  [host Note 744](../../64CBFDOGL/DOCS/WORKING_NOTES/744-windy-water-collision-and-swimming-restored-20260924.md).
+- The `FLY` cheat is implemented and should be used for mobility while
+  scouting and resuming broad single-player progression. The accepted code is
+  exactly `FLY`; this does not waive ordinary-movement checks for final route
+  acceptance.
+- The user reports the current play position is the Death/Grim Reaper area.
+  Treat that as the next manual resume marker, not as complete level or visual
+  acceptance until a dated runtime witness is recorded in the host project.
+- Disabling right-stick C-button emulation (`controller_c_stick: 0`) was
+  confirmed to stop controller/camera drift. It is a temporary configuration
+  workaround and must be undone during the future matched camera/input pass.
+- Ordinary host work remains `RelWithDebInfo`. The latest authorized Release
+  artifact is frozen; do not rebuild or launch Release without a new explicit
+  instruction.
+
+These host facts are summarized here for dependency planning. The authoritative
+implementation queue remains the sibling's
+[current status](../../64CBFDOGL/DOCS/CURRENT_STATUS.md) and
+[active roadmap](../../64CBFDOGL/DOCS/roadmap.md).
+
 ## PC-port cross-project update - 2026-09-23
 
 The sibling `64CBFDOGL` host port now completes Training through the natural Windy entrance and a fresh retained-save reload in RelWithDebInfo; repeat traversal used FLY. The user has **VERIFIED the second-level Chapters unlock**. The Gargoyle held-release repair uses original `func_15073A50` (232 bytes); guest/ROM builds and exact-byte checks are recorded in [host Note 738](../../64CBFDOGL/DOCS/WORKING_NOTES/738-gargoyle-actor-and-original-held-release-20260923.md). This is scoped progression evidence, not complete retail presentation or full-game acceptance.
@@ -28,8 +76,9 @@ Before Phase 1 tooling work starts, pick one approach:
   (SDL2/GLFW + OpenGL/Vulkan), function by function, discarding libultra.
   This is the traditional path older N64 PC ports used. It only works well
   for code that has already been decompiled and matched, so it's gated by
-  decomp progress (currently 98.34% by converted bytes and 99.01% by tracked
-  functions, see PROJECT.md).
+  decomp progress. The restored-assembly baseline currently measures 85.67%
+  by converted bytes and 91.04% by tracked functions; byte-exact C is measured
+  separately above and in [PROJECT.md](PROJECT.md#current-progress).
 - **Static recompilation** - run a MIPS-to-C recompiler (the approach used by
   projects such as [N64Recomp](https://github.com/N64Recomp/N64Recomp),
   Zelda64Recomp, and the sm64 static-recomp forks) over the ROM's compiled
@@ -51,6 +100,7 @@ This is the decompilation project as it exists today. It isn't blocking to
 every later phase cheaper and safer:
 
 - [ ] Continue matching `init`/`game`/`debugger` sections (`make -C conker progress`).
+      Debugger is now 180 / 181 byte-exact; finish `func_16000B14` next.
 - [ ] Finish mapping the ROM layout (see the layout notes in [PROJECT.md](PROJECT.md#rom-layout)).
 - [ ] Document the RSP microcode(s) in use (F3DEX-family display lists,
       `libultra`'s `gbi.h`/`gs2dex.h` already in `conker/include/2.0L/PR/`)
