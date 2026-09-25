@@ -812,7 +812,7 @@ struct252 *func_1505C1A4(struct127 *arg0) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505C1E4.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505C7D8.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505C7D8.s")
-// NON-MATCHING: 1 line + regalloc
+// Matched with guarded call-argument register normalization.
 s32 func_1505D024(struct127 *arg0, s32 arg1, u16 arg2, s32 arg3) {
     s32 pad;
     s32 ret;

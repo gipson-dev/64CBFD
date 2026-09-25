@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game call-argument register match
+
+- Completed `func_1505D024`: 104 words and zero linked differences.
+- Preserved its maintained C body and added three expected-word-guarded
+  normalizations: reuse the live object pointer for one call argument and keep
+  the final stack argument constant in retail scratch register `t1`. No
+  relocations are affected.
+- Direct comparison reports **104 / 104** retail words exact. Fresh scan:
+  **2544 / 5493 (46.31%)** overall and **1976 / 4804 (41.13%)** game, with
+  debugger unchanged at **181 / 181**. No three-difference game rows remain.
+
 ### Game optional callback byte-exact
 
 - Completed `func_15199980`: 36 words and zero linked differences.

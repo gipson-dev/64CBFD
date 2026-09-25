@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,543 / 5,493 (46.30%) | 1 | 2,949 |
+| Total | 2,544 / 5,493 (46.31%) | 1 | 2,948 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,975 / 4,804 (41.11%) | 0 | 2,829 |
+| Game | 1,976 / 4,804 (41.13%) | 0 | 2,828 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,13 +45,13 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,543, while
+denominator driven: the exact count is now 2,544, while
 485 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
 pass completed `func_15135480`, the final four one-difference game rows, and
-the subsequent small game queue through `func_15199980`.
+the subsequent small game queue through `func_1505D024`.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -81,8 +81,9 @@ end-to-end gameplay acceptance.
    `func_150636A4` is byte-exact through a guarded nested-pointer lifetime
    normalization, and `func_1514672C` is byte-exact through a guarded
    relocation-preserving load reorder. `func_15199980` is byte-exact from an
-   explicit callback-pointer lifetime. Continue the last three-difference
-   game row at 104-word `func_1505D024`.
+   explicit callback-pointer lifetime, and `func_1505D024` is byte-exact
+   through guarded call-argument register normalization. Continue the
+   four-difference game queue at 45-word `func_15071A64`.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -122,5 +123,7 @@ The completed float-bound load reorder is in
 [Working Note 023](WORKING_NOTES/023-game-float-bound-load-order-match-20260925.md).
 The completed optional-callback cleanup is in
 [Working Note 024](WORKING_NOTES/024-game-optional-callback-match-20260925.md).
+The completed call-argument normalization and closed three-difference queue are
+in [Working Note 025](WORKING_NOTES/025-game-call-argument-register-match-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

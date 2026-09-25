@@ -465,3 +465,6 @@ generated_90840,func_150636A4,0x030,0xA06F0195,0xA0AF0195,-,-,Store through nest
 game_16EE20,func_1514672C,0x000,0xC4800000,0x3C010000,-,R_MIPS_HI16:D_800A56C4,Schedule threshold high half before object component load,
 game_16EE20,func_1514672C,0x004,0x3C010000,0xC4220000,R_MIPS_HI16:D_800A56C4,R_MIPS_LO16:D_800A56C4,Schedule threshold low load before object component load,
 game_16EE20,func_1514672C,0x008,0xC4220000,0xC4800000,R_MIPS_LO16:D_800A56C4,-,Schedule object component load after threshold pair,
+game_83300,func_1505D024,0x134,0x8FA50040,0x01002825,-,-,Reuse live object pointer for call argument,
+game_83300,func_1505D024,0x160,0x24080007,0x24090007,-,-,Keep final constant in retail scratch register,
+game_83300,func_1505D024,0x164,0xAFA80018,0xAFA90018,-,-,Store final constant from retail scratch register,
