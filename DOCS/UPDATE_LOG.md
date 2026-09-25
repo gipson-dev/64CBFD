@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Debugger context display byte-exact
+
+- Completed `func_16000590` with its retail 79-word linked body. Reusing the
+  loaded status word for its shifted bitfield restores the required body size
+  and value lifetime.
+- Added 53 expected-word-guarded normalizations for the retained `s5` context
+  pointer, saved-register layout, volatile-register coloring, call scheduling,
+  loop tail, epilogue, and six relocation transfers.
+- Direct comparison reports **0 / 79 differing words**. The fresh project scan
+  reports **2524 / 5497 overall (45.92%)** and **178 / 181 debugger (98.34%)**.
+  Resume at `func_16001044` (151 real differences across 155 words).
+
 ### Debugger `_Printf` byte-exact
 
 - Completed `func_16001BB4` with its retail 402-word linked body while keeping

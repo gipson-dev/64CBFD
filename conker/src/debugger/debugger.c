@@ -167,7 +167,6 @@ void func_16000424(struct118 *arg0) {
 void func_16000590(void *arg0) {
     register u8 *var_s5 = arg0;
     s32 temp_s2 = *(s32 *) (var_s5 + 0x12C);
-    u32 var_s2;
     s32 var_s0;
     s32 var_s1;
     s32 var_v0;
@@ -178,16 +177,16 @@ void func_16000590(void *arg0) {
     func_160012B0(3, D_160047A4);
     func_16001044(0xA, 0, temp_s2);
 
-    var_s2 = (u32) temp_s2 >> 12;
+    temp_s2 = (u32) temp_s2 >> 12;
     var_s0 = 0x2C;
     var_s1 = 0;
     do {
-        if (var_s2 & 1) {
+        if (temp_s2 & 1) {
             func_160012B0(var_s0, D_16003B30[var_s1]);
             var_s0 += 0x20;
         }
         var_s1 += 1;
-        var_s2 >>= 1;
+        temp_s2 = (u32) temp_s2 >> 1;
     } while (var_s1 < 6);
 
     var_s1 = 0;

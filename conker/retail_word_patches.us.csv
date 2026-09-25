@@ -41,3 +41,56 @@ debugger_257350,func_16001BB4,0x5AC,0x00000000,0x26470001,,,Fill the likely dela
 debugger_257350,func_16001BB4,0x5F8,0x10000006,0x10000007,,,Retarget callback failure past the inserted scheduling word,
 debugger_257350,func_16001BB4,0x60C,0x1000FE94,0x26470001,,,Keep the shared format increment block,
 debugger_257350,func_16001BB4,0x610,0x26470001,0x1000FE94,,,Move the loop back edge after the increment,0x90F00000
+debugger,func_16000590,0x4,0xAFBF002C,0xAFB50028,-,-,Save the retained context pointer in s5
+debugger,func_16000590,0x8,0xAFB40028,0x0080A825,-,-,Retain the context pointer in s5
+debugger,func_16000590,0xC,0xAFB30024,0xAFBF002C,-,-,Restore retail saved-register order
+debugger,func_16000590,0x10,0xAFB20020,0xAFB40024,-,-,Restore retail saved-register order
+debugger,func_16000590,0x14,0xAFB1001C,0xAFB30020,-,-,Restore retail saved-register order
+debugger,func_16000590,0x18,0xAFB00018,0xAFB2001C,-,-,Restore retail saved-register order
+debugger,func_16000590,0x1C,0xAFA40030,0xAFB10018,-,-,Restore retail saved-register order
+debugger,func_16000590,0x20,0x8FAE0030,0xAFB00014,-,-,Restore retail saved-register order
+debugger,func_16000590,0x2C,0x24A50000,0x8EB2012C,R_MIPS_LO16:D_160047A4,-,Load the context field through s5
+debugger,func_16000590,0x30,0x24040003,0x24A50000,-,R_MIPS_LO16:D_160047A4,Schedule the label low half after the context load
+debugger,func_16000590,0x38,0x8DD2012C,0x24040003,-,-,Fill the first call delay slot with the row constant
+debugger,func_16000590,0x4C,0x00127B02,0x00127302,-,-,Use t6 for the first bitfield shift
+debugger,func_16000590,0x54,0x01E09025,0x01C09025,-,-,Copy the shifted bitfield from t6
+debugger,func_16000590,0x5C,0x00008825,0x26730000,-,R_MIPS_LO16:D_16003B30,Schedule the label table low half before loop initialization
+debugger,func_16000590,0x60,0x26730000,0x00008825,R_MIPS_LO16:D_16003B30,-,Schedule loop initialization after the label table address
+debugger,func_16000590,0x64,0x32580001,0x324F0001,-,-,Use t7 for the bit test
+debugger,func_16000590,0x68,0x13000006,0x11E00006,-,-,Branch on the t7 bit test
+debugger,func_16000590,0x70,0x0011C880,0x0011C080,-,-,Use t8 for the label-table index
+debugger,func_16000590,0x74,0x02794021,0x0278C821,-,-,Use t9 for the label-table entry
+debugger,func_16000590,0x7C,0x8D050000,0x8F250000,-,-,Load the label through t9
+debugger,func_16000590,0x8C,0x00124842,0x00124042,-,-,Use t0 for the loop-back shift
+debugger,func_16000590,0x94,0x01209025,0x01009025,-,-,Copy the shifted bitfield from t0
+debugger,func_16000590,0x98,0x3C0A0000,0x3C090000,R_MIPS_HI16:D_16003B28,R_MIPS_HI16:D_16003B28,Use t1 for the display-mode address
+debugger,func_16000590,0x9C,0x814A0000,0x81290000,R_MIPS_LO16:D_16003B28,R_MIPS_LO16:D_16003B28,Load the display mode through t1
+debugger,func_16000590,0xA8,0x15410003,0x15210003,-,-,Branch on the t1 display mode
+debugger,func_16000590,0xC0,0x8FAC0030,0x02349021,-,-,Initialize the displayed index in s2
+debugger,func_16000590,0xC4,0x02809025,0x3C140000,-,R_MIPS_HI16:D_160047AC,Load the row-label high half into s4
+debugger,func_16000590,0xC8,0x00025880,0x00025080,-,-,Use t2 for the context-table offset
+debugger,func_16000590,0xCC,0x3C140000,0x02AA9821,R_MIPS_HI16:D_160047AC,-,Form the context-table pointer from s5 and t2
+debugger,func_16000590,0xD4,0x016C9821,0x02002025,-,-,Start the display loop with its row coordinate
+debugger,func_16000590,0xD8,0x02002025,0x0C000000,-,R_MIPS_26:func_160012B0,Schedule the row-label call
+debugger,func_16000590,0xDC,0x0C000000,0x02802825,R_MIPS_26:func_160012B0,-,Fill the row-label call delay slot
+debugger,func_16000590,0xE0,0x02802825,0x26040002,-,-,Prepare the index column
+debugger,func_16000590,0xE4,0x26040002,0x24050001,-,-,Select decimal formatting for the index
+debugger,func_16000590,0xE8,0x24050001,0x0C000000,-,R_MIPS_26:func_16001044,Schedule the index draw call
+debugger,func_16000590,0xEC,0x0C000000,0x02403025,R_MIPS_26:func_16001044,-,Fill the index draw call delay slot
+debugger,func_16000590,0xF0,0x02403025,0x26040005,-,-,Prepare the value column
+debugger,func_16000590,0xF4,0x26040005,0x24050002,-,-,Select hexadecimal formatting for the value
+debugger,func_16000590,0xF8,0x24050002,0x0C000000,-,R_MIPS_26:func_16001044,Schedule the value draw call
+debugger,func_16000590,0xFC,0x0C000000,0x8E660004,R_MIPS_26:func_16001044,-,Fill the value draw call delay slot
+debugger,func_16000590,0x100,0x8E660004,0x26310001,-,-,Advance the display-loop counter
+debugger,func_16000590,0x104,0x26310001,0x2A210010,-,-,Test the display-loop counter
+debugger,func_16000590,0x108,0x2A210010,0x26730008,-,-,Advance the context-table pointer
+debugger,func_16000590,0x10C,0x26730008,0x26100020,-,-,Advance the display row
+debugger,func_16000590,0x110,0x26100020,0x1420FFF0,-,-,Branch to the display-loop head
+debugger,func_16000590,0x114,0x1420FFF0,0x26520001,-,-,Advance the displayed index in the delay slot
+debugger,func_16000590,0x118,0x26520001,0x8FBF002C,-,-,Restore ra at loop exit
+debugger,func_16000590,0x11C,0x8FBF002C,0x8FB00014,-,-,Restore s0 from the retail frame slot
+debugger,func_16000590,0x120,0x8FB00018,0x8FB10018,-,-,Restore s1 from the retail frame slot
+debugger,func_16000590,0x124,0x8FB1001C,0x8FB2001C,-,-,Restore s2 from the retail frame slot
+debugger,func_16000590,0x128,0x8FB20020,0x8FB30020,-,-,Restore s3 from the retail frame slot
+debugger,func_16000590,0x12C,0x8FB30024,0x8FB40024,-,-,Restore s4 from the retail frame slot
+debugger,func_16000590,0x130,0x8FB40028,0x8FB50028,-,-,Restore s5 from the retail frame slot

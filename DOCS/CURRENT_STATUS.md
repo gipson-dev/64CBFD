@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-09-24
+Last verified: 2026-09-25
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -32,16 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-24:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,523 / 5,497 (45.90%) | 1 | 2,973 |
+| Total | 2,524 / 5,497 (45.92%) | 1 | 2,972 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
 | Game | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | 177 / 181 (97.79%) | 0 | 4 |
+| Debugger | 178 / 181 (98.34%) | 0 | 3 |
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,523, one above July's count, while
+denominator driven: the exact count is now 2,524, two above July's count, while
 481 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
-glyph-blitter, and `_Printf` passes added one each after the restoration baseline.
+glyph-blitter, `_Printf`, and context-display passes added one each after the
+restoration baseline.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -63,9 +64,10 @@ end-to-end gameplay acceptance.
 
 1. The restoration baseline is banked. Do not fold a broad conversion batch
    into it; future work should start from a new focused commit.
-2. Resume debugger `func_16000590`, currently 52 real differences across 79
-   words. Its logic and loop shape are present; isolate the original context
-   pointer lifetime and saved-register allocation before broader rewrites.
+2. Resume debugger `func_16001044`, currently 151 real differences across 155
+   words. It is the decimal/hex/float drawing dispatcher used by the completed
+   context display; establish its frame and mode-dispatch shape before tuning
+   register allocation.
 3. Keep `func_15135480` as a game follow-up candidate. It has the same
    branch-operand mismatch solved in the paired event-swap routines, plus one
    additional difference that still needs isolation.
@@ -80,3 +82,5 @@ The completed pair and compiler-shape evidence are in
 [Working Note 002](WORKING_NOTES/002-paired-event-swap-byte-match-20260924.md).
 The completed debugger rectangle fill and guarded scheduling normalization are
 in [Working Note 003](WORKING_NOTES/003-debugger-rectangle-fill-byte-match-20260924.md).
+The completed context display and its guarded allocation normalization are in
+[Working Note 007](WORKING_NOTES/007-debugger-context-display-byte-match-20260925.md).
