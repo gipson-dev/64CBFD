@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game table-stride calculation byte-exact
+
+- Completed all 36 words of `func_150770E4` without adding patch rows.
+- Re-expressed the float-table lookup as an equivalent 812-byte stride. IDO
+  then kept the complete offset calculation in retail's `t8`, freeing `t9`
+  for the threshold load and resolving all six differences naturally.
+- Independent comparison of the complete 144-byte linked and retail spans
+  produced SHA-256
+  `7d295305c79d2c334bf958b7ca9a4d50402bb1c8c0ded4d1a797ec923610ec08`.
+  Fresh scan: **2554 / 5490 (46.52%)** overall and
+  **1986 / 4801 (41.37%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game forwarded-call ABI byte-exact
 
 - Completed all 12 words of `func_151B2FA0` without adding patch rows.

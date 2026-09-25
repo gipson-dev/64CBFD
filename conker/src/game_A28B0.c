@@ -678,9 +678,8 @@ void func_15076FA8(void) {
     }
 }
 
-// NON-MATCHING: JUSTREG (?)
 void func_150770E4(void) {
-    if (D_800CC30C[D_800D154C->unk222 * 203] < D_800D1892) {
+    if (*(f32 *)((u8 *)D_800CC30C + D_800D154C->unk222 * 812) < D_800D1892) {
         func_15075400(D_800D1893);
     }
 }

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,553 / 5,490 (46.50%) | 1 | 2,936 |
+| Total | 2,554 / 5,490 (46.52%) | 1 | 2,935 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,985 / 4,801 (41.35%) | 0 | 2,816 |
+| Game | 1,986 / 4,801 (41.37%) | 0 | 2,815 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,553, while
+denominator driven: the exact count is now 2,554, while
 488 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -59,7 +59,8 @@ match for `func_150F33B0`, and the relocation-preserving opening-load match
 for `func_151254F4`; `func_1515FB70` was then restored from a false C model
 to its original nine-word assembly extent, followed by the guarded register
 normalization for `func_1505841C`, indexed-slot clear `func_150F02A0`, and
-call-ABI correction for `func_151B2FA0`.
+call-ABI correction for `func_151B2FA0`, and byte-offset expression recovery
+for `func_150770E4`.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -108,7 +109,9 @@ end-to-end gameplay acceptance.
    base-pointer and index lifetimes explicit and guarding the remaining
    temporary-register choices. `func_151B2FA0` is byte-exact after correcting
    its forwarded argument and callee declaration from `s16` to `s32`.
-   Continue at 36-word `func_150770E4`, the first six-difference game row.
+   `func_150770E4` is byte-exact after expressing its table lookup as retail's
+   combined 812-byte stride. Continue by classifying eight-word
+   `func_150A7770`, the next six-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -174,5 +177,7 @@ The completed indexed-slot clear is in
 [Working Note 036](WORKING_NOTES/036-game-indexed-slot-clear-match-20260925.md).
 The completed call-ABI correction is in
 [Working Note 037](WORKING_NOTES/037-game-forwarded-call-abi-match-20260925.md).
+The completed table-stride expression recovery is in
+[Working Note 038](WORKING_NOTES/038-game-table-stride-match-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
