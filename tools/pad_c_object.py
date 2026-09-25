@@ -9,9 +9,9 @@ filled gaps before functions at their retail-relative addresses. Oversized
 non-matching functions keep their full compiled bodies in section-local
 overflow regions and use short in-slot jump trampolines, preventing them from
 displacing later functions. An optional guarded table can replace known
-compiler-scheduling words after verifying the compiled input value. Patches
-may also move relocations when both the expected and replacement lists are
-declared explicitly.
+compiler-scheduling words or insert a non-relocated scheduling word after
+verifying the compiled input value. Patches may also move relocations when
+both the expected and replacement lists are declared explicitly.
 """
 
 import argparse
@@ -64,6 +64,7 @@ def load_word_patches(path, filename):
                 "replacement_relocations": parse_relocation_spec(
                     row.get("replacement_relocations")
                 ),
+                "insert_after": parse_optional_word(row.get("insert_after")),
                 "note": row.get("note", ""),
             }
             if ((patches[key]["expected_relocations"] is None) !=
@@ -73,6 +74,12 @@ def load_word_patches(path, filename):
                     "both relocation fields"
                 )
     return patches
+
+
+def parse_optional_word(value):
+    if value is None or not value.strip():
+        return None
+    return int(value, 0)
 
 
 def parse_relocation_spec(value):
@@ -159,6 +166,16 @@ def emit_padded_assembly(
             overflow.append((overflow_name, symbol))
             emitted_size = retail_size
         else:
+            inserted_size = sum(
+                4
+                for (patch_name, _), patch in word_patches.items()
+                if patch_name == name and patch["insert_after"] is not None
+            )
+            if symbol["size"] + inserted_size > retail_size:
+                raise ValueError(
+                    f"patched {name} is 0x{symbol['size'] + inserted_size:X} "
+                    f"bytes but its retail slot is 0x{retail_size:X}"
+                )
             for relative in range(0, symbol["size"], 4):
                 compact_offset = start + relative
                 word_relocations = list(relocations.get(compact_offset, []))
@@ -196,7 +213,9 @@ def emit_padded_assembly(
                         f".reloc ., {relocation_name}, {relocation_symbol}"
                     )
                 output.append(f".word 0x{word:08X}")
-            emitted_size = symbol["size"]
+                if patch is not None and patch["insert_after"] is not None:
+                    output.append(f".word 0x{patch['insert_after']:08X}")
+            emitted_size = symbol["size"] + inserted_size
         output.extend((f".size {name}, . - {name}", ""))
         current = target + emitted_size
 

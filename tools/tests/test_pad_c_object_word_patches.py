@@ -92,6 +92,84 @@ nop
                 relocations[start + 8], [("R_MIPS_LO16", "target")]
             )
 
+    def test_guarded_word_can_insert_scheduling_word(self):
+        if not shutil.which("mips-linux-gnu-as"):
+            self.skipTest("mips-linux-gnu-as required")
+
+        with tempfile.TemporaryDirectory() as temp_name:
+            work = Path(temp_name)
+            (work / "compact.s").write_text(
+                """
+.section .text,"ax"
+.set noreorder
+.globl sample
+.type sample,@function
+sample:
+addiu $a0,$a0,1
+jr $ra
+nop
+.size sample,.-sample
+.globl next_sample
+.type next_sample,@function
+next_sample:
+jr $ra
+nop
+.size next_sample,.-next_sample
+"""
+            )
+            (work / "layout.csv").write_text(
+                "version,section,filename,function,address,end\n"
+                "us,debugger,fixture,sample,0x16000000,0x16000010\n"
+                "us,debugger,fixture,next_sample,0x16000010,0x16000018\n"
+            )
+            (work / "patches.csv").write_text(
+                "filename,function,offset,expected,replacement,"
+                "expected_relocations,replacement_relocations,note,"
+                "insert_after\n"
+                "fixture,sample,0x8,0x00000000,0x00000000,,,"
+                "insert scheduled load,0x90820000\n"
+            )
+
+            subprocess.run(
+                [
+                    "mips-linux-gnu-as",
+                    "-EB",
+                    "-march=vr4300",
+                    "-o",
+                    "compact.o",
+                    "compact.s",
+                ],
+                cwd=work,
+                check=True,
+                capture_output=True,
+            )
+            padded = emit_padded_assembly(
+                work / "compact.o",
+                work / "layout.csv",
+                "fixture",
+                word_patches_path=work / "patches.csv",
+            )
+            (work / "padded.s").write_text(padded)
+            subprocess.run(
+                [
+                    "mips-linux-gnu-as",
+                    "-EB",
+                    "-march=vr4300",
+                    "-o",
+                    "padded.o",
+                    "padded.s",
+                ],
+                cwd=work,
+                check=True,
+                capture_output=True,
+            )
+
+            text, functions, _ = parse_object(work / "padded.o")
+            start = functions["sample"]["value"]
+            self.assertEqual(functions["sample"]["size"], 0x10)
+            self.assertEqual(struct.unpack_from(">I", text, start + 0xC)[0], 0x90820000)
+            self.assertEqual(functions["next_sample"]["value"], start + 0x10)
+
 
 if __name__ == "__main__":
     unittest.main()

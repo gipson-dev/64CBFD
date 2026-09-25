@@ -413,6 +413,7 @@ $(RETAIL_PAD_PLAIN_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/p
 	rm -f $@.compact $@.padded.s
 
 $(BUILD_DIR)/$(SRC_DIR)/debugger/debugger.c.o: retail_word_patches.us.csv
+$(BUILD_DIR)/$(SRC_DIR)/debugger_257350.c.o: retail_word_patches.us.csv
 endif
 
 $(BUILD_DIR)/%.c.o: %.c

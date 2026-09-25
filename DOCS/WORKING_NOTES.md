@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, debugger glyph blitter match complete).** The current
-linked checkpoint is `2522 / 5497 (45.88%)` exact C functions, with one
-address-drift blocker and 2,974 genuinely different C functions. The tree contains 541 raw-assembly
+**Active (2026-09-25, debugger `_Printf` match complete).** The current linked
+checkpoint is `2523 / 5497 (45.90%)` exact C functions, with one address-drift
+blocker and 2,973 genuinely different C functions. The tree contains 541 raw-assembly
 functions, so the higher percentage than July is denominator-driven and is
 not a matching gain. The non-matching replacement build, outer build, and
 tool checks pass; fresh gameplay was not run.
@@ -100,8 +100,9 @@ guest-restoration, reference-tooling, asset-tooling, and documentation commits.
 Start subsequent byte-matching or conversion work in a new focused commit.
 
 The paired one-difference functions `func_151906E0` and `func_151C1814` and
-debugger `func_16001390`, `func_16000F8C`, and `func_160014F0` now match
-retail. Resume with debugger `func_16001BB4`; keep `func_15135480` as a game
+debugger `func_16001390`, `func_16000F8C`, `func_160014F0`, and
+`func_16001BB4` now match retail. Resume with debugger `func_16000590`; keep
+`func_15135480` as a game
 follow-up because it shares
 the solved operand-order mismatch but has a second difference. Keep
 raw-assembly conversion as a separate workstream. The
@@ -114,6 +115,8 @@ The float-formatter result is in
 [Working Note 004](WORKING_NOTES/004-debugger-float-formatter-byte-match-20260925.md).
 The glyph-blitter result is in
 [Working Note 005](WORKING_NOTES/005-debugger-glyph-blitter-byte-match-20260925.md).
+The `_Printf` result is in
+[Working Note 006](WORKING_NOTES/006-debugger-printf-byte-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

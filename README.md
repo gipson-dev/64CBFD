@@ -108,10 +108,10 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,522 / 5,497 (45.88%) | 1 | 2,974 |
+| Total | `[###########-------------]` 2,523 / 5,497 (45.90%) | 1 | 2,973 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
 | Game | `[##########--------------]` 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | `[#######################-]` 176 / 181 (97.24%) | 0 | 5 |
+| Debugger | `[#######################-]` 177 / 181 (97.79%) | 0 | 4 |
 
 The sole address-only blocker is `func_10012588`; its C instructions match,
 but its call still resolves to the wrong linked target. Regenerate the

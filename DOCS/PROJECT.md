@@ -212,20 +212,19 @@ candidate before treating it as an ordinary C conversion target.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,522 / 5,497 (45.88%) | 1 | 2,974 |
+| Total | `[###########-------------]` 2,523 / 5,497 (45.90%) | 1 | 2,973 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
 | Game | `[##########--------------]` 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | `[#######################-]` 176 / 181 (97.24%) | 0 | 5 |
+| Debugger | `[#######################-]` 177 / 181 (97.79%) | 0 | 4 |
 
 `match-progress` compares linked functions by symbol against pristine retail
 bytes at name-implied addresses. Add `LIST=1` to list every non-exact function
 from the smallest real diff upward. The current sole address-only blocker is
 `func_10012588`.
 
-The exact count is two lower than the July snapshot. The higher percentage
-is primarily caused by the smaller C denominator; the paired event-swap and
-debugger rectangle-fill passes added three exact functions after the
-restoration baseline. See
+The exact count is one above the July snapshot. The higher percentage is still
+primarily caused by the smaller C denominator; focused event-swap and debugger
+passes have added six exact functions after the restoration baseline. See
 [CURRENT_STATUS.md](CURRENT_STATUS.md) for the current resume boundary and
 validation limits.
 

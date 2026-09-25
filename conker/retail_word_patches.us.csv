@@ -1,4 +1,4 @@
-filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note
+filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after
 debugger,func_16001390,0x13C,0x00095040,0x00193C03,,,Schedule row sign extension before stride scaling
 debugger,func_16001390,0x140,0x00193C03,0x00095040,,,Schedule stride scaling after row sign extension
 debugger,func_16000F8C,0x38,0x8FA20054,0x8FA30054,,,Keep raw float bits in v1
@@ -27,3 +27,17 @@ debugger,func_160014F0,0xF4,0x8D8F0000,0x8D980000,,,Load stride into t8
 debugger,func_160014F0,0x100,0x25F8FFF8,0x2719FFF8,,,Subtract glyph width into t9
 debugger,func_160014F0,0x104,0x0018C840,0x00196840,,,Scale row stride into t5
 debugger,func_160014F0,0x10C,0x00591021,0x004D1021,,,Advance destination by t5
+debugger_257350,func_16001BB4,0xC4,0x10000153,0x10000154,,,Retarget early return past the inserted scheduling word,
+debugger_257350,func_16001BB4,0xD4,0x1000014F,0x10000150,,,Retarget early return past the inserted scheduling word,
+debugger_257350,func_16001BB4,0x378,0x100000A6,0x100000A7,,,Retarget callback failure past the inserted scheduling word,
+debugger_257350,func_16001BB4,0x3C4,0x10000093,0x10000094,,,Retarget callback failure past the inserted scheduling word,
+debugger_257350,func_16001BB4,0x424,0x1000007B,0x1000007C,,,Retarget callback failure past the inserted scheduling word,
+debugger_257350,func_16001BB4,0x470,0x10000068,0x10000069,,,Retarget callback failure past the inserted scheduling word,
+debugger_257350,func_16001BB4,0x4D0,0x10000050,0x10000051,,,Retarget callback failure past the inserted scheduling word,
+debugger_257350,func_16001BB4,0x520,0x1000003C,0x1000003D,,,Retarget callback failure past the inserted scheduling word,
+debugger_257350,func_16001BB4,0x580,0x10000024,0x10000025,,,Retarget callback failure past the inserted scheduling word,
+debugger_257350,func_16001BB4,0x5A8,0x13200018,0x53200019,,,Use the retail likely branch to the loop increment,
+debugger_257350,func_16001BB4,0x5AC,0x00000000,0x26470001,,,Fill the likely delay slot with the format increment,
+debugger_257350,func_16001BB4,0x5F8,0x10000006,0x10000007,,,Retarget callback failure past the inserted scheduling word,
+debugger_257350,func_16001BB4,0x60C,0x1000FE94,0x26470001,,,Keep the shared format increment block,
+debugger_257350,func_16001BB4,0x610,0x26470001,0x1000FE94,,,Move the loop back edge after the increment,0x90F00000

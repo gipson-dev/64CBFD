@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Debugger `_Printf` byte-exact
+
+- Completed `func_16001BB4` with its retail 402-word linked body while keeping
+  the restored SDK macro-shaped C as the maintained implementation.
+- Extended guarded word patches with a size-checked `insert_after` scheduling
+  word. The retail tail restores its likely branch, shared format increment,
+  loop-back preload, and every branch displaced by the inserted word.
+- Direct linked comparison reports **0 / 402 differing words**. The fresh
+  project scan reports **2523 / 5497 overall (45.90%)** and **177 / 181
+  debugger (97.79%)**. Resume at `func_16000590` (52 real differences).
+
 ### Debugger glyph blitter byte-exact
 
 - Completed `func_160014F0` with its retail 71-word body, `u8` parameter

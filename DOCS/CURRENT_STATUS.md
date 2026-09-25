@@ -32,16 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-24:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,522 / 5,497 (45.88%) | 1 | 2,974 |
+| Total | 2,523 / 5,497 (45.90%) | 1 | 2,973 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
 | Game | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | 176 / 181 (97.24%) | 0 | 5 |
+| Debugger | 177 / 181 (97.79%) | 0 | 4 |
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,522, equal to July's count, while
+denominator driven: the exact count is now 2,523, one above July's count, while
 481 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
-and glyph-blitter passes added one each after the restoration baseline.
+glyph-blitter, and `_Printf` passes added one each after the restoration baseline.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -63,9 +63,9 @@ end-to-end gameplay acceptance.
 
 1. The restoration baseline is banked. Do not fold a broad conversion batch
    into it; future work should start from a new focused commit.
-2. Resume debugger `func_16001BB4`. The matcher reports 27 differences, but
-   the restored SDK `_Printf` body is 401 words versus retail's 402; isolate
-   the final `_PAD`/loop-back branch schedule before broader rewrites.
+2. Resume debugger `func_16000590`, currently 52 real differences across 79
+   words. Its logic and loop shape are present; isolate the original context
+   pointer lifetime and saved-register allocation before broader rewrites.
 3. Keep `func_15135480` as a game follow-up candidate. It has the same
    branch-operand mismatch solved in the paired event-swap routines, plus one
    additional difference that still needs isolation.
