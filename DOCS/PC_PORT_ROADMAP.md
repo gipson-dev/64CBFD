@@ -8,18 +8,18 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,497 / 6,038 (91.04%) | 2,527 / 5,497 (45.97%) | 1 | 2,969 |
+| Total | 5,497 / 6,038 (91.04%) | 2,528 / 5,497 (45.99%) | 1 | 2,968 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,808 / 5,318 (90.41%) | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
+| Game | 4,808 / 5,318 (90.41%) | 1,960 / 4,808 (40.77%) | 0 | 2,848 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
 `func_16000590`, `func_16001044`, `func_1600078C`, and `func_16000B14` are
 byte-exact in the linked ELF. Debugger matching is complete at 181 / 181; the
-next focused decomp target is the game routine `func_15135480`. See
+the follow-up game routine `func_15135480` is also byte-exact. See
 [Current Decomp Status](CURRENT_STATUS.md) and
-[Working Note 010](WORKING_NOTES/010-debugger-main-loop-byte-match-20260925.md).
+[Working Note 011](WORKING_NOTES/011-game-event-handler-byte-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

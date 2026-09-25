@@ -32,13 +32,13 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,527 / 5,497 (45.97%) | 1 | 2,969 |
+| Total | 2,528 / 5,497 (45.99%) | 1 | 2,968 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
+| Game | 1,960 / 4,808 (40.77%) | 0 | 2,848 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,527, while
+denominator driven: the exact count is now 2,528, while
 481 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -66,9 +66,10 @@ end-to-end gameplay acceptance.
    into it; future work should start from a new focused commit.
 2. Debugger is complete at 181 / 181 linked byte-exact C functions. Preserve
    the guarded `func_16000B14` normalization while broader matching continues.
-3. Resume `func_15135480` as the next focused game candidate. It has the same
-   branch-operand mismatch solved in the paired event-swap routines, plus one
-   additional difference that still needs isolation.
+3. `func_15135480` is complete. Re-triage the remaining one-difference game
+   rows against recovered signatures and avoid repeating the documented blind
+   operand swaps for `func_150AF2E0`, `func_151061EC`, and `func_15144A74` or
+   the argument-homing experiment for `func_151ACB60`.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

@@ -16,6 +16,14 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game event handler byte-exact
+
+- Completed `func_15135480`: 55 words and zero linked differences.
+- Preserved the existing behaviorally correct C body and added two guarded
+  branch-operand normalizations at offsets `0x48` and `0xAC`.
+- Fresh scan: **2528 / 5497 (45.99%)** overall, **1960 / 4808 (40.77%)**
+  game, and **181 / 181 (100.00%)** debugger.
+
 ### Debugger main loop byte-exact
 
 - Completed `func_16000B14`: 286 words and zero linked differences.

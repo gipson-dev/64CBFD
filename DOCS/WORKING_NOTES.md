@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, debugger context display match complete).** The current
-linked checkpoint is `2524 / 5497 (45.92%)` exact C functions, with one
-address-drift blocker and 2,972 genuinely different C functions. The tree contains 541 raw-assembly
+**Active (2026-09-25, debugger and `func_15135480` matches complete).** The
+current linked checkpoint is `2528 / 5497 (45.99%)` exact C functions, with
+one address-drift blocker and 2,968 genuinely different C functions. The tree contains 541 raw-assembly
 functions, so the higher percentage than July is denominator-driven and is
 not a matching gain. The non-matching replacement build, outer build, and
 tool checks pass; fresh gameplay was not run.
@@ -99,13 +99,10 @@ The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
 Start subsequent byte-matching or conversion work in a new focused commit.
 
-The paired one-difference functions `func_151906E0` and `func_151C1814` and
-debugger `func_16001390`, `func_16000F8C`, `func_160014F0`,
-`func_16001BB4`, and `func_16000590` now match retail. Resume with debugger
-`func_16001044`; keep
-`func_15135480` as a game
-follow-up because it shares
-the solved operand-order mismatch but has a second difference. Keep
+The paired one-difference functions `func_151906E0` and `func_151C1814`, all
+181 converted debugger functions, and game follow-up `func_15135480` now
+match retail. Re-audit signature and argument-homing prerequisites before
+retrying the four remaining one-difference game rows. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

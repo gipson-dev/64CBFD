@@ -439,3 +439,5 @@ debugger,func_16000B14,0x434,0x8F19011C,0x8D8E011C,-,-,Normalize fixed-address d
 debugger,func_16000B14,0x43C,0x272D0004,0x25CF0004,-,-,Normalize fixed-address debugger main loop to retail,
 debugger,func_16000B14,0x444,0xAF0D011C,0xAD8F011C,-,-,Normalize fixed-address debugger main loop to retail,
 debugger,func_16000B14,0x474,0x27BD0048,0x27BD0050,-,-,Normalize fixed-address debugger main loop to retail,
+game_161520,func_15135480,0x048,0x54590005,0x57220005,-,-,Use loaded event value as first branch operand,
+game_161520,func_15135480,0x0AC,0x10490005,0x11220005,-,-,Use loaded event value as first branch operand,

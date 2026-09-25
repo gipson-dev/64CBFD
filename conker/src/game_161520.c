@@ -265,7 +265,7 @@ void func_15135424(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     sp18[1] = arg4;
     func_15145EA4(sp20, sp18, arg0, 2);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15135480.s. */
+// Matched with guarded branch-operand normalization.
 void func_15135480(struct102 *arg0, s32 *arg1, u8 arg2) {
     s32 v1;
     s32 v0;
