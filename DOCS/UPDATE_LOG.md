@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game sound-command wrapper byte-exact
+
+- Completed all 14 words of `func_1509F6B0` with seven expected-word guards
+  for its incoming-argument spill and width-specific reload schedule.
+- An exact local `func_10010F30` prototype was tested and rejected because it
+  grew the object to 15 words, overflowing the retail span.
+- Independent comparison of the complete 56-byte linked and retail spans
+  produced SHA-256
+  `fb415b32c20c90d0dbde27e11417779ab59151fd495be7bb3609b0d1aa381ec1`.
+  Fresh scan: **2560 / 5489 (46.64%)** overall and
+  **1992 / 4800 (41.50%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game viewport setup byte-exact
 
 - Completed all 68 words of `func_15019BB8` with seven expected-word guards.

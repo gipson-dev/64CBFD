@@ -52,6 +52,7 @@ void func_1509F5F4(u16 arg0, s32 arg1, s32 arg2, s16 arg3, s32 arg4, s32 arg5) {
 void func_1509F660(s32 arg0, s32 arg1) {
 }
 
+// Matched with guarded incoming-argument spill/reload scheduling.
 void func_1509F6B0(s32 arg0, u16 arg1, s16 arg2, u8 arg3) {
     func_10010F30(arg0, arg1, arg3, arg2, 0);
 }
