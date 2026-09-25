@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,495 / 6,038 (91.01%) | 2,539 / 5,495 (46.21%) | 1 | 2,955 |
+| Total | 5,493 / 6,038 (90.97%) | 2,539 / 5,493 (46.22%) | 1 | 2,953 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,806 / 5,318 (90.37%) | 1,971 / 4,806 (41.01%) | 0 | 2,835 |
+| Game | 4,804 / 5,318 (90.33%) | 1,971 / 4,804 (41.03%) | 0 | 2,833 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -43,6 +43,9 @@ The following focused pass completed `func_15079F6C`; see
 [Working Note 018](WORKING_NOTES/018-game-packed-field-writer-byte-match-20260925.md).
 The final two-difference pass completed `func_1516968C` and `func_151696DC`;
 see [Working Note 019](WORKING_NOTES/019-final-two-difference-game-matches-20260925.md).
+The next triage restored the original sine/cosine assembly slice beginning at
+`func_150AD780`; see
+[Working Note 020](WORKING_NOTES/020-game-trigonometry-assembly-restoration-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
@@ -99,7 +102,7 @@ Before Phase 1 tooling work starts, pick one approach:
   (SDL2/GLFW + OpenGL/Vulkan), function by function, discarding libultra.
   This is the traditional path older N64 PC ports used. It only works well
   for code that has already been decompiled and matched, so it's gated by
-  decomp progress. The restored-assembly baseline currently measures 85.67%
+  decomp progress. The restored-assembly baseline currently measures 85.65%
   by converted bytes and 91.04% by tracked functions; byte-exact C is measured
   separately above and in [PROJECT.md](PROJECT.md#current-progress).
 - **Static recompilation** - run a MIPS-to-C recompiler (the approach used by

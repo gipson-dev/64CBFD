@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, two-difference game queue complete).** The current linked
-checkpoint is `2539 / 5495 (46.21%)` exact C functions, with one
-address-drift blocker and 2,955 genuinely different C functions. The tree
-contains 543 raw-assembly functions, so the higher percentage than July is
+**Active (2026-09-25, original game trig slice restored).** The current linked
+checkpoint is `2539 / 5493 (46.22%)` exact C functions, with one
+address-drift blocker and 2,953 genuinely different C functions. The tree
+contains 545 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
 
@@ -105,8 +105,9 @@ one-difference game rows, record setters `func_15087FC4` and
 `func_15087FEC`, identifier check `func_1519C910`, indexed counter update
 `func_1517F448`, packed-field writer `func_15079F6C`, byte comparison
 `func_1516968C`, and slot-table update `func_151696DC` now match retail. The
-two-difference game queue is complete. Inspect three-word `func_150AD780`
-before deciding whether it is ordinary C or another special boundary. Keep
+two-difference game queue is complete. The false C placeholders at
+`func_150AD780` and `func_150AD78C` are restored to their original contiguous
+sine/cosine assembly slice. Continue at 11-word `func_150849A0`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -139,6 +140,8 @@ normalization are in
 [Working Note 018](WORKING_NOTES/018-game-packed-field-writer-byte-match-20260925.md).
 The completed two-difference game queue and next-candidate boundary are in
 [Working Note 019](WORKING_NOTES/019-final-two-difference-game-matches-20260925.md).
+The restored sine/cosine assembly ownership and fallthrough evidence are in
+[Working Note 020](WORKING_NOTES/020-game-trigonometry-assembly-restoration-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

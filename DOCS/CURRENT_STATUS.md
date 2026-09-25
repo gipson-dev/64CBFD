@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,495 / 6,038 (91.01%) | 543 | 1,933,268 / 2,256,728 (85.67%) |
+| Total | 5,493 / 6,038 (90.97%) | 545 | 1,932,964 / 2,256,728 (85.65%) |
 | Init | 508 / 538 (94.42%) | 30 | 148,936 / 164,048 (90.79%) |
-| Game | 4,806 / 5,318 (90.37%) | 512 | 1,764,692 / 2,072,880 (85.13%) |
+| Game | 4,804 / 5,318 (90.33%) | 514 | 1,764,388 / 2,072,880 (85.12%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,539 / 5,495 (46.21%) | 1 | 2,955 |
+| Total | 2,539 / 5,493 (46.22%) | 1 | 2,953 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,971 / 4,806 (41.01%) | 0 | 2,835 |
+| Game | 1,971 / 4,804 (41.03%) | 0 | 2,833 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,539, while
-483 functions moved from C back to assembly. The paired event-swap pass added
+485 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -75,10 +75,9 @@ end-to-end gameplay acceptance.
 2. Debugger is complete: 181 / 181 C-classified rows and the one handwritten
    assembly routine are linked byte-exact. Preserve the guarded
    `func_16000B14` normalization while broader matching continues.
-3. `func_15079F6C`, `func_1516968C`, and `func_151696DC` are byte-exact after
-   guarded register and scheduling normalization. The two-difference game
-   queue is complete; inspect the three-word `func_150AD780` before treating
-   it as the next ordinary C-matching target.
+3. The `func_150AD780` sine entry, `func_150AD78C` cosine body, and shared
+   return are restored as one original assembly slice. Continue the
+   three-difference game queue at 11-word `func_150849A0`.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -108,5 +107,7 @@ The completed packed-field writer is in
 [Working Note 018](WORKING_NOTES/018-game-packed-field-writer-byte-match-20260925.md).
 The completed two-difference game queue is in
 [Working Note 019](WORKING_NOTES/019-final-two-difference-game-matches-20260925.md).
+The restored original trigonometry slice is in
+[Working Note 020](WORKING_NOTES/020-game-trigonometry-assembly-restoration-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

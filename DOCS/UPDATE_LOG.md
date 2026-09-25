@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Original game trigonometry slice restored
+
+- Replaced false zero-return C placeholders for `func_150AD780` and
+  `func_150AD78C` with the original 304-byte assembly slice.
+- Preserved the three-instruction sine entry's deliberate fallthrough into the
+  cosine polynomial body and its shared return at `func_150AD89C`.
+- All **76 / 76** linked retail words match. This is a classification
+  correction, so the exact numerator remains **2539**; the current scan is
+  **2539 / 5493 (46.22%)** overall and **1971 / 4804 (41.03%)** game.
+
 ### Final two-difference game functions byte-exact
 
 - Completed `func_1516968C` and `func_151696DC`: 20 words each and zero linked
