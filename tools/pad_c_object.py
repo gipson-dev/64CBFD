@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """Re-space functions in a C object toward their retail addresses.
 
-IDO emits one contiguous .text section per source file.  A non-matching
+IDO emits one contiguous .text section per source file. A non-matching
 function that is shorter than retail therefore moves every later function in
 the object, even when those later functions compile byte-for-byte.  This tool
 keeps every compiled instruction and relocation intact while inserting zero
 filled gaps before functions at their retail-relative addresses. Oversized
 non-matching functions keep their full compiled bodies in section-local
 overflow regions and use short in-slot jump trampolines, preventing them from
-displacing later functions.
+displacing later functions. An optional guarded table can replace known
+compiler-scheduling words after verifying the compiled input value.
 """
 
 import argparse
@@ -38,11 +39,35 @@ def load_layout(path, filename):
     return sorted(rows, key=lambda row: row["address"])
 
 
+def load_word_patches(path, filename):
+    if path is None:
+        return {}
+
+    patches = {}
+    with Path(path).open(newline="") as stream:
+        for row in csv.DictReader(stream):
+            if row["filename"] != filename:
+                continue
+            key = (row["function"], int(row["offset"], 0))
+            if key in patches:
+                raise ValueError(
+                    f"duplicate word patch for {key[0]} at 0x{key[1]:X}"
+                )
+            patches[key] = {
+                "expected": int(row["expected"], 0),
+                "replacement": int(row["replacement"], 0),
+                "note": row.get("note", ""),
+            }
+    return patches
+
+
 def emit_padded_assembly(
-    object_path, layout_path, filename, rodata_symbol=None
+    object_path, layout_path, filename, rodata_symbol=None, word_patches_path=None
 ):
     text, compiled, relocations = parse_object(object_path)
     retail = load_layout(layout_path, filename)
+    word_patches = load_word_patches(word_patches_path, filename)
+    applied_patches = set()
     retail_names = {row["name"] for row in retail}
     section = retail[0]["section"]
     for name in sorted(set(compiled) - retail_names):
@@ -121,6 +146,17 @@ def emit_padded_assembly(
                 word = int.from_bytes(
                     text[compact_offset:compact_offset + 4], "big"
                 )
+                patch_key = (name, relative)
+                patch = word_patches.get(patch_key)
+                if patch is not None:
+                    if word != patch["expected"]:
+                        raise ValueError(
+                            f"stale word patch for {name}+0x{relative:X}: "
+                            f"expected 0x{patch['expected']:08X}, "
+                            f"compiled 0x{word:08X}"
+                        )
+                    word = patch["replacement"]
+                    applied_patches.add(patch_key)
                 output.append(f".word 0x{word:08X}")
             emitted_size = symbol["size"]
         output.extend((f".size {name}, . - {name}", ""))
@@ -151,6 +187,12 @@ def emit_padded_assembly(
                 )
                 output.append(f".word 0x{word:08X}")
             output.extend((f".size {overflow_name}, . - {overflow_name}", ""))
+    unapplied_patches = set(word_patches) - applied_patches
+    if unapplied_patches:
+        formatted = ", ".join(
+            f"{name}+0x{offset:X}" for name, offset in sorted(unapplied_patches)
+        )
+        raise ValueError(f"word patches were not applied: {formatted}")
     output.append("")
     return "\n".join(output)
 
@@ -165,6 +207,10 @@ def main():
         "--rodata-symbol",
         help="retail symbol corresponding to offset zero of compact .rodata",
     )
+    parser.add_argument(
+        "--word-patches",
+        help="CSV of guarded compiled-word replacements",
+    )
     args = parser.parse_args()
     Path(args.output).write_text(
         emit_padded_assembly(
@@ -172,6 +218,7 @@ def main():
             args.layout,
             args.filename,
             rodata_symbol=args.rodata_symbol,
+            word_patches_path=args.word_patches,
         ),
         newline="\n",
     )

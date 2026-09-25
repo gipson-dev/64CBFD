@@ -14,6 +14,18 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-09-24
+
+### Debugger rectangle fill byte-exact
+
+- Completed `func_16001390` with its restored 88-word C body, 32-byte frame,
+  saved-`s0` lifetime, four-pixel unroll, and branch-delay pointer update.
+- Added `retail_word_patches.us.csv` support to `pad_c_object.py`. The two
+  entries reorder only the independent row-sign-extension and stride-scale
+  words, and abort if IDO no longer emits the expected input words.
+- A fresh linked retail scan reports **2520 / 5497 overall (45.84%)** and
+  **174 / 181 debugger (96.13%)**. Resume debugger work at `func_16000F8C`.
+
 ## 2026-07-26
 
 ### Added-tool audit and project preparation

@@ -563,7 +563,7 @@ void func_16001338(u8 arg0, u8 arg1, u8 arg2) {
     D_1600388C = ((arg0 & 0xF8) << 8) | ((arg1 & 0xF8) << 3) | ((arg2 & 0xF8) >> 2) | 1;
 }
 
-// NON-MATCHING: fill a rectangle with the current color (D_1600388C).
+// Fill a rectangle with the current color (D_1600388C).
 void func_16001390(s16 x0, s16 y0, register s16 x1, s16 y1) {
     s16 *dst;
 

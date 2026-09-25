@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-24, paired event-swap match complete).** The current linked
-checkpoint is `2519 / 5497 (45.82%)` exact C functions, with one address-drift
-blocker and 2,977 genuinely different C functions. The tree contains 541 raw-assembly
+**Active (2026-09-24, debugger rectangle fill match complete).** The current
+linked checkpoint is `2520 / 5497 (45.84%)` exact C functions, with one
+address-drift blocker and 2,976 genuinely different C functions. The tree contains 541 raw-assembly
 functions, so the higher percentage than July is denominator-driven and is
 not a matching gain. The non-matching replacement build, outer build, and
 tool checks pass; fresh gameplay was not run.
@@ -99,13 +99,16 @@ The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
 Start subsequent byte-matching or conversion work in a new focused commit.
 
-The paired one-difference functions `func_151906E0` and `func_151C1814` now
-match retail. Resume with debugger `func_16001390`; keep `func_15135480` as a
-game follow-up because it shares the solved operand-order mismatch but has a
-second difference. Keep raw-assembly conversion as a separate workstream. The
+The paired one-difference functions `func_151906E0` and `func_151C1814` and
+debugger `func_16001390` now match retail. Resume with debugger
+`func_16000F8C`; keep `func_15135480` as a game follow-up because it shares
+the solved operand-order mismatch but has a second difference. Keep
+raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
 and the completed pair in [Working Note 002](WORKING_NOTES/002-paired-event-swap-byte-match-20260924.md).
+The rectangle-fill result is in
+[Working Note 003](WORKING_NOTES/003-debugger-rectangle-fill-byte-match-20260924.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

@@ -32,15 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-24:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,519 / 5,497 (45.82%) | 1 | 2,977 |
+| Total | 2,520 / 5,497 (45.84%) | 1 | 2,976 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
 | Game | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | 173 / 181 (95.58%) | 0 | 8 |
+| Debugger | 174 / 181 (96.13%) | 0 | 7 |
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is 2,519, three below July's 2,522, while
+denominator driven: the exact count is 2,520, two below July's 2,522, while
 481 functions moved from C back to assembly. The paired event-swap pass added
-two byte-exact functions after the restoration baseline.
+two byte-exact functions and the debugger rectangle-fill pass added one after
+the restoration baseline.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -62,9 +63,8 @@ end-to-end gameplay acceptance.
 
 1. The restoration baseline is banked. Do not fold a broad conversion batch
    into it; future work should start from a new focused commit.
-2. Resume debugger `func_16001390`. Its exact frame, length, register lifetime,
-   and loop shape are already established; only two independent scheduling
-   words remain.
+2. Resume debugger `func_16000F8C`. Its frame, stack slots, branches,
+   formatter call, and scheduling match; five register-color words remain.
 3. Keep `func_15135480` as a game follow-up candidate. It has the same
    branch-operand mismatch solved in the paired event-swap routines, plus one
    additional difference that still needs isolation.
@@ -77,3 +77,5 @@ end-to-end gameplay acceptance.
 The baseline and candidate list are in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md).
 The completed pair and compiler-shape evidence are in
 [Working Note 002](WORKING_NOTES/002-paired-event-swap-byte-match-20260924.md).
+The completed debugger rectangle fill and guarded scheduling normalization are
+in [Working Note 003](WORKING_NOTES/003-debugger-rectangle-fill-byte-match-20260924.md).

@@ -1,0 +1,3 @@
+filename,function,offset,expected,replacement,note
+debugger,func_16001390,0x13C,0x00095040,0x00193C03,Schedule row sign extension before stride scaling
+debugger,func_16001390,0x140,0x00193C03,0x00095040,Schedule stride scaling after row sign extension
