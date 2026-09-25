@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, no-op callback extent restored).** The current linked
-checkpoint is `2550 / 5490 (46.45%)` exact C functions, with one
-address-drift blocker and 2,939 genuinely different C functions. The tree
+**Active (2026-09-25, motion-scale register match complete).** The current
+linked checkpoint is `2551 / 5490 (46.47%)` exact C functions, with one
+address-drift blocker and 2,938 genuinely different C functions. The tree
 contains 548 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -123,7 +123,8 @@ scalar-temporary normalization, and `func_150F33B0` now matches through
 guarded set-bit temporary normalization, and `func_151254F4` now matches
 through guarded relocation-preserving opening-load scheduling, and false C
 model `func_1515FB70` is restored to its original nine-word assembly extent.
-Continue at 117-word `func_1505841C`. Keep
+`func_1505841C` now matches through guarded FP-temporary and global-load
+register normalization. Continue at eight-word `func_150F02A0`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -187,6 +188,8 @@ The completed opening-load scheduling normalization is in
 [Working Note 033](WORKING_NOTES/033-game-opening-load-schedule-match-20260925.md).
 The restored no-op callback extent is in
 [Working Note 034](WORKING_NOTES/034-game-noop-callback-restoration-20260925.md).
+The completed motion-scale register normalization is in
+[Working Note 035](WORKING_NOTES/035-game-motion-scale-register-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

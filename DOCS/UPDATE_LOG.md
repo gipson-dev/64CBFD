@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game motion-scale calculation byte-exact
+
+- Completed `func_1505841C`: 117 words and zero linked differences.
+- Added five expected-word guards for the quotient's three floating-point
+  register choices and the `D_800419A0` HI16/LO16 load pair. Both relocations
+  remain attached to the normalized global load.
+- Direct comparison reports **117 / 117** retail words exact. Fresh scan:
+  **2551 / 5490 (46.47%)** overall and **1983 / 4801 (41.30%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Original no-op callback extent restored
 
 - Replaced the false C model for `func_1515FB70` with its complete original

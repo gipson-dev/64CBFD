@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,550 / 5,490 (46.45%) | 1 | 2,939 |
+| Total | 2,551 / 5,490 (46.47%) | 1 | 2,938 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,982 / 4,801 (41.28%) | 0 | 2,819 |
+| Game | 1,983 / 4,801 (41.30%) | 0 | 2,818 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,550, while
+denominator driven: the exact count is now 2,551, while
 488 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -57,7 +57,8 @@ followed by handwritten PRNG seed setter `func_150ADACC`, the guarded
 scalar-temporary match for `func_150BDB3C`, the guarded set-bit temporary
 match for `func_150F33B0`, and the relocation-preserving opening-load match
 for `func_151254F4`; `func_1515FB70` was then restored from a false C model
-to its original nine-word assembly extent.
+to its original nine-word assembly extent, followed by the guarded register
+normalization for `func_1505841C`.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -100,8 +101,9 @@ end-to-end gameplay acceptance.
    normalization, and `func_151254F4` is byte-exact through guarded
    relocation-preserving opening-load scheduling. The nine-word
    `func_1515FB70` is restored to assembly ownership after its C model proved
-   unable to preserve the retail undefined-return branch shape. Continue at
-   117-word `func_1505841C`.
+   unable to preserve the retail undefined-return branch shape.
+   `func_1505841C` is byte-exact through guarded FP-temporary and global-load
+   register normalization. Continue at eight-word `func_150F02A0`.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -161,5 +163,7 @@ The completed opening-load scheduling normalization is in
 [Working Note 033](WORKING_NOTES/033-game-opening-load-schedule-match-20260925.md).
 The restored no-op callback assembly boundary is in
 [Working Note 034](WORKING_NOTES/034-game-noop-callback-restoration-20260925.md).
+The completed motion-scale register normalization is in
+[Working Note 035](WORKING_NOTES/035-game-motion-scale-register-match-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

@@ -341,7 +341,7 @@ s32 func_15056A00() {
 s32 func_15056B08(s32 arg0) {
     return 0;
 }
-// NON-MATCHING: JUSTREG
+// Matched with guarded floating-point and global-load register normalization.
 void func_1505841C(struct127 *arg0, f32 arg1) {
     struct197 *temp_v0_2;
     f32 temp_f0;
