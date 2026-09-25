@@ -45,4 +45,51 @@ glabel second
             self.assertEqual(struct.unpack_from('>I',text)[0],0x1000000f)
             self.assertEqual(struct.unpack_from('>I',text,0x40)[0],0x03e00008)
 
+    def test_guarded_word_replacement(self):
+        if not shutil.which('mips-linux-gnu-as'):
+            self.skipTest('mips-linux-gnu-as required')
+        with tempfile.TemporaryDirectory() as tmp:
+            work=Path(tmp)
+            (work/'compact.s').write_text('''
+.section .text,"ax"
+.set noreorder
+.globl sample
+.type sample,@function
+sample:
+.word 0x00851021
+jr $ra
+nop
+.size sample,.-sample
+''')
+            (work/'retail.s').write_text('''
+glabel sample
+/* 000000 15000000 00A41021 */ addu $v0,$a1,$a0
+/* 000004 15000004 03E00008 */ jr $ra
+/* 000008 15000008 00000000 */ nop
+''')
+            (work/'patches.csv').write_text(
+                'filename,function,offset,expected,replacement,'
+                'expected_relocations,replacement_relocations,note,insert_after\n'
+                'fixture,sample,0x0,0x00851021,0x00A41021,-,-,swap operands,\n'
+            )
+            subprocess.run(
+                ['mips-linux-gnu-as','-EB','-march=vr4300','-o','compact.o','compact.s'],
+                cwd=work,check=True,capture_output=True
+            )
+            padded=emit_padded_assembly(
+                work/'compact.o',work/'retail.s',
+                word_patches_path=work/'patches.csv',filename='fixture'
+            )
+            self.assertIn('.word 0x00A41021',padded)
+            (work/'patches.csv').write_text(
+                'filename,function,offset,expected,replacement,'
+                'expected_relocations,replacement_relocations,note,insert_after\n'
+                'fixture,sample,0x0,0x00000000,0x00A41021,-,-,stale guard,\n'
+            )
+            with self.assertRaisesRegex(ValueError, 'stale word patch'):
+                emit_padded_assembly(
+                    work/'compact.o',work/'retail.s',
+                    word_patches_path=work/'patches.csv',filename='fixture'
+                )
+
 if __name__=='__main__':unittest.main()

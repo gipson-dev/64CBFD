@@ -8,18 +8,19 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,497 / 6,038 (91.04%) | 2,528 / 5,497 (45.99%) | 1 | 2,968 |
+| Total | 5,497 / 6,038 (91.04%) | 2,532 / 5,497 (46.06%) | 1 | 2,964 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,808 / 5,318 (90.41%) | 1,960 / 4,808 (40.77%) | 0 | 2,848 |
+| Game | 4,808 / 5,318 (90.41%) | 1,964 / 4,808 (40.85%) | 0 | 2,844 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
 `func_16000590`, `func_16001044`, `func_1600078C`, and `func_16000B14` are
-byte-exact in the linked ELF. Debugger matching is complete at 181 / 181; the
-the follow-up game routine `func_15135480` is also byte-exact. See
+byte-exact in the linked ELF. Debugger matching is complete at 181 / 181. The
+game routine `func_15135480` and former one-difference rows `func_150AF2E0`,
+`func_151061EC`, `func_15144A74`, and `func_151ACB60` are also byte-exact. See
 [Current Decomp Status](CURRENT_STATUS.md) and
-[Working Note 011](WORKING_NOTES/011-game-event-handler-byte-match-20260925.md).
+[Working Note 012](WORKING_NOTES/012-generated-near-match-normalization-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

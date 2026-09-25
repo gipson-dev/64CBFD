@@ -12,6 +12,7 @@ s32 func_151061E0(s32 arg0) {
     return arg0 + 0x88;
 }
 
+// Matched with guarded commutative-add normalization.
 u8 *func_151061EC(u8 *arg0) {
     s32 temp_v1 = *(s32 *) (arg0 + 0x48);
 

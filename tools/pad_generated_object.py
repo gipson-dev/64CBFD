@@ -13,6 +13,7 @@ The result is still C-derived code: only inter-function layout is changed.
 """
 
 import argparse
+import csv
 import re
 import struct
 from collections import defaultdict
@@ -166,9 +167,72 @@ def parse_retail_slice(path):
     return min(addresses), max(addresses) + 4, functions, jump_labels
 
 
-def emit_padded_assembly(object_path, retail_path, function_objects=None):
+def parse_relocation_spec(value):
+    if value is None or not value.strip():
+        return None
+    if value.strip() == "-":
+        return []
+    relocations = []
+    for item in value.split(";"):
+        relocation_type, separator, symbol = item.strip().partition(":")
+        if not separator or not relocation_type or not symbol:
+            raise ValueError(f"invalid relocation specification: {value}")
+        relocations.append((relocation_type, symbol))
+    return relocations
+
+
+def load_word_patches(path, filename):
+    if path is None:
+        return {}
+    if not filename:
+        raise ValueError("--filename is required with --word-patches")
+    patches = {}
+    with Path(path).open(newline="") as stream:
+        for row in csv.DictReader(stream):
+            if row["filename"] != filename:
+                continue
+            key = (row["function"], int(row["offset"], 0))
+            if key in patches:
+                raise ValueError(
+                    f"duplicate word patch for {key[0]} at 0x{key[1]:X}"
+                )
+            expected_relocations = parse_relocation_spec(
+                row.get("expected_relocations")
+            )
+            replacement_relocations = parse_relocation_spec(
+                row.get("replacement_relocations")
+            )
+            if ((expected_relocations is None) !=
+                    (replacement_relocations is None)):
+                raise ValueError(
+                    f"word patch for {key[0]} at 0x{key[1]:X} must declare "
+                    "both relocation fields"
+                )
+            if row.get("insert_after", "").strip():
+                raise ValueError(
+                    f"generated word patch for {key[0]} at 0x{key[1]:X} "
+                    "cannot insert a word"
+                )
+            patches[key] = {
+                "expected": int(row["expected"], 0),
+                "replacement": int(row["replacement"], 0),
+                "expected_relocations": expected_relocations,
+                "replacement_relocations": replacement_relocations,
+            }
+    return patches
+
+
+def emit_padded_assembly(
+    object_path,
+    retail_path,
+    function_objects=None,
+    word_patches_path=None,
+    filename=None,
+):
     text, compiled, relocations = parse_object(object_path)
     retail_start, retail_end, retail, jump_labels = parse_retail_slice(retail_path)
+    word_patches = load_word_patches(word_patches_path, filename)
+    applied_patches = set()
     function_sources = {
         name: (text, symbol, relocations)
         for name, symbol in compiled.items()
@@ -254,15 +318,35 @@ def emit_padded_assembly(object_path, retail_path, function_objects=None):
         for relative in range(0, symbol["size"], 4):
             emit_labels(target + relative)
             compact_offset = start + relative
-            for relocation_name, relocation_symbol in source_relocations.get(
-                compact_offset, []
-            ):
-                output.append(
-                    f".reloc ., {relocation_name}, {relocation_symbol}"
-                )
+            word_relocations = list(source_relocations.get(compact_offset, []))
             word = int.from_bytes(
                 source_text[compact_offset:compact_offset + 4], "big"
             )
+            patch_key = (name, relative)
+            patch = word_patches.get(patch_key)
+            if patch is not None:
+                if word != patch["expected"]:
+                    raise ValueError(
+                        f"stale word patch for {name}+0x{relative:X}: "
+                        f"expected 0x{patch['expected']:08X}, "
+                        f"compiled 0x{word:08X}"
+                    )
+                expected_relocations = patch["expected_relocations"]
+                if (expected_relocations is not None and
+                        word_relocations != expected_relocations):
+                    raise ValueError(
+                        f"stale relocations for {name}+0x{relative:X}: "
+                        f"expected {expected_relocations}, "
+                        f"compiled {word_relocations}"
+                    )
+                if expected_relocations is not None:
+                    word_relocations = patch["replacement_relocations"]
+                word = patch["replacement"]
+                applied_patches.add(patch_key)
+            for relocation_name, relocation_symbol in word_relocations:
+                output.append(
+                    f".reloc ., {relocation_name}, {relocation_symbol}"
+                )
             output.append(f".word 0x{word:08X}")
         output.append(f".size {name}, . - {name}")
         output.append("")
@@ -274,6 +358,12 @@ def emit_padded_assembly(object_path, retail_path, function_objects=None):
     if emitted_labels != expected_labels:
         missing_labels = sorted(expected_labels - emitted_labels)
         raise ValueError(f"failed to emit jump labels: {missing_labels}")
+    unapplied_patches = set(word_patches) - applied_patches
+    if unapplied_patches:
+        formatted = ", ".join(
+            f"{name}+0x{offset:X}" for name, offset in sorted(unapplied_patches)
+        )
+        raise ValueError(f"word patches were not applied: {formatted}")
     output.append("")
     return "\n".join(output)
 
@@ -290,6 +380,14 @@ def main():
         metavar="NAME=OBJECT",
         help="take one function from a separately compiled object",
     )
+    parser.add_argument(
+        "--word-patches",
+        help="CSV of guarded compiled-word replacements",
+    )
+    parser.add_argument(
+        "--filename",
+        help="filename key used to select guarded word patches",
+    )
     args = parser.parse_args()
     function_objects = {}
     for value in args.function_object:
@@ -301,7 +399,11 @@ def main():
         function_objects[name] = path
     Path(args.output).write_text(
         emit_padded_assembly(
-            args.object, args.retail_asm, function_objects=function_objects
+            args.object,
+            args.retail_asm,
+            function_objects=function_objects,
+            word_patches_path=args.word_patches,
+            filename=args.filename,
         ),
         newline="\n",
     )

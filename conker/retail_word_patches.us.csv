@@ -441,3 +441,7 @@ debugger,func_16000B14,0x444,0xAF0D011C,0xAD8F011C,-,-,Normalize fixed-address d
 debugger,func_16000B14,0x474,0x27BD0048,0x27BD0050,-,-,Normalize fixed-address debugger main loop to retail,
 game_161520,func_15135480,0x048,0x54590005,0x57220005,-,-,Use loaded event value as first branch operand,
 game_161520,func_15135480,0x0AC,0x10490005,0x11220005,-,-,Use loaded event value as first branch operand,
+generated_DC6B0,func_150AF2E0,0x018,0x01C27821,0x004E7821,-,-,Use retail commutative integer-add operand order,
+generated_133190,func_151061EC,0x018,0x01C41021,0x008E1021,-,-,Use retail commutative address-add operand order,
+game_16EE20,func_15144A74,0x028,0x46048000,0x46102000,-,-,Use retail commutative floating-add operand order,
+generated_1D92F0,func_151ACB60,0x020,0x00000000,0xAFA40018,-,-,Home incoming pointer in retail jal delay slot,

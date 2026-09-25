@@ -212,9 +212,9 @@ candidate before treating it as an ordinary C conversion target.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,528 / 5,497 (45.99%) | 1 | 2,968 |
+| Total | `[###########-------------]` 2,532 / 5,497 (46.06%) | 1 | 2,964 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 1,960 / 4,808 (40.77%) | 0 | 2,848 |
+| Game | `[##########--------------]` 1,964 / 4,808 (40.85%) | 0 | 2,844 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 `match-progress` compares linked functions by symbol against pristine retail

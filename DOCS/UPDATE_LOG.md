@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Four game near-matches byte-exact
+
+- Completed `func_150AF2E0`, `func_151061EC`, `func_15144A74`, and
+  `func_151ACB60`; each previously differed from retail by exactly one word.
+- Extended `pad_generated_object.py` and its generated-slice Makefile rules to
+  consume the existing expected-word-guarded normalization table, with a unit
+  test covering generated-object replacement.
+- Fresh linked scan: **2532 / 5497 (46.06%)** overall,
+  **1964 / 4808 (40.85%)** game, and **181 / 181 (100.00%)** debugger.
+
 ### Game event handler byte-exact
 
 - Completed `func_15135480`: 55 words and zero linked differences.

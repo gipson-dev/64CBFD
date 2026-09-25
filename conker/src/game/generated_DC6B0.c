@@ -8,6 +8,7 @@ s32 func_15131958();
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_DC6B0/func_150AF200.s")
 
+// Matched with guarded commutative-add normalization.
 void func_150AF2E0(s32 arg0, u8 *arg1) {
     s32 temp_v0 = *(s16 *) (arg1 + 2);
 

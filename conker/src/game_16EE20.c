@@ -627,6 +627,7 @@ f32 func_1514462C(s32 arg0) {
 s32 func_1514470C() {
     return 0;
 }
+// Matched with guarded commutative-add normalization.
 f32 func_15144A74(f32 *arg0, f32 *arg1) {
     return arg0[0] * arg1[0] + arg0[1] * arg1[1] + arg1[2] * arg0[2];
 }

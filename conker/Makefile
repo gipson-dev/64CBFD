@@ -378,19 +378,19 @@ ifeq ($(VERSION),us)
 .SECONDEXPANSION:
 # Original assembly bodies in generated slices still need retail function padding.
 $(GLOBAL_ASM_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.o: \
-		$(SRC_DIR)/game/generated_%.c $$(call generated_slice_asm,$$*) $$(wildcard asm/nonmatchings/generated_$$*/*.s) ../tools/pad_generated_object.py Makefile
+		$(SRC_DIR)/game/generated_%.c $$(call generated_slice_asm,$$*) $$(wildcard asm/nonmatchings/generated_$$*/*.s) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< > $(BUILD_DIR)/$<
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $(BUILD_DIR)/$<
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.compact \
 		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
-	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s --word-patches retail_word_patches.us.csv --filename $(basename $(notdir $<))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
 
 $(STANDARD_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.o: \
-		$(SRC_DIR)/game/generated_%.c $$(call generated_slice_asm,$$*) ../tools/pad_generated_object.py Makefile
+		$(SRC_DIR)/game/generated_%.c $$(call generated_slice_asm,$$*) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
-	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s --word-patches retail_word_patches.us.csv --filename $(basename $(notdir $<))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
 
@@ -398,11 +398,11 @@ $(STANDARD_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.
 # func_151733D8 is the non-debug identity helper immediately before a -g3
 # body. Compile both profiles and select only that helper from the -O2 object.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o: \
-		$(SRC_DIR)/game/generated_1A0790.c $$(call generated_slice_asm,1A0790) ../tools/pad_generated_object.py Makefile
+		$(SRC_DIR)/game/generated_1A0790.c $$(call generated_slice_asm,1A0790) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
 	$(CC) -c -32 $(CFLAGS) -O2 -g3 $(MIPSBIT) -o $@.compact $<
 	$(CC) -c -32 $(CFLAGS) -O2 $(MIPSBIT) -o $@.nodebug.compact $<
 	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,1A0790) $@.padded.s \
-		--function-object func_151733D8=$@.nodebug.compact
+		--function-object func_151733D8=$@.nodebug.compact --word-patches retail_word_patches.us.csv --filename generated_1A0790
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.nodebug.compact $@.padded.s
 

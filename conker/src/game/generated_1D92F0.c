@@ -76,6 +76,7 @@ s32 func_151ACB38(u8 *arg0, u8 *arg1) {
     return result;
 }
 
+// Matched with guarded call-delay argument home.
 void func_151ACB60(u8 *arg0) {
     s32 temp_v0 = *(s32 *) (*(u32 *) (*(u32 *) (arg0 + 0x1C) + 0x31C) + 0x9C);
 
