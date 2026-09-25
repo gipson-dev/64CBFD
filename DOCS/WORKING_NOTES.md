@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, table-stride match complete).** The current linked
-checkpoint is `2554 / 5490 (46.52%)` exact C functions, with one address-drift
-blocker and 2,935 genuinely different C functions. The tree
-contains 548 raw-assembly functions, so the higher percentage than July is
+**Active (2026-09-25, handwritten byte-fill restoration complete).** The
+current linked checkpoint is `2554 / 5489 (46.53%)` exact C functions, with
+one address-drift blocker and 2,934 genuinely different C functions. The tree
+contains 549 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
 
@@ -129,8 +129,10 @@ base-pointer and index lifetimes explicit and guarding four temporary-register
 choices. `func_151B2FA0` now matches from a source-level correction of its
 forwarded argument and callee declaration from `s16` to `s32`.
 `func_150770E4` now matches after expressing its table lookup as a combined
-812-byte stride. Continue by classifying eight-word `func_150A7770`, the next
-six-difference game row. Keep raw-assembly conversion as a separate workstream. The
+812-byte stride. Handwritten `func_150A7770` is restored to its original
+eight-word assembly extent after its false C model overflowed the slot.
+Continue at 14-word `func_1515F008`, the next six-difference game row. Keep
+raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
 and the completed pair in [Working Note 002](WORKING_NOTES/002-paired-event-swap-byte-match-20260924.md).
@@ -201,6 +203,8 @@ The completed forwarded-call ABI correction is in
 [Working Note 037](WORKING_NOTES/037-game-forwarded-call-abi-match-20260925.md).
 The completed table-stride expression recovery is in
 [Working Note 038](WORKING_NOTES/038-game-table-stride-match-20260925.md).
+The restored handwritten byte-fill loop is in
+[Working Note 039](WORKING_NOTES/039-game-handwritten-byte-fill-restoration-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

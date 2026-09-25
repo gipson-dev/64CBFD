@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Original handwritten byte-fill loop restored
+
+- Replaced the false C model for `func_150A7770` with its preserved handwritten
+  eight-word assembly extent. Retail uses `addi`, `bnel`, and a delay-slot
+  store; the C loop overflowed its slot and linked through a trampoline.
+- Direct comparison reports **8 / 8** retail words exact. Independent linked
+  and retail comparison produced SHA-256
+  `5df18a402703136c0a0c99c64eafa3bfe5c65f0f0aade0dcab67f21bed5f0e7c`.
+- This is a classification correction: exact C remains **2554**, while the
+  fresh scan is **2554 / 5489 (46.53%)** overall and
+  **1986 / 4800 (41.38%)** game. Raw assembly becomes 549 total and 518 game.
+
 ### Game table-stride calculation byte-exact
 
 - Completed all 36 words of `func_150770E4` without adding patch rows.
