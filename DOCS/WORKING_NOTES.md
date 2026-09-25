@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, one-difference game queue complete).** The current
-linked checkpoint is `2532 / 5497 (46.06%)` exact C functions, with one
-address-drift blocker and 2,964 genuinely different C functions. The tree
-contains 541 raw-assembly functions, so the higher percentage than July is
+**Active (2026-09-25, smallest false C rows restored).** The current linked
+checkpoint is `2532 / 5495 (46.08%)` exact C functions, with one
+address-drift blocker and 2,962 genuinely different C functions. The tree
+contains 543 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
 
@@ -122,6 +122,8 @@ The completed one-difference game queue is in
 The final debugger inventory audit, including the exact handwritten CP0/TLB
 routine, is in
 [Working Note 013](WORKING_NOTES/013-debugger-completion-audit-20260925.md).
+The restored shared epilogue and handwritten syscall are in
+[Working Note 014](WORKING_NOTES/014-small-game-assembly-boundaries-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Small game assembly boundaries restored
+
+- Replaced the false C placeholders for `func_150A6354` and
+  `func_150AD770` with their exact original assembly extents.
+- Confirmed `func_150A6354` is a three-word shared epilogue entered from
+  `func_150A6210` by `j`, while `func_150AD770` is a handwritten `syscall`
+  plus three padding words. Neither is an independent C conversion target.
+- Fresh scan: **2532 / 5495 (46.08%)** overall and
+  **1964 / 4806 (40.87%)** game. Both restored extents match retail exactly.
+
 ### Debugger completion accounting verified
 
 - Audited all 182 tracked debugger rows: 181 C-classified rows are linked

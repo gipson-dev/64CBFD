@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,497 / 6,038 (91.04%) | 541 | 1,933,296 / 2,256,728 (85.67%) |
+| Total | 5,495 / 6,038 (91.01%) | 543 | 1,933,268 / 2,256,728 (85.67%) |
 | Init | 508 / 538 (94.42%) | 30 | 148,936 / 164,048 (90.79%) |
-| Game | 4,808 / 5,318 (90.41%) | 510 | 1,764,720 / 2,072,880 (85.13%) |
+| Game | 4,806 / 5,318 (90.37%) | 512 | 1,764,692 / 2,072,880 (85.13%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,532 / 5,497 (46.06%) | 1 | 2,964 |
+| Total | 2,532 / 5,495 (46.08%) | 1 | 2,962 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,964 / 4,808 (40.85%) | 0 | 2,844 |
+| Game | 1,964 / 4,806 (40.87%) | 0 | 2,842 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,532, while
-481 functions moved from C back to assembly. The paired event-swap pass added
+483 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -75,9 +75,9 @@ end-to-end gameplay acceptance.
 2. Debugger is complete: 181 / 181 C-classified rows and the one handwritten
    assembly routine are linked byte-exact. Preserve the guarded
    `func_16000B14` normalization while broader matching continues.
-3. `func_15135480` and the four former one-difference game rows are complete.
-   Re-triage the two-difference game queue, beginning with the smallest
-   non-placeholder bodies, before adding another guarded normalization.
+3. `func_150A6354` and `func_150AD770` are restored to assembly ownership.
+   Continue the genuine two-difference C queue at `func_15087FC4`, while
+   accounting for its documented scratch-register allocation resistance.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -95,5 +95,7 @@ The four completed game near-matches and generated-slice patch support are in
 [Working Note 012](WORKING_NOTES/012-generated-near-match-normalization-20260925.md).
 The final debugger inventory and handwritten-routine byte audit are in
 [Working Note 013](WORKING_NOTES/013-debugger-completion-audit-20260925.md).
+The two restored assembly boundaries are in
+[Working Note 014](WORKING_NOTES/014-small-game-assembly-boundaries-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

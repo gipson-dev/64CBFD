@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,497 / 6,038 (91.04%) | 2,532 / 5,497 (46.06%) | 1 | 2,964 |
+| Total | 5,495 / 6,038 (91.01%) | 2,532 / 5,495 (46.08%) | 1 | 2,962 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,808 / 5,318 (90.41%) | 1,964 / 4,808 (40.85%) | 0 | 2,844 |
+| Game | 4,806 / 5,318 (90.37%) | 1,964 / 4,806 (40.87%) | 0 | 2,842 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -29,6 +29,9 @@ game routine `func_15135480` and former one-difference rows `func_150AF2E0`,
 [Working Note 012](WORKING_NOTES/012-generated-near-match-normalization-20260925.md).
 The complete debugger accounting is recorded in
 [Working Note 013](WORKING_NOTES/013-debugger-completion-audit-20260925.md).
+The latest game triage restored a shared epilogue and handwritten syscall to
+assembly ownership; see
+[Working Note 014](WORKING_NOTES/014-small-game-assembly-boundaries-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

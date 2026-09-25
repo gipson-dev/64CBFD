@@ -1,7 +1,5 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/DAC20.s. */
+/* Original handwritten syscall slice. */
 
-s32 func_150AD770() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_DAC20/func_150AD770.s")

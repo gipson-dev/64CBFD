@@ -30,9 +30,8 @@ s32 func_150A6210() {
     return 0;
 }
 
-s32 func_150A6354() {
-    return 0;
-}
+// Shared assembly epilogue entered by func_150A6210 with a non-linking jump.
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D3040/func_150A6354.s")
 
 s32 func_150A6360() {
     return 0;
