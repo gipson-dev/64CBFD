@@ -102,34 +102,35 @@ every later phase cheaper and safer:
 - [ ] Continue matching `init`/`game`/`debugger` sections (`make -C conker progress`).
       Debugger is now 180 / 181 byte-exact; finish `func_16000B14` next.
 - [ ] Finish mapping the ROM layout (see the layout notes in [PROJECT.md](PROJECT.md#rom-layout)).
-- [ ] Document the RSP microcode(s) in use (F3DEX-family display lists,
+- [x] Document the RSP microcode(s) in use (F3DEX-family display lists,
       `libultra`'s `gbi.h`/`gs2dex.h` already in `conker/include/2.0L/PR/`)
       well enough to know which graphics commands a renderer needs to support.
-- [ ] Document the audio microcode/sequence format (`n_libaudio.h`,
-      `libaudio.h`) well enough to know what an audio backend needs to emulate.
-- [ ] Locate and document controller/PIF input handling (how the game reads
+      The sibling now has a working Conker F3DEXBG interpreter feeding RT64;
+      exact command and presentation parity remains ongoing.
+- [x] Document the audio microcode/sequence format (`n_libaudio.h`,
+      `libaudio.h`) well enough to implement the current native audio backend.
+      Complete perceptual and gameplay-audio parity remains open.
+- [x] Locate and document controller/PIF input handling (how the game reads
       `OS_INPUT`/`osContGetReadData` and maps buttons/stick to game actions) -
-      this is the hook point for keyboard/mouse/controller remapping in Phase 4.
+      this now backs keyboard, mouse and SDL controller remapping in Phase 4.
 - [ ] Finish the asset format work in [ASSET_FORMATS.md](ASSET_FORMATS.md) -
       the model/texture/audio containers are what a PC renderer and audio
       backend will need to load directly (or convert once, offline).
 
 ## Phase 1 - Toolchain and build target
 
-- [ ] Decide hand-port vs. static recompilation (see above) and record the decision.
-- [ ] If static recompilation: evaluate N64Recomp and the
+- [x] Decide hand-port vs. static recompilation: the port uses static
+      recompilation with selected native overrides and restored original bodies.
+- [x] Evaluate N64Recomp and the
       [N64 Modern Runtime](https://github.com/N64Recomp/N64ModernRuntime#ultramodern)
       (`ultramodern` plus `librecomp`) against this ROM's compiler (IDO 5.3),
       libultra usage, and RCP configuration; produce a first recompiled build
       that at least links.
-- [ ] Stand up a separate PC build target (new top-level directory or
-      sibling repo, e.g. `pc/` or `conker-pc/`) with its own CMake/Makefile,
+- [x] Stand up the separate `64CBFDOGL` sibling with its own CMake build,
       independent of the ROM-matching build in `conker/`.
-- [ ] Pick the windowing/input library (SDL2 or GLFW) and the graphics
-      backend abstraction (raw OpenGL, or a cross-API layer if targeting
-      Vulkan/D3D12 later).
-- [ ] Get a minimal "hello triangle" window running from the PC build target
-      as a smoke test, unrelated to game code.
+- [x] Use SDL2 for windowing/input and RT64 as the graphics backend.
+- [x] Complete the initial window/render smoke test. The original triangle
+      milestone is superseded by visible title, menu and gameplay rendering.
 
 ## Phase 2 - OS/runtime shim
 
@@ -148,56 +149,55 @@ Whether reusing that runtime or filling its gaps locally, use the headers
 already extracted in `conker/include/2.0L/PR/` (`os.h`, `os_cont.h`, `os_ai.h`,
 `abi.h`, etc.) as the contract to satisfy:
 
-- [ ] Build a small compatibility inventory that maps every libultra call used
+- [ ] Finish the compatibility inventory that maps every libultra call used
       by Conker to `ultramodern`, `librecomp`, or a project-owned missing shim.
-- [ ] If the spike succeeds, pin the runtime in the separate PC build and keep
+- [x] Pin the runtime in the separate PC build and keep
       it out of the ROM-matching `conker/` dependency graph.
-- [ ] Threading/scheduler shim (`os_internal.h`, viManager/scheduler
-      equivalents) - N64 games assume cooperative multi-threading; decide how
-      that maps onto a PC main loop.
-- [ ] DMA/memory shim - N64 code issues `osPiStartDma`-style calls against a
-      cartridge ROM layout; on PC this becomes direct reads from extracted
-      assets (see [ASSET_FORMATS.md](ASSET_FORMATS.md)).
-- [ ] VI/framebuffer timing shim - replace `os_ai.h`/VI retrace assumptions
-      with a PC frame loop (this is also where an uncapped framerate option
-      becomes possible - track separately, see Phase 8).
-- [ ] Save data shim - EEPROM/`os_eeprom.h`/flash-pak (`os_flash.h`) access
-      replaced with plain files on disk.
+- [x] Implement the threading/scheduler and message-queue path needed by the
+      current PC main loop. Exact scheduler/audio timing parity remains open.
+- [x] Implement PI DMA and recomp memory access against the packaged ROM/data
+      image. Direct extracted-asset loading remains a separate future path.
+- [x] Implement VI/framebuffer timing sufficiently for current title, menu and
+      gameplay execution. Stable retail timing and uncapped operation remain
+      separate acceptance items.
+- [x] Implement file-backed save storage. Retained saves, reloads and
+      multiplayer profile persistence have runtime evidence.
 
 ## Phase 3 - Graphics pipeline
 
-- [ ] Evaluate [RT64](https://github.com/rt64/rt64), the renderer recommended
+- [x] Evaluate [RT64](https://github.com/rt64/rt64), the renderer recommended
       by `ultramodern`, against Conker's actual display lists and Rare-specific
-      RSP microcode before designing a renderer from scratch.
-- [ ] Integrate a compatible renderer, or implement and upstream/document the
-      missing RSP/RDP commands needed to walk the game's display lists. A fully
-      custom interpreter remains the fallback and would be the single largest
-      chunk of new code in the roadmap.
-- [ ] Render at the original internal resolution and aspect ratio first;
-      resolution/aspect changes are a Phase 8 concern.
+      RSP microcode.
+- [x] Integrate RT64 and implement the Conker-specific F3DEXBG/RDP path needed
+      to walk current game display lists. Remaining commands and exact visual
+      parity continue as scoped restoration work.
+- [x] Render through RT64's original-resolution and 4:3 configuration before
+      treating higher resolution or widescreen as accepted Phase 8 features.
 - [ ] Get textures loading directly from the documented RGBA5551 asset
       containers (assets00-05 per [ASSET_FORMATS.md](ASSET_FORMATS.md)).
 
 ## Phase 4 - Input: keyboard, mouse, controller
 
 The original game only understands an N64 controller read through the PIF
-(`os_cont.h`). None of the following exists yet:
+(`os_cont.h`). The host input bridge now supplies that contract:
 
-- [ ] Map SDL2/GLFW gamepad input to the game's existing controller-read
+- [x] Map SDL2 gamepad input to the game's existing controller-read
       call sites identified in Phase 0, so a modern controller (Xbox/PS/etc.)
       works as a drop-in replacement first.
-- [ ] Add a keyboard+mouse control scheme as a second input profile (e.g.
-      WASD + mouse-look), since the original game has no such input model to
-      fall back on - this needs new control-mapping code, not just a shim.
-- [ ] Add a rebindable input config (file or in-game menu) rather than
-      hardcoding one scheme.
-- [ ] Controller rumble/vibration mapping, if the target APIs support it.
+- [x] Add keyboard movement and optional relative mouse-look as a second input
+      profile. Final camera parity is still open, and the confirmed
+      `controller_c_stick: 0` drift workaround is temporary.
+- [x] Add rebindable input configuration through JSON and
+      `conker_settings.exe`, including four controller-port assignments and
+      runtime input reload.
+- [x] Map game rumble requests to SDL controller vibration. Physical-device
+      rumble acceptance remains open.
 
 ## Phase 5 - Audio
 
-- [ ] Reimplement or port the sequence/sample playback currently done by the
-      audio RSP microcode (`n_libaudio.h`) against a PC audio backend
-      (e.g. SDL2 audio, miniaudio).
+- [x] Reimplement the sequence/sample playback path against the SDL/native
+      audio backend. Recognizable music, dialogue and effects play; complete
+      timing, mix and perceptual parity remain open.
 - [ ] Load audio directly from the documented MP3 streams (assets16) and the
       `"B1"` sample-bank format (assets17) per [ASSET_FORMATS.md](ASSET_FORMATS.md).
 
@@ -206,10 +206,12 @@ The original game only understands an N64 controller read through the PIF
 This is the "playable in a keyboard/mouse/controller sense" target the rest
 of the roadmap builds toward:
 
-- [ ] Boots to the title screen without a ROM loaded through an emulator.
-- [ ] Loads at least the first playable level.
-- [ ] Keyboard+mouse and controller input both functional per Phase 4.
-- [ ] Save/load functional per the Phase 2 save shim.
+- [x] Boots to the title screen without running through an emulator.
+- [x] Loads and progresses through Training into Windy.
+- [x] Keyboard, optional mouse-look and controller paths are implemented and
+      have scoped gameplay evidence. Complete device/camera parity remains open.
+- [x] Save/load is functional; retained adventure saves and multiplayer
+      profiles survive application restart in the tested scopes.
 - [ ] Runs at a stable frame rate matching the original timing.
 
 ## Phase 7 - Stabilization
@@ -218,6 +220,8 @@ of the roadmap builds toward:
       hand-ported code that never had to run outside an emulator's
       forgiving environment.
 - [ ] Add a settings menu (video, audio, controls) instead of config files only.
+      The external `conker_settings.exe` input editor is complete for its
+      current scope; Video, Audio and Paths are still placeholders.
 - [ ] Windowed/borderless/fullscreen and multi-monitor handling.
 
 ## Phase 8 - Modern graphics update (longer-term)
