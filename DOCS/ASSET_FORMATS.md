@@ -377,7 +377,66 @@ distinct `10 00 00 00 …` header). Pinning down the topology source is best don
 from the model-drawing code in `conker/src` that consumes these vertex streams,
 not from the data alone - see §9.
 
-## 5. Textures / images (Partial; per-file formats not yet inventoried)
+**Found the real per-vertex consuming code (2026-07-28), confirming the
+vertex-animation-frame hypothesis directly from game logic, not just data
+shape.** `conker/include/structs.h`'s `vertex` type (`f32 x,y,z` - a plain
+runtime position) is written by exactly one function,
+**`func_15043FF0(vertex *arg0, struct113 *arg1)`** (`conker/src/game_71240.c`,
+real matched C):
+
+```c
+void func_15043FF0(vertex *arg0, struct113 *arg1) {
+    arg0->x = arg1->unk18;
+    arg0->y = arg1->unk1A;
+    arg0->z = arg1->unk1C;
+    arg0->x += arg1->unk38 * 0.000015258789f; // 1/65536
+    arg0->y += arg1->unk3A * 0.000015258789f;
+    arg0->z += arg1->unk3C * 0.000015258789f;
+}
+```
+
+This is a **two-keyframe vertex blend**: a base position (`struct113`'s
+`unk18`/`1A`/`1C`, `s16` each - exactly `assets13`'s own 6-byte-vertex
+layout) plus a fixed-point fractional delta (`unk38`/`3A`/`3C`, same
+1/65536 scale libultra uses for fixed-point elsewhere in this codebase)
+toward a second keyframe. `struct113` is a 0x40 (64)-byte record with only
+those six halfwords named so far — the rest is very likely per-vertex
+UV/normal/color and other animation fields `func_15043FF0` doesn't touch,
+still unidentified. This is almost certainly the "vertex-animation frame"
+blend `assets13`'s own near-identical sibling records (differing by a
+unit or two per coordinate, see above) were always suspected to feed.
+
+Traced `func_15043FF0`'s only two real callers: `func_1505327C`
+(`game_77AD0.c`, disabled/non-matching draft, actor knockback-reaction
+code — calls it as `func_15043FF0(&sp3C, arg0->unk1D4 + (arg4 << 6))`,
+where `<<6` = **×64**, matching `struct113`'s exact size — `unk1D4` is a
+**per-actor pointer to an array of `struct113` records**, i.e. every
+spawned actor with a deformable mesh owns its own vertex-blend buffer);
+and `func_1503A830` (`conker/asm/64120.s`, 1041 real asm instructions, no
+C draft anywhere), which also calls a second large unmatched function
+(`func_150379DC`, 468 instructions, same file) and the project's own
+already-identified 64-bit PRNG (`func_150ADA20`) — consistent with a
+real-time per-vertex deformation/effect system (cloth, water, or
+particle-style vertex jitter), not a one-shot static mesh loader.
+`func_1503A830` itself is called from exactly one place
+(`func_1502BD84`, `conker/asm/58F80.s`), which itself has **no caller
+anywhere in the codebase** — reachable only via some not-yet-found
+function-pointer/dispatch table, the same shape as every other
+actor/model-specific mechanism this project's PC port has hit.
+
+**Answers the open "where are the faces" question at the mechanism
+level, but doesn't unblock the PC port further right now**: the real
+vertex-consuming code exists, is now identified precisely, and confirms
+`assets13` records are genuine two-keyframe animation blend sources for
+a real per-actor deformable-mesh system — but reaching it requires a
+live, model-bearing actor instance, which needs the same level/actor
+asset loading (`assets06`) this whole project has independently
+converged on as the standing wall from the game-state-machine, category-
+dispatch, and asset-loading investigations. Full trace (including the
+64CBFDOGL PC port's own reachability check) in that project's
+`DOCS/WORKING_NOTES/`.
+
+## 5. Textures / images (RGBA5551 confirmed by visual round-trip for several files; per-file format/dimension inventory still open)
 
 The extracted numbered files in **assets00-assets05** are leaf payloads rather
 than nested §3 containers, and all currently extracted file sizes are even.
@@ -397,18 +456,163 @@ Current US extraction inventory:
 
 `assets00/0005.bin` contains long runs of big-endian `0x4210`, which decodes as
 an RGBA5551 gray value and is consistent with a flat raster region. Several
-common sizes also fit 16-bit images (`12,800 = 80 × 80 × 2`), so RGBA5551 is a
-**strong per-sample interpretation**, not yet a section-wide specification.
+common sizes also fit 16-bit images (`12,800 = 80 × 80 × 2`).
+
+**Upgraded to Confirmed for a real sample (2026-07-27, refined same day):
+decoded numerous `assets00` files as big-endian RGBA5551 and visually
+rendered them (`tools/render_rgba5551.py`) - most produce clearly
+structured, non-random images (small icon/character/plant motifs repeated
+in a grid, most likely animation frames or a flipbook-style icon strip,
+not one large background texture), not noise.**
+
+**Correction to the first pass of this same investigation:** the initial
+check picked dimensions by "does `byte_count/2` factor into this one
+plausible-looking `w×h`" without comparing against sibling factor pairs of
+the *same* byte count, and got at least one file wrong. Re-checked with a
+tool that renders and ranks *every* valid factor pair (by average
+local-pixel-gradient - a genuine image has much lower pixel-to-neighbor
+variation than the same bytes reinterpreted at the wrong width, which
+scrambles unrelated rows together): `assets00/0039.bin` (12,800 bytes) is
+**not** a coherent image at the originally-guessed 80×80 (looks like the
+same content mangled into a 5-wide grid); at **32×200** it's a clean,
+sharp repeated icon (a grape-bunch-like shape). Always compare a "looks
+plausible" dimension against its lower-gradient siblings before trusting
+it - a wrong width scrambling a simple, sparse icon can still look
+superficially "structured" by coincidence.
+
+Confirmed-good widths by file, cross-checked visually (not just by
+gradient score) - all render as a small icon/character repeated in a
+grid at the given width:
+
+| Bytes (pixels) | Width | Example files | Visual content |
+| ---: | ---: | --- | --- |
+| 2,560 (1,280px) | 32 | 0021, 0033, 0036, 0045, 0046 | grape-bunch-style icon |
+| 3,520 (1,760px) | 32 | 0015-0020, 0022, 0024, 0034, 0035, 0038 | octopus/creature icon |
+| 3,520 (1,760px) | 16 | 0047, 0049 | leaf/stick icon (same byte size, *different* width than the majority above) |
+| 12,800 (6,400px) | 32 | 0001, 0039, 0040 | grape-bunch icon (tall strip) |
+| 12,800 (6,400px) | 64 | 0002, 0003, 0055 | colorful character/rainbow icon (same byte size, *different* width) |
+| 15,360 (7,680px) | 32 | 0052 | yellow/green plant icon |
+| 19,200 (9,600px) | 48 | 0050 | flower-with-berries icon |
+| 20,480 (10,240px) | 64 | 0014 | (consistent with the 64-width family, not individually re-checked) |
+| 21,120 (10,560px) | 64 | 0000, 0004, 0012, 0053, 0054 | vine/plant icon |
+| 28,160 (14,080px) | 64 | 0013 (largest `assets00` file) | vine/plant icon |
+
+**Files of the *identical* byte size can have different correct widths**
+(3,520B: 32 vs 16; 12,800B: 32 vs 64) - byte size alone does not determine
+width even within one section; a real per-file metadata source (see "Still
+needed" below) is the only fully reliable answer, this per-file visual
+check is a stopgap that happens to work often.
+
+**One size class remains genuinely unresolved, not just unchecked:** the
+**17,600-byte (8,800px) class**, roughly 21 files (`0005`-`0011`, `0023`,
+`0025`-`0032`, `0041`-`0044`, `0051`). None of their factor-pair dimensions
+(`40×220`, `88×100`, `100×88`, `160×55`, `55×160`, `50×176`, etc.) render as
+a coherent RGBA5551 image - all show the same repeating, meaningless
+diagonal/horizontal stripe pattern regardless of width. Also tried
+reinterpreting the raw bytes as 8-bit CI8 grayscale indices (no palette) at
+several widths - still just noise, not recognizable shapes. This is a
+real, distinct puzzle, not a rendering bug: either (a) genuine CI4/CI8 data
+that needs an actual color palette (not grayscale) to look right, (b) a
+different non-image data type that happens to share this byte-size
+profile, or (c) a dimension/layout this exact-factor search can't reach
+(e.g. a header offset, or non-8-bit-aligned width). Don't re-guess widths
+blind for this class - find the loading code or palette table instead.
+
+Reusable tooling: `tools/render_rgba5551.py`. For a given file (or a whole
+directory of `asset_dump.py` output), tries every `w` in `[4, 256]` where
+`w` divides the file's `pixel_count` evenly with a resulting `h` also in
+`[4, 256]`, decodes big-endian RGBA5551 (`r=(v>>11)&0x1F`, `g=(v>>6)&0x1F`,
+`b=(v>>1)&0x1F`, `a=v&1`, each channel expanded 5-bit→8-bit via
+`(c<<3)|(c>>2)`), ranks candidates by average per-pixel neighbor-difference
+("gradient" - lower means smoother/more image-like), and renders only the
+top-N lowest-gradient candidates as PNGs. **Always still eyeball the
+result** - the score is a stopgap heuristic, not ground truth (it correctly
+picked the right dimension for every file checked *except* the 17,600-byte
+class above, where it just picked the least-bad-looking noise).
+
+**Not every file factors this cleanly, which is itself useful negative
+evidence.** `assets01/0000.bin` (24,184 bytes → 12,092 pixels) and
+`assets05/0005.bin` (2,056 bytes → 1,028 pixels) both have pixel counts with
+a large prime factor (12,092 = 4×3023; 1,028 = 4×257) and thus **no
+reasonable `w×h` factor pair in the `[4,256]` range at all** - a plain flat
+RGBA5551 image can't have arbitrary-prime dimensions this large in a
+console-era N64 game. Two live hypotheses, neither confirmed yet: (a) a small
+fixed-size header (few bytes of width/height/format metadata) precedes the
+raw pixel data, so the *true* pixel payload is `file_size - header_size`, not
+the whole file - worth re-testing the failing files with a few small header
+sizes (4, 8, 16 bytes) subtracted first; (b) these specific files are CI4/CI8
+(palette-indexed, 1 or 0.5 bytes/pixel, not 2) rather than RGBA5551, which
+would need a separate palette blob (still unlocated) to render correctly.
+
+**Swept `assets01-assets05` the same way (2026-07-28) — negative result:
+`assets00` is the outlier, not a representative sample.** Ran
+`tools/render_rgba5551.py` (no-image-saved summary mode) over all 503
+numbered files across the five remaining sections (183+145+77+59+39).
+**176 of 503 (35%) have no valid `w×h` factor pair at all** in `[4,256]²`
+at 2 bytes/pixel — far more than the two isolated examples noted above;
+this is the norm for over a third of the remaining files, not an
+exception. Checked whether a small fixed header (2-32 bytes) would fix
+this for two representative failures (`assets01/0000.bin`,
+`assets05/0005.bin`): their pixel counts (12,092 = 2²×3023; 1,028 =
+2²×257) stay "prime-heavy" under every tested header size and under a
+1-byte-per-pixel (CI8) or 4-bit (CI4) reinterpretation too — no header
+size or bit-depth assumption makes either factor cleanly. This specific
+header-subtraction test is also too weak a filter to trust on its own
+(it "succeeds" for nearly any file once several header sizes and lenient
+factor ranges are tried at once, confirmed by testing it against files
+that already factor cleanly) — dropped as a dead end rather than reported
+as a fix.
+
+Of the **327 files that do factor cleanly, a visual sample across all
+four sections checked (`assets01`, `assets02`, `assets03`, `assets04`)
+rendered as the same sparse-colored-noise-on-transparent-background
+pattern already identified for `assets00`'s 17,600-byte class** — not
+coherent icons. This held even for files whose factor pair matched
+`assets00`'s own *confirmed-good* widths (16/32/48/64): e.g.
+`assets02/0002.bin` at 16×15 and `assets02/0008.bin` at 32×10 both render
+as scattered noise, not clean shapes, despite the "right" width by
+`assets00`'s own pattern. Also noticed some of the lowest-gradient
+"winners" are actively misleading: `assets01/0011.bin` (120 bytes) decodes
+at 12×5 with an artificially low gradient score because the raw bytes are
+mostly zero with a handful of small integers (`0x04`, `0x0C`, `0x10`,
+`0x48`, `0x4C`, `0x5C`, ...) that look far more like a small offset/count
+table than pixel data — a near-constant "image" trivially scores well on
+this gradient heuristic without being one. **The gradient-score method
+needs a sparsity/density check added before trusting a "low gradient"
+result** - it currently can't distinguish a genuine flat-color image
+region from non-image data that happens to be mostly zero.
+
+**Conclusion: `assets00`'s simple, uniform-per-file RGBA5551 encoding does
+not generalize to `assets01-05`.** Whatever format the majority of these
+five sections actually use — CI4/CI8 with a real (non-grayscale) palette,
+a different bit-depth or channel layout, a real per-file header this
+factor-pair search doesn't account for, or non-texture data entirely
+mixed in among these sections — the exact-factor-pair-plus-gradient method
+that worked for `assets00` cannot crack it, and applying more guesswork
+here would just produce more false "confirmations" like the ones caught
+above. No amount of further blind dimension-guessing across `assets01-05`
+is likely to succeed where it already failed on a representative sample;
+next steps need real metadata (loading code, a palette table, or a
+documented header) rather than more heuristic sweeping.
 
 Still needed:
 
 - locate width, height, format, and palette metadata in the referencing tables
-  or rendering code;
-- render every plausible RGBA16 file and reject obviously structured data;
-- test for CI4/CI8 plus palette pairs, intensity formats, masks, mip levels, and
-  atlases;
-- explain the very small records and the 901,040-byte `assets02` payload before
-  labeling the full `assets00-assets05` range as textures.
+  or rendering code (the exact-factor-pair heuristic above is a workaround for
+  *some* files, not a substitute for finding real per-file metadata - it
+  cannot disambiguate two equally-clean-looking candidates without a human,
+  and has now demonstrably failed outright for an entire size class, plus
+  apparently the majority of `assets01-05`);
+- crack the CI4/CI8-with-real-palette hypothesis specifically: find the
+  in-game texture-loading code (likely near the `Gfx`/texture-tile setup in
+  `conker/include/2.0L/PR/gbi.h` usage) or a palette table in the ROM, rather
+  than continuing to guess bit depths against the raw asset bytes alone;
+- explain the very small records (candidate non-image offset/count tables,
+  see `assets01/0011.bin` above), the 901,040-byte `assets02` payload, and
+  the ~35% of `assets01-05` files with no clean factor pair at any bit depth
+  before labeling the full `assets00-assets05` range as uniformly textures —
+  `assets00` itself may be the special case (a flat icon/sprite-strip pool),
+  not representative of what the other five sections hold.
 
 ## 6. Audio (Confirmed / Strong)
 
@@ -520,6 +724,44 @@ Still needed:
     00 00 01 02 ff ff ...`) that could be a per-note/per-channel mapping
     table - none decoded further this pass.
 
+### 6a. Authored animation events: assets0F (Confirmed layout)
+
+The original US loader `func_1503D660` loads section 0x0F, advances the
+allocation by 0x10, and publishes that address in `D_800D1588[model]`.
+`func_1503D484` walks eight-byte records until their first BE halfword is
+999, then stores the record count in `D_800C5A90[model]`. At each record:
+
+| Offset | Type | Meaning |
+| --- | --- | --- |
+| +0 | BE u16 | Internal animation index; 999 terminates the table. |
+| +2 | BE u16 | Flags; individual bits not established in this audit. |
+| +4 | BE u32 | Zero or event offset relative to allocation +0x10. |
+
+`func_1503D438` relocates ordinary nonzero offsets; `func_1505E650` indexes
+the records by eight bytes, and `func_1505E0C4` copies the record's event
+pointer to actor+0x1C4. Events are 12-byte records: BE float frame, BE u32
+command word (low byte selects the callback), BE u32 argument. Every
+nonempty list in this archive terminates at frame 999.
+
+The container has 187 actual rows, with 35 empty slots and 152 nonempty
+payloads. All nonempty payloads parse with bounded reads and terminator
+validation. Preserve empty slot numbering. Conker files 0 and 128 each
+contain 857 animation records; their table sentinel is payload +0x1AD8.
+Header word +0x0C is not the animation count. The remaining header
+semantics are not fully established.
+
+The three loader/relocator bodies (36/140/276 bytes) match the original
+decompressed ROM bytes exactly. Thirteen retained native Training event
+lists also match original file 0 bytes; this is data identity, not audio
+playback or callback-execution proof. The authored command-0x0A inventory
+has 33 events in 25 animation records, including aliases; some preceding
+command-9 arguments deliberately lack the deferred-sound flag.
+
+Evidence and reproducible local read-only parser:
+[Note 308](../../64CBFDOGL/DOCS/WORKING_NOTES/308-rom-animation-event-inventory-and-audio-boundary-20260908.md).
+No sound or dive correctness conclusion follows from an event list alone:
+gameplay code can also call sound producers directly.
+
 ## 7. Data / text tables (Tentative)
 
 - **assets1A** - fixed 8-byte structured records, each ending in an incrementing
@@ -533,7 +775,7 @@ Still needed:
 
 | Section | Current classification | Confidence |
 | --- | --- | --- |
-| assets00-05 | Image/texture candidates plus small or oversized records; RGBA5551 confirmed only for samples (§5) | Partial |
+| assets00-05 | RGBA5551 visually confirmed for 3 sample files (§5); full per-file dimension/format inventory still open, some files don't factor as plain RGBA5551 | Partial |
 | assets06 | Container → nested rzip → entity/script/dialogue bundle (§3, §4) | Strong |
 | assets07 | Tiny 0x50-byte section | Unknown |
 | assets08 | Chapter / menu metadata (§4) | Strong |
