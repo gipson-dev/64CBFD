@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game optional callback byte-exact
+
+- Completed `func_15199980`: 36 words and zero linked differences.
+- Naming the final optional callback pointer as a local keeps its value in
+  argument register `a0` for the null test and call, removing IDO's duplicate
+  delay-slot load. No guarded word patch is needed.
+- Direct comparison reports **36 / 36** retail words exact. Fresh scan:
+  **2543 / 5493 (46.30%)** overall and **1975 / 4804 (41.11%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Game float-bound check byte-exact
 
 - Completed `func_1514672C`: 30 words and zero linked differences.

@@ -301,6 +301,7 @@ s32 func_15199954(s32 arg0) {
 s32 func_15199980(u8 *arg0) {
     u8 *temp_v1 = *(u8 **) (arg0 + 0x98);
     s8 temp_v0 = *(s8 *) (temp_v1 + 0x39);
+    void *temp_a0;
 
     if (temp_v0 != -1) {
         D_8008F8C0[temp_v0](arg0);
@@ -309,8 +310,9 @@ s32 func_15199980(u8 *arg0) {
     if (temp_v0 != -1) {
         D_8008F8B4[temp_v0](arg0);
     }
-    if (*(s32 *) (temp_v1 + 0x148) != 0) {
-        func_1516972C(*(void **)(temp_v1 + 0x148));
+    temp_a0 = *(void **)(temp_v1 + 0x148);
+    if (temp_a0 != NULL) {
+        func_1516972C(temp_a0);
     }
 }
 
