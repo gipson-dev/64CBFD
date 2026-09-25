@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game forwarded-call ABI byte-exact
+
+- Completed all 12 words of `func_151B2FA0` without adding patch rows.
+- Corrected the wrapper's forwarded argument and `func_151B47D8` declaration
+  from `s16` to `s32`. Widening only the wrapper argument still forced an
+  `lh`; aligning both types emitted retail's direct `a1` to `a2` move and
+  exact argument-save schedule.
+- Independent comparison of the complete 48-byte linked and retail spans
+  produced SHA-256
+  `39d8f40d465f804aa8ae34e5a18beb2004aea57e6d7fad3fc509ebb97eff27da`.
+  Fresh scan: **2553 / 5490 (46.50%)** overall and
+  **1985 / 4801 (41.35%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game indexed-slot clear byte-exact
 
 - Completed all 8 words of `func_150F02A0`. Explicit base-pointer and index

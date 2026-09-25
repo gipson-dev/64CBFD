@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,490 / 6,038 (90.92%) | 2,552 / 5,490 (46.48%) | 1 | 2,937 |
+| Total | 5,490 / 6,038 (90.92%) | 2,553 / 5,490 (46.50%) | 1 | 2,936 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,801 / 5,318 (90.28%) | 1,984 / 4,801 (41.32%) | 0 | 2,817 |
+| Game | 4,801 / 5,318 (90.28%) | 1,985 / 4,801 (41.35%) | 0 | 2,816 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -83,6 +83,8 @@ The following guarded register pass completed `func_1505841C`; see
 [Working Note 035](WORKING_NOTES/035-game-motion-scale-register-match-20260925.md).
 The next indexed-slot pass completed `func_150F02A0`; see
 [Working Note 036](WORKING_NOTES/036-game-indexed-slot-clear-match-20260925.md).
+The following source-level call-ABI pass completed `func_151B2FA0`; see
+[Working Note 037](WORKING_NOTES/037-game-forwarded-call-abi-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
