@@ -212,9 +212,9 @@ candidate before treating it as an ordinary C conversion target.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,517 / 5,497 (45.79%) | 1 | 2,979 |
+| Total | `[###########-------------]` 2,519 / 5,497 (45.82%) | 1 | 2,977 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 1,957 / 4,808 (40.70%) | 0 | 2,851 |
+| Game | `[##########--------------]` 1,959 / 4,808 (40.74%) | 0 | 2,849 |
 | Debugger | `[#######################-]` 173 / 181 (95.58%) | 0 | 8 |
 
 `match-progress` compares linked functions by symbol against pristine retail
@@ -222,10 +222,11 @@ bytes at name-implied addresses. Add `LIST=1` to list every non-exact function
 from the smallest real diff upward. The current sole address-only blocker is
 `func_10012588`.
 
-The exact count is five lower than the July snapshot. The higher percentage is
-caused by the smaller C denominator and must not be reported as matching
-progress. See [CURRENT_STATUS.md](CURRENT_STATUS.md) for the current resume
-boundary and validation limits.
+The exact count is three lower than the July snapshot. The higher percentage
+is primarily caused by the smaller C denominator; the paired event-swap pass
+added two exact functions after the restoration baseline. See
+[CURRENT_STATUS.md](CURRENT_STATUS.md) for the current resume boundary and
+validation limits.
 
 Historical milestones and matcher corrections are recorded in the
 [update log](UPDATE_LOG.md). Matching technique and validation requirements

@@ -274,9 +274,7 @@ void func_151906E0(u8 *arg0, s32 *arg1, u8 arg2) {
 
         if (temp_v1 == temp_a2) {
             *(s32 *) (temp_v0 + 8) = arg1[1];
-            return;
-        }
-        if (temp_a2 == arg1[1]) {
+        } else if ((u32) arg1[1] - (u32) temp_a2 == 0) {
             *(s32 *) (temp_v0 + 8) = temp_v1;
         }
     }

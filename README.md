@@ -108,9 +108,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,517 / 5,497 (45.79%) | 1 | 2,979 |
+| Total | `[###########-------------]` 2,519 / 5,497 (45.82%) | 1 | 2,977 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 1,957 / 4,808 (40.70%) | 0 | 2,851 |
+| Game | `[##########--------------]` 1,959 / 4,808 (40.74%) | 0 | 2,849 |
 | Debugger | `[#######################-]` 173 / 181 (95.58%) | 0 | 8 |
 
 The sole address-only blocker is `func_10012588`; its C instructions match,
