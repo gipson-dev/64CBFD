@@ -32,17 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,526 / 5,497 (45.95%) | 1 | 2,970 |
+| Total | 2,527 / 5,497 (45.97%) | 1 | 2,969 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
 | Game | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | 180 / 181 (99.45%) | 0 | 1 |
+| Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,526, while
+denominator driven: the exact count is now 2,527, while
 481 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
-glyph-blitter, `_Printf`, and context-display passes added one each after the
-restoration baseline.
+glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
+passes added one each after the restoration baseline.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -64,9 +64,9 @@ end-to-end gameplay acceptance.
 
 1. The restoration baseline is banked. Do not fold a broad conversion batch
    into it; future work should start from a new focused commit.
-2. Resume the final debugger target, `func_16000B14`, currently 277 real
-   differences across 286 words.
-3. Keep `func_15135480` as a game follow-up candidate. It has the same
+2. Debugger is complete at 181 / 181 linked byte-exact C functions. Preserve
+   the guarded `func_16000B14` normalization while broader matching continues.
+3. Resume `func_15135480` as the next focused game candidate. It has the same
    branch-operand mismatch solved in the paired event-swap routines, plus one
    additional difference that still needs isolation.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the

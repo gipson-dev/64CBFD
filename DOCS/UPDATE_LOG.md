@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Debugger main loop byte-exact
+
+- Completed `func_16000B14`: 286 words and zero linked differences.
+- Recovered an in-slot source shape by using direct page masks, a Boolean
+  `D_160038A4` assignment, and direct final returns; no overflow trampoline
+  remains.
+- Added 201 expected-word-guarded fixed-address normalizations for the
+  remaining IDO frame, register-allocation, scheduling, and relocation delta.
+  Fresh scan: **2527 / 5497 (45.97%)** overall and **181 / 181 (100.00%)**
+  debugger. Resume focused matching in `game` at `func_15135480`.
+
 ### Debugger memory viewer byte-exact
 
 - Completed `func_1600078C`: 180 words and zero linked differences.

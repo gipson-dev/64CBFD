@@ -8,18 +8,18 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,497 / 6,038 (91.04%) | 2,526 / 5,497 (45.95%) | 1 | 2,970 |
+| Total | 5,497 / 6,038 (91.04%) | 2,527 / 5,497 (45.97%) | 1 | 2,969 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
 | Game | 4,808 / 5,318 (90.41%) | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | 181 / 182 (99.45%) | 180 / 181 (99.45%) | 0 | 1 |
+| Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
-`func_16000590`, `func_16001044`, and `func_1600078C` are byte-exact in the
-linked ELF. The last debugger target is `func_16000B14`, with 277 real
-differences across its 286-word retail body. See
+`func_16000590`, `func_16001044`, `func_1600078C`, and `func_16000B14` are
+byte-exact in the linked ELF. Debugger matching is complete at 181 / 181; the
+next focused decomp target is the game routine `func_15135480`. See
 [Current Decomp Status](CURRENT_STATUS.md) and
-[Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
+[Working Note 010](WORKING_NOTES/010-debugger-main-loop-byte-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
@@ -99,8 +99,9 @@ This is the decompilation project as it exists today. It isn't blocking to
 *start* Phase 1 under the static-recompilation path, but the following make
 every later phase cheaper and safer:
 
-- [ ] Continue matching `init`/`game`/`debugger` sections (`make -C conker progress`).
-      Debugger is now 180 / 181 byte-exact; finish `func_16000B14` next.
+- [ ] Continue matching the `init` and `game` sections (`make -C conker progress`).
+- [x] Complete debugger matching: 181 / 181 converted functions are linked
+      byte-exact, including the final 286-word `func_16000B14` main loop.
 - [ ] Finish mapping the ROM layout (see the layout notes in [PROJECT.md](PROJECT.md#rom-layout)).
 - [x] Document the RSP microcode(s) in use (F3DEX-family display lists,
       `libultra`'s `gbi.h`/`gs2dex.h` already in `conker/include/2.0L/PR/`)

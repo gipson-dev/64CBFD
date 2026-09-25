@@ -334,14 +334,13 @@ s32 func_16000A5C(void) {
 }
 
 // called from func_10007DAC
-// NON-MATCHING: mips-to-c cleaned skeleton, converted for raw-progress accounting.
+// Matched with guarded fixed-address frame, allocation, and scheduling normalization.
 s32 func_16000B14(struct118 *arg0) {
     s32 firstPass = 1;
     s32 state = 0;
     s32 cur;
-    s32 maskedPc;
     s32 hasOddPage;
-    s32 tlbBase;
+    s32 maskedPc;
     s32 i;
     void (*drawFunc)(void);
     s32 (*inputFunc)(void);
@@ -366,9 +365,8 @@ s32 func_16000B14(struct118 *arg0) {
     if ((cur & 0xFF000000) != 0x15000000) {
         D_16003AF0 = 1;
     } else {
-        maskedPc = cur & ~0xFFF;
-        hasOddPage = maskedPc & 0x1000;
-        maskedPc &= ~0x1000;
+        maskedPc = cur & ~0x1FFF;
+        hasOddPage = cur & 0x1000;
         D_16003AF0 = 0;
         for (i = 0; i < 32; i += 4) {
             if ((maskedPc == D_160039AC[i + 0]) && ((hasOddPage ? D_1600392C[i + 0] : D_160038AC[i + 0]) & 2)) {
@@ -393,10 +391,7 @@ s32 func_16000B14(struct118 *arg0) {
         D_16003888 = 1;
     }
     D_1600389C = arg0;
-    D_160038A4 = 0;
-    if ((arg0->unk120 == 0x20) && (arg0->unk11C == (s32)func_150AD770)) {
-        D_160038A4 = 1;
-    }
+    D_160038A4 = (arg0->unk120 == 0x20) && (arg0->unk11C == (s32)func_150AD770);
 
     do {
         if ((firstPass == 0) && (state & 2)) {
@@ -442,12 +437,11 @@ s32 func_16000B14(struct118 *arg0) {
         arg0->unk12 = 0;
         return 1;
     }
-    tlbBase = 0;
     if ((arg0->unk120 == 0x20) && (D_160038A4 == 0)) {
-        tlbBase = 1;
         arg0->unk11C += 4;
+        return 1;
     }
-    return tlbBase;
+    return 0;
 }
 
 // Matched with guarded register-allocation normalization.
