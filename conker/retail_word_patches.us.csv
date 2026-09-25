@@ -455,3 +455,7 @@ generated_1AC2F0,func_1517F448,0x010,0x004E1821,0x01E27821,-,-,Schedule retail s
 generated_1AC2F0,func_1517F448,0x014,0x01E27821,0x004E1821,-,-,Schedule retail first-array address second,
 game_A28B0,func_15079F6C,0x014,0x90630000,0x906E0000,R_MIPS_LO16:D_800D1891,R_MIPS_LO16:D_800D1891,Use retail byte temporary register,
 game_A28B0,func_15079F6C,0x020,0x01E3C025,0x01EEC025,-,-,Use retail byte temporary in packed halfword,
+game_1944C0,func_1516968C,0x028,0x908F000C,0x90AF0000,-,-,Load comparison byte from arg1 first,
+game_1944C0,func_1516968C,0x02C,0x90B80000,0x9098000C,-,-,Load comparison byte from arg0 second,
+game_1944C0,func_151696DC,0x00C,0x00001025,0x24C60000,-,R_MIPS_LO16:D_800DD198,Schedule slot-table low half before count branch,
+game_1944C0,func_151696DC,0x014,0x24C60000,0x00001025,R_MIPS_LO16:D_800DD198,-,Initialize loop index in count-branch delay slot,

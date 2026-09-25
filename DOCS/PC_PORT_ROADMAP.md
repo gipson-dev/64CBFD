@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,495 / 6,038 (91.01%) | 2,537 / 5,495 (46.17%) | 1 | 2,957 |
+| Total | 5,495 / 6,038 (91.01%) | 2,539 / 5,495 (46.21%) | 1 | 2,955 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,806 / 5,318 (90.37%) | 1,969 / 4,806 (40.97%) | 0 | 2,837 |
+| Game | 4,806 / 5,318 (90.37%) | 1,971 / 4,806 (41.01%) | 0 | 2,835 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -41,6 +41,8 @@ The next focused pass completed `func_1517F448`; see
 [Working Note 017](WORKING_NOTES/017-game-indexed-counter-byte-match-20260925.md).
 The following focused pass completed `func_15079F6C`; see
 [Working Note 018](WORKING_NOTES/018-game-packed-field-writer-byte-match-20260925.md).
+The final two-difference pass completed `func_1516968C` and `func_151696DC`;
+see [Working Note 019](WORKING_NOTES/019-final-two-difference-game-matches-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

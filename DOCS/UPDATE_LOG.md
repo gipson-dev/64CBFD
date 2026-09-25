@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Final two-difference game functions byte-exact
+
+- Completed `func_1516968C` and `func_151696DC`: 20 words each and zero linked
+  differences.
+- Preserved the maintained C bodies and added four expected-word-guarded
+  normalizations for two independent byte loads and loop-setup scheduling.
+- Direct comparison reports **40 / 40** retail words exact. Fresh scan:
+  **2539 / 5495 (46.21%)** overall and **1971 / 4806 (41.01%)** game, with
+  debugger unchanged at **181 / 181**. No two-difference game rows remain.
+
 ### Game packed-field writer byte-exact
 
 - Completed `func_15079F6C`: 20 words and zero linked differences.

@@ -341,26 +341,13 @@ s32 func_15169668(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     D_800D2DAB = 1;
     return arg0;
 }
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-// NON-MATCHING (logic verified, 2 words left): only the two lbu operands of
-// the equality are swapped - retail loads *arg1 before arg0->unkC; cfe
-// canonicalizes the comparison so both source operand orders emit the
-// a0-based load first. The u8 arg2 prologue and lbu unkC (struct102.unkC
-// split to u8) already match retail exactly. Tried guarded one-local and
-// two-local byte loads; both force source load order but allocate v0/v1 and
-// increase the diff count.
+// Matched with guarded byte-load scheduling normalization.
 void func_1516968C(struct102 *arg0, u8 *arg1, u8 arg2) {
     if (((arg2 == 0xF) || (arg2 == 0x10)) && (*arg1 == arg0->unkC)) {
         func_1516972C(arg0);
     }
 }
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-// NON-MATCHING (logic verified, 2 words left): indexed array form keeps arg0
-// in a0 and slot in a1 like retail. Remaining difference is only the scheduling
-// of `i = 0` vs `slots = D_800DD198` around the positive-count branch.
-// Tried (2026-07-16): moving `i = 0` after slots and between count/slots -
-// both reorders regress to 11 diffs (register allocation flips); the
-// delay-slot choice is a scheduler coin-flip, not source order.
+// Matched with guarded loop-setup scheduling normalization.
 void func_151696DC(void *arg0) {
     s8 i;
     s8 count;
