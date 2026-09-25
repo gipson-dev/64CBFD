@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Original no-op callback extent restored
+
+- Replaced the false C model for `func_1515FB70` with its complete original
+  nine-word assembly extent. This preserves retail's conditional load into
+  `v0`, redundant negative-value branch, and undefined return value.
+- Direct comparison reports **9 / 9** retail words exact. This is a
+  classification correction, so the exact numerator remains **2550**; the
+  fresh scan is **2550 / 5490 (46.45%)** overall and
+  **1982 / 4801 (41.28%)** game.
+
 ### Game opening-load schedule byte-exact
 
 - Completed `func_151254F4`: 40 words and zero linked differences.

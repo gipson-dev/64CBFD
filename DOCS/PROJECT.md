@@ -197,9 +197,9 @@ make -C conker match-progress NON_MATCHING=1
 
 | Section | Progress bytes | Functions |
 | --- | ---: | ---: |
-| Total | `[#####################---]` 85.65% | 5,491 / 6,038 (90.94%) |
+| Total | `[#####################---]` 85.65% | 5,490 / 6,038 (90.92%) |
 | Init | `[######################--]` 90.79% | 508 / 538 (94.42%) |
-| Game | `[####################----]` 85.12% | 4,802 / 5,318 (90.30%) |
+| Game | `[####################----]` 85.11% | 4,801 / 5,318 (90.28%) |
 | Debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
 There are 547 tracked raw-assembly functions. The increase from July reflects
@@ -212,9 +212,9 @@ candidate before treating it as an ordinary C conversion target.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,550 / 5,491 (46.44%) | 1 | 2,940 |
+| Total | `[###########-------------]` 2,550 / 5,490 (46.45%) | 1 | 2,939 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 1,982 / 4,802 (41.27%) | 0 | 2,820 |
+| Game | `[##########--------------]` 1,982 / 4,801 (41.28%) | 0 | 2,819 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The debugger section is fully complete: 181 C-classified rows match through
