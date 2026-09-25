@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,554 / 5,489 (46.53%) | 1 | 2,934 |
+| Total | 2,555 / 5,489 (46.55%) | 1 | 2,933 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,986 / 4,800 (41.38%) | 0 | 2,814 |
+| Game | 1,987 / 4,800 (41.40%) | 0 | 2,813 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,554, while
+denominator driven: the exact count is now 2,555, while
 489 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -62,7 +62,9 @@ normalization for `func_1505841C`, indexed-slot clear `func_150F02A0`, and
 call-ABI correction for `func_151B2FA0`, and byte-offset expression recovery
 for `func_150770E4`.
 Handwritten byte-fill loop `func_150A7770` is restored from its false C model
-to the original eight-word assembly extent.
+to the original eight-word assembly extent. Packed fixed-point reader
+`func_1515F008` is byte-exact through guarded pointer/value register
+normalization.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -114,7 +116,9 @@ end-to-end gameplay acceptance.
    `func_150770E4` is byte-exact after expressing its table lookup as retail's
    combined 812-byte stride. Handwritten `func_150A7770` is restored to its
    original eight-word assembly extent after the C model overflowed the slot.
-   Continue at 14-word `func_1515F008`, the next six-difference game row.
+   `func_1515F008` is byte-exact through six guarded, non-relocating
+   pointer/value register choices. Continue at 12-word `func_1516F8EC`, the
+   first remaining six-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -184,5 +188,7 @@ The completed table-stride expression recovery is in
 [Working Note 038](WORKING_NOTES/038-game-table-stride-match-20260925.md).
 The restored handwritten byte-fill loop is in
 [Working Note 039](WORKING_NOTES/039-game-handwritten-byte-fill-restoration-20260925.md).
+The completed packed fixed-point reader is in
+[Working Note 040](WORKING_NOTES/040-game-packed-fixed-point-reader-match-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

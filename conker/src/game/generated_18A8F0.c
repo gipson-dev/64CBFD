@@ -128,6 +128,7 @@ void func_1515EF74(u8 *arg0) {
     func_1515F0AC(-func_1515F008(arg0, 14), 3);
 }
 
+// Matched with guarded pointer/value register normalization.
 f32 func_1515F008(u8 *arg0, s32 arg1) {
     s32 temp_v0;
     u8 *temp_v1 = arg0 + arg1 * 2;

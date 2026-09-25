@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,489 / 6,038 (90.91%) | 2,554 / 5,489 (46.53%) | 1 | 2,934 |
+| Total | 5,489 / 6,038 (90.91%) | 2,555 / 5,489 (46.55%) | 1 | 2,933 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,800 / 5,318 (90.26%) | 1,986 / 4,800 (41.38%) | 0 | 2,814 |
+| Game | 4,800 / 5,318 (90.26%) | 1,987 / 4,800 (41.40%) | 0 | 2,813 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -90,6 +90,8 @@ The next source-level table-stride pass completed `func_150770E4`; see
 The following classification pass restored handwritten byte-fill loop
 `func_150A7770`; see
 [Working Note 039](WORKING_NOTES/039-game-handwritten-byte-fill-restoration-20260925.md).
+The next guarded pointer/value register pass completed `func_1515F008`; see
+[Working Note 040](WORKING_NOTES/040-game-packed-fixed-point-reader-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

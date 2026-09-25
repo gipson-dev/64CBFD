@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game packed fixed-point reader byte-exact
+
+- Completed all 14 words of `func_1515F008` with six expected-word guards for
+  its pointer/value `v1`/`v0` allocation. No normalized word carries a
+  relocation.
+- Rejected declaration-order, combined-expression, scalar-`register`, and
+  pointer-`register` experiments after they were inert or produced larger
+  temporary-register cascades.
+- Independent comparison of the complete 56-byte linked and retail spans
+  produced SHA-256
+  `36d44231b36c7fe4b8c061abb0fb0477760f6f6d99a60afe72c4978adc463713`.
+  Fresh scan: **2555 / 5489 (46.55%)** overall and
+  **1987 / 4800 (41.40%)** game, with debugger unchanged at **181 / 181**.
+
 ### Original handwritten byte-fill loop restored
 
 - Replaced the false C model for `func_150A7770` with its preserved handwritten
