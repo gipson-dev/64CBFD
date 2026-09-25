@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game stack-local layout byte-exact
+
+- Completed `func_15071A64`: 45 words and zero linked differences.
+- Swapping its two local declarations makes IDO place the 36-byte array at
+  `sp+0x28` and `struct17` at `sp+0x4C`, matching all four retail call
+  arguments without guarded word patches or relocation changes.
+- Direct comparison reports **45 / 45** retail words exact. Fresh scan:
+  **2545 / 5493 (46.33%)** overall and **1977 / 4804 (41.15%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Game call-argument register match
 
 - Completed `func_1505D024`: 104 words and zero linked differences.

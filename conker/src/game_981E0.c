@@ -1462,8 +1462,8 @@ void func_15071A34(s32 arg0) {
 }
 
 void func_15071A64(s32 arg0) {
-    u32 sp28[9];
     struct17 sp4C;
+    u32 sp28[9];
 
     if ((func_150ADA20() & 1) == 0) {
         if ((D_800D154C->unk1D4 != NULL) && ((D_800D154C->unk74 & 0xF) != 0xF) &&

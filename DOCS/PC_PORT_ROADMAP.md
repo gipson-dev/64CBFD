@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,493 / 6,038 (90.97%) | 2,544 / 5,493 (46.31%) | 1 | 2,948 |
+| Total | 5,493 / 6,038 (90.97%) | 2,545 / 5,493 (46.33%) | 1 | 2,947 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,804 / 5,318 (90.33%) | 1,976 / 4,804 (41.13%) | 0 | 2,828 |
+| Game | 4,804 / 5,318 (90.33%) | 1,977 / 4,804 (41.15%) | 0 | 2,827 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -56,6 +56,9 @@ The next source-level pointer-lifetime pass completed `func_15199980`; see
 [Working Note 024](WORKING_NOTES/024-game-optional-callback-match-20260925.md).
 The final three-difference pass completed `func_1505D024`; see
 [Working Note 025](WORKING_NOTES/025-game-call-argument-register-match-20260925.md).
+The next source-level pass completed `func_15071A64` by restoring the retail
+stack-local layout; see
+[Working Note 026](WORKING_NOTES/026-game-stack-local-layout-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
