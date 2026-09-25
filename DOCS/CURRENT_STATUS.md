@@ -32,10 +32,10 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-24:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,524 / 5,497 (45.92%) | 1 | 2,972 |
+| Total | 2,525 / 5,497 (45.93%) | 1 | 2,971 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
 | Game | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | 178 / 181 (98.34%) | 0 | 3 |
+| Debugger | 179 / 181 (98.90%) | 0 | 2 |
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,524, two above July's count, while
@@ -64,10 +64,8 @@ end-to-end gameplay acceptance.
 
 1. The restoration baseline is banked. Do not fold a broad conversion batch
    into it; future work should start from a new focused commit.
-2. Resume debugger `func_16001044`, currently 151 real differences across 155
-   words. It is the decimal/hex/float drawing dispatcher used by the completed
-   context display; establish its frame and mode-dispatch shape before tuning
-   register allocation.
+2. Resume debugger `func_1600078C`, currently 180 real differences across 180
+   words. The final debugger target after it is `func_16000B14`.
 3. Keep `func_15135480` as a game follow-up candidate. It has the same
    branch-operand mismatch solved in the paired event-swap routines, plus one
    additional difference that still needs isolation.

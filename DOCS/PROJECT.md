@@ -212,10 +212,10 @@ candidate before treating it as an ordinary C conversion target.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,524 / 5,497 (45.92%) | 1 | 2,972 |
+| Total | `[###########-------------]` 2,525 / 5,497 (45.93%) | 1 | 2,971 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
 | Game | `[##########--------------]` 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | `[########################]` 178 / 181 (98.34%) | 0 | 3 |
+| Debugger | `[########################]` 179 / 181 (98.90%) | 0 | 2 |
 
 `match-progress` compares linked functions by symbol against pristine retail
 bytes at name-implied addresses. Add `LIST=1` to list every non-exact function

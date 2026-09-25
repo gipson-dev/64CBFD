@@ -16,6 +16,13 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Debugger number renderer byte-exact
+
+- Completed `func_16001044`: 155 words and zero linked differences.
+- Restored the front-loaded mode dispatch with a `switch`; guarded word and
+  relocation normalization preserves the retail frame, allocation, and schedule.
+- Fresh scan: **2525 / 5497 (45.93%)** overall and **179 / 181 (98.90%)** debugger.
+
 ### Debugger context display byte-exact
 
 - Completed `func_16000590` with its retail 79-word linked body. Reusing the

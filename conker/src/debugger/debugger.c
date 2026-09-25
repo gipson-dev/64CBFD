@@ -493,7 +493,8 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
 
     if (arg0 >= (D_160038A0 << 5) && arg0 < 0x341) {
         fb = func_1600160C(arg0);
-        if (arg1 == 0) {
+        switch (arg1) {
+        case 0:
             fb += 0x70;
             for (i = 0; i < 8; i++) {
                 u8 c = arg2 & 0xF;
@@ -506,7 +507,8 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
                 arg2 = arg2 >> 4;
                 fb -= 0x10;
             }
-        } else if (arg1 == 1) {
+            break;
+        case 1: {
             s32 printed;
             s32 *p;
             s32 *base;
@@ -531,7 +533,9 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
                 }
                 p--;
             } while (p >= stop);
-        } else if (arg1 == 2) {
+            break;
+        }
+        case 2: {
             s32 exp = (arg2 & 0x7F800000) >> 23;
 
             if ((exp > 0 && exp < 0xFF) || (exp == 0 && (arg2 << 9) == 0)) {
@@ -544,6 +548,8 @@ void func_16001044(s32 arg0, s32 arg1, s32 arg2) {
             } else {
                 func_160012B0(arg0, D_160047E4);
             }
+            break;
+        }
         }
     }
 }
