@@ -452,7 +452,7 @@ s32 func_16000B14(struct118 *arg0) {
     return tlbBase;
 }
 
-// NON-MATCHING: lots to figure out
+// Matched with guarded register-allocation normalization.
 void func_16000F8C(s32 arg0, f32 arg1) {
     struct F8Storage {
         u8 tmp[0x2C];

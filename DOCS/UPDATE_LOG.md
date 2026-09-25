@@ -14,6 +14,18 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-09-25
+
+### Debugger float formatter byte-exact
+
+- Completed `func_16000F8C` with its retail 46-word body, 88-byte frame,
+  stack slots, branches, formatter call, and scheduling intact.
+- Added five expected-word-guarded register-allocation normalizations for the
+  raw float bits, exponent mask, and doubled-zero test. The build aborts if
+  IDO's input words drift.
+- A fresh linked retail scan reports **2521 / 5497 overall (45.86%)** and
+  **175 / 181 debugger (96.69%)**. Resume at `func_160014F0` (19 real diffs).
+
 ## 2026-09-24
 
 ### Debugger rectangle fill byte-exact

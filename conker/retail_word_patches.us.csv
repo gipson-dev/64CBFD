@@ -1,3 +1,8 @@
 filename,function,offset,expected,replacement,note
 debugger,func_16001390,0x13C,0x00095040,0x00193C03,Schedule row sign extension before stride scaling
 debugger,func_16001390,0x140,0x00193C03,0x00095040,Schedule stride scaling after row sign extension
+debugger,func_16000F8C,0x38,0x8FA20054,0x8FA30054,Keep raw float bits in v1
+debugger,func_16000F8C,0x40,0x00411824,0x00611024,Mask raw float bits from v1 into v0
+debugger,func_16000F8C,0x44,0x0003CDC2,0x0002CDC2,Shift exponent mask from v0
+debugger,func_16000F8C,0x54,0x00024040,0x00031040,Double raw float bits from v1 into v0
+debugger,func_16000F8C,0x58,0x11000006,0x10400006,Test doubled float bits in v0

@@ -32,21 +32,21 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-24:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,520 / 5,497 (45.84%) | 1 | 2,976 |
+| Total | 2,521 / 5,497 (45.86%) | 1 | 2,975 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
 | Game | 1,959 / 4,808 (40.74%) | 0 | 2,849 |
-| Debugger | 174 / 181 (96.13%) | 0 | 7 |
+| Debugger | 175 / 181 (96.69%) | 0 | 6 |
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is 2,520, two below July's 2,522, while
+denominator driven: the exact count is 2,521, one below July's 2,522, while
 481 functions moved from C back to assembly. The paired event-swap pass added
-two byte-exact functions and the debugger rectangle-fill pass added one after
-the restoration baseline.
+two byte-exact functions and the debugger rectangle-fill and float-formatter
+passes added one each after the restoration baseline.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
 
-These commands passed from the current dirty checkout on 2026-09-24:
+These commands passed from the current checkout on 2026-09-25:
 
 ```sh
 make -C conker replace NON_MATCHING=1 -j4
@@ -63,8 +63,9 @@ end-to-end gameplay acceptance.
 
 1. The restoration baseline is banked. Do not fold a broad conversion batch
    into it; future work should start from a new focused commit.
-2. Resume debugger `func_16000F8C`. Its frame, stack slots, branches,
-   formatter call, and scheduling match; five register-color words remain.
+2. Resume debugger `func_160014F0`. Its 71-word size, parameter-normalization
+   prologue, four-pixel unroll, pointer induction, and outer-loop delay slot
+   match; 19 allocator-coloring words remain.
 3. Keep `func_15135480` as a game follow-up candidate. It has the same
    branch-operand mismatch solved in the paired event-swap routines, plus one
    additional difference that still needs isolation.
