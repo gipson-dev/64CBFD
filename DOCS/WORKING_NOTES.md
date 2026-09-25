@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, packed-value scaling cluster complete).** The current
-linked checkpoint is `2558 / 5489 (46.60%)` exact C functions, with one
-address-drift blocker and 2,930 genuinely different C functions. The tree
+**Active (2026-09-25, viewport setup frame match complete).** The current
+linked checkpoint is `2559 / 5489 (46.62%)` exact C functions, with one
+address-drift blocker and 2,929 genuinely different C functions. The tree
 contains 549 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -135,9 +135,10 @@ eight-word assembly extent after its false C model overflowed the slot.
 normalization. Packed-byte twins `func_1516F8EC` and `func_1516F91C` now match
 through symmetric guarded temporary-register normalization, and
 `func_1516F984` matches from a source-level scaled-field lifetime. The
-six-difference game tier is complete. Continue at 68-word `func_15019BB8`, the
-first seven-difference game row. Keep raw-assembly conversion as a separate
-workstream. The
+six-difference game tier is complete. `func_15019BB8` now matches through
+guarded frame-size and relocation-preserving viewport-address register
+normalization. Continue at 14-word `func_1509F6B0`, the next seven-difference
+game row. Keep raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
 and the completed pair in [Working Note 002](WORKING_NOTES/002-paired-event-swap-byte-match-20260924.md).
@@ -214,6 +215,8 @@ The completed packed fixed-point reader is in
 [Working Note 040](WORKING_NOTES/040-game-packed-fixed-point-reader-match-20260925.md).
 The completed packed-value scaling cluster is in
 [Working Note 041](WORKING_NOTES/041-game-packed-value-scaling-cluster-20260925.md).
+The completed viewport setup frame/address normalization is in
+[Working Note 042](WORKING_NOTES/042-game-viewport-setup-frame-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

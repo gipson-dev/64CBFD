@@ -181,7 +181,7 @@ s32 func_150198FC() {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019BB8.s. */
+// Matched with guarded frame-size and viewport-address register normalization.
 void func_15019BB8(Gfx *arg0, s32 arg1) {
     s32 temp_v0;
     s16 sp2A;

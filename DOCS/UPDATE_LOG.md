@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game viewport setup byte-exact
+
+- Completed all 68 words of `func_15019BB8` with seven expected-word guards.
+- Normalized IDO's unused extra eight-byte frame reservation and the resulting
+  five-word `t7`/`t8` viewport-address allocation. The
+  `D_800BE628` HI16/LO16 relocations remain attached to the guarded load pair.
+- Independent comparison of the complete 272-byte linked and retail spans
+  produced SHA-256
+  `e5b5db6ffd379981dedd07db51eb68b92bf6fa81490c6ef281c01a3b68c28bb0`.
+  Fresh scan: **2559 / 5489 (46.62%)** overall and
+  **1991 / 4800 (41.48%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game packed-value scaling cluster byte-exact
 
 - Completed `func_1516F8EC` and `func_1516F91C` at 12 words each with six
