@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, game identifier check byte-exact).** The current linked
-checkpoint is `2535 / 5495 (46.13%)` exact C functions, with one
-address-drift blocker and 2,959 genuinely different C functions. The tree
+**Active (2026-09-25, indexed game counter byte-exact).** The current linked
+checkpoint is `2536 / 5495 (46.15%)` exact C functions, with one
+address-drift blocker and 2,958 genuinely different C functions. The tree
 contains 543 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -102,9 +102,9 @@ Start subsequent byte-matching or conversion work in a new focused commit.
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four
 one-difference game rows, record setters `func_15087FC4` and
-`func_15087FEC`, and identifier check `func_1519C910` now match retail.
-Continue the two-difference game queue at the smallest remaining body,
-`func_1517F448` (16 words). Keep
+`func_15087FEC`, identifier check `func_1519C910`, and indexed counter update
+`func_1517F448` now match retail. Continue the three remaining two-difference
+game bodies at `func_15079F6C` (20 words). Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -130,6 +130,8 @@ The completed record setters and their guarded final-pointer normalization are
 in [Working Note 015](WORKING_NOTES/015-game-record-pointer-byte-matches-20260925.md).
 The completed identifier check and guarded equality-operand normalization are
 in [Working Note 016](WORKING_NOTES/016-game-identifier-check-byte-match-20260925.md).
+The completed indexed counter update and guarded scheduling normalization are
+in [Working Note 017](WORKING_NOTES/017-game-indexed-counter-byte-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size
