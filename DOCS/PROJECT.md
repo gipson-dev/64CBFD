@@ -186,7 +186,7 @@ Progress is reported in two different ways:
 - **Converted:** the function has C source instead of raw assembly.
 - **Byte-exact:** the compiled function instructions match the retail ROM.
 
-Snapshot verified on 2026-09-24 with:
+Snapshot verified on 2026-09-25 with:
 
 ```sh
 make -C conker progress NON_MATCHING=1
@@ -212,9 +212,9 @@ candidate before treating it as an ordinary C conversion target.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,532 / 5,495 (46.08%) | 1 | 2,962 |
+| Total | `[###########-------------]` 2,534 / 5,495 (46.11%) | 1 | 2,960 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 1,964 / 4,806 (40.87%) | 0 | 2,842 |
+| Game | `[##########--------------]` 1,966 / 4,806 (40.91%) | 0 | 2,840 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The debugger section is fully complete: 181 C-classified rows match through
@@ -227,7 +227,7 @@ bytes at name-implied addresses. Add `LIST=1` to list every non-exact function
 from the smallest real diff upward. The current sole address-only blocker is
 `func_10012588`.
 
-The exact count is three above the July snapshot. The higher percentage is still
+The exact count is five above the July snapshot. The higher percentage is still
 primarily caused by the smaller C denominator; focused event-swap and debugger
 passes have added ten exact functions after the restoration baseline. See
 [CURRENT_STATUS.md](CURRENT_STATUS.md) for the current resume boundary and

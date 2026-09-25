@@ -445,3 +445,7 @@ generated_DC6B0,func_150AF2E0,0x018,0x01C27821,0x004E7821,-,-,Use retail commuta
 generated_133190,func_151061EC,0x018,0x01C41021,0x008E1021,-,-,Use retail commutative address-add operand order,
 game_16EE20,func_15144A74,0x028,0x46048000,0x46102000,-,-,Use retail commutative floating-add operand order,
 generated_1D92F0,func_151ACB60,0x020,0x00000000,0xAFA40018,-,-,Home incoming pointer in retail jal delay slot,
+generated_B3020,func_15087FC4,0x018,0x01C27821,0x01C21821,-,-,Use retail final-pointer register,
+generated_B3020,func_15087FC4,0x01C,0xA1E50031,0xA0650031,-,-,Use retail final-pointer register in byte store,
+generated_B3020,func_15087FEC,0x02C,0x01C27821,0x01C21821,-,-,Use retail final-pointer register,
+generated_B3020,func_15087FEC,0x034,0xE5EA0004,0xE46A0004,-,-,Use retail final-pointer register in float store,

@@ -153,6 +153,7 @@ s32 func_15087EF0() {
     return 0;
 }
 
+// Matched with guarded final-pointer register normalization.
 void func_15087FC4(s32 arg0, s32 arg1) {
     u8 *temp_v0 = D_800872A0;
 
@@ -161,6 +162,7 @@ void func_15087FC4(s32 arg0, s32 arg1) {
     }
 }
 
+// Matched with guarded final-pointer register normalization.
 void func_15087FEC(s32 arg0, s32 arg1) {
     u8 *temp_v0 = D_800872A0;
 

@@ -16,6 +16,15 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Two game record setters byte-exact
+
+- Completed `func_15087FC4` (10 words) and `func_15087FEC` (16 words).
+- Preserved both maintained C bodies and added four expected-word-guarded
+  normalizations for IDO's final record-pointer register choice.
+- Direct linked comparisons report **10 / 10** and **16 / 16** retail words
+  exact. Fresh scan: **2534 / 5495 (46.11%)** overall and
+  **1966 / 4806 (40.91%)** game, with debugger unchanged at **181 / 181**.
+
 ### Small game assembly boundaries restored
 
 - Replaced the false C placeholders for `func_150A6354` and

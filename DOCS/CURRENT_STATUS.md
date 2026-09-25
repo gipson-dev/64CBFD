@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,532 / 5,495 (46.08%) | 1 | 2,962 |
+| Total | 2,534 / 5,495 (46.11%) | 1 | 2,960 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,964 / 4,806 (40.87%) | 0 | 2,842 |
+| Game | 1,966 / 4,806 (40.91%) | 0 | 2,840 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,532, while
+denominator driven: the exact count is now 2,534, while
 483 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -75,9 +75,9 @@ end-to-end gameplay acceptance.
 2. Debugger is complete: 181 / 181 C-classified rows and the one handwritten
    assembly routine are linked byte-exact. Preserve the guarded
    `func_16000B14` normalization while broader matching continues.
-3. `func_150A6354` and `func_150AD770` are restored to assembly ownership.
-   Continue the genuine two-difference C queue at `func_15087FC4`, while
-   accounting for its documented scratch-register allocation resistance.
+3. `func_15087FC4` and `func_15087FEC` are byte-exact after guarded
+   final-pointer register normalization. Continue the genuine two-difference
+   C queue at its smallest remaining body, `func_1519C910` (14 words).
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -97,5 +97,7 @@ The final debugger inventory and handwritten-routine byte audit are in
 [Working Note 013](WORKING_NOTES/013-debugger-completion-audit-20260925.md).
 The two restored assembly boundaries are in
 [Working Note 014](WORKING_NOTES/014-small-game-assembly-boundaries-20260925.md).
+The two completed game record setters are in
+[Working Note 015](WORKING_NOTES/015-game-record-pointer-byte-matches-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
