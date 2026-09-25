@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, nested-pointer update byte-exact).** The current linked
-checkpoint is `2541 / 5493 (46.26%)` exact C functions, with one
-address-drift blocker and 2,951 genuinely different C functions. The tree
+**Active (2026-09-25, float-bound load order byte-exact).** The current linked
+checkpoint is `2542 / 5493 (46.28%)` exact C functions, with one
+address-drift blocker and 2,950 genuinely different C functions. The tree
 contains 545 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -108,8 +108,10 @@ one-difference game rows, record setters `func_15087FC4` and
 two-difference game queue is complete. The false C placeholders at
 `func_150AD780` and `func_150AD78C` are restored to their original contiguous
 sine/cosine assembly slice, `func_150849A0` now matches from a source-level
-index-lifetime fix, and `func_150636A4` now matches through a guarded
-nested-pointer register lifetime. Continue at 30-word `func_1514672C`. Keep
+index-lifetime fix, `func_150636A4` now matches through a guarded
+nested-pointer register lifetime, and `func_1514672C` now matches through a
+guarded relocation-preserving load reorder. Continue at 36-word
+`func_15199980`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -148,6 +150,8 @@ The completed indexed-byte lookup and register-lifetime evidence are in
 [Working Note 021](WORKING_NOTES/021-game-indexed-byte-lookup-match-20260925.md).
 The completed nested-pointer update and guarded register normalization are in
 [Working Note 022](WORKING_NOTES/022-game-nested-pointer-update-match-20260925.md).
+The completed float-bound check and guarded opening-load reorder are in
+[Working Note 023](WORKING_NOTES/023-game-float-bound-load-order-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

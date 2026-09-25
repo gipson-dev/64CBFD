@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game float-bound check byte-exact
+
+- Completed `func_1514672C`: 30 words and zero linked differences.
+- Preserved its maintained C body and added three expected-word-guarded
+  scheduling normalizations for the opening threshold and object loads. The
+  `R_MIPS_HI16` and `R_MIPS_LO16` relocations move with their instructions.
+- Direct comparison reports **30 / 30** retail words exact. Fresh scan:
+  **2542 / 5493 (46.28%)** overall and **1974 / 4804 (41.09%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Game nested-pointer update byte-exact
 
 - Completed `func_150636A4`: 19 words and zero linked differences.

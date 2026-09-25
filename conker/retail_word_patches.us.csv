@@ -462,3 +462,6 @@ game_1944C0,func_151696DC,0x014,0x24C60000,0x00001025,R_MIPS_LO16:D_800DD198,-,I
 generated_90840,func_150636A4,0x010,0x8C43031C,0x8C45031C,-,-,Keep nested pointer in retail argument register,
 generated_90840,func_150636A4,0x01C,0x10600009,0x10A00009,-,-,Test nested pointer in retail argument register,
 generated_90840,func_150636A4,0x030,0xA06F0195,0xA0AF0195,-,-,Store through nested pointer in retail argument register,
+game_16EE20,func_1514672C,0x000,0xC4800000,0x3C010000,-,R_MIPS_HI16:D_800A56C4,Schedule threshold high half before object component load,
+game_16EE20,func_1514672C,0x004,0x3C010000,0xC4220000,R_MIPS_HI16:D_800A56C4,R_MIPS_LO16:D_800A56C4,Schedule threshold low load before object component load,
+game_16EE20,func_1514672C,0x008,0xC4220000,0xC4800000,R_MIPS_LO16:D_800A56C4,-,Schedule object component load after threshold pair,

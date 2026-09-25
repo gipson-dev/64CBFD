@@ -959,7 +959,7 @@ void func_15146508(struct127 *arg0, struct127 *arg1) {
 s32 func_1514654C() {
     return 0;
 }
-// NON-MATCHING: JUSTREG: first 3 statements are out of order
+// Matched with guarded opening-load scheduling normalization.
 s32 func_1514672C(struct17 *arg0) {
     if ((D_800A56C4 < fabsf(arg0->unk0)) || (D_800A56C4 < fabsf(arg0->unk8)) || (D_800A56C4 < arg0->unk4) || (arg0->unk4 < D_800A56C8)) {
         return 0;
