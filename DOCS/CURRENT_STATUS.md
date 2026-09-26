@@ -371,8 +371,10 @@ end-to-end gameplay acceptance.
    word. `func_15143874` now matches directly after correcting its signed
    angle ABI and recovering explicit narrowed-angle and lookup-result
    lifetimes. `func_15147D1C` now matches directly after restoring the indexed
-   callback's object, scalar, and normalized-byte arguments. Skip handwritten
-   `func_15125628` and continue with 18-word `func_1515C158`, the next ordinary
+   callback's object, scalar, and normalized-byte arguments. `func_1515C158`
+   is now byte-exact after restoring its two-row linked-list reset and
+   guarding thirteen persistent IDO pointer-coloring words. Skip handwritten
+   `func_15125628` and continue with 35-word `func_1515D520`, the next ordinary
    Game C row in the 16-difference queue.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,

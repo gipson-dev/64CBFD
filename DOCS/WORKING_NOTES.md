@@ -316,9 +316,11 @@ across both event paths and guarding one commutative branch operand-order
 word. `func_15143874` then matched directly after correcting its signed angle
 ABI and recovering explicit narrowed-angle and lookup-result lifetimes.
 `func_15147D1C` then matched directly after restoring all three arguments to
-its indexed optional callback. Skip handwritten `func_15125628` and continue
-with 18-word `func_1515C158`. The latest result is in
-[Working Note 151](WORKING_NOTES/151-game-indexed-callback-forwarding-match-20260926.md).
+its indexed optional callback. `func_1515C158` then matched after restoring
+the two-row linked-node reset and guarding thirteen persistent IDO pointer
+colors. Skip handwritten `func_15125628` and continue with 35-word
+`func_1515D520`. The latest result is in
+[Working Note 152](WORKING_NOTES/152-game-linked-node-reset-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

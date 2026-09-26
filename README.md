@@ -31,10 +31,12 @@ matches directly from C as well. The event-record link updater
 lifetime and guarding one commutative branch word. The scaled angle-component
 helper `func_15143874` now matches directly from C too. The indexed optional
 callback dispatcher `func_15147D1C` now matches directly after restoring all
-three forwarded callback arguments, for 2,663 byte-exact C functions. Keep
-`func_150721A4` parked as a compiler-overflow row, skip handwritten
-`func_15125628`, and continue with `func_1515C158`; the measured boundary is
-in [Working Note 151](DOCS/WORKING_NOTES/151-game-indexed-callback-forwarding-match-20260926.md).
+three forwarded callback arguments. The two-row linked-node reset
+`func_1515C158` is now byte-exact after restoring its list traversal and
+guarding thirteen IDO pointer-coloring words, for 2,664 byte-exact C
+functions. Keep `func_150721A4` parked as a compiler-overflow row, skip
+handwritten `func_15125628`, and continue with `func_1515D520`; the measured
+boundary is in [Working Note 152](DOCS/WORKING_NOTES/152-game-linked-node-reset-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The

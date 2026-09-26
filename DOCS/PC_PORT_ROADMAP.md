@@ -424,8 +424,12 @@ recovering explicit narrowed-angle and lookup-result lifetimes; see
 The indexed callback pass then completed all 18 words of `func_15147D1C`
 directly from C after restoring its three forwarded callback arguments; see
 [Working Note 151](WORKING_NOTES/151-game-indexed-callback-forwarding-match-20260926.md).
-Skip handwritten `func_15125628` and continue with 18-word
-`func_1515C158`, which has 16 real differences.
+The linked-node reset pass then completed all 18 words of `func_1515C158`
+after restoring both row traversals and guarding thirteen persistent IDO
+pointer-coloring words; see
+[Working Note 152](WORKING_NOTES/152-game-linked-node-reset-match-20260926.md).
+Skip handwritten `func_15125628` and continue with 35-word
+`func_1515D520`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 

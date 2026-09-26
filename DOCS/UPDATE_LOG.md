@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Linked-node reset byte-exact
+
+- Completed all 18 words of `func_1515C158`. It traverses two `0x1A0`-byte
+  rows, follows each linked list from row offset `0xC8`, clears node offset
+  `0x44`, writes `-1` at offset `0x48`, and advances through offset `0x08`.
+- Clean C recovers the complete control flow, both branch-likely delay-slot
+  operations, and the retail length. IDO persistently exchanges the row and
+  node pointer registers, so thirteen guarded words, including two checked
+  relocation moves, normalize that compiler-only coloring. The patch table is
+  now 1,073 unique rows with no duplicate keys.
+- Linked `0x1895D8` and retail `0x189608` share SHA-256
+  `766f008ab39ae3a2a267b0c789c7b65a48c6307d0de4f1bf78fc4831dbc01c25`.
+  Fresh scan: **2664 / 5483 (48.59%)** overall and
+  **2096 / 4794 (43.72%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed callback forwarding byte-exact
 
 - Completed all 18 words of `func_15147D1C`. It selects an optional callback
