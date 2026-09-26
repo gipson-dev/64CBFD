@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Linked-list append byte-exact
+
+- Recovered `func_15188A58` from a zero-return placeholder as a 17-word append
+  routine over an offset-`0x0C` next link and a caller-supplied head slot.
+- The typed source naturally recovers the exact size, `a1` traversal cursor,
+  `v1` previous-node lifetime, unrolled first link, and loop branch-delay
+  update. Thirteen guarded words restore retail's alternate branch-likely
+  layout, including its duplicated null-head store; no insertion is used.
+- Linked `0x1B5ED8` and retail `0x1B5F08` share SHA-256
+  `19b3fb64f266d1f692e047d4077fd6b9a74d5cbdd737ee500b73fd07a8fae183`.
+  Fresh scan: **2642 / 5483 (48.19%)** overall and
+  **2074 / 4794 (43.26%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed-float reader byte-exact
 
 - Completed all 16 words of `func_15088270` by retaining the incoming record

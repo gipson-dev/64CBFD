@@ -339,7 +339,11 @@ The bounded-index registration pass then completed all 16 words of
 The indexed-float reader pass then completed all 16 words of `func_15088270`
 from a separate index lifetime plus ten guarded scheduling words; see
 [Working Note 129](WORKING_NOTES/129-game-indexed-float-reader-match-20260926.md).
-Continue with 17-word `func_15188A58`, the offset-`0x0C` linked-list append.
+The linked-list pass then completed all 17 words of `func_15188A58` from a
+typed offset-`0x0C` node view plus thirteen guarded control-flow words; see
+[Working Note 130](WORKING_NOTES/130-game-linked-list-append-match-20260926.md).
+Skip the two smaller handwritten bitstream helpers and continue with 20-word
+ordinary-C placeholder `func_1509F660`.
 
 Current host-port progression and acceptance boundaries:
 
