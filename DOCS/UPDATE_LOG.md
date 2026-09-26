@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Indexed u16 table lookup byte-exact
+
+- Completed all 20 words of `func_15084CB0`. It searches the `u16` table at
+  `D_800BE598` using `D_800BE590` as its count and returns the matching index,
+  or zero when no entry matches.
+- Reordered the result, index, and count lifetimes and expressed the lookup as
+  `D_800BE598[i]`, recovering retail's `a0/a1/a2/v0/v1` allocation and both
+  relocation pairs. Seven guarded rows preserve retail's explicit signed loop
+  comparison and one-word-later epilogue. The patch table now has 1,053 unique
+  rows and no duplicate keys.
+- Linked `0xB2130` and retail `0xB2160` share SHA-256
+  `a9ddf6d16d75ad40e7d6a0c112b0bd26ccb05e909e66a23aa428d897fef6ebe8`.
+  Fresh scan: **2657 / 5483 (48.46%)** overall and
+  **2089 / 4794 (43.58%)** game, with debugger unchanged at **181 / 181**.
+
 ### Packed actor-mask writer byte-exact
 
 - Completed all 21 words of `func_1507A428`. It packs

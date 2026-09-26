@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,656 / 5,483 (48.44%) | 1 | 2,826 |
+| Total | 5,483 / 6,038 (90.81%) | 2,657 / 5,483 (48.46%) | 1 | 2,825 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,088 / 4,794 (43.55%) | 0 | 2,706 |
+| Game | 4,794 / 5,318 (90.15%) | 2,089 / 4,794 (43.58%) | 0 | 2,705 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -397,7 +397,11 @@ Keep `func_150721A4` parked as a known three-word live-C compiler overflow.
 The packed actor-mask pass then completed all 21 words of `func_1507A428`
 through sixteen guarded global-load, relocation, and value-lifetime words; see
 [Working Note 144](WORKING_NOTES/144-game-packed-actor-mask-match-20260926.md).
-Continue with 20-word `func_15084CB0`, which has 16 real differences.
+The indexed-table lookup pass then completed all 20 words of `func_15084CB0`
+after recovering its scalar lifetimes and array indexing, with seven guarded
+signed-loop and epilogue words; see
+[Working Note 145](WORKING_NOTES/145-game-indexed-u16-table-lookup-match-20260926.md).
+Continue with 19-word `func_15086D48`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 

@@ -168,20 +168,17 @@ s32 func_15084C30(u8 *arg0) {
 }
 
 s32 func_15084CB0(s32 arg0) {
-    s32 count = D_800BE590;
     s32 found = 0;
     s32 i = 0;
+    s32 count = D_800BE590;
 
     if (count > 0) {
-        u16 *ptr = D_800BE598;
-
         do {
-            if (arg0 == *ptr) {
+            if (arg0 == D_800BE598[i]) {
                 found = i;
                 break;
             }
             i += 1;
-            ptr += 1;
         } while (i < count);
     }
     return found;
