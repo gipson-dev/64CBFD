@@ -51,6 +51,15 @@ void func_1509F5F4(u16 arg0, s32 arg1, s32 arg2, s16 arg3, s32 arg4, s32 arg5) {
 }
 
 void func_1509F660(s32 arg0, s32 arg1) {
+    void *temp_v0 = (void *)func_1505EEF4(arg0);
+
+    if (temp_v0 != 0) {
+        if (arg1 != 0) {
+            func_10010A3C(temp_v0);
+        } else {
+            func_100109D0(temp_v0);
+        }
+    }
 }
 
 // Matched with guarded incoming-argument spill/reload scheduling.

@@ -277,9 +277,11 @@ then matched directly from a signed index and explicit invalid-range return.
 `func_15088270` then matched from a separate index lifetime plus ten guarded
 scheduling words. `func_15188A58` then matched after recovering its typed
 offset-`0x0C` linked-list append plus thirteen guarded control-flow words.
-Skip handwritten `func_151F892C` and `func_151F8960`; continue with 20-word
-ordinary-C placeholder `func_1509F660`. The latest result is in
-[Working Note 130](WORKING_NOTES/130-game-linked-list-append-match-20260926.md).
+After skipping handwritten `func_151F892C` and `func_151F8960`,
+`func_1509F660` then matched all 20 words directly from its recovered nullable
+lookup and two-way callback dispatch. Continue with 19-word `func_151C4510`.
+The latest result is in
+[Working Note 131](WORKING_NOTES/131-game-nullable-callback-dispatch-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

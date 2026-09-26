@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Nullable callback dispatch byte-exact
+
+- Recovered all 20 words of `func_1509F660` directly from C. The function
+  obtains a nullable pointer from `func_1505EEF4(arg0)`, then calls
+  `func_10010A3C` when `arg1` is nonzero or `func_100109D0` when it is zero.
+- A local `void *` matches the generated slice's include boundary while
+  retaining the pointer-shaped result. The source naturally restores retail's
+  frame, incoming-argument spill, null branch, callback calls, and epilogue;
+  no guarded rows were added and the patch table remains at 936 unique rows.
+- Linked `0xCCAE0` and retail `0xCCB10` share SHA-256
+  `d00d2f837ee5b5fe1d446316d5725177d4b35f4f7df93686a54b2f2cd3df2b6d`.
+  Fresh scan: **2643 / 5483 (48.20%)** overall and
+  **2075 / 4794 (43.28%)** game, with debugger unchanged at **181 / 181**.
+
 ### Linked-list append byte-exact
 
 - Recovered `func_15188A58` from a zero-return placeholder as a 17-word append

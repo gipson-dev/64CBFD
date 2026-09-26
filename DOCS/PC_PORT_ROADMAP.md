@@ -343,7 +343,11 @@ The linked-list pass then completed all 17 words of `func_15188A58` from a
 typed offset-`0x0C` node view plus thirteen guarded control-flow words; see
 [Working Note 130](WORKING_NOTES/130-game-linked-list-append-match-20260926.md).
 Skip the two smaller handwritten bitstream helpers and continue with 20-word
-ordinary-C placeholder `func_1509F660`.
+ordinary-C placeholder `func_1509F660`. The nullable callback-dispatch pass
+then completed all 20 words of that function directly from recovered C, with
+no guarded rows; see
+[Working Note 131](WORKING_NOTES/131-game-nullable-callback-dispatch-match-20260926.md).
+Continue with 19-word `func_151C4510`.
 
 Current host-port progression and acceptance boundaries:
 

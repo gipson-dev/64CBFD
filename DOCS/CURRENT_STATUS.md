@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,642 / 5,483 (48.19%) | 1 | 2,840 |
+| Total | 2,643 / 5,483 (48.20%) | 1 | 2,839 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,074 / 4,794 (43.26%) | 0 | 2,720 |
+| Game | 2,075 / 4,794 (43.28%) | 0 | 2,719 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,642, while
+denominator driven: the exact count is now 2,643, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -327,7 +327,9 @@ end-to-end gameplay acceptance.
    guarded scheduling words. `func_15188A58` is now byte-exact after recovering
    its offset-`0x0C` linked-list append plus thirteen guarded control-flow
    words. Skip handwritten `func_151F892C` and `func_151F8960`; continue with
-   20-word ordinary-C placeholder `func_1509F660`.
+   20-word ordinary-C placeholder `func_1509F660`, now byte-exact directly
+   after recovering its nullable lookup and two-way callback dispatch.
+   Continue with 19-word `func_151C4510` and its three scaled vector updates.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
