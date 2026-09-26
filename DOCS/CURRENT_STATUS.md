@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,567 / 5,488 (46.77%) | 1 | 2,920 |
+| Total | 2,568 / 5,488 (46.79%) | 1 | 2,919 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,999 / 4,799 (41.65%) | 0 | 2,800 |
+| Game | 2,000 / 4,799 (41.68%) | 0 | 2,799 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,567, while
+denominator driven: the exact count is now 2,568, while
 490 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -85,6 +85,8 @@ register normalization.
 lifetimes while preserving all three call relocations.
 Adjacent `func_151D7770` and `func_151D779C` are byte-exact from source-level
 child/destination pointer ordering and retail's wider byte-mask spelling.
+`func_1509F248` is byte-exact from an explicit unsigned-halfword narrowing
+that restores retail's high-half extraction and call-delay-slot schedule.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -154,8 +156,9 @@ end-to-end gameplay acceptance.
    non-relocating outer/child pointer lifetime words. Adjacent 11-word
    `func_151D7770` and `func_151D779C` are byte-exact from source-level
    pointer ordering and mask recovery, completing the seven-difference game
-   tier. Continue at 15-word `func_1509F248`, the first eight-difference game
-   row.
+   tier. `func_1509F248` is byte-exact from source-level unsigned-halfword
+   narrowing. Continue at 17-word `func_150C5EFC`, the first remaining
+   eight-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -247,5 +250,7 @@ The completed outer/child pointer normalization is in
 [Working Note 049](WORKING_NOTES/049-game-outer-child-pointer-match-20260925.md).
 The completed source/destination pointer pair is in
 [Working Note 050](WORKING_NOTES/050-game-source-destination-pointer-pair-20260925.md).
+The completed high-half call wrapper is in
+[Working Note 051](WORKING_NOTES/051-game-high-half-call-wrapper-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

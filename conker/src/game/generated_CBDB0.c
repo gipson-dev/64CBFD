@@ -14,9 +14,10 @@ s32 func_1509EFF0() {
     return 0;
 }
 
+// Matched with the explicit unsigned halfword narrowing used by retail.
 s32 func_1509F248(s32 arg0, u8 *arg1) {
     if (arg0 != 0) {
-        func_100111C8((*(s32 *) (arg1 + 0x0) & 0xFFFF0000) >> 16);
+        func_100111C8((u16) ((*(s32 *) (arg1 + 0x0) & 0xFFFF0000) >> 16));
     }
     return 1;
 }

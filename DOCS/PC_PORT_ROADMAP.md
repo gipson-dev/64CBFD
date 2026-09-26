@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,488 / 6,038 (90.89%) | 2,567 / 5,488 (46.77%) | 1 | 2,920 |
+| Total | 5,488 / 6,038 (90.89%) | 2,568 / 5,488 (46.79%) | 1 | 2,919 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,799 / 5,318 (90.24%) | 1,999 / 4,799 (41.65%) | 0 | 2,800 |
+| Game | 4,799 / 5,318 (90.24%) | 2,000 / 4,799 (41.68%) | 0 | 2,799 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -116,6 +116,8 @@ The following guarded outer/child pointer pass completed `func_15155EF8`; see
 The next source-level pointer-order pass completed `func_151D7770` and
 `func_151D779C`, closing the seven-difference game tier; see
 [Working Note 050](WORKING_NOTES/050-game-source-destination-pointer-pair-20260925.md).
+The following source-level narrowing pass completed `func_1509F248`; see
+[Working Note 051](WORKING_NOTES/051-game-high-half-call-wrapper-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

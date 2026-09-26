@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-25
 
+### High-half call wrapper byte-exact
+
+- Completed all 15 words of `func_1509F248` by restoring the explicit `u16`
+  narrowing around its high-half extraction.
+- The source now emits retail's separate `srl`, the call, and the final
+  `andi` in the call delay slot without guarded rows. The patch table remains
+  at 557 rows with no duplicate keys.
+- The independent complete-span SHA-256 is
+  `2196a6a2a0d16a73686d717c9024d3309d592849ea32d10c2b2e11abd07e5b82`.
+  Fresh scan: **2568 / 5488 (46.79%)** overall and
+  **2000 / 4799 (41.68%)** game, with debugger unchanged at **181 / 181**.
+
 ### Final seven-difference game pair byte-exact
 
 - Completed all 11 words each of `func_151D7770` and `func_151D779C` by
