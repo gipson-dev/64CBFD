@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, callback selector twins matched).** The current linked
-checkpoint is `2577 / 5484 (46.99%)` exact C functions, with one address-drift
-blocker and 2,906 genuinely different C functions. The tree contains 554
-raw-assembly functions, so the higher percentage than July is
+**Active (2026-09-26, local-record pointer schedule matched).** The current
+linked checkpoint is `2591 / 5484 (47.25%)` exact C functions, with one
+address-drift blocker and 2,892 genuinely different C functions. The tree
+contains 554 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
 
@@ -170,7 +170,7 @@ and selector registers. Structural twin `func_151963B4` is independently
 matched. `func_151E5F64` now matches from source-level positive-branch
 control-flow recovery. The previously parked `func_151E81EC` now matches from
 a four-word state struct plus guarded paired-store relocations; continue at
-20-word `func_150717E0` after completing `func_1502EA0C` through guarded
+58-word `func_15074A94` after completing `func_1502EA0C` through guarded
 packed-byte scheduling, `func_15033E84` through source-level linked-list loop
 recovery, `func_15094F40` plus `func_15096934` through independently guarded
 cursor expansions, `func_150CF578` through source-level scalar/product
@@ -180,8 +180,10 @@ placeholder `func_151318E8` as a source-level repeated float-scale loop, and
 normalization, `func_15133E3C` through aggregate-copy and pointer-ABI
 recovery, `func_151581D8` through guarded prologue and argument scheduling,
 and `func_151D74B0` through source-level record-construction order, closing
-the ten-difference game tier. The latest result is in
-[Working Note 077](WORKING_NOTES/077-game-record-construction-order-match-20260925.md).
+the ten-difference game tier. `func_150717E0` then completed the first
+eleven-difference row through a guarded local-record pointer and call schedule.
+The latest result is in
+[Working Note 078](WORKING_NOTES/078-game-local-record-pointer-schedule-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

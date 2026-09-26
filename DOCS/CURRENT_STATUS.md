@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-09-25
+Last verified: 2026-09-26
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -21,7 +21,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Fresh `progress.csv` and linked retail comparison on 2026-09-25:
+Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,590 / 5,484 (47.23%) | 1 | 2,893 |
+| Total | 2,591 / 5,484 (47.25%) | 1 | 2,892 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,022 / 4,795 (42.17%) | 0 | 2,773 |
+| Game | 2,023 / 4,795 (42.19%) | 0 | 2,772 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,570, while
+denominator driven: the exact count is now 2,591, while
 493 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -220,7 +220,9 @@ end-to-end gameplay acceptance.
    through `func_151581D8`, now byte-exact through ten guarded prologue and
    argument-schedule words. `func_151D74B0` is byte-exact from source-level
    record-construction order, completing the ten-difference game tier.
-   Continue with 20-word `func_150717E0`, now the first eleven-difference row.
+   `func_150717E0` is byte-exact through eleven guarded local-record pointer,
+   call-relocation, and epilogue schedule words. Continue with 58-word
+   `func_15074A94`, now the first eleven-difference row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

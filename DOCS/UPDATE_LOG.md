@@ -14,6 +14,21 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-09-26
+
+### Local-record pointer schedule byte-exact
+
+- Completed all 20 words of `func_150717E0` through eleven guarded schedule
+  words. Retail preserves the local-record pointer at `sp+0x18` across the
+  first call; the current compiler rematerializes `sp+0x20`. The guards restore
+  that pointer lifetime, both call positions and relocations, delay slots, and
+  epilogue order without inserting words.
+- The patch table now has 689 unique rows. The complete linked span at
+  `0x9EC60` and retail span at `0x9EC90` share SHA-256
+  `6cb1079ed02c68652e32fb90cad0f0e18cc65a1ed4deec89e7af75b236fe2d7a`.
+  Fresh scan: **2591 / 5484 (47.25%)** overall and
+  **2023 / 4795 (42.19%)** game, with debugger unchanged at **181 / 181**.
+
 ## 2026-09-25
 
 ### Record-construction order byte-exact

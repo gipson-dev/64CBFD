@@ -1,6 +1,6 @@
 # PC Port Roadmap located in another project folder
 
-## Cross-project progress - 2026-09-25
+## Cross-project progress - 2026-09-26
 
 The active Windows port remains in sibling `64CBFDOGL`; this repository owns
 the guest decompilation and retail-byte evidence used by that port. The current
@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,577 / 5,484 (46.99%) | 1 | 2,906 |
+| Total | 5,484 / 6,038 (90.82%) | 2,591 / 5,484 (47.25%) | 1 | 2,892 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,009 / 4,795 (41.90%) | 0 | 2,786 |
+| Game | 4,795 / 5,318 (90.17%) | 2,023 / 4,795 (42.19%) | 0 | 2,772 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -174,6 +174,9 @@ The next guarded wrapper pass completed `func_151581D8`; see
 The source-order pass completed `func_151D74B0` and closed the ten-difference
 game tier; see
 [Working Note 077](WORKING_NOTES/077-game-record-construction-order-match-20260925.md).
+The first eleven-difference pass completed `func_150717E0` through a guarded
+local-record pointer schedule; see
+[Working Note 078](WORKING_NOTES/078-game-local-record-pointer-schedule-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
