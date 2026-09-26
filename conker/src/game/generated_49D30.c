@@ -29,18 +29,17 @@ s32 func_1501CE54() {
 }
 
 s32 func_1501CFF8(s32 arg0) {
-    s32 count = D_800C363A[arg0];
     s32 sum = 0;
     s32 i = 0;
 
-    if (count > 0) {
+    if (D_800C363A[arg0] > 0) {
         u16 *ptr = D_800C35D8[arg0];
 
         do {
             sum += *ptr;
             i += 1;
             ptr += 1;
-        } while (i < count);
+        } while (i < D_800C363A[arg0]);
     }
     return sum;
 }

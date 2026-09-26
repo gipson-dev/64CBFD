@@ -16,6 +16,29 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Mirrored counter/table update byte-exact
+
+- Completed all 20 words of `func_15031E2C` with twelve guarded register-choice
+  words after declaration, assignment, and K&R/ANSI source probes produced the
+  same stable object. The guards recover retail's `v1` counter, `v0` mirrored
+  index, `t9` increment, and `t8` table-value pipeline.
+- The two table-address guards preserve the `D_800902BC` HI16/LO16 relocation
+  pair. The patch table now has 723 unique rows. Linked `0x5F2AC` and retail
+  `0x5F2DC` share SHA-256
+  `d1fcfc04e9e799d2864afd8d204547594fe1f79d94eba637d63fe84656099ddf`.
+  Fresh scan after this two-function pass: **2600 / 5484 (47.41%)** overall and
+  **2032 / 4795 (42.38%)** game, with debugger unchanged at **181 / 181**.
+
+### Table sum loop byte-exact
+
+- Completed all 19 words of `func_1501CFF8` by ordering the sum/index locals
+  before directly testing `D_800C363A[arg0]` at entry and on the loop back edge.
+  IDO reuses one byte load while preserving retail's `a1` count, `v0` index,
+  `v1` sum, and `slt`/`bnez` loop test.
+- No guarded rows were added for this function. Linked `0x4A478` and retail
+  `0x4A4A8` share SHA-256
+  `5e8669328165c7bbc1972b40dfe5c9162102aff28a9088f06f5276ee387ee090`.
+
 ### Conditional minimum update byte-exact
 
 - Completed all 16 words of `func_151ACA20` by declaring the output candidate
