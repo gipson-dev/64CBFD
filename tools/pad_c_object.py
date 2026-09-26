@@ -160,9 +160,42 @@ def emit_padded_assembly(
                     f"{name} has only {retail_size} retail bytes for a trampoline"
                 )
             overflow_name = f"__retail_overflow_{name}"
-            output.extend((f"j {overflow_name}", "nop"))
-            if retail_size > 8:
-                output.append(f".space 0x{retail_size - 8:X}, 0")
+            for relative in range(0, retail_size, 4):
+                word = 0x08000000 if relative == 0 else 0
+                word_relocations = (
+                    [("R_MIPS_26", overflow_name)] if relative == 0 else []
+                )
+                patch_key = (name, relative)
+                patch = word_patches.get(patch_key)
+                if patch is not None:
+                    if patch["insert_after"] is not None:
+                        raise ValueError(
+                            f"overflow trampoline patch for {name}+0x{relative:X} "
+                            "cannot insert a word"
+                        )
+                    if word != patch["expected"]:
+                        raise ValueError(
+                            f"stale overflow word patch for {name}+0x{relative:X}: "
+                            f"expected 0x{patch['expected']:08X}, "
+                            f"generated 0x{word:08X}"
+                        )
+                    expected_relocations = patch["expected_relocations"]
+                    if (expected_relocations is not None and
+                            word_relocations != expected_relocations):
+                        raise ValueError(
+                            f"stale overflow relocations for {name}+0x{relative:X}: "
+                            f"expected {expected_relocations}, "
+                            f"generated {word_relocations}"
+                        )
+                    if expected_relocations is not None:
+                        word_relocations = patch["replacement_relocations"]
+                    word = patch["replacement"]
+                    applied_patches.add(patch_key)
+                for relocation_name, relocation_symbol in word_relocations:
+                    output.append(
+                        f".reloc ., {relocation_name}, {relocation_symbol}"
+                    )
+                output.append(f".word 0x{word:08X}")
             overflow.append((overflow_name, symbol))
             emitted_size = retail_size
         else:

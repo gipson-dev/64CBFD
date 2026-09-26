@@ -294,8 +294,11 @@ end-to-end gameplay acceptance.
    handwritten and consume non-ABI live registers, so they are excluded from
    the C-restoration queue. `func_1502C380` is now byte-exact directly from an
    assignment chain that preserves its destination-address and loaded-value
-   lifetimes. Continue with 16-word `func_150A7B80`; its loop currently
-   overflows the fixed function slot while retail uses eight unrolled stores.
+   lifetimes. `func_150A7B80` is now byte-exact after expressing its eight
+   clears explicitly and using fourteen guarded overflow-slot words to retain
+   retail's native 64-bit stores and diagonal writes. Continue with 16-word
+   `func_1516A770`, the smallest remaining ordinary-C row at fourteen real
+   differences; its current body is still a zero-return placeholder.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

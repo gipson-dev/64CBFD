@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Fixed-matrix identity byte-exact
+
+- Completed all 16 words of `func_150A7B80`. The C source now states the eight
+  fixed-matrix clears explicitly, followed by the four diagonal halfword
+  writes, instead of relying on a loop that does not reflect retail's shape.
+- IDO 5.3 still expands each `u64` clear into paired 32-bit stores, overflowing
+  the 64-byte retail slot. `pad_c_object.py` can now apply stale-guarded word
+  replacements to an overflow trampoline, including explicit relocation
+  validation; fourteen guarded rows reproduce retail's 64-bit stores and
+  diagonal schedule. A focused regression test covers that path.
+- Linked `0xD5000` and retail `0xD5030` share SHA-256
+  `108873d13a1c690c87868608bf80cf08d8f25d68c2effd60fe2268c9253dde17`.
+  Fresh scan: **2626 / 5483 (47.89%)** overall and
+  **2058 / 4794 (42.93%)** game, with debugger unchanged at **181 / 181**.
+
 ### Global selection byte-exact
 
 - Skipped `func_151F892C` and `func_151F8960`: both are explicitly handwritten

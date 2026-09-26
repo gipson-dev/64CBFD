@@ -301,9 +301,11 @@ Continue with the tied 13-word `func_151F892C` and `func_151F8960`; see
 [Working Note 112](WORKING_NOTES/112-game-nested-state-flag-match-20260926.md).
 Those two rows are handwritten helpers with non-ABI register inputs and are
 therefore excluded from C restoration. The global-selection pass completed all
-15 words of `func_1502C380` directly from an assignment chain. Continue with
-16-word `func_150A7B80`; see
-[Working Note 113](WORKING_NOTES/113-game-global-selection-match-20260926.md).
+15 words of `func_1502C380` directly from an assignment chain. The fixed-matrix
+pass then completed all 16 words of `func_150A7B80` with explicit source
+stores and fourteen guarded overflow-slot replacements. Continue with 16-word
+`func_1516A770`; see
+[Working Note 114](WORKING_NOTES/114-game-fixed-matrix-identity-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -6,11 +6,15 @@
 
 void func_150A7B80(u64 *arg0) {
     s16 *diag = (s16 *)arg0;
-    s32 i;
 
-    for (i = 0; i < 8; i++) {
-        arg0[i] = 0;
-    }
+    arg0[0] = 0;
+    arg0[1] = 0;
+    arg0[2] = 0;
+    arg0[3] = 0;
+    arg0[4] = 0;
+    arg0[5] = 0;
+    arg0[6] = 0;
+    arg0[7] = 0;
 
     diag[0] = 1;
     diag[5] = 1;
