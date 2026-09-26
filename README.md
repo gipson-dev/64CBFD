@@ -13,6 +13,26 @@ maintained in [Current Decomp Status](DOCS/CURRENT_STATUS.md). PC-port progress
 and cross-project boundaries are maintained separately in the
 [PC Port Roadmap](DOCS/PC_PORT_ROADMAP.md).
 
+## Status
+
+Snapshot verified on 2026-09-26. "Converted" means a function has C source;
+"byte-exact" means its linked instructions match the retail game. See
+[Current Decomp Status](DOCS/CURRENT_STATUS.md) for the detailed handoff.
+
+| Section | Converted functions | Converted bytes |
+| --- | ---: | ---: |
+| Total | 5,482 / 6,038 (90.79%) | 85.63% |
+| Init | 508 / 538 (94.42%) | 90.79% |
+| Game | 4,793 / 5,318 (90.13%) | 85.09% |
+| Debugger | 181 / 182 (99.45%) | 99.19% |
+
+| Section | Byte-exact | Address drift | Still different |
+| --- | ---: | ---: | ---: |
+| Total | `[############------------]` 2,688 / 5,482 (49.03%) | 1 | 2,793 |
+| Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
+| Game | `[###########-------------]` 2,120 / 4,793 (44.23%) | 0 | 2,673 |
+| Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
+
 ## Build overview
 
 Docker is the easiest supported environment. Native Linux and WSL also work;
