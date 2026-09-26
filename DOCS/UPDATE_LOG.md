@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Handwritten Init memory-clear loop restored
+
+- Restored `func_10001420` from a false C conversion to its original nine-word
+  assembly loop. The C body requires ten words and therefore linked through an
+  overflow trampoline instead of reproducing the retail extent.
+- Retail uses `a1` as the moving pointer, `a0` as the end pointer, and performs
+  each zero store in the loop branch delay slot. The complete linked 36-byte
+  span matches retail with SHA-256
+  `a4726841f3477fedc98f9ff44c74f6cb613b2950e7d1c9434a0f61dbda17bdbf`.
+- Fresh accounting is **2,691 / 5,474 (49.16%)** exact C functions overall
+  and **390 / 500 (78.00%)** in Init. The original assembly row is exact but
+  intentionally excluded from the C matcher denominator.
+
 ### Init release-loop bound refresh byte-exact
 
 - Completed all 47 words of `func_1000FD38`, which finds matching resource

@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,475 / 6,038 (90.68%) | 2,691 / 5,475 (49.15%) | 1 | 2,783 |
-| Init | 501 / 538 (93.12%) | 390 / 501 (77.84%) | 1 | 110 |
+| Total | 5,474 / 6,038 (90.66%) | 2,691 / 5,474 (49.16%) | 1 | 2,782 |
+| Init | 500 / 538 (92.94%) | 390 / 500 (78.00%) | 1 | 109 |
 | Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -559,7 +559,11 @@ The following pass completed 47-word `func_1000FD38` through a guarded,
 relocation-aware six-word schedule that refreshes its cached loop bound only
 after the release call; see
 [Working Note 183](WORKING_NOTES/183-init-release-loop-bound-refresh-match-20260926.md).
-Continue with the ownership audit for nine-word `func_10001420`.
+The ownership audit then restored nine-word `func_10001420` from an overflowing
+C model to its original handwritten memory-clear loop; see
+[Working Note 184](WORKING_NOTES/184-init-handwritten-memory-clear-restoration-20260926.md).
+The sibling already has an exact generated recomp body. Continue with 11-word
+`func_100038E0`.
 
 Current host-port progression and acceptance boundaries:
 

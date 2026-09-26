@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,475 / 6,038 (90.68%) | 563 | 1,932,264 / 2,256,728 (85.62%) |
-| Init | 501 / 538 (93.12%) | 37 | 148,792 / 164,048 (90.70%) |
+| Total | 5,474 / 6,038 (90.66%) | 564 | 1,932,228 / 2,256,728 (85.62%) |
+| Init | 500 / 538 (92.94%) | 38 | 148,756 / 164,048 (90.68%) |
 | Game | 4,793 / 5,318 (90.13%) | 525 | 1,763,832 / 2,072,880 (85.09%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,691 / 5,475 (49.15%) | 1 | 2,783 |
-| Init | 390 / 501 (77.84%) | 1 | 110 |
+| Total | 2,691 / 5,474 (49.16%) | 1 | 2,782 |
+| Init | 390 / 500 (78.00%) | 1 | 109 |
 | Game | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -449,9 +449,10 @@ end-to-end gameplay acceptance.
    explicit relocation move and retail's otherwise dead pointer adjustment.
    The 47-word `func_1000FD38` is also byte-exact through six guarded words
    that retain retail's loop bound across no-call iterations and refresh it
-   only after a resource-release call. Continue with the ownership audit for
-   nine-word `func_10001420`, which historical evidence classifies as a
-   handwritten tight-loop candidate. Do not model
+   only after a resource-release call. The nine-word `func_10001420` is now
+   restored from its overflow-trampoline C model to its original handwritten
+   memory-clear loop; its full 36-byte span matches retail independently.
+   Continue ordinary Init matching with 11-word `func_100038E0`. Do not model
    control-register access through synthetic C or guarded retail-word
    replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

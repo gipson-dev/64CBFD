@@ -68,5 +68,5 @@ executable remain untouched.
 ## Next boundary
 
 Audit nine-word `func_10001420` before attempting another C rewrite. Its
-retail `bnezl` loop, tiny extent, and prior C overflow are strong evidence of
-handwritten SDK ownership. Keep address-blocked `func_10012588` parked.
+retail delay-slot loop, tiny extent, and prior C overflow are strong evidence
+of handwritten SDK ownership. Keep address-blocked `func_10012588` parked.
