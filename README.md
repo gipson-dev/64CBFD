@@ -12,6 +12,12 @@ built, studied, and matched against the retail ROM.
 
 ## Project status
 
+2026-09-26: the latest byte-matching pass completed `func_15088270`,
+`func_15188A58`, `func_1509F660`, `func_151C4510`, and `func_150C78E0`.
+The fresh linked scan reports 2,645 byte-exact C functions. Continue with the
+20-word `func_15130230`; the measured boundary and current candidate are in
+[Working Note 133](DOCS/WORKING_NOTES/133-game-flag-gated-high-half-mask-match-20260926.md).
+
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
 swimming selection callback already exists in `game_981E0.c`. Full
@@ -23,22 +29,22 @@ The codebase is nearly fully represented in C, but byte matching is a separate
 measurement. "Converted" means a function has C source; "byte-exact" means the
 compiled instructions match the retail game exactly.
 
-Snapshot verified on 2026-09-25. The current tree includes a broad restoration
+Snapshot verified on 2026-09-26. The current tree includes a broad restoration
 of original assembly, so conversion is lower than the July snapshot; this is
 not a regression in buildability or a byte-matching gain.
 
 | Section | Converted functions | Converted bytes |
 | --- | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 85.64% |
+| Total | 5,483 / 6,038 (90.81%) | 85.64% |
 | Init | 508 / 538 (94.42%) | 90.79% |
-| Game | 4,795 / 5,318 (90.17%) | 85.11% |
+| Game | 4,794 / 5,318 (90.15%) | 85.10% |
 | Debugger | 181 / 182 (99.45%) | 99.19% |
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,577 / 5,484 (46.99%) | 1 | 2,906 |
+| Total | `[############------------]` 2,645 / 5,483 (48.24%) | 1 | 2,837 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,009 / 4,795 (41.90%) | 0 | 2,786 |
+| Game | `[##########--------------]` 2,077 / 4,794 (43.32%) | 0 | 2,717 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside
