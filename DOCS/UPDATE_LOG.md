@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Selector linked-list lookup converted and byte-exact
+
+- Replaced `func_15178B98`'s zero-return placeholder with its complete lookup:
+  walk from `D_800DCF38`, compare selector byte `0x34`, follow next pointer
+  `0x08`, and return the matching node or zero.
+- The direct loop reproduces both retail branch-likely instructions, the null
+  paths, early return, and duplicated next-pointer load. No guarded rows were
+  added; the patch table remains at 1,111 unique rows.
+- Linked `0x1A6018` and retail `0x1A6048` share SHA-256
+  `c90feae04990328b11469fe19f238fd17925d37dd5be53fc0c9df139b6c63333`.
+  Fresh scan: **2675 / 5483 (48.79%)** overall and
+  **2107 / 4794 (43.95%)** game, with debugger unchanged at **181 / 181**.
+
 ### Two-word template dispatcher converted and byte-exact
 
 - Replaced `func_1515572C`'s zero-return placeholder with its complete typed

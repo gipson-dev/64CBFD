@@ -63,9 +63,11 @@ bringing the total to 2,672. The six-argument forwarding wrapper
 byte-exact directly from C after correcting its fourth argument to the retail
 byte ABI, bringing the total to 2,673. The two-word template dispatcher
 `func_1515572C` is now converted from its zero-return placeholder and
-byte-exact directly from C, bringing the total to 2,674. Continue with
-`func_15178B98`. The measured boundary is in
-[Working Note 162](DOCS/WORKING_NOTES/162-game-two-word-template-dispatch-match-20260926.md).
+byte-exact directly from C, bringing the total to 2,674. The selector-linked
+list lookup `func_15178B98` is now converted from its zero-return placeholder
+and byte-exact directly from C, bringing the total to 2,675. Continue with
+`func_1519257C`. The measured boundary is in
+[Working Note 163](DOCS/WORKING_NOTES/163-game-selector-linked-list-lookup-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -91,9 +93,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,674 / 5,483 (48.77%) | 1 | 2,808 |
+| Total | `[############------------]` 2,675 / 5,483 (48.79%) | 1 | 2,807 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,106 / 4,794 (43.93%) | 0 | 2,688 |
+| Game | `[##########--------------]` 2,107 / 4,794 (43.95%) | 0 | 2,687 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside
