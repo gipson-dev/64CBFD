@@ -1,5 +1,10 @@
 #include <ultra64.h>
 
+typedef struct {
+    u8 *object;
+    u8 selector;
+} ObjectSelector97AA0;
+
 /* Non-matching placeholders for the text-only asm slice asm/97AA0.s. */
 
 extern u8 D_800D1560[];
@@ -60,8 +65,12 @@ void func_1506ABC4(s32 arg0, u8 *arg1) {
                   *(s32 *)(arg1 + 0x10), 0xFF, 1);
 }
 
-s32 func_1506AC0C() {
-    return 0;
+void func_1506AC0C(u8 *arg0, s32 arg1) {
+    ObjectSelector97AA0 record;
+
+    record.object = arg0;
+    record.selector = arg0[0x3B];
+    func_151B7328(&record, 0, 8, 0xFF, 1);
 }
 
 void func_1506AC58(s32 arg0, u8 arg1) {

@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, indexed callback forwarding matched).** The current
-linked checkpoint is `2677 / 5483 (48.82%)` exact C functions, with one
-address-drift blocker and 2,805 genuinely different C functions. The tree
+**Active (2026-09-26, object-selector record matched).** The current linked
+checkpoint is `2678 / 5483 (48.84%)` exact C functions, with one address-drift
+blocker and 2,804 genuinely different C functions. The tree
 contains 555 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -349,8 +349,10 @@ after restoring its selector-based linked-list lookup. The 18-word
 `func_1519257C` then matched directly after restoring its gated two-stage byte
 result. The 19-word `func_151B82CC` then matched directly after correcting its
 callback contract, forwarding all three inputs, and retaining the child
-pointer. Continue with 19-word `func_1506AC0C`. The latest result is in
-[Working Note 165](WORKING_NOTES/165-game-indexed-callback-forwarding-match-20260926.md).
+pointer. The 19-word `func_1506AC0C` then matched directly after restoring its
+typed object-selector local record and dispatch call. Continue with 19-word
+`func_150881CC`. The latest result is in
+[Working Note 166](WORKING_NOTES/166-game-object-selector-record-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

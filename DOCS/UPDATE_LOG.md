@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Object-selector record wrapper converted and byte-exact
+
+- Replaced `func_1506AC0C`'s zero-return placeholder with its complete local
+  record construction: object pointer in word zero and object byte `0x3B` in
+  byte four, followed by `func_151B7328(&record, 0, 8, 0xFF, 1)`.
+- The typed record reproduces retail's frame, incoming spills, payload stores,
+  five call arguments, delay slot, and epilogue directly from C. No guarded
+  rows were added; the patch table remains at 1,111 unique rows.
+- Linked `0x9808C` and retail `0x980BC` share SHA-256
+  `d6b76d7ce1622ade285c6a6b5b364fd243ea0794725e02515fa4990891d223ae`.
+  Fresh scan: **2678 / 5483 (48.84%)** overall and
+  **2110 / 4794 (44.01%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed callback forwarding byte-exact
 
 - Corrected `func_151B82CC`'s callback-table contract so a selected callback
