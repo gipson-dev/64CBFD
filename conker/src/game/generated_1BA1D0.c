@@ -286,14 +286,19 @@ void func_151906E0(u8 *arg0, s32 *arg1, u8 arg2) {
 
 void func_1519072C(u8 *arg0) {
     struct {
-        u8 *target;
-        u8 code;
-    } rec;
+        s32 pad;
+        s32 rec_ptr;
+        struct {
+            u8 *target;
+            u8 code;
+        } rec;
+    } locals;
 
-    rec.target = arg0;
-    rec.code = *(arg0 + 0x3B);
-    func_151D343C(&rec, 0x2A);
-    func_1518F45C(&rec, 0x49);
+    locals.rec.target = arg0;
+    locals.rec.code = *(arg0 + 0x3B);
+    locals.rec_ptr = (s32)&locals.rec;
+    func_151D343C(locals.rec_ptr, 0x2A);
+    func_1518F45C(locals.rec_ptr, 0x49);
 }
 
 s32 func_15190770() {

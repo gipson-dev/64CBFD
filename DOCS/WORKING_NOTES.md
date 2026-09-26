@@ -234,10 +234,12 @@ named result local restored retail's FP-register lifetime and two guarded
 words restored its opening compare/copy schedule. `func_1518F858` then matched
 directly after an explicit early return and volatile signed-byte index restored
 retail's repeated load, branch-likely epilogue, and callback-table lifetimes.
-Continue with 17-word `func_1519072C`, now the first thirteen-difference game
-row.
+`func_1519072C` then matched directly from a contiguous local aggregate that
+preserves retail's `sp + 0x1C` record-pointer spill and `sp + 0x20` record
+across both helper calls. Continue with 15-word `func_1519582C`, now the first
+thirteen-difference game row.
 The latest result is in
-[Working Note 108](WORKING_NOTES/108-game-conditional-dispatch-match-20260926.md).
+[Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

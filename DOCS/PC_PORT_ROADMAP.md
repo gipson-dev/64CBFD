@@ -283,6 +283,10 @@ The conditional callback-dispatch pass completed all 17 words of
 `func_1518F858` directly from an early return and volatile signed-byte index.
 Continue with 17-word `func_1519072C`; see
 [Working Note 108](WORKING_NOTES/108-game-conditional-dispatch-match-20260926.md).
+The stack-record pass completed all 17 words of `func_1519072C` directly from
+a contiguous local aggregate that preserves the record pointer across both
+helper calls. Continue with 15-word `func_1519582C`; see
+[Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

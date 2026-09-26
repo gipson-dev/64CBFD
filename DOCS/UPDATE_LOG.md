@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Stack-record pointer lifetime byte-exact
+
+- Completed all 17 words of `func_1519072C` directly from source. A contiguous
+  local aggregate reproduces retail's unused `sp + 0x18` word, saved record
+  pointer at `sp + 0x1C`, and record at `sp + 0x20`.
+- The resulting 40-byte frame retains the incoming pointer in `a2` and spills
+  the integer-valued record address across the first helper call. No guarded
+  rows are required.
+- Linked `0x1BDBAC` and retail `0x1BDBDC` share SHA-256
+  `6f21df87663fadb3301142c9299fc72547fe44885afb7ae7fbb12668b4ea1939`.
+  Fresh scan: **2621 / 5483 (47.80%)** overall and
+  **2053 / 4794 (42.82%)** game, with debugger unchanged at **181 / 181**.
+
 ### Conditional callback dispatch byte-exact
 
 - Completed all 17 words of `func_1518F858` directly from source. An explicit
