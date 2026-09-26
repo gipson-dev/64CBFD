@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Display-list cursor and state clear byte-exact
+
+- Completed all 12 words of `func_15094F40` through the established
+  generated-slice cursor expansion. Nine guarded rows preserve the original
+  cursor in `v1`, restore retail's command-store and global-clear schedule,
+  and insert the advanced-cursor copy plus final return delay slot.
+- All four moved relocations are explicitly guarded. The patch table now has
+  650 rows with no duplicate keys; this function has nine rows and two
+  insertion-bearing rows.
+- The complete linked span at ELF `0xD4F40` and retail `0xC23F0` shares
+  SHA-256
+  `989b94637e932e7057eebd6fad9b2ef29c52742fc6ad60b41c25aa1e85b783b1`.
+  Fresh scan: **2582 / 5484 (47.08%)** overall and
+  **2014 / 4795 (42.00%)** game, with debugger unchanged at **181 / 181**.
+
 ### Linked-list search byte-exact
 
 - Completed all 16 words of `func_15033E84` by loading `node->next` before
