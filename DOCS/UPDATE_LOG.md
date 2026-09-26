@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Packed four-byte reader byte-exact
+
+- Completed all 16 words of `func_1507A3E8`. The plain packed-byte expression
+  remains the clearest source after prior local, term-order, accumulator, and
+  volatile experiments all produced inferior schedules.
+- Thirteen guarded words restore retail's adjacent address/load pairs and
+  `t7` through `t9` merge lifetimes. All four global HI16/LO16 relocation
+  pairs are explicitly validated and moved with their loads.
+- The patch table now has 803 unique rows. Linked `0xA7868` and retail
+  `0xA7898` share SHA-256
+  `c542b461c15efeba5d814856ab3ff92fc74b2482448be8462a1718c97a228e9d`.
+  Fresh scan: **2613 / 5484 (47.65%)** overall and
+  **2045 / 4795 (42.65%)** game, with debugger unchanged at **181 / 181**.
+
 ### Chunked-boundary loop byte-exact
 
 - Completed all 18 words of `func_15043B70` directly from source. Expressing

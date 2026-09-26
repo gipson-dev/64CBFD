@@ -248,6 +248,10 @@ The chunked-boundary loop pass completed `func_15043B70` directly from a
 scalar ternary that restores retail's explicit two-arm value merge, without
 guarded rows; see
 [Working Note 099](WORKING_NOTES/099-game-chunked-boundary-loop-match-20260926.md).
+The packed four-byte reader pass completed `func_1507A3E8` through thirteen
+guarded byte-load and merge-schedule words, including four explicitly moved
+global relocation pairs; see
+[Working Note 100](WORKING_NOTES/100-game-packed-four-byte-reader-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
