@@ -8,11 +8,7 @@
 #undef __osRestoreInt
 #endif
 
-/* Non-matching C placeholders for C:/Users/grego/OneDrive/Desktop/.vscode/64CBFD/conker/asm/libultra/os/interrupt.s. */
+/* Original handwritten CP0 interrupt-mask wrappers. */
 
-u32 __osDisableInt(void) {
-    return 0;
-}
-
-void __osRestoreInt(u32 arg0) {
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_interrupt/__osDisableInt.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_interrupt/__osRestoreInt.s")

@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, Init current-pointer helper matched).** The current
-linked checkpoint is `2689 / 5477 (49.10%)` exact C functions, with one
-address-drift blocker and 2,787 genuinely different C functions. Init is
-`388 / 503 (77.14%)` exact, with 114 genuinely different C rows. The tree
-contains 561 raw-assembly functions, so much of the percentage increase over
+**Active (2026-09-26, Init interrupt wrappers restored).** The current linked
+checkpoint is `2689 / 5475 (49.11%)` exact C functions, with one
+address-drift blocker and 2,785 genuinely different C functions. Init is
+`388 / 501 (77.45%)` exact, with 112 genuinely different C rows. The tree
+contains 563 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
 
@@ -405,6 +405,11 @@ false placeholders. The latest result is in
 [Working Note 179](WORKING_NOTES/179-init-control-register-wrapper-restoration-20260926.md).
 The frame-slot match is in
 [Working Note 180](WORKING_NOTES/180-init-current-pointer-frame-slot-match-20260926.md).
+The interrupt audit restored both wrappers to their original eight-word
+handwritten CP0 bodies. Both complete 32-byte spans independently match
+retail. Continue ordinary Init C matching with 22-word `func_100043B4`, which
+has six real differences. The interrupt result is in
+[Working Note 181](WORKING_NOTES/181-init-handwritten-interrupt-wrapper-restoration-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

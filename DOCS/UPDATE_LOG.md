@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Handwritten Init interrupt wrappers restored
+
+- Restored `__osDisableInt` and `__osRestoreInt` from false zero-return/no-op
+  C placeholders to their original handwritten CP0 assembly ownership.
+- The disable wrapper reads Status, clears `SR_IE`, writes Status, and returns
+  the former interrupt-enable bit. The restore wrapper reads Status, merges the
+  saved bit, writes Status, and preserves the required hazard/alignment nops.
+- Their complete linked 32-byte spans match retail with SHA-256
+  `b5ec893cd5c1e37c723f982142b67fc24befcf35b6e48b596abbcca4c4d44560`
+  and `760fabe684a57096a1f98fb972d27fc9ae0f5b227768fa227ed73c15b4ad1e09`.
+  The exact numerator remains **2,689**, while corrected C inventory is
+  **5,475 / 6,038 (90.68%)** overall and **501 / 538 (93.12%)** in Init.
+  The matcher is **2,689 / 5,475 (49.11%)** overall and
+  **388 / 501 (77.45%)** in Init.
+
 ### Init current-pointer helper byte-exact
 
 - Completed all 26 words of `func_1000FE88` while retaining its recovered C

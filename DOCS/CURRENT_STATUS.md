@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,477 / 6,038 (90.71%) | 561 | 1,932,328 / 2,256,728 (85.63%) |
-| Init | 503 / 538 (93.49%) | 35 | 148,856 / 164,048 (90.74%) |
+| Total | 5,475 / 6,038 (90.68%) | 563 | 1,932,264 / 2,256,728 (85.62%) |
+| Init | 501 / 538 (93.12%) | 37 | 148,792 / 164,048 (90.70%) |
 | Game | 4,793 / 5,318 (90.13%) | 525 | 1,763,832 / 2,072,880 (85.09%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,689 / 5,477 (49.10%) | 1 | 2,787 |
-| Init | 388 / 503 (77.14%) | 1 | 114 |
+| Total | 2,689 / 5,475 (49.11%) | 1 | 2,785 |
+| Init | 388 / 501 (77.45%) | 1 | 112 |
 | Game | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,689, while
-500 functions moved from C back to assembly. The paired event-swap pass added
+502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -442,10 +442,12 @@ end-to-end gameplay acceptance.
    ownership. Their complete 16-byte padded spans match retail independently.
    The 26-word `func_1000FE88` is now byte-exact through two guarded,
    non-relocating current-pointer spill/reload words; its recovered C behavior
-   is unchanged. Next audit the adjacent handwritten interrupt pair
-   `__osRestoreInt` and `__osDisableInt`, currently false C placeholders. Do
-   not model control-register access through synthetic C or guarded
-   retail-word replacement.
+   is unchanged. The adjacent handwritten interrupt pair `__osRestoreInt` and
+   `__osDisableInt` is also restored from false C placeholders; both complete
+   32-byte spans match retail. Continue ordinary Init C matching with
+   22-word `func_100043B4`, tied at six real differences with larger
+   `func_1000FD38`. Do not model control-register access through synthetic C
+   or guarded retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
