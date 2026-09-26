@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Global PRNG step restored to assembly
+
+- Restored `func_151EF610` to its original 12-word assembly ownership. Its C
+  model computes the same recurrence, but IDO retains one global address and
+  stores before return; retail uses independent load/store relocations and a
+  store in the `jr ra` delay slot.
+- Explicit-return and volatile-declaration source variants retained the same
+  address lifetime. Omitting the return grew the body and returned the wrong
+  value, so that experiment was rejected.
+- The independent complete-span SHA-256 is
+  `7fa144078d7821335feae3ad8e5f7953424f200288ed27731c1764cd45f04606`.
+  The patch table remains at 573 unique rows with no row for this function.
+  Fresh scan: **2570 / 5484 (46.86%)** overall and
+  **2002 / 4795 (41.75%)** game, with debugger unchanged at **181 / 181**.
+
 ### Third dead child-pointer family member restored to assembly
 
 - Restored `func_151AB180` to its original 17-word assembly ownership. Like

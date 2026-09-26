@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, third dead child-pointer member restored).** The current
-linked checkpoint is `2570 / 5485 (46.86%)` exact C functions, with one
-address-drift blocker and 2,914 genuinely different C functions. The tree contains 553
+**Active (2026-09-25, global PRNG step restored).** The current linked
+checkpoint is `2570 / 5484 (46.86%)` exact C functions, with one address-drift
+blocker and 2,913 genuinely different C functions. The tree contains 554
 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -158,8 +158,10 @@ IDO removes retail's dead child-pointer update. Structural twin
 matches through guarded base/index and byte-update register lifetimes.
 `func_1515D480` now matches through guarded frame-size and local-slot
 normalization. `func_151AB180`, the `+0x70` dead child-pointer family member,
-is restored to its original assembly extent. Continue at 12-word
-`func_151EF610`. Keep
+is restored to its original assembly extent. `func_151EF610` is restored to
+its original assembly extent because its independent global relocations and
+return-delay store are not reproduced by IDO. Continue with the
+nine-difference game tier at 41-word `func_150771F0`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,485 / 6,038 (90.84%) | 553 | 1,932,784 / 2,256,728 (85.65%) |
+| Total | 5,484 / 6,038 (90.82%) | 554 | 1,932,736 / 2,256,728 (85.64%) |
 | Init | 508 / 538 (94.42%) | 30 | 148,936 / 164,048 (90.79%) |
-| Game | 4,796 / 5,318 (90.18%) | 522 | 1,764,208 / 2,072,880 (85.11%) |
+| Game | 4,795 / 5,318 (90.17%) | 523 | 1,764,160 / 2,072,880 (85.11%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,570 / 5,485 (46.86%) | 1 | 2,914 |
+| Total | 2,570 / 5,484 (46.86%) | 1 | 2,913 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,002 / 4,796 (41.74%) | 0 | 2,794 |
+| Game | 2,002 / 4,795 (41.75%) | 0 | 2,793 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -97,6 +97,9 @@ base/index and byte-update register lifetime words.
 words while preserving both call relocations.
 `func_151AB180`, the `+0x70` member of the dead child-pointer family, is
 restored to its original 17-word assembly extent.
+`func_151EF610` is restored to its original 12-word assembly extent because
+IDO retains one global address register, while retail uses independent load
+and store relocations and places the store in the return delay slot.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -174,8 +177,9 @@ end-to-end gameplay acceptance.
    byte-update register words. `func_1515D480` is byte-exact through eight
    guarded frame and local-slot words. `func_151AB180`, the `+0x70` member of
    the dead child-pointer family, is restored to its original 17-word assembly
-   extent. Continue at 12-word `func_151EF610`, the final eight-difference game
-   row.
+   extent. `func_151EF610`, the final eight-difference game row, is restored
+   to original assembly ownership. Continue with the nine-difference game
+   tier, beginning at 41-word `func_150771F0`.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
