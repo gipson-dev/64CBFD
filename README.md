@@ -40,10 +40,13 @@ next-pointer walk, and return lifetime, plus four guarded compiler words, for
 `func_151635A8` is now byte-exact after correcting its three-argument ABI and
 recovering volatile callback-table dispatch, with fifteen guarded rows for
 the persistent IDO schedule and register allocation, bringing the total to
-2,666. Keep `func_150721A4` parked as a compiler-overflow row, skip
-handwritten `func_15125628`, and continue with `func_15168A4C`; the measured
+2,666. The row/column list-head inserter `func_15168A4C` is now byte-exact
+after restoring typed node and scalar index lifetimes, with four guarded
+register-color words, bringing the total to 2,667. Keep `func_150721A4`
+parked as a compiler-overflow row; keep handwritten/generated bitstream rows
+in the assembly queue; and continue with `func_150747E4`. The measured
 boundary is in
-[Working Note 154](DOCS/WORKING_NOTES/154-game-indexed-callback-dispatch-match-20260926.md).
+[Working Note 155](DOCS/WORKING_NOTES/155-game-row-list-head-insert-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -69,9 +72,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,666 / 5,483 (48.62%) | 1 | 2,816 |
+| Total | `[############------------]` 2,667 / 5,483 (48.64%) | 1 | 2,815 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,098 / 4,794 (43.76%) | 0 | 2,696 |
+| Game | `[##########--------------]` 2,099 / 4,794 (43.78%) | 0 | 2,695 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

@@ -1091,3 +1091,7 @@ game_18D770,func_151635A8,0x040,0x8FBF0014,0x8D790000,-,-,Load the callback for 
 game_18D770,func_151635A8,0x044,0x27BD0018,0x0320F809,-,-,Dispatch through the callback in t9,
 game_18D770,func_151635A8,0x048,0x03E00008,0x00000000,-,-,Keep the callback delay slot empty and restore ra after the call,0x8FBF0014
 game_18D770,func_151635A8,0x04C,0x00000000,0x27BD0018,-,-,Restore the stack and insert the shared return,0x03E00008
+game_1944C0,func_15168A4C,0x02C,0x8C660000,0x8C680000,-,-,Keep the existing slot head in t0,
+game_1944C0,func_15168A4C,0x030,0x10C00002,0x11000002,-,-,Test the slot head in t0,
+game_1944C0,func_15168A4C,0x034,0xAC860008,0xAC880008,-,-,Link the slot head through t0 in the branch delay slot,
+game_1944C0,func_15168A4C,0x038,0xACC40004,0xAD040004,-,-,Set the slot head previous link through t0,

@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Row-list head insertion byte-exact
+
+- Completed all 20 words of `func_15168A4C`. It selects one of two
+  `0x1A0`-byte rows and a four-byte column slot, inserts a node at that list
+  head, links the old head back to the new node, and records the column index.
+- A typed node and explicit row/column scalar lifetimes recover twelve of the
+  sixteen differing words directly, including the complete address
+  calculation and both `D_800DCE50` relocations. Four guarded words normalize
+  only IDO's `a2` versus retail's `t0` choice for the old head. The patch
+  table is now 1,096 unique rows with no duplicate keys.
+- Linked `0x195ECC` and retail `0x195EFC` share SHA-256
+  `8cd11f1a0d4f89be63b6bb67883a21cd18de7edfdc8011d2c194dbbf096ea697`.
+  Fresh scan: **2667 / 5483 (48.64%)** overall and
+  **2099 / 4794 (43.78%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed callback dispatch byte-exact
 
 - Completed all 23 words of `func_151635A8`. It indexes `D_8008B370` with

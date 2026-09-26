@@ -24,6 +24,14 @@ void func_15168A4C(void *arg0, s32 arg1);
 extern void (*D_8008CA20[])(void *);
 extern void (*D_8008CB64[])(void);
 
+typedef struct ListNode {
+    u8 index;
+    u8 row;
+    u8 pad2[2];
+    struct ListNode *prev;
+    struct ListNode *next;
+} ListNode;
+
 
 void func_15167010(void) {
     void (*func)(void);
@@ -147,18 +155,21 @@ void func_15168A2C(s32 arg0) {
     func_15168B10(arg0, 0);
 }
 void func_15168A4C(void *arg0, s32 arg1) {
-    void **slot;
-    void *next;
+    ListNode *node;
+    ListNode **slot;
+    u8 row;
+    s32 column;
 
-    slot = (void **) (D_800DCE50 + (*((u8 *) arg0 + 1) * 0x1A0) + (arg1 * 4));
-    next = *slot;
-    *(void **) ((u8 *) arg0 + 8) = next;
-    if (next != NULL) {
-        *(void **) ((u8 *) next + 4) = arg0;
+    node = arg0;
+    row = node->row;
+    column = arg1 * 4;
+    slot = (ListNode **) (D_800DCE50 + (row * 0x1A0) + column);
+    if ((node->next = *slot) != NULL) {
+        node->next->prev = node;
     }
-    *((u8 *) arg0) = arg1;
-    *(void **) ((u8 *) arg0 + 4) = NULL;
-    *slot = arg0;
+    node->index = arg1;
+    node->prev = NULL;
+    *slot = node;
 }
 
 void func_15168A9C(void *arg0) {
