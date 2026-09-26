@@ -942,15 +942,19 @@ s32 func_15145EA4() {
 s32 func_151462C8() {
     return 0;
 }
-s32 func_151464B8(s16 *arg0) {
+u8 func_151464B8(s16 *arg0) {
+    s16 mask;
     s32 i;
-    s16 mask = 0;
+    s32 masked;
 
-    for (i = 0; i <= D_80082FA0; i++) {
+    i = 0;
+    mask = 0;
+    for (; i <= D_80082FA0; i++) {
         mask |= 1 << i;
     }
 
-    return (arg0[1] & mask) == 0;
+    masked = (arg0[1] & mask) ^ 0;
+    return (masked == 0) & 0xFFFFFFFFFFFFFFFF;
 }
 
 void func_15146508(struct127 *arg0, struct127 *arg1) {

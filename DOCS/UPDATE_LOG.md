@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game active-player-mask predicate byte-exact
+
+- Completed all 20 words of `func_151464B8`, which builds a signed 16-bit mask
+  for active player indices and reports whether the caller's halfword has no
+  active-player bits set.
+- Recovered the `u8` return, explicit `i`-then-`mask` initialization order, and
+  masked-value lifetime. Optimized-away `^ 0` and all-ones masking retain
+  retail's final IDO register allocation without guarded instruction words.
+- Linked `0x151464B8..0x15146508` and pristine retail share SHA-256
+  `39b706408f76f7e1676a9c8d19fce2a64ed7d81da41e115e35b876a8ccf2e25e`.
+  The fresh scan is **2,693 / 5,469 (49.24%)** overall and
+  **2,122 / 4,791 (44.29%)** in Game.
+
 ### Game integer range wrapper byte-exact
 
 - Completed all 19 words of `func_151444DC`, which repeatedly wraps an integer

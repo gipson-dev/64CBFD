@@ -452,6 +452,12 @@ adjustment paths were expressed as `do/while` loops, restoring the complete
 step lifetime and branch-likely delay-slot updates with no guarded words.
 Continue with 20-word `func_151464B8`. The range-wrapper result is in
 [Working Note 189](WORKING_NOTES/189-game-integer-range-wrapper-match-20260926.md).
+That active-player-mask predicate is now byte-exact directly from C after
+recovering its byte return, explicit initialization order, masked-value
+lifetime, and final optimized-away IDO register-allocation expressions.
+Continue with the 20-word generated-slice placeholder `func_1514ED3C`. The
+predicate result is in
+[Working Note 190](WORKING_NOTES/190-game-active-player-mask-predicate-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
