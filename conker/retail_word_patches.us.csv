@@ -542,3 +542,10 @@ generated_135D00,func_15108B80,0x034,0xAC450014,0xAC430014,-,-,Store terminal ma
 game_161520,func_1513A594,0x030,0x8FAF0018,0x8FA20018,-,-,Reload wrapper object through retail pointer register,
 game_161520,func_1513A594,0x038,0x8DE001D4,0x8C4F01D4,-,-,Load retained field through retail pointer register,0x11E00001
 game_161520,func_1513A594,0x03C,0x03E00008,0x00000000,-,-,Restore redundant branch delay slot before return,0x03E00008
+game_16EE20,func_151423D8,0x02C,0x304400C0,0x304800C0,-,-,Keep quadrant mask in retail temporary register,
+game_16EE20,func_151423D8,0x030,0x10800003,0x11000003,-,-,Test quadrant through retail temporary register,
+game_16EE20,func_151423D8,0x038,0x14810006,0x15010006,-,-,Compare quadrant through retail temporary register,
+game_16EE20,func_151423D8,0x03C,0x00034880,0x00035080,-,-,Shift negative-table index through retail temporary register,
+game_16EE20,func_151423D8,0x040,0x00034080,0x00034880,-,-,Shift positive-table index through retail temporary register,
+game_16EE20,func_151423D8,0x048,0x00280821,0x00290821,-,-,Add positive-table index from retail temporary register,
+game_16EE20,func_151423D8,0x058,0x00290821,0x002A0821,-,-,Add negative-table index from retail temporary register,

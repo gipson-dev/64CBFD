@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game quadrant register allocation byte-exact
+
+- Completed all 27 words of `func_151423D8` with seven expected-word guards
+  selecting retail's quadrant and positive/negative table-index registers.
+- All normalized words are non-relocating; both `D_8009A220` HI16/LO16 pairs
+  remain attached to the original compiled loads. The patch table now has
+  550 rows and no duplicate keys.
+- Independent comparison of the complete 108-byte linked and pristine retail
+  spans produced SHA-256
+  `7d8800bced6a6b54940fa6f014a7a233975aacb0ba279b0bc6d6d021ab6e86c7`.
+  Fresh scan: **2564 / 5488 (46.72%)** overall and
+  **1996 / 4799 (41.59%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game retained-field wrapper byte-exact
 
 - Completed all 19 words of `func_1513A594` by correcting
