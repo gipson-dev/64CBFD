@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,652 / 5,483 (48.37%) | 1 | 2,830 |
+| Total | 5,483 / 6,038 (90.81%) | 2,653 / 5,483 (48.39%) | 1 | 2,829 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,084 / 4,794 (43.47%) | 0 | 2,710 |
+| Game | 4,794 / 5,318 (90.15%) | 2,085 / 4,794 (43.49%) | 0 | 2,709 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -382,7 +382,11 @@ The linked-record update pass then completed all 41 words of `func_151D2E5C`
 after correcting the owner-pointer call and recovering its four local
 lifetimes, with one guarded commutative branch word; see
 [Working Note 140](WORKING_NOTES/140-game-linked-record-update-match-20260926.md).
-Continue with 18-word `func_150104F0`, which has 16 real differences.
+The global/object initializer pass then completed all 18 words of
+`func_150104F0` after recovering its chained zero assignment and guarding six
+base/store words; see
+[Working Note 141](WORKING_NOTES/141-game-global-object-initializer-match-20260926.md).
+Continue with 33-word `func_150492CC`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 

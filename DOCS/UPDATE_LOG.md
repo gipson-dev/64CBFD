@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Global/object initializer byte-exact
+
+- Completed all 18 words of `func_150104F0`. It clears three global bytes,
+  obtains object `0xF6`, writes `2.0f` at object offset `0x7C`, and clears
+  `D_80088980`.
+- Recovered the first two clears as a chained zero assignment. Six guarded
+  rows restore retail's `v1` global base, insert the retained assignment result
+  in `v0`, and select the two value stores plus direct third clear. The patch
+  table now has 998 unique rows and no duplicate keys.
+- Linked `0x3D970` and retail `0x3D9A0` share SHA-256
+  `4490ec7ef2aa200e85afeb89209471955c5b3bc3713b2e57cd873bfafbf11db1`.
+  Fresh scan: **2653 / 5483 (48.39%)** overall and
+  **2085 / 4794 (43.49%)** game, with debugger unchanged at **181 / 181**.
+
 ### Linked-record update byte-exact
 
 - Completed all 41 words of `func_151D2E5C`. Selector `0` compares linked

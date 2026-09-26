@@ -297,9 +297,10 @@ guarding fifteen frame, saved-register, relocation, and epilogue words through
 fourteen rows. `func_15167D84` then matched through thirteen guarded
 CFG/register-scheduling rows with two insertions. `func_151D2E5C` then matched
 after correcting its owner-pointer call, recovering four local lifetimes, and
-guarding one commutative branch word. Continue with 18-word
-`func_150104F0`. The latest result is in
-[Working Note 140](WORKING_NOTES/140-game-linked-record-update-match-20260926.md).
+guarding one commutative branch word. `func_150104F0` then matched after
+recovering its chained zero assignment and guarding six global-base/store
+words. Continue with 33-word `func_150492CC`. The latest result is in
+[Working Note 141](WORKING_NOTES/141-game-global-object-initializer-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

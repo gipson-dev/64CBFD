@@ -991,3 +991,9 @@ game_1944C0,func_15167D84,0x070,0x27BD0028,0x8FBF001C,-,-,Restore ra after the p
 game_1944C0,func_15167D84,0x074,0x03E00008,0x27BD0028,-,-,Place the shared frame teardown before the return,
 game_1944C0,func_15167D84,0x078,0x00000000,0x03E00008,-,-,Move the return after the shared frame teardown,
 game_1FFF60,func_151D2E5C,0x080,0x54790005,0x57230005,-,-,Compare the loaded alternate endpoint against the retained current endpoint,
+game_3D9A0,func_150104F0,0x004,0x3C020000,0x3C030000,R_MIPS_HI16:D_800D9950,R_MIPS_HI16:D_800D9950,Materialize the three-byte global base in v1,
+game_3D9A0,func_150104F0,0x008,0x24420000,0x24630000,R_MIPS_LO16:D_800D9950,R_MIPS_LO16:D_800D9950,Finish the three-byte global base in v1,
+game_3D9A0,func_150104F0,0x00C,0xAFBF0014,0xAFBF0014,-,-,Retain the explicit chained-assignment zero after saving ra,0x00001025
+game_3D9A0,func_150104F0,0x010,0xA0400001,0xA0620001,-,-,Store the chained zero to byte one through the v1 base,
+game_3D9A0,func_150104F0,0x014,0xA0400000,0xA0620000,-,-,Store the chained zero to byte zero through the v1 base,
+game_3D9A0,func_150104F0,0x018,0xA0400002,0xA0600002,-,-,Clear byte two directly through the v1 base,
