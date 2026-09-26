@@ -589,3 +589,12 @@ generated_13AE20,func_1510E634,0x01C,0xAC8E0000,0xAC6F0004,-,-,Store segment add
 generated_13AE20,func_1510E634,0x020,0xAC8F0004,0x24840008,-,-,Advance display-list cursor after command stores,
 generated_13AE20,func_1510E634,0x024,0x03E00008,0x00801025,-,-,Move advanced cursor into return register,
 generated_13AE20,func_1510E634,0x028,0x00000000,0x03E00008,-,-,Move return after cursor result,0x00000000
+generated_15AA10,func_1512D6B0,0x000,0x908E023D,0x908F023D,-,-,Load record index through retail temporary register,
+generated_15AA10,func_1512D6B0,0x004,0x3C180000,0x3C0E0000,R_MIPS_HI16:D_800DC2B0,R_MIPS_HI16:D_800DC2B0,Load record base high half through retail register,
+generated_15AA10,func_1512D6B0,0x008,0x8F180000,0x8DCE0000,R_MIPS_LO16:D_800DC2B0,R_MIPS_LO16:D_800DC2B0,Load record base through retail register,
+generated_15AA10,func_1512D6B0,0x00C,0x000E7880,0x000FC080,-,-,Start stride scaling in retail offset register,
+generated_15AA10,func_1512D6B0,0x010,0x01EE7823,0x030FC023,-,-,Subtract index in retail offset register,
+generated_15AA10,func_1512D6B0,0x014,0x000F7880,0x0018C080,-,-,Continue stride scaling in retail offset register,
+generated_15AA10,func_1512D6B0,0x018,0x01EE7823,0x030FC023,-,-,Finish stride subtraction in retail offset register,
+generated_15AA10,func_1512D6B0,0x01C,0x000F7900,0x0018C100,-,-,Scale record offset by sixteen,
+generated_15AA10,func_1512D6B0,0x020,0x01F81821,0x01D81821,-,-,Add retail base and offset registers,

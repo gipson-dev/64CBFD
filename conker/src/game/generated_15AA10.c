@@ -18,6 +18,7 @@ void func_1512D66C(u8 *arg0) {
     *(s32 *) (D_800DC2B0 + *(arg0 + 0x23D) * stride + 0xAC) = 0;
 }
 
+/* Note 318: guarded temporaries preserve retail record-index register lifetimes. */
 s32 func_1512D6B0(u8 *arg0) {
     u8 *temp_v1 = D_800DC2B0 + *(arg0 + 0x23D) * 0xB0;
 

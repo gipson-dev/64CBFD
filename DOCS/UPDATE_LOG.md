@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Record-stride register lifetimes byte-exact
+
+- Completed all 16 words of `func_1512D6B0` with nine guarded words selecting
+  retail's `t7` index, `t6` global base, and `t8` 176-byte record offset.
+  Control flow, field loads, equality reduction, and padding were already
+  exact.
+- An explicit-local source experiment spread the same values into argument
+  registers and was reverted. The patch table now has 599 rows with no
+  duplicate keys.
+- The independent complete-span SHA-256 is
+  `3266b541de99bd06941b770d4b38988db458dab3e62d8deb16339a6f96df436a`.
+  Fresh scan: **2574 / 5484 (46.94%)** overall and
+  **2006 / 4795 (41.84%)** game, with debugger unchanged at **181 / 181**.
+
 ### Display-list cursor expansion byte-exact
 
 - Completed all 15 words of `func_1510E634` using the established typed `Gfx`
