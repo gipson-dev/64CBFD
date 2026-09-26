@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Position and phase update byte-exact
+
+- Completed all 28 words of `func_15141564` by expressing its position update
+  in multiplication-first order and guarding the two residual base-pointer
+  spill/reload slot words. The source change restores retail's frame and both
+  FP-register pipelines; no relocation or instruction position changes.
+- The patch table now has 711 unique rows. The linked span at `0x16E9E4` and
+  retail span at `0x16EA14` share SHA-256
+  `364192b03df56b95681c27fb0a27b22cdeacb071d6a9a462c1b4a07bcb72364b`.
+  Fresh scan: **2596 / 5484 (47.34%)** overall and
+  **2028 / 4795 (42.29%)** game, with debugger unchanged at **181 / 181**.
+
 ### Two-word aggregate call byte-exact
 
 - Completed all 17 words of `func_151090DC` by replacing two scalar stack

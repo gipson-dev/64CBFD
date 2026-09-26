@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,595 / 5,484 (47.32%) | 1 | 2,888 |
+| Total | 5,484 / 6,038 (90.82%) | 2,596 / 5,484 (47.34%) | 1 | 2,887 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,027 / 4,795 (42.27%) | 0 | 2,768 |
+| Game | 4,795 / 5,318 (90.17%) | 2,028 / 4,795 (42.29%) | 0 | 2,767 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -189,6 +189,9 @@ source loop plus nine guarded cursor/register schedule words; see
 The two-word call-wrapper pass completed `func_151090DC` directly from a typed
 aggregate initializer and corrected pointer ABI; see
 [Working Note 082](WORKING_NOTES/082-game-two-word-aggregate-call-match-20260926.md).
+The position/phase pass completed `func_15141564` from multiplication-first
+source scheduling plus two guarded base-pointer local-slot words; see
+[Working Note 083](WORKING_NOTES/083-game-position-phase-update-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

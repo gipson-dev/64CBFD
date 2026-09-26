@@ -708,3 +708,5 @@ generated_E4070,func_150B6D34,0x01C,0x10600002,0x10400002,-,-,Test the current r
 generated_E4070,func_150B6D34,0x024,0xAC640020,0xAC440020,-,-,Store the active flag through the v0 record pointer,
 generated_E4070,func_150B6D34,0x028,0x5445FFFB,0x5465FFFB,-,-,Compare the v1 cursor with the end pointer,
 generated_E4070,func_150B6D34,0x02C,0x8C430014,0x8C620014,-,-,Reload the next record pointer into v0,
+game_16DC80,func_15141564,0x054,0xAFA3001C,0xAFA30018,-,-,Preserve the phase base in the retail local slot,
+game_16DC80,func_15141564,0x058,0x8FA3001C,0x8FA30018,-,-,Reload the phase base from the retail local slot,

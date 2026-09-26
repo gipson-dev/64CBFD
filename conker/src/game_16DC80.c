@@ -72,7 +72,7 @@ s32 func_15141478() {
 s32 func_15141564(u8 *arg0) {
     u8 *base = arg0 + 0x170;
 
-    *(f32 *)(arg0 + 0x158) = *(f32 *)(base + 0) + (*(f32 *)(base + 4) * sinf(*(f32 *)(arg0 + 0x178)));
+    *(f32 *)(arg0 + 0x158) = (*(f32 *)(base + 4) * sinf(*(f32 *)(arg0 + 0x178))) + *(f32 *)(base + 0);
     *(f32 *)(base + 8) += *(f32 *)(base + 0xC) * D_800BE9A4;
     *(f32 *)(base + 8) = func_15144B68(*(f32 *)(base + 8));
     return 1;
