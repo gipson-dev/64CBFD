@@ -209,15 +209,14 @@ s32 func_15088270(s32 arg0) {
 }
 
 s32 func_150882B0(s32 arg0) {
-    s32 idx = arg0;
     u8 *temp_v1 = D_800872A0;
-    u8 *ptr;
+    s32 idx = arg0;
 
     if (temp_v1 == 0) {
         return 0;
     }
-    ptr = (u8 *) (idx * 0x84 + (s32) temp_v1);
-    return *(s8 *) (ptr + 0x27);
+    arg0 = idx * 0x84 + (s32) temp_v1;
+    return *(s8 *) (arg0 + 0x27);
 }
 
 s32 func_150882E4() {

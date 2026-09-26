@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Indexed signed-byte getter byte-exact
+
+- Completed all 13 words of `func_150882B0` by declaring the global pointer
+  before the retained index, reusing `arg0` for the final record pointer, and
+  guarding the remaining ten schedule positions. Retail now preserves the
+  index in `a1`, keeps `D_800872A0` in `v1`, and loads through final `a0`.
+- The moved `D_800872A0` HI16/LO16 pair is explicitly guarded. The patch table
+  now has 745 unique rows. Linked `0xB5730` and retail `0xB5760` share SHA-256
+  `7c3ea120c159b30ba557ad53b2e8ab7720ec13bb50a7daebf4f56f9d93ed63c4`.
+  Fresh scan: **2603 / 5484 (47.47%)** overall and
+  **2035 / 4795 (42.44%)** game, with debugger unchanged at **181 / 181**.
+
 ### Three-byte record update byte-exact
 
 - Completed all 46 words of `func_1504BA38` with twelve guarded words that

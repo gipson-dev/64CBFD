@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,602 / 5,484 (47.45%) | 1 | 2,881 |
+| Total | 5,484 / 6,038 (90.82%) | 2,603 / 5,484 (47.47%) | 1 | 2,880 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,034 / 4,795 (42.42%) | 0 | 2,761 |
+| Game | 4,795 / 5,318 (90.17%) | 2,035 / 4,795 (42.44%) | 0 | 2,760 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -210,6 +210,9 @@ update, comparison, and table-index expressions; see
 The three-byte record pass completed `func_1504BA38` with twelve guarded
 pointer/value-register schedule words; see
 [Working Note 089](WORKING_NOTES/089-game-three-byte-record-schedule-match-20260926.md).
+The indexed signed-byte getter pass completed `func_150882B0` from local
+ordering, final argument reuse, and ten guarded schedule words; see
+[Working Note 090](WORKING_NOTES/090-game-indexed-signed-byte-getter-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
