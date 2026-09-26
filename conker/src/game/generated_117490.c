@@ -24,6 +24,7 @@ void func_150EA8E0(s32 arg0) {
     func_150E5AE0();
 }
 
+// Matched with guarded base/index and byte-update register lifetimes.
 void func_150EA904(u8 arg0, s32 arg1) {
     u8 *temp_v0 = D_800DBEF4 + arg1 * 0xA0;
 

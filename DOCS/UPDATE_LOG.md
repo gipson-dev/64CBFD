@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Indexed-record flag update byte-exact
+
+- Completed all 16 words of `func_150EA904` with eight expected-word guards
+  that select retail's global-base, scaled-index, and byte-update register
+  lifetimes while preserving both `D_800DBEF4` relocations.
+- Source experiments with split base/index locals and reversed commutative
+  operands did not reproduce retail allocation and were reverted. The patch
+  table has 565 rows with no duplicate keys.
+- The independent complete-span SHA-256 is
+  `e5d74fd6f5bb8c46aa7f23be8b07a96782be90cce7e8e3922e07128af750406f`.
+  Fresh scan: **2569 / 5486 (46.83%)** overall and
+  **2001 / 4797 (41.71%)** game, with debugger unchanged at **181 / 181**.
+
 ### Dead child-pointer structural twin restored to assembly
 
 - Restored `func_150C682C` to its original 17-word assembly ownership. Like

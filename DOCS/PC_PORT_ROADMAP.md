@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,486 / 6,038 (90.86%) | 2,568 / 5,486 (46.81%) | 1 | 2,917 |
+| Total | 5,486 / 6,038 (90.86%) | 2,569 / 5,486 (46.83%) | 1 | 2,916 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,797 / 5,318 (90.20%) | 2,000 / 4,797 (41.69%) | 0 | 2,797 |
+| Game | 4,797 / 5,318 (90.20%) | 2,001 / 4,797 (41.71%) | 0 | 2,796 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -124,6 +124,8 @@ extent; see
 Its structural twin `func_150C682C` received the same ownership correction;
 see
 [Working Note 053](WORKING_NOTES/053-game-dead-child-pointer-twin-restoration-20260925.md).
+The following register-lifetime pass completed `func_150EA904`; see
+[Working Note 054](WORKING_NOTES/054-game-indexed-record-flag-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
