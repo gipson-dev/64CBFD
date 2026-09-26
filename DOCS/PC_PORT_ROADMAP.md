@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,487 / 6,038 (90.87%) | 2,568 / 5,487 (46.80%) | 1 | 2,918 |
+| Total | 5,486 / 6,038 (90.86%) | 2,568 / 5,486 (46.81%) | 1 | 2,917 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,798 / 5,318 (90.22%) | 2,000 / 4,798 (41.68%) | 0 | 2,798 |
+| Game | 4,797 / 5,318 (90.20%) | 2,000 / 4,797 (41.69%) | 0 | 2,797 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -121,6 +121,9 @@ The following source-level narrowing pass completed `func_1509F248`; see
 The next ownership audit restored `func_150C5EFC` to its original assembly
 extent; see
 [Working Note 052](WORKING_NOTES/052-game-dead-child-pointer-restoration-20260925.md).
+Its structural twin `func_150C682C` received the same ownership correction;
+see
+[Working Note 053](WORKING_NOTES/053-game-dead-child-pointer-twin-restoration-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

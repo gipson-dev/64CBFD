@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,487 / 6,038 (90.87%) | 551 | 1,932,784 / 2,256,728 (85.65%) |
+| Total | 5,486 / 6,038 (90.86%) | 552 | 1,932,784 / 2,256,728 (85.65%) |
 | Init | 508 / 538 (94.42%) | 30 | 148,936 / 164,048 (90.79%) |
-| Game | 4,798 / 5,318 (90.22%) | 520 | 1,764,208 / 2,072,880 (85.11%) |
+| Game | 4,797 / 5,318 (90.20%) | 521 | 1,764,208 / 2,072,880 (85.11%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,568 / 5,487 (46.80%) | 1 | 2,918 |
+| Total | 2,568 / 5,486 (46.81%) | 1 | 2,917 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,000 / 4,798 (41.68%) | 0 | 2,798 |
+| Game | 2,000 / 4,797 (41.69%) | 0 | 2,797 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,568, while
-491 functions moved from C back to assembly. The paired event-swap pass added
+492 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -89,6 +89,8 @@ child/destination pointer ordering and retail's wider byte-mask spelling.
 that restores retail's high-half extraction and call-delay-slot schedule.
 `func_150C5EFC` is restored to its original 17-word assembly extent because
 IDO removes retail's otherwise dead child-pointer update before the call.
+Its structural twin `func_150C682C` is restored for the same ownership reason,
+with its distinct child-field clear preserved.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -160,8 +162,9 @@ end-to-end gameplay acceptance.
    pointer ordering and mask recovery, completing the seven-difference game
    tier. `func_1509F248` is byte-exact from source-level unsigned-halfword
    narrowing. `func_150C5EFC` is restored to its original 17-word assembly
-   extent after IDO removed its dead pointer update. Continue at 17-word
-   `func_150C682C`, the first remaining eight-difference game row.
+   extent after IDO removed its dead pointer update. Structural twin
+   `func_150C682C` is restored for the same reason. Continue at 16-word
+   `func_150EA904`, the first remaining eight-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -257,5 +260,7 @@ The completed high-half call wrapper is in
 [Working Note 051](WORKING_NOTES/051-game-high-half-call-wrapper-20260925.md).
 The restored dead child-pointer assembly boundary is in
 [Working Note 052](WORKING_NOTES/052-game-dead-child-pointer-restoration-20260925.md).
+The restored structural twin is in
+[Working Note 053](WORKING_NOTES/053-game-dead-child-pointer-twin-restoration-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
