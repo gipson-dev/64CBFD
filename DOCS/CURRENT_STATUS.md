@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,571 / 5,484 (46.88%) | 1 | 2,912 |
+| Total | 2,572 / 5,484 (46.90%) | 1 | 2,911 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,003 / 4,795 (41.77%) | 0 | 2,792 |
+| Game | 2,004 / 4,795 (41.79%) | 0 | 2,791 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -102,6 +102,8 @@ IDO retains one global address register, while retail uses independent load
 and store relocations and places the store in the return delay slot.
 `func_150771F0` is byte-exact through nine guarded argument-load and selector
 schedule words, including eight explicitly declared relocation moves.
+`func_15080200` is byte-exact from a source-level chained assignment that
+restores retail's two retained global-address registers and three-store order.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -181,8 +183,9 @@ end-to-end gameplay acceptance.
    the dead child-pointer family, is restored to its original 17-word assembly
    extent. `func_151EF610`, the final eight-difference game row, is restored
    to original assembly ownership. `func_150771F0` is byte-exact through a
-   relocation-aware argument-load schedule. Continue with 10-word
-   `func_15080200`, the next nine-difference game row.
+   relocation-aware argument-load schedule. `func_15080200` is byte-exact
+   from chained global assignment. Continue with 15-word `func_1510E634`, the
+   next nine-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

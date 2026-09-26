@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Chained global clear byte-exact
+
+- Completed all ten words of `func_15080200` by expressing its three zero
+  stores as one chained assignment. IDO now retains `v0` and `v1` addresses
+  for the first two globals and emits the retail store order naturally.
+- Explicit local pointer variables were optimized back into three direct
+  stores and were rejected. No guarded patch rows were needed; the table
+  remains at 582 rows with no duplicate keys.
+- The independent complete-span SHA-256 is
+  `5fe7f7f6c8dc160faba47b5b2a363a0d7a7ca5dadc9982da1e3fe41d9141e7b6`.
+  Fresh scan: **2572 / 5484 (46.90%)** overall and
+  **2004 / 4795 (41.79%)** game, with debugger unchanged at **181 / 181**.
+
 ### Argument-load schedule byte-exact
 
 - Completed all 41 words of `func_150771F0`. Inlining the selector expression

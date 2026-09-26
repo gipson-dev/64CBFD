@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, argument-load schedule matched).** The current linked
-checkpoint is `2571 / 5484 (46.88%)` exact C functions, with one address-drift
-blocker and 2,912 genuinely different C functions. The tree contains 554
+**Active (2026-09-25, chained global clear matched).** The current linked
+checkpoint is `2572 / 5484 (46.90%)` exact C functions, with one address-drift
+blocker and 2,911 genuinely different C functions. The tree contains 554
 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -161,8 +161,8 @@ normalization. `func_151AB180`, the `+0x70` dead child-pointer family member,
 is restored to its original assembly extent. `func_151EF610` is restored to
 its original assembly extent because its independent global relocations and
 return-delay store are not reproduced by IDO. Continue with the
-nine-difference game tier after byte-exact `func_150771F0`; continue at
-10-word `func_15080200`. Keep
+nine-difference game tier after byte-exact `func_150771F0` and
+`func_15080200`; continue at 15-word `func_1510E634`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
