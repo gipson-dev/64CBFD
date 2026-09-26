@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Animation sound choice byte-exact
+
+- Completed all 59 words of `func_1506C32C` while preserving its recovered
+  animation-command behavior: unpack up to four authored sound choices, select
+  one through `func_1000F568`, update the packed sound state, and dispatch
+  `func_1506BF5C` when the selected choice is nonzero.
+- Reused one scalar for the initial choice count and final selected index,
+  restoring retail's `a1` lifetime and branch-likely shape. Declaring the
+  choices array between the two scalar locals restores the 56-byte frame and
+  exact `sp+0x24..0x30` array placement. No guarded rows were added; the patch
+  table remains at 958 unique rows with no duplicate keys.
+- Linked `0x997AC` and retail `0x997DC` share SHA-256
+  `e069a7bd0b07961da1280aefd0541d6fea6883e891c1cd3815211165b5fbe20d`.
+  Fresh scan: **2647 / 5483 (48.28%)** overall and
+  **2079 / 4794 (43.37%)** game, with debugger unchanged at **181 / 181**.
+
 ### Scene callback dispatch byte-exact
 
 - Completed all 20 words of `func_15130230`. The function reads scene selector

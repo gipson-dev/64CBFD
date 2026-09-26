@@ -14,10 +14,11 @@ built, studied, and matched against the retail ROM.
 
 2026-09-26: the latest byte-matching pass completed `func_15088270`,
 `func_15188A58`, `func_1509F660`, `func_151C4510`, `func_150C78E0`, and
-`func_15130230`. The fresh linked scan reports 2,646 byte-exact C functions.
-Continue with the 59-word `func_1506C32C`; the measured boundary and current
+`func_15130230`. The animation sound-choice routine `func_1506C32C` is also
+byte-exact. The fresh linked scan reports 2,647 byte-exact C functions.
+Continue with the 33-word `func_150CFDB8`; the measured boundary and current
 candidate are in
-[Working Note 134](DOCS/WORKING_NOTES/134-game-scene-callback-dispatch-match-20260926.md).
+[Working Note 135](DOCS/WORKING_NOTES/135-game-animation-sound-choice-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -43,9 +44,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,646 / 5,483 (48.26%) | 1 | 2,836 |
+| Total | `[############------------]` 2,647 / 5,483 (48.28%) | 1 | 2,835 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,078 / 4,794 (43.35%) | 0 | 2,716 |
+| Game | `[##########--------------]` 2,079 / 4,794 (43.37%) | 0 | 2,715 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

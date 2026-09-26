@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,646 / 5,483 (48.26%) | 1 | 2,836 |
+| Total | 5,483 / 6,038 (90.81%) | 2,647 / 5,483 (48.28%) | 1 | 2,835 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,078 / 4,794 (43.35%) | 0 | 2,716 |
+| Game | 4,794 / 5,318 (90.15%) | 2,079 / 4,794 (43.37%) | 0 | 2,715 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -359,7 +359,11 @@ The scene-callback pass then completed all 20 words of `func_15130230`
 directly from C by explicitly passing the incoming object pointer through the
 selected callback. No guarded rows were needed; see
 [Working Note 134](WORKING_NOTES/134-game-scene-callback-dispatch-match-20260926.md).
-Continue with 59-word `func_1506C32C`, which has 15 real differences.
+The animation sound-choice pass then completed all 59 words of
+`func_1506C32C` directly from C by sharing the count/index lifetime and placing
+the choices array between its scalar locals. No guarded rows were needed; see
+[Working Note 135](WORKING_NOTES/135-game-animation-sound-choice-match-20260926.md).
+Continue with 33-word `func_150CFDB8`, which has 15 real differences.
 
 Current host-port progression and acceptance boundaries:
 

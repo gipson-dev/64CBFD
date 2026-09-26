@@ -447,9 +447,8 @@ s32 func_1506BF5C() {
 extern u32 D_800D187C;
 extern s32 func_1000F568(s32 arg0, s32 arg1);
 void func_1506C32C(void) {
-    u32 choices[4];
     u32 packed;
-    s32 count;
+    u32 choices[4];
     s32 selected;
 
     if (D_800D187C == 0) {
@@ -462,17 +461,16 @@ void func_1506C32C(void) {
     choices[2] = ((s32)packed >> 11) & 0x7FF;
     choices[3] = ((s32)packed >> 22) & 0x7FF;
     if (choices[3] != 0) {
-        count = 4;
+        selected = 4;
     } else if (choices[2] != 0) {
-        count = 3;
+        selected = 3;
     } else if (choices[1] != 0) {
-        count = 2;
+        selected = 2;
     } else {
-        count = 0;
+        selected = 0;
     }
-    selected = 0;
-    if (count != 0) {
-        selected = func_1000F568(choices[0], count) - choices[0];
+    if (selected != 0) {
+        selected = func_1000F568(choices[0], selected) - choices[0];
     }
     if (choices[selected] != 0) {
         D_800D187C &= 0xFFFEF800;

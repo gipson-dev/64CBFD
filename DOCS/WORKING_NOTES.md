@@ -285,8 +285,11 @@ destination-component lifetimes plus fifteen guarded FP scheduling words.
 guarded dead pointer-advance insertion. `func_15130230` then matched directly
 after its incoming object pointer became an explicit callback argument, which
 removed the surplus `a0` spill and restored all three trailing padding words.
-Continue with 59-word `func_1506C32C`. The latest result is in
-[Working Note 134](WORKING_NOTES/134-game-scene-callback-dispatch-match-20260926.md).
+`func_1506C32C` then matched directly after its count and selected-index phases
+shared one local and the choices array was placed between the scalar locals,
+recovering retail's `a1` lifetime and stack layout. Continue with 33-word
+`func_150CFDB8`. The latest result is in
+[Working Note 135](WORKING_NOTES/135-game-animation-sound-choice-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
