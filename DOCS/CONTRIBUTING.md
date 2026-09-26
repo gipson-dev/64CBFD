@@ -153,6 +153,15 @@ symbols. Always verify this pattern through the production padded-object
 recipe and a full link; do not use it for ordinary objects whose `.bss` is
 linked normally.
 
+Generated-slice word patches may also use `insert_after` for a measured
+missing scheduling word. The padder counts every insertion against the
+function's retail span, shifts restored jump-label positions with emitted
+bytes, and requires the containing compiled word to pass its expected-word
+and relocation guards. Inserted words cannot carry relocations; use explicit
+replacement relocation fields on neighboring compiled words when a symbol
+load moves. Cover new insertion shapes in `tools/tests/` and verify the full
+linked function span against retail.
+
 ### Reference decomp source and compile profiles
 
 A completed decompilation of another game built with the same SDK can provide

@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Display-list cursor expansion byte-exact
+
+- Completed all 15 words of `func_1510E634` using the established typed `Gfx`
+  writer idiom and eight guarded rows. Two rows insert the missing preserved
+  cursor and return-delay words; the remaining rows restore retail's address,
+  command, store, cursor-advance, and return schedule.
+- Extended `pad_generated_object.py` to support bounded `insert_after` words,
+  including retail-span accounting and shifted jump-label emission. All five
+  padding-tool tests pass, including the new generated insertion fixture.
+- The independent complete-span SHA-256 is
+  `28d8bacba51037d5bdf8db9e479119ce8122427682c41a509a427bc6079ec25e`.
+  The patch table has 590 unique rows. Fresh scan: **2573 / 5484 (46.92%)**
+  overall and **2005 / 4795 (41.81%)** game, with debugger unchanged at
+  **181 / 181**.
+
 ### Chained global clear byte-exact
 
 - Completed all ten words of `func_15080200` by expressing its three zero

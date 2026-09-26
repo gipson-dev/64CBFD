@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,572 / 5,484 (46.90%) | 1 | 2,911 |
+| Total | 2,573 / 5,484 (46.92%) | 1 | 2,910 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,004 / 4,795 (41.79%) | 0 | 2,791 |
+| Game | 2,005 / 4,795 (41.81%) | 0 | 2,790 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -104,6 +104,8 @@ and store relocations and places the store in the return delay slot.
 schedule words, including eight explicitly declared relocation moves.
 `func_15080200` is byte-exact from a source-level chained assignment that
 restores retail's two retained global-address registers and three-store order.
+`func_1510E634` is byte-exact from the typed `Gfx` writer idiom plus a guarded
+two-word expansion that restores the original and advanced cursor lifetimes.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -184,8 +186,9 @@ end-to-end gameplay acceptance.
    extent. `func_151EF610`, the final eight-difference game row, is restored
    to original assembly ownership. `func_150771F0` is byte-exact through a
    relocation-aware argument-load schedule. `func_15080200` is byte-exact
-   from chained global assignment. Continue with 15-word `func_1510E634`, the
-   next nine-difference game row.
+   from chained global assignment. `func_1510E634` is byte-exact through the
+   generated-slice guarded-expansion path. Continue with 16-word
+   `func_1512D6B0`, the next nine-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

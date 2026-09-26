@@ -212,9 +212,9 @@ candidate before treating it as an ordinary C conversion target.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,572 / 5,484 (46.90%) | 1 | 2,911 |
+| Total | `[###########-------------]` 2,573 / 5,484 (46.92%) | 1 | 2,910 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,004 / 4,795 (41.79%) | 0 | 2,791 |
+| Game | `[##########--------------]` 2,005 / 4,795 (41.81%) | 0 | 2,790 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The debugger section is fully complete: 181 C-classified rows match through

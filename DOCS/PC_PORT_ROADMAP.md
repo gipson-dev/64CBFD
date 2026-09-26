@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,572 / 5,484 (46.90%) | 1 | 2,911 |
+| Total | 5,484 / 6,038 (90.82%) | 2,573 / 5,484 (46.92%) | 1 | 2,910 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,004 / 4,795 (41.79%) | 0 | 2,791 |
+| Game | 4,795 / 5,318 (90.17%) | 2,005 / 4,795 (41.81%) | 0 | 2,790 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -137,6 +137,8 @@ The first nine-difference pass completed `func_150771F0`; see
 [Working Note 058](WORKING_NOTES/058-game-argument-load-schedule-match-20260925.md).
 The next source-level pass completed `func_15080200`; see
 [Working Note 059](WORKING_NOTES/059-game-chained-global-clear-match-20260925.md).
+The generated display-list cursor pass completed `func_1510E634`; see
+[Working Note 060](WORKING_NOTES/060-game-display-list-cursor-expansion-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

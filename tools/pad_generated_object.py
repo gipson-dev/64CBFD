@@ -9,7 +9,9 @@ relocations, and emits assembly that places those bytes at the function's
 original offset from the preserved raw-assembly slice. The gaps are zero-filled
 MIPS nops. Exported jump-table labels are restored at their retail offsets too.
 
-The result is still C-derived code: only inter-function layout is changed.
+The result is still C-derived code: inter-function layout is restored, and an
+optional guarded table can replace compiled words or insert non-relocated
+scheduling words while enforcing each function's retail span.
 """
 
 import argparse
@@ -181,6 +183,12 @@ def parse_relocation_spec(value):
     return relocations
 
 
+def parse_optional_word(value):
+    if value is None or not value.strip():
+        return None
+    return int(value, 0)
+
+
 def load_word_patches(path, filename):
     if path is None:
         return {}
@@ -208,16 +216,12 @@ def load_word_patches(path, filename):
                     f"word patch for {key[0]} at 0x{key[1]:X} must declare "
                     "both relocation fields"
                 )
-            if row.get("insert_after", "").strip():
-                raise ValueError(
-                    f"generated word patch for {key[0]} at 0x{key[1]:X} "
-                    "cannot insert a word"
-                )
             patches[key] = {
                 "expected": int(row["expected"], 0),
                 "replacement": int(row["replacement"], 0),
                 "expected_relocations": expected_relocations,
                 "replacement_relocations": replacement_relocations,
+                "insert_after": parse_optional_word(row.get("insert_after")),
             }
     return patches
 
@@ -307,16 +311,23 @@ def emit_padded_assembly(
         pad_to(target)
         emit_labels(target)
         next_target = functions[index + 1][0] if index + 1 < len(functions) else slice_size
-        if symbol["size"] > next_target - target:
+        inserted_size = sum(
+            4
+            for (patch_name, _), patch in word_patches.items()
+            if patch_name == name and patch["insert_after"] is not None
+        )
+        emitted_size = symbol["size"] + inserted_size
+        if emitted_size > next_target - target:
             raise ValueError(
-                f"compiled {name} is 0x{symbol['size']:X} bytes but its retail "
+                f"patched {name} is 0x{emitted_size:X} bytes but its retail "
                 f"span is only 0x{next_target - target:X}"
             )
 
         output.extend((f".globl {name}", f".type {name}, @function", f"{name}:"))
         start = symbol["value"]
+        emitted_relative = 0
         for relative in range(0, symbol["size"], 4):
-            emit_labels(target + relative)
+            emit_labels(target + emitted_relative)
             compact_offset = start + relative
             word_relocations = list(source_relocations.get(compact_offset, []))
             word = int.from_bytes(
@@ -348,9 +359,14 @@ def emit_padded_assembly(
                     f".reloc ., {relocation_name}, {relocation_symbol}"
                 )
             output.append(f".word 0x{word:08X}")
+            emitted_relative += 4
+            if patch is not None and patch["insert_after"] is not None:
+                emit_labels(target + emitted_relative)
+                output.append(f".word 0x{patch['insert_after']:08X}")
+                emitted_relative += 4
         output.append(f".size {name}, . - {name}")
         output.append("")
-        current = target + symbol["size"]
+        current = target + emitted_size
 
     pad_to(slice_size)
     emit_labels(slice_size)
