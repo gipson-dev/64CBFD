@@ -21,11 +21,11 @@ byte-exact. The kind-selecting record-copy builder `func_15167D84` is now
 byte-exact too, followed by linked-record update `func_151D2E5C`. The fresh
 global/object initializer `func_150104F0` is byte-exact as well. The fresh
 dimension/ratio setup `func_150492CC` is byte-exact as well. The fresh linked
-scan now counts the angle-tolerance check `func_150767F4` as byte-exact too,
-for 2,655 byte-exact C functions. Keep the deliberately live-C
-`func_150721A4` compiler-overflow row parked and continue with 21-word
-`func_1507A428`; the measured boundary is in
-[Working Note 143](DOCS/WORKING_NOTES/143-game-angle-tolerance-match-20260926.md).
+scan counts the angle-tolerance check `func_150767F4` and packed actor-mask
+writer `func_1507A428` as byte-exact too, for 2,656 byte-exact C functions.
+Keep the deliberately live-C `func_150721A4` compiler-overflow row parked and
+continue with 20-word `func_15084CB0`; the measured boundary is in
+[Working Note 144](DOCS/WORKING_NOTES/144-game-packed-actor-mask-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -51,9 +51,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,655 / 5,483 (48.42%) | 1 | 2,827 |
+| Total | `[############------------]` 2,656 / 5,483 (48.44%) | 1 | 2,826 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,087 / 4,794 (43.53%) | 0 | 2,707 |
+| Game | `[##########--------------]` 2,088 / 4,794 (43.55%) | 0 | 2,706 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

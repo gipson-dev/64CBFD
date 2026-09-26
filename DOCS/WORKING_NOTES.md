@@ -301,10 +301,11 @@ guarding one commutative branch word. `func_150104F0` then matched after
 recovering its chained zero assignment and guarding six global-base/store
 words. `func_150492CC` then matched through sixteen guarded floating-point and
 relocation-scheduling words. `func_150767F4` then matched through sixteen
-guarded post-call register-scheduling words. Keep `func_150721A4` parked as a
-known three-word live-C compiler overflow and continue with 21-word
-`func_1507A428`. The latest result is in
-[Working Note 143](WORKING_NOTES/143-game-angle-tolerance-match-20260926.md).
+guarded post-call register-scheduling words. `func_1507A428` then matched
+through sixteen guarded global-load, relocation, and packed-value register
+words. Keep `func_150721A4` parked as a known three-word live-C compiler
+overflow and continue with 20-word `func_15084CB0`. The latest result is in
+[Working Note 144](WORKING_NOTES/144-game-packed-actor-mask-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

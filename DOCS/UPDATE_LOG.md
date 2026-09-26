@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Packed actor-mask writer byte-exact
+
+- Completed all 21 words of `func_1507A428`. It packs
+  `D_800D1890..D_800D1893`, forces bit zero, complements the result, and
+  stores it in the current actor's `unk94` field.
+- Sixteen guarded rows restore retail's four global-byte load schedules and
+  relocations, interleaved shifts, packed-value temporaries, and final store
+  register. The patch table now has 1,046 unique rows and no duplicate keys.
+- Linked `0xA78A8` and retail `0xA78D8` share SHA-256
+  `5db71840ee7756a402ac0cea1be74eecef27f9c9e9bed3ad6970c34d333fcdfb`.
+  Fresh scan: **2656 / 5483 (48.44%)** overall and
+  **2088 / 4794 (43.55%)** game, with debugger unchanged at **181 / 181**.
+
 ### Angle-tolerance check byte-exact
 
 - Completed all 58 words of `func_150767F4`. It computes the horizontal angle
