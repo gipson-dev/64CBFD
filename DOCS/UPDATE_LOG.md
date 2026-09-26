@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Indexed 16-byte record lookup byte-exact
+
+- Completed all 19 words of `func_15086D48`. It searches the 16-byte records
+  at `D_800D2350`, bounded by the signed halfword count at `D_80087290`, and
+  returns the matching index or `0xFF`.
+- Expressing the byte-seven lookup as `D_800D2350[(i * 0x10) + 7]` preserves
+  `arg0` in `a0` and lets IDO derive the record cursor in `a1`, directly
+  recovering both relocation pairs and the cursor induction. Six guarded rows
+  preserve retail's explicit signed loop comparison and shifted fallback
+  epilogue. The patch table now has 1,059 unique rows and no duplicate keys.
+- Linked `0xB41C8` and retail `0xB41F8` share SHA-256
+  `1052c36b9456acec6421f1c3b878089012ad40b723db196c0d41e2d744e785f1`.
+  Fresh scan: **2658 / 5483 (48.48%)** overall and
+  **2090 / 4794 (43.60%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed u16 table lookup byte-exact
 
 - Completed all 20 words of `func_15084CB0`. It searches the `u16` table at

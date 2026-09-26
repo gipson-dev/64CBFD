@@ -96,14 +96,11 @@ s32 func_15086D48(s32 arg0) {
     s32 i = 0;
 
     if (temp_v0 > 0) {
-        u8 *ptr = D_800D2350;
-
         do {
-            if (arg0 == *(ptr + 7)) {
+            if (arg0 == D_800D2350[(i * 0x10) + 7]) {
                 return i;
             }
             i += 1;
-            ptr += 0x10;
         } while (i < temp_v0);
     }
     return 0xFF;
