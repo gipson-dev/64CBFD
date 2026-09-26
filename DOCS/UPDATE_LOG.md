@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### State-gated owner check converted and byte-exact
+
+- Replaced `func_15116930`'s zero-return placeholder with its complete
+  21-word behavior. It requires object flag `0x04`, rejects existing state
+  bits at offset `0x73`, validates the owner's byte at offset `0x57`, and
+  transitions the object state to bit `0x02`.
+- Retaining `arg1 + 0x31C` as an owner-slot address gives IDO the exact retail
+  state-byte and owner-pointer lifetimes. All instructions match directly
+  from C, with no guarded rows; the patch table remains at 1,111 unique rows.
+- Linked `0x143DB0` and retail `0x143DE0` share SHA-256
+  `c5c323dece9963de7032c222fae4dbd364fe18d5a94e0da60766d8cf3e62566a`.
+  Fresh scan: **2671 / 5483 (48.71%)** overall and
+  **2103 / 4794 (43.87%)** game, with debugger unchanged at **181 / 181**.
+
 ### Wrapping signed-byte counter byte-exact
 
 - Completed all 20 words of `func_1508CA88`. It increments the signed object

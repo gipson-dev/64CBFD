@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,670 / 5,483 (48.70%) | 1 | 2,812 |
+| Total | 5,483 / 6,038 (90.81%) | 2,671 / 5,483 (48.71%) | 1 | 2,811 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,102 / 4,794 (43.85%) | 0 | 2,692 |
+| Game | 4,794 / 5,318 (90.15%) | 2,103 / 4,794 (43.87%) | 0 | 2,691 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -455,7 +455,11 @@ The wrapping signed-byte counter pass then completed all 20 words of
 independent final global-pointer reload through two guarded relocation-aware
 rows; see
 [Working Note 158](WORKING_NOTES/158-game-wrapping-byte-counter-match-20260926.md).
-Continue with 21-word `func_15116930`, which has 17 real differences.
+The state-gated owner-check pass then replaced `func_15116930`'s zero-return
+placeholder with its complete 21-word behavior, matching directly from C
+without guarded rows; see
+[Working Note 159](WORKING_NOTES/159-game-state-gated-owner-check-match-20260926.md).
+Continue with 21-word `func_1511F92C`, which has 17 real differences.
 
 Current host-port progression and acceptance boundaries:
 

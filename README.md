@@ -53,8 +53,11 @@ handwritten/generated bitstream rows in the assembly queue. The signed
 wrapping counter `func_1508CA88` is now byte-exact after recovering its shared
 return path and signed-byte accesses, with two guarded rows preserving the
 independent final global-pointer reload, bringing the total to 2,670. Continue
-with `func_15116930`. The measured boundary is in
-[Working Note 158](DOCS/WORKING_NOTES/158-game-wrapping-byte-counter-match-20260926.md).
+with `func_15116930`, which is now converted from its zero-return placeholder
+and byte-exact directly from C after retaining the owner-slot address through
+the state gates, bringing the total to 2,671. Continue with `func_1511F92C`.
+The measured boundary is in
+[Working Note 159](DOCS/WORKING_NOTES/159-game-state-gated-owner-check-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -80,9 +83,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,670 / 5,483 (48.70%) | 1 | 2,812 |
+| Total | `[############------------]` 2,671 / 5,483 (48.71%) | 1 | 2,811 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,102 / 4,794 (43.85%) | 0 | 2,692 |
+| Game | `[##########--------------]` 2,103 / 4,794 (43.87%) | 0 | 2,691 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

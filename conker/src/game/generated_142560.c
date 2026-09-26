@@ -100,8 +100,22 @@ s32 func_15116888() {
 void func_15116924(s32 arg0) {
 }
 
-s32 func_15116930() {
-    return 0;
+void func_15116930(u8 *arg0, u8 *arg1) {
+    u8 value;
+    u8 **owner_slot = (u8 **) (arg1 + 0x31C);
+
+    if (*(arg0 + 0x4F) & 4) {
+        value = *(arg0 + 0x73);
+
+        if (!(value & 3)) {
+            if (!(value & 4)) {
+                if (*(*owner_slot + 0x57) == 1) {
+                    *(arg0 + 0x73) = value & 0xFFFC;
+                    *(arg0 + 0x73) |= 2;
+                }
+            }
+        }
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_142560/func_15116984.s")
