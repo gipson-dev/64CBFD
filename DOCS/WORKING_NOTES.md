@@ -295,9 +295,11 @@ active-buffer state and guarding six base/register scheduling words.
 `func_15167010` then matched after deriving its table end from the cursor and
 guarding fifteen frame, saved-register, relocation, and epilogue words through
 fourteen rows. `func_15167D84` then matched through thirteen guarded
-CFG/register-scheduling rows with two insertions. Continue with 41-word
-`func_151D2E5C`. The latest result is in
-[Working Note 139](WORKING_NOTES/139-game-record-copy-builder-match-20260926.md).
+CFG/register-scheduling rows with two insertions. `func_151D2E5C` then matched
+after correcting its owner-pointer call, recovering four local lifetimes, and
+guarding one commutative branch word. Continue with 18-word
+`func_150104F0`. The latest result is in
+[Working Note 140](WORKING_NOTES/140-game-linked-record-update-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

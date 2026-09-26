@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Linked-record update byte-exact
+
+- Completed all 41 words of `func_151D2E5C`. Selector `0` compares linked
+  record identifiers and removes the owning record when either endpoint
+  matches; selector `0x2D` rewires the endpoint pointer and associated byte.
+- Corrected `func_1516972C` to receive the owning `struct16 *arg0`, not the
+  byte at `arg0->unk14`. A recovered four-local lifetime model restores all
+  load/register scheduling except one commutative branch operand, handled by
+  one guarded row. The patch table now has 992 unique rows and no duplicates.
+- Linked `0x2002DC` and retail `0x20030C` share SHA-256
+  `381b3f7b4eb91412a7c92dff5af51baab45b2fbb64fcd786d0629d9d68fdd063`.
+  Fresh scan: **2652 / 5483 (48.37%)** overall and
+  **2084 / 4794 (43.47%)** game, with debugger unchanged at **181 / 181**.
+
 ### Record-copy builder byte-exact
 
 - Completed all 34 words of `func_15167D84`. It selects record kind `5` or
