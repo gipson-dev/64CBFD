@@ -67,9 +67,11 @@ byte-exact directly from C, bringing the total to 2,674. The selector-linked
 list lookup `func_15178B98` is now converted from its zero-return placeholder
 and byte-exact directly from C, bringing the total to 2,675. The gated byte
 result chain `func_1519257C` is now converted from its zero-return placeholder
-and byte-exact directly from C, bringing the total to 2,676. Continue with
-`func_151B82CC`. The measured boundary is in
-[Working Note 164](DOCS/WORKING_NOTES/164-game-gated-byte-result-chain-match-20260926.md).
+and byte-exact directly from C, bringing the total to 2,676. The indexed
+callback dispatcher `func_151B82CC` is now byte-exact after restoring its
+three forwarded arguments and child-pointer lifetime, bringing the total to
+2,677. Continue with `func_1506AC0C`. The measured boundary is in
+[Working Note 165](DOCS/WORKING_NOTES/165-game-indexed-callback-forwarding-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -95,9 +97,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,676 / 5,483 (48.81%) | 1 | 2,806 |
+| Total | `[############------------]` 2,677 / 5,483 (48.82%) | 1 | 2,805 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,108 / 4,794 (43.97%) | 0 | 2,686 |
+| Game | `[##########--------------]` 2,109 / 4,794 (43.99%) | 0 | 2,685 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

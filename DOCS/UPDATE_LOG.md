@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Indexed callback forwarding byte-exact
+
+- Corrected `func_151B82CC`'s callback-table contract so a selected callback
+  receives the original object pointer, integer argument, and byte argument.
+  A separate child-pointer local restores the selector-load lifetime.
+- IDO now reproduces retail's byte spill and zero extension, `v0` child
+  pointer, `v1` callback, table lookup, null branch, indirect call, and
+  epilogue directly from C. No guarded rows were added; the patch table
+  remains at 1,111 unique rows.
+- Linked `0x1E574C` and retail `0x1E577C` share SHA-256
+  `e8095c4ad32badb28ba75115586cce130c72a73b44a9c39a00c22ec7f7389baf`.
+  Fresh scan: **2677 / 5483 (48.82%)** overall and
+  **2109 / 4794 (43.99%)** game, with debugger unchanged at **181 / 181**.
+
 ### Gated byte-result chain converted and byte-exact
 
 - Replaced `func_1519257C`'s zero-return placeholder with its complete call
