@@ -761,3 +761,8 @@ generated_1104D0,func_150E33CC,0x034,0x8FBF0014,0x00001025,-,-,Set the successfu
 generated_1104D0,func_150E33CC,0x038,0x27BD0018,0x8FBF0014,-,-,Restore ra after setting the return value,
 generated_1104D0,func_150E33CC,0x03C,0x03E00008,0x27BD0018,-,-,Close the stack frame before returning,
 generated_1104D0,func_150E33CC,0x040,0x00000000,0x03E00008,-,-,Move the return before the final padding nop,
+game_161520,func_151355B8,0x068,0x8C820010,0x8C8D0010,-,-,Load the masked field into t5 on the word-match path,
+game_161520,func_151355B8,0x07C,0x8C820010,0x8C8D0010,-,-,Load the masked field into t5 on the byte-match path,
+game_161520,func_151355B8,0x084,0x00416824,0x01A17024,-,-,Write the masked result into t6,
+game_161520,func_151355B8,0x088,0xAC8D0010,0xAC8E0010,-,-,Store the masked t6 result first,
+game_161520,func_151355B8,0x08C,0xAC8D0010,0xAC8E0010,-,-,Retain the duplicate masked t6 store,

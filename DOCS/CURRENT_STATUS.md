@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,606 / 5,484 (47.52%) | 1 | 2,877 |
+| Total | 2,607 / 5,484 (47.54%) | 1 | 2,876 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,038 / 4,795 (42.50%) | 0 | 2,757 |
+| Game | 2,039 / 4,795 (42.52%) | 0 | 2,756 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,606, while
+denominator driven: the exact count is now 2,607, while
 493 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -248,9 +248,11 @@ end-to-end gameplay acceptance.
    words that preserve its call relocation while restoring retail's `v0`
    value lifetime and call-delay argument move. `func_15131D4C` is byte-exact
    directly from a typed three-word aggregate copy and pointer-correct callee
-   declaration, with no guarded words. Continue with 40-word `func_151355B8`,
-   now the first twelve-difference game row; current C loses retail's duplicate
-   field store, shortening several exit branches by one word.
+   declaration, with no guarded words. `func_151355B8` is byte-exact after
+   volatile field accesses retain retail's duplicate store, plus five guarded
+   loaded/result register words. Continue with 28-word `func_15168800`, now
+   the first twelve-difference game row; retail uses an explicit early null
+   return before the copy call.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

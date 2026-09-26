@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Duplicate masked-field store byte-exact
+
+- Completed all 40 words of `func_151355B8`. Volatile-qualified accesses to
+  the masked field retain retail's duplicate store and directly restore every
+  shifted exit-branch target.
+- Chained assignment still collapsed to one store. A split loaded-value local
+  selected worse registers, while a volatile pointer local emitted the same
+  object as direct volatile accesses. Five guarded, non-relocating words select
+  retail's `t5` loaded value and `t6` masked result.
+- The patch table now has 767 unique rows. Linked `0x162A38` and retail
+  `0x162A68` share SHA-256
+  `905987a8e0bd8c6da95744f53d6707165b266566a5e67456208c2d84e35d4f97`.
+  Fresh scan: **2607 / 5484 (47.54%)** overall and
+  **2039 / 4795 (42.52%)** game, with debugger unchanged at **181 / 181**.
+
 ### Three-word aggregate forwarder byte-exact
 
 - Completed all 20 words of `func_15131D4C` directly from source by replacing

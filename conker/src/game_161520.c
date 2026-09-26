@@ -321,9 +321,9 @@ void func_151355B8(struct102 *arg0, s32 *arg1, u8 arg2) {
             break;
         case 3:
             if (arg1[0] == *(s32*)((u8*)arg0 + 0x1C) || *(u8*)((u8*)arg1 + 4) == *(u8*)((u8*)arg0 + 0x18)) {
-                s32 val = *(s32*)((u8*)arg0 + 0x10) & ~1;
-                *(s32*)((u8*)arg0 + 0x10) = val;
-                *(s32*)((u8*)arg0 + 0x10) = val;
+                s32 val = *(volatile s32*)((u8*)arg0 + 0x10) & ~1;
+                *(volatile s32*)((u8*)arg0 + 0x10) = val;
+                *(volatile s32*)((u8*)arg0 + 0x10) = val;
             }
             break;
     }

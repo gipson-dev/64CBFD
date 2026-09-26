@@ -224,6 +224,10 @@ The three-word aggregate-forwarder pass completed `func_15131D4C` directly
 from a typed aggregate copy and pointer-correct callee declaration, without
 guarded rows; see
 [Working Note 093](WORKING_NOTES/093-game-three-word-aggregate-forwarder-match-20260926.md).
+The duplicate masked-field pass completed `func_151355B8` by retaining both
+retail stores through volatile field accesses and guarding five final
+register-allocation words; see
+[Working Note 094](WORKING_NOTES/094-game-duplicate-masked-field-store-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
