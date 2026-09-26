@@ -449,6 +449,11 @@ generated_B3020,func_15087FC4,0x018,0x01C27821,0x01C21821,-,-,Use retail final-p
 generated_B3020,func_15087FC4,0x01C,0xA1E50031,0xA0650031,-,-,Use retail final-pointer register in byte store,
 generated_B3020,func_15087FEC,0x02C,0x01C27821,0x01C21821,-,-,Use retail final-pointer register,
 generated_B3020,func_15087FEC,0x034,0xE5EA0004,0xE46A0004,-,-,Use retail final-pointer register in float store,
+generated_B3020,func_150881CC,0x000,0x3C030000,0x00802825,R_MIPS_HI16:D_800872A0,-,Preserve retail index copy before loading the table base,0x3C030000,R_MIPS_HI16:D_800872A0
+generated_B3020,func_150881CC,0x008,0x00047140,0x00057140,-,-,Scale the retained index through the retail register,
+generated_B3020,func_150881CC,0x00C,0x01C47021,0x01C57021,-,-,Complete the retail stride through the retained index register,
+generated_B3020,func_150881CC,0x020,0x01C37821,0x01C32021,-,-,Use retail computed-pointer register,
+generated_B3020,func_150881CC,0x02C,0xC5E40000,0xC4840000,-,-,Load the scaled value through the retail pointer register,
 generated_1C2C60,func_1519C910,0x010,0x50AE0007,0x51C50007,-,-,Use retail commutative equality operand order,
 generated_1C2C60,func_1519C910,0x01C,0x50AF0004,0x51E50004,-,-,Use retail commutative equality operand order,
 generated_1AC2F0,func_1517F448,0x010,0x004E1821,0x01E27821,-,-,Schedule retail second-array address first,

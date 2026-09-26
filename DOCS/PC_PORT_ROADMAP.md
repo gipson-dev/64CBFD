@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,678 / 5,483 (48.84%) | 1 | 2,804 |
+| Total | 5,483 / 6,038 (90.81%) | 2,679 / 5,483 (48.86%) | 1 | 2,803 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,110 / 4,794 (44.01%) | 0 | 2,684 |
+| Game | 4,794 / 5,318 (90.15%) | 2,111 / 4,794 (44.03%) | 0 | 2,683 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -487,7 +487,11 @@ The object-selector record pass then replaced `func_1506AC0C`'s zero-return
 placeholder with its typed local record and `func_151B7328` call, matching all
 19 words directly from C; see
 [Working Note 166](WORKING_NOTES/166-game-object-selector-record-match-20260926.md).
-Continue with 19-word `func_150881CC`, which has 18 real differences.
+The scaled-table-reader pass then preserved `func_150881CC`'s clean null-gated
+`0x84`-stride float lookup and guarded five IDO register-scheduling words,
+matching all 19 words; see
+[Working Note 167](WORKING_NOTES/167-game-scaled-table-reader-match-20260926.md).
+Continue with 30-word `func_15088780`, which has 18 real differences.
 
 Current host-port progression and acceptance boundaries:
 

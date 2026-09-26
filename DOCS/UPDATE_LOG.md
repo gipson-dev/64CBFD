@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Scaled table reader byte-exact
+
+- Confirmed `func_150881CC`'s existing C behavior: return zero for a null
+  table, otherwise read the float at `table + index * 0x84`, scale it by
+  `256.0f`, and truncate it to `s32`.
+- Added five guarded rows that retain retail's copied index and computed
+  pointer registers without obscuring the recovered behavior. The patch table
+  now contains 1,116 unique rows with zero duplicate keys.
+- Linked ELF `.game+0x881CC` and retail ROM `0xB567C` share SHA-256
+  `227423c851572c4f05742c91087d60334e216d39e9efa44f811ad6dc6b3a92eb`.
+  Fresh scan: **2679 / 5483 (48.86%)** overall and
+  **2111 / 4794 (44.03%)** game, with debugger unchanged at **181 / 181**.
+
 ### Object-selector record wrapper converted and byte-exact
 
 - Replaced `func_1506AC0C`'s zero-return placeholder with its complete local
