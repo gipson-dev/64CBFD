@@ -232,12 +232,14 @@ s32 func_15014220(u8 *arg0) {
     return 1;
 }
 s32 func_150142AC(u8 *arg0) {
-    u8 idx = arg0[0x1B];
+    s32 idx;
 
     arg0[0x16] |= 4;
-    if (idx < 3) {
-        D_800D9AA0[idx] = (struct134 *)arg0;
+    idx = arg0[0x1B];
+    if ((idx < 0) || (idx >= 3)) {
+        return 1;
     }
+    D_800D9AA0[idx] = (struct134 *)arg0;
     return 1;
 }
 

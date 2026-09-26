@@ -332,9 +332,12 @@ The angle-normalization pass then completed all 25 words of `func_15144BC8`
 directly from an explicit result local; see
 [Working Note 126](WORKING_NOTES/126-game-angle-normalization-match-20260926.md).
 The random indexed-effect pass then completed all 45 words of `func_150718E4`
-from corrected local ordering plus ten guarded register words. Continue with
-16-word `func_150142AC`; see
+from corrected local ordering plus ten guarded register words; see
 [Working Note 127](WORKING_NOTES/127-game-random-indexed-effect-match-20260926.md).
+The bounded-index registration pass then completed all 16 words of
+`func_150142AC` directly from recovered signed bounds and invalid-path return.
+Continue with 16-word `func_15088270`; see
+[Working Note 128](WORKING_NOTES/128-game-bounded-index-registration-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

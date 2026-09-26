@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Bounded-index registration byte-exact
+
+- Completed all 16 words of `func_150142AC` directly by recovering a signed
+  `s32` index assigned after the object-flag update and an explicit invalid
+  range return for `idx < 0 || idx >= 3`.
+- That source restores retail's `v1` lifetime, lower-bound `bltz`, upper-bound
+  branch into the `D_800D9AA0[idx]` store, and distinct early/final returns.
+  No guarded rows were required; the patch table remains at 913 unique rows.
+- Linked `0x4172C` and retail `0x4175C` share SHA-256
+  `1fdcdcd00fe78afae49fed648e7f3b6598a9f0f8cf9503eeb0c969e401d833ea`.
+  Fresh scan: **2640 / 5483 (48.15%)** overall and
+  **2072 / 4794 (43.22%)** game, with debugger unchanged at **181 / 181**.
+
 ### Random indexed-effect setup byte-exact
 
 - Completed all 45 words of `func_150718E4`. Reversing its two stack-local
