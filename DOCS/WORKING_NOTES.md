@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, embedded vertex-copy base lifetime matched).** The
-current linked checkpoint is `2618 / 5483 (47.75%)` exact C functions, with
-one address-drift blocker and 2,864 genuinely different C functions. The tree
+**Active (2026-09-26, indexed callback dispatch matched).** The current linked
+checkpoint is `2666 / 5483 (48.62%)` exact C functions, with one address-drift
+blocker and 2,816 genuinely different C functions. The tree
 contains 555 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -320,9 +320,12 @@ its indexed optional callback. `func_1515C158` then matched after restoring
 the two-row linked-node reset and guarding thirteen persistent IDO pointer
 colors. `func_1515D520` then matched after recovering direct head testing,
 typed tail insertion, and the allocated-node return lifetime, plus four
-guarded frame/scheduling words. Skip handwritten `func_15125628` and continue
-with 23-word `func_151635A8`. The latest result is in
-[Working Note 153](WORKING_NOTES/153-game-linked-node-tail-insert-match-20260926.md).
+guarded frame/scheduling words. `func_151635A8` then matched after correcting
+its three-argument indexed callback ABI and preserving volatile table reads,
+plus fifteen guarded rows that normalize seventeen compiler words and insert
+the two omitted epilogue words. Skip handwritten `func_15125628` and continue
+with 20-word `func_15168A4C`. The latest result is in
+[Working Note 154](WORKING_NOTES/154-game-indexed-callback-dispatch-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

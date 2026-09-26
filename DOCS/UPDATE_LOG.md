@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Indexed callback dispatch byte-exact
+
+- Completed all 23 words of `func_151635A8`. It indexes `D_8008B370` with
+  `arg0->unk25`, skips a null callback, and otherwise forwards the object,
+  scalar, and normalized byte arguments through the selected callback.
+- Correcting the callback declaration restores the real three-argument ABI;
+  volatile table entries preserve the two callback-pointer reads. Fifteen
+  guarded rows normalize seventeen persistent IDO scheduling/register words
+  and insert the two epilogue words that the compact C object omits. The
+  patch table is now 1,092 unique rows with no duplicate keys.
+- Linked `0x190A28` and retail `0x190A58` share SHA-256
+  `dc380763ac394a43b8fe7d813d940059454fb61662872bd1514a10c05734eb27`.
+  Fresh scan: **2666 / 5483 (48.62%)** overall and
+  **2098 / 4794 (43.76%)** game, with debugger unchanged at **181 / 181**.
+
 ### Linked-node tail insertion byte-exact
 
 - Completed all 35 words of `func_1515D520`. It allocates and clears a

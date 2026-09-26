@@ -36,10 +36,14 @@ three forwarded callback arguments. The two-row linked-node reset
 guarding thirteen IDO pointer-coloring words. The allocated-node tail inserter
 `func_1515D520` is now byte-exact after recovering its direct head test,
 next-pointer walk, and return lifetime, plus four guarded compiler words, for
-2,665 byte-exact C functions. Keep `func_150721A4` parked as a
-compiler-overflow row, skip handwritten `func_15125628`, and continue with
-`func_151635A8`; the measured boundary is in
-[Working Note 153](DOCS/WORKING_NOTES/153-game-linked-node-tail-insert-match-20260926.md).
+2,665 byte-exact C functions. The indexed callback dispatcher
+`func_151635A8` is now byte-exact after correcting its three-argument ABI and
+recovering volatile callback-table dispatch, with fifteen guarded rows for
+the persistent IDO schedule and register allocation, bringing the total to
+2,666. Keep `func_150721A4` parked as a compiler-overflow row, skip
+handwritten `func_15125628`, and continue with `func_15168A4C`; the measured
+boundary is in
+[Working Note 154](DOCS/WORKING_NOTES/154-game-indexed-callback-dispatch-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -65,9 +69,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,663 / 5,483 (48.57%) | 1 | 2,819 |
+| Total | `[############------------]` 2,666 / 5,483 (48.62%) | 1 | 2,816 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,095 / 4,794 (43.70%) | 0 | 2,699 |
+| Game | `[##########--------------]` 2,098 / 4,794 (43.76%) | 0 | 2,696 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,663 / 5,483 (48.57%) | 1 | 2,819 |
+| Total | 2,666 / 5,483 (48.62%) | 1 | 2,816 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,095 / 4,794 (43.70%) | 0 | 2,699 |
+| Game | 2,098 / 4,794 (43.76%) | 0 | 2,696 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,663, while
+denominator driven: the exact count is now 2,666, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -375,9 +375,12 @@ end-to-end gameplay acceptance.
    is now byte-exact after restoring its two-row linked-list reset and
    guarding thirteen persistent IDO pointer-coloring words. `func_1515D520`
    is now byte-exact after recovering direct head testing and typed tail
-   insertion, plus four guarded frame/scheduling words. Skip handwritten
-   `func_15125628` and continue with 23-word `func_151635A8`, the next ordinary
-   Game C row in the 16-difference queue.
+   insertion, plus four guarded frame/scheduling words. `func_151635A8` is now
+   byte-exact after correcting the indexed callback ABI and preserving two
+   volatile table reads, plus fifteen guarded rows that normalize seventeen
+   persistent scheduling/register words and insert the two missing epilogue
+   words. Skip handwritten `func_15125628` and continue with 20-word
+   `func_15168A4C`, the next ordinary Game C row in the 16-difference queue.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

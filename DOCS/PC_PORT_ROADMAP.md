@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,663 / 5,483 (48.57%) | 1 | 2,819 |
+| Total | 5,483 / 6,038 (90.81%) | 2,666 / 5,483 (48.62%) | 1 | 2,816 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,095 / 4,794 (43.70%) | 0 | 2,699 |
+| Game | 4,794 / 5,318 (90.15%) | 2,098 / 4,794 (43.76%) | 0 | 2,696 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -433,8 +433,12 @@ The linked-node tail-insertion pass then completed all 35 words of
 walk, and allocation return lifetime, plus four guarded frame/scheduling
 words; see
 [Working Note 153](WORKING_NOTES/153-game-linked-node-tail-insert-match-20260926.md).
-Skip handwritten `func_15125628` and continue with 23-word
-`func_151635A8`, which has 16 real differences.
+The indexed callback-dispatch pass then completed all 23 words of
+`func_151635A8` after correcting its three-argument callback ABI and retaining
+volatile table reads, plus fifteen guarded compiler-normalization rows; see
+[Working Note 154](WORKING_NOTES/154-game-indexed-callback-dispatch-match-20260926.md).
+Skip handwritten `func_15125628` and continue with 20-word
+`func_15168A4C`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 

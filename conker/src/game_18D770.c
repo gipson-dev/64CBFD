@@ -966,12 +966,9 @@ s32 func_15163504() {
 //     return ret;
 // }
 
-// NON-MATCHING: similar issue to func_15163504
 void func_151635A8(struct225 *arg0, s32 arg1, u8 arg2) {
-    s32 (*func)(s32) = D_8008B370[arg0->unk25];
-
-    if (func != NULL) {
-        func(arg2);
+    if (D_8008B370[arg0->unk25] != NULL) {
+        D_8008B370[arg0->unk25](arg0, arg1, arg2);
     }
 }
 

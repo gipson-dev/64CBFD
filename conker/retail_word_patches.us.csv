@@ -1076,3 +1076,18 @@ generated_18A8F0,func_1515D520,0x000,0x27BDFFD0,0x27BDFFE0,-,-,Normalize the deb
 generated_18A8F0,func_1515D520,0x024,0xAFA4001C,0x24050034,-,-,Schedule the bzero size before the call,
 generated_18A8F0,func_1515D520,0x02C,0x24050034,0xAFA2001C,-,-,Spill the allocated node in the bzero call delay slot,
 generated_18A8F0,func_1515D520,0x080,0x27BD0030,0x27BD0020,-,-,Restore the retail 32-byte frame,
+game_18D770,func_151635A8,0x00C,0x01C03025,0x3C020000,-,R_MIPS_HI16:D_8008B370,Load the callback table base before normalizing arg2,
+game_18D770,func_151635A8,0x010,0xAFBF0014,0x24420000,-,R_MIPS_LO16:D_8008B370,Complete the callback table base in v0,
+game_18D770,func_151635A8,0x014,0x908F0025,0x01C03025,-,-,Normalize arg2 after loading the table base,
+game_18D770,func_151635A8,0x018,0x3C190000,0xAFBF0014,R_MIPS_HI16:D_8008B370,-,Save ra after normalizing arg2,
+game_18D770,func_151635A8,0x01C,0x27390000,0x908F0025,R_MIPS_LO16:D_8008B370,-,Load the first callback index after saving ra,
+game_18D770,func_151635A8,0x024,0x03191021,0x0058C821,-,-,Form the first callback slot in t9 from the shared v0 base,
+game_18D770,func_151635A8,0x028,0x8C480000,0x8F280000,-,-,Load the first callback through t9,
+game_18D770,func_151635A8,0x02C,0x51000005,0x51000008,-,-,Branch over the expanded second callback lookup,
+game_18D770,func_151635A8,0x034,0x8C590000,0x90890025,-,-,Reload the callback index for the dispatch,
+game_18D770,func_151635A8,0x038,0x0320F809,0x00095080,-,-,Scale the second callback index,
+game_18D770,func_151635A8,0x03C,0x00000000,0x004A5821,-,-,Form the second callback slot from the shared v0 base,
+game_18D770,func_151635A8,0x040,0x8FBF0014,0x8D790000,-,-,Load the callback for the dispatch,
+game_18D770,func_151635A8,0x044,0x27BD0018,0x0320F809,-,-,Dispatch through the callback in t9,
+game_18D770,func_151635A8,0x048,0x03E00008,0x00000000,-,-,Keep the callback delay slot empty and restore ra after the call,0x8FBF0014
+game_18D770,func_151635A8,0x04C,0x00000000,0x27BD0018,-,-,Restore the stack and insert the shared return,0x03E00008
