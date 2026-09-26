@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Float threshold mapper byte-exact
+
+- Converted `func_150F34A0` from a zero-return placeholder to its real
+  two-argument floating-point implementation. Values below `-5.0f` are
+  transformed by `arg1 * D_800A1980 + D_800A1984`; other values return
+  `0.75f`.
+- The natural local-result C form reproduces all 21 retail words directly,
+  including the argument home store, branch-likely delay slot, both global
+  relocations, arithmetic schedule, and shared floating-point return path.
+- Linked `0x150F34A0..0x150F34F0` and pristine retail
+  `conker.us.bin+0x120950` share SHA-256
+  `6d6c36748842f9c5cbab4fb19be66043bbefb79055a5b5e4cfe1625bcda8dd9d`.
+  The fresh scan is **2686 / 5482 (49.00%)** overall and
+  **2118 / 4793 (44.19%)** game.
+
 ### Buffer-advance helper byte-exact
 
 - Recovered `func_150CFE98`'s retail expression lifetimes by removing the

@@ -100,6 +100,11 @@ and length lifetimes back into the call expression, with seven guarded
 frame/spill words preserving the retail IDO layout, bringing the total to
 2,685. Continue with `func_150F34A0`. The measured boundary is in
 [Working Note 174](DOCS/WORKING_NOTES/174-game-buffer-advance-match-20260926.md).
+That float threshold mapper is now converted from its zero-return placeholder
+and byte-exact directly from C, including both global constant relocations,
+bringing the total to 2,686. Continue with `func_150FADC8`. The measured
+boundary is in
+[Working Note 175](DOCS/WORKING_NOTES/175-game-float-threshold-mapper-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -125,9 +130,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,685 / 5,482 (48.98%) | 1 | 2,796 |
+| Total | `[############------------]` 2,686 / 5,482 (49.00%) | 1 | 2,795 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[###########-------------]` 2,117 / 4,793 (44.17%) | 0 | 2,676 |
+| Game | `[###########-------------]` 2,118 / 4,793 (44.19%) | 0 | 2,675 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

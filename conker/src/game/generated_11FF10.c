@@ -1,5 +1,7 @@
 #include <ultra64.h>
 extern u8 *D_800DBFF0;
+extern f32 D_800A1980;
+extern f32 D_800A1984;
 
 /* Non-matching placeholders for the text-only asm slice asm/11FF10.s. */
 
@@ -44,8 +46,15 @@ s32 func_150F33F8() {
     return 0;
 }
 
-s32 func_150F34A0() {
-    return 0;
+f32 func_150F34A0(u8 *arg0, f32 arg1) {
+    f32 result;
+
+    if (arg1 < -5.0f) {
+        result = arg1 * D_800A1980 + D_800A1984;
+    } else {
+        result = 0.75f;
+    }
+    return result;
 }
 
 s32 func_150F34F4() {

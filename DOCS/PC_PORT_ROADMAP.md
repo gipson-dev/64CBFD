@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,482 / 6,038 (90.79%) | 2,685 / 5,482 (48.98%) | 1 | 2,796 |
+| Total | 5,482 / 6,038 (90.79%) | 2,686 / 5,482 (49.00%) | 1 | 2,795 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,793 / 5,318 (90.13%) | 2,117 / 4,793 (44.17%) | 0 | 2,676 |
+| Game | 4,793 / 5,318 (90.13%) | 2,118 / 4,793 (44.19%) | 0 | 2,675 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -518,7 +518,13 @@ retail slot by one word; see
 The buffer-state pass then made `func_150CFE98` byte-exact by recovering its
 one-use pointer and result lifetimes and guarding seven IDO frame/spill words;
 see [Working Note 174](WORKING_NOTES/174-game-buffer-advance-match-20260926.md).
-Continue with 21-word `func_150F34A0`, which has 18 real differences.
+The float-mapper pass then converted `func_150F34A0` from its zero-return
+placeholder and matched all 21 words directly from C; see
+[Working Note 175](WORKING_NOTES/175-game-float-threshold-mapper-match-20260926.md).
+The sibling port's generated recomp body still reflects the old placeholder
+and must be refreshed through its controlled generation path before claiming
+host parity. Continue decomp matching with 20-word `func_150FADC8`, which has
+18 real differences.
 
 Current host-port progression and acceptance boundaries:
 
