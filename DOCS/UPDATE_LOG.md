@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Timed toggle/table update byte-exact
+
+- Completed all 21 words of `func_150337E4` by replacing its accumulated-value
+  and table-index locals with direct field expressions. IDO now emits retail's
+  `t8` accumulated counter, `t0`/`t1` toggle pipeline, and `t2`/`t4` table
+  pipeline directly from C.
+- No guarded rows were added; the patch table remains at 723 unique rows.
+  Linked `0x60C64` and retail `0x60C94` share SHA-256
+  `54b59cd622a7bc63daf39021633dca3bfe362e4cf2812761b2aa81f4273bac76`.
+  Fresh scan: **2601 / 5484 (47.43%)** overall and
+  **2033 / 4795 (42.40%)** game, with debugger unchanged at **181 / 181**.
+
 ### Mirrored counter/table update byte-exact
 
 - Completed all 20 words of `func_15031E2C` with twelve guarded register-choice

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,600 / 5,484 (47.41%) | 1 | 2,883 |
+| Total | 5,484 / 6,038 (90.82%) | 2,601 / 5,484 (47.43%) | 1 | 2,882 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,032 / 4,795 (42.38%) | 0 | 2,763 |
+| Game | 4,795 / 5,318 (90.17%) | 2,033 / 4,795 (42.40%) | 0 | 2,762 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -204,6 +204,9 @@ expressions and local lifetime ordering; see
 The mirrored counter/table pass completed `func_15031E2C` with twelve guarded
 register-schedule words; see
 [Working Note 087](WORKING_NOTES/087-game-mirrored-counter-table-update-match-20260926.md).
+The timed toggle/table pass completed `func_150337E4` directly from field-based
+update, comparison, and table-index expressions; see
+[Working Note 088](WORKING_NOTES/088-game-timed-toggle-table-update-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

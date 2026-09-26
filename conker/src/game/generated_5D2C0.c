@@ -198,16 +198,12 @@ s32 func_1503378C(u8 *arg0, u8 *arg1) {
 }
 
 s32 func_150337E4(u8 *arg0, s32 arg1) {
-    s32 temp_v0 = *(s32 *) (arg0 + 0x38) + D_800BE9E4;
-    s32 idx;
-
-    *(s32 *) (arg0 + 0x38) = temp_v0;
-    if (temp_v0 >= 0x10) {
+    *(s32 *) (arg0 + 0x38) += D_800BE9E4;
+    if (*(s32 *) (arg0 + 0x38) >= 0x10) {
         *(s32 *) (arg0 + 0x38) = 0;
         *(s32 *) (arg0 + 0x3C) = *(s32 *) (arg0 + 0x3C) ^ 1;
     }
-    idx = *(s32 *) (arg0 + 0x3C);
-    *(s16 *) (arg0 + 0x18) = D_800902FC[idx];
+    *(s16 *) (arg0 + 0x18) = D_800902FC[*(s32 *) (arg0 + 0x3C)];
     return 0;
 }
 
