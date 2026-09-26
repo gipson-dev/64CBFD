@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Init release-loop bound refresh byte-exact
+
+- Completed all 47 words of `func_1000FD38`, which finds matching resource
+  records, releases an optional owned object, and marks each record inactive.
+- Six guarded words restore retail's control-flow schedule: no-call iterations
+  retain the cached loop bound, while the release-call path refreshes it before
+  loading and updating the record flags. The `D_80042760` HI/LO relocations
+  move with that reload.
+- Linked `0x1000FD38..0x1000FDF4` and pristine retail share SHA-256
+  `d6c4a2d813bb07d09cda2a9aee5f4cb54f9e0ac388a66f9f0265775945c171e6`.
+  The fresh scan is **2,691 / 5,475 (49.15%)** overall and
+  **390 / 501 (77.84%)** in Init.
+
 ### Init header-tag update byte-exact
 
 - Completed all 22 words of `func_100043B4`, which replaces the high tag byte

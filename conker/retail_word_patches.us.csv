@@ -1,4 +1,10 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations
+init_EB00,func_1000FD38,0x68,0x50800004,0x50800006,,,Skip the count reload when no release call occurs,,
+init_EB00,func_1000FD38,0x78,0x8E190010,0x3C020000,-,R_MIPS_HI16:D_80042760,Reload the loop bound after the release call,,
+init_EB00,func_1000FD38,0x7C,0x3C020000,0x8C420000,R_MIPS_HI16:D_80042760,R_MIPS_LO16:D_80042760,Complete the post-call loop-bound reload,,
+init_EB00,func_1000FD38,0x80,0x37280080,0x8E190010,,,Load the record flags after refreshing the loop bound,,
+init_EB00,func_1000FD38,0x84,0xAE080010,0x37280080,,,Set the inactive bit after the record load,,
+init_EB00,func_1000FD38,0x88,0x8C420000,0xAE080010,R_MIPS_LO16:D_80042760,-,Store the updated record flags before loop increment,,
 init_3C40,func_100043B4,0x3C,0x0C000000,0xAC68FFFC,R_MIPS_26:osSetIntMask,-,Store the updated header before restoring the interrupt mask,,
 init_3C40,func_100043B4,0x40,0xAC68FFFC,0x0C000000,-,R_MIPS_26:osSetIntMask,Schedule the interrupt-mask restore after the header store,,
 init_3C40,func_100043B4,0x44,0x8FBF0014,0x2463FFF4,,,Retain retail's dead base-pointer adjustment in the call delay slot,,

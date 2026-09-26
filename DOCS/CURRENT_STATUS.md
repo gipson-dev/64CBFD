@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,690 / 5,475 (49.13%) | 1 | 2,784 |
-| Init | 389 / 501 (77.64%) | 1 | 111 |
+| Total | 2,691 / 5,475 (49.15%) | 1 | 2,783 |
+| Init | 390 / 501 (77.84%) | 1 | 110 |
 | Game | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,690, while
+denominator driven: the exact count is now 2,691, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -447,8 +447,11 @@ end-to-end gameplay acceptance.
    32-byte spans match retail. The 22-word `func_100043B4` is now byte-exact
    through a guarded six-word store/call/epilogue schedule, including an
    explicit relocation move and retail's otherwise dead pointer adjustment.
-   Continue ordinary Init C matching with 47-word `func_1000FD38`, now the
-   first non-blocked row at six real differences. Do not model
+   The 47-word `func_1000FD38` is also byte-exact through six guarded words
+   that retain retail's loop bound across no-call iterations and refresh it
+   only after a resource-release call. Continue with the ownership audit for
+   nine-word `func_10001420`, which historical evidence classifies as a
+   handwritten tight-loop candidate. Do not model
    control-register access through synthetic C or guarded retail-word
    replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

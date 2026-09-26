@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,475 / 6,038 (90.68%) | 2,690 / 5,475 (49.13%) | 1 | 2,784 |
-| Init | 501 / 538 (93.12%) | 389 / 501 (77.64%) | 1 | 111 |
+| Total | 5,475 / 6,038 (90.68%) | 2,691 / 5,475 (49.15%) | 1 | 2,783 |
+| Init | 501 / 538 (93.12%) | 390 / 501 (77.84%) | 1 | 110 |
 | Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -555,7 +555,11 @@ CP0 bodies; see
 The next ordinary Init pass completed `func_100043B4` through a guarded,
 relocation-aware six-word schedule; see
 [Working Note 182](WORKING_NOTES/182-init-header-tag-update-match-20260926.md).
-Continue with 47-word `func_1000FD38`, which has six real differences.
+The following pass completed 47-word `func_1000FD38` through a guarded,
+relocation-aware six-word schedule that refreshes its cached loop bound only
+after the release call; see
+[Working Note 183](WORKING_NOTES/183-init-release-loop-bound-refresh-match-20260926.md).
+Continue with the ownership audit for nine-word `func_10001420`.
 
 Current host-port progression and acceptance boundaries:
 
