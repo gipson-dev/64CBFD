@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Handwritten Game bitstream helpers restored
+
+- Restored `func_151F892C` and `func_151F8960` from false zero-return C
+  placeholders to their original 13-word assembly bodies. Both use paired
+  `lwl`/`lwr` loads; the first also consumes non-ABI live `t0` and `s1` state.
+- Their complete linked 52-byte spans independently match retail with SHA-256
+  `e1bcfb7ac1912e9ca1986dacb6e16db8ea7c1b0b9c9a192ce35b789a44739cd6`
+  and `a5c0dbc044b26fe073f7e493a8977b0ed69b6ef729eab087d2b973d3b7ee6af7`.
+- Fresh accounting is **2,691 / 5,469 (49.20%)** exact C functions overall
+  and **2,120 / 4,791 (44.25%)** in Game. The exact handwritten rows are
+  intentionally excluded from the C matcher denominator.
+
 ### Init TLB unmap routine restored
 
 - Replaced the empty `osUnmapTLB` C placeholder with its original 16-word

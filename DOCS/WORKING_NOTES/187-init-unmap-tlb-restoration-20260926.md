@@ -62,7 +62,7 @@ was changed.
 
 ## Next boundary
 
-Continue ordinary Game matching with 13-word `func_151F892C`, now the first
-nonblocked row at 13 real differences. Keep address-blocked
-`func_10012588` parked; the next ordinary Init C row is 20-word
-`func_10001000` at 14 real differences.
+Restore the explicitly handwritten 13-word `func_151F892C` and
+`func_151F8960` helpers from their false C placeholders before resuming the
+ordinary Game queue. Keep address-blocked `func_10012588` parked; the next
+ordinary Init C row is 20-word `func_10001000` at 14 real differences.

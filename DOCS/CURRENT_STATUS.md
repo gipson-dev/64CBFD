@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,471 / 6,038 (90.61%) | 567 | 1,932,072 / 2,256,728 (85.61%) |
+| Total | 5,469 / 6,038 (90.58%) | 569 | 1,931,968 / 2,256,728 (85.61%) |
 | Init | 497 / 538 (92.38%) | 41 | 148,600 / 164,048 (90.58%) |
-| Game | 4,793 / 5,318 (90.13%) | 525 | 1,763,832 / 2,072,880 (85.09%) |
+| Game | 4,791 / 5,318 (90.09%) | 527 | 1,763,728 / 2,072,880 (85.09%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,691 / 5,471 (49.19%) | 1 | 2,779 |
+| Total | 2,691 / 5,469 (49.20%) | 1 | 2,777 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
+| Game | 2,120 / 4,791 (44.25%) | 0 | 2,671 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -459,8 +459,11 @@ end-to-end gameplay acceptance.
    handwritten 12-word cache-operation loop; its full 48-byte span matches
    retail independently. The empty `osUnmapTLB` placeholder is likewise
    replaced by its original 16-word CP0/TLB body; its full 64-byte span matches
-   retail independently. Continue ordinary Game matching with 13-word
-   `func_151F892C`. Do not model
+   retail independently. The explicitly handwritten 13-word unaligned-load
+   helpers `func_151F892C` and `func_151F8960` are now restored from false
+   zero-return placeholders; both complete 52-byte spans match retail.
+   Continue ordinary Game matching with 19-word `func_151444DC`, after the
+   parked compiler-overflow and probable-handwritten rows. Do not model
    control-register access through synthetic C or guarded retail-word
    replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

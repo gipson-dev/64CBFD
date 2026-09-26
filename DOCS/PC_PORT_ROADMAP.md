@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,471 / 6,038 (90.61%) | 2,691 / 5,471 (49.19%) | 1 | 2,779 |
+| Total | 5,469 / 6,038 (90.58%) | 2,691 / 5,469 (49.20%) | 1 | 2,777 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
+| Game | 4,791 / 5,318 (90.09%) | 2,120 / 4,791 (44.25%) | 0 | 2,671 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -574,7 +574,10 @@ loop from an empty C placeholder; see
 The next low-level audit restored the original 16-word CP0/TLB body for
 `osUnmapTLB` from another empty C placeholder; see
 [Working Note 187](WORKING_NOTES/187-init-unmap-tlb-restoration-20260926.md).
-Continue ordinary Game matching with 13-word `func_151F892C`.
+The paired ownership pass then restored handwritten unaligned-load helpers
+`func_151F892C` and `func_151F8960` from zero-return placeholders; see
+[Working Note 188](WORKING_NOTES/188-game-unaligned-bitstream-helper-restoration-20260926.md).
+Continue ordinary Game matching with 19-word `func_151444DC`.
 
 Current host-port progression and acceptance boundaries:
 
