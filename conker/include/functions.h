@@ -1127,7 +1127,7 @@ f32  func_15144B68(f32 arg0);
 void func_1514D3B0(s32, s16, u8, u8);
 s32  func_1515D6D0(s32 arg0, s32 arg1);
 void func_1515D4D4(u8, u8, u8, s32);
-void func_15169260(s32, s32, s32, u8);
+void func_15169260(void *, s32, s32, u8);
 void func_1516944C(s32, s32, u8);
 void func_15169850(s32, u8, s32, s32, s32);
 void func_15174690(s32, s32, s32, s32, s32, s32, s32, s32, s32);

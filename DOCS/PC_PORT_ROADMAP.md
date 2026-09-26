@@ -312,9 +312,10 @@ reset pass completed all 17 words of `func_1508F060` with corrected source,
 nine guarded rows, and three insertions. The typed float-record pass completed
 all 17 words of `func_1518F89C` with twelve guarded scheduling rows and one
 inserted call-delay `nop`. The second one-word aggregate-forwarder pass then
-completed all 17 words of `func_151A561C` directly from source. Continue with
-17-word `func_151D343C`; see
-[Working Note 120](WORKING_NOTES/120-game-second-one-word-forwarder-match-20260926.md).
+completed all 17 words of `func_151A561C` directly from source. The third pass
+completed all 17 words of `func_151D343C` and corrected the shared pointer
+contract without matcher regressions. Continue with 18-word `func_1519F3B8`;
+see [Working Note 121](WORKING_NOTES/121-game-third-one-word-forwarder-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

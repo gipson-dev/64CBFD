@@ -310,7 +310,7 @@ void func_15169070(s32 arg0, s32 arg1, s32 arg2, u8 arg3) {
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15169260.s. */
-void func_15169260(s32 arg0, s32 arg1, s32 arg2, u8 arg3) {
+void func_15169260(void *arg0, s32 arg1, s32 arg2, u8 arg3) {
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_1516944C.s. */
 void func_1516944C(s32 arg0, s32 arg1, u8 arg2) {

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Third one-word aggregate forwarder byte-exact
+
+- Completed all 17 words of `func_151D343C` directly from a `OneWordCopy`
+  aggregate loaded from `D_800AB168` and passed by address.
+- Corrected the maintained `func_15169260` declaration and placeholder
+  definition so its record parameter is `void *`, matching all observed
+  callers. The exhaustive matcher confirmed no collateral regressions.
+- Linked `0x2008BC` and retail `0x2008EC` share SHA-256
+  `8bbd4d063f5ac36885613ba73e44a6283782e56102abd80040e3ef4f5d8b4e85`.
+  Fresh scan: **2633 / 5483 (48.02%)** overall and
+  **2065 / 4794 (43.07%)** game, with debugger unchanged at **181 / 181**.
+
 ### Second one-word aggregate forwarder byte-exact
 
 - Completed all 17 words of `func_151A561C` directly from source. Replacing

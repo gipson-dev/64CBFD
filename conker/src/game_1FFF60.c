@@ -9,6 +9,10 @@ typedef struct {
     s32 unk8;
 } ThreeWordCopy;
 
+typedef struct {
+    s32 value;
+} OneWordCopy;
+
 /* Generated placeholder declarations. */
 s32 func_151D2C40();
 s32 func_151D2F00();
@@ -206,10 +210,9 @@ void func_151D33FC(struct224 *arg0, struct223 *arg1) {
     }
 }
 
-// NON-MATCHING: ops in wrong order
 void func_151D343C(s32 arg0, u8 arg1) {
-    s32 tmp[1];
+    OneWordCopy tmp;
 
-    tmp[0] = D_800AB168[0];
-    func_15169260((s32) tmp, 1, arg0, arg1);
+    tmp = *(OneWordCopy *) D_800AB168;
+    func_15169260(&tmp, 1, arg0, arg1);
 }
