@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Buffer-advance helper byte-exact
+
+- Recovered `func_150CFE98`'s retail expression lifetimes by removing the
+  one-use `ptr38`, `field10`, and `len` locals and assigning the advanced
+  buffer pointer inside the `func_150CFD84` call.
+- The source now emits every semantic instruction, register, branch, call,
+  and delay-slot schedule directly. Seven guarded words preserve only the
+  retail 32-byte frame and its owner/buffer-state spill slots.
+- Linked `0x150CFE98..0x150CFF0C` and pristine retail
+  `conker.us.bin+0xFD348` share SHA-256
+  `2324732635eb02dc1675a8a8928f4d551e8d425e0751a1a08beb25ef70d755cd`.
+  The fresh scan is **2685 / 5482 (48.98%)** overall and
+  **2117 / 4793 (44.17%)** game.
+
 ### Original handwritten PRNG step restored
 
 - Restored `func_150ADA20` from its maintained behavioral C equivalent to the

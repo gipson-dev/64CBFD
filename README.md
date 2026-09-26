@@ -95,6 +95,11 @@ body after the maintained C equivalent proved to be a 19-word overflow,
 leaving the exact numerator at 2,684 while correcting the denominator to
 5,482. Continue with `func_150CFE98`. The measured boundary is in
 [Working Note 173](DOCS/WORKING_NOTES/173-game-handwritten-prng-step-restoration-20260926.md).
+That buffer-advance helper is now byte-exact after collapsing one-use pointer
+and length lifetimes back into the call expression, with seven guarded
+frame/spill words preserving the retail IDO layout, bringing the total to
+2,685. Continue with `func_150F34A0`. The measured boundary is in
+[Working Note 174](DOCS/WORKING_NOTES/174-game-buffer-advance-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -120,9 +125,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,684 / 5,482 (48.96%) | 1 | 2,797 |
+| Total | `[############------------]` 2,685 / 5,482 (48.98%) | 1 | 2,796 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[###########-------------]` 2,116 / 4,793 (44.15%) | 0 | 2,677 |
+| Game | `[###########-------------]` 2,117 / 4,793 (44.17%) | 0 | 2,676 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

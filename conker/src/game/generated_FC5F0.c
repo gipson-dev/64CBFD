@@ -127,15 +127,11 @@ void func_150CFE3C(u8 *arg0) {
 
 void func_150CFE98(u8 *arg0) {
     u8 *sub = arg0 + 0x28;
-    u8 *ptr38 = *(u8 **) (arg0 + 0x38);
 
-    if (*ptr38 != 0) {
-        u8 *field10 = *(u8 **) (sub + 0x10);
-        s32 len;
-
-        *(u8 **) (sub + 0xC) = field10 + 1;
-        len = func_150CFD84(field10 + 1, (u8 **) (sub + 0x10));
-        *(sub + 0x14) = (u8) len;
+    if (**(u8 **) (arg0 + 0x38) != 0) {
+        *(sub + 0x14) = (u8) func_150CFD84(
+            *(u8 **) (sub + 0xC) = *(u8 **) (sub + 0x10) + 1,
+            (u8 **) (sub + 0x10));
         *(sub + 0x15) ^= 1;
         func_150CFE3C(arg0);
         *(sub + 0x8) |= 1;
