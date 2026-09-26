@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,691 / 5,469 (49.20%) | 1 | 2,777 |
+| Total | 2,692 / 5,469 (49.22%) | 1 | 2,776 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,120 / 4,791 (44.25%) | 0 | 2,671 |
+| Game | 2,121 / 4,791 (44.27%) | 0 | 2,670 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -462,8 +462,10 @@ end-to-end gameplay acceptance.
    retail independently. The explicitly handwritten 13-word unaligned-load
    helpers `func_151F892C` and `func_151F8960` are now restored from false
    zero-return placeholders; both complete 52-byte spans match retail.
-   Continue ordinary Game matching with 19-word `func_151444DC`, after the
-   parked compiler-overflow and probable-handwritten rows. Do not model
+   The 19-word `func_151444DC` integer range wrapper is now byte-exact directly
+   from C after expressing both adjustment loops as `do/while`, recovering
+   retail's two branch-likely delay-slot updates without guarded words.
+   Continue ordinary Game matching with 20-word `func_151464B8`. Do not model
    control-register access through synthetic C or guarded retail-word
    replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

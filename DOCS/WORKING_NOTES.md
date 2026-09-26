@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, handwritten Game bitstream helpers restored).** The
-current linked checkpoint is `2691 / 5469 (49.20%)` exact C functions, with
-one address-drift blocker and 2,777 genuinely different C functions. Game is
-`2120 / 4791 (44.25%)` exact, with 2,671 genuinely different C rows. The tree
+**Active (2026-09-26, Game integer range wrapper matched).** The current linked
+checkpoint is `2692 / 5469 (49.22%)` exact C functions, with one address-drift
+blocker and 2,776 genuinely different C functions. Game is
+`2121 / 4791 (44.27%)` exact, with 2,670 genuinely different C rows. The tree
 contains 569 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -447,6 +447,11 @@ Both complete 52-byte spans independently match retail, and the sibling
 already contains the corresponding generated recomp implementations. Continue
 ordinary Game matching with 19-word `func_151444DC`. The paired result is in
 [Working Note 188](WORKING_NOTES/188-game-unaligned-bitstream-helper-restoration-20260926.md).
+That integer range wrapper is now byte-exact directly from C after both
+adjustment paths were expressed as `do/while` loops, restoring the complete
+step lifetime and branch-likely delay-slot updates with no guarded words.
+Continue with 20-word `func_151464B8`. The range-wrapper result is in
+[Working Note 189](WORKING_NOTES/189-game-integer-range-wrapper-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

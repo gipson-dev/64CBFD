@@ -577,18 +577,16 @@ u32 func_151444DC(s32 arg0, s32 arg1, s32 arg2) {
 
     if (arg1 < arg0) {
         step = arg1 - arg2 + 1;
-        arg0 -= step;
-        while (arg1 < arg0) {
+        do {
             arg0 -= step;
-        }
+        } while (arg1 < arg0);
     }
 
     if (arg0 < arg2) {
         step = arg1 - arg2 + 1;
-        arg0 += step;
-        while (arg0 < arg2) {
+        do {
             arg0 += step;
-        }
+        } while (arg0 < arg2);
     }
 
     return arg0;

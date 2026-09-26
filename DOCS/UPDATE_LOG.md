@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game integer range wrapper byte-exact
+
+- Completed all 19 words of `func_151444DC`, which repeatedly wraps an integer
+  into the inclusive range bounded by `arg2` and `arg1`.
+- Expressing both adjustment paths as `do/while` loops makes IDO materialize
+  the complete step before its first use and reproduces both retail
+  branch-likely delay-slot updates directly, with no guarded words.
+- Linked `0x151444DC..0x15144528` and pristine retail share SHA-256
+  `682c1fbc5ae2acf2b0199b940b022a45b7610905e88ae616c2dd5ae974104416`.
+  The fresh scan is **2,692 / 5,469 (49.22%)** overall and
+  **2,121 / 4,791 (44.27%)** in Game.
+
 ### Handwritten Game bitstream helpers restored
 
 - Restored `func_151F892C` and `func_151F8960` from false zero-return C
