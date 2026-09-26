@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, record activation loop matched).** The current linked
-checkpoint is `2594 / 5484 (47.30%)` exact C functions, with one address-drift
-blocker and 2,889 genuinely different C functions. The tree
+**Active (2026-09-26, two-word aggregate call matched).** The current linked
+checkpoint is `2595 / 5484 (47.32%)` exact C functions, with one address-drift
+blocker and 2,888 genuinely different C functions. The tree
 contains 554 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -187,10 +187,11 @@ guarded FP-register normalization. The padded-object rules now also declare
 the patch table as an explicit dependency, preventing stale guarded objects.
 `func_1507EEB8` then matched directly from a fixed reverse loop with no guarded
 rows. `func_150B6D34` then matched from a simplified record-activation loop
-plus nine guarded cursor/register schedule words. Continue with 17-word
-`func_151090DC`.
+plus nine guarded cursor/register schedule words. `func_151090DC` then matched
+directly from a typed two-word aggregate initializer and corrected pointer ABI.
+Continue with 28-word `func_15141564`.
 The latest result is in
-[Working Note 081](WORKING_NOTES/081-game-record-activation-loop-match-20260926.md).
+[Working Note 082](WORKING_NOTES/082-game-two-word-aggregate-call-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

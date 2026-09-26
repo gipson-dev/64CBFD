@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Two-word aggregate call byte-exact
+
+- Completed all 17 words of `func_151090DC` by replacing two scalar stack
+  assignments with a typed two-word aggregate initializer and passing the
+  aggregate through the callee's pointer ABI. IDO now emits retail's complete
+  aggregate-copy and argument schedule directly from C.
+- No guarded rows were added; the patch table remains at 709 unique rows. The
+  linked span at `0x13655C` and retail span at `0x13658C` share SHA-256
+  `55ddb338289c96218fdbd1278286280acc0413a16f923996dfc3be3651ad8e9a`.
+  Fresh scan: **2595 / 5484 (47.32%)** overall and
+  **2027 / 4795 (42.27%)** game, with debugger unchanged at **181 / 181**.
+
 ### Record activation loop byte-exact
 
 - Completed all 17 words of `func_150B6D34` by simplifying its cursor loop and
