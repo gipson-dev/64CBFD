@@ -287,6 +287,10 @@ The stack-record pass completed all 17 words of `func_1519072C` directly from
 a contiguous local aggregate that preserves the record pointer across both
 helper calls. Continue with 15-word `func_1519582C`; see
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
+The five-global reset pass completed all 15 words of `func_1519582C` with
+volatile pointer source and eight guarded opening relocation/scheduling words.
+Continue with 15-word `func_151A9024`; see
+[Working Note 110](WORKING_NOTES/110-game-global-reset-order-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

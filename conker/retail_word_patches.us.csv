@@ -822,3 +822,11 @@ game_16DC80,func_1514143C,0x02C,0x03E00008,0xE7280008,-,-,Store the z component 
 game_16DC80,func_1514143C,0x030,0x00000000,0x03E00008,-,-,Move the return into the final retail instruction pair,0x00000000
 game_16EE20,func_15144B68,0x008,0x46006086,0x460C003C,-,-,Compare the period before copying the input into the result register,
 game_16EE20,func_15144B68,0x00C,0x460C003C,0x46006086,-,-,Copy the input while the floating-point compare settles,
+generated_1C2C60,func_1519582C,0x000,0x3C0E0000,0x3C020000,R_MIPS_HI16:D_800E08E4,R_MIPS_HI16:D_800E08E4,Keep the first reset pointer in v0,
+generated_1C2C60,func_1519582C,0x004,0x25CE0000,0x3C030000,R_MIPS_LO16:D_800E08E4,R_MIPS_HI16:D_800E08EC,Preload the second reset pointer in v1,
+generated_1C2C60,func_1519582C,0x008,0xADC00000,0x24630000,-,R_MIPS_LO16:D_800E08EC,Complete the second reset pointer before the first,
+generated_1C2C60,func_1519582C,0x00C,0x3C010000,0x24420000,R_MIPS_HI16:D_800E08E0,R_MIPS_LO16:D_800E08E4,Complete the first reset pointer in v0,
+generated_1C2C60,func_1519582C,0x010,0xAC200000,0xAC400000,R_MIPS_LO16:D_800E08E0,-,Clear the first pointer-backed global through v0,
+generated_1C2C60,func_1519582C,0x014,0x3C0F0000,0x3C010000,R_MIPS_HI16:D_800E08EC,R_MIPS_HI16:D_800E08E0,Materialize the direct reset address after the first store,
+generated_1C2C60,func_1519582C,0x018,0x25EF0000,0xAC200000,R_MIPS_LO16:D_800E08EC,R_MIPS_LO16:D_800E08E0,Clear the direct reset global before consuming v1,
+generated_1C2C60,func_1519582C,0x01C,0xADE00000,0xAC600000,-,-,Clear the second pointer-backed global through v1,

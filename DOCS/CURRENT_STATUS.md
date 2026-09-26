@@ -283,8 +283,10 @@ end-to-end gameplay acceptance.
    branch-likely epilogue, and callback-table register lifetimes.
    `func_1519072C` is now byte-exact directly from a contiguous local aggregate
    that preserves retail's `sp + 0x1C` record-pointer spill and `sp + 0x20`
-   record across both calls. Continue with 15-word `func_1519582C`, now the
-   first thirteen-difference game row.
+   record across both calls. `func_1519582C` is now byte-exact from volatile
+   pointer source plus eight guarded relocation/scheduling words that preserve
+   retail's opening `v0`/`v1` global-address preload. Continue with 15-word
+   `func_151A9024`, now the first thirteen-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -412,5 +414,7 @@ The completed conditional callback dispatch is in
 [Working Note 108](WORKING_NOTES/108-game-conditional-dispatch-match-20260926.md).
 The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
+The completed five-global reset ordering is in
+[Working Note 110](WORKING_NOTES/110-game-global-reset-order-match-20260926.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

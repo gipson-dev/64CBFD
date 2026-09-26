@@ -61,9 +61,11 @@ s32 func_151957B0(s32 arg0, u8 *arg1, u8 *arg2) {
 }
 
 void func_1519582C() {
-    D_800E08E4 = 0;
+    volatile s32 *ptr_e4 = &D_800E08E4, *ptr_ec = &D_800E08EC;
+
+    *ptr_e4 = 0;
     D_800E08E0 = 0;
-    D_800E08EC = 0;
+    *ptr_ec = 0;
     D_800E08E8 = 0;
     D_800E08F0 = -2;
 }

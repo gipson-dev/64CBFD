@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Five-global reset order byte-exact
+
+- Completed all 15 words of `func_1519582C`. Volatile target pointers recover
+  retail's two explicit address completions and exact function size; eight
+  guarded relocation/scheduling words preserve the opening `v0`/`v1` preload
+  and interleaved direct store.
+- The final seven words match directly. The patch table now has 831 unique
+  rows, eight for this function.
+- Linked `0x1C2CAC` and retail `0x1C2CDC` share SHA-256
+  `ad45cf74ef6a44637dde894db55c1018e023ef7fd224566b94df67081155c95a`.
+  Fresh scan: **2622 / 5483 (47.82%)** overall and
+  **2054 / 4794 (42.85%)** game, with debugger unchanged at **181 / 181**.
+
 ### Stack-record pointer lifetime byte-exact
 
 - Completed all 17 words of `func_1519072C` directly from source. A contiguous
