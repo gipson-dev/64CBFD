@@ -10,6 +10,11 @@ extern f32 D_800A6524;
 extern s32 D_800DCD10[];
 extern u8 D_800CC2D0[];
 
+typedef struct LinkedNode {
+    struct LinkedNode *next;
+    u8 data[0x30];
+} LinkedNode;
+
 /* Non-matching placeholders for the text-only asm slice asm/18A8F0.s. */
 
 s32 func_1515D5F8();
@@ -44,29 +49,33 @@ void func_1515D4D4(s32 arg0, s32 arg1, s32 arg2, u8 arg3) {
 }
 
 u8 *func_1515D520(void) {
-    u8 *node = (u8 *) allocate_memory(0x34, 1, 2, 2);
-    u8 *ptr;
-    u8 *prev;
+    LinkedNode *node = (LinkedNode *) allocate_memory(0x34, 1, 2, 2);
+    LinkedNode *ptr;
+    LinkedNode *prev;
+    LinkedNode *head;
+    LinkedNode * volatile saved;
 
     if (node != 0) {
+        saved = node;
         bzero(node, 0x34);
-        ptr = D_800DCD78;
-        if (ptr == 0) {
-            D_800DCD78 = node;
-        } else {
-            prev = ptr;
-            ptr = *(u8 **) ptr;
+        node = saved;
+        head = (LinkedNode *) D_800DCD78;
+        if (head != 0) {
+            ptr = head->next;
+            prev = head;
             if (ptr != 0) {
                 do {
                     prev = ptr;
-                    ptr = *(u8 **) ptr;
+                    ptr = ptr->next;
                 } while (ptr != 0);
             }
-            *(u8 **) prev = node;
+            prev->next = node;
+        } else {
+            D_800DCD78 = (u8 *) node;
         }
-        *(u8 **) node = 0;
+        node->next = 0;
     }
-    return node;
+    return (u8 *) node;
 }
 
 void func_1515D5AC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, u8 arg9) {

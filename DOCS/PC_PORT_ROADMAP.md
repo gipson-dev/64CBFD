@@ -428,8 +428,13 @@ The linked-node reset pass then completed all 18 words of `func_1515C158`
 after restoring both row traversals and guarding thirteen persistent IDO
 pointer-coloring words; see
 [Working Note 152](WORKING_NOTES/152-game-linked-node-reset-match-20260926.md).
-Skip handwritten `func_15125628` and continue with 35-word
-`func_1515D520`, which has 16 real differences.
+The linked-node tail-insertion pass then completed all 35 words of
+`func_1515D520` after recovering its direct head test, typed next-pointer
+walk, and allocation return lifetime, plus four guarded frame/scheduling
+words; see
+[Working Note 153](WORKING_NOTES/153-game-linked-node-tail-insert-match-20260926.md).
+Skip handwritten `func_15125628` and continue with 23-word
+`func_151635A8`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 

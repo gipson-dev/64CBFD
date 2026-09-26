@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Linked-node tail insertion byte-exact
+
+- Completed all 35 words of `func_1515D520`. It allocates and clears a
+  `0x34`-byte node, appends it to the singly linked list rooted at
+  `D_800DCD78`, terminates its next pointer, and returns the node or null.
+- Testing the global head directly and separating the head, next, previous,
+  and saved allocation lifetimes recovers the retail empty-list branch-likely,
+  tail walk, dead layout store, and register assignments. Four guarded words
+  normalize IDO's debug frame and two independent words around `bzero`. The
+  patch table is now 1,077 unique rows with no duplicate keys.
+- Linked `0x18A9A0` and retail `0x18A9D0` share SHA-256
+  `733ee62073dc69ffbb2b236538fc66d6723f7b8e4375b011ab98d10982b35504`.
+  Fresh scan: **2665 / 5483 (48.60%)** overall and
+  **2097 / 4794 (43.74%)** game, with debugger unchanged at **181 / 181**.
+
 ### Linked-node reset byte-exact
 
 - Completed all 18 words of `func_1515C158`. It traverses two `0x1A0`-byte

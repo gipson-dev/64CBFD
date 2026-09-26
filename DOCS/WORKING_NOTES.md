@@ -318,9 +318,11 @@ ABI and recovering explicit narrowed-angle and lookup-result lifetimes.
 `func_15147D1C` then matched directly after restoring all three arguments to
 its indexed optional callback. `func_1515C158` then matched after restoring
 the two-row linked-node reset and guarding thirteen persistent IDO pointer
-colors. Skip handwritten `func_15125628` and continue with 35-word
-`func_1515D520`. The latest result is in
-[Working Note 152](WORKING_NOTES/152-game-linked-node-reset-match-20260926.md).
+colors. `func_1515D520` then matched after recovering direct head testing,
+typed tail insertion, and the allocated-node return lifetime, plus four
+guarded frame/scheduling words. Skip handwritten `func_15125628` and continue
+with 23-word `func_151635A8`. The latest result is in
+[Working Note 153](WORKING_NOTES/153-game-linked-node-tail-insert-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

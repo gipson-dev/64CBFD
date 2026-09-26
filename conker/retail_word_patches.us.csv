@@ -1072,3 +1072,7 @@ generated_188F90,func_1515C158,0x030,0x5460FFFD,0x5440FFFD,-,-,Branch on the nex
 generated_188F90,func_1515C158,0x034,0xAC600044,0xAC400044,-,-,Clear the next node in the branch delay slot,
 generated_188F90,func_1515C158,0x038,0x5445FFF7,0x5465FFF7,-,-,Compare the row cursor in v1 with the end pointer,
 generated_188F90,func_1515C158,0x03C,0x8C4300C8,0x8C6200C8,-,-,Load the next row head into v0 in the branch delay slot,
+generated_18A8F0,func_1515D520,0x000,0x27BDFFD0,0x27BDFFE0,-,-,Normalize the debug frame to the retail 32-byte size,
+generated_18A8F0,func_1515D520,0x024,0xAFA4001C,0x24050034,-,-,Schedule the bzero size before the call,
+generated_18A8F0,func_1515D520,0x02C,0x24050034,0xAFA2001C,-,-,Spill the allocated node in the bzero call delay slot,
+generated_18A8F0,func_1515D520,0x080,0x27BD0030,0x27BD0020,-,-,Restore the retail 32-byte frame,

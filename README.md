@@ -33,10 +33,13 @@ helper `func_15143874` now matches directly from C too. The indexed optional
 callback dispatcher `func_15147D1C` now matches directly after restoring all
 three forwarded callback arguments. The two-row linked-node reset
 `func_1515C158` is now byte-exact after restoring its list traversal and
-guarding thirteen IDO pointer-coloring words, for 2,664 byte-exact C
-functions. Keep `func_150721A4` parked as a compiler-overflow row, skip
-handwritten `func_15125628`, and continue with `func_1515D520`; the measured
-boundary is in [Working Note 152](DOCS/WORKING_NOTES/152-game-linked-node-reset-match-20260926.md).
+guarding thirteen IDO pointer-coloring words. The allocated-node tail inserter
+`func_1515D520` is now byte-exact after recovering its direct head test,
+next-pointer walk, and return lifetime, plus four guarded compiler words, for
+2,665 byte-exact C functions. Keep `func_150721A4` parked as a
+compiler-overflow row, skip handwritten `func_15125628`, and continue with
+`func_151635A8`; the measured boundary is in
+[Working Note 153](DOCS/WORKING_NOTES/153-game-linked-node-tail-insert-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
