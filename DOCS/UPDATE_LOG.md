@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Packed-byte writer byte-exact
+
+- Completed all 17 words of `func_1502EA0C` with ten guarded scheduling and
+  register words. The C already expresses the four byte fields and packed
+  32-bit value correctly; the guards recover retail's shift/store interleave
+  and temporary lifetimes without changing control flow or relocations.
+- Explicit partial-value locals did not change IDO allocation. Volatile stores
+  improved byte-store order but increased the total differing words, so that
+  experiment was rejected. The patch table now has 641 rows with no duplicate
+  keys.
+- The complete linked span at ELF `0x6EA0C` and retail `0x5BEBC` shares SHA-256
+  `99bafbd40986e990628a4a760a04fedeb2eabda80b5ecd0355427dd6a209a1aa`.
+  Fresh scan: **2580 / 5484 (47.05%)** overall and
+  **2012 / 4795 (41.96%)** game, with debugger unchanged at **181 / 181**.
+
 ### Four-word state clear byte-exact
 
 - Replaced the `func_151E81EC` placeholder with a real four-word state clear

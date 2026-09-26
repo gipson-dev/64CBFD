@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,579 / 5,484 (47.03%) | 1 | 2,904 |
+| Total | 2,580 / 5,484 (47.05%) | 1 | 2,903 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,011 / 4,795 (41.94%) | 0 | 2,784 |
+| Game | 2,012 / 4,795 (41.96%) | 0 | 2,783 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -203,7 +203,9 @@ end-to-end gameplay acceptance.
    byte-exact from source-level positive-branch control-flow recovery, with no
    guarded words. `func_151E81EC` is byte-exact from a four-word state struct,
    chained assignment, and six guarded paired-store relocation words.
-   Continue with 17-word `func_1502EA0C`, the first ten-difference game row.
+   `func_1502EA0C` is byte-exact through ten guarded packed-byte scheduling
+   and register words. Continue with 16-word `func_15033E84`, now the first
+   ten-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
