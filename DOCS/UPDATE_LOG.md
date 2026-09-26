@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Callback-table traversal byte-exact
+
+- Completed all 23 words of `func_15167010`. It walks the fixed `struct115`
+  table rooted at `D_8008B4A8` and invokes each non-null callback at record
+  offset `0x18`.
+- Derived the end bound from the cursor in C. Fourteen guarded rows restore
+  retail's 40-byte frame, contiguous `s0`-`s2` save set, table-base
+  relocation schedule, `s2` end-pointer lifetime, and return epilogue; the
+  final row also inserts the frame restore in the `jr` delay slot, affecting
+  fifteen words total. The patch table now has 978 unique rows and no
+  duplicate keys.
+- Linked `0x194490` and retail `0x1944C0` share SHA-256
+  `42399e3c663dbb084348a140d6b0a36bb3a672da3deade9e86222372154fa49b`.
+  Fresh scan: **2650 / 5483 (48.33%)** overall and
+  **2082 / 4794 (43.43%)** game, with debugger unchanged at **181 / 181**.
+
 ### Active-buffer copy byte-exact
 
 - Completed all 23 words of `func_150CFE3C`. It copies the current source

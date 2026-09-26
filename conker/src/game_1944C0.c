@@ -25,14 +25,13 @@ extern void (*D_8008CA20[])(void *);
 extern void (*D_8008CB64[])(void);
 
 
-// NON-MATCHING: not hugely far away
 void func_15167010(void) {
     void (*func)(void);
     struct115 *cur;
     struct115 *end;
 
     cur = D_8008B4A8;
-    end = (struct115 *) ((u8 *) D_8008B4A8 + 0x1484);
+    end = (struct115 *) ((u8 *) cur + 0x1484);
 
     while (cur < end) {
         func = (void (*)(void)) cur->unk18;

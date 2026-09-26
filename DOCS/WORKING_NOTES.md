@@ -291,9 +291,12 @@ recovering retail's `a1` lifetime and stack layout. `func_150CFDB8` then
 matched directly after its redundant pointer copy was removed and `arg0` was
 advanced through the record loop, restoring the incoming spill and saved
 register lifetimes. `func_150CFE3C` then matched after recovering the nested
-active-buffer state and guarding six base/register scheduling words. Continue
-with 23-word `func_15167010`. The latest result is in
-[Working Note 137](WORKING_NOTES/137-game-active-buffer-copy-match-20260926.md).
+active-buffer state and guarding six base/register scheduling words.
+`func_15167010` then matched after deriving its table end from the cursor and
+guarding fifteen frame, saved-register, relocation, and epilogue words through
+fourteen rows.
+Continue with 34-word `func_15167D84`. The latest result is in
+[Working Note 138](WORKING_NOTES/138-game-callback-table-traversal-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

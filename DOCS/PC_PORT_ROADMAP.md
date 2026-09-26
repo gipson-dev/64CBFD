@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,649 / 5,483 (48.31%) | 1 | 2,833 |
+| Total | 5,483 / 6,038 (90.81%) | 2,650 / 5,483 (48.33%) | 1 | 2,832 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,081 / 4,794 (43.41%) | 0 | 2,713 |
+| Game | 4,794 / 5,318 (90.15%) | 2,082 / 4,794 (43.43%) | 0 | 2,712 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -371,7 +371,11 @@ The active-buffer copy pass then completed all 23 words of `func_150CFE3C`
 after recovering its nested state layout and guarding six base/register
 scheduling words; see
 [Working Note 137](WORKING_NOTES/137-game-active-buffer-copy-match-20260926.md).
-Continue with 23-word `func_15167010`, which has 15 real differences.
+The callback-table traversal pass then completed all 23 words of
+`func_15167010` after deriving its bound from the cursor and guarding fifteen
+frame, register, relocation, and epilogue words through fourteen rows; see
+[Working Note 138](WORKING_NOTES/138-game-callback-table-traversal-match-20260926.md).
+Continue with 34-word `func_15167D84`, which has 15 real differences.
 
 Current host-port progression and acceptance boundaries:
 
