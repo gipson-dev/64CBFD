@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,604 / 5,484 (47.48%) | 1 | 2,879 |
+| Total | 5,483 / 6,038 (90.81%) | 2,646 / 5,483 (48.26%) | 1 | 2,836 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,036 / 4,795 (42.46%) | 0 | 2,759 |
+| Game | 4,794 / 5,318 (90.15%) | 2,078 / 4,794 (43.35%) | 0 | 2,716 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -355,7 +355,11 @@ The flag-gated high-half-mask pass then completed all 20 words of
 `func_150C78E0` with six guarded scheduling replacements and one guarded dead
 pointer-advance insertion; see
 [Working Note 133](WORKING_NOTES/133-game-flag-gated-high-half-mask-match-20260926.md).
-Continue with 20-word `func_15130230`.
+The scene-callback pass then completed all 20 words of `func_15130230`
+directly from C by explicitly passing the incoming object pointer through the
+selected callback. No guarded rows were needed; see
+[Working Note 134](WORKING_NOTES/134-game-scene-callback-dispatch-match-20260926.md).
+Continue with 59-word `func_1506C32C`, which has 15 real differences.
 
 Current host-port progression and acceptance boundaries:
 

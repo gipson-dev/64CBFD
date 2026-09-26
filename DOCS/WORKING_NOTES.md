@@ -282,9 +282,11 @@ After skipping handwritten `func_151F892C` and `func_151F8960`,
 lookup and two-way callback dispatch. `func_151C4510` then matched from explicit
 destination-component lifetimes plus fifteen guarded FP scheduling words.
 `func_150C78E0` then matched from six guarded scheduling replacements plus one
-guarded dead pointer-advance insertion. Continue with 20-word
-`func_15130230`. The latest result is in
-[Working Note 133](WORKING_NOTES/133-game-flag-gated-high-half-mask-match-20260926.md).
+guarded dead pointer-advance insertion. `func_15130230` then matched directly
+after its incoming object pointer became an explicit callback argument, which
+removed the surplus `a0` spill and restored all three trailing padding words.
+Continue with 59-word `func_1506C32C`. The latest result is in
+[Working Note 134](WORKING_NOTES/134-game-scene-callback-dispatch-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

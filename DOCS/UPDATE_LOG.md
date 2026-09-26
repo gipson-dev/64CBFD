@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Scene callback dispatch byte-exact
+
+- Completed all 20 words of `func_15130230`. The function reads scene selector
+  byte `D_800B0DF0[0x0F]` and dispatches the corresponding
+  `D_80089670` callback when that selector is nonzero.
+- Passing incoming `arg0` explicitly to the selected callback keeps it live in
+  `a0`, removes IDO's surplus `a0` stack spill, and naturally restores the
+  retail frame, `a1` spill, branch-delay index shift, indirect call, epilogue,
+  and three trailing padding words. No guarded rows were added; the patch table
+  remains at 958 unique rows with no duplicate keys.
+- Linked `0x15D6B0` and retail `0x15D6E0` share SHA-256
+  `7989f751808c1c44c0cfe110f6f1b79f394e3da439b4ce5666479ed702f0cf23`.
+  Fresh scan: **2646 / 5483 (48.26%)** overall and
+  **2078 / 4794 (43.35%)** game, with debugger unchanged at **181 / 181**.
+
 ### Flag-gated high-half mask byte-exact
 
 - Completed all 20 words of `func_150C78E0`. Its existing C checks object flag
