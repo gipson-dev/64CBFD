@@ -313,9 +313,11 @@ count-controlled three-component vector scaling loop and typed local call
 boundary. Keep `func_150721A4` parked as a known three-word live-C compiler
 overflow. `func_151419D0` then matched after sharing its source endpoint value
 across both event paths and guarding one commutative branch operand-order
-word. Skip handwritten `func_15125628` and continue with 25-word
-`func_15143874`. The latest result is in
-[Working Note 149](WORKING_NOTES/149-game-event-record-link-update-match-20260926.md).
+word. `func_15143874` then matched directly after correcting its signed angle
+ABI and recovering explicit narrowed-angle and lookup-result lifetimes. Skip
+handwritten `func_15125628` and continue with 18-word `func_15147D1C`. The
+latest result is in
+[Working Note 150](WORKING_NOTES/150-game-scaled-angle-components-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

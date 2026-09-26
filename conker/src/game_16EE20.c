@@ -481,10 +481,12 @@ void func_15143794(s16 arg0, s16 arg1, f32 arg2, vertex *arg3) {
 void func_15143834(s16 arg0, s16 arg1, f32 arg2, vertex *arg3) {
     func_15143794(arg0, arg1, arg2, arg3);
 }
-void func_15143874(u8 arg0, f32 arg1, f32 *arg2, f32 *arg3) {
+void func_15143874(s16 arg0, f32 arg1, f32 *arg2, f32 *arg3) {
     f32 tmp = func_151423D8(arg0);
+    u8 angle = arg0 - 0x40;
+    f32 angleValue = func_151423D8(angle);
 
-    *arg2 = arg1 * func_151423D8((arg0 - 0x40) & 0xFF);
+    *arg2 = arg1 * angleValue;
     *arg3 = arg1 * tmp;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151438D8.s. */

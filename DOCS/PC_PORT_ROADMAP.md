@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,661 / 5,483 (48.53%) | 1 | 2,821 |
+| Total | 5,483 / 6,038 (90.81%) | 2,662 / 5,483 (48.55%) | 1 | 2,820 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,093 / 4,794 (43.66%) | 0 | 2,701 |
+| Game | 4,794 / 5,318 (90.15%) | 2,094 / 4,794 (43.68%) | 0 | 2,700 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -417,8 +417,12 @@ The event-record link-update pass then completed all 43 words of
 `func_151419D0` after recovering its shared source-value lifetime and guarding
 one commutative branch word; see
 [Working Note 149](WORKING_NOTES/149-game-event-record-link-update-match-20260926.md).
-Skip handwritten `func_15125628` and continue with 25-word
-`func_15143874`, which has 16 real differences.
+The scaled angle-component pass then completed all 25 words of
+`func_15143874` directly from C after correcting its signed angle ABI and
+recovering explicit narrowed-angle and lookup-result lifetimes; see
+[Working Note 150](WORKING_NOTES/150-game-scaled-angle-components-match-20260926.md).
+Skip handwritten `func_15125628` and continue with 18-word
+`func_15147D1C`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 

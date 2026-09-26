@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Scaled angle components byte-exact
+
+- Completed all 25 words of `func_15143874`. It performs two
+  `func_151423D8` angle-table lookups separated by a quarter turn, scales both
+  results, and writes the resulting component pair.
+- Correcting the input from `u8` to `s16` restores retail's mixed `lbu`/`lh`
+  argument reloads. Explicit `u8` offset-angle and `f32` lookup-result locals
+  recover the second-call schedule, temporary registers, and floating-point
+  operand order directly from C. No patch rows were added; the patch table
+  remains at 1,060 unique rows.
+- Linked `0x170CF4` and retail `0x170D24` share SHA-256
+  `8bab5dc83a5f1c990ffc6b98f5ea2635f4a7a8e6a997689f1d99fa3be6923cb7`.
+  Fresh scan: **2662 / 5483 (48.55%)** overall and
+  **2094 / 4794 (43.68%)** game, with debugger unchanged at **181 / 181**.
+
 ### Event-record link update byte-exact
 
 - Completed all 43 words of `func_151419D0`. Event zero destroys the owner

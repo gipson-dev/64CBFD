@@ -28,10 +28,11 @@ byte-exact as well. The nullable two-field cleanup `func_150F631C` now matches
 directly from C too. The three-component vector scaler `func_15131958` now
 matches directly from C as well. The event-record link updater
 `func_151419D0` is now byte-exact after recovering its shared source-value
-lifetime and guarding one commutative branch word, for 2,661 byte-exact C
+lifetime and guarding one commutative branch word. The scaled angle-component
+helper `func_15143874` now matches directly from C too, for 2,662 byte-exact C
 functions. Keep `func_150721A4` parked as a compiler-overflow row, skip
-handwritten `func_15125628`, and continue with `func_15143874`; the measured
-boundary is in [Working Note 149](DOCS/WORKING_NOTES/149-game-event-record-link-update-match-20260926.md).
+handwritten `func_15125628`, and continue with `func_15147D1C`; the measured
+boundary is in [Working Note 150](DOCS/WORKING_NOTES/150-game-scaled-angle-components-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -57,9 +58,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,661 / 5,483 (48.53%) | 1 | 2,821 |
+| Total | `[############------------]` 2,662 / 5,483 (48.55%) | 1 | 2,820 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,093 / 4,794 (43.66%) | 0 | 2,701 |
+| Game | `[##########--------------]` 2,094 / 4,794 (43.68%) | 0 | 2,700 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside
