@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Byte lookup forwarding wrapper byte-exact
+
+- Completed all 15 words of `func_15178E14` by replacing its K&R definition
+  with an ANSI byte parameter and giving both local callees their actual
+  argument contracts. IDO now emits retail's narrowing, first-call nop delay
+  slot, forwarded-result delay slot, and complete epilogue directly from C.
+- No guarded rows were added; the patch table remains at 711 unique rows. The
+  linked span at `0x1A6294` and retail span at `0x1A62C4` share SHA-256
+  `a019d616adcd1685df8d90af91eb0c6da92463538aeeb540adf85fd4e9ccbbfd`.
+  Fresh scan: **2597 / 5484 (47.36%)** overall and
+  **2029 / 4795 (42.31%)** game, with debugger unchanged at **181 / 181**.
+
 ### Position and phase update byte-exact
 
 - Completed all 28 words of `func_15141564` by expressing its position update

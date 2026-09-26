@@ -18,7 +18,7 @@ s32 func_151787AC() {
     return 0;
 }
 
-s32 func_15178B98() {
+s32 func_15178B98(u8 arg0) {
     return 0;
 }
 
@@ -34,12 +34,10 @@ s32 func_15178C9C() {
     return 0;
 }
 
-s32 func_15178DA4() {
+s32 func_15178DA4(s32 arg0) {
     return 0;
 }
 
-void func_15178E14(arg0)
-u8 arg0;
-{
+void func_15178E14(u8 arg0) {
     func_15178DA4(func_15178B98(arg0));
 }
