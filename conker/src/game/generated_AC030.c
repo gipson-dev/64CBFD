@@ -80,11 +80,13 @@ void func_1507FF94(u8 *arg0) {
         u8 *target;
         u8 code;
     } rec;
+    void *volatile rec_ptr;
 
     rec.target = arg0;
     rec.code = *(arg0 + 0x3B);
+    rec_ptr = &rec;
     func_15191B8C(&rec, 0xD);
-    func_151494E0(&rec, 0xD);
+    func_151494E0(rec_ptr, 0xD);
 }
 
 s32 func_1507FFD8() {

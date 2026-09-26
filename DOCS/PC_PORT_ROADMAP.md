@@ -252,6 +252,10 @@ The packed four-byte reader pass completed `func_1507A3E8` through thirteen
 guarded byte-load and merge-schedule words, including four explicitly moved
 global relocation pairs; see
 [Working Note 100](WORKING_NOTES/100-game-packed-four-byte-reader-match-20260926.md).
+The retained local-record pointer pass completed `func_1507FF94` from an
+asymmetric volatile pointer lifetime plus five guarded prologue scheduling
+words; see
+[Working Note 101](WORKING_NOTES/101-game-retained-local-record-pointer-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

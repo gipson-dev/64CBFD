@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Retained local-record pointer byte-exact
+
+- Completed all 17 words of `func_1507FF94`. A volatile local pointer retained
+  across the first call restores retail's 40-byte frame, pointer spill/reload,
+  and complete function extent.
+- The first call uses `&rec` directly while the second uses the retained local,
+  avoiding the extra volatile load that overflowed the slot. Five guarded,
+  non-relocating words finish the independent prologue setup order.
+- The patch table now has 808 unique rows. Linked `0xAD414` and retail
+  `0xAD444` share SHA-256
+  `e4200d3dee6cba3505c9510b8b1bf1aec92d126dead87a84c041535655634e4f`.
+  Fresh scan: **2614 / 5484 (47.67%)** overall and
+  **2046 / 4795 (42.67%)** game, with debugger unchanged at **181 / 181**.
+
 ### Packed four-byte reader byte-exact
 
 - Completed all 16 words of `func_1507A3E8`. The plain packed-byte expression

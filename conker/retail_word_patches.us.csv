@@ -802,3 +802,8 @@ game_A28B0,func_1507A3E8,0x028,0x01F94025,0x03095025,-,-,Merge the first two pac
 game_A28B0,func_1507A3E8,0x02C,0x00095200,0x000C6A00,-,-,Shift the third packed byte from t4 into t5,
 game_A28B0,func_1507A3E8,0x030,0x010A5825,0x014D7025,-,-,Merge the first three packed bytes into t6,
 game_A28B0,func_1507A3E8,0x034,0x016C1025,0x01D91025,-,-,Merge the fourth packed byte into the return value,
+generated_AC030,func_1507FF94,0x004,0x00803025,0xAFBF0014,-,-,Save the return address before preparing the local record,
+generated_AC030,func_1507FF94,0x008,0x27A40020,0x00803025,-,-,Retain the incoming record pointer in a2,
+generated_AC030,func_1507FF94,0x00C,0xAFBF0014,0xAFA60020,-,-,Store the target pointer into the local record,
+generated_AC030,func_1507FF94,0x010,0xAFA60020,0x90CE003B,-,-,Load the record code through the retained target pointer,
+generated_AC030,func_1507FF94,0x014,0x90CE003B,0x27A40020,-,-,Form the local record address after its field loads,
