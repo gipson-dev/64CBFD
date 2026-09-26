@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Seven-argument wrapper byte-exact
+
+- Completed all 19 words of `func_151581D8` through ten guarded prologue and
+  argument-preparation schedule words. Every value, stack slot, call
+  relocation, delay-slot store, and epilogue instruction was already present;
+  the guards move no relocations and insert no words.
+- The patch table now has 678 rows with no duplicate keys; this function has
+  ten rows and no insertion-bearing rows. The complete linked span at
+  `0x185658` and retail span at `0x185688` share SHA-256
+  `0792b2f5cacd300b78d1eda3584b4422de9d312ba57cc4a943b7be7af3efd4be`.
+  Fresh scan: **2589 / 5484 (47.21%)** overall and
+  **2021 / 4795 (42.15%)** game, with debugger unchanged at **181 / 181**.
+
 ### Two-word record forwarder byte-exact
 
 - Completed all 18 words of `func_15133E3C` by replacing two scalar array

@@ -169,6 +169,8 @@ The next float-state reset pass completed `func_15133A50`; see
 [Working Note 074](WORKING_NOTES/074-game-float-state-reset-match-20260925.md).
 The following aggregate-copy pass completed `func_15133E3C`; see
 [Working Note 075](WORKING_NOTES/075-game-two-word-record-forwarder-match-20260925.md).
+The next guarded wrapper pass completed `func_151581D8`; see
+[Working Note 076](WORKING_NOTES/076-game-seven-argument-wrapper-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
