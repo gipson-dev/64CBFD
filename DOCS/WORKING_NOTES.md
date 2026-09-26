@@ -167,7 +167,8 @@ expansion, and `func_1512D6B0` matches through guarded record-index register
 lifetimes. `func_15166FD8` now matches through the independently verified
 guarded cursor expansion, and `func_15196330` matches through guarded pointer
 and selector registers. Structural twin `func_151963B4` is independently
-matched; continue at 18-word `func_151E5F64`. Keep
+matched. `func_151E5F64` now matches from source-level positive-branch
+control-flow recovery; continue at 10-word `func_151E81EC`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

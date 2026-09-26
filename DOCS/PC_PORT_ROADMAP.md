@@ -147,6 +147,8 @@ The callback selector register pass completed `func_15196330`; see
 [Working Note 063](WORKING_NOTES/063-game-callback-selector-register-match-20260925.md).
 Its structural twin `func_151963B4` is independently complete; see
 [Working Note 064](WORKING_NOTES/064-game-callback-selector-twin-match-20260925.md).
+The following source-level control-flow pass completed `func_151E5F64`; see
+[Working Note 065](WORKING_NOTES/065-game-indexed-byte-selector-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Indexed signed-byte selector byte-exact
+
+- Completed all 18 words of `func_151E5F64` by expressing the enabled lookup
+  as the positive branch and leaving the disabled `return arg0` path last.
+  IDO now reproduces retail's two return sites, non-likely signed clamp, and
+  exact branch layout directly from C.
+- No patch rows were added. The patch table remains at 625 rows with no
+  duplicate keys. The complete linked span at ELF `0x225F64` and retail
+  `0x213414` shares SHA-256
+  `0beb65faa2a495c68f3866e3915fa51747ea7149656f30e71e53a1a6828cdace`.
+- Fresh scan: **2578 / 5484 (47.01%)** overall and
+  **2010 / 4795 (41.92%)** game, with debugger unchanged at **181 / 181**.
+
 ### Callback selector twin byte-exact
 
 - Completed all 33 words of `func_151963B4` with its own nine guarded

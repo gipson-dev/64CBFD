@@ -280,16 +280,14 @@ s32 func_151E565C() {
 s32 func_151E5F64(s32 arg0) {
     s8 temp_v1;
 
-    if (D_800BE616 == 0) {
-        if (D_800E0B94 == 0) {
-            return arg0;
+    if ((D_800BE616 != 0) || (D_800E0B94 != 0)) {
+        temp_v1 = D_800E0C00[arg0];
+        if (temp_v1 < 0) {
+            temp_v1 = 0;
         }
+        return temp_v1;
     }
-    temp_v1 = D_800E0C00[arg0];
-    if (temp_v1 < 0) {
-        temp_v1 = 0;
-    }
-    return temp_v1;
+    return arg0;
 }
 
 s32 func_151E5FAC(void) {
