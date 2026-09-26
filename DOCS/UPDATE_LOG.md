@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Bounds-checked halfword getter byte-exact
+
+- Completed all 16 words of `func_1508B194` by expressing the bounds check as
+  retail's early-zero path. This directly restored the positive branch,
+  branch delay slot, explicit zero return, halfword-load position, and final
+  return sequence.
+- Five guarded words select retail's `t7` record-table base and `t8` 12-byte
+  stride while explicitly moving the `D_8008FDD4` HI16 relocation. The
+  `D_8008FD90` relocation pair was already exact. The patch table now has 750
+  unique rows. Linked `0xB8614` and retail `0xB8644` share SHA-256
+  `3b86be0e704bd4067e9efad6096d883a46966c5626da1fb6476ed2dafbb9b1ee`.
+  Fresh scan: **2604 / 5484 (47.48%)** overall and
+  **2036 / 4795 (42.46%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed signed-byte getter byte-exact
 
 - Completed all 13 words of `func_150882B0` by declaring the global pointer

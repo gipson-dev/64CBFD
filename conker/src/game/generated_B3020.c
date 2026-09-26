@@ -358,10 +358,10 @@ s32 func_1508A6FC() {
 }
 
 s32 func_1508B194(s32 arg0) {
-    if (arg0 < D_8008FD90) {
-        return *(s16 *) (D_8008FDD4 + arg0 * 12 + 0x70);
+    if (arg0 >= D_8008FD90) {
+        return 0;
     }
-    return 0;
+    return *(s16 *) (D_8008FDD4 + arg0 * 12 + 0x70);
 }
 
 void func_1508B1D4(s32 arg0) {

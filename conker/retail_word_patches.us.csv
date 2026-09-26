@@ -744,3 +744,8 @@ generated_B3020,func_150882B0,0x01C,0x00001025,0x03E00008,-,-,Move the null retu
 generated_B3020,func_150882B0,0x020,0x000E7080,0x00001025,-,-,Return zero in the null return delay slot,
 generated_B3020,func_150882B0,0x024,0x01C37821,0x01C32021,-,-,Form the final record pointer in a0,
 generated_B3020,func_150882B0,0x028,0x81E20027,0x80820027,-,-,Load the signed byte through the a0 record pointer,
+generated_B3020,func_1508B194,0x008,0x00047880,0x3C0F0000,-,R_MIPS_HI16:D_8008FDD4,Load the record-table address before scaling the index,
+generated_B3020,func_1508B194,0x00C,0x3C180000,0x0004C080,R_MIPS_HI16:D_8008FDD4,-,Scale the record index in t8,
+generated_B3020,func_1508B194,0x024,0x8F180000,0x8DEF0000,R_MIPS_LO16:D_8008FDD4,R_MIPS_LO16:D_8008FDD4,Load the record-table pointer through t7,
+generated_B3020,func_1508B194,0x028,0x01E47823,0x0304C023,-,-,Continue the 12-byte stride in t8,
+generated_B3020,func_1508B194,0x02C,0x000F7880,0x0018C080,-,-,Finish the 12-byte stride in t8,

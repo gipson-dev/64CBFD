@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, indexed signed-byte getter matched).** The current linked
-checkpoint is `2603 / 5484 (47.47%)` exact C functions, with one address-drift
-blocker and 2,880 genuinely different C functions. The tree
+**Active (2026-09-26, bounds-checked halfword getter matched).** The current
+linked checkpoint is `2604 / 5484 (47.48%)` exact C functions, with one
+address-drift blocker and 2,879 genuinely different C functions. The tree
 contains 554 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -200,11 +200,13 @@ matched directly from field-based update and table-index expressions.
 `func_1504BA38` then matched through twelve guarded three-byte record
 pointer/value-register words. `func_150882B0` then matched from pointer-first
 local ordering, final argument reuse, and ten guarded scheduling words.
-Continue with 16-word `func_1508B194`, now the first twelve-difference game
-row; its positive retail branch and separate zero-return path differ from the
-current negative branch and return-delay halfword load.
+`func_1508B194` then matched from a source-level early-zero branch and five
+guarded table-base/index words. Continue with 18-word `func_150E33CC`, now the
+first twelve-difference game row; retail keeps the pointed value in `v0`,
+materializes constant two before the branch, and moves the value to `a1` in
+the call delay slot.
 The latest result is in
-[Working Note 090](WORKING_NOTES/090-game-indexed-signed-byte-getter-match-20260926.md).
+[Working Note 091](WORKING_NOTES/091-game-bounds-checked-halfword-getter-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
