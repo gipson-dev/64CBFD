@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, full data-cache writeback restored).** The current linked
-checkpoint is `2691 / 5472 (49.18%)` exact C functions, with one address-drift
-blocker and 2,780 genuinely different C functions. Init is
-`390 / 498 (78.31%)` exact, with 107 genuinely different C rows. The tree
-contains 566 raw-assembly functions, so much of the percentage increase over
+**Active (2026-09-26, Init TLB unmap restored).** The current linked checkpoint
+is `2691 / 5471 (49.19%)` exact C functions, with one address-drift blocker and
+2,779 genuinely different C functions. Init is `390 / 497 (78.47%)` exact,
+with 106 genuinely different C rows. The tree contains 567 raw-assembly
+functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
 
@@ -436,6 +436,11 @@ original handwritten cache-op loop. Its full 48-byte span independently
 matches retail. Continue with 16-word `osUnmapTLB`. The cache restoration is
 in
 [Working Note 186](WORKING_NOTES/186-init-writeback-dcache-all-restoration-20260926.md).
+That audit replaced the empty `osUnmapTLB` placeholder with its original
+handwritten CP0/TLB body. Its full 64-byte span independently matches retail.
+Continue ordinary Game matching with 13-word `func_151F892C`. The TLB result
+is in
+[Working Note 187](WORKING_NOTES/187-init-unmap-tlb-restoration-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

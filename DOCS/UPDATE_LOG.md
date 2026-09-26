@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Init TLB unmap routine restored
+
+- Replaced the empty `osUnmapTLB` C placeholder with its original 16-word
+  libultra assembly body. The routine saves CP0 EntryHi, writes Index and both
+  EntryLo registers, executes `tlbwi`, observes the hazard nops, and restores
+  EntryHi.
+- The complete linked 64-byte span matches retail with SHA-256
+  `2fea954023376ffbe406e320314f3a2b6cf1acddb591e2fc0754e2259c01bf3b`.
+- Fresh accounting is **2,691 / 5,471 (49.19%)** exact C functions overall
+  and **390 / 497 (78.47%)** in Init. The exact SDK assembly row is excluded
+  from the C matcher denominator by design.
+
 ### Init full data-cache writeback restored
 
 - Replaced the empty `osWritebackDCacheAll` C placeholder with its original

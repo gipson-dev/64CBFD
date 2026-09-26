@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,472 / 6,038 (90.63%) | 2,691 / 5,472 (49.18%) | 1 | 2,780 |
-| Init | 498 / 538 (92.57%) | 390 / 498 (78.31%) | 1 | 107 |
+| Total | 5,471 / 6,038 (90.61%) | 2,691 / 5,471 (49.19%) | 1 | 2,779 |
+| Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
 | Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -571,7 +571,10 @@ schedule pending a controlled regeneration. Continue with 12-word
 `osWritebackDCacheAll`. That audit restored the original handwritten cache-op
 loop from an empty C placeholder; see
 [Working Note 186](WORKING_NOTES/186-init-writeback-dcache-all-restoration-20260926.md).
-Continue with 16-word `osUnmapTLB`.
+The next low-level audit restored the original 16-word CP0/TLB body for
+`osUnmapTLB` from another empty C placeholder; see
+[Working Note 187](WORKING_NOTES/187-init-unmap-tlb-restoration-20260926.md).
+Continue ordinary Game matching with 13-word `func_151F892C`.
 
 Current host-port progression and acceptance boundaries:
 

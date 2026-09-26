@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,472 / 6,038 (90.63%) | 566 | 1,932,136 / 2,256,728 (85.62%) |
-| Init | 498 / 538 (92.57%) | 40 | 148,664 / 164,048 (90.62%) |
+| Total | 5,471 / 6,038 (90.61%) | 567 | 1,932,072 / 2,256,728 (85.61%) |
+| Init | 497 / 538 (92.38%) | 41 | 148,600 / 164,048 (90.58%) |
 | Game | 4,793 / 5,318 (90.13%) | 525 | 1,763,832 / 2,072,880 (85.09%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,691 / 5,472 (49.18%) | 1 | 2,780 |
-| Init | 390 / 498 (78.31%) | 1 | 107 |
+| Total | 2,691 / 5,471 (49.19%) | 1 | 2,779 |
+| Init | 390 / 497 (78.47%) | 1 | 106 |
 | Game | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -457,7 +457,10 @@ end-to-end gameplay acceptance.
    full 44-byte span matches retail independently. The empty
    `osWritebackDCacheAll` C placeholder is now replaced by its original
    handwritten 12-word cache-operation loop; its full 48-byte span matches
-   retail independently. Continue with 16-word `osUnmapTLB`. Do not model
+   retail independently. The empty `osUnmapTLB` placeholder is likewise
+   replaced by its original 16-word CP0/TLB body; its full 64-byte span matches
+   retail independently. Continue ordinary Game matching with 13-word
+   `func_151F892C`. Do not model
    control-register access through synthetic C or guarded retail-word
    replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
