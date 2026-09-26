@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Final seven-difference game pair byte-exact
+
+- Completed all 11 words each of `func_151D7770` and `func_151D779C` by
+  matching adjacent `func_151D7724`'s explicit child/destination pointer
+  ordering and restoring retail's `0xFFFE` byte-mask spelling.
+- Both compile directly to retail with no guarded rows. The patch table remains
+  at 557 rows with no duplicate keys.
+- Independent complete-span SHA-256 values are
+  `d517ddfff457357c5fcbcfa85ccd2493e2b651ac6088cb1ca9b538689af6874a`
+  and `713f78d536b61397b41dda9342268622278371abbb291bb872f8967c97c2c2db`.
+  Fresh scan: **2567 / 5488 (46.77%)** overall and
+  **1999 / 4799 (41.65%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game outer/child pointer allocation byte-exact
 
 - Completed all 17 words of `func_15155EF8` with seven expected-word guards

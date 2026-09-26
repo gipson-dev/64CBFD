@@ -81,19 +81,21 @@ s32 func_151D7724(u8 *arg0) {
 }
 
 s32 func_151D7770(u8 *arg0) {
-    u8 *temp_v0 = arg0 + 0x28;
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x40);
+    u8 *temp_v1 = arg0 + 0x28;
 
-    if (*(u16 *) (*(u8 **) (arg0 + 0x40) + 0x84) == 0) {
-        temp_v0[5] &= 0xFE;
+    if (*(u16 *) (temp_v0 + 0x84) == 0) {
+        temp_v1[5] &= 0xFFFE;
     }
     return 1;
 }
 
 s32 func_151D779C(u8 *arg0) {
-    u8 *temp_v0 = arg0 + 0x28;
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x40);
+    u8 *temp_v1 = arg0 + 0x28;
 
-    if ((*(u8 **) (arg0 + 0x40))[0xAD] != 0) {
-        temp_v0[5] &= 0xFE;
+    if (temp_v0[0xAD] != 0) {
+        temp_v1[5] &= 0xFFFE;
     }
     return 1;
 }
