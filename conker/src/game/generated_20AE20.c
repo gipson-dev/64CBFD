@@ -299,9 +299,10 @@ s32 func_151E5FAC(void) {
     if (D_800E0BEB != 0) {
         s8 temp_v1 = D_8008FD8C;
 
-        if (temp_v1 < 5) {
-            return temp_v1;
+        if (temp_v1 >= 5) {
+            return D_8008FD90;
         }
+        return temp_v1;
     }
     return D_8008FD90;
 }

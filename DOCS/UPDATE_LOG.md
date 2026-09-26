@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Signed-byte fallback selector byte-exact
+
+- Completed all 18 words of `func_151E5FAC`. Duplicating the explicit fallback
+  return restores separate flag-false and threshold-failure paths; spelling the
+  threshold as `>= 5` restores retail's positive branch to the candidate.
+- Twelve guarded words restore retail's fallback-address preload/rematerialize
+  schedule and move the `D_8008FD8C` and `D_8008FD90` relocation pairs. The
+  flag load, final fallback load, and return are unguarded and exact.
+- The patch table now has 779 unique rows. Linked `0x21342C` and retail
+  `0x21345C` share SHA-256
+  `6b4a87b0141da6aebe6c6d4e3a60eefa444d170d0fdf07689f40e48da5d1f7ff`.
+  Fresh scan: **2609 / 5484 (47.57%)** overall and
+  **2041 / 4795 (42.57%)** game, with debugger unchanged at **181 / 181**.
+
 ### Allocation/copy wrapper byte-exact
 
 - Completed all 28 words of `func_15168800` directly from source by expressing

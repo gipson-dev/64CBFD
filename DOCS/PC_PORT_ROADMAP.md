@@ -231,6 +231,11 @@ register-allocation words; see
 The allocation/copy wrapper pass completed `func_15168800` directly from an
 explicit early null return, without guarded rows; see
 [Working Note 095](WORKING_NOTES/095-game-allocation-copy-wrapper-match-20260926.md).
+The signed-byte fallback-selector pass completed `func_151E5FAC` from
+duplicated fallback returns, positive threshold control flow, and twelve
+guarded relocation/scheduling words, closing the twelve-difference game tier;
+see
+[Working Note 096](WORKING_NOTES/096-game-signed-byte-fallback-selector-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

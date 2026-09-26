@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,608 / 5,484 (47.56%) | 1 | 2,875 |
+| Total | 2,609 / 5,484 (47.57%) | 1 | 2,874 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,040 / 4,795 (42.54%) | 0 | 2,755 |
+| Game | 2,041 / 4,795 (42.57%) | 0 | 2,754 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,608, while
+denominator driven: the exact count is now 2,609, while
 493 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -252,8 +252,10 @@ end-to-end gameplay acceptance.
    volatile field accesses retain retail's duplicate store, plus five guarded
    loaded/result register words. `func_15168800` is byte-exact directly from
    an explicit early null return, with no guarded words. Continue with 18-word
-   `func_151E5FAC`, the final twelve-difference game row; retail keeps distinct
-   fallback paths and rematerializes the `D_8008FD90` address.
+   `func_151E5FAC` is byte-exact from duplicated fallback returns, positive
+   threshold control flow, and twelve guarded relocation/scheduling words,
+   completing the twelve-difference game tier. Continue with 39-word
+   `func_15002560`, now the first thirteen-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
