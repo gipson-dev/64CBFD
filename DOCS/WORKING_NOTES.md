@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, high-half call wrapper complete).** The current linked
-checkpoint is `2568 / 5488 (46.79%)` exact C functions, with one address-drift
-blocker and 2,919 genuinely different C functions. The tree
-contains 550 raw-assembly functions, so the higher percentage than July is
+**Active (2026-09-25, dead child-pointer boundary restored).** The current
+linked checkpoint is `2568 / 5487 (46.80%)` exact C functions, with one
+address-drift blocker and 2,918 genuinely different C functions. The tree
+contains 551 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
 
@@ -152,7 +152,9 @@ through guarded outer/child pointer register lifetimes. Adjacent
 child/destination pointer ordering and wider mask recovery, completing the
 seven-difference game tier. `func_1509F248` now matches from an explicit
 unsigned-halfword narrowing that restores retail's high-half extraction.
-Continue at 17-word `func_150C5EFC`. Keep
+`func_150C5EFC` is restored to its original 17-word assembly extent because
+IDO removes retail's dead child-pointer update. Continue at 17-word
+`func_150C682C`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -250,6 +252,8 @@ The completed source/destination pointer pair is in
 [Working Note 050](WORKING_NOTES/050-game-source-destination-pointer-pair-20260925.md).
 The completed high-half call wrapper is in
 [Working Note 051](WORKING_NOTES/051-game-high-half-call-wrapper-20260925.md).
+The restored dead child-pointer assembly boundary is in
+[Working Note 052](WORKING_NOTES/052-game-dead-child-pointer-restoration-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

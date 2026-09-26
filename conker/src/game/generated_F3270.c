@@ -18,16 +18,8 @@ s32 func_150C5E0C() {
     return 0;
 }
 
-s32 func_150C5EFC(u8 *arg0) {
-    u8 *temp_v0 = *(u8 **) (arg0 + 0xB0);
-
-    *(s32 *) (temp_v0 + 0x58) = 0;
-    *(u32 *) (arg0 + 0xB0) = 0;
-    *(u32 *) (arg0 + 0x18) |= 2;
-    temp_v0 += 0x58;
-    func_1513F6C0(arg0, 0, 0);
-    return 0;
-}
+// Retail retains the otherwise dead temp_v0 + 0x58 update before the call.
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_F3270/func_150C5EFC.s")
 
 s32 func_150C5F40() {
     return 0;

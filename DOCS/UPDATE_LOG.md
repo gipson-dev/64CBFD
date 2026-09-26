@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Dead child-pointer expression restored to assembly
+
+- Restored `func_150C5EFC` to its original 17-word assembly ownership because
+  IDO removes retail's otherwise dead `addiu v0,v0,0x58` before the call.
+- The preserved body retains the dead update, the original
+  `R_MIPS_26 func_1513F6C0` relocation, and the retail call-delay store. The
+  patch table remains at 557 rows with no duplicate keys.
+- The independent complete-span SHA-256 is
+  `1bc413712b2394519da1ebb337be60f51449e0d6eac95a5fa625362e5f41a426`.
+  This is an ownership correction, so the exact numerator remains **2568**;
+  the fresh scan is **2568 / 5487 (46.80%)** overall and
+  **2000 / 4798 (41.68%)** game, with debugger unchanged at **181 / 181**.
+
 ### High-half call wrapper byte-exact
 
 - Completed all 15 words of `func_1509F248` by restoring the explicit `u16`
