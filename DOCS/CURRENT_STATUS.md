@@ -285,8 +285,11 @@ end-to-end gameplay acceptance.
    that preserves retail's `sp + 0x1C` record-pointer spill and `sp + 0x20`
    record across both calls. `func_1519582C` is now byte-exact from volatile
    pointer source plus eight guarded relocation/scheduling words that preserve
-   retail's opening `v0`/`v1` global-address preload. Continue with 15-word
-   `func_151A9024`, now the first thirteen-difference game row.
+   retail's opening `v0`/`v1` global-address preload. `func_151A9024` is now
+   byte-exact with thirteen guarded words that preserve retail's argument-home,
+   byte-narrowing, early-epilogue, and call-relocation schedule. Continue with
+   15-word `func_151C9B64`, now the first thirteen-difference game row; its
+   generated C condition is semantically inverted relative to retail.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -416,5 +419,7 @@ The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 The completed five-global reset ordering is in
 [Working Note 110](WORKING_NOTES/110-game-global-reset-order-match-20260926.md).
+The completed byte-gated optional call is in
+[Working Note 111](WORKING_NOTES/111-game-byte-gated-call-match-20260926.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

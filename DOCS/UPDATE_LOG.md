@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Byte-gated optional call byte-exact
+
+- Completed all 15 words of `func_151A9024`. The existing C behavior was
+  correct, but IDO rotated its argument-home store, `u8` narrowing, `ra` save,
+  gate load, and optional call schedule.
+- Thirteen guarded words reproduce retail's `t6`/`t7` lifetimes and early
+  epilogue, including an explicit relocation move for `func_151A931C`. The
+  patch table now has 844 unique rows.
+- Linked `0x1D64A4` and retail `0x1D64D4` share SHA-256
+  `7dc4eef7baf0bc0fd3f7384828426f0f8cb11046bf1995f5dd14d527dc2fdf9c`.
+  Fresh scan: **2623 / 5483 (47.84%)** overall and
+  **2055 / 4794 (42.87%)** game, with debugger unchanged at **181 / 181**.
+
 ### Five-global reset order byte-exact
 
 - Completed all 15 words of `func_1519582C`. Volatile target pointers recover

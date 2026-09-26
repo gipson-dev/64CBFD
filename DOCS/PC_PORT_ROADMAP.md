@@ -291,6 +291,10 @@ The five-global reset pass completed all 15 words of `func_1519582C` with
 volatile pointer source and eight guarded opening relocation/scheduling words.
 Continue with 15-word `func_151A9024`; see
 [Working Note 110](WORKING_NOTES/110-game-global-reset-order-match-20260926.md).
+The byte-gated call pass completed all 15 words of `func_151A9024` with
+thirteen guarded argument and call-scheduling words. Continue with 15-word
+`func_151C9B64`, whose generated condition is inverted relative to retail; see
+[Working Note 111](WORKING_NOTES/111-game-byte-gated-call-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
