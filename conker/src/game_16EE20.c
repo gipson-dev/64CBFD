@@ -662,15 +662,17 @@ f32 func_15144B68(f32 arg0) {
 }
 
 f32 func_15144BC8(f32 arg0) {
-    while (360.0f < arg0) {
-        arg0 -= 360.0f;
+    f32 ret = arg0;
+
+    while (360.0f < ret) {
+        ret -= 360.0f;
     }
 
-    while (arg0 < 0.0f) {
-        arg0 += 360.0f;
+    while (ret < 0.0f) {
+        ret += 360.0f;
     }
 
-    return arg0;
+    return ret;
 }
 
 s32 func_15144C2C(s16 arg0) {

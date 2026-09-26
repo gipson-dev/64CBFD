@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Angle normalization byte-exact
+
+- Completed all 25 words of `func_15144BC8` directly by introducing
+  `f32 ret = arg0` and applying both 360-degree normalization loops to that
+  local, matching the source shape already used by neighboring
+  `func_15144B68`.
+- IDO now copies incoming `f12` to `f2`, reuses `f12` for zero, and emits
+  retail's exact two branch-likely loops and return sequence. No guarded rows
+  were required; the patch table remains at 903 unique rows.
+- Linked `0x172048` and retail `0x172078` share SHA-256
+  `4045e24a198fb60bd83d11f5ebef1738e49fe3e58ce02b2824547f86b5a9d441`.
+  Fresh scan: **2638 / 5483 (48.11%)** overall and
+  **2070 / 4794 (43.18%)** game, with debugger unchanged at **181 / 181**.
+
 ### Two-word and byte forwarder byte-exact
 
 - Completed all 21 words of `func_151417C4` directly from a typed two-word

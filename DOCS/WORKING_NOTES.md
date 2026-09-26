@@ -270,8 +270,10 @@ corrected local pointer contract.
 `func_151BD750` then matched through fifteen guarded FP scheduling rows and two
 inserted terminal words. `func_151417C4` then matched directly from a typed
 two-word aggregate, byte-typed first argument, and one-byte array local.
-Continue with 25-word `func_15144BC8`. The latest result is in
-[Working Note 125](WORKING_NOTES/125-game-two-word-byte-forwarder-match-20260926.md).
+`func_15144BC8` then matched directly after its normalized angle became an
+explicit result local. Continue with 45-word `func_150718E4`. The latest result
+is in
+[Working Note 126](WORKING_NOTES/126-game-angle-normalization-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
