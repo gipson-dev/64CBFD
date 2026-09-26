@@ -307,9 +307,11 @@ stores and fourteen guarded overflow-slot replacements. The delimiter-split
 pass completed all 16 words of `func_1516A770` directly from source. The
 one-word aggregate-forwarder pass then completed all 16 words of
 `func_1518F45C` directly from source. The callback-forwarding pass completed
-all 16 words of `func_151A5130` directly from source. Continue with 17-word
-`func_1508F060`; see
-[Working Note 117](WORKING_NOTES/117-game-indirect-callback-forwarder-match-20260926.md).
+all 16 words of `func_151A5130` directly from source. The selected state-block
+reset pass completed all 17 words of `func_1508F060` with corrected source,
+nine guarded rows, and three insertions. Continue with 17-word
+`func_1518F89C`; see
+[Working Note 118](WORKING_NOTES/118-game-selected-state-block-reset-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

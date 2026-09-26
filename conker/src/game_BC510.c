@@ -18,14 +18,18 @@ s32 func_150938BC();
 s32 func_15093B58();
 /* End generated placeholder declarations. */
 
-// need to figure out D_800D2460
 void func_1508F060(void) {
+    s32 index;
+    u8 (*rows)[16];
+
     D_800D246D = 0;
+    index = 2;
     D_800D247D = 0;
-    D_800D2460[1][13] = 0;
-    D_800D2460[2][13] = 0;
-    D_800D2460[3][13] = 0;
-    D_800D2460[0][13] = 0;
+    rows = &D_800D2460[index];
+    rows[1][13] = 0;
+    rows[2][13] = 0;
+    rows[3][13] = 0;
+    rows[0][13] = 0;
     D_800D24C0 = 0;
 }
 

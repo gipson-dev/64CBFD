@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Selected state-block reset byte-exact
+
+- Corrected `func_1508F060` to select row two of `D_800D2460` before clearing
+  row-relative bytes `0x1D`, `0x2D`, `0x3D`, and `0x0D`. The previous C used
+  the unshifted base and therefore targeted the wrong bytes.
+- IDO folds the constant selected-row pointer into four direct offsets. Nine
+  guarded rows with three insertions restore retail's explicit `li 2`,
+  shift/base-add sequence, store order, and moved global HI/LO relocations.
+- Linked `0xBC4E0` and retail `0xBC510` share SHA-256
+  `5a6bee06d54645060055d96fea8a8d6bd8253996ea416f5e385bc7133ed93ebe`.
+  Fresh scan: **2630 / 5483 (47.97%)** overall and
+  **2062 / 4794 (43.01%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indirect callback forwarder byte-exact
 
 - Completed all 16 words of `func_151A5130` directly from source. Its

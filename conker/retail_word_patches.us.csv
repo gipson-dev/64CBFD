@@ -857,3 +857,12 @@ game_D5030,func_150A7B80,0x028,0x00000000,0xA488000A,-,-,Write the second fixed-
 game_D5030,func_150A7B80,0x02C,0x00000000,0xA4880014,-,-,Write the third fixed-point diagonal element,
 game_D5030,func_150A7B80,0x030,0x00000000,0x03E00008,-,-,Return after the third diagonal store,
 game_D5030,func_150A7B80,0x034,0x00000000,0xA488001E,-,-,Write the fourth diagonal element in the return delay slot,
+game_BC510,func_1508F060,0x000,0x3C020000,0x3C010000,R_MIPS_HI16:D_800D2460,R_MIPS_HI16:D_800D246D,Start with the first standalone state byte,
+game_BC510,func_1508F060,0x004,0x24420000,0xA0200000,R_MIPS_LO16:D_800D2460,R_MIPS_LO16:D_800D246D,Clear the first standalone state byte,
+game_BC510,func_1508F060,0x008,0x3C010000,0x3C010000,R_MIPS_HI16:D_800D246D,R_MIPS_HI16:D_800D247D,Prepare the second standalone state byte,
+game_BC510,func_1508F060,0x00C,0xA0200000,0x24020002,R_MIPS_LO16:D_800D246D,-,Materialize selected row index two,
+game_BC510,func_1508F060,0x010,0x3C010000,0x3C0F0000,R_MIPS_HI16:D_800D247D,R_MIPS_HI16:D_800D2460,Prepare the row table base,
+game_BC510,func_1508F060,0x018,0xA040003D,0x25EF0000,-,R_MIPS_LO16:D_800D2460,Finish the row table base address,
+game_BC510,func_1508F060,0x01C,0xA040004D,0x00027100,-,-,Scale selected row index by sixteen,0x01CF1821
+game_BC510,func_1508F060,0x020,0xA040005D,0xA060001D,-,-,Clear selected row relative byte 0x1D,0xA060002D
+game_BC510,func_1508F060,0x024,0xA040002D,0xA060003D,-,-,Clear selected row relative byte 0x3D,0xA060000D

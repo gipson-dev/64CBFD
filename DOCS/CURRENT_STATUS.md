@@ -303,9 +303,11 @@ end-to-end gameplay acceptance.
    one-word aggregate and the callee's record parameter became `void *`.
    `func_151A5130` is now byte-exact after its indirect callback expression
    explicitly forwards all three incoming arguments, restoring the signed
-   halfword narrowing and live-register ABI. Continue with 17-word
-   `func_1508F060`, the smallest remaining ordinary-C row at fourteen real
-   differences.
+   halfword narrowing and live-register ABI. `func_1508F060` is now byte-exact
+   after correcting its state-block base to selected row two and applying nine
+   guarded rows with three insertions for retail's explicit pointer arithmetic.
+   Continue with 17-word `func_1518F89C`, the smallest remaining ordinary-C
+   row at fourteen real differences.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
