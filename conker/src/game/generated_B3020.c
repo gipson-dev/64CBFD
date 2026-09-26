@@ -199,13 +199,13 @@ s32 func_15088218(s32 arg0) {
 
 s32 func_15088270(s32 arg0) {
     u8 *temp_v1 = D_800872A0;
-    u8 *ptr;
+    s32 idx = arg0;
 
     if (temp_v1 == 0) {
         return 0;
     }
-    ptr = (u8 *) (arg0 * 0x84 + (s32) temp_v1);
-    return (s32) *(f32 *) (ptr + 0x14);
+    arg0 = idx * 0x84 + (s32) temp_v1;
+    return (s32) *(f32 *) (arg0 + 0x14);
 }
 
 s32 func_150882B0(s32 arg0) {

@@ -336,8 +336,10 @@ from corrected local ordering plus ten guarded register words; see
 [Working Note 127](WORKING_NOTES/127-game-random-indexed-effect-match-20260926.md).
 The bounded-index registration pass then completed all 16 words of
 `func_150142AC` directly from recovered signed bounds and invalid-path return.
-Continue with 16-word `func_15088270`; see
-[Working Note 128](WORKING_NOTES/128-game-bounded-index-registration-match-20260926.md).
+The indexed-float reader pass then completed all 16 words of `func_15088270`
+from a separate index lifetime plus ten guarded scheduling words; see
+[Working Note 129](WORKING_NOTES/129-game-indexed-float-reader-match-20260926.md).
+Continue with 17-word `func_15188A58`, the offset-`0x0C` linked-list append.
 
 Current host-port progression and acceptance boundaries:
 

@@ -274,8 +274,10 @@ two-word aggregate, byte-typed first argument, and one-byte array local.
 explicit result local. `func_150718E4` then matched from corrected local
 ordering plus ten guarded post-random-call register words. `func_150142AC`
 then matched directly from a signed index and explicit invalid-range return.
-Continue with 16-word `func_15088270`. The latest result is in
-[Working Note 128](WORKING_NOTES/128-game-bounded-index-registration-match-20260926.md).
+`func_15088270` then matched from a separate index lifetime plus ten guarded
+scheduling words. Continue with 17-word `func_15188A58`, the offset-`0x0C`
+linked-list append. The latest result is in
+[Working Note 129](WORKING_NOTES/129-game-indexed-float-reader-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Indexed-float reader byte-exact
+
+- Completed all 16 words of `func_15088270` by retaining the incoming record
+  index separately, then reusing `arg0` for the computed record pointer before
+  converting its float at offset `0x14` to an integer.
+- Added ten guarded scheduling rows to restore retail's `a1` index lifetime,
+  `v1` table-base lifetime, null-path delay slots, and final `a0` record base.
+  The patch table now has 923 unique rows and no duplicate keys.
+- Linked `0xB56F0` and retail `0xB5720` share SHA-256
+  `459eccfdf1e672fe1f29e94dcb9a782ad401863d80c893a74a9ceeaba3f27d2f`.
+  Fresh scan: **2641 / 5483 (48.17%)** overall and
+  **2073 / 4794 (43.24%)** game, with debugger unchanged at **181 / 181**.
+
 ### Bounded-index registration byte-exact
 
 - Completed all 16 words of `func_150142AC` directly by recovering a signed
