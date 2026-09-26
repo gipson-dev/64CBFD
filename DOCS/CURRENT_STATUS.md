@@ -320,8 +320,10 @@ end-to-end gameplay acceptance.
    `func_151417C4` is now byte-exact directly from a typed two-word aggregate,
    byte-typed first argument, and one-byte array local. `func_15144BC8` is now
    byte-exact directly after its normalized angle became an explicit `ret`
-   local. Continue with 45-word `func_150718E4`, the sole remaining ordinary-C
-   game row at fourteen real differences.
+   local. `func_150718E4` is now byte-exact from corrected local ordering plus
+   ten guarded post-random-call register words. Continue with 16-word
+   `func_150142AC`, the smallest ordinary-C game row at fifteen real
+   differences.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

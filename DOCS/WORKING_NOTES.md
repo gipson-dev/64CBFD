@@ -271,9 +271,10 @@ corrected local pointer contract.
 inserted terminal words. `func_151417C4` then matched directly from a typed
 two-word aggregate, byte-typed first argument, and one-byte array local.
 `func_15144BC8` then matched directly after its normalized angle became an
-explicit result local. Continue with 45-word `func_150718E4`. The latest result
-is in
-[Working Note 126](WORKING_NOTES/126-game-angle-normalization-match-20260926.md).
+explicit result local. `func_150718E4` then matched from corrected local
+ordering plus ten guarded post-random-call register words. Continue with
+16-word `func_150142AC`. The latest result is in
+[Working Note 127](WORKING_NOTES/127-game-random-indexed-effect-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

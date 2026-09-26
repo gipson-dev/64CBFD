@@ -902,3 +902,13 @@ generated_1E73B0,func_151BD750,0x034,0x46105080,0xA48F0080,-,-,Store the updated
 generated_1E73B0,func_151BD750,0x038,0x46001006,0x46105482,-,-,Multiply the doubled value by the global scale,
 generated_1E73B0,func_151BD750,0x03C,0x03E00008,0x46049080,-,-,Add the global offset after both multiplies,0x46001006
 generated_1E73B0,func_151BD750,0x040,0x00000000,0x03E00008,-,-,Move the return after the restored result copy,0x00000000
+game_981E0,func_150718E4,0x04C,0x3C090000,0x3C0B0000,R_MIPS_HI16:D_800D154C,R_MIPS_HI16:D_800D154C,Retain the actor pointer in t3 after the random call,
+game_981E0,func_150718E4,0x050,0x8D290000,0x8D6B0000,R_MIPS_LO16:D_800D154C,R_MIPS_LO16:D_800D154C,Finish loading the actor pointer into t3,
+game_981E0,func_150718E4,0x054,0x03A81821,0x03A84821,-,-,Address the selected source byte through t1,
+game_981E0,func_150718E4,0x058,0x90630020,0x91290020,-,-,Keep the selected source byte in t1,
+game_981E0,func_150718E4,0x05C,0x8D2A01D4,0x8D6C01D4,-,-,Load the actor child pointer into t4,
+game_981E0,func_150718E4,0x064,0x00035980,0x00095180,-,-,Keep the shifted byte offset in t2,
+game_981E0,func_150718E4,0x074,0x014B3021,0x014C3021,-,-,Combine the t2 byte offset with the t4 child pointer,
+game_981E0,func_150718E4,0x078,0x3C0C0000,0x3C0D0000,R_MIPS_HI16:D_800D154C,R_MIPS_HI16:D_800D154C,Use t5 for the post-call actor reload,
+game_981E0,func_150718E4,0x07C,0x8D8C0000,0x8DAD0000,R_MIPS_LO16:D_800D154C,R_MIPS_LO16:D_800D154C,Finish the post-call actor reload into t5,
+game_981E0,func_150718E4,0x088,0xC5840180,0xC5A40180,-,-,Load the actor height through the retained t5 pointer,

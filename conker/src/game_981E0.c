@@ -1433,8 +1433,8 @@ void func_15071888(s32 arg0) {
 }
 
 void func_150718E4(s32 arg0) {
-    s32 sp20 = D_80099BB8;
     struct17 sp24;
+    s32 sp20 = D_80099BB8;
     u8 temp_t1;
 
     if ((D_800D154C->unk1D4 != NULL) || ((D_800D154C->unk74 & 0xF) == 0xF)) {

@@ -329,9 +329,12 @@ The two-word aggregate-forwarder pass then completed all 21 words of
 `func_151417C4` directly from corrected source types and local ordering; see
 [Working Note 125](WORKING_NOTES/125-game-two-word-byte-forwarder-match-20260926.md).
 The angle-normalization pass then completed all 25 words of `func_15144BC8`
-directly from an explicit result local. Continue with 45-word
-`func_150718E4`; see
+directly from an explicit result local; see
 [Working Note 126](WORKING_NOTES/126-game-angle-normalization-match-20260926.md).
+The random indexed-effect pass then completed all 45 words of `func_150718E4`
+from corrected local ordering plus ten guarded register words. Continue with
+16-word `func_150142AC`; see
+[Working Note 127](WORKING_NOTES/127-game-random-indexed-effect-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Random indexed-effect setup byte-exact
+
+- Completed all 45 words of `func_150718E4`. Reversing its two stack-local
+  declarations restores retail's `D_80099BB8` source word at `sp + 0x20` and
+  `struct17` at `sp + 0x24`.
+- Added ten guarded post-random-call register words to restore retail's
+  `t0..t5` lifetimes. Both moved `D_800D154C` loads retain explicit expected
+  and replacement relocations; no insertion or control-flow patch is used.
+- Linked `0x9ED64` and retail `0x9ED94` share SHA-256
+  `f128977f492f1068d911ae7303cfcd80a685d2b28a8d282f84da46832064af76`.
+  Fresh scan: **2639 / 5483 (48.13%)** overall and
+  **2071 / 4794 (43.20%)** game, with debugger unchanged at **181 / 181**.
+
 ### Angle normalization byte-exact
 
 - Completed all 25 words of `func_15144BC8` directly by introducing
