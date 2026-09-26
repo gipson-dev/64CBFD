@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Adjacent Init control-register wrappers restored
+
+- Restored handwritten `__osSetSR` and low-level SDK `__osSetFpcCsr` from
+  false no-op/zero-return C placeholders to original assembly ownership.
+- `__osSetSR` now preserves retail's `mtc0`, hazard `nop`, return, and delay
+  slot. `__osSetFpcCsr` preserves the `cfc1` old-value read followed by the
+  `ctc1` update. No guarded word patches were added.
+- Their complete linked 16-byte spans match retail with SHA-256
+  `8c9798aafb630c54a679991a2a686c3379687a94f8b3c8c14e5eafe1cd8cb961`
+  and `1b1c2a5e117a433a988d960120310c5634987537358a5b13b49fddcee5d2dac4`.
+- The fresh scan is **2,688 / 5,477 (49.08%)** overall and
+  **387 / 503 (76.94%)** in Init. The next ordinary Init C candidate is
+  26-word `func_1000FE88`, with two real differences.
+
 ### Handwritten Init CP0 wrappers restored
 
 - Restored `__osGetSR`, `osGetCount`, and `__osSetCompare` from false C

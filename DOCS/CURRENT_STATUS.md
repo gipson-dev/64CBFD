@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,479 / 6,038 (90.74%) | 559 | 1,932,360 / 2,256,728 (85.63%) |
-| Init | 505 / 538 (93.87%) | 33 | 148,888 / 164,048 (90.76%) |
+| Total | 5,477 / 6,038 (90.71%) | 561 | 1,932,328 / 2,256,728 (85.63%) |
+| Init | 503 / 538 (93.49%) | 35 | 148,856 / 164,048 (90.74%) |
 | Game | 4,793 / 5,318 (90.13%) | 525 | 1,763,832 / 2,072,880 (85.09%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,688 / 5,479 (49.06%) | 1 | 2,790 |
-| Init | 387 / 505 (76.63%) | 1 | 117 |
+| Total | 2,688 / 5,477 (49.08%) | 1 | 2,788 |
+| Init | 387 / 503 (76.94%) | 1 | 115 |
 | Game | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,688, while
-498 functions moved from C back to assembly. The paired event-swap pass added
+500 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -437,11 +437,12 @@ end-to-end gameplay acceptance.
    record identifier lifetime, with no guarded words. Continue with 19-word
    `func_151444DC`, the next ordinary Game C row with eighteen real
    differences.
-4. Init's `__osGetSR`, `osGetCount`, and `__osSetCompare` placeholders are now
-   restored to original handwritten CP0 assembly ownership. Their complete
-   16-byte padded spans match retail independently. Continue the low-level Init
-   classification queue with `__osSetSR` and `__osSetFpcCsr`; do not model CP0
-   access through synthetic C or guarded retail-word replacement.
+4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
+   `__osSetFpcCsr` placeholders are restored to original low-level assembly
+   ownership. Their complete 16-byte padded spans match retail independently.
+   Continue ordinary Init C matching with 26-word `func_1000FE88`, which has
+   two real differences. Do not model control-register access through
+   synthetic C or guarded retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,479 / 6,038 (90.74%) | 2,688 / 5,479 (49.06%) | 1 | 2,790 |
-| Init | 505 / 538 (93.87%) | 387 / 505 (76.63%) | 1 | 117 |
+| Total | 5,477 / 6,038 (90.71%) | 2,688 / 5,477 (49.08%) | 1 | 2,788 |
+| Init | 503 / 538 (93.49%) | 387 / 503 (76.94%) | 1 | 115 |
 | Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -541,6 +541,11 @@ assembly. All three complete 16-byte padded spans match retail; see
 [Working Note 178](WORKING_NOTES/178-init-handwritten-cp0-wrapper-restoration-20260926.md).
 The sibling already provides a native tracked-status override for `__osGetSR`;
 no generated or host source was changed in this classification-only pass.
+The adjacent control-register pass then restored handwritten `__osSetSR` and
+low-level SDK `__osSetFpcCsr` to original assembly ownership. Both complete
+16-byte spans match retail; see
+[Working Note 179](WORKING_NOTES/179-init-control-register-wrapper-restoration-20260926.md).
+Continue ordinary Init C matching with two-difference `func_1000FE88`.
 
 Current host-port progression and acceptance boundaries:
 

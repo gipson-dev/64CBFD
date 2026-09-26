@@ -1,12 +1,5 @@
 #include <ultra64.h>
-#include "controller.h"
 
-#ifdef __osSetFpcCsr
-#undef __osSetFpcCsr
-#endif
+/* Original low-level FPU control/status-register wrapper. */
 
-/* Non-matching C placeholders for C:/Users/grego/OneDrive/Desktop/.vscode/64CBFD/conker/asm/libultra/os/setfpccsr.s. */
-
-u32 __osSetFpcCsr(u32 arg0) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_setfpccsr/__osSetFpcCsr.s")
