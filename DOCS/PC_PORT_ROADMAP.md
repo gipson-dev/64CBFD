@@ -157,6 +157,8 @@ The linked-list loop pass completed `func_15033E84`; see
 [Working Note 068](WORKING_NOTES/068-game-linked-list-search-match-20260925.md).
 The next display-list cursor pass completed `func_15094F40`; see
 [Working Note 069](WORKING_NOTES/069-game-display-list-state-clear-match-20260925.md).
+Its state-byte-clear relative `func_15096934` is independently complete; see
+[Working Note 070](WORKING_NOTES/070-game-display-list-state-byte-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

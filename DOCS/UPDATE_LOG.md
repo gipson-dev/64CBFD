@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Display-list cursor and state-byte clear byte-exact
+
+- Completed all 15 words of `func_15096934` with an independent nine-row
+  application of the generated-slice cursor expansion. It preserves the
+  original cursor in `v1`, emits the `D_80087408` command pair, advances the
+  cursor, clears byte `D_800D2DAB`, and restores the retail return sequence.
+- All four moved relocations are explicitly guarded. The patch table now has
+  659 rows with no duplicate keys; this function has nine rows and two
+  insertion-bearing rows.
+- The complete linked span at ELF `0xD6934` and retail `0xC3DE4` shares
+  SHA-256
+  `0ce9e94a848eba73ef07a221cf21947ea38ba900526bc53580d4a1f9417ea7ed`.
+  Fresh scan: **2583 / 5484 (47.10%)** overall and
+  **2015 / 4795 (42.02%)** game, with debugger unchanged at **181 / 181**.
+
 ### Display-list cursor and state clear byte-exact
 
 - Completed all 12 words of `func_15094F40` through the established

@@ -649,3 +649,12 @@ generated_C1D70,func_15094F40,0x018,0x24820008,0x24840008,-,-,Advance the displa
 generated_C1D70,func_15094F40,0x01C,0xAC200000,0x3C010000,R_MIPS_LO16:D_800D2CA0,R_MIPS_HI16:D_800D2CA0,Move the global-clear high half after the cursor update,
 generated_C1D70,func_15094F40,0x020,0x03E00008,0xAC200000,-,R_MIPS_LO16:D_800D2CA0,Clear display-list state before returning,0x00801025
 generated_C1D70,func_15094F40,0x024,0x00000000,0x03E00008,-,-,Return after copying the advanced cursor,0x00000000
+generated_C1D70,func_15096934,0x000,0x3C0F0000,0x00801825,R_MIPS_HI16:D_80087408,-,Preserve the original display-list cursor,
+generated_C1D70,func_15096934,0x004,0x3C0EDE00,0x3C0F0000,-,R_MIPS_HI16:D_80087408,Resolve the display-list target before the command constant,
+generated_C1D70,func_15096934,0x00C,0xAC8E0000,0x3C0EDE00,-,-,Load the display-list command after the target address,
+generated_C1D70,func_15096934,0x010,0xAC8F0004,0xAC6E0000,-,-,Store the command through the preserved cursor,
+generated_C1D70,func_15096934,0x014,0x3C010000,0xAC6F0004,R_MIPS_HI16:D_800D2DAB,-,Store the target through the preserved cursor,
+generated_C1D70,func_15096934,0x018,0x24820008,0x24840008,-,-,Advance the display-list cursor before clearing state,
+generated_C1D70,func_15096934,0x01C,0xA0200000,0x3C010000,R_MIPS_LO16:D_800D2DAB,R_MIPS_HI16:D_800D2DAB,Move the state-byte high half after the cursor update,
+generated_C1D70,func_15096934,0x020,0x03E00008,0xA0200000,-,R_MIPS_LO16:D_800D2DAB,Clear the state byte before returning,0x00801025
+generated_C1D70,func_15096934,0x024,0x00000000,0x03E00008,-,-,Return after copying the advanced cursor,0x00000000
