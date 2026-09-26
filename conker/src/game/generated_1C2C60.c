@@ -122,6 +122,7 @@ s32 func_15196330(u8 *arg0) {
     func_151478F4(arg0);
 }
 
+/* Note 321: guarded words preserve retail's pointer and selector registers. */
 s32 func_151963B4(u8 *arg0) {
     u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
     s8 temp_v1 = *(s8 *) (temp_v0 + 0x65);

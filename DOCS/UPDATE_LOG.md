@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Callback selector twin byte-exact
+
+- Completed all 33 words of `func_151963B4` with its own nine guarded
+  pointer/selector register words. The structure matches `func_15196330`, while
+  the independently preserved final relocation targets `func_15147928`.
+- The patch table now has 625 rows with no duplicate keys. The complete linked
+  span at ELF `0x1D63B4` and retail `0x1C3864` shares SHA-256
+  `cf3ff8a08a41e22809847c2dccc1abd13cd671b7db20372f07d2575926cd3adf`.
+- Fresh scan: **2577 / 5484 (46.99%)** overall and
+  **2009 / 4795 (41.90%)** game, with debugger unchanged at **181 / 181**.
+
 ### Callback selector registers byte-exact
 
 - Completed all 33 words of `func_15196330` with nine guarded words rotating

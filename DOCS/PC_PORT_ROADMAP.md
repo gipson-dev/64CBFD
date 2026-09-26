@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,576 / 5,484 (46.97%) | 1 | 2,907 |
+| Total | 5,484 / 6,038 (90.82%) | 2,577 / 5,484 (46.99%) | 1 | 2,906 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,008 / 4,795 (41.88%) | 0 | 2,787 |
+| Game | 4,795 / 5,318 (90.17%) | 2,009 / 4,795 (41.90%) | 0 | 2,786 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -145,6 +145,8 @@ The second display-list cursor pass completed `func_15166FD8`; see
 [Working Note 062](WORKING_NOTES/062-game-display-list-cursor-twin-match-20260925.md).
 The callback selector register pass completed `func_15196330`; see
 [Working Note 063](WORKING_NOTES/063-game-callback-selector-register-match-20260925.md).
+Its structural twin `func_151963B4` is independently complete; see
+[Working Note 064](WORKING_NOTES/064-game-callback-selector-twin-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
