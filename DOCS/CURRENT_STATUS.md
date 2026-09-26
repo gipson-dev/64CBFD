@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 554 | 1,932,736 / 2,256,728 (85.64%) |
+| Total | 5,483 / 6,038 (90.81%) | 555 | 1,932,684 / 2,256,728 (85.64%) |
 | Init | 508 / 538 (94.42%) | 30 | 148,936 / 164,048 (90.79%) |
-| Game | 4,795 / 5,318 (90.17%) | 523 | 1,764,160 / 2,072,880 (85.11%) |
+| Game | 4,794 / 5,318 (90.15%) | 524 | 1,764,108 / 2,072,880 (85.10%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,615 / 5,484 (47.68%) | 1 | 2,868 |
+| Total | 2,615 / 5,483 (47.69%) | 1 | 2,867 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,047 / 4,795 (42.69%) | 0 | 2,748 |
+| Game | 2,047 / 4,794 (42.70%) | 0 | 2,747 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,615, while
-493 functions moved from C back to assembly. The paired event-swap pass added
+494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -266,8 +266,10 @@ end-to-end gameplay acceptance.
    local-record pointer across its first call, plus five guarded prologue
    scheduling words. `func_15085B70` is byte-exact directly from reversing
    its null condition so the zeroing path precedes the populated path, with no
-   guarded rows. Continue with 13-word `func_150A7A14`, now the first
-   thirteen-difference game row.
+   guarded rows. `func_150A7A14` is restored to its original thirteen-word
+   assembly continuation because it returns through `t9` as the second half
+   of `func_150A7A00`'s synthetic-return trampoline. Continue with 19-word
+   `func_150CFBEC`, now the first thirteen-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -381,5 +383,7 @@ The completed retained local-record pointer is in
 [Working Note 101](WORKING_NOTES/101-game-retained-local-record-pointer-match-20260926.md).
 The completed null-first table-populator path is in
 [Working Note 102](WORKING_NOTES/102-game-null-first-table-populator-match-20260926.md).
+The restored fourth-component trampoline continuation is in
+[Working Note 103](WORKING_NOTES/103-game-fourth-component-continuation-restoration-20260926.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

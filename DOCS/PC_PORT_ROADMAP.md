@@ -259,6 +259,10 @@ words; see
 The null-first table-populator pass completed `func_15085B70` directly by
 placing its zeroing path before its populated path, without guarded rows; see
 [Working Note 102](WORKING_NOTES/102-game-null-first-table-populator-match-20260926.md).
+The fourth-component continuation pass restored `func_150A7A14` from a false
+C placeholder to the original thirteen-word assembly tail of
+`func_150A7A00`'s synthetic-return trampoline; see
+[Working Note 103](WORKING_NOTES/103-game-fourth-component-continuation-restoration-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

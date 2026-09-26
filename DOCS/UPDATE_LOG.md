@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Fourth-component continuation restored
+
+- Restored all 13 original words of `func_150A7A14` from retained
+  `asm/D4E10.s`. The false `return 0` C placeholder could not model the
+  continuation's inherited FP registers, stack argument, or return through
+  saved register `t9`.
+- The restored body and the complete 18-word `func_150A7A00`/`func_150A7A14`
+  trampoline pair are linked byte-identical to retail. No guarded rows were
+  added.
+- The patch table remains at 808 unique rows. The body at linked `0xD4E94`
+  and retail `0xD4EC4` shares SHA-256
+  `75bbc5234eee00ae6d58550ab03989349ce347c30c8c2cea8403183d9f36c8d0`.
+  Fresh C scan: **2615 / 5483 (47.69%)** overall and
+  **2047 / 4794 (42.70%)** game, with one function correctly transferred from
+  the C denominator to raw assembly.
+
 ### Null-first table populator byte-exact
 
 - Completed all 30 words of `func_15085B70` directly from source. Reversing
