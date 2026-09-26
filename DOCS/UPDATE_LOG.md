@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Third dead child-pointer family member restored to assembly
+
+- Restored `func_151AB180` to its original 17-word assembly ownership. Like
+  `func_150C5EFC` and `func_150C682C`, IDO removes retail's otherwise dead
+  `addiu v0,v0,0x58` and shifts the following call relocation.
+- The preserved body retains its distinct `+0x70` child-field clear, the
+  original `R_MIPS_26 func_1513F6C0` relocation, and the retail call-delay
+  store. The patch table remains at 573 rows with no duplicate keys.
+- The independent complete-span SHA-256 is
+  `4f98b42bf797016c7e59eee9047f9777c22dbeb51ca0946889bd3b450758683f`.
+  This is an ownership correction, so the exact numerator remains **2570**;
+  the fresh scan is **2570 / 5485 (46.86%)** overall and
+  **2002 / 4796 (41.74%)** game, with debugger unchanged at **181 / 181**.
+
 ### Allocation-wrapper frame byte-exact
 
 - Completed all 21 words of `func_1515D480` with eight expected-word guards

@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, allocation-wrapper frame complete).** The current linked
-checkpoint is `2570 / 5486 (46.85%)` exact C functions, with one address-drift
-blocker and 2,915 genuinely different C functions. The tree contains 552
+**Active (2026-09-25, third dead child-pointer member restored).** The current
+linked checkpoint is `2570 / 5485 (46.86%)` exact C functions, with one
+address-drift blocker and 2,914 genuinely different C functions. The tree contains 553
 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -157,7 +157,9 @@ IDO removes retail's dead child-pointer update. Structural twin
 `func_150C682C` is restored for the same ownership reason. `func_150EA904` now
 matches through guarded base/index and byte-update register lifetimes.
 `func_1515D480` now matches through guarded frame-size and local-slot
-normalization. Continue at 17-word `func_151AB180`. Keep
+normalization. `func_151AB180`, the `+0x70` dead child-pointer family member,
+is restored to its original assembly extent. Continue at 12-word
+`func_151EF610`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -263,6 +265,8 @@ The completed indexed-record flag update is in
 [Working Note 054](WORKING_NOTES/054-game-indexed-record-flag-match-20260925.md).
 The completed allocation-wrapper frame normalization is in
 [Working Note 055](WORKING_NOTES/055-game-allocation-wrapper-frame-match-20260925.md).
+The third restored dead child-pointer family member is in
+[Working Note 056](WORKING_NOTES/056-game-dead-child-pointer-third-restoration-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

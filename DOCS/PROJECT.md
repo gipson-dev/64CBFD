@@ -202,7 +202,7 @@ make -C conker match-progress NON_MATCHING=1
 | Game | `[####################----]` 85.11% | 4,799 / 5,318 (90.24%) |
 | Debugger | `[########################]` 99.19% | 181 / 182 (99.45%) |
 
-There are 552 tracked raw-assembly functions. The increase from July reflects
+There are 553 tracked raw-assembly functions. The increase from July reflects
 broad restoration of original assembly in the current working tree. Some rows
 are handwritten SDK or CP0 code, embedded or mixed code/data slices, static
 audio routines, or intentionally restored port-support bodies; inspect each
@@ -212,9 +212,9 @@ candidate before treating it as an ordinary C conversion target.
 
 | Section | Byte-exact | Blocked by address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,570 / 5,486 (46.85%) | 1 | 2,915 |
+| Total | `[###########-------------]` 2,570 / 5,485 (46.86%) | 1 | 2,914 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,002 / 4,797 (41.73%) | 0 | 2,795 |
+| Game | `[##########--------------]` 2,002 / 4,796 (41.74%) | 0 | 2,794 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The debugger section is fully complete: 181 C-classified rows match through

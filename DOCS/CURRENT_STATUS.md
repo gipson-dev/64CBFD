@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,486 / 6,038 (90.86%) | 552 | 1,932,784 / 2,256,728 (85.65%) |
+| Total | 5,485 / 6,038 (90.84%) | 553 | 1,932,784 / 2,256,728 (85.65%) |
 | Init | 508 / 538 (94.42%) | 30 | 148,936 / 164,048 (90.79%) |
-| Game | 4,797 / 5,318 (90.20%) | 521 | 1,764,208 / 2,072,880 (85.11%) |
+| Game | 4,796 / 5,318 (90.18%) | 522 | 1,764,208 / 2,072,880 (85.11%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,570 / 5,486 (46.85%) | 1 | 2,915 |
+| Total | 2,570 / 5,485 (46.86%) | 1 | 2,914 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,002 / 4,797 (41.73%) | 0 | 2,795 |
+| Game | 2,002 / 4,796 (41.74%) | 0 | 2,794 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,570, while
-492 functions moved from C back to assembly. The paired event-swap pass added
+493 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -95,6 +95,8 @@ with its distinct child-field clear preserved.
 base/index and byte-update register lifetime words.
 `func_1515D480` is byte-exact through eight guarded frame-size and local-slot
 words while preserving both call relocations.
+`func_151AB180`, the `+0x70` member of the dead child-pointer family, is
+restored to its original 17-word assembly extent.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -170,8 +172,10 @@ end-to-end gameplay acceptance.
    `func_150C682C` is restored for the same reason. `func_150EA904` is
    byte-exact through eight guarded, relocation-preserving base/index and
    byte-update register words. `func_1515D480` is byte-exact through eight
-   guarded frame and local-slot words. Continue at 17-word `func_151AB180`,
-   the first remaining eight-difference game row.
+   guarded frame and local-slot words. `func_151AB180`, the `+0x70` member of
+   the dead child-pointer family, is restored to its original 17-word assembly
+   extent. Continue at 12-word `func_151EF610`, the final eight-difference game
+   row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -273,5 +277,7 @@ The completed indexed-record flag update is in
 [Working Note 054](WORKING_NOTES/054-game-indexed-record-flag-match-20260925.md).
 The completed allocation-wrapper frame normalization is in
 [Working Note 055](WORKING_NOTES/055-game-allocation-wrapper-frame-match-20260925.md).
+The third restored dead child-pointer family member is in
+[Working Note 056](WORKING_NOTES/056-game-dead-child-pointer-third-restoration-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
