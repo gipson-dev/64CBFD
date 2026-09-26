@@ -311,8 +311,10 @@ all 16 words of `func_151A5130` directly from source. The selected state-block
 reset pass completed all 17 words of `func_1508F060` with corrected source,
 nine guarded rows, and three insertions. The typed float-record pass completed
 all 17 words of `func_1518F89C` with twelve guarded scheduling rows and one
-inserted call-delay `nop`. Continue with 17-word `func_151A561C`; see
-[Working Note 119](WORKING_NOTES/119-game-float-record-update-match-20260926.md).
+inserted call-delay `nop`. The second one-word aggregate-forwarder pass then
+completed all 17 words of `func_151A561C` directly from source. Continue with
+17-word `func_151D343C`; see
+[Working Note 120](WORKING_NOTES/120-game-second-one-word-forwarder-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

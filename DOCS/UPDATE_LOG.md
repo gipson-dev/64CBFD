@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Second one-word aggregate forwarder byte-exact
+
+- Completed all 17 words of `func_151A561C` directly from source. Replacing
+  its scalar array with `OneWord1D0840`, copying `D_800A8D70` as an aggregate,
+  and declaring the callee's record parameter as `void *` reproduces the
+  already-proven `func_1518F45C` compiler shape.
+- IDO emits retail's exact argument setup, source HI/LO pair, copy through
+  `at`, call delay store, epilogue, and trailing padding word. No guarded rows
+  are required.
+- Linked `0x1D2A9C` and retail `0x1D2ACC` share SHA-256
+  `4a45a442193db0684da0464798590aa269e40e6c6c2e7865c0716abec79c107a`.
+  Fresh scan: **2632 / 5483 (48.00%)** overall and
+  **2064 / 4794 (43.05%)** game, with debugger unchanged at **181 / 181**.
+
 ### Float-record update byte-exact
 
 - Gave `func_1518F89C` a typed record for its float fields at object offsets
