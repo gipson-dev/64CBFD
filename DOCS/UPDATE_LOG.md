@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Handwritten Init MMIO setup restored
+
+- Restored `func_100038E0` from an equivalent C conversion to its original
+  11-word assembly body. Retail retains the MMIO address in return register
+  `v0` and materializes the two `0x4040` stores independently in `t6` and `t7`.
+- The complete linked 44-byte span matches retail with SHA-256
+  `2afa60e885db40dd282ff0cf18ffe43a5716521c18c5c235975bcf8cb84d97f4`.
+- Fresh accounting is **2,691 / 5,473 (49.17%)** exact C functions overall
+  and **390 / 499 (78.16%)** in Init. The exact original assembly row is
+  intentionally excluded from the C matcher denominator.
+
 ### Handwritten Init memory-clear loop restored
 
 - Restored `func_10001420` from a false C conversion to its original nine-word

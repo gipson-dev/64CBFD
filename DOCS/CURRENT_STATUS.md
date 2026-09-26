@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,474 / 6,038 (90.66%) | 564 | 1,932,228 / 2,256,728 (85.62%) |
-| Init | 500 / 538 (92.94%) | 38 | 148,756 / 164,048 (90.68%) |
+| Total | 5,473 / 6,038 (90.64%) | 565 | 1,932,184 / 2,256,728 (85.62%) |
+| Init | 499 / 538 (92.75%) | 39 | 148,712 / 164,048 (90.65%) |
 | Game | 4,793 / 5,318 (90.13%) | 525 | 1,763,832 / 2,072,880 (85.09%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,691 / 5,474 (49.16%) | 1 | 2,782 |
-| Init | 390 / 500 (78.00%) | 1 | 109 |
+| Total | 2,691 / 5,473 (49.17%) | 1 | 2,781 |
+| Init | 390 / 499 (78.16%) | 1 | 108 |
 | Game | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -451,8 +451,11 @@ end-to-end gameplay acceptance.
    that retain retail's loop bound across no-call iterations and refresh it
    only after a resource-release call. The nine-word `func_10001420` is now
    restored from its overflow-trampoline C model to its original handwritten
-   memory-clear loop; its full 36-byte span matches retail independently.
-   Continue ordinary Init matching with 11-word `func_100038E0`. Do not model
+   memory-clear loop; its full 36-byte span matches retail independently. The
+   11-word `func_100038E0` is likewise restored from an equivalent but
+   compiler-shaped C model to its original handwritten MMIO setup body; its
+   full 44-byte span matches retail independently. Continue the low-level Init
+   ownership audit with 12-word `osWritebackDCacheAll`. Do not model
    control-register access through synthetic C or guarded retail-word
    replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,474 / 6,038 (90.66%) | 2,691 / 5,474 (49.16%) | 1 | 2,782 |
-| Init | 500 / 538 (92.94%) | 390 / 500 (78.00%) | 1 | 109 |
+| Total | 5,473 / 6,038 (90.64%) | 2,691 / 5,473 (49.17%) | 1 | 2,781 |
+| Init | 499 / 538 (92.75%) | 390 / 499 (78.16%) | 1 | 108 |
 | Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -563,7 +563,12 @@ The ownership audit then restored nine-word `func_10001420` from an overflowing
 C model to its original handwritten memory-clear loop; see
 [Working Note 184](WORKING_NOTES/184-init-handwritten-memory-clear-restoration-20260926.md).
 The sibling already has an exact generated recomp body. Continue with 11-word
-`func_100038E0`.
+`func_100038E0`. That audit restored the original handwritten MMIO setup body;
+see
+[Working Note 185](WORKING_NOTES/185-init-handwritten-mmio-setup-restoration-20260926.md).
+Its sibling body is behaviorally equivalent but retains the old compiled
+schedule pending a controlled regeneration. Continue with 12-word
+`osWritebackDCacheAll`.
 
 Current host-port progression and acceptance boundaries:
 

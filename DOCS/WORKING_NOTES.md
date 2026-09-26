@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, handwritten Init memory-clear loop restored).** The
-current linked checkpoint is `2691 / 5474 (49.16%)` exact C functions, with
-one address-drift blocker and 2,782 genuinely different C functions. Init is
-`390 / 500 (78.00%)` exact, with 109 genuinely different C rows. The tree
-contains 564 raw-assembly functions, so much of the percentage increase over
+**Active (2026-09-26, handwritten Init MMIO setup restored).** The current
+linked checkpoint is `2691 / 5473 (49.17%)` exact C functions, with one
+address-drift blocker and 2,781 genuinely different C functions. Init is
+`390 / 499 (78.16%)` exact, with 108 genuinely different C rows. The tree
+contains 565 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
 
@@ -426,6 +426,11 @@ the sibling already contains the corresponding generated recomp body.
 Continue ordinary Init matching with 11-word `func_100038E0`. The ownership
 result is in
 [Working Note 184](WORKING_NOTES/184-init-handwritten-memory-clear-restoration-20260926.md).
+That audit restored `func_100038E0` to its original handwritten MMIO setup
+body. Its full 44-byte span independently matches retail. Continue the
+low-level Init ownership audit with 12-word `osWritebackDCacheAll`. The MMIO
+result is in
+[Working Note 185](WORKING_NOTES/185-init-handwritten-mmio-setup-restoration-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
