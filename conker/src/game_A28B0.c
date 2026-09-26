@@ -696,13 +696,11 @@ void func_15077190(void) {
     }
 }
 
-// NON-MATCHING: something isnt right...
+// Note 315: nine guarded words preserve the retail argument-load schedule.
 void func_150771F0(void) {
-    s32 phi_a1;
-
     if (D_800D1893 == 0) {
-        phi_a1 = (D_800D1892 != 0) ? 1 : 2;
-        func_1506160C(D_800D154C, phi_a1, D_800D1890, D_800D1891, 0);
+        func_1506160C(D_800D154C, (D_800D1892 != 0) ? 1 : 2,
+                     D_800D1890, D_800D1891, 0);
     } else {
         if (D_800D1892 == 0) {
             func_1502EA60(D_800D154C, D_800D1890);

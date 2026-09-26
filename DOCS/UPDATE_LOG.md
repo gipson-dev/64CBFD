@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Argument-load schedule byte-exact
+
+- Completed all 41 words of `func_150771F0`. Inlining the selector expression
+  into the five-argument call improved IDO's argument preparation; nine
+  expected-word guards finish retail's `a2`/`a3` loads, two-arm `a1`
+  selection, and delayed actor-pointer load.
+- Eight of the guarded rows explicitly validate and move symbol relocations.
+  The patch table now has 582 rows with no duplicate keys.
+- The independent complete-span SHA-256 is
+  `735443235523748393545106b44ca5886db042803279aa7dc842704ff00d72f8`.
+  Fresh scan: **2571 / 5484 (46.88%)** overall and
+  **2003 / 4795 (41.77%)** game, with debugger unchanged at **181 / 181**.
+
 ### Global PRNG step restored to assembly
 
 - Restored `func_151EF610` to its original 12-word assembly ownership. Its C

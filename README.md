@@ -36,9 +36,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[###########-------------]` 2,570 / 5,484 (46.86%) | 1 | 2,913 |
+| Total | `[###########-------------]` 2,571 / 5,484 (46.88%) | 1 | 2,912 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,002 / 4,795 (41.75%) | 0 | 2,793 |
+| Game | `[##########--------------]` 2,003 / 4,795 (41.77%) | 0 | 2,792 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

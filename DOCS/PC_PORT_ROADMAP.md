@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,570 / 5,484 (46.86%) | 1 | 2,913 |
+| Total | 5,484 / 6,038 (90.82%) | 2,571 / 5,484 (46.88%) | 1 | 2,912 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,002 / 4,795 (41.75%) | 0 | 2,793 |
+| Game | 4,795 / 5,318 (90.17%) | 2,003 / 4,795 (41.77%) | 0 | 2,792 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -133,6 +133,8 @@ child-pointer family member; see
 [Working Note 056](WORKING_NOTES/056-game-dead-child-pointer-third-restoration-20260925.md).
 The final eight-difference ownership audit restored `func_151EF610`; see
 [Working Note 057](WORKING_NOTES/057-game-global-prng-step-restoration-20260925.md).
+The first nine-difference pass completed `func_150771F0`; see
+[Working Note 058](WORKING_NOTES/058-game-argument-load-schedule-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
