@@ -240,6 +240,10 @@ The relative-offset tree-walk pass completed `func_15002560` from an explicit
 top null test, scalar sibling-offset result, and two guarded commutative
 pointer-add words; see
 [Working Note 097](WORKING_NOTES/097-game-relative-offset-tree-walk-match-20260926.md).
+The slot-cursor allocation pass completed `func_150356C8` from a direct
+increment lifetime plus nine guarded scheduling words, including an explicit
+move of the `D_800C3F08` low relocation; see
+[Working Note 098](WORKING_NOTES/098-game-slot-cursor-allocation-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

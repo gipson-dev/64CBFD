@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Slot-cursor allocation byte-exact
+
+- Completed all 19 words of `func_150356C8`. Reusing and incrementing the
+  loaded slot byte directly restores retail's cursor base register and final
+  store while preserving the full original control flow and extent.
+- Nine guarded words restore the `t6`/`t7`/`t8`/`t9` arithmetic schedule and
+  `t0` table base. The `D_800C3F08` high relocation remains at relative
+  `0x10`; its paired low relocation moves from `0x18` to retail's `0x38`.
+- The patch table now has 790 unique rows. Linked `0x62B48` and retail
+  `0x62B78` share SHA-256
+  `ce94daa79799e73dfcc4b67025fc8e51fcb016d97ee6964f07a39a20f6c3b44c`.
+  Fresh scan: **2611 / 5484 (47.61%)** overall and
+  **2043 / 4795 (42.61%)** game, with debugger unchanged at **181 / 181**.
+
 ### Relative-offset tree walk byte-exact
 
 - Completed all 39 words of `func_15002560`. An explicit infinite loop with a
