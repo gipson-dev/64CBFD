@@ -278,8 +278,10 @@ end-to-end gameplay acceptance.
    source-only layout probes folded or grew a frame. `func_15144B68` is now
    byte-exact after a named result local restored retail's FP-register lifetime
    and two guarded words restored the independent opening compare/copy
-   schedule. Continue with 17-word `func_1518F858`, now the first
-   thirteen-difference game row.
+   schedule. `func_1518F858` is now byte-exact directly from an explicit early
+   return and volatile signed-byte index, restoring retail's repeated load,
+   branch-likely epilogue, and callback-table register lifetimes. Continue
+   with 17-word `func_1519072C`, now the first thirteen-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -403,5 +405,7 @@ The completed embedded vertex-copy base lifetime is in
 [Working Note 106](WORKING_NOTES/106-game-embedded-vertex-copy-match-20260926.md).
 The completed angle-normalization register lifetime and opening schedule are
 in [Working Note 107](WORKING_NOTES/107-game-angle-normalization-match-20260926.md).
+The completed conditional callback dispatch is in
+[Working Note 108](WORKING_NOTES/108-game-conditional-dispatch-match-20260926.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

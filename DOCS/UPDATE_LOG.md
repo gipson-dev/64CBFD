@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Conditional callback dispatch byte-exact
+
+- Completed all 17 words of `func_1518F858` directly from source. An explicit
+  early return and volatile signed-byte pointer restore retail's two offset
+  `0x89` loads, `beql` delay-slot epilogue, and callback-table register
+  lifetimes without guarded rows.
+- Linked `0x1BCCD8` and retail `0x1BCD08` share SHA-256
+  `3e7c845da43fd38459e5396305f94fc0425fb79a84c1e68d2d98228cbc382587`.
+  Fresh scan: **2620 / 5483 (47.78%)** overall and
+  **2052 / 4794 (42.80%)** game, with debugger unchanged at **181 / 181**.
+
 ### Angle normalization byte-exact
 
 - Completed all 24 words of `func_15144B68`. A named result local gives the

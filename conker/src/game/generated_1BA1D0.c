@@ -158,9 +158,13 @@ s32 func_1518F7C4() {
 }
 
 void func_1518F858(u8 *arg0) {
-    if (*(s8 *) (arg0 + 0x89) != -1) {
-        D_8008D680[*(s8 *) (arg0 + 0x89)]();
+    volatile s8 *index = (s8 *) (arg0 + 0x89);
+
+    if (*index == -1) {
+        return;
     }
+
+    D_8008D680[*index]();
 }
 
 void func_1518F89C(u8 *arg0) {

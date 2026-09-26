@@ -279,6 +279,10 @@ The angle-normalization pass completed `func_15144B68` with a named result
 local and two guarded opening schedule words; all 24 words now match retail.
 Continue with 17-word `func_1518F858`; see
 [Working Note 107](WORKING_NOTES/107-game-angle-normalization-match-20260926.md).
+The conditional callback-dispatch pass completed all 17 words of
+`func_1518F858` directly from an early return and volatile signed-byte index.
+Continue with 17-word `func_1519072C`; see
+[Working Note 108](WORKING_NOTES/108-game-conditional-dispatch-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
