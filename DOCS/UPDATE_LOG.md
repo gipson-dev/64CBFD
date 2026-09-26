@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Three-component vector scale loop byte-exact
+
+- Replaced the zero-returning placeholder for `func_15131958` with its
+  count-controlled loop over the three `f32` components at `arg0`. Each pass
+  scales all three components by `arg1`; the loop count comes from
+  `D_800BE9E4`.
+- The typed `f32` signature and corrected local call sites preserve the float
+  bits in `a1`. IDO directly recovers all 19 retail words, including the
+  unrolled load/multiply/store schedule and final store in the loop branch
+  delay slot. No guarded rows were added; the patch table remains at 1,059
+  unique rows.
+- Linked `0x15EDD8` and retail `0x15EE08` share SHA-256
+  `071b713780f4c96bc385a05aae4a1c1ec20fc1f2d62dd15ac19f9760f6e15877`.
+  Fresh scan: **2660 / 5483 (48.51%)** overall and
+  **2092 / 4794 (43.64%)** game, with debugger unchanged at **181 / 181**.
+
 ### Nullable two-field cleanup byte-exact
 
 - Completed all 19 words of `func_150F631C` directly from C. It passes each

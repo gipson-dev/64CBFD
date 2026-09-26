@@ -25,10 +25,11 @@ scan counts the angle-tolerance check `func_150767F4` and packed actor-mask
 writer `func_1507A428` as byte-exact too. The indexed `u16` table lookup
 `func_15084CB0` and indexed 16-byte record lookup `func_15086D48` are now
 byte-exact as well. The nullable two-field cleanup `func_150F631C` now matches
-directly from C too, for 2,659 byte-exact C functions. Keep `func_150721A4`
-parked as a compiler-overflow row, skip handwritten `func_15125628`, and
-recover the 19-word placeholder `func_15131958`; the measured boundary is in
-[Working Note 147](DOCS/WORKING_NOTES/147-game-nullable-field-cleanup-match-20260926.md).
+directly from C too. The three-component vector scaler `func_15131958` now
+matches directly from C as well, for 2,660 byte-exact C functions. Keep
+`func_150721A4` parked as a compiler-overflow row, skip handwritten
+`func_15125628`, and continue with `func_151419D0`; the measured boundary is
+in [Working Note 148](DOCS/WORKING_NOTES/148-game-vector-scale-loop-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -54,9 +55,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,659 / 5,483 (48.50%) | 1 | 2,823 |
+| Total | `[############------------]` 2,660 / 5,483 (48.51%) | 1 | 2,822 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,091 / 4,794 (43.62%) | 0 | 2,703 |
+| Game | `[##########--------------]` 2,092 / 4,794 (43.64%) | 0 | 2,702 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

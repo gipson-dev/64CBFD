@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,659 / 5,483 (48.50%) | 1 | 2,823 |
+| Total | 5,483 / 6,038 (90.81%) | 2,660 / 5,483 (48.51%) | 1 | 2,822 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,091 / 4,794 (43.62%) | 0 | 2,703 |
+| Game | 4,794 / 5,318 (90.15%) | 2,092 / 4,794 (43.64%) | 0 | 2,702 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -409,8 +409,12 @@ The nullable-field cleanup pass then completed all 19 words of
 `func_150F631C` directly from C after recovering its owner lifetime and
 volatile repeated first-field loads; see
 [Working Note 147](WORKING_NOTES/147-game-nullable-field-cleanup-match-20260926.md).
-Skip handwritten `func_15125628` and recover 19-word zero placeholder
-`func_15131958`, which has 16 real differences.
+The vector-scale pass then completed all 19 words of `func_15131958` directly
+from C after restoring its count-controlled three-component loop and typed
+call boundary; see
+[Working Note 148](WORKING_NOTES/148-game-vector-scale-loop-match-20260926.md).
+Skip handwritten `func_15125628` and continue with 43-word
+`func_151419D0`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 
