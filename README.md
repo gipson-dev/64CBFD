@@ -42,11 +42,13 @@ recovering volatile callback-table dispatch, with fifteen guarded rows for
 the persistent IDO schedule and register allocation, bringing the total to
 2,666. The row/column list-head inserter `func_15168A4C` is now byte-exact
 after restoring typed node and scalar index lifetimes, with four guarded
-register-color words, bringing the total to 2,667. Keep `func_150721A4`
-parked as a compiler-overflow row; keep handwritten/generated bitstream rows
-in the assembly queue; and continue with `func_150747E4`. The measured
-boundary is in
-[Working Note 155](DOCS/WORKING_NOTES/155-game-row-list-head-insert-match-20260926.md).
+register-color words, bringing the total to 2,667. The selected actor-state
+cleanup `func_150747E4` is now byte-exact after recovering distinct slot,
+decremented-index, update-value, and actor-pointer lifetimes, with ten guarded
+compiler words, bringing the total to 2,668. Keep `func_150721A4` parked as a
+compiler-overflow row; keep handwritten/generated bitstream rows in the
+assembly queue; and continue with `func_150849CC`. The measured boundary is in
+[Working Note 156](DOCS/WORKING_NOTES/156-game-selected-actor-state-cleanup-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -72,9 +74,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,667 / 5,483 (48.64%) | 1 | 2,815 |
+| Total | `[############------------]` 2,668 / 5,483 (48.66%) | 1 | 2,814 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,099 / 4,794 (43.78%) | 0 | 2,695 |
+| Game | `[##########--------------]` 2,100 / 4,794 (43.80%) | 0 | 2,694 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

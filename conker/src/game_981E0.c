@@ -1900,11 +1900,16 @@ s32 func_150746F0() {
 }
 void func_150747E4(void) {
     struct127 *temp_a0;
+    s32 index;
+    s32 value;
 
-    if (D_800D154C->unk65 != 0) {
-        temp_a0 = &D_800CC2D0[D_800D154C->unk65 - 1];
+    index = D_800D154C->unk65;
+    if (index != 0) {
+        index--;
+        value = D_800D1580;
+        temp_a0 = &D_800CC2D0[index];
         temp_a0->unk218 = NULL;
-        temp_a0->unk232 = D_800D1580;
+        temp_a0->unk232 = value;
     }
 }
 

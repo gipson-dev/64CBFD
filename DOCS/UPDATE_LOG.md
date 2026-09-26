@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Selected actor-state cleanup byte-exact
+
+- Completed all 23 words of `func_150747E4`. When the active object's slot
+  byte is nonzero, it selects `D_800CC2D0[slot - 1]`, clears that actor's
+  pointer at offset `0x218`, and stores the low byte of `D_800D1580` at
+  offset `0x232`.
+- Explicit selected-slot, decremented-index, full-width update-value, and
+  actor-pointer lifetimes recover the retail stride calculation, load timing,
+  final `a0` pointer, stores, branch, and length. Ten guarded words normalize
+  two checked relocation moves plus IDO's remaining index/value register
+  choices. The patch table is now 1,106 unique rows with no duplicate keys.
+- Linked `0xA1C64` and retail `0xA1C94` share SHA-256
+  `e55e08ffb3090ae280fa188c1f8d04a0896849388ab6ef9c6ed04b7cac1774e0`.
+  Fresh scan: **2668 / 5483 (48.66%)** overall and
+  **2100 / 4794 (43.80%)** game, with debugger unchanged at **181 / 181**.
+
 ### Row-list head insertion byte-exact
 
 - Completed all 20 words of `func_15168A4C`. It selects one of two

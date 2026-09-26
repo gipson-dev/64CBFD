@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,667 / 5,483 (48.64%) | 1 | 2,815 |
+| Total | 5,483 / 6,038 (90.81%) | 2,668 / 5,483 (48.66%) | 1 | 2,814 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,099 / 4,794 (43.78%) | 0 | 2,695 |
+| Game | 4,794 / 5,318 (90.15%) | 2,100 / 4,794 (43.80%) | 0 | 2,694 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -442,8 +442,11 @@ The row-list head-insertion pass then completed all 20 words of
 lifetimes, plus four guarded register-color words; see
 [Working Note 155](WORKING_NOTES/155-game-row-list-head-insert-match-20260926.md).
 Keep generated unaligned-load helpers `func_151F892C` and `func_151F8960` in
-the raw-assembly queue and continue with 23-word `func_150747E4`, which has
-17 real differences.
+the raw-assembly queue. The selected actor-state cleanup pass then completed
+all 23 words of `func_150747E4` after recovering its scalar and pointer
+lifetimes, plus ten guarded relocation/register-scheduling words; see
+[Working Note 156](WORKING_NOTES/156-game-selected-actor-state-cleanup-match-20260926.md).
+Continue with 19-word `func_150849CC`, which has 17 real differences.
 
 Current host-port progression and acceptance boundaries:
 
