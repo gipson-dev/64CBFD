@@ -271,6 +271,10 @@ The two-component scaling pass converted `func_15131918` from a false
 placeholder to byte-exact C, with float-typed scale loads at both callers and
 no guarded rows; see
 [Working Note 105](WORKING_NOTES/105-game-two-component-scaling-loop-match-20260926.md).
+The embedded vertex-copy pass completed `func_1514143C` with thirteen guarded
+words and two inserted schedule words, retaining retail's interior
+`arg0 + 0x110` base without changing the logical C; see
+[Working Note 106](WORKING_NOTES/106-game-embedded-vertex-copy-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

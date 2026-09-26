@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Embedded vertex-copy base lifetime byte-exact
+
+- Completed all 15 words of `func_1514143C`. The logical C already copied
+  position components `0x34`, `0x38`, and `0x3C` into the optional vertex at
+  `0x154`; retail additionally retains an embedded `arg0 + 0x110` base and
+  reloads that vertex through offset `0x44` for each store.
+- Nested-layout source probes still folded to direct `0x154(a0)` accesses. A
+  volatile register-pointer probe retained the base but introduced an 8-byte
+  frame and expanded to 20 words, so it was rejected. Thirteen guarded words
+  plus two supported inserted words preserve the exact retail schedule.
+- The patch table now has 821 unique rows. Linked `0x16E8BC` and retail
+  `0x16E8EC` share SHA-256
+  `ece713344a6d544b52be8d4872c069537905ba5ec0888141d0f8d854a64c9dcb`.
+  Fresh scan: **2618 / 5483 (47.75%)** overall and
+  **2050 / 4794 (42.76%)** game, with debugger unchanged at **181 / 181**.
+
 ### Two-component scaling loop byte-exact
 
 - Converted all 16 words of `func_15131918` from a false `return 0`

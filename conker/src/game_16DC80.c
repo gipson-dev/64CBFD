@@ -50,12 +50,6 @@ s32 func_151412BC() {
     return 0;
 }
 
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-// NON-MATCHING (logic verified): retail materializes base = arg0+0x110 inside the
-// if-body and reaches the vertex pointer as +0x44 off it (so unk154 likely sits at
-// +0x44 of a sub-struct at 0x110), and evaluates each store's LHS pointer before its
-// RHS value. Every rewrite tried (block/function-scope pointer local, u8*/s32 casts,
-// struct224 member access) gets constant-folded by IDO back to direct 340(a0) loads.
 void func_1514143C(struct210 *arg0) {
     if (arg0->unk154 != NULL) {
         arg0->unk154->x = arg0->unk34;

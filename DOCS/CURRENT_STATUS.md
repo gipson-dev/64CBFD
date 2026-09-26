@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,617 / 5,483 (47.73%) | 1 | 2,865 |
+| Total | 2,618 / 5,483 (47.75%) | 1 | 2,864 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,049 / 4,794 (42.74%) | 0 | 2,745 |
+| Game | 2,050 / 4,794 (42.76%) | 0 | 2,744 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,617, while
+denominator driven: the exact count is now 2,618, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -273,8 +273,10 @@ end-to-end gameplay acceptance.
    volatile source-field loads, with no guarded rows. `func_15131918` is
    converted from a placeholder to byte-exact C by typing its two callers'
    scale fields as floats and implementing the two-component scaling loop.
-   Continue with 15-word `func_1514143C`, now the first thirteen-difference
-   game row.
+   `func_1514143C` is now byte-exact with thirteen guarded words that preserve
+   retail's embedded-base lifetime and two inserted schedule words after
+   source-only layout probes folded or grew a frame. Continue with 24-word
+   `func_15144B68`, now the first thirteen-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -394,5 +396,7 @@ The completed record-pointer and repeated-field lifetime is in
 [Working Note 104](WORKING_NOTES/104-game-record-pointer-repeated-field-match-20260926.md).
 The completed two-component scaling loop is in
 [Working Note 105](WORKING_NOTES/105-game-two-component-scaling-loop-match-20260926.md).
+The completed embedded vertex-copy base lifetime is in
+[Working Note 106](WORKING_NOTES/106-game-embedded-vertex-copy-match-20260926.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

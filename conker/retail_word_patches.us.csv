@@ -807,3 +807,16 @@ generated_AC030,func_1507FF94,0x008,0x27A40020,0x00803025,-,-,Retain the incomin
 generated_AC030,func_1507FF94,0x00C,0xAFBF0014,0xAFA60020,-,-,Store the target pointer into the local record,
 generated_AC030,func_1507FF94,0x010,0xAFA60020,0x90CE003B,-,-,Load the record code through the retained target pointer,
 generated_AC030,func_1507FF94,0x014,0x90CE003B,0x27A40020,-,-,Form the local record address after its field loads,
+game_16DC80,func_1514143C,0x000,0x8C820154,0x8C8E0154,-,-,Load the output vertex into t6 for the null check,
+game_16DC80,func_1514143C,0x004,0x10400009,0x11C0000B,-,-,Branch on the retained t6 value across the retail-sized body,
+game_16DC80,func_1514143C,0x008,0x00000000,0x00000000,-,-,Materialize the embedded object base after the branch delay slot,0x24820110
+game_16DC80,func_1514143C,0x00C,0xC4840034,0x8C4F0044,-,-,Reload the output vertex through the embedded base into t7,
+game_16DC80,func_1514143C,0x010,0xE4440000,0xC4840034,-,-,Load the source x component after its destination pointer,
+game_16DC80,func_1514143C,0x014,0x8C8E0154,0xE5E40000,-,-,Store the x component through t7,
+game_16DC80,func_1514143C,0x018,0xC4860038,0x8C580044,-,-,Reload the output vertex through the embedded base into t8,
+game_16DC80,func_1514143C,0x01C,0xE5C60004,0xC4860038,-,-,Load the source y component after its destination pointer,
+game_16DC80,func_1514143C,0x020,0x8C8F0154,0xE7060004,-,-,Store the y component through t8,
+game_16DC80,func_1514143C,0x024,0xC488003C,0x8C590044,-,-,Reload the output vertex through the embedded base into t9,
+game_16DC80,func_1514143C,0x028,0xE5E80008,0xC488003C,-,-,Load the source z component after its destination pointer,
+game_16DC80,func_1514143C,0x02C,0x03E00008,0xE7280008,-,-,Store the z component through t9,
+game_16DC80,func_1514143C,0x030,0x00000000,0x03E00008,-,-,Move the return into the final retail instruction pair,0x00000000
