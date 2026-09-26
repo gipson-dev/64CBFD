@@ -6,6 +6,12 @@ void func_15169260(void *, s32, s32, u8);
 extern u8 D_800A74D4[];
 typedef struct { s32 val; } OneWord1BA1D0;
 typedef struct {
+    f32 value;
+    f32 pad4[2];
+    f32 base;
+    f32 scale;
+} FloatUpdate1BA1D0;
+typedef struct {
     u8 pad0[0x1C];
     s16 timer;
     u8 pad1E[0x3E];
@@ -168,11 +174,12 @@ void func_1518F858(u8 *arg0) {
 }
 
 void func_1518F89C(u8 *arg0) {
-    u8 *temp_v0;
-    f32 r = func_150ADA68();
+    FloatUpdate1BA1D0 *temp_v0;
+    f32 r;
 
-    temp_v0 = arg0 + 0x30;
-    *(f32 *) temp_v0 = r * *(f32 *) (temp_v0 + 0x10) + *(f32 *) (temp_v0 + 0xC);
+    r = func_150ADA68();
+    temp_v0 = (FloatUpdate1BA1D0 *) (arg0 + 0x30);
+    temp_v0->value = r * temp_v0->scale + temp_v0->base;
     func_1518F8E0(arg0);
 }
 

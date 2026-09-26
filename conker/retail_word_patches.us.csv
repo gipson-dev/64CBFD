@@ -866,3 +866,15 @@ game_BC510,func_1508F060,0x018,0xA040003D,0x25EF0000,-,R_MIPS_LO16:D_800D2460,Fi
 game_BC510,func_1508F060,0x01C,0xA040004D,0x00027100,-,-,Scale selected row index by sixteen,0x01CF1821
 game_BC510,func_1508F060,0x020,0xA040005D,0xA060001D,-,-,Clear selected row relative byte 0x1D,0xA060002D
 game_BC510,func_1508F060,0x024,0xA040002D,0xA060003D,-,-,Clear selected row relative byte 0x3D,0xA060000D
+generated_1BA1D0,func_1518F89C,0x008,0x0C000000,0xAFA40018,R_MIPS_26:func_150ADA68,-,Store the object argument before the sample call,
+generated_1BA1D0,func_1518F89C,0x00C,0xAFA40018,0x0C000000,-,R_MIPS_26:func_150ADA68,Move the sample call after the argument-home store,0x00000000
+generated_1BA1D0,func_1518F89C,0x014,0xC4840040,0x24820030,-,-,Retain the float-record base in v0,
+generated_1BA1D0,func_1518F89C,0x018,0xC488003C,0xC4440010,-,-,Load the scale field through the retained base,
+generated_1BA1D0,func_1518F89C,0x01C,0x46002182,0xC448000C,-,-,Load the base field through the retained base,
+generated_1BA1D0,func_1518F89C,0x020,0x46083280,0x46040182,-,-,Multiply the sample by the scale in retail operand order,
+generated_1BA1D0,func_1518F89C,0x024,0x0C000000,0x46083280,R_MIPS_26:func_1518F8E0,-,Add the stored base after the scaled sample,
+generated_1BA1D0,func_1518F89C,0x028,0xE48A0030,0x0C000000,-,R_MIPS_26:func_1518F8E0,Move the update call after the float arithmetic,
+generated_1BA1D0,func_1518F89C,0x02C,0x8FBF0014,0xE44A0000,-,-,Store the result through v0 in the call delay slot,
+generated_1BA1D0,func_1518F89C,0x030,0x27BD0018,0x8FBF0014,-,-,Restore the return address after the update call,
+generated_1BA1D0,func_1518F89C,0x034,0x03E00008,0x27BD0018,-,-,Restore the frame before returning,
+generated_1BA1D0,func_1518F89C,0x038,0x00000000,0x03E00008,-,-,Move the return into the final instruction pair,

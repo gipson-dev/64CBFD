@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Float-record update byte-exact
+
+- Gave `func_1518F89C` a typed record for its float fields at object offsets
+  `0x30`, `0x3C`, and `0x40`, recovering retail's `f4/f8/f6/f10` allocation.
+- Twelve guarded rows and one inserted `nop` restore the first call's argument
+  home and delay slot, retain the field base in `v0`, preserve retail's FP
+  operand order, move the second call relocation, and store through `v0` in
+  that call's delay slot.
+- Linked `0x1BCD1C` and retail `0x1BCD4C` share SHA-256
+  `5f7e34a4ac1ba1b56e1d13de47a39512e6935234606e7a12141f5aeb301270f5`.
+  Fresh scan: **2631 / 5483 (47.98%)** overall and
+  **2063 / 4794 (43.03%)** game, with debugger unchanged at **181 / 181**.
+
 ### Selected state-block reset byte-exact
 
 - Corrected `func_1508F060` to select row two of `D_800D2460` before clearing

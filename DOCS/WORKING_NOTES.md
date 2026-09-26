@@ -257,9 +257,11 @@ one-word aggregate and the callee's first parameter became `void *`.
 expression forwarded all three incoming arguments, restoring retail's signed
 halfword narrowing and live-register ABI. `func_1508F060` then matched after
 its source selected state row two and nine guarded rows with three insertions
-restored retail's explicit pointer arithmetic. Continue with 17-word
-`func_1518F89C`. The latest result is in
-[Working Note 118](WORKING_NOTES/118-game-selected-state-block-reset-match-20260926.md).
+restored retail's explicit pointer arithmetic. `func_1518F89C` then matched
+from a typed float-record view plus twelve guarded scheduling words and one
+inserted call-delay `nop`. Continue with 17-word `func_151A561C`. The latest
+result is in
+[Working Note 119](WORKING_NOTES/119-game-float-record-update-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
