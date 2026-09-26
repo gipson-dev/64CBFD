@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Interpolation register match byte-exact
+
+- Completed all 58 words of `func_15074A94` by expressing the interpolation as
+  one factor-times-distance calculation and guarding eleven residual
+  floating-point register choices. The three patched constant loads retain
+  their original relocations, and no words or relocations move.
+- Added `retail_word_patches.us.csv` as an explicit prerequisite of both
+  hand-maintained padded-object rules. The subsequent complete invalidation and
+  rebuild passed, proving all current expected-word guards against fresh
+  compiler output instead of potentially stale objects.
+- The patch table now has 700 unique rows. The complete linked span at
+  `0xA1F14` and retail span at `0xA1F44` share SHA-256
+  `4b85cc9681ac9d582b3f068553382b892a04d8c7201c789e79347a5ba4cbfc86`.
+  Fresh scan: **2592 / 5484 (47.26%)** overall and
+  **2024 / 4795 (42.21%)** game, with debugger unchanged at **181 / 181**.
+
 ### Local-record pointer schedule byte-exact
 
 - Completed all 20 words of `func_150717E0` through eleven guarded schedule

@@ -1966,7 +1966,6 @@ void func_15074A6C(void) {
     }
 }
 
-// NON-MATCHING: JUSTREG
 void func_15074A94(void) {
     f32 phi_f2;
     f32 temp_f0;
@@ -1982,11 +1981,11 @@ void func_15074A94(void) {
     } else if (D_8009A0F0 < temp_f0) {
         phi_f2 = D_800D154C->unk148;
     } else {
-        f32 tmp = D_8009A0F4;
+        f32 temp_f4 = temp_f0 - 200.0f;
+        f32 temp_f18 = D_8009A0F4;
         phi_f2 = D_800D154C->unk148;
-        phi_f2 = phi_f2 - tmp;
-        phi_f2 = phi_f2 * ((temp_f0 - 200.0f) / D_8009A0F8);
-        phi_f2 = phi_f2 + tmp;
+        phi_f2 = ((temp_f4 / D_8009A0F8) *
+                  (phi_f2 - temp_f18)) + temp_f18;
     }
     D_800D154C->unk154 = D_800D154C->unk158 = phi_f2;
     D_800D154C->unk15C = D_8009A0FC;
