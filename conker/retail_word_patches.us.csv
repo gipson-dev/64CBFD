@@ -1058,3 +1058,4 @@ generated_B3020,func_15086D48,0x038,0x24A50010,0x1420FFF8,-,-,Branch back while 
 generated_B3020,func_15086D48,0x03C,0x240200FF,0x24A50010,-,-,Advance the record cursor in the loop branch delay slot,
 generated_B3020,func_15086D48,0x040,0x03E00008,0x240200FF,-,-,Materialize the no-match return value after the expanded loop,
 generated_B3020,func_15086D48,0x044,0x00000000,0x03E00008,-,-,Move the fallback return jump after the restored value load,
+game_16EE20,func_151419D0,0x088,0x548A0005,0x55440005,-,-,Preserve alternate/current branch operand order,

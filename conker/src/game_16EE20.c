@@ -70,18 +70,21 @@ void func_151419B0(void *arg0) {
 void func_151419D0(u8 *arg0, u8 *arg1, u8 arg2) {
     u8 *dst = arg0 + 0x28;
     s32 current;
+    s32 source;
 
     if (arg2 == 0) {
-        if ((*(s32 *)arg1 == *(s32 *)(dst + 4)) || (arg1[4] == dst[8])) {
+        source = *(s32 *)arg1;
+        if ((source == *(s32 *)(dst + 4)) || (dst[8] == arg1[4])) {
             func_1516972C(arg0);
         }
     } else if (arg2 == 0x2D) {
         current = *(s32 *)(dst + 4);
-        if (*(s32 *)arg1 == current) {
+        source = *(s32 *)arg1;
+        if (source == current) {
             *(s32 *)(dst + 4) = *(s32 *)(arg1 + 4);
             dst[8] = arg1[9];
         } else if (*(s32 *)(arg1 + 4) == current) {
-            *(s32 *)(dst + 4) = *(s32 *)arg1;
+            *(s32 *)(dst + 4) = source;
             dst[8] = arg1[8];
         }
     }

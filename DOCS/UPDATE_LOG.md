@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Event-record link update byte-exact
+
+- Completed all 43 words of `func_151419D0`. Event zero destroys the owner
+  when either the record identifier or selector matches. Event `0x2D`
+  replaces the owner's current endpoint and selector with the opposite side
+  of a two-endpoint record.
+- Sharing the loaded source endpoint across both event paths recovers retail's
+  word and byte load order plus fifteen register-allocation words. One guarded
+  row preserves the compiler-canonical alternate/current `bnel` operand order;
+  the patch table now has 1,060 unique rows and zero duplicate keys.
+- Linked `0x16EE50` and retail `0x16EE80` share SHA-256
+  `23565b1986f5d0cdc768681a8e31d9b1cfdb6d1f9fc76330ea2eaa2a60523b68`.
+  Fresh scan: **2661 / 5483 (48.53%)** overall and
+  **2093 / 4794 (43.66%)** game, with debugger unchanged at **181 / 181**.
+
 ### Three-component vector scale loop byte-exact
 
 - Replaced the zero-returning placeholder for `func_15131958` with its
