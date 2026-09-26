@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Two-component scaling loop byte-exact
+
+- Converted all 16 words of `func_15131918` from a false `return 0`
+  placeholder to byte-exact C. The loop scales float components zero and two
+  for `D_800BE9E4` records.
+- Both callers now type their field at offset `0xA8` as `f32`, preserving the
+  mixed pointer/float ABI's raw `lw a1` transfer and retail's opening
+  `mtc1 a1,f12`. A raw-bit union probe overflowed the function and was
+  rejected. No guarded rows were added.
+- The patch table remains at 808 unique rows. Linked `0x15ED98` and retail
+  `0x15EDC8` share SHA-256
+  `3357c69ce2bd665e8ca4744d549d7068cc8edb12fb9c766e8a0443c38f6f1232`.
+  Fresh scan: **2617 / 5483 (47.73%)** overall and
+  **2049 / 4794 (42.74%)** game, with debugger unchanged at **181 / 181**.
+
 ### Record-pointer repeated-field lifetime byte-exact
 
 - Completed all 19 words of `func_150CFBEC` directly from source. Moving the

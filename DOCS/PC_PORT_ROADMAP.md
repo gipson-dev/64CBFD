@@ -267,6 +267,10 @@ The record-pointer lifetime pass completed `func_150CFBEC` directly by
 materializing its output record before the condition and retaining two
 volatile source-field reads, without guarded rows; see
 [Working Note 104](WORKING_NOTES/104-game-record-pointer-repeated-field-match-20260926.md).
+The two-component scaling pass converted `func_15131918` from a false
+placeholder to byte-exact C, with float-typed scale loads at both callers and
+no guarded rows; see
+[Working Note 105](WORKING_NOTES/105-game-two-component-scaling-loop-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

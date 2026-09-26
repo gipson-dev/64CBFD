@@ -10,7 +10,7 @@ extern s32 D_800BE9E4;
 
 void func_151318E8(f32 *, f32);
 
-s32 func_15131918();
+void func_15131918(f32 *, f32);
 s32 func_15131958();
 
 s32 func_151319C4();
@@ -57,7 +57,7 @@ s32 func_151316AC(u8 *arg0, s32 arg1) {
 s32 func_151316DC(u8 *arg0, s32 arg1) {
     u8 *temp_a2 = arg0;
 
-    func_15131918(temp_a2 + 0x58, *(s32 *)(temp_a2 + 0xA8));
+    func_15131918((f32 *) (temp_a2 + 0x58), *(f32 *) (temp_a2 + 0xA8));
     return 1;
 }
 
@@ -106,8 +106,14 @@ void func_151318E8(f32 *arg0, f32 arg1) {
     }
 }
 
-s32 func_15131918() {
-    return 0;
+void func_15131918(f32 *arg0, f32 arg1) {
+    s32 count = D_800BE9E4;
+
+    while (count > 0) {
+        arg0[0] *= arg1;
+        arg0[2] *= arg1;
+        count--;
+    }
 }
 
 s32 func_15131958() {
@@ -128,7 +134,7 @@ void func_15131AFC(u8 *arg0, s32 arg1) {
 }
 
 void func_15131B3C(u8 *arg0, s32 arg1) {
-    func_15131918(arg0 + 0x58, *(s32 *) (arg0 + 0xA8));
+    func_15131918((f32 *) (arg0 + 0x58), *(f32 *) (arg0 + 0xA8));
     func_151319C4(arg0, arg1, arg0 + 0xB0);
 }
 
