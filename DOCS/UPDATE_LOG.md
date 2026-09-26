@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Two-word record forwarder byte-exact
+
+- Completed all 18 words of `func_15133E3C` by replacing two scalar array
+  assignments with a `TwoWord15F680` aggregate initializer and correcting
+  `func_15169260`'s first parameter to `void *`. This restores retail's
+  direct `a0` local address, `at`/`t9` copy, and call-delay store from C.
+- No guarded rows were added. The patch table remains at 668 unique rows.
+  The complete linked span at `0x1612BC` and retail span at `0x1612EC` share
+  SHA-256
+  `edc82dab6f11e3d95b78955ef9d2bb24d4330125fc2decc6f04d9861724ebd28`.
+  Fresh scan: **2588 / 5484 (47.19%)** overall and
+  **2020 / 4795 (42.13%)** game, with debugger unchanged at **181 / 181**.
+
 ### Float-state reset byte-exact
 
 - Completed all 17 words of `func_15133A50` by naming the pending sum,
