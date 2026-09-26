@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, sound-command wrapper match complete).** The current
-linked checkpoint is `2560 / 5489 (46.64%)` exact C functions, with one
-address-drift blocker and 2,928 genuinely different C functions. The tree
-contains 549 raw-assembly functions, so the higher percentage than July is
+**Active (2026-09-25, dead-pointer expression assembly restored).** The current
+linked checkpoint is `2560 / 5488 (46.65%)` exact C functions, with one
+address-drift blocker and 2,927 genuinely different C functions. The tree
+contains 550 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
 
@@ -138,7 +138,9 @@ through symmetric guarded temporary-register normalization, and
 six-difference game tier is complete. `func_15019BB8` now matches through
 guarded frame-size and relocation-preserving viewport-address register
 normalization. `func_1509F6B0` now matches through guarded incoming-argument
-spill/reload scheduling. Continue at 14-word `func_150C7930`. Keep
+spill/reload scheduling. `func_150C7930` is restored to its original 14-word
+assembly extent because IDO removes retail's dead pointer update. Continue at
+17-word `func_150CDB6C`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -220,6 +222,8 @@ The completed viewport setup frame/address normalization is in
 [Working Note 042](WORKING_NOTES/042-game-viewport-setup-frame-match-20260925.md).
 The completed sound-command wrapper scheduling is in
 [Working Note 043](WORKING_NOTES/043-game-sound-command-wrapper-match-20260925.md).
+The restored dead-pointer-expression assembly boundary is in
+[Working Note 044](WORKING_NOTES/044-game-dead-pointer-expression-restoration-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

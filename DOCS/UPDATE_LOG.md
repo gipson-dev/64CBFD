@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Original dead-pointer expression body restored
+
+- Restored `func_150C7930` to its original 14-word assembly ownership after
+  exhaustive C forms could not retain retail's discarded
+  `temp_v0 + 0x1E0` computation without adding non-retail work.
+- Preserved the original global HI16/LO16 and call relocations. No retail-word
+  patch was added; the table remains at 526 rows with no duplicate keys.
+- Independent comparison of the complete 56-byte linked and pristine retail
+  spans produced SHA-256
+  `aea09cd04df8f6357dac1d131c53561000dc6cd942a8eb0b1c753bf8a23cd5e1`.
+  Fresh scan: **2560 / 5488 (46.65%)** overall and
+  **1992 / 4799 (41.51%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game sound-command wrapper byte-exact
 
 - Completed all 14 words of `func_1509F6B0` with seven expected-word guards

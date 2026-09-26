@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,489 / 6,038 (90.91%) | 549 | 1,932,840 / 2,256,728 (85.65%) |
+| Total | 5,488 / 6,038 (90.89%) | 550 | 1,932,784 / 2,256,728 (85.65%) |
 | Init | 508 / 538 (94.42%) | 30 | 148,936 / 164,048 (90.79%) |
-| Game | 4,800 / 5,318 (90.26%) | 518 | 1,764,264 / 2,072,880 (85.11%) |
+| Game | 4,799 / 5,318 (90.24%) | 519 | 1,764,208 / 2,072,880 (85.11%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,560 / 5,489 (46.64%) | 1 | 2,928 |
+| Total | 2,560 / 5,488 (46.65%) | 1 | 2,927 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,992 / 4,800 (41.50%) | 0 | 2,808 |
+| Game | 1,992 / 4,799 (41.51%) | 0 | 2,807 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,560, while
-489 functions moved from C back to assembly. The paired event-swap pass added
+490 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -71,6 +71,8 @@ Viewport setup `func_15019BB8` is byte-exact through guarded frame-size and
 relocation-preserving address-register normalization.
 Sound-command wrapper `func_1509F6B0` is byte-exact through guarded incoming
 argument spill/reload scheduling.
+`func_150C7930` is restored to its original 14-word assembly ownership because
+IDO eliminates retail's dead `temp_v0 + 0x1E0` expression.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -127,8 +129,10 @@ end-to-end gameplay acceptance.
    `func_1516F91C`, and `func_1516F984` cluster is byte-exact, completing the
    six-difference game tier. `func_15019BB8` is now byte-exact through seven
    guarded frame/address words. `func_1509F6B0` is byte-exact through seven
-   guarded spill/reload scheduling words. Continue at 14-word
-   `func_150C7930`, the next seven-difference game row.
+   guarded spill/reload scheduling words. `func_150C7930` is restored to its
+   original 14-word assembly extent after exhaustive C forms could not retain
+   its dead pointer update. Continue at 17-word `func_150CDB6C`, the next
+   seven-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -206,5 +210,7 @@ The completed viewport setup normalization is in
 [Working Note 042](WORKING_NOTES/042-game-viewport-setup-frame-match-20260925.md).
 The completed sound-command wrapper scheduling is in
 [Working Note 043](WORKING_NOTES/043-game-sound-command-wrapper-match-20260925.md).
+The restored dead-pointer-expression assembly boundary is in
+[Working Note 044](WORKING_NOTES/044-game-dead-pointer-expression-restoration-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
