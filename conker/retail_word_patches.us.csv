@@ -1,4 +1,10 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations
+init_3C40,func_100043B4,0x3C,0x0C000000,0xAC68FFFC,R_MIPS_26:osSetIntMask,-,Store the updated header before restoring the interrupt mask,,
+init_3C40,func_100043B4,0x40,0xAC68FFFC,0x0C000000,-,R_MIPS_26:osSetIntMask,Schedule the interrupt-mask restore after the header store,,
+init_3C40,func_100043B4,0x44,0x8FBF0014,0x2463FFF4,,,Retain retail's dead base-pointer adjustment in the call delay slot,,
+init_3C40,func_100043B4,0x48,0x27BD0018,0x8FBF0014,,,Restore ra after the second call,,
+init_3C40,func_100043B4,0x4C,0x03E00008,0x27BD0018,,,Restore the frame before returning,,
+init_3C40,func_100043B4,0x50,0x00000000,0x03E00008,,,Return at the retail schedule position,,
 init_EB00,func_1000FE88,0x3C,0xAFA30018,0xAFA3001C,,,Preserve retail current-pointer spill in the top frame slot,,
 init_EB00,func_1000FE88,0x40,0x8FA30018,0x8FA3001C,,,Reload current pointer from the retail frame slot,,
 debugger,func_16001390,0x13C,0x00095040,0x00193C03,,,Schedule row sign extension before stride scaling

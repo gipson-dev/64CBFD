@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, Init interrupt wrappers restored).** The current linked
-checkpoint is `2689 / 5475 (49.11%)` exact C functions, with one
-address-drift blocker and 2,785 genuinely different C functions. Init is
-`388 / 501 (77.45%)` exact, with 112 genuinely different C rows. The tree
+**Active (2026-09-26, Init header-tag update matched).** The current linked
+checkpoint is `2690 / 5475 (49.13%)` exact C functions, with one
+address-drift blocker and 2,784 genuinely different C functions. Init is
+`389 / 501 (77.64%)` exact, with 111 genuinely different C rows. The tree
 contains 563 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -410,6 +410,11 @@ handwritten CP0 bodies. Both complete 32-byte spans independently match
 retail. Continue ordinary Init C matching with 22-word `func_100043B4`, which
 has six real differences. The interrupt result is in
 [Working Note 181](WORKING_NOTES/181-init-handwritten-interrupt-wrapper-restoration-20260926.md).
+`func_100043B4` is now byte-exact through a guarded six-word schedule that
+moves the second call relocation and retains retail's dead pointer update.
+Continue ordinary Init C matching with 47-word `func_1000FD38`, which has six
+real differences. The header-tag result is in
+[Working Note 182](WORKING_NOTES/182-init-header-tag-update-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

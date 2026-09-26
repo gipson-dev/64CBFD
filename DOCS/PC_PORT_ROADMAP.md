@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,475 / 6,038 (90.68%) | 2,689 / 5,475 (49.11%) | 1 | 2,785 |
-| Init | 501 / 538 (93.12%) | 388 / 501 (77.45%) | 1 | 112 |
+| Total | 5,475 / 6,038 (90.68%) | 2,690 / 5,475 (49.13%) | 1 | 2,784 |
+| Init | 501 / 538 (93.12%) | 389 / 501 (77.64%) | 1 | 111 |
 | Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -552,7 +552,10 @@ The following audit restored handwritten interrupt wrappers `__osRestoreInt`
 and `__osDisableInt` from false C placeholders to their original eight-word
 CP0 bodies; see
 [Working Note 181](WORKING_NOTES/181-init-handwritten-interrupt-wrapper-restoration-20260926.md).
-Continue ordinary Init C matching with 22-word `func_100043B4`.
+The next ordinary Init pass completed `func_100043B4` through a guarded,
+relocation-aware six-word schedule; see
+[Working Note 182](WORKING_NOTES/182-init-header-tag-update-match-20260926.md).
+Continue with 47-word `func_1000FD38`, which has six real differences.
 
 Current host-port progression and acceptance boundaries:
 

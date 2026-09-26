@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Init header-tag update byte-exact
+
+- Completed all 22 words of `func_100043B4`, which replaces the high tag byte
+  in the word immediately preceding the caller's pointer while preserving the
+  low 24 bits under an interrupt-mask save/restore pair.
+- Six guarded words restore retail's pre-call store, move the second
+  `osSetIntMask` relocation, retain a dead `arg0 - 3` adjustment in its delay
+  slot, and shift the unchanged epilogue. A direct source assignment was
+  tested and rejected because IDO eliminates it.
+- Linked `0x100043B4..0x1000440C` and pristine retail share SHA-256
+  `96bbbe8d7fc2767413fc9f85d64896d95b633d867cc2b61023c410a9646d2616`.
+  The fresh scan is **2,690 / 5,475 (49.13%)** overall and
+  **389 / 501 (77.64%)** in Init.
+
 ### Handwritten Init interrupt wrappers restored
 
 - Restored `__osDisableInt` and `__osRestoreInt` from false zero-return/no-op
