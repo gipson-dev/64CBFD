@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game destination-pointer schedule byte-exact
+
+- Completed all 17 words of `func_150CDB6C` with seven expected-word guards
+  restoring retail's explicit destination pointer, multiply/store schedule,
+  branch displacements, and return position.
+- All normalized words are non-relocating; both global HI16/LO16 pairs remain
+  attached to the original compiled loads. The patch table now has 533 rows
+  and no duplicate keys.
+- Independent comparison of the complete 68-byte linked and pristine retail
+  spans produced SHA-256
+  `fcfdce01e41617b0521a8bb8a86985f675eff73c41145a5436b3ea2e10922d4f`.
+  Fresh scan: **2561 / 5488 (46.67%)** overall and
+  **1993 / 4799 (41.53%)** game, with debugger unchanged at **181 / 181**.
+
 ### Original dead-pointer expression body restored
 
 - Restored `func_150C7930` to its original 14-word assembly ownership after

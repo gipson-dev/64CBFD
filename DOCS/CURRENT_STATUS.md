@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,560 / 5,488 (46.65%) | 1 | 2,927 |
+| Total | 2,561 / 5,488 (46.67%) | 1 | 2,926 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,992 / 4,799 (41.51%) | 0 | 2,807 |
+| Game | 1,993 / 4,799 (41.53%) | 0 | 2,806 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,560, while
+denominator driven: the exact count is now 2,561, while
 490 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -73,6 +73,8 @@ Sound-command wrapper `func_1509F6B0` is byte-exact through guarded incoming
 argument spill/reload scheduling.
 `func_150C7930` is restored to its original 14-word assembly ownership because
 IDO eliminates retail's dead `temp_v0 + 0x1E0` expression.
+`func_150CDB6C` is byte-exact through guarded destination-pointer
+materialization and schedule normalization.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -131,8 +133,9 @@ end-to-end gameplay acceptance.
    guarded frame/address words. `func_1509F6B0` is byte-exact through seven
    guarded spill/reload scheduling words. `func_150C7930` is restored to its
    original 14-word assembly extent after exhaustive C forms could not retain
-   its dead pointer update. Continue at 17-word `func_150CDB6C`, the next
-   seven-difference game row.
+   its dead pointer update. `func_150CDB6C` is byte-exact through seven
+   guarded, non-relocating destination-pointer schedule words. Continue at
+   16-word `func_15108B80`, the next seven-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -212,5 +215,7 @@ The completed sound-command wrapper scheduling is in
 [Working Note 043](WORKING_NOTES/043-game-sound-command-wrapper-match-20260925.md).
 The restored dead-pointer-expression assembly boundary is in
 [Working Note 044](WORKING_NOTES/044-game-dead-pointer-expression-restoration-20260925.md).
+The completed destination-pointer scheduling is in
+[Working Note 045](WORKING_NOTES/045-game-destination-pointer-schedule-match-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
