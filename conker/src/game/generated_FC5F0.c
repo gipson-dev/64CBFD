@@ -24,9 +24,10 @@ void func_150CF530(s32 arg0) {
 }
 
 void func_150CF578(s32 arg0) {
-    s32 temp = D_800BE9E4 * 28;
+    s32 value = D_800BE9E4;
+    s32 temp = value * 28;
 
-    D_80088890 += D_800BE9E4 * 26;
+    D_80088890 += value * 26;
     D_80088894 -= temp;
     D_80088898 -= temp;
 }

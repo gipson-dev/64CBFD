@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Global-coordinate update byte-exact
+
+- Completed all 28 words of `func_150CF578` by naming the loaded
+  `D_800BE9E4` value before deriving the 28-times temporary. This restores
+  retail's `v0` source lifetime, `v1` product lifetime, and instruction
+  schedule directly from C, with no guarded rows.
+- The patch table remains at 659 rows with no duplicate keys and no row for
+  this function. The complete linked span at `0xFC9F8` and retail span at
+  `0xFCA28` share SHA-256
+  `9380ec55443833e5ed9950f30c40317a0bd33d130dbcba4a2a34e2aa36427898`.
+  Fresh scan: **2584 / 5484 (47.12%)** overall and
+  **2016 / 4795 (42.04%)** game, with debugger unchanged at **181 / 181**.
+
 ### Display-list cursor and state-byte clear byte-exact
 
 - Completed all 15 words of `func_15096934` with an independent nine-row

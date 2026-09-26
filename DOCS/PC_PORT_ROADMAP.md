@@ -159,6 +159,8 @@ The next display-list cursor pass completed `func_15094F40`; see
 [Working Note 069](WORKING_NOTES/069-game-display-list-state-clear-match-20260925.md).
 Its state-byte-clear relative `func_15096934` is independently complete; see
 [Working Note 070](WORKING_NOTES/070-game-display-list-state-byte-match-20260925.md).
+The following source-level lifetime pass completed `func_150CF578`; see
+[Working Note 071](WORKING_NOTES/071-game-global-coordinate-update-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

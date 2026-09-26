@@ -170,12 +170,14 @@ and selector registers. Structural twin `func_151963B4` is independently
 matched. `func_151E5F64` now matches from source-level positive-branch
 control-flow recovery. The previously parked `func_151E81EC` now matches from
 a four-word state struct plus guarded paired-store relocations; continue at
-28-word `func_150CF578` after completing `func_1502EA0C` through guarded
+19-word `func_150DE2C4` after completing `func_1502EA0C` through guarded
 packed-byte scheduling, `func_15033E84` through source-level linked-list loop
-recovery, and `func_15094F40` plus `func_15096934` through independently
-guarded cursor expansions. Keep
-raw-assembly conversion as a separate workstream. The
-measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
+recovery, `func_15094F40` plus `func_15096934` through independently guarded
+cursor expansions, and `func_150CF578` through source-level scalar/product
+lifetimes. The result is in
+[Working Note 071](WORKING_NOTES/071-game-global-coordinate-update-match-20260925.md).
+Keep raw-assembly conversion as a separate workstream. The measured handoff
+is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
 and the completed pair in [Working Note 002](WORKING_NOTES/002-paired-event-swap-byte-match-20260924.md).
 The rectangle-fill result is in
