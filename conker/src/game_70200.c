@@ -131,10 +131,7 @@ s32 func_15043B70(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 tmp;
 
     while (arg3 != 0) {
-        tmp = arg3;
-        if (arg1 < arg2 + arg3) {
-            tmp = arg1 - arg2;
-        }
+        tmp = arg1 < arg2 + arg3 ? arg1 - arg2 : arg3;
         arg2 += tmp;
         arg3 -= tmp;
         if (arg2 >= arg1) {

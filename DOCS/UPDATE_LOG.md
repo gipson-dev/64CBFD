@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Chunked-boundary loop byte-exact
+
+- Completed all 18 words of `func_15043B70` directly from source. Expressing
+  the selected chunk as a scalar ternary restores retail's explicit two-arm
+  merge and the unconditional branch missing from the prior object.
+- That one recovered word realigns the initial exit, loop-back branch, and
+  every subsequent instruction. No guarded patch rows or relocations apply.
+- The patch table remains at 790 unique rows. Linked `0x70FF0` and retail
+  `0x71020` share SHA-256
+  `ba904403da942b5a2963e724bdcbec9cf4b4ec668ad4072fece06f24f09fefc2`.
+  Fresh scan: **2612 / 5484 (47.63%)** overall and
+  **2044 / 4795 (42.63%)** game, with debugger unchanged at **181 / 181**.
+
 ### Slot-cursor allocation byte-exact
 
 - Completed all 19 words of `func_150356C8`. Reusing and incrementing the

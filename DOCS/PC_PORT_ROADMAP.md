@@ -244,6 +244,10 @@ The slot-cursor allocation pass completed `func_150356C8` from a direct
 increment lifetime plus nine guarded scheduling words, including an explicit
 move of the `D_800C3F08` low relocation; see
 [Working Note 098](WORKING_NOTES/098-game-slot-cursor-allocation-match-20260926.md).
+The chunked-boundary loop pass completed `func_15043B70` directly from a
+scalar ternary that restores retail's explicit two-arm value merge, without
+guarded rows; see
+[Working Note 099](WORKING_NOTES/099-game-chunked-boundary-loop-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
