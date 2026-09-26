@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, retained local-record pointer matched).** The current
-linked checkpoint is `2614 / 5484 (47.67%)` exact C functions, with one
-address-drift blocker and 2,869 genuinely different C functions. The tree
+**Active (2026-09-26, null-first table populator matched).** The current linked
+checkpoint is `2615 / 5484 (47.68%)` exact C functions, with one address-drift
+blocker and 2,868 genuinely different C functions. The tree
 contains 554 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -219,10 +219,12 @@ scalar ternary that restores retail's explicit two-arm selected-chunk merge.
 `func_1507A3E8` then matched through thirteen guarded byte-load and merge
 schedule words that preserve all four global relocation pairs.
 `func_1507FF94` then matched after retaining a volatile local-record pointer
-across its first call, plus five guarded prologue scheduling words. Continue
-with 30-word `func_15085B70`, now the first thirteen-difference game row.
+across its first call, plus five guarded prologue scheduling words.
+`func_15085B70` then matched directly after reversing its null condition so
+the zeroing path precedes the populated path. Continue with 13-word
+`func_150A7A14`, now the first thirteen-difference game row.
 The latest result is in
-[Working Note 101](WORKING_NOTES/101-game-retained-local-record-pointer-match-20260926.md).
+[Working Note 102](WORKING_NOTES/102-game-null-first-table-populator-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

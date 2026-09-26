@@ -26,14 +26,14 @@ s32 func_150888A8();
 s32 func_15085B70(s32 arg0) {
     s16 *temp_v0 = (s16 *) func_1502B5C8(0, 2, 0x19, arg0);
 
-    if (temp_v0 != 0) {
-        D_80087290 = temp_v0[0];
-        D_80087294 = temp_v0[1];
-        D_800D2350 = (u8 *) temp_v0 + 4;
-    } else {
+    if (temp_v0 == 0) {
         D_80087290 = 0;
         D_80087294 = 0;
         D_800D2350 = 0;
+    } else {
+        D_80087290 = temp_v0[0];
+        D_80087294 = temp_v0[1];
+        D_800D2350 = (u8 *) temp_v0 + 4;
     }
     return func_15085BE8();
 }

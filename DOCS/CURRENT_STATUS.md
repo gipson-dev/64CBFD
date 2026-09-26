@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,614 / 5,484 (47.67%) | 1 | 2,869 |
+| Total | 2,615 / 5,484 (47.68%) | 1 | 2,868 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,046 / 4,795 (42.67%) | 0 | 2,749 |
+| Game | 2,047 / 4,795 (42.69%) | 0 | 2,748 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,614, while
+denominator driven: the exact count is now 2,615, while
 493 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -264,7 +264,9 @@ end-to-end gameplay acceptance.
    guarded byte-load and merge-schedule words that preserve all four global
    relocation pairs. `func_1507FF94` is byte-exact after retaining a volatile
    local-record pointer across its first call, plus five guarded prologue
-   scheduling words. Continue with 30-word `func_15085B70`, now the first
+   scheduling words. `func_15085B70` is byte-exact directly from reversing
+   its null condition so the zeroing path precedes the populated path, with no
+   guarded rows. Continue with 13-word `func_150A7A14`, now the first
    thirteen-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
@@ -377,5 +379,7 @@ The completed packed four-byte reader is in
 [Working Note 100](WORKING_NOTES/100-game-packed-four-byte-reader-match-20260926.md).
 The completed retained local-record pointer is in
 [Working Note 101](WORKING_NOTES/101-game-retained-local-record-pointer-match-20260926.md).
+The completed null-first table-populator path is in
+[Working Note 102](WORKING_NOTES/102-game-null-first-table-populator-match-20260926.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

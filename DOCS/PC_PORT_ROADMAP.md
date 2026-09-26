@@ -256,6 +256,9 @@ The retained local-record pointer pass completed `func_1507FF94` from an
 asymmetric volatile pointer lifetime plus five guarded prologue scheduling
 words; see
 [Working Note 101](WORKING_NOTES/101-game-retained-local-record-pointer-match-20260926.md).
+The null-first table-populator pass completed `func_15085B70` directly by
+placing its zeroing path before its populated path, without guarded rows; see
+[Working Note 102](WORKING_NOTES/102-game-null-first-table-populator-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

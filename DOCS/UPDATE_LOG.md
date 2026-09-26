@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Null-first table populator byte-exact
+
+- Completed all 30 words of `func_15085B70` directly from source. Reversing
+  the condition to test `temp_v0 == 0` places retail's compact zeroing path
+  before the populated path and restores all thirteen differing words.
+- The complete frame, both calls, delay slots, six global relocation pairs,
+  branch targets, and epilogue are source-emitted and exact. No guarded rows
+  were added.
+- The patch table remains at 808 unique rows. Linked `0xB2FF0` and retail
+  `0xB3020` share SHA-256
+  `420680f426f2b1f2b80d4d03a344b7ca8de125e0cc9067820c2464ec5e5d5a19`.
+  Fresh scan: **2615 / 5484 (47.68%)** overall and
+  **2047 / 4795 (42.69%)** game, with debugger unchanged at **181 / 181**.
+
 ### Retained local-record pointer byte-exact
 
 - Completed all 17 words of `func_1507FF94`. A volatile local pointer retained
