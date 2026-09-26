@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,680 / 5,483 (48.88%) | 1 | 2,802 |
+| Total | 5,483 / 6,038 (90.81%) | 2,681 / 5,483 (48.90%) | 1 | 2,801 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,112 / 4,794 (44.06%) | 0 | 2,682 |
+| Game | 4,794 / 5,318 (90.15%) | 2,113 / 4,794 (44.08%) | 0 | 2,681 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -495,7 +495,11 @@ The indexed-record-deactivation pass then removed `func_15088780`'s one-use
 record pointer and restored the table-base-plus-scaled-index expression order,
 matching all 30 words directly from C; see
 [Working Note 168](WORKING_NOTES/168-game-indexed-record-deactivation-match-20260926.md).
-Continue with 24-word `func_1509E8A0`, which has 18 real differences.
+The selector-init-wrapper pass then replaced `func_1509E8A0`'s zero-return
+placeholder with its three-argument callback contract and selector-7/8
+dispatch, matching all 24 padded words directly from C; see
+[Working Note 169](WORKING_NOTES/169-game-selector-init-wrapper-match-20260926.md).
+Continue with 21-word `func_150A34B0`, which has 18 real differences.
 
 Current host-port progression and acceptance boundaries:
 

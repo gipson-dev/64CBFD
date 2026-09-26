@@ -17,6 +17,13 @@ s32 func_1509E730() {
     return 0;
 }
 
-s32 func_1509E8A0() {
-    return 0;
+s32 func_1509E8A0(s32 arg0, s32 arg1, s32 arg2) {
+    switch (arg1) {
+        case 7:
+            return func_1000E0F8(arg0);
+        case 8:
+            return func_1000E8F0(arg0);
+        default:
+            return 0;
+    }
 }

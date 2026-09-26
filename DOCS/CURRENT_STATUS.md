@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,680 / 5,483 (48.88%) | 1 | 2,802 |
+| Total | 2,681 / 5,483 (48.90%) | 1 | 2,801 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,112 / 4,794 (44.06%) | 0 | 2,682 |
+| Game | 2,113 / 4,794 (44.08%) | 0 | 2,681 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,680, while
+denominator driven: the exact count is now 2,681, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -412,8 +412,10 @@ end-to-end gameplay acceptance.
    table-read C behavior and guarding five IDO register-scheduling words. The
    30-word `func_15088780` is now byte-exact directly from C after removing a
    one-use record pointer and restoring base-plus-scaled-index operand order.
-   Continue with 24-word `func_1509E8A0`, the next ordinary Game C row with
-   eighteen real differences.
+   The 24-word `func_1509E8A0` is now converted and byte-exact directly from C
+   after restoring its three-argument callback contract and two-case selector
+   dispatch. Continue with 21-word `func_150A34B0`, the next ordinary Game C
+   row with eighteen real differences.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

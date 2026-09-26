@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Selector init wrapper converted and byte-exact
+
+- Replaced `func_1509E8A0`'s zero-return placeholder with its complete
+  three-argument callback contract. Selector `7` forwards the first argument
+  to `func_1000E0F8`, selector `8` forwards it to `func_1000E8F0`, and all
+  other selectors return zero.
+- The two-case `switch` reproduces retail's incoming `a2` spill, comparison
+  chain, calls, return values, shared epilogue, and two padded words directly
+  from C. No guarded rows were added; the patch table remains at 1,116 unique
+  rows with zero duplicate keys.
+- Linked ELF `.game+0x9E8A0` and retail ROM `0xCBD50` share SHA-256
+  `6cb20288b9c0d04cb6020064f8ce112235044f1ac1eff97063a03cdad6d33617`.
+  Fresh scan: **2681 / 5483 (48.90%)** overall and
+  **2113 / 4794 (44.08%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed record deactivation byte-exact
 
 - Simplified `func_15088780` by removing its one-use record-pointer local and
