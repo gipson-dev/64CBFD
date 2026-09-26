@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,482 / 6,038 (90.79%) | 2,687 / 5,482 (49.01%) | 1 | 2,794 |
+| Total | 5,482 / 6,038 (90.79%) | 2,688 / 5,482 (49.03%) | 1 | 2,793 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,793 / 5,318 (90.13%) | 2,119 / 4,793 (44.21%) | 0 | 2,674 |
+| Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -529,6 +529,12 @@ zero-return placeholder and matches all 20 words directly from C; see
 [Working Note 176](WORKING_NOTES/176-game-event-bit-toggle-match-20260926.md).
 Its sibling generated recomp body likewise remains pending controlled refresh.
 Continue with 21-word `func_15133DE8`, which has 18 real differences.
+That record/owner match callback is now converted from its zero-return
+placeholder and matches all 21 words directly from C after making the record
+identifier lifetime explicit; see
+[Working Note 177](WORKING_NOTES/177-game-record-owner-match-callback-20260926.md).
+Its sibling generated recomp body remains pending controlled refresh. Continue
+with 19-word `func_151444DC`, which has 18 real differences.
 
 Current host-port progression and acceptance boundaries:
 

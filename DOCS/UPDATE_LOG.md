@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Record/owner match callback byte-exact
+
+- Converted `func_15133DE8` from a zero-return placeholder to its real
+  three-argument callback. When its event byte is zero, matching either the
+  record's 32-bit identifier or following byte against owner fields
+  `+0x7C/+0x80` dispatches `func_1516972C`.
+- An explicit record-identifier lifetime restores retail's persistent `v0`
+  allocation and the exact `t7/t8/t9` comparison temporaries. All 21 words,
+  including branch-likely epilogues and the call relocation, compile directly
+  from C without guarded rows.
+- Linked `0x15133DE8..0x15133E38` and pristine retail
+  `conker.us.bin+0x161298` share SHA-256
+  `90076a0b24263542cb4bd2d6d371c257b8c5cd3c03c1160ff420bf9ea7cdf8bf`.
+  The fresh scan is **2688 / 5482 (49.03%)** overall and
+  **2120 / 4793 (44.23%)** game.
+
 ### Event-bit callback byte-exact
 
 - Converted `func_150FADC8` from a zero-return placeholder to its real

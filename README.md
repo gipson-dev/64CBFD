@@ -109,6 +109,11 @@ The event-bit callback `func_150FADC8` is now converted from its zero-return
 placeholder and byte-exact directly from C, bringing the total to 2,687.
 Continue with `func_15133DE8`. The measured boundary is in
 [Working Note 176](DOCS/WORKING_NOTES/176-game-event-bit-toggle-match-20260926.md).
+The record/owner match callback `func_15133DE8` is now converted from its
+zero-return placeholder and byte-exact directly from C after retaining the
+record identifier lifetime, bringing the total to 2,688. Continue with
+`func_151444DC`. The measured boundary is in
+[Working Note 177](DOCS/WORKING_NOTES/177-game-record-owner-match-callback-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -134,9 +139,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,687 / 5,482 (49.01%) | 1 | 2,794 |
+| Total | `[############------------]` 2,688 / 5,482 (49.03%) | 1 | 2,793 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[###########-------------]` 2,119 / 4,793 (44.21%) | 0 | 2,674 |
+| Game | `[###########-------------]` 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

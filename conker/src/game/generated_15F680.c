@@ -117,8 +117,16 @@ s32 func_15133C58() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_15133D20.s")
 
-s32 func_15133DE8() {
-    return 0;
+void func_15133DE8(u8 *arg0, u8 *arg1, u8 arg2) {
+    u32 id;
+
+    if (arg2 == 0) {
+        id = *(u32 *)arg1;
+        if ((id == *(u32 *)(arg0 + 0x7C)) ||
+            (*(arg1 + 4) == *(arg0 + 0x80))) {
+            func_1516972C(arg0);
+        }
+    }
 }
 
 void func_15133E3C(s32 arg0, u8 arg1) {
