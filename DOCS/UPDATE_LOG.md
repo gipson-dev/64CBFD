@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game retained-field wrapper byte-exact
+
+- Completed all 19 words of `func_1513A594` by correcting
+  `func_1513A5E0`'s forwarded byte parameter, preserving retail's post-call
+  volatile field read, and guarding the empty branch shape.
+- Three guarded rows normalize or insert only non-relocating words; the call
+  relocation remains untouched. The patch table now has 543 rows and no
+  duplicate keys.
+- Independent comparison of the complete 76-byte linked and pristine retail
+  spans produced SHA-256
+  `92d868e180951fab17cafdf85fa155bed52a369b34a935ae5223fc765d7b40b0`.
+  Fresh scan: **2563 / 5488 (46.70%)** overall and
+  **1995 / 4799 (41.57%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game countdown register allocation byte-exact
 
 - Completed all 16 words of `func_15108B80` with seven expected-word guards

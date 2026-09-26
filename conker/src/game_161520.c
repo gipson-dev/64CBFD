@@ -36,7 +36,7 @@ s32 func_15139768();
 s32 func_15139D74();
 s32 func_1513A24C();
 s32 func_1513A48C();
-s32 func_1513A5E0(s32 arg0, s32 arg1, s32 arg2);
+s32 func_1513A5E0(s32 arg0, u8 arg1, s32 arg2);
 s32 func_1513A6E0();
 s32 func_1513ABB8();
 
@@ -482,6 +482,7 @@ s32 func_1513A48C() {
 }
 void func_1513A594(struct127 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
     func_1513A5E0(arg1, arg3, arg4);
+    (void) *(struct255 *volatile *) &arg0->unk1D4;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_1513A5E0.s. */
 

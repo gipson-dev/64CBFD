@@ -539,3 +539,6 @@ generated_135D00,func_15108B80,0x028,0x03191823,0x03194023,-,-,Keep countdown re
 generated_135D00,func_15108B80,0x02C,0x04610002,0x05010002,-,-,Branch on retail countdown temporary,
 generated_135D00,func_15108B80,0x030,0xAC43001C,0xAC48001C,-,-,Store countdown from retail temporary register,
 generated_135D00,func_15108B80,0x034,0xAC450014,0xAC430014,-,-,Store terminal marker from retail value register,
+game_161520,func_1513A594,0x030,0x8FAF0018,0x8FA20018,-,-,Reload wrapper object through retail pointer register,
+game_161520,func_1513A594,0x038,0x8DE001D4,0x8C4F01D4,-,-,Load retained field through retail pointer register,0x11E00001
+game_161520,func_1513A594,0x03C,0x03E00008,0x00000000,-,-,Restore redundant branch delay slot before return,0x03E00008
