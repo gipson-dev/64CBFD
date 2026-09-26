@@ -216,6 +216,10 @@ ordering, final argument reuse, and ten guarded schedule words; see
 The bounds-checked halfword getter pass completed `func_1508B194` from an
 early-zero branch and five guarded base/index words; see
 [Working Note 091](WORKING_NOTES/091-game-bounds-checked-halfword-getter-match-20260926.md).
+The optional-pointer call-wrapper pass completed `func_150E33CC` through
+twelve guarded scheduling words, including an explicit relocation move for
+its sole call; see
+[Working Note 092](WORKING_NOTES/092-game-optional-pointer-call-schedule-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

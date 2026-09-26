@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Optional-pointer call wrapper byte-exact
+
+- Completed all 18 words of `func_150E33CC`. Direct dereference, shared-result
+  local, and preassigned-selector source probes did not reproduce retail's
+  schedule and were reverted.
+- Twelve guarded words restore retail's `v0` pointed-value lifetime, early
+  selector materialization, zero path, call-delay `a1` move, and epilogue.
+  The `func_1000E7A0` relocation moves explicitly from relative offset `0x28`
+  to `0x2C`. The frame and final padding word were already exact.
+- The patch table now has 762 unique rows. Linked `0x11084C` and retail
+  `0x11087C` share SHA-256
+  `4e11e68c67960b22b570a25feb7aaff4c509e19a21d120d7eb328c4e489d276a`.
+  Fresh scan: **2605 / 5484 (47.50%)** overall and
+  **2037 / 4795 (42.48%)** game, with debugger unchanged at **181 / 181**.
+
 ### Bounds-checked halfword getter byte-exact
 
 - Completed all 16 words of `func_1508B194` by expressing the bounds check as

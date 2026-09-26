@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,604 / 5,484 (47.48%) | 1 | 2,879 |
+| Total | 2,605 / 5,484 (47.50%) | 1 | 2,878 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,036 / 4,795 (42.46%) | 0 | 2,759 |
+| Game | 2,037 / 4,795 (42.48%) | 0 | 2,758 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,604, while
+denominator driven: the exact count is now 2,605, while
 493 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -244,8 +244,12 @@ end-to-end gameplay acceptance.
    final `arg0` pointer reuse, and ten guarded schedule words that explicitly
    move the global relocation pair. `func_1508B194` is byte-exact from a
    source-level early-zero branch plus five guarded record-table base/index
-   words. Continue with 18-word `func_150E33CC`, now the first
-   twelve-difference game row.
+   words. `func_150E33CC` is byte-exact through twelve guarded scheduling
+   words that preserve its call relocation while restoring retail's `v0`
+   value lifetime and call-delay argument move. Continue with 20-word
+   `func_15131D4C`, now the first twelve-difference game row; retail
+   interleaves the three source-record loads with stores through `a0`, while
+   current C batches all three loads before storing the local record.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
