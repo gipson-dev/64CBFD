@@ -242,10 +242,14 @@ opening `v0`/`v1` global-address preload. `func_151A9024` then matched with
 thirteen guarded words that preserve retail's argument-home, byte-narrowing,
 early-epilogue, and call-relocation schedule. `func_151C9B64` then matched
 directly after correcting its inverted branch outcomes and naming the nested
-pointer to restore retail's register lifetime. Continue with the tied 13-word
-`func_151F892C` and `func_151F8960`, each currently thirteen differences.
+pointer to restore retail's register lifetime. The tied 13-word
+`func_151F892C` and `func_151F8960` rows were then excluded because they are
+explicitly handwritten and consume non-ABI live registers. `func_1502C380`
+matched directly after an assignment chain restored retail's destination
+address and loaded-value lifetimes. Continue with 16-word `func_150A7B80`;
+its loop currently overflows the fixed function slot while retail is unrolled.
 The latest result is in
-[Working Note 112](WORKING_NOTES/112-game-nested-state-flag-match-20260926.md).
+[Working Note 113](WORKING_NOTES/113-game-global-selection-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

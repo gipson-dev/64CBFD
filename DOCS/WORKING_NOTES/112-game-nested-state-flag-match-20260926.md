@@ -42,6 +42,6 @@ built, modified, or launched; `build/Release/conker_pc.exe` retains timestamp
 
 ## Next boundary
 
-Continue with the tied 13-word game rows `func_151F892C` and
-`func_151F8960`. Each currently differs in all thirteen words; inspect them as
-a pair before deciding whether they share one recoverable source shape.
+The tied 13-word game rows `func_151F892C` and `func_151F8960` were inspected
+and excluded: both are explicitly handwritten and consume non-ABI live
+registers. Continue the C-restoration queue at `func_1502C380`.

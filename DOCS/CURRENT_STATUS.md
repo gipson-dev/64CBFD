@@ -290,8 +290,12 @@ end-to-end gameplay acceptance.
    byte-narrowing, early-epilogue, and call-relocation schedule.
    `func_151C9B64` is now byte-exact directly from corrected branch semantics
    and an explicit nested-pointer lifetime; no guarded words are required.
-   Continue with the tied 13-word `func_151F892C` and `func_151F8960`, each
-   currently differing in all thirteen words.
+   The tied 13-word `func_151F892C` and `func_151F8960` rows are explicitly
+   handwritten and consume non-ABI live registers, so they are excluded from
+   the C-restoration queue. `func_1502C380` is now byte-exact directly from an
+   assignment chain that preserves its destination-address and loaded-value
+   lifetimes. Continue with 16-word `func_150A7B80`; its loop currently
+   overflows the fixed function slot while retail uses eight unrolled stores.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

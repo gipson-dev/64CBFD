@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Global selection byte-exact
+
+- Skipped `func_151F892C` and `func_151F8960`: both are explicitly handwritten
+  helpers that consume non-ABI live registers and are not valid C-restoration
+  targets despite their padded placeholders appearing in matcher output.
+- Completed all 15 words of `func_1502C380` directly from source. Chaining the
+  two global assignments preserves retail's early `D_800C3E88` address in
+  `v0` and the selected table value in `t8`; no guarded rows are required.
+- Linked `0x59800` and retail `0x59830` share SHA-256
+  `5ac1848a7f9245f00f951fd6a5260b0718bb374820703bff54ae237941375025`.
+  Fresh scan: **2625 / 5483 (47.88%)** overall and
+  **2057 / 4794 (42.91%)** game, with debugger unchanged at **181 / 181**.
+
 ### Nested-state flag byte-exact
 
 - Completed all 15 words of `func_151C9B64` directly from source. The

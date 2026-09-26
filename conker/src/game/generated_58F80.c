@@ -25,10 +25,8 @@ s32 func_1502C1A4() {
 }
 
 void func_1502C380(void) {
-    s32 val = D_800C3E80[D_800BE9C0];
-
-    D_800C3E88 = val;
-    D_800C3E8C = val;
+    D_800C3E88 = D_800C3E80[D_800BE9C0];
+    D_800C3E8C = D_800C3E88;
     D_800C3E7A = 0;
 }
 
