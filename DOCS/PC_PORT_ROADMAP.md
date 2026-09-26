@@ -314,8 +314,11 @@ all 17 words of `func_1518F89C` with twelve guarded scheduling rows and one
 inserted call-delay `nop`. The second one-word aggregate-forwarder pass then
 completed all 17 words of `func_151A561C` directly from source. The third pass
 completed all 17 words of `func_151D343C` and corrected the shared pointer
-contract without matcher regressions. Continue with 18-word `func_1519F3B8`;
-see [Working Note 121](WORKING_NOTES/121-game-third-one-word-forwarder-match-20260926.md).
+contract without matcher regressions. The four-word record-fill pass then
+completed all 18 words of `func_1519F3B8` with a typed record, nine guarded
+rows, and one inserted retained-base reload. Continue with 19-word
+`func_15160274`; see
+[Working Note 122](WORKING_NOTES/122-game-four-word-record-fill-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

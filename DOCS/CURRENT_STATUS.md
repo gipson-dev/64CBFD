@@ -312,8 +312,10 @@ end-to-end gameplay acceptance.
    aggregate and `void *` callee contract used by `func_1518F45C`.
    `func_151D343C` is now byte-exact from the third one-word aggregate and a
    corrected shared `func_15169260(void *, ...)` contract, with no matcher
-   regressions. Continue with 18-word `func_1519F3B8`, the smallest remaining
-   ordinary-C row at fourteen real differences.
+   regressions. `func_1519F3B8` is now byte-exact from a typed four-word record
+   plus nine guarded scheduling rows and one inserted reload. Continue with
+   19-word `func_15160274`, another one-word aggregate forwarder and the
+   smallest remaining ordinary-C row at fourteen real differences.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

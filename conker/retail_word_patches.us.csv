@@ -878,3 +878,12 @@ generated_1BA1D0,func_1518F89C,0x02C,0x8FBF0014,0xE44A0000,-,-,Store the result 
 generated_1BA1D0,func_1518F89C,0x030,0x27BD0018,0x8FBF0014,-,-,Restore the return address after the update call,
 generated_1BA1D0,func_1518F89C,0x034,0x03E00008,0x27BD0018,-,-,Restore the frame before returning,
 generated_1BA1D0,func_1518F89C,0x038,0x00000000,0x03E00008,-,-,Move the return into the final instruction pair,
+generated_1CC440,func_1519F3B8,0x000,0x27BDFFE8,0x27BDFFE0,-,-,Reserve the retail pointer spill slot,
+generated_1CC440,func_1519F3B8,0x010,0xAFA40018,0xAFA40020,-,-,Move the object argument home above the larger frame,
+generated_1CC440,func_1519F3B8,0x014,0x8FA40018,0x8FA40020,-,-,Reload the object from its retail home slot,
+generated_1CC440,func_1519F3B8,0x01C,0xAC820058,0x24830058,-,-,Retain the four-word record base in v1,
+generated_1CC440,func_1519F3B8,0x020,0x0C000000,0xAC620000,R_MIPS_26:func_1519F1C8,-,Store selector six through the retained base,
+generated_1CC440,func_1519F3B8,0x024,0xAC80005C,0xAC600004,-,-,Clear the second word through the retained base,
+generated_1CC440,func_1519F3B8,0x028,0x8FA40018,0x0C000000,-,R_MIPS_26:func_1519F1C8,Move the selector seven call after the first stores,
+generated_1CC440,func_1519F3B8,0x02C,0x24830058,0xAFA30018,-,-,Spill the retained base in the call delay slot,0x8FA30018
+generated_1CC440,func_1519F3B8,0x040,0x27BD0018,0x27BD0020,-,-,Restore the larger retail frame in the return delay slot,

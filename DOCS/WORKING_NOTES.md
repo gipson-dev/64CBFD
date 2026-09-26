@@ -263,8 +263,10 @@ inserted call-delay `nop`. `func_151A561C` then matched directly from the same
 one-word aggregate and `void *` callee contract used by `func_1518F45C`.
 `func_151D343C` then matched from the third one-word aggregate and a corrected
 shared `func_15169260(void *, ...)` declaration, with no matcher regressions.
-Continue with 18-word `func_1519F3B8`. The latest result is in
-[Working Note 121](WORKING_NOTES/121-game-third-one-word-forwarder-match-20260926.md).
+`func_1519F3B8` then matched from a typed four-word record plus nine guarded
+scheduling rows and one inserted retained-base reload. Continue with 19-word
+`func_15160274`. The latest result is in
+[Working Note 122](WORKING_NOTES/122-game-four-word-record-fill-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

@@ -1,5 +1,12 @@
 #include <ultra64.h>
 
+typedef struct {
+    s32 first;
+    s32 second;
+    s32 third;
+    s32 fourth;
+} FourWord1CC440;
+
 /* Non-matching placeholders for the text-only asm slice asm/1CC440.s. */
 
 s32 func_1519EF90() {
@@ -19,14 +26,15 @@ s32 func_1519F1C8() {
 }
 
 void func_1519F3B8(u8 *arg0) {
-    u8 *temp_v1;
+    FourWord1CC440 *temp_v1;
     s32 r = func_1519F1C8(arg0, 6);
 
-    temp_v1 = arg0 + 0x58;
-    *(s32 *) temp_v1 = r;
-    *(s32 *) (temp_v1 + 4) = 0;
-    *(s32 *) (temp_v1 + 8) = func_1519F1C8(arg0, 7);
-    *(s32 *) (temp_v1 + 0xC) = 0;
+    temp_v1 = (FourWord1CC440 *) (arg0 + 0x58);
+    temp_v1->first = r;
+    temp_v1->second = 0;
+    r = func_1519F1C8(arg0, 7);
+    temp_v1->third = r;
+    temp_v1->fourth = 0;
 }
 
 s32 func_1519F400() {

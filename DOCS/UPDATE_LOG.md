@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Four-word record fill byte-exact
+
+- Completed all 18 words of `func_1519F3B8` from a typed record at object
+  offset `0x58`, with selector-six and selector-seven results stored in the
+  first and third words and the other two words cleared.
+- Added nine guarded scheduling rows and one inserted retained-base reload to
+  reproduce retail's 32-byte frame, `v1` lifetime, interleaved stores, and
+  second call delay slot. The patch table has 888 unique rows.
+- Linked `0x1CC838` and retail `0x1CC868` share SHA-256
+  `255c72317f442f9f907d25041cfeb2102a94d201814a062babd2b30298f1a432`.
+  Fresh scan: **2634 / 5483 (48.04%)** overall and
+  **2066 / 4794 (43.10%)** game, with debugger unchanged at **181 / 181**.
+
 ### Third one-word aggregate forwarder byte-exact
 
 - Completed all 17 words of `func_151D343C` directly from a `OneWordCopy`
