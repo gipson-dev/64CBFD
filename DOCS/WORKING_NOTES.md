@@ -279,9 +279,10 @@ scheduling words. `func_15188A58` then matched after recovering its typed
 offset-`0x0C` linked-list append plus thirteen guarded control-flow words.
 After skipping handwritten `func_151F892C` and `func_151F8960`,
 `func_1509F660` then matched all 20 words directly from its recovered nullable
-lookup and two-way callback dispatch. Continue with 19-word `func_151C4510`.
-The latest result is in
-[Working Note 131](WORKING_NOTES/131-game-nullable-callback-dispatch-match-20260926.md).
+lookup and two-way callback dispatch. `func_151C4510` then matched from explicit
+destination-component lifetimes plus fifteen guarded FP scheduling words.
+Continue with 20-word `func_150C78E0`. The latest result is in
+[Working Note 132](WORKING_NOTES/132-game-scaled-vector-update-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

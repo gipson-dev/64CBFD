@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Scaled vector update byte-exact
+
+- Completed all 19 words of `func_151C4510`. Explicit locals retain the first
+  two destination components while the guarded schedule places the third
+  destination preload before the first store, reproducing retail's behavior
+  even when source and destination overlap.
+- Added fifteen guarded FP scheduling rows to restore retail's preload order,
+  register allocation, multiplies, additions, and stores. No words are
+  inserted; the patch table now has 951 unique rows and no duplicate keys.
+- Linked `0x1F1990` and retail `0x1F19C0` share SHA-256
+  `71f59522176e0647ccd14b5e9bd7c261e6249c18b24b2140074b3e91a02e96f8`.
+  Fresh scan: **2644 / 5483 (48.22%)** overall and
+  **2076 / 4794 (43.30%)** game, with debugger unchanged at **181 / 181**.
+
 ### Nullable callback dispatch byte-exact
 
 - Recovered all 20 words of `func_1509F660` directly from C. The function

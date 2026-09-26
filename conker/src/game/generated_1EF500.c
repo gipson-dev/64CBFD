@@ -45,9 +45,16 @@ s32 func_151C2E94() {
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1EF500/func_151C43E0.s")
 
 void func_151C4510(u8 *arg0, f32 *arg1, f32 arg2) {
-    *(f32 *) (arg0 + 0x34) = *(f32 *) (arg0 + 0x34) + arg1[1] * arg2;
-    *(f32 *) (arg0 + 0x38) = *(f32 *) (arg0 + 0x38) + arg1[2] * arg2;
-    *(f32 *) (arg0 + 0x3C) = *(f32 *) (arg0 + 0x3C) + arg1[3] * arg2;
+    f32 x;
+    f32 y;
+    f32 z;
+
+    x = *(f32 *) (arg0 + 0x34);
+    y = *(f32 *) (arg0 + 0x38);
+    *(f32 *) (arg0 + 0x34) = x + arg1[1] * arg2;
+    z = *(f32 *) (arg0 + 0x3C);
+    *(f32 *) (arg0 + 0x38) = y + arg1[2] * arg2;
+    *(f32 *) (arg0 + 0x3C) = z + arg1[3] * arg2;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1EF500/func_151C455C.s")
