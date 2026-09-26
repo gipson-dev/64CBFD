@@ -156,7 +156,24 @@ s32 func_150849A0(u8 *arg0) {
 }
 
 s32 func_150849CC(u8 *arg0, s32 *arg1) {
-    return 0;
+    s32 index;
+    s32 value;
+
+    value = arg0[0x1C9];
+    if (value != 0) {
+        index = value - 1;
+    } else {
+        value = arg0[0x2C8];
+        index = 0;
+        if (value != 0) {
+            index = value - 1;
+        }
+    }
+
+    if (arg1 != NULL) {
+        *arg1 = index;
+    }
+    return (*(u8 **) (arg0 + 0x2C4))[index];
 }
 
 s32 func_15084A18() {

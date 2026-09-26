@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,668 / 5,483 (48.66%) | 1 | 2,814 |
+| Total | 5,483 / 6,038 (90.81%) | 2,669 / 5,483 (48.68%) | 1 | 2,813 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,100 / 4,794 (43.80%) | 0 | 2,694 |
+| Game | 4,794 / 5,318 (90.15%) | 2,101 / 4,794 (43.83%) | 0 | 2,693 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -446,7 +446,11 @@ the raw-assembly queue. The selected actor-state cleanup pass then completed
 all 23 words of `func_150747E4` after recovering its scalar and pointer
 lifetimes, plus ten guarded relocation/register-scheduling words; see
 [Working Note 156](WORKING_NOTES/156-game-selected-actor-state-cleanup-match-20260926.md).
-Continue with 19-word `func_150849CC`, which has 17 real differences.
+The selector-table byte pass then replaced `func_150849CC`'s zero-return
+placeholder with its complete 19-word C behavior and retained one redundant
+retail fallback branch through three guarded CFG rows; see
+[Working Note 157](WORKING_NOTES/157-game-selector-table-byte-match-20260926.md).
+Continue with 20-word `func_1508CA88`, which has 17 real differences.
 
 Current host-port progression and acceptance boundaries:
 

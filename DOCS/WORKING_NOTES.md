@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, selected actor-state cleanup matched).** The current
-linked checkpoint is `2668 / 5483 (48.66%)` exact C functions, with one
-address-drift blocker and 2,814 genuinely different C functions. The tree
+**Active (2026-09-26, selector-table byte conversion matched).** The current
+linked checkpoint is `2669 / 5483 (48.68%)` exact C functions, with one
+address-drift blocker and 2,813 genuinely different C functions. The tree
 contains 555 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -330,8 +330,11 @@ typed node and explicit row/column scalar lifetimes, plus four guarded
 `func_150747E4` then matched after recovering separate selected-slot,
 decremented-index, full-width update-value, and actor-pointer lifetimes, plus
 ten guarded relocation/register-scheduling words. Continue with 19-word
-`func_150849CC`. The latest result is in
-[Working Note 156](WORKING_NOTES/156-game-selected-actor-state-cleanup-match-20260926.md).
+`func_150849CC`, which then matched after replacing its zero-return placeholder
+with complete selector fallback, optional index output, and indexed byte
+return behavior, plus three guarded CFG rows retaining one redundant retail
+branch. Continue with 20-word `func_1508CA88`. The latest result is in
+[Working Note 157](WORKING_NOTES/157-game-selector-table-byte-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

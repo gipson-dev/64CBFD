@@ -46,9 +46,12 @@ register-color words, bringing the total to 2,667. The selected actor-state
 cleanup `func_150747E4` is now byte-exact after recovering distinct slot,
 decremented-index, update-value, and actor-pointer lifetimes, with ten guarded
 compiler words, bringing the total to 2,668. Keep `func_150721A4` parked as a
-compiler-overflow row; keep handwritten/generated bitstream rows in the
-assembly queue; and continue with `func_150849CC`. The measured boundary is in
-[Working Note 156](DOCS/WORKING_NOTES/156-game-selected-actor-state-cleanup-match-20260926.md).
+compiler-overflow row. The selector/table reader `func_150849CC` is now a real
+C implementation instead of a zero-return placeholder and is byte-exact with
+three guarded CFG rows, bringing the total to 2,669. Keep
+handwritten/generated bitstream rows in the assembly queue and continue with
+`func_1508CA88`. The measured boundary is in
+[Working Note 157](DOCS/WORKING_NOTES/157-game-selector-table-byte-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -74,9 +77,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,668 / 5,483 (48.66%) | 1 | 2,814 |
+| Total | `[############------------]` 2,669 / 5,483 (48.68%) | 1 | 2,813 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,100 / 4,794 (43.80%) | 0 | 2,694 |
+| Game | `[##########--------------]` 2,101 / 4,794 (43.83%) | 0 | 2,693 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

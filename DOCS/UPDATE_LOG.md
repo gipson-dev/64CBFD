@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Selector-table byte conversion byte-exact
+
+- Replaced `func_150849CC`'s zero-return placeholder with its complete
+  19-word behavior. It derives a zero-based selector from byte `0x1C9`, falls
+  back to byte `0x2C8`, optionally returns the selector through `arg1`, and
+  returns the selected byte from the table pointer at offset `0x2C4`.
+- The recovered C emits every operation, register, delay slot, and memory
+  access directly in an equivalent 18-word CFG. Three guarded rows extend two
+  branch distances and retain retail's redundant fallback branch. The patch
+  table is now 1,109 unique rows with no duplicate keys.
+- Linked `0xB1E4C` and retail `0xB1E7C` share SHA-256
+  `69dd64e52454a5db16aa031021fd5e6ee7c1a1a0140673367baad3924113ab24`.
+  Fresh scan: **2669 / 5483 (48.68%)** overall and
+  **2101 / 4794 (43.83%)** game, with debugger unchanged at **181 / 181**.
+
 ### Selected actor-state cleanup byte-exact
 
 - Completed all 23 words of `func_150747E4`. When the active object's slot

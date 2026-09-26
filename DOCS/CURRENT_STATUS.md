@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,668 / 5,483 (48.66%) | 1 | 2,814 |
+| Total | 2,669 / 5,483 (48.68%) | 1 | 2,813 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,100 / 4,794 (43.80%) | 0 | 2,694 |
+| Game | 2,101 / 4,794 (43.83%) | 0 | 2,693 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,668, while
+denominator driven: the exact count is now 2,669, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -386,8 +386,11 @@ end-to-end gameplay acceptance.
    queue. `func_150747E4` is now byte-exact after recovering separate selected
    slot, decremented index, full update value, and actor-pointer lifetimes,
    plus ten guarded relocation/register-scheduling words. Continue with
-   19-word `func_150849CC`, the next ordinary Game C row with seventeen real
-   differences.
+   `func_150849CC`, now converted from its zero-return placeholder and
+   byte-exact after restoring both selector paths, optional index output, and
+   indexed byte return, plus three guarded CFG rows retaining one retail
+   branch. Continue with 20-word `func_1508CA88`, the next ordinary Game C row
+   with seventeen real differences.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

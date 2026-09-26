@@ -1105,3 +1105,6 @@ game_981E0,func_150747E4,0x034,0x01E27823,0x01E37823,-,-,Continue the second act
 game_981E0,func_150747E4,0x03C,0x01E27823,0x01E37823,-,-,Finish actor stride scaling with v1,
 game_981E0,func_150747E4,0x040,0x8C630000,0x8F390000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Keep the full update value in t9,
 game_981E0,func_150747E4,0x050,0xA0830232,0xA0990232,-,-,Store the update byte from t9,
+generated_AEB40,func_150849CC,0x00C,0x10000006,0x10000007,-,-,Branch over the retained fallback branch,
+generated_AEB40,func_150849CC,0x01C,0x10400002,0x10400003,-,-,Branch over the retained fallback branch when the fallback byte is zero,
+generated_AEB40,func_150849CC,0x020,0x00000000,0x00000000,-,-,Retain the fallback branch after the null-test delay slot,0x10000001
