@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,682 / 5,483 (48.91%) | 1 | 2,800 |
+| Total | 5,483 / 6,038 (90.81%) | 2,683 / 5,483 (48.93%) | 1 | 2,799 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,114 / 4,794 (44.10%) | 0 | 2,680 |
+| Game | 4,794 / 5,318 (90.15%) | 2,115 / 4,794 (44.12%) | 0 | 2,679 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -503,7 +503,11 @@ The record-gate-wrapper pass then replaced `func_150A34B0`'s zero-return
 placeholder with its byte-`0x14` rejection, low-flag gate, and forwarded
 `func_150A3504` call, matching all 21 words directly from C; see
 [Working Note 170](WORKING_NOTES/170-game-record-gate-wrapper-match-20260926.md).
-Continue with 20-word `func_150A7CB0`, which has 18 real differences.
+The matrix-identity pass then corrected `func_150A7CB0`'s final identity
+element from an integer bit pattern to a real `1.0f` store and guarded the
+three-word store/return schedule, matching all 20 words; see
+[Working Note 171](WORKING_NOTES/171-game-matrix-identity-element-match-20260926.md).
+Continue with 20-word `func_150A7DA0`, which has 18 real differences.
 
 Current host-port progression and acceptance boundaries:
 

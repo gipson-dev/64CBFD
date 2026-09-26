@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Matrix identity element byte-exact
+
+- Corrected `func_150A7CB0`'s final identity element from an integer
+  `0x3F800000` store to the recovered floating `1.0f` store. This restores
+  retail's opening `lui`/`mtc1` pair and final `swc1` while preserving the
+  raw-word matrix components and zero fill.
+- Added three guarded rows for IDO's remaining final-store schedule: float
+  store, return, then final zero store in the return delay slot. The patch
+  table now contains 1,119 unique rows with zero duplicate keys.
+- Linked ELF `.game+0xA7CB0` and retail ROM `0xD5160` share SHA-256
+  `d6a1e950c51300de8a005337398173f3f308e6b4b263fcbaebab1267f8ce93b2`.
+  Fresh scan: **2683 / 5483 (48.93%)** overall and
+  **2115 / 4794 (44.12%)** game, with debugger unchanged at **181 / 181**.
+
 ### Record gate wrapper converted and byte-exact
 
 - Replaced `func_150A34B0`'s zero-return placeholder with its complete record
