@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, selector-table byte conversion matched).** The current
-linked checkpoint is `2669 / 5483 (48.68%)` exact C functions, with one
-address-drift blocker and 2,813 genuinely different C functions. The tree
+**Active (2026-09-26, wrapping signed-byte counter matched).** The current
+linked checkpoint is `2670 / 5483 (48.70%)` exact C functions, with one
+address-drift blocker and 2,812 genuinely different C functions. The tree
 contains 555 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -333,8 +333,11 @@ ten guarded relocation/register-scheduling words. Continue with 19-word
 `func_150849CC`, which then matched after replacing its zero-return placeholder
 with complete selector fallback, optional index output, and indexed byte
 return behavior, plus three guarded CFG rows retaining one redundant retail
-branch. Continue with 20-word `func_1508CA88`. The latest result is in
-[Working Note 157](WORKING_NOTES/157-game-selector-table-byte-match-20260926.md).
+branch. `func_1508CA88` then matched after restoring signed-byte accesses and
+the shared wrapping-counter return path, plus two guarded relocation-aware
+rows for the independent final global-pointer reload. Continue with 21-word
+`func_15116930`. The latest result is in
+[Working Note 158](WORKING_NOTES/158-game-wrapping-byte-counter-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

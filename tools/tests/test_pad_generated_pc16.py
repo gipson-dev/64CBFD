@@ -118,7 +118,7 @@ nop
 glabel sample
 /* 000000 15000000 24840001 */ addiu $a0,$a0,1
 jlabel inserted_label
-/* 000004 15000004 00801025 */ move $v0,$a0
+/* 000004 15000004 3C020000 */ lui $v0,0
 /* 000008 15000008 03E00008 */ jr $ra
 /* 00000C 1500000C 00000000 */ nop
 glabel next_sample
@@ -127,9 +127,10 @@ glabel next_sample
 ''')
             (work/'patches.csv').write_text(
                 'filename,function,offset,expected,replacement,'
-                'expected_relocations,replacement_relocations,note,insert_after\n'
+                'expected_relocations,replacement_relocations,note,insert_after,'
+                'insert_after_relocations\n'
                 'fixture,sample,0x0,0x24840001,0x24840001,-,-,'
-                'retain result pointer,0x00801025\n'
+                'retain target base,0x3C020000,R_MIPS_HI16:next_sample\n'
             )
             subprocess.run(
                 ['mips-linux-gnu-as','-EB','-march=vr4300','-o','compact.o','compact.s'],
@@ -141,18 +142,37 @@ glabel next_sample
             )
             self.assertLess(
                 padded.index('inserted_label:'),
-                padded.index('.word 0x00801025')
+                padded.index('.word 0x3C020000')
             )
             (work/'padded.s').write_text(padded)
             subprocess.run(
                 ['mips-linux-gnu-as','-EB','-march=vr4300','-o','padded.o','padded.s'],
                 cwd=work,check=True,capture_output=True
             )
-            text,functions,_=parse_object(work/'padded.o')
+            text,functions,relocations=parse_object(work/'padded.o')
             start=functions['sample']['value']
             self.assertEqual(functions['sample']['size'],0x10)
-            self.assertEqual(struct.unpack_from('>I',text,start+4)[0],0x00801025)
+            self.assertEqual(struct.unpack_from('>I',text,start+4)[0],0x3C020000)
+            self.assertEqual(
+                relocations[start+4], [('R_MIPS_HI16', 'next_sample')]
+            )
             self.assertEqual(functions['next_sample']['value'],start+0x10)
+
+            (work/'invalid-patches.csv').write_text(
+                'filename,function,offset,expected,replacement,'
+                'expected_relocations,replacement_relocations,note,insert_after,'
+                'insert_after_relocations\n'
+                'fixture,sample,0x0,0x24840001,0x24840001,-,-,'
+                'missing inserted word,,R_MIPS_HI16:next_sample\n'
+            )
+            with self.assertRaisesRegex(
+                ValueError, 'inserted relocations without an inserted word'
+            ):
+                emit_padded_assembly(
+                    work/'compact.o',work/'retail.s',
+                    word_patches_path=work/'invalid-patches.csv',
+                    filename='fixture'
+                )
 
             (work/'retail-tight.s').write_text('''
 glabel sample

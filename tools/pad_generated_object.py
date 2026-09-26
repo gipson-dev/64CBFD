@@ -10,8 +10,8 @@ original offset from the preserved raw-assembly slice. The gaps are zero-filled
 MIPS nops. Exported jump-table labels are restored at their retail offsets too.
 
 The result is still C-derived code: inter-function layout is restored, and an
-optional guarded table can replace compiled words or insert non-relocated
-scheduling words while enforcing each function's retail span.
+optional guarded table can replace compiled words or insert scheduling words
+and their relocations while enforcing each function's retail span.
 """
 
 import argparse
@@ -216,12 +216,22 @@ def load_word_patches(path, filename):
                     f"word patch for {key[0]} at 0x{key[1]:X} must declare "
                     "both relocation fields"
                 )
+            insert_after = parse_optional_word(row.get("insert_after"))
+            insert_after_relocations = parse_relocation_spec(
+                row.get("insert_after_relocations")
+            )
+            if insert_after is None and insert_after_relocations is not None:
+                raise ValueError(
+                    f"word patch for {key[0]} at 0x{key[1]:X} declares "
+                    "inserted relocations without an inserted word"
+                )
             patches[key] = {
                 "expected": int(row["expected"], 0),
                 "replacement": int(row["replacement"], 0),
                 "expected_relocations": expected_relocations,
                 "replacement_relocations": replacement_relocations,
-                "insert_after": parse_optional_word(row.get("insert_after")),
+                "insert_after": insert_after,
+                "insert_after_relocations": insert_after_relocations or [],
             }
     return patches
 
@@ -362,6 +372,12 @@ def emit_padded_assembly(
             emitted_relative += 4
             if patch is not None and patch["insert_after"] is not None:
                 emit_labels(target + emitted_relative)
+                for relocation_name, relocation_symbol in patch[
+                    "insert_after_relocations"
+                ]:
+                    output.append(
+                        f".reloc ., {relocation_name}, {relocation_symbol}"
+                    )
                 output.append(f".word 0x{patch['insert_after']:08X}")
                 emitted_relative += 4
         output.append(f".size {name}, . - {name}")

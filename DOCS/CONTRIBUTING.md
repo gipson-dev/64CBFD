@@ -157,10 +157,12 @@ Generated-slice word patches may also use `insert_after` for a measured
 missing scheduling word. The padder counts every insertion against the
 function's retail span, shifts restored jump-label positions with emitted
 bytes, and requires the containing compiled word to pass its expected-word
-and relocation guards. Inserted words cannot carry relocations; use explicit
-replacement relocation fields on neighboring compiled words when a symbol
-load moves. Cover new insertion shapes in `tools/tests/` and verify the full
-linked function span against retail.
+and relocation guards. When the inserted word references a symbol, declare
+its semicolon-separated relocations in `insert_after_relocations`; the padder
+rejects inserted relocations without an `insert_after` word. Use explicit
+replacement relocation fields on neighboring compiled words when an existing
+symbol load moves. Cover new insertion shapes in `tools/tests/` and verify the
+full linked function span against retail.
 
 ### Reference decomp source and compile profiles
 

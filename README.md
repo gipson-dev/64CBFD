@@ -49,9 +49,12 @@ compiler words, bringing the total to 2,668. Keep `func_150721A4` parked as a
 compiler-overflow row. The selector/table reader `func_150849CC` is now a real
 C implementation instead of a zero-return placeholder and is byte-exact with
 three guarded CFG rows, bringing the total to 2,669. Keep
-handwritten/generated bitstream rows in the assembly queue and continue with
-`func_1508CA88`. The measured boundary is in
-[Working Note 157](DOCS/WORKING_NOTES/157-game-selector-table-byte-match-20260926.md).
+handwritten/generated bitstream rows in the assembly queue. The signed
+wrapping counter `func_1508CA88` is now byte-exact after recovering its shared
+return path and signed-byte accesses, with two guarded rows preserving the
+independent final global-pointer reload, bringing the total to 2,670. Continue
+with `func_15116930`. The measured boundary is in
+[Working Note 158](DOCS/WORKING_NOTES/158-game-wrapping-byte-counter-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -77,9 +80,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,669 / 5,483 (48.68%) | 1 | 2,813 |
+| Total | `[############------------]` 2,670 / 5,483 (48.70%) | 1 | 2,812 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,101 / 4,794 (43.83%) | 0 | 2,693 |
+| Game | `[##########--------------]` 2,102 / 4,794 (43.85%) | 0 | 2,692 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

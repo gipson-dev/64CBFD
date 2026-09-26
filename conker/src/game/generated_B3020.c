@@ -408,16 +408,17 @@ s32 func_1508C9CC() {
 }
 
 s32 func_1508CA88() {
-    u8 *ptr = (u8 *) D_800D23B0;
+    s8 *ptr = (s8 *) D_800D23B0;
+    s32 value;
 
     ptr[0x1703] += 1;
-    ptr = (u8 *) D_800D23B0;
-    if (*(s8 *) (ptr + 0x1703) < D_8008FD90) {
-        return *(s8 *) (ptr + 0x1703);
+    ptr = (s8 *) D_800D23B0;
+    value = ptr[0x1703];
+    if (value >= D_8008FD90) {
+        ptr[0x1703] = 0;
+        value = *(s8 *) (D_800D23B0 + 0x1703);
     }
-    ptr[0x1703] = 0;
-    ptr = (u8 *) D_800D23B0;
-    return *(s8 *) (ptr + 0x1703);
+    return value;
 }
 
 s32 func_1508CAD8() {

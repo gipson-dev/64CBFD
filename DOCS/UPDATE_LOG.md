@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Wrapping signed-byte counter byte-exact
+
+- Completed all 20 words of `func_1508CA88`. It increments the signed object
+  byte at offset `0x1703`, returns values below `D_8008FD90`, and wraps the
+  byte to zero at the limit.
+- Signed accesses and a shared return recover nineteen retail words directly.
+  Two guarded rows retain retail's independently hoisted final
+  `D_800D23B0` reload. Both padding tools now support and test symbolic
+  relocations on inserted words. The patch table is 1,111 unique rows with no
+  duplicate keys.
+- Linked `0xB9F08` and retail `0xB9F38` share SHA-256
+  `5329f59db01e662472dbd6eb6a3f48747d1c3dfdd94fa66d5fbeada21b9403cf`.
+  Fresh scan: **2670 / 5483 (48.70%)** overall and
+  **2102 / 4794 (43.85%)** game, with debugger unchanged at **181 / 181**.
+
 ### Selector-table byte conversion byte-exact
 
 - Replaced `func_150849CC`'s zero-return placeholder with its complete

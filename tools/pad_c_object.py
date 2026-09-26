@@ -9,9 +9,9 @@ filled gaps before functions at their retail-relative addresses. Oversized
 non-matching functions keep their full compiled bodies in section-local
 overflow regions and use short in-slot jump trampolines, preventing them from
 displacing later functions. An optional guarded table can replace known
-compiler-scheduling words or insert a non-relocated scheduling word after
-verifying the compiled input value. Patches may also move relocations when
-both the expected and replacement lists are declared explicitly.
+compiler-scheduling words or insert a scheduling word and its relocations
+after verifying the compiled input value. Patches may also move relocations
+when both the expected and replacement lists are declared explicitly.
 """
 
 import argparse
@@ -55,6 +55,15 @@ def load_word_patches(path, filename):
                 raise ValueError(
                     f"duplicate word patch for {key[0]} at 0x{key[1]:X}"
                 )
+            insert_after = parse_optional_word(row.get("insert_after"))
+            insert_after_relocations = parse_relocation_spec(
+                row.get("insert_after_relocations")
+            )
+            if insert_after is None and insert_after_relocations is not None:
+                raise ValueError(
+                    f"word patch for {key[0]} at 0x{key[1]:X} declares "
+                    "inserted relocations without an inserted word"
+                )
             patches[key] = {
                 "expected": int(row["expected"], 0),
                 "replacement": int(row["replacement"], 0),
@@ -64,7 +73,8 @@ def load_word_patches(path, filename):
                 "replacement_relocations": parse_relocation_spec(
                     row.get("replacement_relocations")
                 ),
-                "insert_after": parse_optional_word(row.get("insert_after")),
+                "insert_after": insert_after,
+                "insert_after_relocations": insert_after_relocations or [],
                 "note": row.get("note", ""),
             }
             if ((patches[key]["expected_relocations"] is None) !=
@@ -247,6 +257,12 @@ def emit_padded_assembly(
                     )
                 output.append(f".word 0x{word:08X}")
                 if patch is not None and patch["insert_after"] is not None:
+                    for relocation_name, relocation_symbol in patch[
+                        "insert_after_relocations"
+                    ]:
+                        output.append(
+                            f".reloc ., {relocation_name}, {relocation_symbol}"
+                        )
                     output.append(f".word 0x{patch['insert_after']:08X}")
             emitted_size = symbol["size"] + inserted_size
         output.extend((f".size {name}, . - {name}", ""))

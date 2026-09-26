@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,669 / 5,483 (48.68%) | 1 | 2,813 |
+| Total | 5,483 / 6,038 (90.81%) | 2,670 / 5,483 (48.70%) | 1 | 2,812 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,101 / 4,794 (43.83%) | 0 | 2,693 |
+| Game | 4,794 / 5,318 (90.15%) | 2,102 / 4,794 (43.85%) | 0 | 2,692 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -450,7 +450,12 @@ The selector-table byte pass then replaced `func_150849CC`'s zero-return
 placeholder with its complete 19-word C behavior and retained one redundant
 retail fallback branch through three guarded CFG rows; see
 [Working Note 157](WORKING_NOTES/157-game-selector-table-byte-match-20260926.md).
-Continue with 20-word `func_1508CA88`, which has 17 real differences.
+The wrapping signed-byte counter pass then completed all 20 words of
+`func_1508CA88` after recovering its shared return path and preserving the
+independent final global-pointer reload through two guarded relocation-aware
+rows; see
+[Working Note 158](WORKING_NOTES/158-game-wrapping-byte-counter-match-20260926.md).
+Continue with 21-word `func_15116930`, which has 17 real differences.
 
 Current host-port progression and acceptance boundaries:
 

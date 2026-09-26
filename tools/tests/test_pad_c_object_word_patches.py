@@ -200,9 +200,9 @@ nop
             (work / "patches.csv").write_text(
                 "filename,function,offset,expected,replacement,"
                 "expected_relocations,replacement_relocations,note,"
-                "insert_after\n"
+                "insert_after,insert_after_relocations\n"
                 "fixture,sample,0x8,0x00000000,0x00000000,,,"
-                "insert scheduled load,0x90820000\n"
+                "insert scheduled base,0x3C020000,R_MIPS_HI16:next_sample\n"
             )
 
             subprocess.run(
@@ -239,11 +239,31 @@ nop
                 capture_output=True,
             )
 
-            text, functions, _ = parse_object(work / "padded.o")
+            text, functions, relocations = parse_object(work / "padded.o")
             start = functions["sample"]["value"]
             self.assertEqual(functions["sample"]["size"], 0x10)
-            self.assertEqual(struct.unpack_from(">I", text, start + 0xC)[0], 0x90820000)
+            self.assertEqual(struct.unpack_from(">I", text, start + 0xC)[0], 0x3C020000)
+            self.assertEqual(
+                relocations[start + 0xC], [("R_MIPS_HI16", "next_sample")]
+            )
             self.assertEqual(functions["next_sample"]["value"], start + 0x10)
+
+            (work / "invalid-patches.csv").write_text(
+                "filename,function,offset,expected,replacement,"
+                "expected_relocations,replacement_relocations,note,"
+                "insert_after,insert_after_relocations\n"
+                "fixture,sample,0x8,0x00000000,0x00000000,,,"
+                "missing inserted word,,R_MIPS_HI16:next_sample\n"
+            )
+            with self.assertRaisesRegex(
+                ValueError, "inserted relocations without an inserted word"
+            ):
+                emit_padded_assembly(
+                    work / "compact.o",
+                    work / "layout.csv",
+                    "fixture",
+                    word_patches_path=work / "invalid-patches.csv",
+                )
 
 
 if __name__ == "__main__":
