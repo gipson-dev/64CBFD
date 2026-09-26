@@ -105,6 +105,7 @@ s32 func_150AD9A0() {
 // kept below for documentation.
 //
 // xorshift-style PRNG step, operating on the 64-bit seed D_800885B0.
+#if 0
 s32 func_150ADA20(void) {
     u64 seed = D_800885B0;
     u64 mixed = ((seed << 63) >> 31) | ((seed << 31) >> 32);
@@ -114,6 +115,8 @@ s32 func_150ADA20(void) {
     D_800885B0 = seed;
     return (s32) seed;
 }
+#endif
+#pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADA20.s")
 
 f32 func_150ADA68(void) {
     u64 seed = D_800885B0;

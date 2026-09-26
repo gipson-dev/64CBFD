@@ -366,6 +366,10 @@ restoring all four floating identity-diagonal stores, retaining the three raw
 translation words, and guarding six independent register/schedule words.
 Continue with 18-word `func_150ADA20`. The latest result is in
 [Working Note 172](WORKING_NOTES/172-game-translation-matrix-identity-match-20260926.md).
+That PRNG step was then restored to its proven original handwritten assembly
+ownership after its equivalent C compiled as a 19-word overflow. Continue
+with 30-word `func_150CFE98`. The latest result is in
+[Working Note 173](WORKING_NOTES/173-game-handwritten-prng-step-restoration-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

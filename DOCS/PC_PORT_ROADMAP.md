@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,684 / 5,483 (48.95%) | 1 | 2,798 |
+| Total | 5,482 / 6,038 (90.79%) | 2,684 / 5,482 (48.96%) | 1 | 2,797 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,116 / 4,794 (44.14%) | 0 | 2,678 |
+| Game | 4,793 / 5,318 (90.13%) | 2,116 / 4,793 (44.15%) | 0 | 2,677 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -511,7 +511,11 @@ The translation-matrix pass then restored `func_150A7DA0`'s four floating
 identity-diagonal stores and three raw translation words, with six guarded
 register/schedule words matching all 20 words; see
 [Working Note 172](WORKING_NOTES/172-game-translation-matrix-identity-match-20260926.md).
-Continue with 18-word `func_150ADA20`, which has 18 real differences.
+The PRNG ownership pass then restored `func_150ADA20`'s original handwritten
+18-word MIPS III body after its equivalent C was confirmed to overflow the
+retail slot by one word; see
+[Working Note 173](WORKING_NOTES/173-game-handwritten-prng-step-restoration-20260926.md).
+Continue with 30-word `func_150CFE98`, which has 18 real differences.
 
 Current host-port progression and acceptance boundaries:
 

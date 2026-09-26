@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Original handwritten PRNG step restored
+
+- Restored `func_150ADA20` from its maintained behavioral C equivalent to the
+  original 18-word MIPS III assembly body. The C form compiled to 19 words and
+  therefore occupied an out-of-line overflow section behind a slot trampoline.
+- Preserved the verified C equivalent under `#if 0`. Retail's strict
+  source-order shifts, assembler-style self-base seed load, independent seed
+  store, compact `a0`/`a1`/`a2` register reuse, and useful return-delay
+  `dsra32` are now represented directly by the extracted original body.
+- Linked `0x150ADA20..0x150ADA64` and pristine retail
+  `conker.us.bin+0xDAED0` share SHA-256
+  `040875e60d965f65ffa115c2fbc6a46afadd210d3daa55d6fd1ba1c1b5accfd2`.
+  This classification correction leaves the exact numerator at **2,684**;
+  the fresh scan is **2684 / 5482 (48.96%)** overall and
+  **2116 / 4793 (44.15%)** game.
+
 ### Translation matrix initializer byte-exact
 
 - Corrected `func_150A7DA0` from raw integer identity constants to four

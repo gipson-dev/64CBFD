@@ -89,8 +89,12 @@ three-word store/return schedule, bringing the total to 2,683. Continue with
 restoring all four floating `1.0f` diagonal stores, retaining the three raw
 translation words, and guarding six independent register/schedule words,
 bringing the total to 2,684. Continue with `func_150ADA20`. The measured
-boundary is in
-[Working Note 172](DOCS/WORKING_NOTES/172-game-translation-matrix-identity-match-20260926.md).
+boundary is in [Working Note 172](DOCS/WORKING_NOTES/172-game-translation-matrix-identity-match-20260926.md).
+That PRNG step is now restored to its original handwritten 18-word assembly
+body after the maintained C equivalent proved to be a 19-word overflow,
+leaving the exact numerator at 2,684 while correcting the denominator to
+5,482. Continue with `func_150CFE98`. The measured boundary is in
+[Working Note 173](DOCS/WORKING_NOTES/173-game-handwritten-prng-step-restoration-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -109,16 +113,16 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Converted functions | Converted bytes |
 | --- | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 85.64% |
+| Total | 5,482 / 6,038 (90.79%) | 85.63% |
 | Init | 508 / 538 (94.42%) | 90.79% |
-| Game | 4,794 / 5,318 (90.15%) | 85.10% |
+| Game | 4,793 / 5,318 (90.13%) | 85.09% |
 | Debugger | 181 / 182 (99.45%) | 99.19% |
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,684 / 5,483 (48.95%) | 1 | 2,798 |
+| Total | `[############------------]` 2,684 / 5,482 (48.96%) | 1 | 2,797 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[###########-------------]` 2,116 / 4,794 (44.14%) | 0 | 2,678 |
+| Game | `[###########-------------]` 2,116 / 4,793 (44.15%) | 0 | 2,677 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside
