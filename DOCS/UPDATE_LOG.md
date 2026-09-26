@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Nested-state flag byte-exact
+
+- Completed all 15 words of `func_151C9B64` directly from source. The
+  generated condition had the two outcomes reversed relative to retail:
+  nonzero nested state clears bit 1 at object offset `0x58` and writes zero,
+  while zero nested state writes one.
+- Writing the branches in retail order and naming the nested pointer restores
+  IDO's exact `v0`, `t6` through `t9`, and branch-likely schedule. No guarded
+  patch rows are required.
+- Linked `0x1F6FE4` and retail `0x1F7014` share SHA-256
+  `858ab5572befd445453963a3e2f71e301e601166088a9fbfd54a0da147819bbc`.
+  Fresh scan: **2624 / 5483 (47.86%)** overall and
+  **2056 / 4794 (42.89%)** game, with debugger unchanged at **181 / 181**.
+
 ### Byte-gated optional call byte-exact
 
 - Completed all 15 words of `func_151A9024`. The existing C behavior was

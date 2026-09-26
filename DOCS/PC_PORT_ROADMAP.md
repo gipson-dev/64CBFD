@@ -295,6 +295,10 @@ The byte-gated call pass completed all 15 words of `func_151A9024` with
 thirteen guarded argument and call-scheduling words. Continue with 15-word
 `func_151C9B64`, whose generated condition is inverted relative to retail; see
 [Working Note 111](WORKING_NOTES/111-game-byte-gated-call-match-20260926.md).
+The nested-state flag pass completed all 15 words of `func_151C9B64` directly
+from corrected branch semantics and an explicit nested-pointer lifetime.
+Continue with the tied 13-word `func_151F892C` and `func_151F8960`; see
+[Working Note 112](WORKING_NOTES/112-game-nested-state-flag-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -108,11 +108,13 @@ s32 func_151C9B30(u8 *arg0) {
 }
 
 s32 func_151C9B64(u8 *arg0, u8 *arg1) {
-    if (*(*(u8 **) (arg0 + 0x188) + 0x6F) == 0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x188);
+
+    if (*(temp_v0 + 0x6F) == 0) {
+        *arg1 = 1;
+    } else {
         *(u32 *) (arg0 + 0x58) &= ~2;
         *arg1 = 0;
-    } else {
-        *arg1 = 1;
     }
     return 1;
 }

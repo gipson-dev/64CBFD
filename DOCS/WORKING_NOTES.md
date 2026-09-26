@@ -240,11 +240,12 @@ across both helper calls. `func_1519582C` then matched from volatile pointer
 source plus eight guarded relocation/scheduling words that preserve retail's
 opening `v0`/`v1` global-address preload. `func_151A9024` then matched with
 thirteen guarded words that preserve retail's argument-home, byte-narrowing,
-early-epilogue, and call-relocation schedule. Continue with 15-word
-`func_151C9B64`, now the first thirteen-difference game row; its generated C
-condition is semantically inverted relative to retail.
+early-epilogue, and call-relocation schedule. `func_151C9B64` then matched
+directly after correcting its inverted branch outcomes and naming the nested
+pointer to restore retail's register lifetime. Continue with the tied 13-word
+`func_151F892C` and `func_151F8960`, each currently thirteen differences.
 The latest result is in
-[Working Note 111](WORKING_NOTES/111-game-byte-gated-call-match-20260926.md).
+[Working Note 112](WORKING_NOTES/112-game-nested-state-flag-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

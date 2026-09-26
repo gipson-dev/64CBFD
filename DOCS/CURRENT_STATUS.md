@@ -287,9 +287,11 @@ end-to-end gameplay acceptance.
    pointer source plus eight guarded relocation/scheduling words that preserve
    retail's opening `v0`/`v1` global-address preload. `func_151A9024` is now
    byte-exact with thirteen guarded words that preserve retail's argument-home,
-   byte-narrowing, early-epilogue, and call-relocation schedule. Continue with
-   15-word `func_151C9B64`, now the first thirteen-difference game row; its
-   generated C condition is semantically inverted relative to retail.
+   byte-narrowing, early-epilogue, and call-relocation schedule.
+   `func_151C9B64` is now byte-exact directly from corrected branch semantics
+   and an explicit nested-pointer lifetime; no guarded words are required.
+   Continue with the tied 13-word `func_151F892C` and `func_151F8960`, each
+   currently differing in all thirteen words.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
