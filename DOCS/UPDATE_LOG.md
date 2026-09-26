@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Indexed callback forwarding byte-exact
+
+- Completed all 18 words of `func_15147D1C`. It selects an optional callback
+  from `D_8008A390` using the object's index at offset `0x20`.
+- Restored the callback's object, scalar, and byte arguments instead of calling
+  it with no arguments. The typed call directly recovers retail's `u8`
+  normalization, preserved argument registers, table-index temporaries, and
+  indirect call sequence. No patch rows were added; the patch table remains at
+  1,060 unique rows.
+- Linked `0x17519C` and retail `0x1751CC` share SHA-256
+  `447aedea4176680dcea5ebbc7b72ab9d9d3242591a52ef5a1e3d7310fe91d57b`.
+  Fresh scan: **2663 / 5483 (48.57%)** overall and
+  **2095 / 4794 (43.70%)** game, with debugger unchanged at **181 / 181**.
+
 ### Scaled angle components byte-exact
 
 - Completed all 25 words of `func_15143874`. It performs two

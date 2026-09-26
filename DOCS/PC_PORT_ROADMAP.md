@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,662 / 5,483 (48.55%) | 1 | 2,820 |
+| Total | 5,483 / 6,038 (90.81%) | 2,663 / 5,483 (48.57%) | 1 | 2,819 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,094 / 4,794 (43.68%) | 0 | 2,700 |
+| Game | 4,794 / 5,318 (90.15%) | 2,095 / 4,794 (43.70%) | 0 | 2,699 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -421,8 +421,11 @@ The scaled angle-component pass then completed all 25 words of
 `func_15143874` directly from C after correcting its signed angle ABI and
 recovering explicit narrowed-angle and lookup-result lifetimes; see
 [Working Note 150](WORKING_NOTES/150-game-scaled-angle-components-match-20260926.md).
+The indexed callback pass then completed all 18 words of `func_15147D1C`
+directly from C after restoring its three forwarded callback arguments; see
+[Working Note 151](WORKING_NOTES/151-game-indexed-callback-forwarding-match-20260926.md).
 Skip handwritten `func_15125628` and continue with 18-word
-`func_15147D1C`, which has 16 real differences.
+`func_1515C158`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 

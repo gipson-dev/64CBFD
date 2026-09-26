@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,662 / 5,483 (48.55%) | 1 | 2,820 |
+| Total | 2,663 / 5,483 (48.57%) | 1 | 2,819 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,094 / 4,794 (43.68%) | 0 | 2,700 |
+| Game | 2,095 / 4,794 (43.70%) | 0 | 2,699 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,662, while
+denominator driven: the exact count is now 2,663, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -370,8 +370,10 @@ end-to-end gameplay acceptance.
    across both event paths and guarding one commutative branch operand-order
    word. `func_15143874` now matches directly after correcting its signed
    angle ABI and recovering explicit narrowed-angle and lookup-result
-   lifetimes. Skip handwritten `func_15125628` and continue with 18-word
-   `func_15147D1C`, the next ordinary Game C row in the 16-difference queue.
+   lifetimes. `func_15147D1C` now matches directly after restoring the indexed
+   callback's object, scalar, and normalized-byte arguments. Skip handwritten
+   `func_15125628` and continue with 18-word `func_1515C158`, the next ordinary
+   Game C row in the 16-difference queue.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

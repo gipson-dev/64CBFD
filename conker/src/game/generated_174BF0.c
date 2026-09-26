@@ -65,10 +65,10 @@ s32 func_15147C4C() {
 }
 
 void func_15147D1C(u8 *arg0, s32 arg1, u8 arg2) {
-    void (*temp_v0)() = D_8008A390[*(s32 *) (arg0 + 0x20)];
+    void (*temp_v0)(u8 *, s32, u8) = D_8008A390[*(s32 *) (arg0 + 0x20)];
 
     if (temp_v0 != 0) {
-        temp_v0();
+        temp_v0(arg0, arg1, arg2);
     }
 }
 
