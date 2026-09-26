@@ -248,10 +248,11 @@ explicitly handwritten and consume non-ABI live registers. `func_1502C380`
 matched directly after an assignment chain restored retail's destination
 address and loaded-value lifetimes. `func_150A7B80` then matched after its
 eight clears were made explicit and fourteen guarded overflow-slot words
-restored retail's native 64-bit stores and diagonal schedule. Continue with
-16-word `func_1516A770`, whose source is still a zero-return placeholder. The
-latest result is in
-[Working Note 114](WORKING_NOTES/114-game-fixed-matrix-identity-match-20260926.md).
+restored retail's native 64-bit stores and diagonal schedule. `func_1516A770`
+then matched directly after its zero-return placeholder was replaced with the
+delimiter-splitting loop and the count update was correctly scoped to replaced
+bytes. Continue with 16-word `func_1518F45C`. The latest result is in
+[Working Note 115](WORKING_NOTES/115-game-delimiter-split-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

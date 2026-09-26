@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Delimiter split byte-exact
+
+- Replaced the zero-return placeholder for `func_1516A770` with its complete
+  delimiter-splitting loop. It scans to the terminating zero, replaces each
+  `0xBD` byte with zero, and returns the number of resulting fields.
+- Keeping the source as repeated `*arg0` reads gives IDO retail's exact `v0`
+  byte lifetime, `a1` delimiter constant, branch-likely loads, conditional
+  count update, and shared epilogue. All 16 words match directly with no
+  guarded rows.
+- Linked `0x197BF0` and retail `0x197C20` share SHA-256
+  `059a7d6e9e7166f4c154face31ebe5ddfbbfb064c34253e110bafa6ea0bf10d2`.
+  Fresh scan: **2627 / 5483 (47.91%)** overall and
+  **2059 / 4794 (42.95%)** game, with debugger unchanged at **181 / 181**.
+
 ### Fixed-matrix identity byte-exact
 
 - Completed all 16 words of `func_150A7B80`. The C source now states the eight

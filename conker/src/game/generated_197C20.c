@@ -2,8 +2,18 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/197C20.s. */
 
-s32 func_1516A770() {
-    return 0;
+s32 func_1516A770(u8 *arg0) {
+    s32 count = 1;
+
+    while (*arg0 != 0) {
+        if (*arg0 == 0xBD) {
+            *arg0 = 0;
+            count++;
+        }
+        arg0++;
+    }
+
+    return count;
 }
 
 s32 func_1516A7B0() {
