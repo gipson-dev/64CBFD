@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Record-construction order byte-exact
+
+- Completed all 34 words of `func_151D74B0` by moving the record pointer
+  assignment ahead of its three byte fields. This restores retail's pointer
+  store before the remaining byte and stack-argument loads and closes the
+  ten-difference game tier without guarded rows.
+- The patch table remains at 678 unique rows. The complete linked span at
+  `0x204930` and retail span at `0x204960` share SHA-256
+  `002a8c708dffc31c8235fae006313e893a65b893b7ffcc3e730a65a2ec243d01`.
+  Fresh scan: **2590 / 5484 (47.23%)** overall and
+  **2022 / 4795 (42.17%)** game, with debugger unchanged at **181 / 181**.
+
 ### Seven-argument wrapper byte-exact
 
 - Completed all 19 words of `func_151581D8` through ten guarded prologue and

@@ -47,10 +47,10 @@ void func_151D74B0(u8 *arg0, u8 arg1, s8 arg2, u8 arg3, s32 arg4) {
     struct { u8 *word0; u8 byte0; u8 byte1; s8 byte2; } rec;
     s32 temp_v0;
 
+    rec.word0 = arg0;
     rec.byte0 = arg0[0x3B];
     rec.byte1 = arg1;
     rec.byte2 = arg2;
-    rec.word0 = arg0;
     temp_v0 = func_151D71B0(0x12C, 0, 0, 0x41400000, 8, arg3, arg4);
     if (temp_v0 != 0) {
         memcpy((u8 *)(temp_v0 + 0x40), &rec, 8);
