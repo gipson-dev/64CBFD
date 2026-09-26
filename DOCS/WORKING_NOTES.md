@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, interpolation register schedule matched).** The current
-linked checkpoint is `2592 / 5484 (47.26%)` exact C functions, with one
-address-drift blocker and 2,891 genuinely different C functions. The tree
+**Active (2026-09-26, five-byte queue shift matched).** The current linked
+checkpoint is `2593 / 5484 (47.28%)` exact C functions, with one address-drift
+blocker and 2,890 genuinely different C functions. The tree
 contains 554 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -170,7 +170,7 @@ and selector registers. Structural twin `func_151963B4` is independently
 matched. `func_151E5F64` now matches from source-level positive-branch
 control-flow recovery. The previously parked `func_151E81EC` now matches from
 a four-word state struct plus guarded paired-store relocations; continue at
-15-word `func_1507EEB8` after completing `func_1502EA0C` through guarded
+17-word `func_150B6D34` after completing `func_1502EA0C` through guarded
 packed-byte scheduling, `func_15033E84` through source-level linked-list loop
 recovery, `func_15094F40` plus `func_15096934` through independently guarded
 cursor expansions, `func_150CF578` through source-level scalar/product
@@ -185,8 +185,10 @@ eleven-difference row through a guarded local-record pointer and call schedule.
 `func_15074A94` then matched from a direct interpolation expression plus
 guarded FP-register normalization. The padded-object rules now also declare
 the patch table as an explicit dependency, preventing stale guarded objects.
+`func_1507EEB8` then matched directly from a fixed reverse loop with no guarded
+rows.
 The latest result is in
-[Working Note 079](WORKING_NOTES/079-game-interpolation-register-match-20260926.md).
+[Working Note 080](WORKING_NOTES/080-game-five-byte-queue-shift-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

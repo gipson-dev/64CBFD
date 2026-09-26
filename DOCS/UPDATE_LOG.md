@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Five-byte queue shift byte-exact
+
+- Completed all 15 words of `func_1507EEB8` by replacing five scalar byte
+  assignments with the original fixed reverse loop. IDO now emits retail's
+  `arg1 + 4` induction pointer, unrolled load/store order, and final new-byte
+  store directly from C.
+- No guarded rows were added. The patch table remains at 700 unique rows. The
+  complete linked span at `0xAC338` and retail span at `0xAC368` share SHA-256
+  `bec0e721180c79c0dfb9915789558fbb481fe906c5fee1e835496f9727260b1f`.
+  Fresh scan: **2593 / 5484 (47.28%)** overall and
+  **2025 / 4795 (42.23%)** game, with debugger unchanged at **181 / 181**.
+
 ### Interpolation register match byte-exact
 
 - Completed all 58 words of `func_15074A94` by expressing the interpolation as

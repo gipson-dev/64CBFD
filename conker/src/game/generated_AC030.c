@@ -22,10 +22,11 @@ s32 func_1507EE58() {
 }
 
 void func_1507EEB8(u8 arg0, u8 *arg1) {
-    arg1[4] = arg1[3];
-    arg1[3] = arg1[2];
-    arg1[2] = arg1[1];
-    arg1[1] = arg1[0];
+    s32 i;
+
+    for (i = 4; i > 0; i--) {
+        arg1[i] = arg1[i - 1];
+    }
     arg1[0] = arg0;
 }
 

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,592 / 5,484 (47.26%) | 1 | 2,891 |
+| Total | 5,484 / 6,038 (90.82%) | 2,593 / 5,484 (47.28%) | 1 | 2,890 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,024 / 4,795 (42.21%) | 0 | 2,771 |
+| Game | 4,795 / 5,318 (90.17%) | 2,025 / 4,795 (42.23%) | 0 | 2,770 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -180,6 +180,9 @@ local-record pointer schedule; see
 The next interpolation pass completed `func_15074A94` through a direct
 source-level expression and guarded FP-register normalization; see
 [Working Note 079](WORKING_NOTES/079-game-interpolation-register-match-20260926.md).
+The five-byte queue pass completed `func_1507EEB8` from a source-level fixed
+reverse loop with no guarded rows; see
+[Working Note 080](WORKING_NOTES/080-game-five-byte-queue-shift-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
