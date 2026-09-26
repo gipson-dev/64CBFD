@@ -950,3 +950,10 @@ generated_1EF500,func_151C4510,0x034,0xC4A4000C,0xC4AA000C,-,-,Load the third so
 generated_1EF500,func_151C4510,0x038,0x460C2182,0x460C5482,-,-,Multiply the third source component through f10 and f12,
 generated_1EF500,func_151C4510,0x03C,0x460E3200,0x46124400,-,-,Add the third scaled component to retained f8,
 generated_1EF500,func_151C4510,0x040,0xE488003C,0xE490003C,-,-,Store the third updated destination component from f16,
+generated_F4D20,func_150C78E0,0x00C,0x3C03FFFF,0x3C020000,-,R_MIPS_HI16:D_800DBEF4,Begin loading the global state pointer before the flag test,
+generated_F4D20,func_150C78E0,0x010,0x3C020000,0x31CF0004,R_MIPS_HI16:D_800DBEF4,-,Test object flag 0x04 after the global high-half load,
+generated_F4D20,func_150C78E0,0x014,0x31CF0004,0x55E0000B,-,-,Branch over the update when object flag 0x04 is set,
+generated_F4D20,func_150C78E0,0x018,0x55E00009,0x8FBF0014,-,-,Reload ra in the taken branch delay slot,
+generated_F4D20,func_150C78E0,0x01C,0x8FBF0014,0x8C420000,-,R_MIPS_LO16:D_800DBEF4,Finish loading the global state pointer on the update path,
+generated_F4D20,func_150C78E0,0x020,0x8C420000,0x3C03FFFF,R_MIPS_LO16:D_800DBEF4,-,Materialize the high-half mask after the global pointer load,
+generated_F4D20,func_150C78E0,0x024,0x8C58021C,0x8C58021C,-,-,Retain the source word load before the dead pointer advance,0x244201E0

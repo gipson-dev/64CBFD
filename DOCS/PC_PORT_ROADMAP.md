@@ -351,7 +351,11 @@ The scaled three-component update pass then completed all 19 words of
 `func_151C4510` from explicit destination lifetimes plus fifteen guarded FP
 scheduling words; see
 [Working Note 132](WORKING_NOTES/132-game-scaled-vector-update-match-20260926.md).
-Continue with 20-word `func_150C78E0`.
+The flag-gated high-half-mask pass then completed all 20 words of
+`func_150C78E0` with six guarded scheduling replacements and one guarded dead
+pointer-advance insertion; see
+[Working Note 133](WORKING_NOTES/133-game-flag-gated-high-half-mask-match-20260926.md).
+Continue with 20-word `func_15130230`.
 
 Current host-port progression and acceptance boundaries:
 

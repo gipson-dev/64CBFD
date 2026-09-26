@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Flag-gated high-half mask byte-exact
+
+- Completed all 20 words of `func_150C78E0`. Its existing C checks object flag
+  `0x04`, derives a negated high-half mask from `D_800DBEF4 + 0x21C`, stores it
+  at object offset `0x3C`, and calls `func_151150BC`.
+- Added seven guarded rows: six replacements restore the global-load, mask,
+  and branch schedule, while one insertion retains retail's dead
+  `v0 += 0x1E0`. Both moved `D_800DBEF4` relocations are explicit. The patch
+  table now has 958 unique rows and no duplicate keys.
+- Linked `0xF4D60` and retail `0xF4D90` share SHA-256
+  `2993ebbc71a7fdab44102ff522da92775807b05b01243a07957585f11868530d`.
+  Fresh scan: **2645 / 5483 (48.24%)** overall and
+  **2077 / 4794 (43.32%)** game, with debugger unchanged at **181 / 181**.
+
 ### Scaled vector update byte-exact
 
 - Completed all 19 words of `func_151C4510`. Explicit locals retain the first
