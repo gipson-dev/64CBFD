@@ -298,9 +298,11 @@ end-to-end gameplay acceptance.
    clears explicitly and using fourteen guarded overflow-slot words to retain
    retail's native 64-bit stores and diagonal writes. `func_1516A770` is now
    byte-exact directly from a delimiter-splitting loop: it replaces each
-   `0xBD` byte with zero and returns the replacement count plus one. Continue
-   with 16-word `func_1518F45C`, the smallest remaining ordinary-C row at
-   fourteen real differences.
+   `0xBD` byte with zero and returns the replacement count plus one.
+   `func_1518F45C` is now byte-exact directly after its scalar array became a
+   one-word aggregate and the callee's record parameter became `void *`.
+   Continue with 16-word `func_151A5130`, the smallest remaining ordinary-C
+   row at fourteen real differences.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

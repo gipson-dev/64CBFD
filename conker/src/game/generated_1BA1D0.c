@@ -2,7 +2,7 @@
 f32 func_150ADA68();
 extern void (*D_8008D680[])();
 typedef struct { s32 a, b, c; } ThreeWord1BA1D0;
-void func_15169260(s32, s32, s32, u8);
+void func_15169260(void *, s32, s32, u8);
 extern u8 D_800A74D4[];
 typedef struct { s32 val; } OneWord1BA1D0;
 typedef struct {
@@ -135,10 +135,10 @@ s32 func_1518F384() {
 }
 
 void func_1518F45C(s32 arg0, u8 arg1) {
-    s32 tmp[1];
+    OneWord1BA1D0 tmp;
 
-    tmp[0] = *(s32 *) D_800A74D4;
-    func_15169260(tmp, 1, arg0, arg1);
+    tmp = *(OneWord1BA1D0 *) D_800A74D4;
+    func_15169260(&tmp, 1, arg0, arg1);
 }
 
 s32 func_1518F49C() {

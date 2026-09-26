@@ -304,9 +304,10 @@ therefore excluded from C restoration. The global-selection pass completed all
 15 words of `func_1502C380` directly from an assignment chain. The fixed-matrix
 pass then completed all 16 words of `func_150A7B80` with explicit source
 stores and fourteen guarded overflow-slot replacements. The delimiter-split
-pass completed all 16 words of `func_1516A770` directly from source. Continue
-with 16-word `func_1518F45C`; see
-[Working Note 115](WORKING_NOTES/115-game-delimiter-split-match-20260926.md).
+pass completed all 16 words of `func_1516A770` directly from source. The
+one-word aggregate-forwarder pass then completed all 16 words of
+`func_1518F45C` directly from source. Continue with 16-word `func_151A5130`;
+see [Working Note 116](WORKING_NOTES/116-game-one-word-aggregate-forwarder-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
