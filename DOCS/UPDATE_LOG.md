@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Variable-record maximum scanner byte-exact
+
+- Completed all 33 words of `func_150CFDB8` while preserving its recovered
+  behavior: walk the variable-length records delimited by `func_150CFD5C`,
+  measure each with `func_150CFD84`, and return the greatest record length.
+- Removed the redundant `p` copy and advanced `arg0` directly. Declaring
+  `max` before the end lookup and keeping `next` at function scope restores
+  retail's incoming-argument spill, `s0`/`s1`/`s2` lifetimes, 56-byte frame,
+  branch-likely path, and `sp+0x2C` local. No guarded rows were added; the
+  patch table remains at 958 unique rows with no duplicate keys.
+- Linked `0xFD238` and retail `0xFD268` share SHA-256
+  `92b34be7efb8d87a2f94db2b9cffc4289391277d9be36a2670640e8065e7cb8e`.
+  Fresh scan: **2648 / 5483 (48.29%)** overall and
+  **2080 / 4794 (43.39%)** game, with debugger unchanged at **181 / 181**.
+
 ### Animation sound choice byte-exact
 
 - Completed all 59 words of `func_1506C32C` while preserving its recovered

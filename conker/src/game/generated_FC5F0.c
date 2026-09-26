@@ -91,20 +91,19 @@ s32 func_150CFD84(u8 *arg0, u8 **arg1) {
 }
 
 s32 func_150CFDB8(u8 *arg0) {
-    u8 *end = func_150CFD5C(arg0);
-    u8 *p = arg0;
     s32 max = 0;
+    u8 *end = func_150CFD5C(arg0);
+    u8 *next;
 
-    if (p < end) {
+    if (arg0 < end) {
         do {
-            u8 *next;
-            s32 len = func_150CFD84(p, &next);
+            s32 len = func_150CFD84(arg0, &next);
 
             if (max < len) {
                 max = len;
             }
-            p = next + 1;
-        } while (p < end);
+            arg0 = next + 1;
+        } while (arg0 < end);
     }
     return max;
 }

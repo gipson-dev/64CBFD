@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,647 / 5,483 (48.28%) | 1 | 2,835 |
+| Total | 2,648 / 5,483 (48.29%) | 1 | 2,834 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,079 / 4,794 (43.37%) | 0 | 2,715 |
+| Game | 2,080 / 4,794 (43.39%) | 0 | 2,714 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,647, while
+denominator driven: the exact count is now 2,648, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -336,9 +336,11 @@ end-to-end gameplay acceptance.
    explicitly passing its incoming `arg0` to the selected scene callback; no
    guarded rows were needed. `func_1506C32C` is now byte-exact directly after
    sharing one local across its choice-count and selected-index phases and
-   placing the choices array between its scalar locals. Continue with 33-word
-   `func_150CFDB8`, the first non-handwritten row in the fresh 15-difference
-   queue.
+   placing the choices array between its scalar locals. `func_150CFDB8` is now
+   byte-exact directly after removing its redundant pointer copy, mutating
+   `arg0` across the record loop, and giving `max` and `next` retail's
+   lifetimes. Continue with 23-word `func_150CFE3C`, the first ordinary-C row
+   in the fresh 15-difference queue.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
