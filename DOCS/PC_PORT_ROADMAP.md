@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,488 / 6,038 (90.89%) | 2,564 / 5,488 (46.72%) | 1 | 2,923 |
+| Total | 5,488 / 6,038 (90.89%) | 2,565 / 5,488 (46.74%) | 1 | 2,922 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,799 / 5,318 (90.24%) | 1,996 / 4,799 (41.59%) | 0 | 2,803 |
+| Game | 4,799 / 5,318 (90.24%) | 1,997 / 4,799 (41.61%) | 0 | 2,802 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -111,6 +111,8 @@ The following ABI and retained-field pass completed `func_1513A594`; see
 [Working Note 047](WORKING_NOTES/047-game-retained-field-wrapper-match-20260925.md).
 The next guarded quadrant/table-index pass completed `func_151423D8`; see
 [Working Note 048](WORKING_NOTES/048-game-quadrant-register-match-20260925.md).
+The following guarded outer/child pointer pass completed `func_15155EF8`; see
+[Working Note 049](WORKING_NOTES/049-game-outer-child-pointer-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

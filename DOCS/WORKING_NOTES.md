@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, quadrant register match complete).** The current
-linked checkpoint is `2564 / 5488 (46.72%)` exact C functions, with one
-address-drift blocker and 2,923 genuinely different C functions. The tree
+**Active (2026-09-25, outer/child pointer match complete).** The current
+linked checkpoint is `2565 / 5488 (46.74%)` exact C functions, with one
+address-drift blocker and 2,922 genuinely different C functions. The tree
 contains 550 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -146,8 +146,9 @@ through guarded terminal/countdown register lifetimes and commutative-add
 operand order. `func_1513A594` now matches after correcting its forwarded byte
 ABI and retaining its post-call field read, with three guarded words for the
 empty branch shape. `func_151423D8` now matches through symmetric guarded
-quadrant/table-index register normalization. Continue at 17-word
-`func_15155EF8`. Keep
+quadrant/table-index register normalization. `func_15155EF8` now matches
+through guarded outer/child pointer register lifetimes. Continue with adjacent
+11-word `func_151D7770` and `func_151D779C`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -239,6 +240,8 @@ The completed retained-field wrapper is in
 [Working Note 047](WORKING_NOTES/047-game-retained-field-wrapper-match-20260925.md).
 The completed quadrant register normalization is in
 [Working Note 048](WORKING_NOTES/048-game-quadrant-register-match-20260925.md).
+The completed outer/child pointer normalization is in
+[Working Note 049](WORKING_NOTES/049-game-outer-child-pointer-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

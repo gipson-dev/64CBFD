@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game outer/child pointer allocation byte-exact
+
+- Completed all 17 words of `func_15155EF8` with seven expected-word guards
+  selecting retail's outer-object and child-pointer argument registers.
+- All normalized words are non-relocating; the three call relocations remain
+  attached to their original compiled calls. The patch table now has 557 rows
+  and no duplicate keys.
+- Independent comparison of the complete 68-byte linked and pristine retail
+  spans produced SHA-256
+  `c50b79d927b784631c6207992362051194d61b397ef57534ab57f716c9876140`.
+  Fresh scan: **2565 / 5488 (46.74%)** overall and
+  **1997 / 4799 (41.61%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game quadrant register allocation byte-exact
 
 - Completed all 27 words of `func_151423D8` with seven expected-word guards

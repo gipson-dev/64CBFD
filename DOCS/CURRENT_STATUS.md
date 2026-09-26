@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,564 / 5,488 (46.72%) | 1 | 2,923 |
+| Total | 2,565 / 5,488 (46.74%) | 1 | 2,922 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 1,996 / 4,799 (41.59%) | 0 | 2,803 |
+| Game | 1,997 / 4,799 (41.61%) | 0 | 2,802 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,564, while
+denominator driven: the exact count is now 2,565, while
 490 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -81,6 +81,8 @@ lifetimes and commutative pointer-add operand order.
 retaining the post-call field read, and guarding the empty branch shape.
 `func_151423D8` is byte-exact through symmetric guarded quadrant and table-index
 register normalization.
+`func_15155EF8` is byte-exact through guarded outer/child pointer register
+lifetimes while preserving all three call relocations.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -146,8 +148,10 @@ end-to-end gameplay acceptance.
    the forwarded byte ABI and retaining its post-call field read, with three
    guarded words for retail's empty branch shape. `func_151423D8` is
    byte-exact through seven guarded, non-relocating quadrant/table-index
-   register words. Continue at 17-word `func_15155EF8`, the next
-   seven-difference game row.
+   register words. `func_15155EF8` is byte-exact through seven guarded,
+   non-relocating outer/child pointer lifetime words. Continue with adjacent
+   11-word `func_151D7770` and `func_151D779C`, the final seven-difference
+   game rows.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -235,5 +239,7 @@ The completed retained-field wrapper is in
 [Working Note 047](WORKING_NOTES/047-game-retained-field-wrapper-match-20260925.md).
 The completed quadrant register normalization is in
 [Working Note 048](WORKING_NOTES/048-game-quadrant-register-match-20260925.md).
+The completed outer/child pointer normalization is in
+[Working Note 049](WORKING_NOTES/049-game-outer-child-pointer-match-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
