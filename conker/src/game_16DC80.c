@@ -14,6 +14,10 @@ s32 func_151416E8();
 
 f32 func_1514182C(void *arg0, void *arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5);
 
+typedef struct {
+    s32 first;
+    s32 second;
+} TwoWord16DC80;
 
 /* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151407D0.s. */
 s32 func_151407D0() {
@@ -82,14 +86,13 @@ s32 func_151416E8() {
     return 0;
 }
 
-void func_151417C4(s32 arg0, u8 arg1) {
-    s32 tmp[2];
-    u8 byte;
+void func_151417C4(u8 arg0, u8 arg1) {
+    u8 byte[1];
+    TwoWord16DC80 tmp;
 
-    tmp[0] = D_8008A074[0];
-    tmp[1] = D_8008A074[1];
-    byte = arg0;
-    func_15169260((s32) tmp, 2, (s32) &byte, arg1);
+    tmp = *(TwoWord16DC80 *) D_8008A074;
+    byte[0] = arg0;
+    func_15169260(&tmp, 2, (s32) byte, arg1);
 }
 
 s32 func_15141818(s32 arg0, s32 arg1) {

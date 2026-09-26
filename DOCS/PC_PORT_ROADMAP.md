@@ -323,9 +323,12 @@ The fourth one-word aggregate-forwarder pass then completed all 19 words of
 prototype; see
 [Working Note 123](WORKING_NOTES/123-game-fourth-one-word-forwarder-match-20260926.md).
 The float scale-and-offset pass then completed all 19 words of `func_151BD750`
-with fifteen guarded scheduling rows and two insertions. Continue with 21-word
-`func_151417C4`; see
+with fifteen guarded scheduling rows and two insertions; see
 [Working Note 124](WORKING_NOTES/124-game-float-scale-offset-match-20260926.md).
+The two-word aggregate-forwarder pass then completed all 21 words of
+`func_151417C4` directly from corrected source types and local ordering.
+Continue with 25-word `func_15144BC8`; see
+[Working Note 125](WORKING_NOTES/125-game-two-word-byte-forwarder-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

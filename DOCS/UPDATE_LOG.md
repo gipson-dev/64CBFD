@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Two-word and byte forwarder byte-exact
+
+- Completed all 21 words of `func_151417C4` directly from a typed two-word
+  aggregate assignment, a byte-typed first argument, and a one-byte array
+  local declared before the aggregate.
+- Those source types restore retail's retained `D_8008A074` pointer, two-word
+  copy through `at` and `t9`, `sp + 0x1C` record, adjacent `sp + 0x24` byte,
+  and low-byte reload from the homed first argument. No guarded rows were
+  required; the patch table remains at 903 unique rows.
+- Linked `0x16EC44` and retail `0x16EC74` share SHA-256
+  `ef850b0471b25abd9bcafff4af8626a3d7fd00d66013e1888ded1ea4574e9d37`.
+  Fresh scan: **2637 / 5483 (48.09%)** overall and
+  **2069 / 4794 (43.16%)** game, with debugger unchanged at **181 / 181**.
+
 ### Float scale-and-offset update byte-exact
 
 - Completed all 19 words of `func_151BD750` while retaining its semantically
