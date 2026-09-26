@@ -88,12 +88,13 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, object-selector record matched).** The current linked
-checkpoint is `2678 / 5483 (48.84%)` exact C functions, with one address-drift
-blocker and 2,804 genuinely different C functions. The tree
-contains 555 raw-assembly functions, so the higher percentage than July is
-denominator-driven and is not a matching gain. The non-matching replacement
-build, outer build, and tool checks pass; fresh gameplay was not run.
+**Active (2026-09-26, Init current-pointer helper matched).** The current
+linked checkpoint is `2689 / 5477 (49.10%)` exact C functions, with one
+address-drift blocker and 2,787 genuinely different C functions. Init is
+`388 / 503 (77.14%)` exact, with 114 genuinely different C rows. The tree
+contains 561 raw-assembly functions, so much of the percentage increase over
+July remains denominator-driven. The non-matching replacement build, outer
+build, and tool checks pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
@@ -396,10 +397,14 @@ latest result is in
 [Working Note 178](WORKING_NOTES/178-init-handwritten-cp0-wrapper-restoration-20260926.md).
 The adjacent Init control-register pass then restored handwritten `__osSetSR`
 and low-level SDK `__osSetFpcCsr` to original assembly ownership. Both complete
-16-byte spans independently match retail. Continue ordinary Init C matching
-with 26-word `func_1000FE88`, which has two real differences. The latest result
-is in
+16-byte spans independently match retail. The following Init pass completed
+all 26 words of `func_1000FE88` through two guarded, non-relocating
+current-pointer spill/reload slot words. Next audit handwritten interrupt
+wrappers `__osRestoreInt` and `__osDisableInt`; their current C bodies are
+false placeholders. The latest result is in
 [Working Note 179](WORKING_NOTES/179-init-control-register-wrapper-restoration-20260926.md).
+The frame-slot match is in
+[Working Note 180](WORKING_NOTES/180-init-current-pointer-frame-slot-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

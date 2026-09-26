@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,688 / 5,477 (49.08%) | 1 | 2,788 |
-| Init | 387 / 503 (76.94%) | 1 | 115 |
+| Total | 2,689 / 5,477 (49.10%) | 1 | 2,787 |
+| Init | 388 / 503 (77.14%) | 1 | 114 |
 | Game | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,688, while
+denominator driven: the exact count is now 2,689, while
 500 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -440,9 +440,12 @@ end-to-end gameplay acceptance.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
-   Continue ordinary Init C matching with 26-word `func_1000FE88`, which has
-   two real differences. Do not model control-register access through
-   synthetic C or guarded retail-word replacement.
+   The 26-word `func_1000FE88` is now byte-exact through two guarded,
+   non-relocating current-pointer spill/reload words; its recovered C behavior
+   is unchanged. Next audit the adjacent handwritten interrupt pair
+   `__osRestoreInt` and `__osDisableInt`, currently false C placeholders. Do
+   not model control-register access through synthetic C or guarded
+   retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

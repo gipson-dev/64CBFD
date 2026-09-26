@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Init current-pointer helper byte-exact
+
+- Completed all 26 words of `func_1000FE88` while retaining its recovered C
+  behavior: validate the index, optionally release the record resource, set
+  bit `0x80` in the record word, and return success or failure.
+- Two guarded, non-relocating words move the live current-pointer spill and
+  reload from compiler-selected frame slot `0x18` to retail slot `0x1C`.
+  Frame size, control flow, register lifetimes, call relocation, and the other
+  24 words already matched.
+- Linked `0x1000FE88..0x1000FEF0` and pristine retail share SHA-256
+  `2468ea4fa2e9ade3f4f573e236236195922ecb3b8673d3543c19095073a2243d`.
+  The fresh scan is **2,689 / 5,477 (49.10%)** overall and
+  **388 / 503 (77.14%)** in Init.
+
 ### Adjacent Init control-register wrappers restored
 
 - Restored handwritten `__osSetSR` and low-level SDK `__osSetFpcCsr` from

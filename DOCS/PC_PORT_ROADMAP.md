@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,477 / 6,038 (90.71%) | 2,688 / 5,477 (49.08%) | 1 | 2,788 |
-| Init | 503 / 538 (93.49%) | 387 / 503 (76.94%) | 1 | 115 |
+| Total | 5,477 / 6,038 (90.71%) | 2,689 / 5,477 (49.10%) | 1 | 2,787 |
+| Init | 503 / 538 (93.49%) | 388 / 503 (77.14%) | 1 | 114 |
 | Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -545,7 +545,11 @@ The adjacent control-register pass then restored handwritten `__osSetSR` and
 low-level SDK `__osSetFpcCsr` to original assembly ownership. Both complete
 16-byte spans match retail; see
 [Working Note 179](WORKING_NOTES/179-init-control-register-wrapper-restoration-20260926.md).
-Continue ordinary Init C matching with two-difference `func_1000FE88`.
+The following ordinary Init pass completed two-difference `func_1000FE88`
+through guarded current-pointer spill/reload slot normalization; see
+[Working Note 180](WORKING_NOTES/180-init-current-pointer-frame-slot-match-20260926.md).
+Next audit handwritten interrupt wrappers `__osRestoreInt` and
+`__osDisableInt`, which remain false C placeholders.
 
 Current host-port progression and acceptance boundaries:
 
