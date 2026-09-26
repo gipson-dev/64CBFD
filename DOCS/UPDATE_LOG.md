@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Allocation/copy wrapper byte-exact
+
+- Completed all 28 words of `func_15168800` directly from source by expressing
+  allocation failure as an explicit early null return before `bcopy`.
+- That control-flow shape restores retail's positive branch into the copy
+  path, explicit zero-return delay slot, retained allocation in `v1`, stack
+  spill across `bcopy`, and both call relocations. No guarded rows were added.
+- The patch table remains at 767 unique rows. Linked `0x195C80` and retail
+  `0x195CB0` share SHA-256
+  `163d065da4eac9216fff364ccc3d94c87935a63389ba18289abde3a2eef4f5f7`.
+  Fresh scan: **2608 / 5484 (47.56%)** overall and
+  **2040 / 4795 (42.54%)** game, with debugger unchanged at **181 / 181**.
+
 ### Duplicate masked-field store byte-exact
 
 - Completed all 40 words of `func_151355B8`. Volatile-qualified accesses to

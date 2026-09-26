@@ -131,9 +131,10 @@ void *func_15168800(void *arg0, u8 arg1, s32 arg2) {
     u8 *tmp;
 
     tmp = func_15167A68(0xE, arg2, 0xB8, 1, arg1, 1);
-    if (tmp != NULL) {
-        bcopy(arg0, tmp + 0x10, 0xA8);
+    if (tmp == NULL) {
+        return NULL;
     }
+    bcopy(arg0, tmp + 0x10, 0xA8);
     return tmp;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15168870.s. */

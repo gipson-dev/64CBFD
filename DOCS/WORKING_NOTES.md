@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, duplicate masked-field store matched).** The current
-linked checkpoint is `2607 / 5484 (47.54%)` exact C functions, with one
-address-drift blocker and 2,876 genuinely different C functions. The tree
+**Active (2026-09-26, allocation/copy wrapper matched).** The current linked
+checkpoint is `2608 / 5484 (47.56%)` exact C functions, with one address-drift
+blocker and 2,875 genuinely different C functions. The tree
 contains 554 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -206,11 +206,12 @@ guarded scheduling words, including an explicit call-relocation move.
 `func_15131D4C` then matched directly from a typed three-word aggregate copy
 and pointer-correct callee declaration. `func_151355B8` then matched after
 volatile field accesses restored the duplicate store and five guarded words
-selected retail's loaded/result registers. Continue with 28-word
-`func_15168800`, now the first twelve-difference game row; retail expresses
-the allocation failure as an explicit early null return before `bcopy`.
+selected retail's loaded/result registers. `func_15168800` then matched
+directly from an explicit early null return, with no guarded words. Continue
+with 18-word `func_151E5FAC`, the final twelve-difference game row; retail
+keeps separate fallback returns and rematerializes `D_8008FD90` per path.
 The latest result is in
-[Working Note 094](WORKING_NOTES/094-game-duplicate-masked-field-store-match-20260926.md).
+[Working Note 095](WORKING_NOTES/095-game-allocation-copy-wrapper-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

@@ -228,6 +228,9 @@ The duplicate masked-field pass completed `func_151355B8` by retaining both
 retail stores through volatile field accesses and guarding five final
 register-allocation words; see
 [Working Note 094](WORKING_NOTES/094-game-duplicate-masked-field-store-match-20260926.md).
+The allocation/copy wrapper pass completed `func_15168800` directly from an
+explicit early null return, without guarded rows; see
+[Working Note 095](WORKING_NOTES/095-game-allocation-copy-wrapper-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
