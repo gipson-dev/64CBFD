@@ -51,11 +51,13 @@ s32 func_150F6178() {
 }
 
 void func_150F631C(u8 *arg0) {
-    if (*(u32 *) (arg0 + 0x30) != 0) {
-        func_1516972C(*(u32 *) (arg0 + 0x30));
+    u8 *owner = arg0;
+
+    if (*(u32 volatile *) (owner + 0x30) != 0) {
+        func_1516972C(*(u32 volatile *) (owner + 0x30));
     }
-    if (*(u32 *) (arg0 + 0x34) != 0) {
-        func_1516972C(*(u32 *) (arg0 + 0x34));
+    if (*(u32 *) (owner + 0x34) != 0) {
+        func_1516972C(*(u32 *) (owner + 0x34));
     }
 }
 

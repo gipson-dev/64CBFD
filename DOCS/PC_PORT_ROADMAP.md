@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,658 / 5,483 (48.48%) | 1 | 2,824 |
+| Total | 5,483 / 6,038 (90.81%) | 2,659 / 5,483 (48.50%) | 1 | 2,823 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,090 / 4,794 (43.60%) | 0 | 2,704 |
+| Game | 4,794 / 5,318 (90.15%) | 2,091 / 4,794 (43.62%) | 0 | 2,703 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -405,7 +405,12 @@ The indexed-record lookup pass then completed all 19 words of `func_15086D48`
 after recovering its 16-byte array indexing, with six guarded signed-loop and
 fallback-epilogue words; see
 [Working Note 146](WORKING_NOTES/146-game-indexed-record-lookup-match-20260926.md).
-Continue with 19-word `func_150F631C`, which has 16 real differences.
+The nullable-field cleanup pass then completed all 19 words of
+`func_150F631C` directly from C after recovering its owner lifetime and
+volatile repeated first-field loads; see
+[Working Note 147](WORKING_NOTES/147-game-nullable-field-cleanup-match-20260926.md).
+Skip handwritten `func_15125628` and recover 19-word zero placeholder
+`func_15131958`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 

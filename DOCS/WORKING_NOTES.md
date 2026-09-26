@@ -306,10 +306,12 @@ through sixteen guarded global-load, relocation, and packed-value register
 words. `func_15084CB0` then matched after recovering scalar lifetimes and
 indexed `u16` table access, plus seven guarded signed-loop and epilogue words.
 `func_15086D48` then matched after recovering indexed 16-byte record access,
-plus six guarded signed-loop and fallback-epilogue words. Keep
-`func_150721A4` parked as a known three-word live-C compiler overflow and
-continue with 19-word `func_150F631C`. The latest result is in
-[Working Note 146](WORKING_NOTES/146-game-indexed-record-lookup-match-20260926.md).
+plus six guarded signed-loop and fallback-epilogue words. `func_150F631C` then
+matched directly after recovering its owner lifetime and volatile repeated
+first-field reads. Keep `func_150721A4` parked as a known three-word live-C
+compiler overflow, skip handwritten `func_15125628`, and recover 19-word zero
+placeholder `func_15131958`. The latest result is in
+[Working Note 147](WORKING_NOTES/147-game-nullable-field-cleanup-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

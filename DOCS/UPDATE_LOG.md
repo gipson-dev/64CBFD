@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Nullable two-field cleanup byte-exact
+
+- Completed all 19 words of `func_150F631C` directly from C. It passes each
+  non-null pointer at object offsets `0x30` and `0x34` to `func_1516972C`.
+- An explicit owner lifetime plus volatile repeated reads of offset `0x30`
+  recover retail's `a1` owner, `t6` null test, reloaded `a0` call argument,
+  branch-likely preload of offset `0x34`, owner spill/reload, and both calls.
+  No guarded rows were added; the patch table remains at 1,059 unique rows.
+- Linked `0x12379C` and retail `0x1237CC` share SHA-256
+  `3d01686575967f832331b203dee11e677b94a8f8dc7ef88d6a270e2d887e1cdc`.
+  Fresh scan: **2659 / 5483 (48.50%)** overall and
+  **2091 / 4794 (43.62%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed 16-byte record lookup byte-exact
 
 - Completed all 19 words of `func_15086D48`. It searches the 16-byte records
