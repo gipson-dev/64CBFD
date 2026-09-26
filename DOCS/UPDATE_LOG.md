@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Gated byte-result chain converted and byte-exact
+
+- Replaced `func_1519257C`'s zero-return placeholder with its complete call
+  chain. A zero `func_15192308` result returns zero; a nonzero result gates a
+  `func_15192358` call, and the selected call's low byte is returned.
+- Separate full-width and byte result locals recover retail's full-width zero
+  test, both masks, and shared return path. No guarded rows were added; the
+  patch table remains at 1,111 unique rows.
+- Linked `0x1BF9FC` and retail `0x1BFA2C` share SHA-256
+  `6fa2ab2ca7daf2cf8c3d1ced76a4176bcf5b66029fc45fa455b7964fd90a52a8`.
+  Fresh scan: **2676 / 5483 (48.81%)** overall and
+  **2108 / 4794 (43.97%)** game, with debugger unchanged at **181 / 181**.
+
 ### Selector linked-list lookup converted and byte-exact
 
 - Replaced `func_15178B98`'s zero-return placeholder with its complete lookup:

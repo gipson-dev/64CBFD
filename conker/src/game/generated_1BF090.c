@@ -22,8 +22,15 @@ s32 func_15192358() {
     return 0;
 }
 
-s32 func_1519257C() {
-    return 0;
+s32 func_1519257C(s32 arg0, s32 arg1) {
+    s32 call_result = func_15192308(arg0, arg1);
+    u8 result = call_result;
+
+    if (call_result != 0) {
+        result = func_15192358(arg0, arg1);
+    }
+
+    return result;
 }
 
 s32 func_151925C4() {

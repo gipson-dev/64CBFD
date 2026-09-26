@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,675 / 5,483 (48.79%) | 1 | 2,807 |
+| Total | 5,483 / 6,038 (90.81%) | 2,676 / 5,483 (48.81%) | 1 | 2,806 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,107 / 4,794 (43.95%) | 0 | 2,687 |
+| Game | 4,794 / 5,318 (90.15%) | 2,108 / 4,794 (43.97%) | 0 | 2,686 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -475,7 +475,11 @@ The selector-linked-list pass then replaced `func_15178B98`'s zero-return
 placeholder with its complete node traversal, matching all 19 words directly
 from C; see
 [Working Note 163](WORKING_NOTES/163-game-selector-linked-list-lookup-match-20260926.md).
-Continue with 18-word `func_1519257C`, which has 17 real differences.
+The gated byte-result pass then replaced `func_1519257C`'s zero-return
+placeholder with its two-stage call chain, matching all 18 words directly
+from C; see
+[Working Note 164](WORKING_NOTES/164-game-gated-byte-result-chain-match-20260926.md).
+Continue with 19-word `func_151B82CC`, which has 17 real differences.
 
 Current host-port progression and acceptance boundaries:
 
