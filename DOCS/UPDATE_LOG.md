@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Init full data-cache writeback restored
+
+- Replaced the empty `osWritebackDCacheAll` C placeholder with its original
+  12-word libultra assembly body. The routine issues handwritten cache writeback
+  operations across the complete `0x2000`-byte data-cache range.
+- The complete linked 48-byte span matches retail with SHA-256
+  `9e2e910cf2dcf19b0d2826eea41187a62acc4584b8fb7316cc74acbd40f4b04f`.
+- Fresh accounting is **2,691 / 5,472 (49.18%)** exact C functions overall
+  and **390 / 498 (78.31%)** in Init. The exact SDK assembly row is excluded
+  from the C matcher denominator by design.
+
 ### Handwritten Init MMIO setup restored
 
 - Restored `func_100038E0` from an equivalent C conversion to its original

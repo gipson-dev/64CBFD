@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,473 / 6,038 (90.64%) | 2,691 / 5,473 (49.17%) | 1 | 2,781 |
-| Init | 499 / 538 (92.75%) | 390 / 499 (78.16%) | 1 | 108 |
+| Total | 5,472 / 6,038 (90.63%) | 2,691 / 5,472 (49.18%) | 1 | 2,780 |
+| Init | 498 / 538 (92.57%) | 390 / 498 (78.31%) | 1 | 107 |
 | Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -568,7 +568,10 @@ see
 [Working Note 185](WORKING_NOTES/185-init-handwritten-mmio-setup-restoration-20260926.md).
 Its sibling body is behaviorally equivalent but retains the old compiled
 schedule pending a controlled regeneration. Continue with 12-word
-`osWritebackDCacheAll`.
+`osWritebackDCacheAll`. That audit restored the original handwritten cache-op
+loop from an empty C placeholder; see
+[Working Note 186](WORKING_NOTES/186-init-writeback-dcache-all-restoration-20260926.md).
+Continue with 16-word `osUnmapTLB`.
 
 Current host-port progression and acceptance boundaries:
 
