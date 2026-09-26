@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,672 / 5,483 (48.73%) | 1 | 2,810 |
+| Total | 5,483 / 6,038 (90.81%) | 2,673 / 5,483 (48.75%) | 1 | 2,809 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,104 / 4,794 (43.89%) | 0 | 2,690 |
+| Game | 4,794 / 5,318 (90.15%) | 2,105 / 4,794 (43.91%) | 0 | 2,689 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -463,7 +463,11 @@ The nullable coordinate-copy pass then replaced `func_1511F92C`'s zero-return
 placeholder with its lookup and three-halfword copy, matching all 21 words
 directly from C; see
 [Working Note 160](WORKING_NOTES/160-game-nullable-coordinate-copy-match-20260926.md).
-Continue with 18-word `func_15130374`, which has 17 real differences.
+The six-argument forwarding pass then replaced `func_15130374`'s zero-return
+placeholder with its direct `func_15130280` call and corrected byte ABI,
+matching all 18 words directly from C; see
+[Working Note 161](WORKING_NOTES/161-game-six-argument-forwarder-match-20260926.md).
+Continue with 21-word `func_1515572C`, which has 17 real differences.
 
 Current host-port progression and acceptance boundaries:
 

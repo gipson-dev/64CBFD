@@ -1,6 +1,7 @@
 #include <ultra64.h>
 typedef struct { s32 a, b, c; } ThreeWord15D730;
 void func_15169260(void *, s32, s32, u8);
+s32 func_15130280(s32, u8, s32, s32, u8, s32);
 extern u8 D_800A37F0[];
 extern void (*D_80089844[])();
 extern void (*D_80089814[])();
@@ -19,8 +20,8 @@ s32 func_151319C4();
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_15D730/func_15130280.s")
 
 
-s32 func_15130374(s32 arg0, u8 arg1, s32 arg2, s32 arg3, s32 arg4) {
-    return 0;
+s32 func_15130374(s32 arg0, u8 arg1, s32 arg2, u8 arg3, s32 arg4) {
+    return func_15130280(arg0, arg1, 0, arg2, arg3, arg4);
 }
 
 void func_151303BC(s32 arg0, u8 arg1, s32 arg2) {

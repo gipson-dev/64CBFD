@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Six-argument forwarding wrapper converted and byte-exact
+
+- Replaced `func_15130374`'s zero-return placeholder with its direct
+  six-argument call to `func_15130280`, preserving the callee's return value.
+  The fourth input is now typed as `u8`, which recovers retail's incoming
+  `a3` spill and low-byte reload from the big-endian argument-home slot.
+- The complete frame, argument register shuffle, two stack arguments, call,
+  and epilogue match directly from C without guarded rows. The patch table
+  remains at 1,111 unique rows with zero duplicate keys.
+- Linked `0x15D7F4` and retail `0x15D824` share SHA-256
+  `184a83f8a6398738fccde102155bf4ddd03b35140388f4548245a78aaf418eb0`.
+  Fresh scan: **2673 / 5483 (48.75%)** overall and
+  **2105 / 4794 (43.91%)** game, with debugger unchanged at **181 / 181**.
+
 ### Nullable coordinate-copy wrapper converted and byte-exact
 
 - Replaced `func_1511F92C`'s zero-return placeholder with its complete

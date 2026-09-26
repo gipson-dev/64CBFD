@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,672 / 5,483 (48.73%) | 1 | 2,810 |
+| Total | 2,673 / 5,483 (48.75%) | 1 | 2,809 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,104 / 4,794 (43.89%) | 0 | 2,690 |
+| Game | 2,105 / 4,794 (43.91%) | 0 | 2,689 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,672, while
+denominator driven: the exact count is now 2,673, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -396,8 +396,10 @@ end-to-end gameplay acceptance.
    after retaining the owner-slot address through the state gates. Continue
    with 21-word `func_1511F92C`, which is now converted from its zero-return
    placeholder and byte-exact directly from C after restoring its nullable
-   lookup and three-halfword copy. Continue with 18-word `func_15130374`, the
-   next ordinary Game C row with seventeen real differences.
+   lookup and three-halfword copy. The 18-word `func_15130374` is now converted
+   and byte-exact directly from C after correcting its six-argument forwarding
+   ABI. Continue with 21-word `func_1515572C`, the next ordinary Game C row
+   with seventeen real differences.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
