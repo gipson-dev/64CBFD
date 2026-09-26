@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Indirect callback forwarder byte-exact
+
+- Completed all 16 words of `func_151A5130` directly from source. Its
+  unprototyped callback expression now forwards `arg0`, `arg1`, and the
+  declared signed-halfword `arg2` instead of calling with an empty argument
+  list.
+- Making those incoming arguments observable removes the unnecessary `arg0`
+  home store and restores retail's `sll`/`sra` narrowing of `arg2` back into
+  `a2`, plus the exact `t8`/`t9`/`at` callback-table schedule. No guarded rows
+  are required.
+- Linked `0x1D25B0` and retail `0x1D25E0` share SHA-256
+  `2ad708b8b146d23e66d5aaaf986a104bede706f803d39c5d2febf7bfdc9f910f`.
+  Fresh scan: **2629 / 5483 (47.95%)** overall and
+  **2061 / 4794 (42.99%)** game, with debugger unchanged at **181 / 181**.
+
 ### One-word aggregate forwarder byte-exact
 
 - Completed all 16 words of `func_1518F45C` directly from source. Replacing

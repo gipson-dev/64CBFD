@@ -301,8 +301,11 @@ end-to-end gameplay acceptance.
    `0xBD` byte with zero and returns the replacement count plus one.
    `func_1518F45C` is now byte-exact directly after its scalar array became a
    one-word aggregate and the callee's record parameter became `void *`.
-   Continue with 16-word `func_151A5130`, the smallest remaining ordinary-C
-   row at fourteen real differences.
+   `func_151A5130` is now byte-exact after its indirect callback expression
+   explicitly forwards all three incoming arguments, restoring the signed
+   halfword narrowing and live-register ABI. Continue with 17-word
+   `func_1508F060`, the smallest remaining ordinary-C row at fourteen real
+   differences.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

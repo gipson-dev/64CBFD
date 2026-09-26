@@ -94,7 +94,7 @@ s32 arg0;
 u8 *arg1;
 s16 arg2;
 {
-    D_8008F900[*(arg1 + 0x14)]();
+    D_8008F900[*(arg1 + 0x14)](arg0, arg1, arg2);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D0840/func_151A5170.s")
