@@ -163,6 +163,8 @@ The following source-level lifetime pass completed `func_150CF578`; see
 [Working Note 071](WORKING_NOTES/071-game-global-coordinate-update-match-20260925.md).
 The next source-level short-circuit pass completed `func_150DE2C4`; see
 [Working Note 072](WORKING_NOTES/072-game-short-circuit-threshold-match-20260925.md).
+The following placeholder-conversion pass completed `func_151318E8`; see
+[Working Note 073](WORKING_NOTES/073-game-repeated-float-scale-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Repeated float-scale loop byte-exact
+
+- Replaced the zero-return `func_151318E8` placeholder with retail's
+  `D_800BE9E4`-counted multiplication loop. Its typed mixed pointer/float ABI
+  emits the retail `mtc1 a1,f12` entry, while caller `func_151316AC` remains
+  independently byte-exact.
+- No guarded rows were added. The target linked/retail spans share SHA-256
+  `dd1732f04e8fad0d5daed64f7a9833097445188e8d285d53da86220914bb350b`,
+  and the caller spans share
+  `22cb90341b57ea50023850f7cab38aaca0afbf2da61e0637c62336feffc0198e`.
+  The patch table remains at 659 unique rows. Fresh scan:
+  **2586 / 5484 (47.16%)** overall and **2018 / 4795 (42.09%)** game, with
+  debugger unchanged at **181 / 181**.
+
 ### Short-circuit threshold update byte-exact
 
 - Completed all 19 tracked words of `func_150DE2C4` by combining two

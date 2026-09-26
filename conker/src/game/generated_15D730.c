@@ -8,7 +8,7 @@ extern s32 D_800BE9E4;
 
 /* Non-matching placeholders for the text-only asm slice asm/15D730.s. */
 
-s32 func_151318E8();
+void func_151318E8(f32 *, f32);
 
 s32 func_15131918();
 s32 func_15131958();
@@ -50,7 +50,7 @@ s32 func_1513164C() {
 s32 func_151316AC(u8 *arg0, s32 arg1) {
     u8 *temp_a2 = arg0;
 
-    func_151318E8(temp_a2 + 0x58, *(s32 *)(temp_a2 + 0xA8));
+    func_151318E8((f32 *)(temp_a2 + 0x58), *(f32 *)(temp_a2 + 0xA8));
     return 1;
 }
 
@@ -96,10 +96,14 @@ s32 func_15131828() {
     return 0;
 }
 
-/* Retail signature is (f32 *, f32) but exact caller func_151316AC passes raw
-   s32 bits and must not see that prototype; keep a placeholder in this TU. */
-s32 func_151318E8() {
-    return 0;
+/* The mixed pointer/float ABI carries arg1's raw bits in a1. */
+void func_151318E8(f32 *arg0, f32 arg1) {
+    s32 count = D_800BE9E4;
+
+    while (count > 0) {
+        arg0[1] *= arg1;
+        count--;
+    }
 }
 
 s32 func_15131918() {
