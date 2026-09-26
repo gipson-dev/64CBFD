@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,482 / 6,038 (90.79%) | 2,688 / 5,482 (49.03%) | 1 | 2,793 |
-| Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
+| Total | 5,479 / 6,038 (90.74%) | 2,688 / 5,479 (49.06%) | 1 | 2,790 |
+| Init | 505 / 538 (93.87%) | 387 / 505 (76.63%) | 1 | 117 |
 | Game | 4,793 / 5,318 (90.13%) | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -535,6 +535,12 @@ identifier lifetime explicit; see
 [Working Note 177](WORKING_NOTES/177-game-record-owner-match-callback-20260926.md).
 Its sibling generated recomp body remains pending controlled refresh. Continue
 with 19-word `func_151444DC`, which has 18 real differences.
+The Init ownership pass then replaced false C placeholders for `__osGetSR`,
+`osGetCount`, and `__osSetCompare` with their original handwritten CP0
+assembly. All three complete 16-byte padded spans match retail; see
+[Working Note 178](WORKING_NOTES/178-init-handwritten-cp0-wrapper-restoration-20260926.md).
+The sibling already provides a native tracked-status override for `__osGetSR`;
+no generated or host source was changed in this classification-only pass.
 
 Current host-port progression and acceptance boundaries:
 

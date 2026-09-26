@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,482 / 6,038 (90.79%) | 556 | 1,932,408 / 2,256,728 (85.63%) |
-| Init | 508 / 538 (94.42%) | 30 | 148,936 / 164,048 (90.79%) |
+| Total | 5,479 / 6,038 (90.74%) | 559 | 1,932,360 / 2,256,728 (85.63%) |
+| Init | 505 / 538 (93.87%) | 33 | 148,888 / 164,048 (90.76%) |
 | Game | 4,793 / 5,318 (90.13%) | 525 | 1,763,832 / 2,072,880 (85.09%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,688 / 5,482 (49.03%) | 1 | 2,793 |
-| Init | 387 / 508 (76.18%) | 1 | 120 |
+| Total | 2,688 / 5,479 (49.06%) | 1 | 2,790 |
+| Init | 387 / 505 (76.63%) | 1 | 117 |
 | Game | 2,120 / 4,793 (44.23%) | 0 | 2,673 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,688, while
-495 functions moved from C back to assembly. The paired event-swap pass added
+498 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -437,10 +437,15 @@ end-to-end gameplay acceptance.
    record identifier lifetime, with no guarded words. Continue with 19-word
    `func_151444DC`, the next ordinary Game C row with eighteen real
    differences.
-4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
+4. Init's `__osGetSR`, `osGetCount`, and `__osSetCompare` placeholders are now
+   restored to original handwritten CP0 assembly ownership. Their complete
+   16-byte padded spans match retail independently. Continue the low-level Init
+   classification queue with `__osSetSR` and `__osSetFpcCsr`; do not model CP0
+   access through synthetic C or guarded retail-word replacement.
+5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
-5. After every source change, relink and rerun `match-progress`. Update public
+6. After every source change, relink and rerun `match-progress`. Update public
    percentages only from a fresh linked scan.
 
 The baseline and candidate list are in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md).

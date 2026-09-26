@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Handwritten Init CP0 wrappers restored
+
+- Restored `__osGetSR`, `osGetCount`, and `__osSetCompare` from false C
+  zero/no-op placeholders to their preserved handwritten assembly ownership.
+  IDO C cannot express the required `mfc0`/`mtc0` operations.
+- The generated-slice `GLOBAL_ASM` path now inserts minimal extracted bodies,
+  while each preserved libultra source remains the authority for its complete
+  four-word retail slot. No guarded word patches were added.
+- Independent 16-byte linked-versus-retail comparisons pass with SHA-256
+  `98eb78e5220bcc1e31ff049202bde4471c76ac15ebbc22d818771f741671fe0a`,
+  `49439260d2ea325fd9d1049a302274c512c90775bbc3751b54513b65152f01ae`,
+  and `424b05c5a5a48f29b4669731a97ea63a5ee362e2b47fa58afc9317487695229c`.
+- The exact numerator remains **2,688**, while the corrected C denominator is
+  **5,479** overall and **505** in Init. The fresh scan is
+  **2,688 / 5,479 (49.06%)** overall and **387 / 505 (76.63%)** in Init.
+
 ### Record/owner match callback byte-exact
 
 - Converted `func_15133DE8` from a zero-return placeholder to its real

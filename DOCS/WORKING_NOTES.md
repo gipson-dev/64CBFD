@@ -387,6 +387,13 @@ placeholder and byte-exact directly from C after retaining the record
 identifier lifetime. Continue with 19-word `func_151444DC`. The latest result
 is in
 [Working Note 177](WORKING_NOTES/177-game-record-owner-match-callback-20260926.md).
+The Init CP0 ownership pass then restored `__osGetSR`, `osGetCount`, and
+`__osSetCompare` from false C placeholders to their original handwritten
+assembly. All three complete 16-byte padded spans independently match retail.
+Continue the Init low-level classification queue with `__osSetSR` and
+`__osSetFpcCsr`, or resume the ordinary Game queue at `func_151444DC`. The
+latest result is in
+[Working Note 178](WORKING_NOTES/178-init-handwritten-cp0-wrapper-restoration-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

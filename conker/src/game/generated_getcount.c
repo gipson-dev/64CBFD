@@ -1,12 +1,5 @@
 #include <ultra64.h>
-#include "controller.h"
 
-#ifdef osGetCount
-#undef osGetCount
-#endif
+/* Original handwritten CP0 count-register accessor. */
 
-/* Non-matching C placeholders for C:/Users/grego/OneDrive/Desktop/.vscode/64CBFD/conker/asm/libultra/os/getcount.s. */
-
-u32 osGetCount(void) {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_getcount/osGetCount.s")
