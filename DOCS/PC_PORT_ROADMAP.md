@@ -161,6 +161,8 @@ Its state-byte-clear relative `func_15096934` is independently complete; see
 [Working Note 070](WORKING_NOTES/070-game-display-list-state-byte-match-20260925.md).
 The following source-level lifetime pass completed `func_150CF578`; see
 [Working Note 071](WORKING_NOTES/071-game-global-coordinate-update-match-20260925.md).
+The next source-level short-circuit pass completed `func_150DE2C4`; see
+[Working Note 072](WORKING_NOTES/072-game-short-circuit-threshold-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

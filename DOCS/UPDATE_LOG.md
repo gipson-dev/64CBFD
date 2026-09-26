@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Short-circuit threshold update byte-exact
+
+- Completed all 19 tracked words of `func_150DE2C4` by combining two
+  equivalent field clears under one logical-OR condition. This restores
+  retail's branch-likely delay-slot clear, shared second clear, and trailing
+  padding directly from C, with no guarded rows.
+- The patch table remains at 659 rows with no duplicate keys and no row for
+  this function. The complete linked span at `0x10B744` and retail span at
+  `0x10B774` share SHA-256
+  `fc341f80de7976c7bcfee30c55345917dd6461764c3c1015adf431f8ad893c4b`.
+  Fresh scan: **2585 / 5484 (47.14%)** overall and
+  **2017 / 4795 (42.06%)** game, with debugger unchanged at **181 / 181**.
+
 ### Global-coordinate update byte-exact
 
 - Completed all 28 words of `func_150CF578` by naming the loaded
