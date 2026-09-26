@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, destination-pointer schedule match complete).** The current
-linked checkpoint is `2561 / 5488 (46.67%)` exact C functions, with one
-address-drift blocker and 2,926 genuinely different C functions. The tree
+**Active (2026-09-25, countdown register match complete).** The current
+linked checkpoint is `2562 / 5488 (46.68%)` exact C functions, with one
+address-drift blocker and 2,925 genuinely different C functions. The tree
 contains 550 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -141,8 +141,9 @@ normalization. `func_1509F6B0` now matches through guarded incoming-argument
 spill/reload scheduling. `func_150C7930` is restored to its original 14-word
 assembly extent because IDO removes retail's dead pointer update.
 `func_150CDB6C` now matches through guarded destination-pointer
-materialization and schedule normalization. Continue at 16-word
-`func_15108B80`. Keep
+materialization and schedule normalization. `func_15108B80` now matches
+through guarded terminal/countdown register lifetimes and commutative-add
+operand order. Continue at 19-word `func_1513A594`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -228,6 +229,8 @@ The restored dead-pointer-expression assembly boundary is in
 [Working Note 044](WORKING_NOTES/044-game-dead-pointer-expression-restoration-20260925.md).
 The completed destination-pointer scheduling is in
 [Working Note 045](WORKING_NOTES/045-game-destination-pointer-schedule-match-20260925.md).
+The completed countdown register normalization is in
+[Working Note 046](WORKING_NOTES/046-game-countdown-register-match-20260925.md).
 
 **Tool audit (2026-07-26).** The added `assetmgr` and texture generators are
 from an incompatible Rare asset pipeline: their `0x1173` plus three-byte-size

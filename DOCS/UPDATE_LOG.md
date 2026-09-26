@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Game countdown register allocation byte-exact
+
+- Completed all 16 words of `func_15108B80` with seven expected-word guards
+  selecting retail's terminal/countdown registers and commutative pointer-add
+  operand order.
+- All normalized words are non-relocating; the `D_800BE9E4` HI16/LO16 pair
+  remains attached to the original compiled loads. The patch table now has
+  540 rows and no duplicate keys.
+- Independent comparison of the complete 64-byte linked and pristine retail
+  spans produced SHA-256
+  `780f645debdf6325c966f3f00d0e78556835ec450895964b890d2c3eb2ddc8d5`.
+  Fresh scan: **2562 / 5488 (46.68%)** overall and
+  **1994 / 4799 (41.55%)** game, with debugger unchanged at **181 / 181**.
+
 ### Game destination-pointer schedule byte-exact
 
 - Completed all 17 words of `func_150CDB6C` with seven expected-word guards
