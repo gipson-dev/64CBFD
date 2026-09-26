@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, fourth-component continuation restored).** The current
-linked checkpoint is `2615 / 5483 (47.69%)` exact C functions, with one
-address-drift blocker and 2,867 genuinely different C functions. The tree
+**Active (2026-09-26, record-pointer repeated-field lifetime matched).** The
+current linked checkpoint is `2616 / 5483 (47.71%)` exact C functions, with
+one address-drift blocker and 2,866 genuinely different C functions. The tree
 contains 555 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -223,10 +223,12 @@ across its first call, plus five guarded prologue scheduling words.
 `func_15085B70` then matched directly after reversing its null condition so
 the zeroing path precedes the populated path. False C placeholder
 `func_150A7A14` is restored to its original thirteen-word assembly
-continuation through saved return register `t9`. Continue with 19-word
-`func_150CFBEC`, now the first thirteen-difference game row.
+continuation through saved return register `t9`. `func_150CFBEC` then matched
+directly from an outer record-pointer lifetime and repeated volatile
+source-field loads. Continue with 16-word `func_15131918`, now the first
+thirteen-difference game row.
 The latest result is in
-[Working Note 103](WORKING_NOTES/103-game-fourth-component-continuation-restoration-20260926.md).
+[Working Note 104](WORKING_NOTES/104-game-record-pointer-repeated-field-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

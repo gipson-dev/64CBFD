@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,615 / 5,483 (47.69%) | 1 | 2,867 |
+| Total | 2,616 / 5,483 (47.71%) | 1 | 2,866 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,047 / 4,794 (42.70%) | 0 | 2,747 |
+| Game | 2,048 / 4,794 (42.72%) | 0 | 2,746 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,615, while
+denominator driven: the exact count is now 2,616, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -268,8 +268,10 @@ end-to-end gameplay acceptance.
    its null condition so the zeroing path precedes the populated path, with no
    guarded rows. `func_150A7A14` is restored to its original thirteen-word
    assembly continuation because it returns through `t9` as the second half
-   of `func_150A7A00`'s synthetic-return trampoline. Continue with 19-word
-   `func_150CFBEC`, now the first thirteen-difference game row.
+   of `func_150A7A00`'s synthetic-return trampoline. `func_150CFBEC` is
+   byte-exact directly from an outer record-pointer lifetime and repeated
+   volatile source-field loads, with no guarded rows. Continue with 16-word
+   `func_15131918`, now the first thirteen-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -385,5 +387,7 @@ The completed null-first table-populator path is in
 [Working Note 102](WORKING_NOTES/102-game-null-first-table-populator-match-20260926.md).
 The restored fourth-component trampoline continuation is in
 [Working Note 103](WORKING_NOTES/103-game-fourth-component-continuation-restoration-20260926.md).
+The completed record-pointer and repeated-field lifetime is in
+[Working Note 104](WORKING_NOTES/104-game-record-pointer-repeated-field-match-20260926.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

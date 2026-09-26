@@ -263,6 +263,10 @@ The fourth-component continuation pass restored `func_150A7A14` from a false
 C placeholder to the original thirteen-word assembly tail of
 `func_150A7A00`'s synthetic-return trampoline; see
 [Working Note 103](WORKING_NOTES/103-game-fourth-component-continuation-restoration-20260926.md).
+The record-pointer lifetime pass completed `func_150CFBEC` directly by
+materializing its output record before the condition and retaining two
+volatile source-field reads, without guarded rows; see
+[Working Note 104](WORKING_NOTES/104-game-record-pointer-repeated-field-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

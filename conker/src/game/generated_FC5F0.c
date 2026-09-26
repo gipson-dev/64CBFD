@@ -45,13 +45,13 @@ s32 func_150CF800() {
 }
 
 void func_150CFBEC(u8 *arg0, f32 *arg1, u8 arg2) {
-    if (arg2 == 0x52) {
-        u8 *temp_v0 = arg0 + 0x70;
+    u8 *temp_v0 = arg0 + 0x70;
 
+    if (arg2 == 0x52) {
         *temp_v0 |= 1;
         *(f32 *) (temp_v0 + 4) = 0.0f;
-        *(f32 *) (temp_v0 + 8) = *(f32 *) (arg0 + 0x10);
-        *(f32 *) (temp_v0 + 0xC) = *arg1 - *(f32 *) (arg0 + 0x10);
+        *(f32 *) (temp_v0 + 8) = *(volatile f32 *) (arg0 + 0x10);
+        *(f32 *) (temp_v0 + 0xC) = *arg1 - *(volatile f32 *) (arg0 + 0x10);
     }
 }
 

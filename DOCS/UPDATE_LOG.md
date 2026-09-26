@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Record-pointer repeated-field lifetime byte-exact
+
+- Completed all 19 words of `func_150CFBEC` directly from source. Moving the
+  `arg0 + 0x70` record pointer outside the condition places its materialization
+  in retail's branch delay slot and retains it in `v0` for every record access.
+- Volatile source-field reads preserve retail's two separate loads from
+  `arg0 + 0x10`, restoring the FP load/subtract schedule. No guarded rows or
+  relocations apply.
+- The patch table remains at 808 unique rows. Linked `0xFD06C` and retail
+  `0xFD09C` share SHA-256
+  `dbdf458a3a3766235455debb74b0a6ddaff00f12354927807aa5baec169d3870`.
+  Fresh scan: **2616 / 5483 (47.71%)** overall and
+  **2048 / 4794 (42.72%)** game, with debugger unchanged at **181 / 181**.
+
 ### Fourth-component continuation restored
 
 - Restored all 13 original words of `func_150A7A14` from retained
