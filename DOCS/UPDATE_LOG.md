@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Record activation loop byte-exact
+
+- Completed all 17 words of `func_150B6D34` by simplifying its cursor loop and
+  guarding nine residual cursor/record-pointer register choices. The three
+  address-setup guards explicitly preserve or move the corresponding
+  `D_800D9898` and `D_800D98A4` relocations.
+- The patch table now has 709 unique rows. The complete linked span at
+  `0xE41B4` and retail span at `0xE41E4` share SHA-256
+  `03ce6560ee0992ce0939368415ac8387c68e5cac8aa8022d68bc01deea2f1124`.
+  Fresh scan: **2594 / 5484 (47.30%)** overall and
+  **2026 / 4795 (42.25%)** game, with debugger unchanged at **181 / 181**.
+
 ### Five-byte queue shift byte-exact
 
 - Completed all 15 words of `func_1507EEB8` by replacing five scalar byte

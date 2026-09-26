@@ -17,18 +17,16 @@ s32 func_150B6C90() {
 }
 
 void func_150B6D34(void) {
+    u8 *p;
     u8 *ptr = D_800D9898;
-    u8 *end = D_800D98A4;
-    s32 val = 1;
 
     do {
-        u8 *p = *(u8 **) (ptr + 0x14);
-
+        p = *(u8 **) (ptr + 0x14);
         ptr += 4;
         if (p != 0) {
-            *(s32 *) (p + 0x20) = val;
+            *(s32 *) (p + 0x20) = 1;
         }
-    } while (ptr != end);
+    } while (ptr != D_800D98A4);
     D_800D9890 = 3;
 }
 
