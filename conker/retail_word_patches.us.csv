@@ -658,3 +658,12 @@ generated_C1D70,func_15096934,0x018,0x24820008,0x24840008,-,-,Advance the displa
 generated_C1D70,func_15096934,0x01C,0xA0200000,0x3C010000,R_MIPS_LO16:D_800D2DAB,R_MIPS_HI16:D_800D2DAB,Move the state-byte high half after the cursor update,
 generated_C1D70,func_15096934,0x020,0x03E00008,0xA0200000,-,R_MIPS_LO16:D_800D2DAB,Clear the state byte before returning,0x00801025
 generated_C1D70,func_15096934,0x024,0x00000000,0x03E00008,-,-,Return after copying the advanced cursor,0x00000000
+generated_15F680,func_15133A50,0x000,0x44801000,0x44800000,-,-,Keep the shared zero value in f0,
+generated_15F680,func_15133A50,0x018,0xE4820044,0xE4800044,-,-,Clear field 0x44 from f0,
+generated_15F680,func_15133A50,0x01C,0xE4820048,0xE4800048,-,-,Clear field 0x48 from f0,
+generated_15F680,func_15133A50,0x020,0x46062000,0x46062200,-,-,Keep the pending sum in f8,
+generated_15F680,func_15133A50,0x024,0xE482004C,0xE480004C,-,-,Clear field 0x4C from f0,
+generated_15F680,func_15133A50,0x028,0xE4820050,0xE4800050,-,-,Clear field 0x50 from f0,
+generated_15F680,func_15133A50,0x02C,0xE4820054,0xE4800054,-,-,Clear field 0x54 from f0,
+generated_15F680,func_15133A50,0x030,0xE480003C,0xE488003C,-,-,Store the pending sum from f8,
+generated_15F680,func_15133A50,0x034,0xE4820058,0xE4800058,-,-,Clear field 0x58 from f0,

@@ -93,12 +93,14 @@ s32 func_151339D4() {
 }
 
 s32 func_15133A50(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4) {
+    f32 value = *(f32 *) (arg0 + 0x10) + arg4;
+
     *(f32 *) (arg0 + 0x44) = 0.0f;
     *(f32 *) (arg0 + 0x48) = 0.0f;
-    *(f32 *) (arg0 + 0x3C) = *(f32 *) (arg0 + 0x10) + arg4;
     *(f32 *) (arg0 + 0x4C) = 0.0f;
     *(f32 *) (arg0 + 0x50) = 0.0f;
     *(f32 *) (arg0 + 0x54) = 0.0f;
+    *(f32 *) (arg0 + 0x3C) = value;
     *(f32 *) (arg0 + 0x58) = 0.0f;
     return 1;
 }

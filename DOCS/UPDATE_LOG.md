@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Float-state reset byte-exact
+
+- Completed all 17 words of `func_15133A50` by naming the pending sum,
+  restoring retail's field-store order, and guarding the remaining nine
+  `f0`/`f2`/`f8` register words. The guards move no relocations, insert no
+  words, and change no addresses or control flow.
+- The patch table now has 668 rows with no duplicate keys; this function has
+  nine rows and no insertion-bearing rows. The complete linked span at
+  `0x160ED0` and retail span at `0x160F00` share SHA-256
+  `d46c11f94cffe15df0b700b643efd7c5844f60926746c7f45c7fb8c409ef7705`.
+  Fresh scan: **2587 / 5484 (47.17%)** overall and
+  **2019 / 4795 (42.11%)** game, with debugger unchanged at **181 / 181**.
+
 ### Repeated float-scale loop byte-exact
 
 - Replaced the zero-return `func_151318E8` placeholder with retail's
