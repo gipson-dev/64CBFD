@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Three-byte record update byte-exact
+
+- Completed all 46 words of `func_1504BA38` with twelve guarded words that
+  restore retail's `v1` record pointer, `a1` byte-two value, and `v0` byte-one
+  value. The arithmetic, branches, stores, floating-point conversions, and
+  both existing global relocation pairs were already correctly positioned.
+- The patch table now has 735 unique rows. Linked `0x78EB8` and retail
+  `0x78EE8` share SHA-256
+  `f6b31137a29e73ab755499f92e5ae0090afb835db155431476753cb081e410b4`.
+  Fresh scan: **2602 / 5484 (47.45%)** overall and
+  **2034 / 4795 (42.42%)** game, with debugger unchanged at **181 / 181**.
+
 ### Timed toggle/table update byte-exact
 
 - Completed all 21 words of `func_150337E4` by replacing its accumulated-value

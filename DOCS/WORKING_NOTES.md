@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, timed toggle/table update matched).** The current linked
-checkpoint is `2601 / 5484 (47.43%)` exact C functions, with one address-drift
-blocker and 2,882 genuinely different C functions. The tree
+**Active (2026-09-26, three-byte record update matched).** The current linked
+checkpoint is `2602 / 5484 (47.45%)` exact C functions, with one address-drift
+blocker and 2,881 genuinely different C functions. The tree
 contains 554 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -196,10 +196,13 @@ then matched directly from candidate-first local declaration and a single
 signed four-bit scaling assignment. `func_1501CFF8` then matched directly from
 global count expressions and local lifetime ordering. `func_15031E2C` then
 matched with twelve guarded register-schedule words. `func_150337E4` then
-matched directly from field-based update and table-index expressions. Continue
-with 46-word `func_1504BA38`, now the first twelve-difference game row.
+matched directly from field-based update and table-index expressions.
+`func_1504BA38` then matched through twelve guarded three-byte record
+pointer/value-register words. Continue with 13-word `func_150882B0`, now the
+first twelve-difference game row; retail's opening `move a1,a0` is absent from
+the current object and shifts the otherwise equivalent indexed-byte getter.
 The latest result is in
-[Working Note 088](WORKING_NOTES/088-game-timed-toggle-table-update-match-20260926.md).
+[Working Note 089](WORKING_NOTES/089-game-three-byte-record-schedule-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
