@@ -9,6 +9,14 @@ extern s32 D_800BE9E4;
 extern s32 (*D_800888A0[])(u8 *arg0);
 extern s32 (*D_800888B0[])(u8 *arg0, u8 *arg1, u8 arg2);
 
+typedef struct {
+    u8 pad0[0x14];
+    u8 size;
+    u8 index;
+    u8 pad16[2];
+    u8 *buffers[2];
+} BufferState;
+
 /* Non-matching placeholders for the text-only asm slice asm/FC5F0.s. */
 
 s32 func_150CF140() {
@@ -109,15 +117,12 @@ s32 func_150CFDB8(u8 *arg0) {
 }
 
 void func_150CFE3C(u8 *arg0) {
-    u8 idx = *(arg0 + 0x3D);
-    void *src = *(void **) (arg0 + 0x34);
-    u8 size = *(arg0 + 0x3C);
-    void *dst = *(void **) (arg0 + idx * 4 + 0x40);
+    BufferState *state;
 
-    memcpy(dst, src, size);
-    idx = *(arg0 + 0x28 + 0x15);
-    size = *(arg0 + 0x28 + 0x14);
-    *(u8 *) (*(u8 **) (arg0 + 0x28 + idx * 4 + 0x18) + size) = 0;
+    memcpy(*(void **) (arg0 + *(arg0 + 0x3D) * 4 + 0x40),
+           *(void **) (arg0 + 0x34), *(arg0 + 0x3C));
+    state = (BufferState *) (arg0 + 0x28);
+    state->buffers[state->index][state->size] = 0;
 }
 
 void func_150CFE98(u8 *arg0) {

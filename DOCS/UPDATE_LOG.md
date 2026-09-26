@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Active-buffer copy byte-exact
+
+- Completed all 23 words of `func_150CFE3C`. It copies the current source
+  bytes to the active output buffer selected by object byte `0x3D`, then
+  NUL-terminates the nested active buffer at its current size.
+- Recovered the nested state at object offset `0x28` as size/index bytes at
+  `0x14`/`0x15` followed by two pointers at `0x18`. Six guarded rows restore
+  retail's object/nested-state bases, pointer offsets, commutative add order,
+  and retained nested-base calculation. The patch table now has 964 unique
+  rows and no duplicate keys.
+- Linked `0xFD2BC` and retail `0xFD2EC` share SHA-256
+  `54f23549a68d0a118376c4e2c6448428d31c37c0cdcd10e1099075a64f5c28a8`.
+  Fresh scan: **2649 / 5483 (48.31%)** overall and
+  **2081 / 4794 (43.41%)** game, with debugger unchanged at **181 / 181**.
+
 ### Variable-record maximum scanner byte-exact
 
 - Completed all 33 words of `func_150CFDB8` while preserving its recovered

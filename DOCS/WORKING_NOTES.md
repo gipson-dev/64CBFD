@@ -290,9 +290,10 @@ shared one local and the choices array was placed between the scalar locals,
 recovering retail's `a1` lifetime and stack layout. `func_150CFDB8` then
 matched directly after its redundant pointer copy was removed and `arg0` was
 advanced through the record loop, restoring the incoming spill and saved
-register lifetimes. Continue with 23-word `func_150CFE3C`. The latest result
-is in
-[Working Note 136](WORKING_NOTES/136-game-variable-record-maximum-match-20260926.md).
+register lifetimes. `func_150CFE3C` then matched after recovering the nested
+active-buffer state and guarding six base/register scheduling words. Continue
+with 23-word `func_15167010`. The latest result is in
+[Working Note 137](WORKING_NOTES/137-game-active-buffer-copy-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

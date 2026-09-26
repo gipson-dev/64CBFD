@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,648 / 5,483 (48.29%) | 1 | 2,834 |
+| Total | 5,483 / 6,038 (90.81%) | 2,649 / 5,483 (48.31%) | 1 | 2,833 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,080 / 4,794 (43.39%) | 0 | 2,714 |
+| Game | 4,794 / 5,318 (90.15%) | 2,081 / 4,794 (43.41%) | 0 | 2,713 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -367,7 +367,11 @@ The variable-record maximum pass then completed all 33 words of
 `func_150CFDB8` directly from C by removing its redundant `p` lifetime and
 mutating `arg0` through the loop. No guarded rows were needed; see
 [Working Note 136](WORKING_NOTES/136-game-variable-record-maximum-match-20260926.md).
-Continue with 23-word `func_150CFE3C`, which has 15 real differences.
+The active-buffer copy pass then completed all 23 words of `func_150CFE3C`
+after recovering its nested state layout and guarding six base/register
+scheduling words; see
+[Working Note 137](WORKING_NOTES/137-game-active-buffer-copy-match-20260926.md).
+Continue with 23-word `func_15167010`, which has 15 real differences.
 
 Current host-port progression and acceptance boundaries:
 
