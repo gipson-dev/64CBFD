@@ -260,14 +260,12 @@ s32 func_1508855C(s32 arg0) {
 
 void func_15088780(s32 arg0) {
     s32 idx;
-    u8 *rec;
 
     if (D_800872A0 == 0) {
         return;
     }
     idx = func_1508855C(arg0);
-    rec = (u8 *) (idx * 0x84 + (s32) D_800872A0);
-    rec[0x31] = 0;
+    ((u8 *) ((s32) D_800872A0 + idx * 0x84))[0x31] = 0;
     D_800D2394 &= ~(1 << (idx - D_800D2398));
 }
 

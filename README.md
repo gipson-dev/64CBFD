@@ -74,8 +74,12 @@ three forwarded arguments and child-pointer lifetime, bringing the total to
 from its zero-return placeholder and byte-exact directly from C, bringing the
 total to 2,678. The scaled table reader `func_150881CC` is now byte-exact after
 preserving its original behavior and guarding five IDO register-scheduling
-words, bringing the total to 2,679. Continue with `func_15088780`. The measured
-boundary is in [Working Note 167](DOCS/WORKING_NOTES/167-game-scaled-table-reader-match-20260926.md).
+words, bringing the total to 2,679. The indexed record deactivator
+`func_15088780` is now byte-exact directly from C after removing a one-use
+record-pointer lifetime and restoring the retail base-plus-scaled-index
+expression order, bringing the total to 2,680. Continue with `func_1509E8A0`.
+The measured boundary is in
+[Working Note 168](DOCS/WORKING_NOTES/168-game-indexed-record-deactivation-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -101,9 +105,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,679 / 5,483 (48.86%) | 1 | 2,803 |
+| Total | `[############------------]` 2,680 / 5,483 (48.88%) | 1 | 2,802 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[###########-------------]` 2,111 / 4,794 (44.03%) | 0 | 2,683 |
+| Game | `[###########-------------]` 2,112 / 4,794 (44.06%) | 0 | 2,682 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

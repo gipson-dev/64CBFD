@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,679 / 5,483 (48.86%) | 1 | 2,803 |
+| Total | 2,680 / 5,483 (48.88%) | 1 | 2,802 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,111 / 4,794 (44.03%) | 0 | 2,683 |
+| Game | 2,112 / 4,794 (44.06%) | 0 | 2,682 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,679, while
+denominator driven: the exact count is now 2,680, while
 494 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -409,8 +409,10 @@ end-to-end gameplay acceptance.
    The 19-word `func_1506AC0C` is now converted and byte-exact directly from C
    after restoring its typed object-selector record and dispatch call. The
    19-word `func_150881CC` is now byte-exact after retaining its clean scaled
-   table-read C behavior and guarding five IDO register-scheduling words.
-   Continue with 30-word `func_15088780`, the next ordinary Game C row with
+   table-read C behavior and guarding five IDO register-scheduling words. The
+   30-word `func_15088780` is now byte-exact directly from C after removing a
+   one-use record pointer and restoring base-plus-scaled-index operand order.
+   Continue with 24-word `func_1509E8A0`, the next ordinary Game C row with
    eighteen real differences.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,

@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Indexed record deactivation byte-exact
+
+- Simplified `func_15088780` by removing its one-use record-pointer local and
+  expressing the target address in retail's table-base-plus-scaled-index
+  order. The behavior remains unchanged: clear record byte `0x31`, then clear
+  the corresponding bit in `D_800D2394`.
+- The source shape restores retail's complete post-call register allocation,
+  so all 30 words now match directly from C. No guarded rows were added; the
+  patch table remains at 1,116 unique rows with zero duplicate keys.
+- Linked ELF `.game+0x88780` and retail ROM `0xB5C30` share SHA-256
+  `c70d2601cd04ee0b936cb95e64238adc7d0e652f7e66e903f39f4cfe2ba79e33`.
+  Fresh scan: **2680 / 5483 (48.88%)** overall and
+  **2112 / 4794 (44.06%)** game, with debugger unchanged at **181 / 181**.
+
 ### Scaled table reader byte-exact
 
 - Confirmed `func_150881CC`'s existing C behavior: return zero for a null
