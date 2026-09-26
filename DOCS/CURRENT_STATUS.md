@@ -275,8 +275,11 @@ end-to-end gameplay acceptance.
    scale fields as floats and implementing the two-component scaling loop.
    `func_1514143C` is now byte-exact with thirteen guarded words that preserve
    retail's embedded-base lifetime and two inserted schedule words after
-   source-only layout probes folded or grew a frame. Continue with 24-word
-   `func_15144B68`, now the first thirteen-difference game row.
+   source-only layout probes folded or grew a frame. `func_15144B68` is now
+   byte-exact after a named result local restored retail's FP-register lifetime
+   and two guarded words restored the independent opening compare/copy
+   schedule. Continue with 17-word `func_1518F858`, now the first
+   thirteen-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -398,5 +401,7 @@ The completed two-component scaling loop is in
 [Working Note 105](WORKING_NOTES/105-game-two-component-scaling-loop-match-20260926.md).
 The completed embedded vertex-copy base lifetime is in
 [Working Note 106](WORKING_NOTES/106-game-embedded-vertex-copy-match-20260926.md).
+The completed angle-normalization register lifetime and opening schedule are
+in [Working Note 107](WORKING_NOTES/107-game-angle-normalization-match-20260926.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

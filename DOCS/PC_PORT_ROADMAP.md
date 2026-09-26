@@ -275,6 +275,10 @@ The embedded vertex-copy pass completed `func_1514143C` with thirteen guarded
 words and two inserted schedule words, retaining retail's interior
 `arg0 + 0x110` base without changing the logical C; see
 [Working Note 106](WORKING_NOTES/106-game-embedded-vertex-copy-match-20260926.md).
+The angle-normalization pass completed `func_15144B68` with a named result
+local and two guarded opening schedule words; all 24 words now match retail.
+Continue with 17-word `func_1518F858`; see
+[Working Note 107](WORKING_NOTES/107-game-angle-normalization-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -648,15 +648,17 @@ f32 *func_15144B34(s32 arg0) {
     return &D_800DBFF0[arg0].unk2F8;
 }
 f32 func_15144B68(f32 arg0) {
-    while (D_800A56A4 < arg0) {
-        arg0 -= D_800A56A4;
+    f32 ret = arg0;
+
+    while (D_800A56A4 < ret) {
+        ret -= D_800A56A4;
     }
 
-    while (arg0 < 0.0f) {
-        arg0 += D_800A56A4;
+    while (ret < 0.0f) {
+        ret += D_800A56A4;
     }
 
-    return arg0;
+    return ret;
 }
 
 f32 func_15144BC8(f32 arg0) {

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Angle normalization byte-exact
+
+- Completed all 24 words of `func_15144B68`. A named result local gives the
+  normalized value retail's `f2` lifetime while zero remains in `f12`; both
+  subtract/add loops and their branch-delay updates then match directly.
+- Compact source probes left only the opening compare and input-copy order.
+  Two guarded scheduling words reproduce retail without changing control flow
+  or relocations. The patch table now has 823 unique rows.
+- Linked `0x171FE8` and retail `0x172018` share SHA-256
+  `3092544aa3402e37d36842a0d1fec70e2bb75c61795fef11a33a3c7e0aefc9f2`.
+  Fresh scan: **2619 / 5483 (47.77%)** overall and
+  **2051 / 4794 (42.78%)** game, with debugger unchanged at **181 / 181**.
+
 ### Embedded vertex-copy base lifetime byte-exact
 
 - Completed all 15 words of `func_1514143C`. The logical C already copied

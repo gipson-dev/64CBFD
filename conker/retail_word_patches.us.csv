@@ -820,3 +820,5 @@ game_16DC80,func_1514143C,0x024,0xC488003C,0x8C590044,-,-,Reload the output vert
 game_16DC80,func_1514143C,0x028,0xE5E80008,0xC488003C,-,-,Load the source z component after its destination pointer,
 game_16DC80,func_1514143C,0x02C,0x03E00008,0xE7280008,-,-,Store the z component through t9,
 game_16DC80,func_1514143C,0x030,0x00000000,0x03E00008,-,-,Move the return into the final retail instruction pair,0x00000000
+game_16EE20,func_15144B68,0x008,0x46006086,0x460C003C,-,-,Compare the period before copying the input into the result register,
+game_16EE20,func_15144B68,0x00C,0x460C003C,0x46006086,-,-,Copy the input while the floating-point compare settles,

@@ -229,10 +229,12 @@ source-field loads. Placeholder `func_15131918` then became byte-exact C after
 typing its callers' scale fields as floats and implementing the two-component
 scaling loop. `func_1514143C` then matched with thirteen guarded words and two
 insertions that retain retail's `arg0 + 0x110` base without the frame produced
-by the rejected volatile-pointer probe. Continue with 24-word
-`func_15144B68`, now the first thirteen-difference game row.
+by the rejected volatile-pointer probe. `func_15144B68` then matched after a
+named result local restored retail's FP-register lifetime and two guarded
+words restored its opening compare/copy schedule. Continue with 17-word
+`func_1518F858`, now the first thirteen-difference game row.
 The latest result is in
-[Working Note 106](WORKING_NOTES/106-game-embedded-vertex-copy-match-20260926.md).
+[Working Note 107](WORKING_NOTES/107-game-angle-normalization-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
