@@ -5,6 +5,7 @@ extern s32 D_800BE9E4;
 /* Non-matching placeholders for the text-only asm slice asm/142560.s. */
 
 s32 func_151169B4();
+u8 *func_151149AC(u32 arg0);
 
 f32 func_151172D8(u8 *arg0, f32 arg1);
 f32 func_15117518(u8 *arg0, f32 arg1);
@@ -361,6 +362,13 @@ s32 func_1511F788() {
     return 0;
 }
 
-s32 func_1511F92C() {
-    return 0;
+void func_1511F92C(u8 *arg0) {
+    register u8 *dst = arg0;
+    u8 *src = func_151149AC(*(arg0 + 0x3F));
+
+    if (src != NULL) {
+        *(s16 *) (dst + 0x10) = *(s16 *) (src + 0x10);
+        *(s16 *) (dst + 0x12) = *(s16 *) (src + 0x12);
+        *(s16 *) (dst + 0x14) = *(s16 *) (src + 0x14);
+    }
 }

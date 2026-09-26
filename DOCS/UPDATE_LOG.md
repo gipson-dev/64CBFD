@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Nullable coordinate-copy wrapper converted and byte-exact
+
+- Replaced `func_1511F92C`'s zero-return placeholder with its complete
+  lookup-and-copy behavior. A nonnull `func_151149AC` result supplies the
+  three signed halfwords at offsets `0x10`, `0x12`, and `0x14`.
+- An explicit retained destination pointer recovers retail's `a1` spill and
+  reload around the call. The function and three authored trailing nops match
+  directly from C without guarded rows; the patch table remains at 1,111
+  unique rows.
+- Linked `0x14CDAC` and retail `0x14CDDC` share SHA-256
+  `8640e14c5975fc467cd18311e1eb4d66accd1db351c5dad86efe81635ba5440b`.
+  Fresh scan: **2672 / 5483 (48.73%)** overall and
+  **2104 / 4794 (43.89%)** game, with debugger unchanged at **181 / 181**.
+
 ### State-gated owner check converted and byte-exact
 
 - Replaced `func_15116930`'s zero-return placeholder with its complete

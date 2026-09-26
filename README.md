@@ -56,8 +56,11 @@ independent final global-pointer reload, bringing the total to 2,670. Continue
 with `func_15116930`, which is now converted from its zero-return placeholder
 and byte-exact directly from C after retaining the owner-slot address through
 the state gates, bringing the total to 2,671. Continue with `func_1511F92C`.
-The measured boundary is in
-[Working Note 159](DOCS/WORKING_NOTES/159-game-state-gated-owner-check-match-20260926.md).
+That nullable coordinate-copy wrapper is now converted from its zero-return
+placeholder and byte-exact directly from C across its padded retail span,
+bringing the total to 2,672. Continue with `func_15130374`. The measured
+boundary is in
+[Working Note 160](DOCS/WORKING_NOTES/160-game-nullable-coordinate-copy-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -83,9 +86,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,671 / 5,483 (48.71%) | 1 | 2,811 |
+| Total | `[############------------]` 2,672 / 5,483 (48.73%) | 1 | 2,810 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[##########--------------]` 2,103 / 4,794 (43.87%) | 0 | 2,691 |
+| Game | `[##########--------------]` 2,104 / 4,794 (43.89%) | 0 | 2,690 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside
