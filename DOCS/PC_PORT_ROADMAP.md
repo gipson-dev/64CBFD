@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,654 / 5,483 (48.40%) | 1 | 2,828 |
+| Total | 5,483 / 6,038 (90.81%) | 2,655 / 5,483 (48.42%) | 1 | 2,827 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,086 / 4,794 (43.51%) | 0 | 2,708 |
+| Game | 4,794 / 5,318 (90.15%) | 2,087 / 4,794 (43.53%) | 0 | 2,707 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -390,7 +390,11 @@ The dimension/ratio setup pass then completed all 33 words of
 `func_150492CC` through sixteen guarded floating-point and relocation schedule
 words; see
 [Working Note 142](WORKING_NOTES/142-game-dimension-ratio-setup-match-20260926.md).
-Continue with 17-word `func_150721A4`, which has 16 real differences.
+The angle-tolerance pass then completed all 58 words of `func_150767F4`
+through sixteen guarded register-scheduling words; see
+[Working Note 143](WORKING_NOTES/143-game-angle-tolerance-match-20260926.md).
+Keep `func_150721A4` parked as a known three-word live-C compiler overflow and
+continue with 21-word `func_1507A428`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 

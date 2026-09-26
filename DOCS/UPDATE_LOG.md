@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Angle-tolerance check byte-exact
+
+- Completed all 58 words of `func_150767F4`. It computes the horizontal angle
+  to an indexed object and calls `func_15075400(D_800D1890)` when the masked
+  angle delta is less than twice `D_800D1891`.
+- Sixteen guarded rows restore retail's post-call integer register allocation;
+  only the first two carry the preserved `D_800D154C` relocation pair. The
+  patch table now has 1,030 unique rows and no duplicate keys.
+- Linked `0xA3C74` and retail `0xA3CA4` share SHA-256
+  `b23abcde8e3cf19458c5429db1dc0d397bdb41f008ca91c5ab68271ca270198d`.
+  Fresh scan: **2655 / 5483 (48.42%)** overall and
+  **2087 / 4794 (43.53%)** game, with debugger unchanged at **181 / 181**.
+
 ### Dimension/ratio setup byte-exact
 
 - Completed all 33 words of `func_150492CC`. It stores three dimensions,
