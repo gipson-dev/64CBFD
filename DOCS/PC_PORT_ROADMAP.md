@@ -320,8 +320,12 @@ rows, and one inserted retained-base reload; see
 [Working Note 122](WORKING_NOTES/122-game-four-word-record-fill-match-20260926.md).
 The fourth one-word aggregate-forwarder pass then completed all 19 words of
 `func_15160274` directly from source and corrected its stale local callee
-prototype. Continue with 19-word `func_151BD750`; see
+prototype; see
 [Working Note 123](WORKING_NOTES/123-game-fourth-one-word-forwarder-match-20260926.md).
+The float scale-and-offset pass then completed all 19 words of `func_151BD750`
+with fifteen guarded scheduling rows and two insertions. Continue with 21-word
+`func_151417C4`; see
+[Working Note 124](WORKING_NOTES/124-game-float-scale-offset-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

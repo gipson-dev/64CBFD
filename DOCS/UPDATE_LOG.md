@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Float scale-and-offset update byte-exact
+
+- Completed all 19 words of `func_151BD750` while retaining its semantically
+  correct halfword conversion, scale, offset, and state-update source.
+- Added fifteen guarded scheduling rows and two inserted terminal words to
+  restore retail's materialized `2.0f`, ordered multiplies, FP registers,
+  halfword-update position, and return sequence. Six moved global-address
+  words retain explicit expected and replacement relocations.
+- Linked `0x1EABD0` and retail `0x1EAC00` share SHA-256
+  `614a29e037a05c46e1fe34e72c91217d5e5e776b72e027dab31c086cbfa4800f`.
+  Fresh scan: **2636 / 5483 (48.08%)** overall and
+  **2068 / 4794 (43.14%)** game, with debugger unchanged at **181 / 181**.
+
 ### Fourth one-word aggregate forwarder byte-exact
 
 - Completed all 19 words of `func_15160274` directly from a `OneWord18D250`

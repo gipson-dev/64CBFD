@@ -887,3 +887,18 @@ generated_1CC440,func_1519F3B8,0x024,0xAC80005C,0xAC600004,-,-,Clear the second 
 generated_1CC440,func_1519F3B8,0x028,0x8FA40018,0x0C000000,-,R_MIPS_26:func_1519F1C8,Move the selector seven call after the first stores,
 generated_1CC440,func_1519F3B8,0x02C,0x24830058,0xAFA30018,-,-,Spill the retained base in the call delay slot,0x8FA30018
 generated_1CC440,func_1519F3B8,0x040,0x27BD0018,0x27BD0020,-,-,Restore the larger retail frame in the return delay slot,
+generated_1E73B0,func_151BD750,0x004,0x3C010000,0x3C014000,R_MIPS_HI16:D_800AA860,-,Materialize the retail 2.0f bit pattern directly,
+generated_1E73B0,func_151BD750,0x008,0xC4280000,0x44814000,R_MIPS_LO16:D_800AA860,-,Move the literal bit pattern into f8,
+generated_1E73B0,func_151BD750,0x010,0x3C010000,0x3C010000,R_MIPS_HI16:D_800AA864,R_MIPS_HI16:D_800AA860,Load the scale before converting the source halfword,
+generated_1E73B0,func_151BD750,0x014,0xC4300000,0xC4300000,R_MIPS_LO16:D_800AA864,R_MIPS_LO16:D_800AA860,Load the scale into retail f16,
+generated_1E73B0,func_151BD750,0x018,0x46802320,0x468021A0,-,-,Convert the source halfword into f6,
+generated_1E73B0,func_151BD750,0x01C,0x3C0E0000,0x3C010000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800AA864,Begin loading the additive float into f4,
+generated_1E73B0,func_151BD750,0x020,0x8DCE0000,0xC4240000,R_MIPS_LO16:D_800BE9E4,R_MIPS_LO16:D_800AA864,Finish loading the additive float into f4,
+generated_1E73B0,func_151BD750,0x024,0x004E7821,0x3C0E0000,-,R_MIPS_HI16:D_800BE9E4,Begin loading the halfword increment after both floats,
+generated_1E73B0,func_151BD750,0x028,0x460C6180,0x8DCE0000,-,R_MIPS_LO16:D_800BE9E4,Finish loading the halfword increment,
+generated_1E73B0,func_151BD750,0x02C,0xA48F0080,0x46083282,-,-,Multiply the converted halfword by the materialized 2.0f,
+generated_1E73B0,func_151BD750,0x030,0x46083282,0x004E7821,-,-,Compute the updated halfword between the float multiplies,
+generated_1E73B0,func_151BD750,0x034,0x46105080,0xA48F0080,-,-,Store the updated halfword before the scale multiply,
+generated_1E73B0,func_151BD750,0x038,0x46001006,0x46105482,-,-,Multiply the doubled value by the global scale,
+generated_1E73B0,func_151BD750,0x03C,0x03E00008,0x46049080,-,-,Add the global offset after both multiplies,0x46001006
+generated_1E73B0,func_151BD750,0x040,0x00000000,0x03E00008,-,-,Move the return after the restored result copy,0x00000000
