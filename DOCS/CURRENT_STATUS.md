@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-25:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,569 / 5,486 (46.83%) | 1 | 2,916 |
+| Total | 2,570 / 5,486 (46.85%) | 1 | 2,915 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,001 / 4,797 (41.71%) | 0 | 2,796 |
+| Game | 2,002 / 4,797 (41.73%) | 0 | 2,795 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,569, while
+denominator driven: the exact count is now 2,570, while
 492 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -93,6 +93,8 @@ Its structural twin `func_150C682C` is restored for the same ownership reason,
 with its distinct child-field clear preserved.
 `func_150EA904` is byte-exact through eight guarded, relocation-preserving
 base/index and byte-update register lifetime words.
+`func_1515D480` is byte-exact through eight guarded frame-size and local-slot
+words while preserving both call relocations.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -167,8 +169,9 @@ end-to-end gameplay acceptance.
    extent after IDO removed its dead pointer update. Structural twin
    `func_150C682C` is restored for the same reason. `func_150EA904` is
    byte-exact through eight guarded, relocation-preserving base/index and
-   byte-update register words. Continue at 21-word `func_1515D480`, the first
-   remaining eight-difference game row.
+   byte-update register words. `func_1515D480` is byte-exact through eight
+   guarded frame and local-slot words. Continue at 17-word `func_151AB180`,
+   the first remaining eight-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.
@@ -268,5 +271,7 @@ The restored structural twin is in
 [Working Note 053](WORKING_NOTES/053-game-dead-child-pointer-twin-restoration-20260925.md).
 The completed indexed-record flag update is in
 [Working Note 054](WORKING_NOTES/054-game-indexed-record-flag-match-20260925.md).
+The completed allocation-wrapper frame normalization is in
+[Working Note 055](WORKING_NOTES/055-game-allocation-wrapper-frame-match-20260925.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

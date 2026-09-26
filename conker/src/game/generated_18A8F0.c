@@ -24,6 +24,7 @@ u8 *func_1515D440(void) {
     return temp_v0;
 }
 
+// Matched with guarded frame and local-slot normalization.
 u8 *func_1515D480(s32 arg0) {
     s32 size = arg0 * 0x60;
     u8 *temp_v0 = (u8 *) allocate_memory(size, 1, 2, 0);

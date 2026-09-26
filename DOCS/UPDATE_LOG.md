@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Allocation-wrapper frame byte-exact
+
+- Completed all 21 words of `func_1515D480` with eight expected-word guards
+  that select retail's 32-byte frame and packed `size`/result local slots while
+  preserving both call relocations.
+- Separating local declarations from assignments compiled to the same 40-byte
+  frame and was reverted. The patch table has 573 rows with no duplicate keys.
+- The independent complete-span SHA-256 is
+  `6f3d5b75cb02b75945cfc755ed68078a976130c815f221dd9df5c8f4ed1a1316`.
+  Fresh scan: **2570 / 5486 (46.85%)** overall and
+  **2002 / 4797 (41.73%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed-record flag update byte-exact
 
 - Completed all 16 words of `func_150EA904` with eight expected-word guards
