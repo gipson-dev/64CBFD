@@ -49,12 +49,11 @@ s32 func_151AC9EC(f32 *arg0) {
 }
 
 s32 func_151ACA20(u8 *arg0) {
-    s32 temp_v1 = *(s16 *) (arg0 + 0x1C);
     s32 temp_v0 = 0xFF;
+    s32 temp_v1 = *(s16 *) (arg0 + 0x1C);
 
     if (temp_v1 < 0x10) {
-        temp_v0 = temp_v1;
-        temp_v0 = (s16) (temp_v0 << 4);
+        temp_v0 = (s16) (temp_v1 << 4);
     }
     if (temp_v0 < *(arg0 + 0x5C)) {
         *(arg0 + 0x5C) = temp_v0;

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Conditional minimum update byte-exact
+
+- Completed all 16 words of `func_151ACA20` by declaring the output candidate
+  before the signed-halfword source and expressing four-bit scaling as one
+  signed assignment. IDO now emits retail's `v1` source and `v0` candidate
+  lifetimes, both branch-likely delay slots, store, and return schedule.
+- No guarded rows were added; the patch table remains at 711 unique rows. The
+  linked span at `0x1D9EA0` and retail span at `0x1D9ED0` share SHA-256
+  `2650fd7f0a4ea8c62ed6c2de28b52fbf4bac60fc9924be173f872ad030eb954a`.
+  Fresh scan: **2598 / 5484 (47.37%)** overall and
+  **2030 / 4795 (42.34%)** game, with debugger unchanged at **181 / 181**.
+
 ### Byte lookup forwarding wrapper byte-exact
 
 - Completed all 15 words of `func_15178E14` by replacing its K&R definition

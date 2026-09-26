@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,597 / 5,484 (47.36%) | 1 | 2,886 |
+| Total | 2,598 / 5,484 (47.37%) | 1 | 2,885 |
 | Init | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 2,029 / 4,795 (42.31%) | 0 | 2,766 |
+| Game | 2,030 / 4,795 (42.34%) | 0 | 2,765 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,597, while
+denominator driven: the exact count is now 2,598, while
 493 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -230,8 +230,10 @@ end-to-end gameplay acceptance.
    and corrected pointer ABI, with no guarded rows. `func_15141564` is
    byte-exact from multiplication-first position scheduling plus two guarded
    base-pointer local-slot words. `func_15178E14` is byte-exact from corrected
-   byte and forwarded-result callee contracts, with no guarded rows. Continue
-   with 16-word `func_151ACA20`, the final eleven-difference row.
+   byte and forwarded-result callee contracts, with no guarded rows.
+   `func_151ACA20` is byte-exact from candidate-first local declaration and a
+   direct signed four-bit scaling assignment, with no guarded rows. Continue
+   with 19-word `func_1501CFF8`, the first twelve-difference game row.
 4. Treat raw-assembly conversion as a separate queue. Start by reviewing the
    smallest game-owned rows in `progress.csv`; exclude SDK, CP0, handwritten,
    and mixed code/data routines before converting anything.

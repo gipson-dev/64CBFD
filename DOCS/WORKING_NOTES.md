@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, byte lookup forwarding wrapper matched).** The current
-linked checkpoint is `2597 / 5484 (47.36%)` exact C functions, with one
-address-drift blocker and 2,886 genuinely different C functions. The tree
+**Active (2026-09-26, conditional minimum update matched).** The current linked
+checkpoint is `2598 / 5484 (47.37%)` exact C functions, with one address-drift
+blocker and 2,885 genuinely different C functions. The tree
 contains 554 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -191,10 +191,12 @@ plus nine guarded cursor/register schedule words. `func_151090DC` then matched
 directly from a typed two-word aggregate initializer and corrected pointer ABI.
 `func_15141564` then matched from multiplication-first position scheduling plus
 two guarded base-pointer local-slot words. `func_15178E14` then matched directly
-from corrected byte and forwarded-result callee contracts. Continue with
-16-word `func_151ACA20`, the final eleven-difference row.
+from corrected byte and forwarded-result callee contracts. `func_151ACA20`
+then matched directly from candidate-first local declaration and a single
+signed four-bit scaling assignment. Continue with 19-word `func_1501CFF8`, the
+first twelve-difference game row.
 The latest result is in
-[Working Note 084](WORKING_NOTES/084-game-byte-lookup-forwarding-wrapper-match-20260926.md).
+[Working Note 085](WORKING_NOTES/085-game-conditional-minimum-update-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

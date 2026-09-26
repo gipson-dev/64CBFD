@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,597 / 5,484 (47.36%) | 1 | 2,886 |
+| Total | 5,484 / 6,038 (90.82%) | 2,598 / 5,484 (47.37%) | 1 | 2,885 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,029 / 4,795 (42.31%) | 0 | 2,766 |
+| Game | 4,795 / 5,318 (90.17%) | 2,030 / 4,795 (42.34%) | 0 | 2,765 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -195,6 +195,9 @@ source scheduling plus two guarded base-pointer local-slot words; see
 The byte-lookup forwarding pass completed `func_15178E14` directly from typed
 callee contracts and an ANSI byte parameter; see
 [Working Note 084](WORKING_NOTES/084-game-byte-lookup-forwarding-wrapper-match-20260926.md).
+The conditional-minimum pass completed `func_151ACA20` directly from local
+lifetime ordering and a single signed scaling assignment; see
+[Working Note 085](WORKING_NOTES/085-game-conditional-minimum-update-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
