@@ -1,8 +1,12 @@
 #include <ultra64.h>
 
+typedef struct { s32 a, b; } TwoWord17CAF0;
+
 /* Non-matching placeholders for the text-only asm slice asm/17CAF0.s. */
 
 extern void (*D_8008AD04[])(u8 *, s32, u8);
+extern u8 D_800A6038[];
+void func_15169260(void *, s32, void *, u8);
 s32 func_1514FF44(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
 s32 func_15153CCC(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
 
@@ -152,6 +156,9 @@ void func_15155564(u8 *arg0, s32 arg1, u8 arg2) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_151555AC.s")
 
-s32 func_1515572C() {
-    return 0;
+void func_1515572C(void *arg0, u8 arg1) {
+    TwoWord17CAF0 tmp;
+
+    tmp = *(TwoWord17CAF0 *) D_800A6038;
+    func_15169260(&tmp, 2, arg0, arg1);
 }

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Two-word template dispatcher converted and byte-exact
+
+- Replaced `func_1515572C`'s zero-return placeholder with its complete typed
+  wrapper: copy the two-word `D_800A6038` template to a local record and call
+  `func_15169260` with kind `2`, the data pointer, and byte selector.
+- The template copy, selector spill and zero extension, relocation pair, call,
+  frame, epilogue, and three trailing padded nops match directly from C. No
+  guarded rows were added; the patch table remains at 1,111 unique rows.
+- Linked `0x182BAC` and retail `0x182BDC` share SHA-256
+  `944cf9c1d5c4ad797dfd79c5dc99f879a68303faccdd6a7f279fb7077bbc0413`.
+  Fresh scan: **2674 / 5483 (48.77%)** overall and
+  **2106 / 4794 (43.93%)** game, with debugger unchanged at **181 / 181**.
+
 ### Six-argument forwarding wrapper converted and byte-exact
 
 - Replaced `func_15130374`'s zero-return placeholder with its direct
