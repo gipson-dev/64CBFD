@@ -149,6 +149,8 @@ Its structural twin `func_151963B4` is independently complete; see
 [Working Note 064](WORKING_NOTES/064-game-callback-selector-twin-match-20260925.md).
 The following source-level control-flow pass completed `func_151E5F64`; see
 [Working Note 065](WORKING_NOTES/065-game-indexed-byte-selector-match-20260925.md).
+The final nine-difference pass restored `func_151E81EC`; see
+[Working Note 066](WORKING_NOTES/066-game-four-word-state-clear-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

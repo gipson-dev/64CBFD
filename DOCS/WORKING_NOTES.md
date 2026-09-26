@@ -168,7 +168,9 @@ lifetimes. `func_15166FD8` now matches through the independently verified
 guarded cursor expansion, and `func_15196330` matches through guarded pointer
 and selector registers. Structural twin `func_151963B4` is independently
 matched. `func_151E5F64` now matches from source-level positive-branch
-control-flow recovery; continue at 10-word `func_151E81EC`. Keep
+control-flow recovery. The previously parked `func_151E81EC` now matches from
+a four-word state struct plus guarded paired-store relocations; continue at
+17-word `func_1502EA0C`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
@@ -590,8 +592,9 @@ small generated-slice placeholders against retail bytes. New durable findings:
   where the named operand must come first (`func_15158AFC`, `func_1519187C`,
   `func_150BB450`, `func_1518F15C`, `func_15144A74`), the `&rec` spill in the
   two-call record family (`func_1507FF94`, `func_1519072C`), and lui-`$at`
-  paired stores over TU-local data (`func_151E81EC`, `func_15080200`,
-  `func_1519582C`) which cannot be reproduced with extern declarations.
+  paired stores over TU-local data (`func_1519582C`). The former
+  `func_151E81EC` and `func_15080200` cases are now complete through the
+  generated-slice restoration path.
 - `tools/`-side helpers used this session live in the session scratchpad
   (`dump_retail.py`, `cmp_func.py`, `probe_flags.py`); consider promoting a
   retail-disassembly dumper into `tools/` for future sessions.

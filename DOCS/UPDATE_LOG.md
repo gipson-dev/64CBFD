@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Four-word state clear byte-exact
+
+- Replaced the `func_151E81EC` placeholder with a real four-word state clear
+  and byte reset. A local struct and chained assignment preserve all five
+  stores, retail order, the 10-word extent, and the correct `void` return.
+- Six guarded relocation words recover retail's two shared `$at` high halves.
+  The patch table now has 631 rows with no duplicate keys. The complete linked
+  span at ELF `0x2281EC` and retail `0x21569C` shares SHA-256
+  `8ffd94c76c5a73aa7b0eaa0be788a471eb78a68224cc3b6365c6ce6666ddd16d`.
+- Fresh scan: **2579 / 5484 (47.03%)** overall and
+  **2011 / 4795 (41.94%)** game, with debugger unchanged at **181 / 181**.
+
 ### Indexed signed-byte selector byte-exact
 
 - Completed all 18 words of `func_151E5F64` by expressing the enabled lookup

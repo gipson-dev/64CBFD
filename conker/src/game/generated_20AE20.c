@@ -14,8 +14,13 @@ extern u8 D_8008FD74;
 extern s8 D_8008FE30;
 extern u8 D_8008FD80;
 extern u8 D_8008FD84;
-extern s32 D_800E0BA8[];
-extern s32 D_800E0BA0[];
+typedef struct {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+} Unk800E0BA0;
+extern Unk800E0BA0 D_800E0BA0;
 extern u8 D_80084060[];
 
 /* Non-matching placeholders for the text-only asm slice asm/20AE20.s. */
@@ -335,8 +340,9 @@ s32 func_151E7F60() {
     return 0;
 }
 
-s32 func_151E81EC() {
-    return 0;
+void func_151E81EC(void) {
+    D_800E0BA0.unkC = D_800E0BA0.unk8 = D_800E0BA0.unk0 = D_800E0BA0.unk4 = 0;
+    D_8008FD84 = 0;
 }
 
 s32 func_151E8214() {
