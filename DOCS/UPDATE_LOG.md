@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Record gate wrapper converted and byte-exact
+
+- Replaced `func_150A34B0`'s zero-return placeholder with its complete record
+  gate: return zero when byte `0x14` equals `1`, call `func_150A3504(arg0)`
+  when byte `0x15` has both low bits clear, and otherwise return zero.
+- The call-positive source order reproduces retail's branch-likely duplicated
+  byte load, preloaded zero result, low-bit test, call, and shared epilogue
+  directly from C. No guarded rows were added; the patch table remains at
+  1,116 unique rows with zero duplicate keys.
+- Linked ELF `.game+0xA34B0` and retail ROM `0xD0960` share SHA-256
+  `fb9edd181a18b5c89565ce4898cf3549dc72d810b57d7f04578cb572abaddeef`.
+  Fresh scan: **2682 / 5483 (48.91%)** overall and
+  **2114 / 4794 (44.10%)** game, with debugger unchanged at **181 / 181**.
+
 ### Selector init wrapper converted and byte-exact
 
 - Replaced `func_1509E8A0`'s zero-return placeholder with its complete

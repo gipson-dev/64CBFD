@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,681 / 5,483 (48.90%) | 1 | 2,801 |
+| Total | 5,483 / 6,038 (90.81%) | 2,682 / 5,483 (48.91%) | 1 | 2,800 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,113 / 4,794 (44.08%) | 0 | 2,681 |
+| Game | 4,794 / 5,318 (90.15%) | 2,114 / 4,794 (44.10%) | 0 | 2,680 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -499,7 +499,11 @@ The selector-init-wrapper pass then replaced `func_1509E8A0`'s zero-return
 placeholder with its three-argument callback contract and selector-7/8
 dispatch, matching all 24 padded words directly from C; see
 [Working Note 169](WORKING_NOTES/169-game-selector-init-wrapper-match-20260926.md).
-Continue with 21-word `func_150A34B0`, which has 18 real differences.
+The record-gate-wrapper pass then replaced `func_150A34B0`'s zero-return
+placeholder with its byte-`0x14` rejection, low-flag gate, and forwarded
+`func_150A3504` call, matching all 21 words directly from C; see
+[Working Note 170](WORKING_NOTES/170-game-record-gate-wrapper-match-20260926.md).
+Continue with 20-word `func_150A7CB0`, which has 18 real differences.
 
 Current host-port progression and acceptance boundaries:
 

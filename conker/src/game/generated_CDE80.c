@@ -104,7 +104,15 @@ s32 func_150A3444() {
     return 0;
 }
 
-s32 func_150A34B0() {
+s32 func_150A3504();
+
+s32 func_150A34B0(u8 *arg0) {
+    if (arg0[0x14] == 1) {
+        return 0;
+    }
+    if ((arg0[0x15] & 3) == 0) {
+        return func_150A3504(arg0);
+    }
     return 0;
 }
 
