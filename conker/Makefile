@@ -363,7 +363,7 @@ $(UNPADDED_GLOBAL_ASM_O_FILES): $(BUILD_DIR)/%.c.o: %.c include/variables.h incl
 		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
 
 ifeq ($(VERSION),us)
-$(RETAIL_PAD_GLOBAL_ASM_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py include/variables.h include/structs.h include/functions.h
+$(RETAIL_PAD_GLOBAL_ASM_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv include/variables.h include/structs.h include/functions.h
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< > $(BUILD_DIR)/$<
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(LOOP_UNROLL) $(MIPSBIT) -o $@.compact $(BUILD_DIR)/$<
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.compact \
@@ -406,7 +406,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o: \
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.nodebug.compact $@.padded.s
 
-$(RETAIL_PAD_PLAIN_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py
+$(RETAIL_PAD_PLAIN_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
 	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) $(basename $(notdir $<)) $@.padded.s --word-patches retail_word_patches.us.csv $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
