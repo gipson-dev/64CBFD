@@ -217,13 +217,14 @@ void func_15002560(u8 *arg0, u8 *arg1) {
     u8 *next;
     u8 *sibling;
 
-    while (arg0 != NULL) {
+    while (1) {
+        if (arg0 == NULL) {
+            break;
+        }
         if (*(s16 *)(arg0 + 4) == 0) {
-            if (arg1 != NULL) {
-                *(s16 *)(arg0 + 4) = arg1 - arg0;
-            } else {
-                *(s16 *)(arg0 + 4) = 0;
-            }
+            s32 offset = arg1 != NULL ? arg1 - arg0 : 0;
+
+            *(s16 *)(arg0 + 4) = offset;
         }
 
         if (*(s16 *)(arg0 + 0xC) == 0) {

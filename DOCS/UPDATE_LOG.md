@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Relative-offset tree walk byte-exact
+
+- Completed all 39 words of `func_15002560`. An explicit infinite loop with a
+  top null exit restores retail's unconditional loop-back edge. Materializing
+  the optional sibling offset in one scalar before its halfword store restores
+  eleven additional control-flow and `t7`/`t8`/`t9` schedule words.
+- Two guarded, non-relocating words select retail's base-first operand order
+  for the child and sibling pointer additions. The recursive call relocation
+  remains source-emitted and exact.
+- The patch table now has 781 unique rows. Linked `0x2F9E0` and retail
+  `0x2FA10` share SHA-256
+  `38e72a9437314876eb11b824d041a92158c88f2856a50f2a371ab8c5ec554f8f`.
+  Fresh scan: **2610 / 5484 (47.59%)** overall and
+  **2042 / 4795 (42.59%)** game, with debugger unchanged at **181 / 181**.
+
 ### Signed-byte fallback selector byte-exact
 
 - Completed all 18 words of `func_151E5FAC`. Duplicating the explicit fallback

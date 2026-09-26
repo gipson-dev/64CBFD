@@ -236,6 +236,10 @@ duplicated fallback returns, positive threshold control flow, and twelve
 guarded relocation/scheduling words, closing the twelve-difference game tier;
 see
 [Working Note 096](WORKING_NOTES/096-game-signed-byte-fallback-selector-match-20260926.md).
+The relative-offset tree-walk pass completed `func_15002560` from an explicit
+top null test, scalar sibling-offset result, and two guarded commutative
+pointer-add words; see
+[Working Note 097](WORKING_NOTES/097-game-relative-offset-tree-walk-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 

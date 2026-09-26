@@ -778,3 +778,5 @@ generated_20AE20,func_151E5FAC,0x02C,0x80420000,0x03E00008,R_MIPS_LO16:D_8008FD9
 generated_20AE20,func_151E5FAC,0x030,0x03E00008,0x80420000,-,R_MIPS_LO16:D_8008FD90,Load the flagged fallback in the return delay slot,
 generated_20AE20,func_151E5FAC,0x034,0x00601025,0x03E00008,-,-,Move the candidate return after the fallback path,
 generated_20AE20,func_151E5FAC,0x038,0x3C020000,0x00601025,R_MIPS_HI16:D_8008FD90,-,Return the candidate signed byte in the delay slot,
+game_2DF70,func_15002560,0x048,0x00448821,0x00828821,-,-,Add the child offset to the current node with the base first,
+game_2DF70,func_15002560,0x060,0x03118021,0x02388021,-,-,Add the sibling offset to the child node with the base first,
