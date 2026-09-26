@@ -85,8 +85,12 @@ placeholder and byte-exact directly from C, bringing the total to 2,682.
 Continue with `func_150A7CB0`. That matrix initializer is now byte-exact after
 restoring its floating `1.0f` identity element and guarding the final
 three-word store/return schedule, bringing the total to 2,683. Continue with
-`func_150A7DA0`. The measured boundary is in
-[Working Note 171](DOCS/WORKING_NOTES/171-game-matrix-identity-element-match-20260926.md).
+`func_150A7DA0`. That translation-matrix initializer is now byte-exact after
+restoring all four floating `1.0f` diagonal stores, retaining the three raw
+translation words, and guarding six independent register/schedule words,
+bringing the total to 2,684. Continue with `func_150ADA20`. The measured
+boundary is in
+[Working Note 172](DOCS/WORKING_NOTES/172-game-translation-matrix-identity-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -112,9 +116,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,683 / 5,483 (48.93%) | 1 | 2,799 |
+| Total | `[############------------]` 2,684 / 5,483 (48.95%) | 1 | 2,798 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[###########-------------]` 2,115 / 4,794 (44.12%) | 0 | 2,679 |
+| Game | `[###########-------------]` 2,116 / 4,794 (44.14%) | 0 | 2,678 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

@@ -361,8 +361,11 @@ zero-return placeholder with the three-argument selector-7/8 wrapper. The
 placeholder with the two-byte record gate and forwarded call. The 20-word
 `func_150A7CB0` then matched after restoring its floating identity element and
 guarding the final three-word store/return schedule. Continue with 20-word
-`func_150A7DA0`. The latest result is in
-[Working Note 171](WORKING_NOTES/171-game-matrix-identity-element-match-20260926.md).
+`func_150A7DA0`. That translation-matrix initializer then matched after
+restoring all four floating identity-diagonal stores, retaining the three raw
+translation words, and guarding six independent register/schedule words.
+Continue with 18-word `func_150ADA20`. The latest result is in
+[Working Note 172](WORKING_NOTES/172-game-translation-matrix-identity-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

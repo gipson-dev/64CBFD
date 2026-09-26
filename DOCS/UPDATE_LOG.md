@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Translation matrix initializer byte-exact
+
+- Corrected `func_150A7DA0` from raw integer identity constants to four
+  floating `1.0f` diagonal stores while preserving the caller's three raw
+  translation words at offsets `0x30`, `0x34`, and `0x38`.
+- Retained IDO's interleaved store schedule with the recovered empty branch
+  and label source shape, then added six guarded rows for the independent
+  `f0`/`f4` register choices and final return-delay schedule. The patch table
+  now contains 1,125 unique rows with zero duplicate keys.
+- Linked ELF `.game+0xA7DA0` and pristine retail `conker.us.bin+0xD5250`
+  share SHA-256
+  `a0acd238bcbd6bedcd98c66c0eeb58fe64efddb28dd7aa1b179fecdc5dcc4e96`.
+  Fresh scan: **2684 / 5483 (48.95%)** overall and
+  **2116 / 4794 (44.14%)** game, with debugger unchanged at **181 / 181**.
+
 ### Matrix identity element byte-exact
 
 - Corrected `func_150A7CB0`'s final identity element from an integer
