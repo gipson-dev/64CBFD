@@ -977,3 +977,16 @@ game_1944C0,func_15167010,0x048,0x8FB00014,0x8FB00018,-,-,Restore the table curs
 game_1944C0,func_15167010,0x04C,0x8FB10018,0x8FB1001C,-,-,Restore retail's retained s1 slot,
 game_1944C0,func_15167010,0x050,0x03E00008,0x8FB20020,-,-,Restore the table end pointer before returning,
 game_1944C0,func_15167010,0x054,0x27BD0020,0x03E00008,-,-,Move the return after the s2 restore and recover its frame delay slot,0x27BD0028
+game_1944C0,func_15167D84,0x048,0x10400008,0x14400003,-,-,Enter the populated-record path on a non-null allocation,0x00401825
+game_1944C0,func_15167D84,0x04C,0x8FA40028,0x1000000A,-,-,Branch from the null path to the shared frame teardown,0x8FBF001C
+game_1944C0,func_15167D84,0x050,0x24450010,0x8FA40028,-,-,Reload the source pointer at the populated-path entry,
+game_1944C0,func_15167D84,0x054,0x24060038,0x24650010,-,-,Derive the copy destination from the retained result in v1,
+game_1944C0,func_15167D84,0x058,0x0C000000,0x24060038,R_MIPS_26:bcopy,-,Materialize the copy size before the relocated call,
+game_1944C0,func_15167D84,0x05C,0xAFA20024,0x0C000000,-,R_MIPS_26:bcopy,Move the bcopy call after its retail argument schedule,
+game_1944C0,func_15167D84,0x060,0x8FA30024,0xAFA30024,-,-,Preserve the retained result in the call delay slot,
+game_1944C0,func_15167D84,0x064,0x83B80037,0x8FA20024,-,-,Reload the result after bcopy,
+game_1944C0,func_15167D84,0x068,0xA0780048,0x83B80037,-,-,Load the signed record byte after the result reload,
+game_1944C0,func_15167D84,0x06C,0x8FBF001C,0xA0580048,-,-,Store the signed byte through the reloaded result,
+game_1944C0,func_15167D84,0x070,0x27BD0028,0x8FBF001C,-,-,Restore ra after the populated record update,
+game_1944C0,func_15167D84,0x074,0x03E00008,0x27BD0028,-,-,Place the shared frame teardown before the return,
+game_1944C0,func_15167D84,0x078,0x00000000,0x03E00008,-,-,Move the return after the shared frame teardown,

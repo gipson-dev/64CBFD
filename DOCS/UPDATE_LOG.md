@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Record-copy builder byte-exact
+
+- Completed all 34 words of `func_15167D84`. It selects record kind `5` or
+  `0x42`, allocates a payload through `func_15167A68`, copies `0x38` bytes,
+  and stores the signed byte argument at record offset `0x48`.
+- Thirteen guarded rows restore retail's split null/populated CFG, retained
+  result in `v1`, relocated `bcopy` call, post-call result reload, byte update,
+  and shared teardown. Two rows insert the missing result copy and null-path
+  `ra` reload, so the guards affect all fifteen differing words. The patch
+  table now has 991 unique rows and no duplicate keys.
+- Linked `0x195204` and retail `0x195234` share SHA-256
+  `7bcd11da7cda505394e2f8dac0e719bf4e7d17bf8a61eb6544310623116e321f`.
+  Fresh scan: **2651 / 5483 (48.35%)** overall and
+  **2083 / 4794 (43.45%)** game, with debugger unchanged at **181 / 181**.
+
 ### Callback-table traversal byte-exact
 
 - Completed all 23 words of `func_15167010`. It walks the fixed `struct115`

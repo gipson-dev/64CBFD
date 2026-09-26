@@ -294,9 +294,10 @@ register lifetimes. `func_150CFE3C` then matched after recovering the nested
 active-buffer state and guarding six base/register scheduling words.
 `func_15167010` then matched after deriving its table end from the cursor and
 guarding fifteen frame, saved-register, relocation, and epilogue words through
-fourteen rows.
-Continue with 34-word `func_15167D84`. The latest result is in
-[Working Note 138](WORKING_NOTES/138-game-callback-table-traversal-match-20260926.md).
+fourteen rows. `func_15167D84` then matched through thirteen guarded
+CFG/register-scheduling rows with two insertions. Continue with 41-word
+`func_151D2E5C`. The latest result is in
+[Working Note 139](WORKING_NOTES/139-game-record-copy-builder-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
