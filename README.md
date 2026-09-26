@@ -105,6 +105,10 @@ and byte-exact directly from C, including both global constant relocations,
 bringing the total to 2,686. Continue with `func_150FADC8`. The measured
 boundary is in
 [Working Note 175](DOCS/WORKING_NOTES/175-game-float-threshold-mapper-match-20260926.md).
+The event-bit callback `func_150FADC8` is now converted from its zero-return
+placeholder and byte-exact directly from C, bringing the total to 2,687.
+Continue with `func_15133DE8`. The measured boundary is in
+[Working Note 176](DOCS/WORKING_NOTES/176-game-event-bit-toggle-match-20260926.md).
 
 2026-09-08: restored `func_15060778` in `conker/src/game_83300.c` and
 corrected the `func_10010E78` return ABI to preserve sound handles. The
@@ -130,9 +134,9 @@ not a regression in buildability or a byte-matching gain.
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[############------------]` 2,686 / 5,482 (49.00%) | 1 | 2,795 |
+| Total | `[############------------]` 2,687 / 5,482 (49.01%) | 1 | 2,794 |
 | Init | `[##################------]` 387 / 508 (76.18%) | 1 | 120 |
-| Game | `[###########-------------]` 2,118 / 4,793 (44.19%) | 0 | 2,675 |
+| Game | `[###########-------------]` 2,119 / 4,793 (44.21%) | 0 | 2,674 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is complete across its full 182-row inventory. The one row outside

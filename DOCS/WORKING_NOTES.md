@@ -378,6 +378,10 @@ That float threshold mapper is now converted from its zero-return placeholder
 and byte-exact directly from C with no guarded words. Continue with 20-word
 `func_150FADC8`. The latest result is in
 [Working Note 175](WORKING_NOTES/175-game-float-threshold-mapper-match-20260926.md).
+That event-bit callback is now converted from its zero-return placeholder and
+byte-exact directly from C with no guarded words. Continue with 21-word
+`func_15133DE8`. The latest result is in
+[Working Note 176](WORKING_NOTES/176-game-event-bit-toggle-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

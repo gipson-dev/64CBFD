@@ -51,8 +51,12 @@ void func_150FAD78(void) {
     func_151494E0(0, 0x4C);
 }
 
-s32 func_150FADC8() {
-    return 0;
+void func_150FADC8(u8 *arg0, u8 arg1, u8 arg2) {
+    if (arg2 == 0x53) {
+        *(u32 *) (arg0 + 0x58) |= 2;
+    } else if (arg2 == 0x54) {
+        *(u32 *) (arg0 + 0x58) &= ~2;
+    }
 }
 
 s32 func_150FAE18() {

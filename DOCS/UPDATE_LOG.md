@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Event-bit callback byte-exact
+
+- Converted `func_150FADC8` from a zero-return placeholder to its real
+  three-argument callback ABI. Event `0x53` sets bit `0x2` in the owner word
+  at offset `0x58`; event `0x54` clears it.
+- The natural typed `if`/`else if` implementation reproduces all 20 retail
+  words directly, including both argument homes, byte normalization, the
+  early-return store delay slot, and the signed `~2` mask. No guarded rows are
+  required.
+- Linked `0x150FADC8..0x150FAE14` and pristine retail
+  `conker.us.bin+0x128278` share SHA-256
+  `d5ecec1757d0c3cb4b0029f249451874134a13c2e94381cf7c0408d6bd066a96`.
+  The fresh scan is **2687 / 5482 (49.01%)** overall and
+  **2119 / 4793 (44.21%)** game.
+
 ### Float threshold mapper byte-exact
 
 - Converted `func_150F34A0` from a zero-return placeholder to its real
