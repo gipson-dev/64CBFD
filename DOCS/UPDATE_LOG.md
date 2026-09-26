@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Three-word aggregate forwarder byte-exact
+
+- Completed all 20 words of `func_15131D4C` directly from source by replacing
+  three scalar assignments with a typed three-word aggregate copy and declaring
+  the callee's first argument as a pointer.
+- The aggregate copy alone restored retail's interleaved `lw`/`sw` sequence
+  but formed the stack destination in `v0`, making the function one word too
+  large. The corrected pointer contract lets IDO form it directly in `a0` and
+  restores the complete retail schedule with no guarded rows.
+- The patch table remains at 762 unique rows. Linked `0x15F1CC` and retail
+  `0x15F1FC` share SHA-256
+  `0c3949fd9d561f5442219ef46c00c7ce47d53bf0a05c7263f3e0ff7e392891f0`.
+  Fresh scan: **2606 / 5484 (47.52%)** overall and
+  **2038 / 4795 (42.50%)** game, with debugger unchanged at **181 / 181**.
+
 ### Optional-pointer call wrapper byte-exact
 
 - Completed all 18 words of `func_150E33CC`. Direct dereference, shared-result

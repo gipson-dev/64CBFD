@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, optional-pointer call wrapper matched).** The current
-linked checkpoint is `2605 / 5484 (47.50%)` exact C functions, with one
-address-drift blocker and 2,878 genuinely different C functions. The tree
+**Active (2026-09-26, three-word aggregate forwarder matched).** The current
+linked checkpoint is `2606 / 5484 (47.52%)` exact C functions, with one
+address-drift blocker and 2,877 genuinely different C functions. The tree
 contains 554 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -202,12 +202,13 @@ pointer/value-register words. `func_150882B0` then matched from pointer-first
 local ordering, final argument reuse, and ten guarded scheduling words.
 `func_1508B194` then matched from a source-level early-zero branch and five
 guarded table-base/index words. `func_150E33CC` then matched through twelve
-guarded scheduling words, including an explicit call-relocation move. Continue
-with 20-word `func_15131D4C`, now the first twelve-difference game row; retail
-interleaves three loads from `D_800A37F0` with stores through local-record
-pointer `a0`, while current C batches all three loads before its stores.
+guarded scheduling words, including an explicit call-relocation move.
+`func_15131D4C` then matched directly from a typed three-word aggregate copy
+and pointer-correct callee declaration. Continue with 40-word `func_151355B8`,
+now the first twelve-difference game row; retail retains a duplicate masked
+field store that current C optimizes away, shifting several exit branches.
 The latest result is in
-[Working Note 092](WORKING_NOTES/092-game-optional-pointer-call-schedule-match-20260926.md).
+[Working Note 093](WORKING_NOTES/093-game-three-word-aggregate-forwarder-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

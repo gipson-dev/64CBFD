@@ -220,6 +220,10 @@ The optional-pointer call-wrapper pass completed `func_150E33CC` through
 twelve guarded scheduling words, including an explicit relocation move for
 its sole call; see
 [Working Note 092](WORKING_NOTES/092-game-optional-pointer-call-schedule-match-20260926.md).
+The three-word aggregate-forwarder pass completed `func_15131D4C` directly
+from a typed aggregate copy and pointer-correct callee declaration, without
+guarded rows; see
+[Working Note 093](WORKING_NOTES/093-game-three-word-aggregate-forwarder-match-20260926.md).
 
 Current host-port progression and acceptance boundaries:
 
