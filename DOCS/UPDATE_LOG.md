@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Dimension/ratio setup byte-exact
+
+- Completed all 33 words of `func_150492CC`. It stores three dimensions,
+  their half values, and two ratios, substituting `D_80099080` when the first
+  dimension is zero.
+- IDO strength-reduces direct division by `2.0f` into multiplication by
+  `0.5f`. Sixteen guarded rows restore retail's `2.0f` divisor, three
+  `div.s` operations, global store order, and five moved relocation pairs.
+  The patch table now has 1,014 unique rows and no duplicate keys.
+- Linked `0x7674C` and retail `0x7677C` share SHA-256
+  `448c8fe7e5a9c01b83513bdec305fb3a25c03b2242ea84b80e7d981696d5666a`.
+  Fresh scan: **2654 / 5483 (48.40%)** overall and
+  **2086 / 4794 (43.51%)** game, with debugger unchanged at **181 / 181**.
+
 ### Global/object initializer byte-exact
 
 - Completed all 18 words of `func_150104F0`. It clears three global bytes,

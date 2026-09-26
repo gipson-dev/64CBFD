@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,483 / 6,038 (90.81%) | 2,653 / 5,483 (48.39%) | 1 | 2,829 |
+| Total | 5,483 / 6,038 (90.81%) | 2,654 / 5,483 (48.40%) | 1 | 2,828 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,794 / 5,318 (90.15%) | 2,085 / 4,794 (43.49%) | 0 | 2,709 |
+| Game | 4,794 / 5,318 (90.15%) | 2,086 / 4,794 (43.51%) | 0 | 2,708 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -386,7 +386,11 @@ The global/object initializer pass then completed all 18 words of
 `func_150104F0` after recovering its chained zero assignment and guarding six
 base/store words; see
 [Working Note 141](WORKING_NOTES/141-game-global-object-initializer-match-20260926.md).
-Continue with 33-word `func_150492CC`, which has 16 real differences.
+The dimension/ratio setup pass then completed all 33 words of
+`func_150492CC` through sixteen guarded floating-point and relocation schedule
+words; see
+[Working Note 142](WORKING_NOTES/142-game-dimension-ratio-setup-match-20260926.md).
+Continue with 17-word `func_150721A4`, which has 16 real differences.
 
 Current host-port progression and acceptance boundaries:
 
