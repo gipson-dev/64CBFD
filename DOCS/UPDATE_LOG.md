@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Fourth one-word aggregate forwarder byte-exact
+
+- Completed all 19 words of `func_15160274` directly from a `OneWord18D250`
+  aggregate loaded from `D_800A6670` and passed by address.
+- Corrected this generated slice's stale local `func_15169260(s32, ...)`
+  declaration to the established `void *` record contract. IDO then emitted
+  the exact record copy, argument setup, call delay store, and three padding
+  words without guarded normalization.
+- Linked `0x18D6F4` and retail `0x18D724` share SHA-256
+  `497bea249d36ac1992358cdbaa93c18017215abfef7e0bde6ff7fd9b6481f632`.
+  Fresh scan: **2635 / 5483 (48.06%)** overall and
+  **2067 / 4794 (43.12%)** game, with debugger unchanged at **181 / 181**.
+
 ### Four-word record fill byte-exact
 
 - Completed all 18 words of `func_1519F3B8` from a typed record at object

@@ -1,6 +1,8 @@
 #include <ultra64.h>
-void func_15169260(s32, s32, s32, u8);
+void func_15169260(void *, s32, s32, u8);
 extern u8 D_800A6670[];
+
+typedef struct { s32 val; } OneWord18D250;
 
 /* Non-matching placeholders for the text-only asm slice asm/18D250.s. */
 
@@ -31,8 +33,8 @@ s32 func_151600D8() {
 }
 
 void func_15160274(s32 arg0, u8 arg1) {
-    s32 tmp[1];
+    OneWord18D250 tmp;
 
-    tmp[0] = *(s32 *) D_800A6670;
-    func_15169260(tmp, 1, arg0, arg1);
+    tmp = *(OneWord18D250 *) D_800A6670;
+    func_15169260(&tmp, 1, arg0, arg1);
 }
