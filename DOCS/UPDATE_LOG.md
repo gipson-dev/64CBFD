@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Display-list cursor twin byte-exact
+
+- Completed all 14 words of `func_15166FD8` with eight guarded transformations
+  preserving the original cursor in `v1`, resolving `D_80089470` before the
+  command constant, storing through `v1`, and returning the advanced cursor.
+- Its typed `Gfx` source was already correct. The established generated-slice
+  insertion path restores the two IDO-elided lifetime words while guarding the
+  moved `R_MIPS_LO16` relocation. The patch table now has 607 rows and no
+  duplicate keys.
+- The independent complete-span SHA-256 is
+  `4905a240f582ba884f83a2b6ab96c6f6109fbf5a5d54ce9e50a382b3f95c8ef3`.
+  Fresh scan: **2575 / 5484 (46.95%)** overall and
+  **2007 / 4795 (41.86%)** game, with debugger unchanged at **181 / 181**.
+
 ### Record-stride register lifetimes byte-exact
 
 - Completed all 16 words of `func_1512D6B0` with nine guarded words selecting

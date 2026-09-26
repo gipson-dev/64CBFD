@@ -19,6 +19,7 @@ s32 func_15166F6C() {
     return 0;
 }
 
+/* Note 319: guarded expansion preserves retail's display-list cursor schedule. */
 Gfx *func_15166FD8(Gfx *arg0, u8 arg1, u8 arg2) {
     Gfx *g = arg0++;
 

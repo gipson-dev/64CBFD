@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,484 / 6,038 (90.82%) | 2,574 / 5,484 (46.94%) | 1 | 2,909 |
+| Total | 5,484 / 6,038 (90.82%) | 2,575 / 5,484 (46.95%) | 1 | 2,908 |
 | Init | 508 / 538 (94.42%) | 387 / 508 (76.18%) | 1 | 120 |
-| Game | 4,795 / 5,318 (90.17%) | 2,006 / 4,795 (41.84%) | 0 | 2,789 |
+| Game | 4,795 / 5,318 (90.17%) | 2,007 / 4,795 (41.86%) | 0 | 2,788 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -141,6 +141,8 @@ The generated display-list cursor pass completed `func_1510E634`; see
 [Working Note 060](WORKING_NOTES/060-game-display-list-cursor-expansion-20260925.md).
 The following register-lifetime pass completed `func_1512D6B0`; see
 [Working Note 061](WORKING_NOTES/061-game-record-stride-register-match-20260925.md).
+The second display-list cursor pass completed `func_15166FD8`; see
+[Working Note 062](WORKING_NOTES/062-game-display-list-cursor-twin-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 
