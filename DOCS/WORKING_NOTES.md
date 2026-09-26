@@ -88,9 +88,9 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-25, display-list cursor twin matched).** The current linked
-checkpoint is `2575 / 5484 (46.95%)` exact C functions, with one address-drift
-blocker and 2,908 genuinely different C functions. The tree contains 554
+**Active (2026-09-25, callback selector registers matched).** The current
+linked checkpoint is `2576 / 5484 (46.97%)` exact C functions, with one
+address-drift blocker and 2,907 genuinely different C functions. The tree contains 554
 raw-assembly functions, so the higher percentage than July is
 denominator-driven and is not a matching gain. The non-matching replacement
 build, outer build, and tool checks pass; fresh gameplay was not run.
@@ -165,7 +165,8 @@ nine-difference game tier after byte-exact `func_150771F0` and
 `func_15080200`. `func_1510E634` now matches through guarded generated-slice
 expansion, and `func_1512D6B0` matches through guarded record-index register
 lifetimes. `func_15166FD8` now matches through the independently verified
-guarded cursor expansion; continue at 33-word `func_15196330`. Keep
+guarded cursor expansion, and `func_15196330` matches through guarded pointer
+and selector registers; continue at 33-word twin `func_151963B4`. Keep
 raw-assembly conversion as a separate workstream. The
 measured handoff is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

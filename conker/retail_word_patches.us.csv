@@ -606,3 +606,12 @@ generated_193E50,func_15166FD8,0x01C,0xAC8E0000,0xAC6F0004,-,-,Store segment add
 generated_193E50,func_15166FD8,0x020,0xAC8F0004,0x24840008,-,-,Advance display-list cursor after command stores,
 generated_193E50,func_15166FD8,0x024,0x03E00008,0x00801025,-,-,Move advanced cursor into return register,
 generated_193E50,func_15166FD8,0x028,0x00000000,0x03E00008,-,-,Move return after cursor result,0x00000000
+generated_1C2C60,func_15196330,0x018,0x8DC30098,0x8DC20098,-,-,Keep record pointer in retail value register,
+generated_1C2C60,func_15196330,0x01C,0x80620065,0x80430065,-,-,Load first selector through retail value register,
+generated_1C2C60,func_15196330,0x020,0x10410008,0x10610008,-,-,Test first selector in retail value register,
+generated_1C2C60,func_15196330,0x024,0x00027880,0x00037880,-,-,Scale first selector from retail value register,
+generated_1C2C60,func_15196330,0x034,0xAFA3001C,0xAFA2001C,-,-,Spill retail record-pointer register across callback,
+generated_1C2C60,func_15196330,0x040,0x8FA3001C,0x8FA2001C,-,-,Reload retail record-pointer register after callback,
+generated_1C2C60,func_15196330,0x044,0x80620062,0x80430062,-,-,Load second selector through retail value register,
+generated_1C2C60,func_15196330,0x050,0x10410006,0x10610006,-,-,Test second selector in retail value register,
+generated_1C2C60,func_15196330,0x054,0x0002C080,0x0003C080,-,-,Scale second selector from retail value register,

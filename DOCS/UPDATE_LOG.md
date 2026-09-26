@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Callback selector registers byte-exact
+
+- Completed all 33 words of `func_15196330` with nine guarded words rotating
+  the retained record pointer into `v0` and both signed callback selectors into
+  `v1`. Its frame, branches, table dispatches, final call, and relocations were
+  already exact.
+- Separate declarations and a widened selector did not change allocation;
+  reversed declarations moved the spill slot and were rejected. The patch
+  table now has 616 rows with no duplicate keys.
+- The independent complete-span SHA-256 is
+  `8661611d0a0313dbe6f9307ad9d011fdeda11efe9b9a69fd63b2fefd45d67efb`.
+  Fresh scan: **2576 / 5484 (46.97%)** overall and
+  **2008 / 4795 (41.88%)** game, with debugger unchanged at **181 / 181**.
+
 ### Display-list cursor twin byte-exact
 
 - Completed all 14 words of `func_15166FD8` with eight guarded transformations
