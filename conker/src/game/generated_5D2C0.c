@@ -241,13 +241,15 @@ s32 func_15033E84(u8 *arg0) {
 
     if (node != 0) {
         u8 type = arg0[0x3B];
+        u8 *next;
 
         do {
+            next = *(u8 **) (node + 0x54);
+
             if (type == node[0]) {
                 return (s32) node;
             }
-            node = *(u8 **) (node + 0x54);
-        } while (node != 0);
+        } while ((node = next) != 0);
     }
     return 0;
 }

@@ -153,6 +153,8 @@ The final nine-difference pass restored `func_151E81EC`; see
 [Working Note 066](WORKING_NOTES/066-game-four-word-state-clear-match-20260925.md).
 The first ten-difference pass completed `func_1502EA0C`; see
 [Working Note 067](WORKING_NOTES/067-game-packed-byte-writer-match-20260925.md).
+The linked-list loop pass completed `func_15033E84`; see
+[Working Note 068](WORKING_NOTES/068-game-linked-list-search-match-20260925.md).
 
 Current host-port progression and acceptance boundaries:
 

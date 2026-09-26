@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-25
 
+### Linked-list search byte-exact
+
+- Completed all 16 words of `func_15033E84` by loading `node->next` before
+  the type comparison and assigning `node = next` in the loop condition.
+  This recovers retail's preloaded `v0` next pointer, ordinary comparison and
+  loop branches, and `move v1, v0` branch-delay update directly from C.
+- No guarded rows were added; the patch table remains at 641 rows with no
+  duplicate keys. The complete linked span at ELF `0x73E84` and retail
+  `0x61334` shares SHA-256
+  `944012697ea2666086f345f59f6c1cd8f750eb86b20835a40aa096bbae61d6c8`.
+- Fresh scan: **2581 / 5484 (47.06%)** overall and
+  **2013 / 4795 (41.98%)** game, with debugger unchanged at **181 / 181**.
+
 ### Packed-byte writer byte-exact
 
 - Completed all 17 words of `func_1502EA0C` with ten guarded scheduling and
