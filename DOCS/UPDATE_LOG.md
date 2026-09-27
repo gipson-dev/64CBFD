@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game script-gated high-flag wrapper byte-exact
+
+- Replaced the zero placeholder at `func_150F52B0` with its script-dispatch
+  wrapper. It calls `func_1509BE40(1, 0x401C, 6, 0x9000)` and sets or clears
+  bit 31 of actor word `+0x84` according to the result.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The direct branch reproduces the saved incoming pointer, call delay slot,
+  branch-delay reload, high-bit materialization, and shared epilogue.
+- The complete span has SHA-256
+  `101a6dbcb8cea8393fd0b05a1b1b5018023f189c8b26d6ef52fcdd77a01a49e1`.
+  Fresh totals are **2,815 / 5,469 (51.47%)** overall and
+  **2,243 / 4,791 (46.82%)** in Game.
+
 ### Game actor-state byte selector byte-exact
 
 - Replaced the zero placeholder at `func_150F1CB0` with its ordered actor-state
