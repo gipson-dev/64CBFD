@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, coordinate-transform wrapper matched).** The current
-linked checkpoint is `2741 / 5469 (50.12%)` exact C functions, with one
-address-drift blocker and 2,727 genuinely different C functions. Game is
-`2170 / 4791 (45.29%)` exact, with 2,621 genuinely different C rows. The tree
+**Active (2026-09-27, dual event-record dispatch matched).** The current linked
+checkpoint is `2742 / 5469 (50.14%)` exact C functions, with one address-drift
+blocker and 2,726 genuinely different C functions. Game is
+`2171 / 4791 (45.31%)` exact, with 2,620 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -678,9 +678,12 @@ from typed C that clamps selector bytes `3+` to table slot zero. That handoff
 was completed in `func_151A8F1C`; see
 [Working Note 237](WORKING_NOTES/237-game-bounded-callback-dispatch-match-20260927.md).
 The 20-word `func_151A8F1C` coordinate-transform wrapper is now exact directly
-from typed C, including its fifth stack argument and final float copy. Continue
-with 21-word `func_151AA17C`; see
+from typed C, including its fifth stack argument and final float copy; see
 [Working Note 238](WORKING_NOTES/238-game-coordinate-transform-wrapper-match-20260927.md).
+The 21-word `func_151AA17C` dual event-record dispatch is now exact from its
+recovered C body plus ten guarded scheduling/local-slot words. Continue with
+21-word `func_151AA210`; see
+[Working Note 239](WORKING_NOTES/239-game-dual-event-record-dispatch-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

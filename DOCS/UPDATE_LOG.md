@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game dual event-record dispatch byte-exact
+
+- Recovered `func_151AA17C` as construction and two-stage dispatch of a local
+  target/code record, followed by the original object callback.
+- The C body provides 11 of 21 words directly. Ten guarded, non-relocating
+  scheduling and local-slot words restore retail's saved-register lifetime,
+  record placement, and temporary choices without altering any call target or
+  delay slot.
+- All 21 words / 84 bytes match retail, with SHA-256
+  `504ce272ab00711d2967c19d71cf5bae231fd2d29dbcc278f0a5cfff71cc2153`.
+  Fresh totals are **2,742 / 5,469 (50.14%)** overall and
+  **2,171 / 4,791 (45.31%)** in Game.
+
 ### Game coordinate-transform wrapper byte-exact
 
 - Recovered `func_151A8F1C` as a five-argument wrapper around
