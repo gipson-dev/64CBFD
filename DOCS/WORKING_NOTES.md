@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, type-and-flag dispatcher matched).** The current linked
-checkpoint is `2761 / 5469 (50.48%)` exact C functions, with one address-drift
-blocker and 2,707 genuinely different C functions. Game is
-`2190 / 4791 (45.71%)` exact, with 2,601 genuinely different C rows. The tree
+**Active (2026-09-27, volatile callback-table dispatch matched).** The current
+linked checkpoint is `2762 / 5469 (50.50%)` exact C functions, with one
+address-drift blocker and 2,706 genuinely different C functions. Game is
+`2191 / 4791 (45.73%)` exact, with 2,600 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -743,8 +743,11 @@ The false zero-return placeholder at `func_150FB240` is now a byte-exact
 The false zero-return placeholder at `func_150FFD2C` is now a byte-exact
 22-word type-and-flag-gated dispatcher directly from C with no guarded words;
 see [Working Note 258](WORKING_NOTES/258-game-type-flag-dispatcher-match-20260927.md).
-Continue with 23-word `func_151076A4`, the first unparked Game C row in the
-fresh queue at 21 real differences.
+The false zero-return placeholder at `func_151076A4` is now a byte-exact
+23-word volatile callback-table dispatcher directly from C with no guarded
+words; see [Working Note 259](WORKING_NOTES/259-game-volatile-callback-table-dispatch-match-20260927.md).
+Continue with 23-word `func_1510A870`, the next unparked Game C row in the
+fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

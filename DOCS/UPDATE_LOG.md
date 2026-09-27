@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game volatile callback-table dispatcher byte-exact
+
+- Replaced the false zero-return placeholder at `func_151076A4` with its
+  original three-argument indexed callback dispatch through `D_80088C38`.
+- All 23 words / 92 bytes match directly from C. Volatile table and index
+  accesses preserve retail's two record-index loads and two callback loads;
+  no guarded retail words are needed.
+- The complete span has SHA-256
+  `c4ea7c4b5b4970d6a3c01f5e3a1695c86e46f09cf002f4750c56d9d6024a18db`.
+  Fresh totals are **2,762 / 5,469 (50.50%)** overall and
+  **2,191 / 4,791 (45.73%)** in Game.
+
 ### Game type-and-flag dispatcher byte-exact
 
 - Replaced the false zero-return placeholder at `func_150FFD2C` with its

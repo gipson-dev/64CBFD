@@ -3,6 +3,7 @@
 /* Non-matching placeholders for the text-only asm slice asm/133190.s. */
 
 extern void (*D_80088C28[])(u8 *, s32, u8);
+extern void (* volatile D_80088C38[])(u8 *, s32, u8);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_133190/func_15105CE0.s")
 
@@ -118,8 +119,12 @@ s32 func_15107678(s32 arg0) {
     func_15149368(arg0);
 }
 
-s32 func_151076A4() {
-    return 0;
+void func_151076A4(u8 *arg0, s32 arg1, u8 arg2) {
+    void (* volatile *callbacks)(u8 *, s32, u8) = D_80088C38;
+
+    if (callbacks[*(volatile u8 *)(arg0 + 0x68)] != NULL) {
+        callbacks[*(volatile u8 *)(arg0 + 0x68)](arg0, arg1, arg2);
+    }
 }
 
 s32 func_15107700() {
