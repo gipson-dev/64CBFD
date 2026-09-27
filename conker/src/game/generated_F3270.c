@@ -3,6 +3,7 @@
 /* Non-matching placeholders for the text-only asm slice asm/F3270.s. */
 
 s32 func_150C6460();
+s32 func_150C5F94();
 
 void func_150C5DC0(u8 *arg0) {
     if (*(u32 *) (arg0 + 0x58) != 0) {
@@ -21,8 +22,16 @@ s32 func_150C5E0C() {
 // Retail retains the otherwise dead temp_v0 + 0x58 update before the call.
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_F3270/func_150C5EFC.s")
 
-s32 func_150C5F40() {
-    return 0;
+void func_150C5F40(u8 *arg0) {
+    u8 *owner = *(u8 **)(arg0 + 0x18);
+
+    if (*(u32 *)(arg0 + 0x5C) != 0) {
+        u8 *record = *(u8 **)(arg0 + 0x5C) + 0x58;
+
+        *(record + 4) = 1;
+    } else {
+        *(u32 *)(arg0 + 0x5C) = func_150C5F94(owner, arg0);
+    }
 }
 
 s32 func_150C5F94() {

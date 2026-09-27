@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game existing-record wrapper byte-exact
+
+- Replaced the zero-return `func_150C5F40` placeholder with its existing-record
+  activation and allocator path.
+- Typed owner and wrapper lifetimes reproduce the preloaded `+0x18` owner,
+  embedded `+0x58` activation byte, two-argument allocator call, call-delay
+  spill, and returned `+0x5C` record directly, without a retail-word patch.
+- The complete 21-word span shares SHA-256
+  `5809aac14fd7051e9acbf5960f6c29c0e8557a442bacb5c54804f44d028b1d93`.
+  Fresh totals are **2,723 / 5,470 (49.78%)** overall and
+  **2,152 / 4,792 (44.91%)** in Game.
+
 ### Game four-slot release loop byte-exact
 
 - Replaced the zero-return `func_150C522C` placeholder with its four-entry

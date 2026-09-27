@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,470 / 6,039 (90.58%) | 2,722 / 5,470 (49.76%) | 1 | 2,747 |
+| Total | 5,470 / 6,039 (90.58%) | 2,723 / 5,470 (49.78%) | 1 | 2,746 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,792 / 5,319 (90.09%) | 2,151 / 4,792 (44.89%) | 0 | 2,641 |
+| Game | 4,792 / 5,319 (90.09%) | 2,152 / 4,792 (44.91%) | 0 | 2,640 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -681,7 +681,10 @@ The 21-word `func_150C522C` four-slot release loop is now exact through a
 typed pointer-array loop plus two guarded relocation-aware address-completion
 words; see
 [Working Note 218](WORKING_NOTES/218-game-four-slot-release-loop-match-20260926.md).
-Continue with 21-word `func_150C5F40`.
+The 21-word `func_150C5F40` existing-record/allocator wrapper is now exact
+directly from typed C; see
+[Working Note 219](WORKING_NOTES/219-game-existing-record-wrapper-match-20260926.md).
+Continue with structural twin `func_150C6870`.
 
 Current host-port progression and acceptance boundaries:
 
