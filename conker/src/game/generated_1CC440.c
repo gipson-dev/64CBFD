@@ -103,8 +103,14 @@ s32 func_151A0950() {
     return 0;
 }
 
-s32 func_151A09B4() {
-    return 0;
+void func_151A09B4(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *child = *(u8 **)(*(u8 **)(arg0 + 0x28) + 0x18);
+
+    if (arg2 == 0 &&
+            (child == *(u8 **)arg1 || child[0x3B] == arg1[4])) {
+        func_151A0928(arg0);
+        func_1516972C(arg0);
+    }
 }
 
 s32 func_151A0A10() {

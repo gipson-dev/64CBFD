@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game conditional child teardown byte-exact
+
+- Replaced the false zero-return placeholder at `func_151A09B4` with its
+  original byte-flag gate, child pointer or selector-byte match, and two-call
+  teardown path.
+- All 23 words / 92 bytes match directly from C, including the incoming byte
+  home and narrowing, branch-likely early return, callback relocations, and
+  delay slots. No guarded retail words are needed.
+- The complete span has SHA-256
+  `93bbe71ba0637f3ea71c346fa823b4f50f42adc38d076a45ae4ffa286dd09e22`.
+  Fresh totals are **2,781 / 5,469 (50.85%)** overall and
+  **2,210 / 4,791 (46.13%)** in Game.
+
 ### Game paired state-clear callbacks byte-exact
 
 - Replaced the false zero-return placeholders at `func_1519F108` and

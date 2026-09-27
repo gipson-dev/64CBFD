@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,780 / 5,469 (50.83%) | 1 | 2,688 |
+| Total | 5,469 / 6,040 (90.55%) | 2,781 / 5,469 (50.85%) | 1 | 2,687 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,209 / 4,791 (46.11%) | 0 | 2,582 |
+| Game | 4,791 / 5,320 (90.06%) | 2,210 / 4,791 (46.13%) | 0 | 2,581 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -866,7 +866,10 @@ The adjacent 24-word `func_1519F108` and `func_1519F168` state-clear callbacks
 are independently exact from shared recovered C plus symmetric guarded
 scheduling; see
 [Working Note 276](WORKING_NOTES/276-game-paired-state-clear-callback-match-20260927.md).
-Continue with 23-word `func_151A09B4` while the documented lower-difference
+The 23-word `func_151A09B4` conditional child teardown is exact directly from
+C with no guarded words; see
+[Working Note 277](WORKING_NOTES/277-game-conditional-child-teardown-match-20260927.md).
+Continue with 22-word `func_151B4E4C` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:
