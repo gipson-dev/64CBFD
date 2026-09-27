@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, water-distance classifier matched).** The current linked
-checkpoint is `2794 / 5469 (51.09%)` exact C functions, with one address-drift
-blocker and 2,674 genuinely different C functions. Game is
-`2223 / 4791 (46.40%)` exact, with 2,568 genuinely different C rows. The tree
+**Active (2026-09-27, object-request wrapper matched).** The current linked
+checkpoint is `2795 / 5469 (51.11%)` exact C functions, with one address-drift
+blocker and 2,673 genuinely different C functions. Game is
+`2224 / 4791 (46.42%)` exact, with 2,567 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -848,7 +848,10 @@ The 25-word `func_15125490` water-distance classifier is now byte-exact from
 typed recovered C plus a guarded replacement of its oversized 26-word IDO
 body; see
 [Working Note 290](WORKING_NOTES/290-game-water-distance-classifier-match-20260927.md).
-Continue with 23-word `func_1514EE70`, the next unparked Game C row in the
+The 23-word `func_1514EE70` object-request wrapper is now byte-exact directly
+from C with no guarded words; see
+[Working Note 291](WORKING_NOTES/291-game-object-request-wrapper-match-20260927.md).
+Continue with 25-word `func_1514F130`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

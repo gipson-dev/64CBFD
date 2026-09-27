@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game object-request wrapper byte-exact
+
+- Replaced the zero-return placeholder at `func_1514EE70` with the recovered
+  callback ABI and typed eight-byte stack request. The wrapper forwards its
+  object pointer, unique ID, zero byte, and 300-byte size to `func_1515BE50`,
+  then passes the returned object to `func_1514EC1C` with event ID `0x16`.
+- All 23 words / 92 bytes match retail directly from C. The frame, saved return
+  address, argument home, request stores, delay slots, and both call
+  relocations are compiler-produced; no guarded scheduling words are used.
+- The complete span has SHA-256
+  `b46f3cea976c6aa50753d281c7c1ca16951ec531127b624c67ab126b30c7af4c`.
+  Fresh totals are **2,795 / 5,469 (51.11%)** overall and
+  **2,224 / 4,791 (46.42%)** in Game.
+
 ### Game water-distance classifier byte-exact
 
 - Replaced the uncertain raw-pointer implementation of `func_15125490` with a

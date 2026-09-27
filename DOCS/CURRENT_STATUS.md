@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,794 / 5,469 (51.09%) | 1 | 2,674 |
+| Total | 2,795 / 5,469 (51.11%) | 1 | 2,673 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,223 / 4,791 (46.40%) | 0 | 2,568 |
+| Game | 2,224 / 4,791 (46.42%) | 0 | 2,567 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,794, while
+denominator driven: the exact count is now 2,795, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -685,8 +685,10 @@ end-to-end gameplay acceptance.
    including three trailing layout words, is byte-exact from recovered C plus
    seven guarded scheduling words. The 25-word `func_15125490` water-distance
    classifier is byte-exact from typed recovered C plus a guarded replacement
-   of its oversized 26-word IDO body. Continue with 23-word `func_1514EE70`;
-   keep the previously documented lower-difference rows parked.
+   of its oversized 26-word IDO body. The 23-word `func_1514EE70` object-request
+   wrapper is byte-exact directly from C with no guarded words after restoring
+   its callback ABI and typed eight-byte stack request. Continue with 25-word
+   `func_1514F130`; keep the previously documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
