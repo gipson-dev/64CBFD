@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game unregister-and-broadcast wrapper byte-exact
+
+- Replaced the zero-return `func_15191B8C` placeholder with its complete
+  global-word snapshot, target unregister, and event broadcast sequence.
+- The typed byte argument reproduces retail's big-endian stack-byte reloads;
+  the local one-word record reproduces all 21 retail words directly.
+- The complete span shares SHA-256
+  `bf392e47a547c97973ce4acb9c2d4e4fb27927996a73ec68d090289742bfc0cc`.
+  Fresh totals are **2,698 / 5,469 (49.33%)** overall and
+  **2,127 / 4,791 (44.40%)** in Game.
+
 ### Game event-owner release handler byte-exact
 
 - Replaced the zero-return `func_15190400` placeholder with its complete

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,697 / 5,469 (49.31%) | 1 | 2,771 |
+| Total | 5,469 / 6,038 (90.58%) | 2,698 / 5,469 (49.33%) | 1 | 2,770 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,126 / 4,791 (44.37%) | 0 | 2,665 |
+| Game | 4,791 / 5,318 (90.09%) | 2,127 / 4,791 (44.40%) | 0 | 2,664 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -596,6 +596,9 @@ Continue with 21-word `func_15190400`.
 That event-owner release handler is now exact from typed C; see
 [Working Note 194](WORKING_NOTES/194-game-event-owner-release-match-20260926.md).
 Continue with 21-word `func_15191B8C`.
+That unregister-and-broadcast wrapper is now exact from typed C; see
+[Working Note 195](WORKING_NOTES/195-game-unregister-broadcast-wrapper-match-20260926.md).
+Continue with 21-word `func_151A4F7C`.
 
 Current host-port progression and acceptance boundaries:
 

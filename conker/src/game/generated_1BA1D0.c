@@ -4,6 +4,7 @@ extern void (*D_8008D680[])();
 typedef struct { s32 a, b, c; } ThreeWord1BA1D0;
 void func_15169260(void *, s32, s32, u8);
 extern u8 D_800A74D4[];
+extern s32 D_800A8010;
 typedef struct { s32 val; } OneWord1BA1D0;
 typedef struct {
     f32 value;
@@ -384,6 +385,10 @@ s32 func_15191A84() {
     return 0;
 }
 
-s32 func_15191B8C() {
-    return 0;
+void func_15191B8C(s32 arg0, u8 arg1) {
+    OneWord1BA1D0 tmp;
+
+    tmp.val = D_800A8010;
+    func_151494E0(arg0, arg1);
+    func_15169260(&tmp, 1, arg0, arg1);
 }
