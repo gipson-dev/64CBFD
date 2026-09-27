@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,767 / 5,469 (50.59%) | 1 | 2,701 |
+| Total | 2,768 / 5,469 (50.61%) | 1 | 2,700 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,196 / 4,791 (45.84%) | 0 | 2,595 |
+| Game | 2,197 / 4,791 (45.86%) | 0 | 2,594 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -621,8 +621,10 @@ end-to-end gameplay acceptance.
    from C after adding typed callee declarations; no guarded words are needed.
    The 37-word `func_15144598` mode-dependent area scaler is byte-exact
    directly from corrected field offsets, signed dimensions, case order, and
-   commutative operand order. Continue with 25-word `func_15149BF4`; keep the
-   previously documented lower-difference rows parked.
+   commutative operand order. The 25-word `func_15149BF4` two-axis float
+   damping threshold is byte-exact directly from C without guarded words.
+   Continue with 23-word `func_1514ECE0`; keep the previously documented
+   lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

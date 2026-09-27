@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, mode-dependent area scaler matched).** The current linked
-checkpoint is `2767 / 5469 (50.59%)` exact C functions, with one address-drift
-blocker and 2,701 genuinely different C functions. Game is
-`2196 / 4791 (45.84%)` exact, with 2,595 genuinely different C rows. The tree
+**Active (2026-09-27, float damping threshold matched).** The current linked
+checkpoint is `2768 / 5469 (50.61%)` exact C functions, with one address-drift
+blocker and 2,700 genuinely different C functions. Game is
+`2197 / 4791 (45.86%)` exact, with 2,594 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -763,7 +763,10 @@ The 37-word `func_15144598` mode-dependent area scaler is now byte-exact
 directly from corrected field offsets, signed dimensions, case order, and
 commutative operand order; see
 [Working Note 264](WORKING_NOTES/264-game-mode-area-scaler-match-20260927.md).
-Continue with 25-word `func_15149BF4`, the next unparked Game C row in the
+The false zero-return placeholder at `func_15149BF4` is now a byte-exact
+25-word two-axis float damping threshold directly from C with no guarded
+words; see [Working Note 265](WORKING_NOTES/265-game-float-damping-threshold-match-20260927.md).
+Continue with 23-word `func_1514ECE0`, the next unparked Game C row in the
 fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game float damping threshold byte-exact
+
+- Replaced the false zero-return placeholder at `func_15149BF4` with its
+  original two-axis damping and minimum-threshold behavior.
+- All 25 words / 100 bytes match directly from C. In-place updates force the
+  stored first result to be reloaded, while one short-circuit OR reproduces
+  retail's shared return-zero path. No guarded retail words are needed.
+- The complete span has SHA-256
+  `035239563829978bd71d6f260e062841506d078a1d0c22061d7c40fe8c5c24f4`.
+  Fresh totals are **2,768 / 5,469 (50.61%)** overall and
+  **2,197 / 4,791 (45.86%)** in Game.
+
 ### Game mode-dependent area scaler byte-exact
 
 - Corrected `func_15144598` to read its mode from byte offset `0x15` and its

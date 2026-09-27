@@ -18,8 +18,14 @@ s32 func_15149A94() {
     return 0;
 }
 
-s32 func_15149BF4() {
-    return 0;
+s32 func_15149BF4(u8 *arg0) {
+    *(f32 *)(arg0 + 0x2C) -= *(f32 *)(arg0 + 0x2C) * *(f32 *)(arg0 + 0x150);
+    *(f32 *)(arg0 + 0x30) -= *(f32 *)(arg0 + 0x30) * *(f32 *)(arg0 + 0x150);
+
+    if (*(f32 *)(arg0 + 0x2C) < 2.0f || *(f32 *)(arg0 + 0x30) < 2.0f) {
+        return 0;
+    }
+    return 1;
 }
 
 s32 func_15149C58() {
