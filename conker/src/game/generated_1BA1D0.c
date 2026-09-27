@@ -224,8 +224,24 @@ void func_151903D0(u8 *arg0) {
     func_15163F50(arg0, arg0 + 0x18);
 }
 
-s32 func_15190400() {
-    return 0;
+void func_15190400(u8 *arg0, u8 *arg1, u8 arg2) {
+    s32 temp_v0;
+    s32 temp_v1;
+    u8 temp_a2;
+    u8 temp_a3;
+
+    if (arg2 == 0) {
+        temp_v0 = *(s32 *)(arg0 + 0x18);
+        temp_v1 = *(s32 *)arg1;
+        temp_a2 = arg0[0x1C];
+        temp_a3 = arg1[4];
+        if (temp_v0 != temp_v1) {
+            if (temp_a2 != temp_a3) {
+                return;
+            }
+        }
+        func_1516972C(arg0);
+    }
 }
 
 void func_15190454(u8 *arg0) {

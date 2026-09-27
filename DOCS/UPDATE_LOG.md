@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game event-owner release handler byte-exact
+
+- Replaced the zero-return `func_15190400` placeholder with its complete
+  event-zero owner/discriminator matching and object-release call.
+- Explicit field temporaries and the nested early-return comparison reproduce
+  all 21 retail words directly from typed C. The final source operand swap
+  preserves retail's `bnel a3,a2` register order without guarded words.
+- The complete span shares SHA-256
+  `b8231fb73fe2d92e312651d44bba9e27a8a684800ea1891f132a18d280083a39`.
+  Fresh totals are **2,697 / 5,469 (49.31%)** overall and
+  **2,126 / 4,791 (44.37%)** in Game.
+
 ### Game indexed color extractor byte-exact
 
 - Replaced the zero-return `func_15187FC0` placeholder with its complete
