@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game three-slot resource cleanup byte-exact
+
+- Replaced the zero placeholder at `func_150233E4` with the recovered cleanup
+  loop over the three `struct163` records at `D_800C3CA0`. Active records pass
+  their resource pointer at offset `0x34` to `func_1516D2E0`, then clear that
+  pointer and their leading active halfword.
+- All 23 words / 92 bytes match retail. The shared record now exposes its
+  signed active halfword and resource pointer while retaining its `0x38`-byte
+  size; two relocation-aware guarded rows retain retail's independent table-end
+  and cursor address-completion schedule.
+- The complete span has SHA-256
+  `34cb02339eb3c43068a7172810cbfbe8f197106b1f7574581056dc6d71f7f896`.
+  Fresh totals are **2,803 / 5,469 (51.25%)** overall and
+  **2,231 / 4,791 (46.57%)** in Game.
+
 ### Init owner-reference repair byte-exact
 
 - Recovered `func_1000B294`, which walks the three root table entries and

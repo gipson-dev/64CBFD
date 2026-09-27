@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, Init owner-reference repair matched).** The current
-linked checkpoint is `2802 / 5469 (51.23%)` exact C functions, with one
-address-drift blocker and 2,666 genuinely different C functions. Init is
+**Active (2026-09-27, three-slot resource cleanup matched).** The current
+linked checkpoint is `2803 / 5469 (51.25%)` exact C functions, with one
+address-drift blocker and 2,665 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2230 / 4791 (46.55%)` exact, with 2,561 genuinely different C rows. The tree
+`2231 / 4791 (46.57%)` exact, with 2,560 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -876,7 +876,10 @@ recovered C, an object no-unroll profile, and two relocation-aware scheduling
 swaps; neighboring `func_1000B548` remains exact through an explicit
 four-record source unroll. See
 [Working Note 298](WORKING_NOTES/298-init-owner-reference-repair-match-20260927.md).
-Continue with 23-word Game `func_150233E4`, the first ordinary unparked C row
+The 23-word Game `func_150233E4` three-slot resource cleanup loop is exact from
+typed C plus two relocation-aware setup scheduling swaps; see
+[Working Note 299](WORKING_NOTES/299-game-three-slot-resource-cleanup-match-20260927.md).
+Continue with 24-word Game `func_1503B95C`, the first ordinary unparked C row
 in the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

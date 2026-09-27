@@ -1351,3 +1351,5 @@ game_2062D0,func_151DADA0,0x2C,0x2509FFC0,0x2484FFC0,-,-,Subtract the phase bias
 game_2062D0,func_151DADA0,0x30,0x312400FF,0x308900FF,-,-,Normalize the masked call argument through retail registers,0x01202025,,false
 init_B1B0,func_1000B294,0x08,0x24630000,0x24C60000,R_MIPS_LO16:D_800417B0,R_MIPS_LO16:D_800417BC,Schedule the end-table address completion before the cursor address,,,false
 init_B1B0,func_1000B294,0x0C,0x24C60000,0x24630000,R_MIPS_LO16:D_800417BC,R_MIPS_LO16:D_800417B0,Schedule the cursor address completion after the end-table address,,,false
+generated_49D30,func_150233E4,0x18,0x26100000,0x26310000,R_MIPS_LO16:D_800C3CA0,R_MIPS_LO16:D_800C3D48,Schedule the end-table address completion before the cursor address,,,false
+generated_49D30,func_150233E4,0x1C,0x26310000,0x26100000,R_MIPS_LO16:D_800C3D48,R_MIPS_LO16:D_800C3CA0,Schedule the cursor address completion after the end-table address,,,false

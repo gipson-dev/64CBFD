@@ -1,4 +1,6 @@
 #include <ultra64.h>
+#include "structs.h"
+
 extern void (*D_80086014[])();
 extern f32 D_800C3594;
 extern f32 D_800C35A0;
@@ -10,7 +12,9 @@ extern u8 D_800C363A[];
 
 /* Non-matching placeholders for the text-only asm slice asm/49D30.s. */
 
-extern u8 D_800C3CA0[];
+extern struct163 D_800C3CA0[3];
+extern struct163 D_800C3D48;
+extern void func_1516D2E0(u8 *arg0);
 
 extern u8 D_800C3510[];
 extern u8 D_800C354A[];
@@ -250,8 +254,17 @@ void func_150233BC(void) {
     bzero(D_800C3CA0, 0xA8);
 }
 
-s32 func_150233E4() {
-    return 0;
+void func_150233E4(void) {
+    struct163 *entry = D_800C3CA0;
+
+    do {
+        if (entry->unk0 != 0) {
+            func_1516D2E0(entry->unk34);
+            entry->unk34 = NULL;
+            entry->unk0 = 0;
+        }
+        entry++;
+    } while (entry != &D_800C3D48);
 }
 
 s32 func_15023440() {

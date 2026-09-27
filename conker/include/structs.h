@@ -1911,10 +1911,11 @@ typedef struct {
 } struct162;
 
 typedef struct {
-    u16 unk0;
+    s16 unk0;
     u8  pad2[0xA];
     u8  unkC;
-    u8  padD[0x2B];
+    u8  padD[0x27];
+    u8 *unk34;
 } struct163; // size 0x38
 
 typedef struct {
