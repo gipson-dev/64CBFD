@@ -177,22 +177,26 @@ void func_15168A4C(void *arg0, s32 arg1) {
     *slot = node;
 }
 
-void func_15168A9C(void *arg0) {
-    void **slot;
-    void *next;
-    void *prev;
+void func_15168A9C(ListNode *arg0) {
+    ListNode **slot;
+    ListNode *next;
+    ListNode *prev;
+    u8 row;
+    u8 index;
 
-    slot = (void **) (D_800DCE50 + (*((u8 *) arg0 + 1) * 0x1A0) + (*((u8 *) arg0) * 4));
+    row = arg0->row;
+    index = arg0->index;
+    slot = (ListNode **) (D_800DCE50 + (row * 0x1A0) + (index * 4));
     if (arg0 == *slot) {
-        *slot = *(void **) ((u8 *) arg0 + 8);
+        *slot = arg0->next;
     }
-    next = *(void **) ((u8 *) arg0 + 8);
+    next = arg0->next;
     if (next != NULL) {
-        *(void **) ((u8 *) next + 4) = *(void **) ((u8 *) arg0 + 4);
+        next->prev = arg0->prev;
     }
-    prev = *(void **) ((u8 *) arg0 + 4);
+    prev = arg0->prev;
     if (prev != NULL) {
-        *(void **) ((u8 *) prev + 8) = *(void **) ((u8 *) arg0 + 8);
+        prev->next = arg0->next;
     }
 }
 

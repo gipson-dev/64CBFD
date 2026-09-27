@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game indexed-list unlink byte-exact
+
+- Recovered `func_15168A9C` as removal from the row/index-selected
+  `D_800DCE50` list, including head replacement and both neighboring-link
+  repairs.
+- Typed `ListNode` access plus explicit `u8 row` and `u8 index` lifetimes
+  reproduce all 29 retail words directly, including the `v0`/`v1` index
+  registers, `a1` slot pointer, branch-likely loads, and link temporaries.
+- The complete 29-word span shares SHA-256
+  `3d0eff7bee4097954ec64a6c5026e8fd390df1a7edcd8a26f92c594b4126b538`.
+  Fresh totals are **2,735 / 5,468 (50.02%)** overall and
+  **2,164 / 4,790 (45.18%)** in Game.
+
 ### Game callback-table loop byte-exact
 
 - Recovered `func_1516706C` as a post-tested walk over the three callback

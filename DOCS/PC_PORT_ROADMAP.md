@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,039 (90.54%) | 2,734 / 5,468 (50.00%) | 1 | 2,733 |
+| Total | 5,468 / 6,039 (90.54%) | 2,735 / 5,468 (50.02%) | 1 | 2,732 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,790 / 5,319 (90.05%) | 2,163 / 4,790 (45.16%) | 0 | 2,627 |
+| Game | 4,790 / 5,319 (90.05%) | 2,164 / 4,790 (45.18%) | 0 | 2,626 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -728,7 +728,10 @@ The 21-word `func_1516706C` three-entry callback-table loop is now exact from
 its post-tested C loop plus two guarded relocation-aware low-half address
 words; see
 [Working Note 232](WORKING_NOTES/232-game-callback-table-loop-match-20260927.md).
-Continue with 29-word `func_15168A9C` while the documented smaller rows remain
+The 29-word `func_15168A9C` indexed-list unlink is now exact directly from
+typed C with explicit row/index byte lifetimes; see
+[Working Note 233](WORKING_NOTES/233-game-indexed-list-unlink-match-20260927.md).
+Continue with 23-word `func_15179AB8` while the documented smaller rows remain
 parked.
 
 Current host-port progression and acceptance boundaries:
