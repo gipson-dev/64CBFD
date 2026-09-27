@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,711 / 5,469 (49.57%) | 1 | 2,757 |
+| Total | 5,469 / 6,038 (90.58%) | 2,712 / 5,469 (49.59%) | 1 | 2,756 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,140 / 4,791 (44.67%) | 0 | 2,651 |
+| Game | 4,791 / 5,318 (90.09%) | 2,141 / 4,791 (44.69%) | 0 | 2,650 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -648,7 +648,10 @@ directly from a typed six-argument call; see
 The 20-word `func_151A73EC` bounded embedded-owner release helper is now exact
 directly from nested typed C; see
 [Working Note 208](WORKING_NOTES/208-game-bounded-embedded-owner-release-match-20260926.md).
-Continue with 20-word `func_151AF338`.
+The 20-word `func_151AF338` float ABI adapter is now exact directly from a
+typed seven-argument wrapper; see
+[Working Note 209](WORKING_NOTES/209-game-float-abi-adapter-match-20260926.md).
+Continue with 20-word `func_151B4C1C`.
 
 Current host-port progression and acceptance boundaries:
 

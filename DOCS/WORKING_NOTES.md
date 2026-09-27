@@ -536,6 +536,10 @@ nested typed C, including both branch-likely return paths and the retained
 interior pointer across the release call. Continue with 20-word
 `func_151AF338`; see
 [Working Note 208](WORKING_NOTES/208-game-bounded-embedded-owner-release-match-20260926.md).
+That float ABI adapter is now byte-exact directly from a typed seven-argument
+wrapper, including the three-float local vector and the byte forwarded from
+the final pointer argument. Continue with 20-word `func_151B4C1C`; see
+[Working Note 209](WORKING_NOTES/209-game-float-abi-adapter-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

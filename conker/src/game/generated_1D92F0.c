@@ -153,11 +153,19 @@ s32 func_151AF270() {
     return 0;
 }
 
-s32 func_151AF338() {
-    return 0;
+s32 func_151AF388(f32 *, f32, f32, f32, u8);
+
+void func_151AF338(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4,
+                   f32 arg5, u8 *arg6) {
+    f32 position[3];
+
+    position[0] = arg0;
+    position[1] = arg1;
+    position[2] = arg2;
+    func_151AF388(position, arg3, arg4, arg5, arg6[0xC]);
 }
 
-s32 func_151AF388() {
+s32 func_151AF388(f32 *arg0, f32 arg1, f32 arg2, f32 arg3, u8 arg4) {
     return 0;
 }
 
