@@ -272,5 +272,6 @@ D_80088628 = 0x80088628; // type:label
 D_80091A30 = 0x80091A30; // type:label
 D_80091AB8 = 0x80091AB8; // type:label
 func_151787A4 = 0x151787A4; // type:func
+func_15195824 = 0x15195824; // type:func
 func_16000B14 = 0x16000B14; // type:func
 D_1600487C = 0x1600487C; // type:label

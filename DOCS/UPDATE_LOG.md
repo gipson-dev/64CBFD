@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game list-tail insertion and hidden no-op byte-exact
+
+- Recovered `func_151957B0` as a doubly linked-list tail insertion with the
+  nonempty arm first and an intentional repeated old-tail load. This restores
+  all 29 executable words directly from C without guarded scheduling.
+- Split the complete trailing `jr ra; nop` pair from the old function extent
+  into independently tracked `func_15195824`; its empty `void` body emits both
+  retail words exactly.
+- The combined 31-word span shares SHA-256
+  `22c5d40b78c2f3bccdc1e6f6d0d4265b35303c4ef299109fd6b688c92acee6fd`.
+  Fresh totals are **2,739 / 5,469 (50.08%)** overall and
+  **2,168 / 4,791 (45.25%)** in Game.
+
 ### Game state-to-animation selector byte-exact
 
 - Corrected `func_15194AB4` from an `s32` result model to its retail `void`

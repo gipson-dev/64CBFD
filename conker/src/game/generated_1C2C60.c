@@ -47,17 +47,20 @@ s32 func_151957B0(s32 arg0, u8 *arg1, u8 *arg2) {
     if (temp_v0 != NULL) {
         *(s32 *) (temp_v0 + 4) = 0;
         temp_v1 = *(s32 *) (arg2);
-        if (temp_v1 == 0) {
+        if (temp_v1 != 0) {
+            *(s32 *) (temp_v0) = temp_v1;
+            *(s32 *) (*(s32 *) arg2 + 4) = (s32) temp_v0;
+            *(s32 *) (arg2) = (s32) temp_v0;
+        } else {
             *(s32 *) (temp_v0) = 0;
             *(s32 *) (arg2) = (s32) temp_v0;
             *(s32 *) (arg1) = (s32) temp_v0;
-        } else {
-            *(s32 *) (temp_v0) = temp_v1;
-            *(s32 *) (temp_v1 + 4) = (s32) temp_v0;
-            *(s32 *) (arg2) = (s32) temp_v0;
         }
     }
     return (s32) temp_v0;
+}
+
+void func_15195824(void) {
 }
 
 void func_1519582C() {

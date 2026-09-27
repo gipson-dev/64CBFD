@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,468 / 6,039 (90.54%) | 571 | 1,931,720 / 2,256,728 (85.60%) |
+| Total | 5,469 / 6,040 (90.55%) | 571 | 1,931,720 / 2,256,728 (85.60%) |
 | Init | 497 / 538 (92.38%) | 41 | 148,600 / 164,048 (90.58%) |
-| Game | 4,790 / 5,319 (90.05%) | 529 | 1,763,480 / 2,072,880 (85.07%) |
+| Game | 4,791 / 5,320 (90.06%) | 529 | 1,763,480 / 2,072,880 (85.07%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,737 / 5,468 (50.05%) | 1 | 2,730 |
+| Total | 2,739 / 5,469 (50.08%) | 1 | 2,729 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,166 / 4,790 (45.22%) | 0 | 2,624 |
+| Game | 2,168 / 4,791 (45.25%) | 0 | 2,623 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,737, while
+denominator driven: the exact count is now 2,739, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -91,6 +91,10 @@ sets flag `0x2` on the first eligible object.
 `func_15194AB4` is byte-exact directly from C after correcting its return type
 to `void` and expressing the two state mappings as a `switch` with a default
 selector assignment after the object-flag store.
+`func_151957B0` is byte-exact directly from a nonempty-first doubly linked-list
+tail insertion that preserves retail's repeated old-tail load. Its former
+trailing return pair is now correctly tracked as independent no-op
+`func_15195824`, which is also byte-exact directly from an empty `void` body.
 `func_151423D8` is byte-exact through symmetric guarded quadrant and table-index
 register normalization.
 `func_15155EF8` is byte-exact through guarded outer/child pointer register
@@ -561,8 +565,10 @@ end-to-end gameplay acceptance.
    scheduling entries. The 21-word `func_1516706C` callback-table loop is
    byte-exact from a post-tested loop plus two guarded relocation-aware words.
    The 29-word `func_15168A9C` list unlink, 23-word `func_15179AB8`
-   backward active-object flag scan, and 26-word `func_15194AB4` state mapper
-   are byte-exact directly from C. Continue with 31-word `func_151957B0`;
+   backward active-object flag scan, 26-word `func_15194AB4` state mapper,
+   29-word `func_151957B0` tail insertion, and two-word hidden no-op
+   `func_15195824` are byte-exact directly from C. Continue with 22-word
+   `func_151A8A20`;
    keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
@@ -724,6 +730,8 @@ The completed backward active-object flag scan is in
 [Working Note 234](WORKING_NOTES/234-game-active-object-flag-scan-match-20260927.md).
 The completed state-to-animation selector is in
 [Working Note 235](WORKING_NOTES/235-game-state-animation-selector-match-20260927.md).
+The completed list-tail insertion and hidden no-op boundary are in
+[Working Note 236](WORKING_NOTES/236-game-list-tail-insert-and-hidden-noop-match-20260927.md).
 The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 The completed five-global reset ordering is in

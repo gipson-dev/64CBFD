@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, state-to-animation selector matched).** The current
-linked checkpoint is `2737 / 5468 (50.05%)` exact C functions, with one
-address-drift blocker and 2,730 genuinely different C functions. Game is
-`2166 / 4790 (45.22%)` exact, with 2,624 genuinely different C rows. The tree
+**Active (2026-09-27, list-tail insertion pair matched).** The current linked
+checkpoint is `2739 / 5469 (50.08%)` exact C functions, with one
+address-drift blocker and 2,729 genuinely different C functions. Game is
+`2168 / 4791 (45.25%)` exact, with 2,623 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -665,9 +665,14 @@ guarded retail words are needed. Continue with 26-word `func_15194AB4`; see
 [Working Note 234](WORKING_NOTES/234-game-active-object-flag-scan-match-20260927.md).
 The 26-word `func_15194AB4` state-to-animation selector is now exact directly
 from C after correcting its `void` contract and moving the default selector
-assignment after the object-flag store. Continue with 31-word
+assignment after the object-flag store. That handoff was completed in
 `func_151957B0`; see
 [Working Note 235](WORKING_NOTES/235-game-state-animation-selector-match-20260927.md).
+The 29-word `func_151957B0` doubly linked-list tail insertion is now exact
+directly from nonempty-first C with its repeated old-tail load. The following
+`jr ra; nop` pair is independently tracked and exact as empty no-op
+`func_15195824`. Continue with 22-word `func_151A8A20`; see
+[Working Note 236](WORKING_NOTES/236-game-list-tail-insert-and-hidden-noop-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
