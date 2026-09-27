@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game active-object flag scan byte-exact
+
+- Replaced the zero-return `func_15179AB8` placeholder with its backward scan
+  from `D_800DD436 - 1` through the object-pointer array in `D_800DD440`.
+- Null entries and objects already carrying bit `0x2` at offset `0x90` are
+  skipped. The first eligible object receives the bit and returns immediately.
+  Explicit index, object, and flag lifetimes reproduce all 23 retail words
+  directly without guarded scheduling.
+- The complete span shares SHA-256
+  `940ef12c88416ed016ef139dad5491ff725c85f7c5c9208d18932f0ede6c643b`.
+  Fresh totals are **2,736 / 5,468 (50.04%)** overall and
+  **2,165 / 4,790 (45.20%)** in Game.
+
 ### Game indexed-list unlink byte-exact
 
 - Recovered `func_15168A9C` as removal from the row/index-selected

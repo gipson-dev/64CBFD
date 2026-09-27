@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,039 (90.54%) | 2,735 / 5,468 (50.02%) | 1 | 2,732 |
+| Total | 5,468 / 6,039 (90.54%) | 2,736 / 5,468 (50.04%) | 1 | 2,731 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,790 / 5,319 (90.05%) | 2,164 / 4,790 (45.18%) | 0 | 2,626 |
+| Game | 4,790 / 5,319 (90.05%) | 2,165 / 4,790 (45.20%) | 0 | 2,625 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -731,7 +731,10 @@ words; see
 The 29-word `func_15168A9C` indexed-list unlink is now exact directly from
 typed C with explicit row/index byte lifetimes; see
 [Working Note 233](WORKING_NOTES/233-game-indexed-list-unlink-match-20260927.md).
-Continue with 23-word `func_15179AB8` while the documented smaller rows remain
+The 23-word `func_15179AB8` backward active-object flag scan is now exact
+directly from C; see
+[Working Note 234](WORKING_NOTES/234-game-active-object-flag-scan-match-20260927.md).
+Continue with 26-word `func_15194AB4` while the documented smaller rows remain
 parked.
 
 Current host-port progression and acceptance boundaries:

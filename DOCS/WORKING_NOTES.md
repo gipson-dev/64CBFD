@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, indexed-list unlink matched).** The current linked
-checkpoint is `2735 / 5468 (50.02%)` exact C functions, with one address-drift
-blocker and 2,732 genuinely different C functions. Game is
-`2164 / 4790 (45.18%)` exact, with 2,626 genuinely different C rows. The tree
+**Active (2026-09-27, active-object flag scan matched).** The current linked
+checkpoint is `2736 / 5468 (50.04%)` exact C functions, with one address-drift
+blocker and 2,731 genuinely different C functions. Game is
+`2165 / 4790 (45.20%)` exact, with 2,625 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -659,6 +659,10 @@ The 29-word `func_15168A9C` indexed-list unlink is now exact directly from
 typed `ListNode` C plus explicit row/index byte lifetimes. No guarded retail
 words are needed. Continue with 23-word `func_15179AB8`; see
 [Working Note 233](WORKING_NOTES/233-game-indexed-list-unlink-match-20260927.md).
+The 23-word `func_15179AB8` backward active-object flag scan is now exact
+directly from C, including the early-return store and byte-offset loop. No
+guarded retail words are needed. Continue with 26-word `func_15194AB4`; see
+[Working Note 234](WORKING_NOTES/234-game-active-object-flag-scan-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
