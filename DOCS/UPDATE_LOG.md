@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game object-index flag updater byte-exact
+
+- Replaced the zero-return placeholder at `func_150D1410` with the recovered
+  effect lookup and object-index flag update. A found effect receives byte
+  `0x6E = 1` only for object-table index zero, otherwise zero.
+- All 23 words / 92 bytes match directly from C. Expressing the equality as an
+  explicit `if`/`else` restores retail's divide, branch-likely delay store, and
+  duplicated fallthrough store without guarded words.
+- The complete span has SHA-256
+  `180399b2fd93bf50c1f85964a6bf46017f0bff06622fe9a97a30f2905101cff1`.
+  Fresh totals are **2,788 / 5,469 (50.98%)** overall and
+  **2,217 / 4,791 (46.27%)** in Game.
+
 ### Game object-record writer byte-exact
 
 - Replaced the zero-return placeholder at `func_150BE438` with the recovered

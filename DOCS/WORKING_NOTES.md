@@ -825,7 +825,10 @@ convention; see
 The false placeholder at `func_150BE438` is now a byte-exact 23-word
 object-record writer directly from C with no guarded words; see
 [Working Note 283](WORKING_NOTES/283-game-object-record-writer-match-20260927.md).
-Continue with 23-word `func_150D1410`, the next unparked Game C row in the
+The false placeholder at `func_150D1410` is now a byte-exact 23-word
+object-index flag updater directly from C with no guarded words; see
+[Working Note 284](WORKING_NOTES/284-game-object-index-flag-match-20260927.md).
+Continue with 23-word `func_150D2054`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
