@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, Game mode-flag toggle matched).** The current linked
-checkpoint is `2729 / 5470 (49.89%)` exact C functions, with one address-drift
-blocker and 2,740 genuinely different C functions. Game is
-`2158 / 4792 (45.03%)` exact, with 2,634 genuinely different C rows. The tree
+**Active (2026-09-27, Game marker-record swap matched).** The current linked
+checkpoint is `2730 / 5470 (49.91%)` exact C functions, with one address-drift
+blocker and 2,739 genuinely different C functions. Game is
+`2159 / 4792 (45.05%)` exact, with 2,633 genuinely different C rows. The tree
 contains 569 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -619,6 +619,11 @@ The 24-word `func_150C5310` mode-flag toggle is now exact directly from typed
 C, including its three tracked trailing padding words. Continue with 24-word
 `func_150E2FC0`; see
 [Working Note 225](WORKING_NOTES/225-game-mode-flag-toggle-match-20260927.md).
+The 24-word `func_150E2FC0` marker-record swap is now exact from typed C plus
+one guarded word preserving retail's equivalent alternate-first branch
+operand order. Keep `func_150721A4` parked and continue with 26-word
+`func_15125628`; see
+[Working Note 226](WORKING_NOTES/226-game-marker-record-swap-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

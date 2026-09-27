@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game marker-record swap byte-exact
+
+- Replaced the zero-return `func_150E2FC0` placeholder with its marker-gated
+  comparison and swap between the first two words of the source record.
+- Matching either source word updates the destination word at `0xDC` and its
+  paired selector byte at `0xDA`. Typed C emits 23 of 24 tracked words; one
+  guarded word preserves retail's equivalent alternate-first branch operands.
+- The complete 24-word span shares SHA-256
+  `815e571938eeb39d9ffeae2889c41574f46c2fa15e9b608e8ccc12d0e8dff23f`.
+  Fresh totals are **2,730 / 5,470 (49.91%)** overall and
+  **2,159 / 4,792 (45.05%)** in Game.
+
 ### Game mode-flag toggle byte-exact
 
 - Replaced the zero-return `func_150C5310` placeholder with its call to

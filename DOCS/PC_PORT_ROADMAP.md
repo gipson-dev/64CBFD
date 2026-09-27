@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,470 / 6,039 (90.58%) | 2,729 / 5,470 (49.89%) | 1 | 2,740 |
+| Total | 5,470 / 6,039 (90.58%) | 2,730 / 5,470 (49.91%) | 1 | 2,739 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,792 / 5,319 (90.09%) | 2,158 / 4,792 (45.03%) | 0 | 2,634 |
+| Game | 4,792 / 5,319 (90.09%) | 2,159 / 4,792 (45.05%) | 0 | 2,633 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -704,7 +704,10 @@ relocation-aware scheduling words; see
 The 24-word `func_150C5310` mode-flag toggle is now exact directly from typed
 C, including its three tracked trailing padding words; see
 [Working Note 225](WORKING_NOTES/225-game-mode-flag-toggle-match-20260927.md).
-Continue with 24-word `func_150E2FC0`.
+The 24-word `func_150E2FC0` marker-record swap is now exact from typed C plus
+one guarded equivalent branch-operand word; see
+[Working Note 226](WORKING_NOTES/226-game-marker-record-swap-match-20260927.md).
+Keep `func_150721A4` parked and continue with 26-word `func_15125628`.
 
 Current host-port progression and acceptance boundaries:
 

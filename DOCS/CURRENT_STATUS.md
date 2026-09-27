@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,729 / 5,470 (49.89%) | 1 | 2,740 |
+| Total | 2,730 / 5,470 (49.91%) | 1 | 2,739 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,158 / 4,792 (45.03%) | 0 | 2,634 |
+| Game | 2,159 / 4,792 (45.05%) | 0 | 2,633 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -533,7 +533,9 @@ end-to-end gameplay acceptance.
    clear is now byte-exact through a named mask local and eighteen guarded
    relocation-aware scheduling words. The 24-word `func_150C5310` mode-flag
    toggle is now byte-exact directly from typed C, including three tracked
-   padding words. Continue with 24-word `func_150E2FC0`.
+   padding words. The 24-word `func_150E2FC0` marker-record swap is now
+   byte-exact from typed C plus one guarded equivalent branch-operand word.
+   Keep `func_150721A4` parked and continue with 26-word `func_15125628`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
@@ -673,6 +675,8 @@ The completed stack-vector sum wrapper is in
 [Working Note 222](WORKING_NOTES/222-game-stack-vector-sum-wrapper-match-20260927.md).
 The completed state-transition wrapper is in
 [Working Note 223](WORKING_NOTES/223-game-state-transition-wrapper-match-20260927.md).
+The completed marker-record swap is in
+[Working Note 226](WORKING_NOTES/226-game-marker-record-swap-match-20260927.md).
 The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 The completed five-global reset ordering is in

@@ -34,6 +34,19 @@ s16 arg2;
     func_150E2DA4(arg0, arg2);
 }
 
-s32 func_150E2FC0() {
-    return 0;
+void func_150E2FC0(u8 *arg0, u8 *arg1, u8 arg2) {
+    s32 current;
+    s32 source;
+
+    if (arg2 == 0x2D) {
+        source = *(s32 *)arg1;
+        current = *(s32 *)(arg0 + 0xDC);
+        if (source == current) {
+            *(s32 *)(arg0 + 0xDC) = *(s32 *)(arg1 + 4);
+            arg0[0xDA] = arg1[9];
+        } else if (current == *(s32 *)(arg1 + 4)) {
+            *(s32 *)(arg0 + 0xDC) = source;
+            arg0[0xDA] = arg1[8];
+        }
+    }
 }

@@ -1181,3 +1181,4 @@ game_A28B0,func_1507A47C,0x040,0x016C1025,0x01D91025,-,-,Combine the fourth pack
 game_A28B0,func_1507A47C,0x044,0x00407027,0x0040C027,-,-,Complement the packed mask through t8,,
 game_A28B0,func_1507A47C,0x048,0x01AEC024,0x01184824,-,-,Clear the packed bits through t1,,
 game_A28B0,func_1507A47C,0x04C,0xAC780094,0xAC690094,-,-,Store the cleared actor mask from t1,,
+generated_10EF60,func_150E2FC0,0x040,0x14790004,0x17230004,-,-,Preserve retail's equivalent alternate-first branch operand order,,
