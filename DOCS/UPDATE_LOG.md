@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game embedded-address setup wrapper byte-exact
+
+- Replaced the zero-return `func_15192308` placeholder with its complete call
+  to `func_15131C84`, forwarding one object field and five embedded addresses.
+- The typed six-argument call reproduces retail's `0x28`-byte frame, retained
+  `s0` lifetime, unused second-argument home, stack-argument order, call delay
+  slot, and all 20 words without a retail-word patch.
+- The complete span shares SHA-256
+  `8376d022e1edf5b1dd28744f7ee1198c93438ac0a7acea02d3b09240cf2f60a1`.
+  Fresh totals are **2,710 / 5,469 (49.55%)** overall and
+  **2,139 / 4,791 (44.65%)** in Game.
+
 ### Game shifted motion-decay update byte-exact
 
 - Replaced the zero-return `func_1518F108` placeholder with its two float
