@@ -340,8 +340,22 @@ s32 func_1514ED3C(GameListNode *node, s32 key, GameListNode **result) {
     return found;
 }
 
-s32 func_1514ED8C() {
-    return 0;
+s32 func_1514ED8C(GameListNode *node, u8 *owner) {
+    s32 object;
+
+    if (node == *(GameListNode **)(owner + 0x2F4)) {
+        *(GameListNode **)(owner + 0x2F4) = node->next;
+    }
+    if (node->next != NULL) {
+        node->next->prev = node->prev;
+    }
+    if (node->prev != NULL) {
+        node->prev->next = node->next;
+    }
+
+    object = node->unk10;
+    func_1516972C(node);
+    return object;
 }
 
 s32 func_1514EDF0() {

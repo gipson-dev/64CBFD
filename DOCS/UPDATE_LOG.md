@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game owner-list unlink byte-exact
+
+- Restored `func_1514ED8C` as an owner-head update, doubly linked-list splice,
+  node release through `func_1516972C`, and saved payload return.
+- Direct repeated link expressions reproduce all 25 retail words, including
+  the branch-likely delay slots, without matching guards.
+- The linked span has SHA-256
+  `020ffa1b0ba6edd6dccd51c81dab466b8783efb6fd5e85ea7be8d6d0b47339be`.
+  Fresh totals are **2,847 / 5,469 (52.06%)** overall and
+  **2,275 / 4,791 (47.48%)** in Game.
+
 ### Game optional-owner callback dispatch byte-exact
 
 - Restored `func_15141250` as an optional owner update, global active-count
