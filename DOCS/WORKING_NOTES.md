@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, cached render-mode wrapper matched).** The current linked
-checkpoint is `2822 / 5469 (51.60%)` exact C functions, with one address-drift
-blocker and 2,646 genuinely different C functions. Init is
+**Active (2026-09-27, integer range clamp matched).** The current linked
+checkpoint is `2823 / 5469 (51.62%)` exact C functions, with one address-drift
+blocker and 2,645 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2250 / 4791 (46.96%)` exact, with 2,541 genuinely different C rows. The tree
+`2251 / 4791 (46.98%)` exact, with 2,540 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -938,7 +938,10 @@ directly from C; see
 The 34-word Game `func_15142FBC` cache-aware render-mode wrapper is exact from
 structured C plus three guarded scheduling words; see
 [Working Note 318](WORKING_NOTES/318-game-cached-render-mode-wrapper-match-20260927.md).
-Continue with 24-word Game `func_15143DA8`, the next ordinary unparked C row in
+The 24-word Game `func_15143DA8` integer range clamp is exact from structured C
+plus nine guarded register-allocation words; see
+[Working Note 319](WORKING_NOTES/319-game-integer-range-clamp-match-20260927.md).
+Continue with 29-word Game `func_151640C0`, the next ordinary unparked C row in
 the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

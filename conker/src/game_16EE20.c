@@ -516,21 +516,28 @@ void func_15143D18(s32 *arg0, s32 *arg1, s32 arg2, s32 arg3) {
         *arg1 = arg3;
     }
 }
-s32 func_15143DA8(s32 *arg0, s32 arg1, s32 arg2) {
-    s32 tmp;
+s32 func_15143DA8(s32 *volatile arg0, s32 arg1, s32 arg2) {
+    s32 *ptr;
+    s32 value;
 
+    ptr = arg0;
     if (arg2 < arg1) {
-        tmp = arg1;
-        arg1 = arg2;
-        arg2 = tmp;
+        s32 tmp;
+        s32 newArg2;
+
+        tmp = arg1 ^ arg2;
+        newArg2 = arg2 ^ tmp;
+        arg2 = newArg2;
+        arg1 = tmp ^ newArg2;
     }
 
-    if (*arg0 < arg1) {
-        *arg0 = arg1;
+    value = *ptr;
+    if (value < arg1) {
+        *ptr = arg1;
         return 1;
     }
 
-    if (arg2 < *arg0) {
+    if (arg2 < value) {
         *arg0 = arg2;
         return 2;
     }

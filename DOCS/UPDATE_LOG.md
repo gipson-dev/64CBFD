@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game integer range clamp byte-exact
+
+- Restored `func_15143DA8` as a typed three-argument range clamp with its
+  volatile pointer home slot, XOR-swap lifetime, cached comparison value, and
+  distinct return codes for the lower and upper clamps.
+- All 24 words / 96 bytes match retail. Structured C restores the complete
+  branch and delay-slot layout; nine guarded words preserve IDO's retail local
+  register allocation.
+- The complete span has SHA-256
+  `48fe80871bb5898a546f9cc24607c2e7623247fd8d33110039c6467297c2425a`.
+  Fresh totals are **2,823 / 5,469 (51.62%)** overall and
+  **2,251 / 4,791 (46.98%)** in Game.
+
 ### Game cached render-mode wrapper byte-exact
 
 - Reshaped `func_15142FBC` around an explicit cache-difference update block and

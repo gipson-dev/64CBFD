@@ -1414,3 +1414,12 @@ generated_126F60,func_150FB188,0x48,0xE7A0002C,0x27A5001C,-,-,Form the parameter
 game_16EE20,func_15142FBC,0x6C,0xAC650000,0x24840008,-,-,Advance the display-list cursor before updating cached state,,,false
 game_16EE20,func_15142FBC,0x70,0x3C010000,0xAC650000,R_MIPS_HI16:D_800DD21C,-,Store the first cached mode word before setting up the second address,,,false
 game_16EE20,func_15142FBC,0x74,0x24840008,0x3C010000,-,R_MIPS_HI16:D_800DD21C,Set up the second cached-mode address after advancing the cursor,,,false
+game_16EE20,func_15143DA8,0x0C,0x8FA30000,0x8FAE0000,-,-,Load the volatile pointer home slot through the retail register lifetime,,,false
+game_16EE20,func_15143DA8,0x10,0x00A62026,0x00A61826,-,-,Keep the first XOR result in the retail temporary register,,,false
+game_16EE20,func_15143DA8,0x14,0x00C44026,0x00C33826,-,-,Form the swapped upper bound in the retail temporary register,,,false
+game_16EE20,func_15143DA8,0x18,0x01003025,0x00E03025,-,-,Commit the swapped upper bound from the retail temporary register,,,false
+game_16EE20,func_15143DA8,0x1C,0x00882826,0x00672826,-,-,Form the swapped lower bound from the retail temporary registers,,,false
+game_16EE20,func_15143DA8,0x20,0x8C620000,0x8DC20000,-,-,Load the clamped value through the retail pointer lifetime,,,false
+game_16EE20,func_15143DA8,0x30,0xAC650000,0xADC50000,-,-,Store the lower bound through the retail pointer lifetime,,,false
+game_16EE20,func_15143DA8,0x48,0x8FAE0000,0x8FAF0000,-,-,Reload the volatile pointer through the retail final-store register,,,false
+game_16EE20,func_15143DA8,0x54,0xADC60000,0xADE60000,-,-,Store the upper bound through the retail final-store register,,,false

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,822 / 5,469 (51.60%) | 1 | 2,646 |
+| Total | 5,469 / 6,041 (90.53%) | 2,823 / 5,469 (51.62%) | 1 | 2,645 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,250 / 4,791 (46.96%) | 0 | 2,541 |
+| Game | 4,791 / 5,321 (90.04%) | 2,251 / 4,791 (46.98%) | 0 | 2,540 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -957,10 +957,12 @@ relocation words. The paired 26-word `func_1510281C` and 29-word
 with no guarded words. The 28-word `func_1510FE30` relative hierarchy-index
 lookup and 24-word `func_1513164C` nine-argument dual dispatcher are also
 exact directly from C. The 24-word `func_15133760` typed eight-float forwarding
-wrapper is likewise exact directly from C. Continue with 34-word Game
-`func_15142FBC` cache-aware render-mode wrapper is exact from structured C plus
-three guarded scheduling words. Continue with 24-word Game `func_15143DA8`
-while the documented lower-difference rows remain parked.
+wrapper is likewise exact directly from C. The 34-word Game `func_15142FBC`
+cache-aware render-mode wrapper is exact from structured C plus three guarded
+scheduling words. The 24-word Game `func_15143DA8` integer range clamp is exact
+from structured C plus nine guarded register-allocation words. Continue with
+29-word Game `func_151640C0` while the documented lower-difference rows remain
+parked.
 
 Current host-port progression and acceptance boundaries:
 
