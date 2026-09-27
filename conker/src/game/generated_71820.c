@@ -24,6 +24,8 @@ void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye,
                    f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
 void func_15047700(f32 mf[4][4], LookAt *l, f32 xEye, f32 yEye, f32 zEye,
                    f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
+void func_1505D1C4(f32 arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4,
+                   u16 arg5, s32 arg6, s32 arg7);
 
 void func_15044370() {
     D_800CBD9C = 0;
@@ -75,7 +77,8 @@ void func_15044CE4(PositionScaleRecord71820 *arg0) {
     func_15044B78(arg0);
 }
 
-s32 func_15044D40() {
+s32 func_15044D40(PositionScaleRecord71820 *arg0) {
+    func_1505D1C4(arg0->x, arg0->y, arg0->z, arg0->scaleX, 0xFF, 0, 0, 0);
     return 0;
 }
 

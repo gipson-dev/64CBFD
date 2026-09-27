@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,806 / 5,469 (51.31%) | 1 | 2,662 |
+| Total | 5,469 / 6,041 (90.53%) | 2,807 / 5,469 (51.33%) | 1 | 2,661 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,234 / 4,791 (46.63%) | 0 | 2,557 |
+| Game | 4,791 / 5,321 (90.04%) | 2,235 / 4,791 (46.65%) | 0 | 2,556 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -939,8 +939,10 @@ unroll that keeps neighboring `func_1000B548` exact. The 23-word Game
 relocation-aware setup swaps. The 24-word Game `func_1503B95C` indexed flag
 predicate is byte-exact directly from C. The 24-word Game `func_1503DA3C`
 bounded record-byte lookup and 24-word `func_1503F904` actor-position query
-wrapper are also exact directly from C. Continue with 24-word Game
-`func_15044D40` while the documented lower-difference rows remain parked.
+wrapper are also exact directly from C. The 24-word `func_15044D40`
+signed-coordinate event wrapper is exact directly from typed C. Continue with
+26-word Game `func_1507488C` while the documented lower-difference rows remain
+parked.
 
 Current host-port progression and acceptance boundaries:
 

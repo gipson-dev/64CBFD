@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game signed-coordinate event wrapper byte-exact
+
+- Replaced the zero placeholder at `func_15044D40` with its typed event-call
+  wrapper. It converts signed coordinates at record offsets `0x6`, `0x8`, and
+  `0xA` to floats, forwards the signed halfword at `0x10`, and calls
+  `func_1505D1C4` with trailing arguments `0xFF, 0, 0, 0` before returning zero.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The existing position/scale record layout plus the callee's eight-argument
+  declaration reproduce the complete FP schedule, stack arguments, call delay
+  slot, and explicit post-call zero result.
+- The complete span has SHA-256
+  `b848b28be2b8e6f198978fdef7b26edb1566def1a2068d1c50f1e59ab72c736a`.
+  Fresh totals are **2,807 / 5,469 (51.33%)** overall and
+  **2,235 / 4,791 (46.65%)** in Game.
+
 ### Game actor-position query wrapper byte-exact
 
 - Replaced the zero placeholder at `func_1503F904` with its typed query

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,806 / 5,469 (51.31%) | 1 | 2,662 |
+| Total | 2,807 / 5,469 (51.33%) | 1 | 2,661 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,234 / 4,791 (46.63%) | 0 | 2,557 |
+| Game | 2,235 / 4,791 (46.65%) | 0 | 2,556 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,806, while
+denominator driven: the exact count is now 2,807, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -707,9 +707,10 @@ end-to-end gameplay acceptance.
    byte-exact directly from C with no guarded words. The 24-word
    `func_1503DA3C` bounded record-byte lookup is also byte-exact directly from
    C with no guarded words. The 24-word `func_1503F904` actor-position query
-   wrapper is byte-exact directly from typed C with no guarded words. Continue
-   with 24-word Game `func_15044D40`; keep the previously documented
-   lower-difference rows parked.
+   wrapper is byte-exact directly from typed C with no guarded words. The
+   24-word `func_15044D40` signed-coordinate event wrapper is also byte-exact
+   directly from typed C with no guarded words. Continue with 26-word Game
+   `func_1507488C`; keep the previously documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
