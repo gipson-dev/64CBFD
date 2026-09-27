@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game linked-record event callback byte-exact
+
+- Replaced the zero-return placeholder at `func_151A0950` with its recovered
+  three-argument callback. Event `0xA` follows the link at object offset
+  `0x98`; a nonnull record is accepted when either its owner word or ID byte
+  matches the supplied descriptor, then `func_1519F48C` is called.
+- All 25 words / 100 bytes match retail directly from C. Explicit link and
+  owner lifetimes produce the retail event-branch delay slot, null
+  branch-likely epilogue, comparison registers, and call relocation without
+  guarded scheduling words.
+- The complete span has SHA-256
+  `33dcd9647ac0531f73903a0cf150dfec1dea4c1f0047fadccf54342cc478efbb`.
+  Fresh totals are **2,798 / 5,469 (51.16%)** overall and
+  **2,227 / 4,791 (46.48%)** in Game.
+
 ### Game timer/phase updater byte-exact
 
 - Replaced the zero-return placeholder at `func_1517F7B4` with the recovered

@@ -99,8 +99,20 @@ void func_151A0928(u8 *arg0) {
     }
 }
 
-s32 func_151A0950() {
-    return 0;
+void func_151A0950(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 **link = *(u8 ***)(arg0 + 0x98);
+    u8 *record;
+    s32 owner;
+
+    if (arg2 == 0xA) {
+        record = *link;
+        if (record != NULL) {
+            owner = *(s32 *)(record + 0x18);
+            if (owner == *(s32 *)arg1 || record[0x1C] == arg1[4]) {
+                func_1519F48C(arg0);
+            }
+        }
+    }
 }
 
 void func_151A09B4(u8 *arg0, u8 *arg1, u8 arg2) {
