@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game two-mode preset wrapper byte-exact
+
+- Recovered `func_151D4D58` as two calls to `func_151D469C` for modes zero and
+  one, each using preset values `0x50`, `0xFF`, and one.
+- All 21 words / 84 bytes match directly from C, including the frame, argument
+  home slot, fifth stack arguments, both call relocations, delay slots, and
+  epilogue. No guarded retail words are needed.
+- The complete span has SHA-256
+  `29e2cc5f82d51a75d33b58200a7c9fdd50236cb5e467c21010ba938403e94a61`.
+  Fresh totals are **2,746 / 5,469 (50.21%)** overall and
+  **2,175 / 4,791 (45.40%)** in Game.
+
 ### Game indexed record forwarder byte-exact
 
 - Recovered `func_151D10E4` as a null-gated forwarder from object offset

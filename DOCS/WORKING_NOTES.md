@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, indexed record forwarder matched).** The current
-linked checkpoint is `2745 / 5469 (50.19%)` exact C functions, with one
-address-drift blocker and 2,723 genuinely different C functions. Game is
-`2174 / 4791 (45.38%)` exact, with 2,617 genuinely different C rows. The tree
+**Active (2026-09-27, two-mode preset wrapper matched).** The current linked
+checkpoint is `2746 / 5469 (50.21%)` exact C functions, with one address-drift
+blocker and 2,722 genuinely different C functions. Game is
+`2175 / 4791 (45.40%)` exact, with 2,616 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -691,8 +691,11 @@ from C with no guarded words; see
 [Working Note 241](WORKING_NOTES/241-game-conditional-record-forwarder-match-20260927.md).
 The 21-word `func_151D10E4` indexed record forwarder is now exact from
 recovered C semantics plus twelve guarded scheduling words, including the
-relocation-aware table-load move. Continue with 21-word `func_151D4D58`; see
+relocation-aware table-load move; see
 [Working Note 242](WORKING_NOTES/242-game-indexed-record-forwarder-match-20260927.md).
+The 21-word `func_151D4D58` two-mode preset wrapper is now exact directly from
+C with no guarded words. Continue with 23-word `func_151E7E9C`; see
+[Working Note 243](WORKING_NOTES/243-game-two-mode-preset-wrapper-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,745 / 5,469 (50.19%) | 1 | 2,723 |
+| Total | 2,746 / 5,469 (50.21%) | 1 | 2,722 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,174 / 4,791 (45.38%) | 0 | 2,617 |
+| Game | 2,175 / 4,791 (45.40%) | 0 | 2,616 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -589,7 +589,8 @@ end-to-end gameplay acceptance.
    indexed record forwarder is byte-exact from recovered C semantics plus
    twelve guarded scheduling words, including relocation-aware movement of
    the `D_800AAF9C` table load.
-   Continue with 21-word `func_151D4D58`;
+   The 21-word `func_151D4D58` two-mode preset wrapper is byte-exact directly
+   from C without guarded words. Continue with 23-word `func_151E7E9C`;
    keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded

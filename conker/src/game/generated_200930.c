@@ -55,8 +55,9 @@ s32 func_151D4D04(u8 *arg0, s32 arg1) {
     return 1;
 }
 
-s32 func_151D4D58() {
-    return 0;
+void func_151D4D58(u8 *arg0) {
+    func_151D469C(arg0, 0, 0x50, 0xFF, 1);
+    func_151D469C(arg0, 1, 0x50, 0xFF, 1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D4DAC.s")
