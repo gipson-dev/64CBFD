@@ -462,6 +462,9 @@ That generated-slice lookup is now reconstructed and byte-exact from typed C;
 its separate current/next lifetimes reproduce all retail delay slots. Continue
 with 20-word `func_15178BE4`. The lookup result is in
 [Working Note 191](WORKING_NOTES/191-game-linked-list-key-lookup-match-20260926.md).
+That node initializer is now byte-exact after restoring its pointer and signed
+halfword formal types. Continue with 20-word `func_15187FC0`; see
+[Working Note 192](WORKING_NOTES/192-game-node-initializer-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

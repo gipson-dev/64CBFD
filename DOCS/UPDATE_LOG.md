@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game node initializer byte-exact
+
+- Replaced the zero-return `func_15178BE4` placeholder with its complete
+  selector lookup and node-field initialization.
+- Correct `u8`, pointer, and `s16` formal types reproduce all 20 retail words
+  directly, including the big-endian signed-halfword stack reload.
+- The complete span shares SHA-256
+  `9c710896056e8c17946409cb801951aba3733dc00c0ed26a65bfb8a36b277773`.
+  Fresh totals are **2,695 / 5,469 (49.28%)** overall and
+  **2,124 / 4,791 (44.33%)** in Game.
+
 ### Game linked-list key lookup byte-exact
 
 - Replaced the zero-return `func_1514ED3C` placeholder with its complete
