@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 569 | 1,931,968 / 2,256,728 (85.61%) |
+| Total | 5,470 / 6,039 (90.58%) | 569 | 1,931,968 / 2,256,728 (85.61%) |
 | Init | 497 / 538 (92.38%) | 41 | 148,600 / 164,048 (90.58%) |
-| Game | 4,791 / 5,318 (90.09%) | 527 | 1,763,728 / 2,072,880 (85.09%) |
+| Game | 4,792 / 5,319 (90.09%) | 527 | 1,763,728 / 2,072,880 (85.09%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,719 / 5,469 (49.72%) | 1 | 2,749 |
+| Total | 2,721 / 5,470 (49.74%) | 1 | 2,748 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,148 / 4,791 (44.83%) | 0 | 2,643 |
+| Game | 2,150 / 4,792 (44.87%) | 0 | 2,642 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,719, while
+denominator driven: the exact count is now 2,721, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -515,8 +515,10 @@ end-to-end gameplay acceptance.
    return contract. The 22-word `func_1515D030` reverse-slot update is now
    exact from a signed decrement and one shared result variable. Keep
    `guMtxIdentF`, `func_1506EF5C`, and `func_1507A4D4` parked at their measured
-   compiler scheduling/register boundaries; continue with 23-word
-   `func_15178750`.
+   compiler scheduling/register boundaries. The 21-word `func_15178750`
+   conditional callback wrapper and the previously hidden two-word
+   `func_151787A4` table callback are now separately inventoried and exact.
+   Continue with 21-word `func_150C522C`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

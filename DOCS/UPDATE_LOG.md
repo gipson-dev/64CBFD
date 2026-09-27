@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game conditional callback and hidden no-op byte-exact
+
+- Recovered `func_15178750` as a typed conditional forwarding wrapper whose
+  fallback result is the incoming object pointer.
+- Identified `0x151787A4` as a separate two-word no-op callback referenced by
+  `D_8008CB64`, added tracked symbol metadata, and split the retail inventory
+  so fresh extraction regenerates both the code label and table relocation.
+- Both functions, 23 words and 92 bytes combined, share SHA-256
+  `f307fce3f160a10be38bf97d7a75d49ddee5383998957b956b7498a21c236cd9`.
+  Fresh totals are **2,721 / 5,470 (49.74%)** overall and
+  **2,150 / 4,792 (44.87%)** in Game.
+
 ### Game reverse-slot update byte-exact
 
 - Replaced `func_1515D030`'s early returns with retail's shared result lifetime

@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, Game reverse-slot update matched).** The current linked
-checkpoint is `2719 / 5469 (49.72%)` exact C functions, with one address-drift
-blocker and 2,749 genuinely different C functions. Game is
-`2148 / 4791 (44.83%)` exact, with 2,643 genuinely different C rows. The tree
+**Active (2026-09-26, Game conditional callback pair matched).** The current
+linked checkpoint is `2721 / 5470 (49.74%)` exact C functions, with one
+address-drift blocker and 2,748 genuinely different C functions. Game is
+`2150 / 4792 (44.87%)` exact, with 2,642 genuinely different C rows. The tree
 contains 569 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -578,6 +578,13 @@ phase with one packed-mask local but retains independent byte-load and OR-tree
 scheduling differences. Keep all three parked and continue with 23-word
 `func_15178750`. The preceding object-index result is in
 [Working Note 215](WORKING_NOTES/215-game-object-index-wrapper-match-20260926.md).
+That conditional callback wrapper is now exact from its typed bit test,
+fallback pointer result, and `func_15168118` call contract. Retail address
+`0x151787A4` is now separately inventoried as a two-word no-op callback after
+its direct reference from `D_8008CB64` proved it was not wrapper padding.
+Tracked symbol metadata makes fresh extraction regenerate both labels and the
+table relocation. Continue with 21-word `func_150C522C`; see
+[Working Note 217](WORKING_NOTES/217-game-conditional-callback-and-hidden-noop-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

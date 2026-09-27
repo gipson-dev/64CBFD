@@ -3,6 +3,7 @@
 /* Non-matching placeholders for the text-only asm slice asm/1A5440.s. */
 
 extern u8 *D_800DCF38;
+extern s32 func_15168118(u8 *arg0);
 
 s32 func_15177F90() {
     return 0;
@@ -12,8 +13,16 @@ s32 func_15178268() {
     return 0;
 }
 
-s32 func_15178750() {
-    return 0;
+s32 func_15178750(u8 *arg0, u8 *arg1, s16 arg2) {
+    u8 *record = *(u8 **)(arg1 + 0x14);
+
+    if (record[0x36] & (1 << arg2)) {
+        return func_15168118(arg0);
+    }
+    return (s32)arg0;
+}
+
+void func_151787A4(void) {
 }
 
 s32 func_151787AC() {
