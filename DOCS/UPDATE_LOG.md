@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game secondary object-eligibility predicate byte-exact
+
+- Replaced the zero placeholder at `func_151028AC` with the secondary form of
+  the object-eligibility predicate, using caller pointer/flag offsets
+  `+0x170/+0x174`.
+- All 29 tracked words / 116 bytes match retail directly from typed C with no
+  guarded words. Its 26 executable words reproduce the selector, nested-owner,
+  branch-likely, and flag-test schedule; generated-slice padding preserves the
+  three trailing layout words.
+- The complete span has SHA-256
+  `46ddfc72dd6c62c3641e2897081b79a165585a68b99e031779e04614fe1b8279`.
+  Fresh totals are **2,818 / 5,469 (51.53%)** overall and
+  **2,246 / 4,791 (46.88%)** in Game.
+
 ### Game object-eligibility predicate byte-exact
 
 - Replaced the zero placeholder at `func_1510281C` with its object-eligibility
