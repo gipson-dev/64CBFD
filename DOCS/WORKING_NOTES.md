@@ -559,6 +559,10 @@ an explicit supplied-record word lifetime, including retail's normalized byte
 flag and branch-likely tag mismatch exit. Continue with 22-word
 `func_151D8D5C`; see
 [Working Note 213](WORKING_NOTES/213-game-optional-record-release-match-20260926.md).
+That two-event release callback is now byte-exact from a typed object/float/byte
+signature and explicit `0x58`/`0x47` branches, including retail's unused float
+home and two separate call sites. Continue with 20-word `func_15083FB0`; see
+[Working Note 214](WORKING_NOTES/214-game-two-event-release-callback-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

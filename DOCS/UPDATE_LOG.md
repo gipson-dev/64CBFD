@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game two-event release callback byte-exact
+
+- Replaced the zero-return `func_151D8D5C` placeholder with its release
+  handling for event bytes `0x58` and `0x47`.
+- The typed object/float/byte callback signature and explicit event branches
+  reproduce the unused float home, normalized event byte, two distinct call
+  sites, and branch-likely exit without a retail-word patch.
+- The complete span shares SHA-256
+  `dbb07e5309308e508f7a463a934b4a9c6499b6129bff1d6e74dbc0b015987aac`.
+  Fresh totals are **2,717 / 5,469 (49.68%)** overall and
+  **2,146 / 4,791 (44.79%)** in Game.
+
 ### Game optional record release byte-exact
 
 - Replaced the zero-return `func_151B8318` placeholder with its optional

@@ -29,8 +29,12 @@ s32 func_151D8BB4(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8C00.s")
 
-s32 func_151D8D5C() {
-    return 0;
+void func_151D8D5C(u8 *arg0, f32 arg1, u8 arg2) {
+    if (arg2 == 0x58) {
+        func_1516972C(arg0);
+    } else if (arg2 == 0x47) {
+        func_1516972C(arg0);
+    }
 }
 
 void func_151D8DB4(s32 arg0, u8 arg1) {
