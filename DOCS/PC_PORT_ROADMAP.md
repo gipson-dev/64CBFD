@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,815 / 5,469 (51.47%) | 1 | 2,653 |
+| Total | 5,469 / 6,041 (90.53%) | 2,816 / 5,469 (51.49%) | 1 | 2,652 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,243 / 4,791 (46.82%) | 0 | 2,548 |
+| Game | 4,791 / 5,321 (90.04%) | 2,244 / 4,791 (46.84%) | 0 | 2,547 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -950,8 +950,10 @@ dispatch loop, 24-word `func_150B58F0` tagged table-value serializer, and
 The 24-word `func_150DF8C0` mapped record-active predicate and 24-word
 `func_150F1CB0` actor-state byte selector are also exact directly from typed C.
 The 24-word `func_150F52B0` script-gated high-flag wrapper is likewise exact
-directly from C. Continue with 24-word Game `func_150FB188` while the documented
-lower-difference rows remain parked.
+directly from C. The 24-word `func_150FB188` actor parameter initializer is
+exact from typed C plus seventeen guarded scheduling, FP-register, and
+relocation words. Continue with 26-word Game `func_1510281C` while the
+documented lower-difference rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 

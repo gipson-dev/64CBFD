@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game actor parameter initializer byte-exact
+
+- Replaced the zero placeholder at `func_150FB188` with its actor-field and
+  five-float stack-parameter initialization before calling `func_15157DEC`.
+  It writes `-95.0f`, `-80.0f`, and zero to actor offsets `+0x54..+0x5C`,
+  then forwards three zeros and two copies of `D_800A1DC0`.
+- All 24 words / 96 bytes match retail. The typed C has retail's exact extent,
+  frame, call, and return sequence; seventeen guarded words normalize the
+  compiler's independent scheduling, FP lifetimes, and moved global relocation
+  pair.
+- The complete span has SHA-256
+  `01144cdde22851e6ac89ae165b93f105ed789a3d297fd0e77e9773a11973a827`.
+  Fresh totals are **2,816 / 5,469 (51.49%)** overall and
+  **2,244 / 4,791 (46.84%)** in Game.
+
 ### Game script-gated high-flag wrapper byte-exact
 
 - Replaced the zero placeholder at `func_150F52B0` with its script-dispatch

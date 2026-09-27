@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,815 / 5,469 (51.47%) | 1 | 2,653 |
+| Total | 2,816 / 5,469 (51.49%) | 1 | 2,652 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,243 / 4,791 (46.82%) | 0 | 2,548 |
+| Game | 2,244 / 4,791 (46.84%) | 0 | 2,547 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,815, while
+denominator driven: the exact count is now 2,816, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -720,8 +720,10 @@ end-to-end gameplay acceptance.
    guarded words. The 24-word `func_150DF8C0` mapped record-active predicate is
    likewise exact directly from typed C. The 24-word `func_150F1CB0` actor-state
    byte selector is also exact directly from C. The 24-word `func_150F52B0`
-   script-gated high-flag wrapper is likewise exact directly from C. Continue
-   with 24-word Game `func_150FB188`; keep the previously documented
+   script-gated high-flag wrapper is likewise exact directly from C. The
+   24-word `func_150FB188` actor parameter initializer is byte-exact from typed
+   C plus seventeen guarded scheduling, FP-register, and relocation words.
+   Continue with 26-word Game `func_1510281C`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

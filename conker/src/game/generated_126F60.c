@@ -1,5 +1,6 @@
 #include <ultra64.h>
 extern u8 *D_800D3098;
+extern f32 D_800A1DC0;
 
 /* Non-matching placeholders for the text-only asm slice asm/126F60.s. */
 
@@ -63,8 +64,29 @@ s32 func_150FAE18() {
     return 0;
 }
 
-s32 func_150FB188() {
-    return 0;
+typedef struct {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+} struct_150FB188_params;
+
+s32 func_15157DEC();
+
+s32 func_150FB188(u8 *arg0) {
+    struct_150FB188_params params;
+
+    *(f32 *) (arg0 + 0x5C) = 0.0f;
+    *(f32 *) (arg0 + 0x54) = -95.0f;
+    *(f32 *) (arg0 + 0x58) = -80.0f;
+    params.unk0 = 0.0f;
+    params.unk4 = 0.0f;
+    params.unk8 = 0.0f;
+    params.unkC = D_800A1DC0;
+    params.unk10 = D_800A1DC0;
+    func_15157DEC(arg0, &params);
+    return 1;
 }
 
 s32 func_151D710C(s32, s32, s32, s32, s32);

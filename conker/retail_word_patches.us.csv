@@ -1394,3 +1394,20 @@ game_981E0,func_1506EE60,0x3C,0x00000000,0x8FBF0014,-,-,Restore the return addre
 game_981E0,func_1506EE60,0x40,0x00000000,0x27BD0018,-,-,Release the retail frame,,,false
 game_981E0,func_1506EE60,0x44,0x00000000,0x03E00008,-,-,Return from the packed-value dispatcher,,,false
 game_981E0,func_1506EE60,0x48,0x00000000,0x00000000,-,-,Preserve the return delay slot,,,false
+generated_126F60,func_150FB188,0x04,0x44801000,0x3C010000,-,R_MIPS_HI16:D_800A1DC0,Schedule the shared scale address before zero materialization,,,false
+generated_126F60,func_150FB188,0x08,0xAFBF0014,0x44800000,-,-,Materialize zero in the retail floating-point lifetime,,,false
+generated_126F60,func_150FB188,0x0C,0x3C01C2BE,0xC4220000,-,R_MIPS_LO16:D_800A1DC0,Load the shared scale through the retail floating-point lifetime,,,false
+generated_126F60,func_150FB188,0x10,0x44812000,0xAFBF0014,-,-,Save the return address after the independent constants,,,false
+generated_126F60,func_150FB188,0x14,0x3C01C2A0,0x3C01C2BE,-,-,Materialize the first actor constant after the frame save,,,false
+generated_126F60,func_150FB188,0x18,0x44813000,0x44812000,-,-,Move the first actor constant into the retail register,,,false
+generated_126F60,func_150FB188,0x1C,0xE482005C,0x3C01C2A0,-,-,Materialize the second actor constant before actor stores,,,false
+generated_126F60,func_150FB188,0x20,0xE4840054,0x44813000,-,-,Move the second actor constant into the retail register,,,false
+generated_126F60,func_150FB188,0x24,0xE4860058,0xE480005C,-,-,Store zero through the retail floating-point lifetime,,,false
+generated_126F60,func_150FB188,0x28,0x3C010000,0xE4840054,R_MIPS_HI16:D_800A1DC0,-,Store the first actor constant before stack parameters,,,false
+generated_126F60,func_150FB188,0x2C,0xC4200000,0xE4860058,R_MIPS_LO16:D_800A1DC0,-,Store the second actor constant before stack parameters,,,false
+generated_126F60,func_150FB188,0x30,0xE7A2001C,0xE7A0001C,-,-,Store the first zero parameter through the retail lifetime,,,false
+generated_126F60,func_150FB188,0x34,0xE7A20020,0xE7A00020,-,-,Store the second zero parameter through the retail lifetime,,,false
+generated_126F60,func_150FB188,0x38,0xE7A20024,0xE7A00024,-,-,Store the third zero parameter through the retail lifetime,,,false
+generated_126F60,func_150FB188,0x3C,0x27A5001C,0xE7A20028,-,-,Store the first scale parameter through the retail lifetime,,,false
+generated_126F60,func_150FB188,0x40,0xE7A00028,0xE7A2002C,-,-,Store the second scale parameter through the retail lifetime,,,false
+generated_126F60,func_150FB188,0x48,0xE7A0002C,0x27A5001C,-,-,Form the parameter pointer in the call delay slot,,,false

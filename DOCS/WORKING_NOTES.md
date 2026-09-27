@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, script-gated high flag matched).** The current linked
-checkpoint is `2815 / 5469 (51.47%)` exact C functions, with one address-drift
-blocker and 2,653 genuinely different C functions. Init is
+**Active (2026-09-27, actor parameter initializer matched).** The current linked
+checkpoint is `2816 / 5469 (51.49%)` exact C functions, with one address-drift
+blocker and 2,652 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2243 / 4791 (46.82%)` exact, with 2,548 genuinely different C rows. The tree
+`2244 / 4791 (46.84%)` exact, with 2,547 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -917,7 +917,10 @@ from C with no guarded words; see
 The 24-word Game `func_150F52B0` script-gated high-flag wrapper is exact directly
 from C with no guarded words; see
 [Working Note 311](WORKING_NOTES/311-game-script-gated-high-flag-match-20260927.md).
-Continue with 24-word Game `func_150FB188`, the next ordinary unparked C row in
+The 24-word Game `func_150FB188` actor parameter initializer is exact from typed
+C plus seventeen guarded scheduling, FP-register, and relocation words; see
+[Working Note 312](WORKING_NOTES/312-game-actor-parameter-initializer-match-20260927.md).
+Continue with 26-word Game `func_1510281C`, the next ordinary unparked C row in
 the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
