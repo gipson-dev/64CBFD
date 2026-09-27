@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, paired object-eligibility predicates matched).** The
-current linked checkpoint is `2818 / 5469 (51.53%)` exact C functions, with
-one address-drift blocker and 2,650 genuinely different C functions. Init is
+**Active (2026-09-27, hierarchy-index lookup matched).** The current linked
+checkpoint is `2819 / 5469 (51.55%)` exact C functions, with one address-drift
+blocker and 2,649 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2246 / 4791 (46.88%)` exact, with 2,545 genuinely different C rows. The tree
+`2247 / 4791 (46.90%)` exact, with 2,544 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -926,7 +926,10 @@ from typed C with no guarded words; see
 The paired 29-word Game `func_151028AC` secondary object-eligibility predicate,
 including three trailing layout words, is also exact directly from typed C; see
 [Working Note 314](WORKING_NOTES/314-game-secondary-object-eligibility-predicate-match-20260927.md).
-Continue with 28-word Game `func_1510FE30`, the next ordinary unparked C row in
+The 28-word Game `func_1510FE30` relative hierarchy-index lookup, including
+three trailing layout words, is exact directly from C; see
+[Working Note 315](WORKING_NOTES/315-game-relative-hierarchy-index-lookup-match-20260927.md).
+Continue with 24-word Game `func_1513164C`, the next ordinary unparked C row in
 the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

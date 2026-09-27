@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game relative hierarchy-index lookup byte-exact
+
+- Replaced the zero placeholder at `func_1510FE30` with its relative-offset
+  hierarchy traversal rooted at `D_800DBE48`. Offset `+0xC` descends without
+  changing the index; offset `+0x4` advances to a sibling and increments it.
+- All 28 tracked words / 112 bytes match retail directly from C with no guarded
+  words. A shared sibling pointer update reproduces the original branch-delay
+  arithmetic, increment, null termination, and three trailing layout words.
+- The complete span has SHA-256
+  `3c50f9175be4aac89031574212071c25c6da4d7a2c0fb0759961dc2ad1761d74`.
+  Fresh totals are **2,819 / 5,469 (51.55%)** overall and
+  **2,247 / 4,791 (46.90%)** in Game.
+
 ### Game secondary object-eligibility predicate byte-exact
 
 - Replaced the zero placeholder at `func_151028AC` with the secondary form of

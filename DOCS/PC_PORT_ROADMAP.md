@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,818 / 5,469 (51.53%) | 1 | 2,650 |
+| Total | 5,469 / 6,041 (90.53%) | 2,819 / 5,469 (51.55%) | 1 | 2,649 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,246 / 4,791 (46.88%) | 0 | 2,545 |
+| Game | 4,791 / 5,321 (90.04%) | 2,247 / 4,791 (46.90%) | 0 | 2,544 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -954,8 +954,9 @@ directly from C. The 24-word `func_150FB188` actor parameter initializer is
 exact from typed C plus seventeen guarded scheduling, FP-register, and
 relocation words. The paired 26-word `func_1510281C` and 29-word
 `func_151028AC` object-eligibility predicates are exact directly from typed C
-with no guarded words. Continue with 28-word Game `func_1510FE30` while the
-documented lower-difference rows remain parked.
+with no guarded words. The 28-word `func_1510FE30` relative hierarchy-index
+lookup is also exact directly from C. Continue with 24-word Game
+`func_1513164C` while the documented lower-difference rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 
