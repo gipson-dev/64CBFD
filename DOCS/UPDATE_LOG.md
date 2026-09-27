@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game bounded callback dispatcher byte-exact
+
+- Recovered `func_151A8A20` as a typed three-entry callback-table dispatcher.
+  Selector bytes `3+` fall back to slot zero, and a non-null callback receives
+  the original object, event pointer, and normalized byte argument.
+- All 22 words / 88 bytes match retail directly from C, with SHA-256
+  `8b82ac8d37d486ce4aa72a79997287dc4fadcd880adc9881cdd64f877cf34a8d`.
+  Fresh totals are **2,740 / 5,469 (50.10%)** overall and
+  **2,169 / 4,791 (45.27%)** in Game.
+
 ### Game list-tail insertion and hidden no-op byte-exact
 
 - Recovered `func_151957B0` as a doubly linked-list tail insertion with the

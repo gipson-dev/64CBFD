@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,739 / 5,469 (50.08%) | 1 | 2,729 |
+| Total | 5,469 / 6,040 (90.55%) | 2,740 / 5,469 (50.10%) | 1 | 2,728 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,168 / 4,791 (45.25%) | 0 | 2,623 |
+| Game | 4,791 / 5,320 (90.06%) | 2,169 / 4,791 (45.27%) | 0 | 2,622 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -740,7 +740,10 @@ from corrected C return type, default lifetime, and switch control flow; see
 The 29-word `func_151957B0` list-tail insertion and newly tracked two-word
 no-op `func_15195824` are now exact directly from C; see
 [Working Note 236](WORKING_NOTES/236-game-list-tail-insert-and-hidden-noop-match-20260927.md).
-Continue with 22-word `func_151A8A20` while the documented smaller rows remain
+The 22-word `func_151A8A20` bounded callback dispatcher is now exact directly
+from C; see
+[Working Note 237](WORKING_NOTES/237-game-bounded-callback-dispatch-match-20260927.md).
+Continue with 20-word `func_151A8F1C` while the documented smaller rows remain
 parked.
 
 Current host-port progression and acceptance boundaries:
