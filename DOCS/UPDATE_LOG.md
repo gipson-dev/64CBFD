@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game conditional record forwarder byte-exact
+
+- Recovered `func_151CF844` as a null-gated forwarding wrapper around
+  `func_15169850`, using the record pointer at object offset `0x98` and its
+  adjacent `+4` field.
+- All 21 words / 84 bytes match directly from C, including the branch-likely
+  return path, fifth stack argument, call relocation, and delay slot. No
+  guarded retail words are needed.
+- The complete span has SHA-256
+  `63e2de29d6ff3c9de2f9df2244a8c564c82f5d4a7a354bfda47b93ce08cf6b4e`.
+  Fresh totals are **2,744 / 5,469 (50.17%)** overall and
+  **2,173 / 4,791 (45.36%)** in Game.
+
 ### Game dual event-record dispatch twin byte-exact
 
 - Recovered `func_151AA210`, the instruction-identical structural twin of

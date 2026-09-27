@@ -119,8 +119,12 @@ s32 func_151CF380() {
     return 0;
 }
 
-s32 func_151CF844() {
-    return 0;
+void func_151CF844(u8 *arg0, s32 arg1, u8 arg2) {
+    u8 *target = *(u8 **) (arg0 + 0x98);
+
+    if (*(s32 *) target != 0) {
+        func_15169850(arg1, arg2, (s32) target, (s32) (target + 4), (s32) arg0);
+    }
 }
 
 s32 func_151CF898() {
