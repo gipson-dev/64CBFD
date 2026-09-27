@@ -19,8 +19,18 @@ void func_150C78E0(u8 *arg0) {
 // Retail materializes and discards temp_v0 + 0x1E0 before the call.
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_F4D20/func_150C7930.s")
 
-s32 func_150C7968() {
-    return 0;
+void func_150C7968(u8 *arg0) {
+    func_15116110(arg0);
+    if (!(*(arg0 + 0x73) & 4)) {
+        u8 *state = D_800DBEF4;
+        u8 *record = *(u8 **)(arg0 + 0x7C);
+        s16 value = *(s16 *)(state + 0x21C);
+
+        state += 0x1E0;
+        if (record != NULL) {
+            *(record + 0x13) = value >> 4;
+        }
+    }
 }
 
 s32 func_150C79BC() {

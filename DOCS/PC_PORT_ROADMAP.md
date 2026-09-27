@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,470 / 6,039 (90.58%) | 2,724 / 5,470 (49.80%) | 1 | 2,745 |
+| Total | 5,470 / 6,039 (90.58%) | 2,725 / 5,470 (49.82%) | 1 | 2,744 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,792 / 5,319 (90.09%) | 2,153 / 4,792 (44.93%) | 0 | 2,639 |
+| Game | 4,792 / 5,319 (90.09%) | 2,154 / 4,792 (44.95%) | 0 | 2,638 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -687,7 +687,10 @@ directly from typed C; see
 Its `+0x70` structural twin `func_150C6870` is also exact directly from typed
 C; see
 [Working Note 220](WORKING_NOTES/220-game-existing-record-wrapper-twin-match-20260926.md).
-Continue with 21-word `func_150C7968`.
+The 21-word `func_150C7968` flag-gated optional-record update is now exact
+through typed C plus five guarded scheduling/relocation entries; see
+[Working Note 221](WORKING_NOTES/221-game-flag-gated-record-update-match-20260926.md).
+Continue with 21-word `func_150EB430`.
 
 Current host-port progression and acceptance boundaries:
 

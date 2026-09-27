@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game flag-gated record update byte-exact
+
+- Replaced the zero-return `func_150C7968` placeholder with its initial
+  `func_15116110` call and flag-gated optional-record byte update.
+- Compact C emits 20 words. Five guarded entries swap the independent global
+  and record loads, move the signed source read before the null test, preserve
+  both global relocations, adjust the outer branch, and insert retail's dead
+  `D_800DBEF4 + 0x1E0` pointer advance.
+- The complete 21-word span shares SHA-256
+  `44bd9f87969d7f78f53c6889bbcefec767a3c726977b9b281e3f9cc353457889`.
+  Fresh totals are **2,725 / 5,470 (49.82%)** overall and
+  **2,154 / 4,792 (44.95%)** in Game.
+
 ### Game existing-record wrapper twin byte-exact
 
 - Replaced the zero-return `func_150C6870` placeholder with the `+0x70`
