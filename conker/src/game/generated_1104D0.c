@@ -1,5 +1,8 @@
 #include <ultra64.h>
 extern f32 D_800BE9A4;
+extern f32 D_800A1054;
+
+void func_151C3B0C(void *, f32, f32, f32, f32, s32, s32, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/1104D0.s. */
 
@@ -53,8 +56,9 @@ s32 func_150E4010() {
     return 0;
 }
 
-s32 func_150E411C() {
-    return 0;
+void func_150E411C(void *arg0) {
+    func_151C3B0C(arg0, 0.352000028f, 0.701000035f, 0.566000044f, D_800A1054,
+                  0xFF, 0xFF, 0xFF);
 }
 
 s32 func_150E4174(u8 *arg0) {

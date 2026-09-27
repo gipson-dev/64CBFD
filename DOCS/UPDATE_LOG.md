@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game parameter preset byte-exact
+
+- Replaced the false zero-return placeholder at `func_150E411C` with its
+  original eight-argument `func_151C3B0C` preset call, forwarding the incoming
+  object, three exact float constants, global `D_800A1054`, and three `0xFF`
+  values.
+- All 22 words / 88 bytes match directly from C, including the global
+  relocation pair, immediate float materialization, stack-argument stores,
+  call delay slot, and epilogue. No guarded retail words are needed.
+- The complete span has SHA-256
+  `7719be748c7a2baa8892764bce224f70933275986384d391a4c0ed4dc0d77167`.
+  Fresh totals are **2,757 / 5,469 (50.41%)** overall and
+  **2,186 / 4,791 (45.63%)** in Game.
+
 ### Game event-bit updater twin byte-exact
 
 - Replaced the false zero-return placeholder at `func_150D1BD0` with the

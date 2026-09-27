@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,756 / 5,469 (50.39%) | 1 | 2,712 |
+| Total | 5,469 / 6,040 (90.55%) | 2,757 / 5,469 (50.41%) | 1 | 2,711 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,185 / 4,791 (45.61%) | 0 | 2,606 |
+| Game | 4,791 / 5,320 (90.06%) | 2,186 / 4,791 (45.63%) | 0 | 2,605 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -792,7 +792,10 @@ event-bit updater, exact directly from C with no guarded words; see
 Its false-placeholder template twin `func_150D1BD0` is also restored as a
 24-word event-bit updater, exact directly from C with no guarded words; see
 [Working Note 253](WORKING_NOTES/253-game-event-bit-updater-twin-match-20260927.md).
-Continue with 22-word `func_150E411C` while the documented lower-difference
+The false zero-return placeholder at `func_150E411C` is restored as a 22-word
+eight-argument parameter preset, exact directly from C with no guarded words;
+see [Working Note 254](WORKING_NOTES/254-game-parameter-preset-match-20260927.md).
+Continue with 24-word `func_150EB030` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:
