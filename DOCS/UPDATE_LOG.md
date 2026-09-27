@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game second float ABI adapter byte-exact
+
+- Replaced the zero-return `func_151B50A4` placeholder with its complete
+  seven-argument adapter into `func_151B50F4`.
+- The typed wrapper shared with `func_151AF338` reproduces the mixed o32
+  hard-float argument homes, local three-float vector, byte extraction, and
+  forwarding sequence without a retail-word patch.
+- The complete span shares SHA-256
+  `480b14e5919e75a4efab526e78c6895aa7d95e3090cd7d1a868dd32d37a20dfe`.
+  Fresh totals are **2,714 / 5,469 (49.63%)** overall and
+  **2,143 / 4,791 (44.73%)** in Game.
+
 ### Game embedded cleanup dispatch byte-exact
 
 - Replaced the zero-return `func_151B4C1C` placeholder with its embedded

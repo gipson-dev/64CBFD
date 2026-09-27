@@ -545,6 +545,10 @@ from typed C, including the retained object pointer, one callback-table load,
 branch-likely null return, and indirect call. Continue with 20-word
 `func_151B50A4`; see
 [Working Note 210](WORKING_NOTES/210-game-embedded-cleanup-dispatch-match-20260926.md).
+The twin float ABI adapter is also byte-exact from the same typed seven-argument
+wrapper shape, with only its callee changed to `func_151B50F4`. Continue with
+21-word `func_151B7678`; see
+[Working Note 211](WORKING_NOTES/211-game-second-float-abi-adapter-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
