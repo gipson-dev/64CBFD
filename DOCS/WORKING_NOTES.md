@@ -481,6 +481,12 @@ That embedded-owner release handler is now byte-exact after restoring its
 event-zero gate and direct short-circuit comparison against the record at
 object offset `0x28`. Continue with 20-word `func_151A8584`; see
 [Working Note 196](WORKING_NOTES/196-game-embedded-owner-release-match-20260926.md).
+The adjacent `func_151A8584`/`func_151A85D4` callback bodies are behaviorally
+recovered but parked because every tested typed/declaration form emits `0x54`
+bytes versus retail's `0x50`, with an eager `arg0` stack home and reload. The
+independent 21-word `func_151B22F4` slot-state predicate is now byte-exact.
+Continue with 23-word `func_151D73A8`; see
+[Working Note 197](WORKING_NOTES/197-game-slot-state-predicate-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

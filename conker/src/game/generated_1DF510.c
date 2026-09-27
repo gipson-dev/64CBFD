@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 D_800CC2D0[];
 void func_151B47D8(u8 *, u8 *, s32, u8);
 
 /* Non-matching placeholders for the text-only asm slice asm/1DF510.s. */
@@ -31,8 +32,15 @@ s32 func_151B22C8(s32 arg0) {
     func_15149368(arg0);
 }
 
-s32 func_151B22F4() {
-    return 0;
+s32 func_151B22F4(u8 *arg0) {
+    s32 temp_v0 = *(s32 *)(arg0 + 0x28);
+    u8 *temp_v1 = *(u8 **)(arg0 + 0x30);
+
+    if ((((temp_v0 - (s32)D_800CC2D0) / 0x32C) + 1 == temp_v1[0x65]) &&
+        (*(s32 *)(temp_v1 + 0x5C) == 1)) {
+        return 1;
+    }
+    return 2;
 }
 
 s32 func_151B2348() {

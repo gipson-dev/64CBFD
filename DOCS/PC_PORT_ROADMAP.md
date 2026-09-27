@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,699 / 5,469 (49.35%) | 1 | 2,769 |
+| Total | 5,469 / 6,038 (90.58%) | 2,700 / 5,469 (49.37%) | 1 | 2,768 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,128 / 4,791 (44.42%) | 0 | 2,663 |
+| Game | 4,791 / 5,318 (90.09%) | 2,129 / 4,791 (44.44%) | 0 | 2,662 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -602,6 +602,12 @@ Continue with 21-word `func_151A4F7C`.
 That embedded-owner release handler is now exact from typed C; see
 [Working Note 196](WORKING_NOTES/196-game-embedded-owner-release-match-20260926.md).
 Continue with 20-word `func_151A8584`.
+The adjacent `func_151A8584`/`func_151A85D4` callback pair is behaviorally
+recovered but parked: current typed C emits `0x54` bytes for each versus
+retail's `0x50` because IDO homes and reloads `arg0` before the indirect call.
+The independent 21-word `func_151B22F4` slot-state predicate is now exact; see
+[Working Note 197](WORKING_NOTES/197-game-slot-state-predicate-match-20260926.md).
+Continue with 23-word `func_151D73A8`.
 
 Current host-port progression and acceptance boundaries:
 

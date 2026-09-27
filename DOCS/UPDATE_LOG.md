@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game slot-state predicate byte-exact
+
+- Replaced the zero-return `func_151B22F4` placeholder with its complete
+  one-based slot-index and owner-state predicate.
+- Signed pointer-distance division by the `0x32C` record stride plus typed
+  field loads reproduce all 21 retail words directly from C.
+- The complete span shares SHA-256
+  `0831d55fc5252d7dd1179e8eb002d59cc94a5f0e0a074103537cee91c689d0d9`.
+  Fresh totals are **2,700 / 5,469 (49.37%)** overall and
+  **2,129 / 4,791 (44.44%)** in Game.
+
 ### Game embedded-owner release handler byte-exact
 
 - Replaced the zero-return `func_151A4F7C` placeholder with its complete
