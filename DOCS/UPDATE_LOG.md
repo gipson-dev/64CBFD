@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game conditional submission wrapper byte-exact
+
+- Replaced the zero-return `func_1502E474` placeholder with its complete
+  conditional indexed-pointer submission and completion-flag update.
+- Correcting `D_800C3E7A` to `u16` and using it directly in the condition and
+  call reproduce retail's `a1` address/value lifetime and all 20 words.
+- The complete span shares SHA-256
+  `57242216c7ecf9676d6561c4c19d0d06ea0b3e217660676bcd1140454ccaf708`.
+  Fresh totals are **2,702 / 5,469 (49.41%)** overall and
+  **2,131 / 4,791 (44.48%)** in Game.
+
 ### Game volatile callback dispatch byte-exact
 
 - Corrected `func_151D73A8` so the callback-table index and entry are both

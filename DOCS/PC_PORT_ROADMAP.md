@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,701 / 5,469 (49.39%) | 1 | 2,767 |
+| Total | 5,469 / 6,038 (90.58%) | 2,702 / 5,469 (49.41%) | 1 | 2,766 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,130 / 4,791 (44.46%) | 0 | 2,661 |
+| Game | 4,791 / 5,318 (90.09%) | 2,131 / 4,791 (44.48%) | 0 | 2,660 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -612,6 +612,9 @@ That callback dispatch is now exact after preserving retail's volatile double
 lookup; see
 [Working Note 198](WORKING_NOTES/198-game-volatile-callback-dispatch-match-20260926.md).
 Continue with 20-word `func_1502E474`.
+That conditional submission wrapper is now exact from C; see
+[Working Note 199](WORKING_NOTES/199-game-conditional-submission-wrapper-match-20260926.md).
+Continue with 33-word `func_150319CC`.
 
 Current host-port progression and acceptance boundaries:
 

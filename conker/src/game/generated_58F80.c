@@ -4,7 +4,8 @@ extern s32 D_800C3E80[];
 extern u8 D_800BE9C0;
 extern s32 D_800C3E88;
 extern s32 D_800C3E8C;
-extern s16 D_800C3E7A;
+extern u16 D_800C3E7A;
+extern u8 D_800C3E90;
 
 /* Non-matching placeholders for the text-only asm slice asm/58F80.s. */
 
@@ -87,8 +88,11 @@ s32 func_1502DF38() {
     return 0;
 }
 
-s32 func_1502E474() {
-    return 0;
+void func_1502E474(void) {
+    if (D_800C3E7A != 0) {
+        func_150A9984(D_800C3E80[D_800BE9C0], D_800C3E7A);
+    }
+    D_800C3E90 = 1;
 }
 
 s32 func_1502E4C4() {

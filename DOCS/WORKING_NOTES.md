@@ -491,6 +491,10 @@ That callback dispatch is now byte-exact after preserving both retail index
 loads and both callback-entry loads with narrow volatile access. Continue with
 20-word `func_1502E474`; see
 [Working Note 198](WORKING_NOTES/198-game-volatile-callback-dispatch-match-20260926.md).
+That conditional submission wrapper is now byte-exact after correcting the
+global count to `u16` and expressing it directly in the condition and call.
+Continue with 33-word `func_150319CC`; see
+[Working Note 199](WORKING_NOTES/199-game-conditional-submission-wrapper-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
