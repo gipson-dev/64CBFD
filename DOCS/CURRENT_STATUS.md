@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,702 / 5,469 (49.41%) | 1 | 2,766 |
+| Total | 2,703 / 5,469 (49.42%) | 1 | 2,765 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,131 / 4,791 (44.48%) | 0 | 2,660 |
+| Game | 2,132 / 4,791 (44.50%) | 0 | 2,659 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,702, while
+denominator driven: the exact count is now 2,703, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -485,8 +485,9 @@ end-to-end gameplay acceptance.
    C. The 23-word `func_151D73A8` callback dispatch is now byte-exact after
    preserving retail's two volatile index and entry reads. Keep
    `func_151A8584`/`func_151A85D4` parked at their measured callback scheduling
-   boundary. The 20-word `func_1502E474` conditional submission wrapper is now
-   byte-exact directly from C. Continue with 33-word `func_150319CC`.
+   boundary. The 20-word `func_1502E474` conditional submission wrapper and
+   33-word `func_150319CC` two-pass list lookup are now byte-exact directly
+   from C. Continue with 17-word `func_150721A4`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

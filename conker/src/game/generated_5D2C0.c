@@ -90,6 +90,7 @@ void func_1503192C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 s32 func_150319CC(s32 arg0, u8 *arg1) {
     u8 *node;
+    u8 *next;
 
     if (arg1 != 0) {
         node = D_800C3EE0;
@@ -97,23 +98,25 @@ s32 func_150319CC(s32 arg0, u8 *arg1) {
             u8 type = arg1[0x3B];
 
             do {
+                next = *(u8 **) (node + 0x54);
                 if (type == node[0]) {
                     if (arg0 == node[6]) {
                         return (s32) node;
                     }
                 }
-                node = *(u8 **) (node + 0x54);
-            } while (node != 0);
+                node = next;
+            } while (next != 0);
         }
     }
     node = D_800C3EE0;
     if (node != 0) {
         do {
+            next = *(u8 **) (node + 0x54);
             if (arg0 == node[6]) {
                 return (s32) node;
             }
-            node = *(u8 **) (node + 0x54);
-        } while (node != 0);
+            node = next;
+        } while (next != 0);
     }
     return 0;
 }

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,702 / 5,469 (49.41%) | 1 | 2,766 |
+| Total | 5,469 / 6,038 (90.58%) | 2,703 / 5,469 (49.42%) | 1 | 2,765 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,131 / 4,791 (44.48%) | 0 | 2,660 |
+| Game | 4,791 / 5,318 (90.09%) | 2,132 / 4,791 (44.50%) | 0 | 2,659 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -615,6 +615,10 @@ Continue with 20-word `func_1502E474`.
 That conditional submission wrapper is now exact from C; see
 [Working Note 199](WORKING_NOTES/199-game-conditional-submission-wrapper-match-20260926.md).
 Continue with 33-word `func_150319CC`.
+That two-pass list lookup is now exact after preserving retail's separate
+current and next-node lifetimes; see
+[Working Note 200](WORKING_NOTES/200-game-two-pass-list-lookup-match-20260926.md).
+Continue with 17-word `func_150721A4`.
 
 Current host-port progression and acceptance boundaries:
 

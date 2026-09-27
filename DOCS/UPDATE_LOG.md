@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game two-pass list lookup byte-exact
+
+- Corrected `func_150319CC` so both searches retain each node's next pointer
+  before testing the current node, matching retail's `v1` current-node and
+  `v0` next-node lifetimes.
+- The complete 33-word span shares SHA-256
+  `f8a247eb9795d103d7ccdfbf5fcf438e8d563b2164901157b401e44b4d611c4c`.
+  Fresh totals are **2,703 / 5,469 (49.42%)** overall and
+  **2,132 / 4,791 (44.50%)** in Game.
+
 ### Game conditional submission wrapper byte-exact
 
 - Replaced the zero-return `func_1502E474` placeholder with its complete
