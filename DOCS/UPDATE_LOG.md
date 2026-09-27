@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game cached-pointer fallback wrapper byte-exact
+
+- Restored `func_1511BDF4` as a cached pointer lookup with a
+  `func_15083E90` fallback, followed by a five-argument `func_1511BB04` call.
+- Separate cached and selected pointer variables reproduce all 26 retail words
+  directly, including the branch merge and fallback-call delay slot.
+- The linked span has SHA-256
+  `02175db4753159757ba782321d1a0c783f5c21a6323fb0b07ad06382f1c552b5`.
+  Fresh totals are **2,844 / 5,469 (52.00%)** overall and
+  **2,272 / 4,791 (47.42%)** in Game.
+
 ### Game paired matrix wrapper byte-exact
 
 - Restored `func_151148A8` as two `func_150A8050` matrix constructions followed

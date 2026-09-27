@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,843 / 5,469 (51.98%) | 1 | 2,625 |
+| Total | 2,844 / 5,469 (52.00%) | 1 | 2,624 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,271 / 4,791 (47.40%) | 0 | 2,520 |
+| Game | 2,272 / 4,791 (47.42%) | 0 | 2,519 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are

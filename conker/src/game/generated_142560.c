@@ -6,6 +6,7 @@ extern s32 D_800BE9E4;
 
 s32 func_151169B4();
 u8 *func_151149AC(u32 arg0);
+u8 *func_15083E90(s32 arg0);
 
 f32 func_151172D8(u8 *arg0, f32 arg1);
 f32 func_15117518(u8 *arg0, f32 arg1);
@@ -275,12 +276,24 @@ s32 func_1511BA24() {
     return 0;
 }
 
-s32 func_1511BB04() {
+s32 func_1511BB04(u8 *arg0, s32 arg1, s32 arg2, f32 arg3, f32 arg4) {
     return 0;
 }
 
-s32 func_1511BDF4() {
-    return 0;
+void func_1511BDF4(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **)(arg0 + 0x80);
+    u8 *temp_v1;
+
+    if (temp_v0 != NULL) {
+        temp_v1 = temp_v0;
+    } else {
+        temp_v1 = func_15083E90(*(u8 *)(arg0 + 0x3F));
+    }
+
+    if (temp_v1 != NULL) {
+        func_1511BB04(arg0, *(s32 *)(temp_v1 + 0x14),
+                      *(s32 *)(temp_v1 + 0x1C), 1.0f, 1.0f);
+    }
 }
 
 s32 func_1511BE5C() {
