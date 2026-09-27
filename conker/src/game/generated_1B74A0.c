@@ -34,6 +34,20 @@ s32 func_1518A324(u8 *arg0, u8 *arg1) {
     return 1;
 }
 
-s32 func_1518A360() {
-    return 0;
+// Matched with guarded commutative branch operand normalization.
+void func_1518A360(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *temp_v0 = arg0 + 0x170;
+
+    if (arg2 == 0x2D) {
+        s32 temp_v1 = *(s32 *)arg1;
+        s32 temp_a2 = *(s32 *)(temp_v0 + 0x18);
+
+        if (temp_v1 == temp_a2) {
+            *(s32 *)(temp_v0 + 0x18) = *(s32 *)(arg1 + 4);
+            temp_v0[0x1D] = arg1[9];
+        } else if (*(s32 *)(arg1 + 4) == temp_a2) {
+            *(s32 *)(temp_v0 + 0x18) = temp_v1;
+            temp_v0[0x1D] = arg1[8];
+        }
+    }
 }

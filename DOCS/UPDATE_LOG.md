@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game paired endpoint update byte-exact
+
+- Replaced the false zero-return placeholder at `func_1518A360` with its
+  original marker-`0x2D` paired endpoint update.
+- All 24 words / 96 bytes match. The recovered C swaps either matching source
+  endpoint into object word `0x188` and carries source byte 8 or 9 into object
+  byte `0x18D`; one guarded word selects retail's equivalent operand order for
+  the second equality branch.
+- The complete span has SHA-256
+  `c49fa92800abfcf75e48c6d36597feb3d3c75ae58cb91fb76bb2d503beebd0ed`.
+  Fresh totals are **2,776 / 5,469 (50.76%)** overall and
+  **2,205 / 4,791 (46.02%)** in Game.
+
 ### Game enabled player-state initializer byte-exact
 
 - Replaced the false zero-return placeholder at `func_15181D70` with its
