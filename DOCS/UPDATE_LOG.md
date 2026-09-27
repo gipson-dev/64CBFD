@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game stack-record forwarder byte-exact
+
+- Replaced the false zero-return placeholder at `func_150AF738` with the
+  original behavior: build a seven-byte stack record containing
+  `{1, -1, 2, arg0, 0}` and forward it with byte `arg1` and `arg2` to
+  `func_1515FF74`.
+- All 22 words / 88 bytes match from typed C plus fifteen guarded scheduling
+  words. The guards only restore retail's rotation of independent argument,
+  prologue, constant-load, and record-store instructions; the call, call
+  relocation, delay slot, frame, and epilogue are emitted unguarded.
+- The complete span has SHA-256
+  `d2d5a6e1f37e723929f923d806d0242d7c073643f4b11c05f093a484cb5c6a7f`.
+  Fresh totals are **2,754 / 5,469 (50.36%)** overall and
+  **2,183 / 4,791 (45.56%)** in Game.
+
 ### Game fixed-point/float record value byte-exact
 
 - Recovered `func_15088218` as a nullable indexed-record reader that combines

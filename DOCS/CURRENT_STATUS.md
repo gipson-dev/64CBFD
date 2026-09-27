@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,753 / 5,469 (50.34%) | 1 | 2,715 |
+| Total | 2,754 / 5,469 (50.36%) | 1 | 2,714 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,182 / 4,791 (45.54%) | 0 | 2,609 |
+| Game | 2,183 / 4,791 (45.56%) | 0 | 2,608 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -598,9 +598,11 @@ end-to-end gameplay acceptance.
    byte-exact directly from C. The 22-word `func_15044DE8` guarded mode-4
    dispatcher is also byte-exact directly from C. The 22-word
    `func_15088218` fixed-point/float record value is byte-exact from recovered
-   C semantics plus nine guarded scheduling words. Continue with 22-word
-   `func_150AF738`; keep the previously documented lower-difference rows
-   parked.
+   C semantics plus nine guarded scheduling words. The false zero-return
+   placeholder at `func_150AF738` is now a byte-exact stack-record forwarder
+   from recovered C semantics plus fifteen guarded scheduling words. Continue
+   with 24-word `func_150BB700`; keep the previously documented
+   lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

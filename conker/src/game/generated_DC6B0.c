@@ -5,6 +5,16 @@ void func_151CF898(s32, f32, f32);
 
 s32 func_15131828();
 s32 func_15131958();
+s32 func_1515FF74();
+
+typedef struct {
+    s8 unk0;
+    s8 unk1;
+    s8 unk2;
+    u8 pad3;
+    s16 unk4;
+    s8 unk6;
+} UnkAF738;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_DC6B0/func_150AF200.s")
 
@@ -27,8 +37,15 @@ s32 func_150AF6E4(u8 *arg0, s32 arg1) {
     return 1;
 }
 
-s32 func_150AF738() {
-    return 0;
+void func_150AF738(s16 arg0, u8 arg1, s32 arg2) {
+    UnkAF738 sp18;
+
+    sp18.unk0 = 1;
+    sp18.unk1 = -1;
+    sp18.unk2 = 2;
+    sp18.unk4 = arg0;
+    sp18.unk6 = 0;
+    func_1515FF74(&sp18, 0, arg1, arg2);
 }
 
 void func_150AF790(u8 arg0, u8 *arg1) {
