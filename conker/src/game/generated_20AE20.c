@@ -329,8 +329,16 @@ s32 func_151E7DC0() {
     return 0;
 }
 
-s32 func_151E7E9C() {
-    return 0;
+void func_151E7E9C(void) {
+    if (D_800E0BE9 == 2) {
+        func_10017870(1);
+        return;
+    }
+    if (D_800E0BE9 == 0) {
+        func_10017870(2);
+        return;
+    }
+    func_10017870(4);
 }
 
 s32 func_151E7EF8() {

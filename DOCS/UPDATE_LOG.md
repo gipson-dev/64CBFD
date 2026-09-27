@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game three-way state dispatcher byte-exact
+
+- Recovered `func_151E7E9C` as a dispatcher from signed state byte
+  `D_800E0BE9`: state two calls `func_10017870(1)`, state zero calls it with
+  two, and every other state calls it with four.
+- All 23 words / 92 bytes match directly from C, including both global
+  relocations, three call relocations, branch delays, early epilogues, and the
+  shared return. No guarded retail words are needed.
+- The complete span has SHA-256
+  `9e1f4c78ce7ec52e9380fa7c74c7e84150751076fb47ad086646a1af136cbe05`.
+  Fresh totals are **2,747 / 5,469 (50.23%)** overall and
+  **2,176 / 4,791 (45.42%)** in Game.
+
 ### Game two-mode preset wrapper byte-exact
 
 - Recovered `func_151D4D58` as two calls to `func_151D469C` for modes zero and

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,746 / 5,469 (50.21%) | 1 | 2,722 |
+| Total | 5,469 / 6,040 (90.55%) | 2,747 / 5,469 (50.23%) | 1 | 2,721 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,175 / 4,791 (45.40%) | 0 | 2,616 |
+| Game | 4,791 / 5,320 (90.06%) | 2,176 / 4,791 (45.42%) | 0 | 2,615 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -761,7 +761,10 @@ C semantics plus twelve guarded scheduling words; see
 The 21-word `func_151D4D58` two-mode preset wrapper is exact directly from C
 with no guarded words; see
 [Working Note 243](WORKING_NOTES/243-game-two-mode-preset-wrapper-match-20260927.md).
-Continue with 23-word `func_151E7E9C` while the documented smaller rows remain
+The 23-word `func_151E7E9C` three-way state dispatcher is exact directly from
+C with no guarded words; see
+[Working Note 244](WORKING_NOTES/244-game-three-way-state-dispatcher-match-20260927.md).
+Continue with 22-word `func_15022190` while the documented smaller rows remain
 parked.
 
 Current host-port progression and acceptance boundaries:
