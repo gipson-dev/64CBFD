@@ -8,6 +8,7 @@ s32 func_151D5E30();
 void func_151432BC(void *, f32 *, f32 *, f32 *, f32 *);
 
 extern void (*D_8008F964[])(u8 *, s32, u8);
+extern s32 (*D_8008F984[])(u8 *, s32);
 
 s32 func_151A7950() {
     return 0;
@@ -85,8 +86,20 @@ void func_151A9024(u8 *arg0, s32 arg1, u8 arg2) {
     }
 }
 
-s32 func_151A9060() {
-    return 0;
+s32 func_151A9060(u8 *arg0) {
+    s32 index;
+    s32 (*callback)(u8 *, s32);
+
+    arg0[0x16] |= 4;
+    index = *(s32 *)(arg0 + 0x18);
+    if (index < 0 || index >= 8) {
+        return 1;
+    }
+    callback = D_8008F984[index];
+    if (callback != NULL) {
+        callback(arg0, index);
+    }
+    return 1;
 }
 
 s32 func_151A90C0() {

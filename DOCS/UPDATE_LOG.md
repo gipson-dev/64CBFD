@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game indexed callback dispatcher byte-exact
+
+- Replaced the zero-return placeholder at `func_151A9060` with its recovered
+  object callback dispatcher. It sets object flag bit `0x04`, validates the
+  signed index at offset `0x18` against the eight-entry table, and calls a
+  nonnull table entry with the object and validated index.
+- All 24 words / 96 bytes match retail directly from C. Restoring the callback
+  as a two-argument function keeps the index live in `a1` and selects `v0` for
+  the callback pointer, reproducing retail without guarded scheduling words.
+- The complete span has SHA-256
+  `f1dcb7d5d51145eba852cfa5ddc264f455e842703946e1ae431d42affd7d0c64`.
+  Fresh totals are **2,799 / 5,469 (51.18%)** overall and
+  **2,228 / 4,791 (46.50%)** in Game.
+
 ### Game linked-record event callback byte-exact
 
 - Replaced the zero-return placeholder at `func_151A0950` with its recovered

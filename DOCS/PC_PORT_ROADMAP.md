@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,798 / 5,469 (51.16%) | 1 | 2,670 |
+| Total | 5,469 / 6,041 (90.53%) | 2,799 / 5,469 (51.18%) | 1 | 2,669 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,321 (90.04%) | 2,227 / 4,791 (46.48%) | 0 | 2,564 |
+| Game | 4,791 / 5,321 (90.04%) | 2,228 / 4,791 (46.50%) | 0 | 2,563 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -922,7 +922,11 @@ five guarded timer-base register words; see
 The 25-word `func_151A0950` linked-record event callback is exact directly from
 C with no guarded words; see
 [Working Note 294](WORKING_NOTES/294-game-linked-record-event-callback-match-20260927.md).
-Continue with 24-word `func_151A9060` while the documented lower-difference
+The 24-word `func_151A9060` indexed callback dispatcher is exact directly from
+C with no guarded words after restoring the callback's object-and-index ABI;
+see
+[Working Note 295](WORKING_NOTES/295-game-indexed-callback-dispatch-match-20260927.md).
+Continue with 23-word `func_151C2E94` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

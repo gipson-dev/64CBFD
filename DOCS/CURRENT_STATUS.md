@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,798 / 5,469 (51.16%) | 1 | 2,670 |
+| Total | 2,799 / 5,469 (51.18%) | 1 | 2,669 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,227 / 4,791 (46.48%) | 0 | 2,564 |
+| Game | 2,228 / 4,791 (46.50%) | 0 | 2,563 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,798, while
+denominator driven: the exact count is now 2,799, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -692,8 +692,10 @@ end-to-end gameplay acceptance.
    typed C with no guarded words. The 24-word `func_1517F7B4` timer/phase
    updater is byte-exact from recovered C plus five guarded timer-base register
    words. The 25-word `func_151A0950` linked-record event callback is byte-exact
-   directly from C with no guarded words. Continue with 24-word
-   `func_151A9060`; keep the previously documented lower-difference rows parked.
+   directly from C with no guarded words. The 24-word `func_151A9060` indexed
+   callback dispatcher is also byte-exact directly from C after recovering its
+   two-argument callback ABI. Continue with 23-word `func_151C2E94`; keep the
+   previously documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
