@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,695 / 5,469 (49.28%) | 1 | 2,773 |
+| Total | 2,696 / 5,469 (49.30%) | 1 | 2,772 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,124 / 4,791 (44.33%) | 0 | 2,667 |
+| Game | 2,125 / 4,791 (44.35%) | 0 | 2,666 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,695, while
+denominator driven: the exact count is now 2,696, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -474,7 +474,9 @@ end-to-end gameplay acceptance.
    reconstructed and byte-exact directly from typed C after retaining separate
    current/next pointer lifetimes and declaration order. Continue with
    20-word `func_15178BE4`. That node initializer is now reconstructed and
-   byte-exact directly from typed C. Continue with 20-word `func_15187FC0`.
+   byte-exact directly from typed C. The following 20-word `func_15187FC0`
+   indexed color extractor is also reconstructed and byte-exact directly from
+   typed C. Continue with 21-word `func_15190400`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

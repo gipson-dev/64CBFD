@@ -465,6 +465,10 @@ with 20-word `func_15178BE4`. The lookup result is in
 That node initializer is now byte-exact after restoring its pointer and signed
 halfword formal types. Continue with 20-word `func_15187FC0`; see
 [Working Note 192](WORKING_NOTES/192-game-node-initializer-match-20260926.md).
+That indexed color extractor is now byte-exact after restoring its nested
+bounds checks, 36-byte record indexing, and three byte-to-word output stores.
+Continue with 21-word `func_15190400`; see
+[Working Note 193](WORKING_NOTES/193-game-indexed-color-extractor-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

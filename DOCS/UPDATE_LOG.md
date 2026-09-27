@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game indexed color extractor byte-exact
+
+- Replaced the zero-return `func_15187FC0` placeholder with its complete
+  bounds-checked extraction of three record bytes into three 32-bit outputs.
+- Nested bounds checks and `arg0 * 36` indexing reproduce all 20 retail words
+  directly from typed C, without guarded words or compiler-steering code.
+- The complete span shares SHA-256
+  `24ab31b6bdb61df664e09424955ba7447d6ef120f39a5300999b79db4b371b1a`.
+  Fresh totals are **2,696 / 5,469 (49.30%)** overall and
+  **2,125 / 4,791 (44.35%)** in Game.
+
 ### Game node initializer byte-exact
 
 - Replaced the zero-return `func_15178BE4` placeholder with its complete

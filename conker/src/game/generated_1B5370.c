@@ -15,8 +15,17 @@ s32 func_15187F90(void) {
     D_800DF7B4 = 0;
 }
 
-s32 func_15187FC0() {
-    return 0;
+void func_15187FC0(s32 arg0, s32 *arg1) {
+    u8 *temp_v0;
+
+    if (arg0 < D_800DF7B4) {
+        if (arg0 >= 0) {
+            temp_v0 = &D_800DF700[arg0 * 36];
+            arg1[0] = temp_v0[6];
+            arg1[1] = temp_v0[7];
+            arg1[2] = temp_v0[8];
+        }
+    }
 }
 
 void func_15188010(s32 arg0, f32 *arg1) {
