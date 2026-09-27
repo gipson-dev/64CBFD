@@ -39,7 +39,7 @@ s32 func_1517EFDC() {
     return 0;
 }
 
-s32 func_1517F08C() {
+s32 func_1517F08C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
     return 0;
 }
 
@@ -176,6 +176,11 @@ void func_15182748(u8 *arg0) {
     *(u8 *)(arg0 + 0x2B) = *(s16 *)(arg0 + 0xE) * *(s16 *)(arg0 + 0x2E);
 }
 
-s32 func_15182768() {
-    return 0;
+s32 func_15182768(s32 arg0, u8 *arg1, s16 arg2) {
+    u8 *values = arg1 + 0x28;
+
+    if (arg2 == arg1[0x2C]) {
+        arg0 = func_1517F08C(arg0, values[3], values[0], values[1], values[2], values[4]);
+    }
+    return arg0;
 }

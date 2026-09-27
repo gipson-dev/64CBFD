@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game conditional byte remap byte-exact
+
+- Restored `func_15182768` as a signed-selector test followed by a six-argument
+  `func_1517F08C` remap using bytes from the record at offset `0x28`.
+- Updating the first argument in place reproduces all 26 retail words directly,
+  including the branch-likely return and final register moves.
+- The linked span has SHA-256
+  `c37eb6ea3bc8d3f98df5b7f4ac3bccdd1305c56f1d5f1d5ee28761720e157638`.
+  Fresh totals are **2,849 / 5,469 (52.09%)** overall and
+  **2,277 / 4,791 (47.53%)** in Game.
+
 ### Game packed node update byte-exact
 
 - Restored `func_15178C34` as a byte-ID lookup followed by two packed word
