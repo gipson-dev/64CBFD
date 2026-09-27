@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game null-gated event-byte copy byte-exact
+
+- Recovered `func_15023870` as the `(0xB, 2)` event handler that resolves an
+  object from the fourth argument and, when non-null, copies its byte `0x3B`
+  into byte `0x2A` of the indexed `D_800C35F0` record.
+- All 24 words / 96 bytes match directly from C, including the event filters,
+  resolver call, null gate, indexed pointer lookup, two branch-delay
+  epilogues, and two trailing alignment words. No guards are needed.
+- The complete span has SHA-256
+  `31b6a4a8e8d8ca077e34240978a92a22b54ac3effa545273e03e30b0386abf36`.
+  Fresh totals are **2,749 / 5,469 (50.27%)** overall and
+  **2,178 / 4,791 (45.46%)** in Game.
+
 ### Game flagged coordinate setter byte-exact
 
 - Recovered `func_15022190` as the flagged twin of `func_150221E8`: it stores

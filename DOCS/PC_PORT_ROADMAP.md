@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,748 / 5,469 (50.25%) | 1 | 2,720 |
+| Total | 5,469 / 6,040 (90.55%) | 2,749 / 5,469 (50.27%) | 1 | 2,719 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,177 / 4,791 (45.44%) | 0 | 2,614 |
+| Game | 4,791 / 5,320 (90.06%) | 2,178 / 4,791 (45.46%) | 0 | 2,613 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -767,7 +767,10 @@ C with no guarded words; see
 The 22-word `func_15022190` flagged coordinate setter is exact directly from C
 with no guarded words; see
 [Working Note 245](WORKING_NOTES/245-game-flagged-coordinate-setter-match-20260927.md).
-Continue with 24-word `func_15023870` while the documented smaller rows remain
+The 24-word `func_15023870` null-gated event-byte copy is exact directly from C
+with no guarded words; see
+[Working Note 246](WORKING_NOTES/246-game-null-gated-event-byte-copy-match-20260927.md).
+Continue with 32-word `func_15033328` while the documented smaller rows remain
 parked.
 
 Current host-port progression and acceptance boundaries:
