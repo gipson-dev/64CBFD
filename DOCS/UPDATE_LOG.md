@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game state-toggle event callback byte-exact
+
+- Replaced the zero-return placeholder at `func_1514F130` with its recovered
+  three-argument event callback. Event `0xD` clears the nested state byte at
+  offset 9, event `0xE` sets it, and other events return the result of
+  `func_1514E89C`.
+- All 25 words / 100 bytes match retail directly from typed C. IDO naturally
+  emits the retail branch-likely load, store delay slots, default call, and
+  duplicated return-address loads; no guarded scheduling words are used.
+- The complete span has SHA-256
+  `63ea08e9138c95d21ba223d62a809f68cadb1a9455a21ae59f7a0b6841fef142`.
+  Fresh totals are **2,796 / 5,469 (51.12%)** overall and
+  **2,225 / 4,791 (46.44%)** in Game.
+
 ### Game object-request wrapper byte-exact
 
 - Replaced the zero-return placeholder at `func_1514EE70` with the recovered

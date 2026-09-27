@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,795 / 5,469 (51.11%) | 1 | 2,673 |
+| Total | 5,469 / 6,041 (90.53%) | 2,796 / 5,469 (51.12%) | 1 | 2,672 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,321 (90.04%) | 2,224 / 4,791 (46.42%) | 0 | 2,567 |
+| Game | 4,791 / 5,321 (90.04%) | 2,225 / 4,791 (46.44%) | 0 | 2,566 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -913,7 +913,10 @@ The 23-word `func_1514EE70` object-request wrapper is exact directly from C,
 including its typed eight-byte request and both compiler-produced call
 relocations; see
 [Working Note 291](WORKING_NOTES/291-game-object-request-wrapper-match-20260927.md).
-Continue with 25-word `func_1514F130` while the documented lower-difference
+The 25-word `func_1514F130` state-toggle event callback is exact directly from
+typed C with no guarded words; see
+[Working Note 292](WORKING_NOTES/292-game-state-toggle-event-callback-match-20260927.md).
+Continue with 24-word `func_1517F7B4` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

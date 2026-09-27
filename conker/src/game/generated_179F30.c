@@ -34,6 +34,16 @@ typedef struct GameListNode {
     s16 unk1C;
 } GameListNode;
 
+typedef struct {
+    u8 pad0[9];
+    u8 enabled;
+} GameObjectState;
+
+typedef struct {
+    u8 pad0[0x14];
+    GameObjectState *state;
+} GameObjectWithState;
+
 s32 func_1514CA80() {
     return 0;
 }
@@ -356,8 +366,19 @@ void func_1514F110(u8 *arg0) {
     func_1514F194(arg0);
 }
 
-s32 func_1514F130() {
-    return 0;
+s32 func_1514F130(GameObjectWithState *arg0, s32 arg1, s32 arg2) {
+    switch (arg1) {
+        case 0xD:
+            arg0->state->enabled = 0;
+            break;
+        case 0xE:
+            arg0->state->enabled = 1;
+            break;
+        default:
+            return func_1514E89C(arg0, arg1, arg2);
+    }
+
+    return 1;
 }
 
 s32 func_1514F194() {
