@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game effect callback adapter byte-exact
+
+- Replaced the false zero-return placeholder at `func_15159BB0` with its
+  original seven-slot callback adapter.
+- All 22 words / 88 bytes match directly from C. The routine builds a position
+  vector from its first three float arguments, supplies a zero velocity, and
+  forwards bytes `0x0C` and `0x01` from the effect record to `func_15159890`.
+  No guarded retail words are needed.
+- The complete span has SHA-256
+  `4ca84258ab41695df242af9177bdc89d911377839c1cc187058020c2c4d30d88`.
+  Fresh totals are **2,770 / 5,469 (50.65%)** overall and
+  **2,199 / 4,791 (45.90%)** in Game.
+
 ### Game signed-key list search byte-exact
 
 - Replaced the false zero-return placeholder at `func_1514ECE0` with its

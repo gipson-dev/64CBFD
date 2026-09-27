@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,769 / 5,469 (50.63%) | 1 | 2,699 |
+| Total | 2,770 / 5,469 (50.65%) | 1 | 2,698 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,198 / 4,791 (45.88%) | 0 | 2,593 |
+| Game | 2,199 / 4,791 (45.90%) | 0 | 2,592 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -625,7 +625,9 @@ end-to-end gameplay acceptance.
    damping threshold is byte-exact directly from C without guarded words.
    The 23-word `func_1514ECE0` signed-key list search is byte-exact directly
    from C as the halfword-key twin of `func_1514ED3C`, without guarded words.
-   Continue with 22-word `func_15159BB0`; keep the previously documented
+   The 22-word `func_15159BB0` effect callback adapter is byte-exact directly
+   from C with a position vector, zero velocity, and typed effect record.
+   Continue with 22-word `func_15172C50`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

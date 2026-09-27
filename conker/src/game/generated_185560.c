@@ -131,8 +131,18 @@ s32 func_15159890() {
     return 0;
 }
 
-s32 func_15159BB0() {
-    return 0;
+s32 func_15159BB0(f32 arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4, s32 arg5, u8 *arg6) {
+    f32 position[3];
+    f32 velocity[3];
+
+    position[0] = arg0;
+    position[1] = arg1;
+    position[2] = arg2;
+    velocity[0] = 0.0f;
+    velocity[1] = 0.0f;
+    velocity[2] = 0.0f;
+
+    return func_15159890(position, velocity, arg6[0xC], arg6[1]);
 }
 
 s32 func_15159C08() {
