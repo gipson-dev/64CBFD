@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game paired-record updater twin byte-exact
+
+- Replaced the false zero-return placeholder at `func_1510A8CC` with the same
+  paired-record update behavior as adjacent `func_1510A870`.
+- Its complete 25-word / 100-byte tracked layout matches from recovered C
+  semantics plus one guarded commutative-branch operand word. The function has
+  23 executable words followed by two retail layout-padding words.
+- The complete span has SHA-256
+  `f637c9f80def4be39e6e23fbc94349b62bb30814b7e22c6ffc593287695455ef`.
+  Fresh totals are **2,764 / 5,469 (50.54%)** overall and
+  **2,193 / 4,791 (45.77%)** in Game.
+
 ### Game paired-record updater byte-exact
 
 - Replaced the false zero-return placeholder at `func_1510A870` with its

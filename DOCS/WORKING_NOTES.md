@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, paired-record updater matched).** The current linked
-checkpoint is `2763 / 5469 (50.52%)` exact C functions, with one address-drift
-blocker and 2,705 genuinely different C functions. Game is
-`2192 / 4791 (45.75%)` exact, with 2,599 genuinely different C rows. The tree
+**Active (2026-09-27, paired-record updater twin matched).** The current linked
+checkpoint is `2764 / 5469 (50.54%)` exact C functions, with one address-drift
+blocker and 2,704 genuinely different C functions. Game is
+`2193 / 4791 (45.77%)` exact, with 2,598 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -750,7 +750,10 @@ The false zero-return placeholder at `func_1510A870` is now a byte-exact
 23-word paired-record updater from recovered C semantics plus one guarded
 commutative-branch operand word; see
 [Working Note 260](WORKING_NOTES/260-game-paired-record-update-match-20260927.md).
-Continue with 25-word `func_1510A8CC`, the next unparked Game C row in the
+Its false-placeholder twin `func_1510A8CC` is also byte-exact across its
+25-word tracked layout from the same recovered C and guard; see
+[Working Note 261](WORKING_NOTES/261-game-paired-record-update-twin-match-20260927.md).
+Continue with 22-word `func_1512D6F0`, the next unparked Game C row in the
 fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

@@ -1,5 +1,6 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
 generated_1368C0,func_1510A870,0x40,0x14D90004,0x17260004,-,-,Select retail operand order for the second record equality branch,,,false
+generated_1368C0,func_1510A8CC,0x40,0x14D90004,0x17260004,-,-,Select retail operand order for the second record equality branch,,,false
 generated_18A8F0,func_1515F0AC,0x08,0x3C01C700,0x460C003E,-,-,Schedule the upper-bound compare before materializing the lower clamp,,,false
 generated_18A8F0,func_1515F0AC,0x0C,0x460C003E,0x3C01C700,-,-,Fill the FP comparison slot with the independent lower-clamp load,,,false
 generated_18A8F0,func_1515F0AC,0x10,0x00000000,0x00000000,-,-,Omit the compiler hazard nop after filling the comparison slot,,,true

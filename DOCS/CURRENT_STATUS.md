@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,763 / 5,469 (50.52%) | 1 | 2,705 |
+| Total | 2,764 / 5,469 (50.54%) | 1 | 2,704 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,192 / 4,791 (45.75%) | 0 | 2,599 |
+| Game | 2,193 / 4,791 (45.77%) | 0 | 2,598 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -613,8 +613,10 @@ end-to-end gameplay acceptance.
    `func_151076A4` volatile callback-table dispatcher are also byte-exact
    directly from C. The 23-word `func_1510A870` paired-record updater is
    byte-exact from recovered C semantics plus one guarded commutative-branch
-   operand word. Continue with 25-word `func_1510A8CC`; keep the previously
-   documented lower-difference rows parked.
+   operand word. Its 25-word tracked-layout twin `func_1510A8CC` is also
+   byte-exact from the same recovered C and guard; 23 words are executable and
+   two are trailing layout padding. Continue with 22-word `func_1512D6F0`;
+   keep the previously documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
