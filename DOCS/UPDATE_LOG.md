@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game seven-argument forwarding wrapper byte-exact
+
+- Restored `func_150FFCC8` as a five-argument wrapper that appends the global
+  word in `D_8008FC8C` and byte addressed by `D_8008FC94` to its first call,
+  then forwards a repeated pointer and mode `0x8003A` to its second call.
+- The typed source reproduces all 25 retail words directly, including the
+  caller-stack fifth argument and both call delay slots; no guards are needed.
+- The linked span has SHA-256
+  `5d1665206f529f78d841815deae9bea9fb5eb553f80dee8c15d26e5acc284415`.
+  Fresh totals are **2,840 / 5,469 (51.93%)** overall and
+  **2,268 / 4,791 (47.34%)** in Game.
+
 ### Game state-flag selector byte-exact
 
 - Restored `func_150829D8` as an object state-flag selector. It clears the

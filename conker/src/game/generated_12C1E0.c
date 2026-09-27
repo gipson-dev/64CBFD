@@ -5,6 +5,10 @@ s32 func_15081E0C(u8 *, u16, u8);
 /* Non-matching placeholders for the text-only asm slice asm/12C1E0.s. */
 
 s32 func_1503195C();
+s32 func_151D3E6C();
+s32 func_151D5A18();
+extern s32 D_8008FC8C;
+extern u8 *D_8008FC94;
 extern f32 D_800A211C;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_12C1E0/func_150FED30.s")
@@ -52,8 +56,9 @@ s32 func_150FFC3C() {
     return 0;
 }
 
-s32 func_150FFCC8() {
-    return 0;
+s32 func_150FFCC8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+    func_151D5A18(arg0, arg1, arg2, arg3, arg4, D_8008FC8C, *D_8008FC94);
+    return func_151D3E6C(arg0, arg1, arg1, 0x8003A);
 }
 
 void func_150FFD2C(s32 arg0, u8 *arg1, s32 arg2) {

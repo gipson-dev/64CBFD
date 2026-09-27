@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,839 / 5,469 (51.91%) | 1 | 2,629 |
+| Total | 5,469 / 6,041 (90.53%) | 2,840 / 5,469 (51.93%) | 1 | 2,628 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,267 / 4,791 (47.32%) | 0 | 2,524 |
+| Game | 4,791 / 5,321 (90.04%) | 2,268 / 4,791 (47.34%) | 0 | 2,523 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -986,8 +986,9 @@ forwarding wrapper is exact directly from typed C. The 25-word Game
 `func_1507A100` packed path-record writer is exact from typed C plus six
 guarded register words. The 27-word Game `func_150829D8` state-flag selector
 is exact directly from C using its retained original 69-entry jump table.
-Continue with the next ordinary unparked Game row in the fresh
-24-real-difference queue while the smaller special-case rows remain parked.
+The 25-word Game `func_150FFCC8` seven-argument forwarding wrapper is exact
+directly from typed C. Continue with 26-word Game `func_1510448C` while the
+smaller special-case rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 
