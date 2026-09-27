@@ -23,8 +23,20 @@ s32 func_151C2E4C(u8 *arg0, u8 *arg1) {
     return 1;
 }
 
-s32 func_151C2E94() {
-    return 0;
+s32 func_151C2E94(u8 *arg0, u8 *arg1) {
+    if (arg0 == arg1) {
+        return 0;
+    }
+    if (*(s32 *)arg0 == 0) {
+        return 0;
+    }
+    if (arg0[4] == 0xFF) {
+        return 0;
+    }
+    if (arg0[0x127] == 0xFF) {
+        return 0;
+    }
+    return 1;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1EF500/func_151C2EF0.s")

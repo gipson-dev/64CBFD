@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game extended record validity predicate byte-exact
+
+- Replaced the zero-return placeholder at `func_151C2E94` with the recovered
+  four-condition record predicate. It rejects the comparison record itself, a
+  null leading word, ID byte `0xFF`, or extended ID byte `0xFF` at offset
+  `0x127`; every other record returns one.
+- All 23 words / 92 bytes match retail directly from C. The source-level early
+  returns reproduce retail's branch-likely chain and duplicated delay-slot
+  loads without guarded scheduling words.
+- The complete span has SHA-256
+  `3d887e9020b87ba223d5866416343f7fee5008bd84f8b0cfd34f972166b65edb`.
+  Fresh totals are **2,800 / 5,469 (51.20%)** overall and
+  **2,229 / 4,791 (46.52%)** in Game.
+
 ### Game indexed callback dispatcher byte-exact
 
 - Replaced the zero-return placeholder at `func_151A9060` with its recovered

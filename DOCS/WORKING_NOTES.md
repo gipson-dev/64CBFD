@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, indexed callback dispatch matched).** The current linked
-checkpoint is `2799 / 5469 (51.18%)` exact C functions, with one address-drift
-blocker and 2,669 genuinely different C functions. Game is
-`2228 / 4791 (46.50%)` exact, with 2,563 genuinely different C rows. The tree
+**Active (2026-09-27, extended record predicate matched).** The current linked
+checkpoint is `2800 / 5469 (51.20%)` exact C functions, with one address-drift
+blocker and 2,668 genuinely different C functions. Game is
+`2229 / 4791 (46.52%)` exact, with 2,562 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -864,7 +864,10 @@ The 24-word `func_151A9060` indexed callback dispatcher is now byte-exact
 directly from C with no guarded words after recovering the table callback's
 object-and-index ABI; see
 [Working Note 295](WORKING_NOTES/295-game-indexed-callback-dispatch-match-20260927.md).
-Continue with 23-word `func_151C2E94`, the next unparked Game C row in the
+The 23-word `func_151C2E94` extended record validity predicate is now
+byte-exact directly from C with no guarded words; see
+[Working Note 296](WORKING_NOTES/296-game-extended-record-validity-match-20260927.md).
+Continue with 34-word `func_151DADA0`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
