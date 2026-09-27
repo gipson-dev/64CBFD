@@ -55,8 +55,19 @@ void func_151AA1F0(u8 *arg0) {
     func_1519F400(arg0);
 }
 
-s32 func_151AA210() {
-    return 0;
+void func_151AA210(u8 *arg0) {
+    void *volatile rec_ptr;
+    struct {
+        u8 *target;
+        u8 code;
+    } rec;
+
+    rec.target = *(u8 **) (arg0 + 0x18);
+    rec.code = arg0[0x1C];
+    rec_ptr = &rec;
+    func_15147D64(&rec, 0xA);
+    func_151494E0(rec_ptr, 0xA);
+    func_1519F3B8(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D6E80/func_151AA264.s")

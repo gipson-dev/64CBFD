@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,742 / 5,469 (50.14%) | 1 | 2,726 |
+| Total | 5,469 / 6,040 (90.55%) | 2,743 / 5,469 (50.16%) | 1 | 2,725 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,171 / 4,791 (45.31%) | 0 | 2,620 |
+| Game | 4,791 / 5,320 (90.06%) | 2,172 / 4,791 (45.34%) | 0 | 2,619 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -749,7 +749,10 @@ from C; see
 The 21-word `func_151AA17C` dual event-record dispatch is now exact from
 recovered C semantics plus ten guarded scheduling/local-slot words; see
 [Working Note 239](WORKING_NOTES/239-game-dual-event-record-dispatch-match-20260927.md).
-Continue with 21-word `func_151AA210` while the documented smaller rows remain
+Its 21-word structural twin `func_151AA210` is independently exact from the
+same C shape and separately scoped guards; see
+[Working Note 240](WORKING_NOTES/240-game-dual-event-record-dispatch-twin-match-20260927.md).
+Continue with 21-word `func_151CF844` while the documented smaller rows remain
 parked.
 
 Current host-port progression and acceptance boundaries:

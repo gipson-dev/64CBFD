@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game dual event-record dispatch twin byte-exact
+
+- Recovered `func_151AA210`, the instruction-identical structural twin of
+  `func_151AA17C`, from the same local target/code record dispatch semantics.
+- Ten separately scoped expected-word guards restore this function's retail
+  scheduling and local slots; no call relocation or delay slot is patched.
+- Its independent 21-word / 84-byte span matches retail with SHA-256
+  `504ce272ab00711d2967c19d71cf5bae231fd2d29dbcc278f0a5cfff71cc2153`.
+  Fresh totals are **2,743 / 5,469 (50.16%)** overall and
+  **2,172 / 4,791 (45.34%)** in Game.
+
 ### Game dual event-record dispatch byte-exact
 
 - Recovered `func_151AA17C` as construction and two-stage dispatch of a local
