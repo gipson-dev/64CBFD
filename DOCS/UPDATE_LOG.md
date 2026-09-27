@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game bounded embedded-owner release byte-exact
+
+- Replaced the zero-return `func_151A73EC` placeholder with its bounded release
+  and clear of the pointer stored at object offset `0x174`.
+- Nested typed conditions reproduce retail's signed `< 0x20` gate, both
+  branch-likely return paths, interior-pointer spill across `func_1516972C`,
+  and all 20 words without a retail-word patch.
+- The complete span shares SHA-256
+  `019efff64d8d7ce0f17f9f3d54d94649404be7cb4852b79daa15023147b58f6d`.
+  Fresh totals are **2,711 / 5,469 (49.57%)** overall and
+  **2,140 / 4,791 (44.67%)** in Game.
+
 ### Game embedded-address setup wrapper byte-exact
 
 - Replaced the zero-return `func_15192308` placeholder with its complete call

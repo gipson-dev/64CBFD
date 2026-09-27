@@ -531,6 +531,11 @@ That embedded-address setup wrapper is now byte-exact directly from a typed
 six-argument call, including retail's unused second-argument home and stack
 argument order. Continue with 20-word `func_151A73EC`; see
 [Working Note 207](WORKING_NOTES/207-game-embedded-address-setup-wrapper-match-20260926.md).
+That bounded embedded-owner release helper is now byte-exact directly from
+nested typed C, including both branch-likely return paths and the retained
+interior pointer across the release call. Continue with 20-word
+`func_151AF338`; see
+[Working Note 208](WORKING_NOTES/208-game-bounded-embedded-owner-release-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
