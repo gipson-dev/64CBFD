@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game event-bit updater byte-exact
+
+- Replaced the false zero-return placeholder at `func_150BB700` with its
+  original event query and object-flag behavior. Event `0x4047` sets bit
+  `0x1000` in the object word at `+0x84`; an inactive event clears it.
+- All 24 tracked words / 96 bytes match directly from C, including call
+  argument setup, branch and delay slot, both mask paths, epilogue, and two
+  trailing padding words. No guarded retail words are needed.
+- The complete span has SHA-256
+  `120ebe1a5434d337d45ad6cfdf8bc0db6e532efd860f38b9dee810c45f9b6204`.
+  Fresh totals are **2,755 / 5,469 (50.37%)** overall and
+  **2,184 / 4,791 (45.59%)** in Game.
+
 ### Game stack-record forwarder byte-exact
 
 - Replaced the false zero-return placeholder at `func_150AF738` with the

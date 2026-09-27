@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,754 / 5,469 (50.36%) | 1 | 2,714 |
+| Total | 5,469 / 6,040 (90.55%) | 2,755 / 5,469 (50.37%) | 1 | 2,713 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,183 / 4,791 (45.56%) | 0 | 2,608 |
+| Game | 4,791 / 5,320 (90.06%) | 2,184 / 4,791 (45.59%) | 0 | 2,607 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -786,7 +786,10 @@ The false zero-return placeholder at `func_150AF738` is restored as a 22-word
 stack-record forwarder, exact from recovered C semantics plus fifteen guarded
 scheduling words; see
 [Working Note 251](WORKING_NOTES/251-game-stack-record-forwarder-match-20260927.md).
-Continue with 24-word `func_150BB700` while the documented lower-difference
+The false zero-return placeholder at `func_150BB700` is restored as a 24-word
+event-bit updater, exact directly from C with no guarded words; see
+[Working Note 252](WORKING_NOTES/252-game-event-bit-updater-match-20260927.md).
+Continue with 24-word `func_150D1BD0` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:
