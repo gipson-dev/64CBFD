@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,834 / 5,469 (51.82%) | 1 | 2,634 |
+| Total | 5,469 / 6,041 (90.53%) | 2,835 / 5,469 (51.84%) | 1 | 2,633 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,262 / 4,791 (47.21%) | 0 | 2,529 |
+| Game | 4,791 / 5,321 (90.04%) | 2,263 / 4,791 (47.23%) | 0 | 2,528 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -978,9 +978,10 @@ from structured C plus four guarded return-scheduling and branch words. The
 plus three guarded null-test scheduling words. The 25-word Game
 `func_15023440` resource-entry reset is exact directly from structured C.
 The 25-word Game `func_1502DB20` resource-size selector is exact directly
-from a switch using its original 64-entry jump table. Continue with 26-word
-Game `func_1502EE8C` while
-the smaller special-case rows remain parked.
+from a switch using its original 64-entry jump table. The 26-word Game
+`func_1502EE8C` record-byte classifier is exact from typed C plus six guarded
+control-flow words. Continue with 25-word Game `func_1503F108` while the
+smaller special-case rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 

@@ -763,6 +763,12 @@ generated_20AE20,func_151E81EC,0x008,0xAC400004,0xAC200000,-,R_MIPS_LO16:D_800E0
 generated_20AE20,func_151E81EC,0x00C,0xAC400000,0x3C010000,-,R_MIPS_HI16:D_800E0BA8,Use retail second paired-store high half,
 generated_20AE20,func_151E81EC,0x010,0xAC400008,0xAC200000,-,R_MIPS_LO16:D_800E0BA8,Store the third word through the retail temporary,
 generated_20AE20,func_151E81EC,0x014,0xAC40000C,0xAC200000,-,R_MIPS_LO16:D_800E0BAC,Store the fourth word through the retained retail high half,
+generated_58F80,func_1502EE8C,0x038,0x50200004,0x14200008,-,-,Use the retail ordinary low-value branch,,,false
+generated_58F80,func_1502EE8C,0x03C,0x28410004,0x00401825,-,-,Copy the raw byte into the retail result register,,,false
+generated_58F80,func_1502EE8C,0x040,0x10000006,0x28410004,-,-,Compare the raw byte with the upper pair bound,,,false
+generated_58F80,func_1502EE8C,0x044,0x00401825,0x14200003,-,-,Branch to the retail middle-pair assignment,,,false
+generated_58F80,func_1502EE8C,0x048,0x28410004,0x00000000,-,-,Keep the retail empty comparison delay slot,,,false
+generated_58F80,func_1502EE8C,0x04C,0x10200003,0x10000003,-,-,Skip the middle-pair assignment after the high clamp,,,false
 generated_58F80,func_1502EA0C,0x010,0x241800FF,0x00054400,-,-,Schedule the first packed-byte shift before the byte stores,
 generated_58F80,func_1502EA0C,0x014,0xA09800A7,0x00065200,-,-,Schedule the second packed-byte shift before the byte stores,
 generated_58F80,func_1502EA0C,0x01C,0x8FB90010,0x8FB80010,-,-,Load the high packed byte in the retail temporary,

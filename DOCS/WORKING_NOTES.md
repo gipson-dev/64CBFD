@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, resource-size selector matched).** The current linked
-checkpoint is `2834 / 5469 (51.82%)` exact C functions, with one address-drift
-blocker and 2,634 genuinely different C functions. Init is
+**Active (2026-09-27, record-byte classifier matched).** The current linked
+checkpoint is `2835 / 5469 (51.84%)` exact C functions, with one address-drift
+blocker and 2,633 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2262 / 4791 (47.21%)` exact, with 2,529 genuinely different C rows. The tree
+`2263 / 4791 (47.23%)` exact, with 2,528 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -974,7 +974,10 @@ structured C with no guarded words; see
 The 25-word Game `func_1502DB20` resource-size selector is exact directly from
 a switch backed by its retained retail jump table; see
 [Working Note 330](WORKING_NOTES/330-game-resource-size-selector-match-20260927.md).
-Continue with 26-word Game `func_1502EE8C`, the next unparked C row in the
+The 26-word Game `func_1502EE8C` record-byte classifier is exact from typed C
+plus six guarded control-flow words; see
+[Working Note 331](WORKING_NOTES/331-game-record-byte-classifier-match-20260927.md).
+Continue with 25-word Game `func_1503F108`, the next unparked C row in the
 fresh queue at 24 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

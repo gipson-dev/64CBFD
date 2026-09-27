@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game record-byte classifier byte-exact
+
+- Restored `func_1502EE8C` as a classifier for a byte in a `0x32C`-byte
+  record: values `0..1` remain unchanged, `2..3` map to `0..1`, and values
+  `4+` clamp to `2`.
+- The complete 26-word / 104-byte span matches retail. Typed C reproduces the
+  record-index multiplier, load, value/result register lifetimes, and return;
+  six guarded words preserve retail's ordinary-branch CFG instead of IDO's
+  branch-likely rewrite.
+- The linked span has SHA-256
+  `ad2f5842790e41297970334d3fa181230b0a119fb85bfae9eadcf2b0be9afcf3`.
+  Fresh totals are **2,835 / 5,469 (51.84%)** overall and
+  **2,263 / 4,791 (47.23%)** in Game.
+
 ### Game resource-size selector byte-exact
 
 - Restored `func_1502DB20` as a resource-size selector over `D_800C4ED0`.
