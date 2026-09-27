@@ -936,16 +936,15 @@ void func_1506EE38(void) {
     D_800D154C->unk25C &= ~D_800D1580;
 }
 
-// NON-MATCHING: same issue as earlier
 void func_1506EE60(void) {
-    s32 temp_a1;
+    s32 temp_v0;
 
-    temp_a1 = D_800D1580 & 0xFFFF;
-    if (D_800D1580 != 0) {
-        func_15188810(D_800D154C, temp_a1, (s32) D_800D1580 >> 0x10);
+    temp_v0 = D_800D1580;
+    if (temp_v0 != 0) {
+        func_15188810(D_800D154C, temp_v0 & 0xFFFF, temp_v0 >> 16);
         return;
     }
-    func_15188A9C(D_800D154C, temp_a1);
+    func_15188A9C(D_800D154C, temp_v0 & 0xFFFF);
 }
 
 void func_1506EEAC(void) {
@@ -1924,15 +1923,25 @@ void func_15074870(void) {
 }
 
 void func_1507488C(void) {
-    s32 temp_v1 = D_800D1580;
-    u8 temp_a1 = temp_v1 & 1;
+    u8 temp_v0;
+    s32 temp_v1;
+    u8 temp_a0;
+    u8 temp_a1;
+    struct127 *temp_a2;
 
-    if ((((s32 *)&D_800D154C->unk2E4)[(temp_v1 >> 16) & 0xFF] & ((temp_v1 >> 8) & 0xFF)) != 0) {
+    temp_v1 = D_800D1580;
+    temp_a2 = D_800D154C;
+    temp_v0 = temp_v1 >> 16;
+    temp_a0 = temp_v1 >> 8;
+    temp_a1 = temp_v1;
+    temp_a1 &= 1;
+
+    if ((((s32 *)&temp_a2->unk2E4)[temp_v0] & temp_a0) != 0) {
         temp_a1 ^= 1;
     }
 
     if (temp_a1 != 0) {
-        D_800D154C->unk138 += temp_v1 >> 24;
+        temp_a2->unk138 += temp_v1 >> 24;
     }
 }
 

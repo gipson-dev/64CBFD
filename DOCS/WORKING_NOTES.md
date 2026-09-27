@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, signed-coordinate event wrapper matched).** The current
-linked checkpoint is `2807 / 5469 (51.33%)` exact C functions, with one
-address-drift blocker and 2,661 genuinely different C functions. Init is
+**Active (2026-09-27, packed event-mask updater matched).** The current linked
+checkpoint is `2808 / 5469 (51.34%)` exact C functions, with one address-drift
+blocker and 2,660 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2235 / 4791 (46.65%)` exact, with 2,556 genuinely different C rows. The tree
+`2236 / 4791 (46.67%)` exact, with 2,555 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -891,7 +891,12 @@ from typed C with no guarded words; see
 The 24-word Game `func_15044D40` signed-coordinate event wrapper is exact
 directly from typed C with no guarded words; see
 [Working Note 303](WORKING_NOTES/303-game-signed-coordinate-event-wrapper-match-20260927.md).
-Continue with 26-word Game `func_1507488C`, the next ordinary unparked C row in
+The 26-word Game `func_1507488C` packed event-mask updater is exact through
+guarded register scheduling. Its required full rebuild exposed a stale
+overflow trampoline at 19-word `func_1506EE60`, which is also restored and
+exact; see
+[Working Note 304](WORKING_NOTES/304-game-packed-event-mask-and-overflow-repair-20260927.md).
+Continue with 24-word Game `func_1507EE58`, the next ordinary unparked C row in
 the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

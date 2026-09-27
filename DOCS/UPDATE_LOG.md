@@ -16,6 +16,24 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game packed event-mask updater byte-exact
+
+- Recovered the explicit byte lifetimes in `func_1507488C`: the packed event
+  value selects an actor-local word at offset `0x2E4`, supplies an eight-bit
+  mask, conditionally inverts its low-bit gate, and adds the signed top byte to
+  actor byte `0x138` when that gate remains active.
+- All 26 words / 104 bytes match retail. Twenty-two guarded words preserve the
+  retail register and branch schedule while explicitly retaining both global
+  relocations. A full rebuild exposed stale overflow output in neighboring
+  `func_1506EE60`; its retained packed value and low-half ABI are corrected,
+  and a guarded 19-word overflow replacement restores its retail dispatcher.
+- The spans have SHA-256
+  `9d7e011a25b9d1c74c33c0fbfd7b61ec7a2250fbbfdeb7a657dda5a69d7a7176`
+  (`func_1507488C`) and
+  `3bafca9eac8e0ba631d319f1ce8a96fe5562a95bfe3c6fc6bceb8990346ba13c`
+  (`func_1506EE60`). Fresh totals are **2,808 / 5,469 (51.34%)** overall and
+  **2,236 / 4,791 (46.67%)** in Game.
+
 ### Game signed-coordinate event wrapper byte-exact
 
 - Replaced the zero placeholder at `func_15044D40` with its typed event-call

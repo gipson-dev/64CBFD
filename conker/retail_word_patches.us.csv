@@ -1353,3 +1353,44 @@ init_B1B0,func_1000B294,0x08,0x24630000,0x24C60000,R_MIPS_LO16:D_800417B0,R_MIPS
 init_B1B0,func_1000B294,0x0C,0x24C60000,0x24630000,R_MIPS_LO16:D_800417BC,R_MIPS_LO16:D_800417B0,Schedule the cursor address completion after the end-table address,,,false
 generated_49D30,func_150233E4,0x18,0x26100000,0x26310000,R_MIPS_LO16:D_800C3CA0,R_MIPS_LO16:D_800C3D48,Schedule the end-table address completion before the cursor address,,,false
 generated_49D30,func_150233E4,0x1C,0x26310000,0x26100000,R_MIPS_LO16:D_800C3D48,R_MIPS_LO16:D_800C3CA0,Schedule the cursor address completion after the end-table address,,,false
+game_981E0,func_1507488C,0x00,0x3C020000,0x3C030000,R_MIPS_HI16:D_800D1580,R_MIPS_HI16:D_800D1580,Keep the packed event value in retail's v1 lifetime,,,false
+game_981E0,func_1507488C,0x04,0x8C420000,0x8C630000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Complete the packed event value load through v1,,,false
+game_981E0,func_1507488C,0x08,0x3C030000,0x3C060000,R_MIPS_HI16:D_800D154C,R_MIPS_HI16:D_800D154C,Keep the active actor pointer in retail's a2 lifetime,,,false
+game_981E0,func_1507488C,0x0C,0x8C630000,0x8CC60000,R_MIPS_LO16:D_800D154C,R_MIPS_LO16:D_800D154C,Complete the active actor pointer load through a2,,,false
+game_981E0,func_1507488C,0x10,0x00027C03,0x00031403,-,-,Extract the table index through retail's v0 lifetime,,,false
+game_981E0,func_1507488C,0x14,0x31F800FF,0x304E00FF,-,-,Normalize the table index through retail's t6 lifetime,,,false
+game_981E0,func_1507488C,0x18,0x0018C880,0x000EC880,-,-,Scale the table index from retail's t6 lifetime,,,false
+game_981E0,func_1507488C,0x1C,0x00794021,0x00D94021,-,-,Add the table offset to the actor held in a2,,,false
+game_981E0,func_1507488C,0x24,0x00025203,0x00032203,-,-,Extract the event mask through retail's a0 lifetime,,,false
+game_981E0,func_1507488C,0x28,0x314B00FF,0x308F00FF,-,-,Normalize the event mask through retail's t7 lifetime,,,false
+game_981E0,func_1507488C,0x2C,0x304E0001,0x00602825,-,-,Copy the packed value into the retail byte-toggle lifetime,,,false
+game_981E0,func_1507488C,0x30,0x012B6024,0x30B80001,-,-,Extract the initial toggle bit through retail's t8 lifetime,,,false
+game_981E0,func_1507488C,0x34,0x11800004,0x012F5024,-,-,Apply the normalized mask through retail's t2 lifetime,,,false
+game_981E0,func_1507488C,0x38,0x31C400FF,0x11400003,-,-,Branch over the toggle using retail's masked condition,,,false
+game_981E0,func_1507488C,0x3C,0x01C02025,0x03002825,-,-,Move the initial toggle into a1 in the branch delay slot,,,false
+game_981E0,func_1507488C,0x40,0x388D0001,0x3B0B0001,-,-,Invert the toggle through retail's t3 lifetime,,,false
+game_981E0,func_1507488C,0x44,0x31A400FF,0x316500FF,-,-,Normalize the inverted toggle back into a1,,,false
+game_981E0,func_1507488C,0x48,0x10800005,0x10A00005,-,-,Test the final toggle held in retail's a1 lifetime,,,false
+game_981E0,func_1507488C,0x50,0x906F0138,0x90CD0138,-,-,Load the actor counter through retail's a2 and t5 lifetimes,,,false
+game_981E0,func_1507488C,0x54,0x0002C603,0x00037E03,-,-,Extract the signed increment through retail's t7 lifetime,,,false
+game_981E0,func_1507488C,0x58,0x01F8C821,0x01AFC021,-,-,Add the counter and increment through retail's t8 lifetime,,,false
+game_981E0,func_1507488C,0x5C,0xA0790138,0xA0D80138,-,-,Store the updated counter through the actor held in a2,,,false
+game_981E0,func_1506EE60,0x00,0x08000000,0x27BDFFE8,R_MIPS_26:__retail_overflow_func_1506EE60,-,Replace the oversized C trampoline with the retail frame allocation,,,false
+game_981E0,func_1506EE60,0x04,0x00000000,0xAFBF0014,-,-,Save the return address in the retail frame,,,false
+game_981E0,func_1506EE60,0x08,0x00000000,0x3C020000,-,R_MIPS_HI16:D_800D1580,Begin the retained packed-value load,,,false
+game_981E0,func_1506EE60,0x0C,0x00000000,0x8C420000,-,R_MIPS_LO16:D_800D1580,Complete the retained packed-value load,,,false
+game_981E0,func_1506EE60,0x10,0x00000000,0x3C040000,-,R_MIPS_HI16:D_800D154C,Prepare the actor global for both call paths,,,false
+game_981E0,func_1506EE60,0x14,0x00000000,0x10400007,-,-,Branch to the zero-value callback path,,,false
+game_981E0,func_1506EE60,0x18,0x00000000,0x3045FFFF,-,-,Normalize the shared low-half argument in the branch delay slot,,,false
+game_981E0,func_1506EE60,0x1C,0x00000000,0x3C040000,-,R_MIPS_HI16:D_800D154C,Reload the actor global high half for the nonzero path,,,false
+game_981E0,func_1506EE60,0x20,0x00000000,0x8C840000,-,R_MIPS_LO16:D_800D154C,Load the actor pointer for the nonzero callback,,,false
+game_981E0,func_1506EE60,0x24,0x00000000,0x0C000000,-,R_MIPS_26:func_15188810,Call the nonzero packed-value callback,,,false
+game_981E0,func_1506EE60,0x28,0x00000000,0x00023403,-,-,Forward the signed high half in the call delay slot,,,false
+game_981E0,func_1506EE60,0x2C,0x00000000,0x10000004,-,-,Branch from the nonzero callback to the shared epilogue,,,false
+game_981E0,func_1506EE60,0x30,0x00000000,0x8FBF0014,-,-,Restore the return address in the branch delay slot,,,false
+game_981E0,func_1506EE60,0x34,0x00000000,0x0C000000,-,R_MIPS_26:func_15188A9C,Call the zero-value callback,,,false
+game_981E0,func_1506EE60,0x38,0x00000000,0x8C840000,-,R_MIPS_LO16:D_800D154C,Load the actor pointer in the zero-path call delay slot,,,false
+game_981E0,func_1506EE60,0x3C,0x00000000,0x8FBF0014,-,-,Restore the return address after the zero-path callback,,,false
+game_981E0,func_1506EE60,0x40,0x00000000,0x27BD0018,-,-,Release the retail frame,,,false
+game_981E0,func_1506EE60,0x44,0x00000000,0x03E00008,-,-,Return from the packed-value dispatcher,,,false
+game_981E0,func_1506EE60,0x48,0x00000000,0x00000000,-,-,Preserve the return delay slot,,,false
