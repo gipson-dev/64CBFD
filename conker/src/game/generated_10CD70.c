@@ -1,10 +1,25 @@
 #include <ultra64.h>
 extern u8 D_80088980;
 extern f32 D_800A0FB0;
+typedef struct {
+    u8 unk0[0x14];
+    u8 active;
+    u8 unk15[0x1F];
+} struct_150DF8C0_record;
+typedef struct {
+    u8 values[3];
+} struct_150DF8C0_indices;
+extern struct_150DF8C0_record *D_800D3098;
+extern struct_150DF8C0_indices D_80088984;
 
 /* Non-matching placeholders for the text-only asm slice asm/10CD70.s. */
 
-s32 func_150DF8C0() {
+s32 func_150DF8C0(s32 arg0) {
+    struct_150DF8C0_indices indices = D_80088984;
+
+    if (D_800D3098[indices.values[arg0]].active != 0) {
+        return 1;
+    }
     return 0;
 }
 

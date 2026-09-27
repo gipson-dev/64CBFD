@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game mapped record-active predicate byte-exact
+
+- Replaced the zero placeholder at `func_150DF8C0` with its typed predicate.
+  It maps indices `0..2` through rodata bytes `0x3B, 0x3C, 0x3D`, selects the
+  corresponding `0x34`-byte record from runtime table pointer `D_800D3098`,
+  and tests record byte `+0x14`.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  Modeling both the three-byte rodata object and record layout reproduces the
+  original unaligned stack copy, relocations, strength reduction, and registers.
+- The complete span has SHA-256
+  `f561e7c6bf079ec34a150cf8de10d548606801d1bed3893c687a8c0cde77242b`.
+  Fresh totals are **2,813 / 5,469 (51.44%)** overall and
+  **2,241 / 4,791 (46.78%)** in Game.
+
 ### Game typed effect-spawn wrapper byte-exact
 
 - Replaced the zero placeholder at `func_150C1660` with its typed wrapper around
