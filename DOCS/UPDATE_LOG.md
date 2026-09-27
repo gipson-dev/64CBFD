@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game signed-halfword mapper byte-exact
+
+- Replaced the false zero-return placeholder at `func_150FB240` with its
+  original five-argument leaf arithmetic. It stores the low byte of
+  `(arg2 - arg1) * arg4` when `(arg2 - arg3) < arg1`, otherwise `0xFF`.
+- All 23 words / 92 bytes match directly from C, including signed-halfword
+  normalization, signed comparison, unsigned multiply, early return, and
+  fallback store. No guarded retail words are needed.
+- The complete span has SHA-256
+  `ed9e5f96fd8e8f732dec356a12071b0c2f1ae9fbc689027f40b0592cb842106d`.
+  Fresh totals are **2,760 / 5,469 (50.47%)** overall and
+  **2,189 / 4,791 (45.69%)** in Game.
+
 ### Game two-stage forwarder byte-exact
 
 - Replaced the false zero-return placeholder at `func_150FB1E8` with its

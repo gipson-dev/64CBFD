@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,759 / 5,469 (50.45%) | 1 | 2,709 |
+| Total | 2,760 / 5,469 (50.47%) | 1 | 2,708 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,188 / 4,791 (45.67%) | 0 | 2,603 |
+| Game | 2,189 / 4,791 (45.69%) | 0 | 2,602 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -607,8 +607,9 @@ end-to-end gameplay acceptance.
    `func_150E411C` eight-argument parameter preset is byte-exact directly from
    C. The false zero-return placeholder at `func_150EB030` is now a byte-exact
    nested state classifier directly from C. The 22-word `func_150FB1E8`
-   five-argument two-stage forwarder is byte-exact directly from C. Continue
-   with 23-word `func_150FB240`; keep the previously documented
+   five-argument two-stage forwarder is byte-exact directly from C. The
+   23-word `func_150FB240` signed-halfword mapper is byte-exact directly from
+   C. Continue with 22-word `func_150FFD2C`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

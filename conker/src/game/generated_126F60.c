@@ -75,8 +75,12 @@ void func_150FB1E8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     func_15157F80(arg0, arg1, arg2, arg3, arg4);
 }
 
-s32 func_150FB240() {
-    return 0;
+void func_150FB240(u8 *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4) {
+    if (arg2 - arg3 < arg1) {
+        *arg0 = (arg2 - arg1) * arg4;
+    } else {
+        *arg0 = 0xFF;
+    }
 }
 
 s32 func_150FB29C(u8 *arg0) {
