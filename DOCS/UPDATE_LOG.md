@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game actor-state byte selector byte-exact
+
+- Replaced the zero placeholder at `func_150F1CB0` with its ordered actor-state
+  selector. Halfword `+0x84` chooses byte `+0x68`; the low two bit-pairs of
+  word `+0x2E4` choose and optionally override byte `+0x69`.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The ordered stores naturally reproduce both branch delay slots and the
+  alias-driven `+0x2E4` reload after writing byte `+0x69`.
+- The complete span has SHA-256
+  `56494e88f5d715bac816b14d0224f33c4a07cf1ea3a74785482ab275bc80ce51`.
+  Fresh totals are **2,814 / 5,469 (51.45%)** overall and
+  **2,242 / 4,791 (46.80%)** in Game.
+
 ### Game mapped record-active predicate byte-exact
 
 - Replaced the zero placeholder at `func_150DF8C0` with its typed predicate.

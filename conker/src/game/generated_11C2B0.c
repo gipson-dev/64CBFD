@@ -200,8 +200,20 @@ s32 func_150F1B48() {
     return 0;
 }
 
-s32 func_150F1CB0() {
-    return 0;
+void func_150F1CB0(u8 *arg0) {
+    if (*(u16 *) (arg0 + 0x84) == 0x14) {
+        arg0[0x68] = 0x1B;
+    } else {
+        arg0[0x68] = 0xC;
+    }
+
+    arg0[0x69] = 0x13;
+    if ((*(u32 *) (arg0 + 0x2E4) & 3) == 3) {
+        arg0[0x69] = 0x14;
+    }
+    if ((*(u32 *) (arg0 + 0x2E4) & 0xC) == 0xC) {
+        arg0[0x69] = 0x17;
+    }
 }
 
 s32 func_150F1D10() {

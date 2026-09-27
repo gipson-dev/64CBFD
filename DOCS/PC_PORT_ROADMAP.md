@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,813 / 5,469 (51.44%) | 1 | 2,655 |
+| Total | 5,469 / 6,041 (90.53%) | 2,814 / 5,469 (51.45%) | 1 | 2,654 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,241 / 4,791 (46.78%) | 0 | 2,550 |
+| Game | 4,791 / 5,321 (90.04%) | 2,242 / 4,791 (46.80%) | 0 | 2,549 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -947,9 +947,10 @@ trampoline for 19-word `func_1506EE60`. The 24-word `func_1507EE58`
 complementary history-marker wrapper, 24-word `func_1508434C` counted object-
 dispatch loop, 24-word `func_150B58F0` tagged table-value serializer, and
 24-word `func_150C1660` typed effect-spawn wrapper are exact directly from C.
-The 24-word `func_150DF8C0` mapped record-active predicate is also exact from
-typed C. Continue with 24-word Game `func_150F1CB0` while the documented
-lower-difference rows remain parked.
+The 24-word `func_150DF8C0` mapped record-active predicate and 24-word
+`func_150F1CB0` actor-state byte selector are also exact directly from typed C.
+Continue with 24-word Game `func_150F52B0` while the documented lower-difference
+rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 
