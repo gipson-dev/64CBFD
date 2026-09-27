@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game counted halfword release byte-exact
+
+- Restored `func_1510D630` as a counted signed-halfword walker. It dispatches
+  each entry through `func_1510D694` and releases the original allocation when
+  the walk is complete.
+- Explicit allocation, entry, and end aliases reproduce all 25 retail words
+  directly, including saved-register lifetimes and loop branch operand order.
+- The linked span has SHA-256
+  `b9daef576d039ea0ae4a4688e13a98f687a438a57216ee6b3ca60d49774d7ed7`.
+  Fresh totals are **2,842 / 5,469 (51.97%)** overall and
+  **2,270 / 4,791 (47.38%)** in Game.
+
 ### Game byte-scaled dispatch byte-exact
 
 - Restored `func_1510448C` as a signed-gate and record-byte dispatch helper.

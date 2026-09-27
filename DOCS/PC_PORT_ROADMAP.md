@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,841 / 5,469 (51.95%) | 1 | 2,627 |
+| Total | 5,469 / 6,041 (90.53%) | 2,842 / 5,469 (51.97%) | 1 | 2,626 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,269 / 4,791 (47.36%) | 0 | 2,522 |
+| Game | 4,791 / 5,321 (90.04%) | 2,270 / 4,791 (47.38%) | 0 | 2,521 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -988,9 +988,10 @@ guarded register words. The 27-word Game `func_150829D8` state-flag selector
 is exact directly from C using its retained original 69-entry jump table.
 The 25-word Game `func_150FFCC8` seven-argument forwarding wrapper is exact
 directly from typed C. The 26-word Game `func_1510448C` byte-scaled dispatch
-is exact from typed C plus six guarded temporary-register words. Continue
-with 25-word Game `func_1510D630` while the smaller special-case rows remain
-parked.
+is exact from typed C plus six guarded temporary-register words. The 25-word
+Game `func_1510D630` counted halfword release helper is exact directly from
+typed C. Continue with 25-word Game `func_151148A8` while the smaller
+special-case rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 

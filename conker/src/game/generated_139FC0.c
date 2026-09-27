@@ -1,6 +1,8 @@
 #include <ultra64.h>
 extern u8 D_800D9ED8[];
 extern s8 D_800BC448[];
+s32 func_10004074();
+s32 func_1510D694();
 
 /* Non-matching placeholders for the text-only asm slice asm/139FC0.s. */
 
@@ -37,8 +39,21 @@ void func_1510D608(s32 arg0, s32 arg1) {
     }
 }
 
-s32 func_1510D630() {
-    return 0;
+void func_1510D630(s16 *arg0) {
+    s16 *allocation = arg0;
+    s32 count = allocation[0];
+    s16 *entry = allocation + 1;
+
+    if (count > 0) {
+        s16 *end = allocation + count + 1;
+
+        do {
+            func_1510D694(*entry);
+            entry++;
+        } while (end != entry);
+    }
+
+    func_10004074(allocation);
 }
 
 s32 func_1510D694() {
