@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,765 / 5,469 (50.56%) | 1 | 2,703 |
+| Total | 5,469 / 6,040 (90.55%) | 2,766 / 5,469 (50.58%) | 1 | 2,702 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,194 / 4,791 (45.79%) | 0 | 2,597 |
+| Game | 4,791 / 5,320 (90.06%) | 2,195 / 4,791 (45.82%) | 0 | 2,596 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -822,7 +822,10 @@ executable and two are trailing padding. See
 The false zero-return placeholder at `func_1512D6F0` is restored as a 22-word
 indexed-record reset, exact directly from structured C with no guarded words;
 see [Working Note 262](WORKING_NOTES/262-game-indexed-record-reset-match-20260927.md).
-Continue with 23-word `func_1513BA78` while the documented lower-difference
+The 23-word `func_1513BA78` two-way type dispatcher is exact directly from C
+after typed callee declarations recover retail's byte-argument register
+lifetime; see [Working Note 263](WORKING_NOTES/263-game-two-way-type-dispatch-match-20260927.md).
+Continue with 37-word `func_15144598` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

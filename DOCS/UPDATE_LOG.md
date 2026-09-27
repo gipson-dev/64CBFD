@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game two-way type dispatcher byte-exact
+
+- Preserved the existing behavior of `func_1513BA78`: type `1` dispatches to
+  `func_15109064`, type `2` dispatches to `func_151BA468`, and other values
+  return without calling either handler.
+- Adding typed three-argument callee declarations makes all 23 words / 92
+  bytes match directly from C. IDO now normalizes the byte argument in `a2`,
+  reproducing retail's prologue and `nop` call delay slots without guards.
+- The complete span has SHA-256
+  `151da9e5c2e45abdfc2658142acaddc654729cd22fb97e3cfe3246a6457022fe`.
+  Fresh totals are **2,766 / 5,469 (50.58%)** overall and
+  **2,195 / 4,791 (45.82%)** in Game.
+
 ### Game indexed-record reset byte-exact
 
 - Replaced the false zero-return placeholder at `func_1512D6F0` with its

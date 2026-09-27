@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,765 / 5,469 (50.56%) | 1 | 2,703 |
+| Total | 2,766 / 5,469 (50.58%) | 1 | 2,702 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,194 / 4,791 (45.79%) | 0 | 2,597 |
+| Game | 2,195 / 4,791 (45.82%) | 0 | 2,596 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -617,7 +617,9 @@ end-to-end gameplay acceptance.
    byte-exact from the same recovered C and guard; 23 words are executable and
    two are trailing layout padding. The 22-word `func_1512D6F0` indexed-record
    reset is byte-exact directly from structured C without guarded words.
-   Continue with 23-word `func_1513BA78`; keep the previously documented
+   The 23-word `func_1513BA78` two-way type dispatcher is byte-exact directly
+   from C after adding typed callee declarations; no guarded words are needed.
+   Continue with 37-word `func_15144598`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

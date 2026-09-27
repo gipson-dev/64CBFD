@@ -10,6 +10,8 @@ s32 func_1513B83C();
 s32 func_1513BAE8();
 s32 func_1513BBFC();
 s32 func_1513BEB0();
+s32 func_15109064(struct132 *, s32, u8);
+s32 func_151BA468(struct132 *, s32, u8);
 /* End generated placeholder declarations. */
 
 /* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B5E0.s. */

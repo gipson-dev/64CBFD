@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, indexed-record reset matched).** The current linked
-checkpoint is `2765 / 5469 (50.56%)` exact C functions, with one address-drift
-blocker and 2,703 genuinely different C functions. Game is
-`2194 / 4791 (45.79%)` exact, with 2,597 genuinely different C rows. The tree
+**Active (2026-09-27, two-way type dispatcher matched).** The current linked
+checkpoint is `2766 / 5469 (50.58%)` exact C functions, with one address-drift
+blocker and 2,702 genuinely different C functions. Game is
+`2195 / 4791 (45.82%)` exact, with 2,596 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -756,7 +756,10 @@ Its false-placeholder twin `func_1510A8CC` is also byte-exact across its
 The false zero-return placeholder at `func_1512D6F0` is now a byte-exact
 22-word indexed-record reset directly from structured C with no guarded words;
 see [Working Note 262](WORKING_NOTES/262-game-indexed-record-reset-match-20260927.md).
-Continue with 23-word `func_1513BA78`, the next unparked Game C row in the
+The 23-word `func_1513BA78` two-way type dispatcher is now byte-exact directly
+from C after adding typed callee declarations, with no guarded words; see
+[Working Note 263](WORKING_NOTES/263-game-two-way-type-dispatch-match-20260927.md).
+Continue with 37-word `func_15144598`, the next unparked Game C row in the
 fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
