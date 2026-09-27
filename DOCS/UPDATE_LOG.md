@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game per-slot state reset byte-exact
+
+- Replaced the zero-return `func_15181DC8` placeholder with its complete reset
+  of two indexed scalar floats, one indexed float pair, and one state byte.
+- Direct C emits the complete behavior in 19 words. Two guarded entries insert
+  retail's redundant `mtc1 zero,$f4` and use `$f4` for only the first store;
+  the remaining stores retain the compiler's `$f0` zero.
+- The complete span shares SHA-256
+  `46a4fcb449b8f5cab466a5e009ace1fafb9aec11abd05a64d76dc5db6496b189`.
+  Fresh totals are **2,708 / 5,469 (49.52%)** overall and
+  **2,137 / 4,791 (44.60%)** in Game.
+
 ### Game motion-decay update byte-exact
 
 - Replaced the zero-return `func_1514A498` placeholder with its two float

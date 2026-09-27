@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,707 / 5,469 (49.50%) | 1 | 2,761 |
+| Total | 2,708 / 5,469 (49.52%) | 1 | 2,760 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,136 / 4,791 (44.58%) | 0 | 2,655 |
+| Game | 2,137 / 4,791 (44.60%) | 0 | 2,654 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,707, while
+denominator driven: the exact count is now 2,708, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -492,7 +492,10 @@ end-to-end gameplay acceptance.
    from C. Keep `func_150F1684` at its measured two-local register boundary.
    The 21-word `func_1514A498` motion-decay update is also byte-exact after one
    guarded word preserves retail's equivalent `multu v0,t7` operand order.
-   Continue with 21-word `func_15155FD4`.
+   `func_15155FD4` is behaviorally recovered but parked at a register-allocation
+   boundary. The 20-word `func_15181DC8` per-slot reset is byte-exact after two
+   guarded words preserve retail's redundant second floating zero. Continue
+   with 21-word `func_1518F108`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
