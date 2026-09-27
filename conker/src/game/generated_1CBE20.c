@@ -39,6 +39,16 @@ s32 func_1519ED84() {
     return 0;
 }
 
-s32 func_1519EF04() {
-    return 0;
+s32 func_1519EF04(u8 *arg0) {
+    u8 *source = *(u8 **)(arg0 + 0x110);
+
+    *(f32 *)(arg0 + 0x2C) = *(f32 *)(source + 0x18) * 10.0f;
+    *(f32 *)(arg0 + 0x30) = *(f32 *)(source + 0x1C) * 10.0f;
+    *(f32 *)(arg0 + 0x40) = *(f32 *)(source + 0x0C);
+    *(f32 *)(arg0 + 0x44) = *(f32 *)(source + 0x10);
+    *(f32 *)(arg0 + 0x48) = *(f32 *)(source + 0x14);
+    *(f32 *)(arg0 + 0x34) = *(f32 *)(source + 0x00);
+    *(f32 *)(arg0 + 0x38) = *(f32 *)(source + 0x04);
+    *(f32 *)(arg0 + 0x3C) = *(f32 *)(source + 0x08);
+    return 1;
 }

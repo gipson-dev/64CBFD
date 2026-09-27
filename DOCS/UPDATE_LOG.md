@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game fixed-scale transform copy byte-exact
+
+- Restored `func_1519EF04` as a typed transform-copy helper that scales two
+  source components by `10.0f` and copies two three-float vectors.
+- All 27 words / 108 bytes match retail directly from C, including the
+  constant load, floating-point hazard `nop`, and final return sequence. No
+  guarded word patches are required.
+- The complete linked span has SHA-256
+  `538df983afbd767f37e9900031a7f0012a06eb70b77d7523a944083e8f40d98c`.
+  Fresh totals are **2,830 / 5,469 (51.75%)** overall and
+  **2,258 / 4,791 (47.13%)** in Game.
+
 ### Game scaled transform copy byte-exact
 
 - Restored `func_1519ED24` as a typed transform-copy helper that applies the
