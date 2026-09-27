@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game object state transition byte-exact
+
+- Replaced the false zero-return placeholder at `func_15172D28` with its
+  original object state-transition behavior.
+- All 22 words / 88 bytes match directly from C. The routine calls
+  `func_15085430`, clears flag bit `0x10` at offset `0x2F8`, and, when the
+  global mode byte is zero, writes state `3` through the object pointer at
+  offset `0x31C`. No guarded retail words are needed.
+- The complete span has SHA-256
+  `f285d4661242ecf09be7ab29f754180e339c667a1036330afba8d6c07bd7473a`.
+  Fresh totals are **2,772 / 5,469 (50.69%)** overall and
+  **2,201 / 4,791 (45.94%)** in Game.
+
 ### Game two-table initializer byte-exact
 
 - Replaced the false zero-return placeholder at `func_15172C50` with its

@@ -4,6 +4,8 @@
 
 extern s8 D_800DD2B0[];
 extern s8 D_800DD2C0[];
+extern u8 D_800BE9B4;
+s32 func_15085430();
 
 void func_15172C50(s32 value) {
     s32 i;
@@ -20,8 +22,18 @@ s32 func_15172CA8() {
     return 0;
 }
 
-s32 func_15172D28() {
-    return 0;
+void func_15172D28(u8 *arg0, s32 arg1) {
+    u8 *target;
+
+    func_15085430(arg0, arg1, 1);
+    *(u16 *) (arg0 + 0x2F8) &= ~0x10;
+
+    if (D_800BE9B4 == 0) {
+        target = *(u8 **) (arg0 + 0x31C);
+        if (target != NULL) {
+            target[0x56] = 3;
+        }
+    }
 }
 
 s32 func_15172D80() {
