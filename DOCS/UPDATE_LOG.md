@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game linked-list key lookup byte-exact
+
+- Replaced the zero-return `func_1514ED3C` placeholder with its complete
+  20-word linked-list search, including optional matched-node output.
+- A typed node header plus separate current/next pointer lifetimes reproduces
+  every retail branch-likely delay slot directly, without guarded words.
+- The complete span shares SHA-256
+  `10caa2bb84bec91148134f5ebee3b7856aad744979f985e503f3860cc03b5d65`.
+  Fresh totals are **2,694 / 5,469 (49.26%)** overall and
+  **2,123 / 4,791 (44.31%)** in Game.
+
 ### Game active-player-mask predicate byte-exact
 
 - Completed all 20 words of `func_151464B8`, which builds a signed 16-bit mask

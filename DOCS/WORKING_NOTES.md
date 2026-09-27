@@ -458,6 +458,10 @@ lifetime, and final optimized-away IDO register-allocation expressions.
 Continue with the 20-word generated-slice placeholder `func_1514ED3C`. The
 predicate result is in
 [Working Note 190](WORKING_NOTES/190-game-active-player-mask-predicate-match-20260926.md).
+That generated-slice lookup is now reconstructed and byte-exact from typed C;
+its separate current/next lifetimes reproduce all retail delay slots. Continue
+with 20-word `func_15178BE4`. The lookup result is in
+[Working Note 191](WORKING_NOTES/191-game-linked-list-key-lookup-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

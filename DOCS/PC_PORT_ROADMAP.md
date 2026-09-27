@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,693 / 5,469 (49.24%) | 1 | 2,775 |
+| Total | 5,469 / 6,038 (90.58%) | 2,694 / 5,469 (49.26%) | 1 | 2,774 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,122 / 4,791 (44.29%) | 0 | 2,669 |
+| Game | 4,791 / 5,318 (90.09%) | 2,123 / 4,791 (44.31%) | 0 | 2,668 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -584,6 +584,9 @@ The next pass matched all 20 words of `func_151464B8` directly from corrected C
 types, lifetimes, and optimized-away register-allocation expressions; see
 [Working Note 190](WORKING_NOTES/190-game-active-player-mask-predicate-match-20260926.md).
 Continue with the 20-word generated-slice placeholder `func_1514ED3C`.
+That lookup is now reconstructed and exact from typed linked-list C; see
+[Working Note 191](WORKING_NOTES/191-game-linked-list-key-lookup-match-20260926.md).
+Continue with 20-word `func_15178BE4`.
 
 Current host-port progression and acceptance boundaries:
 

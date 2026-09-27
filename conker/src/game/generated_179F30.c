@@ -18,6 +18,14 @@ s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2);
 extern u8 D_800A5920[];
 extern u8 D_800A5988[];
 
+typedef struct GameListNode {
+    u8 pad0[0x10];
+    s32 unk10;
+    struct GameListNode *next;
+    struct GameListNode *prev;
+    s16 unk1C;
+} GameListNode;
+
 s32 func_1514CA80() {
     return 0;
 }
@@ -278,8 +286,24 @@ s32 func_1514ECE0() {
     return 0;
 }
 
-s32 func_1514ED3C() {
-    return 0;
+s32 func_1514ED3C(GameListNode *node, s32 key, GameListNode **result) {
+    s32 found = 0;
+    GameListNode *current = node;
+
+    while ((current != NULL) && (found == 0)) {
+        node = current->next;
+        if (current->unk10 == key) {
+            found = 1;
+        } else {
+            current = node;
+        }
+    }
+
+    if (result != NULL) {
+        *result = current;
+    }
+
+    return found;
 }
 
 s32 func_1514ED8C() {
