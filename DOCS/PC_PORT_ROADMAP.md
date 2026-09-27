@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,718 / 5,469 (49.70%) | 1 | 2,750 |
+| Total | 5,469 / 6,038 (90.58%) | 2,719 / 5,469 (49.72%) | 1 | 2,749 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,147 / 4,791 (44.81%) | 0 | 2,644 |
+| Game | 4,791 / 5,318 (90.09%) | 2,148 / 4,791 (44.83%) | 0 | 2,643 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -669,7 +669,11 @@ typed callback signature and explicit event branches; see
 The 20-word `func_15083FB0` object-index wrapper is now exact after correcting
 the local `func_15083E90` byte-parameter and pointer-return contract; see
 [Working Note 215](WORKING_NOTES/215-game-object-index-wrapper-match-20260926.md).
-Continue with 20-word `guMtxIdentF`.
+The 22-word `func_1515D030` reverse-slot update is now exact from a signed byte
+decrement and shared result variable; see
+[Working Note 216](WORKING_NOTES/216-game-reverse-slot-update-match-20260926.md).
+Measured compiler boundaries in `guMtxIdentF`, `func_1506EF5C`, and
+`func_1507A4D4` are parked. Continue with 23-word `func_15178750`.
 
 Current host-port progression and acceptance boundaries:
 

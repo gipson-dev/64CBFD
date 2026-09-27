@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, Game integer range wrapper matched).** The current linked
-checkpoint is `2692 / 5469 (49.22%)` exact C functions, with one address-drift
-blocker and 2,776 genuinely different C functions. Game is
-`2121 / 4791 (44.27%)` exact, with 2,670 genuinely different C rows. The tree
+**Active (2026-09-26, Game reverse-slot update matched).** The current linked
+checkpoint is `2719 / 5469 (49.72%)` exact C functions, with one address-drift
+blocker and 2,749 genuinely different C functions. Game is
+`2148 / 4791 (44.83%)` exact, with 2,643 genuinely different C rows. The tree
 contains 569 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -565,8 +565,18 @@ home and two separate call sites. Continue with 20-word `func_15083FB0`; see
 [Working Note 214](WORKING_NOTES/214-game-two-event-release-callback-match-20260926.md).
 That object-index wrapper is now byte-exact after correcting the local
 `func_15083E90` declaration to a pointer return and byte identifier parameter,
-which restores retail's complete call prologue and epilogue schedule. Continue
-with 20-word `guMtxIdentF`; see
+which restores retail's complete call prologue and epilogue schedule. The
+22-word `func_1515D030` reverse-slot update is now byte-exact after replacing
+early returns with one shared result variable and making the slot decrement
+signed; see
+[Working Note 216](WORKING_NOTES/216-game-reverse-slot-update-match-20260926.md).
+`guMtxIdentF` remains canonical SDK source but current IDO profiles do not emit
+retail's unrolled store body. `func_1506EF5C` reaches the exact 22-word
+instruction skeleton after removing its object-pointer cache but retains a
+different register allocation. `func_1507A4D4` reaches retail's object-load
+phase with one packed-mask local but retains independent byte-load and OR-tree
+scheduling differences. Keep all three parked and continue with 23-word
+`func_15178750`. The preceding object-index result is in
 [Working Note 215](WORKING_NOTES/215-game-object-index-wrapper-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

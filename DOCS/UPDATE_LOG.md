@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game reverse-slot update byte-exact
+
+- Replaced `func_1515D030`'s early returns with retail's shared result lifetime
+  and made the slot-byte decrement explicitly signed.
+- IDO now reproduces the initial true result, branch-likely false assignment,
+  signed wrap test, wrapped slot selection, and shared return path without a
+  retail-word patch.
+- The complete 22-word span shares SHA-256
+  `52ace76263f53fd9e73fcad2e3e753d4bdd6d1060db7b2381385b6662dce7021`.
+  Fresh totals are **2,719 / 5,469 (49.72%)** overall and
+  **2,148 / 4,791 (44.83%)** in Game.
+
 ### Game object-index wrapper byte-exact
 
 - Corrected the local `func_15083E90` declaration to return an object pointer

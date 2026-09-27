@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,718 / 5,469 (49.70%) | 1 | 2,750 |
+| Total | 2,719 / 5,469 (49.72%) | 1 | 2,749 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,147 / 4,791 (44.81%) | 0 | 2,644 |
+| Game | 2,148 / 4,791 (44.83%) | 0 | 2,643 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,718, while
+denominator driven: the exact count is now 2,719, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -512,7 +512,11 @@ end-to-end gameplay acceptance.
    release callback is now exact from a typed callback signature and explicit
    event branches. The 20-word `func_15083FB0` object-index wrapper is now
    exact after correcting the local `func_15083E90` byte-parameter and pointer
-   return contract. Continue with 20-word `guMtxIdentF`.
+   return contract. The 22-word `func_1515D030` reverse-slot update is now
+   exact from a signed decrement and one shared result variable. Keep
+   `guMtxIdentF`, `func_1506EF5C`, and `func_1507A4D4` parked at their measured
+   compiler scheduling/register boundaries; continue with 23-word
+   `func_15178750`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

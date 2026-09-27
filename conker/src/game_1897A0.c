@@ -60,16 +60,18 @@ s32 func_1515CF9C(u8 *arg0, u8 *arg1) {
 
 s32 func_1515D030(u8 *arg0, s32 arg1) {
     s8 count = arg0[0x2C];
+    s32 result = 1;
 
     if (count >= 3) {
         arg0[0x2C] = count - 1;
-        arg0[0x2E]--;
+        arg0[0x2E] = (s8)arg0[0x2E] - 1;
         if ((s8)arg0[0x2E] < 0) {
             arg0[0x2E] = arg0[0x25] - 1;
         }
-        return 1;
+    } else {
+        result = 0;
     }
-    return 0;
+    return result;
 }
 
 void *func_1515D088(u8 *arg0) {
