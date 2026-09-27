@@ -1145,3 +1145,4 @@ generated_AEB40,func_150849CC,0x01C,0x10400002,0x10400003,-,-,Branch over the re
 generated_AEB40,func_150849CC,0x020,0x00000000,0x00000000,-,-,Retain the fallback branch after the null-test delay slot,0x10000001
 generated_B3020,func_1508CA88,0x00C,0x3C180000,0x3C180000,R_MIPS_HI16:D_8008FD90,R_MIPS_HI16:D_8008FD90,Hoist the independent final pointer base alongside the threshold base,0x3C190000,R_MIPS_HI16:D_800D23B0
 generated_B3020,func_1508CA88,0x038,0x8C990000,0x8F390000,-,R_MIPS_LO16:D_800D23B0,Reload the final pointer through the independently materialized base,,
+generated_176A00,func_1514A498,0x038,0x01E20019,0x004F0019,-,-,Preserve retail's equivalent index-first multu operand order,,

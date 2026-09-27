@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game motion-decay update byte-exact
+
+- Replaced the zero-return `func_1514A498` placeholder with its two float
+  decay updates and conditional indexed byte calculation.
+- Direct C reproduces 20 of 21 retail words. One guarded non-relocating patch
+  preserves retail's equivalent `multu v0,t7` operand order instead of IDO's
+  canonical `multu t7,v0`.
+- The complete span shares SHA-256
+  `4325a1e4fbe15bca49875d5f4799d57884826a356ff97ae78ad0b22b03e21939`.
+  Fresh totals are **2,707 / 5,469 (49.50%)** overall and
+  **2,136 / 4,791 (44.58%)** in Game.
+
 ### Game conditional stack-record wrapper byte-exact
 
 - Replaced the zero-return `func_150F2390` placeholder with its complete

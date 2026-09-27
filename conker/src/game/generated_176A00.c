@@ -46,8 +46,18 @@ s32 func_1514A380() {
     return 0;
 }
 
-s32 func_1514A498() {
-    return 0;
+s32 func_1514A498(u8 *arg0) {
+    f32 value0 = *(f32 *)(arg0 + 0x30);
+    f32 scale = *(f32 *)(arg0 + 0x144);
+    f32 value1 = *(f32 *)(arg0 + 0x2C);
+    s32 index = *(s16 *)(arg0 + 0x1C);
+
+    *(f32 *)(arg0 + 0x30) = value0 - (value0 * scale);
+    *(f32 *)(arg0 + 0x2C) = value1 - (value1 * scale);
+    if (index < *(s16 *)(arg0 + 0x156)) {
+        arg0[0x5C] = (u32)index * (u32)*(s16 *)(arg0 + 0x158);
+    }
+    return 1;
 }
 
 s32 func_1514A4EC() {

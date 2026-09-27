@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,706 / 5,469 (49.48%) | 1 | 2,762 |
+| Total | 5,469 / 6,038 (90.58%) | 2,707 / 5,469 (49.50%) | 1 | 2,761 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,135 / 4,791 (44.56%) | 0 | 2,656 |
+| Game | 4,791 / 5,318 (90.09%) | 2,136 / 4,791 (44.58%) | 0 | 2,655 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -631,7 +631,10 @@ That handler's logic is recovered, but direct C still swaps retail's `v0` and
 `v1` key/identity lifetimes. The next completed exact row is the conditional
 stack-record wrapper; see
 [Working Note 203](WORKING_NOTES/203-game-conditional-stack-record-wrapper-match-20260926.md).
-Continue with 21-word `func_1514A498`.
+The 21-word `func_1514A498` motion-decay update is now exact with one guarded
+commutative `multu` operand-order word; see
+[Working Note 204](WORKING_NOTES/204-game-motion-decay-update-match-20260926.md).
+Continue with 21-word `func_15155FD4`.
 
 Current host-port progression and acceptance boundaries:
 
