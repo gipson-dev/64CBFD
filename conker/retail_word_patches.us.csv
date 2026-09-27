@@ -1207,3 +1207,15 @@ generated_1D6E80,func_151AA210,0x020,0xAFA40024,0xAFA60028,-,-,Preserve the inco
 generated_1D6E80,func_151AA210,0x024,0xAFA60028,0xAFA40018,-,-,Spill the retained record pointer in retail's local slot,,
 generated_1D6E80,func_151AA210,0x02C,0xA3AF0020,0xA3AE0020,-,-,Store the record code from retail's t6 temporary,,
 generated_1D6E80,func_151AA210,0x030,0x8FA40024,0x8FA40018,-,-,Reload the retained record pointer from retail's local slot,,
+generated_1FA770,func_151D10E4,0x0C,0x8C8701D4,0x30C700FF,-,-,Normalize the byte index directly from the incoming argument register,,,false
+generated_1FA770,func_151D10E4,0x10,0x93AE0023,0x8C8201D4,-,-,Load the optional target into the retail return-value lifetime,,,false
+generated_1FA770,func_151D10E4,0x14,0x3C180000,0x00077080,R_MIPS_HI16:D_800AAF9C,-,Begin the twelve-byte table stride before the null branch,,,false
+generated_1FA770,func_151D10E4,0x18,0x14E00003,0x01C77023,-,-,Complete the multiply-by-three stage before testing the target,,,false
+generated_1FA770,func_151D10E4,0x1C,0x000E7880,0x14400003,-,-,Branch on the target held in v0,,,false
+generated_1FA770,func_151D10E4,0x20,0x10000008,0x000E7080,-,-,Finish the twelve-byte stride in the branch delay slot,,,false
+generated_1FA770,func_151D10E4,0x24,0x00001025,0x10000007,-,-,Use the retail null-return branch distance,,,false
+generated_1FA770,func_151D10E4,0x28,0x01EE7823,0x00001025,-,-,Return zero in the null-path delay slot,,,false
+generated_1FA770,func_151D10E4,0x2C,0x000F7880,0x3C0F0000,-,R_MIPS_HI16:D_800AAF9C,Materialize the table base only on the non-null path,,,false
+generated_1FA770,func_151D10E4,0x30,0x27180000,0x25EF0000,R_MIPS_LO16:D_800AAF9C,R_MIPS_LO16:D_800AAF9C,Complete the table base in t7,,,false
+generated_1FA770,func_151D10E4,0x34,0x01F82021,0x01CF2021,-,-,Add the retail stride and table-base lifetimes,,,false
+generated_1FA770,func_151D10E4,0x3C,0x00E03025,0x00403025,-,-,Forward the target from v0 in the call delay slot,,,false

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game indexed record forwarder byte-exact
+
+- Recovered `func_151D10E4` as a null-gated forwarder from object offset
+  `0x1D4` into the 12-byte record table `D_800AAF9C`, indexed by the narrowed
+  third argument.
+- Twelve expected-word guards restore retail's byte normalization, target and
+  stride register lifetimes, null-path scheduling, and relocation-aware table
+  load. The call relocation and epilogue remain compiler emitted.
+- The complete 21-word / 84-byte span has SHA-256
+  `be6f6bade86c0c2f86c7f70e65b0555e2d868b0a1a06e05aba5523cde2bffff9`.
+  Fresh totals are **2,745 / 5,469 (50.19%)** overall and
+  **2,174 / 4,791 (45.38%)** in Game.
+
 ### Game conditional record forwarder byte-exact
 
 - Recovered `func_151CF844` as a null-gated forwarding wrapper around

@@ -1,9 +1,11 @@
 #include <ultra64.h>
 typedef struct { s32 a, b, c; } ThreeWord1FA770;
 
+extern ThreeWord1FA770 D_800AAF9C[];
+
 /* Non-matching placeholders for the text-only asm slice asm/1FA770.s. */
 
-s32 func_151D10E4();
+s32 func_151D10E4(u8 *, s32, u8);
 s32 func_151D13E0();
 
 s32 func_151CD2C0() {
@@ -204,8 +206,15 @@ void func_151D10C4(s32 arg0, s32 arg1) {
     func_151D10E4(arg0, arg1, 1);
 }
 
-s32 func_151D10E4() {
-    return 0;
+s32 func_151D10E4(u8 *arg0, s32 arg1, u8 arg2) {
+    s32 target;
+
+    target = *(s32 *) (arg0 + 0x1D4);
+    if (target == NULL) {
+        return 0;
+    }
+    func_15143134(&D_800AAF9C[arg2], arg1, target);
+    return 1;
 }
 
 s32 func_151D1138() {
