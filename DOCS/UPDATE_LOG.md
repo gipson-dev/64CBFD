@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game four-slot release loop byte-exact
+
+- Replaced the zero-return `func_150C522C` placeholder with its four-entry
+  optional release loop over `D_800D98D0`.
+- Typed cursor/end pointers reproduce 19 of 21 retail words directly. Two
+  guarded relocation-aware words preserve retail's equivalent ordering of
+  the independent `D_800D98E0` and `D_800D98D0` low-half completions.
+- The complete 21-word span shares SHA-256
+  `fe3eecef23e97693912477fffab1907f920f93615fa711342dcd7c82ebb484df`.
+  Fresh totals are **2,722 / 5,470 (49.76%)** overall and
+  **2,151 / 4,792 (44.89%)** in Game.
+
 ### Game conditional callback and hidden no-op byte-exact
 
 - Recovered `func_15178750` as a typed conditional forwarding wrapper whose

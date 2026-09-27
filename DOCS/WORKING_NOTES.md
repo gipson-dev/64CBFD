@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, Game conditional callback pair matched).** The current
-linked checkpoint is `2721 / 5470 (49.74%)` exact C functions, with one
-address-drift blocker and 2,748 genuinely different C functions. Game is
-`2150 / 4792 (44.87%)` exact, with 2,642 genuinely different C rows. The tree
+**Active (2026-09-26, Game four-slot release loop matched).** The current
+linked checkpoint is `2722 / 5470 (49.76%)` exact C functions, with one
+address-drift blocker and 2,747 genuinely different C functions. Game is
+`2151 / 4792 (44.89%)` exact, with 2,641 genuinely different C rows. The tree
 contains 569 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -585,6 +585,11 @@ its direct reference from `D_8008CB64` proved it was not wrapper padding.
 Tracked symbol metadata makes fresh extraction regenerate both labels and the
 table relocation. Continue with 21-word `func_150C522C`; see
 [Working Note 217](WORKING_NOTES/217-game-conditional-callback-and-hidden-noop-match-20260926.md).
+That four-slot release loop is now exact from a typed pointer-array `do/while`
+loop plus two guarded relocation-aware words that only exchange the independent
+low-half address completions for `D_800D98E0` and `D_800D98D0`. Continue with
+21-word `func_150C5F40`; see
+[Working Note 218](WORKING_NOTES/218-game-four-slot-release-loop-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

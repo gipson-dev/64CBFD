@@ -2,6 +2,9 @@
 extern u8 D_800C35E8;
 extern u8 D_800C35EA;
 extern s32 (*D_8008ADA8)();
+extern void *D_800D98D0[4];
+extern void *D_800D98E0;
+extern void func_1516972C(void *arg0);
 
 /* Non-matching placeholders for the text-only asm slice asm/F21D0.s. */
 
@@ -13,8 +16,16 @@ s32 func_150C4E9C() {
     return 0;
 }
 
-s32 func_150C522C() {
-    return 0;
+void func_150C522C(void) {
+    void **current = D_800D98D0;
+    void **end = &D_800D98E0;
+
+    do {
+        if (*current != NULL) {
+            func_1516972C(*current);
+        }
+        *current++ = NULL;
+    } while (current != end);
 }
 
 s32 func_150C5280(void) {
