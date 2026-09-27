@@ -1,6 +1,6 @@
 # PC Port Roadmap located in another project folder
 
-## Cross-project progress - 2026-09-26
+## Cross-project progress - 2026-09-27
 
 The active Windows port remains in sibling `64CBFDOGL`; this repository owns
 the guest decompilation and retail-byte evidence used by that port. The current
@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,470 / 6,039 (90.58%) | 2,725 / 5,470 (49.82%) | 1 | 2,744 |
+| Total | 5,470 / 6,039 (90.58%) | 2,726 / 5,470 (49.84%) | 1 | 2,743 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,792 / 5,319 (90.09%) | 2,154 / 4,792 (44.95%) | 0 | 2,638 |
+| Game | 4,792 / 5,319 (90.09%) | 2,155 / 4,792 (44.97%) | 0 | 2,637 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -690,7 +690,11 @@ C; see
 The 21-word `func_150C7968` flag-gated optional-record update is now exact
 through typed C plus five guarded scheduling/relocation entries; see
 [Working Note 221](WORKING_NOTES/221-game-flag-gated-record-update-match-20260926.md).
-Continue with 21-word `func_150EB430`.
+The 21-word `func_150EB430` stack-vector sum wrapper is now exact after a
+commutative source-order correction and four guarded second-vector register
+words; see
+[Working Note 222](WORKING_NOTES/222-game-stack-vector-sum-wrapper-match-20260927.md).
+Continue with 21-word `func_15155F3C`.
 
 Current host-port progression and acceptance boundaries:
 

@@ -14,6 +14,20 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-09-27
+
+### Game stack-vector sum wrapper byte-exact
+
+- Replaced the zero-return `func_150EB430` placeholder with its three-component
+  vector sum and forwarding call to `func_150EB484`.
+- Reversing each commutative source addition reproduces retail's load order and
+  floating-register choices. Four guarded words preserve only the compiler's
+  `a2` versus retail `a3` lifetime for the retained second vector.
+- The complete 21-word span shares SHA-256
+  `bb57799e7e106d77a3a3c05e720507b9841d7179ad06170cde91cf5dccc1a7ee`.
+  Fresh totals are **2,726 / 5,470 (49.84%)** overall and
+  **2,155 / 4,792 (44.97%)** in Game.
+
 ## 2026-09-26
 
 ### Game flag-gated record update byte-exact

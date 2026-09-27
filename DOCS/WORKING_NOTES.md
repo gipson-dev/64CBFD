@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, Game flag-gated record update matched).** The current
-linked checkpoint is `2725 / 5470 (49.82%)` exact C functions, with one
-address-drift blocker and 2,744 genuinely different C functions. Game is
-`2154 / 4792 (44.95%)` exact, with 2,638 genuinely different C rows. The tree
+**Active (2026-09-27, Game stack-vector sum wrapper matched).** The current
+linked checkpoint is `2726 / 5470 (49.84%)` exact C functions, with one
+address-drift blocker and 2,743 genuinely different C functions. Game is
+`2155 / 4792 (44.97%)` exact, with 2,637 genuinely different C rows. The tree
 contains 569 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -602,6 +602,11 @@ The flag-gated optional-record update `func_150C7968` is now exact from typed
 C plus five guarded scheduling/relocation entries, including the compiler-
 elided dead state-pointer advance. Continue with 21-word `func_150EB430`; see
 [Working Note 221](WORKING_NOTES/221-game-flag-gated-record-update-match-20260926.md).
+The stack-vector sum wrapper `func_150EB430` is now exact after reversing its
+three commutative additions to recover retail's load schedule and guarding
+four second-vector `a2`/`a3` lifetime words. Continue with 21-word
+`func_15155F3C`; see
+[Working Note 222](WORKING_NOTES/222-game-stack-vector-sum-wrapper-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
