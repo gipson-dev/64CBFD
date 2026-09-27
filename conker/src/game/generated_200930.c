@@ -97,6 +97,13 @@ s32 func_151D5714() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D5D60.s")
 
-s32 func_151D5E30() {
-    return 0;
+void func_151D5E30(s32 *arg0) {
+    s32 entry;
+    u8 i;
+
+    for (i = 0; i < 4; i++) {
+        if (entry = arg0[i]) {
+            func_100043B4(entry, 3);
+        }
+    }
 }

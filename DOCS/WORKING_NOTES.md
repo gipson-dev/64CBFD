@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, mode-driven slot updater matched).** The current linked
-checkpoint is `2831 / 5469 (51.76%)` exact C functions, with one address-drift
-blocker and 2,637 genuinely different C functions. Init is
+**Active (2026-09-27, four-handle cleanup matched).** The current linked
+checkpoint is `2832 / 5469 (51.78%)` exact C functions, with one address-drift
+blocker and 2,636 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2259 / 4791 (47.15%)` exact, with 2,532 genuinely different C rows. The tree
+`2260 / 4791 (47.17%)` exact, with 2,531 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -965,8 +965,11 @@ from typed C with no guarded words; see
 The 28-word Game `func_151AE640` mode-driven slot updater is exact from
 structured C plus four guarded return-scheduling and branch words; see
 [Working Note 327](WORKING_NOTES/327-game-mode-driven-slot-updater-match-20260927.md).
-Continue with 24-word Game `func_151D5E30`, the next unparked C row in the
-fresh queue at 23 real differences.
+The 24-word Game `func_151D5E30` four-handle cleanup loop is exact from typed C
+plus three guarded null-test scheduling words; see
+[Working Note 328](WORKING_NOTES/328-game-four-handle-cleanup-match-20260927.md).
+Continue with 25-word Game `func_15023440`, the next unparked C row in the
+fresh queue at 24 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

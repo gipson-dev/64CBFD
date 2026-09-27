@@ -1,4 +1,7 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_200930,func_151D5E30,0x20,0x8DE40000,0x8DE20000,-,-,Retain the current cleanup handle in the retail return register,,,false
+generated_200930,func_151D5E30,0x24,0x50800004,0x10400003,-,-,Use the retail non-likely null-handle branch,,,false
+generated_200930,func_151D5E30,0x28,0x26100001,0x00402025,-,-,Copy the retained cleanup handle into the call argument delay slot,,,false
 generated_1D92F0,func_151AE640,0x0C,0x14C00007,0x14C00008,-,-,Retarget the nonzero mode branch past the restored return delay slot,,,false
 generated_1D92F0,func_151AE640,0x1C,0x144F0011,0x144F0012,-,-,Retarget the zero-mode mismatch branch past the restored return delay slot,,,false
 generated_1D92F0,func_151AE640,0x24,0x03E00008,0xAC800044,-,-,Clear the tracked slot before returning from zero mode,,,false

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game four-handle cleanup byte-exact
+
+- Restored `func_151D5E30` as a four-entry cleanup loop that calls
+  `func_100043B4(handle, 3)` for each nonzero handle.
+- All 24 words / 96 bytes match retail. Typed C reproduces the frame, saved
+  registers, unsigned-byte loop counter, call, and epilogue; three guarded
+  words preserve retail's retained-handle register and non-likely null-test
+  schedule.
+- The complete linked span has SHA-256
+  `8a7230c21df7247d5bea3fff7fefbe01360547b2e816318b17bc6455f0914653`.
+  Fresh totals are **2,832 / 5,469 (51.78%)** overall and
+  **2,260 / 4,791 (47.17%)** in Game.
+
 ### Game mode-driven slot updater byte-exact
 
 - Restored `func_151AE640` as a typed callback that clears a tracked slot in
