@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game wrapped timer/counter byte-exact
+
+- Replaced the false zero-return placeholder at `func_151749A0` with its
+  original byte-width timer and counter update.
+- All 22 words / 88 bytes match directly from C. The timer accumulates the
+  frame delta with byte wrapping; crossing its threshold advances the wrapped
+  counter, wraps that counter at the caller's limit, and clears the timer. No
+  guarded retail words are needed.
+- The complete span has SHA-256
+  `1ef04391b9f03b0528bc0f1c4f9d39ed6df05e2f7125a49e456853d8507445cd`.
+  Fresh totals are **2,773 / 5,469 (50.70%)** overall and
+  **2,202 / 4,791 (45.96%)** in Game.
+
 ### Game object state transition byte-exact
 
 - Replaced the false zero-return placeholder at `func_15172D28` with its

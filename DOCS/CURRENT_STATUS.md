@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,772 / 5,469 (50.69%) | 1 | 2,696 |
+| Total | 2,773 / 5,469 (50.70%) | 1 | 2,695 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,201 / 4,791 (45.94%) | 0 | 2,590 |
+| Game | 2,202 / 4,791 (45.96%) | 0 | 2,589 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -631,7 +631,9 @@ end-to-end gameplay acceptance.
    from a 16-entry C loop whose body IDO unrolls four ways.
    The 22-word `func_15172D28` object state-transition wrapper is byte-exact
    directly from C, including both branch-likely early-return paths.
-   Continue with 22-word `func_151749A0`; keep the previously documented
+   The 22-word `func_151749A0` wrapped timer/counter updater is byte-exact
+   directly from C with byte-width arithmetic preserved.
+   Continue with 22-word `func_1517F75C`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

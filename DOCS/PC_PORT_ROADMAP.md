@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,772 / 5,469 (50.69%) | 1 | 2,696 |
+| Total | 5,469 / 6,040 (90.55%) | 2,773 / 5,469 (50.70%) | 1 | 2,695 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,201 / 4,791 (45.94%) | 0 | 2,590 |
+| Game | 4,791 / 5,320 (90.06%) | 2,202 / 4,791 (45.96%) | 0 | 2,589 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -844,7 +844,10 @@ The 22-word `func_15172C50` two-table initializer is exact directly from a
 The 22-word `func_15172D28` object state-transition wrapper is exact directly
 from C, including both branch-likely early-return paths; see
 [Working Note 269](WORKING_NOTES/269-game-object-state-transition-match-20260927.md).
-Continue with 22-word `func_151749A0` while the documented lower-difference
+The 22-word `func_151749A0` wrapped timer/counter updater is exact directly
+from C with byte-width arithmetic preserved; see
+[Working Note 270](WORKING_NOTES/270-game-wrapped-timer-counter-match-20260927.md).
+Continue with 22-word `func_1517F75C` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:
