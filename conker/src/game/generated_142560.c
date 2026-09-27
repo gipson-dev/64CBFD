@@ -1,12 +1,15 @@
 #include <ultra64.h>
 
 extern s32 D_800BE9E4;
+extern u8 *D_800DBFF0;
+extern f32 D_800A31E0;
 
 /* Non-matching placeholders for the text-only asm slice asm/142560.s. */
 
 s32 func_151169B4();
 u8 *func_151149AC(u32 arg0);
 u8 *func_15083E90(s32 arg0);
+f32 func_150484A0(f32 arg0, f32 arg1);
 
 f32 func_151172D8(u8 *arg0, f32 arg1);
 f32 func_15117518(u8 *arg0, f32 arg1);
@@ -296,8 +299,11 @@ void func_1511BDF4(u8 *arg0) {
     }
 }
 
-s32 func_1511BE5C() {
-    return 0;
+void func_1511BE5C(u8 *arg0) {
+    *(f32 *)(arg0 + 4) =
+        func_150484A0((f32)*(s16 *)(arg0 + 0x10) - *(f32 *)(D_800DBFF0 + 0x2F8),
+                      (f32)*(s16 *)(arg0 + 0x14) - *(f32 *)(D_800DBFF0 + 0x300)) *
+        D_800A31E0;
 }
 
 s32 func_1511BEBC() {

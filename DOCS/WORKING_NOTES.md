@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, cached-pointer fallback matched).** The current linked
-checkpoint is `2844 / 5469 (52.00%)` exact C functions, with one address-drift
-blocker and 2,624 genuinely different C functions. Init is
+**Active (2026-09-27, reference-relative angle matched).** The current linked
+checkpoint is `2845 / 5469 (52.02%)` exact C functions, with one address-drift
+blocker and 2,623 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2272 / 4791 (47.42%)` exact, with 2,519 genuinely different C rows. The tree
+`2273 / 4791 (47.44%)` exact, with 2,518 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1004,7 +1004,10 @@ directly from typed C; see
 The 26-word Game `func_1511BDF4` cached-pointer fallback wrapper is exact
 directly from typed C; see
 [Working Note 340](WORKING_NOTES/340-game-cached-pointer-fallback-match-20260927.md).
-Continue with 24-word Game `func_1511BE5C`, the next ordinary unparked row in
+The 24-word Game `func_1511BE5C` reference-relative angle update is exact
+directly from typed C; see
+[Working Note 341](WORKING_NOTES/341-game-reference-relative-angle-match-20260927.md).
+Continue with 27-word Game `func_15141250`, the next ordinary unparked row in
 the fresh queue at 24 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

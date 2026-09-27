@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game reference-relative angle update byte-exact
+
+- Restored `func_1511BE5C` as a signed-coordinate conversion, subtraction from
+  the global reference position, `func_150484A0` angle calculation, and scaled
+  float store.
+- A direct typed expression reproduces all 24 retail words without matching
+  guards, including the argument-conversion and call-delay schedule.
+- The linked span has SHA-256
+  `9e74ca5f6539068fb711027533d856fa8433fd8c3c3c6057e928c1e374ddca04`.
+  Fresh totals are **2,845 / 5,469 (52.02%)** overall and
+  **2,273 / 4,791 (47.44%)** in Game.
+
 ### Game cached-pointer fallback wrapper byte-exact
 
 - Restored `func_1511BDF4` as a cached pointer lookup with a
