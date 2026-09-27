@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,039 (90.54%) | 2,732 / 5,468 (49.96%) | 1 | 2,735 |
+| Total | 5,468 / 6,039 (90.54%) | 2,733 / 5,468 (49.98%) | 1 | 2,734 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,790 / 5,319 (90.05%) | 2,161 / 4,790 (45.11%) | 0 | 2,629 |
+| Game | 4,790 / 5,319 (90.05%) | 2,162 / 4,790 (45.14%) | 0 | 2,628 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -720,7 +720,12 @@ the generated-slice row `func_150AD8B0` is now restored to its handwritten
 The 22-word `func_15131C2C` flag-gated callback dispatcher is now exact
 directly from typed C; see
 [Working Note 230](WORKING_NOTES/230-game-flag-gated-callback-dispatch-match-20260927.md).
-Continue with 24-word `func_1515F0AC`.
+The 24-word `func_1515F0AC` signed fixed-point clamp is now exact from C plus
+three guarded schedule entries, including one stale-checked omission of IDO's
+extra FP hazard `nop`; see
+[Working Note 231](WORKING_NOTES/231-game-signed-fixed-point-clamp-match-20260927.md).
+Continue with 21-word `func_1516706C` while the documented smaller rows remain
+parked.
 
 Current host-port progression and acceptance boundaries:
 

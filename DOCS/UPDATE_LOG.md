@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game signed fixed-point clamp byte-exact
+
+- Replaced the empty `func_1515F0AC` placeholder with its signed float clamp:
+  cap at `D_800A6524`, floor at `-32768.0f`, truncate, and store in the indexed
+  `D_800DCD10` slot.
+- IDO emits the correct logic as 25 words but hoists the lower-clamp `lui`
+  before the first FP comparison and inserts a hazard `nop`. Three guarded
+  scheduling entries swap the independent words and omit that verified `nop`;
+  the padding tool now supports guarded omission with unit coverage.
+- The complete 24-word span shares SHA-256
+  `eb00f652ed78de4e60ec74635e029f60fed83a99c0277df0d27706c69fc97107`.
+  Fresh totals are **2,733 / 5,468 (49.98%)** overall and
+  **2,162 / 4,790 (45.14%)** in Game.
+
 ### Game flag-gated callback dispatcher byte-exact
 
 - Replaced the zero-return `func_15131C2C` placeholder with its `0x4000`

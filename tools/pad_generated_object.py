@@ -10,8 +10,8 @@ original offset from the preserved raw-assembly slice. The gaps are zero-filled
 MIPS nops. Exported jump-table labels are restored at their retail offsets too.
 
 The result is still C-derived code: inter-function layout is restored, and an
-optional guarded table can replace compiled words or insert scheduling words
-and their relocations while enforcing each function's retail span.
+optional guarded table can replace, insert, or omit scheduling words and their
+relocations while enforcing each function's retail span.
 """
 
 import argparse
@@ -189,6 +189,17 @@ def parse_optional_word(value):
     return int(value, 0)
 
 
+def parse_optional_bool(value):
+    if value is None or not value.strip():
+        return False
+    normalized = value.strip().lower()
+    if normalized in ("1", "true", "yes"):
+        return True
+    if normalized in ("0", "false", "no"):
+        return False
+    raise ValueError(f"invalid boolean value: {value}")
+
+
 def load_word_patches(path, filename):
     if path is None:
         return {}
@@ -220,10 +231,16 @@ def load_word_patches(path, filename):
             insert_after_relocations = parse_relocation_spec(
                 row.get("insert_after_relocations")
             )
+            omit = parse_optional_bool(row.get("omit"))
             if insert_after is None and insert_after_relocations is not None:
                 raise ValueError(
                     f"word patch for {key[0]} at 0x{key[1]:X} declares "
                     "inserted relocations without an inserted word"
+                )
+            if omit and insert_after is not None:
+                raise ValueError(
+                    f"word patch for {key[0]} at 0x{key[1]:X} cannot both "
+                    "omit and insert a word"
                 )
             patches[key] = {
                 "expected": int(row["expected"], 0),
@@ -232,6 +249,7 @@ def load_word_patches(path, filename):
                 "replacement_relocations": replacement_relocations,
                 "insert_after": insert_after,
                 "insert_after_relocations": insert_after_relocations or [],
+                "omit": omit,
             }
     return patches
 
@@ -326,7 +344,12 @@ def emit_padded_assembly(
             for (patch_name, _), patch in word_patches.items()
             if patch_name == name and patch["insert_after"] is not None
         )
-        emitted_size = symbol["size"] + inserted_size
+        omitted_size = sum(
+            4
+            for (patch_name, _), patch in word_patches.items()
+            if patch_name == name and patch["omit"]
+        )
+        emitted_size = symbol["size"] + inserted_size - omitted_size
         if emitted_size > next_target - target:
             raise ValueError(
                 f"patched {name} is 0x{emitted_size:X} bytes but its retail "
@@ -362,8 +385,10 @@ def emit_padded_assembly(
                     )
                 if expected_relocations is not None:
                     word_relocations = patch["replacement_relocations"]
-                word = patch["replacement"]
                 applied_patches.add(patch_key)
+                if patch["omit"]:
+                    continue
+                word = patch["replacement"]
             for relocation_name, relocation_symbol in word_relocations:
                 output.append(
                     f".reloc ., {relocation_name}, {relocation_symbol}"

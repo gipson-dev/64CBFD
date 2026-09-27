@@ -92,6 +92,67 @@ glabel sample
                     word_patches_path=work/'patches.csv',filename='fixture'
                 )
 
+    def test_guarded_word_omission(self):
+        if not shutil.which('mips-linux-gnu-as'):
+            self.skipTest('mips-linux-gnu-as required')
+        with tempfile.TemporaryDirectory() as tmp:
+            work=Path(tmp)
+            (work/'compact.s').write_text('''
+.section .text,"ax"
+.set noreorder
+.globl sample
+.type sample,@function
+sample:
+addiu $a0,$a0,1
+nop
+jr $ra
+nop
+.size sample,.-sample
+.globl next_sample
+.type next_sample,@function
+next_sample:
+jr $ra
+nop
+.size next_sample,.-next_sample
+''')
+            (work/'retail.s').write_text('''
+glabel sample
+/* 000000 15000000 24840001 */ addiu $a0,$a0,1
+/* 000004 15000004 03E00008 */ jr $ra
+/* 000008 15000008 00000000 */ nop
+glabel next_sample
+/* 00000C 1500000C 03E00008 */ jr $ra
+/* 000010 15000010 00000000 */ nop
+''')
+            (work/'patches.csv').write_text(
+                'filename,function,offset,expected,replacement,'
+                'expected_relocations,replacement_relocations,note,insert_after,'
+                'insert_after_relocations,omit\n'
+                'fixture,sample,0x4,0x00000000,0x00000000,-,-,'
+                'omit scheduler nop,,,true\n'
+            )
+            subprocess.run(
+                ['mips-linux-gnu-as','-EB','-march=vr4300','-o','compact.o','compact.s'],
+                cwd=work,check=True,capture_output=True
+            )
+            padded=emit_padded_assembly(
+                work/'compact.o',work/'retail.s',
+                word_patches_path=work/'patches.csv',filename='fixture'
+            )
+            (work/'padded.s').write_text(padded)
+            subprocess.run(
+                ['mips-linux-gnu-as','-EB','-march=vr4300','-o','padded.o','padded.s'],
+                cwd=work,check=True,capture_output=True
+            )
+            text,functions,_=parse_object(work/'padded.o')
+            start=functions['sample']['value']
+            self.assertEqual(functions['sample']['size'],0xC)
+            self.assertEqual(functions['next_sample']['value'],start+0xC)
+            self.assertEqual(
+                struct.unpack_from('>III',text,start),
+                (0x24840001,0x03E00008,0x00000000)
+            )
+
     def test_guarded_word_insertion(self):
         if not shutil.which('mips-linux-gnu-as'):
             self.skipTest('mips-linux-gnu-as required')

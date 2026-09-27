@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, flag-gated callback dispatcher matched).** The current
-linked checkpoint is `2732 / 5468 (49.96%)` exact C functions, with one
-address-drift blocker and 2,735 genuinely different C functions. Game is
-`2161 / 4790 (45.11%)` exact, with 2,629 genuinely different C rows. The tree
+**Active (2026-09-27, signed fixed-point clamp matched).** The current linked
+checkpoint is `2733 / 5468 (49.98%)` exact C functions, with one address-drift
+blocker and 2,734 genuinely different C functions. Game is
+`2162 / 4790 (45.14%)` exact, with 2,628 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -644,6 +644,12 @@ The 22-word `func_15131C2C` flag-gated callback dispatcher is now exact
 directly from a typed three-argument callback contract, including both
 branch-likely null exits. Continue with 24-word `func_1515F0AC`; see
 [Working Note 230](WORKING_NOTES/230-game-flag-gated-callback-dispatch-match-20260927.md).
+The 24-word `func_1515F0AC` signed fixed-point clamp is now exact from C plus
+three guarded schedule entries. The generated-padding patch table can now
+omit a compiler word under stale-word and relocation guards; here it swaps the
+independent lower-clamp `lui`/FP compare and omits the resulting hazard `nop`.
+Continue with 21-word `func_1516706C`; see
+[Working Note 231](WORKING_NOTES/231-game-signed-fixed-point-clamp-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
