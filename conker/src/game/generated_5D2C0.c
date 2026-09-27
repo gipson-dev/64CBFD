@@ -200,7 +200,16 @@ s32 func_150335C8() {
 }
 
 s32 func_1503378C(u8 *arg0, u8 *arg1) {
-    return 0;
+    u16 temp_v0 = *(u16 *)(arg1 + 0x84);
+
+    if (arg0[1] == 0x11) {
+        if ((temp_v0 == 0x3E) || (temp_v0 == 0x3D) ||
+                (temp_v0 == 0x41) || (temp_v0 == 0xD9) ||
+                (temp_v0 == 0x138) || (temp_v0 == 0x139)) {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 s32 func_150337E4(u8 *arg0, s32 arg1) {

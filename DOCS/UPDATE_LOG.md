@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game six-ID type predicate byte-exact
+
+- Recovered `func_1503378C` as a predicate that returns false only when object
+  type byte `0x01` is `0x11` and the associated unsigned halfword is one of
+  `0x3E`, `0x3D`, `0x41`, `0xD9`, `0x138`, or `0x139`.
+- All 22 words / 88 bytes match directly from C, including the halfword
+  preload, chained compare delay slots, final branch-likely, and both return
+  paths. No guarded retail words are needed.
+- The complete span has SHA-256
+  `aaec9a5cbe36b7e1038be5629099576d751350b6e0d8617a4a68bf92f1300564`.
+  Fresh totals are **2,751 / 5,469 (50.30%)** overall and
+  **2,180 / 4,791 (45.50%)** in Game.
+
 ### Game swimming-attachment lifetime callback byte-exact
 
 - Refined the recovered `func_15033328` C so its zero result remains live
