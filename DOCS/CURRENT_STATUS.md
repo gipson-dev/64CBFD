@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,469 / 6,039 (90.56%) | 570 | 1,931,864 / 2,256,728 (85.60%) |
+| Total | 5,468 / 6,039 (90.54%) | 571 | 1,931,624 / 2,256,728 (85.59%) |
 | Init | 497 / 538 (92.38%) | 41 | 148,600 / 164,048 (90.58%) |
-| Game | 4,791 / 5,319 (90.07%) | 528 | 1,763,624 / 2,072,880 (85.08%) |
+| Game | 4,790 / 5,319 (90.05%) | 529 | 1,763,384 / 2,072,880 (85.07%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,731 / 5,469 (49.94%) | 1 | 2,737 |
+| Total | 2,731 / 5,468 (49.95%) | 1 | 2,736 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,160 / 4,791 (45.08%) | 0 | 2,631 |
+| Game | 2,160 / 4,790 (45.09%) | 0 | 2,630 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,731, while
-503 functions moved from C back to assembly. The paired event-swap pass added
+504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -540,7 +540,10 @@ end-to-end gameplay acceptance.
    `func_151A8584`/`func_151A85D4` pair parked. The 33-word
    `func_1505DFDC` backing-buffer reset is byte-exact directly from C after
    restoring the full-width index, repeated table read, declaration order,
-   and source store order. Continue with 60-word `func_150AD8B0`.
+   and source store order. The apparent 60-word `func_150AD8B0` C row is now
+   correctly restored to its handwritten 19-word vector cross-product body;
+   its generated-slice span also covers 41 already exact padding/helper words.
+   Continue with 22-word `func_15131C2C`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
@@ -686,6 +689,8 @@ The restored handwritten four-timer decrement is in
 [Working Note 227](WORKING_NOTES/227-game-four-timer-decrement-restoration-20260927.md).
 The completed backing-buffer reset is in
 [Working Note 228](WORKING_NOTES/228-game-backing-buffer-reset-match-20260927.md).
+The restored handwritten vector cross product is in
+[Working Note 229](WORKING_NOTES/229-game-vector-cross-product-restoration-20260927.md).
 The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 The completed five-global reset ordering is in

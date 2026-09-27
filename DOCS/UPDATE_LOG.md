@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game handwritten vector cross product restored
+
+- Reclassified the `func_150AD8B0` generated-slice placeholder to its original
+  19-word vector cross-product assembly body while retaining equivalent C as
+  documentation.
+- IDO `-O2` and `-O3` both emit a 21-word body with an FP hazard `nop` and an
+  empty return delay slot. Retail uses a tightly interleaved schedule with the
+  final component store in the return delay slot.
+- The complete 240-byte tracked slice shares SHA-256
+  `7ae7de32b7fe1c2acc411a544cf6b1f5a38233ceb2c6ae35ce0f892d59f65948`.
+  Fresh C-only totals are **2,731 / 5,468 (49.95%)** overall and
+  **2,160 / 4,790 (45.09%)** in Game.
+
 ### Game backing-buffer reset byte-exact
 
 - Recovered `func_1505DFDC` as a conditional reset of the object backing
