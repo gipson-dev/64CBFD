@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,760 / 5,469 (50.47%) | 1 | 2,708 |
+| Total | 5,469 / 6,040 (90.55%) | 2,761 / 5,469 (50.48%) | 1 | 2,707 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,189 / 4,791 (45.69%) | 0 | 2,602 |
+| Game | 4,791 / 5,320 (90.06%) | 2,190 / 4,791 (45.71%) | 0 | 2,601 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -805,7 +805,10 @@ words; see
 The false zero-return placeholder at `func_150FB240` is restored as a 23-word
 signed-halfword mapper, exact directly from C with no guarded words; see
 [Working Note 257](WORKING_NOTES/257-game-signed-halfword-mapper-match-20260927.md).
-Continue with 22-word `func_150FFD2C` while the documented lower-difference
+The false zero-return placeholder at `func_150FFD2C` is restored as a 22-word
+type-and-flag-gated dispatcher, exact directly from C with no guarded words;
+see [Working Note 258](WORKING_NOTES/258-game-type-flag-dispatcher-match-20260927.md).
+Continue with 23-word `func_151076A4` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

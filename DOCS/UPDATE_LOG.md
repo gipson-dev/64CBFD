@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game type-and-flag dispatcher byte-exact
+
+- Replaced the false zero-return placeholder at `func_150FFD2C` with its
+  original three-argument conditional dispatch. It accepts record types
+  `0x9F` and `0xA0`, rejects records with flag `0x80` set at offset `0x94`,
+  and otherwise calls `func_15081E0C(record, 4, 0)`.
+- All 22 words / 88 bytes match directly from C, including unused-argument
+  homes, both branch-likely epilogues, and the call delay slot. No guarded
+  retail words are needed.
+- The complete span has SHA-256
+  `c113b829b96bfe97ffb7840abe7e9089b81c411b9dd423f97da89628aeb6300c`.
+  Fresh totals are **2,761 / 5,469 (50.48%)** overall and
+  **2,190 / 4,791 (45.71%)** in Game.
+
 ### Game signed-halfword mapper byte-exact
 
 - Replaced the false zero-return placeholder at `func_150FB240` with its

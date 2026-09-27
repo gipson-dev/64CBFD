@@ -1,5 +1,6 @@
 #include <ultra64.h>
 void func_15145740(s32, s32, s32, s32, f32);
+s32 func_15081E0C(u8 *, u16, u8);
 
 /* Non-matching placeholders for the text-only asm slice asm/12C1E0.s. */
 
@@ -55,8 +56,13 @@ s32 func_150FFCC8() {
     return 0;
 }
 
-s32 func_150FFD2C() {
-    return 0;
+void func_150FFD2C(s32 arg0, u8 *arg1, s32 arg2) {
+    u8 type = arg1[4];
+
+    if ((type == 0x9F || type == 0xA0) &&
+        ((*(u32 *)(arg1 + 0x94) & 0x80) == 0)) {
+        func_15081E0C(arg1, 4, 0);
+    }
 }
 
 s32 func_150FFD84() {
