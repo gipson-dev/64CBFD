@@ -812,7 +812,11 @@ formatting wrapper directly from C with no guarded words; see
 The false placeholder at `func_15044CE4` is now a byte-exact 23-word
 position/scale initializer from C plus seven guarded register-lifetime words;
 see [Working Note 280](WORKING_NOTES/280-game-position-scale-initializer-match-20260927.md).
-Continue with 36-word `func_1508855C`, the next unparked Game C row in the
+The existing C for `func_1508855C` is now a byte-exact 36-word indexed-record
+lookup with 22 guarded register-lifetime and equivalent control-flow
+scheduling words; see
+[Working Note 281](WORKING_NOTES/281-game-indexed-record-lookup-match-20260927.md).
+Continue with 26-word `func_150A6500`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

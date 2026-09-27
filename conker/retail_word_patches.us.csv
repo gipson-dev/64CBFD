@@ -9,6 +9,28 @@ generated_71820,func_15044CE4,0x38,0x0001C943,0x00014143,-,-,Keep the corrected 
 generated_71820,func_15044CE4,0x3C,0xA4990010,0xA4880010,-,-,Store the first scale from the retail quotient lifetime,,,false
 generated_71820,func_15044CE4,0x40,0xA4990012,0xA4880012,-,-,Store the second scale from the retail quotient lifetime,,,false
 generated_71820,func_15044CE4,0x48,0xA4990014,0xA4880014,-,-,Store the third scale from the retail quotient lifetime,,,false
+generated_B3020,func_1508855C,0x00,0x3C020000,0x3C030000,R_MIPS_HI16:D_800872A0,R_MIPS_HI16:D_800872A0,Keep the record-table base in retail's v1 lifetime,,,false
+generated_B3020,func_1508855C,0x04,0x8C420000,0x8C630000,R_MIPS_LO16:D_800872A0,R_MIPS_LO16:D_800872A0,Complete the table load through retail's v1 lifetime,,,false
+generated_B3020,func_1508855C,0x10,0x14400003,0x14600003,-,-,Test the table through retail's v1 lifetime,,,false
+generated_B3020,func_1508855C,0x14,0x008E1823,0x008E1023,-,-,Keep the object delta in retail's v0 lifetime,,,false
+generated_B3020,func_1508855C,0x24,0x0061001A,0x0041001A,-,-,Divide the object delta through retail's v0 lifetime,,,false
+generated_B3020,func_1508855C,0x28,0x00001812,0x00001012,-,-,Keep the record index in retail's v0 lifetime,,,false
+generated_B3020,func_1508855C,0x30,0x14600003,0x14400003,-,-,Test the record index through retail's v0 lifetime,,,false
+generated_B3020,func_1508855C,0x48,0x24450084,0x24040001,-,-,Initialize the retail loop index before the record pointer,,,false
+generated_B3020,func_1508855C,0x4C,0x24060001,0x24660084,-,-,Derive the first record through retail's a2 lifetime,,,false
+generated_B3020,func_1508855C,0x50,0x03192021,0x03192821,-,-,Keep the record count in retail's a1 lifetime,,,false
+generated_B3020,func_1508855C,0x54,0x28810002,0x28A10002,-,-,Test the record count through retail's a1 lifetime,,,false
+generated_B3020,func_1508855C,0x58,0x10200003,0x5420000B,-,-,Use retail's branch-likely count exit to the shared epilogue,,,false
+generated_B3020,func_1508855C,0x60,0x03E00008,0x80C80031,-,-,Load the first record index at the retail loop head,,,false
+generated_B3020,func_1508855C,0x64,0x2402FFFF,0x54480004,-,-,Compare the sought and current record indices,,,false
+generated_B3020,func_1508855C,0x68,0x80A80031,0x24840001,-,-,Increment the retail loop index in the branch delay slot,,,false
+generated_B3020,func_1508855C,0x6C,0x54680004,0x03E00008,-,-,Return immediately when the record index matches,,,false
+generated_B3020,func_1508855C,0x70,0x24C60001,0x00801025,-,-,Return the matching retail loop index,,,false
+generated_B3020,func_1508855C,0x74,0x03E00008,0x24840001,-,-,Preserve retail's duplicated post-match increment,,,false
+generated_B3020,func_1508855C,0x78,0x00C01025,0x0085082A,-,-,Compare the retail loop index against the record count,,,false
+generated_B3020,func_1508855C,0x7C,0x24C60001,0x1420FFF8,-,-,Loop while the retail index remains below the count,,,false
+generated_B3020,func_1508855C,0x80,0x14C4FFF9,0x24C60084,-,-,Advance the record pointer in the retail loop delay slot,,,false
+generated_B3020,func_1508855C,0x84,0x24A50084,0x2402FFFF,-,-,Return failure after exhausting the record table,,,false
 generated_1BA1D0,func_151904BC,0x10,0x51C00006,0x11C00005,-,-,Keep the null-release branch non-likely at the retail target,,,false
 generated_1BA1D0,func_151904BC,0x14,0x8CA60010,0x00000000,-,-,Keep the null-release branch delay slot empty,,,false
 generated_1BA1D0,func_151904BC,0x28,0x8CA60010,0x3C040000,-,R_MIPS_HI16:func_1518E298,Begin callback address setup before independent owner and resource loads,,,false

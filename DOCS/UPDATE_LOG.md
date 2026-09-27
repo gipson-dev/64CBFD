@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game indexed-record lookup byte-exact
+
+- Confirmed that the existing C for `func_1508855C` recovers the complete
+  table-index calculation and active-record search behavior.
+- All 36 words / 144 bytes match. Twenty-two guarded words preserve retail's
+  register lifetimes and equivalent branch scheduling; the two guarded table
+  address words preserve their original `D_800872A0` relocation identities.
+- The complete span has SHA-256
+  `8e59eaab129aa398368550fe589cf0991cec44face9740101ec18eb00a61c74d`.
+  Fresh totals are **2,785 / 5,469 (50.92%)** overall and
+  **2,214 / 4,791 (46.21%)** in Game.
+
 ### Game position/scale initializer byte-exact
 
 - Replaced the false zero-return placeholder at `func_15044CE4` with its

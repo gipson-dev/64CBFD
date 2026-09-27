@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,784 / 5,469 (50.91%) | 1 | 2,684 |
+| Total | 2,785 / 5,469 (50.92%) | 1 | 2,683 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,213 / 4,791 (46.19%) | 0 | 2,578 |
+| Game | 2,214 / 4,791 (46.21%) | 0 | 2,577 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -663,9 +663,11 @@ end-to-end gameplay acceptance.
    The 23-word `func_151EFF94` variadic formatting wrapper is byte-exact
    directly from C using the established `&arg1 + 1` argument cursor.
    The 23-word `func_15044CE4` position/scale initializer is byte-exact from
-   recovered C plus seven guarded register-lifetime words. Continue with
-   36-word `func_1508855C`; keep the previously documented
-   lower-difference rows parked.
+   recovered C plus seven guarded register-lifetime words. The existing C for
+   36-word `func_1508855C` is byte-exact with 22 guarded register-lifetime and
+   equivalent control-flow scheduling words; its two table relocations retain
+   their original identities. Continue with 26-word `func_150A6500`; keep the
+   previously documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
