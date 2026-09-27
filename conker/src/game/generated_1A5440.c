@@ -53,8 +53,14 @@ void func_15178BE4(u8 arg0, f32 *arg1, s16 arg2) {
     }
 }
 
-s32 func_15178C34() {
-    return 0;
+void func_15178C34(u8 arg0, s32 arg1, s32 arg2, s32 arg3, s16 arg4) {
+    u8 *node = (u8 *)func_15178B98(arg0);
+
+    if (node != NULL) {
+        *(u32 *)(node + 0x10) = (arg1 << 16) | (arg2 & 0xFFFF);
+        *(u32 *)(node + 0x14) = arg3 << 16;
+        *(s16 *)(node + 0x30) = (s16)arg4;
+    }
 }
 
 s32 func_15178C9C() {

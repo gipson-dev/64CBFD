@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, owner-list unlink matched).** The current linked
-checkpoint is `2847 / 5469 (52.06%)` exact C functions, with one address-drift
-blocker and 2,621 genuinely different C functions. Init is
+**Active (2026-09-27, packed node update matched).** The current linked
+checkpoint is `2848 / 5469 (52.08%)` exact C functions, with one address-drift
+blocker and 2,620 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2275 / 4791 (47.48%)` exact, with 2,516 genuinely different C rows. The tree
+`2276 / 4791 (47.51%)` exact, with 2,515 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1013,7 +1013,10 @@ exact directly from typed C; see
 The 25-word Game `func_1514ED8C` owner-list unlink and node release is exact
 directly from typed C; see
 [Working Note 343](WORKING_NOTES/343-game-owner-list-unlink-match-20260927.md).
-Continue with 26-word Game `func_15178C34`, the next ordinary unparked row in
+The 26-word Game `func_15178C34` packed node update is exact directly from
+typed C; see
+[Working Note 344](WORKING_NOTES/344-game-packed-node-update-match-20260927.md).
+Continue with 26-word Game `func_15182768`, the next ordinary unparked row in
 the fresh queue at 24 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

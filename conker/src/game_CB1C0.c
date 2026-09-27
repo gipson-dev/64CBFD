@@ -33,7 +33,7 @@ s32 func_1509DDC4(s32 arg0, u8 arg1) {
 }
 
 s32 func_15084000(s32);
-void func_15178C34(u8, s32, s32, s32, s32);
+void func_15178C34(u8, s32, s32, s32, s16);
 void func_15178BE4(u8, f32*, s16);
 s32 func_15178C9C(u8 arg0, s32 arg1);
 /* Non-matching C placeholders for asm/nonmatchings/game_CB1C0/func_1509DDFC.s. */

@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game packed node update byte-exact
+
+- Restored `func_15178C34` as a byte-ID lookup followed by two packed word
+  stores and a signed halfword store into the selected node.
+- Correcting the fifth parameter to `s16` reproduces all 26 retail words
+  directly, including the stack halfword load, without matching guards.
+- The linked span has SHA-256
+  `d95e4bc7333312ac17d400f54e3868d3bb50f56992bf5da1252ddabd00477356`.
+  Fresh totals are **2,848 / 5,469 (52.08%)** overall and
+  **2,276 / 4,791 (47.51%)** in Game.
+
 ### Game owner-list unlink byte-exact
 
 - Restored `func_1514ED8C` as an owner-head update, doubly linked-list splice,
