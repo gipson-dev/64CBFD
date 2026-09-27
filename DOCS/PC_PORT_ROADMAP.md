@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,832 / 5,469 (51.78%) | 1 | 2,636 |
+| Total | 5,469 / 6,041 (90.53%) | 2,833 / 5,469 (51.80%) | 1 | 2,635 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,260 / 4,791 (47.17%) | 0 | 2,531 |
+| Game | 4,791 / 5,321 (90.04%) | 2,261 / 4,791 (47.19%) | 0 | 2,530 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -975,8 +975,9 @@ copy is exact from typed C plus five guarded setup-scheduling words. The
 typed C. The 28-word Game `func_151AE640` mode-driven slot updater is exact
 from structured C plus four guarded return-scheduling and branch words. The
 24-word Game `func_151D5E30` four-handle cleanup loop is exact from typed C
-plus three guarded null-test scheduling words. Continue with 25-word Game
-`func_15023440` while
+plus three guarded null-test scheduling words. The 25-word Game
+`func_15023440` resource-entry reset is exact directly from structured C.
+Continue with 25-word Game `func_1502DB20` while
 the smaller special-case rows remain parked.
 
 Current host-port progression and acceptance boundaries:

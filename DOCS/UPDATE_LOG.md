@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game resource-entry reset byte-exact
+
+- Restored `func_15023440` as a `struct163` reset helper with distinct release
+  and active-resource refresh paths.
+- All 25 words / 100 bytes match retail directly from structured C, including
+  both branch-likely paths, saved-object lifetime across the calls, and the
+  final leading-halfword reset. No guarded word patches are required.
+- The complete linked span has SHA-256
+  `a8d81a7d4b3a413a1f964ff45762715e657657e89cd4b13c1076393c346bf7a1`.
+  Fresh totals are **2,833 / 5,469 (51.80%)** overall and
+  **2,261 / 4,791 (47.19%)** in Game.
+
 ### Game four-handle cleanup byte-exact
 
 - Restored `func_151D5E30` as a four-entry cleanup loop that calls

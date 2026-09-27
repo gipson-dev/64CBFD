@@ -15,6 +15,7 @@ extern u8 D_800C363A[];
 extern struct163 D_800C3CA0[3];
 extern struct163 D_800C3D48;
 extern void func_1516D2E0(u8 *arg0);
+extern void func_1516D328(u8 *arg0);
 
 extern u8 D_800C3510[];
 extern u8 D_800C354A[];
@@ -267,8 +268,16 @@ void func_150233E4(void) {
     } while (entry != &D_800C3D48);
 }
 
-s32 func_15023440() {
-    return 0;
+void func_15023440(struct163 *arg0, s32 arg1) {
+    if (arg1 != 0) {
+        func_1516D2E0(arg0->unk34);
+        arg0->unk34 = NULL;
+    } else if (arg0->unkC != 0) {
+        func_1516D328(arg0->unk34);
+    } else {
+        arg0->unk34 = NULL;
+    }
+    arg0->unk0 = 0;
 }
 
 s32 func_150234A4() {
