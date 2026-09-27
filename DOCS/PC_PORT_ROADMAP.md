@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,825 / 5,469 (51.65%) | 1 | 2,643 |
+| Total | 5,469 / 6,041 (90.53%) | 2,826 / 5,469 (51.67%) | 1 | 2,642 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,253 / 4,791 (47.03%) | 0 | 2,538 |
+| Game | 4,791 / 5,321 (90.04%) | 2,254 / 4,791 (47.05%) | 0 | 2,537 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -964,8 +964,10 @@ from structured C plus nine guarded register-allocation words. The 29-word Game
 `func_151640C0` category-`0x29` identity filter is likewise exact from
 structured C plus nine guarded register-allocation words. The 27-word Game
 `func_1515F040` scaled signed fixed-point clamp is exact from typed C plus
-three guarded scheduling/omission entries. Continue with 25-word Game
-`func_15166204` while the smaller special-case rows remain parked.
+three guarded scheduling/omission entries. The 25-word Game `func_15166204`
+lifetime updater and expiry path is exact from C without guarded word patches.
+Continue with 24-word Game `func_1517EA4C` while the smaller special-case rows
+remain parked.
 
 Current host-port progression and acceptance boundaries:
 

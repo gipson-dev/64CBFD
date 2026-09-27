@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game lifetime updater byte-exact
+
+- Restored `func_15166204` as a signed halfword accumulator plus an unsigned
+  byte lifetime countdown that destroys the object when the timer expires.
+- All 25 words / 100 bytes match retail directly from C. Initializing the
+  timer before the accumulator and spelling expiry as the primary branch
+  reproduces retail's register lifetime, branch-likely form, and dead
+  duplicate store without guarded word patches.
+- The complete span has SHA-256
+  `1a61744e11c39328ddee4adaaf1d193d7b88382e326b16990c76e93d61b2a689`.
+  Fresh totals are **2,826 / 5,469 (51.67%)** overall and
+  **2,254 / 4,791 (47.05%)** in Game.
+
 ### Game scaled fixed-point clamp byte-exact
 
 - Restored `func_1515F040` as a two-stage signed float clamp followed by an

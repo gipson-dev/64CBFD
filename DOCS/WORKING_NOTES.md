@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, scaled fixed-point clamp matched).** The current linked
-checkpoint is `2825 / 5469 (51.65%)` exact C functions, with one address-drift
-blocker and 2,643 genuinely different C functions. Init is
+**Active (2026-09-27, lifetime updater matched).** The current linked
+checkpoint is `2826 / 5469 (51.67%)` exact C functions, with one address-drift
+blocker and 2,642 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2253 / 4791 (47.03%)` exact, with 2,538 genuinely different C rows. The tree
+`2254 / 4791 (47.05%)` exact, with 2,537 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -947,7 +947,10 @@ structured C plus nine guarded register-allocation words; see
 The 27-word Game `func_1515F040` scaled signed fixed-point clamp is exact from
 typed C plus the established three-entry guarded scheduling/omission pattern;
 see [Working Note 321](WORKING_NOTES/321-game-scaled-fixed-point-clamp-match-20260927.md).
-Continue with 25-word Game `func_15166204`, the next unparked C row in the
+The 25-word Game `func_15166204` signed accumulator, timer, and expiry path is
+exact from C without guarded word patches; see
+[Working Note 322](WORKING_NOTES/322-game-lifetime-updater-match-20260927.md).
+Continue with 24-word Game `func_1517EA4C`, the next unparked C row in the
 fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
