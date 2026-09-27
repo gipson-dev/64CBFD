@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game timer/phase updater byte-exact
+
+- Replaced the zero-return placeholder at `func_1517F7B4` with the recovered
+  global timer and phase update. A nonzero 16-bit timer subtracts the frame
+  delta with saturation at zero, then the 8-bit phase accumulator advances by
+  speed times frame delta.
+- All 24 words / 96 bytes match retail. The behavioral C and instruction shape
+  compile directly; five guarded words retain retail's `a1` timer-base lifetime
+  instead of IDO's otherwise equivalent `a0` allocation, including both
+  checked timer relocations.
+- The complete span has SHA-256
+  `e2b43acfdd268d2a26e9aaa278219ebc73751ae9197e6e408b87412c964eef4d`.
+  Fresh totals are **2,797 / 5,469 (51.14%)** overall and
+  **2,226 / 4,791 (46.46%)** in Game.
+
 ### Game state-toggle event callback byte-exact
 
 - Replaced the zero-return placeholder at `func_1514F130` with its recovered

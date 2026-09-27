@@ -103,8 +103,16 @@ void func_1517F75C(void) {
     }
 }
 
-s32 func_1517F7B4() {
-    return 0;
+// Matched with guarded timer-base register normalization.
+void func_1517F7B4(void) {
+    if (D_800DDE08 != 0) {
+        if (D_800BE9E4 < D_800DDE08) {
+            D_800DDE08 -= D_800BE9E4;
+        } else {
+            D_800DDE08 = 0;
+        }
+        D_800DDD89 += D_800DDD88 * D_800BE9E4;
+    }
 }
 
 s32 func_1517F814() {

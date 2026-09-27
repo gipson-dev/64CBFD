@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, state-toggle callback matched).** The current linked
-checkpoint is `2796 / 5469 (51.12%)` exact C functions, with one address-drift
-blocker and 2,672 genuinely different C functions. Game is
-`2225 / 4791 (46.44%)` exact, with 2,566 genuinely different C rows. The tree
+**Active (2026-09-27, timer/phase updater matched).** The current linked
+checkpoint is `2797 / 5469 (51.14%)` exact C functions, with one address-drift
+blocker and 2,671 genuinely different C functions. Game is
+`2226 / 4791 (46.46%)` exact, with 2,565 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -854,7 +854,10 @@ from C with no guarded words; see
 The 25-word `func_1514F130` state-toggle event callback is now byte-exact
 directly from typed C with no guarded words; see
 [Working Note 292](WORKING_NOTES/292-game-state-toggle-event-callback-match-20260927.md).
-Continue with 24-word `func_1517F7B4`, the next unparked Game C row in the
+The 24-word `func_1517F7B4` timer/phase updater is now byte-exact from recovered
+C plus five guarded timer-base register words; see
+[Working Note 293](WORKING_NOTES/293-game-timer-phase-update-match-20260927.md).
+Continue with 25-word `func_151A0950`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
