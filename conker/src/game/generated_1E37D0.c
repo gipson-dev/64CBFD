@@ -71,8 +71,17 @@ void func_151B82CC(u8 *arg0, s32 arg1, u8 arg2) {
     }
 }
 
-s32 func_151B8318() {
-    return 0;
+void func_151B8318(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *container = *(u8 **)(arg0 + 0x98);
+    u8 *entry = *(u8 **)(container + 4);
+
+    if (arg2 == 0) {
+        s32 value = *(s32 *)arg1;
+
+        if (value == *(s32 *)entry || entry[4] == arg1[4]) {
+            func_1516972C(arg0);
+        }
+    }
 }
 
 void func_151B8370(arg0, arg1)

@@ -554,6 +554,11 @@ one short-circuit failure condition, including retail's branch-likely tag match
 and duplicated scheduled first-float load. Continue with 22-word
 `func_151B8318`; see
 [Working Note 212](WORKING_NOTES/212-game-validated-position-reader-match-20260926.md).
+That optional matching-record release gate is now byte-exact from typed C and
+an explicit supplied-record word lifetime, including retail's normalized byte
+flag and branch-likely tag mismatch exit. Continue with 22-word
+`func_151D8D5C`; see
+[Working Note 213](WORKING_NOTES/213-game-optional-record-release-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

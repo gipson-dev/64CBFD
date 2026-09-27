@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game optional record release byte-exact
+
+- Replaced the zero-return `func_151B8318` placeholder with its optional
+  matching-record release gate.
+- Typed pointer traversal and an explicit supplied-record word reproduce the
+  byte-flag normalization, pointer-or-tag match, branch-likely mismatch exit,
+  and release call without a retail-word patch.
+- The complete span shares SHA-256
+  `9943dcd929ed73f90c0a377ed615475e599d1ae6b60e9243438c146009649cb7`.
+  Fresh totals are **2,716 / 5,469 (49.66%)** overall and
+  **2,145 / 4,791 (44.77%)** in Game.
+
 ### Game validated-position reader byte-exact
 
 - Replaced the zero-return `func_151B7678` placeholder with its pointer-chain
