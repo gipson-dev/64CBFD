@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game scaled query wrapper byte-exact
+
+- Corrected `func_15197A0C` to accept its original incoming argument.
+- The restored argument home supplies the one missing instruction; all 23
+  words / 92 bytes then match directly from C with no guarded words.
+- The complete span has SHA-256
+  `79e00b19930e3d83d5baf14d43868c3332e63a76de73d420b1f301259a31d872`.
+  Fresh totals are **2,778 / 5,469 (50.80%)** overall and
+  **2,207 / 4,791 (46.07%)** in Game.
+
 ### Game callback/resource cleanup byte-exact
 
 - Replaced the false zero-return placeholder at `func_151904BC` with its

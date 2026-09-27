@@ -162,7 +162,7 @@ f32 func_151979F8(s32 arg0) {
     return D_800A8AA4;
 }
 
-f32 func_15197A0C() {
+f32 func_15197A0C(s32 arg0) {
     return (f32) func_151422C0(0xA, &D_800A8A40, 1, 0x1F4, &D_800A8A48, 0x8CC) * D_800A8AA8;
 }
 

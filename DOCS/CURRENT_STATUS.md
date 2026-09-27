@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,777 / 5,469 (50.78%) | 1 | 2,691 |
+| Total | 2,778 / 5,469 (50.80%) | 1 | 2,690 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,206 / 4,791 (46.04%) | 0 | 2,585 |
+| Game | 2,207 / 4,791 (46.07%) | 0 | 2,584 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -641,7 +641,9 @@ end-to-end gameplay acceptance.
    with one guarded commutative branch-operand normalization.
    The 23-word `func_151904BC` callback/resource cleanup is byte-exact from C
    with five guarded branch and call-setup scheduling words.
-   Continue with 23-word `func_15197A0C`; keep the previously documented
+   The 23-word `func_15197A0C` scaled query wrapper is byte-exact directly
+   from C after restoring its incoming argument.
+   Continue with 24-word `func_1519F108`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
