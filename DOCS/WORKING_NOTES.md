@@ -563,6 +563,11 @@ That two-event release callback is now byte-exact from a typed object/float/byte
 signature and explicit `0x58`/`0x47` branches, including retail's unused float
 home and two separate call sites. Continue with 20-word `func_15083FB0`; see
 [Working Note 214](WORKING_NOTES/214-game-two-event-release-callback-match-20260926.md).
+That object-index wrapper is now byte-exact after correcting the local
+`func_15083E90` declaration to a pointer return and byte identifier parameter,
+which restores retail's complete call prologue and epilogue schedule. Continue
+with 20-word `guMtxIdentF`; see
+[Working Note 215](WORKING_NOTES/215-game-object-index-wrapper-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

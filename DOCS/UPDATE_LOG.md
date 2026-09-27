@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game object-index wrapper byte-exact
+
+- Corrected the local `func_15083E90` declaration to return an object pointer
+  and accept the byte identifier used by `func_15083FB0`.
+- That byte-parameter contract makes IDO emit retail's pre-call normalization,
+  empty call delay slot, object-table base register, index division, and
+  compact return epilogue directly, without a retail-word patch.
+- The complete `func_15083FB0` span shares SHA-256
+  `903332ebe2d5ba12e58c9139e884b7c32ffd83b60f3c6211225b7df5bea4368c`.
+  Fresh totals are **2,718 / 5,469 (49.70%)** overall and
+  **2,147 / 4,791 (44.81%)** in Game.
+
 ### Game two-event release callback byte-exact
 
 - Replaced the zero-return `func_151D8D5C` placeholder with its release

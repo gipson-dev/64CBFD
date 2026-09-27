@@ -104,15 +104,15 @@ s32 func_15083E0C() {
     return 0;
 }
 
-s32 func_15083E90() {
+u8 *func_15083E90(u8 arg0) {
     return 0;
 }
 
 s32 func_15083FB0(u8 arg0) {
-    s32 temp_v0 = func_15083E90(arg0);
+    u8 *temp_v0 = func_15083E90(arg0);
 
     if (temp_v0 != 0) {
-        return (temp_v0 - (s32) D_800CC2D0) / 0x32C;
+        return ((s32)temp_v0 - (s32)D_800CC2D0) / 0x32C;
     }
     return -1;
 }

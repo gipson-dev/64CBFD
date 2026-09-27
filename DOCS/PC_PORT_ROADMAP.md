@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,717 / 5,469 (49.68%) | 1 | 2,751 |
+| Total | 5,469 / 6,038 (90.58%) | 2,718 / 5,469 (49.70%) | 1 | 2,750 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,146 / 4,791 (44.79%) | 0 | 2,645 |
+| Game | 4,791 / 5,318 (90.09%) | 2,147 / 4,791 (44.81%) | 0 | 2,644 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -666,7 +666,10 @@ from typed C and an explicit record-word lifetime; see
 The 22-word `func_151D8D5C` two-event release callback is now exact from a
 typed callback signature and explicit event branches; see
 [Working Note 214](WORKING_NOTES/214-game-two-event-release-callback-match-20260926.md).
-Continue with 20-word `func_15083FB0`.
+The 20-word `func_15083FB0` object-index wrapper is now exact after correcting
+the local `func_15083E90` byte-parameter and pointer-return contract; see
+[Working Note 215](WORKING_NOTES/215-game-object-index-wrapper-match-20260926.md).
+Continue with 20-word `guMtxIdentF`.
 
 Current host-port progression and acceptance boundaries:
 
