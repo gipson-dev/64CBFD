@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game water-distance classifier byte-exact
+
+- Replaced the uncertain raw-pointer implementation of `func_15125490` with a
+  typed classifier over `struct108::unk3D0` and `struct127` water/position
+  fields. It returns null outside water or below 100 units, the object from
+  100 through 300 units, and sentinel one above 300 units.
+- All 25 words / 100 bytes match retail. IDO emits a behaviorally equivalent
+  26-word body with reversed `v0`/`v1` lifetimes, so 25 guarded slot rows
+  replace the overflow trampoline and zero fill after checking their expected
+  words and relocation state.
+- The complete span has SHA-256
+  `a5ffeceac1d9fab6316daf2b99daed9276cdbc0c1a0ff0b8a16f7a0cf9b696a6`.
+  Fresh totals are **2,794 / 5,469 (51.09%)** overall and
+  **2,223 / 4,791 (46.40%)** in Game.
+
 ### Game linked-record validator byte-exact
 
 - Replaced the zero-return placeholder at `func_151002BC` with the recovered

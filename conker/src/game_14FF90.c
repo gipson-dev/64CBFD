@@ -501,23 +501,24 @@ s32 func_151253CC(struct108 *arg0) {
     return 0;
 }
 
-// no idea what going on here
-void *func_15125490(u8 *arg0) {
-    u8 *obj = *(u8 **)(arg0 + 0x3D0);
-    s32 diff;
+struct127 *func_15125490(struct108 *arg0) {
+    struct127 *result;
 
-    if (obj[0xAD] != 1) {
-        return NULL;
-    }
+    result = arg0->unk3D0;
 
-    diff = (s32) fabsf(*(f32 *)(obj + 0x18) - *(f32 *)(obj + 0x118));
-    if (diff < 100) {
-        return NULL;
+    if (result->in_water == 1) {
+        s32 diff = (s32) fabsf(result->y_position - result->unk118);
+
+        if (diff < 100) {
+            return NULL;
+        }
+        if (diff >= 301) {
+            return (struct127 *) 1;
+        }
+    } else {
+        result = NULL;
     }
-    if (diff >= 301) {
-        return (void *)1;
-    }
-    return obj;
+    return result;
 }
 
 // Matched with guarded relocation-preserving opening-load scheduling.

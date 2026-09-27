@@ -1315,3 +1315,28 @@ generated_12D630,func_151002BC,0x1C,0x51E10005,0x11E10005,-,-,Keep the invalid-t
 generated_12D630,func_151002BC,0x20,0x2408FFFF,0x00000000,-,-,Keep the invalid-type branch delay slot empty,,,false
 generated_12D630,func_151002BC,0x2C,0x13190003,0x53190004,-,-,Use the retail likely equality branch into the valid path,,,false
 generated_12D630,func_151002BC,0x30,0x2408FFFF,0x8C690318,-,-,Load the optional child pointer in the equality branch delay slot,,,false
+game_14FF90,func_15125490,0x00,0x08000000,0x8C8203D0,R_MIPS_26:__retail_overflow_func_15125490,-,Replace the oversized C trampoline with the retail object load,,,false
+game_14FF90,func_15125490,0x04,0x00000000,0x24010001,-,-,Materialize the in-water discriminator,,,false
+game_14FF90,func_15125490,0x08,0x00000000,0x904E00AD,-,-,Load the typed in-water byte through the retail object lifetime,,,false
+game_14FF90,func_15125490,0x0C,0x00000000,0x55C10013,-,-,Branch to the shared null return for a non-water object,,,false
+game_14FF90,func_15125490,0x10,0x00000000,0x00001025,-,-,Clear the result in the invalid branch delay slot,,,false
+game_14FF90,func_15125490,0x14,0x00000000,0xC4440018,-,-,Load the current vertical position,,,false
+game_14FF90,func_15125490,0x18,0x00000000,0xC4460118,-,-,Load the comparison vertical position,,,false
+game_14FF90,func_15125490,0x1C,0x00000000,0x46062001,-,-,Subtract the two vertical positions,,,false
+game_14FF90,func_15125490,0x20,0x00000000,0x46000005,-,-,Take the absolute vertical distance,,,false
+game_14FF90,func_15125490,0x24,0x00000000,0x4600020D,-,-,Convert the distance to a signed integer,,,false
+game_14FF90,func_15125490,0x28,0x00000000,0x44034000,-,-,Keep the integer distance in the retail v1 lifetime,,,false
+game_14FF90,func_15125490,0x2C,0x00000000,0x00000000,-,-,Preserve the conversion hazard slot,,,false
+game_14FF90,func_15125490,0x30,0x00000000,0x28610064,-,-,Test the lower distance threshold,,,false
+game_14FF90,func_15125490,0x34,0x00000000,0x50200004,-,-,Use the retail likely branch to the upper-threshold test,,,false
+game_14FF90,func_15125490,0x38,0x00000000,0x2861012D,-,-,Fill the lower-threshold branch slot with the upper test,,,false
+game_14FF90,func_15125490,0x3C,0x00000000,0x03E00008,-,-,Return for a below-range distance,,,false
+game_14FF90,func_15125490,0x40,0x00000000,0x00001025,-,-,Return zero for a below-range distance,,,false
+game_14FF90,func_15125490,0x44,0x00000000,0x2861012D,-,-,Repeat the upper-threshold test on the fallthrough path,,,false
+game_14FF90,func_15125490,0x48,0x00000000,0x14200004,-,-,Return the object for an in-range distance,,,false
+game_14FF90,func_15125490,0x4C,0x00000000,0x00000000,-,-,Keep the in-range branch delay slot empty,,,false
+game_14FF90,func_15125490,0x50,0x00000000,0x03E00008,-,-,Return for an above-range distance,,,false
+game_14FF90,func_15125490,0x54,0x00000000,0x24020001,-,-,Return the above-range sentinel in the delay slot,,,false
+game_14FF90,func_15125490,0x58,0x00000000,0x00001025,-,-,Retain the compiler-layout null assignment before the shared return,,,false
+game_14FF90,func_15125490,0x5C,0x00000000,0x03E00008,-,-,Emit the shared object-or-null return,,,false
+game_14FF90,func_15125490,0x60,0x00000000,0x00000000,-,-,Keep the final return delay slot empty,,,false
