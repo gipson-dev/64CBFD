@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game existing-record wrapper twin byte-exact
+
+- Replaced the zero-return `func_150C6870` placeholder with the `+0x70`
+  structural twin of the preceding existing-record activation and allocator
+  wrapper.
+- The same typed owner and wrapper lifetimes reproduce all 21 retail words,
+  including the two-argument `func_150C68C4` call, without a retail-word patch.
+- The complete span shares SHA-256
+  `20817a804dc0355c5d9ffea271db0521cd85aac833f0dfa7653ea887b002e5fb`.
+  Fresh totals are **2,724 / 5,470 (49.80%)** overall and
+  **2,153 / 4,792 (44.93%)** in Game.
+
 ### Game existing-record wrapper byte-exact
 
 - Replaced the zero-return `func_150C5F40` placeholder with its existing-record

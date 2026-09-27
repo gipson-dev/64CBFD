@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-26, Game existing-record wrapper matched).** The current
-linked checkpoint is `2723 / 5470 (49.78%)` exact C functions, with one
-address-drift blocker and 2,746 genuinely different C functions. Game is
-`2152 / 4792 (44.91%)` exact, with 2,640 genuinely different C rows. The tree
+**Active (2026-09-26, Game existing-record wrapper twin matched).** The current
+linked checkpoint is `2724 / 5470 (49.80%)` exact C functions, with one
+address-drift blocker and 2,745 genuinely different C functions. Game is
+`2153 / 4792 (44.93%)` exact, with 2,639 genuinely different C rows. The tree
 contains 569 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -594,6 +594,10 @@ The existing-record/allocator wrapper `func_150C5F40` is now exact directly
 from typed C, including its owner preload, embedded activation byte, and
 two-argument allocator call. Continue with structural twin `func_150C6870`;
 see [Working Note 219](WORKING_NOTES/219-game-existing-record-wrapper-match-20260926.md).
+The `+0x70` structural twin `func_150C6870` is also exact directly from the
+same typed C shape and its distinct `func_150C68C4` call. Continue with
+21-word `func_150C7968`; see
+[Working Note 220](WORKING_NOTES/220-game-existing-record-wrapper-twin-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
