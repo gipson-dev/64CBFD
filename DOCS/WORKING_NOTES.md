@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, six-ID type predicate matched).** The current linked
-checkpoint is `2751 / 5469 (50.30%)` exact C functions, with one address-drift
-blocker and 2,717 genuinely different C functions. Game is
-`2180 / 4791 (45.50%)` exact, with 2,611 genuinely different C rows. The tree
+**Active (2026-09-27, guarded mode-4 dispatcher matched).** The current linked
+checkpoint is `2752 / 5469 (50.32%)` exact C functions, with one address-drift
+blocker and 2,716 genuinely different C functions. Game is
+`2181 / 4791 (45.52%)` exact, with 2,610 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -709,8 +709,15 @@ The 32-word `func_15033328` swimming-attachment lifetime callback is now exact
 directly from C with no guarded words; see
 [Working Note 247](WORKING_NOTES/247-game-swimming-attachment-lifetime-match-20260927.md).
 The 22-word `func_1503378C` six-ID type predicate is now exact directly from C
-with no guarded words. Continue with 22-word `func_15044DE8`; see
+with no guarded words; see
 [Working Note 248](WORKING_NOTES/248-game-six-id-type-predicate-match-20260927.md).
+The 22-word `func_15044DE8` guarded mode-4 dispatcher is now exact directly
+from C with no guarded words. Continue with 22-word `func_15088218`; see
+[Working Note 249](WORKING_NOTES/249-game-guarded-mode4-dispatcher-match-20260927.md).
+Its existing arithmetic semantics are recovered, but initial pointer-local,
+argument-rewrite, explicit-offset, partial `index * 33`, and early base-reuse
+probes did not reproduce retail's `a1` index / `t6` offset lifetime; the
+original C was restored unchanged.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

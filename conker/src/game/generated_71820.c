@@ -3,6 +3,7 @@
 /* Non-matching placeholders for the text-only asm slice asm/71820.s. */
 
 extern s32 D_800CBD9C;
+extern u8 D_800C35EA;
 extern u8 D_800CC2D0[];
 
 void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye,
@@ -59,8 +60,11 @@ void func_15044DA0() {
     }
 }
 
-s32 func_15044DE8() {
-    return 0;
+void func_15044DE8() {
+    if ((D_800CC2D0[0x104] == 0) && (D_800CC2D0[0x125] == 0) &&
+            (D_800C35EA != 1)) {
+        func_1505D024(D_800CC2D0, 4, *(u16 *) (D_800CC2D0 + 0x7A), -1);
+    }
 }
 
 void func_15044E40() {

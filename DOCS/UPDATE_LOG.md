@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game guarded mode-4 dispatcher byte-exact
+
+- Recovered `func_15044DE8` as the guarded mode-4 variant of its neighboring
+  dispatch helpers: it calls `func_1505D024` only when object-state bytes
+  `0x104` and `0x125` are clear and global state is not one.
+- All 22 words / 88 bytes match directly from C, including both branch-likely
+  epilogues, global-state relocation, argument setup, call, and delay slot. No
+  guarded retail words are needed.
+- The complete span has SHA-256
+  `2e614c823ff7b9d1a357dc862d044a336d070d58962e14ad022382c7e6c3a564`.
+  Fresh totals are **2,752 / 5,469 (50.32%)** overall and
+  **2,181 / 4,791 (45.52%)** in Game.
+
 ### Game six-ID type predicate byte-exact
 
 - Recovered `func_1503378C` as a predicate that returns false only when object

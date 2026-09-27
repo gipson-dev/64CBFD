@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,751 / 5,469 (50.30%) | 1 | 2,717 |
+| Total | 5,469 / 6,040 (90.55%) | 2,752 / 5,469 (50.32%) | 1 | 2,716 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,180 / 4,791 (45.50%) | 0 | 2,611 |
+| Game | 4,791 / 5,320 (90.06%) | 2,181 / 4,791 (45.52%) | 0 | 2,610 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -776,7 +776,10 @@ directly from C with no guarded words; see
 The 22-word `func_1503378C` six-ID type predicate is exact directly from C with
 no guarded words; see
 [Working Note 248](WORKING_NOTES/248-game-six-id-type-predicate-match-20260927.md).
-Continue with 22-word `func_15044DE8` while the documented smaller rows remain
+The 22-word `func_15044DE8` guarded mode-4 dispatcher is exact directly from C
+with no guarded words; see
+[Working Note 249](WORKING_NOTES/249-game-guarded-mode4-dispatcher-match-20260927.md).
+Continue with 22-word `func_15088218` while the documented smaller rows remain
 parked.
 
 Current host-port progression and acceptance boundaries:

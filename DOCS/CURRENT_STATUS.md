@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,751 / 5,469 (50.30%) | 1 | 2,717 |
+| Total | 2,752 / 5,469 (50.32%) | 1 | 2,716 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,180 / 4,791 (45.50%) | 0 | 2,611 |
+| Game | 2,181 / 4,791 (45.52%) | 0 | 2,610 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -595,7 +595,9 @@ end-to-end gameplay acceptance.
    setter, 24-word `func_15023870` null-gated event-byte copy, and 32-word
    `func_15033328` swimming-attachment lifetime callback are also byte-exact
    directly from C. The 22-word `func_1503378C` six-ID type predicate is also
-   byte-exact directly from C. Continue with 22-word `func_15044DE8`;
+   byte-exact directly from C. The 22-word `func_15044DE8` guarded mode-4
+   dispatcher is also byte-exact directly from C. Continue with 22-word
+   `func_15088218`;
    keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
