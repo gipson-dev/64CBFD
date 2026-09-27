@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game scaled transform copy byte-exact
+
+- Restored `func_1519ED24` as a typed transform-copy helper that applies the
+  shared scale to two source components and copies two three-float vectors.
+- All 24 words / 96 bytes match retail. The C reproduces the data flow; five
+  guarded relocation-aware word entries preserve retail's independent setup
+  scheduling at the function head.
+- The complete linked span has SHA-256
+  `c387b23efc90a3b66e61c6405b7a0f5c85193ede03ffef9e7a2aada0ba64fa01`.
+  Fresh totals are **2,829 / 5,469 (51.73%)** overall and
+  **2,257 / 4,791 (47.11%)** in Game.
+
 ### Game linked-position callback byte-exact
 
 - Restored `func_1518E298` as a four-argument callback that validates its
