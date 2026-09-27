@@ -606,14 +606,15 @@ f32 func_15144528(f32 arg0, f32 arg1, f32 arg2) {
 }
 f32 func_15144598(struct134 *arg0) {
     f32 ret;
+    u8 *record = (u8 *)arg0;
 
-    switch (arg0->unk16 & 3) {
+    switch (record[0x15] & 3) {
+        case 2:
+            ret = *(s16 *)(record + 0xA) * *(s16 *)(record + 6) * 4.0f;
+            break;
         case 0:
         case 1:
-            ret = arg0->unk6 * arg0->unk6 * D_800A5694;
-            break;
-        case 2:
-            ret = arg0->unk6 * arg0->unkA * 4.0f;
+            ret = *(s16 *)(record + 6) * *(s16 *)(record + 6) * D_800A5694;
             break;
         default:
             ret = 1.0f;

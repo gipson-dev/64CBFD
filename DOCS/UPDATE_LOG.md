@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game mode-dependent area scaler byte-exact
+
+- Corrected `func_15144598` to read its mode from byte offset `0x15` and its
+  dimensions as signed halfwords at offsets `0x06` and `0x0A`.
+- All 37 words / 148 bytes match directly from C after placing case `2` before
+  the shared `0/1` path and expressing the case-2 multiplication operands in
+  IDO's reverse evaluation order. No guarded retail words are needed.
+- The complete span has SHA-256
+  `d24133a60d99d777e37a1986522ced2d3947226df1bf63479c3b2569cd62e7eb`.
+  Fresh totals are **2,767 / 5,469 (50.59%)** overall and
+  **2,196 / 4,791 (45.84%)** in Game.
+
 ### Game two-way type dispatcher byte-exact
 
 - Preserved the existing behavior of `func_1513BA78`: type `1` dispatches to

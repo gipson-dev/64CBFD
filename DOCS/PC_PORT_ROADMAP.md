@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,766 / 5,469 (50.58%) | 1 | 2,702 |
+| Total | 5,469 / 6,040 (90.55%) | 2,767 / 5,469 (50.59%) | 1 | 2,701 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,195 / 4,791 (45.82%) | 0 | 2,596 |
+| Game | 4,791 / 5,320 (90.06%) | 2,196 / 4,791 (45.84%) | 0 | 2,595 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -825,7 +825,11 @@ see [Working Note 262](WORKING_NOTES/262-game-indexed-record-reset-match-2026092
 The 23-word `func_1513BA78` two-way type dispatcher is exact directly from C
 after typed callee declarations recover retail's byte-argument register
 lifetime; see [Working Note 263](WORKING_NOTES/263-game-two-way-type-dispatch-match-20260927.md).
-Continue with 37-word `func_15144598` while the documented lower-difference
+The 37-word `func_15144598` mode-dependent area scaler is exact directly from
+C after correcting its mode-byte offset, signed dimensions, case order, and
+commutative operand order; see
+[Working Note 264](WORKING_NOTES/264-game-mode-area-scaler-match-20260927.md).
+Continue with 25-word `func_15149BF4` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:
