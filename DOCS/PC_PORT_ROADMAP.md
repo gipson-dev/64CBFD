@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,774 / 5,469 (50.72%) | 1 | 2,694 |
+| Total | 5,469 / 6,040 (90.55%) | 2,775 / 5,469 (50.74%) | 1 | 2,693 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,203 / 4,791 (45.98%) | 0 | 2,588 |
+| Game | 4,791 / 5,320 (90.06%) | 2,204 / 4,791 (46.00%) | 0 | 2,587 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -850,7 +850,10 @@ from C with byte-width arithmetic preserved; see
 The 22-word `func_1517F75C` inclusive player-timer decay loop is exact directly
 from C with unsigned halfword clamping preserved; see
 [Working Note 271](WORKING_NOTES/271-game-player-timer-decay-match-20260927.md).
-Continue with 22-word `func_15181D70` while the documented lower-difference
+The 22-word `func_15181D70` enabled player-state initializer is exact directly
+from C as the nonzero twin of `func_15181DC8`; see
+[Working Note 272](WORKING_NOTES/272-game-enabled-player-state-init-match-20260927.md).
+Continue with 24-word `func_1518A360` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

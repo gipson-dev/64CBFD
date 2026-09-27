@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game enabled player-state initializer byte-exact
+
+- Replaced the false zero-return placeholder at `func_15181D70` with its
+  original per-player enabled-state initialization.
+- All 22 words / 88 bytes match directly from C. The routine installs float
+  constant `D_800A72B0`, zeroes the paired scalar and vector fields, and sets
+  the player enable byte to one. No guarded retail words are needed.
+- The complete span has SHA-256
+  `9bc443d34ee264cb7c11bf0e6e84c6c9ca2dbd088fbb4005afd2514acd0ab072`.
+  Fresh totals are **2,775 / 5,469 (50.74%)** overall and
+  **2,204 / 4,791 (46.00%)** in Game.
+
 ### Game player-timer decay byte-exact
 
 - Replaced the false zero-return placeholder at `func_1517F75C` with its

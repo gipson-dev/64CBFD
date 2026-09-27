@@ -16,6 +16,7 @@ extern f32 D_800DDDC8[];
 extern f32 D_800DDDD8[];
 extern f32 D_800DDDE8[][2];
 extern u8 D_800DDE20[];
+extern f32 D_800A72B0;
 
 /* Non-matching placeholders for the text-only asm slice asm/1AC2F0.s. */
 
@@ -137,8 +138,12 @@ s32 func_15181D00() {
     return 0;
 }
 
-s32 func_15181D70() {
-    return 0;
+void func_15181D70(s32 arg0) {
+    D_800DDDD8[arg0] = D_800A72B0;
+    D_800DDDC8[arg0] = 0.0f;
+    D_800DDDE8[arg0][0] = 0.0f;
+    D_800DDDE8[arg0][1] = 0.0f;
+    D_800DDE20[arg0] = 1;
 }
 
 void func_15181DC8(s32 arg0) {
