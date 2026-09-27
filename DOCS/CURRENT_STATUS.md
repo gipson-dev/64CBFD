@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,773 / 5,469 (50.70%) | 1 | 2,695 |
+| Total | 2,774 / 5,469 (50.72%) | 1 | 2,694 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,202 / 4,791 (45.96%) | 0 | 2,589 |
+| Game | 2,203 / 4,791 (45.98%) | 0 | 2,588 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -633,7 +633,9 @@ end-to-end gameplay acceptance.
    directly from C, including both branch-likely early-return paths.
    The 22-word `func_151749A0` wrapped timer/counter updater is byte-exact
    directly from C with byte-width arithmetic preserved.
-   Continue with 22-word `func_1517F75C`; keep the previously documented
+   The 22-word `func_1517F75C` inclusive player-timer decay loop is byte-exact
+   directly from C with unsigned halfword clamping preserved.
+   Continue with 22-word `func_15181D70`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

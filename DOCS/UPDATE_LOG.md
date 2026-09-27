@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game player-timer decay byte-exact
+
+- Replaced the false zero-return placeholder at `func_1517F75C` with its
+  original inclusive per-player timer decay loop.
+- All 22 words / 88 bytes match directly from C. Each unsigned halfword timer
+  through player index `D_80082FA0` loses the frame delta while larger than
+  that delta and otherwise clamps to zero. No guarded retail words are needed.
+- The complete span has SHA-256
+  `4c14539ad1ebebefc3d10023afc401e7b495ec1001efaf6d0ef4ad5cbc26c7c3`.
+  Fresh totals are **2,774 / 5,469 (50.72%)** overall and
+  **2,203 / 4,791 (45.98%)** in Game.
+
 ### Game wrapped timer/counter byte-exact
 
 - Replaced the false zero-return placeholder at `func_151749A0` with its

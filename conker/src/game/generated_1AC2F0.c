@@ -1,5 +1,6 @@
 #include <ultra64.h>
 extern u16 D_800DDE10[];
+extern s32 D_80082FA0;
 extern u8 D_800DDD9C[];
 extern u8 D_800DDD90[];
 extern s32 D_800BE9E4;
@@ -89,8 +90,16 @@ void func_1517F720(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     D_800DDD8C = arg4;
 }
 
-s32 func_1517F75C() {
-    return 0;
+void func_1517F75C(void) {
+    s32 i;
+
+    for (i = 0; i <= D_80082FA0; i++) {
+        if (D_800BE9E4 < D_800DDE10[i]) {
+            D_800DDE10[i] -= D_800BE9E4;
+        } else {
+            D_800DDE10[i] = 0;
+        }
+    }
 }
 
 s32 func_1517F7B4() {

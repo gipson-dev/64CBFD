@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, wrapped timer/counter matched).** The current linked
-checkpoint is `2773 / 5469 (50.70%)` exact C functions, with one address-drift
-blocker and 2,695 genuinely different C functions. Game is
-`2202 / 4791 (45.96%)` exact, with 2,589 genuinely different C rows. The tree
+**Active (2026-09-27, player-timer decay matched).** The current linked
+checkpoint is `2774 / 5469 (50.72%)` exact C functions, with one address-drift
+blocker and 2,694 genuinely different C functions. Game is
+`2203 / 4791 (45.98%)` exact, with 2,588 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -781,7 +781,10 @@ see [Working Note 269](WORKING_NOTES/269-game-object-state-transition-match-2026
 The false zero-return placeholder at `func_151749A0` is now a byte-exact
 22-word wrapped timer/counter updater directly from C with no guarded words;
 see [Working Note 270](WORKING_NOTES/270-game-wrapped-timer-counter-match-20260927.md).
-Continue with 22-word `func_1517F75C`, the next unparked Game C row in the
+The false zero-return placeholder at `func_1517F75C` is now a byte-exact
+22-word inclusive player-timer decay loop directly from C with no guarded
+words; see [Working Note 271](WORKING_NOTES/271-game-player-timer-decay-match-20260927.md).
+Continue with 22-word `func_15181D70`, the next unparked Game C row in the
 fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
