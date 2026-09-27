@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game variadic formatting wrapper byte-exact
+
+- Replaced the false zero-return placeholder at `func_151EFF94` with its
+  two-fixed-argument variadic formatter wrapper and successful-output null
+  termination.
+- All 23 words / 92 bytes match directly from C. Expressing the argument
+  cursor as `&arg1 + 1` restores retail's four register homes, formatter reload,
+  call setup, and return lifetime; no guarded retail words are needed.
+- The complete span has SHA-256
+  `21bed0d95f6457b0e0ebf8ba8b78072ed1f6f7883ef19bf31c9a327fbe457102`.
+  Fresh totals are **2,783 / 5,469 (50.89%)** overall and
+  **2,212 / 4,791 (46.17%)** in Game.
+
 ### Game position/effect wrapper byte-exact
 
 - Replaced the false zero-return placeholder at `func_151B4E4C` with the

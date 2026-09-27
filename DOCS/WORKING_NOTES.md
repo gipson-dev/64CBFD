@@ -806,8 +806,11 @@ conditional child teardown directly from C with no guarded words; see
 The false placeholder at `func_151B4E4C` is now a byte-exact 22-word
 position/effect wrapper directly from C with no guarded words; see
 [Working Note 278](WORKING_NOTES/278-game-position-effect-wrapper-match-20260927.md).
-Continue with 23-word `func_151EFF94`, the next unparked Game C row in the
-fresh ordered queue at 21 real differences.
+The false placeholder at `func_151EFF94` is now a byte-exact 23-word variadic
+formatting wrapper directly from C with no guarded words; see
+[Working Note 279](WORKING_NOTES/279-game-variadic-format-wrapper-match-20260927.md).
+Continue with 23-word `func_15044CE4`, the next unparked Game C row in the
+fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
