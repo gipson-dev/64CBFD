@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game object-eligibility predicate byte-exact
+
+- Replaced the zero placeholder at `func_1510281C` with its object-eligibility
+  predicate. A matching selector requires a nested object whose owner's byte
+  `+0x197` is clear; surviving paths return the low flag bit from the caller's
+  byte `+0xD4`.
+- All 26 words / 104 bytes match retail directly from typed C with no guarded
+  words. Advancing the base pointer by `0x110` before addressing its selector
+  at relative offset `+0x22` reproduces retail's pointer lifetime and exact
+  branch-likely schedule.
+- The complete span has SHA-256
+  `3d65ee6d48fdac7191cf7ff9857fd9e97d6e2fae1a47af955cf3aaa91cd57994`.
+  Fresh totals are **2,817 / 5,469 (51.51%)** overall and
+  **2,245 / 4,791 (46.86%)** in Game.
+
 ### Game actor parameter initializer byte-exact
 
 - Replaced the zero placeholder at `func_150FB188` with its actor-field and

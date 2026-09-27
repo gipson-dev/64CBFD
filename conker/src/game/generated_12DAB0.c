@@ -116,8 +116,22 @@ s32 func_151027E8(u8 *arg0) {
     func_151403A8(&temp, 0x1A);
 }
 
-s32 func_1510281C() {
-    return 0;
+s32 func_1510281C(u8 *arg0, s16 arg1) {
+    u8 *base = *(u8 **)(arg0 + 0xD0);
+    u8 *nested;
+
+    base += 0x110;
+    if (arg1 == *(u8 *)(base + 0x22)) {
+        nested = *(u8 **)base;
+        if ((nested == NULL) || (*(u8 *)(*(u8 **)(nested + 0x31C) + 0x197) != 0)) {
+            return 0;
+        }
+    }
+
+    if (!(*(u8 *)(arg0 + 0xD4) & 1)) {
+        return 0;
+    }
+    return 1;
 }
 
 s32 func_15102884(u8 *arg0, u8 arg1) {
