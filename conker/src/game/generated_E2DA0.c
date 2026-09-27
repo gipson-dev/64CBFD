@@ -1,10 +1,18 @@
 #include <ultra64.h>
 extern u8 D_8009FC30[];
+extern u8 D_800C35EA;
+extern u8 D_800CC34A[];
 
 /* Non-matching placeholders for the text-only asm slice asm/E2DA0.s. */
 
-s32 func_150B58F0() {
-    return 0;
+u8 *func_150B58F0(u8 *arg0, s32 arg1) {
+    if (D_800C35EA == 1) {
+        return arg0;
+    }
+
+    *(u16 *) arg0 = 0x1A;
+    *(u16 *) (arg0 + 2) = *(u16 *) (D_800CC34A + arg1 * 0x32C);
+    return arg0 + 4;
 }
 
 s32 func_150B5950() {

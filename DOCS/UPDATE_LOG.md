@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game tagged table-value serializer byte-exact
+
+- Replaced the zero placeholder at `func_150B58F0` with its typed four-byte
+  serializer. Global mode 1 leaves the output cursor unchanged; other modes
+  write tag `0x1A`, append a halfword selected from `D_800CC34A` using the
+  incoming index and a `0x32C`-byte record stride, then advance the cursor.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  IDO emits the exact branch/return schedule and shift/add/sub strength
+  reduction for the record stride.
+- The complete span has SHA-256
+  `f6d93c4607cecde125be160a07313bf365fe1f4ad166045b96596e0b31c52600`.
+  Fresh totals are **2,811 / 5,469 (51.40%)** overall and
+  **2,239 / 4,791 (46.73%)** in Game.
+
 ### Game counted object-dispatch loop byte-exact
 
 - Replaced the zero placeholder at `func_1508434C` with its typed counted
