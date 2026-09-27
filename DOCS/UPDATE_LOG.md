@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game actor-position query wrapper byte-exact
+
+- Replaced the zero placeholder at `func_1503F904` with its typed query
+  wrapper. It truncates the actor coordinates at offsets `0x14` and `0x1C` to
+  signed 16-bit values and calls `func_1503F800` on the embedded data at
+  offset `0x320`, forwarding the selector and constant fifth argument `1`.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The unused third incoming argument retains retail's ABI spill, while the
+  five-argument call reproduces the frame, floating-point conversion schedule,
+  call delay slot, and untouched return value.
+- The complete span has SHA-256
+  `69d25b286871e4066bd8dd2c0d9860c569f2f74a0e75e5cdd729956128995a62`.
+  Fresh totals are **2,806 / 5,469 (51.31%)** overall and
+  **2,234 / 4,791 (46.63%)** in Game.
+
 ### Game bounded record-byte lookup byte-exact
 
 - Replaced the zero placeholder at `func_1503DA3C` with its indexed record

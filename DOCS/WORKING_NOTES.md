@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, bounded record-byte lookup matched).** The current linked
-checkpoint is `2805 / 5469 (51.29%)` exact C functions, with one address-drift
-blocker and 2,663 genuinely different C functions. Init is
+**Active (2026-09-27, actor-position query wrapper matched).** The current linked
+checkpoint is `2806 / 5469 (51.31%)` exact C functions, with one address-drift
+blocker and 2,662 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2233 / 4791 (46.61%)` exact, with 2,558 genuinely different C rows. The tree
+`2234 / 4791 (46.63%)` exact, with 2,557 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -885,8 +885,11 @@ C with no guarded words; see
 The 24-word Game `func_1503DA3C` bounded record-byte lookup is exact directly
 from C with no guarded words; see
 [Working Note 301](WORKING_NOTES/301-game-bounded-record-byte-lookup-match-20260927.md).
-Continue with 24-word Game `func_1503F904`, the first ordinary unparked C row
-in the fresh queue at 23 real differences.
+The 24-word Game `func_1503F904` actor-position query wrapper is exact directly
+from typed C with no guarded words; see
+[Working Note 302](WORKING_NOTES/302-game-actor-position-query-wrapper-match-20260927.md).
+Continue with 24-word Game `func_15044D40`, the next ordinary unparked C row in
+the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
