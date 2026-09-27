@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,726 / 5,470 (49.84%) | 1 | 2,743 |
+| Total | 2,727 / 5,470 (49.85%) | 1 | 2,742 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,155 / 4,792 (44.97%) | 0 | 2,637 |
+| Game | 2,156 / 4,792 (44.99%) | 0 | 2,636 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,726, while
+denominator driven: the exact count is now 2,727, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -527,7 +527,9 @@ end-to-end gameplay acceptance.
    five guarded schedule/relocation entries, including retail's dead pointer
    advance. The 21-word `func_150EB430` stack-vector sum wrapper is byte-exact
    after reversing commutative source operands and guarding four `a2`/`a3`
-   lifetime words. Continue with 21-word `func_15155F3C`.
+   lifetime words. The 21-word `func_15155F3C` state-transition wrapper is
+   byte-exact through three guarded state-register words. Keep
+   `func_15155FD4` parked and continue with 22-word `func_1507A47C`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
@@ -665,6 +667,8 @@ The completed flag-gated optional-record update is in
 [Working Note 221](WORKING_NOTES/221-game-flag-gated-record-update-match-20260926.md).
 The completed stack-vector sum wrapper is in
 [Working Note 222](WORKING_NOTES/222-game-stack-vector-sum-wrapper-match-20260927.md).
+The completed state-transition wrapper is in
+[Working Note 223](WORKING_NOTES/223-game-state-transition-wrapper-match-20260927.md).
 The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 The completed five-global reset ordering is in

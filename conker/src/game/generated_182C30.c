@@ -31,8 +31,18 @@ void func_15155EF8(u8 *arg0) {
     func_1518CA04(0xA6);
 }
 
-s32 func_15155F3C() {
-    return 0;
+void func_15155F3C(void) {
+    u8 *temp_v0 = (u8 *) func_15155FD4(D_800C3E78);
+
+    if (temp_v0 != NULL) {
+        u8 state = *(temp_v0 + 0x11);
+
+        if (state == 2) {
+            *(temp_v0 + 0x11) = 0;
+        } else if (state == 3) {
+            *(temp_v0 + 0x11) = 2;
+        }
+    }
 }
 
 void func_15155F90(void) {

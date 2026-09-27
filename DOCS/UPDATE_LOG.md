@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game state-transition wrapper byte-exact
+
+- Replaced the zero-return `func_15155F3C` placeholder with its lookup and
+  state transitions: `2 -> 0`, `3 -> 2`, and all other states unchanged.
+- One retained state-byte local reproduces the complete retail control flow.
+  Three guarded words preserve only IDO's `a0` versus retail `v1` register
+  choice for the load and two comparisons.
+- The complete 21-word span shares SHA-256
+  `0119e77d17efbde4d25797a1ebcd4419b5641efec94faf73ec7d9be6bf5fe34d`.
+  Fresh totals are **2,727 / 5,470 (49.85%)** overall and
+  **2,156 / 4,792 (44.99%)** in Game.
+
 ### Game stack-vector sum wrapper byte-exact
 
 - Replaced the zero-return `func_150EB430` placeholder with its three-component
