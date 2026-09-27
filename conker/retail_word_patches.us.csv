@@ -1423,3 +1423,12 @@ game_16EE20,func_15143DA8,0x20,0x8C620000,0x8DC20000,-,-,Load the clamped value 
 game_16EE20,func_15143DA8,0x30,0xAC650000,0xADC50000,-,-,Store the lower bound through the retail pointer lifetime,,,false
 game_16EE20,func_15143DA8,0x48,0x8FAE0000,0x8FAF0000,-,-,Reload the volatile pointer through the retail final-store register,,,false
 game_16EE20,func_15143DA8,0x54,0xADC60000,0xADE60000,-,-,Store the upper bound through the retail final-store register,,,false
+game_18D770,func_151640C0,0x24,0x8FA5001C,0x8FAF001C,-,-,Load the volatile record pointer through the retail temporary register,,,false
+game_18D770,func_151640C0,0x28,0x8CA30004,0x8DE30004,-,-,Load the source pointer through the retail record lifetime,,,false
+game_18D770,func_151640C0,0x30,0x8C6F0000,0x8C640000,-,-,Load the source owner through the retail comparison register,,,false
+game_18D770,func_151640C0,0x34,0x8C440018,0x8C450018,-,-,Load the current owner through the retail comparison register,,,false
+game_18D770,func_151640C0,0x38,0x90660004,0x90670004,-,-,Load the source identifier through the retail register lifetime,,,false
+game_18D770,func_151640C0,0x40,0x108F0006,0x10A40006,-,-,Compare the owner pointers through the retail register lifetimes,,,false
+game_18D770,func_151640C0,0x44,0x90470004,0x90460004,-,-,Load the target identifier in the retail branch delay register,,,false
+game_18D770,func_151640C0,0x50,0x9098003B,0x90B8003B,-,-,Load the current owner identifier through the retail owner register,,,false
+game_18D770,func_151640C0,0x54,0x54D80004,0x54F80004,-,-,Compare the source identifier through the retail register lifetime,,,false

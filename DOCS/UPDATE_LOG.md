@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game category-29 identity filter byte-exact
+
+- Restored `func_151640C0` around volatile ABI parameter slots and explicit
+  record, object, owner, source-ID, and target-ID lifetimes.
+- All 29 words / 116 bytes match retail. Structured C restores the category
+  gate, three short-circuit identity checks, branch delay loads, and conditional
+  `func_1516972C` call; nine guarded words preserve retail register allocation.
+- The complete span has SHA-256
+  `5c7f07b4183a17f6647dd6ac0b115f58ff60fa10d84f4c0c4e04f8ec6800c8b9`.
+  Fresh totals are **2,824 / 5,469 (51.64%)** overall and
+  **2,252 / 4,791 (47.00%)** in Game.
+
 ### Game integer range clamp byte-exact
 
 - Restored `func_15143DA8` as a typed three-argument range clamp with its

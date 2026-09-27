@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, integer range clamp matched).** The current linked
-checkpoint is `2823 / 5469 (51.62%)` exact C functions, with one address-drift
-blocker and 2,645 genuinely different C functions. Init is
+**Active (2026-09-27, category-29 identity filter matched).** The current linked
+checkpoint is `2824 / 5469 (51.64%)` exact C functions, with one address-drift
+blocker and 2,644 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2251 / 4791 (46.98%)` exact, with 2,540 genuinely different C rows. The tree
+`2252 / 4791 (47.00%)` exact, with 2,539 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -941,8 +941,12 @@ structured C plus three guarded scheduling words; see
 The 24-word Game `func_15143DA8` integer range clamp is exact from structured C
 plus nine guarded register-allocation words; see
 [Working Note 319](WORKING_NOTES/319-game-integer-range-clamp-match-20260927.md).
-Continue with 29-word Game `func_151640C0`, the next ordinary unparked C row in
-the fresh queue at 23 real differences.
+The 29-word Game `func_151640C0` category-`0x29` identity filter is exact from
+structured C plus nine guarded register-allocation words; see
+[Working Note 320](WORKING_NOTES/320-game-category-29-identity-filter-match-20260927.md).
+Continue with 27-word Game `func_1515F040`, the next C row in the fresh queue
+at 23 real differences. Its earlier correct-looking 28-word float-clamp body
+had one extra FP hazard `nop`; retain that evidence while revisiting it.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

@@ -1183,14 +1183,23 @@ s32 func_15163F50(struct225 *arg0, struct225 *arg1) {
 s32 func_15163FEC() {
     return 0;
 }
-void func_151640C0(u8 *arg0, u8 *arg1, u8 arg2) {
+void func_151640C0(u8 *volatile arg0, u8 *volatile arg1, u8 arg2) {
     u8 *src;
     u8 *old;
+    u8 *obj;
+    u8 *record;
+    u8 id;
+    u8 targetId;
 
+    record = arg1;
     if (arg2 == 0x29) {
-        src = *(u8 **)(arg1 + 4);
-        old = *(u8 **)(arg0 + 0x18);
-        if ((old == *(u8 **)src) || (src[4] == arg0[0x1C]) || (src[4] == old[0x3B])) {
+        src = *(u8 **)(record + 4);
+        obj = arg0;
+        old = *(u8 **)(obj + 0x18);
+        id = src[4];
+        obj += 0x18;
+        targetId = obj[4];
+        if ((old == *(u8 **)src) || (id == targetId) || (id == old[0x3B])) {
             func_1516972C(arg0);
         }
     }
