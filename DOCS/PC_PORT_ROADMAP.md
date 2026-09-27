@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,804 / 5,469 (51.27%) | 1 | 2,664 |
+| Total | 5,469 / 6,041 (90.53%) | 2,805 / 5,469 (51.29%) | 1 | 2,663 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,232 / 4,791 (46.59%) | 0 | 2,559 |
+| Game | 4,791 / 5,321 (90.04%) | 2,233 / 4,791 (46.61%) | 0 | 2,558 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -937,8 +937,10 @@ the object no-unroll profile is balanced by an explicit four-record source
 unroll that keeps neighboring `func_1000B548` exact. The 23-word Game
 `func_150233E4` resource cleanup loop is also byte-exact from typed C plus two
 relocation-aware setup swaps. The 24-word Game `func_1503B95C` indexed flag
-predicate is byte-exact directly from C. Continue with 24-word Game
-`func_1503DA3C` while the documented lower-difference rows remain parked.
+predicate is byte-exact directly from C. The 24-word Game `func_1503DA3C`
+bounded record-byte lookup is also exact directly from C. Continue with
+24-word Game `func_1503F904` while the documented lower-difference rows remain
+parked.
 
 Current host-port progression and acceptance boundaries:
 

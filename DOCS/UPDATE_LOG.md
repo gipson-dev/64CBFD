@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game bounded record-byte lookup byte-exact
+
+- Replaced the zero placeholder at `func_1503DA3C` with its indexed record
+  lookup. It resolves one of the 187 pointers at `D_800D19A0`, rejects null or
+  out-of-range entries with `0xFF`, and otherwise returns the requested byte
+  from the optional buffer stored in the preceding `0x38`-byte header.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The typed header reproduces the two tail fields, and a ternary nullable-byte
+  expression preserves retail's joined `v1` result and branch-delay layout.
+- The complete span has SHA-256
+  `cd897bcd1ed09dca607a2f374dde0d76ecbdeb299e2806264d6f6a901876d3d3`.
+  Fresh totals are **2,805 / 5,469 (51.29%)** overall and
+  **2,233 / 4,791 (46.61%)** in Game.
+
 ### Game indexed flag predicate byte-exact
 
 - Replaced the zero placeholder at `func_1503B95C` with its indexed flag

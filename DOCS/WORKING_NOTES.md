@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, indexed flag predicate matched).** The current linked
-checkpoint is `2804 / 5469 (51.27%)` exact C functions, with one address-drift
-blocker and 2,664 genuinely different C functions. Init is
+**Active (2026-09-27, bounded record-byte lookup matched).** The current linked
+checkpoint is `2805 / 5469 (51.29%)` exact C functions, with one address-drift
+blocker and 2,663 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2232 / 4791 (46.59%)` exact, with 2,559 genuinely different C rows. The tree
+`2233 / 4791 (46.61%)` exact, with 2,558 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -882,7 +882,10 @@ typed C plus two relocation-aware setup scheduling swaps; see
 The 24-word Game `func_1503B95C` indexed flag predicate is exact directly from
 C with no guarded words; see
 [Working Note 300](WORKING_NOTES/300-game-indexed-flag-predicate-match-20260927.md).
-Continue with 24-word Game `func_1503DA3C`, the first ordinary unparked C row
+The 24-word Game `func_1503DA3C` bounded record-byte lookup is exact directly
+from C with no guarded words; see
+[Working Note 301](WORKING_NOTES/301-game-bounded-record-byte-lookup-match-20260927.md).
+Continue with 24-word Game `func_1503F904`, the first ordinary unparked C row
 in the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
