@@ -1,4 +1,6 @@
 #include <ultra64.h>
+void func_150A8050(f32 [4][4], f32, f32, f32);
+void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
 
 /* Non-matching placeholders for the text-only asm slice asm/13D350.s. */
 
@@ -102,8 +104,12 @@ s32 func_1511473C() {
     return 0;
 }
 
-s32 func_151148A8() {
-    return 0;
+void func_151148A8(f32 arg0[4][4], f32 arg1[3]) {
+    f32 temp[4][4];
+
+    func_150A8050(arg0, 0.0f, arg1[1], 0.0f);
+    func_150A8050(temp, arg1[0], 0.0f, arg1[2]);
+    func_150A7A48(temp, arg0, arg0);
 }
 
 s32 func_1511490C() {

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,842 / 5,469 (51.97%) | 1 | 2,626 |
+| Total | 5,469 / 6,041 (90.53%) | 2,843 / 5,469 (51.98%) | 1 | 2,625 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,270 / 4,791 (47.38%) | 0 | 2,521 |
+| Game | 4,791 / 5,321 (90.04%) | 2,271 / 4,791 (47.40%) | 0 | 2,520 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -990,8 +990,9 @@ The 25-word Game `func_150FFCC8` seven-argument forwarding wrapper is exact
 directly from typed C. The 26-word Game `func_1510448C` byte-scaled dispatch
 is exact from typed C plus six guarded temporary-register words. The 25-word
 Game `func_1510D630` counted halfword release helper is exact directly from
-typed C. Continue with 25-word Game `func_151148A8` while the smaller
-special-case rows remain parked.
+typed C. The 25-word Game `func_151148A8` paired matrix-construction wrapper
+is also exact directly from typed C. Continue with 26-word Game
+`func_1511BDF4` while the smaller special-case rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 

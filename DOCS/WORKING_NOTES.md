@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, counted halfword release matched).** The current linked
-checkpoint is `2842 / 5469 (51.97%)` exact C functions, with one address-drift
-blocker and 2,626 genuinely different C functions. Init is
+**Active (2026-09-27, paired matrix wrapper matched).** The current linked
+checkpoint is `2843 / 5469 (51.98%)` exact C functions, with one address-drift
+blocker and 2,625 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2270 / 4791 (47.38%)` exact, with 2,521 genuinely different C rows. The tree
+`2271 / 4791 (47.40%)` exact, with 2,520 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -998,7 +998,10 @@ plus six guarded temporary-register words; see
 The 25-word Game `func_1510D630` counted halfword release helper is exact
 directly from typed C; see
 [Working Note 338](WORKING_NOTES/338-game-counted-halfword-release-match-20260927.md).
-Continue with 25-word Game `func_151148A8`, the next ordinary unparked row in
+The 25-word Game `func_151148A8` paired matrix-construction wrapper is exact
+directly from typed C; see
+[Working Note 339](WORKING_NOTES/339-game-paired-matrix-wrapper-match-20260927.md).
+Continue with 26-word Game `func_1511BDF4`, the next ordinary unparked row in
 the fresh queue at 24 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

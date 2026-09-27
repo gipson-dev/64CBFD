@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game paired matrix wrapper byte-exact
+
+- Restored `func_151148A8` as two `func_150A8050` matrix constructions followed
+  by an in-place `func_150A7A48` multiply.
+- Typed matrix and three-float parameters reproduce all 25 retail words
+  directly, with no matching guards.
+- The linked span has SHA-256
+  `1db33e9c444428eb5b1b54519defbdc5638d3fa048b9f9d332a1c4682915a410`.
+  Fresh totals are **2,843 / 5,469 (51.98%)** overall and
+  **2,271 / 4,791 (47.40%)** in Game.
+
 ### Game counted halfword release byte-exact
 
 - Restored `func_1510D630` as a counted signed-halfword walker. It dispatches
