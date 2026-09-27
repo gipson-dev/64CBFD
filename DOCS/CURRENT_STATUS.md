@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,789 / 5,469 (51.00%) | 1 | 2,679 |
+| Total | 2,790 / 5,469 (51.01%) | 1 | 2,678 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,218 / 4,791 (46.30%) | 0 | 2,573 |
+| Game | 2,219 / 4,791 (46.32%) | 0 | 2,572 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -675,8 +675,10 @@ end-to-end gameplay acceptance.
    `func_150D1410` object-index flag updater is also byte-exact directly from C
    with no guarded words. The 23-word `func_150D2054` six-entry cleanup loop
    is byte-exact directly from C after preserving its byte-width counter and
-   indexed array expression. Continue with 25-word `func_150D32FC`; keep the
-   previously documented lower-difference rows parked.
+   indexed array expression. The tracked 25-word `func_150D32FC` event-key
+   forwarder, including two trailing layout words, is also byte-exact directly
+   from C. Continue with 26-word `func_150DEC28`; keep the previously
+   documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

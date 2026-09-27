@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game event-key forwarder byte-exact
+
+- Replaced the zero-return placeholder at `func_150D32FC` with the recovered
+  event gate, object-key comparison, and four-argument record forwarder.
+- All 25 tracked words / 100 bytes match directly from C, including the
+  23-word function body and two trailing layout nops. A derived record pointer
+  initialized before the short-circuit condition preserves retail's load,
+  comparison, branch-likely, and call-argument schedule.
+- The complete span has SHA-256
+  `33eb62e07e9e46c86be7d1d80a40c3465c16c01b981521dbeef75de32cf2af44`.
+  Fresh totals are **2,790 / 5,469 (51.01%)** overall and
+  **2,219 / 4,791 (46.32%)** in Game.
+
 ### Game six-entry cleanup loop byte-exact
 
 - Replaced the zero-return placeholder at `func_150D2054` with the recovered

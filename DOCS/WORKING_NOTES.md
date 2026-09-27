@@ -831,7 +831,10 @@ object-index flag updater directly from C with no guarded words; see
 The false placeholder at `func_150D2054` is now a byte-exact 23-word
 six-entry cleanup loop directly from C with no guarded words; see
 [Working Note 285](WORKING_NOTES/285-game-six-entry-cleanup-match-20260927.md).
-Continue with 25-word `func_150D32FC`, the next unparked Game C row in the
+The false placeholder at `func_150D32FC` is now a byte-exact tracked 25-word
+event-key forwarder directly from C with no guarded words; see
+[Working Note 286](WORKING_NOTES/286-game-event-key-forwarder-match-20260927.md).
+Continue with 26-word `func_150DEC28`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
