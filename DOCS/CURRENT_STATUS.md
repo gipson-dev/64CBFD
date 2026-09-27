@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,808 / 5,469 (51.34%) | 1 | 2,660 |
+| Total | 2,809 / 5,469 (51.36%) | 1 | 2,659 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,236 / 4,791 (46.67%) | 0 | 2,555 |
+| Game | 2,237 / 4,791 (46.69%) | 0 | 2,554 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,808, while
+denominator driven: the exact count is now 2,809, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -712,8 +712,10 @@ end-to-end gameplay acceptance.
    directly from typed C with no guarded words. The 26-word `func_1507488C`
    packed event-mask updater is byte-exact through guarded register scheduling.
    A full rebuild also exposed and repaired the stale overflow trampoline for
-   19-word `func_1506EE60`. Continue with 24-word Game `func_1507EE58`; keep the
-   previously documented lower-difference rows parked.
+   19-word `func_1506EE60`. The 24-word `func_1507EE58` complementary history
+   marker wrapper is byte-exact directly from typed C with no guarded words.
+   Continue with 24-word Game `func_1508434C`; keep the previously documented
+   lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

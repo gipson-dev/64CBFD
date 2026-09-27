@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game complementary history-marker wrapper byte-exact
+
+- Replaced the zero placeholder at `func_1507EE58` with its typed byte-history
+  wrapper. It inserts the incoming marker into the five-byte history through
+  `func_1507EEB8`, then inserts `0x12` after marker `0x11` or `0x11` after
+  marker `0x12`.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The `u8` argument contract reproduces the incoming home-slot reload, while
+  the source-level `if`/`else if` emits both retail branch-likely paths, three
+  call relocations, their delay slots, and the shared epilogue.
+- The complete span has SHA-256
+  `1d32e38706b456f78bb80f1980911262f13dc972b5e4ed4fd73191b10743c01f`.
+  Fresh totals are **2,809 / 5,469 (51.36%)** overall and
+  **2,237 / 4,791 (46.69%)** in Game.
+
 ### Game packed event-mask updater byte-exact
 
 - Recovered the explicit byte lifetimes in `func_1507488C`: the packed event

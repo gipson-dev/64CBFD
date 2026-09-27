@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/AC030.s. */
 
+void func_1507EEB8(u8 arg0, u8 *arg1);
+
 void func_1507EB80(u8 *arg0, s32 *arg1, u8 arg2) {
     if (*arg1 + 1 < 0x28) {
         arg0[*arg1] = arg2;
@@ -17,8 +19,13 @@ s32 func_1507EC38() {
     return 0;
 }
 
-s32 func_1507EE58() {
-    return 0;
+void func_1507EE58(u8 arg0, u8 *arg1) {
+    func_1507EEB8(arg0, arg1);
+    if (arg0 == 0x11) {
+        func_1507EEB8(0x12, arg1);
+    } else if (arg0 == 0x12) {
+        func_1507EEB8(0x11, arg1);
+    }
 }
 
 void func_1507EEB8(u8 arg0, u8 *arg1) {
