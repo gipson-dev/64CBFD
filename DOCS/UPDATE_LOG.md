@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game resource-size selector byte-exact
+
+- Restored `func_1502DB20` as a resource-size selector over `D_800C4ED0`.
+  Fourteen IDs return the table value minus four; every other ID returns the
+  value unchanged.
+- IDO reproduces all 25 words / 100 bytes directly from one switch, including
+  the isolated ID 59 path and 64-entry `117..180` jump-table dispatch.
+- Extended generated-slice padding with guarded compact-rodata retargeting and
+  fixed `match_progress.py` so internal `.L` jump targets remain part of their
+  enclosing function. Both paths have regression coverage.
+- The complete linked span has SHA-256
+  `d84d8b8a9ab78162b67744ee3f461014abf7ef58b7b51b398fb7b45d93819a29`.
+  Fresh totals are **2,834 / 5,469 (51.82%)** overall and
+  **2,262 / 4,791 (47.21%)** in Game.
+
 ### Game resource-entry reset byte-exact
 
 - Restored `func_15023440` as a `struct163` reset helper with distinct release

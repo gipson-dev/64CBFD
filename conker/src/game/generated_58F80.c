@@ -6,6 +6,7 @@ extern s32 D_800C3E88;
 extern s32 D_800C3E8C;
 extern u16 D_800C3E7A;
 extern u8 D_800C3E90;
+extern u16 D_800C4ED0[];
 
 /* Non-matching placeholders for the text-only asm slice asm/58F80.s. */
 
@@ -76,8 +77,26 @@ s32 func_1502D824() {
     return 0;
 }
 
-s32 func_1502DB20() {
-    return 0;
+s32 func_1502DB20(s32 arg0) {
+    switch (arg0) {
+        case 59:
+        case 117:
+        case 130:
+        case 136:
+        case 144:
+        case 150:
+        case 152:
+        case 156:
+        case 157:
+        case 159:
+        case 160:
+        case 177:
+        case 178:
+        case 180:
+            return D_800C4ED0[arg0] - 4;
+        default:
+            return D_800C4ED0[arg0];
+    }
 }
 
 s32 func_1502DB84() {

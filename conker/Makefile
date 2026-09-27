@@ -173,6 +173,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_3FC60.c.o: OPT_FLAGS := -O2
 $(BUILD_DIR)/$(SRC_DIR)/game_21D5F0.c.o: OPT_FLAGS := -O3
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_siacs2.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_21C540.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_58F80.c.o: RETAIL_RODATA_SYMBOL := jtbl_80096DF8_game
 $(BUILD_DIR)/$(SRC_DIR)/libultra/gu/mtxutil2.c.o: OPT_FLAGS := -O3
 $(BUILD_DIR)/$(SRC_DIR)/libultra/gu/guNormalize.c.o: OPT_FLAGS := -O3
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_pfsinit2.c.o: OPT_FLAGS := -O1
@@ -384,14 +385,14 @@ $(GLOBAL_ASM_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $(BUILD_DIR)/$<
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.compact \
 		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
-	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s --word-patches retail_word_patches.us.csv --filename $(basename $(notdir $<))
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s --word-patches retail_word_patches.us.csv --filename $(basename $(notdir $<)) $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
 
 $(STANDARD_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.o: \
 		$(SRC_DIR)/game/generated_%.c $$(call generated_slice_asm,$$*) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
-	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s --word-patches retail_word_patches.us.csv --filename $(basename $(notdir $<))
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s --word-patches retail_word_patches.us.csv --filename $(basename $(notdir $<)) $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
 

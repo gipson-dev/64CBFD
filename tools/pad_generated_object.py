@@ -260,6 +260,7 @@ def emit_padded_assembly(
     function_objects=None,
     word_patches_path=None,
     filename=None,
+    rodata_symbol=None,
 ):
     text, compiled, relocations = parse_object(object_path)
     retail_start, retail_end, retail, jump_labels = parse_retail_slice(retail_path)
@@ -390,6 +391,11 @@ def emit_padded_assembly(
                     continue
                 word = patch["replacement"]
             for relocation_name, relocation_symbol in word_relocations:
+                if (
+                    rodata_symbol is not None
+                    and relocation_symbol == ".rodata"
+                ):
+                    relocation_symbol = rodata_symbol
                 output.append(
                     f".reloc ., {relocation_name}, {relocation_symbol}"
                 )
@@ -400,6 +406,11 @@ def emit_padded_assembly(
                 for relocation_name, relocation_symbol in patch[
                     "insert_after_relocations"
                 ]:
+                    if (
+                        rodata_symbol is not None
+                        and relocation_symbol == ".rodata"
+                    ):
+                        relocation_symbol = rodata_symbol
                     output.append(
                         f".reloc ., {relocation_name}, {relocation_symbol}"
                     )
@@ -445,6 +456,10 @@ def main():
         "--filename",
         help="filename key used to select guarded word patches",
     )
+    parser.add_argument(
+        "--rodata-symbol",
+        help="retail symbol corresponding to offset zero of compact .rodata",
+    )
     args = parser.parse_args()
     function_objects = {}
     for value in args.function_object:
@@ -461,6 +476,7 @@ def main():
             function_objects=function_objects,
             word_patches_path=args.word_patches,
             filename=args.filename,
+            rodata_symbol=args.rodata_symbol,
         ),
         newline="\n",
     )

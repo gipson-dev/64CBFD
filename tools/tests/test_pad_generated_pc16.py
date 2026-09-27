@@ -1,10 +1,37 @@
 """Cross-body branches must follow retail padding rather than compact offsets."""
 from pathlib import Path
 import shutil, struct, subprocess, sys, tempfile, unittest
+from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from pad_generated_object import emit_padded_assembly, parse_object
 
 class PaddedPc16Tests(unittest.TestCase):
+    def test_rodata_relocation_can_target_retail_table(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            work=Path(tmp)
+            (work/'retail.s').write_text('''
+glabel sample
+/* 000000 15000000 3C020000 */ lui $v0,0
+/* 000004 15000004 8C420000 */ lw $v0,0($v0)
+/* 000008 15000008 03E00008 */ jr $ra
+/* 00000C 1500000C 00000000 */ nop
+''')
+            compiled=(
+                struct.pack('>IIII',0x3C020000,0x8C420000,0x03E00008,0),
+                {'sample': {'value': 0, 'size': 0x10}},
+                {
+                    0: [('R_MIPS_HI16', '.rodata')],
+                    4: [('R_MIPS_LO16', '.rodata')],
+                },
+            )
+            with patch('pad_generated_object.parse_object',return_value=compiled):
+                padded=emit_padded_assembly(
+                    work/'compact.o',work/'retail.s',rodata_symbol='retail_jtbl'
+                )
+            self.assertEqual(padded.count('retail_jtbl'),2)
+            self.assertNotIn('R_MIPS_HI16, .rodata',padded)
+            self.assertNotIn('R_MIPS_LO16, .rodata',padded)
+
     def test_branch_target_moves_with_padded_function(self):
         for tool in ('mips-linux-gnu-as','mips-linux-gnu-ld','mips-linux-gnu-objcopy'):
             if not shutil.which(tool):self.skipTest(tool+' required')

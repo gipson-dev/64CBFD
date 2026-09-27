@@ -59,13 +59,7 @@ DEFAULT_SEGMENTS = {
 }
 
 
-def load_elf_functions(elf_path, objdump):
-    # Keep zero-filled instruction runs in the disassembly.  IDO emits
-    # deliberate multi-nop sequences (for example around integer division),
-    # and objdump otherwise replaces them with "..." so exact functions look
-    # artificially short.
-    out = subprocess.run([objdump, "-d", "-z", elf_path],
-                         capture_output=True, text=True, check=True).stdout
+def parse_elf_disassembly(out):
     funcs = {}
     func_addrs = {}
     symbols_by_addr = {}
@@ -74,15 +68,28 @@ def load_elf_functions(elf_path, objdump):
         m = re.match(r"^([0-9a-f]+) <(\S+)>:", line)
         if m:
             addr = int(m.group(1), 16)
-            cur = m.group(2)
+            name = m.group(2)
+            symbols_by_addr[addr] = name
+            if name.startswith(".L"):
+                continue
+            cur = name
             funcs[cur] = []
             func_addrs[cur] = addr
-            symbols_by_addr[addr] = cur
             continue
         m = re.match(r"^\s*[0-9a-f]+:\s+([0-9a-f]{8})\s", line)
         if m and cur is not None:
             funcs[cur].append(int(m.group(1), 16))
     return funcs, symbols_by_addr, func_addrs
+
+
+def load_elf_functions(elf_path, objdump):
+    # Keep zero-filled instruction runs in the disassembly.  IDO emits
+    # deliberate multi-nop sequences (for example around integer division),
+    # and objdump otherwise replaces them with "..." so exact functions look
+    # artificially short.
+    out = subprocess.run([objdump, "-d", "-z", elf_path],
+                         capture_output=True, text=True, check=True).stdout
+    return parse_elf_disassembly(out)
 
 
 def is_jump(word_a, word_b):
