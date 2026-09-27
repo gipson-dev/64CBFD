@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, tagged table-value serializer matched).** The current
-linked checkpoint is `2811 / 5469 (51.40%)` exact C functions, with one
-address-drift blocker and 2,657 genuinely different C functions. Init is
+**Active (2026-09-27, typed effect-spawn wrapper matched).** The current linked
+checkpoint is `2812 / 5469 (51.42%)` exact C functions, with one address-drift
+blocker and 2,656 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2239 / 4791 (46.73%)` exact, with 2,552 genuinely different C rows. The tree
+`2240 / 4791 (46.75%)` exact, with 2,551 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -905,7 +905,10 @@ directly from typed C with no guarded words; see
 The 24-word Game `func_150B58F0` tagged table-value serializer is exact directly
 from typed C with no guarded words; see
 [Working Note 307](WORKING_NOTES/307-game-tagged-table-value-serializer-match-20260927.md).
-Continue with 24-word Game `func_150C1660`, the next ordinary unparked C row in
+The 24-word Game `func_150C1660` typed effect-spawn wrapper is exact directly
+from C with no guarded words; see
+[Working Note 308](WORKING_NOTES/308-game-typed-effect-spawn-wrapper-match-20260927.md).
+Continue with 24-word Game `func_150DF8C0`, the next ordinary unparked C row in
 the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

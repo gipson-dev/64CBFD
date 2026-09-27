@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game typed effect-spawn wrapper byte-exact
+
+- Replaced the zero placeholder at `func_150C1660` with its typed wrapper around
+  `func_1514C2F0`. It forwards three incoming float coordinates, supplies
+  `80.0f` as the fourth float, and passes the fixed effect configuration plus
+  the incoming low-byte selector through the eight stack arguments.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The recovered `u8`/`s8`/`s16` stack contracts explain the callee's original
+  big-endian byte and halfword loads while reproducing the caller schedule.
+- The complete span has SHA-256
+  `6f7f51e26c1e53fd7518734316f89e63941584f038798f4abac9b9875903ebad`.
+  Fresh totals are **2,812 / 5,469 (51.42%)** overall and
+  **2,240 / 4,791 (46.75%)** in Game.
+
 ### Game tagged table-value serializer byte-exact
 
 - Replaced the zero placeholder at `func_150B58F0` with its typed four-byte

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,811 / 5,469 (51.40%) | 1 | 2,657 |
+| Total | 2,812 / 5,469 (51.42%) | 1 | 2,656 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,239 / 4,791 (46.73%) | 0 | 2,552 |
+| Game | 2,240 / 4,791 (46.75%) | 0 | 2,551 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,811, while
+denominator driven: the exact count is now 2,812, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -715,9 +715,10 @@ end-to-end gameplay acceptance.
    19-word `func_1506EE60`. The 24-word `func_1507EE58` complementary history
    marker wrapper is byte-exact directly from typed C with no guarded words.
    The 24-word `func_1508434C` counted object-dispatch loop and 24-word
-   `func_150B58F0` tagged table-value serializer are also byte-exact directly
-   from typed C with no guarded words. Continue with 24-word Game
-   `func_150C1660`; keep the previously documented lower-difference rows parked.
+   `func_150B58F0` tagged table-value serializer and 24-word `func_150C1660`
+   typed effect-spawn wrapper are also byte-exact directly from typed C with no
+   guarded words. Continue with 24-word Game `func_150DF8C0`; keep the
+   previously documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
