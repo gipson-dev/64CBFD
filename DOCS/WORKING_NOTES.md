@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, enabled player-state initializer matched).** The current
-linked checkpoint is `2775 / 5469 (50.74%)` exact C functions, with one
-address-drift blocker and 2,693 genuinely different C functions. Game is
-`2204 / 4791 (46.00%)` exact, with 2,587 genuinely different C rows. The tree
-contains 571 raw-assembly functions, so much of the percentage increase over
+**Active (2026-09-27, linked-record validator matched).** The current linked
+checkpoint is `2793 / 5469 (51.07%)` exact C functions, with one address-drift
+blocker and 2,675 genuinely different C functions. Game is
+`2222 / 4791 (46.38%)` exact, with 2,569 genuinely different C rows. The tree
+contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
 
@@ -840,7 +840,11 @@ paired table dispatcher directly from C with no guarded words; see
 The false placeholder at `func_150F4CFC` is now a byte-exact 24-word two-event
 state/teardown handler directly from C with no guarded words; see
 [Working Note 288](WORKING_NOTES/288-game-event-state-teardown-handler-match-20260927.md).
-Continue with 29-word `func_151002BC`, the next unparked Game C row in the
+The false placeholder at `func_151002BC` is now a byte-exact tracked 29-word
+linked-record validator from recovered C plus seven guarded scheduling words;
+see
+[Working Note 289](WORKING_NOTES/289-game-linked-record-validation-match-20260927.md).
+Continue with 25-word `func_15125490`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

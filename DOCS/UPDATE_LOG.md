@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game linked-record validator byte-exact
+
+- Replaced the zero-return placeholder at `func_151002BC` with the recovered
+  record validation, invalid-state sentinel, and optional child-state update.
+- All 29 tracked words / 116 bytes match retail, including 26 executable words
+  and three trailing layout nops. Seven guarded scheduling rows preserve the
+  shared `-1` sentinel, ordinary invalid branches, and retail branch-likely
+  child load without changing the recovered behavior.
+- The complete span has SHA-256
+  `fad101c81118abf40b4ecbf34251163af098d3f86db815a56c573d4216c7c90f`.
+  Fresh totals are **2,793 / 5,469 (51.07%)** overall and
+  **2,222 / 4,791 (46.38%)** in Game.
+
 ### Game event state/teardown handler byte-exact
 
 - Replaced the zero-return placeholder at `func_150F4CFC` with the recovered

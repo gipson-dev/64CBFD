@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,792 / 5,469 (51.05%) | 1 | 2,676 |
+| Total | 5,469 / 6,041 (90.53%) | 2,793 / 5,469 (51.07%) | 1 | 2,675 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,321 (90.04%) | 2,221 / 4,791 (46.36%) | 0 | 2,570 |
+| Game | 4,791 / 5,321 (90.04%) | 2,222 / 4,791 (46.38%) | 0 | 2,569 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -902,7 +902,11 @@ trailing layout words, is exact directly from C with no guarded words; see
 The 24-word `func_150F4CFC` two-event state/teardown handler is exact directly
 from C with no guarded words; see
 [Working Note 288](WORKING_NOTES/288-game-event-state-teardown-handler-match-20260927.md).
-Continue with 29-word `func_151002BC` while the documented lower-difference
+The tracked 29-word `func_151002BC` linked-record validator, including three
+trailing layout words, is exact from recovered C plus seven guarded scheduling
+words; see
+[Working Note 289](WORKING_NOTES/289-game-linked-record-validation-match-20260927.md).
+Continue with 25-word `func_15125490` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

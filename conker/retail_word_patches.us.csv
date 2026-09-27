@@ -1308,3 +1308,10 @@ generated_1FA770,func_151D10E4,0x2C,0x000F7880,0x3C0F0000,-,R_MIPS_HI16:D_800AAF
 generated_1FA770,func_151D10E4,0x30,0x27180000,0x25EF0000,R_MIPS_LO16:D_800AAF9C,R_MIPS_LO16:D_800AAF9C,Complete the table base in t7,,,false
 generated_1FA770,func_151D10E4,0x34,0x01F82021,0x01CF2021,-,-,Add the retail stride and table-base lifetimes,,,false
 generated_1FA770,func_151D10E4,0x3C,0x00E03025,0x00403025,-,-,Forward the target from v0 in the call delay slot,,,false
+generated_12D630,func_151002BC,0x00,0x8C830028,0x8C830028,-,-,Materialize the shared invalid sentinel after loading the linked entry,0x2408FFFF,-,false
+generated_12D630,func_151002BC,0x08,0x51C0000A,0x11C0000A,-,-,Keep the null-entry branch non-likely with the retail target,,,false
+generated_12D630,func_151002BC,0x0C,0x2408FFFF,0x00000000,-,-,Keep the null-entry branch delay slot empty,,,false
+generated_12D630,func_151002BC,0x1C,0x51E10005,0x11E10005,-,-,Keep the invalid-type branch non-likely with the retail target,,,false
+generated_12D630,func_151002BC,0x20,0x2408FFFF,0x00000000,-,-,Keep the invalid-type branch delay slot empty,,,false
+generated_12D630,func_151002BC,0x2C,0x13190003,0x53190004,-,-,Use the retail likely equality branch into the valid path,,,false
+generated_12D630,func_151002BC,0x30,0x2408FFFF,0x8C690318,-,-,Load the optional child pointer in the equality branch delay slot,,,false
