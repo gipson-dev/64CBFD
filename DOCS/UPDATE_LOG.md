@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game volatile callback dispatch byte-exact
+
+- Corrected `func_151D73A8` so the callback-table index and entry are both
+  read twice, matching retail rather than being common-subexpression reduced.
+- A local table-base pointer with volatile index and entry reads reproduces all
+  23 retail words while retaining the typed three-argument callback call.
+- The complete span shares SHA-256
+  `57531c17795eef924bf98ddf2b9a699f1dac86900db25b0a68b855dada588fee`.
+  Fresh totals are **2,701 / 5,469 (49.39%)** overall and
+  **2,130 / 4,791 (44.46%)** in Game.
+
 ### Game slot-state predicate byte-exact
 
 - Replaced the zero-return `func_151B22F4` placeholder with its complete

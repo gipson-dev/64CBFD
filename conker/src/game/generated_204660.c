@@ -16,8 +16,10 @@ s32 func_151D71B0() {
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D7264.s")
 
 void func_151D73A8(u8 *arg0, s32 arg1, u8 arg2) {
-    if (D_8008FCA4[arg0[0x2C]] != 0) {
-        D_8008FCA4[arg0[0x2C]](arg0, arg1, arg2);
+    void (* volatile *table)(u8 *, s32, u8) = D_8008FCA4;
+
+    if (table[*(volatile u8 *)(arg0 + 0x2C)] != 0) {
+        table[*(volatile u8 *)(arg0 + 0x2C)](arg0, arg1, arg2);
     }
 }
 

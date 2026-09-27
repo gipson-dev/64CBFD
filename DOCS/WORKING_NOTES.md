@@ -487,6 +487,10 @@ bytes versus retail's `0x50`, with an eager `arg0` stack home and reload. The
 independent 21-word `func_151B22F4` slot-state predicate is now byte-exact.
 Continue with 23-word `func_151D73A8`; see
 [Working Note 197](WORKING_NOTES/197-game-slot-state-predicate-match-20260926.md).
+That callback dispatch is now byte-exact after preserving both retail index
+loads and both callback-entry loads with narrow volatile access. Continue with
+20-word `func_1502E474`; see
+[Working Note 198](WORKING_NOTES/198-game-volatile-callback-dispatch-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

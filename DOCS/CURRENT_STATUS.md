@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,700 / 5,469 (49.37%) | 1 | 2,768 |
+| Total | 2,701 / 5,469 (49.39%) | 1 | 2,767 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,129 / 4,791 (44.44%) | 0 | 2,662 |
+| Game | 2,130 / 4,791 (44.46%) | 0 | 2,661 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,700, while
+denominator driven: the exact count is now 2,701, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -482,8 +482,10 @@ end-to-end gameplay acceptance.
    from typed C. The 21-word `func_151A4F7C` embedded-owner release handler is
    now byte-exact directly from typed C as well. The 21-word
    `func_151B22F4` slot-state predicate is also byte-exact directly from typed
-   C. Keep `func_151A8584`/`func_151A85D4` parked at their measured callback
-   scheduling boundary and continue with 23-word `func_151D73A8`.
+   C. The 23-word `func_151D73A8` callback dispatch is now byte-exact after
+   preserving retail's two volatile index and entry reads. Keep
+   `func_151A8584`/`func_151A85D4` parked at their measured callback scheduling
+   boundary and continue with 20-word `func_1502E474`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

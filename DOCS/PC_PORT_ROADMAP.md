@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,700 / 5,469 (49.37%) | 1 | 2,768 |
+| Total | 5,469 / 6,038 (90.58%) | 2,701 / 5,469 (49.39%) | 1 | 2,767 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,129 / 4,791 (44.44%) | 0 | 2,662 |
+| Game | 4,791 / 5,318 (90.09%) | 2,130 / 4,791 (44.46%) | 0 | 2,661 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -608,6 +608,10 @@ retail's `0x50` because IDO homes and reloads `arg0` before the indirect call.
 The independent 21-word `func_151B22F4` slot-state predicate is now exact; see
 [Working Note 197](WORKING_NOTES/197-game-slot-state-predicate-match-20260926.md).
 Continue with 23-word `func_151D73A8`.
+That callback dispatch is now exact after preserving retail's volatile double
+lookup; see
+[Working Note 198](WORKING_NOTES/198-game-volatile-callback-dispatch-match-20260926.md).
+Continue with 20-word `func_1502E474`.
 
 Current host-port progression and acceptance boundaries:
 
