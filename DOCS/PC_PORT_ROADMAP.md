@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,039 (90.56%) | 2,730 / 5,469 (49.92%) | 1 | 2,738 |
+| Total | 5,469 / 6,039 (90.56%) | 2,731 / 5,469 (49.94%) | 1 | 2,737 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,319 (90.07%) | 2,159 / 4,791 (45.06%) | 0 | 2,632 |
+| Game | 4,791 / 5,319 (90.07%) | 2,160 / 4,791 (45.08%) | 0 | 2,631 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -710,8 +710,11 @@ one guarded equivalent branch-operand word; see
 The 26-word `func_15125628` four-timer decrement is restored to its original
 handwritten assembly ownership; see
 [Working Note 227](WORKING_NOTES/227-game-four-timer-decrement-restoration-20260927.md).
+The 33-word `func_1505DFDC` backing-buffer reset is now exact directly from
+typed C after restoring the full-width index and two table reads; see
+[Working Note 228](WORKING_NOTES/228-game-backing-buffer-reset-match-20260927.md).
 Keep `func_150721A4` and the `func_151A8584`/`func_151A85D4` pair parked;
-continue with 33-word `func_1505DFDC`.
+continue with 60-word `func_150AD8B0`.
 
 Current host-port progression and acceptance boundaries:
 

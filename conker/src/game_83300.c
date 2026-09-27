@@ -920,20 +920,18 @@ s32 func_1505DDA8() {
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505DF10.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505DF10.s")
 void func_1505DFDC(u8 *arg0) {
+    s32 idx;
     u8 *data = *(u8 **)(arg0 + 0x2D0);
-    u8 idx;
-    u16 value;
 
     *(u16 *)(arg0 + 0x84) = 0xFFFF;
     if (data != NULL) {
         idx = arg0[4];
         *(s32 *)(data + 0x28) = 0;
         bzero(data + 0x40, 0x3A0);
-        value = D_800C4ED0[idx];
-        data[0x41] = value + 1;
+        data[0x41] = D_800C4ED0[idx] + 1;
+        data[0x211] = D_800C4ED0[idx] + 1;
         *(s32 *)(data + 0x30) = 0;
         *(s32 *)(data + 0x34) = 0;
-        data[0x211] = value + 1;
     }
 }
 void func_1505E060(u8 *arg0) {

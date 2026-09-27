@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, four-timer assembly ownership restored).** The current
-linked checkpoint is `2730 / 5469 (49.92%)` exact C functions, with one
-address-drift blocker and 2,738 genuinely different C functions. Game is
-`2159 / 4791 (45.06%)` exact, with 2,632 genuinely different C rows. The tree
+**Active (2026-09-27, backing-buffer reset matched).** The current linked
+checkpoint is `2731 / 5469 (49.94%)` exact C functions, with one address-drift
+blocker and 2,737 genuinely different C functions. Game is
+`2160 / 4791 (45.08%)` exact, with 2,631 genuinely different C rows. The tree
 contains 570 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -630,6 +630,11 @@ cannot retain its four independent symbol-address macro expansions. Keep
 `func_150721A4` and the `func_151A8584`/`func_151A85D4` pair parked; continue
 with 33-word `func_1505DFDC`; see
 [Working Note 227](WORKING_NOTES/227-game-four-timer-decrement-restoration-20260927.md).
+The 33-word `func_1505DFDC` backing-buffer reset is now exact directly from C.
+A full-width index, repeated table expression, local declaration order, and
+source store order recover retail's complete stack and instruction schedule
+without guarded words. Continue with 60-word `func_150AD8B0`; see
+[Working Note 228](WORKING_NOTES/228-game-backing-buffer-reset-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

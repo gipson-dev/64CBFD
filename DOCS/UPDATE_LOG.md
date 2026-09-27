@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game backing-buffer reset byte-exact
+
+- Recovered `func_1505DFDC` as a conditional reset of the object backing
+  buffer, including the `0x3A0`-byte clear and two selector-byte writes.
+- A full-width index and two direct `D_800C4ED0` reads recover retail's stack
+  slots and repeated load. Declaration and source store order reproduce all
+  remaining IDO scheduling directly, without guarded retail words.
+- The complete 33-word span shares SHA-256
+  `715ebfa81ced3911f6b4616b912c1f45f7373229d091f13f28d99674fcc05eff`.
+  Fresh totals are **2,731 / 5,469 (49.94%)** overall and
+  **2,160 / 4,791 (45.08%)** in Game.
+
 ### Game four-timer handwritten assembly restored
 
 - Reclassified `func_15125628` from a behaviorally equivalent C model to its
