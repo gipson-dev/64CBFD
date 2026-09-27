@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game conditional stack-record wrapper byte-exact
+
+- Replaced the zero-return `func_150F2390` placeholder with its complete
+  conditional `struct17` construction and submission path.
+- The typed local and low-byte cast reproduce retail's stack layout,
+  branch-likely restore, byte reload, and both call delay slots across all 20
+  words.
+- The complete span shares SHA-256
+  `7990c285682c470388437b0da8386a307ca4e58dce971a9b1b16819b8e0c3abb`.
+  Fresh totals are **2,706 / 5,469 (49.48%)** overall and
+  **2,135 / 4,791 (44.56%)** in Game.
+
 ### Game constant preset wrapper byte-exact
 
 - Replaced the zero-return `func_150EC45C` placeholder with its typed call to
