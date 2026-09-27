@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game two-stage forwarder byte-exact
+
+- Replaced the false zero-return placeholder at `func_150FB1E8` with its
+  original five-argument forwarding chain. It passes all five arguments to
+  `func_151D710C`, then uses that result as the first argument to
+  `func_15157F80` while replaying the remaining four.
+- All 22 words / 88 bytes match directly from C, including argument homes and
+  reloads, fifth-argument stack stores, both call relocations and delay slots,
+  and the epilogue. No guarded retail words are needed.
+- The complete span has SHA-256
+  `fbb5d8ad1f5b61fff246fd8f6872d9f64fb94547d8705287f14c163b98474c00`.
+  Fresh totals are **2,759 / 5,469 (50.45%)** overall and
+  **2,188 / 4,791 (45.67%)** in Game.
+
 ### Game nested state classifier byte-exact
 
 - Replaced the false zero-return placeholder at `func_150EB030` with its
