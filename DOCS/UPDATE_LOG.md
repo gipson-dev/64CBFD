@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game phase/scale updater byte-exact
+
+- Recovered `func_151DADA0` around a typed state record embedded at object
+  offset `0x110`. Its byte phase advances by signed rate times `D_800BE9E4`,
+  the biased phase is converted through `func_151423D8`, and two state floats
+  drive the output fields at offsets `0x4C` and `0x50`.
+- All 34 words / 136 bytes match retail. The typed state produces the retail
+  shared-base and complete floating-point schedule directly from C; four
+  guarded rows retain retail's equivalent `a0` phase lifetime and explicit
+  masked-argument move.
+- The complete span has SHA-256
+  `6723b622c69527ac88243bffdc7dc384d71bfc069638272ee12fce606ab64d8f`.
+  Fresh totals are **2,801 / 5,469 (51.22%)** overall and
+  **2,230 / 4,791 (46.55%)** in Game.
+
 ### Game extended record validity predicate byte-exact
 
 - Replaced the zero-return placeholder at `func_151C2E94` with the recovered

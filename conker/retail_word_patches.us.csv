@@ -1345,3 +1345,7 @@ game_14FF90,func_15125490,0x54,0x00000000,0x24020001,-,-,Return the above-range 
 game_14FF90,func_15125490,0x58,0x00000000,0x00001025,-,-,Retain the compiler-layout null assignment before the shared return,,,false
 game_14FF90,func_15125490,0x5C,0x00000000,0x03E00008,-,-,Emit the shared object-or-null return,,,false
 game_14FF90,func_15125490,0x60,0x00000000,0x00000000,-,-,Keep the final return delay slot empty,,,false
+game_2062D0,func_151DADA0,0x24,0x03384021,0x03382021,-,-,Keep the phase sum in retail's a0 lifetime,,,false
+game_2062D0,func_151DADA0,0x28,0xA0A80110,0xA0A40110,-,-,Store the phase sum from retail's a0 lifetime,,,false
+game_2062D0,func_151DADA0,0x2C,0x2509FFC0,0x2484FFC0,-,-,Subtract the phase bias through retail's a0 lifetime,,,false
+game_2062D0,func_151DADA0,0x30,0x312400FF,0x308900FF,-,-,Normalize the masked call argument through retail registers,0x01202025,,false

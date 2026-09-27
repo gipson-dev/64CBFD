@@ -214,16 +214,27 @@ s32 func_151DA6F8() {
 /* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DAB58.s. */
 /* Note 362: original ROM blood effect and dependencies. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DAB58.s")
+
+typedef struct {
+    u8 phase;
+    s8 rate;
+    u8 pad2[2];
+    f32 firstScale;
+    f32 secondScale;
+} PhaseScaleState;
+
 s32 func_151DADA0(u8 *arg0) {
     u8 value;
     f32 scale;
+    PhaseScaleState *state;
 
-    value = arg0[0x110] + ((s8)arg0[0x111] * D_800BE9E4);
-    arg0[0x110] = value;
+    state = (PhaseScaleState *)(arg0 + 0x110);
+    value = state->phase + (state->rate * D_800BE9E4);
+    state->phase = value;
 
     scale = func_151423D8((value - 0x40) & 0xFF);
-    *(f32 *)(arg0 + 0x4C) = (*(f32 *)(arg0 + 0x114) * scale) + 1.0f;
-    *(f32 *)(arg0 + 0x50) = D_800AB4B0 - (*(f32 *)(arg0 + 0x118) * scale);
+    *(f32 *)(arg0 + 0x4C) = (state->firstScale * scale) + 1.0f;
+    *(f32 *)(arg0 + 0x50) = D_800AB4B0 - (state->secondScale * scale);
     return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DAE28.s. */

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,800 / 5,469 (51.20%) | 1 | 2,668 |
+| Total | 5,469 / 6,041 (90.53%) | 2,801 / 5,469 (51.22%) | 1 | 2,667 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,321 (90.04%) | 2,229 / 4,791 (46.52%) | 0 | 2,562 |
+| Game | 4,791 / 5,321 (90.04%) | 2,230 / 4,791 (46.55%) | 0 | 2,561 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -929,8 +929,11 @@ see
 The 23-word `func_151C2E94` extended record validity predicate is exact
 directly from C with no guarded words; see
 [Working Note 296](WORKING_NOTES/296-game-extended-record-validity-match-20260927.md).
-Continue with 34-word `func_151DADA0` while the documented lower-difference
-rows remain parked.
+The 34-word `func_151DADA0` phase/scale updater is exact from typed embedded
+state C plus four guarded phase-register words; see
+[Working Note 297](WORKING_NOTES/297-game-phase-scale-updater-match-20260927.md).
+Continue with 24-word Init `func_1000B294` while the documented
+lower-difference rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 
