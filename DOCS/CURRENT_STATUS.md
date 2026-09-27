@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,727 / 5,470 (49.85%) | 1 | 2,742 |
+| Total | 2,728 / 5,470 (49.87%) | 1 | 2,741 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,156 / 4,792 (44.99%) | 0 | 2,636 |
+| Game | 2,157 / 4,792 (45.01%) | 0 | 2,635 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -529,7 +529,9 @@ end-to-end gameplay acceptance.
    after reversing commutative source operands and guarding four `a2`/`a3`
    lifetime words. The 21-word `func_15155F3C` state-transition wrapper is
    byte-exact through three guarded state-register words. Keep
-   `func_15155FD4` parked and continue with 22-word `func_1507A47C`.
+   `func_15155FD4` parked. The 22-word `func_1507A47C` packed actor-mask
+   clear is now byte-exact through a named mask local and eighteen guarded
+   relocation-aware scheduling words. Continue with 24-word `func_150C5310`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

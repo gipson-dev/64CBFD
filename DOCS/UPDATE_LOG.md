@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game packed actor-mask clear byte-exact
+
+- Recovered `func_1507A47C` as a packed four-byte mask that clears the
+  corresponding bits in the current actor's `unk94` field.
+- A named mask local preserves the retail extent. Eighteen guarded,
+  relocation-aware words restore IDO's independent byte-load, actor-access,
+  shift, OR-tree, complement, and field-update schedule.
+- The complete 22-word span shares SHA-256
+  `45861dbacdfafde2e9941b698382ca182e210932c1f210c4d95ce0388da56e3c`.
+  Fresh totals are **2,728 / 5,470 (49.87%)** overall and
+  **2,157 / 4,792 (45.01%)** in Game.
+
 ### Game state-transition wrapper byte-exact
 
 - Replaced the zero-return `func_15155F3C` placeholder with its lookup and

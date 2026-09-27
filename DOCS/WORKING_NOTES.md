@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, Game state-transition wrapper matched).** The current
-linked checkpoint is `2727 / 5470 (49.85%)` exact C functions, with one
-address-drift blocker and 2,742 genuinely different C functions. Game is
-`2156 / 4792 (44.99%)` exact, with 2,636 genuinely different C rows. The tree
+**Active (2026-09-27, Game packed actor-mask clear matched).** The current
+linked checkpoint is `2728 / 5470 (49.87%)` exact C functions, with one
+address-drift blocker and 2,741 genuinely different C functions. Game is
+`2157 / 4792 (45.01%)` exact, with 2,635 genuinely different C rows. The tree
 contains 569 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -609,8 +609,12 @@ four second-vector `a2`/`a3` lifetime words. Continue with 21-word
 [Working Note 222](WORKING_NOTES/222-game-stack-vector-sum-wrapper-match-20260927.md).
 The state-transition wrapper `func_15155F3C` is now exact from typed C plus
 three guarded words that preserve retail's shared `v1` state-byte lifetime.
-Keep `func_15155FD4` parked and continue with 22-word `func_1507A47C`; see
+Keep `func_15155FD4` parked; see
 [Working Note 223](WORKING_NOTES/223-game-state-transition-wrapper-match-20260927.md).
+The 22-word `func_1507A47C` packed actor-mask clear is now exact from a named
+packed-mask local plus eighteen guarded, relocation-aware scheduling words.
+Continue with 24-word `func_150C5310`; see
+[Working Note 224](WORKING_NOTES/224-game-packed-actor-mask-clear-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

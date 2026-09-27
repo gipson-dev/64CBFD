@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,470 / 6,039 (90.58%) | 2,727 / 5,470 (49.85%) | 1 | 2,742 |
+| Total | 5,470 / 6,039 (90.58%) | 2,728 / 5,470 (49.87%) | 1 | 2,741 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,792 / 5,319 (90.09%) | 2,156 / 4,792 (44.99%) | 0 | 2,636 |
+| Game | 4,792 / 5,319 (90.09%) | 2,157 / 4,792 (45.01%) | 0 | 2,635 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -697,7 +697,11 @@ words; see
 The 21-word `func_15155F3C` state-transition wrapper is now exact through
 typed C plus three guarded state-register words; see
 [Working Note 223](WORKING_NOTES/223-game-state-transition-wrapper-match-20260927.md).
-Keep `func_15155FD4` parked and continue with 22-word `func_1507A47C`.
+Keep `func_15155FD4` parked. The 22-word `func_1507A47C` packed actor-mask
+clear is now exact through a named mask local and eighteen guarded
+relocation-aware scheduling words; see
+[Working Note 224](WORKING_NOTES/224-game-packed-actor-mask-clear-match-20260927.md).
+Continue with 24-word `func_150C5310`.
 
 Current host-port progression and acceptance boundaries:
 
