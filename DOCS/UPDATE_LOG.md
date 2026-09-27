@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game four-timer handwritten assembly restored
+
+- Reclassified `func_15125628` from a behaviorally equivalent C model to its
+  maintained original 26-word assembly body.
+- Retail independently expands each timer-byte load and store through separate
+  symbol-address macros. IDO C always combines those accesses unless given
+  false single-use symbols, so keeping it in the C queue was misleading.
+- The complete 104-byte linked and retail spans share SHA-256
+  `ea2a21dfd73b25f4db3c08366068559df6e0985d32ba0a86af22edd3e74542ac`.
+  Fresh C-only totals are **2,730 / 5,469 (49.92%)** overall and
+  **2,159 / 4,791 (45.06%)** in Game.
+
 ### Game marker-record swap byte-exact
 
 - Replaced the zero-return `func_150E2FC0` placeholder with its marker-gated

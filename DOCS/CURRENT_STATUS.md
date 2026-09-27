@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,470 / 6,039 (90.58%) | 569 | 1,931,968 / 2,256,728 (85.61%) |
+| Total | 5,469 / 6,039 (90.56%) | 570 | 1,931,864 / 2,256,728 (85.60%) |
 | Init | 497 / 538 (92.38%) | 41 | 148,600 / 164,048 (90.58%) |
-| Game | 4,792 / 5,319 (90.09%) | 527 | 1,763,728 / 2,072,880 (85.09%) |
+| Game | 4,791 / 5,319 (90.07%) | 528 | 1,763,624 / 2,072,880 (85.08%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,730 / 5,470 (49.91%) | 1 | 2,739 |
+| Total | 2,730 / 5,469 (49.92%) | 1 | 2,738 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,159 / 4,792 (45.05%) | 0 | 2,633 |
+| Game | 2,159 / 4,791 (45.06%) | 0 | 2,632 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,8 +45,8 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,727, while
-502 functions moved from C back to assembly. The paired event-swap pass added
+denominator driven: the exact count is now 2,730, while
+503 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -535,7 +535,10 @@ end-to-end gameplay acceptance.
    toggle is now byte-exact directly from typed C, including three tracked
    padding words. The 24-word `func_150E2FC0` marker-record swap is now
    byte-exact from typed C plus one guarded equivalent branch-operand word.
-   Keep `func_150721A4` parked and continue with 26-word `func_15125628`.
+   The 26-word `func_15125628` four-timer decrement is restored to its
+   original handwritten assembly ownership. Keep `func_150721A4` and the
+   `func_151A8584`/`func_151A85D4` pair parked; continue with 33-word
+   `func_1505DFDC`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
@@ -677,6 +680,8 @@ The completed state-transition wrapper is in
 [Working Note 223](WORKING_NOTES/223-game-state-transition-wrapper-match-20260927.md).
 The completed marker-record swap is in
 [Working Note 226](WORKING_NOTES/226-game-marker-record-swap-match-20260927.md).
+The restored handwritten four-timer decrement is in
+[Working Note 227](WORKING_NOTES/227-game-four-timer-decrement-restoration-20260927.md).
 The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 The completed five-global reset ordering is in

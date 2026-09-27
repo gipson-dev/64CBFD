@@ -567,6 +567,7 @@ void func_15125608(struct108 *arg0) {
 // of the 8 accesses references a *distinct* symbol (single-use), which no
 // plausible source has. The .s below reproduces retail byte-exactly.
 // Equivalent C, logic-verified:
+#if 0
 void func_15125628(void) {
     if (D_800DBFF4[0] != 0) {
         D_800DBFF4[0]--;
@@ -581,6 +582,8 @@ void func_15125628(void) {
         D_800DBFF7--;
     }
 }
+#endif
+#pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_15125628.s")
 
 void func_15125690(struct108 *arg0, s32 arg1) {
     u8 *temp_v0 = &D_800DBFF4[arg0->unk23D];
