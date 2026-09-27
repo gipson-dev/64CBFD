@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game validated-position reader byte-exact
+
+- Replaced the zero-return `func_151B7678` placeholder with its pointer-chain
+  validation and three-float position copy.
+- A short-circuit empty-record or tag-mismatch failure reproduces retail's
+  shared zero-return block, branch-likely success path, duplicated scheduled
+  float load, and all 21 words without a retail-word patch.
+- The complete span shares SHA-256
+  `b6be4112a6bbc89160af04c63a144617a2f1d834e34c138fc78fc2089f63d57b`.
+  Fresh totals are **2,715 / 5,469 (49.64%)** overall and
+  **2,144 / 4,791 (44.75%)** in Game.
+
 ### Game second float ABI adapter byte-exact
 
 - Replaced the zero-return `func_151B50A4` placeholder with its complete

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,714 / 5,469 (49.63%) | 1 | 2,754 |
+| Total | 5,469 / 6,038 (90.58%) | 2,715 / 5,469 (49.64%) | 1 | 2,753 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,143 / 4,791 (44.73%) | 0 | 2,648 |
+| Game | 4,791 / 5,318 (90.09%) | 2,144 / 4,791 (44.75%) | 0 | 2,647 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -657,7 +657,10 @@ now exact directly from typed C; see
 The twin 20-word `func_151B50A4` float ABI adapter is also exact from the same
 typed wrapper shape; see
 [Working Note 211](WORKING_NOTES/211-game-second-float-abi-adapter-match-20260926.md).
-Continue with 21-word `func_151B7678`.
+The 21-word `func_151B7678` validated-position reader is now exact from a typed
+pointer chain and short-circuit failure condition; see
+[Working Note 212](WORKING_NOTES/212-game-validated-position-reader-match-20260926.md).
+Continue with 22-word `func_151B8318`.
 
 Current host-port progression and acceptance boundaries:
 

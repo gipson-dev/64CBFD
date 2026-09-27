@@ -31,8 +31,18 @@ s32 func_151B7328() {
     return 0;
 }
 
-s32 func_151B7678() {
-    return 0;
+s32 func_151B7678(u8 *arg0, f32 *arg1) {
+    u8 *container = *(u8 **)(arg0 + 0x98);
+    u8 *entry = *(u8 **)(container + 4);
+    u8 *record = *(u8 **)entry;
+
+    if (*(s32 *)record == 0 || entry[4] != record[0x3B]) {
+        return 0;
+    }
+    arg1[0] = *(f32 *)(record + 0x14);
+    arg1[1] = *(f32 *)(record + 0x18);
+    arg1[2] = *(f32 *)(record + 0x1C);
+    return 1;
 }
 
 s32 func_151B76CC() {

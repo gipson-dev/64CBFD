@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,714 / 5,469 (49.63%) | 1 | 2,754 |
+| Total | 2,715 / 5,469 (49.64%) | 1 | 2,753 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,143 / 4,791 (44.73%) | 0 | 2,648 |
+| Game | 2,144 / 4,791 (44.75%) | 0 | 2,647 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,714, while
+denominator driven: the exact count is now 2,715, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -504,8 +504,10 @@ end-to-end gameplay acceptance.
    is now byte-exact directly from a typed seven-argument wrapper. The 20-word
    `func_151B4C1C` embedded cleanup and callback-dispatch wrapper is now exact
    directly from typed C. The twin 20-word `func_151B50A4` float ABI adapter
-   is also byte-exact from the same typed wrapper shape. Continue with 21-word
-   `func_151B7678`.
+   is also byte-exact from the same typed wrapper shape. The 21-word
+   `func_151B7678` validated-position reader is now exact from a typed pointer
+   chain and short-circuit failure condition. Continue with 22-word
+   `func_151B8318`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
