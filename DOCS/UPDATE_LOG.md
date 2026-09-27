@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game event state/teardown handler byte-exact
+
+- Replaced the zero-return placeholder at `func_150F4CFC` with the recovered
+  `0x4E` state update and `0x4F` object teardown paths.
+- All 24 words / 96 bytes match directly from C. A minimal typed record at
+  object offset `0x170` preserves retail's separate base formation and flag
+  access at record offset `0x24`, along with the original branch schedule.
+- The complete span has SHA-256
+  `5bb7259de0c805b8e28072d2011a451b4ec747eae9f5a5a69e5aacd1dc61f8c7`.
+  Fresh totals are **2,792 / 5,469 (51.05%)** overall and
+  **2,221 / 4,791 (46.36%)** in Game.
+
 ### Game paired-table dispatcher byte-exact
 
 - Replaced the zero-return placeholder at `func_150DEC28` with the recovered
