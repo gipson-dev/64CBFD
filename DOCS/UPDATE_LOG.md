@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game event-bit updater twin byte-exact
+
+- Replaced the false zero-return placeholder at `func_150D1BD0` with the
+  second recovered event-bit template. Event `0x402C` sets bit `0x10` in the
+  object word at `+0x84`; an inactive event clears it.
+- All 24 tracked words / 96 bytes match directly from C, including call
+  setup, branch and delay slot, both mask paths, epilogue, and two trailing
+  padding words. No guarded retail words are needed.
+- The complete span has SHA-256
+  `2f7bbe6a8f54e13aca4d41dc1417f4f6b6f2af1c5181abfec7cfc76302499732`.
+  Fresh totals are **2,756 / 5,469 (50.39%)** overall and
+  **2,185 / 4,791 (45.61%)** in Game.
+
 ### Game event-bit updater byte-exact
 
 - Replaced the false zero-return placeholder at `func_150BB700` with its

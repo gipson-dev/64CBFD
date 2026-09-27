@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, event-bit updater matched).** The current linked
-checkpoint is `2755 / 5469 (50.37%)` exact C functions, with one address-drift
-blocker and 2,713 genuinely different C functions. Game is
-`2184 / 4791 (45.59%)` exact, with 2,607 genuinely different C rows. The tree
+**Active (2026-09-27, event-bit updater twin matched).** The current linked
+checkpoint is `2756 / 5469 (50.39%)` exact C functions, with one address-drift
+blocker and 2,712 genuinely different C functions. Game is
+`2185 / 4791 (45.61%)` exact, with 2,606 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -724,7 +724,10 @@ scheduling words; see
 The false zero-return placeholder at `func_150BB700` is now a byte-exact
 24-word event-bit updater directly from C with no guarded words; see
 [Working Note 252](WORKING_NOTES/252-game-event-bit-updater-match-20260927.md).
-Continue with 24-word `func_150D1BD0`, the next unparked Game C row in the
+Its false-placeholder template twin `func_150D1BD0` is also a byte-exact
+24-word event-bit updater directly from C with no guarded words; see
+[Working Note 253](WORKING_NOTES/253-game-event-bit-updater-twin-match-20260927.md).
+Continue with 22-word `func_150E411C`, the next unparked Game C row in the
 fresh queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
