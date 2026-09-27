@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,776 / 5,469 (50.76%) | 1 | 2,692 |
+| Total | 5,469 / 6,040 (90.55%) | 2,777 / 5,469 (50.78%) | 1 | 2,691 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,205 / 4,791 (46.02%) | 0 | 2,586 |
+| Game | 4,791 / 5,320 (90.06%) | 2,206 / 4,791 (46.04%) | 0 | 2,585 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -856,7 +856,10 @@ from C as the nonzero twin of `func_15181DC8`; see
 The 24-word `func_1518A360` paired endpoint updater is exact from C with one
 guarded commutative branch-operand normalization; see
 [Working Note 273](WORKING_NOTES/273-game-paired-endpoint-update-match-20260927.md).
-Continue with 23-word `func_151904BC` while the documented lower-difference
+The 23-word `func_151904BC` callback/resource cleanup is exact from C with
+five guarded branch and call-setup scheduling words; see
+[Working Note 274](WORKING_NOTES/274-game-callback-resource-cleanup-match-20260927.md).
+Continue with 23-word `func_15197A0C` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

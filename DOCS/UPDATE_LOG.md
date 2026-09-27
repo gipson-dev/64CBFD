@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game callback/resource cleanup byte-exact
+
+- Replaced the false zero-return placeholder at `func_151904BC` with its
+  original release, callback-unregister, and resource-teardown sequence.
+- All 23 words / 92 bytes match. Volatile pointer accesses preserve the
+  conditional release reload, and local declaration order places the derived
+  resource pointer in retail stack slot `0x18`. Five guarded words preserve
+  the original null-branch and independent unregister-call setup schedule.
+- The complete span has SHA-256
+  `723d6af129190b4ac047acf1739e7f4abfc79a6eea5f78b62c342f3e6c336ee4`.
+  Fresh totals are **2,777 / 5,469 (50.78%)** overall and
+  **2,206 / 4,791 (46.04%)** in Game.
+
 ### Game paired endpoint update byte-exact
 
 - Replaced the false zero-return placeholder at `func_1518A360` with its

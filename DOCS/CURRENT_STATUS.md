@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,776 / 5,469 (50.76%) | 1 | 2,692 |
+| Total | 2,777 / 5,469 (50.78%) | 1 | 2,691 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,205 / 4,791 (46.02%) | 0 | 2,586 |
+| Game | 2,206 / 4,791 (46.04%) | 0 | 2,585 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -639,7 +639,9 @@ end-to-end gameplay acceptance.
    directly from C as the nonzero twin of `func_15181DC8`.
    The 24-word `func_1518A360` paired endpoint updater is byte-exact from C
    with one guarded commutative branch-operand normalization.
-   Continue with 23-word `func_151904BC`; keep the previously documented
+   The 23-word `func_151904BC` callback/resource cleanup is byte-exact from C
+   with five guarded branch and call-setup scheduling words.
+   Continue with 23-word `func_15197A0C`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

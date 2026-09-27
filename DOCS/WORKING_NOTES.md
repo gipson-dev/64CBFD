@@ -790,7 +790,10 @@ words; see [Working Note 272](WORKING_NOTES/272-game-enabled-player-state-init-m
 The false zero-return placeholder at `func_1518A360` is now a byte-exact
 24-word paired endpoint updater from C with one guarded commutative branch
 operand; see [Working Note 273](WORKING_NOTES/273-game-paired-endpoint-update-match-20260927.md).
-Continue with 23-word `func_151904BC`, the next unparked Game C row in the
+The false zero-return placeholder at `func_151904BC` is now a byte-exact
+23-word callback/resource cleanup from C with five guarded branch and call
+setup words; see [Working Note 274](WORKING_NOTES/274-game-callback-resource-cleanup-match-20260927.md).
+Continue with 23-word `func_15197A0C`, the next unparked Game C row in the
 fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

@@ -272,8 +272,18 @@ s32 func_15190490(s32 arg0) {
     func_151617E4(arg0);
 }
 
-s32 func_151904BC() {
-    return 0;
+// Matched with guarded branch and call-setup scheduling normalization.
+void func_151904BC(u8 *arg0) {
+    s32 owner;
+    u8 *volatile resource;
+
+    if (*(u8 *volatile *)(arg0 + 0x84) != NULL) {
+        func_1516972C(*(u8 *volatile *)(arg0 + 0x84));
+    }
+    owner = *(s32 *)(arg0 + 0x10);
+    resource = arg0 + 0x30;
+    func_1000FD38(func_1518E298, arg0, owner);
+    func_151D2B4C(*(s32 *)(resource + 0x48));
 }
 
 void func_15190518(u8 *arg0) {
