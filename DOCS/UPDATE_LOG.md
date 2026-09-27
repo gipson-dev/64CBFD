@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game paired-record updater byte-exact
+
+- Replaced the false zero-return placeholder at `func_1510A870` with its
+  original paired-record update behavior. For event `0x2D`, it replaces the
+  destination's selected word and companion byte with the opposite source
+  pair when either source word matches the destination.
+- All 23 words / 92 bytes match from recovered C semantics plus one guarded
+  word selecting retail's operand order for a commutative equality branch.
+- The complete span has SHA-256
+  `fd478fda75bdea9e1b7e81f5eff7d3c810f4609bb7f137f6a493be6fde6e5a48`.
+  Fresh totals are **2,763 / 5,469 (50.52%)** overall and
+  **2,192 / 4,791 (45.75%)** in Game.
+
 ### Game volatile callback-table dispatcher byte-exact
 
 - Replaced the false zero-return placeholder at `func_151076A4` with its

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,762 / 5,469 (50.50%) | 1 | 2,706 |
+| Total | 5,469 / 6,040 (90.55%) | 2,763 / 5,469 (50.52%) | 1 | 2,705 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,191 / 4,791 (45.73%) | 0 | 2,600 |
+| Game | 4,791 / 5,320 (90.06%) | 2,192 / 4,791 (45.75%) | 0 | 2,599 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -811,7 +811,11 @@ see [Working Note 258](WORKING_NOTES/258-game-type-flag-dispatcher-match-2026092
 The false zero-return placeholder at `func_151076A4` is restored as a 23-word
 volatile callback-table dispatcher, exact directly from C with no guarded
 words; see [Working Note 259](WORKING_NOTES/259-game-volatile-callback-table-dispatch-match-20260927.md).
-Continue with 23-word `func_1510A870` while the documented lower-difference
+The false zero-return placeholder at `func_1510A870` is restored as a 23-word
+paired-record updater, exact from recovered C semantics plus one guarded
+commutative-branch operand word; see
+[Working Note 260](WORKING_NOTES/260-game-paired-record-update-match-20260927.md).
+Continue with 25-word `func_1510A8CC` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

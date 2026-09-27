@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,762 / 5,469 (50.50%) | 1 | 2,706 |
+| Total | 2,763 / 5,469 (50.52%) | 1 | 2,705 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,191 / 4,791 (45.73%) | 0 | 2,600 |
+| Game | 2,192 / 4,791 (45.75%) | 0 | 2,599 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -611,7 +611,9 @@ end-to-end gameplay acceptance.
    23-word `func_150FB240` signed-halfword mapper is byte-exact directly from
    C. The 22-word `func_150FFD2C` type-and-flag-gated dispatcher and 23-word
    `func_151076A4` volatile callback-table dispatcher are also byte-exact
-   directly from C. Continue with 23-word `func_1510A870`; keep the previously
+   directly from C. The 23-word `func_1510A870` paired-record updater is
+   byte-exact from recovered C semantics plus one guarded commutative-branch
+   operand word. Continue with 25-word `func_1510A8CC`; keep the previously
    documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
