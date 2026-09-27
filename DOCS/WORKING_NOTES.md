@@ -834,7 +834,10 @@ six-entry cleanup loop directly from C with no guarded words; see
 The false placeholder at `func_150D32FC` is now a byte-exact tracked 25-word
 event-key forwarder directly from C with no guarded words; see
 [Working Note 286](WORKING_NOTES/286-game-event-key-forwarder-match-20260927.md).
-Continue with 26-word `func_150DEC28`, the next unparked Game C row in the
+The false placeholder at `func_150DEC28` is now a byte-exact tracked 26-word
+paired table dispatcher directly from C with no guarded words; see
+[Working Note 287](WORKING_NOTES/287-game-paired-table-dispatcher-match-20260927.md).
+Continue with 24-word `func_150F4CFC`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

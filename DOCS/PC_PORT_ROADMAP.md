@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,790 / 5,469 (51.01%) | 1 | 2,678 |
+| Total | 5,469 / 6,041 (90.53%) | 2,791 / 5,469 (51.03%) | 1 | 2,677 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,321 (90.04%) | 2,219 / 4,791 (46.32%) | 0 | 2,572 |
+| Game | 4,791 / 5,321 (90.04%) | 2,220 / 4,791 (46.34%) | 0 | 2,571 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -896,7 +896,10 @@ with no guarded words; see
 The tracked 25-word `func_150D32FC` event-key forwarder, including two trailing
 layout words, is exact directly from C with no guarded words; see
 [Working Note 286](WORKING_NOTES/286-game-event-key-forwarder-match-20260927.md).
-Continue with 26-word `func_150DEC28` while the documented lower-difference
+The tracked 26-word `func_150DEC28` paired table dispatcher, including three
+trailing layout words, is exact directly from C with no guarded words; see
+[Working Note 287](WORKING_NOTES/287-game-paired-table-dispatcher-match-20260927.md).
+Continue with 24-word `func_150F4CFC` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

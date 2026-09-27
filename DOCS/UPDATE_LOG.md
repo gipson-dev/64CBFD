@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game paired-table dispatcher byte-exact
+
+- Replaced the zero-return placeholder at `func_150DEC28` with the recovered
+  byte-indexed dispatches through `D_800A0D0B` and `D_800A0D2B`.
+- All 26 tracked words / 104 bytes match directly from C, including the
+  23-word function body and three trailing layout nops. Its K&R byte-parameter
+  definition preserves the original argument homes and narrowing without
+  changing the already exact old-style caller.
+- The complete span has SHA-256
+  `631364ff57f69fc8abf662ae782237dd7fcdc1413a777d7270bda3ae3624c8f0`.
+  Fresh totals are **2,791 / 5,469 (51.03%)** overall and
+  **2,220 / 4,791 (46.34%)** in Game.
+
 ### Game event-key forwarder byte-exact
 
 - Replaced the zero-return placeholder at `func_150D32FC` with the recovered
