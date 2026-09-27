@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include "variables.h"
 s32 func_1503EB78(s32, f32, f32, s32);
+extern u8 D_800CC364[];
 
 /* Non-matching placeholders for the text-only asm slice asm/6B320.s. */
 
@@ -78,8 +79,12 @@ void func_1503F0D8(s32 arg0, u8 arg1) {
     func_1503EB78(arg0, 2.06f, 3.0f, 1);
 }
 
-s32 func_1503F108() {
-    return 0;
+void func_1503F108(s32 arg0) {
+    struct106 *entry = &D_800C6660[arg0];
+
+    *(s16 *) ((u8 *) entry + 0xC) = 0x8C;
+    *(s32 *) (D_800CC364 + arg0 * sizeof(struct127)) = 6;
+    *(f32 *) (entry->unk0 + 0x1EC) = 10.0f;
 }
 
 s32 func_1503F16C() {

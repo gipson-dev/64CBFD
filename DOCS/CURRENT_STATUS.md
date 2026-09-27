@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,835 / 5,469 (51.84%) | 1 | 2,633 |
+| Total | 2,836 / 5,469 (51.86%) | 1 | 2,632 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,263 / 4,791 (47.23%) | 0 | 2,528 |
+| Game | 2,264 / 4,791 (47.26%) | 0 | 2,527 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,835, while
+denominator driven: the exact count is now 2,836, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -751,8 +751,9 @@ end-to-end gameplay acceptance.
    `func_1502DB20` resource-size selector is exact directly from a switch;
    generated-slice rodata relocation retargeting preserves its original
    64-entry jump table. The 26-word `func_1502EE8C` record-byte classifier is
-   exact from typed C plus six guarded control-flow words. Continue with
-   25-word Game `func_1503F108`;
+   exact from typed C plus six guarded control-flow words. The 25-word Game
+   `func_1503F108` indexed state initializer is exact directly from typed C.
+   Continue with 27-word Game `func_15049260`;
    keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

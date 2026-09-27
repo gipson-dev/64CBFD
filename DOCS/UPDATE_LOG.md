@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game indexed state initializer byte-exact
+
+- Restored `func_1503F108` as an indexed state initializer: it writes `0x8C`
+  into a 16-byte control record, writes `6` into the corresponding
+  `0x32C`-byte object record, and stores `10.0f` through the control record's
+  leading pointer.
+- Typed C reproduces all 25 words / 100 bytes directly, including both
+  strength-reduced index calculations, their interleaved scheduling, the
+  field widths, and the floating-point store. No guarded words are required.
+- The linked span has SHA-256
+  `ae4ee765731e161dc2b0b5475eeb4d1f83d597aa03a16a75dd2b18002070592f`.
+  Fresh totals are **2,836 / 5,469 (51.86%)** overall and
+  **2,264 / 4,791 (47.26%)** in Game.
+
 ### Game record-byte classifier byte-exact
 
 - Restored `func_1502EE8C` as a classifier for a byte in a `0x32C`-byte
