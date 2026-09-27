@@ -580,6 +580,12 @@ generated_1AC2F0,func_1517F7B4,0x008,0x94820000,0x94A20000,-,-,Load the timer th
 generated_1AC2F0,func_1517F7B4,0x030,0xA48E0000,0xA4AE0000,-,-,Store the decremented timer through retail base register,
 generated_1AC2F0,func_1517F7B4,0x034,0xA4800000,0xA4A00000,-,-,Clear the timer through retail base register,
 game_A28B0,func_15079F6C,0x014,0x90630000,0x906E0000,R_MIPS_LO16:D_800D1891,R_MIPS_LO16:D_800D1891,Use retail byte temporary register,
+game_A28B0,func_1507A100,0x038,0x3C0F0000,0x3C180000,R_MIPS_HI16:D_800D1891,R_MIPS_HI16:D_800D1891,Load the halfword index through retail's temporary register,,,false
+game_A28B0,func_1507A100,0x044,0x91EF0000,0x93180000,R_MIPS_LO16:D_800D1891,R_MIPS_LO16:D_800D1891,Complete the halfword-index load through retail's temporary register,,,false
+game_A28B0,func_1507A100,0x04C,0x018E1821,0x018E7821,-,-,Keep the indexed path entry in retail's address temporary,,,false
+game_A28B0,func_1507A100,0x050,0x000FC040,0x00184040,-,-,Scale the halfword index through retail's temporary register,,,false
+game_A28B0,func_1507A100,0x054,0x00784021,0x01E84821,-,-,Form the final destination in retail's address temporary,,,false
+game_A28B0,func_1507A100,0x058,0xA5020008,0xA5220008,-,-,Store the packed value through the retail destination register,,,false
 game_A28B0,func_15079F6C,0x020,0x01E3C025,0x01EEC025,-,-,Use retail byte temporary in packed halfword,
 game_1944C0,func_1516968C,0x028,0x908F000C,0x90AF0000,-,-,Load comparison byte from arg1 first,
 game_1944C0,func_1516968C,0x02C,0x90B80000,0x9098000C,-,-,Load comparison byte from arg0 second,

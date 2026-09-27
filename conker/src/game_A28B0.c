@@ -1479,9 +1479,11 @@ s32 func_15079FBC() {
 // }
 
 void func_1507A100(void) {
-    s16 *temp_v0 = (s16 *)&((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1890 + 1];
+    s32 value = ((s8) D_800D1892 << 8) | D_800D1893;
+    PathNode8 *entry = &((PathNode8 **) D_800D2104)
+        [D_800D154C->unk13F][D_800D1890];
 
-    temp_v0[D_800D1891] = ((s8)D_800D1892 << 8) | D_800D1893;
+    *(s16 *) ((u8 *) entry + (D_800D1891 * 2) + 8) = value;
 }
 
 s32 func_1507A164(void) {

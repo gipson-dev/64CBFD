@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game packed path-record writer byte-exact
+
+- Restored `func_1507A100` as an indexed path-record halfword writer. It packs
+  signed `D_800D1892` as the high byte with `D_800D1893` as the low byte and
+  stores the result through the current object's path-table selection.
+- The corrected pointer expression removes the old three-word compiler
+  overflow and reproduces 19 of the 25 retail words directly. Six guarded
+  register-allocation words preserve retail's equivalent final address chain.
+- The linked span has SHA-256
+  `8ad8feeacaca9d8b4ac2246da3caa2172958223c80920410221ea0dd92c9d4da`.
+  Fresh totals are **2,838 / 5,469 (51.89%)** overall and
+  **2,266 / 4,791 (47.30%)** in Game.
+
 ### Game aggregate forwarding wrapper byte-exact
 
 - Restored `func_15049260` as a wrapper that receives and forwards one
