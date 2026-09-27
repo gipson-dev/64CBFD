@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, complementary history marker matched).** The current
-linked checkpoint is `2809 / 5469 (51.36%)` exact C functions, with one
-address-drift blocker and 2,659 genuinely different C functions. Init is
+**Active (2026-09-27, counted object dispatch loop matched).** The current
+linked checkpoint is `2810 / 5469 (51.38%)` exact C functions, with one
+address-drift blocker and 2,658 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2237 / 4791 (46.69%)` exact, with 2,554 genuinely different C rows. The tree
+`2238 / 4791 (46.71%)` exact, with 2,553 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -899,7 +899,10 @@ exact; see
 The 24-word Game `func_1507EE58` complementary history-marker wrapper is exact
 directly from typed C with no guarded words; see
 [Working Note 305](WORKING_NOTES/305-game-complementary-history-marker-match-20260927.md).
-Continue with 24-word Game `func_1508434C`, the next ordinary unparked C row in
+The 24-word Game `func_1508434C` counted object-dispatch loop is also exact
+directly from typed C with no guarded words; see
+[Working Note 306](WORKING_NOTES/306-game-counted-object-dispatch-loop-match-20260927.md).
+Continue with 24-word Game `func_150B58F0`, the next ordinary unparked C row in
 the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

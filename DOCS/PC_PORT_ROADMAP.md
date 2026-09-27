@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,809 / 5,469 (51.36%) | 1 | 2,659 |
+| Total | 5,469 / 6,041 (90.53%) | 2,810 / 5,469 (51.38%) | 1 | 2,658 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,237 / 4,791 (46.69%) | 0 | 2,554 |
+| Game | 4,791 / 5,321 (90.04%) | 2,238 / 4,791 (46.71%) | 0 | 2,553 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -944,9 +944,9 @@ signed-coordinate event wrapper is exact directly from typed C. Continue with
 26-word Game `func_1507488C`, now exact through guarded register scheduling.
 The required full rebuild also exposed and repaired the stale overflow
 trampoline for 19-word `func_1506EE60`. The 24-word `func_1507EE58`
-complementary history-marker wrapper is exact directly from typed C. Continue
-with 24-word Game `func_1508434C` while the documented lower-difference rows
-remain parked.
+complementary history-marker wrapper and 24-word `func_1508434C` counted
+object-dispatch loop are exact directly from typed C. Continue with 24-word
+Game `func_150B58F0` while the documented lower-difference rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 

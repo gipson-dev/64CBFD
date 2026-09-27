@@ -130,8 +130,16 @@ s32 func_15084044() {
     return 0;
 }
 
-s32 func_1508434C(u8 *arg0) {
-    return 0;
+void func_1508434C(u8 *arg0) {
+    s32 count = arg0[0x2C9];
+    s32 i;
+
+    if (count == 0) {
+        count = 1;
+    }
+    for (i = 0; i < count; i++) {
+        func_150843AC(arg0, i);
+    }
 }
 
 s32 func_150843AC() {

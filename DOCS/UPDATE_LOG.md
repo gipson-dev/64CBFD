@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game counted object-dispatch loop byte-exact
+
+- Replaced the zero placeholder at `func_1508434C` with its typed counted
+  dispatch loop. It reads the unsigned count byte at object offset `0x2C9`,
+  substitutes one when that byte is zero, and calls `func_150843AC` once for
+  each index from zero through count minus one.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The source reproduces retail's retained object/count/index registers,
+  zero-to-one normalization, empty-loop guard, and branch-likely post-test.
+- The complete span has SHA-256
+  `83fcda040d8f514bb3346c5db1daf2b45d2f74d998f6dd88fca5175461716227`.
+  Fresh totals are **2,810 / 5,469 (51.38%)** overall and
+  **2,238 / 4,791 (46.71%)** in Game.
+
 ### Game complementary history-marker wrapper byte-exact
 
 - Replaced the zero placeholder at `func_1507EE58` with its typed byte-history
