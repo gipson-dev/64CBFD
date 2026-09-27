@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game indexed-record reset byte-exact
+
+- Replaced the false zero-return placeholder at `func_1512D6F0` with its
+  original one-argument reset of the actor-selected 104-byte table record.
+- All 22 words / 88 bytes match directly from structured C, including the
+  multiply-by-104 index calculation, state store, five zero-float stores, and
+  final `-1.0f` store. No guarded retail words are needed.
+- The complete span has SHA-256
+  `de1fcbdbd7ec11e4aabe92c6ce6a332173b326d729cafdc4d5e2978c56a0c6cc`.
+  Fresh totals are **2,765 / 5,469 (50.56%)** overall and
+  **2,194 / 4,791 (45.79%)** in Game.
+
 ### Game paired-record updater twin byte-exact
 
 - Replaced the false zero-return placeholder at `func_1510A8CC` with the same
