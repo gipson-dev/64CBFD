@@ -1,4 +1,8 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_1D92F0,func_151AE640,0x0C,0x14C00007,0x14C00008,-,-,Retarget the nonzero mode branch past the restored return delay slot,,,false
+generated_1D92F0,func_151AE640,0x1C,0x144F0011,0x144F0012,-,-,Retarget the zero-mode mismatch branch past the restored return delay slot,,,false
+generated_1D92F0,func_151AE640,0x24,0x03E00008,0xAC800044,-,-,Clear the tracked slot before returning from zero mode,,,false
+generated_1D92F0,func_151AE640,0x28,0xAC800044,0x03E00008,-,-,Return after the zero-mode slot clear,0x00000000,-,false
 generated_1CBE20,func_1519ED24,0x00,0x8C830170,0x3C010000,-,R_MIPS_HI16:D_800A8CD8,Load the shared scale before the independent source pointer,,,false
 generated_1CBE20,func_1519ED24,0x04,0x3C010000,0xC4200000,R_MIPS_HI16:D_800A8CD8,R_MIPS_LO16:D_800A8CD8,Complete the shared scale load before reading the source pointer,,,false
 generated_1CBE20,func_1519ED24,0x08,0xC4200000,0x8C830170,R_MIPS_LO16:D_800A8CD8,-,Read the independent source pointer after loading the scale,,,false

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game mode-driven slot updater byte-exact
+
+- Restored `func_151AE640` as a typed callback that clears a tracked slot in
+  mode zero and swaps either member of a two-word pair in mode `0x2D`.
+- All 28 words / 112 bytes match retail. Structured C reproduces the byte
+  argument normalization, comparisons, branch-likely path, and slot writes;
+  four guarded words preserve retail's zero-mode return scheduling and the
+  two local branch targets shifted by its explicit delay-slot `nop`.
+- The complete linked span has SHA-256
+  `290f1de7726975b100bdf3b023d45174364d7fda0e0a2060cef19eeb052d4328`.
+  Fresh totals are **2,831 / 5,469 (51.76%)** overall and
+  **2,259 / 4,791 (47.15%)** in Game.
+
 ### Game fixed-scale transform copy byte-exact
 
 - Restored `func_1519EF04` as a typed transform-copy helper that scales two

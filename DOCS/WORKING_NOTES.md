@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, fixed-scale transform copy matched).** The current linked
-checkpoint is `2830 / 5469 (51.75%)` exact C functions, with one address-drift
-blocker and 2,638 genuinely different C functions. Init is
+**Active (2026-09-27, mode-driven slot updater matched).** The current linked
+checkpoint is `2831 / 5469 (51.76%)` exact C functions, with one address-drift
+blocker and 2,637 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2258 / 4791 (47.13%)` exact, with 2,533 genuinely different C rows. The tree
+`2259 / 4791 (47.15%)` exact, with 2,532 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -962,7 +962,10 @@ plus five guarded setup-scheduling words; see
 The 27-word Game `func_1519EF04` fixed-scale transform copy is exact directly
 from typed C with no guarded words; see
 [Working Note 326](WORKING_NOTES/326-game-fixed-scale-transform-copy-match-20260927.md).
-Continue with 28-word Game `func_151AE640`, the next unparked C row in the
+The 28-word Game `func_151AE640` mode-driven slot updater is exact from
+structured C plus four guarded return-scheduling and branch words; see
+[Working Note 327](WORKING_NOTES/327-game-mode-driven-slot-updater-match-20260927.md).
+Continue with 24-word Game `func_151D5E30`, the next unparked C row in the
 fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

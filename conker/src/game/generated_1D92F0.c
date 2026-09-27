@@ -122,8 +122,24 @@ s32 func_151AE590() {
     return 0;
 }
 
-s32 func_151AE640() {
-    return 0;
+void func_151AE640(u8 *arg0, s32 *arg1, u8 arg2) {
+    s32 value;
+
+    if (arg2 == 0) {
+        value = arg1[0];
+        if (value == *(s32 *)(arg0 + 0x44)) {
+            *(s32 *)(arg0 + 0x44) = 0;
+        }
+        return;
+    } else if (arg2 == 0x2D) {
+        value = arg1[0];
+        if (value == *(s32 *)(arg0 + 0x44)) {
+            *(s32 *)(arg0 + 0x44) = arg1[1];
+            return;
+        } else if (arg1[1] == *(s32 *)(arg0 + 0x44)) {
+            *(s32 *)(arg0 + 0x44) = value;
+        }
+    }
 }
 
 s32 func_151AE6B0() {
