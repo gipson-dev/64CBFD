@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game nine-argument dual dispatcher byte-exact
+
+- Replaced the zero placeholder at `func_1513164C` with its two-call
+  dispatcher. It first sends arguments 5 through 9 to `func_15131514`, then
+  sends arguments 1 through 4 plus argument 9 to `func_1513137C` and returns
+  the second result.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The nine-argument signature naturally reproduces the 32-byte frame, incoming
+  argument home slots, stack-argument reloads, call delay slots, and epilogue.
+- The complete span has SHA-256
+  `d1f2ddb2fc806b978707ae893df837c78ef338cc51db51e04be4c5441ab7e941`.
+  Fresh totals are **2,820 / 5,469 (51.56%)** overall and
+  **2,248 / 4,791 (46.92%)** in Game.
+
 ### Game relative hierarchy-index lookup byte-exact
 
 - Replaced the zero placeholder at `func_1510FE30` with its relative-offset

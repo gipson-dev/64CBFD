@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,819 / 5,469 (51.55%) | 1 | 2,649 |
+| Total | 2,820 / 5,469 (51.56%) | 1 | 2,648 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,247 / 4,791 (46.90%) | 0 | 2,544 |
+| Game | 2,248 / 4,791 (46.92%) | 0 | 2,543 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,819, while
+denominator driven: the exact count is now 2,820, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -726,8 +726,10 @@ end-to-end gameplay acceptance.
    The 26-word `func_1510281C` and 29-word `func_151028AC` paired object-
    eligibility predicates are byte-exact directly from typed C with no guarded
    words. The 28-word `func_1510FE30` relative hierarchy-index lookup is also
-   byte-exact directly from C. Continue with 24-word Game `func_1513164C`;
-   keep the previously documented lower-difference rows parked.
+   byte-exact directly from C. The 24-word `func_1513164C` nine-argument dual
+   dispatcher is likewise exact directly from C. Continue with 24-word Game
+   `func_15133760`; keep the previously documented lower-difference rows
+   parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
