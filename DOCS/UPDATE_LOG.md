@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game signed-key list search byte-exact
+
+- Replaced the false zero-return placeholder at `func_1514ECE0` with its
+  original linked-list search by signed halfword key.
+- All 23 words / 92 bytes match directly from C. The typed `s16` parameter
+  reproduces retail's entry sign extension, and the existing `GameListNode`
+  layout reproduces the branch-likely loop and optional result store. No
+  guarded retail words are needed.
+- The complete span has SHA-256
+  `b86fa571f8372f319a0e24df91da420b10ef6e0d1478b06f8741b62923391112`.
+  Fresh totals are **2,769 / 5,469 (50.63%)** overall and
+  **2,198 / 4,791 (45.88%)** in Game.
+
 ### Game float damping threshold byte-exact
 
 - Replaced the false zero-return placeholder at `func_15149BF4` with its

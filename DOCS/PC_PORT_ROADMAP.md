@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,768 / 5,469 (50.61%) | 1 | 2,700 |
+| Total | 5,469 / 6,040 (90.55%) | 2,769 / 5,469 (50.63%) | 1 | 2,699 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,197 / 4,791 (45.86%) | 0 | 2,594 |
+| Game | 4,791 / 5,320 (90.06%) | 2,198 / 4,791 (45.88%) | 0 | 2,593 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -832,7 +832,10 @@ commutative operand order; see
 The false zero-return placeholder at `func_15149BF4` is restored as a 25-word
 two-axis float damping threshold, exact directly from C with no guarded words;
 see [Working Note 265](WORKING_NOTES/265-game-float-damping-threshold-match-20260927.md).
-Continue with 23-word `func_1514ECE0` while the documented lower-difference
+The 23-word `func_1514ECE0` signed-key list search is exact directly from C as
+the halfword-key twin of `func_1514ED3C`, with no guarded words; see
+[Working Note 266](WORKING_NOTES/266-game-signed-key-list-search-match-20260927.md).
+Continue with 22-word `func_15159BB0` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

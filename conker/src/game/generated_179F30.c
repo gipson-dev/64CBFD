@@ -282,8 +282,24 @@ s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2) {
     return 0;
 }
 
-s32 func_1514ECE0() {
-    return 0;
+s32 func_1514ECE0(GameListNode *node, s16 key, GameListNode **result) {
+    s32 found = 0;
+    GameListNode *current = node;
+
+    while ((current != NULL) && (found == 0)) {
+        node = current->next;
+        if (current->unk1C == key) {
+            found = 1;
+        } else {
+            current = node;
+        }
+    }
+
+    if (result != NULL) {
+        *result = current;
+    }
+
+    return found;
 }
 
 s32 func_1514ED3C(GameListNode *node, s32 key, GameListNode **result) {

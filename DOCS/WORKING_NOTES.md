@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, float damping threshold matched).** The current linked
-checkpoint is `2768 / 5469 (50.61%)` exact C functions, with one address-drift
-blocker and 2,700 genuinely different C functions. Game is
-`2197 / 4791 (45.86%)` exact, with 2,594 genuinely different C rows. The tree
+**Active (2026-09-27, signed-key list search matched).** The current linked
+checkpoint is `2769 / 5469 (50.63%)` exact C functions, with one address-drift
+blocker and 2,699 genuinely different C functions. Game is
+`2198 / 4791 (45.88%)` exact, with 2,593 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -766,7 +766,10 @@ commutative operand order; see
 The false zero-return placeholder at `func_15149BF4` is now a byte-exact
 25-word two-axis float damping threshold directly from C with no guarded
 words; see [Working Note 265](WORKING_NOTES/265-game-float-damping-threshold-match-20260927.md).
-Continue with 23-word `func_1514ECE0`, the next unparked Game C row in the
+The false zero-return placeholder at `func_1514ECE0` is now a byte-exact
+23-word signed-key list search directly from C with no guarded words; see
+[Working Note 266](WORKING_NOTES/266-game-signed-key-list-search-match-20260927.md).
+Continue with 22-word `func_15159BB0`, the next unparked Game C row in the
 fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
