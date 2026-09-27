@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,757 / 5,469 (50.41%) | 1 | 2,711 |
+| Total | 5,469 / 6,040 (90.55%) | 2,758 / 5,469 (50.43%) | 1 | 2,710 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,186 / 4,791 (45.63%) | 0 | 2,605 |
+| Game | 4,791 / 5,320 (90.06%) | 2,187 / 4,791 (45.65%) | 0 | 2,604 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -795,7 +795,10 @@ Its false-placeholder template twin `func_150D1BD0` is also restored as a
 The false zero-return placeholder at `func_150E411C` is restored as a 22-word
 eight-argument parameter preset, exact directly from C with no guarded words;
 see [Working Note 254](WORKING_NOTES/254-game-parameter-preset-match-20260927.md).
-Continue with 24-word `func_150EB030` while the documented lower-difference
+The false zero-return placeholder at `func_150EB030` is restored as a 24-word
+nested state classifier, exact directly from C with no guarded words; see
+[Working Note 255](WORKING_NOTES/255-game-nested-state-classifier-match-20260927.md).
+Continue with 22-word `func_150FB1E8` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

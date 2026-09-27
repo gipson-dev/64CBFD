@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game nested state classifier byte-exact
+
+- Replaced the false zero-return placeholder at `func_150EB030` with its
+  original classifier. Mode `1` and global state `4` call
+  `func_151420F8(arg1)`, returning `6` or `3`; all other mode/state cases
+  return `-1`.
+- Nested switches preserve retail's two distinct default paths. All 24 words /
+  96 bytes match directly from C, including both `-1` assignments, branch
+  offsets, callback delay slot, result paths, and epilogue. No guards are used.
+- The complete span has SHA-256
+  `a34d5679b8a478511f46b1d6f21549808b5c1acf81b6a79448e9440a81bb660b`.
+  Fresh totals are **2,758 / 5,469 (50.43%)** overall and
+  **2,187 / 4,791 (45.65%)** in Game.
+
 ### Game parameter preset byte-exact
 
 - Replaced the false zero-return placeholder at `func_150E411C` with its

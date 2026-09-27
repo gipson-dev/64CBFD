@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, parameter preset matched).** The current linked
-checkpoint is `2757 / 5469 (50.41%)` exact C functions, with one address-drift
-blocker and 2,711 genuinely different C functions. Game is
-`2186 / 4791 (45.63%)` exact, with 2,605 genuinely different C rows. The tree
+**Active (2026-09-27, nested state classifier matched).** The current linked
+checkpoint is `2758 / 5469 (50.43%)` exact C functions, with one address-drift
+blocker and 2,710 genuinely different C functions. Game is
+`2187 / 4791 (45.65%)` exact, with 2,604 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -730,7 +730,10 @@ Its false-placeholder template twin `func_150D1BD0` is also a byte-exact
 The false zero-return placeholder at `func_150E411C` is now a byte-exact
 22-word eight-argument parameter preset directly from C with no guarded words;
 see [Working Note 254](WORKING_NOTES/254-game-parameter-preset-match-20260927.md).
-Continue with 24-word `func_150EB030`, the next unparked Game C row in the
+The false zero-return placeholder at `func_150EB030` is now a byte-exact
+24-word nested state classifier directly from C with no guarded words; see
+[Working Note 255](WORKING_NOTES/255-game-nested-state-classifier-match-20260927.md).
+Continue with 22-word `func_150FB1E8`, the next unparked Game C row in the
 fresh queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
