@@ -8,11 +8,13 @@ s32 func_15049350();
 /* End generated placeholder declarations. */
 
 extern f32 D_80099080;
-void func_150AAD98(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8);
+typedef struct {
+    s32 words[9];
+} struct_15049260_arg;
+void func_150AAD98(struct_15049260_arg arg0);
 
-// wtf?
-void func_15049260(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8) {
-    func_150AAD98(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+void func_15049260(struct_15049260_arg arg0) {
+    func_150AAD98(arg0);
 }
 
 void func_150492CC(f32 arg0, f32 arg1, f32 arg2) {

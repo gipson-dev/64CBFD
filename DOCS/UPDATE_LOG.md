@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game aggregate forwarding wrapper byte-exact
+
+- Restored `func_15049260` as a wrapper that receives and forwards one
+  36-byte aggregate by value, replacing the incorrect nine-independent-word
+  prototype.
+- Typed C reproduces all 27 words / 108 bytes directly, including the four
+  incoming register spills, three-word copy loop, restored argument
+  registers, call delay slot, and epilogue. No guarded words are required.
+- The linked span has SHA-256
+  `cf413bcb9875e8025308d33beffc2313e7dd55575a4fe5a097c866357053ca3f`.
+  Fresh totals are **2,837 / 5,469 (51.87%)** overall and
+  **2,265 / 4,791 (47.28%)** in Game.
+
 ### Game indexed state initializer byte-exact
 
 - Restored `func_1503F108` as an indexed state initializer: it writes `0x8C`
