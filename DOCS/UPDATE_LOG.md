@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game typed eight-float forwarding wrapper byte-exact
+
+- Replaced the zero placeholder at `func_15133760` with its destination plus
+  eight-float forwarding call to `func_15142838`.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  The typed callee contract preserves single-precision arguments and naturally
+  reproduces the mixed GPR/stack ABI, saved source pointer, and call schedule.
+- The complete span has SHA-256
+  `2f32a09575c94a5c410e4972036f77aa1e3f26d4f43cbe8b57f824663f5b4809`.
+  Fresh totals are **2,821 / 5,469 (51.58%)** overall and
+  **2,249 / 4,791 (46.94%)** in Game.
+
 ### Game nine-argument dual dispatcher byte-exact
 
 - Replaced the zero placeholder at `func_1513164C` with its two-call

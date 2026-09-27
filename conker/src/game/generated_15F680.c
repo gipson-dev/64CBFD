@@ -9,6 +9,7 @@ typedef struct { s32 a, b; } TwoWord15F680;
 
 
 s32 func_15133EEC();
+s32 func_15142838(void *, f32, f32, f32, f32, f32, f32, f32, f32);
 
 s32 func_151321D0() {
     return 0;
@@ -80,8 +81,19 @@ s32 func_151336A8() {
     return 0;
 }
 
-s32 func_15133760() {
-    return 0;
+s32 func_15133760(u8 *arg0, u8 *arg1) {
+    func_15142838(
+        arg0,
+        *(f32 *)(arg1 + 0x18),
+        *(f32 *)(arg1 + 0x1C),
+        *(f32 *)(arg1 + 0x20),
+        *(f32 *)(arg1 + 0x24),
+        *(f32 *)(arg1 + 0x28),
+        *(f32 *)(arg1 + 0x38),
+        *(f32 *)(arg1 + 0x3C),
+        *(f32 *)(arg1 + 0x40)
+    );
+    return 1;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_151337C0.s")

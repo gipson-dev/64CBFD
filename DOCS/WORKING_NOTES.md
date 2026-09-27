@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, nine-argument dual dispatcher matched).** The current
-linked checkpoint is `2820 / 5469 (51.56%)` exact C functions, with one
-address-drift blocker and 2,648 genuinely different C functions. Init is
+**Active (2026-09-27, typed eight-float wrapper matched).** The current linked
+checkpoint is `2821 / 5469 (51.58%)` exact C functions, with one address-drift
+blocker and 2,647 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2248 / 4791 (46.92%)` exact, with 2,543 genuinely different C rows. The tree
+`2249 / 4791 (46.94%)` exact, with 2,542 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -932,7 +932,10 @@ three trailing layout words, is exact directly from C; see
 The 24-word Game `func_1513164C` nine-argument dual dispatcher is exact
 directly from C; see
 [Working Note 316](WORKING_NOTES/316-game-nine-argument-dual-dispatch-match-20260927.md).
-Continue with 24-word Game `func_15133760`, the next ordinary unparked C row in
+The 24-word Game `func_15133760` typed eight-float forwarding wrapper is exact
+directly from C; see
+[Working Note 317](WORKING_NOTES/317-game-typed-eight-float-wrapper-match-20260927.md).
+Continue with 34-word Game `func_15142FBC`, the next ordinary unparked C row in
 the fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
