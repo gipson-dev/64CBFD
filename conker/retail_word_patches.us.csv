@@ -31,6 +31,18 @@ generated_B3020,func_1508855C,0x78,0x00C01025,0x0085082A,-,-,Compare the retail 
 generated_B3020,func_1508855C,0x7C,0x24C60001,0x1420FFF8,-,-,Loop while the retail index remains below the count,,,false
 generated_B3020,func_1508855C,0x80,0x14C4FFF9,0x24C60084,-,-,Advance the record pointer in the retail loop delay slot,,,false
 generated_B3020,func_1508855C,0x84,0x24A50084,0x2402FFFF,-,-,Return failure after exhausting the record table,,,false
+generated_D3040,func_150A6500,0x04,0xAFBF0024,0x2408D8F0,-,-,Load the lower bound before retail's argument homes,,,false
+generated_D3040,func_150A6500,0x08,0x240ED8F0,0x24094E20,-,-,Load the upper bound through retail's t1 lifetime,,,false
+generated_D3040,func_150A6500,0x0C,0x240F4E20,0xAFA40010,-,-,Home the first repeated argument in retail order,,,false
+generated_D3040,func_150A6500,0x10,0xAFAF001C,0xAFA50014,-,-,Home the second repeated argument in retail order,,,false
+generated_D3040,func_150A6500,0x14,0xAFAE0018,0xAFBF0020,-,-,Save the return address in retail's frame slot,,,false
+generated_D3040,func_150A6500,0x18,0xAFA40010,0xAFA80018,-,-,Store the lower bound through retail's t0 lifetime,,,false
+generated_D3040,func_150A6500,0x1C,0x0C000000,0xAFA9001C,R_MIPS_26:func_150A6568,-,Store the upper bound before the relocated call,,,false
+generated_D3040,func_150A6500,0x20,0xAFA50014,0x0C000000,-,R_MIPS_26:func_150A6568,Move the target call to its retail instruction slot,,,false
+generated_D3040,func_150A6500,0x24,0x8FBF0024,0x00000000,-,-,Keep the retail call delay slot empty,,,false
+generated_D3040,func_150A6500,0x28,0x27BD0028,0x8FBF0020,-,-,Restore the return address from retail's frame slot,,,false
+generated_D3040,func_150A6500,0x2C,0x03E00008,0x27BD0028,-,-,Restore the stack before the return,,,false
+generated_D3040,func_150A6500,0x30,0x00000000,0x03E00008,-,-,Return at the retail instruction slot,,,false
 generated_1BA1D0,func_151904BC,0x10,0x51C00006,0x11C00005,-,-,Keep the null-release branch non-likely at the retail target,,,false
 generated_1BA1D0,func_151904BC,0x14,0x8CA60010,0x00000000,-,-,Keep the null-release branch delay slot empty,,,false
 generated_1BA1D0,func_151904BC,0x28,0x8CA60010,0x3C040000,-,R_MIPS_HI16:func_1518E298,Begin callback address setup before independent owner and resource loads,,,false

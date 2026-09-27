@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 571 | 1,931,720 / 2,256,728 (85.60%) |
+| Total | 5,469 / 6,041 (90.53%) | 572 | 1,931,576 / 2,256,728 (85.59%) |
 | Init | 497 / 538 (92.38%) | 41 | 148,600 / 164,048 (90.58%) |
-| Game | 4,791 / 5,320 (90.06%) | 529 | 1,763,480 / 2,072,880 (85.07%) |
+| Game | 4,791 / 5,321 (90.04%) | 530 | 1,763,336 / 2,072,880 (85.07%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,785 / 5,469 (50.92%) | 1 | 2,683 |
+| Total | 2,786 / 5,469 (50.94%) | 1 | 2,682 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,214 / 4,791 (46.21%) | 0 | 2,577 |
+| Game | 2,215 / 4,791 (46.23%) | 0 | 2,576 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -666,7 +666,11 @@ end-to-end gameplay acceptance.
    recovered C plus seven guarded register-lifetime words. The existing C for
    36-word `func_1508855C` is byte-exact with 22 guarded register-lifetime and
    equivalent control-flow scheduling words; its two table relocations retain
-   their original identities. Continue with 26-word `func_150A6500`; keep the
+   their original identities. The former 26-word `func_150A6500` row contained
+   two functions: the recovered 14-word bounded-query wrapper is exact from C
+   plus 12 guarded scheduling words, while newly identified 12-word
+   `func_150A6538` remains exact original assembly pending a source-grounded
+   calling convention. Continue with 23-word `func_150BE438`; keep the
    previously documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

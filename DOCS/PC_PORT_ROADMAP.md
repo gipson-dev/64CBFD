@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,785 / 5,469 (50.92%) | 1 | 2,683 |
+| Total | 5,469 / 6,041 (90.53%) | 2,786 / 5,469 (50.94%) | 1 | 2,682 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,214 / 4,791 (46.21%) | 0 | 2,577 |
+| Game | 4,791 / 5,321 (90.04%) | 2,215 / 4,791 (46.23%) | 0 | 2,576 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -879,7 +879,12 @@ seven guarded register-lifetime words; see
 The existing C for 36-word `func_1508855C` is exact with 22 guarded
 register-lifetime and equivalent control-flow scheduling words; see
 [Working Note 281](WORKING_NOTES/281-game-indexed-record-lookup-match-20260927.md).
-Continue with 26-word `func_150A6500` while the documented lower-difference
+The former 26-word `func_150A6500` row is now correctly split: its 14-word
+bounded-query wrapper is exact from recovered C plus 12 guarded scheduling
+words, and 12-word `func_150A6538` remains exact original assembly pending a
+source-grounded calling convention; see
+[Working Note 282](WORKING_NOTES/282-game-bounded-query-wrapper-match-20260927.md).
+Continue with 23-word `func_150BE438` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

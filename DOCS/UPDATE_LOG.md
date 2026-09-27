@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game bounded-query wrapper byte-exact and function boundary corrected
+
+- Split the former 26-word `func_150A6500` inventory row at the independent
+  frame and return boundary at `0x150A6538`. The inventory now contains 6,041
+  functions; `func_150A6538` remains exact original assembly until its unusual
+  incoming stack contract can be recovered from source-grounded evidence.
+- Replaced the public wrapper placeholder with C that forwards four register
+  arguments, repeats the first two as stack arguments, and appends bounds
+  `-10000` and `20000` before calling `func_150A6568`.
+- All 14 words / 56 bytes of `func_150A6500` match. Twelve guarded scheduling
+  words include a checked move of the call relocation to retail offset `0x20`.
+  The span has SHA-256
+  `be675159dec10194e305421bb202e9b9518ee517624b117e0f618135235deff0`.
+  Fresh totals are **2,786 / 5,469 (50.94%)** overall and
+  **2,215 / 4,791 (46.23%)** in Game.
+
 ### Game indexed-record lookup byte-exact
 
 - Confirmed that the existing C for `func_1508855C` recovers the complete

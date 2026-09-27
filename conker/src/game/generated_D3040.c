@@ -45,9 +45,13 @@ s32 func_150A64C8() {
     return 0;
 }
 
-s32 func_150A6500() {
-    return 0;
+s32 func_150A6568();
+
+s32 func_150A6500(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    return func_150A6568(arg0, arg1, arg2, arg3, arg0, arg1, -10000, 20000);
 }
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D3040/func_150A6538.s")
 
 s32 func_150A6568() {
     return 0;
