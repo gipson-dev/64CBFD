@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Init owner-reference repair byte-exact
+
+- Recovered `func_1000B294`, which walks the three root table entries and
+  repairs matching owner links on each root and its `unk60` child by replacing
+  the old owner token with the record's own address.
+- All 24 words / 96 bytes match retail. An Init-object no-unroll profile and
+  two relocation-aware guarded scheduling swaps reproduce the short retail
+  loop; one dead initial load preserves IDO's retail register allocation
+  without changing behavior.
+- Neighboring `func_1000B548` remains exact across all 60 words after its
+  compiler unroll was represented explicitly as four record probes per outer
+  iteration. Fresh totals are **2,802 / 5,469 (51.23%)** overall and
+  **391 / 497 (78.67%)** in Init.
+
 ### Game phase/scale updater byte-exact
 
 - Recovered `func_151DADA0` around a typed state record embedded at object

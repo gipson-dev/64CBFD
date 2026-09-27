@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,801 / 5,469 (51.22%) | 1 | 2,667 |
-| Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
+| Total | 5,469 / 6,041 (90.53%) | 2,802 / 5,469 (51.23%) | 1 | 2,666 |
+| Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
 | Game | 4,791 / 5,321 (90.04%) | 2,230 / 4,791 (46.55%) | 0 | 2,561 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -932,8 +932,10 @@ directly from C with no guarded words; see
 The 34-word `func_151DADA0` phase/scale updater is exact from typed embedded
 state C plus four guarded phase-register words; see
 [Working Note 297](WORKING_NOTES/297-game-phase-scale-updater-match-20260927.md).
-Continue with 24-word Init `func_1000B294` while the documented
-lower-difference rows remain parked.
+The 24-word Init `func_1000B294` owner-reference repair is now byte-exact;
+the object no-unroll profile is balanced by an explicit four-record source
+unroll that keeps neighboring `func_1000B548` exact. Continue with 23-word
+Game `func_150233E4` while the documented lower-difference rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 

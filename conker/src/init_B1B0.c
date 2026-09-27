@@ -63,11 +63,12 @@ struct151 *func_1000B1FC(s32 arg0) {
 
 void func_1000B294(s32 *arg0) {
     struct151 **ptr;
-    struct151 **end = (struct151 **)&D_800417BC;
     struct151 *current;
     struct151 *child;
 
-    for (ptr = D_800417B0; ptr != end; ptr++) {
+    current = *D_800417B0;
+    ptr = D_800417B0;
+    do {
         current = *ptr;
         if (current != NULL) {
             if (current->unk10 == arg0) {
@@ -80,7 +81,8 @@ void func_1000B294(s32 *arg0) {
                 child->unk10 = (s32 *)child;
             }
         }
-    }
+        ptr++;
+    } while (ptr != (struct151 **)&D_800417BC);
 }
 
 struct137 *func_1000B2F4(s32 arg0) {
@@ -120,10 +122,28 @@ s32 func_1000B548(s32 *arg0) {
     s32 ret = 0;
     s32 i;
 
-    for (i = 0; i < 12; i++) {
+    for (i = 0; i < 12; i += 4) {
         if ((D_800419A8[i].unk4 != -1) && (D_800419A8[i].unk0 != -1)) {
             if (ret < 3) {
                 *arg0++ = D_800419A8[i].unk4;
+                ret++;
+            }
+        }
+        if ((D_800419A8[i + 1].unk4 != -1) && (D_800419A8[i + 1].unk0 != -1)) {
+            if (ret < 3) {
+                *arg0++ = D_800419A8[i + 1].unk4;
+                ret++;
+            }
+        }
+        if ((D_800419A8[i + 2].unk4 != -1) && (D_800419A8[i + 2].unk0 != -1)) {
+            if (ret < 3) {
+                *arg0++ = D_800419A8[i + 2].unk4;
+                ret++;
+            }
+        }
+        if ((D_800419A8[i + 3].unk4 != -1) && (D_800419A8[i + 3].unk0 != -1)) {
+            if (ret < 3) {
+                *arg0++ = D_800419A8[i + 3].unk4;
                 ret++;
             }
         }

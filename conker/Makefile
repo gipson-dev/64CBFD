@@ -286,7 +286,8 @@ $(BUILD_DIR)/$(SRC_DIR)/init_3920.c.o: OPT_FLAGS := -O2
 # software-emulation calls instead of dsll/dsrl/daddiu/ld/sd.
 $(BUILD_DIR)/$(SRC_DIR)/game_DAE50.c.o: MIPSBIT := -mips3
 
-# $(BUILD_DIR)/$(SRC_DIR)/init_B1B0.o: OPT_FLAGS := -O2
+# Retail init_B1B0 keeps its short table loops rolled.
+$(BUILD_DIR)/$(SRC_DIR)/init_B1B0.c.o: CFLAGS += -Wo,-loopunroll,0
 
 # $(BUILD_DIR)/$(SRC_DIR)/game_14FF90.o: OPT_FLAGS := -O3
 
