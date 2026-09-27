@@ -540,6 +540,11 @@ That float ABI adapter is now byte-exact directly from a typed seven-argument
 wrapper, including the three-float local vector and the byte forwarded from
 the final pointer argument. Continue with 20-word `func_151B4C1C`; see
 [Working Note 209](WORKING_NOTES/209-game-float-abi-adapter-match-20260926.md).
+That embedded cleanup and callback-dispatch wrapper is now byte-exact directly
+from typed C, including the retained object pointer, one callback-table load,
+branch-likely null return, and indirect call. Continue with 20-word
+`func_151B50A4`; see
+[Working Note 210](WORKING_NOTES/210-game-embedded-cleanup-dispatch-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

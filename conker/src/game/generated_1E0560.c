@@ -3,6 +3,9 @@
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
+extern void (*D_8008FB70[])(u8 *);
+
+s32 func_151D5E30();
 
 s32 func_151B30B0() {
     return 0;
@@ -64,16 +67,22 @@ s32 func_151B4B78() {
     return 0;
 }
 
-s32 func_151B4C1C() {
-    return 0;
+void func_151B4C1C(u8 *arg0) {
+    void (*callback)(u8 *);
+
+    func_151D5E30(arg0 + 0x140);
+    callback = D_8008FB70[arg0[0x44]];
+    if (callback != NULL) {
+        callback(arg0);
+    }
 }
 
-s32 func_151B4C6C(s32 arg0) {
+void func_151B4C6C(u8 *arg0) {
     func_151B4C1C(arg0);
     func_15169824(arg0);
 }
 
-s32 func_151B4C98(s32 arg0) {
+void func_151B4C98(u8 *arg0) {
     func_151B4C1C(arg0);
     func_15169824(arg0);
 }

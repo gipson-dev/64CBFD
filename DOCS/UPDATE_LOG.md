@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game embedded cleanup dispatch byte-exact
+
+- Replaced the zero-return `func_151B4C1C` placeholder with its embedded
+  cleanup and optional callback dispatch.
+- Typed pointer and callback lifetimes reproduce retail's `+0x140` cleanup,
+  callback lookup from `D_8008FB70` by byte `+0x44`, branch-likely null return,
+  and indirect call without a retail-word patch.
+- The complete span shares SHA-256
+  `a08bf8588f3eb11ac0c886027a1db252f1fe639ea88ad592cff9cebea2a533ab`.
+  Fresh totals are **2,713 / 5,469 (49.61%)** overall and
+  **2,142 / 4,791 (44.71%)** in Game.
+
 ### Game float ABI adapter byte-exact
 
 - Replaced the zero-return `func_151AF338` placeholder with its complete
