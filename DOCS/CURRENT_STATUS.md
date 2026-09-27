@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,736 / 5,468 (50.04%) | 1 | 2,731 |
+| Total | 2,737 / 5,468 (50.05%) | 1 | 2,730 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,165 / 4,790 (45.20%) | 0 | 2,625 |
+| Game | 2,166 / 4,790 (45.22%) | 0 | 2,624 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,736, while
+denominator driven: the exact count is now 2,737, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -88,6 +88,9 @@ loop, distinct `D_8008CB70` end symbol, and two guarded low-half address words.
 row/index byte lifetimes; no guarded retail words are needed.
 `func_15179AB8` is byte-exact directly from a backward active-object scan that
 sets flag `0x2` on the first eligible object.
+`func_15194AB4` is byte-exact directly from C after correcting its return type
+to `void` and expressing the two state mappings as a `switch` with a default
+selector assignment after the object-flag store.
 `func_151423D8` is byte-exact through symmetric guarded quadrant and table-index
 register normalization.
 `func_15155EF8` is byte-exact through guarded outer/child pointer register
@@ -127,7 +130,7 @@ nine guarded register words and its distinct final-call relocation.
 
 ## Verified build state
 
-These commands passed from the current checkout on 2026-09-26:
+These commands passed from the current checkout on 2026-09-27:
 
 ```sh
 make -C conker replace NON_MATCHING=1 -j4
@@ -557,9 +560,10 @@ end-to-end gameplay acceptance.
    `func_1515F0AC` signed clamp is byte-exact from C plus three guarded
    scheduling entries. The 21-word `func_1516706C` callback-table loop is
    byte-exact from a post-tested loop plus two guarded relocation-aware words.
-   The 29-word `func_15168A9C` list unlink and 23-word `func_15179AB8`
-   backward active-object flag scan are byte-exact directly from C. Continue
-   with 26-word `func_15194AB4`; keep the previously documented
+   The 29-word `func_15168A9C` list unlink, 23-word `func_15179AB8`
+   backward active-object flag scan, and 26-word `func_15194AB4` state mapper
+   are byte-exact directly from C. Continue with 31-word `func_151957B0`;
+   keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
@@ -718,6 +722,8 @@ The completed indexed-list unlink is in
 [Working Note 233](WORKING_NOTES/233-game-indexed-list-unlink-match-20260927.md).
 The completed backward active-object flag scan is in
 [Working Note 234](WORKING_NOTES/234-game-active-object-flag-scan-match-20260927.md).
+The completed state-to-animation selector is in
+[Working Note 235](WORKING_NOTES/235-game-state-animation-selector-match-20260927.md).
 The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 The completed five-global reset ordering is in

@@ -77,22 +77,23 @@ void func_15194A68(s32 arg0, u8 *arg1, s32 arg2) {
     func_151949F4(0, arg0, arg1);
 }
 
-s32 func_15194AB4(u8 *arg0) {
+void func_15194AB4(u8 *arg0) {
     u8 state = arg0[4];
     s32 temp;
 
     *(s32 *)(arg0 + 0x9C) |= 0xFFFE;
-    if (state == 0x75) {
-        temp = 0x73;
-    } else if (state == 0x80) {
-        temp = 0x72;
-    } else {
-        temp = -1;
+    temp = -1;
+    switch (state) {
+        case 0x75:
+            temp = 0x73;
+            break;
+        case 0x80:
+            temp = 0x72;
+            break;
     }
     if (temp != -1) {
         func_15083568(arg0, temp, 0x3F800000, 0);
     }
-    return 0;
 }
 
 void func_15194B1C(u8 *arg0) {

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game state-to-animation selector byte-exact
+
+- Corrected `func_15194AB4` from an `s32` result model to its retail `void`
+  contract and recovered the two state mappings through a compact `switch`.
+- Assigning the default selector after the object-flag store reproduces the
+  retail store, branch, and delay-slot order directly; all 26 words match
+  without guarded scheduling.
+- The complete span shares SHA-256
+  `40de0694c6e29793a6fbb3f72e0080b97e0d8e4d940106fa98005d1c23e5aefd`.
+  Fresh totals are **2,737 / 5,468 (50.05%)** overall and
+  **2,166 / 4,790 (45.22%)** in Game.
+
 ### Game active-object flag scan byte-exact
 
 - Replaced the zero-return `func_15179AB8` placeholder with its backward scan

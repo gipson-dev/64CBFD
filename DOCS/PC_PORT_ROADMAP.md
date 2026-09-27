@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,039 (90.54%) | 2,736 / 5,468 (50.04%) | 1 | 2,731 |
+| Total | 5,468 / 6,039 (90.54%) | 2,737 / 5,468 (50.05%) | 1 | 2,730 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,790 / 5,319 (90.05%) | 2,165 / 4,790 (45.20%) | 0 | 2,625 |
+| Game | 4,790 / 5,319 (90.05%) | 2,166 / 4,790 (45.22%) | 0 | 2,624 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -734,7 +734,10 @@ typed C with explicit row/index byte lifetimes; see
 The 23-word `func_15179AB8` backward active-object flag scan is now exact
 directly from C; see
 [Working Note 234](WORKING_NOTES/234-game-active-object-flag-scan-match-20260927.md).
-Continue with 26-word `func_15194AB4` while the documented smaller rows remain
+The 26-word `func_15194AB4` state-to-animation selector is now exact directly
+from corrected C return type, default lifetime, and switch control flow; see
+[Working Note 235](WORKING_NOTES/235-game-state-animation-selector-match-20260927.md).
+Continue with 31-word `func_151957B0` while the documented smaller rows remain
 parked.
 
 Current host-port progression and acceptance boundaries:
