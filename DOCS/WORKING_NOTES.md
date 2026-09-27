@@ -477,6 +477,10 @@ That unregister-and-broadcast wrapper is now byte-exact after restoring its
 global-word snapshot and byte-typed event argument. Continue with 21-word
 `func_151A4F7C`; see
 [Working Note 195](WORKING_NOTES/195-game-unregister-broadcast-wrapper-match-20260926.md).
+That embedded-owner release handler is now byte-exact after restoring its
+event-zero gate and direct short-circuit comparison against the record at
+object offset `0x28`. Continue with 20-word `func_151A8584`; see
+[Working Note 196](WORKING_NOTES/196-game-embedded-owner-release-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

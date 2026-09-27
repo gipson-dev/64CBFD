@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game embedded-owner release handler byte-exact
+
+- Replaced the zero-return `func_151A4F7C` placeholder with its complete
+  event-zero comparison against the embedded record at object offset `0x28`.
+- The direct short-circuit condition reproduces the delayed pointer setup and
+  all 21 retail words without guarded words or compiler-steering expressions.
+- The complete span shares SHA-256
+  `0bd405af9a6aebab3730df73a5236f99bdc9e8078ae9b36038f9554135498794`.
+  Fresh totals are **2,699 / 5,469 (49.35%)** overall and
+  **2,128 / 4,791 (44.42%)** in Game.
+
 ### Game unregister-and-broadcast wrapper byte-exact
 
 - Replaced the zero-return `func_15191B8C` placeholder with its complete

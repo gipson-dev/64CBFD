@@ -77,8 +77,14 @@ s32 func_151A4ECC() {
     return 0;
 }
 
-s32 func_151A4F7C() {
-    return 0;
+void func_151A4F7C(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *temp_v0 = arg0 + 0x28;
+
+    if (arg2 == 0) {
+        if ((*(s32 *)temp_v0 == *(s32 *)arg1) || (temp_v0[4] == arg1[4])) {
+            func_1516972C(arg0);
+        }
+    }
 }
 
 s32 func_151A4FD0() {
