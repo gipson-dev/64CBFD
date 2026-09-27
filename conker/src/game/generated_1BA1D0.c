@@ -118,8 +118,18 @@ s32 func_1518F058() {
     return 0;
 }
 
-s32 func_1518F108() {
-    return 0;
+s32 func_1518F108(u8 *arg0) {
+    f32 value0 = *(f32 *)(arg0 + 0x30);
+    f32 factor = *(f32 *)(arg0 + 0x154);
+    f32 value1 = *(f32 *)(arg0 + 0x2C);
+    s32 timer = *(s16 *)(arg0 + 0x1C);
+
+    *(f32 *)(arg0 + 0x30) = value0 - (value0 * factor);
+    *(f32 *)(arg0 + 0x2C) = value1 - (value1 * factor);
+    if (timer < *(s16 *)(arg0 + 0x158)) {
+        arg0[0x5C] = (u32) timer * (u32)*(s16 *)(arg0 + 0x15A);
+    }
+    return 1;
 }
 
 s32 func_1518F15C(u8 *arg0) {

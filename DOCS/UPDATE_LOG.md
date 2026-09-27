@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game shifted motion-decay update byte-exact
+
+- Replaced the zero-return `func_1518F108` placeholder with its two float
+  decay updates and conditional scaled-byte calculation.
+- The body is the shifted-field twin of `func_1514A498`; its factor, limit,
+  and scale live at offsets `0x154`, `0x158`, and `0x15A`.
+- Direct C reproduces 20 of 21 retail words. One guarded non-relocating patch
+  preserves retail's equivalent `multu v0,t7` operand order.
+- The complete span shares SHA-256
+  `3ffe7494afd5ff6f15b2c609f15b61cf689c756363214ebc03ea988c4bb71059`.
+  Fresh totals are **2,709 / 5,469 (49.53%)** overall and
+  **2,138 / 4,791 (44.63%)** in Game.
+
 ### Game per-slot state reset byte-exact
 
 - Replaced the zero-return `func_15181DC8` placeholder with its complete reset

@@ -522,6 +522,11 @@ is restored and the row is parked. The independent per-slot state reset is
 now byte-exact with two guarded words preserving retail's redundant second
 floating zero. Continue with 21-word `func_1518F108`; see
 [Working Note 205](WORKING_NOTES/205-game-per-slot-state-reset-match-20260926.md).
+That shifted-field twin of `func_1514A498` is now byte-exact after restoring
+both component decays and the conditional scaled-byte update. One guarded word
+preserves retail's equivalent multiply operand order. Continue with 20-word
+`func_15192308`; see
+[Working Note 206](WORKING_NOTES/206-game-shifted-motion-decay-match-20260926.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)
