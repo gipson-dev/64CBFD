@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game position/scale initializer byte-exact
+
+- Replaced the false zero-return placeholder at `func_15044CE4` with its
+  position copy, signed scale conversion, and downstream callback.
+- All 23 words / 92 bytes match. Direct C emits the exact instruction skeleton;
+  seven guarded words preserve retail's independent pointer and quotient
+  register lifetimes without changing behavior or relocations.
+- The complete span has SHA-256
+  `37ca0b9557fb759016a6023c73fee1e8eb5acaf0ff92967480af03dd4bfabaf1`.
+  Fresh totals are **2,784 / 5,469 (50.91%)** overall and
+  **2,213 / 4,791 (46.19%)** in Game.
+
 ### Game variadic formatting wrapper byte-exact
 
 - Replaced the false zero-return placeholder at `func_151EFF94` with its

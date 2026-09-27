@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,783 / 5,469 (50.89%) | 1 | 2,685 |
+| Total | 5,469 / 6,040 (90.55%) | 2,784 / 5,469 (50.91%) | 1 | 2,684 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,212 / 4,791 (46.17%) | 0 | 2,579 |
+| Game | 4,791 / 5,320 (90.06%) | 2,213 / 4,791 (46.19%) | 0 | 2,578 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -873,7 +873,10 @@ The 22-word `func_151B4E4C` position/effect wrapper is exact directly from C;
 see [Working Note 278](WORKING_NOTES/278-game-position-effect-wrapper-match-20260927.md).
 The 23-word `func_151EFF94` variadic formatting wrapper is exact directly from
 C; see [Working Note 279](WORKING_NOTES/279-game-variadic-format-wrapper-match-20260927.md).
-Continue with 23-word `func_15044CE4` while the documented lower-difference
+The 23-word `func_15044CE4` position/scale initializer is exact from C plus
+seven guarded register-lifetime words; see
+[Working Note 280](WORKING_NOTES/280-game-position-scale-initializer-match-20260927.md).
+Continue with 36-word `func_1508855C` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

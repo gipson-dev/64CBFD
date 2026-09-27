@@ -6,6 +6,20 @@ extern s32 D_800CBD9C;
 extern u8 D_800C35EA;
 extern u8 D_800CC2D0[];
 
+typedef struct {
+    u8 pad0[6];
+    s16 x;
+    s16 y;
+    s16 z;
+    u8 padC[4];
+    s16 scaleX;
+    s16 scaleY;
+    s16 scaleZ;
+    u8 pad16[2];
+    s16 *position;
+    s16 *scale;
+} PositionScaleRecord71820;
+
 void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye,
                    f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
 void func_15047700(f32 mf[4][4], LookAt *l, f32 xEye, f32 yEye, f32 zEye,
@@ -46,8 +60,19 @@ s32 func_15044B78() {
     return 0;
 }
 
-s32 func_15044CE4() {
-    return 0;
+void func_15044CE4(PositionScaleRecord71820 *arg0) {
+    s32 value;
+    s16 *position = arg0->position;
+    s16 *scale = arg0->scale;
+
+    arg0->x = position[0];
+    arg0->y = position[1];
+    arg0->z = position[2];
+    value = scale[0] / 32;
+    arg0->scaleX = value;
+    arg0->scaleY = value;
+    arg0->scaleZ = value;
+    func_15044B78(arg0);
 }
 
 s32 func_15044D40() {

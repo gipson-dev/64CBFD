@@ -809,7 +809,10 @@ position/effect wrapper directly from C with no guarded words; see
 The false placeholder at `func_151EFF94` is now a byte-exact 23-word variadic
 formatting wrapper directly from C with no guarded words; see
 [Working Note 279](WORKING_NOTES/279-game-variadic-format-wrapper-match-20260927.md).
-Continue with 23-word `func_15044CE4`, the next unparked Game C row in the
+The false placeholder at `func_15044CE4` is now a byte-exact 23-word
+position/scale initializer from C plus seven guarded register-lifetime words;
+see [Working Note 280](WORKING_NOTES/280-game-position-scale-initializer-match-20260927.md).
+Continue with 36-word `func_1508855C`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

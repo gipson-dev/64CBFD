@@ -2,6 +2,13 @@ filename,function,offset,expected,replacement,expected_relocations,replacement_r
 generated_1368C0,func_1510A870,0x40,0x14D90004,0x17260004,-,-,Select retail operand order for the second record equality branch,,,false
 generated_1368C0,func_1510A8CC,0x40,0x14D90004,0x17260004,-,-,Select retail operand order for the second record equality branch,,,false
 generated_1B74A0,func_1518A360,0x40,0x14D90004,0x17260004,-,-,Select retail operand order for the second record equality branch,,,false
+generated_71820,func_15044CE4,0x0C,0x8C85001C,0x8C99001C,-,-,Keep the scale pointer in retail's t9 lifetime,,,false
+generated_71820,func_15044CE4,0x28,0x84A30000,0x87230000,-,-,Load the scale halfword through the retail pointer lifetime,,,false
+generated_71820,func_15044CE4,0x30,0x0003C943,0x00034143,-,-,Keep the positive quotient in retail's t0 lifetime,,,false
+generated_71820,func_15044CE4,0x38,0x0001C943,0x00014143,-,-,Keep the corrected negative quotient in retail's t0 lifetime,,,false
+generated_71820,func_15044CE4,0x3C,0xA4990010,0xA4880010,-,-,Store the first scale from the retail quotient lifetime,,,false
+generated_71820,func_15044CE4,0x40,0xA4990012,0xA4880012,-,-,Store the second scale from the retail quotient lifetime,,,false
+generated_71820,func_15044CE4,0x48,0xA4990014,0xA4880014,-,-,Store the third scale from the retail quotient lifetime,,,false
 generated_1BA1D0,func_151904BC,0x10,0x51C00006,0x11C00005,-,-,Keep the null-release branch non-likely at the retail target,,,false
 generated_1BA1D0,func_151904BC,0x14,0x8CA60010,0x00000000,-,-,Keep the null-release branch delay slot empty,,,false
 generated_1BA1D0,func_151904BC,0x28,0x8CA60010,0x3C040000,-,R_MIPS_HI16:func_1518E298,Begin callback address setup before independent owner and resource loads,,,false

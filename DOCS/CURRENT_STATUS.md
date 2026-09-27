@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,783 / 5,469 (50.89%) | 1 | 2,685 |
+| Total | 2,784 / 5,469 (50.91%) | 1 | 2,684 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,212 / 4,791 (46.17%) | 0 | 2,579 |
+| Game | 2,213 / 4,791 (46.19%) | 0 | 2,578 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,783, while
+denominator driven: the exact count is now 2,784, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -151,6 +151,8 @@ gate, child pointer or selector-byte match, and two-call teardown path.
 wrapper idiom, forwarding three more floats and two actor record bytes.
 `func_151EFF94` is byte-exact directly from its two-fixed-argument variadic
 formatting wrapper, including successful-output null termination.
+`func_15044CE4` is byte-exact from its position/scale initializer plus seven
+guarded register-lifetime words.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -660,7 +662,9 @@ end-to-end gameplay acceptance.
    `func_151B4E4C` position/effect wrapper is also byte-exact directly from C.
    The 23-word `func_151EFF94` variadic formatting wrapper is byte-exact
    directly from C using the established `&arg1 + 1` argument cursor.
-   Continue with 23-word `func_15044CE4`; keep the previously documented
+   The 23-word `func_15044CE4` position/scale initializer is byte-exact from
+   recovered C plus seven guarded register-lifetime words. Continue with
+   36-word `func_1508855C`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
