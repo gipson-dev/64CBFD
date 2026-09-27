@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,770 / 5,469 (50.65%) | 1 | 2,698 |
+| Total | 5,469 / 6,040 (90.55%) | 2,771 / 5,469 (50.67%) | 1 | 2,697 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,199 / 4,791 (45.90%) | 0 | 2,592 |
+| Game | 4,791 / 5,320 (90.06%) | 2,200 / 4,791 (45.92%) | 0 | 2,591 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -838,7 +838,10 @@ the halfword-key twin of `func_1514ED3C`, with no guarded words; see
 The 22-word `func_15159BB0` effect callback adapter is exact directly from C,
 including its position and zero-velocity vectors and two effect-record bytes;
 see [Working Note 267](WORKING_NOTES/267-game-effect-callback-adapter-match-20260927.md).
-Continue with 22-word `func_15172C50` while the documented lower-difference
+The 22-word `func_15172C50` two-table initializer is exact directly from a
+16-entry C loop whose body IDO unrolls four ways; see
+[Working Note 268](WORKING_NOTES/268-game-two-table-initializer-match-20260927.md).
+Continue with 22-word `func_15172D28` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

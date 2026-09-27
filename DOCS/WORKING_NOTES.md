@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, effect callback adapter matched).** The current linked
-checkpoint is `2770 / 5469 (50.65%)` exact C functions, with one address-drift
-blocker and 2,698 genuinely different C functions. Game is
-`2199 / 4791 (45.90%)` exact, with 2,592 genuinely different C rows. The tree
+**Active (2026-09-27, two-table initializer matched).** The current linked
+checkpoint is `2771 / 5469 (50.67%)` exact C functions, with one address-drift
+blocker and 2,697 genuinely different C functions. Game is
+`2200 / 4791 (45.92%)` exact, with 2,591 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -772,7 +772,10 @@ The false zero-return placeholder at `func_1514ECE0` is now a byte-exact
 The false zero-return placeholder at `func_15159BB0` is now a byte-exact
 22-word effect callback adapter directly from C with no guarded words; see
 [Working Note 267](WORKING_NOTES/267-game-effect-callback-adapter-match-20260927.md).
-Continue with 22-word `func_15172C50`, the next unparked Game C row in the
+The false zero-return placeholder at `func_15172C50` is now a byte-exact
+22-word two-table initializer directly from C with no guarded words; see
+[Working Note 268](WORKING_NOTES/268-game-two-table-initializer-match-20260927.md).
+Continue with 22-word `func_15172D28`, the next unparked Game C row in the
 fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

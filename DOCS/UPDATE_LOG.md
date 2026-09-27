@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game two-table initializer byte-exact
+
+- Replaced the false zero-return placeholder at `func_15172C50` with its
+  original 16-entry table initialization behavior.
+- All 22 words / 88 bytes match directly from C. The source assigns `-1` and
+  zero to corresponding bytes in `D_800DD2B0` and `D_800DD2C0`, then stores
+  the caller's value in the second table's first byte. IDO produces retail's
+  four-way unrolled loop and branch-delay store. No guarded words are needed.
+- The complete span has SHA-256
+  `276590b6fd1af72abb45e1b76d352b988397165f8e9a5e69598a41a213e8465a`.
+  Fresh totals are **2,771 / 5,469 (50.67%)** overall and
+  **2,200 / 4,791 (45.92%)** in Game.
+
 ### Game effect callback adapter byte-exact
 
 - Replaced the false zero-return placeholder at `func_15159BB0` with its
