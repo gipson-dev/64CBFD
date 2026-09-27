@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,788 / 5,469 (50.98%) | 1 | 2,680 |
+| Total | 2,789 / 5,469 (51.00%) | 1 | 2,679 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,217 / 4,791 (46.27%) | 0 | 2,574 |
+| Game | 2,218 / 4,791 (46.30%) | 0 | 2,573 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -673,7 +673,9 @@ end-to-end gameplay acceptance.
    calling convention. The 23-word `func_150BE438` object-record writer is
    byte-exact directly from recovered C with no guarded words. The 23-word
    `func_150D1410` object-index flag updater is also byte-exact directly from C
-   with no guarded words. Continue with 23-word `func_150D2054`; keep the
+   with no guarded words. The 23-word `func_150D2054` six-entry cleanup loop
+   is byte-exact directly from C after preserving its byte-width counter and
+   indexed array expression. Continue with 25-word `func_150D32FC`; keep the
    previously documented lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

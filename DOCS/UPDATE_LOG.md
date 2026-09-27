@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game six-entry cleanup loop byte-exact
+
+- Replaced the zero-return placeholder at `func_150D2054` with the recovered
+  six-entry cleanup loop. Each non-null pointer in the object range at offsets
+  `0x4C..0x60` is forwarded to `func_1516972C`.
+- All 23 words / 92 bytes match directly from C. The byte-width loop update
+  preserves retail's narrowing and branch-delay assignment, while indexed
+  array syntax preserves the original commutative address operand order.
+- The complete span has SHA-256
+  `eeac0c230700015d8097afd16b38ab2414d2e649eff75b81f111f9843feccfaa`.
+  Fresh totals are **2,789 / 5,469 (51.00%)** overall and
+  **2,218 / 4,791 (46.30%)** in Game.
+
 ### Game object-index flag updater byte-exact
 
 - Replaced the zero-return placeholder at `func_150D1410` with the recovered

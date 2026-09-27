@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,788 / 5,469 (50.98%) | 1 | 2,680 |
+| Total | 5,469 / 6,041 (90.53%) | 2,789 / 5,469 (51.00%) | 1 | 2,679 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,321 (90.04%) | 2,217 / 4,791 (46.27%) | 0 | 2,574 |
+| Game | 4,791 / 5,321 (90.04%) | 2,218 / 4,791 (46.30%) | 0 | 2,573 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -890,7 +890,10 @@ no guarded words; see
 The 23-word `func_150D1410` object-index flag updater is also exact directly
 from C with no guarded words; see
 [Working Note 284](WORKING_NOTES/284-game-object-index-flag-match-20260927.md).
-Continue with 23-word `func_150D2054` while the documented lower-difference
+The 23-word `func_150D2054` six-entry cleanup loop is exact directly from C
+with no guarded words; see
+[Working Note 285](WORKING_NOTES/285-game-six-entry-cleanup-match-20260927.md).
+Continue with 25-word `func_150D32FC` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:
