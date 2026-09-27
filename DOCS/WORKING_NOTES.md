@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, lifetime updater matched).** The current linked
-checkpoint is `2826 / 5469 (51.67%)` exact C functions, with one address-drift
-blocker and 2,642 genuinely different C functions. Init is
+**Active (2026-09-27, display-list state helper matched).** The current linked
+checkpoint is `2827 / 5469 (51.69%)` exact C functions, with one address-drift
+blocker and 2,641 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2254 / 4791 (47.05%)` exact, with 2,537 genuinely different C rows. The tree
+`2255 / 4791 (47.07%)` exact, with 2,536 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -950,7 +950,10 @@ see [Working Note 321](WORKING_NOTES/321-game-scaled-fixed-point-clamp-match-202
 The 25-word Game `func_15166204` signed accumulator, timer, and expiry path is
 exact from C without guarded word patches; see
 [Working Note 322](WORKING_NOTES/322-game-lifetime-updater-match-20260927.md).
-Continue with 24-word Game `func_1517EA4C`, the next unparked C row in the
+The 24-word Game `func_1517EA4C` display-list state helper is exact directly
+from `gDPPipeSync`, `gDPSetCombine`, and `gDPSetOtherMode`; see
+[Working Note 323](WORKING_NOTES/323-game-display-list-state-helper-match-20260927.md).
+Continue with 28-word Game `func_1518E298`, the next unparked C row in the
 fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

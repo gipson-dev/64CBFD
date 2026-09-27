@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game display-list state helper byte-exact
+
+- Restored `func_1517EA4C` as a three-command `Gfx` helper using
+  `gDPPipeSync`, `gDPSetCombine`, and `gDPSetOtherMode`.
+- All 24 words / 96 bytes match retail directly from the standard macros,
+  including macro-local temporary allocation and constant-load scheduling.
+  No guarded word patches are required.
+- The complete span has SHA-256
+  `12a220ce6dd9bd2e40cbdc7e70533c694b619289159f5ca2f20418b1ddc74acf`.
+  Fresh totals are **2,827 / 5,469 (51.69%)** overall and
+  **2,255 / 4,791 (47.07%)** in Game.
+
 ### Game lifetime updater byte-exact
 
 - Restored `func_15166204` as a signed halfword accumulator plus an unsigned

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,826 / 5,469 (51.67%) | 1 | 2,642 |
+| Total | 5,469 / 6,041 (90.53%) | 2,827 / 5,469 (51.69%) | 1 | 2,641 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,254 / 4,791 (47.05%) | 0 | 2,537 |
+| Game | 4,791 / 5,321 (90.04%) | 2,255 / 4,791 (47.07%) | 0 | 2,536 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -966,8 +966,9 @@ structured C plus nine guarded register-allocation words. The 27-word Game
 `func_1515F040` scaled signed fixed-point clamp is exact from typed C plus
 three guarded scheduling/omission entries. The 25-word Game `func_15166204`
 lifetime updater and expiry path is exact from C without guarded word patches.
-Continue with 24-word Game `func_1517EA4C` while the smaller special-case rows
-remain parked.
+The 24-word Game `func_1517EA4C` display-list state helper is exact directly
+from three standard RDP macros. Continue with 28-word Game `func_1518E298`
+while the smaller special-case rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 

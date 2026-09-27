@@ -20,8 +20,11 @@ s32 func_1517E4A8() {
     return 0;
 }
 
-s32 func_1517EA4C() {
-    return 0;
+Gfx *func_1517EA4C(Gfx *arg0) {
+    gDPPipeSync(arg0++);
+    gDPSetCombine(arg0++, 0xFFB3FF, 0xFF65FEFF);
+    gDPSetOtherMode(arg0++, 0x2C0F, 0x504344);
+    return arg0;
 }
 
 s32 func_1517EAAC() {
