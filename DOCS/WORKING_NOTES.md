@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, vector cross-product assembly restored).** The current
-linked checkpoint is `2731 / 5468 (49.95%)` exact C functions, with one
-address-drift blocker and 2,736 genuinely different C functions. Game is
-`2160 / 4790 (45.09%)` exact, with 2,630 genuinely different C rows. The tree
+**Active (2026-09-27, flag-gated callback dispatcher matched).** The current
+linked checkpoint is `2732 / 5468 (49.96%)` exact C functions, with one
+address-drift blocker and 2,735 genuinely different C functions. Game is
+`2161 / 4790 (45.11%)` exact, with 2,629 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -640,6 +640,10 @@ handwritten 19-word vector cross-product body. Its 60-word matcher span also
 contains one padding word and the already exact `DADB0`/`DAE10` vector helper
 subregions. Continue with 22-word `func_15131C2C`; see
 [Working Note 229](WORKING_NOTES/229-game-vector-cross-product-restoration-20260927.md).
+The 22-word `func_15131C2C` flag-gated callback dispatcher is now exact
+directly from a typed three-argument callback contract, including both
+branch-likely null exits. Continue with 24-word `func_1515F0AC`; see
+[Working Note 230](WORKING_NOTES/230-game-flag-gated-callback-dispatch-match-20260927.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

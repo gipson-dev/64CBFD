@@ -5,6 +5,7 @@ s32 func_15130280(s32, u8, s32, s32, u8, s32);
 extern u8 D_800A37F0[];
 extern void (*D_80089844[])();
 extern void (*D_80089814[])();
+extern void (*D_80089878[])(u8 *, s32, u8);
 extern s32 D_800BE9E4;
 
 /* Non-matching placeholders for the text-only asm slice asm/15D730.s. */
@@ -150,8 +151,15 @@ s32 func_15131B7C() {
     return 0;
 }
 
-s32 func_15131C2C() {
-    return 0;
+void func_15131C2C(u8 *arg0, s32 arg1, u8 arg2) {
+    void (*callback)(u8 *, s32, u8);
+
+    if ((*(u32 *)(arg0 + 0x68) & 0x4000) != 0) {
+        callback = D_80089878[arg0[0x75]];
+        if (callback != NULL) {
+            callback(arg0, arg1, arg2);
+        }
+    }
 }
 
 s32 func_15131C84() {

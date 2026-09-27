@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,731 / 5,468 (49.95%) | 1 | 2,736 |
+| Total | 2,732 / 5,468 (49.96%) | 1 | 2,735 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,160 / 4,790 (45.09%) | 0 | 2,630 |
+| Game | 2,161 / 4,790 (45.11%) | 0 | 2,629 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,731, while
+denominator driven: the exact count is now 2,732, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -543,7 +543,9 @@ end-to-end gameplay acceptance.
    and source store order. The apparent 60-word `func_150AD8B0` C row is now
    correctly restored to its handwritten 19-word vector cross-product body;
    its generated-slice span also covers 41 already exact padding/helper words.
-   Continue with 22-word `func_15131C2C`.
+   The 22-word `func_15131C2C` flag-gated callback dispatcher is byte-exact
+   directly from its typed three-argument callback contract. Continue with
+   24-word `func_1515F0AC`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
@@ -691,6 +693,8 @@ The completed backing-buffer reset is in
 [Working Note 228](WORKING_NOTES/228-game-backing-buffer-reset-match-20260927.md).
 The restored handwritten vector cross product is in
 [Working Note 229](WORKING_NOTES/229-game-vector-cross-product-restoration-20260927.md).
+The completed flag-gated callback dispatcher is in
+[Working Note 230](WORKING_NOTES/230-game-flag-gated-callback-dispatch-match-20260927.md).
 The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 The completed five-global reset ordering is in

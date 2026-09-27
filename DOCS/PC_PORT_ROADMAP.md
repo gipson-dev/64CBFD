@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,039 (90.54%) | 2,731 / 5,468 (49.95%) | 1 | 2,736 |
+| Total | 5,468 / 6,039 (90.54%) | 2,732 / 5,468 (49.96%) | 1 | 2,735 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,790 / 5,319 (90.05%) | 2,160 / 4,790 (45.09%) | 0 | 2,630 |
+| Game | 4,790 / 5,319 (90.05%) | 2,161 / 4,790 (45.11%) | 0 | 2,629 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -717,7 +717,10 @@ Keep `func_150721A4` and the `func_151A8584`/`func_151A85D4` pair parked;
 the generated-slice row `func_150AD8B0` is now restored to its handwritten
 19-word vector cross-product body; see
 [Working Note 229](WORKING_NOTES/229-game-vector-cross-product-restoration-20260927.md).
-Continue with 22-word `func_15131C2C`.
+The 22-word `func_15131C2C` flag-gated callback dispatcher is now exact
+directly from typed C; see
+[Working Note 230](WORKING_NOTES/230-game-flag-gated-callback-dispatch-match-20260927.md).
+Continue with 24-word `func_1515F0AC`.
 
 Current host-port progression and acceptance boundaries:
 

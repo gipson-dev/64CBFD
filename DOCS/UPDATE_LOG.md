@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game flag-gated callback dispatcher byte-exact
+
+- Replaced the zero-return `func_15131C2C` placeholder with its `0x4000`
+  object-flag gate and indexed `D_80089878` callback dispatch.
+- The typed callback contract preserves all three incoming arguments, including
+  retail's stack spill and unsigned-byte narrowing of the third argument.
+  Both null exits compile as retail's branch-likely shared epilogue.
+- The complete 22-word span shares SHA-256
+  `0f9c9edd02a198a0416dc76b94408c401a85dd821f1989840c3d9a54023f4dec`.
+  Fresh totals are **2,732 / 5,468 (49.96%)** overall and
+  **2,161 / 4,790 (45.11%)** in Game.
+
 ### Game handwritten vector cross product restored
 
 - Reclassified the `func_150AD8B0` generated-slice placeholder to its original
