@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,747 / 5,469 (50.23%) | 1 | 2,721 |
+| Total | 2,748 / 5,469 (50.25%) | 1 | 2,720 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,176 / 4,791 (45.42%) | 0 | 2,615 |
+| Game | 2,177 / 4,791 (45.44%) | 0 | 2,614 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -591,7 +591,9 @@ end-to-end gameplay acceptance.
    the `D_800AAF9C` table load.
    The 21-word `func_151D4D58` two-mode preset wrapper and 23-word
    `func_151E7E9C` three-way state dispatcher are byte-exact directly from C
-   without guarded words. Continue with 22-word `func_15022190`;
+   without guarded words. The 22-word `func_15022190` flagged coordinate
+   setter is also byte-exact directly from C. Continue with 24-word
+   `func_15023870`;
    keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded

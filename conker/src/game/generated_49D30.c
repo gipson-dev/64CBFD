@@ -1,7 +1,10 @@
 #include <ultra64.h>
 extern void (*D_80086014[])();
+extern f32 D_800C3594;
 extern f32 D_800C35A0;
+extern s16 D_800C358C[];
 extern s16 D_800C3598[];
+extern u8 D_800C3663;
 extern u16 *D_800C35D8[];
 extern u8 D_800C363A[];
 
@@ -152,8 +155,12 @@ s32 func_15022024() {
     return 0;
 }
 
-s32 func_15022190() {
-    return 0;
+void func_15022190(s16 arg0, s16 arg1, s16 arg2, f32 arg3) {
+    D_800C3594 = arg3;
+    D_800C358C[0] = arg0;
+    D_800C358C[1] = arg1;
+    D_800C358C[2] = arg2;
+    D_800C3663 = 1;
 }
 
 void func_150221E8(s16 arg0, s16 arg1, s16 arg2, f32 arg3) {

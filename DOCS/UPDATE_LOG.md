@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game flagged coordinate setter byte-exact
+
+- Recovered `func_15022190` as the flagged twin of `func_150221E8`: it stores
+  three signed 16-bit coordinates and one float, then sets `D_800C3663` to one.
+- All 22 words / 88 bytes match directly from C, including the incoming
+  argument stores, sign-extension sequence, four global relocation pairs, and
+  flag write. No guarded retail words are needed.
+- The complete span has SHA-256
+  `4313640b5a0c843e78e6ee6bbc03b7a274102f6275f51c7d3d02c499b485783a`.
+  Fresh totals are **2,748 / 5,469 (50.25%)** overall and
+  **2,177 / 4,791 (45.44%)** in Game.
+
 ### Game three-way state dispatcher byte-exact
 
 - Recovered `func_151E7E9C` as a dispatcher from signed state byte
