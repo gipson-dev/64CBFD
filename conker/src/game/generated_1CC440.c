@@ -13,12 +13,40 @@ s32 func_1519EF90() {
     return 0;
 }
 
-s32 func_1519F108() {
-    return 0;
+void func_1519F108(u8 *arg0) {
+    register u8 **link = *(u8 ***)(arg0 + 0x98);
+    register u8 *record = *link;
+
+    if (record != NULL) {
+        register s32 state = *(s32 *)(arg0 + 0x20);
+        register FourWord1CC440 *fields = (FourWord1CC440 *)(record + 0x58);
+
+        if (state == 6) {
+            fields->first = 0;
+        }
+        if (*(s32 *)(arg0 + 0x20) == 7) {
+            fields->third = 0;
+        }
+    }
+    func_151478F4(arg0);
 }
 
-s32 func_1519F168() {
-    return 0;
+void func_1519F168(u8 *arg0) {
+    register u8 **link = *(u8 ***)(arg0 + 0x98);
+    register u8 *record = *link;
+
+    if (record != NULL) {
+        register s32 state = *(s32 *)(arg0 + 0x20);
+        register FourWord1CC440 *fields = (FourWord1CC440 *)(record + 0x58);
+
+        if (state == 6) {
+            fields->first = 0;
+        }
+        if (*(s32 *)(arg0 + 0x20) == 7) {
+            fields->third = 0;
+        }
+    }
+    func_15147928(arg0);
 }
 
 s32 func_1519F1C8() {

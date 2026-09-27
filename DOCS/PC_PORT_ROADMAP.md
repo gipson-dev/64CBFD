@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,778 / 5,469 (50.80%) | 1 | 2,690 |
+| Total | 5,469 / 6,040 (90.55%) | 2,780 / 5,469 (50.83%) | 1 | 2,688 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,207 / 4,791 (46.07%) | 0 | 2,584 |
+| Game | 4,791 / 5,320 (90.06%) | 2,209 / 4,791 (46.11%) | 0 | 2,582 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -862,7 +862,11 @@ five guarded branch and call-setup scheduling words; see
 The 23-word `func_15197A0C` scaled query wrapper is exact directly from C after
 restoring its incoming argument; see
 [Working Note 275](WORKING_NOTES/275-game-scaled-query-wrapper-match-20260927.md).
-Continue with 24-word `func_1519F108` while the documented lower-difference
+The adjacent 24-word `func_1519F108` and `func_1519F168` state-clear callbacks
+are independently exact from shared recovered C plus symmetric guarded
+scheduling; see
+[Working Note 276](WORKING_NOTES/276-game-paired-state-clear-callback-match-20260927.md).
+Continue with 23-word `func_151A09B4` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

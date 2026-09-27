@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,778 / 5,469 (50.80%) | 1 | 2,690 |
+| Total | 2,780 / 5,469 (50.83%) | 1 | 2,688 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,207 / 4,791 (46.07%) | 0 | 2,584 |
+| Game | 2,209 / 4,791 (46.11%) | 0 | 2,582 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,744, while
+denominator driven: the exact count is now 2,780, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -141,6 +141,10 @@ expansion pattern, independently verified across its 14-word slot.
 words; its frame, control flow, callbacks, and relocations were already exact.
 Structural twin `func_151963B4` is independently byte-exact through the same
 nine guarded register words and its distinct final-call relocation.
+Adjacent state-clear callbacks `func_1519F108` and `func_1519F168` are
+independently byte-exact across 24 words each. Their recovered C is shared
+apart from the final callback; symmetric guarded scheduling restores retail's
+derived field-base lifetime and branch targets.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -642,8 +646,11 @@ end-to-end gameplay acceptance.
    The 23-word `func_151904BC` callback/resource cleanup is byte-exact from C
    with five guarded branch and call-setup scheduling words.
    The 23-word `func_15197A0C` scaled query wrapper is byte-exact directly
-   from C after restoring its incoming argument.
-   Continue with 24-word `func_1519F108`; keep the previously documented
+   from C after restoring its incoming argument. The adjacent 24-word
+   `func_1519F108` and `func_1519F168` state-clear callbacks are byte-exact
+   from shared C shapes plus symmetric guarded address-lifetime and branch
+   scheduling normalization.
+   Continue with 23-word `func_151A09B4`; keep the previously documented
    lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

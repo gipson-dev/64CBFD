@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game paired state-clear callbacks byte-exact
+
+- Replaced the false zero-return placeholders at `func_1519F108` and
+  `func_1519F168` with their original null-gated state-clear logic and distinct
+  final callbacks.
+- Both 24-word / 96-byte spans match independently. The readable C clears
+  record words at `+0x58` for state 6 and `+0x60` for state 7; symmetric
+  guarded scheduling restores retail's shared field base and branch targets.
+- The spans have SHA-256
+  `c30604a30fce7acfc9c4508dc25d815ae938bc8fb15c221b8351c2fe3f46b2c1`
+  and `15a54430576641fbb8f849e8250fb8f39c1527d06c5829a84d6c89597d227412`.
+  Fresh totals are **2,780 / 5,469 (50.83%)** overall and
+  **2,209 / 4,791 (46.11%)** in Game.
+
 ### Game scaled query wrapper byte-exact
 
 - Corrected `func_15197A0C` to accept its original incoming argument.

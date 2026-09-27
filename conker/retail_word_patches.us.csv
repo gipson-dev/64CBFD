@@ -7,6 +7,22 @@ generated_1BA1D0,func_151904BC,0x14,0x8CA60010,0x00000000,-,-,Keep the null-rele
 generated_1BA1D0,func_151904BC,0x28,0x8CA60010,0x3C040000,-,R_MIPS_HI16:func_1518E298,Begin callback address setup before independent owner and resource loads,,,false
 generated_1BA1D0,func_151904BC,0x2C,0x24AF0030,0x8CA60010,-,-,Load the unregister owner before deriving the resource pointer,,,false
 generated_1BA1D0,func_151904BC,0x30,0x3C040000,0x24AF0030,R_MIPS_HI16:func_1518E298,-,Derive the resource pointer after loading the unregister owner,,,false
+generated_1CC440,func_1519F108,0x14,0x1060000B,0x1060000C,-,-,Extend the null branch across the restored address calculation,,,false
+generated_1CC440,func_1519F108,0x1C,0x8CA40020,0x8CA20020,-,-,Keep the first state load in the retail v0 lifetime,,,false
+generated_1CC440,func_1519F108,0x20,0x24010006,0x24010006,-,-,Materialize the shared field base before the first comparison branch,0x24640058,,false
+generated_1CC440,func_1519F108,0x24,0x54810004,0x54410004,-,-,Compare the retained state and target the second comparison,,,false
+generated_1CC440,func_1519F108,0x2C,0xAC600058,0xAC800000,-,-,Clear the first field through the restored base,,,false
+generated_1CC440,func_1519F108,0x30,0x8CA40020,0x8CA20020,-,-,Keep the second state load in the retail v0 lifetime,,,false
+generated_1CC440,func_1519F108,0x38,0x14810002,0x14410002,-,-,Compare the second state through the retail v0 lifetime,,,false
+generated_1CC440,func_1519F108,0x40,0xAC600060,0xAC800008,-,-,Clear the third field through the restored base,,,false
+generated_1CC440,func_1519F168,0x14,0x1060000B,0x1060000C,-,-,Extend the null branch across the restored address calculation,,,false
+generated_1CC440,func_1519F168,0x1C,0x8CA40020,0x8CA20020,-,-,Keep the first state load in the retail v0 lifetime,,,false
+generated_1CC440,func_1519F168,0x20,0x24010006,0x24010006,-,-,Materialize the shared field base before the first comparison branch,0x24640058,,false
+generated_1CC440,func_1519F168,0x24,0x54810004,0x54410004,-,-,Compare the retained state and target the second comparison,,,false
+generated_1CC440,func_1519F168,0x2C,0xAC600058,0xAC800000,-,-,Clear the first field through the restored base,,,false
+generated_1CC440,func_1519F168,0x30,0x8CA40020,0x8CA20020,-,-,Keep the second state load in the retail v0 lifetime,,,false
+generated_1CC440,func_1519F168,0x38,0x14810002,0x14410002,-,-,Compare the second state through the retail v0 lifetime,,,false
+generated_1CC440,func_1519F168,0x40,0xAC600060,0xAC800008,-,-,Clear the third field through the restored base,,,false
 generated_18A8F0,func_1515F0AC,0x08,0x3C01C700,0x460C003E,-,-,Schedule the upper-bound compare before materializing the lower clamp,,,false
 generated_18A8F0,func_1515F0AC,0x0C,0x460C003E,0x3C01C700,-,-,Fill the FP comparison slot with the independent lower-clamp load,,,false
 generated_18A8F0,func_1515F0AC,0x10,0x00000000,0x00000000,-,-,Omit the compiler hazard nop after filling the comparison slot,,,true

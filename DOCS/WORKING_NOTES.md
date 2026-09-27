@@ -796,7 +796,11 @@ setup words; see [Working Note 274](WORKING_NOTES/274-game-callback-resource-cle
 The 23-word `func_15197A0C` scaled query wrapper is now byte-exact directly
 from C after restoring its incoming argument; see
 [Working Note 275](WORKING_NOTES/275-game-scaled-query-wrapper-match-20260927.md).
-Continue with 24-word `func_1519F108`, the next unparked Game C row in the
+The adjacent false placeholders at `func_1519F108` and `func_1519F168` are now
+independently byte-exact 24-word state-clear callbacks from shared C shapes and
+symmetric guarded scheduling; see
+[Working Note 276](WORKING_NOTES/276-game-paired-state-clear-callback-match-20260927.md).
+Continue with 23-word `func_151A09B4`, the next unparked Game C row in the
 fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
