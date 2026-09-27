@@ -5,6 +5,7 @@
 s32 func_151A931C();
 
 s32 func_151D5E30();
+void func_151432BC(void *, f32 *, f32 *, f32 *, f32 *);
 
 extern void (*D_8008F964[])(u8 *, s32, u8);
 
@@ -69,8 +70,9 @@ s32 func_151A8CEC() {
     return 0;
 }
 
-s32 func_151A8F1C() {
-    return 0;
+void func_151A8F1C(u8 *arg0, f32 *arg1, f32 *arg2, f32 *arg3) {
+    func_151432BC(*(void **) (arg0 + 0x2C), arg1, arg1 + 2, arg2, arg3);
+    arg1[1] = arg2[0];
 }
 
 s32 func_151A8F6C() {

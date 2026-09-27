@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game coordinate-transform wrapper byte-exact
+
+- Recovered `func_151A8F1C` as a five-argument wrapper around
+  `func_151432BC`, forwarding the embedded object pointer and four float-vector
+  destinations before copying the source component into the result vector.
+- All 20 words / 80 bytes match retail directly from C, with SHA-256
+  `d30780df86a38014cb46919b17c975e7767d1829f0b156339d10252c415e2dfd`.
+  Fresh totals are **2,741 / 5,469 (50.12%)** overall and
+  **2,170 / 4,791 (45.29%)** in Game.
+
 ### Game bounded callback dispatcher byte-exact
 
 - Recovered `func_151A8A20` as a typed three-entry callback-table dispatcher.
