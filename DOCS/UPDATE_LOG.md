@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game byte-scaled dispatch byte-exact
+
+- Restored `func_1510448C` as a signed-gate and record-byte dispatch helper.
+  Its nonzero path scales byte `0x1B` by `63 / 256` and forwards the result to
+  `func_1517F08C`; the two zero paths return the original first argument.
+- Typed C reproduces 20 of 26 words. Six guarded words preserve retail's
+  equivalent scaled-value and signed-gate temporary-register chains.
+- The linked span has SHA-256
+  `4f28f367f8ab43a3b00119126304196f2ace9b38088f5fe71694993340b6c9bf`.
+  Fresh totals are **2,841 / 5,469 (51.95%)** overall and
+  **2,269 / 4,791 (47.36%)** in Game.
+
 ### Game seven-argument forwarding wrapper byte-exact
 
 - Restored `func_150FFCC8` as a five-argument wrapper that appends the global

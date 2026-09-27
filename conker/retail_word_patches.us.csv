@@ -1459,3 +1459,9 @@ game_18D770,func_151640C0,0x40,0x108F0006,0x10A40006,-,-,Compare the owner point
 game_18D770,func_151640C0,0x44,0x90470004,0x90460004,-,-,Load the target identifier in the retail branch delay register,,,false
 game_18D770,func_151640C0,0x50,0x9098003B,0x90B8003B,-,-,Load the current owner identifier through the retail owner register,,,false
 game_18D770,func_151640C0,0x54,0x54D80004,0x54F80004,-,-,Compare the source identifier through the retail register lifetime,,,false
+generated_131620,func_1510448C,0x30,0x0002C180,0x00022980,-,-,Form the scaled byte directly in the retail outgoing argument register,,,false
+generated_131620,func_1510448C,0x3C,0x87A8002A,0x87B9002A,-,-,Reload the signed gate through the retail temporary register,,,false
+generated_131620,func_1510448C,0x40,0x03022823,0x00A22823,-,-,Subtract from the retail outgoing argument register,,,false
+generated_131620,func_1510448C,0x44,0x0005CA03,0x0005C203,-,-,Shift the scaled value through the retail temporary register,,,false
+generated_131620,func_1510448C,0x48,0x03202825,0x03002825,-,-,Move the retail scaled temporary into the outgoing argument register,,,false
+generated_131620,func_1510448C,0x54,0xAFA80014,0xAFB90014,-,-,Store the signed gate from the retail temporary register,,,false
