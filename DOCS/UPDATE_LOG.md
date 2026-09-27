@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game constant preset wrapper byte-exact
+
+- Replaced the zero-return `func_150EC45C` placeholder with its typed call to
+  `func_151C3B0C`, forwarding the object with three `1.0f` scales, `0.0f`,
+  and three `0xFF` channel values.
+- The direct call reproduces retail's float-register setup, reverse stack
+  argument stores, and all 21 tracked words without a retail-word patch.
+- The complete span shares SHA-256
+  `286cfe5e6e7390c73018d14668a98f0ca33576873782a1ea1b5ce26dac6ab473`.
+  Fresh totals are **2,705 / 5,469 (49.46%)** overall and
+  **2,134 / 4,791 (44.54%)** in Game.
+
 ### Game event-flag handler byte-exact
 
 - Replaced the zero-return `func_151087FC` placeholder with its event-byte

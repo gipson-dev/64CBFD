@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,704 / 5,469 (49.44%) | 1 | 2,764 |
+| Total | 5,469 / 6,038 (90.58%) | 2,705 / 5,469 (49.46%) | 1 | 2,763 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,133 / 4,791 (44.52%) | 0 | 2,658 |
+| Game | 4,791 / 5,318 (90.09%) | 2,134 / 4,791 (44.54%) | 0 | 2,657 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -623,6 +623,10 @@ That row remains the documented three-word compiler overflow. The next
 completed direct-C row is the event-flag handler; see
 [Working Note 201](WORKING_NOTES/201-game-event-flag-handler-match-20260926.md).
 Continue with 21-word `func_150EC45C`.
+That constant preset wrapper is now exact from a typed eight-argument call;
+see
+[Working Note 202](WORKING_NOTES/202-game-constant-preset-wrapper-match-20260926.md).
+Continue with 22-word `func_150F1684`.
 
 Current host-port progression and acceptance boundaries:
 

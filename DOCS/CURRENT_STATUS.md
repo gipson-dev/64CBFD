@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-26:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,704 / 5,469 (49.44%) | 1 | 2,764 |
+| Total | 2,705 / 5,469 (49.46%) | 1 | 2,763 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,133 / 4,791 (44.52%) | 0 | 2,658 |
+| Game | 2,134 / 4,791 (44.54%) | 0 | 2,657 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,704, while
+denominator driven: the exact count is now 2,705, while
 502 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -487,9 +487,9 @@ end-to-end gameplay acceptance.
    `func_151A8584`/`func_151A85D4` parked at their measured callback scheduling
    boundary. The 20-word `func_1502E474` conditional submission wrapper and
    33-word `func_150319CC` two-pass list lookup and 21-word `func_151087FC`
-   event-flag handler are now byte-exact directly from C. Keep the measured
-   `func_150721A4` compiler overflow parked and continue with 21-word
-   `func_150EC45C`.
+   event-flag handler and 21-word `func_150EC45C` preset wrapper are now
+   byte-exact directly from C. Keep the measured `func_150721A4` compiler
+   overflow parked and continue with 22-word `func_150F1684`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
