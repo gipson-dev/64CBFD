@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,733 / 5,468 (49.98%) | 1 | 2,734 |
+| Total | 2,734 / 5,468 (50.00%) | 1 | 2,733 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,162 / 4,790 (45.14%) | 0 | 2,628 |
+| Game | 2,163 / 4,790 (45.16%) | 0 | 2,627 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,733, while
+denominator driven: the exact count is now 2,734, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -82,6 +82,8 @@ retaining the post-call field read, and guarding the empty branch shape.
 `func_1515F0AC` is byte-exact from its signed float clamp C body plus three
 guarded scheduling entries that move the independent lower-clamp `lui` into
 the first FP comparison slot and omit IDO's resulting hazard `nop`.
+`func_1516706C` is byte-exact after recovering its post-tested callback-table
+loop, distinct `D_8008CB70` end symbol, and two guarded low-half address words.
 `func_151423D8` is byte-exact through symmetric guarded quadrant and table-index
 register normalization.
 `func_15155EF8` is byte-exact through guarded outer/child pointer register
@@ -549,8 +551,10 @@ end-to-end gameplay acceptance.
    The 22-word `func_15131C2C` flag-gated callback dispatcher is byte-exact
    directly from its typed three-argument callback contract. The 24-word
    `func_1515F0AC` signed clamp is byte-exact from C plus three guarded
-   scheduling entries. Continue with 21-word `func_1516706C`; keep the
-   previously documented lower-difference rows parked.
+   scheduling entries. The 21-word `func_1516706C` callback-table loop is
+   byte-exact from a post-tested loop plus two guarded relocation-aware words.
+   Continue with 29-word `func_15168A9C`; keep the previously documented
+   lower-difference rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
@@ -702,6 +706,8 @@ The completed flag-gated callback dispatcher is in
 [Working Note 230](WORKING_NOTES/230-game-flag-gated-callback-dispatch-match-20260927.md).
 The completed signed fixed-point clamp and guarded omission support are in
 [Working Note 231](WORKING_NOTES/231-game-signed-fixed-point-clamp-match-20260927.md).
+The completed three-entry callback-table loop is in
+[Working Note 232](WORKING_NOTES/232-game-callback-table-loop-match-20260927.md).
 The completed stack-record pointer lifetime is in
 [Working Note 109](WORKING_NOTES/109-game-stack-record-pointer-match-20260926.md).
 The completed five-global reset ordering is in

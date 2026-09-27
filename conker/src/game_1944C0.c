@@ -23,6 +23,7 @@ void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, u8 arg5);
 void func_15168A4C(void *arg0, s32 arg1);
 extern void (*D_8008CA20[])(void *);
 extern void (*D_8008CB64[])(void);
+extern void (*D_8008CB70[])(void);
 
 typedef struct ListNode {
     u8 index;
@@ -52,12 +53,16 @@ void func_15167010(void) {
 
 void func_1516706C(void) {
     void (**func)(void);
+    void (**end)(void);
 
-    for (func = D_8008CB64; func < &D_8008CB64[3]; func++) {
+    func = D_8008CB64;
+    end = D_8008CB70;
+    do {
         if (*func != NULL) {
             (*func)();
         }
-    }
+        func++;
+    } while (func != end);
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_151670C0.s. */

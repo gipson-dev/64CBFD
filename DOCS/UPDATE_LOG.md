@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game callback-table loop byte-exact
+
+- Recovered `func_1516706C` as a post-tested walk over the three callback
+  entries from `D_8008CB64` through the distinct `D_8008CB70` endpoint.
+- The `do/while` spelling removes the false zero-trip check and restores
+  retail's direct `bnel` loop tail. Two guarded relocation-aware words preserve
+  retail's independent low-half endpoint/cursor construction order.
+- The complete 21-word span shares SHA-256
+  `2e77ca36f960f7f9e2116dfb8a2453897fe582f432ea2d5726a978f3f2c01fa6`.
+  Fresh totals are **2,734 / 5,468 (50.00%)** overall and
+  **2,163 / 4,790 (45.16%)** in Game.
+
 ### Game signed fixed-point clamp byte-exact
 
 - Replaced the empty `func_1515F0AC` placeholder with its signed float clamp:
