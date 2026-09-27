@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, guarded mode-4 dispatcher matched).** The current linked
-checkpoint is `2752 / 5469 (50.32%)` exact C functions, with one address-drift
-blocker and 2,716 genuinely different C functions. Game is
-`2181 / 4791 (45.52%)` exact, with 2,610 genuinely different C rows. The tree
+**Active (2026-09-27, fixed-point/float record value matched).** The current
+linked checkpoint is `2753 / 5469 (50.34%)` exact C functions, with one
+address-drift blocker and 2,715 genuinely different C functions. Game is
+`2182 / 4791 (45.54%)` exact, with 2,609 genuinely different C rows. The tree
 contains 571 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -712,12 +712,13 @@ The 22-word `func_1503378C` six-ID type predicate is now exact directly from C
 with no guarded words; see
 [Working Note 248](WORKING_NOTES/248-game-six-id-type-predicate-match-20260927.md).
 The 22-word `func_15044DE8` guarded mode-4 dispatcher is now exact directly
-from C with no guarded words. Continue with 22-word `func_15088218`; see
+from C with no guarded words; see
 [Working Note 249](WORKING_NOTES/249-game-guarded-mode4-dispatcher-match-20260927.md).
-Its existing arithmetic semantics are recovered, but initial pointer-local,
-argument-rewrite, explicit-offset, partial `index * 33`, and early base-reuse
-probes did not reproduce retail's `a1` index / `t6` offset lifetime; the
-original C was restored unchanged.
+The 22-word `func_15088218` fixed-point/float record value is now exact from
+recovered C semantics plus nine guarded scheduling words; see
+[Working Note 250](WORKING_NOTES/250-game-fixedpoint-float-record-value-match-20260927.md).
+Continue with 22-word `func_150AF738`, the next unparked Game C row in the
+fresh queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

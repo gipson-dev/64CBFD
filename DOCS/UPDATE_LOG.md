@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game fixed-point/float record value byte-exact
+
+- Recovered `func_15088218` as a nullable indexed-record reader that combines
+  the signed halfword at `+0x24`, shifted by four, with the truncated float at
+  `+0x08` scaled by 16.
+- All 22 words / 88 bytes match from the recovered C semantics plus nine
+  guarded scheduling words. The guards preserve retail's index/stride
+  lifetime, null-return schedule, relocations, and final commutative operand
+  order; no behavior, branch condition, constant, memory access, or floating
+  operation is supplied by a guard.
+- The complete span has SHA-256
+  `e5d5d321d70aa26986e0693c90892be508a283fd44a0fcebe53249e772f14a7f`.
+  Fresh totals are **2,753 / 5,469 (50.34%)** overall and
+  **2,182 / 4,791 (45.54%)** in Game.
+
 ### Game guarded mode-4 dispatcher byte-exact
 
 - Recovered `func_15044DE8` as the guarded mode-4 variant of its neighboring

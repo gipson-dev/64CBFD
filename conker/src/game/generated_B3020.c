@@ -185,13 +185,15 @@ s32 func_150881CC(s32 arg0) {
 
 s32 func_15088218(s32 arg0) {
     u8 *temp_v1 = D_800872A0;
-    u8 *ptr;
+    s32 idx = arg0;
+    s16 temp_a2;
 
     if (temp_v1 == 0) {
         return 0;
     }
-    ptr = (u8 *) (arg0 * 0x84 + (s32) temp_v1);
-    return (*(s16 *) (ptr + 0x24) << 4) + (s32) (*(f32 *) (ptr + 8) * 16.0f);
+    arg0 = idx * 0x84 + (s32) temp_v1;
+    temp_a2 = *(s16 *) (arg0 + 0x24);
+    return (s32) (*(f32 *) (arg0 + 8) * 16.0f) + (temp_a2 << 4);
 }
 
 s32 func_15088270(s32 arg0) {

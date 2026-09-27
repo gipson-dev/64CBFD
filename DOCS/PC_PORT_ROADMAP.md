@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,752 / 5,469 (50.32%) | 1 | 2,716 |
+| Total | 5,469 / 6,040 (90.55%) | 2,753 / 5,469 (50.34%) | 1 | 2,715 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,181 / 4,791 (45.52%) | 0 | 2,610 |
+| Game | 4,791 / 5,320 (90.06%) | 2,182 / 4,791 (45.54%) | 0 | 2,609 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -779,8 +779,11 @@ no guarded words; see
 The 22-word `func_15044DE8` guarded mode-4 dispatcher is exact directly from C
 with no guarded words; see
 [Working Note 249](WORKING_NOTES/249-game-guarded-mode4-dispatcher-match-20260927.md).
-Continue with 22-word `func_15088218` while the documented smaller rows remain
-parked.
+The 22-word `func_15088218` fixed-point/float record value is exact from
+recovered C semantics plus nine guarded scheduling words; see
+[Working Note 250](WORKING_NOTES/250-game-fixedpoint-float-record-value-match-20260927.md).
+Continue with 22-word `func_150AF738` while the documented lower-difference
+rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 
