@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-26
 
+### Game event-flag handler byte-exact
+
+- Replaced the zero-return `func_151087FC` placeholder with its event-byte
+  dispatch for setting or clearing bit zero in the offset-`0x30` flag byte.
+- Modeling the offset-`0x28` state as one initialized interior-object pointer
+  lets IDO sink the address calculation independently into both branches,
+  reproducing all 21 tracked words.
+- The complete span shares SHA-256
+  `79a176792d390d8b8fb0b0b77f55b7e2d332e2be6bbce79269abc52aafe01ea1`.
+  Fresh totals are **2,704 / 5,469 (49.44%)** overall and
+  **2,133 / 4,791 (44.52%)** in Game.
+
 ### Game two-pass list lookup byte-exact
 
 - Corrected `func_150319CC` so both searches retain each node's next pointer

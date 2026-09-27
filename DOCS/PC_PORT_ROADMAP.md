@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,038 (90.58%) | 2,703 / 5,469 (49.42%) | 1 | 2,765 |
+| Total | 5,469 / 6,038 (90.58%) | 2,704 / 5,469 (49.44%) | 1 | 2,764 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,318 (90.09%) | 2,132 / 4,791 (44.50%) | 0 | 2,659 |
+| Game | 4,791 / 5,318 (90.09%) | 2,133 / 4,791 (44.52%) | 0 | 2,658 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -619,6 +619,10 @@ That two-pass list lookup is now exact after preserving retail's separate
 current and next-node lifetimes; see
 [Working Note 200](WORKING_NOTES/200-game-two-pass-list-lookup-match-20260926.md).
 Continue with 17-word `func_150721A4`.
+That row remains the documented three-word compiler overflow. The next
+completed direct-C row is the event-flag handler; see
+[Working Note 201](WORKING_NOTES/201-game-event-flag-handler-match-20260926.md).
+Continue with 21-word `func_150EC45C`.
 
 Current host-port progression and acceptance boundaries:
 
