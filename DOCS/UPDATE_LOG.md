@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game object-record writer byte-exact
+
+- Replaced the zero-return placeholder at `func_150BE438` with the recovered
+  eight-byte record writer. It indexes `D_800CC2D0` by the `0x32C` object
+  stride and writes constants `0x68` and `0x0E` around the truncated object
+  fields at offsets `0x2E8` and `0x2E4`.
+- All 23 words / 92 bytes match directly from C. Preserving the logical field
+  assignment order reproduces retail's shift/add multiplication, load/store
+  schedule, register allocation, and return without guarded words.
+- The complete span has SHA-256
+  `d484a1ceeb46dfcbb7716528fc3e1a2264d29e766db12234881c54607e94459a`.
+  Fresh totals are **2,787 / 5,469 (50.96%)** overall and
+  **2,216 / 4,791 (46.25%)** in Game.
+
 ### Game bounded-query wrapper byte-exact and function boundary corrected
 
 - Split the former 26-word `func_150A6500` inventory row at the independent

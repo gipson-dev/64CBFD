@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,786 / 5,469 (50.94%) | 1 | 2,682 |
+| Total | 2,787 / 5,469 (50.96%) | 1 | 2,681 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,215 / 4,791 (46.23%) | 0 | 2,576 |
+| Game | 2,216 / 4,791 (46.25%) | 0 | 2,575 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -670,8 +670,10 @@ end-to-end gameplay acceptance.
    two functions: the recovered 14-word bounded-query wrapper is exact from C
    plus 12 guarded scheduling words, while newly identified 12-word
    `func_150A6538` remains exact original assembly pending a source-grounded
-   calling convention. Continue with 23-word `func_150BE438`; keep the
-   previously documented lower-difference rows parked.
+   calling convention. The 23-word `func_150BE438` object-record writer is
+   byte-exact directly from recovered C with no guarded words. Continue with
+   23-word `func_150D1410`; keep the previously documented lower-difference
+   rows parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

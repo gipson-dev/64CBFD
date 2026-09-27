@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,786 / 5,469 (50.94%) | 1 | 2,682 |
+| Total | 5,469 / 6,041 (90.53%) | 2,787 / 5,469 (50.96%) | 1 | 2,681 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,321 (90.04%) | 2,215 / 4,791 (46.23%) | 0 | 2,576 |
+| Game | 4,791 / 5,321 (90.04%) | 2,216 / 4,791 (46.25%) | 0 | 2,575 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -884,7 +884,10 @@ bounded-query wrapper is exact from recovered C plus 12 guarded scheduling
 words, and 12-word `func_150A6538` remains exact original assembly pending a
 source-grounded calling convention; see
 [Working Note 282](WORKING_NOTES/282-game-bounded-query-wrapper-match-20260927.md).
-Continue with 23-word `func_150BE438` while the documented lower-difference
+The 23-word `func_150BE438` object-record writer is exact directly from C with
+no guarded words; see
+[Working Note 283](WORKING_NOTES/283-game-object-record-writer-match-20260927.md).
+Continue with 23-word `func_150D1410` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:

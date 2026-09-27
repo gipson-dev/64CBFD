@@ -822,7 +822,10 @@ recovered C plus 12 guarded scheduling words; the new 12-word `func_150A6538`
 row remains exact original assembly pending a source-grounded calling
 convention; see
 [Working Note 282](WORKING_NOTES/282-game-bounded-query-wrapper-match-20260927.md).
-Continue with 23-word `func_150BE438`, the next unparked Game C row in the
+The false placeholder at `func_150BE438` is now a byte-exact 23-word
+object-record writer directly from C with no guarded words; see
+[Working Note 283](WORKING_NOTES/283-game-object-record-writer-match-20260927.md).
+Continue with 23-word `func_150D1410`, the next unparked Game C row in the
 fresh ordered queue at 22 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
