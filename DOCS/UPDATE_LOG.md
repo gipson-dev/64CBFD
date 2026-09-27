@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game cached render-mode wrapper byte-exact
+
+- Reshaped `func_15142FBC` around an explicit cache-difference update block and
+  retained display-list command pointer.
+- All 34 words / 136 bytes match retail. Structured C restores the cache-hit
+  branch-likely return and command-pointer lifetime; three guarded words move
+  the cursor increment and `D_800DD21C` HI16 setup across independent stores.
+- The complete span has SHA-256
+  `2f32966b66192dae3b5e58437d96dc69ea5606a1b676b41966996d9d980460ea`.
+  Fresh totals are **2,822 / 5,469 (51.60%)** overall and
+  **2,250 / 4,791 (46.96%)** in Game.
+
 ### Game typed eight-float forwarding wrapper byte-exact
 
 - Replaced the zero placeholder at `func_15133760` with its destination plus

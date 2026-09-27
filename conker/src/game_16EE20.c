@@ -365,20 +365,20 @@ s32 func_15142E24() {
     return 0;
 }
 Gfx *func_15142FBC(Gfx *arg0, u32 arg1, u32 arg2, u8 *arg3) {
-    if ((arg1 == D_800DD218) && (arg2 == D_800DD21C)) {
-        return arg0;
-    }
+    Gfx *cmd;
 
-    if (*arg3 == 1) {
-        gDPPipeSync(arg0++);
-        *arg3 = 0;
-    }
+    if ((arg1 != D_800DD218) || (arg2 != D_800DD21C)) {
+        if (*arg3 == 1) {
+            gDPPipeSync(arg0++);
+            *arg3 = 0;
+        }
 
-    arg0->words.w0 = 0xEF000000 | ((arg1 | 0xF) & 0xFFFFFF);
-    arg0->words.w1 = arg2;
-    arg0++;
-    D_800DD218 = arg1;
-    D_800DD21C = arg2;
+        cmd = arg0++;
+        cmd->words.w0 = 0xEF000000 | ((arg1 | 0xF) & 0xFFFFFF);
+        cmd->words.w1 = arg2;
+        D_800DD218 = arg1;
+        D_800DD21C = arg2;
+    }
     return arg0;
 }
 s16 func_15143044(u8 arg0, s32 arg1) {
