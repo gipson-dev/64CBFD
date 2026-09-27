@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,827 / 5,469 (51.69%) | 1 | 2,641 |
+| Total | 2,828 / 5,469 (51.71%) | 1 | 2,640 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,255 / 4,791 (47.07%) | 0 | 2,536 |
+| Game | 2,256 / 4,791 (47.09%) | 0 | 2,535 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,827, while
+denominator driven: the exact count is now 2,828, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -738,9 +738,10 @@ end-to-end gameplay acceptance.
    three guarded scheduling/omission entries. The 25-word `func_15166204`
    lifetime updater and expiry path is exact from C without guarded word
    patches. The 24-word `func_1517EA4C` display-list state helper is exact
-   directly from three standard RDP macros. Continue with 28-word Game
-   `func_1518E298`; keep the previously documented smaller special cases
-   parked.
+   directly from three standard RDP macros. The 28-word `func_1518E298`
+   linked-position callback is exact directly from C with its explicit
+   four-argument callback ABI. Continue with 24-word Game `func_1519ED24`;
+   keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

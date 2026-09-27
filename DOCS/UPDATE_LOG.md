@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game linked-position callback byte-exact
+
+- Restored `func_1518E298` as a four-argument callback that validates its
+  linked source and copies three truncated position floats into destination
+  halfwords.
+- All 28 words / 112 bytes match retail directly from C. The explicit unused
+  parameters reproduce the frameless argument-home stores, while nested
+  positive tests reproduce the shared default-return path. No guarded word
+  patches are required.
+- The complete span has SHA-256
+  `394557df7bda8712ee5a6684d29ccf265f919731ac1f8b0acf9a200c004bc2da`.
+  Fresh totals are **2,828 / 5,469 (51.71%)** overall and
+  **2,256 / 4,791 (47.09%)** in Game.
+
 ### Game display-list state helper byte-exact
 
 - Restored `func_1517EA4C` as a three-command `Gfx` helper using

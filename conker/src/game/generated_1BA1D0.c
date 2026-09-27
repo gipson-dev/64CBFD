@@ -52,8 +52,18 @@ s32 func_1518D6E0() {
     return 0;
 }
 
-s32 func_1518E298() {
-    return 0;
+s32 func_1518E298(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
+    u8 *source = *(u8 **)(arg0 + 0x1C);
+
+    if (source != NULL) {
+        if (*(s32 *)source != 0) {
+            *(s16 *)(arg0 + 2) = (s16)*(f32 *)(source + 0x14);
+            *(s16 *)(arg0 + 4) = (s16)*(f32 *)(source + 0x18);
+            *(s16 *)(arg0 + 6) = (s16)*(f32 *)(source + 0x1C);
+            return 0;
+        }
+    }
+    return 1;
 }
 
 s32 func_1518E308() {
