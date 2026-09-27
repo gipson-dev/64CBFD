@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,824 / 5,469 (51.64%) | 1 | 2,644 |
+| Total | 5,469 / 6,041 (90.53%) | 2,825 / 5,469 (51.65%) | 1 | 2,643 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,252 / 4,791 (47.00%) | 0 | 2,539 |
+| Game | 4,791 / 5,321 (90.04%) | 2,253 / 4,791 (47.03%) | 0 | 2,538 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -962,9 +962,10 @@ cache-aware render-mode wrapper is exact from structured C plus three guarded
 scheduling words. The 24-word Game `func_15143DA8` integer range clamp is exact
 from structured C plus nine guarded register-allocation words. The 29-word Game
 `func_151640C0` category-`0x29` identity filter is likewise exact from
-structured C plus nine guarded register-allocation words. Continue with
-27-word Game `func_1515F040` and its documented one-word float-scheduling
-hazard while the smaller special-case rows remain parked.
+structured C plus nine guarded register-allocation words. The 27-word Game
+`func_1515F040` scaled signed fixed-point clamp is exact from typed C plus
+three guarded scheduling/omission entries. Continue with 25-word Game
+`func_15166204` while the smaller special-case rows remain parked.
 
 Current host-port progression and acceptance boundaries:
 

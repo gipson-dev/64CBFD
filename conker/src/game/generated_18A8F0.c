@@ -149,6 +149,13 @@ f32 func_1515F008(u8 *arg0, s32 arg1) {
 }
 
 void func_1515F040(f32 arg0, s32 arg1) {
+    if (D_800A6520 <= arg0) {
+        arg0 = D_800A6520;
+    } else if (arg0 < -32768.0f) {
+        arg0 = -32768.0f;
+    }
+    arg0 *= 65536.0f;
+    D_800DCD10[arg1] = (s32) arg0;
 }
 
 void func_1515F0AC(f32 arg0, s32 arg1) {

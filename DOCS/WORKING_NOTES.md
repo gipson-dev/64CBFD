@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, category-29 identity filter matched).** The current linked
-checkpoint is `2824 / 5469 (51.64%)` exact C functions, with one address-drift
-blocker and 2,644 genuinely different C functions. Init is
+**Active (2026-09-27, scaled fixed-point clamp matched).** The current linked
+checkpoint is `2825 / 5469 (51.65%)` exact C functions, with one address-drift
+blocker and 2,643 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2252 / 4791 (47.00%)` exact, with 2,539 genuinely different C rows. The tree
+`2253 / 4791 (47.03%)` exact, with 2,538 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -944,9 +944,11 @@ plus nine guarded register-allocation words; see
 The 29-word Game `func_151640C0` category-`0x29` identity filter is exact from
 structured C plus nine guarded register-allocation words; see
 [Working Note 320](WORKING_NOTES/320-game-category-29-identity-filter-match-20260927.md).
-Continue with 27-word Game `func_1515F040`, the next C row in the fresh queue
-at 23 real differences. Its earlier correct-looking 28-word float-clamp body
-had one extra FP hazard `nop`; retain that evidence while revisiting it.
+The 27-word Game `func_1515F040` scaled signed fixed-point clamp is exact from
+typed C plus the established three-entry guarded scheduling/omission pattern;
+see [Working Note 321](WORKING_NOTES/321-game-scaled-fixed-point-clamp-match-20260927.md).
+Continue with 25-word Game `func_15166204`, the next unparked C row in the
+fresh queue at 23 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

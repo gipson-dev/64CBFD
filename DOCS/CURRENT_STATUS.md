@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,824 / 5,469 (51.64%) | 1 | 2,644 |
+| Total | 2,825 / 5,469 (51.65%) | 1 | 2,643 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,252 / 4,791 (47.00%) | 0 | 2,539 |
+| Game | 2,253 / 4,791 (47.03%) | 0 | 2,538 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,824, while
+denominator driven: the exact count is now 2,825, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -733,9 +733,11 @@ end-to-end gameplay acceptance.
    words. The 24-word `func_15143DA8` integer range clamp is exact from
    structured C plus nine guarded register-allocation words. The 29-word
    `func_151640C0` category-`0x29` identity filter is likewise exact from
-   structured C plus nine guarded register-allocation words. Continue with
-   27-word Game `func_1515F040`; preserve its documented one-word scheduling
-   hazard while revisiting the float-clamp source shape.
+   structured C plus nine guarded register-allocation words. The 27-word
+   `func_1515F040` scaled signed fixed-point clamp is exact from typed C plus
+   three guarded scheduling/omission entries. Continue with 25-word Game
+   `func_15166204`; keep the previously documented smaller special cases
+   parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

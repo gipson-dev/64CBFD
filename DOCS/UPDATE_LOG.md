@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game scaled fixed-point clamp byte-exact
+
+- Restored `func_1515F040` as a two-stage signed float clamp followed by an
+  in-place `65536.0f` scale, truncation, and indexed `D_800DCD10` store.
+- All 27 words / 108 bytes match retail. Three guarded entries move the
+  independent lower-bound `lui` into the first FP comparison slot and omit
+  IDO's now-redundant hazard `nop`, matching the established sibling pattern.
+- The complete span has SHA-256
+  `df3794fced13b76134a228cb6d09226fb5de3e875ce14f3d7a43123269755d35`.
+  Fresh totals are **2,825 / 5,469 (51.65%)** overall and
+  **2,253 / 4,791 (47.03%)** in Game.
+
 ### Game category-29 identity filter byte-exact
 
 - Restored `func_151640C0` around volatile ABI parameter slots and explicit
