@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game optional-owner callback dispatch byte-exact
+
+- Restored `func_15141250` as an optional owner update, global active-count
+  decrement, and indexed one-argument callback dispatch.
+- Corrected `D_80089FE4` to its observed one-argument callback type and marked
+  the owner pointer slot volatile so both retail loads remain visible.
+- The linked span has SHA-256
+  `6f88fbf60af2c237ad6c02abe4a3d6eafe680309efda564ab7cb569e09a6c72a`.
+  Fresh totals are **2,846 / 5,469 (52.04%)** overall and
+  **2,274 / 4,791 (47.46%)** in Game.
+
 ### Game reference-relative angle update byte-exact
 
 - Restored `func_1511BE5C` as a signed-coordinate conversion, subtraction from

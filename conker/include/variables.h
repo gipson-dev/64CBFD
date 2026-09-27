@@ -442,7 +442,7 @@ extern void (*D_80089EF8[])(void);
 extern void (*D_80089F2C[])(void);
 extern void (*D_80089F60[])(s32, s32, u8);
 extern void (*D_80089F9C[])(void *, void *);
-extern void (*D_80089FE4[])(void *, void *);
+extern void (*D_80089FE4[])(void *);
 extern s32 D_8008A074[2];
 extern struct32 D_8008A0B4[];
 extern s32  D_8008A084[];
