@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game swimming-attachment lifetime callback byte-exact
+
+- Refined the recovered `func_15033328` C so its zero result remains live
+  across the swimming-attachment lifetime checks, matching retail's register
+  allocation and early-return structure without changing the behavior.
+- All 32 words / 128 bytes now match directly from C, including both
+  branch-likely reset stores, floating comparison, timing subtraction, and
+  success return. No guarded retail words are needed.
+- The complete span has SHA-256
+  `41e163c146a74b2190cd422401cae4e101ac44a0b906369e1e75486b2d3215e8`.
+  Fresh totals are **2,750 / 5,469 (50.28%)** overall and
+  **2,179 / 4,791 (45.48%)** in Game.
+
 ### Game null-gated event-byte copy byte-exact
 
 - Recovered `func_15023870` as the `(0xB, 2)` event handler that resolves an

@@ -164,20 +164,23 @@ s32 func_1503327C() {
 }
 
 s32 func_15033328(u8 *arg0, u8 *arg1) {
+    s32 result = 0;
+
     /* Retail swimming-attachment lifetime callback (15033328..150333A7). */
     if (D_800C35EA == 1) {
-        return 0;
+        return result;
     }
     if (arg1[0xAD] == 0 && *(f32 *)(arg1 + 0x118) < *(f32 *)(arg1 + 0x180)) {
         if (D_800BE9E4 < *(s32 *)(arg0 + 0x38)) {
             *(s32 *)(arg0 + 0x38) -= D_800BE9E4;
+            return result;
         } else {
             return 1;
         }
     } else {
         *(s32 *)(arg0 + 0x38) = 30;
     }
-    return 0;
+    return result;
 }
 
 s32 func_150333A8() {
