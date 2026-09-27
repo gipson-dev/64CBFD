@@ -803,7 +803,10 @@ symmetric guarded scheduling; see
 The false placeholder at `func_151A09B4` is now a byte-exact 23-word
 conditional child teardown directly from C with no guarded words; see
 [Working Note 277](WORKING_NOTES/277-game-conditional-child-teardown-match-20260927.md).
-Continue with 22-word `func_151B4E4C`, the next unparked Game C row in the
+The false placeholder at `func_151B4E4C` is now a byte-exact 22-word
+position/effect wrapper directly from C with no guarded words; see
+[Working Note 278](WORKING_NOTES/278-game-position-effect-wrapper-match-20260927.md).
+Continue with 23-word `func_151EFF94`, the next unparked Game C row in the
 fresh ordered queue at 21 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

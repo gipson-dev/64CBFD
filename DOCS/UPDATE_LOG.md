@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game position/effect wrapper byte-exact
+
+- Replaced the false zero-return placeholder at `func_151B4E4C` with the
+  established three-float position-vector wrapper shape.
+- All 22 words / 88 bytes match directly from C. The wrapper forwards three
+  additional floats and actor bytes `0x58` and `0x0C` to `func_151B4EA4`;
+  no guarded retail words are needed.
+- The complete span has SHA-256
+  `9636d4a1dfde42444c22687e8308ebb8e17535d14b38bb150bd9a1628d5d31f3`.
+  Fresh totals are **2,782 / 5,469 (50.87%)** overall and
+  **2,211 / 4,791 (46.15%)** in Game.
+
 ### Game conditional child teardown byte-exact
 
 - Replaced the false zero-return placeholder at `func_151A09B4` with its

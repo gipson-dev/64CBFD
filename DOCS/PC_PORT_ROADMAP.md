@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,040 (90.55%) | 2,781 / 5,469 (50.85%) | 1 | 2,687 |
+| Total | 5,469 / 6,040 (90.55%) | 2,782 / 5,469 (50.87%) | 1 | 2,686 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,791 / 5,320 (90.06%) | 2,210 / 4,791 (46.13%) | 0 | 2,581 |
+| Game | 4,791 / 5,320 (90.06%) | 2,211 / 4,791 (46.15%) | 0 | 2,580 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -869,7 +869,9 @@ scheduling; see
 The 23-word `func_151A09B4` conditional child teardown is exact directly from
 C with no guarded words; see
 [Working Note 277](WORKING_NOTES/277-game-conditional-child-teardown-match-20260927.md).
-Continue with 22-word `func_151B4E4C` while the documented lower-difference
+The 22-word `func_151B4E4C` position/effect wrapper is exact directly from C;
+see [Working Note 278](WORKING_NOTES/278-game-position-effect-wrapper-match-20260927.md).
+Continue with 23-word `func_151EFF94` while the documented lower-difference
 rows remain parked.
 
 Current host-port progression and acceptance boundaries:
