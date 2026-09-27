@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,470 / 6,039 (90.58%) | 2,728 / 5,470 (49.87%) | 1 | 2,741 |
+| Total | 5,470 / 6,039 (90.58%) | 2,729 / 5,470 (49.89%) | 1 | 2,740 |
 | Init | 497 / 538 (92.38%) | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 4,792 / 5,319 (90.09%) | 2,157 / 4,792 (45.01%) | 0 | 2,635 |
+| Game | 4,792 / 5,319 (90.09%) | 2,158 / 4,792 (45.03%) | 0 | 2,634 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -701,7 +701,10 @@ Keep `func_15155FD4` parked. The 22-word `func_1507A47C` packed actor-mask
 clear is now exact through a named mask local and eighteen guarded
 relocation-aware scheduling words; see
 [Working Note 224](WORKING_NOTES/224-game-packed-actor-mask-clear-match-20260927.md).
-Continue with 24-word `func_150C5310`.
+The 24-word `func_150C5310` mode-flag toggle is now exact directly from typed
+C, including its three tracked trailing padding words; see
+[Working Note 225](WORKING_NOTES/225-game-mode-flag-toggle-match-20260927.md).
+Continue with 24-word `func_150E2FC0`.
 
 Current host-port progression and acceptance boundaries:
 

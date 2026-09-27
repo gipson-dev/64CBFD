@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,728 / 5,470 (49.87%) | 1 | 2,741 |
+| Total | 2,729 / 5,470 (49.89%) | 1 | 2,740 |
 | Init | 390 / 497 (78.47%) | 1 | 106 |
-| Game | 2,157 / 4,792 (45.01%) | 0 | 2,635 |
+| Game | 2,158 / 4,792 (45.03%) | 0 | 2,634 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -531,7 +531,9 @@ end-to-end gameplay acceptance.
    byte-exact through three guarded state-register words. Keep
    `func_15155FD4` parked. The 22-word `func_1507A47C` packed actor-mask
    clear is now byte-exact through a named mask local and eighteen guarded
-   relocation-aware scheduling words. Continue with 24-word `func_150C5310`.
+   relocation-aware scheduling words. The 24-word `func_150C5310` mode-flag
+   toggle is now byte-exact directly from typed C, including three tracked
+   padding words. Continue with 24-word `func_150E2FC0`.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game mode-flag toggle byte-exact
+
+- Replaced the zero-return `func_150C5310` placeholder with its call to
+  `func_150C5280`, conditional `0x20000` bit update at offset `0x60`, and
+  constant true return.
+- Typed C reproduces the complete routine directly, including its frame,
+  delay slot, branches, shared return, and three tracked padding words. No
+  guarded retail-word replacement is used.
+- The complete 24-word span shares SHA-256
+  `0179e738632a005405b2a6cbec57c8da5a8f6b66f9707772bf19f68c884fcdf7`.
+  Fresh totals are **2,729 / 5,470 (49.89%)** overall and
+  **2,158 / 4,792 (45.03%)** in Game.
+
 ### Game packed actor-mask clear byte-exact
 
 - Recovered `func_1507A47C` as a packed four-byte mask that clears the
