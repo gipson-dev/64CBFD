@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game indexed flag predicate byte-exact
+
+- Replaced the zero placeholder at `func_1503B95C` with its indexed flag
+  predicate. It reads the flag byte at `D_800CC5CB[index * 0x32C]`, clears
+  byte `0x4E` of the supplied record and rejects when bit `0x02` is set,
+  rejects without mutation when bit `0x01` is set, and otherwise accepts.
+- All 24 words / 96 bytes match retail directly from C with no guarded words.
+  Keeping the zero-extended flag in a word-sized temporary reproduces retail's
+  `v0` lifetime and complete branch/delay-slot shape.
+- The complete span has SHA-256
+  `65a1b3ed7d8a1c961d3a7383c20d10959fbe356696bf0083283342ae4c56ca85`.
+  Fresh totals are **2,804 / 5,469 (51.27%)** overall and
+  **2,232 / 4,791 (46.59%)** in Game.
+
 ### Game three-slot resource cleanup byte-exact
 
 - Replaced the zero placeholder at `func_150233E4` with the recovered cleanup
