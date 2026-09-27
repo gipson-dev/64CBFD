@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, packed path-record writer matched).** The current linked
-checkpoint is `2838 / 5469 (51.89%)` exact C functions, with one address-drift
-blocker and 2,630 genuinely different C functions. Init is
+**Active (2026-09-27, state-flag selector matched).** The current linked
+checkpoint is `2839 / 5469 (51.91%)` exact C functions, with one address-drift
+blocker and 2,629 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2266 / 4791 (47.30%)` exact, with 2,525 genuinely different C rows. The tree
+`2267 / 4791 (47.32%)` exact, with 2,524 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -986,8 +986,11 @@ directly from typed C; see
 The 25-word Game `func_1507A100` packed path-record writer is exact from typed
 C plus six guarded register words; see
 [Working Note 334](WORKING_NOTES/334-game-packed-path-record-writer-match-20260927.md).
-Continue with 27-word Game `func_150829D8`, the next unparked C row in the
-fresh queue at 24 real differences.
+The 27-word Game `func_150829D8` state-flag selector is exact directly from C
+using its retained original 69-entry jump table; see
+[Working Note 335](WORKING_NOTES/335-game-state-flag-selector-match-20260927.md).
+Continue with the next ordinary unparked Game row in the fresh queue at 24
+real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game state-flag selector byte-exact
+
+- Restored `func_150829D8` as an object state-flag selector. It clears the
+  retail mask, sets bit `0x4`, and conditionally sets bit `0x2` according to
+  the current game state and linked object's byte gate.
+- The direct C switch reproduces all 27 retail words and uses the retained
+  original 69-entry table at `jtbl_8009CC40_game`; no guarded words are needed.
+- The linked span has SHA-256
+  `77cdd4a69fb33b7fdbb9dff3a70e358f52fb924ad779f1e9d75c84743e46813d`.
+  Fresh totals are **2,839 / 5,469 (51.91%)** overall and
+  **2,267 / 4,791 (47.32%)** in Game.
+
 ### Game packed path-record writer byte-exact
 
 - Restored `func_1507A100` as an indexed path-record halfword writer. It packs

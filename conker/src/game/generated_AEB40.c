@@ -56,8 +56,33 @@ s32 func_1508295C(s32 arg0, u8 *arg1, s32 arg2) {
     }
 }
 
-s32 func_150829D8(u8 *arg0) {
-    return 0;
+void func_150829D8(u8 *arg0) {
+    u8 *temp_v0;
+
+    *(u32 *)(arg0 + 0xF8) &= 0xF7FFFFFD;
+    *(u32 *)(arg0 + 0xF8) |= 4;
+    temp_v0 = *(u8 **)(arg0 + 0x31C);
+    if ((temp_v0 != NULL) && (temp_v0[0x56] == 0)) {
+        switch (D_800BE9F0) {
+            case 0:
+            case 10:
+            case 14:
+            case 18:
+            case 19:
+            case 25:
+            case 27:
+            case 44:
+            case 60:
+            case 61:
+            case 66:
+            case 67:
+            case 68:
+                break;
+            default:
+                *(u32 *)(arg0 + 0xF8) |= 2;
+                break;
+        }
+    }
 }
 
 s32 func_15082A44() {
