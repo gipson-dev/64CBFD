@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,882 / 5,466 (52.73%) | 1 | 2,583 |
+| Total | 5,466 / 6,041 (90.48%) | 2,883 / 5,466 (52.74%) | 1 | 2,582 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,308 / 4,790 (48.18%) | 0 | 2,482 |
+| Game | 4,790 / 5,321 (90.02%) | 2,309 / 4,790 (48.20%) | 0 | 2,481 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1125,6 +1125,12 @@ recovering its two-state dispatch, tick accumulation, and indexed-duration
 cutoff. It emits directly from C without guards. This remains guest-side
 donor/reference progress; see
 [Working Note 384](WORKING_NOTES/384-game-byte-timer-state-match-20260928.md).
+The 26-word Game `func_1512D604` record ring-slot allocator is byte-exact after
+recovering its indexed `0xB0`-byte record lookup, old-cursor return, cursor
+increment, and wrap at 20 slots. Twenty relocation-aware guards preserve one
+closed IDO register-allocation cycle. This remains guest-side donor/reference
+progress; see
+[Working Note 385](WORKING_NOTES/385-game-record-ring-slot-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

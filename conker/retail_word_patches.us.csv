@@ -1681,3 +1681,23 @@ generated_124920,func_150F9720,0x040,0x8FA20020,0x8FA2001C,-,-,Reload the select
 generated_124920,func_150F9720,0x044,0x8FA4001C,0x8FA40018,-,-,Reload the event-buffer pointer from retail's slot,,,false
 generated_124920,func_150F9720,0x054,0xA3B9002C,0xA3B90024,-,-,Write the second event byte in retail's local slot,,,false
 generated_124920,func_150F9720,0x05C,0x27BD0030,0x27BD0028,-,-,Release retail's 40-byte event-buffer frame,,,false
+generated_15AA10,func_1512D604,0x000,0x3C070000,0x3C060000,R_MIPS_HI16:D_800DC2B0,R_MIPS_HI16:D_800DC2B0,Retain the global-pointer address in retail's a2 lifetime,,,false
+generated_15AA10,func_1512D604,0x004,0x24E70000,0x24C60000,R_MIPS_LO16:D_800DC2B0,R_MIPS_LO16:D_800DC2B0,Complete the global-pointer address in retail's a2 lifetime,,,false
+generated_15AA10,func_1512D604,0x008,0x240600B0,0x240700B0,-,-,Retain the record stride in retail's a3 lifetime,,,false
+generated_15AA10,func_1512D604,0x00C,0x908E023D,0x908F023D,-,-,Load the first record index through retail's t7 lifetime,,,false
+generated_15AA10,func_1512D604,0x010,0x8CF80000,0x8CCE0000,-,-,Load the first record base through retail's t6 lifetime,,,false
+generated_15AA10,func_1512D604,0x018,0x01C60019,0x01E70019,-,-,Scale the first record index through retail's a3 stride,,,false
+generated_15AA10,func_1512D604,0x01C,0x00007812,0x0000C012,-,-,Retain the first record offset in retail's t8 lifetime,,,false
+generated_15AA10,func_1512D604,0x020,0x01F81021,0x01D81021,-,-,Form the first record pointer from retail's base and offset,,,false
+generated_15AA10,func_1512D604,0x024,0x8C4300A8,0x8C4500A8,-,-,Retain the old slot index in retail's a1 lifetime,,,false
+generated_15AA10,func_1512D604,0x028,0x24790001,0x24A80001,-,-,Increment the slot index through retail's t0 lifetime,,,false
+generated_15AA10,func_1512D604,0x02C,0xAC5900A8,0xAC4800A8,-,-,Store the incremented slot index through retail's t0 lifetime,,,false
+generated_15AA10,func_1512D604,0x030,0x9089023D,0x908A023D,-,-,Reload the record index through retail's t2 lifetime,,,false
+generated_15AA10,func_1512D604,0x034,0x8CEB0000,0x8CC90000,-,-,Reload the record base through retail's t1 lifetime,,,false
+generated_15AA10,func_1512D604,0x038,0x000340C0,0x0005C8C0,-,-,Scale the old slot index through retail's t9 lifetime,,,false
+generated_15AA10,func_1512D604,0x03C,0x01260019,0x01470019,-,-,Scale the second record index through retail's a3 stride,,,false
+generated_15AA10,func_1512D604,0x040,0x01022821,0x00591821,-,-,Form the returned slot pointer in retail's v1 lifetime,,,false
+generated_15AA10,func_1512D604,0x044,0x00005012,0x00005812,-,-,Retain the second record offset in retail's t3 lifetime,,,false
+generated_15AA10,func_1512D604,0x048,0x014B1021,0x012B1021,-,-,Form the second record pointer from retail's base and offset,,,false
+generated_15AA10,func_1512D604,0x054,0x00A01025,0x00601025,-,-,Return the slot pointer through retail's v1 lifetime on no wrap,,,false
+generated_15AA10,func_1512D604,0x05C,0x00A01025,0x00601025,-,-,Return the slot pointer through retail's v1 lifetime after wrap,,,false

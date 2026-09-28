@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game record ring-slot allocator byte-matched
+
+- Recovered `func_1512D604` as an indexed record cursor that returns the old
+  eight-byte slot, increments the cursor at offset `0xA8`, and wraps it to zero
+  after slot 19.
+- The semantic C reproduces the complete 26-word / 104-byte routine. Twenty
+  relocation-aware expected-word guards preserve one closed IDO register
+  allocation cycle while retaining both `D_800DC2B0` relocations.
+- Fresh totals are **2,883 / 5,466 (52.74%)** overall and
+  **2,309 / 4,790 (48.20%)** in Game. See
+  [Working Note 385](WORKING_NOTES/385-game-record-ring-slot-match-20260928.md).
+
 ### Game byte-timer state byte-matched
 
 - Recovered `func_1512D2F8` as a two-state byte timer driven by
