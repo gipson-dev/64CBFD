@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,899 / 5,466 (53.04%) | 1 | 2,566 |
+| Total | 2,900 / 5,466 (53.06%) | 1 | 2,565 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,325 / 4,790 (48.54%) | 0 | 2,465 |
+| Game | 2,326 / 4,790 (48.56%) | 0 | 2,464 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,899, while
+denominator driven: the exact count is now 2,900, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -904,9 +904,13 @@ end-to-end gameplay acceptance.
    recovering its indexed count pointer and dynamic post-call bound reload.
    It also emits directly from semantic C with no guards; see
    [Working Note 397](WORKING_NOTES/397-game-per-entry-cleanup-loop-match-20260928.md).
+   The 33-word linked-list match dispatcher `func_150303E4` is now byte-exact
+   after recovering its explicit zero-key return and pre-call next-pointer
+   lifetime. It emits directly from semantic C with no guards; see
+   [Working Note 398](WORKING_NOTES/398-game-linked-list-match-dispatcher-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 33-word Game `func_150303E4`, at 26 real
+   with ordinary unparked 27-word Game `func_1503A60C`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

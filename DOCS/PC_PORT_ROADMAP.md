@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,899 / 5,466 (53.04%) | 1 | 2,566 |
+| Total | 5,466 / 6,041 (90.48%) | 2,900 / 5,466 (53.06%) | 1 | 2,565 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,325 / 4,790 (48.54%) | 0 | 2,465 |
+| Game | 4,790 / 5,321 (90.02%) | 2,326 / 4,790 (48.56%) | 0 | 2,464 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1196,6 +1196,11 @@ recovering its indexed count pointer, zero-based iteration, and dynamic count
 reload after every cleanup call. It emits directly from semantic C without
 guards. This remains guest-side donor/reference progress; see
 [Working Note 397](WORKING_NOTES/397-game-per-entry-cleanup-loop-match-20260928.md).
+The 33-word Game linked-list match dispatcher `func_150303E4` is byte-exact
+after recovering its explicit zero-key return, result lifetime, and pre-call
+next-pointer capture. It emits directly from semantic C without guards. This
+remains guest-side donor/reference progress; see
+[Working Note 398](WORKING_NOTES/398-game-linked-list-match-dispatcher-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

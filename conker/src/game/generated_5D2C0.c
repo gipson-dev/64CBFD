@@ -32,21 +32,27 @@ s32 func_15030310() {
 }
 
 s32 func_150303E4(u8 *arg0) {
-    u8 *temp_v0;
-    s32 result = 0;
+    u8 *current;
+    u8 *next;
+    s32 result;
 
-    if (arg0[0x3B] != 0) {
-        temp_v0 = D_800C3EE0;
-        if (temp_v0 != 0) {
-            do {
-                if (arg0[0x3B] == temp_v0[0]) {
-                    func_15030158(temp_v0, 0);
-                    result = 1;
-                }
-                temp_v0 = *(u8 **) (temp_v0 + 0x54);
-            } while (temp_v0 != 0);
-        }
+    if (arg0[0x3B] == 0) {
+        return 0;
     }
+
+    current = D_800C3EE0;
+    result = 0;
+    if (current != 0) {
+        do {
+            next = *(u8 **) (current + 0x54);
+            if (arg0[0x3B] == current[0]) {
+                func_15030158(current, 0);
+                result = 1;
+            }
+            current = next;
+        } while (current != 0);
+    }
+
     return result;
 }
 

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game linked-list match dispatcher byte-matched
+
+- Refined `func_150303E4`'s existing semantic reconstruction to recover its
+  explicit zero-key return and retail linked-list pointer lifetimes.
+- Each node's `next` pointer is captured before a matching node is passed to
+  `func_15030158`, preserving traversal if that handler mutates the current
+  node. The revised C emits all 33 words directly with no guards.
+- Direct comparison matches all 132 linked bytes with SHA-256
+  `5c1b5952bd66823179dfd610d3d9b5ba523126ca392c627190586bd569c251f3`.
+  Fresh totals are **2,900 / 5,466 (53.06%)** overall and
+  **2,326 / 4,790 (48.56%)** in Game. See
+  [Working Note 398](WORKING_NOTES/398-game-linked-list-match-dispatcher-match-20260928.md).
+
 ### Game per-entry cleanup loop byte-matched
 
 - Replaced `func_15022754`'s zero-return placeholder with its indexed,
