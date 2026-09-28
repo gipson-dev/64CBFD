@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game per-entry cleanup loop byte-matched
+
+- Replaced `func_15022754`'s zero-return placeholder with its indexed,
+  zero-based cleanup loop over `D_800C363A[index]` entries.
+- The count is reloaded after every `func_150226BC(i, index)` call, preserving
+  retail behavior if cleanup changes the bound. IDO emits the complete routine
+  directly, including its branch-likely loop; no guards are required.
+- Direct comparison matches all 104 linked bytes with SHA-256
+  `37df4ff61f1705188a1a6f62ca49098bd2599db4c21f6962f81e7929ff52287b`.
+  Fresh totals are **2,899 / 5,466 (53.04%)** overall and
+  **2,325 / 4,790 (48.54%)** in Game. See
+  [Working Note 397](WORKING_NOTES/397-game-per-entry-cleanup-loop-match-20260928.md).
+
 ### Game indexed 64-bit flag setter byte-matched
 
 - Replaced `func_1501D258`'s zero-return placeholder with its global enable

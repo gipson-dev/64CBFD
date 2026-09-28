@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,898 / 5,466 (53.02%) | 1 | 2,567 |
+| Total | 5,466 / 6,041 (90.48%) | 2,899 / 5,466 (53.04%) | 1 | 2,566 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,324 / 4,790 (48.52%) | 0 | 2,466 |
+| Game | 4,790 / 5,321 (90.02%) | 2,325 / 4,790 (48.54%) | 0 | 2,465 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1191,6 +1191,11 @@ after recovering its global enable gate and `D_800C3A60[index]` bit update.
 The routine emits directly from semantic C without guards. This remains
 guest-side donor/reference progress; see
 [Working Note 396](WORKING_NOTES/396-game-indexed-64-bit-flag-setter-match-20260928.md).
+The 26-word Game per-entry cleanup loop `func_15022754` is byte-exact after
+recovering its indexed count pointer, zero-based iteration, and dynamic count
+reload after every cleanup call. It emits directly from semantic C without
+guards. This remains guest-side donor/reference progress; see
+[Working Note 397](WORKING_NOTES/397-game-per-entry-cleanup-loop-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

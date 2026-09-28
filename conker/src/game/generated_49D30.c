@@ -211,8 +211,16 @@ s32 func_150226BC() {
     return 0;
 }
 
-s32 func_15022754() {
-    return 0;
+void func_15022754(s32 index) {
+    s32 i = 0;
+    u8 *count = &D_800C363A[index];
+
+    if (*count > 0) {
+        do {
+            func_150226BC(i, index);
+            i++;
+        } while (i < *count);
+    }
 }
 
 s32 func_150227BC() {

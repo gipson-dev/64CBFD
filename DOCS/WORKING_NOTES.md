@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game indexed 64-bit flag setter matched).** The current
-linked checkpoint is `2898 / 5466 (53.02%)` exact C functions, with one
-address-drift blocker and 2,567 genuinely different C functions. Init is
+**Active (2026-09-28, Game per-entry cleanup loop matched).** The current
+linked checkpoint is `2899 / 5466 (53.04%)` exact C functions, with one
+address-drift blocker and 2,566 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2324 / 4790 (48.52%)` exact, with 2,466 genuinely different C rows. The tree
+`2325 / 4790 (48.54%)` exact, with 2,465 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1225,9 +1225,13 @@ The 27-word indexed 64-bit flag setter `func_1501D258` now matches after
 recovering its global enable gate and indexed bitset update. It emits directly
 from typed semantic C without guards; see
 [Working Note 396](WORKING_NOTES/396-game-indexed-64-bit-flag-setter-match-20260928.md).
+The 26-word per-entry cleanup loop `func_15022754` now matches after recovering
+its indexed count pointer, zero-based cleanup calls, and dynamic post-call
+bound reload. It emits directly from semantic C without guards; see
+[Working Note 397](WORKING_NOTES/397-game-per-entry-cleanup-loop-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 26-word Game
-`func_15022754`, at 26 real differences. Keep the documented lower-difference
+experiments were removed. Resume with ordinary unparked 33-word Game
+`func_150303E4`, at 26 real differences. Keep the documented lower-difference
 compiler cases parked, and keep `func_151F3D78` parked behind the pre-existing
 `game_21FC90` audio-object layout drift. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked
