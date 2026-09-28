@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,893 / 5,466 (52.93%) | 1 | 2,572 |
+| Total | 5,466 / 6,041 (90.48%) | 2,894 / 5,466 (52.95%) | 1 | 2,571 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,319 / 4,790 (48.41%) | 0 | 2,471 |
+| Game | 4,790 / 5,321 (90.02%) | 2,320 / 4,790 (48.43%) | 0 | 2,470 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1163,6 +1163,12 @@ byte-exact from the same six-entry scan and complementary state writes. Two
 scoped object-ID register-lifetime guards per function are required. This
 remains guest-side donor/reference progress; see
 [Working Note 391](WORKING_NOTES/391-game-second-object-id-state-pair-match-20260928.md).
+The 26-word Game actor-target transform `func_151A4E34` is byte-exact after
+recovering its target and type gates, indexed target-record address, and
+transform-helper call. One scoped guard preserves retail's commutative
+address-add operand order. This remains guest-side donor/reference progress;
+see
+[Working Note 392](WORKING_NOTES/392-game-actor-target-transform-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

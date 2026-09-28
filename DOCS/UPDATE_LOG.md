@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game actor-target transform byte-matched
+
+- Recovered `func_151A4E34` as a guarded actor-target transform that rejects
+  null targets and actor type nibble `0xF`, indexes a 64-byte target row, and
+  calls `func_15143134` with the caller's transform records.
+- The 26-word semantic routine emits 25 words directly. One expected-word
+  guard preserves only retail's commutative target-plus-index operand order.
+- Direct comparison matches all 104 linked bytes with SHA-256
+  `b509f6c7a3fe22a678e98f30ba1602b5bc741eab0666884c09469ef9fdbcab9a`.
+  Fresh totals are **2,894 / 5,466 (52.95%)** overall and
+  **2,320 / 4,790 (48.43%)** in Game. See
+  [Working Note 392](WORKING_NOTES/392-game-actor-target-transform-match-20260928.md).
+
 ### Second Game object-ID state pair byte-matched
 
 - Recovered `func_1519BEB8` and adjacent `func_1519BF20` as the second

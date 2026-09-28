@@ -1,5 +1,6 @@
 #include <ultra64.h>
 void func_15169260(void *, s32, s32, u8);
+void func_15143134(void *, void *, s32);
 extern u8 D_800A8D70[];
 typedef struct { s32 val; } OneWord1D0840;
 extern void (*D_8008F900[])();
@@ -60,8 +61,18 @@ s32 func_151A4D88() {
     return 0;
 }
 
-s32 func_151A4E34() {
-    return 0;
+s32 func_151A4E34(u8 *arg0, void *arg1) {
+    u8 *actor = *(u8 **)arg0;
+    s32 target = *(s32 *)(actor + 0x1D4);
+
+    if (target == 0) {
+        return 0;
+    }
+    if ((actor[0x74] & 0xF) == 0xF) {
+        return 0;
+    }
+    func_15143134(arg0 + 8, arg1, target + (arg0[5] << 6));
+    return 1;
 }
 
 void func_151A4E9C(u8 *arg0) {

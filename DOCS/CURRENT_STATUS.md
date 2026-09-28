@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,893 / 5,466 (52.93%) | 1 | 2,572 |
+| Total | 2,894 / 5,466 (52.95%) | 1 | 2,571 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,319 / 4,790 (48.41%) | 0 | 2,471 |
+| Game | 2,320 / 4,790 (48.43%) | 0 | 2,470 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -876,9 +876,14 @@ end-to-end gameplay acceptance.
    register-lifetime guards per routine close the only compiler differences;
    see
    [Working Note 391](WORKING_NOTES/391-game-second-object-id-state-pair-match-20260928.md).
+   The following 26-word Game actor-target transform `func_151A4E34` is now
+   byte-exact after recovering its null-target gate, actor type-nibble gate,
+   64-byte target indexing, and transform-helper call. One scoped guard
+   preserves only retail's commutative address-add operand order; see
+   [Working Note 392](WORKING_NOTES/392-game-actor-target-transform-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 26-word Game `func_151A4E34`, at 25 real
+   with ordinary unparked 26-word Game `func_151F3D78`, at 25 real
    differences. The tied Init cache rows are SDK routines, while
    `func_10012588` remains blocked on address drift.
    Keep the previously documented smaller special cases parked.
