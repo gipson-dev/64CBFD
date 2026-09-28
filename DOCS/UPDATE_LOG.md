@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game four-handler event broadcast byte-exact
+
+- Recovered `func_151C9ED4` as an event-`0x21` broadcast of one stack record
+  through four handlers, followed by a clear of `D_8008CD00`.
+- The recovered C emits the complete call schedule, delay slots, saved-`s0`
+  lifetime, and relocations. Four scoped rows preserve retail's 40-byte frame
+  and local-record offset instead of IDO's 48-byte allocation.
+- Linked and pristine 100-byte spans share SHA-256
+  `0a54d1e0755c866e9e47eb8ad4f5481f02d22e423d506a4c40fcb667e2473918`.
+  Fresh totals are **2,856 / 5,468 (52.23%)** overall and
+  **2,284 / 4,790 (47.68%)** in Game.
+
 ### Game paired-record dispatch byte-exact
 
 - Recovered `func_151B3040` as two calls over adjacent embedded records at

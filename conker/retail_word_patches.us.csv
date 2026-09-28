@@ -1482,3 +1482,7 @@ game_16EE20,func_1514563C,0x0F0,0x460A4182,0x46085182,-,-,Multiply the Z amount 
 game_16EE20,func_1514563C,0x0F4,0x46043200,0x46043280,-,-,Add the scaled Z component through retail FP registers,,,false
 game_16EE20,func_1514563C,0x0F8,0xE4E80008,0xE4EA0008,-,-,Store the Z result from retail FP register f10,,,false
 game_16EE20,func_1514563C,0x100,0x27BD0028,0x27BD0020,-,-,Restore retail's 32-byte leaf frame,,,false
+generated_1F4650,func_151C9ED4,0x000,0x27BDFFD0,0x27BDFFD8,-,-,Use retail's 40-byte frame for the shared local address,,,false
+generated_1F4650,func_151C9ED4,0x010,0x27B0002C,0x27B00024,-,-,Address the local pointer word at retail stack offset 0x24,,,false
+generated_1F4650,func_151C9ED4,0x014,0xAFA6002C,0xAFA60024,-,-,Store the incoming pointer at retail stack offset 0x24,,,false
+generated_1F4650,func_151C9ED4,0x058,0x27BD0030,0x27BD0028,-,-,Restore retail's 40-byte frame,,,false

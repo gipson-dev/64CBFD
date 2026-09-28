@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1F4650.s. */
 
+extern u8 D_8008CD00;
+
 s32 func_151C71A0() {
     return 0;
 }
@@ -127,8 +129,15 @@ s32 func_151C9DE8() {
     return 0;
 }
 
-s32 func_151C9ED4() {
-    return 0;
+void func_151C9ED4(void *arg0) {
+    s32 value = (s32) arg0;
+    s32 value_ptr = (s32) &value;
+
+    func_15160274(value_ptr, 0x21);
+    func_1515572C(value_ptr, 0x21);
+    func_151A561C(value_ptr, 0x21);
+    func_151494E0(value_ptr, 0x21);
+    D_8008CD00 = 0;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1F4650/func_151C9F38.s")

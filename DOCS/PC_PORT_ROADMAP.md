@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 2,855 / 5,468 (52.21%) | 1 | 2,612 |
+| Total | 5,468 / 6,041 (90.51%) | 2,856 / 5,468 (52.23%) | 1 | 2,611 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,790 / 5,321 (90.02%) | 2,283 / 4,790 (47.66%) | 0 | 2,507 |
+| Game | 4,790 / 5,321 (90.02%) | 2,284 / 4,790 (47.68%) | 0 | 2,506 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1014,9 +1014,11 @@ assembly ownership after its equivalent C compiled one word beyond the retail
 slot. The 65-word Game `func_1514563C` line-projection helper is exact after
 restoring retail's dot-product operand order and guarding 18 frame and output-
 register choices. The 28-word Game `func_151B3040` paired embedded-record
-dispatch is exact directly from C with no guard rows. Continue by classifying
-25-word Game `func_151C9ED4`; see
-[Working Note 352](WORKING_NOTES/352-game-paired-record-dispatch-match-20260927.md).
+dispatch is exact directly from C with no guard rows. The 25-word Game
+`func_151C9ED4` four-handler event broadcast is exact from recovered C plus
+four guarded frame/local-slot words. Continue by classifying 26-word Game
+`func_151D13E0`; see
+[Working Note 353](WORKING_NOTES/353-game-four-handler-event-broadcast-match-20260927.md).
 
 Current host-port progression and acceptance boundaries:
 
