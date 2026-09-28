@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game packed-counter state update matched).** The current
-linked checkpoint is `2886 / 5466 (52.80%)` exact C functions, with one
-address-drift blocker and 2,579 genuinely different C functions. Init is
+**Active (2026-09-28, Game allocator-copy and setup pair matched).** The current
+linked checkpoint is `2889 / 5466 (52.85%)` exact C functions, with one
+address-drift blocker and 2,576 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2312 / 4790 (48.27%)` exact, with 2,478 genuinely different C rows. The tree
+`2315 / 4790 (48.33%)` exact, with 2,475 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1185,9 +1185,16 @@ recovering its typed volatile state, two-step packed-word write, timer refresh,
 and available-count subtraction. Twenty scoped guards preserve one closed IDO
 register-allocation and scheduling cycle; see
 [Working Note 388](WORKING_NOTES/388-game-packed-counter-state-match-20260928.md).
+The 26-word Game allocator-copy wrapper `func_15169900` now matches after
+recovering its six-argument allocation, null-gated 60-byte payload copy, and
+pointer return. The adjacent setup twins `func_1518E66C` and `func_1518E6D4`
+also match after recovering their seven-argument setup calls, descriptor
+selection, and final record stores. All three emit directly from C without
+guards; see
+[Working Note 389](WORKING_NOTES/389-game-allocator-copy-and-setup-pair-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary unparked 26-word Game
-`func_15169900`, at 25 real differences. Keep the tied SDK cache routines in
+`func_151993E4`, at 25 real differences. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked
 on address drift. Keep the much larger HUD renderers `func_151E89A0` and
 `func_151EA15C` parked as separate focused work.

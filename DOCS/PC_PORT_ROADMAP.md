@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,886 / 5,466 (52.80%) | 1 | 2,579 |
+| Total | 5,466 / 6,041 (90.48%) | 2,889 / 5,466 (52.85%) | 1 | 2,576 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,312 / 4,790 (48.27%) | 0 | 2,478 |
+| Game | 4,790 / 5,321 (90.02%) | 2,315 / 4,790 (48.33%) | 0 | 2,475 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1147,6 +1147,12 @@ timer refresh, and available-count subtraction path. Twenty scoped guards
 normalize one closed IDO register/scheduling cycle. This remains guest-side
 donor/reference progress; see
 [Working Note 388](WORKING_NOTES/388-game-packed-counter-state-match-20260928.md).
+The 26-word Game allocator-copy wrapper `func_15169900` and setup twins
+`func_1518E66C` and `func_1518E6D4` are byte-exact after recovering their
+allocator/setup call ABIs, typed fields, payload copy, descriptor selection,
+and state stores. All three emit directly from semantic C without guards or
+compiler overrides. This remains guest-side donor/reference progress; see
+[Working Note 389](WORKING_NOTES/389-game-allocator-copy-and-setup-pair-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game allocator-copy and setup pair byte-matched
+
+- Recovered `func_15169900` as a `0x5E` record allocation followed by a
+  null-gated 60-byte payload copy into the record at offset `0x10`.
+- Recovered adjacent setup twins `func_1518E66C` and `func_1518E6D4` as typed
+  seven-argument `func_1518D1C0` calls using selectors `3` and `4` and static
+  descriptors `D_800A7460` and `D_800A749C`, followed by the shared record
+  state stores.
+- All three 26-word / 104-byte routines emit directly from semantic C with
+  their retail frames, schedules, delay slots, and relocations. No expected-
+  word guards or compiler overrides are required.
+- Fresh totals are **2,889 / 5,466 (52.85%)** overall and
+  **2,315 / 4,790 (48.33%)** in Game. See
+  [Working Note 389](WORKING_NOTES/389-game-allocator-copy-and-setup-pair-match-20260928.md).
+
 ### Game packed-counter state update byte-matched
 
 - Recovered `func_15168B44` as a typed volatile packed-counter update. The

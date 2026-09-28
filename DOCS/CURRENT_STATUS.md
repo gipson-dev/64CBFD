@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,886 / 5,466 (52.80%) | 1 | 2,579 |
+| Total | 2,889 / 5,466 (52.85%) | 1 | 2,576 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,312 / 4,790 (48.27%) | 0 | 2,478 |
+| Game | 2,315 / 4,790 (48.33%) | 0 | 2,475 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,886, while
+denominator driven: the exact count is now 2,889, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -860,9 +860,15 @@ end-to-end gameplay acceptance.
    twenty scoped guards close one IDO register-allocation and scheduling
    cycle without changing control flow or relocations. See
    [Working Note 388](WORKING_NOTES/388-game-packed-counter-state-match-20260928.md).
+   The 26-word allocator-copy wrapper `func_15169900` and adjacent 26-word
+   setup twins `func_1518E66C` and `func_1518E6D4` are now byte-exact from
+   semantic C. Their recovered full-width ABI, typed record layout, allocator
+   and setup calls, payload copy, and final state stores emit directly with no
+   guards or compiler overrides; see
+   [Working Note 389](WORKING_NOTES/389-game-allocator-copy-and-setup-pair-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 26-word Game `func_15169900`, at 25 real
+   with ordinary unparked 26-word Game `func_151993E4`, at 25 real
    differences. The tied Init cache rows are SDK routines, while
    `func_10012588` remains blocked on address drift.
    Keep the previously documented smaller special cases parked.

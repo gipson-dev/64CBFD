@@ -33,6 +33,20 @@ typedef struct {
     s16 limit;
     s16 scale;
 } Generated1BA1D0Record154;
+typedef struct {
+    u8 pad0;
+    u8 selector;
+    u8 pad2[0xA];
+    u8 owner;
+    u8 padD[0xB];
+    void *object;
+    u8 pad1C[2];
+    s16 value;
+    u8 pad20;
+    s8 state;
+} Generated1BA1D0Setup;
+extern u8 D_800A7460[];
+extern u8 D_800A749C[];
 
 /* Non-matching placeholders for the text-only asm slice asm/1BA1D0.s. */
 
@@ -44,7 +58,8 @@ s32 func_1518CD20() {
     return 0;
 }
 
-s32 func_1518D1C0() {
+s32 func_1518D1C0(void *arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4,
+                  u8 arg5, void *arg6) {
     return 0;
 }
 
@@ -104,11 +119,19 @@ s32 func_1518E5D8() {
     return 0;
 }
 
-s32 func_1518E66C() {
+s32 func_1518E66C(Generated1BA1D0Setup *arg0) {
+    func_1518D1C0(arg0->object, 3, 0, 0, arg0->owner, arg0->selector,
+                  D_800A7460);
+    arg0->value = 0x80;
+    arg0->state = -1;
     return 0;
 }
 
-s32 func_1518E6D4() {
+s32 func_1518E6D4(Generated1BA1D0Setup *arg0) {
+    func_1518D1C0(arg0->object, 4, 0, 0, arg0->owner, arg0->selector,
+                  D_800A749C);
+    arg0->value = 0x80;
+    arg0->state = -1;
     return 0;
 }
 
