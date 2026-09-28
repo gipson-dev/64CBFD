@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,908 / 5,466 (53.20%) | 1 | 2,557 |
+| Total | 5,466 / 6,041 (90.48%) | 2,909 / 5,466 (53.22%) | 1 | 2,556 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,334 / 4,790 (48.73%) | 0 | 2,456 |
+| Game | 4,790 / 5,321 (90.02%) | 2,335 / 4,790 (48.75%) | 0 | 2,455 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1240,6 +1240,11 @@ recovering its signed 16-bit parameters and three direct stores into a 52-byte
 record. The alias-sensitive global-pointer reloads emit directly from C with no
 guards. This remains guest-side donor/reference progress; see
 [Working Note 406](WORKING_NOTES/406-game-indexed-coordinate-setter-match-20260928.md).
+The 30-word Game staged halfword ramp `func_150B71A8` is byte-exact after
+recovering its first-field priority, frame-scaled increments, and `0x1000`
+clamps. Its branch-likely and early-return shape emits directly from C with no
+guards. This remains guest-side donor/reference progress; see
+[Working Note 407](WORKING_NOTES/407-game-staged-halfword-ramp-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

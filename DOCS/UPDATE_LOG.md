@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game staged halfword ramp byte-matched
+
+- Replaced `func_150B71A8`'s zero-return placeholder with its staged updates
+  of signed halfwords at offsets `0x38` and `0x3A`.
+- The first field advances by `D_800BE9E4 << 8` and clamps at `0x1000`; the
+  second field begins only when the first was already complete. The semantic
+  `if`/`else if` form emits all 30 words directly from C with no guards.
+- Direct comparison matches all 120 linked bytes with SHA-256
+  `829a2f70ead72049202fa8171e7aaa45b60323401d02e4842e5efa6c9e177acb`.
+  Fresh totals are **2,909 / 5,466 (53.22%)** overall and
+  **2,335 / 4,790 (48.75%)** in Game. See
+  [Working Note 407](WORKING_NOTES/407-game-staged-halfword-ramp-match-20260928.md).
+
 ### Game indexed coordinate setter byte-matched
 
 - Replaced `func_150A3444`'s zero-return placeholder with its three signed

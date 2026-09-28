@@ -49,8 +49,18 @@ s32 func_150B709C() {
     return 0;
 }
 
-s32 func_150B71A8() {
-    return 0;
+void func_150B71A8(u8 *arg0) {
+    if (*(s16 *) (arg0 + 0x38) != 0x1000) {
+        *(s16 *) (arg0 + 0x38) += D_800BE9E4 << 8;
+        if (*(s16 *) (arg0 + 0x38) > 0x1000) {
+            *(s16 *) (arg0 + 0x38) = 0x1000;
+        }
+    } else if (*(s16 *) (arg0 + 0x3A) != 0x1000) {
+        *(s16 *) (arg0 + 0x3A) += D_800BE9E4 << 8;
+        if (*(s16 *) (arg0 + 0x3A) > 0x1000) {
+            *(s16 *) (arg0 + 0x3A) = 0x1000;
+        }
+    }
 }
 
 s32 func_150B7220() {

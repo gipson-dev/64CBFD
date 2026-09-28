@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,908 / 5,466 (53.20%) | 1 | 2,557 |
+| Total | 2,909 / 5,466 (53.22%) | 1 | 2,556 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,334 / 4,790 (48.73%) | 0 | 2,456 |
+| Game | 2,335 / 4,790 (48.75%) | 0 | 2,455 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -944,9 +944,14 @@ end-to-end gameplay acceptance.
    52-byte record. Its alias-sensitive global-pointer reloads emit directly
    from C with no guards; see
    [Working Note 406](WORKING_NOTES/406-game-indexed-coordinate-setter-match-20260928.md).
+   The 30-word staged halfword ramp `func_150B71A8` is now byte-exact after
+   recovering its first-field priority, frame-scaled increments, and `0x1000`
+   clamps. The complete branch-likely and early-return shape emits directly
+   from C with no guards; see
+   [Working Note 407](WORKING_NOTES/407-game-staged-halfword-ramp-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 30-word Game `func_150B71A8`, at 26 real
+   with ordinary unparked 29-word Game `func_150BE150`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`
