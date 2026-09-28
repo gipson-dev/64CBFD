@@ -28,9 +28,9 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,871 / 5,466 (52.52%) | 1 | 2,594 |
+| Total | `[#############-----------]` 2,872 / 5,466 (52.54%) | 1 | 2,593 |
 | Init | `[###################-----]` 393 / 495 (79.39%) | 1 | 101 |
-| Game | `[###########-------------]` 2,297 / 4,790 (47.95%) | 0 | 2,493 |
+| Game | `[###########-------------]` 2,298 / 4,790 (47.97%) | 0 | 2,492 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
@@ -66,6 +66,11 @@ cursor, and retail double-read of the opening opcode. Ten expected-word
 guards normalize compiler register allocation and one commutative operand
 order; see
 [Working Note 373](DOCS/WORKING_NOTES/373-game-display-list-address-relocator-match-20260928.md).
+The 28-word Game object-state filter `func_15033F70` is also byte-exact after
+recovering its global disable gate, attached-object type exclusions, and
+state-byte clear. The complete function emits directly from C with no guards;
+see
+[Working Note 374](DOCS/WORKING_NOTES/374-game-object-state-filter-match-20260928.md).
 
 ## Build overview
 

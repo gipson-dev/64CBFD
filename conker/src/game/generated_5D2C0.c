@@ -286,5 +286,21 @@ s32 func_15033F0C(u8 *arg0, u8 *arg1) {
 }
 
 s32 func_15033F70(u8 *arg0, u8 *arg1) {
+    u8 *ptr;
+
+    if (D_800C35EA == 1) {
+        return 0;
+    }
+    ptr = *(u8 **) (arg1 + 0x31C);
+    if (ptr != 0) {
+        u8 type = ptr[0x78];
+
+        if ((type != 0xC) && (type != 0x16)) {
+            if (ptr[0x11A] != 3) {
+                ptr[0x11A] = 0;
+                return 1;
+            }
+        }
+    }
     return 0;
 }

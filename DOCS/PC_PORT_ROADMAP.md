@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,871 / 5,466 (52.52%) | 1 | 2,594 |
+| Total | 5,466 / 6,041 (90.48%) | 2,872 / 5,466 (52.54%) | 1 | 2,593 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,297 / 4,790 (47.95%) | 0 | 2,493 |
+| Game | 4,790 / 5,321 (90.02%) | 2,298 / 4,790 (47.97%) | 0 | 2,492 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1068,6 +1068,12 @@ after recovering signed command opcodes and the retail indexed scan shape.
 This guest-side restoration is donor/reference progress for the sibling port;
 it does not by itself establish a new host runtime milestone. See
 [Working Note 373](WORKING_NOTES/373-game-display-list-address-relocator-match-20260928.md).
+The 28-word Game `func_15033F70` object-state filter is byte-exact after
+recovering the original global gate and attached-object state checks. All 112
+bytes emit directly from C with no expected-word guards. This remains
+guest-side donor/reference progress rather than a new host runtime milestone;
+see
+[Working Note 374](WORKING_NOTES/374-game-object-state-filter-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game object-state filter byte-matched
+
+- Recovered `func_15033F70`'s global disable gate and attached-object checks.
+  Object types `0x0C` and `0x16`, null attachments, and state `3` are rejected;
+  the accepted path clears the state byte and returns success.
+- All 28 words and 112 bytes emit directly from semantic C with no
+  expected-word guards. Independent linked and retail span hashes agree.
+- Fresh totals are **2,872 / 5,466 (52.54%)** overall and
+  **2,298 / 4,790 (47.97%)** in Game. See
+  [Working Note 374](WORKING_NOTES/374-game-object-state-filter-match-20260928.md).
+
 ### Game display-list address relocator byte-matched
 
 - Recovered `func_15004CE0` as an eight-byte command scan terminated by the
