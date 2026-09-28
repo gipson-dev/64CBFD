@@ -3,6 +3,8 @@
 /* Non-matching placeholders for the text-only asm slice asm/AC030.s. */
 
 void func_1507EEB8(u8 arg0, u8 *arg1);
+extern u8 *D_800D154C;
+extern u8 *D_80086BA0[];
 
 void func_1507EB80(u8 *arg0, s32 *arg1, u8 arg2) {
     if (*arg1 + 1 < 0x28) {
@@ -58,7 +60,24 @@ s32 func_1507EFD0() {
     return 0;
 }
 
-s32 func_1507F454() {
+s32 func_1507F454(void) {
+    u8 *state;
+    s32 sequence;
+    s32 value;
+
+    state = *(u8 **)(D_800D154C + 0x31C) + 0x58;
+    sequence = state[4];
+    if (sequence == 0) {
+        return 1;
+    }
+
+    state[5]++;
+    value = D_80086BA0[sequence][state[5]];
+    if (value == 0) {
+        state[4] = 0;
+        state[5] = 0;
+        return 1;
+    }
     return 0;
 }
 

@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game sequence-state advance byte-matched
+
+- Recovered `func_1507F454`'s current-player state lookup, sequence cursor
+  increment, byte-table lookup, and zero-terminator reset.
+- Twenty-one of 27 words emit directly from semantic C. Six relocation-aware
+  guards preserve retail's closed register-allocation cycle; all 108 bytes now
+  match retail. The guard table has 1,667 rows and zero duplicate keys.
+- Fresh totals are **2,874 / 5,466 (52.58%)** overall and
+  **2,300 / 4,790 (48.02%)** in Game. See
+  [Working Note 376](WORKING_NOTES/376-game-sequence-state-advance-match-20260928.md).
+
 ### Game record-value adjuster byte-matched
 
 - Recovered `func_15034EB4`'s signed global scale, owner multiplier, indexed

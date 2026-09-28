@@ -1660,3 +1660,9 @@ game_30E90,func_15004CE0,0x040,0x00AB082B,0x00AA082B,-,-,Compare the payload aga
 game_30E90,func_15004CE0,0x054,0x00991821,0x03241821,-,-,Commute the indexed command pointer addition to retail operand order,,,false
 game_30E90,func_15004CE0,0x05C,0x14A8FFF2,0x14E5FFF2,-,-,Test the refreshed opcode against retail's a3 sentinel lifetime,,,false
 generated_61D10,func_15034EB4,0x048,0x460A8002,0x46105002,-,-,Use retail commutative floating-multiply operand order,,,false
+generated_AC030,func_1507F454,0x018,0x00024080,0x0002C880,-,-,Retain retail sequence-index register allocation,,,false
+generated_AC030,func_1507F454,0x028,0x3C090000,0x3C080000,R_MIPS_HI16:D_80086BA0,R_MIPS_HI16:D_80086BA0,Retain retail sequence-table register allocation,,,false
+generated_AC030,func_1507F454,0x02C,0x01284821,0x01194021,-,-,Retain retail sequence-table register allocation,,,false
+generated_AC030,func_1507F454,0x038,0x8D290000,0x8D080000,R_MIPS_LO16:D_80086BA0,R_MIPS_LO16:D_80086BA0,Retain retail sequence-table register allocation,,,false
+generated_AC030,func_1507F454,0x03C,0x331900FF,0x330900FF,-,-,Retain retail sequence-cursor register allocation,,,false
+generated_AC030,func_1507F454,0x044,0x03295021,0x01095021,-,-,Retain retail sequence-byte address allocation,,,false

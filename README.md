@@ -28,9 +28,9 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,873 / 5,466 (52.56%) | 1 | 2,592 |
+| Total | `[#############-----------]` 2,874 / 5,466 (52.58%) | 1 | 2,591 |
 | Init | `[###################-----]` 393 / 495 (79.39%) | 1 | 101 |
-| Game | `[############------------]` 2,299 / 4,790 (48.00%) | 0 | 2,491 |
+| Game | `[############------------]` 2,300 / 4,790 (48.02%) | 0 | 2,490 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
@@ -76,6 +76,11 @@ recovering its signed global scale, owner multiplier, and optional second-record
 update. Twenty-six words emit directly from semantic C; one expected-word
 guard preserves retail's commutative floating-multiply operand order. See
 [Working Note 375](DOCS/WORKING_NOTES/375-game-record-value-adjuster-match-20260928.md).
+The 27-word Game sequence-state advance `func_1507F454` is now byte-exact after
+recovering its current-player state lookup, sequence cursor increment, and
+zero-terminator reset. Six relocation-aware guards normalize one closed
+compiler register-allocation cycle; see
+[Working Note 376](DOCS/WORKING_NOTES/376-game-sequence-state-advance-match-20260928.md).
 
 ## Build overview
 

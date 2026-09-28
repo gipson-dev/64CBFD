@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,873 / 5,466 (52.56%) | 1 | 2,592 |
+| Total | 5,466 / 6,041 (90.48%) | 2,874 / 5,466 (52.58%) | 1 | 2,591 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,299 / 4,790 (48.00%) | 0 | 2,491 |
+| Game | 4,790 / 5,321 (90.02%) | 2,300 / 4,790 (48.02%) | 0 | 2,490 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1079,6 +1079,11 @@ recovering its global scale and optional second-record update. One guard
 normalizes only a commutative floating-multiply operand order. This is also
 guest-side donor/reference progress, not a new host runtime milestone; see
 [Working Note 375](WORKING_NOTES/375-game-record-value-adjuster-match-20260928.md).
+The 27-word Game `func_1507F454` sequence-state advance is byte-exact after
+recovering its cursor and terminator-reset behavior. Six guards normalize only
+compiler register allocation, including the table relocations. This remains
+guest-side donor/reference progress rather than a host runtime milestone; see
+[Working Note 376](WORKING_NOTES/376-game-sequence-state-advance-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
