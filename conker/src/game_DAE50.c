@@ -100,9 +100,9 @@ s32 func_150AD9A0() {
 // try to match from C. Evidence: strictly source-order instruction sequence
 // (IDO -O2 reschedules), minimal a0/a1/a2 register reuse, `lui at`/`lui a0`
 // self-base forms that are exactly the assembler's `ld/sd reg, symbol` macro
-// expansions, a filled jr-ra delay slot, and (in func_150ADACC) a dead
+// expansions, filled delay slots where useful, and (in func_150ADACC) a dead
 // `li a0,0` that is unique in the entire ROM. Verified-correct C equivalents
-// kept below for documentation.
+// are kept below for documentation.
 //
 // xorshift-style PRNG step, operating on the 64-bit seed D_800885B0.
 #if 0
@@ -118,6 +118,7 @@ s32 func_150ADA20(void) {
 #endif
 #pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADA20.s")
 
+#if 0
 f32 func_150ADA68(void) {
     u64 seed = D_800885B0;
     u64 mixed = ((seed << 63) >> 31) | ((seed << 31) >> 32);
@@ -127,6 +128,8 @@ f32 func_150ADA68(void) {
     D_800885B0 = seed;
     return (f32)((s32)seed & 0xFFFF) * D_8009F740;
 }
+#endif
+#pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADA68.s")
 
 // PRNG seed setter (see handwritten-assembly note above func_150ADA20).
 #pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150ADACC.s")

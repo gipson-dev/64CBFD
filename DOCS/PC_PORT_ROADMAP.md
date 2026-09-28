@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,853 / 5,469 (52.17%) | 1 | 2,615 |
+| Total | 5,468 / 6,041 (90.51%) | 2,853 / 5,468 (52.18%) | 1 | 2,614 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,281 / 4,791 (47.61%) | 0 | 2,510 |
+| Game | 4,790 / 5,321 (90.02%) | 2,281 / 4,790 (47.62%) | 0 | 2,509 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1008,9 +1008,11 @@ is exact from typed C plus four guarded early-return words. Its corrected byte
 prototype also removes all 13 guards from exact caller `func_151A9024`, for a
 net nine-row guard-table reduction. The 28-word Game `func_151928B0` type-
 result selector is exact from structured C plus four guarded shared-epilogue
-words while preserving its original five-entry jump table. Continue by
-classifying 25-word Game `func_150ADA68`; see
-[Working Note 349](WORKING_NOTES/349-game-type-result-selector-match-20260927.md).
+words while preserving its original five-entry jump table. The 25-word Game
+`func_150ADA68` floating PRNG step is restored to original handwritten
+assembly ownership after its equivalent C compiled one word beyond the retail
+slot. Continue by classifying 65-word Game `func_1514563C`; see
+[Working Note 350](WORKING_NOTES/350-game-handwritten-floating-prng-restoration-20260927.md).
 
 Current host-port progression and acceptance boundaries:
 

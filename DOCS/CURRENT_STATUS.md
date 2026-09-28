@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 572 | 1,931,576 / 2,256,728 (85.59%) |
+| Total | 5,468 / 6,041 (90.51%) | 573 | 1,931,476 / 2,256,728 (85.59%) |
 | Init | 497 / 538 (92.38%) | 41 | 148,600 / 164,048 (90.58%) |
-| Game | 4,791 / 5,321 (90.04%) | 530 | 1,763,336 / 2,072,880 (85.07%) |
+| Game | 4,790 / 5,321 (90.02%) | 531 | 1,763,236 / 2,072,880 (85.06%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,853 / 5,469 (52.17%) | 1 | 2,615 |
+| Total | 2,853 / 5,468 (52.18%) | 1 | 2,614 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,281 / 4,791 (47.61%) | 0 | 2,510 |
+| Game | 2,281 / 4,790 (47.62%) | 0 | 2,509 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -763,9 +763,11 @@ end-to-end gameplay acceptance.
    corrected prototype also removes all 13 guards from exact caller
    `func_151A9024`. The 28-word `func_151928B0` type-result selector is exact
    from structured C plus four guarded shared-epilogue words, with its original
-   five-entry jump table retained. Continue by classifying 25-word Game
-   `func_150ADA68`; keep the previously documented smaller special cases
-   parked.
+   five-entry jump table retained. The 25-word `func_150ADA68` floating PRNG
+   step is restored to original handwritten assembly ownership after its
+   equivalent C was confirmed to compile as a 26-word overflow trampoline.
+   Continue by classifying 65-word Game `func_1514563C`; keep the previously
+   documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

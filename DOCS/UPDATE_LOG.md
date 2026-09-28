@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Original handwritten floating PRNG restored
+
+- Restored `func_150ADA68` from its maintained behavioral C equivalent to the
+  original 25-word MIPS III assembly body. The C form compiled to 26 words and
+  therefore occupied an out-of-line overflow section behind a trampoline.
+- Retail shares the handwritten `func_150ADA20` seed transform instruction for
+  instruction, then converts the low 16 bits to a scaled floating result.
+- Linked and pristine 100-byte spans share SHA-256
+  `65a5f1c67d8297c015c78583648d7a7e45bff89f98a13fe724ff0bdffe3ebe46`.
+  The exact numerator remains **2,853**; fresh scans are
+  **2,853 / 5,468 (52.18%)** overall and **2,281 / 4,790 (47.62%)** in Game.
+
 ### Game type-result selector byte-exact
 
 - Restored `func_151928B0` as a type selector: types `0..4` write zero, type
