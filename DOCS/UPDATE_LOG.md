@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game entrypoint main loop byte-matched
+
+- Replaced `func_15007830`'s zero-return placeholder with the complete Game
+  startup sequence and permanent five-state dispatch loop.
+- Corrected `D_800BEA68` to inline `struct195` storage and recovered the
+  retail jump table, signed halfword parameters, event submission, and shared
+  cleanup path.
+- Sixty-six scoped guards normalize one closed IDO saved-register cycle and
+  two omitted unreachable epilogue words. Direct comparison matches all 496
+  linked bytes with SHA-256
+  `35409e3b55dd3cc62229f6fe0dbb7d58cfa76db9b03e30b1dec4c8c621b22e90`.
+  Fresh totals are **2,896 / 5,466 (52.98%)** overall and
+  **2,322 / 4,790 (48.48%)** in Game. See
+  [Working Note 394](WORKING_NOTES/394-game-entrypoint-main-loop-match-20260928.md).
+
 ### Game timed-record lifecycle byte-matched
 
 - Recovered `func_1519EA04` as an enabled signed-timer update that optionally

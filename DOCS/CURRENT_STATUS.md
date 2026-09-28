@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,895 / 5,466 (52.96%) | 1 | 2,570 |
+| Total | 2,896 / 5,466 (52.98%) | 1 | 2,569 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,321 / 4,790 (48.46%) | 0 | 2,469 |
+| Game | 2,322 / 4,790 (48.48%) | 0 | 2,468 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -885,6 +885,12 @@ end-to-end gameplay acceptance.
    after recovering its enabled timer decrement, optional owner-field clear,
    and record deletion. It emits directly from semantic C with no guards; see
    [Working Note 393](WORKING_NOTES/393-game-timed-record-lifecycle-match-20260928.md).
+   The 124-word Game entrypoint `func_15007830` is now byte-exact after
+   recovering its startup sequence, five-entry state dispatch, signed
+   halfword parameters, shared cleanup, and permanent main loop. Sixty-six
+   scoped guards normalize one closed saved-register allocation cycle and two
+   omitted unreachable epilogue words; see
+   [Working Note 394](WORKING_NOTES/394-game-entrypoint-main-loop-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with ordinary unparked 30-word Game `func_1518CCA8`, at 25 real

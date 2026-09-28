@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,895 / 5,466 (52.96%) | 1 | 2,570 |
+| Total | 5,466 / 6,041 (90.48%) | 2,896 / 5,466 (52.98%) | 1 | 2,569 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,321 / 4,790 (48.46%) | 0 | 2,469 |
+| Game | 4,790 / 5,321 (90.02%) | 2,322 / 4,790 (48.48%) | 0 | 2,468 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1174,6 +1174,12 @@ recovering its frame-delta timer, optional owner clear, and deletion call. It
 emits directly from semantic C without guards. This remains guest-side
 donor/reference progress; see
 [Working Note 393](WORKING_NOTES/393-game-timed-record-lifecycle-match-20260928.md).
+The 124-word Game entrypoint `func_15007830` is byte-exact after recovering
+its startup sequence, state-machine jump table, signed halfword arguments,
+shared cleanup, and permanent dispatch loop. Sixty-six scoped guards preserve
+the retail saved-register cycle and two omitted unreachable epilogue words.
+This remains guest-side donor/reference progress; see
+[Working Note 394](WORKING_NOTES/394-game-entrypoint-main-loop-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

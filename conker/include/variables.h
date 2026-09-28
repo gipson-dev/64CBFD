@@ -946,7 +946,7 @@ extern s32 D_800BEA04[]; // struct04
 extern s32 D_800BEA08;
 extern OSMesgQueue D_800BEA10;
 extern OSMesg      D_800BEA28;
-extern struct195  *D_800BEA68;
+extern struct195 D_800BEA68;
 extern u16 D_800BEAA8;
 extern u8  D_800BEAAA;
 extern u8  D_800BEAAB;

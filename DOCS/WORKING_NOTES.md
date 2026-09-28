@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game timed-record lifecycle matched).** The current
-linked checkpoint is `2895 / 5466 (52.96%)` exact C functions, with one
-address-drift blocker and 2,570 genuinely different C functions. Init is
+**Active (2026-09-28, Game entrypoint main loop matched).** The current
+linked checkpoint is `2896 / 5466 (52.98%)` exact C functions, with one
+address-drift blocker and 2,569 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2321 / 4790 (48.46%)` exact, with 2,469 genuinely different C rows. The tree
+`2322 / 4790 (48.48%)` exact, with 2,468 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1210,6 +1210,12 @@ The 29-word timed-record lifecycle `func_1519EA04` now matches after
 recovering its signed timer update, optional owner-field clear, and deletion
 call. Its semantic C emits directly without guards; see
 [Working Note 393](WORKING_NOTES/393-game-timed-record-lifecycle-match-20260928.md).
+The 124-word Game entrypoint `func_15007830` now matches after recovering its
+startup sequence, five-entry jump-table dispatch, signed halfword parameters,
+shared cleanup, and permanent main loop. Sixty-six scoped guards preserve one
+closed saved-register allocation cycle and two unreachable epilogue words;
+see
+[Working Note 394](WORKING_NOTES/394-game-entrypoint-main-loop-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary unparked 30-word Game
 `func_1518CCA8`, at 25 real differences. Keep `func_151F3D78` parked behind
