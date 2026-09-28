@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,885 / 5,466 (52.78%) | 1 | 2,580 |
+| Total | 5,466 / 6,041 (90.48%) | 2,886 / 5,466 (52.80%) | 1 | 2,579 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,311 / 4,790 (48.25%) | 0 | 2,479 |
+| Game | 4,790 / 5,321 (90.02%) | 2,312 / 4,790 (48.27%) | 0 | 2,478 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1141,6 +1141,12 @@ after recovering its two `gSPMatrix` appends, indexed 64-byte matrix lookup,
 and ready-byte output. It emits directly from semantic C without guards. This
 remains guest-side donor/reference progress; see
 [Working Note 387](WORKING_NOTES/387-game-display-list-matrix-pair-match-20260928.md).
+The 26-word Game `func_15168B44` packed-counter update is byte-exact after
+recovering its volatile packed-word state, deliberate intermediate store,
+timer refresh, and available-count subtraction path. Twenty scoped guards
+normalize one closed IDO register/scheduling cycle. This remains guest-side
+donor/reference progress; see
+[Working Note 388](WORKING_NOTES/388-game-packed-counter-state-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

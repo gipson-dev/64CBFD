@@ -1701,3 +1701,23 @@ generated_15AA10,func_1512D604,0x044,0x00005012,0x00005812,-,-,Retain the second
 generated_15AA10,func_1512D604,0x048,0x014B1021,0x012B1021,-,-,Form the second record pointer from retail's base and offset,,,false
 generated_15AA10,func_1512D604,0x054,0x00A01025,0x00601025,-,-,Return the slot pointer through retail's v1 lifetime on no wrap,,,false
 generated_15AA10,func_1512D604,0x05C,0x00A01025,0x00601025,-,-,Return the slot pointer through retail's v1 lifetime after wrap,,,false
+game_1944C0,func_15168B44,0x000,0x8C820014,0x8C830014,-,-,Retain the packed counter word in retail's v1 lifetime,,,false
+game_1944C0,func_15168B44,0x004,0x3C01FFFF,0x2418001E,-,-,Schedule retail's first timer constant before the independent mask,,,false
+game_1944C0,func_15168B44,0x008,0x240F001E,0x3C01FFFF,-,-,Schedule retail's upper-half mask after the independent timer constant,,,false
+game_1944C0,func_15168B44,0x00C,0x3045FFFF,0x306EFFFF,-,-,Extract the low counter through retail's t6 lifetime,,,false
+game_1944C0,func_15168B44,0x010,0x10A00008,0x11C00008,-,-,Test the low counter through retail's t6 lifetime,,,false
+game_1944C0,func_15168B44,0x014,0x24A3FFFF,0x25C2FFFF,-,-,Decrement the low counter through retail's v0 lifetime,,,false
+game_1944C0,func_15168B44,0x018,0x00413024,0x0061C824,-,-,Clear the low half through retail's t9 lifetime,,,false
+game_1944C0,func_15168B44,0x01C,0x306EFFFF,0x304FFFFF,-,-,Mask the decremented counter through retail's t7 lifetime,,,false
+game_1944C0,func_15168B44,0x020,0xAC860014,0xAC990014,-,-,Publish the cleared packed counter through retail's t9 lifetime,,,false
+game_1944C0,func_15168B44,0x024,0x01C6C025,0x032F4825,-,-,Merge the decremented counter through retail's t1 lifetime,,,false
+game_1944C0,func_15168B44,0x028,0xA48F0038,0xA4980038,-,-,Store the first timer through retail's t8 lifetime,,,false
+game_1944C0,func_15168B44,0x030,0xAC980014,0xAC890014,-,-,Publish the merged packed counter through retail's t1 lifetime,,,false
+game_1944C0,func_15168B44,0x034,0x9085003F,0x9086003F,-,-,Load the available count through retail's a2 lifetime,,,false
+game_1944C0,func_15168B44,0x038,0x00021C03,0x00031403,-,-,Extract the upper counter through retail's v0 lifetime,,,false
+game_1944C0,func_15168B44,0x03C,0x3079FFFF,0x304AFFFF,-,-,Mask the upper counter through retail's t2 lifetime,,,false
+game_1944C0,func_15168B44,0x040,0x0325082A,0x0146082A,-,-,Compare the upper and available counts through retail lifetimes,,,false
+game_1944C0,func_15168B44,0x048,0x00B94023,0x00CA5823,-,-,Subtract the upper count through retail's t3 lifetime,,,false
+game_1944C0,func_15168B44,0x04C,0x2409001E,0x240C001E,-,-,Load the second timer constant through retail's t4 lifetime,,,false
+game_1944C0,func_15168B44,0x050,0xA088003F,0xA08B003F,-,-,Store the available count through retail's t3 lifetime,,,false
+game_1944C0,func_15168B44,0x058,0xA4890038,0xA48C0038,-,-,Store the second timer through retail's t4 lifetime,,,false

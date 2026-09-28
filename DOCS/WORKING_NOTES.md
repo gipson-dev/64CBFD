@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game display-list matrix pair matched).** The current
-linked checkpoint is `2885 / 5466 (52.78%)` exact C functions, with one
-address-drift blocker and 2,580 genuinely different C functions. Init is
+**Active (2026-09-28, Game packed-counter state update matched).** The current
+linked checkpoint is `2886 / 5466 (52.80%)` exact C functions, with one
+address-drift blocker and 2,579 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2311 / 4790 (48.25%)` exact, with 2,479 genuinely different C rows. The tree
+`2312 / 4790 (48.27%)` exact, with 2,478 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1180,9 +1180,14 @@ The 26-word Game display-list matrix-pair builder `func_15157F80` now matches
 after recovering its two `gSPMatrix` appends, indexed matrix lookup, and
 ready-byte output. All words emit directly from C with no guards; see
 [Working Note 387](WORKING_NOTES/387-game-display-list-matrix-pair-match-20260928.md).
+The 26-word Game packed-counter update `func_15168B44` now matches after
+recovering its typed volatile state, two-step packed-word write, timer refresh,
+and available-count subtraction. Twenty scoped guards preserve one closed IDO
+register-allocation and scheduling cycle; see
+[Working Note 388](WORKING_NOTES/388-game-packed-counter-state-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary unparked 26-word Game
-`func_15168B44`, at 25 real differences. Keep the tied SDK cache routines in
+`func_15169900`, at 25 real differences. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked
 on address drift. Keep the much larger HUD renderers `func_151E89A0` and
 `func_151EA15C` parked as separate focused work.

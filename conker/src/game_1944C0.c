@@ -33,6 +33,15 @@ typedef struct ListNode {
     struct ListNode *next;
 } ListNode;
 
+typedef struct {
+    u8 pad0[0x14];
+    volatile s32 packed_count;
+    u8 pad18[0x20];
+    s16 timer;
+    u8 pad3A[5];
+    u8 available;
+} PackedCountState;
+
 
 void func_15167010(void) {
     void (*func)(void);
@@ -206,23 +215,27 @@ void func_15168B10(s32 arg0, s32 arg1) {
     func_15168A4C(arg0, arg1);
 }
 
-void func_15168B44(void *arg0) {
-    s32 *packed = (s32 *) ((u8 *) arg0 + 0x14);
-    s32 value = *packed;
+/* Note 388: guards preserve one closed IDO register-allocation cycle. */
+void func_15168B44(PackedCountState *arg0) {
+    s32 value = arg0->packed_count;
     u16 count = value;
+    s32 upper;
 
     if (count != 0) {
-        *packed = (value & 0xFFFF0000) | ((count - 1) & 0xFFFF);
-        *(s16 *) ((u8 *) arg0 + 0x38) = 0x1E;
+        count--;
+        upper = value & 0xFFFF0000;
+        arg0->packed_count = upper;
+        arg0->timer = 0x1E;
+        arg0->packed_count = upper | count;
         return;
     }
 
     count = value >> 16;
-    if (count < *((u8 *) arg0 + 0x3F)) {
-        *((u8 *) arg0 + 0x3F) -= count;
-        *(s16 *) ((u8 *) arg0 + 0x38) = 0x1E;
+    if (count < arg0->available) {
+        arg0->available -= count;
+        arg0->timer = 0x1E;
     } else {
-        *(s16 *) ((u8 *) arg0 + 0x38) = 0;
+        arg0->timer = 0;
     }
 }
 

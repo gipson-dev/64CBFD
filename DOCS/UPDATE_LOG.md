@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game packed-counter state update byte-matched
+
+- Recovered `func_15168B44` as a typed volatile packed-counter update. The
+  nonzero low-half path deliberately publishes the cleared upper half before
+  merging the decremented low half, then refreshes the signed timer; the
+  zero-low-half path consumes the upper count from the available byte when it
+  fits.
+- The semantic C reproduces the complete 26-word / 104-byte routine. Twenty
+  expected-word guards normalize one closed IDO register-allocation and
+  independent-instruction scheduling cycle; no relocation is changed.
+- Fresh totals are **2,886 / 5,466 (52.80%)** overall and
+  **2,312 / 4,790 (48.27%)** in Game. See
+  [Working Note 388](WORKING_NOTES/388-game-packed-counter-state-match-20260928.md).
+
 ### Game display-list matrix pair byte-matched
 
 - Recovered `func_15157F80` as two `gSPMatrix` appends: the fixed matrix at
