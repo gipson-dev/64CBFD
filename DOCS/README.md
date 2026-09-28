@@ -18,7 +18,7 @@ do not compete with one another.
 | Resume the current decomp work | [Current status](CURRENT_STATUS.md) |
 | Work specifically in `conker/` | [Code sub-project](CODE_SUBPROJECT.md) |
 | Match or convert a function | [Contributor and byte-matching guide](CONTRIBUTING.md) |
-| Inspect the latest headline progress | [Root README](../README.md#project-status) |
+| Inspect the latest headline progress | [Update log](UPDATE_LOG.md) |
 
 New contributors should read the project overview first, then the contributor
 guide. The root README is intentionally brief; `PROJECT.md` owns detailed build

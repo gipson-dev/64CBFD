@@ -28,77 +28,13 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,878 / 5,466 (52.65%) | 1 | 2,587 |
+| Total | `[#############-----------]` 2,879 / 5,466 (52.67%) | 1 | 2,586 |
 | Init | `[###################-----]` 393 / 495 (79.39%) | 1 | 101 |
-| Game | `[############------------]` 2,304 / 4,790 (48.10%) | 0 | 2,486 |
+| Game | `[############------------]` 2,305 / 4,790 (48.12%) | 0 | 2,485 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
-The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
-`func_151E9D18`'s zero-return placeholders with semantic HUD/status renderers.
-`func_151E89A0` remains non-matching at 803 real word differences.
-`func_151E966C` and `func_151E9D18` are now byte-exact across all 427 and 273
-words. Their recovered SDK graphics macros emit the full semantic routines;
-relocation-aware guards normalize 116 persistent stack/register scheduling
-words in the former and two independent scheduling words in the latter. See
-[Working Notes 364](DOCS/WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md),
-[365](DOCS/WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md),
-[366](DOCS/WORKING_NOTES/366-game-team-counter-panel-reconstruction-20260928.md),
-[367](DOCS/WORKING_NOTES/367-game-team-counter-panel-byte-match-20260928.md),
-and [368](DOCS/WORKING_NOTES/368-game-player-status-row-renderer-byte-match-20260928.md).
-
-The Init entrypoint `func_10001000` is restored to its original handwritten
-clear-and-jump assembly instead of the false zero-return C placeholder. Its
-complete 20-word slot is byte-exact; see
-[Working Note 369](DOCS/WORKING_NOTES/369-init-handwritten-entrypoint-restoration-20260928.md).
-The handwritten CP0/TLB routine `osMapTLBRdb` is likewise restored from its
-empty C placeholder and matches all 24 words; see
-[Working Note 370](DOCS/WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
-The compiler-generated Init routine `__osSetHWIntrRoutine` now matches all 20
-words using its recovered libultra body and retail `-O1` profile; see
-[Working Note 371](DOCS/WORKING_NOTES/371-init-hardware-interrupt-routine-match-20260928.md).
-The 25-word Init channel-parameter updater `func_1000CBF0` is also byte-exact
-after recovering its 32-bit argument types and original repeated table-access
-shape; see
-[Working Note 372](DOCS/WORKING_NOTES/372-init-channel-parameter-updater-match-20260928.md).
-The 28-word Game display-list address relocator `func_15004CE0` is now
-byte-exact after recovering its signed command opcodes, indexed command
-cursor, and retail double-read of the opening opcode. Ten expected-word
-guards normalize compiler register allocation and one commutative operand
-order; see
-[Working Note 373](DOCS/WORKING_NOTES/373-game-display-list-address-relocator-match-20260928.md).
-The 28-word Game object-state filter `func_15033F70` is also byte-exact after
-recovering its global disable gate, attached-object type exclusions, and
-state-byte clear. The complete function emits directly from C with no guards;
-see
-[Working Note 374](DOCS/WORKING_NOTES/374-game-object-state-filter-match-20260928.md).
-The 27-word Game record-value adjuster `func_15034EB4` is now byte-exact after
-recovering its signed global scale, owner multiplier, and optional second-record
-update. Twenty-six words emit directly from semantic C; one expected-word
-guard preserves retail's commutative floating-multiply operand order. See
-[Working Note 375](DOCS/WORKING_NOTES/375-game-record-value-adjuster-match-20260928.md).
-The 27-word Game sequence-state advance `func_1507F454` is now byte-exact after
-recovering its current-player state lookup, sequence cursor increment, and
-zero-terminator reset. Six relocation-aware guards normalize one closed
-compiler register-allocation cycle; see
-[Working Note 376](DOCS/WORKING_NOTES/376-game-sequence-state-advance-match-20260928.md).
-The 27-word Game active-record counter `func_1509CB68` is now byte-exact after
-recovering its four-record unrolled scan across all 204 table entries. The
-slice uses its retail no-unroll compiler profile; four relocation-aware guards
-normalize only the independent opening-address and count-initialization
-schedule. See
-[Working Note 377](DOCS/WORKING_NOTES/377-game-active-record-counter-match-20260928.md).
-The 26-word Game record-output accessor `func_150A3330` is now byte-exact
-after recovering its `0x34`-byte record indexing and four output stores. The
-complete routine emits directly from C with no guards; see
-[Working Note 378](DOCS/WORKING_NOTES/378-game-record-output-accessor-match-20260928.md).
-The 31-word Game actor-position query `func_150E36BC` is now byte-exact after
-recovering its one-based slot validation, actor-type gate, and three truncated
-coordinate outputs. It also emits directly from C with no guards; see
-[Working Note 379](DOCS/WORKING_NOTES/379-game-actor-position-query-match-20260928.md).
-The 26-word Game dual event-byte dispatcher `func_150F9720` is now byte-exact
-after recovering its two-byte pair lookup and repeated command-`0x42` event
-submissions; see
-[Working Note 380](DOCS/WORKING_NOTES/380-game-dual-event-byte-dispatch-match-20260928.md).
+Function-by-function recovery updates and their supporting working-note links
+are maintained in the [Update Log](DOCS/UPDATE_LOG.md), not in this overview.
 
 ## Build overview
 

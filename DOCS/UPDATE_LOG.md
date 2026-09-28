@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game event-payload dispatcher byte-matched
+
+- Recovered `func_15108FFC` as a local two-word descriptor copy and a payload
+  containing two 32-bit values plus one byte, submitted as event `0x1D`.
+- All 26 words / 104 bytes emit directly from semantic C with no expected-word
+  guards or compiler-profile override.
+- Fresh totals are **2,879 / 5,466 (52.67%)** overall and
+  **2,305 / 4,790 (48.12%)** in Game. See
+  [Working Note 381](WORKING_NOTES/381-game-event-payload-dispatch-match-20260928.md).
+
 ### Game dual event-byte dispatcher byte-matched
 
 - Recovered `func_150F9720` as an eight-bit indexed lookup into four two-byte

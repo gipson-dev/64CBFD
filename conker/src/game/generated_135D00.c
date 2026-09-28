@@ -2,7 +2,9 @@
 void func_15169260(void *, s32, s32, u8);
 extern u8 D_80088C58[];
 typedef struct { s32 a, b; } TwoWord135D00;
+typedef struct { s32 a, b; u8 c; } EventPayload135D00;
 extern s32 D_800BE9E4;
+extern u8 D_80088C50[];
 
 /* Non-matching placeholders for the text-only asm slice asm/135D00.s. */
 
@@ -44,8 +46,14 @@ s32 func_15108E10() {
     return 0;
 }
 
-s32 func_15108FFC() {
-    return 0;
+void func_15108FFC(s32 arg0, s32 arg1, u8 arg2) {
+    EventPayload135D00 payload;
+    TwoWord135D00 tmp = *(TwoWord135D00 *) D_80088C50;
+
+    payload.a = arg0;
+    payload.b = arg1;
+    payload.c = arg2;
+    func_15169260(&tmp, 2, (s32) &payload, 0x1D);
 }
 
 s32 func_15109064() {

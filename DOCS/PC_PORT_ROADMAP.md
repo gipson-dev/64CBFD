@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,878 / 5,466 (52.65%) | 1 | 2,587 |
+| Total | 5,466 / 6,041 (90.48%) | 2,879 / 5,466 (52.67%) | 1 | 2,586 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,304 / 4,790 (48.10%) | 0 | 2,486 |
+| Game | 4,790 / 5,321 (90.02%) | 2,305 / 4,790 (48.12%) | 0 | 2,485 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1105,6 +1105,11 @@ recovering its indexed byte pair, local event buffer, and two command-`0x42`
 submissions. Eleven guarded stack-immediate normalizations preserve retail's
 equivalent compact frame. This remains guest-side donor/reference progress;
 see [Working Note 380](WORKING_NOTES/380-game-dual-event-byte-dispatch-match-20260928.md).
+The 26-word Game `func_15108FFC` event-payload dispatcher is byte-exact after
+recovering its copied descriptor, two-word-plus-byte payload, and event-`0x1D`
+submission. It emits directly from C without guards. This remains guest-side
+donor/reference progress; see
+[Working Note 381](WORKING_NOTES/381-game-event-payload-dispatch-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
