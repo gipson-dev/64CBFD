@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game linked-record retirement byte-exact
+
+- Restored `func_1519F48C` as state-specific linked-record field cleanup,
+  link retirement, actor flag cleanup, and link-slot activation.
+- Semantic C reproduces 21 of 25 retail words. Four function-scoped guard rows
+  retain retail's shared `record + 0x58` base across the state tests and stores.
+- The linked span has SHA-256
+  `9f3cf4224facdf4f49be4bf99dc0f87c954f2ef38c2ac71c9b79044638c714e9`.
+  Fresh totals are **2,851 / 5,469 (52.13%)** overall and
+  **2,279 / 4,791 (47.57%)** in Game.
+
 ### Game bounded record-float update byte-exact
 
 - Restored `func_1518804C` as a valid-index check, `[0.0f, 1.0f]` clamp, and

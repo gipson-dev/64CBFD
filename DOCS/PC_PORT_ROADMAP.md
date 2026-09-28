@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,850 / 5,469 (52.11%) | 1 | 2,618 |
+| Total | 5,469 / 6,041 (90.53%) | 2,851 / 5,469 (52.13%) | 1 | 2,617 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,278 / 4,791 (47.55%) | 0 | 2,513 |
+| Game | 4,791 / 5,321 (90.04%) | 2,279 / 4,791 (47.57%) | 0 | 2,512 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1001,8 +1001,11 @@ while the smaller special-case rows remain parked. The 25-word Game
 C. The 26-word Game `func_15178C34` packed node update is exact directly from
 typed C. The 26-word Game `func_15182768` conditional byte remap is exact
 directly from typed C. The 29-word Game `func_1518804C` bounded record-float
-update is exact directly from typed C. Continue with 25-word Game
-`func_1519F48C`.
+update is exact directly from typed C. The 25-word Game `func_1519F48C`
+linked-record retirement is exact from semantic C plus four guarded shared-
+base words. Continue with 29-word Game `func_151A931C` while the documented
+smaller special cases remain parked; see
+[Working Note 347](WORKING_NOTES/347-game-linked-record-retirement-match-20260927.md).
 
 Current host-port progression and acceptance boundaries:
 

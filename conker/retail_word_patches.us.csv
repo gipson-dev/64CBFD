@@ -1465,3 +1465,7 @@ generated_131620,func_1510448C,0x40,0x03022823,0x00A22823,-,-,Subtract from the 
 generated_131620,func_1510448C,0x44,0x0005CA03,0x0005C203,-,-,Shift the scaled value through the retail temporary register,,,false
 generated_131620,func_1510448C,0x48,0x03202825,0x03002825,-,-,Move the retail scaled temporary into the outgoing argument register,,,false
 generated_131620,func_1510448C,0x54,0xAFA80014,0xAFB90014,-,-,Store the signed gate from the retail temporary register,,,false
+generated_1CC440,func_1519F48C,0x08,0x5060000D,0x5060000E,-,-,Extend the null branch across the restored shared field base,,,false
+generated_1CC440,func_1519F48C,0x14,0x24010006,0x24010006,-,-,Materialize the shared field base before the first comparison branch,0x24650058,,false
+generated_1CC440,func_1519F48C,0x20,0xAC600058,0xACA00000,-,-,Clear the first field through the restored shared base,,,false
+generated_1CC440,func_1519F48C,0x34,0xAC600060,0xACA00008,-,-,Clear the third field through the restored shared base,,,false
