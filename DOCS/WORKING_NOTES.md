@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, code-integrity checksum matched).** The current linked
-checkpoint is `2859 / 5468 (52.29%)` exact C functions, with one address-drift
-blocker and 2,608 genuinely different C functions. Init is
+**Active (2026-09-28, object-slot spawn matched).** The current linked
+checkpoint is `2860 / 5468 (52.30%)` exact C functions, with one address-drift
+blocker and 2,607 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2287 / 4790 (47.75%)` exact, with 2,503 genuinely different C rows. The tree
+`2288 / 4790 (47.77%)` exact, with 2,502 genuinely different C rows. The tree
 contains 573 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1058,9 +1058,12 @@ from C with no guard rows; see
 The 26-word Game `func_151E7EF8` code-integrity checksum is exact directly
 from C with no guard rows; see
 [Working Note 356](WORKING_NOTES/356-game-code-integrity-checksum-match-20260928.md).
-Recover adjacent 163-word Game placeholder `func_151E7F60`, currently measured
-at 162 real differences in the fresh queue after the documented compiler and
-SDK cases.
+The 163-word Game `func_151E7F60` object-slot spawn/setup routine is exact from
+semantic C plus 24 guarded stack-frame and local-slot words; see
+[Working Note 357](WORKING_NOTES/357-game-object-slot-spawn-match-20260928.md).
+Recover adjacent 41-word Game `func_151E8214`, currently measured at 39 real
+differences in the fresh linked queue after the documented compiler and SDK
+cases.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

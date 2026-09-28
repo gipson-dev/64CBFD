@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 2,859 / 5,468 (52.29%) | 1 | 2,608 |
+| Total | 5,468 / 6,041 (90.51%) | 2,860 / 5,468 (52.30%) | 1 | 2,607 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,790 / 5,321 (90.02%) | 2,287 / 4,790 (47.75%) | 0 | 2,503 |
+| Game | 4,790 / 5,321 (90.02%) | 2,288 / 4,790 (47.77%) | 0 | 2,502 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1020,9 +1020,11 @@ four guarded frame/local-slot words. The 26-word Game `func_151D13E0`
 owned-state teardown is exact directly from C with no guard rows. The 25-word
 Game `func_151E4E00` state-transition dispatch is exact directly from C with no
 guard rows. The 26-word Game `func_151E7EF8` code-integrity checksum is exact
-directly from recovered C with no guard rows. Continue with adjacent 163-word
-Game placeholder `func_151E7F60`; see
-[Working Note 356](WORKING_NOTES/356-game-code-integrity-checksum-match-20260928.md).
+directly from recovered C with no guard rows. The 163-word Game
+`func_151E7F60` object-slot spawn/setup routine is exact from semantic C plus
+24 guarded stack-frame and local-slot words. Continue with adjacent 41-word
+Game `func_151E8214`; see
+[Working Note 357](WORKING_NOTES/357-game-object-slot-spawn-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

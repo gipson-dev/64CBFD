@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game object-slot spawn byte-exact
+
+- Recovered all 163 words of `func_151E7F60`, including prior-object release,
+  descriptor construction from object and position tables, object creation,
+  scale/flag initialization, optional auxiliary allocation, and final setup.
+- Semantic C emits every substantive retail instruction. Twenty-four guarded
+  words normalize only IDO's 88-byte frame and local stack offsets to retail's
+  80-byte layout; the guard table now has 1,511 rows and zero duplicate keys.
+- Linked and pristine 652-byte spans share SHA-256
+  `f4cfd6fbbab3328dad19b95e18360a746ca00efd75770c63d0d54cca12644440`.
+  Fresh totals are **2,860 / 5,468 (52.30%)** overall and
+  **2,288 / 4,790 (47.77%)** in Game.
+
 ### Game code-integrity checksum byte-exact
 
 - Recovered `func_151E7EF8` as a call to the three-way state dispatcher

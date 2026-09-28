@@ -1486,3 +1486,27 @@ generated_1F4650,func_151C9ED4,0x000,0x27BDFFD0,0x27BDFFD8,-,-,Use retail's 40-b
 generated_1F4650,func_151C9ED4,0x010,0x27B0002C,0x27B00024,-,-,Address the local pointer word at retail stack offset 0x24,,,false
 generated_1F4650,func_151C9ED4,0x014,0xAFA6002C,0xAFA60024,-,-,Store the incoming pointer at retail stack offset 0x24,,,false
 generated_1F4650,func_151C9ED4,0x058,0x27BD0030,0x27BD0028,-,-,Restore retail's 40-byte frame,,,false
+generated_20AE20,func_151E7F60,0x000,0x27BDFFA8,0x27BDFFB0,-,-,Use retail's 80-byte frame for the recovered local layout,,,false
+generated_20AE20,func_151E7F60,0x008,0xAFA40058,0xAFA40050,-,-,Store the first argument through the retail frame,,,false
+generated_20AE20,func_151E7F60,0x00C,0xAFA5005C,0xAFA50054,-,-,Store the second argument through the retail frame,,,false
+generated_20AE20,func_151E7F60,0x010,0x8FAE0058,0x8FAE0050,-,-,Load the first argument through the retail frame,,,false
+generated_20AE20,func_151E7F60,0x024,0xAFB9002C,0xAFB90030,-,-,Store the object-slot pointer at retail stack offset 0x30,,,false
+generated_20AE20,func_151E7F60,0x03C,0x8FA40058,0x8FA40050,-,-,Reload the first argument for descriptor selection,,,false
+generated_20AE20,func_151E7F60,0x058,0x8FAE005C,0x8FAE0054,-,-,Reload the second argument for the object table,,,false
+generated_20AE20,func_151E7F60,0x06C,0x8FAA0058,0x8FAA0050,-,-,Reload the first argument for the position table,,,false
+generated_20AE20,func_151E7F60,0x110,0xAFA80028,0xAFA8002C,-,-,Spill the object-table pointer at retail stack offset 0x2C,,,false
+generated_20AE20,func_151E7F60,0x118,0xAFA90034,0xAFA9003C,-,-,Spill the object ID at retail stack offset 0x3C,,,false
+generated_20AE20,func_151E7F60,0x11C,0x8FA80028,0x8FA8002C,-,-,Reload the object-table pointer after object creation,,,false
+generated_20AE20,func_151E7F60,0x120,0x8FA90034,0x8FA9003C,-,-,Reload the object ID after object creation,,,false
+generated_20AE20,func_151E7F60,0x128,0xAFA2003C,0xAFA2004C,-,-,Store the one-based object index at retail stack offset 0x4C,,,false
+generated_20AE20,func_151E7F60,0x150,0x8FAB002C,0x8FAB0030,-,-,Reload the object-slot pointer from retail stack offset 0x30,,,false
+generated_20AE20,func_151E7F60,0x1AC,0xAFA80028,0xAFA8002C,-,-,Preserve the object-table pointer across allocation,,,false
+generated_20AE20,func_151E7F60,0x1B4,0xAFA90034,0xAFA9003C,-,-,Preserve the object ID across allocation,,,false
+generated_20AE20,func_151E7F60,0x1B8,0x8FB9003C,0x8FB9004C,-,-,Reload the object index for the auxiliary pointer store,,,false
+generated_20AE20,func_151E7F60,0x1F8,0x8FA80028,0x8FA8002C,-,-,Reload the object-table pointer after zeroing,,,false
+generated_20AE20,func_151E7F60,0x1FC,0x8FA90034,0x8FA9003C,-,-,Reload the object ID after zeroing,,,false
+generated_20AE20,func_151E7F60,0x200,0x8FAC003C,0x8FAC004C,-,-,Reload the object index for final setup,,,false
+generated_20AE20,func_151E7F60,0x240,0x8FB80058,0x8FB80050,-,-,Reload the first argument for the special object tag,,,false
+generated_20AE20,func_151E7F60,0x254,0xAFA4002C,0xAFA40030,-,-,Spill the object pointer at retail stack offset 0x30,,,false
+generated_20AE20,func_151E7F60,0x25C,0x8FA4002C,0x8FA40030,-,-,Reload the object pointer for animation setup,,,false
+generated_20AE20,func_151E7F60,0x280,0x27BD0058,0x27BD0050,-,-,Restore retail's 80-byte frame,,,false

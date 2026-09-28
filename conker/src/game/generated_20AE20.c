@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 extern s8 D_8008FD90;
 extern s8 D_8008FD8C;
 extern s8 D_800E0BEB;
@@ -15,13 +16,34 @@ extern s8 D_8008FE30;
 extern u8 D_8008FD80;
 extern u8 D_8008FD84;
 typedef struct {
-    s32 unk0;
-    s32 unk4;
-    s32 unk8;
-    s32 unkC;
+    struct127 *unk0;
+    struct127 *unk4;
+    struct127 *unk8;
+    struct127 *unkC;
 } Unk800E0BA0;
 extern Unk800E0BA0 D_800E0BA0;
 extern u8 D_80084060[];
+
+typedef struct {
+    f32 scale;
+    s8 y_offset;
+    u8 object_id;
+    u8 setup_id;
+    u8 pad7;
+} Unk800AB57C;
+
+typedef struct {
+    s16 x;
+    s16 y;
+    s16 z;
+    u8 unk6;
+    u8 pad7;
+} Unk800AB940;
+
+extern Unk800AB57C D_800AB57C[];
+extern Unk800AB940 D_800AB940[];
+extern u8 *D_800D20FC;
+extern struct127 D_800CC2D0[];
 
 /* Non-matching placeholders for the text-only asm slice asm/20AE20.s. */
 
@@ -55,6 +77,9 @@ extern u8 D_800E0B95;
 void func_151E557C(void);
 void func_151E6BFC(void);
 s32 func_151E55A8();
+s32 func_15082A44(u8 *, s32, s32, s32, s32);
+void func_15083384(struct127 *, u8);
+void func_1505E650(struct127 *, u16, f32, f32, f32, f32, s32);
 
 void func_151DD970(void) {
     s32 i;
@@ -365,8 +390,62 @@ void func_151E7EF8(void) {
     }
 }
 
-s32 func_151E7F60() {
-    return 0;
+void func_151E7F60(s32 arg0, s32 arg1) {
+    struct127 **slot;
+    struct127 *object;
+    Unk800AB57C *object_entry;
+    Unk800AB940 *position_entry;
+    u8 *descriptor;
+    s32 descriptor_index;
+    s32 object_index;
+    s32 position_index;
+    s32 object_id;
+
+    slot = &D_800E0BA0.unk0 + arg0;
+    if (*slot != NULL) {
+        func_15060F28(*slot, 1);
+    }
+
+    descriptor_index = func_15083E0C((arg0 + 0x10) & 0xFF);
+    object_entry = &D_800AB57C[arg1];
+    descriptor = D_800D20FC + descriptor_index * 0x30;
+    object_id = object_entry->object_id;
+    position_index = arg0;
+    if (D_8008FDD4[0x2C] == 7) {
+        position_index++;
+    }
+    position_entry = &D_800AB940[position_index];
+
+    descriptor[4] = object_id;
+    *(s16 *)(descriptor + 6) = position_entry->x;
+    *(s16 *)(descriptor + 8) = position_entry->y;
+    *(s16 *)(descriptor + 8) += object_entry->y_offset;
+    *(s16 *)(descriptor + 0xA) = position_entry->z;
+    descriptor[0xC] = position_entry->unk6;
+    if (object_id == 0x53) {
+        descriptor[0xD] = 0x24;
+    } else {
+        descriptor[0xD] = 0xE;
+    }
+
+    object_index = func_15082A44(descriptor, descriptor_index, 0, 0, 0);
+    if (object_index != 0) {
+        object = &D_800CC2D0[object_index - 1];
+        *slot = object;
+        object->unk5 = 7;
+        object->unk2F8 |= 3;
+        object->xz_scale = object->y_scale = object_entry->scale;
+
+        if ((object->id == 0) || (object->id == 0x80)) {
+            object->unk31C = (struct126 *)allocate_memory(0x1C0, 1, 0, 0);
+            bzero(object->unk31C, 0x1C0);
+        }
+        if (object_id == 0x3B) {
+            *(u8 *)&object->pad68 = arg0 + 1;
+        }
+        func_15083384(object, object_entry->setup_id);
+        func_1505E650(object, 0xF, 1.0f, 0.0f, 0.0f, 0.0f, 0);
+    }
 }
 
 void func_151E81EC(void) {
