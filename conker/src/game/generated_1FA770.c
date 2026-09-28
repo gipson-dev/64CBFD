@@ -6,7 +6,7 @@ extern ThreeWord1FA770 D_800AAF9C[];
 /* Non-matching placeholders for the text-only asm slice asm/1FA770.s. */
 
 s32 func_151D10E4(u8 *, s32, u8);
-s32 func_151D13E0();
+void func_151D13E0(u8 *);
 
 s32 func_151CD2C0() {
     return 0;
@@ -239,8 +239,20 @@ s32 func_151D13B4(s32 arg0) {
     func_15149368(arg0);
 }
 
-s32 func_151D13E0() {
-    return 0;
+void func_151D13E0(u8 *arg0) {
+    u8 *owner = arg0 + 0x28;
+    u8 *linked;
+
+    if (*(u8 **)(owner + 8) != NULL) {
+        linked = *(u8 **)(*(u8 **)(owner + 8) + 0x98);
+        *(u8 *)(*(u8 **)(owner + 8) + 0x30) = 0;
+        *(u16 *)(*(u8 **)(owner + 8) + 0x1E) &= ~2;
+        *(u16 *)(*(u8 **)(owner + 8) + 0x1E) |= 8;
+        *(u16 *)(*(u8 **)(owner + 8) + 0x1E) |= 1;
+        *(u16 *)(*(u8 **)(owner + 8) + 0x1C) = 0x28;
+        *(s32 *)linked = 0;
+        *(u8 **)(owner + 8) = NULL;
+    }
 }
 
 s32 func_151D1448() {

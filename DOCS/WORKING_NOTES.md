@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, four-handler event broadcast matched).** The current
-linked checkpoint is `2856 / 5468 (52.23%)` exact C functions, with one
-address-drift blocker and 2,611 genuinely different C functions. Init is
+**Active (2026-09-27, owned-state teardown matched).** The current linked
+checkpoint is `2857 / 5468 (52.25%)` exact C functions, with one address-drift
+blocker and 2,610 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2284 / 4790 (47.68%)` exact, with 2,506 genuinely different C rows. The tree
+`2285 / 4790 (47.70%)` exact, with 2,505 genuinely different C rows. The tree
 contains 573 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1049,7 +1049,10 @@ see
 The 25-word Game `func_151C9ED4` four-handler event broadcast is exact from
 recovered C plus four guarded frame/local-slot words; see
 [Working Note 353](WORKING_NOTES/353-game-four-handler-event-broadcast-match-20260927.md).
-Classify 26-word Game `func_151D13E0`, the next unparked compact Game row in
+The 26-word Game `func_151D13E0` owned-state teardown is exact directly from C
+with no guard rows; see
+[Working Note 354](WORKING_NOTES/354-game-owned-state-teardown-match-20260927.md).
+Classify 25-word Game `func_151E4E00`, the next unparked compact Game row in
 the fresh queue after the documented compiler and SDK cases.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

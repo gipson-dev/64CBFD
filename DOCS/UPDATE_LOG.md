@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game owned-state teardown byte-exact
+
+- Recovered `func_151D13E0` as a null-gated teardown of the object stored at
+  owner offset `0x30`: clear its state byte, update three flag bits, write
+  halfword `0x28`, clear its linked record, and release the owner slot.
+- Preserving retail's repeated owner-slot loads makes the entire 26-word leaf
+  routine exact directly from C. No guard rows or relocation substitutions are
+  needed.
+- Linked and pristine 104-byte spans share SHA-256
+  `0244d7b415296c133f4e777a20a9f3de1c752d82b13a12814a4e4a39beff5bec`.
+  Fresh totals are **2,857 / 5,468 (52.25%)** overall and
+  **2,285 / 4,790 (47.70%)** in Game.
+
 ### Game four-handler event broadcast byte-exact
 
 - Recovered `func_151C9ED4` as an event-`0x21` broadcast of one stack record
