@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, timed event transition matched).** The current linked
-checkpoint is `2863 / 5468 (52.36%)` exact C functions, with one address-drift
-blocker and 2,604 genuinely different C functions. Init is
+**Active (2026-09-28, mode-resource setup matched).** The current linked
+checkpoint is `2864 / 5468 (52.38%)` exact C functions, with one address-drift
+blocker and 2,603 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2291 / 4790 (47.83%)` exact, with 2,499 genuinely different C rows. The tree
+`2292 / 4790 (47.85%)` exact, with 2,498 genuinely different C rows. The tree
 contains 573 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1070,7 +1070,10 @@ is exact from semantic C plus one guarded commuted equality-branch word; see
 The 50-word Game `func_151E83E8` timed event transition is exact directly from
 C with no guard rows; see
 [Working Note 360](WORKING_NOTES/360-game-timed-event-transition-match-20260928.md).
-Recover adjacent 92-word Game `func_151E84B0`, currently measured at 84 real
+The 92-word Game `func_151E84B0` mode callback and indexed-resource setup is
+exact from semantic C plus two guarded frame-size words; see
+[Working Note 361](WORKING_NOTES/361-game-mode-resource-setup-match-20260928.md).
+Recover adjacent 49-word Game `func_151E8620`, currently measured at 49 real
 differences in the fresh linked queue after the documented compiler and SDK
 cases.
 Keep raw-assembly conversion as a separate workstream. The measured handoff

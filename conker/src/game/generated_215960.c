@@ -1,11 +1,56 @@
 #include <ultra64.h>
 #include "variables.h"
 extern s16 D_8008FDCC;
+extern u8 D_800E0B94;
+extern u8 D_800BE616;
+extern u8 D_800BE740;
+extern s8 D_8008FD90;
+extern s8 D_800E0BD3;
+extern u8 **D_800E0BD8;
+extern s32 (*D_8008FFF4[])(s32);
+s32 func_151ED1E0(void);
 
 /* Non-matching placeholders for the text-only asm slice asm/215960.s. */
 
-s32 func_151E84B0() {
-    return 0;
+s32 func_151E84B0(void) {
+    /* Retain retail's local-slot gap under IDO's debug layout. */
+    s32 stack_pad;
+    s32 result;
+    s32 index = 0;
+    s32 (*callback)(s32);
+
+    D_8003C8E0 = 0x09000001;
+    result = func_151ED1E0();
+    callback = D_8008FFF4[D_800E0B94];
+    if (callback != NULL) {
+        result = callback(result);
+    }
+
+    if (D_80000300 != 0) {
+        if ((D_800BE616 != 0) && (D_8008FD90 >= 2)) {
+            if ((D_800BE740 & 0xF) == 0) {
+                if (D_800E0BD3 == 1) {
+                    index = 0x33;
+                } else if (D_800E0BD3 == 2) {
+                    index = 0x16;
+                }
+            }
+        } else if ((D_800BE740 & 1) == 0) {
+            if (D_800E0BD3 == 1) {
+                index = 0x32;
+            } else if (D_800E0BD3 == 2) {
+                index = 0x15;
+            }
+        }
+    }
+
+    if (index != 0) {
+        func_1504332C(0xFF, 0xFF, 0xFF, 0xFF);
+        func_15042D94(0x94, 0xC8, 0x81, D_800E0BD8[index]);
+    }
+
+    D_8003C8E0 = 0;
+    return result;
 }
 
 s32 func_151E8620() {

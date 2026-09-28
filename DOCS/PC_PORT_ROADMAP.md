@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 2,863 / 5,468 (52.36%) | 1 | 2,604 |
+| Total | 5,468 / 6,041 (90.51%) | 2,864 / 5,468 (52.38%) | 1 | 2,603 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,790 / 5,321 (90.02%) | 2,291 / 4,790 (47.83%) | 0 | 2,499 |
+| Game | 4,790 / 5,321 (90.02%) | 2,292 / 4,790 (47.85%) | 0 | 2,498 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1027,9 +1027,11 @@ timed mode transition is exact directly from C with no guard rows. The
 76-word Game `func_151E82B8` marker-table cursor and timed mode transition is
 exact from semantic C plus one guarded commuted equality-branch word. The
 50-word Game `func_151E83E8` timed event transition is exact directly from C
-with no guard rows. Continue with adjacent 92-word Game `func_151E84B0`,
-measured at 84 real differences; see
-[Working Note 360](WORKING_NOTES/360-game-timed-event-transition-match-20260928.md).
+with no guard rows. The 92-word Game `func_151E84B0` mode callback and indexed-
+resource setup is exact from semantic C plus two guarded frame-size words.
+Continue with adjacent 49-word Game `func_151E8620`, measured at 49 real
+differences; see
+[Working Note 361](WORKING_NOTES/361-game-mode-resource-setup-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

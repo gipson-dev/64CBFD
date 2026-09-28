@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game mode-resource setup byte-exact
+
+- Recovered all 92 words of `func_151E84B0`. It obtains a base result, passes
+  it through the current mode callback when present, selects one of four
+  resource-table indices from controller/runtime state, optionally performs
+  color and resource setup, clears the active marker, and returns the result.
+- Semantic C emits all behavior, control flow, calls, registers, stack slots,
+  and scheduling directly. A retained declaration restores retail's local-
+  slot gap; two guarded words normalize only IDO's resulting 40-byte frame to
+  retail's 32-byte frame. The guard table now has 1,514 rows and zero
+  duplicate keys.
+- Linked and pristine 368-byte spans share SHA-256
+  `dcce149dab839960d8e6ba7fec108cac61da0328fbf0f2d218fb53fbe974a341`.
+  Fresh totals are **2,864 / 5,468 (52.38%)** overall and
+  **2,292 / 4,790 (47.85%)** in Game.
+
 ### Game timed event transition byte-exact
 
 - Recovered all 50 words of `func_151E83E8`. A zero cursor is changed to
