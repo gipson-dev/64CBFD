@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game type-result selector byte-exact
+
+- Restored `func_151928B0` as a type selector: types `0..4` write zero, type
+  `0x53` writes one, and unsupported types return failure without writing.
+- The generated-slice build retargets the compiler switch to retail's original
+  five-entry `jtbl_800A8160_game`; four scoped rows retain the shared epilogue.
+- The linked span has SHA-256
+  `5df09e47be03d532d51cb3be24137de3e4bb65af2be2d7a3b7f6f83212c0fe88`.
+  Fresh totals are **2,853 / 5,469 (52.17%)** overall and
+  **2,281 / 4,791 (47.61%)** in Game.
+
 ### Game identity-gated event flag byte-exact
 
 - Restored `func_151A931C` as matching-identity handling for event `0x17`

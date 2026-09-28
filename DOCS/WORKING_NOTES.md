@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, identity-gated event flag matched).** The current linked
-checkpoint is `2852 / 5469 (52.15%)` exact C functions, with one address-drift
-blocker and 2,616 genuinely different C functions. Init is
+**Active (2026-09-27, type-result selector matched).** The current linked
+checkpoint is `2853 / 5469 (52.17%)` exact C functions, with one address-drift
+blocker and 2,615 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2280 / 4791 (47.59%)` exact, with 2,511 genuinely different C rows. The tree
+`2281 / 4791 (47.61%)` exact, with 2,510 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1030,8 +1030,12 @@ typed C plus four guarded early-return words. Its corrected byte prototype also
 makes caller `func_151A9024` exact directly and removes all 13 caller guards;
 see
 [Working Note 348](WORKING_NOTES/348-game-identity-gated-event-flag-match-20260927.md).
-Classify 28-word Game `func_151928B0`, the first undocumented Game row after
-the known parked compiler cases in the fresh queue.
+The 28-word Game `func_151928B0` type-result selector is exact from structured
+C plus four guarded shared-epilogue words while preserving its original five-
+entry jump table; see
+[Working Note 349](WORKING_NOTES/349-game-type-result-selector-match-20260927.md).
+Classify 25-word Game `func_150ADA68`, the first Game row in the fresh queue
+after the documented compiler cases.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

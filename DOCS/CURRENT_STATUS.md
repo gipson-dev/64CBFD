@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,852 / 5,469 (52.15%) | 1 | 2,616 |
+| Total | 2,853 / 5,469 (52.17%) | 1 | 2,615 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,280 / 4,791 (47.59%) | 0 | 2,511 |
+| Game | 2,281 / 4,791 (47.61%) | 0 | 2,510 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,852, while
+denominator driven: the exact count is now 2,853, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -761,8 +761,11 @@ end-to-end gameplay acceptance.
    guarded shared-base words. The 29-word `func_151A931C` identity-gated event
    flag update is exact from typed C plus four guarded early-return words; its
    corrected prototype also removes all 13 guards from exact caller
-   `func_151A9024`. Continue by classifying 28-word Game `func_151928B0`; keep
-   the previously documented smaller special cases parked.
+   `func_151A9024`. The 28-word `func_151928B0` type-result selector is exact
+   from structured C plus four guarded shared-epilogue words, with its original
+   five-entry jump table retained. Continue by classifying 25-word Game
+   `func_150ADA68`; keep the previously documented smaller special cases
+   parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

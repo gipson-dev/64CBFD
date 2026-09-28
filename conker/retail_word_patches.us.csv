@@ -1460,3 +1460,7 @@ generated_1CC440,func_1519F48C,0x08,0x5060000D,0x5060000E,-,-,Extend the null br
 generated_1CC440,func_1519F48C,0x14,0x24010006,0x24010006,-,-,Materialize the shared field base before the first comparison branch,0x24650058,,false
 generated_1CC440,func_1519F48C,0x20,0xAC600058,0xACA00000,-,-,Clear the first field through the restored shared base,,,false
 generated_1CC440,func_1519F48C,0x34,0xAC600060,0xACA00008,-,-,Clear the third field through the restored shared base,,,false
+generated_1BFCB0,func_151928B0,0x020,0x00601025,0x00000000,-,-,Keep the default branch delay slot empty,,,false
+generated_1BFCB0,func_151928B0,0x028,0x1020000B,0x1020000C,-,-,Extend the switch range branch across the shared epilogue,,,false
+generated_1BFCB0,func_151928B0,0x048,0x10000003,0x10000004,-,-,Extend the zero-result case branch across the shared epilogue,,,false
+generated_1BFCB0,func_151928B0,0x054,0xACAF0000,0x10000001,-,-,Branch from the one-result case to the shared epilogue,0xACAF0000,,false
