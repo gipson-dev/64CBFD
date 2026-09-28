@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game five-bucket byte canonicalizer byte-matched
+
+- Replaced `func_1503D5F0`'s zero-return placeholder with directly indexed
+  nested loops over five byte-table buckets.
+- A match returns the bucket's first byte; no match returns the input. The
+  `generated_6A3D0` slice now uses retail's no-unroll IDO profile, producing
+  the frame-free 28-word routine without guards or collateral matcher losses.
+- Direct comparison matches all 112 linked bytes with SHA-256
+  `56c2590b5e3a77f9c9f80f334aa4e5736c07ef83de10fa409d160adf5948adf1`.
+  Fresh totals are **2,902 / 5,466 (53.09%)** overall and
+  **2,328 / 4,790 (48.60%)** in Game. See
+  [Working Note 400](WORKING_NOTES/400-game-five-bucket-byte-canonicalizer-match-20260928.md).
+
 ### Game current-record vector copy byte-matched
 
 - Replaced `func_1503A60C`'s zero-return placeholder with its destination

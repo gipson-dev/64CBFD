@@ -9,6 +9,8 @@ typedef struct {
 } RecordByteBuffer;
 
 extern u8 *D_800D19A0[];
+extern u8 D_80098888[];
+extern u8 *D_80084410[];
 
 s32 func_1503CF20() {
     return 0;
@@ -41,8 +43,19 @@ s32 func_1503D510() {
     return 0;
 }
 
-s32 func_1503D5F0() {
-    return 0;
+s32 func_1503D5F0(s32 value) {
+    s32 group;
+    s32 i;
+
+    for (group = 0; group < 5; group++) {
+        for (i = 0; i < D_80098888[group]; i++) {
+            if (value == D_80084410[group][i]) {
+                return D_80084410[group][0];
+            }
+        }
+    }
+
+    return value;
 }
 
 s32 func_1503D660() {
