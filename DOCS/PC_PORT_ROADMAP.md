@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,876 / 5,466 (52.62%) | 1 | 2,589 |
+| Total | 5,466 / 6,041 (90.48%) | 2,877 / 5,466 (52.63%) | 1 | 2,588 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,302 / 4,790 (48.06%) | 0 | 2,488 |
+| Game | 4,790 / 5,321 (90.02%) | 2,303 / 4,790 (48.08%) | 0 | 2,487 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1095,6 +1095,11 @@ recovering its `0x34`-byte record indexing and four output stores. It emits
 directly from C without guards. This remains guest-side donor/reference
 progress rather than a host runtime milestone; see
 [Working Note 378](WORKING_NOTES/378-game-record-output-accessor-match-20260928.md).
+The 31-word Game `func_150E36BC` actor-position query is byte-exact after
+recovering its slot bounds, actor-type validation, and three float-to-integer
+coordinate outputs. It emits directly from C without guards. This remains
+guest-side donor/reference progress rather than a host runtime milestone; see
+[Working Note 379](WORKING_NOTES/379-game-actor-position-query-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

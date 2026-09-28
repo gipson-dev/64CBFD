@@ -28,9 +28,9 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,876 / 5,466 (52.62%) | 1 | 2,589 |
+| Total | `[#############-----------]` 2,877 / 5,466 (52.63%) | 1 | 2,588 |
 | Init | `[###################-----]` 393 / 495 (79.39%) | 1 | 101 |
-| Game | `[############------------]` 2,302 / 4,790 (48.06%) | 0 | 2,488 |
+| Game | `[############------------]` 2,303 / 4,790 (48.08%) | 0 | 2,487 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
@@ -91,6 +91,10 @@ The 26-word Game record-output accessor `func_150A3330` is now byte-exact
 after recovering its `0x34`-byte record indexing and four output stores. The
 complete routine emits directly from C with no guards; see
 [Working Note 378](DOCS/WORKING_NOTES/378-game-record-output-accessor-match-20260928.md).
+The 31-word Game actor-position query `func_150E36BC` is now byte-exact after
+recovering its one-based slot validation, actor-type gate, and three truncated
+coordinate outputs. It also emits directly from C with no guards; see
+[Working Note 379](DOCS/WORKING_NOTES/379-game-actor-position-query-match-20260928.md).
 
 ## Build overview
 

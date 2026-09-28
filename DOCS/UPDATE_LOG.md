@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game actor-position query byte-matched
+
+- Recovered `func_150E36BC` as a one-based eight-slot actor query with a
+  required type byte of `0x27`.
+- The routine truncates the actor's three floating-point coordinates into
+  caller outputs. All 31 words / 124 bytes emit directly from semantic C with
+  no expected-word guards or compiler-profile override.
+- Fresh totals are **2,877 / 5,466 (52.63%)** overall and
+  **2,303 / 4,790 (48.08%)** in Game. See
+  [Working Note 379](WORKING_NOTES/379-game-actor-position-query-match-20260928.md).
+
 ### Game record-output accessor byte-matched
 
 - Recovered `func_150A3330` as a five-argument accessor over `0x34`-byte
