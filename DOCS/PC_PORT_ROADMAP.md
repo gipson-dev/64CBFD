@@ -1041,6 +1041,10 @@ The adjacent 427-word Game `func_151E966C` player-status row renderer is also
 reconstructed as semantic C with retail's `0x100` frame and remains
 non-matching at 415 real word differences; see
 [Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md).
+The next 273-word Game `func_151E9D18` team-counter panel is reconstructed as
+semantic C with retail's exact `0x444` extent and `0xA0` frame; its mismatch is
+reduced from 272 to 178 words. See
+[Working Note 366](WORKING_NOTES/366-game-team-counter-panel-reconstruction-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

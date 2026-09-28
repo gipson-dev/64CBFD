@@ -815,6 +815,11 @@ end-to-end gameplay acceptance.
    `0x100` frame, fits its 1,708-byte slot, and remains non-matching at 415 real
    word differences; continue from
    [Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md).
+   The next 273-word `func_151E9D18` team-counter panel is reconstructed as
+   semantic C with retail's exact `0x444` code extent and `0xA0` frame. It is
+   down from 272 to 178 real differences; continue its stack-slot and temporary
+   matching pass from
+   [Working Note 366](WORKING_NOTES/366-game-team-counter-panel-reconstruction-20260928.md).
    Keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

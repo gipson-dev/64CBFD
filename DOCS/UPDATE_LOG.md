@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game team-counter panel reconstructed
+
+- Replaced `func_151E9D18`'s zero-return placeholder with semantic C for its
+  texture selection, three total-aggregation modes, cached counters, paired
+  panel rectangles, and two text calls.
+- Correcting the accumulators to retail's 32-bit lifetimes removes redundant
+  sign extensions and produces the exact `0x444` code extent. A retained
+  debug-layout gap also restores the exact `0xA0` frame.
+- The fresh mismatch falls from 272 to 178 of 273 words. Exact-function totals
+  therefore remain unchanged. See
+  [Working Note 366](WORKING_NOTES/366-game-team-counter-panel-reconstruction-20260928.md).
+
 ### Game player-status row renderer reconstructed
 
 - Replaced `func_151E966C`'s zero-return placeholder with semantic C for its
