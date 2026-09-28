@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game line-projection helper byte-exact
+
+- Restored `func_1514563C`'s projection of a point onto a directed line,
+  including its optional amount output and zero-length direction rejection.
+- Reversing six commutative dot-product operands matches retail directly;
+  eighteen scoped rows preserve the original leaf frame and final FP-register
+  allocation.
+- Linked and pristine 260-byte spans share SHA-256
+  `19c6f8f57853c7b7d404c4ba8fe718d0c7cad42955a1b1ec2ea13d27680c730f`.
+  Fresh totals are **2,854 / 5,468 (52.19%)** overall and
+  **2,282 / 4,790 (47.64%)** in Game.
+
 ### Original handwritten floating PRNG restored
 
 - Restored `func_150ADA68` from its maintained behavioral C equivalent to the

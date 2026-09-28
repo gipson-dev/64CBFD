@@ -814,8 +814,8 @@ s32 func_1514563C(struct17 *arg0, struct17 *arg1, struct17 *arg2, struct17 *arg3
         return 0;
     }
 
-    dot0 = (arg0->unk0 * arg1->unk0) + (arg0->unk4 * arg1->unk4) + (arg0->unk8 * arg1->unk8);
-    dot1 = (arg2->unk0 * arg1->unk0) + (arg2->unk4 * arg1->unk4) + (arg2->unk8 * arg1->unk8);
+    dot0 = (arg1->unk0 * arg0->unk0) + (arg1->unk4 * arg0->unk4) + (arg1->unk8 * arg0->unk8);
+    dot1 = (arg1->unk0 * arg2->unk0) + (arg1->unk4 * arg2->unk4) + (arg1->unk8 * arg2->unk8);
     amount = (dot1 - dot0) / mag_sq;
     *arg4 = amount;
 

@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, floating PRNG ownership restored).** The current linked
-checkpoint is `2853 / 5468 (52.18%)` exact C functions, with one address-drift
-blocker and 2,614 genuinely different C functions. Init is
+**Active (2026-09-27, line projection matched).** The current linked
+checkpoint is `2854 / 5468 (52.19%)` exact C functions, with one address-drift
+blocker and 2,613 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2281 / 4790 (47.62%)` exact, with 2,509 genuinely different C rows. The tree
+`2282 / 4790 (47.64%)` exact, with 2,508 genuinely different C rows. The tree
 contains 573 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1038,8 +1038,12 @@ The 25-word Game `func_150ADA68` floating PRNG step is restored to original
 handwritten assembly ownership after its equivalent C compiled as a 26-word
 overflow; see
 [Working Note 350](WORKING_NOTES/350-game-handwritten-floating-prng-restoration-20260927.md).
-Classify 65-word Game `func_1514563C`, the first unparked Game row in the fresh
-queue after the documented compiler cases.
+The 65-word Game `func_1514563C` line-projection helper is exact after restoring
+retail's dot-product operand order and guarding 18 independent frame and
+output-register choices; see
+[Working Note 351](WORKING_NOTES/351-game-line-projection-match-20260927.md).
+Classify 28-word Game `func_151B3040`, the next unparked compact Game row in
+the fresh queue after the documented compiler cases.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

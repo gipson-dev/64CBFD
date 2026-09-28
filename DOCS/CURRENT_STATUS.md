@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,853 / 5,468 (52.18%) | 1 | 2,614 |
+| Total | 2,854 / 5,468 (52.19%) | 1 | 2,613 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,281 / 4,790 (47.62%) | 0 | 2,509 |
+| Game | 2,282 / 4,790 (47.64%) | 0 | 2,508 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,853, while
+denominator driven: the exact count is now 2,854, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -766,8 +766,11 @@ end-to-end gameplay acceptance.
    five-entry jump table retained. The 25-word `func_150ADA68` floating PRNG
    step is restored to original handwritten assembly ownership after its
    equivalent C was confirmed to compile as a 26-word overflow trampoline.
-   Continue by classifying 65-word Game `func_1514563C`; keep the previously
-   documented smaller special cases parked.
+   The 65-word `func_1514563C` line-projection helper is exact after restoring
+   retail's dot-product operand order and guarding 18 independent frame and
+   output-register choices. Continue by classifying 28-word Game
+   `func_151B3040`; keep the previously documented smaller special cases
+   parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

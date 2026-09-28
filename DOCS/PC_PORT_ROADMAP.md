@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 2,853 / 5,468 (52.18%) | 1 | 2,614 |
+| Total | 5,468 / 6,041 (90.51%) | 2,854 / 5,468 (52.19%) | 1 | 2,613 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,790 / 5,321 (90.02%) | 2,281 / 4,790 (47.62%) | 0 | 2,509 |
+| Game | 4,790 / 5,321 (90.02%) | 2,282 / 4,790 (47.64%) | 0 | 2,508 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1011,8 +1011,10 @@ result selector is exact from structured C plus four guarded shared-epilogue
 words while preserving its original five-entry jump table. The 25-word Game
 `func_150ADA68` floating PRNG step is restored to original handwritten
 assembly ownership after its equivalent C compiled one word beyond the retail
-slot. Continue by classifying 65-word Game `func_1514563C`; see
-[Working Note 350](WORKING_NOTES/350-game-handwritten-floating-prng-restoration-20260927.md).
+slot. The 65-word Game `func_1514563C` line-projection helper is exact after
+restoring retail's dot-product operand order and guarding 18 frame and output-
+register choices. Continue by classifying 28-word Game `func_151B3040`; see
+[Working Note 351](WORKING_NOTES/351-game-line-projection-match-20260927.md).
 
 Current host-port progression and acceptance boundaries:
 
