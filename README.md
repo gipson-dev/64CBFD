@@ -28,17 +28,20 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,866 / 5,468 (52.41%) | 1 | 2,601 |
+| Total | `[#############-----------]` 2,867 / 5,468 (52.43%) | 1 | 2,600 |
 | Init | `[###################-----]` 391 / 497 (78.67%) | 1 | 105 |
-| Game | `[###########-------------]` 2,294 / 4,790 (47.89%) | 0 | 2,496 |
+| Game | `[###########-------------]` 2,295 / 4,790 (47.91%) | 0 | 2,495 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
 `func_151E9D18`'s zero-return placeholders with semantic HUD/status renderers.
-They remain non-matching at 803, 415, and 178 real word differences, so the
-byte-exact totals above are unchanged; see [Working Notes 364](DOCS/WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md),
+The first two remain non-matching at 803 and 415 real word differences.
+`func_151E9D18` is now byte-exact across all 273 words from recovered SDK
+graphics macros and two guarded independent scheduling words; see
+[Working Notes 364](DOCS/WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md),
 [365](DOCS/WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md),
-and [366](DOCS/WORKING_NOTES/366-game-team-counter-panel-reconstruction-20260928.md).
+[366](DOCS/WORKING_NOTES/366-game-team-counter-panel-reconstruction-20260928.md),
+and [367](DOCS/WORKING_NOTES/367-game-team-counter-panel-byte-match-20260928.md).
 
 ## Build overview
 

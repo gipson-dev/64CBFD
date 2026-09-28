@@ -1,5 +1,8 @@
 # Game team-counter panel reconstruction - 2026-09-28
 
+> Superseded by the completed byte match in
+> [Working Note 367](367-game-team-counter-panel-byte-match-20260928.md).
+
 ## Result
 
 `func_151E9D18` is reconstructed as semantic C across its complete 273-word,

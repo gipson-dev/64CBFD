@@ -1531,3 +1531,5 @@ generated_215960,func_151E86E4,0x048,0xC4220000,0xC42C0000,R_MIPS_LO16:D_8008FE2
 generated_215960,func_151E86E4,0x07C,0x46028482,0x460C8482,-,-,Multiply the upper Y coordinate through retail's f12 scale lifetime,,,false
 generated_215960,func_151E86E4,0x094,0x46024282,0x460C4282,-,-,Multiply the lower Y coordinate through retail's f12 scale lifetime,,,false
 generated_215960,func_151E86E4,0x0BC,0x46028483,0x460C8483,-,-,Divide the vertical texture step through retail's f12 scale lifetime,,,false
+generated_215960,func_151E9D18,0x2E4,0x8C840000,0x00622821,R_MIPS_LO16:D_8008FDD4,-,Form the team-array end pointer before the independent record load,,,false
+generated_215960,func_151E9D18,0x2E8,0x00622821,0x8C840000,-,R_MIPS_LO16:D_8008FDD4,Complete the record load after the independent end-pointer calculation,,,false

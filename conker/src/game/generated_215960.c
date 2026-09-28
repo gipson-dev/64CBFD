@@ -684,34 +684,30 @@ Gfx *func_151E966C(Gfx *arg0, s32 y, s32 selected_row,
 }
 
 Gfx *func_151E9D18(Gfx *display_list, s32 arg1, s32 arg2) {
-    u8 stack_pad[0x40];
+    u8 stack_pad_top[4];
     s32 texture_t;
+    u8 stack_pad_middle[0x14];
     s32 panel_y;
     s32 texture_s_left;
     s32 texture_s_right;
+    u8 stack_pad_bottom[0x28];
     s32 object_save;
     u8 *resource;
     struct127 *object;
-    s16 value;
+    s32 value;
     s32 left_total;
     s32 right_total;
-    s16 player;
+    s32 player;
     s32 texture_width;
-    s32 load_count;
     s32 text_y;
     s32 texture;
-    s32 tile_line;
-    s8 *team;
     s8 *record;
-    Gfx *command;
+    s8 *team;
 
     panel_y = arg1 - 0x10;
     if ((D_8008FDC0 & 0x4000) || (D_8008FDD4[0x42] == 8)) {
-        resource = &D_D10 + 1;
+        resource = (D_8008FDD4[0x42] == 8) ? &D_D10 + 2 : &D_D10 + 1;
         texture_width = 0x10;
-        if (D_8008FDD4[0x42] == 8) {
-            resource = &D_D10 + 2;
-        }
         texture_s_left = 0;
         texture_s_right = 0x200;
     } else {
@@ -726,41 +722,22 @@ Gfx *func_151E9D18(Gfx *display_list, s32 arg1, s32 arg2) {
         return display_list;
     }
 
-    command = display_list++;
-    command->words.w0 = 0xE7000000;
-    command->words.w1 = 0;
-    command = display_list++;
-    command->words.w0 = 0xFD180000;
-    command->words.w1 = texture;
-    command = display_list++;
-    command->words.w1 = 0x07094250;
-    command->words.w0 = 0xF5180000;
-    command = display_list++;
-    command->words.w0 = 0xE6000000;
-    command->words.w1 = 0;
-    command = display_list++;
-    command->words.w0 = 0xF3000000;
-    load_count = (texture_width << 5) - 1;
-    if (load_count >= 0x7FF) {
-        load_count = 0x7FF;
-    }
-    command->words.w1 = ((load_count & 0xFFF) << 12) | 0x07000000;
-    command = display_list++;
-    command->words.w0 = 0xE7000000;
-    command->words.w1 = 0;
-    command = display_list++;
-    tile_line = (((texture_width * 2) + 7) >> 3) & 0x1FF;
-    command->words.w0 = (tile_line << 9) | 0xF5180000;
-    command->words.w1 = 0x00094250;
-    command = display_list++;
-    command->words.w0 = 0xF2000000;
-    command->words.w1 = ((((texture_width - 1) * 4) & 0xFFF) << 12) | 0x7C;
-    command = display_list++;
-    command->words.w0 = 0xEF000C3F;
-    command->words.w1 = 0x00504244;
-    command = display_list++;
-    command->words.w1 = 0xFFFFFFFF;
-    command->words.w0 = 0xFB000000;
+    gDPPipeSync(display_list++);
+    gDPSetTextureImage(display_list++, G_IM_FMT_RGBA, G_IM_SIZ_32b, 1,
+                       texture);
+    gDPSetTile(display_list++, G_IM_FMT_RGBA, G_IM_SIZ_32b, 0, 0,
+               G_TX_LOADTILE, 0, G_TX_CLAMP, 5, 0, G_TX_CLAMP, 5, 0);
+    gDPLoadSync(display_list++);
+    gDPLoadBlock(display_list++, G_TX_LOADTILE, 0, 0,
+                 (texture_width << 5) - 1, 0);
+    gDPPipeSync(display_list++);
+    gDPSetTile(display_list++, G_IM_FMT_RGBA, G_IM_SIZ_32b,
+               ((texture_width * 2) + 7) >> 3, 0,
+               G_TX_RENDERTILE, 0, G_TX_CLAMP, 5, 0, G_TX_CLAMP, 5, 0);
+    gDPSetTileSize(display_list++, G_TX_RENDERTILE, 0, 0,
+                   (texture_width - 1) << 2, 0x7C);
+    gDPSetOtherMode(display_list++, 0x00000C3F, 0x00504244);
+    gDPSetEnvColor(display_list++, 0xFF, 0xFF, 0xFF, 0xFF);
 
     texture_t = 0;
     left_total = 0;
@@ -775,7 +752,7 @@ Gfx *func_151E9D18(Gfx *display_list, s32 arg1, s32 arg2) {
             if (D_8008FD8C > 0) {
                 do {
                     object_save = (s32) object;
-                    value = func_150859AC(player, 3);
+                    value = func_150859AC((s16) player, 3);
                     if (value < 0) {
                         value = 0;
                     }
@@ -791,8 +768,8 @@ Gfx *func_151E9D18(Gfx *display_list, s32 arg1, s32 arg2) {
         } else {
             texture_t = 0x200;
             if (D_8008FD8C > 0) {
-                team = D_800E0C00;
                 record = D_8008FDD4;
+                team = D_800E0C00;
                 do {
                     value = *(s16 *) (record + 0x46);
                     if (value < 0) {

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 2,866 / 5,468 (52.41%) | 1 | 2,601 |
+| Total | 5,468 / 6,041 (90.51%) | 2,867 / 5,468 (52.43%) | 1 | 2,600 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,790 / 5,321 (90.02%) | 2,294 / 4,790 (47.89%) | 0 | 2,496 |
+| Game | 4,790 / 5,321 (90.02%) | 2,295 / 4,790 (47.91%) | 0 | 2,495 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1041,10 +1041,11 @@ The adjacent 427-word Game `func_151E966C` player-status row renderer is also
 reconstructed as semantic C with retail's `0x100` frame and remains
 non-matching at 415 real word differences; see
 [Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md).
-The next 273-word Game `func_151E9D18` team-counter panel is reconstructed as
-semantic C with retail's exact `0x444` extent and `0xA0` frame; its mismatch is
-reduced from 272 to 178 words. See
-[Working Note 366](WORKING_NOTES/366-game-team-counter-panel-reconstruction-20260928.md).
+The next 273-word Game `func_151E9D18` team-counter panel is byte-exact with
+retail's `0x444` extent and `0xA0` frame. SDK display-list macros, corrected
+types and recovered local layout emit 271 words directly; two guarded words
+normalize the final independent load/add schedule. See
+[Working Note 367](WORKING_NOTES/367-game-team-counter-panel-byte-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

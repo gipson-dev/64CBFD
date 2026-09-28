@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, team-counter panel reconstructed).** The current
-linked checkpoint is `2866 / 5468 (52.41%)` exact C functions, with one
-address-drift blocker and 2,601 genuinely different C functions. Init is
+**Active (2026-09-28, team-counter panel byte-matched).** The current linked
+checkpoint is `2867 / 5468 (52.43%)` exact C functions, with one address-drift
+blocker and 2,600 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2294 / 4790 (47.89%)` exact, with 2,496 genuinely different C rows. The tree
+`2295 / 4790 (47.91%)` exact, with 2,495 genuinely different C rows. The tree
 contains 573 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1091,16 +1091,15 @@ reconstructed from its zero-return placeholder as semantic C. Its compact body
 is `0x698` bytes within the `0x6AC` retail slot, its frame matches retail at
 `0x100`, and 415 real word differences remain. Continue its saved-register
 allocation pass from
-[Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md),
-or reconstruct adjacent 273-word `func_151E9D18` if scheduling does not
-converge.
-The adjacent 273-word Game `func_151E9D18` team-counter panel is now
-reconstructed from its zero-return placeholder as semantic C. Its `0x444` code
-extent and `0xA0` frame both match retail exactly, and the fresh mismatch is
-178 words, down from 272. Continue its local-slot and temporary-register pass
-from
-[Working Note 366](WORKING_NOTES/366-game-team-counter-panel-reconstruction-20260928.md)
-before moving to much larger `func_151EA15C`.
+[Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md).
+The adjacent 273-word Game `func_151E9D18` team-counter panel is now byte-exact
+with retail's `0x444` code extent and `0xA0` frame. The matching pass recovered
+the SDK graphics macros, conditional resource expression, 32-bit lifetimes,
+signed call conversion and exact stack layout; two guarded words normalize one
+independent load/add schedule. See
+[Working Note 367](WORKING_NOTES/367-game-team-counter-panel-byte-match-20260928.md).
+Continue the smaller adjacent HUD matching boundary at 427-word
+`func_151E966C` before taking on much larger `func_151EA15C`.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

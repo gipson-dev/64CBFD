@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game team-counter panel byte-matched
+
+- Completed the matching pass for 273-word `func_151E9D18`, reducing its
+  linked mismatch from 178 words to zero while retaining semantic C.
+- Restored retail's stack-local layout, conditional resource selection,
+  32-bit loop/value lifetimes, explicit signed call conversion, and SDK
+  `gDP*` display-list macros.
+- Two expected-word guards exchange only the final independent record-load
+  and end-pointer-add schedule. Fresh totals are **2,867 / 5,468 (52.43%)**
+  overall and **2,295 / 4,790 (47.91%)** in Game. See
+  [Working Note 367](WORKING_NOTES/367-game-team-counter-panel-byte-match-20260928.md).
+
 ### Game team-counter panel reconstructed
 
 - Replaced `func_151E9D18`'s zero-return placeholder with semantic C for its
