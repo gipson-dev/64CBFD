@@ -48,6 +48,13 @@ void func_1509F5A8(s32 arg0, s32 arg1, u16 arg2) {
 }
 
 void func_1509F5F4(u16 arg0, s32 arg1, s32 arg2, s16 arg3, s32 arg4, s32 arg5) {
+    void *object = (void *) func_1505EEF4(arg2);
+
+    if (object != 0) {
+        if ((arg5 != 0) || (func_10010894(object) == 0)) {
+            func_10010344(arg0, object, arg1, arg3, arg4);
+        }
+    }
 }
 
 void func_1509F660(s32 arg0, s32 arg1) {

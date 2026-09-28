@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game resolved-object dispatch wrapper byte-matched
+
+- Replaced `func_1509F5F4`'s empty placeholder with its object lookup, optional
+  validation, and forwarding call to `func_10010344`.
+- A nonzero sixth argument bypasses validation; otherwise dispatch requires
+  `func_10010894` to return zero. The semantic short circuit and narrowed
+  parameter types emit all 27 retail words directly from C with no guards.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `9239aa6a6b4788f6821422b9ce5c85dce833dc9fb1bc102ab1e18ccad7a4e820`.
+  Fresh totals are **2,906 / 5,466 (53.17%)** overall and
+  **2,332 / 4,790 (48.68%)** in Game. See
+  [Working Note 404](WORKING_NOTES/404-game-resolved-object-dispatch-wrapper-match-20260928.md).
+
 ### Game seven-group byte canonicalizer byte-matched
 
 - Replaced `func_15084D00`'s zero-return placeholder with its seven-group
