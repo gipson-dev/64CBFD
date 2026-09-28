@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 2,867 / 5,468 (52.43%) | 1 | 2,600 |
+| Total | 5,468 / 6,041 (90.51%) | 2,868 / 5,468 (52.45%) | 1 | 2,599 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,790 / 5,321 (90.02%) | 2,295 / 4,790 (47.91%) | 0 | 2,495 |
+| Game | 4,790 / 5,321 (90.02%) | 2,296 / 4,790 (47.93%) | 0 | 2,494 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1037,10 +1037,12 @@ adjacent 819-word Game `func_151E89A0` HUD/status renderer is now reconstructed
 as semantic C with retail's `0x158` frame and remains non-matching at 803 real
 word differences; continue its matching pass from
 [Working Note 364](WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md).
-The adjacent 427-word Game `func_151E966C` player-status row renderer is also
-reconstructed as semantic C with retail's `0x100` frame and remains
-non-matching at 415 real word differences; see
-[Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md).
+The adjacent 427-word Game `func_151E966C` player-status row renderer is now
+byte-exact with retail's `0x6AC` extent and `0x100` frame. Recovered SDK
+display-list macros and corrected scalar/cursor lifetimes emit the semantic
+routine; 116 relocation-aware guards normalize persistent IDO stack-slot,
+register-allocation and scheduling differences. See
+[Working Note 368](WORKING_NOTES/368-game-player-status-row-renderer-byte-match-20260928.md).
 The next 273-word Game `func_151E9D18` team-counter panel is byte-exact with
 retail's `0x444` extent and `0xA0` frame. SDK display-list macros, corrected
 types and recovered local layout emit 271 words directly; two guarded words

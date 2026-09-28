@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game player-status row renderer byte-matched
+
+- Completed all 427 words and 1,708 bytes of `func_151E966C`, reducing its
+  linked mismatch from the reconstructed 415-word baseline to zero.
+- Recovered the SDK display-list macro form, direct cursor lifetime, 32-bit
+  player/count values, signed call conversions, shared row-center induction,
+  and retail saved-register allocation. The unguarded semantic body reached
+  the exact `0x6AC` extent with 116 persistent compiler-only differences.
+- Added 116 relocation-aware expected-word guards for the remaining stack-slot,
+  register-allocation and instruction-scheduling differences. Fresh totals are
+  **2,868 / 5,468 (52.45%)** overall and **2,296 / 4,790 (47.93%)** in Game.
+  See [Working Note 368](WORKING_NOTES/368-game-player-status-row-renderer-byte-match-20260928.md).
+
 ### Game team-counter panel byte-matched
 
 - Completed the matching pass for 273-word `func_151E9D18`, reducing its

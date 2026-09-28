@@ -1,5 +1,9 @@
 # Game player-status row renderer reconstruction - 2026-09-28
 
+> Superseded on 2026-09-28 by the byte-exact result in
+> [Working Note 368](368-game-player-status-row-renderer-byte-match-20260928.md).
+> This note preserves the initial semantic reconstruction baseline.
+
 ## Result
 
 `func_151E966C` is reconstructed as semantic C across its 427-word,

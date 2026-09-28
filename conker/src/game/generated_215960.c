@@ -34,7 +34,7 @@ extern u8 D_D10;
 extern u8 D_D14;
 extern u8 D_D16;
 s32 func_151ED1E0(void);
-Gfx *func_151E966C(Gfx *, s32, s32, s8, u8);
+Gfx *func_151E966C(Gfx *, s32, s32, s8, volatile u8);
 Gfx *func_151E9D18(Gfx *, s32, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/215960.s. */
@@ -480,24 +480,19 @@ Gfx *func_151E89A0(Gfx *display_list, s32 arg1, s32 alpha) {
     return display_list;
 }
 
-Gfx *func_151E966C(Gfx *arg0, s32 y, s32 selected_row,
-                   s8 load_texture, u8 refresh_counts) {
-    u8 stack_pad[0x68];
+Gfx *func_151E966C(Gfx *display_list, s32 y, s32 selected_row,
+                   s8 load_texture, volatile u8 refresh_counts) {
     s8 hidden_mask;
-    s32 row_center;
+    s32 icon_center;
     s32 row_step;
     s16 *cached_count;
     s32 first_center;
-    s16 life_count;
-    s16 player;
+    s32 life_count;
+    s32 player;
     s32 box;
     s32 box_x;
     s32 texture;
-    s32 icon_center;
-    Gfx *command;
-    Gfx *display_list;
 
-    display_list = arg0;
     hidden_mask = 0;
     if (load_texture != 0) {
         texture = func_1510D0EC(&D_D14, 0, 3, 0);
@@ -505,36 +500,19 @@ Gfx *func_151E966C(Gfx *arg0, s32 y, s32 selected_row,
             return display_list;
         }
 
-        command = display_list++;
-        command->words.w0 = 0xE7000000;
-        command->words.w1 = 0;
-        command = display_list++;
-        command->words.w1 = 0xFFFFF3F9;
-        command->words.w0 = 0xFC12FE25;
-        command = display_list++;
-        command->words.w0 = 0xFD180000;
-        command->words.w1 = texture;
-        command = display_list++;
-        command->words.w0 = 0xF5180000;
-        command->words.w1 = 0x07094250;
-        command = display_list++;
-        command->words.w0 = 0xE6000000;
-        command->words.w1 = 0;
-        command = display_list++;
-        command->words.w0 = 0xF3000000;
-        command->words.w1 = 0x073FF000;
-        command = display_list++;
-        command->words.w0 = 0xE7000000;
-        command->words.w1 = 0;
-        command = display_list++;
-        command->words.w0 = 0xF5181000;
-        command->words.w1 = 0x00094250;
-        command = display_list++;
-        command->words.w0 = 0xF2000000;
-        command->words.w1 = 0x0007C07C;
-        command = display_list++;
-        command->words.w0 = 0xEF002C3F;
-        command->words.w1 = 0x00504244;
+        gDPPipeSync(display_list++);
+        gDPSetCombine(display_list++, 0x12FE25, 0xFFFFF3F9);
+        gDPSetTextureImage(display_list++, G_IM_FMT_RGBA, G_IM_SIZ_32b, 1,
+                           texture);
+        gDPSetTile(display_list++, G_IM_FMT_RGBA, G_IM_SIZ_32b, 0, 0,
+                   G_TX_LOADTILE, 0, G_TX_CLAMP, 5, 0, G_TX_CLAMP, 5, 0);
+        gDPLoadSync(display_list++);
+        gDPLoadBlock(display_list++, G_TX_LOADTILE, 0, 0, 0x3FF, 0);
+        gDPPipeSync(display_list++);
+        gDPSetTile(display_list++, G_IM_FMT_RGBA, G_IM_SIZ_32b, 8, 0,
+                   G_TX_RENDERTILE, 0, G_TX_CLAMP, 5, 0, G_TX_CLAMP, 5, 0);
+        gDPSetTileSize(display_list++, G_TX_RENDERTILE, 0, 0, 0x7C, 0x7C);
+        gDPSetOtherMode(display_list++, 0x00002C3F, 0x00504244);
     }
 
     row_step = 0x124;
@@ -547,7 +525,7 @@ Gfx *func_151E966C(Gfx *arg0, s32 y, s32 selected_row,
         player = 0;
         if (D_8008FD8C > 0) {
             do {
-                if (func_150859AC(player, 3) != 0) {
+                if (func_150859AC((s16)player, 3) != 0) {
                     hidden_mask &= ~(1 << D_800E0C00[player]);
                 }
                 player++;
@@ -557,46 +535,39 @@ Gfx *func_151E966C(Gfx *arg0, s32 y, s32 selected_row,
 
     player = 0;
     first_center = row_step >> 1;
-    row_center = first_center;
+    icon_center = first_center;
     if (D_800E0BB0 > 0) {
         cached_count = D_800E0AA0;
         do {
             if (refresh_counts != 0) {
-                life_count = func_150859AC(player, 6);
+                life_count = func_150859AC((s16)player, 6);
                 *cached_count = life_count;
             } else {
                 life_count = *cached_count;
             }
 
             if (!(hidden_mask & (1 << player))) {
-                box = 0;
                 if (player == selected_row) {
                     life_count++;
                 }
+                box = 0;
 
-                command = display_list++;
-                command->words.w0 = 0xE7000000;
-                command->words.w1 = 0;
-                command = display_list++;
-                command->words.w0 = 0xFB000000;
-                command->words.w1 = (D_800ABA90[player][0] << 24) |
-                                    (D_800ABA90[player][1] << 16) |
-                                    (D_800ABA90[player][2] << 8) | 0xFF;
+                gDPPipeSync(display_list++);
+                gDPSetEnvColor(display_list++, D_800ABA90[player][0],
+                               D_800ABA90[player][1],
+                               D_800ABA90[player][2], 0xFF);
 
-                box_x = row_center - (D_80087268 * 4);
+                box_x = icon_center - (D_80087268 * 4);
                 if (D_80087268 > 0) {
                     do {
                         if (box == life_count) {
-                            command = display_list++;
-                            command->words.w0 = 0xE7000000;
-                            command->words.w1 = 0;
-                            command = display_list++;
-                            command->words.w0 = 0xFB000000;
-                            command->words.w1 = 0x40404040;
+                            gDPPipeSync(display_list++);
+                            gDPSetEnvColor(display_list++, 0x40, 0x40, 0x40,
+                                           0x40);
                         }
                         box++;
                         display_list = func_151E86E4(
-                            display_list, box_x * 4, y, (box_x + 7) * 4,
+                            display_list, box_x << 2, y, (box_x + 7) << 2,
                             y + 0x1C, 0, 0x1C0, 0x200, 0x400, 0x400);
                         box_x += 8;
                     } while (box < D_80087268);
@@ -605,7 +576,7 @@ Gfx *func_151E966C(Gfx *arg0, s32 y, s32 selected_row,
 
             player++;
             cached_count++;
-            row_center += row_step;
+            icon_center += row_step;
         } while (player < D_800E0BB0);
     }
 
@@ -615,60 +586,35 @@ Gfx *func_151E966C(Gfx *arg0, s32 y, s32 selected_row,
             return display_list;
         }
 
-        command = display_list++;
-        command->words.w0 = 0xE7000000;
-        command->words.w1 = 0;
-        command = display_list++;
-        command->words.w0 = 0xFD500000;
-        command->words.w1 = texture;
-        command = display_list++;
-        command->words.w0 = 0xF5500000;
-        command->words.w1 = 0x07098260;
-        command = display_list++;
-        command->words.w0 = 0xE6000000;
-        command->words.w1 = 0;
-        command = display_list++;
-        command->words.w0 = 0xF3000000;
-        command->words.w1 = 0x073FF000;
-        command = display_list++;
-        command->words.w0 = 0xE7000000;
-        command->words.w1 = 0;
-        command = display_list++;
-        command->words.w0 = 0xF5400800;
-        command->words.w1 = 0x00098260;
-        command = display_list++;
-        command->words.w0 = 0xF2000000;
-        command->words.w1 = 0x000FC0FC;
-        command = display_list++;
-        command->words.w0 = 0xFD100000;
-        command->words.w1 = texture + 0x800;
-        command = display_list++;
-        command->words.w0 = 0xE6000000;
-        command->words.w1 = 0;
-        command = display_list++;
-        command->words.w0 = 0xF0000000;
-        command->words.w1 = 0x0603C000;
-        command = display_list++;
-        command->words.w0 = 0xEF00AC3F;
-        command->words.w1 = 0x00504244;
+        gDPPipeSync(display_list++);
+        gDPSetTextureImage(display_list++, G_IM_FMT_CI, G_IM_SIZ_16b, 1,
+                           texture);
+        gDPSetTile(display_list++, G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0,
+                   G_TX_LOADTILE, 0, G_TX_CLAMP, 6, 0, G_TX_CLAMP, 6, 0);
+        gDPLoadSync(display_list++);
+        gDPLoadBlock(display_list++, G_TX_LOADTILE, 0, 0, 0x3FF, 0);
+        gDPPipeSync(display_list++);
+        gDPSetTile(display_list++, G_IM_FMT_CI, G_IM_SIZ_4b, 4, 0,
+                   G_TX_RENDERTILE, 0, G_TX_CLAMP, 6, 0, G_TX_CLAMP, 6, 0);
+        gDPSetTileSize(display_list++, G_TX_RENDERTILE, 0, 0, 0xFC, 0xFC);
+        gDPSetTextureImage(display_list++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1,
+                           texture + 0x800);
+        gDPLoadSync(display_list++);
+        gDPLoadTLUTCmd(display_list++, 6, 15);
+        gDPSetOtherMode(display_list++, 0x0000AC3F, 0x00504244);
 
         player = 0;
         icon_center = first_center;
         if (D_800E0BB0 > 0) {
             do {
                 if (hidden_mask & (1 << player)) {
-                    row_center = icon_center;
-                    command = display_list++;
-                    command->words.w0 = 0xE7000000;
-                    command->words.w1 = 0;
-                    command = display_list++;
-                    command->words.w0 = 0xFB000000;
-                    command->words.w1 = (D_800ABA90[player][0] << 24) |
-                                        (D_800ABA90[player][1] << 16) |
-                                        (D_800ABA90[player][2] << 8) | 0xFF;
+                    gDPPipeSync(display_list++);
+                    gDPSetEnvColor(display_list++, D_800ABA90[player][0],
+                                   D_800ABA90[player][1],
+                                   D_800ABA90[player][2], 0xFF);
                     display_list = func_151E86E4(
-                        display_list, (row_center - 8) * 4, y - 0x18,
-                        (row_center + 8) * 4, y + 0x28, 0, 0x600, 0x280,
+                        display_list, (icon_center - 8) << 2, y - 0x18,
+                        (icon_center + 8) << 2, y + 0x28, 0, 0x600, 0x280,
                         0x400, 0x400);
                 }
                 player++;
@@ -677,9 +623,7 @@ Gfx *func_151E966C(Gfx *arg0, s32 y, s32 selected_row,
         }
     }
 
-    command = display_list++;
-    command->words.w0 = 0xE7000000;
-    command->words.w1 = 0;
+    gDPPipeSync(display_list++);
     return display_list;
 }
 
