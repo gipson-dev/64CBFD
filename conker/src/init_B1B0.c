@@ -350,18 +350,16 @@ void func_1000CBA8(s32 arg0) {
     }
 }
 
-void func_1000CBF0(s16 arg0, s16 arg1, s32 arg2) {
+void func_1000CBF0(s32 arg0, s32 arg1, s32 arg2) {
     s32 i;
-    struct151 *current;
 
     for (i = 0; i < 3; i++) {
         if (((1 << i) & arg2) != 0) {
-            current = D_800417B0[i];
-            if (current != NULL) {
-                current->unk5A = arg0;
-                current->unk5C = arg1;
+            if (D_800417B0[i] != NULL) {
+                D_800417B0[i]->unk5A = arg0;
+                D_800417B0[i]->unk5C = arg1;
                 if (arg1 == 0) {
-                    current->unk58 = arg0;
+                    D_800417B0[i]->unk58 = arg0;
                 }
             }
         }

@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Init channel-parameter updater byte-matched
+
+- Corrected `func_1000CBF0`'s first two parameters from `s16` to the retail
+  32-bit types and restored the original repeated `D_800417B0[i]` accesses.
+- This removes a fixed-slot overflow trampoline and emits all 25 retail words
+  directly, with no expected-word guards. It also preserves retail's full
+  32-bit `arg1 == 0` test before the low-halfword stores.
+- Fresh totals are **2,870 / 5,466 (52.51%)** overall and
+  **393 / 495 (79.39%)** in Init. See
+  [Working Note 372](WORKING_NOTES/372-init-channel-parameter-updater-match-20260928.md).
+
 ### Init hardware interrupt routine byte-matched
 
 - Recovered `__osSetHWIntrRoutine` from the local libultra source: disable

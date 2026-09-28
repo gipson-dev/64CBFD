@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,869 / 5,466 (52.49%) | 1 | 2,596 |
-| Init | 495 / 538 (92.01%) | 392 / 495 (79.19%) | 1 | 102 |
+| Total | 5,466 / 6,041 (90.48%) | 2,870 / 5,466 (52.51%) | 1 | 2,595 |
+| Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
 | Game | 4,790 / 5,321 (90.02%) | 2,296 / 4,790 (47.93%) | 0 | 2,494 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1060,6 +1060,9 @@ words and two padding words match directly with no guards. See
 The 20-word Init `__osSetHWIntrRoutine` is now byte-exact from recovered
 libultra C compiled with its retail `-O1` object profile. See
 [Working Note 371](WORKING_NOTES/371-init-hardware-interrupt-routine-match-20260928.md).
+The 25-word Init `func_1000CBF0` channel-parameter updater is byte-exact after
+recovering its 32-bit arguments and retail table-access shape. See
+[Working Note 372](WORKING_NOTES/372-init-channel-parameter-updater-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

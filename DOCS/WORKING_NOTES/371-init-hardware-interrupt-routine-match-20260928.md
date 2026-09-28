@@ -41,6 +41,8 @@ Release checkpoint was not built, modified or launched.
 
 ## Next boundary
 
-Audit 25-word Init `func_1000CBF0`, now the smallest unblocked Init row in the
-fresh mismatch list at 24 real differences. The smaller 17-word
+The adjacent Init work is completed in
+[Working Note 372](372-init-channel-parameter-updater-match-20260928.md).
+Resume with ordinary 28-word Init `func_10003BD0`, the smallest unblocked
+project-owned Init row at 25 real differences. The smaller 17-word
 `func_10012588` remains blocked on address drift.
