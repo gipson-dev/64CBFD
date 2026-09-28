@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 2,858 / 5,468 (52.27%) | 1 | 2,609 |
+| Total | 5,468 / 6,041 (90.51%) | 2,859 / 5,468 (52.29%) | 1 | 2,608 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,790 / 5,321 (90.02%) | 2,286 / 4,790 (47.72%) | 0 | 2,504 |
+| Game | 4,790 / 5,321 (90.02%) | 2,287 / 4,790 (47.75%) | 0 | 2,503 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1019,8 +1019,10 @@ dispatch is exact directly from C with no guard rows. The 25-word Game
 four guarded frame/local-slot words. The 26-word Game `func_151D13E0`
 owned-state teardown is exact directly from C with no guard rows. The 25-word
 Game `func_151E4E00` state-transition dispatch is exact directly from C with no
-guard rows. Continue by classifying 26-word Game `func_151E7EF8`; see
-[Working Note 355](WORKING_NOTES/355-game-state-transition-dispatch-match-20260928.md).
+guard rows. The 26-word Game `func_151E7EF8` code-integrity checksum is exact
+directly from recovered C with no guard rows. Continue with adjacent 163-word
+Game placeholder `func_151E7F60`; see
+[Working Note 356](WORKING_NOTES/356-game-code-integrity-checksum-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -347,8 +347,22 @@ void func_151E7E9C(void) {
     func_10017870(4);
 }
 
-s32 func_151E7EF8() {
-    return 0;
+void func_151E7EF8(void) {
+    s32 *ptr;
+    s32 *end;
+    s32 checksum;
+
+    func_151E7E9C();
+    ptr = (s32 *) func_151DDC20;
+    end = (s32 *) func_151DE7D4;
+    checksum = 0;
+    while (ptr < end) {
+        checksum += *ptr;
+        ptr++;
+    }
+    if (checksum != 0xBFC924E3) {
+        *(s32 *) osSpTaskLoad = 0;
+    }
 }
 
 s32 func_151E7F60() {

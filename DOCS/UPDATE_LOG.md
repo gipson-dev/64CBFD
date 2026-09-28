@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game code-integrity checksum byte-exact
+
+- Recovered `func_151E7EF8` as a call to the three-way state dispatcher
+  followed by a word checksum over `func_151DDC20..func_151DE7D4`.
+- A checksum mismatch against `0xBFC924E3` clears the first word of
+  `osSpTaskLoad`. Explicit start and end locals reproduce retail's complete
+  address setup and loop directly from C; no guard rows are needed.
+- Linked and pristine 104-byte spans share SHA-256
+  `e921d7cef916745ba7736417867809da191c952fad73becbf514d6f5f81be152`.
+  Fresh totals are **2,859 / 5,468 (52.29%)** overall and
+  **2,287 / 4,790 (47.75%)** in Game.
+
 ### Game state-transition dispatch byte-exact
 
 - Recovered `func_151E4E00` as a state reset followed by mode `3` selection

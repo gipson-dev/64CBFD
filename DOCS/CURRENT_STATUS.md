@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,858 / 5,468 (52.27%) | 1 | 2,609 |
+| Total | 2,859 / 5,468 (52.29%) | 1 | 2,608 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,286 / 4,790 (47.72%) | 0 | 2,504 |
+| Game | 2,287 / 4,790 (47.75%) | 0 | 2,503 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,854, while
+denominator driven: the exact count is now 2,859, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -790,8 +790,10 @@ end-to-end gameplay acceptance.
    four guarded frame/local-slot words. The 26-word `func_151D13E0` owned-state
    teardown is exact directly from C with no guard rows. The 25-word
    `func_151E4E00` state-transition dispatch is exact directly from C with no
-   guard rows. Continue by classifying 26-word Game `func_151E7EF8`; keep the
-   previously documented smaller special cases parked.
+   guard rows. The 26-word `func_151E7EF8` code-integrity checksum is also
+   exact directly from recovered C with no guard rows. Continue by recovering
+   the adjacent 163-word Game placeholder `func_151E7F60`; keep the previously
+   documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
