@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game display-list overflow guard byte-exact
+
+- Recovered all 49 words of `func_151E8620`. It marks display-list activity,
+  invokes the current mode callback when present, clears two mode-dependent
+  state values, computes the emitted `Gfx` command count, and falls back to
+  the original pointer when that count exceeds the configured limit.
+- Semantic C reproduces the complete control flow, 32-byte frame, stack slot,
+  pointer arithmetic, and explicit overflow boolean. Fourteen guarded words
+  normalize only independent callback/original-pointer register lifetimes and
+  post-call scheduling; no branch target, arithmetic operation, or call is
+  changed. The guard table now has 1,528 rows and zero duplicate keys.
+- Linked and pristine 196-byte spans share SHA-256
+  `d830d34cd5e00f4d8d151f71bdd967086b13b71bfa9af6d7ac67f5ab76d41572`.
+  Fresh totals are **2,865 / 5,468 (52.40%)** overall and
+  **2,293 / 4,790 (47.87%)** in Game.
+
 ### Game mode-resource setup byte-exact
 
 - Recovered all 92 words of `func_151E84B0`. It obtains a base result, passes

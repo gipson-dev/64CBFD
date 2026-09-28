@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, mode-resource setup matched).** The current linked
-checkpoint is `2864 / 5468 (52.38%)` exact C functions, with one address-drift
-blocker and 2,603 genuinely different C functions. Init is
+**Active (2026-09-28, display-list overflow guard matched).** The current linked
+checkpoint is `2865 / 5468 (52.40%)` exact C functions, with one address-drift
+blocker and 2,602 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2292 / 4790 (47.85%)` exact, with 2,498 genuinely different C rows. The tree
+`2293 / 4790 (47.87%)` exact, with 2,497 genuinely different C rows. The tree
 contains 573 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1073,7 +1073,10 @@ C with no guard rows; see
 The 92-word Game `func_151E84B0` mode callback and indexed-resource setup is
 exact from semantic C plus two guarded frame-size words; see
 [Working Note 361](WORKING_NOTES/361-game-mode-resource-setup-match-20260928.md).
-Recover adjacent 49-word Game `func_151E8620`, currently measured at 49 real
+The 49-word Game `func_151E8620` display-list overflow guard is exact from
+semantic C plus 14 guarded register-lifetime and scheduling words; see
+[Working Note 362](WORKING_NOTES/362-game-display-list-overflow-guard-match-20260928.md).
+Recover adjacent 175-word Game `func_151E86E4`, currently measured at 165 real
 differences in the fresh linked queue after the documented compiler and SDK
 cases.
 Keep raw-assembly conversion as a separate workstream. The measured handoff

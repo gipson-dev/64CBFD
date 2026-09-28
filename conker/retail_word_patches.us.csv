@@ -1513,3 +1513,17 @@ generated_20AE20,func_151E7F60,0x280,0x27BD0058,0x27BD0050,-,-,Restore retail's 
 generated_20AE20,func_151E82B8,0x024,0x14450015,0x14A20015,-,-,Preserve retail's commuted equality-branch operand order,,,false
 generated_215960,func_151E84B0,0x000,0x27BDFFD8,0x27BDFFE0,-,-,Restore retail's 32-byte frame after retaining the original local-slot gap,,,false
 generated_215960,func_151E84B0,0x164,0x27BD0028,0x27BD0020,-,-,Restore retail's 32-byte frame in the epilogue,,,false
+generated_215960,func_151E8620,0x010,0x3C020000,0x3C050000,R_MIPS_HI16:D_8008FFC0,R_MIPS_HI16:D_8008FFC0,Keep the mode callback in retail's a1 lifetime,,,false
+generated_215960,func_151E8620,0x014,0x3C0F0900,0x3C0E0900,-,-,Materialize the active marker through retail's t6 temporary,,,false
+generated_215960,func_151E8620,0x018,0x00037080,0x00037880,-,-,Scale the mode index through retail's t7 temporary,,,false
+generated_215960,func_151E8620,0x01C,0x004E1021,0x00AF2821,-,-,Index the callback table through retail's a1 lifetime,,,false
+generated_215960,func_151E8620,0x020,0x8C420000,0x8CA50000,R_MIPS_LO16:D_8008FFC0,R_MIPS_LO16:D_8008FFC0,Load the callback through retail's a1 lifetime,,,false
+generated_215960,func_151E8620,0x028,0x00802825,0x00803025,-,-,Retain the original display-list pointer in a2,,,false
+generated_215960,func_151E8620,0x02C,0x10400007,0x10A00007,-,-,Test the callback through retail's a1 lifetime,,,false
+generated_215960,func_151E8620,0x030,0xAC2F0000,0xAC2E0000,R_MIPS_LO16:D_8003C8E0,R_MIPS_LO16:D_8003C8E0,Store the active marker from retail's t6 temporary,,,false
+generated_215960,func_151E8620,0x034,0x0040F809,0x00A0F809,-,-,Dispatch through retail's a1 callback lifetime,,,false
+generated_215960,func_151E8620,0x038,0xAFA50018,0xAFA60018,-,-,Spill the original pointer from retail's a2 lifetime,,,false
+generated_215960,func_151E8620,0x040,0x8FA50018,0x90630000,-,R_MIPS_LO16:D_800E0B94,Reload the mode before restoring the original pointer,,,false
+generated_215960,func_151E8620,0x044,0x00402025,0x8FA60018,-,-,Restore the original pointer through retail's a2 lifetime,,,false
+generated_215960,func_151E8620,0x048,0x90630000,0x00402025,R_MIPS_LO16:D_800E0B94,-,Move the callback result after the mode and pointer reloads,,,false
+generated_215960,func_151E8620,0x0B4,0x00A01025,0x00C01025,-,-,Return the original pointer through retail's a2 lifetime on overflow,,,false

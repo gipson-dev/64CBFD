@@ -8,6 +8,11 @@ extern s8 D_8008FD90;
 extern s8 D_800E0BD3;
 extern u8 **D_800E0BD8;
 extern s32 (*D_8008FFF4[])(s32);
+extern Gfx *(*D_8008FFC0[])(Gfx *);
+extern s32 D_80090058;
+extern s16 D_800E0C78;
+extern s32 D_800BEBA4;
+extern Gfx *D_800BE9C8[];
 s32 func_151ED1E0(void);
 
 /* Non-matching placeholders for the text-only asm slice asm/215960.s. */
@@ -53,8 +58,36 @@ s32 func_151E84B0(void) {
     return result;
 }
 
-s32 func_151E8620() {
-    return 0;
+Gfx *func_151E8620(Gfx *value) {
+    s32 mode;
+    Gfx *original;
+    Gfx *(*callback)(Gfx *);
+    s32 overflow;
+
+    mode = D_800E0B94;
+    callback = D_8008FFC0[mode];
+    original = value;
+    D_8003C8E0 = 0x09000000;
+    if (callback != NULL) {
+        value = callback(value);
+        mode = D_800E0B94;
+    }
+
+    if (mode != 0) {
+        D_80090058 = 0;
+        D_800E0C78 = 0;
+    }
+
+    D_8003C8E0 = 0;
+    if (D_800BEBA4 < (value - D_800BE9C8[D_800BE9C0])) {
+        overflow = 1;
+    } else {
+        overflow = 0;
+    }
+    if (overflow != 0) {
+        return original;
+    }
+    return value;
 }
 
 s32 func_151E86E4() {
