@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game current-record vector copy byte-matched
+
+- Replaced `func_1503A60C`'s zero-return placeholder with its destination
+  pointer lookup and three floating-point component stores.
+- The source keeps all three `D_800C3E78`-indexed expressions separate. IDO
+  therefore preserves retail's alias-sensitive reloads after each indirect
+  store and emits all 27 words directly without guards.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `2cc7a51561b11b95abf5d25dc8ea767973ece17d01457d2d7e71933cd8efb466`.
+  Fresh totals are **2,901 / 5,466 (53.07%)** overall and
+  **2,327 / 4,790 (48.58%)** in Game. See
+  [Working Note 399](WORKING_NOTES/399-game-current-record-vector-copy-match-20260928.md).
+
 ### Game linked-list match dispatcher byte-matched
 
 - Refined `func_150303E4`'s existing semantic reconstruction to recover its

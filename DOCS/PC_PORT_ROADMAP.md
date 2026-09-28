@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,900 / 5,466 (53.06%) | 1 | 2,565 |
+| Total | 5,466 / 6,041 (90.48%) | 2,901 / 5,466 (53.07%) | 1 | 2,564 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,326 / 4,790 (48.56%) | 0 | 2,464 |
+| Game | 4,790 / 5,321 (90.02%) | 2,327 / 4,790 (48.58%) | 0 | 2,463 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1201,6 +1201,11 @@ after recovering its explicit zero-key return, result lifetime, and pre-call
 next-pointer capture. It emits directly from semantic C without guards. This
 remains guest-side donor/reference progress; see
 [Working Note 398](WORKING_NOTES/398-game-linked-list-match-dispatcher-match-20260928.md).
+The 27-word Game current-record vector copier `func_1503A60C` is byte-exact
+after recovering its destination pointer and three alias-sensitive indexed
+source expressions. It emits directly from semantic C without guards. This
+remains guest-side donor/reference progress; see
+[Working Note 399](WORKING_NOTES/399-game-current-record-vector-copy-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

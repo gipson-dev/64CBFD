@@ -1,5 +1,7 @@
 #include <ultra64.h>
 extern u8 D_800C3FFA;
+extern u8 D_800C3E78;
+extern u8 D_800CC2D0[];
 
 /* Non-matching placeholders for the text-only asm slice asm/64120.s. */
 
@@ -61,8 +63,15 @@ s32 func_1503A08C() {
     return 0;
 }
 
-s32 func_1503A60C() {
-    return 0;
+void func_1503A60C(void) {
+    u8 *destination = *(u8 **) (D_800CC2D0 + (D_800C3E78 * 0x32C) + 0x1D4) + 0x40;
+
+    *(f32 *) (destination + 0x30) =
+        *(f32 *) (D_800CC2D0 + (D_800C3E78 * 0x32C) + 0x174);
+    *(f32 *) (destination + 0x34) =
+        *(f32 *) (D_800CC2D0 + (D_800C3E78 * 0x32C) + 0x18);
+    *(f32 *) (destination + 0x38) =
+        *(f32 *) (D_800CC2D0 + (D_800C3E78 * 0x32C) + 0x178);
 }
 
 s32 func_1503A678() {
