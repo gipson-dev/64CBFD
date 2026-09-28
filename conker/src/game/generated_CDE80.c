@@ -3,7 +3,10 @@
 /* Non-matching placeholders for the text-only asm slice asm/CDE80.s. */
 
 typedef struct {
-    u8 pad0[0x17];
+    s16 field0;
+    s16 field2;
+    s16 field4;
+    u8 pad6[0x11];
     u8 field17;
     s32 field18;
     s32 field1C;
@@ -114,8 +117,10 @@ s32 func_150A3398() {
     return 0;
 }
 
-s32 func_150A3444() {
-    return 0;
+void func_150A3444(s32 index, s16 arg1, s16 arg2, s16 arg3) {
+    D_800D3098[index].field0 = arg1;
+    D_800D3098[index].field2 = arg2;
+    D_800D3098[index].field4 = arg3;
 }
 
 s32 func_150A3504();

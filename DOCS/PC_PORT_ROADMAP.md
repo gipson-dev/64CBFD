@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,907 / 5,466 (53.18%) | 1 | 2,558 |
+| Total | 5,466 / 6,041 (90.48%) | 2,908 / 5,466 (53.20%) | 1 | 2,557 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,333 / 4,790 (48.71%) | 0 | 2,457 |
+| Game | 4,790 / 5,321 (90.02%) | 2,334 / 4,790 (48.73%) | 0 | 2,456 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1235,6 +1235,11 @@ destination clear, and packed-field replacement. Twelve stale-checked guards
 normalize only temporary-register allocation. This remains guest-side
 donor/reference progress; see
 [Working Note 405](WORKING_NOTES/405-game-packed-record-activation-match-20260928.md).
+The 27-word Game indexed coordinate setter `func_150A3444` is byte-exact after
+recovering its signed 16-bit parameters and three direct stores into a 52-byte
+record. The alias-sensitive global-pointer reloads emit directly from C with no
+guards. This remains guest-side donor/reference progress; see
+[Working Note 406](WORKING_NOTES/406-game-indexed-coordinate-setter-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

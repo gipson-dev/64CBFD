@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game indexed coordinate setter byte-matched
+
+- Replaced `func_150A3444`'s zero-return placeholder with its three signed
+  coordinate stores into an indexed 52-byte record in `D_800D3098`.
+- Signed 16-bit parameters reproduce retail's incoming spills and sign
+  extensions. Three direct member assignments preserve the repeated global
+  table-pointer loads and emit all 27 words directly from C with no guards.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `ddbe910de039f583be412b8888b86891c0a3358c0585d2df05c2c3eccb302182`.
+  Fresh totals are **2,908 / 5,466 (53.20%)** overall and
+  **2,334 / 4,790 (48.73%)** in Game. See
+  [Working Note 406](WORKING_NOTES/406-game-indexed-coordinate-setter-match-20260928.md).
+
 ### Game packed-record activation byte-matched
 
 - Replaced `func_150A0264`'s zero-return placeholder with its 12-byte record
