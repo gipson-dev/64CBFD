@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game identity-gated event flag byte-exact
+
+- Restored `func_151A931C` as matching-identity handling for event `0x17`
+  bit-set and event `0x18` bit-clear operations on object byte `0x28`.
+- Its real narrow-argument prototype makes caller `func_151A9024` exact
+  directly, removing 13 old guard rows. Four scoped early-return rows remain
+  on the target, shrinking the guard table by nine rows overall.
+- The linked target span has SHA-256
+  `446dc159df56fc710bf2b9167bf56038ddf19db80a6eb46cf527e64adf94fc15`.
+  Fresh totals are **2,852 / 5,469 (52.15%)** overall and
+  **2,280 / 4,791 (47.59%)** in Game.
+
 ### Game linked-record retirement byte-exact
 
 - Restored `func_1519F48C` as state-specific linked-record field cleanup,

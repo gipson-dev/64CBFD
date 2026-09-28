@@ -2,7 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1D4E00.s. */
 
-s32 func_151A931C();
+void func_151A931C(u8 *, s32, u8);
 
 s32 func_151D5E30();
 void func_151432BC(void *, f32 *, f32 *, f32 *, f32 *);
@@ -110,8 +110,20 @@ s32 func_151A91AC() {
     return 0;
 }
 
-s32 func_151A931C() {
-    return 0;
+void func_151A931C(u8 *arg0, s32 arg1, u8 arg2) {
+    u8 *flags;
+
+    if (arg2 == 0x17) {
+        flags = arg0 + 0x28;
+        if (*(u8 *)arg1 == arg0[0x80]) {
+            *flags |= 1;
+        }
+    } else if (arg2 == 0x18) {
+        flags = arg0 + 0x28;
+        if (*(u8 *)arg1 == arg0[0x80]) {
+            *flags &= ~1;
+        }
+    }
 }
 
 s32 func_151A9390() {
