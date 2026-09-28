@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game player-status row renderer reconstructed
+
+- Replaced `func_151E966C`'s zero-return placeholder with semantic C for its
+  cached player counts, hidden-player mask, colored status rows, depleted gray
+  boxes, missing-player icons, and texture/RDP setup.
+- The body compiles to `0x698` bytes inside its fixed `0x6AC` span and uses
+  retail's exact `0x100` frame. It remains non-matching at 415 of 427 words,
+  so the exact-function totals do not change.
+- Recovered the fourth and fifth arguments as `s8` and `u8`, including the
+  texture-failure early returns and normal terminal pipe-sync. See
+  [Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md).
+
 ### Game HUD/status renderer reconstructed
 
 - Replaced `func_151E89A0`'s zero-return placeholder with semantic C for its

@@ -88,7 +88,7 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, HUD/status renderer reconstructed).** The current
+**Active (2026-09-28, player-status row renderer reconstructed).** The current
 linked checkpoint is `2866 / 5468 (52.41%)` exact C functions, with one
 address-drift blocker and 2,601 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
@@ -1086,6 +1086,14 @@ bytes within the `0xCCC` retail slot and its frame matches retail at `0x158`;
 803 real word differences remain. Continue its register-lifetime and scheduling
 pass from
 [Working Note 364](WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md).
+The adjacent 427-word Game `func_151E966C` player-status row renderer is now
+reconstructed from its zero-return placeholder as semantic C. Its compact body
+is `0x698` bytes within the `0x6AC` retail slot, its frame matches retail at
+`0x100`, and 415 real word differences remain. Continue its saved-register
+allocation pass from
+[Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md),
+or reconstruct adjacent 273-word `func_151E9D18` if scheduling does not
+converge.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

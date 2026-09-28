@@ -1037,6 +1037,10 @@ adjacent 819-word Game `func_151E89A0` HUD/status renderer is now reconstructed
 as semantic C with retail's `0x158` frame and remains non-matching at 803 real
 word differences; continue its matching pass from
 [Working Note 364](WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md).
+The adjacent 427-word Game `func_151E966C` player-status row renderer is also
+reconstructed as semantic C with retail's `0x100` frame and remains
+non-matching at 415 real word differences; see
+[Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

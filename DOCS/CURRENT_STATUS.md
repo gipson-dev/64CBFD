@@ -810,6 +810,11 @@ end-to-end gameplay acceptance.
    fits its original 3,276-byte slot. It remains non-matching at 803 real word
    differences, so continue its register-lifetime and scheduling pass from
    [Working Note 364](WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md).
+   Its adjacent 427-word `func_151E966C` player-status row renderer is also
+   reconstructed from a zero-return placeholder as semantic C. It has retail's
+   `0x100` frame, fits its 1,708-byte slot, and remains non-matching at 415 real
+   word differences; continue from
+   [Working Note 365](WORKING_NOTES/365-game-player-status-row-renderer-reconstruction-20260928.md).
    Keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
