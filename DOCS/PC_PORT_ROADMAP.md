@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,883 / 5,466 (52.74%) | 1 | 2,582 |
+| Total | 5,466 / 6,041 (90.48%) | 2,884 / 5,466 (52.76%) | 1 | 2,581 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,309 / 4,790 (48.20%) | 0 | 2,481 |
+| Game | 4,790 / 5,321 (90.02%) | 2,310 / 4,790 (48.23%) | 0 | 2,480 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1131,6 +1131,11 @@ increment, and wrap at 20 slots. Twenty relocation-aware guards preserve one
 closed IDO register-allocation cycle. This remains guest-side donor/reference
 progress; see
 [Working Note 385](WORKING_NOTES/385-game-record-ring-slot-match-20260928.md).
+The 29-word Game `func_1514F5CC` object-request builder is byte-exact after
+recovering its typed 28-byte stack request and submission through
+`func_150C0AC0`. The complete routine emits directly from semantic C without
+guards. This remains guest-side donor/reference progress; see
+[Working Note 386](WORKING_NOTES/386-game-object-request-builder-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

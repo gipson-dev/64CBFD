@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game object-request builder byte-matched
+
+- Recovered `func_1514F5CC` as a typed 28-byte stack request containing the
+  object pointer, object ID, float parameter, count `20`, size `0x12C`, and
+  mode `4`, followed by submission through `func_150C0AC0`.
+- The complete 29-word / 116-byte routine emits directly from semantic C with
+  the retail frame, store schedule, relocations, call delay slot, and implicit
+  result convention. No expected-word guards or compiler override are needed.
+- Fresh totals are **2,884 / 5,466 (52.76%)** overall and
+  **2,310 / 4,790 (48.23%)** in Game. See
+  [Working Note 386](WORKING_NOTES/386-game-object-request-builder-match-20260928.md).
+
 ### Game record ring-slot allocator byte-matched
 
 - Recovered `func_1512D604` as an indexed record cursor that returns the old

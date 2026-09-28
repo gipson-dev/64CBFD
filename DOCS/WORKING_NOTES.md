@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game record ring-slot allocator matched).** The current
-linked checkpoint is `2883 / 5466 (52.74%)` exact C functions, with one
-address-drift blocker and 2,582 genuinely different C functions. Init is
+**Active (2026-09-28, Game object-request builder matched).** The current
+linked checkpoint is `2884 / 5466 (52.76%)` exact C functions, with one
+address-drift blocker and 2,581 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2309 / 4790 (48.20%)` exact, with 2,481 genuinely different C rows. The tree
+`2310 / 4790 (48.23%)` exact, with 2,480 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1172,9 +1172,13 @@ recovering its indexed record lookup, old-cursor return, cursor increment, and
 20-slot wrap. Twenty relocation-aware guards preserve one closed IDO register
 allocation cycle; see
 [Working Note 385](WORKING_NOTES/385-game-record-ring-slot-match-20260928.md).
+The 29-word Game object-request builder `func_1514F5CC` now matches after
+recovering its typed 28-byte stack request and `func_150C0AC0` submission. All
+words emit directly from semantic C with no guards; see
+[Working Note 386](WORKING_NOTES/386-game-object-request-builder-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 29-word Game
-`func_1514F5CC`, at 25 real differences. Keep the tied SDK cache routines in
+experiments were removed. Resume with ordinary unparked 26-word Game
+`func_15157F80`, at 25 real differences. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked
 on address drift. Keep the much larger HUD renderers `func_151E89A0` and
 `func_151EA15C` parked as separate focused work.

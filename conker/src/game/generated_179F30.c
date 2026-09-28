@@ -18,6 +18,7 @@ s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1515BE50(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 extern u8 D_800A5920[];
 extern u8 D_800A5988[];
+extern f32 D_800A5E5C;
 
 typedef struct {
     u8 *object;
@@ -25,6 +26,19 @@ typedef struct {
     u8 pad5;
     u16 size;
 } GameObjectRequest;
+
+typedef struct {
+    s32 unk0;
+    f32 unk4;
+    u8 *object;
+    u8 unique_id;
+    u8 padD[3];
+    f32 parameter;
+    s16 count;
+    s16 size;
+    u8 mode;
+    u8 pad19[3];
+} GameObjectSpawnRequest;
 
 typedef struct GameListNode {
     u8 pad0[0x10];
@@ -438,6 +452,16 @@ void func_1514F590(u8 *arg0) {
     func_15011A78(arg0, 0xFF, 1);
 }
 
-s32 func_1514F5CC() {
-    return 0;
+s32 func_1514F5CC(u8 *arg0) {
+    GameObjectSpawnRequest request;
+
+    request.unk0 = 0;
+    request.unk4 = 0.0f;
+    request.object = arg0;
+    request.unique_id = arg0[0x3B];
+    request.parameter = D_800A5E5C;
+    request.count = 20;
+    request.size = 0x12C;
+    request.mode = 4;
+    func_150C0AC0(&request, 0xFF, 1);
 }
