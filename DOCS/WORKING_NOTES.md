@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game sequence-state advance matched).** The current linked
-checkpoint is `2874 / 5466 (52.58%)` exact C functions, with one address-drift
-blocker and 2,591 genuinely different C functions. Init is
+**Active (2026-09-28, Game active-record counter matched).** The current linked
+checkpoint is `2875 / 5466 (52.60%)` exact C functions, with one address-drift
+blocker and 2,590 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2300 / 4790 (48.02%)` exact, with 2,490 genuinely different C rows. The tree
+`2301 / 4790 (48.04%)` exact, with 2,489 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1133,9 +1133,14 @@ restoring the current-player state lookup, sequence cursor increment, and
 zero-terminator reset. Six guards preserve retail's compiler register cycle;
 see
 [Working Note 376](WORKING_NOTES/376-game-sequence-state-advance-match-20260928.md).
+The 27-word Game active-record counter `func_1509CB68` now matches after
+restoring its four-record unrolled scan over the complete 204-entry table. The
+object uses `-Wo,-loopunroll,0`; four relocation-aware guards preserve only
+the independent opening schedule. See
+[Working Note 377](WORKING_NOTES/377-game-active-record-counter-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 27-word Game
-`func_1509CB68`, at 25 real differences. Keep the tied SDK cache routines in
+experiments were removed. Resume with ordinary unparked 26-word Game
+`func_150A3330`, at 25 real differences. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked
 on address drift. Keep the much larger HUD renderers `func_151E89A0` and
 `func_151EA15C` parked as separate focused work.

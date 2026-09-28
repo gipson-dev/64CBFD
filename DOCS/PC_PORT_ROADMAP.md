@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,874 / 5,466 (52.58%) | 1 | 2,591 |
+| Total | 5,466 / 6,041 (90.48%) | 2,875 / 5,466 (52.60%) | 1 | 2,590 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,300 / 4,790 (48.02%) | 0 | 2,490 |
+| Game | 4,790 / 5,321 (90.02%) | 2,301 / 4,790 (48.04%) | 0 | 2,489 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1084,6 +1084,12 @@ recovering its cursor and terminator-reset behavior. Six guards normalize only
 compiler register allocation, including the table relocations. This remains
 guest-side donor/reference progress rather than a host runtime milestone; see
 [Working Note 376](WORKING_NOTES/376-game-sequence-state-advance-match-20260928.md).
+The 27-word Game `func_1509CB68` active-record counter is byte-exact after
+recovering its four-record unrolled table scan. Its object uses the retail
+no-unroll profile, and four guards normalize only independent opening
+scheduling with relocations preserved. This remains guest-side donor/reference
+progress rather than a host runtime milestone; see
+[Working Note 377](WORKING_NOTES/377-game-active-record-counter-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

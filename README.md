@@ -28,9 +28,9 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,874 / 5,466 (52.58%) | 1 | 2,591 |
+| Total | `[#############-----------]` 2,875 / 5,466 (52.60%) | 1 | 2,590 |
 | Init | `[###################-----]` 393 / 495 (79.39%) | 1 | 101 |
-| Game | `[############------------]` 2,300 / 4,790 (48.02%) | 0 | 2,490 |
+| Game | `[############------------]` 2,301 / 4,790 (48.04%) | 0 | 2,489 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
@@ -81,6 +81,12 @@ recovering its current-player state lookup, sequence cursor increment, and
 zero-terminator reset. Six relocation-aware guards normalize one closed
 compiler register-allocation cycle; see
 [Working Note 376](DOCS/WORKING_NOTES/376-game-sequence-state-advance-match-20260928.md).
+The 27-word Game active-record counter `func_1509CB68` is now byte-exact after
+recovering its four-record unrolled scan across all 204 table entries. The
+slice uses its retail no-unroll compiler profile; four relocation-aware guards
+normalize only the independent opening-address and count-initialization
+schedule. See
+[Working Note 377](DOCS/WORKING_NOTES/377-game-active-record-counter-match-20260928.md).
 
 ## Build overview
 

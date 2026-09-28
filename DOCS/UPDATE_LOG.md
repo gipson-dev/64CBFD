@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game active-record counter byte-matched
+
+- Recovered `func_1509CB68` as a four-record unrolled population count over
+  the 204 records from `D_80087430` through `D_80088420`.
+- The `generated_C9EC0` object now uses retail's no-unroll profile. Twenty-three
+  of 27 words emit directly from semantic C; four relocation-aware guards
+  preserve the independent opening schedule. All 108 bytes match retail.
+- Fresh totals are **2,875 / 5,466 (52.60%)** overall and
+  **2,301 / 4,790 (48.04%)** in Game. See
+  [Working Note 377](WORKING_NOTES/377-game-active-record-counter-match-20260928.md).
+
 ### Game sequence-state advance byte-matched
 
 - Recovered `func_1507F454`'s current-player state lookup, sequence cursor

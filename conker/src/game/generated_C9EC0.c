@@ -17,6 +17,7 @@ typedef struct {
 } GeneratedC9EC0Entry;
 
 extern GeneratedC9EC0Entry D_80087430[];
+extern GeneratedC9EC0Entry D_80088420[];
 
 s32 func_1509CA10(register s32 arg0) {
     return D_80087430[arg0].field0;
@@ -38,8 +39,28 @@ s32 func_1509CA98() {
     return 0;
 }
 
-s32 func_1509CB68() {
-    return 0;
+s32 func_1509CB68(void) {
+    GeneratedC9EC0Entry *end = D_80088420;
+    s32 count = 0;
+    GeneratedC9EC0Entry *entry = D_80087430;
+
+    do {
+        if (entry[0].field0 != 0) {
+            count++;
+        }
+        if (entry[1].field0 != 0) {
+            count++;
+        }
+        if (entry[2].field0 != 0) {
+            count++;
+        }
+        if (entry[3].field0 != 0) {
+            count++;
+        }
+        entry += 4;
+    } while (entry != end);
+
+    return count;
 }
 
 s32 func_1509CBD4() {
