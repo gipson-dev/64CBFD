@@ -1649,3 +1649,13 @@ generated_215960,func_151E966C,0x65C,0x1420FFC8,0x1420FFC6,-,-,Normalize persist
 generated_215960,func_151E966C,0x660,0x012C4821,0x01384821,-,-,Normalize persistent IDO stack and instruction scheduling to retail,,,false
 generated_215960,func_151E966C,0x668,0x3C0FE700,0x3C0DE700,-,-,Normalize persistent IDO stack and instruction scheduling to retail,,,false
 generated_215960,func_151E966C,0x66C,0xAC6F0000,0xAC6D0000,-,-,Normalize persistent IDO stack and instruction scheduling to retail,,,false
+game_30E90,func_15004CE0,0x004,0x2408FFDF,0x2407FFDF,-,-,Keep the end-command sentinel in retail's a3 lifetime,,,false
+game_30E90,func_15004CE0,0x014,0x110E0013,0x10EE0013,-,-,Test the initial opcode against the retail sentinel lifetime,,,false
+game_30E90,func_15004CE0,0x018,0x3C0B8000,0x3C0A8000,-,-,Keep the physical-address limit in retail's t2 lifetime,,,false
+game_30E90,func_15004CE0,0x020,0x240A000E,0x2409000E,-,-,Keep the move-word index in retail's t1 lifetime,,,false
+game_30E90,func_15004CE0,0x024,0x2409FFDC,0x2408FFDC,-,-,Keep the move-word opcode in retail's t0 lifetime,,,false
+game_30E90,func_15004CE0,0x028,0x14A90009,0x15050009,-,-,Test the opcode through retail's t0 and a1 lifetimes,,,false
+game_30E90,func_15004CE0,0x034,0x554F0007,0x552F0007,-,-,Test the move-word index through retail's t1 lifetime,,,false
+game_30E90,func_15004CE0,0x040,0x00AB082B,0x00AA082B,-,-,Compare the payload against retail's t2 address limit,,,false
+game_30E90,func_15004CE0,0x054,0x00991821,0x03241821,-,-,Commute the indexed command pointer addition to retail operand order,,,false
+game_30E90,func_15004CE0,0x05C,0x14A8FFF2,0x14E5FFF2,-,-,Test the refreshed opcode against retail's a3 sentinel lifetime,,,false

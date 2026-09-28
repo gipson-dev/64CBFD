@@ -47,7 +47,9 @@ Release checkpoint was not built, modified or launched.
 
 ## Next boundary
 
-Audit ordinary 28-word Init `func_10003BD0`, now the smallest unblocked
-project-owned Init row at 25 real differences. The tied `osInvalICache` and
-`osWritebackDCache` rows are SDK cache routines; the smaller 17-word
-`func_10012588` remains blocked on address drift.
+The subsequent `func_10003BD0` audit tried several C shapes but did not improve
+its 25 real differences; all experiments were removed. The next completed
+step is Game `func_15004CE0`, documented in Working Note 373. Resume with
+unparked 28-word Game `func_15033F70`, also at 25 real differences. The tied
+Init cache rows remain in the SDK lane, and `func_10012588` remains blocked on
+address drift.

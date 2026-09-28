@@ -28,9 +28,9 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,870 / 5,466 (52.51%) | 1 | 2,595 |
+| Total | `[#############-----------]` 2,871 / 5,466 (52.52%) | 1 | 2,594 |
 | Init | `[###################-----]` 393 / 495 (79.39%) | 1 | 101 |
-| Game | `[###########-------------]` 2,296 / 4,790 (47.93%) | 0 | 2,494 |
+| Game | `[###########-------------]` 2,297 / 4,790 (47.95%) | 0 | 2,493 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
@@ -60,6 +60,12 @@ The 25-word Init channel-parameter updater `func_1000CBF0` is also byte-exact
 after recovering its 32-bit argument types and original repeated table-access
 shape; see
 [Working Note 372](DOCS/WORKING_NOTES/372-init-channel-parameter-updater-match-20260928.md).
+The 28-word Game display-list address relocator `func_15004CE0` is now
+byte-exact after recovering its signed command opcodes, indexed command
+cursor, and retail double-read of the opening opcode. Ten expected-word
+guards normalize compiler register allocation and one commutative operand
+order; see
+[Working Note 373](DOCS/WORKING_NOTES/373-game-display-list-address-relocator-match-20260928.md).
 
 ## Build overview
 

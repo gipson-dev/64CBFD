@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,870 / 5,466 (52.51%) | 1 | 2,595 |
+| Total | 2,871 / 5,466 (52.52%) | 1 | 2,594 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,296 / 4,790 (47.93%) | 0 | 2,494 |
+| Game | 2,297 / 4,790 (47.95%) | 0 | 2,493 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,870, while
+denominator driven: the exact count is now 2,871, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -840,10 +840,16 @@ end-to-end gameplay acceptance.
    after restoring its 32-bit argument types and original repeated table
    accesses. See
    [Working Note 372](WORKING_NOTES/372-init-channel-parameter-updater-match-20260928.md).
-   Resume with ordinary 28-word Init `func_10003BD0`, now the smallest
-   unblocked project-owned Init row at 25 real differences. The tied
-   `osInvalICache` and `osWritebackDCache` rows are SDK cache routines; the
-   smaller 17-word `func_10012588` remains blocked on address drift.
+   The 28-word Game `func_15004CE0` display-list address relocator is also
+   byte-exact after recovering signed opcodes, the indexed cursor, and the
+   opening opcode double-read. Ten guarded words normalize only compiler
+   register allocation and a commutative add; see
+   [Working Note 373](WORKING_NOTES/373-game-display-list-address-relocator-match-20260928.md).
+   `func_10003BD0` was audited across several C shapes and remains at 25 real
+   differences; keep it open without retaining experimental source. Resume
+   with ordinary unparked 28-word Game `func_15033F70`, also at 25 real
+   differences. The tied Init cache rows are SDK routines, while
+   `func_10012588` remains blocked on address drift.
    Keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

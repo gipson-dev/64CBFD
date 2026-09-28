@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game display-list address relocator byte-matched
+
+- Recovered `func_15004CE0` as an eight-byte command scan terminated by the
+  signed `0xDF` opcode. Signed opcode loads, the unsigned byte-3 index, an
+  indexed cursor, and the original double-read of the opening opcode restore
+  the retail control flow and all memory behavior.
+- Ten expected-word guards normalize only compiler register allocation and
+  one commutative pointer-add operand order. All 28 words and 112 bytes now
+  match retail; the guard table has 1,660 rows and zero duplicate keys.
+- Fresh totals are **2,871 / 5,466 (52.52%)** overall and
+  **2,297 / 4,790 (47.95%)** in Game. See
+  [Working Note 373](WORKING_NOTES/373-game-display-list-address-relocator-match-20260928.md).
+
 ### Init channel-parameter updater byte-matched
 
 - Corrected `func_1000CBF0`'s first two parameters from `s16` to the retail

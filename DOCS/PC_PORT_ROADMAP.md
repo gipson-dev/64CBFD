@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,870 / 5,466 (52.51%) | 1 | 2,595 |
+| Total | 5,466 / 6,041 (90.48%) | 2,871 / 5,466 (52.52%) | 1 | 2,594 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,296 / 4,790 (47.93%) | 0 | 2,494 |
+| Game | 4,790 / 5,321 (90.02%) | 2,297 / 4,790 (47.95%) | 0 | 2,493 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1063,6 +1063,11 @@ libultra C compiled with its retail `-O1` object profile. See
 The 25-word Init `func_1000CBF0` channel-parameter updater is byte-exact after
 recovering its 32-bit arguments and retail table-access shape. See
 [Working Note 372](WORKING_NOTES/372-init-channel-parameter-updater-match-20260928.md).
+The 28-word Game `func_15004CE0` display-list address relocator is byte-exact
+after recovering signed command opcodes and the retail indexed scan shape.
+This guest-side restoration is donor/reference progress for the sibling port;
+it does not by itself establish a new host runtime milestone. See
+[Working Note 373](WORKING_NOTES/373-game-display-list-address-relocator-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

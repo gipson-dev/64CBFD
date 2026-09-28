@@ -53,12 +53,20 @@ s32 func_15004AAC() {
 s32 func_15004BF0() {
     return 0;
 }
-void func_15004CE0(u8 *arg0, s32 arg1) {
-    u8 *cur;
+void func_15004CE0(s8 *arg0, s32 arg1) {
+    s32 i = 0;
+    s8 *cur = arg0;
+    s32 opcode;
 
-    for (cur = arg0; cur[0] != 0xDF; cur += 8) {
-        if ((cur[0] == 0xDC) && (cur[3] == 0xE) && (*(u32 *)(cur + 4) < 0x80000000U)) {
-            *(u32 *)(cur + 4) += arg1;
-        }
+    if (cur[0] != -0x21) {
+        opcode = *(volatile s8 *)cur;
+        do {
+            if ((opcode == -0x24) && ((u8)cur[3] == 0xE) && (*(u32 *)(cur + 4) < 0x80000000U)) {
+                *(u32 *)(cur + 4) += arg1;
+            }
+            i++;
+            cur = (s8 *)((u32)arg0 + (i << 3));
+            opcode = cur[0];
+        } while (opcode != -0x21);
     }
 }
