@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game timed event transition byte-exact
+
+- Recovered all 50 words of `func_151E83E8`. A zero cursor is changed to
+  `-1` while event `0x1D` is registered; after the shared update and predicate
+  path, timer `0x65` triggers cleanup, mode `1`, state clears, and event
+  `0x21` dispatch.
+- IDO emits all retail instructions directly from semantic C. No guarded
+  words or relocation substitutions are needed; the guard table remains at
+  1,512 rows with zero duplicate keys.
+- Linked and pristine 200-byte spans share SHA-256
+  `c9c159a99c0ca96242f08a223857956bcfa2753dbe34a25d1a0887d5dba4e964`.
+  Fresh totals are **2,863 / 5,468 (52.36%)** overall and
+  **2,291 / 4,790 (47.83%)** in Game.
+
 ### Game marker-table cursor byte-exact
 
 - Recovered all 76 words of `func_151E82B8`. It handles the timed mode-nine

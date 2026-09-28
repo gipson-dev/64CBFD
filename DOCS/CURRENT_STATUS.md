@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,862 / 5,468 (52.34%) | 1 | 2,605 |
+| Total | 2,863 / 5,468 (52.36%) | 1 | 2,604 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,290 / 4,790 (47.81%) | 0 | 2,500 |
+| Game | 2,291 / 4,790 (47.83%) | 0 | 2,499 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,862, while
+denominator driven: the exact count is now 2,863, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -796,10 +796,11 @@ end-to-end gameplay acceptance.
    plus 24 guarded stack-frame and local-slot words. The 41-word
    `func_151E8214` timed mode transition is exact directly from C with no
    guard rows. The adjacent 76-word `func_151E82B8` marker-table cursor is
-   exact from semantic C plus one guarded commuted equality-branch word.
-   Continue with adjacent 50-word Game `func_151E83E8`, currently measured at
-   44 real differences; keep the previously documented smaller special cases
-   parked.
+   exact from semantic C plus one guarded commuted equality-branch word. The
+   adjacent 50-word `func_151E83E8` timed event transition is exact directly
+   from C with no guard rows. Continue with adjacent 92-word Game
+   `func_151E84B0`, currently measured at 84 real differences; keep the
+   previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
