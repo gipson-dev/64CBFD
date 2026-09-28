@@ -14,6 +14,20 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-09-28
+
+### Game state-transition dispatch byte-exact
+
+- Recovered `func_151E4E00` as a state reset followed by mode `3` selection
+  and a five-argument dispatch for event `0x1D`.
+- The literal global-write sequence reproduces retail's first clear in the
+  preceding call delay slot and its complete argument setup directly from C.
+  No guard rows or relocation substitutions are needed.
+- Linked and pristine 100-byte spans share SHA-256
+  `b9e858200c78ed83eab87512429e3b959bd15e9e51b833ce8c5d90ce4e593b74`.
+  Fresh totals are **2,858 / 5,468 (52.27%)** overall and
+  **2,286 / 4,790 (47.72%)** in Game.
+
 ## 2026-09-27
 
 ### Game owned-state teardown byte-exact

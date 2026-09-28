@@ -1,6 +1,6 @@
 # PC Port Roadmap located in another project folder
 
-## Cross-project progress - 2026-09-27
+## Cross-project progress - 2026-09-28
 
 The active Windows port remains in sibling `64CBFDOGL`; this repository owns
 the guest decompilation and retail-byte evidence used by that port. The current
@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 2,857 / 5,468 (52.25%) | 1 | 2,610 |
+| Total | 5,468 / 6,041 (90.51%) | 2,858 / 5,468 (52.27%) | 1 | 2,609 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,790 / 5,321 (90.02%) | 2,285 / 4,790 (47.70%) | 0 | 2,505 |
+| Game | 4,790 / 5,321 (90.02%) | 2,286 / 4,790 (47.72%) | 0 | 2,504 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1017,9 +1017,10 @@ register choices. The 28-word Game `func_151B3040` paired embedded-record
 dispatch is exact directly from C with no guard rows. The 25-word Game
 `func_151C9ED4` four-handler event broadcast is exact from recovered C plus
 four guarded frame/local-slot words. The 26-word Game `func_151D13E0`
-owned-state teardown is exact directly from C with no guard rows. Continue by
-classifying 25-word Game `func_151E4E00`; see
-[Working Note 354](WORKING_NOTES/354-game-owned-state-teardown-match-20260927.md).
+owned-state teardown is exact directly from C with no guard rows. The 25-word
+Game `func_151E4E00` state-transition dispatch is exact directly from C with no
+guard rows. Continue by classifying 26-word Game `func_151E7EF8`; see
+[Working Note 355](WORKING_NOTES/355-game-state-transition-dispatch-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

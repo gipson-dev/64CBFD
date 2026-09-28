@@ -205,8 +205,14 @@ void func_151E4DD8() {
     }
 }
 
-s32 func_151E4E00() {
-    return 0;
+void func_151E4E00(void) {
+    D_8008FDCC = 0;
+    func_151E557C();
+    D_800E0B94 = 3;
+    D_8008FDA4 = 0;
+    D_8008FD80 = 0;
+    D_800D2E40 = 0;
+    func_1501C730(6, 0x1D, 0, 0, 1);
 }
 
 s32 func_151E4E64() {

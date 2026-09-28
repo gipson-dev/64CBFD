@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, owned-state teardown matched).** The current linked
-checkpoint is `2857 / 5468 (52.25%)` exact C functions, with one address-drift
-blocker and 2,610 genuinely different C functions. Init is
+**Active (2026-09-28, state-transition dispatch matched).** The current linked
+checkpoint is `2858 / 5468 (52.27%)` exact C functions, with one address-drift
+blocker and 2,609 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2285 / 4790 (47.70%)` exact, with 2,505 genuinely different C rows. The tree
+`2286 / 4790 (47.72%)` exact, with 2,504 genuinely different C rows. The tree
 contains 573 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1052,7 +1052,10 @@ recovered C plus four guarded frame/local-slot words; see
 The 26-word Game `func_151D13E0` owned-state teardown is exact directly from C
 with no guard rows; see
 [Working Note 354](WORKING_NOTES/354-game-owned-state-teardown-match-20260927.md).
-Classify 25-word Game `func_151E4E00`, the next unparked compact Game row in
+The 25-word Game `func_151E4E00` state-transition dispatch is exact directly
+from C with no guard rows; see
+[Working Note 355](WORKING_NOTES/355-game-state-transition-dispatch-match-20260928.md).
+Classify 26-word Game `func_151E7EF8`, the next unparked compact Game row in
 the fresh queue after the documented compiler and SDK cases.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

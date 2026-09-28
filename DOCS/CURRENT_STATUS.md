@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-09-27
+Last verified: 2026-09-28
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -21,7 +21,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Fresh `progress.csv` and linked retail comparison on 2026-09-27:
+Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,857 / 5,468 (52.25%) | 1 | 2,610 |
+| Total | 2,858 / 5,468 (52.27%) | 1 | 2,609 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,285 / 4,790 (47.70%) | 0 | 2,505 |
+| Game | 2,286 / 4,790 (47.72%) | 0 | 2,504 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -165,11 +165,15 @@ register lifetime, relocations, and behavior come directly from C.
 owned-object teardown, three separate flag updates, linked-record clear, and
 owner-slot release. Retail's repeated slot loads and complete leaf schedule
 need no guarded words.
+`func_151E4E00` is byte-exact directly from C after recovering its state reset,
+mode-3 transition, and five-argument dispatch for event `0x1D`. Its first
+global clear naturally occupies the preceding call's delay slot; no guarded
+words are needed.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
 
-These commands passed from the current checkout on 2026-09-27:
+These commands passed from the current checkout on 2026-09-28:
 
 ```sh
 make -C conker replace NON_MATCHING=1 -j4
@@ -784,9 +788,10 @@ end-to-end gameplay acceptance.
    dispatch is exact directly from C with no guard rows. The 25-word
    `func_151C9ED4` four-handler event broadcast is exact from recovered C plus
    four guarded frame/local-slot words. The 26-word `func_151D13E0` owned-state
-   teardown is exact directly from C with no guard rows. Continue by
-   classifying 25-word Game `func_151E4E00`; keep the previously documented
-   smaller special cases parked.
+   teardown is exact directly from C with no guard rows. The 25-word
+   `func_151E4E00` state-transition dispatch is exact directly from C with no
+   guard rows. Continue by classifying 26-word Game `func_151E7EF8`; keep the
+   previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the
