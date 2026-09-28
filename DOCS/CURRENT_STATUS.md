@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,884 / 5,466 (52.76%) | 1 | 2,581 |
+| Total | 2,885 / 5,466 (52.78%) | 1 | 2,580 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,310 / 4,790 (48.23%) | 0 | 2,480 |
+| Game | 2,311 / 4,790 (48.25%) | 0 | 2,479 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,884, while
+denominator driven: the exact count is now 2,885, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -849,14 +849,14 @@ end-to-end gameplay acceptance.
    recovering the global disable gate, attached-object type exclusions, and
    state-byte clear. All 28 words emit directly from C with no guards; see
    [Working Note 374](WORKING_NOTES/374-game-object-state-filter-match-20260928.md).
-   The ordinary Game queue through 29-word `func_1514F5CC` is now byte-exact.
-   Its typed 28-byte request records the object, object ID, float parameter,
-   count, size, and mode before submission through `func_150C0AC0`. All words
-   emit directly from semantic C without guards; see
-   [Working Note 386](WORKING_NOTES/386-game-object-request-builder-match-20260928.md).
+   The ordinary Game queue through 26-word `func_15157F80` is now byte-exact.
+   It appends the fixed and indexed matrix commands, advances the display-list
+   cursor twice, and sets the caller's ready byte. The recovered `gSPMatrix`
+   form emits directly without guards; see
+   [Working Note 387](WORKING_NOTES/387-game-display-list-matrix-pair-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 26-word Game `func_15157F80`, at 25 real
+   with ordinary unparked 26-word Game `func_15168B44`, at 25 real
    differences. The tied Init cache rows are SDK routines, while
    `func_10012588` remains blocked on address drift.
    Keep the previously documented smaller special cases parked.

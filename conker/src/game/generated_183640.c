@@ -1,5 +1,7 @@
 #include <ultra64.h>
 extern u8 D_800BE9C0;
+extern u8 D_80089470[];
+extern u8 D_800DCC10[];
 
 /* Non-matching placeholders for the text-only asm slice asm/183640.s. */
 
@@ -116,8 +118,11 @@ s32 func_15157DEC() {
     return 0;
 }
 
-s32 func_15157F80() {
-    return 0;
+Gfx *func_15157F80(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {
+    gSPMatrix(arg0++, D_80089470, 2);
+    gSPMatrix(arg0++, D_800DCC10 + arg2 * 0x40, 6);
+    *arg4 = 1;
+    return arg0;
 }
 
 s32 func_15157FE8() {

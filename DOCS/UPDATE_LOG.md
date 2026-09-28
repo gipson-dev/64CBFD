@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game display-list matrix pair byte-matched
+
+- Recovered `func_15157F80` as two `gSPMatrix` appends: the fixed matrix at
+  `D_80089470` and the indexed 64-byte matrix at `D_800DCC10`, followed by a
+  ready-byte store and return of the advanced display-list cursor.
+- The complete 26-word / 104-byte routine emits directly from semantic C. The
+  F3DEX2 macro converts source flags `2` and `6` into retail command words
+  `0xDA380003` and `0xDA380007`; no expected-word guards are needed.
+- Fresh totals are **2,885 / 5,466 (52.78%)** overall and
+  **2,311 / 4,790 (48.25%)** in Game. See
+  [Working Note 387](WORKING_NOTES/387-game-display-list-matrix-pair-match-20260928.md).
+
 ### Game object-request builder byte-matched
 
 - Recovered `func_1514F5CC` as a typed 28-byte stack request containing the
