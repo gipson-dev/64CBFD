@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game timed mode transition byte-exact
+
+- Recovered all 41 words of `func_151E8214`. Outside mode `8`, it clears the
+  transition timer while `func_1517EFDC` is false and, at timer `0xA1`, resets
+  the input/state globals before selecting mode `8` and raising the transition
+  flag.
+- IDO emits all retail instructions directly from semantic C. No guarded words
+  or relocation substitutions are needed; the guard table remains at 1,511
+  rows with zero duplicate keys.
+- Linked and pristine 164-byte spans share SHA-256
+  `19b672f8cd503cffe4161a9ce5fab0e0b80c4f7177123ac0e88fa72b12ae2051`.
+  Fresh totals are **2,861 / 5,468 (52.32%)** overall and
+  **2,289 / 4,790 (47.79%)** in Game.
+
 ### Game object-slot spawn byte-exact
 
 - Recovered all 163 words of `func_151E7F60`, including prior-object release,
