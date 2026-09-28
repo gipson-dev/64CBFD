@@ -1,5 +1,7 @@
 #include <ultra64.h>
 
+extern u8 D_800A1C40[][2];
+
 /* Non-matching placeholders for the text-only asm slice asm/124920.s. */
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_124920/func_150F7470.s")
@@ -47,8 +49,16 @@ s32 func_150F892C() {
     return 0;
 }
 
-s32 func_150F9720() {
-    return 0;
+void func_150F9720(u8 arg0) {
+    s64 value;
+    u8 *pair;
+
+    pair = D_800A1C40[arg0];
+    *(s32 *)&value = 0;
+    ((u8 *)&value)[4] = pair[0];
+    func_151494E0((s32)&value, 0x42);
+    ((u8 *)&value)[4] = pair[1];
+    func_151494E0((s32)&value, 0x42);
 }
 
 void func_150F9788(s32 arg0) {

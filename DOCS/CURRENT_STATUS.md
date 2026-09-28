@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,877 / 5,466 (52.63%) | 1 | 2,588 |
+| Total | 2,878 / 5,466 (52.65%) | 1 | 2,587 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,303 / 4,790 (48.08%) | 0 | 2,487 |
+| Game | 2,304 / 4,790 (48.10%) | 0 | 2,486 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,877, while
+denominator driven: the exact count is now 2,878, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1039,5 +1039,7 @@ The completed record-output accessor and its direct-from-C match are in
 [Working Note 378](WORKING_NOTES/378-game-record-output-accessor-match-20260928.md).
 The completed actor-position query and its direct-from-C match are in
 [Working Note 379](WORKING_NOTES/379-game-actor-position-query-match-20260928.md).
+The completed dual event-byte dispatcher and its guarded frame-layout match are
+in [Working Note 380](WORKING_NOTES/380-game-dual-event-byte-dispatch-match-20260928.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game dual event-byte dispatcher byte-matched
+
+- Recovered `func_150F9720` as an eight-bit indexed lookup into four two-byte
+  pairs followed by two command-`0x42` event submissions.
+- The complete 26-word / 104-byte schedule emits from semantic C. Eleven
+  expected-word guards normalize only IDO's eight-byte-larger event-buffer
+  frame and affected stack slots; no relocation is changed.
+- Fresh totals are **2,878 / 5,466 (52.65%)** overall and
+  **2,304 / 4,790 (48.10%)** in Game. See
+  [Working Note 380](WORKING_NOTES/380-game-dual-event-byte-dispatch-match-20260928.md).
+
 ### Game actor-position query byte-matched
 
 - Recovered `func_150E36BC` as a one-based eight-slot actor query with a

@@ -28,9 +28,9 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,877 / 5,466 (52.63%) | 1 | 2,588 |
+| Total | `[#############-----------]` 2,878 / 5,466 (52.65%) | 1 | 2,587 |
 | Init | `[###################-----]` 393 / 495 (79.39%) | 1 | 101 |
-| Game | `[############------------]` 2,303 / 4,790 (48.08%) | 0 | 2,487 |
+| Game | `[############------------]` 2,304 / 4,790 (48.10%) | 0 | 2,486 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
@@ -95,6 +95,10 @@ The 31-word Game actor-position query `func_150E36BC` is now byte-exact after
 recovering its one-based slot validation, actor-type gate, and three truncated
 coordinate outputs. It also emits directly from C with no guards; see
 [Working Note 379](DOCS/WORKING_NOTES/379-game-actor-position-query-match-20260928.md).
+The 26-word Game dual event-byte dispatcher `func_150F9720` is now byte-exact
+after recovering its two-byte pair lookup and repeated command-`0x42` event
+submissions; see
+[Working Note 380](DOCS/WORKING_NOTES/380-game-dual-event-byte-dispatch-match-20260928.md).
 
 ## Build overview
 
