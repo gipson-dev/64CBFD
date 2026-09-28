@@ -1510,3 +1510,4 @@ generated_20AE20,func_151E7F60,0x240,0x8FB80058,0x8FB80050,-,-,Reload the first 
 generated_20AE20,func_151E7F60,0x254,0xAFA4002C,0xAFA40030,-,-,Spill the object pointer at retail stack offset 0x30,,,false
 generated_20AE20,func_151E7F60,0x25C,0x8FA4002C,0x8FA40030,-,-,Reload the object pointer for animation setup,,,false
 generated_20AE20,func_151E7F60,0x280,0x27BD0058,0x27BD0050,-,-,Restore retail's 80-byte frame,,,false
+generated_20AE20,func_151E82B8,0x024,0x14450015,0x14A20015,-,-,Preserve retail's commuted equality-branch operand order,,,false

@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game marker-table cursor byte-exact
+
+- Recovered all 76 words of `func_151E82B8`. It handles the timed mode-nine
+  transition, normalizes sentinel cursor states, scans the marker-pointer
+  table to byte `0x2A`, handles a following `0x3D` terminator, and resets the
+  transition timer.
+- Semantic C emits every substantive retail instruction. One guarded word
+  preserves only retail's commuted equality-branch operand order; the guard
+  table now has 1,512 rows, zero duplicate keys, and exactly one row for this
+  function.
+- Linked and pristine 304-byte spans share SHA-256
+  `4abd7ddbc182747cbd0d4604e7b7f6050d6e5c094ee70e2d4f30ee7f5cfeb0a7`.
+  Fresh totals are **2,862 / 5,468 (52.34%)** overall and
+  **2,290 / 4,790 (47.81%)** in Game.
+
 ### Game timed mode transition byte-exact
 
 - Recovered all 41 words of `func_151E8214`. Outside mode `8`, it clears the

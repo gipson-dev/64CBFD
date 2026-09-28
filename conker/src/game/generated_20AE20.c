@@ -44,6 +44,7 @@ extern Unk800AB57C D_800AB57C[];
 extern Unk800AB940 D_800AB940[];
 extern u8 *D_800D20FC;
 extern struct127 D_800CC2D0[];
+extern u8 **D_800E0BD8;
 
 /* Non-matching placeholders for the text-only asm slice asm/20AE20.s. */
 
@@ -475,8 +476,44 @@ void func_151E8214(void) {
     }
 }
 
-s32 func_151E82B8() {
-    return 0;
+void func_151E82B8(void) {
+    s32 index;
+
+    func_151E530C();
+    index = D_800E0A80;
+
+    if (-1 == index) {
+        if (D_800E0A90 >= 0x79) {
+            D_800E0B94 = 9;
+            D_800E0A90 = 0;
+            D_8008FDCC = 0xFF;
+            D_800E0A80 = 0;
+            func_1501C730(6, 0x1D, 0, 0, 1);
+            return;
+        }
+    }
+
+    if (index == -2) {
+        D_800E0A80 = 0;
+    }
+
+    if (D_800E0A90 < 0x1BE) {
+        return;
+    }
+    index = D_800E0A80;
+    if (index < 0) {
+        return;
+    }
+
+    while (D_800E0BD8[index][0] != 0x2A) {
+        D_800E0A80 = index + 1;
+        index = D_800E0A80;
+    }
+    D_800E0A80 = index + 1;
+    if (D_800E0BD8[D_800E0A80][0] == 0x3D) {
+        D_800E0A80 = -1;
+    }
+    D_800E0A90 = 0;
 }
 
 s32 func_151E83E8() {
