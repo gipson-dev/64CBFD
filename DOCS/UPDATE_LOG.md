@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Second Game object-ID state pair byte-matched
+
+- Recovered `func_1519BEB8` and adjacent `func_1519BF20` as the second
+  six-entry object-ID scan pair that clears or sets byte `0x14` in the
+  selected `D_800E0900` row.
+- The 26-word and 27-word semantic routines reproduce their complete retail
+  control flow, schedules, delay slots, and relocations. Two expected-word
+  guards per function normalize only the retained object-ID register.
+- Direct comparisons match all 104 and 108 linked bytes. Fresh totals are
+  **2,893 / 5,466 (52.93%)** overall and **2,319 / 4,790 (48.41%)** in Game.
+  See
+  [Working Note 391](WORKING_NOTES/391-game-second-object-id-state-pair-match-20260928.md).
+
 ### Game object-ID state pair byte-matched
 
 - Recovered adjacent `func_151993E4` and `func_1519944C` as six-entry object-ID

@@ -380,12 +380,48 @@ s32 func_1519BE1C() {
     return 0;
 }
 
-s32 func_1519BEB8(u8 *arg0) {
-    return 0;
+void func_1519BEB8(u8 *arg0) {
+    u8 *outer = *(u8 **) (arg0 + 0x98);
+    u8 *object = *(u8 **) outer;
+    s32 index = 0;
+    s32 found = 0;
+    u8 object_id = object[0x3B];
+    u8 *id = D_800A8A9C;
+
+    do {
+        if (object_id == *id) {
+            found = 1;
+        } else {
+            index++;
+            id++;
+        }
+    } while ((found == 0) && (index < 6));
+
+    if (found != 0) {
+        D_800E0900[index][0x14] = 0;
+    }
 }
 
-s32 func_1519BF20(u8 *arg0) {
-    return 0;
+void func_1519BF20(u8 *arg0) {
+    u8 *outer = *(u8 **) (arg0 + 0x98);
+    u8 *object = *(u8 **) outer;
+    s32 index = 0;
+    s32 found = 0;
+    u8 object_id = object[0x3B];
+    u8 *id = D_800A8A9C;
+
+    do {
+        if (object_id == *id) {
+            found = 1;
+        } else {
+            index++;
+            id++;
+        }
+    } while ((found == 0) && (index < 6));
+
+    if (found != 0) {
+        D_800E0900[index][0x14] = 1;
+    }
 }
 
 s32 func_1519BF8C(void) {

@@ -1725,3 +1725,7 @@ generated_1C2C60,func_151993E4,0x018,0x9069003B,0x9067003B,-,-,Retain the object
 generated_1C2C60,func_151993E4,0x020,0x552E0004,0x54EE0004,-,-,Compare the object ID through retail's a3 lifetime,,,false
 generated_1C2C60,func_1519944C,0x018,0x9069003B,0x9067003B,-,-,Retain the object ID in retail's a3 lifetime,,,false
 generated_1C2C60,func_1519944C,0x020,0x552E0004,0x54EE0004,-,-,Compare the object ID through retail's a3 lifetime,,,false
+generated_1C2C60,func_1519BEB8,0x018,0x9069003B,0x9067003B,-,-,Retain the object ID in retail's a3 lifetime,,,false
+generated_1C2C60,func_1519BEB8,0x020,0x552E0004,0x54EE0004,-,-,Compare the object ID through retail's a3 lifetime,,,false
+generated_1C2C60,func_1519BF20,0x018,0x9069003B,0x9067003B,-,-,Retain the object ID in retail's a3 lifetime,,,false
+generated_1C2C60,func_1519BF20,0x020,0x552E0004,0x54EE0004,-,-,Compare the object ID through retail's a3 lifetime,,,false

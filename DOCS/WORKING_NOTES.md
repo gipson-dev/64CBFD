@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game object-ID state pair matched).** The current linked
-checkpoint is `2891 / 5466 (52.89%)` exact C functions, with one address-drift
-blocker and 2,574 genuinely different C functions. Init is
+**Active (2026-09-28, second Game object-ID state pair matched).** The current
+linked checkpoint is `2893 / 5466 (52.93%)` exact C functions, with one
+address-drift blocker and 2,572 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2317 / 4790 (48.37%)` exact, with 2,473 genuinely different C rows. The tree
+`2319 / 4790 (48.41%)` exact, with 2,471 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1197,9 +1197,13 @@ also match after recovering their six-entry identifier scan and complementary
 clear/set state writes. Two scoped guards per function preserve retail's
 object-ID register lifetime; see
 [Working Note 390](WORKING_NOTES/390-game-object-id-state-pair-match-20260928.md).
+The second clear/set pair `func_1519BEB8` and `func_1519BF20` now matches from
+the same six-entry object-ID scan. Two scoped guards per function preserve
+retail's object-ID register lifetime; see
+[Working Note 391](WORKING_NOTES/391-game-second-object-id-state-pair-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary unparked 26-word Game
-`func_1519BEB8`, at 25 real differences. Keep the tied SDK cache routines in
+`func_151A4E34`, at 25 real differences. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked
 on address drift. Keep the much larger HUD renderers `func_151E89A0` and
 `func_151EA15C` parked as separate focused work.

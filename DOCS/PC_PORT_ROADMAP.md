@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,891 / 5,466 (52.89%) | 1 | 2,574 |
+| Total | 5,466 / 6,041 (90.48%) | 2,893 / 5,466 (52.93%) | 1 | 2,572 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,317 / 4,790 (48.37%) | 0 | 2,473 |
+| Game | 4,790 / 5,321 (90.02%) | 2,319 / 4,790 (48.41%) | 0 | 2,471 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1158,6 +1158,11 @@ are byte-exact after recovering their six-entry ID scan and complementary
 clear/set state writes. Two scoped register-lifetime guards per function are
 required. This remains guest-side donor/reference progress; see
 [Working Note 390](WORKING_NOTES/390-game-object-id-state-pair-match-20260928.md).
+The second Game object-ID pair `func_1519BEB8` and `func_1519BF20` is
+byte-exact from the same six-entry scan and complementary state writes. Two
+scoped object-ID register-lifetime guards per function are required. This
+remains guest-side donor/reference progress; see
+[Working Note 391](WORKING_NOTES/391-game-second-object-id-state-pair-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
