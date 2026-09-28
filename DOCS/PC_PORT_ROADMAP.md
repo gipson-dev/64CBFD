@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,879 / 5,466 (52.67%) | 1 | 2,586 |
+| Total | 5,466 / 6,041 (90.48%) | 2,880 / 5,466 (52.69%) | 1 | 2,585 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,305 / 4,790 (48.12%) | 0 | 2,485 |
+| Game | 4,790 / 5,321 (90.02%) | 2,306 / 4,790 (48.14%) | 0 | 2,484 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1110,6 +1110,11 @@ recovering its copied descriptor, two-word-plus-byte payload, and event-`0x1D`
 submission. It emits directly from C without guards. This remains guest-side
 donor/reference progress; see
 [Working Note 381](WORKING_NOTES/381-game-event-payload-dispatch-match-20260928.md).
+The 26-word Game `func_15110360` indexed matrix compose is byte-exact after
+recovering the matrix-builder ABI and typed `0x180`-byte record layout with its
+matrix at offset `0xBC`. It emits directly from C without guards. This remains
+guest-side donor/reference progress; see
+[Working Note 382](WORKING_NOTES/382-game-indexed-matrix-compose-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

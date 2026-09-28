@@ -1,6 +1,12 @@
 #include <ultra64.h>
 void func_150A8050(f32 [4][4], f32, f32, f32);
 void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
+typedef struct {
+    u8 pad0[0xBC];
+    f32 mtx[4][4];
+    u8 padFC[0x84];
+} Record13D350;
+extern Record13D350 *D_800BE628;
 
 /* Non-matching placeholders for the text-only asm slice asm/13D350.s. */
 
@@ -8,12 +14,12 @@ s32 func_1510FEA0() {
     return 0;
 }
 
-s32 func_151102CC() {
-    return 0;
+void func_151102CC(f32 arg0[4][4], f32 arg1, f32 arg2, f32 arg3) {
 }
 
-s32 func_15110360() {
-    return 0;
+void func_15110360(s32 arg0, f32 arg1[4][4], f32 arg2, f32 arg3, f32 arg4) {
+    func_151102CC(arg1, arg2, arg3, arg4);
+    func_150A7A48(arg1, D_800BE628[arg0].mtx, arg1);
 }
 
 s32 func_151103C8() {

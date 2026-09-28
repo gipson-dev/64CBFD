@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game indexed matrix compose byte-matched
+
+- Recovered `func_15110360` as a three-angle matrix build followed by an
+  in-place compose with the matrix at offset `0xBC` of an indexed `0x180`-byte
+  global record.
+- A typed record access reproduces retail's complete 26-word / 104-byte
+  schedule directly from C, with no expected-word guards or compiler override.
+- Fresh totals are **2,880 / 5,466 (52.69%)** overall and
+  **2,306 / 4,790 (48.14%)** in Game. See
+  [Working Note 382](WORKING_NOTES/382-game-indexed-matrix-compose-match-20260928.md).
+
 ### Game event-payload dispatcher byte-matched
 
 - Recovered `func_15108FFC` as a local two-word descriptor copy and a payload
