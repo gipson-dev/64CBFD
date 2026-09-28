@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game packed-coordinate callback byte-matched
+
+- Replaced `func_1518CCA8`'s zero-return placeholder with its packed X/Y
+  coordinate update, zero-Z gate, and low-nibble callback-table dispatch.
+- An explicit upper-half mask recovers retail's extraction shape. Ten scoped
+  expected-word guards normalize only one closed temporary-register
+  allocation cycle.
+- Direct comparison matches all 120 linked bytes with SHA-256
+  `11ea57903c0bc7e72ed5d68b72e52c9b0ee5039ab8344aa6068a6b527125e3e6`.
+  Fresh totals are **2,897 / 5,466 (53.00%)** overall and
+  **2,323 / 4,790 (48.50%)** in Game. See
+  [Working Note 395](WORKING_NOTES/395-game-packed-coordinate-callback-match-20260928.md).
+
 ### Game entrypoint main loop byte-matched
 
 - Replaced `func_15007830`'s zero-return placeholder with the complete Game

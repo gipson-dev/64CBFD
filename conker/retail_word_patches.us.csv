@@ -1796,3 +1796,13 @@ entrypoint,func_15007830,0x1D4,0x8FB6002C,0x8FB40024,-,-,Preserve retail registe
 entrypoint,func_15007830,0x1D8,0x8FB70030,0x8FB50028,-,-,Preserve retail register allocation in the recovered entrypoint loop,,,false
 entrypoint,func_15007830,0x1DC,0x03E00008,0x8FB6002C,-,-,Preserve retail register allocation in the recovered entrypoint loop,0x8FB70030,-,false
 entrypoint,func_15007830,0x1E0,0x27BD0038,0x03E00008,-,-,Preserve the retail epilogue and final delay slot,0x27BD0038,-,false
+generated_1B9F30,func_1518CCA8,0x008,0x8C820014,0x8C890014,-,-,Retain the packed coordinate offset in retail's t1 lifetime,,,false
+generated_1B9F30,func_1518CCA8,0x018,0x848A0038,0x848B0038,-,-,Retain the callback gate in retail's t3 lifetime,,,false
+generated_1B9F30,func_1518CCA8,0x01C,0x00417824,0x01217824,-,-,Mask the packed coordinate offset through retail's t1 lifetime,,,false
+generated_1B9F30,func_1518CCA8,0x028,0x01024821,0x01095021,-,-,Accumulate the low coordinate through retail's t2 lifetime,,,false
+generated_1B9F30,func_1518CCA8,0x030,0x1540000A,0x1560000A,-,-,Test the callback gate through retail's t3 lifetime,,,false
+generated_1B9F30,func_1518CCA8,0x034,0xA4890036,0xA48A0036,-,-,Store the low coordinate through retail's t2 lifetime,,,false
+generated_1B9F30,func_1518CCA8,0x040,0x304B000F,0x304C000F,-,-,Retain the callback index in retail's t4 lifetime,,,false
+generated_1B9F30,func_1518CCA8,0x044,0x11600005,0x11800005,-,-,Test the callback index through retail's t4 lifetime,,,false
+generated_1B9F30,func_1518CCA8,0x048,0x000B6080,0x000C6880,-,-,Scale the callback index through retail's t5 lifetime,,,false
+generated_1B9F30,func_1518CCA8,0x04C,0x032CC821,0x032DC821,-,-,Index the callback table through retail's t5 lifetime,,,false

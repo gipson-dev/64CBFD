@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,896 / 5,466 (52.98%) | 1 | 2,569 |
+| Total | 2,897 / 5,466 (53.00%) | 1 | 2,568 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,322 / 4,790 (48.48%) | 0 | 2,468 |
+| Game | 2,323 / 4,790 (48.50%) | 0 | 2,467 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,893, while
+denominator driven: the exact count is now 2,897, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -891,12 +891,18 @@ end-to-end gameplay acceptance.
    scoped guards normalize one closed saved-register allocation cycle and two
    omitted unreachable epilogue words; see
    [Working Note 394](WORKING_NOTES/394-game-entrypoint-main-loop-match-20260928.md).
+   The 30-word packed-coordinate callback `func_1518CCA8` is now byte-exact
+   after recovering its packed X/Y offset update, zero-Z gate, and low-nibble
+   callback dispatch. Ten scoped guards normalize one closed temporary-
+   register allocation cycle; see
+   [Working Note 395](WORKING_NOTES/395-game-packed-coordinate-callback-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 30-word Game `func_1518CCA8`, at 25 real
-   differences. Keep `func_151F3D78` parked behind its pre-existing audio
-   object layout drift. The tied Init cache rows are SDK routines, while
-   `func_10012588` remains blocked on address drift.
+   with ordinary unparked 27-word Game `func_1501D258`, at 26 real
+   differences. Keep the documented lower-difference compiler cases parked,
+   and keep `func_151F3D78` parked behind its pre-existing audio object layout
+   drift. The tied Init cache rows are SDK routines, while `func_10012588`
+   remains blocked on address drift.
    Keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

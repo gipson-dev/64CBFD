@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game entrypoint main loop matched).** The current
-linked checkpoint is `2896 / 5466 (52.98%)` exact C functions, with one
-address-drift blocker and 2,569 genuinely different C functions. Init is
+**Active (2026-09-28, Game packed-coordinate callback matched).** The current
+linked checkpoint is `2897 / 5466 (53.00%)` exact C functions, with one
+address-drift blocker and 2,568 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2322 / 4790 (48.48%)` exact, with 2,468 genuinely different C rows. The tree
+`2323 / 4790 (48.50%)` exact, with 2,467 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1216,12 +1216,17 @@ shared cleanup, and permanent main loop. Sixty-six scoped guards preserve one
 closed saved-register allocation cycle and two unreachable epilogue words;
 see
 [Working Note 394](WORKING_NOTES/394-game-entrypoint-main-loop-match-20260928.md).
+The 30-word packed-coordinate callback `func_1518CCA8` now matches after
+recovering its packed X/Y offset update, zero-Z gate, and low-nibble callback
+dispatch. Ten scoped guards preserve one closed temporary-register allocation
+cycle; see
+[Working Note 395](WORKING_NOTES/395-game-packed-coordinate-callback-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 30-word Game
-`func_1518CCA8`, at 25 real differences. Keep `func_151F3D78` parked behind
-the pre-existing `game_21FC90` audio-object layout drift. Keep the tied SDK
-cache routines in their own ownership lane. The smaller 17-word
-`func_10012588` remains blocked
+experiments were removed. Resume with ordinary unparked 27-word Game
+`func_1501D258`, at 26 real differences. Keep the documented lower-difference
+compiler cases parked, and keep `func_151F3D78` parked behind the pre-existing
+`game_21FC90` audio-object layout drift. Keep the tied SDK cache routines in
+their own ownership lane. The smaller 17-word `func_10012588` remains blocked
 on address drift. Keep the much larger HUD renderers `func_151E89A0` and
 `func_151EA15C` parked as separate focused work.
 Keep raw-assembly conversion as a separate workstream. The measured handoff

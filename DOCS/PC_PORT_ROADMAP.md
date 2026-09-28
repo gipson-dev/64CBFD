@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,896 / 5,466 (52.98%) | 1 | 2,569 |
+| Total | 5,466 / 6,041 (90.48%) | 2,897 / 5,466 (53.00%) | 1 | 2,568 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,322 / 4,790 (48.48%) | 0 | 2,468 |
+| Game | 4,790 / 5,321 (90.02%) | 2,323 / 4,790 (48.50%) | 0 | 2,467 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1180,6 +1180,12 @@ shared cleanup, and permanent dispatch loop. Sixty-six scoped guards preserve
 the retail saved-register cycle and two omitted unreachable epilogue words.
 This remains guest-side donor/reference progress; see
 [Working Note 394](WORKING_NOTES/394-game-entrypoint-main-loop-match-20260928.md).
+The 30-word Game packed-coordinate callback `func_1518CCA8` is byte-exact
+after recovering its packed X/Y update, zero-Z gate, and callback-table
+dispatch through the callback byte's low nibble. Ten scoped guards preserve
+the retail temporary-register allocation cycle. This remains guest-side
+donor/reference progress; see
+[Working Note 395](WORKING_NOTES/395-game-packed-coordinate-callback-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
