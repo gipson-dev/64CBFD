@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game object float-range update byte-matched
+
+- Recovered `func_15121C00` as a typed six-argument object-field update followed
+  by a scaled store from offset `0x37C` to offset `0x39C`.
+- All 25 words / 100 bytes emit directly from semantic C, including the unused
+  middle-float ABI spill, with no expected-word guards or compiler override.
+- Fresh totals are **2,881 / 5,466 (52.71%)** overall and
+  **2,307 / 4,790 (48.16%)** in Game. See
+  [Working Note 383](WORKING_NOTES/383-game-object-float-range-update-match-20260928.md).
+
 ### Game indexed matrix compose byte-matched
 
 - Recovered `func_15110360` as a three-angle matrix build followed by an

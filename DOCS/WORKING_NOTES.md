@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game indexed matrix compose matched).** The current
-linked checkpoint is `2880 / 5466 (52.69%)` exact C functions, with one
-address-drift blocker and 2,585 genuinely different C functions. Init is
+**Active (2026-09-28, Game object float-range update matched).** The current
+linked checkpoint is `2881 / 5466 (52.71%)` exact C functions, with one
+address-drift blocker and 2,584 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2306 / 4790 (48.14%)` exact, with 2,484 genuinely different C rows. The tree
+`2307 / 4790 (48.16%)` exact, with 2,483 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1159,9 +1159,13 @@ The 26-word Game indexed matrix compose `func_15110360` now matches after
 recovering its matrix-builder ABI and typed `0x180`-byte record layout. All
 words emit directly from C with no guards; see
 [Working Note 382](WORKING_NOTES/382-game-indexed-matrix-compose-match-20260928.md).
+The 25-word Game object float-range update `func_15121C00` now matches after
+recovering its six-argument object-field call and post-call scaled store. All
+words emit directly from C with no guards; see
+[Working Note 383](WORKING_NOTES/383-game-object-float-range-update-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 25-word Game
-`func_15121C00`, at 25 real differences. Keep the tied SDK cache routines in
+experiments were removed. Resume with ordinary unparked 28-word Game
+`func_1512D2F8`, at 25 real differences. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked
 on address drift. Keep the much larger HUD renderers `func_151E89A0` and
 `func_151EA15C` parked as separate focused work.

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,880 / 5,466 (52.69%) | 1 | 2,585 |
+| Total | 5,466 / 6,041 (90.48%) | 2,881 / 5,466 (52.71%) | 1 | 2,584 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,306 / 4,790 (48.14%) | 0 | 2,484 |
+| Game | 4,790 / 5,321 (90.02%) | 2,307 / 4,790 (48.16%) | 0 | 2,483 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1115,6 +1115,11 @@ recovering the matrix-builder ABI and typed `0x180`-byte record layout with its
 matrix at offset `0xBC`. It emits directly from C without guards. This remains
 guest-side donor/reference progress; see
 [Working Note 382](WORKING_NOTES/382-game-indexed-matrix-compose-match-20260928.md).
+The 25-word Game `func_15121C00` object float-range update is byte-exact after
+recovering its six-argument forwarded call, intentionally unused middle float,
+and post-call scaled-field store. It emits directly from C without guards. This
+remains guest-side donor/reference progress; see
+[Working Note 383](WORKING_NOTES/383-game-object-float-range-update-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
