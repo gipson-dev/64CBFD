@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game byte-timer state byte-matched
+
+- Recovered `func_1512D2F8` as a two-state byte timer driven by
+  `D_800BE9E4` and bounded by the indexed `D_800DC290` duration table.
+- An explicit state dispatch and compound byte update reproduce all 28 words /
+  112 bytes directly from C, with no expected-word guards or compiler override.
+- Fresh totals are **2,882 / 5,466 (52.73%)** overall and
+  **2,308 / 4,790 (48.18%)** in Game. See
+  [Working Note 384](WORKING_NOTES/384-game-byte-timer-state-match-20260928.md).
+
 ### Game object float-range update byte-matched
 
 - Recovered `func_15121C00` as a typed six-argument object-field update followed
