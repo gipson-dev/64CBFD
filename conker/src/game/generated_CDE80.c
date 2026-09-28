@@ -2,6 +2,17 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/CDE80.s. */
 
+typedef struct {
+    u8 pad0[0x17];
+    u8 field17;
+    s32 field18;
+    s32 field1C;
+    s32 field20;
+    u8 pad24[0x10];
+} GeneratedCDE80Record;
+
+extern GeneratedCDE80Record *D_800D3098;
+
 s32 func_150A09D0() {
     return 0;
 }
@@ -92,8 +103,11 @@ s32 func_150A32B4() {
     return 0;
 }
 
-s32 func_150A3330() {
-    return 0;
+void func_150A3330(s32 arg0, s32 *arg1, s32 *arg2, s32 *arg3, s32 *arg4) {
+    *arg1 = D_800D3098[arg0].field17;
+    *arg2 = D_800D3098[arg0].field18;
+    *arg3 = D_800D3098[arg0].field1C;
+    *arg4 = D_800D3098[arg0].field20;
 }
 
 s32 func_150A3398() {

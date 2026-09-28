@@ -28,9 +28,9 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,875 / 5,466 (52.60%) | 1 | 2,590 |
+| Total | `[#############-----------]` 2,876 / 5,466 (52.62%) | 1 | 2,589 |
 | Init | `[###################-----]` 393 / 495 (79.39%) | 1 | 101 |
-| Game | `[############------------]` 2,301 / 4,790 (48.04%) | 0 | 2,489 |
+| Game | `[############------------]` 2,302 / 4,790 (48.06%) | 0 | 2,488 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
@@ -87,6 +87,10 @@ slice uses its retail no-unroll compiler profile; four relocation-aware guards
 normalize only the independent opening-address and count-initialization
 schedule. See
 [Working Note 377](DOCS/WORKING_NOTES/377-game-active-record-counter-match-20260928.md).
+The 26-word Game record-output accessor `func_150A3330` is now byte-exact
+after recovering its `0x34`-byte record indexing and four output stores. The
+complete routine emits directly from C with no guards; see
+[Working Note 378](DOCS/WORKING_NOTES/378-game-record-output-accessor-match-20260928.md).
 
 ## Build overview
 

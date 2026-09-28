@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game record-output accessor byte-matched
+
+- Recovered `func_150A3330` as a five-argument accessor over `0x34`-byte
+  records reached through `D_800D3098`.
+- All 26 words / 104 bytes emit directly from semantic C with no expected-word
+  guards or compiler-profile override.
+- Fresh totals are **2,876 / 5,466 (52.62%)** overall and
+  **2,302 / 4,790 (48.06%)** in Game. See
+  [Working Note 378](WORKING_NOTES/378-game-record-output-accessor-match-20260928.md).
+
 ### Game active-record counter byte-matched
 
 - Recovered `func_1509CB68` as a four-record unrolled population count over

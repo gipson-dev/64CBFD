@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,875 / 5,466 (52.60%) | 1 | 2,590 |
+| Total | 2,876 / 5,466 (52.62%) | 1 | 2,589 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,301 / 4,790 (48.04%) | 0 | 2,489 |
+| Game | 2,302 / 4,790 (48.06%) | 0 | 2,488 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,875, while
+denominator driven: the exact count is now 2,876, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1035,5 +1035,7 @@ allocation guards are in
 The completed active-record counter, its no-unroll object profile, and four
 relocation-aware opening-schedule guards are in
 [Working Note 377](WORKING_NOTES/377-game-active-record-counter-match-20260928.md).
+The completed record-output accessor and its direct-from-C match are in
+[Working Note 378](WORKING_NOTES/378-game-record-output-accessor-match-20260928.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
