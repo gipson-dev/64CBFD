@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game indexed 64-bit flag setter byte-matched
+
+- Replaced `func_1501D258`'s zero-return placeholder with its global enable
+  gate and indexed 64-bit bitset update.
+- The typed `D_800C3A60[index] |= 1LL << bit` expression reproduces retail's
+  `__ll_lshift` ABI, array addressing, and paired word stores directly. No
+  expected-word guards are required.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `d290ae23b10b11613cb5737ff78c3b7a462bf6cecf9b78b88af3c5501959bedb`.
+  Fresh totals are **2,898 / 5,466 (53.02%)** overall and
+  **2,324 / 4,790 (48.52%)** in Game. See
+  [Working Note 396](WORKING_NOTES/396-game-indexed-64-bit-flag-setter-match-20260928.md).
+
 ### Game packed-coordinate callback byte-matched
 
 - Replaced `func_1518CCA8`'s zero-return placeholder with its packed X/Y

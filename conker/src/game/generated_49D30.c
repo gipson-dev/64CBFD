@@ -19,6 +19,8 @@ extern void func_1516D328(u8 *arg0);
 
 extern u8 D_800C3510[];
 extern u8 D_800C354A[];
+extern u8 D_800C3670;
+extern s64 D_800C3A60[];
 
 s32 func_1501C880() {
     return 0;
@@ -60,8 +62,10 @@ s32 func_1501D1D4() {
     return 0;
 }
 
-s32 func_1501D258() {
-    return 0;
+void func_1501D258(s32 index, s32 bit) {
+    if (D_800C3670 == 0) {
+        D_800C3A60[index] |= 1LL << bit;
+    }
 }
 
 s32 func_1501D2C4() {

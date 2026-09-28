@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,897 / 5,466 (53.00%) | 1 | 2,568 |
+| Total | 5,466 / 6,041 (90.48%) | 2,898 / 5,466 (53.02%) | 1 | 2,567 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,323 / 4,790 (48.50%) | 0 | 2,467 |
+| Game | 4,790 / 5,321 (90.02%) | 2,324 / 4,790 (48.52%) | 0 | 2,466 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1186,6 +1186,11 @@ dispatch through the callback byte's low nibble. Ten scoped guards preserve
 the retail temporary-register allocation cycle. This remains guest-side
 donor/reference progress; see
 [Working Note 395](WORKING_NOTES/395-game-packed-coordinate-callback-match-20260928.md).
+The 27-word Game indexed 64-bit flag setter `func_1501D258` is byte-exact
+after recovering its global enable gate and `D_800C3A60[index]` bit update.
+The routine emits directly from semantic C without guards. This remains
+guest-side donor/reference progress; see
+[Working Note 396](WORKING_NOTES/396-game-indexed-64-bit-flag-setter-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
