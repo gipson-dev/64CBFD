@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,889 / 5,466 (52.85%) | 1 | 2,576 |
+| Total | 2,891 / 5,466 (52.89%) | 1 | 2,574 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,315 / 4,790 (48.33%) | 0 | 2,475 |
+| Game | 2,317 / 4,790 (48.37%) | 0 | 2,473 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,889, while
+denominator driven: the exact count is now 2,891, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -866,9 +866,14 @@ end-to-end gameplay acceptance.
    and setup calls, payload copy, and final state stores emit directly with no
    guards or compiler overrides; see
    [Working Note 389](WORKING_NOTES/389-game-allocator-copy-and-setup-pair-match-20260928.md).
+   Adjacent object-ID state twins `func_151993E4` and `func_1519944C` are now
+   byte-exact after recovering their six-entry identifier scan and clear/set
+   writes into `D_800E0900`. Two scoped guards per function normalize only
+   the retained object-ID register; see
+   [Working Note 390](WORKING_NOTES/390-game-object-id-state-pair-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 26-word Game `func_151993E4`, at 25 real
+   with ordinary unparked 26-word Game `func_1519BEB8`, at 25 real
    differences. The tied Init cache rows are SDK routines, while
    `func_10012588` remains blocked on address drift.
    Keep the previously documented smaller special cases parked.

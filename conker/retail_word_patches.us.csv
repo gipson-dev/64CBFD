@@ -1721,3 +1721,7 @@ game_1944C0,func_15168B44,0x048,0x00B94023,0x00CA5823,-,-,Subtract the upper cou
 game_1944C0,func_15168B44,0x04C,0x2409001E,0x240C001E,-,-,Load the second timer constant through retail's t4 lifetime,,,false
 game_1944C0,func_15168B44,0x050,0xA088003F,0xA08B003F,-,-,Store the available count through retail's t3 lifetime,,,false
 game_1944C0,func_15168B44,0x058,0xA4890038,0xA48C0038,-,-,Store the second timer through retail's t4 lifetime,,,false
+generated_1C2C60,func_151993E4,0x018,0x9069003B,0x9067003B,-,-,Retain the object ID in retail's a3 lifetime,,,false
+generated_1C2C60,func_151993E4,0x020,0x552E0004,0x54EE0004,-,-,Compare the object ID through retail's a3 lifetime,,,false
+generated_1C2C60,func_1519944C,0x018,0x9069003B,0x9067003B,-,-,Retain the object ID in retail's a3 lifetime,,,false
+generated_1C2C60,func_1519944C,0x020,0x552E0004,0x54EE0004,-,-,Compare the object ID through retail's a3 lifetime,,,false

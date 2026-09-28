@@ -266,12 +266,49 @@ void func_151993B4(u8 *arg0) {
     *(temp_v0 + 6) |= 4;
 }
 
-s32 func_151993E4(u8 *arg0) {
-    return 0;
+/* Note 390: guards preserve the object-ID register in these structural twins. */
+void func_151993E4(u8 *arg0) {
+    u8 *outer = *(u8 **) (arg0 + 0x98);
+    u8 *object = *(u8 **) outer;
+    s32 index = 0;
+    s32 found = 0;
+    u8 object_id = object[0x3B];
+    u8 *id = D_800A8A9C;
+
+    do {
+        if (object_id == *id) {
+            found = 1;
+        } else {
+            index++;
+            id++;
+        }
+    } while ((found == 0) && (index < 6));
+
+    if (found != 0) {
+        D_800E0900[index][0x14] = 0;
+    }
 }
 
-s32 func_1519944C(u8 *arg0) {
-    return 0;
+void func_1519944C(u8 *arg0) {
+    u8 *outer = *(u8 **) (arg0 + 0x98);
+    u8 *object = *(u8 **) outer;
+    s32 index = 0;
+    s32 found = 0;
+    u8 object_id = object[0x3B];
+    u8 *id = D_800A8A9C;
+
+    do {
+        if (object_id == *id) {
+            found = 1;
+        } else {
+            index++;
+            id++;
+        }
+    } while ((found == 0) && (index < 6));
+
+    if (found != 0) {
+        D_800E0900[index][0x14] = 1;
+    }
 }
 
 s32 func_151994B8() {

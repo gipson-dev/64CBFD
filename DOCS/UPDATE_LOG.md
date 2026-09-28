@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game object-ID state pair byte-matched
+
+- Recovered adjacent `func_151993E4` and `func_1519944C` as six-entry object-ID
+  scans that select a row from `D_800E0900` and respectively clear or set its
+  state byte at offset `0x14`.
+- The 26-word and 27-word routines reproduce retail's post-tested loop,
+  branch-likely schedule, delay slots, and relocations. Two expected-word
+  guards per function normalize only the retained object-ID register.
+- Direct comparisons match all 104 and 108 linked bytes. Fresh totals are
+  **2,891 / 5,466 (52.89%)** overall and **2,317 / 4,790 (48.37%)** in Game.
+  See
+  [Working Note 390](WORKING_NOTES/390-game-object-id-state-pair-match-20260928.md).
+
 ### Game allocator-copy and setup pair byte-matched
 
 - Recovered `func_15169900` as a `0x5E` record allocation followed by a
