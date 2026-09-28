@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game seven-group byte canonicalizer byte-matched
+
+- Replaced `func_15084D00`'s zero-return placeholder with its seven-group
+  byte-table search over the input record's byte at offset four.
+- A match returns the group's first byte; a complete miss returns the original
+  byte. An `s32` cached value reproduces retail's register allocation, allowing
+  all 28 words to emit directly from C with no guards.
+- Direct comparison matches all 112 linked bytes with SHA-256
+  `3b3e792efd6c29d299a34033d671ade846af96083c28773f36a40ab1e1006588`.
+  Fresh totals are **2,905 / 5,466 (53.15%)** overall and
+  **2,331 / 4,790 (48.66%)** in Game. See
+  [Working Note 403](WORKING_NOTES/403-game-seven-group-byte-canonicalizer-match-20260928.md).
+
 ### Game owner status-byte clear byte-matched
 
 - Replaced `func_150806A8`'s zero-return placeholder with its two guarded

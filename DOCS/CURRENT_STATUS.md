@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,904 / 5,466 (53.13%) | 1 | 2,561 |
+| Total | 2,905 / 5,466 (53.15%) | 1 | 2,560 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,330 / 4,790 (48.64%) | 0 | 2,460 |
+| Game | 2,331 / 4,790 (48.66%) | 0 | 2,459 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -925,9 +925,13 @@ end-to-end gameplay acceptance.
    recovering its two guarded byte clears and alias-sensitive owner-pointer
    reload. No guards are required; see
    [Working Note 402](WORKING_NOTES/402-game-owner-status-byte-clear-match-20260928.md).
+   The 28-word seven-group byte canonicalizer `func_15084D00` is now
+   byte-exact after recovering its table search and widening the cached input
+   byte to reproduce retail's register allocation. No guards are required; see
+   [Working Note 403](WORKING_NOTES/403-game-seven-group-byte-canonicalizer-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 28-word Game `func_15084D00`, at 26 real
+   with ordinary unparked 27-word Game `func_1509F5F4`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

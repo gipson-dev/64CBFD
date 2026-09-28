@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,904 / 5,466 (53.13%) | 1 | 2,561 |
+| Total | 5,466 / 6,041 (90.48%) | 2,905 / 5,466 (53.15%) | 1 | 2,560 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,330 / 4,790 (48.64%) | 0 | 2,460 |
+| Game | 4,790 / 5,321 (90.02%) | 2,331 / 4,790 (48.66%) | 0 | 2,459 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1221,6 +1221,10 @@ recovering its two high-bit-preserving clears and alias-sensitive owner-pointer
 reload. No guards are required. This remains guest-side donor/reference
 progress; see
 [Working Note 402](WORKING_NOTES/402-game-owner-status-byte-clear-match-20260928.md).
+The 28-word Game seven-group byte canonicalizer `func_15084D00` is byte-exact
+after recovering its indexed table search and cached input-byte width. No
+guards are required. This remains guest-side donor/reference progress; see
+[Working Note 403](WORKING_NOTES/403-game-seven-group-byte-canonicalizer-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

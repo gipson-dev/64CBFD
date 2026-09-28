@@ -12,8 +12,23 @@ typedef struct {
     GeneratedB21B0Target *target;
 } GeneratedB21B0Owner;
 
-s32 func_15084D00() {
-    return 0;
+extern u8 D_8009D954[];
+extern u8 *D_80087240[];
+
+s32 func_15084D00(u8 *arg0) {
+    s32 value = arg0[4];
+    s32 group;
+    s32 i;
+
+    for (group = 0; group < 7; group++) {
+        for (i = 0; i < D_8009D954[group]; i++) {
+            if (value == D_80087240[group][i]) {
+                return D_80087240[group][0];
+            }
+        }
+    }
+
+    return value;
 }
 
 s32 func_15084D70() {
