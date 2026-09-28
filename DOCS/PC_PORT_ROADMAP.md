@@ -1032,10 +1032,11 @@ resource setup is exact from semantic C plus two guarded frame-size words. The
 49-word Game `func_151E8620` display-list overflow guard is exact from semantic
 C plus 14 guarded register-lifetime and scheduling words. The 175-word Game
 `func_151E86E4` scaled, scissored texture-rectangle writer is exact from the
-existing graphics macro plus four guarded vertical-scale register words.
-Continue with adjacent 819-word Game `func_151E89A0`, measured at 807 real
-differences; see
-[Working Note 363](WORKING_NOTES/363-game-scaled-scissored-texture-rectangle-match-20260928.md).
+existing graphics macro plus four guarded vertical-scale register words. The
+adjacent 819-word Game `func_151E89A0` HUD/status renderer is now reconstructed
+as semantic C with retail's `0x158` frame and remains non-matching at 803 real
+word differences; continue its matching pass from
+[Working Note 364](WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -33,6 +33,11 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 | Game | `[###########-------------]` 2,294 / 4,790 (47.89%) | 0 | 2,496 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
+The latest Game recovery replaces `func_151E89A0`'s zero-return placeholder
+with a complete semantic HUD/status renderer. It remains non-matching at 803
+real word differences, so the byte-exact totals above are unchanged; see
+[Working Note 364](DOCS/WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md).
+
 ## Build overview
 
 Docker is the easiest supported environment. Native Linux and WSL also work;

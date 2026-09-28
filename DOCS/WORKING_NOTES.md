@@ -88,7 +88,7 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, scaled scissored texture rectangle matched).** The current
+**Active (2026-09-28, HUD/status renderer reconstructed).** The current
 linked checkpoint is `2866 / 5468 (52.41%)` exact C functions, with one
 address-drift blocker and 2,601 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
@@ -1080,9 +1080,12 @@ The 175-word Game `func_151E86E4` scaled, scissored texture-rectangle writer is
 exact from the existing graphics macro plus four guarded vertical-scale
 register words; see
 [Working Note 363](WORKING_NOTES/363-game-scaled-scissored-texture-rectangle-match-20260928.md).
-Recover adjacent 819-word Game `func_151E89A0`, currently measured at 807 real
-differences in the fresh linked queue after the documented compiler and SDK
-cases.
+The adjacent 819-word Game `func_151E89A0` HUD/status renderer is reconstructed
+from its zero-return placeholder as semantic C. Its compact body is `0xC84`
+bytes within the `0xCCC` retail slot and its frame matches retail at `0x158`;
+803 real word differences remain. Continue its register-lifetime and scheduling
+pass from
+[Working Note 364](WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md).
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
 details in [Working Note 001](WORKING_NOTES/001-decomp-status-and-resume-boundary-20260924.md)

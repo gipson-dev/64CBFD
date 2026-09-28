@@ -804,9 +804,13 @@ end-to-end gameplay acceptance.
    overflow guard is exact from semantic C plus 14 guarded register-lifetime
    and scheduling words. The adjacent 175-word `func_151E86E4` scaled,
    scissored texture-rectangle writer is exact from the existing graphics
-   macro plus four guarded vertical-scale register words. Continue with
-   adjacent 819-word Game `func_151E89A0`, currently measured at 807 real
-   differences; keep the previously documented smaller special cases parked.
+   macro plus four guarded vertical-scale register words. The adjacent
+   819-word Game `func_151E89A0` HUD/status renderer is now reconstructed from
+   its zero-return placeholder as semantic C, uses retail's `0x158` frame, and
+   fits its original 3,276-byte slot. It remains non-matching at 803 real word
+   differences, so continue its register-lifetime and scheduling pass from
+   [Working Note 364](WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md).
+   Keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game HUD/status renderer reconstructed
+
+- Replaced `func_151E89A0`'s zero-return placeholder with semantic C for its
+  player-state scan, HUD masks, score digits, texture loads, status icons, and
+  warning overlays.
+- The reconstructed body uses retail's `0x158` frame and compiles to `0xC84`
+  bytes within the fixed `0xCCC` slot. It remains non-matching at 803 of 819
+  words, so the exact-function totals do not change.
+- Corrected the generated draft's selected-player state from unsigned `255`
+  to retail's signed `-1` sentinel. See
+  [Working Note 364](WORKING_NOTES/364-game-hud-status-renderer-reconstruction-20260928.md).
+
 ### Game scaled scissored texture rectangle byte-exact
 
 - Recovered all 175 words of `func_151E86E4` as the project-provided
