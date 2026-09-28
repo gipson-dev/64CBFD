@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,865 / 5,468 (52.40%) | 1 | 2,602 |
+| Total | 2,866 / 5,468 (52.41%) | 1 | 2,601 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,293 / 4,790 (47.87%) | 0 | 2,497 |
+| Game | 2,294 / 4,790 (47.89%) | 0 | 2,496 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,865, while
+denominator driven: the exact count is now 2,866, while
 504 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -802,9 +802,11 @@ end-to-end gameplay acceptance.
    callback and indexed-resource setup is exact from semantic C plus two
    guarded frame-size words. The adjacent 49-word `func_151E8620` display-list
    overflow guard is exact from semantic C plus 14 guarded register-lifetime
-   and scheduling words. Continue with adjacent 175-word Game
-   `func_151E86E4`, currently measured at 165 real differences; keep the
-   previously documented smaller special cases parked.
+   and scheduling words. The adjacent 175-word `func_151E86E4` scaled,
+   scissored texture-rectangle writer is exact from the existing graphics
+   macro plus four guarded vertical-scale register words. Continue with
+   adjacent 819-word Game `func_151E89A0`, currently measured at 807 real
+   differences; keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

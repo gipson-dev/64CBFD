@@ -1527,3 +1527,7 @@ generated_215960,func_151E8620,0x040,0x8FA50018,0x90630000,-,R_MIPS_LO16:D_800E0
 generated_215960,func_151E8620,0x044,0x00402025,0x8FA60018,-,-,Restore the original pointer through retail's a2 lifetime,,,false
 generated_215960,func_151E8620,0x048,0x90630000,0x00402025,R_MIPS_LO16:D_800E0B94,-,Move the callback result after the mode and pointer reloads,,,false
 generated_215960,func_151E8620,0x0B4,0x00A01025,0x00C01025,-,-,Return the original pointer through retail's a2 lifetime on overflow,,,false
+generated_215960,func_151E86E4,0x048,0xC4220000,0xC42C0000,R_MIPS_LO16:D_8008FE20,R_MIPS_LO16:D_8008FE20,Keep the vertical display scale in retail's f12 lifetime,,,false
+generated_215960,func_151E86E4,0x07C,0x46028482,0x460C8482,-,-,Multiply the upper Y coordinate through retail's f12 scale lifetime,,,false
+generated_215960,func_151E86E4,0x094,0x46024282,0x460C4282,-,-,Multiply the lower Y coordinate through retail's f12 scale lifetime,,,false
+generated_215960,func_151E86E4,0x0BC,0x46028483,0x460C8483,-,-,Divide the vertical texture step through retail's f12 scale lifetime,,,false

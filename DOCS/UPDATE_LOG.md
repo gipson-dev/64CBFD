@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game scaled scissored texture rectangle byte-exact
+
+- Recovered all 175 words of `func_151E86E4` as the project-provided
+  `gSPScisTextureRectangle` command writer wrapped by optional horizontal and
+  vertical resolution scaling. It clips negative coordinates, adjusts the
+  starting texture coordinates for clipping, emits the three-command texture
+  rectangle sequence, and returns the advanced display-list pointer.
+- The semantic wrapper and existing graphics macro reproduce the complete
+  control flow, conversions, clipping arithmetic, command words, and exact
+  extent. Four guarded words keep `D_8008FE20` in retail's `$f12` lifetime
+  instead of IDO's equivalent `$f2`; the guard table now has 1,532 rows and
+  zero duplicate keys.
+- Linked and pristine 700-byte spans share SHA-256
+  `5cb9c62ff81b996c5f05763db1290f2287e0c0b4b5e4fadb2da230c16f7ade0a`.
+  Fresh totals are **2,866 / 5,468 (52.41%)** overall and
+  **2,294 / 4,790 (47.89%)** in Game.
+
 ### Game display-list overflow guard byte-exact
 
 - Recovered all 49 words of `func_151E8620`. It marks display-list activity,

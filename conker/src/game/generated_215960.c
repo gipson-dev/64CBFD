@@ -13,6 +13,8 @@ extern s32 D_80090058;
 extern s16 D_800E0C78;
 extern s32 D_800BEBA4;
 extern Gfx *D_800BE9C8[];
+extern f32 D_8008FE1C;
+extern f32 D_8008FE20;
 s32 func_151ED1E0(void);
 
 /* Non-matching placeholders for the text-only asm slice asm/215960.s. */
@@ -90,8 +92,20 @@ Gfx *func_151E8620(Gfx *value) {
     return value;
 }
 
-s32 func_151E86E4() {
-    return 0;
+Gfx *func_151E86E4(Gfx *display_list, s32 ulx, s32 uly, s32 lrx, s32 lry,
+                   s32 tile, s32 s, s32 t, s32 dsdx, s32 dtdy) {
+    if (D_8008FE1C != 1.0f) {
+        ulx = (s32) ((f32) ulx * D_8008FE1C);
+        lrx = (s32) ((f32) lrx * D_8008FE1C);
+        uly = (s32) ((f32) uly * D_8008FE20);
+        lry = (s32) ((f32) lry * D_8008FE20);
+        dsdx = (s32) ((f32) dsdx / D_8008FE1C);
+        dtdy = (s32) ((f32) dtdy / D_8008FE20);
+    }
+
+    gSPScisTextureRectangle(display_list++, ulx, uly, lrx, lry, tile,
+                            s, t, dsdx, dtdy);
+    return display_list;
 }
 
 s32 func_151E89A0() {
