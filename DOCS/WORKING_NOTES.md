@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game resolved-object dispatch wrapper matched).** The
-current linked checkpoint is `2906 / 5466 (53.17%)` exact C functions, with
-one address-drift blocker and 2,559 genuinely different C functions. Init is
+**Active (2026-09-28, Game packed-record activation matched).** The current
+linked checkpoint is `2907 / 5466 (53.18%)` exact C functions, with one
+address-drift blocker and 2,558 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2332 / 4790 (48.68%)` exact, with 2,458 genuinely different C rows. The tree
+`2333 / 4790 (48.71%)` exact, with 2,457 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1257,9 +1257,14 @@ The 27-word resolved-object dispatch wrapper `func_1509F5F4` now matches after
 recovering its optional validation and narrowed forwarding call. No guards are
 required; see
 [Working Note 404](WORKING_NOTES/404-game-resolved-object-dispatch-wrapper-match-20260928.md).
+The 27-word packed-record activation routine `func_150A0264` now matches after
+recovering its flag updates, alias-safe source load, destination clear, and
+packed-field replacement. Twelve stale-checked guards normalize only its
+closed temporary-register allocation cycle; see
+[Working Note 405](WORKING_NOTES/405-game-packed-record-activation-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary unparked 27-word Game
-`func_150A0264`, at 26 real differences. Keep the documented lower-difference
+`func_150A3444`, at 26 real differences. Keep the documented lower-difference
 compiler cases parked, and keep `func_151F3D78` parked behind the pre-existing
 `game_21FC90` audio-object layout drift. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked

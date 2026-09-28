@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,906 / 5,466 (53.17%) | 1 | 2,559 |
+| Total | 2,907 / 5,466 (53.18%) | 1 | 2,558 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,332 / 4,790 (48.68%) | 0 | 2,458 |
+| Game | 2,333 / 4,790 (48.71%) | 0 | 2,457 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -933,9 +933,15 @@ end-to-end gameplay acceptance.
    byte-exact after recovering its optional validation and narrowed forwarding
    call. No guards are required; see
    [Working Note 404](WORKING_NOTES/404-game-resolved-object-dispatch-wrapper-match-20260928.md).
+   The 27-word packed-record activation routine `func_150A0264` is now
+   byte-exact after recovering its active/secondary flag updates, alias-safe
+   source-value load, destination clear, and packed-field replacement. Twelve
+   stale-checked guards normalize only a closed temporary-register allocation
+   cycle; see
+   [Working Note 405](WORKING_NOTES/405-game-packed-record-activation-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 27-word Game `func_150A0264`, at 26 real
+   with ordinary unparked 27-word Game `func_150A3444`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

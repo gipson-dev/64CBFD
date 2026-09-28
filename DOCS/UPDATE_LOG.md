@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game packed-record activation byte-matched
+
+- Replaced `func_150A0264`'s zero-return placeholder with its 12-byte record
+  lookup, active/secondary flag updates, destination clear, and packed-field
+  replacement.
+- The source-value load remains before the destination clear so aliased input
+  preserves retail behavior. The semantic C matches the complete memory and
+  control-flow schedule; 12 stale-checked expected-word guards normalize only
+  a closed temporary-register allocation cycle.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `5d4825ac297505b071ef5aa2f75fee798810e57f3134845acde47bdabe72758b`.
+  Fresh totals are **2,907 / 5,466 (53.18%)** overall and
+  **2,333 / 4,790 (48.71%)** in Game. See
+  [Working Note 405](WORKING_NOTES/405-game-packed-record-activation-match-20260928.md).
+
 ### Game resolved-object dispatch wrapper byte-matched
 
 - Replaced `func_1509F5F4`'s empty placeholder with its object lookup, optional

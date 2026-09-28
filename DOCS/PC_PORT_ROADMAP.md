@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,906 / 5,466 (53.17%) | 1 | 2,559 |
+| Total | 5,466 / 6,041 (90.48%) | 2,907 / 5,466 (53.18%) | 1 | 2,558 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,332 / 4,790 (48.68%) | 0 | 2,458 |
+| Game | 4,790 / 5,321 (90.02%) | 2,333 / 4,790 (48.71%) | 0 | 2,457 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1229,6 +1229,12 @@ The 27-word Game resolved-object dispatch wrapper `func_1509F5F4` is byte-exact
 after recovering its optional validation and narrowed forwarding call. No
 guards are required. This remains guest-side donor/reference progress; see
 [Working Note 404](WORKING_NOTES/404-game-resolved-object-dispatch-wrapper-match-20260928.md).
+The 27-word Game packed-record activation routine `func_150A0264` is
+byte-exact after recovering its two status-flag updates, alias-safe source load,
+destination clear, and packed-field replacement. Twelve stale-checked guards
+normalize only temporary-register allocation. This remains guest-side
+donor/reference progress; see
+[Working Note 405](WORKING_NOTES/405-game-packed-record-activation-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
