@@ -49,6 +49,7 @@ and does not change the computed address, control flow, or memory behavior.
 
 ## Resume boundary
 
-Continue the ordinary 25-difference Game queue with 26-word
-`func_151F3D78`. Keep the tied Init SDK cache routines in their ownership lane
-and keep address-drift row `func_10012588` parked.
+The next candidate, `func_151F3D78`, proved instruction-exact but is parked
+behind a pre-existing `+0x30` drift in the unpadded `game_21FC90` audio object.
+Continue the independent queue with `func_1519EA04`; see
+[Working Note 393](393-game-timed-record-lifecycle-match-20260928.md).

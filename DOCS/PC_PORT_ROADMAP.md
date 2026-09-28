@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,894 / 5,466 (52.95%) | 1 | 2,571 |
+| Total | 5,466 / 6,041 (90.48%) | 2,895 / 5,466 (52.96%) | 1 | 2,570 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,320 / 4,790 (48.43%) | 0 | 2,470 |
+| Game | 4,790 / 5,321 (90.02%) | 2,321 / 4,790 (48.46%) | 0 | 2,469 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1169,6 +1169,11 @@ transform-helper call. One scoped guard preserves retail's commutative
 address-add operand order. This remains guest-side donor/reference progress;
 see
 [Working Note 392](WORKING_NOTES/392-game-actor-target-transform-match-20260928.md).
+The 29-word Game timed-record lifecycle `func_1519EA04` is byte-exact after
+recovering its frame-delta timer, optional owner clear, and deletion call. It
+emits directly from semantic C without guards. This remains guest-side
+donor/reference progress; see
+[Working Note 393](WORKING_NOTES/393-game-timed-record-lifecycle-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

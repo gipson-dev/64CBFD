@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game actor-target transform matched).** The current
-linked checkpoint is `2894 / 5466 (52.95%)` exact C functions, with one
-address-drift blocker and 2,571 genuinely different C functions. Init is
+**Active (2026-09-28, Game timed-record lifecycle matched).** The current
+linked checkpoint is `2895 / 5466 (52.96%)` exact C functions, with one
+address-drift blocker and 2,570 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2320 / 4790 (48.43%)` exact, with 2,470 genuinely different C rows. The tree
+`2321 / 4790 (48.46%)` exact, with 2,469 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1206,10 +1206,16 @@ recovering its null-target and actor-type gates, indexed target address, and
 transform-helper call. One scoped guard preserves retail's commutative
 address-add operand order; see
 [Working Note 392](WORKING_NOTES/392-game-actor-target-transform-match-20260928.md).
+The 29-word timed-record lifecycle `func_1519EA04` now matches after
+recovering its signed timer update, optional owner-field clear, and deletion
+call. Its semantic C emits directly without guards; see
+[Working Note 393](WORKING_NOTES/393-game-timed-record-lifecycle-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 26-word Game
-`func_151F3D78`, at 25 real differences. Keep the tied SDK cache routines in
-their own ownership lane. The smaller 17-word `func_10012588` remains blocked
+experiments were removed. Resume with ordinary unparked 30-word Game
+`func_1518CCA8`, at 25 real differences. Keep `func_151F3D78` parked behind
+the pre-existing `game_21FC90` audio-object layout drift. Keep the tied SDK
+cache routines in their own ownership lane. The smaller 17-word
+`func_10012588` remains blocked
 on address drift. Keep the much larger HUD renderers `func_151E89A0` and
 `func_151EA15C` parked as separate focused work.
 Keep raw-assembly conversion as a separate workstream. The measured handoff

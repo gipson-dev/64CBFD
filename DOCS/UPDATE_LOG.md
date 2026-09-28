@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game timed-record lifecycle byte-matched
+
+- Recovered `func_1519EA04` as an enabled signed-timer update that optionally
+  clears its owner's word at offset `0x30` before deleting the expired record.
+- The corrected `void` routine reproduces all 29 retail words directly from
+  semantic C. An explicit boolean/owner lifetime preserves retail's `v0`
+  reuse without expected-word guards.
+- Direct comparison matches all 116 linked bytes with SHA-256
+  `8cbe4bb85537d3bd53f45bef0bfb83d5ccc0259c5fc02ed2b1863e8c60b05f45`.
+  Fresh totals are **2,895 / 5,466 (52.96%)** overall and
+  **2,321 / 4,790 (48.46%)** in Game. See
+  [Working Note 393](WORKING_NOTES/393-game-timed-record-lifecycle-match-20260928.md).
+
 ### Game actor-target transform byte-matched
 
 - Recovered `func_151A4E34` as a guarded actor-target transform that rejects
