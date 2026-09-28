@@ -36,8 +36,17 @@ void func_15188010(s32 arg0, f32 *arg1) {
     }
 }
 
-s32 func_1518804C() {
-    return 0;
+void func_1518804C(s32 arg0, f32 arg1) {
+    if (arg0 < D_800DF7B4) {
+        if (arg0 >= 0) {
+            if (arg1 > 1.0f) {
+                arg1 = 1.0f;
+            } else if (arg1 < 0.0f) {
+                arg1 = 0.0f;
+            }
+            *(f32 *)((u8 *)D_800DF70C + arg0 * 36) = arg1;
+        }
+    }
 }
 
 s32 func_151880C0() {

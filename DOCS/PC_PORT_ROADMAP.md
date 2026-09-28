@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,469 / 6,041 (90.53%) | 2,849 / 5,469 (52.09%) | 1 | 2,619 |
+| Total | 5,469 / 6,041 (90.53%) | 2,850 / 5,469 (52.11%) | 1 | 2,618 |
 | Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 4,791 / 5,321 (90.04%) | 2,277 / 4,791 (47.53%) | 0 | 2,514 |
+| Game | 4,791 / 5,321 (90.04%) | 2,278 / 4,791 (47.55%) | 0 | 2,513 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1000,7 +1000,9 @@ while the smaller special-case rows remain parked. The 25-word Game
 `func_1514ED8C` owner-list unlink and node release is exact directly from typed
 C. The 26-word Game `func_15178C34` packed node update is exact directly from
 typed C. The 26-word Game `func_15182768` conditional byte remap is exact
-directly from typed C. Continue with 29-word Game `func_1518804C`.
+directly from typed C. The 29-word Game `func_1518804C` bounded record-float
+update is exact directly from typed C. Continue with 25-word Game
+`func_1519F48C`.
 
 Current host-port progression and acceptance boundaries:
 

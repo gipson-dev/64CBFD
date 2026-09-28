@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game bounded record-float update byte-exact
+
+- Restored `func_1518804C` as a valid-index check, `[0.0f, 1.0f]` clamp, and
+  first-float update in a 36-byte record array.
+- The natural upper-bound and lower-bound branches reproduce all 29 retail
+  words directly, including the branch-likely zero setup.
+- The linked span has SHA-256
+  `d102c486f94767caa8adbdc5fc2170ccb56a0e95f6014a82d00a657770ad278c`.
+  Fresh totals are **2,850 / 5,469 (52.11%)** overall and
+  **2,278 / 4,791 (47.55%)** in Game.
+
 ### Game conditional byte remap byte-exact
 
 - Restored `func_15182768` as a signed-selector test followed by a six-argument

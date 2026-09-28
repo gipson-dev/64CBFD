@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-27, conditional byte remap matched).** The current linked
-checkpoint is `2849 / 5469 (52.09%)` exact C functions, with one address-drift
-blocker and 2,619 genuinely different C functions. Init is
+**Active (2026-09-27, bounded record-float update matched).** The current linked
+checkpoint is `2850 / 5469 (52.11%)` exact C functions, with one address-drift
+blocker and 2,618 genuinely different C functions. Init is
 `391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
-`2277 / 4791 (47.53%)` exact, with 2,514 genuinely different C rows. The tree
+`2278 / 4791 (47.55%)` exact, with 2,513 genuinely different C rows. The tree
 contains 572 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1019,7 +1019,10 @@ typed C; see
 The 26-word Game `func_15182768` conditional byte remap is exact directly from
 typed C; see
 [Working Note 345](WORKING_NOTES/345-game-conditional-byte-remap-match-20260927.md).
-Continue with 29-word Game `func_1518804C`, the next ordinary unparked row in
+The 29-word Game `func_1518804C` bounded record-float update is exact directly
+from typed C; see
+[Working Note 346](WORKING_NOTES/346-game-bounded-record-float-match-20260927.md).
+Continue with 25-word Game `func_1519F48C`, the next ordinary unparked row in
 the fresh queue at 24 real differences.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline
