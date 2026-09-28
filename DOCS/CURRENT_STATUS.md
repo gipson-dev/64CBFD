@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,902 / 5,466 (53.09%) | 1 | 2,563 |
+| Total | 2,903 / 5,466 (53.11%) | 1 | 2,562 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,328 / 4,790 (48.60%) | 0 | 2,462 |
+| Game | 2,329 / 4,790 (48.62%) | 0 | 2,461 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -916,9 +916,14 @@ end-to-end gameplay acceptance.
    byte-exact after recovering its directly indexed nested-loop source and
    retail no-unroll compiler profile. No guards are required; see
    [Working Note 400](WORKING_NOTES/400-game-five-bucket-byte-canonicalizer-match-20260928.md).
+   The 27-word two-word bit test `func_1503E1F4` is now byte-exact after
+   recovering its low/high flag-word selection and shared zero-return tail.
+   MIPS variable-shift masking supplies the high-word bit index. No guards are
+   required; see
+   [Working Note 401](WORKING_NOTES/401-game-two-word-bit-test-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 27-word Game `func_1503E1F4`, at 26 real
+   with ordinary unparked 28-word Game `func_150806A8`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

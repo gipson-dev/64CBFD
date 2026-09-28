@@ -22,7 +22,15 @@ s32 func_1503DF48() {
     return 0;
 }
 
-s32 func_1503E1F4() {
+s32 func_1503E1F4(s32 bit, s32 index) {
+    if (bit < 0x20) {
+        if ((D_800C6660[index].unk4 & (1 << bit)) != 0) {
+            return 1;
+        }
+    } else if ((D_800C6660[index].unk8 & (1 << bit)) != 0) {
+        return 1;
+    }
+
     return 0;
 }
 

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,902 / 5,466 (53.09%) | 1 | 2,563 |
+| Total | 5,466 / 6,041 (90.48%) | 2,903 / 5,466 (53.11%) | 1 | 2,562 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,328 / 4,790 (48.60%) | 0 | 2,462 |
+| Game | 4,790 / 5,321 (90.02%) | 2,329 / 4,790 (48.62%) | 0 | 2,461 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1211,6 +1211,11 @@ after recovering its directly indexed nested loops and assigning its generated
 slice the retail no-unroll compiler profile. No guards are required. This
 remains guest-side donor/reference progress; see
 [Working Note 400](WORKING_NOTES/400-game-five-bucket-byte-canonicalizer-match-20260928.md).
+The 27-word Game two-word bit test `func_1503E1F4` is byte-exact after
+recovering its low/high flag-word selection, MIPS-masked variable shift, and
+shared zero-return tail. No guards are required. This remains guest-side
+donor/reference progress; see
+[Working Note 401](WORKING_NOTES/401-game-two-word-bit-test-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

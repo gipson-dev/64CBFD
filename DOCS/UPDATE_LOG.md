@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game two-word bit test byte-matched
+
+- Replaced `func_1503E1F4`'s zero-return placeholder with its low/high flag-word
+  selection and bit test over `D_800C6660[index]`.
+- The high-word path relies on MIPS variable-shift masking, while a shared
+  fallthrough return reproduces retail's branch-likely zero paths. All 27 words
+  emit from semantic C with no guards.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `149a553e39a8961ded8d1eb039d1b56f8c176a2343f34c6f71d59b3db9055d29`.
+  Fresh totals are **2,903 / 5,466 (53.11%)** overall and
+  **2,329 / 4,790 (48.62%)** in Game. See
+  [Working Note 401](WORKING_NOTES/401-game-two-word-bit-test-match-20260928.md).
+
 ### Game five-bucket byte canonicalizer byte-matched
 
 - Replaced `func_1503D5F0`'s zero-return placeholder with directly indexed
