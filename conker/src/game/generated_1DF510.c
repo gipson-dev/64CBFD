@@ -93,6 +93,9 @@ s32 func_151B3014(s32 arg0) {
     func_15149368(arg0);
 }
 
-s32 func_151B3040() {
-    return 0;
+void func_151B3040(u8 *arg0, s32 arg1, volatile u8 arg2) {
+    u8 *base = arg0 + 0x150;
+
+    func_15169850(arg1, arg2, (s32) base, (s32) (base + 4), (s32) arg0);
+    func_15169850(arg1, arg2, (s32) (base + 0x14), (s32) (base + 0x18), (s32) arg0);
 }

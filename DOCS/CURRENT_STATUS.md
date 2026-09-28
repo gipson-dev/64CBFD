@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-27:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,854 / 5,468 (52.19%) | 1 | 2,613 |
+| Total | 2,855 / 5,468 (52.21%) | 1 | 2,612 |
 | Init | 391 / 497 (78.67%) | 1 | 105 |
-| Game | 2,282 / 4,790 (47.64%) | 0 | 2,508 |
+| Game | 2,283 / 4,790 (47.66%) | 0 | 2,507 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -153,6 +153,10 @@ wrapper idiom, forwarding three more floats and two actor record bytes.
 formatting wrapper, including successful-output null termination.
 `func_15044CE4` is byte-exact from its position/scale initializer plus seven
 guarded register-lifetime words.
+`func_151B3040` is byte-exact directly from C after recovering its two calls
+over adjacent embedded records. An explicit `arg0 + 0x150` base and a volatile
+byte argument reproduce retail's stack lifetime and second-call address reuse;
+no guarded retail words are needed.
 `func_10012588` remains the sole address-drift blocker.
 
 ## Verified build state
@@ -768,9 +772,10 @@ end-to-end gameplay acceptance.
    equivalent C was confirmed to compile as a 26-word overflow trampoline.
    The 65-word `func_1514563C` line-projection helper is exact after restoring
    retail's dot-product operand order and guarding 18 independent frame and
-   output-register choices. Continue by classifying 28-word Game
-   `func_151B3040`; keep the previously documented smaller special cases
-   parked.
+   output-register choices. The 28-word `func_151B3040` paired embedded-record
+   dispatch is exact directly from C with no guard rows. Continue by
+   classifying 25-word Game `func_151C9ED4`; keep the previously documented
+   smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.
 5. Treat raw-assembly conversion as a separate queue. Start by reviewing the

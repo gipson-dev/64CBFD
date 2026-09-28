@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-27
 
+### Game paired-record dispatch byte-exact
+
+- Recovered `func_151B3040` as two calls over adjacent embedded records at
+  object offsets `0x150` and `0x164`.
+- An explicit embedded-record base and volatile byte argument reproduce
+  retail's stack lifetime and second-call address reuse directly from C; no
+  guard rows are needed.
+- Linked and pristine 112-byte spans share SHA-256
+  `06670f0bf180924a64312f13ccee3fc1eb5e2d3887c5bbe550a97d99609e7b87`.
+  Fresh totals are **2,855 / 5,468 (52.21%)** overall and
+  **2,283 / 4,790 (47.66%)** in Game.
+
 ### Game line-projection helper byte-exact
 
 - Restored `func_1514563C`'s projection of a point onto a directed line,
