@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Init hardware interrupt routine byte-matched
+
+- Recovered `__osSetHWIntrRoutine` from the local libultra source: disable
+  interrupts, install the handler in the hardware interrupt table, then
+  restore the saved interrupt mask.
+- Assigned the routine its retail `-O1` object profile. All 20 words and 80
+  bytes now match directly with no expected-word guards.
+- Fresh totals are **2,869 / 5,466 (52.49%)** overall and
+  **392 / 495 (79.19%)** in Init. See
+  [Working Note 371](WORKING_NOTES/371-init-hardware-interrupt-routine-match-20260928.md).
+
 ### Handwritten Init CP0/TLB routine restored
 
 - Replaced `osMapTLBRdb`'s empty C placeholder with its original handwritten

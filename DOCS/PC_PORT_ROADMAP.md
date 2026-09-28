@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,868 / 5,466 (52.47%) | 1 | 2,597 |
-| Init | 495 / 538 (92.01%) | 391 / 495 (78.99%) | 1 | 103 |
+| Total | 5,466 / 6,041 (90.48%) | 2,869 / 5,466 (52.49%) | 1 | 2,596 |
+| Init | 495 / 538 (92.01%) | 392 / 495 (79.19%) | 1 | 102 |
 | Game | 4,790 / 5,321 (90.02%) | 2,296 / 4,790 (47.93%) | 0 | 2,494 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1057,6 +1057,9 @@ The 24-word Init `osMapTLBRdb` routine is likewise restored from its empty C
 placeholder to the original handwritten CP0/TLB assembly. Its 22 instruction
 words and two padding words match directly with no guards. See
 [Working Note 370](WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
+The 20-word Init `__osSetHWIntrRoutine` is now byte-exact from recovered
+libultra C compiled with its retail `-O1` object profile. See
+[Working Note 371](WORKING_NOTES/371-init-hardware-interrupt-routine-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

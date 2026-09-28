@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,868 / 5,466 (52.47%) | 1 | 2,597 |
-| Init | 391 / 495 (78.99%) | 1 | 103 |
+| Total | 2,869 / 5,466 (52.49%) | 1 | 2,596 |
+| Init | 392 / 495 (79.19%) | 1 | 102 |
 | Game | 2,296 / 4,790 (47.93%) | 0 | 2,494 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,868, while
+denominator driven: the exact count is now 2,869, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -832,6 +832,13 @@ end-to-end gameplay acceptance.
    instruction words plus two retail padding words match directly with no
    guards. See
    [Working Note 370](WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
+   The 20-word compiler-generated `__osSetHWIntrRoutine` now matches through
+   its recovered libultra body and retail `-O1` object profile. The linked
+   function span matches directly with no guards. See
+   [Working Note 371](WORKING_NOTES/371-init-hardware-interrupt-routine-match-20260928.md).
+   Resume with 25-word Init `func_1000CBF0`, the smallest unblocked row in the
+   fresh mismatch list at 24 real differences. The smaller 17-word
+   `func_10012588` remains blocked on address drift.
    Keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

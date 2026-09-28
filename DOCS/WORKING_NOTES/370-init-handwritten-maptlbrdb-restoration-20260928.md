@@ -44,7 +44,8 @@ Release checkpoint was not built, modified or launched.
 
 ## Next boundary
 
-Audit 20-word Init `__osSetHWIntrRoutine`, now the smallest Init row in the
-fresh mismatch list at 19 real differences. Keep handwritten and privileged
-routines in assembly; use C matching only where the retail function is
-compiler-generated.
+The adjacent compiler-generated work is completed in
+[Working Note 371](371-init-hardware-interrupt-routine-match-20260928.md).
+Resume with 25-word Init `func_1000CBF0`, the smallest unblocked Init row in
+the fresh mismatch list at 24 real differences. The smaller 17-word
+`func_10012588` remains blocked on address drift.

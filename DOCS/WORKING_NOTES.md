@@ -88,10 +88,10 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, handwritten Init startup routines restored).** The
-current linked checkpoint is `2868 / 5466 (52.47%)` exact C functions, with
-one address-drift blocker and 2,597 genuinely different C functions. Init is
-`391 / 495 (78.99%)` exact, with 103 genuinely different C rows. Game is
+**Active (2026-09-28, Init hardware interrupt routine matched).** The current
+linked checkpoint is `2869 / 5466 (52.49%)` exact C functions, with one
+address-drift blocker and 2,596 genuinely different C functions. Init is
+`392 / 495 (79.19%)` exact, with 102 genuinely different C rows. Game is
 `2296 / 4790 (47.93%)` exact, with 2,494 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
@@ -1109,8 +1109,12 @@ The 24-word Init `osMapTLBRdb` routine is also restored from an empty C
 placeholder to its original handwritten CP0/TLB body. Its 22 instructions and
 two retail padding words match directly with no guards; see
 [Working Note 370](WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
-Resume by auditing 20-word Init `__osSetHWIntrRoutine`, now the smallest Init
-row in the fresh mismatch list at 19 real words. Keep the much larger HUD
+The 20-word Init `__osSetHWIntrRoutine` is now byte-exact from its recovered
+libultra C body and retail `-O1` profile, with no guards; see
+[Working Note 371](WORKING_NOTES/371-init-hardware-interrupt-routine-match-20260928.md).
+Resume by auditing 25-word Init `func_1000CBF0`, now the smallest unblocked
+Init row in the fresh mismatch list at 24 real differences. The smaller
+17-word `func_10012588` remains blocked on address drift. Keep the much larger HUD
 renderers `func_151E89A0` and `func_151EA15C` parked as separate focused work.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

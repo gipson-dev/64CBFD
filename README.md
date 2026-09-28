@@ -28,8 +28,8 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,868 / 5,466 (52.47%) | 1 | 2,597 |
-| Init | `[###################-----]` 391 / 495 (78.99%) | 1 | 103 |
+| Total | `[#############-----------]` 2,869 / 5,466 (52.49%) | 1 | 2,596 |
+| Init | `[###################-----]` 392 / 495 (79.19%) | 1 | 102 |
 | Game | `[###########-------------]` 2,296 / 4,790 (47.93%) | 0 | 2,494 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
@@ -53,6 +53,9 @@ complete 20-word slot is byte-exact; see
 The handwritten CP0/TLB routine `osMapTLBRdb` is likewise restored from its
 empty C placeholder and matches all 24 words; see
 [Working Note 370](DOCS/WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
+The compiler-generated Init routine `__osSetHWIntrRoutine` now matches all 20
+words using its recovered libultra body and retail `-O1` profile; see
+[Working Note 371](DOCS/WORKING_NOTES/371-init-hardware-interrupt-routine-match-20260928.md).
 
 ## Build overview
 
