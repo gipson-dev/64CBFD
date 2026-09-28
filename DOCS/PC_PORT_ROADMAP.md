@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,872 / 5,466 (52.54%) | 1 | 2,593 |
+| Total | 5,466 / 6,041 (90.48%) | 2,873 / 5,466 (52.56%) | 1 | 2,592 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,298 / 4,790 (47.97%) | 0 | 2,492 |
+| Game | 4,790 / 5,321 (90.02%) | 2,299 / 4,790 (48.00%) | 0 | 2,491 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1074,6 +1074,11 @@ bytes emit directly from C with no expected-word guards. This remains
 guest-side donor/reference progress rather than a new host runtime milestone;
 see
 [Working Note 374](WORKING_NOTES/374-game-object-state-filter-match-20260928.md).
+The 27-word Game `func_15034EB4` record-value adjuster is byte-exact after
+recovering its global scale and optional second-record update. One guard
+normalizes only a commutative floating-multiply operand order. This is also
+guest-side donor/reference progress, not a new host runtime milestone; see
+[Working Note 375](WORKING_NOTES/375-game-record-value-adjuster-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

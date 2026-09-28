@@ -1659,3 +1659,4 @@ game_30E90,func_15004CE0,0x034,0x554F0007,0x552F0007,-,-,Test the move-word inde
 game_30E90,func_15004CE0,0x040,0x00AB082B,0x00AA082B,-,-,Compare the payload against retail's t2 address limit,,,false
 game_30E90,func_15004CE0,0x054,0x00991821,0x03241821,-,-,Commute the indexed command pointer addition to retail operand order,,,false
 game_30E90,func_15004CE0,0x05C,0x14A8FFF2,0x14E5FFF2,-,-,Test the refreshed opcode against retail's a3 sentinel lifetime,,,false
+generated_61D10,func_15034EB4,0x048,0x460A8002,0x46105002,-,-,Use retail commutative floating-multiply operand order,,,false

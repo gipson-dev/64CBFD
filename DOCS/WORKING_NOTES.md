@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game object-state filter matched).** The current linked
-checkpoint is `2872 / 5466 (52.54%)` exact C functions, with one address-drift
-blocker and 2,593 genuinely different C functions. Init is
+**Active (2026-09-28, Game record-value adjuster matched).** The current linked
+checkpoint is `2873 / 5466 (52.56%)` exact C functions, with one address-drift
+blocker and 2,592 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2298 / 4790 (47.97%)` exact, with 2,492 genuinely different C rows. The tree
+`2299 / 4790 (48.00%)` exact, with 2,491 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1123,11 +1123,16 @@ The 28-word Game object-state filter `func_15033F70` now matches after
 restoring the global disable gate, attached-object pointer/type checks, and
 state-byte clear; all words emit directly from C with no guards. See
 [Working Note 374](WORKING_NOTES/374-game-object-state-filter-match-20260928.md).
+The 27-word Game record-value adjuster `func_15034EB4` now matches after
+restoring the signed global scale, owner multiplier, and optional second-record
+update. One expected-word guard selects retail's equivalent commutative
+floating-multiply operand order; see
+[Working Note 375](WORKING_NOTES/375-game-record-value-adjuster-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with unparked 27-word Game `func_15034EB4`,
-also at 25 real differences. Keep the tied SDK cache routines in their own
-ownership lane. The smaller 17-word `func_10012588` remains blocked on address
-drift. Keep the much larger HUD renderers `func_151E89A0` and
+experiments were removed. Resume with ordinary unparked 27-word Game
+`func_1507F454`, at 25 real differences. Keep the tied SDK cache routines in
+their own ownership lane. The smaller 17-word `func_10012588` remains blocked
+on address drift. Keep the much larger HUD renderers `func_151E89A0` and
 `func_151EA15C` parked as separate focused work.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

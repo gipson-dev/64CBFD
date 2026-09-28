@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,872 / 5,466 (52.54%) | 1 | 2,593 |
+| Total | 2,873 / 5,466 (52.56%) | 1 | 2,592 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,298 / 4,790 (47.97%) | 0 | 2,492 |
+| Game | 2,299 / 4,790 (48.00%) | 0 | 2,491 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,872, while
+denominator driven: the exact count is now 2,873, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1026,5 +1026,8 @@ The completed five-global reset ordering is in
 [Working Note 110](WORKING_NOTES/110-game-global-reset-order-match-20260926.md).
 The completed byte-gated optional call is in
 [Working Note 111](WORKING_NOTES/111-game-byte-gated-call-match-20260926.md).
+The completed record-value adjuster and its single commutative-multiply guard
+are in
+[Working Note 375](WORKING_NOTES/375-game-record-value-adjuster-match-20260928.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).

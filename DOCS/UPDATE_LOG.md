@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game record-value adjuster byte-matched
+
+- Recovered `func_15034EB4`'s signed global scale, owner multiplier, indexed
+  record subtraction, and optional second-record update.
+- Twenty-six of 27 words emit directly from semantic C. One expected-word
+  guard selects retail's equivalent operand order for a commutative `mul.s`;
+  all 108 bytes now match retail. The guard table has 1,661 rows and zero
+  duplicate keys.
+- Fresh totals are **2,873 / 5,466 (52.56%)** overall and
+  **2,299 / 4,790 (48.00%)** in Game. See
+  [Working Note 375](WORKING_NOTES/375-game-record-value-adjuster-match-20260928.md).
+
 ### Game object-state filter byte-matched
 
 - Recovered `func_15033F70`'s global disable gate and attached-object checks.

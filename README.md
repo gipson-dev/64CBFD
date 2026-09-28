@@ -28,9 +28,9 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,872 / 5,466 (52.54%) | 1 | 2,593 |
+| Total | `[#############-----------]` 2,873 / 5,466 (52.56%) | 1 | 2,592 |
 | Init | `[###################-----]` 393 / 495 (79.39%) | 1 | 101 |
-| Game | `[###########-------------]` 2,298 / 4,790 (47.97%) | 0 | 2,492 |
+| Game | `[############------------]` 2,299 / 4,790 (48.00%) | 0 | 2,491 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 The latest Game recoveries replace `func_151E89A0`, `func_151E966C`, and
@@ -71,6 +71,11 @@ recovering its global disable gate, attached-object type exclusions, and
 state-byte clear. The complete function emits directly from C with no guards;
 see
 [Working Note 374](DOCS/WORKING_NOTES/374-game-object-state-filter-match-20260928.md).
+The 27-word Game record-value adjuster `func_15034EB4` is now byte-exact after
+recovering its signed global scale, owner multiplier, and optional second-record
+update. Twenty-six words emit directly from semantic C; one expected-word
+guard preserves retail's commutative floating-multiply operand order. See
+[Working Note 375](DOCS/WORKING_NOTES/375-game-record-value-adjuster-match-20260928.md).
 
 ## Build overview
 
