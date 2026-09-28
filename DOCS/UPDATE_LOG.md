@@ -16,6 +16,27 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Handwritten Init CP0/TLB routine restored
+
+- Replaced `osMapTLBRdb`'s empty C placeholder with its original handwritten
+  CP0/TLB assembly, preserving the `mfc0`, `mtc0`, and `tlbwi` sequence.
+- All 22 instruction words and two slot-padding words match retail directly
+  with no expected-word guards.
+- The row correctly moves from C to raw assembly. Fresh totals are
+  **2,868 / 5,466 (52.47%)** overall and **391 / 495 (78.99%)** in Init. See
+  [Working Note 370](WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
+
+### Handwritten Init entrypoint restored
+
+- Replaced `func_10001000`'s false zero-return C placeholder with its original
+  handwritten startup clear-and-jump assembly.
+- The routine deliberately uses `addi`, clears `0x16690` bytes in paired
+  stores, installs the stack, and jumps indirectly into initialization. Its 14
+  instruction words and six slot-padding words match retail with no guards.
+- The row correctly moves from C to raw assembly. Fresh totals are
+  **2,868 / 5,467 (52.46%)** overall and **391 / 496 (78.83%)** in Init. See
+  [Working Note 369](WORKING_NOTES/369-init-handwritten-entrypoint-restoration-20260928.md).
+
 ### Game player-status row renderer byte-matched
 
 - Completed all 427 words and 1,708 bytes of `func_151E966C`, reducing its

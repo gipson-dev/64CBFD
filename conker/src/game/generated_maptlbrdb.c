@@ -7,5 +7,8 @@
 
 /* Non-matching C placeholders for C:/Users/grego/OneDrive/Desktop/.vscode/64CBFD/conker/asm/libultra/os/maptlbrdb.s. */
 
+#if 0
 void osMapTLBRdb(void) {
 }
+#endif
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_maptlbrdb/osMapTLBRdb.s")

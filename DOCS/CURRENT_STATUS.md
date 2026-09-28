@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 573 | 1,931,476 / 2,256,728 (85.59%) |
-| Init | 497 / 538 (92.38%) | 41 | 148,600 / 164,048 (90.58%) |
+| Total | 5,466 / 6,041 (90.48%) | 575 | 1,931,300 / 2,256,728 (85.58%) |
+| Init | 495 / 538 (92.01%) | 43 | 148,424 / 164,048 (90.48%) |
 | Game | 4,790 / 5,321 (90.02%) | 531 | 1,763,236 / 2,072,880 (85.06%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,868 / 5,468 (52.45%) | 1 | 2,599 |
-| Init | 391 / 497 (78.67%) | 1 | 105 |
+| Total | 2,868 / 5,466 (52.47%) | 1 | 2,597 |
+| Init | 391 / 495 (78.99%) | 1 | 103 |
 | Game | 2,296 / 4,790 (47.93%) | 0 | 2,494 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,868, while
-504 functions moved from C back to assembly. The paired event-swap pass added
+506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -822,6 +822,16 @@ end-to-end gameplay acceptance.
    macros, corrected scalar types and local layout emit 271 words directly;
    two expected-word guards normalize one independent load/add schedule. See
    [Working Note 367](WORKING_NOTES/367-game-team-counter-panel-byte-match-20260928.md).
+   The 20-word Init `func_10001000` entrypoint is restored from its false
+   zero-return C placeholder to the original handwritten clear-and-jump
+   assembly. Its 14 instruction words plus six retail padding words match
+   directly with no guards. See
+   [Working Note 369](WORKING_NOTES/369-init-handwritten-entrypoint-restoration-20260928.md).
+   The 24-word Init `osMapTLBRdb` routine is also restored from an empty C
+   placeholder to its original handwritten CP0/TLB assembly. Its 22
+   instruction words plus two retail padding words match directly with no
+   guards. See
+   [Working Note 370](WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
    Keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

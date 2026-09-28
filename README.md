@@ -21,15 +21,15 @@ Snapshot verified on 2026-09-28. "Converted" means a function has C source;
 
 | Section | Converted functions | Converted bytes |
 | --- | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 85.59% |
-| Init | 497 / 538 (92.38%) | 90.58% |
+| Total | 5,466 / 6,041 (90.48%) | 85.58% |
+| Init | 495 / 538 (92.01%) | 90.48% |
 | Game | 4,790 / 5,321 (90.02%) | 85.06% |
 | Debugger | 181 / 182 (99.45%) | 99.19% |
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[#############-----------]` 2,868 / 5,468 (52.45%) | 1 | 2,599 |
-| Init | `[###################-----]` 391 / 497 (78.67%) | 1 | 105 |
+| Total | `[#############-----------]` 2,868 / 5,466 (52.47%) | 1 | 2,597 |
+| Init | `[###################-----]` 391 / 495 (78.99%) | 1 | 103 |
 | Game | `[###########-------------]` 2,296 / 4,790 (47.93%) | 0 | 2,494 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
@@ -45,6 +45,14 @@ words in the former and two independent scheduling words in the latter. See
 [366](DOCS/WORKING_NOTES/366-game-team-counter-panel-reconstruction-20260928.md),
 [367](DOCS/WORKING_NOTES/367-game-team-counter-panel-byte-match-20260928.md),
 and [368](DOCS/WORKING_NOTES/368-game-player-status-row-renderer-byte-match-20260928.md).
+
+The Init entrypoint `func_10001000` is restored to its original handwritten
+clear-and-jump assembly instead of the false zero-return C placeholder. Its
+complete 20-word slot is byte-exact; see
+[Working Note 369](DOCS/WORKING_NOTES/369-init-handwritten-entrypoint-restoration-20260928.md).
+The handwritten CP0/TLB routine `osMapTLBRdb` is likewise restored from its
+empty C placeholder and matches all 24 words; see
+[Working Note 370](DOCS/WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
 
 ## Build overview
 

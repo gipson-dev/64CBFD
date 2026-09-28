@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, player-status row renderer byte-matched).** The current
-linked checkpoint is `2868 / 5468 (52.45%)` exact C functions, with one
-address-drift blocker and 2,599 genuinely different C functions. Init is
-`391 / 497 (78.67%)` exact, with 105 genuinely different C rows. Game is
+**Active (2026-09-28, handwritten Init startup routines restored).** The
+current linked checkpoint is `2868 / 5466 (52.47%)` exact C functions, with
+one address-drift blocker and 2,597 genuinely different C functions. Init is
+`391 / 495 (78.99%)` exact, with 103 genuinely different C rows. Game is
 `2296 / 4790 (47.93%)` exact, with 2,494 genuinely different C rows. The tree
-contains 573 raw-assembly functions, so much of the percentage increase over
+contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
 
@@ -1100,8 +1100,17 @@ the SDK graphics macros, conditional resource expression, 32-bit lifetimes,
 signed call conversion and exact stack layout; two guarded words normalize one
 independent load/add schedule. See
 [Working Note 367](WORKING_NOTES/367-game-team-counter-panel-byte-match-20260928.md).
-Resume the bounded Init queue at 20-word `func_10001000`, currently the
-smallest listed Init mismatch at 14 real words. Keep the much larger HUD
+The 20-word Init `func_10001000` startup entrypoint is restored from its false
+zero-return C placeholder to the original handwritten clear-and-jump assembly.
+Its 14 instruction words and six retail padding words match directly with no
+guards; see
+[Working Note 369](WORKING_NOTES/369-init-handwritten-entrypoint-restoration-20260928.md).
+The 24-word Init `osMapTLBRdb` routine is also restored from an empty C
+placeholder to its original handwritten CP0/TLB body. Its 22 instructions and
+two retail padding words match directly with no guards; see
+[Working Note 370](WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
+Resume by auditing 20-word Init `__osSetHWIntrRoutine`, now the smallest Init
+row in the fresh mismatch list at 19 real words. Keep the much larger HUD
 renderers `func_151E89A0` and `func_151EA15C` parked as separate focused work.
 Keep raw-assembly conversion as a separate workstream. The measured handoff
 is [CURRENT_STATUS.md](CURRENT_STATUS.md), with baseline

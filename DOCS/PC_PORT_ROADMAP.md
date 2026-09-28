@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,468 / 6,041 (90.51%) | 2,868 / 5,468 (52.45%) | 1 | 2,599 |
-| Init | 497 / 538 (92.38%) | 391 / 497 (78.67%) | 1 | 105 |
+| Total | 5,466 / 6,041 (90.48%) | 2,868 / 5,466 (52.47%) | 1 | 2,597 |
+| Init | 495 / 538 (92.01%) | 391 / 495 (78.99%) | 1 | 103 |
 | Game | 4,790 / 5,321 (90.02%) | 2,296 / 4,790 (47.93%) | 0 | 2,494 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1048,6 +1048,15 @@ retail's `0x444` extent and `0xA0` frame. SDK display-list macros, corrected
 types and recovered local layout emit 271 words directly; two guarded words
 normalize the final independent load/add schedule. See
 [Working Note 367](WORKING_NOTES/367-game-team-counter-panel-byte-match-20260928.md).
+The 20-word Init `func_10001000` startup entrypoint is also restored from its
+false zero-return C placeholder to the original handwritten clear-and-jump
+assembly. All 14 instruction words and six padding words match retail directly
+with no guards. See
+[Working Note 369](WORKING_NOTES/369-init-handwritten-entrypoint-restoration-20260928.md).
+The 24-word Init `osMapTLBRdb` routine is likewise restored from its empty C
+placeholder to the original handwritten CP0/TLB assembly. Its 22 instruction
+words and two padding words match directly with no guards. See
+[Working Note 370](WORKING_NOTES/370-init-handwritten-maptlbrdb-restoration-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
