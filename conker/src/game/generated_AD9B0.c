@@ -1,4 +1,6 @@
 #include <ultra64.h>
+#include "variables.h"
+
 extern u8 D_800BE580[];
 extern u8 D_800D1941;
 
@@ -10,8 +12,21 @@ s32 func_15080500() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_AD9B0/func_15080620.s")
 
-s32 func_150806A8() {
-    return 0;
+void func_150806A8(s32 index) {
+    struct127 *object = &D_800CC2D0[index];
+    u8 *state = (u8 *) object->unk31C;
+    u8 first_value = state[0x74];
+    u8 second_value;
+
+    if ((first_value != 0) && !(first_value & 0x80)) {
+        state[0x74] = 0;
+        state = (u8 *) object->unk31C;
+    }
+
+    second_value = state[0x75];
+    if ((second_value != 0) && !(second_value & 0x80)) {
+        state[0x75] = 0;
+    }
 }
 
 void func_15080718(register s32 arg0, s32 *arg1, s32 *arg2) {

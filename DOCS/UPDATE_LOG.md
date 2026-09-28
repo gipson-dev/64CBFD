@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game owner status-byte clear byte-matched
+
+- Replaced `func_150806A8`'s zero-return placeholder with its two guarded
+  owner/state-byte clears at offsets `0x74` and `0x75`.
+- Each byte is cleared only when nonzero and bit `0x80` is absent. Separate
+  cached values and the alias-sensitive owner-pointer reload reproduce all 28
+  retail words directly from C with no guards.
+- Direct comparison matches all 112 linked bytes with SHA-256
+  `3e9c20b8f2a2d5ac38c781068c7119d964c98007c366f73f9d6ad5a8987b754e`.
+  Fresh totals are **2,904 / 5,466 (53.13%)** overall and
+  **2,330 / 4,790 (48.64%)** in Game. See
+  [Working Note 402](WORKING_NOTES/402-game-owner-status-byte-clear-match-20260928.md).
+
 ### Game two-word bit test byte-matched
 
 - Replaced `func_1503E1F4`'s zero-return placeholder with its low/high flag-word

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,903 / 5,466 (53.11%) | 1 | 2,562 |
+| Total | 5,466 / 6,041 (90.48%) | 2,904 / 5,466 (53.13%) | 1 | 2,561 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,329 / 4,790 (48.62%) | 0 | 2,461 |
+| Game | 4,790 / 5,321 (90.02%) | 2,330 / 4,790 (48.64%) | 0 | 2,460 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1216,6 +1216,11 @@ recovering its low/high flag-word selection, MIPS-masked variable shift, and
 shared zero-return tail. No guards are required. This remains guest-side
 donor/reference progress; see
 [Working Note 401](WORKING_NOTES/401-game-two-word-bit-test-match-20260928.md).
+The 28-word Game owner status-byte clear `func_150806A8` is byte-exact after
+recovering its two high-bit-preserving clears and alias-sensitive owner-pointer
+reload. No guards are required. This remains guest-side donor/reference
+progress; see
+[Working Note 402](WORKING_NOTES/402-game-owner-status-byte-clear-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
