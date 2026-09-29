@@ -204,12 +204,15 @@ s32 func_150D032C() {
     return 0;
 }
 
-void func_150D04C4(u8 arg0, u8 *arg1, s32 arg2, u8 arg3, s32 arg4) {
-    u8 zero = 0;
-    void *result = func_150CFF10(arg0, arg1, (s16) arg2, 8, 2, 0, arg3, arg4);
+void func_150D04C4(u8 arg0, u8 *arg1, s16 arg2, u8 arg3, s32 arg4) {
+    u8 zero[8];
+    void *result;
+
+    zero[0] = 0;
+    result = func_150CFF10(arg0, arg1, arg2, 8, 2, 0, arg3, arg4);
 
     if (result != 0) {
-        memcpy(*(void **) ((u8 *) result + 0x48), &zero, 1);
+        memcpy(*(void **) ((u8 *) result + 0x48), zero, 1);
     }
 }
 

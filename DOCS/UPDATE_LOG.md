@@ -14,6 +14,21 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-09-29
+
+### Game subtype-2 single-byte allocation payload wrapper byte-matched
+
+- Recovered `func_150D04C4`'s signed-halfword parameter and original
+  eight-byte local payload buffer.
+- The wrapper allocates a subtype-2 record through `func_150CFF10` and copies
+  one zero byte into a successful allocation's payload destination.
+- All 28 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 112 linked bytes with SHA-256
+  `245b46b27d2fe98769d605328c6ad1707b46c6e141b43780c8e4dda15ef79688`.
+  Fresh totals are **2,935 / 5,465 (53.71%)** overall and
+  **2,361 / 4,789 (49.30%)** in Game. See
+  [Working Note 434](WORKING_NOTES/434-game-single-byte-subtype2-payload-match-20260929.md).
+
 ## 2026-09-28
 
 ### Game eight-byte allocation payload wrapper byte-matched
