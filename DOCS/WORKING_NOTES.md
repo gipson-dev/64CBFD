@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game cached resource setup matched).**
-The current linked checkpoint is `3009 / 5463 (55.08%)` exact C functions,
-with no address-drift blockers and 2,454 genuinely different C functions.
+**Active (2026-09-29, Game coefficient clamp matched).**
+The current linked checkpoint is `3010 / 5463 (55.10%)` exact C functions,
+with no address-drift blockers and 2,453 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2431 / 4789 (50.76%)` exact, with 2,358 genuinely different C rows. The tree
+`2432 / 4789 (50.78%)` exact, with 2,357 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -291,6 +291,13 @@ selector into the resource index, invokes `func_15094F70`, and updates the
 cache. Six stale checks normalize only one independent call-argument
 scheduling window. See
 [Working Note 505](WORKING_NOTES/505-game-cached-resource-setup-match-20260929.md).
+
+Game `func_15182F58` now matches all 33 retail words directly from C. The
+recovered routine selects the first float in a 24-byte coefficient row,
+multiplies it by the integer-scaled input, and clamps the result to the
+inclusive zero-to-39 range. Expressing the upper clamp as the lower clamp's
+`else if` restores retail's early lower-bound exit without guards. See
+[Working Note 506](WORKING_NOTES/506-game-byte-selected-coefficient-clamp-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

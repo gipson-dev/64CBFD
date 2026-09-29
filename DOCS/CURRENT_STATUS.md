@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,009 / 5,463 (55.08%) | 0 | 2,454 |
+| Total | 3,010 / 5,463 (55.10%) | 0 | 2,453 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,431 / 4,789 (50.76%) | 0 | 2,358 |
+| Game | 2,432 / 4,789 (50.78%) | 0 | 2,357 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 3,009, while
+denominator driven: the exact count is now 3,010, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -262,6 +262,11 @@ after recovering its selector cache gate, 20-byte output record, shifted
 resource index, and nine-argument setup call. Six stale checks normalize only
 one independent call-argument scheduling window; see
 [Working Note 505](WORKING_NOTES/505-game-cached-resource-setup-match-20260929.md).
+Game byte-selected coefficient clamp `func_15182F58` is byte-exact across all
+33 words after recovering its 24-byte coefficient row, integer-times-40
+scale, and mutually exclusive lower/upper clamp. The complete routine emits
+directly from C with no guards; see
+[Working Note 506](WORKING_NOTES/506-game-byte-selected-coefficient-clamp-match-20260929.md).
 
 ## Verified build state
 
@@ -584,9 +589,9 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_1517A9A8`, whose complete 30-word cached-resource
-   setup now matches. Continue with 33-word `func_15182F58`, the next ordinary
-   Game C row with 29 real differences.
+   advanced through `func_15182F58`, whose complete 33-word byte-selected
+   coefficient clamp now matches directly from C. Continue with 31-word
+   `func_1518CA04`, the next ordinary Game C row with 29 real differences.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

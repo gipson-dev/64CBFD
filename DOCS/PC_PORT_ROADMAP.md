@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,009 / 5,463 (55.08%) | 0 | 2,454 |
+| Total | 5,463 / 6,041 (90.43%) | 3,010 / 5,463 (55.10%) | 0 | 2,453 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,431 / 4,789 (50.76%) | 0 | 2,358 |
+| Game | 4,789 / 5,321 (90.00%) | 2,432 / 4,789 (50.78%) | 0 | 2,357 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -106,6 +106,10 @@ The Game cached resource setup `func_1517A9A8` now matches its complete
 120-byte retail span after restoring its selector cache, 20-byte output
 record, shifted resource index, and guarded call-argument schedule; see
 [Working Note 505](WORKING_NOTES/505-game-cached-resource-setup-match-20260929.md).
+The Game byte-selected coefficient clamp `func_15182F58` now matches its
+complete 132-byte retail span directly from C after restoring its 24-byte
+coefficient row, integer scaling, and mutually exclusive clamps; see
+[Working Note 506](WORKING_NOTES/506-game-byte-selected-coefficient-clamp-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

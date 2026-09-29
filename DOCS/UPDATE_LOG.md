@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game byte-selected coefficient clamp byte-matched
+
+- `func_15182F58` now selects a coefficient from a 24-byte row using the
+  current byte selector, multiplies it by `arg0 * 40`, and clamps the result
+  to the inclusive range from zero through 39.
+- Preserving integer scaling before float conversion and expressing the upper
+  clamp as `else if` reproduce all 33 retail words directly from C. No
+  expected-word guards are used.
+- The linked and retail 132-byte spans share SHA-256
+  `0873fbb7ea8b86165e60c1c6cdb73f6cb692d345f177b80efa4b6165f1847db2`.
+- Totals are **3,010 / 5,463 (55.10%)** overall and
+  **2,432 / 4,789 (50.78%)** in Game, with no address-drift rows. See
+  [Working Note 506](WORKING_NOTES/506-game-byte-selected-coefficient-clamp-match-20260929.md).
+
 ### Game cached resource setup byte-matched
 
 - `func_1517A9A8` now preserves the incoming display-list cursor when its
