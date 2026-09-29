@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game conditional record-dispatch wrapper matched).**
-The current linked checkpoint is `2973 / 5465 (54.40%)` exact C functions,
-with one address-drift blocker and 2,491 genuinely different C functions.
+**Active (2026-09-29, Game descriptor float-forwarding adapter matched).**
+The current linked checkpoint is `2974 / 5465 (54.42%)` exact C functions,
+with one address-drift blocker and 2,490 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2399 / 4789 (50.09%)` exact, with 2,390 genuinely different C rows. The tree
+`2400 / 4789 (50.11%)` exact, with 2,389 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1582,6 +1582,9 @@ matches directly from C. See
 The 30-word conditional record-dispatch wrapper `func_15095A90` now matches
 directly from C. See
 [Working Note 471](WORKING_NOTES/471-game-conditional-record-dispatch-wrapper-match-20260929.md).
+The 30-word descriptor float-forwarding adapter `func_150B9D14` now matches
+directly from C. See
+[Working Note 472](WORKING_NOTES/472-game-descriptor-float-forwarding-adapter-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with an ordinary small Game placeholder after
 the documented parked compiler cases.

@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game descriptor float-forwarding adapter byte-matched
+
+- Replaced `func_150B9D14`'s placeholder with its recovered twelve-argument
+  descriptor-to-`func_15142600` forwarding call.
+- All 30 words emit directly from semantic C with no guarded replacements.
+- The linked and retail 120-byte spans share SHA-256
+  `235546b1e70cf0682de3289f8d12540ad11fc76ceef2f6e0f0288f20c68f186b`.
+- Totals are **2,974 / 5,465 (54.42%)** overall and **2,400 / 4,789
+  (50.11%)** in Game. See
+  [Working Note 472](WORKING_NOTES/472-game-descriptor-float-forwarding-adapter-match-20260929.md).
+
 ### Game conditional record-dispatch wrapper byte-matched
 
 - Replaced `func_15095A90`'s placeholder with its recovered stack-flag setup
