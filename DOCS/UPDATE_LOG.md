@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game position-descriptor dispatch byte-matched
+
+- Replaced `func_151C9AC0`'s zero-return placeholder with its recovered
+  position-vector construction, object-descriptor generation, and dispatch.
+- The source position uses owner X/Z and owner Y plus `2.0f`; reversing the
+  two local declarations reproduces retail's descriptor-at-`0x20` and
+  position-at-`0x44` stack layout.
+- All 28 words and both call relocations emit directly from semantic C with
+  no guards. Direct comparison matches all 112 linked bytes with SHA-256
+  `2d6f3976e971d57fc7ab110f7482f6cfff0424a126dd67d0445621e88aeff3fe`.
+  Fresh totals are **2,947 / 5,465 (53.92%)** overall and
+  **2,373 / 4,789 (49.55%)** in Game. See
+  [Working Note 446](WORKING_NOTES/446-game-position-descriptor-dispatch-match-20260929.md).
+
 ### Game command 0x1E record builder byte-matched
 
 - Replaced `func_1518AB60`'s zero-return placeholder with its recovered

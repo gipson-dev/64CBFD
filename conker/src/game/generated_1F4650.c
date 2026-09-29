@@ -4,6 +4,8 @@
 
 extern u8 D_8008CD00;
 void func_1516972C(u8 *arg0);
+void func_1504715C(void *arg0, u8 *arg1);
+void func_151ABE40(f32 *arg0, void *arg1, s32 arg2, u8 arg3, s32 arg4);
 
 s32 func_151C71A0() {
     return 0;
@@ -95,8 +97,15 @@ s32 func_151C9740() {
     return 0;
 }
 
-s32 func_151C9AC0() {
-    return 0;
+void func_151C9AC0(u8 *arg0, u8 arg1, s32 arg2) {
+    f32 position[3];
+    u8 descriptor[0x24];
+
+    position[0] = *(f32 *) (arg0 + 0x14);
+    position[1] = *(f32 *) (arg0 + 0x180) + 2.0f;
+    position[2] = *(f32 *) (arg0 + 0x1C);
+    func_1504715C(descriptor, arg0);
+    func_151ABE40(position, descriptor, 2, arg1, arg2);
 }
 
 s32 func_151C9B30(u8 *arg0) {

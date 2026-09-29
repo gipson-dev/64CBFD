@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,946 / 5,465 (53.91%) | 1 | 2,518 |
+| Total | 2,947 / 5,465 (53.92%) | 1 | 2,517 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,372 / 4,789 (49.53%) | 0 | 2,417 |
+| Game | 2,373 / 4,789 (49.55%) | 0 | 2,416 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,946, while
+denominator driven: the exact count is now 2,947, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1156,11 +1156,18 @@ end-to-end gameplay acceptance.
    guarded words preserve retail's selector reload/store register allocation.
    See
    [Working Note 445](WORKING_NOTES/445-game-command-1e-record-builder-match-20260929.md).
+   The 28-word position-descriptor dispatch wrapper `func_151C9AC0` is now
+   byte-exact after recovering its raised owner position, generated descriptor,
+   and five-argument dispatch. All words and both call relocations emit
+   directly from semantic C with no guards. See
+   [Working Note 446](WORKING_NOTES/446-game-position-descriptor-dispatch-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 28-word Game `func_151C9AC0`, at 27 real
-   differences. It builds a three-float source vector, transforms it into a
-   stack vector, and dispatches both vectors with a selector and final word.
+   with ordinary unparked 30-word Game `func_151BFB2C`, at 27 real
+   differences. Its semantic body releases one primary and two indexed child
+   pointers; focus on the byte-canonicalized loop counter and retained base.
+   Keep `func_15194320` and `func_15194394` parked behind generated-slice
+   jump-table/rodata ownership rather than introducing unresolved switches.
    Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`
