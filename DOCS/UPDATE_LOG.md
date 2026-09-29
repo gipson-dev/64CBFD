@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game active-object state updater byte-matched
+
+- Replaced `func_1507C370`'s zero-return placeholder with its recovered
+  traversal of the active `D_800CC2D0` object range.
+- Each non-null object state is passed to `func_1507C3E0` together with
+  pointers to its adjacent halfwords at offsets `0x114`, `0x116`, and `0x118`.
+- All 28 words, three global `HI16`/`LO16` relocation pairs, and the call
+  relocation emit directly from semantic C with no guards. Direct comparison
+  matches all 112 linked bytes with SHA-256
+  `f76ebf3e5c54848c244a826c349a9b156683e93f088e363b88d3e31ccab607af`.
+  Fresh totals are **2,953 / 5,465 (54.03%)** overall and
+  **2,379 / 4,789 (49.68%)** in Game. See
+  [Working Note 452](WORKING_NOTES/452-game-active-object-state-update-match-20260929.md).
+
 ### Game multi-argument forwarding wrapper byte-matched
 
 - Replaced `func_1503F5B8`'s zero-return placeholder with its recovered typed

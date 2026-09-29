@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game multi-argument forwarder matched).**
-The current linked checkpoint is `2952 / 5465 (54.02%)` exact C functions,
-with one address-drift blocker and 2,512 genuinely different C functions.
+**Active (2026-09-29, Game active-object state updater matched).**
+The current linked checkpoint is `2953 / 5465 (54.03%)` exact C functions,
+with one address-drift blocker and 2,511 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2378 / 4789 (49.66%)` exact, with 2,411 genuinely different C rows. The tree
+`2379 / 4789 (49.68%)` exact, with 2,410 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1502,10 +1502,15 @@ its typed six-argument signature and twelve-argument `func_1505E0C4` call.
 All stack arguments, zero floats, the object byte at offset `0x3F5`, and the
 callee return value emit in retail order without guards. See
 [Working Note 451](WORKING_NOTES/451-game-multi-argument-forwarder-match-20260929.md).
+The 28-word active-object state updater `func_1507C370` now matches after
+recovering its signed-count object traversal and null-gated dispatch of three
+adjacent state halfwords. The complete pointer/counter loop, globals, and call
+emit directly from C without guards. See
+[Working Note 452](WORKING_NOTES/452-game-active-object-state-update-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 28-word Game
-`func_1507C370`, at 28 real differences. It remains a zero-return placeholder
-in `generated_A9260.c`; recover its behavior from the retail `A9260` slice.
+experiments were removed. Resume with ordinary unparked 29-word Game
+`func_15095060`, at 28 real differences. It remains a zero-return placeholder
+in `generated_C1D70.c`; recover its behavior from the retail `C1D70` slice.
 Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the

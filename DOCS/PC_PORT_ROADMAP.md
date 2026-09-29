@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,952 / 5,465 (54.02%) | 1 | 2,512 |
+| Total | 5,465 / 6,041 (90.47%) | 2,953 / 5,465 (54.03%) | 1 | 2,511 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,378 / 4,789 (49.66%) | 0 | 2,411 |
+| Game | 4,789 / 5,321 (90.00%) | 2,379 / 4,789 (49.68%) | 0 | 2,410 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1504,6 +1504,11 @@ byte-exact after recovering its typed six-argument interface and twelve-
 argument call to `func_1505E0C4`. The complete function emits from C with no
 guards. This remains guest-side donor/reference progress; see
 [Working Note 451](WORKING_NOTES/451-game-multi-argument-forwarder-match-20260929.md).
+The 28-word Game active-object state updater `func_1507C370` is now byte-exact
+after recovering its bounded object-array traversal and dispatch of three
+state halfword pointers. The complete loop emits directly from C with no
+guards. This remains guest-side donor/reference progress; see
+[Working Note 452](WORKING_NOTES/452-game-active-object-state-update-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 
