@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,970 / 5,465 (54.35%) | 1 | 2,494 |
+| Total | 5,465 / 6,041 (90.47%) | 2,971 / 5,465 (54.36%) | 1 | 2,493 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,396 / 4,789 (50.03%) | 0 | 2,393 |
+| Game | 4,789 / 5,321 (90.00%) | 2,397 / 4,789 (50.05%) | 0 | 2,392 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1572,6 +1572,9 @@ The 30-word Game classifier fallback wrapper `func_1504530C` is now byte-exact
 directly from C, including retail's default preservation of an unrecognized
 classifier return; see
 [Working Note 468](WORKING_NOTES/468-game-classifier-fallback-wrapper-match-20260929.md).
+The 30-word Game descriptor-install wrapper `func_15094F70` is now byte-exact
+directly from C; see
+[Working Note 469](WORKING_NOTES/469-game-descriptor-install-wrapper-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

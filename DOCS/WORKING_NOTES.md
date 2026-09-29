@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game classifier fallback wrapper matched).**
-The current linked checkpoint is `2970 / 5465 (54.35%)` exact C functions,
-with one address-drift blocker and 2,494 genuinely different C functions.
+**Active (2026-09-29, Game descriptor-install wrapper matched).**
+The current linked checkpoint is `2971 / 5465 (54.36%)` exact C functions,
+with one address-drift blocker and 2,493 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2396 / 4789 (50.03%)` exact, with 2,393 genuinely different C rows. The tree
+`2397 / 4789 (50.05%)` exact, with 2,392 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1573,6 +1573,9 @@ plus two commutative-operand guards, taking Game above 50%. See
 The 30-word classifier fallback wrapper `func_1504530C` now matches directly
 from C, including the default path that retains the classifier result. See
 [Working Note 468](WORKING_NOTES/468-game-classifier-fallback-wrapper-match-20260929.md).
+The 30-word descriptor-install wrapper `func_15094F70` now matches directly
+from C, including its ten-argument final dispatch. See
+[Working Note 469](WORKING_NOTES/469-game-descriptor-install-wrapper-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with an ordinary small Game placeholder after
 the documented parked compiler cases.

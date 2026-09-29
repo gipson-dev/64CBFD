@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game descriptor-install wrapper byte-matched
+
+- Replaced `func_15094F70`'s placeholder with its recovered descriptor setup
+  and ten-argument final dispatch.
+- All 30 words emit directly from semantic C with no guarded replacements.
+- The linked and retail 120-byte spans share SHA-256
+  `8d9ae7535f57bf56b9ce25835cb5dc2d6cf8b9fd835967b89a85a095ac263f64`.
+- Totals are **2,971 / 5,465 (54.36%)** overall and **2,397 / 4,789
+  (50.05%)** in Game. See
+  [Working Note 469](WORKING_NOTES/469-game-descriptor-install-wrapper-match-20260929.md).
+
 ### Game classifier fallback wrapper byte-matched
 
 - Replaced `func_1504530C`'s placeholder with its recovered classifier dispatch

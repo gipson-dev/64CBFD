@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,970 / 5,465 (54.35%) | 1 | 2,494 |
+| Total | 2,971 / 5,465 (54.36%) | 1 | 2,493 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,396 / 4,789 (50.03%) | 0 | 2,393 |
+| Game | 2,397 / 4,789 (50.05%) | 0 | 2,392 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1265,6 +1265,9 @@ end-to-end gameplay acceptance.
    directly from C. Its unhandled switch path intentionally preserves the
    classifier's return value, matching retail. See
    [Working Note 468](WORKING_NOTES/468-game-classifier-fallback-wrapper-match-20260929.md).
+   The 30-word descriptor-install wrapper `func_15094F70` is now byte-exact
+   directly from C, including its ten-argument final dispatch. See
+   [Working Note 469](WORKING_NOTES/469-game-descriptor-install-wrapper-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented
