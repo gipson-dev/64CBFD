@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game four-pointer cleanup byte-matched
+
+- Replaced `func_151B222C`'s zero-return placeholder with its three-entry
+  indexed pointer-release loop and final independent pointer release.
+- The loop retains object offset `0x28` as its base and saves each nullable
+  pointer before dispatch. An `s32` induction variable explicitly narrowed to
+  `u8` after each increment reproduces retail's `s0` loop schedule.
+- All 28 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 112 linked bytes with SHA-256
+  `dc75cd68d4c35a41ea0c10f1c33213c1ede085a635f7c5243bff33d6db63c063`.
+  Fresh totals are **2,925 / 5,466 (53.51%)** overall and
+  **2,351 / 4,790 (49.08%)** in Game. See
+  [Working Note 423](WORKING_NOTES/423-game-four-pointer-cleanup-match-20260928.md).
+
 ### Game event callback-table dispatch byte-matched
 
 - Replaced `func_15190550`'s zero-return placeholder with its event-`0x2A`

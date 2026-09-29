@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,924 / 5,466 (53.49%) | 1 | 2,541 |
+| Total | 2,925 / 5,466 (53.51%) | 1 | 2,540 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,350 / 4,790 (49.06%) | 0 | 2,440 |
+| Game | 2,351 / 4,790 (49.08%) | 0 | 2,439 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1034,9 +1034,15 @@ end-to-end gameplay acceptance.
    index, nullable lookup, and three-argument forwarding call. Its typed body
    emits all words directly with no guards. See
    [Working Note 422](WORKING_NOTES/422-game-event-callback-table-dispatch-match-20260928.md).
+   The 28-word four-pointer cleanup `func_151B222C` is now byte-exact after
+   recovering its three-entry indexed release loop and final independent
+   pointer release. An `s32` counter explicitly narrowed after each increment
+   reproduces retail's saved-register loop; all words emit directly from C
+   with no guards. See
+   [Working Note 423](WORKING_NOTES/423-game-four-pointer-cleanup-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 28-word Game `func_151B222C`, at 26 real
+   with ordinary unparked 29-word Game `func_151CB49C`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

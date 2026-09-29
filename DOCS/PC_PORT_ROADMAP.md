@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,924 / 5,466 (53.49%) | 1 | 2,541 |
+| Total | 5,466 / 6,041 (90.48%) | 2,925 / 5,466 (53.51%) | 1 | 2,540 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,350 / 4,790 (49.06%) | 0 | 2,440 |
+| Game | 4,790 / 5,321 (90.02%) | 2,351 / 4,790 (49.08%) | 0 | 2,439 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1335,6 +1335,12 @@ after recovering its event-`0x2A` pre-handler, object callback index, nullable
 lookup, and three-argument forwarding call. Its typed body emits all words
 directly with no guards. This remains guest-side donor/reference progress; see
 [Working Note 422](WORKING_NOTES/422-game-event-callback-table-dispatch-match-20260928.md).
+The 28-word Game four-pointer cleanup `func_151B222C` is byte-exact after
+recovering its three-entry indexed release loop and final independent pointer
+release. An `s32` counter explicitly narrowed after each increment reproduces
+retail's loop; all words emit directly from C with no guards. This remains
+guest-side donor/reference progress; see
+[Working Note 423](WORKING_NOTES/423-game-four-pointer-cleanup-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
