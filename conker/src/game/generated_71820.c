@@ -113,8 +113,15 @@ s32 func_150450CC() {
     return 0;
 }
 
-s32 func_1504530C() {
-    return 0;
+s32 func_1504530C(s32 arg0, s32 arg1, s32 arg2) {
+    switch (func_150470B0(arg0, arg1, arg2)) {
+        case 0:
+            return func_15044ED0(arg0, arg1, arg2);
+        case 1:
+            return 0;
+        case 2:
+            return 1;
+    }
 }
 
 s32 func_15045384() {

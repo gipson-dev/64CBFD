@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,969 / 5,465 (54.33%) | 1 | 2,495 |
+| Total | 2,970 / 5,465 (54.35%) | 1 | 2,494 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,395 / 4,789 (50.01%) | 0 | 2,394 |
+| Game | 2,396 / 4,789 (50.03%) | 0 | 2,393 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1261,10 +1261,14 @@ end-to-end gameplay acceptance.
    semantic C plus two commutative-operand guards, taking the Game matcher
    above 50%. See
    [Working Note 467](WORKING_NOTES/467-game-paired-mask-predicate-match-20260929.md).
+   The 30-word classifier fallback wrapper `func_1504530C` is now byte-exact
+   directly from C. Its unhandled switch path intentionally preserves the
+   classifier's return value, matching retail. See
+   [Working Note 468](WORKING_NOTES/468-game-classifier-fallback-wrapper-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary 29-word Game `func_151B8BE0`, at 28 real differences, after
-   the already documented parked compiler-scheduling cases.
+   with an ordinary small Game placeholder after the already documented
+   parked compiler-scheduling cases.
    Keep `func_15194320` and `func_15194394` parked behind generated-slice
    jump-table/rodata ownership rather than introducing unresolved switches.
    Keep the documented lower-difference compiler cases parked,

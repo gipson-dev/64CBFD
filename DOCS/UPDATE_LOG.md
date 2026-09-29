@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game classifier fallback wrapper byte-matched
+
+- Replaced `func_1504530C`'s placeholder with its recovered classifier dispatch
+  and fallback call.
+- All 30 words emit directly from semantic C with no guarded replacements. The
+  unhandled path preserves the classifier return value exactly as retail does.
+- The linked and retail 120-byte spans share SHA-256
+  `328e786deff2085910be798eef006116221c3ccb28fe5d7418974696df4439f5`.
+- Totals are **2,970 / 5,465 (54.35%)** overall and **2,396 / 4,789
+  (50.03%)** in Game. See
+  [Working Note 468](WORKING_NOTES/468-game-classifier-fallback-wrapper-match-20260929.md).
+
 ### Game paired-mask predicate byte-matched
 
 - Replaced `func_1503EF4C`'s placeholder with its recovered two-word mask
