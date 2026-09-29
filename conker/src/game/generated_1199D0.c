@@ -31,8 +31,9 @@ void func_150ECB8C(u8 *arg0) {
     func_1502EA98(target, sub[5], sub[6], sub[7], sub[8], 0, sub[9]);
 }
 
-s32 func_150ECC00() {
-    return 0;
+void func_150ECC00(u8 *arg0, volatile u8 arg1, s32 arg2) {
+    func_151C9AC0(arg0, arg1, arg2);
+    func_150ECA68(arg0, 0, 0xFF, 0, 0xFF, 4, -1, arg1, arg2);
 }
 
 s32 func_150ECC70() {

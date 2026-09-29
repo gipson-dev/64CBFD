@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game fixed payload-setup wrapper byte-matched
+
+- Replaced `func_150ECC00`'s zero-return placeholder with its recovered
+  `func_151C9AC0` notification and `func_150ECA68` payload-setup calls.
+- The second call uses the fixed tuple `0, 0xFF, 0, 0xFF, 4, -1` followed by
+  the caller's selector and final word. Modeling the selector as volatile
+  preserves retail's two independent stack-byte loads.
+- All 28 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 112 linked bytes with SHA-256
+  `5af0f6f5ba18580c81f2287f4d54cfd6f25fcdea88f33ff5853d1733759c1c0b`.
+  Fresh totals are **2,938 / 5,465 (53.76%)** overall and
+  **2,364 / 4,789 (49.36%)** in Game. See
+  [Working Note 437](WORKING_NOTES/437-game-fixed-payload-setup-wrapper-match-20260929.md).
+
 ### Game validated payload dispatcher byte-matched
 
 - Replaced `func_150ECB8C`'s zero-return placeholder with its target-state and
