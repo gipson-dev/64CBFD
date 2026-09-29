@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,941 / 5,465 (53.82%) | 1 | 2,523 |
+| Total | 2,942 / 5,465 (53.83%) | 1 | 2,522 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,367 / 4,789 (49.43%) | 0 | 2,422 |
+| Game | 2,368 / 4,789 (49.45%) | 0 | 2,421 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,941, while
+denominator driven: the exact count is now 2,942, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1129,9 +1129,15 @@ end-to-end gameplay acceptance.
    independent table-address/register schedule and explicit return-delay
    `nop`. See
    [Working Note 440](WORKING_NOTES/440-game-mode-gated-table-value-match-20260929.md).
+   The 30-word two-command record updater `func_15109064` is now byte-exact
+   after recovering its command `0x1D` payload copy and command `0x1E` state
+   toggle. Twenty-six words emit directly from semantic C; four guarded
+   normalizations preserve one commutative add and the explicit copy-path
+   return schedule. See
+   [Working Note 441](WORKING_NOTES/441-game-two-command-record-update-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 30-word Game `func_15109064`, at 27 real
+   with ordinary unparked 28-word Game `func_151149AC`, at 27 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

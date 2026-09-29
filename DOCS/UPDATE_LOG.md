@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game two-command record updater byte-matched
+
+- Replaced `func_15109064`'s zero-return placeholder with its recovered
+  command `0x1D` payload copy and command `0x1E` state-byte toggle.
+- Twenty-six of 30 words emit directly from the semantic `switch`. Four
+  guarded normalizations preserve one commutative address-add order and the
+  explicit copy-path store, return, and delay-slot schedule.
+- Direct comparison matches all 120 linked bytes with SHA-256
+  `8072d145681a82314d4e37392823be0e48170fbc1897c198e8d46dd415a6e6f3`.
+  Fresh totals are **2,942 / 5,465 (53.83%)** overall and
+  **2,368 / 4,789 (49.45%)** in Game. See
+  [Working Note 441](WORKING_NOTES/441-game-two-command-record-update-match-20260929.md).
+
 ### Game mode-gated table-value updater byte-matched
 
 - Replaced `func_15108BC0`'s zero-return placeholder with its recovered

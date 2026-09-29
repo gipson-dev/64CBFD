@@ -1865,3 +1865,7 @@ generated_135D00,func_15108BC0,0x04C,0x03194021,0x03192021,-,-,Form the table en
 generated_135D00,func_15108BC0,0x050,0xC5060004,0xC4860004,-,-,Load the selected value through retail's a0 lifetime,,,false
 generated_135D00,func_15108BC0,0x054,0x03E00008,0xE4460010,-,-,Store the selected value before retail's explicit return,,,false
 generated_135D00,func_15108BC0,0x058,0xE4460010,0x03E00008,-,-,Restore retail's explicit table-path return,0x00000000,-,false
+generated_135D00,func_15109064,0x014,0x01E41021,0x008F1021,-,-,Preserve retail's commutative owner-plus-offset operand order,,,false
+generated_135D00,func_15109064,0x024,0x50C1000B,0x50C1000C,-,-,Retarget command 0x1E across retail's explicit copy-path return delay slot,,,false
+generated_135D00,func_15109064,0x048,0x03E00008,0xAC48001C,-,-,Store the final copied word before retail's explicit return,,,false
+generated_135D00,func_15109064,0x04C,0xAC48001C,0x03E00008,-,-,Restore retail's explicit copy-path return,0x00000000,-,false

@@ -69,8 +69,23 @@ void func_15108FFC(s32 arg0, s32 arg1, u8 arg2) {
     func_15169260(&tmp, 2, (s32) &payload, 0x1D);
 }
 
-s32 func_15109064() {
-    return 0;
+void func_15109064(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *sub = arg0 + *(s32 *) (arg0 + 0x50) + 0xF8;
+
+    switch (arg2) {
+        case 0x1D:
+            *(s32 *) (sub + 0x14) = *(s32 *) arg1;
+            sub[0x18] = arg1[8];
+            *(s32 *) (sub + 0x1C) = *(s32 *) (arg1 + 4);
+            break;
+        case 0x1E:
+            if (sub[0x20] != 0) {
+                sub[0x20] = 0;
+            } else {
+                sub[0x20] = 1;
+            }
+            break;
+    }
 }
 
 void func_151090DC(void) {

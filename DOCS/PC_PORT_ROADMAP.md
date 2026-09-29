@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,941 / 5,465 (53.82%) | 1 | 2,523 |
+| Total | 5,465 / 6,041 (90.47%) | 2,942 / 5,465 (53.83%) | 1 | 2,522 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,367 / 4,789 (49.43%) | 0 | 2,422 |
+| Game | 4,789 / 5,321 (90.00%) | 2,368 / 4,789 (49.45%) | 0 | 2,421 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1440,6 +1440,12 @@ from semantic C; eleven guarded normalizations preserve retail scheduling and
 its explicit table-path return-delay `nop`. This remains guest-side
 donor/reference progress; see
 [Working Note 440](WORKING_NOTES/440-game-mode-gated-table-value-match-20260929.md).
+The 30-word Game two-command record updater `func_15109064` is now byte-exact
+after recovering its command `0x1D` payload copy and command `0x1E` state
+toggle. Twenty-six words emit directly from semantic C; four guarded
+normalizations preserve retail's add and copy-return scheduling. This remains
+guest-side donor/reference progress; see
+[Working Note 441](WORKING_NOTES/441-game-two-command-record-update-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 
