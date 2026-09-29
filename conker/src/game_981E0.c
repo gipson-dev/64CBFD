@@ -967,16 +967,14 @@ void func_1506EEF4(void) {
     D_800D154C->unk287 = 0;
 }
 
-// TBD whats goins on here
 void func_1506EF5C(void) {
-    u8 *obj = (u8 *)D_800D154C;
     s32 temp = D_800D1580;
     s32 offset = ((temp >> 16) & 0xFF) * 2;
 
     D_800D154C->unk282 = 0xFFFF;
     D_800D154C->unk276 = 5;
-    obj[offset + 0x284] = temp >> 8;
-    obj[offset + 0x285] = temp;
+    ((u8 *)D_800D154C)[offset + 0x284] = temp >> 8;
+    ((u8 *)D_800D154C)[offset + 0x285] = temp;
 }
 
 void func_1506EFB4(void) {

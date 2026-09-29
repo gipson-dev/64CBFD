@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,986 / 5,465 (54.64%) | 0 | 2,479 |
+| Total | 5,465 / 6,041 (90.47%) | 2,987 / 5,465 (54.66%) | 0 | 2,478 |
 | Init | 495 / 538 (92.01%) | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,411 / 4,789 (50.34%) | 0 | 2,378 |
+| Game | 4,789 / 5,321 (90.00%) | 2,412 / 4,789 (50.37%) | 0 | 2,377 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -26,6 +26,9 @@ complete 120-byte linked span matches retail; see
 The adjacent optional-callback teardown wrappers `func_151A8584` and
 `func_151A85D4` also match both 80-byte retail spans; see
 [Working Note 482](WORKING_NOTES/482-game-optional-callback-teardown-pair-match-20260929.md).
+The packed indexed-byte updater `func_1506EF5C` now matches its complete
+88-byte retail span; see
+[Working Note 483](WORKING_NOTES/483-game-packed-indexed-byte-updater-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
@@ -680,8 +683,9 @@ the local `func_15083E90` byte-parameter and pointer-return contract; see
 The 22-word `func_1515D030` reverse-slot update is now exact from a signed byte
 decrement and shared result variable; see
 [Working Note 216](WORKING_NOTES/216-game-reverse-slot-update-match-20260926.md).
-Measured compiler boundaries in `guMtxIdentF` and `func_1506EF5C` remain
-parked. The former `func_1507A4D4` boundary is resolved by the guarded match
+The measured compiler boundary in `guMtxIdentF` remains parked.
+`func_1506EF5C` is resolved by the guarded match in Working Note 483. The
+former `func_1507A4D4` boundary is resolved by the guarded match
 in Working Note 474. The 21-word `func_15178750` conditional callback
 wrapper and newly inventoried two-word `func_151787A4` no-op table callback
 are separately byte-exact; see

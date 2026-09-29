@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,986 / 5,465 (54.64%) | 0 | 2,479 |
+| Total | 2,987 / 5,465 (54.66%) | 0 | 2,478 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,411 / 4,789 (50.34%) | 0 | 2,378 |
+| Game | 2,412 / 4,789 (50.37%) | 0 | 2,377 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -573,9 +573,11 @@ end-to-end gameplay acceptance.
    event branches. The 20-word `func_15083FB0` object-index wrapper is now
    exact after correcting the local `func_15083E90` byte-parameter and pointer
    return contract. The 22-word `func_1515D030` reverse-slot update is now
-   exact from a signed decrement and one shared result variable. Keep
-   `guMtxIdentF` and `func_1506EF5C` parked at their measured compiler
-   scheduling/register boundaries. The former `func_1507A4D4` boundary is now
+   exact from a signed decrement and one shared result variable.
+   `func_1506EF5C` is now byte-exact after restoring retail's repeated active-
+   object reads and guarding its register allocation; see Working Note 483.
+   Keep `guMtxIdentF` parked at its measured compiler scheduling boundary.
+   The former `func_1507A4D4` boundary is now
    resolved by the guarded match in Working Note 474. The 21-word `func_15178750`
    conditional callback wrapper and the previously hidden two-word
    `func_151787A4` table callback are now separately inventoried and exact.
@@ -1326,6 +1328,10 @@ end-to-end gameplay acceptance.
    distinct callback tables and final calls. Symmetric guarded normalization
    preserves retail's path-sensitive object spill schedule. See
    [Working Note 482](WORKING_NOTES/482-game-optional-callback-teardown-pair-match-20260929.md).
+   The 22-word packed indexed-byte updater `func_1506EF5C` is now byte-exact
+   after recovering its sentinel/mode stores, packed selector, and two indexed
+   byte writes through four repeated active-object reads. See
+   [Working Note 483](WORKING_NOTES/483-game-packed-indexed-byte-updater-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented

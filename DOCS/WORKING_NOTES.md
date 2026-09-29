@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game optional-callback teardown pair matched).**
-The current linked checkpoint is `2986 / 5465 (54.64%)` exact C functions,
-with no address-drift blockers and 2,479 genuinely different C functions.
+**Active (2026-09-29, Game packed indexed-byte updater matched).**
+The current linked checkpoint is `2987 / 5465 (54.66%)` exact C functions,
+with no address-drift blockers and 2,478 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2411 / 4789 (50.34%)` exact, with 2,378 genuinely different C rows. The tree
+`2412 / 4789 (50.37%)` exact, with 2,377 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -142,6 +142,12 @@ the shared `func_151A8560` teardown, and invoke distinct final callbacks.
 Symmetric guarded normalization preserves retail's callback-path object spill
 and reload schedule. See
 [Working Note 482](WORKING_NOTES/482-game-optional-callback-teardown-pair-match-20260929.md).
+
+`func_1506EF5C` now matches all 22 retail words. Its C body preserves four
+separate active-object reads while storing the halfword sentinel, mode byte,
+and two bytes selected from the packed global value. Guarded normalization
+restores retail's register allocation and equivalent constant encoding. See
+[Working Note 483](WORKING_NOTES/483-game-packed-indexed-byte-updater-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

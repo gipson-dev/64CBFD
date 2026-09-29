@@ -1453,6 +1453,26 @@ game_981E0,func_1506EE60,0x3C,0x00000000,0x8FBF0014,-,-,Restore the return addre
 game_981E0,func_1506EE60,0x40,0x00000000,0x27BD0018,-,-,Release the retail frame,,,false
 game_981E0,func_1506EE60,0x44,0x00000000,0x03E00008,-,-,Return from the packed-value dispatcher,,,false
 game_981E0,func_1506EE60,0x48,0x00000000,0x00000000,-,-,Preserve the return delay slot,,,false
+game_981E0,func_1506EF5C,0x000,0x3C040000,0x3C060000,R_MIPS_HI16:D_800D154C,R_MIPS_HI16:D_800D154C,Keep the active-object global address in retail's a2 lifetime,,,false
+game_981E0,func_1506EF5C,0x004,0x24840000,0x24C60000,R_MIPS_LO16:D_800D154C,R_MIPS_LO16:D_800D154C,Complete the active-object global address through a2,,,false
+game_981E0,func_1506EF5C,0x008,0x8C8F0000,0x8CCB0000,-,-,Load the first active object through retail's t3 lifetime,,,false
+game_981E0,func_1506EF5C,0x00C,0x3C020000,0x3C030000,R_MIPS_HI16:D_800D1580,R_MIPS_HI16:D_800D1580,Materialize the packed value through retail's v1 base,,,false
+game_981E0,func_1506EF5C,0x010,0x8C420000,0x8C690000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Load the packed value into retail's t1 lifetime,,,false
+game_981E0,func_1506EF5C,0x014,0x240EFFFF,0x340AFFFF,-,-,Materialize the unsigned halfword sentinel through t2,,,false
+game_981E0,func_1506EF5C,0x018,0xA5EE0282,0xA56A0282,-,-,Store the sentinel through the first active-object read,,,false
+game_981E0,func_1506EF5C,0x01C,0x8C990000,0x8CCD0000,-,-,Reload the active object through retail's t5 lifetime,,,false
+game_981E0,func_1506EF5C,0x020,0x24180005,0x240C0005,-,-,Keep the mode constant in retail's t4 lifetime,,,false
+game_981E0,func_1506EF5C,0x024,0x00021C03,0x00091403,-,-,Extract the packed table index through retail's v0 lifetime,,,false
+game_981E0,func_1506EF5C,0x028,0xA3380276,0xA1AC0276,-,-,Store the mode through the second active-object read,,,false
+game_981E0,func_1506EF5C,0x02C,0x8C8B0000,0x8CCF0000,-,-,Reload the active object for the first indexed byte store,,,false
+game_981E0,func_1506EF5C,0x030,0x306800FF,0x304E00FF,-,-,Normalize the table index through retail's t6 lifetime,,,false
+game_981E0,func_1506EF5C,0x034,0x00084840,0x000E7040,-,-,Double the byte offset in retail's t6 lifetime,,,false
+game_981E0,func_1506EF5C,0x038,0x00025203,0x0009CA03,-,-,Extract the high output byte through retail's t9 lifetime,,,false
+game_981E0,func_1506EF5C,0x03C,0x01696021,0x01EEC021,-,-,Address the first indexed byte through retail's t8 lifetime,,,false
+game_981E0,func_1506EF5C,0x040,0xA18A0284,0xA3190284,-,-,Store the high output byte through retail's t9 lifetime,,,false
+game_981E0,func_1506EF5C,0x044,0x8C8D0000,0x8CD90000,-,-,Reload the active object for the second indexed byte store,,,false
+game_981E0,func_1506EF5C,0x048,0x01A97021,0x032E4021,-,-,Address the second indexed byte through retail's t0 lifetime,,,false
+game_981E0,func_1506EF5C,0x04C,0xA1C20285,0xA1090285,-,-,Store the low output byte from the retained packed value,,,false
 generated_126F60,func_150FB188,0x04,0x44801000,0x3C010000,-,R_MIPS_HI16:D_800A1DC0,Schedule the shared scale address before zero materialization,,,false
 generated_126F60,func_150FB188,0x08,0xAFBF0014,0x44800000,-,-,Materialize zero in the retail floating-point lifetime,,,false
 generated_126F60,func_150FB188,0x0C,0x3C01C2BE,0xC4220000,-,R_MIPS_LO16:D_800A1DC0,Load the shared scale through the retail floating-point lifetime,,,false

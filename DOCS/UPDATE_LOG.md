@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game packed indexed-byte updater byte-matched
+
+- Restored `func_1506EF5C`'s repeated active-object reads while retaining its
+  recovered sentinel, mode, packed selector, and two indexed byte stores.
+- The repeated global expressions reproduce retail's full 22-word skeleton.
+  Twenty guarded words normalize IDO's register allocation, four checked
+  symbol relocations, scheduling, and equivalent `0xFFFF` encoding; the
+  return pair emits directly from C.
+- The linked and retail 88-byte spans share SHA-256
+  `bb1533bcd2675ab5ab801d3148a589be179a3ce3d5e4a339f0def4f69c842d9a`.
+- Totals are **2,987 / 5,465 (54.66%)** overall and **2,412 / 4,789
+  (50.37%)** in Game, with no address-drift rows. See
+  [Working Note 483](WORKING_NOTES/483-game-packed-indexed-byte-updater-match-20260929.md).
+
 ### Game optional-callback teardown pair byte-matched
 
 - Replaced adjacent zero-return placeholders `func_151A8584` and
