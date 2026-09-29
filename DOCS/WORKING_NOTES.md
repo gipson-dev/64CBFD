@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game two-owner linked-list lookup matched).**
-The current linked checkpoint is `2988 / 5465 (54.68%)` exact C functions,
-with no address-drift blockers and 2,477 genuinely different C functions.
+**Active (2026-09-29, Game record allocator initializer matched).**
+The current linked checkpoint is `2989 / 5465 (54.69%)` exact C functions,
+with no address-drift blockers and 2,476 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2413 / 4789 (50.39%)` exact, with 2,376 genuinely different C rows. The tree
+`2414 / 4789 (50.41%)` exact, with 2,375 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -154,6 +154,13 @@ offset `0x140` in each of two `0x1A0`-byte owner records, then follows node
 links at offset eight until byte key `0x10` matches. Eight guarded words
 normalize one closed owner/end register-allocation cycle. See
 [Working Note 484](WORKING_NOTES/484-game-two-owner-linked-list-lookup-match-20260929.md).
+
+`func_15155780` now matches all 31 retail words. It allocates a record through
+`func_15167A68`, returns the null allocation unchanged, initializes bytes
+`0x10` and `0x11`, word `0x14`, and float `0x98`, then notifies
+`func_1518C900`. Eight guarded words normalize the independent success-path
+schedule. See
+[Working Note 485](WORKING_NOTES/485-game-record-allocator-initializer-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

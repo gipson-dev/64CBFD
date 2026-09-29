@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game record allocator initializer byte-matched
+
+- Replaced `func_15155780`'s zero-return placeholder with its recovered record
+  allocation, null return, four field initializers, and notification call.
+- Twenty-three words emit directly from semantic C. Eight guarded words
+  normalize one independent success-path scheduling permutation; both call
+  relocations and the complete null path remain compiler-emitted.
+- The linked and retail 124-byte spans share SHA-256
+  `4d92e5ed8d32b2f0a6b0c792b45f24b113301cb1eec8f2e968d9f65272daf21a`.
+- Totals are **2,989 / 5,465 (54.69%)** overall and **2,414 / 4,789
+  (50.41%)** in Game, with no address-drift rows. See
+  [Working Note 485](WORKING_NOTES/485-game-record-allocator-initializer-match-20260929.md).
+
 ### Game two-owner linked-list lookup byte-matched
 
 - Replaced `func_15155FD4`'s zero-return placeholder with its recovered scan

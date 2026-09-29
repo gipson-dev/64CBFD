@@ -704,6 +704,14 @@ generated_182C30,func_15155EF8,0x028,0x00C02025,0x00A02025,-,-,Forward outer obj
 generated_182C30,func_15155F3C,0x01C,0x90440011,0x90430011,-,-,Retain the state byte in retail value register,
 generated_182C30,func_15155F3C,0x024,0x54810004,0x54610004,-,-,Compare state two through retail value register,
 generated_182C30,func_15155F3C,0x038,0x14810002,0x14610002,-,-,Compare state three through retail value register,
+generated_182C30,func_15155780,0x044,0xA0600011,0x8FB80028,-,-,Load the incoming key before the initialization stores,,,false
+generated_182C30,func_15155780,0x048,0xAC600014,0x44802000,-,-,Prepare floating zero before the initialization stores,,,false
+generated_182C30,func_15155780,0x04C,0x8FB80028,0xA0600011,-,-,Schedule the state-byte clear after independent value setup,,,false
+generated_182C30,func_15155780,0x050,0x44802000,0xAC600014,-,-,Schedule the link-word clear after independent value setup,,,false
+generated_182C30,func_15155780,0x054,0x240400A6,0xA0780010,-,-,Store the incoming key before the notification argument,,,false
+generated_182C30,func_15155780,0x058,0xA0780010,0xE4640098,-,-,Store floating zero in retail schedule order,,,false
+generated_182C30,func_15155780,0x05C,0xE4640098,0xAFA30024,-,-,Preserve the result pointer before the notification call,,,false
+generated_182C30,func_15155780,0x064,0xAFA30024,0x240400A6,-,-,Set the notification identifier in the call delay slot,,,false
 generated_182C30,func_15155FD4,0x000,0x3C020000,0x3C050000,R_MIPS_HI16:D_800DCE50,R_MIPS_HI16:D_800DCE50,Keep the owner-array address in retail's a1 lifetime,,,false
 generated_182C30,func_15155FD4,0x004,0x3C050000,0x3C020000,R_MIPS_HI16:D_800DD190,R_MIPS_HI16:D_800DD190,Keep the owner-array end in retail's v0 lifetime,,,false
 generated_182C30,func_15155FD4,0x008,0x24420000,0x24420000,R_MIPS_LO16:D_800DCE50,R_MIPS_LO16:D_800DD190,Complete the owner-array end address before the owner base,,,false

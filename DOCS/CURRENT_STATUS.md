@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,988 / 5,465 (54.68%) | 0 | 2,477 |
+| Total | 2,989 / 5,465 (54.69%) | 0 | 2,476 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,413 / 4,789 (50.39%) | 0 | 2,376 |
+| Game | 2,414 / 4,789 (50.41%) | 0 | 2,375 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -171,6 +171,10 @@ global clear naturally occupies the preceding call's delay slot; no guarded
 words are needed.
 `func_10012588` is byte-exact after the clean full regeneration removed its
 stale address-drift classification. No address-drift rows remain.
+`func_15155780` is byte-exact after recovering its six-argument record
+allocation, null return, four field initializers, and notification call. Eight
+guarded words normalize only the independent success-path schedule; see
+[Working Note 485](WORKING_NOTES/485-game-record-allocator-initializer-match-20260929.md).
 
 ## Verified build state
 

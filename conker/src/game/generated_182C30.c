@@ -16,13 +16,27 @@ typedef struct {
 
 extern LookupOwner15155FD4 D_800DCE50[];
 extern LookupOwner15155FD4 D_800DD190[];
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+void func_1518C900(s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/182C30.s. */
 
 s32 func_15155FD4(s32 key);
 
-s32 func_15155780() {
-    return 0;
+void *func_15155780(s32 key, s32 selector) {
+    u8 *record = func_15167A68(0x50, 0, 0xA0, 1, selector, 1);
+
+    if (record == NULL) {
+        return record;
+    }
+
+    record[0x11] = 0;
+    *(s32 *)(record + 0x14) = 0;
+    record[0x10] = key;
+    *(f32 *)(record + 0x98) = 0.0f;
+    func_1518C900(0xA6);
+
+    return record;
 }
 
 s32 func_151557FC() {
