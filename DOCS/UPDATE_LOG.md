@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game reference-counted resource release byte-matched
+
+- `func_1518CA04` now ignores reserved index `0x1E4`, decrements its nonzero
+  byte reference counter, and performs allocation cleanup only when that
+  counter transitions to zero.
+- A short-circuit decrement expression reproduces retail's `v0` pointer,
+  `v1` value lifetime, `0x20` frame, and both cleanup calls directly from C.
+  No expected-word guards are used.
+- The linked and retail 124-byte spans share SHA-256
+  `dfa0b48be60169a821895ce7a48189eff8755b2d682a1497651eaec3aa1b925a`.
+- Totals are **3,011 / 5,463 (55.12%)** overall and
+  **2,433 / 4,789 (50.80%)** in Game, with no address-drift rows. See
+  [Working Note 507](WORKING_NOTES/507-game-reference-counted-resource-release-match-20260929.md).
+
 ### Game byte-selected coefficient clamp byte-matched
 
 - `func_15182F58` now selects a coefficient from a 24-byte row using the

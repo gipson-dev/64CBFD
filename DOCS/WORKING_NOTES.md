@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game coefficient clamp matched).**
-The current linked checkpoint is `3010 / 5463 (55.10%)` exact C functions,
-with no address-drift blockers and 2,453 genuinely different C functions.
+**Active (2026-09-29, Game resource release matched).**
+The current linked checkpoint is `3011 / 5463 (55.12%)` exact C functions,
+with no address-drift blockers and 2,452 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2432 / 4789 (50.78%)` exact, with 2,357 genuinely different C rows. The tree
+`2433 / 4789 (50.80%)` exact, with 2,356 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -298,6 +298,14 @@ multiplies it by the integer-scaled input, and clamps the result to the
 inclusive zero-to-39 range. Expressing the upper clamp as the lower clamp's
 `else if` restores retail's early lower-bound exit without guards. See
 [Working Note 506](WORKING_NOTES/506-game-byte-selected-coefficient-clamp-match-20260929.md).
+
+Game `func_1518CA04` now matches its complete 31-word tracked slot directly
+from C. The recovered routine ignores reserved index `0x1E4`, decrements the
+nonzero byte counter at `D_800DF7D0[arg0]`, and releases the associated
+allocation and retags its payload only when the counter transitions to zero.
+The short-circuit decrement expression restores retail's frame and pointer
+lifetimes without guards. See
+[Working Note 507](WORKING_NOTES/507-game-reference-counted-resource-release-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
