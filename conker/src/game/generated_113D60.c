@@ -1,5 +1,7 @@
 #include <ultra64.h>
 extern s32 D_800D9A20[];
+void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
+                    u8 arg5, s32 arg6, u8 arg7, s32 arg8);
 
 /* Non-matching placeholders for the text-only asm slice asm/113D60.s. */
 
@@ -76,8 +78,15 @@ s32 func_150E8824(u8 *arg0, u8 arg1) {
     return 1;
 }
 
-s32 func_150E8854() {
-    return 0;
+void func_150E8854(void) {
+    f32 payload;
+    void *result;
+
+    payload = 10.0f;
+    result = func_15149130(0x12C, -1, 0x35, -1, 0, 0, 4, 0xFF, 1);
+    if (result != 0) {
+        memcpy((u8 *) result + 0x28, &payload, 4);
+    }
 }
 
 s32 func_150E88C0() {

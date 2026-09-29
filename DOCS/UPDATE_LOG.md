@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game float event-payload wrapper byte-matched
+
+- Replaced `func_150E8854`'s zero-return placeholder with its event allocation,
+  successful-allocation gate, and four-byte `10.0f` payload copy.
+- Semantic C emits 25 of 27 words directly. Two expected-word guards move the
+  local payload and its `memcpy` source address from IDO's `sp+0x34` choice to
+  retail's equivalent `sp+0x30` slot.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `1e7751de0c93b1888850f728df5f0b90a89bcaa36e83dbabbfbaa07772aa5503`.
+  Fresh totals are **2,914 / 5,466 (53.31%)** overall and
+  **2,340 / 4,790 (48.85%)** in Game. See
+  [Working Note 412](WORKING_NOTES/412-game-float-event-payload-match-20260928.md).
+
 ### Game single-byte allocation payload wrapper byte-matched
 
 - Recovered `func_150D0134`'s narrow wrapper arguments and the shared

@@ -1818,3 +1818,5 @@ generated_CD5A0,func_150A0264,0x054,0x00047080,0x000E7880,-,-,Scale the source f
 generated_CD5A0,func_150A0264,0x058,0x31CF003C,0x31F8003C,-,-,Mask the source field through retail's t7 and t8 lifetimes,,,false
 generated_CD5A0,func_150A0264,0x05C,0x01AFC025,0x03084825,-,-,Merge the packed fields through retail's t8 t0 and t1 lifetimes,,,false
 generated_CD5A0,func_150A0264,0x060,0xA0780000,0xA0690000,-,-,Store the merged status through retail's t1 lifetime,,,false
+generated_113D60,func_150E8854,0x044,0xE7A40034,0xE7A40030,-,-,Place the four-byte payload in retail's lower local stack word,,,false
+generated_113D60,func_150E8854,0x050,0x27A50034,0x27A50030,-,-,Pass retail's lower local payload address to memcpy,,,false

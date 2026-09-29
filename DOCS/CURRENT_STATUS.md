@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,913 / 5,466 (53.29%) | 1 | 2,552 |
+| Total | 2,914 / 5,466 (53.31%) | 1 | 2,551 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,339 / 4,790 (48.83%) | 0 | 2,451 |
+| Game | 2,340 / 4,790 (48.85%) | 0 | 2,450 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -969,9 +969,15 @@ end-to-end gameplay acceptance.
    allocator signature, and eight-byte local payload buffer. All words emit
    directly from C with no guards; see
    [Working Note 411](WORKING_NOTES/411-game-single-byte-allocation-payload-match-20260928.md).
+   The adjacent 27-word float event-payload wrapper `func_150E8854` is now
+   byte-exact after recovering its event-allocation arguments, `10.0f`
+   payload, successful-allocation gate, and four-byte payload copy. Semantic C
+   emits 25 of 27 words directly; two expected-word guards preserve retail's
+   lower local stack slot. See
+   [Working Note 412](WORKING_NOTES/412-game-float-event-payload-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 27-word Game `func_150E8854`, at 26 real
+   with ordinary unparked 28-word Game `func_150E88C0`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

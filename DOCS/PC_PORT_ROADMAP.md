@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,913 / 5,466 (53.29%) | 1 | 2,552 |
+| Total | 5,466 / 6,041 (90.48%) | 2,914 / 5,466 (53.31%) | 1 | 2,551 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,339 / 4,790 (48.83%) | 0 | 2,451 |
+| Game | 4,790 / 5,321 (90.02%) | 2,340 / 4,790 (48.85%) | 0 | 2,450 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1268,6 +1268,12 @@ allocator signature, and eight-byte local payload buffer. All words emit
 directly from C with no guards. This remains guest-side donor/reference
 progress; see
 [Working Note 411](WORKING_NOTES/411-game-single-byte-allocation-payload-match-20260928.md).
+The adjacent 27-word Game float event-payload wrapper `func_150E8854` is
+byte-exact after recovering its event-allocation arguments, `10.0f` payload,
+successful-allocation gate, and four-byte copy into the allocated record.
+Semantic C emits 25 words directly; two expected-word guards preserve retail's
+lower local stack slot. This remains guest-side donor/reference progress; see
+[Working Note 412](WORKING_NOTES/412-game-float-event-payload-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
