@@ -2165,3 +2165,21 @@ generated_6CCB0,func_1503F964,0x064,0x24630001,0x24840001,-,-,Advance retail's a
 generated_6CCB0,func_1503F964,0x068,0x28610019,0x28810019,-,-,Retest the scan bound through retail's a0 lifetime,,,false
 generated_6CCB0,func_1503F964,0x074,0x00001825,0x00002025,-,-,Wrap the continuing scan through retail's a0 lifetime,,,false
 generated_6CCB0,func_1503F964,0x078,0x1462FFF1,0x1482FFF1,-,-,Continue the cycle from retail's a0 lifetime,,,false
+game_1944C0,func_15168F08,0x004,0x2408FFDF,0x2407FFDF,-,-,Keep the command terminator in retail's a3 lifetime,,,false
+game_1944C0,func_15168F08,0x014,0x110E0017,0x10EE0017,-,-,Test the opening opcode against retail's a3 terminator,,,false
+game_1944C0,func_15168F08,0x018,0x3C0C00FF,0x3C0B00FF,-,-,Materialize the command-address mask through retail's t3 lifetime,,,false
+game_1944C0,func_15168F08,0x020,0x358CFFFF,0x356BFFFF,-,-,Complete the command-address mask through retail's t3 lifetime,,,false
+game_1944C0,func_15168F08,0x024,0x240B000E,0x240A000E,-,-,Keep the secondary command byte in retail's t2 lifetime,,,false
+game_1944C0,func_15168F08,0x028,0x240AFFDC,0x2409FFDC,-,-,Keep the extended command opcode in retail's t1 lifetime,,,false
+game_1944C0,func_15168F08,0x02C,0x24090001,0x24080001,-,-,Keep the direct command opcode in retail's t0 lifetime,,,false
+game_1944C0,func_15168F08,0x030,0x10A90006,0x11050006,-,-,Compare the direct opcode using retail's t0 and a1 operands,,,false
+game_1944C0,func_15168F08,0x038,0x54AA000A,0x5525000A,-,-,Compare the extended opcode using retail's t1 and a1 operands,,,false
+game_1944C0,func_15168F08,0x03C,0x000278C0,0x000270C0,-,-,Scale the command index through retail's t6 lifetime,,,false
+game_1944C0,func_15168F08,0x044,0x556F0007,0x554F0007,-,-,Compare the secondary byte from retail's t2 lifetime,,,false
+game_1944C0,func_15168F08,0x048,0x000278C0,0x000270C0,-,-,Scale the command index through retail's t6 branch-delay lifetime,,,false
+game_1944C0,func_15168F08,0x050,0x030CC824,0x030BC824,-,-,Apply the address mask from retail's t3 lifetime,,,false
+game_1944C0,func_15168F08,0x058,0x03267021,0x03266821,-,-,Add the relocation base through retail's t5 lifetime,,,false
+game_1944C0,func_15168F08,0x05C,0xAC6E0004,0xAC6D0004,-,-,Store the relocated word from retail's t5 lifetime,,,false
+game_1944C0,func_15168F08,0x060,0x000278C0,0x000270C0,-,-,Scale the next command index through retail's t6 lifetime,,,false
+game_1944C0,func_15168F08,0x064,0x01E41821,0x01C41821,-,-,Advance the command cursor from retail's t6 lifetime,,,false
+game_1944C0,func_15168F08,0x06C,0x14A8FFF0,0x14E5FFF0,-,-,Test the loop opcode against retail's a3 terminator,,,false

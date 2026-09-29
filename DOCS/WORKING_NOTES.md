@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game group-value appender matched).**
-The current linked checkpoint is `3007 / 5463 (55.04%)` exact C functions,
-with no address-drift blockers and 2,456 genuinely different C functions.
+**Active (2026-09-29, Game display-list relocator matched).**
+The current linked checkpoint is `3008 / 5463 (55.06%)` exact C functions,
+with no address-drift blockers and 2,455 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2429 / 4789 (50.72%)` exact, with 2,360 genuinely different C rows. The tree
+`2430 / 4789 (50.74%)` exact, with 2,359 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -276,6 +276,13 @@ and increments the row's byte count only for a new value. Its integer value
 ABI and separate signed loop bound reproduce the retail register lifetimes
 without guards. See
 [Working Note 503](WORKING_NOTES/503-game-group-value-deduplicating-append-match-20260929.md).
+
+Game `func_15168F08` now matches all 31 retail words. Signed and volatile
+opcode reads restore retail's command parsing, while an explicit index and
+two-step mask/add update restore its cursor and memory-write behavior.
+Eighteen stale checks normalize one closed constant/cursor allocation chain.
+See
+[Working Note 504](WORKING_NOTES/504-game-display-list-address-relocator-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

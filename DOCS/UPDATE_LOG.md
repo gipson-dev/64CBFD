@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game display-list address relocator byte-matched
+
+- `func_15168F08` now walks eight-byte display-list commands using signed
+  opcodes and relocates the 24-bit address in opcode `1` and qualifying opcode
+  `0xDC` commands.
+- Explicit index-based cursor updates, volatile opcode reloads, and separate
+  mask/add stores restore retail's complete control flow and memory traffic.
+  Eighteen stale checks normalize one closed register-allocation chain.
+- The linked and retail 124-byte spans share SHA-256
+  `87b6edb1eaa07348ff987b92fadfd41fe157af7bb3bd4bd60ee33b3b46bc764f`.
+- Totals are **3,008 / 5,463 (55.06%)** overall and
+  **2,430 / 4,789 (50.74%)** in Game, with no address-drift rows. See
+  [Working Note 504](WORKING_NOTES/504-game-display-list-address-relocator-match-20260929.md).
+
 ### Game group-value deduplicating append byte-matched
 
 - `func_15022640` now searches the populated prefix of a 30-byte per-group
