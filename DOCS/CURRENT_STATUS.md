@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,979 / 5,465 (54.51%) | 0 | 2,486 |
+| Total | 2,980 / 5,465 (54.53%) | 0 | 2,485 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,404 / 4,789 (50.20%) | 0 | 2,385 |
+| Game | 2,405 / 4,789 (50.22%) | 0 | 2,384 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1298,10 +1298,17 @@ end-to-end gameplay acceptance.
    drift classification on unchanged Init routine `func_10012588`; every
    section now has zero drift rows. See
    [Working Note 476](WORKING_NOTES/476-game-audio-dma-prefetch-wrapper-match-20260929.md).
+   The 31-word float-state scaler `func_151339D4` is now byte-exact directly
+   from C after recovering its accumulated position field and six scaled
+   float fields. See
+   [Working Note 477](WORKING_NOTES/477-game-float-state-scaler-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented
-   parked compiler-scheduling cases.
+   parked compiler-scheduling cases. Keep `func_15015F40` parked until its
+   unresolved 38-entry indirect table has authoritative ownership, and keep
+   handwritten register-contract fragment `func_150A76F0` in the raw-assembly
+   workstream.
    Keep `func_15194320` and `func_15194394` parked behind generated-slice
    jump-table/rodata ownership rather than introducing unresolved switches.
    Keep the documented lower-difference compiler cases parked. The tied Init

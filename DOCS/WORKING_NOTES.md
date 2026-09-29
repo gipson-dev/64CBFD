@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game audio DMA prefetch wrapper matched).**
-The current linked checkpoint is `2979 / 5465 (54.51%)` exact C functions,
-with no address-drift blockers and 2,486 genuinely different C functions.
+**Active (2026-09-29, Game float-state scaler matched).**
+The current linked checkpoint is `2980 / 5465 (54.53%)` exact C functions,
+with no address-drift blockers and 2,485 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2404 / 4789 (50.20%)` exact, with 2,385 genuinely different C rows. The tree
+`2405 / 4789 (50.22%)` exact, with 2,384 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -108,6 +108,15 @@ Start subsequent byte-matching or conversion work in a new focused commit.
 also cleared the stale Init drift classification for unchanged
 `func_10012588`. See
 [Working Note 476](WORKING_NOTES/476-game-audio-dma-prefetch-wrapper-match-20260929.md).
+
+`func_151339D4` now matches all 31 retail words directly from C. The recovered
+body accumulates the incoming float into field `0x3C`, then scales fields
+`0x44..0x58`, negating the scale only for field `0x48`. See
+[Working Note 477](WORKING_NOTES/477-game-float-state-scaler-match-20260929.md).
+
+Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
+ownership. Keep handwritten live-register fragment `func_150A76F0` in the
+raw-assembly queue rather than modeling it as an ordinary C ABI.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

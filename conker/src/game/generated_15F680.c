@@ -100,8 +100,18 @@ s32 func_15133760(u8 *arg0, u8 *arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_15133894.s")
 
-s32 func_151339D4() {
-    return 0;
+s32 func_151339D4(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4) {
+    f32 scale;
+
+    *(f32 *)(arg0 + 0x3C) = *(f32 *)(arg0 + 0x10) + arg4;
+    scale = *(f32 *)(arg0 + 0x14);
+    *(f32 *)(arg0 + 0x44) *= scale;
+    *(f32 *)(arg0 + 0x48) *= -scale;
+    *(f32 *)(arg0 + 0x4C) *= scale;
+    *(f32 *)(arg0 + 0x50) *= scale;
+    *(f32 *)(arg0 + 0x54) *= scale;
+    *(f32 *)(arg0 + 0x58) *= scale;
+    return 1;
 }
 
 s32 func_15133A50(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4) {

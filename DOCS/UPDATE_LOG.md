@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game float-state scaler byte-matched
+
+- Replaced `func_151339D4`'s zero-return placeholder with its recovered
+  position accumulation and six float-field scaling updates.
+- All 31 words emit directly from semantic C with no expected-word guards.
+  Separating the scale declaration from its assignment preserves retail's
+  opening field/stack load order and later return-value schedule.
+- The linked and retail 124-byte spans share SHA-256
+  `7737373cb0aeb0a501b6af28c2e958084f14fbdc979e25e1ab83a2fe14f45c65`.
+- Totals are **2,980 / 5,465 (54.53%)** overall and **2,405 / 4,789
+  (50.22%)** in Game, with no address-drift rows. See
+  [Working Note 477](WORKING_NOTES/477-game-float-state-scaler-match-20260929.md).
+
 ### Game audio DMA prefetch wrapper byte-matched
 
 - Replaced `func_151F3D78`'s zero-return placeholder with its recovered DMA
