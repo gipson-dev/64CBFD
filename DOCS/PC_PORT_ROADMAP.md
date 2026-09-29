@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,962 / 5,465 (54.20%) | 1 | 2,502 |
+| Total | 5,465 / 6,041 (90.47%) | 2,963 / 5,465 (54.22%) | 1 | 2,501 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,388 / 4,789 (49.86%) | 0 | 2,401 |
+| Game | 4,789 / 5,321 (90.00%) | 2,389 / 4,789 (49.89%) | 0 | 2,400 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1543,6 +1543,11 @@ The 29-word Game zero-payload record dispatcher `func_1514DAA4` is now
 byte-exact from semantic C plus two guarded independent scheduling words
 around its allocator call. This remains guest-side donor/reference progress;
 see [Working Note 460](WORKING_NOTES/460-game-zero-payload-record-dispatch-match-20260929.md).
+The 17-word Game packed-byte submission wrapper `func_150721A4` is now
+byte-exact from its existing semantic C after extending ordinary-object
+padding to honor guarded contraction before overflow placement. This remains
+guest-side donor/reference progress; see
+[Working Note 461](WORKING_NOTES/461-game-packed-byte-submission-wrapper-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

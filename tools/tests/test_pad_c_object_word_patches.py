@@ -15,6 +15,80 @@ from pad_generated_object import parse_object
 
 
 class WordPatchRelocationTests(unittest.TestCase):
+    def test_guarded_words_can_contract_oversized_function(self):
+        if not shutil.which("mips-linux-gnu-as"):
+            self.skipTest("mips-linux-gnu-as required")
+
+        with tempfile.TemporaryDirectory() as temp_name:
+            work = Path(temp_name)
+            (work / "compact.s").write_text(
+                """
+.section .text,"ax"
+.set noreorder
+.globl sample
+.type sample,@function
+sample:
+addiu $a0,$a0,1
+move $a1,$a0
+jr $ra
+nop
+.size sample,.-sample
+"""
+            )
+            (work / "layout.csv").write_text(
+                "version,section,filename,function,address,end\n"
+                "us,game,fixture,sample,0x15000000,0x1500000C\n"
+            )
+            (work / "patches.csv").write_text(
+                "filename,function,offset,expected,replacement,"
+                "expected_relocations,replacement_relocations,note,"
+                "insert_after,insert_after_relocations,omit\n"
+                "fixture,sample,0x4,0x00802825,0x00000000,-,-,"
+                "omit redundant move,,,true\n"
+            )
+
+            subprocess.run(
+                [
+                    "mips-linux-gnu-as",
+                    "-EB",
+                    "-march=vr4300",
+                    "-o",
+                    "compact.o",
+                    "compact.s",
+                ],
+                cwd=work,
+                check=True,
+                capture_output=True,
+            )
+            padded = emit_padded_assembly(
+                work / "compact.o",
+                work / "layout.csv",
+                "fixture",
+                word_patches_path=work / "patches.csv",
+            )
+            (work / "padded.s").write_text(padded)
+            subprocess.run(
+                [
+                    "mips-linux-gnu-as",
+                    "-EB",
+                    "-march=vr4300",
+                    "-o",
+                    "padded.o",
+                    "padded.s",
+                ],
+                cwd=work,
+                check=True,
+                capture_output=True,
+            )
+
+            text, functions, relocations = parse_object(work / "padded.o")
+            start = functions["sample"]["value"]
+            self.assertEqual(functions["sample"]["size"], 0xC)
+            self.assertEqual(struct.unpack_from(">I", text, start)[0], 0x24840001)
+            self.assertEqual(struct.unpack_from(">I", text, start + 4)[0], 0x03E00008)
+            self.assertNotIn("__retail_overflow_sample", functions)
+            self.assertFalse(relocations)
+
     def test_guarded_words_can_replace_overflow_trampoline(self):
         if not shutil.which("mips-linux-gnu-as"):
             self.skipTest("mips-linux-gnu-as required")

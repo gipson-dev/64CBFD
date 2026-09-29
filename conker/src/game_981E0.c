@@ -1550,15 +1550,9 @@ void func_15071FB0(void) {
 s32 func_15071FDC() {
     return 0;
 }
-// NON-MATCHING (logic verified): retail computes both shift subexpressions
-// into temps (t6=v>>8 before t7=v>>16, LIFO order) and masks directly into
-// the arg registers with no moves, keeping the loaded global in v1; our cfe
-// stages the shifts in the arg registers and fixes up via temps+moves (2
-// extra words). Tried: explicit &0xFF vs (u8) casts, u8 vs s32 prototype
-// params, named locals for both globals - all compile byte-identically.
-// This small wrapper is 3 words oversized in direct C because IDO stages the
-// bitfield args through extra moves. Retail keeps
-// D_800D1580 in v1 and masks directly into the call registers.
+// IDO stages the packed-byte arguments through three redundant register
+// moves. Guarded word normalization removes those moves and preserves retail's
+// equivalent direct masks and call schedule.
 void func_150721A4(void) {
     func_1506160C(D_800D154C, (D_800D1580 >> 0x10) & 0xFF, D_800D1580 & 0xFF, (D_800D1580 >> 8) & 0xFF, 0);
 }

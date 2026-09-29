@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,962 / 5,465 (54.20%) | 1 | 2,502 |
+| Total | 2,963 / 5,465 (54.22%) | 1 | 2,501 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,388 / 4,789 (49.86%) | 0 | 2,401 |
+| Game | 2,389 / 4,789 (49.89%) | 0 | 2,400 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1230,10 +1230,16 @@ end-to-end gameplay acceptance.
    preserve only the independent payload-size and retained-object spill
    schedule around the allocator call. See
    [Working Note 460](WORKING_NOTES/460-game-zero-payload-record-dispatch-match-20260929.md).
+   The 17-word packed-byte submission wrapper `func_150721A4` is now
+   byte-exact. Ordinary-object padding now honors guarded omission before its
+   overflow decision, allowing three redundant IDO moves to be removed; nine
+   guarded words preserve retail's equivalent register lifetimes and call
+   schedule. See
+   [Working Note 461](WORKING_NOTES/461-game-packed-byte-submission-wrapper-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with the fresh ordinary Game queue, beginning with 17-word
-   `func_150721A4` at 16 real differences.
+   with ordinary 31-word Game `func_1515B994`, at 28 real differences, after
+   the already documented parked compiler-scheduling cases.
    Keep `func_15194320` and `func_15194394` parked behind generated-slice
    jump-table/rodata ownership rather than introducing unresolved switches.
    Keep the documented lower-difference compiler cases parked,

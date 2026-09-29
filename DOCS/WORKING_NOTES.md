@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game zero-payload record dispatcher matched).**
-The current linked checkpoint is `2962 / 5465 (54.20%)` exact C functions,
-with one address-drift blocker and 2,502 genuinely different C functions.
+**Active (2026-09-29, Game packed-byte submission wrapper matched).**
+The current linked checkpoint is `2963 / 5465 (54.22%)` exact C functions,
+with one address-drift blocker and 2,501 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2388 / 4789 (49.86%)` exact, with 2,401 genuinely different C rows. The tree
+`2389 / 4789 (49.89%)` exact, with 2,400 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1545,9 +1545,15 @@ The 29-word zero-payload record dispatcher `func_1514DAA4` now matches from
 semantic C plus two fail-closed scheduling guards after recovering its object
 flag update, zero payload, allocation, copy, and event-`0x13` dispatch. See
 [Working Note 460](WORKING_NOTES/460-game-zero-payload-record-dispatch-match-20260929.md).
+The 17-word packed-byte submission wrapper `func_150721A4` now matches from
+its semantic C body after ordinary-object padding gained guarded contraction
+before overflow placement. Three redundant moves are omitted and nine guarded
+words reproduce retail's equivalent register allocation and call schedule.
+See [Working Note 461](WORKING_NOTES/461-game-packed-byte-submission-wrapper-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary 17-word Game
-`func_150721A4`, at 16 real differences.
+experiments were removed. Resume with ordinary 31-word Game
+`func_1515B994`, at 28 real differences, after the documented parked compiler
+cases.
 Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the

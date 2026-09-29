@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game packed-byte submission wrapper byte-matched
+
+- Completed `func_150721A4`, which splits `D_800D1580` into high, low, and
+  middle bytes and submits them with the current object to `func_1506160C`.
+- Extended `pad_c_object.py` to honor guarded word omission before deciding
+  that an ordinary C function needs an overflow trampoline. A focused unit
+  test covers contraction of an otherwise oversized function.
+- Three guarded omissions remove redundant IDO moves; nine guarded
+  replacements preserve retail's equivalent register allocation and call
+  schedule. The linked and pristine retail 68-byte spans share SHA-256
+  `23364d3eb1884f0df6cef21145f9029869c884555332de80fb722d6d2d36a2a0`.
+- Totals are **2,963 / 5,465 (54.22%)** overall and **2,389 / 4,789
+  (49.89%)** in Game. See
+  [Working Note 461](WORKING_NOTES/461-game-packed-byte-submission-wrapper-match-20260929.md).
+
 ### Game zero-payload record dispatcher byte-matched
 
 - Replaced `func_1514DAA4`'s zero-return placeholder with its recovered object

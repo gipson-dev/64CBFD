@@ -1918,3 +1918,13 @@ generated_AEB40,func_15084C30,0x06C,0x46105280,0x460A0000,-,-,Apply the unsigned
 generated_AEB40,func_15084C30,0x070,0xE48A0008,0xE4600008,-,-,Store the corrected f0 result through the retained record pointer,,,false
 generated_179F30,func_1514DAA4,0x028,0xAFA70028,0x24060008,-,-,Load the payload size before the allocator call,,,false
 generated_179F30,func_1514DAA4,0x030,0x24060008,0xAFA70028,-,-,Spill the retained object in the allocator delay slot,,,false
+game_981E0,func_150721A4,0x00C,0x8C420000,0x8C430000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Keep the packed global in retail's v1 lifetime,,,false
+game_981E0,func_150721A4,0x018,0x00022C03,0x00037203,-,-,Extract the middle byte first through retail's t6 lifetime,,,false
+game_981E0,func_150721A4,0x01C,0x00403025,0x00000000,-,-,Omit the redundant packed-value copy to a2,,,true
+game_981E0,func_150721A4,0x020,0x30CF00FF,0x00037C03,-,-,Extract the high byte through retail's t7 lifetime,,,false
+game_981E0,func_150721A4,0x024,0x30AE00FF,0x31E500FF,-,-,Mask the high byte directly into a1,,,false
+game_981E0,func_150721A4,0x028,0x0002C203,0x31C700FF,-,-,Mask the middle byte directly into a3,,,false
+game_981E0,func_150721A4,0x02C,0x330700FF,0xAFA00010,-,-,Stage the zero fifth argument before the call,,,false
+game_981E0,func_150721A4,0x030,0x01C02825,0x00000000,-,-,Omit the redundant high-byte move to a1,,,true
+game_981E0,func_150721A4,0x034,0x01E03025,0x00000000,-,-,Omit the redundant low-byte move to a2,,,true
+game_981E0,func_150721A4,0x03C,0xAFA00010,0x306600FF,-,-,Mask the low byte into the call delay slot,,,false
