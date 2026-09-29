@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game five-state impact dispatcher byte-matched
+
+- `func_15194794` now performs both unconditional setup calls and dispatches
+  `func_151AF270` when state byte `arg1[4]` is in the range zero through four.
+- The grouped switch reproduces retail's complete 31-word control flow. Two
+  relocation-aware stale checks retarget its generated jump-table load to
+  retained retail symbol `jtbl_800A82BC_game`; no words are added or removed.
+- The linked and retail 124-byte spans share SHA-256
+  `dcbbb3f61a3783037fa53380faa1f99774cc4caa431b8c30b6883f8c390b16e7`.
+- Totals are **3,012 / 5,463 (55.13%)** overall and
+  **2,434 / 4,789 (50.82%)** in Game, with no address-drift rows. See
+  [Working Note 508](WORKING_NOTES/508-game-five-state-impact-dispatch-match-20260929.md).
+
 ### Game reference-counted resource release byte-matched
 
 - `func_1518CA04` now ignores reserved index `0x1E4`, decrements its nonzero

@@ -70,6 +70,18 @@ s32 func_151945CC() {
 }
 
 void func_15194794(u8 *arg0, u8 *arg1, s32 arg2) {
+    func_151B01B8(arg0, arg1);
+    func_151B09BC(arg0, arg1, 0x3E8, 0xFF, 0);
+
+    switch (arg1[4]) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+        func_151AF270(arg1, 0xFF, 1);
+        break;
+    }
 }
 
 s32 func_15194810() {

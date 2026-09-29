@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,011 / 5,463 (55.12%) | 0 | 2,452 |
+| Total | 5,463 / 6,041 (90.43%) | 3,012 / 5,463 (55.13%) | 0 | 2,451 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,433 / 4,789 (50.80%) | 0 | 2,356 |
+| Game | 4,789 / 5,321 (90.00%) | 2,434 / 4,789 (50.82%) | 0 | 2,355 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -114,6 +114,10 @@ The Game reference-counted resource release `func_1518CA04` now matches its
 complete 124-byte tracked span directly from C after restoring the reserved
 index gate, byte-counter transition, and two cleanup calls; see
 [Working Note 507](WORKING_NOTES/507-game-reference-counted-resource-release-match-20260929.md).
+The Game five-state impact dispatcher `func_15194794` now matches its complete
+124-byte span after restoring two setup calls and its grouped switch. Two
+relocation-aware guards preserve retail's retained jump-table ownership; see
+[Working Note 508](WORKING_NOTES/508-game-five-state-impact-dispatch-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

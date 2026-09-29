@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,011 / 5,463 (55.12%) | 0 | 2,452 |
+| Total | 3,012 / 5,463 (55.13%) | 0 | 2,451 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,433 / 4,789 (50.80%) | 0 | 2,356 |
+| Game | 2,434 / 4,789 (50.82%) | 0 | 2,355 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -272,6 +272,11 @@ its complete 31-word tracked slot after recovering its reserved-index gate,
 short-circuit byte decrement, and two cleanup calls. It emits directly from C
 with no guards; see
 [Working Note 507](WORKING_NOTES/507-game-reference-counted-resource-release-match-20260929.md).
+Game five-state impact dispatcher `func_15194794` is byte-exact across all 31
+words after recovering its two unconditional setup calls and grouped state
+switch. Two relocation-aware stale checks retarget only the generated jump
+table reference to the retained retail table; see
+[Working Note 508](WORKING_NOTES/508-game-five-state-impact-dispatch-match-20260929.md).
 
 ## Verified build state
 
@@ -594,9 +599,10 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_1518CA04`, whose complete 31-word reference-counted
-   resource release now matches directly from C. Continue with 31-word
-   `func_15194794`, the next ordinary Game C row with 29 real differences.
+   advanced through `func_15194794`, whose complete 31-word five-state impact
+   dispatch now matches from recovered C plus two retained-jump-table
+   relocation guards. Continue with 32-word `func_151DDBA0`, the next
+   ordinary Game candidate.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

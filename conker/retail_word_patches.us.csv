@@ -2189,3 +2189,5 @@ generated_1A7260,func_1517A9A8,0x034,0x0006C200,0xAFA80020,-,-,Store the final c
 generated_1A7260,func_1517A9A8,0x038,0x03003025,0xAFB9001C,-,-,Store the penultimate constant in retail's argument schedule,,,false
 generated_1A7260,func_1517A9A8,0x03C,0xAFA80020,0x03003025,-,-,Move the shifted selector into retail's third argument register,,,false
 generated_1A7260,func_1517A9A8,0x040,0xAFB9001C,0x27A70034,-,-,Form the output-record address at retail's fourth argument point,,,false
+generated_1C1150,func_15194794,0x04C,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A82BC_game,Retarget the dispatch table to retail's retained table ownership,,,false
+generated_1C1150,func_15194794,0x054,0x8C2E0028,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A82BC_game,Load the dispatch target from retail's retained table ownership,,,false
