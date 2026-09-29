@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game signed XZ coordinate query byte-matched
+
+- Replaced `func_15045714`'s zero-return placeholder with its query-mode
+  selection, signed X/Z coordinate conversion, and result store.
+- The routine truncates position floats at offsets `0` and `8`, narrows both
+  to signed 16-bit coordinates, and forwards them with the context and
+  unsigned selector to `func_150A6500`.
+- Twenty-four of 27 words emit directly from semantic C. Three expected-word
+  guards normalize only the closed `v1`/`v0` position-pointer allocation
+  cycle. Direct comparison matches all 108 linked bytes with SHA-256
+  `84efd8a61af7f41170600c4e2a234589aa9723e0da7953b036a48ac0b383bb43`.
+  Fresh totals are **2,929 / 5,466 (53.59%)** overall and
+  **2,355 / 4,790 (49.16%)** in Game. See
+  [Working Note 427](WORKING_NOTES/427-game-signed-xz-coordinate-query-match-20260928.md).
+
 ### Game gated active-object scan byte-matched
 
 - Replaced `func_150347E8`'s zero-return placeholder with its global disable

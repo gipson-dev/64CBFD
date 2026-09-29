@@ -21,6 +21,9 @@ generated_71820,func_15044CE4,0x38,0x0001C943,0x00014143,-,-,Keep the corrected 
 generated_71820,func_15044CE4,0x3C,0xA4990010,0xA4880010,-,-,Store the first scale from the retail quotient lifetime,,,false
 generated_71820,func_15044CE4,0x40,0xA4990012,0xA4880012,-,-,Store the second scale from the retail quotient lifetime,,,false
 generated_71820,func_15044CE4,0x48,0xA4990014,0xA4880014,-,-,Store the third scale from the retail quotient lifetime,,,false
+generated_71820,func_15045714,0x20,0x8FA30018,0x8FA20018,-,-,Reload the position pointer through retail's v0 lifetime,,,false
+generated_71820,func_15045714,0x2C,0xC4640000,0xC4440000,-,-,Read the X coordinate through retail's v0 pointer lifetime,,,false
+generated_71820,func_15045714,0x30,0xC4680008,0xC4480008,-,-,Read the Z coordinate through retail's v0 pointer lifetime,,,false
 generated_B3020,func_1508855C,0x00,0x3C020000,0x3C030000,R_MIPS_HI16:D_800872A0,R_MIPS_HI16:D_800872A0,Keep the record-table base in retail's v1 lifetime,,,false
 generated_B3020,func_1508855C,0x04,0x8C420000,0x8C630000,R_MIPS_LO16:D_800872A0,R_MIPS_LO16:D_800872A0,Complete the table load through retail's v1 lifetime,,,false
 generated_B3020,func_1508855C,0x10,0x14400003,0x14600003,-,-,Test the table through retail's v1 lifetime,,,false

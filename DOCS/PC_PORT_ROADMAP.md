@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,928 / 5,466 (53.57%) | 1 | 2,537 |
+| Total | 5,466 / 6,041 (90.48%) | 2,929 / 5,466 (53.59%) | 1 | 2,536 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,354 / 4,790 (49.14%) | 0 | 2,436 |
+| Game | 4,790 / 5,321 (90.02%) | 2,355 / 4,790 (49.16%) | 0 | 2,435 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1359,6 +1359,13 @@ checks, and per-record dispatch. Scoping the end pointer inside the gate
 reproduces retail's opening address schedule; all words emit directly with no
 guards. This remains guest-side donor/reference progress; see
 [Working Note 426](WORKING_NOTES/426-game-gated-active-object-scan-match-20260928.md).
+The 27-word Game signed XZ coordinate-query wrapper `func_15045714` is
+byte-exact after recovering its mode selection, float truncation, signed-16
+coordinate narrowing, selector forwarding, and output store. Twenty-four
+words emit directly from semantic C; three guards normalize one closed
+position-pointer register cycle. This remains guest-side donor/reference
+progress; see
+[Working Note 427](WORKING_NOTES/427-game-signed-xz-coordinate-query-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

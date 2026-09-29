@@ -125,8 +125,9 @@ s32 func_1504554C() {
     return 0;
 }
 
-s32 func_15045714() {
-    return 0;
+void func_15045714(f32 *position, u16 selector, s32 *result, s32 context) {
+    func_1510F800(2);
+    *result = func_150A6500((s16)position[0], (s16)position[2], context, selector);
 }
 
 /* Note 313: original ROM implementation, retained as assembly until C conversion. */

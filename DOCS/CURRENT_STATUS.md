@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,928 / 5,466 (53.57%) | 1 | 2,537 |
+| Total | 2,929 / 5,466 (53.59%) | 1 | 2,536 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,354 / 4,790 (49.14%) | 0 | 2,436 |
+| Game | 2,355 / 4,790 (49.16%) | 0 | 2,435 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1057,9 +1057,15 @@ end-to-end gameplay acceptance.
    Scoping the end pointer inside the gate reproduces retail's opening address
    schedule; all words emit directly with no guards. See
    [Working Note 426](WORKING_NOTES/426-game-gated-active-object-scan-match-20260928.md).
+   The 27-word signed XZ coordinate-query wrapper `func_15045714` is now
+   byte-exact after recovering its query-mode selection, float truncation,
+   signed-16 coordinate narrowing, selector forwarding, and output store.
+   Twenty-four words emit directly from semantic C; three expected-word
+   guards normalize one closed position-pointer register cycle. See
+   [Working Note 427](WORKING_NOTES/427-game-signed-xz-coordinate-query-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 27-word Game `func_15045714`, at 27 real
+   with ordinary unparked 30-word Game `func_15049C40`, at 27 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`
