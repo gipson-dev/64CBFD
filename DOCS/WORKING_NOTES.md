@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game actor-slot selector matched).**
-The current linked checkpoint is `3006 / 5463 (55.02%)` exact C functions,
-with no address-drift blockers and 2,457 genuinely different C functions.
+**Active (2026-09-29, Game group-value appender matched).**
+The current linked checkpoint is `3007 / 5463 (55.04%)` exact C functions,
+with no address-drift blockers and 2,456 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2428 / 4789 (50.70%)` exact, with 2,361 genuinely different C rows. The tree
+`2429 / 4789 (50.72%)` exact, with 2,360 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -269,6 +269,13 @@ restores its enable gate and wrapped 25-slot actor scan. Fourteen
 relocation-aware stale checks normalize only the closed `a0`/`v1` scan-index
 and actor-table-base allocation cycle. See
 [Working Note 502](WORKING_NOTES/502-game-actor-slot-selector-match-20260929.md).
+
+Game `func_15022640` now matches all 31 retail words directly from C. The
+recovered routine deduplicates values in a 30-byte group row before appending,
+and increments the row's byte count only for a new value. Its integer value
+ABI and separate signed loop bound reproduce the retail register lifetimes
+without guards. See
+[Working Note 503](WORKING_NOTES/503-game-group-value-deduplicating-append-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

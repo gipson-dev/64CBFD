@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,006 / 5,463 (55.02%) | 0 | 2,457 |
+| Total | 3,007 / 5,463 (55.04%) | 0 | 2,456 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,428 / 4,789 (50.70%) | 0 | 2,361 |
+| Game | 2,429 / 4,789 (50.72%) | 0 | 2,360 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 3,006, while
+denominator driven: the exact count is now 3,007, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -247,6 +247,11 @@ after replacing its false zero-return placeholder with the wrapped 25-slot
 actor scan. Fourteen relocation-aware stale checks normalize only the closed
 `a0`/`v1` index/table-base allocation cycle; see
 [Working Note 502](WORKING_NOTES/502-game-actor-slot-selector-match-20260929.md).
+Game group-value appender `func_15022640` is byte-exact across all 31 words
+after recovering its duplicate scan, 30-byte row indexing, and count update.
+The corrected integer value ABI and separate signed loop-bound lifetime emit
+the complete routine directly from C with no guards; see
+[Working Note 503](WORKING_NOTES/503-game-group-value-deduplicating-append-match-20260929.md).
 
 ## Verified build state
 

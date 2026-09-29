@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game group-value deduplicating append byte-matched
+
+- `func_15022640` now searches the populated prefix of a 30-byte per-group
+  value row, returns on a duplicate, and appends new values while incrementing
+  the corresponding byte count.
+- Correcting the incoming value ABI to `s32` avoids a false truncation spill.
+  A separate signed loop-bound lifetime restores retail's `a3` bound copy and
+  `slt`/`bnez` loop. All 31 words emit directly from C with no guards.
+- The linked and retail 124-byte spans share SHA-256
+  `6a43dab9f135f13b92604ed942ab52b6b38913b931457760c0544a753e3cbc88`.
+- Totals are **3,007 / 5,463 (55.04%)** overall and
+  **2,429 / 4,789 (50.72%)** in Game, with no address-drift rows. See
+  [Working Note 503](WORKING_NOTES/503-game-group-value-deduplicating-append-match-20260929.md).
+
 ### Game actor-slot selector byte-matched
 
 - `func_1503F964` now implements its enable-gated, wrapped scan across 25
