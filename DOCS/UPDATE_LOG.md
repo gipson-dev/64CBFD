@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game resource teardown byte-matched
+
+- `func_15080BE8` now clears its active byte, releases its primary object and
+  allocation, conditionally frees three auxiliary allocations, clears their
+  owner slot, and performs the final teardown tagged `0x5622`.
+- Four relocation-aware stale checks preserve retail's `v0` lifetime for the
+  optional-allocation load, null test, and free-call delay-slot move. Every
+  other word emits directly from the semantic C body.
+- The linked and retail 124-byte spans share SHA-256
+  `cd3ecd60f04fee86983201b3860e4136788407f2e8ee6b6919b8b0ad28bf0294`.
+- Totals are **3,015 / 5,463 (55.19%)** overall and
+  **2,437 / 4,789 (50.89%)** in Game, with no address-drift rows. See
+  [Working Note 511](WORKING_NOTES/511-game-resource-teardown-match-20260929.md).
+
 ### Game timed HUD fade helper byte-matched
 
 - `func_151EC178` now derives a saturated 8x alpha ramp after timer `0x5DD`,

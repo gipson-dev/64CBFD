@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,014 / 5,463 (55.17%) | 0 | 2,449 |
+| Total | 3,015 / 5,463 (55.19%) | 0 | 2,448 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,436 / 4,789 (50.87%) | 0 | 2,353 |
+| Game | 2,437 / 4,789 (50.89%) | 0 | 2,352 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -287,6 +287,11 @@ after recovering its saturated alpha ramp, white modulation call, fixed text
 resource draw, and unchanged display-list return. Nineteen stale checks
 normalize one collapsed compiler merge and the displaced call tail; see
 [Working Note 510](WORKING_NOTES/510-game-timed-hud-fade-helper-match-20260929.md).
+Game resource teardown `func_15080BE8` is byte-exact across all 31 words after
+recovering its primary release, conditional three-allocation cleanup, owner
+slot clear, and tagged final teardown. Four stale checks normalize only the
+optional-allocation load/test register; see
+[Working Note 511](WORKING_NOTES/511-game-resource-teardown-match-20260929.md).
 
 ## Verified build state
 
@@ -609,10 +614,10 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_151EC178`, whose complete 30-word timed HUD fade
-   helper now matches from semantic C plus one guarded merge-and-tail
-   schedule. Continue with 31-word `func_15080BE8`, the next ordinary Game
-   candidate after the two parked 29-difference rows.
+   advanced through `func_15080BE8`, whose complete 31-word resource teardown
+   now matches from semantic C plus four guarded allocation-register words.
+   Continue with 30-word `func_150A0D14`, the next ordinary Game candidate
+   after the two parked 29-difference rows.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

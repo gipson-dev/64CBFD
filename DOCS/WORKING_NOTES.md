@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game timed HUD fade helper matched).**
-The current linked checkpoint is `3014 / 5463 (55.17%)` exact C functions,
-with no address-drift blockers and 2,449 genuinely different C functions.
+**Active (2026-09-29, Game resource teardown matched).**
+The current linked checkpoint is `3015 / 5463 (55.19%)` exact C functions,
+with no address-drift blockers and 2,448 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2436 / 4789 (50.87%)` exact, with 2,353 genuinely different C rows. The tree
+`2437 / 4789 (50.89%)` exact, with 2,352 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -327,10 +327,17 @@ pointer unchanged. Nineteen stale checks normalize IDO's collapsed alpha
 merge and the resulting displaced call tail. See
 [Working Note 510](WORKING_NOTES/510-game-timed-hud-fade-helper-match-20260929.md).
 
+Game `func_15080BE8` now matches all 31 retail words. The recovered routine
+clears the active byte, releases its primary object and allocation,
+conditionally frees three auxiliary allocations, clears their owner slot,
+and performs the final tagged teardown. Four stale checks normalize only the
+optional-allocation `a0`/`v0` load, test, and delay-slot move. See
+[Working Note 511](WORKING_NOTES/511-game-resource-teardown-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Continue
-with 31-word `func_15080BE8`, the next ordinary Game candidate.
+with 30-word `func_150A0D14`, the next ordinary Game candidate.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

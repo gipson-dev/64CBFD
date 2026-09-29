@@ -2210,3 +2210,7 @@ generated_215960,func_151EC178,0x064,0x8FBF0014,0x8FA20018,-,-,Reload the origin
 generated_215960,func_151EC178,0x068,0x27BD0018,0x8FBF0014,-,-,Restore the return address at retail's epilogue point,,,false
 generated_215960,func_151EC178,0x06C,0x03E00008,0x27BD0018,-,-,Restore the frame at retail's epilogue point,,,false
 generated_215960,func_151EC178,0x070,0x00000000,0x03E00008,-,-,Return at retail's final control-transfer word,,,false
+generated_AD9B0,func_15080BE8,0x028,0x3C040000,0x3C020000,R_MIPS_HI16:D_800D1948,R_MIPS_HI16:D_800D1948,Load the optional allocation through retail's result register,,,false
+generated_AD9B0,func_15080BE8,0x02C,0x8C840000,0x8C420000,R_MIPS_LO16:D_800D1948,R_MIPS_LO16:D_800D1948,Complete the optional allocation load through retail's result register,,,false
+generated_AD9B0,func_15080BE8,0x030,0x5080000C,0x5040000C,-,-,Test retail's optional-allocation register,,,false
+generated_AD9B0,func_15080BE8,0x03C,0x00000000,0x00402025,-,-,Move the optional allocation into the free-call delay slot,,,false
