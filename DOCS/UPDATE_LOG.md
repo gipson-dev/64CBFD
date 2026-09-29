@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game packed-resource lazy initializer byte-matched
+
+- Replaced `func_15116110`'s zero-return placeholder with its empty-handle
+  gate, packed selector and byte extraction, resource lookup, returned-handle
+  store, and packed-source clear.
+- Recovering the selector as `u16` and the two packed fields as `u8` restores
+  retail's 27-word frame and argument staging. Semantic C emits 20 words
+  directly; seven guards preserve one closed register/scheduling cycle among
+  the three independent masks and two stack argument stores.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `d875f1fa9ab49b5c9f16a90e00a78da99489bcd27738cfee3ef6b462d6133135`.
+  Fresh totals are **2,917 / 5,466 (53.37%)** overall and
+  **2,343 / 4,790 (48.91%)** in Game. See
+  [Working Note 415](WORKING_NOTES/415-game-packed-resource-lazy-init-match-20260928.md).
+
 ### Game record selector-bit test byte-matched
 
 - Replaced `func_15114050`'s zero-return placeholder with its active-record

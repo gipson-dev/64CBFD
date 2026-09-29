@@ -1820,3 +1820,10 @@ generated_CD5A0,func_150A0264,0x05C,0x01AFC025,0x03084825,-,-,Merge the packed f
 generated_CD5A0,func_150A0264,0x060,0xA0780000,0xA0690000,-,-,Store the merged status through retail's t1 lifetime,,,false
 generated_113D60,func_150E8854,0x044,0xE7A40034,0xE7A40030,-,-,Place the four-byte payload in retail's lower local stack word,,,false
 generated_113D60,func_150E8854,0x050,0x27A50034,0x27A50030,-,-,Pass retail's lower local payload address to memcpy,,,false
+generated_142560,func_15116110,0x028,0x0002C603,0x00024603,-,-,Extract byte three through retail's t0 lifetime,,,false
+generated_142560,func_15116110,0x02C,0x00024403,0x00026403,-,-,Extract byte two through retail's t4 lifetime,,,false
+generated_142560,func_15116110,0x030,0x310900FF,0x30AF7FFF,-,-,Schedule retail's selector mask before the byte masks,,,false
+generated_142560,func_15116110,0x034,0x331900FF,0x318D00FF,-,-,Mask byte two through retail's t5 lifetime,,,false
+generated_142560,func_15116110,0x038,0x30AF7FFF,0x310900FF,-,-,Mask byte three through retail's t1 lifetime,,,false
+generated_142560,func_15116110,0x040,0xAFB90014,0xAFA90014,-,-,Store byte three through retail's t1 lifetime,,,false
+generated_142560,func_15116110,0x044,0xAFA90018,0xAFAD0018,-,-,Store byte two through retail's t5 lifetime,,,false

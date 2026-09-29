@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,916 / 5,466 (53.35%) | 1 | 2,549 |
+| Total | 2,917 / 5,466 (53.37%) | 1 | 2,548 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,342 / 4,790 (48.89%) | 0 | 2,448 |
+| Game | 2,343 / 4,790 (48.91%) | 0 | 2,447 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -985,9 +985,15 @@ end-to-end gameplay acceptance.
    record index, and per-selector mask lookup. All words emit directly from
    semantic C with no guards; see
    [Working Note 414](WORKING_NOTES/414-game-record-selector-bit-test-match-20260928.md).
+   The 27-word packed-resource lazy initializer `func_15116110` is now
+   byte-exact after recovering its empty-handle gate, packed selector and byte
+   extraction, seven-argument resource lookup, returned-handle store, and
+   packed-word clear. Semantic C emits 20 words directly; seven guards
+   preserve one closed independent mask/register scheduling cycle. See
+   [Working Note 415](WORKING_NOTES/415-game-packed-resource-lazy-init-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 27-word Game `func_15116110`, at 26 real
+   with ordinary unparked 27-word Game `func_1514DA38`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

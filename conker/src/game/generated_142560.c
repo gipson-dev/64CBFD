@@ -10,6 +10,7 @@ s32 func_151169B4();
 u8 *func_151149AC(u32 arg0);
 u8 *func_15083E90(s32 arg0);
 f32 func_150484A0(f32 arg0, f32 arg1);
+s32 func_15195FB0();
 
 f32 func_151172D8(u8 *arg0, f32 arg1);
 f32 func_15117518(u8 *arg0, f32 arg1);
@@ -78,8 +79,21 @@ s32 func_15116058() {
     return 0;
 }
 
-s32 func_15116110() {
-    return 0;
+void func_15116110(u8 *arg0) {
+    s32 packed;
+    u16 selector;
+    u8 byte3;
+    u8 byte2;
+
+    if (*(s32 *) (arg0 + 0x7C) == 0) {
+        packed = *(s32 *) (arg0 + 0x3C);
+        selector = packed & 0x7FFF;
+        byte3 = packed >> 24;
+        byte2 = packed >> 16;
+        *(s32 *) (arg0 + 0x7C) = func_15195FB0(
+            arg0, selector, packed >> 15, -1, 0, byte3, byte2);
+        *(s32 *) (arg0 + 0x3C) = 0;
+    }
 }
 
 s32 func_1511617C() {

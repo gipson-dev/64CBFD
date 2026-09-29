@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,916 / 5,466 (53.35%) | 1 | 2,549 |
+| Total | 5,466 / 6,041 (90.48%) | 2,917 / 5,466 (53.37%) | 1 | 2,548 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,342 / 4,790 (48.89%) | 0 | 2,448 |
+| Game | 4,790 / 5,321 (90.02%) | 2,343 / 4,790 (48.91%) | 0 | 2,447 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1284,6 +1284,13 @@ recovering its active-record gate, selector `-1` shortcut, `0xA0`-stride record
 index, and per-selector mask lookup. All words emit directly from semantic C
 with no guards. This remains guest-side donor/reference progress; see
 [Working Note 414](WORKING_NOTES/414-game-record-selector-bit-test-match-20260928.md).
+The 27-word Game packed-resource lazy initializer `func_15116110` is
+byte-exact after recovering its empty-handle gate, packed selector and byte
+extraction, resource lookup, returned-handle store, and packed-word clear.
+Semantic C emits 20 words directly; seven guards preserve one closed
+independent mask/register scheduling cycle. This remains guest-side
+donor/reference progress; see
+[Working Note 415](WORKING_NOTES/415-game-packed-resource-lazy-init-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
