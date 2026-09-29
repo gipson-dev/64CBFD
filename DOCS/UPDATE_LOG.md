@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game per-slot mode initializer byte-matched
+
+- Replaced `func_15181D00`'s zero-return placeholder with its recovered zero
+  and active-mode initialization paths across four parallel slot tables.
+- A full-width `s32` mode parameter preserves retail's direct branch and final
+  byte store. An initial `u8` signature was rejected because IDO emitted a
+  three-word spill, mask, and reload sequence beyond the retail span.
+- All 28 words and twelve relocations emit directly from semantic C with no
+  guards. Direct comparison matches all 112 linked bytes with SHA-256
+  `90db6f25d42c5e2c18435daace07fbcdebc254eb75f8fd653e55d38191e757f9`.
+  Fresh totals are **2,945 / 5,465 (53.89%)** overall and
+  **2,371 / 4,789 (49.51%)** in Game. See
+  [Working Note 444](WORKING_NOTES/444-game-per-slot-mode-initializer-match-20260929.md).
+
 ### Game multiplayer-slot reset byte-matched
 
 - Replaced `func_151298C0`'s zero-return placeholder with its recovered
