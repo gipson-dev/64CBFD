@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,912 / 5,466 (53.27%) | 1 | 2,553 |
+| Total | 2,913 / 5,466 (53.29%) | 1 | 2,552 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,338 / 4,790 (48.81%) | 0 | 2,452 |
+| Game | 2,339 / 4,790 (48.83%) | 0 | 2,451 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -964,9 +964,14 @@ end-to-end gameplay acceptance.
    argument sets. The recovered `f32` callee prototype restores the retail
    register-only call convention; no guards are required. See
    [Working Note 410](WORKING_NOTES/410-game-global-gated-parameter-dispatch-match-20260928.md).
+   The 27-word single-byte allocation payload wrapper `func_150D0134` is now
+   byte-exact after recovering its narrow formal arguments, pointer-returning
+   allocator signature, and eight-byte local payload buffer. All words emit
+   directly from C with no guards; see
+   [Working Note 411](WORKING_NOTES/411-game-single-byte-allocation-payload-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 27-word Game `func_150D0134`, at 26 real
+   with ordinary unparked 27-word Game `func_150E8854`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

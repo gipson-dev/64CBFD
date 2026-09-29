@@ -138,7 +138,8 @@ void func_150CFE98(u8 *arg0) {
     }
 }
 
-s32 func_150CFF10() {
+void *func_150CFF10(u8 arg0, u8 *arg1, s16 arg2, s32 arg3, s8 arg4,
+                    u8 arg5, u8 arg6, s32 arg7) {
     return 0;
 }
 
@@ -174,12 +175,14 @@ void func_150D00C0(u8 *arg0, u8 *arg1, u8 arg2) {
     }
 }
 
-void func_150D0134(u8 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
-    u8 zero = 0;
-    void *result = func_150CFF10(arg0, arg1, (s16) arg2, 8, 0, 0, arg3, arg4);
+void func_150D0134(u8 arg0, u8 *arg1, s16 arg2, u8 arg3, s32 arg4) {
+    u8 zero[8];
+    void *result;
 
+    zero[0] = 0;
+    result = func_150CFF10(arg0, arg1, arg2, 8, 0, 0, arg3, arg4);
     if (result != 0) {
-        memcpy(*(void **) ((u8 *) result + 0x48), &zero, 1);
+        memcpy(*(void **) ((u8 *) result + 0x48), zero, 1);
     }
 }
 
@@ -187,7 +190,7 @@ s32 func_150D01A0() {
     return 0;
 }
 
-void func_150D02B4(u8 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
+void func_150D02B4(u8 arg0, u8 *arg1, s32 arg2, u8 arg3, s32 arg4) {
     struct { f32 word0; s16 half0; } rec;
     void *result;
 
@@ -203,7 +206,7 @@ s32 func_150D032C() {
     return 0;
 }
 
-void func_150D04C4(u8 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
+void func_150D04C4(u8 arg0, u8 *arg1, s32 arg2, u8 arg3, s32 arg4) {
     u8 zero = 0;
     void *result = func_150CFF10(arg0, arg1, (s16) arg2, 8, 2, 0, arg3, arg4);
 

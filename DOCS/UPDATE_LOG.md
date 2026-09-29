@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game single-byte allocation payload wrapper byte-matched
+
+- Recovered `func_150D0134`'s narrow wrapper arguments and the shared
+  pointer-returning `func_150CFF10` allocator signature.
+- The wrapper requests allocation mode `8` with subtype `0`, then copies one
+  zero byte into the allocated record's pointer at offset `0x48`. An eight-byte
+  local payload buffer reproduces the retail `0x38` frame and `sp+0x30`
+  payload address. All 27 words emit directly from C with no guards.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `0d1eadac7711e811b1e7d805fefe01989a18b564686543b50b1a9af057183856`.
+  Fresh totals are **2,913 / 5,466 (53.29%)** overall and
+  **2,339 / 4,790 (48.83%)** in Game. See
+  [Working Note 411](WORKING_NOTES/411-game-single-byte-allocation-payload-match-20260928.md).
+
 ### Game global-gated parameter dispatcher byte-matched
 
 - Replaced `func_150C7870`'s zero-return placeholder with its global gate and

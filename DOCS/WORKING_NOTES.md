@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game global-gated parameter dispatcher matched).** The
-current linked checkpoint is `2912 / 5466 (53.27%)` exact C functions, with
-one address-drift blocker and 2,553 genuinely different C functions. Init is
+**Active (2026-09-28, Game single-byte allocation payload matched).** The
+current linked checkpoint is `2913 / 5466 (53.29%)` exact C functions, with
+one address-drift blocker and 2,552 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2338 / 4790 (48.81%)` exact, with 2,452 genuinely different C rows. The tree
+`2339 / 4790 (48.83%)` exact, with 2,451 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1287,9 +1287,14 @@ after recovering its two global flag tests and alternate numeric argument
 sets. The recovered `f32` callee prototype restores the retail register-only
 call convention; no guards are required. See
 [Working Note 410](WORKING_NOTES/410-game-global-gated-parameter-dispatch-match-20260928.md).
+The 27-word single-byte allocation payload wrapper `func_150D0134` now matches
+after recovering its narrow formal arguments, pointer-returning allocator
+signature, and eight-byte local payload buffer. All words emit directly from C
+with no guards. See
+[Working Note 411](WORKING_NOTES/411-game-single-byte-allocation-payload-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary unparked 27-word Game
-`func_150D0134`, at 26 real differences. Keep the documented lower-difference
+`func_150E8854`, at 26 real differences. Keep the documented lower-difference
 compiler cases parked, and keep `func_151F3D78` parked behind the pre-existing
 `game_21FC90` audio-object layout drift. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked
