@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game child-pointer release loop byte-matched
+
+- Reworked `func_151BFB2C` into its recovered primary-pointer release and
+  two-entry child-array cleanup.
+- The loop keeps an `s32` counter but canonicalizes it through `u8` in the
+  loop condition. Ordering the constant field offset before the scaled index
+  also reproduces retail's commutative address-add operand order.
+- All 30 words and both call relocations emit directly from semantic C with
+  no guards. Direct comparison matches all 120 linked bytes with SHA-256
+  `acd08cbda50fab15b1c03fdebaaa7f19e11a51276b5b6acf3021d19296910c95`.
+  Fresh totals are **2,948 / 5,465 (53.94%)** overall and
+  **2,374 / 4,789 (49.57%)** in Game. See
+  [Working Note 447](WORKING_NOTES/447-game-child-pointer-release-loop-match-20260929.md).
+
 ### Game position-descriptor dispatch byte-matched
 
 - Replaced `func_151C9AC0`'s zero-return placeholder with its recovered

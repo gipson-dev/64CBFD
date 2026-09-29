@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,947 / 5,465 (53.92%) | 1 | 2,517 |
+| Total | 5,465 / 6,041 (90.47%) | 2,948 / 5,465 (53.94%) | 1 | 2,516 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,373 / 4,789 (49.55%) | 0 | 2,416 |
+| Game | 4,789 / 5,321 (90.00%) | 2,374 / 4,789 (49.57%) | 0 | 2,415 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1476,6 +1476,11 @@ and dispatch through `func_151ABE40`. All words and both call relocations emit
 directly from semantic C with no guards. This remains guest-side
 donor/reference progress; see
 [Working Note 446](WORKING_NOTES/446-game-position-descriptor-dispatch-match-20260929.md).
+The 30-word Game child-pointer release loop `func_151BFB2C` is now byte-exact
+after recovering its primary pointer release and two-entry indexed child
+array. All words and both call relocations emit directly from semantic C with
+no guards. This remains guest-side donor/reference progress; see
+[Working Note 447](WORKING_NOTES/447-game-child-pointer-release-loop-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

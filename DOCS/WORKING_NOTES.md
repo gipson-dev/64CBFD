@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game position-descriptor dispatch matched).**
-The current linked checkpoint is `2947 / 5465 (53.92%)` exact C functions,
-with one address-drift blocker and 2,517 genuinely different C functions.
+**Active (2026-09-29, Game child-pointer release loop matched).**
+The current linked checkpoint is `2948 / 5465 (53.94%)` exact C functions,
+with one address-drift blocker and 2,516 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2373 / 4789 (49.55%)` exact, with 2,416 genuinely different C rows. The tree
+`2374 / 4789 (49.57%)` exact, with 2,415 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1476,11 +1476,16 @@ after recovering its raised position vector, generated object descriptor, and
 five-argument dispatch. All words and both call relocations emit directly from
 semantic C with no guards. See
 [Working Note 446](WORKING_NOTES/446-game-position-descriptor-dispatch-match-20260929.md).
+The 30-word child-pointer release loop `func_151BFB2C` now matches after
+recovering its primary pointer release, retained child-array base, and
+byte-canonicalized two-entry loop. All words and both call relocations emit
+directly from semantic C with no guards. See
+[Working Note 447](WORKING_NOTES/447-game-child-pointer-release-loop-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary unparked 30-word Game
-`func_151BFB2C`, at 27 real differences. Its existing semantic body
-releases one primary and two indexed child pointers; focus on retail's
-byte-canonicalized loop counter and retained child-array base. Keep 29-word
+`func_151AE06C`, at 27 real differences. Recover its admission query, current
+selector read, and conditional transition through `func_151AE264` and
+`func_151AE0E4`. Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the
 documented lower-difference

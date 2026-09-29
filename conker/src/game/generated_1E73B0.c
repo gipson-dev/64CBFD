@@ -10,6 +10,7 @@ extern s32 D_800AA760;
 extern s32 D_800AA76C;
 
 s32 func_15160CDC(s32 arg0, s32 arg1, s32 *arg2, s32 *arg3, f32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15);
+void func_1516972C(void *arg0);
 
 s32 func_151B9F00() {
     return 0;
@@ -258,17 +259,22 @@ s32 func_151BF81C() {
     return 0;
 }
 
-s32 func_151BFB2C(u8 *arg0) {
+void func_151BFB2C(u8 *arg0) {
+    u8 *base = arg0 + 0x28;
     s32 i;
 
-    if (*(s32 *)(arg0 + 0x28) != 0) {
-        func_1516972C(*(s32 *)(arg0 + 0x28));
+    if (*(void **)base != NULL) {
+        func_1516972C(*(void **)base);
     }
-    for (i = 0; i < 2; i++) {
-        if (*(s32 *)(arg0 + 0x2C + i * 4) != 0) {
-            func_1516972C(*(s32 *)(arg0 + 0x2C + i * 4));
+    i = 0;
+    do {
+        void *entry = *(void **)(base + 4 + i * 4);
+
+        if (entry != NULL) {
+            func_1516972C(entry);
         }
-    }
+        i++;
+    } while ((i = (u8)i) < 2);
 }
 
 s32 func_151BFBA4(s32 arg0) {
