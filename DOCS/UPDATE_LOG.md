@@ -16,6 +16,26 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game packed descriptor builder byte-matched
+
+- Replaced `func_15095060`'s zero-return placeholder with its recovered typed
+  construction of the packed descriptor at `D_800D2C90`.
+- The routine optionally publishes that descriptor, selects either the source
+  word or an entry indexed by `arg1 >> 8`, and copies two halfwords and three
+  bytes from the source record.
+- Thirty relocation-aware expected-word guards normalize IDO's repeated
+  descriptor-address materialization, deferred table-index calculation,
+  temporary-register lifetimes, and final return schedule. Six guarded source
+  words are omitted, the final repeated address word is repurposed, and one
+  trailing `nop` is inserted. The guards verify the compiler input and fail
+  closed if it changes.
+- The focused object matches all 29 retail words. Direct comparison matches all
+  116 linked bytes with SHA-256
+  `7e3c0b9009d0e83b9a405b6373de2aacc7545df9c12723db4fc78095317b0b55`.
+  Fresh totals are **2,954 / 5,465 (54.05%)** overall and
+  **2,380 / 4,789 (49.70%)** in Game. See
+  [Working Note 453](WORKING_NOTES/453-game-packed-descriptor-builder-match-20260929.md).
+
 ### Game active-object state updater byte-matched
 
 - Replaced `func_1507C370`'s zero-return placeholder with its recovered

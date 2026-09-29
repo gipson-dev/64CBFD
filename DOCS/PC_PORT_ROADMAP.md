@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,953 / 5,465 (54.03%) | 1 | 2,511 |
+| Total | 5,465 / 6,041 (90.47%) | 2,954 / 5,465 (54.05%) | 1 | 2,510 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,379 / 4,789 (49.68%) | 0 | 2,410 |
+| Game | 4,789 / 5,321 (90.00%) | 2,380 / 4,789 (49.70%) | 0 | 2,409 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1509,6 +1509,12 @@ after recovering its bounded object-array traversal and dispatch of three
 state halfword pointers. The complete loop emits directly from C with no
 guards. This remains guest-side donor/reference progress; see
 [Working Note 452](WORKING_NOTES/452-game-active-object-state-update-match-20260929.md).
+The 29-word Game packed descriptor builder `func_15095060` is now byte-exact
+after recovering its direct-or-indexed source selection and packed field
+copies into `D_800D2C90`. Relocation-aware expected-word guards preserve the
+retail global-base lifetime and instruction schedule. This remains guest-side
+donor/reference progress; see
+[Working Note 453](WORKING_NOTES/453-game-packed-descriptor-builder-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

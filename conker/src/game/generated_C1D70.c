@@ -3,6 +3,28 @@ s32 func_15095A90(s32, s32, f32, f32, f32, s32, s32, s32, s32);
 extern s32 D_800D2CA0;
 extern u8 D_800873D0[];
 
+typedef struct {
+    u32 unk0;
+    u8 unk4;
+    u8 pad5;
+    u16 unk6;
+    u16 unk8;
+    u8 unkA;
+    u8 unkB;
+} structC1D70Source;
+
+typedef struct {
+    u32 unk0;
+    u16 unk4;
+    u16 unk6;
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 padB;
+} structC1D70Descriptor;
+
+extern structC1D70Descriptor D_800D2C90;
+
 /* Non-matching placeholders for the text-only asm slice asm/C1D70.s. */
 
 s32 func_15095D34();
@@ -41,8 +63,27 @@ s32 func_15094FE8() {
     return 0;
 }
 
-s32 func_15095060() {
-    return 0;
+void func_15095060(structC1D70Source *arg0, s32 arg1, u8 *arg2) {
+    structC1D70Descriptor *descriptor;
+    u32 value;
+
+    descriptor = &D_800D2C90;
+    if (arg2 != NULL) {
+        *(structC1D70Descriptor **) (arg2 + 0x10) = descriptor;
+    }
+
+    value = arg0->unk0;
+    if (value < 0x10000000) {
+        descriptor->unk0 = value;
+    } else {
+        descriptor->unk0 = ((u32 *) value)[arg1 >> 8];
+    }
+
+    descriptor->unk4 = arg0->unk6;
+    descriptor->unk6 = arg0->unk8;
+    descriptor->unk8 = arg0->unkA;
+    descriptor->unk9 = arg0->unkB;
+    descriptor->unkA = arg0->unk4;
 }
 
 s32 func_150950D4() {

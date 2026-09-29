@@ -1872,3 +1872,33 @@ generated_135D00,func_15109064,0x04C,0xAC48001C,0x03E00008,-,-,Restore retail's 
 generated_1B7EC0,func_1518AB60,0x050,0x93A40027,0x93B90027,-,-,Preserve retail selector reload register allocation,,,false
 generated_1B7EC0,func_1518AB60,0x05C,0xA064001C,0xA079001C,-,-,Preserve retail selector store register allocation,,,false
 generated_1D92F0,func_151AE06C,0x048,0x50450008,0x50A20008,-,-,Preserve retail's commutative selector equality operand order,,,false
+generated_C1D70,func_15095060,0x004,0x3C0E0000,0x3C030000,R_MIPS_HI16:D_800D2C90,R_MIPS_HI16:D_800D2C90,Publish the descriptor through retail's v1 lifetime,,,false
+generated_C1D70,func_15095060,0x008,0x25CE0000,0x24630000,R_MIPS_LO16:D_800D2C90,R_MIPS_LO16:D_800D2C90,Complete the published descriptor address through v1,,,false
+generated_C1D70,func_15095060,0x00C,0xACCE0010,0xACC30010,-,-,Store the optional descriptor pointer from v1,,,false
+generated_C1D70,func_15095060,0x018,0x00057A03,0x3C030000,-,R_MIPS_HI16:D_800D2C90,Begin the retained descriptor base before the range comparison,,,false
+generated_C1D70,func_15095060,0x020,0x10200004,0x10200003,-,-,Branch to retail's deferred table-index calculation,,,false
+generated_C1D70,func_15095060,0x024,0x000FC080,0x24630000,-,R_MIPS_LO16:D_800D2C90,Complete the retained descriptor base in the branch delay slot,,,false
+generated_C1D70,func_15095060,0x028,0x3C010000,0x3C010000,R_MIPS_HI16:D_800D2C90,-,Omit IDO's first repeated descriptor address,,,true
+generated_C1D70,func_15095060,0x02C,0x10000005,0x10000006,-,-,Retarget the direct-value path across the deferred index calculation,,,false
+generated_C1D70,func_15095060,0x030,0xAC220000,0xAC620000,R_MIPS_LO16:D_800D2C90,-,Store the direct value through the retained descriptor base,,,false
+generated_C1D70,func_15095060,0x034,0x0058C821,0x00057203,-,-,Defer the signed table index extraction to retail's branch path,,,false
+generated_C1D70,func_15095060,0x038,0x8F280000,0x000E7880,-,-,Scale the extracted table index through retail's t7 lifetime,,,false
+generated_C1D70,func_15095060,0x03C,0x3C010000,0x3C010000,R_MIPS_HI16:D_800D2C90,-,Omit IDO's second repeated descriptor address,,,true
+generated_C1D70,func_15095060,0x040,0xAC280000,0x004FC021,R_MIPS_LO16:D_800D2C90,-,Form the selected table-entry address through retail's t8 lifetime,,,false
+generated_C1D70,func_15095060,0x044,0x94890006,0x8F190000,-,-,Load the selected table value through retail's t9 lifetime,,,false
+generated_C1D70,func_15095060,0x048,0x3C010000,0x3C010000,R_MIPS_HI16:D_800D2C90,-,Omit IDO's third repeated descriptor address,,,true
+generated_C1D70,func_15095060,0x04C,0xA4290004,0xAC790000,R_MIPS_LO16:D_800D2C90,-,Store the table value through the retained descriptor base,,,false
+generated_C1D70,func_15095060,0x050,0x948A0008,0x94880006,-,-,Load the first halfword through retail's t0 lifetime,,,false
+generated_C1D70,func_15095060,0x054,0x3C010000,0x3C010000,R_MIPS_HI16:D_800D2C90,-,Omit IDO's fourth repeated descriptor address,,,true
+generated_C1D70,func_15095060,0x058,0xA42A0006,0xA4680004,R_MIPS_LO16:D_800D2C90,-,Store the first halfword through the retained descriptor base,,,false
+generated_C1D70,func_15095060,0x05C,0x908B000A,0x94890008,-,-,Load the second halfword through retail's t1 lifetime,,,false
+generated_C1D70,func_15095060,0x060,0x3C010000,0x3C010000,R_MIPS_HI16:D_800D2C90,-,Omit IDO's fifth repeated descriptor address,,,true
+generated_C1D70,func_15095060,0x064,0xA02B0008,0xA4690006,R_MIPS_LO16:D_800D2C90,-,Store the second halfword through the retained descriptor base,,,false
+generated_C1D70,func_15095060,0x068,0x908C000B,0x908A000A,-,-,Load the first byte through retail's t2 lifetime,,,false
+generated_C1D70,func_15095060,0x06C,0x3C010000,0x3C010000,R_MIPS_HI16:D_800D2C90,-,Omit IDO's sixth repeated descriptor address,,,true
+generated_C1D70,func_15095060,0x070,0xA02C0009,0xA06A0008,R_MIPS_LO16:D_800D2C90,-,Store the first byte through the retained descriptor base,,,false
+generated_C1D70,func_15095060,0x074,0x908D0004,0x908B000B,-,-,Load the second byte through retail's t3 lifetime,,,false
+generated_C1D70,func_15095060,0x078,0x3C010000,0xA06B0009,R_MIPS_HI16:D_800D2C90,-,Replace IDO's final repeated high address with the second byte store,,,false
+generated_C1D70,func_15095060,0x07C,0xA02D000A,0x908C0004,R_MIPS_LO16:D_800D2C90,-,Load the final byte through retail's t4 lifetime,,,false
+generated_C1D70,func_15095060,0x080,0x03E00008,0xA06C000A,-,-,Store the final byte before returning,,,false
+generated_C1D70,func_15095060,0x084,0x00000000,0x03E00008,-,-,Restore retail's return after the packed descriptor stores,0x00000000,-,false

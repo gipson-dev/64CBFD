@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game active-object state updater matched).**
-The current linked checkpoint is `2953 / 5465 (54.03%)` exact C functions,
-with one address-drift blocker and 2,511 genuinely different C functions.
+**Active (2026-09-29, Game packed descriptor builder matched).**
+The current linked checkpoint is `2954 / 5465 (54.05%)` exact C functions,
+with one address-drift blocker and 2,510 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2379 / 4789 (49.68%)` exact, with 2,410 genuinely different C rows. The tree
+`2380 / 4789 (49.70%)` exact, with 2,409 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1507,10 +1507,17 @@ recovering its signed-count object traversal and null-gated dispatch of three
 adjacent state halfwords. The complete pointer/counter loop, globals, and call
 emit directly from C without guards. See
 [Working Note 452](WORKING_NOTES/452-game-active-object-state-update-match-20260929.md).
+The 29-word packed descriptor builder `func_15095060` now matches after
+recovering its optional output publication, direct-or-indexed word selection,
+and packed field copies into `D_800D2C90`. Thirty relocation-aware guarded
+CSV rows collapse IDO's repeated global-base materialization and normalize the
+retail index/store schedule while failing closed on unexpected compiler
+output. See
+[Working Note 453](WORKING_NOTES/453-game-packed-descriptor-builder-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 29-word Game
-`func_15095060`, at 28 real differences. It remains a zero-return placeholder
-in `generated_C1D70.c`; recover its behavior from the retail `C1D70` slice.
+experiments were removed. Resume with ordinary unparked 28-word Game
+`func_15096D08`, at 28 real differences. It remains a zero-return placeholder
+in `generated_C3E20.c`; recover its loop from the retail `C3E20` slice.
 Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the
