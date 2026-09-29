@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game opcode-record byte counter matched).**
-The current linked checkpoint is `3004 / 5463 (54.99%)` exact C functions,
-with no address-drift blockers and 2,459 genuinely different C functions.
+**Active (2026-09-29, Game six-word actor query matched).**
+The current linked checkpoint is `3005 / 5463 (55.01%)` exact C functions,
+with no address-drift blockers and 2,458 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2426 / 4789 (50.66%)` exact, with 2,363 genuinely different C rows. The tree
+`2427 / 4789 (50.68%)` exact, with 2,362 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -257,6 +257,12 @@ index into a running pointer and restores retail's repeated shift/add loads.
 Fourteen stale-checked words normalize only the remaining closed `v0`/`a1`
 record-index/opcode register cycle. See
 [Working Note 500](WORKING_NOTES/500-game-opcode-record-byte-counter-match-20260929.md).
+
+Game `func_151420F8` now matches all 34 retail words directly from C. A
+six-word aggregate assignment restores retail's alternating load/store copy,
+an explicit signed `sizeof(struct127)` divisor restores `div`, and an expanded
+failure branch restores the retail boolean return. See
+[Working Note 501](WORKING_NOTES/501-game-six-word-actor-query-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

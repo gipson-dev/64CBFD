@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,004 / 5,463 (54.99%) | 0 | 2,459 |
+| Total | 3,005 / 5,463 (55.01%) | 0 | 2,458 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,426 / 4,789 (50.66%) | 0 | 2,363 |
+| Game | 2,427 / 4,789 (50.68%) | 0 | 2,362 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 3,004, while
+denominator driven: the exact count is now 3,005, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -237,6 +237,11 @@ words after restoring its integer-address ABI and repeated eight-byte indexed
 loads. Fourteen stale-checked guards normalize only the closed `v0`/`a1`
 record-index/opcode allocation cycle; see
 [Working Note 500](WORKING_NOTES/500-game-opcode-record-byte-counter-match-20260929.md).
+Game six-word actor query `func_151420F8` is byte-exact across all 34 words
+after recovering its aggregate template copy, signed actor-index division, and
+explicit success branch. The complete function emits directly from C with no
+guards; see
+[Working Note 501](WORKING_NOTES/501-game-six-word-actor-query-match-20260929.md).
 
 ## Verified build state
 

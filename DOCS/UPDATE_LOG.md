@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game six-word actor query byte-matched
+
+- `func_151420F8` copies a six-word query template, derives the current actor
+  index, submits the query, and reports whether the result differs from `-1`.
+- Replacing six scalar assignments with the recovered aggregate copy restores
+  retail's alternating load/store schedule. A signed actor-stride divisor and
+  explicit result branch recover the remaining instructions directly from C;
+  no expected-word guards are used.
+- The linked and retail 136-byte spans share SHA-256
+  `4a242943a6ff310e5ae3c7004300f1cb55b84a08625c9b69fc6f668cc1481ec2`.
+- Totals are **3,005 / 5,463 (55.01%)** overall and
+  **2,427 / 4,789 (50.68%)** in Game, with no address-drift rows. See
+  [Working Note 501](WORKING_NOTES/501-game-six-word-actor-query-match-20260929.md).
+
 ### Game opcode-record byte counter byte-matched
 
 - `func_150027F8` scans eight-byte records until opcode `-0x21`, adding four,

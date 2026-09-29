@@ -48,7 +48,12 @@ extern s16 D_800DD1C4;
 extern s16 D_800DD1C6;
 extern u32 D_800DD1FC;
 extern u32 D_800DD200;
-extern s32 D_800A5200[6];
+
+typedef struct {
+    s32 words[6];
+} SixWordBlock;
+
+extern SixWordBlock D_800A5200;
 
 s32 func_150A2AEC(s32 arg0, s32 arg1, s32 *arg2);
 s32 func_1514563C(struct17 *arg0, struct17 *arg1, struct17 *arg2, struct17 *arg3, f32 *arg4);
@@ -158,16 +163,14 @@ s32 func_15141F78() {
 // }
 
 s32 func_151420F8(struct127 *arg0) {
-    s32 tmp[6];
+    SixWordBlock tmp;
 
-    tmp[0] = D_800A5200[0];
-    tmp[1] = D_800A5200[1];
-    tmp[2] = D_800A5200[2];
-    tmp[3] = D_800A5200[3];
-    tmp[4] = D_800A5200[4];
-    tmp[5] = D_800A5200[5];
-
-    return func_150A2AEC(((s32)arg0 - (s32)D_800CC2D0) / sizeof(struct127), 6, tmp) != -1;
+    tmp = D_800A5200;
+    if (func_150A2AEC(((s32)arg0 - (s32)D_800CC2D0) /
+                      (s32)sizeof(struct127), 6, tmp.words) == -1) {
+        return 0;
+    }
+    return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15142180.s. */
 s32 func_15142180() {
