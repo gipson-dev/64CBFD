@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game byte-state reset byte-matched
+
+- `func_15010600` clears six scalar state bytes, then clears paired 12-byte
+  regions at `D_800D992A` and `D_800D993A`.
+- Replacing the broad `bzero` placeholder with the recovered loop restores
+  retail's four-way unrolling. Four relocation-aware stale checks normalize
+  only one independent scalar-store scheduling window.
+- The linked and retail 128-byte spans share SHA-256
+  `f731c29b484f488587e75844d64f3b7525bbd46b48dbabc3f4c1521ad4d00c37`.
+- Totals are **3,001 / 5,463 (54.93%)** overall and
+  **2,423 / 4,789 (50.60%)** in Game, with no address-drift rows. See
+  [Working Note 497](WORKING_NOTES/497-game-byte-state-reset-match-20260929.md).
+
 ### Game audio DMA reader byte-matched
 
 - `func_151F3C4C` clamps the requested read to the configured audio extent,

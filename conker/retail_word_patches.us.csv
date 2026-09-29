@@ -2132,3 +2132,7 @@ game_21FC90,func_151F3C4C,0x0B4,0x8FA8001C,0x8FB8001C,-,-,Load the DMA result th
 game_21FC90,func_151F3C4C,0x0B8,0x15000003,0x17000003,-,-,Test the DMA result through retail's t8 lifetime,,,false
 game_21FC90,func_151F3C4C,0x0C8,0x8FB8001C,0x8FA8001C,-,-,Reload the nonzero DMA result through retail's t0 lifetime,,,false
 game_21FC90,func_151F3C4C,0x0D0,0x03014821,0x01014821,-,-,Convert the DMA result through retail's t0 lifetime,,,false
+game_3D9A0,func_15010600,0x038,0xA0200000,0x2442000C,R_MIPS_LO16:D_800D9939,R_MIPS_LO16:D_800D993A,Initialize the loop endpoint before the independent final scalar clear,,,false
+game_3D9A0,func_15010600,0x03C,0x2442000C,0x24840000,R_MIPS_LO16:D_800D993A,R_MIPS_LO16:D_800D993A,Initialize the second array cursor before the independent final scalar clear,,,false
+game_3D9A0,func_15010600,0x040,0x24840000,0x24630000,R_MIPS_LO16:D_800D993A,R_MIPS_LO16:D_800D992A,Initialize the first array cursor before the independent final scalar clear,,,false
+game_3D9A0,func_15010600,0x044,0x24630000,0xA0200000,R_MIPS_LO16:D_800D992A,R_MIPS_LO16:D_800D9939,Issue the independent final scalar clear after the loop pointers are ready,,,false

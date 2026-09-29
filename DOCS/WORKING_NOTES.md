@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game audio DMA reader matched).**
-The current linked checkpoint is `3000 / 5463 (54.91%)` exact C functions,
-with no address-drift blockers and 2,463 genuinely different C functions.
+**Active (2026-09-29, Game byte-state reset matched).**
+The current linked checkpoint is `3001 / 5463 (54.93%)` exact C functions,
+with no address-drift blockers and 2,462 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2422 / 4789 (50.57%)` exact, with 2,367 genuinely different C rows. The tree
+`2423 / 4789 (50.60%)` exact, with 2,366 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -232,6 +232,12 @@ state slot for the DMA result restores retail's 32-byte frame and all argument
 and local offsets. Eleven relocation-aware stale checks normalize only two
 closed register-allocation cycles; no words are inserted or omitted. See
 [Working Note 496](WORKING_NOTES/496-game-audio-dma-reader-match-20260929.md).
+
+Game `func_15010600` now matches all 32 retail words. The recovered source
+clears six scalar state bytes and two paired 12-byte regions; IDO reproduces
+the retail four-way-unrolled loop. Four relocation-aware stale checks
+normalize only the independent final scalar-store schedule. See
+[Working Note 497](WORKING_NOTES/497-game-byte-state-reset-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

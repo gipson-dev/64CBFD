@@ -35,13 +35,16 @@ dummy_label_927029:
 }
 
 void func_15010600(void) {
-    bzero(&D_800D9920, 0x27);
+    s32 i;
+
+    D_800D9921 = 0;
+    D_800D9920 = 0;
+    D_800D9928 = 0;
+    D_800D9938 = 0;
+    D_800D9929 = 0;
+    D_800D9939 = 0;
+
+    for (i = 0; i < 12; i++) {
+        D_800D993A[i] = D_800D992A[i] = 0;
+    }
 }
-// NON-MATCHING: addresses are wrong :(
-// void func_15010600(void) {
-//     s32 i;
-//
-//     for (i = 0; i < 11; i++) {
-//         D_800D9930[i] = D_800D9920[i] = 0;
-//     }
-// }
