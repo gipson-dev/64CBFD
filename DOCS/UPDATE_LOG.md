@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game global-gated parameter dispatcher byte-matched
+
+- Replaced `func_150C7870`'s zero-return placeholder with its global gate and
+  two state-selected calls to `func_1511650C`.
+- The state flag selects arguments `(1, 0x353, 1000.0f)` or
+  `(1, 0x43, 400.0f)`. Recovering the callee's `f32` fourth parameter prevents
+  default promotion to `double` and restores the retail register-only call
+  convention. All 28 words emit directly from C with no guards.
+- Direct comparison matches all 112 linked bytes with SHA-256
+  `e0afeec217c6d5c40f909dfb7f902188fd3bf85fd14216569996e8ff29e28cad`.
+  Fresh totals are **2,912 / 5,466 (53.27%)** overall and
+  **2,338 / 4,790 (48.81%)** in Game. See
+  [Working Note 410](WORKING_NOTES/410-game-global-gated-parameter-dispatch-match-20260928.md).
+
 ### Game two-event command dispatcher byte-matched
 
 - Replaced `func_150C19C0`'s zero-return placeholder with its command mapping

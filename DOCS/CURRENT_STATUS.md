@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,911 / 5,466 (53.26%) | 1 | 2,554 |
+| Total | 2,912 / 5,466 (53.27%) | 1 | 2,553 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,337 / 4,790 (48.79%) | 0 | 2,453 |
+| Game | 2,338 / 4,790 (48.81%) | 0 | 2,452 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -959,9 +959,14 @@ end-to-end gameplay acceptance.
    return. A two-case switch emits the retail forward-branch layout directly
    from C with no guards; see
    [Working Note 409](WORKING_NOTES/409-game-two-event-command-dispatch-match-20260928.md).
+   The 28-word global-gated parameter dispatcher `func_150C7870` is now
+   byte-exact after recovering its two global flag tests and alternate numeric
+   argument sets. The recovered `f32` callee prototype restores the retail
+   register-only call convention; no guards are required. See
+   [Working Note 410](WORKING_NOTES/410-game-global-gated-parameter-dispatch-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 28-word Game `func_150C7870`, at 26 real
+   with ordinary unparked 27-word Game `func_150D0134`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

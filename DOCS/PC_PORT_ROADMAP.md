@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,911 / 5,466 (53.26%) | 1 | 2,554 |
+| Total | 5,466 / 6,041 (90.48%) | 2,912 / 5,466 (53.27%) | 1 | 2,553 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,337 / 4,790 (48.79%) | 0 | 2,453 |
+| Game | 4,790 / 5,321 (90.02%) | 2,338 / 4,790 (48.81%) | 0 | 2,452 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1256,6 +1256,12 @@ after recovering its event-to-command mapping, owner lookup, and always-one
 return. A two-case switch emits the retail forward-branch layout directly from
 C with no guards. This remains guest-side donor/reference progress; see
 [Working Note 409](WORKING_NOTES/409-game-two-event-command-dispatch-match-20260928.md).
+The 28-word Game global-gated parameter dispatcher `func_150C7870` is
+byte-exact after recovering its two global flag tests and alternate numeric
+argument sets. The recovered `f32` callee prototype restores the retail
+register-only call convention with no guards. This remains guest-side
+donor/reference progress; see
+[Working Note 410](WORKING_NOTES/410-game-global-gated-parameter-dispatch-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -1,10 +1,18 @@
 #include <ultra64.h>
+extern u8 *D_800D2E4C;
 extern u8 *D_800DBEF4;
+void func_1511650C(s32 arg0, s32 arg1, s32 arg2, f32 arg3);
 
 /* Non-matching placeholders for the text-only asm slice asm/F4D20.s. */
 
-s32 func_150C7870() {
-    return 0;
+void func_150C7870(s32 arg0) {
+    if ((D_800D2E4C[0xA] & 8) == 0) {
+        if ((D_800DBEF4[0x73] & 4) == 0) {
+            func_1511650C(arg0, 1, 0x353, 1000.0f);
+        } else {
+            func_1511650C(arg0, 1, 0x43, 400.0f);
+        }
+    }
 }
 
 void func_150C78E0(u8 *arg0) {
