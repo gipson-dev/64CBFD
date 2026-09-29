@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,919 / 5,466 (53.40%) | 1 | 2,546 |
+| Total | 5,466 / 6,041 (90.48%) | 2,920 / 5,466 (53.42%) | 1 | 2,545 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,345 / 4,790 (48.96%) | 0 | 2,445 |
+| Game | 4,790 / 5,321 (90.02%) | 2,346 / 4,790 (48.98%) | 0 | 2,444 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1305,6 +1305,13 @@ retail's ordinary branches and shared return instead of IDO's equivalent
 branch-likely folding, and normal slice padding retains the final `nop`. This
 remains guest-side donor/reference progress; see
 [Working Note 417](WORKING_NOTES/417-game-coordinate-equality-classifier-match-20260928.md).
+The 27-word Game resource-install callback `func_15166F6C` is byte-exact after
+recovering its four-argument callback ABI, global resource-pointer install,
+and nine-argument setup dispatch. Forwarding the installed global reproduces
+retail's retained destination address and complete call schedule; all words
+emit directly from semantic C with no guards. This remains guest-side
+donor/reference progress; see
+[Working Note 418](WORKING_NOTES/418-game-resource-install-callback-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

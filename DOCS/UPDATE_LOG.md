@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game resource-install callback byte-matched
+
+- Replaced `func_15166F6C`'s zero-return placeholder with its global resource
+  install and nine-argument setup dispatch.
+- Recovering the four fixed callback arguments restores retail's `0x30` frame
+  and incoming argument home slots. Passing `D_800DD228` after assigning it
+  retains the destination base in `v0` and reproduces the complete retail
+  schedule. All 27 words emit directly from C with no guards.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `1d8be5028b0b03a7fc525437b36e570682ceaee7ffb91eef469a9f4951f6ce44`.
+  Fresh totals are **2,920 / 5,466 (53.42%)** overall and
+  **2,346 / 4,790 (48.98%)** in Game. See
+  [Working Note 418](WORKING_NOTES/418-game-resource-install-callback-match-20260928.md).
+
 ### Game coordinate-equality classifier byte-matched
 
 - Replaced `func_15159230`'s zero-return placeholder with its unsigned mode
