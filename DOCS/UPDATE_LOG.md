@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game parameter-block call adapter byte-matched
+
+- Replaced `func_15133510`'s zero-return placeholder with its recovered call
+  forwarding three integer fields and eight float fields from one parameter
+  block to `func_151424F4`.
+- All 30 words emit directly from semantic C with no expected-word guards.
+  The typed call naturally reproduces retail's saved `s0`, 64-byte outgoing
+  frame, stack argument stores, call delay slot, and epilogue.
+- The linked and retail 120-byte spans share SHA-256
+  `212f7aca0a9183382226942e0dfc15bbfd4c9606b7db86d79fa4b59e84d5381a`.
+- Totals are **2,983 / 5,465 (54.58%)** overall and **2,408 / 4,789
+  (50.28%)** in Game, with no address-drift rows. See
+  [Working Note 480](WORKING_NOTES/480-game-parameter-block-call-adapter-match-20260929.md).
+
 ### Game object type/status mapper byte-matched
 
 - Replaced `func_150B66DC`'s zero-return placeholder with its recovered

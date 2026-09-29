@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game object type/status mapper matched).**
-The current linked checkpoint is `2982 / 5465 (54.57%)` exact C functions,
-with no address-drift blockers and 2,483 genuinely different C functions.
+**Active (2026-09-29, Game parameter-block call adapter matched).**
+The current linked checkpoint is `2983 / 5465 (54.58%)` exact C functions,
+with no address-drift blockers and 2,482 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2407 / 4789 (50.26%)` exact, with 2,382 genuinely different C rows. The tree
+`2408 / 4789 (50.28%)` exact, with 2,381 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -124,6 +124,11 @@ unused scratch-parameter home and the displaced pointer spill/reload. See
 the source object's type byte by 15 and maps the resulting selector to status
 bytes `0x09` and `0x2F` on the target object. See
 [Working Note 479](WORKING_NOTES/479-game-object-type-status-mapper-match-20260929.md).
+
+`func_15133510` now matches all 30 retail words directly from C. It forwards
+three integer fields and eight floats from one parameter block to
+`func_151424F4`, preserving the complete outgoing-argument schedule. See
+[Working Note 480](WORKING_NOTES/480-game-parameter-block-call-adapter-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

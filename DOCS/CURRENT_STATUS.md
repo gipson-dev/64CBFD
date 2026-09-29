@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,982 / 5,465 (54.57%) | 0 | 2,483 |
+| Total | 2,983 / 5,465 (54.58%) | 0 | 2,482 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,407 / 4,789 (50.26%) | 0 | 2,382 |
+| Game | 2,408 / 4,789 (50.28%) | 0 | 2,381 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1310,6 +1310,10 @@ end-to-end gameplay acceptance.
    directly from C after recovering its normalized three-way selector and
    target status-byte updates. See
    [Working Note 479](WORKING_NOTES/479-game-object-type-status-mapper-match-20260929.md).
+   The 30-word parameter-block call adapter `func_15133510` is now byte-exact
+   directly from C after recovering its three integer and eight float field
+   arguments. See
+   [Working Note 480](WORKING_NOTES/480-game-parameter-block-call-adapter-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented

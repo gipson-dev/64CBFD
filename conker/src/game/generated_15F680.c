@@ -9,6 +9,7 @@ typedef struct { s32 a, b; } TwoWord15F680;
 
 
 s32 func_15133EEC();
+s32 func_151424F4(s32, s32, s32, s32, f32, f32, f32, f32, f32, f32, f32, f32);
 s32 func_15142838(void *, f32, f32, f32, f32, f32, f32, f32, f32);
 
 s32 func_151321D0() {
@@ -69,8 +70,20 @@ s32 func_151332DC() {
     return 0;
 }
 
-s32 func_15133510() {
-    return 0;
+s32 func_15133510(s32 arg0, u8 *arg1) {
+    func_151424F4(arg0,
+                  *(s32 *)(arg1 + 0x18),
+                  *(s32 *)(arg1 + 0x1C),
+                  *(s32 *)(arg1 + 0x20),
+                  *(f32 *)(arg1 + 0x24),
+                  *(f32 *)(arg1 + 0x28),
+                  *(f32 *)(arg1 + 0x2C),
+                  *(f32 *)(arg1 + 0x30),
+                  *(f32 *)(arg1 + 0x34),
+                  *(f32 *)(arg1 + 0x38),
+                  *(f32 *)(arg1 + 0x3C),
+                  *(f32 *)(arg1 + 0x40));
+    return 1;
 }
 
 s32 func_15133588() {
