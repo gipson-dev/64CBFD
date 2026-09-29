@@ -16,7 +16,9 @@ void func_151C3B0C(void *, f32, f32, f32, f32, s32, s32, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/1104D0.s. */
 
-s32 func_150E3020() {
+s32 func_150E3020(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5,
+                  s32 arg6, f32 arg7, s32 arg8, f32 arg9, f32 arg10,
+                  f32 arg11, s32 arg12, s16 arg13) {
     return 0;
 }
 
@@ -24,7 +26,14 @@ s32 func_150E3208() {
     return 0;
 }
 
-s32 func_150E32D0() {
+s32 func_150E32D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, f32 arg5) {
+    s32 temp_v0;
+
+    temp_v0 = func_150E3020(arg0, arg1, arg2, 0, 0, 0, arg4, arg5, arg3,
+                            0.0f, 0.0f, 0.0f, 0, -99);
+    if (temp_v0 != 0) {
+        return *(u8 *) (temp_v0 + 0x48) + 1;
+    }
     return 0;
 }
 

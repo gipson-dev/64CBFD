@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game actor-slot creation adapter byte-matched
+
+- Replaced `func_150E32D0`'s zero-return placeholder with its recovered
+  14-argument call to `func_150E3020`, including the retail zero/default
+  fields, forwarded object value, and forwarded single-precision value.
+- A nonnull result becomes the created actor's slot byte plus one; allocation
+  failure remains zero. The complete 28-word routine emits directly from C
+  with no guarded replacements.
+- Its linked and pristine retail spans share SHA-256
+  `0c4470a908e85d619883409c95c287e4b01e2232345c2f15cc6984cc0ab0588e`.
+  Totals are **2,959 / 5,465 (54.14%)** overall and **2,385 / 4,789
+  (49.80%)** in Game. See
+  [Working Note 457](WORKING_NOTES/457-game-actor-slot-creation-adapter-match-20260929.md).
+
 ### Game coordinate-event wrapper twins byte-matched
 
 - Replaced the zero-return placeholders for `func_150B3E74` and

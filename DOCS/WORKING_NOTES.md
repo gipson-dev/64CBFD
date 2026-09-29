@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game coordinate-event wrapper twins matched).**
-The current linked checkpoint is `2958 / 5465 (54.13%)` exact C functions,
-with one address-drift blocker and 2,506 genuinely different C functions.
+**Active (2026-09-29, Game actor-slot creation adapter matched).**
+The current linked checkpoint is `2959 / 5465 (54.14%)` exact C functions,
+with one address-drift blocker and 2,505 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2384 / 4789 (49.78%)` exact, with 2,405 genuinely different C rows. The tree
+`2385 / 4789 (49.80%)` exact, with 2,404 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1528,9 +1528,13 @@ The 29-word coordinate-event wrapper twins `func_150B3E74` and
 three-float signed-halfword conversion, event `0x221` dispatch with duration
 `0xFA0`, and distinct final callbacks. See
 [Working Note 456](WORKING_NOTES/456-game-coordinate-event-wrapper-twins-match-20260929.md).
+The 28-word actor-slot creation adapter `func_150E32D0` now matches directly
+from C after recovering its full 14-argument call ABI, zero/default fields,
+forwarded object and float values, and one-based slot return. See
+[Working Note 457](WORKING_NOTES/457-game-actor-slot-creation-adapter-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 28-word Game
-`func_150E32D0`, at 28 real differences.
+experiments were removed. Resume with ordinary unparked 29-word Game
+`func_15104170`, at 28 real differences.
 Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the
