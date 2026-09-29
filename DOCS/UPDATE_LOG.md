@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game quaternion hemisphere normalizer byte-matched
+
+- Replaced `func_15049C40`'s zero-return placeholder with its four-component
+  dot product and conditional in-place quaternion negation.
+- A negative dot product negates all four components of the second quaternion,
+  selecting the equivalent representation in the same hemisphere as the
+  first quaternion.
+- All 30 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 120 linked bytes with SHA-256
+  `72c4d1b7cee3dc8bf2561bc11b2cb4068a34014c26038ac1ebf6060fbc9f2951`.
+  Fresh totals are **2,930 / 5,466 (53.60%)** overall and
+  **2,356 / 4,790 (49.19%)** in Game. See
+  [Working Note 428](WORKING_NOTES/428-game-quaternion-hemisphere-normalizer-match-20260928.md).
+
 ### Game signed XZ coordinate query byte-matched
 
 - Replaced `func_15045714`'s zero-return placeholder with its query-mode

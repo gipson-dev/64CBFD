@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,929 / 5,466 (53.59%) | 1 | 2,536 |
+| Total | 5,466 / 6,041 (90.48%) | 2,930 / 5,466 (53.60%) | 1 | 2,535 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,355 / 4,790 (49.16%) | 0 | 2,435 |
+| Game | 4,790 / 5,321 (90.02%) | 2,356 / 4,790 (49.19%) | 0 | 2,434 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1366,6 +1366,12 @@ words emit directly from semantic C; three guards normalize one closed
 position-pointer register cycle. This remains guest-side donor/reference
 progress; see
 [Working Note 427](WORKING_NOTES/427-game-signed-xz-coordinate-query-match-20260928.md).
+The 30-word Game quaternion hemisphere normalizer `func_15049C40` is also
+byte-exact after recovering its four-component dot product and conditional
+in-place negation of the second quaternion. All words emit directly from
+semantic C with no guards. This remains guest-side donor/reference progress;
+see
+[Working Note 428](WORKING_NOTES/428-game-quaternion-hemisphere-normalizer-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
