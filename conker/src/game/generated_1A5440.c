@@ -2,8 +2,19 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1A5440.s. */
 
+typedef struct CleanupNode {
+    u8 pad0[8];
+    struct CleanupNode *next;
+    u8 padC[8];
+    u8 *owner;
+} CleanupNode;
+
 extern u8 *D_800DCF38;
+extern CleanupNode *D_800DCF3C;
 extern s32 func_15168118(u8 *arg0);
+void func_100111C8(u16 arg0);
+void func_1516972C(u8 *arg0);
+void func_15169824(u8 *arg0);
 
 s32 func_15177F90() {
     return 0;
@@ -67,8 +78,23 @@ s32 func_15178C9C() {
     return 0;
 }
 
-s32 func_15178DA4(s32 arg0) {
-    return 0;
+void func_15178DA4(u8 *arg0) {
+    CleanupNode *next;
+    CleanupNode *node = D_800DCF3C;
+
+    func_100111C8(*(u16 *)(arg0 + 0x2E));
+
+    while (node != NULL) {
+        next = node->next;
+
+        if (node->owner == arg0) {
+            func_1516972C((u8 *)node);
+        }
+
+        node = next;
+    }
+
+    func_15169824(arg0);
 }
 
 void func_15178E14(u8 arg0) {

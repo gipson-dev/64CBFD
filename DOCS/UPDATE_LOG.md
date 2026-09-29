@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game owned cleanup-list teardown byte-matched
+
+- Replaced `func_15178DA4`'s zero-return placeholder with its resource stop,
+  deletion-safe cleanup-list walk, owner-matched node releases, and final
+  record teardown.
+- Saving each next pointer before a possible node release preserves traversal.
+  Function-scope local declaration order reproduces retail's `s0` lifetime and
+  `sp+0x20` list-head spill. All 28 words emit directly from semantic C with
+  no expected-word guards or compiler-profile override.
+- Direct comparison matches all 112 linked bytes with SHA-256
+  `4c71e7e00d926b0f5f3d26a468b5e9e78f540befe4c42b7e15adfaadd962c27f`.
+  Fresh totals are **2,922 / 5,466 (53.46%)** overall and
+  **2,348 / 4,790 (49.02%)** in Game. See
+  [Working Note 420](WORKING_NOTES/420-game-owned-cleanup-list-teardown-match-20260928.md).
+
 ### Game record-mediated dispatch byte-matched
 
 - Replaced `func_15173C90`'s zero-return placeholder with its narrowed record
