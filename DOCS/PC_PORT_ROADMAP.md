@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,922 / 5,466 (53.46%) | 1 | 2,543 |
+| Total | 5,466 / 6,041 (90.48%) | 2,923 / 5,466 (53.48%) | 1 | 2,542 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,348 / 4,790 (49.02%) | 0 | 2,442 |
+| Game | 4,790 / 5,321 (90.02%) | 2,349 / 4,790 (49.04%) | 0 | 2,441 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1324,6 +1324,12 @@ final record teardown. Function-scope declaration order preserves retail's
 saved next-node cursor and stack slot; all words emit directly from semantic C
 with no guards. This remains guest-side donor/reference progress; see
 [Working Note 420](WORKING_NOTES/420-game-owned-cleanup-list-teardown-match-20260928.md).
+The 27-word Game mapped three-byte-row dispatcher `func_1517F3A0` is
+byte-exact after recovering its selector mapping, zero-map passthrough, packed
+row lookup, and six-argument dispatch. The early-return source shape emits all
+words directly with no guards. This remains guest-side donor/reference
+progress; see
+[Working Note 421](WORKING_NOTES/421-game-mapped-three-byte-row-dispatch-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

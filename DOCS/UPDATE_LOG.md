@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game mapped three-byte-row dispatch byte-matched
+
+- Replaced `func_1517F3A0`'s zero-return placeholder with its selector mapping,
+  zero-map passthrough, packed three-byte row lookup, and six-argument
+  dispatch.
+- Expressing the zero mapping as an early return reproduces retail's ordinary
+  branch, passthrough delay slot, and shared epilogue. All 27 words emit
+  directly from semantic C with no expected-word guards or profile override.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `bca8c2263f7d6ccb6f2a7572fc5ed850bef668670172b0d7be811a287aff4595`.
+  Fresh totals are **2,923 / 5,466 (53.48%)** overall and
+  **2,349 / 4,790 (49.04%)** in Game. See
+  [Working Note 421](WORKING_NOTES/421-game-mapped-three-byte-row-dispatch-match-20260928.md).
+
 ### Game owned cleanup-list teardown byte-matched
 
 - Replaced `func_15178DA4`'s zero-return placeholder with its resource stop,

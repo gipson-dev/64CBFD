@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,922 / 5,466 (53.46%) | 1 | 2,543 |
+| Total | 2,923 / 5,466 (53.48%) | 1 | 2,542 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,348 / 4,790 (49.02%) | 0 | 2,442 |
+| Game | 2,349 / 4,790 (49.04%) | 0 | 2,441 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1023,9 +1023,15 @@ end-to-end gameplay acceptance.
    saved next-node cursor and retail stack slot; all words emit directly from
    semantic C with no guards. See
    [Working Note 420](WORKING_NOTES/420-game-owned-cleanup-list-teardown-match-20260928.md).
+   The 27-word mapped three-byte-row dispatcher `func_1517F3A0` is now
+   byte-exact after recovering its selector mapping, zero-map passthrough,
+   packed row lookup, and six-argument dispatch. The early-return source shape
+   reproduces retail's shared epilogue; all words emit directly from semantic
+   C with no guards. See
+   [Working Note 421](WORKING_NOTES/421-game-mapped-three-byte-row-dispatch-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 27-word Game `func_1517F3A0`, at 26 real
+   with ordinary unparked 27-word Game `func_15190550`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

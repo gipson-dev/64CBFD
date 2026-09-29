@@ -12,6 +12,7 @@ extern u8 D_800DDD88;
 extern u16 D_800DDE08;
 extern s32 D_800DDE28[];
 extern s32 D_800DDDB0[];
+extern u8 D_800DDDA0[];
 extern f32 D_800DDDC8[];
 extern f32 D_800DDDD8[];
 extern f32 D_800DDDE8[][2];
@@ -43,8 +44,20 @@ s32 func_1517F08C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
     return 0;
 }
 
-s32 func_1517F3A0() {
-    return 0;
+s32 func_1517F3A0(s32 arg0, s32 arg1) {
+    s32 mapped = func_1517EF00(arg1);
+
+    if (mapped == 0) {
+        return arg0;
+    }
+
+    return func_1517F08C(
+        arg0,
+        mapped,
+        D_800DDDA0[arg1 * 3],
+        D_800DDDA0[arg1 * 3 + 1],
+        D_800DDDA0[arg1 * 3 + 2],
+        arg1);
 }
 
 s32 func_1517F40C(s32 arg0) {
