@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,981 / 5,465 (54.55%) | 0 | 2,484 |
+| Total | 5,465 / 6,041 (90.47%) | 2,982 / 5,465 (54.57%) | 0 | 2,483 |
 | Init | 495 / 538 (92.01%) | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,406 / 4,789 (50.24%) | 0 | 2,383 |
+| Game | 4,789 / 5,321 (90.00%) | 2,407 / 4,789 (50.26%) | 0 | 2,382 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw

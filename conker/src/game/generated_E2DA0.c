@@ -53,8 +53,31 @@ s32 func_150B648C() {
     return 0;
 }
 
-s32 func_150B66DC() {
-    return 0;
+s32 func_150B66DC(u8 *arg0) {
+    u8 *source;
+    s32 result;
+    s32 selector;
+
+    source = *(u8 **)(arg0 + 0x18);
+    selector = source[0x68];
+    result = 1;
+    selector -= 15;
+
+    switch (selector) {
+        case 0:
+            *(*(u8 **)(arg0 + 0x14) + 9) = 1;
+            break;
+        case 1:
+            *(*(u8 **)(arg0 + 0x14) + 9) = 0;
+            *(*(u8 **)(arg0 + 0x14) + 0x2F) = 20;
+            break;
+        case 2:
+        default:
+            *(*(u8 **)(arg0 + 0x14) + 9) = 0;
+            *(*(u8 **)(arg0 + 0x14) + 0x2F) = 40;
+            break;
+    }
+    return result;
 }
 
 s32 func_150B6754() {

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game object type/status mapper byte-matched
+
+- Replaced `func_150B66DC`'s zero-return placeholder with its recovered
+  normalized type selector and target status-byte updates.
+- All 30 words emit directly from semantic C with no expected-word guards.
+  An explicit source-object pointer preserves retail's opening `v0` lifetime,
+  early constant return value, and complete branch-likely schedule.
+- The linked and retail 120-byte spans share SHA-256
+  `f517d090f9e18290dc22a4267a688ec99b90b73ce0f1ae41b6af86a2cce35d78`.
+- Totals are **2,982 / 5,465 (54.57%)** overall and **2,407 / 4,789
+  (50.26%)** in Game, with no address-drift rows. See
+  [Working Note 479](WORKING_NOTES/479-game-object-type-status-mapper-match-20260929.md).
+
 ### Game angular state integrator byte-matched
 
 - Replaced `func_150AFBF4`'s zero-return placeholder with its recovered
