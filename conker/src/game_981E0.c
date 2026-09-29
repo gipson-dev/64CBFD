@@ -557,17 +557,19 @@ void func_1506D570(void) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_1506D584.s")
 // ???
 void func_1506D6B4(void) {
-    f32 floor = D_800D154C->unk118;
+    struct127 *player = D_800D154C;
+    f32 floor = player->unk118;
     s32 value;
 
-    if ((D_80099D4C != floor) && !(floor < (f32)D_800D154C->unk1A6)) {
-        value = 0x29;
-        if (D_800D154C->health >= 2) {
-            value = 0x2C;
-        }
-        D_800D1580 = (value << 24) | (D_800D1580 & 0xFFFF);
-        func_1506D584();
+    if (floor == D_80099D4C) {
+        return;
     }
+    if (floor < (f32)player->unk1A6) {
+        return;
+    }
+    value = player->health >= 2 ? 0x2C : 0x29;
+    D_800D1580 = (value << 24) | (D_800D1580 & 0xFFFF);
+    func_1506D584();
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506D74C.s. */
 s32 func_1506D74C() {

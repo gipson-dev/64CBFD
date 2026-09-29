@@ -825,6 +825,12 @@ generated_185560,func_151581D8,0x01C,0x8FB80038,0x93AF0037,-,-,Narrow forwarded 
 generated_185560,func_151581D8,0x020,0x00002825,0x8FB80038,-,-,Load forwarded arg4 into t8,
 generated_185560,func_151581D8,0x024,0x00003025,0x00002825,-,-,Clear the second call argument,
 generated_185560,func_151581D8,0x028,0x93A7002F,0x00003025,-,-,Clear the third call argument,
+game_981E0,func_1506D6B4,0x01C,0x46040032,0x46002032,-,-,Preserve retail's commutative floating comparison operand order,,,false
+game_981E0,func_1506D6B4,0x070,0x8C790000,0x8C680000,-,-,Load the packed state through retail's t0 lifetime,,,false
+game_981E0,func_1506D6B4,0x074,0x0002C600,0x0002CE00,-,-,Shift the selected state through retail's t9 lifetime,,,false
+game_981E0,func_1506D6B4,0x078,0x3328FFFF,0x3109FFFF,-,-,Mask the prior packed state through retail's t1 lifetime,,,false
+game_981E0,func_1506D6B4,0x07C,0x03084825,0x03295025,-,-,Merge the packed state through retail's t2 lifetime,,,false
+game_981E0,func_1506D6B4,0x084,0xAC690000,0xAC6A0000,-,-,Store the packed state from retail's t2 lifetime,,,false
 game_981E0,func_150717E0,0x014,0x10400009,0x1040000A,-,-,Extend the null branch over the preserved local pointer,
 game_981E0,func_150717E0,0x024,0x24050043,0xAFA40018,-,-,Preserve the local record pointer across the first call,
 game_981E0,func_150717E0,0x028,0x0C000000,0x24050043,R_MIPS_26:func_15131D4C,-,Load the first call tag after preserving the pointer,

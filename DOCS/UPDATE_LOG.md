@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game floor-threshold state trigger byte-matched
+
+- Reshaped `func_1506D6B4` around retail's two early exits, health-dependent
+  state selection, packed `D_800D1580` update, and final `func_1506D584` call.
+- The trigger ignores the sentinel floor value and floor values below the
+  signed actor threshold. Otherwise it selects state byte `0x29` or `0x2C`,
+  preserves the packed value's low 16 bits, and clears its middle byte.
+- Thirty-two of 38 words emit directly from semantic C. Six expected-word
+  guards normalize one commutative floating comparison operand order and one
+  closed integer temporary-register cycle. Direct comparison matches all 152
+  linked bytes with SHA-256
+  `690e50073ee7d0d285273ab36186c7fea022fabf86b1a9ce25c9f2ee82b69a9c`.
+  Fresh totals are **2,931 / 5,466 (53.62%)** overall and
+  **2,357 / 4,790 (49.21%)** in Game. See
+  [Working Note 429](WORKING_NOTES/429-game-floor-threshold-state-trigger-match-20260928.md).
+
 ### Game quaternion hemisphere normalizer byte-matched
 
 - Replaced `func_15049C40`'s zero-return placeholder with its four-component

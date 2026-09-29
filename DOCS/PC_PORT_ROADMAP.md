@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,930 / 5,466 (53.60%) | 1 | 2,535 |
+| Total | 5,466 / 6,041 (90.48%) | 2,931 / 5,466 (53.62%) | 1 | 2,534 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,356 / 4,790 (49.19%) | 0 | 2,434 |
+| Game | 4,790 / 5,321 (90.02%) | 2,357 / 4,790 (49.21%) | 0 | 2,433 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1372,6 +1372,13 @@ in-place negation of the second quaternion. All words emit directly from
 semantic C with no guards. This remains guest-side donor/reference progress;
 see
 [Working Note 428](WORKING_NOTES/428-game-quaternion-hemisphere-normalizer-match-20260928.md).
+The 38-word Game floor-threshold state trigger `func_1506D6B4` is byte-exact
+after recovering its two early exits, health-dependent state selection,
+packed global update, and callback. Thirty-two words emit directly from
+semantic C; six guards normalize one commutative FP operand order and a closed
+integer temporary cycle. This remains guest-side donor/reference progress;
+see
+[Working Note 429](WORKING_NOTES/429-game-floor-threshold-state-trigger-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 
