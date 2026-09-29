@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,954 / 5,465 (54.05%) | 1 | 2,510 |
+| Total | 2,955 / 5,465 (54.07%) | 1 | 2,509 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,380 / 4,789 (49.70%) | 0 | 2,409 |
+| Game | 2,381 / 4,789 (49.72%) | 0 | 2,408 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,954, while
+denominator driven: the exact count is now 2,955, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1198,12 +1198,17 @@ end-to-end gameplay acceptance.
    Relocation-aware expected-word guards normalize IDO's repeated global-base
    materialization, table-index schedule, and temporary-register lifetimes.
    See [Working Note 453](WORKING_NOTES/453-game-packed-descriptor-builder-match-20260929.md).
+   The 28-word three-record dispatch loop `func_15096D08` is now byte-exact
+   after recovering its mode gate, nonempty-record test, and early exit on a
+   nonzero `func_15096A68` result. Its complete frame, saved-register
+   lifetimes, branch-likely update, call relocation, and epilogue emit directly
+   from semantic C without guards. See
+   [Working Note 454](WORKING_NOTES/454-game-three-record-dispatch-loop-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 28-word Game `func_15096D08`, at 28 real
+   with ordinary unparked 32-word Game `func_15084C30`, at 28 real
    differences. It is currently a zero-return placeholder in
-   `generated_C3E20.c`; recover its loop from the retail `C3E20` slice before
-   considering compiler normalization.
+   `generated_AEB40.c`; recover its behavior from the retail `AEB40` slice.
    Keep `func_15194320` and `func_15194394` parked behind generated-slice
    jump-table/rodata ownership rather than introducing unresolved switches.
    Keep the documented lower-difference compiler cases parked,

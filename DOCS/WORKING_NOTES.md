@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game packed descriptor builder matched).**
-The current linked checkpoint is `2954 / 5465 (54.05%)` exact C functions,
-with one address-drift blocker and 2,510 genuinely different C functions.
+**Active (2026-09-29, Game three-record dispatch loop matched).**
+The current linked checkpoint is `2955 / 5465 (54.07%)` exact C functions,
+with one address-drift blocker and 2,509 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2380 / 4789 (49.70%)` exact, with 2,409 genuinely different C rows. The tree
+`2381 / 4789 (49.72%)` exact, with 2,408 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1514,10 +1514,16 @@ CSV rows collapse IDO's repeated global-base materialization and normalize the
 retail index/store schedule while failing closed on unexpected compiler
 output. See
 [Working Note 453](WORKING_NOTES/453-game-packed-descriptor-builder-match-20260929.md).
+The 28-word three-record dispatch loop `func_15096D08` now matches after
+recovering its global mode gate, three-entry scan at a `0x24` stride, and
+early exit on a nonzero `func_15096A68` result. The complete frame, saved
+registers, branch-likely delay-slot update, call, and epilogue emit directly
+from semantic C without guards. See
+[Working Note 454](WORKING_NOTES/454-game-three-record-dispatch-loop-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 28-word Game
-`func_15096D08`, at 28 real differences. It remains a zero-return placeholder
-in `generated_C3E20.c`; recover its loop from the retail `C3E20` slice.
+experiments were removed. Resume with ordinary unparked 32-word Game
+`func_15084C30`, at 28 real differences. It remains a zero-return placeholder
+in `generated_AEB40.c`; recover its behavior from the retail `AEB40` slice.
 Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the

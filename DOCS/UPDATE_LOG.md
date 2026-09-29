@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game three-record dispatch loop byte-matched
+
+- Replaced `func_15096D08`'s zero-return placeholder with its recovered
+  mode-gated scan of the three records at `D_800D2DC0`.
+- Unless `D_800C35EA` equals one, the routine visits records at a `0x24`-byte
+  stride, calls `func_15096A68(index)` for each nonempty record, and exits on
+  the first nonzero result.
+- All 28 words, both global relocation pairs, and the call relocation emit
+  directly from semantic C with no guards. Direct comparison matches all 112
+  linked bytes with SHA-256
+  `15e463f0914a3cd4f1ecc2d323f812dbe8bd443b83acd89e6e0859cccc283a0c`.
+  Fresh totals are **2,955 / 5,465 (54.07%)** overall and
+  **2,381 / 4,789 (49.72%)** in Game. See
+  [Working Note 454](WORKING_NOTES/454-game-three-record-dispatch-loop-match-20260929.md).
+
 ### Game packed descriptor builder byte-matched
 
 - Replaced `func_15095060`'s zero-return placeholder with its recovered typed
