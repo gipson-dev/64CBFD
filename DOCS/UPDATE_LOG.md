@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game callback-gated record-state updater byte-matched
+
+- Recovered `func_150D0034`'s signed callback-selector gate, optional indexed
+  callback, failure-state write, and final status-bit clear.
+- Volatile selector reads preserve retail's two independent byte loads and
+  branch-likely schedule. Expressing the byte clear as promoted `~1` restores
+  the original `0xFFFE` mask.
+- All 35 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 140 linked bytes with SHA-256
+  `b7054a84fa9bb16c0971dd8874a53f7a6db60c6d57bad0ef1d65f8dc43239799`.
+  Fresh totals are **2,933 / 5,465 (53.67%)** overall and
+  **2,359 / 4,789 (49.26%)** in Game. See
+  [Working Note 432](WORKING_NOTES/432-game-callback-gated-record-state-update-match-20260928.md).
+
 ### Game handwritten two-block word transform restored
 
 - Replaced `func_150B1DB0`'s false zero-return C placeholder with its original

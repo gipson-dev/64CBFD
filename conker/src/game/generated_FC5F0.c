@@ -146,18 +146,16 @@ void *func_150CFF10(u8 arg0, u8 *arg1, s16 arg2, s32 arg3, s8 arg4,
 s32 func_150D0034(u8 *arg0, u8 *arg1, s32 arg2) {
     u8 *sub;
 
-    if (*(s8 *) (arg1 + 0x4C) == -1) {
+    if (*(volatile s8 *) (arg1 + 0x4C) == -1) {
         sub = arg1 + 0x28;
     } else {
-        s32 (*fn)(u8 *) = D_800888A0[*(s8 *) (arg1 + 0x4C)];
-
-        if (fn(arg1) == 0) {
+        if (D_800888A0[*(volatile s8 *) (arg1 + 0x4C)](arg1) == 0) {
             *(s16 *) (arg1 + 0xE) = -1;
             return (s32) arg0;
         }
         sub = arg1 + 0x28;
     }
-    *(sub + 8) &= 0xFE;
+    *(sub + 8) &= ~1;
     return (s32) arg0;
 }
 
