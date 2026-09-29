@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game event callback-table dispatch byte-matched
+
+- Replaced `func_15190550`'s zero-return placeholder with its event-`0x2A`
+  pre-handler, object callback-table lookup, null gate, and three-argument
+  forwarding call.
+- The `u8` event formal reproduces retail's incoming canonicalization and the
+  save/restore around the pre-handler. The typed nullable callback emits the
+  complete `jalr` path directly; no expected-word guards are required.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `9193a39a64e3fed0ea5f093cf70ce6e95b41bc79c21f38a34ca894441df6fe66`.
+  Fresh totals are **2,924 / 5,466 (53.49%)** overall and
+  **2,350 / 4,790 (49.06%)** in Game. See
+  [Working Note 422](WORKING_NOTES/422-game-event-callback-table-dispatch-match-20260928.md).
+
 ### Game mapped three-byte-row dispatch byte-matched
 
 - Replaced `func_1517F3A0`'s zero-return placeholder with its selector mapping,

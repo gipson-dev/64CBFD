@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game mapped three-byte-row dispatch matched).** The
-current linked checkpoint is `2923 / 5466 (53.48%)` exact C functions, with
-one address-drift blocker and 2,542 genuinely different C functions. Init is
+**Active (2026-09-28, Game event callback-table dispatch matched).** The
+current linked checkpoint is `2924 / 5466 (53.49%)` exact C functions, with
+one address-drift blocker and 2,541 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2349 / 4790 (49.04%)` exact, with 2,441 genuinely different C rows. The tree
+`2350 / 4790 (49.06%)` exact, with 2,440 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1349,9 +1349,14 @@ recovering its selector mapping, zero-map passthrough, packed row lookup, and
 six-argument dispatch. The early-return source shape reproduces retail's
 shared epilogue; all words emit directly from semantic C with no guards. See
 [Working Note 421](WORKING_NOTES/421-game-mapped-three-byte-row-dispatch-match-20260928.md).
+The 27-word event callback-table dispatcher `func_15190550` now matches after
+recovering its event-`0x2A` pre-handler, object callback index, nullable lookup,
+and three-argument forwarding call. Its typed body emits all words directly
+with no guards. See
+[Working Note 422](WORKING_NOTES/422-game-event-callback-table-dispatch-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 27-word Game
-`func_15190550`, at 26 real differences. Keep the documented lower-difference
+experiments were removed. Resume with ordinary unparked 28-word Game
+`func_151B222C`, at 26 real differences. Keep the documented lower-difference
 compiler cases parked, and keep `func_151F3D78` parked behind the pre-existing
 `game_21FC90` audio-object layout drift. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked

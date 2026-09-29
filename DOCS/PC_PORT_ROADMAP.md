@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,923 / 5,466 (53.48%) | 1 | 2,542 |
+| Total | 5,466 / 6,041 (90.48%) | 2,924 / 5,466 (53.49%) | 1 | 2,541 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,349 / 4,790 (49.04%) | 0 | 2,441 |
+| Game | 4,790 / 5,321 (90.02%) | 2,350 / 4,790 (49.06%) | 0 | 2,440 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1330,6 +1330,11 @@ row lookup, and six-argument dispatch. The early-return source shape emits all
 words directly with no guards. This remains guest-side donor/reference
 progress; see
 [Working Note 421](WORKING_NOTES/421-game-mapped-three-byte-row-dispatch-match-20260928.md).
+The 27-word Game event callback-table dispatcher `func_15190550` is byte-exact
+after recovering its event-`0x2A` pre-handler, object callback index, nullable
+lookup, and three-argument forwarding call. Its typed body emits all words
+directly with no guards. This remains guest-side donor/reference progress; see
+[Working Note 422](WORKING_NOTES/422-game-event-callback-table-dispatch-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -1,6 +1,7 @@
 #include <ultra64.h>
 f32 func_150ADA68();
 extern void (*D_8008D680[])();
+extern void (*D_8008D684[])(u8 *, void *, u8);
 typedef struct { s32 a, b, c; } ThreeWord1BA1D0;
 void func_15169260(void *, s32, s32, u8);
 extern u8 D_800A74D4[];
@@ -53,6 +54,7 @@ extern u8 D_800A749C[];
 s32 func_1518F8E0();
 
 s32 func_15191400();
+void func_151D33FC(u8 *arg0, void *arg1);
 
 s32 func_1518CD20() {
     return 0;
@@ -330,8 +332,17 @@ void func_15190518(u8 *arg0) {
     func_1516944C(0x3E, &rec, 0x2A);
 }
 
-s32 func_15190550() {
-    return 0;
+void func_15190550(u8 *arg0, void *arg1, u8 arg2) {
+    void (*callback)(u8 *, void *, u8);
+
+    if (arg2 == 0x2A) {
+        func_151D33FC(arg0, arg1);
+    }
+
+    callback = D_8008D684[arg0[0x8A]];
+    if (callback != NULL) {
+        callback(arg0, arg1, arg2);
+    }
 }
 
 s32 func_151905BC() {
