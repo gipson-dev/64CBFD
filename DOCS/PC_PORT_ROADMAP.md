@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,948 / 5,465 (53.94%) | 1 | 2,516 |
+| Total | 5,465 / 6,041 (90.47%) | 2,949 / 5,465 (53.96%) | 1 | 2,515 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,374 / 4,789 (49.57%) | 0 | 2,415 |
+| Game | 4,789 / 5,321 (90.00%) | 2,375 / 4,789 (49.59%) | 0 | 2,414 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1481,6 +1481,12 @@ after recovering its primary pointer release and two-entry indexed child
 array. All words and both call relocations emit directly from semantic C with
 no guards. This remains guest-side donor/reference progress; see
 [Working Note 447](WORKING_NOTES/447-game-child-pointer-release-loop-match-20260929.md).
+The 30-word Game selector-transition dispatcher `func_151AE06C` is now
+byte-exact after recovering its admission gate and conditional selector
+replacement. Twenty-nine words emit directly from semantic C; one guarded
+word preserves a commutative equality-branch operand order. This remains
+guest-side donor/reference progress; see
+[Working Note 448](WORKING_NOTES/448-game-selector-transition-dispatch-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

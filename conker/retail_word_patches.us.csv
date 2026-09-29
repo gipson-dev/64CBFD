@@ -1871,3 +1871,4 @@ generated_135D00,func_15109064,0x048,0x03E00008,0xAC48001C,-,-,Store the final c
 generated_135D00,func_15109064,0x04C,0xAC48001C,0x03E00008,-,-,Restore retail's explicit copy-path return,0x00000000,-,false
 generated_1B7EC0,func_1518AB60,0x050,0x93A40027,0x93B90027,-,-,Preserve retail selector reload register allocation,,,false
 generated_1B7EC0,func_1518AB60,0x05C,0xA064001C,0xA079001C,-,-,Preserve retail selector store register allocation,,,false
+generated_1D92F0,func_151AE06C,0x048,0x50450008,0x50A20008,-,-,Preserve retail's commutative selector equality operand order,,,false

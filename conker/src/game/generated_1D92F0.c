@@ -3,6 +3,8 @@
 /* Non-matching placeholders for the text-only asm slice asm/1D92F0.s. */
 
 s32 func_151AE3A8();
+s32 func_151AE0E4(u8 *arg0, u8 arg1);
+s32 func_151AE264(u8 *arg0, u8 arg1);
 
 extern f32 D_800BE9A4;
 
@@ -100,11 +102,27 @@ s32 func_151AD92C() {
     return 0;
 }
 
-s32 func_151AE06C() {
-    return 0;
+void func_151AE06C(u8 *arg0, u8 *arg1) {
+    u8 admission;
+    u8 requested;
+    s32 current;
+
+    if (func_151ACB38(arg0, &admission) != 0) {
+        requested = arg1[0x1B];
+        current = (*(u8 **)(arg0 + 0x31C))[0x98];
+        if (current == 0) {
+            func_151AE0E4(arg0, requested);
+            return;
+        }
+        if (current == requested) {
+            return;
+        }
+        func_151AE264(arg0, requested);
+        func_151AE0E4(arg0, requested);
+    }
 }
 
-s32 func_151AE0E4() {
+s32 func_151AE0E4(u8 *arg0, u8 arg1) {
     return 0;
 }
 

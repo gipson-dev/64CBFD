@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,948 / 5,465 (53.94%) | 1 | 2,516 |
+| Total | 2,949 / 5,465 (53.96%) | 1 | 2,515 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,374 / 4,789 (49.57%) | 0 | 2,415 |
+| Game | 2,375 / 4,789 (49.59%) | 0 | 2,414 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,948, while
+denominator driven: the exact count is now 2,949, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1166,11 +1166,16 @@ end-to-end gameplay acceptance.
    A byte-canonicalizing loop assignment and source-ordered address expression
    reproduce retail's counter feedback and commutative add without guards. See
    [Working Note 447](WORKING_NOTES/447-game-child-pointer-release-loop-match-20260929.md).
+   The 30-word selector-transition dispatcher `func_151AE06C` is now
+   byte-exact after recovering its admission query, requested/current selector
+   comparison, and conditional replacement path. One guarded word preserves
+   a commutative equality-branch operand order. See
+   [Working Note 448](WORKING_NOTES/448-game-selector-transition-dispatch-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 30-word Game `func_151AE06C`, at 27 real
-   differences. Recover its admission query and selector transition between
-   `func_151AE264` and `func_151AE0E4`.
+   with ordinary unparked 32-word Game `func_15174920`, at 27 real
+   differences. Recover its capped timer subtraction, negative-expiry clear,
+   and two signed position updates.
    Keep `func_15194320` and `func_15194394` parked behind generated-slice
    jump-table/rodata ownership rather than introducing unresolved switches.
    Keep the documented lower-difference compiler cases parked,

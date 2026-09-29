@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game selector-transition dispatcher byte-matched
+
+- Replaced `func_151AE06C`'s zero-return placeholder with its recovered
+  admission query and requested/current selector transition.
+- Corrected the selector argument types for `func_151AE264` and
+  `func_151AE0E4`, restoring retail's byte spill/reload across the replacement
+  call. Reversing the two independent source loads reproduces retail's
+  temporary-register allocation.
+- Twenty-nine of 30 words and all four call relocations emit from semantic C.
+  One expected-word guard preserves retail's commutative equality-branch
+  operand order. Direct comparison matches all 120 linked bytes with SHA-256
+  `540db7d8ff6e8ae46dac27e83c1fdf131ce6275da182665eb858b303353d595c`.
+  Fresh totals are **2,949 / 5,465 (53.96%)** overall and
+  **2,375 / 4,789 (49.59%)** in Game. See
+  [Working Note 448](WORKING_NOTES/448-game-selector-transition-dispatch-match-20260929.md).
+
 ### Game child-pointer release loop byte-matched
 
 - Reworked `func_151BFB2C` into its recovered primary-pointer release and

@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game child-pointer release loop matched).**
-The current linked checkpoint is `2948 / 5465 (53.94%)` exact C functions,
-with one address-drift blocker and 2,516 genuinely different C functions.
+**Active (2026-09-29, Game selector-transition dispatch matched).**
+The current linked checkpoint is `2949 / 5465 (53.96%)` exact C functions,
+with one address-drift blocker and 2,515 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2374 / 4789 (49.57%)` exact, with 2,415 genuinely different C rows. The tree
+`2375 / 4789 (49.59%)` exact, with 2,414 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1481,11 +1481,16 @@ recovering its primary pointer release, retained child-array base, and
 byte-canonicalized two-entry loop. All words and both call relocations emit
 directly from semantic C with no guards. See
 [Working Note 447](WORKING_NOTES/447-game-child-pointer-release-loop-match-20260929.md).
+The 30-word selector-transition dispatcher `func_151AE06C` now matches after
+recovering its admission gate, requested/current selector comparison, and
+conditional replacement path. Twenty-nine words emit directly from semantic
+C; one guard preserves the commutative equality-branch operand order. See
+[Working Note 448](WORKING_NOTES/448-game-selector-transition-dispatch-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 30-word Game
-`func_151AE06C`, at 27 real differences. Recover its admission query, current
-selector read, and conditional transition through `func_151AE264` and
-`func_151AE0E4`. Keep 29-word
+experiments were removed. Resume with ordinary unparked 32-word Game
+`func_15174920`, at 27 real differences. Recover its capped timer subtraction,
+negative-expiry clear, and signed updates to the halfwords at offsets `0x34`
+and `0x36`. Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the
 documented lower-difference
