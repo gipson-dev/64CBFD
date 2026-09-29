@@ -1928,6 +1928,12 @@ generated_AEB40,func_15084C30,0x06C,0x46105280,0x460A0000,-,-,Apply the unsigned
 generated_AEB40,func_15084C30,0x070,0xE48A0008,0xE4600008,-,-,Store the corrected f0 result through the retained record pointer,,,false
 generated_179F30,func_1514DAA4,0x028,0xAFA70028,0x24060008,-,-,Load the payload size before the allocator call,,,false
 generated_179F30,func_1514DAA4,0x030,0x24060008,0xAFA70028,-,-,Spill the retained object in the allocator delay slot,,,false
+generated_179F30,func_1514EBA4,0x04C,0xAC600014,0x8FB80020,-,-,Load the retained payload before clearing the node links,,,false
+generated_179F30,func_1514EBA4,0x050,0xAC600018,0xAC600014,-,-,Clear the next link after loading the retained payload,,,false
+generated_179F30,func_1514EBA4,0x054,0x8FB80020,0xAC600018,-,-,Clear the previous link before storing the retained payload,,,false
+generated_179F30,func_1514EBA4,0x058,0x00601025,0xAC780010,-,-,Store the retained payload before loading the node key,,,false
+generated_179F30,func_1514EBA4,0x05C,0xAC780010,0x87B90026,-,-,Load the signed node key before selecting the return pointer,,,false
+generated_179F30,func_1514EBA4,0x060,0x87B90026,0x00601025,-,-,Select the allocated node as the return value after loading its key,,,false
 game_981E0,func_150721A4,0x00C,0x8C420000,0x8C430000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Keep the packed global in retail's v1 lifetime,,,false
 game_981E0,func_150721A4,0x018,0x00022C03,0x00037203,-,-,Extract the middle byte first through retail's t6 lifetime,,,false
 game_981E0,func_150721A4,0x01C,0x00403025,0x00000000,-,-,Omit the redundant packed-value copy to a2,,,true

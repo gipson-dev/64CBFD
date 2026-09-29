@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,983 / 5,465 (54.58%) | 0 | 2,482 |
+| Total | 2,984 / 5,465 (54.60%) | 0 | 2,481 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,408 / 4,789 (50.28%) | 0 | 2,381 |
+| Game | 2,409 / 4,789 (50.30%) | 0 | 2,380 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1314,6 +1314,11 @@ end-to-end gameplay acceptance.
    directly from C after recovering its three integer and eight float field
    arguments. See
    [Working Note 480](WORKING_NOTES/480-game-parameter-block-call-adapter-match-20260929.md).
+   The 30-word list-node allocator wrapper `func_1514EBA4` is now byte-exact
+   after recovering its allocator call, null return, and initialized payload,
+   links, and signed key. Six guarded words preserve two independent retail
+   scheduling cycles. See
+   [Working Note 481](WORKING_NOTES/481-game-list-node-allocator-wrapper-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented

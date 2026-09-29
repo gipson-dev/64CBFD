@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game list-node allocator wrapper byte-matched
+
+- Replaced `func_1514EBA4`'s zero-return placeholder with its recovered
+  allocator call, null return, and list-node field initialization.
+- The native signed-halfword second parameter reproduces retail's stack-home
+  load. Twenty-four words emit directly from semantic C; six guarded words
+  preserve two independent three-word scheduling cycles.
+- The linked and retail 120-byte spans share SHA-256
+  `df64ed7a708de97209ab59c3300454d23b0b136d2f6536fd7590342c55353244`.
+- Totals are **2,984 / 5,465 (54.60%)** overall and **2,409 / 4,789
+  (50.30%)** in Game, with no address-drift rows. See
+  [Working Note 481](WORKING_NOTES/481-game-list-node-allocator-wrapper-match-20260929.md).
+
 ### Game parameter-block call adapter byte-matched
 
 - Replaced `func_15133510`'s zero-return placeholder with its recovered call

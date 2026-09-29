@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game parameter-block call adapter matched).**
-The current linked checkpoint is `2983 / 5465 (54.58%)` exact C functions,
-with no address-drift blockers and 2,482 genuinely different C functions.
+**Active (2026-09-29, Game list-node allocator wrapper matched).**
+The current linked checkpoint is `2984 / 5465 (54.60%)` exact C functions,
+with no address-drift blockers and 2,481 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2408 / 4789 (50.28%)` exact, with 2,381 genuinely different C rows. The tree
+`2409 / 4789 (50.30%)` exact, with 2,380 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -129,6 +129,12 @@ bytes `0x09` and `0x2F` on the target object. See
 three integer fields and eight floats from one parameter block to
 `func_151424F4`, preserving the complete outgoing-argument schedule. See
 [Working Note 480](WORKING_NOTES/480-game-parameter-block-call-adapter-match-20260929.md).
+
+`func_1514EBA4` now matches all 30 retail words. It allocates a 36-byte list
+node, returns null on allocation failure, and otherwise initializes its two
+links, payload, and signed key. Six guarded words preserve two independent
+three-word scheduling cycles around those stores. See
+[Working Note 481](WORKING_NOTES/481-game-list-node-allocator-wrapper-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

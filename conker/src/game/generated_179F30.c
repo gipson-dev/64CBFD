@@ -15,6 +15,7 @@ s32 func_1515F10C();
 s32 func_1514E920();
 s32 func_1514E89C();
 s32 func_15158BD0();
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
 s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1515BE50(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 extern u8 D_800A5920[];
@@ -330,8 +331,18 @@ s32 func_1514EB8C(s32 arg0, s32 arg1, s32 arg2) {
     return 1;
 }
 
-s32 func_1514EBA4() {
-    return 0;
+GameListNode *func_1514EBA4(s32 arg0, s16 arg1, s32 arg2) {
+    GameListNode *node = func_15167A68(0x24, 1, arg2 + 0x20, 1, 0xFF, 1);
+
+    if (node == NULL) {
+        return NULL;
+    }
+
+    node->next = NULL;
+    node->prev = NULL;
+    node->unk10 = arg0;
+    node->unk1C = arg1;
+    return node;
 }
 
 s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2) {

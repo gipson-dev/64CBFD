@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,983 / 5,465 (54.58%) | 0 | 2,482 |
+| Total | 5,465 / 6,041 (90.47%) | 2,984 / 5,465 (54.60%) | 0 | 2,481 |
 | Init | 495 / 538 (92.01%) | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,408 / 4,789 (50.28%) | 0 | 2,381 |
+| Game | 4,789 / 5,321 (90.00%) | 2,409 / 4,789 (50.30%) | 0 | 2,380 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -18,6 +18,11 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The latest focused Game recovery replaces `func_1514EBA4`'s zero-return
+placeholder with its list-node allocation and initialization behavior. Its
+complete 120-byte linked span matches retail; see
+[Working Note 481](WORKING_NOTES/481-game-list-node-allocator-wrapper-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
