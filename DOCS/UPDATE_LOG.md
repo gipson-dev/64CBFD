@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game coordinate-equality classifier byte-matched
+
+- Replaced `func_15159230`'s zero-return placeholder with its unsigned mode
+  canonicalization, three exact coordinate comparisons, and mismatch result
+  selection.
+- A complete coordinate match returns `0`. A mismatch returns `2` for modes
+  `1` and `2`, and `1` for every other mode. Semantic C emits the comparison
+  prefix directly; eleven expected-word guards retain retail's ordinary
+  branches and shared return instead of IDO's equivalent branch-likely tail.
+- Direct comparison matches all 136 linked bytes with SHA-256
+  `8676af640e21d085de785f26264d34916e066fd5e94c6b0e763c9e9bd664fc8c`.
+  Fresh totals are **2,919 / 5,466 (53.40%)** overall and
+  **2,345 / 4,790 (48.96%)** in Game. See
+  [Working Note 417](WORKING_NOTES/417-game-coordinate-equality-classifier-match-20260928.md).
+
 ### Game partial-zero payload allocator byte-matched
 
 - Replaced `func_1514DA38`'s zero-return placeholder with its 28-byte local

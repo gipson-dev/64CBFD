@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-28, Game partial-zero payload allocator matched).** The
-current linked checkpoint is `2918 / 5466 (53.38%)` exact C functions, with
-one address-drift blocker and 2,547 genuinely different C functions. Init is
+**Active (2026-09-28, Game coordinate-equality classifier matched).** The
+current linked checkpoint is `2919 / 5466 (53.40%)` exact C functions, with
+one address-drift blocker and 2,546 genuinely different C functions. Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2344 / 4790 (48.94%)` exact, with 2,446 genuinely different C rows. The tree
+`2345 / 4790 (48.96%)` exact, with 2,445 genuinely different C rows. The tree
 contains 575 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching replacement build, outer
 build, and tool checks pass; fresh gameplay was not run.
@@ -1319,9 +1319,16 @@ recovering its 28-byte local record, intentionally untouched payload word,
 allocation, copy, and type-`0x13` dispatch. Local declaration order reproduces
 retail's stack map; all words emit directly from semantic C with no guards. See
 [Working Note 416](WORKING_NOTES/416-game-partial-zero-payload-allocation-match-20260928.md).
+The 34-word coordinate-equality classifier `func_15159230` now matches after
+recovering its unsigned mode argument, three exact float comparisons, zero
+result for a full coordinate match, and mode-selected mismatch results.
+Semantic C emits 22 words directly; eleven guarded tail words preserve
+retail's ordinary branches and shared return instead of IDO's equivalent
+branch-likely folding, and normal slice padding retains the final `nop`. See
+[Working Note 417](WORKING_NOTES/417-game-coordinate-equality-classifier-match-20260928.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 34-word Game
-`func_15159230`, at 26 real differences. Keep the documented lower-difference
+experiments were removed. Resume with ordinary unparked 27-word Game
+`func_15166F6C`, at 26 real differences. Keep the documented lower-difference
 compiler cases parked, and keep `func_151F3D78` parked behind the pre-existing
 `game_21FC90` audio-object layout drift. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked

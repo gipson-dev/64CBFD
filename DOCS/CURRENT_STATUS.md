@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,918 / 5,466 (53.38%) | 1 | 2,547 |
+| Total | 2,919 / 5,466 (53.40%) | 1 | 2,546 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,344 / 4,790 (48.94%) | 0 | 2,446 |
+| Game | 2,345 / 4,790 (48.96%) | 0 | 2,445 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,902, while
+denominator driven: the exact count is now 2,919, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -997,9 +997,17 @@ end-to-end gameplay acceptance.
    declaration order reproduces retail's stack map; all words emit directly
    from semantic C with no guards. See
    [Working Note 416](WORKING_NOTES/416-game-partial-zero-payload-allocation-match-20260928.md).
+   The 34-word three-coordinate equality classifier `func_15159230` is now
+   byte-exact after recovering its unsigned mode argument, exact float
+   comparisons, zero result for a full coordinate match, and mode-selected
+   mismatch results. Semantic C emits 22 words directly; eleven guarded tail
+   words preserve retail's ordinary branches and shared return instead of
+   IDO's equivalent branch-likely folding, and normal slice padding retains
+   the final `nop`. See
+   [Working Note 417](WORKING_NOTES/417-game-coordinate-equality-classifier-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 34-word Game `func_15159230`, at 26 real
+   with ordinary unparked 27-word Game `func_15166F6C`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

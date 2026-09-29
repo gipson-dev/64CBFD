@@ -103,8 +103,28 @@ s32 func_15159084() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_15159184.s")
 
-s32 func_15159230() {
-    return 0;
+s32 func_15159230(u8 *arg0, f32 *arg1, u8 arg2) {
+    s32 result;
+
+    if (arg1[0] == *(f32 *) (arg0 + 0x14)) {
+        if (arg1[1] == *(f32 *) (arg0 + 0x18)) {
+            result = 0;
+            if (arg1[2] == *(f32 *) (arg0 + 0x1C)) {
+                goto done;
+            }
+        }
+    }
+    if (arg2 != 1) {
+        if (arg2 == 2) {
+            goto set_two;
+        }
+        result = 1;
+        goto done;
+    }
+set_two:
+    result = 2;
+done:
+    return result;
 }
 
 s32 func_151592B8() {

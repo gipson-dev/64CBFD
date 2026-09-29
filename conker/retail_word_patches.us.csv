@@ -1827,3 +1827,14 @@ generated_142560,func_15116110,0x034,0x331900FF,0x318D00FF,-,-,Mask byte two thr
 generated_142560,func_15116110,0x038,0x30AF7FFF,0x310900FF,-,-,Mask byte three through retail's t1 lifetime,,,false
 generated_142560,func_15116110,0x040,0xAFB90014,0xAFA90014,-,-,Store byte three through retail's t1 lifetime,,,false
 generated_142560,func_15116110,0x044,0xAFA90018,0xAFAD0018,-,-,Store byte two through retail's t5 lifetime,,,false
+generated_185560,func_15159230,0x054,0x45030009,0x45010009,-,-,Preserve retail's ordinary successful-coordinate branch,,,false
+generated_185560,func_15159230,0x058,0x00601025,0x00000000,-,-,Keep retail's successful-coordinate branch delay slot empty,,,false
+generated_185560,func_15159230,0x05C,0x10C10005,0x10C10003,-,-,Route mode one through retail's shared result-two block,,,false
+generated_185560,func_15159230,0x064,0x50C10004,0x14C10003,-,-,Preserve retail's ordinary mode-two exclusion branch,,,false
+generated_185560,func_15159230,0x068,0x24030002,0x00000000,-,-,Keep retail's mode-two branch delay slot empty,,,false
+generated_185560,func_15159230,0x06C,0x10000002,0x10000003,-,-,Route matching modes through retail's shared result assignment,,,false
+generated_185560,func_15159230,0x070,0x24030001,0x24030002,-,-,Assign retail's matching-mode result in the branch delay slot,,,false
+generated_185560,func_15159230,0x074,0x24030002,0x10000001,-,-,Preserve retail's explicit default-result exit,,,false
+generated_185560,func_15159230,0x078,0x00601025,0x24030001,-,-,Assign retail's default result in the branch delay slot,,,false
+generated_185560,func_15159230,0x07C,0x03E00008,0x00601025,-,-,Move the selected result through retail's shared return block,,,false
+generated_185560,func_15159230,0x080,0x00000000,0x03E00008,-,-,Restore retail's return after the shared result move,,,false
