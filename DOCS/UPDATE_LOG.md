@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game type-selector state handler byte-matched
+
+- Replaced `func_15033440`'s placeholder with its recovered selector
+  `0x27`/`0x29`/`0x35` handling, state-byte clear, and timer adjustment.
+- All 30 words emit directly from semantic C with no guarded replacements.
+- The linked and retail 120-byte spans share SHA-256
+  `d3bddf169bbc128bf1dc34ca2573abeb8614985e05818949bf18e7ee6be2afcb`.
+- Totals are **2,967 / 5,465 (54.29%)** overall and **2,393 / 4,789
+  (49.97%)** in Game. See
+  [Working Note 465](WORKING_NOTES/465-game-type-selector-state-handler-match-20260929.md).
+
 ### Game oscillation and angle updater byte-matched
 
 - Replaced `func_151B8BE0`'s placeholder with its sine-based output update,

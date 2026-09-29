@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game oscillation and angle updater matched).**
-The current linked checkpoint is `2966 / 5465 (54.27%)` exact C functions,
-with one address-drift blocker and 2,498 genuinely different C functions.
+**Active (2026-09-29, Game type-selector state handler matched).**
+The current linked checkpoint is `2967 / 5465 (54.29%)` exact C functions,
+with one address-drift blocker and 2,497 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2392 / 4789 (49.95%)` exact, with 2,397 genuinely different C rows. The tree
+`2393 / 4789 (49.97%)` exact, with 2,396 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1561,6 +1561,9 @@ zeroes the complete `0x960`-byte array. See
 The 29-word oscillation/angle updater `func_151B8BE0` now matches from semantic
 C plus seven fail-closed floating-point temporary guards. See
 [Working Note 464](WORKING_NOTES/464-game-oscillation-angle-update-match-20260929.md).
+The 30-word type-selector state handler `func_15033440` now matches directly
+from C, with no guarded words. See
+[Working Note 465](WORKING_NOTES/465-game-type-selector-state-handler-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary 29-word Game
 `func_151B8BE0`, at 28 real differences, after the documented parked compiler

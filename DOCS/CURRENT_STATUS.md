@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,966 / 5,465 (54.27%) | 1 | 2,498 |
+| Total | 2,967 / 5,465 (54.29%) | 1 | 2,497 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,392 / 4,789 (49.95%) | 0 | 2,397 |
+| Game | 2,393 / 4,789 (49.97%) | 0 | 2,396 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,966, while
+denominator driven: the exact count is now 2,967, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1249,6 +1249,10 @@ end-to-end gameplay acceptance.
    The 29-word oscillation/angle updater `func_151B8BE0` is now byte-exact
    from semantic C plus seven guarded floating-point temporary choices. See
    [Working Note 464](WORKING_NOTES/464-game-oscillation-angle-update-match-20260929.md).
+   The 30-word type-selector state handler `func_15033440` is now byte-exact
+   directly from C, including its shared selector path and branch-likely
+   exits. See
+   [Working Note 465](WORKING_NOTES/465-game-type-selector-state-handler-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with ordinary 29-word Game `func_151B8BE0`, at 28 real differences, after

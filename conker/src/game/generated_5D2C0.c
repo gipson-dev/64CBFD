@@ -194,6 +194,20 @@ s32 func_150333A8() {
 }
 
 s32 func_15033440(u8 *arg0, u8 *arg1) {
+    switch (arg0[1]) {
+        case 0x27:
+        case 0x35:
+            if (arg1[5] == 5) {
+                arg0[2] = 0;
+                *(s16 *) (arg0 + 0x22) += D_800BE9E4 * 0xAAA;
+            }
+            break;
+        case 0x29:
+            if (arg1[5] == 5) {
+                arg0[2] = 0;
+            }
+            break;
+    }
     return 0;
 }
 

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,966 / 5,465 (54.27%) | 1 | 2,498 |
+| Total | 5,465 / 6,041 (90.47%) | 2,967 / 5,465 (54.29%) | 1 | 2,497 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,392 / 4,789 (49.95%) | 0 | 2,397 |
+| Game | 4,789 / 5,321 (90.00%) | 2,393 / 4,789 (49.97%) | 0 | 2,396 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1559,6 +1559,9 @@ array clear. This remains guest-side donor/reference progress; see
 [Working Note 463](WORKING_NOTES/463-game-object-record-cleanup-match-20260929.md).
 The 29-word Game oscillation/angle updater `func_151B8BE0` is now byte-exact;
 see [Working Note 464](WORKING_NOTES/464-game-oscillation-angle-update-match-20260929.md).
+The 30-word Game type-selector state handler `func_15033440` is now byte-exact
+directly from C; see
+[Working Note 465](WORKING_NOTES/465-game-type-selector-state-handler-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 
