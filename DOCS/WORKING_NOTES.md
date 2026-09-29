@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game identity-matrix initializer matched).**
-The current linked checkpoint is `2993 / 5465 (54.77%)` exact C functions,
-with no address-drift blockers and 2,472 genuinely different C functions.
+**Active (2026-09-29, Game impact-effect dispatcher pair matched).**
+The current linked checkpoint is `2995 / 5465 (54.80%)` exact C functions,
+with no address-drift blockers and 2,470 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2418 / 4789 (50.49%)` exact, with 2,371 genuinely different C rows. The tree
+`2420 / 4789 (50.53%)` exact, with 2,369 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -184,6 +184,13 @@ float view and off-diagonal zero bit patterns through a volatile word view.
 Five guarded words normalize only the compiler's `$f0` allocation to retail's
 equivalent `$f4` lifetime. See
 [Working Note 489](WORKING_NOTES/489-game-identity-matrix-initializer-match-20260929.md).
+
+Adjacent `func_15194320` and `func_15194394` now match all 29 retail words
+each directly from C. Both use a grouped five-case switch to accept source
+states zero through four before dispatching distinct impact-effect IDs and
+resource strings through `func_1518D1C0`. Their paired jump tables are anchored
+to preserved retail rodata; no expected-word guards are needed. See
+[Working Note 490](WORKING_NOTES/490-game-impact-effect-dispatch-pair-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

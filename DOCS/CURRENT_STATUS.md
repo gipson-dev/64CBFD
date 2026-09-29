@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,993 / 5,465 (54.77%) | 0 | 2,472 |
+| Total | 2,995 / 5,465 (54.80%) | 0 | 2,470 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,418 / 4,789 (50.49%) | 0 | 2,371 |
+| Game | 2,420 / 4,789 (50.53%) | 0 | 2,369 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,993, while
+denominator driven: the exact count is now 2,995, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -189,6 +189,11 @@ instructions and one trailing retail padding word match without guards; see
 identity-matrix stores and O3 profile. Five guarded words normalize only the
 compiler's equivalent diagonal-constant FP register; see
 [Working Note 489](WORKING_NOTES/489-game-identity-matrix-initializer-match-20260929.md).
+Adjacent impact-effect dispatchers `func_15194320` and `func_15194394` are
+byte-exact directly from grouped switches over source states zero through
+four. Their separate five-entry jump tables retain retail rodata ownership;
+see
+[Working Note 490](WORKING_NOTES/490-game-impact-effect-dispatch-pair-match-20260929.md).
 
 ## Verified build state
 

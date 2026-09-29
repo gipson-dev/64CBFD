@@ -176,6 +176,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_21C540.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_58F80.c.o: RETAIL_RODATA_SYMBOL := jtbl_80096DF8_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_AEB40.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009CC40_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1BFCB0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A8160_game
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_1C1150.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A8258_game
 $(BUILD_DIR)/$(SRC_DIR)/game/entrypoint.c.o: RETAIL_RODATA_SYMBOL := jtbl_80095A30_game
 $(BUILD_DIR)/$(SRC_DIR)/libultra/gu/mtxutil2.c.o: OPT_FLAGS := -O3
 $(BUILD_DIR)/$(SRC_DIR)/libultra/gu/guNormalize.c.o: OPT_FLAGS := -O3

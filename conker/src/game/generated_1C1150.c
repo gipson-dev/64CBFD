@@ -10,6 +10,7 @@ extern u8 D_800A8244[];
 /* Non-matching placeholders for the text-only asm slice asm/1C1150.s. */
 
 s32 func_15194FF4();
+s32 func_1518D1C0(void *, s32, s32, s32, u8, u8, void *);
 
 /* Note 362: original ROM hit effect dispatch. */
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1C1150/func_15193CA0.s")
@@ -32,9 +33,27 @@ u8 arg2;
 }
 
 void func_15194320(s32 arg0, u8 *arg1, s32 arg2) {
+    switch (arg1[4]) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+        func_1518D1C0(arg1, 0xA, 0, 1, 0xFF, 1, D_800A8210);
+        break;
+    }
 }
 
 void func_15194394(s32 arg0, u8 *arg1, s32 arg2) {
+    switch (arg1[4]) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+        func_1518D1C0(arg1, 0xC, 0, 1, 0xFF, 1, D_800A822C);
+        break;
+    }
 }
 
 s32 func_15194408() {

@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game impact-effect dispatcher pair byte-matched
+
+- Replaced adjacent empty placeholders `func_15194320` and `func_15194394`
+  with their recovered five-state impact-effect dispatch switches.
+- All 29 words in each function emit directly from semantic C. A target-specific
+  rodata anchor maps their compiler jump-table relocations to retail's two
+  preserved five-entry tables; no expected-word guards are required.
+- The linked and retail 116-byte spans share SHA-256 values
+  `8437b4dd34bf84b387ab2bc2a1f2994c271cbfc9db1040a2ea8aea0691302db3`
+  and `94c06f34b68c23f199ab3e8ac64f9c76776135864bfe7f9d9a2819369ffa1deb`.
+- Totals are **2,995 / 5,465 (54.80%)** overall and **2,420 / 4,789
+  (50.53%)** in Game, with no address-drift rows. See
+  [Working Note 490](WORKING_NOTES/490-game-impact-effect-dispatch-pair-match-20260929.md).
+
 ### Game identity-matrix initializer byte-matched
 
 - Recovered `guMtxIdentF` as an unrolled identity-matrix initializer using
