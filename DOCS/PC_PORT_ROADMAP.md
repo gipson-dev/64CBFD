@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,932 / 5,466 (53.64%) | 1 | 2,533 |
+| Total | 5,465 / 6,041 (90.47%) | 2,932 / 5,465 (53.65%) | 1 | 2,532 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,358 / 4,790 (49.23%) | 0 | 2,432 |
+| Game | 4,789 / 5,321 (90.00%) | 2,358 / 4,789 (49.24%) | 0 | 2,431 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1385,6 +1385,11 @@ optional nonzero halfword submission, and index advance. All words emit
 directly from semantic C with no guards. This remains guest-side
 donor/reference progress; see
 [Working Note 430](WORKING_NOTES/430-game-indexed-halfword-sequence-dispatch-match-20260928.md).
+The 28-word Game `func_150B1DB0` is restored from its false C placeholder to
+original handwritten assembly ownership. Its two-block 64-bit mask/rotate
+transform, trapping pointer increments, and complete linked span match retail.
+This remains guest-side donor/reference progress; see
+[Working Note 431](WORKING_NOTES/431-game-handwritten-two-block-word-transform-restoration-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

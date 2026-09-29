@@ -25,16 +25,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 575 | 1,931,300 / 2,256,728 (85.58%) |
+| Total | 5,465 / 6,041 (90.47%) | 576 | 1,931,188 / 2,256,728 (85.57%) |
 | Init | 495 / 538 (92.01%) | 43 | 148,424 / 164,048 (90.48%) |
-| Game | 4,790 / 5,321 (90.02%) | 531 | 1,763,236 / 2,072,880 (85.06%) |
+| Game | 4,789 / 5,321 (90.00%) | 532 | 1,763,124 / 2,072,880 (85.06%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,932 / 5,466 (53.64%) | 1 | 2,533 |
+| Total | 2,932 / 5,465 (53.65%) | 1 | 2,532 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,358 / 4,790 (49.23%) | 0 | 2,432 |
+| Game | 2,358 / 4,789 (49.24%) | 0 | 2,431 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1079,9 +1079,14 @@ end-to-end gameplay acceptance.
    check, optional nonzero halfword submission, and index advance. All 28
    words emit directly from semantic C with no guards. See
    [Working Note 430](WORKING_NOTES/430-game-indexed-halfword-sequence-dispatch-match-20260928.md).
+   The 28-word `func_150B1DB0` is restored from its false zero-return C
+   placeholder to original handwritten assembly ownership. Its two-block
+   64-bit mask/rotate transform, trapping pointer increments, and complete
+   linked span match retail. See
+   [Working Note 431](WORKING_NOTES/431-game-handwritten-two-block-word-transform-restoration-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 28-word Game `func_150B1DB0`, at 27 real
+   with ordinary unparked 35-word Game `func_150D0034`, at 27 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

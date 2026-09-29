@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game handwritten two-block word transform restored
+
+- Replaced `func_150B1DB0`'s false zero-return C placeholder with its original
+  28-word handwritten assembly body.
+- The routine transforms two 64-bit words per iteration with retained mask
+  bits and five-bit bidirectional shifts, stores both results, and advances
+  through the caller's half-open range in 16-byte blocks.
+- The original MIPS III `ld`/`sd` and `dsll`/`dsrl` operations, trapping
+  `addi` pointer updates, and loop delay slot are preserved directly. All 112
+  linked bytes match retail with SHA-256
+  `dec18e02cec836269f4ceff6550b667ceaaaf0c2fbb06db63767cc62065ffcf2`.
+- This ownership correction leaves the exact numerator at **2,932** while the
+  C denominator becomes **5,465 (53.65%)** overall and **4,789 (49.24%)** in
+  Game. See
+  [Working Note 431](WORKING_NOTES/431-game-handwritten-two-block-word-transform-restoration-20260928.md).
+
 ### Game indexed halfword-sequence dispatcher byte-matched
 
 - Replaced `func_15080784`'s zero-return placeholder with its nullable
