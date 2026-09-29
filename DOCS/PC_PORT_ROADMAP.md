@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,925 / 5,466 (53.51%) | 1 | 2,540 |
+| Total | 5,466 / 6,041 (90.48%) | 2,926 / 5,466 (53.53%) | 1 | 2,539 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,351 / 4,790 (49.08%) | 0 | 2,439 |
+| Game | 4,790 / 5,321 (90.02%) | 2,352 / 4,790 (49.10%) | 0 | 2,438 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1341,6 +1341,12 @@ release. An `s32` counter explicitly narrowed after each increment reproduces
 retail's loop; all words emit directly from C with no guards. This remains
 guest-side donor/reference progress; see
 [Working Note 423](WORKING_NOTES/423-game-four-pointer-cleanup-match-20260928.md).
+The 29-word Game dual-layout owner release `func_151CB49C` is byte-exact after
+recovering its event-`0x21` direct-owner comparison and event-zero nested-owner
+comparison. An explicit referenced-object local reproduces retail's register
+allocation; all words emit directly with no guards. This remains guest-side
+donor/reference progress; see
+[Working Note 424](WORKING_NOTES/424-game-dual-layout-owner-release-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

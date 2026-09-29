@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game dual-layout owner release byte-matched
+
+- Replaced `func_151CB49C`'s zero-return placeholder with its event-`0x21`
+  direct-owner comparison and event-zero nested-owner comparison.
+- Either matching path releases the input object through `func_1516972C`;
+  every mismatch and unsupported event returns without side effects. An
+  explicit referenced-object local reproduces retail's `v0/t0` allocation.
+- All 29 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 116 linked bytes with SHA-256
+  `3232754db39e3f954bcc006026de28587b62ebe879fe65f461b4b3b2f1c4b870`.
+  Fresh totals are **2,926 / 5,466 (53.53%)** overall and
+  **2,352 / 4,790 (49.10%)** in Game. See
+  [Working Note 424](WORKING_NOTES/424-game-dual-layout-owner-release-match-20260928.md).
+
 ### Game four-pointer cleanup byte-matched
 
 - Replaced `func_151B222C`'s zero-return placeholder with its three-entry
