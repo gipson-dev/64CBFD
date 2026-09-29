@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,926 / 5,466 (53.53%) | 1 | 2,539 |
+| Total | 5,466 / 6,041 (90.48%) | 2,927 / 5,466 (53.55%) | 1 | 2,538 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,352 / 4,790 (49.10%) | 0 | 2,438 |
+| Game | 4,790 / 5,321 (90.02%) | 2,353 / 4,790 (49.12%) | 0 | 2,437 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1347,6 +1347,12 @@ comparison. An explicit referenced-object local reproduces retail's register
 allocation; all words emit directly with no guards. This remains guest-side
 donor/reference progress; see
 [Working Note 424](WORKING_NOTES/424-game-dual-layout-owner-release-match-20260928.md).
+The 28-word Game signed record-command writer `func_15034340` is byte-exact
+after recovering its `0x32C`-byte record indexing, signed control-byte gate,
+command-6 output, and signed value scaling by 200. Its deliberate second byte
+read and cursor update emit directly from semantic C with no guards. This
+remains guest-side donor/reference progress; see
+[Working Note 425](WORKING_NOTES/425-game-signed-record-command-writer-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

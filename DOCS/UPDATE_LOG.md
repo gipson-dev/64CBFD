@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game signed record-command writer byte-matched
+
+- Replaced `func_15034340`'s zero-return placeholder with its indexed record
+  lookup, signed control-byte gate, and command-6 output writer.
+- The record stride is `0x32C` bytes. A nonzero signed byte at offset `0x1D1`
+  writes command 6 followed by that byte scaled by 200, then returns the
+  four-byte-advanced output cursor; zero returns the original cursor.
+- All 28 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 112 linked bytes with SHA-256
+  `529ddd228334416cf0838ce6bf9a03ff9cb7ec638c76c9ed12e5975534320d47`.
+  Fresh totals are **2,927 / 5,466 (53.55%)** overall and
+  **2,353 / 4,790 (49.12%)** in Game. See
+  [Working Note 425](WORKING_NOTES/425-game-signed-record-command-writer-match-20260928.md).
+
 ### Game dual-layout owner release byte-matched
 
 - Replaced `func_151CB49C`'s zero-return placeholder with its event-`0x21`

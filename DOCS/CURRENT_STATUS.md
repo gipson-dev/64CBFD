@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,926 / 5,466 (53.53%) | 1 | 2,539 |
+| Total | 2,927 / 5,466 (53.55%) | 1 | 2,538 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,352 / 4,790 (49.10%) | 0 | 2,438 |
+| Game | 2,353 / 4,790 (49.12%) | 0 | 2,437 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1045,9 +1045,15 @@ end-to-end gameplay acceptance.
    nested-owner comparison. An explicit referenced-object local reproduces
    retail's register allocation; all words emit directly with no guards. See
    [Working Note 424](WORKING_NOTES/424-game-dual-layout-owner-release-match-20260928.md).
+   The 28-word signed record-command writer `func_15034340` is now byte-exact
+   after recovering its `0x32C`-byte record indexing, signed control-byte
+   gate, command-6 output, and signed value scaling by 200. The deliberate
+   second control-byte read and cursor update reproduce retail directly; all
+   words emit from semantic C with no guards. See
+   [Working Note 425](WORKING_NOTES/425-game-signed-record-command-writer-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 28-word Game `func_15034340`, at 27 real
+   with ordinary unparked 30-word Game `func_150347E8`, at 27 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`
