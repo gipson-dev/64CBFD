@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game multiplayer-slot reset byte-matched
+
+- Replaced `func_151298C0`'s zero-return placeholder with its recovered
+  multiplayer-mode gate and per-player reset of the `0x24`-byte slot table.
+- The routine clears the slot halfword at offset `2`, writes `-1.0f` at
+  offset `4`, and copies `D_800A3610` to offset `8` for the player selected by
+  `arg0->unk23D`.
+- All 29 words and six relocations emit directly from semantic C with no
+  guards. Direct comparison matches all 116 linked bytes with SHA-256
+  `8fff14e7c9b648c89670a714b6e49fbbab7cecd3e055020618b33a3650abb410`.
+  Fresh totals are **2,944 / 5,465 (53.87%)** overall and
+  **2,370 / 4,789 (49.49%)** in Game. See
+  [Working Note 443](WORKING_NOTES/443-game-multiplayer-slot-reset-match-20260929.md).
+
 ### Game record-ID lookup byte-matched
 
 - Replaced `func_151149AC`'s zero-return placeholder with its recovered

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,943 / 5,465 (53.85%) | 1 | 2,521 |
+| Total | 2,944 / 5,465 (53.87%) | 1 | 2,520 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,369 / 4,789 (49.47%) | 0 | 2,420 |
+| Game | 2,370 / 4,789 (49.49%) | 0 | 2,419 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1140,9 +1140,14 @@ end-to-end gameplay acceptance.
    records for a matching ID at offset `0x72`. All words and four relocations
    emit directly from semantic C with no guards. See
    [Working Note 442](WORKING_NOTES/442-game-record-id-lookup-match-20260929.md).
+   The 29-word multiplayer-slot reset `func_151298C0` is now byte-exact after
+   recovering its multiplayer-mode gate and three indexed writes to the
+   `0x24`-byte slot table. All words and six relocations emit directly from
+   semantic C with no guards. See
+   [Working Note 443](WORKING_NOTES/443-game-multiplayer-slot-reset-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 29-word Game `func_151298C0`, at 27 real
+   with ordinary unparked 28-word Game `func_15181D00`, at 27 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

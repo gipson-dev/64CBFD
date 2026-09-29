@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,943 / 5,465 (53.85%) | 1 | 2,521 |
+| Total | 5,465 / 6,041 (90.47%) | 2,944 / 5,465 (53.87%) | 1 | 2,520 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,369 / 4,789 (49.47%) | 0 | 2,420 |
+| Game | 4,789 / 5,321 (90.00%) | 2,370 / 4,789 (49.49%) | 0 | 2,419 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1452,6 +1452,12 @@ for a matching ID at offset `0x72`. All words and four relocations emit
 directly from semantic C with no guards. This remains guest-side
 donor/reference progress; see
 [Working Note 442](WORKING_NOTES/442-game-record-id-lookup-match-20260929.md).
+The 29-word Game multiplayer-slot reset `func_151298C0` is now byte-exact
+after recovering its multiplayer-mode gate and three indexed writes to the
+`0x24`-byte slot table. All words and six relocations emit directly from
+semantic C with no guards. This remains guest-side donor/reference progress;
+see
+[Working Note 443](WORKING_NOTES/443-game-multiplayer-slot-reset-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 
