@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,917 / 5,466 (53.37%) | 1 | 2,548 |
+| Total | 5,466 / 6,041 (90.48%) | 2,918 / 5,466 (53.38%) | 1 | 2,547 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,343 / 4,790 (48.91%) | 0 | 2,447 |
+| Game | 4,790 / 5,321 (90.02%) | 2,344 / 4,790 (48.94%) | 0 | 2,446 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1291,6 +1291,12 @@ Semantic C emits 20 words directly; seven guards preserve one closed
 independent mask/register scheduling cycle. This remains guest-side
 donor/reference progress; see
 [Working Note 415](WORKING_NOTES/415-game-packed-resource-lazy-init-match-20260928.md).
+The 27-word Game partial-zero payload allocator `func_1514DA38` is byte-exact
+after recovering its 28-byte local record, intentionally untouched payload
+word, allocation, copy, and type-`0x13` dispatch. Local declaration order
+reproduces retail's stack map; all words emit directly from semantic C with no
+guards. This remains guest-side donor/reference progress; see
+[Working Note 416](WORKING_NOTES/416-game-partial-zero-payload-allocation-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

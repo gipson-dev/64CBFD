@@ -14,6 +14,7 @@ s32 func_1516972C();
 s32 func_1515F10C();
 s32 func_1514E920();
 s32 func_1514E89C();
+s32 func_15158BD0();
 s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1515BE50(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 extern u8 D_800A5920[];
@@ -101,8 +102,21 @@ void func_1514D9F4(u8 *arg0) {
     func_1514EC1C(temp, arg0, 0x14);
 }
 
-s32 func_1514DA38() {
-    return 0;
+void func_1514DA38(u8 *arg0) {
+    u8 *result;
+    s32 payload[7];
+
+    payload[5] = 0;
+    payload[6] = 0;
+    payload[0] = 0;
+    payload[1] = 0;
+    payload[2] = 0;
+    payload[3] = 0;
+    result = (u8 *) func_15158BD0(arg0, 1, sizeof(payload));
+    if (result != 0) {
+        memcpy(result + 0x58, payload, sizeof(payload));
+        func_1514EC1C((s32) result, (s32) arg0, 0x13);
+    }
 }
 
 s32 func_1514DAA4() {

@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game partial-zero payload allocator byte-matched
+
+- Replaced `func_1514DA38`'s zero-return placeholder with its 28-byte local
+  payload, allocation, copy into record offset `0x58`, and type-`0x13`
+  dispatch.
+- Retail zeroes payload words 5, 6, and 0 through 3 while intentionally
+  leaving word 4 untouched. Declaring the saved result before the payload
+  reproduces retail's `sp+0x34` result slot and `sp+0x18` payload base. All 27
+  words emit directly from C with no guards.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `c742e2358884d79f9ae480d50e5725e72b6e7e7c5afe4ca285c9249045270546`.
+  Fresh totals are **2,918 / 5,466 (53.38%)** overall and
+  **2,344 / 4,790 (48.94%)** in Game. See
+  [Working Note 416](WORKING_NOTES/416-game-partial-zero-payload-allocation-match-20260928.md).
+
 ### Game packed-resource lazy initializer byte-matched
 
 - Replaced `func_15116110`'s zero-return placeholder with its empty-handle
