@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,931 / 5,466 (53.62%) | 1 | 2,534 |
+| Total | 5,466 / 6,041 (90.48%) | 2,932 / 5,466 (53.64%) | 1 | 2,533 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,357 / 4,790 (49.21%) | 0 | 2,433 |
+| Game | 4,790 / 5,321 (90.02%) | 2,358 / 4,790 (49.23%) | 0 | 2,432 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1379,6 +1379,12 @@ semantic C; six guards normalize one commutative FP operand order and a closed
 integer temporary cycle. This remains guest-side donor/reference progress;
 see
 [Working Note 429](WORKING_NOTES/429-game-floor-threshold-state-trigger-match-20260928.md).
+The 28-word Game indexed halfword-sequence dispatcher `func_15080784` is also
+byte-exact after recovering its nullable sequence gate, byte-index end check,
+optional nonzero halfword submission, and index advance. All words emit
+directly from semantic C with no guards. This remains guest-side
+donor/reference progress; see
+[Working Note 430](WORKING_NOTES/430-game-indexed-halfword-sequence-dispatch-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

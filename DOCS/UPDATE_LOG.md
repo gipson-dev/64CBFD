@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game indexed halfword-sequence dispatcher byte-matched
+
+- Replaced `func_15080784`'s zero-return placeholder with its nullable
+  sequence gate, current/end byte-index comparison, optional halfword
+  submission, and index advance.
+- Nonzero sequence entries are forwarded to `func_1001263C` with arguments
+  `0x7FFF` and `0x40`; zero entries are skipped while still advancing the
+  current index.
+- All 28 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 112 linked bytes with SHA-256
+  `f594c1f1cae3306800ce46b21fb1fccc6e04787a892f61d7011e3f63ee5f65b1`.
+  Fresh totals are **2,932 / 5,466 (53.64%)** overall and
+  **2,358 / 4,790 (49.23%)** in Game. See
+  [Working Note 430](WORKING_NOTES/430-game-indexed-halfword-sequence-dispatch-match-20260928.md).
+
 ### Game floor-threshold state trigger byte-matched
 
 - Reshaped `func_1506D6B4` around retail's two early exits, health-dependent

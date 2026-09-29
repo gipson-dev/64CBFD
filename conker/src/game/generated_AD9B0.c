@@ -47,8 +47,17 @@ s32 arg0;
     return 0;
 }
 
-s32 func_15080784() {
-    return 0;
+void func_15080784(void) {
+    u16 *sequence = (u16 *)D_800D1998;
+
+    if ((sequence != NULL) && (D_800D1994 != D_800D1995)) {
+        s32 value = sequence[D_800D1994];
+
+        if (value != 0) {
+            func_1001263C(value, 0x7FFF, 0x40);
+        }
+        D_800D1994++;
+    }
 }
 
 void func_150807F4(u8 arg0, u8 arg1, s32 arg2) {
