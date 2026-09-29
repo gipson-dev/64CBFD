@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game random remainder writer byte-matched
+
+- Recovered `func_15084C30` as a type-`0x94` record updater that stores an
+  unsigned random remainder as a float.
+- Fourteen fail-closed guards omit one redundant object copy and normalize the
+  record, remainder, and floating-point register cycle. All 128 linked bytes
+  match SHA-256 `ff9cee201c305307e1a9da8857616d5e4b10753c2fb04df6464316c75d1fc6b2`.
+- Totals are **2,956 / 5,465 (54.09%)** overall and **2,382 / 4,789
+  (49.74%)** in Game. See [Working Note 455](WORKING_NOTES/455-game-random-remainder-writer-match-20260929.md).
+
 ### Game three-record dispatch loop byte-matched
 
 - Replaced `func_15096D08`'s zero-return placeholder with its recovered

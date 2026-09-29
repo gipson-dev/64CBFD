@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,955 / 5,465 (54.07%) | 1 | 2,509 |
+| Total | 5,465 / 6,041 (90.47%) | 2,956 / 5,465 (54.09%) | 1 | 2,508 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,381 / 4,789 (49.72%) | 0 | 2,408 |
+| Game | 4,789 / 5,321 (90.00%) | 2,382 / 4,789 (49.74%) | 0 | 2,407 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1520,6 +1520,8 @@ after recovering its mode gate, nonempty-record scan, and early exit on a
 successful update. The complete routine emits directly from semantic C with
 no guards. This remains guest-side donor/reference progress; see
 [Working Note 454](WORKING_NOTES/454-game-three-record-dispatch-loop-match-20260929.md).
+The 32-word Game random remainder writer `func_15084C30` is now byte-exact;
+see [Working Note 455](WORKING_NOTES/455-game-random-remainder-writer-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

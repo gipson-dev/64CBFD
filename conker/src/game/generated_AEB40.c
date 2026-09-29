@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 extern u16 D_800BE598[];
 extern u8 D_800BE590;
 extern u8 D_800CC2D0[];
@@ -213,8 +214,15 @@ s32 func_15084A18() {
     return 0;
 }
 
-s32 func_15084C30(u8 *arg0) {
-    return 0;
+void func_15084C30(struct127 *arg0) {
+    register struct197 *record;
+    register u32 remainder;
+
+    if (arg0->id == 0x94) {
+        record = arg0->unk2D0;
+        remainder = (u32) func_150ADA20() % (s32) record->unk18;
+        record->unk8 = remainder;
+    }
 }
 
 s32 func_15084CB0(s32 arg0) {

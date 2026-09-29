@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game three-record dispatch loop matched).**
-The current linked checkpoint is `2955 / 5465 (54.07%)` exact C functions,
-with one address-drift blocker and 2,509 genuinely different C functions.
+**Active (2026-09-29, Game random remainder writer matched).**
+The current linked checkpoint is `2956 / 5465 (54.09%)` exact C functions,
+with one address-drift blocker and 2,508 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2381 / 4789 (49.72%)` exact, with 2,408 genuinely different C rows. The tree
+`2382 / 4789 (49.74%)` exact, with 2,407 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1520,10 +1520,12 @@ early exit on a nonzero `func_15096A68` result. The complete frame, saved
 registers, branch-likely delay-slot update, call, and epilogue emit directly
 from semantic C without guards. See
 [Working Note 454](WORKING_NOTES/454-game-three-record-dispatch-loop-match-20260929.md).
+The 32-word type-gated random remainder writer `func_15084C30` now matches
+from typed C plus 14 guarded compiler-allocation words. See
+[Working Note 455](WORKING_NOTES/455-game-random-remainder-writer-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 32-word Game
-`func_15084C30`, at 28 real differences. It remains a zero-return placeholder
-in `generated_AEB40.c`; recover its behavior from the retail `AEB40` slice.
+experiments were removed. Resume with ordinary unparked 29-word Game
+`func_150B3E74`, at 28 real differences.
 Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the

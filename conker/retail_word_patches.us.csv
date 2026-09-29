@@ -1902,3 +1902,17 @@ generated_C1D70,func_15095060,0x078,0x3C010000,0xA06B0009,R_MIPS_HI16:D_800D2C90
 generated_C1D70,func_15095060,0x07C,0xA02D000A,0x908C0004,R_MIPS_LO16:D_800D2C90,-,Load the final byte through retail's t4 lifetime,,,false
 generated_C1D70,func_15095060,0x080,0x03E00008,0xA06C000A,-,-,Store the final byte before returning,,,false
 generated_C1D70,func_15095060,0x084,0x00000000,0x03E00008,-,-,Restore retail's return after the packed descriptor stores,0x00000000,-,false
+generated_AEB40,func_15084C30,0x008,0x00802825,0x00802825,-,-,Omit IDO's unnecessary incoming-object register copy,,,true
+generated_AEB40,func_15084C30,0x00C,0x90AE0004,0x908E0004,-,-,Read the type byte directly from the incoming object,,,false
+generated_AEB40,func_15084C30,0x01C,0x8CA402D0,0x8C8302D0,-,-,Load the linked record through retail's v1 lifetime,,,false
+generated_AEB40,func_15084C30,0x024,0xAFA4001C,0xAFA3001C,-,-,Spill the linked record from v1 across the random call,,,false
+generated_AEB40,func_15084C30,0x028,0x8FA4001C,0x8FA3001C,-,-,Reload the linked record through v1,,,false
+generated_AEB40,func_15084C30,0x030,0xC4840018,0xC4640018,-,-,Read the divisor float through the retained record pointer,,,false
+generated_AEB40,func_15084C30,0x044,0x00001810,0x0000C810,-,-,Keep the unsigned remainder in retail's t9 lifetime,,,false
+generated_AEB40,func_15084C30,0x048,0x44834000,0x44994000,-,-,Move the unsigned remainder from t9 into f8,,,false
+generated_AEB40,func_15084C30,0x058,0x468042A0,0x46804020,-,-,Convert the unsigned remainder through retail's f0 result,,,false
+generated_AEB40,func_15084C30,0x05C,0x04630005,0x07230005,-,-,Test the sign of retail's t9 remainder,,,false
+generated_AEB40,func_15084C30,0x060,0xE48A0008,0xE4600008,-,-,Store the nonnegative f0 result through the retained record pointer,,,false
+generated_AEB40,func_15084C30,0x064,0x44818000,0x44815000,-,-,Load the unsigned conversion correction into retail's f10,,,false
+generated_AEB40,func_15084C30,0x06C,0x46105280,0x460A0000,-,-,Apply the unsigned conversion correction to f0,,,false
+generated_AEB40,func_15084C30,0x070,0xE48A0008,0xE4600008,-,-,Store the corrected f0 result through the retained record pointer,,,false
