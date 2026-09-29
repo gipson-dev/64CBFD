@@ -1951,3 +1951,8 @@ generated_1E5FF0,func_151B8BE0,0x040,0x46128182,0x46128102,-,-,Multiply angular 
 generated_1E5FF0,func_151B8BE0,0x044,0x46062200,0x46043200,-,-,Advance the angle through retail's f8 lifetime,,,false
 generated_6B320,func_1503EF4C,0x034,0x03274024,0x00F94024,-,-,Preserve retail's commutative first-mask operand order,,,false
 generated_6B320,func_1503EF4C,0x058,0x01425824,0x004A5824,-,-,Preserve retail's commutative second-mask operand order,,,false
+generated_138520,func_1510B958,0x010,0x00047080,0x3C0E0000,-,R_MIPS_HI16:D_800BE628,Schedule the record-table load before the scaled index,,,false
+generated_138520,func_1510B958,0x014,0x3C0F0000,0x8DCE0000,R_MIPS_HI16:D_800BE628,R_MIPS_LO16:D_800BE628,Complete the record-table load through retail's t6 lifetime,,,false
+generated_138520,func_1510B958,0x018,0x8DEF0000,0x00047880,R_MIPS_LO16:D_800BE628,-,Begin the scaled index through retail's t7 lifetime,,,false
+generated_138520,func_1510B958,0x01C,0x01C47023,0x01E47823,-,-,Continue the scaled index through retail's t7 lifetime,,,false
+generated_138520,func_1510B958,0x020,0x000E71C0,0x000F79C0,-,-,Finish the scaled index through retail's t7 lifetime,,,false

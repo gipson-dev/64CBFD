@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game descriptor float-forwarding adapter matched).**
-The current linked checkpoint is `2974 / 5465 (54.42%)` exact C functions,
-with one address-drift blocker and 2,490 genuinely different C functions.
+**Active (2026-09-29, Game normalized coordinate output matched).**
+The current linked checkpoint is `2975 / 5465 (54.44%)` exact C functions,
+with one address-drift blocker and 2,489 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2400 / 4789 (50.11%)` exact, with 2,389 genuinely different C rows. The tree
+`2401 / 4789 (50.14%)` exact, with 2,388 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1585,6 +1585,9 @@ directly from C. See
 The 30-word descriptor float-forwarding adapter `func_150B9D14` now matches
 directly from C. See
 [Working Note 472](WORKING_NOTES/472-game-descriptor-float-forwarding-adapter-match-20260929.md).
+The 30-word normalized coordinate-output routine `func_1510B958` now matches
+from recovered C plus five guarded opening address/index words. See
+[Working Note 473](WORKING_NOTES/473-game-normalized-coordinate-output-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with an ordinary small Game placeholder after
 the documented parked compiler cases.

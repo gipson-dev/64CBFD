@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game normalized coordinate-output routine byte-matched
+
+- Replaced `func_1510B958`'s placeholder with its recovered pair of normalized
+  record-coordinate calculations and output stores.
+- Twenty-five of 30 words emit directly from semantic C. Five fail-closed
+  guards normalize only the independent opening table-load/index schedule.
+- The linked and retail 120-byte spans share SHA-256
+  `3b4951f5cfb30124cdb1616129dd0a5550a80c40c8f3b0d5ec6c649fe7b399fc`.
+- Totals are **2,975 / 5,465 (54.44%)** overall and **2,401 / 4,789
+  (50.14%)** in Game. See
+  [Working Note 473](WORKING_NOTES/473-game-normalized-coordinate-output-match-20260929.md).
+
 ### Game descriptor float-forwarding adapter byte-matched
 
 - Replaced `func_150B9D14`'s placeholder with its recovered twelve-argument

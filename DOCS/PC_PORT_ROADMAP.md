@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,974 / 5,465 (54.42%) | 1 | 2,490 |
+| Total | 5,465 / 6,041 (90.47%) | 2,975 / 5,465 (54.44%) | 1 | 2,489 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,400 / 4,789 (50.11%) | 0 | 2,389 |
+| Game | 4,789 / 5,321 (90.00%) | 2,401 / 4,789 (50.14%) | 0 | 2,388 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1584,6 +1584,9 @@ byte-exact directly from C; see
 The 30-word Game descriptor float-forwarding adapter `func_150B9D14` is now
 byte-exact directly from C; see
 [Working Note 472](WORKING_NOTES/472-game-descriptor-float-forwarding-adapter-match-20260929.md).
+The 30-word Game normalized coordinate-output routine `func_1510B958` is now
+byte-exact from recovered C plus five guarded opening address/index words; see
+[Working Note 473](WORKING_NOTES/473-game-normalized-coordinate-output-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

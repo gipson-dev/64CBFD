@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,974 / 5,465 (54.42%) | 1 | 2,490 |
+| Total | 2,975 / 5,465 (54.44%) | 1 | 2,489 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,400 / 4,789 (50.11%) | 0 | 2,389 |
+| Game | 2,401 / 4,789 (50.14%) | 0 | 2,388 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1277,6 +1277,10 @@ end-to-end gameplay acceptance.
    The 30-word descriptor float-forwarding adapter `func_150B9D14` is now
    byte-exact directly from C. See
    [Working Note 472](WORKING_NOTES/472-game-descriptor-float-forwarding-adapter-match-20260929.md).
+   The 30-word normalized coordinate-output routine `func_1510B958` is now
+   byte-exact from recovered C plus five guarded opening address/index words.
+   See
+   [Working Note 473](WORKING_NOTES/473-game-normalized-coordinate-output-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented
