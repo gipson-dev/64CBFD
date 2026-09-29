@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,972 / 5,465 (54.38%) | 1 | 2,492 |
+| Total | 2,973 / 5,465 (54.40%) | 1 | 2,491 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,398 / 4,789 (50.07%) | 0 | 2,391 |
+| Game | 2,399 / 4,789 (50.09%) | 0 | 2,390 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1271,6 +1271,9 @@ end-to-end gameplay acceptance.
    The adjacent 30-word variable-tail descriptor wrapper `func_15094FE8` is
    also byte-exact directly from C. See
    [Working Note 470](WORKING_NOTES/470-game-variable-tail-descriptor-wrapper-match-20260929.md).
+   The 30-word conditional record-dispatch wrapper `func_15095A90` is now
+   byte-exact directly from C. See
+   [Working Note 471](WORKING_NOTES/471-game-conditional-record-dispatch-wrapper-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented

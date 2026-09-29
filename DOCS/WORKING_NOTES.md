@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game variable-tail descriptor wrapper matched).**
-The current linked checkpoint is `2972 / 5465 (54.38%)` exact C functions,
-with one address-drift blocker and 2,492 genuinely different C functions.
+**Active (2026-09-29, Game conditional record-dispatch wrapper matched).**
+The current linked checkpoint is `2973 / 5465 (54.40%)` exact C functions,
+with one address-drift blocker and 2,491 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2398 / 4789 (50.07%)` exact, with 2,391 genuinely different C rows. The tree
+`2399 / 4789 (50.09%)` exact, with 2,390 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1579,6 +1579,9 @@ from C, including its ten-argument final dispatch. See
 The adjacent 30-word variable-tail descriptor wrapper `func_15094FE8` also
 matches directly from C. See
 [Working Note 470](WORKING_NOTES/470-game-variable-tail-descriptor-wrapper-match-20260929.md).
+The 30-word conditional record-dispatch wrapper `func_15095A90` now matches
+directly from C. See
+[Working Note 471](WORKING_NOTES/471-game-conditional-record-dispatch-wrapper-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with an ordinary small Game placeholder after
 the documented parked compiler cases.

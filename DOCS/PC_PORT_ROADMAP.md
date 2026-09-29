@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,972 / 5,465 (54.38%) | 1 | 2,492 |
+| Total | 5,465 / 6,041 (90.47%) | 2,973 / 5,465 (54.40%) | 1 | 2,491 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,398 / 4,789 (50.07%) | 0 | 2,391 |
+| Game | 4,789 / 5,321 (90.00%) | 2,399 / 4,789 (50.09%) | 0 | 2,390 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1578,6 +1578,9 @@ directly from C; see
 The adjacent 30-word Game variable-tail descriptor wrapper `func_15094FE8` is
 also byte-exact directly from C; see
 [Working Note 470](WORKING_NOTES/470-game-variable-tail-descriptor-wrapper-match-20260929.md).
+The 30-word Game conditional record-dispatch wrapper `func_15095A90` is now
+byte-exact directly from C; see
+[Working Note 471](WORKING_NOTES/471-game-conditional-record-dispatch-wrapper-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game conditional record-dispatch wrapper byte-matched
+
+- Replaced `func_15095A90`'s placeholder with its recovered stack-flag setup
+  and conditional five-argument record dispatch.
+- All 30 words emit directly from semantic C with no guarded replacements.
+- The linked and retail 120-byte spans share SHA-256
+  `d8ac1a75d5ffe67afa27db5b941e1061d2c9ae3710f844bdcbbe23ca36b5e28d`.
+- Totals are **2,973 / 5,465 (54.40%)** overall and **2,399 / 4,789
+  (50.09%)** in Game. See
+  [Working Note 471](WORKING_NOTES/471-game-conditional-record-dispatch-wrapper-match-20260929.md).
+
 ### Game variable-tail descriptor wrapper byte-matched
 
 - Replaced `func_15094FE8`'s placeholder with its recovered descriptor setup
