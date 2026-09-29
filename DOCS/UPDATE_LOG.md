@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Init record-key updater byte-matched
+
+- `func_100100E0` samples the active-record count once, walks the 48-byte
+  record table by pointer, and replaces three key words on exact matches.
+- Its semantic C emits the complete 29-word retail control-flow shape. Twenty
+  relocation-aware stale checks normalize one closed `$v0`/`$v1` allocation
+  cycle without inserting or omitting instructions.
+- The linked and retail 116-byte spans share SHA-256
+  `cec07d243965cab8d62e7af4a4a557e8ce5e1177ded4ea275655300ff1b1b678`.
+- Totals are **2,997 / 5,463 (54.86%)** overall and
+  **396 / 493 (80.32%)** in Init, with no address-drift rows. See
+  [Working Note 493](WORKING_NOTES/493-init-record-key-updater-match-20260929.md).
+
 ### Init handwritten cache routines restored
 
 - Restored `osInvalICache` and `osWritebackDCache` from false empty C

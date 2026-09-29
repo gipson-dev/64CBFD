@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 2,996 / 5,463 (54.84%) | 0 | 2,467 |
-| Init | 493 / 538 (91.64%) | 395 / 493 (80.12%) | 0 | 98 |
+| Total | 5,463 / 6,041 (90.43%) | 2,997 / 5,463 (54.86%) | 0 | 2,466 |
+| Init | 493 / 538 (91.64%) | 396 / 493 (80.32%) | 0 | 97 |
 | Game | 4,789 / 5,321 (90.00%) | 2,420 / 4,789 (50.53%) | 0 | 2,369 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -59,6 +59,9 @@ The handwritten libultra cache routines `osInvalICache` and
 `osWritebackDCache` are restored from false empty C placeholders and match
 both complete 128-byte retail spans; see
 [Working Note 492](WORKING_NOTES/492-init-handwritten-cache-routine-restoration-20260929.md).
+The Init record-key updater `func_100100E0` now matches its complete 116-byte
+retail span after recovering the original pointer-range loop; see
+[Working Note 493](WORKING_NOTES/493-init-record-key-updater-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,996 / 5,463 (54.84%) | 0 | 2,467 |
-| Init | 395 / 493 (80.12%) | 0 | 98 |
+| Total | 2,997 / 5,463 (54.86%) | 0 | 2,466 |
+| Init | 396 / 493 (80.32%) | 0 | 97 |
 | Game | 2,420 / 4,789 (50.53%) | 0 | 2,369 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,996, while
+denominator driven: the exact count is now 2,997, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -203,6 +203,10 @@ Handwritten libultra cache routines `osInvalICache` and `osWritebackDCache`
 are restored from empty C placeholders to their original 32-word assembly
 bodies. Both complete 128-byte spans match retail; see
 [Working Note 492](WORKING_NOTES/492-init-handwritten-cache-routine-restoration-20260929.md).
+Init record-key updater `func_100100E0` is byte-exact across all 29 words
+after recovering its nonempty pointer-range scan. Twenty stale-checked guards
+normalize only one closed `$v0`/`$v1` allocation cycle; see
+[Working Note 493](WORKING_NOTES/493-init-record-key-updater-match-20260929.md).
 
 ## Verified build state
 

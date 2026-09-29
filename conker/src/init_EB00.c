@@ -472,16 +472,22 @@ void func_1001001C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     }
 }
 void func_100100E0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
-    s32 i;
+    s32 count;
     struct15 *current;
 
-    for (i = 0; i < D_80042760; i++) {
-        current = &D_80041FE0[i];
-        if ((current->unk14 == arg0) && (current->unk18 == arg1) && (current->unk1C == arg2)) {
-            current->unk14 = arg3;
-            current->unk18 = arg4;
-            current->unk1C = arg5;
-        }
+    count = D_80042760;
+    if (count > 0) {
+        current = D_80041FE0;
+        do {
+            if ((current->unk14 == arg0) &&
+                (current->unk18 == arg1) &&
+                (current->unk1C == arg2)) {
+                current->unk14 = arg3;
+                current->unk18 = arg4;
+                current->unk1C = arg5;
+            }
+            current++;
+        } while (current < &D_80041FE0[count]);
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10010154.s. */

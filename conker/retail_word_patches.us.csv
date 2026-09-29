@@ -128,6 +128,26 @@ init_3C40,func_100043B4,0x4C,0x03E00008,0x27BD0018,,,Restore the frame before re
 init_3C40,func_100043B4,0x50,0x00000000,0x03E00008,,,Return at the retail schedule position,,
 init_EB00,func_1000FE88,0x3C,0xAFA30018,0xAFA3001C,,,Preserve retail current-pointer spill in the top frame slot,,
 init_EB00,func_1000FE88,0x40,0x8FA30018,0x8FA3001C,,,Reload current pointer from the retail frame slot,,
+init_EB00,func_100100E0,0x00,0x3C020000,0x3C030000,R_MIPS_HI16:D_80042760,R_MIPS_HI16:D_80042760,Load the record count through retail's v1 lifetime,,,false
+init_EB00,func_100100E0,0x04,0x8C420000,0x8C630000,R_MIPS_LO16:D_80042760,R_MIPS_LO16:D_80042760,Complete the record-count load through v1,,,false
+init_EB00,func_100100E0,0x0C,0x25C30000,0x25C20000,R_MIPS_LO16:D_80041FE0,R_MIPS_LO16:D_80041FE0,Construct the record cursor through retail's v0 lifetime,,,false
+init_EB00,func_100100E0,0x10,0x18400016,0x18600016,-,-,Test the record count through v1,,,false
+init_EB00,func_100100E0,0x14,0x00027880,0x00037880,-,-,Begin scaling the record count through v1,,,false
+init_EB00,func_100100E0,0x18,0x01E27823,0x01E37823,-,-,Continue scaling the record count through v1,,,false
+init_EB00,func_100100E0,0x20,0x01E34821,0x01E24821,-,-,Build the end pointer from retail's v0 cursor,,,false
+init_EB00,func_100100E0,0x24,0x8FA20010,0x8FA30010,-,-,Reuse v1 for the first stack argument after the count dies,,,false
+init_EB00,func_100100E0,0x2C,0x8C780014,0x8C580014,-,-,Read the first key field through retail's v0 cursor,,,false
+init_EB00,func_100100E0,0x34,0x24630030,0x24420030,-,-,Advance retail's v0 cursor in the first branch delay slot,,,false
+init_EB00,func_100100E0,0x38,0x8C790018,0x8C590018,-,-,Read the second key field through retail's v0 cursor,,,false
+init_EB00,func_100100E0,0x40,0x24630030,0x24420030,-,-,Advance retail's v0 cursor in the second branch delay slot,,,false
+init_EB00,func_100100E0,0x44,0x8C6A001C,0x8C4A001C,-,-,Read the third key field through retail's v0 cursor,,,false
+init_EB00,func_100100E0,0x4C,0x24630030,0x24420030,-,-,Advance retail's v0 cursor in the third branch delay slot,,,false
+init_EB00,func_100100E0,0x50,0xAC670014,0xAC470014,-,-,Store the replacement first key through retail's v0 cursor,,,false
+init_EB00,func_100100E0,0x54,0xAC620018,0xAC430018,-,-,Store the replacement second key from retail's v1 lifetime,,,false
+init_EB00,func_100100E0,0x58,0xAC68001C,0xAC48001C,-,-,Store the replacement third key through retail's v0 cursor,,,false
+init_EB00,func_100100E0,0x5C,0x24630030,0x24420030,-,-,Advance retail's v0 cursor after a matching record,,,false
+init_EB00,func_100100E0,0x60,0x0069082B,0x0049082B,-,-,Compare retail's v0 cursor with the end pointer,,,false
+init_EB00,func_100100E0,0x68,0x8C780014,0x8C580014,-,-,Prefetch the next first key through retail's v0 cursor,,,false
 debugger,func_16001390,0x13C,0x00095040,0x00193C03,,,Schedule row sign extension before stride scaling
 debugger,func_16001390,0x140,0x00193C03,0x00095040,,,Schedule stride scaling after row sign extension
 debugger,func_16000F8C,0x38,0x8FA20054,0x8FA30054,,,Keep raw float bits in v1
