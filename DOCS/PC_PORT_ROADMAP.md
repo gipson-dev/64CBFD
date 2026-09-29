@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,951 / 5,465 (54.00%) | 1 | 2,513 |
+| Total | 5,465 / 6,041 (90.47%) | 2,952 / 5,465 (54.02%) | 1 | 2,512 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,377 / 4,789 (49.63%) | 0 | 2,412 |
+| Game | 4,789 / 5,321 (90.00%) | 2,378 / 4,789 (49.66%) | 0 | 2,411 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1499,6 +1499,11 @@ recovers retail's raw three-word copy schedule and upper-clamp floating-point
 temporary allocation without guards. This remains guest-side donor/reference
 progress; see
 [Working Note 450](WORKING_NOTES/450-game-projection-clamp-match-20260929.md).
+The 29-word Game multi-argument forwarding wrapper `func_1503F5B8` is now
+byte-exact after recovering its typed six-argument interface and twelve-
+argument call to `func_1505E0C4`. The complete function emits from C with no
+guards. This remains guest-side donor/reference progress; see
+[Working Note 451](WORKING_NOTES/451-game-multi-argument-forwarder-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

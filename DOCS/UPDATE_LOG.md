@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game multi-argument forwarding wrapper byte-matched
+
+- Replaced `func_1503F5B8`'s zero-return placeholder with its recovered typed
+  call to `func_1505E0C4`.
+- The wrapper forwards its object and two word arguments, reads the selector
+  byte at object offset `0x3F5`, preserves two caller floats and the final
+  stack word, and supplies the remaining selectors and floats as zero.
+- All 29 words and the call relocation emit directly from semantic C with no
+  guards. Direct comparison matches all 116 linked bytes with SHA-256
+  `6398afee78289df1a106eeb809f135089e0481c1fcaa07602fb253bf3c7bea8a`.
+  Fresh totals are **2,952 / 5,465 (54.02%)** overall and
+  **2,378 / 4,789 (49.66%)** in Game. See
+  [Working Note 451](WORKING_NOTES/451-game-multi-argument-forwarder-match-20260929.md).
+
 ### Game projection clamp byte-matched
 
 - Reworked the two fallback paths in `func_15145548` to copy the complete
