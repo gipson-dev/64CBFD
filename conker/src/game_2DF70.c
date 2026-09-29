@@ -6,7 +6,7 @@
 #include "macros.h"
 
 void func_15002560(u8 *arg0, u8 *arg1);
-s32 func_150027F8(s8 *arg0);
+s32 func_150027F8(s32 arg0);
 
 void func_15000AC0(void) {
     D_800D9E64 = (u8)0;
@@ -298,16 +298,18 @@ void func_15002754(void) {
 }
 
 
-s32 func_150027F8(s8 *arg0) {
+s32 func_150027F8(s32 arg0) {
     s8 value;
-    s32 count = 0;
-    s32 ret = 0;
+    s32 count;
+    s32 ret;
 
-    if (arg0 == NULL) {
+    if (arg0 == 0) {
         return 0;
     }
 
-    value = arg0[0];
+    value = *(s8 *)arg0;
+    ret = 0;
+    count = 0;
     while (value != -0x21) {
         count++;
         if ((value >> 4) == 1) {
@@ -317,7 +319,7 @@ s32 func_150027F8(s8 *arg0) {
         } else if (value == 5) {
             ret += 1;
         }
-        value = arg0[count * 8];
+        value = *(s8 *)(arg0 + (count << 3));
     }
     return ret;
 }

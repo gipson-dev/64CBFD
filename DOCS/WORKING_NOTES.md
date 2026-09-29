@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game path-node spawn randomizer matched).**
-The current linked checkpoint is `3003 / 5463 (54.97%)` exact C functions,
-with no address-drift blockers and 2,460 genuinely different C functions.
+**Active (2026-09-29, Game opcode-record byte counter matched).**
+The current linked checkpoint is `3004 / 5463 (54.99%)` exact C functions,
+with no address-drift blockers and 2,459 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2425 / 4789 (50.64%)` exact, with 2,364 genuinely different C rows. The tree
+`2426 / 4789 (50.66%)` exact, with 2,363 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -250,6 +250,13 @@ the cached path-node pointer restores retail's separate actor and path-table
 lookups for the X and Z position updates, as well as the original stack-local
 offset. See
 [Working Note 499](WORKING_NOTES/499-game-path-node-spawn-randomizer-match-20260929.md).
+
+Game `func_150027F8` now matches all 32 retail words. Recovering its integer
+data-address ABI prevents IDO from strength-reducing the eight-byte record
+index into a running pointer and restores retail's repeated shift/add loads.
+Fourteen stale-checked words normalize only the remaining closed `v0`/`a1`
+record-index/opcode register cycle. See
+[Working Note 500](WORKING_NOTES/500-game-opcode-record-byte-counter-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

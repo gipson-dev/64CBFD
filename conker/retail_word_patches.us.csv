@@ -2137,3 +2137,17 @@ game_3D9A0,func_15010600,0x03C,0x2442000C,0x24840000,R_MIPS_LO16:D_800D993A,R_MI
 game_3D9A0,func_15010600,0x040,0x24840000,0x24630000,R_MIPS_LO16:D_800D993A,R_MIPS_LO16:D_800D992A,Initialize the first array cursor before the independent final scalar clear,,,false
 game_3D9A0,func_15010600,0x044,0x24630000,0xA0200000,R_MIPS_LO16:D_800D992A,R_MIPS_LO16:D_800D9939,Issue the independent final scalar clear after the loop pointers are ready,,,false
 game_981E0,func_1506DC10,0x040,0x460A0032,0x46005032,-,-,Preserve retail's commutative floating-equality operand order,,,false
+game_2DF70,func_150027F8,0x004,0x80820000,0x80850000,-,-,Load the current opcode through retail's a1 lifetime,,,false
+game_2DF70,func_150027F8,0x010,0x80820000,0x80850000,-,-,Reload the opening opcode through retail's a1 lifetime,,,false
+game_2DF70,func_150027F8,0x018,0x00001825,0x00001025,-,-,Initialize the record index in retail's v0 lifetime,,,false
+game_2DF70,func_150027F8,0x01C,0x10460015,0x10A60015,-,-,Test the opcode terminator from retail's a1 lifetime,,,false
+game_2DF70,func_150027F8,0x020,0x00002825,0x00001825,-,-,Initialize the byte total in retail's v1 lifetime,,,false
+game_2DF70,func_150027F8,0x030,0x00027103,0x00057103,-,-,Extract the opcode class from retail's a1 lifetime,,,false
+game_2DF70,func_150027F8,0x038,0x24A50001,0x24420001,-,-,Advance the record index in retail's v0 lifetime,,,false
+game_2DF70,func_150027F8,0x044,0x14480003,0x14A80003,-,-,Compare opcode six from retail's a1 lifetime,,,false
+game_2DF70,func_150027F8,0x054,0x54490003,0x54A90003,-,-,Compare opcode five from retail's a1 lifetime,,,false
+game_2DF70,func_150027F8,0x058,0x000578C0,0x000278C0,-,-,Scale retail's v0 record index for the next load,,,false
+game_2DF70,func_150027F8,0x060,0x000578C0,0x000278C0,-,-,Rescale retail's v0 record index on the matched path,,,false
+game_2DF70,func_150027F8,0x068,0x83020000,0x83050000,-,-,Load the next opcode through retail's a1 lifetime,,,false
+game_2DF70,func_150027F8,0x06C,0x5446FFF1,0x54A6FFF1,-,-,Test the loop terminator from retail's a1 lifetime,,,false
+game_2DF70,func_150027F8,0x070,0x00027103,0x00057103,-,-,Extract the next opcode class from retail's a1 lifetime,,,false

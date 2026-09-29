@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,003 / 5,463 (54.97%) | 0 | 2,460 |
+| Total | 3,004 / 5,463 (54.99%) | 0 | 2,459 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,425 / 4,789 (50.64%) | 0 | 2,364 |
+| Game | 2,426 / 4,789 (50.66%) | 0 | 2,363 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 3,003, while
+denominator driven: the exact count is now 3,004, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -232,6 +232,11 @@ Game path-node spawn randomizer `func_15079790` is byte-exact across all 60
 words after restoring separate actor/path-table lookups for its X and Z
 updates. The complete routine emits directly from C with no guards; see
 [Working Note 499](WORKING_NOTES/499-game-path-node-spawn-randomizer-match-20260929.md).
+Game opcode-record byte counter `func_150027F8` is byte-exact across all 32
+words after restoring its integer-address ABI and repeated eight-byte indexed
+loads. Fourteen stale-checked guards normalize only the closed `v0`/`a1`
+record-index/opcode allocation cycle; see
+[Working Note 500](WORKING_NOTES/500-game-opcode-record-byte-counter-match-20260929.md).
 
 ## Verified build state
 

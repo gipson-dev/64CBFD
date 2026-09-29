@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game opcode-record byte counter byte-matched
+
+- `func_150027F8` scans eight-byte records until opcode `-0x21`, adding four,
+  two, or one output bytes for the supported opcode classes.
+- Recovering the integer data-address ABI restores retail's repeated
+  `base + (index << 3)` loads and complete 32-word control flow. Fourteen
+  stale-checked words normalize only the closed opcode/index register cycle.
+- The linked and retail 128-byte spans share SHA-256
+  `72ef7693e63f911f4b3d0ea14dda74673b109c312244bfea5d48cf2effe0b0b0`.
+- Totals are **3,004 / 5,463 (54.99%)** overall and
+  **2,426 / 4,789 (50.66%)** in Game, with no address-drift rows. See
+  [Working Note 500](WORKING_NOTES/500-game-opcode-record-byte-counter-match-20260929.md).
+
 ### Game path-node spawn randomizer byte-matched
 
 - `func_15079790` selects the current actor identifier, generates two signed
