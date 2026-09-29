@@ -45,9 +45,7 @@ stores and the epilogue emit directly from C.
 
 ## Resume boundary
 
-The next measured Init rows are SDK cache-maintenance routines
-`osInvalICache` and `osWritebackDCache`, each 32 words with 25 real
-differences before recovery. Keep them in the SDK ownership lane and verify
-their compiler profile and handwritten-instruction boundary before applying
-ordinary C matching techniques. An ordinary small Game candidate remains the
-lower-risk alternative.
+The next measured Init rows were SDK cache-maintenance routines
+`osInvalICache` and `osWritebackDCache`. They have since been restored to
+their original handwritten assembly ownership in Working Note 492. Continue
+with an ordinary small Game or Init candidate.

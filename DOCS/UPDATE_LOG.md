@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Init handwritten cache routines restored
+
+- Restored `osInvalICache` and `osWritebackDCache` from false empty C
+  placeholders to their original handwritten libultra assembly ownership.
+- Both 32-word routines preserve their primary-cache opcodes, aligned range
+  loops, wrap protection, full-cache fallback loops, and explicit delay slots.
+- The linked and retail 128-byte spans share SHA-256 values
+  `cf9ac7a3378e8d2013f33517eebd339955e401c76380ec29ca56152a34f0040d`
+  and `21514538b715f668861f169883c91749feb94cb501d5dfd9a24b67f782fa1b69`.
+- The ownership correction yields **2,996 / 5,463 (54.84%)** overall and
+  **395 / 493 (80.12%)** in Init, with no address-drift rows. See
+  [Working Note 492](WORKING_NOTES/492-init-handwritten-cache-routine-restoration-20260929.md).
+
 ### Init arena-anchor initializer byte-matched
 
 - `func_10003BD0` initializes the arena head at `D_800380B4`, clears fields

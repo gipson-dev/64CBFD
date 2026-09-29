@@ -88,13 +88,13 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Init arena-anchor initializer matched).**
-The current linked checkpoint is `2996 / 5465 (54.82%)` exact C functions,
-with no address-drift blockers and 2,469 genuinely different C functions.
+**Active (2026-09-29, Init handwritten cache routines restored).**
+The current linked checkpoint is `2996 / 5463 (54.84%)` exact C functions,
+with no address-drift blockers and 2,467 genuinely different C functions.
 Init is
-`395 / 495 (79.80%)` exact, with 100 genuinely different C rows. Game is
+`395 / 493 (80.12%)` exact, with 98 genuinely different C rows. Game is
 `2420 / 4789 (50.53%)` exact, with 2,369 genuinely different C rows. The tree
-contains 576 raw-assembly functions, so much of the percentage increase over
+contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
 
@@ -199,6 +199,12 @@ guards preserve retail's retained `D_800380BC` address and the resulting
 closed scheduling permutation, including one inserted relocation-bearing
 word. See
 [Working Note 491](WORKING_NOTES/491-init-arena-anchor-initializer-match-20260929.md).
+
+Handwritten libultra routines `osInvalICache` and `osWritebackDCache` are now
+restored from empty C placeholders to their original 32-word assembly bodies.
+Their range and full-cache loops require primary-cache opcodes and explicit
+delay-slot scheduling; both 128-byte tracked spans match retail exactly. See
+[Working Note 492](WORKING_NOTES/492-init-handwritten-cache-routine-restoration-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

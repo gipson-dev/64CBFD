@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 576 | 1,931,188 / 2,256,728 (85.57%) |
-| Init | 495 / 538 (92.01%) | 43 | 148,424 / 164,048 (90.48%) |
+| Total | 5,463 / 6,041 (90.43%) | 578 | 1,930,932 / 2,256,728 (85.56%) |
+| Init | 493 / 538 (91.64%) | 45 | 148,168 / 164,048 (90.32%) |
 | Game | 4,789 / 5,321 (90.00%) | 532 | 1,763,124 / 2,072,880 (85.06%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,996 / 5,465 (54.82%) | 0 | 2,469 |
-| Init | 395 / 495 (79.80%) | 0 | 100 |
+| Total | 2,996 / 5,463 (54.84%) | 0 | 2,467 |
+| Init | 395 / 493 (80.12%) | 0 | 98 |
 | Game | 2,420 / 4,789 (50.53%) | 0 | 2,369 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -46,7 +46,7 @@ are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
 denominator driven: the exact count is now 2,996, while
-506 functions moved from C back to assembly. The paired event-swap pass added
+508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
 passes added one each after the restoration baseline. The subsequent game
@@ -199,6 +199,10 @@ words after recovering its repeated global-head access shape. Twenty
 stale-checked guards preserve one closed compiler schedule, including the
 single inserted low-half word for retail's retained final-anchor pointer; see
 [Working Note 491](WORKING_NOTES/491-init-arena-anchor-initializer-match-20260929.md).
+Handwritten libultra cache routines `osInvalICache` and `osWritebackDCache`
+are restored from empty C placeholders to their original 32-word assembly
+bodies. Both complete 128-byte spans match retail; see
+[Working Note 492](WORKING_NOTES/492-init-handwritten-cache-routine-restoration-20260929.md).
 
 ## Verified build state
 
@@ -1367,8 +1371,9 @@ end-to-end gameplay acceptance.
    words normalize one closed owner/end register-allocation cycle. See
    [Working Note 484](WORKING_NOTES/484-game-two-owner-linked-list-lookup-match-20260929.md).
    `func_10003BD0` is now byte-exact across its complete 28-word Init span.
-   Resume with the tied Init cache-maintenance candidates only as SDK-owned
-   routines, or select an ordinary small Game placeholder. Keep
+   The tied Init cache-maintenance routines are now restored to original
+   handwritten assembly ownership. Resume with an ordinary small Game or Init
+   candidate. Keep
    `func_15015F40` parked until its
    unresolved 38-entry indirect table has authoritative ownership, and keep
    handwritten register-contract fragment `func_150A76F0` in the raw-assembly
