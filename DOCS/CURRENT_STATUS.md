@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,975 / 5,465 (54.44%) | 1 | 2,489 |
+| Total | 2,976 / 5,465 (54.46%) | 1 | 2,488 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,401 / 4,789 (50.14%) | 0 | 2,388 |
+| Game | 2,402 / 4,789 (50.16%) | 0 | 2,387 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -569,8 +569,9 @@ end-to-end gameplay acceptance.
    exact after correcting the local `func_15083E90` byte-parameter and pointer
    return contract. The 22-word `func_1515D030` reverse-slot update is now
    exact from a signed decrement and one shared result variable. Keep
-   `guMtxIdentF`, `func_1506EF5C`, and `func_1507A4D4` parked at their measured
-   compiler scheduling/register boundaries. The 21-word `func_15178750`
+   `guMtxIdentF` and `func_1506EF5C` parked at their measured compiler
+   scheduling/register boundaries. The former `func_1507A4D4` boundary is now
+   resolved by the guarded match in Working Note 474. The 21-word `func_15178750`
    conditional callback wrapper and the previously hidden two-word
    `func_151787A4` table callback are now separately inventoried and exact.
    The 21-word `func_150C522C` four-slot release loop is byte-exact through
@@ -1281,6 +1282,9 @@ end-to-end gameplay acceptance.
    byte-exact from recovered C plus five guarded opening address/index words.
    See
    [Working Note 473](WORKING_NOTES/473-game-normalized-coordinate-output-match-20260929.md).
+   The 21-word packed-mask setter `func_1507A4D4` is now byte-exact from its
+   explicit mask local plus sixteen guarded packed-byte scheduling words. See
+   [Working Note 474](WORKING_NOTES/474-game-packed-mask-setter-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented

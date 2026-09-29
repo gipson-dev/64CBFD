@@ -1956,3 +1956,19 @@ generated_138520,func_1510B958,0x014,0x3C0F0000,0x8DCE0000,R_MIPS_HI16:D_800BE62
 generated_138520,func_1510B958,0x018,0x8DEF0000,0x00047880,R_MIPS_LO16:D_800BE628,-,Begin the scaled index through retail's t7 lifetime,,,false
 generated_138520,func_1510B958,0x01C,0x01C47023,0x01E47823,-,-,Continue the scaled index through retail's t7 lifetime,,,false
 generated_138520,func_1510B958,0x020,0x000E71C0,0x000F79C0,-,-,Finish the scaled index through retail's t7 lifetime,,,false
+game_A28B0,func_1507A4D4,0x004,0x3C180000,0x91CF0000,R_MIPS_HI16:D_800D1891,R_MIPS_LO16:D_800D1890,Load the first packed byte immediately through t7,,,false
+game_A28B0,func_1507A4D4,0x008,0x93180000,0x3C190000,R_MIPS_LO16:D_800D1891,R_MIPS_HI16:D_800D1891,Materialize the second packed byte address through t9,,,false
+game_A28B0,func_1507A4D4,0x00C,0x91CE0000,0x93280000,R_MIPS_LO16:D_800D1890,R_MIPS_LO16:D_800D1891,Load the second packed byte through t0,,,false
+game_A28B0,func_1507A4D4,0x010,0x3C090000,0x3C0B0000,R_MIPS_HI16:D_800D1892,R_MIPS_HI16:D_800D1892,Materialize the third packed byte address through t3,,,false
+game_A28B0,func_1507A4D4,0x018,0x91290000,0x916C0000,R_MIPS_LO16:D_800D1892,R_MIPS_LO16:D_800D1892,Load the third packed byte through t4,,,false
+game_A28B0,func_1507A4D4,0x020,0x3C0C0000,0x000FC600,R_MIPS_HI16:D_800D1893,-,Shift the first packed byte before materializing the fourth address,,,false
+game_A28B0,func_1507A4D4,0x024,0x918C0000,0x3C0F0000,R_MIPS_LO16:D_800D1893,R_MIPS_HI16:D_800D1893,Materialize the fourth packed byte address through t7,,,false
+game_A28B0,func_1507A4D4,0x028,0x0018CC00,0x00084C00,-,-,Shift the second packed byte through t1,,,false
+game_A28B0,func_1507A4D4,0x02C,0x000E7E00,0x91F90000,-,R_MIPS_LO16:D_800D1893,Load the fourth packed byte through t9,,,false
+game_A28B0,func_1507A4D4,0x030,0x8C6D0094,0x8C680094,-,-,Load the actor mask through t0,,,false
+game_A28B0,func_1507A4D4,0x034,0x01F94025,0x03095025,-,-,Combine the first two packed bytes in t2,,,false
+game_A28B0,func_1507A4D4,0x038,0x00095200,0x000C6A00,-,-,Shift the third packed byte through t5,,,false
+game_A28B0,func_1507A4D4,0x03C,0x010A5825,0x014D7025,-,-,Combine the first three packed bytes in t6,,,false
+game_A28B0,func_1507A4D4,0x040,0x016C1025,0x01D91025,-,-,Combine the fourth packed byte into v0,,,false
+game_A28B0,func_1507A4D4,0x044,0x01A27025,0x0102C025,-,-,Set the packed bits through retail's t8 lifetime,,,false
+game_A28B0,func_1507A4D4,0x048,0xAC6E0094,0xAC780094,-,-,Store the updated actor mask from t8,,,false

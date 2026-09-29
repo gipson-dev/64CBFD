@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game packed-mask setter byte-matched
+
+- Recovered `func_1507A4D4`'s explicit four-byte mask local, mirroring the
+  adjacent clear-mask routine before setting the active object's word.
+- Five of 21 words emit directly from semantic C. Sixteen fail-closed guards
+  normalize the packed-byte load schedule and temporary-register allocation,
+  including every moved relocation.
+- The linked and retail 84-byte spans share SHA-256
+  `7b5a575d011936f80c735669b60c8a2a24d26c2cde4ca4a610ce057a70c219fe`.
+- Totals are **2,976 / 5,465 (54.46%)** overall and **2,402 / 4,789
+  (50.16%)** in Game. See
+  [Working Note 474](WORKING_NOTES/474-game-packed-mask-setter-match-20260929.md).
+
 ### Game normalized coordinate-output routine byte-matched
 
 - Replaced `func_1510B958`'s placeholder with its recovered pair of normalized

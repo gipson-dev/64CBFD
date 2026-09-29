@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,975 / 5,465 (54.44%) | 1 | 2,489 |
+| Total | 5,465 / 6,041 (90.47%) | 2,976 / 5,465 (54.46%) | 1 | 2,488 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,401 / 4,789 (50.14%) | 0 | 2,388 |
+| Game | 4,789 / 5,321 (90.00%) | 2,402 / 4,789 (50.16%) | 0 | 2,387 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -672,8 +672,9 @@ the local `func_15083E90` byte-parameter and pointer-return contract; see
 The 22-word `func_1515D030` reverse-slot update is now exact from a signed byte
 decrement and shared result variable; see
 [Working Note 216](WORKING_NOTES/216-game-reverse-slot-update-match-20260926.md).
-Measured compiler boundaries in `guMtxIdentF`, `func_1506EF5C`, and
-`func_1507A4D4` are parked. The 21-word `func_15178750` conditional callback
+Measured compiler boundaries in `guMtxIdentF` and `func_1506EF5C` remain
+parked. The former `func_1507A4D4` boundary is resolved by the guarded match
+in Working Note 474. The 21-word `func_15178750` conditional callback
 wrapper and newly inventoried two-word `func_151787A4` no-op table callback
 are separately byte-exact; see
 [Working Note 217](WORKING_NOTES/217-game-conditional-callback-and-hidden-noop-match-20260926.md).
@@ -1587,6 +1588,9 @@ byte-exact directly from C; see
 The 30-word Game normalized coordinate-output routine `func_1510B958` is now
 byte-exact from recovered C plus five guarded opening address/index words; see
 [Working Note 473](WORKING_NOTES/473-game-normalized-coordinate-output-match-20260929.md).
+The 21-word Game packed-mask setter `func_1507A4D4` is now byte-exact from its
+explicit mask local plus sixteen guarded packed-byte scheduling words; see
+[Working Note 474](WORKING_NOTES/474-game-packed-mask-setter-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

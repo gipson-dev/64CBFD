@@ -1572,7 +1572,9 @@ void func_1507A47C(void) {
 }
 
 void func_1507A4D4(void) {
-    D_800D154C->unk94 |= (D_800D1890 << 0x18) | (D_800D1891 << 0x10) | (D_800D1892 << 8) | D_800D1893;
+    u32 mask = (D_800D1890 << 0x18) | (D_800D1891 << 0x10) | (D_800D1892 << 8) | D_800D1893;
+
+    D_800D154C->unk94 |= mask;
 }
 
 // NON-MATCHING: 99% there..
