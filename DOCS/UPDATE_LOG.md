@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game eight-byte allocation payload wrapper byte-matched
+
+- Recovered `func_150D02B4`'s signed-halfword parameter and original 12-byte
+  local record layout.
+- The wrapper initializes a floating zero and halfword zero, allocates a
+  subtype-1 record through `func_150CFF10`, and copies the local record's
+  eight-byte prefix into a successful allocation's payload destination.
+- All 30 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 120 linked bytes with SHA-256
+  `ce5cfca6e4c29e1436a90a321944d7eb038dcad21ec146b83f59457a56586ee8`.
+  Fresh totals are **2,934 / 5,465 (53.69%)** overall and
+  **2,360 / 4,789 (49.28%)** in Game. See
+  [Working Note 433](WORKING_NOTES/433-game-eight-byte-allocation-payload-match-20260928.md).
+
 ### Game callback-gated record-state updater byte-matched
 
 - Recovered `func_150D0034`'s signed callback-selector gate, optional indexed

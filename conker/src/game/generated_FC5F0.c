@@ -188,13 +188,13 @@ s32 func_150D01A0() {
     return 0;
 }
 
-void func_150D02B4(u8 arg0, u8 *arg1, s32 arg2, u8 arg3, s32 arg4) {
-    struct { f32 word0; s16 half0; } rec;
+void func_150D02B4(u8 arg0, u8 *arg1, s16 arg2, u8 arg3, s32 arg4) {
+    struct { f32 word0; s16 half0; u8 tail[4]; } rec;
     void *result;
 
     rec.word0 = 0.0f;
     rec.half0 = 0;
-    result = func_150CFF10(arg0, arg1, (s16) arg2, 8, 1, 0, arg3, arg4);
+    result = func_150CFF10(arg0, arg1, arg2, 8, 1, 0, arg3, arg4);
     if (result != 0) {
         memcpy(*(void **) ((u8 *) result + 0x48), &rec, 8);
     }
