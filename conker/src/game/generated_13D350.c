@@ -7,6 +7,8 @@ typedef struct {
     u8 padFC[0x84];
 } Record13D350;
 extern Record13D350 *D_800BE628;
+extern u8 *D_800DBEF4;
+extern s32 *D_800DBF94;
 
 /* Non-matching placeholders for the text-only asm slice asm/13D350.s. */
 
@@ -90,7 +92,15 @@ s32 func_15113E54() {
     return 0;
 }
 
-s32 func_15114050() {
+s32 func_15114050(u8 *arg0, s32 arg1) {
+    if (arg0[0x4F] & 0x80) {
+        if (arg1 == -1) {
+            return 1;
+        }
+        if (D_800DBF94[(arg0 - D_800DBEF4) / 0xA0] & (1 << arg1)) {
+            return 1;
+        }
+    }
     return 0;
 }
 

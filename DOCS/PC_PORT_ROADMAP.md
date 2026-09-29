@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,915 / 5,466 (53.33%) | 1 | 2,550 |
+| Total | 5,466 / 6,041 (90.48%) | 2,916 / 5,466 (53.35%) | 1 | 2,549 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,341 / 4,790 (48.87%) | 0 | 2,449 |
+| Game | 4,790 / 5,321 (90.02%) | 2,342 / 4,790 (48.89%) | 0 | 2,448 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1279,6 +1279,11 @@ recovering its frame-delta subtraction, negative-timer random reseed, and
 follow-up event call. All words emit directly from semantic C with no guards.
 This remains guest-side donor/reference progress; see
 [Working Note 413](WORKING_NOTES/413-game-float-timer-reset-match-20260928.md).
+The 29-word Game record selector-bit test `func_15114050` is byte-exact after
+recovering its active-record gate, selector `-1` shortcut, `0xA0`-stride record
+index, and per-selector mask lookup. All words emit directly from semantic C
+with no guards. This remains guest-side donor/reference progress; see
+[Working Note 414](WORKING_NOTES/414-game-record-selector-bit-test-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,915 / 5,466 (53.33%) | 1 | 2,550 |
+| Total | 2,916 / 5,466 (53.35%) | 1 | 2,549 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,341 / 4,790 (48.87%) | 0 | 2,449 |
+| Game | 2,342 / 4,790 (48.89%) | 0 | 2,448 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -980,9 +980,14 @@ end-to-end gameplay acceptance.
    and follow-up event call. All words emit directly from semantic C with no
    guards; see
    [Working Note 413](WORKING_NOTES/413-game-float-timer-reset-match-20260928.md).
+   The 29-word record selector-bit test `func_15114050` is now byte-exact after
+   recovering its active-record gate, selector `-1` shortcut, `0xA0`-stride
+   record index, and per-selector mask lookup. All words emit directly from
+   semantic C with no guards; see
+   [Working Note 414](WORKING_NOTES/414-game-record-selector-bit-test-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 29-word Game `func_15114050`, at 26 real
+   with ordinary unparked 27-word Game `func_15116110`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`

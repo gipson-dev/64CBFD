@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game record selector-bit test byte-matched
+
+- Replaced `func_15114050`'s zero-return placeholder with its active-record
+  gate, selector `-1` shortcut, and per-record selector-bit lookup.
+- The routine derives the record index from the pointer difference divided by
+  the `0xA0` record stride, then tests `1 << selector` in `D_800DBF94`. All 29
+  words emit directly from semantic C with no guards or profile changes.
+- Direct comparison matches all 116 linked bytes with SHA-256
+  `b952efb961befdab310b53b58d5eb7f15e234ca2ecd12b28a014a1abdb02824d`.
+  Fresh totals are **2,916 / 5,466 (53.35%)** overall and
+  **2,342 / 4,790 (48.89%)** in Game. See
+  [Working Note 414](WORKING_NOTES/414-game-record-selector-bit-test-match-20260928.md).
+
 ### Game float timer reset byte-matched
 
 - Replaced `func_150E88C0`'s zero-return placeholder with its frame-delta
