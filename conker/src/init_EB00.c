@@ -254,11 +254,12 @@ s32 func_1000F44C(u16 arg0) {
 s32 func_1000F4D8(u16 arg0) {
     s32 i;
     struct120 *current;
-    u16 value = arg0 & 0x7FFF;
+
+    arg0 &= 0x7FFF;
 
     for (i = 0; i < 16; i++) {
         current = &D_800425E0[i];
-        if ((current->unk8 != 0) && ((current->unk4 & 0x7FFF) == value)) {
+        if ((current->unk8 != 0) && ((current->unk4 & 0x7FFF) == arg0)) {
             if (func_100173C4(&current->unk8) != 0) {
                 return 1;
             }

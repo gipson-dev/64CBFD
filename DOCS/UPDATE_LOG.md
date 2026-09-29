@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Init sound-handle lookup byte-matched
+
+- `func_1000F4D8` masks the incoming identifier once, scans all sixteen
+  twelve-byte sound records, and validates matching live handles.
+- In-place argument normalization emits the complete 36-word retail body
+  directly from C. No expected-word guards or assembly restoration are used.
+- The linked and retail 144-byte spans share SHA-256
+  `e1997a581a20e13ffd2f3b88fb29e08ec757f0e79095e9bb50492b56928926ce`.
+- Totals are **2,999 / 5,463 (54.90%)** overall and
+  **397 / 493 (80.53%)** in Init, with no address-drift rows. See
+  [Working Note 495](WORKING_NOTES/495-init-sound-handle-lookup-match-20260929.md).
+
 ### Game water-buoyancy response byte-matched
 
 - `func_15058F24` applies the water-surface entry, buoyancy, settling,

@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game water-buoyancy response matched).**
-The current linked checkpoint is `2998 / 5463 (54.88%)` exact C functions,
-with no address-drift blockers and 2,465 genuinely different C functions.
+**Active (2026-09-29, Init sound-handle lookup matched).**
+The current linked checkpoint is `2999 / 5463 (54.90%)` exact C functions,
+with no address-drift blockers and 2,464 genuinely different C functions.
 Init is
-`396 / 493 (80.32%)` exact, with 97 genuinely different C rows. Game is
+`397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
 `2421 / 4789 (50.55%)` exact, with 2,368 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -219,6 +219,13 @@ then handles entry, buoyancy, settling, rising, sinking, and terminal velocity.
 Thirty stale-checked guards normalize only IDO scheduling and temporary
 register allocation; no words are inserted or omitted. See
 [Working Note 494](WORKING_NOTES/494-game-water-buoyancy-response-match-20260929.md).
+
+Init `func_1000F4D8` now matches all 36 retail words directly from C. Its body
+masks the narrowed identifier once before scanning the sixteen twelve-byte
+sound records and validating matching live handles. Expressing the mask as an
+in-place argument update restores retail's saved value and loop schedule with
+no expected-word guards. See
+[Working Note 495](WORKING_NOTES/495-init-sound-handle-lookup-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

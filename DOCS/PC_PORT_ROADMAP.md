@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 2,998 / 5,463 (54.88%) | 0 | 2,465 |
-| Init | 493 / 538 (91.64%) | 396 / 493 (80.32%) | 0 | 97 |
+| Total | 5,463 / 6,041 (90.43%) | 2,999 / 5,463 (54.90%) | 0 | 2,464 |
+| Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
 | Game | 4,789 / 5,321 (90.00%) | 2,421 / 4,789 (50.55%) | 0 | 2,368 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -66,6 +66,9 @@ The Game water-buoyancy response `func_15058F24` now matches its complete
 540-byte retail span after preserving its original blend factor through the
 initial velocity scale; see
 [Working Note 494](WORKING_NOTES/494-game-water-buoyancy-response-match-20260929.md).
+The Init sound-handle lookup `func_1000F4D8` now matches its complete 144-byte
+retail span directly from C after recovering its one-time identifier mask; see
+[Working Note 495](WORKING_NOTES/495-init-sound-handle-lookup-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
