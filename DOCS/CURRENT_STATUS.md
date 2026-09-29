@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,945 / 5,465 (53.89%) | 1 | 2,519 |
+| Total | 2,946 / 5,465 (53.91%) | 1 | 2,518 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,371 / 4,789 (49.51%) | 0 | 2,418 |
+| Game | 2,372 / 4,789 (49.53%) | 0 | 2,417 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,943, while
+denominator driven: the exact count is now 2,946, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1150,10 +1150,18 @@ end-to-end gameplay acceptance.
    tables. All words and twelve relocations emit directly from semantic C
    with no guards. See
    [Working Note 444](WORKING_NOTES/444-game-per-slot-mode-initializer-match-20260929.md).
+   The 28-word command `0x1E` record builder `func_1518AB60` is now byte-exact
+   after recovering its allocator call, null return, owner and selector
+   fields, and two cleared words. Twenty-six words emit from semantic C; two
+   guarded words preserve retail's selector reload/store register allocation.
+   See
+   [Working Note 445](WORKING_NOTES/445-game-command-1e-record-builder-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 28-word Game `func_1518AB60`, at 27 real
-   differences. Keep the documented lower-difference compiler cases parked,
+   with ordinary unparked 28-word Game `func_151C9AC0`, at 27 real
+   differences. It builds a three-float source vector, transforms it into a
+   stack vector, and dispatches both vectors with a selector and final word.
+   Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`
    remains blocked on address drift.

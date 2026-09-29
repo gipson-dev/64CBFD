@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,945 / 5,465 (53.89%) | 1 | 2,519 |
+| Total | 5,465 / 6,041 (90.47%) | 2,946 / 5,465 (53.91%) | 1 | 2,518 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,371 / 4,789 (49.51%) | 0 | 2,418 |
+| Game | 4,789 / 5,321 (90.00%) | 2,372 / 4,789 (49.53%) | 0 | 2,417 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1464,6 +1464,12 @@ pair, and mode tables. All words and twelve relocations emit directly from
 semantic C with no guards. This remains guest-side donor/reference progress;
 see
 [Working Note 444](WORKING_NOTES/444-game-per-slot-mode-initializer-match-20260929.md).
+The 28-word Game command `0x1E` record builder `func_1518AB60` is now
+byte-exact after recovering its allocator call, null path, owner field, two
+cleared words, and selector byte. Twenty-six words emit from semantic C; two
+guarded words preserve retail's selector register allocation. This remains
+guest-side donor/reference progress; see
+[Working Note 445](WORKING_NOTES/445-game-command-1e-record-builder-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

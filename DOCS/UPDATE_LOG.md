@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game command 0x1E record builder byte-matched
+
+- Replaced `func_1518AB60`'s zero-return placeholder with its recovered
+  command `0x1E` allocation, null return, and record initialization.
+- The semantic body stores the full-width owner at offset `0x10`, clears the
+  words at `0x14` and `0x18`, and stores the selector byte at `0x1C`.
+- Twenty-six of 28 words emit directly from C. Two expected-word guards
+  preserve retail's linked selector reload/store register allocation. Direct
+  comparison matches all 112 linked bytes with SHA-256
+  `efb71a2eeaa43131b257ca76adf61765cd193e36396339f8a3796fd61921b3d0`.
+  Fresh totals are **2,946 / 5,465 (53.91%)** overall and
+  **2,372 / 4,789 (49.53%)** in Game. See
+  [Working Note 445](WORKING_NOTES/445-game-command-1e-record-builder-match-20260929.md).
+
 ### Game per-slot mode initializer byte-matched
 
 - Replaced `func_15181D00`'s zero-return placeholder with its recovered zero

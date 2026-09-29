@@ -88,15 +88,15 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game per-slot mode initializer matched).**
-The current linked checkpoint is `2945 / 5465 (53.89%)` exact C functions,
-with one address-drift blocker and 2,519 genuinely different C functions.
+**Active (2026-09-29, Game command 0x1E record builder matched).**
+The current linked checkpoint is `2946 / 5465 (53.91%)` exact C functions,
+with one address-drift blocker and 2,518 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2371 / 4789 (49.51%)` exact, with 2,418 genuinely different C rows. The tree
+`2372 / 4789 (49.53%)` exact, with 2,417 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
-July remains denominator-driven. The non-matching replacement build, outer
-build, and tool checks pass; fresh gameplay was not run.
+July remains denominator-driven. The non-matching code build and tool checks
+pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
@@ -1466,9 +1466,16 @@ recovering its zero and active-mode paths across four parallel slot tables.
 All words and twelve relocations emit directly from semantic C with no guards.
 See
 [Working Note 444](WORKING_NOTES/444-game-per-slot-mode-initializer-match-20260929.md).
+The 28-word command `0x1E` record builder `func_1518AB60` now matches after
+recovering its allocation, null path, full-width owner, cleared state words,
+and selector byte. Twenty-six words emit from semantic C; two guards preserve
+the linked selector reload/store register allocation. See
+[Working Note 445](WORKING_NOTES/445-game-command-1e-record-builder-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary unparked 28-word Game
-`func_1518AB60`, at 27 real differences. Keep the documented lower-difference
+`func_151C9AC0`, at 27 real differences. Its retail body builds and transforms
+a three-float stack vector before dispatching both vectors with the caller's
+selector and final word. Keep the documented lower-difference
 compiler cases parked, and keep `func_151F3D78` parked behind the pre-existing
 `game_21FC90` audio-object layout drift. Keep the tied SDK cache routines in
 their own ownership lane. The smaller 17-word `func_10012588` remains blocked
