@@ -2,6 +2,9 @@
 #include "variables.h"
 s32 func_1503EB78(s32, f32, f32, s32);
 extern u8 D_800CC364[];
+extern s32 *D_8008446C[];
+extern u8 D_800C6664[];
+extern u8 D_800C6668[];
 
 /* Non-matching placeholders for the text-only asm slice asm/6B320.s. */
 
@@ -67,7 +70,28 @@ s32 func_1503EEC0() {
     return 0;
 }
 
-s32 func_1503EF4C() {
+s32 func_1503EF4C(s32 arg0, s32 arg1, s32 arg2) {
+    s32 *base;
+    s32 *entry;
+    s32 first;
+    s32 entry_offset;
+    s32 mask_offset;
+
+    base = D_8008446C[arg0];
+    entry_offset = arg1 * 8;
+    mask_offset = arg2 * 0x10;
+    entry = (s32 *) ((u8 *) base + entry_offset);
+    first = entry[0];
+
+    if (first == 0 ||
+            (*(s32 *) (D_800C6664 + mask_offset) & first) != 0) {
+        s32 second = entry[1];
+
+        if (second == 0 ||
+                (*(s32 *) (D_800C6668 + mask_offset) & second) != 0) {
+            return 1;
+        }
+    }
     return 0;
 }
 

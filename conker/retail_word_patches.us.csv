@@ -1949,3 +1949,5 @@ generated_1E5FF0,func_151B8BE0,0x030,0x46082280,0x46083280,-,-,Add the oscillati
 generated_1E5FF0,func_151B8BE0,0x034,0xC4840058,0xC4860058,-,-,Reload the angle through retail's f6 lifetime,,,false
 generated_1E5FF0,func_151B8BE0,0x040,0x46128182,0x46128102,-,-,Multiply angular velocity by timestep through retail's f4 lifetime,,,false
 generated_1E5FF0,func_151B8BE0,0x044,0x46062200,0x46043200,-,-,Advance the angle through retail's f8 lifetime,,,false
+generated_6B320,func_1503EF4C,0x034,0x03274024,0x00F94024,-,-,Preserve retail's commutative first-mask operand order,,,false
+generated_6B320,func_1503EF4C,0x058,0x01425824,0x004A5824,-,-,Preserve retail's commutative second-mask operand order,,,false

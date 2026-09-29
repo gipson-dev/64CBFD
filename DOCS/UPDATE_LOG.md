@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game paired-mask predicate byte-matched
+
+- Replaced `func_1503EF4C`'s placeholder with its recovered two-word mask
+  selection and per-player overlap checks.
+- Twenty-eight of 30 words emit directly from semantic C; two fail-closed
+  guards preserve retail's commutative `and` operand order.
+- The linked and retail 120-byte spans share SHA-256
+  `a0fd6178724b9b83a3389a5846d315a002e7711dc8b2dbb3b83129cce9650649`.
+- Game has crossed the halfway mark at **2,395 / 4,789 (50.01%)**. Overall
+  totals are **2,969 / 5,465 (54.33%)**. See
+  [Working Note 467](WORKING_NOTES/467-game-paired-mask-predicate-match-20260929.md).
+
 ### Game owned float-array allocator byte-matched
 
 - Replaced `func_15036C70`'s placeholder with its recovered `0x48`-byte
