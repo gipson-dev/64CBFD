@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game audio DMA prefetch wrapper byte-matched
+
+- Replaced `func_151F3D78`'s zero-return placeholder with its recovered DMA
+  callback acquisition and `0x810`-byte prefetch request.
+- All 26 words emit directly from semantic C with no expected-word guards.
+  Retail padding is now applied to the owning `game_21FC90` object, and two
+  standalone audio sources have corrected layout ownership rows.
+- The linked and retail 104-byte spans share SHA-256
+  `3a57cd163b38e4edc9e3beea97a3bbb961bff87fc574ec20cb1f18e5e8d135b7`.
+- A clean full regeneration also reclassified unchanged Init routine
+  `func_10012588` from address drift to exact. Totals are **2,979 / 5,465
+  (54.51%)** overall and **2,404 / 4,789 (50.20%)** in Game, with no remaining
+  address-drift rows. See
+  [Working Note 476](WORKING_NOTES/476-game-audio-dma-prefetch-wrapper-match-20260929.md).
+
 ### Game event identity-release handler byte-matched
 
 - Replaced `func_150F1684`'s zero-return placeholder with its recovered

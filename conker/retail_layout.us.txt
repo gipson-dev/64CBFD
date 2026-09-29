@@ -5820,8 +5820,8 @@ game,generated_contramread2,__osContRamRead2,0x151F2080,0x151F22C4
 game,generated_contramread2,__osPackRamReadData2,0x151F22C4,0x151F2430
 game,generated_contramwrite2,__osContRamWrite2,0x151F2430,0x151F2660
 game,generated_contramwrite2,__osPackRamWriteData2,0x151F2660,0x151F27E0
-game,game_21FC90,func_151F27E0,0x151F27E0,0x151F2890
-game,game_21FC90,func_151F2890,0x151F2890,0x151F2BA8
+game,func_151F27E0,func_151F27E0,0x151F27E0,0x151F2890
+game,func_151F2890,func_151F2890,0x151F2890,0x151F2BA8
 game,game_21FC90,func_151F2BA8,0x151F2BA8,0x151F2BE8
 game,game_21FC90,func_151F2BE8,0x151F2BE8,0x151F2C4C
 game,game_21FC90,func_151F2C4C,0x151F2C4C,0x151F2CDC

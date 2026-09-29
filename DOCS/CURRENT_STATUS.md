@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,977 / 5,465 (54.47%) | 1 | 2,487 |
-| Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,403 / 4,789 (50.18%) | 0 | 2,386 |
+| Total | 2,979 / 5,465 (54.51%) | 0 | 2,486 |
+| Init | 394 / 495 (79.60%) | 0 | 101 |
+| Game | 2,404 / 4,789 (50.20%) | 0 | 2,385 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -169,14 +169,17 @@ need no guarded words.
 mode-3 transition, and five-argument dispatch for event `0x1D`. Its first
 global clear naturally occupies the preceding call's delay slot; no guarded
 words are needed.
-`func_10012588` remains the sole address-drift blocker.
+`func_10012588` is byte-exact after the clean full regeneration removed its
+stale address-drift classification. No address-drift rows remain.
 
 ## Verified build state
 
-These commands passed from the current checkout on 2026-09-28:
+These commands passed from the current checkout on 2026-09-29:
 
 ```sh
 make -C conker replace NON_MATCHING=1 -j4
+make -C conker build/conker.us.elf
+make -C conker match-progress NON_MATCHING=1
 make tools-check
 make NON_MATCHING=1 -j4
 make -C conker match-progress NON_MATCHING=1
@@ -1289,16 +1292,20 @@ end-to-end gameplay acceptance.
    The 22-word event identity-release handler `func_150F1684` is now byte-exact
    from recovered C plus seven guarded identity-comparison register words. See
    [Working Note 475](WORKING_NOTES/475-game-event-identity-release-handler-match-20260929.md).
+   The 26-word audio DMA prefetch wrapper `func_151F3D78` is now byte-exact
+   directly from recovered C after restoring retail padding for its owning
+   audio object. The clean full regeneration also cleared the stale address
+   drift classification on unchanged Init routine `func_10012588`; every
+   section now has zero drift rows. See
+   [Working Note 476](WORKING_NOTES/476-game-audio-dma-prefetch-wrapper-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented
    parked compiler-scheduling cases.
    Keep `func_15194320` and `func_15194394` parked behind generated-slice
    jump-table/rodata ownership rather than introducing unresolved switches.
-   Keep the documented lower-difference compiler cases parked,
-   and keep `func_151F3D78` parked behind its pre-existing audio object layout
-   drift. The tied Init cache rows are SDK routines, while `func_10012588`
-   remains blocked on address drift.
+   Keep the documented lower-difference compiler cases parked. The tied Init
+   cache rows remain in their SDK ownership lane.
    Keep the previously documented smaller special cases parked.
    Do not model control-register access through synthetic C or guarded
    retail-word replacement.

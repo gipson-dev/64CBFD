@@ -119,7 +119,6 @@ RETAIL_PAD_SKIP_C_FILES := \
 	$(SRC_DIR)/game_17AE1C.c \
 	$(SRC_DIR)/libultra/audio/func_151F27E0.c \
 	$(SRC_DIR)/libultra/audio/func_151F2890.c \
-	$(SRC_DIR)/libultra/audio/game_21FC90.c \
 	$(SRC_DIR)/libultra/audio/cents2ratio.c \
 	$(SRC_DIR)/libultra/audio/init_128D0.c \
 	$(SRC_DIR)/libultra/audio/init_1D900.c \

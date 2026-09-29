@@ -7,7 +7,7 @@ s32 func_151F2CDC();
 void func_151F2D6C();
 s32 func_151F2E88();
 void func_151F39E4();
-s32 func_151F3D78();
+void func_151F3D78();
 /* End generated placeholder declarations. */
 
 extern s32  D_800E0E00;
@@ -466,7 +466,10 @@ s32 func_151F3C4C(s32 arg0, u8 *arg1, s32 arg2, s32 arg3) {
     return arg2;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/libultra/audio/game_21FC90/func_151F3D78.s. */
-s32 func_151F3D78() {
-    return 0;
+void func_151F3D78(void) {
+    s32 state;
+    ALDMAproc dmaProc;
+
+    dmaProc = n_syn->dma(&state);
+    dmaProc(D_800E0D80 + D_800E0DE4, 0x810, 0);
 }
