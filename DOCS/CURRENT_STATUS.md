@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,967 / 5,465 (54.29%) | 1 | 2,497 |
+| Total | 2,968 / 5,465 (54.31%) | 1 | 2,496 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,393 / 4,789 (49.97%) | 0 | 2,396 |
+| Game | 2,394 / 4,789 (49.99%) | 0 | 2,395 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,967, while
+denominator driven: the exact count is now 2,968, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1253,6 +1253,10 @@ end-to-end gameplay acceptance.
    directly from C, including its shared selector path and branch-likely
    exits. See
    [Working Note 465](WORKING_NOTES/465-game-type-selector-state-handler-match-20260929.md).
+   The 30-word owned float-array allocator `func_15036C70` is now byte-exact
+   directly from C after retaining its initialization constant once across
+   the repeated owner-pointer loads. See
+   [Working Note 466](WORKING_NOTES/466-game-owned-float-array-allocator-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with ordinary 29-word Game `func_151B8BE0`, at 28 real differences, after

@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game type-selector state handler matched).**
-The current linked checkpoint is `2967 / 5465 (54.29%)` exact C functions,
-with one address-drift blocker and 2,497 genuinely different C functions.
+**Active (2026-09-29, Game owned float-array allocator matched).**
+The current linked checkpoint is `2968 / 5465 (54.31%)` exact C functions,
+with one address-drift blocker and 2,496 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2393 / 4789 (49.97%)` exact, with 2,396 genuinely different C rows. The tree
+`2394 / 4789 (49.99%)` exact, with 2,395 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1564,6 +1564,9 @@ C plus seven fail-closed floating-point temporary guards. See
 The 30-word type-selector state handler `func_15033440` now matches directly
 from C, with no guarded words. See
 [Working Note 465](WORKING_NOTES/465-game-type-selector-state-handler-match-20260929.md).
+The 30-word owned float-array allocator `func_15036C70` now matches directly
+from C, with no guarded words. See
+[Working Note 466](WORKING_NOTES/466-game-owned-float-array-allocator-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary 29-word Game
 `func_151B8BE0`, at 28 real differences, after the documented parked compiler

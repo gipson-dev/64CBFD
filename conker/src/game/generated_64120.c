@@ -6,9 +6,19 @@ extern u8 D_800CC2D0[];
 /* Non-matching placeholders for the text-only asm slice asm/64120.s. */
 
 extern u8 D_80098068[];
+extern f32 D_80098250;
 
-s32 func_15036C70() {
-    return 0;
+void func_15036C70(u8 *arg0) {
+    s32 offset;
+    f32 value;
+
+    *(void **) (arg0 + 0x324) = allocate_memory(0x48, 1, 0, 0);
+    bzero(*(void **) (arg0 + 0x324), 0x48);
+    value = D_80098250;
+    for (offset = 0; offset < 0xC; offset += 4) {
+        *(f32 *) (*(u8 **) (arg0 + 0x324) + offset) = value;
+        *(f32 *) (*(u8 **) (arg0 + 0x324) + offset + 0xC) = value;
+    }
 }
 
 s32 func_15036CE8() {

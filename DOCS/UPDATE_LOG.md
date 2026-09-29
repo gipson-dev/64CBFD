@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game owned float-array allocator byte-matched
+
+- Replaced `func_15036C70`'s placeholder with its recovered `0x48`-byte
+  allocation, clear, and paired three-float array initialization.
+- All 30 words emit directly from semantic C with no guarded replacements.
+- The linked and retail 120-byte spans share SHA-256
+  `83af44c1f6ffc8a91ffd89ea28e4c8c6e7e34c55ca89db063f3437378fb516e1`.
+- Totals are **2,968 / 5,465 (54.31%)** overall and **2,394 / 4,789
+  (49.99%)** in Game. See
+  [Working Note 466](WORKING_NOTES/466-game-owned-float-array-allocator-match-20260929.md).
+
 ### Game type-selector state handler byte-matched
 
 - Replaced `func_15033440`'s placeholder with its recovered selector
