@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game timer and position updater matched).**
-The current linked checkpoint is `2950 / 5465 (53.98%)` exact C functions,
-with one address-drift blocker and 2,514 genuinely different C functions.
+**Active (2026-09-29, Game projection clamp matched).**
+The current linked checkpoint is `2951 / 5465 (54.00%)` exact C functions,
+with one address-drift blocker and 2,513 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2376 / 4789 (49.61%)` exact, with 2,413 genuinely different C rows. The tree
+`2377 / 4789 (49.63%)` exact, with 2,412 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1491,11 +1491,17 @@ recovering its capped remaining-time calculation, expiry clear, and two signed
 position updates. All tracked words and both global relocations emit directly
 from semantic C with no guards. See
 [Working Note 449](WORKING_NOTES/449-game-timer-position-update-match-20260929.md).
+The 61-word projection clamp `func_15145548` now matches after expressing its
+negative-projection and projection-failure vector copies as whole-structure
+assignments. This reproduces retail's raw three-word copies and restores the
+upper-clamp floating-point temporary allocation. All words and the helper-call
+relocation emit directly from semantic C with no guards. See
+[Working Note 450](WORKING_NOTES/450-game-projection-clamp-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 61-word Game
-`func_15145548`, at 27 real differences. Its semantic projection-clamp body
-already exists; recover retail's optional output local, branch-likely bounds,
-and vector-copy paths. Keep 29-word
+experiments were removed. Resume with ordinary unparked 29-word Game
+`func_1503F5B8`, at 28 real differences. It remains a zero-return placeholder
+in `generated_6C960.c`; recover its behavior from the retail `6C960` slice.
+Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the
 documented lower-difference

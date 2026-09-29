@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game projection clamp byte-matched
+
+- Reworked the two fallback paths in `func_15145548` to copy the complete
+  three-float vector structures.
+- The routine calls `func_1514563C` with either the supplied scalar output or
+  a stack local, copies the first vector for a negative projection or failed
+  query, and writes the first vector plus direction when the projection is
+  above one.
+- All 61 words and the helper-call relocation emit directly from semantic C
+  with no guards. Direct comparison matches all 244 linked bytes with SHA-256
+  `9c7a2fd3165ac85709a9677e3110a65943a5f92c9caa2cb1451fd8206fba2230`.
+  Fresh totals are **2,951 / 5,465 (54.00%)** overall and
+  **2,377 / 4,789 (49.63%)** in Game. See
+  [Working Note 450](WORKING_NOTES/450-game-projection-clamp-match-20260929.md).
+
 ### Game timer and position updater byte-matched
 
 - Replaced `func_15174920`'s zero-return placeholder with its recovered capped

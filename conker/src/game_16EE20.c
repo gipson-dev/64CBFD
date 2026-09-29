@@ -783,18 +783,14 @@ void func_15145548(struct17 *arg0, struct17 *arg1, struct17 *arg2, struct17 *arg
 
     if (func_1514563C(arg0, arg1, arg2, arg3, arg4) != 0) {
         if (*arg4 < 0.0f) {
-            arg3->unk0 = arg0->unk0;
-            arg3->unk4 = arg0->unk4;
-            arg3->unk8 = arg0->unk8;
+            *arg3 = *arg0;
         } else if (*arg4 > 1.0f) {
             arg3->unk0 = arg0->unk0 + arg1->unk0;
             arg3->unk4 = arg0->unk4 + arg1->unk4;
             arg3->unk8 = arg0->unk8 + arg1->unk8;
         }
     } else {
-        arg3->unk0 = arg0->unk0;
-        arg3->unk4 = arg0->unk4;
-        arg3->unk8 = arg0->unk8;
+        *arg3 = *arg0;
     }
 }
 
