@@ -2,6 +2,7 @@
 extern u8 *D_800D2E4C;
 extern u8 *D_800DBEF4;
 void func_1511650C(s32 arg0, s32 arg1, s32 arg2, f32 arg3);
+u8 *func_15083E90(s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/F4D20.s. */
 
@@ -49,6 +50,10 @@ s32 func_150C7C90() {
     return 0;
 }
 
-s32 func_150C7D7C() {
-    return 0;
+void func_150C7D7C(u8 *destination) {
+    u8 *source = func_15083E90(0xC);
+
+    *(s16 *)(destination + 0x10) = *(f32 *)(source + 0x14) - 30.0f;
+    *(s16 *)(destination + 0x12) = *(f32 *)(source + 0x18) + 50.0f;
+    *(s16 *)(destination + 0x14) = *(f32 *)(source + 0x1C) + 30.0f;
 }
