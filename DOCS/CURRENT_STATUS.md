@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,991 / 5,465 (54.73%) | 0 | 2,474 |
+| Total | 2,992 / 5,465 (54.75%) | 0 | 2,473 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,416 / 4,789 (50.45%) | 0 | 2,373 |
+| Game | 2,417 / 4,789 (50.47%) | 0 | 2,372 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,969, while
+denominator driven: the exact count is now 2,992, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -181,6 +181,10 @@ path, float update, and actor-table-dependent state/timer initialization; see
 `func_1515FF74` is byte-exact directly from C after recovering its allocation
 arguments, explicit null return, and eight-byte payload copy; see
 [Working Note 487](WORKING_NOTES/487-game-small-record-copy-allocator-match-20260929.md).
+`func_150C7D7C` is byte-exact directly from C after recovering its source
+position query and three offset, truncated halfword outputs. Its 32
+instructions and one trailing retail padding word match without guards; see
+[Working Note 488](WORKING_NOTES/488-game-offset-position-halfword-writer-match-20260929.md).
 
 ## Verified build state
 

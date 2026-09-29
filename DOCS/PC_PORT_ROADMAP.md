@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,991 / 5,465 (54.73%) | 0 | 2,474 |
+| Total | 5,465 / 6,041 (90.47%) | 2,992 / 5,465 (54.75%) | 0 | 2,473 |
 | Init | 495 / 538 (92.01%) | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,416 / 4,789 (50.45%) | 0 | 2,373 |
+| Game | 4,789 / 5,321 (90.00%) | 2,417 / 4,789 (50.47%) | 0 | 2,372 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -41,6 +41,10 @@ complete 160-byte retail span directly from C; see
 The small record-copy allocator `func_1515FF74` now matches its complete
 120-byte retail span directly from C; see
 [Working Note 487](WORKING_NOTES/487-game-small-record-copy-allocator-match-20260929.md).
+The offset position halfword writer `func_150C7D7C` now matches its complete
+132-byte tracked slot directly from C, including the trailing padding word;
+see
+[Working Note 488](WORKING_NOTES/488-game-offset-position-halfword-writer-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

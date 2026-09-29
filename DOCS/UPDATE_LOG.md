@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game offset position halfword writer byte-matched
+
+- Replaced `func_150C7D7C`'s zero-return placeholder with its recovered source
+  position query and three offset, truncated halfword outputs.
+- All 32 executable words emit directly from semantic C, and the following
+  zero padding word also matches. No expected-word guards are required.
+- The linked and retail 128-byte executable bodies share SHA-256
+  `18e3c934ee0783473d0aede4c877f66f969b43924fb18678f7210490066a8eb8`;
+  their complete 132-byte tracked slots share
+  `c4ef61067900cb3ed96347ae8f10d7f584a99329af68d91fb82f84fc595df062`.
+- Totals are **2,992 / 5,465 (54.75%)** overall and **2,417 / 4,789
+  (50.47%)** in Game, with no address-drift rows. See
+  [Working Note 488](WORKING_NOTES/488-game-offset-position-halfword-writer-match-20260929.md).
+
 ### Game small record-copy allocator byte-matched
 
 - Replaced `func_1515FF74`'s zero-return placeholder with its recovered record
