@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,927 / 5,466 (53.55%) | 1 | 2,538 |
+| Total | 5,466 / 6,041 (90.48%) | 2,928 / 5,466 (53.57%) | 1 | 2,537 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,353 / 4,790 (49.12%) | 0 | 2,437 |
+| Game | 4,790 / 5,321 (90.02%) | 2,354 / 4,790 (49.14%) | 0 | 2,436 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1353,6 +1353,12 @@ command-6 output, and signed value scaling by 200. Its deliberate second byte
 read and cursor update emit directly from semantic C with no guards. This
 remains guest-side donor/reference progress; see
 [Working Note 425](WORKING_NOTES/425-game-signed-record-command-writer-match-20260928.md).
+The 30-word Game gated active-object scan `func_150347E8` is byte-exact after
+recovering its global disable gate, fixed record walk, two active-pointer
+checks, and per-record dispatch. Scoping the end pointer inside the gate
+reproduces retail's opening address schedule; all words emit directly with no
+guards. This remains guest-side donor/reference progress; see
+[Working Note 426](WORKING_NOTES/426-game-gated-active-object-scan-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

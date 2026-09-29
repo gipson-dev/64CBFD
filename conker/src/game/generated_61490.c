@@ -3,6 +3,8 @@
 /* Non-matching placeholders for the text-only asm slice asm/61490.s. */
 
 extern u8 D_800CC2D0[];
+extern u8 D_800BEAC0;
+extern s32 D_800D121C;
 
 s32 func_15033FE0() {
     return 0;
@@ -43,6 +45,17 @@ s32 func_15034728() {
     return 0;
 }
 
-s32 func_150347E8() {
-    return 0;
+void func_150347E8(void) {
+    u8 *record = D_800CC2D0;
+
+    if (D_800BEAC0 == 0) {
+        u8 *end = (u8 *)&D_800D121C;
+
+        do {
+            if ((*(s32 *)record != 0) && (*(s32 *)(record + 0x9C) != 0)) {
+                func_15034728(record);
+            }
+            record += 0x32C;
+        } while (record != end);
+    }
 }

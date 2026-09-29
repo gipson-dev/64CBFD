@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game gated active-object scan byte-matched
+
+- Replaced `func_150347E8`'s zero-return placeholder with its global disable
+  gate and fixed-stride scan across the object table.
+- Each record with nonzero words at offsets `0` and `0x9C` is dispatched to
+  `func_15034728`. The walk advances by `0x32C` bytes through the exclusive
+  end marker at `D_800D121C`.
+- All 30 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 120 linked bytes with SHA-256
+  `a559ebb0f27b18ffd2c9d3b1c9e7e0a43a4525d56175f4a5ba2269920502ad3b`.
+  Fresh totals are **2,928 / 5,466 (53.57%)** overall and
+  **2,354 / 4,790 (49.14%)** in Game. See
+  [Working Note 426](WORKING_NOTES/426-game-gated-active-object-scan-match-20260928.md).
+
 ### Game signed record-command writer byte-matched
 
 - Replaced `func_15034340`'s zero-return placeholder with its indexed record
