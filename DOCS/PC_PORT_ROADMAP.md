@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,935 / 5,465 (53.71%) | 1 | 2,529 |
+| Total | 5,465 / 6,041 (90.47%) | 2,936 / 5,465 (53.72%) | 1 | 2,528 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,361 / 4,789 (49.30%) | 0 | 2,428 |
+| Game | 4,789 / 5,321 (90.00%) | 2,362 / 4,789 (49.32%) | 0 | 2,427 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1405,6 +1405,11 @@ byte-exact after recovering its signed-halfword parameter and eight-byte local
 buffer. All words emit directly from semantic C with no guards. This remains
 guest-side donor/reference progress; see
 [Working Note 434](WORKING_NOTES/434-game-single-byte-subtype2-payload-match-20260929.md).
+The 28-word Game damped motion-state integrator `func_150D13A0` is now
+byte-exact after recovering its five floating-field updates, three scale
+constants, and final state-refresh call. All words emit directly from semantic
+C with no guards. This remains guest-side donor/reference progress; see
+[Working Note 435](WORKING_NOTES/435-game-damped-motion-state-integrator-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

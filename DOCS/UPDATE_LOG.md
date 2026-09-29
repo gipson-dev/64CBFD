@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game damped motion-state integrator byte-matched
+
+- Replaced `func_150D13A0`'s zero-return placeholder with its five recovered
+  floating-field updates and final `func_15059C84` state-refresh call.
+- A minimal offset-accurate state type captures the position, velocity,
+  scale, lift-position, and lift-velocity fields. The independent scale update
+  precedes the lift-position update in source to preserve retail's IDO
+  register lifetimes and instruction schedule.
+- All 28 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 112 linked bytes with SHA-256
+  `e81264e9e1921d131d19d246e269c70b250ce8bf241825d6f1d6c3040ab3c090`.
+  Fresh totals are **2,936 / 5,465 (53.72%)** overall and
+  **2,362 / 4,789 (49.32%)** in Game. See
+  [Working Note 435](WORKING_NOTES/435-game-damped-motion-state-integrator-match-20260929.md).
+
 ### Game subtype-2 single-byte allocation payload wrapper byte-matched
 
 - Recovered `func_150D04C4`'s signed-halfword parameter and original
