@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Init arena-anchor initializer byte-matched
+
+- `func_10003BD0` initializes the arena head at `D_800380B4`, clears fields
+  `0x0`, `0x4`, `0xC`, and `0x10`, computes the available size in field `0x8`,
+  and installs the initialized node in all three final anchor globals.
+- The semantic C preserves retail's repeated global-head loads. Twenty
+  stale-checked, relocation-aware guards normalize one closed IDO scheduling
+  permutation and insert the retained `D_800380BC` low-half address word.
+- The linked and retail 112-byte spans share SHA-256
+  `daff5038fcc53e085d9b5dd4c1683c53f53e11a74ff73ea438b7edca3336bffc`.
+- Totals are **2,996 / 5,465 (54.82%)** overall and **395 / 495 (79.80%)**
+  in Init, with no address-drift rows. See
+  [Working Note 491](WORKING_NOTES/491-init-arena-anchor-initializer-match-20260929.md).
+
 ### Game impact-effect dispatcher pair byte-matched
 
 - Replaced adjacent empty placeholders `func_15194320` and `func_15194394`

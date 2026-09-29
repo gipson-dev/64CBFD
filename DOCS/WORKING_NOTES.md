@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game impact-effect dispatcher pair matched).**
-The current linked checkpoint is `2995 / 5465 (54.80%)` exact C functions,
-with no address-drift blockers and 2,470 genuinely different C functions.
+**Active (2026-09-29, Init arena-anchor initializer matched).**
+The current linked checkpoint is `2996 / 5465 (54.82%)` exact C functions,
+with no address-drift blockers and 2,469 genuinely different C functions.
 Init is
-`394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
+`395 / 495 (79.80%)` exact, with 100 genuinely different C rows. Game is
 `2420 / 4789 (50.53%)` exact, with 2,369 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -191,6 +191,14 @@ states zero through four before dispatching distinct impact-effect IDs and
 resource strings through `func_1518D1C0`. Their paired jump tables are anchored
 to preserved retail rodata; no expected-word guards are needed. See
 [Working Note 490](WORKING_NOTES/490-game-impact-effect-dispatch-pair-match-20260929.md).
+
+Init `func_10003BD0` now matches all 28 retail words. Its C body initializes
+the arena head, clears four node fields, computes the available byte count,
+and assigns one final node load to three anchor globals. Twenty stale-checked
+guards preserve retail's retained `D_800380BC` address and the resulting
+closed scheduling permutation, including one inserted relocation-bearing
+word. See
+[Working Note 491](WORKING_NOTES/491-init-arena-anchor-initializer-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

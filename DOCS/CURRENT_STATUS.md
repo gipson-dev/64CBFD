@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,995 / 5,465 (54.80%) | 0 | 2,470 |
-| Init | 394 / 495 (79.60%) | 0 | 101 |
+| Total | 2,996 / 5,465 (54.82%) | 0 | 2,469 |
+| Init | 395 / 495 (79.80%) | 0 | 100 |
 | Game | 2,420 / 4,789 (50.53%) | 0 | 2,369 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,995, while
+denominator driven: the exact count is now 2,996, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -194,6 +194,11 @@ byte-exact directly from grouped switches over source states zero through
 four. Their separate five-entry jump tables retain retail rodata ownership;
 see
 [Working Note 490](WORKING_NOTES/490-game-impact-effect-dispatch-pair-match-20260929.md).
+Init arena-anchor initializer `func_10003BD0` is byte-exact across all 28
+words after recovering its repeated global-head access shape. Twenty
+stale-checked guards preserve one closed compiler schedule, including the
+single inserted low-half word for retail's retained final-anchor pointer; see
+[Working Note 491](WORKING_NOTES/491-init-arena-anchor-initializer-match-20260929.md).
 
 ## Verified build state
 
@@ -1361,10 +1366,10 @@ end-to-end gameplay acceptance.
    after recovering its two-owner scan and node-key comparison. Eight guarded
    words normalize one closed owner/end register-allocation cycle. See
    [Working Note 484](WORKING_NOTES/484-game-two-owner-linked-list-lookup-match-20260929.md).
-   `func_10003BD0` was audited across several C shapes and remains at 25 real
-   differences; keep it open without retaining experimental source. Resume
-   with an ordinary small Game placeholder after the already documented
-   parked compiler-scheduling cases. Keep `func_15015F40` parked until its
+   `func_10003BD0` is now byte-exact across its complete 28-word Init span.
+   Resume with the tied Init cache-maintenance candidates only as SDK-owned
+   routines, or select an ordinary small Game placeholder. Keep
+   `func_15015F40` parked until its
    unresolved 38-entry indirect table has authoritative ownership, and keep
    handwritten register-contract fragment `func_150A76F0` in the raw-assembly
    workstream.

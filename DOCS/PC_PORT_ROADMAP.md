@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,995 / 5,465 (54.80%) | 0 | 2,470 |
-| Init | 495 / 538 (92.01%) | 394 / 495 (79.60%) | 0 | 101 |
+| Total | 5,465 / 6,041 (90.47%) | 2,996 / 5,465 (54.82%) | 0 | 2,469 |
+| Init | 495 / 538 (92.01%) | 395 / 495 (79.80%) | 0 | 100 |
 | Game | 4,789 / 5,321 (90.00%) | 2,420 / 4,789 (50.53%) | 0 | 2,369 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -51,6 +51,10 @@ The SDK identity-matrix initializer `guMtxIdentF` now matches its complete
 The adjacent impact-effect dispatchers `func_15194320` and `func_15194394`
 now match both complete 116-byte spans directly from C; see
 [Working Note 490](WORKING_NOTES/490-game-impact-effect-dispatch-pair-match-20260929.md).
+The Init arena-anchor initializer `func_10003BD0` now matches its complete
+112-byte span after preserving the semantic repeated head loads and applying
+one closed, relocation-aware compiler-scheduling normalization; see
+[Working Note 491](WORKING_NOTES/491-init-arena-anchor-initializer-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

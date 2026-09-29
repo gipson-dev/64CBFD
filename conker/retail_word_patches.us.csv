@@ -1,4 +1,24 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+init_3BD0,func_10003BD0,0x008,0x24840000,0x3C050000,R_MIPS_LO16:D_800E9D10,R_MIPS_HI16:D_800380BC,Materialize the retained final-anchor address before completing either opening pointer,0x24A50000,R_MIPS_LO16:D_800380BC,false
+init_3BD0,func_10003BD0,0x00C,0x24630000,0x24840000,R_MIPS_LO16:D_800380B4,R_MIPS_LO16:D_800E9D10,Complete the arena pointer after the retained anchor address,,,false
+init_3BD0,func_10003BD0,0x010,0xAC640000,0x24630000,-,R_MIPS_LO16:D_800380B4,Complete the head pointer before installing the arena,,,false
+init_3BD0,func_10003BD0,0x014,0xAC800000,0xAC640000,-,-,Install the arena before clearing its first field,,,false
+init_3BD0,func_10003BD0,0x018,0x8C6F0000,0xAC800000,-,-,Clear the first arena field before reloading the head,,,false
+init_3BD0,func_10003BD0,0x01C,0x3C180000,0x8C6F0000,R_MIPS_HI16:D_80038098,-,Reload the installed head before materializing the size source,,,false
+init_3BD0,func_10003BD0,0x020,0x3C010000,0x3C180000,R_MIPS_HI16:D_800380BC,R_MIPS_HI16:D_80038098,Materialize the size source through retail's t8 lifetime,,,false
+init_3BD0,func_10003BD0,0x024,0xADE00004,0x3C010000,-,R_MIPS_HI16:D_800380B8,Hoist the second final-anchor address before clearing field four,,,false
+init_3BD0,func_10003BD0,0x028,0x8F180000,0xADE00004,R_MIPS_LO16:D_80038098,-,Clear field four before loading the size source,,,false
+init_3BD0,func_10003BD0,0x02C,0x8C690000,0x8F180000,-,R_MIPS_LO16:D_80038098,Load the size source before reloading the head for field eight,,,false
+init_3BD0,func_10003BD0,0x030,0x0304C823,0x8C690000,-,-,Reload the head before calculating the arena size,,,false
+init_3BD0,func_10003BD0,0x034,0x2728FFEC,0x0304C823,-,-,Subtract the arena base through retail's t9 lifetime,,,false
+init_3BD0,func_10003BD0,0x038,0xAD280008,0x2728FFEC,-,-,Apply the record-header adjustment before storing field eight,,,false
+init_3BD0,func_10003BD0,0x03C,0x8C6A0000,0xAD280008,-,-,Store field eight before the next head reload,,,false
+init_3BD0,func_10003BD0,0x040,0xAD40000C,0x8C6A0000,-,-,Reload the head for field twelve,,,false
+init_3BD0,func_10003BD0,0x044,0x8C6B0000,0xAD40000C,-,-,Clear field twelve before the final field reload,,,false
+init_3BD0,func_10003BD0,0x048,0xAD600010,0x8C6B0000,-,-,Reload the head for field sixteen,,,false
+init_3BD0,func_10003BD0,0x04C,0x8C620000,0xAD600010,-,-,Clear field sixteen before retaining the initialized node,,,false
+init_3BD0,func_10003BD0,0x050,0xAC220000,0x8C620000,R_MIPS_LO16:D_800380BC,-,Load the initialized node once for all final anchors,,,false
+init_3BD0,func_10003BD0,0x054,0x3C010000,0xACA20000,R_MIPS_HI16:D_800380B8,-,Store the node through the retained final-anchor pointer,,,false
 guMtxIdentF,guMtxIdentF,0x004,0x44810000,0x44812000,-,-,Retain the matrix one constant in retail floating-point register f4,,,false
 guMtxIdentF,guMtxIdentF,0x00C,0xE4800000,0xE4840000,-,-,Store the first diagonal one from retail floating-point register f4,,,false
 guMtxIdentF,guMtxIdentF,0x01C,0xE4800014,0xE4840014,-,-,Store the second diagonal one from retail floating-point register f4,,,false
