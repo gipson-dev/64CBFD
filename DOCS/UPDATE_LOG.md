@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game path-node spawn randomizer byte-matched
+
+- `func_15079790` selects the current actor identifier, generates two signed
+  random offsets, and places the actor around its indexed path node.
+- Restoring separate actor/path-table lookups for the X and Z writes recovers
+  the retail 60-word body and `30(sp)` random-offset slot directly from C. No
+  expected-word guards are used.
+- The linked and retail 240-byte spans share SHA-256
+  `17a05b13fc4c788386d4fe5f06b22abd7c5fb77eb5a898f1ec0d7fe121570def`.
+- Totals are **3,003 / 5,463 (54.97%)** overall and
+  **2,425 / 4,789 (50.64%)** in Game, with no address-drift rows. See
+  [Working Note 499](WORKING_NOTES/499-game-path-node-spawn-randomizer-match-20260929.md).
+
 ### Game height-gated action selector byte-matched
 
 - `func_1506DC10` selects action `9` below its floor-height gate; otherwise it

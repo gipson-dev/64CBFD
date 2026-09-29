@@ -1347,7 +1347,6 @@ void func_150796CC(void) {
 }
 
 void func_15079790(void) {
-    PathNode8 *temp_v0;
     s16 temp_t1;
     s16 temp_t0;
 
@@ -1357,9 +1356,8 @@ void func_15079790(void) {
         D_800D154C->id = 0x3A;
         temp_t1 = (func_150ADA20() % 0x1F4U) - 0xFA;
         temp_t0 = (func_150ADA20() % 0x1F4U) - 0xFA;
-        temp_v0 = ((PathNode8 **)D_800D2104)[D_800D154C->unk13F];
-        D_800D154C->x_position = temp_v0->x + temp_t1;
-        D_800D154C->z_position = temp_v0->z + temp_t0;
+        D_800D154C->x_position = ((PathNode8 **)D_800D2104)[D_800D154C->unk13F]->x + temp_t1;
+        D_800D154C->z_position = ((PathNode8 **)D_800D2104)[D_800D154C->unk13F]->z + temp_t0;
     }
 }
 
