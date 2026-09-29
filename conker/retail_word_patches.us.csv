@@ -1916,3 +1916,5 @@ generated_AEB40,func_15084C30,0x060,0xE48A0008,0xE4600008,-,-,Store the nonnegat
 generated_AEB40,func_15084C30,0x064,0x44818000,0x44815000,-,-,Load the unsigned conversion correction into retail's f10,,,false
 generated_AEB40,func_15084C30,0x06C,0x46105280,0x460A0000,-,-,Apply the unsigned conversion correction to f0,,,false
 generated_AEB40,func_15084C30,0x070,0xE48A0008,0xE4600008,-,-,Store the corrected f0 result through the retained record pointer,,,false
+generated_179F30,func_1514DAA4,0x028,0xAFA70028,0x24060008,-,-,Load the payload size before the allocator call,,,false
+generated_179F30,func_1514DAA4,0x030,0x24060008,0xAFA70028,-,-,Spill the retained object in the allocator delay slot,,,false

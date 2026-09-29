@@ -119,8 +119,18 @@ void func_1514DA38(u8 *arg0) {
     }
 }
 
-s32 func_1514DAA4() {
-    return 0;
+void func_1514DAA4(u8 *arg0) {
+    u8 *result;
+    s32 payload[2];
+
+    *(u32 *) (arg0 + 0x94) |= 2;
+    payload[0] = 0;
+    payload[1] = 0;
+    result = (u8 *) func_15158BD0(arg0, 1, sizeof(payload));
+    if (result != NULL) {
+        memcpy(result + 0x58, payload, sizeof(payload));
+        func_1514EC1C((s32) result, (s32) arg0, 0x13);
+    }
 }
 
 void func_1514DB18(u8 *arg0) {

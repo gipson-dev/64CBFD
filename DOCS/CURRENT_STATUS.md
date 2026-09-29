@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,961 / 5,465 (54.18%) | 1 | 2,503 |
+| Total | 2,962 / 5,465 (54.20%) | 1 | 2,502 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,387 / 4,789 (49.84%) | 0 | 2,402 |
+| Game | 2,388 / 4,789 (49.86%) | 0 | 2,401 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1224,10 +1224,16 @@ end-to-end gameplay acceptance.
    directly from C, including its live-count float-array clearing loop and
    branch-likely base reload. See
    [Working Note 459](WORKING_NOTES/459-game-auxiliary-record-reset-match-20260929.md).
+   The 29-word zero-payload record dispatcher `func_1514DAA4` is now
+   byte-exact after recovering its object flag update, two-word zero payload,
+   allocation, payload copy, and event-`0x13` dispatch. Two fail-closed guards
+   preserve only the independent payload-size and retained-object spill
+   schedule around the allocator call. See
+   [Working Note 460](WORKING_NOTES/460-game-zero-payload-record-dispatch-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 29-word Game `func_1514DAA4`, at 28 real
-   differences.
+   with the fresh ordinary Game queue, beginning with 17-word
+   `func_150721A4` at 16 real differences.
    Keep `func_15194320` and `func_15194394` parked behind generated-slice
    jump-table/rodata ownership rather than introducing unresolved switches.
    Keep the documented lower-difference compiler cases parked,

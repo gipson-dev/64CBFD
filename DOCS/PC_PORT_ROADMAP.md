@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,961 / 5,465 (54.18%) | 1 | 2,503 |
+| Total | 5,465 / 6,041 (90.47%) | 2,962 / 5,465 (54.20%) | 1 | 2,502 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,387 / 4,789 (49.84%) | 0 | 2,402 |
+| Game | 4,789 / 5,321 (90.00%) | 2,388 / 4,789 (49.86%) | 0 | 2,401 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1539,6 +1539,10 @@ The 30-word Game auxiliary-record reset `func_1511A7C0` is now byte-exact
 directly from C, including its live-count float-array clearing loop. This
 remains guest-side donor/reference progress; see
 [Working Note 459](WORKING_NOTES/459-game-auxiliary-record-reset-match-20260929.md).
+The 29-word Game zero-payload record dispatcher `func_1514DAA4` is now
+byte-exact from semantic C plus two guarded independent scheduling words
+around its allocator call. This remains guest-side donor/reference progress;
+see [Working Note 460](WORKING_NOTES/460-game-zero-payload-record-dispatch-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

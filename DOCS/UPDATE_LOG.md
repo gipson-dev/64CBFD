@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game zero-payload record dispatcher byte-matched
+
+- Replaced `func_1514DAA4`'s zero-return placeholder with its recovered object
+  flag update, two-zero-word payload allocation, payload copy, and event
+  `0x13` dispatch.
+- Twenty-seven of 29 words emit from semantic C. Two fail-closed expected-word
+  guards reproduce retail's independent payload-size load and retained-object
+  spill schedule around the allocator call.
+- The linked ELF and pristine retail 116-byte spans share SHA-256
+  `86252aec5532b02318f5211fd7a49240a496794ab58da9d4a86654495738b51b`.
+- Totals are **2,962 / 5,465 (54.20%)** overall and **2,388 / 4,789
+  (49.86%)** in Game. See
+  [Working Note 460](WORKING_NOTES/460-game-zero-payload-record-dispatch-match-20260929.md).
+
 ### Game auxiliary-record reset byte-matched
 
 - Replaced `func_1511A7C0`'s zero-return placeholder with its recovered

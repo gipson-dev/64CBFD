@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game auxiliary-record reset matched).**
-The current linked checkpoint is `2961 / 5465 (54.18%)` exact C functions,
-with one address-drift blocker and 2,503 genuinely different C functions.
+**Active (2026-09-29, Game zero-payload record dispatcher matched).**
+The current linked checkpoint is `2962 / 5465 (54.20%)` exact C functions,
+with one address-drift blocker and 2,502 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2387 / 4789 (49.84%)` exact, with 2,402 genuinely different C rows. The tree
+`2388 / 4789 (49.86%)` exact, with 2,401 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1541,9 +1541,13 @@ C after recovering its six field initializers and live-count float-array
 clear. Its separate loop index and byte offset reproduce retail's
 branch-likely array-base reload without guards. See
 [Working Note 459](WORKING_NOTES/459-game-auxiliary-record-reset-match-20260929.md).
+The 29-word zero-payload record dispatcher `func_1514DAA4` now matches from
+semantic C plus two fail-closed scheduling guards after recovering its object
+flag update, zero payload, allocation, copy, and event-`0x13` dispatch. See
+[Working Note 460](WORKING_NOTES/460-game-zero-payload-record-dispatch-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 29-word Game
-`func_1514DAA4`, at 28 real differences.
+experiments were removed. Resume with ordinary 17-word Game
+`func_150721A4`, at 16 real differences.
 Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the
