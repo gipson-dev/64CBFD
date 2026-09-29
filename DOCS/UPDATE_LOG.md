@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game two-slot resource cleanup byte-matched
+
+- Replaced `func_150F739C`'s zero-return placeholder with its two-slot indexed
+  release loop and final `func_1514EDF0` owner cleanup call.
+- Non-null pointers at owner offsets `0x30` and `0x34` are released through
+  `func_1516972C`; the pointer at `0x28` is then forwarded with the owner.
+- Twenty-three of 28 words emit directly from semantic C. Five guarded words
+  omit one redundant opening temporary and normalize a closed `v0`/`t8`
+  counter-register cycle. Direct comparison matches all 112 linked bytes with
+  SHA-256
+  `2224059e793572ec1e461b485fa463d8ed184af981c738c15b8bdfc55d53bb6a`.
+  Fresh totals are **2,939 / 5,465 (53.78%)** overall and
+  **2,365 / 4,789 (49.38%)** in Game. See
+  [Working Note 438](WORKING_NOTES/438-game-two-slot-resource-cleanup-match-20260929.md).
+
 ### Game fixed payload-setup wrapper byte-matched
 
 - Replaced `func_150ECC00`'s zero-return placeholder with its recovered

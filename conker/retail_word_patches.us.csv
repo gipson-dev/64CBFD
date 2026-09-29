@@ -1849,3 +1849,8 @@ generated_185560,func_15159230,0x07C,0x03E00008,0x00601025,-,-,Move the selected
 generated_185560,func_15159230,0x080,0x00000000,0x03E00008,-,-,Restore retail's return after the shared result move,,,false
 generated_1A0E60,func_15173C90,0x044,0xAFB90010,0x01C02025,-,-,Move the masked record flags before staging the independent table index,,,false
 generated_1A0E60,func_15173C90,0x048,0x01C02025,0xAFB90010,-,-,Stage the independent table index after retail's masked-flag move,,,false
+generated_124260,func_150F739C,0x01C,0x00001025,0x00000000,-,-,Omit the redundant compiler zero for the initial byte-index temporary,,,true
+generated_124260,func_150F739C,0x024,0x00027080,0x00107080,-,-,Index the first slot through the saved retail loop counter,,,false
+generated_124260,func_150F739C,0x044,0x320200FF,0x321800FF,-,-,Canonicalize the incremented byte index through retail's t8 lifetime,,,false
+generated_124260,func_150F739C,0x048,0x28410002,0x2B010002,-,-,Test the canonical byte index through retail's t8 lifetime,,,false
+generated_124260,func_150F739C,0x050,0x00408025,0x03008025,-,-,Write the canonical byte index back in the loop delay slot,,,false

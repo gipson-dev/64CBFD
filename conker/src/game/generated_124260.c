@@ -22,16 +22,26 @@ s32 func_150F7310() {
     return 0;
 }
 
-s32 func_150F739C() {
-    return 0;
+void func_150F739C(u8 *arg0) {
+    u8 *sub = arg0 + 0x28;
+    u8 i;
+
+    for (i = 0; i < 2; i++) {
+        void *entry = *(void **) (sub + 8 + i * 4);
+
+        if (entry != NULL) {
+            func_1516972C(entry);
+        }
+    }
+    func_1514EDF0(arg0, *(s32 *) sub);
 }
 
-s32 func_150F740C(s32 arg0) {
+void func_150F740C(u8 *arg0) {
     func_150F739C(arg0);
     func_1514933C(arg0);
 }
 
-s32 func_150F7438(s32 arg0) {
+void func_150F7438(u8 *arg0) {
     func_150F739C(arg0);
     func_15149368(arg0);
 }
