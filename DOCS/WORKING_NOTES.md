@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game type-0x64 record allocator matched).**
-The current linked checkpoint is `2960 / 5465 (54.16%)` exact C functions,
-with one address-drift blocker and 2,504 genuinely different C functions.
+**Active (2026-09-29, Game auxiliary-record reset matched).**
+The current linked checkpoint is `2961 / 5465 (54.18%)` exact C functions,
+with one address-drift blocker and 2,503 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2386 / 4789 (49.82%)` exact, with 2,403 genuinely different C rows. The tree
+`2387 / 4789 (49.84%)` exact, with 2,402 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1536,9 +1536,14 @@ The 29-word type-`0x64` record allocator `func_15104170` now matches directly
 from C after recovering its `void` contract, allocator call, timer/state
 initialization, retained words, and selector byte. See
 [Working Note 458](WORKING_NOTES/458-game-type64-record-allocator-match-20260929.md).
+The 30-word auxiliary-record reset `func_1511A7C0` now matches directly from
+C after recovering its six field initializers and live-count float-array
+clear. Its separate loop index and byte offset reproduce retail's
+branch-likely array-base reload without guards. See
+[Working Note 459](WORKING_NOTES/459-game-auxiliary-record-reset-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary unparked 30-word Game
-`func_1511A7C0`, at 28 real differences.
+experiments were removed. Resume with ordinary unparked 29-word Game
+`func_1514DAA4`, at 28 real differences.
 Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table
 and rodata ownership rather than adding unresolved C switches. Keep the

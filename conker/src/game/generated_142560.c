@@ -265,8 +265,23 @@ s32 func_1511A738() {
     return 0;
 }
 
-s32 func_1511A7C0() {
-    return 0;
+void func_1511A7C0(u8 *arg0) {
+    u8 *temp_v0 = *(u8 **) (arg0 + 0x80);
+    s32 i = 0;
+    s32 offset = 0;
+
+    temp_v0[0x1E] = 1;
+    *(f32 *) (temp_v0 + 0x10) = 0.0f;
+    temp_v0[0x1C] = 0;
+    temp_v0[0x1D] = 7;
+    *(f32 *) (temp_v0 + 0x14) = 260.0f;
+    *(f32 *) (temp_v0 + 0x18) = 100.0f;
+
+    while (i < *(u16 *) (arg0 + 0x16)) {
+        *(f32 *) (*(u8 **) (temp_v0 + 4) + offset) = 0.0f;
+        i++;
+        offset += sizeof(f32);
+    }
 }
 
 s32 func_1511A838() {

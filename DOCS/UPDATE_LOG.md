@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game auxiliary-record reset byte-matched
+
+- Replaced `func_1511A7C0`'s zero-return placeholder with its recovered
+  auxiliary-record initialization and live-count float-array clear.
+- The routine writes the enabled/state bytes, zeroes the current value, sets
+  bounds `260.0f` and `100.0f`, and clears one float for every entry described
+  by the owner's halfword count.
+- All 30 words emit directly from semantic C, including retail's
+  branch-likely loop and array-base reload, with no guarded replacements. The
+  linked and pristine retail spans share SHA-256
+  `5f44289b94c6d621b6172d793da5c279b95a7c0d83d380882901d219512b3654`.
+- Totals are **2,961 / 5,465 (54.18%)** overall and **2,387 / 4,789
+  (49.84%)** in Game. See
+  [Working Note 459](WORKING_NOTES/459-game-auxiliary-record-reset-match-20260929.md).
+
 ### Game type-0x64 record allocator byte-matched
 
 - Replaced `func_15104170`'s zero-return placeholder with its recovered
