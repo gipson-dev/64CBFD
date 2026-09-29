@@ -1,5 +1,7 @@
 #include <ultra64.h>
 
+extern f32 D_800BE9A4;
+
 /* Non-matching placeholders for the text-only asm slice asm/188440.s. */
 
 s32 func_1515AF90() {
@@ -31,8 +33,22 @@ s32 func_1515B674() {
     return 0;
 }
 
-s32 func_1515B994() {
-    return 0;
+s32 func_1515B994(u8 *arg0) {
+    f32 velocity;
+    f32 acceleration;
+    f32 timestep;
+    f32 velocity_sum;
+
+    velocity = *(f32 *) (arg0 + 0x78);
+    acceleration = *(f32 *) (arg0 + 0x74);
+    timestep = D_800BE9A4;
+    *(f32 *) (arg0 + 0x14) += velocity * timestep +
+        0.5f * acceleration * timestep;
+    *(f32 *) (arg0 + 0x78) = velocity + acceleration * D_800BE9A4;
+    velocity_sum = *(f32 *) (arg0 + 0x78) + velocity;
+    *(f32 *) (arg0 + 0x1C) += *(f32 *) (arg0 + 0x80) *
+        velocity_sum * 0.5f;
+    return 1;
 }
 
 void func_1515BA10(s32 arg0) {

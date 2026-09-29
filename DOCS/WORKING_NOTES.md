@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game packed-byte submission wrapper matched).**
-The current linked checkpoint is `2963 / 5465 (54.22%)` exact C functions,
-with one address-drift blocker and 2,501 genuinely different C functions.
+**Active (2026-09-29, Game accelerated-motion integrator matched).**
+The current linked checkpoint is `2964 / 5465 (54.24%)` exact C functions,
+with one address-drift blocker and 2,500 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2389 / 4789 (49.89%)` exact, with 2,400 genuinely different C rows. The tree
+`2390 / 4789 (49.91%)` exact, with 2,399 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1550,9 +1550,13 @@ its semantic C body after ordinary-object padding gained guarded contraction
 before overflow placement. Three redundant moves are omitted and nine guarded
 words reproduce retail's equivalent register allocation and call schedule.
 See [Working Note 461](WORKING_NOTES/461-game-packed-byte-submission-wrapper-match-20260929.md).
+The 31-word accelerated-motion integrator `func_1515B994` now matches from
+semantic C plus fourteen fail-closed guards preserving retail's
+floating-point register lifetimes and independent load/store schedule. See
+[Working Note 462](WORKING_NOTES/462-game-accelerated-motion-integrator-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
-experiments were removed. Resume with ordinary 31-word Game
-`func_1515B994`, at 28 real differences, after the documented parked compiler
+experiments were removed. Resume with ordinary 29-word Game
+`func_1518E308`, at 28 real differences, after the documented parked compiler
 cases.
 Keep 29-word
 `func_15194320` and `func_15194394` parked behind generated-slice jump-table

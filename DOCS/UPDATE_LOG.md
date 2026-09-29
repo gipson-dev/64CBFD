@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game accelerated-motion integrator byte-matched
+
+- Replaced `func_1515B994`'s zero-return placeholder with its recovered
+  timestep-based position and velocity integration and averaged-velocity
+  secondary accumulation.
+- Seventeen of 31 words emit directly from semantic C. Fourteen fail-closed
+  expected-word guards preserve retail's equivalent floating-point register
+  lifetimes and independent load/store schedule.
+- The complete linked and pristine retail 124-byte spans share SHA-256
+  `f22fcf8d8bea13e9b9dd8fb27fdbba4edc7b3382187883b96a8b59006e502b09`.
+- Totals are **2,964 / 5,465 (54.24%)** overall and **2,390 / 4,789
+  (49.91%)** in Game. See
+  [Working Note 462](WORKING_NOTES/462-game-accelerated-motion-integrator-match-20260929.md).
+
 ### Game packed-byte submission wrapper byte-matched
 
 - Completed `func_150721A4`, which splits `D_800D1580` into high, low, and

@@ -1928,3 +1928,17 @@ game_981E0,func_150721A4,0x02C,0x330700FF,0xAFA00010,-,-,Stage the zero fifth ar
 game_981E0,func_150721A4,0x030,0x01C02825,0x00000000,-,-,Omit the redundant high-byte move to a1,,,true
 game_981E0,func_150721A4,0x034,0x01E03025,0x00000000,-,-,Omit the redundant low-byte move to a2,,,true
 game_981E0,func_150721A4,0x03C,0xAFA00010,0x306600FF,-,-,Mask the low byte into the call delay slot,,,false
+generated_188440,func_1515B994,0x010,0xC4800078,0xC4820078,-,-,Retain the old velocity in retail's f2 lifetime,,,false
+generated_188440,func_1515B994,0x018,0xC4820074,0xC48E0074,-,-,Retain acceleration in retail's f14 lifetime,,,false
+generated_188440,func_1515B994,0x020,0x460C0102,0x460C1102,-,-,Multiply timestep by the old velocity in f2,,,false
+generated_188440,func_1515B994,0x028,0x46028182,0x460E8182,-,-,Multiply the half constant by acceleration in f14,,,false
+generated_188440,func_1515B994,0x03C,0xE4860014,0xC48A0080,-,-,Load the secondary scale before storing the integrated position,,,false
+generated_188440,func_1515B994,0x040,0xC4640000,0xE4860014,-,-,Store the integrated position before reloading timestep,,,false
+generated_188440,func_1515B994,0x044,0xC486001C,0xC4640000,-,-,Reload timestep before advancing velocity,,,false
+generated_188440,func_1515B994,0x048,0x46041202,0x46047202,-,-,Multiply acceleration by the reloaded timestep,,,false
+generated_188440,func_1515B994,0x04C,0xC4840080,0x46081480,-,-,Add the velocity delta to the old velocity,,,false
+generated_188440,func_1515B994,0x050,0x46004480,0xE4920078,-,-,Store the advanced velocity before its retail reload,,,false
+generated_188440,func_1515B994,0x054,0xE4920078,0xC4860078,-,-,Reload the advanced velocity through retail's f6 lifetime,,,false
+generated_188440,func_1515B994,0x058,0xC48A0078,0x46023100,-,-,Sum the advanced and old velocities through retail's f4 lifetime,,,false
+generated_188440,func_1515B994,0x05C,0x46005380,0xC486007C,-,-,Load the secondary accumulator after the velocity sum,,,false
+generated_188440,func_1515B994,0x060,0x460E2202,0x46045202,-,-,Scale the summed velocity through retail's f8 lifetime,,,false

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,963 / 5,465 (54.22%) | 1 | 2,501 |
+| Total | 5,465 / 6,041 (90.47%) | 2,964 / 5,465 (54.24%) | 1 | 2,500 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,389 / 4,789 (49.89%) | 0 | 2,400 |
+| Game | 4,789 / 5,321 (90.00%) | 2,390 / 4,789 (49.91%) | 0 | 2,399 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1548,6 +1548,11 @@ byte-exact from its existing semantic C after extending ordinary-object
 padding to honor guarded contraction before overflow placement. This remains
 guest-side donor/reference progress; see
 [Working Note 461](WORKING_NOTES/461-game-packed-byte-submission-wrapper-match-20260929.md).
+The 31-word Game accelerated-motion integrator `func_1515B994` is now
+byte-exact from recovered timestep-based position/velocity integration and
+averaged-velocity secondary accumulation. This remains guest-side
+donor/reference progress; see
+[Working Note 462](WORKING_NOTES/462-game-accelerated-motion-integrator-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 
