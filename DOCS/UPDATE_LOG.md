@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game cached resource setup byte-matched
+
+- `func_1517A9A8` now preserves the incoming display-list cursor when its
+  selector is cached; on a cache miss it builds a 20-byte output record,
+  passes the selector shifted by eight to `func_15094F70`, and updates the
+  cached selector.
+- The volatile selector lifetime restores retail's two independent stack
+  reloads and complete 30-word extent. Six stale checks normalize only the
+  independent call-argument setup order.
+- The linked and retail 120-byte spans share SHA-256
+  `096d913e68b8486c3adef397b4f0076b0c2948e4bd0ffa13139747bada4a89dd`.
+- Totals are **3,009 / 5,463 (55.08%)** overall and
+  **2,431 / 4,789 (50.76%)** in Game, with no address-drift rows. See
+  [Working Note 505](WORKING_NOTES/505-game-cached-resource-setup-match-20260929.md).
+
 ### Game display-list address relocator byte-matched
 
 - `func_15168F08` now walks eight-byte display-list commands using signed

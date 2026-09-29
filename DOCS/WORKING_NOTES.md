@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game display-list relocator matched).**
-The current linked checkpoint is `3008 / 5463 (55.06%)` exact C functions,
-with no address-drift blockers and 2,455 genuinely different C functions.
+**Active (2026-09-29, Game cached resource setup matched).**
+The current linked checkpoint is `3009 / 5463 (55.08%)` exact C functions,
+with no address-drift blockers and 2,454 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2430 / 4789 (50.74%)` exact, with 2,359 genuinely different C rows. The tree
+`2431 / 4789 (50.76%)` exact, with 2,358 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -283,6 +283,14 @@ two-step mask/add update restore its cursor and memory-write behavior.
 Eighteen stale checks normalize one closed constant/cursor allocation chain.
 See
 [Working Note 504](WORKING_NOTES/504-game-display-list-address-relocator-match-20260929.md).
+
+Game `func_1517A9A8` now matches all 30 retail words. The recovered routine
+reuses its incoming display-list cursor when the requested resource selector
+is already cached; otherwise it prepares a 20-byte output record, shifts the
+selector into the resource index, invokes `func_15094F70`, and updates the
+cache. Six stale checks normalize only one independent call-argument
+scheduling window. See
+[Working Note 505](WORKING_NOTES/505-game-cached-resource-setup-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

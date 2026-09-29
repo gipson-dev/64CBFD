@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,008 / 5,463 (55.06%) | 0 | 2,455 |
+| Total | 5,463 / 6,041 (90.43%) | 3,009 / 5,463 (55.08%) | 0 | 2,454 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,430 / 4,789 (50.74%) | 0 | 2,359 |
+| Game | 4,789 / 5,321 (90.00%) | 2,431 / 4,789 (50.76%) | 0 | 2,358 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -102,6 +102,10 @@ The Game display-list address relocator `func_15168F08` now matches its
 complete 124-byte retail span after restoring signed opcode parsing,
 index-based cursor updates, and separate mask/add stores; see
 [Working Note 504](WORKING_NOTES/504-game-display-list-address-relocator-match-20260929.md).
+The Game cached resource setup `func_1517A9A8` now matches its complete
+120-byte retail span after restoring its selector cache, 20-byte output
+record, shifted resource index, and guarded call-argument schedule; see
+[Working Note 505](WORKING_NOTES/505-game-cached-resource-setup-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
