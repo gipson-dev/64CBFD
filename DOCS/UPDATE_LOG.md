@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game float timer reset byte-matched
+
+- Replaced `func_150E88C0`'s zero-return placeholder with its frame-delta
+  subtraction, negative-timer random reseed, and follow-up event call.
+- The timer at offset `0x28` is reset to `201.0f` plus a random value scaled by
+  `D_800A1378`. All 28 words emit directly from semantic C with no guards or
+  compiler-profile changes.
+- Direct comparison matches all 112 linked bytes with SHA-256
+  `94893d3fec01a0867260d976a9d1cdfd0153235d3a20289e838f3e3cffc7c4e5`.
+  Fresh totals are **2,915 / 5,466 (53.33%)** overall and
+  **2,341 / 4,790 (48.87%)** in Game. See
+  [Working Note 413](WORKING_NOTES/413-game-float-timer-reset-match-20260928.md).
+
 ### Game float event-payload wrapper byte-matched
 
 - Replaced `func_150E8854`'s zero-return placeholder with its event allocation,

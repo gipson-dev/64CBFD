@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,914 / 5,466 (53.31%) | 1 | 2,551 |
+| Total | 5,466 / 6,041 (90.48%) | 2,915 / 5,466 (53.33%) | 1 | 2,550 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,340 / 4,790 (48.85%) | 0 | 2,450 |
+| Game | 4,790 / 5,321 (90.02%) | 2,341 / 4,790 (48.87%) | 0 | 2,449 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1274,6 +1274,11 @@ successful-allocation gate, and four-byte copy into the allocated record.
 Semantic C emits 25 words directly; two expected-word guards preserve retail's
 lower local stack slot. This remains guest-side donor/reference progress; see
 [Working Note 412](WORKING_NOTES/412-game-float-event-payload-match-20260928.md).
+The adjacent 28-word Game float timer reset `func_150E88C0` is byte-exact after
+recovering its frame-delta subtraction, negative-timer random reseed, and
+follow-up event call. All words emit directly from semantic C with no guards.
+This remains guest-side donor/reference progress; see
+[Working Note 413](WORKING_NOTES/413-game-float-timer-reset-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

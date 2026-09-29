@@ -1,5 +1,9 @@
 #include <ultra64.h>
 extern s32 D_800D9A20[];
+extern f32 D_800A1378;
+extern f32 D_800BE9A4;
+f32 func_150ADA68(void);
+s32 func_150E8930();
 void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
                     u8 arg5, s32 arg6, u8 arg7, s32 arg8);
 
@@ -89,8 +93,14 @@ void func_150E8854(void) {
     }
 }
 
-s32 func_150E88C0() {
-    return 0;
+void func_150E88C0(u8 *arg0) {
+    f32 *timer = (f32 *) (arg0 + 0x28);
+
+    *timer -= D_800BE9A4;
+    if (*timer < 0.0f) {
+        *timer = func_150ADA68() * D_800A1378 + 201.0f;
+        func_150E8930(arg0);
+    }
 }
 
 s32 func_150E8930() {
