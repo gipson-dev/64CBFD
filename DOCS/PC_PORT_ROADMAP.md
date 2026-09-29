@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,949 / 5,465 (53.96%) | 1 | 2,515 |
+| Total | 5,465 / 6,041 (90.47%) | 2,950 / 5,465 (53.98%) | 1 | 2,514 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,375 / 4,789 (49.59%) | 0 | 2,414 |
+| Game | 4,789 / 5,321 (90.00%) | 2,376 / 4,789 (49.61%) | 0 | 2,413 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1487,6 +1487,12 @@ replacement. Twenty-nine words emit directly from semantic C; one guarded
 word preserves a commutative equality-branch operand order. This remains
 guest-side donor/reference progress; see
 [Working Note 448](WORKING_NOTES/448-game-selector-transition-dispatch-match-20260929.md).
+The 32-word Game timer and position updater `func_15174920` is now byte-exact
+after recovering its capped timer subtraction, negative-expiry clear, and
+signed halfword accumulators. All tracked words and both global relocations
+emit directly from semantic C with no guards. This remains guest-side
+donor/reference progress; see
+[Working Note 449](WORKING_NOTES/449-game-timer-position-update-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

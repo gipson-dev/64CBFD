@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game timer and position updater byte-matched
+
+- Replaced `func_15174920`'s zero-return placeholder with its recovered capped
+  remaining-time calculation and signed position updates.
+- The routine caps byte `0x3F` at 200, subtracts the unsigned product of
+  `D_800BE9E4` and owner word `0x18`, clears halfword `0x38` if the result is
+  negative, and otherwise accumulates owner word `0x14` into halfword `0x34`
+  and its scaled seventh into halfword `0x36`.
+- All 32 tracked words, including three trailing padding words, and both
+  global relocations emit directly from semantic C with no guards. Direct
+  comparison matches all 128 linked bytes with SHA-256
+  `0db30d81a7b896df6df0ca76299e033339c2e26e5c5968b95a95105e84a194d6`.
+  Fresh totals are **2,950 / 5,465 (53.98%)** overall and
+  **2,376 / 4,789 (49.61%)** in Game. See
+  [Working Note 449](WORKING_NOTES/449-game-timer-position-update-match-20260929.md).
+
 ### Game selector-transition dispatcher byte-matched
 
 - Replaced `func_151AE06C`'s zero-return placeholder with its recovered
