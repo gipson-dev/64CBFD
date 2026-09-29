@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,012 / 5,463 (55.13%) | 0 | 2,451 |
+| Total | 3,013 / 5,463 (55.15%) | 0 | 2,450 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,434 / 4,789 (50.82%) | 0 | 2,355 |
+| Game | 2,435 / 4,789 (50.85%) | 0 | 2,354 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -277,6 +277,11 @@ words after recovering its two unconditional setup calls and grouped state
 switch. Two relocation-aware stale checks retarget only the generated jump
 table reference to the retained retail table; see
 [Working Note 508](WORKING_NOTES/508-game-five-state-impact-dispatch-match-20260929.md).
+Game subsystem-state initializer `func_151DDBA0` is byte-exact across all 32
+words after recovering its setup call, global mode clears, three subsystem
+calls, and paired ready flags. The complete routine emits directly from C
+with no guards; see
+[Working Note 509](WORKING_NOTES/509-game-subsystem-state-initializer-match-20260929.md).
 
 ## Verified build state
 
@@ -599,10 +604,9 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_15194794`, whose complete 31-word five-state impact
-   dispatch now matches from recovered C plus two retained-jump-table
-   relocation guards. Continue with 32-word `func_151DDBA0`, the next
-   ordinary Game candidate.
+   advanced through `func_151DDBA0`, whose complete 32-word subsystem-state
+   initializer now matches directly from recovered C. Continue with 30-word
+   `func_151EC178`, the next ordinary Game candidate.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

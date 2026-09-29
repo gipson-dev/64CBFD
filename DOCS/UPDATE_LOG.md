@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game subsystem-state initializer byte-matched
+
+- `func_151DDBA0` now performs its five-argument setup, updates the global
+  mode and state bytes, invokes three subsystem routines, and raises both
+  ready flags.
+- The semantic C body reproduces all 32 retail words directly, including the
+  32-byte frame, stack argument, call delay slots, and final paired stores.
+  No expected-word guards are used.
+- The linked and retail 128-byte spans share SHA-256
+  `fa65b54c86b9b6abdf04525f540a144ff1760fbf26793da7e5df98d6153cad1b`.
+- Totals are **3,013 / 5,463 (55.15%)** overall and
+  **2,435 / 4,789 (50.85%)** in Game, with no address-drift rows. See
+  [Working Note 509](WORKING_NOTES/509-game-subsystem-state-initializer-match-20260929.md).
+
 ### Game five-state impact dispatcher byte-matched
 
 - `func_15194794` now performs both unconditional setup calls and dispatches
