@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,001 / 5,463 (54.93%) | 0 | 2,462 |
+| Total | 3,002 / 5,463 (54.95%) | 0 | 2,461 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,423 / 4,789 (50.60%) | 0 | 2,366 |
+| Game | 2,424 / 4,789 (50.62%) | 0 | 2,365 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 3,001, while
+denominator driven: the exact count is now 3,002, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -224,6 +224,10 @@ recovering six scalar clears and a paired 12-byte array loop. Four
 relocation-aware stale checks normalize only one independent scheduling
 window; see
 [Working Note 497](WORKING_NOTES/497-game-byte-state-reset-match-20260929.md).
+Game height-gated action selector `func_1506DC10` is byte-exact across all 37
+words after removing a false callback parameter. One stale-checked guard
+preserves retail's commutative floating-equality operand order; see
+[Working Note 498](WORKING_NOTES/498-game-height-gated-action-selector-match-20260929.md).
 
 ## Verified build state
 

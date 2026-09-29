@@ -2136,3 +2136,4 @@ game_3D9A0,func_15010600,0x038,0xA0200000,0x2442000C,R_MIPS_LO16:D_800D9939,R_MI
 game_3D9A0,func_15010600,0x03C,0x2442000C,0x24840000,R_MIPS_LO16:D_800D993A,R_MIPS_LO16:D_800D993A,Initialize the second array cursor before the independent final scalar clear,,,false
 game_3D9A0,func_15010600,0x040,0x24840000,0x24630000,R_MIPS_LO16:D_800D993A,R_MIPS_LO16:D_800D992A,Initialize the first array cursor before the independent final scalar clear,,,false
 game_3D9A0,func_15010600,0x044,0x24630000,0xA0200000,R_MIPS_LO16:D_800D992A,R_MIPS_LO16:D_800D9939,Issue the independent final scalar clear after the loop pointers are ready,,,false
+game_981E0,func_1506DC10,0x040,0x460A0032,0x46005032,-,-,Preserve retail's commutative floating-equality operand order,,,false

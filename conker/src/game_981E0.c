@@ -633,8 +633,8 @@ void func_1506DBD4(void) {
     }
 }
 
-void func_1506DC10(s32 arg0) {
-    s32 value = arg0;
+void func_1506DC10(void) {
+    s32 value;
     s32 random;
     f32 floor = D_800D154C->unk118;
 

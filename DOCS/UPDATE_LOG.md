@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game height-gated action selector byte-matched
+
+- `func_1506DC10` selects action `9` below its floor-height gate; otherwise it
+  chooses one of four randomized action identifiers and dispatches it for the
+  current actor.
+- Recovering the no-argument callback signature removes a false debug
+  argument-home store and restores the 37-word extent. One stale-checked word
+  preserves retail's commutative floating-equality operand order.
+- The linked and retail 148-byte spans share SHA-256
+  `21f8135feae7f64d4abfb9c2139abe072e30532dbfacc08743be5cf824bf03a8`.
+- Totals are **3,002 / 5,463 (54.95%)** overall and
+  **2,424 / 4,789 (50.62%)** in Game, with no address-drift rows. See
+  [Working Note 498](WORKING_NOTES/498-game-height-gated-action-selector-match-20260929.md).
+
 ### Game byte-state reset byte-matched
 
 - `func_15010600` clears six scalar state bytes, then clears paired 12-byte

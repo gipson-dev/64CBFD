@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,001 / 5,463 (54.93%) | 0 | 2,462 |
+| Total | 5,463 / 6,041 (90.43%) | 3,002 / 5,463 (54.95%) | 0 | 2,461 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,423 / 4,789 (50.60%) | 0 | 2,366 |
+| Game | 4,789 / 5,321 (90.00%) | 2,424 / 4,789 (50.62%) | 0 | 2,365 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -76,6 +76,9 @@ The Game byte-state reset `func_15010600` now matches its complete 128-byte
 retail span after replacing the broad `bzero` placeholder with six scalar
 clears and the original paired 12-byte loop; see
 [Working Note 497](WORKING_NOTES/497-game-byte-state-reset-match-20260929.md).
+The Game height-gated action selector `func_1506DC10` now matches its complete
+148-byte retail span after recovering its no-argument callback signature; see
+[Working Note 498](WORKING_NOTES/498-game-height-gated-action-selector-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

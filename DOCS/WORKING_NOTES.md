@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game byte-state reset matched).**
-The current linked checkpoint is `3001 / 5463 (54.93%)` exact C functions,
-with no address-drift blockers and 2,462 genuinely different C functions.
+**Active (2026-09-29, Game height-gated action selector matched).**
+The current linked checkpoint is `3002 / 5463 (54.95%)` exact C functions,
+with no address-drift blockers and 2,461 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2423 / 4789 (50.60%)` exact, with 2,366 genuinely different C rows. The tree
+`2424 / 4789 (50.62%)` exact, with 2,365 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -238,6 +238,12 @@ clears six scalar state bytes and two paired 12-byte regions; IDO reproduces
 the retail four-way-unrolled loop. Four relocation-aware stale checks
 normalize only the independent final scalar-store schedule. See
 [Working Note 497](WORKING_NOTES/497-game-byte-state-reset-match-20260929.md).
+
+Game `func_1506DC10` now matches all 37 retail words. Removing its false
+callback parameter eliminates IDO's debug argument-home store and restores
+the retail slot length. One stale-checked word preserves only the commutative
+floating-equality operand order. See
+[Working Note 498](WORKING_NOTES/498-game-height-gated-action-selector-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
