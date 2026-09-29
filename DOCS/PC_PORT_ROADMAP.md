@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,984 / 5,465 (54.60%) | 0 | 2,481 |
+| Total | 5,465 / 6,041 (90.47%) | 2,986 / 5,465 (54.64%) | 0 | 2,479 |
 | Init | 495 / 538 (92.01%) | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,409 / 4,789 (50.30%) | 0 | 2,380 |
+| Game | 4,789 / 5,321 (90.00%) | 2,411 / 4,789 (50.34%) | 0 | 2,378 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -23,6 +23,9 @@ The latest focused Game recovery replaces `func_1514EBA4`'s zero-return
 placeholder with its list-node allocation and initialization behavior. Its
 complete 120-byte linked span matches retail; see
 [Working Note 481](WORKING_NOTES/481-game-list-node-allocator-wrapper-match-20260929.md).
+The adjacent optional-callback teardown wrappers `func_151A8584` and
+`func_151A85D4` also match both 80-byte retail spans; see
+[Working Note 482](WORKING_NOTES/482-game-optional-callback-teardown-pair-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
@@ -606,10 +609,10 @@ That unregister-and-broadcast wrapper is now exact from typed C; see
 Continue with 21-word `func_151A4F7C`.
 That embedded-owner release handler is now exact from typed C; see
 [Working Note 196](WORKING_NOTES/196-game-embedded-owner-release-match-20260926.md).
-Continue with 20-word `func_151A8584`.
-The adjacent `func_151A8584`/`func_151A85D4` callback pair is behaviorally
-recovered but parked: current typed C emits `0x54` bytes for each versus
-retail's `0x50` because IDO homes and reloads `arg0` before the indirect call.
+The adjacent `func_151A8584`/`func_151A85D4` callback pair is now exact after
+recovering its old-style callback ABI and guarding the path-sensitive object
+spill schedule; see
+[Working Note 482](WORKING_NOTES/482-game-optional-callback-teardown-pair-match-20260929.md).
 The independent 21-word `func_151B22F4` slot-state predicate is now exact; see
 [Working Note 197](WORKING_NOTES/197-game-slot-state-predicate-match-20260926.md).
 Continue with 23-word `func_151D73A8`.
@@ -719,8 +722,9 @@ handwritten assembly ownership; see
 The 33-word `func_1505DFDC` backing-buffer reset is now exact directly from
 typed C after restoring the full-width index and two table reads; see
 [Working Note 228](WORKING_NOTES/228-game-backing-buffer-reset-match-20260927.md).
-Keep `func_150721A4` and the `func_151A8584`/`func_151A85D4` pair parked;
-the generated-slice row `func_150AD8B0` is now restored to its handwritten
+Keep `func_150721A4` parked; the former `func_151A8584`/`func_151A85D4`
+boundary is resolved in Working Note 482. The generated-slice row
+`func_150AD8B0` is now restored to its handwritten
 19-word vector cross-product body; see
 [Working Note 229](WORKING_NOTES/229-game-vector-cross-product-restoration-20260927.md).
 The 22-word `func_15131C2C` flag-gated callback dispatcher is now exact

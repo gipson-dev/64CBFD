@@ -3,10 +3,14 @@
 /* Non-matching placeholders for the text-only asm slice asm/1D4E00.s. */
 
 void func_151A931C(u8 *, s32, u8);
+void func_15169804(u8 *);
+void func_15169824(u8 *);
 
 s32 func_151D5E30();
 void func_151432BC(void *, f32 *, f32 *, f32 *, f32 *);
 
+extern s32 (*D_8008F94C[])();
+extern s32 (*D_8008F958[])();
 extern void (*D_8008F964[])(u8 *, s32, u8);
 extern s32 (*D_8008F984[])(u8 *, s32);
 
@@ -30,12 +34,20 @@ void func_151A8560(u8 *arg0) {
     func_151D5E30(arg0 + 0x6C, arg0);
 }
 
-s32 func_151A8584() {
-    return 0;
+s32 func_151A8584(u8 *arg0) {
+    if (D_8008F94C[arg0[0x5C]] != NULL) {
+        D_8008F94C[arg0[0x5C]]();
+    }
+    func_151A8560(arg0);
+    func_15169804(arg0);
 }
 
-s32 func_151A85D4() {
-    return 0;
+s32 func_151A85D4(u8 *arg0) {
+    if (D_8008F958[arg0[0x5C]] != NULL) {
+        D_8008F958[arg0[0x5C]]();
+    }
+    func_151A8560(arg0);
+    func_15169824(arg0);
 }
 
 s32 func_151A8624() {

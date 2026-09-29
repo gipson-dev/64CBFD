@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game list-node allocator wrapper matched).**
-The current linked checkpoint is `2984 / 5465 (54.60%)` exact C functions,
-with no address-drift blockers and 2,481 genuinely different C functions.
+**Active (2026-09-29, Game optional-callback teardown pair matched).**
+The current linked checkpoint is `2986 / 5465 (54.64%)` exact C functions,
+with no address-drift blockers and 2,479 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2409 / 4789 (50.30%)` exact, with 2,380 genuinely different C rows. The tree
+`2411 / 4789 (50.34%)` exact, with 2,378 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -135,6 +135,13 @@ node, returns null on allocation failure, and otherwise initializes its two
 links, payload, and signed key. Six guarded words preserve two independent
 three-word scheduling cycles around those stores. See
 [Working Note 481](WORKING_NOTES/481-game-list-node-allocator-wrapper-match-20260929.md).
+
+Adjacent `func_151A8584` and `func_151A85D4` now match all 20 retail words
+each. Both dispatch an optional callback selected by object byte `0x5C`, run
+the shared `func_151A8560` teardown, and invoke distinct final callbacks.
+Symmetric guarded normalization preserves retail's callback-path object spill
+and reload schedule. See
+[Working Note 482](WORKING_NOTES/482-game-optional-callback-teardown-pair-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

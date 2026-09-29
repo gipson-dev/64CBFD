@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,984 / 5,465 (54.60%) | 0 | 2,481 |
+| Total | 2,986 / 5,465 (54.64%) | 0 | 2,479 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,409 / 4,789 (50.30%) | 0 | 2,380 |
+| Game | 2,411 / 4,789 (50.34%) | 0 | 2,378 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -541,9 +541,10 @@ end-to-end gameplay acceptance.
    now byte-exact directly from typed C as well. The 21-word
    `func_151B22F4` slot-state predicate is also byte-exact directly from typed
    C. The 23-word `func_151D73A8` callback dispatch is now byte-exact after
-   preserving retail's two volatile index and entry reads. Keep
-   `func_151A8584`/`func_151A85D4` parked at their measured callback scheduling
-   boundary. The 20-word `func_1502E474` conditional submission wrapper and
+   preserving retail's two volatile index and entry reads. The adjacent
+   `func_151A8584`/`func_151A85D4` pair is now exact through symmetric guarded
+   callback-path scheduling; see Working Note 482. The 20-word `func_1502E474`
+   conditional submission wrapper and
    33-word `func_150319CC` two-pass list lookup and 21-word `func_151087FC`
    event-flag handler, 21-word `func_150EC45C` preset wrapper, and 20-word
    `func_150F2390` conditional stack-record wrapper are now byte-exact directly
@@ -596,8 +597,9 @@ end-to-end gameplay acceptance.
    padding words. The 24-word `func_150E2FC0` marker-record swap is now
    byte-exact from typed C plus one guarded equivalent branch-operand word.
    The 26-word `func_15125628` four-timer decrement is restored to its
-   original handwritten assembly ownership. Keep `func_150721A4` and the
-   `func_151A8584`/`func_151A85D4` pair parked. The 33-word
+   original handwritten assembly ownership. Keep `func_150721A4` parked; the
+   former `func_151A8584`/`func_151A85D4` boundary is resolved in Working
+   Note 482. The 33-word
    `func_1505DFDC` backing-buffer reset is byte-exact directly from C after
    restoring the full-width index, repeated table read, declaration order,
    and source store order. The apparent 60-word `func_150AD8B0` C row is now
@@ -1319,6 +1321,11 @@ end-to-end gameplay acceptance.
    links, and signed key. Six guarded words preserve two independent retail
    scheduling cycles. See
    [Working Note 481](WORKING_NOTES/481-game-list-node-allocator-wrapper-match-20260929.md).
+   Adjacent 20-word optional-callback teardown wrappers `func_151A8584` and
+   `func_151A85D4` are now independently byte-exact after recovering their
+   distinct callback tables and final calls. Symmetric guarded normalization
+   preserves retail's path-sensitive object spill schedule. See
+   [Working Note 482](WORKING_NOTES/482-game-optional-callback-teardown-pair-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented

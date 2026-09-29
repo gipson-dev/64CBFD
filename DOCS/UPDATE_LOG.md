@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game optional-callback teardown pair byte-matched
+
+- Replaced adjacent zero-return placeholders `func_151A8584` and
+  `func_151A85D4` with their recovered optional callback-table dispatch,
+  shared teardown call, and distinct final callbacks.
+- The old-style no-explicit-argument callback calls preserve the incoming
+  object in physical register `a0`, matching retail's indirect-call ABI.
+  Symmetric guarded rows omit one early compiler spill per function and
+  normalize ten path-sensitive scheduling/register words in each span.
+- The linked and retail 80-byte spans share SHA-256 values
+  `0cddd7a739041989c01637e7f6cf128c15a6546ed7774eb55c6af2430650b3dd`
+  and `51544c0fe63745d31a8fad4928ae9ff643e5c4d4ae4fbf9f13e495cc1e801dfe`.
+- Totals are **2,986 / 5,465 (54.64%)** overall and **2,411 / 4,789
+  (50.34%)** in Game, with no address-drift rows. See
+  [Working Note 482](WORKING_NOTES/482-game-optional-callback-teardown-pair-match-20260929.md).
+
 ### Game list-node allocator wrapper byte-matched
 
 - Replaced `func_1514EBA4`'s zero-return placeholder with its recovered

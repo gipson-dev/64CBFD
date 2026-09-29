@@ -998,6 +998,28 @@ generated_1D4E00,func_151A931C,0x010,0x14C1000A,0x14C1000B,-,-,Extend the set-ev
 generated_1D4E00,func_151A931C,0x024,0x15F80010,0x15F80011,-,-,Extend the identity-mismatch branch across the restored return delay slot,
 generated_1D4E00,func_151A931C,0x034,0x03E00008,0xA0480000,-,-,Store the set flag before returning,
 generated_1D4E00,func_151A931C,0x038,0xA0480000,0x03E00008,-,-,Move the early return after the set store,0x00000000,,false
+generated_1D4E00,func_151A8584,0x008,0xAFA40018,0xAFA40018,-,-,Omit IDO's early object spill before the callback-table lookup,,,true
+generated_1D4E00,func_151A8584,0x00C,0x8FAE0018,0x908E005C,-,-,Load the callback selector directly from the incoming object,,,false
+generated_1D4E00,func_151A8584,0x014,0x91CF005C,0x000E7880,-,-,Scale the callback selector through retail's t7 lifetime,,,false
+generated_1D4E00,func_151A8584,0x018,0x000FC080,0x004F1021,-,-,Index the first callback table through v0,,,false
+generated_1D4E00,func_151A8584,0x01C,0x00581021,0x8C420000,-,R_MIPS_LO16:D_8008F94C,Load the first optional callback through v0,,,false
+generated_1D4E00,func_151A8584,0x020,0x8C420000,0x10400004,R_MIPS_LO16:D_8008F94C,-,Branch around the indirect call and callback-path object reload,,,false
+generated_1D4E00,func_151A8584,0x024,0x10400003,0x00000000,-,-,Restore the null-callback branch delay slot,,,false
+generated_1D4E00,func_151A8584,0x028,0x00000000,0x0040F809,-,-,Move the optional indirect call into retail's callback slot,,,false
+generated_1D4E00,func_151A8584,0x02C,0x0040F809,0xAFA40018,-,-,Spill the object in the indirect-call delay slot,,,false
+generated_1D4E00,func_151A8584,0x030,0x00000000,0x8FA40018,-,-,Reload the object after the optional callback,,,false
+generated_1D4E00,func_151A8584,0x038,0x8FA40018,0xAFA40018,-,-,Preserve the object across the shared teardown call,,,false
+generated_1D4E00,func_151A85D4,0x008,0xAFA40018,0xAFA40018,-,-,Omit IDO's early object spill before the callback-table lookup,,,true
+generated_1D4E00,func_151A85D4,0x00C,0x8FAE0018,0x908E005C,-,-,Load the callback selector directly from the incoming object,,,false
+generated_1D4E00,func_151A85D4,0x014,0x91CF005C,0x000E7880,-,-,Scale the callback selector through retail's t7 lifetime,,,false
+generated_1D4E00,func_151A85D4,0x018,0x000FC080,0x004F1021,-,-,Index the second callback table through v0,,,false
+generated_1D4E00,func_151A85D4,0x01C,0x00581021,0x8C420000,-,R_MIPS_LO16:D_8008F958,Load the second optional callback through v0,,,false
+generated_1D4E00,func_151A85D4,0x020,0x8C420000,0x10400004,R_MIPS_LO16:D_8008F958,-,Branch around the indirect call and callback-path object reload,,,false
+generated_1D4E00,func_151A85D4,0x024,0x10400003,0x00000000,-,-,Restore the null-callback branch delay slot,,,false
+generated_1D4E00,func_151A85D4,0x028,0x00000000,0x0040F809,-,-,Move the optional indirect call into retail's callback slot,,,false
+generated_1D4E00,func_151A85D4,0x02C,0x0040F809,0xAFA40018,-,-,Spill the object in the indirect-call delay slot,,,false
+generated_1D4E00,func_151A85D4,0x030,0x00000000,0x8FA40018,-,-,Reload the object after the optional callback,,,false
+generated_1D4E00,func_151A85D4,0x038,0x8FA40018,0xAFA40018,-,-,Preserve the object across the shared teardown call,,,false
 game_D5030,func_150A7B80,0x000,0x08000000,0x24080001,R_MIPS_26:__retail_overflow_func_150A7B80,-,Replace the oversized C trampoline with the retail constant load,
 game_D5030,func_150A7B80,0x004,0x00000000,0xFC800000,-,-,Clear matrix word pair 0 with one 64-bit store,
 game_D5030,func_150A7B80,0x008,0x00000000,0xFC800008,-,-,Clear matrix word pair 1 with one 64-bit store,
