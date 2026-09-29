@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game offset position halfword writer matched).**
-The current linked checkpoint is `2992 / 5465 (54.75%)` exact C functions,
-with no address-drift blockers and 2,473 genuinely different C functions.
+**Active (2026-09-29, Game identity-matrix initializer matched).**
+The current linked checkpoint is `2993 / 5465 (54.77%)` exact C functions,
+with no address-drift blockers and 2,472 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2417 / 4789 (50.47%)` exact, with 2,372 genuinely different C rows. The tree
+`2418 / 4789 (50.49%)` exact, with 2,371 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -177,6 +177,13 @@ It queries source slot `0xC`, applies offsets `-30.0f`, `+50.0f`, and `+30.0f`
 to coordinates at `0x14..0x1C`, and stores truncated halfwords at destination
 offsets `0x10..0x14`. Its trailing zero padding word also matches. See
 [Working Note 488](WORKING_NOTES/488-game-offset-position-halfword-writer-match-20260929.md).
+
+`guMtxIdentF` now matches all 19 executable retail words and its trailing
+padding word. Its O3 body writes diagonal `1.0f` values through a volatile
+float view and off-diagonal zero bit patterns through a volatile word view.
+Five guarded words normalize only the compiler's `$f0` allocation to retail's
+equivalent `$f4` lifetime. See
+[Working Note 489](WORKING_NOTES/489-game-identity-matrix-initializer-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game identity-matrix initializer byte-matched
+
+- Recovered `guMtxIdentF` as an unrolled identity-matrix initializer using
+  float diagonal stores and integer zero stores for the off-diagonal entries.
+- The O3 profile emits retail's 19-instruction leaf schedule and trailing
+  padding word. Five stale-checked guards normalize only the equivalent
+  `$f0` versus retail `$f4` diagonal-constant register choice.
+- The linked and retail 80-byte slots share SHA-256
+  `3314c8cd2632384c565633ca83d65b1b11477a1d6457ecab8d8eb30dfce96408`.
+- Totals are **2,993 / 5,465 (54.77%)** overall and **2,418 / 4,789
+  (50.49%)** in Game, with no address-drift rows. See
+  [Working Note 489](WORKING_NOTES/489-game-identity-matrix-initializer-match-20260929.md).
+
 ### Game offset position halfword writer byte-matched
 
 - Replaced `func_150C7D7C`'s zero-return placeholder with its recovered source

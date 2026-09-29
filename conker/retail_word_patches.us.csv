@@ -1,4 +1,9 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+guMtxIdentF,guMtxIdentF,0x004,0x44810000,0x44812000,-,-,Retain the matrix one constant in retail floating-point register f4,,,false
+guMtxIdentF,guMtxIdentF,0x00C,0xE4800000,0xE4840000,-,-,Store the first diagonal one from retail floating-point register f4,,,false
+guMtxIdentF,guMtxIdentF,0x01C,0xE4800014,0xE4840014,-,-,Store the second diagonal one from retail floating-point register f4,,,false
+guMtxIdentF,guMtxIdentF,0x030,0xE4800028,0xE4840028,-,-,Store the third diagonal one from retail floating-point register f4,,,false
+guMtxIdentF,guMtxIdentF,0x048,0xE480003C,0xE484003C,-,-,Store the fourth diagonal one from retail floating-point register f4,,,false
 generated_200930,func_151D5E30,0x20,0x8DE40000,0x8DE20000,-,-,Retain the current cleanup handle in the retail return register,,,false
 generated_200930,func_151D5E30,0x24,0x50800004,0x10400003,-,-,Use the retail non-likely null-handle branch,,,false
 generated_200930,func_151D5E30,0x28,0x26100001,0x00402025,-,-,Copy the retained cleanup handle into the call argument delay slot,,,false
