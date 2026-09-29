@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game oscillation and angle updater byte-matched
+
+- Replaced `func_151B8BE0`'s placeholder with its sine-based output update,
+  timestep angle advance, angle normalization, and final state callback.
+- Twenty-two of 29 words emit directly from semantic C; seven fail-closed
+  guards preserve one equivalent floating-point temporary cycle.
+- The linked and retail 116-byte spans share SHA-256
+  `a78173b8ca18bd598d1836c8e2a37e2cbcc47ad86fe5af291d52c8795aa9afae`.
+- Totals are **2,966 / 5,465 (54.27%)** overall and **2,392 / 4,789
+  (49.95%)** in Game. See
+  [Working Note 464](WORKING_NOTES/464-game-oscillation-angle-update-match-20260929.md).
+
 ### Game object-record cleanup byte-matched
 
 - Replaced `func_1518E308`'s zero-return placeholder with its recovered owner

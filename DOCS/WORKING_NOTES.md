@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game object-record cleanup matched).**
-The current linked checkpoint is `2965 / 5465 (54.25%)` exact C functions,
-with one address-drift blocker and 2,499 genuinely different C functions.
+**Active (2026-09-29, Game oscillation and angle updater matched).**
+The current linked checkpoint is `2966 / 5465 (54.27%)` exact C functions,
+with one address-drift blocker and 2,498 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2391 / 4789 (49.93%)` exact, with 2,398 genuinely different C rows. The tree
+`2392 / 4789 (49.95%)` exact, with 2,397 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -1558,6 +1558,9 @@ The 29-word object-record cleanup `func_1518E308` now matches directly from C.
 It clears the owner state, releases live pointers across 100 records, and
 zeroes the complete `0x960`-byte array. See
 [Working Note 463](WORKING_NOTES/463-game-object-record-cleanup-match-20260929.md).
+The 29-word oscillation/angle updater `func_151B8BE0` now matches from semantic
+C plus seven fail-closed floating-point temporary guards. See
+[Working Note 464](WORKING_NOTES/464-game-oscillation-angle-update-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with ordinary 29-word Game
 `func_151B8BE0`, at 28 real differences, after the documented parked compiler

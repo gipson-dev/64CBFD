@@ -1942,3 +1942,10 @@ generated_188440,func_1515B994,0x054,0xE4920078,0xC4860078,-,-,Reload the advanc
 generated_188440,func_1515B994,0x058,0xC48A0078,0x46023100,-,-,Sum the advanced and old velocities through retail's f4 lifetime,,,false
 generated_188440,func_1515B994,0x05C,0x46005380,0xC486007C,-,-,Load the secondary accumulator after the velocity sum,,,false
 generated_188440,func_1515B994,0x060,0x460E2202,0x46045202,-,-,Scale the summed velocity through retail's f8 lifetime,,,false
+generated_1E5FF0,func_151B8BE0,0x020,0xC4860064,0xC4840064,-,-,Load the oscillation amplitude through retail's f4 lifetime,,,false
+generated_1E5FF0,func_151B8BE0,0x024,0xC484005C,0xC488005C,-,-,Load the oscillation base through retail's f8 lifetime,,,false
+generated_1E5FF0,func_151B8BE0,0x02C,0x46060202,0x46040182,-,-,Multiply the sine by amplitude through retail's f6 lifetime,,,false
+generated_1E5FF0,func_151B8BE0,0x030,0x46082280,0x46083280,-,-,Add the oscillation base through retail's f10 lifetime,,,false
+generated_1E5FF0,func_151B8BE0,0x034,0xC4840058,0xC4860058,-,-,Reload the angle through retail's f6 lifetime,,,false
+generated_1E5FF0,func_151B8BE0,0x040,0x46128182,0x46128102,-,-,Multiply angular velocity by timestep through retail's f4 lifetime,,,false
+generated_1E5FF0,func_151B8BE0,0x044,0x46062200,0x46043200,-,-,Advance the angle through retail's f8 lifetime,,,false
