@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game packed-mask setter matched).**
-The current linked checkpoint is `2976 / 5465 (54.46%)` exact C functions,
-with one address-drift blocker and 2,488 genuinely different C functions.
+**Active (2026-09-29, Game event identity-release handler matched).**
+The current linked checkpoint is `2977 / 5465 (54.47%)` exact C functions,
+with one address-drift blocker and 2,487 genuinely different C functions.
 Init is
 `393 / 495 (79.39%)` exact, with 101 genuinely different C rows. Game is
-`2402 / 4789 (50.16%)` exact, with 2,387 genuinely different C rows. The tree
+`2403 / 4789 (50.18%)` exact, with 2,386 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -510,8 +510,8 @@ float scale arguments, a zero float, and three channel values. Continue with
 22-word `func_150F1684`; see
 [Working Note 202](WORKING_NOTES/202-game-constant-preset-wrapper-match-20260926.md).
 The conditional stack-record wrapper is now byte-exact after recovering its
-`struct17` local and low-byte argument forwarding. Keep `func_150F1684` at its
-measured two-local register boundary; see
+`struct17` local and low-byte argument forwarding. The former `func_150F1684`
+two-local register boundary is now resolved by Working Note 475; see
 [Working Note 203](WORKING_NOTES/203-game-conditional-stack-record-wrapper-match-20260926.md).
 The motion-decay update is now byte-exact after restoring its two float decay
 stores and conditional byte update. One guarded word preserves retail's
@@ -1591,6 +1591,9 @@ from recovered C plus five guarded opening address/index words. See
 The 21-word packed-mask setter `func_1507A4D4` now matches from an explicit
 mask local plus sixteen guarded packed-byte scheduling words. See
 [Working Note 474](WORKING_NOTES/474-game-packed-mask-setter-match-20260929.md).
+The 22-word event identity-release handler `func_150F1684` now matches from
+recovered C plus seven guarded identity-comparison register words. See
+[Working Note 475](WORKING_NOTES/475-game-event-identity-release-handler-match-20260929.md).
 The Init `func_10003BD0` audit did not improve its 25 real differences and all
 experiments were removed. Resume with an ordinary small Game placeholder after
 the documented parked compiler cases.

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,976 / 5,465 (54.46%) | 1 | 2,488 |
+| Total | 2,977 / 5,465 (54.47%) | 1 | 2,487 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,402 / 4,789 (50.16%) | 0 | 2,387 |
+| Game | 2,403 / 4,789 (50.18%) | 0 | 2,386 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -544,7 +544,8 @@ end-to-end gameplay acceptance.
    33-word `func_150319CC` two-pass list lookup and 21-word `func_151087FC`
    event-flag handler, 21-word `func_150EC45C` preset wrapper, and 20-word
    `func_150F2390` conditional stack-record wrapper are now byte-exact directly
-   from C. Keep `func_150F1684` at its measured two-local register boundary.
+   from C. The former `func_150F1684` two-local register boundary is resolved
+   by the guarded match in Working Note 475.
    The 21-word `func_1514A498` motion-decay update is also byte-exact after one
    guarded word preserves retail's equivalent `multu v0,t7` operand order.
    `func_15155FD4` is behaviorally recovered but parked at a register-allocation
@@ -1285,6 +1286,9 @@ end-to-end gameplay acceptance.
    The 21-word packed-mask setter `func_1507A4D4` is now byte-exact from its
    explicit mask local plus sixteen guarded packed-byte scheduling words. See
    [Working Note 474](WORKING_NOTES/474-game-packed-mask-setter-match-20260929.md).
+   The 22-word event identity-release handler `func_150F1684` is now byte-exact
+   from recovered C plus seven guarded identity-comparison register words. See
+   [Working Note 475](WORKING_NOTES/475-game-event-identity-release-handler-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented

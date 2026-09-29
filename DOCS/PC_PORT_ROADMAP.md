@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,976 / 5,465 (54.46%) | 1 | 2,488 |
+| Total | 5,465 / 6,041 (90.47%) | 2,977 / 5,465 (54.47%) | 1 | 2,487 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,402 / 4,789 (50.16%) | 0 | 2,387 |
+| Game | 4,789 / 5,321 (90.00%) | 2,403 / 4,789 (50.18%) | 0 | 2,386 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -626,10 +626,10 @@ Continue with 21-word `func_150EC45C`.
 That constant preset wrapper is now exact from a typed eight-argument call;
 see
 [Working Note 202](WORKING_NOTES/202-game-constant-preset-wrapper-match-20260926.md).
-Continue with 22-word `func_150F1684`.
-That handler's logic is recovered, but direct C still swaps retail's `v0` and
-`v1` key/identity lifetimes. The next completed exact row is the conditional
-stack-record wrapper; see
+The 22-word `func_150F1684` handler was initially parked because direct C
+swapped retail's `v0` and `v1` key/identity lifetimes. That bounded compiler
+cycle is now normalized and exact in Working Note 475. The next completed
+exact row in this sequence is the conditional stack-record wrapper; see
 [Working Note 203](WORKING_NOTES/203-game-conditional-stack-record-wrapper-match-20260926.md).
 The 21-word `func_1514A498` motion-decay update is now exact with one guarded
 commutative `multu` operand-order word; see
@@ -1591,6 +1591,10 @@ byte-exact from recovered C plus five guarded opening address/index words; see
 The 21-word Game packed-mask setter `func_1507A4D4` is now byte-exact from its
 explicit mask local plus sixteen guarded packed-byte scheduling words; see
 [Working Note 474](WORKING_NOTES/474-game-packed-mask-setter-match-20260929.md).
+The 22-word Game event identity-release handler `func_150F1684` is now
+byte-exact from recovered C plus seven guarded identity-comparison register
+words; see
+[Working Note 475](WORKING_NOTES/475-game-event-identity-release-handler-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

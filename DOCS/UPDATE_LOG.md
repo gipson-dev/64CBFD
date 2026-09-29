@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game event identity-release handler byte-matched
+
+- Replaced `func_150F1684`'s zero-return placeholder with its recovered
+  command-`0x43` identity filter and matching-object release dispatch.
+- Fifteen of 22 words emit directly from semantic C. Seven fail-closed guards
+  normalize one closed key/pointer/comparison register-allocation cycle.
+- The linked and retail 88-byte spans share SHA-256
+  `c4af721c70a7170cd352101e862a3e86c2bdb4ff161979503d064105f56f0ff9`.
+- Totals are **2,977 / 5,465 (54.47%)** overall and **2,403 / 4,789
+  (50.18%)** in Game. See
+  [Working Note 475](WORKING_NOTES/475-game-event-identity-release-handler-match-20260929.md).
+
 ### Game packed-mask setter byte-matched
 
 - Recovered `func_1507A4D4`'s explicit four-byte mask local, mirroring the

@@ -184,8 +184,15 @@ s32 func_150F15F8() {
     return 0;
 }
 
-s32 func_150F1684() {
-    return 0;
+// Matched with guarded identity-comparison register normalization.
+void func_150F1684(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *target = arg0 + 0x18;
+
+    if (arg2 == 0x43) {
+        if ((*(s32 *)arg1 == *(s32 *)target) || (target[4] == arg1[4])) {
+            func_1516972C(arg0);
+        }
+    }
 }
 
 s32 func_150F16DC() {
