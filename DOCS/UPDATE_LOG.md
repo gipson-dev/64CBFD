@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game record-ID lookup byte-matched
+
+- Replaced `func_151149AC`'s zero-return placeholder with its recovered
+  reserved-zero handling and bounded scan of the global `0xA0`-byte record
+  table for a matching ID at offset `0x72`.
+- Separate index, byte-offset, base, and cursor lifetimes reproduce retail's
+  loop. Spelling the return as `offset + base` also preserves retail's
+  commutative operand order.
+- All 28 words and four relocations emit directly from semantic C with no
+  guards. Direct comparison matches all 112 linked bytes with SHA-256
+  `1d8d1610b05bc50bc8c25302965ca183b2a1f4d02e1f8697796056b2166b48f5`.
+  Fresh totals are **2,943 / 5,465 (53.85%)** overall and
+  **2,369 / 4,789 (49.47%)** in Game. See
+  [Working Note 442](WORKING_NOTES/442-game-record-id-lookup-match-20260929.md).
+
 ### Game two-command record updater byte-matched
 
 - Replaced `func_15109064`'s zero-return placeholder with its recovered

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,942 / 5,465 (53.83%) | 1 | 2,522 |
+| Total | 5,465 / 6,041 (90.47%) | 2,943 / 5,465 (53.85%) | 1 | 2,521 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,368 / 4,789 (49.45%) | 0 | 2,421 |
+| Game | 4,789 / 5,321 (90.00%) | 2,369 / 4,789 (49.47%) | 0 | 2,420 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1446,6 +1446,12 @@ toggle. Twenty-six words emit directly from semantic C; four guarded
 normalizations preserve retail's add and copy-return scheduling. This remains
 guest-side donor/reference progress; see
 [Working Note 441](WORKING_NOTES/441-game-two-command-record-update-match-20260929.md).
+The 28-word Game record-ID lookup `func_151149AC` is now byte-exact after
+recovering its reserved-zero handling and bounded scan of `0xA0`-byte records
+for a matching ID at offset `0x72`. All words and four relocations emit
+directly from semantic C with no guards. This remains guest-side
+donor/reference progress; see
+[Working Note 442](WORKING_NOTES/442-game-record-id-lookup-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

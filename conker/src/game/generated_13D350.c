@@ -7,6 +7,7 @@ typedef struct {
     u8 padFC[0x84];
 } Record13D350;
 extern Record13D350 *D_800BE628;
+extern s32 D_800DBEF0;
 extern u8 *D_800DBEF4;
 extern s32 *D_800DBF94;
 
@@ -132,8 +133,31 @@ s32 func_1511490C() {
     return 0;
 }
 
-s32 func_151149AC() {
-    return 0;
+u8 *func_151149AC(u8 arg0) {
+    s32 offset;
+    s32 i;
+    u8 *base;
+    u8 *record;
+
+    if (arg0 == 0) {
+        return NULL;
+    }
+
+    i = 0;
+    if (D_800DBEF0 > 0) {
+        base = D_800DBEF4;
+        offset = 0;
+        record = base;
+        do {
+            if (record[0x72] == arg0) {
+                return offset + base;
+            }
+            i++;
+            offset += 0xA0;
+            record += 0xA0;
+        } while (i < D_800DBEF0);
+    }
+    return NULL;
 }
 
 s32 func_15114A1C() {
