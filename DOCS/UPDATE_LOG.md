@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game two-owner linked-list lookup byte-matched
+
+- Replaced `func_15155FD4`'s zero-return placeholder with its recovered scan
+  across two owner records and each owner's linked list.
+- Typed owner and node records reproduce the complete 21-word control-flow
+  skeleton. Eight relocation-aware guarded words normalize one closed
+  owner/end register-allocation cycle without adding or removing instructions.
+- The linked and retail 84-byte spans share SHA-256
+  `321b9b3da9418278f6de2c2970961e4df0babf026867ae99d5f8f30473d11094`.
+- Totals are **2,988 / 5,465 (54.68%)** overall and **2,413 / 4,789
+  (50.39%)** in Game, with no address-drift rows. See
+  [Working Note 484](WORKING_NOTES/484-game-two-owner-linked-list-lookup-match-20260929.md).
+
 ### Game packed indexed-byte updater byte-matched
 
 - Restored `func_1506EF5C`'s repeated active-object reads while retaining its

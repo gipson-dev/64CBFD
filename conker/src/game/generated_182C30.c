@@ -1,9 +1,25 @@
 #include <ultra64.h>
 extern u8 D_800C3E78;
 
+typedef struct LookupNode15155FD4 {
+    u8 pad0[8];
+    struct LookupNode15155FD4 *next;
+    u8 padC[4];
+    u8 key;
+} LookupNode15155FD4;
+
+typedef struct {
+    u8 pad0[0x140];
+    LookupNode15155FD4 *head;
+    u8 pad144[0x5C];
+} LookupOwner15155FD4;
+
+extern LookupOwner15155FD4 D_800DCE50[];
+extern LookupOwner15155FD4 D_800DD190[];
+
 /* Non-matching placeholders for the text-only asm slice asm/182C30.s. */
 
-s32 func_15155FD4();
+s32 func_15155FD4(s32 key);
 
 s32 func_15155780() {
     return 0;
@@ -55,7 +71,21 @@ void func_15155F90(void) {
     }
 }
 
-s32 func_15155FD4() {
+s32 func_15155FD4(s32 key) {
+    LookupOwner15155FD4 *owner = D_800DCE50;
+    LookupNode15155FD4 *node;
+
+    do {
+        node = owner->head;
+        owner++;
+        while (node != NULL) {
+            if (node->key == key) {
+                return (s32)node;
+            }
+            node = node->next;
+        }
+    } while (owner != D_800DD190);
+
     return 0;
 }
 

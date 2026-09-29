@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game packed indexed-byte updater matched).**
-The current linked checkpoint is `2987 / 5465 (54.66%)` exact C functions,
-with no address-drift blockers and 2,478 genuinely different C functions.
+**Active (2026-09-29, Game two-owner linked-list lookup matched).**
+The current linked checkpoint is `2988 / 5465 (54.68%)` exact C functions,
+with no address-drift blockers and 2,477 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2412 / 4789 (50.37%)` exact, with 2,377 genuinely different C rows. The tree
+`2413 / 4789 (50.39%)` exact, with 2,376 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -148,6 +148,12 @@ separate active-object reads while storing the halfword sentinel, mode byte,
 and two bytes selected from the packed global value. Guarded normalization
 restores retail's register allocation and equivalent constant encoding. See
 [Working Note 483](WORKING_NOTES/483-game-packed-indexed-byte-updater-match-20260929.md).
+
+`func_15155FD4` now matches all 21 retail words. Its C body scans the head at
+offset `0x140` in each of two `0x1A0`-byte owner records, then follows node
+links at offset eight until byte key `0x10` matches. Eight guarded words
+normalize one closed owner/end register-allocation cycle. See
+[Working Note 484](WORKING_NOTES/484-game-two-owner-linked-list-lookup-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,987 / 5,465 (54.66%) | 0 | 2,478 |
+| Total | 2,988 / 5,465 (54.68%) | 0 | 2,477 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,412 / 4,789 (50.37%) | 0 | 2,377 |
+| Game | 2,413 / 4,789 (50.39%) | 0 | 2,376 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -552,8 +552,9 @@ end-to-end gameplay acceptance.
    by the guarded match in Working Note 475.
    The 21-word `func_1514A498` motion-decay update is also byte-exact after one
    guarded word preserves retail's equivalent `multu v0,t7` operand order.
-   `func_15155FD4` is behaviorally recovered but parked at a register-allocation
-   boundary. The 20-word `func_15181DC8` per-slot reset is byte-exact after two
+   `func_15155FD4` is now byte-exact after eight guarded words normalize the
+   owner/end register allocation; see Working Note 484. The 20-word
+   `func_15181DC8` per-slot reset is byte-exact after two
    guarded words preserve retail's redundant second floating zero. The
    21-word `func_1518F108` two-component decay twin is also byte-exact after
    one guarded word preserves retail's equivalent `multu v0,t7` operand
@@ -591,8 +592,9 @@ end-to-end gameplay acceptance.
    advance. The 21-word `func_150EB430` stack-vector sum wrapper is byte-exact
    after reversing commutative source operands and guarding four `a2`/`a3`
    lifetime words. The 21-word `func_15155F3C` state-transition wrapper is
-   byte-exact through three guarded state-register words. Keep
-   `func_15155FD4` parked. The 22-word `func_1507A47C` packed actor-mask
+   byte-exact through three guarded state-register words. The former
+   `func_15155FD4` boundary is resolved in Working Note 484. The 22-word
+   `func_1507A47C` packed actor-mask
    clear is now byte-exact through a named mask local and eighteen guarded
    relocation-aware scheduling words. The 24-word `func_150C5310` mode-flag
    toggle is now byte-exact directly from typed C, including three tracked
@@ -1332,6 +1334,10 @@ end-to-end gameplay acceptance.
    after recovering its sentinel/mode stores, packed selector, and two indexed
    byte writes through four repeated active-object reads. See
    [Working Note 483](WORKING_NOTES/483-game-packed-indexed-byte-updater-match-20260929.md).
+   The 21-word two-owner linked-list lookup `func_15155FD4` is now byte-exact
+   after recovering its two-owner scan and node-key comparison. Eight guarded
+   words normalize one closed owner/end register-allocation cycle. See
+   [Working Note 484](WORKING_NOTES/484-game-two-owner-linked-list-lookup-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented

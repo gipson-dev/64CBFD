@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,987 / 5,465 (54.66%) | 0 | 2,478 |
+| Total | 5,465 / 6,041 (90.47%) | 2,988 / 5,465 (54.68%) | 0 | 2,477 |
 | Init | 495 / 538 (92.01%) | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,412 / 4,789 (50.37%) | 0 | 2,377 |
+| Game | 4,789 / 5,321 (90.00%) | 2,413 / 4,789 (50.39%) | 0 | 2,376 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -29,6 +29,9 @@ The adjacent optional-callback teardown wrappers `func_151A8584` and
 The packed indexed-byte updater `func_1506EF5C` now matches its complete
 88-byte retail span; see
 [Working Note 483](WORKING_NOTES/483-game-packed-indexed-byte-updater-match-20260929.md).
+The two-owner linked-list lookup `func_15155FD4` now matches its complete
+84-byte retail span; see
+[Working Note 484](WORKING_NOTES/484-game-two-owner-linked-list-lookup-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
@@ -645,8 +648,9 @@ exact row in this sequence is the conditional stack-record wrapper; see
 The 21-word `func_1514A498` motion-decay update is now exact with one guarded
 commutative `multu` operand-order word; see
 [Working Note 204](WORKING_NOTES/204-game-motion-decay-update-match-20260926.md).
-The 21-word `func_15155FD4` linked-list lookup is behaviorally recovered but
-parked at a measured owner/end/node register-allocation boundary. The
+The 21-word `func_15155FD4` linked-list lookup is now exact after eight guarded
+words normalize its measured owner/end register-allocation boundary; see
+[Working Note 484](WORKING_NOTES/484-game-two-owner-linked-list-lookup-match-20260929.md). The
 independent 20-word `func_15181DC8` per-slot reset is now exact with two
 guarded floating-zero words; see
 [Working Note 205](WORKING_NOTES/205-game-per-slot-state-reset-match-20260926.md).
@@ -710,7 +714,8 @@ words; see
 The 21-word `func_15155F3C` state-transition wrapper is now exact through
 typed C plus three guarded state-register words; see
 [Working Note 223](WORKING_NOTES/223-game-state-transition-wrapper-match-20260927.md).
-Keep `func_15155FD4` parked. The 22-word `func_1507A47C` packed actor-mask
+The former `func_15155FD4` boundary is resolved in Working Note 484. The
+22-word `func_1507A47C` packed actor-mask
 clear is now exact through a named mask local and eighteen guarded
 relocation-aware scheduling words; see
 [Working Note 224](WORKING_NOTES/224-game-packed-actor-mask-clear-match-20260927.md).
