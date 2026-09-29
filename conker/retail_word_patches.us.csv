@@ -1854,3 +1854,14 @@ generated_124260,func_150F739C,0x024,0x00027080,0x00107080,-,-,Index the first s
 generated_124260,func_150F739C,0x044,0x320200FF,0x321800FF,-,-,Canonicalize the incremented byte index through retail's t8 lifetime,,,false
 generated_124260,func_150F739C,0x048,0x28410002,0x2B010002,-,-,Test the canonical byte index through retail's t8 lifetime,,,false
 generated_124260,func_150F739C,0x050,0x00408025,0x03008025,-,-,Write the canonical byte index back in the loop delay slot,,,false
+generated_135D00,func_15108BC0,0x00C,0x01C41021,0x008E1021,-,-,Preserve retail's commutative base-plus-offset operand order,,,false
+generated_135D00,func_15108BC0,0x034,0x0003C100,0x3C180000,-,R_MIPS_HI16:D_800C3958,Begin the table-pointer load before the mode branch,,,false
+generated_135D00,func_15108BC0,0x038,0x15E10008,0x15E10009,-,-,Retarget the mode branch across retail's explicit return delay slot,,,false
+generated_135D00,func_15108BC0,0x03C,0x3C190000,0x0003C900,R_MIPS_HI16:D_800C3958,-,Scale the table index in the mode-branch delay slot,,,false
+generated_135D00,func_15108BC0,0x040,0x8F390000,0x8F180000,R_MIPS_LO16:D_800C3958,R_MIPS_LO16:D_800C3958,Complete the table-pointer load through retail's t8 lifetime,,,false
+generated_135D00,func_15108BC0,0x044,0x0303C021,0x0323C821,-,-,Accumulate the table index through retail's t9 lifetime,,,false
+generated_135D00,func_15108BC0,0x048,0x0018C080,0x0019C880,-,-,Scale the accumulated table index through retail's t9 lifetime,,,false
+generated_135D00,func_15108BC0,0x04C,0x03194021,0x03192021,-,-,Form the table entry address through retail's a0 lifetime,,,false
+generated_135D00,func_15108BC0,0x050,0xC5060004,0xC4860004,-,-,Load the selected value through retail's a0 lifetime,,,false
+generated_135D00,func_15108BC0,0x054,0x03E00008,0xE4460010,-,-,Store the selected value before retail's explicit return,,,false
+generated_135D00,func_15108BC0,0x058,0xE4460010,0x03E00008,-,-,Restore retail's explicit table-path return,0x00000000,-,false

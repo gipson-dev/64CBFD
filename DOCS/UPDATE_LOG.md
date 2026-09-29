@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game mode-gated table-value updater byte-matched
+
+- Replaced `func_15108BC0`'s zero-return placeholder with its recovered
+  owner-relative record lookup, `0x3E7` sentinel path, global mode-byte gate,
+  and `0x44`-byte table-value lookup.
+- Nineteen of 30 words emit directly from semantic C. Eleven guarded
+  normalizations preserve retail's independent table-address/register
+  schedule and insert its explicit table-path return-delay `nop`.
+- Direct comparison matches all 120 linked bytes with SHA-256
+  `87330ef5ce608175b955cbf82685645a8fc86b7a62ac1ca2c510672233bd943e`.
+  Fresh totals are **2,941 / 5,465 (53.82%)** overall and
+  **2,367 / 4,789 (49.43%)** in Game. See
+  [Working Note 440](WORKING_NOTES/440-game-mode-gated-table-value-match-20260929.md).
+
 ### Game actor-indexed spatial-effect wrapper byte-matched
 
 - Replaced `func_150FFB6C`'s zero-return placeholder with its recovered
