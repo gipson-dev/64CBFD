@@ -1,6 +1,6 @@
 # PC Port Roadmap located in another project folder
 
-## Cross-project progress - 2026-09-28
+## Cross-project progress - 2026-09-29
 
 The active Windows port remains in sibling `64CBFDOGL`; this repository owns
 the guest decompilation and retail-byte evidence used by that port. The current
@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,956 / 5,465 (54.09%) | 1 | 2,508 |
+| Total | 5,465 / 6,041 (90.47%) | 2,958 / 5,465 (54.13%) | 1 | 2,506 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,382 / 4,789 (49.74%) | 0 | 2,407 |
+| Game | 4,789 / 5,321 (90.00%) | 2,384 / 4,789 (49.78%) | 0 | 2,405 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1522,6 +1522,11 @@ no guards. This remains guest-side donor/reference progress; see
 [Working Note 454](WORKING_NOTES/454-game-three-record-dispatch-loop-match-20260929.md).
 The 32-word Game random remainder writer `func_15084C30` is now byte-exact;
 see [Working Note 455](WORKING_NOTES/455-game-random-remainder-writer-match-20260929.md).
+The 29-word Game coordinate-event wrapper twins `func_150B3E74` and
+`func_150B3EE8` are now byte-exact directly from C. They share the recovered
+position-to-event conversion and retain distinct final callbacks. This is
+guest-side donor/reference progress; see
+[Working Note 456](WORKING_NOTES/456-game-coordinate-event-wrapper-twins-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

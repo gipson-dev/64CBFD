@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game coordinate-event wrapper twins byte-matched
+
+- Replaced the zero-return placeholders for `func_150B3E74` and
+  `func_150B3EE8` with their shared three-coordinate event-dispatch behavior.
+- Both routines truncate the object floats at offsets `0x10`, `0x14`, and
+  `0x18` to signed halfwords, call `func_1000FC18(0x221, ..., 0xFA0)`, and
+  then invoke their distinct `func_151478F4` or `func_15147928` callback.
+- All 29 words in each routine emit directly from semantic C with no guarded
+  replacements. Their complete linked spans match retail with SHA-256
+  `5d8fee60e1072f4d463b9ddb9aa49798d374ac0f46b921e80b13d684e0a013bc`
+  and `c509e2d4d06f21b27f1e0706ca67b87e692c894f3e7569f9cd29098c5c75d7c1`.
+- Totals are **2,958 / 5,465 (54.13%)** overall and **2,384 / 4,789
+  (49.78%)** in Game. See
+  [Working Note 456](WORKING_NOTES/456-game-coordinate-event-wrapper-twins-match-20260929.md).
+
 ### Game random remainder writer byte-matched
 
 - Recovered `func_15084C30` as a type-`0x94` record updater that stores an
