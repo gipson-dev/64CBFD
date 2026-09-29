@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,005 / 5,463 (55.01%) | 0 | 2,458 |
+| Total | 3,006 / 5,463 (55.02%) | 0 | 2,457 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,427 / 4,789 (50.68%) | 0 | 2,362 |
+| Game | 2,428 / 4,789 (50.70%) | 0 | 2,361 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 3,005, while
+denominator driven: the exact count is now 3,006, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -242,6 +242,11 @@ after recovering its aggregate template copy, signed actor-index division, and
 explicit success branch. The complete function emits directly from C with no
 guards; see
 [Working Note 501](WORKING_NOTES/501-game-six-word-actor-query-match-20260929.md).
+Game actor-slot selector `func_1503F964` is byte-exact across all 35 words
+after replacing its false zero-return placeholder with the wrapped 25-slot
+actor scan. Fourteen relocation-aware stale checks normalize only the closed
+`a0`/`v1` index/table-base allocation cycle; see
+[Working Note 502](WORKING_NOTES/502-game-actor-slot-selector-match-20260929.md).
 
 ## Verified build state
 

@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game actor-slot selector byte-matched
+
+- `func_1503F964` now implements its enable-gated, wrapped scan across 25
+  actor slots and stores the first index whose actor state has bit
+  `0x00800000` set.
+- The recovered C reproduces retail's 35-word control flow and branch-delay
+  updates. Fourteen stale-checked guards normalize only one closed `a0`/`v1`
+  register-allocation cycle, including the `D_800CC2D0` relocation pair.
+- The linked and retail 140-byte spans share SHA-256
+  `2a29585ac9a143e8d168f4be74450d0b0bd8d0342407f438c8ed303bb2f53260`.
+- Totals are **3,006 / 5,463 (55.02%)** overall and
+  **2,428 / 4,789 (50.70%)** in Game, with no address-drift rows. See
+  [Working Note 502](WORKING_NOTES/502-game-actor-slot-selector-match-20260929.md).
+
 ### Game six-word actor query byte-matched
 
 - `func_151420F8` copies a six-word query template, derives the current actor

@@ -2151,3 +2151,17 @@ game_2DF70,func_150027F8,0x060,0x000578C0,0x000278C0,-,-,Rescale retail's v0 rec
 game_2DF70,func_150027F8,0x068,0x83020000,0x83050000,-,-,Load the next opcode through retail's a1 lifetime,,,false
 game_2DF70,func_150027F8,0x06C,0x5446FFF1,0x54A6FFF1,-,-,Test the loop terminator from retail's a1 lifetime,,,false
 game_2DF70,func_150027F8,0x070,0x00027103,0x00057103,-,-,Extract the next opcode class from retail's a1 lifetime,,,false
+generated_6CCB0,func_1503F964,0x024,0x24430001,0x24440001,-,-,Advance the scan through retail's a0 lifetime,,,false
+generated_6CCB0,func_1503F964,0x028,0x28610019,0x28810019,-,-,Test the scan bound through retail's a0 lifetime,,,false
+generated_6CCB0,func_1503F964,0x030,0x3C040000,0x3C030000,R_MIPS_HI16:D_800CC2D0,R_MIPS_HI16:D_800CC2D0,Load the actor table through retail's v1 lifetime,,,false
+generated_6CCB0,func_1503F964,0x034,0x00001825,0x00002025,-,-,Wrap the scan through retail's a0 lifetime,,,false
+generated_6CCB0,func_1503F964,0x038,0x10620011,0x10820011,-,-,Test the completed cycle through retail's a0 lifetime,,,false
+generated_6CCB0,func_1503F964,0x03C,0x24840000,0x24630000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800CC2D0,Complete the actor-table address through retail's v1 lifetime,,,false
+generated_6CCB0,func_1503F964,0x040,0x00660019,0x00860019,-,-,Scale retail's a0 scan index,,,false
+generated_6CCB0,func_1503F964,0x048,0x008FC021,0x006FC021,-,-,Index the actor table through retail's v1 lifetime,,,false
+generated_6CCB0,func_1503F964,0x058,0x24630001,0x24840001,-,-,Advance retail's a0 scan index in the branch-likely delay slot,,,false
+generated_6CCB0,func_1503F964,0x060,0xA0A30000,0xA0A40000,-,-,Store the selected retail a0 scan index,,,false
+generated_6CCB0,func_1503F964,0x064,0x24630001,0x24840001,-,-,Advance retail's a0 scan index on the selected fallthrough path,,,false
+generated_6CCB0,func_1503F964,0x068,0x28610019,0x28810019,-,-,Retest the scan bound through retail's a0 lifetime,,,false
+generated_6CCB0,func_1503F964,0x074,0x00001825,0x00002025,-,-,Wrap the continuing scan through retail's a0 lifetime,,,false
+generated_6CCB0,func_1503F964,0x078,0x1462FFF1,0x1482FFF1,-,-,Continue the cycle from retail's a0 lifetime,,,false

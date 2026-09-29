@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game six-word actor query matched).**
-The current linked checkpoint is `3005 / 5463 (55.01%)` exact C functions,
-with no address-drift blockers and 2,458 genuinely different C functions.
+**Active (2026-09-29, Game actor-slot selector matched).**
+The current linked checkpoint is `3006 / 5463 (55.02%)` exact C functions,
+with no address-drift blockers and 2,457 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2427 / 4789 (50.68%)` exact, with 2,362 genuinely different C rows. The tree
+`2428 / 4789 (50.70%)` exact, with 2,361 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -263,6 +263,12 @@ six-word aggregate assignment restores retail's alternating load/store copy,
 an explicit signed `sizeof(struct127)` divisor restores `div`, and an expanded
 failure branch restores the retail boolean return. See
 [Working Note 501](WORKING_NOTES/501-game-six-word-actor-query-match-20260929.md).
+
+Game `func_1503F964` now matches all 35 retail words. The recovered source
+restores its enable gate and wrapped 25-slot actor scan. Fourteen
+relocation-aware stale checks normalize only the closed `a0`/`v1` scan-index
+and actor-table-base allocation cycle. See
+[Working Note 502](WORKING_NOTES/502-game-actor-slot-selector-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

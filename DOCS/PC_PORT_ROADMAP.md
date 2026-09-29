@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,005 / 5,463 (55.01%) | 0 | 2,458 |
+| Total | 5,463 / 6,041 (90.43%) | 3,006 / 5,463 (55.02%) | 0 | 2,457 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,427 / 4,789 (50.68%) | 0 | 2,362 |
+| Game | 4,789 / 5,321 (90.00%) | 2,428 / 4,789 (50.70%) | 0 | 2,361 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -91,6 +91,9 @@ The Game six-word actor query `func_151420F8` now matches its complete
 136-byte retail span directly from C after restoring its aggregate template
 copy and signed actor-index calculation; see
 [Working Note 501](WORKING_NOTES/501-game-six-word-actor-query-match-20260929.md).
+The Game actor-slot selector `func_1503F964` now matches its complete 140-byte
+retail span after restoring its enable gate and wrapped 25-slot scan; see
+[Working Note 502](WORKING_NOTES/502-game-actor-slot-selector-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
