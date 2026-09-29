@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,997 / 5,463 (54.86%) | 0 | 2,466 |
+| Total | 2,998 / 5,463 (54.88%) | 0 | 2,465 |
 | Init | 396 / 493 (80.32%) | 0 | 97 |
-| Game | 2,420 / 4,789 (50.53%) | 0 | 2,369 |
+| Game | 2,421 / 4,789 (50.55%) | 0 | 2,368 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,997, while
+denominator driven: the exact count is now 2,998, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -207,6 +207,11 @@ Init record-key updater `func_100100E0` is byte-exact across all 29 words
 after recovering its nonempty pointer-range scan. Twenty stale-checked guards
 normalize only one closed `$v0`/`$v1` allocation cycle; see
 [Working Note 493](WORKING_NOTES/493-init-record-key-updater-match-20260929.md).
+Game water-buoyancy response `func_15058F24` is byte-exact across all 135
+words after preserving the original blend factor for the initial velocity
+scale. Thirty stale-checked guards normalize only IDO scheduling and temporary
+register allocation; see
+[Working Note 494](WORKING_NOTES/494-game-water-buoyancy-response-match-20260929.md).
 
 ## Verified build state
 

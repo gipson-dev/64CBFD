@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game water-buoyancy response byte-matched
+
+- `func_15058F24` applies the water-surface entry, buoyancy, settling,
+  rising, sinking, and terminal-velocity response for an actor.
+- Preserving the original blend factor fixes the initial velocity scale;
+  thirty stale-checked words normalize only IDO scheduling and temporary
+  register allocation, with no inserted or omitted instructions.
+- The linked and retail 540-byte spans share SHA-256
+  `cc8850f8e8a135673446e62d2e2970372482b610029b53414e54706f610376d4`.
+- Totals are **2,998 / 5,463 (54.88%)** overall and
+  **2,421 / 4,789 (50.55%)** in Game, with no address-drift rows. See
+  [Working Note 494](WORKING_NOTES/494-game-water-buoyancy-response-match-20260929.md).
+
 ### Init record-key updater byte-matched
 
 - `func_100100E0` samples the active-record count once, walks the 48-byte

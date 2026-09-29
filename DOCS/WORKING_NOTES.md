@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Init record-key updater matched).**
-The current linked checkpoint is `2997 / 5463 (54.86%)` exact C functions,
-with no address-drift blockers and 2,466 genuinely different C functions.
+**Active (2026-09-29, Game water-buoyancy response matched).**
+The current linked checkpoint is `2998 / 5463 (54.88%)` exact C functions,
+with no address-drift blockers and 2,465 genuinely different C functions.
 Init is
 `396 / 493 (80.32%)` exact, with 97 genuinely different C rows. Game is
-`2420 / 4789 (50.53%)` exact, with 2,369 genuinely different C rows. The tree
+`2421 / 4789 (50.55%)` exact, with 2,368 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -212,6 +212,13 @@ three key words on exact matches. Twenty relocation-aware stale checks
 normalize only the closed `$v0`/`$v1` allocation cycle; no words are inserted
 or omitted. See
 [Working Note 493](WORKING_NOTES/493-init-record-key-updater-match-20260929.md).
+
+Game `func_15058F24` now matches all 135 retail words. Its recovered water
+response preserves the original blend factor for the initial velocity scale,
+then handles entry, buoyancy, settling, rising, sinking, and terminal velocity.
+Thirty stale-checked guards normalize only IDO scheduling and temporary
+register allocation; no words are inserted or omitted. See
+[Working Note 494](WORKING_NOTES/494-game-water-buoyancy-response-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

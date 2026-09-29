@@ -464,13 +464,13 @@ void func_15058EA4(struct127 *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 
     }
 }
 
-// NON-MATCHING: besides missing mov.s, its just a few regallocs
 void func_15058F24(struct127 *arg0, f32 arg1, f32 arg2) {
     f32 temp_f12;
     f32 temp_f14;
     f32 tmp;
     f32 temp_f16;
 
+    temp_f12 = arg1;
     temp_f16 = 0.5f - arg1;
     if (arg1 >= 0.5f) {
         arg1 -= 0.5f;
@@ -484,7 +484,7 @@ void func_15058F24(struct127 *arg0, f32 arg1, f32 arg2) {
             arg0->y_position = temp_f14;
             arg0->in_water = (u8)0x64U;
             arg0->gravity = temp_f16 * -6.0f;
-            arg0->y_velocity *= arg1;
+            arg0->y_velocity *= temp_f12;
         } else {
             if ((temp_f14 + 100.0f) < arg0->y_position) {
                 arg0->in_water = (u8)0U;
