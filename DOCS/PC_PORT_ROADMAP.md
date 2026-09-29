@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,939 / 5,465 (53.78%) | 1 | 2,525 |
+| Total | 5,465 / 6,041 (90.47%) | 2,940 / 5,465 (53.80%) | 1 | 2,524 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,365 / 4,789 (49.38%) | 0 | 2,424 |
+| Game | 4,789 / 5,321 (90.00%) | 2,366 / 4,789 (49.40%) | 0 | 2,423 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1427,6 +1427,12 @@ Twenty-three words emit directly from semantic C; five guards normalize one
 redundant temporary and a closed counter-register cycle. This remains
 guest-side donor/reference progress; see
 [Working Note 438](WORKING_NOTES/438-game-two-slot-resource-cleanup-match-20260929.md).
+The 28-word Game actor-indexed spatial-effect wrapper `func_150FFB6C` is now
+byte-exact after recovering its position forwarding, actor index and halfword
+derivation, flag merge, and final effect call. All words emit directly from
+semantic C with no guards. This remains guest-side donor/reference progress;
+see
+[Working Note 439](WORKING_NOTES/439-game-actor-indexed-spatial-effect-wrapper-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 

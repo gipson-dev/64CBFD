@@ -1,6 +1,7 @@
 #include <ultra64.h>
 void func_15145740(s32, s32, s32, s32, f32);
 s32 func_15081E0C(u8 *, u16, u8);
+void func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/12C1E0.s. */
 
@@ -10,6 +11,7 @@ s32 func_151D5A18();
 extern s32 D_8008FC8C;
 extern u8 *D_8008FC94;
 extern f32 D_800A211C;
+extern u8 D_800CC2D0[];
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_12C1E0/func_150FED30.s")
 
@@ -44,8 +46,12 @@ s32 func_150FF840() {
     return 0;
 }
 
-s32 func_150FFB6C() {
-    return 0;
+void func_150FFB6C(f32 *arg0, s32 arg1, u8 *arg2, s32 arg3) {
+    s32 actorIndex = (arg2 - D_800CC2D0) / 0x32C;
+    u16 value = *(u16 *) (arg2 + 0x7A);
+
+    func_1505D1C4(arg0[0], arg0[1], arg0[2], arg3 | 0x60000,
+                  actorIndex, value, 0, arg1);
 }
 
 

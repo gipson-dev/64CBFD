@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game actor-indexed spatial-effect wrapper byte-matched
+
+- Replaced `func_150FFB6C`'s zero-return placeholder with its recovered
+  position forwarding, actor-index derivation, actor-halfword lookup, flag
+  merge, and `func_1505D1C4` effect call.
+- Explicit actor-index and halfword locals let IDO fill the signed-division
+  latency with retail's independent loads before reading `mflo`.
+- All 28 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 112 linked bytes with SHA-256
+  `df92d35779e03d460d880c2851953b934cce41d52f5cd14206ef8158e240a919`.
+  Fresh totals are **2,940 / 5,465 (53.80%)** overall and
+  **2,366 / 4,789 (49.40%)** in Game. See
+  [Working Note 439](WORKING_NOTES/439-game-actor-indexed-spatial-effect-wrapper-match-20260929.md).
+
 ### Game two-slot resource cleanup byte-matched
 
 - Replaced `func_150F739C`'s zero-return placeholder with its two-slot indexed

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,939 / 5,465 (53.78%) | 1 | 2,525 |
+| Total | 2,940 / 5,465 (53.80%) | 1 | 2,524 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,365 / 4,789 (49.38%) | 0 | 2,424 |
+| Game | 2,366 / 4,789 (49.40%) | 0 | 2,423 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,939, while
+denominator driven: the exact count is now 2,940, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1117,9 +1117,14 @@ end-to-end gameplay acceptance.
    Twenty-three words emit directly from semantic C; five guards normalize
    one redundant temporary and a closed counter-register cycle. See
    [Working Note 438](WORKING_NOTES/438-game-two-slot-resource-cleanup-match-20260929.md).
+   The 28-word actor-indexed spatial-effect wrapper `func_150FFB6C` is now
+   byte-exact after recovering its position forwarding, actor index and
+   halfword derivation, flag merge, and final effect call. All words emit
+   directly from semantic C with no guards. See
+   [Working Note 439](WORKING_NOTES/439-game-actor-indexed-spatial-effect-wrapper-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 28-word Game `func_150FFB6C`, at 27 real
+   with ordinary unparked 30-word Game `func_15108BC0`, at 27 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`
