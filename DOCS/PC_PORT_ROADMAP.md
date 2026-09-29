@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 2,999 / 5,463 (54.90%) | 0 | 2,464 |
+| Total | 5,463 / 6,041 (90.43%) | 3,000 / 5,463 (54.91%) | 0 | 2,463 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,421 / 4,789 (50.55%) | 0 | 2,368 |
+| Game | 4,789 / 5,321 (90.00%) | 2,422 / 4,789 (50.57%) | 0 | 2,367 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -69,6 +69,9 @@ initial velocity scale; see
 The Init sound-handle lookup `func_1000F4D8` now matches its complete 144-byte
 retail span directly from C after recovering its one-time identifier mask; see
 [Working Note 495](WORKING_NOTES/495-init-sound-handle-lookup-match-20260929.md).
+The Game audio DMA reader `func_151F3C4C` now matches its complete 300-byte
+retail span after recovering the shared callback-state/DMA-result local; see
+[Working Note 496](WORKING_NOTES/496-game-audio-dma-reader-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

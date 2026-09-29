@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Init sound-handle lookup matched).**
-The current linked checkpoint is `2999 / 5463 (54.90%)` exact C functions,
-with no address-drift blockers and 2,464 genuinely different C functions.
+**Active (2026-09-29, Game audio DMA reader matched).**
+The current linked checkpoint is `3000 / 5463 (54.91%)` exact C functions,
+with no address-drift blockers and 2,463 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2421 / 4789 (50.55%)` exact, with 2,368 genuinely different C rows. The tree
+`2422 / 4789 (50.57%)` exact, with 2,367 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -226,6 +226,12 @@ sound records and validating matching live handles. Expressing the mask as an
 in-place argument update restores retail's saved value and loop schedule with
 no expected-word guards. See
 [Working Note 495](WORKING_NOTES/495-init-sound-handle-lookup-match-20260929.md).
+
+Game `func_151F3C4C` now matches all 75 retail words. Reusing the callback
+state slot for the DMA result restores retail's 32-byte frame and all argument
+and local offsets. Eleven relocation-aware stale checks normalize only two
+closed register-allocation cycles; no words are inserted or omitted. See
+[Working Note 496](WORKING_NOTES/496-game-audio-dma-reader-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

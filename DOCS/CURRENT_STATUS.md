@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,999 / 5,463 (54.90%) | 0 | 2,464 |
+| Total | 3,000 / 5,463 (54.91%) | 0 | 2,463 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,421 / 4,789 (50.55%) | 0 | 2,368 |
+| Game | 2,422 / 4,789 (50.57%) | 0 | 2,367 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,999, while
+denominator driven: the exact count is now 3,000, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -215,6 +215,10 @@ register allocation; see
 Init sound-handle lookup `func_1000F4D8` is byte-exact across all 36 words
 directly from C after recovering its one-time in-place identifier mask; see
 [Working Note 495](WORKING_NOTES/495-init-sound-handle-lookup-match-20260929.md).
+Game audio DMA reader `func_151F3C4C` is byte-exact across all 75 words after
+reusing its callback-state local for the DMA result. Eleven stale-checked
+guards normalize two closed compiler register-allocation cycles; see
+[Working Note 496](WORKING_NOTES/496-game-audio-dma-reader-match-20260929.md).
 
 ## Verified build state
 

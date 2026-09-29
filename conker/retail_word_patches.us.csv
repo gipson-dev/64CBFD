@@ -2121,3 +2121,14 @@ game_A28B0,func_1507A4D4,0x03C,0x010A5825,0x014D7025,-,-,Combine the first three
 game_A28B0,func_1507A4D4,0x040,0x016C1025,0x01D91025,-,-,Combine the fourth packed byte into v0,,,false
 game_A28B0,func_1507A4D4,0x044,0x01A27025,0x0102C025,-,-,Set the packed bits through retail's t8 lifetime,,,false
 game_A28B0,func_1507A4D4,0x048,0xAC6E0094,0xAC780094,-,-,Store the updated actor mask from t8,,,false
+game_21FC90,func_151F3C4C,0x034,0x3C190000,0x3C180000,R_MIPS_HI16:D_800E0DE4,R_MIPS_HI16:D_800E0DE4,Load the DMA cursor through retail's t8 lifetime,,,false
+game_21FC90,func_151F3C4C,0x038,0x8F390000,0x8F180000,R_MIPS_LO16:D_800E0DE4,R_MIPS_LO16:D_800E0DE4,Complete the DMA cursor load through retail's t8 lifetime,,,false
+game_21FC90,func_151F3C4C,0x03C,0x8FA80028,0x8FB90028,-,-,Load the requested byte count through retail's t9 lifetime,,,false
+game_21FC90,func_151F3C4C,0x040,0x3C180000,0x3C090000,R_MIPS_HI16:D_800E0DE0,R_MIPS_HI16:D_800E0DE0,Load the DMA extent through retail's t1 lifetime,,,false
+game_21FC90,func_151F3C4C,0x044,0x8F180000,0x8D290000,R_MIPS_LO16:D_800E0DE0,R_MIPS_LO16:D_800E0DE0,Complete the DMA extent load through retail's t1 lifetime,,,false
+game_21FC90,func_151F3C4C,0x048,0x03284821,0x03194021,-,-,Add cursor and request through retail's t8 and t9 lifetimes,,,false
+game_21FC90,func_151F3C4C,0x04C,0x0309082A,0x0128082A,-,-,Compare the extent through retail's t1 and t0 lifetimes,,,false
+game_21FC90,func_151F3C4C,0x0B4,0x8FA8001C,0x8FB8001C,-,-,Load the DMA result through retail's t8 lifetime,,,false
+game_21FC90,func_151F3C4C,0x0B8,0x15000003,0x17000003,-,-,Test the DMA result through retail's t8 lifetime,,,false
+game_21FC90,func_151F3C4C,0x0C8,0x8FB8001C,0x8FA8001C,-,-,Reload the nonzero DMA result through retail's t0 lifetime,,,false
+game_21FC90,func_151F3C4C,0x0D0,0x03014821,0x01014821,-,-,Convert the DMA result through retail's t0 lifetime,,,false

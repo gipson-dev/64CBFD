@@ -446,7 +446,6 @@ void func_151F3C34(s32 arg0) {
 s32 func_151F3C4C(s32 arg0, u8 *arg1, s32 arg2, s32 arg3) {
     s32 state;
     ALDMAproc dmaProc;
-    s32 ret;
 
     if (arg3 != -1) {
         D_800E0DE4 = arg3;
@@ -455,13 +454,13 @@ s32 func_151F3C4C(s32 arg0, u8 *arg1, s32 arg2, s32 arg3) {
         arg2 = D_800E0DE0 - D_800E0DE4;
     }
     dmaProc = n_syn->dma(&state);
-    ret = dmaProc(D_800E0D80 + D_800E0DE4, arg2, 0);
-    if (ret == 0) {
+    state = dmaProc(D_800E0D80 + D_800E0DE4, arg2, 0);
+    if (state == 0) {
         return 0;
     }
-    ret += 0x80000000;
-    osInvalDCache((void *) ret, arg2);
-    bcopy((void *) ret, arg1, arg2);
+    state += 0x80000000;
+    osInvalDCache((void *) state, arg2);
+    bcopy((void *) state, arg1, arg2);
     D_800E0DE4 += arg2;
     return arg2;
 }

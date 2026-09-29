@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game audio DMA reader byte-matched
+
+- `func_151F3C4C` clamps the requested read to the configured audio extent,
+  obtains and calls the synthesizer DMA callback, invalidates the returned
+  cached range, copies it to the destination, and advances the DMA cursor.
+- Reusing the callback-state local for the DMA result restores retail's
+  32-byte frame and every stack offset. Eleven stale-checked words normalize
+  two closed register-allocation cycles without changing instruction count.
+- The linked and retail 300-byte spans share SHA-256
+  `761449b54f35127e444756f8e17dfbd58f03c91ae450b500a21b39f6710e5814`.
+- Totals are **3,000 / 5,463 (54.91%)** overall and
+  **2,422 / 4,789 (50.57%)** in Game, with no address-drift rows. See
+  [Working Note 496](WORKING_NOTES/496-game-audio-dma-reader-match-20260929.md).
+
 ### Init sound-handle lookup byte-matched
 
 - `func_1000F4D8` masks the incoming identifier once, scans all sixteen
