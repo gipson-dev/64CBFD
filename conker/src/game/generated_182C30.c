@@ -16,6 +16,7 @@ typedef struct {
 
 extern LookupOwner15155FD4 D_800DCE50[];
 extern LookupOwner15155FD4 D_800DD190[];
+extern u8 D_800CC37D;
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 void func_1518C900(s32);
 
@@ -39,8 +40,23 @@ void *func_15155780(s32 key, s32 selector) {
     return record;
 }
 
-s32 func_151557FC() {
-    return 0;
+void func_151557FC(s32 key, s32 timer, f32 value) {
+    u8 *record = (u8 *)func_15155FD4(key);
+
+    if (record == NULL) {
+        record = func_15155780(key, 0xFF);
+    }
+
+    if (record != NULL) {
+        *(f32 *)(record + 0x98) = value;
+        if (*(&D_800CC37D + key * 0x32C) != 0) {
+            *(s16 *)(record + 0xE) = 0;
+            record[0x11] = 0;
+        } else {
+            record[0x11] = 3;
+            *(s16 *)(record + 0xE) = timer;
+        }
+    }
 }
 
 s32 func_1515589C() {

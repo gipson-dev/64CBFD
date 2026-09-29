@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game record find-or-create updater byte-matched
+
+- Replaced `func_151557FC`'s zero-return placeholder with its recovered record
+  lookup, fallback allocation, float update, and conditional state/timer setup.
+- All 40 words emit directly from semantic C. The actor-table `0x32C` stride,
+  byte `0xAD` relocation, branch-likely control flow, and both call delay slots
+  require no expected-word guards.
+- The linked and retail 160-byte spans share SHA-256
+  `26ead8d1e4d9a93f6827eea92120b99ba1e86a29c5067c4de1de8169a17e2dec`.
+- Totals are **2,990 / 5,465 (54.71%)** overall and **2,415 / 4,789
+  (50.43%)** in Game, with no address-drift rows. See
+  [Working Note 486](WORKING_NOTES/486-game-record-find-or-create-update-match-20260929.md).
+
 ### Game record allocator initializer byte-matched
 
 - Replaced `func_15155780`'s zero-return placeholder with its recovered record

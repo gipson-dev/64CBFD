@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,989 / 5,465 (54.69%) | 0 | 2,476 |
+| Total | 5,465 / 6,041 (90.47%) | 2,990 / 5,465 (54.71%) | 0 | 2,475 |
 | Init | 495 / 538 (92.01%) | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,414 / 4,789 (50.41%) | 0 | 2,375 |
+| Game | 4,789 / 5,321 (90.00%) | 2,415 / 4,789 (50.43%) | 0 | 2,374 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -35,6 +35,9 @@ The two-owner linked-list lookup `func_15155FD4` now matches its complete
 The record allocator initializer `func_15155780` now matches its complete
 124-byte retail span; see
 [Working Note 485](WORKING_NOTES/485-game-record-allocator-initializer-match-20260929.md).
+The adjacent record find-or-create updater `func_151557FC` now matches its
+complete 160-byte retail span directly from C; see
+[Working Note 486](WORKING_NOTES/486-game-record-find-or-create-update-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

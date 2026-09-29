@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,989 / 5,465 (54.69%) | 0 | 2,476 |
+| Total | 2,990 / 5,465 (54.71%) | 0 | 2,475 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,414 / 4,789 (50.41%) | 0 | 2,375 |
+| Game | 2,415 / 4,789 (50.43%) | 0 | 2,374 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -175,6 +175,9 @@ stale address-drift classification. No address-drift rows remain.
 allocation, null return, four field initializers, and notification call. Eight
 guarded words normalize only the independent success-path schedule; see
 [Working Note 485](WORKING_NOTES/485-game-record-allocator-initializer-match-20260929.md).
+`func_151557FC` is byte-exact directly from C after recovering its find-or-create
+path, float update, and actor-table-dependent state/timer initialization; see
+[Working Note 486](WORKING_NOTES/486-game-record-find-or-create-update-match-20260929.md).
 
 ## Verified build state
 

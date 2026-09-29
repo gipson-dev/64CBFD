@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game record allocator initializer matched).**
-The current linked checkpoint is `2989 / 5465 (54.69%)` exact C functions,
-with no address-drift blockers and 2,476 genuinely different C functions.
+**Active (2026-09-29, Game record find-or-create updater matched).**
+The current linked checkpoint is `2990 / 5465 (54.71%)` exact C functions,
+with no address-drift blockers and 2,475 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2414 / 4789 (50.41%)` exact, with 2,375 genuinely different C rows. The tree
+`2415 / 4789 (50.43%)` exact, with 2,374 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -161,6 +161,11 @@ normalize one closed owner/end register-allocation cycle. See
 `func_1518C900`. Eight guarded words normalize the independent success-path
 schedule. See
 [Working Note 485](WORKING_NOTES/485-game-record-allocator-initializer-match-20260929.md).
+
+Adjacent `func_151557FC` now matches all 40 retail words directly from C. It
+finds or creates the keyed record, updates float `0x98`, and chooses state and
+timer initialization from actor-table byte `0xAD` at a `0x32C` stride. See
+[Working Note 486](WORKING_NOTES/486-game-record-find-or-create-update-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
