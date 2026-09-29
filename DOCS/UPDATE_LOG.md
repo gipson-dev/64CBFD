@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game variable-tail descriptor wrapper byte-matched
+
+- Replaced `func_15094FE8`'s placeholder with its recovered descriptor setup
+  and complete variable-tail final dispatch.
+- All 30 words emit directly from semantic C with no guarded replacements.
+- The linked and retail 120-byte spans share SHA-256
+  `552edff8f4df1216c778a7dfc877db65bce0f6d25ec744671c9b1f6dec7f41eb`.
+- Totals are **2,972 / 5,465 (54.38%)** overall and **2,398 / 4,789
+  (50.07%)** in Game. See
+  [Working Note 470](WORKING_NOTES/470-game-variable-tail-descriptor-wrapper-match-20260929.md).
+
 ### Game descriptor-install wrapper byte-matched
 
 - Replaced `func_15094F70`'s placeholder with its recovered descriptor setup

@@ -65,8 +65,12 @@ s32 func_15094F70(s32 arg0, structC1D70Source *arg1, s32 arg2, u8 *arg3,
                          0x100, 0x100, arg8);
 }
 
-s32 func_15094FE8() {
-    return 0;
+s32 func_15094FE8(s32 arg0, structC1D70Source *arg1, s32 arg2, u8 *arg3,
+                  s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9,
+                  s32 arg10) {
+    func_15095060(arg1, arg2, arg3);
+    return func_150950D4(arg0, &D_800D2C90, arg4, arg5, 0, arg6, arg7,
+                         arg8, arg9, arg10);
 }
 
 void func_15095060(structC1D70Source *arg0, s32 arg1, u8 *arg2) {
