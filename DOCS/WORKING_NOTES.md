@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game float-state scaler matched).**
-The current linked checkpoint is `2980 / 5465 (54.53%)` exact C functions,
-with no address-drift blockers and 2,485 genuinely different C functions.
+**Active (2026-09-29, Game angular state integrator matched).**
+The current linked checkpoint is `2981 / 5465 (54.55%)` exact C functions,
+with no address-drift blockers and 2,484 genuinely different C functions.
 Init is
 `394 / 495 (79.60%)` exact, with 101 genuinely different C rows. Game is
-`2405 / 4789 (50.22%)` exact, with 2,384 genuinely different C rows. The tree
+`2406 / 4789 (50.24%)` exact, with 2,383 genuinely different C rows. The tree
 contains 576 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -113,6 +113,12 @@ also cleared the stale Init drift classification for unchanged
 body accumulates the incoming float into field `0x3C`, then scales fields
 `0x44..0x58`, negating the scale only for field `0x48`. See
 [Working Note 477](WORKING_NOTES/477-game-float-state-scaler-match-20260929.md).
+
+`func_150AFBF4` now matches all 29 retail words. Its recovered body advances
+and wraps the state angle at `0x78`, applies `sinf`, and writes the resulting
+scaled value to `0x10`. Three guarded scheduling words normalize only an
+unused scratch-parameter home and the displaced pointer spill/reload. See
+[Working Note 478](WORKING_NOTES/478-game-angular-state-integrator-match-20260929.md).
 
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the

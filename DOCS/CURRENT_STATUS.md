@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,980 / 5,465 (54.53%) | 0 | 2,485 |
+| Total | 2,981 / 5,465 (54.55%) | 0 | 2,484 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,405 / 4,789 (50.22%) | 0 | 2,384 |
+| Game | 2,406 / 4,789 (50.24%) | 0 | 2,383 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -1302,6 +1302,10 @@ end-to-end gameplay acceptance.
    from C after recovering its accumulated position field and six scaled
    float fields. See
    [Working Note 477](WORKING_NOTES/477-game-float-state-scaler-match-20260929.md).
+   The 29-word angular state integrator `func_150AFBF4` is now byte-exact
+   after recovering its timestep update, angle wrap, sine transform, and
+   scalar output. See
+   [Working Note 478](WORKING_NOTES/478-game-angular-state-integrator-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
    with an ordinary small Game placeholder after the already documented

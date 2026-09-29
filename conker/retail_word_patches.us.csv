@@ -561,6 +561,9 @@ generated_DC6B0,func_150AF738,0x030,0xA3A0001E,0xA3B8001A,-,-,Store the third re
 generated_DC6B0,func_150AF738,0x034,0x27A40018,0xA3A0001E,-,-,Clear the final record byte before forming its address,
 generated_DC6B0,func_150AF738,0x038,0x00002825,0x27A40018,-,-,Form the stack-record pointer before clearing the second argument,
 generated_DC6B0,func_150AF738,0x03C,0x93A60027,0x00002825,-,-,Clear the second outgoing argument after forming the record pointer,
+generated_DC6B0,func_150AFBF4,0x008,0xAFA50024,0xAFA50024,-,-,Omit the unused scratch-parameter home,,,true
+generated_DC6B0,func_150AFBF4,0x048,0xAFA3001C,0xAFA30018,-,-,Use retail's first local spill slot for the derived value pointer,
+generated_DC6B0,func_150AFBF4,0x04C,0x8FA3001C,0x8FA30018,-,-,Reload the derived value pointer from retail's first local spill slot,
 generated_133190,func_151061EC,0x018,0x01C41021,0x008E1021,-,-,Use retail commutative address-add operand order,
 game_16EE20,func_15144A74,0x028,0x46048000,0x46102000,-,-,Use retail commutative floating-add operand order,
 generated_1D92F0,func_151ACB60,0x020,0x00000000,0xAFA40018,-,-,Home incoming pointer in retail jal delay slot,

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game angular state integrator byte-matched
+
+- Replaced `func_150AFBF4`'s zero-return placeholder with its recovered
+  timestep integration, wrapped angle, sine transform, and scalar output.
+- Twenty-six words emit directly from semantic C. Three guarded scheduling
+  normalizations omit an unused scratch-parameter home and move the derived
+  value-pointer spill/reload into retail's stack slot.
+- The linked and retail 116-byte spans share SHA-256
+  `72132aa45284c9b660a8e383d7676ed19df6d95609f2cd27d5eb49be8defcfb2`.
+- Totals are **2,981 / 5,465 (54.55%)** overall and **2,406 / 4,789
+  (50.24%)** in Game, with no address-drift rows. See
+  [Working Note 478](WORKING_NOTES/478-game-angular-state-integrator-match-20260929.md).
+
 ### Game float-state scaler byte-matched
 
 - Replaced `func_151339D4`'s zero-return placeholder with its recovered

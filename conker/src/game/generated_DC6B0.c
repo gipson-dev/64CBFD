@@ -1,5 +1,7 @@
 #include <ultra64.h>
 void func_151CF898(s32, f32, f32);
+extern f32 D_800BE9A4;
+f32 func_15144B68(f32);
 
 /* Non-matching placeholders for the text-only asm slice asm/DC6B0.s. */
 
@@ -15,6 +17,20 @@ typedef struct {
     s16 unk4;
     s8 unk6;
 } UnkAF738;
+
+typedef struct {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+} UnkAFBF4Values;
+
+typedef struct {
+    u8 pad0[0x10];
+    f32 unk10;
+    u8 pad14[0x5C];
+    UnkAFBF4Values values;
+} UnkAFBF4;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_DC6B0/func_150AF200.s")
 
@@ -56,8 +72,12 @@ s32 func_150AF7C4() {
     return 0;
 }
 
-s32 func_150AFBF4() {
-    return 0;
+s32 func_150AFBF4(UnkAFBF4 *arg0, register UnkAFBF4Values *values) {
+    arg0->values.unk8 += arg0->values.unkC * D_800BE9A4;
+    values = &arg0->values;
+    values->unk8 = func_15144B68(values->unk8);
+    arg0->unk10 = sinf(values->unk8) * values->unk4 + values->unk0;
+    return 1;
 }
 
 s32 func_150AFC68() {
