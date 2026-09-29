@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,920 / 5,466 (53.42%) | 1 | 2,545 |
+| Total | 5,466 / 6,041 (90.48%) | 2,921 / 5,466 (53.44%) | 1 | 2,544 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,346 / 4,790 (48.98%) | 0 | 2,444 |
+| Game | 4,790 / 5,321 (90.02%) | 2,347 / 4,790 (49.00%) | 0 | 2,443 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1312,6 +1312,12 @@ retail's retained destination address and complete call schedule; all words
 emit directly from semantic C with no guards. This remains guest-side
 donor/reference progress; see
 [Working Note 418](WORKING_NOTES/418-game-resource-install-callback-match-20260928.md).
+The 28-word Game record-mediated dispatch `func_15173C90` is byte-exact after
+recovering its byte-ID record lookup, null gate, high-bit-cleared flags, table
+index, and five-argument dispatch. Semantic C emits 26 words directly; two
+expected-word guards preserve retail's ordering of independent call-argument
+staging instructions. This remains guest-side donor/reference progress; see
+[Working Note 419](WORKING_NOTES/419-game-record-mediated-dispatch-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

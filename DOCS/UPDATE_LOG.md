@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game record-mediated dispatch byte-matched
+
+- Replaced `func_15173C90`'s zero-return placeholder with its narrowed record
+  lookup, null gate, high-bit-cleared flag extraction, table-index calculation,
+  and five-argument dispatch.
+- The full-width third argument is narrowed only for `func_151149AC`, matching
+  retail's call delay slot without changing the caller ABI. Semantic C emits
+  26 words directly; two expected-word guards swap independent argument
+  staging instructions into retail order.
+- Direct comparison matches all 112 linked bytes with SHA-256
+  `87de100270dfcecc257f5181f12efce8f30d295ee468b3eb7adc258d79683bc0`.
+  Fresh totals are **2,921 / 5,466 (53.44%)** overall and
+  **2,347 / 4,790 (49.00%)** in Game. See
+  [Working Note 419](WORKING_NOTES/419-game-record-mediated-dispatch-match-20260928.md).
+
 ### Game resource-install callback byte-matched
 
 - Replaced `func_15166F6C`'s zero-return placeholder with its global resource

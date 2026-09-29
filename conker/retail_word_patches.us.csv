@@ -1838,3 +1838,5 @@ generated_185560,func_15159230,0x074,0x24030002,0x10000001,-,-,Preserve retail's
 generated_185560,func_15159230,0x078,0x00601025,0x24030001,-,-,Assign retail's default result in the branch delay slot,,,false
 generated_185560,func_15159230,0x07C,0x03E00008,0x00601025,-,-,Move the selected result through retail's shared return block,,,false
 generated_185560,func_15159230,0x080,0x00000000,0x03E00008,-,-,Restore retail's return after the shared result move,,,false
+generated_1A0E60,func_15173C90,0x044,0xAFB90010,0x01C02025,-,-,Move the masked record flags before staging the independent table index,,,false
+generated_1A0E60,func_15173C90,0x048,0x01C02025,0xAFB90010,-,-,Stage the independent table index after retail's masked-flag move,,,false
