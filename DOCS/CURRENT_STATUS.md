@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,015 / 5,463 (55.19%) | 0 | 2,448 |
+| Total | 3,016 / 5,463 (55.21%) | 0 | 2,447 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,437 / 4,789 (50.89%) | 0 | 2,352 |
+| Game | 2,438 / 4,789 (50.91%) | 0 | 2,351 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -292,6 +292,10 @@ recovering its primary release, conditional three-allocation cleanup, owner
 slot clear, and tagged final teardown. Four stale checks normalize only the
 optional-allocation load/test register; see
 [Working Note 511](WORKING_NOTES/511-game-resource-teardown-match-20260929.md).
+Game two-angle trigonometric updater `func_150A0D14` is byte-exact across all
+30 words after recovering its two scaled input angles and paired cosine/sine
+outputs. The complete routine emits directly from typed C with no guards; see
+[Working Note 512](WORKING_NOTES/512-game-two-angle-trigonometric-updater-match-20260929.md).
 
 ## Verified build state
 
@@ -614,10 +618,10 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_15080BE8`, whose complete 31-word resource teardown
-   now matches from semantic C plus four guarded allocation-register words.
-   Continue with 30-word `func_150A0D14`, the next ordinary Game candidate
-   after the two parked 29-difference rows.
+   advanced through `func_150A0D14`, whose complete 30-word two-angle
+   trigonometric updater now matches directly from typed C. Continue with
+   33-word `func_150B6D78`, the next ordinary Game candidate after the two
+   parked 29-difference rows.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

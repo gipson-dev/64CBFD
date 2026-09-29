@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game two-angle trigonometric updater byte-matched
+
+- `func_150A0D14` now scales float inputs at offsets `0xC` and `0x10`, calls
+  the paired cosine and sine helpers for each, and stores four outputs at
+  offsets `0x24..0x30`.
+- A narrow typed record view and correct floating-return prototypes reproduce
+  all 30 retail words directly from C, including the saved `$f20` lifetime.
+  No expected-word guards are used.
+- The linked and retail 120-byte spans share SHA-256
+  `dac05049dfcc33eb162289598122317e867b460999b13b459c433af7ce230fc4`.
+- Totals are **3,016 / 5,463 (55.21%)** overall and
+  **2,438 / 4,789 (50.91%)** in Game, with no address-drift rows. See
+  [Working Note 512](WORKING_NOTES/512-game-two-angle-trigonometric-updater-match-20260929.md).
+
 ### Game resource teardown byte-matched
 
 - `func_15080BE8` now clears its active byte, releases its primary object and

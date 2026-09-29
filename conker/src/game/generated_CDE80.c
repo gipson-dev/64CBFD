@@ -15,13 +15,37 @@ typedef struct {
 } GeneratedCDE80Record;
 
 extern GeneratedCDE80Record *D_800D3098;
+extern f32 D_8009F5A0;
+extern f32 D_8009F5A4;
+
+typedef struct {
+    u8 pad0[0xC];
+    f32 angle0;
+    f32 angle1;
+    u8 pad14[0x10];
+    f32 cosine0;
+    f32 sine0;
+    f32 cosine1;
+    f32 sine1;
+} GeneratedCDE80TrigRecord;
+
+f32 func_150AD780(f32);
+f32 func_150AD78C(f32);
 
 s32 func_150A09D0() {
     return 0;
 }
 
-s32 func_150A0D14() {
-    return 0;
+void func_150A0D14(GeneratedCDE80TrigRecord *record) {
+    f32 angle;
+
+    angle = record->angle0 * D_8009F5A0;
+    record->cosine0 = func_150AD78C(angle);
+    record->sine0 = func_150AD780(angle);
+
+    angle = record->angle1 * D_8009F5A4;
+    record->cosine1 = func_150AD78C(angle);
+    record->sine1 = func_150AD780(angle);
 }
 
 s32 func_150A0D8C() {
