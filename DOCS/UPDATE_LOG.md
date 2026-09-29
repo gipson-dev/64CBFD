@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game validated payload dispatcher byte-matched
+
+- Replaced `func_150ECB8C`'s zero-return placeholder with its target-state and
+  selector validation, shared owner invalidation, and payload dispatch.
+- A valid target receives six local record bytes through `func_1502EA98`; an
+  inactive target or selector mismatch writes `-1` to the owner's halfword at
+  offset `0x0E`.
+- All 29 words emit directly from semantic C with no expected-word guards.
+  Direct comparison matches all 116 linked bytes with SHA-256
+  `68df9f722f643d62ec6be026854fd09c8e361cb94615261afd64d54b6cee4240`.
+  Fresh totals are **2,937 / 5,465 (53.74%)** overall and
+  **2,363 / 4,789 (49.34%)** in Game. See
+  [Working Note 436](WORKING_NOTES/436-game-validated-payload-dispatch-match-20260929.md).
+
 ### Game damped motion-state integrator byte-matched
 
 - Replaced `func_150D13A0`'s zero-return placeholder with its five recovered
