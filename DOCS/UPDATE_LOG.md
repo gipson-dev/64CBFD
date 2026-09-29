@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game timed HUD fade helper byte-matched
+
+- `func_151EC178` now derives a saturated 8x alpha ramp after timer `0x5DD`,
+  applies white modulation, draws fixed resource `D_800E0BD8[0x74]`, and
+  returns its incoming display-list pointer unchanged.
+- Nineteen relocation-aware stale checks restore retail's separate scaled and
+  result registers and the displaced two-call tail after IDO collapses that
+  merge. The complete tracked slot remains 30 words.
+- The linked and retail 120-byte spans share SHA-256
+  `3d94d64b056ac0c8f9b14949c3456faa92bfe86305e718365922d0f7e438a47b`.
+- Totals are **3,014 / 5,463 (55.17%)** overall and
+  **2,436 / 4,789 (50.87%)** in Game, with no address-drift rows. See
+  [Working Note 510](WORKING_NOTES/510-game-timed-hud-fade-helper-match-20260929.md).
+
 ### Game subsystem-state initializer byte-matched
 
 - `func_151DDBA0` now performs its five-argument setup, updates the global

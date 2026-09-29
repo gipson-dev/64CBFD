@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,013 / 5,463 (55.15%) | 0 | 2,450 |
+| Total | 5,463 / 6,041 (90.43%) | 3,014 / 5,463 (55.17%) | 0 | 2,449 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,435 / 4,789 (50.85%) | 0 | 2,354 |
+| Game | 4,789 / 5,321 (90.00%) | 2,436 / 4,789 (50.87%) | 0 | 2,353 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -122,6 +122,10 @@ The Game subsystem-state initializer `func_151DDBA0` now matches its complete
 128-byte span directly from C after restoring its setup sequence, state
 clears, subsystem calls, and ready flags; see
 [Working Note 509](WORKING_NOTES/509-game-subsystem-state-initializer-match-20260929.md).
+The Game timed HUD fade helper `func_151EC178` now matches its complete
+120-byte span after restoring its saturated alpha ramp and fixed-resource
+draw; see
+[Working Note 510](WORKING_NOTES/510-game-timed-hud-fade-helper-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

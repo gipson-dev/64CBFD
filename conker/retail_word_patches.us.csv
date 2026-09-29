@@ -2191,3 +2191,22 @@ generated_1A7260,func_1517A9A8,0x03C,0xAFA80020,0x03003025,-,-,Move the shifted 
 generated_1A7260,func_1517A9A8,0x040,0xAFB9001C,0x27A70034,-,-,Form the output-record address at retail's fourth argument point,,,false
 generated_1C1150,func_15194794,0x04C,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A82BC_game,Retarget the dispatch table to retail's retained table ownership,,,false
 generated_1C1150,func_15194794,0x054,0x8C2E0028,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A82BC_game,Load the dispatch target from retail's retained table ownership,,,false
+generated_215960,func_151EC178,0x020,0x1420000F,0x14200010,-,-,Retarget the timer gate across retail's retained alpha merge,,,false
+generated_215960,func_151EC178,0x028,0x000240C0,0x000270C0,-,-,Keep the scaled alpha in retail's temporary register,,,false
+generated_215960,func_151EC178,0x02C,0x29010100,0x29C10100,-,-,Test retail's scaled-alpha temporary,,,false
+generated_215960,func_151EC178,0x034,0x240600FF,0x01C01025,-,-,Copy the unsaturated alpha into retail's result register,,,false
+generated_215960,func_151EC178,0x038,0x240800FF,0x240200FF,-,-,Saturate retail's alpha result register,,,false
+generated_215960,func_151EC178,0x03C,0x0C000000,0x240600FF,R_MIPS_26:func_1504332C,-,Load the third color argument after the alpha merge,,,false
+generated_215960,func_151EC178,0x040,0x310700FF,0x0C000000,-,R_MIPS_26:func_1504332C,Move the color call to retail's schedule,,,false
+generated_215960,func_151EC178,0x044,0x3C0F0000,0x304700FF,R_MIPS_HI16:D_800E0BD8,-,Narrow alpha in the color-call delay slot,,,false
+generated_215960,func_151EC178,0x048,0x8DEF0000,0x3C0F0000,R_MIPS_LO16:D_800E0BD8,R_MIPS_HI16:D_800E0BD8,Start the text-resource load after the color call,,,false
+generated_215960,func_151EC178,0x04C,0x240400DC,0x8DEF0000,-,R_MIPS_LO16:D_800E0BD8,Complete the text-resource base load,,,false
+generated_215960,func_151EC178,0x050,0x24050130,0x240400DC,-,-,Move the text X coordinate to retail's argument schedule,,,false
+generated_215960,func_151EC178,0x054,0x24060001,0x24050130,-,-,Move the text Y coordinate to retail's argument schedule,,,false
+generated_215960,func_151EC178,0x058,0x0C000000,0x24060001,R_MIPS_26:func_15042D94,-,Load the text mode before the text call,,,false
+generated_215960,func_151EC178,0x05C,0x8DE701D0,0x0C000000,-,R_MIPS_26:func_15042D94,Move the text call to retail's schedule,,,false
+generated_215960,func_151EC178,0x060,0x8FA20018,0x8DE701D0,-,-,Load the text resource in the call delay slot,,,false
+generated_215960,func_151EC178,0x064,0x8FBF0014,0x8FA20018,-,-,Reload the original display-list pointer after the call,,,false
+generated_215960,func_151EC178,0x068,0x27BD0018,0x8FBF0014,-,-,Restore the return address at retail's epilogue point,,,false
+generated_215960,func_151EC178,0x06C,0x03E00008,0x27BD0018,-,-,Restore the frame at retail's epilogue point,,,false
+generated_215960,func_151EC178,0x070,0x00000000,0x03E00008,-,-,Return at retail's final control-transfer word,,,false

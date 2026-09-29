@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include "variables.h"
 extern s16 D_8008FDCC;
+extern s32 D_800E0A90;
 extern u8 D_800E0B94;
 extern u8 D_800BE616;
 extern u8 D_800BE740;
@@ -778,8 +779,22 @@ s32 func_151EBB50() {
     return 0;
 }
 
-s32 func_151EC178() {
-    return 0;
+Gfx *func_151EC178(Gfx *display_list) {
+    s32 timer = D_800E0A90;
+    s32 scaled;
+    s32 alpha;
+
+    if (timer >= 0x5DD) {
+        alpha = timer - 0x5DC;
+        scaled = alpha << 3;
+        alpha = scaled;
+        if (scaled >= 0x100) {
+            alpha = 0xFF;
+        }
+        func_1504332C(0xFF, 0xFF, 0xFF, (u8) alpha);
+        func_15042D94(0xDC, 0x130, 1, D_800E0BD8[0x74]);
+    }
+    return display_list;
 }
 
 s32 func_151EC1F0() {
