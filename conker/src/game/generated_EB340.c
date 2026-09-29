@@ -12,8 +12,18 @@ s32 func_150BDF0C() {
     return 0;
 }
 
-s32 func_150BE150() {
-    return 0;
+void func_150BE150(u8 *arg0, u8 **arg1, u8 arg2) {
+    if (arg2 == 0x21) {
+        if (*(u8 **) (arg0 + 0x28) == *arg1) {
+            func_1516972C(arg0);
+        }
+    } else if (arg2 == 0) {
+        u8 *payload = *arg1;
+
+        if (*(u8 **) (arg0 + 0x28) == *(u8 **) (payload + 0x318)) {
+            func_1516972C(arg0);
+        }
+    }
 }
 
 s32 func_150BE1C4(u8 *arg0) {

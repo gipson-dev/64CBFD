@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,466 / 6,041 (90.48%) | 2,909 / 5,466 (53.22%) | 1 | 2,556 |
+| Total | 5,466 / 6,041 (90.48%) | 2,910 / 5,466 (53.24%) | 1 | 2,555 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,790 / 5,321 (90.02%) | 2,335 / 4,790 (48.75%) | 0 | 2,455 |
+| Game | 4,790 / 5,321 (90.02%) | 2,336 / 4,790 (48.77%) | 0 | 2,454 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1245,6 +1245,12 @@ recovering its first-field priority, frame-scaled increments, and `0x1000`
 clamps. Its branch-likely and early-return shape emits directly from C with no
 guards. This remains guest-side donor/reference progress; see
 [Working Note 407](WORKING_NOTES/407-game-staged-halfword-ramp-match-20260928.md).
+The 29-word Game event-linked object removal filter `func_150BE150` is
+byte-exact after recovering its narrowed event dispatch, direct payload match,
+and event-zero linked-pointer match. An explicit payload local recovers the
+retail load schedule with no guards. This remains guest-side donor/reference
+progress; see
+[Working Note 408](WORKING_NOTES/408-game-event-linked-object-removal-match-20260928.md).
 
 Current host-port progression and acceptance boundaries:
 

@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game event-linked object removal byte-matched
+
+- Replaced `func_150BE150`'s zero-return placeholder with its two event-gated
+  comparisons against the tracked pointer at object offset `0x28`.
+- Event `0x21` compares the payload pointer directly; event zero compares the
+  payload object's linked pointer at `0x318`. A match calls `func_1516972C` on
+  the current object. An explicit payload local recovers the final three load
+  and register-allocation words, allowing all 29 words to match without guards.
+- Direct comparison matches all 116 linked bytes with SHA-256
+  `84d13c435234d104c77b0fc196c0dc32333168538b30046bc6f3b95c2a208484`.
+  Fresh totals are **2,910 / 5,466 (53.24%)** overall and
+  **2,336 / 4,790 (48.77%)** in Game. See
+  [Working Note 408](WORKING_NOTES/408-game-event-linked-object-removal-match-20260928.md).
+
 ### Game staged halfword ramp byte-matched
 
 - Replaced `func_150B71A8`'s zero-return placeholder with its staged updates

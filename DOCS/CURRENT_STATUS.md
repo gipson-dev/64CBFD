@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-28:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,909 / 5,466 (53.22%) | 1 | 2,556 |
+| Total | 2,910 / 5,466 (53.24%) | 1 | 2,555 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,335 / 4,790 (48.75%) | 0 | 2,455 |
+| Game | 2,336 / 4,790 (48.77%) | 0 | 2,454 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -949,9 +949,14 @@ end-to-end gameplay acceptance.
    clamps. The complete branch-likely and early-return shape emits directly
    from C with no guards; see
    [Working Note 407](WORKING_NOTES/407-game-staged-halfword-ramp-match-20260928.md).
+   The 29-word event-linked object removal filter `func_150BE150` is now
+   byte-exact after recovering its event-byte narrowing, direct payload match,
+   and event-zero linked-pointer match. An explicit payload local recovers the
+   final retail load schedule; no guards are required. See
+   [Working Note 408](WORKING_NOTES/408-game-event-linked-object-removal-match-20260928.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary unparked 29-word Game `func_150BE150`, at 26 real
+   with ordinary unparked 27-word Game `func_150C19C0`, at 26 real
    differences. Keep the documented lower-difference compiler cases parked,
    and keep `func_151F3D78` parked behind its pre-existing audio object layout
    drift. The tied Init cache rows are SDK routines, while `func_10012588`
