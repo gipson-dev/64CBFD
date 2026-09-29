@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-28
 
+### Game two-event command dispatcher byte-matched
+
+- Replaced `func_150C19C0`'s zero-return placeholder with its command mapping
+  and call to `func_15142314` through the owner pointer at offset `0x1D4`.
+- Event `1` selects command `0x18`; event `2` selects command `0x15`. Retail
+  has no default assignment, and the recovery preserves that contract. A
+  two-case switch reproduces all 27 words directly from C with no guards.
+- Direct comparison matches all 108 linked bytes with SHA-256
+  `61edfab9f109b2b4bd29a04b5e856450a8fc8b4bff97757c439029055d77f36f`.
+  Fresh totals are **2,911 / 5,466 (53.26%)** overall and
+  **2,337 / 4,790 (48.79%)** in Game. See
+  [Working Note 409](WORKING_NOTES/409-game-two-event-command-dispatch-match-20260928.md).
+
 ### Game event-linked object removal byte-matched
 
 - Replaced `func_150BE150`'s zero-return placeholder with its two event-gated
