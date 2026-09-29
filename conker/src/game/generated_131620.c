@@ -1,11 +1,21 @@
 #include <ultra64.h>
 extern u8 *D_800CC5EC;
 s32 func_1517F08C();
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
 
 /* Non-matching placeholders for the text-only asm slice asm/131620.s. */
 
-s32 func_15104170() {
-    return 0;
+void func_15104170(s32 arg0, s32 arg1, s32 arg2) {
+    u8 *temp_v0 = func_15167A68(0x64, 0, 0x20, 0, 0xFF, 1);
+
+    if (temp_v0 != NULL) {
+        *(s16 *) (temp_v0 + 0x18) = 0xF;
+        temp_v0[0x1A] = 0;
+        temp_v0[0x1B] = 0;
+        *(s32 *) (temp_v0 + 0x10) = arg1;
+        *(s32 *) (temp_v0 + 0x14) = arg2;
+        temp_v0[0x1C] = arg0;
+    }
 }
 
 s32 func_151041E4() {

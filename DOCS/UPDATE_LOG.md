@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game type-0x64 record allocator byte-matched
+
+- Replaced `func_15104170`'s zero-return placeholder with its recovered
+  `func_15167A68` allocation and record initialization.
+- A successful allocation initializes the timer to `0xF`, clears two state
+  bytes, retains the caller's two words, and stores the first argument as a
+  selector byte. Correcting the function's contract to `void` removes an
+  artificial return-value copy and reproduces retail's null path.
+- All 29 words emit directly from semantic C with no guarded replacements.
+  The linked and pristine retail spans share SHA-256
+  `31cd26b3f8dc9d4dad65be176cb2da0a5c555d08a8d1db15f85f1df654543519`.
+- Totals are **2,960 / 5,465 (54.16%)** overall and **2,386 / 4,789
+  (49.82%)** in Game. See
+  [Working Note 458](WORKING_NOTES/458-game-type64-record-allocator-match-20260929.md).
+
 ### Game actor-slot creation adapter byte-matched
 
 - Replaced `func_150E32D0`'s zero-return placeholder with its recovered

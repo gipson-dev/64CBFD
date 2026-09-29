@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,465 / 6,041 (90.47%) | 2,959 / 5,465 (54.14%) | 1 | 2,505 |
+| Total | 5,465 / 6,041 (90.47%) | 2,960 / 5,465 (54.16%) | 1 | 2,504 |
 | Init | 495 / 538 (92.01%) | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 4,789 / 5,321 (90.00%) | 2,385 / 4,789 (49.80%) | 0 | 2,404 |
+| Game | 4,789 / 5,321 (90.00%) | 2,386 / 4,789 (49.82%) | 0 | 2,403 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -1531,6 +1531,10 @@ The 28-word Game actor-slot creation adapter `func_150E32D0` is now
 byte-exact directly from C after recovering the full `func_150E3020` call ABI
 and one-based slot result. This remains guest-side donor/reference progress;
 see [Working Note 457](WORKING_NOTES/457-game-actor-slot-creation-adapter-match-20260929.md).
+The 29-word Game type-`0x64` record allocator `func_15104170` is now
+byte-exact directly from C after recovering its `void` contract and complete
+record initialization. This remains guest-side donor/reference progress; see
+[Working Note 458](WORKING_NOTES/458-game-type64-record-allocator-match-20260929.md).
 
 Current host-port progression and acceptance boundaries:
 
