@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game object-record cleanup byte-matched
+
+- Replaced `func_1518E308`'s zero-return placeholder with its recovered owner
+  reset, 100-record live-pointer release loop, and complete `0x960`-byte array
+  clear.
+- All 29 words emit directly from semantic C with no guarded replacements,
+  including retail's branch-likely loop increment and retained array base.
+- The complete linked and pristine retail 116-byte spans share SHA-256
+  `a062376721760a70f62df07a70915d1a422edc96387ff8ec416e4248dc20dcf6`.
+- Totals are **2,965 / 5,465 (54.25%)** overall and **2,391 / 4,789
+  (49.93%)** in Game. See
+  [Working Note 463](WORKING_NOTES/463-game-object-record-cleanup-match-20260929.md).
+
 ### Game accelerated-motion integrator byte-matched
 
 - Replaced `func_1515B994`'s zero-return placeholder with its recovered

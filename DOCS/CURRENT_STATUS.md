@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,964 / 5,465 (54.24%) | 1 | 2,500 |
+| Total | 2,965 / 5,465 (54.25%) | 1 | 2,499 |
 | Init | 393 / 495 (79.39%) | 1 | 101 |
-| Game | 2,390 / 4,789 (49.91%) | 0 | 2,399 |
+| Game | 2,391 / 4,789 (49.93%) | 0 | 2,398 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 2,964, while
+denominator driven: the exact count is now 2,965, while
 506 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -1242,9 +1242,13 @@ end-to-end gameplay acceptance.
    fail-closed guards preserve retail's equivalent floating-point register
    lifetimes and independent load/store schedule. See
    [Working Note 462](WORKING_NOTES/462-game-accelerated-motion-integrator-match-20260929.md).
+   The 29-word object-record cleanup `func_1518E308` is now byte-exact
+   directly from C. It clears two owner fields, releases live pointers from
+   100 fixed-size records, and zeroes the complete record array. See
+   [Working Note 463](WORKING_NOTES/463-game-object-record-cleanup-match-20260929.md).
    `func_10003BD0` was audited across several C shapes and remains at 25 real
    differences; keep it open without retaining experimental source. Resume
-   with ordinary 29-word Game `func_1518E308`, at 28 real differences, after
+   with ordinary 29-word Game `func_151B8BE0`, at 28 real differences, after
    the already documented parked compiler-scheduling cases.
    Keep `func_15194320` and `func_15194394` parked behind generated-slice
    jump-table/rodata ownership rather than introducing unresolved switches.

@@ -83,8 +83,19 @@ s32 func_1518E298(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     return 1;
 }
 
-s32 func_1518E308() {
-    return 0;
+void func_1518E308(u8 *arg0) {
+    u8 *record;
+    s32 i;
+
+    record = arg0 + 0x48;
+    *(s32 *) (arg0 + 0x28) = 0;
+    *(f32 *) (arg0 + 0x24) = 0.0f;
+    for (i = 0; i < 100; i++, record += 0x18) {
+        if (*(void **) record != NULL) {
+            func_1516972C(*(void **) record);
+        }
+    }
+    bzero(arg0 + 0x48, 0x960);
 }
 
 void func_1518E37C(u8 *arg0, u8 arg1) {
