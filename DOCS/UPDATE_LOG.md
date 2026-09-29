@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game small record-copy allocator byte-matched
+
+- Replaced `func_1515FF74`'s zero-return placeholder with its recovered record
+  allocation, explicit null return, and eight-byte payload copy.
+- All 30 words emit directly from semantic C. The forwarded category, adjusted
+  offset, byte selector, allocator stack arguments, `memcpy` call, and result
+  lifetime require no expected-word guards.
+- The linked and retail 120-byte spans share SHA-256
+  `9fa00267f5c4abdc9ea6b53cfb528fd6267781e75343bd4a68140e4daec73f9f`.
+- Totals are **2,991 / 5,465 (54.73%)** overall and **2,416 / 4,789
+  (50.45%)** in Game, with no address-drift rows. See
+  [Working Note 487](WORKING_NOTES/487-game-small-record-copy-allocator-match-20260929.md).
+
 ### Game record find-or-create updater byte-matched
 
 - Replaced `func_151557FC`'s zero-return placeholder with its recovered record

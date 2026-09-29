@@ -7,13 +7,21 @@ typedef struct { s32 val; } OneWord18D250;
 /* Non-matching placeholders for the text-only asm slice asm/18D250.s. */
 
 extern void (*D_8008B0E4[])(u8 *, s32, u8);
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
 
 s32 func_1515FDA0() {
     return 0;
 }
 
-s32 func_1515FF74() {
-    return 0;
+void *func_1515FF74(void *source, s32 offset, u8 selector, s32 category) {
+    u8 *record = func_15167A68(0x34, category, offset + 0x18, 1, selector, 1);
+
+    if (record == NULL) {
+        return NULL;
+    }
+
+    memcpy(record + 0xE, source, 8);
+    return record;
 }
 
 s32 func_1515FFEC() {

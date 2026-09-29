@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 2,990 / 5,465 (54.71%) | 0 | 2,475 |
+| Total | 2,991 / 5,465 (54.73%) | 0 | 2,474 |
 | Init | 394 / 495 (79.60%) | 0 | 101 |
-| Game | 2,415 / 4,789 (50.43%) | 0 | 2,374 |
+| Game | 2,416 / 4,789 (50.45%) | 0 | 2,373 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -178,6 +178,9 @@ guarded words normalize only the independent success-path schedule; see
 `func_151557FC` is byte-exact directly from C after recovering its find-or-create
 path, float update, and actor-table-dependent state/timer initialization; see
 [Working Note 486](WORKING_NOTES/486-game-record-find-or-create-update-match-20260929.md).
+`func_1515FF74` is byte-exact directly from C after recovering its allocation
+arguments, explicit null return, and eight-byte payload copy; see
+[Working Note 487](WORKING_NOTES/487-game-small-record-copy-allocator-match-20260929.md).
 
 ## Verified build state
 
