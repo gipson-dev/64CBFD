@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game auxiliary-state allocator byte-matched
+
+- `func_1503B7C0` restores allocation and clearing of an 0x50-byte auxiliary
+  record, its `30.0f` field, and its PRNG-derived modulo-30 halfword.
+- The complete 128-byte function emits directly from semantic C without guard
+  rows. Linked and retail spans share SHA-256
+  `8994679685f5b6fc094da283e915dd0eee9b0eb5c37aeb33bb08ec1b739d0c00`.
+- Totals are **3,046 / 5,463 (55.76%)** overall and
+  **2,467 / 4,789 (51.51%)** in Game. See
+  [Working Note 542](WORKING_NOTES/542-game-auxiliary-state-allocator-match-20260929.md).
+
 ### Game indexed 64-bit flag query byte-matched
 
 - `func_1501D2C4` restores the global override and indexed

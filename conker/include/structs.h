@@ -1006,7 +1006,8 @@ typedef struct {
     u16 unk116;
     u16 unk118;
     u8  unk11A;
-    u8  pad11B[0x5];
+    u8  pad11B;
+    void *unk11C;
     u8  unk120;
     u8  unk121;
     u8  unk122;

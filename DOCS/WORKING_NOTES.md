@@ -507,12 +507,18 @@ the indexed `D_800C3A60` 64-bit value. IDO emits retail's `__ll_lshift` call
 and split word test without guards. See
 [Working Note 541](WORKING_NOTES/541-game-indexed-64-bit-flag-query-match-20260929.md).
 
+Game `func_1503B7C0` now matches all 32 retail words directly from semantic C.
+It allocates and clears an 0x50-byte auxiliary record, stores it through
+`struct126` offset `0x11C`, initializes float offset `0x44` to `30.0f`, and
+sets halfword offset `0x4C` from the PRNG modulo 30. See
+[Working Note 542](WORKING_NOTES/542-game-auxiliary-state-allocator-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 32-word Game `func_1503B7C0`, the next ordinary row.
+Continue with 33-word Game `func_150413FC`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four
