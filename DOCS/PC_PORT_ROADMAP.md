@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,031 / 5,463 (55.48%) | 0 | 2,432 |
+| Total | 5,463 / 6,041 (90.43%) | 3,032 / 5,463 (55.50%) | 0 | 2,431 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,453 / 4,789 (51.22%) | 0 | 2,336 |
+| Game | 4,789 / 5,321 (90.00%) | 2,454 / 4,789 (51.24%) | 0 | 2,335 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -194,6 +194,10 @@ The Game motion-threshold updater `func_150CC638` now matches its complete
 128-byte span after restoring its flag gate, scaled byte limit, motion-record
 threshold, and paired float accumulation; see
 [Working Note 527](WORKING_NOTES/527-game-motion-threshold-updater-match-20260929.md).
+The Game mode-selected color wrapper `func_150D22F4` now matches its complete
+128-byte span directly from C after restoring its record-byte choice, channel
+arguments, signed selector forwarding, and updated-handle return; see
+[Working Note 528](WORKING_NOTES/528-game-mode-selected-color-wrapper-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game mode-selected color wrapper byte-matched
+
+- `func_150D22F4` now selects record byte `0x3C` with three `0xFF` channel
+  arguments when mode byte `0x28` equals one, or record byte `0x3D` with three
+  zero channels otherwise, then returns the handle from `func_1517F08C`.
+- The typed three-argument wrapper emits all 32 retail words directly from C;
+  no expected-word guards are needed.
+- The linked and retail 128-byte spans share SHA-256
+  `7bb68200536b66166927c2070077dbc5ac251147b697bc66c064635dd18c443c`.
+- Totals are **3,032 / 5,463 (55.50%)** overall and
+  **2,454 / 4,789 (51.24%)** in Game, with no address-drift rows. See
+  [Working Note 528](WORKING_NOTES/528-game-mode-selected-color-wrapper-match-20260929.md).
+
 ### Game motion-threshold updater byte-matched
 
 - `func_150CC638` now gates on object flag bit zero, tightens the byte at
