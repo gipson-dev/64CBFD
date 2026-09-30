@@ -2457,3 +2457,8 @@ game_40490,func_15013D38,0x030,0x24090001,0x240A00FF,-,-,Materialize the byte ma
 game_40490,func_15013D38,0x034,0x240A00FF,0x240B0001,-,-,Materialize the final overflow argument after the byte mask,,,false
 game_40490,func_15013D38,0x038,0x240B0001,0x24030001,-,-,Materialize the default stored value after all call constants,,,false
 generated_50D80,func_15024130,0x03C,0x022E1021,0x01D11021,-,-,Preserve retail's commutative table-base addition operand order,,,false
+game_A28B0,func_15076768,0x050,0x27A40020,0xE7A60048,-,-,Store the fixed vertical position before forming the descriptor address,,,false
+game_A28B0,func_15076768,0x054,0xE7A60048,0xE7A40044,-,-,Store the actor X position after the fixed vertical position,,,false
+game_A28B0,func_15076768,0x058,0xE7A40044,0xC4A8001C,-,-,Load the actor Z position after the first two position stores,,,false
+game_A28B0,func_15076768,0x05C,0xC4A8001C,0xE7A8004C,-,-,Store the actor Z position immediately after loading it,,,false
+game_A28B0,func_15076768,0x064,0xE7A8004C,0x27A40020,-,-,Form the descriptor address in the helper-call delay slot,,,false

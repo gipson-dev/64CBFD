@@ -6,7 +6,7 @@
 /* Generated placeholder declarations. */
 s32 func_15075938();
 s32 func_1507602C();
-s32 func_15076768();
+void func_15076768(void);
 s32 func_15077508();
 s32 func_15077F64();
 s32 func_150793D8();
@@ -18,8 +18,11 @@ s32 func_1507BB28();
 
 void func_1502EA60(struct127 *arg0, u8 arg1);
 void func_1502EA7C(struct127 *arg0, u8 arg1);
+void func_1504715C(void *arg0, struct127 *arg1);
 f32 func_150489B0(u8 arg0);
+void func_1514B364(struct17 *arg0, void *arg1, u8 arg2, s32 arg3);
 void func_151669A0(s32 arg0, s32 arg1, s32 arg2, f32 arg3, u8 arg4, s32 arg5);
+void func_15197A7C(struct127 *arg0);
 
 typedef struct {
     s16 x;
@@ -505,10 +508,22 @@ void func_150766D0(void) {
 void func_15076760(void) {
 }
 
-// ???
-/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15076768.s. */
-s32 func_15076768() {
-    return 0;
+void func_15076768(void) {
+    struct17 position;
+    u32 descriptor[9];
+
+    switch (D_800D1890) {
+        case 0:
+            func_15197A7C(D_800D154C);
+            break;
+        case 1:
+            position.unk0 = D_800D154C->x_position;
+            position.unk4 = -390.0f;
+            position.unk8 = D_800D154C->z_position;
+            func_1504715C(&descriptor, D_800D154C);
+            func_1514B364(&position, descriptor, 0xFF, 0);
+            break;
+    }
 }
 
 

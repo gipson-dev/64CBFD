@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,461 / 6,041 (90.40%) | 3,072 / 5,461 (56.25%) | 0 | 2,389 |
+| Total | 5,461 / 6,041 (90.40%) | 3,073 / 5,461 (56.27%) | 0 | 2,388 |
 | Init | 492 / 538 (91.45%) | 398 / 492 (80.89%) | 0 | 94 |
-| Game | 4,788 / 5,321 (89.98%) | 2,493 / 4,788 (52.07%) | 0 | 2,295 |
+| Game | 4,788 / 5,321 (89.98%) | 2,494 / 4,788 (52.09%) | 0 | 2,294 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -351,6 +351,11 @@ after recovering its unsigned input, 80-entry bound, and four-way lookup loop.
 The complete routine emits directly from C under the slice's recovered
 no-loop-unroll profile; see
 [Working Note 570](WORKING_NOTES/570-game-byte-table-index-lookup-match-20260930.md).
+The Game scripted-position effect dispatcher `func_15076768` now matches all
+140 bytes after recovering its mode-zero actor callback and mode-one fixed-Y
+position effect. Five guarded words normalize one closed IDO scheduling cycle;
+see
+[Working Note 571](WORKING_NOTES/571-game-scripted-position-effect-dispatch-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

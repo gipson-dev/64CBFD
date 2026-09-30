@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game scripted-position effect dispatcher byte-matched
+
+- `func_15076768` now handles mode zero by forwarding the current actor to
+  `func_15197A7C`. Mode one derives an effect descriptor and dispatches it at
+  the actor's X/Z coordinates with a fixed Y coordinate of `-390.0f`.
+- Thirty of 35 words emit directly from semantic C. Five stale-checked guards
+  normalize one closed position-store/descriptor-address scheduling cycle.
+  The linked and retail spans share SHA-256
+  `d67a510fcc3d0c50ccfad8e060acdc820a3c1fb2ce8bfa38a1304ccf5c60429b`.
+- Totals are **3,073 / 5,461 (56.27%)** overall and
+  **2,494 / 4,788 (52.09%)** in Game. See
+  [Working Note 571](WORKING_NOTES/571-game-scripted-position-effect-dispatch-match-20260930.md).
+
 ### Game byte-table index lookup byte-matched
 
 - `func_15041480` now narrows its input to an unsigned byte, scans all 80
