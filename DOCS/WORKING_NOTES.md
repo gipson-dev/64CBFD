@@ -453,12 +453,17 @@ a 12-byte owner payload, requests the fixed `0x12C` object, and copies the
 payload to offset `0x28` only when allocation succeeds. See
 [Working Note 531](WORKING_NOTES/531-game-owner-payload-allocation-wrapper-match-20260929.md).
 
+Game `func_15152ABC` now matches all 31 retail words directly from C. It uses
+two RNG results to select one of five RGB entries and an alpha from 155 through
+255. See
+[Working Note 532](WORKING_NOTES/532-game-randomized-rgba-initializer-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 31-word Game `func_15152ABC`, the next ordinary placeholder.
+Continue with 32-word Game `func_15157898`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

@@ -6,7 +6,9 @@ typedef struct { s32 a, b; } TwoWord17CAF0;
 
 extern void (*D_8008AD04[])(u8 *, s32, u8);
 extern u8 D_800A6038[];
+extern u8 D_800A5FE0[][3];
 void func_15169260(void *, s32, void *, u8);
+s32 func_150ADA20(void);
 s32 func_1514FF44(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
 s32 func_15153CCC(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
 
@@ -87,8 +89,17 @@ s32 func_15152874() {
     return 0;
 }
 
-s32 func_15152ABC() {
-    return 0;
+/* Note 532: randomized RGBA color initialization. */
+void func_15152ABC(u8 *arg0) {
+    u8 index;
+    u8 *color;
+
+    index = func_150ADA20() % 5U;
+    color = D_800A5FE0[index];
+    arg0[3] = (func_150ADA20() % 101U) + 155;
+    arg0[0] = color[0];
+    arg0[1] = color[1];
+    arg0[2] = color[2];
 }
 
 s32 func_15152B38() {

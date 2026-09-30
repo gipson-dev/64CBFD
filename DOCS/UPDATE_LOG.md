@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game randomized RGBA initializer byte-matched
+
+- `func_15152ABC` now selects one of five RGB triplets and generates an alpha
+  byte in the inclusive range 155 through 255 from two RNG results.
+- The unsigned remainder operations and byte-width table index emit all 31
+  retail words directly from C with no expected-word guards.
+- The linked and retail 124-byte spans share SHA-256
+  `88d2149442bf8daa04fcfad60211c9ac28fe73d3f87a481e14acbb788959d265`.
+- Totals are **3,036 / 5,463 (55.57%)** overall and
+  **2,458 / 4,789 (51.33%)** in Game, with no address-drift rows. See
+  [Working Note 532](WORKING_NOTES/532-game-randomized-rgba-initializer-match-20260929.md).
+
 ### Game owner-payload allocation wrapper byte-matched
 
 - `func_1514F3CC` now builds the retail 12-byte owner payload, requests its

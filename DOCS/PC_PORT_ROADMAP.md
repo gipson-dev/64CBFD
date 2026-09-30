@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,035 / 5,463 (55.56%) | 0 | 2,428 |
+| Total | 5,463 / 6,041 (90.43%) | 3,036 / 5,463 (55.57%) | 0 | 2,427 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,457 / 4,789 (51.31%) | 0 | 2,332 |
+| Game | 4,789 / 5,321 (90.00%) | 2,458 / 4,789 (51.33%) | 0 | 2,331 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -210,6 +210,10 @@ The Game owner-payload allocation wrapper `func_1514F3CC` now matches its
 complete 128-byte span directly from C after restoring the 12-byte local
 payload, fixed allocation request, and conditional copy; see
 [Working Note 531](WORKING_NOTES/531-game-owner-payload-allocation-wrapper-match-20260929.md).
+The Game randomized RGBA initializer `func_15152ABC` now matches its complete
+124-byte span directly from C after restoring its five-entry RGB selection and
+random alpha range; see
+[Working Note 532](WORKING_NOTES/532-game-randomized-rgba-initializer-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
