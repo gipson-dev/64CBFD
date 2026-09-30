@@ -495,12 +495,18 @@ optional child. Two explicit integer-indexed loops recover retail's independent
 table-address setup and branch-likely pointer walks with no guards. See
 [Working Note 539](WORKING_NOTES/539-init-primary-child-record-lookup-match-20260929.md).
 
+Game `func_1501D1D4` now matches all 33 retail words directly from semantic C.
+It calls `func_1502B6BC` with two local outputs, constants `3` and `6`, and
+two incoming values, then stores or clears the returned handle in the indexed
+`D_800C3668` slot. No expected-word guards are needed. See
+[Working Note 540](WORKING_NOTES/540-game-indexed-constructor-wrapper-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 33-word Game `func_1501D1D4`, the next ordinary row.
+Continue with adjacent 33-word Game `func_1501D2C4`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

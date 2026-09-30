@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game indexed constructor wrapper byte-matched
+
+- `func_1501D1D4` restores the seven-argument `func_1502B6BC` call, its two
+  local outputs, and the indexed success/failure handle update.
+- The complete 132-byte function emits directly from semantic C without guard
+  rows. Linked and retail spans share SHA-256
+  `05f16c6812cc11dc9363f53b441b15cb02723d07be71832972168ba7fce45f85`.
+- Totals are **3,044 / 5,463 (55.72%)** overall and
+  **2,465 / 4,789 (51.47%)** in Game. See
+  [Working Note 540](WORKING_NOTES/540-game-indexed-constructor-wrapper-match-20260929.md).
+
 ### Init primary/child record lookup byte-matched
 
 - `func_1000B1FC` searches all three primary records and then their optional
