@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game global mode-state updater byte-matched
+
+- `func_151D66F0` now preserves the mode-6 availability gate, normalizes the
+  selector when its mode argument is zero, updates the paired global state
+  bytes, and releases the retained resource when the selector is disabled.
+- All 34 words and their relocations emit directly from semantic C with no
+  guard rows. The linked ELF and pristine decompressed retail spans share
+  SHA-256 `891d28f56a54c034702efd5cd9fae345a6402c9b469fc259ab59040be46ca8a7`.
+- Totals are **3,069 / 5,462 (56.19%)** overall and
+  **2,490 / 4,788 (52.01%)** in Game. See
+  [Working Note 566](WORKING_NOTES/566-game-global-mode-state-updater-match-20260930.md).
+
 ### Game midpoint-timestep integrator byte-matched
 
 - `func_151CEA20` now advances velocity from acceleration, advances position

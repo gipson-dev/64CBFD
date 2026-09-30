@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, midpoint-timestep integrator matched).**
-The current linked checkpoint is `3068 / 5462 (56.17%)` exact C functions,
-with no address-drift blockers and 2,394 genuinely different C functions.
+**Active (2026-09-30, global mode-state updater matched).**
+The current linked checkpoint is `3069 / 5462 (56.19%)` exact C functions,
+with no address-drift blockers and 2,393 genuinely different C functions.
 Init is
 `398 / 493 (80.73%)` exact, with 95 genuinely different C rows. Game is
-`2489 / 4788 (51.98%)` exact, with 2,299 genuinely different C rows. The tree
+`2490 / 4788 (52.01%)` exact, with 2,298 genuinely different C rows. The tree
 contains 579 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -646,13 +646,21 @@ semantic C; 21 stale-checked guards normalize closed FP-register cycles and
 one equivalent load/store schedule. See
 [Working Note 565](WORKING_NOTES/565-game-midpoint-timestep-integrator-match-20260930.md).
 
+Game `func_151D66F0` now matches all 34 retail words directly from semantic C.
+It honors the mode-6 availability gate, forces a zero selector when its mode
+argument is zero, updates the paired state bytes, and releases and clears the
+retained resource when disabling the selector. See
+[Working Note 566](WORKING_NOTES/566-game-global-mode-state-updater-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 34-word Game `func_151D66F0`, the next ordinary row.
+cycle. Review 48-word Init `__osProbeTLB`, the next matcher row, for original
+handwritten CP0/TLB ownership. If it remains assembly-owned, continue with
+44-word Game `func_15013D38`, the next ordinary C row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

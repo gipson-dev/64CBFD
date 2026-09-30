@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,068 / 5,462 (56.17%) | 0 | 2,394 |
+| Total | 5,462 / 6,041 (90.42%) | 3,069 / 5,462 (56.19%) | 0 | 2,393 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,788 / 5,321 (89.98%) | 2,489 / 4,788 (51.98%) | 0 | 2,299 |
+| Game | 4,788 / 5,321 (89.98%) | 2,490 / 4,788 (52.01%) | 0 | 2,298 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -327,6 +327,11 @@ bytes. Its velocity, midpoint-position, secondary-scalar, and upper-clamp
 behavior are recovered in semantic C; 21 guarded words normalize only IDO FP
 allocation and load/store scheduling. See
 [Working Note 565](WORKING_NOTES/565-game-midpoint-timestep-integrator-match-20260930.md).
+The Game global mode-state updater `func_151D66F0` now matches all 136 bytes
+directly from semantic C. It preserves the mode-6 availability gate, normalizes
+the disabled selector pair, and releases the retained resource when the mode
+is cleared. See
+[Working Note 566](WORKING_NOTES/566-game-global-mode-state-updater-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
