@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game motion-threshold updater byte-matched
+
+- `func_150CC638` now gates on object flag bit zero, tightens the byte at
+  offset `0x5C` from the signed halfword at `0x1C`, and conditionally adds the
+  motion-record rate times `D_800BE9A4` to both position accumulators.
+- Thirteen stale-checked guards normalize only IDO's equivalent register and
+  address schedule; two inserted words retain retail's repeated `0x128`
+  record-pointer materialization.
+- The linked and retail 128-byte spans share SHA-256
+  `f513b7f3c9bee8f04c2afe8007ea87e74d5ba3cd3a2c240639dcd9bc60eb3bfe`.
+- Totals are **3,031 / 5,463 (55.48%)** overall and
+  **2,453 / 4,789 (51.22%)** in Game, with no address-drift rows. See
+  [Working Note 527](WORKING_NOTES/527-game-motion-threshold-updater-match-20260929.md).
+
 ### Game randomized effect-parameter wrapper byte-matched
 
 - `func_150B6754` now calls the PRNG twice, derives unsigned `200..255` and

@@ -424,12 +424,19 @@ spill while the recovered eight-argument ABI preserves every forwarded value.
 See
 [Working Note 526](WORKING_NOTES/526-game-randomized-effect-parameter-wrapper-match-20260929.md).
 
+Game `func_150CC638` now matches all 32 retail words. The recovered body gates
+on flag bit zero, tightens a byte limit from the signed input, and applies a
+record rate to two accumulators when its threshold is passed. Thirteen
+stale-checked guards retain retail's equivalent register/address schedule and
+two pointer-materialization words. See
+[Working Note 527](WORKING_NOTES/527-game-motion-threshold-updater-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 32-word Game `func_150CC638`, the next ordinary placeholder.
+Continue with 32-word Game `func_150D22F4`, the next ordinary placeholder.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

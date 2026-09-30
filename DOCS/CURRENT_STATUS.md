@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,030 / 5,463 (55.46%) | 0 | 2,433 |
+| Total | 3,031 / 5,463 (55.48%) | 0 | 2,432 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,452 / 4,789 (51.20%) | 0 | 2,337 |
+| Game | 2,453 / 4,789 (51.22%) | 0 | 2,336 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 3,011, while
+denominator driven: the exact count is now 3,031, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -364,6 +364,12 @@ words after recovering its two PRNG ranges, incoming byte/context forwarding,
 and eight-argument effect call. The complete routine emits directly from C
 with no guards; see
 [Working Note 526](WORKING_NOTES/526-game-randomized-effect-parameter-wrapper-match-20260929.md).
+Game motion-threshold updater `func_150CC638` is byte-exact across all 32 words
+after recovering its flag gate, scaled byte limit, record threshold, and paired
+float accumulation. Thirteen stale-checked guards normalize only IDO's
+equivalent register/address schedule, including two retained pointer words;
+see
+[Working Note 527](WORKING_NOTES/527-game-motion-threshold-updater-match-20260929.md).
 
 ## Verified build state
 
@@ -690,7 +696,7 @@ end-to-end gameplay acceptance.
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. Continue with 32-word Game `func_150CC638`, the next
+   allocation boundary. Continue with 32-word Game `func_150D22F4`, the next
    ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
