@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game state-two countdown finalizer byte-matched
+
+- `func_1510D720` mirrors the indexed countdown finalizer and changes the
+  indexed state to two when the activity byte reaches zero.
+- All 35 words / 140 bytes emit directly from C with no guards. Linked
+  SHA-256 is
+  `291ebfdf97818a363db055caf102d3c63d6c9470df7db1bc76e7479705857527`.
+- Totals are **3,055 / 5,462 (55.93%)** overall and
+  **2,476 / 4,788 (51.71%)** in Game. See
+  [Working Note 552](WORKING_NOTES/552-game-state-two-countdown-finalizer-match-20260930.md).
+
 ### Game indexed countdown finalizer byte-matched
 
 - `func_1510D694` decrements an indexed activity byte and, on its transition

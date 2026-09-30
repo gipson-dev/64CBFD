@@ -6,6 +6,7 @@ extern s32 D_800D9F5C;
 extern u8 D_800D9F68[];
 s32 func_10004074();
 void func_1510D694(s32 arg0);
+void func_1510D720(s32 arg0);
 
 /* Non-matching placeholders for the text-only asm slice asm/139FC0.s. */
 
@@ -82,8 +83,27 @@ void func_1510D694(s32 arg0) {
     }
 }
 
-s32 func_1510D720() {
-    return 0;
+/* Finalize the corresponding countdown transition into state two. */
+void func_1510D720(s32 arg0) {
+    u8 *entry;
+    u8 value;
+
+    if (D_800BC448[arg0] != 0) {
+        entry = &D_800D9F68[arg0];
+        value = *entry;
+        if (value != 0) {
+            *entry = value - 1;
+            if (*entry == 0) {
+                if (arg0 < D_800D9F58) {
+                    D_800D9F58 = arg0;
+                }
+                if (arg0 > D_800D9F5C) {
+                    D_800D9F5C = arg0;
+                }
+                func_1510D608(arg0, 2);
+            }
+        }
+    }
 }
 
 s32 func_1510D7AC() {
