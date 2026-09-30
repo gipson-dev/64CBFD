@@ -185,6 +185,17 @@ init_EB00,func_1000EE70,0x084,0x44185000,0x44195000,-,-,Move the second truncate
 init_EB00,func_1000EE70,0x08C,0xA4B80004,0xA4B90004,-,-,Store the second coordinate through retail's t9 lifetime,,,false
 init_EB00,func_1000EE70,0x098,0x44089000,0x44099000,-,-,Move the third truncated coordinate through retail's t1 lifetime,,,false
 init_EB00,func_1000EE70,0x0A0,0xA4A80006,0xA4A90006,-,-,Store the third coordinate through retail's t1 lifetime,,,false
+init_EB00,func_1000EDA0,0x064,0x0061C024,0x0061C824,-,-,Keep the packed timer high half in retail's t9 lifetime,,,false
+init_EB00,func_1000EDA0,0x078,0x0305C825,0x03254025,-,-,Merge the decremented timer through retail's t0 lifetime,,,false
+init_EB00,func_1000EDA0,0x07C,0x8FAD0040,0x8FAE0040,-,-,Load the output pointer through retail's t6 lifetime,,,false
+init_EB00,func_1000EDA0,0x080,0x00031403,0x00036C03,-,-,Extract the packed high half through retail's t5 lifetime,,,false
+init_EB00,func_1000EDA0,0x084,0xA5A20000,0xA5CD0000,-,-,Store the expired high half through retail's t6 pointer,,,false
+init_EB00,func_1000EDA0,0x088,0xA6020000,0xA60D0000,-,-,Store the expired high half through retail's t5 lifetime,,,false
+init_EB00,func_1000EDA0,0x08C,0x8FAE0040,0x8FAF0040,-,-,Reload the output pointer through retail's t7 lifetime,,,false
+init_EB00,func_1000EDA0,0x090,0x960F0008,0x96180008,-,-,Load the final callback halfword through retail's t8 lifetime,,,false
+init_EB00,func_1000EDA0,0x0A0,0x95C40000,0x95E40000,-,-,Load the callback identifier through retail's t7 pointer,,,false
+init_EB00,func_1000EDA0,0x0A8,0xAFAF0010,0xAFB80010,-,-,Pass the final callback halfword through retail's t8 lifetime,,,false
+init_EB00,func_1000EDA0,0x0B4,0xAE190018,0xAE080018,-,-,Store the merged packed timer through retail's t0 lifetime,,,false
 init_EB00,func_10010E78,0x050,0x00590019,0x03220019,-,-,Preserve retail's commutative fixed-point multiply operand order,,,false
 debugger,func_16001390,0x13C,0x00095040,0x00193C03,,,Schedule row sign extension before stride scaling
 debugger,func_16001390,0x140,0x00193C03,0x00095040,,,Schedule stride scaling after row sign extension

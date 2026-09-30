@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,089 / 5,457 (56.61%) | 0 | 2,368 |
-| Init | 406 / 488 (83.20%) | 0 | 82 |
+| Total | 3,090 / 5,457 (56.62%) | 0 | 2,367 |
+| Init | 407 / 488 (83.40%) | 0 | 81 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -893,7 +893,9 @@ end-to-end gameplay acceptance.
    guarded temporary-register words; its frame, control flow, call, and actor
    update behavior emit directly from C. The 49-word mode-flag dispatch
    wrapper `func_1000CAE4` is byte-exact directly from semantic C with no
-   guarded words.
+   guarded words. The 52-word packed-timer callback `func_1000EDA0` is
+   byte-exact through 11 guarded temporary-register words after restoring its
+   real seven-argument ABI and expiry dispatch.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

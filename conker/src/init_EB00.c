@@ -129,8 +129,29 @@ s32 func_1000ECCC(struct251 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 a
 //     return 0;
 // }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000EDA0.s. */
-void func_1000EDA0(void *arg0, s32 arg1, s32 arg2, s32 arg3, void *arg6) {
+s32 func_1000EDA0(struct15 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, u16 *arg6) {
+    s16 timer;
+    s32 packed;
+
+    packed = arg0->unk18;
+    timer = packed;
+    if (*arg6 != 0) {
+        arg0->unk18 = (*arg6 << 16) | (packed & 0xFFFF);
+        *(s16 *)arg0 = 0;
+        *arg6 = 0;
+        packed = arg0->unk18;
+    }
+
+    timer -= D_800BE9E4;
+    if (timer <= 0) {
+        *arg6 = packed >> 16;
+        *(s16 *)arg0 = packed >> 16;
+        func_10010630(*arg6, (struct127 *)arg0->unk1C, arg0->unkC,
+                      *(s16 *)((u8 *)arg0 + 0xA), *(u16 *)((u8 *)arg0 + 8));
+        return 1;
+    }
+    arg0->unk18 = (packed & 0xFFFF0000) | timer;
+    return 0;
 }
 s32 func_1000EE70(struct15 *arg0, s32 arg1, s32 *arg2, s32 arg3, s32 arg4, s32 *arg5) {
     struct127 *actor;

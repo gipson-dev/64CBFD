@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init packed-timer callback byte-matched
+
+- `func_1000EDA0` refreshes a packed high half, decrements its signed low-half
+  timer, and dispatches the record through `func_10010630` on expiry.
+- Forty-one of 52 words emit directly from semantic C. Eleven stale-checked
+  guards preserve one closed expiry-path temporary-register rotation.
+- The linked and retail spans share SHA-256
+  `886bdb392b620bfbe0696c157098759fb4be73d307ceaabcf1ab4c3e9bd3f72b`.
+  Totals are **3,090 / 5,457 (56.62%)** overall and
+  **407 / 488 (83.40%)** in Init. See
+  [Working Note 592](WORKING_NOTES/592-init-packed-timer-callback-match-20260930.md).
+
 ### Init mode-flag dispatch wrapper byte-matched
 
 - `func_1000CAE4` updates two independent state bits across global mode
