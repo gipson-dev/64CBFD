@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Handwritten Game absolute-ordering helper restored
+
+- `func_150AD9A0` is restored from its false zero-return C placeholder to the
+  original 32-word handwritten absolute-value ordering body.
+- The linked 128-byte span is exact with SHA-256
+  `4a4f0a1e59e72bbf4c79d7209381c926f46563f59a94c9b2456f36e58382b620`.
+- The ownership correction changes the C denominator: totals are
+  **3,049 / 5,462 (55.82%)** overall and **2,470 / 4,788 (51.59%)** in Game.
+  See [Working Note 546](WORKING_NOTES/546-game-handwritten-absolute-ordering-helper-restoration-20260930.md).
+
 ### Game object-position forwarding adapter byte-matched
 
 - `func_1509F77C` resolves an object, truncates its three position floats, and

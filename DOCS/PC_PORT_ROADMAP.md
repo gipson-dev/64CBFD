@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,049 / 5,463 (55.81%) | 0 | 2,414 |
+| Total | 5,462 / 6,041 (90.42%) | 3,049 / 5,462 (55.82%) | 0 | 2,413 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,789 / 5,321 (90.00%) | 2,470 / 4,789 (51.58%) | 0 | 2,319 |
+| Game | 4,788 / 5,321 (89.98%) | 2,470 / 4,788 (51.59%) | 0 | 2,318 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -254,6 +254,9 @@ The Game state-three convergence scanner `func_1509CDDC` now matches its full
 The Game object-position forwarding adapter `func_1509F77C` now matches its
 full 132-byte span directly from C; see
 [Working Note 545](WORKING_NOTES/545-game-object-position-forwarding-adapter-match-20260930.md).
+The handwritten Game absolute-value ordering helper `func_150AD9A0` is
+restored from its false C placeholder and matches all 128 bytes; see
+[Working Note 546](WORKING_NOTES/546-game-handwritten-absolute-ordering-helper-restoration-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

@@ -3,17 +3,12 @@
 #include "functions.h"
 #include "variables.h"
 
-/* Generated placeholder declarations. */
-s32 func_150AD9A0();
-/* End generated placeholder declarations. */
-
 // some mips3/64bit stuff going on here
 
-/* Non-matching C placeholders for asm/nonmatchings/game_DAE50/func_150AD9A0.s. */
-s32 func_150AD9A0() {
-    return 0;
-}
-// NON-MATCHING: I am nothing without mip2c.
+// Handwritten absolute-value ordering helper; retained as original assembly.
+#pragma GLOBAL_ASM("asm/nonmatchings/game_DAE50/func_150AD9A0.s")
+
+// Historical C reconstruction notes.
 // s32 func_150AD9A0(s32 arg0, s32 arg1, s32 arg2) {
 //     s32 v0;
 //     s32 tmp0 = (s32)arg0; // = arg0;
