@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init actor sound dispatcher byte-matched
+
+- `func_10010630` ignores inactive actors, dispatches camera-owned sounds
+  through `func_10010F30`, and otherwise submits a positional sound record
+  with truncated actor coordinates and the actor refresh callback.
+- The semantic C restores the complete two-path behavior. Fifty-four
+  stale-checked guards preserve retail's saved `s0`/`s1` lifetimes, argument
+  setup, moved callback-address relocation pair, and call schedule.
+- The linked and retail spans share SHA-256
+  `3bec2ba128af0a55c7bb606f06d3d3cca59c83994bae3efe841627a5854c2feb`.
+  Totals are **3,098 / 5,457 (56.77%)** overall and
+  **415 / 488 (85.04%)** in Init. See
+  [Working Note 599](WORKING_NOTES/599-init-actor-sound-dispatcher-match-20260930.md).
+
 ### Init spatial channel-value updater byte-matched
 
 - `func_1000C934` selects a flag-dependent limit, optionally subtracts a

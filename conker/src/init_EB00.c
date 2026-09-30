@@ -554,18 +554,24 @@ void func_10010558(u16 arg0, struct127 *arg1, s32 arg2, s16 arg3, u16 arg4, s32 
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10010630.s. */
 void func_10010630(u16 arg0, struct127 *arg1, s32 arg2, s16 arg3, u16 arg4) {
+    struct127 *actor;
+    s32 value;
+
+    actor = arg1;
+    value = arg2;
+    if (actor->interaction_state != 0) {
+        if (actor->camera != 0) {
+            func_10010F30(arg0, (u16)value, 64, 0,
+                          (((u32)actor->unk184 >> 3) & 0x30) * 2);
+        } else {
+            func_1000FA64(arg0, (s16)actor->x_position,
+                          (s16)actor->y_position, (s16)actor->z_position,
+                          value, arg4, arg3, (s32)func_1000EE70, actor,
+                          actor->unique_id, 0, 0);
+        }
+    }
 }
-// void func_10010630(u16 arg0, struct127 *arg1, s32 arg2, s16 arg3, u16 arg4) {
-//     if (arg1->interaction_state != 0) {
-//         if (arg1->camera != 0) {
-//             func_10010F30(arg0, arg2 & 0xFFFF, 64, 0, (((u32) arg1->unk184 >> 3) & 0x30) * 2); //
-//         } else {
-//             func_1000FA64(arg0, arg1->x_position, arg1->y_position, arg1->z_position, arg2, arg4, arg3, (void *)func_1000EE70, arg1, arg1->unique_id, 0, 0);
-//         }
-//     }
-// }
 
 void func_10010720(u16 arg0, struct127 *arg1, s32 arg2, s16 arg3, u16 arg4, s32 arg5) {
     if (arg5 <= 0) {
