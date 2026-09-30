@@ -222,6 +222,8 @@ init_EB00,func_1000EDA0,0x090,0x960F0008,0x96180008,-,-,Load the final callback 
 init_EB00,func_1000EDA0,0x0A0,0x95C40000,0x95E40000,-,-,Load the callback identifier through retail's t7 pointer,,,false
 init_EB00,func_1000EDA0,0x0A8,0xAFAF0010,0xAFB80010,-,-,Pass the final callback halfword through retail's t8 lifetime,,,false
 init_EB00,func_1000EDA0,0x0B4,0xAE190018,0xAE080018,-,-,Store the merged packed timer through retail's t0 lifetime,,,false
+init_EB00,func_10011EB8,0x008,0xAFA60020,0xAFA60020,-,-,Retain the mapped-input copy after the third argument home,0x00803825,,false
+init_EB00,func_10011EB8,0x00C,0x0C000000,0x00E02025,R_MIPS_26:func_1510F8CC,-,Copy the mapped input back into a0 before the call,0x0C000000,R_MIPS_26:func_1510F8CC,false
 init_EB00,func_10010E78,0x050,0x00590019,0x03220019,-,-,Preserve retail's commutative fixed-point multiply operand order,,,false
 debugger,func_16001390,0x13C,0x00095040,0x00193C03,,,Schedule row sign extension before stride scaling
 debugger,func_16001390,0x140,0x00193C03,0x00095040,,,Schedule stride scaling after row sign extension

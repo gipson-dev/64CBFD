@@ -12,7 +12,7 @@ s32 func_10010FFC();
 s32 func_10011310();
 s32 func_10011624();
 s32 func_10011BB8();
-s32 func_10011EB8();
+u16 func_10011EB8(s32 arg0, s16 *arg1, s32 arg2);
 /* End generated placeholder declarations. */
 
 s32 func_1000EB00(struct04 *arg0, s32 arg1, s32 *arg2, s32 *arg3, s32 arg6, s32 arg7, u16 *arg8) {
@@ -797,9 +797,29 @@ void func_10011E94(s32 arg0) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10011EB8.s. */
-s32 func_10011EB8() {
-    return 0;
+u16 func_10011EB8(s32 arg0, s16 *arg1, s32 arg2) {
+    u16 (*table)[5][2];
+    u16 *entry;
+    s32 index;
+    s32 value;
+
+    index = arg0;
+    index = func_1510F8CC(index);
+    if (arg1 != NULL) {
+        if (D_80082FA0 != 0) {
+            *arg1 = 0x7FFF / (D_80082FA0 + 1);
+        } else {
+            *arg1 = 0x7FFF;
+        }
+    }
+
+    table = (u16 (*)[5][2])D_8002C240;
+    entry = table[index][arg2];
+    value = entry[0];
+    if (entry[1] >= 2) {
+        value = func_1000F568(value, entry[1]);
+    }
+    return value;
 }
 // NON-MATCHING: whats going on here
 // u16 func_10011EB8(s32 arg0, s16 *arg1, s32 arg2, s32 arg3) {

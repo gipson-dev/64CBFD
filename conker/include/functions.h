@@ -1003,7 +1003,7 @@ void func_10010F88(s32 arg0, u16 arg1, s16 arg2, u8 arg3, s32 arg4, s16 arg5, s1
 void func_100114D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 *arg6, s32 *arg7, s32 *arg8);
 //func_10011624
 //func_10011BB8
-//func_10011EB8
+u16 func_10011EB8(s32 arg0, s16 *arg1, s32 arg2);
 //func_10012020
 //func_1001263C
 //func_100126E8

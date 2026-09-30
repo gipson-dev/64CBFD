@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,091 / 5,457 (56.64%) | 0 | 2,366 |
-| Init | 488 / 538 (90.71%) | 408 / 488 (83.61%) | 0 | 80 |
+| Total | 5,457 / 6,041 (90.33%) | 3,092 / 5,457 (56.66%) | 0 | 2,365 |
+| Init | 488 / 538 (90.71%) | 409 / 488 (83.81%) | 0 | 79 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -433,6 +433,10 @@ The Init single-node release recycler `func_10009BE4` now matches all 216
 bytes. Twenty-six guarded words preserve its relocation-aware sentinel and
 reusable-list splice schedules; see
 [Working Note 593](WORKING_NOTES/593-init-single-node-release-recycler-match-20260930.md).
+The Init halfword-table selector `func_10011EB8` now matches all 232 bytes.
+Two bounded insertion guards restore redundant input copies while preserving
+the original call relocation; see
+[Working Note 594](WORKING_NOTES/594-init-halfword-table-selector-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

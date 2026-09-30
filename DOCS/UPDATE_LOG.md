@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init halfword-table selector byte-matched
+
+- `func_10011EB8` maps an input to a five-pair table row, optionally computes
+  the multiplayer scale, and resolves selectors at least two through
+  `func_1000F568`.
+- The semantic C emits the full routine in retail order. Two bounded guards
+  restore redundant input copies and move the existing call relocation,
+  consuming two trailing padding words.
+- The linked and retail spans share SHA-256
+  `4b4a026b8a28e4703983b808e69359a8682c0b7577a6b35144145a2c0cf6a16f`.
+  Totals are **3,092 / 5,457 (56.66%)** overall and
+  **409 / 488 (83.81%)** in Init. See
+  [Working Note 594](WORKING_NOTES/594-init-halfword-table-selector-match-20260930.md).
+
 ### Init single-node release recycler byte-matched
 
 - `func_10009BE4` returns a node's retained value, removes it from the active
