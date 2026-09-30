@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game three-entry position queue writer byte-matched
+
+- `func_1517D578` now appends a signed position, selector byte, two trailing
+  halfwords, and one float to the global queue while its count is below three.
+- The semantic C emits the exact 33-word extent and control flow. Twenty-nine
+  stale-checked guards normalize one closed IDO pointer/register and opening
+  schedule cycle, including both moved relocations. Linked SHA-256 is
+  `71f575144e94e2e3cac83b62e3e197e36edfa34d7c1ad864f439cb942be99e01`.
+- Totals are **3,063 / 5,462 (56.08%)** overall and
+  **2,484 / 4,788 (51.88%)** in Game. See
+  [Working Note 560](WORKING_NOTES/560-game-three-entry-position-queue-writer-match-20260930.md).
+
 ### Game transformed-position short writer byte-matched
 
 - `func_1516441C` now transforms one inline payload vector through its embedded

@@ -2357,3 +2357,32 @@ generated_185560,func_15158B3C,0x068,0x512A0006,0x50490006,-,-,Compare the zero-
 generated_185560,func_15158B3C,0x070,0x908B0044,0x908A0044,-,-,Load the current selector through retail's t2 lifetime,,,false
 generated_185560,func_15158B3C,0x074,0x90AC0004,0x90AB0004,-,-,Load the record selector through retail's t3 lifetime,,,false
 generated_185560,func_15158B3C,0x078,0x156C0003,0x154B0003,-,-,Compare selector bytes through retail's register pair,,,false
+generated_1A89B0,func_1517D578,0x000,0xAFA40000,0x44876000,-,-,Move the incoming float before retail's narrow-coordinate sequence,,,false
+generated_1A89B0,func_1517D578,0x004,0x00047400,0x3C070000,-,R_MIPS_HI16:D_8008CEB0,Materialize the retained queue-count address in retail's a3 lifetime,,,false
+generated_1A89B0,func_1517D578,0x008,0xAFA50004,0xAFA40000,-,-,Spill the first coordinate after the retained count address,,,false
+generated_1A89B0,func_1517D578,0x00C,0x0005C400,0x00047400,-,-,Narrow the first coordinate through retail's t6 lifetime,,,false
+generated_1A89B0,func_1517D578,0x010,0xAFA60008,0xAFA50004,-,-,Spill the second coordinate in retail order,,,false
+generated_1A89B0,func_1517D578,0x014,0x00064C00,0x0005C400,-,-,Narrow the second coordinate through retail's t8 lifetime,,,false
+generated_1A89B0,func_1517D578,0x018,0x3C080000,0xAFA60008,R_MIPS_HI16:D_8008CEB0,-,Spill the third coordinate before its narrowing shift,,,false
+generated_1A89B0,func_1517D578,0x01C,0x44876000,0x00064400,-,-,Narrow the third coordinate through retail's t0 lifetime,,,false
+generated_1A89B0,func_1517D578,0x020,0x25080000,0x00083403,R_MIPS_LO16:D_8008CEB0,-,Complete the third signed narrowing before the remaining coordinates,,,false
+generated_1A89B0,func_1517D578,0x024,0x00093403,0x00182C03,-,-,Complete the second signed narrowing through retail's t8 lifetime,,,false
+generated_1A89B0,func_1517D578,0x028,0x00182C03,0x000E2403,-,-,Complete the first signed narrowing through retail's t6 lifetime,,,false
+generated_1A89B0,func_1517D578,0x02C,0x000E2403,0x24E70000,-,R_MIPS_LO16:D_8008CEB0,Complete retail's retained queue-count address,,,false
+generated_1A89B0,func_1517D578,0x030,0x91020000,0x90E20000,-,-,Read the queue count through retail's retained a3 pointer,,,false
+generated_1A89B0,func_1517D578,0x034,0x3C0C0000,0x3C0B0000,R_MIPS_HI16:D_800DDD28,R_MIPS_HI16:D_800DDD28,Materialize the queue base through retail's t3 lifetime,,,false
+generated_1A89B0,func_1517D578,0x038,0x258C0000,0x256B0000,R_MIPS_LO16:D_800DDD28,R_MIPS_LO16:D_800DDD28,Complete the queue base through retail's t3 lifetime,,,false
+generated_1A89B0,func_1517D578,0x044,0x00025900,0x00025100,-,-,Scale the queue index through retail's t2 lifetime,,,false
+generated_1A89B0,func_1517D578,0x048,0x016C3821,0x014B1821,-,-,Form the selected queue entry in retail's v1 lifetime,,,false
+generated_1A89B0,func_1517D578,0x04C,0x8FAE0010,0x8FAC0010,-,-,Load the first trailing halfword through retail's t4 lifetime,,,false
+generated_1A89B0,func_1517D578,0x050,0x8FAF0014,0x8FAD0014,-,-,Load the second trailing halfword through retail's t5 lifetime,,,false
+generated_1A89B0,func_1517D578,0x054,0x93B8001B,0x93AE001B,-,-,Load the trailing byte through retail's t6 lifetime,,,false
+generated_1A89B0,func_1517D578,0x058,0x244D0001,0x244F0001,-,-,Advance the queue count through retail's t7 lifetime,,,false
+generated_1A89B0,func_1517D578,0x05C,0xA4E40000,0xA4640000,-,-,Store the first coordinate through retail's v1 entry pointer,,,false
+generated_1A89B0,func_1517D578,0x060,0xA4E50002,0xA4650002,-,-,Store the second coordinate through retail's v1 entry pointer,,,false
+generated_1A89B0,func_1517D578,0x064,0xA4E60004,0xA4660004,-,-,Store the third coordinate through retail's v1 entry pointer,,,false
+generated_1A89B0,func_1517D578,0x068,0xE4EC000C,0xE46C000C,-,-,Store the float through retail's v1 entry pointer,,,false
+generated_1A89B0,func_1517D578,0x06C,0xA10D0000,0xA0EF0000,-,-,Store the advanced count through retail's retained a3 pointer,,,false
+generated_1A89B0,func_1517D578,0x070,0xA4EE0008,0xA46C0008,-,-,Store the first trailing halfword through retail's v1 entry pointer,,,false
+generated_1A89B0,func_1517D578,0x074,0xA4EF000A,0xA46D000A,-,-,Store the second trailing halfword through retail's v1 entry pointer,,,false
+generated_1A89B0,func_1517D578,0x078,0xA0F80006,0xA06E0006,-,-,Store the trailing byte through retail's v1 entry pointer,,,false

@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,062 / 5,462 (56.06%) | 0 | 2,400 |
+| Total | 5,462 / 6,041 (90.42%) | 3,063 / 5,462 (56.08%) | 0 | 2,399 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,788 / 5,321 (89.98%) | 2,483 / 4,788 (51.86%) | 0 | 2,305 |
+| Game | 4,788 / 5,321 (89.98%) | 2,484 / 4,788 (51.88%) | 0 | 2,304 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -300,6 +300,10 @@ The Game transformed-position short writer `func_1516441C` now matches all
 140 bytes directly from C. It transforms the inline payload vector and writes
 the three truncated coordinates to the render record; see
 [Working Note 559](WORKING_NOTES/559-game-transformed-position-short-writer-match-20260930.md).
+The Game three-entry position queue writer `func_1517D578` now matches all
+132 bytes. Its recovered bounded record append is semantic C; 29 guarded words
+normalize one closed IDO pointer/register schedule; see
+[Working Note 560](WORKING_NOTES/560-game-three-entry-position-queue-writer-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
