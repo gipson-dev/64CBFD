@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game object-entry matrix builder byte-matched
+
+- `func_150F2518` selects an object entry, builds its rotation matrix, writes
+  its XYZ translation, and converts it into the current matrix slot.
+- Twenty-seven of 34 words emit directly from semantic C. Seven stale-checked
+  guards normalize one closed address-register cycle and preserve both
+  `D_800BE9C0` relocations.
+- The linked and retail spans share SHA-256
+  `0cc68b8a90190392cd5688cf29f8ef05a9496b0b10e7a79980b34d6efdfee906`.
+  Totals are **3,079 / 5,461 (56.38%)** overall and
+  **2,500 / 4,788 (52.21%)** in Game. See
+  [Working Note 577](WORKING_NOTES/577-game-object-entry-matrix-builder-match-20260930.md).
+
 ### Game owner-event dispatcher byte-matched
 
 - `func_150F15F8` handles event `0x43` by comparing owner word and identity

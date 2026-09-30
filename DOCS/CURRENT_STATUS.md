@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,078 / 5,461 (56.36%) | 0 | 2,383 |
+| Total | 3,079 / 5,461 (56.38%) | 0 | 2,382 |
 | Init | 398 / 492 (80.89%) | 0 | 94 |
-| Game | 2,499 / 4,788 (52.19%) | 0 | 2,289 |
+| Game | 2,500 / 4,788 (52.21%) | 0 | 2,288 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -863,7 +863,9 @@ end-to-end gameplay acceptance.
    The 34-word command-`0x38` owner-payload allocator `func_150D5440` is
    byte-exact directly from C. The 35-word owner-event dispatcher
    `func_150F15F8` is byte-exact through nine guarded identity-register words.
-   Continue with 34-word Game `func_150F2518`, the next ordinary C row.
+   The 34-word object-entry matrix builder `func_150F2518` is byte-exact
+   through seven guarded address-register words. Continue with 34-word Game
+   `func_150F2C8C`, the next ordinary C row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

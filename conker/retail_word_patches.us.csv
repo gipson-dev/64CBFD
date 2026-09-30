@@ -2501,3 +2501,10 @@ generated_11C2B0,func_150F15F8,0x040,0x11F80005,0x10580005,-,-,Compare the owner
 generated_11C2B0,func_150F15F8,0x04C,0x90680004,0x91090004,-,-,Load the owner identity byte through retail's pointer and value registers,,,false
 generated_11C2B0,func_150F15F8,0x050,0x5728000B,0x5729000B,-,-,Compare the owner identity byte through retail's value register,,,false
 generated_11C2B0,func_150F15F8,0x078,0xAFA90010,0xAFAA0010,-,-,Forward the object base through retail's overflow-argument register,,,false
+generated_11F780,func_150F2518,0x01C,0x8DCF0050,0x8DD80050,-,-,Load the entry offset through retail's address register,,,false
+generated_11F780,func_150F2518,0x020,0x01EE1021,0x01D81021,-,-,Add the entry offset through retail's address register,,,false
+generated_11F780,func_150F2518,0x03C,0x3C180000,0x3C080000,R_MIPS_HI16:D_800BE9C0,R_MIPS_HI16:D_800BE9C0,Materialize the matrix-index global through retail's register,,,false
+generated_11F780,func_150F2518,0x040,0x93180000,0x91080000,R_MIPS_LO16:D_800BE9C0,R_MIPS_LO16:D_800BE9C0,Load the matrix-index byte through retail's register,,,false
+generated_11F780,func_150F2518,0x048,0x8FA80060,0x8FB90060,-,-,Reload the object base through retail's register,,,false
+generated_11F780,func_150F2518,0x04C,0x0018C980,0x00084980,-,-,Shift the matrix index through retail's register,,,false
+generated_11F780,func_150F2518,0x058,0x03282821,0x03292821,-,-,Form the destination matrix address through retail's registers,,,false
