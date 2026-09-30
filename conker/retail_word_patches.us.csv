@@ -2386,3 +2386,13 @@ generated_1A89B0,func_1517D578,0x06C,0xA10D0000,0xA0EF0000,-,-,Store the advance
 generated_1A89B0,func_1517D578,0x070,0xA4EE0008,0xA46C0008,-,-,Store the first trailing halfword through retail's v1 entry pointer,,,false
 generated_1A89B0,func_1517D578,0x074,0xA4EF000A,0xA46D000A,-,-,Store the second trailing halfword through retail's v1 entry pointer,,,false
 generated_1A89B0,func_1517D578,0x078,0xA0F80006,0xA06E0006,-,-,Store the trailing byte through retail's v1 entry pointer,,,false
+generated_1B7EC0,func_1518AADC,0x038,0x00401825,0x87A40026,-,-,Reload the duplicated signed value before testing allocation success,,,false
+generated_1B7EC0,func_1518AADC,0x040,0x87A40026,0x00401825,-,-,Retain the allocated record in retail's branch delay slot,,,false
+generated_1B7EC0,func_1518AADC,0x050,0xA4640022,0x8FB80020,-,-,Load the retained owner immediately after clearing the final word,,,false
+generated_1B7EC0,func_1518AADC,0x054,0xA4640020,0xA4640022,-,-,Store the second signed copy after retail's early owner load,,,false
+generated_1B7EC0,func_1518AADC,0x058,0xAC600010,0xA4640020,-,-,Store the first signed copy in retail order,,,false
+generated_1B7EC0,func_1518AADC,0x05C,0xAC600014,0xAC600010,-,-,Clear the first payload word after the signed copies,,,false
+generated_1B7EC0,func_1518AADC,0x060,0x8FB80020,0xAC600014,-,-,Clear the second payload word while retaining the owner,,,false
+generated_1B7EC0,func_1518AADC,0x064,0x00601025,0xAC780018,-,-,Store the retained owner before loading the selector,,,false
+generated_1B7EC0,func_1518AADC,0x068,0xAC780018,0x93B9002B,-,-,Load the selector after the owner store,,,false
+generated_1B7EC0,func_1518AADC,0x06C,0x93B9002B,0x00601025,-,-,Select the allocated record as the return value before the selector store,,,false

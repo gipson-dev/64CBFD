@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, selector display-list appender matched).**
-The current linked checkpoint is `3064 / 5462 (56.10%)` exact C functions,
-with no address-drift blockers and 2,398 genuinely different C functions.
+**Active (2026-09-30, command-0x1D payload allocator matched).**
+The current linked checkpoint is `3065 / 5462 (56.11%)` exact C functions,
+with no address-drift blockers and 2,397 genuinely different C functions.
 Init is
 `398 / 493 (80.73%)` exact, with 95 genuinely different C rows. Game is
-`2485 / 4788 (51.90%)` exact, with 2,303 genuinely different C rows. The tree
+`2486 / 4788 (51.92%)` exact, with 2,302 genuinely different C rows. The tree
 contains 579 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -619,13 +619,19 @@ an 11-byte selector table and conditionally appends the corresponding non-null
 display list through the original `gSPDisplayList` macro expansion. See
 [Working Note 561](WORKING_NOTES/561-game-selector-display-list-appender-match-20260930.md).
 
+Game `func_1518AADC` now matches all 33 retail words. It allocates and fully
+initializes a command-`0x1D` payload with an owner, duplicated signed value,
+and byte selector. Twenty-three words emit directly from semantic C; ten
+guards normalize two independent post-call/store schedules. See
+[Working Note 562](WORKING_NOTES/562-game-command-1d-payload-allocator-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 33-word Game `func_1518AADC`, the next ordinary row.
+cycle. Continue with 33-word Game `func_15192920`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

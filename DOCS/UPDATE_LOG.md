@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game command-0x1D payload allocator byte-matched
+
+- `func_1518AADC` now allocates a 40-byte command-`0x1D` payload, clears four
+  words, retains its owner, duplicates a signed halfword, and stores a byte
+  selector.
+- Twenty-three of 33 words emit directly from semantic C. Ten stale-checked
+  guards normalize the post-call halfword/pointer swap and retained
+  owner/selector store schedule. Linked SHA-256 is
+  `7e6524e62e23ce9f04813a749375ae59fd2ce4fd0cb2a8b3ff2d56c313256671`.
+- Totals are **3,065 / 5,462 (56.11%)** overall and
+  **2,486 / 4,788 (51.92%)** in Game. See
+  [Working Note 562](WORKING_NOTES/562-game-command-1d-payload-allocator-match-20260930.md).
+
 ### Game selector display-list appender byte-matched
 
 - `func_15183BA4` now maps a selector through the 11-byte `D_800A72D0` table
