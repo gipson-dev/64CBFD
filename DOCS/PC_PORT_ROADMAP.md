@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,058 / 5,462 (55.99%) | 0 | 2,404 |
+| Total | 5,462 / 6,041 (90.42%) | 3,059 / 5,462 (56.01%) | 0 | 2,403 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,788 / 5,321 (89.98%) | 2,479 / 4,788 (51.78%) | 0 | 2,309 |
+| Game | 4,788 / 5,321 (89.98%) | 2,480 / 4,788 (51.80%) | 0 | 2,308 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -284,6 +284,9 @@ The Game mode-gated object cleanup wrapper `func_1511A738` now matches all
 The Game indexed saved-state restorer `func_151239CC` now matches all 136
 bytes through two guarded stack-slot words; see
 [Working Note 555](WORKING_NOTES/555-game-indexed-saved-state-restorer-match-20260930.md).
+The Game bit-zero state-operation callback `func_1514E89C` now matches all
+132 bytes directly from C with no guards; see
+[Working Note 556](WORKING_NOTES/556-game-bit-zero-state-operation-callback-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

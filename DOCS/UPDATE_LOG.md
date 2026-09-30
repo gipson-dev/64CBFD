@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game bit-zero state-operation callback byte-matched
+
+- `func_1514E89C` toggles, sets, or clears bit zero of the object state word
+  for operations zero, one, and two. Unsupported operations return zero;
+  handled operations return one.
+- All 33 words / 132 bytes emit directly from C with no guards. The K&R
+  byte-typed third argument preserves retail's entry spill without changing
+  neighboring callers. Linked SHA-256 is
+  `e3b31f4007d3288e78f7111a743bcdb9e6ae4ebd371d4c4db5ecdb1df6f61851`.
+- Totals are **3,059 / 5,462 (56.01%)** overall and
+  **2,480 / 4,788 (51.80%)** in Game. See
+  [Working Note 556](WORKING_NOTES/556-game-bit-zero-state-operation-callback-match-20260930.md).
+
 ### Game indexed saved-state restorer byte-matched
 
 - `func_151239CC` checks an indexed saved-state slot, restores its identifier,

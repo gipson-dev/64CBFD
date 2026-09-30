@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,058 / 5,462 (55.99%) | 0 | 2,404 |
+| Total | 3,059 / 5,462 (56.01%) | 0 | 2,403 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,479 / 4,788 (51.78%) | 0 | 2,309 |
+| Game | 2,480 / 4,788 (51.80%) | 0 | 2,308 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -472,6 +472,9 @@ complete 136-byte span directly from C; see
 The Game indexed saved-state restorer `func_151239CC` now matches its complete
 136-byte span through two guarded stack-slot words; see
 [Working Note 555](WORKING_NOTES/555-game-indexed-saved-state-restorer-match-20260930.md).
+The Game bit-zero state-operation callback `func_1514E89C` now matches its
+complete 132-byte span directly from C; see
+[Working Note 556](WORKING_NOTES/556-game-bit-zero-state-operation-callback-match-20260930.md).
 
 ## Verified build state
 
@@ -820,8 +823,9 @@ end-to-end gameplay acceptance.
    scheduling/register words. The 34-word mode-gated object cleanup wrapper
    `func_1511A738` is now byte-exact directly from C. The 34-word indexed
    saved-state restorer `func_151239CC` is now byte-exact through two guarded
-   stack-slot words. Continue with 33-word Game `func_1514E89C`, the next
-   ordinary row.
+   stack-slot words. The 33-word bit-zero state-operation callback
+   `func_1514E89C` is now byte-exact directly from C. Continue with 32-word
+   Game `func_1514EDF0`, the next ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

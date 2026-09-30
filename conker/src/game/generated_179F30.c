@@ -335,8 +335,29 @@ void func_1514E87C(u8 *arg0) {
     func_1515F10C(arg0);
 }
 
-s32 func_1514E89C() {
-    return 0;
+s32 func_1514E89C(arg0, arg1, arg2)
+u8 *arg0;
+s32 arg1;
+u8 arg2;
+{
+    switch (arg1) {
+        case 0:
+            if ((*(s32 *) (arg0 + 0x10) & 1) != 0) {
+                *(s32 *) (arg0 + 0x10) &= ~1;
+            } else {
+                *(s32 *) (arg0 + 0x10) |= 1;
+            }
+            break;
+        case 2:
+            *(s32 *) (arg0 + 0x10) &= ~1;
+            break;
+        case 1:
+            *(s32 *) (arg0 + 0x10) |= 1;
+            break;
+        default:
+            return 0;
+    }
+    return 1;
 }
 
 s32 func_1514E920() {
