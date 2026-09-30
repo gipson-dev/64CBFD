@@ -33,7 +33,7 @@ void func_100051E8(void);
 void func_10005218(void);
 void func_10005298(void);
 void func_100084D8(u8 arg0);
-s32  func_1000853C(u8 arg0);
+s32  func_1000853C();
 void func_10008570(u8 arg0, s32 arg1);
 void func_100085A4(s32 arg0, s32 arg1, s32 arg2);
 void func_100085B8(u8 arg0, s32 arg1, u8 arg2);

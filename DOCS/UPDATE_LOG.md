@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init record cleanup byte-matched
+
+- `func_1000DEC4` scans the 12-entry record table, releases stale owner-table
+  links, resets inactive records, and clears each record's final four bytes.
+- Its recovered combined 32-bit tail clear and non-prototype state-query
+  declaration emit all 41 words directly from semantic C with no guards.
+- The linked and retail spans share SHA-256
+  `01b0138764c7dd80ffaa2bdfa297452223ede4057776661b7927b7ef467dbb0c`.
+  Totals are **3,083 / 5,458 (56.49%)** overall and
+  **400 / 489 (81.80%)** in Init. See
+  [Working Note 584](WORKING_NOTES/584-init-record-cleanup-match-20260930.md).
+
 ### Init identifier dispatcher byte-matched
 
 - `func_1000DE1C` masks an incoming identifier, expands identifier zero

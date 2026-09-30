@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init identifier dispatcher matched).**
-The current linked checkpoint is `3082 / 5458 (56.47%)` exact C functions,
-with no address-drift blockers and 2,376 genuinely different C functions.
+**Active (2026-09-30, Init record cleanup matched).**
+The current linked checkpoint is `3083 / 5458 (56.49%)` exact C functions,
+with no address-drift blockers and 2,375 genuinely different C functions.
 Init is
-`399 / 489 (81.60%)` exact, with 90 genuinely different C rows. Game is
+`400 / 489 (81.80%)` exact, with 89 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 583 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -755,7 +755,12 @@ Init `func_1000DE1C` now matches all 42 retail words. In-place masking of its
 identifier parameter recovers the complete branch and call schedule; two
 guards preserve retail's lower local-array placement. See
 [Working Note 583](WORKING_NOTES/583-init-identifier-dispatcher-match-20260930.md).
-Resume the Init queue from its remaining 90 genuinely different C rows.
+Init `func_1000DEC4` now matches all 41 retail words directly from C. A
+combined 32-bit clear covers the final two halfwords, while the recovered
+non-prototype declaration lets IDO place the explicit byte mask in the direct
+call delay slot. See
+[Working Note 584](WORKING_NOTES/584-init-record-cleanup-match-20260930.md).
+Resume the Init queue from its remaining 89 genuinely different C rows.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four
