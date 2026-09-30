@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game fixed-payload object spawn byte-matched
+
+- `func_1514D978` now builds its 32-byte payload, creates the corresponding
+  object, copies the payload to offset `0x58`, and registers tag `0x13`.
+- The payload/result declaration order preserves retail's stack map. All 31
+  words emit directly from C with no expected-word guards.
+- The linked and retail 124-byte spans share SHA-256
+  `88988aac1c2edc8f456aa37224844513cc58ef01dd750e045a040b8266ee8b3c`.
+- Totals are **3,021 / 5,463 (55.30%)** overall and
+  **2,443 / 4,789 (51.01%)** in Game, with no address-drift rows. See
+  [Working Note 517](WORKING_NOTES/517-game-fixed-payload-object-spawn-match-20260929.md).
+
 ### Game owner-identity object spawn byte-matched
 
 - `func_151001B4` now builds its eight-byte owner/identity payload, creates

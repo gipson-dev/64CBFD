@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game owner-identity object spawn matched).**
-The current linked checkpoint is `3020 / 5463 (55.28%)` exact C functions,
-with no address-drift blockers and 2,443 genuinely different C functions.
+**Active (2026-09-29, Game fixed-payload object spawn matched).**
+The current linked checkpoint is `3021 / 5463 (55.30%)` exact C functions,
+with no address-drift blockers and 2,442 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2442 / 4789 (50.99%)` exact, with 2,347 genuinely different C rows. The tree
+`2443 / 4789 (51.01%)` exact, with 2,346 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -364,10 +364,17 @@ fixed type-`0x12C` object request, and copies the payload when creation
 succeeds. No expected-word guards are needed. See
 [Working Note 516](WORKING_NOTES/516-game-owner-identity-object-spawn-match-20260929.md).
 
+Game `func_1514D978` now matches all 31 retail words directly from C. The
+recovered helper builds a 32-byte fixed payload, allocates its object, copies
+the payload, and registers the result with tag `0x13`. No expected-word
+guards are needed. See
+[Working Note 517](WORKING_NOTES/517-game-fixed-payload-object-spawn-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Continue
-with 32-word `func_15106E78`, the next ordinary Game candidate.
+with 31-word `func_15183974`, the next ordinary Game candidate. Keep
+`func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

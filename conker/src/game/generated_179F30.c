@@ -91,8 +91,24 @@ s32 func_1514D64C() {
 void func_1514D96C(s32 arg0) {
 }
 
-s32 func_1514D978() {
-    return 0;
+void func_1514D978(u8 *arg0) {
+    s32 payload[8];
+    u8 *result;
+
+    payload[0] = 0;
+    payload[1] = 0;
+    payload[2] = 0;
+    payload[3] = 0;
+    *(f32 *)&payload[4] = 12.0f;
+    payload[5] = 0;
+    payload[6] = 0;
+    payload[7] = 0;
+
+    result = (u8 *)func_15158BD0(arg0, 1, sizeof(payload));
+    if (result != NULL) {
+        memcpy(result + 0x58, payload, sizeof(payload));
+        func_1514EC1C((s32)result, (s32)arg0, 0x13);
+    }
 }
 
 void func_1514D9F4(u8 *arg0) {

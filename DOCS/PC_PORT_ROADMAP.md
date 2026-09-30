@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,020 / 5,463 (55.28%) | 0 | 2,443 |
+| Total | 5,463 / 6,041 (90.43%) | 3,021 / 5,463 (55.30%) | 0 | 2,442 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,442 / 4,789 (50.99%) | 0 | 2,347 |
+| Game | 4,789 / 5,321 (90.00%) | 2,443 / 4,789 (51.01%) | 0 | 2,346 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -150,6 +150,10 @@ The Game owner-identity object spawn `func_151001B4` now matches its complete
 124-byte span directly from C after restoring its identity payload, fixed
 object request, and conditional payload copy; see
 [Working Note 516](WORKING_NOTES/516-game-owner-identity-object-spawn-match-20260929.md).
+The Game fixed-payload object spawn `func_1514D978` now matches its complete
+124-byte span directly from C after restoring its 32-byte payload, object
+allocation, copy, and tagged registration; see
+[Working Note 517](WORKING_NOTES/517-game-fixed-payload-object-spawn-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
