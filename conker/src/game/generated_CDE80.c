@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/CDE80.s. */
 
@@ -64,7 +65,7 @@ s32 func_150A11C4() {
     return 0;
 }
 
-s32 func_150A1DA0() {
+s32 func_150A1DA0(struct127 *arg0, s32 arg1, s32 arg2) {
     return 0;
 }
 
@@ -126,7 +127,20 @@ s32 func_150A3194() {
     return 0;
 }
 
-s32 func_150A32B4() {
+s32 func_150A32B4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    struct127 query;
+
+    query.x_position = arg1;
+    query.y_position = arg2;
+    query.z_position = arg3;
+    query.old_x_position = arg1;
+    query.unk180 = arg2;
+    query.old_y_position = arg2;
+    query.old_z_position = arg3;
+
+    if (func_150A1DA0(&query, arg0, 0) == 0) {
+        return 1;
+    }
     return 0;
 }
 

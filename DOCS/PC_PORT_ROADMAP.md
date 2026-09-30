@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,028 / 5,463 (55.43%) | 0 | 2,435 |
+| Total | 5,463 / 6,041 (90.43%) | 3,029 / 5,463 (55.45%) | 0 | 2,434 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,450 / 4,789 (51.16%) | 0 | 2,339 |
+| Game | 4,789 / 5,321 (90.00%) | 2,451 / 4,789 (51.18%) | 0 | 2,338 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -182,6 +182,10 @@ The Game bounded table-buffer append `func_1507EBB8` now matches its complete
 128-byte span directly from C after restoring the indexed source, byte length,
 strict size gate, and count update; see
 [Working Note 524](WORKING_NOTES/524-game-bounded-table-buffer-append-match-20260929.md).
+The Game coordinate-query wrapper `func_150A32B4` now matches its complete
+124-byte span directly from C after restoring its typed stack query and
+coordinate field initialization; see
+[Working Note 525](WORKING_NOTES/525-game-coordinate-query-wrapper-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

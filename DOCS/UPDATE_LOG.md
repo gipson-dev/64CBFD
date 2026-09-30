@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game coordinate-query wrapper byte-matched
+
+- `func_150A32B4` now constructs a stack-local `struct127` from three integer
+  coordinates, mirrors its position fields, submits it through
+  `func_150A1DA0`, and returns whether the query produced zero.
+- The existing `struct127` layout reproduces the `0x350`-byte frame and all 31
+  words directly from C with no expected-word guards.
+- The linked and retail 124-byte spans share SHA-256
+  `e14902f3383e5012a58c5da9916095a0fcfda96dd0709a830e73375e9fe79f5f`.
+- Totals are **3,029 / 5,463 (55.45%)** overall and
+  **2,451 / 4,789 (51.18%)** in Game, with no address-drift rows. See
+  [Working Note 525](WORKING_NOTES/525-game-coordinate-query-wrapper-match-20260929.md).
+
 ### Game bounded table-buffer append byte-matched
 
 - `func_1507EBB8` now selects a source sequence and byte length by index,
