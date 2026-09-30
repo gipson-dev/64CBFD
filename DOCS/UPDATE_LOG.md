@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game bounded table-buffer append byte-matched
+
+- `func_1507EBB8` now selects a source sequence and byte length by index,
+  appends it only when the resulting buffer count remains below 40, and
+  advances the count after `bcopy`.
+- A full-width local for the byte-table length restores retail's frame and
+  register lifetime, so all 32 words emit directly from C without guards.
+- The linked and retail 128-byte spans share SHA-256
+  `6264e616750342b961bace698a74aa7a7f62df4dcba9df8a664422c21cee6499`.
+- Totals are **3,028 / 5,463 (55.43%)** overall and
+  **2,450 / 4,789 (51.16%)** in Game, with no address-drift rows. See
+  [Working Note 524](WORKING_NOTES/524-game-bounded-table-buffer-append-match-20260929.md).
+
 ### Game secondary collision-classifier wrapper byte-matched
 
 - `func_15046F84` now uses `func_15047004`'s classification to delegate class

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,027 / 5,463 (55.41%) | 0 | 2,436 |
+| Total | 3,028 / 5,463 (55.43%) | 0 | 2,435 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,449 / 4,789 (51.14%) | 0 | 2,340 |
+| Game | 2,450 / 4,789 (51.16%) | 0 | 2,339 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -349,6 +349,11 @@ across all 32 words after recovering its matching four-argument dispatch and
 `func_15046D00` class-zero path. The complete routine emits directly from C
 with no guards; see
 [Working Note 523](WORKING_NOTES/523-game-secondary-collision-classifier-wrapper-match-20260929.md).
+Game bounded table-buffer append `func_1507EBB8` is byte-exact across all 32
+words after recovering its selector-indexed source and length tables, strict
+40-byte bound, copy, and count update. The complete routine emits directly
+from C with no guards; see
+[Working Note 524](WORKING_NOTES/524-game-bounded-table-buffer-append-match-20260929.md).
 
 ## Verified build state
 
@@ -675,7 +680,7 @@ end-to-end gameplay acceptance.
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. Continue with 32-word Game `func_1507EBB8`, the next
+   allocation boundary. Continue with 31-word Game `func_150A32B4`, the next
    ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly

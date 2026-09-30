@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, secondary collision-classifier wrapper matched).**
-The current linked checkpoint is `3027 / 5463 (55.41%)` exact C functions,
-with no address-drift blockers and 2,436 genuinely different C functions.
+**Active (2026-09-29, bounded table-buffer append matched).**
+The current linked checkpoint is `3028 / 5463 (55.43%)` exact C functions,
+with no address-drift blockers and 2,435 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2449 / 4789 (51.14%)` exact, with 2,340 genuinely different C rows. The tree
+`2450 / 4789 (51.16%)` exact, with 2,339 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -408,12 +408,17 @@ the same classifier switch as `func_15046C80` while dispatching class zero to
 `func_15046D00`; the entire frame and control flow emit without guards. See
 [Working Note 523](WORKING_NOTES/523-game-secondary-collision-classifier-wrapper-match-20260929.md).
 
+Game `func_1507EBB8` now matches all 32 retail words directly from C. The
+recovered table types and full-width length local reproduce retail's bounded
+append, `bcopy` call, spill layout, and count update without guards. See
+[Working Note 524](WORKING_NOTES/524-game-bounded-table-buffer-append-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 32-word Game `func_1507EBB8`, the next ordinary placeholder.
+Continue with 31-word Game `func_150A32B4`, the next ordinary placeholder.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

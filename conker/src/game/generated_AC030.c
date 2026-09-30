@@ -5,6 +5,8 @@
 void func_1507EEB8(u8 arg0, u8 *arg1);
 extern u8 *D_800D154C;
 extern u8 *D_80086BA0[];
+extern u8 *D_80086C24[];
+extern u8 D_8009BBF0[];
 
 void func_1507EB80(u8 *arg0, s32 *arg1, u8 arg2) {
     if (*arg1 + 1 < 0x28) {
@@ -13,8 +15,14 @@ void func_1507EB80(u8 *arg0, s32 *arg1, u8 arg2) {
     }
 }
 
-s32 func_1507EBB8() {
-    return 0;
+void func_1507EBB8(u8 *arg0, s32 *arg1, s32 arg2) {
+    u8 *source = D_80086C24[arg2];
+    s32 length = D_8009BBF0[arg2];
+
+    if (*arg1 + length < 0x28) {
+        bcopy(source, arg0 + *arg1, length);
+        *arg1 += length;
+    }
 }
 
 s32 func_1507EC38() {
