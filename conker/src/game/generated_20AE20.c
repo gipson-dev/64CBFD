@@ -79,7 +79,7 @@ extern u8 D_800E0B95;
 
 void func_151E557C(void);
 void func_151E6BFC(void);
-s32 func_151E55A8();
+void func_151E55A8(void);
 s32 func_1517EFDC(void);
 s32 func_15082A44(u8 *, s32, s32, s32, s32);
 void func_15083384(struct127 *, u8);
@@ -318,8 +318,27 @@ void func_151E557C(void) {
     D_80084060[3] = 3;
 }
 
-s32 func_151E55A8() {
-    return 0;
+void func_151E55A8(void) {
+    s32 direction = D_800E0B98;
+    s32 offset;
+    s32 position;
+
+    if (direction == 0) {
+        offset = D_800BE9E4 << 3;
+    } else {
+        offset = (-D_800BE9E4) << 3;
+    }
+
+    position = D_800E0B97;
+    position += offset;
+    if (position >= 0x100) {
+        position = 0x1FE - position;
+        D_800E0B98 = direction ^ 1;
+    } else if (position < 0) {
+        position = -position;
+        D_800E0B98 = direction ^ 1;
+    }
+    D_800E0B97 = position;
 }
 
 void func_151E562C(void) {

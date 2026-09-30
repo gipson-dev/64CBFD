@@ -483,12 +483,18 @@ stale-checked guards, including two inserted preload words, normalize one
 closed IDO register/scheduling cycle. See
 [Working Note 537](WORKING_NOTES/537-game-linked-endpoint-event-handler-match-20260929.md).
 
+Game `func_151E55A8` now matches all 33 retail words directly from semantic C.
+It advances an unsigned byte position by a signed global step, reflects values
+outside the `0..255` interval, and toggles the direction byte at either
+boundary. No expected-word guards are needed. See
+[Working Note 538](WORKING_NOTES/538-game-reflected-byte-position-update-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 33-word Game `func_151E55A8`, the next ordinary row.
+Continue with 38-word Init `func_1000B1FC`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

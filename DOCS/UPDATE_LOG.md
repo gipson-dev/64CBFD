@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game reflected byte-position update byte-matched
+
+- `func_151E55A8` restores the signed step, byte-position update, reflection at
+  both range boundaries, and direction-byte toggle.
+- The complete 132-byte function emits directly from semantic C without guard
+  rows. Linked and retail spans share SHA-256
+  `2b2a6d2d094e1dafe4f418b34038e4ec1b09c2026358f7dd2694bd6776965182`.
+- Totals are **3,042 / 5,463 (55.68%)** overall and
+  **2,464 / 4,789 (51.45%)** in Game. See
+  [Working Note 538](WORKING_NOTES/538-game-reflected-byte-position-update-match-20260929.md).
+
 ### Game linked-endpoint event handler byte-matched
 
 - `func_151B70B4` restores zero-event detach state and event-`0x2D`
