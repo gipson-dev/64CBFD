@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init mode-flag dispatch wrapper byte-matched
+
+- `func_1000CAE4` updates two independent state bits across global mode
+  `0x42`, event `0x58`, a timed transition, and one fixed low-byte dispatch.
+- All 49 words emit directly from semantic C. Its frame, saved register,
+  argument homes, branches, delay slots, and calls require no guards.
+- The linked and retail spans share SHA-256
+  `aefe1f79eec76c20160be8b0aa7962cd15f8375113ec490913b5bf3240b586ac`.
+  Totals are **3,089 / 5,457 (56.61%)** overall and
+  **406 / 488 (83.20%)** in Init. See
+  [Working Note 591](WORKING_NOTES/591-init-mode-flag-dispatch-wrapper-match-20260930.md).
+
 ### Init actor-coordinate refresh callback byte-matched
 
 - `func_1000EE70` validates an event record's actor and caller gate, refreshes

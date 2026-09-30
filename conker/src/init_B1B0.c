@@ -12,7 +12,7 @@ s32 func_1000BF60();
 s32 func_1000C350();
 s32 func_1000C7E8();
 s32 func_1000C934();
-s32 func_1000CAE4();
+s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CDA0();
 s32 func_1000CEAC();
 s32 func_1000D2F8();
@@ -330,9 +330,28 @@ s32 func_1000CA18(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return tmp | 0x80000000;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000CAE4.s. */
-s32 func_1000CAE4() {
-    return 0;
+s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    s32 pending;
+
+    pending = arg0 & 2;
+    arg0 &= 1;
+    if (D_800BE9F0 == 0x42) {
+        func_10011FA0((s32 *)4);
+        if (arg0 == 0) {
+            arg0 = 1;
+            func_1000E704(0x58, 1, 0xFFFF);
+        }
+    } else if (arg0 != 0) {
+        func_1000E704(0x58, 0, 0xFFFF);
+        func_1000E40C(0x58, 16000);
+        arg0 = 0;
+    }
+
+    if (pending == 0) {
+        func_10008790(arg1, 0x1000, 0, 1);
+        pending = 2;
+    }
+    return pending | arg0;
 }
 
 void func_1000CBA8(s32 arg0) {

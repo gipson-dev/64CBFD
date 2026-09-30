@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,088 / 5,457 (56.59%) | 0 | 2,369 |
-| Init | 488 / 538 (90.71%) | 405 / 488 (82.99%) | 0 | 83 |
+| Total | 5,457 / 6,041 (90.33%) | 3,089 / 5,457 (56.61%) | 0 | 2,368 |
+| Init | 488 / 538 (90.71%) | 406 / 488 (83.20%) | 0 | 82 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -422,6 +422,9 @@ The Init actor-coordinate refresh callback `func_1000EE70` now matches all
 208 bytes. Eighteen guarded words preserve one closed temporary-register
 rotation across its actor identity, orientation, and coordinate update; see
 [Working Note 590](WORKING_NOTES/590-init-actor-coordinate-refresh-callback-match-20260930.md).
+The Init mode-flag dispatch wrapper `func_1000CAE4` now matches all 196 bytes
+directly from semantic C with no guards; see
+[Working Note 591](WORKING_NOTES/591-init-mode-flag-dispatch-wrapper-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

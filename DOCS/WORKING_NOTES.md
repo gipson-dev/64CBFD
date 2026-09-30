@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init actor-coordinate refresh callback matched).**
-The current linked checkpoint is `3088 / 5457 (56.59%)` exact C functions,
-with no address-drift blockers and 2,369 genuinely different C functions.
+**Active (2026-09-30, Init mode-flag dispatch wrapper matched).**
+The current linked checkpoint is `3089 / 5457 (56.61%)` exact C functions,
+with no address-drift blockers and 2,368 genuinely different C functions.
 Init is
-`405 / 488 (82.99%)` exact, with 83 genuinely different C rows. Game is
+`406 / 488 (83.20%)` exact, with 82 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -788,7 +788,11 @@ coordinates for a matching identity, and otherwise performs the original
 handle-liveness fallback. Eighteen guards preserve one closed temporary-
 register cycle. See
 [Working Note 590](WORKING_NOTES/590-init-actor-coordinate-refresh-callback-match-20260930.md).
-Resume the Init queue from its remaining 83 genuinely different C rows.
+Init `func_1000CAE4` now matches all 49 retail words directly from C. It
+updates the independent low two state bits across global mode `0x42`, event
+`0x58`, and the fixed low-byte dispatch. See
+[Working Note 591](WORKING_NOTES/591-init-mode-flag-dispatch-wrapper-match-20260930.md).
+Resume the Init queue from its remaining 82 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

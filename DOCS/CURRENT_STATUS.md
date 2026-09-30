@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,088 / 5,457 (56.59%) | 0 | 2,369 |
-| Init | 405 / 488 (82.99%) | 0 | 83 |
+| Total | 3,089 / 5,457 (56.61%) | 0 | 2,368 |
+| Init | 406 / 488 (83.20%) | 0 | 82 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -891,7 +891,9 @@ end-to-end gameplay acceptance.
    guarded manager-register and reusable-list scheduling words. The 52-word
    actor-coordinate refresh callback `func_1000EE70` is byte-exact through 18
    guarded temporary-register words; its frame, control flow, call, and actor
-   update behavior emit directly from C.
+   update behavior emit directly from C. The 49-word mode-flag dispatch
+   wrapper `func_1000CAE4` is byte-exact directly from semantic C with no
+   guarded words.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

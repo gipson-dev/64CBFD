@@ -948,7 +948,7 @@ s32 func_1000C530(s32, u8, f32, f32, f32);
 //func_1000C7E8
 //func_1000C934
 //func_1000CA18
-//func_1000CAE4
+s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 //func_1000CBF0
 //func_1000CC54
 //func_1000CDA0
