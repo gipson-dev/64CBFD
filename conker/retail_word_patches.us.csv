@@ -2233,3 +2233,16 @@ generated_F9430,func_150CC638,0x034,0xA085005C,0xA082005C,-,-,Store the scaled b
 generated_F9430,func_150CC638,0x038,0x84990128,0x8483001C,-,-,Reload the signed input after the byte update,0x24820128,-,false
 generated_F9430,func_150CC638,0x03C,0x0322082A,0x84590000,-,-,Load the motion threshold through retail's v0 record pointer,0x0323082A,-,false
 generated_F9430,func_150CC638,0x04C,0xC484012C,0xC4440004,-,-,Load the motion rate through retail's v0 record pointer,,,false
+generated_1DCA70,func_151AFC08,0x008,0x51E00019,0x51E0001B,-,-,Retarget the disabled-path branch across retail's two retained address words,,,false
+generated_1DCA70,func_151AFC08,0x010,0x8482001C,0x8483001C,-,-,Keep the signed input in retail's v1 lifetime,,,false
+generated_1DCA70,func_151AFC08,0x014,0x28410020,0x28610020,-,-,Test the signed input through retail's v1 lifetime,,,false
+generated_1DCA70,func_151AFC08,0x018,0x50200008,0x50200009,-,-,Retarget the range branch across retail's retained address word,,,false
+generated_1DCA70,func_151AFC08,0x01C,0x84990128,0x24820128,-,-,Materialize the motion record through retail's v0 lifetime,,,false
+generated_1DCA70,func_151AFC08,0x024,0x000228C0,0x000310C0,-,-,Scale the signed input through retail's temporary v0 lifetime,,,false
+generated_1DCA70,func_151AFC08,0x028,0x00B8082A,0x0058082A,-,-,Compare the scaled input through retail's temporary v0 lifetime,,,false
+generated_1DCA70,func_151AFC08,0x02C,0x50200003,0x50200004,-,-,Retarget the limit branch across retail's retained address word,,,false
+generated_1DCA70,func_151AFC08,0x030,0x84990128,0x24820128,-,-,Materialize the motion record on the rejected-limit path,,,false
+generated_1DCA70,func_151AFC08,0x034,0xA085005C,0xA082005C,-,-,Store the scaled byte from retail's temporary v0 lifetime,,,false
+generated_1DCA70,func_151AFC08,0x038,0x84990128,0x8483001C,-,-,Reload the signed input after the byte update,0x24820128,-,false
+generated_1DCA70,func_151AFC08,0x03C,0x0322082A,0x84590000,-,-,Load the motion threshold through retail's v0 record pointer,0x0323082A,-,false
+generated_1DCA70,func_151AFC08,0x04C,0xC484012C,0xC4440004,-,-,Load the motion rate through retail's v0 record pointer,,,false

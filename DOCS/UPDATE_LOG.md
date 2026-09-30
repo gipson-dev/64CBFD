@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game second motion-threshold update byte-matched
+
+- `func_151AFC08` restores its flag-gated progress clamp and paired accumulator
+  update using the semantic body shared with `func_150CC638`.
+- Thirteen stale-checked transformations normalize the duplicate IDO allocation
+  pattern. The 128-byte spans share SHA-256
+  `f513b7f3c9bee8f04c2afe8007ea87e74d5ba3cd3a2c240639dcd9bc60eb3bfe`.
+- Totals are **3,040 / 5,463 (55.65%)** overall and
+  **2,462 / 4,789 (51.41%)** in Game. See
+  [Working Note 536](WORKING_NOTES/536-game-second-motion-threshold-update-match-20260929.md).
+
 ### Game four-resource teardown byte-matched
 
 - `func_1519F400` now releases four resource fields through their recovered

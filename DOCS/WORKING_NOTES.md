@@ -472,12 +472,17 @@ releases four resource pointers using their two ownership-specific teardown
 paths. See
 [Working Note 535](WORKING_NOTES/535-game-four-resource-teardown-match-20260929.md).
 
+Game `func_151AFC08` now matches all 32 retail words. Its typed flag-gated
+motion update shares the established 13-guard compiler normalization with the
+instruction-identical `func_150CC638`. See
+[Working Note 536](WORKING_NOTES/536-game-second-motion-threshold-update-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 32-word Game `func_151AFC08`, the next ordinary row.
+Continue with 36-word Game `func_151B70B4`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

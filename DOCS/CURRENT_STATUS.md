@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,039 / 5,463 (55.63%) | 0 | 2,424 |
+| Total | 3,040 / 5,463 (55.65%) | 0 | 2,423 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,461 / 4,789 (51.39%) | 0 | 2,328 |
+| Game | 2,462 / 4,789 (51.41%) | 0 | 2,327 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 3,039, while
+denominator driven: the exact count is now 3,040, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -403,6 +403,9 @@ from C; see
 Game four-resource teardown `func_1519F400` now matches all 35 words directly
 from C; see
 [Working Note 535](WORKING_NOTES/535-game-four-resource-teardown-match-20260929.md).
+Game motion-threshold update `func_151AFC08` now matches all 32 words using its
+semantic C body and the established duplicate-function guard set; see
+[Working Note 536](WORKING_NOTES/536-game-second-motion-threshold-update-match-20260929.md).
 
 ## Verified build state
 
@@ -729,7 +732,7 @@ end-to-end gameplay acceptance.
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. Continue with 32-word Game `func_151AFC08`, the next
+   allocation boundary. Continue with 36-word Game `func_151B70B4`, the next
    ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly

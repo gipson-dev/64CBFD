@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,039 / 5,463 (55.63%) | 0 | 2,424 |
+| Total | 5,463 / 6,041 (90.43%) | 3,040 / 5,463 (55.65%) | 0 | 2,423 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,461 / 4,789 (51.39%) | 0 | 2,328 |
+| Game | 4,789 / 5,321 (90.00%) | 2,462 / 4,789 (51.41%) | 0 | 2,327 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -223,6 +223,9 @@ directly from C; see
 The four-resource teardown `func_1519F400` now matches its full 140-byte span
 directly from C; see
 [Working Note 535](WORKING_NOTES/535-game-four-resource-teardown-match-20260929.md).
+The second motion-threshold update `func_151AFC08` now matches its full
+128-byte span; see
+[Working Note 536](WORKING_NOTES/536-game-second-motion-threshold-update-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
