@@ -3,6 +3,8 @@
 extern u8 *D_800BE628;
 extern f32 D_800D35E0;
 extern f32 D_800D35E4;
+extern f32 D_800D9AC0[][3];
+extern u8 D_800D9AF0;
 
 /* Non-matching placeholders for the text-only asm slice asm/138520.s. */
 
@@ -14,8 +16,13 @@ s32 func_1510B128() {
     return 0;
 }
 
-s32 func_1510B32C() {
-    return 0;
+// Eight guards preserve retail's five-word float ABI and register sequence.
+s32 func_1510B32C(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
+    func_1510B128(arg0, *(s32 *)&arg1, *(s32 *)&arg2, *(s32 *)&arg3, 0);
+    D_800D9AC0[arg0][0] = arg3;
+    D_800D9AC0[arg0][1] = arg1;
+    D_800D9AC0[arg0][2] = arg2;
+    D_800D9AF0 = 1;
 }
 
 s32 func_1510B3B0() {

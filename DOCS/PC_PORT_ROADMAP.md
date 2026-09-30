@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,052 / 5,462 (55.88%) | 0 | 2,410 |
+| Total | 5,462 / 6,041 (90.42%) | 3,053 / 5,462 (55.90%) | 0 | 2,409 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,788 / 5,321 (89.98%) | 2,473 / 4,788 (51.65%) | 0 | 2,315 |
+| Game | 4,788 / 5,321 (89.98%) | 2,474 / 4,788 (51.67%) | 0 | 2,314 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -266,6 +266,9 @@ The Game record-type eligibility predicate `func_150EC3D4` now matches all
 The Game type-0x28 object sweep `func_150FDD10` now matches all 144 bytes
 through five guarded allocation words; see
 [Working Note 549](WORKING_NOTES/549-game-type-28-object-sweep-match-20260930.md).
+The Game camera-vector forwarding wrapper `func_1510B32C` now matches all
+132 bytes through eight guarded ABI/register words; see
+[Working Note 550](WORKING_NOTES/550-game-camera-vector-forwarding-wrapper-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

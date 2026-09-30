@@ -551,13 +551,19 @@ state, it scans 25 object records when mode byte `D_800C35EA` is one and calls
 normalize one closed `s1`/`s2` allocation cycle. See
 [Working Note 549](WORKING_NOTES/549-game-type-28-object-sweep-match-20260930.md).
 
+Game `func_1510B32C` now matches all 33 retail words. It forwards the slot and
+three float words to `func_1510B128` with a zero fifth argument, stores the
+components in retail's `{z, x, y}` order, and raises `D_800D9AF0`. Eight
+guards normalize the old-style-call float ABI and resulting FP registers. See
+[Working Note 550](WORKING_NOTES/550-game-camera-vector-forwarding-wrapper-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 33-word Game `func_1510B32C`, the next ordinary row.
+cycle. Continue with 35-word Game `func_1510D694`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

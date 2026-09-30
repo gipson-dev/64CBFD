@@ -2321,3 +2321,11 @@ generated_12B1C0,func_150FDD10,0x03C,0x26310000,0x26520000,R_MIPS_LO16:D_800D121
 generated_12B1C0,func_150FDD10,0x040,0x24120028,0x24110028,-,-,Retain the target type in retail's s1 lifetime,,,false
 generated_12B1C0,func_150FDD10,0x050,0x564F0004,0x562F0004,-,-,Compare the target type through retail's s1 lifetime,,,false
 generated_12B1C0,func_150FDD10,0x064,0x5611FFF8,0x5612FFF8,-,-,Compare the end pointer through retail's s2 lifetime,,,false
+generated_138520,func_1510B32C,0x014,0xAFA7002C,0xAFA7002C,-,-,Materialize the fifth floating argument before reloading the register arguments,0x44802000,-,false
+generated_138520,func_1510B32C,0x02C,0xAFA00010,0xE7A40010,-,-,Store the zero fifth argument through retail's floating register,,,false
+generated_138520,func_1510B32C,0x048,0xC7A4002C,0xC7A6002C,-,-,Restore retail's first post-call floating register,,,false
+generated_138520,func_1510B32C,0x04C,0xC7A60024,0xC7A80024,-,-,Restore retail's second post-call floating register,,,false
+generated_138520,func_1510B32C,0x050,0xC7A80028,0xC7AA0028,-,-,Restore retail's third post-call floating register,,,false
+generated_138520,func_1510B32C,0x060,0xE4440000,0xE4460000,-,-,Store the first vector component through retail's floating register,,,false
+generated_138520,func_1510B32C,0x064,0xE4460004,0xE4480004,-,-,Store the second vector component through retail's floating register,,,false
+generated_138520,func_1510B32C,0x068,0xE4480008,0xE44A0008,-,-,Store the third vector component through retail's floating register,,,false

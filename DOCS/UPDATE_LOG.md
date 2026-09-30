@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game camera-vector forwarding wrapper byte-matched
+
+- `func_1510B32C` forwards a slot and three float words with a zero fifth
+  argument, stores the components in `{z, x, y}` order, and raises the update
+  flag.
+- All 33 words / 132 bytes match through eight stale-checked guards for the
+  old-style-call float ABI and FP-register sequence. Linked SHA-256 is
+  `1d1156abe599b3f2474a382805b158a19073bd10f6a273c4e72de1927b0bc317`.
+- Totals are **3,053 / 5,462 (55.90%)** overall and
+  **2,474 / 4,788 (51.67%)** in Game. See
+  [Working Note 550](WORKING_NOTES/550-game-camera-vector-forwarding-wrapper-match-20260930.md).
+
 ### Game type-0x28 object sweep byte-matched
 
 - `func_150FDD10` refreshes state and, in mode one, scans 25 object records to
