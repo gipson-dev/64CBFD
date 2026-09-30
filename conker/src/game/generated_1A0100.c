@@ -6,6 +6,8 @@ extern s8 D_800DD2B0[];
 extern s8 D_800DD2C0[];
 extern u8 D_800BE9B4;
 s32 func_15085430();
+void func_1517EE40(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4,
+                    s32 arg5);
 
 void func_15172C50(s32 value) {
     s32 i;
@@ -18,8 +20,13 @@ void func_15172C50(s32 value) {
     D_800DD2C0[0] = value;
 }
 
-s32 func_15172CA8() {
-    return 0;
+/* Note 534: indexed slot teardown event pair. */
+void func_15172CA8(s32 arg0) {
+    if (D_800DD2B0[arg0] != -1) {
+        D_800DD2B0[arg0] = -1;
+        func_1517EE40(0, 0, 0, 0, 1, arg0);
+        func_1517EE40(0, 0, 0, 0x32, 0, arg0);
+    }
 }
 
 void func_15172D28(u8 *arg0, s32 arg1) {

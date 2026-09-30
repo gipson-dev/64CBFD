@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game indexed slot teardown event pair byte-matched
+
+- `func_15172CA8` now deactivates an occupied indexed slot and emits its two
+  recovered `func_1517EE40` teardown events.
+- All 32 words emit directly from C; the 128-byte spans share SHA-256
+  `85845ebeab1c34c3ccaac89e2f3f6c17cdcc73f798354419eabaa2a1de864a90`.
+- Totals are **3,038 / 5,463 (55.61%)** overall and
+  **2,460 / 4,789 (51.37%)** in Game. See
+  [Working Note 534](WORKING_NOTES/534-game-indexed-slot-teardown-event-pair-match-20260929.md).
+
 ### Game descriptor-copy allocation wrapper byte-matched
 
 - `func_15157898` now forwards the recovered constructor arguments and copies
