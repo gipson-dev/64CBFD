@@ -18,7 +18,7 @@ s32 func_1000CEAC();
 s32 func_1000D2F8();
 s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1000E17C();
-s32 func_1000E2F4();
+void func_1000E2F4(s32 arg0);
 s32 func_1000E934();
 /* End generated placeholder declarations. */
 
@@ -578,9 +578,30 @@ s32 func_1000E134(s32 arg0) {
 s32 func_1000E17C() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000E2F4.s. */
-s32 func_1000E2F4() {
-    return 0;
+void func_1000E2F4(s32 arg0) {
+    struct151 *entry;
+    s32 i;
+
+    for (i = 0; i < 3; i++) {
+        entry = D_800417B0[i];
+        if ((entry != NULL) && (entry->unk4 > 0) && (entry->unk15 == 0)) {
+            if (arg0 != 0) {
+                func_10008EE0(i, 0);
+                entry = D_800417B0[i];
+                if ((*(u32 *)&D_8002B074[entry->unk4].unk4 & 0x10) == 0) {
+                    func_10008F58(i);
+                }
+            } else {
+                if ((*(u32 *)&D_8002B074[entry->unk4].unk4 & 0x10) == 0) {
+                    func_100084D8(i);
+                    entry = D_800417B0[i];
+                }
+                entry->unk30 = -1;
+                func_1000CC54(i);
+            }
+        }
+    }
+    D_80041F00 = arg0;
 }
 
 void func_1000E40C(s32 arg0, s32 arg1) {

@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,101 / 5,457 (56.83%) | 0 | 2,356 |
-| Init | 418 / 488 (85.66%) | 0 | 70 |
+| Total | 3,102 / 5,457 (56.84%) | 0 | 2,355 |
+| Init | 419 / 488 (85.86%) | 0 | 69 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -926,6 +926,11 @@ end-to-end gameplay acceptance.
    incoming value and mask parameters preserves retail's saved-register
    lifetimes without guards; see
    [Working Note 602](WORKING_NOTES/602-init-entry-mask-value-updater-match-20260930.md).
+   The 70-word active-entry mode dispatcher `func_1000E2F4` is byte-exact
+   after recovering its three-entry scan, channel stop/release paths, and
+   final mode-byte store. Twelve guards normalize one non-relocating metadata
+   test register cycle; see
+   [Working Note 603](WORKING_NOTES/603-init-active-entry-mode-dispatcher-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

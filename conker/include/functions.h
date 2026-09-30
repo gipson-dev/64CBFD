@@ -961,7 +961,7 @@ void func_1000D758(f32 arg0, f32 arg1, s32 arg2);
 void func_1000DF68(s32 arg0, s32 arg1, s32 arg2);
 //func_1000E134
 //func_1000E17C
-//func_1000E2F4
+void func_1000E2F4(s32 arg0);
 s32 func_1000E46C(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000E588(s32 arg0, s32 arg1, s32 arg2);
 //func_1000E654

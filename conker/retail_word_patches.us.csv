@@ -2763,3 +2763,15 @@ init_B1B0,func_1000CDA0,0x0F0,0x8FBF0014,0x10000002,-,-,Normalize the recovered 
 init_B1B0,func_1000CDA0,0x0F4,0x27BD0020,0x2C820001,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
 init_B1B0,func_1000CDA0,0x0F8,0x03E00008,0x8FBF0014,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
 init_B1B0,func_1000CDA0,0x0FC,0x00000000,0x27BD0020,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,0x03E00008,,false
+init_B1B0,func_1000E2F4,0x06C,0x00035100,0x00035900,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x080,0x8E420000,0x8E4F0000,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x084,0x8C4F0004,0x8DF80004,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x088,0x000FC100,0x0018C900,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x08C,0x0278C821,0x02794021,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x090,0x8F280004,0x8D090004,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x094,0x31090010,0x312A0010,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x098,0x55200011,0x55400011,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x0B0,0x026A5821,0x026B6021,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x0B4,0x8D6C0004,0x8D8D0004,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x0B8,0x318D0010,0x31AE0010,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_B1B0,func_1000E2F4,0x0BC,0x55A00005,0x55C00005,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false

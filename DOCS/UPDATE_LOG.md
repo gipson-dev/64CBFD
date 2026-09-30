@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init active-entry mode dispatcher byte-matched
+
+- `func_1000E2F4` scans the three active entries, selects the channel stop or
+  release path from the incoming mode and metadata flag, and stores that mode
+  globally.
+- Fifty-eight of 70 words emit directly from semantic C. Twelve stale-checked
+  guards normalize one closed, non-relocating metadata-test register cycle;
+  no instructions are inserted or removed.
+- The linked and retail spans share SHA-256
+  `9c7c8f921694c0fed12dc7ca5c311ccc242df93cb2ad3d55e9ad76300ff911d0`.
+  Totals are **3,102 / 5,457 (56.84%)** overall and
+  **419 / 488 (85.86%)** in Init. See
+  [Working Note 603](WORKING_NOTES/603-init-active-entry-mode-dispatcher-match-20260930.md).
+
 ### Init entry mask value updater byte-matched
 
 - `func_1000E46C` resolves an entry, saturates its percentage to a byte,

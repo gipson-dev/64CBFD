@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init entry mask value updater matched).**
-The current linked checkpoint is `3101 / 5457 (56.83%)` exact C functions,
-with no address-drift blockers and 2,356 genuinely different C functions.
+**Active (2026-09-30, Init active-entry mode dispatcher matched).**
+The current linked checkpoint is `3102 / 5457 (56.84%)` exact C functions,
+with no address-drift blockers and 2,355 genuinely different C functions.
 Init is
-`418 / 488 (85.66%)` exact, with 70 genuinely different C rows. Game is
+`419 / 488 (85.86%)` exact, with 69 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -846,7 +846,12 @@ entries, and updates selected value bytes for unbound entries. Reusing the
 incoming value and mask parameters preserves retail's saved-register
 lifetimes without guards. See
 [Working Note 602](WORKING_NOTES/602-init-entry-mask-value-updater-match-20260930.md).
-Resume the Init queue from its remaining 70 genuinely different C rows.
+Init `func_1000E2F4` now matches all 70 retail words. Its recovered C scans
+three active entries and selects the retail stop or release path before
+storing the mode byte. Twelve guards preserve one closed metadata-test
+register cycle; all control flow, calls, and relocations emit directly. See
+[Working Note 603](WORKING_NOTES/603-init-active-entry-mode-dispatcher-match-20260930.md).
+Resume the Init queue from its remaining 69 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct
