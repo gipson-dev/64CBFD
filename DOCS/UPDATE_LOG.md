@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game linked-endpoint event handler byte-matched
+
+- `func_151B70B4` restores zero-event detach state and event-`0x2D`
+  replacement of either linked endpoint and its selector byte.
+- Nineteen stale-checked transformations normalize one closed IDO
+  register/scheduling cycle, including two restored preload words. The
+  144-byte spans share SHA-256
+  `044f8a0c25072ab7a3589f49051658a9275c5c05284eb5b41e406a31f4db30b1`.
+- Totals are **3,041 / 5,463 (55.67%)** overall and
+  **2,463 / 4,789 (51.43%)** in Game. See
+  [Working Note 537](WORKING_NOTES/537-game-linked-endpoint-event-handler-match-20260929.md).
+
 ### Game second motion-threshold update byte-matched
 
 - `func_151AFC08` restores its flag-gated progress clamp and paired accumulator

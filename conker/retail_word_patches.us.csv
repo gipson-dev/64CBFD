@@ -2246,3 +2246,22 @@ generated_1DCA70,func_151AFC08,0x034,0xA085005C,0xA082005C,-,-,Store the scaled 
 generated_1DCA70,func_151AFC08,0x038,0x84990128,0x8483001C,-,-,Reload the signed input after the byte update,0x24820128,-,false
 generated_1DCA70,func_151AFC08,0x03C,0x0322082A,0x84590000,-,-,Load the motion threshold through retail's v0 record pointer,0x0323082A,-,false
 generated_1DCA70,func_151AFC08,0x04C,0xC484012C,0xC4440004,-,-,Load the motion rate through retail's v0 record pointer,,,false
+generated_1E37D0,func_151B70B4,0x010,0x00C03825,0x00C04025,-,-,Keep the normalized event byte in retail's t0 lifetime,0x2401002D,-,false
+generated_1E37D0,func_151B70B4,0x014,0x14C00009,0x8C470000,-,-,Load the current pointer before the zero-event branch,0x14C0000A,-,false
+generated_1E37D0,func_151B70B4,0x018,0x8C430000,0x00E01825,-,-,Copy the current pointer into the zero-event comparison lifetime,,,false
+generated_1E37D0,func_151B70B4,0x034,0x03E00008,0xA499001E,-,-,Store the status flags before the zero-event return,,,false
+generated_1E37D0,func_151B70B4,0x038,0xA499001E,0x03E00008,-,-,Return after the status-flag store,,,false
+generated_1E37D0,func_151B70B4,0x03C,0x2401002D,0x00000000,-,-,Restore retail's empty zero-event return delay slot,,,false
+generated_1E37D0,func_151B70B4,0x040,0x14E1000F,0x1501000F,-,-,Compare the saved event through retail's t0 lifetime,,,false
+generated_1E37D0,func_151B70B4,0x048,0x8CA40000,0x8CA30000,-,-,Load the first candidate through retail's v1 lifetime,,,false
+generated_1E37D0,func_151B70B4,0x04C,0x54830007,0x54670007,-,-,Compare first candidate and current through retail's v1 and a3 lifetimes,,,false
+generated_1E37D0,func_151B70B4,0x050,0x8CAA0004,0x8CAB0004,-,-,Load the second candidate through retail's t3 lifetime on the branch-likely path,,,false
+generated_1E37D0,func_151B70B4,0x054,0x8CA80004,0x8CA90004,-,-,Load the installed second candidate through retail's t1 lifetime,,,false
+generated_1E37D0,func_151B70B4,0x058,0xAC480000,0xAC490000,-,-,Store the installed second candidate from retail's t1 lifetime,,,false
+generated_1E37D0,func_151B70B4,0x05C,0x90A90009,0x90AA0009,-,-,Load the second-candidate selector through retail's t2 lifetime,,,false
+generated_1E37D0,func_151B70B4,0x064,0xA0490004,0xA04A0004,-,-,Store the second-candidate selector from retail's t2 lifetime,,,false
+generated_1E37D0,func_151B70B4,0x068,0x8CAA0004,0x8CAB0004,-,-,Reload the second candidate through retail's t3 lifetime,,,false
+generated_1E37D0,func_151B70B4,0x06C,0x146A0004,0x15670004,-,-,Compare second candidate and current through retail's t3 and a3 lifetimes,,,false
+generated_1E37D0,func_151B70B4,0x074,0xAC440000,0xAC430000,-,-,Install the first candidate from retail's v1 lifetime,,,false
+generated_1E37D0,func_151B70B4,0x078,0x90AB0008,0x90AC0008,-,-,Load the first-candidate selector through retail's t4 lifetime,,,false
+generated_1E37D0,func_151B70B4,0x07C,0xA04B0004,0xA04C0004,-,-,Store the first-candidate selector from retail's t4 lifetime,,,false

@@ -19,8 +19,38 @@ s32 func_151B6928() {
     return 0;
 }
 
-s32 func_151B70B4() {
-    return 0;
+// Matched with guarded event/current register and return scheduling.
+void func_151B70B4(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *link;
+    u8 *current;
+    u8 *first;
+    u8 event;
+
+    link = *(u8 **)(arg0 + 0x98);
+    event = arg2;
+    current = *(u8 **)link;
+
+    if (arg2 == 0) {
+        if (*(u8 **)arg1 != current) {
+            return;
+        }
+        arg0[0x30] = 0;
+        *(u16 *)(arg0 + 0x1E) |= 8;
+        return;
+    }
+
+    if (event == 0x2D) {
+        first = *(u8 **)arg1;
+        if (first == current) {
+            *(u8 **)link = *(u8 **)(arg1 + 4);
+            link[4] = arg1[9];
+            return;
+        }
+        if (*(u8 **)(arg1 + 4) == current) {
+            *(u8 **)link = first;
+            link[4] = arg1[8];
+        }
+    }
 }
 
 s32 func_151B7144() {

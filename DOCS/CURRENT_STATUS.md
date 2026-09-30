@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,040 / 5,463 (55.65%) | 0 | 2,423 |
+| Total | 3,041 / 5,463 (55.67%) | 0 | 2,422 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,462 / 4,789 (51.41%) | 0 | 2,327 |
+| Game | 2,463 / 4,789 (51.43%) | 0 | 2,326 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -406,6 +406,11 @@ from C; see
 Game motion-threshold update `func_151AFC08` now matches all 32 words using its
 semantic C body and the established duplicate-function guard set; see
 [Working Note 536](WORKING_NOTES/536-game-second-motion-threshold-update-match-20260929.md).
+Game linked-endpoint event handler `func_151B70B4` now matches all 36 words
+after recovering its zero-event detach state and event-`0x2D` endpoint
+replacement behavior. Nineteen stale-checked guards normalize one closed IDO
+register/scheduling cycle; see
+[Working Note 537](WORKING_NOTES/537-game-linked-endpoint-event-handler-match-20260929.md).
 
 ## Verified build state
 
@@ -732,8 +737,9 @@ end-to-end gameplay acceptance.
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. Continue with 36-word Game `func_151B70B4`, the next
-   ordinary placeholder.
+   allocation boundary. The 36-word linked-endpoint event handler
+   `func_151B70B4` is now byte-exact through nineteen stale-checked guards.
+   Continue with 33-word Game `func_151E55A8`, the next ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
