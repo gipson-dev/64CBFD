@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,029 / 5,463 (55.45%) | 0 | 2,434 |
+| Total | 3,030 / 5,463 (55.46%) | 0 | 2,433 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,451 / 4,789 (51.18%) | 0 | 2,338 |
+| Game | 2,452 / 4,789 (51.20%) | 0 | 2,337 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -359,6 +359,11 @@ words after recovering its stack-local `struct127`, coordinate field writes,
 query submission, and inverted success result. The complete routine emits
 directly from C with no guards; see
 [Working Note 525](WORKING_NOTES/525-game-coordinate-query-wrapper-match-20260929.md).
+Game randomized effect wrapper `func_150B6754` is byte-exact across all 35
+words after recovering its two PRNG ranges, incoming byte/context forwarding,
+and eight-argument effect call. The complete routine emits directly from C
+with no guards; see
+[Working Note 526](WORKING_NOTES/526-game-randomized-effect-parameter-wrapper-match-20260929.md).
 
 ## Verified build state
 
@@ -685,7 +690,7 @@ end-to-end gameplay acceptance.
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. Continue with 35-word Game `func_150B6754`, the next
+   allocation boundary. Continue with 32-word Game `func_150CC638`, the next
    ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly

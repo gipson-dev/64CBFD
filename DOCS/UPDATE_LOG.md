@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game randomized effect-parameter wrapper byte-matched
+
+- `func_150B6754` now calls the PRNG twice, derives unsigned `200..255` and
+  `15..25` parameters, and forwards them with fixed RGB values and its incoming
+  byte/context to `func_15182670`.
+- Keeping both PRNG calls in the final argument expression restores retail's
+  temporary spill, so all 35 words emit directly from C without guards.
+- The linked and retail 140-byte spans share SHA-256
+  `fb70b61aec9a52557abb3566fc9c99564e9583ec845ef8e730bcde9ce3ec9209`.
+- Totals are **3,030 / 5,463 (55.46%)** overall and
+  **2,452 / 4,789 (51.20%)** in Game, with no address-drift rows. See
+  [Working Note 526](WORKING_NOTES/526-game-randomized-effect-parameter-wrapper-match-20260929.md).
+
 ### Game coordinate-query wrapper byte-matched
 
 - `func_150A32B4` now constructs a stack-local `struct127` from three integer

@@ -3,6 +3,10 @@ extern u8 D_8009FC30[];
 extern u8 D_800C35EA;
 extern u8 D_800CC34A[];
 
+s32 func_150ADA20(void);
+void func_15182670(u8 arg0, u8 arg1, u8 arg2, u8 arg3, s16 arg4, u8 arg5,
+                   u8 arg6, s32 arg7);
+
 /* Non-matching placeholders for the text-only asm slice asm/E2DA0.s. */
 
 u8 *func_150B58F0(u8 *arg0, s32 arg1) {
@@ -80,6 +84,7 @@ s32 func_150B66DC(u8 *arg0) {
     return result;
 }
 
-s32 func_150B6754() {
-    return 0;
+void func_150B6754(u8 arg0, s32 arg1) {
+    func_15182670(0xCC, 0xCC, 0xFF, (func_150ADA20() % 56U) + 200,
+                  (func_150ADA20() % 11U) + 15, 0, arg0, arg1);
 }
