@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,100 / 5,457 (56.81%) | 0 | 2,357 |
-| Init | 488 / 538 (90.71%) | 417 / 488 (85.45%) | 0 | 71 |
+| Total | 5,457 / 6,041 (90.33%) | 3,101 / 5,457 (56.83%) | 0 | 2,356 |
+| Init | 488 / 538 (90.71%) | 418 / 488 (85.66%) | 0 | 70 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -465,6 +465,11 @@ span. Its typed C validates the record and active handle, conditionally sets
 two flag bits, and tests the caller's low-byte mask. Eighteen stale-checked
 guards normalize the remaining local-slot and default-return schedule. See
 [Working Note 601](WORKING_NOTES/601-init-record-mask-filter-match-20260930.md).
+The Init entry mask value updater `func_1000E46C` now matches its complete
+284-byte span directly from C. Reusing its converted percentage and signed
+mask parameters restores retail's saved-register lifetimes without guards.
+See
+[Working Note 602](WORKING_NOTES/602-init-entry-mask-value-updater-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

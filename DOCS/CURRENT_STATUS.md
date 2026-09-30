@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,100 / 5,457 (56.81%) | 0 | 2,357 |
-| Init | 417 / 488 (85.45%) | 0 | 71 |
+| Total | 3,101 / 5,457 (56.83%) | 0 | 2,356 |
+| Init | 418 / 488 (85.66%) | 0 | 70 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -920,6 +920,12 @@ end-to-end gameplay acceptance.
    and post-call index reload. Eighteen guards normalize its local slot and
    default-return schedule; see
    [Working Note 601](WORKING_NOTES/601-init-record-mask-filter-match-20260930.md).
+   The 71-word entry mask value updater `func_1000E46C` is byte-exact
+   directly from C after recovering its saturated percentage conversion,
+   channel dispatch, mask update, and signed set-bit walk. Reusing the
+   incoming value and mask parameters preserves retail's saved-register
+   lifetimes without guards; see
+   [Working Note 602](WORKING_NOTES/602-init-entry-mask-value-updater-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

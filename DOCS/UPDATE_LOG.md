@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init entry mask value updater byte-matched
+
+- `func_1000E46C` resolves an entry, saturates its percentage to a byte,
+  dispatches channel-backed entries, and updates the selected value bytes of
+  unbound entries.
+- All 71 words emit directly from semantic C. Reusing the incoming percentage
+  and signed mask parameters preserves retail's saved-register lifetimes, so
+  no expected-word guards or compiler-profile changes are required.
+- The linked and retail spans share SHA-256
+  `1e96762e70a9a2b3a72c015cdb62fa7ac620a2e7ba751cee8f29b0bf22a2a686`.
+  Totals are **3,101 / 5,457 (56.83%)** overall and
+  **418 / 488 (85.66%)** in Init. See
+  [Working Note 602](WORKING_NOTES/602-init-entry-mask-value-updater-match-20260930.md).
+
 ### Init record mask filter byte-matched
 
 - `func_1000CDA0` validates its typed record and active handle, conditionally
