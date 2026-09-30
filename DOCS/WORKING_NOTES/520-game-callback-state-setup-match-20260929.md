@@ -32,7 +32,8 @@ used.
 
 ## Resume boundary
 
-Inspect Init `func_1000FF90`, the next ordinary unparked candidate at 35 words
-and 31 real differences. Keep Game `func_15015F40` parked behind unresolved
+Inspect Game `func_1502225C`, the next ordinary unparked candidate at 33 words
+and 31 real differences. Keep Init `func_1000FF90` parked at its documented
+compiler-allocation boundary, Game `func_15015F40` parked behind unresolved
 indirect-table ownership, handwritten `func_150A76F0` in the assembly queue,
 and `func_15106E78` parked on its caller-saved allocation cycle.

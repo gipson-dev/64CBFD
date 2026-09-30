@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,024 / 5,463 (55.35%) | 0 | 2,439 |
+| Total | 3,025 / 5,463 (55.37%) | 0 | 2,438 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,446 / 4,789 (51.08%) | 0 | 2,343 |
+| Game | 2,447 / 4,789 (51.10%) | 0 | 2,342 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -335,6 +335,10 @@ after recovering its two setup calls, counter-controlled halfword flag, and
 conditional callback/state installation. The complete routine emits directly
 from C with no guards; see
 [Working Note 520](WORKING_NOTES/520-game-callback-state-setup-match-20260929.md).
+Game 25-byte group append `func_1502225C` is byte-exact across all 33 words
+after recovering its per-group deduplication scan, append, and count update.
+The complete routine emits directly from C with no guards; see
+[Working Note 521](WORKING_NOTES/521-game-25-byte-group-deduplicating-append-match-20260929.md).
 
 ## Verified build state
 
@@ -660,8 +664,9 @@ end-to-end gameplay acceptance.
    advanced through `func_151E4E64`, whose complete 33-word callback-state
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
-   allocation cycle. Continue with 35-word Init `func_1000FF90`, the next
-   ordinary unparked candidate.
+   allocation cycle. Init `func_1000FF90` remains parked at its documented
+   allocation boundary. Continue with 32-word Game `func_15046C80`, the next
+   untriaged ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

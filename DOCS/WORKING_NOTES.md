@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game callback-state setup matched).**
-The current linked checkpoint is `3024 / 5463 (55.35%)` exact C functions,
-with no address-drift blockers and 2,439 genuinely different C functions.
+**Active (2026-09-29, Game 25-byte group append matched).**
+The current linked checkpoint is `3025 / 5463 (55.37%)` exact C functions,
+with no address-drift blockers and 2,438 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2446 / 4789 (51.08%)` exact, with 2,343 genuinely different C rows. The tree
+`2447 / 4789 (51.10%)` exact, with 2,342 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -391,11 +391,18 @@ high bit after the global threshold, and conditionally installs the callback
 and state bytes. No expected-word guards are needed. See
 [Working Note 520](WORKING_NOTES/520-game-callback-state-setup-match-20260929.md).
 
+Game `func_1502225C` now matches all 33 retail words directly from C. Its
+typed 25-byte rows reproduce retail's multiply-by-25 addressing while the
+recovered scan avoids duplicate entries before appending and incrementing the
+group count. No expected-word guards are needed. See
+[Working Note 521](WORKING_NOTES/521-game-25-byte-group-deduplicating-append-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
-raw-assembly queue rather than modeling it as an ordinary C ABI. Continue
-with 35-word Init `func_1000FF90`, the next ordinary unparked candidate. Keep
+raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
+`func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
+Continue with 32-word Game `func_15046C80`, the next untriaged placeholder.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

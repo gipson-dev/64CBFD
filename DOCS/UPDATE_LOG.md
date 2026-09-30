@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game 25-byte group deduplicating append byte-matched
+
+- `func_1502225C` now scans a selected 25-byte row in `D_800C3518`, returns
+  when the incoming byte already exists, and otherwise appends it while
+  incrementing the corresponding `D_800C3510` count.
+- The typed row stride reproduces the complete 33-word routine directly from
+  semantic C with no expected-word guards.
+- The linked and retail 132-byte spans share SHA-256
+  `26a69edf89a280a0b5a539dda7f210dadfd03750bc373bb2b445a3b6f565e688`.
+- Totals are **3,025 / 5,463 (55.37%)** overall and
+  **2,447 / 4,789 (51.10%)** in Game, with no address-drift rows. See
+  [Working Note 521](WORKING_NOTES/521-game-25-byte-group-deduplicating-append-match-20260929.md).
+
 ### Game callback-state setup byte-matched
 
 - `func_151E4E64` now runs its two setup calls, raises the high bit in

@@ -18,6 +18,7 @@ extern void func_1516D2E0(u8 *arg0);
 extern void func_1516D328(u8 *arg0);
 
 extern u8 D_800C3510[];
+extern u8 D_800C3518[][25];
 extern u8 D_800C354A[];
 extern u8 D_800C3550[][30];
 extern u8 D_800C3670;
@@ -188,8 +189,23 @@ void func_15022248(s32 arg0) {
     D_800C354A[arg0] = 0;
 }
 
-s32 func_1502225C() {
-    return 0;
+void func_1502225C(s32 value, s32 group) {
+    s32 i = 0;
+    u8 *count = &D_800C3510[group];
+    s32 count_value = *count;
+    s32 limit = count_value;
+
+    if (count_value > 0) {
+        do {
+            if (value == D_800C3518[group][i]) {
+                return;
+            }
+            i++;
+        } while (i < limit);
+    }
+
+    D_800C3518[group][count_value] = value;
+    *count = count_value + 1;
 }
 
 s32 func_150222E0() {
