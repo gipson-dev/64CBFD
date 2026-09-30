@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game object-selector payload-wrapper twin byte-matched
+
+- `func_151B1AB0` now implements the second null-gated owner/selector payload
+  wrapper, using command type `0x3C`, overflow value `0x11`, and third argument
+  `0x15` before copying the 12-byte payload into a successful allocation.
+- Sixteen of 33 words emit directly from semantic C. Seventeen independently
+  scoped stale-checked guards normalize the same closed IDO schedule as its
+  `func_15192920` structural twin. Linked SHA-256 is
+  `244442f6df0e8eb0c7d7de8476d15861a355f5a958ab34ebbb0c4a24c2c26977`.
+- Totals are **3,067 / 5,462 (56.15%)** overall and
+  **2,488 / 4,788 (51.96%)** in Game. See
+  [Working Note 564](WORKING_NOTES/564-game-object-selector-payload-wrapper-twin-match-20260930.md).
+
 ### Game object-selector payload wrapper byte-matched
 
 - `func_15192920` now ignores null owners, captures the owner's selector byte,

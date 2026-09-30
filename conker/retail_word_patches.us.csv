@@ -2413,3 +2413,20 @@ generated_1BFDD0,func_15192920,0x048,0xAFA80014,0xAFB90010,-,-,Store the leading
 generated_1BFDD0,func_15192920,0x04C,0xAFB90010,0x24060014,-,-,Prepare the third register argument after the overflow stores,,,false
 generated_1BFDD0,func_15192920,0x054,0xE7A40030,0xA3B8002C,-,-,Store the selector before requesting the destination record,,,false
 generated_1BFDD0,func_15192920,0x05C,0xA3B8002C,0xE7A40030,-,-,Store the zero float in the allocation-call delay slot,,,false
+generated_1DD500,func_151B1AB0,0x010,0x2404003C,0x8FAF0038,-,-,Reload the payload owner before preparing call arguments,,,false
+generated_1DD500,func_151B1AB0,0x014,0x2405FFFF,0x2404003C,-,-,Prepare the command type after retail's second owner load,,,false
+generated_1DD500,func_151B1AB0,0x01C,0x24060015,0x2405FFFF,-,-,Prepare the signed selector in the null-branch delay slot,,,false
+generated_1DD500,func_151B1AB0,0x020,0x8FAF0038,0xAFAF0028,-,-,Store the owner at the start of retail's local payload,,,false
+generated_1DD500,func_151B1AB0,0x024,0x44802000,0x91F8003B,-,-,Load the selector byte immediately after the owner store,,,false
+generated_1DD500,func_151B1AB0,0x028,0x24190011,0x44802000,-,-,Materialize the zero float after loading the selector,,,false
+generated_1DD500,func_151B1AB0,0x02C,0xAFAF0028,0x24190011,-,-,Begin the overflow call arguments in retail order,,,false
+generated_1DD500,func_151B1AB0,0x030,0x91F8003B,0x2408000C,-,-,Prepare the payload size after the first overflow argument,,,false
+generated_1DD500,func_151B1AB0,0x034,0x2408000C,0x240900FF,-,-,Prepare the byte mask after the payload size,,,false
+generated_1DD500,func_151B1AB0,0x038,0x240900FF,0x240A0001,-,-,Prepare the final allocation flag after the byte mask,,,false
+generated_1DD500,func_151B1AB0,0x03C,0x240A0001,0xAFAA001C,-,-,Store the final allocation flag in its outgoing slot,,,false
+generated_1DD500,func_151B1AB0,0x040,0xAFAA001C,0xAFA90018,-,-,Store the byte mask in its outgoing slot,,,false
+generated_1DD500,func_151B1AB0,0x044,0xAFA90018,0xAFA80014,-,-,Store the payload size in its outgoing slot,,,false
+generated_1DD500,func_151B1AB0,0x048,0xAFA80014,0xAFB90010,-,-,Store the leading overflow argument in retail order,,,false
+generated_1DD500,func_151B1AB0,0x04C,0xAFB90010,0x24060015,-,-,Prepare the third register argument after the overflow stores,,,false
+generated_1DD500,func_151B1AB0,0x054,0xE7A40030,0xA3B8002C,-,-,Store the selector before requesting the destination record,,,false
+generated_1DD500,func_151B1AB0,0x05C,0xA3B8002C,0xE7A40030,-,-,Store the zero float in the allocation-call delay slot,,,false

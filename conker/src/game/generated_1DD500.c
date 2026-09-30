@@ -63,8 +63,28 @@ s32 func_151B1A84(s32 arg0) {
     func_15149368(arg0);
 }
 
-s32 func_151B1AB0() {
-    return 0;
+void *func_151491F4(s16 arg0, s8 arg1, s8 arg2, u8 arg3, u8 arg4, s32 arg5, u8 arg6, s32 arg7);
+
+typedef struct {
+    void *owner;
+    u8 selector;
+    u8 pad5[3];
+    f32 value;
+} Generated1DD500Payload;
+
+void func_151B1AB0(u8 * volatile arg0) {
+    u8 *record;
+    Generated1DD500Payload payload;
+
+    if (arg0 != NULL) {
+        payload.owner = arg0;
+        payload.selector = ((u8 *)payload.owner)[0x3B];
+        payload.value = 0.0f;
+        record = func_151491F4(0x3C, -1, 0x15, 1, 0x11, 0xC, 0xFF, 1);
+        if (record != NULL) {
+            memcpy(record + 0x28, &payload, sizeof(payload));
+        }
+    }
 }
 
 s32 func_151B1B34() {
