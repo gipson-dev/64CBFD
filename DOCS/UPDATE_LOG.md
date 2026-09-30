@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init handwritten osMapTLB restored
+
+- `osMapTLB` is restored from an empty C placeholder to its original 45-word
+  CP0/TLB body plus three retail padding words.
+- The complete 192-byte slot is independently byte-exact and retains the
+  original `mfc0`, `mtc0`, `tlbwi`, and hazard-nop sequence.
+- The rebuilt and retail spans share SHA-256
+  `df58b390004db1a7de5265449eafe8115ecaf81acad24b5471290157b28cc85e`.
+  The row is now correctly classified as raw assembly, leaving **398 / 491
+  (81.06%)** byte-exact Init C rows and 93 different C rows. See
+  [Working Note 580](WORKING_NOTES/580-init-handwritten-maptlb-restoration-20260930.md).
+
 ### Game event-0x3E owner dispatcher byte-matched
 
 - `func_150F7310` handles event `0x3E` by comparing incoming and object owner

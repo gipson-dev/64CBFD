@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,461 / 6,041 (90.40%) | 3,081 / 5,461 (56.42%) | 0 | 2,380 |
-| Init | 492 / 538 (91.45%) | 398 / 492 (80.89%) | 0 | 94 |
+| Total | 5,460 / 6,041 (90.38%) | 3,081 / 5,460 (56.43%) | 0 | 2,379 |
+| Init | 491 / 538 (91.26%) | 398 / 491 (81.06%) | 0 | 93 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -384,6 +384,9 @@ The Game event-`0x3E` owner dispatcher `func_150F7310` now matches all 140
 bytes. Twelve guarded words normalize its closed identity-register cycle and
 one load schedule; see
 [Working Note 579](WORKING_NOTES/579-game-event-3e-owner-dispatcher-match-20260930.md).
+Init `osMapTLB` is restored from its empty C placeholder to original
+handwritten CP0/TLB assembly. Its complete 192-byte slot matches retail; see
+[Working Note 580](WORKING_NOTES/580-init-handwritten-maptlb-restoration-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
