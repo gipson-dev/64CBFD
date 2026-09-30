@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,069 / 5,461 (56.20%) | 0 | 2,392 |
+| Total | 3,070 / 5,461 (56.22%) | 0 | 2,391 |
 | Init | 398 / 492 (80.89%) | 0 | 94 |
-| Game | 2,490 / 4,788 (52.01%) | 0 | 2,298 |
+| Game | 2,491 / 4,788 (52.03%) | 0 | 2,297 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -848,8 +848,9 @@ end-to-end gameplay acceptance.
    The 34-word global mode-state updater `func_151D66F0` is now byte-exact
    directly from C. Init `__osProbeTLB` is restored to its original
    handwritten CP0/TLB ownership, and its complete 48-word slot independently
-   matches retail. Continue with 44-word Game `func_15013D38`, the next
-   ordinary C row.
+   matches retail. The 44-word signed-position effect dispatcher
+   `func_15013D38` is now byte-exact through five guarded setup-schedule words.
+   Continue with 33-word Game `func_15024130`, the next ordinary C row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

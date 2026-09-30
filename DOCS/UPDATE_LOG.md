@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game signed-position effect dispatcher byte-matched
+
+- `func_15013D38` now sets the source flag, converts three signed coordinates
+  into a local float vector, defaults its stored dispatch value to one, and
+  calls `func_151BE850` with retail's trailing arguments `(1, 0xFF, 1)`.
+- Thirty-nine of 44 words emit directly from semantic C. Five stale-checked,
+  non-relocating guards normalize one closed vector-address/call-constant
+  setup cycle. The linked and retail spans share SHA-256
+  `d8ddb22ea0408713dc0b53f28741dd3aefe9de2acb182b2f2f71ee34a63fa1ed`.
+- Totals are **3,070 / 5,461 (56.22%)** overall and
+  **2,491 / 4,788 (52.03%)** in Game. See
+  [Working Note 568](WORKING_NOTES/568-game-signed-position-effect-dispatch-match-20260930.md).
+
 ### Handwritten Init TLB probe restored
 
 - `__osProbeTLB` is restored from its false zero-return C placeholder to the

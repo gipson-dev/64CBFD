@@ -85,6 +85,7 @@ s32 func_15013C38() {
 
 s32 func_15013D38(u8 *arg0) {
     struct17 tmp;
+    s32 storedValue;
     s32 value;
 
     arg0[0x16] |= 4;
@@ -92,12 +93,10 @@ s32 func_15013D38(u8 *arg0) {
     tmp.unk4 = *(s16 *)(arg0 + 2);
     tmp.unk8 = *(s16 *)(arg0 + 4);
 
-    value = *(s32 *)(arg0 + 0x18);
-    if (value == 0) {
-        value = 1;
-    }
+    storedValue = *(s32 *)(arg0 + 0x18);
+    value = storedValue != 0 ? storedValue : 1;
 
-    func_151BE850(&tmp, *(s32 *)(arg0 + 0x10), value, arg0[0x1F], 0xFF, 1, 1);
+    func_151BE850(&tmp, *(s32 *)(arg0 + 0x10), value, arg0[0x1F], 1, 0xFF, 1);
     return 1;
 }
 

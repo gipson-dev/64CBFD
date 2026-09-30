@@ -2451,3 +2451,8 @@ generated_1FA770,func_151CEA20,0x068,0xE4880050,0xE4840050,-,-,Store the advance
 generated_1FA770,func_151CEA20,0x06C,0xC4900050,0xC4860050,-,-,Reload the second scalar through retail's f6 lifetime,,,false
 generated_1FA770,func_151CEA20,0x070,0x4610703C,0x4606803C,-,-,Compare the clamp constant through retail's FP register pair,,,false
 generated_1FA770,func_151CEA20,0x080,0xE48E0050,0xE4900050,-,-,Store retail's f16 clamp constant on overflow,,,false
+game_40490,func_15013D38,0x018,0x24030001,0x27A4003C,-,-,Prepare the vector address before materializing the call constants,,,false
+game_40490,func_15013D38,0x02C,0x27A4003C,0x24090001,-,-,Materialize the first overflow argument after the vector address,,,false
+game_40490,func_15013D38,0x030,0x24090001,0x240A00FF,-,-,Materialize the byte mask after the first overflow argument,,,false
+game_40490,func_15013D38,0x034,0x240A00FF,0x240B0001,-,-,Materialize the final overflow argument after the byte mask,,,false
+game_40490,func_15013D38,0x038,0x240B0001,0x24030001,-,-,Materialize the default stored value after all call constants,,,false
