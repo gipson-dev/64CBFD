@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,458 / 6,041 (90.35%) | 3,086 / 5,458 (56.54%) | 0 | 2,372 |
-| Init | 489 / 538 (90.89%) | 403 / 489 (82.41%) | 0 | 86 |
+| Total | 5,457 / 6,041 (90.33%) | 3,086 / 5,457 (56.55%) | 0 | 2,371 |
+| Init | 488 / 538 (90.71%) | 403 / 488 (82.58%) | 0 | 85 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -411,6 +411,9 @@ The Init fixed-point parameter wrapper `func_10010E78` now matches all 184
 bytes. Forty-five words emit directly from C; one guarded word preserves
 retail's commutative multiply operand order. See
 [Working Note 587](WORKING_NOTES/587-init-fixed-point-parameter-wrapper-match-20260930.md).
+Init `bzero` is restored from its approximate byte-loop C body to original
+handwritten libultra assembly. Its complete 160-byte span matches retail; see
+[Working Note 588](WORKING_NOTES/588-init-handwritten-bzero-restoration-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

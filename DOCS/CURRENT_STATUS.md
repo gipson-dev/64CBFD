@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,458 / 6,041 (90.35%) | 583 | 1,930,084 / 2,256,728 (85.53%) |
-| Init | 489 / 538 (90.89%) | 49 | 147,448 / 164,048 (89.88%) |
+| Total | 5,457 / 6,041 (90.33%) | 584 | 1,929,924 / 2,256,728 (85.52%) |
+| Init | 488 / 538 (90.71%) | 50 | 147,288 / 164,048 (89.78%) |
 | Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,086 / 5,458 (56.54%) | 0 | 2,372 |
-| Init | 403 / 489 (82.41%) | 0 | 86 |
+| Total | 3,086 / 5,457 (56.55%) | 0 | 2,371 |
+| Init | 403 / 488 (82.58%) | 0 | 85 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -884,7 +884,9 @@ end-to-end gameplay acceptance.
    The 51-word channel level/mask updater `func_1000E588` is byte-exact
    directly from recovered semantic C with no guards. The 46-word fixed-point
    parameter wrapper `func_10010E78` is byte-exact through one guarded
-   commutative multiply word; its other 45 words emit directly from C.
+   commutative multiply word; its other 45 words emit directly from C. The
+   40-word `bzero` row is restored from an approximate byte loop to original
+   handwritten libultra assembly and independently matches all 160 bytes.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

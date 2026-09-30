@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init handwritten bzero restored
+
+- `bzero` now uses the original handwritten libultra implementation instead
+  of the approximate byte-at-a-time C loop.
+- Its unaligned prefix, 32-byte block loop, word tail, and byte tail match all
+  40 retail words without expected-word guards.
+- The linked and retail spans share SHA-256
+  `6cb49ba97859396e62e39990cd9a31a7a775d8e8b5618695b03027823a7b2863`.
+  The row is now correctly assembly-classified; exact-C totals are
+  **3,086 / 5,457 (56.55%)** overall and **403 / 488 (82.58%)** in Init. See
+  [Working Note 588](WORKING_NOTES/588-init-handwritten-bzero-restoration-20260930.md).
+
 ### Init fixed-point parameter wrapper byte-matched
 
 - `func_10010E78` scales an unsigned magnitude through `func_1000F6B8`, then

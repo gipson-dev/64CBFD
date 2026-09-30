@@ -1,6 +1,7 @@
 #include "PR/ultratypes.h"
 #include "string.h"
 
+#if 0
 void bzero(void *dst, size_t size) {
     u8 *d;
 
@@ -10,3 +11,5 @@ void bzero(void *dst, size_t size) {
         size--;
     }
 }
+#endif
+#pragma GLOBAL_ASM("asm/nonmatchings/libultra/libc/bzero/bzero.s")
