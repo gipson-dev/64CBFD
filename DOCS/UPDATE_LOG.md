@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game callback-state setup byte-matched
+
+- `func_151E4E64` now runs its two setup calls, raises the high bit in
+  `D_800E0B9A` once `D_800E0A90` reaches `0x4B1`, and conditionally installs
+  callback `func_151E4E00` with state bytes `7` and `8`.
+- The complete 33-word routine emits directly from semantic C with no
+  expected-word guards.
+- The linked and retail 132-byte spans share SHA-256
+  `d265bd58b30d5d4a492a624a5fe5e9644255b0f276ad7d413c9ed06946404fc9`.
+- Totals are **3,024 / 5,463 (55.35%)** overall and
+  **2,446 / 4,789 (51.08%)** in Game, with no address-drift rows. See
+  [Working Note 520](WORKING_NOTES/520-game-callback-state-setup-match-20260929.md).
+
 ### Game record-match release wrapper byte-matched
 
 - `func_1518F49C` now forwards its record, selector, and embedded owner fields

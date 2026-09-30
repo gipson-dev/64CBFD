@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game record-match release wrapper matched).**
-The current linked checkpoint is `3023 / 5463 (55.34%)` exact C functions,
-with no address-drift blockers and 2,440 genuinely different C functions.
+**Active (2026-09-29, Game callback-state setup matched).**
+The current linked checkpoint is `3024 / 5463 (55.35%)` exact C functions,
+with no address-drift blockers and 2,439 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2445 / 4789 (51.05%)` exact, with 2,344 genuinely different C rows. The tree
+`2446 / 4789 (51.08%)` exact, with 2,343 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -385,10 +385,16 @@ comparison locals reproduce retail's frame and register lifetimes without
 guards. See
 [Working Note 519](WORKING_NOTES/519-game-record-match-release-wrapper-20260929.md).
 
+Game `func_151E4E64` now matches all 33 retail words directly from C. The
+recovered routine performs its two setup calls, raises the signed halfword's
+high bit after the global threshold, and conditionally installs the callback
+and state bytes. No expected-word guards are needed. See
+[Working Note 520](WORKING_NOTES/520-game-callback-state-setup-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Continue
-with 33-word `func_151E4E64`, the next ordinary Game candidate. Keep
+with 35-word Init `func_1000FF90`, the next ordinary unparked candidate. Keep
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181

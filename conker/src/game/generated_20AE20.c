@@ -253,8 +253,18 @@ void func_151E4E00(void) {
     func_1501C730(6, 0x1D, 0, 0, 1);
 }
 
-s32 func_151E4E64() {
-    return 0;
+void func_151E4E64(void) {
+    func_151E530C();
+    func_151E55A8();
+
+    if (D_800E0A90 >= 0x4B1) {
+        D_800E0B9A |= 0x8000;
+    }
+    if (D_800E0B9A != 0) {
+        D_800E0B94 = 7;
+        D_800E0A88 = (s32)func_151E4E00;
+        D_8008FD74 = 8;
+    }
 }
 
 s32 func_151E4EE8() {

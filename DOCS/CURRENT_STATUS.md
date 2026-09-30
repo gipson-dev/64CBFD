@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,023 / 5,463 (55.34%) | 0 | 2,440 |
+| Total | 3,024 / 5,463 (55.35%) | 0 | 2,439 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,445 / 4,789 (51.05%) | 0 | 2,344 |
+| Game | 2,446 / 4,789 (51.08%) | 0 | 2,343 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -330,6 +330,11 @@ words after recovering its five-argument forwarding call, selector gate, and
 two comparison keys. The complete routine emits directly from C with no
 guards; see
 [Working Note 519](WORKING_NOTES/519-game-record-match-release-wrapper-20260929.md).
+Game callback-state setup `func_151E4E64` is byte-exact across all 33 words
+after recovering its two setup calls, counter-controlled halfword flag, and
+conditional callback/state installation. The complete routine emits directly
+from C with no guards; see
+[Working Note 520](WORKING_NOTES/520-game-callback-state-setup-match-20260929.md).
 
 ## Verified build state
 
@@ -652,11 +657,11 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_1518F49C`, whose complete 32-word record-match
-   release wrapper now matches directly from C with no guarded words.
+   advanced through `func_151E4E64`, whose complete 33-word callback-state
+   setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
-   allocation cycle. Continue with 33-word `func_151E4E64`, the next ordinary
-   Game candidate.
+   allocation cycle. Continue with 35-word Init `func_1000FF90`, the next
+   ordinary unparked candidate.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
