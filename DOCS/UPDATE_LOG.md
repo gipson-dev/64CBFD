@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game fixed-point coordinate interpolator byte-matched
+
+- `func_150B73F0` computes two signed 16.16 fixed-point interpolations between
+  halfword endpoints and stores the resulting X/Y coordinates as floats.
+- Thirteen of 37 words emit directly from semantic C. Twenty-four stale-checked
+  guards normalize one closed register-allocation cycle; instruction order,
+  divide traps, immediates, float stores, and control flow already match.
+- The linked and retail spans share SHA-256
+  `5ff8bb8bebad3257d3ce7d34f41d03f4517bd0b6c4e0cf9afd7692eeb9c41e18`.
+  Totals are **3,076 / 5,461 (56.33%)** overall and
+  **2,497 / 4,788 (52.15%)** in Game. See
+  [Working Note 574](WORKING_NOTES/574-game-fixed-point-coordinate-interpolator-match-20260930.md).
+
 ### Game owner-payload allocator byte-matched
 
 - `func_150B0C58` builds a 12-byte payload containing its owner pointer,

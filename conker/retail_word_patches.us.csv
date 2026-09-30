@@ -2468,3 +2468,27 @@ generated_AC030,func_1507F4C0,0x058,0xAFA40020,0xAFA4001C,-,-,Spill the selected
 generated_AC030,func_1507F4C0,0x05C,0x8FA40020,0x8FA4001C,-,-,Reload the selected range from retail's lower local slot,,,false
 generated_AC030,func_1507F4C0,0x060,0x8FA3001C,0x8FA30020,-,-,Reload the selected base from retail's upper local slot,,,false
 generated_AC030,func_1507F4C0,0x080,0x27BD0020,0x27BD0028,-,-,Restore retail's 0x28-byte frame in the epilogue,,,false
+generated_E4070,func_150B73F0,0x000,0x848E0024,0x84880024,-,-,Use retail's progress register in the closed interpolation allocation cycle,,,false
+generated_E4070,func_150B73F0,0x004,0x8C98001C,0x8C87001C,-,-,Use retail's duration register in the closed interpolation allocation cycle,,,false
+generated_E4070,func_150B73F0,0x008,0x84850018,0x84820018,-,-,Use retail's first X endpoint register in the closed interpolation allocation cycle,,,false
+generated_E4070,func_150B73F0,0x00C,0x000E7C00,0x00087400,-,-,Shift the progress value through retail's temporary register,,,false
+generated_E4070,func_150B73F0,0x010,0x01F8001A,0x01C7001A,-,-,Divide through retail's progress and duration registers,,,false
+generated_E4070,func_150B73F0,0x014,0x84990020,0x84850020,-,-,Use retail's second X endpoint register,,,false
+generated_E4070,func_150B73F0,0x018,0x00001012,0x00004812,-,-,Keep the interpolation scale in retail's register,,,false
+generated_E4070,func_150B73F0,0x01C,0x8487001A,0x8483001A,-,-,Use retail's first Y endpoint register,,,false
+generated_E4070,func_150B73F0,0x020,0x03254023,0x00A27823,-,-,Compute the X delta through retail's endpoint registers,,,false
+generated_E4070,func_150B73F0,0x024,0x01020019,0x01E90019,-,-,Multiply the X delta through retail's allocation,,,false
+generated_E4070,func_150B73F0,0x028,0x848B0022,0x84860022,-,-,Use retail's second Y endpoint register,,,false
+generated_E4070,func_150B73F0,0x02C,0x17000002,0x14E00002,-,-,Check the duration through retail's register,,,false
+generated_E4070,func_150B73F0,0x03C,0x17010004,0x14E10004,-,-,Preserve retail's signed-division overflow check register,,,false
+generated_E4070,func_150B73F0,0x044,0x15E10002,0x15C10002,-,-,Preserve retail's shifted-progress overflow check register,,,false
+generated_E4070,func_150B73F0,0x050,0x00004812,0x0000C012,-,-,Read the X product through retail's register,,,false
+generated_E4070,func_150B73F0,0x054,0x01676023,0x00C35823,-,-,Compute the Y delta through retail's endpoint registers,,,false
+generated_E4070,func_150B73F0,0x058,0x00095403,0x0018CC03,-,-,Shift the X product through retail's register,,,false
+generated_E4070,func_150B73F0,0x05C,0x01820019,0x01690019,-,-,Multiply the Y delta through retail's allocation,,,false
+generated_E4070,func_150B73F0,0x060,0x00AA1821,0x03225021,-,-,Add the first X endpoint through retail's result register,,,false
+generated_E4070,func_150B73F0,0x064,0x44832000,0x448A2000,-,-,Move the interpolated X value through retail's FP input register,,,false
+generated_E4070,func_150B73F0,0x070,0x00006812,0x00006012,-,-,Read the Y product through retail's register,,,false
+generated_E4070,func_150B73F0,0x074,0x000D7403,0x000C6C03,-,-,Shift the Y product through retail's register,,,false
+generated_E4070,func_150B73F0,0x078,0x00EE3021,0x01A37021,-,-,Add the first Y endpoint through retail's result register,,,false
+generated_E4070,func_150B73F0,0x07C,0x44864000,0x448E4000,-,-,Move the interpolated Y value through retail's FP input register,,,false

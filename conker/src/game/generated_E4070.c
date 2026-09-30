@@ -88,8 +88,18 @@ s32 func_150B7220() {
     return 0;
 }
 
-s32 func_150B73F0() {
-    return 0;
+void func_150B73F0(u8 *arg0) {
+    s32 scale;
+    s32 x;
+    s32 y;
+
+    scale = (*(s16 *)(arg0 + 0x24) << 16) / *(s32 *)(arg0 + 0x1C);
+    x = (((*(s16 *)(arg0 + 0x20) - *(s16 *)(arg0 + 0x18)) * scale) >> 16) +
+        *(s16 *)(arg0 + 0x18);
+    y = (((*(s16 *)(arg0 + 0x22) - *(s16 *)(arg0 + 0x1A)) * scale) >> 16) +
+        *(s16 *)(arg0 + 0x1A);
+    *(f32 *)(arg0 + 0x2C) = (f32)x;
+    *(f32 *)(arg0 + 0x30) = (f32)y;
 }
 
 s32 func_150B7484() {
