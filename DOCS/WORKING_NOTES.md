@@ -88,13 +88,13 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, bit-zero state-operation callback matched).**
-The current linked checkpoint is `3059 / 5462 (56.01%)` exact C functions,
-with no address-drift blockers and 2,403 genuinely different C functions.
+**Active (2026-09-30, transformed-position short writer matched).**
+The current linked checkpoint is `3062 / 5462 (56.06%)` exact C functions,
+with no address-drift blockers and 2,400 genuinely different C functions.
 Init is
 `398 / 493 (80.73%)` exact, with 95 genuinely different C rows. Game is
-`2480 / 4788 (51.80%)` exact, with 2,308 genuinely different C rows. The tree
-contains 578 raw-assembly functions, so much of the percentage increase over
+`2483 / 4788 (51.86%)` exact, with 2,305 genuinely different C rows. The tree
+contains 579 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
 
@@ -602,13 +602,19 @@ selector; operation zero clears a matching selection. Ten guards normalize
 only a return-delay schedule and closed temporary-register cycle. See
 [Working Note 558](WORKING_NOTES/558-game-two-entry-selection-event-callback-match-20260930.md).
 
+Game `func_1516441C` now matches all 35 retail words directly from C. It uses
+the transform pointer embedded after the source vector, transforms one
+position through `func_15145CD0`, truncates the three output floats, and writes
+them to the render record's position halfwords. See
+[Working Note 559](WORKING_NOTES/559-game-transformed-position-short-writer-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 35-word Game `func_1516441C`, the next ordinary row.
+cycle. Continue with 33-word Game `func_1517D578`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

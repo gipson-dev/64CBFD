@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,061 / 5,462 (56.04%) | 0 | 2,401 |
+| Total | 3,062 / 5,462 (56.06%) | 0 | 2,400 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,482 / 4,788 (51.84%) | 0 | 2,306 |
+| Game | 2,483 / 4,788 (51.86%) | 0 | 2,305 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -833,8 +833,10 @@ end-to-end gameplay acceptance.
    `func_1514E89C` is now byte-exact directly from C. The 32-word owner-list
    cleanup `func_1514EDF0` is now byte-exact through three guarded local-stack
    operands. The 37-word two-entry selection callback `func_15158B3C` is now
-   byte-exact through ten guarded scheduling/register rows. Continue with
-   35-word Game `func_1516441C`, the next ordinary row.
+   byte-exact through ten guarded scheduling/register rows. The 35-word
+   transformed-position short writer `func_1516441C` is now byte-exact
+   directly from C. Continue with 33-word Game `func_1517D578`, the next
+   ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

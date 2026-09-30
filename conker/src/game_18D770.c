@@ -21,11 +21,12 @@ s32 func_15163504();
 s32 func_151638E0();
 s32 func_15163FEC();
 s32 func_15164134();
-s32 func_1516441C(s32 arg0, s32 arg1);
+void func_1516441C(struct225 *arg0, struct227 *arg1);
 s32 func_151645C4();
 /* End generated placeholder declarations. */
 
 s32 func_151149AC(u32);
+void func_15145CD0(u8 *arg0, struct17 **arg1, struct17 **arg2, s32 arg3);
 
 struct225 *func_151602C0(Header *header, Header2 *header2, s32 arg2, s32 arg3, s32 arg4, s32 arg5, u8 arg6, u8 arg7, s32 offset, u8 arg9, s32 argA);
 struct225 *func_1516037C(Header *src, struct226 *arg1, s32 size, u8 arg3, s32 arg4);
@@ -1257,14 +1258,21 @@ void func_151643A8(struct225 *arg0, s32 arg1, u8 arg2) {
 }
 
 s32 func_151643F8(struct225 *arg0) {
-    func_1516441C(arg0, &arg0->unk18);
+    func_1516441C(arg0, (struct227 *)&arg0->unk18);
     return 1;
 }
 
-// ???
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_1516441C.s. */
-s32 func_1516441C(s32 arg0, s32 arg1) {
-    return 0;
+void func_1516441C(struct225 *arg0, struct227 *arg1) {
+    struct17 *src;
+    struct17 *dst;
+    struct17 output;
+
+    src = (struct17 *)arg1;
+    dst = &output;
+    func_15145CD0(*(u8 **)&arg1->unkC, &src, &dst, 1);
+    arg0->unk14->unkE = (s16)output.unk0;
+    arg0->unk14->unk10 = (s16)output.unk4;
+    arg0->unk14->unk12 = (s16)output.unk8;
 }
 s32 func_151644A8(struct242 *arg0) {
     f32 temp_f0;

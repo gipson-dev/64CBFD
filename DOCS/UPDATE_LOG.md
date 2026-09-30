@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game transformed-position short writer byte-matched
+
+- `func_1516441C` now transforms one inline payload vector through its embedded
+  transform pointer, truncates the resulting floats, and writes three signed
+  position halfwords to the render record.
+- All 35 words / 140 bytes emit directly from semantic C with no guards or
+  compiler override. Linked SHA-256 is
+  `2b3e339b55f5ccfb744f48761aab23bb7e518571dc34d5aeef4826b8a7015d26`.
+- Totals are **3,062 / 5,462 (56.06%)** overall and
+  **2,483 / 4,788 (51.86%)** in Game. See
+  [Working Note 559](WORKING_NOTES/559-game-transformed-position-short-writer-match-20260930.md).
+
 ### Game two-entry selection event callback byte-matched
 
 - `func_15158B3C` now switches or clears the current pointer/selector pair in
