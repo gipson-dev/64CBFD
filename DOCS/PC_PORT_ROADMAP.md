@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,038 / 5,463 (55.61%) | 0 | 2,425 |
+| Total | 5,463 / 6,041 (90.43%) | 3,039 / 5,463 (55.63%) | 0 | 2,424 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,460 / 4,789 (51.37%) | 0 | 2,329 |
+| Game | 4,789 / 5,321 (90.00%) | 2,461 / 4,789 (51.39%) | 0 | 2,328 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -220,6 +220,9 @@ The descriptor-copy allocation wrapper `func_15157898` now matches its full
 The indexed slot teardown `func_15172CA8` now matches its full 128-byte span
 directly from C; see
 [Working Note 534](WORKING_NOTES/534-game-indexed-slot-teardown-event-pair-match-20260929.md).
+The four-resource teardown `func_1519F400` now matches its full 140-byte span
+directly from C; see
+[Working Note 535](WORKING_NOTES/535-game-four-resource-teardown-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

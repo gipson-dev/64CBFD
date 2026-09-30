@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game four-resource teardown byte-matched
+
+- `func_1519F400` now releases four resource fields through their recovered
+  ownership-specific teardown paths.
+- All 35 words emit directly from C; the 140-byte spans share SHA-256
+  `42485dfa9f8061de584a11197449d96173d89c7f9fd07617b80c36e3d2e45650`.
+- Totals are **3,039 / 5,463 (55.63%)** overall and
+  **2,461 / 4,789 (51.39%)** in Game. See
+  [Working Note 535](WORKING_NOTES/535-game-four-resource-teardown-match-20260929.md).
+
 ### Game indexed slot teardown event pair byte-matched
 
 - `func_15172CA8` now deactivates an occupied indexed slot and emits its two

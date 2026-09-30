@@ -9,6 +9,10 @@ typedef struct {
 
 /* Non-matching placeholders for the text-only asm slice asm/1CC440.s. */
 
+void func_1519F48C(u8 *arg0);
+void func_151A0928(u8 *arg0);
+void func_1516972C(u8 *arg0);
+
 s32 func_1519EF90() {
     return 0;
 }
@@ -65,8 +69,24 @@ void func_1519F3B8(u8 *arg0) {
     temp_v1->fourth = 0;
 }
 
-s32 func_1519F400() {
-    return 0;
+/* Note 535: four-resource ownership-specific teardown. */
+void func_1519F400(u8 *arg0) {
+    u8 **resources = (u8 **) (arg0 + 0x58);
+
+    if (resources[0] != NULL) {
+        func_1519F48C(resources[0]);
+    }
+    if (resources[2] != NULL) {
+        func_1519F48C(resources[2]);
+    }
+    if (resources[1] != NULL) {
+        func_151A0928(resources[1]);
+        func_1516972C(resources[1]);
+    }
+    if (resources[3] != NULL) {
+        func_151A0928(resources[3]);
+        func_1516972C(resources[3]);
+    }
 }
 
 void func_1519F48C(u8 *arg0) {

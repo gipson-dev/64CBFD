@@ -467,12 +467,17 @@ an active indexed slot inactive and emits the recovered two-event teardown
 sequence. See
 [Working Note 534](WORKING_NOTES/534-game-indexed-slot-teardown-event-pair-match-20260929.md).
 
+Game `func_1519F400` now matches all 35 retail words directly from C. It
+releases four resource pointers using their two ownership-specific teardown
+paths. See
+[Working Note 535](WORKING_NOTES/535-game-four-resource-teardown-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 35-word Game `func_1519F400`, the next ordinary row.
+Continue with 32-word Game `func_151AFC08`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four
