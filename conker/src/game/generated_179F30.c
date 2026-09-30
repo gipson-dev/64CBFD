@@ -19,6 +19,8 @@ void *func_15167A68(s32, s32, s32, s32, u8, u8);
 s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1515BE50(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 s32 func_15160A58();
+void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
+                    u8 arg5, s32 arg6, u8 arg7, s32 arg8);
 extern u8 D_800A5920[];
 extern u8 D_800A5988[];
 extern u8 D_800A58A0[];
@@ -61,6 +63,13 @@ typedef struct {
     u8 pad0[0x14];
     GameObjectState *state;
 } GameObjectWithState;
+
+typedef struct {
+    u8 *owner;
+    u8 unique_id;
+    u8 pad5[3];
+    f32 parameter;
+} GameObjectOwnerPayload;
 
 s32 func_1514CA80() {
     return 0;
@@ -475,8 +484,19 @@ s32 func_1514F308() {
     return 0;
 }
 
-s32 func_1514F3CC() {
-    return 0;
+/* Note 531: owner payload allocation and conditional copy. */
+void func_1514F3CC(u8 *arg0) {
+    GameObjectOwnerPayload payload;
+    u8 *result;
+
+    payload.owner = arg0;
+    payload.unique_id = arg0[0x3B];
+    payload.parameter = 0.0f;
+    result = func_15149130(0x12C, -1, 0x3A, -1, 0, 0x2B,
+                           sizeof(payload), 0xFF, 1);
+    if (result != NULL) {
+        memcpy(result + 0x28, &payload, sizeof(payload));
+    }
 }
 
 void func_1514F44C(s32 arg0) {

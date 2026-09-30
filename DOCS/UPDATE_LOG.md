@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game owner-payload allocation wrapper byte-matched
+
+- `func_1514F3CC` now builds the retail 12-byte owner payload, requests its
+  fixed `0x12C` object, and conditionally copies the payload to offset `0x28`.
+- The typed payload and direct allocator call emit all 32 retail words with no
+  expected-word guards.
+- The linked and retail 128-byte spans share SHA-256
+  `0d2c9ded4f628ae40ae053987cf654b78cdca2553954cee3a4d9433974a4cc92`.
+- Totals are **3,035 / 5,463 (55.56%)** overall and
+  **2,457 / 4,789 (51.31%)** in Game, with no address-drift rows. See
+  [Working Note 531](WORKING_NOTES/531-game-owner-payload-allocation-wrapper-match-20260929.md).
+
 ### Game fixed resource-constructor wrapper byte-matched
 
 - `func_1514DBB8` now forwards its incoming owner to `func_15160A58` with
