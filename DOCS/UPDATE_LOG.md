@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game current-player threshold dispatcher byte-matched
+
+- `func_150DEB58` now indexes the current `0x9A0`-byte player record, returns
+  zero when float field `0x388` is below `5.0f`, and otherwise dispatches
+  `func_15140410` with embedded records `0x120` and `0x12C` plus the signed
+  incoming mode.
+- The typed record view emits all 34 retail words directly from C; no
+  expected-word guards are needed.
+- The linked and retail 136-byte spans share SHA-256
+  `f6c3bce2d227ddb0b50324b277e7367e65edae74debfba82802ec09ceada3973`.
+- Totals are **3,033 / 5,463 (55.52%)** overall and
+  **2,455 / 4,789 (51.26%)** in Game, with no address-drift rows. See
+  [Working Note 529](WORKING_NOTES/529-game-current-player-threshold-dispatch-match-20260929.md).
+
 ### Game mode-selected color wrapper byte-matched
 
 - `func_150D22F4` now selects record byte `0x3C` with three `0xFF` channel

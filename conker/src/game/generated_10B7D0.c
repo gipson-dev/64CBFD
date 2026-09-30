@@ -4,8 +4,18 @@
 
 extern u8 D_800A0D0B[];
 extern u8 D_800A0D2B[];
+extern s32 D_80082FA0;
+
+typedef struct {
+    u8 pad0[0x388];
+    f32 threshold;
+    u8 pad38C[0x614];
+} Generated10B7D0PlayerRecord;
+
+extern Generated10B7D0PlayerRecord *D_800DBFF0;
 
 s32 func_150DEC28();
+s32 func_15140410();
 
 void func_150DE320(s32 arg0) {
 }
@@ -30,8 +40,12 @@ s32 func_150DEACC() {
     return 0;
 }
 
-s32 func_150DEB58() {
-    return 0;
+/* Note 529: current-player threshold gate and embedded-record dispatch. */
+s32 func_150DEB58(u8 *arg0, s16 arg1) {
+    if (D_800DBFF0[D_80082FA0].threshold < 5.0f) {
+        return 0;
+    }
+    return func_15140410(arg0, arg0 + 0x120, arg0 + 0x12C, arg1);
 }
 
 void func_150DEBE0(s32 arg0) {
