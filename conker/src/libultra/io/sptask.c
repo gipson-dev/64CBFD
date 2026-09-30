@@ -1,12 +1,24 @@
 #include <ultra64.h>
 
-/* Generated placeholder declarations. */
-s32 _VirtualToPhysicalTask(s32 arg0);
-/* End generated placeholder declarations. */
+extern OSTask D_80036B60;
 
-/* Non-matching C placeholders for asm/nonmatchings/libultra/io/sptask/_VirtualToPhysicalTask.s. */
-s32 _VirtualToPhysicalTask(s32 arg0) {
-    return 0;
+#define VIRTUAL_TO_PHYSICAL(ptr)          \
+    if ((ptr) != NULL) {                  \
+        (ptr) = (void *)osVirtualToPhysical(ptr); \
+    } (void)0
+
+OSTask *_VirtualToPhysicalTask(OSTask *intp) {
+    OSTask *tp = &D_80036B60;
+
+    bcopy(intp, tp, sizeof(OSTask));
+    VIRTUAL_TO_PHYSICAL(tp->t.ucode);
+    VIRTUAL_TO_PHYSICAL(tp->t.ucode_data);
+    VIRTUAL_TO_PHYSICAL(tp->t.dram_stack);
+    VIRTUAL_TO_PHYSICAL(tp->t.output_buff);
+    VIRTUAL_TO_PHYSICAL(tp->t.output_buff_size);
+    VIRTUAL_TO_PHYSICAL(tp->t.data_ptr);
+    VIRTUAL_TO_PHYSICAL(tp->t.yield_data_ptr);
+    return tp;
 }
 
 void osSpTaskLoad(OSTask *intp)

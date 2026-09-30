@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,095 / 5,457 (56.72%) | 0 | 2,362 |
-| Init | 488 / 538 (90.71%) | 412 / 488 (84.43%) | 0 | 76 |
+| Total | 5,457 / 6,041 (90.33%) | 3,096 / 5,457 (56.73%) | 0 | 2,361 |
+| Init | 488 / 538 (90.71%) | 413 / 488 (84.63%) | 0 | 75 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -444,6 +444,9 @@ Init SDK initializer `osLeoDiskInit` now matches its complete 240-byte span.
 Seven bounded guards collapse one redundant handle-address load and retain the
 retail schedule and trailing extent; see
 [Working Note 596](WORKING_NOTES/596-init-leo-disk-initializer-match-20260930.md).
+The Init SDK task-address converter `_VirtualToPhysicalTask` now matches its
+complete 272-byte span directly from semantic C with no guards; see
+[Working Note 597](WORKING_NOTES/597-init-virtual-task-address-converter-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

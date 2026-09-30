@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init Leo disk initializer matched).**
-The current linked checkpoint is `3095 / 5457 (56.72%)` exact C functions,
-with no address-drift blockers and 2,362 genuinely different C functions.
+**Active (2026-09-30, Init virtual task-address converter matched).**
+The current linked checkpoint is `3096 / 5457 (56.73%)` exact C functions,
+with no address-drift blockers and 2,361 genuinely different C functions.
 Init is
-`412 / 488 (84.43%)` exact, with 76 genuinely different C rows. Game is
+`413 / 488 (84.63%)` exact, with 75 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -816,7 +816,11 @@ initializes the 64DD PI handle and registers it under an interrupt-disabled
 critical section. Seven bounded guards normalize one shared-address schedule
 and preserve the retail trailing word. See
 [Working Note 596](WORKING_NOTES/596-init-leo-disk-initializer-match-20260930.md).
-Resume the Init queue from its remaining 76 genuinely different C rows.
+Init `_VirtualToPhysicalTask` now matches all 68 retail words directly from C.
+It copies the incoming task into the fixed temporary task and converts seven
+non-null pointer fields to physical addresses. See
+[Working Note 597](WORKING_NOTES/597-init-virtual-task-address-converter-match-20260930.md).
+Resume the Init queue from its remaining 75 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

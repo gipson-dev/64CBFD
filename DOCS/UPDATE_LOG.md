@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init virtual task-address converter byte-matched
+
+- `_VirtualToPhysicalTask` copies an incoming `OSTask` into the fixed temporary
+  task and converts seven non-null task pointers to physical addresses.
+- The repository-local SDK body emits all 68 retail words directly under the
+  existing `sptask.c` profile. No expected-word guards or profile changes are
+  required, and the adjacent task-load/start functions remain byte-exact.
+- The linked and retail spans share SHA-256
+  `39bdaef9aafe9186372b8b1b14301f33e467f2108ea4521d3e140aad7d45306f`.
+  Totals are **3,096 / 5,457 (56.73%)** overall and
+  **413 / 488 (84.63%)** in Init. See
+  [Working Note 597](WORKING_NOTES/597-init-virtual-task-address-converter-match-20260930.md).
+
 ### Init Leo disk initializer byte-matched
 
 - `osLeoDiskInit` configures the 64DD PI handle, writes the domain-two timing
