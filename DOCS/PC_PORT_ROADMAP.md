@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,063 / 5,462 (56.08%) | 0 | 2,399 |
+| Total | 5,462 / 6,041 (90.42%) | 3,064 / 5,462 (56.10%) | 0 | 2,398 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,788 / 5,321 (89.98%) | 2,484 / 4,788 (51.88%) | 0 | 2,304 |
+| Game | 4,788 / 5,321 (89.98%) | 2,485 / 4,788 (51.90%) | 0 | 2,303 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -304,6 +304,10 @@ The Game three-entry position queue writer `func_1517D578` now matches all
 132 bytes. Its recovered bounded record append is semantic C; 29 guarded words
 normalize one closed IDO pointer/register schedule; see
 [Working Note 560](WORKING_NOTES/560-game-three-entry-position-queue-writer-match-20260930.md).
+The Game selector display-list appender `func_15183BA4` now matches all
+132 bytes directly from C after recovering its 11-byte selector scan and
+original `gSPDisplayList` macro shape; see
+[Working Note 561](WORKING_NOTES/561-game-selector-display-list-appender-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

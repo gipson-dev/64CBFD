@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game selector display-list appender byte-matched
+
+- `func_15183BA4` now maps a selector through the 11-byte `D_800A72D0` table
+  and conditionally appends the corresponding non-null `D_800DDF78` display
+  list to its output cursor.
+- All 33 words / 132 bytes emit directly from semantic C with no guards or
+  compiler override. The original `gSPDisplayList(dl++, value)` macro shape
+  recovers retail's cursor snapshot and update. Linked SHA-256 is
+  `0eb643956a1f00342d1e746734b5b8127d7b84832163a0a6c9e3a90250dcb046`.
+- Totals are **3,064 / 5,462 (56.10%)** overall and
+  **2,485 / 4,788 (51.90%)** in Game. See
+  [Working Note 561](WORKING_NOTES/561-game-selector-display-list-appender-match-20260930.md).
+
 ### Game three-entry position queue writer byte-matched
 
 - `func_1517D578` now appends a signed position, selector byte, two trailing
