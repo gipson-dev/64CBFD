@@ -246,8 +246,25 @@ s32 func_15119FC0() {
     return 0;
 }
 
-s32 func_1511A410() {
-    return 0;
+s32 func_1511A410(s8 *records, s32 *second_index) {
+    /* Retail reserves three scratch words although only two matches are kept. */
+    s32 matches[3];
+    s32 match_count = 0;
+    s32 index = 0;
+
+    matches[0] = 0;
+    matches[1] = 0;
+
+    while ((records[index << 3] != -0x21) && (match_count < 2)) {
+        if (records[index << 3] == -3) {
+            matches[match_count] = index;
+            match_count++;
+        }
+        index++;
+    }
+
+    *second_index = matches[1];
+    return matches[0];
 }
 
 s32 func_1511A494() {

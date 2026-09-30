@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, state-two countdown finalizer matched).**
-The current linked checkpoint is `3055 / 5462 (55.93%)` exact C functions,
-with no address-drift blockers and 2,407 genuinely different C functions.
+**Active (2026-09-30, two-tag record index scan matched).**
+The current linked checkpoint is `3056 / 5462 (55.95%)` exact C functions,
+with no address-drift blockers and 2,406 genuinely different C functions.
 Init is
 `398 / 493 (80.73%)` exact, with 95 genuinely different C rows. Game is
-`2476 / 4788 (51.71%)` exact, with 2,312 genuinely different C rows. The tree
+`2477 / 4788 (51.73%)` exact, with 2,311 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -567,13 +567,19 @@ the state-two structural twin of `func_1510D694`; every instruction matches
 the earlier finalizer except the final state argument. See
 [Working Note 552](WORKING_NOTES/552-game-state-two-countdown-finalizer-match-20260930.md).
 
+Game `func_1511A410` now matches all 33 retail words. It scans eight-byte
+records until tag `-0x21`, returns the first index tagged `-3`, and writes the
+second index through its output pointer. Thirteen guards normalize one closed
+stack-base scheduling and temporary-register chain. See
+[Working Note 553](WORKING_NOTES/553-game-two-tag-record-index-scan-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 33-word Game `func_1511A410`, the next ordinary row.
+cycle. Continue with 34-word Game `func_1511A738`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

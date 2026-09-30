@@ -2329,3 +2329,16 @@ generated_138520,func_1510B32C,0x050,0xC7A80028,0xC7AA0028,-,-,Restore retail's 
 generated_138520,func_1510B32C,0x060,0xE4440000,0xE4460000,-,-,Store the first vector component through retail's floating register,,,false
 generated_138520,func_1510B32C,0x064,0xE4460004,0xE4480004,-,-,Store the second vector component through retail's floating register,,,false
 generated_138520,func_1510B32C,0x068,0xE4480008,0xE44A0008,-,-,Store the third vector component through retail's floating register,,,false
+generated_142560,func_1511A410,0x030,0x27A9000C,0x2408FFFD,-,-,Schedule the match tag before materializing the scratch-array base,,,false
+generated_142560,func_1511A410,0x034,0x2408FFFD,0x15050005,-,-,Move the tag comparison to retail's loop head,,,false
+generated_142560,func_1511A410,0x038,0x15050004,0x0002C880,-,-,Compute the match-slot offset in the comparison delay slot,,,false
+generated_142560,func_1511A410,0x03C,0x0002C880,0x27A9000C,-,-,Materialize the scratch-array base only on a matching tag,,,false
+generated_142560,func_1511A410,0x040,0x01395021,0x03292821,-,-,Form the destination through retail's expired tag register,,,false
+generated_142560,func_1511A410,0x044,0xAD430000,0xACA30000,-,-,Store the matching index through retail's destination register,,,false
+generated_142560,func_1511A410,0x050,0x000358C0,0x000350C0,-,-,Compute the next record offset through retail's t2 lifetime,,,false
+generated_142560,func_1511A410,0x054,0x01646021,0x01445821,-,-,Form the next record address through retail's t3 lifetime,,,false
+generated_142560,func_1511A410,0x058,0x81850000,0x81650000,-,-,Load the next tag through retail's record-address register,,,false
+generated_142560,func_1511A410,0x064,0x8FAD0010,0x8FAC0010,-,-,Load the second match through retail's t4 lifetime on sentinel exit,,,false
+generated_142560,func_1511A410,0x068,0x1420FFF3,0x1420FFF2,-,-,Retarget the retry branch to retail's rescheduled loop head,,,false
+generated_142560,func_1511A410,0x070,0x8FAD0010,0x8FAC0010,-,-,Load the second match through retail's t4 lifetime on bounded exit,,,false
+generated_142560,func_1511A410,0x074,0xACCD0000,0xACCC0000,-,-,Store the second match through retail's t4 lifetime,,,false

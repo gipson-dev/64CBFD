@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game two-tag record index scan byte-matched
+
+- `func_1511A410` scans eight-byte records to find the first two entries whose
+  signed tag is `-3`, stopping at signed sentinel `-0x21`.
+- All 33 words / 132 bytes match through 13 stale-checked guards for one
+  closed stack-base scheduling and temporary-register chain. Linked SHA-256
+  is `c9f324d509e8a4e3282456e941568a37a88c4b1e6dc32ae7d04bbe8c52384c67`.
+- Totals are **3,056 / 5,462 (55.95%)** overall and
+  **2,477 / 4,788 (51.73%)** in Game. See
+  [Working Note 553](WORKING_NOTES/553-game-two-tag-record-index-scan-match-20260930.md).
+
 ### Game state-two countdown finalizer byte-matched
 
 - `func_1510D720` mirrors the indexed countdown finalizer and changes the
