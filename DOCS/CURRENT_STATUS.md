@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,084 / 5,458 (56.50%) | 0 | 2,374 |
-| Init | 401 / 489 (82.00%) | 0 | 88 |
+| Total | 3,085 / 5,458 (56.52%) | 0 | 2,373 |
+| Init | 402 / 489 (82.21%) | 0 | 87 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -868,7 +868,7 @@ end-to-end gameplay acceptance.
    owner-payload allocator `func_150F2C8C` is byte-exact directly from C.
    The 35-word event-`0x3E` owner dispatcher `func_150F7310` is byte-exact
    through 12 guarded identity-register and load-schedule words. Resume Init
-   matching from its remaining 88 different C rows. The 48-word `osMapTLB`
+   matching from its remaining 87 different C rows. The 48-word `osMapTLB`
    slot is restored from its empty C placeholder to original handwritten
    CP0/TLB assembly and independently matches all 192 bytes. The 44-word
    `osInvalDCache` slot is likewise restored to its original handwritten cache
@@ -881,6 +881,8 @@ end-to-end gameplay acceptance.
    non-prototype state-query call schedule.
    The following 59-word channel-transition updater `func_1000DF68` is
    byte-exact through 12 guarded clamp/store/epilogue scheduling words.
+   The 51-word channel level/mask updater `func_1000E588` is byte-exact
+   directly from recovered semantic C with no guards.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init channel-transition updater matched).**
-The current linked checkpoint is `3084 / 5458 (56.50%)` exact C functions,
-with no address-drift blockers and 2,374 genuinely different C functions.
+**Active (2026-09-30, Init channel level/mask updater matched).**
+The current linked checkpoint is `3085 / 5458 (56.52%)` exact C functions,
+with no address-drift blockers and 2,373 genuinely different C functions.
 Init is
-`401 / 489 (82.00%)` exact, with 88 genuinely different C rows. Game is
+`402 / 489 (82.21%)` exact, with 87 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 583 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -765,7 +765,14 @@ the channel target, optionally snaps and refreshes the active channel, and
 computes the clamped absolute per-step transition. Twelve guards normalize
 only the closed clamp/store/epilogue schedule. See
 [Working Note 585](WORKING_NOTES/585-init-channel-transition-updater-match-20260930.md).
-Resume the Init queue from its remaining 88 genuinely different C rows.
+Init `func_1000E588` now matches all 51 retail words directly from C. It
+updates live channel levels from a clamped percentage or toggles the requested
+mask in an inactive channel record. See
+[Working Note 586](WORKING_NOTES/586-init-channel-level-mask-updater-match-20260930.md).
+Resume the Init queue from its remaining 87 genuinely different C rows.
+`func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
+reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
+required `-O2` profile.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

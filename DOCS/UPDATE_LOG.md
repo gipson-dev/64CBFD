@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init channel level/mask updater byte-matched
+
+- `func_1000E588` maps a clamped percentage to an 8-bit live-channel level or
+  sets/clears the requested mask in an inactive channel record.
+- Its complete 51-word body emits directly from semantic C with no guards.
+- The linked and retail spans share SHA-256
+  `2ad78a07cd78b178c8b0cbc6194b6876624d7175951a0c2a007fe05a62e55e88`.
+  Totals are **3,085 / 5,458 (56.52%)** overall and
+  **402 / 489 (82.21%)** in Init. See
+  [Working Note 586](WORKING_NOTES/586-init-channel-level-mask-updater-match-20260930.md).
+
 ### Init channel-transition updater byte-matched
 
 - `func_1000DF68` updates a channel target, optionally snaps and refreshes the
