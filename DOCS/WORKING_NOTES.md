@@ -443,12 +443,17 @@ indexes the current `0x9A0`-byte player record, returns zero while float field
 records at `0x120` and `0x12C`, and the signed mode to `func_15140410`. See
 [Working Note 529](WORKING_NOTES/529-game-current-player-threshold-dispatch-match-20260929.md).
 
+Game `func_1514DBB8` now matches all 32 retail words directly from C. It
+forwards the incoming owner to `func_15160A58` with resource `D_800A58A0` and
+the recovered twelve fixed stack arguments. See
+[Working Note 530](WORKING_NOTES/530-game-fixed-resource-constructor-wrapper-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 32-word Game `func_1514DBB8`, the next ordinary placeholder.
+Continue with 32-word Game `func_1514F3CC`, the next ordinary placeholder.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

@@ -18,8 +18,10 @@ s32 func_15158BD0();
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1515BE50(void *arg0, s32 arg1, u8 arg2, s32 arg3);
+s32 func_15160A58();
 extern u8 D_800A5920[];
 extern u8 D_800A5988[];
+extern u8 D_800A58A0[];
 extern f32 D_800A5E5C;
 
 typedef struct {
@@ -171,8 +173,13 @@ void func_1514DB98(u8 *arg0) {
     func_1514F194(arg0);
 }
 
-s32 func_1514DBB8() {
-    return 0;
+/* Note 530: fixed resource-constructor call and complete argument schedule. */
+s32 func_1514DBB8(s32 arg0) {
+    return func_15160A58(
+        arg0, 2, D_800A58A0, 2,
+        0x12C, 0x28, 0xFF, 0xFF,
+        0xFF, 0xFF, 0, -1,
+        0, 0, 0xFF, 1);
 }
 
 void func_1514DC38(s32 arg0) {

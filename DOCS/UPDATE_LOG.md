@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game fixed resource-constructor wrapper byte-matched
+
+- `func_1514DBB8` now forwards its incoming owner to `func_15160A58` with
+  resource `D_800A58A0` and the complete recovered 16-argument constructor
+  configuration.
+- The direct fixed-argument call emits all 32 retail words, including the
+  72-byte frame and stack-store schedule, with no expected-word guards.
+- The linked and retail 128-byte spans share SHA-256
+  `87d5dcc1c3831a00b3ddcd3a65994a1b55e497ccc924c820ed8cafd6e055a110`.
+- Totals are **3,034 / 5,463 (55.54%)** overall and
+  **2,456 / 4,789 (51.28%)** in Game, with no address-drift rows. See
+  [Working Note 530](WORKING_NOTES/530-game-fixed-resource-constructor-wrapper-match-20260929.md).
+
 ### Game current-player threshold dispatcher byte-matched
 
 - `func_150DEB58` now indexes the current `0x9A0`-byte player record, returns
