@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init handwritten osSetIntMask restored
+
+- `osSetIntMask` is restored from an empty C placeholder to its original
+  handwritten CP0/MI interrupt-mask routine.
+- The complete 160-byte slot is independently byte-exact, including all data
+  relocations, the MI mask-table lookup, CP0 status write, and hazard nops.
+- The rebuilt and retail spans share SHA-256
+  `4f77fb7a5c63f84cc4f19456f3608deb338d495a7c560abf9cb4a8548f7275b1`.
+  The row is now correctly classified as raw assembly, leaving **398 / 489
+  (81.39%)** byte-exact Init C rows and 91 different C rows. See
+  [Working Note 582](WORKING_NOTES/582-init-handwritten-setintmask-restoration-20260930.md).
+
 ### Init handwritten osInvalDCache restored
 
 - `osInvalDCache` is restored from an empty C placeholder to its original

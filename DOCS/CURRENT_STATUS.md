@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,459 / 6,041 (90.37%) | 582 | 1,930,244 / 2,256,728 (85.53%) |
-| Init | 490 / 538 (91.08%) | 48 | 147,608 / 164,048 (89.98%) |
+| Total | 5,458 / 6,041 (90.35%) | 583 | 1,930,084 / 2,256,728 (85.53%) |
+| Init | 489 / 538 (90.89%) | 49 | 147,448 / 164,048 (89.88%) |
 | Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,081 / 5,459 (56.44%) | 0 | 2,378 |
-| Init | 398 / 490 (81.22%) | 0 | 92 |
+| Total | 3,081 / 5,458 (56.45%) | 0 | 2,377 |
+| Init | 398 / 489 (81.39%) | 0 | 91 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -868,11 +868,13 @@ end-to-end gameplay acceptance.
    owner-payload allocator `func_150F2C8C` is byte-exact directly from C.
    The 35-word event-`0x3E` owner dispatcher `func_150F7310` is byte-exact
    through 12 guarded identity-register and load-schedule words. Resume Init
-   matching from its remaining 92 different C rows. The 48-word `osMapTLB`
+   matching from its remaining 91 different C rows. The 48-word `osMapTLB`
    slot is restored from its empty C placeholder to original handwritten
    CP0/TLB assembly and independently matches all 192 bytes. The 44-word
    `osInvalDCache` slot is likewise restored to its original handwritten cache
-   routine and independently matches all 176 bytes.
+   routine and independently matches all 176 bytes. The 40-word `osSetIntMask`
+   slot is restored to its original handwritten CP0/MI mask routine and
+   independently matches all 160 bytes.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

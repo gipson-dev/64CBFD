@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,459 / 6,041 (90.37%) | 3,081 / 5,459 (56.44%) | 0 | 2,378 |
-| Init | 490 / 538 (91.08%) | 398 / 490 (81.22%) | 0 | 92 |
+| Total | 5,458 / 6,041 (90.35%) | 3,081 / 5,458 (56.45%) | 0 | 2,377 |
+| Init | 489 / 538 (90.89%) | 398 / 489 (81.39%) | 0 | 91 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -390,6 +390,10 @@ handwritten CP0/TLB assembly. Its complete 192-byte slot matches retail; see
 Init `osInvalDCache` is restored from its empty C placeholder to original
 handwritten cache assembly. Its complete 176-byte slot matches retail; see
 [Working Note 581](WORKING_NOTES/581-init-handwritten-invaldcache-restoration-20260930.md).
+Init `osSetIntMask` is restored from its empty C placeholder to original
+handwritten CP0/MI mask assembly. Its complete 160-byte slot matches retail;
+see
+[Working Note 582](WORKING_NOTES/582-init-handwritten-setintmask-restoration-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
