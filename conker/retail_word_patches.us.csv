@@ -114,6 +114,32 @@ game_1944C0,func_1516706C,0x18,0x26100000,0x26310000,R_MIPS_LO16:D_8008CB64,R_MI
 game_1944C0,func_1516706C,0x1C,0x26310000,0x26100000,R_MIPS_LO16:D_8008CB70,R_MIPS_LO16:D_8008CB64,Construct the callback cursor pointer after the end pointer,,,false
 generated_F21D0,func_150C522C,0x18,0x26100000,0x26310000,R_MIPS_LO16:D_800D98D0,R_MIPS_LO16:D_800D98E0,Complete the retained end address before the cursor address,,
 generated_F21D0,func_150C522C,0x1C,0x26310000,0x26100000,R_MIPS_LO16:D_800D98E0,R_MIPS_LO16:D_800D98D0,Complete the cursor address after the retained end address,,
+init_8F90,func_10009BE4,0x00C,0x11C00007,0x11C00008,-,-,Extend the sentinel branch over retail's retained manager address word,,,false
+init_8F90,func_10009BE4,0x010,0x3C0F0F00,0x3C050000,-,R_MIPS_HI16:D_800406A0,Materialize the manager address in the sentinel branch delay slot,,,false
+init_8F90,func_10009BE4,0x014,0x35EF0004,0x3C0F0F00,-,-,Materialize the sentinel high half after the manager address,,,false
+init_8F90,func_10009BE4,0x018,0x3C010000,0x35EF0004,R_MIPS_HI16:D_8003C8E0,-,Complete the sentinel value before its destination address,,,false
+init_8F90,func_10009BE4,0x01C,0x0C000000,0x3C010000,R_MIPS_26:func_150AD770,R_MIPS_HI16:D_8003C8E0,Materialize the sentinel destination immediately before the call,,,false
+init_8F90,func_10009BE4,0x020,0xAC2F0000,0x0C000000,R_MIPS_LO16:D_8003C8E0,R_MIPS_26:func_150AD770,Move the sentinel callback into retail's call slot,,,false
+init_8F90,func_10009BE4,0x024,0x10000029,0xAC2F0000,-,R_MIPS_LO16:D_8003C8E0,Write the sentinel value in the callback delay slot,,,false
+init_8F90,func_10009BE4,0x028,0x8FBF0014,0x10000028,-,-,Move the sentinel return branch after its delay-slot store,,,false
+init_8F90,func_10009BE4,0x02C,0x8C82000C,0x8FBF0014,-,-,Restore ra in the sentinel return branch delay slot,,,false
+init_8F90,func_10009BE4,0x030,0x8C980008,0x24A50000,-,R_MIPS_LO16:D_800406A0,Complete the retained manager address on the normal path,,,false
+init_8F90,func_10009BE4,0x034,0x3C030000,0x8C82000C,R_MIPS_HI16:D_800406A0,-,Load the release pointer after completing the manager address,,,false
+init_8F90,func_10009BE4,0x038,0x24630000,0x8C980008,R_MIPS_LO16:D_800406A0,-,Load the retained value after the release pointer,,,false
+init_8F90,func_10009BE4,0x040,0x8C790004,0x8CB90004,-,-,Load the active-list head through retail's a1 manager base,,,false
+init_8F90,func_10009BE4,0x078,0x8C620010,0x8CA30010,-,-,Load the reusable-list head through retail's a1 manager base,,,false
+init_8F90,func_10009BE4,0x084,0x8C620010,0x8CA30010,-,-,Reload the reusable-list head through retail's a1 manager base,,,false
+init_8F90,func_10009BE4,0x088,0x1040000C,0x1060000C,-,-,Test the reusable-list head through retail's v1 lifetime,,,false
+init_8F90,func_10009BE4,0x090,0xAC820004,0x8C6B0000,-,-,Read the reusable-list successor before linking the released node,,,false
+init_8F90,func_10009BE4,0x094,0x8C4B0000,0xAC830004,-,-,Link the released node back to the reusable-list head,,,false
+init_8F90,func_10009BE4,0x098,0xAC8B0000,0x00601025,-,-,Preserve the reusable-list head in retail's v0 lifetime,,,false
+init_8F90,func_10009BE4,0x09C,0x8C430000,0xAC8B0000,-,-,Store the old successor in the released node,,,false
+init_8F90,func_10009BE4,0x0A0,0x10600004,0x8C650000,-,-,Reread the old successor through retail's a1 lifetime,,,false
+init_8F90,func_10009BE4,0x0A4,0x00000000,0x50A00003,-,-,Use retail's null-successor branch-likely schedule,,,false
+init_8F90,func_10009BE4,0x0A8,0xAC640004,0xAC440000,-,-,Install the released node in the null-successor delay slot,,,false
+init_8F90,func_10009BE4,0x0AC,0x10000006,0xACA40004,-,-,Link a nonnull successor back to the released node,,,false
+init_8F90,func_10009BE4,0x0B4,0x10000004,0x10000005,-,-,Share retail's reusable-list splice return branch,,,false
+init_8F90,func_10009BE4,0x0B8,0xAC440000,0x8FBF0014,-,-,Restore ra in the reusable-list splice return delay slot,,,false
 init_8F90,func_1000A348,0x000,0x3C060000,0x3C070000,R_MIPS_HI16:D_800406A0,R_MIPS_HI16:D_800406A0,Keep the allocator state base in retail's a3 lifetime,,,false
 init_8F90,func_1000A348,0x004,0x24C60000,0x24E70000,R_MIPS_LO16:D_800406A0,R_MIPS_LO16:D_800406A0,Complete the allocator state base in a3,,,false
 init_8F90,func_1000A348,0x008,0x8CC20004,0x8CE20004,-,-,Load the active-list head through retail's state register,,,false

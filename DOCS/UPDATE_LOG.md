@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init single-node release recycler byte-matched
+
+- `func_10009BE4` returns a node's retained value, removes it from the active
+  list, inserts it into the reusable list, and preserves the odd-pointer
+  sentinel callback path.
+- Twenty-eight of 54 words emit directly from semantic C. Twenty-six
+  stale-checked guards preserve the manager, sentinel, and reusable-list
+  schedules, including the moved relocations.
+- The linked and retail spans share SHA-256
+  `667204c47707c5e69f2314fde2be2e4f4afb0075e1e053824489d3e381190a67`.
+  Totals are **3,091 / 5,457 (56.64%)** overall and
+  **408 / 488 (83.61%)** in Init. See
+  [Working Note 593](WORKING_NOTES/593-init-single-node-release-recycler-match-20260930.md).
+
 ### Init packed-timer callback byte-matched
 
 - `func_1000EDA0` refreshes a packed high half, decrements its signed low-half

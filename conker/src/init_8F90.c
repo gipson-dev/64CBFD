@@ -435,8 +435,54 @@ void func_10009B90(struct54 *arg0) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10009BE4.s. */
-void func_10009BE4(struct147 *arg0) {
+void func_10009BE4(struct54 *arg0) {
+    register volatile struct147 *manager;
+    struct54 *next;
+    struct54 *previous;
+    struct54 *free;
+    struct54 *free_head;
+    struct54 *free_next;
+    u32 *release;
+
+    manager = &D_800406A0;
+
+    if (((s32)arg0 & 1) != 0) {
+        D_8003C8E0 = 0x0F000004;
+        func_150AD770();
+        return;
+    }
+
+    release = (u32 *)arg0->unkC;
+    *release = arg0->unk8;
+    if (arg0 == (struct54 *)manager->unk4) {
+        D_800406A4 = arg0->unk0;
+    }
+    next = arg0->unk0;
+    if (next != NULL) {
+        next->unk4 = arg0->unk4;
+    }
+    previous = arg0->unk4;
+    if (previous != NULL) {
+        previous->unk0 = arg0->unk0;
+    }
+
+    free = manager->unk10;
+    if (free != NULL) {
+        arg0->unk4 = free;
+        free_head = free;
+        arg0->unk0 = free->unk0;
+        free_next = free->unk0;
+        if (free_next != NULL) {
+            free_next->unk4 = arg0;
+            free_head->unk0 = arg0;
+        } else {
+            free_head->unk0 = arg0;
+        }
+    } else {
+        D_800406B0 = arg0;
+        arg0->unk0 = NULL;
+        arg0->unk4 = NULL;
+    }
 }
 // void func_10009BE4(struct00 *arg0) {
 //     struct00 *temp_a1;

@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,090 / 5,457 (56.62%) | 0 | 2,367 |
-| Init | 407 / 488 (83.40%) | 0 | 81 |
+| Total | 3,091 / 5,457 (56.64%) | 0 | 2,366 |
+| Init | 408 / 488 (83.61%) | 0 | 80 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -895,7 +895,9 @@ end-to-end gameplay acceptance.
    wrapper `func_1000CAE4` is byte-exact directly from semantic C with no
    guarded words. The 52-word packed-timer callback `func_1000EDA0` is
    byte-exact through 11 guarded temporary-register words after restoring its
-   real seven-argument ABI and expiry dispatch.
+   real seven-argument ABI and expiry dispatch. The 54-word single-node
+   release recycler `func_10009BE4` is byte-exact through 26 guarded manager,
+   sentinel, and reusable-list scheduling words.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

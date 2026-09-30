@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init packed-timer callback matched).**
-The current linked checkpoint is `3090 / 5457 (56.62%)` exact C functions,
-with no address-drift blockers and 2,367 genuinely different C functions.
+**Active (2026-09-30, Init single-node release recycler matched).**
+The current linked checkpoint is `3091 / 5457 (56.64%)` exact C functions,
+with no address-drift blockers and 2,366 genuinely different C functions.
 Init is
-`407 / 488 (83.40%)` exact, with 81 genuinely different C rows. Game is
+`408 / 488 (83.61%)` exact, with 80 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -797,7 +797,12 @@ seven-argument callback refreshes a packed high half, decrements the signed
 low-half timer, and dispatches the record through `func_10010630` on expiry.
 Eleven guards preserve one closed temporary-register rotation. See
 [Working Note 592](WORKING_NOTES/592-init-packed-timer-callback-match-20260930.md).
-Resume the Init queue from its remaining 81 genuinely different C rows.
+Init `func_10009BE4` now matches all 54 retail words. Its recovered C returns
+the retained value, unlinks one active node, recycles it, and preserves the
+odd-pointer sentinel callback. Twenty-six guards retain the manager, sentinel,
+and reusable-list schedules. See
+[Working Note 593](WORKING_NOTES/593-init-single-node-release-recycler-match-20260930.md).
+Resume the Init queue from its remaining 80 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct
