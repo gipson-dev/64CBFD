@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game owner-payload allocator byte-matched
+
+- `func_150B0C58` builds a 12-byte payload containing its owner pointer,
+  owner ID byte, and zero float, then allocates command `0x58` with subtype
+  `0x43` and copies the payload into a successful allocation.
+- All 34 words emit directly from semantic C with no guards. The linked and
+  retail spans share SHA-256
+  `ac0b02a319621df6c63c1acb70a87ca4951000e4a82f9cd3b68178ad0abe2ba2`.
+- Totals are **3,075 / 5,461 (56.31%)** overall and
+  **2,496 / 4,788 (52.13%)** in Game. See
+  [Working Note 573](WORKING_NOTES/573-game-owner-payload-allocator-match-20260930.md).
+
 ### Game random-duration selector byte-matched
 
 - `func_1507F4C0` selects mode-dependent random duration ranges and returns

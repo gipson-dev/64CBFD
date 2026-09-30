@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,461 / 6,041 (90.40%) | 3,074 / 5,461 (56.29%) | 0 | 2,387 |
+| Total | 5,461 / 6,041 (90.40%) | 3,075 / 5,461 (56.31%) | 0 | 2,386 |
 | Init | 492 / 538 (91.45%) | 398 / 492 (80.89%) | 0 | 94 |
-| Game | 4,788 / 5,321 (89.98%) | 2,495 / 4,788 (52.11%) | 0 | 2,293 |
+| Game | 4,788 / 5,321 (89.98%) | 2,496 / 4,788 (52.13%) | 0 | 2,292 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -359,6 +359,9 @@ see
 The Game random-duration selector `func_1507F4C0` now matches all 140 bytes.
 Six guarded words preserve retail's frame and two post-call stack slots; see
 [Working Note 572](WORKING_NOTES/572-game-random-duration-selector-match-20260930.md).
+The Game owner-payload allocator `func_150B0C58` now matches all 136 bytes
+directly from semantic C with no guards; see
+[Working Note 573](WORKING_NOTES/573-game-owner-payload-allocator-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
