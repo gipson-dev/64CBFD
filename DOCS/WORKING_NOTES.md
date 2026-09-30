@@ -534,13 +534,19 @@ its original handwritten 32-word absolute-value ordering body. It now shares
 assembly ownership with the three adjacent handwritten math/PRNG helpers. See
 [Working Note 546](WORKING_NOTES/546-game-handwritten-absolute-ordering-helper-restoration-20260930.md).
 
+Game `func_150DEACC` now matches all 35 retail words directly from semantic C.
+It advances three coordinates by velocity times the global timestep, reduces
+the vertical speed by that timestep, and returns whether the result remains
+nonnegative. See
+[Working Note 547](WORKING_NOTES/547-game-motion-timestep-integrator-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 35-word Game `func_150DEACC`, the next ordinary row.
+cycle. Continue with 34-word Game `func_150EC3D4`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

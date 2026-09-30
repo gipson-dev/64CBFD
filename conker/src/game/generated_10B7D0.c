@@ -5,12 +5,25 @@
 extern u8 D_800A0D0B[];
 extern u8 D_800A0D2B[];
 extern s32 D_80082FA0;
+extern f32 D_800BE9A4;
 
 typedef struct {
     u8 pad0[0x388];
     f32 threshold;
     u8 pad38C[0x614];
 } Generated10B7D0PlayerRecord;
+
+typedef struct {
+    u8 pad0[0x34];
+    f32 x;
+    f32 y;
+    f32 z;
+    u8 pad40[0xD0];
+    f32 velocityX;
+    f32 velocityY;
+    f32 velocityZ;
+    f32 verticalSpeed;
+} Generated10B7D0MotionRecord;
 
 extern Generated10B7D0PlayerRecord *D_800DBFF0;
 
@@ -36,8 +49,18 @@ s32 func_150DE7C0() {
     return 0;
 }
 
-s32 func_150DEACC() {
-    return 0;
+// Matches retail directly from the explicit timestep pointer.
+s32 func_150DEACC(Generated10B7D0MotionRecord *arg0) {
+    f32 *timestep = &D_800BE9A4;
+
+    arg0->x += arg0->velocityX * *timestep;
+    arg0->y += arg0->velocityY * *timestep;
+    arg0->z += arg0->velocityZ * *timestep;
+    arg0->verticalSpeed -= *timestep;
+    if (arg0->verticalSpeed < 0.0f) {
+        return 0;
+    }
+    return 1;
 }
 
 /* Note 529: current-player threshold gate and embedded-record dispatch. */

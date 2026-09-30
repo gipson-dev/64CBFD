@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game motion timestep integrator byte-matched
+
+- `func_150DEACC` advances three coordinates from their velocities and the
+  global timestep, reduces vertical speed, and reports whether it is still
+  nonnegative.
+- All 35 words / 140 bytes emit directly from C with no guards. Linked SHA-256
+  is `c1609045c6bc30f63ae3ffa4404d008a6ac91ec834ded44a1135c11840981ae3`.
+- Totals are **3,050 / 5,462 (55.84%)** overall and
+  **2,471 / 4,788 (51.61%)** in Game. See
+  [Working Note 547](WORKING_NOTES/547-game-motion-timestep-integrator-match-20260930.md).
+
 ### Handwritten Game absolute-ordering helper restored
 
 - `func_150AD9A0` is restored from its false zero-return C placeholder to the
