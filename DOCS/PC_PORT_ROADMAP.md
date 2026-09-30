@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,025 / 5,463 (55.37%) | 0 | 2,438 |
+| Total | 5,463 / 6,041 (90.43%) | 3,026 / 5,463 (55.39%) | 0 | 2,437 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,447 / 4,789 (51.10%) | 0 | 2,342 |
+| Game | 4,789 / 5,321 (90.00%) | 2,448 / 4,789 (51.12%) | 0 | 2,341 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -170,6 +170,10 @@ The Game 25-byte group append `func_1502225C` now matches its complete
 132-byte span directly from C after restoring its deduplication scan, append,
 and count update; see
 [Working Note 521](WORKING_NOTES/521-game-25-byte-group-deduplicating-append-match-20260929.md).
+The Game collision-classifier wrapper `func_15046C80` now matches its complete
+128-byte span directly from C after restoring its classifier dispatch and
+class-zero fallback; see
+[Working Note 522](WORKING_NOTES/522-game-collision-classifier-wrapper-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

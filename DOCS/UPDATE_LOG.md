@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game collision-classifier wrapper byte-matched
+
+- `func_15046C80` now classifies its position and collision record through
+  `func_15047004`, delegates class zero to `func_1504697C`, and maps classes
+  one and two to false and true.
+- Its observed four-argument ABI and three-way switch emit the complete
+  32-word routine directly from C with no expected-word guards.
+- The linked and retail 128-byte spans share SHA-256
+  `b5786bc19624a7b4064536d78eda93d2752e60b8bda9395662d593924fb6f823`.
+- Totals are **3,026 / 5,463 (55.39%)** overall and
+  **2,448 / 4,789 (51.12%)** in Game, with no address-drift rows. See
+  [Working Note 522](WORKING_NOTES/522-game-collision-classifier-wrapper-match-20260929.md).
+
 ### Game 25-byte group deduplicating append byte-matched
 
 - `func_1502225C` now scans a selected 25-byte row in `D_800C3518`, returns

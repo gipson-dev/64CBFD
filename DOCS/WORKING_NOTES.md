@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game 25-byte group append matched).**
-The current linked checkpoint is `3025 / 5463 (55.37%)` exact C functions,
-with no address-drift blockers and 2,438 genuinely different C functions.
+**Active (2026-09-29, Game collision-classifier wrapper matched).**
+The current linked checkpoint is `3026 / 5463 (55.39%)` exact C functions,
+with no address-drift blockers and 2,437 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2447 / 4789 (51.10%)` exact, with 2,342 genuinely different C rows. The tree
+`2448 / 4789 (51.12%)` exact, with 2,341 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -397,12 +397,19 @@ recovered scan avoids duplicate entries before appending and incrementing the
 group count. No expected-word guards are needed. See
 [Working Note 521](WORKING_NOTES/521-game-25-byte-group-deduplicating-append-match-20260929.md).
 
+Game `func_15046C80` now matches all 32 retail words directly from C. Its
+four-argument ABI and three-way switch reproduce the classifier call,
+class-zero delegation, boolean class returns, and complete frame without
+guards. See
+[Working Note 522](WORKING_NOTES/522-game-collision-classifier-wrapper-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 32-word Game `func_15046C80`, the next untriaged placeholder.
+Continue with adjacent 32-word Game `func_15046F84`, the corresponding
+classifier wrapper whose class-zero path calls `func_15046D00`.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four
