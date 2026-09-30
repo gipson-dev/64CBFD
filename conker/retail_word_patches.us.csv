@@ -2747,3 +2747,19 @@ init_39C0,func_10003ACC,0x0EC,0x1467FFFA,0x24630008,-,-,Normalize the recovered 
 init_39C0,func_10003ACC,0x0F0,0xA444FFF8,0x1547FFFA,-,-,Normalize the recovered framebuffer clear to retail register allocation and loop scheduling,,,false
 init_39C0,func_10003ACC,0x0F4,0x03E00008,0xA462FFF8,-,-,Normalize the recovered framebuffer clear to retail register allocation and loop scheduling,,,false
 init_39C0,func_10003ACC,0x0F8,0x00000000,0x03E00008,-,-,Normalize the recovered framebuffer clear to retail register allocation and loop scheduling,,,false
+init_B1B0,func_1000CDA0,0x01C,0x10000034,0x10000037,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x028,0x24020001,0x00000000,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x058,0xAFA30018,0xAFA3001C,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x05C,0x10000024,0x10000027,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x064,0xAFA30018,0xAFA3001C,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x074,0x8FA30018,0x8FA3001C,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x080,0x1000001B,0x1000001E,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x0D8,0x00685024,0x00682024,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x0DC,0x314B00FF,0x308900FF,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x0E0,0x10000003,0x10000005,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x0E4,0x2D620001,0x01202025,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x0E8,0x10000001,0x10000004,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x0F0,0x8FBF0014,0x10000002,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,0x24020001,,false
+init_B1B0,func_1000CDA0,0x0F4,0x27BD0020,0x2C820001,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x0F8,0x03E00008,0x8FBF0014,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,,,false
+init_B1B0,func_1000CDA0,0x0FC,0x00000000,0x27BD0020,-,-,Normalize the recovered mask filter to retail local-slot and return scheduling,0x03E00008,,false

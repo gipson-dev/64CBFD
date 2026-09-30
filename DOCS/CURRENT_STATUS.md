@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,099 / 5,457 (56.79%) | 0 | 2,358 |
-| Init | 416 / 488 (85.25%) | 0 | 72 |
+| Total | 3,100 / 5,457 (56.81%) | 0 | 2,357 |
+| Init | 417 / 488 (85.45%) | 0 | 71 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -915,6 +915,11 @@ end-to-end gameplay acceptance.
    loop-scheduling words after recovering its scalar first fill and
    remainder-plus-four-pixel second fill; see
    [Working Note 600](WORKING_NOTES/600-init-dual-framebuffer-clear-match-20260930.md).
+   The 67-word record mask filter `func_1000CDA0` is byte-exact after
+   recovering its narrow mask ABI, validation gates, conditional flag update,
+   and post-call index reload. Eighteen guards normalize its local slot and
+   default-return schedule; see
+   [Working Note 601](WORKING_NOTES/601-init-record-mask-filter-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

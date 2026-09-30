@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,099 / 5,457 (56.79%) | 0 | 2,358 |
-| Init | 488 / 538 (90.71%) | 416 / 488 (85.25%) | 0 | 72 |
+| Total | 5,457 / 6,041 (90.33%) | 3,100 / 5,457 (56.81%) | 0 | 2,357 |
+| Init | 488 / 538 (90.71%) | 417 / 488 (85.45%) | 0 | 71 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -460,6 +460,11 @@ The Init dual-framebuffer clear `func_10003ACC` now matches its complete
 remainder-plus-four-pixel second fill; 57 stale-checked guards normalize the
 closed IDO register and loop schedule. See
 [Working Note 600](WORKING_NOTES/600-init-dual-framebuffer-clear-match-20260930.md).
+The Init record mask filter `func_1000CDA0` now matches its complete 268-byte
+span. Its typed C validates the record and active handle, conditionally sets
+two flag bits, and tests the caller's low-byte mask. Eighteen stale-checked
+guards normalize the remaining local-slot and default-return schedule. See
+[Working Note 601](WORKING_NOTES/601-init-record-mask-filter-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

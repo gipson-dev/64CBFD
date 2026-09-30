@@ -13,7 +13,7 @@ s32 func_1000C350();
 s32 func_1000C7E8();
 s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-s32 func_1000CDA0();
+s32 func_1000CDA0(u8 arg0, struct137 *arg1);
 s32 func_1000CEAC();
 s32 func_1000D2F8();
 s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
@@ -415,9 +415,31 @@ s32 func_1000CD40(s32 arg0, s32 arg1, s32 arg2) {
     return arg0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000CDA0.s. */
-s32 func_1000CDA0() {
-    return 0;
+s32 func_1000CDA0(u8 arg0, struct137 *arg1) {
+    s32 index;
+
+    if (arg0 == 0) {
+        return 1;
+    }
+    if (arg1 != NULL) {
+        index = arg1->unk0;
+        if (index >= 0) {
+            if ((D_800417B0[index] == NULL) || (arg1->unk4 <= 0)) {
+                return 1;
+            }
+            if (func_1000853C(index & 0xFF) == 3) {
+                return 1;
+            }
+            if ((D_8002B078[arg1->unk4][0] & 0x20) == 0) {
+                D_800418AC[arg1->unk0] |= 3;
+            }
+            arg0 &= ~D_800418AC[arg1->unk0];
+            arg0 &= 0xFF;
+            return arg0 == 0;
+        }
+        return 1;
+    }
+    return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000CEAC.s. */
 s32 func_1000CEAC() {

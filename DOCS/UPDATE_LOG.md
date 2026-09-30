@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init record mask filter byte-matched
+
+- `func_1000CDA0` validates its typed record and active handle, conditionally
+  sets flag bits zero and one, and reports whether the incoming low-byte mask
+  is fully cleared by the resulting flag complement.
+- Forty-nine of 67 words emit directly from recovered C. Sixteen stale-checked
+  replacements and two guarded insertions normalize the local-slot and
+  redundant default-return schedule.
+- The linked and retail spans share SHA-256
+  `164c1732fc0ffe8c739238c8e3a4d813fc695781a41d8a5d3bbc5c9a65d92c0e`.
+  Totals are **3,100 / 5,457 (56.81%)** overall and
+  **417 / 488 (85.45%)** in Init. See
+  [Working Note 601](WORKING_NOTES/601-init-record-mask-filter-match-20260930.md).
+
 ### Init dual-framebuffer clear byte-matched
 
 - `func_10003ACC` packs its RGB inputs as RGBA5551, clears framebuffer zero

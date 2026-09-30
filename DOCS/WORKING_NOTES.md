@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init dual-framebuffer clear matched).**
-The current linked checkpoint is `3099 / 5457 (56.79%)` exact C functions,
-with no address-drift blockers and 2,358 genuinely different C functions.
+**Active (2026-09-30, Init record mask filter matched).**
+The current linked checkpoint is `3100 / 5457 (56.81%)` exact C functions,
+with no address-drift blockers and 2,357 genuinely different C functions.
 Init is
-`416 / 488 (85.25%)` exact, with 72 genuinely different C rows. Game is
+`417 / 488 (85.45%)` exact, with 71 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -835,7 +835,12 @@ both framebuffers with the packed RGBA5551 value, retaining the scalar first
 fill and remainder-plus-four-pixel second fill. Fifty-seven guards normalize
 the closed register and loop schedule. See
 [Working Note 600](WORKING_NOTES/600-init-dual-framebuffer-clear-match-20260930.md).
-Resume the Init queue from its remaining 72 genuinely different C rows.
+Init `func_1000CDA0` now matches all 67 retail words. Its recovered C
+validates a `struct137` record and active handle, conditionally sets two flag
+bits, and tests the incoming low-byte mask. Eighteen guards preserve the local
+slot and redundant default-return schedule. See
+[Working Note 601](WORKING_NOTES/601-init-record-mask-filter-match-20260930.md).
+Resume the Init queue from its remaining 71 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct
