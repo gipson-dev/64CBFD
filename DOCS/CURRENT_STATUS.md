@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,103 / 5,457 (56.86%) | 0 | 2,354 |
-| Init | 420 / 488 (86.07%) | 0 | 68 |
+| Total | 3,104 / 5,457 (56.88%) | 0 | 2,353 |
+| Init | 421 / 488 (86.27%) | 0 | 67 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -936,6 +936,11 @@ end-to-end gameplay acceptance.
    transfer loop, and blocking completion waits. Four guards normalize only
    the frame and message-local offsets; see
    [Working Note 604](WORKING_NOTES/604-init-chunked-pi-dma-reader-match-20260930.md).
+   The 83-word spatial-volume callback `func_1000C7E8` is byte-exact after
+   recovering its active-state setup and clamped radial channel calculation.
+   Fifty guards normalize one closed IDO floating-point allocation and
+   instruction schedule; see
+   [Working Note 605](WORKING_NOTES/605-init-spatial-volume-callback-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

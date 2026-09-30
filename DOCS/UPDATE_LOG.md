@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init spatial-volume callback byte-matched
+
+- `func_1000C7E8` restores mode-specific resource setup, active-state
+  selection, and a clamped distance-based channel value.
+- Thirty-three of 83 words emit directly from semantic C and retained slot
+  padding. Fifty stale-checked guards normalize one closed IDO
+  floating-point allocation and instruction schedule; no instructions are
+  inserted or removed.
+- The linked and retail spans share SHA-256
+  `8b0ef26f08fc4e4ac97da787b65fb1e3377e5d9dfd7beaf356e25550c14c6423`.
+  Totals are **3,104 / 5,457 (56.88%)** overall and
+  **421 / 488 (86.27%)** in Init. See
+  [Working Note 605](WORKING_NOTES/605-init-spatial-volume-callback-match-20260930.md).
+
 ### Init chunked PI DMA reader byte-matched
 
 - `func_100046E4` selects a PI completion queue from the running thread,

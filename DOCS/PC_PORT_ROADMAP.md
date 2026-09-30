@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,103 / 5,457 (56.86%) | 0 | 2,354 |
-| Init | 488 / 538 (90.71%) | 420 / 488 (86.07%) | 0 | 68 |
+| Total | 5,457 / 6,041 (90.33%) | 3,104 / 5,457 (56.88%) | 0 | 2,353 |
+| Init | 488 / 538 (90.71%) | 421 / 488 (86.27%) | 0 | 67 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -480,6 +480,11 @@ The Init chunked PI DMA reader `func_100046E4` now matches its complete
 invalidation, bounded transfers, and blocking completion waits; four
 stale-checked guards preserve only retail's frame and local offsets. See
 [Working Note 604](WORKING_NOTES/604-init-chunked-pi-dma-reader-match-20260930.md).
+The Init spatial-volume callback `func_1000C7E8` now matches its complete
+332-byte span. Its recovered C restores mode-specific resource setup, active
+state selection, and the clamped radial channel value; 50 stale-checked guards
+normalize one closed IDO floating-point schedule. See
+[Working Note 605](WORKING_NOTES/605-init-spatial-volume-callback-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

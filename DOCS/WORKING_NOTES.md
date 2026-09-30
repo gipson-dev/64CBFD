@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init chunked PI DMA reader matched).**
-The current linked checkpoint is `3103 / 5457 (56.86%)` exact C functions,
-with no address-drift blockers and 2,354 genuinely different C functions.
+**Active (2026-09-30, Init spatial-volume callback matched).**
+The current linked checkpoint is `3104 / 5457 (56.88%)` exact C functions,
+with no address-drift blockers and 2,353 genuinely different C functions.
 Init is
-`420 / 488 (86.07%)` exact, with 68 genuinely different C rows. Game is
+`421 / 488 (86.27%)` exact, with 67 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -856,7 +856,12 @@ thread-selected queue, full cache invalidation, bounded synchronous PI DMA
 loop, and pointer progression. Four guards preserve only retail's frame and
 message-local offsets. See
 [Working Note 604](WORKING_NOTES/604-init-chunked-pi-dma-reader-match-20260930.md).
-Resume the Init queue from its remaining 68 genuinely different C rows.
+Init `func_1000C7E8` now matches all 83 retail words. Its recovered callback
+restores mode-specific resource setup, active-state selection, and the
+clamped radial channel calculation. Fifty relocation-aware guards preserve
+one closed IDO floating-point register and instruction schedule. See
+[Working Note 605](WORKING_NOTES/605-init-spatial-volume-callback-match-20260930.md).
+Resume the Init queue from its remaining 67 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

@@ -10,7 +10,7 @@ s32 func_1000B638();
 s32 func_1000BCBC();
 s32 func_1000BF60();
 s32 func_1000C350();
-s32 func_1000C7E8();
+s32 func_1000C7E8(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
 s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CDA0(u8 arg0, struct137 *arg1);
@@ -275,9 +275,40 @@ s32 func_1000C350() {
 s32 func_1000C530(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000C7E8.s. */
-s32 func_1000C7E8() {
-    return 0;
+s32 func_1000C7E8(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    f32 offset = arg2;
+    f32 value;
+    f32 clamped;
+
+    if (D_800BE9F0 == 0x31) {
+        if (arg0 != 2) {
+            if (func_1000B1B0(9) == NULL) {
+                func_1000E704(0x3E, 0, 0xFFFF);
+                func_1000E40C(0x3E, 0x7FFF);
+                func_1000D96C(0x3D, 0x3E, 4);
+            }
+            return 2;
+        }
+        return 0;
+    }
+
+    if (D_8002B070 == 0) {
+        D_8002B070 = 1;
+    }
+    if (arg0 != D_8002B070) {
+        arg0 = D_8002B070;
+    }
+
+    offset -= -4000.0f;
+    value = D_8002C238 - sqrtf((offset * offset) + (arg4 * arg4)) * 10.0f;
+    clamped = value;
+    if (value < 100.0f) {
+        clamped = 100.0f;
+    } else if (D_8002C238 < value) {
+        clamped = D_8002C238;
+    }
+    func_1000E40C(0x3E, clamped);
+    return arg0;
 }
 
 s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
