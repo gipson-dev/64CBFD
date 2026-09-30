@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init record cleanup matched).**
-The current linked checkpoint is `3083 / 5458 (56.49%)` exact C functions,
-with no address-drift blockers and 2,375 genuinely different C functions.
+**Active (2026-09-30, Init channel-transition updater matched).**
+The current linked checkpoint is `3084 / 5458 (56.50%)` exact C functions,
+with no address-drift blockers and 2,374 genuinely different C functions.
 Init is
-`400 / 489 (81.80%)` exact, with 89 genuinely different C rows. Game is
+`401 / 489 (82.00%)` exact, with 88 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 583 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -760,7 +760,12 @@ combined 32-bit clear covers the final two halfwords, while the recovered
 non-prototype declaration lets IDO place the explicit byte mask in the direct
 call delay slot. See
 [Working Note 584](WORKING_NOTES/584-init-record-cleanup-match-20260930.md).
-Resume the Init queue from its remaining 89 genuinely different C rows.
+Init `func_1000DF68` now matches all 59 retail words. Its recovered C updates
+the channel target, optionally snaps and refreshes the active channel, and
+computes the clamped absolute per-step transition. Twelve guards normalize
+only the closed clamp/store/epilogue schedule. See
+[Working Note 585](WORKING_NOTES/585-init-channel-transition-updater-match-20260930.md).
+Resume the Init queue from its remaining 88 genuinely different C rows.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init channel-transition updater byte-matched
+
+- `func_1000DF68` updates a channel target, optionally snaps and refreshes the
+  active channel, and computes an absolute per-step transition amount.
+- Forty-seven of 59 words emit directly from semantic C. Twelve stale-checked
+  guards preserve retail's closed clamp/store/epilogue schedule.
+- The linked and retail spans share SHA-256
+  `e3f6789eb12fdf89b984522ef3520b5996babbbae4f94646ea8610ff45011f9a`.
+  Totals are **3,084 / 5,458 (56.50%)** overall and
+  **401 / 489 (82.00%)** in Init. See
+  [Working Note 585](WORKING_NOTES/585-init-channel-transition-updater-match-20260930.md).
+
 ### Init record cleanup byte-matched
 
 - `func_1000DEC4` scans the 12-entry record table, releases stale owner-table

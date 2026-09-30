@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,458 / 6,041 (90.35%) | 3,083 / 5,458 (56.49%) | 0 | 2,375 |
-| Init | 489 / 538 (90.89%) | 400 / 489 (81.80%) | 0 | 89 |
+| Total | 5,458 / 6,041 (90.35%) | 3,084 / 5,458 (56.50%) | 0 | 2,374 |
+| Init | 489 / 538 (90.89%) | 401 / 489 (82.00%) | 0 | 88 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -401,6 +401,9 @@ The adjacent Init record cleanup `func_1000DEC4` now matches all 164 bytes
 directly from C. Its recovered combined tail clear and non-prototype query
 declaration reproduce retail without guards; see
 [Working Note 584](WORKING_NOTES/584-init-record-cleanup-match-20260930.md).
+The Init channel-transition updater `func_1000DF68` now matches all 236 bytes.
+Twelve guarded words normalize its closed clamp/store/epilogue schedule; see
+[Working Note 585](WORKING_NOTES/585-init-channel-transition-updater-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

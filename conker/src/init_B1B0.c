@@ -461,9 +461,36 @@ void func_1000DEC4(void) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000DF68.s. */
-s16 func_1000DF68(s32 arg0, s32 arg1, s32 arg2) {
-    return 0;
+void func_1000DF68(s32 arg0, s32 arg1, s32 arg2) {
+    struct151 *entry;
+    s32 step;
+
+    entry = func_1000B1FC(arg0);
+    if (entry != NULL) {
+        entry->unk4E = arg1;
+        if (arg2 == 1) {
+            entry->unk4C = arg1;
+            if (entry->unk0 >= 0) {
+                func_1000CC54(entry->unk0);
+            }
+        }
+
+        if (arg2 >= 2) {
+            step = entry->unk4C - arg1;
+            if (step < 0) {
+                step = -step;
+            }
+            step /= arg2;
+            if (step <= 0) {
+                step = 2;
+            } else if (step >= 0x8000) {
+                step = 0x7FFF;
+            }
+            entry->unk50 = step;
+        } else {
+            entry->unk50 = 0x200;
+        }
+    }
 }
 
 void func_1000E054(s32 arg0, s32 arg1) {
