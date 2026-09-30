@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,050 / 5,462 (55.84%) | 0 | 2,412 |
+| Total | 3,051 / 5,462 (55.86%) | 0 | 2,411 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,471 / 4,788 (51.61%) | 0 | 2,317 |
+| Game | 2,472 / 4,788 (51.63%) | 0 | 2,316 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -448,6 +448,9 @@ see [Working Note 546](WORKING_NOTES/546-game-handwritten-absolute-ordering-help
 The Game motion timestep integrator `func_150DEACC` now matches its complete
 140-byte span directly from C; see
 [Working Note 547](WORKING_NOTES/547-game-motion-timestep-integrator-match-20260930.md).
+The Game record-type eligibility predicate `func_150EC3D4` now matches its
+complete 136-byte span directly from C; see
+[Working Note 548](WORKING_NOTES/548-game-record-type-eligibility-predicate-match-20260930.md).
 
 ## Verified build state
 
@@ -785,7 +788,9 @@ end-to-end gameplay acceptance.
    byte-exact directly from C. The handwritten 32-word `func_150AD9A0` is now
    restored to assembly ownership and exact independently. The 35-word motion
    timestep integrator `func_150DEACC` is now byte-exact directly from C.
-   Continue with 34-word Game `func_150EC3D4`, the next ordinary row.
+   The 34-word record-type eligibility predicate `func_150EC3D4` is now
+   byte-exact directly from C. Continue with 36-word Game `func_150FDD10`, the
+   next ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

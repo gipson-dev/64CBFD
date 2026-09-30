@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game record-type eligibility predicate byte-matched
+
+- `func_150EC3D4` rejects the comparison record and records without backing
+  data, then accepts type bytes `0`, `1`, `2`, `3`, `4`, `0x28`, and `0x77`.
+- All 34 words / 136 bytes emit directly from C with no guards. Linked SHA-256
+  is `5f7e19ea141ba700d88ecee856c302cc37b327e096dc9a07b5b10aefd7c785a7`.
+- Totals are **3,051 / 5,462 (55.86%)** overall and
+  **2,472 / 4,788 (51.63%)** in Game. See
+  [Working Note 548](WORKING_NOTES/548-game-record-type-eligibility-predicate-match-20260930.md).
+
 ### Game motion timestep integrator byte-matched
 
 - `func_150DEACC` advances three coordinates from their velocities and the
