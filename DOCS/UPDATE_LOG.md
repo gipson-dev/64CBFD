@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init Leo resume helper pair byte-matched
+
+- `__osLeoAbnormalResume` restores disk buffer-manager state, clears the PI
+  interrupt, and restores the global PI interrupt mask. `__osLeoResume`
+  appends the PI event message and wakes a waiting queue thread.
+- Both helpers emit directly from repository-local libultra C under the stock
+  SDK `-O1` profile. The abnormal helper preserves retail's IO-busy-only
+  polling mask; no word guards are required.
+- The linked and retail spans share SHA-256
+  `500e2acc2a1a8684d801922f996043336aa5ddb2a54566badb22d54f4dd60a14`
+  and `ebe24919f2d63e916824fb1bec7ffbb078a46070afe16b3420a1a5c3452b2cbe`.
+  Totals are **3,094 / 5,457 (56.70%)** overall and
+  **411 / 488 (84.22%)** in Init. See
+  [Working Note 595](WORKING_NOTES/595-init-leo-resume-helper-pair-match-20260930.md).
+
 ### Init halfword-table selector byte-matched
 
 - `func_10011EB8` maps an input to a five-pair table row, optionally computes

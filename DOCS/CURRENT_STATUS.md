@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,092 / 5,457 (56.66%) | 0 | 2,365 |
-| Init | 409 / 488 (83.81%) | 0 | 79 |
+| Total | 3,094 / 5,457 (56.70%) | 0 | 2,363 |
+| Init | 411 / 488 (84.22%) | 0 | 77 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -900,7 +900,9 @@ end-to-end gameplay acceptance.
    sentinel, and reusable-list scheduling words. The 58-word halfword-table
    selector `func_10011EB8` is byte-exact after two bounded guards restore
    retail's redundant mapped-input copies and move the existing call
-   relocation.
+   relocation. SDK helpers `__osLeoAbnormalResume` and `__osLeoResume` are
+   byte-exact directly from their recovered `-O1` libultra C bodies with no
+   guards.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

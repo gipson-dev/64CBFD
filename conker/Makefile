@@ -273,6 +273,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_pfsinit.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_pfsisplug.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_pidma.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_sethwinterrupt.c.o: OPT_FLAGS := -O1
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_leointerrupt.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_vi.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_viswapcontext.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_21C4F0.c.o: OPT_FLAGS := -O1
