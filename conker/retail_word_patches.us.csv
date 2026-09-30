@@ -2344,3 +2344,6 @@ generated_142560,func_1511A410,0x070,0x8FAD0010,0x8FAC0010,-,-,Load the second m
 generated_142560,func_1511A410,0x074,0xACCD0000,0xACCC0000,-,-,Store the second match through retail's t4 lifetime,,,false
 game_14FF90,func_151239CC,0x064,0xAFA30018,0xAFA3001C,-,-,Preserve retail's saved-state slot pointer in the top local frame slot,,,false
 game_14FF90,func_151239CC,0x068,0x8FA30018,0x8FA3001C,-,-,Reload the saved-state slot pointer from retail's top local frame slot,,,false
+generated_179F30,func_1514EDF0,0x028,0xAFA00038,0xAFA00034,-,-,Initialize the recovered result pointer in retail's lower local frame slot,,,false
+generated_179F30,func_1514EDF0,0x02C,0x27B20038,0x27B20034,-,-,Materialize the recovered result pointer from retail's lower local frame slot,,,false
+generated_179F30,func_1514EDF0,0x048,0x8FA40038,0x8FA40034,-,-,Reload the recovered result pointer from retail's lower local frame slot,,,false

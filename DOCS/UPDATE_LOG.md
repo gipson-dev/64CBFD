@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game owner-list matching-node cleanup byte-matched
+
+- `func_1514EDF0` now repeatedly searches the list at owner offset `0x2F4`
+  and unlinks every node whose object key matches its first argument.
+- Twenty-nine of 32 words emit directly from semantic C. Three guarded words
+  normalize only IDO's equivalent `sp+0x38` local pointer placement to retail's
+  `sp+0x34` slot. Linked SHA-256 is
+  `318a5ff08113e9167dc286d85f9442ff04d79e5a5c4890cce2a5ebe9d43d6165`.
+- Totals are **3,060 / 5,462 (56.02%)** overall and
+  **2,481 / 4,788 (51.82%)** in Game. See
+  [Working Note 557](WORKING_NOTES/557-game-owner-list-matching-node-cleanup-match-20260930.md).
+
 ### Game bit-zero state-operation callback byte-matched
 
 - `func_1514E89C` toggles, sets, or clears bit zero of the object state word

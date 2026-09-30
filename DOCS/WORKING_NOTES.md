@@ -590,13 +590,19 @@ toggles, sets, or clears bit zero of the object state word for operations zero,
 one, and two, returning zero for unsupported operations. See
 [Working Note 556](WORKING_NOTES/556-game-bit-zero-state-operation-callback-match-20260930.md).
 
+Game `func_1514EDF0` now matches all 32 retail words. It repeatedly finds and
+removes every matching node from the list rooted at owner offset `0x2F4`.
+Twenty-nine words emit directly from semantic C; three guards normalize only
+IDO's equivalent local-stack slot choice. See
+[Working Note 557](WORKING_NOTES/557-game-owner-list-matching-node-cleanup-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 32-word Game `func_1514EDF0`, the next ordinary row.
+cycle. Continue with 37-word Game `func_15158B3C`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

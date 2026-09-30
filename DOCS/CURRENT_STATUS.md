@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,059 / 5,462 (56.01%) | 0 | 2,403 |
+| Total | 3,060 / 5,462 (56.02%) | 0 | 2,402 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,480 / 4,788 (51.80%) | 0 | 2,308 |
+| Game | 2,481 / 4,788 (51.82%) | 0 | 2,307 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -475,6 +475,9 @@ The Game indexed saved-state restorer `func_151239CC` now matches its complete
 The Game bit-zero state-operation callback `func_1514E89C` now matches its
 complete 132-byte span directly from C; see
 [Working Note 556](WORKING_NOTES/556-game-bit-zero-state-operation-callback-match-20260930.md).
+The Game owner-list cleanup `func_1514EDF0` now matches its complete 128-byte
+span through three guarded local-stack operands; see
+[Working Note 557](WORKING_NOTES/557-game-owner-list-matching-node-cleanup-match-20260930.md).
 
 ## Verified build state
 
@@ -824,8 +827,9 @@ end-to-end gameplay acceptance.
    `func_1511A738` is now byte-exact directly from C. The 34-word indexed
    saved-state restorer `func_151239CC` is now byte-exact through two guarded
    stack-slot words. The 33-word bit-zero state-operation callback
-   `func_1514E89C` is now byte-exact directly from C. Continue with 32-word
-   Game `func_1514EDF0`, the next ordinary row.
+   `func_1514E89C` is now byte-exact directly from C. The 32-word owner-list
+   cleanup `func_1514EDF0` is now byte-exact through three guarded local-stack
+   operands. Continue with 37-word Game `func_15158B3C`, the next ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

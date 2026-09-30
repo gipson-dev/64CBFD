@@ -460,8 +460,22 @@ s32 func_1514ED8C(GameListNode *node, u8 *owner) {
     return object;
 }
 
-s32 func_1514EDF0() {
-    return 0;
+void func_1514EDF0(s32 key, u8 *owner) {
+    GameListNode *current;
+    GameListNode *found;
+    s32 result;
+    u8 removed;
+
+    current = *(GameListNode **)(owner + 0x2F4);
+    found = NULL;
+    do {
+        result = func_1514ED3C(current, key, &found);
+        removed = result;
+        if (result != 0) {
+            current = found->next;
+            func_1514ED8C(found, owner);
+        }
+    } while (removed != 0);
 }
 
 void func_1514EE70(u8 *arg0) {
