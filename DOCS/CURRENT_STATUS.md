@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,017 / 5,463 (55.23%) | 0 | 2,446 |
+| Total | 3,018 / 5,463 (55.24%) | 0 | 2,445 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,439 / 4,789 (50.93%) | 0 | 2,350 |
+| Game | 2,440 / 4,789 (50.95%) | 0 | 2,349 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -301,6 +301,11 @@ words after recovering its standalone release, ten-slot allocation scan,
 owner clears, and final state transition. Two relocation-aware guards
 normalize only independent address-finalization words; see
 [Working Note 513](WORKING_NOTES/513-game-resource-slot-array-teardown-match-20260929.md).
+Game owner-payload object spawn `func_150BDE90` is byte-exact across all 31
+words after recovering its eight-byte local payload, fixed object-creation
+request, and conditional copy to object offset `0x28`. The complete routine
+emits directly from C with no guards; see
+[Working Note 514](WORKING_NOTES/514-game-owner-payload-object-spawn-match-20260929.md).
 
 ## Verified build state
 
@@ -623,9 +628,9 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_150B6D78`, whose complete 33-word resource
-   slot-array teardown is now byte-exact. Continue with 31-word
-   `func_150BDE90`, the next ordinary Game candidate after the two
+   advanced through `func_150BDE90`, whose complete 31-word owner-payload
+   object spawn now matches directly from C. Continue with 30-word
+   `func_150C0A48`, the next ordinary Game candidate after the two
    parked 29-difference rows.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly

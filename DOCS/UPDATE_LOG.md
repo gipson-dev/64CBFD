@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game owner-payload object spawn byte-matched
+
+- `func_150BDE90` now builds its eight-byte owner payload, creates the fixed
+  type-`0x12C`/subtype-`0x4F` object, and conditionally copies the payload to
+  object offset `0x28`.
+- The correct allocator ABI and narrow payload type reproduce all 31 retail
+  words directly from C. No expected-word guards are used.
+- The linked and retail 124-byte spans share SHA-256
+  `c1210a8e98cd676608cb4aa49a6c41cf1d50889ec535d5174e64d22d10e21275`.
+- Totals are **3,018 / 5,463 (55.24%)** overall and
+  **2,440 / 4,789 (50.95%)** in Game, with no address-drift rows. See
+  [Working Note 514](WORKING_NOTES/514-game-owner-payload-object-spawn-match-20260929.md).
+
 ### Game resource slot-array teardown byte-matched
 
 - `func_150B6D78` now releases the standalone `D_800D9894` allocation,

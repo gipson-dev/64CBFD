@@ -1,11 +1,27 @@
 #include <ultra64.h>
 extern f32 D_800BE9A4;
 extern u8 D_800CC2D0[];
+extern void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
+                          u8 arg5, s32 arg6, u8 arg7, s32 arg8);
+
+typedef struct {
+    void *owner;
+    s16 state;
+} GeneratedEB340Owner;
 
 /* Non-matching placeholders for the text-only asm slice asm/EB340.s. */
 
-s32 func_150BDE90() {
-    return 0;
+void func_150BDE90(void *arg0, u8 arg1, s32 arg2) {
+    GeneratedEB340Owner owner;
+    void *object;
+
+    owner.owner = arg0;
+    owner.state = 0;
+
+    object = func_15149130(0x12C, -1, 0x4F, -1, 0, 0x3C, 8, arg1, arg2);
+    if (object != NULL) {
+        memcpy((u8 *)object + 0x28, &owner, sizeof(owner));
+    }
 }
 
 s32 func_150BDF0C() {

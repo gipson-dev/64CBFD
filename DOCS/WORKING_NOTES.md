@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game resource slot-array teardown matched).**
-The current linked checkpoint is `3017 / 5463 (55.23%)` exact C functions,
-with no address-drift blockers and 2,446 genuinely different C functions.
+**Active (2026-09-29, Game owner-payload object spawn matched).**
+The current linked checkpoint is `3018 / 5463 (55.24%)` exact C functions,
+with no address-drift blockers and 2,445 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2439 / 4789 (50.93%)` exact, with 2,350 genuinely different C rows. The tree
+`2440 / 4789 (50.95%)` exact, with 2,349 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -346,10 +346,16 @@ then transitions the owning state byte to 3. Two relocation-aware stale
 checks normalize only independent cursor/end address-finalization words. See
 [Working Note 513](WORKING_NOTES/513-game-resource-slot-array-teardown-match-20260929.md).
 
+Game `func_150BDE90` now matches all 31 retail words directly from C. The
+recovered wrapper builds an eight-byte owner payload, submits its fixed
+type-`0x12C` object request, and copies the payload when creation succeeds.
+No expected-word guards are needed. See
+[Working Note 514](WORKING_NOTES/514-game-owner-payload-object-spawn-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Continue
-with 31-word `func_150BDE90`, the next ordinary Game candidate.
+with 30-word `func_150C0A48`, the next ordinary Game candidate.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four
