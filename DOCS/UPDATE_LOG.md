@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game state-three convergence scanner byte-matched
+
+- `func_1509CDDC` restores initial slot processing and repeated 204-byte scans
+  of state-3 entries until a complete pass reports no changes.
+- All 34 words match retail through 18 guarded contraction/scheduling rows;
+  linked SHA-256 is `79a48e8c7f7ddf3f651113de5f1827c8645dfa89ed180c301a154838cba28405`.
+- Totals are **3,048 / 5,463 (55.79%)** overall and
+  **2,469 / 4,789 (51.56%)** in Game. See
+  [Working Note 544](WORKING_NOTES/544-game-state-three-convergence-scan-match-20260930.md).
+
 ### Game packed-byte rate updater byte-matched
 
 - `func_15077404` restores the active packed-byte rate update, signed 16-bit

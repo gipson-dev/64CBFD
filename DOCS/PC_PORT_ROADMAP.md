@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,047 / 5,463 (55.78%) | 0 | 2,416 |
+| Total | 5,463 / 6,041 (90.43%) | 3,048 / 5,463 (55.79%) | 0 | 2,415 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,789 / 5,321 (90.00%) | 2,468 / 4,789 (51.53%) | 0 | 2,321 |
+| Game | 4,789 / 5,321 (90.00%) | 2,469 / 4,789 (51.56%) | 0 | 2,320 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -248,6 +248,9 @@ The Game packed-byte rate updater `func_15077404` now matches its full
 176-byte span after recovering signed 16-bit truncation and its packed-byte
 clamp/store behavior; see
 [Working Note 543](WORKING_NOTES/543-game-packed-byte-rate-update-match-20260930.md).
+The Game state-three convergence scanner `func_1509CDDC` now matches its full
+136-byte span; see
+[Working Note 544](WORKING_NOTES/544-game-state-three-convergence-scan-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

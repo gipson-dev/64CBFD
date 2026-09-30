@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,047 / 5,463 (55.78%) | 0 | 2,416 |
+| Total | 3,048 / 5,463 (55.79%) | 0 | 2,415 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,468 / 4,789 (51.53%) | 0 | 2,321 |
+| Game | 2,469 / 4,789 (51.56%) | 0 | 2,320 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -436,6 +436,9 @@ recovering its signed 16-bit result truncation, negative clamp, and active or
 fallback packed-byte stores. Thirty-three guarded source words and one
 inserted scheduling word normalize the closed compiler allocation cycle; see
 [Working Note 543](WORKING_NOTES/543-game-packed-byte-rate-update-match-20260930.md).
+Game state-three convergence scanner `func_1509CDDC` now matches all 34 words
+after restoring its initial slot processing and repeated 204-byte scans; see
+[Working Note 544](WORKING_NOTES/544-game-state-three-convergence-scan-match-20260930.md).
 
 ## Verified build state
 
@@ -767,7 +770,9 @@ end-to-end gameplay acceptance.
    `func_150413FC` is parked on a five-versus-four saved-register allocation
    cycle. The 44-word packed-byte rate updater `func_15077404` is now
    byte-exact with 33 guarded source words and one inserted scheduling word.
-   Continue with 34-word Game `func_1509CDDC`, the next ordinary row.
+   The 34-word state-three convergence scanner `func_1509CDDC` is now
+   byte-exact through 18 guarded contraction/scheduling rows. Continue with
+   33-word Game `func_1509F77C`, the next ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

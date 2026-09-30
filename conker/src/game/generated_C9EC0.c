@@ -1,6 +1,7 @@
 #include <ultra64.h>
 extern s32 D_8008743C[];
 extern u8 *D_800D2FB0;
+extern u8 D_800D2E70[];
 
 /* Non-matching placeholders for the text-only asm slice asm/C9EC0.s. */
 
@@ -79,8 +80,25 @@ s32 func_1509CCF4() {
     return 0;
 }
 
-s32 func_1509CDDC() {
-    return 0;
+// Matched with guarded loop-invariant allocation normalization.
+void func_1509CDDC(s32 arg0) {
+    s32 changes;
+    s32 index;
+    u8 *state;
+
+    func_1509CCF4(arg0);
+    do {
+        changes = 0;
+        state = D_800D2E70;
+        index = 0;
+        do {
+            if (*state == 3) {
+                changes += func_1509CCF4(index);
+            }
+            index++;
+            state++;
+        } while (index != 0xCC);
+    } while (changes != 0);
 }
 
 s32 func_1509CE64() {
