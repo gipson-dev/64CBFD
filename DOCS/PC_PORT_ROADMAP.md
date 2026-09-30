@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,102 / 5,457 (56.84%) | 0 | 2,355 |
-| Init | 488 / 538 (90.71%) | 419 / 488 (85.86%) | 0 | 69 |
+| Total | 5,457 / 6,041 (90.33%) | 3,103 / 5,457 (56.86%) | 0 | 2,354 |
+| Init | 488 / 538 (90.71%) | 420 / 488 (86.07%) | 0 | 68 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -475,6 +475,11 @@ The Init active-entry mode dispatcher `func_1000E2F4` now matches its complete
 channel paths; 12 stale-checked guards normalize only the metadata-test
 register cycle. See
 [Working Note 603](WORKING_NOTES/603-init-active-entry-mode-dispatcher-match-20260930.md).
+The Init chunked PI DMA reader `func_100046E4` now matches its complete
+296-byte span. Its typed C restores thread-selected queues, cache
+invalidation, bounded transfers, and blocking completion waits; four
+stale-checked guards preserve only retail's frame and local offsets. See
+[Working Note 604](WORKING_NOTES/604-init-chunked-pi-dma-reader-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

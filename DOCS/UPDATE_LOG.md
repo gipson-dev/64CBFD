@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init chunked PI DMA reader byte-matched
+
+- `func_100046E4` selects a PI completion queue from the running thread,
+  invalidates the destination cache, and reads in synchronous chunks no
+  larger than `0x14000` bytes.
+- Seventy of 74 words emit directly from typed semantic C. Four stale-checked
+  guards normalize only the frame allocation, two message-local addresses,
+  and frame release; no instructions are inserted or removed.
+- The linked and retail spans share SHA-256
+  `3e86429dbeb207960589ce8b2f3305a853d406b5fc5e3643be4ad4e4c0b95e40`.
+  Totals are **3,103 / 5,457 (56.86%)** overall and
+  **420 / 488 (86.07%)** in Init. See
+  [Working Note 604](WORKING_NOTES/604-init-chunked-pi-dma-reader-match-20260930.md).
+
 ### Init active-entry mode dispatcher byte-matched
 
 - `func_1000E2F4` scans the three active entries, selects the channel stop or

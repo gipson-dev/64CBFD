@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,102 / 5,457 (56.84%) | 0 | 2,355 |
-| Init | 419 / 488 (85.86%) | 0 | 69 |
+| Total | 3,103 / 5,457 (56.86%) | 0 | 2,354 |
+| Init | 420 / 488 (86.07%) | 0 | 68 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -931,6 +931,11 @@ end-to-end gameplay acceptance.
    final mode-byte store. Twelve guards normalize one non-relocating metadata
    test register cycle; see
    [Working Note 603](WORKING_NOTES/603-init-active-entry-mode-dispatcher-match-20260930.md).
+   The 74-word chunked PI DMA reader `func_100046E4` is byte-exact after
+   recovering its thread-selected queue, cache invalidation, `0x14000`-byte
+   transfer loop, and blocking completion waits. Four guards normalize only
+   the frame and message-local offsets; see
+   [Working Note 604](WORKING_NOTES/604-init-chunked-pi-dma-reader-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

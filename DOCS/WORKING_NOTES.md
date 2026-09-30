@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init active-entry mode dispatcher matched).**
-The current linked checkpoint is `3102 / 5457 (56.84%)` exact C functions,
-with no address-drift blockers and 2,355 genuinely different C functions.
+**Active (2026-09-30, Init chunked PI DMA reader matched).**
+The current linked checkpoint is `3103 / 5457 (56.86%)` exact C functions,
+with no address-drift blockers and 2,354 genuinely different C functions.
 Init is
-`419 / 488 (85.86%)` exact, with 69 genuinely different C rows. Game is
+`420 / 488 (86.07%)` exact, with 68 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -851,7 +851,12 @@ three active entries and selects the retail stop or release path before
 storing the mode byte. Twelve guards preserve one closed metadata-test
 register cycle; all control flow, calls, and relocations emit directly. See
 [Working Note 603](WORKING_NOTES/603-init-active-entry-mode-dispatcher-match-20260930.md).
-Resume the Init queue from its remaining 69 genuinely different C rows.
+Init `func_100046E4` now matches all 74 retail words. Its typed C restores the
+thread-selected queue, full cache invalidation, bounded synchronous PI DMA
+loop, and pointer progression. Four guards preserve only retail's frame and
+message-local offsets. See
+[Working Note 604](WORKING_NOTES/604-init-chunked-pi-dma-reader-match-20260930.md).
+Resume the Init queue from its remaining 68 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

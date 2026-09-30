@@ -2775,3 +2775,7 @@ init_B1B0,func_1000E2F4,0x0B0,0x026A5821,0x026B6021,-,-,Normalize the recovered 
 init_B1B0,func_1000E2F4,0x0B4,0x8D6C0004,0x8D8D0004,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
 init_B1B0,func_1000E2F4,0x0B8,0x318D0010,0x31AE0010,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
 init_B1B0,func_1000E2F4,0x0BC,0x55A00005,0x55C00005,-,-,Normalize the recovered entry-mode updater to retail metadata-test register allocation,,,false
+init_4470,func_100046E4,0x000,0x27BDFF78,0x27BDFF80,-,-,Normalize the recovered chunked PI reader to retail frame and message-local offsets,,,false
+init_4470,func_100046E4,0x094,0x27BE0068,0x27BE0064,-,-,Normalize the recovered chunked PI reader to retail frame and message-local offsets,,,false
+init_4470,func_100046E4,0x098,0x27B7006C,0x27B70068,-,-,Normalize the recovered chunked PI reader to retail frame and message-local offsets,,,false
+init_4470,func_100046E4,0x124,0x27BD0088,0x27BD0080,-,-,Normalize the recovered chunked PI reader to retail frame and message-local offsets,,,false
