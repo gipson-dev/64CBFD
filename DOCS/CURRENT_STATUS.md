@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,053 / 5,462 (55.90%) | 0 | 2,409 |
+| Total | 3,054 / 5,462 (55.91%) | 0 | 2,408 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,474 / 4,788 (51.67%) | 0 | 2,314 |
+| Game | 2,475 / 4,788 (51.69%) | 0 | 2,313 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -457,6 +457,9 @@ The Game type-0x28 object sweep `func_150FDD10` now matches its complete
 The Game camera-vector forwarding wrapper `func_1510B32C` now matches its
 complete 132-byte span through eight guarded ABI/register words; see
 [Working Note 550](WORKING_NOTES/550-game-camera-vector-forwarding-wrapper-match-20260930.md).
+The Game indexed countdown finalizer `func_1510D694` now matches its complete
+140-byte span directly from C; see
+[Working Note 551](WORKING_NOTES/551-game-indexed-countdown-finalizer-match-20260930.md).
 
 ## Verified build state
 
@@ -798,8 +801,9 @@ end-to-end gameplay acceptance.
    byte-exact directly from C. The 36-word type-0x28 object sweep
    `func_150FDD10` is now byte-exact through five guarded allocation words.
    The 33-word camera-vector forwarding wrapper `func_1510B32C` is now
-   byte-exact through eight guarded ABI/register words. Continue with 35-word
-   Game `func_1510D694`, the next ordinary row.
+   byte-exact through eight guarded ABI/register words. The 35-word indexed
+   countdown finalizer `func_1510D694` is now byte-exact directly from C.
+   Continue with 35-word Game `func_1510D720`, the next ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

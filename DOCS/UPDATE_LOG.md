@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game indexed countdown finalizer byte-matched
+
+- `func_1510D694` decrements an indexed activity byte and, on its transition
+  to zero, expands the dirty index bounds and changes the indexed state to
+  three.
+- All 35 words / 140 bytes emit directly from C with no guards. Linked
+  SHA-256 is
+  `14b2c699b48bf4376cc3f16817191178ab21579419ba72f7755cf4ee0895d309`.
+- Totals are **3,054 / 5,462 (55.91%)** overall and
+  **2,475 / 4,788 (51.69%)** in Game. See
+  [Working Note 551](WORKING_NOTES/551-game-indexed-countdown-finalizer-match-20260930.md).
+
 ### Game camera-vector forwarding wrapper byte-matched
 
 - `func_1510B32C` forwards a slot and three float words with a zero fifth

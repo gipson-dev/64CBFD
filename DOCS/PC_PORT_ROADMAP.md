@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,053 / 5,462 (55.90%) | 0 | 2,409 |
+| Total | 5,462 / 6,041 (90.42%) | 3,054 / 5,462 (55.91%) | 0 | 2,408 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,788 / 5,321 (89.98%) | 2,474 / 4,788 (51.67%) | 0 | 2,314 |
+| Game | 4,788 / 5,321 (89.98%) | 2,475 / 4,788 (51.69%) | 0 | 2,313 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -269,6 +269,9 @@ through five guarded allocation words; see
 The Game camera-vector forwarding wrapper `func_1510B32C` now matches all
 132 bytes through eight guarded ABI/register words; see
 [Working Note 550](WORKING_NOTES/550-game-camera-vector-forwarding-wrapper-match-20260930.md).
+The Game indexed countdown finalizer `func_1510D694` now matches all 140 bytes
+directly from C with no guards; see
+[Working Note 551](WORKING_NOTES/551-game-indexed-countdown-finalizer-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

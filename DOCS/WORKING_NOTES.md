@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, randomized effect wrapper matched).**
-The current linked checkpoint is `3030 / 5463 (55.46%)` exact C functions,
-with no address-drift blockers and 2,433 genuinely different C functions.
+**Active (2026-09-30, indexed countdown finalizer matched).**
+The current linked checkpoint is `3054 / 5462 (55.91%)` exact C functions,
+with no address-drift blockers and 2,408 genuinely different C functions.
 Init is
-`397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2452 / 4789 (51.20%)` exact, with 2,337 genuinely different C rows. The tree
+`398 / 493 (80.73%)` exact, with 95 genuinely different C rows. Game is
+`2475 / 4788 (51.69%)` exact, with 2,313 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -557,13 +557,18 @@ components in retail's `{z, x, y}` order, and raises `D_800D9AF0`. Eight
 guards normalize the old-style-call float ABI and resulting FP registers. See
 [Working Note 550](WORKING_NOTES/550-game-camera-vector-forwarding-wrapper-match-20260930.md).
 
+Game `func_1510D694` now matches all 35 retail words directly from C. It
+decrements the indexed activity byte, records the index in the dirty-range
+bounds when the byte reaches zero, and changes the indexed state to three. See
+[Working Note 551](WORKING_NOTES/551-game-indexed-countdown-finalizer-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 35-word Game `func_1510D694`, the next ordinary row.
+cycle. Continue with 35-word Game `func_1510D720`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four
