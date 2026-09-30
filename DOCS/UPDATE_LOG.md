@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game owner-event dispatcher byte-matched
+
+- `func_150F15F8` handles event `0x43` by comparing owner word and identity
+  byte fields and destroying a matching object. Other events forward the
+  owner record and object fields to `func_15149514`.
+- Twenty-six of 35 words emit directly from semantic C. Nine stale-checked
+  guards normalize one closed owner/object identity-register cycle.
+- The linked and retail spans share SHA-256
+  `3680ee0fd4268a962063b7b48e7d229d1e99000861d24f013ef5f200a18c18e1`.
+  Totals are **3,078 / 5,461 (56.36%)** overall and
+  **2,499 / 4,788 (52.19%)** in Game. See
+  [Working Note 576](WORKING_NOTES/576-game-owner-event-dispatcher-match-20260930.md).
+
 ### Game command-0x38 owner-payload allocator byte-matched
 
 - `func_150D5440` builds a 12-byte owner payload, allocates command `0x38`

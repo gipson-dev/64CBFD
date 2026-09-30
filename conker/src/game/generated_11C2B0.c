@@ -180,8 +180,21 @@ s32 func_150F1170() {
     return 0;
 }
 
-s32 func_150F15F8() {
-    return 0;
+void func_150F15F8(u8 *arg0, u8 *volatile arg1, volatile u8 arg2) {
+    u8 *target = arg0 + 0x28;
+
+    if (arg2 == 0x43) {
+        u8 *word_owner = arg1;
+        u8 *byte_owner = arg1;
+
+        if ((*(s32 *)word_owner == *(s32 *)target) ||
+            (target[4] == byte_owner[4])) {
+            func_1516972C(arg0);
+        }
+    } else {
+        func_15149514((s32)arg1, arg2, (s32)target,
+                      (s32)(target + 4), (s32)arg0);
+    }
 }
 
 // Matched with guarded identity-comparison register normalization.

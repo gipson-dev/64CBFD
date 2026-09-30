@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, command-0x38 owner-payload allocator matched).**
-The current linked checkpoint is `3077 / 5461 (56.34%)` exact C functions,
-with no address-drift blockers and 2,384 genuinely different C functions.
+**Active (2026-09-30, owner-event dispatcher matched).**
+The current linked checkpoint is `3078 / 5461 (56.36%)` exact C functions,
+with no address-drift blockers and 2,383 genuinely different C functions.
 Init is
 `398 / 492 (80.89%)` exact, with 94 genuinely different C rows. Game is
-`2498 / 4788 (52.17%)` exact, with 2,290 genuinely different C rows. The tree
+`2499 / 4788 (52.19%)` exact, with 2,289 genuinely different C rows. The tree
 contains 580 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -708,13 +708,19 @@ Game `func_150D5440` now matches all 34 retail words. It constructs the same
 from semantic C with no guards. See
 [Working Note 575](WORKING_NOTES/575-game-command-38-owner-payload-allocator-match-20260930.md).
 
+Game `func_150F15F8` now matches all 35 retail words. Event `0x43` destroys
+the object when either owner identity field matches; other events forward the
+owner record and object fields to `func_15149514`. Twenty-six words emit
+directly; nine guards normalize one closed identity-register cycle. See
+[Working Note 576](WORKING_NOTES/576-game-owner-event-dispatcher-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 35-word Game `func_150F15F8`, the next ordinary C row.
+cycle. Continue with 34-word Game `func_150F2518`, the next ordinary C row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

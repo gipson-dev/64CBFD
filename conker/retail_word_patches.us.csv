@@ -2492,3 +2492,12 @@ generated_E4070,func_150B73F0,0x070,0x00006812,0x00006012,-,-,Read the Y product
 generated_E4070,func_150B73F0,0x074,0x000D7403,0x000C6C03,-,-,Shift the Y product through retail's register,,,false
 generated_E4070,func_150B73F0,0x078,0x00EE3021,0x01A37021,-,-,Add the first Y endpoint through retail's result register,,,false
 generated_E4070,func_150B73F0,0x07C,0x44864000,0x448E4000,-,-,Move the interpolated Y value through retail's FP input register,,,false
+generated_11C2B0,func_150F15F8,0x018,0x8FA90020,0x8FAA0020,-,-,Keep the object base in retail's identity register,,,false
+generated_11C2B0,func_150F15F8,0x024,0x25260028,0x25460028,-,-,Form the owner-record address from retail's object-base register,,,false
+generated_11C2B0,func_150F15F8,0x028,0x8FA20024,0x8FAF0024,-,-,Load the word-owner pointer through retail's identity register,,,false
+generated_11C2B0,func_150F15F8,0x030,0x8FA30024,0x8FA80024,-,-,Load the byte-owner pointer through retail's identity register,,,false
+generated_11C2B0,func_150F15F8,0x034,0x8C4F0000,0x8DE20000,-,-,Load the owner word through retail's pointer and value registers,,,false
+generated_11C2B0,func_150F15F8,0x040,0x11F80005,0x10580005,-,-,Compare the owner word through retail's value register,,,false
+generated_11C2B0,func_150F15F8,0x04C,0x90680004,0x91090004,-,-,Load the owner identity byte through retail's pointer and value registers,,,false
+generated_11C2B0,func_150F15F8,0x050,0x5728000B,0x5729000B,-,-,Compare the owner identity byte through retail's value register,,,false
+generated_11C2B0,func_150F15F8,0x078,0xAFA90010,0xAFAA0010,-,-,Forward the object base through retail's overflow-argument register,,,false
