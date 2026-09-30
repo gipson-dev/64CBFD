@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, handwritten osSetIntMask restored).**
-The current linked checkpoint is `3081 / 5458 (56.45%)` exact C functions,
-with no address-drift blockers and 2,377 genuinely different C functions.
+**Active (2026-09-30, Init identifier dispatcher matched).**
+The current linked checkpoint is `3082 / 5458 (56.47%)` exact C functions,
+with no address-drift blockers and 2,376 genuinely different C functions.
 Init is
-`398 / 489 (81.39%)` exact, with 91 genuinely different C rows. Game is
+`399 / 489 (81.60%)` exact, with 90 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 583 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -751,7 +751,11 @@ Init `osSetIntMask` is likewise restored from an empty C placeholder to its
 original handwritten CP0/MI mask routine, and its complete 40-word slot
 matches retail. See
 [Working Note 582](WORKING_NOTES/582-init-handwritten-setintmask-restoration-20260930.md).
-Resume the Init queue from its remaining 91 genuinely different C rows.
+Init `func_1000DE1C` now matches all 42 retail words. In-place masking of its
+identifier parameter recovers the complete branch and call schedule; two
+guards preserve retail's lower local-array placement. See
+[Working Note 583](WORKING_NOTES/583-init-identifier-dispatcher-match-20260930.md).
+Resume the Init queue from its remaining 90 genuinely different C rows.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

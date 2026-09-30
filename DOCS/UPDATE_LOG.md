@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init identifier dispatcher byte-matched
+
+- `func_1000DE1C` masks an incoming identifier, expands identifier zero
+  through `func_1000B548`, and dispatches each positive result through
+  `func_1000D96C`.
+- Forty of 42 words emit directly from semantic C. Two stale-checked guards
+  preserve retail's lower local-array placement.
+- The linked and retail spans share SHA-256
+  `10798837035d04b29314204b925729e8be19c77d5ef415a9eacf8f24bfad8bff`.
+  Totals are **3,082 / 5,458 (56.47%)** overall and
+  **399 / 489 (81.60%)** in Init. See
+  [Working Note 583](WORKING_NOTES/583-init-identifier-dispatcher-match-20260930.md).
+
 ### Init handwritten osSetIntMask restored
 
 - `osSetIntMask` is restored from an empty C placeholder to its original

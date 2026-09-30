@@ -423,13 +423,14 @@ s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2) {
 }
 void func_1000DEC4(void);
 
+// Matched with guarded local-array placement normalization.
 void func_1000DE1C(s32 arg0, s32 arg1) {
     s32 ids[3];
     s32 count;
     s32 i;
-    s32 id = arg0 & 0xFFF;
 
-    if (id == 0) {
+    arg0 &= 0xFFF;
+    if (arg0 == 0) {
         func_1000DEC4();
         count = func_1000B548(ids);
         for (i = 0; i < count; i++) {
@@ -438,7 +439,7 @@ void func_1000DE1C(s32 arg0, s32 arg1) {
             }
         }
     } else {
-        func_1000D96C(0, id, arg1);
+        func_1000D96C(0, arg0, arg1);
     }
 }
 

@@ -2520,3 +2520,5 @@ generated_124260,func_150F7310,0x048,0x90D90004,0x90C80004,-,-,Load the target i
 generated_124260,func_150F7310,0x04C,0x90680004,0x912A0004,-,-,Load the owner identity byte through retail's pointer and value registers,,,false
 generated_124260,func_150F7310,0x050,0x5728000B,0x550A000B,-,-,Compare the owner identity bytes through retail's value registers,,,false
 generated_124260,func_150F7310,0x078,0xAFA90010,0xAFAB0010,-,-,Forward the object base through retail's overflow-argument register,,,false
+init_B1B0,func_1000DE1C,0x038,0x27A4003C,0x27A40034,-,-,Pass retail's lower local-array address to the identifier collector,,,false
+init_B1B0,func_1000DE1C,0x040,0x27B0003C,0x27B00034,-,-,Retain retail's lower local-array cursor across the dispatch loop,,,false
