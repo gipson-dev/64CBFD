@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,022 / 5,463 (55.32%) | 0 | 2,441 |
+| Total | 3,023 / 5,463 (55.34%) | 0 | 2,440 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,444 / 4,789 (51.03%) | 0 | 2,345 |
+| Game | 2,445 / 4,789 (51.05%) | 0 | 2,344 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -325,6 +325,11 @@ words after recovering its five-word record indexing, two conditional record
 initializations, and fourth-word copy. Four guarded words preserve one
 equivalent record-pointer spill slot; see
 [Working Note 518](WORKING_NOTES/518-game-record-window-initializer-match-20260929.md).
+Game record-match release wrapper `func_1518F49C` is byte-exact across all 32
+words after recovering its five-argument forwarding call, selector gate, and
+two comparison keys. The complete routine emits directly from C with no
+guards; see
+[Working Note 519](WORKING_NOTES/519-game-record-match-release-wrapper-20260929.md).
 
 ## Verified build state
 
@@ -647,10 +652,10 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_15183974`, whose complete 31-word record-window
-   initializer now matches from typed C plus four guarded local-spill words.
+   advanced through `func_1518F49C`, whose complete 32-word record-match
+   release wrapper now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
-   allocation cycle. Continue with 32-word `func_1518F49C`, the next ordinary
+   allocation cycle. Continue with 33-word `func_151E4E64`, the next ordinary
    Game candidate.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly

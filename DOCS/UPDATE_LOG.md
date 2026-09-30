@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game record-match release wrapper byte-matched
+
+- `func_1518F49C` now forwards its record, selector, and embedded owner fields
+  to `func_15169850`, then conditionally releases the owner for selector
+  `0x49` when either the record word or discriminator byte matches.
+- Correcting the third argument to its 32-bit ABI and reloading its low byte
+  from the argument home slot reproduces retail's 40-byte frame. Explicit
+  comparison locals preserve the retail register lifetimes, so all 32 words
+  emit directly from C with no expected-word guards.
+- The linked and retail 128-byte spans share SHA-256
+  `60e99d1939859e1e9b6d3415de34212abe309135238fa1ba79be3c37d0077bbb`.
+- Totals are **3,023 / 5,463 (55.34%)** overall and
+  **2,445 / 4,789 (51.05%)** in Game, with no address-drift rows. See
+  [Working Note 519](WORKING_NOTES/519-game-record-match-release-wrapper-20260929.md).
+
 ### Game record-window initializer byte-matched
 
 - `func_15183974` now indexes `D_800DDE80` as five-word records, initializes

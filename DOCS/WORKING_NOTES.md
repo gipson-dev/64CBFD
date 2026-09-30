@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game record-window initializer matched).**
-The current linked checkpoint is `3022 / 5463 (55.32%)` exact C functions,
-with no address-drift blockers and 2,441 genuinely different C functions.
+**Active (2026-09-29, Game record-match release wrapper matched).**
+The current linked checkpoint is `3023 / 5463 (55.34%)` exact C functions,
+with no address-drift blockers and 2,440 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2444 / 4789 (51.03%)` exact, with 2,345 genuinely different C rows. The tree
+`2445 / 4789 (51.05%)` exact, with 2,344 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -377,10 +377,18 @@ preserve one equivalent record-pointer spill at stack offset `0x1C`; the
 remaining 27 words emit directly from C. See
 [Working Note 518](WORKING_NOTES/518-game-record-window-initializer-match-20260929.md).
 
+Game `func_1518F49C` now matches all 32 retail words directly from C. The
+recovered wrapper forwards its record, selector, and two owner-field addresses,
+then conditionally releases the owner when either record key matches. Direct
+low-byte reloads from the third argument's home slot and four explicit
+comparison locals reproduce retail's frame and register lifetimes without
+guards. See
+[Working Note 519](WORKING_NOTES/519-game-record-match-release-wrapper-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Continue
-with 32-word `func_1518F49C`, the next ordinary Game candidate. Keep
+with 33-word `func_151E4E64`, the next ordinary Game candidate. Keep
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181

@@ -204,8 +204,26 @@ void func_1518F45C(s32 arg0, u8 arg1) {
     func_15169260(&tmp, 1, arg0, arg1);
 }
 
-s32 func_1518F49C() {
-    return 0;
+void func_1518F49C(u8 *arg0, u8 *arg1, s32 arg2) {
+    s32 temp_v0;
+    s32 temp_v1;
+    u8 temp_a0;
+    u8 temp_a1;
+
+    func_15169850((s32)arg1, ((u8 *)&arg2)[3], (s32)(arg0 + 0x18),
+                  (s32)(arg0 + 0x1C), (s32)arg0);
+
+    if (((u8 *)&arg2)[3] != 0x49) {
+        return;
+    }
+    temp_v0 = *(s32 *)(arg0 + 0x18);
+    temp_v1 = *(s32 *)arg1;
+    temp_a0 = arg0[0x1C];
+    temp_a1 = arg1[4];
+    if ((temp_v0 != temp_v1) && (temp_a0 != temp_a1)) {
+        return;
+    }
+    func_1516972C(arg0);
 }
 
 s32 func_1518F51C() {

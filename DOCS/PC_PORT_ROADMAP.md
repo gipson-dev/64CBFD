@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,022 / 5,463 (55.32%) | 0 | 2,441 |
+| Total | 5,463 / 6,041 (90.43%) | 3,023 / 5,463 (55.34%) | 0 | 2,440 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,444 / 4,789 (51.03%) | 0 | 2,345 |
+| Game | 4,789 / 5,321 (90.00%) | 2,445 / 4,789 (51.05%) | 0 | 2,344 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -158,6 +158,10 @@ The Game record-window initializer `func_15183974` now matches its complete
 124-byte span after restoring its five-word record indexing, conditional
 initializers, and final fourth-word copy; see
 [Working Note 518](WORKING_NOTES/518-game-record-window-initializer-match-20260929.md).
+The Game record-match release wrapper `func_1518F49C` now matches its complete
+128-byte span directly from C after restoring its registration call, selector
+gate, two record comparisons, and conditional release; see
+[Working Note 519](WORKING_NOTES/519-game-record-match-release-wrapper-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
