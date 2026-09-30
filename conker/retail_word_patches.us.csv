@@ -2456,3 +2456,4 @@ game_40490,func_15013D38,0x02C,0x27A4003C,0x24090001,-,-,Materialize the first o
 game_40490,func_15013D38,0x030,0x24090001,0x240A00FF,-,-,Materialize the byte mask after the first overflow argument,,,false
 game_40490,func_15013D38,0x034,0x240A00FF,0x240B0001,-,-,Materialize the final overflow argument after the byte mask,,,false
 game_40490,func_15013D38,0x038,0x240B0001,0x24030001,-,-,Materialize the default stored value after all call constants,,,false
+generated_50D80,func_15024130,0x03C,0x022E1021,0x01D11021,-,-,Preserve retail's commutative table-base addition operand order,,,false

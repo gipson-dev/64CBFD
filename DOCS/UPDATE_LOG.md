@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game table-record dispatcher byte-matched
+
+- `func_15024130` now walks `D_800C3D50` in 12-byte record strides and calls
+  `func_1502A8A0` once per entry with the record's word, byte, halfword, second
+  word, and the shared dispatch argument.
+- Thirty-two of 33 words emit directly from semantic C. One stale-checked,
+  non-relocating guard preserves retail's commutative table-base addition
+  operand order. The linked and retail spans share SHA-256
+  `94b7a32ec40b961cc226a811d8b5e56961f489be88f3a66d0151e7a4aa3bbe50`.
+- Totals are **3,071 / 5,461 (56.24%)** overall and
+  **2,492 / 4,788 (52.05%)** in Game. See
+  [Working Note 569](WORKING_NOTES/569-game-table-record-dispatch-match-20260930.md).
+
 ### Game signed-position effect dispatcher byte-matched
 
 - `func_15013D38` now sets the source flag, converts three signed coordinates

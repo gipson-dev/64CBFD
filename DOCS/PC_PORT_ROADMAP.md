@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,461 / 6,041 (90.40%) | 3,070 / 5,461 (56.22%) | 0 | 2,391 |
+| Total | 5,461 / 6,041 (90.40%) | 3,071 / 5,461 (56.24%) | 0 | 2,390 |
 | Init | 492 / 538 (91.45%) | 398 / 492 (80.89%) | 0 | 94 |
-| Game | 4,788 / 5,321 (89.98%) | 2,491 / 4,788 (52.03%) | 0 | 2,297 |
+| Game | 4,788 / 5,321 (89.98%) | 2,492 / 4,788 (52.05%) | 0 | 2,296 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -341,6 +341,11 @@ The Game signed-position effect dispatcher `func_15013D38` now matches all
 default, and trailing call arguments `(1, 0xFF, 1)`. Five guarded words
 normalize one closed IDO setup schedule; see
 [Working Note 568](WORKING_NOTES/568-game-signed-position-effect-dispatch-match-20260930.md).
+The Game table-record dispatcher `func_15024130` now matches all 132 bytes
+after recovering its counted walk over 12-byte records and five-argument
+forwarding call. One guarded word preserves retail's commutative address-add
+operand order; see
+[Working Note 569](WORKING_NOTES/569-game-table-record-dispatch-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
