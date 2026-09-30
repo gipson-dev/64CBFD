@@ -513,12 +513,19 @@ It allocates and clears an 0x50-byte auxiliary record, stores it through
 sets halfword offset `0x4C` from the PRNG modulo 30. See
 [Working Note 542](WORKING_NOTES/542-game-auxiliary-state-allocator-match-20260929.md).
 
+Game `func_15077404` now matches all 44 retail words after restoring the
+packed-byte rate update, signed 16-bit result truncation, negative clamp, and
+fallback high-byte store. Thirty-three guarded source words and one inserted
+word normalize a closed compiler register-allocation and scheduling cycle. See
+[Working Note 543](WORKING_NOTES/543-game-packed-byte-rate-update-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 33-word Game `func_150413FC`, the next ordinary row.
+Keep `func_150413FC` parked on its five-versus-four saved-register allocation
+cycle. Continue with 34-word Game `func_1509CDDC`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

@@ -2265,3 +2265,36 @@ generated_1E37D0,func_151B70B4,0x06C,0x146A0004,0x15670004,-,-,Compare second ca
 generated_1E37D0,func_151B70B4,0x074,0xAC440000,0xAC430000,-,-,Install the first candidate from retail's v1 lifetime,,,false
 generated_1E37D0,func_151B70B4,0x078,0x90AB0008,0x90AC0008,-,-,Load the first-candidate selector through retail's t4 lifetime,,,false
 generated_1E37D0,func_151B70B4,0x07C,0xA04B0004,0xA04C0004,-,-,Store the first-candidate selector from retail's t4 lifetime,,,false
+game_A28B0,func_15077404,0x010,0x11C00021,0x11C00022,-,-,Extend the zero-mode branch across the restored return-delay nop,,,false
+game_A28B0,func_15077404,0x018,0x3C0F0000,0x3C050000,R_MIPS_HI16:D_800D1891,R_MIPS_HI16:D_800D154C,Rematerialize the object global before loading its pointer,,,false
+game_A28B0,func_15077404,0x01C,0x91EF0000,0x24A50000,R_MIPS_LO16:D_800D1891,R_MIPS_LO16:D_800D154C,Complete the retail object-global address,,,false
+game_A28B0,func_15077404,0x020,0x3C190000,0x8CA30000,R_MIPS_HI16:D_800D1892,-,Load the object pointer through retail's v1 lifetime,,,false
+game_A28B0,func_15077404,0x024,0x93390000,0x3C0B0000,R_MIPS_LO16:D_800D1892,R_MIPS_HI16:D_800D1891,Materialize the high rate byte after the object pointer,,,false
+game_A28B0,func_15077404,0x028,0x000FC200,0x916B0000,-,R_MIPS_LO16:D_800D1891,Load the high rate byte through retail's t3 lifetime,,,false
+game_A28B0,func_15077404,0x02C,0x3C0F0000,0x906F0246,R_MIPS_HI16:D_800BE9E4,-,Load the packed value high byte through retail's t7 lifetime,,,false
+game_A28B0,func_15077404,0x030,0x8DEF0000,0x3C0D0000,R_MIPS_LO16:D_800BE9E4,R_MIPS_HI16:D_800D1892,Materialize the low rate byte after the object load,,,false
+game_A28B0,func_15077404,0x034,0x03191021,0x91AD0000,-,R_MIPS_LO16:D_800D1892,Load the low rate byte through retail's t5 lifetime,,,false
+game_A28B0,func_15077404,0x038,0x00026C00,0x31F8001F,-,-,Mask the packed value through retail's t8 lifetime,,,false
+game_A28B0,func_15077404,0x03C,0x000D7403,0x0018CA00,-,-,Shift the packed value through retail's t9 lifetime,,,false
+game_A28B0,func_15077404,0x040,0x01CF0019,0x3C180000,-,R_MIPS_HI16:D_800BE9E4,Materialize the signed rate multiplier after the packed-value shift,,,false
+game_A28B0,func_15077404,0x044,0x3C050000,0x000B6200,R_MIPS_HI16:D_800D154C,-,Shift the high rate byte through retail's t4 lifetime,,,false
+game_A28B0,func_15077404,0x048,0x24A50000,0x8F180000,R_MIPS_LO16:D_800D154C,R_MIPS_LO16:D_800BE9E4,Load the signed rate multiplier through retail's t8 lifetime,,,false
+game_A28B0,func_15077404,0x04C,0x8CA40000,0x018D2021,-,-,Combine the rate bytes in retail's a0 lifetime,,,false
+game_A28B0,func_15077404,0x050,0x90880246,0x00047400,-,-,Begin signed-16 truncation through retail's t6 lifetime,,,false
+game_A28B0,func_15077404,0x054,0x908B0249,0x000E7C03,-,-,Complete signed-16 truncation through retail's t7 lifetime,,,false
+game_A28B0,func_15077404,0x058,0x3109001F,0x01F80019,-,-,Multiply the signed rate through retail's t7 and t8 lifetimes,,,false
+game_A28B0,func_15077404,0x05C,0x00095200,0x90680249,-,-,Load the packed value low byte through retail's t0 lifetime,,,false
+game_A28B0,func_15077404,0x060,0x0000C012,0x03285021,-,-,Combine packed bytes through retail's t2 lifetime,,,false
+game_A28B0,func_15077404,0x064,0x014B6021,0x0000C812,-,-,Read the product through retail's t9 lifetime,,,false
+game_A28B0,func_15077404,0x068,0x01981821,0x01591021,-,-,Accumulate the update in retail's v0 lifetime,,,false
+game_A28B0,func_15077404,0x06C,0x0003CC00,0x00024400,-,-,Begin result truncation through retail's t0 lifetime,,,false
+game_A28B0,func_15077404,0x070,0x00191C03,0x00081403,-,-,Complete result truncation in retail's v0 lifetime,,,false
+game_A28B0,func_15077404,0x074,0x04630003,0x04430003,-,-,Clamp retail's v0 result when negative,,,false
+game_A28B0,func_15077404,0x078,0x00034A03,0x00025203,-,-,Prepare the packed high byte through retail's t2 lifetime,,,false
+game_A28B0,func_15077404,0x07C,0x00001825,0x00001025,-,-,Clear retail's v0 result on the negative path,,,false
+game_A28B0,func_15077404,0x080,0x00034A03,0x00025203,-,-,Prepare the clamped packed high byte through retail's t2 lifetime,,,false
+game_A28B0,func_15077404,0x084,0x352A0080,0x354B0080,-,-,Set the packed high-byte flag through retail's t3 lifetime,,,false
+game_A28B0,func_15077404,0x088,0xA08A0246,0xA06B0246,-,-,Store the packed high byte through retail's v1 object pointer,,,false
+game_A28B0,func_15077404,0x08C,0x8CAB0000,0x8CAC0000,-,-,Reload the object through retail's t4 lifetime,,,false
+game_A28B0,func_15077404,0x090,0x03E00008,0xA1820249,-,-,Store the packed low byte before returning,0x03E00008,-,false
+game_A28B0,func_15077404,0x094,0xA1630249,0x00000000,-,-,Restore retail's empty active-path return delay slot,,,false

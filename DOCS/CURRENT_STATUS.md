@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-09-29
+Last verified: 2026-09-30
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -21,7 +21,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Fresh `progress.csv` and linked retail comparison on 2026-09-29:
+Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,046 / 5,463 (55.76%) | 0 | 2,417 |
+| Total | 3,047 / 5,463 (55.78%) | 0 | 2,416 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,467 / 4,789 (51.51%) | 0 | 2,322 |
+| Game | 2,468 / 4,789 (51.53%) | 0 | 2,321 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -431,10 +431,15 @@ Game auxiliary-state allocator `func_1503B7C0` now matches all 32 words
 directly from semantic C after exposing the state pointer at `struct126`
 offset `0x11C` and recovering its initialization; see
 [Working Note 542](WORKING_NOTES/542-game-auxiliary-state-allocator-match-20260929.md).
+Game packed-byte rate updater `func_15077404` now matches all 44 words after
+recovering its signed 16-bit result truncation, negative clamp, and active or
+fallback packed-byte stores. Thirty-three guarded source words and one
+inserted scheduling word normalize the closed compiler allocation cycle; see
+[Working Note 543](WORKING_NOTES/543-game-packed-byte-rate-update-match-20260930.md).
 
 ## Verified build state
 
-These commands passed from the current checkout on 2026-09-29:
+These commands passed from the current checkout on 2026-09-30:
 
 ```sh
 make -C conker replace NON_MATCHING=1 -j4
@@ -758,8 +763,11 @@ end-to-end gameplay acceptance.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
    allocation boundary. The 32-word auxiliary-state allocator
-   `func_1503B7C0` is now byte-exact directly from C with no guards. Continue
-   with 33-word Game `func_150413FC`, the next ordinary placeholder.
+   `func_1503B7C0` is now byte-exact directly from C with no guards.
+   `func_150413FC` is parked on a five-versus-four saved-register allocation
+   cycle. The 44-word packed-byte rate updater `func_15077404` is now
+   byte-exact with 33 guarded source words and one inserted scheduling word.
+   Continue with 34-word Game `func_1509CDDC`, the next ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

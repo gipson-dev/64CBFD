@@ -14,6 +14,25 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-09-30
+
+### Game packed-byte rate updater byte-matched
+
+- `func_15077404` restores the active packed-byte rate update, signed 16-bit
+  result truncation, negative clamp, two output stores, and fallback store.
+- The complete 176-byte linked span matches all 44 retail words. Thirty-three
+  guarded source words and one inserted scheduling word normalize the closed
+  compiler register-allocation cycle; the linked ELF span has SHA-256
+  `85f549020a856aac2adf5142775d97f1ce8016b59dfb5ed4f796b58c50a802e9`.
+- Totals are **3,047 / 5,463 (55.78%)** overall and
+  **2,468 / 4,789 (51.53%)** in Game. See
+  [Working Note 543](WORKING_NOTES/543-game-packed-byte-rate-update-match-20260930.md).
+
+`func_150413FC` remains non-matching because IDO retains five saved registers
+and a 48-byte frame while retail uses four saved registers and a 40-byte
+frame. It is parked on that closed allocation cycle; the ordinary queue now
+continues with `func_1509CDDC`.
+
 ## 2026-09-29
 
 ### Game auxiliary-state allocator byte-matched

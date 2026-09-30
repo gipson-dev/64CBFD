@@ -747,20 +747,23 @@ void func_15077364(void) {
     D_800D154C->unk248 = (u8) D_800D1892;
 }
 
+// Matched with guarded register-allocation and scheduling normalization.
 void func_15077404(void) {
-    s32 temp_v0;
+    s32 temp_a0;
+    s16 temp_v0;
 
     if (D_800D1893 != 0) {
+        temp_a0 = (D_800D1891 << 8) + D_800D1892;
         temp_v0 = (((D_800D154C->unk246 & 0x1F) << 8) + D_800D154C->unk249) +
-            ((s16)((D_800D1891 << 8) | D_800D1892) * D_800BE9E4);
+            ((s16)temp_a0 * D_800BE9E4);
         if (temp_v0 < 0) {
             temp_v0 = 0;
         }
-        D_800D154C->unk246 = (temp_v0 >> 8) | 0x80;
-        D_800D154C->unk249 = temp_v0;
-    } else {
-        D_800D154C->unk246 = D_800D1890;
+        D_800D154C->unk246 = (u8)((temp_v0 >> 8) | 0x80);
+        D_800D154C->unk249 = (u8)temp_v0;
+        return;
     }
+    D_800D154C->unk246 = (u8)D_800D1890;
 }
 
 void func_150774B4(void) {

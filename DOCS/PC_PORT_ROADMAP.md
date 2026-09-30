@@ -1,6 +1,6 @@
 # PC Port Roadmap located in another project folder
 
-## Cross-project progress - 2026-09-29
+## Cross-project progress - 2026-09-30
 
 The active Windows port remains in sibling `64CBFDOGL`; this repository owns
 the guest decompilation and retail-byte evidence used by that port. The current
@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,046 / 5,463 (55.76%) | 0 | 2,417 |
+| Total | 5,463 / 6,041 (90.43%) | 3,047 / 5,463 (55.78%) | 0 | 2,416 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,789 / 5,321 (90.00%) | 2,467 / 4,789 (51.51%) | 0 | 2,322 |
+| Game | 4,789 / 5,321 (90.00%) | 2,468 / 4,789 (51.53%) | 0 | 2,321 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -244,6 +244,10 @@ The Game indexed 64-bit flag query `func_1501D2C4` now matches its full
 The Game auxiliary-state allocator `func_1503B7C0` now matches its full
 128-byte span directly from C; see
 [Working Note 542](WORKING_NOTES/542-game-auxiliary-state-allocator-match-20260929.md).
+The Game packed-byte rate updater `func_15077404` now matches its full
+176-byte span after recovering signed 16-bit truncation and its packed-byte
+clamp/store behavior; see
+[Working Note 543](WORKING_NOTES/543-game-packed-byte-rate-update-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
