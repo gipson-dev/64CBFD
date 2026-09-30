@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init fixed-point parameter wrapper byte-matched
+
+- `func_10010E78` scales an unsigned magnitude through `func_1000F6B8`, then
+  dispatches the nonzero result with the returned packed parameter split into
+  its low seven bits and high-bit flags.
+- Forty-five of 46 words emit directly from semantic C. One stale-checked
+  guard preserves retail's commutative fixed-point multiply operand order.
+- The linked and retail spans share SHA-256
+  `593c63fd1ac1b69d9efa566fd99515abc6d72ae3a4fe946b892928752c35e6bb`.
+  Totals are **3,086 / 5,458 (56.54%)** overall and
+  **403 / 489 (82.41%)** in Init. See
+  [Working Note 587](WORKING_NOTES/587-init-fixed-point-parameter-wrapper-match-20260930.md).
+
 ### Init channel level/mask updater byte-matched
 
 - `func_1000E588` maps a clamped percentage to an 8-bit live-channel level or

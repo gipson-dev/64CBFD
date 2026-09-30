@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init channel level/mask updater matched).**
-The current linked checkpoint is `3085 / 5458 (56.52%)` exact C functions,
-with no address-drift blockers and 2,373 genuinely different C functions.
+**Active (2026-09-30, Init fixed-point parameter wrapper matched).**
+The current linked checkpoint is `3086 / 5458 (56.54%)` exact C functions,
+with no address-drift blockers and 2,372 genuinely different C functions.
 Init is
-`402 / 489 (82.21%)` exact, with 87 genuinely different C rows. Game is
+`403 / 489 (82.41%)` exact, with 86 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 583 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -769,7 +769,11 @@ Init `func_1000E588` now matches all 51 retail words directly from C. It
 updates live channel levels from a clamped percentage or toggles the requested
 mask in an inactive channel record. See
 [Working Note 586](WORKING_NOTES/586-init-channel-level-mask-updater-match-20260930.md).
-Resume the Init queue from its remaining 87 genuinely different C rows.
+Init `func_10010E78` now matches all 46 retail words. Its recovered unsigned
+first parameter and 32-bit packed/scaled locals emit 45 words directly from
+C; one guard preserves retail's commutative fixed-point multiply order. See
+[Working Note 587](WORKING_NOTES/587-init-fixed-point-parameter-wrapper-match-20260930.md).
+Resume the Init queue from its remaining 86 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile.

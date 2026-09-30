@@ -148,6 +148,7 @@ init_EB00,func_100100E0,0x58,0xAC68001C,0xAC48001C,-,-,Store the replacement thi
 init_EB00,func_100100E0,0x5C,0x24630030,0x24420030,-,-,Advance retail's v0 cursor after a matching record,,,false
 init_EB00,func_100100E0,0x60,0x0069082B,0x0049082B,-,-,Compare retail's v0 cursor with the end pointer,,,false
 init_EB00,func_100100E0,0x68,0x8C780014,0x8C580014,-,-,Prefetch the next first key through retail's v0 cursor,,,false
+init_EB00,func_10010E78,0x050,0x00590019,0x03220019,-,-,Preserve retail's commutative fixed-point multiply operand order,,,false
 debugger,func_16001390,0x13C,0x00095040,0x00193C03,,,Schedule row sign extension before stride scaling
 debugger,func_16001390,0x140,0x00193C03,0x00095040,,,Schedule stride scaling after row sign extension
 debugger,func_16000F8C,0x38,0x8FA20054,0x8FA30054,,,Keep raw float bits in v1

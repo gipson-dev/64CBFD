@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,085 / 5,458 (56.52%) | 0 | 2,373 |
-| Init | 402 / 489 (82.21%) | 0 | 87 |
+| Total | 3,086 / 5,458 (56.54%) | 0 | 2,372 |
+| Init | 403 / 489 (82.41%) | 0 | 86 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -882,7 +882,9 @@ end-to-end gameplay acceptance.
    The following 59-word channel-transition updater `func_1000DF68` is
    byte-exact through 12 guarded clamp/store/epilogue scheduling words.
    The 51-word channel level/mask updater `func_1000E588` is byte-exact
-   directly from recovered semantic C with no guards.
+   directly from recovered semantic C with no guards. The 46-word fixed-point
+   parameter wrapper `func_10010E78` is byte-exact through one guarded
+   commutative multiply word; its other 45 words emit directly from C.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
