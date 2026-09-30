@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,042 / 5,463 (55.68%) | 0 | 2,421 |
-| Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
+| Total | 5,463 / 6,041 (90.43%) | 3,043 / 5,463 (55.70%) | 0 | 2,420 |
+| Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
 | Game | 4,789 / 5,321 (90.00%) | 2,464 / 4,789 (51.45%) | 0 | 2,325 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -232,6 +232,9 @@ The linked-endpoint event handler `func_151B70B4` now matches its full
 The reflected byte-position update `func_151E55A8` now matches its full
 132-byte span directly from C; see
 [Working Note 538](WORKING_NOTES/538-game-reflected-byte-position-update-match-20260929.md).
+The Init primary/child record lookup `func_1000B1FC` now matches its full
+152-byte span directly from C; see
+[Working Note 539](WORKING_NOTES/539-init-primary-child-record-lookup-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

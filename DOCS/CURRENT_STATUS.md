@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,042 / 5,463 (55.68%) | 0 | 2,421 |
-| Init | 397 / 493 (80.53%) | 0 | 96 |
+| Total | 3,043 / 5,463 (55.70%) | 0 | 2,420 |
+| Init | 398 / 493 (80.73%) | 0 | 95 |
 | Game | 2,464 / 4,789 (51.45%) | 0 | 2,325 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -415,6 +415,10 @@ Game reflected byte-position update `func_151E55A8` now matches all 33 words
 directly from semantic C after recovering its signed step, boundary reflection,
 and direction toggle; see
 [Working Note 538](WORKING_NOTES/538-game-reflected-byte-position-update-match-20260929.md).
+Init primary/child record lookup `func_1000B1FC` now matches all 38 words
+directly from semantic C after restoring its two original three-entry indexed
+loops; see
+[Working Note 539](WORKING_NOTES/539-init-primary-child-record-lookup-match-20260929.md).
 
 ## Verified build state
 
@@ -741,9 +745,9 @@ end-to-end gameplay acceptance.
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. The 33-word reflected byte-position update
-   `func_151E55A8` is now byte-exact directly from C with no guards. Continue
-   with 38-word Init `func_1000B1FC`, the next ordinary placeholder.
+   allocation boundary. The 38-word primary/child record lookup
+   `func_1000B1FC` is now byte-exact directly from C with no guards. Continue
+   with 33-word Game `func_1501D1D4`, the next ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

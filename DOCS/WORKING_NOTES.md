@@ -489,12 +489,18 @@ outside the `0..255` interval, and toggles the direction byte at either
 boundary. No expected-word guards are needed. See
 [Working Note 538](WORKING_NOTES/538-game-reflected-byte-position-update-match-20260929.md).
 
+Init `func_1000B1FC` now matches all 38 retail words directly from semantic C.
+It searches the three primary records before searching each primary record's
+optional child. Two explicit integer-indexed loops recover retail's independent
+table-address setup and branch-likely pointer walks with no guards. See
+[Working Note 539](WORKING_NOTES/539-init-primary-child-record-lookup-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
-Continue with 38-word Init `func_1000B1FC`, the next ordinary row.
+Continue with 33-word Game `func_1501D1D4`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Init primary/child record lookup byte-matched
+
+- `func_1000B1FC` searches all three primary records and then their optional
+  child records for a matching identifier.
+- Two explicit integer-indexed loops emit the complete 152-byte function
+  directly from C without guard rows. Linked and retail spans share SHA-256
+  `354ea04ae4d20834968caad5738373e6337461f7cdd7fb391adcd4d0f78d8d48`.
+- Totals are **3,043 / 5,463 (55.70%)** overall and
+  **398 / 493 (80.73%)** in Init. See
+  [Working Note 539](WORKING_NOTES/539-init-primary-child-record-lookup-match-20260929.md).
+
 ### Game reflected byte-position update byte-matched
 
 - `func_151E55A8` restores the signed step, byte-position update, reflection at

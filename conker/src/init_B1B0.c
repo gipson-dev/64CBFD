@@ -36,22 +36,18 @@ struct151 *func_1000B1B0(s32 arg0) {
 }
 
 struct151 *func_1000B1FC(s32 arg0) {
-    struct151 **ptr;
-    struct151 **end = (struct151 **)&D_800417BC;
-    struct151 *current;
+    s32 i;
     struct151 *child;
 
-    for (ptr = D_800417B0; ptr < end; ptr++) {
-        current = *ptr;
-        if ((current != NULL) && (current->unk4 == arg0)) {
-            return current;
+    for (i = 0; i < 3; i++) {
+        if ((D_800417B0[i] != NULL) && (D_800417B0[i]->unk4 == arg0)) {
+            return D_800417B0[i];
         }
     }
 
-    for (ptr = D_800417B0; ptr != end; ptr++) {
-        current = *ptr;
-        if (current != NULL) {
-            child = (struct151 *)current->unk60;
+    for (i = 0; i < 3; i++) {
+        if (D_800417B0[i] != NULL) {
+            child = (struct151 *)D_800417B0[i]->unk60;
             if ((child != NULL) && (child->unk4 == arg0)) {
                 return child;
             }
