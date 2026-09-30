@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,016 / 5,463 (55.21%) | 0 | 2,447 |
+| Total | 3,017 / 5,463 (55.23%) | 0 | 2,446 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,438 / 4,789 (50.91%) | 0 | 2,351 |
+| Game | 2,439 / 4,789 (50.93%) | 0 | 2,350 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -296,6 +296,11 @@ Game two-angle trigonometric updater `func_150A0D14` is byte-exact across all
 30 words after recovering its two scaled input angles and paired cosine/sine
 outputs. The complete routine emits directly from typed C with no guards; see
 [Working Note 512](WORKING_NOTES/512-game-two-angle-trigonometric-updater-match-20260929.md).
+Game resource slot-array teardown `func_150B6D78` is byte-exact across all 33
+words after recovering its standalone release, ten-slot allocation scan,
+owner clears, and final state transition. Two relocation-aware guards
+normalize only independent address-finalization words; see
+[Working Note 513](WORKING_NOTES/513-game-resource-slot-array-teardown-match-20260929.md).
 
 ## Verified build state
 
@@ -618,9 +623,9 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_150A0D14`, whose complete 30-word two-angle
-   trigonometric updater now matches directly from typed C. Continue with
-   33-word `func_150B6D78`, the next ordinary Game candidate after the two
+   advanced through `func_150B6D78`, whose complete 33-word resource
+   slot-array teardown is now byte-exact. Continue with 31-word
+   `func_150BDE90`, the next ordinary Game candidate after the two
    parked 29-difference rows.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly

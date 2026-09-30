@@ -1,7 +1,10 @@
 #include <ultra64.h>
 extern u8 D_800D98A4[];
 extern u8 D_800D9898[];
+extern u8 D_800D98C0[];
+extern void *D_800D9894;
 extern s32 D_800BE9E4;
+extern void func_1516972C(void *arg0);
 
 /* Non-matching placeholders for the text-only asm slice asm/E4070.s. */
 
@@ -30,8 +33,26 @@ void func_150B6D34(void) {
     D_800D9890 = 3;
 }
 
-s32 func_150B6D78() {
-    return 0;
+void func_150B6D78(void) {
+    void **current;
+    void **end;
+
+    if (D_800D9894 != NULL) {
+        func_1516972C(D_800D9894);
+        D_800D9894 = NULL;
+    }
+
+    current = (void **)D_800D9898;
+    end = (void **)D_800D98C0;
+    do {
+        if (*current != NULL) {
+            func_1516972C(*current);
+            *current = NULL;
+        }
+        current++;
+    } while (current != end);
+
+    D_800D9890 = 3;
 }
 
 void func_150B6DFC(u8 *arg0) {

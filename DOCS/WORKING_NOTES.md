@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game two-angle trigonometric updater matched).**
-The current linked checkpoint is `3016 / 5463 (55.21%)` exact C functions,
-with no address-drift blockers and 2,447 genuinely different C functions.
+**Active (2026-09-29, Game resource slot-array teardown matched).**
+The current linked checkpoint is `3017 / 5463 (55.23%)` exact C functions,
+with no address-drift blockers and 2,446 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2438 / 4789 (50.91%)` exact, with 2,351 genuinely different C rows. The tree
+`2439 / 4789 (50.93%)` exact, with 2,350 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -340,10 +340,16 @@ each scaled angle across paired cosine/sine calls, and stores four outputs at
 offsets `0x24..0x30`. No expected-word guards are needed. See
 [Working Note 512](WORKING_NOTES/512-game-two-angle-trigonometric-updater-match-20260929.md).
 
+Game `func_150B6D78` now matches all 33 retail words. The recovered routine
+releases one standalone allocation, scans and clears ten allocation slots,
+then transitions the owning state byte to 3. Two relocation-aware stale
+checks normalize only independent cursor/end address-finalization words. See
+[Working Note 513](WORKING_NOTES/513-game-resource-slot-array-teardown-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Continue
-with 33-word `func_150B6D78`, the next ordinary Game candidate.
+with 31-word `func_150BDE90`, the next ordinary Game candidate.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

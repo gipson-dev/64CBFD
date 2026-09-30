@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,463 / 6,041 (90.43%) | 3,016 / 5,463 (55.21%) | 0 | 2,447 |
+| Total | 5,463 / 6,041 (90.43%) | 3,017 / 5,463 (55.23%) | 0 | 2,446 |
 | Init | 493 / 538 (91.64%) | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 4,789 / 5,321 (90.00%) | 2,438 / 4,789 (50.91%) | 0 | 2,351 |
+| Game | 4,789 / 5,321 (90.00%) | 2,439 / 4,789 (50.93%) | 0 | 2,350 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -134,6 +134,10 @@ The Game two-angle trigonometric updater `func_150A0D14` now matches its
 complete 120-byte span directly from typed C after restoring two scaled angle
 inputs and their paired cosine/sine outputs; see
 [Working Note 512](WORKING_NOTES/512-game-two-angle-trigonometric-updater-match-20260929.md).
+The Game resource slot-array teardown `func_150B6D78` now matches its complete
+132-byte span after restoring one standalone release, a ten-slot allocation
+scan, owner clears, and the final state transition; see
+[Working Note 513](WORKING_NOTES/513-game-resource-slot-array-teardown-match-20260929.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

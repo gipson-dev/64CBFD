@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game resource slot-array teardown byte-matched
+
+- `func_150B6D78` now releases the standalone `D_800D9894` allocation,
+  scans and clears ten allocation slots, and sets the owning state to 3.
+- Thirty-one words emit directly from semantic C. Two relocation-aware stale
+  checks preserve retail's independent cursor/end address-finalization order.
+- The linked and retail 132-byte spans share SHA-256
+  `c9f16b9bdec0d5a3f4a6f2778cd94a59aad0204e99ea73f300251dbcaa83423d`.
+- Totals are **3,017 / 5,463 (55.23%)** overall and
+  **2,439 / 4,789 (50.93%)** in Game, with no address-drift rows. See
+  [Working Note 513](WORKING_NOTES/513-game-resource-slot-array-teardown-match-20260929.md).
+
 ### Game two-angle trigonometric updater byte-matched
 
 - `func_150A0D14` now scales float inputs at offsets `0xC` and `0x10`, calls
