@@ -2508,3 +2508,15 @@ generated_11F780,func_150F2518,0x040,0x93180000,0x91080000,R_MIPS_LO16:D_800BE9C
 generated_11F780,func_150F2518,0x048,0x8FA80060,0x8FB90060,-,-,Reload the object base through retail's register,,,false
 generated_11F780,func_150F2518,0x04C,0x0018C980,0x00084980,-,-,Shift the matrix index through retail's register,,,false
 generated_11F780,func_150F2518,0x058,0x03282821,0x03292821,-,-,Form the destination matrix address through retail's registers,,,false
+generated_124260,func_150F7310,0x018,0x8FA90020,0x8FAB0020,-,-,Keep the object base in retail's identity register,,,false
+generated_124260,func_150F7310,0x024,0x25260028,0x25660028,-,-,Form the owner-record address from retail's object-base register,,,false
+generated_124260,func_150F7310,0x028,0x8FA20024,0x8FA60020,-,-,Reload the object base before the incoming owner pointers,,,false
+generated_124260,func_150F7310,0x02C,0x8FA60020,0x8FB80024,-,-,Load the word-owner pointer through retail's identity register,,,false
+generated_124260,func_150F7310,0x030,0x8FA30024,0x8FA90024,-,-,Load the byte-owner pointer through retail's identity register,,,false
+generated_124260,func_150F7310,0x034,0x8C580000,0x8CCF0028,-,-,Load the target word before the incoming owner word,,,false
+generated_124260,func_150F7310,0x038,0x8CCF0028,0x8F190000,-,-,Load the owner word through retail's pointer and value registers,,,false
+generated_124260,func_150F7310,0x040,0x11F80005,0x11F90005,-,-,Compare the owner words through retail's value registers,,,false
+generated_124260,func_150F7310,0x048,0x90D90004,0x90C80004,-,-,Load the target identity byte through retail's value register,,,false
+generated_124260,func_150F7310,0x04C,0x90680004,0x912A0004,-,-,Load the owner identity byte through retail's pointer and value registers,,,false
+generated_124260,func_150F7310,0x050,0x5728000B,0x550A000B,-,-,Compare the owner identity bytes through retail's value registers,,,false
+generated_124260,func_150F7310,0x078,0xAFA90010,0xAFAB0010,-,-,Forward the object base through retail's overflow-argument register,,,false

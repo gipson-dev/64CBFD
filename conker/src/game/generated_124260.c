@@ -18,8 +18,21 @@ s32 func_150F706C() {
     return 0;
 }
 
-s32 func_150F7310() {
-    return 0;
+void func_150F7310(u8 *arg0, u8 *volatile arg1, volatile u8 arg2) {
+    u8 *target = arg0 + 0x28;
+
+    if (arg2 == 0x3E) {
+        u8 *word_owner = arg1;
+        u8 *byte_owner = arg1;
+
+        if ((*(s32 *)target == *(s32 *)word_owner) ||
+            (target[4] == byte_owner[4])) {
+            func_1516972C(arg0);
+        }
+    } else {
+        func_15149514((s32)arg1, arg2, (s32)target,
+                      (s32)(target + 4), (s32)arg0);
+    }
 }
 
 void func_150F739C(u8 *arg0) {

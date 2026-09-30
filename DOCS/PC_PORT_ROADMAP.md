@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,461 / 6,041 (90.40%) | 3,080 / 5,461 (56.40%) | 0 | 2,381 |
+| Total | 5,461 / 6,041 (90.40%) | 3,081 / 5,461 (56.42%) | 0 | 2,380 |
 | Init | 492 / 538 (91.45%) | 398 / 492 (80.89%) | 0 | 94 |
-| Game | 4,788 / 5,321 (89.98%) | 2,501 / 4,788 (52.23%) | 0 | 2,287 |
+| Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -380,6 +380,10 @@ preserving both `D_800BE9C0` relocations; see
 The Game command-`0x5C` owner-payload allocator `func_150F2C8C` now matches
 all 136 bytes directly from semantic C with no guards; see
 [Working Note 578](WORKING_NOTES/578-game-command-5c-owner-payload-allocator-match-20260930.md).
+The Game event-`0x3E` owner dispatcher `func_150F7310` now matches all 140
+bytes. Twelve guarded words normalize its closed identity-register cycle and
+one load schedule; see
+[Working Note 579](WORKING_NOTES/579-game-event-3e-owner-dispatcher-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
