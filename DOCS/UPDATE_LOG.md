@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game indexed saved-state restorer byte-matched
+
+- `func_151239CC` checks an indexed saved-state slot, restores its identifier,
+  four words, and two halfwords, refreshes derived state, clears the slot's
+  active flag, and returns whether restoration occurred.
+- All 34 words / 136 bytes match. Thirty-two words emit directly from C; two
+  stale-checked guards preserve retail's equivalent top-frame pointer spill
+  and reload. Linked SHA-256 is
+  `ec56b71f610b4610715e4fcf2392dfb3a9a19190390075a9053f0466bb6ad33a`.
+- Totals are **3,058 / 5,462 (55.99%)** overall and
+  **2,479 / 4,788 (51.78%)** in Game. See
+  [Working Note 555](WORKING_NOTES/555-game-indexed-saved-state-restorer-match-20260930.md).
+
 ### Game mode-gated object cleanup wrapper byte-matched
 
 - `func_1511A738` conditionally resolves its object-table index in mode one,

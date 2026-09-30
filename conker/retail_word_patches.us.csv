@@ -2342,3 +2342,5 @@ generated_142560,func_1511A410,0x064,0x8FAD0010,0x8FAC0010,-,-,Load the second m
 generated_142560,func_1511A410,0x068,0x1420FFF3,0x1420FFF2,-,-,Retarget the retry branch to retail's rescheduled loop head,,,false
 generated_142560,func_1511A410,0x070,0x8FAD0010,0x8FAC0010,-,-,Load the second match through retail's t4 lifetime on bounded exit,,,false
 generated_142560,func_1511A410,0x074,0xACCD0000,0xACCC0000,-,-,Store the second match through retail's t4 lifetime,,,false
+game_14FF90,func_151239CC,0x064,0xAFA30018,0xAFA3001C,-,-,Preserve retail's saved-state slot pointer in the top local frame slot,,,false
+game_14FF90,func_151239CC,0x068,0x8FA30018,0x8FA3001C,-,-,Reload the saved-state slot pointer from retail's top local frame slot,,,false

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,057 / 5,462 (55.97%) | 0 | 2,405 |
+| Total | 3,058 / 5,462 (55.99%) | 0 | 2,404 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,478 / 4,788 (51.75%) | 0 | 2,310 |
+| Game | 2,479 / 4,788 (51.78%) | 0 | 2,309 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -469,6 +469,9 @@ The Game two-tag record index scan `func_1511A410` now matches its complete
 The Game mode-gated object cleanup wrapper `func_1511A738` now matches its
 complete 136-byte span directly from C; see
 [Working Note 554](WORKING_NOTES/554-game-mode-gated-object-cleanup-wrapper-match-20260930.md).
+The Game indexed saved-state restorer `func_151239CC` now matches its complete
+136-byte span through two guarded stack-slot words; see
+[Working Note 555](WORKING_NOTES/555-game-indexed-saved-state-restorer-match-20260930.md).
 
 ## Verified build state
 
@@ -815,8 +818,10 @@ end-to-end gameplay acceptance.
    `func_1510D720` are now byte-exact directly from C. The 33-word two-tag
    record index scan `func_1511A410` is now byte-exact through 13 guarded
    scheduling/register words. The 34-word mode-gated object cleanup wrapper
-   `func_1511A738` is now byte-exact directly from C. Continue with 34-word
-   Game `func_151239CC`, the next ordinary row.
+   `func_1511A738` is now byte-exact directly from C. The 34-word indexed
+   saved-state restorer `func_151239CC` is now byte-exact through two guarded
+   stack-slot words. Continue with 33-word Game `func_1514E89C`, the next
+   ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

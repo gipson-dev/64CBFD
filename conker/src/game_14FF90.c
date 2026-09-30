@@ -369,8 +369,22 @@ s32 func_15123934(struct108 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
 //     }
 //     return 0;
 // }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151239CC.s. */
 s32 func_151239CC(struct108 *arg0, s32 arg1) {
+    s16 *slot16;
+
+    slot16 = (s16 *) arg0 + arg1;
+    if (slot16[0x106] != 0) {
+        arg0->unk0 = ((u16 *) slot16)[1];
+        arg0->unk2C = ((s32 *) arg0 + arg1)[0xC];
+        arg0->unkDC = ((s32 *) arg0 + arg1)[0x38];
+        arg0->unk84 = ((s32 *) arg0 + arg1)[0x22];
+        arg0->unk134 = ((s32 *) arg0 + arg1)[0x4E];
+        arg0->unk1B4 = slot16[0xDB];
+        arg0->unk1E0 = slot16[0xF1];
+        func_15124B18(arg0);
+        slot16[0x106] = 0;
+        return 1;
+    }
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15123A54.s. */
