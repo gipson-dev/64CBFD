@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,065 / 5,462 (56.11%) | 0 | 2,397 |
+| Total | 5,462 / 6,041 (90.42%) | 3,066 / 5,462 (56.13%) | 0 | 2,396 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,788 / 5,321 (89.98%) | 2,486 / 4,788 (51.92%) | 0 | 2,302 |
+| Game | 4,788 / 5,321 (89.98%) | 2,487 / 4,788 (51.94%) | 0 | 2,301 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -312,6 +312,11 @@ The Game command-`0x1D` payload allocator `func_1518AADC` now matches all
 132 bytes. Its allocation and complete payload initialization are semantic C;
 ten guarded words normalize two independent IDO schedules; see
 [Working Note 562](WORKING_NOTES/562-game-command-1d-payload-allocator-match-20260930.md).
+The Game object-selector payload wrapper `func_15192920` now matches all
+132 bytes. Its null gate, selector capture, command-`0x23` allocation, and
+12-byte payload copy are semantic C; 17 guarded words normalize only IDO's
+argument and local-store schedule; see
+[Working Note 563](WORKING_NOTES/563-game-object-selector-payload-wrapper-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

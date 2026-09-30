@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game object-selector payload wrapper byte-matched
+
+- `func_15192920` now ignores null owners, captures the owner's selector byte,
+  requests a command-`0x23` record, and copies its 12-byte owner/selector/zero
+  payload into a successful allocation.
+- Sixteen of 33 words emit directly from semantic C. Seventeen stale-checked
+  guards normalize the early call-argument/local-store schedule and exchange
+  the selector and zero-float stores around the allocation call. Linked
+  SHA-256 is
+  `22a75e9e7d0e3f7d317b63e54214725208a2fc9a4bdb938f04f0352aa72cda4a`.
+- Totals are **3,066 / 5,462 (56.13%)** overall and
+  **2,487 / 4,788 (51.94%)** in Game. See
+  [Working Note 563](WORKING_NOTES/563-game-object-selector-payload-wrapper-match-20260930.md).
+
 ### Game command-0x1D payload allocator byte-matched
 
 - `func_1518AADC` now allocates a 40-byte command-`0x1D` payload, clears four
