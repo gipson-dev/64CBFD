@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,021 / 5,463 (55.30%) | 0 | 2,442 |
+| Total | 3,022 / 5,463 (55.32%) | 0 | 2,441 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,443 / 4,789 (51.01%) | 0 | 2,346 |
+| Game | 2,444 / 4,789 (51.03%) | 0 | 2,345 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -320,6 +320,11 @@ Game fixed-payload object spawn `func_1514D978` is byte-exact across all 31
 words after recovering its 32-byte payload, allocation, copy, and tag-`0x13`
 registration. The complete routine emits directly from C with no guards; see
 [Working Note 517](WORKING_NOTES/517-game-fixed-payload-object-spawn-match-20260929.md).
+Game record-window initializer `func_15183974` is byte-exact across all 31
+words after recovering its five-word record indexing, two conditional record
+initializations, and fourth-word copy. Four guarded words preserve one
+equivalent record-pointer spill slot; see
+[Working Note 518](WORKING_NOTES/518-game-record-window-initializer-match-20260929.md).
 
 ## Verified build state
 
@@ -642,10 +647,11 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_1514D978`, whose complete 31-word fixed-payload
-   object spawn now matches directly from C. `func_15106E78` is parked on a
-   closed 30-versus-32-word caller-saved allocation cycle. Continue with
-   31-word `func_15183974`, the next ordinary Game candidate.
+   advanced through `func_15183974`, whose complete 31-word record-window
+   initializer now matches from typed C plus four guarded local-spill words.
+   `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
+   allocation cycle. Continue with 32-word `func_1518F49C`, the next ordinary
+   Game candidate.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

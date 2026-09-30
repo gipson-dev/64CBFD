@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-29, Game fixed-payload object spawn matched).**
-The current linked checkpoint is `3021 / 5463 (55.30%)` exact C functions,
-with no address-drift blockers and 2,442 genuinely different C functions.
+**Active (2026-09-29, Game record-window initializer matched).**
+The current linked checkpoint is `3022 / 5463 (55.32%)` exact C functions,
+with no address-drift blockers and 2,441 genuinely different C functions.
 Init is
 `397 / 493 (80.53%)` exact, with 96 genuinely different C rows. Game is
-`2443 / 4789 (51.01%)` exact, with 2,346 genuinely different C rows. The tree
+`2444 / 4789 (51.03%)` exact, with 2,345 genuinely different C rows. The tree
 contains 578 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -370,10 +370,17 @@ the payload, and registers the result with tag `0x13`. No expected-word
 guards are needed. See
 [Working Note 517](WORKING_NOTES/517-game-fixed-payload-object-spawn-match-20260929.md).
 
+Game `func_15183974` now matches all 31 retail words. A typed five-word record
+view reproduces retail's address and temporary-register allocation, two
+conditional initializer calls, and final fourth-word copy. Four guarded words
+preserve one equivalent record-pointer spill at stack offset `0x1C`; the
+remaining 27 words emit directly from C. See
+[Working Note 518](WORKING_NOTES/518-game-record-window-initializer-match-20260929.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Continue
-with 31-word `func_15183974`, the next ordinary Game candidate. Keep
+with 32-word `func_1518F49C`, the next ordinary Game candidate. Keep
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181

@@ -2216,3 +2216,7 @@ generated_AD9B0,func_15080BE8,0x028,0x3C040000,0x3C020000,R_MIPS_HI16:D_800D1948
 generated_AD9B0,func_15080BE8,0x02C,0x8C840000,0x8C420000,R_MIPS_LO16:D_800D1948,R_MIPS_LO16:D_800D1948,Complete the optional allocation load through retail's result register,,,false
 generated_AD9B0,func_15080BE8,0x030,0x5080000C,0x5040000C,-,-,Test retail's optional-allocation register,,,false
 generated_AD9B0,func_15080BE8,0x03C,0x00000000,0x00402025,-,-,Move the optional allocation into the free-call delay slot,,,false
+generated_1B0740,func_15183974,0x034,0xAFA20018,0xAFA2001C,-,-,Preserve retail's record-pointer spill in the top local frame slot,,,false
+generated_1B0740,func_15183974,0x040,0x8FA20018,0x8FA2001C,-,-,Reload the record pointer from retail's top local frame slot,,,false
+generated_1B0740,func_15183974,0x05C,0xAFA20018,0xAFA2001C,-,-,Preserve retail's record-pointer spill across the second initializer call,,,false
+generated_1B0740,func_15183974,0x060,0x8FA20018,0x8FA2001C,-,-,Reload the record pointer from retail's top local frame slot after the second call,,,false

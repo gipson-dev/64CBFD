@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game record-window initializer byte-matched
+
+- `func_15183974` now indexes `D_800DDE80` as five-word records, initializes
+  the selected and following records when their first words are zero, and
+  copies the selected record's fourth word into the following record.
+- The typed record layout reproduces retail's address and register allocation.
+  Four expected-word guards preserve one equivalent record-pointer spill at
+  retail stack offset `0x1C`; the other 27 words emit directly from C.
+- The linked and retail 124-byte spans share SHA-256
+  `2fa35f0fd488dbd398137f278e58cd14d8b44842fd89bad6d083c8f5cbdd2c6e`.
+- Totals are **3,022 / 5,463 (55.32%)** overall and
+  **2,444 / 4,789 (51.03%)** in Game, with no address-drift rows. See
+  [Working Note 518](WORKING_NOTES/518-game-record-window-initializer-match-20260929.md).
+
 ### Game fixed-payload object spawn byte-matched
 
 - `func_1514D978` now builds its 32-byte payload, creates the corresponding
