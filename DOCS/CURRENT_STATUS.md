@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,094 / 5,457 (56.70%) | 0 | 2,363 |
-| Init | 411 / 488 (84.22%) | 0 | 77 |
+| Total | 3,095 / 5,457 (56.72%) | 0 | 2,362 |
+| Init | 412 / 488 (84.43%) | 0 | 76 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -902,7 +902,9 @@ end-to-end gameplay acceptance.
    retail's redundant mapped-input copies and move the existing call
    relocation. SDK helpers `__osLeoAbnormalResume` and `__osLeoResume` are
    byte-exact directly from their recovered `-O1` libultra C bodies with no
-   guards.
+   guards. The 60-word `osLeoDiskInit` is byte-exact from its recovered `-O1`
+   initializer plus seven bounded guards that normalize one shared-address
+   schedule and preserve the retail extent.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

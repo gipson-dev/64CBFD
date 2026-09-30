@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,094 / 5,457 (56.70%) | 0 | 2,363 |
-| Init | 488 / 538 (90.71%) | 411 / 488 (84.22%) | 0 | 77 |
+| Total | 5,457 / 6,041 (90.33%) | 3,095 / 5,457 (56.72%) | 0 | 2,362 |
+| Init | 488 / 538 (90.71%) | 412 / 488 (84.43%) | 0 | 76 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -440,6 +440,10 @@ the original call relocation; see
 Init SDK helpers `__osLeoAbnormalResume` and `__osLeoResume` now match their
 complete 232-byte and 244-byte spans directly from `-O1` C with no guards;
 see [Working Note 595](WORKING_NOTES/595-init-leo-resume-helper-pair-match-20260930.md).
+Init SDK initializer `osLeoDiskInit` now matches its complete 240-byte span.
+Seven bounded guards collapse one redundant handle-address load and retain the
+retail schedule and trailing extent; see
+[Working Note 596](WORKING_NOTES/596-init-leo-disk-initializer-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init Leo resume helpers matched).**
-The current linked checkpoint is `3094 / 5457 (56.70%)` exact C functions,
-with no address-drift blockers and 2,363 genuinely different C functions.
+**Active (2026-09-30, Init Leo disk initializer matched).**
+The current linked checkpoint is `3095 / 5457 (56.72%)` exact C functions,
+with no address-drift blockers and 2,362 genuinely different C functions.
 Init is
-`411 / 488 (84.22%)` exact, with 77 genuinely different C rows. Game is
+`412 / 488 (84.43%)` exact, with 76 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -811,7 +811,12 @@ Init SDK helpers `__osLeoAbnormalResume` and `__osLeoResume` now match all 58
 and 61 retail words directly from their `-O1` libultra C bodies. The abnormal
 helper preserves this retail revision's IO-busy-only polling mask. See
 [Working Note 595](WORKING_NOTES/595-init-leo-resume-helper-pair-match-20260930.md).
-Resume the Init queue from its remaining 77 genuinely different C rows.
+Init `osLeoDiskInit` now matches all 60 retail words. Its recovered `-O1` C
+initializes the 64DD PI handle and registers it under an interrupt-disabled
+critical section. Seven bounded guards normalize one shared-address schedule
+and preserve the retail trailing word. See
+[Working Note 596](WORKING_NOTES/596-init-leo-disk-initializer-match-20260930.md).
+Resume the Init queue from its remaining 76 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

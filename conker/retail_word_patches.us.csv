@@ -2611,3 +2611,10 @@ init_B1B0,func_1000DF68,0x0D8,0x8FBF0014,0xA4780050,-,-,Store the fixed short-tr
 init_B1B0,func_1000DF68,0x0DC,0x27BD0020,0x8FBF0014,-,-,Restore the return address on the short-transition path,,,false
 init_B1B0,func_1000DF68,0x0E0,0x03E00008,0x27BD0020,-,-,Restore the stack pointer at retail's shared epilogue address,,,false
 init_B1B0,func_1000DF68,0x0E4,0x00000000,0x03E00008,-,-,Move the return jump to retail's final functional word,,,false
+generated_leodiskinit,osLeoDiskInit,0x034,0x24080006,0x27BDFFE0,-,-,Open retail's stack frame before materializing the adjacent field values,,,false
+generated_leodiskinit,osLeoDiskInit,0x038,0xA0280006,0x24080006,R_MIPS_LO16:D_80043AC0,-,Materialize page size before the paired field stores,,,false
+generated_leodiskinit,osLeoDiskInit,0x03C,0x27BDFFE0,0x24090002,-,-,Materialize relative duration beside page size,,,false
+generated_leodiskinit,osLeoDiskInit,0x040,0x3C010000,0x00000000,R_MIPS_HI16:D_80043AC0,-,Omit IDO's repeated handle-address high load,,,true
+generated_leodiskinit,osLeoDiskInit,0x044,0x24090002,0xAFBF0014,-,-,Save the return address before committing the paired fields,,,false
+generated_leodiskinit,osLeoDiskInit,0x048,0xAFBF0014,0xA0280006,-,R_MIPS_LO16:D_80043AC0,Store page size through retail's shared handle address,,,false
+generated_leodiskinit,osLeoDiskInit,0x0EC,0x27BD0020,0x27BD0020,-,-,Restore the retail extent after removing the redundant handle load,0x00000000,-,false

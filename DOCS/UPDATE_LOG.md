@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init Leo disk initializer byte-matched
+
+- `osLeoDiskInit` configures the 64DD PI handle, writes the domain-two timing
+  registers, clears transfer state, and links the handle into the PI table
+  while interrupts are disabled.
+- The recovered SDK body uses the retail `-O1` profile. Seven stale-checked
+  guards normalize one adjacent-field scheduling cluster, omit a redundant
+  handle-address load, and preserve the 60-word retail extent.
+- The linked and retail spans share SHA-256
+  `7d204edfe2419d1dc472aaba89b7665d3ca50a8969dc9c573e26338dceb566bc`.
+  Totals are **3,095 / 5,457 (56.72%)** overall and
+  **412 / 488 (84.43%)** in Init. See
+  [Working Note 596](WORKING_NOTES/596-init-leo-disk-initializer-match-20260930.md).
+
 ### Init Leo resume helper pair byte-matched
 
 - `__osLeoAbnormalResume` restores disk buffer-manager state, clears the PI
