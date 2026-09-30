@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init handwritten bzero restored).**
-The current linked checkpoint is `3086 / 5457 (56.55%)` exact C functions,
-with no address-drift blockers and 2,371 genuinely different C functions.
+**Active (2026-09-30, Init released-node recycler matched).**
+The current linked checkpoint is `3087 / 5457 (56.57%)` exact C functions,
+with no address-drift blockers and 2,370 genuinely different C functions.
 Init is
-`403 / 488 (82.58%)` exact, with 85 genuinely different C rows. Game is
+`404 / 488 (82.79%)` exact, with 84 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -777,10 +777,18 @@ Init `bzero` is restored from its approximate byte-loop C implementation to
 the original handwritten libultra routine. Its complete 40-word span matches
 retail independently. See
 [Working Note 588](WORKING_NOTES/588-init-handwritten-bzero-restoration-20260930.md).
-Resume the Init queue from its remaining 85 genuinely different C rows.
+Init `func_1000A348` now matches all 54 retail words. Its recovered C releases
+inactive records, unlinks them from the active list, and splices them into the
+reusable list. Nineteen guards preserve one closed manager-register and
+free-list scheduling cycle. See
+[Working Note 589](WORKING_NOTES/589-init-released-node-recycler-match-20260930.md).
+Resume the Init queue from its remaining 84 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
-required `-O2` profile.
+required `-O2` profile. `func_1000F85C` is also parked: its correct
+bit-preserving C retains the 48-word extent but leaves 27 frame/scheduling
+differences, while the tempting plain float-to-integer assignment emits a
+semantically wrong `trunc.w.s`.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

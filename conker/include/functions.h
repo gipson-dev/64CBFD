@@ -929,7 +929,7 @@ void func_10009BE4(struct147 *arg0);
 s32 func_10009CBC(void *arg0, s32 arg1);
 s32  func_10009FFC(void);
 //func_1000A03C
-//func_1000A348
+void func_1000A348(void);
 //func_1000A420
 //func_1000A750
 //func_1000B060

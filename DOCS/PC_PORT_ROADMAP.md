@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,086 / 5,457 (56.55%) | 0 | 2,371 |
-| Init | 488 / 538 (90.71%) | 403 / 488 (82.58%) | 0 | 85 |
+| Total | 5,457 / 6,041 (90.33%) | 3,087 / 5,457 (56.57%) | 0 | 2,370 |
+| Init | 488 / 538 (90.71%) | 404 / 488 (82.79%) | 0 | 84 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -414,6 +414,10 @@ retail's commutative multiply operand order. See
 Init `bzero` is restored from its approximate byte-loop C body to original
 handwritten libultra assembly. Its complete 160-byte span matches retail; see
 [Working Note 588](WORKING_NOTES/588-init-handwritten-bzero-restoration-20260930.md).
+The Init released-node recycler `func_1000A348` now matches all 216 bytes.
+Nineteen guarded words preserve its closed manager-register and reusable-list
+splice schedule; see
+[Working Note 589](WORKING_NOTES/589-init-released-node-recycler-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

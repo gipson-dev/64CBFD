@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init released-node recycler byte-matched
+
+- `func_1000A348` releases inactive active-list records, repairs both list
+  directions, and splices each record into the reusable list.
+- Thirty-five of 54 words emit directly from semantic C. Nineteen
+  stale-checked guards preserve the closed manager-register and free-list
+  splice schedule.
+- The linked and retail spans share SHA-256
+  `3b03c2654be6fe46335aeccddb64cca509d8edddb5f980c04918b85486affe7a`.
+  Totals are **3,087 / 5,457 (56.57%)** overall and
+  **404 / 488 (82.79%)** in Init. See
+  [Working Note 589](WORKING_NOTES/589-init-released-node-recycler-match-20260930.md).
+
 ### Init handwritten bzero restored
 
 - `bzero` now uses the original handwritten libultra implementation instead

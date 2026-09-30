@@ -114,6 +114,25 @@ game_1944C0,func_1516706C,0x18,0x26100000,0x26310000,R_MIPS_LO16:D_8008CB64,R_MI
 game_1944C0,func_1516706C,0x1C,0x26310000,0x26100000,R_MIPS_LO16:D_8008CB70,R_MIPS_LO16:D_8008CB64,Construct the callback cursor pointer after the end pointer,,,false
 generated_F21D0,func_150C522C,0x18,0x26100000,0x26310000,R_MIPS_LO16:D_800D98D0,R_MIPS_LO16:D_800D98E0,Complete the retained end address before the cursor address,,
 generated_F21D0,func_150C522C,0x1C,0x26310000,0x26100000,R_MIPS_LO16:D_800D98E0,R_MIPS_LO16:D_800D98D0,Complete the cursor address after the retained end address,,
+init_8F90,func_1000A348,0x000,0x3C060000,0x3C070000,R_MIPS_HI16:D_800406A0,R_MIPS_HI16:D_800406A0,Keep the allocator state base in retail's a3 lifetime,,,false
+init_8F90,func_1000A348,0x004,0x24C60000,0x24E70000,R_MIPS_LO16:D_800406A0,R_MIPS_LO16:D_800406A0,Complete the allocator state base in a3,,,false
+init_8F90,func_1000A348,0x008,0x8CC20004,0x8CE20004,-,-,Load the active-list head through retail's state register,,,false
+init_8F90,func_1000A348,0x040,0x8CD90004,0x8CF90004,-,-,Reload the active-list head through retail's state register,,,false
+init_8F90,func_1000A348,0x04C,0xACC30004,0xACE30004,-,-,Advance the active-list head through retail's state register,,,false
+init_8F90,func_1000A348,0x06C,0x8CC40010,0x8CE40010,-,-,Load the free-list head through retail's state register,,,false
+init_8F90,func_1000A348,0x078,0x8CC40010,0x8CE40010,-,-,Reload the free-list head through retail's state register,,,false
+init_8F90,func_1000A348,0x080,0xACC20010,0xACE20010,-,-,Install the first free-list node through retail's state register,,,false
+init_8F90,func_1000A348,0x084,0xAC440004,0x8C8A0000,-,-,Read the old free successor before linking the recycled node,,,false
+init_8F90,func_1000A348,0x088,0x8C8A0000,0xAC440004,-,-,Link the recycled node back to the free-list head,,,false
+init_8F90,func_1000A348,0x08C,0xAC4A0000,0x00802825,-,-,Preserve the free-list head in retail's a1 lifetime,,,false
+init_8F90,func_1000A348,0x090,0x8C850000,0xAC4A0000,-,-,Store the old successor in the recycled node,,,false
+init_8F90,func_1000A348,0x094,0x54A00004,0x8C860000,-,-,Reread the old successor through retail's a2 lifetime,,,false
+init_8F90,func_1000A348,0x098,0xACA20004,0x50C00003,-,-,Use retail's null-successor branch-likely schedule,,,false
+init_8F90,func_1000A348,0x09C,0x10000007,0xACA20000,-,-,Install the recycled node in the null-successor delay slot,,,false
+init_8F90,func_1000A348,0x0A0,0xAC820000,0xACC20004,-,-,Link a nonnull successor back to the recycled node,,,false
+init_8F90,func_1000A348,0x0A4,0xACA20004,0xACA20000,-,-,Install the recycled node after a nonnull successor,,,false
+init_8F90,func_1000A348,0x0AC,0xAC820000,0x00000000,-,-,Preserve retail's free-list splice branch delay slot,,,false
+init_8F90,func_1000A348,0x0B0,0xACC20010,0xACE20010,-,-,Retain the alternate free-list-head store through retail's state register,,,false
 init_EB00,func_1000FD38,0x68,0x50800004,0x50800006,,,Skip the count reload when no release call occurs,,
 init_EB00,func_1000FD38,0x78,0x8E190010,0x3C020000,-,R_MIPS_HI16:D_80042760,Reload the loop bound after the release call,,
 init_EB00,func_1000FD38,0x7C,0x3C020000,0x8C420000,R_MIPS_HI16:D_80042760,R_MIPS_LO16:D_80042760,Complete the post-call loop-bound reload,,

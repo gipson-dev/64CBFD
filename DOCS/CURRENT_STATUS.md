@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,086 / 5,457 (56.55%) | 0 | 2,371 |
-| Init | 403 / 488 (82.58%) | 0 | 85 |
+| Total | 3,087 / 5,457 (56.57%) | 0 | 2,370 |
+| Init | 404 / 488 (82.79%) | 0 | 84 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -886,7 +886,9 @@ end-to-end gameplay acceptance.
    parameter wrapper `func_10010E78` is byte-exact through one guarded
    commutative multiply word; its other 45 words emit directly from C. The
    40-word `bzero` row is restored from an approximate byte loop to original
-   handwritten libultra assembly and independently matches all 160 bytes.
+   handwritten libultra assembly and independently matches all 160 bytes. The
+   54-word released-node recycler `func_1000A348` is byte-exact through 19
+   guarded manager-register and reusable-list scheduling words.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

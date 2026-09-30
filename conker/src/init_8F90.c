@@ -8,7 +8,7 @@ s32 func_10008F90();
 s32 func_100095A0(s32 arg0, s32 arg1);
 s32 func_100099BC();
 s32 func_1000A03C();
-s32 func_1000A348();
+void func_1000A348(void);
 /* End generated placeholder declarations. */
 
 /* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10008F90.s. */
@@ -497,7 +497,50 @@ s32 func_10009FFC(void) {
 s32 func_1000A03C() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_1000A348.s. */
-s32 func_1000A348() {
-    return 0;
+void func_1000A348(void) {
+    struct54 *current;
+    struct54 *next;
+    struct54 *free;
+    struct54 *free_head;
+    struct54 *free_next;
+    u32 *release;
+
+    current = (struct54 *)D_800406A0.unk4;
+    while (current != NULL) {
+        next = current->unk0;
+        if ((current->unk14 == 0) && (current->unk16 == 0)) {
+            release = (u32 *)current->unkC;
+            *release = current->unk8;
+            current->unkC = 0;
+
+            if (current == (struct54 *)D_800406A0.unk4) {
+                D_800406A0.unk4 = (s32)next;
+            }
+            if (current->unk0 != NULL) {
+                current->unk0->unk4 = current->unk4;
+            }
+            if (current->unk4 != NULL) {
+                current->unk4->unk0 = current->unk0;
+            }
+
+            free = D_800406A0.unk10;
+            if (free != NULL) {
+                current->unk4 = free;
+                free_head = free;
+                current->unk0 = free->unk0;
+                free_next = free->unk0;
+                if (free_next == NULL) {
+                    free_head->unk0 = current;
+                } else {
+                    free_next->unk4 = current;
+                    free_head->unk0 = current;
+                }
+            } else {
+                D_800406A0.unk10 = current;
+                current->unk0 = NULL;
+                current->unk4 = NULL;
+            }
+        }
+        current = next;
+    }
 }
