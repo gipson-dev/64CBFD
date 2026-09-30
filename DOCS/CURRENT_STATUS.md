@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,048 / 5,463 (55.79%) | 0 | 2,415 |
+| Total | 3,049 / 5,463 (55.81%) | 0 | 2,414 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,469 / 4,789 (51.56%) | 0 | 2,320 |
+| Game | 2,470 / 4,789 (51.58%) | 0 | 2,319 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -439,6 +439,9 @@ inserted scheduling word normalize the closed compiler allocation cycle; see
 Game state-three convergence scanner `func_1509CDDC` now matches all 34 words
 after restoring its initial slot processing and repeated 204-byte scans; see
 [Working Note 544](WORKING_NOTES/544-game-state-three-convergence-scan-match-20260930.md).
+Game object-position forwarding adapter `func_1509F77C` now matches all 33
+words directly from C after exposing its three truncated coordinate locals;
+see [Working Note 545](WORKING_NOTES/545-game-object-position-forwarding-adapter-match-20260930.md).
 
 ## Verified build state
 
@@ -772,7 +775,9 @@ end-to-end gameplay acceptance.
    byte-exact with 33 guarded source words and one inserted scheduling word.
    The 34-word state-three convergence scanner `func_1509CDDC` is now
    byte-exact through 18 guarded contraction/scheduling rows. Continue with
-   33-word Game `func_1509F77C`, the next ordinary row.
+   The 33-word object-position forwarding adapter `func_1509F77C` is now
+   byte-exact directly from C. Continue with 32-word Game `func_150AD9A0`, the
+   next ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

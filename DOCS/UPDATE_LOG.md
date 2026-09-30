@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game object-position forwarding adapter byte-matched
+
+- `func_1509F77C` resolves an object, truncates its three position floats, and
+  forwards the coordinates and caller fields to `func_1000F91C`.
+- All 33 words / 132 bytes emit directly from C with no guards. Linked SHA-256
+  is `7f7016927ccef67069847fbfce123b4a612f7c2c321e445b26dc058627757d9b`.
+- Totals are **3,049 / 5,463 (55.81%)** overall and
+  **2,470 / 4,789 (51.58%)** in Game. See
+  [Working Note 545](WORKING_NOTES/545-game-object-position-forwarding-adapter-match-20260930.md).
+
 ### Game state-three convergence scanner byte-matched
 
 - `func_1509CDDC` restores initial slot processing and repeated 204-byte scans
