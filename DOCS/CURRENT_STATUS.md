@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,067 / 5,462 (56.15%) | 0 | 2,395 |
+| Total | 3,068 / 5,462 (56.17%) | 0 | 2,394 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,488 / 4,788 (51.96%) | 0 | 2,300 |
+| Game | 2,489 / 4,788 (51.98%) | 0 | 2,299 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -843,8 +843,9 @@ end-to-end gameplay acceptance.
    The 33-word object-selector payload wrapper `func_15192920` is now
    byte-exact through 17 guarded scheduling words. Its 33-word structural twin
    `func_151B1AB0` is also byte-exact through an independently scoped copy of
-   the same schedule guards. Continue with 35-word Game `func_151CEA20`, the
-   next ordinary row.
+   the same schedule guards. The 35-word midpoint-timestep integrator
+   `func_151CEA20` is now byte-exact through 21 guarded FP scheduling words.
+   Continue with 34-word Game `func_151D66F0`, the next ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

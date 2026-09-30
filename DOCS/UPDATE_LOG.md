@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game midpoint-timestep integrator byte-matched
+
+- `func_151CEA20` now advances velocity from acceleration, advances position
+  from midpoint velocity, advances a second scalar from its rate, clamps that
+  scalar to `1.0f`, and returns success.
+- Fourteen of 35 words emit directly from semantic C. Twenty-one stale-checked
+  guards normalize closed FP-register cycles and one equivalent load/store
+  schedule; both `D_800BE9A4` relocation words emit naturally. Linked SHA-256
+  is `f62b31514b1fa56a41b3eb39f54ba112e9a37df616d6e21bc62f7c54c68cc0ef`.
+- Totals are **3,068 / 5,462 (56.17%)** overall and
+  **2,489 / 4,788 (51.98%)** in Game. See
+  [Working Note 565](WORKING_NOTES/565-game-midpoint-timestep-integrator-match-20260930.md).
+
 ### Game object-selector payload-wrapper twin byte-matched
 
 - `func_151B1AB0` now implements the second null-gated owner/selector payload

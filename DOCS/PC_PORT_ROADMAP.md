@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,067 / 5,462 (56.15%) | 0 | 2,395 |
+| Total | 5,462 / 6,041 (90.42%) | 3,068 / 5,462 (56.17%) | 0 | 2,394 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,788 / 5,321 (89.98%) | 2,488 / 4,788 (51.96%) | 0 | 2,300 |
+| Game | 4,788 / 5,321 (89.98%) | 2,489 / 4,788 (51.98%) | 0 | 2,299 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -322,6 +322,11 @@ same recovered payload behavior and separately scoped 17-word schedule guard;
 its allocation constants are command `0x3C`, overflow value `0x11`, and third
 argument `0x15`. See
 [Working Note 564](WORKING_NOTES/564-game-object-selector-payload-wrapper-twin-match-20260930.md).
+The Game midpoint-timestep integrator `func_151CEA20` now matches all 140
+bytes. Its velocity, midpoint-position, secondary-scalar, and upper-clamp
+behavior are recovered in semantic C; 21 guarded words normalize only IDO FP
+allocation and load/store scheduling. See
+[Working Note 565](WORKING_NOTES/565-game-midpoint-timestep-integrator-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

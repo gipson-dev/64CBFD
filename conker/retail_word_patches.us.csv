@@ -2430,3 +2430,24 @@ generated_1DD500,func_151B1AB0,0x048,0xAFA80014,0xAFB90010,-,-,Store the leading
 generated_1DD500,func_151B1AB0,0x04C,0xAFB90010,0x24060015,-,-,Prepare the third register argument after the overflow stores,,,false
 generated_1DD500,func_151B1AB0,0x054,0xE7A40030,0xA3B8002C,-,-,Store the selector before requesting the destination record,,,false
 generated_1DD500,func_151B1AB0,0x05C,0xA3B8002C,0xE7A40030,-,-,Store the zero float in the allocation-call delay slot,,,false
+generated_1FA770,func_151CEA20,0x008,0x44817000,0x44818000,-,-,Materialize the clamp constant in retail's f16 lifetime,,,false
+generated_1FA770,func_151CEA20,0x010,0xC4800040,0xC48C0040,-,-,Load acceleration through retail's f12 lifetime,,,false
+generated_1FA770,func_151CEA20,0x020,0x46040182,0x46046182,-,-,Multiply acceleration and timestep through retail's f6 lifetime,,,false
+generated_1FA770,func_151CEA20,0x024,0x44818000,0x44819000,-,-,Materialize the midpoint constant in retail's f18 lifetime,,,false
+generated_1FA770,func_151CEA20,0x02C,0x46100482,0x460C9102,-,-,Scale acceleration by one half through retail's f4 lifetime,,,false
+generated_1FA770,func_151CEA20,0x030,0x46023200,0x46061200,-,-,Add the velocity delta through retail's operand order,,,false
+generated_1FA770,func_151CEA20,0x038,0xC44C0000,0xC44E0000,-,-,Reload the timestep through retail's f14 lifetime,,,false
+generated_1FA770,func_151CEA20,0x03C,0x460C9102,0x460E2182,-,-,Form the half-step acceleration through retail's f6 lifetime,,,false
+generated_1FA770,func_151CEA20,0x040,0xC492004C,0x46061200,-,-,Form midpoint velocity before loading the second rate,,,false
+generated_1FA770,func_151CEA20,0x044,0x46041180,0x460E4482,-,-,Advance midpoint velocity through retail's timestep lifetime,,,false
+generated_1FA770,func_151CEA20,0x048,0x460C3202,0x46125100,-,-,Add the midpoint displacement through retail's f4 lifetime,,,false
+generated_1FA770,func_151CEA20,0x04C,0x46085400,0xE4840038,-,-,Store the integrated position before the second scalar loads,,,false
+generated_1FA770,func_151CEA20,0x050,0xC48A0050,0xC486004C,-,-,Load the second scalar rate through retail's f6 lifetime,,,false
+generated_1FA770,func_151CEA20,0x054,0xE4900038,0xC4480000,-,-,Load the third timestep copy after the position store,,,false
+generated_1FA770,func_151CEA20,0x058,0xC4440000,0xC4920050,-,-,Load the current second scalar through retail's f18 lifetime,,,false
+generated_1FA770,func_151CEA20,0x060,0x46049182,0x46083282,-,-,Multiply rate and timestep through retail's f10 lifetime,,,false
+generated_1FA770,func_151CEA20,0x064,0x46065200,0x460A9100,-,-,Add the second scalar delta through retail's f4 lifetime,,,false
+generated_1FA770,func_151CEA20,0x068,0xE4880050,0xE4840050,-,-,Store the advanced second scalar through retail's f4 lifetime,,,false
+generated_1FA770,func_151CEA20,0x06C,0xC4900050,0xC4860050,-,-,Reload the second scalar through retail's f6 lifetime,,,false
+generated_1FA770,func_151CEA20,0x070,0x4610703C,0x4606803C,-,-,Compare the clamp constant through retail's FP register pair,,,false
+generated_1FA770,func_151CEA20,0x080,0xE48E0050,0xE4900050,-,-,Store retail's f16 clamp constant on overflow,,,false

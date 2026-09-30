@@ -2,6 +2,7 @@
 typedef struct { s32 a, b, c; } ThreeWord1FA770;
 
 extern ThreeWord1FA770 D_800AAF9C[];
+extern f32 D_800BE9A4;
 
 /* Non-matching placeholders for the text-only asm slice asm/1FA770.s. */
 
@@ -90,8 +91,17 @@ s32 func_151CE6D0() {
     return 0;
 }
 
-s32 func_151CEA20() {
-    return 0;
+s32 func_151CEA20(f32 *arg0) {
+    f32 acceleration = arg0[0x40 / 4];
+    f32 velocity = arg0[0x44 / 4];
+
+    arg0[0x44 / 4] = velocity + acceleration * D_800BE9A4;
+    arg0[0x38 / 4] += (velocity + acceleration * 0.5f * D_800BE9A4) * D_800BE9A4;
+    arg0[0x50 / 4] += arg0[0x4C / 4] * D_800BE9A4;
+    if (arg0[0x50 / 4] > 1.0f) {
+        arg0[0x50 / 4] = 1.0f;
+    }
+    return 1;
 }
 
 s32 func_151CEAAC() {
