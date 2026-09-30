@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,060 / 5,462 (56.02%) | 0 | 2,402 |
+| Total | 3,061 / 5,462 (56.04%) | 0 | 2,401 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,481 / 4,788 (51.82%) | 0 | 2,307 |
+| Game | 2,482 / 4,788 (51.84%) | 0 | 2,306 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -478,6 +478,9 @@ complete 132-byte span directly from C; see
 The Game owner-list cleanup `func_1514EDF0` now matches its complete 128-byte
 span through three guarded local-stack operands; see
 [Working Note 557](WORKING_NOTES/557-game-owner-list-matching-node-cleanup-match-20260930.md).
+The Game two-entry selection event callback `func_15158B3C` now matches its
+complete 148-byte span through ten guarded scheduling/register rows; see
+[Working Note 558](WORKING_NOTES/558-game-two-entry-selection-event-callback-match-20260930.md).
 
 ## Verified build state
 
@@ -829,7 +832,9 @@ end-to-end gameplay acceptance.
    stack-slot words. The 33-word bit-zero state-operation callback
    `func_1514E89C` is now byte-exact directly from C. The 32-word owner-list
    cleanup `func_1514EDF0` is now byte-exact through three guarded local-stack
-   operands. Continue with 37-word Game `func_15158B3C`, the next ordinary row.
+   operands. The 37-word two-entry selection callback `func_15158B3C` is now
+   byte-exact through ten guarded scheduling/register rows. Continue with
+   35-word Game `func_1516441C`, the next ordinary row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

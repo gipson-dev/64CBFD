@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game two-entry selection event callback byte-matched
+
+- `func_15158B3C` now switches or clears the current pointer/selector pair in
+  response to byte operations `0x2D` and zero.
+- Twenty-six of 37 words emit directly from semantic C. Ten guarded rows
+  normalize an 11-word return-delay and temporary-register scheduling cycle.
+  Linked SHA-256 is
+  `f6f19275e72e485804598ba595d662c7522ed0f876312a865749ff013dad34e5`.
+- Totals are **3,061 / 5,462 (56.04%)** overall and
+  **2,482 / 4,788 (51.84%)** in Game. See
+  [Working Note 558](WORKING_NOTES/558-game-two-entry-selection-event-callback-match-20260930.md).
+
 ### Game owner-list matching-node cleanup byte-matched
 
 - `func_1514EDF0` now repeatedly searches the list at owner offset `0x2F4`

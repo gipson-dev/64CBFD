@@ -11,6 +11,19 @@ typedef struct {
     u32 scale;
 } Generated185560Record;
 
+typedef struct {
+    u8 pad0[0x40];
+    s32 current;
+    u8 selector;
+} Generated185560Selection;
+
+typedef struct {
+    s32 first;
+    s32 second;
+    u8 first_selector;
+    u8 second_selector;
+} Generated185560SelectionPair;
+
 /* Non-matching placeholders for the text-only asm slice asm/185560.s. */
 
 s32 func_151580B0() {
@@ -69,8 +82,30 @@ s32 func_15158AFC(u8 *arg0) {
     return 1;
 }
 
-s32 func_15158B3C() {
-    return 0;
+void func_15158B3C(Generated185560Selection *selection,
+                   Generated185560SelectionPair *pair, u8 operation) {
+    if (operation == 0x2D) {
+        if (selection->current == pair->first) {
+            selection->current = pair->second;
+            selection->selector = pair->second_selector;
+            return;
+        }
+        if (selection->current == pair->second) {
+            selection->current = pair->first;
+            selection->selector = pair->first_selector;
+        }
+        return;
+    }
+    if (operation != 0) {
+        return;
+    }
+    if (selection->current != pair->first) {
+        if (selection->selector != ((u8 *) pair)[4]) {
+            return;
+        }
+    }
+    selection->current = 0;
+    selection->selector = 0;
 }
 
 s32 func_15158BD0() {

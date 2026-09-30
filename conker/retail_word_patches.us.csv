@@ -2347,3 +2347,13 @@ game_14FF90,func_151239CC,0x068,0x8FA30018,0x8FA3001C,-,-,Reload the saved-state
 generated_179F30,func_1514EDF0,0x028,0xAFA00038,0xAFA00034,-,-,Initialize the recovered result pointer in retail's lower local frame slot,,,false
 generated_179F30,func_1514EDF0,0x02C,0x27B20038,0x27B20034,-,-,Materialize the recovered result pointer from retail's lower local frame slot,,,false
 generated_179F30,func_1514EDF0,0x048,0x8FA40038,0x8FA40034,-,-,Reload the recovered result pointer from retail's lower local frame slot,,,false
+generated_185560,func_15158B3C,0x010,0x14C10011,0x14C10012,-,-,Retarget the operation branch across retail's unscheduled second-selector store,,,false
+generated_185560,func_15158B3C,0x040,0x17230011,0x17230012,-,-,Retarget the second-record mismatch branch across retail's unscheduled selector store,,,false
+generated_185560,func_15158B3C,0x050,0x03E00008,0xA0880044,-,-,Store the first selector before retail's second-record return,,,false
+generated_185560,func_15158B3C,0x054,0xA0880044,0x03E00008,-,-,Keep retail's second-record return delay slot empty,0x00000000,-,false
+generated_185560,func_15158B3C,0x060,0x8CA90000,0x8CA20000,-,-,Load the zero-operation record pointer through retail's v0 lifetime,,,false
+generated_185560,func_15158B3C,0x064,0x8C8A0040,0x8C890040,-,-,Load the current selection through retail's t1 lifetime,,,false
+generated_185560,func_15158B3C,0x068,0x512A0006,0x50490006,-,-,Compare the zero-operation pointers through retail's register pair,,,false
+generated_185560,func_15158B3C,0x070,0x908B0044,0x908A0044,-,-,Load the current selector through retail's t2 lifetime,,,false
+generated_185560,func_15158B3C,0x074,0x90AC0004,0x90AB0004,-,-,Load the record selector through retail's t3 lifetime,,,false
+generated_185560,func_15158B3C,0x078,0x156C0003,0x154B0003,-,-,Compare selector bytes through retail's register pair,,,false

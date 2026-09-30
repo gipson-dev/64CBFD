@@ -8,9 +8,9 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,060 / 5,462 (56.02%) | 0 | 2,402 |
+| Total | 5,462 / 6,041 (90.42%) | 3,061 / 5,462 (56.04%) | 0 | 2,401 |
 | Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 4,788 / 5,321 (89.98%) | 2,481 / 4,788 (51.82%) | 0 | 2,307 |
+| Game | 4,788 / 5,321 (89.98%) | 2,482 / 4,788 (51.84%) | 0 | 2,306 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
@@ -291,6 +291,11 @@ The Game owner-list cleanup `func_1514EDF0` now matches all 128 bytes. Its
 recovered search-and-remove loop emits directly from C except for three guarded
 local-stack operands; see
 [Working Note 557](WORKING_NOTES/557-game-owner-list-matching-node-cleanup-match-20260930.md).
+The Game two-entry selection event callback `func_15158B3C` now matches all
+148 bytes. Its semantic pointer/selector updates emit from C; ten guarded rows
+normalize only one return-delay schedule and a closed temporary-register cycle;
+see
+[Working Note 558](WORKING_NOTES/558-game-two-entry-selection-event-callback-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
