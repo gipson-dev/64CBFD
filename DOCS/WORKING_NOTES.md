@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init virtual task-address converter matched).**
-The current linked checkpoint is `3096 / 5457 (56.73%)` exact C functions,
-with no address-drift blockers and 2,361 genuinely different C functions.
+**Active (2026-09-30, Init spatial channel-value updater matched).**
+The current linked checkpoint is `3097 / 5457 (56.75%)` exact C functions,
+with no address-drift blockers and 2,360 genuinely different C functions.
 Init is
-`413 / 488 (84.63%)` exact, with 75 genuinely different C rows. Game is
+`414 / 488 (84.84%)` exact, with 74 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -820,7 +820,12 @@ Init `_VirtualToPhysicalTask` now matches all 68 retail words directly from C.
 It copies the incoming task into the fixed temporary task and converts seven
 non-null pointer fields to physical addresses. See
 [Working Note 597](WORKING_NOTES/597-init-virtual-task-address-converter-match-20260930.md).
-Resume the Init queue from its remaining 75 genuinely different C rows.
+Init `func_1000C934` now matches all 57 retail words. Its recovered C selects
+a flag-dependent limit, optionally subtracts a masked spatial query, updates
+channel `0x54` when the pending value differs, and returns it with bit 31 set.
+Eighteen guards preserve one closed tail schedule. See
+[Working Note 598](WORKING_NOTES/598-init-spatial-channel-value-updater-match-20260930.md).
+Resume the Init queue from its remaining 74 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

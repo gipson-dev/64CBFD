@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init spatial channel-value updater byte-matched
+
+- `func_1000C934` selects a flag-dependent limit, optionally subtracts a
+  masked spatial query in level `0x37`, updates channel `0x54` when the pending
+  value differs, and returns the value with bit 31 set.
+- Thirty-nine of 57 words emit directly from the recovered semantic C.
+  Eighteen stale-checked guards preserve one non-relocating value-register,
+  branch-delay, and epilogue scheduling cluster.
+- The linked and retail spans share SHA-256
+  `4e561733cb18a6f8daf394a820982539e2d912471df045a9ef3207798cbc4886`.
+  Totals are **3,097 / 5,457 (56.75%)** overall and
+  **414 / 488 (84.84%)** in Init. See
+  [Working Note 598](WORKING_NOTES/598-init-spatial-channel-value-updater-match-20260930.md).
+
 ### Init virtual task-address converter byte-matched
 
 - `_VirtualToPhysicalTask` copies an incoming `OSTask` into the fixed temporary

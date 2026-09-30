@@ -11,7 +11,7 @@ s32 func_1000BCBC();
 s32 func_1000BF60();
 s32 func_1000C350();
 s32 func_1000C7E8();
-s32 func_1000C934();
+s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CDA0();
 s32 func_1000CEAC();
@@ -280,35 +280,29 @@ s32 func_1000C7E8() {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000C934.s. */
-s32 func_1000C934() {
-    return 0;
+s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    s32 value;
+    s32 limit;
+    s32 enabled;
+
+    value = 0;
+    enabled = D_800DBFF0->unk5F0 & 1;
+    if (enabled != 0) {
+        limit = 0x7FFF;
+    } else {
+        limit = 12000;
+    }
+
+    if ((D_800BE9F0 == 0x37) && (enabled == 0)) {
+        func_100114D0(2200, 1066, -1600, limit, 3000, 1500, 0, &value, 0);
+        value = limit - (value & 0xFF00);
+    }
+
+    if ((value != arg0) & 0xFFFF) {
+        func_1000E40C(84, value);
+    }
+    return value | 0x80000000;
 }
-// NON-MATCHING: close but last part isn't quite right
-// s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-//     s32 sp3C;
-//     s32 sp38;
-//     s32 temp_a1;
-//     s32 temp_t7;
-//
-//     sp3C = 0;
-//     temp_t7 = D_800DBFF0->unk5F0 & 1;
-//     if (temp_t7 != 0) {
-//         sp38 = 0x7FFF;
-//     } else {
-//         sp38 = 12000;
-//     }
-//     if ((D_800BE9F0 == 0x37) && (temp_t7 == 0)) {
-//         func_100114D0(2200, 1066, -1600, sp38, 3000, 1500, 0, &sp3C, 0);
-//         sp3C = sp38 - (sp3C & 0xFF00);
-//     }
-//     temp_a1 = sp3C;
-//     if ((sp3C != arg0) & 0xFFFF) {
-//         sp3C = temp_a1;
-//         func_1000E40C(84, sp3C);
-//     }
-//     return sp3C | 0x80000000;
-// }
 
 s32 func_1000CA18(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 tmp;

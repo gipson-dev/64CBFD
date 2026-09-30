@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,096 / 5,457 (56.73%) | 0 | 2,361 |
-| Init | 413 / 488 (84.63%) | 0 | 75 |
+| Total | 3,097 / 5,457 (56.75%) | 0 | 2,360 |
+| Init | 414 / 488 (84.84%) | 0 | 74 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -906,7 +906,9 @@ end-to-end gameplay acceptance.
    initializer plus seven bounded guards that normalize one shared-address
    schedule and preserve the retail extent. The 68-word
    `_VirtualToPhysicalTask` is byte-exact directly from its recovered SDK
-   copy-and-convert body with no guards.
+   copy-and-convert body with no guards. The 57-word spatial channel-value
+   updater `func_1000C934` is byte-exact through 18 guarded value-register and
+   epilogue scheduling words.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

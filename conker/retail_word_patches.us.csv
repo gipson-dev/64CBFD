@@ -2618,3 +2618,21 @@ generated_leodiskinit,osLeoDiskInit,0x040,0x3C010000,0x00000000,R_MIPS_HI16:D_80
 generated_leodiskinit,osLeoDiskInit,0x044,0x24090002,0xAFBF0014,-,-,Save the return address before committing the paired fields,,,false
 generated_leodiskinit,osLeoDiskInit,0x048,0xAFBF0014,0xA0280006,-,R_MIPS_LO16:D_80043AC0,Store page size through retail's shared handle address,,,false
 generated_leodiskinit,osLeoDiskInit,0x0EC,0x27BD0020,0x27BD0020,-,-,Restore the retail extent after removing the redundant handle load,0x00000000,-,false
+init_B1B0,func_1000C934,0x050,0x8FAD003C,0x8FA5003C,-,-,Reload the pending value through retail's a1 lifetime in the level branch delay slot,,,false
+init_B1B0,func_1000C934,0x08C,0x8FAA003C,0x8FA5003C,-,-,Reload the spatial result through retail's retained a1 lifetime,,,false
+init_B1B0,func_1000C934,0x094,0x314BFF00,0x30AAFF00,-,-,Mask the spatial result from retail's a1 lifetime,,,false
+init_B1B0,func_1000C934,0x098,0x00EB6023,0x00EA2823,-,-,Subtract the masked result back into retail's a1 lifetime,,,false
+init_B1B0,func_1000C934,0x09C,0xAFAC003C,0xAFA5003C,-,-,Store the adjusted value from retail's a1 lifetime,,,false
+init_B1B0,func_1000C934,0x0A0,0x8FAD003C,0x8FA5003C,-,-,Reload the pending channel value through a1,,,false
+init_B1B0,func_1000C934,0x0A4,0x8FAE0040,0x8FAB0040,-,-,Load the previous value through retail's t3 lifetime,,,false
+init_B1B0,func_1000C934,0x0AC,0x01AE7826,0x00AB6026,-,-,Compare pending and previous values through retail's t4 lifetime,,,false
+init_B1B0,func_1000C934,0x0B0,0x000F782B,0x000C602B,-,-,Normalize the comparison through retail's t4 lifetime,,,false
+init_B1B0,func_1000C934,0x0B4,0x31F8FFFF,0x318DFFFF,-,-,Retain the low comparison bits through retail's t5 lifetime,,,false
+init_B1B0,func_1000C934,0x0B8,0x53000004,0x51A00005,-,-,Branch over the optional update using retail's comparison register and target,,,false
+init_B1B0,func_1000C934,0x0BC,0x8FA2003C,0x3C018000,-,-,Materialize the return flag in retail's no-update branch delay slot,,,false
+init_B1B0,func_1000C934,0x0C4,0x01A02825,0xAFA5003C,-,-,Preserve the pending value in the update-call delay slot,,,false
+init_B1B0,func_1000C934,0x0C8,0x8FA2003C,0x8FA5003C,-,-,Reload the updated value through retail's a1 lifetime,,,false
+init_B1B0,func_1000C934,0x0D0,0x8FBF002C,0x00A11025,-,-,Combine the pending value with the high return flag,,,false
+init_B1B0,func_1000C934,0x0D4,0x0041C825,0x8FBF002C,-,-,Restore the return address after forming the result,,,false
+init_B1B0,func_1000C934,0x0D8,0x03201025,0x27BD0040,-,-,Restore the stack before the shared return jump,,,false
+init_B1B0,func_1000C934,0x0E0,0x27BD0040,0x00000000,-,-,Restore retail's empty return delay slot,,,false
