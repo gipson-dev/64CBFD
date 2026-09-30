@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init dual-framebuffer clear byte-matched
+
+- `func_10003ACC` packs its RGB inputs as RGBA5551, clears framebuffer zero
+  with a scalar loop, and clears framebuffer one with a remainder loop plus a
+  four-pixel bulk loop.
+- The recovered semantic C uses the retail no-unroll object profile.
+  Fifty-seven stale-checked guards normalize IDO's closed register allocation
+  and loop schedule across the 65-word slot.
+- The linked and retail spans share SHA-256
+  `90aebf408fc334f16c47bd3141064d4bb1434fd80b2e9a8aa9581b524559822f`.
+  Totals are **3,099 / 5,457 (56.79%)** overall and
+  **416 / 488 (85.25%)** in Init. See
+  [Working Note 600](WORKING_NOTES/600-init-dual-framebuffer-clear-match-20260930.md).
+
 ### Init actor sound dispatcher byte-matched
 
 - `func_10010630` ignores inactive actors, dispatches camera-owned sounds

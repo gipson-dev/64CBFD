@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init actor sound dispatcher matched).**
-The current linked checkpoint is `3098 / 5457 (56.77%)` exact C functions,
-with no address-drift blockers and 2,359 genuinely different C functions.
+**Active (2026-09-30, Init dual-framebuffer clear matched).**
+The current linked checkpoint is `3099 / 5457 (56.79%)` exact C functions,
+with no address-drift blockers and 2,358 genuinely different C functions.
 Init is
-`415 / 488 (85.04%)` exact, with 73 genuinely different C rows. Game is
+`416 / 488 (85.25%)` exact, with 72 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -830,7 +830,12 @@ inactive actors, dispatches camera-owned sounds through `func_10010F30`, and
 otherwise submits a positional sound record with the actor refresh callback.
 Fifty-four guards preserve the retail saved-value and relocation schedule. See
 [Working Note 599](WORKING_NOTES/599-init-actor-sound-dispatcher-match-20260930.md).
-Resume the Init queue from its remaining 73 genuinely different C rows.
+Init `func_10003ACC` now matches all 65 retail words. Its recovered C clears
+both framebuffers with the packed RGBA5551 value, retaining the scalar first
+fill and remainder-plus-four-pixel second fill. Fifty-seven guards normalize
+the closed register and loop schedule. See
+[Working Note 600](WORKING_NOTES/600-init-dual-framebuffer-clear-match-20260930.md).
+Resume the Init queue from its remaining 72 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

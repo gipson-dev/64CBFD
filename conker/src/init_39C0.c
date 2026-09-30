@@ -4,7 +4,7 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_10003ACC(s32 arg0, s32 arg1, s32 arg2);
+void func_10003ACC(s32 arg0, s32 arg1, s32 arg2);
 /* End generated placeholder declarations. */
 
 void func_100039C0(void) {
@@ -26,7 +26,52 @@ void func_100039C0(void) {
     osViSwapBuffer((void *)D_8002AAE8[D_800BE9C0 ^ 1]);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_39C0/func_10003ACC.s. */
-s32 func_10003ACC(s32 arg0, s32 arg1, s32 arg2) {
-    return 0;
+void func_10003ACC(s32 arg0, s32 arg1, s32 arg2) {
+    s16 *framebuffer;
+    s16 *remainderCursor;
+    s16 *bulkCursor;
+    s32 count;
+    s32 index;
+    s32 remainder;
+
+    framebuffer = (s16 *)D_8002AAE8[0];
+    index = 0;
+    count = (D_800BE620 * D_800BE624 * 2) >> 1;
+    if (framebuffer != NULL) {
+        if (count > 0) {
+            do {
+                index++;
+                framebuffer++;
+                framebuffer[-1] = ((arg0 << 8) & 0xF800) |
+                                  ((arg1 << 3) & 0x07C0) |
+                                  ((arg2 >> 2) & 0x003E) | 1;
+            } while (index < count);
+            index = 0;
+        }
+
+        if (count > 0) {
+            arg0 = ((arg0 << 8) & 0xF800) |
+                   ((arg1 << 3) & 0x07C0) |
+                   ((arg2 >> 2) & 0x003E) | 1;
+            remainder = count & 3;
+            if (remainder != 0) {
+                remainderCursor = (s16 *)D_8002AAE8[1] + index;
+                do {
+                    index++;
+                    *remainderCursor++ = arg0;
+                } while (remainder != index);
+            }
+            if (index != count) {
+                bulkCursor = (s16 *)D_8002AAE8[1] + index;
+                do {
+                    index += 4;
+                    bulkCursor[1] = arg0;
+                    bulkCursor[2] = arg0;
+                    bulkCursor[3] = arg0;
+                    bulkCursor += 4;
+                    bulkCursor[-4] = arg0;
+                } while (index != count);
+            }
+        }
+    }
 }

@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,098 / 5,457 (56.77%) | 0 | 2,359 |
-| Init | 415 / 488 (85.04%) | 0 | 73 |
+| Total | 3,099 / 5,457 (56.79%) | 0 | 2,358 |
+| Init | 416 / 488 (85.25%) | 0 | 72 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -910,7 +910,11 @@ end-to-end gameplay acceptance.
    updater `func_1000C934` is byte-exact through 18 guarded value-register and
    epilogue scheduling words. The 60-word actor sound dispatcher
    `func_10010630` is byte-exact through 54 guarded saved-value, argument, and
-   relocation scheduling words.
+   relocation scheduling words. The 65-word dual-framebuffer clear
+   `func_10003ACC` is byte-exact through 57 guarded register-allocation and
+   loop-scheduling words after recovering its scalar first fill and
+   remainder-plus-four-pixel second fill; see
+   [Working Note 600](WORKING_NOTES/600-init-dual-framebuffer-clear-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
