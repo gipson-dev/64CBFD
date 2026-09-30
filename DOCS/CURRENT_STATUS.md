@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,026 / 5,463 (55.39%) | 0 | 2,437 |
+| Total | 3,027 / 5,463 (55.41%) | 0 | 2,436 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,448 / 4,789 (51.12%) | 0 | 2,341 |
+| Game | 2,449 / 4,789 (51.14%) | 0 | 2,340 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -344,6 +344,11 @@ words after recovering its four-argument ABI, three-way classification, and
 class-zero delegation. The complete routine emits directly from C with no
 guards; see
 [Working Note 522](WORKING_NOTES/522-game-collision-classifier-wrapper-match-20260929.md).
+Game secondary collision-classifier wrapper `func_15046F84` is byte-exact
+across all 32 words after recovering its matching four-argument dispatch and
+`func_15046D00` class-zero path. The complete routine emits directly from C
+with no guards; see
+[Working Note 523](WORKING_NOTES/523-game-secondary-collision-classifier-wrapper-match-20260929.md).
 
 ## Verified build state
 
@@ -670,8 +675,8 @@ end-to-end gameplay acceptance.
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. Continue with adjacent 32-word Game `func_15046F84`,
-   the corresponding classifier wrapper.
+   allocation boundary. Continue with 32-word Game `func_1507EBB8`, the next
+   ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
