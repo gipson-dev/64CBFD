@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game indexed resource-chain teardown byte-matched
+
+- `func_150C0A48` now follows the owner's signed-index entry chain, releases
+  each resource, and reloads the table before reading the next index.
+- An explicit integer-base entry address preserves retail's commutative
+  operand order. All 30 words emit directly from C with no guards.
+- The linked and retail 120-byte spans share SHA-256
+  `f4396ce3f3be8f1c133a1b70e34bd11fe5c83a539813888e6a90f801573fbddc`.
+- Totals are **3,019 / 5,463 (55.26%)** overall and
+  **2,441 / 4,789 (50.97%)** in Game, with no address-drift rows. See
+  [Working Note 515](WORKING_NOTES/515-game-indexed-resource-chain-teardown-match-20260929.md).
+
 ### Game owner-payload object spawn byte-matched
 
 - `func_150BDE90` now builds its eight-byte owner payload, creates the fixed

@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,018 / 5,463 (55.24%) | 0 | 2,445 |
+| Total | 3,019 / 5,463 (55.26%) | 0 | 2,444 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,440 / 4,789 (50.95%) | 0 | 2,349 |
+| Game | 2,441 / 4,789 (50.97%) | 0 | 2,348 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -306,6 +306,11 @@ words after recovering its eight-byte local payload, fixed object-creation
 request, and conditional copy to object offset `0x28`. The complete routine
 emits directly from C with no guards; see
 [Working Note 514](WORKING_NOTES/514-game-owner-payload-object-spawn-match-20260929.md).
+Game indexed resource-chain teardown `func_150C0A48` is byte-exact across all
+30 words after recovering its signed-index table walk, resource releases,
+and post-release owner table reloads. The complete routine emits directly
+from C with no guards; see
+[Working Note 515](WORKING_NOTES/515-game-indexed-resource-chain-teardown-match-20260929.md).
 
 ## Verified build state
 
@@ -628,9 +633,9 @@ end-to-end gameplay acceptance.
    `func_15133DE8` record/owner match callback is now converted from its
    zero-return placeholder and byte-exact directly from C after retaining the
    record identifier lifetime, with no guarded words. The current queue has
-   advanced through `func_150BDE90`, whose complete 31-word owner-payload
-   object spawn now matches directly from C. Continue with 30-word
-   `func_150C0A48`, the next ordinary Game candidate after the two
+   advanced through `func_150C0A48`, whose complete 30-word indexed
+   resource-chain teardown now matches directly from C. Continue with
+   31-word `func_151001B4`, the next ordinary Game candidate after the two
    parked 29-difference rows.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
