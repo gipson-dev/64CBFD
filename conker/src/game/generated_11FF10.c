@@ -3,14 +3,40 @@ extern u8 *D_800DBFF0;
 extern f32 D_800A1980;
 extern f32 D_800A1984;
 
+void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
+                    u8 arg5, s32 arg6, u8 arg7, s32 arg8);
+
+typedef struct {
+    u8 *owner;
+    u8 owner_id;
+    u8 state;
+    u8 pad6[2];
+    f32 value;
+    u8 mode;
+    u8 padD[3];
+} Generated11FF10Payload;
+
 /* Non-matching placeholders for the text-only asm slice asm/11FF10.s. */
 
 s32 func_150F2A60() {
     return 0;
 }
 
-s32 func_150F2C8C() {
-    return 0;
+void func_150F2C8C(u8 *arg0) {
+    Generated11FF10Payload payload;
+    u8 *object;
+
+    payload.owner = arg0;
+    payload.owner_id = arg0[0x3B];
+    payload.state = 0;
+    payload.value = 0.0f;
+    payload.mode = 0;
+
+    object = func_15149130(0x12C, -1, 0x5C, -1, 0, 0x44,
+                           sizeof(payload), 0xFF, 1);
+    if (object != NULL) {
+        memcpy(object + 0x28, &payload, sizeof(payload));
+    }
 }
 
 s32 func_150F2D14() {

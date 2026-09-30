@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game command-0x5C owner-payload allocator byte-matched
+
+- `func_150F2C8C` builds a 16-byte owner payload, allocates command `0x5C`
+  with allocator argument `0x44`, and copies the payload into a successful
+  allocation.
+- All 34 words and both call relocations emit directly from semantic C with
+  no expected-word guards.
+- The linked and retail spans share SHA-256
+  `4c4e9b52574cae5bba65ecb5a0911f8b0ec9895325756631c3dc9a13157fe95b`.
+  Totals are **3,080 / 5,461 (56.40%)** overall and
+  **2,501 / 4,788 (52.23%)** in Game. See
+  [Working Note 578](WORKING_NOTES/578-game-command-5c-owner-payload-allocator-match-20260930.md).
+
 ### Game object-entry matrix builder byte-matched
 
 - `func_150F2518` selects an object entry, builds its rotation matrix, writes
