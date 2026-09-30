@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init handwritten osInvalDCache restored
+
+- `osInvalDCache` is restored from an empty C placeholder to its original
+  43-word cache body plus one retail padding word.
+- The complete 176-byte slot is independently byte-exact and retains the
+  original range checks, endpoint handling, cache operations, and fallback.
+- The rebuilt and retail spans share SHA-256
+  `7ea4c6bffed307fe915ab8ef0ae37d86482e17b132eb99598f82ad5cbca40a71`.
+  The row is now correctly classified as raw assembly, leaving **398 / 490
+  (81.22%)** byte-exact Init C rows and 92 different C rows. See
+  [Working Note 581](WORKING_NOTES/581-init-handwritten-invaldcache-restoration-20260930.md).
+
 ### Init handwritten osMapTLB restored
 
 - `osMapTLB` is restored from an empty C placeholder to its original 45-word

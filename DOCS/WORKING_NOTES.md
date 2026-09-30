@@ -88,13 +88,13 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, handwritten osMapTLB restored).**
-The current linked checkpoint is `3081 / 5460 (56.43%)` exact C functions,
-with no address-drift blockers and 2,379 genuinely different C functions.
+**Active (2026-09-30, handwritten osInvalDCache restored).**
+The current linked checkpoint is `3081 / 5459 (56.44%)` exact C functions,
+with no address-drift blockers and 2,378 genuinely different C functions.
 Init is
-`398 / 491 (81.06%)` exact, with 93 genuinely different C rows. Game is
+`398 / 490 (81.22%)` exact, with 92 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
-contains 581 raw-assembly functions, so much of the percentage increase over
+contains 582 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
 
@@ -743,7 +743,11 @@ cycle. Init `osMapTLB` is restored from its empty C placeholder to original
 handwritten CP0/TLB assembly, and its complete 48-word slot matches retail.
 See
 [Working Note 580](WORKING_NOTES/580-init-handwritten-maptlb-restoration-20260930.md).
-Resume the Init queue from its remaining 93 genuinely different C rows.
+Init `osInvalDCache` is likewise restored from an empty C placeholder to its
+original handwritten cache routine, and its complete 44-word slot matches
+retail. See
+[Working Note 581](WORKING_NOTES/581-init-handwritten-invaldcache-restoration-20260930.md).
+Resume the Init queue from its remaining 92 genuinely different C rows.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

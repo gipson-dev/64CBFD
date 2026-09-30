@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,460 / 6,041 (90.38%) | 3,081 / 5,460 (56.43%) | 0 | 2,379 |
-| Init | 491 / 538 (91.26%) | 398 / 491 (81.06%) | 0 | 93 |
+| Total | 5,459 / 6,041 (90.37%) | 3,081 / 5,459 (56.44%) | 0 | 2,378 |
+| Init | 490 / 538 (91.08%) | 398 / 490 (81.22%) | 0 | 92 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -387,6 +387,9 @@ one load schedule; see
 Init `osMapTLB` is restored from its empty C placeholder to original
 handwritten CP0/TLB assembly. Its complete 192-byte slot matches retail; see
 [Working Note 580](WORKING_NOTES/580-init-handwritten-maptlb-restoration-20260930.md).
+Init `osInvalDCache` is restored from its empty C placeholder to original
+handwritten cache assembly. Its complete 176-byte slot matches retail; see
+[Working Note 581](WORKING_NOTES/581-init-handwritten-invaldcache-restoration-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
