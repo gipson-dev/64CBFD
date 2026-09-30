@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,087 / 5,457 (56.57%) | 0 | 2,370 |
-| Init | 488 / 538 (90.71%) | 404 / 488 (82.79%) | 0 | 84 |
+| Total | 5,457 / 6,041 (90.33%) | 3,088 / 5,457 (56.59%) | 0 | 2,369 |
+| Init | 488 / 538 (90.71%) | 405 / 488 (82.99%) | 0 | 83 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -418,6 +418,10 @@ The Init released-node recycler `func_1000A348` now matches all 216 bytes.
 Nineteen guarded words preserve its closed manager-register and reusable-list
 splice schedule; see
 [Working Note 589](WORKING_NOTES/589-init-released-node-recycler-match-20260930.md).
+The Init actor-coordinate refresh callback `func_1000EE70` now matches all
+208 bytes. Eighteen guarded words preserve one closed temporary-register
+rotation across its actor identity, orientation, and coordinate update; see
+[Working Note 590](WORKING_NOTES/590-init-actor-coordinate-refresh-callback-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

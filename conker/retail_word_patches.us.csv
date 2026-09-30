@@ -167,6 +167,24 @@ init_EB00,func_100100E0,0x58,0xAC68001C,0xAC48001C,-,-,Store the replacement thi
 init_EB00,func_100100E0,0x5C,0x24630030,0x24420030,-,-,Advance retail's v0 cursor after a matching record,,,false
 init_EB00,func_100100E0,0x60,0x0069082B,0x0049082B,-,-,Compare retail's v0 cursor with the end pointer,,,false
 init_EB00,func_100100E0,0x68,0x8C780014,0x8C580014,-,-,Prefetch the next first key through retail's v0 cursor,,,false
+init_EB00,func_1000EE70,0x030,0x8C780000,0x8C790000,-,-,Keep actor state in retail's t9 lifetime,,,false
+init_EB00,func_1000EE70,0x034,0x8CA2001C,0x8CAF001C,-,-,Load the record key through retail's t7 lifetime,,,false
+init_EB00,func_1000EE70,0x038,0x1300001A,0x1320001A,-,-,Test actor state through retail's t9 lifetime,,,false
+init_EB00,func_1000EE70,0x03C,0x304F00FF,0x31F800FF,-,-,Mask the record key into retail's t8 lifetime,,,false
+init_EB00,func_1000EE70,0x040,0x9079003B,0x9068003B,-,-,Load the actor identifier through retail's t0 lifetime,,,false
+init_EB00,func_1000EE70,0x044,0x15F90017,0x15180017,-,-,Compare the actor identifier through retail's temporary cycle,,,false
+init_EB00,func_1000EE70,0x04C,0x8C680184,0x8C690184,-,-,Load the actor orientation bits through retail's t1 lifetime,,,false
+init_EB00,func_1000EE70,0x050,0x8FAC002C,0x8FAD002C,-,-,Load the orientation output through retail's t5 lifetime,,,false
+init_EB00,func_1000EE70,0x058,0x000848C2,0x000950C2,-,-,Shift actor orientation through retail's t1 lifetime,,,false
+init_EB00,func_1000EE70,0x05C,0x312A0030,0x314B0030,-,-,Mask actor orientation into retail's t3 lifetime,,,false
+init_EB00,func_1000EE70,0x060,0x000A5840,0x000B6040,-,-,Scale actor orientation through retail's t4 lifetime,,,false
+init_EB00,func_1000EE70,0x064,0xAD8B0000,0xADAC0000,-,-,Store actor orientation through retail's t5 pointer,,,false
+init_EB00,func_1000EE70,0x070,0x440E3000,0x440F3000,-,-,Move the first truncated coordinate through retail's t7 lifetime,,,false
+init_EB00,func_1000EE70,0x078,0xA4AE0002,0xA4AF0002,-,-,Store the first coordinate through retail's t7 lifetime,,,false
+init_EB00,func_1000EE70,0x084,0x44185000,0x44195000,-,-,Move the second truncated coordinate through retail's t9 lifetime,,,false
+init_EB00,func_1000EE70,0x08C,0xA4B80004,0xA4B90004,-,-,Store the second coordinate through retail's t9 lifetime,,,false
+init_EB00,func_1000EE70,0x098,0x44089000,0x44099000,-,-,Move the third truncated coordinate through retail's t1 lifetime,,,false
+init_EB00,func_1000EE70,0x0A0,0xA4A80006,0xA4A90006,-,-,Store the third coordinate through retail's t1 lifetime,,,false
 init_EB00,func_10010E78,0x050,0x00590019,0x03220019,-,-,Preserve retail's commutative fixed-point multiply operand order,,,false
 debugger,func_16001390,0x13C,0x00095040,0x00193C03,,,Schedule row sign extension before stride scaling
 debugger,func_16001390,0x140,0x00193C03,0x00095040,,,Schedule stride scaling after row sign extension

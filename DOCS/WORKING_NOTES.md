@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init released-node recycler matched).**
-The current linked checkpoint is `3087 / 5457 (56.57%)` exact C functions,
-with no address-drift blockers and 2,370 genuinely different C functions.
+**Active (2026-09-30, Init actor-coordinate refresh callback matched).**
+The current linked checkpoint is `3088 / 5457 (56.59%)` exact C functions,
+with no address-drift blockers and 2,369 genuinely different C functions.
 Init is
-`404 / 488 (82.79%)` exact, with 84 genuinely different C rows. Game is
+`405 / 488 (82.99%)` exact, with 83 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -782,7 +782,13 @@ inactive records, unlinks them from the active list, and splices them into the
 reusable list. Nineteen guards preserve one closed manager-register and
 free-list scheduling cycle. See
 [Working Note 589](WORKING_NOTES/589-init-released-node-recycler-match-20260930.md).
-Resume the Init queue from its remaining 84 genuinely different C rows.
+Init `func_1000EE70` now matches all 52 retail words. Its recovered C validates
+the actor and caller gate, refreshes the record's orientation class and three
+coordinates for a matching identity, and otherwise performs the original
+handle-liveness fallback. Eighteen guards preserve one closed temporary-
+register cycle. See
+[Working Note 590](WORKING_NOTES/590-init-actor-coordinate-refresh-callback-match-20260930.md).
+Resume the Init queue from its remaining 83 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

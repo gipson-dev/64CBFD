@@ -132,9 +132,34 @@ s32 func_1000ECCC(struct251 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 a
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000EDA0.s. */
 void func_1000EDA0(void *arg0, s32 arg1, s32 arg2, s32 arg3, void *arg6) {
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000EE70.s. */
-s32 func_1000EE70(void *arg0, s32 arg1, void *arg2, s32 arg3, s32 arg4, void *arg5) {
+s32 func_1000EE70(struct15 *arg0, s32 arg1, s32 *arg2, s32 arg3, s32 arg4, s32 *arg5) {
+    struct127 *actor;
+    s32 key;
+
+    actor = (struct127 *)arg0->unk18;
+    if (actor == NULL) {
+        goto return_one;
+    }
+    if (*arg2 == 0) {
+        goto return_one;
+    }
+
+    key = arg0->unk1C & 0xFF;
+    if ((actor->interaction_state != 0) &&
+        (actor->unique_id == key)) {
+        *arg5 = (((u32)actor->unk184 >> 3) & 0x30) << 1;
+        *(s16 *)((u8 *)arg0 + 2) = actor->x_position;
+        *(s16 *)((u8 *)arg0 + 4) = actor->y_position;
+        *(s16 *)((u8 *)arg0 + 6) = actor->z_position;
+        return 0;
+    }
+    if (func_1000F44C(arg0->unk24) != 0) {
+        goto return_one;
+    }
     return 0;
+
+return_one:
+    return 1;
 }
 
 s32 func_1000EF40(struct57 *arg0, struct57 *arg1, s32 *arg2, s32 arg3, s32 arg4, s32 arg5, u16 *arg6) {

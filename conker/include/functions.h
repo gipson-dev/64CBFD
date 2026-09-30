@@ -972,7 +972,7 @@ s32 func_1000E588(s32 arg0, s32 arg1, s32 arg2);
 //func_1000EC24
 //func_1000ECCC
 void func_1000EDA0(void *arg0, s32 arg1, s32 arg2, s32 arg3, void *arg6);
-s32  func_1000EE70(void *arg0, s32 arg1, void *arg2, s32 arg3, s32 arg4, void *arg5);
+s32 func_1000EE70(struct15 *arg0, s32 arg1, s32 *arg2, s32 arg3, s32 arg4, s32 *arg5);
 //func_1000EFB4
 //func_1000F1A8
 //func_1000F44C

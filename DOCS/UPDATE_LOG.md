@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init actor-coordinate refresh callback byte-matched
+
+- `func_1000EE70` validates an event record's actor and caller gate, refreshes
+  the orientation class and three truncated coordinates for a matching actor,
+  and otherwise performs the original handle-liveness fallback.
+- Thirty-four of 52 words emit directly from semantic C. Eighteen
+  stale-checked guards preserve one closed temporary-register rotation.
+- The linked and retail spans share SHA-256
+  `529b4111534c32467e43c8889c4f475252494d74e82022ca94bbcae6090cc1ad`.
+  Totals are **3,088 / 5,457 (56.59%)** overall and
+  **405 / 488 (82.99%)** in Init. See
+  [Working Note 590](WORKING_NOTES/590-init-actor-coordinate-refresh-callback-match-20260930.md).
+
 ### Init released-node recycler byte-matched
 
 - `func_1000A348` releases inactive active-list records, repairs both list
