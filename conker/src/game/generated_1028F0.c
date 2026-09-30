@@ -2,8 +2,29 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1028F0.s. */
 
-s32 func_150D5440() {
-    return 0;
+void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
+                    u8 arg5, s32 arg6, u8 arg7, s32 arg8);
+
+typedef struct {
+    u8 *owner;
+    u8 owner_id;
+    u8 pad5[3];
+    f32 value;
+} OwnerPayload;
+
+void func_150D5440(u8 *arg0, u8 arg1, s32 arg2) {
+    OwnerPayload payload;
+    u8 *object;
+
+    payload.owner = arg0;
+    payload.owner_id = arg0[0x3B];
+    payload.value = 0.0f;
+
+    object = func_15149130(0x12C, -1, 0x38, -1, 0, 0x28,
+                           sizeof(payload), arg1, arg2);
+    if (object != NULL) {
+        memcpy(object + 0x28, &payload, sizeof(payload));
+    }
 }
 
 s32 func_150D54C8() {

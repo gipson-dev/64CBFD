@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game command-0x38 owner-payload allocator byte-matched
+
+- `func_150D5440` builds a 12-byte owner payload, allocates command `0x38`
+  with subtype `0x28`, and copies the payload into a successful allocation.
+- All 34 words emit directly from semantic C with no guards. The linked and
+  retail spans share SHA-256
+  `797214ab3db1016376fa9239eb154a0fe954d86f45ae7fbe845a7ba3e71f34fa`.
+- Totals are **3,077 / 5,461 (56.34%)** overall and
+  **2,498 / 4,788 (52.17%)** in Game. See
+  [Working Note 575](WORKING_NOTES/575-game-command-38-owner-payload-allocator-match-20260930.md).
+
 ### Game fixed-point coordinate interpolator byte-matched
 
 - `func_150B73F0` computes two signed 16.16 fixed-point interpolations between
