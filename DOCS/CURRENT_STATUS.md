@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,036 / 5,463 (55.57%) | 0 | 2,427 |
+| Total | 3,037 / 5,463 (55.59%) | 0 | 2,426 |
 | Init | 397 / 493 (80.53%) | 0 | 96 |
-| Game | 2,458 / 4,789 (51.33%) | 0 | 2,331 |
+| Game | 2,459 / 4,789 (51.35%) | 0 | 2,330 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -45,7 +45,7 @@ handwritten 40-word CP0/TLB routine `func_16003650`, independently matches all
 are accounted for and exact; 181 / 181 is only the C-matcher denominator.
 
 The percentage increase from the old July matching snapshot remains primarily
-denominator driven: the exact count is now 3,036, while
+denominator driven: the exact count is now 3,037, while
 508 functions moved from C back to assembly. The paired event-swap pass added
 two byte-exact functions and the debugger rectangle-fill, float-formatter,
 glyph-blitter, `_Printf`, context-display, memory-view, and debugger-main-loop
@@ -394,6 +394,9 @@ Game randomized RGBA initializer `func_15152ABC` is byte-exact across all 31
 words after recovering its unsigned random remainders, five-entry RGB table,
 byte-width index, and alpha range. It emits directly from C with no guards; see
 [Working Note 532](WORKING_NOTES/532-game-randomized-rgba-initializer-match-20260929.md).
+Game descriptor-copy allocator `func_15157898` now matches all 32 words
+directly from C; see
+[Working Note 533](WORKING_NOTES/533-game-descriptor-copy-allocation-wrapper-match-20260929.md).
 
 ## Verified build state
 
@@ -720,7 +723,7 @@ end-to-end gameplay acceptance.
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. Continue with 32-word Game `func_15157898`, the next
+   allocation boundary. Continue with 32-word Game `func_15172CA8`, the next
    ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly

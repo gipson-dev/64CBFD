@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game descriptor-copy allocation wrapper byte-matched
+
+- `func_15157898` now forwards the recovered constructor arguments and copies
+  its 56-byte descriptor to a successfully allocated object.
+- All 32 words emit directly from C; the 128-byte spans share SHA-256
+  `2b6f5e119f028f88171da469e55663785d9b29990910dd5d10dc1f2de93a07db`.
+- Totals are **3,037 / 5,463 (55.59%)** overall and
+  **2,459 / 4,789 (51.35%)** in Game. See
+  [Working Note 533](WORKING_NOTES/533-game-descriptor-copy-allocation-wrapper-match-20260929.md).
+
 ### Game randomized RGBA initializer byte-matched
 
 - `func_15152ABC` now selects one of five RGB triplets and generates an alpha

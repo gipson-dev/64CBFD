@@ -53,7 +53,8 @@ s32 func_15156FE4(s32 arg0) {
     func_15169824(arg0);
 }
 
-s32 func_15157010() {
+s32 func_15157010(s32 arg0, s32 arg1, f32 arg2, s32 arg3, s32 arg4,
+                   s32 arg5, u8 arg6, s32 arg7) {
     return 0;
 }
 
@@ -93,8 +94,18 @@ s32 func_15157860(u8 *arg0) {
     return 1;
 }
 
-s32 func_15157898() {
-    return 0;
+/* Note 533: descriptor-copy allocation wrapper. */
+s32 func_15157898(s32 arg0, void *arg1, s32 arg2, f32 arg3, s32 arg4,
+                   s32 arg5, u8 *arg6, u8 arg7, s32 arg8) {
+    s32 result;
+
+    result = func_15157010(arg0, arg2, arg3, arg4, arg5,
+                           (s32) (arg6 + 0x38), arg7, arg8);
+    if (result == 0) {
+        return 0;
+    }
+    memcpy((void *) (result + 0x120), arg1, 0x38);
+    return result;
 }
 
 s32 func_15157918() {
