@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 3,069 / 5,462 (56.19%) | 0 | 2,393 |
-| Init | 493 / 538 (91.64%) | 398 / 493 (80.73%) | 0 | 95 |
+| Total | 5,461 / 6,041 (90.40%) | 3,069 / 5,461 (56.20%) | 0 | 2,392 |
+| Init | 492 / 538 (91.45%) | 398 / 492 (80.89%) | 0 | 94 |
 | Game | 4,788 / 5,321 (89.98%) | 2,490 / 4,788 (52.01%) | 0 | 2,298 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -332,6 +332,10 @@ directly from semantic C. It preserves the mode-6 availability gate, normalizes
 the disabled selector pair, and releases the retained resource when the mode
 is cleared. See
 [Working Note 566](WORKING_NOTES/566-game-global-mode-state-updater-match-20260930.md).
+Init `__osProbeTLB` is restored from its false zero-return C placeholder to
+the original handwritten CP0/TLB implementation. Its complete 192-byte slot,
+including two padding words, independently matches retail; see
+[Working Note 567](WORKING_NOTES/567-init-handwritten-probetlb-restoration-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

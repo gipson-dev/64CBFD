@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Handwritten Init TLB probe restored
+
+- `__osProbeTLB` is restored from its false zero-return C placeholder to the
+  original handwritten CP0/TLB implementation, preserving the EntryHi save,
+  TLB probe/read hazards, page selection, valid-bit test, address translation,
+  and EntryHi restore.
+- Its complete 48-word, 192-byte slot independently matches retail, including
+  two padding words. Both spans have SHA-256
+  `349227b84b51cb246abaf9de4bf56eba78054d85575e1bfb09acfdb8d1bc0c28`.
+- The exact-C numerator remains 3,069. Correcting the ownership denominator
+  yields **3,069 / 5,461 (56.20%)** overall and
+  **398 / 492 (80.89%)** in Init. See
+  [Working Note 567](WORKING_NOTES/567-init-handwritten-probetlb-restoration-20260930.md).
+
 ### Game global mode-state updater byte-matched
 
 - `func_151D66F0` now preserves the mode-6 availability gate, normalizes the

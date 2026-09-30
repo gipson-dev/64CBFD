@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,462 / 6,041 (90.42%) | 579 | 1,930,804 / 2,256,728 (85.56%) |
-| Init | 493 / 538 (91.64%) | 45 | 148,168 / 164,048 (90.32%) |
+| Total | 5,461 / 6,041 (90.40%) | 580 | 1,930,612 / 2,256,728 (85.55%) |
+| Init | 492 / 538 (91.45%) | 46 | 147,976 / 164,048 (90.20%) |
 | Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,069 / 5,462 (56.19%) | 0 | 2,393 |
-| Init | 398 / 493 (80.73%) | 0 | 95 |
+| Total | 3,069 / 5,461 (56.20%) | 0 | 2,392 |
+| Init | 398 / 492 (80.89%) | 0 | 94 |
 | Game | 2,490 / 4,788 (52.01%) | 0 | 2,298 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -846,9 +846,10 @@ end-to-end gameplay acceptance.
    the same schedule guards. The 35-word midpoint-timestep integrator
    `func_151CEA20` is now byte-exact through 21 guarded FP scheduling words.
    The 34-word global mode-state updater `func_151D66F0` is now byte-exact
-   directly from C. Review Init `__osProbeTLB`, the next matcher row, for its
-   expected handwritten CP0/TLB ownership before selecting the next ordinary
-   C target.
+   directly from C. Init `__osProbeTLB` is restored to its original
+   handwritten CP0/TLB ownership, and its complete 48-word slot independently
+   matches retail. Continue with 44-word Game `func_15013D38`, the next
+   ordinary C row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
