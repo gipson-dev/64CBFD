@@ -2,6 +2,8 @@
 
 extern s32 D_800BE9E4;
 extern u8 *D_800DBFF0;
+extern u8 *D_800DBEF4;
+extern u8 D_800C35EA;
 extern f32 D_800A31E0;
 
 /* Non-matching placeholders for the text-only asm slice asm/142560.s. */
@@ -11,6 +13,7 @@ u8 *func_151149AC(u32 arg0);
 u8 *func_15083E90(s32 arg0);
 f32 func_150484A0(f32 arg0, f32 arg1);
 s32 func_15195FB0();
+s32 func_15022B08();
 
 f32 func_151172D8(u8 *arg0, f32 arg1);
 f32 func_15117518(u8 *arg0, f32 arg1);
@@ -278,8 +281,16 @@ void func_1511A6FC(u8 *arg0) {
     func_1511A494(arg0, arg0 + 0x80, arg0 + 0x84);
 }
 
-s32 func_1511A738() {
-    return 0;
+void func_1511A738(u8 *arg0) {
+    if (D_800C35EA == 1) {
+        if (func_15022B08((arg0 - D_800DBEF4) / 0xA0, 0) != 0) {
+            *(s32 *) (arg0 + 0x7C) = 0;
+            *(f32 *) (arg0 + 0x18) = 0.0f;
+        }
+    }
+
+    func_151162D4(arg0);
+    func_1511A494(arg0, arg0 + 0x80, arg0 + 0x84);
 }
 
 void func_1511A7C0(u8 *arg0) {

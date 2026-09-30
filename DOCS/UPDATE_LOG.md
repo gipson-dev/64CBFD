@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game mode-gated object cleanup wrapper byte-matched
+
+- `func_1511A738` conditionally resolves its object-table index in mode one,
+  clears the object's state and float fields when that lookup succeeds, and
+  always runs the shared update and position-forwarding helpers.
+- All 34 words / 136 bytes emit directly from C with no guards. Linked
+  SHA-256 is
+  `a1053a069258527eb633d4a5874bdd5c7cdac0c558ad4075cc3587436922a264`.
+- Totals are **3,057 / 5,462 (55.97%)** overall and
+  **2,478 / 4,788 (51.75%)** in Game. See
+  [Working Note 554](WORKING_NOTES/554-game-mode-gated-object-cleanup-wrapper-match-20260930.md).
+
 ### Game two-tag record index scan byte-matched
 
 - `func_1511A410` scans eight-byte records to find the first two entries whose
