@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,071 / 5,461 (56.24%) | 0 | 2,390 |
+| Total | 3,072 / 5,461 (56.25%) | 0 | 2,389 |
 | Init | 398 / 492 (80.89%) | 0 | 94 |
-| Game | 2,492 / 4,788 (52.05%) | 0 | 2,296 |
+| Game | 2,493 / 4,788 (52.07%) | 0 | 2,295 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -851,8 +851,10 @@ end-to-end gameplay acceptance.
    matches retail. The 44-word signed-position effect dispatcher
    `func_15013D38` is now byte-exact through five guarded setup-schedule words.
    The 33-word table-record dispatcher `func_15024130` is byte-exact through
-   one guarded commutative address-add word. Continue with 34-word Game
-   `func_15041480`, the next ordinary C row.
+   one guarded commutative address-add word. The 34-word byte-table index
+   lookup `func_15041480` is byte-exact directly from C under its recovered
+   no-unroll profile. Continue with 35-word Game `func_15076768`, the next
+   ordinary C row.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

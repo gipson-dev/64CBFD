@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game byte-table index lookup byte-matched
+
+- `func_15041480` now narrows its input to an unsigned byte, scans all 80
+  entries of `D_800848D0` four at a time, and returns the matching index or 80.
+- All 34 words emit directly from semantic C under an object-specific
+  `-Wo,-loopunroll,0` profile. No expected-word guards are used. The linked
+  and retail spans share SHA-256
+  `dffbcfa8fd45b23a77815de868084b779498276451ac20ede147c70a42466fc1`.
+- Totals are **3,072 / 5,461 (56.25%)** overall and
+  **2,493 / 4,788 (52.07%)** in Game. See
+  [Working Note 570](WORKING_NOTES/570-game-byte-table-index-lookup-match-20260930.md).
+
 ### Game table-record dispatcher byte-matched
 
 - `func_15024130` now walks `D_800C3D50` in 12-byte record strides and calls

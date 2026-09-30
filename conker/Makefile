@@ -165,6 +165,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_E4070.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loop
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_49D30.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_C9EC0.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_6E770.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 # GLOBAL_ASM processing accepts optimization modes, not IDO's -Wo options.
 # Keep loop unrolling disabled for the compiler when restoring targeting asm.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: OPT_FLAGS := -O2 -g3
