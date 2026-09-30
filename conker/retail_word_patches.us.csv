@@ -2462,3 +2462,9 @@ game_A28B0,func_15076768,0x054,0xE7A60048,0xE7A40044,-,-,Store the actor X posit
 game_A28B0,func_15076768,0x058,0xE7A40044,0xC4A8001C,-,-,Load the actor Z position after the first two position stores,,,false
 game_A28B0,func_15076768,0x05C,0xC4A8001C,0xE7A8004C,-,-,Store the actor Z position immediately after loading it,,,false
 game_A28B0,func_15076768,0x064,0xE7A8004C,0x27A40020,-,-,Form the descriptor address in the helper-call delay slot,,,false
+generated_AC030,func_1507F4C0,0x000,0x27BDFFE0,0x27BDFFD8,-,-,Preserve retail's 0x28-byte frame for the two post-call live values,,,false
+generated_AC030,func_1507F4C0,0x050,0xAFA3001C,0xAFA30020,-,-,Spill the selected base in retail's upper local slot,,,false
+generated_AC030,func_1507F4C0,0x058,0xAFA40020,0xAFA4001C,-,-,Spill the selected range in retail's lower local slot,,,false
+generated_AC030,func_1507F4C0,0x05C,0x8FA40020,0x8FA4001C,-,-,Reload the selected range from retail's lower local slot,,,false
+generated_AC030,func_1507F4C0,0x060,0x8FA3001C,0x8FA30020,-,-,Reload the selected base from retail's upper local slot,,,false
+generated_AC030,func_1507F4C0,0x080,0x27BD0020,0x27BD0028,-,-,Restore retail's 0x28-byte frame in the epilogue,,,false

@@ -7,6 +7,9 @@ extern u8 *D_800D154C;
 extern u8 *D_80086BA0[];
 extern u8 *D_80086C24[];
 extern u8 D_8009BBF0[];
+extern s32 D_800BE9F0;
+
+s32 func_150ADA20(void);
 
 void func_1507EB80(u8 *arg0, s32 *arg1, u8 arg2) {
     if (*arg1 + 1 < 0x28) {
@@ -89,8 +92,26 @@ s32 func_1507F454(void) {
     return 0;
 }
 
-s32 func_1507F4C0() {
-    return 0;
+s32 func_1507F4C0(s32 arg0) {
+    s32 base;
+
+    if (arg0 == 0) {
+        base = 180;
+        arg0 = 60;
+    } else {
+        if (D_800BE9F0 == 0x31) {
+            return 0;
+        }
+        base = 0;
+        if (arg0 == 1) {
+            base = 60;
+            arg0 = 60;
+        } else {
+            arg0 = 30;
+        }
+    }
+
+    return (func_150ADA20() % (u32) arg0) + base;
 }
 
 s32 func_1507F54C() {

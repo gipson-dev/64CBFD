@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game random-duration selector byte-matched
+
+- `func_1507F4C0` selects mode-dependent random duration ranges and returns
+  zero for nonzero modes while global state `0x31` is active.
+- Twenty-nine of 35 words emit directly from semantic C. Six stale-checked
+  guards preserve retail's frame and two post-call stack slots. The linked and
+  retail spans share SHA-256
+  `55ec7967c98d5eabe2b7d0293f09b16178590c39b8639308c777852b2ed1d4d2`.
+- Totals are **3,074 / 5,461 (56.29%)** overall and
+  **2,495 / 4,788 (52.11%)** in Game. See
+  [Working Note 572](WORKING_NOTES/572-game-random-duration-selector-match-20260930.md).
+
 ### Game scripted-position effect dispatcher byte-matched
 
 - `func_15076768` now handles mode zero by forwarding the current actor to
