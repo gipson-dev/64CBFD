@@ -32,9 +32,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-29:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,044 / 5,463 (55.72%) | 0 | 2,419 |
+| Total | 3,045 / 5,463 (55.74%) | 0 | 2,418 |
 | Init | 398 / 493 (80.73%) | 0 | 95 |
-| Game | 2,465 / 4,789 (51.47%) | 0 | 2,324 |
+| Game | 2,466 / 4,789 (51.49%) | 0 | 2,323 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
@@ -423,6 +423,10 @@ Game indexed constructor wrapper `func_1501D1D4` now matches all 33 words
 directly from semantic C after restoring its seven-argument constructor call,
 two local outputs, and success/failure slot update; see
 [Working Note 540](WORKING_NOTES/540-game-indexed-constructor-wrapper-match-20260929.md).
+Game indexed 64-bit flag query `func_1501D2C4` now matches all 33 words
+directly from semantic C, including retail's `__ll_lshift` helper ABI and
+split high/low-word test; see
+[Working Note 541](WORKING_NOTES/541-game-indexed-64-bit-flag-query-match-20260929.md).
 
 ## Verified build state
 
@@ -749,9 +753,9 @@ end-to-end gameplay acceptance.
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
    allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. The 33-word indexed constructor wrapper
-   `func_1501D1D4` is now byte-exact directly from C with no guards. Continue
-   with adjacent 33-word Game `func_1501D2C4`, the next ordinary placeholder.
+   allocation boundary. The 33-word indexed 64-bit flag query
+   `func_1501D2C4` is now byte-exact directly from C with no guards. Continue
+   with 32-word Game `func_1503B7C0`, the next ordinary placeholder.
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

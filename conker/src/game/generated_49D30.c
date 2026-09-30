@@ -83,7 +83,13 @@ void func_1501D258(s32 index, s32 bit) {
     }
 }
 
-s32 func_1501D2C4() {
+s32 func_1501D2C4(s32 index, s32 bit) {
+    if (D_800C3670 != 0) {
+        return 1;
+    }
+    if (D_800C3A60[index] & (1LL << bit)) {
+        return 1;
+    }
     return 0;
 }
 

@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-29
 
+### Game indexed 64-bit flag query byte-matched
+
+- `func_1501D2C4` restores the global override and indexed
+  `D_800C3A60[index] & (1LL << bit)` query.
+- The complete 132-byte function emits directly from semantic C without guard
+  rows. Linked and retail spans share SHA-256
+  `75bd476d39efde90ed25537c9acdc86d0d2ef7744c55d1c4340db96d33a8ad54`.
+- Totals are **3,045 / 5,463 (55.74%)** overall and
+  **2,466 / 4,789 (51.49%)** in Game. See
+  [Working Note 541](WORKING_NOTES/541-game-indexed-64-bit-flag-query-match-20260929.md).
+
 ### Game indexed constructor wrapper byte-matched
 
 - `func_1501D1D4` restores the seven-argument `func_1502B6BC` call, its two
