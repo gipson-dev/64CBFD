@@ -545,13 +545,19 @@ It rejects the comparison record and records without backing data, then
 accepts the seven supported type-byte values. See
 [Working Note 548](WORKING_NOTES/548-game-record-type-eligibility-predicate-match-20260930.md).
 
+Game `func_150FDD10` now matches all 36 retail words. After refreshing global
+state, it scans 25 object records when mode byte `D_800C35EA` is one and calls
+`func_150ED638(record, 0x14, 0x14)` for each type-`0x28` record. Five guards
+normalize one closed `s1`/`s2` allocation cycle. See
+[Working Note 549](WORKING_NOTES/549-game-type-28-object-sweep-match-20260930.md).
+
 Keep `func_15015F40` parked behind its unresolved 38-entry indirect-table
 ownership. Keep handwritten live-register fragment `func_150A76F0` in the
 raw-assembly queue rather than modeling it as an ordinary C ABI. Keep Init
 `func_1000FF90` parked at its documented allocation boundary and
 `func_15106E78` parked on its 30-versus-32-word caller-saved allocation cycle.
 Keep `func_150413FC` parked on its five-versus-four saved-register allocation
-cycle. Continue with 36-word Game `func_150FDD10`, the next ordinary row.
+cycle. Continue with 33-word Game `func_1510B32C`, the next ordinary row.
 
 The paired event functions `func_151906E0` and `func_151C1814`, all 181
 converted debugger functions, game follow-up `func_15135480`, the final four

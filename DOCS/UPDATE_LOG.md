@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Game type-0x28 object sweep byte-matched
+
+- `func_150FDD10` refreshes state and, in mode one, scans 25 object records to
+  dispatch each type-`0x28` record through `func_150ED638`.
+- All 36 words / 144 bytes match through five stale-checked guards for one
+  closed `s1`/`s2` allocation cycle. Linked SHA-256 is
+  `56ee5e91620600813e41fa84f7931a7b38a7fecfc30d645b6c37ac1f89edf5fc`.
+- Totals are **3,052 / 5,462 (55.88%)** overall and
+  **2,473 / 4,788 (51.65%)** in Game. See
+  [Working Note 549](WORKING_NOTES/549-game-type-28-object-sweep-match-20260930.md).
+
 ### Game record-type eligibility predicate byte-matched
 
 - `func_150EC3D4` rejects the comparison record and records without backing
