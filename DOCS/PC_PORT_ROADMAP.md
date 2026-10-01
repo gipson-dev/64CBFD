@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,150 / 5,456 (57.73%) | 0 | 2,306 |
-| Init | 487 / 538 (90.52%) | 467 / 487 (95.89%) | 0 | 20 |
+| Total | 5,456 / 6,041 (90.32%) | 3,151 / 5,456 (57.75%) | 0 | 2,305 |
+| Init | 487 / 538 (90.52%) | 468 / 487 (96.10%) | 0 | 19 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,12 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init audio-library bootstrap `func_10008180` now matches all 214 retail
+words. It initializes the heap and synthesizer, loads the bank and sequence
+resources, rounds the 150 sequence lengths, creates the three sequence
+players, and initializes the sound player; see
+[Working Note 653](WORKING_NOTES/653-init-audio-library-bootstrap-match-20261001.md).
 
 The Init `bcopy` slot is restored to its original handwritten assembly. Its
 optimized overlap-safe forward and backward paths, alignment handling, and

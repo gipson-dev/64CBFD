@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,150 / 5,456 (57.73%) | 0 | 2,306 |
-| Init | 467 / 487 (95.89%) | 0 | 20 |
+| Total | 3,151 / 5,456 (57.75%) | 0 | 2,305 |
+| Init | 468 / 487 (96.10%) | 0 | 19 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init audio-library bootstrap `func_10008180` now matches its complete
+214-word retail span. It initializes the audio heap and synthesizer, loads and
+relocates the bank and sequence metadata, normalizes all 150 sequence lengths,
+creates three sequence players, and configures the sound player. The semantic
+C emits 213 words; 64 stale-checked rows, including one checked insertion and
+10 relocation-aware moves, normalize IDO's frame, local, loop, and player
+setup allocation. See
+[Working Note 653](WORKING_NOTES/653-init-audio-library-bootstrap-match-20261001.md).
 
 The Init `bcopy` slot is restored to its original handwritten assembly instead
 of the non-matching simplified C substitute. Direct comparison confirms all

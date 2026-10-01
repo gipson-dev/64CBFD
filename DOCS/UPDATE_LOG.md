@@ -16,6 +16,24 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init audio-library bootstrap byte-matched
+
+- `func_10008180` now replaces its zero-return placeholder with the full audio
+  bootstrap: heap and synthesizer setup, bank loading and relocation, sequence
+  table loading, 150 even-length normalizations, three sequence players, and
+  final sound-player configuration.
+- The semantic C emits 213 words. Sixty-four function-scoped, stale-checked
+  rows restore the 214-word retail schedule, including one checked insertion
+  for the sequence-loop pointer update and 10 relocation-aware rows for the
+  reordered sequence and player globals.
+- Direct comparison reports zero differences across all 856 bytes. Both spans
+  share SHA-256
+  `e5edcb6039f9b8e816dacd1dea8996ed458a81fa7a68f9f342ef13de781a5dbf`.
+  Totals are **3,151 / 5,456 (57.75%)** overall and
+  **468 / 487 (96.10%)** in Init, with zero address drift and 19 different
+  Init C rows. See
+  [Working Note 653](WORKING_NOTES/653-init-audio-library-bootstrap-match-20261001.md).
+
 ### Init handwritten bcopy restored
 
 - The `0x10023A10..0x10023D20` `bcopy` slot now links the splitter-extracted

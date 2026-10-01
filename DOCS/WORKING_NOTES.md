@@ -88,19 +88,22 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init object-aware audio dispatcher matched).**
-The current linked checkpoint is `3123 / 5457 (57.23%)` exact C functions,
-with no address-drift blockers and 2,334 genuinely different C functions.
+**Active (2026-10-01, Init audio-library bootstrap matched).**
+The current linked checkpoint is `3151 / 5456 (57.75%)` exact C functions,
+with no address-drift blockers and 2,305 genuinely different C functions.
 Init is
-`440 / 488 (90.16%)` exact, with 48 genuinely different C rows. Game is
+`468 / 487 (96.10%)` exact, with 19 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
-contains 584 raw-assembly functions, so much of the percentage increase over
+contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-Start subsequent byte-matching or conversion work in a new focused commit.
+`func_10008180` now matches all 214 retail words and is ready to bank in its
+own focused commit. After that checkpoint, resume Init at `func_100049E0`, the
+next highest-difference C row in the last measured ranking. See
+[Working Note 653](WORKING_NOTES/653-init-audio-library-bootstrap-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

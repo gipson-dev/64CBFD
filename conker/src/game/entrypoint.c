@@ -4,7 +4,7 @@
 #include "variables.h"
 
 void func_15003570(void);
-s32 func_10008180(void);
+void func_10008180(void);
 void func_15006234(void);
 void func_15008A60(void);
 void func_15015920(s32);
