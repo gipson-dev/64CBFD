@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init pending note-end query matched).**
-The current linked checkpoint is `3109 / 5457 (56.97%)` exact C functions,
-with no address-drift blockers and 2,348 genuinely different C functions.
+**Active (2026-09-30, Init controller-pak read packet builder matched).**
+The current linked checkpoint is `3110 / 5457 (56.99%)` exact C functions,
+with no address-drift blockers and 2,347 genuinely different C functions.
 Init is
-`426 / 488 (87.30%)` exact, with 62 genuinely different C rows. Game is
+`427 / 488 (87.50%)` exact, with 61 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -889,7 +889,12 @@ voice still needs forced termination, and returns late note-end events to the
 free list. Twenty replacement guards and one checked insertion preserve the
 closed relink/return schedule. See
 [Working Note 610](WORKING_NOTES/610-init-pending-note-end-query-match-20260930.md).
-Resume the Init queue from its remaining 62 genuinely different C rows.
+Init `__osPackRamReadData` now matches all 91 retail words. Restoring the
+opening 16-word PIF RAM clear realigns the canonical SDK packet builder under
+the retail `-O1` profile. The complete function and retained slot padding emit
+directly with no guards. See
+[Working Note 611](WORKING_NOTES/611-init-controller-pak-read-packet-builder-match-20260930.md).
+Resume the Init queue from its remaining 61 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

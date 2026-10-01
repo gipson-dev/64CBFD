@@ -73,6 +73,10 @@ void __osPackRamReadData(int channel, u16 address)
     int i;
 
     ptr = (u8 *)__osPfsPifRam.ramarray;
+    for (i = 0; i < 16; i++)
+    {
+        ((u32 *)&__osPfsPifRam)[i] = 0;
+    }
     __osPfsPifRam.pifstatus = CONT_CMD_EXE;
     ramreadformat.dummy = CONT_CMD_NOP;
     ramreadformat.txsize = CONT_CMD_READ_MEMPACK_TX;

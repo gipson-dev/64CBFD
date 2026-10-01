@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init controller-pak read packet builder byte-matched
+
+- `__osPackRamReadData` restores Conker's opening 16-word PIF RAM clear before
+  the canonical SDK read-request packet construction.
+- Establishing the PIF pointer before a signed literal-16 loop reproduces all
+  91 retail words directly from C and retained padding. No expected-word
+  guards, insertions, or omissions are used.
+- The linked and retail spans share SHA-256
+  `9cb0dfb5ca12bc56ef6b89440bad89924d74a4cf6b4957f1236eb3cd03c40400`.
+  Totals are **3,110 / 5,457 (56.99%)** overall and
+  **427 / 488 (87.50%)** in Init. See
+  [Working Note 611](WORKING_NOTES/611-init-controller-pak-read-packet-builder-match-20260930.md).
+
 ### Init pending note-end query byte-matched
 
 - `func_1001ADA4` restores the SDK allocated-event scan, accumulated event

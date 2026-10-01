@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,109 / 5,457 (56.97%) | 0 | 2,348 |
-| Init | 426 / 488 (87.30%) | 0 | 62 |
+| Total | 3,110 / 5,457 (56.99%) | 0 | 2,347 |
+| Init | 427 / 488 (87.50%) | 0 | 61 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -967,6 +967,11 @@ end-to-end gameplay acceptance.
    and allocated-to-free-list transfer. Twenty replacement guards and one
    checked insertion normalize the closed relink/return tail; see
    [Working Note 610](WORKING_NOTES/610-init-pending-note-end-query-match-20260930.md).
+   The 91-word controller-pak read packet builder `__osPackRamReadData` is
+   byte-exact after restoring Conker's opening 16-word PIF RAM clear. Its full
+   packet construction and retained slot padding emit directly from C with no
+   guards; see
+   [Working Note 611](WORKING_NOTES/611-init-controller-pak-read-packet-builder-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
