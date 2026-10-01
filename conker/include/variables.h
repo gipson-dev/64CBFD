@@ -129,7 +129,7 @@ extern struct07  *D_8002BA44;
 
 extern s16  D_8002BC10[];
 extern s16  D_8002BD0E[];
-extern s64  D_8002BD10;
+extern u64  D_8002BD10;
 extern s32  D_8002BD14;
 extern s32  D_8002BD18;
 extern s32  D_8002BD20; // init ok?

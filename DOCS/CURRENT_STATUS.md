@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,139 / 5,457 (57.52%) | 0 | 2,318 |
-| Init | 456 / 488 (93.44%) | 0 | 32 |
+| Total | 3,140 / 5,457 (57.54%) | 0 | 2,317 |
+| Init | 457 / 488 (93.65%) | 0 | 31 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init common system initializer `__osInitialize_common` now matches its
+complete 168-word retail span. It restores CPU/FPU setup, PIF initialization,
+the four exception vectors, cache and RDB setup, clock-rate adjustment, the
+cold-reset NMI clear, and the 64DD Leo interrupt probe. See
+[Working Note 641](WORKING_NOTES/641-init-common-system-initializer-match-20261001.md).
 
 The Init sound-slot dispatcher `func_10010BE8` now matches its complete
 164-word retail span. It validates and reuses caller handles, scans the

@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,139 / 5,457 (57.52%) | 0 | 2,318 |
-| Init | 488 / 538 (90.71%) | 456 / 488 (93.44%) | 0 | 32 |
+| Total | 5,457 / 6,041 (90.33%) | 3,140 / 5,457 (57.54%) | 0 | 2,317 |
+| Init | 488 / 538 (90.71%) | 457 / 488 (93.65%) | 0 | 31 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,12 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init common system initializer `__osInitialize_common` now matches all 168
+retail words. It restores the CPU/FPU, PIF, exception-vector, cache, RDB,
+clock-rate, cold-reset, and 64DD interrupt setup needed before higher-level
+guest initialization; see
+[Working Note 641](WORKING_NOTES/641-init-common-system-initializer-match-20261001.md).
 
 The Init sound-slot dispatcher `func_10010BE8` now matches all 164 retail
 words. It restores handle reuse, free-slot selection, generation updates,

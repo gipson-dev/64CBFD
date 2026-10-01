@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init common system initializer byte-matched
+
+- `__osInitialize_common` replaces its empty placeholder with the recovered
+  CPU/FPU setup, PIF initialization, exception-vector installation, cache and
+  RDB setup, clock-rate adjustment, cold-reset NMI clear, and 64DD Leo probe.
+- Sixty-nine of 168 linked words emit directly from semantic C. Ninety-nine
+  stale-checked rows normalize IDO's remaining frame, register allocation,
+  copy, clock-store, and MMIO scheduling differences while preserving moved
+  relocations.
+- The linked and retail 672-byte spans share SHA-256
+  `853e38c0f3d587f1f6e1f70d7fb0c4b640fbfcaf314727d7975b757c1b8dc4e4`.
+  Totals are **3,140 / 5,457 (57.54%)** overall and
+  **457 / 488 (93.65%)** in Init. See
+  [Working Note 641](WORKING_NOTES/641-init-common-system-initializer-match-20261001.md).
+
 ### Init sound-slot dispatcher byte-matched
 
 - `func_10010BE8` replaces its zero-return placeholder with the recovered
