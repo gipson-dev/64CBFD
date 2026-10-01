@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init audio-record cleanup matched).**
-The current linked checkpoint is `3118 / 5457 (57.14%)` exact C functions,
-with no address-drift blockers and 2,339 genuinely different C functions.
+**Active (2026-09-30, Init controller-pak write transaction matched).**
+The current linked checkpoint is `3119 / 5457 (57.16%)` exact C functions,
+with no address-drift blockers and 2,338 genuinely different C functions.
 Init is
-`435 / 488 (89.14%)` exact, with 53 genuinely different C rows. Game is
+`436 / 488 (89.34%)` exact, with 52 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -938,7 +938,12 @@ and dispatches active eligible identifiers. Eighteen replacement guards and
 five relocation-only guards normalize its closed allocation and independent
 address lifetimes. See
 [Working Note 619](WORKING_NOTES/619-init-audio-record-cleanup-dispatch-match-20260930.md).
-Continue the Init queue from its remaining 53 genuinely different C rows.
+Init `__osContRamWrite` now matches all 140 retail words directly from C. The
+restored per-attempt PIF RAM initialization and status clear recover Conker's
+readback loop, while preserving the extracted channel error removes retail's
+redundant SDK reassignment. See
+[Working Note 620](WORKING_NOTES/620-init-controller-pak-write-transaction-match-20260930.md).
+Continue the Init queue from its remaining 52 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

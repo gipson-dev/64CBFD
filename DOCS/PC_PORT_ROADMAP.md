@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,118 / 5,457 (57.14%) | 0 | 2,339 |
-| Init | 488 / 538 (90.71%) | 435 / 488 (89.14%) | 0 | 53 |
+| Total | 5,457 / 6,041 (90.33%) | 3,119 / 5,457 (57.16%) | 0 | 2,338 |
+| Init | 488 / 538 (90.71%) | 436 / 488 (89.34%) | 0 | 52 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -562,6 +562,11 @@ The Init audio-record cleanup and dispatch routine `func_1000E17C` now
 matches its complete 376-byte slot. It invalidates finished eligible records,
 clears stale secondary links, and dispatches active eligible identifiers; see
 [Working Note 619](WORKING_NOTES/619-init-audio-record-cleanup-dispatch-match-20260930.md).
+The adjacent Init controller-pak write transaction `__osContRamWrite` now
+matches its complete 560-byte span directly from C. It restores the per-retry
+PIF RAM initialization and status clear while retaining channel errors without
+a redundant reassignment; see
+[Working Note 620](WORKING_NOTES/620-init-controller-pak-write-transaction-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

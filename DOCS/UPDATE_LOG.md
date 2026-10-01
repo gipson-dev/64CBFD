@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init controller-pak write transaction byte-matched
+
+- `__osContRamWrite` now restores Conker's 16-word PIF RAM initialization and
+  status clear before each controller-pak readback attempt.
+- Keeping the extracted channel error in `ret` removes a redundant SDK
+  reassignment and recovers retail's exact 140-word control flow. All words
+  emit directly from C with no guards, insertions, or omissions.
+- The linked and retail spans share SHA-256
+  `dee476f995e4d64d1d057744683116e6245a537352bd0740fc1a74e405c33adc`.
+  Totals are **3,119 / 5,457 (57.16%)** overall and
+  **436 / 488 (89.34%)** in Init. See
+  [Working Note 620](WORKING_NOTES/620-init-controller-pak-write-transaction-match-20260930.md).
+
 ### Init audio-record cleanup and dispatch byte-matched
 
 - `func_1000E17C` restores three passes over the twelve-record audio pool:

@@ -24,6 +24,11 @@ s32 __osContRamWrite(OSMesgQueue *mq, int channel, u16 address, u8 *buffer, int 
     osRecvMesg(mq, NULL, OS_MESG_BLOCK);
     do
     {
+        for (i = 0; i < 16; i++)
+        {
+            ((u32 *)&__osPfsPifRam)[i] = 0xFF;
+        }
+        __osPfsPifRam.pifstatus = 0;
         ret = __osSiRawStartDma(OS_READ, &__osPfsPifRam);
         osRecvMesg(mq, NULL, OS_MESG_BLOCK);
         ptr = (u8 *)&__osPfsPifRam;
@@ -46,10 +51,6 @@ s32 __osContRamWrite(OSMesgQueue *mq, int channel, u16 address, u8 *buffer, int 
                 }
                 ret = PFS_ERR_CONTRFAIL;
             }
-        }
-        else
-        {
-            ret = PFS_ERR_NOPACK;
         }
         if (ret != PFS_ERR_CONTRFAIL)
             break;

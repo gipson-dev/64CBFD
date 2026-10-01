@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,118 / 5,457 (57.14%) | 0 | 2,339 |
-| Init | 435 / 488 (89.14%) | 0 | 53 |
+| Total | 3,119 / 5,457 (57.16%) | 0 | 2,338 |
+| Init | 436 / 488 (89.34%) | 0 | 52 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1018,6 +1018,12 @@ end-to-end gameplay acceptance.
    address-completion schedule; five relocation-only guards retain the three
    independent retail address lifetimes. See
    [Working Note 619](WORKING_NOTES/619-init-audio-record-cleanup-dispatch-match-20260930.md).
+   The adjacent 140-word controller-pak write transaction
+   `__osContRamWrite` is byte-exact after restoring Conker's per-attempt
+   16-word PIF RAM initialization and status clear, then removing a redundant
+   error reassignment so the existing channel error remains authoritative.
+   Its complete routine emits directly from C with no guards; see
+   [Working Note 620](WORKING_NOTES/620-init-controller-pak-write-transaction-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
