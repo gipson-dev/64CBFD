@@ -14,7 +14,7 @@ s32 func_1000C7E8(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
 s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CDA0(u8 arg0, struct137 *arg1);
-s32 func_1000CEAC(s32 arg0);
+void func_1000CEAC(s32 arg0);
 s32 func_1000D2F8(s32 arg0, f32 arg1, f32 arg2, s32 arg3);
 s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
 void func_1000E17C(void);
@@ -26,6 +26,7 @@ extern struct137 D_800419A8_pass3[12];
 extern OSMesgQueue D_80041E58_pass1[3];
 extern OSMesgQueue D_80041E58_pass2[3];
 extern OSMesgQueue D_80041E58_pass3[3];
+extern u8 D_80041970[];
 extern u8 D_800C35E8;
 s32 func_15178EFC(s32 arg0);
 s32 func_151F2CDC(void);
@@ -835,9 +836,117 @@ s32 func_1000CDA0(u8 arg0, struct137 *arg1) {
     }
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000CEAC.s. */
-s32 func_1000CEAC(s32 arg0) {
-    return 0;
+void func_1000CEAC(s32 arg0) {
+    struct151 *entry;
+    OSMesg message;
+    OSMesgQueue *queue;
+    u16 *eventMasks;
+    s32 *eventModes;
+    s32 *timers;
+    s32 *steps;
+    u8 *flags;
+    u32 eventMask;
+    s32 period;
+    s32 i;
+
+    entry = D_800417B0[arg0];
+    if (entry == NULL) {
+        return;
+    }
+
+    eventModes = (s32 *)entry->unk8;
+    eventMasks = (u16 *)entry->unkC;
+    queue = &D_80041E58[arg0];
+    timers = &D_800418B0[arg0 * 16];
+    steps = &D_800417C0[arg0 * 16];
+    flags = &D_80041970[arg0 * 16];
+    D_800418AC[arg0] = 0;
+
+    while (osRecvMesg(queue, &message, OS_MESG_NOBLOCK) == 0) {
+        i = (u32)message & 7;
+        if (((u32)message & 0x10) != 0) {
+            if ((u32)i < 2U) {
+                message = (OSMesg)((u32)message >> 5);
+                if (D_80041890[arg0] != 0) {
+                    D_800418A0[arg0] = (u32)message - D_80041890[arg0];
+                }
+                D_80041890[arg0] = (u32)message;
+                D_80041880[arg0] = (u32)message;
+                period = 0x514;
+            }
+
+            eventMask = eventMasks[i];
+            if (eventMask != 0) {
+                D_800418AC[arg0] |= eventMask & 0x7F;
+                if (eventMask != 0) {
+                    i = 0;
+                    do {
+                        if ((eventMask & 1) != 0) {
+                            switch (eventModes[i]) {
+                                case 0:
+                                    flags[i] ^= 1;
+                                    timers[i] = 0x8000;
+                                    steps[i] = period;
+                                    break;
+                                case 1:
+                                    period >>= 1;
+                                    flags[i] ^= 1;
+                                    if (flags[i] == 0) {
+                                        timers[i] = period * D_800BE9E4 + 0x8000;
+                                    }
+                                    steps[i] = period;
+                                    break;
+                                case 2:
+                                    flags[i & 7] ^= 1;
+                                    flags[i | 8] = flags[i & 7] ^ 1;
+                                    timers[i & 7] = 0x8000;
+                                    timers[i | 8] = 0x8000;
+                                    steps[i] = 0;
+                                    break;
+                                default:
+                                    flags[i] |= 1;
+                                    timers[i] = period * D_800BE9E4;
+                                    steps[i] = period;
+                                    break;
+                            }
+                        }
+                        i++;
+                        eventMask >>= 1;
+                    } while ((i < 16) && (eventMask != 0));
+                }
+            }
+            D_800419A0 = arg0;
+        } else if ((D_80041F04 & 1) != 0) {
+            func_1507E7E4(D_800CC2D0, 0x44, 1, 0x12, 5);
+        }
+    }
+
+    entry = D_800417B0[arg0];
+    if (entry->unk30 == 0) {
+        D_800418AC[arg0] |= 0x80;
+        if (entry->unk15 == 0) {
+            func_10008F58(arg0 & 0xFF);
+            entry->unk15 = 1;
+        }
+    } else if (entry->unk15 == 1) {
+        func_100084D8(arg0 & 0xFF);
+        entry->unk15 = 0;
+    }
+
+    for (i = 0; i < 16; i += 2) {
+        if (timers[i] != 0) {
+            timers[i] -= steps[i] * D_800BE9E4;
+            if (timers[i] < 0) {
+                timers[i] = 0;
+            }
+        }
+        if (timers[i + 1] != 0) {
+            timers[i + 1] -= steps[i + 1] * D_800BE9E4;
+            if (timers[i + 1] < 0) {
+                timers[i + 1] = 0;
+            }
+        }
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000D2F8.s. */
 s32 func_1000D2F8(s32 arg0, f32 arg1, f32 arg2, s32 arg3) {

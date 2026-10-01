@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,155 / 5,456 (57.83%) | 0 | 2,301 |
-| Init | 472 / 487 (96.92%) | 0 | 15 |
+| Total | 3,156 / 5,456 (57.84%) | 0 | 2,300 |
+| Init | 473 / 487 (97.13%) | 0 | 14 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init channel event and timer updater `func_1000CEAC` now matches its
+complete 275-word retail span. It drains the selected channel queue, expands
+event masks into sixteen timer slots, applies the four event modes, updates
+the active voice state, and decrements paired timers with the current frame
+step. The semantic C has the exact retail extent; 230 stale-checked rows,
+including 41 relocation-aware rows, normalize IDO's closed allocation and
+layout differences. See
+[Working Note 658](WORKING_NOTES/658-init-channel-event-timer-update-match-20261001.md).
 
 The Init audio-runtime bootstrap `func_10008F90` now matches its complete
 271-word retail span. It installs audio callbacks, derives frame sample counts,

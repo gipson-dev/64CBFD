@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init channel event and timer updater byte-matched
+
+- `func_1000CEAC` now replaces its zero-return placeholder with the complete
+  per-channel queue drain, event-mask decoder, mode-specific flag/timer
+  updates, active-voice transition, and sixteen-slot countdown pass.
+- The semantic C emits the exact 275-word extent. Two hundred thirty
+  function-scoped, stale-checked rows normalize its closed compiler allocation
+  and layout differences; 41 rows preserve relocation changes explicitly.
+- Direct comparison reports zero differences across all 1,100 bytes. Both
+  spans share SHA-256
+  `3dd80b02cc6d85f41dedfcb2f18b5e7997d72a2f4370377755a16e75142f3618`.
+  Totals are **3,156 / 5,456 (57.84%)** overall and
+  **473 / 487 (97.13%)** in Init, with zero address drift and 14 different
+  Init C rows. See
+  [Working Note 658](WORKING_NOTES/658-init-channel-event-timer-update-match-20261001.md).
+
 ### Init audio-runtime bootstrap byte-matched
 
 - `func_10008F90` now replaces its zero-return placeholder with the audio

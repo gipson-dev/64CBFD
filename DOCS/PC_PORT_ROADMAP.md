@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,155 / 5,456 (57.83%) | 0 | 2,301 |
-| Init | 487 / 538 (90.52%) | 472 / 487 (96.92%) | 0 | 15 |
+| Total | 5,456 / 6,041 (90.32%) | 3,156 / 5,456 (57.84%) | 0 | 2,300 |
+| Init | 487 / 538 (90.52%) | 473 / 487 (97.13%) | 0 | 14 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,12 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init channel event and timer updater `func_1000CEAC` now matches all 275
+retail words. It restores queued event decoding, per-mode flag and timer
+updates, voice activation transitions, and the paired frame-step countdown;
+see
+[Working Note 658](WORKING_NOTES/658-init-channel-event-timer-update-match-20261001.md).
 
 The Init audio-runtime bootstrap `func_10008F90` now matches all 271 retail
 words. It restores callback installation, synthesis and stream pools, command
