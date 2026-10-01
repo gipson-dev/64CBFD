@@ -313,6 +313,10 @@ extern OSMesg      *D_80041708;
 
 extern struct151* D_800417B0[];
 extern u32 D_800417BC;
+extern s32 D_800417C0[];
+extern s32 D_80041880[];
+extern s32 D_80041890[];
+extern s32 D_800418A0[];
 extern u8 D_800418AC[];
 extern s32 D_800418B0[];
 

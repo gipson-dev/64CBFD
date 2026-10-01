@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,110 / 5,457 (56.99%) | 0 | 2,347 |
-| Init | 488 / 538 (90.71%) | 427 / 488 (87.50%) | 0 | 61 |
+| Total | 5,457 / 6,041 (90.33%) | 3,111 / 5,457 (57.01%) | 0 | 2,346 |
+| Init | 488 / 538 (90.71%) | 428 / 488 (87.70%) | 0 | 60 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -519,6 +519,12 @@ its complete 364-byte span. Restoring Conker's opening 16-word PIF RAM clear
 realigns the existing SDK packet-construction body; all 91 words emit directly
 from C and retained padding with no guards. See
 [Working Note 611](WORKING_NOTES/611-init-controller-pak-read-packet-builder-match-20260930.md).
+The Init channel-state initializer `func_1000E934` now matches its complete
+352-byte span. It restores the paired 16-entry channel-table fills, channel
+reset call, four state-array clears, record-table clear, and 12 sentinel
+stores. Twenty-nine stale-checked guards normalize only compiler scheduling;
+see
+[Working Note 612](WORKING_NOTES/612-init-channel-state-initializer-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

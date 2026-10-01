@@ -19,7 +19,7 @@ s32 func_1000D2F8();
 s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1000E17C();
 void func_1000E2F4(s32 arg0);
-s32 func_1000E934();
+void func_1000E934(void);
 /* End generated placeholder declarations. */
 
 struct151 *func_1000B1B0(s32 arg0) {
@@ -833,10 +833,76 @@ u8 func_1000E8F0(s32 arg0) {
     }
 }
 
-// initialising with grim loops
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000E934.s. */
-s32 func_1000E934() {
-    return 0;
+void func_1000E934(void) {
+    u32 channel;
+    s32 slot;
+    s32 value8000;
+    s32 value100;
+    s32 bound;
+    s32 record;
+    s32 *table8000;
+    s32 *table100;
+    struct151 **roots;
+    s32 *stateA0;
+    s32 *state90;
+    s32 *state80;
+    s32 *cursor8000;
+    s32 *cursor100;
+
+    value8000 = 0x8000;
+    value100 = 0x100;
+    bound = 16;
+    table8000 = D_800418B0;
+    table100 = D_800417C0;
+    roots = D_800417B0;
+    stateA0 = D_800418A0;
+    state90 = D_80041890;
+    state80 = D_80041880;
+
+    channel = 0;
+    do {
+        slot = 0;
+        cursor8000 = table8000;
+        cursor100 = table100;
+        do {
+            slot += 4;
+            cursor8000[1] = value8000;
+            cursor100[1] = value100;
+            cursor8000[2] = value8000;
+            cursor100[2] = value100;
+            cursor8000[3] = value8000;
+            cursor100[3] = value100;
+            cursor8000 += 4;
+            cursor100 += 4;
+            cursor8000[-4] = value8000;
+            cursor100[-4] = value100;
+        } while (slot != bound);
+
+        func_10008F24(channel);
+        channel++;
+        table8000 += 16;
+        table100 += 16;
+        roots++;
+        stateA0++;
+        state90++;
+        state80++;
+        roots[-1] = NULL;
+        stateA0[-1] = 0;
+        state90[-1] = 0;
+        state80[-1] = 0;
+    } while (channel < 3);
+
+    bzero(D_800419A8, sizeof(D_800419A8));
+    D_800419A0 = 0;
+
+    record = 0;
+    do {
+        record += 4;
+        D_800419A8[record - 3].unk4 = -1;
+        D_800419A8[record - 2].unk4 = -1;
+        D_800419A8[record - 1].unk4 = -1;
+        D_800419A8[record - 4].unk4 = -1;
+    } while ((struct137 *)D_80041E58 != &D_800419A8[record]);
 }
 
 u16 func_1000EA94(s32 arg0) {

@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init channel-state initializer byte-matched
+
+- `func_1000E934` restores the paired 16-entry channel-table fills, channel
+  reset call, four per-channel state clears, record-table clear, and all 12
+  `-1` sentinels.
+- Fifty-nine of 88 words emit directly from semantic C. Twenty-nine
+  stale-checked guards normalize only compiler scheduling, including six
+  moved low-address relocations; no words are inserted or omitted.
+- The linked and retail spans share SHA-256
+  `58dda18e23f8c45a173a8db40555b9ece0d587592ff475e28a82a03c5f3e866c`.
+  Totals are **3,111 / 5,457 (57.01%)** overall and
+  **428 / 488 (87.70%)** in Init. See
+  [Working Note 612](WORKING_NOTES/612-init-channel-state-initializer-match-20260930.md).
+
 ### Init controller-pak read packet builder byte-matched
 
 - `__osPackRamReadData` restores Conker's opening 16-word PIF RAM clear before

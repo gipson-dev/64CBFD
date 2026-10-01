@@ -2945,3 +2945,32 @@ init_1AAE0,func_1001ADA4,0x170,0x10000001,0x93A2000F,-,-,Normalize the recovered
 init_1AAE0,func_1001ADA4,0x174,0x00000000,0x10000001,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
 init_1AAE0,func_1001ADA4,0x178,0x03E00008,0x00000000,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
 init_1AAE0,func_1001ADA4,0x17C,0x27BD0020,0x03E00008,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,0x27BD0020,-,false
+init_B1B0,func_1000E934,0x044,0x24120010,0x24A50000,-,R_MIPS_LO16:D_80041880,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x048,0x26940000,0x27DE0000,R_MIPS_LO16:D_800418B0,R_MIPS_LO16:D_80041890,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x04C,0x26B50000,0x26F70000,R_MIPS_LO16:D_800417C0,R_MIPS_LO16:D_800418A0,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x054,0x26F70000,0x26B50000,R_MIPS_LO16:D_800418A0,R_MIPS_LO16:D_800417C0,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x058,0x27DE0000,0x26940000,R_MIPS_LO16:D_80041890,R_MIPS_LO16:D_800418B0,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x05C,0x24A50000,0x00009825,R_MIPS_LO16:D_80041880,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x060,0x00009825,0x24120010,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x078,0xAC500004,0x24840004,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x07C,0xAC710004,0xAC500004,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x080,0xAC500008,0xAC710004,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x084,0xAC710008,0xAC500008,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x088,0xAC50000C,0xAC710008,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x08C,0xAC71000C,0xAC50000C,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x090,0x24840004,0xAC71000C,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x094,0xAC500000,0x24420010,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x098,0x24420010,0x24630010,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x09C,0x24630010,0xAC50FFF0,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0B0,0xAFA50040,0xAFA50044,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0B4,0x8FA50040,0x8FA50044,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0B8,0xAEC00000,0x26730001,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0BC,0x26730001,0x2E610003,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0C0,0xAEE00000,0x26940040,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0C4,0xAFC00000,0x26B50040,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0C8,0x2E610003,0x26D60004,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0CC,0x26940040,0x26F70004,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0D0,0x26B50040,0x27DE0004,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0D4,0x26D60004,0xAEC0FFFC,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0D8,0x26F70004,0xAEE0FFFC,-,-,Normalize recovered initializer to retail scheduler order,,,false
+init_B1B0,func_1000E934,0x0DC,0x27DE0004,0xAFC0FFFC,-,-,Normalize recovered initializer to retail scheduler order,,,false

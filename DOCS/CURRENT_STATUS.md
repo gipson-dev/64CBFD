@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,110 / 5,457 (56.99%) | 0 | 2,347 |
-| Init | 427 / 488 (87.50%) | 0 | 61 |
+| Total | 3,111 / 5,457 (57.01%) | 0 | 2,346 |
+| Init | 428 / 488 (87.70%) | 0 | 60 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -972,6 +972,12 @@ end-to-end gameplay acceptance.
    packet construction and retained slot padding emit directly from C with no
    guards; see
    [Working Note 611](WORKING_NOTES/611-init-controller-pak-read-packet-builder-match-20260930.md).
+   The 88-word channel-state initializer `func_1000E934` is byte-exact after
+   recovering its paired table fills, per-channel reset and state clears,
+   record-table clear, and 12 sentinel stores. Twenty-nine stale-checked
+   guards normalize independent compiler scheduling, including six moved low
+   relocations; see
+   [Working Note 612](WORKING_NOTES/612-init-channel-state-initializer-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

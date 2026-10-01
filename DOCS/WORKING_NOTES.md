@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init controller-pak read packet builder matched).**
-The current linked checkpoint is `3110 / 5457 (56.99%)` exact C functions,
-with no address-drift blockers and 2,347 genuinely different C functions.
+**Active (2026-09-30, Init channel-state initializer matched).**
+The current linked checkpoint is `3111 / 5457 (57.01%)` exact C functions,
+with no address-drift blockers and 2,346 genuinely different C functions.
 Init is
-`427 / 488 (87.50%)` exact, with 61 genuinely different C rows. Game is
+`428 / 488 (87.70%)` exact, with 60 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -894,7 +894,13 @@ opening 16-word PIF RAM clear realigns the canonical SDK packet builder under
 the retail `-O1` profile. The complete function and retained slot padding emit
 directly with no guards. See
 [Working Note 611](WORKING_NOTES/611-init-controller-pak-read-packet-builder-match-20260930.md).
-Resume the Init queue from its remaining 61 genuinely different C rows.
+Init `func_1000E934` now matches all 88 retail words. Its recovered C fills
+the paired channel tables, resets four per-channel state arrays, clears the
+record table, and installs all 12 `-1` sentinels. Twenty-nine guarded words
+normalize only compiler scheduling, including six checked low relocations.
+See
+[Working Note 612](WORKING_NOTES/612-init-channel-state-initializer-match-20260930.md).
+Resume the Init queue from its remaining 60 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct
