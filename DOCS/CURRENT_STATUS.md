@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,128 / 5,457 (57.32%) | 0 | 2,329 |
-| Init | 445 / 488 (91.19%) | 0 | 43 |
+| Total | 3,129 / 5,457 (57.34%) | 0 | 2,328 |
+| Init | 446 / 488 (91.39%) | 0 | 42 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1084,6 +1084,11 @@ end-to-end gameplay acceptance.
    one word emit directly from semantic C; one stale-checked guard preserves a
    commutative equality branch's retail operand order. See
    [Working Note 629](WORKING_NOTES/629-init-packed-audio-state-transition-match-20261001.md).
+   The 125-word actor event/audio dispatcher `func_1000EFB4` is byte-exact
+   after recovering its actor-presence gates, terminated actor-ID scan,
+   position/result output, and three event-specific sound paths. Its complete
+   500-byte body emits directly from semantic C without word guards. See
+   [Working Note 630](WORKING_NOTES/630-init-actor-event-audio-dispatch-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

@@ -5,7 +5,8 @@
 
 /* Generated placeholder declarations. */
 s32 func_1000ECCC();
-s32 func_1000EFB4();
+s32 func_1000EFB4(struct57 *arg0, s32 arg1, s32 *arg2, struct11 *arg3,
+                  s32 arg4, s32 *arg5, u16 *arg6);
 s32 func_1000F568(s32 arg0, u32 arg1);
 s32 func_1000F6B8(s32 arg0, s16 arg1, s16 arg2, s16 arg3, void *arg4, s16 arg5, s16 arg6);
 void func_10011310(void);
@@ -196,9 +197,47 @@ s32 func_1000EF40(struct57 *arg0, struct57 *arg1, s32 *arg2, s32 arg3, s32 arg4,
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000EFB4.s. */
-s32 func_1000EFB4() {
-    return 0;
+s32 func_1000EFB4(struct57 *arg0, s32 arg1, s32 *arg2, struct11 *arg3,
+                  s32 arg4, s32 *arg5, u16 *arg6) {
+    struct127 *actor;
+    u16 *id;
+
+    actor = (struct127 *)arg0->unk18;
+    if (actor == NULL) {
+        goto return_one;
+    }
+    if (*arg2 == 0) {
+        goto return_one;
+    }
+
+    if (actor->interaction_state != 0) {
+        id = (u16 *)arg0->unk1C;
+        while (*id != 0) {
+            if ((actor->unk84.uh == *id) || ((arg0->unk10 & 1) == 0)) {
+                *arg5 = (((u32)actor->unk184 >> 3) & 0x30) << 1;
+                *(s16 *)((u8 *)arg0 + 2) = actor->x_position;
+                *(s16 *)((u8 *)arg0 + 4) = actor->y_position;
+                *(s16 *)((u8 *)arg0 + 6) = actor->z_position;
+                return 0;
+            }
+            id++;
+        }
+    }
+
+    if (*arg6 == 0xCA) {
+        func_10010F30(0xCB, *arg2, arg3->unk3, 0, *arg5);
+    } else if (*arg6 == 0x2CF) {
+        func_10010F30(0x2D7, *arg2, arg3->unk3, 0, *arg5);
+        func_10010F30((func_150ADA20() % 3U) + 0x2EB, 0x3E80,
+                      arg3->unk3, 0, *arg5);
+    } else if (*arg6 == 0x2D2) {
+        func_10010F30(0x2DA, *arg2, arg3->unk3, 0, *arg5);
+        func_10010F30((func_150ADA20() % 3U) + 0x2EB, 0x3E80,
+                      arg3->unk3, 0, *arg5);
+    }
+
+return_one:
+    return 1;
 }
 
 void func_1000F1A8(void) {

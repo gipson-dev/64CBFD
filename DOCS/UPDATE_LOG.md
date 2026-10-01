@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init actor event/audio dispatcher byte-matched
+
+- `func_1000EFB4` replaces its zero-return placeholder with the recovered
+  actor callback. It validates the active actor/value pair, scans a terminated
+  actor-ID list, returns the actor's packed state and truncated coordinates on
+  acceptance, and handles the `0xCA`, `0x2CF`, and `0x2D2` sound events.
+- The complete 125-word body emits directly from semantic C with no retail
+  word guards. The linked and retail 500-byte spans share SHA-256
+  `0835e229b55c402d6fac8e84fe5249cf3549d000c72e31a961e5247a09a77c09`.
+- Totals are **3,129 / 5,457 (57.34%)** overall and
+  **446 / 488 (91.39%)** in Init. See
+  [Working Note 630](WORKING_NOTES/630-init-actor-event-audio-dispatch-match-20261001.md).
+
 ### Init packed audio-state transition byte-matched
 
 - `func_1000C350` replaces its zero-return placeholder with the recovered

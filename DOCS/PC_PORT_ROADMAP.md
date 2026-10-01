@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,128 / 5,457 (57.32%) | 0 | 2,329 |
-| Init | 488 / 538 (90.71%) | 445 / 488 (91.19%) | 0 | 43 |
+| Total | 5,457 / 6,041 (90.33%) | 3,129 / 5,457 (57.34%) | 0 | 2,328 |
+| Init | 488 / 538 (90.71%) | 446 / 488 (91.39%) | 0 | 42 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -612,6 +612,11 @@ complete 480-byte span. It performs first-entry channel setup, handles the
 mode-3 and mode-6 transitions, synchronizes the level-0x1D state, and returns
 the updated packed value; see
 [Working Note 629](WORKING_NOTES/629-init-packed-audio-state-transition-match-20261001.md).
+The Init actor event/audio dispatcher `func_1000EFB4` now matches its complete
+500-byte span directly from semantic C. It scans the configured actor-ID list,
+returns packed actor state and coordinates on acceptance, and maps events
+`0xCA`, `0x2CF`, and `0x2D2` to their retail sound submissions; see
+[Working Note 630](WORKING_NOTES/630-init-actor-event-audio-dispatch-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
