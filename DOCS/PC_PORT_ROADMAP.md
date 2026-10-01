@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,107 / 5,457 (56.94%) | 0 | 2,350 |
-| Init | 488 / 538 (90.71%) | 424 / 488 (86.89%) | 0 | 64 |
+| Total | 5,457 / 6,041 (90.33%) | 3,108 / 5,457 (56.95%) | 0 | 2,349 |
+| Init | 488 / 538 (90.71%) | 425 / 488 (87.09%) | 0 | 63 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -502,6 +502,12 @@ folding, caller offset application, range-band folding, and return encoding;
 26 stale-checked guards normalize one closed FP/integer allocation and
 schedule. See
 [Working Note 608](WORKING_NOTES/608-init-planar-direction-encoder-match-20260930.md).
+The Init nearest-listener spatial query `func_100114D0` now matches its
+complete 340-byte span. Its recovered C restores the inclusive listener scan,
+unsigned squared-distance selection, relative-coordinate call setup, and
+fixed-point output scale; 50 stale-checked guards normalize one closed
+register allocation and call schedule. See
+[Working Note 609](WORKING_NOTES/609-init-nearest-listener-spatial-query-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

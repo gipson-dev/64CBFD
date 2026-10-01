@@ -820,8 +820,54 @@ s32 func_1001147C(u16 arg0) {
     return -1;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_100114D0.s. */
 void func_100114D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 *arg6, s32 *arg7, s32 *arg8) {
+    struct00 *entry;
+    struct00 *selected;
+    u32 count;
+    u32 limit;
+    u32 index;
+    u32 distance;
+    u32 nearest;
+    s32 dx;
+    s32 dy;
+    s32 dz;
+    s32 result;
+
+    count = D_80082FA0;
+    selected = D_80041F68;
+    if (count != 0) {
+        limit = count;
+        entry = D_80041F68;
+        nearest = -1;
+        index = 0;
+        do {
+            dx = arg0 - entry->unkC;
+            dy = arg1 - entry->unk10;
+            dz = arg2 - entry->unk14;
+            distance = (dx * dx) + (dy * dy) + (dz * dz);
+            if (distance < nearest) {
+                nearest = distance;
+                selected = entry;
+            }
+            entry++;
+            index++;
+        } while (index <= limit);
+    }
+
+    func_1000A420(
+        arg0 - selected->unkC,
+        arg1 - selected->unk10,
+        arg2 - selected->unk14,
+        selected->unk18,
+        arg0 - selected->unk0,
+        arg1 - selected->unk4,
+        arg2 - selected->unk8,
+        arg4,
+        arg5,
+        arg6,
+        &result,
+        arg8);
+    *arg7 = ((u32)result * arg3) >> 15;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10011624.s. */
 s32 func_10011624() {

@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,107 / 5,457 (56.94%) | 0 | 2,350 |
-| Init | 424 / 488 (86.89%) | 0 | 64 |
+| Total | 3,108 / 5,457 (56.95%) | 0 | 2,349 |
+| Init | 425 / 488 (87.09%) | 0 | 63 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -957,6 +957,11 @@ end-to-end gameplay acceptance.
    range bands, and encoded return value. Twenty-six guards normalize one
    closed FP/integer allocation and schedule; see
    [Working Note 608](WORKING_NOTES/608-init-planar-direction-encoder-match-20260930.md).
+   The 85-word nearest-listener spatial query `func_100114D0` is byte-exact
+   after recovering its inclusive entry scan, unsigned squared-distance
+   selection, coordinate setup for `func_1000A420`, and fixed-point output
+   scale. Fifty guards normalize one closed allocation and call schedule; see
+   [Working Note 609](WORKING_NOTES/609-init-nearest-listener-spatial-query-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

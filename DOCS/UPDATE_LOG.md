@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init nearest-listener spatial query byte-matched
+
+- `func_100114D0` restores the inclusive listener-table scan, unsigned
+  squared-distance selection, relative-coordinate setup for `func_1000A420`,
+  and fixed-point output scale.
+- Thirty-five of 85 words emit directly from semantic C and retained padding.
+  Fifty stale-checked guards normalize one closed register allocation and call
+  schedule; no instructions are inserted or removed.
+- The linked and retail spans share SHA-256
+  `eb9ee13fc4faf8a4bbbf4cfffbff5e90d51e1bd6d88e9c403f52ba91c0b67818`.
+  Totals are **3,108 / 5,457 (56.95%)** overall and
+  **425 / 488 (87.09%)** in Init. See
+  [Working Note 609](WORKING_NOTES/609-init-nearest-listener-spatial-query-match-20260930.md).
+
 ### Init planar direction encoder byte-matched
 
 - `func_1000B060` restores vector normalization, signed-angle folding,
