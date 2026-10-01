@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,138 / 5,457 (57.50%) | 0 | 2,319 |
-| Init | 455 / 488 (93.24%) | 0 | 33 |
+| Total | 3,139 / 5,457 (57.52%) | 0 | 2,318 |
+| Init | 456 / 488 (93.44%) | 0 | 32 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init sound-slot dispatcher `func_10010BE8` now matches its complete
+164-word retail span. It validates and reuses caller handles, scans the
+16-entry sound table for an available unreserved slot, advances the slot
+generation, applies the global effect mix, converts pitch cents, and starts
+the selected bank sound. See
+[Working Note 640](WORKING_NOTES/640-init-sound-slot-dispatcher-match-20261001.md).
 
 The Init boot loader `func_10001194` now matches its complete 163-word retail
 span. It restores memory clearing, framebuffer setup, compressed Game-image

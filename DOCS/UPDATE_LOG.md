@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init sound-slot dispatcher byte-matched
+
+- `func_10010BE8` replaces its zero-return placeholder with the recovered
+  handle reuse, free-slot scan, generation update, effect-mix adjustment,
+  cents-to-pitch conversion, and bank-sound allocation behavior.
+- Seventy-nine of 164 linked words emit directly from semantic C. Eighty-five
+  stale-checked rows normalize IDO's frame, register allocation, loop
+  induction, and scheduling differences while preserving moved relocations.
+- The linked and retail 656-byte spans share SHA-256
+  `3e184b650c03d5c5992a6ac1877b3246acd1a5c3a0a77807fcc6ab86dfdb7d4d`.
+  Totals are **3,139 / 5,457 (57.52%)** overall and
+  **456 / 488 (93.44%)** in Init. See
+  [Working Note 640](WORKING_NOTES/640-init-sound-slot-dispatcher-match-20261001.md).
+
 ### Init boot-loader thread byte-matched
 
 - `func_10001194` replaces its empty placeholder with the recovered memory

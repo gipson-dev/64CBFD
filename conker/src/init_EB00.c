@@ -9,6 +9,8 @@ s32 func_1000EFB4(struct57 *arg0, s32 arg1, s32 *arg2, struct11 *arg3,
                   s32 arg4, s32 *arg5, u16 *arg6);
 s32 func_1000F568(s32 arg0, u32 arg1);
 s32 func_1000F6B8(s32 arg0, s16 arg1, s16 arg2, s16 arg3, void *arg4, s16 arg5, s16 arg6);
+struct31 *func_10017438(void *bank, s16 soundNum, u16 vol, u8 pan, f32 pitch,
+                       u8 fxmix, u8 fxbus, struct31 **handle);
 void func_10011310(void);
 s32 func_10011624(struct15 *arg0, s32 *arg1, s32 arg2, s32 arg3);
 s32 func_10011BB8();
@@ -966,9 +968,83 @@ void func_10010AA8(struct127 *arg0) {
     arg0->unk8E = 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10010BE8.s. */
 u16 func_10010BE8(s32 arg0, s32 arg1, u16 arg2, u8 arg3, s16 arg4, u8 arg5, u8 arg6) {
-    return 0;
+    struct120 *slot;
+    u16 handle;
+    u16 next;
+    s32 index;
+    s32 soundId;
+    u8 mix;
+    volatile s32 normalizedHandle;
+
+    normalizedHandle = arg0 & 0xFFFF;
+    arg0 = normalizedHandle;
+    index = arg0 & 0xF;
+    slot = &D_800425E0[index];
+
+    if ((slot->unk0 == arg0) && (arg0 != 0)) {
+        if ((slot->unk8 != NULL) && (func_100173C4(&slot->unk8) != 0)) {
+            func_10017594(slot->unk8);
+            slot->unk8 = NULL;
+        }
+    } else {
+        if (((slot->unk8 != NULL) && (func_100173C4(&slot->unk8) != 0)) ||
+            ((slot->unk4 & 0x8000) != 0)) {
+            index = 0;
+            slot = &D_800425E0[0];
+            if (((slot->unk8 != NULL) && (func_100173C4(&slot->unk8) != 0)) ||
+                ((slot->unk4 & 0x8000) != 0)) {
+                while (++index < 16) {
+                    slot = &D_800425E0[index];
+                    if (((slot->unk8 == NULL) || (func_100173C4(&slot->unk8) == 0)) &&
+                        ((slot->unk4 & 0x8000) == 0)) {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    if (arg2 < 100) {
+        return 0;
+    }
+    if (index >= 16) {
+        handle = 0;
+        goto done;
+    }
+    if (arg1 == 0) {
+        return 0;
+    }
+
+    soundId = arg1 & 0x7FFF;
+    if (soundId >= 0x6E3) {
+        return 0;
+    }
+
+    slot = &D_800425E0[index];
+    handle = slot->unk2;
+    next = handle + 0x10;
+    slot->unk0 = handle;
+    if (next < 0x10) {
+        next += 0x10;
+    }
+    slot->unk2 = next;
+    slot->unk4 = arg1;
+    if (slot->unk8 != NULL) {
+        slot->unk8->unk54 = 5;
+    }
+
+    mix = arg5;
+    if (((mix & 0x7F) + (u8)D_80041FD8) < 0x80) {
+        mix += (u8)D_80041FD8;
+    } else {
+        mix |= 0x7F;
+    }
+
+    func_10017438((void *)D_8003E368, (s16)soundId, arg2, arg3,
+                  alCents2Ratio(arg4), mix, arg6, &slot->unk8);
+done:
+    return handle;
 }
 u16 func_10010E78(u16 arg0, s32 arg1, u16 arg2, s16 arg3, u8 arg4, s32 arg5, s16 arg6, s16 arg7, s16 arg8, s16 arg9, s16 argA) {
     s32 packed;
