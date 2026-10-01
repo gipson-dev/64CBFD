@@ -4,15 +4,24 @@
 
 /* Generated placeholder declarations. */
 s32 func_10008180();
-s32 func_10008CE8();
+s32 func_10008CE8(u8 arg0, s32 arg1);
 /* End generated placeholder declarations. */
 
 typedef struct {
   u8 pad0[0x760];
 } struct247; // something naudio related?
 
+typedef struct {
+  s32 unused;
+  s32 source;
+} SequenceMetadata;
+
 extern N_ALCSPlayer *D_8003C900[];
+extern u16           D_8003C910[];
+extern u16           D_8003CA3C[];
+extern u8           *D_8003CA48[];
 extern ALCSeq        D_8003CA58[];
+extern SequenceMetadata *D_8003CD40;
 extern struct247     D_8003CD48[];
 
 // FIXME: create header file for audio related functions
@@ -182,50 +191,46 @@ void func_10008C6C(u8 idx, u8 arg1) {
     func_100186DC(&D_8003CA58[idx], (u8 *)&D_8003CD48[idx] + (arg1 * 0xEC));
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_8180/func_10008CE8.s. */
-s32 func_10008CE8() {
+s32 func_10008CE8(u8 idx, s32 sequence) {
+    s32 source;
+    u32 i;
+
+    i = 0;
+    func_10018C60(D_8003C900[idx]);
+    while ((n_alCSPGetState(D_8003C900[idx]) != 0) && (i < 2000000)) {
+        i++;
+    }
+
+    if (i >= 2000000) {
+        func_10018C60(D_8003C900[idx]);
+        while ((n_alCSPGetState(D_8003C900[idx]) != 0) &&
+               (i < 4000000)) {
+            i++;
+        }
+    }
+
+    if (sequence != D_8003CA3C[idx]) {
+        if (D_8003CA48[idx] != NULL) {
+            func_10004074((s32)D_8003CA48[idx]);
+            D_8003CA48[idx] = NULL;
+        }
+
+        source = D_8003CD40[sequence].source;
+        if ((D_8003CA48[idx] =
+                 (u8 *)allocate_memory(D_8003C910[sequence], 0xFF, 2, 2)) ==
+            NULL) {
+            return -1;
+        }
+        func_10004514(source, D_8003CA48[idx],
+                      ALIGN16(D_8003C910[sequence]), 1);
+        D_8003CA3C[idx] = sequence;
+    }
+
+    n_alCSeqNew(&D_8003CA58[idx], D_8003CA48[idx]);
+    func_10018CB0(D_8003C900[idx], &D_8003CA58[idx]);
+    func_10017B30(D_8003C900[idx]);
     return 0;
 }
-// NON-MATCHING: 80% of the way there
-// s32 func_10008CE8(u8 idx, u16 arg1) {
-//     s32 sp3C;
-//     ALCSeq *temp_s0_3;
-//     u32 i;
-//
-//     i = 0;
-//     func_10018C60(&D_8003C900[idx]);
-//     while ((n_alCSPGetState(&D_8003C900[idx]) != 0) && (i < 2000000)) {
-//         i++;
-//     };
-//
-//     if (i >= 2000000) {
-//         func_10018C60(&D_8003C900[idx]);
-//         while ((n_alCSPGetState(&D_8003C900[idx]) != 0) && (i < 4000000)) {
-//             i++;
-//         }
-//     }
-//
-//     if (arg1 != D_8003CA3C[idx]) {
-//         if (D_8003CA48[idx] != NULL) {
-//             func_10004074(&D_8003CA48[idx]); // de-init?
-//             D_8003CA48[idx] = NULL;
-//         }
-//
-//         sp3C = D_8003CD40[arg1].unk4;
-//         temp_s0_3 = allocate_memory(&D_8003C910[arg1], 0xFF, 2, 2);
-//         if (temp_s0_3 == NULL) {
-//             return -1;
-//         }
-//         func_10004514(sp3C, temp_s0_3, ALIGN16(D_8003C910[arg1]), 1);
-//         D_8003CA3C[idx] = arg1;
-//       }
-//
-//     n_alCSeqNew(&D_8003CA58[idx], &D_8003CA48[idx]);
-//     func_10018CB0(&D_8003C900[idx], &D_8003CA58[idx]);
-//     func_10017B30(&D_8003C900[idx]);
-//
-//     return 0;
-// }
 
 void func_10008EE0(u8 idx, s32 arg1) {
     func_10018D00(D_8003C900[idx], arg1);

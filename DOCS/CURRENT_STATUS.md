@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,130 / 5,457 (57.36%) | 0 | 2,327 |
-| Init | 447 / 488 (91.60%) | 0 | 41 |
+| Total | 3,131 / 5,457 (57.38%) | 0 | 2,326 |
+| Init | 448 / 488 (91.80%) | 0 | 40 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1095,6 +1095,12 @@ end-to-end gameplay acceptance.
    Seventy-eight words emit directly from semantic C; 46 stale-checked rows
    normalize IDO's remaining register allocation and scheduling. See
    [Working Note 631](WORKING_NOTES/631-init-actor-positional-audio-creator-match-20261001.md).
+   The 126-word sequence-buffer replacement routine `func_10008CE8` is
+   byte-exact after recovering its bounded stop polling, old-buffer release,
+   8-byte metadata lookup, aligned replacement copy, and player restart.
+   Semantic C emits 121 words directly; five stale-checked rows normalize two
+   independent IDO stack-slot selections. See
+   [Working Note 632](WORKING_NOTES/632-init-sequence-buffer-replacement-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

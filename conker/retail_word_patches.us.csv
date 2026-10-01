@@ -3777,3 +3777,8 @@ init_EB00,func_10010154,0x1B8,0x0301C825,0x01E1C025,-,-,Normalize actor position
 init_EB00,func_10010154,0x1BC,0x00075400,0x00074C00,-,-,Normalize actor positional audio compiler allocation,,,false
 init_EB00,func_10010154,0x1C0,0x000A3C03,0x00093C03,-,-,Normalize actor positional audio compiler allocation,,,false
 init_EB00,func_10010154,0x1C4,0xAFB90024,0xAFB80024,-,-,Normalize actor positional audio compiler allocation,,,false
+init_8180,func_10008CE8,0x040,0xAFAE0030,0xAFAE0034,-,-,Normalize sequence replacement compiler stack allocation,,,false
+init_8180,func_10008CE8,0x0DC,0xAFA90028,0xAFA9002C,-,-,Normalize sequence replacement compiler stack allocation,,,false
+init_8180,func_10008CE8,0x0F4,0x8FAB0030,0x8FAB0034,-,-,Normalize sequence replacement compiler stack allocation,,,false
+init_8180,func_10008CE8,0x18C,0x8FAB0028,0x8FAB002C,-,-,Normalize sequence replacement compiler stack allocation,,,false
+init_8180,func_10008CE8,0x198,0x8FAF0030,0x8FAF0034,-,-,Normalize sequence replacement compiler stack allocation,,,false

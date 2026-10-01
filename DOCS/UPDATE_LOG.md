@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init sequence-buffer replacement byte-matched
+
+- `func_10008CE8` replaces its zero-return placeholder with the recovered
+  compact-sequence replacement path. It performs bounded stop polling, frees
+  and reallocates a changed sequence buffer, copies its aligned payload, binds
+  the sequence, and restarts the selected player.
+- Recovering the 8-byte metadata record and compact polling loops emits 121 of
+  126 words directly from semantic C. Five stale-checked rows normalize two
+  independent compiler stack-slot selections.
+- The linked 504-byte span has SHA-256
+  `81fcae361887ea2de962c306ac07c2b55afbd4d8f4c3ee1fa34274c5afc81b14`.
+  Totals are **3,131 / 5,457 (57.38%)** overall and
+  **448 / 488 (91.80%)** in Init. See
+  [Working Note 632](WORKING_NOTES/632-init-sequence-buffer-replacement-match-20261001.md).
+
 ### Init actor positional-audio creator byte-matched
 
 - `func_10010154` replaces its zero-return placeholder with the recovered
