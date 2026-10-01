@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init audio thread loop matched).**
-The current linked checkpoint is `3120 / 5457 (57.17%)` exact C functions,
-with no address-drift blockers and 2,337 genuinely different C functions.
+**Active (2026-10-01, Init nearest-anchor forwarder matched).**
+The current linked checkpoint is `3121 / 5457 (57.19%)` exact C functions,
+with no address-drift blockers and 2,336 genuinely different C functions.
 Init is
-`437 / 488 (89.55%)` exact, with 51 genuinely different C rows. Game is
+`438 / 488 (89.75%)` exact, with 50 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -949,7 +949,13 @@ shutdown handling, audio-manager close, and terminal receive loop. Twenty-
 seven stale-checked guards normalize local stack placement, one closed
 `s3`/`s4` allocation swap, and the close schedule. See
 [Working Note 621](WORKING_NOTES/621-init-audio-thread-loop-match-20261001.md).
-Continue the Init queue from its remaining 51 genuinely different C rows.
+`func_1000F6B8` now matches all 105 words after recovering its nearest-anchor
+scan, retained relative coordinate triple, second relative coordinate triple,
+packed caller outputs, and `func_1000A420` result forwarding. Sixty-eight
+stale-checked rows normalize 69 persistent compiler-allocation and scheduling
+words, including one inserted epilogue delay-slot word. See
+[Working Note 622](WORKING_NOTES/622-init-nearest-anchor-forwarder-match-20261001.md).
+Continue the Init queue from its remaining 50 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

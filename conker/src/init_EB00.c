@@ -7,7 +7,7 @@
 s32 func_1000ECCC();
 s32 func_1000EFB4();
 s32 func_1000F568(s32 arg0, u32 arg1);
-s32 func_1000F6B8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+s32 func_1000F6B8(s32 arg0, s16 arg1, s16 arg2, s16 arg3, void *arg4, s16 arg5, s16 arg6);
 s32 func_10010FFC();
 void func_10011310(void);
 s32 func_10011624();
@@ -358,9 +358,61 @@ s32 func_1000F568(s32 arg0, u32 arg1) {
     }
     return arg0 + selected;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000F6B8.s. */
-s32 func_1000F6B8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
-    return 0;
+s32 func_1000F6B8(s32 arg0, s16 arg1, s16 arg2, s16 arg3, void *arg4, s16 arg5, s16 arg6) {
+    struct00 *entry;
+    struct00 *end;
+    struct00 *selected;
+    u32 distance;
+    u32 nearest;
+    s32 dx;
+    s32 dy;
+    s32 dz;
+    s32 selectedDx;
+    s32 selectedDy;
+    s32 selectedDz;
+    s32 result;
+
+    if (D_80082FA0 != 0) {
+        if (D_80082FA0 >= 0) {
+            end = &D_80041F68[D_80082FA0];
+            entry = D_80041F68;
+            nearest = -1;
+            do {
+                dx = arg1 - entry->unkC;
+                dy = arg2 - entry->unk10;
+                dz = arg3 - entry->unk14;
+                distance = (dx * dx) + (dy * dy) + (dz * dz);
+                if (distance < nearest) {
+                    nearest = distance;
+                    selected = entry;
+                    selectedDx = dx;
+                    selectedDy = dy;
+                    selectedDz = dz;
+                }
+                entry++;
+            } while (entry <= end);
+        }
+    } else {
+        selected = D_80041F68;
+        selectedDx = arg1 - selected->unkC;
+        selectedDy = arg2 - selected->unk10;
+        selectedDz = arg3 - selected->unk14;
+    }
+
+    func_1000A420(
+        selectedDx,
+        selectedDy,
+        selectedDz,
+        selected->unk18,
+        arg1 - selected->unk0,
+        arg2 - selected->unk4,
+        arg3 - selected->unk8,
+        arg6,
+        arg5,
+        arg4,
+        &result,
+        NULL);
+    return result;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000F85C.s. */
 void func_1000F85C(u16 arg0, u16 arg1, s32 arg2) {

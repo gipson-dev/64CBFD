@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,120 / 5,457 (57.17%) | 0 | 2,337 |
-| Init | 437 / 488 (89.55%) | 0 | 51 |
+| Total | 3,121 / 5,457 (57.19%) | 0 | 2,336 |
+| Init | 438 / 488 (89.75%) | 0 | 50 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1030,6 +1030,12 @@ end-to-end gameplay acceptance.
    seven stale-checked guards normalize local stack placement, one closed
    `s3`/`s4` allocation swap, and the close schedule; see
    [Working Note 621](WORKING_NOTES/621-init-audio-thread-loop-match-20261001.md).
+   The 105-word nearest-anchor forwarding helper `func_1000F6B8` is byte-exact
+   after recovering its signed-coordinate inputs, nearest-record scan, retained
+   relative vectors, and twelve-argument `func_1000A420` dispatch. Sixty-eight
+   stale-checked rows normalize 69 compiler-allocation and scheduling words,
+   including relocation-aware address and call movement; see
+   [Working Note 622](WORKING_NOTES/622-init-nearest-anchor-forwarder-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

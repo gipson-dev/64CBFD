@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,120 / 5,457 (57.17%) | 0 | 2,337 |
-| Init | 488 / 538 (90.71%) | 437 / 488 (89.55%) | 0 | 51 |
+| Total | 5,457 / 6,041 (90.33%) | 3,121 / 5,457 (57.19%) | 0 | 2,336 |
+| Init | 488 / 538 (90.71%) | 438 / 488 (89.75%) | 0 | 50 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -572,6 +572,11 @@ It restores the message-driven two-frame submission cycle, completion token
 receive, terminal dispatch, audio-manager close, and permanent receive loop;
 see
 [Working Note 621](WORKING_NOTES/621-init-audio-thread-loop-match-20261001.md).
+The Init nearest-anchor helper `func_1000F6B8` now matches its complete
+420-byte span. It scans the anchor records, retains the nearest relative
+vector, and forwards both relative coordinate triples plus the packed caller
+outputs to `func_1000A420`; see
+[Working Note 622](WORKING_NOTES/622-init-nearest-anchor-forwarder-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

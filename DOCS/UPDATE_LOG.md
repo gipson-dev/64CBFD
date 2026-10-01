@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init nearest-anchor forwarder byte-matched
+
+- `func_1000F6B8` replaces its zero-return placeholder with the recovered
+  nearest-anchor scan and the complete twelve-argument `func_1000A420`
+  forwarding call.
+- The semantic C recovers the signed 16-bit coordinates, unsigned squared-
+  distance comparison, retained nearest relative vector, zero-count path,
+  secondary relative vector, packed output pointer, and returned result.
+  Sixty-eight stale-checked rows normalize 69 compiler-only allocation and
+  scheduling words; 36 of the 105 retail words emit directly from C.
+- The linked and retail spans share SHA-256
+  `a41ddca24f43504374daf24585eb0bc8b865ffb36960baf9dc2ce8296df570bd`.
+  Totals are **3,121 / 5,457 (57.19%)** overall and
+  **438 / 488 (89.75%)** in Init. See
+  [Working Note 622](WORKING_NOTES/622-init-nearest-anchor-forwarder-match-20261001.md).
+
 ### Init audio thread loop byte-matched
 
 - `func_10009400` restores the message-driven audio thread: it receives
