@@ -6,7 +6,7 @@
 /* Generated placeholder declarations. */
 s32 func_10008F90();
 s32 func_100095A0(s32 arg0, s32 arg1);
-s32 func_100099BC();
+s32 func_100099BC(void);
 s32 func_1000A03C();
 void func_1000A348(void);
 /* End generated placeholder declarations. */
@@ -402,9 +402,63 @@ s32 func_10009980(s32 *arg0) {
     return func_100097CC;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_100099BC.s. */
-s32 func_100099BC() {
-    return 0;
+s32 func_100099BC(void) {
+    OSMesg messages[2];
+    struct54 *current;
+    struct54 *next;
+    struct54 *previous;
+    struct54 *freeHead;
+    struct54 *freeNext;
+    u32 received;
+
+    messages[0] = NULL;
+    received = 0;
+    if (D_8002AE48 != 0) {
+        do {
+            if (osRecvMesg((OSMesgQueue *)&D_80041298, &messages[0], OS_MESG_NOBLOCK) == -1) {
+                osRecvMesg((OSMesgQueue *)&D_80041298, &messages[0], OS_MESG_BLOCK);
+            }
+            received++;
+        } while (received < (u32)D_8002AE48);
+    }
+
+    current = (struct54 *)D_80040F78.unk4;
+    while (current != NULL) {
+        next = current->unk0;
+        if ((u32)(current->unkC + 1) < D_8002AE44) {
+            if (current == (struct54 *)D_80040F78.unk4) {
+                D_80040F78.unk4 = (s32)next;
+            }
+
+            if (current->unk0 != NULL) {
+                current->unk0->unk4 = current->unk4;
+            }
+            previous = current->unk4;
+            if (previous != NULL) {
+                previous->unk0 = current->unk0;
+            }
+
+            freeHead = (struct54 *)D_80040F78.unk8;
+            if (freeHead != NULL) {
+                current->unk4 = freeHead;
+                current->unk0 = freeHead->unk0;
+                freeNext = freeHead->unk0;
+                if (freeNext != NULL) {
+                    freeNext->unk4 = current;
+                }
+                freeHead->unk0 = current;
+            } else {
+                D_80040F78.unk8 = (s32)current;
+                current->unk0 = NULL;
+                current->unk4 = NULL;
+            }
+        }
+        current = next;
+    }
+
+    D_8002AE48 = 0;
+    D_8002AE44++;
+    return (s32)current;
 }
 
 void func_10009B2C(struct54 *arg0) {

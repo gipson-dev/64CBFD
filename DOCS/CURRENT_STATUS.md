@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,112 / 5,457 (57.03%) | 0 | 2,345 |
-| Init | 429 / 488 (87.91%) | 0 | 59 |
+| Total | 3,113 / 5,457 (57.05%) | 0 | 2,344 |
+| Init | 430 / 488 (88.11%) | 0 | 58 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -984,6 +984,12 @@ end-to-end gameplay acceptance.
    including ten checked insertions, preserve retail's rematerialized global
    addresses and integer-index schedule; see
    [Working Note 613](WORKING_NOTES/613-init-deferred-record-compactor-match-20260930.md).
+   The 92-word audio-DMA cleanup routine `func_100099BC` is byte-exact after
+   recovering its completion-queue drain, generation-expiry scan, active-list
+   unlink, and free-list splice. Fifty-six stale-checked replacement guards
+   and one checked insertion normalize the closed compiler allocation and
+   branch schedule; see
+   [Working Note 614](WORKING_NOTES/614-init-audio-dma-cleanup-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

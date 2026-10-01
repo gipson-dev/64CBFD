@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,112 / 5,457 (57.03%) | 0 | 2,345 |
-| Init | 488 / 538 (90.71%) | 429 / 488 (87.91%) | 0 | 59 |
+| Total | 5,457 / 6,041 (90.33%) | 3,113 / 5,457 (57.05%) | 0 | 2,344 |
+| Init | 488 / 538 (90.71%) | 430 / 488 (88.11%) | 0 | 58 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -532,6 +532,13 @@ retail unaligned copy. Fifty-nine stale-checked guards normalize the closed
 allocation and address-rematerialization schedule, including ten checked
 insertions; see
 [Working Note 613](WORKING_NOTES/613-init-deferred-record-compactor-match-20260930.md).
+The Init audio-DMA cleanup routine `func_100099BC` now matches its complete
+368-byte span. It drains outstanding completion messages, removes expired
+generation records from the active list, splices them onto the free list,
+clears the outstanding count, and advances the generation. Fifty-six
+replacement guards and one checked insertion normalize the closed allocation
+and branch schedule; see
+[Working Note 614](WORKING_NOTES/614-init-audio-dma-cleanup-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

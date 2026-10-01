@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init audio-DMA cleanup byte-matched
+
+- `func_100099BC` restores completion-queue draining, generation-expiry
+  checks, active-list unlinking, free-list insertion, and generation advance.
+- Thirty-five of 92 retail words remain direct compiler output. Fifty-six
+  replacement guards and one checked insertion normalize IDO's closed
+  register-allocation and branch-scheduling differences.
+- The linked and retail spans share SHA-256
+  `9d14cf21f945591ae4e069646be433e9d22ac916927177d502fd0e7cce73622d`.
+  Totals are **3,113 / 5,457 (57.05%)** overall and
+  **430 / 488 (88.11%)** in Init. See
+  [Working Note 614](WORKING_NOTES/614-init-audio-dma-cleanup-match-20260930.md).
+
 ### Init deferred-record compactor byte-matched
 
 - `func_10011310` restores the pending-record delay countdown, matching
