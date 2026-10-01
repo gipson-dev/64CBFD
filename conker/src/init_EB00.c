@@ -13,7 +13,7 @@ struct31 *func_10017438(void *bank, s16 soundNum, u16 vol, u8 pan, f32 pitch,
                        u8 fxmix, u8 fxbus, struct31 **handle);
 void func_10011310(void);
 s32 func_10011624(struct15 *arg0, s32 *arg1, s32 arg2, s32 arg3);
-s32 func_10011BB8();
+void func_10011BB8(void);
 u16 func_10011EB8(s32 arg0, s16 *arg1, s32 arg2);
 /* End generated placeholder declarations. */
 
@@ -1255,9 +1255,79 @@ void func_100114D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s
 s32 func_10011624(struct15 *arg0, s32 *arg1, s32 arg2, s32 arg3) {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10011BB8.s. */
-s32 func_10011BB8() {
-    return 0;
+void func_10011BB8(void) {
+    struct108 *player;
+    struct00 *listener;
+    struct00 *listenerEnd;
+    struct15 *source;
+    struct15 *destination;
+    struct15 *recordEnd;
+    s32 playerIndex;
+    s32 activeCount;
+    s32 step;
+
+    if ((D_80041F60 == 0) && (D_80041F61 == 0)) {
+        playerIndex = D_80082FA0;
+        listener = D_80041F68;
+        if (playerIndex >= 0) {
+            player = D_800DBFF0;
+            listenerEnd = (struct00 *)((u8 *)D_80041F68 + (playerIndex * 0x1C));
+            do {
+                if ((playerIndex != 0) || ((player->unk2C & 0x80000) != 0)) {
+                    listener->unk0 = player->unk2F8;
+                    listener->unk4 = player->unk2FC;
+                    listener->unk8 = player->unk300;
+                } else {
+                    listener->unk0 = player->unk2A4;
+                    listener->unk4 = player->unk2A8;
+                    listener->unk8 = *(f32 *)&player->unk2AC;
+                }
+                listener->unkC = player->unk2F8;
+                listener->unk10 = player->unk2FC;
+                listener->unk14 = player->unk300;
+                *(f32 *)&listener->unk18 = player->unk380;
+                listener++;
+                player++;
+            } while (listener <= listenerEnd);
+        }
+
+        func_10011310();
+        func_10011624(D_80041FE0, &D_80042760, 0, D_80042760);
+
+        activeCount = 0;
+        if (D_80042760 > 0) {
+            source = D_80041FE0;
+            recordEnd = &source[D_80042760];
+            destination = source;
+            do {
+                *destination = *source;
+                if ((destination->unk10 & 0x80) == 0) {
+                    activeCount++;
+                    destination++;
+                }
+                source++;
+            } while (source < recordEnd);
+        }
+        D_80042760 = activeCount;
+    }
+
+    if ((D_80041FDC != D_80041F54) || (D_80041F61 != D_80041F60)) {
+        if (D_80041F61 == 1) {
+            func_10017780(0, 0);
+            func_10017780(1, 0);
+        } else {
+            func_10017780(0, D_80041F54);
+            func_10017780(1, *(u16 *)((u8 *)&D_80041F54 + 2));
+
+            step = (D_80041FDC - D_80041F54) * D_80041F58;
+            if (step != 0) {
+                D_80041F54 += step;
+            } else {
+                D_80041F54 = D_80041FDC;
+            }
+        }
+        D_80041F60 = D_80041F61;
+    }
 }
 
 void func_10011E88(s32 arg0) {

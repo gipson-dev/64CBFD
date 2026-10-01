@@ -32,10 +32,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,143 / 5,457 (57.60%) | 0 | 2,314 |
-| Init | 460 / 488 (94.26%) | 0 | 28 |
+| Total | 3,144 / 5,457 (57.61%) | 0 | 2,313 |
+| Init | 461 / 488 (94.47%) | 0 | 27 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init listener/audio update `func_10011BB8` now matches its complete
+180-word retail span. It restores listener snapshots, active audio-record
+compaction, and the two-channel transition update. See
+[Working Note 645](WORKING_NOTES/645-init-listener-audio-update-match-20261001.md).
 
 The Init PRENMI shutdown thread `func_100052A0` now matches its complete
 180-word retail span. It restores thread shutdown, controller-motor cleanup,

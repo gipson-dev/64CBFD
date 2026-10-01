@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init listener/audio update byte-matched
+
+- `func_10011BB8` replaces its zero-return placeholder with the recovered
+  listener snapshot, audio-record processing and compaction, and two-channel
+  transition update.
+- Fifty-seven of 180 linked words emit unchanged from semantic C. One hundred
+  twenty-seven stale-checked rows normalize the closed IDO allocation and
+  scheduling cycle; four of those rows omit redundant compact-object moves so
+  the recovered body retains the retail 180-word extent.
+- The linked and retail 720-byte spans share SHA-256
+  `46f06a5608ddf3ddaa80ec0b81444b7b4463fee22ab930ca536ccd71394fa0de`.
+  Totals are **3,144 / 5,457 (57.61%)** overall and
+  **461 / 488 (94.47%)** in Init. See
+  [Working Note 645](WORKING_NOTES/645-init-listener-audio-update-match-20261001.md).
+
 ### Init PRENMI shutdown thread byte-matched
 
 - `func_100052A0` replaces its empty placeholder with the recovered shutdown

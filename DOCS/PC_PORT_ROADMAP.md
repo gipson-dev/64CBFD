@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,143 / 5,457 (57.60%) | 0 | 2,314 |
-| Init | 488 / 538 (90.71%) | 460 / 488 (94.26%) | 0 | 28 |
+| Total | 5,457 / 6,041 (90.33%) | 3,144 / 5,457 (57.61%) | 0 | 2,313 |
+| Init | 488 / 538 (90.71%) | 461 / 488 (94.47%) | 0 | 27 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,12 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init listener/audio update `func_10011BB8` now matches all 180 retail
+words. It snapshots the active player/listener transforms, compacts the
+0x30-byte audio records after processing, and advances the two output-channel
+values during state transitions; see
+[Working Note 645](WORKING_NOTES/645-init-listener-audio-update-match-20261001.md).
 
 The Init PRENMI shutdown thread `func_100052A0` now matches all 180 retail
 words. It restores shutdown synchronization, thread stops, VI reset,
