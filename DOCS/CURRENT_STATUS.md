@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,122 / 5,457 (57.21%) | 0 | 2,335 |
-| Init | 439 / 488 (89.96%) | 0 | 49 |
+| Total | 3,123 / 5,457 (57.23%) | 0 | 2,334 |
+| Init | 440 / 488 (90.16%) | 0 | 48 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1043,6 +1043,14 @@ end-to-end gameplay acceptance.
    stale-checked rows normalize compiler register allocation and scheduling.
    See
    [Working Note 623](WORKING_NOTES/623-init-dma-page-cache-helper-match-20261001.md).
+   The 115-word object-aware audio dispatcher `func_10010FFC` is byte-exact
+   after recovering its validity gates, camera-specific direct dispatch,
+   three-quarter volume path, object-type scale lookup and clamp, position
+   truncation, and spatial forwarding call. Eleven words emit directly from
+   semantic C; 104 relocation-aware, stale-checked rows normalize a persistent
+   compiler scheduling displacement and its resulting register allocation.
+   See
+   [Working Note 624](WORKING_NOTES/624-init-object-audio-dispatch-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

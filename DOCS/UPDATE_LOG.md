@@ -16,6 +16,24 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init object-aware audio dispatcher byte-matched
+
+- `func_10010FFC` replaces its zero-return placeholder with the recovered
+  object validity gates and audio dispatch selection. Camera-backed objects
+  dispatch directly through `func_10010BE8`; other objects use three-quarters
+  of the requested volume and forward a spatial request through
+  `func_10010E78`.
+- The spatial path recovers the object-type range lookup, unsigned scale
+  conversion, 80/256 clamp behavior, truncated object coordinates, fixed
+  500-unit lower range, and computed upper range. Eleven of 115 words emit
+  directly from semantic C; 104 stale-checked relocation-aware rows normalize
+  the compiler's persistent scheduling displacement and register allocation.
+- The linked and retail spans share SHA-256
+  `f082d41b929c07fc57b6645669c3e923b7ff3a20be2696b0d2379e0a26ffce7d`.
+  Totals are **3,123 / 5,457 (57.23%)** overall and
+  **440 / 488 (90.16%)** in Init. See
+  [Working Note 624](WORKING_NOTES/624-init-object-audio-dispatch-match-20261001.md).
+
 ### Init DMA page-cache helper byte-matched
 
 - `func_100097CC` replaces its zero-return placeholder with the recovered

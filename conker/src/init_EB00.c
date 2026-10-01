@@ -8,7 +8,6 @@ s32 func_1000ECCC();
 s32 func_1000EFB4();
 s32 func_1000F568(s32 arg0, u32 arg1);
 s32 func_1000F6B8(s32 arg0, s16 arg1, s16 arg2, s16 arg3, void *arg4, s16 arg5, s16 arg6);
-s32 func_10010FFC();
 void func_10011310(void);
 s32 func_10011624();
 s32 func_10011BB8();
@@ -812,9 +811,37 @@ u16 func_10010E78(u16 arg0, s32 arg1, u16 arg2, s16 arg3, u8 arg4, s32 arg5, s16
 void func_10010F88(s32 arg0, u16 arg1, s16 arg2, u8 arg3, s32 arg4, s16 arg5, s16 arg6, s16 arg7, s16 arg8, s16 arg9) {
     func_10010E78(0, arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10010FFC.s. */
-s32 func_10010FFC() {
-    return 0;
+u16 func_10010FFC(s32 arg0, s32 arg1, u16 arg2, s16 arg3, u8 arg4, struct127 *arg5) {
+    f32 scale;
+
+    arg0 &= 0xFFFF;
+
+    if ((arg5 == NULL) || (arg5->interaction_state == 0)) {
+        return 0;
+    }
+
+    if (arg5->camera != NULL) {
+        return func_10010BE8(arg0, arg1, arg2, 0x40, arg3, arg4, D_80041FD9);
+    }
+
+    arg2 = ((arg2 + arg2) + arg2) >> 2;
+    if (arg5->id != 0xFF) {
+        scale = (u16)D_800D1C90[arg5->id]->unkE * arg5->xz_scale;
+    } else {
+        scale = 0.0f;
+    }
+
+    if (scale > 256.0f) {
+        scale = 1.0f;
+    } else if (scale < 80.0f) {
+        scale = 0.3125f;
+    } else {
+        scale *= 0.00390625f;
+    }
+
+    return func_10010E78(arg0, arg1, arg2, arg3, arg4, 0,
+                         arg5->x_position, arg5->y_position, arg5->z_position,
+                         500, (s32)(2000.0f * scale) + 501);
 }
 
 void func_100111C8(u16 arg0) {

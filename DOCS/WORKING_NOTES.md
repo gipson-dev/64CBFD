@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init DMA page-cache helper matched).**
-The current linked checkpoint is `3122 / 5457 (57.21%)` exact C functions,
-with no address-drift blockers and 2,335 genuinely different C functions.
+**Active (2026-10-01, Init object-aware audio dispatcher matched).**
+The current linked checkpoint is `3123 / 5457 (57.23%)` exact C functions,
+with no address-drift blockers and 2,334 genuinely different C functions.
 Init is
-`439 / 488 (89.96%)` exact, with 49 genuinely different C rows. Game is
+`440 / 488 (90.16%)` exact, with 48 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -961,7 +961,14 @@ page-cache hit scan, free-node allocation and doubly linked list repair,
 Seventy-four stale-checked relocation-aware rows normalize compiler-only
 allocation and scheduling; 35 words emit directly from semantic C. See
 [Working Note 623](WORKING_NOTES/623-init-dma-page-cache-helper-match-20261001.md).
-Continue the Init queue from its remaining 49 genuinely different C rows.
+`func_10010FFC` now matches all 115 words after recovering its object validity
+gates, camera-specific direct dispatch, three-quarter volume path, object-type
+scale lookup and clamp, truncated position, and spatial forwarding call. One
+hundred four stale-checked relocation-aware rows normalize the compiler's
+persistent scheduling displacement and resulting register allocation; 11
+words emit directly from semantic C. See
+[Working Note 624](WORKING_NOTES/624-init-object-audio-dispatch-match-20261001.md).
+Continue the Init queue from its remaining 48 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

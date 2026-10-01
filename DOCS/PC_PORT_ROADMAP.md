@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,122 / 5,457 (57.21%) | 0 | 2,335 |
-| Init | 488 / 538 (90.71%) | 439 / 488 (89.96%) | 0 | 49 |
+| Total | 5,457 / 6,041 (90.33%) | 3,123 / 5,457 (57.23%) | 0 | 2,334 |
+| Init | 488 / 538 (90.71%) | 440 / 488 (90.16%) | 0 | 48 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -582,6 +582,11 @@ The Init DMA page-cache helper `func_100097CC` now matches its complete
 page on a miss, starts the 0x800-byte PI DMA, and preserves odd-address
 requests in the returned physical address; see
 [Working Note 623](WORKING_NOTES/623-init-dma-page-cache-helper-match-20261001.md).
+The Init object-aware audio dispatcher `func_10010FFC` now matches its complete
+460-byte span. It selects the direct camera path or derives the non-camera
+volume, object scale, clamped distance range, and truncated object position
+before forwarding the spatial request; see
+[Working Note 624](WORKING_NOTES/624-init-object-audio-dispatch-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
