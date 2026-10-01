@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,131 / 5,457 (57.38%) | 0 | 2,326 |
-| Init | 488 / 538 (90.71%) | 448 / 488 (91.80%) | 0 | 40 |
+| Total | 5,457 / 6,041 (90.33%) | 3,132 / 5,457 (57.39%) | 0 | 2,325 |
+| Init | 488 / 538 (90.71%) | 449 / 488 (92.01%) | 0 | 39 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -627,6 +627,11 @@ complete 504-byte span. It performs bounded player-stop polling, replaces a
 changed sequence's allocation from its 8-byte metadata record, copies an
 aligned payload, binds the compact sequence, and restarts playback; see
 [Working Note 632](WORKING_NOTES/632-init-sequence-buffer-replacement-match-20261001.md).
+The Init threshold audio-state callback `func_1000B638` now matches its
+complete 504-byte span. It gates player audio from the record's threshold
+value, performs level-specific channel transitions, and maintains a separate
+level-`0x27` effect bit; see
+[Working Note 633](WORKING_NOTES/633-init-threshold-audio-state-callback-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

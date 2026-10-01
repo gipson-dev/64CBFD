@@ -3782,3 +3782,15 @@ init_8180,func_10008CE8,0x0DC,0xAFA90028,0xAFA9002C,-,-,Normalize sequence repla
 init_8180,func_10008CE8,0x0F4,0x8FAB0030,0x8FAB0034,-,-,Normalize sequence replacement compiler stack allocation,,,false
 init_8180,func_10008CE8,0x18C,0x8FAB0028,0x8FAB002C,-,-,Normalize sequence replacement compiler stack allocation,,,false
 init_8180,func_10008CE8,0x198,0x8FAF0030,0x8FAF0034,-,-,Normalize sequence replacement compiler stack allocation,,,false
+init_B1B0,func_1000B638,0x01C,0x93AE0027,0x93B80027,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x024,0x30F80002,0x30EE0002,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x028,0x000E7880,0x0018C880,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x02C,0x004F1021,0x00591021,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x034,0x30F90001,0x30EF0001,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x038,0xAFB80018,0xAFAE001C,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x040,0x03203825,0x01E03825,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x188,0x8FB80018,0x8FB8001C,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x194,0x8FAE0018,0x8FAE001C,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x1A8,0xAFAF0018,0xAFAF001C,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x1E0,0xAFA00018,0xAFA0001C,-,-,Normalize threshold audio state compiler allocation,,,false
+init_B1B0,func_1000B638,0x1E4,0x8FB90018,0x8FB9001C,-,-,Normalize threshold audio state compiler allocation,,,false

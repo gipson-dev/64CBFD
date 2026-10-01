@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init threshold audio-state callback byte-matched
+
+- `func_1000B638` replaces its zero-return placeholder with the recovered
+  packed-state callback. It gates per-player audio from the record's 500-unit
+  threshold, applies level-specific channel transitions, and maintains the
+  separate level-`0x27` effect bit.
+- The 126-word routine emits 114 words directly from semantic C. Twelve
+  stale-checked rows normalize one closed compiler register-allocation cycle
+  and one stack-slot selection.
+- The linked 504-byte span has SHA-256
+  `9606b7c262cfd3a32317eb6775ec0fa9b29db52b3d7f5974048b14a33140cb8d`.
+  Totals are **3,132 / 5,457 (57.39%)** overall and
+  **449 / 488 (92.01%)** in Init. See
+  [Working Note 633](WORKING_NOTES/633-init-threshold-audio-state-callback-match-20261001.md).
+
 ### Init sequence-buffer replacement byte-matched
 
 - `func_10008CE8` replaces its zero-return placeholder with the recovered

@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,131 / 5,457 (57.38%) | 0 | 2,326 |
-| Init | 448 / 488 (91.80%) | 0 | 40 |
+| Total | 3,132 / 5,457 (57.39%) | 0 | 2,325 |
+| Init | 449 / 488 (92.01%) | 0 | 39 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1101,6 +1101,12 @@ end-to-end gameplay acceptance.
    Semantic C emits 121 words directly; five stale-checked rows normalize two
    independent IDO stack-slot selections. See
    [Working Note 632](WORKING_NOTES/632-init-sequence-buffer-replacement-match-20261001.md).
+   The 126-word threshold audio-state callback `func_1000B638` is byte-exact
+   after recovering its player-value gate, level-specific channel transitions,
+   and separate level-`0x27` effect bit. Semantic C emits 114 words directly;
+   12 stale-checked rows normalize one closed register-allocation cycle and one
+   stack-slot selection. See
+   [Working Note 633](WORKING_NOTES/633-init-threshold-audio-state-callback-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

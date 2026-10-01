@@ -938,7 +938,7 @@ struct151 *func_1000B1FC(s32 arg0);
 //func_1000B2F4
 //func_1000B3D4
 //func_1000B548
-//func_1000B638
+s32 func_1000B638(s32 arg0, u8 arg1, s32 arg2, s32 arg3);
 //func_1000B8B8
 //func_1000BAFC
 //func_1000BCBC

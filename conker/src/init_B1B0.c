@@ -6,7 +6,7 @@
 
 /* Generated placeholder declarations. */
 void func_1000B3D4(struct00 *arg0, struct151 *volatile arg1);
-s32 func_1000B638();
+s32 func_1000B638(s32 arg0, u8 arg1, s32 arg2, s32 arg3);
 s32 func_1000BCBC();
 s32 func_1000BF60();
 s32 func_1000C350(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
@@ -205,9 +205,54 @@ s32 func_1000B548(s32 *arg0) {
     return ret;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000B638.s. */
-s32 func_1000B638() {
-    return 0;
+s32 func_1000B638(s32 arg0, u8 arg1, s32 arg2, s32 arg3) {
+    struct151 *entry;
+    s32 pending;
+
+    entry = D_800417B0[arg1];
+    pending = arg0 & 2;
+    arg0 &= 1;
+
+    if ((entry == NULL) || (entry->unk30 < 500)) {
+        D_80041F04 &= ~1;
+    }
+
+    if ((D_80041F04 & 1) != 0) {
+        if (arg0 == 0) {
+            func_100088F0(arg1, 0x8000, 1);
+            if ((D_800BE9F0 == 1) || (D_800BE9F0 == 0xC)) {
+                func_10008790(arg1, 0x7000, 0, 0);
+            } else if (D_800BE9F0 != 7) {
+                func_10008790(arg1, 0xCA, 0, 0);
+            }
+            func_100085B8(arg1, 0xF, 1);
+        }
+        arg0 = 1;
+    } else {
+        if (arg0 != 0) {
+            func_100088F0(arg1, 0x8000, 0);
+            if ((D_800BE9F0 == 1) || (D_800BE9F0 == 0xC)) {
+                func_10008790(arg1, 0x7000, 0xFF, 0);
+            } else if (D_800BE9F0 != 7) {
+                func_10008790(arg1, 0xCA, 0xFF, 0);
+            }
+            func_100085B8(arg1, 0xF, 0);
+            arg0 = 0;
+        }
+    }
+
+    if (D_800BE9F0 == 0x27) {
+        func_10011FA0((s32 *)4);
+        if (pending == 0) {
+            pending = 2;
+            func_1000E704(1, 1, 0xFFFF);
+        }
+    } else if (pending != 0) {
+        func_1000E704(1, 0, 0xFFFF);
+        pending = 0;
+    }
+
+    return pending | arg0;
 }
 
 
