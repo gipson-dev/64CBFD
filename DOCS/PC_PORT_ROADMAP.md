@@ -1,6 +1,6 @@
 # PC Port Roadmap located in another project folder
 
-## Cross-project progress - 2026-09-30
+## Cross-project progress - 2026-10-01
 
 The active Windows port remains in sibling `64CBFDOGL`; this repository owns
 the guest decompilation and retail-byte evidence used by that port. The current
@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,119 / 5,457 (57.16%) | 0 | 2,338 |
-| Init | 488 / 538 (90.71%) | 436 / 488 (89.34%) | 0 | 52 |
+| Total | 5,457 / 6,041 (90.33%) | 3,120 / 5,457 (57.17%) | 0 | 2,337 |
+| Init | 488 / 538 (90.71%) | 437 / 488 (89.55%) | 0 | 51 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -567,6 +567,11 @@ matches its complete 560-byte span directly from C. It restores the per-retry
 PIF RAM initialization and status clear while retaining channel errors without
 a redundant reassignment; see
 [Working Note 620](WORKING_NOTES/620-init-controller-pak-write-transaction-match-20260930.md).
+The Init audio thread `func_10009400` now matches its complete 416-byte span.
+It restores the message-driven two-frame submission cycle, completion token
+receive, terminal dispatch, audio-manager close, and permanent receive loop;
+see
+[Working Note 621](WORKING_NOTES/621-init-audio-thread-loop-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

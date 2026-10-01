@@ -1,4 +1,31 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+init_8F90,func_10009400,0x148,0x00008025,0x00008025,-,-,Omit IDO's dead frame-counter clear before closing the audio manager,,,true
+init_8F90,func_10009400,0x174,0x00000000,0x00000000,-,-,Omit the first alignment nop introduced after the terminal receive loop,,,true
+init_8F90,func_10009400,0x178,0x00000000,0x00000000,-,-,Omit the second alignment nop introduced after the terminal receive loop,,,true
+init_8F90,func_10009400,0x17C,0x00000000,0x00000000,-,-,Omit the third alignment nop introduced after the terminal receive loop,,,true
+init_8F90,func_10009400,0x038,0xAFA00064,0x00008825,-,-,Initialize the completion flag before the message stack slot,,,false
+init_8F90,func_10009400,0x03C,0xAFA00060,0xAFA0005C,-,-,Place the audio-thread message in retail's stack slot,,,false
+init_8F90,func_10009400,0x040,0x00008025,0x0000A825,-,-,Initialize the audio token through retail register s5,,,false
+init_8F90,func_10009400,0x044,0x0000A825,0x00008025,-,-,Initialize the frame counter through retail register s0,,,false
+init_8F90,func_10009400,0x048,0x24130001,0x24140001,-,-,Retain the first-frame flag in retail register s4,,,false
+init_8F90,func_10009400,0x04C,0x00008825,0xAFA00054,-,-,Initialize the retained status stack slot after the saved-register values,,,false
+init_8F90,func_10009400,0x050,0x27A4005C,0x27A4004C,-,-,Pass retail's local controller pointer slot to the audio initializer,,,false
+init_8F90,func_10009400,0x068,0x24140004,0x24130004,-,-,Retain message type four in retail register s3,,,false
+init_8F90,func_10009400,0x06C,0x27B20064,0x27B2005C,-,-,Retain the retail message-slot address in s2,,,false
+init_8F90,func_10009400,0x084,0x8FAF0064,0x8FAF005C,-,-,Load the shutdown message from retail's stack slot,,,false
+init_8F90,func_10009400,0x090,0x8FB80064,0x8FB8005C,-,-,Reload the normal message from retail's stack slot in the branch delay,,,false
+init_8F90,func_10009400,0x094,0xA5F40000,0xA5F30000,-,-,Store message type four from retail register s3,,,false
+init_8F90,func_10009400,0x098,0x8FB80064,0x8FB8005C,-,-,Reload the rewritten message from retail's stack slot,,,false
+init_8F90,func_10009400,0x0A8,0x10540020,0x10530020,-,-,Compare message type four against retail register s3,,,false
+init_8F90,func_10009400,0x0B4,0x03C08825,0x24110001,-,-,Materialize the completion flag directly in the type-ten branch delay,,,false
+init_8F90,func_10009400,0x100,0x16600007,0x16800007,-,-,Test the first-frame flag in retail register s4,,,false
+init_8F90,func_10009400,0x118,0x8FAA0064,0x8FAA005C,-,-,Load the completion message from retail's stack slot,,,false
+init_8F90,func_10009400,0x120,0x00009825,0x0000A025,-,-,Clear the first-frame flag in retail register s4,,,false
+init_8F90,func_10009400,0x130,0x03C08825,0x24110001,-,-,Materialize the completion flag directly for message type four,,,false
+init_8F90,func_10009400,0x134,0x03C08825,0x24110001,-,-,Preserve retail's duplicated completion assignment for the second terminal case,,,false
+init_8F90,func_10009400,0x144,0x24840000,0x27B2005C,R_MIPS_LO16:D_8003E640,-,Prepare the terminal receive message slot before completing the audio-manager address,0x24840000,R_MIPS_LO16:D_8003E640,false
+init_8F90,func_10009400,0x14C,0x0000A825,0x0000A025,-,-,Clear retail's first-frame register before closing the audio manager,,,false
+init_8F90,func_10009400,0x150,0x00009825,0x00009825,-,-,Omit IDO's dead message-type register clear before closing the audio manager,,,true
 init_3BD0,func_10003BD0,0x008,0x24840000,0x3C050000,R_MIPS_LO16:D_800E9D10,R_MIPS_HI16:D_800380BC,Materialize the retained final-anchor address before completing either opening pointer,0x24A50000,R_MIPS_LO16:D_800380BC,false
 init_3BD0,func_10003BD0,0x00C,0x24630000,0x24840000,R_MIPS_LO16:D_800380B4,R_MIPS_LO16:D_800E9D10,Complete the arena pointer after the retained anchor address,,,false
 init_3BD0,func_10003BD0,0x010,0xAC640000,0x24630000,-,R_MIPS_LO16:D_800380B4,Complete the head pointer before installing the arena,,,false

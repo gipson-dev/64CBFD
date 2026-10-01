@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-09-30
+Last verified: 2026-10-01
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -21,7 +21,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Fresh `progress.csv` and linked retail comparison on 2026-09-30:
+Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,119 / 5,457 (57.16%) | 0 | 2,338 |
-| Init | 436 / 488 (89.34%) | 0 | 52 |
+| Total | 3,120 / 5,457 (57.17%) | 0 | 2,337 |
+| Init | 437 / 488 (89.55%) | 0 | 51 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1024,6 +1024,12 @@ end-to-end gameplay acceptance.
    error reassignment so the existing channel error remains authoritative.
    Its complete routine emits directly from C with no guards; see
    [Working Note 620](WORKING_NOTES/620-init-controller-pak-write-transaction-match-20260930.md).
+   The 104-word audio thread `func_10009400` is byte-exact after recovering
+   its message loop, two-frame audio submission cycle, completion receive,
+   shutdown dispatch, audio-manager close, and terminal receive loop. Twenty-
+   seven stale-checked guards normalize local stack placement, one closed
+   `s3`/`s4` allocation swap, and the close schedule; see
+   [Working Note 621](WORKING_NOTES/621-init-audio-thread-loop-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

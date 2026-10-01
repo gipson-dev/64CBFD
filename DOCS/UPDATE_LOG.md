@@ -14,6 +14,24 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-10-01
+
+### Init audio thread loop byte-matched
+
+- `func_10009400` restores the message-driven audio thread: it receives
+  scheduler messages, runs the two-frame submission cycle, captures the audio
+  completion token after the first successful frame, and handles both
+  terminal message types.
+- Shutdown now closes the audio manager and enters retail's permanent receive
+  loop. The recovered semantic C has retail's 104-word extent and branch
+  topology. Twenty-seven stale-checked guards normalize compiler-only stack,
+  saved-register, and close-schedule differences.
+- The linked and retail spans share SHA-256
+  `2a41b5bdbbeefb67b41d391642d2911785132b61f5f7be1a10bc9d3dda894e94`.
+  Totals are **3,120 / 5,457 (57.17%)** overall and
+  **437 / 488 (89.55%)** in Init. See
+  [Working Note 621](WORKING_NOTES/621-init-audio-thread-loop-match-20261001.md).
+
 ## 2026-09-30
 
 ### Init controller-pak write transaction byte-matched

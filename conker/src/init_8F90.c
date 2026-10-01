@@ -170,60 +170,59 @@ void func_100093CC(void) {
 }
 
 // audio thread
-/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10009400.s. */
 void func_10009400(s32 arg0) {
+    OSMesg msg;
+    volatile s32 sp54;
+    OSPfs *sp4C;
+    s16 temp_v0;
+    u32 phi_s0;
+    s32 phi_s1;
+    s32 phi_s3;
+    s32 phi_s4;
+    s32 phi_s5;
+
+    msg = NULL;
+    sp54 = 0;
+    phi_s0 = 0;
+    phi_s5 = 0;
+    phi_s4 = 1;
+    phi_s1 = 0;
+    func_100051C8(&sp4C, &D_8003E5D0);
+    phi_s3 = 4;
+    do {
+        osRecvMesg(&D_8003E5D0, &msg, 1);
+        if (D_8002AC5C != 0) {
+            ((struct53*)msg)->unk0 = phi_s3;
+        }
+        temp_v0 = ((struct53*)msg)->unk0;
+        switch (temp_v0) {
+        case 1:
+            if (phi_s0 >= 2U) {
+                phi_s0 = 0;
+            }
+            if (phi_s0 == 0 && func_100095A0(D_8003E390[D_8002AE44 % 3U], phi_s5) != 0) {
+                if (phi_s4 == 0) {
+                    osRecvMesg(&D_8003E608, &msg, 1);
+                    phi_s5 = ((struct53*)msg)->unk4;
+                }
+                phi_s4 = 0;
+            }
+            phi_s0++;
+            break;
+        case 4:
+            phi_s1 = 1;
+            break;
+        case 10:
+            phi_s1 = 1;
+            break;
+        }
+    } while (phi_s1 == 0);
+
+    n_alClose(&D_8003E640);
+    while (1) {
+        osRecvMesg(&D_8003E5D0, &msg, 1);
+    }
 }
-// NON-MATCHING: a long way to go
-// void func_10009400(s32 arg0) {
-//     OSMesg *msg;
-//     s32 sp54;
-//     OSPfs *sp4C;
-//     s16 temp_v0;
-//     u32 phi_s0;
-//     u32 phi_s0_2;
-//     s32 phi_s5;
-//     s32 phi_s4;
-//     s32 phi_s1;
-//
-//     msg = NULL;
-//     sp54 = 0;
-//     phi_s0 = 0;
-//     phi_s5 = 0;
-//     phi_s4 = 1;
-//     phi_s1 = 0;
-//     func_100051C8(&sp4C, &D_8003E5D0);
-//     do {
-//         osRecvMesg(&D_8003E5D0, &msg, 1);
-//         if (D_8002AC5C != 0) {
-//             ((struct53*)msg)->unk0 = (u16)4;
-//         }
-//         temp_v0 = ((struct53*)msg)->unk0;
-//         if (temp_v0 != 1) {
-//             if (temp_v0 == (u16)4 || temp_v0 == 16) {
-//                     phi_s1 = 1;
-//             }
-//         } else {
-//             phi_s0_2 = phi_s0;
-//             if (phi_s0 >= 2U) {
-//                 phi_s0_2 = 0U;
-//             }
-//             if (phi_s0_2 == 0 && (func_100095A0(D_8003E390[D_8002AE44 % 3U], phi_s5) != 0)) {
-//                 if (phi_s4 == 0) {
-//                     osRecvMesg(&D_8003E608, &msg, 1);
-//                     phi_s5 = ((struct53*)msg)->unk4;
-//                 }
-//                 phi_s4 = 0;
-//             }
-//             phi_s0 = phi_s0_2 + 1;
-//         }
-//     }
-//     while (phi_s1 == 0);
-//
-//     func_10018E0C(&D_8003E640);
-//     while (1) {
-//         osRecvMesg(&D_8003E5D0, &msg, 1);
-//     }
-// }
 
 /* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_100095A0.s. */
 s32 func_100095A0(s32 arg0, s32 arg1) {
