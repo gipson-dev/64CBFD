@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init packed audio-state transition byte-matched
+
+- `func_1000C350` replaces its zero-return placeholder with the recovered
+  packed state transition. It initializes channel masks on first entry,
+  dispatches the mode-3 and mode-6 transitions, clears non-level-0x1D channel
+  state, and synchronizes the low seven state bits with `D_80041F08`.
+- The complete 120-word control-flow shape emits from semantic C. Of those,
+  119 words match directly; one stale-checked non-relocating guard preserves
+  retail's commutative equality-branch operand order.
+- The linked and retail spans share SHA-256
+  `e3002a2667674611eea979e4716e2117d436bb7d3878a2c78c71062948187d99`.
+  Totals are **3,128 / 5,457 (57.32%)** overall and
+  **445 / 488 (91.19%)** in Init. See
+  [Working Note 629](WORKING_NOTES/629-init-packed-audio-state-transition-match-20261001.md).
+
 ### Init direct PI copy routine byte-matched
 
 - `func_1000480C` replaces its incomplete commented draft with the recovered

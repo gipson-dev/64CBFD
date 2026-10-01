@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,127 / 5,457 (57.30%) | 0 | 2,330 |
-| Init | 488 / 538 (90.71%) | 444 / 488 (90.98%) | 0 | 44 |
+| Total | 5,457 / 6,041 (90.33%) | 3,128 / 5,457 (57.32%) | 0 | 2,329 |
+| Init | 488 / 538 (90.71%) | 445 / 488 (91.19%) | 0 | 43 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -607,6 +607,11 @@ The Init direct PI copy routine `func_1000480C` now matches its complete
 bits, handles aligned and two-byte-misaligned transfers, releases ownership,
 and conditionally restarts the manager thread; see
 [Working Note 628](WORKING_NOTES/628-init-direct-pi-copy-match-20261001.md).
+The Init packed audio-state transition routine `func_1000C350` now matches its
+complete 480-byte span. It performs first-entry channel setup, handles the
+mode-3 and mode-6 transitions, synchronizes the level-0x1D state, and returns
+the updated packed value; see
+[Working Note 629](WORKING_NOTES/629-init-packed-audio-state-transition-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

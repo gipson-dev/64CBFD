@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,127 / 5,457 (57.30%) | 0 | 2,330 |
-| Init | 444 / 488 (90.98%) | 0 | 44 |
+| Total | 3,128 / 5,457 (57.32%) | 0 | 2,329 |
+| Init | 445 / 488 (91.19%) | 0 | 43 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1078,6 +1078,12 @@ end-to-end gameplay acceptance.
    allocation, and schedule by 112 stale-checked relocation-aware rows,
    including two inserted epilogue words. See
    [Working Note 628](WORKING_NOTES/628-init-direct-pi-copy-match-20261001.md).
+   The 120-word packed audio-state transition routine `func_1000C350` is
+   byte-exact after recovering its first-entry setup, mode-specific channel
+   updates, level-0x1D state synchronization, and packed return value. All but
+   one word emit directly from semantic C; one stale-checked guard preserves a
+   commutative equality branch's retail operand order. See
+   [Working Note 629](WORKING_NOTES/629-init-packed-audio-state-transition-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
