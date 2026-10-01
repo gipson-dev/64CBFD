@@ -665,15 +665,15 @@ s32 func_1000FEF0(u16 arg0, struct127 *arg1, s32 arg2) {
     return -1;
 }
 
-s32 func_1000FF90(s32 arg0, s32 arg1, s32 arg2) {
-    s32 i;
+s32 func_1000FF90(s32 arg0, s32 arg1, u32 arg2) {
     struct15 *current;
+    s32 i;
 
     for (i = 0; i < D_80042760; i++) {
         current = &D_80041FE0[i];
-        if ((current->unk14 == arg0) &&
-            ((current->unk18 == arg1) || (arg1 == -1)) &&
-            ((current->unk1C == arg2) || (arg2 == -1)) &&
+        if ((arg0 == current->unk14) &&
+            ((arg1 == current->unk18) || (arg1 == -1)) &&
+            ((arg2 == current->unk1C) || (arg2 == 0xFFFFFFFFU)) &&
             ((current->unk10 & 0x80) == 0)) {
             return i;
         }

@@ -32,10 +32,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,144 / 5,457 (57.61%) | 0 | 2,313 |
-| Init | 461 / 488 (94.47%) | 0 | 27 |
+| Total | 3,145 / 5,457 (57.63%) | 0 | 2,312 |
+| Init | 462 / 488 (94.67%) | 0 | 26 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init active-record lookup `func_1000FF90` now matches its complete 35-word
+retail span. It scans the active 0x30-byte record array with two independently
+optional selectors and rejects disabled records. See
+[Working Note 646](WORKING_NOTES/646-init-active-record-lookup-match-20261001.md).
 
 The Init listener/audio update `func_10011BB8` now matches its complete
 180-word retail span. It restores listener snapshots, active audio-record
@@ -856,8 +861,8 @@ end-to-end gameplay acceptance.
    advanced through `func_151E4E64`, whose complete 33-word callback-state
    setup now matches directly from C with no guarded words.
    `func_15106E78` is parked on a closed 30-versus-32-word caller-saved
-   allocation cycle. Init `func_1000FF90` remains parked at its documented
-   allocation boundary. The 32-word auxiliary-state allocator
+   allocation cycle. Init `func_1000FF90` is now byte-exact across its complete
+   35-word span. The 32-word auxiliary-state allocator
    `func_1503B7C0` is now byte-exact directly from C with no guards.
    `func_150413FC` is parked on a five-versus-four saved-register allocation
    cycle. The 44-word packed-byte rate updater `func_15077404` is now

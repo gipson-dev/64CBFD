@@ -4573,3 +4573,16 @@ init_EB00,func_10011BB8,0x2B8,0xACCD0000,0xACCA0000,,,Normalize recovered audio 
 init_EB00,func_10011BB8,0x2C0,0x3C0E0000,0x3C0B0000,R_MIPS_HI16:D_80041F61,R_MIPS_HI16:D_80041F61,Normalize recovered audio update compiler allocation and schedule,,,false
 init_EB00,func_10011BB8,0x2C4,0x91CE0000,0x916B0000,R_MIPS_LO16:D_80041F61,R_MIPS_LO16:D_80041F61,Normalize recovered audio update compiler allocation and schedule,,,false
 init_EB00,func_10011BB8,0x2CC,0xA02E0000,0xA02B0000,R_MIPS_LO16:D_80041F60,R_MIPS_LO16:D_80041F60,Normalize recovered audio update compiler allocation and schedule,,,false
+init_EB00,func_1000FF90,0x000,0x00803825,0x00A03825,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x00C,0x3C040000,0x3C050000,R_MIPS_HI16:D_80041FE0,R_MIPS_HI16:D_80041FE0,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x010,0x24840000,0x24A50000,R_MIPS_LO16:D_80041FE0,R_MIPS_LO16:D_80041FE0,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x024,0x8C8E0014,0x8CAE0014,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x028,0x54EE0012,0x548E0012,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x030,0x8C8F0018,0x8CAF0018,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x034,0x50AF0004,0x50EF0004,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x038,0x8C98001C,0x8CB8001C,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x03C,0x54A8000D,0x54E8000D,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x044,0x8C98001C,0x8CB8001C,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x04C,0x8C990010,0x8CB90010,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x058,0x8C990010,0x8CB90010,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FF90,0x07C,0x24840030,0x24A50030,,,Normalize active-record lookup compiler allocation,,,false

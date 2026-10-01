@@ -987,7 +987,7 @@ u16  func_1000FA64(u16 arg0, s16 arg1, s16 arg2, s16 arg3, s32 arg4, u16 arg5, s
 //func_1000FDF4
 //func_1000FE88
 //func_1000FEF0
-s32  func_1000FF90(s32 arg0, s32 arg1, s32 arg2);
+s32  func_1000FF90(s32 arg0, s32 arg1, u32 arg2);
 //func_1001001C
 //func_100100E0
 s32 func_10010154(u16 arg0, void *arg1, u16 arg2, s16 arg3, u16 arg4);

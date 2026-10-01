@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init active-record lookup byte-matched
+
+- `func_1000FF90` now scans the active `D_80041FE0` records for a primary
+  identifier, two independently optional selectors, and a clear disable bit.
+- Declaring the third selector unsigned reproduces retail's two independent
+  `-1` constants and exact 35-word control-flow shape. Twenty-two words emit
+  directly from C; thirteen stale-checked rows normalize one closed
+  `a0`/`a1`/`a3` compiler-allocation cycle, including two table-base
+  relocations.
+- The linked and retail 140-byte spans share SHA-256
+  `eb36532b03f324f494ecc9c6cf7753c062f747d46e2de603413d378c6d5a72d4`.
+  Totals are **3,145 / 5,457 (57.63%)** overall and
+  **462 / 488 (94.67%)** in Init. See
+  [Working Note 646](WORKING_NOTES/646-init-active-record-lookup-match-20261001.md).
+
 ### Init listener/audio update byte-matched
 
 - `func_10011BB8` replaces its zero-return placeholder with the recovered

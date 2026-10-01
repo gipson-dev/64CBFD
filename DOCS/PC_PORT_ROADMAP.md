@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,144 / 5,457 (57.61%) | 0 | 2,313 |
-| Init | 488 / 538 (90.71%) | 461 / 488 (94.47%) | 0 | 27 |
+| Total | 5,457 / 6,041 (90.33%) | 3,145 / 5,457 (57.63%) | 0 | 2,312 |
+| Init | 488 / 538 (90.71%) | 462 / 488 (94.67%) | 0 | 26 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,12 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init active-record lookup `func_1000FF90` now matches all 35 retail words.
+It scans the active 0x30-byte record array, accepts `-1` as an independent
+wildcard for either secondary selector, and excludes records carrying flag
+`0x80`; see
+[Working Note 646](WORKING_NOTES/646-init-active-record-lookup-match-20261001.md).
 
 The Init listener/audio update `func_10011BB8` now matches all 180 retail
 words. It snapshots the active player/listener transforms, compacts the
