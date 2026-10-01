@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,121 / 5,457 (57.19%) | 0 | 2,336 |
-| Init | 438 / 488 (89.75%) | 0 | 50 |
+| Total | 3,122 / 5,457 (57.21%) | 0 | 2,335 |
+| Init | 439 / 488 (89.96%) | 0 | 49 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1036,6 +1036,13 @@ end-to-end gameplay acceptance.
    stale-checked rows normalize 69 compiler-allocation and scheduling words,
    including relocation-aware address and call movement; see
    [Working Note 622](WORKING_NOTES/622-init-nearest-anchor-forwarder-match-20261001.md).
+   The 109-word DMA page-cache helper `func_100097CC` is byte-exact after
+   recovering its active-page hit scan, free-node allocation and doubly linked
+   list repair, 0x800-byte DMA setup, frame stamp, and odd-address restoration.
+   Thirty-five words emit directly from semantic C; 74 relocation-aware,
+   stale-checked rows normalize compiler register allocation and scheduling.
+   See
+   [Working Note 623](WORKING_NOTES/623-init-dma-page-cache-helper-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init DMA page-cache helper byte-matched
+
+- `func_100097CC` replaces its zero-return placeholder with the recovered
+  active-page scan, cache-hit timestamp refresh, free-node allocation, and
+  doubly linked active/free-list maintenance.
+- A cache miss aligns the device address after retaining its low bit, stamps
+  the 0x800-byte page with the current frame, claims one of 32 DMA message
+  slots, starts `osPiStartDma`, and returns the physical DRAM address with the
+  retained bit restored. Thirty-five of 109 words emit directly from semantic
+  C; 74 stale-checked relocation-aware rows normalize compiler allocation and
+  scheduling.
+- The linked and retail spans share SHA-256
+  `64c77129d302ef6d7adfd48564394809ef11918a2c59289cadfe7a162ba5b0c5`.
+  Totals are **3,122 / 5,457 (57.21%)** overall and
+  **439 / 488 (89.96%)** in Init. See
+  [Working Note 623](WORKING_NOTES/623-init-dma-page-cache-helper-match-20261001.md).
+
 ### Init nearest-anchor forwarder byte-matched
 
 - `func_1000F6B8` replaces its zero-return placeholder with the recovered

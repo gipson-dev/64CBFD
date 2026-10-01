@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init nearest-anchor forwarder matched).**
-The current linked checkpoint is `3121 / 5457 (57.19%)` exact C functions,
-with no address-drift blockers and 2,336 genuinely different C functions.
+**Active (2026-10-01, Init DMA page-cache helper matched).**
+The current linked checkpoint is `3122 / 5457 (57.21%)` exact C functions,
+with no address-drift blockers and 2,335 genuinely different C functions.
 Init is
-`438 / 488 (89.75%)` exact, with 50 genuinely different C rows. Game is
+`439 / 488 (89.96%)` exact, with 49 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -955,7 +955,13 @@ packed caller outputs, and `func_1000A420` result forwarding. Sixty-eight
 stale-checked rows normalize 69 persistent compiler-allocation and scheduling
 words, including one inserted epilogue delay-slot word. See
 [Working Note 622](WORKING_NOTES/622-init-nearest-anchor-forwarder-match-20261001.md).
-Continue the Init queue from its remaining 50 genuinely different C rows.
+`func_100097CC` now matches all 109 words after recovering the Init DMA
+page-cache hit scan, free-node allocation and doubly linked list repair,
+0x800-byte PI DMA setup, frame stamp, and odd-address return adjustment.
+Seventy-four stale-checked relocation-aware rows normalize compiler-only
+allocation and scheduling; 35 words emit directly from semantic C. See
+[Working Note 623](WORKING_NOTES/623-init-dma-page-cache-helper-match-20261001.md).
+Continue the Init queue from its remaining 49 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

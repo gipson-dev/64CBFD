@@ -296,100 +296,70 @@ s32 func_100095A0(s32 arg0, s32 arg1) {
 //     return 1;
 // }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_100097CC.s. */
 s32 func_100097CC(u32 arg0, s32 arg1, s32 arg2) {
-    return 0;
+    struct54 *current;
+    struct54 *previous;
+    s32 lowBit;
+    s32 dramAddress;
+
+    current = (struct54 *)D_80040F78.unk4;
+    previous = NULL;
+    while (current != NULL) {
+        if (arg0 < current->unk8) {
+            break;
+        }
+        previous = current;
+        if ((s32)(current->unk8 + 0x800) >= (s32)(arg0 + arg1)) {
+            current->unkC = D_8002AE44;
+            return osVirtualToPhysical(current->unk10 + arg0 - current->unk8);
+        }
+        current = current->unk0;
+    }
+
+    current = (struct54 *)D_80040F78.unk8;
+    if (current == NULL || D_8002AE48 >= 0x20U) {
+        return 0;
+    }
+
+    D_80040F78.unk8 = (s32)current->unk0;
+    if (current->unk0 != NULL) {
+        current->unk0->unk4 = current->unk4;
+    }
+    if (current->unk4 != NULL) {
+        current->unk4->unk0 = current->unk0;
+    }
+
+    if (previous != NULL) {
+        current->unk4 = previous;
+        current->unk0 = previous->unk0;
+        if (previous->unk0 != NULL) {
+            previous->unk0->unk4 = current;
+        }
+        previous->unk0 = current;
+    } else {
+        if (D_80040F78.unk4 != 0) {
+            current->unk0 = (struct54 *)D_80040F78.unk4;
+            D_80040F78.unk4 = (s32)current;
+            current->unk4 = NULL;
+            current->unk0->unk4 = current;
+        } else {
+            D_80040F78.unk4 = (s32)current;
+            current->unk0 = NULL;
+            current->unk4 = NULL;
+        }
+    }
+
+    lowBit = arg0 & 1;
+    dramAddress = current->unk10;
+    arg0 -= lowBit;
+    current->unk8 = arg0;
+    current->unkC = D_8002AE44;
+    arg2 = D_8002AE48;
+    D_8002AE48 = arg2 + 1;
+    osPiStartDma((OSIoMesg *)&D_80040F98[arg2], 1, 0, arg0,
+                 dramAddress, 0x800, (OSMesgQueue *)&D_80041298);
+    return osVirtualToPhysical(dramAddress) + lowBit;
 }
-// NON-MATCHING: another horrible function
-// s32 func_100097CC(u32 arg0, s32 arg1, s32 arg2) {
-//     s32 sp2C;
-//     s32 sp28;
-//     s32 temp_a3;
-//     s32 temp_t0;
-//     s32 temp_t1;
-//     s32 temp_t9;
-//     u32 temp_v0;
-//     u32 temp_v0_6;
-//     struct19 *temp_a2;
-//     struct19 *temp_v0_2;
-//     struct19 *temp_v0_3;
-//     struct19 *temp_v0_4;
-//     struct19 *temp_v0_5;
-//     struct19 *temp_v1;
-//     struct19 *temp_v1_2;
-//     struct19 *temp_v1_3;
-//     struct19 *phi_v1;
-//     struct19 *phi_a2;
-//
-//     temp_v1 = D_80040F78.unk4;
-//     phi_v1 = temp_v1;
-//     phi_a2 = NULL;
-//     phi_a2 = NULL;
-//     if (temp_v1 != 0) {
-// loop_1:
-//         temp_v0 = phi_v1->unk8;
-//         if (arg0 >= temp_v0) {
-//             temp_a2 = phi_v1;
-//             if ((temp_v0 + 0x800) >= (arg0 + arg1)) {
-//                 phi_v1->unkC = (s32) D_8002AE44;
-//                 return osVirtualToPhysical((phi_v1->unk10 + arg0) - temp_v0); //, temp_a2, arg0);
-//             }
-//             temp_v1_2 = phi_v1->unk0;
-//             phi_v1 = temp_v1_2;
-//             phi_a2 = temp_a2;
-//             // phi_a2 = temp_a2;
-//             if (temp_v1_2 != 0) {
-//                 goto loop_1;
-//             }
-//         }
-//     }
-//     temp_v1_3 = D_80040F78.unk8;
-//     if ((temp_v1_3 == 0) || ((u32) D_8002AE48 >= 0x20U)) {
-//         return 0;
-//     }
-//     D_80040F78.unk8 = (struct19 *) temp_v1_3->unk0;
-//     temp_v0_2 = temp_v1_3->unk0;
-//     if (temp_v0_2 != 0) {
-//         temp_v0_2->unk4 = (struct19 *) temp_v1_3->unk4;
-//     }
-//     temp_v0_3 = temp_v1_3->unk4;
-//     if (temp_v0_3 != 0) {
-//         temp_v0_3 = (struct19 *) temp_v1_3->unk0; // ()
-//     }
-//     if (phi_a2 != 0) {
-//         temp_v1_3->unk4 = phi_a2;
-//         temp_v1_3->unk0 = (struct19 *) phi_a2; // *
-//         temp_v0_4 = phi_a2; // *
-//         if (temp_v0_4 != 0) {
-//             temp_v0_4->unk4 = temp_v1_3;
-//         }
-//         phi_a2 = temp_v1_3; // *
-//     } else {
-//         temp_v0_5 = D_80040F78.unk4;
-//         if (temp_v0_5 != 0) {
-//             D_80040F78.unk4 = temp_v1_3;
-//             temp_v1_3->unk0 = temp_v0_5;
-//             temp_v1_3->unk4 = NULL;
-//             temp_v0_5->unk4 = temp_v1_3;
-//         } else {
-//             D_80040F78.unk4 = temp_v1_3;
-//             temp_v1_3->unk0 = NULL;
-//             temp_v1_3->unk4 = NULL;
-//         }
-//     }
-//     temp_t0 = arg0 & 1;
-//     temp_t1 = temp_v1_3->unk10;
-//     sp28 = temp_t0;
-//     temp_a3 = arg0 - temp_t0;
-//     temp_v1_3->unk8 = temp_a3;
-//     temp_v1_3->unkC = (s32) D_8002AE44;
-//     temp_v0_6 = D_8002AE48;
-//     // temp_t9 = temp_v0_6; // * 0x18;
-//     D_8002AE48 = (u32) (temp_v0_6 + 1); // next free slot in D_80040F98?
-//     sp2C = temp_t1;
-//     osPiStartDma(&D_80040F98[temp_v0_6], 1, 0, temp_a3, temp_t1, 0x800, &D_80041298);
-//     return osVirtualToPhysical(sp2C) + sp28;
-// }
 
 s32 func_10009980(s32 *arg0) {
     if (D_80040F78.unk0 == 0) {

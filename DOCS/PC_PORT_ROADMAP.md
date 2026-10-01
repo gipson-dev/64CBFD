@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,121 / 5,457 (57.19%) | 0 | 2,336 |
-| Init | 488 / 538 (90.71%) | 438 / 488 (89.75%) | 0 | 50 |
+| Total | 5,457 / 6,041 (90.33%) | 3,122 / 5,457 (57.21%) | 0 | 2,335 |
+| Init | 488 / 538 (90.71%) | 439 / 488 (89.96%) | 0 | 49 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -577,6 +577,11 @@ The Init nearest-anchor helper `func_1000F6B8` now matches its complete
 vector, and forwards both relative coordinate triples plus the packed caller
 outputs to `func_1000A420`; see
 [Working Note 622](WORKING_NOTES/622-init-nearest-anchor-forwarder-match-20261001.md).
+The Init DMA page-cache helper `func_100097CC` now matches its complete
+436-byte span. It searches the active cache list, allocates and relinks a free
+page on a miss, starts the 0x800-byte PI DMA, and preserves odd-address
+requests in the returned physical address; see
+[Working Note 623](WORKING_NOTES/623-init-dma-page-cache-helper-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
