@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,108 / 5,457 (56.95%) | 0 | 2,349 |
-| Init | 425 / 488 (87.09%) | 0 | 63 |
+| Total | 3,109 / 5,457 (56.97%) | 0 | 2,348 |
+| Init | 426 / 488 (87.30%) | 0 | 62 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -962,6 +962,11 @@ end-to-end gameplay acceptance.
    selection, coordinate setup for `func_1000A420`, and fixed-point output
    scale. Fifty guards normalize one closed allocation and call schedule; see
    [Working Note 609](WORKING_NOTES/609-init-nearest-listener-spatial-query-match-20260930.md).
+   The 97-word pending note-end query `func_1001ADA4` is byte-exact after
+   restoring its SDK queue scan, accumulated event time, note-end selection,
+   and allocated-to-free-list transfer. Twenty replacement guards and one
+   checked insertion normalize the closed relink/return tail; see
+   [Working Note 610](WORKING_NOTES/610-init-pending-note-end-query-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

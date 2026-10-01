@@ -2925,3 +2925,23 @@ init_EB00,func_100114D0,0x12C,0x032C0019,0x01F80019,-,-,Normalize the recovered 
 init_EB00,func_100114D0,0x130,0x00006812,0x0000C812,-,-,Normalize the recovered nearest-listener spatial query to retail register allocation and instruction schedule,,,false
 init_EB00,func_100114D0,0x134,0x000D73C2,0x00195BC2,-,-,Normalize the recovered nearest-listener spatial query to retail register allocation and instruction schedule,,,false
 init_EB00,func_100114D0,0x138,0xADEE0000,0xAD8B0000,-,-,Normalize the recovered nearest-listener spatial query to retail register allocation and instruction schedule,,,false
+init_1AAE0,func_1001ADA4,0x01C,0x13000052,0x13000053,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x058,0x15E1003E,0x15E1003F,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x068,0x1725003A,0x1725003B,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x078,0x10200033,0x10200034,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x140,0x10000002,0xAD280000,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x144,0xAD280000,0x10000002,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x148,0xA3A0000F,0x00000000,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x14C,0x10000006,0xA3A0000F,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x150,0x00000000,0x10000006,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x154,0x8FAC0018,0x00000000,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x158,0xAFAC001C,0x8FAC0018,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x15C,0x8FAA001C,0xAFAC001C,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x160,0x1540FFB0,0x8FAA001C,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x164,0x00000000,0x1540FFAF,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x168,0x10000003,0x00000000,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x16C,0x93A2000F,0x10000003,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x170,0x10000001,0x93A2000F,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x174,0x00000000,0x10000001,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x178,0x03E00008,0x00000000,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,,,false
+init_1AAE0,func_1001ADA4,0x17C,0x27BD0020,0x03E00008,-,-,Normalize the recovered pending-note-end query to retail branch and relink schedule,0x27BD0020,-,false

@@ -3,7 +3,7 @@
 #include "n_seqp.h"
 
 /* Generated placeholder declarations. */
-s32 func_1001ADA4();
+u8 func_1001ADA4(N_ALSeqPlayer *, N_ALVoice *, ALMicroTime);
 ALSound *func_1001B07C(N_ALSeqPlayer *, u8, u8, u8);
 s32 func_1001B310();
 s32 func_1001B7D0();
@@ -177,9 +177,55 @@ void __n_seqpReleaseVoice(N_ALSeqPlayer *seqp, N_ALVoice *voice, ALMicroTime del
 //     n_alEvtqPostEvent(arg0 + 0x48, &sp38, arg2, 0);
 // }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/func_1001ADA4.s. */
-s32 func_1001ADA4() {
-    return 0;
+u8 func_1001ADA4(N_ALSeqPlayer *seqp, N_ALVoice *voice, ALMicroTime killTime) {
+    ALLink *thisNode;
+    ALLink *nextNode;
+    N_ALEventListItem *thisItem;
+    ALMicroTime itemTime = 0;
+    u8 needsNoteKill = TRUE;
+    ALLink *element;
+    ALLink *linkElement;
+    ALLink *after;
+
+    thisNode = seqp->evtq.allocList.next;
+    while (thisNode != 0) {
+        nextNode = thisNode->next;
+        thisItem = (N_ALEventListItem *)thisNode;
+        itemTime += thisItem->delta;
+
+        if (thisItem->evt.type == AL_NOTE_END_EVT) {
+            if (thisItem->evt.msg.note.voice == voice) {
+                if (itemTime > killTime) {
+                    if ((N_ALEventListItem *)nextNode != 0) {
+                        ((N_ALEventListItem *)nextNode)->delta += thisItem->delta;
+                    }
+
+                    element = thisNode;
+                    if (element->next != 0) {
+                        element->next->prev = element->prev;
+                    }
+                    if (element->prev != 0) {
+                        element->prev->next = element->next;
+                    }
+
+                    linkElement = thisNode;
+                    after = &seqp->evtq.freeList;
+                    linkElement->next = after->next;
+                    linkElement->prev = after;
+                    if (after->next != 0) {
+                        after->next->prev = linkElement;
+                    }
+                    after->next = linkElement;
+                } else {
+                    needsNoteKill = FALSE;
+                }
+                break;
+            }
+        }
+        thisNode = nextNode;
+    }
+
+    return needsNoteKill;
 }
 
 N_ALVoiceState *__n_mapVoice(N_ALSeqPlayer *seqp, u8 key, u8 vel, u8 channel)

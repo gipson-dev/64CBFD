@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,108 / 5,457 (56.95%) | 0 | 2,349 |
-| Init | 488 / 538 (90.71%) | 425 / 488 (87.09%) | 0 | 63 |
+| Total | 5,457 / 6,041 (90.33%) | 3,109 / 5,457 (56.97%) | 0 | 2,348 |
+| Init | 488 / 538 (90.71%) | 426 / 488 (87.30%) | 0 | 62 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -508,6 +508,12 @@ unsigned squared-distance selection, relative-coordinate call setup, and
 fixed-point output scale; 50 stale-checked guards normalize one closed
 register allocation and call schedule. See
 [Working Note 609](WORKING_NOTES/609-init-nearest-listener-spatial-query-match-20260930.md).
+The Init pending note-end query `func_1001ADA4` now matches its complete
+388-byte span. Its recovered SDK logic restores accumulated event-time
+tracking, the voice-specific note-end decision, and allocated-to-free-list
+transfer; 20 replacement guards and one checked insertion normalize the
+closed relink/return tail. See
+[Working Note 610](WORKING_NOTES/610-init-pending-note-end-query-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

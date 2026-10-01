@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init pending note-end query byte-matched
+
+- `func_1001ADA4` restores the SDK allocated-event scan, accumulated event
+  time, voice-specific note-end decision, and allocated-to-free-list transfer.
+- Seventy-six of 97 words emit directly from typed C. Twenty stale-checked
+  replacement guards and one checked insertion normalize four branch offsets
+  and the closed relink/return tail; no words are omitted.
+- The linked and retail spans share SHA-256
+  `a23783a71d1e0d4ee84491f53a75f82cde29c37c044fb29f0d21dd2745f0874e`.
+  Totals are **3,109 / 5,457 (56.97%)** overall and
+  **426 / 488 (87.30%)** in Init. See
+  [Working Note 610](WORKING_NOTES/610-init-pending-note-end-query-match-20260930.md).
+
 ### Init nearest-listener spatial query byte-matched
 
 - `func_100114D0` restores the inclusive listener-table scan, unsigned
