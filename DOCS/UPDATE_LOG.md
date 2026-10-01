@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init controller-pak read routine byte-matched
+
+- `__osContRamRead` now restores the retail retry-time PIF RAM preparation:
+  all 16 words are set to `0x000000FF` and `pifstatus` is cleared before each
+  read DMA attempt.
+- The no-pak path retains the value already produced by `CHNL_ERR`; removing a
+  redundant assignment recovers retail's direct fallthrough into retry
+  handling. The complete 145-word routine emits directly from semantic C with
+  no expected-word guards.
+- The linked and retail spans share SHA-256
+  `bf8aa2ecac0083d38e003575c990c79882ead67450e9d1d777462ba2dea9b4be`.
+  Totals are **3,126 / 5,457 (57.28%)** overall and
+  **443 / 488 (90.78%)** in Init. See
+  [Working Note 627](WORKING_NOTES/627-init-controller-pak-read-match-20261001.md).
+
 ### Init allocator free/coalescing routine byte-matched
 
 - `func_10004074` replaces its zero-return placeholder with the recovered

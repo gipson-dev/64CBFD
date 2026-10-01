@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,125 / 5,457 (57.27%) | 0 | 2,332 |
-| Init | 442 / 488 (90.57%) | 0 | 46 |
+| Total | 3,126 / 5,457 (57.28%) | 0 | 2,331 |
+| Init | 443 / 488 (90.78%) | 0 | 45 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1066,6 +1066,11 @@ end-to-end gameplay acceptance.
    relocation-aware, stale-checked rows normalize IDO's frame, allocation,
    branch, and scheduling choices. See
    [Working Note 626](WORKING_NOTES/626-init-allocator-free-coalescing-match-20261001.md).
+   The 145-word controller-pak read routine `__osContRamRead` is byte-exact
+   directly from C after restoring the retry-time 16-word PIF RAM reset and
+   preserving `CHNL_ERR` as the no-pak result instead of redundantly assigning
+   the same value. No expected-word guards are used. See
+   [Working Note 627](WORKING_NOTES/627-init-controller-pak-read-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
