@@ -25,17 +25,25 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 584 | 1,929,924 / 2,256,728 (85.52%) |
-| Init | 488 / 538 (90.71%) | 50 | 147,288 / 164,048 (89.78%) |
+| Total | 5,456 / 6,041 (90.32%) | 585 | 1,929,140 / 2,256,728 (85.48%) |
+| Init | 487 / 538 (90.52%) | 51 | 146,504 / 164,048 (89.31%) |
 | Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,150 / 5,457 (57.72%) | 0 | 2,307 |
-| Init | 467 / 488 (95.70%) | 0 | 21 |
+| Total | 3,150 / 5,456 (57.73%) | 0 | 2,306 |
+| Init | 467 / 487 (95.89%) | 0 | 20 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init `bcopy` slot is restored to its original handwritten assembly instead
+of the non-matching simplified C substitute. Direct comparison confirms all
+196 words, including the optimized overlap-safe forward and backward copy
+paths and three padding words, match retail. Because the authoritative matcher
+tracks C rows only, this moves one function and 784 bytes from the C totals to
+raw assembly without changing the byte-exact C numerator. See
+[Working Note 652](WORKING_NOTES/652-init-handwritten-bcopy-restoration-20261001.md).
 
 The Init resource-request manager `func_10009CBC` now matches its complete
 208-word retail span. It resolves encoded resource requests, acquires or

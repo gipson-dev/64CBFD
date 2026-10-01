@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init handwritten bcopy restored
+
+- The `0x10023A10..0x10023D20` `bcopy` slot now links the splitter-extracted
+  original handwritten assembly instead of the simplified byte-loop C
+  substitute. The retail routine selects overlap-safe forward or backward
+  copying, peels alignment, and uses 32-byte, 16-byte, 4-byte, and byte tails.
+- Direct linked-ELF comparison confirms all 196 words, including the three
+  trailing padding words, match retail. Both 784-byte spans share SHA-256
+  `9de2251afa4dd169a3c55e33d2be4c540174550516f075ec6a6f0f9855fb6e6d`.
+- This is an ownership correction rather than a new C match. The measured C
+  totals are now **3,150 / 5,456 (57.73%)** overall and
+  **467 / 487 (95.89%)** in Init, with zero address drift and 20 different
+  Init C rows. See
+  [Working Note 652](WORKING_NOTES/652-init-handwritten-bcopy-restoration-20261001.md).
+
 ### Init resource-request manager byte-matched
 
 - `func_10009CBC` now distinguishes encoded resource requests from existing

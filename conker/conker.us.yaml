@@ -160,7 +160,7 @@ segments:
       - [0x23830, c,   libultra/os/getthreadpri]
       - [0x23850, c,   libultra/io/pirawdma]
       - [0x23930, c,   libultra/io/epirawdma]
-      - [0x23A10, c,   libultra/libc/bcopy]
+      - [0x23A10, asm, libultra/libc/bcopy]
       - [0x23D20, asm, libultra/os/writebackdcache]
       - [0x23DA0, c,   libultra/io/spsetstat]
       - [0x23DB0, c,   libultra/io/spsetpc]

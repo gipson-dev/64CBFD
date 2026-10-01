@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,150 / 5,457 (57.72%) | 0 | 2,307 |
-| Init | 488 / 538 (90.71%) | 467 / 488 (95.70%) | 0 | 21 |
+| Total | 5,456 / 6,041 (90.32%) | 3,150 / 5,456 (57.73%) | 0 | 2,306 |
+| Init | 487 / 538 (90.52%) | 467 / 487 (95.89%) | 0 | 20 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,13 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init `bcopy` slot is restored to its original handwritten assembly. Its
+optimized overlap-safe forward and backward paths, alignment handling, and
+three padding words match all 196 retail words directly; see
+[Working Note 652](WORKING_NOTES/652-init-handwritten-bcopy-restoration-20261001.md).
+This corrects source ownership from C to raw assembly, so it lowers the C
+denominator without adding a byte-exact C row.
 
 The Init resource-request manager `func_10009CBC` now matches all 208 retail
 words. It decodes resource requests, reuses or evicts manager nodes, prepares
