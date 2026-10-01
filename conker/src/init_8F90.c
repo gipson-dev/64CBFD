@@ -7,7 +7,7 @@
 s32 func_10008F90();
 s32 func_100095A0(struct50 *arg0, struct51 *arg1);
 s32 func_100099BC(void);
-s32 func_1000A03C();
+s32 func_1000A03C(void);
 void func_1000A348(void);
 extern s32 D_100291A0_pass2;
 /* End generated placeholder declarations. */
@@ -619,9 +619,151 @@ s32 func_10009FFC(void) {
     return func_10009CBC;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_1000A03C.s. */
-s32 func_1000A03C() {
-    return 0;
+s32 func_1000A03C(void) {
+    void *sp64;
+    s32 resource;
+    s32 resource2;
+    s32 entry;
+    s32 matched;
+    s32 busy;
+    s32 received;
+    s32 cursor;
+    s32 cursor2;
+    register struct54 *current;
+    register struct54 *next;
+    struct54 *head;
+    struct54 *head_next;
+    struct54 *head_store;
+    u32 attempted;
+    u32 index;
+    u32 index2;
+    u8 *voice;
+
+    received = 0;
+    sp64 = NULL;
+    attempted = 0;
+    if (D_8002AE50 != 0) {
+        do {
+            if (osRecvMesg((OSMesgQueue *)&D_800416F0, &sp64,
+                           OS_MESG_NOBLOCK) != -1) {
+                current = D_800406A0.unkC;
+                received++;
+                matched = 0;
+                if (current != NULL) {
+                    do {
+                        if (*(s32 *)((u8 *)sp64 + 8) == current->unk10) {
+                            matched = 1;
+                            if (current == D_800406A0.unkC) {
+                                D_800406A0.unkC = current->unk0;
+                            }
+                            if (current->unk0 != NULL) {
+                                current->unk0->unk4 = current->unk4;
+                            }
+                            if (current->unk4 != NULL) {
+                                current->unk4->unk0 = current->unk0;
+                            }
+                            current->unk0 = NULL;
+                            current->unk4 = NULL;
+                            head = (struct54 *)D_800406A0.unk4;
+                            if (head != NULL) {
+                                current->unk4 = head;
+                                current->unk0 = head->unk0;
+                                head_store = head;
+                                head_next = head->unk0;
+                                if (head_next != NULL) {
+                                    head_next->unk4 = current;
+                                }
+                                head_store->unk0 = current;
+                            } else {
+                                D_800406A0.unk4 = (s32)current;
+                                current->unk0 = NULL;
+                                current->unk4 = NULL;
+                            }
+                            if (current->unk16 == 1) {
+                                resource = current->unk10;
+                                index = 0;
+                                cursor = resource;
+                                if (*(s16 *)(resource + 0xE) != 0) {
+                                    do {
+                                        entry = *(s32 *)(cursor + 0x10);
+                                        index++;
+                                        cursor += 4;
+                                        *(s32 *)(cursor + 0xC) = entry + current->unk10;
+                                    } while (index < (u32)*(s16 *)(resource + 0xE));
+                                }
+                            }
+                            current->unk15 = 1;
+                            current->unk14++;
+                        } else {
+                            current = current->unk0;
+                        }
+                    } while ((current != NULL) && (matched == 0));
+                }
+            }
+            attempted++;
+        } while (attempted < (u32)D_8002AE50);
+    }
+
+    current = D_800406A0.unk10;
+    D_8002AE50 -= received;
+    if (current != NULL) {
+        do {
+            busy = 0;
+            next = current->unk0;
+            if (current->unk16 == 1) {
+                resource2 = current->unk10;
+                index2 = 0;
+                cursor2 = resource2;
+                if (*(s16 *)(resource2 + 0xE) != 0) {
+                    do {
+                        index2++;
+                        voice = *(u8 **)(*(s32 *)(cursor2 + 0x10) + 8);
+                        if (voice[0xA] != 0) {
+                            voice[0xA] = 0;
+                            busy = 1;
+                        }
+                        cursor2 += 4;
+                    } while (index2 < (u32)*(s16 *)(resource2 + 0xE));
+                }
+            }
+            if (busy == 0) {
+                current->unk14 = 0;
+                current->unk15 = 0;
+                func_10004074((void *)current->unk10);
+                current->unkC = 0;
+                if (current == D_800406A0.unk10) {
+                    D_800406A0.unk10 = next;
+                }
+                if (current->unk0 != NULL) {
+                    current->unk0->unk4 = current->unk4;
+                }
+                if (current->unk4 != NULL) {
+                    current->unk4->unk0 = current->unk0;
+                }
+                head = (struct54 *)D_800406A0.unk8;
+                if (head != NULL) {
+                    current->unk4 = head;
+                    current->unk0 = head->unk0;
+                    head_store = head;
+                    head_next = head->unk0;
+                    if (head_next != NULL) {
+                        head_next->unk4 = current;
+                    }
+                    head_store->unk0 = current;
+                } else {
+                    D_800406A0.unk8 = (s32)current;
+                    current->unk0 = NULL;
+                    current->unk4 = NULL;
+                }
+            }
+            current = next;
+        } while (next != NULL);
+    }
+
+    if (D_8003E384 != 0) {
+        func_1000A348();
+        D_8003E384 = 0;
+    }
 }
 void func_1000A348(void) {
     struct54 *current;

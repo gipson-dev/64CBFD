@@ -928,7 +928,7 @@ s32 func_100097CC(u32 arg0, s32 arg1, s32 arg2);
 void func_10009BE4(struct54 *arg0);
 s32 func_10009CBC(void *arg0, s32 arg1);
 s32  func_10009FFC(void);
-//func_1000A03C
+s32 func_1000A03C(void);
 void func_1000A348(void);
 //func_1000A420
 //func_1000A750

@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init resource-completion manager byte-matched
+
+- `func_1000A03C` now drains nonblocking completion messages, finds each
+  resource node, moves it from the pending list to the active list, and
+  relocates type-1 resource table entries.
+- Its second phase clears completed voice flags, releases idle resources,
+  recycles their nodes, and services `D_8003E384` through `func_1000A348`.
+  The semantic C recovers the retail 120-byte frame and `s0`-`s3` lifetimes;
+  86 stale-checked rows, including five checked insertions, normalize the
+  remaining closed IDO list and delay-slot schedule without moving any
+  relocations.
+- The linked and retail 780-byte spans share SHA-256
+  `42c65b8dbbdff63a3471f0a348effb6a07ee2bf0293af5b159513b9340bbe989`.
+  Totals are **3,148 / 5,457 (57.69%)** overall and
+  **465 / 488 (95.29%)** in Init. See
+  [Working Note 649](WORKING_NOTES/649-init-resource-completion-manager-match-20261001.md).
+
 ### Init audio-event parameter update byte-matched
 
 - `func_1000F85C` now rejects invalid or inactive sound handles and forwards
