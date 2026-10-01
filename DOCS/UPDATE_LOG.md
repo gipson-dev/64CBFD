@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init boot-loader thread byte-matched
+
+- `func_10001194` replaces its empty placeholder with the recovered memory
+  clearing, cache invalidation, framebuffer allocation, compressed Game-image
+  transfer, relocation-table decode, and subsystem startup sequence.
+- Eighty-seven of 163 words emit directly from semantic C. Seventy-six
+  stale-checked rows normalize compiler allocation and scheduling while
+  preserving shifted call, global, and section-boundary relocations.
+- The linked and retail 652-byte spans share SHA-256
+  `681ac3de3b09479dfe0890da9d095fded0097f673189325a1b87e771a0ee983e`.
+  Totals are **3,138 / 5,457 (57.50%)** overall and
+  **455 / 488 (93.24%)** in Init. See
+  [Working Note 639](WORKING_NOTES/639-init-boot-loader-thread-match-20261001.md).
+
 ### Init music-control callback byte-matched
 
 - `func_1000BCBC` replaces its zero-return placeholder with the recovered

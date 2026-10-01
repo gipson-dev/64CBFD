@@ -32,10 +32,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,137 / 5,457 (57.49%) | 0 | 2,320 |
-| Init | 454 / 488 (93.03%) | 0 | 34 |
+| Total | 3,138 / 5,457 (57.50%) | 0 | 2,319 |
+| Init | 455 / 488 (93.24%) | 0 | 33 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init boot loader `func_10001194` now matches its complete 163-word retail
+span. It restores memory clearing, framebuffer setup, compressed Game-image
+loading, relocation-table decoding, and final subsystem startup. See
+[Working Note 639](WORKING_NOTES/639-init-boot-loader-thread-match-20261001.md).
 
 The Init music-control callback `func_1000BCBC` now matches its complete
 169-word retail span. It restores initial channel setup plus the scene-gated
