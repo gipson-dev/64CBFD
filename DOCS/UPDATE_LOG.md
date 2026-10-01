@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init audio-task submission byte-matched
+
+- `func_100095A0` replaces its zero-return placeholder with the recovered AI
+  backlog policy, aligned output selection, synthesis-frame call, scheduler
+  task construction, queue submission, and command-buffer toggle.
+- The source restores the 64-byte frame and complete 139-word extent. Of those
+  words, 68 emit directly from semantic C and 71 stale-checked rows normalize
+  compiler allocation and scheduling while preserving all relocations.
+- The linked and retail 556-byte spans share SHA-256
+  `0ccabf4750562b5e4fcd9ed0470bc6e10bb5aab211258c1ed3b4c2ceaeaeb360`.
+  Totals are **3,135 / 5,457 (57.45%)** overall and
+  **452 / 488 (92.62%)** in Init. See
+  [Working Note 636](WORKING_NOTES/636-init-audio-task-submission-match-20261001.md).
+
 ### Init three-channel audio-mix coordinator byte-matched
 
 - `func_1000D758` replaces its empty placeholder with the recovered

@@ -5,10 +5,11 @@
 
 /* Generated placeholder declarations. */
 s32 func_10008F90();
-s32 func_100095A0(s32 arg0, s32 arg1);
+s32 func_100095A0(struct50 *arg0, struct51 *arg1);
 s32 func_100099BC(void);
 s32 func_1000A03C();
 void func_1000A348(void);
+extern s32 D_100291A0_pass2;
 /* End generated placeholder declarations. */
 
 /* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10008F90.s. */
@@ -224,9 +225,65 @@ void func_10009400(s32 arg0) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_100095A0.s. */
-s32 func_100095A0(s32 arg0, s32 arg1) {
-    return 0;
+s32 func_100095A0(struct50 *arg0, struct51 *arg1) {
+    Acmd *commands;
+    s32 physical;
+    s32 commandCount[3];
+    s32 samples;
+
+    physical = osVirtualToPhysical(arg0->unk0);
+    func_100099BC();
+    func_1000A03C();
+    samples = IO_READ(AI_LEN_REG) >> 2;
+
+    if (arg1 != NULL) {
+        osAiSetNextBuffer((void *)arg1->unk4, arg1->unk8 * 4);
+    }
+
+    if ((samples >= 0xF9) && (D_80040F84 == 0)) {
+        arg0->unk8 = D_80040F88;
+        D_80040F84 = 2;
+    } else {
+        arg0->unk8 = D_80040F8C;
+        if (D_80040F84 != 0) {
+            D_80040F84--;
+        }
+    }
+
+    if (((physical + (arg0->unk8 * 4)) & 0x1FFF) == 0) {
+        arg0->unk4 = arg0->unk0 + 0x10;
+        physical += 0x10;
+    } else {
+        arg0->unk4 = arg0->unk0;
+    }
+
+    commands = n_alAudioFrame((Acmd *)D_8003E388[D_8002AE4C],
+                              &commandCount[2], (s16 *)physical, arg0->unk8);
+    if (commandCount[2] == 0) {
+        return 0;
+    }
+
+    arg0->unk10 = 0;
+    arg0->unk68 = (s32)&D_8003E608;
+    arg0->unk6C = (s32)&arg0->unk70;
+    arg0->unk1C = 2;
+    arg0->unk20 = 0;
+    arg0->unk58 = D_8003E388[D_8002AE4C];
+    arg0->unk5C = (((s32)commands - D_8003E388[D_8002AE4C]) >> 3) << 3;
+    arg0->unk28 = 2;
+    arg0->unk30 = (s32)&D_100290D0;
+    arg0->unk34 = (s32)&D_100291A0 - (s32)&D_100290D0;
+    arg0->unk2C = 0;
+    arg0->unk38 = (s32)&D_100291A0_pass2;
+    arg0->unk40 = (s32)&D_8002C960;
+    arg0->unk44 = 0x800;
+    arg0->unk60 = 0;
+    arg0->unk64 = 0x400;
+
+    osWritebackDCacheAll();
+    osSendMesg(&D_8003B200, (OSMesg)&arg0->unk10, OS_MESG_BLOCK);
+    D_8002AE4C ^= 1;
+    return 1;
 }
 // NON-MATCHING: so far away
 // s32 func_100095A0(struct50 *arg0, struct51 *arg1) {

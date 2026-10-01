@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,134 / 5,457 (57.43%) | 0 | 2,323 |
-| Init | 451 / 488 (92.42%) | 0 | 37 |
+| Total | 3,135 / 5,457 (57.45%) | 0 | 2,322 |
+| Init | 452 / 488 (92.62%) | 0 | 36 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1119,6 +1119,13 @@ end-to-end gameplay acceptance.
    emits 112 words directly; 21 stale-checked rows normalize one closed
    register-allocation cycle, including four relocation-preserving rows. See
    [Working Note 635](WORKING_NOTES/635-init-three-channel-audio-mix-coordinator-match-20261001.md).
+   The 139-word audio-task submission routine `func_100095A0` is byte-exact
+   after recovering its AI backlog policy, aligned output selection,
+   `n_alAudioFrame` call, scheduler-task construction, queue submission, and
+   command-buffer toggle. Semantic C emits 68 words directly; 71 stale-checked
+   rows normalize compiler allocation and scheduling while preserving all
+   relocation targets. See
+   [Working Note 636](WORKING_NOTES/636-init-audio-task-submission-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

@@ -110,6 +110,7 @@ extern u32  D_8002AE44;
 extern s32  D_8002AE48;
 extern s32  D_8002AE4C;
 extern s32  D_8002AE54;
+extern s32  D_8002C960;
 
 extern s32  D_8002B070;
 extern struct138 D_8002B074[];
@@ -256,7 +257,7 @@ extern s16  D_8003C910[];
 
 extern s32  D_8003E368;
 extern s32  D_8003E370;
-extern s32  D_8003E388;
+extern s32  D_8003E388[];
 extern struct50 *D_8003E390[];
 extern OSThread  D_8003E3A0;
 extern s32  D_8003E640;

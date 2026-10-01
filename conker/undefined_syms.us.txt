@@ -78,3 +78,4 @@ func_151F2BA8_retail = 0x151F2BA8;
 func_151F2CDC_retail = 0x151F2CDC;
 func_151F2D6C_retail = 0x151F2D6C;
 func_151F2E4C_retail = 0x151F2E4C;
+D_100291A0_pass2 = 0x100291A0;
