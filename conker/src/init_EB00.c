@@ -9,7 +9,7 @@ s32 func_1000EFB4();
 s32 func_1000F568(s32 arg0, u32 arg1);
 s32 func_1000F6B8(s32 arg0, s16 arg1, s16 arg2, s16 arg3, void *arg4, s16 arg5, s16 arg6);
 void func_10011310(void);
-s32 func_10011624();
+s32 func_10011624(struct15 *arg0, s32 *arg1, s32 arg2, s32 arg3);
 s32 func_10011BB8();
 u16 func_10011EB8(s32 arg0, s16 *arg1, s32 arg2);
 /* End generated placeholder declarations. */
@@ -468,9 +468,58 @@ void func_1000F9D4(u16 arg0, s16 arg1, s16 arg2, s16 arg3) {
     func_1000F85C(arg0, 256, tmp & 0x80);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000FA64.s. */
 u16 func_1000FA64(u16 arg0, s16 arg1, s16 arg2, s16 arg3, s32 arg4, u16 arg5, s16 arg6, s32 arg7, void *arg8, s32 arg9, s32 argA, s32 argB) {
-    return 0;
+    struct15 *entry;
+    s32 count;
+    s32 index;
+    s16 *y;
+
+    y = &arg2;
+    index = D_80042760;
+    if (index >= 0x20) {
+        return 0;
+    }
+    D_80042760 = index + 1;
+
+    entry = &D_80041FE0[index];
+    if (arg7 != 0) {
+        entry->unk10 = argA | 0x12;
+    } else {
+        entry->unk10 = (argA & 0x108) | 2;
+    }
+
+    if ((argA & 0x40) != 0) {
+        *y = func_15083E0C((u8)arg1);
+        if (*y == -1) {
+            return 0;
+        }
+    }
+
+    *(u16 *)((u8 *)entry + 0x0) = arg0;
+    *(s16 *)((u8 *)entry + 0x2) = arg1;
+    *(s16 *)((u8 *)entry + 0x4) = *y;
+    *(s16 *)((u8 *)entry + 0x6) = arg3;
+    *(u16 *)((u8 *)entry + 0x8) = arg5;
+    *(s16 *)((u8 *)entry + 0xA) = arg6;
+    entry->unkC = arg4;
+    entry->unk14 = arg7;
+    entry->unk18 = (s32)arg8;
+    entry->unk1C = arg9;
+    *(s16 *)((u8 *)entry + 0x20) = argB;
+    *((u8 *)entry + 0x22) = 0;
+    *((u8 *)entry + 0x23) = 0;
+    *(s32 *)((u8 *)entry + 0x24) = 0;
+    *(s16 *)((u8 *)entry + 0x28) = 0;
+    *(f32 *)&entry->unk2C = alCents2Ratio(argB);
+
+    count = D_80042760;
+    func_10011624(D_80041FE0, &D_80042760, index, index + 1);
+    if (count != D_80042760) {
+        return 0;
+    }
+
+    entry->unk10 |= 0x1000;
+    return entry->unk24;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000FC18.s. */
 void func_1000FC18(u16 arg0, s16 arg1, s16 arg2, s16 arg3, u16 arg4) {
@@ -996,7 +1045,7 @@ void func_100114D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s
     *arg7 = ((u32)result * arg3) >> 15;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10011624.s. */
-s32 func_10011624() {
+s32 func_10011624(struct15 *arg0, s32 *arg1, s32 arg2, s32 arg3) {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10011BB8.s. */

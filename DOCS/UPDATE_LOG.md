@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init audio request allocator byte-matched
+
+- `func_1000FA64` replaces its zero-return placeholder with the recovered
+  bounded request allocation, callback-dependent flag setup, optional
+  coordinate replacement, packed record initialization, cents-to-ratio
+  conversion, queue submission, and committed-handle return.
+- The semantic C occupies the complete 109-word slot. Nine words emit
+  directly; 100 stale-checked relocation-aware rows normalize IDO's stack,
+  scheduling, and register allocation while preserving the two calls and two
+  global address pairs.
+- The linked and retail spans share SHA-256
+  `d8f6e2f920e541908664a49316ed5a4d01e494969639bdb3023beedc2b706e30`.
+  Totals are **3,124 / 5,457 (57.25%)** overall and
+  **441 / 488 (90.37%)** in Init. See
+  [Working Note 625](WORKING_NOTES/625-init-audio-request-allocator-match-20261001.md).
+
 ### Init object-aware audio dispatcher byte-matched
 
 - `func_10010FFC` replaces its zero-return placeholder with the recovered

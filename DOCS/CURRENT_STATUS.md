@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,123 / 5,457 (57.23%) | 0 | 2,334 |
-| Init | 440 / 488 (90.16%) | 0 | 48 |
+| Total | 3,124 / 5,457 (57.25%) | 0 | 2,333 |
+| Init | 441 / 488 (90.37%) | 0 | 47 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1051,6 +1051,14 @@ end-to-end gameplay acceptance.
    compiler scheduling displacement and its resulting register allocation.
    See
    [Working Note 624](WORKING_NOTES/624-init-object-audio-dispatch-match-20261001.md).
+   The adjacent 109-word audio request allocator `func_1000FA64` is byte-exact
+   after recovering its bounded 32-entry allocation, callback-dependent flag
+   setup, optional coordinate replacement, packed request initialization,
+   cents-to-ratio conversion, queue submission, and committed-handle return.
+   Nine words emit directly from semantic C; 100 relocation-aware,
+   stale-checked rows normalize IDO's stack, scheduling, and register choices.
+   See
+   [Working Note 625](WORKING_NOTES/625-init-audio-request-allocator-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

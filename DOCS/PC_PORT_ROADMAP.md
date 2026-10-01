@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,123 / 5,457 (57.23%) | 0 | 2,334 |
-| Init | 488 / 538 (90.71%) | 440 / 488 (90.16%) | 0 | 48 |
+| Total | 5,457 / 6,041 (90.33%) | 3,124 / 5,457 (57.25%) | 0 | 2,333 |
+| Init | 488 / 538 (90.71%) | 441 / 488 (90.37%) | 0 | 47 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -587,6 +587,11 @@ The Init object-aware audio dispatcher `func_10010FFC` now matches its complete
 volume, object scale, clamped distance range, and truncated object position
 before forwarding the spatial request; see
 [Working Note 624](WORKING_NOTES/624-init-object-audio-dispatch-match-20261001.md).
+The adjacent Init audio request allocator `func_1000FA64` now matches its
+complete 436-byte span. It allocates one of 32 request records, derives its
+flags, optionally replaces the vertical coordinate, initializes the packed
+record, submits it to the queue, and returns the committed handle; see
+[Working Note 625](WORKING_NOTES/625-init-audio-request-allocator-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
