@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init VI manager creation byte-matched
+
+- `osCreateViManager` restores timer-service initialization, VI and counter
+  messages, temporary priority handling, manager state, interrupt protection,
+  and VI thread startup from the canonical SDK body.
+- All 94 retail words emit directly from C with no word guards. Expressing the
+  stack top from the adjacent message-buffer base preserves retail's distinct
+  stack and queue address materializations despite their shared address.
+- The linked and retail spans share SHA-256
+  `a2bae43e3aad95cb561f2ee54b5d0a09c7a71b1dd254f71dce0c90b0e0dbbabd`.
+  Totals are **3,115 / 5,457 (57.08%)** overall and
+  **432 / 488 (88.52%)** in Init. See
+  [Working Note 616](WORKING_NOTES/616-init-create-vi-manager-match-20260930.md).
+
 ### Init channel attachment byte-matched
 
 - `func_1000B3D4` restores direct parent replacement, the three-slot channel

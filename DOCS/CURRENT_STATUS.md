@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,114 / 5,457 (57.06%) | 0 | 2,343 |
-| Init | 431 / 488 (88.32%) | 0 | 57 |
+| Total | 3,115 / 5,457 (57.08%) | 0 | 2,342 |
+| Init | 432 / 488 (88.52%) | 0 | 56 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -996,6 +996,11 @@ end-to-end gameplay acceptance.
    recovered C; 28 stale-checked replacements normalize three closed register
    allocation cycles with no relocation rewriting; see
    [Working Note 615](WORKING_NOTES/615-init-channel-attachment-match-20260930.md).
+   The 94-word SDK entrypoint `osCreateViManager` is byte-exact after
+   restoring its event queues, manager state, priority handling, interrupt
+   gate, and VI thread startup. Its complete routine emits directly from C
+   with no guards; see
+   [Working Note 616](WORKING_NOTES/616-init-create-vi-manager-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

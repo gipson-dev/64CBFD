@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init channel attachment matched).**
-The current linked checkpoint is `3114 / 5457 (57.06%)` exact C functions,
-with no address-drift blockers and 2,343 genuinely different C functions.
+**Active (2026-09-30, Init VI manager creation matched).**
+The current linked checkpoint is `3115 / 5457 (57.08%)` exact C functions,
+with no address-drift blockers and 2,342 genuinely different C functions.
 Init is
-`431 / 488 (88.32%)` exact, with 57 genuinely different C rows. Game is
+`432 / 488 (88.52%)` exact, with 56 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -918,7 +918,12 @@ retires an idle child before replacement. Twenty-eight stale-checked
 replacement guards normalize only three closed register-allocation cycles.
 See
 [Working Note 615](WORKING_NOTES/615-init-channel-attachment-match-20260930.md).
-Resume the Init queue from its remaining 57 genuinely different C rows.
+Init `osCreateViManager` now matches all 94 retail words directly from C. The
+canonical SDK body restores both event messages, manager state, priority and
+interrupt handling, and VI thread startup. See
+[Working Note 616](WORKING_NOTES/616-init-create-vi-manager-match-20260930.md).
+Resume with adjacent `viMgrMain`, then continue the Init queue from its
+remaining 56 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

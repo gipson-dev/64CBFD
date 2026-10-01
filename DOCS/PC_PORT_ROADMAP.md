@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,114 / 5,457 (57.06%) | 0 | 2,343 |
-| Init | 488 / 538 (90.71%) | 431 / 488 (88.32%) | 0 | 57 |
+| Total | 5,457 / 6,041 (90.33%) | 3,115 / 5,457 (57.08%) | 0 | 2,342 |
+| Init | 488 / 538 (90.71%) | 432 / 488 (88.52%) | 0 | 56 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -544,6 +544,10 @@ The Init channel attachment routine `func_1000B3D4` now matches its complete
 and idle-child retirement. Twenty-eight stale-checked replacements normalize
 only compiler register allocation; see
 [Working Note 615](WORKING_NOTES/615-init-channel-attachment-match-20260930.md).
+The Init SDK entrypoint `osCreateViManager` now matches its complete 376-byte
+span directly from C. It restores the event queues, manager state, temporary
+priority raise, interrupt gate, and VI manager thread startup; see
+[Working Note 616](WORKING_NOTES/616-init-create-vi-manager-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,
