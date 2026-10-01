@@ -6,7 +6,7 @@
 /* Generated placeholder declarations. */
 s32 func_1000ECCC();
 s32 func_1000EFB4();
-s32 func_1000F568(s32 arg0, s32 arg1);
+s32 func_1000F568(s32 arg0, u32 arg1);
 s32 func_1000F6B8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 s32 func_10010FFC();
 s32 func_10011310();
@@ -314,9 +314,49 @@ s32 func_1000F4D8(u16 arg0) {
 
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000F568.s. */
-s32 func_1000F568(s32 arg0, s32 arg1) {
-    return 0;
+s32 func_1000F568(s32 arg0, u32 arg1) {
+    s32 choices;
+    u32 random;
+    u32 selected;
+    u8 *state;
+    u32 raw;
+    u32 updated;
+    u32 available;
+
+    random = func_150ADA20() % arg1;
+    selected = random;
+    if (arg0 >= 0x6E2) {
+        return 1;
+    }
+    if ((s32)arg1 < 2) {
+        return arg0;
+    }
+
+    state = (u8 *)D_80041F5C + arg0;
+    if (D_80041F5C != NULL) {
+        raw = *state;
+        if ((s32)arg1 < 8) {
+            available = raw;
+            if (((raw & 0x80) == 0) ||
+                ((choices = (1 << arg1) - 1, (raw & choices) == 0))) {
+                choices = (1 << arg1) - 1;
+                raw = available = 0xFF;
+            }
+            if ((available & (1 << random)) == 0) {
+                do {
+                    selected = (s32)(selected + 1) % (s32)arg1;
+                } while ((available & (1 << selected)) == 0);
+            }
+            updated = available ^ (1 << selected);
+            *state = updated;
+            if ((updated & 0xFF & choices) == 0) {
+                *((u8 *)D_80041F5C + arg0) = available ^ choices;
+            }
+        } else {
+            *state = random + 1;
+        }
+    }
+    return arg0 + selected;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000F6B8.s. */
 s32 func_1000F6B8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {

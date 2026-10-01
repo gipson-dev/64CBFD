@@ -2838,3 +2838,14 @@ init_49E0,func_10004DB0,0x06C,0x3C020000,0x240B0002,R_MIPS_HI16:D_8003B23A,-,Nor
 init_49E0,func_10004DB0,0x070,0x90430000,0x90840000,R_MIPS_LO16:D_8003B23A,R_MIPS_LO16:D_8003B23A,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
 init_49E0,func_10004DB0,0x07C,0x10600005,0x10800005,-,-,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
 init_49E0,func_10004DB0,0x0BC,0x14600002,0x14800002,-,-,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
+init_EB00,func_1000F568,0x040,0x1000003E,0x1000003F,-,-,Normalize the recovered nonrepeating random selector for the inserted reset instruction,,,false
+init_EB00,func_1000F568,0x054,0x10000039,0x1000003A,-,-,Normalize the recovered nonrepeating random selector for the inserted reset instruction,,,false
+init_EB00,func_1000F568,0x068,0x10400033,0x10400034,-,-,Normalize the recovered nonrepeating random selector for the inserted reset instruction,,,false
+init_EB00,func_1000F568,0x070,0x1020002F,0x10200030,-,-,Normalize the recovered nonrepeating random selector for the inserted reset instruction,,,false
+init_EB00,func_1000F568,0x090,0x00C4C024,0x0086C024,-,-,Normalize the recovered nonrepeating random selector to retail operand order,,,false
+init_EB00,func_1000F568,0x094,0x57000006,0x57000007,-,-,Normalize the recovered nonrepeating random selector for the inserted reset instruction,,,false
+init_EB00,func_1000F568,0x0A4,0x24C6FFFF,0x24C6FFFF,-,-,Restore retail's retained raw-mask reset assignment,0x240400FF,-,false
+init_EB00,func_1000F568,0x0B4,0x01826824,0x004C6824,-,-,Normalize the recovered nonrepeating random selector to retail operand order,,,false
+init_EB00,func_1000F568,0x0D4,0x0302C824,0x0058C824,-,-,Normalize the recovered nonrepeating random selector to retail operand order,,,false
+init_EB00,func_1000F568,0x108,0x01822026,0x004C2026,-,-,Normalize the recovered nonrepeating random selector to retail operand order,,,false
+init_EB00,func_1000F568,0x120,0x00C27826,0x00467826,-,-,Normalize the recovered nonrepeating random selector to retail operand order,,,false

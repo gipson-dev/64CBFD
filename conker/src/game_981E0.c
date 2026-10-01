@@ -445,7 +445,7 @@ s32 func_1506BF5C() {
 /* ROM animation command 0x0A: choose an authored alternative for the
  * pending sound, preserving the original packed flag and index semantics. */
 extern u32 D_800D187C;
-extern s32 func_1000F568(s32 arg0, s32 arg1);
+extern s32 func_1000F568(s32 arg0, u32 arg1);
 void func_1506C32C(void) {
     u32 packed;
     u32 choices[4];

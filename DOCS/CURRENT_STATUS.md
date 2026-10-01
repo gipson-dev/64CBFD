@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,105 / 5,457 (56.90%) | 0 | 2,352 |
-| Init | 422 / 488 (86.48%) | 0 | 66 |
+| Total | 3,106 / 5,457 (56.92%) | 0 | 2,351 |
+| Init | 423 / 488 (86.68%) | 0 | 65 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -946,6 +946,12 @@ end-to-end gameplay acceptance.
    countdown update, and phase dispatch. Nine guards normalize the remaining
    local branch schedule; see
    [Working Note 606](WORKING_NOTES/606-init-framebuffer-task-dispatcher-match-20260930.md).
+   The 84-word nonrepeating random selector `func_1000F568` is byte-exact
+   after recovering its bounded selection, per-record availability mask,
+   cyclic fallback scan, and mask replenishment. Eleven guards normalize five
+   shifted branches, five commutative operand orders, and one optimized-away
+   reset assignment; see
+   [Working Note 607](WORKING_NOTES/607-init-nonrepeating-random-selector-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

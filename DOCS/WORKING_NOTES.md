@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init framebuffer task dispatcher matched).**
-The current linked checkpoint is `3105 / 5457 (56.90%)` exact C functions,
-with no address-drift blockers and 2,352 genuinely different C functions.
+**Active (2026-09-30, Init nonrepeating random selector matched).**
+The current linked checkpoint is `3106 / 5457 (56.92%)` exact C functions,
+with no address-drift blockers and 2,351 genuinely different C functions.
 Init is
-`422 / 488 (86.48%)` exact, with 66 genuinely different C rows. Game is
+`423 / 488 (86.68%)` exact, with 65 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -867,7 +867,12 @@ activity/countdown gate, and dispatches the submission and completion phases.
 Nine guards preserve the remaining branch/register schedule and one address
 materialization. See
 [Working Note 606](WORKING_NOTES/606-init-framebuffer-task-dispatcher-match-20260930.md).
-Resume the Init queue from its remaining 66 genuinely different C rows.
+Init `func_1000F568` now matches all 84 retail words. Its recovered C restores
+bounded random selection, per-record availability masks, cyclic fallback, and
+mask replenishment. Eleven guards preserve five branch distances, five
+commutative operand orders, and retail's optimized-away raw-mask reset. See
+[Working Note 607](WORKING_NOTES/607-init-nonrepeating-random-selector-match-20260930.md).
+Resume the Init queue from its remaining 65 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

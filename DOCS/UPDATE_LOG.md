@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init nonrepeating random selector byte-matched
+
+- `func_1000F568` restores bounded random selection, the per-record
+  availability mask, cyclic fallback to the next available choice, and mask
+  replenishment after exhaustion.
+- Seventy-three of 84 words emit directly from semantic C. Eleven
+  stale-checked guards normalize five shifted branches, five commutative
+  operand orders, and one optimized-away raw-mask reset assignment.
+- The linked and retail spans share SHA-256
+  `f669a659ee095e77b72fdefe06d91f096ad7ed2b43b1552eda234db999bfeb44`.
+  Totals are **3,106 / 5,457 (56.92%)** overall and
+  **423 / 488 (86.68%)** in Init. See
+  [Working Note 607](WORKING_NOTES/607-init-nonrepeating-random-selector-match-20260930.md).
+
 ### Init framebuffer task dispatcher byte-matched
 
 - `func_10004DB0` restores the nonblocking graphics-task receive, current and
