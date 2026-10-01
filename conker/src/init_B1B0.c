@@ -450,9 +450,85 @@ s32 func_1000C350(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
     }
     return arg0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000C530.s. */
 s32 func_1000C530(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    return 0;
+    s32 oldState;
+    s32 state;
+    s32 timer;
+    s32 oldValue;
+    s32 value;
+    s32 oldMode;
+    s32 mode;
+    u32 fade;
+    u32 fadeStep;
+
+    oldState = arg0 & 3;
+    state = oldState;
+    timer = ((u32)arg0 >> 2) & 0x3F;
+    oldValue = ((u32)arg0 >> 8) & 0xFF;
+    value = oldValue;
+    oldMode = ((u32)arg0 >> 16) & 0xFF;
+    mode = oldMode;
+    fade = arg0 & 0xFF000000;
+
+    if (D_80041F08 != 0) {
+        if ((oldState != 2) || (timer == 0) || (D_80041F08 != 2)) {
+            state = D_80041F08;
+            value = D_80041F0C & 0xFF;
+            mode = D_80041F0C >> 8;
+            timer = 0x1E;
+        }
+    }
+
+    if (timer != 0) {
+        timer -= D_800BE9E4;
+        if (timer <= 0) {
+            timer = 0;
+            state = 0;
+        }
+    }
+
+    if (state != oldState) {
+        if (oldState != 0) {
+            func_100085F8(arg1, oldState + 9);
+        }
+        if (state != 0) {
+            func_10008824(arg1, state + 9, value);
+            func_100086FC(arg1, state + 9, mode >> 7);
+            func_10008744(arg1, state + 9, mode & 0x7F);
+        }
+    } else if ((oldState != 0) && (D_80041F08 != 0) &&
+               (((u32)arg0 >> 8) != D_80041F0C)) {
+        if (oldValue != value) {
+            func_10008824(arg1, oldState + 9, value);
+        }
+        if (oldMode != mode) {
+            if (((oldMode ^ mode) & 0x80) != 0) {
+                func_100086FC(arg1, state + 9, mode >> 7);
+            }
+            func_10008744(arg1, state + 9, mode & 0x7F);
+        }
+    }
+
+    if ((D_80041F04 & 0x10) != 0) {
+        D_80041F04 &= ~0x10;
+        if (fade == 0) {
+            func_1000886C(arg1, 0xC0, 0x80);
+        }
+        fade = 0xFF000000;
+    }
+
+    if (fade != 0) {
+        fadeStep = (D_800BE9E4 << 23) & 0xFF000000;
+        if (fadeStep < fade) {
+            fade -= fadeStep;
+        } else {
+            func_10008790(arg1, 0xC0, 0, 0x5A);
+            fade = 0;
+        }
+    }
+
+    D_80041F08 = 0;
+    return (timer << 2) | state | (value << 8) | (mode << 16) | fade;
 }
 s32 func_1000C7E8(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
     f32 offset = arg2;

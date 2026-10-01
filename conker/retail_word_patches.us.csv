@@ -4391,3 +4391,39 @@ xlitob,_Litob,0x284,0x8FB20024,0x8FB10020,-,-,Normalize integer formatter compil
 xlitob,_Litob,0x288,0x8FB30028,0x8FB20024,-,-,Normalize integer formatter compiler allocation,,,false
 xlitob,_Litob,0x28C,0x03E00008,0x8FB30028,-,-,Normalize integer formatter compiler allocation,,,false
 xlitob,_Litob,0x290,0x27BD0090,0x03E00008,-,-,Normalize integer formatter compiler allocation,0x27BD0090,-,false
+init_B1B0,func_1000C530,0x020,0x00043A02,0x3C01FF00,-,-,Normalize packed audio state compiler scheduling,,,false
+init_B1B0,func_1000C530,0x024,0x00044C02,0x00043A02,-,-,Normalize packed audio state compiler scheduling,,,false
+init_B1B0,func_1000C530,0x028,0x3C01FF00,0x00044C02,-,-,Normalize packed audio state compiler scheduling,,,false
+init_B1B0,func_1000C530,0x034,0x30EA00FF,0x00814024,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x038,0x312F00FF,0x313800FF,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x03C,0x00814024,0x30EA00FF,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x048,0xAFAA0044,0xAFA8001C,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x04C,0x01E04825,0xAFAA003C,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x050,0xAFAF003C,0x03004825,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x058,0xAFA8001C,0xAFB80038,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x070,0x5086000A,0x5486000A,-,-,Preserve retail commutative likely-branch operand order,,,false
+init_B1B0,func_1000C530,0x08C,0xAFB90044,0xAFB9003C,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x090,0xAFAB003C,0xAFAB0038,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x0DC,0xAFA80038,0xAFA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x0E0,0x8FA80038,0x8FA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x0EC,0x93A60047,0x93A6003F,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x108,0xAFA80038,0xAFA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x10C,0x8FA6003C,0x8FA60038,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x124,0x8FAE003C,0x8FAE0038,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x13C,0x8FA80038,0x8FA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x154,0x8FB90044,0x8FB9003C,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x158,0x13070026,0x10F80026,-,-,Preserve retail commutative branch operand order,,,false
+init_B1B0,func_1000C530,0x160,0x1159000A,0x132A000A,-,-,Preserve retail commutative branch operand order,,,false
+init_B1B0,func_1000C530,0x174,0x93A60047,0x93A6003F,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x178,0xAFA80038,0xAFA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x184,0x8FA80038,0x8FA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x18C,0x8FAC003C,0x8FAC0038,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x190,0x112C0018,0x11890018,-,-,Preserve retail commutative branch operand order,,,false
+init_B1B0,func_1000C530,0x194,0x012C6826,0x01896826,-,-,Preserve retail commutative xor operand order,,,false
+init_B1B0,func_1000C530,0x1C4,0xAFA80038,0xAFA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x1C8,0x8FA80038,0x8FA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x1D0,0x8FAB003C,0x8FAB0038,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x1E4,0xAFA80038,0xAFA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x1F0,0x8FA80038,0x8FA80040,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x27C,0x8FAC0044,0x8FAC003C,-,-,Normalize packed audio state compiler allocation,,,false
+init_B1B0,func_1000C530,0x284,0x8FAB003C,0x8FAB0038,-,-,Normalize packed audio state compiler allocation,,,false

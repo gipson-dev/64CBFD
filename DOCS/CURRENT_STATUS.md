@@ -32,10 +32,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,141 / 5,457 (57.56%) | 0 | 2,316 |
-| Init | 458 / 488 (93.85%) | 0 | 30 |
+| Total | 3,142 / 5,457 (57.58%) | 0 | 2,315 |
+| Init | 459 / 488 (94.06%) | 0 | 29 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init packed audio-state updater `func_1000C530` now matches its complete
+174-word retail span. It restores queued state transitions, sound-slot
+parameter updates, transition expiry, and the high-byte fade trigger. See
+[Working Note 643](WORKING_NOTES/643-init-packed-audio-state-updater-match-20261001.md).
 
 The Init integer formatter `_Litob` now matches its complete 168-word retail
 span. It restores signed magnitude handling, octal/decimal/hex digit emission,

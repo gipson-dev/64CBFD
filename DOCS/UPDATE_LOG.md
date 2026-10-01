@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init packed audio-state updater byte-matched
+
+- `func_1000C530` replaces its zero-return placeholder with the recovered
+  packed transition-state updater, including sound-slot start, stop, value,
+  mode, expiry, and high-byte fade behavior.
+- One hundred thirty-eight of 174 linked words emit directly from semantic C.
+  Thirty-six stale-checked non-relocating rows normalize the remaining IDO
+  local allocation, scheduling, and commutative operand-order differences.
+- The linked and retail 696-byte spans share SHA-256
+  `0bb708b2a657dd68247bd5fc413a15779db6418cda26509bd6aaaefe644881fa`.
+  Totals are **3,142 / 5,457 (57.58%)** overall and
+  **459 / 488 (94.06%)** in Init. See
+  [Working Note 643](WORKING_NOTES/643-init-packed-audio-state-updater-match-20261001.md).
+
 ### Init integer formatter byte-matched
 
 - `_Litob` now uses the recovered wide format-code ABI with unsigned-byte
