@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,106 / 5,457 (56.92%) | 0 | 2,351 |
-| Init | 488 / 538 (90.71%) | 423 / 488 (86.68%) | 0 | 65 |
+| Total | 5,457 / 6,041 (90.33%) | 3,107 / 5,457 (56.94%) | 0 | 2,350 |
+| Init | 488 / 538 (90.71%) | 424 / 488 (86.89%) | 0 | 64 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -496,6 +496,12 @@ per-record availability mask, cyclic fallback scan, and mask replenishment;
 11 stale-checked guards normalize five shifted branches, five commutative
 operand orders, and one optimized-away reset assignment. See
 [Working Note 607](WORKING_NOTES/607-init-nonrepeating-random-selector-match-20260930.md).
+The Init planar direction encoder `func_1000B060` now matches its complete
+336-byte span. Its recovered C restores vector normalization, signed-angle
+folding, caller offset application, range-band folding, and return encoding;
+26 stale-checked guards normalize one closed FP/integer allocation and
+schedule. See
+[Working Note 608](WORKING_NOTES/608-init-planar-direction-encoder-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

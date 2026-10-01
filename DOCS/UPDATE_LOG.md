@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init planar direction encoder byte-matched
+
+- `func_1000B060` restores vector normalization, signed-angle folding,
+  caller offset application, range-band folding, and encoded return
+  construction.
+- Fifty-eight of 84 words emit directly from semantic C and retained padding.
+  Twenty-six stale-checked guards normalize one closed FP/integer allocation
+  and schedule; no instructions are inserted or removed.
+- The linked and retail spans share SHA-256
+  `d12c643410bab7b05ab9364b986eac6839ee1300617681239c6b5299fba2879a`.
+  Totals are **3,107 / 5,457 (56.94%)** overall and
+  **424 / 488 (86.89%)** in Init. See
+  [Working Note 608](WORKING_NOTES/608-init-planar-direction-encoder-match-20260930.md).
+
 ### Init nonrepeating random selector byte-matched
 
 - `func_1000F568` restores bounded random selection, the per-record

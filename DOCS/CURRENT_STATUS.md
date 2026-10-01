@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,106 / 5,457 (56.92%) | 0 | 2,351 |
-| Init | 423 / 488 (86.68%) | 0 | 65 |
+| Total | 3,107 / 5,457 (56.94%) | 0 | 2,350 |
+| Init | 424 / 488 (86.89%) | 0 | 64 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -952,6 +952,11 @@ end-to-end gameplay acceptance.
    shifted branches, five commutative operand orders, and one optimized-away
    reset assignment; see
    [Working Note 607](WORKING_NOTES/607-init-nonrepeating-random-selector-match-20260930.md).
+   The 84-word planar direction encoder `func_1000B060` is byte-exact after
+   recovering its vector normalization, signed-angle fold, caller offset,
+   range bands, and encoded return value. Twenty-six guards normalize one
+   closed FP/integer allocation and schedule; see
+   [Working Note 608](WORKING_NOTES/608-init-planar-direction-encoder-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

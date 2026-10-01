@@ -932,7 +932,7 @@ s32  func_10009FFC(void);
 void func_1000A348(void);
 //func_1000A420
 //func_1000A750
-//func_1000B060
+s32 func_1000B060(f32 arg0, f32 arg1, s32 arg2);
 struct151 *func_1000B1FC(s32 arg0);
 //func_1000B294
 //func_1000B2F4

@@ -2849,3 +2849,29 @@ init_EB00,func_1000F568,0x0B4,0x01826824,0x004C6824,-,-,Normalize the recovered 
 init_EB00,func_1000F568,0x0D4,0x0302C824,0x0058C824,-,-,Normalize the recovered nonrepeating random selector to retail operand order,,,false
 init_EB00,func_1000F568,0x108,0x01822026,0x004C2026,-,-,Normalize the recovered nonrepeating random selector to retail operand order,,,false
 init_EB00,func_1000F568,0x120,0x00C27826,0x00467826,-,-,Normalize the recovered nonrepeating random selector to retail operand order,,,false
+init_A420,func_1000B060,0x044,0xA7A5001E,0xA7A5001C,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x060,0x46328082,0x46328102,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x064,0x44803000,0x44804000,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x068,0x87A5001E,0x87A5001C,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x070,0x460E303C,0x460E403C,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x078,0x4620110D,0x4620218D,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x07C,0x44042000,0x44043000,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x0C8,0x006D1821,0x006D7821,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x0CC,0x00037600,0x000FC600,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x0D0,0x000E7E03,0x0018CE03,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x0D4,0x29E10060,0x2B210060,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x0DC,0x01E01825,0x03201825,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x0E0,0x29E1FFA0,0x2B21FFA0,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x0FC,0x2418005F,0x2408005F,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x100,0x03031823,0x01031823,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x104,0x0003CC00,0x00034C00,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x10C,0x00191C03,0x00091C03,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x118,0x2409FFA1,0x240BFFA1,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x11C,0x01231823,0x01631823,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x120,0x00035400,0x00036400,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x128,0x000A1C03,0x000C1C03,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x130,0x00036400,0x00037400,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x134,0x000C1C03,0x00002825,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x138,0x00002825,0x000E1C03,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x13C,0x246E0040,0x24780040,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false
+init_A420,func_1000B060,0x140,0x01C51025,0x03051025,-,-,Normalize the recovered directional encoder to retail local and register allocation,,,false

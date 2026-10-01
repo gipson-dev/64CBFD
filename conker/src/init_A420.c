@@ -6,7 +6,7 @@
 /* Generated placeholder declarations. */
 s32 func_1000A420();
 s32 func_1000A750();
-s32 func_1000B060();
+s32 func_1000B060(f32 arg0, f32 arg1, s32 arg2);
 /* End generated placeholder declarations. */
 
 void func_1000E40C(s32, s32);
@@ -87,47 +87,40 @@ s32 func_1000A420() {
 s32 func_1000A750() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_A420/func_1000B060.s. */
-s32 func_1000B060() {
-    return 0;
+s32 func_1000B060(f32 arg0, f32 arg1, s32 arg2) {
+    s16 phi_a1;
+    f32 sp18;
+    s16 temp_t8;
+    f64 temp_f6;
+    s8 temp_t9;
+    s16 phi_v1_2;
+
+    sp18 = sqrtf((arg0 * arg0) + (arg1 * arg1));
+    if (D_8002C214 < sp18) {
+        sp18 = arg0 / sp18;
+    }
+    phi_a1 = 128;
+    temp_f6 = func_150487E0(sp18) * D_8002C218;
+    phi_v1_2 = temp_f6;
+    if (0.0f < arg1) {
+        temp_t8 = temp_f6;
+        if ((s32)temp_t8 < 0) {
+            phi_v1_2 = (s16)(-128 - temp_t8);
+        } else {
+            phi_v1_2 = (s16)(128 - temp_t8);
+        }
+    }
+    temp_t9 = phi_v1_2 + arg2;
+    phi_v1_2 = temp_t9;
+    if ((phi_v1_2 >= 96) || (phi_v1_2 < -96)) {
+        phi_v1_2 = 0;
+    } else if ((s32)phi_v1_2 >= 32) {
+        phi_v1_2 = (s16)(0x5F - phi_v1_2);
+    } else if ((s32)phi_v1_2 < -32) {
+        phi_v1_2 = (s16)(-0x5F - phi_v1_2);
+    } else {
+        phi_v1_2 += phi_v1_2;
+        phi_a1 = 0;
+    }
+    return (phi_v1_2 + 64) | phi_a1;
 }
-// NON-MATCHING: fair amount to fix up
-// s32 func_1000B060(f32 arg0, f32 arg1, s32 arg2) {
-//     s16 phi_a1;
-//     f32 sp18;
-//     s16 temp_t8;
-//     f64 temp_f6;
-//     s8 temp_t9;
-//     s16 phi_v1_2;
-//
-//     sp18 = sqrtf((arg0 * arg0) + (arg1 * arg1));
-//     if (D_8002C214 < sp18) {
-//         sp18 = arg0 / sp18;
-//     }
-//     phi_a1 = 128;
-//     temp_f6 = func_150487E0(sp18) * D_8002C218;
-//     phi_v1_2 = temp_f6;
-//     if (0.0f < arg1) {
-//         temp_t8 = temp_f6;
-//         if ((s32) temp_t8 < 0) {
-//             phi_v1_2 = (s16) (-128 - temp_t8);
-//         } else {
-//             phi_v1_2 = (s16) (128 - temp_t8);
-//         }
-//     }
-//     temp_t9 = phi_v1_2 + arg2;
-//     if (( temp_t9 >= 96) || ( temp_t9 < -96)) {
-//         phi_v1_2 = 0;
-//         phi_a1 = 128;
-//     } else if ((s32) temp_t9 >= 32) {
-//         phi_v1_2 = (s16) (0x5F - temp_t9);
-//         phi_a1 = 128;
-//     } else if ((s32) temp_t9 < -32) {
-//         phi_v1_2 = (s16) (-0x5F - temp_t9);
-//         phi_a1 = 128;
-//     } else {
-//         phi_v1_2 = (s16) (temp_t9 * 2);
-//         phi_a1 = 0;
-//     }
-//     return (phi_v1_2 + 64) | phi_a1;
-// }
