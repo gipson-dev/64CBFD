@@ -891,7 +891,7 @@ void func_10003920(void);
 // void func_10003BD0(void);
 //func_10003ACC
 s32 func_10003C6C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
-//func_10004074
+void func_10004074(void *arg0);
 void func_100043B4(s32 *arg0, u32 arg1);
 void func_100046E4(s32 devAddr, void *dramAddr, u32 size);
 void func_1000480C(s32 devAddr, void *dramAddr, u32 size);

@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,124 / 5,457 (57.25%) | 0 | 2,333 |
-| Init | 488 / 538 (90.71%) | 441 / 488 (90.37%) | 0 | 47 |
+| Total | 5,457 / 6,041 (90.33%) | 3,125 / 5,457 (57.27%) | 0 | 2,332 |
+| Init | 488 / 538 (90.71%) | 442 / 488 (90.57%) | 0 | 46 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -592,6 +592,11 @@ complete 436-byte span. It allocates one of 32 request records, derives its
 flags, optionally replaces the vertical coordinate, initializes the packed
 record, submits it to the queue, and returns the committed handle; see
 [Working Note 625](WORKING_NOTES/625-init-audio-request-allocator-match-20261001.md).
+The Init allocator free/coalescing routine `func_10004074` now matches its
+complete 476-byte span. It merges adjacent physical blocks, repairs or inserts
+the block into the address-ordered free list, updates the free-list tail and
+largest-free-block cache, and restores the caller's interrupt mask; see
+[Working Note 626](WORKING_NOTES/626-init-allocator-free-coalescing-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

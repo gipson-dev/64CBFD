@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init allocator free/coalescing routine byte-matched
+
+- `func_10004074` replaces its zero-return placeholder with the recovered
+  interrupt-protected allocator free path. It validates the payload pointer,
+  clears the allocation state, coalesces adjacent physical blocks, repairs or
+  inserts the result in the address-ordered free list, and updates the tail and
+  largest-free-block caches.
+- The semantic C occupies the complete 119-word slot. Twenty-four words emit
+  directly; 95 stale-checked relocation-aware rows normalize IDO's frame,
+  register allocation, branches, and scheduling while preserving both
+  `osSetIntMask` calls and all allocator-global references.
+- The linked and retail spans share SHA-256
+  `f1baa8fbaeb74356ce2ff072fab39380ec3e2f06dab02e7ef33269f8eb04567c`.
+  Totals are **3,125 / 5,457 (57.27%)** overall and
+  **442 / 488 (90.57%)** in Init. See
+  [Working Note 626](WORKING_NOTES/626-init-allocator-free-coalescing-match-20261001.md).
+
 ### Init audio request allocator byte-matched
 
 - `func_1000FA64` replaces its zero-return placeholder with the recovered
