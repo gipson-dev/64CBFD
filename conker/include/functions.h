@@ -128,7 +128,7 @@ s32  func_100173C4(struct31 **arg0);
 void func_10017594(struct31 *arg0);
 void func_100176C4(void);
 void func_100176EC(void);
-void func_10017714(s32 arg0, s16 arg1, s32 arg2);
+void func_10017714(struct31 *arg0, s16 arg1, s32 arg2);
 void func_10017870(u8 arg0);
 void func_10017944(s32 arg0, u32 arg1);
 s32  func_10017A80(struct26 *arg0);
@@ -979,7 +979,7 @@ s32 func_1000EE70(struct15 *arg0, s32 arg1, s32 *arg2, s32 arg3, s32 arg4, s32 *
 //func_1000F4D8
 s32 func_1000F568(s32 arg0, u32 arg1);
 //func_1000F6B8
-void func_1000F85C(u16 arg0, u16 arg1, s32 arg2);
+void func_1000F85C(u16 arg0, s16 arg1, s32 arg2);
 void func_1000F91C(u16 arg0, u16 arg1, s16 arg2, u8 arg3, s32 arg4, s16 arg5, s16 arg6, s16 arg7, s16 arg8, s16 arg9);
 u16  func_1000FA64(u16 arg0, s16 arg1, s16 arg2, s16 arg3, s32 arg4, u16 arg5, s16 arg6, s32 arg7, void *arg8, s32 arg9, s32 argA, s32 argB);
 //func_1000FC18

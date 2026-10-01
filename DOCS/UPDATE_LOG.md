@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init audio-event parameter update byte-matched
+
+- `func_1000F85C` now rejects invalid or inactive sound handles and forwards
+  parameter updates to the indexed active sound state.
+- Selector `0x10` converts pitch cents with `alCents2Ratio` and preserves the
+  resulting floating-point bits in the integer event payload. Selector `0x11`
+  is normalized to `0x10`. Twenty-six words emit directly from semantic C;
+  22 stale-checked rows preserve one closed compiler scheduling difference,
+  including the moved table and call relocations.
+- The linked and retail 192-byte spans share SHA-256
+  `1a0eb4cb47c876f07f4200adf31d43e19fcb899941bb5ffe02d34f9df25e0ee3`.
+  Totals are **3,147 / 5,457 (57.67%)** overall and
+  **464 / 488 (95.08%)** in Init. See
+  [Working Note 648](WORKING_NOTES/648-init-audio-event-parameter-update-match-20261001.md).
+
 ### Init handle-record lookup byte-matched
 
 - `func_1000FEF0` now validates its nonzero handle and scans enabled

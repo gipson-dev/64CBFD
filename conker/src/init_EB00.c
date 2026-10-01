@@ -454,41 +454,25 @@ s32 func_1000F6B8(s32 arg0, s16 arg1, s16 arg2, s16 arg3, void *arg4, s16 arg5, 
         NULL);
     return result;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_1000F85C.s. */
-void func_1000F85C(u16 arg0, u16 arg1, s32 arg2) {
+void func_1000F85C(u16 arg0, s16 arg1, s32 arg2) {
+    f32 pitch;
+
+    if (arg0 < 0x10) {
+        return;
+    }
+    if (func_1000F3D0(arg0) == 0) {
+        return;
+    }
+
+    if (arg1 == 0x10) {
+        pitch = alCents2Ratio(arg2);
+        arg2 = *(s32 *)&pitch;
+    } else if (arg1 == 0x11) {
+        arg1 = 0x10;
+    }
+
+    func_10017714(D_800425E0[arg0 & 0xF].unk8, arg1, arg2);
 }
-// NON-MATCHING: not even close
-// void func_1000F85C(s32 arg0, s16 arg1, s32 arg2) {
-//     f32 sp1C;
-//     s32 sp18;
-//     s16 temp_a1;
-//     s16 temp_a1_2;
-//     s32 temp_t6;
-//     s16 phi_a1;
-//
-//     temp_t6 = arg0 & 0xFFFF;
-//     temp_a1 = arg1;
-//     if (temp_t6 >= 16) {
-//         sp18 = temp_t6;
-//         arg1 = temp_a1;
-//         temp_a1_2 = arg1;
-//         if (func_1000F3D0(temp_t6) != 0) {
-//             if (temp_a1_2 == 16) {
-//                 sp18 = sp18;
-//                 arg1 = temp_a1_2;
-//                 sp1C = alCents2Ratio(arg2, temp_a1_2);
-//                 arg2 = (s32) sp1C;
-//                 phi_a1 = arg1;
-//             } else {
-//                 phi_a1 = temp_a1_2;
-//                 if (temp_a1_2 == 0x11) {
-//                     phi_a1 = (u16)0x10;
-//                 }
-//             }
-//             func_10017714((((sp18 & 0xF) * 0xC) + 0x80040000) - 0x25E8, phi_a1, arg2);
-//         }
-//     }
-// }
 
 void func_1000F91C(u16 arg0, u16 arg1, s16 arg2, u8 arg3, s32 arg4,
                    s16 arg5, s16 arg6, s16 arg7, s16 arg8, s16 arg9) {

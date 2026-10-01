@@ -4594,3 +4594,25 @@ init_EB00,func_1000FEF0,0x038,0x00001825,0x18400015,,,Normalize handle-record lo
 init_EB00,func_1000FEF0,0x03C,0x18A00014,0x3C060000,-,R_MIPS_HI16:D_80041FE0,Normalize handle-record lookup compiler allocation and schedule,,,false
 init_EB00,func_1000FEF0,0x048,0x544F000E,0x54AF000E,,,Normalize handle-record lookup compiler allocation and schedule,,,false
 init_EB00,func_1000FEF0,0x084,0x0065082A,0x0062082A,,,Normalize handle-record lookup compiler allocation and schedule,,,false
+init_EB00,func_1000F85C,0x028,0x54200021,0x54200022,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x040,0x1040001A,0x1040001B,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x04C,0x14A1000A,0x14A1000B,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x070,0x10000005,0xAFB90028,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x074,0xAFB90028,0x10000006,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x078,0x24010011,0x3068000F,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x07C,0x54A10003,0x24010011,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x080,0x3068000F,0x54A10003,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x084,0x24050010,0x3068000F,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x088,0x3068000F,0x24050010,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x08C,0x00084880,0x3068000F,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x090,0x01284823,0x00084880,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x094,0x00094880,0x01284823,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x098,0x3C040000,0x00094880,R_MIPS_HI16:D_800425E0,-,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x09C,0x00892021,0x3C040000,-,R_MIPS_HI16:D_800425E0,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x0A0,0x8C840008,0x00892021,R_MIPS_LO16:D_800425E0,-,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x0A4,0x0C000000,0x8C840008,R_MIPS_26:func_10017714,R_MIPS_LO16:D_800425E0,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x0A8,0x8FA60028,0x0C000000,-,R_MIPS_26:func_10017714,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x0AC,0x8FBF0014,0x8FA60028,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x0B0,0x27BD0020,0x8FBF0014,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x0B4,0x03E00008,0x27BD0020,,,Normalize audio event update compiler schedule,,,false
+init_EB00,func_1000F85C,0x0B8,0x00000000,0x03E00008,,,Normalize audio event update compiler schedule,,,false

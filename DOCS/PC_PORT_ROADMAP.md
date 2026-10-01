@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,146 / 5,457 (57.65%) | 0 | 2,311 |
-| Init | 488 / 538 (90.71%) | 463 / 488 (94.88%) | 0 | 25 |
+| Total | 5,457 / 6,041 (90.33%) | 3,147 / 5,457 (57.67%) | 0 | 2,310 |
+| Init | 488 / 538 (90.71%) | 464 / 488 (95.08%) | 0 | 24 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,12 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init audio-event parameter updater `func_1000F85C` now matches all 48
+retail words. It validates the sound handle, converts selector `0x10` pitch
+cents to floating-point event bits, aliases selector `0x11` to `0x10`, and
+dispatches through the active sound-state pointer; see
+[Working Note 648](WORKING_NOTES/648-init-audio-event-parameter-update-match-20261001.md).
 
 The Init handle-record lookup `func_1000FEF0` now matches all 40 retail words.
 It validates a nonzero handle, scans enabled 0x30-byte records for the handle
