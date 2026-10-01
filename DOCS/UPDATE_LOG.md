@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init actor secondary-audio creator byte-matched
+
+- `func_10010344` replaces its zero-return placeholder with the recovered
+  actor-owned secondary-audio allocator. It chooses the direct camera-aware or
+  positional path, applies actor-specific range and flag policy, retires the
+  prior callback, and stores the replacement handle.
+- Its recovered return contract is `s32`. Of 133 words, 115 emit directly
+  from semantic C and 18 stale-checked rows normalize compiler register
+  allocation and independent scheduling, including two relocation-aware rows.
+- The linked and retail 532-byte spans share SHA-256
+  `e4ab5af56af48c42b725a3aef809a80675e61953528b74452ed71ff35c59c03b`.
+  Totals are **3,133 / 5,457 (57.41%)** overall and
+  **450 / 488 (92.21%)** in Init. See
+  [Working Note 634](WORKING_NOTES/634-init-actor-secondary-audio-creator-match-20261001.md).
+
 ### Init threshold audio-state callback byte-matched
 
 - `func_1000B638` replaces its zero-return placeholder with the recovered

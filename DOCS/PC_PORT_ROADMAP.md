@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,132 / 5,457 (57.39%) | 0 | 2,325 |
-| Init | 488 / 538 (90.71%) | 449 / 488 (92.01%) | 0 | 39 |
+| Total | 5,457 / 6,041 (90.33%) | 3,133 / 5,457 (57.41%) | 0 | 2,324 |
+| Init | 488 / 538 (90.71%) | 450 / 488 (92.21%) | 0 | 38 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -632,6 +632,11 @@ complete 504-byte span. It gates player audio from the record's threshold
 value, performs level-specific channel transitions, and maintains a separate
 level-`0x27` effect bit; see
 [Working Note 633](WORKING_NOTES/633-init-threshold-audio-state-callback-match-20261001.md).
+The Init actor secondary-audio creator `func_10010344` now matches its complete
+532-byte span. It chooses the direct camera-aware or positional path, applies
+actor-specific range and flag policy, retires the prior actor-owned callback,
+and stores the replacement handle; see
+[Working Note 634](WORKING_NOTES/634-init-actor-secondary-audio-creator-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

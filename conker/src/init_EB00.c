@@ -762,9 +762,59 @@ s32 func_10010154(u16 arg0, void *arg1, u16 arg2, s16 arg3, u16 arg4) {
 
     actor->unk8E = handle;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10010344.s. */
-u16 func_10010344(u16 arg0, void *arg1, s32 arg2, s16 arg3, u16 arg4) {
-    return 0;
+s32 func_10010344(u16 arg0, void *arg1, s32 arg2, s16 arg3, u16 arg4) {
+    struct127 *actor;
+    s32 flags;
+    s32 packed;
+    u8 priority;
+
+    actor = arg1;
+    flags = 0;
+    if ((actor->interaction_state == 0) ||
+        (actor->interaction_state == 5)) {
+        return 0;
+    }
+
+    if (arg2 < 0) {
+        arg2 = -arg2;
+        flags = 0x100;
+    }
+
+    if (actor->camera != NULL) {
+        packed = (((u32)actor->unk184 >> 3) & 0x30) << 1;
+        priority = D_80041FD9;
+        if ((actor->unk31C != NULL) && ((u8)actor->unk31C->unk94 == 1)) {
+            priority = 1;
+            arg2 = 0x7FFF;
+        }
+        flags = func_10010BE8(actor->unk8C, arg0, arg2, 0x40, 0,
+                             packed, priority);
+        actor->unk8C = flags;
+        goto done;
+    }
+
+    if (actor->id == 0x16) {
+        arg3 *= 2;
+        if (arg4 < arg3) {
+            arg3 = arg4 - 0xC8;
+        }
+    } else if ((actor->id == 0x8A) && (actor->unk13C != 0)) {
+        flags |= 0x100;
+    } else if ((actor->id == 0x4F) || (actor->id == 0x83)) {
+        flags |= 4;
+    }
+
+    func_1000FD38((s32)func_1000EE70, (s32)actor,
+                  actor->unique_id | 0x20000);
+    flags = func_1000FA64(arg0, (s16)actor->x_position,
+                          (s16)actor->y_position,
+                          (s16)actor->z_position, arg2, arg4, arg3,
+                          (s32)func_1000EE70, actor,
+                          actor->unique_id | 0x20000, flags, 0);
+    actor->unk8C = flags;
+
+done:
+    return flags;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10010558.s. */
 void func_10010558(u16 arg0, struct127 *arg1, s32 arg2, s16 arg3, u16 arg4, s32 arg5) {

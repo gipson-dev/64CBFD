@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,132 / 5,457 (57.39%) | 0 | 2,325 |
-| Init | 449 / 488 (92.01%) | 0 | 39 |
+| Total | 3,133 / 5,457 (57.41%) | 0 | 2,324 |
+| Init | 450 / 488 (92.21%) | 0 | 38 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1107,6 +1107,12 @@ end-to-end gameplay acceptance.
    12 stale-checked rows normalize one closed register-allocation cycle and one
    stack-slot selection. See
    [Working Note 633](WORKING_NOTES/633-init-threshold-audio-state-callback-match-20261001.md).
+   The 133-word actor secondary-audio creator `func_10010344` is byte-exact
+   after recovering its direct camera path, actor-specific positional policy,
+   prior-handle retirement, and replacement allocation. Semantic C emits 115
+   words directly; 18 stale-checked rows normalize register allocation and an
+   independent store schedule, including two relocation-aware rows. See
+   [Working Note 634](WORKING_NOTES/634-init-actor-secondary-audio-creator-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
