@@ -3,6 +3,12 @@
 #include "functions.h"
 #include "variables.h"
 
+#ifdef osMotorStop
+#undef osMotorStop
+#endif
+
+extern s32 _MakeMotorData(OSMesgQueue *, OSPfs *, s32);
+extern s32 osMotorStop(OSPfs *);
 
 u64 D_8003B260; // bss
 
@@ -44,10 +50,8 @@ void func_10005218(void) {
 void func_10005298(void) {
 }
 
-#if 0
-// problem with osMotorStop call
 void func_100052A0(s32 arg0) {
-    static u64 D_8003BC20; // boottime?
+    static u64 D_8003BC20;
     s32 mesg;
     s32 i;
 
@@ -71,8 +75,8 @@ void func_100052A0(s32 arg0) {
         for (i = 0; i < 4; i++) { // 4 controllers?
             if (D_800BE944[i])
             {
-                _MakeMotorData(&D_800BE900, &D_800BE760[i], i);
-                osMotorStop(&D_800BE760[i]); // macro for __osMotorAccess
+                _MakeMotorData(&D_800BE900, (OSPfs *)&D_800BE760[i], i);
+                osMotorStop((OSPfs *)&D_800BE760[i]);
                 D_800BE948[i] = 0;
             }
         }
@@ -86,8 +90,3 @@ void func_100052A0(s32 arg0) {
 
     while(1) {};
 }
-#else
-/* Non-matching C placeholders for asm/nonmatchings/init_50A0/func_100052A0.s. */
-void func_100052A0(s32 arg0) {
-}
-#endif

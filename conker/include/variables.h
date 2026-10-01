@@ -234,7 +234,6 @@ extern OSMesgQueue D_8003B9D0;
 extern OSMesg      D_8003B9E8;
 extern OSThread    D_8003B9F0;
 
-extern u64  D_8003BC20;
 extern u32  D_8003BC24;
 
 extern s32  D_8003BC30;

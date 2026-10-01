@@ -126,8 +126,7 @@ RETAIL_PAD_SKIP_C_FILES := \
 	$(SRC_DIR)/libultra/gu/guRotateF.c \
 	$(SRC_DIR)/libultra/gu/sinf.c \
 	$(SRC_DIR)/game/done/game_75810.c \
-	$(SRC_DIR)/game/done/game_75950.c \
-	$(SRC_DIR)/init_50A0.c
+	$(SRC_DIR)/game/done/game_75950.c
 RETAIL_PAD_C_FILES := $(filter-out $(GENERATED_SLICE_C_FILES) $(RETAIL_PAD_SKIP_C_FILES),$(C_FILES))
 RETAIL_PAD_O_FILES := $(foreach file,$(RETAIL_PAD_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
 RETAIL_PAD_GLOBAL_ASM_O_FILES := $(filter $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES))

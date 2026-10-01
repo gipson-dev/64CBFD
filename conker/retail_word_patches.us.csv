@@ -4427,3 +4427,22 @@ init_B1B0,func_1000C530,0x1E4,0xAFA80038,0xAFA80040,-,-,Normalize packed audio s
 init_B1B0,func_1000C530,0x1F0,0x8FA80038,0x8FA80040,-,-,Normalize packed audio state compiler allocation,,,false
 init_B1B0,func_1000C530,0x27C,0x8FAC0044,0x8FAC003C,-,-,Normalize packed audio state compiler allocation,,,false
 init_B1B0,func_1000C530,0x284,0x8FAB003C,0x8FAB0038,-,-,Normalize packed audio state compiler allocation,,,false
+init_50A0,func_100052A0,0x080,0x3C010000,0x3C010000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_8003BC20,Bind the shutdown base-time store to its canonical symbol,,,false
+init_50A0,func_100052A0,0x084,0xAC220008,0xAC220000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC20,Store the low base-time word through its canonical symbol,,,false
+init_50A0,func_100052A0,0x08C,0xAC23000C,0xAC230000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC24,Store the high base-time word through its canonical symbol,,,false
+init_50A0,func_100052A0,0x14C,0x3C0B0000,0x3C0B0000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_8003BC24,Bind the first threshold high-word load to its canonical symbol,,,false
+init_50A0,func_100052A0,0x150,0x8D6B000C,0x8D6B0000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC24,Load the first threshold high word from its canonical symbol,,,false
+init_50A0,func_100052A0,0x154,0x3C0A0000,0x3C0A0000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_8003BC20,Bind the first threshold low-word load to its canonical symbol,,,false
+init_50A0,func_100052A0,0x15C,0x8D4A0008,0x8D4A0000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC20,Load the first threshold low word from its canonical symbol,,,false
+init_50A0,func_100052A0,0x198,0x3C0F0000,0x3C0F0000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_8003BC24,Bind the first wait-loop high-word load to its canonical symbol,,,false
+init_50A0,func_100052A0,0x19C,0x8DEF000C,0x8DEF0000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC24,Load the first wait-loop high word from its canonical symbol,,,false
+init_50A0,func_100052A0,0x1A0,0x3C0E0000,0x3C0E0000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_8003BC20,Bind the first wait-loop low-word load to its canonical symbol,,,false
+init_50A0,func_100052A0,0x1A8,0x8DCE0008,0x8DCE0000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC20,Load the first wait-loop low word from its canonical symbol,,,false
+init_50A0,func_100052A0,0x1E8,0x3C090000,0x3C090000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_8003BC24,Bind the second threshold high-word load to its canonical symbol,,,false
+init_50A0,func_100052A0,0x1EC,0x8D29000C,0x8D290000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC24,Load the second threshold high word from its canonical symbol,,,false
+init_50A0,func_100052A0,0x1F0,0x3C080000,0x3C080000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_8003BC20,Bind the second threshold low-word load to its canonical symbol,,,false
+init_50A0,func_100052A0,0x1F8,0x8D080008,0x8D080000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC20,Load the second threshold low word from its canonical symbol,,,false
+init_50A0,func_100052A0,0x234,0x3C0D0000,0x3C0D0000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_8003BC24,Bind the second wait-loop high-word load to its canonical symbol,,,false
+init_50A0,func_100052A0,0x238,0x8DAD000C,0x8DAD0000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC24,Load the second wait-loop high word from its canonical symbol,,,false
+init_50A0,func_100052A0,0x23C,0x3C0C0000,0x3C0C0000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_8003BC20,Bind the second wait-loop low-word load to its canonical symbol,,,false
+init_50A0,func_100052A0,0x244,0x8D8C0008,0x8D8C0000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_8003BC20,Load the second wait-loop low word from its canonical symbol,,,false

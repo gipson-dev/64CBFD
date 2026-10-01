@@ -32,10 +32,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,142 / 5,457 (57.58%) | 0 | 2,315 |
-| Init | 459 / 488 (94.06%) | 0 | 29 |
+| Total | 3,143 / 5,457 (57.60%) | 0 | 2,314 |
+| Init | 460 / 488 (94.26%) | 0 | 28 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init PRENMI shutdown thread `func_100052A0` now matches its complete
+180-word retail span. It restores thread shutdown, controller-motor cleanup,
+the two timed waits, cache writeback, and the terminal park loop. See
+[Working Note 644](WORKING_NOTES/644-init-prenmi-shutdown-thread-match-20261001.md).
 
 The Init packed audio-state updater `func_1000C530` now matches its complete
 174-word retail span. It restores queued state transitions, sound-slot

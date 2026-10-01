@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init PRENMI shutdown thread byte-matched
+
+- `func_100052A0` replaces its empty placeholder with the recovered shutdown
+  path: synchronization, thread stops, VI reset, four-port motor cleanup, two
+  elapsed-time waits, cache writeback, and the final park loop.
+- One hundred sixty-one of 180 linked words emit directly from semantic C.
+  Nineteen relocation-aware rows bind the compiler's function-local static
+  timer references to the canonical retail timer symbols without changing
+  instruction selection or scheduling.
+- The linked and retail 720-byte spans share SHA-256
+  `19f1d82d263567b460cce60c28d40fe7c017c72193c23311adbb2664ebb37ba4`.
+  Totals are **3,143 / 5,457 (57.60%)** overall and
+  **460 / 488 (94.26%)** in Init. See
+  [Working Note 644](WORKING_NOTES/644-init-prenmi-shutdown-thread-match-20261001.md).
+
 ### Init packed audio-state updater byte-matched
 
 - `func_1000C530` replaces its zero-return placeholder with the recovered
