@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,136 / 5,457 (57.47%) | 0 | 2,321 |
-| Init | 488 / 538 (90.71%) | 453 / 488 (92.83%) | 0 | 35 |
+| Total | 5,457 / 6,041 (90.33%) | 3,137 / 5,457 (57.49%) | 0 | 2,320 |
+| Init | 488 / 538 (90.71%) | 454 / 488 (93.03%) | 0 | 34 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,11 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init music-control callback `func_1000BCBC` now matches all 169 retail
+words. The semantic recovery supplies its initial channel setup, scene-`0x13`
+distance scaling, and event-driven secondary level; see
+[Working Note 638](WORKING_NOTES/638-init-music-control-callback-match-20261001.md).
 
 The Init PI device-manager thread `func_10002E50` now matches all 148 retail
 words directly from C. Its recovered loop includes the game-specific direct-PI

@@ -7,7 +7,7 @@
 /* Generated placeholder declarations. */
 void func_1000B3D4(struct00 *arg0, struct151 *volatile arg1);
 s32 func_1000B638(s32 arg0, u8 arg1, s32 arg2, s32 arg3);
-s32 func_1000BCBC();
+s32 func_1000BCBC(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
 s32 func_1000BF60();
 s32 func_1000C350(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
 s32 func_1000C7E8(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
@@ -363,9 +363,48 @@ s32 func_1000BC28(s32 arg0, u8 arg1, s32 arg2, s32 arg3) {
 }
 
 
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000BCBC.s. */
-s32 func_1000BCBC() {
-    return 0;
+s32 func_1000BCBC(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    f32 value;
+    u8 level;
+
+    if (arg0 == 0) {
+        func_10008790(arg1, 3, 0x10, 0);
+        func_1000886C(arg1, 4, 0);
+        arg0 = 1;
+    } else if (D_800BE9F0 == 0x13) {
+        arg2 -= 24.0f;
+        arg4 -= D_8002C220;
+        value = (arg2 * arg2) + (arg4 * arg4);
+        if (D_8002C224 < value) {
+            level = 4;
+        } else {
+            level = (u8)((u32)((D_8002C228 - sqrtf(value)) * D_8002C22C) + 4);
+        }
+
+        if (arg0 != level) {
+            func_1000886C(arg1, 3, level);
+        }
+
+        if (func_150A29C8(0, 0x4041) == 0) {
+            if (D_8002C230 < arg3) {
+                level = 0x20;
+            } else {
+                value = (D_8002C230 - arg3) * D_8002C234;
+                if (223.0f <= value) {
+                    level = 0xFF;
+                } else {
+                    level = (u8)((u32)value + 0x20);
+                }
+            }
+        } else {
+            level = 0;
+        }
+
+        if (level != func_10008A4C(arg1, 2)) {
+            func_1000886C(arg1, 4, level);
+        }
+    }
+    return arg0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000BF60.s. */
 s32 func_1000BF60() {

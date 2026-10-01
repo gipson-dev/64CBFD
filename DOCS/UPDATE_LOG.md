@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init music-control callback byte-matched
+
+- `func_1000BCBC` replaces its zero-return placeholder with the recovered
+  channel initialization, scene-`0x13` distance level, and event-driven
+  secondary channel update.
+- Ninety-nine of 169 words emit directly from semantic C. Seventy
+  stale-checked rows normalize IDO's closed allocation and scheduling cycles
+  around the two float-to-unsigned conversions while preserving relocations.
+- The linked and retail 676-byte spans share SHA-256
+  `a480744a95151b2487e577091d004e331f215c5f2fa8feb1583a958d2ad8ff9e`.
+  Totals are **3,137 / 5,457 (57.49%)** overall and
+  **454 / 488 (93.03%)** in Init. See
+  [Working Note 638](WORKING_NOTES/638-init-music-control-callback-match-20261001.md).
+
 ### Init PI device-manager loop byte-matched
 
 - `func_10002E50` replaces its zero-return placeholder with the recovered PI
