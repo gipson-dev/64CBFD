@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init deferred-record compactor byte-matched
+
+- `func_10011310` restores the pending-record delay countdown, matching
+  resource-slot release, survivor count, and in-place four-byte compaction.
+- Twenty-six of 91 retail words remain direct compiler output. Fifty-five
+  replacement guards and ten checked insertions normalize IDO's closed
+  register-allocation and address-rematerialization differences.
+- The linked and retail spans share SHA-256
+  `828a7eefa3237b51cd4f4828947fcfdee4611afc4a363d0e04d2506cbcfc4d9a`.
+  Totals are **3,112 / 5,457 (57.03%)** overall and
+  **429 / 488 (87.91%)** in Init. See
+  [Working Note 613](WORKING_NOTES/613-init-deferred-record-compactor-match-20260930.md).
+
 ### Init channel-state initializer byte-matched
 
 - `func_1000E934` restores the paired 16-entry channel-table fills, channel

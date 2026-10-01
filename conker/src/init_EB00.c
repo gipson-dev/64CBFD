@@ -9,7 +9,7 @@ s32 func_1000EFB4();
 s32 func_1000F568(s32 arg0, u32 arg1);
 s32 func_1000F6B8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 s32 func_10010FFC();
-s32 func_10011310();
+void func_10011310(void);
 s32 func_10011624();
 s32 func_10011BB8();
 u16 func_10011EB8(s32 arg0, s16 *arg1, s32 arg2);
@@ -803,9 +803,56 @@ s32 func_100112BC(s32 arg0, s32 arg1) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10011310.s. */
-s32 func_10011310() {
-    return 0;
+void func_10011310(void) {
+    struct49 *current;
+    struct49 *end;
+    struct120 *slot;
+    s32 destinationIndex;
+    s32 compacting;
+    u32 count;
+    u32 remaining;
+
+    count = D_80041F50;
+    compacting = 0;
+    destinationIndex = 0;
+    remaining = count;
+
+    if ((s32)count > 0) {
+        current = D_80041F10;
+        do {
+            if ((u8)current->unk2 > 0) {
+                current->unk2 = (u8)current->unk2 - 1;
+                end = &D_80041F10[D_80041F50];
+            } else {
+                compacting = 1;
+                slot = &D_800425E0[(u8)current->unk3];
+                if ((u16)slot->unk0 == (u16)current->unk0) {
+                    void *allocation = slot->unk8;
+
+                    slot->unk0 = 0;
+                    slot->unk4 = 0;
+                    if (allocation != NULL) {
+                        func_10017594(allocation);
+                    }
+                    slot->unk8 = NULL;
+                }
+                remaining--;
+                end = &D_80041F10[D_80041F50];
+            }
+
+            if (&D_80041F10[destinationIndex] != current) {
+                D_80041F10[destinationIndex] = *current;
+            }
+            current++;
+            if (compacting != 0) {
+                destinationIndex++;
+            } else {
+                compacting = 0;
+            }
+        } while (current < end);
+    }
+
+    D_80041F50 = remaining;
 }
 
 s32 func_1001147C(u16 arg0) {

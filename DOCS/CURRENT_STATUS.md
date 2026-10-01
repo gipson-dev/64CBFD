@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,111 / 5,457 (57.01%) | 0 | 2,346 |
-| Init | 428 / 488 (87.70%) | 0 | 60 |
+| Total | 3,112 / 5,457 (57.03%) | 0 | 2,345 |
+| Init | 429 / 488 (87.91%) | 0 | 59 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -978,6 +978,12 @@ end-to-end gameplay acceptance.
    guards normalize independent compiler scheduling, including six moved low
    relocations; see
    [Working Note 612](WORKING_NOTES/612-init-channel-state-initializer-match-20260930.md).
+   The 91-word deferred-record compactor `func_10011310` is byte-exact after
+   recovering its delay countdown, resource-slot release, survivor count, and
+   unaligned in-place record compaction. Fifty-nine stale-checked guards,
+   including ten checked insertions, preserve retail's rematerialized global
+   addresses and integer-index schedule; see
+   [Working Note 613](WORKING_NOTES/613-init-deferred-record-compactor-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

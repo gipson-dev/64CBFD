@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init channel-state initializer matched).**
-The current linked checkpoint is `3111 / 5457 (57.01%)` exact C functions,
-with no address-drift blockers and 2,346 genuinely different C functions.
+**Active (2026-09-30, Init deferred-record compactor matched).**
+The current linked checkpoint is `3112 / 5457 (57.03%)` exact C functions,
+with no address-drift blockers and 2,345 genuinely different C functions.
 Init is
-`428 / 488 (87.70%)` exact, with 60 genuinely different C rows. Game is
+`429 / 488 (87.91%)` exact, with 59 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -900,7 +900,13 @@ record table, and installs all 12 `-1` sentinels. Twenty-nine guarded words
 normalize only compiler scheduling, including six checked low relocations.
 See
 [Working Note 612](WORKING_NOTES/612-init-channel-state-initializer-match-20260930.md).
-Resume the Init queue from its remaining 60 genuinely different C rows.
+Init `func_10011310` now matches all 91 retail words. Its recovered C
+decrements pending delays, releases matching resource slots, updates the
+survivor count, and compacts four-byte records in place. Fifty-nine guarded
+source words, including ten checked insertions, normalize IDO's closed
+allocation and fixed-layout address schedule. See
+[Working Note 613](WORKING_NOTES/613-init-deferred-record-compactor-match-20260930.md).
+Resume the Init queue from its remaining 59 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

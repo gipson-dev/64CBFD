@@ -290,7 +290,7 @@ extern u8   D_80041F00;
 extern s32  D_80041F04;
 extern s32  D_80041F08;
 extern s32  D_80041F0C;
-extern struct49 *D_80041F10[];
+extern struct49 D_80041F10[];
 extern u32  D_80041F50;
 extern s32  D_80041F54;
 extern u16  D_80041F56;
