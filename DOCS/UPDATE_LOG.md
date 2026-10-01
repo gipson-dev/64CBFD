@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init bidirectional heap allocator byte-matched
+
+- `func_10003C6C` now replaces its zero-return placeholder with the core Init
+  allocator: class-based alignment, head/tail free-list search, block splitting
+  or consumption, physical/free-link repair, and largest-block maintenance.
+- The semantic C emits the exact 258-word extent. Two hundred sixteen
+  function-scoped, stale-checked rows normalize its closed frame, allocation,
+  and schedule differences; 42 rows preserve relocation changes explicitly.
+- Direct comparison reports zero differences across all 1,032 bytes. Both
+  spans share SHA-256
+  `7b188602de53c31d0fc1e07510cee2edd09e91b94dff1e5a1f295a026afdcaea`.
+  Totals are **3,154 / 5,456 (57.81%)** overall and
+  **471 / 487 (96.71%)** in Init, with zero address drift and 16 different
+  Init C rows. See
+  [Working Note 656](WORKING_NOTES/656-init-bidirectional-heap-allocator-match-20261001.md).
+
 ### Init packed spatial-audio state updater byte-matched
 
 - `func_1000BF60` now replaces its zero-return placeholder with its full

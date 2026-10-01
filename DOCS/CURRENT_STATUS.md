@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,153 / 5,456 (57.79%) | 0 | 2,303 |
-| Init | 470 / 487 (96.51%) | 0 | 17 |
+| Total | 3,154 / 5,456 (57.81%) | 0 | 2,302 |
+| Init | 471 / 487 (96.71%) | 0 | 16 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init bidirectional heap allocator `func_10003C6C` now matches its complete
+258-word retail span. It applies allocation-class alignment, searches from
+either end of the free list, splits or consumes the selected block, repairs
+both physical and free-list links, and refreshes the largest-free-block record.
+The semantic C has the exact retail extent; 216 stale-checked rows, including
+42 relocation-aware rows, normalize IDO's closed allocation and scheduling
+differences. See
+[Working Note 656](WORKING_NOTES/656-init-bidirectional-heap-allocator-match-20261001.md).
 
 The Init packed spatial-audio state updater `func_1000BF60` now matches its
 complete 252-word retail span. It starts sound `0x22`, performs three spatial
