@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,113 / 5,457 (57.05%) | 0 | 2,344 |
-| Init | 430 / 488 (88.11%) | 0 | 58 |
+| Total | 3,114 / 5,457 (57.06%) | 0 | 2,343 |
+| Init | 431 / 488 (88.32%) | 0 | 57 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -990,6 +990,12 @@ end-to-end gameplay acceptance.
    and one checked insertion normalize the closed compiler allocation and
    branch schedule; see
    [Working Note 614](WORKING_NOTES/614-init-audio-dma-cleanup-match-20260930.md).
+   The 93-word channel attachment routine `func_1000B3D4` is byte-exact after
+   recovering its direct-parent replacement path, three-slot allocator scan,
+   and idle-child retirement path. Sixty-five words emit directly from the
+   recovered C; 28 stale-checked replacements normalize three closed register
+   allocation cycles with no relocation rewriting; see
+   [Working Note 615](WORKING_NOTES/615-init-channel-attachment-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

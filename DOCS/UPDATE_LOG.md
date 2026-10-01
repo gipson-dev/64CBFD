@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init channel attachment byte-matched
+
+- `func_1000B3D4` restores direct parent replacement, the three-slot channel
+  allocation scan, and retirement of an idle child before replacement.
+- Sixty-five of 93 retail words emit directly from C. Twenty-eight
+  stale-checked replacement guards normalize three closed register-allocation
+  cycles without moving or rewriting relocations.
+- The linked and retail spans share SHA-256
+  `94732e1b11f4b548bf993a41315257f5d00810379afd568f162a694c10ada44f`.
+  Totals are **3,114 / 5,457 (57.06%)** overall and
+  **431 / 488 (88.32%)** in Init. See
+  [Working Note 615](WORKING_NOTES/615-init-channel-attachment-match-20260930.md).
+
 ### Init audio-DMA cleanup byte-matched
 
 - `func_100099BC` restores completion-queue draining, generation-expiry

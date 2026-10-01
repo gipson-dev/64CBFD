@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init audio-DMA cleanup matched).**
-The current linked checkpoint is `3113 / 5457 (57.05%)` exact C functions,
-with no address-drift blockers and 2,344 genuinely different C functions.
+**Active (2026-09-30, Init channel attachment matched).**
+The current linked checkpoint is `3114 / 5457 (57.06%)` exact C functions,
+with no address-drift blockers and 2,343 genuinely different C functions.
 Init is
-`430 / 488 (88.11%)` exact, with 58 genuinely different C rows. Game is
+`431 / 488 (88.32%)` exact, with 57 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -912,7 +912,13 @@ free list, clears the outstanding count, and advances the generation.
 Fifty-six replacement guards and one checked insertion normalize the closed
 allocation and branch schedule. See
 [Working Note 614](WORKING_NOTES/614-init-audio-dma-cleanup-match-20260930.md).
-Resume the Init queue from its remaining 58 genuinely different C rows.
+Init `func_1000B3D4` now matches all 93 retail words. Its recovered C handles
+direct parent replacement, scans three channel slots for an allocation, and
+retires an idle child before replacement. Twenty-eight stale-checked
+replacement guards normalize only three closed register-allocation cycles.
+See
+[Working Note 615](WORKING_NOTES/615-init-channel-attachment-match-20260930.md).
+Resume the Init queue from its remaining 57 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

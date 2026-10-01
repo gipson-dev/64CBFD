@@ -5,7 +5,7 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_1000B3D4();
+void func_1000B3D4(struct00 *arg0, struct151 *volatile arg1);
 s32 func_1000B638();
 s32 func_1000BCBC();
 s32 func_1000BF60();
@@ -109,9 +109,59 @@ struct137 *func_1000B2F4(s32 arg0) {
     return NULL;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000B3D4.s. */
-s32 func_1000B3D4() {
-    return 0;
+void func_1000B3D4(struct00 *arg0, struct151 *volatile arg1) {
+    s32 i;
+    struct00 *child;
+    struct151 *parent;
+    struct151 **slot;
+    struct151 *allocated;
+
+    parent = arg1;
+    allocated = NULL;
+    i = 0;
+    if (parent != NULL) {
+        child = parent->unk60;
+        if ((child != NULL) && (arg0 != child)) {
+            if (arg0->unk4 == child->unk4) {
+                arg0->unk4 = -1;
+                return;
+            }
+            child->unk4 = -1;
+        }
+        arg1->unk60 = arg0;
+        return;
+    }
+
+    do {
+        if ((allocated == NULL) &&
+            (((slot = &D_800417B0[i]), *slot == NULL) ||
+             (((*slot)->unk4 <= 0) && ((*slot)->unk60 == NULL)))) {
+            allocated = (struct151 *)func_1000B2F4(0);
+            if (allocated != NULL) {
+                allocated->unk0 = i;
+                allocated->unk60 = arg0;
+                *slot = allocated;
+                goto next;
+            } else {
+                arg0->unk4 = -1;
+                return;
+            }
+        }
+
+        if (allocated == NULL) {
+            slot = &D_800417B0[i];
+            if ((*slot != NULL) && ((*slot)->unk60 != NULL) &&
+                ((*slot)->unk60->unk4 == 0)) {
+                allocated = (struct151 *)-1;
+                func_1000B294(&(*slot)->unk60->unk0);
+                (*slot)->unk60->unk4 = -1;
+                (*slot)->unk60->unk0 = -1;
+                (*slot)->unk60 = arg0;
+            }
+        }
+next:
+        i++;
+    } while (i != 3);
 }
 
 s32 func_1000B548(s32 *arg0) {
