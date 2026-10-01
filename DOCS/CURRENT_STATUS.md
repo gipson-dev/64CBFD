@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,115 / 5,457 (57.08%) | 0 | 2,342 |
-| Init | 432 / 488 (88.52%) | 0 | 56 |
+| Total | 3,116 / 5,457 (57.10%) | 0 | 2,341 |
+| Init | 433 / 488 (88.73%) | 0 | 55 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1001,6 +1001,12 @@ end-to-end gameplay acceptance.
    gate, and VI thread startup. Its complete routine emits directly from C
    with no guards; see
    [Working Note 616](WORKING_NOTES/616-init-create-vi-manager-match-20260930.md).
+   The adjacent 102-word VI manager thread `viMgrMain` is also byte-exact
+   after restoring the canonical retrace dispatch, client notification,
+   timer interrupt, and 64-bit timekeeping loop. All opcodes emit directly
+   from C; ten stale-checked relocation-only guards bind its discarded
+   function-local static to the retail retrace-counter address. See
+   [Working Note 617](WORKING_NOTES/617-init-vi-manager-main-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

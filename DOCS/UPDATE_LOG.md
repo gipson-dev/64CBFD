@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init VI manager thread byte-matched
+
+- `viMgrMain` restores the canonical SDK retrace loop, including context
+  swaps, client notification, timer interrupts, interrupt counting, and
+  64-bit time accumulation.
+- All 102 retail opcodes emit directly from C. Ten stale-checked
+  relocation-only guards bind the discarded function-local `retrace` static
+  to retail `D_80037E30` without rewriting an instruction.
+- The linked and retail spans share SHA-256
+  `5856a698d1f28b707e9768ffe365d925abf9bd588699baec40447970e450a7de`.
+  Totals are **3,116 / 5,457 (57.10%)** overall and
+  **433 / 488 (88.73%)** in Init. See
+  [Working Note 617](WORKING_NOTES/617-init-vi-manager-main-match-20260930.md).
+
 ### Init VI manager creation byte-matched
 
 - `osCreateViManager` restores timer-service initialization, VI and counter

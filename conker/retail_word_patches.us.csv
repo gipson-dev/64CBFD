@@ -3117,3 +3117,13 @@ init_B1B0,func_1000B3D4,0x130,0x8DCF0060,0x8DF80060,-,-,Normalize compiler alloc
 init_B1B0,func_1000B3D4,0x134,0xADF50000,0xAF150000,-,-,Normalize compiler allocation to the retail channel attachment schedule,,,false
 init_B1B0,func_1000B3D4,0x138,0x8E180000,0x8E190000,-,-,Normalize compiler allocation to the retail channel attachment schedule,,,false
 init_B1B0,func_1000B3D4,0x13C,0xAF140060,0xAF340060,-,-,Normalize compiler allocation to the retail channel attachment schedule,,,false
+generated_vimgr,viMgrMain,0x038,0x3C010000,0x3C010000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+generated_vimgr,viMgrMain,0x044,0xA4230000,0xA4230000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+generated_vimgr,viMgrMain,0x04C,0x3C010000,0x3C010000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+generated_vimgr,viMgrMain,0x050,0xA4230000,0xA4230000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+generated_vimgr,viMgrMain,0x0AC,0x3C030000,0x3C030000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+generated_vimgr,viMgrMain,0x0B0,0x94630000,0x94630000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+generated_vimgr,viMgrMain,0x0B4,0x3C010000,0x3C010000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+generated_vimgr,viMgrMain,0x0C4,0xA42F0000,0xA42F0000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+generated_vimgr,viMgrMain,0x0F4,0x3C010000,0x3C010000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+generated_vimgr,viMgrMain,0x0F8,0xA4230000,0xA4230000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false

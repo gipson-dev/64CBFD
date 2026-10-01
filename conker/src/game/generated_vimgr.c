@@ -1,5 +1,7 @@
 #include <ultra64.h>
 #include "controller.h"
+#include "osint.h"
+#include "viint.h"
 
 #ifdef osCreateViManager
 #undef osCreateViManager
@@ -14,7 +16,6 @@ extern OSMesgQueue D_80037DD0;
 extern OSMesg D_80037DE8[5];
 extern OSIoMesg D_80037E00;
 extern OSIoMesg D_80037E18;
-
 void __osTimerServicesInit(void);
 void __osViInit(void);
 void viMgrMain(void *arg);
@@ -65,6 +66,53 @@ void osCreateViManager(OSPri pri) {
     }
 }
 
-/* Non-matching C placeholder for asm/libultra/io/vimgr.s. */
 void viMgrMain(void *arg) {
+    __OSViContext *vc;
+    OSDevMgr *dm;
+    OSIoMesg *mb;
+    static u16 retrace;
+    s32 first;
+    u32 count;
+
+    mb = NULL;
+    first = 0;
+    vc = (__OSViContext *)osPiGetDeviceType();
+    retrace = vc->retraceCount;
+    if (retrace == 0) {
+        retrace = 1;
+    }
+    dm = (OSDevMgr *)arg;
+
+    while (TRUE) {
+        osRecvMesg(dm->evtQueue, (OSMesg *)&mb, OS_MESG_BLOCK);
+        switch (mb->hdr.type) {
+            case OS_MESG_TYPE_VRETRACE:
+                __osViSwapContext();
+                retrace--;
+                if (retrace == 0) {
+                    vc = (__OSViContext *)osPiGetDeviceType();
+                    if (vc->msgq != NULL) {
+                        osSendMesg(vc->msgq, vc->msg, OS_MESG_NOBLOCK);
+                    }
+                    retrace = vc->retraceCount;
+                }
+
+                __osViIntrCount++;
+                if (first) {
+                    count = osGetCount();
+                    __osCurrentTime = count;
+                    first = 0;
+                }
+
+                count = __osBaseCounter;
+                __osBaseCounter = osGetCount();
+                count = __osBaseCounter - count;
+                __osCurrentTime = __osCurrentTime + count;
+                break;
+
+            case OS_MESG_TYPE_COUNTER:
+                __osTimerInterrupt();
+                break;
+        }
+    }
 }
