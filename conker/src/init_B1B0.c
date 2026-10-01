@@ -17,9 +17,15 @@ s32 func_1000CDA0(u8 arg0, struct137 *arg1);
 s32 func_1000CEAC();
 s32 func_1000D2F8();
 s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
-s32 func_1000E17C();
+void func_1000E17C(void);
 void func_1000E2F4(s32 arg0);
 void func_1000E934(void);
+/* Preserve the three independent retail address-materialization lifetimes. */
+extern struct137 D_800419A8_pass2[12];
+extern struct137 D_800419A8_pass3[12];
+extern OSMesgQueue D_80041E58_pass1[3];
+extern OSMesgQueue D_80041E58_pass2[3];
+extern OSMesgQueue D_80041E58_pass3[3];
 /* End generated placeholder declarations. */
 
 struct151 *func_1000B1B0(s32 arg0) {
@@ -655,9 +661,48 @@ s32 func_1000E134(s32 arg0) {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000E17C.s. */
-s32 func_1000E17C() {
-    return 0;
+void func_1000E17C(void) {
+    struct137 *entry;
+    struct137 *linked;
+    s32 type;
+
+    entry = D_800419A8;
+    do {
+        if (entry->unk4 > 0) {
+            type = *(s32 *)&D_8002B074[entry->unk4].unk4 & ~0xF0;
+            if (((type == 1) || (type == 3)) && (entry->unk0 == -1)) {
+                entry->unk4 = -1;
+            }
+        }
+        entry++;
+    } while (entry < (struct137 *)D_80041E58_pass1);
+
+    entry = D_800419A8_pass2;
+    do {
+        if (entry->unk4 > 0) {
+            linked = *(struct137 **)&entry->pad60;
+            if ((linked != NULL) && (linked->unk4 == -1)) {
+                *(struct137 **)&entry->pad60 = NULL;
+            }
+
+            linked = entry->unk10;
+            if ((linked != NULL) && (linked->unk4 == -1)) {
+                entry->unk10 = NULL;
+            }
+        }
+        entry++;
+    } while (entry < (struct137 *)D_80041E58_pass2);
+
+    entry = D_800419A8_pass3;
+    do {
+        if (entry->unk4 > 0) {
+            type = *(s32 *)&D_8002B074[entry->unk4].unk4 & ~0xF0;
+            if (((type == 1) || (type == 3)) && (entry->unk0 != -1)) {
+                func_1000DE1C(entry->unk4, 4);
+            }
+        }
+        entry++;
+    } while (entry != (struct137 *)D_80041E58_pass3);
 }
 void func_1000E2F4(s32 arg0) {
     struct151 *entry;

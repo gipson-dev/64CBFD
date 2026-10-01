@@ -3127,3 +3127,26 @@ generated_vimgr,viMgrMain,0x0B4,0x3C010000,0x3C010000,R_MIPS_HI16:.bss,R_MIPS_HI
 generated_vimgr,viMgrMain,0x0C4,0xA42F0000,0xA42F0000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
 generated_vimgr,viMgrMain,0x0F4,0x3C010000,0x3C010000,R_MIPS_HI16:.bss,R_MIPS_HI16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
 generated_vimgr,viMgrMain,0x0F8,0xA4230000,0xA4230000,R_MIPS_LO16:.bss,R_MIPS_LO16:D_80037E30,Bind the discarded function-local retrace static to its retail address,,,false
+init_B1B0,func_1000E17C,0x028,0x3C130000,0x3C140000,R_MIPS_HI16:D_8002B074,R_MIPS_HI16:D_8002B074,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x02C,0x3C030000,0x3C030000,R_MIPS_HI16:D_80041E58_pass1,R_MIPS_HI16:D_80041E58,Bind the first independent end-address lifetime to its retail symbol,,,false
+init_B1B0,func_1000E17C,0x030,0x26100000,0x24630000,R_MIPS_LO16:D_800419A8,R_MIPS_LO16:D_80041E58,Complete the first end address before the retained table and record bases,,,false
+init_B1B0,func_1000E17C,0x034,0x24630000,0x26940000,R_MIPS_LO16:D_80041E58_pass1,R_MIPS_LO16:D_8002B074,Complete the retained definition table after the first end address,,,false
+init_B1B0,func_1000E17C,0x038,0x26730000,0x26100000,R_MIPS_LO16:D_8002B074,R_MIPS_LO16:D_800419A8,Complete the first record base in retail schedule,,,false
+init_B1B0,func_1000E17C,0x040,0x24150001,0x2415FF0F,-,-,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x044,0x2414FF0F,0x24130001,-,-,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x058,0x026E7821,0x028E7821,-,-,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x060,0x03141024,0x03151024,-,-,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x064,0x50550004,0x52620004,-,-,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x06C,0x54560006,0x56C20006,-,-,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x094,0x3C100000,0x3C100000,R_MIPS_HI16:D_800419A8_pass2,R_MIPS_HI16:D_800419A8,Bind the second independent record-base lifetime to its retail symbol,,,false
+init_B1B0,func_1000E17C,0x098,0x3C030000,0x3C030000,R_MIPS_HI16:D_80041E58_pass2,R_MIPS_HI16:D_80041E58,Bind the second independent end-address lifetime to its retail symbol,,,false
+init_B1B0,func_1000E17C,0x09C,0x26100000,0x24630000,R_MIPS_LO16:D_800419A8_pass2,R_MIPS_LO16:D_80041E58,Complete the second end address before the record base,,,false
+init_B1B0,func_1000E17C,0x0A0,0x24630000,0x26100000,R_MIPS_LO16:D_80041E58_pass2,R_MIPS_LO16:D_800419A8,Complete the second record base in retail schedule,,,false
+init_B1B0,func_1000E17C,0x0F8,0x3C100000,0x3C100000,R_MIPS_HI16:D_800419A8_pass3,R_MIPS_HI16:D_800419A8,Bind the third independent record-base lifetime to its retail symbol,,,false
+init_B1B0,func_1000E17C,0x0FC,0x3C120000,0x3C120000,R_MIPS_HI16:D_80041E58_pass3,R_MIPS_HI16:D_80041E58,Bind the third independent end-address lifetime to its retail symbol,,,false
+init_B1B0,func_1000E17C,0x100,0x26100000,0x26520000,R_MIPS_LO16:D_800419A8_pass3,R_MIPS_LO16:D_80041E58,Complete the retained third-pass end address before the record base,,,false
+init_B1B0,func_1000E17C,0x104,0x26520000,0x26100000,R_MIPS_LO16:D_80041E58_pass3,R_MIPS_LO16:D_800419A8,Complete the third record base in retail schedule,,,false
+init_B1B0,func_1000E17C,0x114,0x026B6021,0x028B6021,-,-,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x11C,0x01B41024,0x01B51024,-,-,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x120,0x50550004,0x52620004,-,-,Normalize the closed record-cleanup register allocation,,,false
+init_B1B0,func_1000E17C,0x128,0x54560007,0x56C20007,-,-,Normalize the closed record-cleanup register allocation,,,false

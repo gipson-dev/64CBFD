@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init controller-pak write builder matched).**
-The current linked checkpoint is `3117 / 5457 (57.12%)` exact C functions,
-with no address-drift blockers and 2,340 genuinely different C functions.
+**Active (2026-09-30, Init audio-record cleanup matched).**
+The current linked checkpoint is `3118 / 5457 (57.14%)` exact C functions,
+with no address-drift blockers and 2,339 genuinely different C functions.
 Init is
-`434 / 488 (88.93%)` exact, with 54 genuinely different C rows. Game is
+`435 / 488 (89.14%)` exact, with 53 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -932,7 +932,13 @@ Init `__osPackRamWriteData` now matches all 96 retail words directly from C.
 The restored 16-word PIF RAM clear and canonical `*ptr++` channel-prefix loop
 recover Conker's complete controller-pak write packet builder. See
 [Working Note 618](WORKING_NOTES/618-init-controller-pak-write-packet-builder-match-20260930.md).
-Continue the Init queue from its remaining 54 genuinely different C rows.
+Init `func_1000E17C` now matches all 94 retail words. Its recovered three-pass
+cleanup invalidates finished eligible records, clears stale secondary links,
+and dispatches active eligible identifiers. Eighteen replacement guards and
+five relocation-only guards normalize its closed allocation and independent
+address lifetimes. See
+[Working Note 619](WORKING_NOTES/619-init-audio-record-cleanup-dispatch-match-20260930.md).
+Continue the Init queue from its remaining 53 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct

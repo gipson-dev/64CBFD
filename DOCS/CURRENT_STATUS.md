@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,117 / 5,457 (57.12%) | 0 | 2,340 |
-| Init | 434 / 488 (88.93%) | 0 | 54 |
+| Total | 3,118 / 5,457 (57.14%) | 0 | 2,339 |
+| Init | 435 / 488 (89.14%) | 0 | 53 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1012,6 +1012,12 @@ end-to-end gameplay acceptance.
    channel-prefix loop shape. Its complete slot emits directly from C with no
    guards; see
    [Working Note 618](WORKING_NOTES/618-init-controller-pak-write-packet-builder-match-20260930.md).
+   The 94-word audio-record cleanup and dispatch routine `func_1000E17C` is
+   byte-exact after recovering its three passes over the twelve-record pool.
+   Eighteen stale-checked replacements normalize one closed allocation and
+   address-completion schedule; five relocation-only guards retain the three
+   independent retail address lifetimes. See
+   [Working Note 619](WORKING_NOTES/619-init-audio-record-cleanup-dispatch-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

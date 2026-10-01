@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init audio-record cleanup and dispatch byte-matched
+
+- `func_1000E17C` restores three passes over the twelve-record audio pool:
+  finished eligible records are invalidated, stale secondary links are
+  cleared, and active eligible identifiers are dispatched through
+  `func_1000DE1C`.
+- The recovered C has retail's 94-word extent and control flow. Eighteen
+  stale-checked replacements normalize a closed register-allocation and
+  address-completion schedule; five relocation-only guards preserve the
+  three independent record-pool address lifetimes.
+- The linked and retail spans share SHA-256
+  `a3fd280d56d3bd1bdabfb0dd492979c232b8fc91404eca3957b50a24d81bfdc5`.
+  Totals are **3,118 / 5,457 (57.14%)** overall and
+  **435 / 488 (89.14%)** in Init. See
+  [Working Note 619](WORKING_NOTES/619-init-audio-record-cleanup-dispatch-match-20260930.md).
+
 ### Init controller-pak write packet builder byte-matched
 
 - `__osPackRamWriteData` now clears all 16 PIF RAM words before constructing
