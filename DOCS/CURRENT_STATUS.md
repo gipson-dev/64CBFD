@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,152 / 5,456 (57.77%) | 0 | 2,304 |
-| Init | 469 / 487 (96.30%) | 0 | 18 |
+| Total | 3,153 / 5,456 (57.79%) | 0 | 2,303 |
+| Init | 470 / 487 (96.51%) | 0 | 17 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init packed spatial-audio state updater `func_1000BF60` now matches its
+complete 252-word retail span. It starts sound `0x22`, performs three spatial
+queries, updates the changed volume and position channels, handles two mode
+transitions, and returns the refreshed packed state. The semantic C emits 250
+words with retail's `0x60` frame; 111 stale-checked rows, including two checked
+insertions and two relocation-aware rows, normalize IDO's allocation and
+scheduling. See
+[Working Note 655](WORKING_NOTES/655-init-packed-spatial-audio-state-match-20261001.md).
 
 The Init scheduler and render thread `func_100049E0` now matches its complete
 244-word retail span. It restores the seven-class message loop, registered

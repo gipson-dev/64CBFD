@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init scheduler and render thread matched).**
-The current linked checkpoint is `3152 / 5456 (57.77%)` exact C functions,
-with no address-drift blockers and 2,304 genuinely different C functions.
+**Active (2026-10-01, Init packed spatial-audio state matched).**
+The current linked checkpoint is `3153 / 5456 (57.79%)` exact C functions,
+with no address-drift blockers and 2,303 genuinely different C functions.
 Init is
-`469 / 487 (96.30%)` exact, with 18 genuinely different C rows. Game is
+`470 / 487 (96.51%)` exact, with 17 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,10 +100,10 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`func_100049E0` now matches all 244 retail words and is ready to bank in its
-own focused commit. After that checkpoint, resume Init at `func_1000BF60`, the
-252-word next candidate with 251 real word differences. See
-[Working Note 654](WORKING_NOTES/654-init-scheduler-render-thread-match-20261001.md).
+`func_1000BF60` now matches all 252 retail words and is ready to bank in its
+own focused commit. After that checkpoint, resume Init at `func_10003C6C`, the
+258-word next candidate with 254 real word differences. See
+[Working Note 655](WORKING_NOTES/655-init-packed-spatial-audio-state-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

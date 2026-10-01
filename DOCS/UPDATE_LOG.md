@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init packed spatial-audio state updater byte-matched
+
+- `func_1000BF60` now replaces its zero-return placeholder with its full
+  sound-`0x22` state updater: conditional startup, three spatial queries,
+  changed-channel volume and position writes, and two mode transitions.
+- The semantic C emits 250 words with retail's `0x60` frame. One hundred eleven
+  function-scoped, stale-checked rows restore the 252-word retail stream,
+  including two redundant `move a2` insertions and two relocation-aware rows.
+- Direct comparison reports zero differences across all 1,008 bytes. Both
+  spans share SHA-256
+  `e7a0f3fa7e4953b9c62c703ee6c206047cdf9ddc3dc3452c2217b800435b3e1d`.
+  Totals are **3,153 / 5,456 (57.79%)** overall and
+  **470 / 487 (96.51%)** in Init, with zero address drift and 17 different
+  Init C rows. See
+  [Working Note 655](WORKING_NOTES/655-init-packed-spatial-audio-state-match-20261001.md).
+
 ### Init scheduler and render thread byte-matched
 
 - `func_100049E0` now replaces its empty placeholder with the full seven-class

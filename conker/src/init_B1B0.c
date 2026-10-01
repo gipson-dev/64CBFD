@@ -8,7 +8,7 @@
 void func_1000B3D4(struct00 *arg0, struct151 *volatile arg1);
 s32 func_1000B638(s32 arg0, u8 arg1, s32 arg2, s32 arg3);
 s32 func_1000BCBC(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
-s32 func_1000BF60();
+s32 func_1000BF60(u32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
 s32 func_1000C350(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
 s32 func_1000C7E8(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
 s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
@@ -406,9 +406,117 @@ s32 func_1000BCBC(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
     }
     return arg0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000BF60.s. */
-s32 func_1000BF60() {
-    return 0;
+s32 func_1000BF60(u32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    s32 oldMode;
+    u32 packedValues;
+    s32 started;
+    s32 position;
+    s32 valueChanged;
+    s32 positionChanged;
+    s32 timer;
+    s32 result;
+    u32 normalizedValue;
+
+    started = 0;
+    oldMode = arg0 & 3;
+    packedValues = arg0 >> 8;
+
+    if ((arg0 & 0x80) == 0) {
+        func_1000E40C(0x22, 0x5DC0);
+        if (D_800C35EA == 1) {
+            func_1000DF68(0x22, 0x14, 1);
+        }
+        arg0 = 0x80;
+        started = 1;
+    }
+
+    if (D_800BE9F0 != 0x1D) {
+        func_10008F24(arg1);
+        return arg0;
+    }
+
+    valueChanged = 0;
+    positionChanged = 0;
+    func_100114D0(-0x15F, 0, 0x197, 0x7FFF, 0xBB8, 0x12C,
+                  &position, &result, NULL);
+    normalizedValue = result;
+    if (normalizedValue < 0x4000) {
+        normalizedValue = 0x40;
+    } else {
+        normalizedValue >>= 8;
+    }
+    result = normalizedValue;
+
+    if (normalizedValue != (packedValues >> 8)) {
+        valueChanged = 1;
+        result = normalizedValue;
+        func_1000886C(arg1, 6, normalizedValue & 0xFF);
+    }
+
+    if (position != (packedValues & 0xFF)) {
+        positionChanged = 1;
+        func_10008744(arg1, 1, position & 0x7F);
+        func_10008744(arg1, 2, position & 0x7F);
+        func_100086FC(arg1, 1, ((u32)position >> 7) & 0xFF);
+        func_100086FC(arg1, 2, ((u32)position >> 7) & 0xFF);
+    }
+
+    packedValues = (position << 8) | (result << 16);
+    func_100114D0(-0x40, 0, 0x21F, 0x7FFF, 0xBB8, 0x12C,
+                  &position, &result, NULL);
+    if (valueChanged != 0) {
+        if ((u32)result < 0x4000) {
+            result = 0x4000;
+        }
+        func_1000886C(arg1, 1, ((u32)result >> 8) & 0xFF);
+    }
+
+    if (positionChanged != 0) {
+        func_10008744(arg1, 0, 0x40);
+        func_100086FC(arg1, 0, 0);
+    }
+
+    func_100114D0(-0x126, 0, 0x290, 0x7FFF, 0xBB8, 0x12C,
+                  &position, &result, NULL);
+    if (valueChanged != 0) {
+        if ((u32)result < 0x4000) {
+            result = 0x4000;
+        }
+        func_1000886C(arg1, 0x18, ((u32)result >> 8) & 0xFF);
+    }
+
+    if (positionChanged != 0) {
+        func_10008744(arg1, 3, position & 0x7F);
+        func_10008744(arg1, 4, position & 0x7F);
+        func_100086FC(arg1, 3, ((u32)position >> 7) & 0xFF);
+        func_100086FC(arg1, 4, ((u32)position >> 7) & 0xFF);
+    }
+
+    if (oldMode != D_80041F08) {
+        switch (D_80041F08) {
+        case 1:
+            timer = arg0 & 0x7C;
+            if (timer != 0) {
+                timer -= ((s32)D_800BE9E4 >> 1) * 4;
+                if (timer <= 0) {
+                    func_1000E704(0x22, 0, 0xFFFF);
+                    arg0 = 0x81;
+                } else {
+                    arg0 = timer | 0x80;
+                }
+            }
+            func_1000E46C(0x22, 0x64, 0xFE0, 0);
+            break;
+        case 2:
+            arg0 = 0xF8;
+            func_10011FA0((s32 *)4);
+            func_1000E704(0x22, 1, 0xFFFF);
+            func_1000E46C(0x22, 0, 0xFE0, started);
+            break;
+        }
+    }
+
+    return arg0 | packedValues;
 }
 s32 func_1000C350(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4) {
     if ((arg0 & 0x80) == 0) {
