@@ -14,8 +14,8 @@ s32 func_1000C7E8(s32 arg0, u8 arg1, f32 arg2, f32 arg3, f32 arg4);
 s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CDA0(u8 arg0, struct137 *arg1);
-s32 func_1000CEAC();
-s32 func_1000D2F8();
+s32 func_1000CEAC(s32 arg0);
+s32 func_1000D2F8(s32 arg0, f32 arg1, f32 arg2, s32 arg3);
 s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
 void func_1000E17C(void);
 void func_1000E2F4(s32 arg0);
@@ -28,6 +28,7 @@ extern OSMesgQueue D_80041E58_pass2[3];
 extern OSMesgQueue D_80041E58_pass3[3];
 extern u8 D_800C35E8;
 s32 func_15178EFC(s32 arg0);
+s32 func_151F2CDC(void);
 /* End generated placeholder declarations. */
 
 struct151 *func_1000B1B0(s32 arg0) {
@@ -612,15 +613,76 @@ s32 func_1000CDA0(u8 arg0, struct137 *arg1) {
     return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000CEAC.s. */
-s32 func_1000CEAC() {
+s32 func_1000CEAC(s32 arg0) {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000D2F8.s. */
-s32 func_1000D2F8() {
+s32 func_1000D2F8(s32 arg0, f32 arg1, f32 arg2, s32 arg3) {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000D758.s. */
 void func_1000D758(f32 arg0, f32 arg1, s32 arg2) {
+    struct151 *entry;
+    s32 group5;
+    s32 flagged;
+    s32 group34;
+    s32 group12;
+    s32 type;
+    s32 i;
+    s32 level;
+
+    group5 = 0;
+    flagged = 0;
+    group34 = 0;
+    group12 = 0;
+    if (D_80041F00 != 0) {
+        return;
+    }
+
+    for (i = 0; i < 3; i++) {
+        entry = D_800417B0[i];
+        if ((entry != NULL) && (entry->unk4 > 0)) {
+            type = *(s32 *)&D_8002B074[entry->unk4].unk4;
+            if ((type & 0x40) != 0) {
+                flagged |= 1 << i;
+            }
+            type &= ~0xF0;
+            if (type == 5) {
+                group5 |= 1 << i;
+            } else if ((type == 4) || (type == 3)) {
+                group34 |= 1 << i;
+            } else if ((type == 1) || (type == 2)) {
+                group12 |= 1 << i;
+            }
+        }
+    }
+
+    if (group5 != 0) {
+        func_1000CBF0(0x1770, 0x400, (group5 ^ 0xFF) ^ flagged);
+        func_1000CBF0(0x8000, 0x6400, group5);
+    } else if (group34 != 0) {
+        func_1000CBF0(0x1F4, 0x400, group34 ^ 0xFF);
+        func_1000CBF0(0x8000, 0x800, group34);
+    } else {
+        if (func_151F2CDC() != 1) {
+            goto default_mix;
+        }
+        level = (u16)D_800427F4;
+        if (((level < 0x7D) || (level >= 0x81)) && (level < 0x1C9) &&
+            (level != 0x170) && (level != 0x171)) {
+            func_1000CBF0(0x36B0, 0x200, group12 ^ 0xFF);
+            goto update_channels;
+        }
+default_mix:
+        func_1000CBF0(0x8000, 0x800, 0xFF);
+    }
+
+update_channels:
+    for (i = 0; i < 3; i++) {
+        func_1000CEAC(i);
+    }
+    for (i = 0; i < 3; i++) {
+        func_1000D2F8(i, arg0, arg1, arg2);
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000D96C.s. */
 s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2) {

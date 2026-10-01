@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,133 / 5,457 (57.41%) | 0 | 2,324 |
-| Init | 488 / 538 (90.71%) | 450 / 488 (92.21%) | 0 | 38 |
+| Total | 5,457 / 6,041 (90.33%) | 3,134 / 5,457 (57.43%) | 0 | 2,323 |
+| Init | 488 / 538 (90.71%) | 451 / 488 (92.42%) | 0 | 37 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -637,6 +637,11 @@ The Init actor secondary-audio creator `func_10010344` now matches its complete
 actor-specific range and flag policy, retires the prior actor-owned callback,
 and stores the replacement handle; see
 [Working Note 634](WORKING_NOTES/634-init-actor-secondary-audio-creator-match-20261001.md).
+The Init three-channel audio-mix coordinator `func_1000D758` now matches its
+complete 532-byte span. It classifies the three active audio records, selects
+their prioritized channel policy, refreshes each channel, and forwards the
+frame parameters to the per-channel processor; see
+[Working Note 635](WORKING_NOTES/635-init-three-channel-audio-mix-coordinator-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

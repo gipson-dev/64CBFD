@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,133 / 5,457 (57.41%) | 0 | 2,324 |
-| Init | 450 / 488 (92.21%) | 0 | 38 |
+| Total | 3,134 / 5,457 (57.43%) | 0 | 2,323 |
+| Init | 451 / 488 (92.42%) | 0 | 37 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1113,6 +1113,12 @@ end-to-end gameplay acceptance.
    words directly; 18 stale-checked rows normalize register allocation and an
    independent store schedule, including two relocation-aware rows. See
    [Working Note 634](WORKING_NOTES/634-init-actor-secondary-audio-creator-match-20261001.md).
+   The 133-word three-channel audio-mix coordinator `func_1000D758` is
+   byte-exact after recovering its record classification, prioritized channel
+   policy, three-channel refresh, and frame-parameter forwarding. Semantic C
+   emits 112 words directly; 21 stale-checked rows normalize one closed
+   register-allocation cycle, including four relocation-preserving rows. See
+   [Working Note 635](WORKING_NOTES/635-init-three-channel-audio-mix-coordinator-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

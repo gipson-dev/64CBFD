@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init three-channel audio-mix coordinator byte-matched
+
+- `func_1000D758` replaces its empty placeholder with the recovered
+  three-record classifier and prioritized channel-mix policy, followed by the
+  three-channel refresh and frame-parameter forwarding loops.
+- Of 133 words, 112 emit directly from semantic C. Twenty-one stale-checked
+  rows normalize one closed compiler register-allocation cycle; four retain
+  the existing address relocations.
+- The linked and retail 532-byte spans share SHA-256
+  `9dc672958d710f32ad34fd9e7b08f3b4059ded72a7e096e7ce7438440241852c`.
+  Totals are **3,134 / 5,457 (57.43%)** overall and
+  **451 / 488 (92.42%)** in Init. See
+  [Working Note 635](WORKING_NOTES/635-init-three-channel-audio-mix-coordinator-match-20261001.md).
+
 ### Init actor secondary-audio creator byte-matched
 
 - `func_10010344` replaces its zero-return placeholder with the recovered
