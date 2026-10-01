@@ -3,62 +3,71 @@
 #include "functions.h"
 #include "variables.h"
 
-/* Generated placeholder declarations. */
-s32 func_10002E50();
-/* End generated placeholder declarations. */
+void func_10002E50(void *arg0) {
+    OSIoMesg *message;
+    OSMesg event;
+    OSMesg access;
+    OSDevMgr *manager;
+    s32 result;
 
-extern void (*jtbl_8002C080[])(void);
-/* Non-matching C placeholders for asm/nonmatchings/init_2E50/func_10002E50.s. */
-s32 func_10002E50() {
-    return 0;
+    manager = arg0;
+    message = NULL;
+    result = 0;
+
+    while (1) {
+        osRecvMesg(manager->cmdQueue, (OSMesg *)&message, OS_MESG_BLOCK);
+        switch (message->hdr.type) {
+        case OS_MESG_TYPE_DMAREAD:
+            if (D_8003A572 != 0) {
+                D_8003A575 = 1;
+                osStopThread((OSThread *)&D_80035910);
+                D_8003A575 = 0;
+            }
+            D_8003A573 = 1;
+            osRecvMesg(manager->acsQueue, &access, OS_MESG_BLOCK);
+            result = manager->dma(OS_READ, message->devAddr,
+                                  message->dramAddr, message->size);
+            break;
+
+        case OS_MESG_TYPE_DMAWRITE:
+            osRecvMesg(manager->acsQueue, &access, OS_MESG_BLOCK);
+            result = manager->dma(OS_WRITE, message->devAddr,
+                                  message->dramAddr, message->size);
+            break;
+
+        case OS_MESG_TYPE_EDMAREAD:
+            osRecvMesg(manager->acsQueue, &access, OS_MESG_BLOCK);
+            result = manager->edma(message->piHandle, OS_READ,
+                                   message->devAddr, message->dramAddr,
+                                   message->size);
+            break;
+
+        case OS_MESG_TYPE_EDMAWRITE:
+            osRecvMesg(manager->acsQueue, &access, OS_MESG_BLOCK);
+            result = manager->edma(message->piHandle, OS_WRITE,
+                                   message->devAddr, message->dramAddr,
+                                   message->size);
+            break;
+
+        case OS_MESG_TYPE_LOOPBACK:
+            osSendMesg(message->hdr.retQueue, (OSMesg)message,
+                       OS_MESG_NOBLOCK);
+            result = -1;
+            break;
+
+        default:
+            result = -1;
+            break;
+        }
+
+        if (result == 0) {
+            osRecvMesg(manager->evtQueue, &event, OS_MESG_BLOCK);
+            osSendMesg(message->hdr.retQueue, (OSMesg)message,
+                       OS_MESG_NOBLOCK);
+            osSendMesg(manager->acsQueue, NULL, OS_MESG_NOBLOCK);
+            if (message->hdr.type == OS_MESG_TYPE_DMAREAD) {
+                D_8003A573 = 0;
+            }
+        }
+    }
 }
-// NON-MATCHING: lots to figure out
-// void func_10002E50(struct158 *arg0) {
-//     s32 phi_s0;
-//     struct188 tmp;
-//
-//     tmp.unk8 = NULL;
-//
-//     do {
-//         osRecvMesg(arg0->unk8, &tmp.unk8, 1);
-//         switch (tmp.unk8->unk0 - 0xA) {
-//             case 7:
-//                 // TODO: figure this out from the asm
-//                 osStopThread(0);
-//                 osRecvMesg(arg0->unk10, &tmp, 1);
-//                 phi_s0 = 0;
-//                 break;
-//             case 1:
-//                 jtbl_8002C080[tmp.unk8->unk0 - 0xA]();
-//                 break;
-//             case 2:
-//                 osRecvMesg(arg0->unk10, &tmp, 1);
-//                 phi_s0 = arg0->unk14(1, &tmp.unk8->unkC, &tmp.unk8->unk8, &tmp.unk8->unk10);
-//                 break;
-//             case 5:
-//                 osRecvMesg(arg0->unk10, &tmp, 1);
-//                 phi_s0 = arg0->unk18(&tmp.unk8->unk14, 0, &tmp.unk8->unkC, &tmp.unk8->unk8, &tmp.unk8->unk10);
-//                 break;
-//             case 6:
-//                 osRecvMesg(arg0->unk10, &tmp, 1);
-//                 phi_s0 = arg0->unk18(&tmp.unk8->unk14, 1, &tmp.unk8->unkC, &tmp.unk8->unk8, &tmp.unk8->unk10);
-//                 break;
-//             case 0:
-//                 osSendMesg(tmp.unk8->unk4, tmp.unk8, 0);
-//                 phi_s0 = -1;
-//                 break;
-//             default:
-//                 phi_s0 = -1;
-//         }
-//         if (phi_s0 != 0) {
-//             continue;
-//         }
-//         osRecvMesg(arg0->unkC, &tmp.unk4, 1);
-//         osSendMesg(tmp.unk8->unk4, tmp.unk8, 0);
-//         osSendMesg(arg0->unk10, 0, 0);
-//         if (tmp.unk8->unk0 != 0xB) {
-//             continue;
-//         }
-//         D_8003A573 = (u8)0;
-//     } while (1);
-// }

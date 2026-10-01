@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init PI device-manager loop byte-matched
+
+- `func_10002E50` replaces its zero-return placeholder with the recovered PI
+  command thread: the custom direct-PI ownership handshake, DMA and EDMA
+  dispatch, loopback completion, event wait, and access-queue release.
+- The canonical libultra case order emits the retail control flow and jump
+  table. All 148 words emit directly from semantic C; no word guards are used.
+- The linked and retail 592-byte spans share SHA-256
+  `827b2c980c11c00f6ac52be3d05a66941f1d7a4d2850bd4a5a4d3263e5123ba2`.
+  Totals are **3,136 / 5,457 (57.47%)** overall and
+  **453 / 488 (92.83%)** in Init. See
+  [Working Note 637](WORKING_NOTES/637-init-pi-device-manager-loop-match-20261001.md).
+
 ### Init audio-task submission byte-matched
 
 - `func_100095A0` replaces its zero-return placeholder with the recovered AI

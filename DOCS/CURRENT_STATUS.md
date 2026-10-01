@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,135 / 5,457 (57.45%) | 0 | 2,322 |
-| Init | 452 / 488 (92.62%) | 0 | 36 |
+| Total | 3,136 / 5,457 (57.47%) | 0 | 2,321 |
+| Init | 453 / 488 (92.83%) | 0 | 35 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init PI device-manager thread `func_10002E50` now matches its complete
+148-word retail span directly from semantic C. The recovery includes the
+custom direct-PI ownership handshake, the canonical libultra DMA/EDMA and
+loopback dispatch order, and the retail jump table. See
+[Working Note 637](WORKING_NOTES/637-init-pi-device-manager-loop-match-20261001.md).
 
 The full debugger inventory is complete: all 181 C-classified tracked rows are
 linked byte-exact, and the sole remaining assembly row, the original

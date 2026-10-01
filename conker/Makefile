@@ -197,6 +197,9 @@ $(BUILD_DIR)/$(SRC_DIR)/libultra/io/pfsisplug2.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/libultra/audio/func_151F27E0.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/libultra/audio/func_151F2890.c.o: OPT_FLAGS := -O1
 
+# __osDevMgrMain's message switch emits the retail device-manager jump table.
+$(BUILD_DIR)/$(SRC_DIR)/init_2E50.c.o: RETAIL_RODATA_SYMBOL := jtbl_8002C080_init
+
 $(BUILD_DIR)/$(SRC_DIR)/libultra/audio/%.o: OPT_FLAGS := -g
 
 # TODO: blindly move all of this into libultra/audio
