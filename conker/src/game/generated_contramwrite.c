@@ -65,6 +65,10 @@ void __osPackRamWriteData(int channel, u16 address, u8 *buffer)
     int i;
 
     ptr = (u8 *)__osPfsPifRam.ramarray;
+    for (i = 0; i < 16; i++)
+    {
+        ((u32 *)&__osPfsPifRam)[i] = 0;
+    }
     __osPfsPifRam.pifstatus = CONT_CMD_EXE;
     ramreadformat.dummy = CONT_CMD_NOP;
     ramreadformat.txsize = CONT_CMD_WRITE_MEMPACK_TX;
@@ -78,9 +82,9 @@ void __osPackRamWriteData(int channel, u16 address, u8 *buffer)
     }
     if (channel != 0)
     {
-        for (i = 0; i < channel; ptr++, i++)
+        for (i = 0; i < channel; i++)
         {
-            *ptr = 0;
+            *ptr++ = 0;
         }
     }
     *(__OSContRamReadFormat *)ptr = ramreadformat;

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init controller-pak write packet builder byte-matched
+
+- `__osPackRamWriteData` now clears all 16 PIF RAM words before constructing
+  the write request, matching Conker's extension to the canonical SDK body.
+- Restoring canonical `*ptr++` channel-prefix writes recovers the final two
+  branch-adjacent stores. All 96 retail words emit directly from C with no
+  guards, insertions, or omissions.
+- The linked and retail spans share SHA-256
+  `cdf63a7878b35bab75e7439410fc7835571158ed2351f8ed0f75196b8b429087`.
+  Totals are **3,117 / 5,457 (57.12%)** overall and
+  **434 / 488 (88.93%)** in Init. See
+  [Working Note 618](WORKING_NOTES/618-init-controller-pak-write-packet-builder-match-20260930.md).
+
 ### Init VI manager thread byte-matched
 
 - `viMgrMain` restores the canonical SDK retrace loop, including context

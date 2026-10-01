@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,116 / 5,457 (57.10%) | 0 | 2,341 |
-| Init | 488 / 538 (90.71%) | 433 / 488 (88.73%) | 0 | 55 |
+| Total | 5,457 / 6,041 (90.33%) | 3,117 / 5,457 (57.12%) | 0 | 2,340 |
+| Init | 488 / 538 (90.71%) | 434 / 488 (88.93%) | 0 | 54 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -554,6 +554,10 @@ interrupt handling, and 64-bit timekeeping. Its opcodes compile directly from
 C; ten checked relocation-only guards bind the function-local retrace static
 to its retail address. See
 [Working Note 617](WORKING_NOTES/617-init-vi-manager-main-match-20260930.md).
+The Init controller-pak write packet builder `__osPackRamWriteData` now
+matches its complete 384-byte slot directly from C. It restores the opening
+16-word PIF RAM clear and canonical channel-prefix loop; see
+[Working Note 618](WORKING_NOTES/618-init-controller-pak-write-packet-builder-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

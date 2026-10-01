@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,116 / 5,457 (57.10%) | 0 | 2,341 |
-| Init | 433 / 488 (88.73%) | 0 | 55 |
+| Total | 3,117 / 5,457 (57.12%) | 0 | 2,340 |
+| Init | 434 / 488 (88.93%) | 0 | 54 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1007,6 +1007,11 @@ end-to-end gameplay acceptance.
    from C; ten stale-checked relocation-only guards bind its discarded
    function-local static to the retail retrace-counter address. See
    [Working Note 617](WORKING_NOTES/617-init-vi-manager-main-match-20260930.md).
+   The 96-word controller-pak write packet builder `__osPackRamWriteData` is
+   byte-exact after restoring Conker's 16-word PIF RAM clear and the canonical
+   channel-prefix loop shape. Its complete slot emits directly from C with no
+   guards; see
+   [Working Note 618](WORKING_NOTES/618-init-controller-pak-write-packet-builder-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
