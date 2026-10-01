@@ -27,19 +27,20 @@ typedef struct {
 extern unsigned char D_8002BD30[];
 extern unsigned char D_8002BD44[];
 
-void _Litob(_Pft *px, char code) {
+void _Litob(_Pft *px, int code) {
     unsigned char buff[BUFF_LEN];
     unsigned char *digs;
     int base;
     int i;
     unsigned long long value;
 
-    digs = (code == 'X') ? D_8002BD44 : D_8002BD30;
-    base = (code == 'o') ? 8 : ((code != 'x' && code != 'X') ? 10 : 16);
+    digs = ((unsigned char)code == 'X') ? D_8002BD44 : D_8002BD30;
+    base = ((unsigned char)code == 'o') ? 8
+        : (((unsigned char)code != 'x' && (unsigned char)code != 'X') ? 10 : 16);
     i = BUFF_LEN;
     value = px->v.ll;
 
-    if ((code == 'd' || code == 'i') && px->v.ll < 0) {
+    if (((unsigned char)code == 'd' || (unsigned char)code == 'i') && px->v.ll < 0) {
         value = -value;
     }
 

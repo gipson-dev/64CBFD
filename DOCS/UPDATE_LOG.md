@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init integer formatter byte-matched
+
+- `_Litob` now uses the recovered wide format-code ABI with unsigned-byte
+  comparisons while retaining the SDK integer-to-string algorithm for signed,
+  octal, decimal, hexadecimal, precision, and field-width formatting.
+- Ten of 168 linked words emit directly from semantic C. One hundred
+  fifty-seven stale-checked rows normalize 158 words in IDO's closed
+  allocation/scheduling cycle, including one guarded final delay-slot
+  insertion and all moved relocations.
+- The linked and retail 672-byte spans share SHA-256
+  `ec1902fca7a676159f2cd92ce58465dd9c03c1c0e0c7831d2301b6d2dfb09f04`.
+  Totals are **3,141 / 5,457 (57.56%)** overall and
+  **458 / 488 (93.85%)** in Init. See
+  [Working Note 642](WORKING_NOTES/642-init-integer-formatter-match-20261001.md).
+
 ### Init common system initializer byte-matched
 
 - `__osInitialize_common` replaces its empty placeholder with the recovered

@@ -32,10 +32,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,140 / 5,457 (57.54%) | 0 | 2,317 |
-| Init | 457 / 488 (93.65%) | 0 | 31 |
+| Total | 3,141 / 5,457 (57.56%) | 0 | 2,316 |
+| Init | 458 / 488 (93.85%) | 0 | 30 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init integer formatter `_Litob` now matches its complete 168-word retail
+span. It restores signed magnitude handling, octal/decimal/hex digit emission,
+precision zero-fill, and field-width padding. See
+[Working Note 642](WORKING_NOTES/642-init-integer-formatter-match-20261001.md).
 
 The Init common system initializer `__osInitialize_common` now matches its
 complete 168-word retail span. It restores CPU/FPU setup, PIF initialization,

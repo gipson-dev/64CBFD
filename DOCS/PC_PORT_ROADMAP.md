@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,140 / 5,457 (57.54%) | 0 | 2,317 |
-| Init | 488 / 538 (90.71%) | 457 / 488 (93.65%) | 0 | 31 |
+| Total | 5,457 / 6,041 (90.33%) | 3,141 / 5,457 (57.56%) | 0 | 2,316 |
+| Init | 488 / 538 (90.71%) | 458 / 488 (93.85%) | 0 | 30 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,11 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init integer formatter `_Litob` now matches all 168 retail words. Its
+recovered SDK behavior supplies signed magnitude conversion, radix-specific
+digits, precision zero-fill, and field-width padding; see
+[Working Note 642](WORKING_NOTES/642-init-integer-formatter-match-20261001.md).
 
 The Init common system initializer `__osInitialize_common` now matches all 168
 retail words. It restores the CPU/FPU, PIF, exception-vector, cache, RDB,
