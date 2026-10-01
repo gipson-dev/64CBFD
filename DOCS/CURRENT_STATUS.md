@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,126 / 5,457 (57.28%) | 0 | 2,331 |
-| Init | 443 / 488 (90.78%) | 0 | 45 |
+| Total | 3,127 / 5,457 (57.30%) | 0 | 2,330 |
+| Init | 444 / 488 (90.98%) | 0 | 44 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1071,6 +1071,13 @@ end-to-end gameplay acceptance.
    preserving `CHNL_ERR` as the no-pak result instead of redundantly assigning
    the same value. No expected-word guards are used. See
    [Working Note 627](WORKING_NOTES/627-init-controller-pak-read-match-20261001.md).
+   The 117-word direct PI copy routine `func_1000480C` is byte-exact after
+   recovering its ownership and PI-busy waits, aligned word-copy path,
+   two-byte-misaligned halfword path, and conditional PI-manager restart.
+   Its 113-word semantic C body is normalized to retail's frame, saved-register
+   allocation, and schedule by 112 stale-checked relocation-aware rows,
+   including two inserted epilogue words. See
+   [Working Note 628](WORKING_NOTES/628-init-direct-pi-copy-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init direct PI copy routine byte-matched
+
+- `func_1000480C` replaces its incomplete commented draft with the recovered
+  polled PI copy. It rounds the size to an even count, waits for software and
+  hardware ownership, then copies through the uncached device window using
+  aligned words or the retail two-byte-misaligned halfword sequence.
+- The semantic C body compiles to 113 words. A table of 112 stale-checked,
+  relocation-aware rows, including two inserted epilogue words, normalizes
+  IDO's frame, saved-register allocation, and instruction schedule to retail's
+  complete 117-word padded slot.
+- The linked and retail spans share SHA-256
+  `a34d2643235b5ceaf6120ddd09fbfc9b5ecb9f0ab34dcb09d55a081c90f1403e`.
+  Totals are **3,127 / 5,457 (57.30%)** overall and
+  **444 / 488 (90.98%)** in Init. See
+  [Working Note 628](WORKING_NOTES/628-init-direct-pi-copy-match-20261001.md).
+
 ### Init controller-pak read routine byte-matched
 
 - `__osContRamRead` now restores the retail retry-time PIF RAM preparation:

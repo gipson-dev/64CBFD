@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,126 / 5,457 (57.28%) | 0 | 2,331 |
-| Init | 488 / 538 (90.71%) | 443 / 488 (90.78%) | 0 | 45 |
+| Total | 5,457 / 6,041 (90.33%) | 3,127 / 5,457 (57.30%) | 0 | 2,330 |
+| Init | 488 / 538 (90.71%) | 444 / 488 (90.98%) | 0 | 44 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -602,6 +602,11 @@ The Init controller-pak read routine `__osContRamRead` now matches its complete
 words before each read DMA and retains the computed channel error for retry or
 return; see
 [Working Note 627](WORKING_NOTES/627-init-controller-pak-read-match-20261001.md).
+The Init direct PI copy routine `func_1000480C` now matches its complete
+468-byte span. It serializes access against the PI manager and hardware busy
+bits, handles aligned and two-byte-misaligned transfers, releases ownership,
+and conditionally restarts the manager thread; see
+[Working Note 628](WORKING_NOTES/628-init-direct-pi-copy-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

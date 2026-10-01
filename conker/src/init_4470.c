@@ -103,110 +103,56 @@ void func_100046E4(s32 devAddr, void *dramAddr, u32 size) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_4470/func_1000480C.s. */
 void func_1000480C(s32 devAddr, void *dramAddr, u32 size) {
+    u32 word;
+    u32 offset;
+    u32 copyLimit;
+    u16 *halves;
+
+    D_8003A572 = 1;
+    size = (size + 1) & ~1;
+    while (D_8003A573 != 0) {}
+    while ((IO_READ(PI_STATUS_REG) & (PI_STATUS_DMA_BUSY | PI_STATUS_IO_BUSY)) != 0) {}
+
+    devAddr |= D_80000308;
+    copyLimit = size - 2;
+    offset = 0;
+    halves = (u16 *)&word;
+    if (devAddr & 2) {
+        size -= 2;
+        word = IO_READ(devAddr - 2);
+        *(u16 *)dramAddr = halves[1];
+        copyLimit = size - 2;
+
+        if (copyLimit != 0) {
+            do {
+                word = IO_READ(devAddr + offset + 2);
+                offset += 4;
+                *(u16 *)((u8 *)dramAddr + offset - 2) = word >> 16;
+                *(u16 *)((u8 *)dramAddr + offset) = word;
+            } while (offset < copyLimit);
+        }
+
+        if (size & 2) {
+            word = IO_READ(devAddr + offset + 2);
+            *(u16 *)((u8 *)dramAddr + offset + 2) = halves[0];
+        }
+    } else {
+        if (copyLimit != 0) {
+            do {
+                *(u32 *)((u8 *)dramAddr + offset) = IO_READ(devAddr + offset);
+                offset += 4;
+            } while (offset < copyLimit);
+        }
+
+        if (size & 2) {
+            word = IO_READ(devAddr + offset);
+            *(u16 *)((u8 *)dramAddr + offset) = halves[0];
+        }
+    }
+
+    D_8003A572 = 0;
+    if (D_8003A575 != 0) {
+        osStartThread((OSThread *)&D_80035910);
+    }
 }
-// void func_1000480C(s32 devAddr, void *dramAddr, u32 size) {
-//     s32 sp38;
-//     s32 *temp_t0;
-//     s32 *temp_t0_2;
-//     s32 temp_a1;
-//     s32 temp_s0;
-//     s32 temp_s1;
-//     s32 temp_t4;
-//     s32 temp_t7;
-//     u32 temp_a0;
-//     u32 temp_a0_2;
-//     u32 temp_a2;
-//     u32 temp_a2_2;
-//     void *temp_v0;
-//     void *temp_v0_2;
-//     s32 phi_a1;
-//     void *phi_v0;
-//     u32 phi_a0;
-//     u32 phi_a0_2;
-//     s32 phi_v1;
-//     void *phi_v0_2;
-//     u32 phi_a0_3;
-//     u32 phi_a0_4;
-//     void *phi_a1_2;
-//     u32 phi_a2;
-//
-//     D_8003A572 = 1;
-//     size = (size + 1) & ~1;
-//     do {} while (D_8003A573 != 0);
-//
-//     temp_a2 = size - 2;
-//
-//     while ((IO_READ(PI_STATUS_REG) & (PI_STATUS_DMA_BUSY|PI_STATUS_IO_BUSY)) != 0) {};
-//
-//     temp_t0 = &sp38;
-//     devAddr = devAddr | D_80000308;
-//     if ((devAddr & 2) != 0) {
-//         temp_s0 = size - 2;
-//         sp38 = *((s32*)((devAddr - 2) | 0xA0000000));
-// //         temp_a2_2 = temp_s0 - 2;
-// //         *dramAddr = (u16) temp_t0->unk2;
-// //         phi_a0_2 = 0U;
-// //         phi_a1_2 = dramAddr;
-// //         // phi_return = (void *) *(void *)0xA4600010;
-// //         if (temp_a2_2 != 0) {
-// //             phi_a1 = devAddr + 2;
-// //             phi_v0 = dramAddr;
-// //             phi_a0 = 0U;
-// // loop_7:
-// //             temp_t4 = *(phi_a1 | 0xA0000000);
-// //             temp_a0 = phi_a0 + 4;
-// //             sp38 = temp_t4;
-// //             phi_v0->unk2 = (s16) (temp_t4 >> 0x10);
-// //             temp_a1 = phi_a1 + 4;
-// //             temp_v0 = phi_v0 + 4;
-// //             *temp_v0 = (s16) sp38;
-// //             phi_a1 = temp_a1;
-// //             phi_v0 = temp_v0;
-// //             phi_a0 = temp_a0;
-// //             phi_a0_2 = temp_a0;
-// //             phi_a1_2 = (void *) temp_a1;
-// //             if (temp_a0 < temp_a2_2) {
-// //                 goto loop_7;
-// //             }
-// //         }
-// //         phi_a2 = temp_a2_2;
-// //         if ((temp_s0 & 2) != 0) {
-// //             sp38 = *((devAddr + phi_a0_2 + 2) | 0xA0000000);
-// //             (dramAddr + phi_a0_2)->unk2 = (u16) temp_t0->unk0;
-// //             phi_a2 = temp_a2_2;
-// //         }
-//     } else {
-// //         phi_a0_4 = 0U;
-// //         if (temp_a2 != 0) {
-// //             phi_v1 = devAddr;
-// //             phi_v0_2 = dramAddr;
-// //             phi_a0_3 = 0U;
-// // loop_12:
-// //             temp_a0_2 = phi_a0_3 + 4;
-// //             temp_v0_2 = phi_v0_2 + 4;
-// //             temp_v0_2->unk-4 = (s32) *(phi_v1 | 0xA0000000);
-// //             phi_v1 = phi_v1 + 4;
-// //             phi_v0_2 = temp_v0_2;
-// //             phi_a0_3 = temp_a0_2;
-// //             phi_a0_4 = temp_a0_2;
-// //             if (temp_a0_2 < temp_a2) {
-// //                 goto loop_12;
-// //             }
-// //         }
-// //         phi_a1_2 = dramAddr;
-// //         phi_a2 = temp_a2;
-// //         if ((size & 2) != 0) {
-// //             temp_t0_2 = &sp38;
-// //             sp38 = *((phi_a0_4 + devAddr) | 0xA0000000);
-// //             *(dramAddr + phi_a0_4) = (u16) temp_t0_2->unk0;
-// //             phi_a1_2 = dramAddr;
-// //             phi_a2 = temp_a2;
-// //         }
-//     }
-//     D_8003A572 = (u8)0;
-//     if (D_8003A575 != 0) {
-//         osStartThread(&D_80035910); //, phi_a1_2, phi_a2, 0xA0000000);
-//     }
-// }
