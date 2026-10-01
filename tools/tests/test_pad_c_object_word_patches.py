@@ -15,6 +15,70 @@ from pad_generated_object import parse_object
 
 
 class WordPatchRelocationTests(unittest.TestCase):
+    def test_function_can_come_from_override_object(self):
+        if not shutil.which("mips-linux-gnu-as"):
+            self.skipTest("mips-linux-gnu-as required")
+
+        with tempfile.TemporaryDirectory() as temp_name:
+            work = Path(temp_name)
+            primary = """
+.section .text,"ax"
+.set noreorder
+.globl sample
+.type sample,@function
+sample:
+addiu $v0,$zero,1
+jr $ra
+nop
+.size sample,.-sample
+"""
+            override = primary.replace("addiu $v0,$zero,1", "addiu $v0,$zero,2")
+            (work / "primary.s").write_text(primary)
+            (work / "override.s").write_text(override)
+            (work / "layout.csv").write_text(
+                "version,section,filename,function,address,end\n"
+                "us,init,fixture,sample,0x10000000,0x1000000C\n"
+            )
+            for name in ("primary", "override"):
+                subprocess.run(
+                    [
+                        "mips-linux-gnu-as",
+                        "-EB",
+                        "-march=vr4300",
+                        "-o",
+                        f"{name}.o",
+                        f"{name}.s",
+                    ],
+                    cwd=work,
+                    check=True,
+                    capture_output=True,
+                )
+
+            padded = emit_padded_assembly(
+                work / "primary.o",
+                work / "layout.csv",
+                "fixture",
+                function_objects={"sample": work / "override.o"},
+            )
+            (work / "padded.s").write_text(padded)
+            subprocess.run(
+                [
+                    "mips-linux-gnu-as",
+                    "-EB",
+                    "-march=vr4300",
+                    "-o",
+                    "padded.o",
+                    "padded.s",
+                ],
+                cwd=work,
+                check=True,
+                capture_output=True,
+            )
+
+            text, functions, _ = parse_object(work / "padded.o")
+            start = functions["sample"]["value"]
+            self.assertEqual(struct.unpack_from(">I", text, start)[0], 0x24020002)
+
     def test_guarded_words_can_contract_oversized_function(self):
         if not shutil.which("mips-linux-gnu-as"):
             self.skipTest("mips-linux-gnu-as required")

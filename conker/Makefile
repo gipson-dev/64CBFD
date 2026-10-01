@@ -130,7 +130,9 @@ RETAIL_PAD_SKIP_C_FILES := \
 RETAIL_PAD_C_FILES := $(filter-out $(GENERATED_SLICE_C_FILES) $(RETAIL_PAD_SKIP_C_FILES),$(C_FILES))
 RETAIL_PAD_O_FILES := $(foreach file,$(RETAIL_PAD_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
 RETAIL_PAD_GLOBAL_ASM_O_FILES := $(filter $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES))
-RETAIL_PAD_PLAIN_O_FILES := $(filter-out $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES))
+RETAIL_PAD_PLAIN_O_FILES := $(filter-out \
+	$(GLOBAL_ASM_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/init_EB00.c.o, \
+	$(RETAIL_PAD_O_FILES))
 UNPADDED_GLOBAL_ASM_O_FILES := $(filter-out $(RETAIL_PAD_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GLOBAL_ASM_O_FILES))
 else
 GENERATED_SLICE_C_FILES :=
@@ -426,6 +428,18 @@ $(RETAIL_PAD_PLAIN_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/p
 	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) $(basename $(notdir $<)) $@.padded.s --word-patches retail_word_patches.us.csv $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
+
+# This Init slice contains one retail loop compiled without unrolling. Keep the
+# established profile for neighboring functions and select only its compact
+# body from the no-unroll object.
+$(BUILD_DIR)/$(SRC_DIR)/init_EB00.c.o: \
+		$(SRC_DIR)/init_EB00.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -Wo,-loopunroll,0 $(MIPSBIT) -o $@.nounroll.compact $<
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) init_EB00 $@.padded.s \
+		--function-object func_1000FEF0=$@.nounroll.compact --word-patches retail_word_patches.us.csv
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.nounroll.compact $@.padded.s
 
 $(BUILD_DIR)/$(SRC_DIR)/debugger/debugger.c.o: retail_word_patches.us.csv
 $(BUILD_DIR)/$(SRC_DIR)/debugger_257350.c.o: retail_word_patches.us.csv

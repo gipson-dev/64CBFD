@@ -647,19 +647,28 @@ s32 func_1000FE88(struct15 *arg0, s32 arg1, s32 *arg2) {
 }
 
 s32 func_1000FEF0(u16 arg0, struct127 *arg1, s32 arg2) {
-    s32 i;
     struct15 *current;
+    s32 i;
+    u16 key;
 
-    if (arg0 != 0) {
-        for (i = 0; i < D_80042760; i++) {
-            current = &D_80041FE0[i];
-            if ((current->unk24 == arg0) &&
-                (current->unk18 == (s32)arg1) &&
-                (current->unk1C == arg2) &&
+    if (arg0 == 0) {
+        return -1;
+    }
+
+    i = 0;
+    key = arg0;
+    if (D_80042760 > 0) {
+        current = D_80041FE0;
+        do {
+            if ((current->unk24 == key) &&
+                ((s32)arg1 == current->unk18) &&
+                (arg2 == current->unk1C) &&
                 ((current->unk10 & 0x80) == 0)) {
                 return i;
             }
-        }
+            i++;
+            current++;
+        } while (i < D_80042760);
     }
 
     return -1;

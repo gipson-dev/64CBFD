@@ -118,9 +118,31 @@ def parse_relocation_spec(value):
 
 
 def emit_padded_assembly(
-    object_path, layout_path, filename, rodata_symbol=None, word_patches_path=None
+    object_path,
+    layout_path,
+    filename,
+    rodata_symbol=None,
+    word_patches_path=None,
+    function_objects=None,
 ):
     text, compiled, relocations = parse_object(object_path)
+    function_sources = {
+        name: (text, symbol, relocations)
+        for name, symbol in compiled.items()
+    }
+    for name, override_path in (function_objects or {}).items():
+        override_text, override_functions, override_relocations = parse_object(
+            override_path
+        )
+        if name not in override_functions:
+            raise ValueError(f"{name} not found in override object {override_path}")
+        if name not in compiled:
+            raise ValueError(f"{name} not found in primary object {object_path}")
+        function_sources[name] = (
+            override_text,
+            override_functions[name],
+            override_relocations,
+        )
     retail = load_layout(layout_path, filename)
     word_patches = load_word_patches(word_patches_path, filename)
     applied_patches = set()
@@ -164,7 +186,7 @@ def emit_padded_assembly(
     overflow = []
 
     for row in retail:
-        symbol = compiled[row["name"]]
+        source_text, symbol, source_relocations = function_sources[row["name"]]
         desired = row["address"] - base
         target = max(current, desired)
         if target > current:
@@ -227,14 +249,16 @@ def emit_padded_assembly(
                         f".reloc ., {relocation_name}, {relocation_symbol}"
                     )
                 output.append(f".word 0x{word:08X}")
-            overflow.append((overflow_name, symbol))
+            overflow.append(
+                (overflow_name, source_text, symbol, source_relocations)
+            )
             emitted_size = retail_size
         else:
             for relative in range(0, symbol["size"], 4):
                 compact_offset = start + relative
-                word_relocations = list(relocations.get(compact_offset, []))
+                word_relocations = list(source_relocations.get(compact_offset, []))
                 word = int.from_bytes(
-                    text[compact_offset:compact_offset + 4], "big"
+                    source_text[compact_offset:compact_offset + 4], "big"
                 )
                 patch_key = (name, relative)
                 patch = word_patches.get(patch_key)
@@ -284,12 +308,12 @@ def emit_padded_assembly(
         output.append(f".space 0x{retail_end - current:X}, 0")
     if overflow:
         output.extend(("", f'.section .{section}_overflow, "ax"', ""))
-        for overflow_name, symbol in overflow:
+        for overflow_name, source_text, symbol, source_relocations in overflow:
             output.extend((f".type {overflow_name}, @function", f"{overflow_name}:"))
             start = symbol["value"]
             for relative in range(0, symbol["size"], 4):
                 compact_offset = start + relative
-                for relocation_name, relocation_symbol in relocations.get(
+                for relocation_name, relocation_symbol in source_relocations.get(
                     compact_offset, []
                 ):
                     if (
@@ -301,7 +325,7 @@ def emit_padded_assembly(
                         f".reloc ., {relocation_name}, {relocation_symbol}"
                     )
                 word = int.from_bytes(
-                    text[compact_offset:compact_offset + 4], "big"
+                    source_text[compact_offset:compact_offset + 4], "big"
                 )
                 output.append(f".word 0x{word:08X}")
             output.extend((f".size {overflow_name}, . - {overflow_name}", ""))
@@ -329,7 +353,22 @@ def main():
         "--word-patches",
         help="CSV of guarded compiled-word replacements",
     )
+    parser.add_argument(
+        "--function-object",
+        action="append",
+        default=[],
+        metavar="NAME=OBJECT",
+        help="take one function from an alternate compact object",
+    )
     args = parser.parse_args()
+    function_objects = {}
+    for value in args.function_object:
+        name, separator, path = value.partition("=")
+        if not separator or not name or not path:
+            parser.error("--function-object must be NAME=OBJECT")
+        if name in function_objects:
+            parser.error(f"duplicate --function-object for {name}")
+        function_objects[name] = path
     Path(args.output).write_text(
         emit_padded_assembly(
             args.object,
@@ -337,6 +376,7 @@ def main():
             args.filename,
             rodata_symbol=args.rodata_symbol,
             word_patches_path=args.word_patches,
+            function_objects=function_objects,
         ),
         newline="\n",
     )

@@ -4586,3 +4586,11 @@ init_EB00,func_1000FF90,0x044,0x8C98001C,0x8CB8001C,,,Normalize active-record lo
 init_EB00,func_1000FF90,0x04C,0x8C990010,0x8CB90010,,,Normalize active-record lookup compiler allocation,,,false
 init_EB00,func_1000FF90,0x058,0x8C990010,0x8CB90010,,,Normalize active-record lookup compiler allocation,,,false
 init_EB00,func_1000FF90,0x07C,0x24840030,0x24A50030,,,Normalize active-record lookup compiler allocation,,,false
+init_EB00,func_1000FEF0,0x020,0x00801025,0x3C020000,-,R_MIPS_HI16:D_80042760,Normalize handle-record lookup compiler allocation and schedule,,,false
+init_EB00,func_1000FEF0,0x02C,0x3C050000,0x8C420000,R_MIPS_HI16:D_80042760,R_MIPS_LO16:D_80042760,Normalize handle-record lookup compiler allocation and schedule,,,false
+init_EB00,func_1000FEF0,0x030,0x8CA50000,0x00001825,R_MIPS_LO16:D_80042760,-,Normalize handle-record lookup compiler allocation and schedule,,,false
+init_EB00,func_1000FEF0,0x034,0x3C060000,0x00802825,R_MIPS_HI16:D_80041FE0,-,Normalize handle-record lookup compiler allocation and schedule,,,false
+init_EB00,func_1000FEF0,0x038,0x00001825,0x18400015,,,Normalize handle-record lookup compiler allocation and schedule,,,false
+init_EB00,func_1000FEF0,0x03C,0x18A00014,0x3C060000,-,R_MIPS_HI16:D_80041FE0,Normalize handle-record lookup compiler allocation and schedule,,,false
+init_EB00,func_1000FEF0,0x048,0x544F000E,0x54AF000E,,,Normalize handle-record lookup compiler allocation and schedule,,,false
+init_EB00,func_1000FEF0,0x084,0x0065082A,0x0062082A,,,Normalize handle-record lookup compiler allocation and schedule,,,false

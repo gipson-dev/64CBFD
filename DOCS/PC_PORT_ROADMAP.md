@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,145 / 5,457 (57.63%) | 0 | 2,312 |
-| Init | 488 / 538 (90.71%) | 462 / 488 (94.67%) | 0 | 26 |
+| Total | 5,457 / 6,041 (90.33%) | 3,146 / 5,457 (57.65%) | 0 | 2,311 |
+| Init | 488 / 538 (90.71%) | 463 / 488 (94.88%) | 0 | 25 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,12 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init handle-record lookup `func_1000FEF0` now matches all 40 retail words.
+It validates a nonzero handle, scans enabled 0x30-byte records for the handle
+and two owner selectors, and uses a function-scoped no-unroll object override
+without changing neighboring functions; see
+[Working Note 647](WORKING_NOTES/647-init-handle-record-lookup-match-20261001.md).
 
 The Init active-record lookup `func_1000FF90` now matches all 35 retail words.
 It scans the active 0x30-byte record array, accepts `-1` as an independent

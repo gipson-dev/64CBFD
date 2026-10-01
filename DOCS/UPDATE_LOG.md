@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init handle-record lookup byte-matched
+
+- `func_1000FEF0` now validates its nonzero handle and scans enabled
+  `D_80041FE0` records for the handle plus two exact owner selectors.
+- Its explicit count and narrowed-key lifetimes recover the retail frame,
+  saved `s0`, and 40-word rolled loop. A per-function no-unroll object override
+  preserves every neighboring `init_EB00` match. Thirty-two words emit
+  directly from C; eight stale-checked rows normalize the remaining opening
+  schedule and closed `v0`/`a1` allocation choice.
+- The linked and retail 160-byte spans share SHA-256
+  `634cdf00d310c2aa443ae12aeb10a84e894b20225f95659a9e8738eac2ed2f50`.
+  Totals are **3,146 / 5,457 (57.65%)** overall and
+  **463 / 488 (94.88%)** in Init. See
+  [Working Note 647](WORKING_NOTES/647-init-handle-record-lookup-match-20261001.md).
+
 ### Init active-record lookup byte-matched
 
 - `func_1000FF90` now scans the active `D_80041FE0` records for a primary

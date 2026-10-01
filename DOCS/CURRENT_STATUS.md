@@ -32,10 +32,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,145 / 5,457 (57.63%) | 0 | 2,312 |
-| Init | 462 / 488 (94.67%) | 0 | 26 |
+| Total | 3,146 / 5,457 (57.65%) | 0 | 2,311 |
+| Init | 463 / 488 (94.88%) | 0 | 25 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init handle-record lookup `func_1000FEF0` now matches its complete 40-word
+retail span. Its no-unroll profile is selected per function so neighboring
+matches retain their established object profile. See
+[Working Note 647](WORKING_NOTES/647-init-handle-record-lookup-match-20261001.md).
 
 The Init active-record lookup `func_1000FF90` now matches its complete 35-word
 retail span. It scans the active 0x30-byte record array with two independently
