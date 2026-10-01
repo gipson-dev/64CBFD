@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,148 / 5,457 (57.69%) | 0 | 2,309 |
-| Init | 488 / 538 (90.71%) | 465 / 488 (95.29%) | 0 | 23 |
+| Total | 5,457 / 6,041 (90.33%) | 3,149 / 5,457 (57.71%) | 0 | 2,308 |
+| Init | 488 / 538 (90.71%) | 466 / 488 (95.49%) | 0 | 22 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,11 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init spatial attenuation and pan calculator `func_1000A420` now matches all
+204 retail words. It restores the distance-mode flag, normalized attenuation,
+listener-relative pan mapping, clamps, and optional output stores; see
+[Working Note 650](WORKING_NOTES/650-init-spatial-attenuation-pan-match-20261001.md).
 
 The Init resource-completion manager `func_1000A03C` now matches all 195 retail
 words. It drains completed resource messages, maintains the pending, active,

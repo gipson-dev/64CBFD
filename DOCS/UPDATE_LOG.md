@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init spatial attenuation and pan calculator byte-matched
+
+- `func_1000A420` now selects the original planar or three-axis distance
+  helper, computes normalized attenuation between the configured near and far
+  limits, and clamps the result to the signed 15-bit range.
+- When requested and sufficiently separated, it derives horizontal direction,
+  applies listener rotation, maps the result into the engine's packed pan
+  range, and writes optional pan and raw-distance outputs. Eighty-one
+  stale-checked rows normalize a closed temporary-register schedule; one
+  checked insertion restores the retail narrowing move. No relocation moves.
+- The linked and retail 816-byte spans share SHA-256
+  `c55660dda7d31b77b81018ecf5bfe1fcdaac6a2bb3f29ba21604485e066964b1`.
+  Totals are **3,149 / 5,457 (57.71%)** overall and
+  **466 / 488 (95.49%)** in Init. See
+  [Working Note 650](WORKING_NOTES/650-init-spatial-attenuation-pan-match-20261001.md).
+
 ### Init resource-completion manager byte-matched
 
 - `func_1000A03C` now drains nonblocking completion messages, finds each

@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,148 / 5,457 (57.69%) | 0 | 2,309 |
-| Init | 465 / 488 (95.29%) | 0 | 23 |
+| Total | 3,149 / 5,457 (57.71%) | 0 | 2,308 |
+| Init | 466 / 488 (95.49%) | 0 | 22 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init spatial attenuation and pan calculator `func_1000A420` now matches its
+complete 204-word retail span. It selects planar or three-axis distance,
+computes clamped attenuation, derives listener-relative pan when requested,
+and writes the optional raw-distance result. See
+[Working Note 650](WORKING_NOTES/650-init-spatial-attenuation-pan-match-20261001.md).
 
 The Init resource-completion manager `func_1000A03C` now matches its complete
 195-word retail span. It drains completed resource messages, moves matching
