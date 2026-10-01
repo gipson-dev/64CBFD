@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-09-30
 
+### Init framebuffer task dispatcher byte-matched
+
+- `func_10004DB0` restores the nonblocking graphics-task receive, current and
+  next VI framebuffer gates, countdown update, submission retry, and phase-six
+  completion dispatch.
+- Seventy-five of 84 words emit directly from semantic C. Nine stale-checked
+  guards normalize the remaining branch/register schedule and insert one
+  address materialization; the complete tail otherwise emits directly.
+- The linked and retail spans share SHA-256
+  `86b7fab90235a558ee8af0ac506a9eed2d888e0bbaef406bb763a1f3a4d66f74`.
+  Totals are **3,105 / 5,457 (56.90%)** overall and
+  **422 / 488 (86.48%)** in Init. See
+  [Working Note 606](WORKING_NOTES/606-init-framebuffer-task-dispatcher-match-20260930.md).
+
 ### Init spatial-volume callback byte-matched
 
 - `func_1000C7E8` restores mode-specific resource setup, active-state

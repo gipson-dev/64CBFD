@@ -2829,3 +2829,12 @@ init_B1B0,func_1000C7E8,0x138,0x8FBF0014,0x8FA20018,-,-,Normalize the recovered 
 init_B1B0,func_1000C7E8,0x13C,0x27BD0018,0x8FBF0014,-,-,Normalize the recovered spatial-volume callback to retail register allocation and instruction schedule,,,false
 init_B1B0,func_1000C7E8,0x140,0x03E00008,0x27BD0018,-,-,Normalize the recovered spatial-volume callback to retail register allocation and instruction schedule,,,false
 init_B1B0,func_1000C7E8,0x144,0x00000000,0x03E00008,-,-,Normalize the recovered spatial-volume callback to retail register allocation and instruction schedule,,,false
+init_49E0,func_10004DB0,0x018,0x14400033,0x14400034,-,-,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
+init_49E0,func_10004DB0,0x030,0x54400043,0x54400044,-,-,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
+init_49E0,func_10004DB0,0x04C,0x504F0023,0x504F0024,-,-,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
+init_49E0,func_10004DB0,0x060,0x8F180000,0x8F180000,R_MIPS_LO16:D_8002AC50,R_MIPS_LO16:D_8002AC50,Materialize the retained activity-flag address before the second framebuffer comparison,0x3C040000,R_MIPS_HI16:D_8003B23A,false
+init_49E0,func_10004DB0,0x068,0x1059001B,0x5059001C,-,-,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
+init_49E0,func_10004DB0,0x06C,0x3C020000,0x240B0002,R_MIPS_HI16:D_8003B23A,-,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
+init_49E0,func_10004DB0,0x070,0x90430000,0x90840000,R_MIPS_LO16:D_8003B23A,R_MIPS_LO16:D_8003B23A,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
+init_49E0,func_10004DB0,0x07C,0x10600005,0x10800005,-,-,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false
+init_49E0,func_10004DB0,0x0BC,0x14600002,0x14800002,-,-,Normalize the recovered framebuffer task dispatcher to retail branch and register schedule,,,false

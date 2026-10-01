@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-09-30:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,104 / 5,457 (56.88%) | 0 | 2,353 |
-| Init | 421 / 488 (86.27%) | 0 | 67 |
+| Total | 3,105 / 5,457 (56.90%) | 0 | 2,352 |
+| Init | 422 / 488 (86.48%) | 0 | 66 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -941,6 +941,11 @@ end-to-end gameplay acceptance.
    Fifty guards normalize one closed IDO floating-point allocation and
    instruction schedule; see
    [Working Note 605](WORKING_NOTES/605-init-spatial-volume-callback-match-20260930.md).
+   The 84-word framebuffer task dispatcher `func_10004DB0` is byte-exact
+   after restoring its nonblocking task receive, VI framebuffer gates,
+   countdown update, and phase dispatch. Nine guards normalize the remaining
+   local branch schedule; see
+   [Working Note 606](WORKING_NOTES/606-init-framebuffer-task-dispatcher-match-20260930.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.

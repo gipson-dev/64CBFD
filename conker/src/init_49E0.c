@@ -4,7 +4,7 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_10004DB0();
+void func_10004DB0(void);
 /* End generated placeholder declarations. */
 
 // contains jr
@@ -132,35 +132,39 @@ void func_100049E0(s32 arg0) {
 //     goto loop_1;
 // }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_49E0/func_10004DB0.s. */
-s32 func_10004DB0() {
-    return 0;
+void func_10004DB0(void) {
+    u8 active;
+
+    if (D_8003A582 == 0) {
+        if (osRecvMesg(&D_8003B1E8, (OSMesg *)&D_8002AC50, OS_MESG_NOBLOCK) == 0) {
+            if (osViGetCurrentFramebuffer() == D_8002AC50->framebuffer) {
+                goto task_busy;
+            }
+            if (osViGetNextFramebuffer() == D_8002AC50->framebuffer) {
+                goto task_busy;
+            }
+            active = D_8003B23A;
+            if ((active != 0) && (D_8003B238 < D_8003B239)) {
+                goto task_busy;
+            }
+            if ((D_8003B238 != 0xFF) &&
+                ((D_8003B238 >= D_8003B239) || (active == 0))) {
+                D_8003B239 = D_8003B238;
+            }
+            func_10004F00();
+            return;
+
+task_busy:
+            D_8003A582 = 2;
+        }
+    } else if (D_8003A582 == 2) {
+        if ((D_8003B23A == 0) || (D_8003B238 >= D_8003B239)) {
+            func_10004F00();
+        }
+    } else if (D_8003A582 == 6) {
+        func_10004FE0();
+    }
 }
-// NON-MATCHING: branching is not right
-// void func_10004DB0(void) {
-//     if (D_8003A582 == 0) {
-//         if (osRecvMesg(&D_8003B1E8, &D_8002AC50, 0) == 0) {
-//             if ((osViGetCurrentFramebuffer() == D_8002AC50->framebuffer) ||
-//                 (osViGetNextFramebuffer() == D_8002AC50->framebuffer) ||
-//                 ((D_8003B23A != 0) && (D_8003B238 < D_8003B239))) {
-//                 D_8003A582 = 2;
-//             } else {
-//                 if (D_8003B238 != 255) {
-//                     if ((D_8003B238 >= D_8003B239) || (D_8003B23A == 0)) {
-//                         D_8003B239 = D_8003B238;
-//                     }
-//                 }
-//                 func_10004F00();
-//             }
-//         }
-//     } else if (D_8003A582 == 2) {
-//         if ((D_8003B23A == 0) || ( D_8003B238 >= D_8003B239)) {
-//             func_10004F00();
-//         }
-//     } else if (D_8003A582 == 6) {
-//         func_10004FE0();
-//     }
-// }
 
 void func_10004F00(void) {
     if (D_8002AC5C == 0) {

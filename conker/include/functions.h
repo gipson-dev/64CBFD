@@ -896,7 +896,7 @@ void func_100043B4(s32 *arg0, u32 arg1);
 void func_100046E4(s32 devAddr, void *dramAddr, u32 size);
 void func_1000480C(s32 devAddr, void *dramAddr, u32 size);
 void func_100049E0(s32 arg0);
-//func_10004DB0
+void func_10004DB0(void);
 void func_100050A0(OSMesgQueue *arg0);
 void func_100052A0(s32 arg0);
 //func_10005570

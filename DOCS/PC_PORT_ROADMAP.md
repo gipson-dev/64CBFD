@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,104 / 5,457 (56.88%) | 0 | 2,353 |
-| Init | 488 / 538 (90.71%) | 421 / 488 (86.27%) | 0 | 67 |
+| Total | 5,457 / 6,041 (90.33%) | 3,105 / 5,457 (56.90%) | 0 | 2,352 |
+| Init | 488 / 538 (90.71%) | 422 / 488 (86.48%) | 0 | 66 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -485,6 +485,11 @@ The Init spatial-volume callback `func_1000C7E8` now matches its complete
 state selection, and the clamped radial channel value; 50 stale-checked guards
 normalize one closed IDO floating-point schedule. See
 [Working Note 605](WORKING_NOTES/605-init-spatial-volume-callback-match-20260930.md).
+The Init framebuffer task dispatcher `func_10004DB0` now matches its complete
+336-byte span. Its recovered C restores the nonblocking task receive, VI
+framebuffer gates, countdown update, submission retry, and completion phase;
+nine stale-checked guards normalize the remaining branch schedule. See
+[Working Note 606](WORKING_NOTES/606-init-framebuffer-task-dispatcher-match-20260930.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-09-30, Init spatial-volume callback matched).**
-The current linked checkpoint is `3104 / 5457 (56.88%)` exact C functions,
-with no address-drift blockers and 2,353 genuinely different C functions.
+**Active (2026-09-30, Init framebuffer task dispatcher matched).**
+The current linked checkpoint is `3105 / 5457 (56.90%)` exact C functions,
+with no address-drift blockers and 2,352 genuinely different C functions.
 Init is
-`421 / 488 (86.27%)` exact, with 67 genuinely different C rows. Game is
+`422 / 488 (86.48%)` exact, with 66 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -861,7 +861,13 @@ restores mode-specific resource setup, active-state selection, and the
 clamped radial channel calculation. Fifty relocation-aware guards preserve
 one closed IDO floating-point register and instruction schedule. See
 [Working Note 605](WORKING_NOTES/605-init-spatial-volume-callback-match-20260930.md).
-Resume the Init queue from its remaining 67 genuinely different C rows.
+Init `func_10004DB0` now matches all 84 retail words. Its recovered callback
+receives pending graphics tasks, excludes active VI framebuffers, applies the
+activity/countdown gate, and dispatches the submission and completion phases.
+Nine guards preserve the remaining branch/register schedule and one address
+materialization. See
+[Working Note 606](WORKING_NOTES/606-init-framebuffer-task-dispatcher-match-20260930.md).
+Resume the Init queue from its remaining 66 genuinely different C rows.
 `func_1000FEF0` remains parked after `-O1`, `-O3`, `register`, and parameter
 reuse experiments failed to reproduce retail's saved-`s0` lifetime under the
 required `-O2` profile. `func_1000F85C` is also parked: its correct
