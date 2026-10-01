@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,129 / 5,457 (57.34%) | 0 | 2,328 |
-| Init | 488 / 538 (90.71%) | 446 / 488 (91.39%) | 0 | 42 |
+| Total | 5,457 / 6,041 (90.33%) | 3,130 / 5,457 (57.36%) | 0 | 2,327 |
+| Init | 488 / 538 (90.71%) | 447 / 488 (91.60%) | 0 | 41 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -617,6 +617,11 @@ The Init actor event/audio dispatcher `func_1000EFB4` now matches its complete
 returns packed actor state and coordinates on acceptance, and maps events
 `0xCA`, `0x2CF`, and `0x2D2` to their retail sound submissions; see
 [Working Note 630](WORKING_NOTES/630-init-actor-event-audio-dispatch-match-20261001.md).
+The Init actor positional-audio creator `func_10010154` now matches its
+complete 496-byte span. It selects direct or positional allocation from the
+actor's camera state, applies actor-ID-specific range and flag policy, retires
+the prior actor-owned handle, and stores the replacement handle; see
+[Working Note 631](WORKING_NOTES/631-init-actor-positional-audio-creator-match-20261001.md).
 
 The current debugger restoration batch is banked in focused commits.
 `func_16001390`, `func_16000F8C`, `func_160014F0`, `func_16001BB4`,

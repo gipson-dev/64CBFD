@@ -716,9 +716,51 @@ void func_100100E0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
         } while (current < &D_80041FE0[count]);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10010154.s. */
-u16 func_10010154(u16 arg0, void *arg1, u16 arg2, s16 arg3, u16 arg4) {
-    return 0;
+s32 func_10010154(u16 arg0, void *arg1, u16 arg2, s16 arg3, u16 arg4) {
+    struct127 *actor;
+    s32 handle;
+    s32 flags;
+
+    actor = arg1;
+    handle = 0;
+    flags = 0;
+    if ((actor->interaction_state == 0) ||
+        (actor->interaction_state == 5)) {
+        return 0;
+    }
+
+    if (actor->camera != NULL) {
+        handle = func_10010BE8(actor->unk8E, (s32)actor, arg2, 0x40, 0,
+                              (((u32)actor->unk184 >> 3) & 0x30) << 1,
+                              D_80041FD9);
+        actor->unk8E = handle;
+        return actor->unk8E;
+    }
+
+    if (actor->id == 0x16) {
+        arg3 *= 2;
+        if (arg4 < arg3) {
+            arg3 = arg4 - 0xC8;
+        }
+    } else if ((actor->id == 5) || (actor->id == 0x4F) ||
+               (actor->id == 0x83)) {
+        flags = 4;
+    } else if ((actor->unk13C != 0) &&
+               ((actor->id == 0x8A) || (actor->id == 0x23))) {
+        flags = 0x100;
+    }
+
+    func_1000FD38((s32)func_1000EE70, (s32)actor,
+                  actor->unique_id | 0x10000);
+    if (actor->interaction_state != 0) {
+        handle = func_1000FA64(arg0, (s16)actor->x_position,
+                               (s16)actor->y_position,
+                               (s16)actor->z_position, arg2, arg4, arg3,
+                               (s32)func_1000EE70, actor,
+                               actor->unique_id | 0x10000, flags, 0);
+    }
+
+    actor->unk8E = handle;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10010344.s. */
 u16 func_10010344(u16 arg0, void *arg1, s32 arg2, s16 arg3, u16 arg4) {

@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init actor positional-audio creator byte-matched
+
+- `func_10010154` replaces its zero-return placeholder with the recovered
+  actor-bound audio allocator. It rejects inactive actors, handles the direct
+  camera-aware path, applies actor-ID-specific range and flag policy, retires
+  the prior handle, and creates a positional replacement when the actor stays
+  active.
+- Its recovered return contract is `s32`, avoiding the false `u16`
+  normalization from the placeholder declaration. Of 124 words, 78 emit
+  directly from semantic C and 46 stale-checked rows normalize the remaining
+  compiler register allocation and scheduling.
+- The linked and retail 496-byte spans share SHA-256
+  `0c51638492ad873409e1f0207c4185ddbcb9288bcfc7b8384ba1e065d39fb915`.
+  Totals are **3,130 / 5,457 (57.36%)** overall and
+  **447 / 488 (91.60%)** in Init. See
+  [Working Note 631](WORKING_NOTES/631-init-actor-positional-audio-creator-match-20261001.md).
+
 ### Init actor event/audio dispatcher byte-matched
 
 - `func_1000EFB4` replaces its zero-return placeholder with the recovered

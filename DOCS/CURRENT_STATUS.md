@@ -32,8 +32,8 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,129 / 5,457 (57.34%) | 0 | 2,328 |
-| Init | 446 / 488 (91.39%) | 0 | 42 |
+| Total | 3,130 / 5,457 (57.36%) | 0 | 2,327 |
+| Init | 447 / 488 (91.60%) | 0 | 41 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -1089,6 +1089,12 @@ end-to-end gameplay acceptance.
    position/result output, and three event-specific sound paths. Its complete
    500-byte body emits directly from semantic C without word guards. See
    [Working Note 630](WORKING_NOTES/630-init-actor-event-audio-dispatch-match-20261001.md).
+   The 124-word actor positional-audio creator `func_10010154` is byte-exact
+   after recovering its direct camera path, actor-ID-specific range and flag
+   policy, prior-handle retirement, and positional replacement allocation.
+   Seventy-eight words emit directly from semantic C; 46 stale-checked rows
+   normalize IDO's remaining register allocation and scheduling. See
+   [Working Note 631](WORKING_NOTES/631-init-actor-positional-audio-creator-match-20261001.md).
 4. Init's `__osGetSR`, `osGetCount`, `__osSetCompare`, `__osSetSR`, and
    `__osSetFpcCsr` placeholders are restored to original low-level assembly
    ownership. Their complete 16-byte padded spans match retail independently.
