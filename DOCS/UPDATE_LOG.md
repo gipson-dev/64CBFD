@@ -16,6 +16,25 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init scheduler and render thread byte-matched
+
+- `func_100049E0` now replaces its empty placeholder with the full seven-class
+  scheduler message loop: retrace client notifications and counters, delayed
+  task timing, SP yield/completion handling, pending graphics-task dispatch,
+  idle rendering, and guarded controller reads.
+- The semantic C emits 239 words in retail's `0, 2, 1, 3, 6` case order.
+  One hundred fifty function-scoped, stale-checked rows restore the 244-word
+  retail stream through 148 replacements and five insertions; 44 rows carry
+  relocation changes explicitly. The switch remains anchored to the existing
+  `jtbl_8002C0A0_init` data.
+- Direct comparison reports zero differences across all 976 bytes. Both spans
+  share SHA-256
+  `623dd58fd193533d32ee6d6c98a80c1d07bf0926bef273f14b9b58e8f79d68ad`.
+  Totals are **3,152 / 5,456 (57.77%)** overall and
+  **469 / 487 (96.30%)** in Init, with zero address drift and 18 different
+  Init C rows. See
+  [Working Note 654](WORKING_NOTES/654-init-scheduler-render-thread-match-20261001.md).
+
 ### Init audio-library bootstrap byte-matched
 
 - `func_10008180` now replaces its zero-return placeholder with the full audio

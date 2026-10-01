@@ -201,6 +201,9 @@ $(BUILD_DIR)/$(SRC_DIR)/libultra/audio/func_151F2890.c.o: OPT_FLAGS := -O1
 # __osDevMgrMain's message switch emits the retail device-manager jump table.
 $(BUILD_DIR)/$(SRC_DIR)/init_2E50.c.o: RETAIL_RODATA_SYMBOL := jtbl_8002C080_init
 
+# func_100049E0's message switch emits the retail scheduler jump table.
+$(BUILD_DIR)/$(SRC_DIR)/init_49E0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8002C0A0_init
+
 $(BUILD_DIR)/$(SRC_DIR)/libultra/audio/%.o: OPT_FLAGS := -g
 
 # TODO: blindly move all of this into libultra/audio

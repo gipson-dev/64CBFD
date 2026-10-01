@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,151 / 5,456 (57.75%) | 0 | 2,305 |
-| Init | 468 / 487 (96.10%) | 0 | 19 |
+| Total | 3,152 / 5,456 (57.77%) | 0 | 2,304 |
+| Init | 469 / 487 (96.30%) | 0 | 18 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init scheduler and render thread `func_100049E0` now matches its complete
+244-word retail span. It restores the seven-class message loop, registered
+client notifications, delayed task timer, SP yield/completion paths, pending
+graphics-task dispatch, idle render advance, and guarded controller reads.
+The semantic C emits 239 words; 150 stale-checked rows, including five checked
+insertions and 44 relocation-aware rows, normalize IDO's frame, allocation,
+switch, and unreachable epilogue schedule. See
+[Working Note 654](WORKING_NOTES/654-init-scheduler-render-thread-match-20261001.md).
 
 The Init audio-library bootstrap `func_10008180` now matches its complete
 214-word retail span. It initializes the audio heap and synthesizer, loads and
