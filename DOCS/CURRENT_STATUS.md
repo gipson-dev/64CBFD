@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,154 / 5,456 (57.81%) | 0 | 2,302 |
-| Init | 471 / 487 (96.71%) | 0 | 16 |
+| Total | 3,155 / 5,456 (57.83%) | 0 | 2,301 |
+| Init | 472 / 487 (96.92%) | 0 | 15 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init audio-runtime bootstrap `func_10008F90` now matches its complete
+271-word retail span. It installs audio callbacks, derives frame sample counts,
+initializes the synthesis parameter areas and record pools, allocates command
+buffers, creates four queues, and starts the audio thread. A scoped
+macro-enabled function object preserves the already matched neighboring
+routines; 139 checked rows include eight insertions and 45 relocation-aware
+rows. See
+[Working Note 657](WORKING_NOTES/657-init-audio-runtime-bootstrap-match-20261001.md).
 
 The Init bidirectional heap allocator `func_10003C6C` now matches its complete
 258-word retail span. It applies allocation-class alignment, searches from

@@ -3,19 +3,148 @@
 #include "functions.h"
 #include "variables.h"
 
+#ifdef RETAIL_FUNC_10008F90
+typedef struct {
+    s32 bankControl;
+    u32 bankCount;
+    s32 bankTable;
+} AudioResourceConfig;
+#endif
+
 /* Generated placeholder declarations. */
+#ifdef RETAIL_FUNC_10008F90
+void func_10008F90(ALSynConfig *arg0, OSPri arg1, AudioResourceConfig *arg2);
+#else
 s32 func_10008F90();
+#endif
 s32 func_100095A0(struct50 *arg0, struct51 *arg1);
 s32 func_100099BC(void);
 s32 func_1000A03C(void);
 void func_1000A348(void);
 extern s32 D_100291A0_pass2;
+#ifdef RETAIL_FUNC_10008F90
+extern s32 *D_8003E380;
+extern s32 D_8003E394;
+extern s32 D_80040F94;
+#endif
 /* End generated placeholder declarations. */
 
-/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10008F90.s. */
+#ifdef RETAIL_FUNC_10008F90
+void func_10008F90(ALSynConfig *arg0, OSPri arg1, AudioResourceConfig *arg2) {
+    u8 params[0x210];
+    u8 *source;
+    u8 *destination;
+    u8 *record;
+    u8 *nextRecord;
+    u8 *oldHead;
+    void *audioRecord;
+    f32 samplesPerFrame;
+    s32 samples;
+    s32 i;
+
+    func_10012588(&D_8003E370);
+    arg0->dmaproc = (void *)func_10009980;
+    arg0->outputRate = osAiSetFrequency(arg2->bankControl);
+    arg0->unk14 = func_10009FFC;
+    arg0->unk18 = func_10009B2C;
+    arg0->unk1C = func_10009B90;
+    arg0->unk20 = func_10009B4C;
+
+    samplesPerFrame = ((f32)arg2->bankCount * (f32)arg0->outputRate) / 30.0f;
+    samples = samplesPerFrame;
+    D_80040F8C = samples;
+    if ((f32)(u32)samples < samplesPerFrame) {
+        samples++;
+        D_80040F8C = samples;
+    }
+    samples = ((u32)samples / 184U) * 184 + 184;
+    D_80040F8C = samples;
+    D_80040F88 = samples - 184;
+    D_80040F90 = samples + 84;
+    D_80040F84 = 0;
+
+    source = (u8 *)&D_8002AE54;
+    destination = params;
+    do {
+        *(s32 *)(destination + 0) = *(s32 *)(source + 0);
+        *(s32 *)(destination + 4) = *(s32 *)(source + 4);
+        *(s32 *)(destination + 8) = *(s32 *)(source + 8);
+        source += 0xC;
+        destination += 0xC;
+    } while (source != (u8 *)&D_8002AE54 + 0x210);
+
+    arg0->params[0] = (s32 *)params;
+    arg0->params[1] = (s32 *)(params + 0x108);
+    n_alInit((struct07 *)&D_8003E640, (s32)arg0);
+    D_8003E380 = &D_8003E640;
+
+    record = &D_800406B8;
+    nextRecord = record + 0x14;
+    *(s32 *)(record + 4) = 0;
+    *(s32 *)(record + 0) = 0;
+    do {
+        oldHead = *(u8 **)record;
+        *(u8 **)(record + 0x18) = record;
+        *(u8 **)(record + 0x14) = oldHead;
+        if (oldHead != NULL) {
+            *(u8 **)(oldHead + 4) = nextRecord;
+        }
+        *(u8 **)record = nextRecord;
+        *(void **)(record + 0x10) = alHeapDBAlloc(0, 0, arg0->heap, 1, 0x800);
+        record += 0x14;
+        nextRecord += 0x14;
+    } while (nextRecord < (u8 *)&D_80040AC8);
+    *(void **)(record + 0x10) = alHeapDBAlloc(0, 0, arg0->heap, 1, 0x800);
+
+    bzero(&D_80040AC8, 0x4B0);
+    record = (u8 *)&D_80040AC8;
+    nextRecord = record + 0x18;
+    *(s32 *)(record + 4) = 0;
+    *(s32 *)(record + 0) = 0;
+    i = 0;
+    do {
+        oldHead = *(u8 **)record;
+        *(u8 **)(record + 0x1C) = record;
+        *(u8 **)(record + 0x18) = oldHead;
+        if (oldHead != NULL) {
+            *(u8 **)(oldHead + 4) = nextRecord;
+        }
+        *(u8 **)record = nextRecord;
+        i++;
+        record += 0x18;
+        nextRecord += 0x18;
+        *(s32 *)(record - 8) = 0;
+    } while (i < 0x31);
+    *(s32 *)(record + 0x10) = 0;
+
+    for (i = 0; i < 2; i++) {
+        D_8003E388[i] = (s32)alHeapDBAlloc(0, 0, arg0->heap, 1,
+                                          arg2->bankTable * 8);
+    }
+    D_80040F94 = arg2->bankTable;
+    for (i = 0; i < 2; i++) {
+        audioRecord = alHeapDBAlloc(0, 0, arg0->heap, 1, 0x90);
+        D_8003E390[i] = audioRecord;
+        *(u16 *)((u8 *)audioRecord + 0x70) = 2;
+        *(void **)((u8 *)audioRecord + 0x74) = audioRecord;
+        *(void **)audioRecord = alHeapDBAlloc(0, 0, arg0->heap, 1,
+                                              D_80040F90 * 4);
+    }
+
+    osCreateMesgQueue((OSMesgQueue *)&D_8003E608, (OSMesg *)&D_8003E620, 8);
+    osCreateMesgQueue((OSMesgQueue *)&D_8003E5D0, (OSMesg *)&D_8003E5E8, 8);
+    osCreateMesgQueue((OSMesgQueue *)&D_80041298, (OSMesg *)&D_800412B0, 0x20);
+    osCreateMesgQueue((OSMesgQueue *)&D_800416F0, (OSMesg *)&D_80041708, 0x28);
+    osCreateThread(&D_8003E3A0, 4, (void *)func_10009400, 0,
+                   &D_800406A0, arg1);
+    D_8002AE40 = 1;
+    osStartThread(&D_8003E3A0);
+}
+#else
 s32 func_10008F90() {
     return 0;
 }
+#endif
 // NON-MATCHING: so much to do
 // void func_10008F90(struct15 *arg0, OSPri arg1, struct52 *arg2) {
 //     // ? sp160;

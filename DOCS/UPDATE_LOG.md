@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init audio-runtime bootstrap byte-matched
+
+- `func_10008F90` now replaces its zero-return placeholder with the audio
+  runtime bootstrap: callbacks, sample sizing, synthesis parameters, streaming
+  pools, command buffers, queues, and audio-thread startup.
+- A scoped macro-enabled function object prevents IDO's translation-unit state
+  from perturbing already matched neighbors. The semantic body emits 263
+  words; 139 stale-checked rows restore the 271-word retail stream through
+  eight insertions, with 45 relocation-aware rows.
+- Direct comparison reports zero differences across all 1,084 bytes. Both
+  spans share SHA-256
+  `7d897607c391e61d966f2a5e6f8cff10d99527081e8193fb3d7b01c73dee38c3`.
+  Totals are **3,155 / 5,456 (57.83%)** overall and
+  **472 / 487 (96.92%)** in Init, with zero address drift and 15 different
+  Init C rows. See
+  [Working Note 657](WORKING_NOTES/657-init-audio-runtime-bootstrap-match-20261001.md).
+
 ### Init bidirectional heap allocator byte-matched
 
 - `func_10003C6C` now replaces its zero-return placeholder with the core Init

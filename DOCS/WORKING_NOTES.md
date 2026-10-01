@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init bidirectional heap allocator matched).**
-The current linked checkpoint is `3154 / 5456 (57.81%)` exact C functions,
-with no address-drift blockers and 2,302 genuinely different C functions.
+**Active (2026-10-01, Init audio-runtime bootstrap matched).**
+The current linked checkpoint is `3155 / 5456 (57.83%)` exact C functions,
+with no address-drift blockers and 2,301 genuinely different C functions.
 Init is
-`471 / 487 (96.71%)` exact, with 16 genuinely different C rows. Game is
+`472 / 487 (96.92%)` exact, with 15 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,10 +100,10 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`func_10003C6C` now matches all 258 retail words and is ready to bank in its
-own focused commit. After that checkpoint, resume Init at `func_10008F90`, the
-271-word next candidate with 266 real word differences. See
-[Working Note 656](WORKING_NOTES/656-init-bidirectional-heap-allocator-match-20261001.md).
+`func_10008F90` now matches all 271 retail words and is ready to bank in its
+own focused commit. After that checkpoint, resume Init at `func_1000CEAC`, the
+275-word next candidate with 273 real word differences. See
+[Working Note 657](WORKING_NOTES/657-init-audio-runtime-bootstrap-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and
