@@ -310,6 +310,7 @@ extern s32 D_80041FEC[][12];
 
 extern OSMesgQueue *D_80041298;
 extern OSMesg      *D_800412B0;
+extern OSIoMesg     D_80041330[];
 extern OSMesgQueue *D_800416F0;
 extern OSMesg      *D_80041708;
 

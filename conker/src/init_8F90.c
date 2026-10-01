@@ -603,8 +603,126 @@ void func_10009BE4(struct54 *arg0) {
 //     // return temp_v0;
 // }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_8F90/func_10009CBC.s. */
-s32 func_10009CBC(void *arg0, s32 arg1) {
+s32 func_10009CBC(u32 *arg0, s32 arg1) {
+    struct54 *node;
+    struct54 *candidate;
+    struct54 *freeNext;
+    volatile struct54 *freePrevious;
+    struct54 *head;
+    struct54 *headNext;
+    struct54 *headStore;
+    register s32 transferSize;
+    register u32 encoded;
+    s32 dmaIndex;
+    s32 allocationSize;
+
+    candidate = NULL;
+    encoded = *arg0;
+    if (encoded & 1) {
+        if (arg1 == 0) {
+            transferSize = (encoded & 0xFF) + 1;
+        } else {
+            transferSize = ((encoded & 0xFF) & ~1) << 6;
+        }
+
+        node = (struct54 *)D_800406A0.unk8;
+        if (node == NULL) {
+            node = (struct54 *)D_800406A0.unk4;
+            while (node != NULL) {
+                if ((node->unk14 == 0) && (node->unk16 == 0) &&
+                    (node->unk15 == 2)) {
+                    candidate = node;
+                }
+                node = node->unk0;
+            }
+            node = candidate;
+            if (candidate != NULL) {
+                *(u32 *)candidate->unkC = candidate->unk8;
+                func_100043B4((s32 *)candidate->unk10, 4);
+                candidate->unk10 = 0;
+                candidate->unkC = 0;
+                if (candidate == (struct54 *)D_800406A0.unk4) {
+                    D_800406A4 = candidate->unk0;
+                }
+                freeNext = candidate->unk0;
+                if (freeNext != NULL) {
+                    freeNext->unk4 = candidate->unk4;
+                }
+                freePrevious = candidate->unk4;
+                if (freePrevious != NULL) {
+                    freePrevious->unk0 = candidate->unk0;
+                }
+            }
+        } else {
+            D_800406A0.unk8 = (s32)node->unk0;
+            freeNext = node->unk0;
+            if (freeNext != NULL) {
+                freeNext->unk4 = node->unk4;
+            }
+            freePrevious = node->unk4;
+            if (freePrevious != NULL) {
+                freePrevious->unk0 = node->unk0;
+            }
+        }
+
+        if (node != NULL) {
+            node->unk0 = NULL;
+            node->unk4 = NULL;
+            head = D_800406A0.unkC;
+            if (head != NULL) {
+                node->unk4 = head;
+                node->unk0 = head->unk0;
+                headStore = head;
+                headNext = head->unk0;
+                if (headNext != NULL) {
+                    headNext->unk4 = node;
+                }
+                headStore->unk0 = node;
+            } else {
+                D_800406A0.unkC = node;
+                node->unk0 = NULL;
+                node->unk4 = NULL;
+            }
+
+            node->unk8 = encoded;
+            node->unk14 = 0;
+            node->unk16 = arg1;
+            node->unk15 = 0;
+            node->unkC = (s32)arg0;
+            if ((u32)D_8002AE50 < 0x28U) {
+                allocationSize = (transferSize + 0xF) & ~0xF;
+                node->unk10 = (s32)allocate_memory(allocationSize, 0xFF, 2, 0);
+                bzero((void *)node->unk10, allocationSize);
+            } else {
+                node->unk10 = 0;
+            }
+
+            if (node->unk10 != 0) {
+                osWritebackDCache((void *)node->unk10, allocationSize);
+                osInvalDCache((void *)node->unk10, allocationSize);
+                dmaIndex = D_8002AE50;
+                D_8002AE50++;
+                osPiStartDma(&D_80041330[dmaIndex], OS_MESG_PRI_HIGH, OS_READ,
+                             (encoded >> 5) & ~7, (void *)node->unk10,
+                             allocationSize, (OSMesgQueue *)&D_800416F0);
+                *arg0 = (u32)node;
+            }
+        }
+        return 0;
+    }
+
+    node = (struct54 *)encoded;
+    *arg0 = encoded;
+    if (node->unk15 != 0) {
+        if (arg1 == 1) {
+            if (node->unk15 == 1) {
+                node->unk15 = 2;
+            } else {
+                node->unk14++;
+            }
+        }
+        return node->unk10;
+    }
     return 0;
 }
 

@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,149 / 5,457 (57.71%) | 0 | 2,308 |
-| Init | 466 / 488 (95.49%) | 0 | 22 |
+| Total | 3,150 / 5,457 (57.72%) | 0 | 2,307 |
+| Init | 467 / 488 (95.70%) | 0 | 21 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init resource-request manager `func_10009CBC` now matches its complete
+208-word retail span. It resolves encoded resource requests, acquires or
+evicts manager nodes, allocates and clears rounded buffers, performs cache
+maintenance, submits PI DMA, and handles existing resource references. See
+[Working Note 651](WORKING_NOTES/651-init-resource-request-manager-match-20261001.md).
 
 The Init spatial attenuation and pan calculator `func_1000A420` now matches its
 complete 204-word retail span. It selects planar or three-axis distance,

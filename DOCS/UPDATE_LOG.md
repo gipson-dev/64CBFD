@@ -16,6 +16,25 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init resource-request manager byte-matched
+
+- `func_10009CBC` now distinguishes encoded resource requests from existing
+  handles, resolves transfer metadata, acquires a free manager node or evicts
+  the last eligible inactive node, and maintains the active and free lists.
+- For new requests it allocates and clears a rounded buffer, performs the
+  required cache maintenance, advances the DMA-message index, submits a
+  high-priority PI transfer, and replaces the caller's encoded value with the
+  resource node. The semantic C emits 205 words; 107 function-scoped,
+  stale-checked rows, including three checked insertions, normalize the
+  remaining IDO register and scheduling cycle. Relocation-aware rows move the
+  `D_8002AE50`, `D_80041330`, and `D_800416F0` address pairs and affected calls
+  to their retail words within the same semantic schedule.
+- The linked and retail 832-byte spans share SHA-256
+  `aa485f43fb54b12658083b22b286f6e3c97cf462aa1e1e6f7637cc2bbaec7131`.
+  Totals are **3,150 / 5,457 (57.72%)** overall and
+  **467 / 488 (95.70%)** in Init. See
+  [Working Note 651](WORKING_NOTES/651-init-resource-request-manager-match-20261001.md).
+
 ### Init spatial attenuation and pan calculator byte-matched
 
 - `func_1000A420` now selects the original planar or three-axis distance
