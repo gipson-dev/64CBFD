@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game packed two-axis integrator byte-matched
+
+- `func_1516F864` restores the packed signed X/Y velocity reconstruction,
+  global time-scale multiplication, and packed position accumulation.
+- All 34 retail words now match. Thirty-two stale-checked expected-word rows,
+  including two relocation-aware global-address rows, preserve compiler
+  register allocation while leaving the recovered arithmetic and schedule
+  explicit in C.
+- The refreshed matcher reports **3,187 / 5,456 (58.41%)** overall and
+  **2,519 / 4,788 (52.61%)** in Game, with zero address drift and 2,269
+  different C rows. See
+  [Working Note 681](WORKING_NOTES/681-game-packed-two-axis-integrator-match-20261002.md).
+
 ### Game resource-release family and height predicate byte-matched
 
 - `func_1514795C`, `func_151571C4`, and `func_15158A20` restore three

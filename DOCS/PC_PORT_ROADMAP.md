@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,186 / 5,456 (58.39%) | 0 | 2,270 |
+| Total | 5,456 / 6,041 (90.32%) | 3,187 / 5,456 (58.41%) | 0 | 2,269 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,518 / 4,788 (52.59%) | 0 | 2,270 |
+| Game | 4,788 / 5,321 (89.98%) | 2,519 / 4,788 (52.61%) | 0 | 2,269 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game packed two-axis integrator `func_1516F864` now matches all 34 retail
+words. Its recovered C updates packed X/Y positions from packed signed
+velocities and the global time scale; 32 stale-checked words normalize only
+compiler register allocation. See
+[Working Note 681](WORKING_NOTES/681-game-packed-two-axis-integrator-match-20261002.md).
 
 The Game resource-release loops `func_1514795C`, `func_151571C4`, and
 `func_15158A20` now match all 33 retail words apiece. The related

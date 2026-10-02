@@ -37,3 +37,10 @@ comparison evidence.
 Resume the ordinary small-Game queue with 34-word `func_1516F864`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.
+
+## Superseded resume boundary
+
+`func_1516F864` was completed in
+[Working Note 681](681-game-packed-two-axis-integrator-match-20261002.md).
+Resume with ordinary 34-word `func_15170EC4`; the two parked special cases
+remain unchanged.

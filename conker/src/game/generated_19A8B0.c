@@ -1,5 +1,7 @@
 #include <ultra64.h>
 
+extern s32 D_800BE9E4;
+
 /* Non-matching placeholders for the text-only asm slice asm/19A8B0.s. */
 
 s32 func_1516D400() {
@@ -62,8 +64,23 @@ s32 func_1516F548() {
     return 0;
 }
 
-s32 func_1516F864() {
-    return 0;
+// Matched with guarded packed fixed-point register allocation.
+void func_1516F864(u8 *arg0) {
+    s32 position;
+    s32 velocity = *(s8 *) (arg0 + 0x26);
+
+    velocity = (velocity << 8) + *(arg0 + 0x27);
+    position = (*(s16 *) (arg0 + 0xE) << 8) + *(arg0 + 0x2A);
+    position += velocity * D_800BE9E4;
+    *(s16 *) (arg0 + 0xE) = position >> 8;
+    *(arg0 + 0x2A) = position;
+
+    velocity = *(s8 *) (arg0 + 0x28);
+    velocity = (velocity << 8) + *(arg0 + 0x29);
+    position = (*(s16 *) (arg0 + 0x12) << 8) + *(arg0 + 0x2B);
+    position += velocity * D_800BE9E4;
+    *(s16 *) (arg0 + 0x12) = position >> 8;
+    *(arg0 + 0x2B) = position;
 }
 
 // Matched with guarded packed-byte temporary register normalization.

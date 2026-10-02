@@ -10134,3 +10134,35 @@ generated_12D630,func_15100230,0x080,0x03E00008,0x27BD0020,-,-,Normalize owner-e
 generated_12D630,func_15100230,0x084,0x00000000,0x03E00008,-,-,Normalize owner-event callback compiler schedule,,,false
 generated_142560,func_15115EDC,0x018,0x8FA60024,0x8FA50024,-,-,Preserve cross-declaration record-pointer register,,,false
 generated_185560,func_15159084,0x044,0x46040032,0x46002032,-,-,Preserve retail's commutative floating-equality operand order,,,false
+generated_19A8B0,func_1516F864,0x000,0x3C050000,0x3C060000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800BE9E4,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x004,0x24A50000,0x24C60000,R_MIPS_LO16:D_800BE9E4,R_MIPS_LO16:D_800BE9E4,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x008,0x80820026,0x80830026,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x00C,0x908E0027,0x90990027,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x010,0x8CA90000,0x8CC80000,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x014,0x00027A00,0x0003C200,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x018,0x01CF1021,0x03191821,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x01C,0x00490019,0x00680019,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x020,0x8499000E,0x8482000E,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x024,0x9098002A,0x908F002A,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x028,0x80820028,0x80830028,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x02C,0x00194200,0x00027200,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x030,0x03081821,0x01CF1021,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x034,0x908C0029,0x908F0029,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x038,0x00026A00,0x00037200,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x03C,0x848F0012,0x84850012,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x040,0x018D1021,0x01CF1821,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x044,0x00005012,0x00004812,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x048,0x006A1821,0x00495821,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x04C,0x00035A03,0x000B5203,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x050,0xA48B000E,0xA48A000E,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x054,0xA083002A,0xA08B002A,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x058,0x8CB80000,0x8CD80000,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x05C,0x908E002B,0x908D002B,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x060,0x000FCA00,0x00056200,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x064,0x00580019,0x00780019,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x068,0x01D91821,0x018D2821,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x06C,0x00004012,0x0000C812,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x070,0x00681821,0x00B94821,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x074,0x00034A03,0x00094203,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x078,0xA4890012,0xA4880012,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_19A8B0,func_1516F864,0x07C,0xA083002B,0xA089002B,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
