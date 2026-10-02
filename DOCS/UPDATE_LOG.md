@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game color-driver callback family byte-matched
+
+- `func_150D149C` and `func_150D1B40` replace their zero-return placeholders
+  with the shared float-driver pattern: update fields `0x30`, `0x2C`, and
+  `0x28` using callback-specific ranges, then publish the truncated first
+  component with two retained global color channels.
+- Their complete 37- and 36-word slots emit directly from semantic C without
+  guards or compiler-profile overrides. An explicit pointer to field `0x28`
+  recovers its duplicate stack lifetime; a local full-width integer publisher
+  declaration reproduces retail's plain `trunc.w.s` conversion.
+- The refreshed matcher reports **3,208 / 5,456 (58.80%)** overall and
+  **2,540 / 4,788 (53.05%)** in Game, with zero address drift and 2,248
+  different C rows. See
+  [Working Note 701](WORKING_NOTES/701-game-color-driver-callback-family-match-20261002.md).
+
 ### Game script-result flag callback byte-matched
 
 - `func_150C7350` replaces its zero-return placeholder with the unconditional

@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,206 / 5,456 (58.76%) | 0 | 2,250 |
+| Total | 5,456 / 6,041 (90.32%) | 3,208 / 5,456 (58.80%) | 0 | 2,248 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,538 / 4,788 (53.01%) | 0 | 2,250 |
+| Game | 4,788 / 5,321 (89.98%) | 2,540 / 4,788 (53.05%) | 0 | 2,248 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game color-driver callbacks `func_150D149C` and `func_150D1B40` now match
+their complete 37- and 36-word slots directly from C. They restore the paired
+float-driver updates and publication of the resulting first color component.
+See
+[Working Note 701](WORKING_NOTES/701-game-color-driver-callback-family-match-20261002.md).
 
 The Game script-result flag callback `func_150C7350` now matches its complete
 36-word slot directly from C. It restores the unconditional base flags and the

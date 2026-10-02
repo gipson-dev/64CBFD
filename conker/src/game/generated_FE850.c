@@ -3,7 +3,11 @@ extern u8 D_800CC2D0[];
 extern f32 D_800A08B0;
 extern f32 D_800A08B4;
 extern f32 D_800A08B8;
+extern f32 D_800A08C0;
+extern u8 D_800DCD20[];
 void func_15059C84(u8 *arg0);
+void func_151467A4(f32 *, f32, f32 *, f32, f32, f32, f32, f32 *);
+void func_1515D4D4(s32, s32, s32, s32);
 
 typedef struct {
     u8 pad0[0x3C];
@@ -51,6 +55,11 @@ void func_150D146C(u8 arg0) {
     }
 }
 
-s32 func_150D149C() {
-    return 0;
+void func_150D149C(u8 *arg0) {
+    f32 *color = (f32 *)(arg0 + 0x28);
+
+    func_151467A4((f32 *)(arg0 + 0x30), 10.0f,
+                  (f32 *)(arg0 + 0x2C), 50.0f, 100.0f, 123.0f,
+                  D_800A08C0, color);
+    func_1515D4D4(*color, D_800DCD20[1], D_800DCD20[2], 0);
 }

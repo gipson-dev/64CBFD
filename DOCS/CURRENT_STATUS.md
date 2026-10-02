@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,206 / 5,456 (58.76%) | 0 | 2,250 |
+| Total | 3,208 / 5,456 (58.80%) | 0 | 2,248 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,538 / 4,788 (53.01%) | 0 | 2,250 |
+| Game | 2,540 / 4,788 (53.05%) | 0 | 2,248 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game color-driver callbacks `func_150D149C` and `func_150D1B40` now match
+their complete 37- and 36-word slots directly from C. Each advances three
+float fields through `func_151467A4` with its own fixed ranges and then
+publishes the truncated first component with two retained global channels.
+An explicit derived pointer and the retail full-width integer publisher
+contract recover both layouts without guards. See
+[Working Note 701](WORKING_NOTES/701-game-color-driver-callback-family-match-20261002.md).
 
 The Game script-result flag callback `func_150C7350` now matches its complete
 36-word slot directly from C. It applies the base `0x80004000` flags, invokes
