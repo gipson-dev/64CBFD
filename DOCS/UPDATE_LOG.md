@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game object-control reset byte-matched
+
+- `func_150634E4` replaces its zero-return placeholder with canonical
+  object-pool indexing, two attached-state resets, control dispatches `0x1D`
+  and `0x1E`, and three object-control byte clears.
+- Correcting `D_800CC2D0` to its `struct127` array contract and using the
+  signed result as an unsigned array index reproduces retail's division and
+  shift/add scaling directly from C. No guards or profile override are
+  required.
+- The refreshed matcher reports **3,227 / 5,456 (59.15%)** overall and
+  **2,559 / 4,788 (53.45%)** in Game, with zero address drift and 2,229
+  different C rows. See
+  [Working Note 719](WORKING_NOTES/719-game-object-control-reset-match-20261002.md).
+
 ### Game sixteen-word varargs adapter byte-matched
 
 - `func_15042E3C` replaces its fixed 17-parameter implementation with the

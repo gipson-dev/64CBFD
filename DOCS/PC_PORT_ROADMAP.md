@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,226 / 5,456 (59.13%) | 0 | 2,230 |
+| Total | 5,456 / 6,041 (90.32%) | 3,227 / 5,456 (59.15%) | 0 | 2,229 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,558 / 4,788 (53.43%) | 0 | 2,230 |
+| Game | 4,788 / 5,321 (89.98%) | 2,559 / 4,788 (53.45%) | 0 | 2,229 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game object-control reset `func_150634E4` now matches all 35 retail words
+directly from C. Correcting the object-pool type restores canonical indexing,
+attached-state resets, two control dispatches, and three object-byte clears
+without guards. See
+[Working Note 719](WORKING_NOTES/719-game-object-control-reset-match-20261002.md).
 
 The Game sixteen-word varargs adapter `func_15042E3C` now matches all 36
 retail words directly from C. Restoring its true varargs contract reproduces

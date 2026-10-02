@@ -35,7 +35,10 @@ no duplicate patch keys. Game advances to `2,558 / 4,788 (53.43%)`, with
 remains `181 / 181 (100.00%)`. `make tools-check` also passes. No fresh
 gameplay run was performed.
 
-Resume the ordinary small-Game queue with 35-word `func_150634E4`, currently
-at 35 real differences. Keep `func_15015F40` parked behind unresolved
+Continued in
+[Working Note 719](719-game-object-control-reset-match-20261002.md), which
+matches `func_150634E4`. Resume the ordinary small-Game queue with 40-word
+`func_15086BD0`, currently at 35 real differences. Keep `func_15015F40`
+parked behind unresolved
 indirect-table ownership and `func_150A76F0` in the handwritten
 register-contract workstream.
