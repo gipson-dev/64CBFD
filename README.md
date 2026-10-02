@@ -48,9 +48,9 @@ Snapshot verified on 2026-10-02. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[##############----------]` 3,191 / 5,456 (58.49%) | 0 | 2,265 |
+| Total | `[##############----------]` 3,192 / 5,456 (58.50%) | 0 | 2,264 |
 | Init | `[########################]` 487 / 487 (100.00%) | 0 | 0 |
-| Game | `[#############-----------]` 2,523 / 4,788 (52.69%) | 0 | 2,265 |
+| Game | `[#############-----------]` 2,524 / 4,788 (52.72%) | 0 | 2,264 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Function-by-function recovery updates and their supporting working-note links

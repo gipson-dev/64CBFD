@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game threshold/intensity updater byte-matched
+
+- `func_151A787C` restores its two signed threshold tests, elapsed-tick-scaled
+  halfword updates, and timer-scaled byte outputs.
+- All 35 retail words match. Nineteen emit directly from semantic C; sixteen
+  stale-checked words normalize one commutative multiply and one closed
+  compiler register-allocation and scheduling cycle.
+- The refreshed matcher reports **3,192 / 5,456 (58.50%)** overall and
+  **2,524 / 4,788 (52.72%)** in Game, with zero address drift and 2,264
+  different C rows. See
+  [Working Note 686](WORKING_NOTES/686-game-threshold-intensity-updater-match-20261002.md).
+
 ### Game tick-compensated damping callback byte-matched
 
 - `func_1519C4E4` restores its elapsed-tick loop over two floating-point

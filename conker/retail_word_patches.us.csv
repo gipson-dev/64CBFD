@@ -10176,3 +10176,19 @@ generated_1B81D0,func_1518B1D8,0x078,0x00001025,0x03E00008,-,-,Normalize clamped
 generated_1B81D0,func_1518B1D8,0x07C,0xA0860070,0x00001025,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
 generated_1B81D0,func_1518B1D8,0x080,0x03E00008,0xA0850070,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
 generated_1B81D0,func_1518B1D8,0x084,0x00000000,0x03E00008,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1D43B0,func_151A787C,0x020,0x01E30019,0x006F0019,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x03C,0x844E0002,0x84580002,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x048,0x848A0034,0x848C0034,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x04C,0x848C0036,0x848E0036,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x054,0x84830038,0x00005812,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x058,0x00002812,0x018B6821,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x05C,0x01455821,0x01CB7821,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x060,0x01856821,0xA48D0034,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x064,0xA48B0034,0xA48F0036,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x068,0xA48D0036,0x84830038,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x06C,0x844E0002,0x84580002,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x070,0x01C30019,0x00780019,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x074,0x00002812,0x0000C812,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x078,0xA0850042,0xA0990042,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x07C,0xA0850041,0xA0990041,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1D43B0,func_151A787C,0x080,0xA0850040,0xA0990040,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false

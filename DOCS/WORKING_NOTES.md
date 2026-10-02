@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game tick-compensated damping callback matched).**
-The current linked checkpoint is `3191 / 5456 (58.49%)` exact C functions,
-with no address-drift blockers and 2,265 genuinely different C functions.
+**Active (2026-10-02, Game threshold/intensity updater matched).**
+The current linked checkpoint is `3192 / 5456 (58.50%)` exact C functions,
+with no address-drift blockers and 2,264 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2523 / 4788 (52.69%)` exact, with 2,265 genuinely different C rows. The tree
+`2524 / 4788 (52.72%)` exact, with 2,264 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -140,8 +140,10 @@ semantic C without guards. Active-row wrapper `func_1517F4D8` now matches all
 `func_1518B1D8` now matches all 35 words; ten stale-checked suffix words
 normalize only the compiler phi register and equivalent branch schedule.
 Tick-compensated damping callback `func_1519C4E4` now matches all 34 words
-directly from semantic C without guards. Resume with ordinary 35-word
-`func_151A787C`; keep the documented indirect-table and handwritten-register
+directly from semantic C without guards. Threshold/intensity updater
+`func_151A787C` now matches all 35 words with sixteen stale-checked compiler
+allocation and scheduling words. Resume with ordinary 34-word
+`func_151B498C`; keep the documented indirect-table and handwritten-register
 special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -164,6 +166,8 @@ The clamped height-byte updater recovery is recorded in
 [Working Note 684](WORKING_NOTES/684-game-clamped-height-byte-match-20261002.md).
 The tick-compensated damping callback recovery is recorded in
 [Working Note 685](WORKING_NOTES/685-game-tick-compensated-damping-callback-match-20261002.md).
+The threshold/intensity updater recovery is recorded in
+[Working Note 686](WORKING_NOTES/686-game-threshold-intensity-updater-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

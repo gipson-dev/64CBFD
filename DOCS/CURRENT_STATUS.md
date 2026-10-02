@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,191 / 5,456 (58.49%) | 0 | 2,265 |
+| Total | 3,192 / 5,456 (58.50%) | 0 | 2,264 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,523 / 4,788 (52.69%) | 0 | 2,265 |
+| Game | 2,524 / 4,788 (52.72%) | 0 | 2,264 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game threshold/intensity updater `func_151A787C` now matches all 35 retail
+words. It applies two signed threshold tests, advances two halfword fields by
+an elapsed-tick-scaled step, and writes timer-scaled byte outputs. Nineteen
+words emit directly from semantic C; sixteen stale-checked words normalize one
+commutative multiply and a closed compiler register/scheduling cycle. See
+[Working Note 686](WORKING_NOTES/686-game-threshold-intensity-updater-match-20261002.md).
 
 The Game tick-compensated damping callback `func_1519C4E4` now matches all 34
 retail words. It repeats two floating-point damping updates for every elapsed

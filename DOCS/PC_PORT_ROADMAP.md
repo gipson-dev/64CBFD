@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,191 / 5,456 (58.49%) | 0 | 2,265 |
+| Total | 5,456 / 6,041 (90.32%) | 3,192 / 5,456 (58.50%) | 0 | 2,264 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,523 / 4,788 (52.69%) | 0 | 2,265 |
+| Game | 4,788 / 5,321 (89.98%) | 2,524 / 4,788 (52.72%) | 0 | 2,264 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game threshold/intensity updater `func_151A787C` now matches all 35 retail
+words. Its recovered C applies two parameter thresholds, an elapsed-tick field
+advance, and timer-scaled byte outputs; sixteen stale-checked words normalize
+only compiler allocation and scheduling. See
+[Working Note 686](WORKING_NOTES/686-game-threshold-intensity-updater-match-20261002.md).
 
 The Game tick-compensated damping callback `func_1519C4E4` now matches all 34
 retail words directly from semantic C. It repeats two damping updates for the
