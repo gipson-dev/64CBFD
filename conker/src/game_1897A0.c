@@ -12,6 +12,12 @@ s32 func_1515D130();
 
 void *func_15147A80(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, u8 arg9, s32 arg10);
 
+typedef struct {
+    s32 x;
+    s32 y;
+    s32 z;
+} Func1515CF9CPosition;
+
 void *func_1515C2F0(u8 *arg0, u8 *arg1, void *arg2, s32 arg3, u8 arg4, s32 arg5) {
     u8 *temp_v0;
 
@@ -36,18 +42,15 @@ s32 func_1515C534() {
 s32 func_1515C6F4() {
     return 0;
 }
-s32 func_1515CF9C(u8 *arg0, u8 *arg1) {
+s32 func_1515CF9C(u8 *arg0, s8 *arg1) {
     u8 *base;
-    u8 *slot;
 
     if ((s8)arg0[0x2C] < (arg0[0x25] - 1)) {
         base = *(u8 **)(arg0 + 0x94);
         arg0[0x2C] = (s8)arg0[0x2C] + 1;
-        slot = base + ((s8)arg0[0x2E] * 0x10);
-        *(s32 *)(slot + 0) = *(s32 *)(arg0 + 0x10);
-        *(s32 *)(slot + 4) = *(s32 *)(arg0 + 0x14);
-        *(s32 *)(slot + 8) = *(s32 *)(arg0 + 0x18);
-        *(f32 *)(slot + 0xC) = *(f32 *)(arg1 + 8);
+        *(Func1515CF9CPosition *)(base + ((s8)arg0[0x2E] * 0x10)) =
+            *(Func1515CF9CPosition *)(arg0 + 0x10);
+        *(f32 *)(base + ((s8)arg0[0x2E] * 0x10) + 0xC) = *(f32 *)(arg1 + 8);
         arg0[0x2E] = (s8)arg0[0x2E] + 1;
         if (arg0[0x25] == (s8)arg0[0x2E]) {
             arg0[0x2E] = 0;

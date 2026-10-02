@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,212 / 5,456 (58.87%) | 0 | 2,244 |
+| Total | 3,213 / 5,456 (58.89%) | 0 | 2,243 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,544 / 4,788 (53.13%) | 0 | 2,244 |
+| Game | 2,545 / 4,788 (53.15%) | 0 | 2,243 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game position-sample ring recorder `func_1515CF9C` now matches all 37
+retail words. It appends a 12-byte position and float sample while capacity
+remains, advances and wraps the write cursor, or writes signed status `-1`
+when full. Four expected-word guards normalize only the five-word reset/exit
+schedule, including one inserted branch. See
+[Working Note 706](WORKING_NOTES/706-game-position-sample-ring-recorder-match-20261002.md).
 
 The Game geometry-mode command helper `func_15142B7C` now matches all 37
 retail words directly from C. It emits clear/set geometry-mode commands only

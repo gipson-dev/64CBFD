@@ -10256,3 +10256,7 @@ generated_129EE0,func_150FCF1C,0x04C,0x27A50024,0x27A50020,-,-,Normalize the rec
 generated_129EE0,func_150FCF1C,0x050,0xE7A60024,0xE7A60020,-,-,Normalize the recovered position vector to the retail stack offset,,,false
 generated_129EE0,func_150FCF1C,0x064,0xE7AA0028,0xE7AA0024,-,-,Normalize the recovered position vector to the retail stack offset,,,false
 generated_129EE0,func_150FCF1C,0x080,0xE7B2002C,0xE7B20028,-,-,Normalize the recovered position vector to the retail stack offset,,,false
+game_1897A0,func_1515CF9C,0x014,0x1020001A,0x1020001B,-,-,Normalize the recovered ring-index reset exit schedule,,,false
+game_1897A0,func_1515CF9C,0x070,0x57280005,0x57280006,-,-,Normalize the recovered ring-index reset exit schedule,,,false
+game_1897A0,func_1515CF9C,0x078,0x10000002,0xA080002E,-,-,Normalize the recovered ring-index reset exit schedule,0x10000003,-,false
+game_1897A0,func_1515CF9C,0x07C,0xA080002E,0x24020001,-,-,Normalize the recovered ring-index reset exit schedule,,,false

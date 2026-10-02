@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,212 / 5,456 (58.87%) | 0 | 2,244 |
+| Total | 5,456 / 6,041 (90.32%) | 3,213 / 5,456 (58.89%) | 0 | 2,243 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,544 / 4,788 (53.13%) | 0 | 2,244 |
+| Game | 4,788 / 5,321 (89.98%) | 2,545 / 4,788 (53.15%) | 0 | 2,243 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game position-sample ring recorder `func_1515CF9C` now matches all 37
+retail words. It restores capacity handling, structured position/sample
+storage, cursor advancement, and cursor wrapping. See
+[Working Note 706](WORKING_NOTES/706-game-position-sample-ring-recorder-match-20261002.md).
 
 The Game geometry-mode command helper `func_15142B7C` now matches all 37
 retail words directly from C. It restores cached clear/set geometry-mode

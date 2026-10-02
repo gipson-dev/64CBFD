@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game position-sample ring recorder byte-matched
+
+- `func_1515CF9C` now uses the recovered signed status-buffer contract and a
+  structured 12-byte position copy, followed by the slot's float sample.
+- The routine advances the sample count and write cursor, wraps the cursor at
+  capacity, and writes status `-1` when no slot remains. Thirty-two of the 37
+  retail words emit directly from C; four expected-word guards normalize the
+  five-word reset/exit schedule, including one inserted branch.
+- The refreshed matcher reports **3,213 / 5,456 (58.89%)** overall and
+  **2,545 / 4,788 (53.15%)** in Game, with zero address drift and 2,243
+  different C rows. See
+  [Working Note 706](WORKING_NOTES/706-game-position-sample-ring-recorder-match-20261002.md).
+
 ### Game geometry-mode command helper byte-matched
 
 - `func_15142B7C` retains its two cached-mode gates but now emits the clear and
