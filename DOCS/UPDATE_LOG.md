@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game attachment-state transition byte-matched
+
+- `func_15074664` now uses the retail shared-store control flow: state-one
+  entry calls `func_10011FDC(5)`, state-one exit calls `func_10011FDC(0)`,
+  and the potentially reloaded attachment receives the requested state byte.
+- Treating the prior state byte as unsigned and joining the final assignment
+  reduces the raw compile from 37 words to the exact 35-word retail slot. The
+  complete routine emits directly from semantic C without guards.
+- The refreshed matcher reports **3,201 / 5,456 (58.67%)** overall and
+  **2,533 / 4,788 (52.90%)** in Game, with zero address drift and 2,255
+  different C rows. See
+  [Working Note 695](WORKING_NOTES/695-game-attachment-state-transition-match-20261002.md).
+
 ### Game trigonometric lookup byte-matched
 
 - `func_150489B0` replaces its zero-return placeholder with the byte-angle

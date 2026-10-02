@@ -1870,21 +1870,18 @@ void func_15074644(void) {
 }
 
 void func_15074664(void) {
-    struct126 *temp_v1;
+    struct126 *attached;
 
-    if (D_800D154C->unk31C != NULL) {
-        temp_v1 = D_800D154C->unk31C;
+    attached = D_800D154C->unk31C;
+    if (attached != NULL) {
         if (D_800D1580 == 1) {
             func_10011FDC(5);
-            temp_v1 = D_800D154C->unk31C;
-            temp_v1->unk94 = D_800D1580;
-        } else {
-            if (temp_v1->unk94 == 1) {
-                func_10011FDC(0);
-                temp_v1 = D_800D154C->unk31C;
-            }
-            temp_v1->unk94 = D_800D1580;
+            attached = D_800D154C->unk31C;
+        } else if ((u8)attached->unk94 == 1) {
+            func_10011FDC(0);
+            attached = D_800D154C->unk31C;
         }
+        attached->unk94 = D_800D1580;
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_150746F0.s. */

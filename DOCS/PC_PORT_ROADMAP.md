@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,200 / 5,456 (58.65%) | 0 | 2,256 |
+| Total | 5,456 / 6,041 (90.32%) | 3,201 / 5,456 (58.67%) | 0 | 2,255 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,532 / 4,788 (52.88%) | 0 | 2,256 |
+| Game | 4,788 / 5,321 (89.98%) | 2,533 / 4,788 (52.90%) | 0 | 2,255 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game attachment-state transition callback `func_15074664` now matches all
+35 retail words directly from C. Its unsigned prior-state test and shared
+final assignment restore the state-one entry/exit callback behavior while
+eliminating the previous two-word overflow. See
+[Working Note 695](WORKING_NOTES/695-game-attachment-state-transition-match-20261002.md).
 
 The Game trigonometric lookup `func_150489B0` now matches all 36 retail words.
 It restores the four quadrant-table ranges and signed reflections; five

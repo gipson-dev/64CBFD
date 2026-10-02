@@ -33,6 +33,8 @@ No fresh gameplay run was performed. This checkpoint is semantic recovery,
 coupled-slot object comparison, two complete stale-guard rebuilds, full-link,
 and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 35-word `func_15074664`. Keep
+The next checkpoint completed 35-word `func_15074664`; see
+[Working Note 695](695-game-attachment-state-transition-match-20261002.md).
+Resume the ordinary small-Game queue with 36-word `func_15080C64`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

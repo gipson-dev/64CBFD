@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,200 / 5,456 (58.65%) | 0 | 2,256 |
+| Total | 3,201 / 5,456 (58.67%) | 0 | 2,255 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,532 / 4,788 (52.88%) | 0 | 2,256 |
+| Game | 2,533 / 4,788 (52.90%) | 0 | 2,255 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game attachment-state transition callback `func_15074664` now matches all
+35 retail words directly from C. It detects state-one entry and exit, invokes
+`func_10011FDC` with `5` or `0`, reloads the potentially changed attachment,
+and writes the requested state byte. An unsigned state comparison and one
+shared final assignment reduce the former 37-word overflow to retail's exact
+slot without guards. See
+[Working Note 695](WORKING_NOTES/695-game-attachment-state-transition-match-20261002.md).
 
 The Game trigonometric lookup `func_150489B0` now matches all 36 retail words.
 It restores the four quadrant ranges, reflected table indexes, and signs for
