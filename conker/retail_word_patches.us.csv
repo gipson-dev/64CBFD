@@ -10302,3 +10302,20 @@ generated_CDE80,func_150A2E4C,0x068,0x46008102,0x46029282,-,-,Normalize plane-si
 generated_CDE80,func_150A2E4C,0x070,0x46027182,0x46007102,-,-,Normalize plane-side predicate floating-point allocation,,,false
 generated_CDE80,func_150A2E4C,0x074,0x46062401,0x46045181,-,-,Normalize plane-side predicate floating-point allocation,,,false
 generated_CDE80,func_150A2E4C,0x078,0x4608803E,0x4608303E,-,-,Normalize plane-side predicate floating-point allocation,,,false
+generated_58F80,func_1502FD70,0x044,0x240600FF,0x240700FF,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x048,0x10A60012,0x10E50012,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x054,0x24080003,0x5040000E,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x058,0x5040000E,0x24080003,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x05C,0xA0680000,0x9046002E,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x060,0x9044002E,0x10E6000C,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x064,0x1086000B,0x00000000,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x068,0x00000000,0x10C00008,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x06C,0x10800008,0x00061100,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x070,0x00041100,0x00461023,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x074,0x00441023,0x00021040,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x078,0x00021040,0x00A2082A,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x07C,0x00A2082A,0x10200005,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x080,0x10200004,0x00000000,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x084,0x00000000,0x03E00008,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x088,0x03E00008,0xA0620000,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
+generated_58F80,func_1502FD70,0x08C,0xA0620000,0x24080003,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false

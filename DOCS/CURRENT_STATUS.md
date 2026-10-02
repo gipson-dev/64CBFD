@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,221 / 5,456 (59.04%) | 0 | 2,235 |
+| Total | 3,222 / 5,456 (59.05%) | 0 | 2,234 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,553 / 4,788 (53.32%) | 0 | 2,235 |
+| Game | 2,554 / 4,788 (53.34%) | 0 | 2,234 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game slot-state updater `func_1502FD70` now matches all 40 retail words.
+It restores the category-`0x1D` fast path, byte-state sentinel handling,
+optional-object fallback, and scaled state increase. Correcting `D_800D2040`
+to its byte-array contract restores the indexed accesses; seventeen
+expected-word guards normalize only IDO sentinel allocation and fallback
+scheduling. See
+[Working Note 714](WORKING_NOTES/714-game-slot-state-updater-match-20261002.md).
 
 The Game configurable randomized record spawner `func_1500F9D0` now matches all
 37 retail words directly from C. It shares the random type and fixed allocation

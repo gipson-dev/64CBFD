@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,221 / 5,456 (59.04%) | 0 | 2,235 |
+| Total | 5,456 / 6,041 (90.32%) | 3,222 / 5,456 (59.05%) | 0 | 2,234 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,553 / 4,788 (53.32%) | 0 | 2,235 |
+| Game | 4,788 / 5,321 (89.98%) | 2,554 / 4,788 (53.34%) | 0 | 2,234 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game slot-state updater `func_1502FD70` now matches all 40 retail words.
+It restores category-specific state publication, sentinel preservation,
+optional-object fallback, and scaled state updates. Seventeen expected-word
+guards normalize compiler scheduling only. See
+[Working Note 714](WORKING_NOTES/714-game-slot-state-updater-match-20261002.md).
 
 The Game configurable randomized record spawner `func_1500F9D0` now matches all
 37 retail words directly from C. It restores the five-argument variant of the

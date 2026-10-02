@@ -31,7 +31,9 @@ overall byte-exact C progress is `3,221 / 5,456 (59.04%)`. Init remains
 `487 / 487 (100.00%)` and Debugger remains `181 / 181 (100.00%)`.
 `make tools-check` also passes. No fresh gameplay run was performed.
 
-Resume the ordinary small-Game queue with 40-word `func_1502FD70`, currently
-at 35 real differences. Keep `func_15015F40` parked behind unresolved
+`func_1502FD70` is now matched and documented in
+[Working Note 714](714-game-slot-state-updater-match-20261002.md). Resume the
+ordinary small-Game queue with 35-word `func_1503D484`, currently at 35 real
+differences. Keep `func_15015F40` parked behind unresolved
 indirect-table ownership and `func_150A76F0` in the handwritten
 register-contract workstream.

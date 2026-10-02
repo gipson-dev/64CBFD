@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game slot-state updater byte-matched
+
+- `func_1502FD70` replaces its zero-return placeholder with the per-slot byte
+  state update used by category `0x1D` and optional attached objects.
+- Correcting `D_800D2040` to its 187-byte array contract restores bytewise
+  indexing. Seventeen expected-word guards normalize the compiler's sentinel
+  allocation and fallback schedule; no relocations, insertions, omissions, or
+  profile override are required.
+- The refreshed matcher reports **3,222 / 5,456 (59.05%)** overall and
+  **2,554 / 4,788 (53.34%)** in Game, with zero address drift and 2,234
+  different C rows. See
+  [Working Note 714](WORKING_NOTES/714-game-slot-state-updater-match-20261002.md).
+
 ### Game configurable randomized record spawner byte-matched
 
 - `func_1500F9D0` replaces its zero-return placeholder with the five-argument

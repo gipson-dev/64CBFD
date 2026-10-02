@@ -1141,7 +1141,7 @@ extern s32 D_800D1998;
 extern s32 D_800D19A0;
 extern struct124 *D_800D1C90[187]; // 748 bytes, 187 pointers? 17 structs?
 extern s32 D_800D1F80[187]; // 187 bytes long
-extern s32 D_800D2040[187]; // 187 bytes long
+extern u8 D_800D2040[187];
 extern struct258 *D_800D20FC;
 
 extern s32 *D_800D2104;

@@ -8,6 +8,9 @@ extern u16 D_800C3E7A;
 extern u8 D_800C3E90;
 extern u16 D_800C4ED0[];
 extern u8 D_800CC33A[];
+extern u8 D_80038080;
+extern s32 D_800BE9F0;
+extern u8 D_800D2040[];
 
 /* Non-matching placeholders for the text-only asm slice asm/58F80.s. */
 
@@ -202,6 +205,44 @@ s32 func_1502FBE8() {
     return 0;
 }
 
-s32 func_1502FD70() {
-    return 0;
+// Matched with guarded sentinel allocation and fallback scheduling.
+void func_1502FD70(u8 *arg0) {
+    u8 index = arg0[4];
+    u8 *state;
+    s32 state_value;
+    u8 *object;
+    s32 object_value;
+    s32 sentinel;
+    s32 scaled;
+
+    if ((D_80038080 == 0) && (D_800BE9F0 == 0x1D)) {
+        D_800D2040[index] = 2;
+        return;
+    }
+
+    state = &D_800D2040[index];
+    state_value = *state;
+    sentinel = 0xFF;
+    if (state_value != sentinel) {
+        object = *(u8 **)(arg0 + 0x144);
+        if (object == NULL) {
+            scaled = 3;
+        } else {
+            object_value = object[0x2E];
+            if (object_value == sentinel) {
+                return;
+            }
+            if (object_value == 0) {
+                scaled = 3;
+            } else {
+                scaled = object_value * 30;
+                if (state_value < scaled) {
+                    *state = scaled;
+                    return;
+                }
+                return;
+            }
+        }
+        *state = scaled;
+    }
 }
