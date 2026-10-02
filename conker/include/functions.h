@@ -873,7 +873,7 @@ s32  func_16001B8C(u8 *arg0, u8 *arg1, u32 arg2);
 void func_10001194(s32 arg0);
 void func_10001420(void);
 void func_100014C4(s32 arg0);
-void func_10001550(void *arg0, u8 arg1);
+void func_10001550(struct246 *arg0, u8 arg1);
 // s16  func_100019F0(s16 *arg0, struct05 *arg1);
 //func_10001AA8
 // s32  func_100020D0(s32 *arg0, s32 arg1, s32 *arg2, s32 arg3);

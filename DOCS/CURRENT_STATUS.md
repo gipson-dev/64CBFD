@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,158 / 5,456 (57.88%) | 0 | 2,298 |
-| Init | 475 / 487 (97.54%) | 0 | 12 |
+| Total | 3,159 / 5,456 (57.90%) | 0 | 2,297 |
+| Init | 476 / 487 (97.74%) | 0 | 11 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init SDK floating-point formatter `func_10001550` now matches its complete
+296-word retail span. It restores `%f`, `%e`, `%E`, `%g`, and `%G` conversion,
+including special values, decimal scaling, digit generation, and rounding.
+The semantic C preserves retail's exact extent and control flow; 176
+stale-checked rows, including 10 relocation-aware rows, normalize the closed
+IDO allocation and frame-layout difference. See
+[Working Note 661](WORKING_NOTES/661-init-sdk-float-formatter-match-20261001.md).
 
 The Init audio channel updater `func_1000D2F8` now matches its complete
 280-word retail span. It restores pending-sequence changes, child-channel

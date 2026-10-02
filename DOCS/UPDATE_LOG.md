@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init SDK float formatter byte-matched
+
+- `func_10001550` now replaces its empty placeholder with the recovered SDK
+  `_Ldtob` algorithm for `%f`, `%e`, `%E`, `%g`, and `%G` conversions.
+- The 296-word semantic body restores NaN/Inf handling, decimal power scaling,
+  eight-digit chunk generation, significant-digit selection, and rounding.
+  One hundred seventy-six scoped, stale-checked rows, including 10
+  relocation-aware rows, normalize the remaining IDO allocation and frame
+  layout while retaining the exact control flow and calls.
+- Direct comparison reports zero differences across all 1,184 bytes. Both
+  spans share SHA-256
+  `fade94f3c21abd93ef6e80ac921e889a4577d4e9cd7e0180f0c21dbf37bdcd2b`.
+  Totals are **3,159 / 5,456 (57.90%)** overall and
+  **476 / 487 (97.74%)** in Init, with zero address drift and 11 different
+  Init C rows. See
+  [Working Note 661](WORKING_NOTES/661-init-sdk-float-formatter-match-20261001.md).
+
 ### Init audio channel updater byte-matched
 
 - `func_1000D2F8` now replaces its zero-return placeholder with the complete

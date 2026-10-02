@@ -2848,9 +2848,9 @@ typedef struct {
 } Header2; // size 0xC
 
 typedef struct {
-    u8  pad0[0x8];
-    u8 *unk8; // ptr?
-    u8  unkC[0x4];
+    f64 unk0;
+    u8 *unk8;
+    s32 unkC;
     s32 unk10;
     s32 unk14;
     s32 unk18;
@@ -2858,7 +2858,7 @@ typedef struct {
     s32 unk20;
     s32 unk24;
     s32 unk28;
-    u8  unk2C[0x4];
+    s32 unk2C;
     s32 unk30;
 } struct246;
 

@@ -1,10 +1,13 @@
 #include <ultra64.h>
+#include "stdlib.h"
+#include "string.h"
 
 #include "functions.h"
 #include "variables.h"
 
 /* Generated placeholder declarations. */
 s32 func_10001AA8();
+s16 func_100019F0(s16 *arg0, struct05 *arg1);
 /* End generated placeholder declarations. */
 
 /* Original handwritten memory-clear loop. */
@@ -41,9 +44,131 @@ void func_100014C4(s32 arg0) {
     __osRestoreInt(saveMask);
 }
 
-// this is a loopy mutha. contains delay slot so insert nop after .L1000183C
-/* Non-matching C placeholders for asm/nonmatchings/init_1420/func_10001550.s. */
-void func_10001550(void *arg0, u8 arg1) {
+void func_10001550(struct246 *arg0, u8 arg1) {
+    u8 buf[0x20];
+    u8 *ptr;
+    f64 val;
+    volatile f64 zero2;
+    s32 err;
+    s16 nsig;
+    f32 zero;
+    f32 one;
+
+    {
+    s16 exp;
+    ptr = buf;
+    val = arg0->unk0;
+    zero = 0;
+    one = 1;
+    zero2 = zero;
+    if (arg0->unk24 < 0) {
+        arg0->unk24 = 6;
+    } else if (arg0->unk24 == 0 && (arg1 == 'g' || arg1 == 'G')) {
+        arg0->unk24 = 1;
+    }
+    err = func_100019F0(&exp, (struct05 *)arg0);
+    if (err > 0) {
+        memcpy(arg0->unk8, (err == 2) ? D_8002BF68 : D_8002BF6C,
+               arg0->unk14 = 3);
+        return;
+    }
+    if (err == 0) {
+        nsig = 0;
+        exp = 0;
+    } else {
+        {
+            s32 i;
+            s32 n;
+
+            if (val < zero) {
+                val = -val;
+            }
+            exp = exp * 30103 / 0x000186A0 - 4;
+            if (exp < 0) {
+                n = (3 - exp) & ~3;
+                exp = -n;
+                for (i = 0; n > 0; n >>= 1, i++) {
+                    if ((n & 1) != 0) {
+                        val *= D_8002BF20[i];
+                    }
+                }
+            } else if (exp > 0) {
+                f64 factor = one;
+
+                exp &= ~3;
+                for (n = exp, i = 0; n > 0; n >>= 1, i++) {
+                    if ((n & 1) != 0) {
+                        factor *= D_8002BF20[i];
+                    }
+                }
+                val /= factor;
+            }
+        }
+        {
+            s32 gen;
+            s32 j;
+            s32 lo;
+
+            gen = ((arg1 == 'f') ? exp + 10 : 6) + arg0->unk24;
+            if (gen > 0x13) {
+                gen = 0x13;
+            }
+            *ptr++ = '0';
+            if (gen > 0 && zero < val) {
+                do {
+                    lo = val;
+                    if ((gen -= 8) > 0) {
+                        val = (val - lo) * D_8002BF78;
+                    }
+                    ptr = ptr + 8;
+                    for (j = 8; lo > 0 && --j >= 0;) {
+                        ldiv_t qr = ldiv(lo, 10);
+
+                        *--ptr = qr.rem + '0';
+                        lo = qr.quot;
+                    }
+                    while (--j >= 0) {
+                        ptr--;
+                        *ptr = '0';
+                    }
+                    ptr += 8;
+                } while (gen > 0 && zero2 < val);
+            }
+
+            gen = ptr - &buf[1];
+            for (ptr = &buf[1], exp += 7; *ptr == '0'; ptr++) {
+                --gen, --exp;
+            }
+
+            nsig = ((arg1 == 'f') ? exp + 1 :
+                    ((arg1 == 'e' || arg1 == 'E') ? 1 : 0)) + arg0->unk24;
+            if (gen < nsig) {
+                nsig = gen;
+            }
+            if (nsig > 0) {
+                u8 drop;
+                s32 n2;
+
+                if (nsig < gen && ptr[nsig] > '4') {
+                    drop = '9';
+                } else {
+                    drop = '0';
+                }
+
+                for (n2 = nsig; ptr[--n2] == drop;) {
+                    nsig--;
+                }
+                if (drop == '9') {
+                    ptr[n2]++;
+                }
+                if (n2 < 0) {
+                    --ptr, ++nsig, ++exp;
+                }
+            }
+        }
+    }
+    func_10001AA8(arg0, arg1, ptr, nsig, exp);
+    }
 }
 
 s16 func_100019F0(s16 *arg0, struct05 *arg1) {

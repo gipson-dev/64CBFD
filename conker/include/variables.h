@@ -135,7 +135,11 @@ extern s32  D_8002BD14;
 extern s32  D_8002BD18;
 extern s32  D_8002BD20; // init ok?
 extern s32  D_8002BD60;
+extern f64  D_8002BF20[];
+extern u8   D_8002BF68[];
+extern u8   D_8002BF6C[];
 extern u8   D_8002BF70[];
+extern f64  D_8002BF78;
 
 /* DATA section from D_8002C080 to D_8002D4B0 */
 
