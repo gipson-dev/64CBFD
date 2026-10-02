@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,204 / 5,456 (58.72%) | 0 | 2,252 |
+| Total | 5,456 / 6,041 (90.32%) | 3,205 / 5,456 (58.74%) | 0 | 2,251 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,536 / 4,788 (52.97%) | 0 | 2,252 |
+| Game | 4,788 / 5,321 (89.98%) | 2,537 / 4,788 (52.99%) | 0 | 2,251 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game randomized event-descriptor builder `func_150FFC3C` now matches all
+35 retail words directly from C. It restores the owner gate, randomized
+duration and variant, nested one-hot mask, terminator, and event submission.
+See
+[Working Note 699](WORKING_NOTES/699-game-randomized-event-descriptor-match-20261002.md).
 
 The Game vector-argument forwarding wrapper `func_150E3340` now matches all
 35 retail words directly from C. It restores the duplicated three-word vector,

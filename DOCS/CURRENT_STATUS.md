@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,204 / 5,456 (58.72%) | 0 | 2,252 |
+| Total | 3,205 / 5,456 (58.74%) | 0 | 2,251 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,536 / 4,788 (52.97%) | 0 | 2,252 |
+| Game | 2,537 / 4,788 (52.99%) | 0 | 2,251 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game randomized event-descriptor builder `func_150FFC3C` now matches all
+35 retail words directly from C. When the nested owner exists, it constructs
+the seven-byte duration, variant, one-hot mask, and terminator record before
+submitting it through `func_151D8868`. The semantic byte-array form reproduces
+the complete branch and call schedule without guards. See
+[Working Note 699](WORKING_NOTES/699-game-randomized-event-descriptor-match-20261002.md).
 
 The Game vector-argument forwarding wrapper `func_150E3340` now matches all
 35 retail words directly from C. It duplicates a three-word vector into the

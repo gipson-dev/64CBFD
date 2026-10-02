@@ -6,8 +6,10 @@ void func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
 /* Non-matching placeholders for the text-only asm slice asm/12C1E0.s. */
 
 s32 func_1503195C();
+s32 func_150ADA20(void);
 s32 func_151D3E6C();
 s32 func_151D5A18();
+void func_151D8868(void *, s32, s32, s32);
 extern s32 D_8008FC8C;
 extern u8 *D_8008FC94;
 extern f32 D_800A211C;
@@ -58,8 +60,17 @@ void func_150FFB6C(f32 *arg0, s32 arg1, u8 *arg2, s32 arg3) {
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_12C1E0/func_150FFBDC.s")
 
 
-s32 func_150FFC3C() {
-    return 0;
+void func_150FFC3C(u8 *arg0) {
+    s8 sp18[7];
+
+    if (*(s32 *)(arg0 + 0x318) != 0) {
+        sp18[0] = 1;
+        *(s16 *)&sp18[2] = (func_150ADA20() % 11U) + 20;
+        sp18[5] = 1 << *(u8 *)(*(s32 *)(arg0 + 0x318) + 0x23D);
+        sp18[4] = (func_150ADA20() & 1) + 7;
+        sp18[6] = -1;
+        func_151D8868(sp18, 0, 0xFF, 1);
+    }
 }
 
 s32 func_150FFCC8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {

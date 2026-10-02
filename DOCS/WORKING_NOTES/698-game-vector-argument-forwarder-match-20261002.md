@@ -28,6 +28,7 @@ remains `181 / 181 (100.00%)`.
 No fresh gameplay run was performed. This checkpoint is semantic recovery,
 focused-object comparison, full-link, and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 35-word `func_150FFC3C`. Keep
+Continue from [Working Note 699](699-game-randomized-event-descriptor-match-20261002.md),
+then resume the ordinary small-Game queue with 36-word `func_150C7350`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

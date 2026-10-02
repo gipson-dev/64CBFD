@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game randomized event descriptor byte-matched
+
+- `func_150FFC3C` replaces its zero-return placeholder with the nested-owner
+  gate and seven-byte event descriptor containing a randomized duration,
+  randomized variant, one-hot owner mask, and `-1` terminator.
+- All 35 retail words emit directly from semantic C without guards or a
+  compiler-profile override. The byte-array representation and source write
+  order reproduce both random calls, pointer reload, branch-likely exit, and
+  descriptor submission schedule.
+- The refreshed matcher reports **3,205 / 5,456 (58.74%)** overall and
+  **2,537 / 4,788 (52.99%)** in Game, with zero address drift and 2,251
+  different C rows. See
+  [Working Note 699](WORKING_NOTES/699-game-randomized-event-descriptor-match-20261002.md).
+
 ### Game vector-argument forwarder byte-matched
 
 - `func_150E3340` replaces its zero-return placeholder with the forwarding call
