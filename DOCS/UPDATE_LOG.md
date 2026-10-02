@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game path-count pointer contract byte-matched
+
+- Corrected `D_800D2108` from an inline byte-array declaration to the
+  pointer-owned path-count table used by retail.
+- That shared contract makes `func_150778F0` and `func_1507A528` byte-exact
+  across all 46 and 62 words directly from semantic C. No expected-word guards
+  or compiler-profile overrides are required.
+- The refreshed matcher reports **3,216 / 5,456 (58.94%)** overall and
+  **2,548 / 4,788 (53.22%)** in Game, with zero address drift and 2,240
+  different C rows. See
+  [Working Note 708](WORKING_NOTES/708-game-path-count-pointer-contract-match-20261002.md).
+
 ### Game randomized-step callback byte-matched
 
 - `func_1518F7C4` replaces its zero-return placeholder with the randomized

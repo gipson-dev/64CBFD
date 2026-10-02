@@ -793,7 +793,7 @@ s32 func_15077508() {
     return 0;
 }
 
-// NON-MATCHING: close but not there yet
+// Matches after recovering D_800D2108 as a pointer-owned path-count table.
 void func_150778F0(void) {
     u8 temp_t9;
 
@@ -1593,7 +1593,7 @@ void func_1507A4D4(void) {
     D_800D154C->unk94 |= mask;
 }
 
-// NON-MATCHING: 99% there..
+// Matches after recovering D_800D2108 as a pointer-owned path-count table.
 void func_1507A528(void) {
     s32 phi_a0;
     s32 temp_a1;

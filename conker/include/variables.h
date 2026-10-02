@@ -1145,7 +1145,7 @@ extern s32 D_800D2040[187]; // 187 bytes long
 extern struct258 *D_800D20FC;
 
 extern s32 *D_800D2104;
-extern u8  D_800D2108[];
+extern u8 *D_800D2108;
 extern s16 *D_800D2110;
 extern s32 D_800D2120;
 extern s32 D_800D2124;

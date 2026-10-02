@@ -38,7 +38,10 @@ No fresh gameplay run was performed. This checkpoint is semantic recovery,
 focused-object disassembly, exhaustive build, and linked-byte comparison
 evidence.
 
-Resume the ordinary small-Game queue with 62-word `func_1507A528`, currently
-at 34 real differences. Keep `func_15015F40` parked behind unresolved
+Continue from
+[Working Note 708](708-game-path-count-pointer-contract-match-20261002.md),
+which matches `func_150778F0` and `func_1507A528`. Resume the ordinary
+small-Game queue with 38-word `func_150A2E4C`, currently at 34 real
+differences. Keep `func_15015F40` parked behind unresolved
 indirect-table ownership and `func_150A76F0` in the handwritten
 register-contract workstream.

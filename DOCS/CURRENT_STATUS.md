@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,214 / 5,456 (58.91%) | 0 | 2,242 |
+| Total | 3,216 / 5,456 (58.94%) | 0 | 2,240 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,546 / 4,788 (53.17%) | 0 | 2,242 |
+| Game | 2,548 / 4,788 (53.22%) | 0 | 2,240 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game path-state routines `func_150778F0` and `func_1507A528` now match all
+46 and 62 retail words directly from C. Correcting `D_800D2108` from inline
+byte storage to a pointer-owned path-count table restores their missing load,
+register allocation, wrapping, and directional state-update schedules without
+guards. See
+[Working Note 708](WORKING_NOTES/708-game-path-count-pointer-contract-match-20261002.md).
 
 The Game randomized-step callback `func_1518F7C4` now matches all 37 retail
 words. It accumulates a timestep-scaled randomized delta, performs the object

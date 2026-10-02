@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game randomized-step callback matched).**
-The current linked checkpoint is `3214 / 5456 (58.91%)` exact C functions,
-with no address-drift blockers and 2,242 genuinely different C functions.
+**Active (2026-10-02, Game path-count pointer contract matched).**
+The current linked checkpoint is `3216 / 5456 (58.94%)` exact C functions,
+with no address-drift blockers and 2,240 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2546 / 4788 (53.17%)` exact, with 2,242 genuinely different C rows. The tree
+`2548 / 4788 (53.22%)` exact, with 2,240 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -189,8 +189,10 @@ status contract, structured position copy, separate float store, and wrapped
 write cursor; four guards normalize only its closed exit schedule.
 Randomized-step callback `func_1518F7C4` now matches all 37 words after
 recovering its randomized timestep accumulation and signed callback dispatch;
-22 guarded rows normalize the closed IDO frame and scheduling layout. Resume
-with 62-word `func_1507A528`; keep
+22 guarded rows normalize the closed IDO frame and scheduling layout.
+Path-state routines `func_150778F0` and `func_1507A528` now match all 46 and
+62 words directly after recovering `D_800D2108` as a pointer-owned path-count
+table. Resume with 38-word `func_150A2E4C`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -257,6 +259,8 @@ The position-sample ring recorder is recorded in
 [Working Note 706](WORKING_NOTES/706-game-position-sample-ring-recorder-match-20261002.md).
 The randomized-step callback is recorded in
 [Working Note 707](WORKING_NOTES/707-game-randomized-step-callback-match-20261002.md).
+The path-count pointer contract is recorded in
+[Working Note 708](WORKING_NOTES/708-game-path-count-pointer-contract-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and
