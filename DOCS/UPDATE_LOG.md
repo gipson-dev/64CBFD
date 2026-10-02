@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game delta-intensity limiter byte-matched
+
+- `func_150BA424` replaces its zero-return placeholder with the negative-delta
+  gate, capped actor and distance intensity candidates, and minimum-byte store.
+- The complete 39-word routine emits directly from semantic C. No expected-word
+  guards, checked insertions or omissions, relocations, or profile override are
+  required.
+- The refreshed matcher reports **3,218 / 5,456 (58.98%)** overall and
+  **2,550 / 4,788 (53.26%)** in Game, with zero address drift and 2,238
+  different C rows. See
+  [Working Note 710](WORKING_NOTES/710-game-delta-intensity-limiter-match-20261002.md).
+
 ### Game plane-side predicate byte-matched
 
 - `func_150A2E4C` replaces its zero-return placeholder with the signed-origin

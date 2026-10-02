@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,217 / 5,456 (58.96%) | 0 | 2,239 |
+| Total | 5,456 / 6,041 (90.32%) | 3,218 / 5,456 (58.98%) | 0 | 2,238 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,549 / 4,788 (53.24%) | 0 | 2,239 |
+| Game | 4,788 / 5,321 (89.98%) | 2,550 / 4,788 (53.26%) | 0 | 2,238 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game delta-intensity limiter `func_150BA424` now matches all 39 retail
+words directly from C. It restores the negative-delta rejection, two capped
+intensity candidates, and minimum-byte publication without guards. See
+[Working Note 710](WORKING_NOTES/710-game-delta-intensity-limiter-match-20261002.md).
 
 The Game plane-side predicate `func_150A2E4C` now matches all 38 retail words.
 It restores the signed-origin conversion and non-positive plane test; twenty

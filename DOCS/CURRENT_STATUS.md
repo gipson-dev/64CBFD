@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,217 / 5,456 (58.96%) | 0 | 2,239 |
+| Total | 3,218 / 5,456 (58.98%) | 0 | 2,238 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,549 / 4,788 (53.24%) | 0 | 2,239 |
+| Game | 2,550 / 4,788 (53.26%) | 0 | 2,238 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game delta-intensity limiter `func_150BA424` now matches all 39 retail
+words directly from C. It rejects a negative float delta, derives and caps two
+scaled intensity candidates, writes their minimum to byte field `0x5C`, and
+retains retail's unsigned-byte result check. No expected-word guards or
+compiler-profile override are required. See
+[Working Note 710](WORKING_NOTES/710-game-delta-intensity-limiter-match-20261002.md).
 
 The Game plane-side predicate `func_150A2E4C` now matches all 38 retail words.
 It converts the signed origin coordinates, evaluates the plane expression, and
