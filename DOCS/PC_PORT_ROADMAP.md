@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,230 / 5,456 (59.20%) | 0 | 2,226 |
+| Total | 5,456 / 6,041 (90.32%) | 3,231 / 5,456 (59.22%) | 0 | 2,225 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,562 / 4,788 (53.51%) | 0 | 2,226 |
+| Game | 4,788 / 5,321 (89.98%) | 2,563 / 4,788 (53.53%) | 0 | 2,225 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game actor water-state flag transition `func_150DF820` now matches its
+complete 40-word slot. It restores the staged flag writes, attached-actor
+water test, 750-unit state value, and dry-state dispatch. Sixteen guarded
+words normalize only IDO's integer-register allocation. See
+[Working Note 723](WORKING_NOTES/723-game-actor-water-state-flag-transition-match-20261002.md).
 
 The Game selector/vector output initializer `func_150B060C` now matches all
 41 retail words directly from C. It restores selector lookup, failure return,

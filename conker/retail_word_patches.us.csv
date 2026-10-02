@@ -10357,3 +10357,19 @@ generated_B3020,func_15086BD0,0x040,0x84490002,0x84CA0002,-,-,Normalize sentinel
 generated_B3020,func_15086BD0,0x058,0x84CD0004,0x846C0004,-,-,Normalize sentinel-gated coordinate distance schedule,,,false
 generated_B3020,func_15086BD0,0x05C,0x844C0004,0x84CD0004,-,-,Normalize sentinel-gated coordinate distance schedule,,,false
 generated_B3020,func_15086BD0,0x090,0x00000000,0x00000000,-,-,Retain duplicate coordinate distance return,0x03E00008,-,false
+generated_10CCD0,func_150DF820,0x008,0x8C820084,0x8C8E0084,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x010,0x8C8803D0,0x8C8A03D0,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x014,0x00417024,0x01C17824,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x018,0x35CF0004,0x35F90004,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x01C,0xAC8E0084,0xAC8F0084,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x024,0xAC8F0084,0xAC990084,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x028,0x01E1C024,0x03214824,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x02C,0xAC980084,0xAC890084,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x030,0x910900AD,0x914B00AD,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x034,0x37191010,0x352D1010,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x03C,0x11200009,0x11600009,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x048,0x03211024,0x01A17824,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x04C,0xAC990084,0xAC8D0084,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x050,0xAC820084,0xAC8F0084,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x06C,0x240B0003,0x24180003,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_10CCD0,func_150DF820,0x084,0xA48B01B4,0xA49801B4,-,-,Normalize actor water-state flag transition register allocation,,,false

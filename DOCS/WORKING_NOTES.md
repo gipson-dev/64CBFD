@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game selector/vector output initializer matched).**
-The current linked checkpoint is `3230 / 5456 (59.20%)` exact C functions,
-with no address-drift blockers and 2,226 genuinely different C functions.
+**Active (2026-10-02, Game actor water-state flag transition matched).**
+The current linked checkpoint is `3231 / 5456 (59.22%)` exact C functions,
+with no address-drift blockers and 2,225 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2562 / 4788 (53.51%)` exact, with 2,226 genuinely different C rows. The tree
+`2563 / 4788 (53.53%)` exact, with 2,225 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -234,8 +234,11 @@ switch to `jtbl_800966C0_game` without guards. Keep handwritten
 `func_150A76F0` in the raw-assembly workstream. Selector/vector output
 initializer `func_150B060C` now matches all 41 words directly from semantic C
 after recovering its pointer-bearing output record and exact record-load
-lifetime. Resume the ordinary queue with 40-word `func_150DF820`, currently
-at 35 real differences.
+lifetime. Actor water-state flag transition `func_150DF820` now matches its
+complete 40-word slot after recovering its staged flag stores, attached-actor
+water test, and 750-unit state transition. Sixteen guarded words normalize
+one closed register-allocation chain. Resume the ordinary queue with 36-word
+`func_150F4D5C`, currently at 35 real differences.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
 followed by
@@ -331,6 +334,8 @@ The special-event mode dispatcher is recorded in
 [Working Note 721](WORKING_NOTES/721-game-special-event-mode-dispatch-match-20261002.md).
 The selector/vector output initializer is recorded in
 [Working Note 722](WORKING_NOTES/722-game-selector-vector-output-initializer-match-20261002.md).
+The actor water-state flag transition is recorded in
+[Working Note 723](WORKING_NOTES/723-game-actor-water-state-flag-transition-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

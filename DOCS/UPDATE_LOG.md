@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game actor water-state flag transition byte-matched
+
+- `func_150DF820` replaces its zero-return placeholder with the staged actor
+  flag transition, attached-actor water test, 750-unit state publication, and
+  dry-state callback dispatch.
+- The 38-word active body and two padding words preserve retail's frame,
+  offsets, branches, delay slots, and relocations. Sixteen guarded words
+  normalize one closed integer-register allocation chain.
+- The refreshed matcher reports **3,231 / 5,456 (59.22%)** overall and
+  **2,563 / 4,788 (53.53%)** in Game, with zero address drift and 2,225
+  different C rows. See
+  [Working Note 723](WORKING_NOTES/723-game-actor-water-state-flag-transition-match-20261002.md).
+
 ### Game selector/vector output initializer byte-matched
 
 - `func_150B060C` replaces its zero-return placeholder with selector lookup,

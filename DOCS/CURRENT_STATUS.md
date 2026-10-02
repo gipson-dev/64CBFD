@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,230 / 5,456 (59.20%) | 0 | 2,226 |
+| Total | 3,231 / 5,456 (59.22%) | 0 | 2,225 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,562 / 4,788 (53.51%) | 0 | 2,226 |
+| Game | 2,563 / 4,788 (53.53%) | 0 | 2,225 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game actor water-state flag transition `func_150DF820` now matches its
+complete 40-word slot. It retains the staged actor-flag writes, tests the
+attached actor's `in_water` byte, publishes the 750-unit state value, and
+dispatches the dry-state transition when that value is already active.
+Sixteen guarded words normalize one closed integer-register allocation chain.
+See
+[Working Note 723](WORKING_NOTES/723-game-actor-water-state-flag-transition-match-20261002.md).
 
 The Game selector/vector output initializer `func_150B060C` now matches all
 41 retail words directly from C. It stores the selector lookup, returns zero
