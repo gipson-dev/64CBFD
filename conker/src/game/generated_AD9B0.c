@@ -3,6 +3,7 @@
 
 extern u8 D_800BE580[];
 extern u8 D_800D1941;
+extern u8 *D_800D199C;
 
 /* Non-matching placeholders for the text-only asm slice asm/AD9B0.s. */
 
@@ -85,8 +86,24 @@ void func_15080BE8(void) {
     func_151F2D6C(0, 0x5622);
 }
 
-s32 func_15080C64() {
-    return 0;
+void func_15080C64(void) {
+    if (D_800D1941 == 0) {
+        return;
+    }
+
+    if (((u8 *)D_800D1950)[0x15] != 0) {
+        return;
+    }
+
+    func_15080BE8();
+    if ((D_800BE9F0 != 0x29) && (D_800BE9F0 != 0x2E)) {
+        D_800D2E60[8] |= 0x10;
+    }
+
+    if (D_800D199C != NULL) {
+        D_800D199C[0x14] = 1;
+        D_800D199C = NULL;
+    }
 }
 
 s32 func_15080CF4(void) {

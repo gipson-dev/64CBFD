@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game attachment-state transition matched).**
-The current linked checkpoint is `3201 / 5456 (58.67%)` exact C functions,
-with no address-drift blockers and 2,255 genuinely different C functions.
+**Active (2026-10-02, Game resource-teardown finalizer matched).**
+The current linked checkpoint is `3202 / 5456 (58.69%)` exact C functions,
+with no address-drift blockers and 2,254 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2533 / 4788 (52.90%)` exact, with 2,255 genuinely different C rows. The tree
+`2534 / 4788 (52.92%)` exact, with 2,254 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -160,8 +160,11 @@ words. Trigonometric lookup `func_150489B0` now matches all 36 words with five
 indexing guards; seven additional guards retain adjacent `func_15048A40` after
 the callee contract correction. Attachment-state transition callback
 `func_15074664` now matches all 35 words directly from C after joining its
-final store and making the prior-state comparison unsigned. Resume with
-36-word `func_15080C64`; keep
+final store and making the prior-state comparison unsigned. Resource-teardown
+finalizer `func_15080C64` now matches all 36 words directly
+from C after restoring its
+teardown gates, category flag, and pending-record completion. Resume with
+35-word `func_150CBA30`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -204,6 +207,8 @@ The trigonometric lookup and coupled wrapper are recorded in
 [Working Note 694](WORKING_NOTES/694-game-trigonometric-lookup-match-20261002.md).
 The attachment-state transition callback is recorded in
 [Working Note 695](WORKING_NOTES/695-game-attachment-state-transition-match-20261002.md).
+The resource-teardown finalizer is recorded in
+[Working Note 696](WORKING_NOTES/696-game-resource-teardown-finalizer-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

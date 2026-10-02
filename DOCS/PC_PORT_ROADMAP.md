@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,201 / 5,456 (58.67%) | 0 | 2,255 |
+| Total | 5,456 / 6,041 (90.32%) | 3,202 / 5,456 (58.69%) | 0 | 2,254 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,533 / 4,788 (52.90%) | 0 | 2,255 |
+| Game | 4,788 / 5,321 (89.98%) | 2,534 / 4,788 (52.92%) | 0 | 2,254 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game resource-teardown finalizer `func_15080C64` now matches all 36 retail
+words directly from C. It restores the active/record gates, teardown call,
+category-sensitive global flag, and optional pending-record completion. See
+[Working Note 696](WORKING_NOTES/696-game-resource-teardown-finalizer-match-20261002.md).
 
 The Game attachment-state transition callback `func_15074664` now matches all
 35 retail words directly from C. Its unsigned prior-state test and shared

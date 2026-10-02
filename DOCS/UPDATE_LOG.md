@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game resource-teardown finalizer byte-matched
+
+- `func_15080C64` replaces its zero-return placeholder with the active-state
+  and record-byte gates, `func_15080BE8` teardown, category-sensitive global
+  flag update, and optional pending-record completion/clear.
+- All 36 retail words emit directly from semantic C without guards. Expressing
+  the record-byte test directly from `D_800D1950` recovers retail's temporary
+  register allocation.
+- The refreshed matcher reports **3,202 / 5,456 (58.69%)** overall and
+  **2,534 / 4,788 (52.92%)** in Game, with zero address drift and 2,254
+  different C rows. See
+  [Working Note 696](WORKING_NOTES/696-game-resource-teardown-finalizer-match-20261002.md).
+
 ### Game attachment-state transition byte-matched
 
 - `func_15074664` now uses the retail shared-store control flow: state-one

@@ -31,6 +31,8 @@ No fresh gameplay run was performed. This checkpoint is source-shape
 recovery, raw-object comparison, full-link, and linked-word comparison
 evidence.
 
-Resume the ordinary small-Game queue with 36-word `func_15080C64`. Keep
+The next checkpoint completed 36-word `func_15080C64`; see
+[Working Note 696](696-game-resource-teardown-finalizer-match-20261002.md).
+Resume the ordinary small-Game queue with 35-word `func_150CBA30`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

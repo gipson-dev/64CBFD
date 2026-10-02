@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,201 / 5,456 (58.67%) | 0 | 2,255 |
+| Total | 3,202 / 5,456 (58.69%) | 0 | 2,254 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,533 / 4,788 (52.90%) | 0 | 2,255 |
+| Game | 2,534 / 4,788 (52.92%) | 0 | 2,254 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game resource-teardown finalizer `func_15080C64` now matches all 36 retail
+words directly from C. It gates teardown on the active flag and record state,
+invokes `func_15080BE8`, sets the non-`0x29`/non-`0x2E` global flag, and
+completes and clears an optional pending record. Direct global indexing
+recovers retail's temporary allocation without guards. See
+[Working Note 696](WORKING_NOTES/696-game-resource-teardown-finalizer-match-20261002.md).
 
 The Game attachment-state transition callback `func_15074664` now matches all
 35 retail words directly from C. It detects state-one entry and exit, invokes
