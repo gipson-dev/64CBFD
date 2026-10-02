@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,188 / 5,456 (58.43%) | 0 | 2,268 |
+| Total | 3,189 / 5,456 (58.45%) | 0 | 2,267 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,520 / 4,788 (52.63%) | 0 | 2,268 |
+| Game | 2,521 / 4,788 (52.65%) | 0 | 2,267 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game active-row wrapper `func_1517F4D8` now matches all 35 retail words.
+It returns the incoming handle for inactive timer or mode rows and otherwise
+forwards the indexed three-byte parameter row to `func_1517F08C`. The complete
+routine emits directly from semantic C without guards or profile overrides.
+See [Working Note 683](WORKING_NOTES/683-game-active-row-wrapper-match-20261002.md).
 
 The Game mode dispatcher `func_15170EC4` now matches all 34 retail words after
 restoring its mode-2 and mode-`0x10` parameter sets and low-byte argument

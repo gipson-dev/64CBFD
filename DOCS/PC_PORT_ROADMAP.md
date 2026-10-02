@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,188 / 5,456 (58.43%) | 0 | 2,268 |
+| Total | 5,456 / 6,041 (90.32%) | 3,189 / 5,456 (58.45%) | 0 | 2,267 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,520 / 4,788 (52.63%) | 0 | 2,268 |
+| Game | 4,788 / 5,321 (89.98%) | 2,521 / 4,788 (52.65%) | 0 | 2,267 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game active-row wrapper `func_1517F4D8` now matches all 35 retail words
+directly from semantic C. It preserves inactive handles and dispatches active
+three-byte parameter rows through `func_1517F08C`. See
+[Working Note 683](WORKING_NOTES/683-game-active-row-wrapper-match-20261002.md).
 
 The Game mode dispatcher `func_15170EC4` now matches all 34 retail words
 directly from semantic C. It forwards two fixed parameter sets only for global

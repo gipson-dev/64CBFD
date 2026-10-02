@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game active-row wrapper byte-matched
+
+- `func_1517F4D8` restores its indexed timer and mapped-mode gates, unchanged
+  handle returns for inactive rows, and three-byte parameter-row dispatch to
+  `func_1517F08C`.
+- All 35 retail words emit directly from semantic C without expected-word
+  guards or a compiler-profile override.
+- The refreshed matcher reports **3,189 / 5,456 (58.45%)** overall and
+  **2,521 / 4,788 (52.65%)** in Game, with zero address drift and 2,267
+  different C rows. See
+  [Working Note 683](WORKING_NOTES/683-game-active-row-wrapper-match-20261002.md).
+
 ### Game mode dispatcher byte-matched
 
 - `func_15170EC4` restores the sparse global-mode dispatch to
