@@ -37,6 +37,15 @@ extern u8 D_D16;
 s32 func_151ED1E0(void);
 Gfx *func_151E966C(Gfx *, s32, s32, s8, volatile u8);
 Gfx *func_151E9D18(Gfx *, s32, s32);
+void func_1503F7B8(u8 *);
+
+typedef struct {
+    s32 pad0;
+    s32 entries[4];
+    u8 count;
+    u8 pad15[0xF];
+    u8 *resource;
+} ResourceOwner215960;
 
 /* Non-matching placeholders for the text-only asm slice asm/215960.s. */
 
@@ -827,8 +836,17 @@ s32 func_151ED90C() {
     return 0;
 }
 
-s32 func_151EDB58() {
-    return 0;
+void func_151EDB58(ResourceOwner215960 *arg0) {
+    s32 i;
+
+    if (arg0 != NULL) {
+        func_1503F7B8(arg0->resource);
+        func_100043B4((s32 *)arg0, 4);
+
+        for (i = 0; i < arg0->count; i++) {
+            func_100043B4((s32 *)arg0->entries[i], 4);
+        }
+    }
 }
 
 s32 func_151EDBDC() {

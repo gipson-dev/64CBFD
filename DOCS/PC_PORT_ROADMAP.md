@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,195 / 5,456 (58.56%) | 0 | 2,261 |
+| Total | 5,456 / 6,041 (90.32%) | 3,196 / 5,456 (58.58%) | 0 | 2,260 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,527 / 4,788 (52.78%) | 0 | 2,261 |
+| Game | 4,788 / 5,321 (89.98%) | 2,528 / 4,788 (52.80%) | 0 | 2,260 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game counted resource-owner teardown `func_151EDB58` now matches all 33
+retail words directly from semantic C. It restores the auxiliary-resource,
+owner-allocation, and count-sized pointer-array release sequence without
+expected-word guards. See
+[Working Note 690](WORKING_NOTES/690-game-counted-resource-owner-teardown-match-20261002.md).
 
 The Game event-record matcher `func_151D7538` now matches its complete 35-word
 slot. It handles selector `0x3D` by comparing the embedded object record and

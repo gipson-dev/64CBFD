@@ -27,7 +27,8 @@ overall byte-exact C progress is `3,195 / 5,456 (58.56%)`. Init remains
 No fresh gameplay run was performed. This checkpoint is semantic recovery,
 full-link, stale-guard, and linked-word comparison evidence.
 
-Resume by running a fresh linked-difference scan and selecting the next
-ordinary small-Game function. Keep `func_15015F40` parked behind unresolved
-indirect-table ownership and `func_150A76F0` in the handwritten
-register-contract workstream.
+The fresh linked-difference scan selected `func_151EDB58`, which is now
+complete; see
+[Working Note 690](690-game-counted-resource-owner-teardown-match-20261002.md).
+Keep `func_15015F40` parked behind unresolved indirect-table ownership and
+`func_150A76F0` in the handwritten register-contract workstream.

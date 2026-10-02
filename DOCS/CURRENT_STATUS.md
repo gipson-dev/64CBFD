@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,195 / 5,456 (58.56%) | 0 | 2,261 |
+| Total | 3,196 / 5,456 (58.58%) | 0 | 2,260 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,527 / 4,788 (52.78%) | 0 | 2,261 |
+| Game | 2,528 / 4,788 (52.80%) | 0 | 2,260 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game counted resource-owner teardown `func_151EDB58` now matches all 33
+retail words directly from semantic C. It releases the auxiliary resource and
+owner allocation before walking the owner's count-sized pointer array. The
+frame, saved-register lifetime, branch-likely delay slots, release order, and
+loop schedule require no expected-word guards or compiler-profile override.
+See
+[Working Note 690](WORKING_NOTES/690-game-counted-resource-owner-teardown-match-20261002.md).
 
 The Game event-record matcher `func_151D7538` now matches its complete 35-word
 slot. Selector `0x3D` compares the object's embedded word and tag byte against

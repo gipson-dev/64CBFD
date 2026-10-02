@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game counted resource-owner teardown byte-matched
+
+- `func_151EDB58` replaces its zero-return placeholder with the complete
+  auxiliary-resource release, owner free, and count-sized pointer-array loop.
+- All 33 retail words emit directly from semantic C. The frame, saved
+  registers, release order, branch-likely delay slots, and loop schedule need
+  no expected-word guards or compiler-profile override.
+- The refreshed matcher reports **3,196 / 5,456 (58.58%)** overall and
+  **2,528 / 4,788 (52.80%)** in Game, with zero address drift and 2,260
+  different C rows. See
+  [Working Note 690](WORKING_NOTES/690-game-counted-resource-owner-teardown-match-20261002.md).
+
 ### Game event-record matcher byte-matched
 
 - `func_151D7538` restores selector-`0x3D` word/tag matching and object
