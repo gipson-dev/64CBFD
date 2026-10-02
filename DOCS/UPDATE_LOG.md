@@ -16,6 +16,24 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init sound-record updater byte-matched
+
+- `func_10011624` now replaces its zero-return placeholder with the complete
+  bounded sound-record update pass. It validates stale handles, derives
+  listener-relative volume and pan, runs optional callbacks, creates voices,
+  updates changed parameters, smooths distance-driven pitch, and retires
+  inactive records.
+- The compact semantic body contains 356 words and emits 64 retail words
+  directly. The remaining layout is normalized by 293 stale-checked rows:
+  292 word substitutions, one insertion, and 20 relocation-aware rows.
+- Direct comparison reports zero differences across all 1,428 bytes. Both
+  spans share SHA-256
+  `670591f6d2289fc90f772638ae1d52533acd7ca2cc7d3b659fe6f3db194f7e2f`.
+  Totals are **3,163 / 5,456 (57.97%)** overall and
+  **480 / 487 (98.56%)** in Init, with zero address drift and seven different
+  Init C rows. See
+  [Working Note 665](WORKING_NOTES/665-init-sound-record-updater-match-20261001.md).
+
 ### Init instrument channel loader byte-matched
 
 - `func_1001B7D0` now replaces its zero-return placeholder with the complete

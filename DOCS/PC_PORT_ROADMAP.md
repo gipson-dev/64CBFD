@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,162 / 5,456 (57.95%) | 0 | 2,294 |
-| Init | 487 / 538 (90.52%) | 479 / 487 (98.36%) | 0 | 8 |
+| Total | 5,456 / 6,041 (90.32%) | 3,163 / 5,456 (57.97%) | 0 | 2,293 |
+| Init | 487 / 538 (90.52%) | 480 / 487 (98.56%) | 0 | 7 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,12 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init sound-record updater `func_10011624` now matches all 357 retail
+words. It restores record lifecycle handling, listener-relative sound
+parameters, callback control, voice creation and updates, and pitch smoothing;
+see
+[Working Note 665](WORKING_NOTES/665-init-sound-record-updater-match-20261001.md).
 
 The Init instrument channel loader `func_1001B7D0` now matches all 345 retail
 words directly from C. It restores program-resource replacement, sound

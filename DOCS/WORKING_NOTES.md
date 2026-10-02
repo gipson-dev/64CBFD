@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init instrument channel loader matched).**
-The current linked checkpoint is `3162 / 5456 (57.95%)` exact C functions,
-with no address-drift blockers and 2,294 genuinely different C functions.
+**Active (2026-10-01, Init sound-record updater matched).**
+The current linked checkpoint is `3163 / 5456 (57.97%)` exact C functions,
+with no address-drift blockers and 2,293 genuinely different C functions.
 Init is
-`479 / 487 (98.36%)` exact, with eight genuinely different C rows. Game is
+`480 / 487 (98.56%)` exact, with seven genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,12 +100,13 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`func_1001B7D0` now matches all 345 retail words directly from C after
-restoring instrument-resource replacement, sound relocation, envelope and
-oscillator defaults, and missing-resource state. No checked word rows are
-needed. Bank this focused recovery, then resume Init at the 357-word
-`func_10011624`, currently different in 350 words. See
-[Working Note 664](WORKING_NOTES/664-init-instrument-channel-loader-match-20261001.md).
+`func_10011624` now matches all 357 retail words after restoring bounded sound
+record traversal, stale-handle cleanup, spatial parameters, callback control,
+voice creation and updates, and distance-driven pitch smoothing. Its compact
+body emits 64 retail words directly; 293 stale-checked rows normalize the
+closed compiler layout. Bank this focused recovery, then resume Init at the
+370-word `func_10001AA8`, currently different in 358 words. See
+[Working Note 665](WORKING_NOTES/665-init-sound-record-updater-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

@@ -12,7 +12,7 @@ s32 func_1000F6B8(s32 arg0, s16 arg1, s16 arg2, s16 arg3, void *arg4, s16 arg5, 
 struct31 *func_10017438(void *bank, s16 soundNum, u16 vol, u8 pan, f32 pitch,
                        u8 fxmix, u8 fxbus, struct31 **handle);
 void func_10011310(void);
-s32 func_10011624(struct15 *arg0, s32 *arg1, s32 arg2, s32 arg3);
+void func_10011624(struct15 *arg0, s32 *arg1, s32 arg2, s32 arg3);
 void func_10011BB8(void);
 u16 func_10011EB8(s32 arg0, s16 *arg1, s32 arg2);
 /* End generated placeholder declarations. */
@@ -1244,9 +1244,212 @@ void func_100114D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s
         arg8);
     *arg7 = ((u32)result * arg3) >> 15;
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_EB00/func_10011624.s. */
-s32 func_10011624(struct15 *arg0, s32 *arg1, s32 arg2, s32 arg3) {
-    return 0;
+extern f32 D_8002C400;
+extern f32 D_8002C404;
+
+void func_10011624(struct15 *records, s32 *recordCount, s32 first, s32 limit)
+{
+    s32 pan;
+    s32 volume;
+    s32 callbackValue;
+    s32 distance;
+    s32 cents;
+    u16 soundId;
+    s32 fx;
+    f32 pitch;
+    s32 flags;
+    u16 handle;
+    s32 mix;
+    s32 (*callback)(struct15 *, s32 *, s32 *, s32 *, s32 *, s32 *, u16 *);
+    struct15 *record;
+    s32 index;
+    s32 *panOut;
+    f32 scale;
+    s32 delta;
+    s32 priority;
+
+    index = first;
+    if ((first >= *recordCount) || (first >= limit)) {
+        return;
+    }
+
+    record = &records[first];
+    do {
+        flags = record->unk10;
+        if ((flags & 0x80) != 0) {
+            goto next_record;
+        }
+        if ((flags & 0x1000) != 0) {
+            record->unk10 = flags & ~0x1000;
+            goto next_record;
+        }
+
+        handle = record->unk24;
+        if (((flags & 1) != 0) && (handle != 0) &&
+            (func_1000F3D0(handle) == 0)) {
+            flags &= ~1;
+            handle = 0;
+            if ((flags & 8) == 0) {
+                flags |= 0x80;
+                *(u16 *)&record->unk0 = 0;
+            }
+            record->unk26 = 0;
+            *((u8 *)record + 0x22) = 0;
+            record->unk24 = 0;
+            record->unk10 = flags;
+            *(f32 *)&record->unk2C = 1.0f;
+        }
+
+        if (((flags & 2) == 0) && (handle != 0)) {
+            goto store_state;
+        }
+
+        if ((flags & 0x100) != 0) {
+            pan = 0x40;
+            panOut = NULL;
+        } else {
+            panOut = &pan;
+        }
+
+        if ((flags & 0x40) != 0) {
+            callbackValue = func_1000A750(
+                *(s16 *)((u8 *)record + 4),
+                D_80041F68[0].unkC,
+                D_80041F68[0].unk10,
+                D_80041F68[0].unk14,
+                *(f32 *)&D_80041F68[0].unk18,
+                D_80041F68[0].unk0,
+                D_80041F68[0].unk4,
+                D_80041F68[0].unk8,
+                *(u16 *)((u8 *)record + 8),
+                *(s16 *)((u8 *)record + 0xA),
+                &pan,
+                &volume,
+                &distance);
+            volume = ((u32)record->unkC * volume) >> 15;
+        } else {
+            func_100114D0(
+                *(s16 *)((u8 *)record + 2),
+                *(s16 *)((u8 *)record + 4),
+                *(s16 *)((u8 *)record + 6),
+                record->unkC,
+                *(u16 *)((u8 *)record + 8),
+                *(s16 *)((u8 *)record + 0xA),
+                panOut,
+                &volume,
+                &distance);
+        }
+
+        if (D_800BE615 != 0) {
+            volume = 0;
+        }
+
+        cents = *(s16 *)((u8 *)record + 0x20);
+        fx = *((u8 *)record + 0x23);
+        soundId = *(u16 *)&record->unk0;
+
+        callback = (void *)record->unk14;
+        if (((flags & 0x10) != 0) && (callback != NULL)) {
+            record->unk10 = flags;
+            if (callback(record, &callbackValue, &volume, &pan, &cents, &fx,
+                         &soundId) != 0) {
+                func_1000FE88(records, index, recordCount);
+                goto next_record;
+            }
+            handle = record->unk24;
+            flags = record->unk10;
+        }
+
+        if (soundId == 0) {
+            goto store_state;
+        }
+        if (volume == 0) {
+            if ((flags & 8) != 0) {
+                if (handle != 0) {
+                    func_100111C8(handle);
+                }
+                handle = 0;
+                flags &= ~1;
+                goto store_state;
+            }
+            func_1000FE88(records, index, recordCount);
+            goto next_record;
+        }
+
+        mix = (pan & 0x80) | fx;
+        pan &= 0x7F;
+        if ((flags & 0x200) != 0) {
+            pan = 0x80 - pan;
+            if (pan == 0x80) {
+                pan = 0x7F;
+            }
+            mix ^= 0x80;
+        }
+
+        pitch = alCents2Ratio(cents);
+        if (handle == 0) {
+            if ((flags & 0xC00) == 0) {
+                priority = D_80041FD9;
+            } else if ((flags & 0xC00) == 0x400) {
+                priority = 0;
+            } else {
+                priority = 1;
+            }
+            handle = func_10010BE8(0, soundId, (u16)volume, pan, cents, mix,
+                                    priority);
+            if (handle != 0) {
+                flags |= 1;
+                *(u16 *)&record->unk0 = soundId;
+            }
+        } else {
+            if (volume != record->unk26) {
+                func_1000F85C(handle, 8, volume);
+            }
+            if (pan != (*((u8 *)record + 0x22) & 0x7F)) {
+                func_1000F85C(handle, 4, pan);
+            }
+            if (mix != (*((u8 *)record + 0x23) |
+                        (*((u8 *)record + 0x22) & 0x80))) {
+                func_1000F85C(handle, 0x100, mix);
+            }
+
+            if ((flags & 4) != 0) {
+                delta = ((*(u16 *)((u8 *)record + 0x28) - distance) *
+                         D_800BE9E4) / 3;
+                if (delta >= 0x16F) {
+                    scale = 2.0f;
+                } else {
+                    scale = D_8002C400 / (0x16F - delta);
+                    if (scale > 2.0f) {
+                        scale = 2.0f;
+                    } else if (scale < 0.5f) {
+                        scale = 0.5f;
+                    }
+                }
+                pitch *= scale;
+                pitch = *(f32 *)&record->unk2C +
+                    ((pitch - *(f32 *)&record->unk2C) * D_8002C404);
+            }
+
+            if (pitch != *(f32 *)&record->unk2C) {
+                func_1000F85C(handle, 0x11, *(s32 *)&pitch);
+            }
+        }
+
+        *(u16 *)((u8 *)record + 0x28) = distance;
+        record->unk26 = volume;
+        *((u8 *)record + 0x22) = pan | mix;
+        *((u8 *)record + 0x23) = fx;
+        *(f32 *)&record->unk2C = pitch;
+
+store_state:
+        record->unk24 = handle;
+        record->unk10 = flags;
+
+next_record:
+        index++;
+        record++;
+    } while ((index < *recordCount) && (index < limit));
 }
 void func_10011BB8(void) {
     struct108 *player;

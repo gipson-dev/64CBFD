@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,162 / 5,456 (57.95%) | 0 | 2,294 |
-| Init | 479 / 487 (98.36%) | 0 | 8 |
+| Total | 3,163 / 5,456 (57.97%) | 0 | 2,293 |
+| Init | 480 / 487 (98.56%) | 0 | 7 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init sound-record updater `func_10011624` now matches its complete
+357-word retail span. It restores bounded record traversal, stale-handle
+release, listener-relative volume and pan, callback dispatch, voice creation,
+incremental parameter updates, and distance-driven pitch smoothing. The
+semantic compact body emits 64 retail words directly; 293 stale-checked rows
+include one insertion and 20 relocation-aware rows. See
+[Working Note 665](WORKING_NOTES/665-init-sound-record-updater-match-20261001.md).
 
 The Init instrument channel loader `func_1001B7D0` now matches its complete
 345-word retail span directly from C. It restores resource resolution and
