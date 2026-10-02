@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,156 / 5,456 (57.84%) | 0 | 2,300 |
-| Init | 473 / 487 (97.13%) | 0 | 14 |
+| Total | 3,157 / 5,456 (57.86%) | 0 | 2,299 |
+| Init | 474 / 487 (97.33%) | 0 | 13 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init audio subframe builder `func_1001FB40` now matches its complete
+296-word retail span directly from C. It restores optional opening-command
+interception, per-bus filter dispatch, mixer selection, effect-state refresh,
+and the ADPCM and pole-filter command stream. Recovered SDK audio macros and
+the original dual loop-increment form emit every retail word and relocation
+without guards. See
+[Working Note 659](WORKING_NOTES/659-init-audio-subframe-builder-match-20261001.md).
 
 The Init channel event and timer updater `func_1000CEAC` now matches its
 complete 275-word retail span. It drains the selected channel queue, expands

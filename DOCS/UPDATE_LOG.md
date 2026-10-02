@@ -16,6 +16,22 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init audio subframe builder byte-matched
+
+- `func_1001FB40` now replaces its zero-return placeholder with the complete
+  auxiliary-bus audio command builder: opening clears, main-filter dispatch,
+  mixer routing, effect refresh, and ADPCM and pole-filter commands.
+- Recovered SDK audio macros reproduce the retail command-temporary lifetimes
+  and branch-delay schedule. The compact object emits all 296 words and every
+  relocation directly from C, with no expected-word guards or insertions.
+- Direct comparison reports zero differences across all 1,184 bytes. Both
+  spans share SHA-256
+  `092c988cb1f4f75ee8947a2e663b9b103ce8eaf84ccc12a28ca1ea2f0392f145`.
+  Totals are **3,157 / 5,456 (57.86%)** overall and
+  **474 / 487 (97.33%)** in Init, with zero address drift and 13 different
+  Init C rows. See
+  [Working Note 659](WORKING_NOTES/659-init-audio-subframe-builder-match-20261001.md).
+
 ### Init channel event and timer updater byte-matched
 
 - `func_1000CEAC` now replaces its zero-return placeholder with the complete

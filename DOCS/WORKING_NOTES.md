@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init channel event/timer updater matched).**
-The current linked checkpoint is `3156 / 5456 (57.84%)` exact C functions,
-with no address-drift blockers and 2,300 genuinely different C functions.
+**Active (2026-10-01, Init audio subframe builder matched).**
+The current linked checkpoint is `3157 / 5456 (57.86%)` exact C functions,
+with no address-drift blockers and 2,299 genuinely different C functions.
 Init is
-`473 / 487 (97.13%)` exact, with 14 genuinely different C rows. Game is
+`474 / 487 (97.33%)` exact, with 13 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,10 +100,11 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`func_1000CEAC` now matches all 275 retail words and is ready to bank in its
-own focused commit. After that checkpoint, resume Init at `func_1001FB40`, the
-296-word next candidate with 274 real word differences. See
-[Working Note 658](WORKING_NOTES/658-init-channel-event-timer-update-match-20261001.md).
+`func_1001FB40` now matches all 296 retail words and relocations directly from
+semantic C, with no guards. It is ready to bank in its own focused commit.
+After that checkpoint, resume Init at `func_1000D2F8`, the 280-word next
+candidate with 275 real word differences. See
+[Working Note 659](WORKING_NOTES/659-init-audio-subframe-builder-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and
