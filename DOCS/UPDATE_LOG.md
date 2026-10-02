@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init audio-environment controller byte-matched
+
+- `func_10012020` now replaces its zero-return placeholder with the complete
+  five-mode audio-environment controller: mode overrides, oscillator-driven
+  pitch targets, transition ramps, master gain, and two-channel updates.
+- The semantic compact body emits 111 of 336 retail words directly. The Init
+  object now retargets its generated switch table to `jtbl_8002C410_init`;
+  225 stale-checked rows include the final retail padding `nop` and 103 rows
+  with relocation metadata for the table, constants, globals, and calls.
+- Direct comparison reports zero differences across all 1,344 bytes. Both
+  spans share SHA-256
+  `983583d5193a47ee8b1140807b1a8dbdda67951e3d8b31bb21c2cc89a14ed8fb`.
+  Totals are **3,161 / 5,456 (57.94%)** overall and
+  **478 / 487 (98.15%)** in Init, with zero address drift and nine different
+  Init C rows. See
+  [Working Note 663](WORKING_NOTES/663-init-audio-environment-controller-match-20261001.md).
+
 ### Init sequence transition dispatcher byte-matched
 
 - `func_1000D96C` now replaces its zero-return placeholder with the complete

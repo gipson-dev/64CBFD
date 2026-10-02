@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init sequence transition dispatcher matched).**
-The current linked checkpoint is `3160 / 5456 (57.92%)` exact C functions,
-with no address-drift blockers and 2,296 genuinely different C functions.
+**Active (2026-10-01, Init audio-environment controller matched).**
+The current linked checkpoint is `3161 / 5456 (57.94%)` exact C functions,
+with no address-drift blockers and 2,295 genuinely different C functions.
 Init is
-`477 / 487 (97.95%)` exact, with 10 genuinely different C rows. Game is
+`478 / 487 (98.15%)` exact, with nine genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,13 +100,12 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`func_1000D96C` now matches all 300 retail words after restoring the complete
-sequence transition and attachment state machine. Its semantic compact body
-emits 73 words directly; 220 checked rows include seven insertions and 20
-relocation-aware rows for the closed compiler layout. Bank this focused
-recovery, then resume Init at the 336-word `func_10012020`, currently
-different in 324 words. See
-[Working Note 662](WORKING_NOTES/662-init-sequence-transition-dispatcher-match-20261001.md).
+`func_10012020` now matches all 336 retail words after restoring the complete
+audio-environment controller and its five-way switch. Its semantic compact
+body emits 111 words directly; 225 checked rows include the final padding word
+and 103 relocation-aware rows. Bank this focused recovery, then resume Init at
+the 345-word `func_1001B7D0`, currently different in 334 words. See
+[Working Note 663](WORKING_NOTES/663-init-audio-environment-controller-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

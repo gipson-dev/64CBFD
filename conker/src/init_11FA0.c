@@ -3,30 +3,6 @@
 #include "functions.h"
 #include "variables.h"
 
-/* Generated placeholder declarations. */
-s32 func_10012020();
-/* End generated placeholder declarations. */
-
-#if 0
-u32 jtbl_8002C410[5] = {
-    0x10012120,
-    0x100121A8,
-    0x10012214,
-    0x100122CC,
-    0x10012340
-};
-
-f32 D_8002C424 = 0.05235987901687622;
-f32 D_8002C428 = 519.0;
-f32 D_8002C42C = 0.3490658402442932;
-f32 D_8002C430 = 0.07999999821186066;
-f32 D_8002C434 = 0.12217304855585098;
-f32 D_8002C438 = 0.07999999821186066;
-f32 D_8002C43C = 11000.0;
-f32 D_8002C440 = 0.05000000074505806;
-f32 D_8002C444 = 9000.0;
-#endif
-
 void func_10011FA0(s32 *arg0) {
     D_80042770 = arg0;
 }
@@ -47,10 +23,114 @@ void func_10011FEC(void) {
     D_80042770 = D_80042774 = D_80042778 = D_8004277C = 0;
 }
 
-// jump table
-/* Non-matching C placeholders for asm/nonmatchings/init_11FA0/func_10012020.s. */
-s32 func_10012020() {
-    return 0;
+void func_10012020(void) {
+    f32 targetPitch[2];
+    f32 targetVolume[2];
+    f32 master;
+    f32 normalized;
+    f32 current;
+    s32 mode;
+    s32 i;
+
+    master = 0.0f;
+    targetVolume[0] = D_8002BA10[0];
+    targetVolume[1] = D_8002BA10[1];
+    targetPitch[0] = D_8002BA18[0];
+    targetPitch[1] = D_8002BA18[1];
+
+    mode = D_80042770;
+    if (((D_800DBFF0->unk5F0 & 1) != 0) &&
+        ((D_800B0DF0->unk2A & 1) == 0)) {
+        mode = 1;
+    }
+    if (D_80042774 != 0) {
+        mode = D_80042774;
+    } else if (D_80042778 != 0) {
+        mode = D_80042778;
+    }
+    if (mode == 6) {
+        mode = 0;
+    }
+
+    switch (mode) {
+        case 1:
+            current = D_80042790;
+            D_8004277C = 0;
+            targetVolume[0] = 127.0f;
+            master = (13.0f - current) + current;
+            current = D_80042780;
+            targetPitch[0] = ((D_8002C428 +
+                (sinf(D_80042798 * D_8002C424) * 200.0f)) - current) + current;
+            break;
+        case 2:
+            D_8004277C = 0;
+            master = 70.0f;
+            targetVolume[0] = 127.0f;
+            targetPitch[0] = (sinf(D_80042798 * D_8002C42C) * 200.0f) + 450.0f;
+            break;
+        case 3:
+            current = D_80042790;
+            D_8004277C = 0;
+            master = ((52.0f - current) * D_8002C430) + current;
+            current = D_80042788;
+            targetVolume[0] = ((127.0f - current) * D_8002C430) + current;
+            current = D_80042780;
+            D_80041FD9 = 0;
+            targetPitch[0] = (((436.0f +
+                (sinf(D_80042798 * D_8002C434) * 282.0f)) - current) *
+                D_8002C438) + current;
+            break;
+        case 4:
+            D_8004277C = 4;
+            targetVolume[1] = 127.0f;
+            if (D_800BE9B4 != 0) {
+                targetPitch[1] = 400.0f;
+            } else {
+                current = D_80042784;
+                targetPitch[1] = (400.0f - current) + current;
+            }
+            D_80041FD9 = 0;
+            break;
+        case 5:
+            targetVolume[1] = 127.0f;
+            targetPitch[1] = 520.0f;
+            D_80041FD9 = 0;
+            break;
+        default:
+            if (D_8004277C == 4) {
+                current = D_80042784;
+                targetPitch[1] = ((D_8002C43C - current) * D_8002C440) + current;
+                if (targetPitch[1] < D_8002C444) {
+                    D_8004277C = 4;
+                } else {
+                    D_8004277C = 0;
+                    D_80041FD9 = 1;
+                }
+            }
+            break;
+    }
+
+    D_80042798 += D_800BE9A4;
+    if ((master != D_80042790) || (D_80042794 != 1.0f)) {
+        normalized = master / 127.0f;
+        for (i = 0; i < 3; i++) {
+            func_10008BC0(i, normalized, 1.0f);
+        }
+        D_80042790 = master;
+        D_80042794 = 1.0f;
+    }
+
+    for (i = 0; i < 2; i++) {
+        if (targetPitch[i] != (&D_80042780)[i]) {
+            func_10008B60(i, i, 9, 0, targetPitch[i]);
+            (&D_80042780)[i] = targetPitch[i];
+        }
+        if (targetVolume[i] != (&D_80042788)[i]) {
+            func_10008B60(i, i, 8, 0, targetVolume[i]);
+            (&D_80042788)[i] = targetVolume[i];
+        }
+    }
+    D_80042770 = 0;
 }
 // f32 func_10012020(void) {
 //     f32 sp68;

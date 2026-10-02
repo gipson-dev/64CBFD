@@ -118,12 +118,24 @@ extern struct138 D_8002B074[];
 extern s32  D_8002B078[][4]; // probably not correct...
 extern s32  D_8002B9D4;
 extern s32  D_8002B9F4;
+extern f32  D_8002BA10[2];
+extern f32  D_8002BA18[2];
 
 extern struct31 *D_8002BA20;
 extern struct31 *D_8002BA24;
 extern struct31 *D_8002BA28;
 extern s32  D_8002BA2C;
 extern s16  D_8002BA30;
+
+extern f32 D_8002C424;
+extern f32 D_8002C428;
+extern f32 D_8002C42C;
+extern f32 D_8002C430;
+extern f32 D_8002C434;
+extern f32 D_8002C438;
+extern f32 D_8002C43C;
+extern f32 D_8002C440;
+extern f32 D_8002C444;
 
 extern struct07  *D_8002BA40;
 extern struct07  *D_8002BA44;

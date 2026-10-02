@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,160 / 5,456 (57.92%) | 0 | 2,296 |
-| Init | 487 / 538 (90.52%) | 477 / 487 (97.95%) | 0 | 10 |
+| Total | 5,456 / 6,041 (90.32%) | 3,161 / 5,456 (57.94%) | 0 | 2,295 |
+| Init | 487 / 538 (90.52%) | 478 / 487 (98.15%) | 0 | 9 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,11 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+The Init audio-environment controller `func_10012020` now matches all 336
+retail words. It restores mode selection, oscillator-driven pitch and volume
+targets, transition ramps, master gain, and per-channel updates; see
+[Working Note 663](WORKING_NOTES/663-init-audio-environment-controller-match-20261001.md).
 
 The Init sequence transition dispatcher `func_1000D96C` now matches all 300
 retail words. It restores primary/child record lookup, stale-child teardown,
