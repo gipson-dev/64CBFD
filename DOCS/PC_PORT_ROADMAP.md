@@ -8,10 +8,17 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,194 / 5,456 (58.54%) | 0 | 2,262 |
+| Total | 5,456 / 6,041 (90.32%) | 3,195 / 5,456 (58.56%) | 0 | 2,261 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,526 / 4,788 (52.76%) | 0 | 2,262 |
+| Game | 4,788 / 5,321 (89.98%) | 2,527 / 4,788 (52.78%) | 0 | 2,261 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game event-record matcher `func_151D7538` now matches its complete 35-word
+slot. It handles selector `0x3D` by comparing the embedded object record and
+destroying a match, while all other selectors are forwarded with both record
+field addresses. Fourteen stale-checked rows preserve the retail pointer
+lifetime and register allocation. See
+[Working Note 689](WORKING_NOTES/689-game-event-record-matcher-match-20261002.md).
 
 The Game mode-offset adjuster `func_151CD224` now matches its complete 39-word
 slot. Its semantic C computes a record-scaled adjustment and writes the

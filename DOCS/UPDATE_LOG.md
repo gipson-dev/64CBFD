@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game event-record matcher byte-matched
+
+- `func_151D7538` restores selector-`0x3D` word/tag matching and object
+  destruction, plus the alternate event-forwarding path with both embedded
+  record addresses.
+- Its complete 35-word retail slot matches. The compact semantic body emits
+  34 words; fourteen stale-checked rows, including one checked insertion,
+  preserve the retail pointer lifetime and closed compiler register allocation.
+  Neither relocation-bearing call is patched.
+- The refreshed matcher reports **3,195 / 5,456 (58.56%)** overall and
+  **2,527 / 4,788 (52.78%)** in Game, with zero address drift and 2,261
+  different C rows. See
+  [Working Note 689](WORKING_NOTES/689-game-event-record-matcher-match-20261002.md).
+
 ### Game mode-offset adjuster byte-matched
 
 - `func_151CD224` restores the sampled-value delta, embedded-record scale,

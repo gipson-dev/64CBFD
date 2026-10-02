@@ -10198,3 +10198,17 @@ generated_1F4650,func_151CD224,0x020,0xC4880090,0xC4480020,-,-,Normalize mode of
 generated_1F4650,func_151CD224,0x030,0x9082007D,0x9043000D,-,-,Normalize mode offset adjuster record base and mode allocation,,,false
 generated_1F4650,func_151CD224,0x044,0x14410006,0x14610006,-,-,Normalize mode offset adjuster mode register allocation,,,false
 generated_1F4650,func_151CD224,0x064,0x14410005,0x14610005,-,-,Normalize mode offset adjuster mode register allocation,,,false
+generated_204660,func_151D7538,0x014,0x93A2002B,0x93AE002B,-,-,Normalize event-record matcher selector register allocation,,,false
+generated_204660,func_151D7538,0x018,0x8FA30020,0x8FAB0020,-,-,Normalize event-record matcher object register allocation,,,false
+generated_204660,func_151D7538,0x020,0x14410010,0x15C10011,-,-,Normalize event-record matcher selector branch and inserted-word distance,,,false
+generated_204660,func_151D7538,0x024,0x24660040,0x25660040,-,-,Normalize event-record matcher record-pointer allocation,,,false
+generated_204660,func_151D7538,0x028,0x8FA40020,0x8FA60020,-,-,Normalize event-record matcher true-branch object allocation,,,false
+generated_204660,func_151D7538,0x02C,0x8FA20024,0x8FB80024,-,-,Normalize event-record matcher first comparison-pointer allocation,,,false
+generated_204660,func_151D7538,0x030,0x8FA50024,0x8FA90024,-,-,Normalize event-record matcher second comparison-pointer allocation,,,false
+generated_204660,func_151D7538,0x034,0x8C830040,0x8CCF0040,-,-,Normalize event-record matcher stored-value allocation,,,false
+generated_204660,func_151D7538,0x038,0x8C4E0000,0x8F190000,-,-,Restore event-record matcher advanced record-pointer lifetime,0x24C60040,,false
+generated_204660,func_151D7538,0x03C,0x106E0005,0x11F90005,-,-,Normalize event-record matcher word comparison allocation,,,false
+generated_204660,func_151D7538,0x044,0x908F0044,0x90C80004,-,-,Normalize event-record matcher stored tag access,,,false
+generated_204660,func_151D7538,0x048,0x90B80004,0x912A0004,-,-,Normalize event-record matcher incoming tag access,,,false
+generated_204660,func_151D7538,0x04C,0x55F8000B,0x550A000B,-,-,Normalize event-record matcher tag comparison allocation,,,false
+generated_204660,func_151D7538,0x074,0xAFA30010,0xAFAB0010,-,-,Normalize event-record matcher trailing object argument allocation,,,false

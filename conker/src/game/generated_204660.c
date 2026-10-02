@@ -59,13 +59,25 @@ void func_151D74B0(u8 *arg0, u8 arg1, s8 arg2, u8 arg3, s32 arg4) {
     }
 }
 
-void func_151D7538(s32 arg0, s32 *arg1, u8 arg2) {
-    if (arg2 == 0x3D) {
-        if (*(s32 *)(arg0 + 0x40) == *arg1 || *(u8 *)(arg0 + 0x44) == *((u8 *)arg1 + 4)) {
+void func_151D7538(volatile s32 arg0, s32 * volatile arg1, volatile u8 arg2) {
+    u8 selector = arg2;
+    s32 object = arg0;
+    u8 *record = (u8 *)(object + 0x40);
+
+    if (selector == 0x3D) {
+        s32 true_object = arg0;
+        s32 *word_value = arg1;
+        u8 *byte_value = (u8 *)arg1;
+        u8 *true_record = (u8 *)true_object;
+        s32 stored_value = *(s32 *)(true_record + 0x40);
+
+        true_record += 0x40;
+
+        if (stored_value == *word_value || true_record[4] == byte_value[4]) {
             func_1516972C(arg0);
         }
     } else {
-        func_15149514(arg1, arg2, arg0 + 0x40, arg0 + 0x44, arg0);
+        func_15149514(arg1, arg2, record, record + 4, object);
     }
 }
 

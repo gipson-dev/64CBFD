@@ -26,6 +26,7 @@ rows; overall byte-exact C progress is `3,194 / 5,456 (58.54%)`. Init remains
 No fresh gameplay run was performed. This checkpoint is semantic recovery,
 full-link, stale-guard, and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 35-word `func_151D7538`. Keep
+The next queued function, 35-word `func_151D7538`, is now complete; see
+[Working Note 689](689-game-event-record-matcher-match-20261002.md). Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

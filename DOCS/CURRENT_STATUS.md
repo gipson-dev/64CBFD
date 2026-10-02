@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,194 / 5,456 (58.54%) | 0 | 2,262 |
+| Total | 3,195 / 5,456 (58.56%) | 0 | 2,261 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,526 / 4,788 (52.76%) | 0 | 2,262 |
+| Game | 2,527 / 4,788 (52.78%) | 0 | 2,261 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game event-record matcher `func_151D7538` now matches its complete 35-word
+slot. Selector `0x3D` compares the object's embedded word and tag byte against
+the incoming record and destroys the object when either matches; other
+selectors forward both embedded-field addresses through `func_15149514`.
+Fourteen stale-checked rows, including one checked insertion, preserve the
+retail pointer lifetime and closed compiler register allocation without
+changing either call relocation. See
+[Working Note 689](WORKING_NOTES/689-game-event-record-matcher-match-20261002.md).
 
 The Game mode-offset adjuster `func_151CD224` now matches its complete 39-word
 slot. It samples the object's control value, derives a scaled adjustment from
