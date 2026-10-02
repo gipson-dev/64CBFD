@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,177 / 5,456 (58.23%) | 0 | 2,279 |
+| Total | 5,456 / 6,041 (90.32%) | 3,180 / 5,456 (58.28%) | 0 | 2,276 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,509 / 4,788 (52.40%) | 0 | 2,279 |
+| Game | 4,788 / 5,321 (89.98%) | 2,512 / 4,788 (52.46%) | 0 | 2,276 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game motion-update family `func_1511515C`, `func_151151FC`, and
+`func_15115EDC` now matches all 40, 40, and 35 retail words. The two angular
+integrators emit directly from C; the displacement extender needs one
+stale-checked cross-declaration ABI word. See
+[Working Note 678](WORKING_NOTES/678-game-angular-motion-update-family-match-20261002.md).
 
 The Game render-parameter adapter family `func_1510E7A4`, `func_1510E82C`,
 and `func_1510E8BC` now matches all 34, 36, and 37 retail words directly from

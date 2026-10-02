@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,177 / 5,456 (58.23%) | 0 | 2,279 |
+| Total | 3,180 / 5,456 (58.28%) | 0 | 2,276 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,509 / 4,788 (52.40%) | 0 | 2,279 |
+| Game | 2,512 / 4,788 (52.46%) | 0 | 2,276 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game angular integrators `func_1511515C` and `func_151151FC` now match all
+40 retail words directly from semantic C. The related displacement extender
+`func_15115EDC` matches all 35 words after restoring its position snapshot,
+motion update, and record-type-`0x4B` extrapolation. One stale-checked word
+preserves the retail cross-declaration record-pointer register. See
+[Working Note 678](WORKING_NOTES/678-game-angular-motion-update-family-match-20261002.md).
 
 The Game render-parameter wrappers `func_1510E7A4`, `func_1510E82C`, and
 `func_1510E8BC` now match all 34, 36, and 37 retail words. Their recovered
@@ -2278,8 +2285,9 @@ end-to-end gameplay acceptance.
    scheduling guards. The 36-word state-flag updater `func_150F9A20` and
    35-word owner-event callback `func_15100230` are now byte-exact. The
    `func_1510E7A4`/`func_1510E82C`/`func_1510E8BC` render-parameter wrapper
-   family is also byte-exact. Resume with
-   ordinary 40-word Game candidate `func_1511515C`. Keep
+   family is also byte-exact. The angular integrators `func_1511515C` and
+   `func_151151FC`, plus displacement extender `func_15115EDC`, are now
+   byte-exact. Resume with ordinary 33-word Game candidate `func_151325C8`. Keep
    `func_15015F40` parked until its
    unresolved 38-entry indirect table has authoritative ownership, and keep
    handwritten register-contract fragment `func_150A76F0` in the raw-assembly

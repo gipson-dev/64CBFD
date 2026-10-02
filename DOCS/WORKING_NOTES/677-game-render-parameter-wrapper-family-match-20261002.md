@@ -27,6 +27,8 @@ The full linked matcher reports zero address drift and advances Game to
 progress is `3,177 / 5,456 (58.23%)`. Init remains
 `487 / 487 (100.00%)` and Debugger remains `181 / 181 (100.00%)`.
 
-Resume the ordinary small-Game queue with 40-word `func_1511515C`. Keep
+The next motion-update recovery is recorded in
+[Working Note 678](678-game-angular-motion-update-family-match-20261002.md).
+Resume the ordinary small-Game queue with 33-word `func_151325C8`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game angular motion-update family byte-matched
+
+- `func_1511515C` and `func_151151FC` restore signed packed-rate integration
+  and 0-to-360-degree wrapping for two object components.
+- `func_15115EDC` restores pre-update position snapshots and type-`0x4B`
+  displacement extension after `func_15115E0C`. One stale-checked word
+  preserves the retail record-pointer register across a mismatched declaration.
+- The refreshed matcher reports **3,180 / 5,456 (58.28%)** overall and
+  **2,512 / 4,788 (52.46%)** in Game, with zero address drift and 2,276
+  different C rows. See
+  [Working Note 678](WORKING_NOTES/678-game-angular-motion-update-family-match-20261002.md).
+
 ### Game render-parameter wrapper family byte-matched
 
 - `func_1510E7A4`, `func_1510E82C`, and `func_1510E8BC` now restore the

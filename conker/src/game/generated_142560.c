@@ -39,12 +39,34 @@ void func_151150BC(u8 *arg0) {
     }
 }
 
-s32 func_1511515C() {
-    return 0;
+void func_1511515C(u8 *arg0) {
+    f32 temp;
+
+    *(f32 *) (arg0 + 0x64) = (f32)((*(s32 *) (arg0 + 0x3C) >> 16) * D_800BE9E4) * 0.00390625f;
+    *(f32 *) (arg0 + 0x4) = *(volatile f32 *) (arg0 + 0x64) + *(f32 *) (arg0 + 0x4);
+    temp = *(volatile f32 *) (arg0 + 0x4);
+    if (temp < 0.0f) {
+        *(f32 *) (arg0 + 0x4) = temp + 360.0f;
+        return;
+    }
+    if (temp >= 360.0f) {
+        *(f32 *) (arg0 + 0x4) = temp - 360.0f;
+    }
 }
 
-s32 func_151151FC() {
-    return 0;
+void func_151151FC(u8 *arg0) {
+    f32 temp;
+
+    *(f32 *) (arg0 + 0x60) = (f32)((*(s32 *) (arg0 + 0x3C) >> 16) * D_800BE9E4) * 0.00390625f;
+    *(f32 *) arg0 = *(volatile f32 *) (arg0 + 0x60) + *(f32 *) arg0;
+    temp = *(volatile f32 *) arg0;
+    if (temp < 0.0f) {
+        *(f32 *) arg0 = temp + 360.0f;
+        return;
+    }
+    if (temp >= 360.0f) {
+        *(f32 *) arg0 = temp - 360.0f;
+    }
 }
 
 void func_1511529C(s32 arg0) {
@@ -66,12 +88,28 @@ s32 func_1511575C() {
     return 0;
 }
 
-s32 func_15115E0C() {
+s32 func_15115E0C(f32 arg0, f32 arg1, u8 *arg2) {
     return 0;
 }
 
-s32 func_15115EDC() {
-    return 0;
+void func_15115EDC(u8 *arg0, u8 *arg1) {
+    f32 old_x;
+    f32 old_z;
+    f32 x;
+    f32 z;
+
+    old_x = *(f32 *) (arg0 + 0x7C);
+    old_z = *(f32 *) (arg0 + 0x80);
+    func_15115E0C(old_x, old_z, arg1);
+
+    if (*(u16 *) (arg1 + 0x84) == 0x4B) {
+        x = *(f32 *) (arg0 + 0x7C);
+        z = *(f32 *) (arg0 + 0x80);
+        old_x = (x - old_x) * 4.0f;
+        old_z = (z - old_z) * 4.0f;
+        *(f32 *) (arg0 + 0x7C) = x + old_x;
+        *(f32 *) (arg0 + 0x80) = z + old_z;
+    }
 }
 
 s32 func_15115F68() {
