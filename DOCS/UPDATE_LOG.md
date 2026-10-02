@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game payload-record initializer byte-matched
+
+- `func_1518BCD0` replaces its zero-return placeholder with the six-argument
+  record allocation, null return, 0x1C-byte payload copy to offset `0x10`, and
+  two independent five-bit random field initializations.
+- All 36 retail words emit directly from semantic C without guards or a
+  compiler-profile override. The `u8` selector contract reproduces the low-byte
+  reload from spilled `a1`, while the record local recovers retail's reuse of
+  `s0` from allocator owner to return pointer.
+- The refreshed matcher reports **3,209 / 5,456 (58.82%)** overall and
+  **2,541 / 4,788 (53.07%)** in Game, with zero address drift and 2,247
+  different C rows. See
+  [Working Note 702](WORKING_NOTES/702-game-payload-record-initializer-match-20261002.md).
+
 ### Game color-driver callback family byte-matched
 
 - `func_150D149C` and `func_150D1B40` replace their zero-return placeholders

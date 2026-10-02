@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,208 / 5,456 (58.80%) | 0 | 2,248 |
+| Total | 5,456 / 6,041 (90.32%) | 3,209 / 5,456 (58.82%) | 0 | 2,247 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,540 / 4,788 (53.05%) | 0 | 2,248 |
+| Game | 4,788 / 5,321 (89.98%) | 2,541 / 4,788 (53.07%) | 0 | 2,247 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game payload-record initializer `func_1518BCD0` now matches all 36 retail
+words directly from C. It restores allocation, payload copy, null handling,
+and both random five-bit fields. See
+[Working Note 702](WORKING_NOTES/702-game-payload-record-initializer-match-20261002.md).
 
 The Game color-driver callbacks `func_150D149C` and `func_150D1B40` now match
 their complete 37- and 36-word slots directly from C. They restore the paired

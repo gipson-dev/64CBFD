@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1B8F40.s. */
 
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+s32 func_150ADA20(void);
+
 s32 func_1518BA90() {
     return 0;
 }
@@ -10,8 +13,17 @@ s32 func_1518BBF4() {
     return 0;
 }
 
-s32 func_1518BCD0() {
-    return 0;
+void *func_1518BCD0(void *arg0, u8 arg1, s32 arg2) {
+    u8 *record;
+
+    record = func_15167A68(0x1F, arg2, 0x44, 1, arg1, 1);
+    if (record == NULL) {
+        return NULL;
+    }
+    memcpy(record + 0x10, arg0, 0x1C);
+    *(u32 *)(record + 0x2C) = func_150ADA20() & 0x1F;
+    *(u32 *)(record + 0x30) = func_150ADA20() & 0x1F;
+    return record;
 }
 
 s32 func_1518BD60() {

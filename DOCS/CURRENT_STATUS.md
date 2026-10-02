@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,208 / 5,456 (58.80%) | 0 | 2,248 |
+| Total | 3,209 / 5,456 (58.82%) | 0 | 2,247 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,540 / 4,788 (53.05%) | 0 | 2,248 |
+| Game | 2,541 / 4,788 (53.07%) | 0 | 2,247 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game payload-record initializer `func_1518BCD0` now matches all 36 retail
+words directly from C. It allocates a selector-scoped record, copies the
+caller’s 0x1C-byte payload into offset `0x10`, and initializes two independent
+five-bit random fields. The recovered byte-sized selector contract and direct
+null-return path reproduce the complete allocation schedule without guards.
+See
+[Working Note 702](WORKING_NOTES/702-game-payload-record-initializer-match-20261002.md).
 
 The Game color-driver callbacks `func_150D149C` and `func_150D1B40` now match
 their complete 37- and 36-word slots directly from C. Each advances three
