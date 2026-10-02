@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 733](WORKING_NOTES/733-init-midi-handler-and-complete-init-image-match-20261002.md)):
+The complete 954-word Init MIDI handler emits byte-exact from C. Restored
+audio data interleaving and six original constants make the entire Init code
+(164,048 bytes) and initialized data (17,376 bytes) exact in direct comparisons.
+Init has 491 exact C rows; all 48 remaining assembly rows are retained original
+assembly. Resume the ordinary Game queue at `func_15145128`.
+
 2026-10-02 ([Note 732](WORKING_NOTES/732-init-sdk-sine-recovery-and-constant-layout-match-20261002.md)):
 Init `__sinf` matches all 112 words directly from SDK-grounded C. Separate
 source ownership preserves Game `sinf`; a scoped linker anchor restores

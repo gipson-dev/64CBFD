@@ -2,6 +2,10 @@
 
 Date: 2026-10-02
 
+Follow-up: Note 733 completes the MIDI handler, repairs the wider interleaved
+Init audio data layout, and verifies both complete Init sections byte-exact.
+The resume instruction below is historical; the current queue returns to Game.
+
 ## Recovery
 
 Init `__sinf` at `0x10026540..0x10026700` now emits its complete 112-word /

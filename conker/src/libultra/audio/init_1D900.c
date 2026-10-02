@@ -2,6 +2,9 @@
 #include <ultraerror.h>
 #include "n_synthInternals.h"
 
+/* Original rodata at 0x8002C790, addressed through D_8002C790 below. */
+const f32 conkerSynthParameterScale[] = {0.1f};
+
 
 void func_1001CF38(s32, f32);
 extern Acmd *(func_1001E530)(s32, Acmd *);

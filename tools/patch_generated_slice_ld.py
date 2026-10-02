@@ -19,6 +19,52 @@ def anchor_init_math_rodata(text):
     return text.replace(marker, anchor + marker)
 
 
+def restore_init_audio_data_order(text):
+    start_marker = "        init_data_DATA_START = .;"
+    end_marker = "        init_data_RODATA_END = .;"
+    if start_marker not in text:
+        return text
+    start = text.index(start_marker)
+    end = text.index(end_marker, start)
+    block = text[start:end]
+
+    def move_before(owners, target, anchor=None):
+        nonlocal block
+        lines = [f"        build/{owner};\n" for owner in owners]
+        target_line = f"        build/{target};\n"
+        for line in lines + [target_line]:
+            if block.count(line) != 1:
+                raise ValueError(f"expected one Init data owner: {line.strip()}")
+        for line in lines:
+            block = block.replace(line, "")
+        replacement = "".join(lines)
+        if anchor is not None:
+            replacement += f"        . = ABSOLUTE(0x{anchor:08X});\n"
+        block = block.replace(target_line, replacement + target_line)
+
+    # Splat groups input sections by ELF type, but the retail Init audio
+    # data/rodata owners alternate. Keep jump tables at their physical addresses.
+    move_before(
+        [f"asm/data/{address}.rodata.s.o(.rodata)"
+         for address in ("2C0C0", "2C120", "2C1B0", "2C200", "2C240")],
+        "assets/2C250.bin.o(.data)",
+    )
+    move_before(
+        ["src/libultra/audio/init_128D0.c.o(.rodata)"],
+        "assets/2C460.bin.o(.data)", 0x8002C460,
+    )
+    move_before(
+        ["asm/data/2C750.rodata.s.o(.rodata)",
+         "src/libultra/audio/cents2ratio.c.o(.rodata)",
+         "asm/data/2C770.rodata.s.o(.rodata)",
+         "src/libultra/audio/init_1D900.c.o(.rodata)"],
+        "assets/2C7A0.bin.o(.data)", 0x8002C7A0,
+    )
+    marker = "        build/asm/data/2C770.rodata.s.o(.rodata);"
+    block = block.replace(marker, "        . = ABSOLUTE(0x8002C770);\n" + marker)
+    return text[:start] + block + text[end:]
+
+
 def replace_generated_slices(text, project_dir):
     asm_by_name = {}
     for path in (project_dir / "asm").rglob("*.s"):
@@ -208,6 +254,7 @@ def main() -> int:
     text = anchor_objects(
         text, load_object_layout(layout_path), project_dir
     )
+    text = restore_init_audio_data_order(text)
     text = anchor_init_math_rodata(text)
     path.write_text(text)
     return 0

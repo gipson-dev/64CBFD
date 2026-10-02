@@ -25,17 +25,32 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,459 / 6,042 (90.35%) | 583 | 1,930,580 / 2,256,728 (85.55%) |
-| Init | 490 / 539 (90.91%) | 49 | 147,944 / 164,048 (90.18%) |
+| Total | 5,460 / 6,042 (90.37%) | 582 | 1,934,396 / 2,256,728 (85.72%) |
+| Init | 491 / 539 (91.09%) | 48 | 151,760 / 164,048 (92.51%) |
 | Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,238 / 5,459 (59.31%) | 0 | 2,221 |
-| Init | 490 / 490 (100.00%) | 0 | 0 |
+| Total | 3,239 / 5,460 (59.32%) | 0 | 2,221 |
+| Init | 491 / 491 (100.00%) | 0 | 0 |
 | Game | 2,567 / 4,788 (53.61%) | 0 | 2,221 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Init `__n_CSPHandleMIDIMsg` now matches all 954 words directly from semantic
+C, including Rare's custom envelope, oscillator, controller, and notification
+paths. Restored interleaved audio data ownership places the physical jump
+tables at their retail addresses; six original floats restore three omitted
+constant slots. Direct whole-section comparison now confirms all 164,048
+Init code bytes and all 17,376 initialized-data bytes byte-exact. This is
+linked-image evidence, not a gameplay qualification or a claim that the 48
+original assembly rows should become C. See
+[Working Note 733](WORKING_NOTES/733-init-midi-handler-and-complete-init-image-match-20261002.md).
+
+The supported Init C-conversion queue is complete. Resume the ordinary Game
+queue with 50-word `func_15145128`, currently at 35 real word differences.
+Keep `func_150A76F0` in its handwritten/register-contract workstream and
+`func_150F631C` in its separate near-match cleanup queue.
 
 Init `__sinf` now matches all 112 words directly from SDK-grounded C in a
 separate generated slice. A scoped linker anchor restores its original
@@ -58,8 +73,8 @@ the correct call relocation. Its separate inventory row raises the Init
 denominator to 539. Direct assembly review also corrects the previous
 classification of `func_10006380`: it uses shared live-register and stack
 state and retains assembly ownership. The follow-up audit recovered Init
-`__sinf` as a second compiler-generated candidate, now completed. Resume with
-the 954-word `__n_CSPHandleMIDIMsg`; the other 48 remaining Init assembly rows
+`__sinf` as a second compiler-generated candidate. Both it and the 954-word
+`__n_CSPHandleMIDIMsg` are now completed. All 48 remaining Init assembly rows
 retain handwritten/shared-register ownership. See
 [Working Note 731](WORKING_NOTES/731-init-remaining-assembly-conversion-triage-20261002.md) and
 [Working Note 730](WORKING_NOTES/730-init-meta-handler-layout-and-assembly-provenance-correction-20261002.md).

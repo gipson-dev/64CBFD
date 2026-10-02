@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Init MIDI handler recovered and complete Init image byte-matched
+
+- `__n_CSPHandleMIDIMsg` emits all 954 retail words directly from complete
+  semantic C, without word guards or a profile override.
+- The generated linker now preserves the retail audio data/rodata order.
+  Restored physical jump-table placement and six omitted constants make the
+  entire 164,048-byte Init code section and 17,376-byte initialized-data
+  section byte-exact in direct comparisons with the pristine image.
+- Init reaches 491 / 539 C rows, all 491 exact. The supported Init C queue is
+  complete; 48 original assembly rows remain intentionally. The full code
+  build, matcher, all 16 tool unit tests, and tool checks pass. Resume Game's
+  50-word `func_15145128`. See
+  [Working Note 733](WORKING_NOTES/733-init-midi-handler-and-complete-init-image-match-20261002.md).
+
 ### Init SDK sine recovered and constant ownership repaired
 
 - Init `__sinf` replaces its 448-byte assembly slice with separate semantic

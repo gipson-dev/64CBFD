@@ -13,6 +13,9 @@
 extern f32 D_8002C760;
 extern f32 D_8002C764;
 
+/* Original rodata at 0x8002C760; keep the external retail address aliases. */
+const f32 conkerCentsRatios[] = {1.0005778074264526f, 0.999422550201416f};
+
 f32 alCents2Ratio(s32 cents) {
     f32 x;
     f32 ratio = 1.0f;

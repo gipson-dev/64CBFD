@@ -7,6 +7,11 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Original rodata at 0x8002C450, addressed through the retail aliases below. */
+const f32 conkerOscillatorConstants[] = {
+    1.0309929847717285f, 6.2831854820251465f, 6.2831854820251465f
+};
+
 void alSeqFileNew(ALSeqFile *arg0, u8 *base) {
     s32 offset = base;
     s32 i;

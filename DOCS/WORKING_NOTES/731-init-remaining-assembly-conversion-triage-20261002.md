@@ -3,9 +3,10 @@
 Date: 2026-10-02
 
 Follow-up: Note 732 completes the Init `__sinf` conversion and restores its
-constant block's retail addresses. The inventory below records the preceding
-audit baseline. Current Init is 490 / 539 C rows, all 490 byte-exact, with
-`__n_CSPHandleMIDIMsg` the one supported C conversion still remaining.
+constant block's retail addresses. Note 733 completes the MIDI handler and
+restores the complete initialized-data image. The inventory below records
+the preceding audit baseline. Current Init is 491 / 539 C rows, all 491
+byte-exact; all 48 remaining assembly rows retain original assembly ownership.
 
 ## Verified baseline
 
