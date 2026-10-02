@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,180 / 5,456 (58.28%) | 0 | 2,276 |
+| Total | 3,182 / 5,456 (58.32%) | 0 | 2,274 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,512 / 4,788 (52.46%) | 0 | 2,276 |
+| Game | 2,514 / 4,788 (52.51%) | 0 | 2,274 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game resource-release loop `func_151325C8` now matches all 33 retail
+words after restoring its inclusive indexed scan, conditional frees, and
+trailing-slot release. The Game vertex rotation helper `func_151436B4` also
+matches all 34 words after making the fourth trigonometric result explicit so
+IDO retains retail's call-before-store schedule. Both emit directly from
+semantic C without expected-word guards or profile overrides. See
+[Working Note 679](WORKING_NOTES/679-game-resource-release-and-vertex-rotation-match-20261002.md).
 
 The Game angular integrators `func_1511515C` and `func_151151FC` now match all
 40 retail words directly from semantic C. The related displacement extender

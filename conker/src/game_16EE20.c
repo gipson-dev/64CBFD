@@ -451,10 +451,11 @@ void func_151436B4(f32 arg0, f32 arg1, f32 arg2, vertex *arg3) {
     f32 cos0 = cosf(arg0);
     f32 sin0 = sinf(arg0);
     f32 cos1 = cosf(arg1);
+    f32 sin1 = sinf(arg1);
     f32 temp = arg2 * cos1;
 
     arg3->x = temp * sin0;
-    arg3->y = -arg2 * sinf(arg1);
+    arg3->y = -arg2 * sin1;
     arg3->z = temp * cos0;
 }
 void func_1514373C(f32 arg0, f32 arg1, f32 *arg2, f32 *arg3) {

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game resource release and vertex rotation byte-matched
+
+- `func_151325C8` restores the inclusive resource-entry scan, conditional
+  allocator releases, and final trailing-slot release.
+- `func_151436B4` now materializes all four trigonometric results before its
+  vertex stores, reproducing retail's complete 34-word call and arithmetic
+  schedule. Both functions emit directly from semantic C without guards.
+- The refreshed matcher reports **3,182 / 5,456 (58.32%)** overall and
+  **2,514 / 4,788 (52.51%)** in Game, with zero address drift and 2,274
+  different C rows. See
+  [Working Note 679](WORKING_NOTES/679-game-resource-release-and-vertex-rotation-match-20261002.md).
+
 ### Game angular motion-update family byte-matched
 
 - `func_1511515C` and `func_151151FC` restore signed packed-rate integration

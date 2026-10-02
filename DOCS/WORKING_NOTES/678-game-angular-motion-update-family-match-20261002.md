@@ -32,3 +32,7 @@ progress is `3,180 / 5,456 (58.28%)`. Init remains
 Resume the ordinary small-Game queue with 33-word `func_151325C8`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.
+
+Superseded resume note: `func_151325C8` and the following ordinary target
+`func_151436B4` are complete in Working Note 679. Resume at 33-word
+`func_1514795C`.

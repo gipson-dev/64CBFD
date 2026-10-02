@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,180 / 5,456 (58.28%) | 0 | 2,276 |
+| Total | 5,456 / 6,041 (90.32%) | 3,182 / 5,456 (58.32%) | 0 | 2,274 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,512 / 4,788 (52.46%) | 0 | 2,276 |
+| Game | 4,788 / 5,321 (89.98%) | 2,514 / 4,788 (52.51%) | 0 | 2,274 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game resource-release loop `func_151325C8` and vertex rotation helper
+`func_151436B4` now match all 33 and 34 retail words directly from semantic C.
+The former restores the inclusive resource scan and trailing release; the
+latter restores retail's four-call trigonometric schedule. See
+[Working Note 679](WORKING_NOTES/679-game-resource-release-and-vertex-rotation-match-20261002.md).
 
 The Game motion-update family `func_1511515C`, `func_151151FC`, and
 `func_15115EDC` now matches all 40, 40, and 35 retail words. The two angular

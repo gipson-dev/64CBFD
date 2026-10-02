@@ -1,9 +1,16 @@
 #include <ultra64.h>
 extern void (*D_800899D4[])();
 extern void (*D_800899B0[])();
+extern s32 D_80082FA0;
 void func_15169260(void *, s32, s32, u8);
+void func_100043B4(s32 *, u32);
 extern u8 D_800A3860[];
 typedef struct { s32 a, b; } TwoWord15F680;
+typedef struct {
+    u8 pad0[0x154];
+    s32 entries[4];
+    s32 trailing;
+} ResourceOwner15F680;
 
 /* Non-matching placeholders for the text-only asm slice asm/15F680.s. */
 
@@ -42,8 +49,17 @@ s32 func_1513259C(s32 arg0) {
     func_15169824(arg0);
 }
 
-s32 func_151325C8() {
-    return 0;
+void func_151325C8(ResourceOwner15F680 *arg0) {
+    s32 i;
+
+    for (i = 0; i <= D_80082FA0; i++) {
+        if (arg0->entries[i]) {
+            func_100043B4(arg0->entries[i], 4);
+        }
+    }
+    if (arg0->trailing != NULL) {
+        func_100043B4(arg0->trailing, 4);
+    }
 }
 
 s32 func_1513264C() {
