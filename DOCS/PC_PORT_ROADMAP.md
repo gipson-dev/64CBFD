@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,232 / 5,456 (59.24%) | 0 | 2,224 |
+| Total | 5,456 / 6,041 (90.32%) | 3,233 / 5,456 (59.26%) | 0 | 2,223 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,564 / 4,788 (53.55%) | 0 | 2,224 |
+| Game | 4,788 / 5,321 (89.98%) | 2,565 / 4,788 (53.57%) | 0 | 2,223 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game resource-table prefix offset calculator `func_1510D374` now matches
+all 36 retail words directly from C. It adds unsigned resource lengths to the
+linker base using retail's remainder loop and four-entry unroll without
+guards. See
+[Working Note 726](WORKING_NOTES/726-game-resource-table-prefix-offset-match-20261002.md).
 
 The Game owner-ID effect payload constructor `func_150F5C08` now matches all
 36 retail words directly from C. Its four-argument contract constructs and

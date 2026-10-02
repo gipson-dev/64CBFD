@@ -1,9 +1,11 @@
 #include <ultra64.h>
 extern u8 D_800D9ED8[];
 extern s8 D_800BC448[];
+extern u16 D_80091D20[];
 extern s32 D_800D9F58;
 extern s32 D_800D9F5C;
 extern u8 D_800D9F68[];
+extern u8 D_1A37E0;
 s32 func_10004074();
 void func_1510D694(s32 arg0);
 void func_1510D720(s32 arg0);
@@ -26,8 +28,15 @@ s32 func_1510D0EC() {
     return 0;
 }
 
-s32 func_1510D374() {
-    return 0;
+s32 func_1510D374(s32 arg0) {
+    s32 offset = (s32)&D_1A37E0;
+    s32 i;
+
+    for (i = 0; i < arg0; i++) {
+        offset += D_80091D20[i];
+    }
+
+    return offset;
 }
 
 s32 func_1510D404() {

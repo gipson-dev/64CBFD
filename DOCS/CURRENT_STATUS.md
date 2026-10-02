@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,232 / 5,456 (59.24%) | 0 | 2,224 |
+| Total | 3,233 / 5,456 (59.26%) | 0 | 2,223 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,564 / 4,788 (53.55%) | 0 | 2,224 |
+| Game | 2,565 / 4,788 (53.57%) | 0 | 2,223 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game resource-table prefix offset calculator `func_1510D374` now matches
+all 36 retail words directly from C. It starts at linker base `D_1A37E0` and
+sums the requested unsigned-halfword lengths from `D_80091D20`; IDO emits the
+retail remainder loop and four-entry unroll without guards or a profile
+override. See
+[Working Note 726](WORKING_NOTES/726-game-resource-table-prefix-offset-match-20261002.md).
 
 The Game owner-ID effect payload constructor `func_150F5C08` now matches all
 36 retail words directly from C. It recovers the four-argument contract,

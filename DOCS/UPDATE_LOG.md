@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game resource-table prefix offset byte-matched
+
+- `func_1510D374` replaces its zero-return placeholder with the resource
+  offset calculation that starts at `D_1A37E0` and sums the requested unsigned
+  halfword lengths from `D_80091D20`.
+- The complete 36-word routine emits directly from semantic C, including
+  retail's remainder loop and four-entry unroll, without guard rows or a
+  compiler-profile override.
+- The refreshed matcher reports **3,233 / 5,456 (59.26%)** overall and
+  **2,565 / 4,788 (53.57%)** in Game, with zero address drift and 2,223
+  different C rows. See
+  [Working Note 726](WORKING_NOTES/726-game-resource-table-prefix-offset-match-20261002.md).
+
 ### Game owner-ID effect payload constructor byte-matched
 
 - `func_150F5C08` replaces its zero-return placeholder with the four-argument

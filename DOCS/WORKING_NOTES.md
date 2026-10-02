@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Paused (2026-10-02, Game owner-ID effect payload constructor matched).**
-The current linked checkpoint is `3232 / 5456 (59.24%)` exact C functions,
-with no address-drift blockers and 2,224 genuinely different C functions.
+**Active (2026-10-02, Game resource-table prefix offset matched).**
+The current linked checkpoint is `3233 / 5456 (59.26%)` exact C functions,
+with no address-drift blockers and 2,223 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2564 / 4788 (53.55%)` exact, with 2,224 genuinely different C rows. The tree
+`2565 / 4788 (53.57%)` exact, with 2,223 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -244,9 +244,12 @@ copy. Owner-ID effect payload constructor `func_150F5C08` now matches all 36
 words directly from typed C after recovering its four-argument contract,
 12-byte owner/ID payload, allocation, and conditional copy. The current
 aggregate already included this live-tree match in its preceding measurement.
-Resume the ordinary queue with 36-word `func_1510D374`, currently at 35 real
-differences; keep 19-word `func_150F631C` as a separate four-difference
-near-match cleanup.
+Resource-table prefix offset calculator `func_1510D374` now matches all 36
+words directly from semantic C after recovering the linker-base address,
+unsigned-halfword length table, and prefix sum. IDO emits the remainder loop
+and four-entry unroll without guards. Resume the ordinary queue with 38-word
+`func_15133FD8`, currently at 35 real differences; keep 19-word
+`func_150F631C` as a separate four-difference near-match cleanup.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
 followed by
@@ -348,6 +351,8 @@ The effect payload constructor is recorded in
 [Working Note 724](WORKING_NOTES/724-game-effect-payload-constructor-match-20261002.md).
 The owner-ID effect payload constructor is recorded in
 [Working Note 725](WORKING_NOTES/725-game-owner-id-effect-payload-constructor-match-20261002.md).
+The resource-table prefix offset calculator is recorded in
+[Working Note 726](WORKING_NOTES/726-game-resource-table-prefix-offset-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and
