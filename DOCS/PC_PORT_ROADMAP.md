@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,190 / 5,456 (58.47%) | 0 | 2,266 |
+| Total | 5,456 / 6,041 (90.32%) | 3,191 / 5,456 (58.49%) | 0 | 2,265 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,522 / 4,788 (52.67%) | 0 | 2,266 |
+| Game | 4,788 / 5,321 (89.98%) | 2,523 / 4,788 (52.69%) | 0 | 2,265 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game tick-compensated damping callback `func_1519C4E4` now matches all 34
+retail words directly from semantic C. It repeats two damping updates for the
+elapsed tick count and conditionally lowers a timer-scaled byte. See
+[Working Note 685](WORKING_NOTES/685-game-tick-compensated-damping-callback-match-20261002.md).
 
 The Game clamped height-byte updater `func_1518B1D8` now matches all 35 retail
 words. Its recovered C selects a bounded byte from a scaled object field and

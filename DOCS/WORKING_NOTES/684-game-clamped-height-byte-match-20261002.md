@@ -28,3 +28,10 @@ stale-guard, and linked-word comparison evidence.
 Resume the ordinary small-Game queue with 34-word `func_1519C4E4`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.
+
+## Superseded resume point
+
+`func_1519C4E4` was subsequently recovered and byte-matched in
+[Working Note 685](685-game-tick-compensated-damping-callback-match-20261002.md).
+Resume the ordinary queue with 35-word `func_151A787C`; the two parked special
+cases above remain unchanged.

@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,190 / 5,456 (58.47%) | 0 | 2,266 |
+| Total | 3,191 / 5,456 (58.49%) | 0 | 2,265 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,522 / 4,788 (52.67%) | 0 | 2,266 |
+| Game | 2,523 / 4,788 (52.69%) | 0 | 2,265 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game tick-compensated damping callback `func_1519C4E4` now matches all 34
+retail words. It repeats two floating-point damping updates for every elapsed
+tick, then conditionally lowers the byte at offset `0x5C` from the timer and
+parameter scale. The complete function emits directly from semantic C without
+guards or a compiler-profile override. See
+[Working Note 685](WORKING_NOTES/685-game-tick-compensated-damping-callback-match-20261002.md).
 
 The Game clamped height-byte updater `func_1518B1D8` now matches all 35 retail
 words. It derives a nonnegative byte from the smaller of a scaled object field

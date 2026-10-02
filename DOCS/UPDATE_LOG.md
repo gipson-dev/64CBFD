@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game tick-compensated damping callback byte-matched
+
+- `func_1519C4E4` restores its elapsed-tick loop over two floating-point
+  damping fields and its conditional timer-times-scale byte reduction.
+- All 34 retail words emit directly from semantic C without expected-word
+  guards or a compiler-profile override.
+- The refreshed matcher reports **3,191 / 5,456 (58.49%)** overall and
+  **2,523 / 4,788 (52.69%)** in Game, with zero address drift and 2,265
+  different C rows. See
+  [Working Note 685](WORKING_NOTES/685-game-tick-compensated-damping-callback-match-20261002.md).
+
 ### Game clamped height-byte updater byte-matched
 
 - `func_1518B1D8` restores its nonnegative height-delta gate, scaled object

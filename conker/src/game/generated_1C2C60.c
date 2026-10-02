@@ -14,6 +14,13 @@ typedef struct {
     s16 scale;
 } Generated1C2C60Record;
 
+typedef struct {
+    u8 pad0[0x24];
+    f32 factor;
+    s16 limit;
+    s16 scale;
+} Generated1C2C60Params;
+
 /* Non-matching placeholders for the text-only asm slice asm/1C2C60.s. */
 
 s32 func_1519CDB0(s32 arg0, f32 arg1, s32 arg2);
@@ -470,7 +477,27 @@ s32 func_1519C26C() {
 }
 
 s32 func_1519C4E4(u8 *arg0) {
-    return 0;
+    Generated1C2C60Params *params = (void *)(arg0 + 0x110);
+    s32 count = D_800BE9E4;
+    s32 value;
+
+    if (count > 0) {
+        do {
+            *(f32 *)(arg0 + 0x2C) = *(f32 *)(arg0 + 0x2C) -
+                                    *(f32 *)(arg0 + 0x2C) * params->factor;
+            *(f32 *)(arg0 + 0x30) = *(f32 *)(arg0 + 0x30) -
+                                    *(f32 *)(arg0 + 0x30) * params->factor;
+            count--;
+        } while (count > 0);
+    }
+
+    if (*(s16 *)(arg0 + 0x1C) < params->limit) {
+        value = *(s16 *)(arg0 + 0x1C) * (u32)params->scale;
+        if (value < arg0[0x5C]) {
+            arg0[0x5C] = value;
+        }
+    }
+    return 1;
 }
 
 s32 func_1519C56C() {
