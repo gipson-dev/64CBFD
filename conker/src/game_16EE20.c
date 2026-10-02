@@ -304,16 +304,12 @@ f32 func_15142B44(f32 arg0) {
 }
 Gfx *func_15142B7C(Gfx *arg0, u32 arg1, u32 arg2) {
     if (((~D_800DD200) & arg2) != 0) {
-        arg0->words.w0 = 0xD9000000 | ((~arg2) & 0xFFFFFF);
-        arg0->words.w1 = 0;
-        arg0++;
+        gSPClearGeometryMode(arg0++, arg2);
         D_800DD200 |= arg2;
     }
 
     if (((~D_800DD1FC) & arg1) != 0) {
-        arg0->words.w0 = 0xD9FFFFFF;
-        arg0->words.w1 = arg1;
-        arg0++;
+        gSPSetGeometryMode(arg0++, arg1);
         D_800DD1FC |= arg1;
     }
     return arg0;

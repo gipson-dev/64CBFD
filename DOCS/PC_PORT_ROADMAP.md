@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,211 / 5,456 (58.85%) | 0 | 2,245 |
+| Total | 5,456 / 6,041 (90.32%) | 3,212 / 5,456 (58.87%) | 0 | 2,244 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,543 / 4,788 (53.11%) | 0 | 2,245 |
+| Game | 4,788 / 5,321 (89.98%) | 2,544 / 4,788 (53.13%) | 0 | 2,244 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game geometry-mode command helper `func_15142B7C` now matches all 37
+retail words directly from C. It restores cached clear/set geometry-mode
+command emission using the original SDK graphics macros. See
+[Working Note 705](WORKING_NOTES/705-game-geometry-mode-command-helper-match-20261002.md).
 
 The Game global-position query `func_150FCF1C` now matches all 37 retail words
 from recovered C. It restores the nullable signed-coordinate conversion and

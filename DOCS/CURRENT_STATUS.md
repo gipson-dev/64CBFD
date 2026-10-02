@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,211 / 5,456 (58.85%) | 0 | 2,245 |
+| Total | 3,212 / 5,456 (58.87%) | 0 | 2,244 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,543 / 4,788 (53.11%) | 0 | 2,245 |
+| Game | 2,544 / 4,788 (53.13%) | 0 | 2,244 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game geometry-mode command helper `func_15142B7C` now matches all 37
+retail words directly from C. It emits clear/set geometry-mode commands only
+for uncached bits and merges those bits into the two cached mode masks. Using
+the original SDK graphics macros restores retail's cursor lifetime and store
+schedule without guards or a compiler-profile override. See
+[Working Note 705](WORKING_NOTES/705-game-geometry-mode-command-helper-match-20261002.md).
 
 The Game global-position query `func_150FCF1C` now matches all 37 retail words
 from recovered C. A null coordinate source returns `1.0f`; otherwise it

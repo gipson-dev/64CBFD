@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game global-position query matched).**
-The current linked checkpoint is `3211 / 5456 (58.85%)` exact C functions,
-with no address-drift blockers and 2,245 genuinely different C functions.
+**Active (2026-10-02, Game geometry-mode command helper matched).**
+The current linked checkpoint is `3212 / 5456 (58.87%)` exact C functions,
+with no address-drift blockers and 2,244 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2543 / 4788 (53.11%)` exact, with 2,245 genuinely different C rows. The tree
+`2544 / 4788 (53.13%)` exact, with 2,244 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -181,8 +181,10 @@ Scaled indexed-global updater `func_1509DF20` now matches all 37 words directly
 from C after restoring its event gates, paired scaled stores, and status byte.
 Global-position query `func_150FCF1C` now matches all 37 words after restoring
 its nullable signed-halfword vector conversion and query call; four guarded
-words normalize only the persistent local-vector stack offset. Resume with
-37-word `func_15142B7C`; keep
+words normalize only the persistent local-vector stack offset. Geometry-mode
+command helper `func_15142B7C` now matches all 37 words directly from C after
+recovering its original post-increment SDK macro shape. Resume with 37-word
+`func_1515CF9C`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -243,6 +245,8 @@ The scaled indexed-global updater is recorded in
 [Working Note 703](WORKING_NOTES/703-game-scaled-indexed-global-updater-match-20261002.md).
 The global-position query is recorded in
 [Working Note 704](WORKING_NOTES/704-game-global-position-query-match-20261002.md).
+The geometry-mode command helper is recorded in
+[Working Note 705](WORKING_NOTES/705-game-geometry-mode-command-helper-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game geometry-mode command helper byte-matched
+
+- `func_15142B7C` retains its two cached-mode gates but now emits the clear and
+  set commands through `gSPClearGeometryMode` and `gSPSetGeometryMode`.
+- The original post-increment SDK macro shape restores retail's display-list
+  cursor lifetime, command-store order, branches, and delay slots. All 37
+  words emit directly from semantic C without guards or a compiler-profile
+  override.
+- The refreshed matcher reports **3,212 / 5,456 (58.87%)** overall and
+  **2,544 / 4,788 (53.13%)** in Game, with zero address drift and 2,244
+  different C rows. See
+  [Working Note 705](WORKING_NOTES/705-game-geometry-mode-command-helper-match-20261002.md).
+
 ### Game global-position query byte-matched
 
 - `func_150FCF1C` replaces its zero-return placeholder with the nullable
