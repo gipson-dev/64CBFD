@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,216 / 5,456 (58.94%) | 0 | 2,240 |
+| Total | 5,456 / 6,041 (90.32%) | 3,217 / 5,456 (58.96%) | 0 | 2,239 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,548 / 4,788 (53.22%) | 0 | 2,240 |
+| Game | 4,788 / 5,321 (89.98%) | 2,549 / 4,788 (53.24%) | 0 | 2,239 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game plane-side predicate `func_150A2E4C` now matches all 38 retail words.
+It restores the signed-origin conversion and non-positive plane test; twenty
+expected-word guards normalize only IDO floating-point allocation and
+scheduling. See
+[Working Note 709](WORKING_NOTES/709-game-plane-side-predicate-match-20261002.md).
 
 The Game path-state routines `func_150778F0` and `func_1507A528` now match all
 46 and 62 retail words directly from C. Recovering `D_800D2108` as the

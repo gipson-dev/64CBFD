@@ -44,7 +44,9 @@ The same corrected declaration is used by `func_15075650`, but that larger
 routine remains non-matching for independent control-flow and scheduling
 reasons. No fresh gameplay run was performed.
 
-Resume the ordinary small-Game queue with 38-word `func_150A2E4C`, currently
-at 34 real differences. Keep `func_15015F40` parked behind unresolved
+`func_150A2E4C` is now matched and documented in
+[Working Note 709](709-game-plane-side-predicate-match-20261002.md). Resume the
+ordinary small-Game queue with 39-word `func_150BA424`, currently at 34 real
+differences. Keep `func_15015F40` parked behind unresolved
 indirect-table ownership and `func_150A76F0` in the handwritten
 register-contract workstream.

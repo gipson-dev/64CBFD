@@ -30,6 +30,17 @@ typedef struct {
     f32 sine1;
 } GeneratedCDE80TrigRecord;
 
+typedef struct {
+    s16 origin0;
+    s16 origin1;
+    s16 origin2;
+    u8 pad6[0x1E];
+    f32 coefficient0;
+    f32 scale;
+    f32 coefficient1;
+    f32 coefficient2;
+} GeneratedCDE80Plane;
+
 f32 func_150AD780(f32);
 f32 func_150AD78C(f32);
 
@@ -107,7 +118,28 @@ s32 func_150A2AEC() {
 /* Original view-volume query; OGL Note 545. */
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_CDE80/func_150A2D84.s")
 
-s32 func_150A2E4C() {
+// Matched with guarded floating-point allocation and scheduling normalization.
+s32 func_150A2E4C(GeneratedCDE80Plane *plane, f32 value0, f32 value1,
+                   f32 value2) {
+    volatile s16 *origin;
+    f32 factor0;
+    f32 factor2;
+    f32 result;
+
+    origin = &plane->origin0;
+    value0 = value0 - origin[0];
+    value1 = value1 - origin[1];
+    value2 = value1 - origin[2];
+
+    factor2 = plane->coefficient2;
+    factor0 = plane->coefficient1;
+    result = value2 * factor2 + value0 * factor0;
+    factor2 = plane->scale;
+    factor0 = plane->coefficient0;
+    result = result * factor2 - value1 * factor0;
+    if (result <= 0.0f) {
+        return 1;
+    }
     return 0;
 }
 

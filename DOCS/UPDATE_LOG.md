@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game plane-side predicate byte-matched
+
+- `func_150A2E4C` replaces its zero-return placeholder with the signed-origin
+  conversion and non-positive plane-expression predicate used by retail.
+- The semantic C preserves retail's fourth-argument overwrite. Twenty
+  expected-word guards normalize the compiler's floating-point allocation and
+  schedule without insertions, omissions, relocations, or a profile override.
+- The refreshed matcher reports **3,217 / 5,456 (58.96%)** overall and
+  **2,549 / 4,788 (53.24%)** in Game, with zero address drift and 2,239
+  different C rows. See
+  [Working Note 709](WORKING_NOTES/709-game-plane-side-predicate-match-20261002.md).
+
 ### Game path-count pointer contract byte-matched
 
 - Corrected `D_800D2108` from an inline byte-array declaration to the

@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,216 / 5,456 (58.94%) | 0 | 2,240 |
+| Total | 3,217 / 5,456 (58.96%) | 0 | 2,239 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,548 / 4,788 (53.22%) | 0 | 2,240 |
+| Game | 2,549 / 4,788 (53.24%) | 0 | 2,239 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game plane-side predicate `func_150A2E4C` now matches all 38 retail words.
+It converts the signed origin coordinates, evaluates the plane expression, and
+returns whether the result is non-positive. Twenty expected-word guards
+normalize IDO's floating-point register allocation and instruction schedule;
+the linked 152-byte span is identical to retail. See
+[Working Note 709](WORKING_NOTES/709-game-plane-side-predicate-match-20261002.md).
 
 The Game path-state routines `func_150778F0` and `func_1507A528` now match all
 46 and 62 retail words directly from C. Correcting `D_800D2108` from inline
