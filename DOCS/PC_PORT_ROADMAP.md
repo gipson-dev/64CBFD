@@ -1,6 +1,6 @@
 # PC Port Roadmap located in another project folder
 
-## Cross-project progress - 2026-10-01
+## Cross-project progress - 2026-10-02
 
 The active Windows port remains in sibling `64CBFDOGL`; this repository owns
 the guest decompilation and retail-byte evidence used by that port. The current
@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,169 / 5,456 (58.08%) | 0 | 2,287 |
-| Init | 487 / 538 (90.52%) | 486 / 487 (99.79%) | 0 | 1 |
+| Total | 5,456 / 6,041 (90.32%) | 3,170 / 5,456 (58.10%) | 0 | 2,286 |
+| Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
 | Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,13 @@ conversion distinction because `func_16003650` is original handwritten
 CP0/TLB assembly, but a direct linked-ELF comparison confirms that all 40 of
 its words match retail. There is no remaining debugger conversion or matching
 work.
+
+Init's code-function matcher queue is now complete. `_n_handleEvent` matches
+all 1,363 retail words after restoring the extended sound-player event
+dispatcher; see
+[Working Note 672](WORKING_NOTES/672-init-sound-event-dispatcher-match-20261002.md).
+This does not close the separate Init-data layout issue at the absolute
+`jtbl_8002C708_init` dispatcher table.
 
 The Init compact-sequence voice handler `__n_CSPVoiceHandler` now matches all
 684 retail words. It restores the event loop, oscillator and envelope work,

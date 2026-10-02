@@ -14,6 +14,26 @@ For code-level progress, run:
 make -C conker progress
 ```
 
+## 2026-10-02
+
+### Init sound-event dispatcher byte-matched
+
+- `_n_handleEvent` now replaces its zero-return placeholder with the complete
+  extended sound-player dispatcher: resource resolution, voice allocation,
+  envelope timing, pan/volume/pitch/effect updates, retries, cleanup,
+  channel-volume changes, and child-sound startup.
+- The typed body compiles to 1,241 words. Retail's 1,363-word closed layout is
+  reproduced by 1,241 stale-checked rows, including 122 insertions and 87
+  relocation-aware rows.
+- Direct comparison reports zero differences across all 5,452 bytes. Both
+  spans share SHA-256
+  `583662222304bf87a3b24bc9495055b930b2076e36ecb37183fa5612a36b8525`.
+  Totals are **3,170 / 5,456 (58.10%)** overall and
+  **487 / 487 (100.00%)** in Init, with zero address drift and zero different
+  Init C rows. The absolute `jtbl_8002C708_init` table remains a separate
+  shifted Init-data layout issue. See
+  [Working Note 672](WORKING_NOTES/672-init-sound-event-dispatcher-match-20261002.md).
+
 ## 2026-10-01
 
 ### Init compact-sequence voice handler byte-matched

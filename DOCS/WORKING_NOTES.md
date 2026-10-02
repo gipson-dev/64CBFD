@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init compact-sequence voice handler matched).**
-The current linked checkpoint is `3169 / 5456 (58.08%)` exact C functions,
-with no address-drift blockers and 2,287 genuinely different C functions.
+**Active (2026-10-02, Init code-function matcher complete).**
+The current linked checkpoint is `3170 / 5456 (58.10%)` exact C functions,
+with no address-drift blockers and 2,286 genuinely different C functions.
 Init is
-`486 / 487 (99.79%)` exact, with one genuinely different C row. Game is
+`487 / 487 (100.00%)` exact, with no different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,13 +100,13 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`__n_CSPVoiceHandler` now matches all 684 retail words after restoring compact
-sequence dispatch, oscillator/envelope updates, Rare's custom mix/control
-events, restartable sequence state, and voice/channel cleanup. Its readable
-667-word body is expanded by 17 checked insertions; 45 rows preserve source
-relocations. Resume Init at the final remaining row, the 1,363-word
-`_n_handleEvent`, currently different in 1,164 words. See
-[Working Note 671](WORKING_NOTES/671-init-compact-sequence-voice-handler-match-20261001.md).
+`_n_handleEvent` now matches all 1,363 retail words after restoring Rare's
+extended sound-player event dispatcher. Its typed 1,241-word body is expanded
+by 122 checked insertions, with 87 relocation-aware rows. Init code matching is
+complete; resume the code-function queue in Game. The absolute
+`jtbl_8002C708_init` table still exposes a separate shifted Init-data layout
+issue, so rebuilt-image runtime qualification remains open. See
+[Working Note 672](WORKING_NOTES/672-init-sound-event-dispatcher-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

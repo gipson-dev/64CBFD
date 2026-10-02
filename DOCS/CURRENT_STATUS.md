@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-01
+Last verified: 2026-10-02
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -21,7 +21,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Fresh `progress.csv` and linked retail comparison on 2026-10-01:
+Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
@@ -32,10 +32,22 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,169 / 5,456 (58.08%) | 0 | 2,287 |
-| Init | 486 / 487 (99.79%) | 0 | 1 |
+| Total | 3,170 / 5,456 (58.10%) | 0 | 2,286 |
+| Init | 487 / 487 (100.00%) | 0 | 0 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init sound-event dispatcher `_n_handleEvent` now matches all 1,363 retail
+words, completing the Init code-function matcher queue at 487 / 487. It
+restores resource resolution, voice allocation and startup, envelope timing,
+pan/volume/pitch/effect updates, retry scheduling, cleanup, channel-volume
+events, and child-sound dispatch. Its typed 1,241-word body is expanded by 122
+checked insertions; 87 rows verify compact-object relocations. The independent
+5,452-byte comparison is exact with SHA-256
+`583662222304bf87a3b24bc9495055b930b2076e36ecb37183fa5612a36b8525`.
+The separate shifted Init-rodata issue at absolute dispatcher table
+`jtbl_8002C708_init` remains a data-layout/runtime qualification task. See
+[Working Note 672](WORKING_NOTES/672-init-sound-event-dispatcher-match-20261002.md).
 
 The Init compact-sequence voice handler `__n_CSPVoiceHandler` now matches all
 684 retail words. It restores SDK event dispatch, envelope and oscillator
