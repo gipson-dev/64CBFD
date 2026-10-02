@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game group-record activator byte-matched
+
+- `func_150227BC` replaces its zero-return placeholder with the complete
+  count-sized walk over a selected 30-byte ID row. Each ID is resolved through
+  `func_151149AC`, and byte `0x6E` on the returned record is set to one.
+- All 35 retail words match. Thirty-three emit directly from semantic C; two
+  stale-checked rows normalize only the independent row-offset subtraction and
+  index initialization around the opening branch.
+- The refreshed matcher reports **3,197 / 5,456 (58.60%)** overall and
+  **2,529 / 4,788 (52.82%)** in Game, with zero address drift and 2,259
+  different C rows. See
+  [Working Note 691](WORKING_NOTES/691-game-group-record-activator-match-20261002.md).
+
 ### Game counted resource-owner teardown byte-matched
 
 - `func_151EDB58` replaces its zero-return placeholder with the complete

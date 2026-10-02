@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game counted resource-owner teardown matched).**
-The current linked checkpoint is `3196 / 5456 (58.58%)` exact C functions,
-with no address-drift blockers and 2,260 genuinely different C functions.
+**Active (2026-10-02, Game group-record activator matched).**
+The current linked checkpoint is `3197 / 5456 (58.60%)` exact C functions,
+with no address-drift blockers and 2,259 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2528 / 4788 (52.80%)` exact, with 2,260 genuinely different C rows. The tree
+`2529 / 4788 (52.82%)` exact, with 2,259 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -151,8 +151,10 @@ slot with fourteen stale-checked rows, including one checked insertion for the
 retail advanced-record-pointer lifetime. Run a fresh linked-difference scan to
 select the next ordinary small-Game function. Counted resource-owner teardown
 `func_151EDB58` now matches all 33 words directly from semantic C without
-guards. Resume with 35-word `func_150227BC`; keep the documented indirect-table
-and handwritten-register special cases parked.
+guards. Group-record activator `func_150227BC` now matches all 35 words with
+two stale-checked independent scheduling words. Resume with 38-word
+`func_150333A8`; keep the documented indirect-table and handwritten-register
+special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
 followed by
@@ -184,6 +186,8 @@ The event-record matcher recovery is recorded in
 [Working Note 689](WORKING_NOTES/689-game-event-record-matcher-match-20261002.md).
 The counted resource-owner teardown is recorded in
 [Working Note 690](WORKING_NOTES/690-game-counted-resource-owner-teardown-match-20261002.md).
+The group-record activator is recorded in
+[Working Note 691](WORKING_NOTES/691-game-group-record-activator-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

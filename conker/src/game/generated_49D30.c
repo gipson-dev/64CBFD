@@ -26,6 +26,7 @@ extern s64 D_800C3A60[];
 extern s32 D_800C3668[];
 extern s32 func_1502B6BC(s32 *arg0, s32 arg1, s32 *arg2, s32 arg3,
                         s32 arg4, s32 arg5, s32 arg6);
+u8 *func_151149AC(u8);
 
 s32 func_1501C880() {
     return 0;
@@ -274,8 +275,20 @@ void func_15022754(s32 index) {
     }
 }
 
-s32 func_150227BC() {
-    return 0;
+void func_150227BC(s32 group) {
+    s32 i = 0;
+    u8 *count = &D_800C354A[group];
+    s32 row_offset = group * 30;
+
+    if (*count > 0) {
+        u8 *entry = (u8 *)D_800C3550 + row_offset;
+
+        do {
+            func_151149AC(*entry)[0x6E] = 1;
+            i++;
+            entry++;
+        } while (i < *count);
+    }
 }
 
 s32 func_15022848() {

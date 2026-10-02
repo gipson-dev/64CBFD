@@ -25,6 +25,7 @@ Debugger remains `181 / 181 (100.00%)`.
 No fresh gameplay run was performed. This checkpoint is semantic recovery,
 full-link, and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 35-word `func_150227BC`. Keep
+The next queued function, 35-word `func_150227BC`, is now complete; see
+[Working Note 691](691-game-group-record-activator-match-20261002.md). Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

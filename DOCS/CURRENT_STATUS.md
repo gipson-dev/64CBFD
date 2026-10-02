@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,196 / 5,456 (58.58%) | 0 | 2,260 |
+| Total | 3,197 / 5,456 (58.60%) | 0 | 2,259 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,528 / 4,788 (52.80%) | 0 | 2,260 |
+| Game | 2,529 / 4,788 (52.82%) | 0 | 2,259 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game group-record activator `func_150227BC` now matches all 35 retail
+words. It walks the selected 30-byte ID row, resolves each active ID through
+`func_151149AC`, and sets byte `0x6E` on the returned record while re-reading
+the group count. Thirty-three words emit directly from C; two stale-checked
+rows normalize only the independent row-offset and index-initialization
+schedule around the opening branch. See
+[Working Note 691](WORKING_NOTES/691-game-group-record-activator-match-20261002.md).
 
 The Game counted resource-owner teardown `func_151EDB58` now matches all 33
 retail words directly from semantic C. It releases the auxiliary resource and

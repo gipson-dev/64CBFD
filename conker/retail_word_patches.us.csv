@@ -10212,3 +10212,5 @@ generated_204660,func_151D7538,0x044,0x908F0044,0x90C80004,-,-,Normalize event-r
 generated_204660,func_151D7538,0x048,0x90B80004,0x912A0004,-,-,Normalize event-record matcher incoming tag access,,,false
 generated_204660,func_151D7538,0x04C,0x55F8000B,0x550A000B,-,-,Normalize event-record matcher tag comparison allocation,,,false
 generated_204660,func_151D7538,0x074,0xAFA30010,0xAFAB0010,-,-,Normalize event-record matcher trailing object argument allocation,,,false
+generated_49D30,func_150227BC,0x02C,0x00008025,0x0304C023,-,-,Normalize group-record activator row-offset scheduling,,,false
+generated_49D30,func_150227BC,0x034,0x0304C023,0x00008025,-,-,Normalize group-record activator index initialization scheduling,,,false

@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,196 / 5,456 (58.58%) | 0 | 2,260 |
+| Total | 5,456 / 6,041 (90.32%) | 3,197 / 5,456 (58.60%) | 0 | 2,259 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,528 / 4,788 (52.80%) | 0 | 2,260 |
+| Game | 4,788 / 5,321 (89.98%) | 2,529 / 4,788 (52.82%) | 0 | 2,259 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game group-record activator `func_150227BC` now matches all 35 retail
+words. It resolves every ID in the selected count-sized row and marks the
+returned records active. Two stale-checked rows preserve only retail's opening
+independent-instruction schedule. See
+[Working Note 691](WORKING_NOTES/691-game-group-record-activator-match-20261002.md).
 
 The Game counted resource-owner teardown `func_151EDB58` now matches all 33
 retail words directly from semantic C. It restores the auxiliary-resource,
