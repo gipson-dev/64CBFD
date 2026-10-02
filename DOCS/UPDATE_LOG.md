@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game mode-offset adjuster byte-matched
+
+- `func_151CD224` restores the sampled-value delta, embedded-record scale,
+  mode byte dispatch, and positive/negative output update.
+- Its complete 39-word retail slot matches. Six stale-checked rows, including
+  one checked insertion, preserve the shared record base and mode register;
+  three trailing retail padding words are retained by the generated-object
+  layout tool.
+- The refreshed matcher reports **3,194 / 5,456 (58.54%)** overall and
+  **2,526 / 4,788 (52.76%)** in Game, with zero address drift and 2,262
+  different C rows. See
+  [Working Note 688](WORKING_NOTES/688-game-mode-offset-adjuster-match-20261002.md).
+
 ### Game output-default initializer byte-matched
 
 - `func_151B498C` restores its thirteen output writes: two packed mode words,

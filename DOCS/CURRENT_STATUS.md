@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,193 / 5,456 (58.52%) | 0 | 2,263 |
+| Total | 3,194 / 5,456 (58.54%) | 0 | 2,262 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,525 / 4,788 (52.74%) | 0 | 2,263 |
+| Game | 2,526 / 4,788 (52.76%) | 0 | 2,262 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game mode-offset adjuster `func_151CD224` now matches its complete 39-word
+slot. It samples the object's control value, derives a scaled adjustment from
+the embedded record at offset `0x70`, and applies the positive or negative
+mode-specific output at offset `0x14`. Six stale-checked rows, including one
+checked insertion, preserve retail's shared record-base and mode-register
+allocation; the remaining arithmetic and branch schedule emit from semantic
+C. See
+[Working Note 688](WORKING_NOTES/688-game-mode-offset-adjuster-match-20261002.md).
 
 The Game output-default initializer `func_151B498C` now matches all 34 retail
 words. It initializes thirteen caller-provided outputs with two packed mode

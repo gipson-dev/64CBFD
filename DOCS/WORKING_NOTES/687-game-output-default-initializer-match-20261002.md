@@ -25,6 +25,8 @@ byte-exact C progress is `3,193 / 5,456 (58.52%)`. Init remains
 No fresh gameplay run was performed. This checkpoint is compiler, full-link,
 stale-guard, and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 39-word `func_151CD224`. Keep
+This resume boundary was completed by
+[Working Note 688](688-game-mode-offset-adjuster-match-20261002.md). Continue
+the ordinary small-Game queue with 35-word `func_151D7538`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

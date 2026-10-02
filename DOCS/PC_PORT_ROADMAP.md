@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,193 / 5,456 (58.52%) | 0 | 2,263 |
+| Total | 5,456 / 6,041 (90.32%) | 3,194 / 5,456 (58.54%) | 0 | 2,262 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,525 / 4,788 (52.74%) | 0 | 2,263 |
+| Game | 4,788 / 5,321 (89.98%) | 2,526 / 4,788 (52.76%) | 0 | 2,262 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game mode-offset adjuster `func_151CD224` now matches its complete 39-word
+slot. Its semantic C computes a record-scaled adjustment and writes the
+mode-4 or mode-5 output; six stale-checked rows preserve retail's shared
+record-base and mode-register allocation. See
+[Working Note 688](WORKING_NOTES/688-game-mode-offset-adjuster-match-20261002.md).
 
 The Game output-default initializer `func_151B498C` now matches all 34 retail
 words directly from semantic C. It supplies the fallback packed modes, scalar

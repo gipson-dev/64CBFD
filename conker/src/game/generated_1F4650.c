@@ -6,6 +6,16 @@ extern u8 D_8008CD00;
 void func_1516972C(u8 *arg0);
 void func_1504715C(void *arg0, u8 *arg1);
 void func_151ABE40(f32 *arg0, void *arg1, s32 arg2, u8 arg3, s32 arg4);
+f32 func_151CC1D4(u8 *arg0);
+
+typedef struct {
+    u8 pad0[0xD];
+    u8 mode;
+    u8 padE[0xA];
+    f32 offset;
+    u8 pad1C[4];
+    f32 scale;
+} Func151CD224Record;
 
 s32 func_151C71A0() {
     return 0;
@@ -220,6 +230,17 @@ s32 func_151CCF08() {
     return 0;
 }
 
-s32 func_151CD224() {
-    return 0;
+void func_151CD224(u8 *arg0) {
+    f32 sampled = func_151CC1D4(arg0);
+    Func151CD224Record *record = (Func151CD224Record *)(arg0 + 0x70);
+    f32 adjustment;
+    s32 mode;
+
+    adjustment = (1.0f - (sampled - record->offset) * record->scale) * 75.0f;
+    mode = record->mode;
+    if (mode == 5) {
+        *(f32 *)(arg0 + 0x14) = 92.0f + adjustment;
+    } else if (mode == 4) {
+        *(f32 *)(arg0 + 0x14) = -92.0f - adjustment;
+    }
 }

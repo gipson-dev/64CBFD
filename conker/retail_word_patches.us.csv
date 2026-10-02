@@ -10192,3 +10192,9 @@ generated_1D43B0,func_151A787C,0x074,0x00002812,0x0000C812,-,-,Normalize thresho
 generated_1D43B0,func_151A787C,0x078,0xA0850042,0xA0990042,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
 generated_1D43B0,func_151A787C,0x07C,0xA0850041,0xA0990041,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
 generated_1D43B0,func_151A787C,0x080,0xA0850040,0xA0990040,-,-,Normalize threshold intensity updater compiler register allocation and schedule,,,false
+generated_1F4650,func_151CD224,0x018,0x44818000,0x44818000,-,-,Restore mode offset adjuster shared record base,0x24820070,,false
+generated_1F4650,func_151CD224,0x01C,0xC4840088,0xC4440018,-,-,Normalize mode offset adjuster record base allocation,,,false
+generated_1F4650,func_151CD224,0x020,0xC4880090,0xC4480020,-,-,Normalize mode offset adjuster record base allocation,,,false
+generated_1F4650,func_151CD224,0x030,0x9082007D,0x9043000D,-,-,Normalize mode offset adjuster record base and mode allocation,,,false
+generated_1F4650,func_151CD224,0x044,0x14410006,0x14610006,-,-,Normalize mode offset adjuster mode register allocation,,,false
+generated_1F4650,func_151CD224,0x064,0x14410005,0x14610005,-,-,Normalize mode offset adjuster mode register allocation,,,false
