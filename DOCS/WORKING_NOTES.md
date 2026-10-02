@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game timer/position updater matched).**
-The current linked checkpoint is `3203 / 5456 (58.71%)` exact C functions,
-with no address-drift blockers and 2,253 genuinely different C functions.
+**Active (2026-10-02, Game vector-argument forwarder matched).**
+The current linked checkpoint is `3204 / 5456 (58.72%)` exact C functions,
+with no address-drift blockers and 2,252 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2535 / 4788 (52.94%)` exact, with 2,253 genuinely different C rows. The tree
+`2536 / 4788 (52.97%)` exact, with 2,252 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -165,8 +165,10 @@ finalizer `func_15080C64` now matches all 36 words directly
 from C after restoring its
 teardown gates, category flag, and pending-record completion. Timer/position
 updater `func_150CBA30` now matches all 35 words directly from C after restoring
-its signed timer, paired motion update, and conditional byte clamp. Resume with
-35-word `func_150E3340`; keep
+its signed timer, paired motion update, and conditional byte clamp.
+Vector-argument forwarder `func_150E3340` now matches all 35 words directly
+from C after recovering its complete fourteen-argument call contract. Resume
+with 35-word `func_150FFC3C`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -213,6 +215,8 @@ The resource-teardown finalizer is recorded in
 [Working Note 696](WORKING_NOTES/696-game-resource-teardown-finalizer-match-20261002.md).
 The timer/position updater is recorded in
 [Working Note 697](WORKING_NOTES/697-game-timer-position-byte-clamp-match-20261002.md).
+The vector-argument forwarder is recorded in
+[Working Note 698](WORKING_NOTES/698-game-vector-argument-forwarder-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

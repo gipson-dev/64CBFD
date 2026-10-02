@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game vector-argument forwarder byte-matched
+
+- `func_150E3340` replaces its zero-return placeholder with the forwarding call
+  that duplicates a three-word vector, supplies mode `0x1A` and scale `10.0f`,
+  and passes a three-float position plus trailing word and halfword arguments.
+- All 35 retail words emit directly from semantic C without guards or a
+  compiler-profile override. The recovered parameter types reproduce the
+  retail frame, incoming argument spills, load schedule, call delay slot, and
+  `void` epilogue.
+- The refreshed matcher reports **3,204 / 5,456 (58.72%)** overall and
+  **2,536 / 4,788 (52.97%)** in Game, with zero address drift and 2,252
+  different C rows. See
+  [Working Note 698](WORKING_NOTES/698-game-vector-argument-forwarder-match-20261002.md).
+
 ### Game timer/position updater byte-matched
 
 - `func_150CBA30` replaces its zero-return placeholder with the signed timer

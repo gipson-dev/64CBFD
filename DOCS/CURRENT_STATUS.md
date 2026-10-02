@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,203 / 5,456 (58.71%) | 0 | 2,253 |
+| Total | 3,204 / 5,456 (58.72%) | 0 | 2,252 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,535 / 4,788 (52.94%) | 0 | 2,253 |
+| Game | 2,536 / 4,788 (52.97%) | 0 | 2,252 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game vector-argument forwarding wrapper `func_150E3340` now matches all
+35 retail words directly from C. It duplicates a three-word vector into the
+first six callee arguments, supplies the fixed mode and scale, forwards a
+three-float position, and preserves the final word and signed-halfword
+arguments. The direct call expression recovers the complete retail schedule
+without guards. See
+[Working Note 698](WORKING_NOTES/698-game-vector-argument-forwarder-match-20261002.md).
 
 The Game timer/position updater `func_150CBA30` now matches all 35 retail words
 directly from C. It decrements the signed timer, applies its scaled motion to

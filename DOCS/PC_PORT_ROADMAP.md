@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,203 / 5,456 (58.71%) | 0 | 2,253 |
+| Total | 5,456 / 6,041 (90.32%) | 3,204 / 5,456 (58.72%) | 0 | 2,252 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,535 / 4,788 (52.94%) | 0 | 2,253 |
+| Game | 4,788 / 5,321 (89.98%) | 2,536 / 4,788 (52.97%) | 0 | 2,252 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game vector-argument forwarding wrapper `func_150E3340` now matches all
+35 retail words directly from C. It restores the duplicated three-word vector,
+fixed mode/scale arguments, forwarded three-float position, and trailing
+word/halfword parameters. See
+[Working Note 698](WORKING_NOTES/698-game-vector-argument-forwarder-match-20261002.md).
 
 The Game timer/position updater `func_150CBA30` now matches all 35 retail words
 directly from C. It restores the signed timer decrement, timer-scaled paired
