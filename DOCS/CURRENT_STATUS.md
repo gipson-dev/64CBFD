@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,163 / 5,456 (57.97%) | 0 | 2,293 |
-| Init | 480 / 487 (98.56%) | 0 | 7 |
+| Total | 3,164 / 5,456 (57.99%) | 0 | 2,292 |
+| Init | 481 / 487 (98.77%) | 0 | 6 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init numeric formatter `func_10001AA8` now matches its complete 370-word
+retail span. It restores fixed, scientific, and general-format placement,
+precision trimming, decimal insertion, exponent emission, and width padding.
+The 365-word compact body emits 87 retail words directly; 278 stale-checked
+rows include 13 insertions, eight omissions, and three relocation-aware rows.
+See
+[Working Note 666](WORKING_NOTES/666-init-numeric-formatter-match-20261001.md).
 
 The Init sound-record updater `func_10011624` now matches its complete
 357-word retail span. It restores bounded record traversal, stale-handle

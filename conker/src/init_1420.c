@@ -200,157 +200,146 @@ s16 func_100019F0(s16 *arg0, struct05 *arg1) {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_1420/func_10001AA8.s. */
-s32 func_10001AA8() {
-    return 0;
+s32 func_10001AA8(arg0, arg1, arg2, arg3, arg4)
+struct246 *arg0;
+u8 arg1;
+u8 *arg2;
+s16 arg3;
+s16 arg4;
+{
+    s32 value;
+    s32 total;
+    s32 precision;
+    s32 leading;
+    s32 exponent;
+    u8 *output;
+
+    if (arg3 <= 0) {
+        arg2 = D_8002BF70;
+        arg3 = 1;
+    }
+
+    if (arg1 == 'f') {
+        goto fixed_format;
+    }
+    if ((arg1 == 'g') || (arg1 == 'G')) {
+        if ((arg4 >= -4) && (arg4 < arg0->unk24)) {
+fixed_format:
+            arg4++;
+            if (arg1 != 'f') {
+                precision = arg0->unk24;
+                if (((arg0->unk30 & 8) == 0) && (arg3 < arg0->unk24)) {
+                    arg0->unk24 = arg3;
+                    precision = arg3;
+                }
+                arg0->unk24 = precision - arg4;
+                if (arg0->unk24 < 0) {
+                    arg0->unk24 = 0;
+                }
+            }
+
+            if (arg4 <= 0) {
+                arg0->unk8[arg0->unk14++] = '0';
+                if ((arg0->unk24 > 0) || ((arg0->unk30 & 8) != 0)) {
+                    arg0->unk8[arg0->unk14++] = '.';
+                }
+                leading = -arg4;
+                if (arg0->unk24 < leading) {
+                    leading = arg0->unk24;
+                    arg4 = -arg0->unk24;
+                }
+                arg0->unk18 = leading;
+                arg0->unk24 += arg4;
+                if (arg0->unk24 < arg3) {
+                    arg3 = arg0->unk24;
+                }
+                arg0->unk1C = arg3;
+                memcpy(arg0->unk8 + arg0->unk14, arg2, arg3);
+                arg0->unk20 = arg0->unk24 - arg3;
+            } else if (arg3 < arg4) {
+                memcpy(arg0->unk8 + arg0->unk14, arg2, arg3);
+                arg0->unk14 += arg3;
+                arg0->unk18 = arg4 - arg3;
+                if ((arg0->unk24 > 0) || ((arg0->unk30 & 8) != 0)) {
+                    arg0->unk8[arg0->unk14] = '.';
+                    arg0->unk1C++;
+                }
+                arg0->unk20 = arg0->unk24;
+            } else {
+                memcpy(arg0->unk8 + arg0->unk14, arg2, arg4);
+                arg0->unk14 += arg4;
+                if ((arg0->unk24 > 0) || ((arg0->unk30 & 8) != 0)) {
+                    arg0->unk8[arg0->unk14++] = '.';
+                }
+                arg3 -= arg4;
+                if (arg0->unk24 < arg3) {
+                    arg3 = arg0->unk24;
+                }
+                memcpy(arg0->unk8 + arg0->unk14, arg2 + arg4, arg3);
+                arg0->unk14 += arg3;
+                arg0->unk18 = arg0->unk24 - arg3;
+            }
+            goto finish;
+        }
+    }
+
+scientific_format:
+    if ((arg1 == 'g') || (arg1 == 'G')) {
+        precision = arg0->unk24;
+        if (arg3 < precision) {
+            arg0->unk24 = arg3;
+            precision = arg3;
+        }
+        arg0->unk24 = precision - 1;
+        if (arg0->unk24 < 0) {
+            arg0->unk24 = 0;
+        }
+        arg1 = (arg1 == 'g') ? 'e' : 'E';
+    }
+
+    arg0->unk8[arg0->unk14++] = *arg2++;
+    if ((arg0->unk24 > 0) || ((arg0->unk30 & 8) != 0)) {
+        arg0->unk8[arg0->unk14++] = '.';
+    }
+    if (arg0->unk24 > 0) {
+        arg3--;
+        if (arg0->unk24 < arg3) {
+            arg3 = arg0->unk24;
+        }
+        memcpy(arg0->unk8 + arg0->unk14, arg2, arg3);
+        arg0->unk14 += arg3;
+        arg0->unk18 = arg0->unk24 - arg3;
+    }
+
+    output = arg0->unk8 + arg0->unk14;
+    *output++ = arg1;
+    if (arg4 >= 0) {
+        *output++ = '+';
+        exponent = arg4;
+    } else {
+        *output++ = '-';
+        exponent = -arg4;
+    }
+    if (exponent >= 100) {
+        if (exponent >= 1000) {
+            *output++ = (exponent / 1000) + '0';
+            exponent %= 1000;
+        }
+        *output++ = (exponent / 100) + '0';
+        exponent %= 100;
+    }
+    output[0] = (exponent / 10) + '0';
+    output[1] = (exponent % 10) + '0';
+    output += 2;
+    arg0->unk1C = (output - arg0->unk8) - arg0->unk14;
+
+finish:
+    if ((arg0->unk30 & 0x14) == 0x10) {
+        value = arg0->unk28;
+        total = arg0->unkC + arg0->unk14 + arg0->unk18 + arg0->unk1C +
+                arg0->unk20;
+        if (total < value) {
+            arg0->unk10 = value - total;
+        }
+    }
 }
-// some kind of memory allocation?
-// NON-MATCHING: 50% of the way there...
-// void func_10001AA8(struct246 *arg0, u8 arg1, u8 *arg2, s16 arg3, s16 arg4) {
-//     s32 temp_v0_3;
-//     s32 temp_v1_2;
-//     s32 phi_v0;
-//     u8 *phi_s1;
-//     s32 phi_v1;
-//     s32 required;
-//     u8 *mem_array;
-//
-//     if (arg3 <= 0) {
-//         arg2 = &D_8002BF70;
-//         arg3 = 1;
-//     }
-//
-//     if (arg1 != 0x66) {
-//         if ((arg1 == 0x67) || (arg1 == 0x47)) {
-//             if ((arg4 >= -4) && (arg4 < arg0->unk24)) {
-// block_7:
-//                 arg4 = arg4 + 1;
-//                 if (arg1 != 0x66) {
-//                     phi_v0 = arg0->unk24;
-//                     if (((arg0->unk30 & 8) == 0) && (arg3 < arg0->unk24) ){
-//                         arg0->unk24 = arg3;
-//                         phi_v0 = arg3;
-//                     }
-//                     arg0->unk24 = phi_v0 - arg4;
-//                     if (arg0->unk24 < 0) {
-//                         arg0->unk24 = 0;
-//                     }
-//                 }
-//                 if (arg4 <= 0) {
-//                     *(arg0->unk8 + arg0->unk14) = 0x30;
-//                     arg0->unk14 += 1;
-//                     if ((arg0->unk24 > 0) || ((arg0->unk30 & 8) != 0)) {
-//                         *(arg0->unk8 + arg0->unk14) = 0x2E;
-//                         arg0->unk14 += 1;
-//                     }
-//                     phi_v1 = -arg4;
-//                     if (arg0->unk24 < phi_v1) {
-//                         phi_v1 = arg0->unk24;
-//                         arg4 = -arg0->unk24;
-//                     }
-//                     arg0->unk18 = phi_v1;
-//                     arg0->unk24 += arg4;
-//                     if (arg0->unk24 < arg3) {
-//                         arg3 = (s16)arg0->unk24;
-//                     }
-//                     arg0->unk1C = arg3;
-//                     memcpy(arg0->unk8 + arg0->unk14, arg2, arg3);
-//                     arg0->unk20 = arg0->unk24 - arg3;
-//                 } else if (arg3 < (s32) arg4) {
-//                     memcpy(arg0->unk8 + arg0->unk14, arg2, arg3);
-//                     arg0->unk14 = (s32) (arg0->unk14 + arg3);
-//                     arg0->unk18 = (s32) (arg4 - arg3);
-//                     if ((arg0->unk24 > 0) || ((arg0->unk30 & 8) != 0)) {
-//                         *(arg0->unk8 + arg0->unk14) = (u8)0x2E;
-//                         arg0->unk1C = (s32) (arg0->unk1C + 1);
-//                     }
-//                     arg0->unk20 = arg0->unk24;
-//                 } else {
-//                     memcpy(arg0->unk8 + arg0->unk14, arg2, arg4);
-//                     arg0->unk14 = (s32) (arg0->unk14 + arg4);
-//                     if ((arg0->unk24 > 0) || ((arg0->unk30 & 8) != 0)) {
-//                         *(arg0->unk8 + arg0->unk14) = (u8)0x2E;
-//                         arg0->unk14 = (s32) (arg0->unk14 + 1);
-//                     }
-//                     arg3 = (s16) arg3 - arg4;
-//                     if (arg0->unk24 < (s32) arg3) {
-//                         arg3 = (s16) arg0->unk24;
-//                     }
-//                     memcpy(arg0->unk8 + arg0->unk14, arg4 + arg2, arg3);
-//                     arg0->unk14 = (s32) (arg0->unk14 + arg3);
-//                     arg0->unk18 = (s32) (arg0->unk24 - arg3);
-//                 }
-//             } else {
-// block_33:
-//                 if ((arg1 == 0x67) || (arg1 == 0x47)) {
-//                     phi_v0 = arg0->unk24;
-//                     if (arg3 < phi_v0) {
-//                         arg0->unk24 = arg3;
-//                         phi_v0 = arg3;
-//                     }
-//                     arg0->unk24 = phi_v0 - 1;
-//                     if (arg0->unk24 < 0) {
-//                         arg0->unk24 = 0;
-//                     }
-//                     if (arg1 == 0x67) {
-//                         arg1 = 0x65U;
-//                     } else {
-//                         arg1 = 0x45U;
-//                     }
-//                 }
-//                 *(arg0->unk8 + arg0->unk14) = *arg2;
-//                 arg0->unk14 += 1;
-//                 if ((arg0->unk24 > 0) || ((arg0->unk30 & 8) != 0)) {
-//                     *(arg0->unk8 + arg0->unk14) = 0x2E;
-//                     arg0->unk14 += 1;
-//                 }
-//                 if (arg0->unk24 > 0) {
-//                     arg3 = arg3 - 1;
-//                     if (arg0->unk24 < arg3) {
-//                         arg3 = (s16) arg0->unk24; // (s16)
-//                     }
-//                     memcpy(arg0->unk8 + arg0->unk14, arg2 + 1, arg3);
-//                     arg0->unk14 += arg3;
-//                     arg0->unk18 = (arg0->unk24 - arg3);
-//                 }
-//                 mem_array = arg0->unk8 + arg0->unk14;
-//                 *(mem_array) = arg1;
-//                 mem_array += 1;
-//                 if (arg4 >= 0) {
-//                     mem_array[0] = 43;
-//                     required = arg4;
-//                     mem_array += 1;
-//                 } else {
-//                     mem_array[0] = 45;
-//                     required = -arg4;
-//                     mem_array += 1;
-//                 }
-//                 if (required >= 100) {
-//                     if (required >= 1000) {
-//                         *mem_array = (s8) ((required / 1000) + 48);
-//                         required = required % 1000;
-//                         mem_array += 1;
-//                     }
-//                     *mem_array = (s8) ((required / 100) + 48);
-//                     required = (required % 100);
-//                     mem_array += 1;
-//                 }
-//                 *(mem_array + 0) = (required / 10) + 48;
-//                 *(mem_array + 1) = (required % 10) + 48;
-//                 arg0->unk1C = (((mem_array + 2) - arg0->unk8) - arg0->unk14);
-//             }
-//         } else {
-//             goto block_33;
-//         }
-//     } else {
-//         goto block_7;
-//     }
-//
-//     if ((arg0->unk30 & 0x14) == 0x10) {
-//         temp_v1_2 = arg0->unk28;
-//         temp_v0_3 = arg0->unkC + arg0->unk14 + arg0->unk18 + arg0->unk1C + arg0->unk20;
-//         if (temp_v0_3 < temp_v1_2) {
-//             arg0->unk10 = temp_v1_2 - temp_v0_3;
-//         }
-//     }
-// }

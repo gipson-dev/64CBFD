@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init numeric formatter byte-matched
+
+- `func_10001AA8` now replaces its zero-return placeholder with the numeric
+  layout stage used by the floating formatter. It handles fixed, scientific,
+  and general formats; trims precision; inserts decimal and exponent fields;
+  and computes deferred width padding.
+- The compact semantic body contains 365 words and emits 87 retail words
+  directly. The remaining layout is normalized by 278 stale-checked rows,
+  including 13 insertions, eight omissions, and three relocation-aware rows.
+- Direct comparison reports zero differences across all 1,480 bytes. Both
+  spans share SHA-256
+  `d34588b845730b80b2a13a9bdaf75c284a2ad8f0bb718fb73cbc08fb1968243e`.
+  Totals are **3,164 / 5,456 (57.99%)** overall and
+  **481 / 487 (98.77%)** in Init, with zero address drift and six different
+  Init C rows. See
+  [Working Note 666](WORKING_NOTES/666-init-numeric-formatter-match-20261001.md).
+
 ### Init sound-record updater byte-matched
 
 - `func_10011624` now replaces its zero-return placeholder with the complete
