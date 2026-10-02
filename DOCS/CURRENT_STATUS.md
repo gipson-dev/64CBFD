@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,210 / 5,456 (58.83%) | 0 | 2,246 |
+| Total | 3,211 / 5,456 (58.85%) | 0 | 2,245 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,542 / 4,788 (53.09%) | 0 | 2,246 |
+| Game | 2,543 / 4,788 (53.11%) | 0 | 2,245 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game global-position query `func_150FCF1C` now matches all 37 retail words
+from recovered C. A null coordinate source returns `1.0f`; otherwise it
+converts three signed halfwords to a float vector and forwards that vector,
+two fixed full-width parameters, and `D_800A1F2C` to `func_15165BB0`. Four
+expected-word guards normalize only IDO's persistent local-vector stack
+offset. See
+[Working Note 704](WORKING_NOTES/704-game-global-position-query-match-20261002.md).
 
 The Game scaled indexed-global updater `func_1509DF20` now matches all 37
 retail words directly from C. After its event-state and global-mode gates, it

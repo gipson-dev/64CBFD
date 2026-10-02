@@ -10252,3 +10252,7 @@ game_75E60,func_15048A40,0x01C,0x8FBF0014,0x01C02025,-,-,Normalize quarter-turn 
 game_75E60,func_15048A40,0x020,0x27BD0018,0x8FBF0014,-,-,Normalize quarter-turn wrapper epilogue schedule,,,false
 game_75E60,func_15048A40,0x024,0x03E00008,0x27BD0018,-,-,Normalize quarter-turn wrapper epilogue schedule,,,false
 game_75E60,func_15048A40,0x028,0x00000000,0x03E00008,-,-,Normalize quarter-turn wrapper epilogue schedule,,,false
+generated_129EE0,func_150FCF1C,0x04C,0x27A50024,0x27A50020,-,-,Normalize the recovered position vector to the retail stack offset,,,false
+generated_129EE0,func_150FCF1C,0x050,0xE7A60024,0xE7A60020,-,-,Normalize the recovered position vector to the retail stack offset,,,false
+generated_129EE0,func_150FCF1C,0x064,0xE7AA0028,0xE7AA0024,-,-,Normalize the recovered position vector to the retail stack offset,,,false
+generated_129EE0,func_150FCF1C,0x080,0xE7B2002C,0xE7B20028,-,-,Normalize the recovered position vector to the retail stack offset,,,false

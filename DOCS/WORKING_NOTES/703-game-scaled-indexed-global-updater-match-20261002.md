@@ -31,6 +31,9 @@ remains `181 / 181 (100.00%)`.
 No fresh gameplay run was performed. This checkpoint is semantic recovery,
 focused-object comparison, full-link, and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 37-word `func_150FCF1C`. Keep
+Continue from
+[Working Note 704](704-game-global-position-query-match-20261002.md), which
+matches `func_150FCF1C`. Resume the ordinary small-Game queue with 37-word
+`func_15142B7C`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

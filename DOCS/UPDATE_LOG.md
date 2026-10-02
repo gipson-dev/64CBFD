@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game global-position query byte-matched
+
+- `func_150FCF1C` replaces its zero-return placeholder with the nullable
+  three-coordinate conversion and the original `func_15165BB0` query.
+- The semantic C emits 33 of the 37 retail words directly. Four
+  expected-word guards move the local float vector from IDO's persistent
+  `sp+0x24` placement to retail's `sp+0x20` placement; no compiler-profile
+  override is used.
+- The refreshed matcher reports **3,211 / 5,456 (58.85%)** overall and
+  **2,543 / 4,788 (53.11%)** in Game, with zero address drift and 2,245
+  different C rows. See
+  [Working Note 704](WORKING_NOTES/704-game-global-position-query-match-20261002.md).
+
 ### Game scaled indexed-global updater byte-matched
 
 - `func_1509DF20` replaces its zero-return placeholder with the event-state and
