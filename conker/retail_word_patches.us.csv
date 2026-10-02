@@ -10373,3 +10373,6 @@ generated_10CCD0,func_150DF820,0x04C,0xAC990084,0xAC8D0084,-,-,Normalize actor w
 generated_10CCD0,func_150DF820,0x050,0xAC820084,0xAC8F0084,-,-,Normalize actor water-state flag transition register allocation,,,false
 generated_10CCD0,func_150DF820,0x06C,0x240B0003,0x24180003,-,-,Normalize actor water-state flag transition register allocation,,,false
 generated_10CCD0,func_150DF820,0x084,0xA48B01B4,0xA49801B4,-,-,Normalize actor water-state flag transition register allocation,,,false
+generated_15F680,func_15133FD8,0x038,0x01F21021,0x024F1021,-,-,Preserve retail commutative descriptor pointer operand order,,,false
+generated_15F680,func_15133FD8,0x060,0x00408825,0x03008025,-,-,Normalize descriptor loop independent publication schedule,,,false
+generated_15F680,func_15133FD8,0x068,0x03008025,0x00408825,-,-,Normalize descriptor loop independent publication schedule,,,false

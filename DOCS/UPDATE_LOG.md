@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game resource-descriptor chain callback byte-matched
+
+- `func_15133FD8` replaces its zero-return placeholder with the counted
+  descriptor loop that threads `func_15133EEC`'s display-list result through
+  each eight-byte resource entry.
+- The complete 38-word slot emits from semantic C. Three guarded words retain
+  retail's commutative pointer-add operand order and two independent
+  publication slots.
+- The refreshed matcher reports **3,234 / 5,456 (59.27%)** overall and
+  **2,566 / 4,788 (53.59%)** in Game, with zero address drift and 2,222
+  different C rows. See
+  [Working Note 727](WORKING_NOTES/727-game-resource-descriptor-chain-callback-match-20261002.md).
+
 ### Game resource-table prefix offset byte-matched
 
 - `func_1510D374` replaces its zero-return placeholder with the resource

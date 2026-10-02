@@ -198,6 +198,17 @@ s32 func_15133EEC() {
     return 0;
 }
 
-s32 func_15133FD8() {
-    return 0;
+s32 func_15133FD8(s32 arg0, u8 *arg1, s32 arg2) {
+    u8 *entries = arg1 + 0x170;
+    s32 i;
+
+    i = 0;
+    while (i < entries[0]) {
+        arg0 = func_15133EEC(arg0, *(u16 *)(entries + i * 8 + 4),
+                             entries[i * 8 + 6],
+                             *(s32 *)(entries + i * 8 + 8));
+        i = (i + 1) & 0xFF;
+    }
+
+    return arg0;
 }

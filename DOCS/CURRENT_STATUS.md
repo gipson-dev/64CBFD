@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,233 / 5,456 (59.26%) | 0 | 2,223 |
+| Total | 3,234 / 5,456 (59.27%) | 0 | 2,222 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,565 / 4,788 (53.57%) | 0 | 2,223 |
+| Game | 2,566 / 4,788 (53.59%) | 0 | 2,222 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game resource-descriptor chain callback `func_15133FD8` now matches its
+complete 38-word slot. It walks the counted eight-byte descriptor array and
+threads `func_15133EEC`'s display-list result through each entry. Three guarded
+words normalize one commutative operand order and two independent scheduling
+slots. See
+[Working Note 727](WORKING_NOTES/727-game-resource-descriptor-chain-callback-match-20261002.md).
 
 The Game resource-table prefix offset calculator `func_1510D374` now matches
 all 36 retail words directly from C. It starts at linker base `D_1A37E0` and

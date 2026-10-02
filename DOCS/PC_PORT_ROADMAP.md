@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,233 / 5,456 (59.26%) | 0 | 2,223 |
+| Total | 5,456 / 6,041 (90.32%) | 3,234 / 5,456 (59.27%) | 0 | 2,222 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,565 / 4,788 (53.57%) | 0 | 2,223 |
+| Game | 4,788 / 5,321 (89.98%) | 2,566 / 4,788 (53.59%) | 0 | 2,222 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game resource-descriptor chain callback `func_15133FD8` now matches its
+complete 38-word slot. It walks the counted descriptor array and threads the
+display-list result through each resource entry. Three guarded words normalize
+compiler operand ordering and scheduling. See
+[Working Note 727](WORKING_NOTES/727-game-resource-descriptor-chain-callback-match-20261002.md).
 
 The Game resource-table prefix offset calculator `func_1510D374` now matches
 all 36 retail words directly from C. It adds unsigned resource lengths to the
