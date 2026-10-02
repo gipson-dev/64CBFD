@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game randomized event descriptor matched).**
-The current linked checkpoint is `3205 / 5456 (58.74%)` exact C functions,
-with no address-drift blockers and 2,251 genuinely different C functions.
+**Active (2026-10-02, Game script-result flag callback matched).**
+The current linked checkpoint is `3206 / 5456 (58.76%)` exact C functions,
+with no address-drift blockers and 2,250 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2537 / 4788 (52.99%)` exact, with 2,251 genuinely different C rows. The tree
+`2538 / 4788 (53.01%)` exact, with 2,250 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -170,7 +170,9 @@ Vector-argument forwarder `func_150E3340` now matches all 35 words directly
 from C after recovering its complete fourteen-argument call contract.
 Randomized event-descriptor builder `func_150FFC3C` now matches all 35 words
 directly from C after recovering its seven-byte record layout and nested owner
-mask. Resume with 36-word `func_150C7350`; keep
+mask. Script-result flag callback `func_150C7350` now matches its complete
+36-word slot directly from C after restoring its base flags and conditional
+result bit. Resume with 36-word `func_150D1B40`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -221,6 +223,8 @@ The vector-argument forwarder is recorded in
 [Working Note 698](WORKING_NOTES/698-game-vector-argument-forwarder-match-20261002.md).
 The randomized event-descriptor builder is recorded in
 [Working Note 699](WORKING_NOTES/699-game-randomized-event-descriptor-match-20261002.md).
+The script-result flag callback is recorded in
+[Working Note 700](WORKING_NOTES/700-game-script-result-flag-callback-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

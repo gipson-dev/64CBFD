@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game script-result flag callback byte-matched
+
+- `func_150C7350` replaces its zero-return placeholder with the unconditional
+  `0x80004000` flag update, six-argument `func_1509BE40` query, and conditional
+  set/clear of bit `0x00400000`.
+- The complete 36-word retail slot emits directly from semantic C without
+  guards or a compiler-profile override. The early-return source form recovers
+  the saved-register lifetime, branch-likely delay load, mask construction,
+  shared epilogue, and trailing padding word.
+- The refreshed matcher reports **3,206 / 5,456 (58.76%)** overall and
+  **2,538 / 4,788 (53.01%)** in Game, with zero address drift and 2,250
+  different C rows. See
+  [Working Note 700](WORKING_NOTES/700-game-script-result-flag-callback-match-20261002.md).
+
 ### Game randomized event descriptor byte-matched
 
 - `func_150FFC3C` replaces its zero-return placeholder with the nested-owner

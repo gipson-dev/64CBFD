@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,205 / 5,456 (58.74%) | 0 | 2,251 |
+| Total | 5,456 / 6,041 (90.32%) | 3,206 / 5,456 (58.76%) | 0 | 2,250 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,537 / 4,788 (52.99%) | 0 | 2,251 |
+| Game | 4,788 / 5,321 (89.98%) | 2,538 / 4,788 (53.01%) | 0 | 2,250 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game script-result flag callback `func_150C7350` now matches its complete
+36-word slot directly from C. It restores the unconditional base flags and the
+script-query-controlled `0x00400000` bit. See
+[Working Note 700](WORKING_NOTES/700-game-script-result-flag-callback-match-20261002.md).
 
 The Game randomized event-descriptor builder `func_150FFC3C` now matches all
 35 retail words directly from C. It restores the owner gate, randomized
