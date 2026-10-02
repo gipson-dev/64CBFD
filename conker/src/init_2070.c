@@ -1,5 +1,6 @@
 
 #include <ultra64.h>
+#include "string.h"
 
 #include "functions.h"
 #include "variables.h"
@@ -31,6 +32,8 @@ typedef struct {
     u8 length;
     u8 pad35[3];
 } PrintConversion;
+
+void _Litob(PrintConversion *arg0, s32 arg1);
 
 s32 func_10002070(s32 arg0, s32 arg1, s32 arg2) {
     return 1;
@@ -229,8 +232,142 @@ s32 func_100020D0(s32 (*write)(s32, u8 *, s32), s32 state, u8 *format,
     }
 }
 
-// contains a jump table
-/* Non-matching C placeholders for asm/nonmatchings/init_2070/func_10002718.s. */
-s32 func_10002718() {
-    return 0;
+s32 func_10002718(arg0, arg1, arg2, arg3)
+PrintConversion *arg0;
+s32 **arg1;
+u8 arg2;
+u8 *arg3;
+{
+    s32 *cursor;
+    s64 value;
+    void *pointer;
+
+    arg0->prefixLength = 0;
+    arg0->leadingZeroes = 0;
+    arg0->textLength = 0;
+    arg0->middleZeroes = 0;
+    arg0->suffixLength = 0;
+    arg0->trailingZeroes = 0;
+
+    switch (arg2) {
+        case 'c':
+            cursor = (s32 *)(((u32)*arg1 + 3) & ~3);
+            *arg1 = cursor + 1;
+            arg3[arg0->prefixLength++] = *cursor;
+            break;
+
+        case 'd':
+        case 'i':
+            if (arg0->length == 'L') {
+                cursor = (s32 *)(((u32)*arg1 + 7) & ~7);
+                value = *(s64 *)cursor;
+                *arg1 = cursor + 2;
+            } else {
+                cursor = (s32 *)(((u32)*arg1 + 3) & ~3);
+                value = *cursor;
+                *arg1 = cursor + 1;
+            }
+            if (arg0->length == 'h') {
+                value = (s16)value;
+            }
+            *(s64 *)&arg0->unk0 = value;
+            if (value < 0) {
+                arg3[arg0->prefixLength++] = '-';
+            } else if ((arg0->flags & 2) != 0) {
+                arg3[arg0->prefixLength++] = '+';
+            } else if ((arg0->flags & 1) != 0) {
+                arg3[arg0->prefixLength++] = ' ';
+            }
+            arg0->text = arg3 + arg0->prefixLength;
+            _Litob(arg0, arg2);
+            break;
+
+        case 'x':
+        case 'X':
+        case 'u':
+        case 'o':
+            if (arg0->length == 'L') {
+                cursor = (s32 *)(((u32)*arg1 + 7) & ~7);
+                value = *(s64 *)cursor;
+                *arg1 = cursor + 2;
+            } else {
+                cursor = (s32 *)(((u32)*arg1 + 3) & ~3);
+                value = *cursor;
+                *arg1 = cursor + 1;
+            }
+            if (arg0->length == 'h') {
+                value = (u16)value;
+            } else if (arg0->length == 0) {
+                value = (u32)value;
+            }
+            *(s64 *)&arg0->unk0 = value;
+            if ((arg0->flags & 8) != 0) {
+                arg3[arg0->prefixLength++] = '0';
+                if ((arg2 == 'x') || (arg2 == 'X')) {
+                    arg3[arg0->prefixLength++] = arg2;
+                }
+            }
+            arg0->text = arg3 + arg0->prefixLength;
+            _Litob(arg0, arg2);
+            break;
+
+        case 'e':
+        case 'f':
+        case 'g':
+        case 'E':
+        case 'G':
+            cursor = (s32 *)(((u32)*arg1 + 7) & ~7);
+            *(f64 *)&arg0->unk0 = *(f64 *)cursor;
+            *arg1 = cursor + 2;
+            if ((*(u16 *)&arg0->unk0 & 0x8000) != 0) {
+                arg3[arg0->prefixLength++] = '-';
+            } else if ((arg0->flags & 2) != 0) {
+                arg3[arg0->prefixLength++] = '+';
+            } else if ((arg0->flags & 1) != 0) {
+                arg3[arg0->prefixLength++] = ' ';
+            }
+            arg0->text = arg3 + arg0->prefixLength;
+            func_10001550((struct246 *)arg0, arg2);
+            break;
+
+        case 'n':
+            cursor = (s32 *)(((u32)*arg1 + 3) & ~3);
+            pointer = (void *)*cursor;
+            *arg1 = cursor + 1;
+            if (arg0->length == 'h') {
+                *(u16 *)pointer = arg0->unk2C;
+            } else if (arg0->length == 'L') {
+                *(u64 *)pointer = (u32)arg0->unk2C;
+            } else {
+                *(u32 *)pointer = arg0->unk2C;
+            }
+            break;
+
+        case 'p':
+            cursor = (s32 *)(((u32)*arg1 + 3) & ~3);
+            value = *cursor;
+            *arg1 = cursor + 1;
+            *(s64 *)&arg0->unk0 = value;
+            arg0->text = arg3 + arg0->prefixLength;
+            _Litob(arg0, 'x');
+            break;
+
+        case 's':
+            cursor = (s32 *)(((u32)*arg1 + 3) & ~3);
+            arg0->text = (u8 *)*cursor;
+            *arg1 = cursor + 1;
+            arg0->textLength = strlen((char *)arg0->text);
+            if ((arg0->unk24 >= 0) && (arg0->unk24 < arg0->textLength)) {
+                arg0->textLength = arg0->unk24;
+            }
+            break;
+
+        case '%':
+            arg3[arg0->prefixLength++] = '%';
+            break;
+
+        default:
+            arg3[arg0->prefixLength++] = arg2;
+            break;
+    }
 }

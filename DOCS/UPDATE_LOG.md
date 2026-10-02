@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init conversion helper byte-matched
+
+- `func_10002718` now replaces its zero-return placeholder with the complete
+  SDK conversion dispatcher. It handles character, signed and unsigned
+  integer, floating-point, pointer, string, `%n`, percent, and fallback
+  conversions while advancing the aligned argument cursor.
+- The compact semantic body contains 338 words and emits 42 retail words
+  directly. The remaining layout is normalized by 296 stale-checked rows,
+  including 87 insertions, three omissions, and four relocation-aware rows.
+- Direct comparison reports zero differences across all 1,688 bytes. Both
+  spans share SHA-256
+  `422fae5d07d1c40324ccac587ce494ec46c539fe74ddd18750242eb4b6dcb9ca`.
+  Totals are **3,166 / 5,456 (58.03%)** overall and
+  **483 / 487 (99.18%)** in Init, with zero address drift and four different
+  Init C rows. See
+  [Working Note 668](WORKING_NOTES/668-init-conversion-helper-match-20261001.md).
+
 ### Init formatted-output dispatcher byte-matched
 
 - `func_100020D0` now replaces its empty placeholder with the complete

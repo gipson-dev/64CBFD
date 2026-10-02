@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,165 / 5,456 (58.01%) | 0 | 2,291 |
-| Init | 482 / 487 (98.97%) | 0 | 5 |
+| Total | 3,166 / 5,456 (58.03%) | 0 | 2,290 |
+| Init | 483 / 487 (99.18%) | 0 | 4 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init conversion helper `func_10002718` now matches its complete 422-word
+retail span. It restores character, signed/unsigned integer, floating-point,
+pointer, string, `%n`, percent, and fallback conversions using the shared SDK
+formatter descriptor. The 338-word compact body emits 42 retail words
+directly; 296 stale-checked rows include 87 insertions, three omissions, and
+four relocation-aware rows. See
+[Working Note 668](WORKING_NOTES/668-init-conversion-helper-match-20261001.md).
 
 The Init formatted-output dispatcher `func_100020D0` now matches its complete
 402-word retail span. It restores literal-run output, format-flag parsing,

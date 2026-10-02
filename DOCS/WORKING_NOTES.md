@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init formatted-output dispatcher matched).**
-The current linked checkpoint is `3165 / 5456 (58.01%)` exact C functions,
-with no address-drift blockers and 2,291 genuinely different C functions.
+**Active (2026-10-01, Init conversion helper matched).**
+The current linked checkpoint is `3166 / 5456 (58.03%)` exact C functions,
+with no address-drift blockers and 2,290 genuinely different C functions.
 Init is
-`482 / 487 (98.97%)` exact, with five genuinely different C rows. Game is
+`483 / 487 (99.18%)` exact, with four genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,12 +100,12 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`func_100020D0` now matches all 402 retail words after restoring literal output,
-format parsing, conversion dispatch, and chunked callback-driven padding. Its
-compact body emits 95 retail words directly; 266 stale-checked rows normalize
-the closed compiler layout. Bank this focused recovery, then resume Init at the
-422-word `func_10002718`, currently different in 418 words. See
-[Working Note 667](WORKING_NOTES/667-init-formatted-output-dispatcher-match-20261001.md).
+`func_10002718` now matches all 422 retail words after restoring the SDK
+conversion cases and aligned argument extraction. Its compact body emits 42
+retail words directly; 296 stale-checked rows normalize the closed compiler
+layout. Bank this focused recovery, then resume Init at the 441-word
+`__osLeoInterrupt`, currently different in 403 words. See
+[Working Note 668](WORKING_NOTES/668-init-conversion-helper-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and
