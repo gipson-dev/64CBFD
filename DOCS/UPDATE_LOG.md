@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game mode dispatcher byte-matched
+
+- `func_15170EC4` restores the sparse global-mode dispatch to
+  `func_15170B90`, including the mode-2 and mode-`0x10` parameter sets, the
+  caller selector's low byte, and the full trailing payload.
+- All 34 retail words emit directly from semantic C without expected-word
+  guards or a compiler-profile override.
+- The refreshed matcher reports **3,188 / 5,456 (58.43%)** overall and
+  **2,520 / 4,788 (52.63%)** in Game, with zero address drift and 2,268
+  different C rows. See
+  [Working Note 682](WORKING_NOTES/682-game-mode-dispatcher-match-20261002.md).
+
 ### Game packed two-axis integrator byte-matched
 
 - `func_1516F864` restores the packed signed X/Y velocity reconstruction,

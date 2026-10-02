@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,187 / 5,456 (58.41%) | 0 | 2,269 |
+| Total | 3,188 / 5,456 (58.43%) | 0 | 2,268 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,519 / 4,788 (52.61%) | 0 | 2,269 |
+| Game | 2,520 / 4,788 (52.63%) | 0 | 2,268 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game mode dispatcher `func_15170EC4` now matches all 34 retail words after
+restoring its mode-2 and mode-`0x10` parameter sets and low-byte argument
+forwarding. Its sparse switch, calls, and shared epilogue emit directly from
+semantic C without guards or profile overrides. See
+[Working Note 682](WORKING_NOTES/682-game-mode-dispatcher-match-20261002.md).
 
 The Game packed two-axis integrator `func_1516F864` now matches all 34 retail
 words after restoring its signed high-byte and unsigned low-byte velocity
