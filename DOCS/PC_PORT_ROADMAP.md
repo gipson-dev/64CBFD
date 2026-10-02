@@ -13,6 +13,13 @@ measured decomp checkpoint is:
 | Game | 4,788 / 5,321 (89.98%) | 2,564 / 4,788 (53.55%) | 0 | 2,224 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
+The Game owner-ID effect payload constructor `func_150F5C08` now matches all
+36 retail words directly from C. Its four-argument contract constructs and
+conditionally copies a 12-byte owner/ID payload without guards. The aggregate
+figures above already included the live-tree match in the preceding
+measurement. See
+[Working Note 725](WORKING_NOTES/725-game-owner-id-effect-payload-constructor-match-20261002.md).
+
 The Game effect payload constructor `func_150F4D5C` now matches all 36 retail
 words directly from C. Its fixed five-argument contract constructs and copies
 the 12-byte effect payload without guards. See

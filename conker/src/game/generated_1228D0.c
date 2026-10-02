@@ -1,10 +1,18 @@
 #include <ultra64.h>
+#include "functions.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/1228D0.s. */
 
 s32 func_150F55C8();
 
 s32 func_15179008();
+
+typedef struct {
+    u8 *owner;
+    u8 owner_id;
+    u8 pad5[3];
+    f32 value;
+} Func150F5C08Payload;
 
 s32 func_150F5420() {
     return 0;
@@ -34,8 +42,19 @@ s32 func_150F5A54() {
     return 0;
 }
 
-s32 func_150F5C08() {
-    return 0;
+void func_150F5C08(u8 *arg0, s16 arg1, u8 arg2, s32 arg3) {
+    Func150F5C08Payload payload;
+    struct260 *object;
+
+    payload.owner = arg0;
+    payload.owner_id = arg0[0x3B];
+    payload.value = 0.0f;
+
+    object = func_15149130(arg1, -1, 0x51, -1, 1, 0x3E,
+                           (struct37 *)sizeof(payload), arg2, arg3);
+    if (object != NULL) {
+        memcpy((u8 *)object + 0x28, &payload, sizeof(payload));
+    }
 }
 
 s32 func_150F5C98() {

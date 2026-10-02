@@ -88,7 +88,7 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game effect payload constructor matched).**
+**Paused (2026-10-02, Game owner-ID effect payload constructor matched).**
 The current linked checkpoint is `3232 / 5456 (59.24%)` exact C functions,
 with no address-drift blockers and 2,224 genuinely different C functions.
 Init is
@@ -240,8 +240,13 @@ water test, and 750-unit state transition. Sixteen guarded words normalize
 one closed register-allocation chain. Effect payload constructor
 `func_150F4D5C` now matches all 36 words directly from typed C after recovering
 its five-argument contract, 12-byte local payload, allocation, and conditional
-copy. Resume the ordinary queue with 36-word `func_150F5C08`, currently at 35
-real differences.
+copy. Owner-ID effect payload constructor `func_150F5C08` now matches all 36
+words directly from typed C after recovering its four-argument contract,
+12-byte owner/ID payload, allocation, and conditional copy. The current
+aggregate already included this live-tree match in its preceding measurement.
+Resume the ordinary queue with 36-word `func_1510D374`, currently at 35 real
+differences; keep 19-word `func_150F631C` as a separate four-difference
+near-match cleanup.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
 followed by
@@ -341,6 +346,8 @@ The actor water-state flag transition is recorded in
 [Working Note 723](WORKING_NOTES/723-game-actor-water-state-flag-transition-match-20261002.md).
 The effect payload constructor is recorded in
 [Working Note 724](WORKING_NOTES/724-game-effect-payload-constructor-match-20261002.md).
+The owner-ID effect payload constructor is recorded in
+[Working Note 725](WORKING_NOTES/725-game-owner-id-effect-payload-constructor-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

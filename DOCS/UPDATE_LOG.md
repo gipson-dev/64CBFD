@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game owner-ID effect payload constructor byte-matched
+
+- `func_150F5C08` replaces its zero-return placeholder with the four-argument
+  wrapper that builds a 12-byte owner/ID payload, requests object type `0x51`,
+  and conditionally copies the payload into the result.
+- The complete 36-word routine emits directly from typed semantic C without
+  guard rows or a compiler-profile override. Its 144 linked bytes match retail
+  with SHA-256 `3e0454c779174a16f23f0c473b717c27c75c4dc20711e5279db09e1837548818`.
+- The refreshed matcher remains **3,232 / 5,456 (59.24%)** overall and
+  **2,564 / 4,788 (53.55%)** in Game, with zero address drift and 2,224
+  different C rows; the preceding measurement already included this
+  live-tree match. See
+  [Working Note 725](WORKING_NOTES/725-game-owner-id-effect-payload-constructor-match-20261002.md).
+
 ### Game effect payload constructor byte-matched
 
 - `func_150F4D5C` replaces its zero-return placeholder with a fixed

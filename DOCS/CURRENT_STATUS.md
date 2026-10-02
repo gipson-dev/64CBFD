@@ -37,6 +37,13 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 | Game | 2,564 / 4,788 (53.55%) | 0 | 2,224 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+The Game owner-ID effect payload constructor `func_150F5C08` now matches all
+36 retail words directly from C. It recovers the four-argument contract,
+12-byte owner/ID payload, object allocation, and conditional payload copy
+without guards or a profile override. The aggregate figures above already
+included this live-tree match in the preceding measurement. See
+[Working Note 725](WORKING_NOTES/725-game-owner-id-effect-payload-constructor-match-20261002.md).
+
 The Game effect payload constructor `func_150F4D5C` now matches all 36 retail
 words directly from C. It recovers the fixed five-argument contract, typed
 12-byte payload, effect allocation, and conditional payload copy without
