@@ -6,8 +6,8 @@
 u8 func_1001ADA4(N_ALSeqPlayer *, N_ALVoice *, ALMicroTime);
 ALSound *func_1001B07C(N_ALSeqPlayer *, u8, u8, u8);
 s32 func_1001B310();
-s32 func_1001B7D0();
-s32 func_1001BD34();
+s32 func_1001B7D0(N_ALSeqPlayer *, s32, s32);
+s32 func_1001BD34(void *, void *, s32);
 /* End generated placeholder declarations. */
 
 void __n_resetPerfChanState(N_ALSeqPlayer *seqp, s32 chan);
@@ -424,8 +424,111 @@ void __n_resetPerfChanState(N_ALSeqPlayer *seqp, s32 chan) {
     seqp->chanState[chan].unk8 = 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/func_1001B7D0.s. */
-s32 func_1001B7D0() {
+typedef struct {
+    ALInstrument *instrument;
+    s16 bendRange;
+    u8 pan;
+    u8 priority;
+    u8 unk8;
+    u8 vol;
+    u8 fxmix;
+    u8 unkB;
+    u8 sustain;
+    u8 unkD;
+    u8 unkE;
+    u8 unkF;
+    f32 unk10;
+    u8 unk14;
+    s8 unk15;
+    u8 unk16;
+    u8 unk17;
+    f32 pitchBend;
+    ALMicroTime attackTime;
+    ALMicroTime decayTime;
+    ALMicroTime releaseTime;
+    u8 unk28;
+    u8 attackVolume;
+    u8 decayVolume;
+    u8 unk2B;
+    u8 tremType;
+    u8 tremRate;
+    u8 tremDepth;
+    u8 tremDelay;
+    u8 vibType;
+    u8 vibRate;
+    u8 vibDepth;
+    u8 vibDelay;
+    u8 pad34;
+    u8 unk35;
+    u8 missingInstrument;
+    u8 pad37;
+    s16 program;
+    u8 pad3A[2];
+} ConkerALChanState;
+
+s32 func_1001B7D0(N_ALSeqPlayer *seqp, s32 program, s32 chan)
+{
+    ALSound *sound;
+    ALInstrument *inst;
+    s32 i;
+
+    inst = (ALInstrument *)func_1001BD34(seqp->drvr, &seqp->bank->instArray[program], -1);
+
+    if (((ConkerALChanState *)seqp->chanState)[chan].instrument != NULL) {
+        ((void (*)(void *))seqp->drvr->unk34)(
+            seqp->bank->instArray[((ConkerALChanState *)seqp->chanState)[chan].program]);
+        ((ConkerALChanState *)seqp->chanState)[chan].instrument = NULL;
+    }
+
+    if (inst != NULL) {
+        for (i = 0; i < inst->soundCount; i++) {
+            sound = inst->soundArray[i];
+            if ((u32)sound->envelope < 0x100000) {
+                func_10012C5C(sound, (s32)inst, (s32)seqp->drvr->unk38);
+            }
+        }
+        sound = inst->soundArray[0];
+    }
+
+    if (inst != NULL) {
+        if (inst->soundCount == 0) {
+            return 0;
+        }
+
+        if (sound != NULL) {
+            ((ConkerALChanState *)seqp->chanState)[chan].attackTime = sound->envelope->attackTime;
+            ((ConkerALChanState *)seqp->chanState)[chan].decayTime = sound->envelope->decayTime;
+            ((ConkerALChanState *)seqp->chanState)[chan].releaseTime = sound->envelope->releaseTime;
+            ((ConkerALChanState *)seqp->chanState)[chan].attackVolume = sound->envelope->attackVolume;
+            ((ConkerALChanState *)seqp->chanState)[chan].decayVolume = sound->envelope->decayVolume;
+        }
+
+        ((ConkerALChanState *)seqp->chanState)[chan].pan = inst->pan;
+        ((ConkerALChanState *)seqp->chanState)[chan].vol = inst->volume;
+        ((ConkerALChanState *)seqp->chanState)[chan].priority = inst->priority;
+        ((ConkerALChanState *)seqp->chanState)[chan].bendRange = inst->bendRange;
+        ((ConkerALChanState *)seqp->chanState)[chan].tremType = inst->tremType;
+        ((ConkerALChanState *)seqp->chanState)[chan].tremRate = inst->tremRate;
+        ((ConkerALChanState *)seqp->chanState)[chan].tremDepth = inst->tremDepth;
+        ((ConkerALChanState *)seqp->chanState)[chan].tremDelay = inst->tremDelay;
+        ((ConkerALChanState *)seqp->chanState)[chan].vibType = inst->vibType;
+        ((ConkerALChanState *)seqp->chanState)[chan].vibRate = inst->vibRate;
+        ((ConkerALChanState *)seqp->chanState)[chan].vibDepth = inst->vibDepth;
+        ((ConkerALChanState *)seqp->chanState)[chan].vibDelay = inst->vibDelay;
+        ((ConkerALChanState *)seqp->chanState)[chan].missingInstrument = FALSE;
+        ((ConkerALChanState *)seqp->chanState)[chan].instrument = inst;
+    } else {
+        ((ConkerALChanState *)seqp->chanState)[chan].missingInstrument = TRUE;
+    }
+
+    ((ConkerALChanState *)seqp->chanState)[chan].unk2B = 0;
+    ((ConkerALChanState *)seqp->chanState)[chan].unk28 = 0;
+    ((ConkerALChanState *)seqp->chanState)[chan].unk35 = 0;
+    ((ConkerALChanState *)seqp->chanState)[chan].program = program;
+
+    if (inst == NULL) {
+        return 1;
+    }
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/init_1AAE0/func_1001BD34.s. */

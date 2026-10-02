@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,161 / 5,456 (57.94%) | 0 | 2,295 |
-| Init | 478 / 487 (98.15%) | 0 | 9 |
+| Total | 3,162 / 5,456 (57.95%) | 0 | 2,294 |
+| Init | 479 / 487 (98.36%) | 0 | 8 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init instrument channel loader `func_1001B7D0` now matches its complete
+345-word retail span directly from C. It restores resource resolution and
+release, per-sound relocation, envelope and instrument-default transfer,
+missing-resource state, and selected-program tracking. Its exact retail size,
+stack slots, repeated channel indexing, and all relocations emit without
+guards. See
+[Working Note 664](WORKING_NOTES/664-init-instrument-channel-loader-match-20261001.md).
 
 The Init audio-environment controller `func_10012020` now matches its complete
 336-word retail span. It restores five environment modes, transition-state

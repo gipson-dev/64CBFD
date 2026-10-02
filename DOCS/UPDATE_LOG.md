@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init instrument channel loader byte-matched
+
+- `func_1001B7D0` now replaces its zero-return placeholder with the complete
+  program-resource and channel-default loader. It releases the previous
+  resource, relocates unresolved sounds, transfers envelope and instrument
+  defaults, and records missing-resource state.
+- Repeated channel indexing and retail-ordered stack locals reproduce the
+  complete 345-word `-g` body directly from semantic C. No expected-word
+  guards, insertions, omissions, or relocation overrides are required.
+- Direct comparison reports zero differences across all 1,380 bytes. Both
+  spans share SHA-256
+  `9fe00cc8721b345585d353b756b7131239bcfc9f104f87f4f6c0d9dcb9e41f1f`.
+  Totals are **3,162 / 5,456 (57.95%)** overall and
+  **479 / 487 (98.36%)** in Init, with zero address drift and eight different
+  Init C rows. See
+  [Working Note 664](WORKING_NOTES/664-init-instrument-channel-loader-match-20261001.md).
+
 ### Init audio-environment controller byte-matched
 
 - `func_10012020` now replaces its zero-return placeholder with the complete
