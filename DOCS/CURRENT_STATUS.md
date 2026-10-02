@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,222 / 5,456 (59.05%) | 0 | 2,234 |
+| Total | 3,223 / 5,456 (59.07%) | 0 | 2,233 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,554 / 4,788 (53.34%) | 0 | 2,234 |
+| Game | 2,555 / 4,788 (53.36%) | 0 | 2,233 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game table-pointer relocator `func_1503D484` now matches all 35 retail
+words directly from C. It walks eight-byte records through sentinel `999`,
+rebases each present pointer-like word through `func_1503D438`, and publishes
+the record count in `D_800C5A90`. No expected-word guards or compiler-profile
+override are required. See
+[Working Note 715](WORKING_NOTES/715-game-table-pointer-relocator-match-20261002.md).
 
 The Game slot-state updater `func_1502FD70` now matches all 40 retail words.
 It restores the category-`0x1D` fast path, byte-state sentinel handling,

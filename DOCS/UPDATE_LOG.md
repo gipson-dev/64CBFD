@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game table-pointer relocator byte-matched
+
+- `func_1503D484` replaces its zero-return placeholder with the
+  sentinel-terminated eight-byte record walk, optional pointer rebasing, and
+  record-count publication.
+- The complete 35-word routine emits directly from semantic C. No
+  expected-word guards, checked insertions or omissions, relocations, or
+  profile override are required.
+- The refreshed matcher reports **3,223 / 5,456 (59.07%)** overall and
+  **2,555 / 4,788 (53.36%)** in Game, with zero address drift and 2,233
+  different C rows. See
+  [Working Note 715](WORKING_NOTES/715-game-table-pointer-relocator-match-20261002.md).
+
 ### Game slot-state updater byte-matched
 
 - `func_1502FD70` replaces its zero-return placeholder with the per-slot byte

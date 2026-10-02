@@ -11,6 +11,7 @@ typedef struct {
 extern u8 *D_800D19A0[];
 extern u8 D_80098888[];
 extern u8 *D_80084410[];
+extern s16 D_800C5A90[];
 
 s32 func_1503CF20() {
     return 0;
@@ -35,8 +36,17 @@ void func_1503D45C(s32 *arg0, s32 arg1) {
     }
 }
 
-s32 func_1503D484() {
-    return 0;
+void func_1503D484(u8 *arg0, s32 arg1) {
+    u8 *start = arg0;
+
+    while (*(u16 *)arg0 != 999) {
+        if (*(u32 *)(arg0 + 4) != 0) {
+            func_1503D438((u32 *)(arg0 + 4), (u32)start);
+        }
+        arg0 += 8;
+    }
+
+    D_800C5A90[arg1] = (s32)(arg0 - start) >> 3;
 }
 
 s32 func_1503D510() {

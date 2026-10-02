@@ -38,7 +38,9 @@ overall byte-exact C progress is `3,222 / 5,456 (59.05%)`. Init remains
 `487 / 487 (100.00%)` and Debugger remains `181 / 181 (100.00%)`.
 `make tools-check` also passes. No fresh gameplay run was performed.
 
-Resume the ordinary small-Game queue with 35-word `func_1503D484`, currently
-at 35 real differences. Keep `func_15015F40` parked behind unresolved
+`func_1503D484` is now matched and documented in
+[Working Note 715](715-game-table-pointer-relocator-match-20261002.md). Resume
+the ordinary small-Game queue with 36-word `func_1503D774`, currently at 35
+real differences. Keep `func_15015F40` parked behind unresolved
 indirect-table ownership and `func_150A76F0` in the handwritten
 register-contract workstream.

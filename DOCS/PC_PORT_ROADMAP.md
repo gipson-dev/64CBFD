@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,222 / 5,456 (59.05%) | 0 | 2,234 |
+| Total | 5,456 / 6,041 (90.32%) | 3,223 / 5,456 (59.07%) | 0 | 2,233 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,554 / 4,788 (53.34%) | 0 | 2,234 |
+| Game | 4,788 / 5,321 (89.98%) | 2,555 / 4,788 (53.36%) | 0 | 2,233 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game table-pointer relocator `func_1503D484` now matches all 35 retail
+words directly from C. It restores sentinel-terminated record traversal,
+pointer rebasing, and per-table count publication without guards. See
+[Working Note 715](WORKING_NOTES/715-game-table-pointer-relocator-match-20261002.md).
 
 The Game slot-state updater `func_1502FD70` now matches all 40 retail words.
 It restores category-specific state publication, sentinel preservation,
