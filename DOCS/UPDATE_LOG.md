@@ -16,6 +16,23 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init formatted-output dispatcher byte-matched
+
+- `func_100020D0` now replaces its empty placeholder with the complete
+  callback-driven formatted-output loop. It emits literal runs, parses format
+  flags, width, precision and length modifiers, dispatches conversion, and
+  writes each padded conversion segment in retail order.
+- The compact semantic body contains 361 words and emits 95 retail words
+  directly. The remaining layout is normalized by 266 stale-checked rows,
+  including 44 insertions, three omissions, and ten relocation-aware rows.
+- Direct comparison reports zero differences across all 1,608 bytes. Both
+  spans share SHA-256
+  `fbc33626d707e258fdce37f95a3d2c5a989c31b39ee14a00d1db74d7b7f00dfa`.
+  Totals are **3,165 / 5,456 (58.01%)** overall and
+  **482 / 487 (98.97%)** in Init, with zero address drift and five different
+  Init C rows. See
+  [Working Note 667](WORKING_NOTES/667-init-formatted-output-dispatcher-match-20261001.md).
+
 ### Init numeric formatter byte-matched
 
 - `func_10001AA8` now replaces its zero-return placeholder with the numeric

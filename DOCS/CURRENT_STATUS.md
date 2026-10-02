@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,164 / 5,456 (57.99%) | 0 | 2,292 |
-| Init | 481 / 487 (98.77%) | 0 | 6 |
+| Total | 3,165 / 5,456 (58.01%) | 0 | 2,291 |
+| Init | 482 / 487 (98.97%) | 0 | 5 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init formatted-output dispatcher `func_100020D0` now matches its complete
+402-word retail span. It restores literal-run output, format-flag parsing,
+width and precision arguments, length modifiers, conversion dispatch, and
+chunked field padding through the caller's output callback. The 361-word
+compact body emits 95 retail words directly; 266 stale-checked rows include
+44 insertions, three omissions, and ten relocation-aware rows. See
+[Working Note 667](WORKING_NOTES/667-init-formatted-output-dispatcher-match-20261001.md).
 
 The Init numeric formatter `func_10001AA8` now matches its complete 370-word
 retail span. It restores fixed, scientific, and general-format placement,

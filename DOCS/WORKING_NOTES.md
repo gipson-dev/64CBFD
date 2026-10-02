@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init numeric formatter matched).**
-The current linked checkpoint is `3164 / 5456 (57.99%)` exact C functions,
-with no address-drift blockers and 2,292 genuinely different C functions.
+**Active (2026-10-01, Init formatted-output dispatcher matched).**
+The current linked checkpoint is `3165 / 5456 (58.01%)` exact C functions,
+with no address-drift blockers and 2,291 genuinely different C functions.
 Init is
-`481 / 487 (98.77%)` exact, with six genuinely different C rows. Game is
+`482 / 487 (98.97%)` exact, with five genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,13 +100,12 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`func_10001AA8` now matches all 370 retail words after restoring fixed,
-scientific, and general-format digit placement, precision handling, exponent
-output, and width padding. Its compact body emits 87 retail words directly;
-278 stale-checked rows normalize the closed compiler layout. Bank this focused
-recovery, then resume Init at the 402-word `func_100020D0`, currently different
-in 399 words. See
-[Working Note 666](WORKING_NOTES/666-init-numeric-formatter-match-20261001.md).
+`func_100020D0` now matches all 402 retail words after restoring literal output,
+format parsing, conversion dispatch, and chunked callback-driven padding. Its
+compact body emits 95 retail words directly; 266 stale-checked rows normalize
+the closed compiler layout. Bank this focused recovery, then resume Init at the
+422-word `func_10002718`, currently different in 418 words. See
+[Working Note 667](WORKING_NOTES/667-init-formatted-output-dispatcher-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and
