@@ -16,6 +16,25 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init audio channel updater byte-matched
+
+- `func_1000D2F8` now replaces its zero-return placeholder with the complete
+  three-channel sequence and state updater. It handles deferred sequence
+  replacement, child promotion and failure cleanup, callback state, three
+  parameter ramps, channel-volume refresh, and linked-channel validation.
+- The semantic C emits retail's exact 280-word extent and control-flow order.
+  One hundred thirteen function-scoped, stale-checked rows normalize the
+  remaining closed IDO allocation and scheduling differences. Two additional
+  scoped rows retain the exact 133-word `func_1000D758` caller after correcting
+  the channel-index ABI.
+- Direct comparison reports zero differences across all 1,120 bytes. Both
+  spans share SHA-256
+  `4735e2a088809328cac08aa82b49cf965dbd98d84de66acffe2bee99c5ed0b92`.
+  Totals are **3,158 / 5,456 (57.88%)** overall and
+  **475 / 487 (97.54%)** in Init, with zero address drift and 12 different
+  Init C rows. See
+  [Working Note 660](WORKING_NOTES/660-init-audio-channel-updater-match-20261001.md).
+
 ### Init audio subframe builder byte-matched
 
 - `func_1001FB40` now replaces its zero-return placeholder with the complete

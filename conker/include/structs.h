@@ -1600,7 +1600,7 @@ typedef struct {
     s32 unk28;
     s32 unk2C;
     s32 unk30;  // used
-    u8  pad34[0x4];
+    s32 unk34;
     s32 unk38;
     u8  unk3C[0x10];
     u16 unk4C;

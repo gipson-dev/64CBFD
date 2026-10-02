@@ -15,7 +15,7 @@ s32 func_1000C934(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CDA0(u8 arg0, struct137 *arg1);
 void func_1000CEAC(s32 arg0);
-s32 func_1000D2F8(s32 arg0, f32 arg1, f32 arg2, s32 arg3);
+void func_1000D2F8(u8 arg0, f32 arg1, f32 arg2, s32 arg3);
 s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
 void func_1000E17C(void);
 void func_1000E2F4(s32 arg0);
@@ -948,10 +948,169 @@ void func_1000CEAC(s32 arg0) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000D2F8.s. */
-s32 func_1000D2F8(s32 arg0, f32 arg1, f32 arg2, s32 arg3) {
-    return 0;
+typedef s32 (*AudioChannelUpdate)(s32, u8, f32, f32, f32);
+
+typedef struct {
+    AudioChannelUpdate update;
+    u8 pad4[0xC];
+} AudioChannelUpdateEntry;
+
+typedef struct {
+    u8 value;
+    u8 pad1[0xF];
+} AudioChannelByteEntry;
+
+extern AudioChannelUpdateEntry D_8002B07C[];
+extern AudioChannelByteEntry D_8002B080[];
+
+/* Keep the indexed channel slot as an expression to preserve retail's frame. */
+#define slot (&D_800417B0[arg0])
+
+void func_1000D2F8(u8 arg0, f32 arg1, f32 arg2, s32 arg3) {
+    s32 state;
+    register s32 i;
+    register struct151 *entry;
+    state = func_1000853C(arg0);
+    entry = *slot;
+    if (entry == NULL) {
+        return;
+    }
+
+    if ((entry->unk24 != 0) &&
+        (func_1000CDA0(((u8 *)entry)[0x23], (struct137 *)entry->unk10) != 0)) {
+        entry = *slot;
+        func_10008C6C(arg0, entry->unk24 - 1);
+        entry = *slot;
+        if (entry->unk28 != 0) {
+            entry->unk30 = entry->unk28;
+            (*slot)->unk2C = entry->unk28;
+            entry = *slot;
+        }
+        entry->unk4C = 0x7FFF;
+        (*slot)->unk4E = 0x7FFF;
+        func_1000CC54(arg0);
+        (*slot)->unk24 = 0;
+        (*slot)->unk20 = 0;
+    }
+
+    entry = *slot;
+    if (state == 0) {
+        entry->unk4 = 0;
+        entry = *slot;
+    }
+
+    if (entry->unk60 != NULL) {
+        if (entry->unk4 == 0) {
+            if (func_1000CDA0(((u8 *)entry->unk60)[0x1B],
+                              (struct137 *)((struct151 *)entry->unk60)->unk10) != 0) {
+                (*slot)->unk4 = -1;
+                func_1000B294((s32 *)*slot);
+                if (((struct151 *)(*slot)->unk60)->unk4 > 0) {
+                    if (func_10008CE8(
+                            arg0,
+                            ((struct151 *)(*slot)->unk60)->unk4) == -1) {
+                        ((struct151 *)(*slot)->unk60)->unk10 = NULL;
+                        ((struct151 *)(*slot)->unk60)->unk18 = 0;
+                        func_1000B3D4((*slot)->unk60, NULL);
+                        (*slot)->unk60 = NULL;
+                        *slot = NULL;
+                    } else {
+                        *slot = (struct151 *)(*slot)->unk60;
+                        (*slot)->unk0 = arg0;
+                        (*slot)->unk18 = 0;
+                        D_800418A0[arg0] = 0;
+                        D_80041890[arg0] = 0;
+                        D_80041880[arg0] = 0;
+                        entry = *slot;
+                        if (D_8002B080[entry->unk4].value != 0) {
+                            func_10008C04(arg0,
+                                         D_8002B080[entry->unk4].value, 100);
+                            entry = *slot;
+                        }
+                        if (entry->unk24 != 0) {
+                            func_10008C6C(arg0, entry->unk24 - 1);
+                            (*slot)->unk24 = 0;
+                            entry = *slot;
+                        }
+                        entry->unk30 = 0;
+                        func_1000CC54(arg0);
+                        func_100084D8(arg0);
+                        if ((*slot)->unk38 != 0) {
+                            func_100088F0(arg0, (*slot)->unk38, 0);
+                        }
+                        for (i = 0; i < 16; i++) {
+                            if ((*slot)->unk3C[i] != 0) {
+                                func_10008660(arg0, i, (*slot)->unk3C[i], 1);
+                                (*slot)->unk3C[i] = 0;
+                            }
+                        }
+                    }
+                } else {
+                    ((struct151 *)(*slot)->unk60)->unk4 = -1;
+                    ((struct151 *)(*slot)->unk60)->unk10 = NULL;
+                    ((struct151 *)(*slot)->unk60)->unk18 = 0;
+                    (*slot)->unk0 = -1;
+                    *slot = NULL;
+                }
+            }
+        } else if (func_1000CDA0(
+                       ((u8 *)entry->unk60)[0x1B],
+                       (struct137 *)((struct151 *)entry->unk60)->unk10) != 0) {
+            (*slot)->unk15 = 0;
+            func_10008F24(arg0);
+        }
+        entry = *slot;
+    } else if (entry->unk4 == 0) {
+        func_1000B294((s32 *)entry);
+        (*slot)->unk4 = -1;
+        (*slot)->unk0 = -1;
+        *slot = NULL;
+        entry = NULL;
+    }
+
+    if (entry == NULL) {
+        return;
+    }
+
+    if (entry->unk4 > 0) {
+        if (D_8002B07C[entry->unk4].update != NULL) {
+            (*slot)->unk34 = D_8002B07C[entry->unk4].update(
+                entry->unk34, arg0, arg1, arg2, *(f32 *)&arg3);
+            entry = *slot;
+        }
+    }
+
+    if (func_1000CDA0(((u8 *)entry)[0x1F],
+                      (struct137 *)entry->unk10) != 0) {
+        entry = *slot;
+        (*slot)->unk4C = func_1000CD40(entry->unk4C, entry->unk4E,
+                                      entry->unk50);
+        entry = *slot;
+        (*slot)->unk52 = func_1000CD40(entry->unk52,
+                                      *(u16 *)((u8 *)entry + 0x54),
+                                      *(u16 *)((u8 *)entry + 0x56));
+        entry = *slot;
+        (*slot)->unk58 = func_1000CD40(entry->unk58, (u16)entry->unk5A,
+                                      (u16)entry->unk5C);
+        (*slot)->unk1C = 0;
+    }
+
+    func_1000CC54(arg0);
+    entry = *slot;
+    if (((u8 *)entry)[0x14] != 0) {
+        if ((entry->unk10 != NULL) && (entry->unk10 != (s32 *)entry) &&
+            (((struct151 *)entry->unk10)->unk4 > 0) && (entry->unk4 > 0) &&
+            (((struct151 *)entry->unk10)->unk0 >= 0)) {
+            return;
+        }
+        ((u8 *)entry)[0x14] = 0;
+        entry = *slot;
+        entry->unk10 = (s32 *)entry;
+    }
 }
+
+#undef slot
+
 void func_1000D758(f32 arg0, f32 arg1, s32 arg2) {
     struct151 *entry;
     s32 group5;

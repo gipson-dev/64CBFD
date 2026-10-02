@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,157 / 5,456 (57.86%) | 0 | 2,299 |
-| Init | 474 / 487 (97.33%) | 0 | 13 |
+| Total | 3,158 / 5,456 (57.88%) | 0 | 2,298 |
+| Init | 475 / 487 (97.54%) | 0 | 12 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init audio channel updater `func_1000D2F8` now matches its complete
+280-word retail span. It restores pending-sequence changes, child-channel
+promotion and teardown, callback dispatch, volume ramps, and linked-channel
+validation. The semantic C has retail's exact extent and control-flow order;
+113 stale-checked words normalize IDO allocation and scheduling. The corrected
+channel-index ABI also keeps its 133-word caller `func_1000D758` byte-exact
+with two scoped guards. See
+[Working Note 660](WORKING_NOTES/660-init-audio-channel-updater-match-20261001.md).
 
 The Init audio subframe builder `func_1001FB40` now matches its complete
 296-word retail span directly from C. It restores optional opening-command

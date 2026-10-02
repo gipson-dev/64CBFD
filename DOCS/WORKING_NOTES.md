@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init audio subframe builder matched).**
-The current linked checkpoint is `3157 / 5456 (57.86%)` exact C functions,
-with no address-drift blockers and 2,299 genuinely different C functions.
+**Active (2026-10-01, Init audio channel updater matched).**
+The current linked checkpoint is `3158 / 5456 (57.88%)` exact C functions,
+with no address-drift blockers and 2,298 genuinely different C functions.
 Init is
-`474 / 487 (97.33%)` exact, with 13 genuinely different C rows. Game is
+`475 / 487 (97.54%)` exact, with 12 genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,11 +100,13 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`func_1001FB40` now matches all 296 retail words and relocations directly from
-semantic C, with no guards. It is ready to bank in its own focused commit.
-After that checkpoint, resume Init at `func_1000D2F8`, the 280-word next
-candidate with 275 real word differences. See
-[Working Note 659](WORKING_NOTES/659-init-audio-subframe-builder-match-20261001.md).
+`func_1000D2F8` now matches all 280 retail words after restoring the complete
+audio-channel update path. Its frame, extent, branches, calls, and relocations
+are structurally aligned; 113 checked rows normalize the closed compiler
+allocation and schedule. The corrected ABI leaves `func_1000D758` exact with
+two additional checked words. Bank this focused recovery, then resume Init at
+the 296-word `func_10001550`, currently different in 286 words. See
+[Working Note 660](WORKING_NOTES/660-init-audio-channel-updater-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and
