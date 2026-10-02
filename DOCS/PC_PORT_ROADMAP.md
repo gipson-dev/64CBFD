@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,197 / 5,456 (58.60%) | 0 | 2,259 |
+| Total | 5,456 / 6,041 (90.32%) | 3,198 / 5,456 (58.61%) | 0 | 2,258 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,529 / 4,788 (52.82%) | 0 | 2,259 |
+| Game | 4,788 / 5,321 (89.98%) | 2,530 / 4,788 (52.84%) | 0 | 2,258 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game attachment-state updater `func_150333A8` now matches all 38 retail
+words. It restores the disable gate, attached-object state clear, and
+height-threshold byte update; seven stale-checked words preserve the equivalent
+floating branch/store layout. See
+[Working Note 692](WORKING_NOTES/692-game-attachment-state-updater-match-20261002.md).
 
 The Game group-record activator `func_150227BC` now matches all 35 retail
 words. It resolves every ID in the selected count-sized row and marks the

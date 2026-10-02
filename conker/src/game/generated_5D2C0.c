@@ -4,6 +4,7 @@ extern u8 D_800C35EA;
 extern s32 D_800BE9E4;
 extern s32 D_800902BC[];
 extern s32 D_800902FC[];
+extern f32 D_80097B68;
 
 /* Non-matching placeholders for the text-only asm slice asm/5D2C0.s. */
 
@@ -189,7 +190,29 @@ s32 func_15033328(u8 *arg0, u8 *arg1) {
     return result;
 }
 
-s32 func_150333A8() {
+s32 func_150333A8(u8 *arg0, u8 *arg1) {
+    u8 *attached;
+    f32 reference;
+
+    if (D_800C35EA == 1) {
+        return 0;
+    }
+
+    if (arg1[0xAD] != 0) {
+        attached = *(u8 **)(arg1 + 0x31C);
+        if (attached != NULL) {
+            attached[0x11A] = 0;
+        }
+        return 1;
+    }
+
+    reference = *(f32 *)(arg1 + 0x118);
+    if ((reference == D_80097B68) ||
+        !(*(f32 *)(arg1 + 0x18) < reference + 300.0f)) {
+        arg0[3] = 0xFF;
+    } else {
+        arg0[3] = 0;
+    }
     return 0;
 }
 

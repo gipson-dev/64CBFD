@@ -25,6 +25,7 @@ remains `181 / 181 (100.00%)`.
 No fresh gameplay run was performed. This checkpoint is semantic recovery,
 full stale-guard rebuild, full-link, and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 38-word `func_150333A8`. Keep
+The next queued function, 38-word `func_150333A8`, is now complete; see
+[Working Note 692](692-game-attachment-state-updater-match-20261002.md). Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

@@ -10214,3 +10214,10 @@ generated_204660,func_151D7538,0x04C,0x55F8000B,0x550A000B,-,-,Normalize event-r
 generated_204660,func_151D7538,0x074,0xAFA30010,0xAFAB0010,-,-,Normalize event-record matcher trailing object argument allocation,,,false
 generated_49D30,func_150227BC,0x02C,0x00008025,0x0304C023,-,-,Normalize group-record activator row-offset scheduling,,,false
 generated_49D30,func_150227BC,0x034,0x0304C023,0x00008025,-,-,Normalize group-record activator index initialization scheduling,,,false
+generated_5D2C0,func_150333A8,0x058,0x46040032,0x46002032,-,-,Normalize attachment-state updater equality operand order,,,false
+generated_5D2C0,func_150333A8,0x060,0x45010008,0x4503000B,-,-,Normalize attachment-state updater equality branch layout,,,false
+generated_5D2C0,func_150333A8,0x064,0x00000000,0xA0980003,-,-,Normalize attachment-state updater equality delay-slot store,,,false
+generated_5D2C0,func_150333A8,0x07C,0x45030004,0x45020004,-,-,Normalize attachment-state updater threshold branch layout,,,false
+generated_5D2C0,func_150333A8,0x080,0xA0800003,0xA0980003,-,-,Normalize attachment-state updater threshold delay-slot store,,,false
+generated_5D2C0,func_150333A8,0x088,0xA0980003,0xA0800003,-,-,Normalize attachment-state updater fallthrough store layout,,,false
+generated_5D2C0,func_150333A8,0x08C,0xA0800003,0xA0980003,-,-,Normalize attachment-state updater alternate store layout,,,false

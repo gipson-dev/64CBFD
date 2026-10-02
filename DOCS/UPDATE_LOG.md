@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game attachment-state updater byte-matched
+
+- `func_150333A8` replaces its zero-return placeholder with the global disable
+  gate, attached-object state clear, and reference-height/`+300.0f` threshold
+  update for byte `3`.
+- All 38 retail words match. Thirty-one emit directly from semantic C; seven
+  stale-checked words normalize one commutative float equality and the closed
+  equivalent branch-likely/delay-slot store layout.
+- The refreshed matcher reports **3,198 / 5,456 (58.61%)** overall and
+  **2,530 / 4,788 (52.84%)** in Game, with zero address drift and 2,258
+  different C rows. See
+  [Working Note 692](WORKING_NOTES/692-game-attachment-state-updater-match-20261002.md).
+
 ### Game group-record activator byte-matched
 
 - `func_150227BC` replaces its zero-return placeholder with the complete

@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,197 / 5,456 (58.60%) | 0 | 2,259 |
+| Total | 3,198 / 5,456 (58.61%) | 0 | 2,258 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,529 / 4,788 (52.82%) | 0 | 2,259 |
+| Game | 2,530 / 4,788 (52.84%) | 0 | 2,258 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game attachment-state updater `func_150333A8` now matches its complete
+38-word slot. It handles the global disable mode, clears an attached object's
+state byte for active attachments, and otherwise derives byte `3` from the
+reference-height equality and `+300.0f` threshold tests. Thirty-one words emit
+directly from C; seven stale-checked words preserve an equivalent closed
+floating-branch and delay-slot store layout. See
+[Working Note 692](WORKING_NOTES/692-game-attachment-state-updater-match-20261002.md).
 
 The Game group-record activator `func_150227BC` now matches all 35 retail
 words. It walks the selected 30-byte ID row, resolves each active ID through
