@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,220 / 5,456 (59.02%) | 0 | 2,236 |
+| Total | 3,221 / 5,456 (59.04%) | 0 | 2,235 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,552 / 4,788 (53.30%) | 0 | 2,236 |
+| Game | 2,553 / 4,788 (53.32%) | 0 | 2,235 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game configurable randomized record spawner `func_1500F9D0` now matches all
+37 retail words directly from C. It shares the random type and fixed allocation
+contract of `func_1500F378`, but publishes the caller's fifth argument as the
+record byte at `0x30`. See
+[Working Note 713](WORKING_NOTES/713-game-configurable-randomized-record-spawner-match-20261002.md).
 
 The Game randomized record spawner `func_1500F378` now matches all 37 retail
 words directly from C. It selects a random type in `10..137`, allocates the

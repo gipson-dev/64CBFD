@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game configurable randomized record spawner byte-matched
+
+- `func_1500F9D0` replaces its zero-return placeholder with the five-argument
+  variant of the randomized record allocator and initializer.
+- The complete 37-word routine emits directly from semantic C. No expected-word
+  guards, checked insertions or omissions, relocations, or profile override are
+  required.
+- The refreshed matcher reports **3,221 / 5,456 (59.04%)** overall and
+  **2,553 / 4,788 (53.32%)** in Game, with zero address drift and 2,235
+  different C rows. See
+  [Working Note 713](WORKING_NOTES/713-game-configurable-randomized-record-spawner-match-20261002.md).
+
 ### Game randomized record spawner byte-matched
 
 - `func_1500F378` replaces its zero-return placeholder with randomized type
