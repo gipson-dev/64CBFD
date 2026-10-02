@@ -21,6 +21,9 @@ The full linked matcher reports zero address drift and advances Game to
 progress is `3,172 / 5,456 (58.14%)`. Init remains `487 / 487 (100.00%)` and
 Debugger remains `181 / 181 (100.00%)`.
 
-Resume the ordinary small-Game queue with 36-word `func_150F9A20`. Keep
+The next two recoveries are recorded in
+[Working Note 675](675-game-condition-state-flag-match-20261002.md) and
+[Working Note 676](676-game-owner-event-callback-match-20261002.md). Resume
+the ordinary small-Game queue with 34-word `func_1510E7A4`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

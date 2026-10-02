@@ -32,10 +32,24 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,172 / 5,456 (58.14%) | 0 | 2,284 |
+| Total | 3,174 / 5,456 (58.17%) | 0 | 2,282 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,504 / 4,788 (52.30%) | 0 | 2,284 |
+| Game | 2,506 / 4,788 (52.34%) | 0 | 2,282 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game owner-event callback `func_15100230` now matches all 35 retail words.
+It destroys the object when event `0x48` matches either owner identity field
+and otherwise forwards the event with the embedded owner record. A
+function-specific `-O1 -g3` object preserves its caller-spilled callback ABI;
+28 stale-checked words normalize the closed instruction schedule and both call
+relocations. See
+[Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md).
+
+The Game state-flag updater `func_150F9A20` now matches its complete 36-word
+slot directly from C. It queries condition `0x4025`, selects mutually exclusive
+`0x80` and `0x08` state flags, and writes either `85.0f` or zero to field
+`0x190`. No expected-word guards are required. See
+[Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md).
 
 The Game command-row loop `func_150413FC` now matches all 33 retail words. It
 walks a zero-terminated command-byte stream, advances its associated row by
@@ -2253,8 +2267,9 @@ end-to-end gameplay acceptance.
    handwritten assembly ownership. Game object teardown `func_15106E78` is
    now byte-exact directly from semantic C. The 33-word command-row loop
    `func_150413FC` is also byte-exact from semantic C plus nine prologue-only
-   scheduling guards. Resume with ordinary 36-word Game candidate
-   `func_150F9A20`. Keep
+   scheduling guards. The 36-word state-flag updater `func_150F9A20` and
+   35-word owner-event callback `func_15100230` are now byte-exact. Resume with
+   ordinary 34-word Game candidate `func_1510E7A4`. Keep
    `func_15015F40` parked until its
    unresolved 38-entry indirect table has authoritative ownership, and keep
    handwritten register-contract fragment `func_150A76F0` in the raw-assembly

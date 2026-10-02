@@ -16,6 +16,28 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game owner-event callback byte-matched
+
+- `func_15100230` now restores event `0x48` owner-pointer/owner-ID matching,
+  object destruction on a match, and forwarding of all other events with the
+  embedded owner record.
+- Its complete 35-word callback uses a function-specific `-O1 -g3` object.
+  Twenty-eight stale-checked words preserve the closed retail schedule and
+  relocation-aware placement of both calls.
+- The refreshed matcher reports **3,174 / 5,456 (58.17%)** overall and
+  **2,506 / 4,788 (52.34%)** in Game, with zero address drift and 2,282
+  different C rows. See
+  [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md).
+
+### Game condition state flags byte-matched
+
+- `func_150F9A20` now replaces its zero-return placeholder with the complete
+  condition query and state update. Condition `0x4025` selects mutually
+  exclusive flags `0x80`/`0x08` and writes `85.0f` or zero to field `0x190`.
+- The complete 36-word slot emits directly from semantic C without expected
+  word guards. See
+  [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md).
+
 ### Game command-row loop byte-matched
 
 - `func_150413FC` now replaces its zero-return placeholder with the complete

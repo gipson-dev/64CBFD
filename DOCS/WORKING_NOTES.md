@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game command-row loop matched).**
-The current linked checkpoint is `3172 / 5456 (58.14%)` exact C functions,
-with no address-drift blockers and 2,284 genuinely different C functions.
+**Active (2026-10-02, Game owner-event callback matched).**
+The current linked checkpoint is `3174 / 5456 (58.17%)` exact C functions,
+with no address-drift blockers and 2,282 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2504 / 4788 (52.30%)` exact, with 2,284 genuinely different C rows. The tree
+`2506 / 4788 (52.34%)` exact, with 2,282 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -116,9 +116,16 @@ embedded-record teardown require no guarded words. See
 Game command-row loop `func_150413FC` now matches all 33 retail words. The
 semantic body restores command translation, eight-byte row advancement, and
 result threading; nine stale-checked words preserve only retail's independent
-prologue schedule. Resume with 36-word `func_150F9A20`; keep the documented
-indirect-table and handwritten-register special cases parked. See
+prologue schedule. See
 [Working Note 674](WORKING_NOTES/674-game-command-row-loop-match-20261002.md).
+
+Game condition state updater `func_150F9A20` now matches its complete 36-word
+slot directly from semantic C without guards. Owner-event callback
+`func_15100230` now matches all 35 words using its retail `-O1 -g3` profile and
+28 stale-checked scheduling words. Resume with 34-word `func_1510E7A4`; keep
+the documented indirect-table and handwritten-register special cases parked.
+See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
+and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

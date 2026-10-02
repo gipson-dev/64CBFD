@@ -8,10 +8,18 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,172 / 5,456 (58.14%) | 0 | 2,284 |
+| Total | 5,456 / 6,041 (90.32%) | 3,174 / 5,456 (58.17%) | 0 | 2,282 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,504 / 4,788 (52.30%) | 0 | 2,284 |
+| Game | 4,788 / 5,321 (89.98%) | 2,506 / 4,788 (52.34%) | 0 | 2,282 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game owner-event callback `func_15100230` now matches all 35 retail words
+using its recovered `-O1 -g3` callback profile and 28 stale-checked scheduling
+words. The Game state-flag updater `func_150F9A20` also matches its complete
+36-word slot directly from semantic C without guards. See
+[Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md)
+and
+[Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md).
 
 The Game command-row loop `func_150413FC` now matches all 33 retail words. Its
 semantic C restores zero-terminated command iteration, eight-byte row

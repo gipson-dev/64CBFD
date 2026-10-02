@@ -430,6 +430,17 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o: \
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.nodebug.compact $@.padded.s
 
+# This callback uses the retail -O1 caller-spilled argument profile while the
+# neighboring generated-slice routines retain the standard -O2 -g3 profile.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_12D630.c.o: \
+		$(SRC_DIR)/game/generated_12D630.c $$(call generated_slice_asm,12D630) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) -O1 -g3 $(MIPSBIT) -o $@.o1.compact $<
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,12D630) $@.padded.s \
+		--function-object func_15100230=$@.o1.compact --word-patches retail_word_patches.us.csv --filename generated_12D630
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.o1.compact $@.padded.s
+
 $(RETAIL_PAD_PLAIN_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
 	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) $(basename $(notdir $<)) $@.padded.s --word-patches retail_word_patches.us.csv $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))

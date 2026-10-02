@@ -35,8 +35,15 @@ void func_151001B4(u8 *arg0) {
     }
 }
 
-s32 func_15100230() {
-    return 0;
+void func_15100230(s32 arg0, s32 arg1, u8 arg2) {
+    if (arg2 == 0x48) {
+        if (((Generated12D630Owner *)(arg0 + 0x28))->owner == *(void **)arg1 ||
+            ((Generated12D630Owner *)(arg0 + 0x28))->owner_id == *(u8 *)(arg1 + 4)) {
+            func_1516972C((void *)arg0);
+        }
+    } else {
+        func_15149514(arg1, arg2, arg0 + 0x28, arg0 + 0x2C, arg0);
+    }
 }
 
 void func_151002BC(u8 *arg0) {
