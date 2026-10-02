@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game special-event mode dispatcher byte-matched
+
+- `func_15015F40` replaces its zero-return placeholder with the retail
+  38-entry event switch, mode-byte update, and decremented index publication.
+- The retained `assets/23B040.bin` table proves the eight special events. The
+  established object rodata anchor retargets IDO's switch relocations to
+  `jtbl_800966C0_game`; all 31 words emit without guard rows.
+- The refreshed matcher reports **3,229 / 5,456 (59.18%)** overall and
+  **2,561 / 4,788 (53.49%)** in Game, with zero address drift and 2,227
+  different C rows. See
+  [Working Note 721](WORKING_NOTES/721-game-special-event-mode-dispatch-match-20261002.md).
+
 ### Game sentinel coordinate distance byte-matched
 
 - `func_15086BD0` replaces its zero-return placeholder with the retail

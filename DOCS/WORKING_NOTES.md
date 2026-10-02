@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game sentinel coordinate distance matched).**
-The current linked checkpoint is `3228 / 5456 (59.16%)` exact C functions,
-with no address-drift blockers and 2,228 genuinely different C functions.
+**Active (2026-10-02, Game special-event mode dispatch matched).**
+The current linked checkpoint is `3229 / 5456 (59.18%)` exact C functions,
+with no address-drift blockers and 2,227 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2560 / 4788 (53.47%)` exact, with 2,228 genuinely different C rows. The tree
+`2561 / 4788 (53.49%)` exact, with 2,227 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -223,12 +223,16 @@ guards. Object-control reset `func_150634E4` now matches all 35 words directly
 from typed C after recovering its pool-index canonicalization, attached-state
 resets, control calls, and object-byte clears. The unsigned array use restores
 retail's shift/add scaling without guards. Sentinel coordinate distance
-`func_15086BD0` now matches its
-complete 40-word slot after restoring the `0xFF` index gate and signed XYZ
+`func_15086BD0` now matches its complete 40-word slot after restoring the
+`0xFF` index gate and signed XYZ
 Euclidean distance calculation. Thirteen replacement guards and two checked
-insertions normalize only IDO scheduling and retail's duplicate return. Resume
-with 31-word `func_15015F40`, currently at 29 real differences; preserve its
-documented indirect-table ownership boundary unless new evidence resolves it.
+insertions normalize only IDO scheduling and retail's duplicate return.
+Special-event mode dispatcher `func_15015F40`
+now matches all 31 words directly from semantic C. The retained retail asset
+proves its eight special events, and an object rodata anchor retargets IDO's
+switch to `jtbl_800966C0_game` without guards. Keep handwritten
+`func_150A76F0` in the raw-assembly workstream; resume the ordinary queue with
+41-word `func_150B060C`, currently at 35 real differences.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
 followed by
@@ -320,6 +324,8 @@ The object-control reset is recorded in
 [Working Note 719](WORKING_NOTES/719-game-object-control-reset-match-20261002.md).
 The sentinel coordinate distance is recorded in
 [Working Note 720](WORKING_NOTES/720-game-sentinel-coordinate-distance-match-20261002.md).
+The special-event mode dispatcher is recorded in
+[Working Note 721](WORKING_NOTES/721-game-special-event-mode-dispatch-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

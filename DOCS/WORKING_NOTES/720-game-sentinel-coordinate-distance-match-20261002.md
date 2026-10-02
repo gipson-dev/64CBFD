@@ -36,7 +36,8 @@ C progress is `3,228 / 5,456 (59.16%)`. Init remains
 `487 / 487 (100.00%)` and Debugger remains `181 / 181 (100.00%)`.
 `make tools-check` also passes. No fresh gameplay run was performed.
 
-The fresh ordinary matcher queue begins with 31-word `func_15015F40` at 29
-real differences, followed by 32-word `func_150A76F0` at 29. Resume with
-`func_15015F40`, while preserving its documented indirect-table ownership
-boundary unless new evidence resolves it.
+Continue with
+[Working Note 721](721-game-special-event-mode-dispatch-match-20261002.md),
+which resolves the retained-table ownership and completes 31-word
+`func_15015F40`. Keep 32-word `func_150A76F0` in its documented raw-assembly
+workstream and resume the ordinary queue with 41-word `func_150B060C`.

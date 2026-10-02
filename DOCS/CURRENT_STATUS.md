@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,228 / 5,456 (59.16%) | 0 | 2,228 |
+| Total | 3,229 / 5,456 (59.18%) | 0 | 2,227 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,560 / 4,788 (53.47%) | 0 | 2,228 |
+| Game | 2,561 / 4,788 (53.49%) | 0 | 2,227 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game special-event mode dispatcher `func_15015F40` now matches all 31
+retail words directly from C. The retained `assets/23B040.bin` data establishes
+the eight special events in its 38-entry table, and an object-specific rodata
+anchor preserves retail table ownership without expected-word guards. See
+[Working Note 721](WORKING_NOTES/721-game-special-event-mode-dispatch-match-20261002.md).
 
 The Game sentinel coordinate distance `func_15086BD0` now matches its complete
 40-word slot. It returns zero for either `0xFF` index and otherwise computes
@@ -2597,9 +2603,8 @@ end-to-end gameplay acceptance.
    `func_1510E7A4`/`func_1510E82C`/`func_1510E8BC` render-parameter wrapper
    family is also byte-exact. The angular integrators `func_1511515C` and
    `func_151151FC`, plus displacement extender `func_15115EDC`, are now
-   byte-exact. Resume with ordinary 33-word Game candidate `func_151325C8`. Keep
-   `func_15015F40` parked until its
-   unresolved 38-entry indirect table has authoritative ownership, and keep
+   byte-exact. The 38-entry retail asset now establishes `func_15015F40`'s
+   authoritative dispatch membership, and the function is byte-exact. Keep
    handwritten register-contract fragment `func_150A76F0` in the raw-assembly
    workstream.
    Keep `func_15194320` and `func_15194394` parked behind generated-slice
