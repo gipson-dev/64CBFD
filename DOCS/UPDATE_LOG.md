@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game randomized-step callback byte-matched
+
+- `func_1518F7C4` replaces its zero-return placeholder with the randomized
+  float accumulation, object update, and signed-selector callback dispatch.
+- The typed record and callback table recover the semantic contract. Twenty-two
+  stale-guarded rows normalize IDO's closed frame, retained-pointer, call-delay,
+  and callback-branch schedule; seven checked insertions and two omissions
+  preserve the complete 37-word retail slot.
+- The refreshed matcher reports **3,214 / 5,456 (58.91%)** overall and
+  **2,546 / 4,788 (53.17%)** in Game, with zero address drift and 2,242
+  different C rows. See
+  [Working Note 707](WORKING_NOTES/707-game-randomized-step-callback-match-20261002.md).
+
 ### Game position-sample ring recorder byte-matched
 
 - `func_1515CF9C` now uses the recovered signed status-buffer contract and a

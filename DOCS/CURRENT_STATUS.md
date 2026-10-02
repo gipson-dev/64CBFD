@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,213 / 5,456 (58.89%) | 0 | 2,243 |
+| Total | 3,214 / 5,456 (58.91%) | 0 | 2,242 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,545 / 4,788 (53.15%) | 0 | 2,243 |
+| Game | 2,546 / 4,788 (53.17%) | 0 | 2,242 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game randomized-step callback `func_1518F7C4` now matches all 37 retail
+words. It accumulates a timestep-scaled randomized delta, performs the object
+update, and optionally dispatches through the signed callback selector at
+offset `0x88`. Twenty-two stale-guarded rows normalize IDO's frame, retained
+record pointer, call delays, and callback branch layout. See
+[Working Note 707](WORKING_NOTES/707-game-randomized-step-callback-match-20261002.md).
 
 The Game position-sample ring recorder `func_1515CF9C` now matches all 37
 retail words. It appends a 12-byte position and float sample while capacity

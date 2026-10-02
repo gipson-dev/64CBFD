@@ -1,5 +1,7 @@
 #include <ultra64.h>
 f32 func_150ADA68();
+extern f32 D_800BE9A4;
+extern s32 (*D_8008D67C[])(u8 *);
 extern void (*D_8008D680[])();
 extern void (*D_8008D684[])(u8 *, void *, u8);
 typedef struct { s32 a, b, c; } ThreeWord1BA1D0;
@@ -13,6 +15,13 @@ typedef struct {
     f32 base;
     f32 scale;
 } FloatUpdate1BA1D0;
+typedef struct {
+    f32 value;
+    f32 base;
+    f32 scale;
+    u8 padC[0x4C];
+    s8 callback;
+} RandomStep1BA1D0;
 typedef struct {
     u8 pad0[0x1C];
     s16 timer;
@@ -234,8 +243,19 @@ s32 func_1518F5D0() {
     return 0;
 }
 
-s32 func_1518F7C4() {
-    return 0;
+s32 func_1518F7C4(u8 *arg0) {
+    RandomStep1BA1D0 *step;
+    f32 random;
+
+    random = func_150ADA68();
+    step = (RandomStep1BA1D0 *) (arg0 + 0x30);
+    step->value += (step->base + random * step->scale) * D_800BE9A4;
+    func_1518F8E0(arg0);
+
+    if (step->callback == -1) {
+        return 1;
+    }
+    return D_8008D67C[step->callback](arg0);
 }
 
 void func_1518F858(u8 *arg0) {

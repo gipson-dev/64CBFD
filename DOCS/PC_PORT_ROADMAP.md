@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,213 / 5,456 (58.89%) | 0 | 2,243 |
+| Total | 5,456 / 6,041 (90.32%) | 3,214 / 5,456 (58.91%) | 0 | 2,242 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,545 / 4,788 (53.15%) | 0 | 2,243 |
+| Game | 4,788 / 5,321 (89.98%) | 2,546 / 4,788 (53.17%) | 0 | 2,242 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game randomized-step callback `func_1518F7C4` now matches all 37 retail
+words. It restores randomized timestep accumulation, the object update call,
+and signed-selector callback dispatch. See
+[Working Note 707](WORKING_NOTES/707-game-randomized-step-callback-match-20261002.md).
 
 The Game position-sample ring recorder `func_1515CF9C` now matches all 37
 retail words. It restores capacity handling, structured position/sample

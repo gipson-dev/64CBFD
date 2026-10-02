@@ -34,6 +34,9 @@ byte-exact C progress is `3,213 / 5,456 (58.89%)`. Init remains
 No fresh gameplay run was performed. This checkpoint is semantic recovery,
 focused-object disassembly, full-link, and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 37-word `func_1518F7C4`. Keep
+Continue from
+[Working Note 707](707-game-randomized-step-callback-match-20261002.md),
+which matches `func_1518F7C4`. Resume the ordinary small-Game queue with
+62-word `func_1507A528`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.
