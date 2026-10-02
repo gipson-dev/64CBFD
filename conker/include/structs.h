@@ -1607,7 +1607,8 @@ typedef struct {
     u16 unk4E;
     u16 unk50;
     u16 unk52;
-    u8  pad54[0x4];
+    u16 unk54;
+    u16 unk56;
     u16 unk58;
     s16 unk5A;
     s16 unk5C;

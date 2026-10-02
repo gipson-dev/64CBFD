@@ -16,6 +16,24 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init sequence transition dispatcher byte-matched
+
+- `func_1000D96C` now replaces its zero-return placeholder with the complete
+  sequence-record transition path. It resolves primary and child records,
+  detaches stale children, allocates replacements, and applies the six
+  transition modes and their fade values.
+- The semantic compact body contains 293 words, with 73 emitted directly at
+  their retail positions. Two hundred twenty scoped, stale-checked rows
+  normalize the closed IDO layout; they include seven scheduled word
+  insertions and 20 relocation-aware rows.
+- Direct comparison reports zero differences across all 1,200 bytes. Both
+  spans share SHA-256
+  `925f906618db0bc5a5e8a3b5ffc06cb886e87031928dffac85ac005bb893faf1`.
+  Totals are **3,160 / 5,456 (57.92%)** overall and
+  **477 / 487 (97.95%)** in Init, with zero address drift and 10 different
+  Init C rows. See
+  [Working Note 662](WORKING_NOTES/662-init-sequence-transition-dispatcher-match-20261001.md).
+
 ### Init SDK float formatter byte-matched
 
 - `func_10001550` now replaces its empty placeholder with the recovered SDK

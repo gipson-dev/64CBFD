@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,159 / 5,456 (57.90%) | 0 | 2,297 |
-| Init | 476 / 487 (97.74%) | 0 | 11 |
+| Total | 3,160 / 5,456 (57.92%) | 0 | 2,296 |
+| Init | 477 / 487 (97.95%) | 0 | 10 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init sequence transition dispatcher `func_1000D96C` now matches its
+complete 300-word retail span. It restores existing-record teardown, child
+allocation and attachment, mode-specific fades, shared-channel handling, and
+record reinitialization. The semantic compact body emits 73 words directly;
+220 stale-checked rows include seven schedule insertions and 20
+relocation-aware rows. See
+[Working Note 662](WORKING_NOTES/662-init-sequence-transition-dispatcher-match-20261001.md).
 
 The Init SDK floating-point formatter `func_10001550` now matches its complete
 296-word retail span. It restores `%f`, `%e`, `%E`, `%g`, and `%G` conversion,

@@ -16,7 +16,7 @@ s32 func_1000CAE4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1000CDA0(u8 arg0, struct137 *arg1);
 void func_1000CEAC(s32 arg0);
 void func_1000D2F8(u8 arg0, f32 arg1, f32 arg2, s32 arg3);
-s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
+void func_1000D96C(s32 arg0, s32 arg1, s32 arg2);
 void func_1000E17C(void);
 void func_1000E2F4(s32 arg0);
 void func_1000E934(void);
@@ -1175,9 +1175,176 @@ update_channels:
         func_1000D2F8(i, arg0, arg1, arg2);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/init_B1B0/func_1000D96C.s. */
-s32 func_1000D96C(s32 arg0, s32 arg1, s32 arg2) {
-    return 0;
+void func_1000D96C(s32 arg0, s32 arg1, s32 arg2) {
+    struct151 *secondary;
+    struct151 *allocated;
+    struct151 *primary;
+    struct151 *child;
+    s32 shared;
+
+    primary = NULL;
+    arg0 &= 0xFFF;
+    arg1 &= 0xFFF;
+    allocated = NULL;
+    shared = 0;
+
+    if ((arg0 != 0) && (func_1000B1FC(arg0) != NULL)) {
+        secondary = func_1000B1B0(arg0);
+        if (secondary == NULL) {
+            return;
+        }
+
+        child = (struct151 *)secondary->unk60;
+        if (child != NULL) {
+            if (child->unk0 == -1) {
+                secondary->unk54 = 0x8000;
+                secondary->unk56 = 0x400;
+                child->unk4 = -1;
+                ((struct151 *)secondary->unk60)->unk0 = -1;
+                secondary->unk60 = NULL;
+            }
+            arg0 = 0;
+            if (arg1 == 0) {
+                return;
+            }
+        } else {
+            if (secondary->unk15 == 0) {
+                if (secondary->unk54 != 0) {
+                    return;
+                }
+            }
+            secondary->unk54 = 0x8000;
+            secondary->unk52 = 0;
+            secondary->unk56 = 0x400;
+            arg0 = 0;
+            if (arg1 == 0) {
+                return;
+            }
+        }
+    }
+
+    if (arg1 != 0) {
+        primary = func_1000B1B0(arg1);
+    }
+
+    if (primary != NULL) {
+        if (primary->unk60 != NULL) {
+            return;
+        }
+
+        if ((arg2 == 4) || (arg2 == 6)) {
+            if (arg0 != 0) {
+                allocated = (struct151 *)func_1000B2F4(arg0);
+            }
+            if ((allocated == NULL) && (arg0 != 0)) {
+                return;
+            }
+
+            if (arg0 != 0) {
+                if ((*(u32 *)&D_8002B074[arg0].unk4 & 0x20) &&
+                    (*(u32 *)&D_8002B074[arg1].unk4 & 0x20)) {
+                    shared = 1;
+                }
+                allocated->unk14 = shared;
+                if (*(u32 *)&D_8002B074[arg0].unk4 & 8) {
+                    allocated->unk54 = 0x8000;
+                    allocated->unk52 = 0;
+                    allocated->unk56 = 0x3C;
+                } else if (shared != 0) {
+                    allocated->unk54 = 0x8000;
+                    allocated->unk52 = 0;
+                    allocated->unk56 = 0x100;
+                }
+                allocated->unk10 = (s32 *)primary;
+                allocated->unk18 = 2;
+                func_1000B3D4((struct00 *)allocated, NULL);
+            }
+
+            if (arg2 == 6) {
+                if (arg0 != 0) {
+                    primary->unk1C = 2;
+                }
+                primary->unk14 = 0;
+                primary->unk10 = (s32 *)primary;
+                primary->unk54 = 0;
+                if (*(u32 *)&D_8002B074[arg1].unk4 & 8) {
+                    primary->unk56 = 0x28;
+                } else {
+                    primary->unk56 = 0xA0;
+                }
+                return;
+            }
+
+            child = (struct151 *)func_1000B2F4(0);
+            if (child != NULL) {
+                if (arg0 != 0) {
+                    primary->unk1C = 2;
+                }
+                primary->unk14 = 0;
+                primary->unk10 = (s32 *)primary;
+                primary->unk54 = 0;
+                primary->unk56 = (shared != 0) ? 0x80 : 0x200;
+                child->unk18 = 0x80;
+                child->unk10 = (s32 *)primary;
+                func_1000B3D4((struct00 *)child, primary);
+            }
+            return;
+        }
+    } else if (arg1 != 0) {
+        primary = func_1000B1FC(arg1);
+        if (primary != NULL) {
+            if (arg0 != 0) {
+                bzero(primary, 0x64);
+                primary->unk0 = -1;
+                if (arg0 < 0x96) {
+                    primary->unk2C = D_8002B074[arg0].unk0;
+                } else {
+                    primary->unk2C = 0x6590;
+                }
+                primary->unk5A = 0x8000;
+                primary->unk58 = 0x8000;
+                primary->unk54 = 0x8000;
+                primary->unk52 = 0x8000;
+                primary->unk4C = 0x8000;
+                primary->unk4E = 0x8000;
+                primary->unk8 = (s32)&D_8002B9D4;
+                primary->unkC = (s32)&D_8002B9F4;
+                primary->unk10 = (s32 *)primary;
+                primary->unk30 = primary->unk2C;
+            } else {
+                primary->unk18 = 0x80;
+            }
+            primary->unk4 = arg0;
+            return;
+        }
+    }
+
+    if ((arg0 != 0) || (primary != NULL)) {
+        allocated = (struct151 *)func_1000B2F4(arg0);
+    }
+    if (allocated == NULL) {
+        return;
+    }
+
+    if (arg2 == 3) {
+        allocated->unk54 = 0x8000;
+        allocated->unk52 = 0;
+        allocated->unk56 = 0x400;
+    } else if (arg2 == 2) {
+        allocated->unk18 = 1;
+        allocated->unk10 = (s32 *)primary;
+    } else if (arg2 == 1) {
+        allocated->unk18 = 2;
+        allocated->unk10 = (s32 *)primary;
+    } else if (arg2 == 5) {
+        allocated->unk18 = 0x80;
+        allocated->unk10 = (s32 *)primary;
+        if (primary != NULL) {
+            primary->unk54 = 0;
+            primary->unk56 = 0x200;
+        }
+    }
+    func_1000B3D4((struct00 *)allocated, primary);
 }
 void func_1000DEC4(void);
 
