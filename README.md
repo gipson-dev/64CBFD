@@ -8,6 +8,26 @@ built, studied, and matched against the retail ROM.
 > This repository does not contain game assets or ROM files. You must provide
 > your own legally obtained copy of the game.
 
+## A little look
+
+<p align="center">
+  <a href="DOCS/images/readme/conker-throne.png">
+    <img src="DOCS/images/readme/conker-throne.png" width="760" alt="Conker seated on the throne in the PC port">
+  </a>
+</p>
+
+<p align="center">
+  <a href="DOCS/images/readme/chapters-its-war.png">
+    <img src="DOCS/images/readme/chapters-its-war.png" width="250" alt="The It's War chapter selection in the PC port">
+  </a>
+  <a href="DOCS/images/readme/gregg-gameplay.png">
+    <img src="DOCS/images/readme/gregg-gameplay.png" width="250" alt="Gregg gameplay in the PC port">
+  </a>
+  <a href="DOCS/images/readme/rare-engine-64-editor.png">
+    <img src="DOCS/images/readme/rare-engine-64-editor.png" width="250" alt="Conker's Bad Fur Day Training area in Rare Engine 64">
+  </a>
+</p>
+
 Current measurements, verified build state, and the active resume boundary are
 maintained in [Current Decomp Status](DOCS/CURRENT_STATUS.md). PC-port progress
 and cross-project boundaries are maintained separately in the
