@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,182 / 5,456 (58.32%) | 0 | 2,274 |
+| Total | 5,456 / 6,041 (90.32%) | 3,186 / 5,456 (58.39%) | 0 | 2,270 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,514 / 4,788 (52.51%) | 0 | 2,274 |
+| Game | 4,788 / 5,321 (89.98%) | 2,518 / 4,788 (52.59%) | 0 | 2,270 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game resource-release loops `func_1514795C`, `func_151571C4`, and
+`func_15158A20` now match all 33 retail words apiece. The related
+height/state predicate `func_15159084` matches all 39 words with one guarded
+commutative floating-equality operand order. See
+[Working Note 680](WORKING_NOTES/680-game-resource-release-family-and-height-predicate-match-20261002.md).
 
 The Game resource-release loop `func_151325C8` and vertex rotation helper
 `func_151436B4` now match all 33 and 34 retail words directly from semantic C.

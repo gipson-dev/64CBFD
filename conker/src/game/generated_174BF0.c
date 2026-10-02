@@ -2,11 +2,19 @@
 extern void (*D_8008A340[])();
 extern void (*D_8008A2F0[])();
 extern void (*D_8008A390[])();
+extern s32 D_80082FA0;
+void func_100043B4(s32 *, u32);
+
+typedef struct {
+    u8 pad0[0x3C];
+    s32 entries[4];
+    s32 trailing;
+} ResourceOwner174BF0;
 
 /* Non-matching placeholders for the text-only asm slice asm/174BF0.s. */
 
 s32 func_151D5E30();
-s32 func_1514795C();
+void func_1514795C(ResourceOwner174BF0 *);
 void func_15169260(s32, s32, s32, u8);
 extern u8 D_800A5760[];
 
@@ -30,8 +38,17 @@ s32 func_15147928(s32 arg0) {
     func_15169824(arg0);
 }
 
-s32 func_1514795C() {
-    return 0;
+void func_1514795C(ResourceOwner174BF0 *arg0) {
+    s32 i;
+
+    for (i = 0; i <= D_80082FA0; i++) {
+        if (arg0->entries[i]) {
+            func_100043B4(arg0->entries[i], 4);
+        }
+    }
+    if (arg0->trailing != NULL) {
+        func_100043B4(arg0->trailing, 4);
+    }
 }
 
 void func_151479E0(u8 *arg0) {

@@ -27,3 +27,7 @@ progress is `3,182 / 5,456 (58.32%)`. Init remains
 Resume the ordinary small-Game queue with 33-word `func_1514795C`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.
+
+Superseded resume: [Working Note 680](680-game-resource-release-family-and-height-predicate-match-20261002.md)
+completed `func_1514795C` and continued through the related release family and
+height predicate.

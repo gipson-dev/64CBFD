@@ -1,5 +1,15 @@
 #include <ultra64.h>
 
+extern s32 D_80082FA0;
+extern f32 D_800A63A0;
+void func_100043B4(s32 *, u32);
+
+typedef struct {
+    u8 pad0[0xE0];
+    s32 entries[4];
+    s32 trailing;
+} ResourceOwner185560;
+
 typedef struct {
     u8 pad0[0x14];
     s16 timer;
@@ -54,8 +64,17 @@ s32 func_15158920() {
     return 0;
 }
 
-s32 func_15158A20() {
-    return 0;
+void func_15158A20(ResourceOwner185560 *arg0) {
+    s32 i;
+
+    for (i = 0; i <= D_80082FA0; i++) {
+        if (arg0->entries[i]) {
+            func_100043B4(arg0->entries[i], 4);
+        }
+    }
+    if (arg0->trailing != NULL) {
+        func_100043B4(arg0->trailing, 4);
+    }
 }
 
 s32 func_15158AA4(s32 arg0) {
@@ -130,8 +149,25 @@ s32 func_15158FA4() {
     return 0;
 }
 
-s32 func_15159084() {
-    return 0;
+s32 func_15159084(u8 *arg0, u8 arg1) {
+    s32 flags = *(s32 *)(arg0 + 0x184) & 0x1F;
+    f32 height;
+    s32 result;
+
+    if ((arg1 == 2) || (arg1 == 3)) {
+        result = 0;
+    } else {
+        if ((D_800A63A0 == (height = *(f32 *)(arg0 + 0x118))) &&
+            ((flags & 0xA) == 0)) {
+            result = 1;
+        } else if ((height < *(f32 *)(arg0 + 0x18)) ||
+                   (*(u8 *)(arg0 + 0x137) != 0)) {
+            result = 1;
+        } else {
+            result = 0;
+        }
+    }
+    return result;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_15159120.s")

@@ -10133,3 +10133,4 @@ generated_12D630,func_15100230,0x07C,0x27BD0020,0x8FBF001C,-,-,Normalize owner-e
 generated_12D630,func_15100230,0x080,0x03E00008,0x27BD0020,-,-,Normalize owner-event callback compiler schedule,,,false
 generated_12D630,func_15100230,0x084,0x00000000,0x03E00008,-,-,Normalize owner-event callback compiler schedule,,,false
 generated_142560,func_15115EDC,0x018,0x8FA60024,0x8FA50024,-,-,Preserve cross-declaration record-pointer register,,,false
+generated_185560,func_15159084,0x044,0x46040032,0x46002032,-,-,Preserve retail's commutative floating-equality operand order,,,false

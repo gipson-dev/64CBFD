@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game resource release and vertex rotation matched).**
-The current linked checkpoint is `3182 / 5456 (58.32%)` exact C functions,
-with no address-drift blockers and 2,274 genuinely different C functions.
+**Active (2026-10-02, Game resource-release family and height predicate matched).**
+The current linked checkpoint is `3186 / 5456 (58.39%)` exact C functions,
+with no address-drift blockers and 2,270 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2514 / 4788 (52.51%)` exact, with 2,274 genuinely different C rows. The tree
+`2518 / 4788 (52.59%)` exact, with 2,270 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -129,8 +129,12 @@ slot directly from semantic C without guards. Owner-event callback
 directly from C. Displacement extender `func_15115EDC` matches all 35 words
 with one cross-declaration ABI guard. Resource-release loop `func_151325C8`
 and vertex rotation helper `func_151436B4` now match all 33 and 34 words
-directly from C. Resume with 33-word `func_1514795C`; keep the documented
-indirect-table and handwritten-register special cases parked.
+directly from C. Resource-release loops `func_1514795C`, `func_151571C4`, and
+`func_15158A20` now match all 33 words apiece directly from semantic C.
+Height/state predicate `func_15159084` matches all 39 words with one guarded
+commutative floating-equality operand order. Resume with ordinary 34-word
+`func_1516F864`; keep the documented indirect-table and handwritten-register
+special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
 followed by
@@ -139,6 +143,9 @@ The following motion-update recovery is recorded in
 [Working Note 678](WORKING_NOTES/678-game-angular-motion-update-family-match-20261002.md).
 The resource-release and vertex-rotation recovery is recorded in
 [Working Note 679](WORKING_NOTES/679-game-resource-release-and-vertex-rotation-match-20261002.md).
+The following resource-release family and height-predicate recovery is
+recorded in
+[Working Note 680](WORKING_NOTES/680-game-resource-release-family-and-height-predicate-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

@@ -2,6 +2,14 @@
 extern u8 D_800BE9C0;
 extern u8 D_80089470[];
 extern u8 D_800DCC10[];
+extern s32 D_80082FA0;
+void func_100043B4(s32 *, u32);
+
+typedef struct {
+    u8 pad0[0x104];
+    s32 entries[4];
+    s32 trailing;
+} ResourceOwner183640;
 
 /* Non-matching placeholders for the text-only asm slice asm/183640.s. */
 
@@ -58,8 +66,17 @@ s32 func_15157010(s32 arg0, s32 arg1, f32 arg2, s32 arg3, s32 arg4,
     return 0;
 }
 
-s32 func_151571C4() {
-    return 0;
+void func_151571C4(ResourceOwner183640 *arg0) {
+    s32 i;
+
+    for (i = 0; i <= D_80082FA0; i++) {
+        if (arg0->entries[i]) {
+            func_100043B4(arg0->entries[i], 4);
+        }
+    }
+    if (arg0->trailing != NULL) {
+        func_100043B4(arg0->trailing, 4);
+    }
 }
 
 void func_15157248(u8 *arg0) {

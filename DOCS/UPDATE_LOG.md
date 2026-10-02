@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game resource-release family and height predicate byte-matched
+
+- `func_1514795C`, `func_151571C4`, and `func_15158A20` restore three
+  33-word inclusive resource scans, conditional frees, and trailing-slot
+  releases over their respective object layouts.
+- `func_15159084` restores its mode exclusions, global-height and flag test,
+  fallback object-height comparison, and state-byte override. One
+  stale-checked word preserves retail's commutative floating-equality operand
+  order; the other 38 words emit directly from semantic C.
+- The refreshed matcher reports **3,186 / 5,456 (58.39%)** overall and
+  **2,518 / 4,788 (52.59%)** in Game, with zero address drift and 2,270
+  different C rows. See
+  [Working Note 680](WORKING_NOTES/680-game-resource-release-family-and-height-predicate-match-20261002.md).
+
 ### Game resource release and vertex rotation byte-matched
 
 - `func_151325C8` restores the inclusive resource-entry scan, conditional
