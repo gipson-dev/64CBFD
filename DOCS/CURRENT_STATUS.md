@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,189 / 5,456 (58.45%) | 0 | 2,267 |
+| Total | 3,190 / 5,456 (58.47%) | 0 | 2,266 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,521 / 4,788 (52.65%) | 0 | 2,267 |
+| Game | 2,522 / 4,788 (52.67%) | 0 | 2,266 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game clamped height-byte updater `func_1518B1D8` now matches all 35 retail
+words. It derives a nonnegative byte from the smaller of a scaled object field
+and half the truncated height delta, clamps each upper bound to `0xFF`, and
+stores the result at offset `0x70`. Twenty-five words emit directly from
+semantic C; ten stale-checked suffix words preserve retail's compiler phi
+register and equivalent branch schedule. See
+[Working Note 684](WORKING_NOTES/684-game-clamped-height-byte-match-20261002.md).
 
 The Game active-row wrapper `func_1517F4D8` now matches all 35 retail words.
 It returns the incoming handle for inactive timer or mode rows and otherwise

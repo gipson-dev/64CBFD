@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game clamped height-byte updater byte-matched
+
+- `func_1518B1D8` restores its nonnegative height-delta gate, scaled object
+  candidate, half-delta candidate, upper clamps, minimum selection, and byte
+  store at offset `0x70`.
+- All 35 retail words match. Twenty-five emit directly from semantic C; ten
+  stale-checked suffix words normalize only the compiler phi register and an
+  equivalent branch-delay schedule.
+- The refreshed matcher reports **3,190 / 5,456 (58.47%)** overall and
+  **2,522 / 4,788 (52.67%)** in Game, with zero address drift and 2,266
+  different C rows. See
+  [Working Note 684](WORKING_NOTES/684-game-clamped-height-byte-match-20261002.md).
+
 ### Game active-row wrapper byte-matched
 
 - `func_1517F4D8` restores its indexed timer and mapped-mode gates, unchanged

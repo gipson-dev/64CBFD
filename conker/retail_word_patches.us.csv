@@ -10166,3 +10166,13 @@ generated_19A8B0,func_1516F864,0x070,0x00681821,0x00B94821,-,-,Normalize packed 
 generated_19A8B0,func_1516F864,0x074,0x00034A03,0x00094203,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
 generated_19A8B0,func_1516F864,0x078,0xA4890012,0xA4880012,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
 generated_19A8B0,func_1516F864,0x07C,0xA083002B,0xA089002B,-,-,Normalize packed two-axis integrator compiler register allocation,,,false
+generated_1B81D0,func_1518B1D8,0x054,0x00403025,0x00402825,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1B81D0,func_1518B1D8,0x060,0x10200002,0x10200003,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1B81D0,func_1518B1D8,0x068,0x00603025,0x10000001,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1B81D0,func_1518B1D8,0x06C,0x04C30004,0x00602825,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1B81D0,func_1518B1D8,0x070,0xA0860070,0x04A30004,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1B81D0,func_1518B1D8,0x074,0x03E00008,0xA0850070,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1B81D0,func_1518B1D8,0x078,0x00001025,0x03E00008,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1B81D0,func_1518B1D8,0x07C,0xA0860070,0x00001025,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1B81D0,func_1518B1D8,0x080,0x03E00008,0xA0850070,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false
+generated_1B81D0,func_1518B1D8,0x084,0x00000000,0x03E00008,-,-,Normalize clamped-minimum compiler phi register and branch schedule,,,false

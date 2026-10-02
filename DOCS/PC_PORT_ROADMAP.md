@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,189 / 5,456 (58.45%) | 0 | 2,267 |
+| Total | 5,456 / 6,041 (90.32%) | 3,190 / 5,456 (58.47%) | 0 | 2,266 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,521 / 4,788 (52.65%) | 0 | 2,267 |
+| Game | 4,788 / 5,321 (89.98%) | 2,522 / 4,788 (52.67%) | 0 | 2,266 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game clamped height-byte updater `func_1518B1D8` now matches all 35 retail
+words. Its recovered C selects a bounded byte from a scaled object field and
+half the truncated height delta; ten stale-checked suffix words normalize the
+compiler's phi register and equivalent branch schedule. See
+[Working Note 684](WORKING_NOTES/684-game-clamped-height-byte-match-20261002.md).
 
 The Game active-row wrapper `func_1517F4D8` now matches all 35 retail words
 directly from semantic C. It preserves inactive handles and dispatches active

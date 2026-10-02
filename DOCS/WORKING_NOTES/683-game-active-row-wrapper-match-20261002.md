@@ -26,3 +26,10 @@ and linked-word comparison evidence.
 Resume the ordinary small-Game queue with 35-word `func_1518B1D8`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.
+
+## Superseded resume point
+
+`func_1518B1D8` was subsequently recovered and byte-matched in
+[Working Note 684](684-game-clamped-height-byte-match-20261002.md). Resume the
+ordinary queue with 34-word `func_1519C4E4`; the two parked special cases above
+remain unchanged.
