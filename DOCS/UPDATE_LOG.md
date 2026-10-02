@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game trigonometric lookup byte-matched
+
+- `func_150489B0` replaces its zero-return placeholder with the byte-angle
+  quadrant lookup across `D_8009A020`, `D_8009A220`, `D_8009A420`, and
+  `D_8009A620`, including the reflected indexes and result signs.
+- All 36 lookup words match. Thirty-one emit directly from semantic C; five
+  stale-checked words preserve retail's shift-before-negate indexing shape.
+  Seven additional checked words keep adjacent `func_15048A40` exact after
+  correcting the lookup's `f32 func(u8)` contract.
+- The refreshed matcher reports **3,200 / 5,456 (58.65%)** overall and
+  **2,532 / 4,788 (52.88%)** in Game, with zero address drift and 2,256
+  different C rows. See
+  [Working Note 694](WORKING_NOTES/694-game-trigonometric-lookup-match-20261002.md).
+
 ### Game timer-expiry callback byte-matched
 
 - `func_1503EEC0` replaces its zero-return placeholder with the selected-entry

@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,199 / 5,456 (58.63%) | 0 | 2,257 |
+| Total | 3,200 / 5,456 (58.65%) | 0 | 2,256 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,531 / 4,788 (52.86%) | 0 | 2,257 |
+| Game | 2,532 / 4,788 (52.88%) | 0 | 2,256 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game trigonometric lookup `func_150489B0` now matches all 36 retail words.
+It restores the four quadrant ranges, reflected table indexes, and signs for
+the byte-angle result. Thirty-one words emit directly from C; five guarded
+indexing words preserve retail's shift-before-negate schedule. Its adjacent
+quarter-turn wrapper remains exact through seven stale-checked schedule words
+after correcting the callee's `f32`/`u8` contract. See
+[Working Note 694](WORKING_NOTES/694-game-trigonometric-lookup-match-20261002.md).
 
 The Game timer-expiry callback `func_1503EEC0` now matches all 35 retail
 words. It runs the per-entry update, subtracts the global tick count from the

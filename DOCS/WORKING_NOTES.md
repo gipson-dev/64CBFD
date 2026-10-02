@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game timer-expiry callback matched).**
-The current linked checkpoint is `3199 / 5456 (58.63%)` exact C functions,
-with no address-drift blockers and 2,257 genuinely different C functions.
+**Active (2026-10-02, Game trigonometric lookup matched).**
+The current linked checkpoint is `3200 / 5456 (58.65%)` exact C functions,
+with no address-drift blockers and 2,256 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2531 / 4788 (52.86%)` exact, with 2,257 genuinely different C rows. The tree
+`2532 / 4788 (52.88%)` exact, with 2,256 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -156,7 +156,9 @@ two stale-checked independent scheduling words. Attachment-state updater
 `func_150333A8` now matches all 38 words with seven stale-checked words for one
 closed floating branch/store layout. Timer-expiry callback `func_1503EEC0` now
 matches all 35 words with nineteen stale-checked allocation and scheduling
-words. Resume with 36-word `func_150489B0`; keep
+words. Trigonometric lookup `func_150489B0` now matches all 36 words with five
+indexing guards; seven additional guards retain adjacent `func_15048A40` after
+the callee contract correction. Resume with 35-word `func_15074664`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -195,6 +197,8 @@ The attachment-state updater is recorded in
 [Working Note 692](WORKING_NOTES/692-game-attachment-state-updater-match-20261002.md).
 The timer-expiry callback is recorded in
 [Working Note 693](WORKING_NOTES/693-game-timer-expiry-callback-match-20261002.md).
+The trigonometric lookup and coupled wrapper are recorded in
+[Working Note 694](WORKING_NOTES/694-game-trigonometric-lookup-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

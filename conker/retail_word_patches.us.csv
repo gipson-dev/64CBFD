@@ -10240,3 +10240,15 @@ generated_6B320,func_1503EEC0,0x064,0x3C090000,0x3C080000,R_MIPS_HI16:D_800CC2D0
 generated_6B320,func_1503EEC0,0x068,0x25290000,0x25080000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800CC2D0,Normalize timer-expiry callback actor-base allocation,,,false
 generated_6B320,func_1503EEC0,0x06C,0x00084080,0x0019C880,-,-,Normalize timer-expiry callback actor-index allocation,,,false
 generated_6B320,func_1503EEC0,0x070,0x01092021,0x03282021,-,-,Normalize timer-expiry callback actor-pointer allocation,,,false
+game_75E60,func_150489B0,0x020,0x00024023,0x00024080,-,-,Normalize trigonometric lookup negative byte-offset schedule,,,false
+game_75E60,func_150489B0,0x02C,0x0004C880,0x0002C880,-,-,Normalize trigonometric lookup retained index allocation,,,false
+game_75E60,func_150489B0,0x030,0x00027823,0x00027880,-,-,Normalize trigonometric lookup negative byte-offset schedule,,,false
+game_75E60,func_150489B0,0x034,0x000FC080,0x000FC023,-,-,Normalize trigonometric lookup negative byte-offset schedule,,,false
+game_75E60,func_150489B0,0x05C,0x00084880,0x00084823,-,-,Normalize trigonometric lookup negative byte-offset schedule,,,false
+game_75E60,func_15048A40,0x010,0x24AEFFC0,0x24A4FFC0,-,-,Normalize quarter-turn wrapper argument allocation,,,false
+game_75E60,func_15048A40,0x014,0x0C000000,0x308E00FF,R_MIPS_26:func_150489B0,-,Normalize quarter-turn wrapper call schedule,,,false
+game_75E60,func_15048A40,0x018,0x31C400FF,0x0C000000,-,R_MIPS_26:func_150489B0,Normalize quarter-turn wrapper call schedule,,,false
+game_75E60,func_15048A40,0x01C,0x8FBF0014,0x01C02025,-,-,Normalize quarter-turn wrapper call delay slot,,,false
+game_75E60,func_15048A40,0x020,0x27BD0018,0x8FBF0014,-,-,Normalize quarter-turn wrapper epilogue schedule,,,false
+game_75E60,func_15048A40,0x024,0x03E00008,0x27BD0018,-,-,Normalize quarter-turn wrapper epilogue schedule,,,false
+game_75E60,func_15048A40,0x028,0x00000000,0x03E00008,-,-,Normalize quarter-turn wrapper epilogue schedule,,,false

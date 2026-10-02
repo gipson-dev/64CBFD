@@ -3,34 +3,25 @@
 #include "functions.h"
 #include "variables.h"
 
-/* Generated placeholder declarations. */
-s32 func_150489B0(s32 arg0);
-/* End generated placeholder declarations. */
+f32 func_150489B0(u8 arg0) {
+    f32 ret;
 
-/* Non-matching C placeholders for asm/nonmatchings/game_75E60/func_150489B0.s. */
-s32 func_150489B0(s32 arg0) {
-    return 0;
+    if (arg0 >= 65) {
+        if (arg0 >= 129) {
+            if (arg0 >= 193) {
+                ret = D_8009A620[-arg0];
+            } else {
+                ret = -D_8009A020[arg0];
+            }
+        } else {
+            ret = -D_8009A420[-arg0];
+        }
+    } else {
+        ret = D_8009A220[arg0];
+    }
+
+    return ret;
 }
-// NON-MATCHING: not convinced this is correct
-// f32 func_150489B0(u8 arg0) {
-//     f32 ret;
-//
-//     if (arg0 >= 65) {
-//         if (arg0 >= 129) {
-//             if (arg0 >= 193) {
-//                 ret = D_8009A620[-arg0];
-//             } else {
-//                 ret = -D_8009A020[arg0];
-//             }
-//         } else {
-//             ret = -D_8009A420[-arg0];
-//         }
-//     } else {
-//         ret = D_8009A220[arg0];
-//     }
-//
-//     return ret;
-// }
 
 void func_15048A40(u8 arg0) {
     func_150489B0((arg0 - 0x40) & 0xFF);

@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,199 / 5,456 (58.63%) | 0 | 2,257 |
+| Total | 5,456 / 6,041 (90.32%) | 3,200 / 5,456 (58.65%) | 0 | 2,256 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,531 / 4,788 (52.86%) | 0 | 2,257 |
+| Game | 4,788 / 5,321 (89.98%) | 2,532 / 4,788 (52.88%) | 0 | 2,256 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game trigonometric lookup `func_150489B0` now matches all 36 retail words.
+It restores the four quadrant-table ranges and signed reflections; five
+lookup guards plus seven adjacent-wrapper schedule guards preserve retail
+code generation after correcting the function contract. See
+[Working Note 694](WORKING_NOTES/694-game-trigonometric-lookup-match-20261002.md).
 
 The Game timer-expiry callback `func_1503EEC0` now matches all 35 retail
 words. It updates the selected entry's signed timer and dispatches its indexed
