@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,218 / 5,456 (58.98%) | 0 | 2,238 |
+| Total | 5,456 / 6,041 (90.32%) | 3,219 / 5,456 (59.00%) | 0 | 2,237 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,550 / 4,788 (53.26%) | 0 | 2,238 |
+| Game | 4,788 / 5,321 (89.98%) | 2,551 / 4,788 (53.28%) | 0 | 2,237 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game paired object-state transition `func_150CF0A0` now matches all 40
+retail words directly from C. It restores the state-two dispatch and gated
+updates for objects `0xFE` and `0xFD` without guards. See
+[Working Note 711](WORKING_NOTES/711-game-paired-object-state-transition-match-20261002.md).
 
 The Game delta-intensity limiter `func_150BA424` now matches all 39 retail
 words directly from C. It restores the negative-delta rejection, two capped

@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game delta-intensity limiter matched).**
-The current linked checkpoint is `3218 / 5456 (58.98%)` exact C functions,
-with no address-drift blockers and 2,238 genuinely different C functions.
+**Active (2026-10-02, Game paired object-state transition matched).**
+The current linked checkpoint is `3219 / 5456 (59.00%)` exact C functions,
+with no address-drift blockers and 2,237 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2550 / 4788 (53.26%)` exact, with 2,238 genuinely different C rows. The tree
+`2551 / 4788 (53.28%)` exact, with 2,237 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -196,8 +196,10 @@ table. Plane-side predicate `func_150A2E4C` now matches all 38 words after
 recovering its signed-origin conversions and non-positive plane test; twenty
 guards normalize the floating-point allocation and schedule. Delta-intensity
 limiter `func_150BA424` now matches all 39 words directly after recovering its
-negative-delta gate, capped candidate values, and minimum-byte store. Resume
-with 40-word `func_150CF0A0`; keep
+negative-delta gate, capped candidate values, and minimum-byte store. Paired
+object-state transition `func_150CF0A0` now matches all 40 words directly after
+recovering its caller-state branch and gated updates for IDs `0xFE` and `0xFD`.
+Resume with 37-word `func_1500F378`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -270,6 +272,8 @@ The plane-side predicate is recorded in
 [Working Note 709](WORKING_NOTES/709-game-plane-side-predicate-match-20261002.md).
 The delta-intensity limiter is recorded in
 [Working Note 710](WORKING_NOTES/710-game-delta-intensity-limiter-match-20261002.md).
+The paired object-state transition is recorded in
+[Working Note 711](WORKING_NOTES/711-game-paired-object-state-transition-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

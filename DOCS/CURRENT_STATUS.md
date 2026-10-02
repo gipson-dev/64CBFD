@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,218 / 5,456 (58.98%) | 0 | 2,238 |
+| Total | 3,219 / 5,456 (59.00%) | 0 | 2,237 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,550 / 4,788 (53.26%) | 0 | 2,238 |
+| Game | 2,551 / 4,788 (53.28%) | 0 | 2,237 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game paired object-state transition `func_150CF0A0` now matches all 40
+retail words directly from C. Depending on the caller's low state bits, it
+either dispatches the existing-state handler or gates and sets objects `0xFE`
+and `0xFD` to state two. No expected-word guards or compiler-profile override
+are required. See
+[Working Note 711](WORKING_NOTES/711-game-paired-object-state-transition-match-20261002.md).
 
 The Game delta-intensity limiter `func_150BA424` now matches all 39 retail
 words directly from C. It rejects a negative float delta, derives and caps two

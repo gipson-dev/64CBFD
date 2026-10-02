@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game paired object-state transition byte-matched
+
+- `func_150CF0A0` replaces its zero-return placeholder with the caller-state
+  dispatch and gated state-two updates for objects `0xFE` and `0xFD`.
+- The complete 40-word routine emits directly from semantic C. No expected-word
+  guards, checked insertions or omissions, relocations, or profile override are
+  required.
+- The refreshed matcher reports **3,219 / 5,456 (59.00%)** overall and
+  **2,551 / 4,788 (53.28%)** in Game, with zero address drift and 2,237
+  different C rows. See
+  [Working Note 711](WORKING_NOTES/711-game-paired-object-state-transition-match-20261002.md).
+
 ### Game delta-intensity limiter byte-matched
 
 - `func_150BA424` replaces its zero-return placeholder with the negative-delta

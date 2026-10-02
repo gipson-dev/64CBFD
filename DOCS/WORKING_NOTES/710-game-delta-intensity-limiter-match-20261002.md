@@ -33,7 +33,9 @@ overall byte-exact C progress is `3,218 / 5,456 (58.98%)`. Init remains
 `487 / 487 (100.00%)` and Debugger remains `181 / 181 (100.00%)`.
 `make tools-check` also passes. No fresh gameplay run was performed.
 
-Resume the ordinary small-Game queue with 40-word `func_150CF0A0`, currently
-at 34 real differences. Keep `func_15015F40` parked behind unresolved
+`func_150CF0A0` is now matched and documented in
+[Working Note 711](711-game-paired-object-state-transition-match-20261002.md).
+Resume the ordinary small-Game queue with 37-word `func_1500F378`, currently at
+35 real differences. Keep `func_15015F40` parked behind unresolved
 indirect-table ownership and `func_150A76F0` in the handwritten
 register-contract workstream.
