@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game output-default initializer byte-matched
+
+- `func_151B498C` restores its thirteen output writes: two packed mode words,
+  eight `0xFF` values, one zero, and byte selectors `5` and `0x2B`.
+- All 34 retail words emit directly from semantic C without expected-word
+  guards or a compiler-profile override.
+- The refreshed matcher reports **3,193 / 5,456 (58.52%)** overall and
+  **2,525 / 4,788 (52.74%)** in Game, with zero address drift and 2,263
+  different C rows. See
+  [Working Note 687](WORKING_NOTES/687-game-output-default-initializer-match-20261002.md).
+
 ### Game threshold/intensity updater byte-matched
 
 - `func_151A787C` restores its two signed threshold tests, elapsed-tick-scaled

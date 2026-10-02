@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,192 / 5,456 (58.50%) | 0 | 2,264 |
+| Total | 5,456 / 6,041 (90.32%) | 3,193 / 5,456 (58.52%) | 0 | 2,263 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,524 / 4,788 (52.72%) | 0 | 2,264 |
+| Game | 4,788 / 5,321 (89.98%) | 2,525 / 4,788 (52.74%) | 0 | 2,263 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game output-default initializer `func_151B498C` now matches all 34 retail
+words directly from semantic C. It supplies the fallback packed modes, scalar
+defaults, and byte selectors through thirteen caller-owned output pointers.
+See
+[Working Note 687](WORKING_NOTES/687-game-output-default-initializer-match-20261002.md).
 
 The Game threshold/intensity updater `func_151A787C` now matches all 35 retail
 words. Its recovered C applies two parameter thresholds, an elapsed-tick field

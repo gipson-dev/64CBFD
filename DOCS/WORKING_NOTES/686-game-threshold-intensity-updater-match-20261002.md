@@ -34,3 +34,10 @@ stale-guard, and linked-word comparison evidence.
 Resume the ordinary small-Game queue with 34-word `func_151B498C`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.
+
+## Superseded resume point
+
+`func_151B498C` was subsequently recovered and byte-matched in
+[Working Note 687](687-game-output-default-initializer-match-20261002.md).
+Resume the ordinary queue with 39-word `func_151CD224`; the two parked special
+cases above remain unchanged.
