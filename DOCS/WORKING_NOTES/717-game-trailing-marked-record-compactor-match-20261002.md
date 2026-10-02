@@ -35,7 +35,10 @@ progress is `3,225 / 5,456 (59.11%)`. Init remains
 `487 / 487 (100.00%)` and Debugger remains `181 / 181 (100.00%)`.
 `make tools-check` also passes. No fresh gameplay run was performed.
 
-Resume the ordinary small-Game queue with 36-word `func_15042E3C`, currently
-at 35 real differences. Keep `func_15015F40` parked behind unresolved
+Continued in
+[Working Note 718](718-game-sixteen-word-varargs-adapter-match-20261002.md),
+which matches `func_15042E3C`. Resume the ordinary small-Game queue with
+35-word `func_150634E4`, currently at 35 real differences. Keep
+`func_15015F40` parked behind unresolved
 indirect-table ownership and `func_150A76F0` in the handwritten
 register-contract workstream.

@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game trailing marked-record compactor matched).**
-The current linked checkpoint is `3225 / 5456 (59.11%)` exact C functions,
-with no address-drift blockers and 2,231 genuinely different C functions.
+**Active (2026-10-02, Game sixteen-word varargs adapter matched).**
+The current linked checkpoint is `3226 / 5456 (59.13%)` exact C functions,
+with no address-drift blockers and 2,230 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2557 / 4788 (53.40%)` exact, with 2,231 genuinely different C rows. The tree
+`2558 / 4788 (53.43%)` exact, with 2,230 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -215,8 +215,11 @@ closed compiler schedule. Trailing marked-record compactor `func_1503DDD0`
 now matches its complete 40-word slot after recovering its index validation,
 selected-record state update, and backward active-count compaction. Correcting
 `D_800C6650` to its pointer-owned table contract restores retail indexing;
-sixteen replacement guards normalize one closed compiler loop schedule. Resume
-with 36-word `func_15042E3C`; keep
+sixteen replacement guards normalize one closed compiler loop schedule.
+Sixteen-word varargs adapter `func_15042E3C` now matches all 36 words directly
+from C after recovering its true varargs signature and declaration order;
+IDO emits the register homes and four-way-unrolled aligned array copy without
+guards. Resume with 35-word `func_150634E4`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -303,6 +306,8 @@ The indexed resource lazy-loader is recorded in
 [Working Note 716](WORKING_NOTES/716-game-indexed-resource-lazy-loader-match-20261002.md).
 The trailing marked-record compactor is recorded in
 [Working Note 717](WORKING_NOTES/717-game-trailing-marked-record-compactor-match-20261002.md).
+The sixteen-word varargs adapter is recorded in
+[Working Note 718](WORKING_NOTES/718-game-sixteen-word-varargs-adapter-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

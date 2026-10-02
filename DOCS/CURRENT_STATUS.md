@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,225 / 5,456 (59.11%) | 0 | 2,231 |
+| Total | 3,226 / 5,456 (59.13%) | 0 | 2,230 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,557 / 4,788 (53.40%) | 0 | 2,231 |
+| Game | 2,558 / 4,788 (53.43%) | 0 | 2,230 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game sixteen-word varargs adapter `func_15042E3C` now matches all 36
+retail words directly from C. Its true varargs signature homes the incoming
+register arguments and lets IDO reproduce retail's four-way-unrolled aligned
+copy into a local word array. No expected-word guards or compiler-profile
+override are required. See
+[Working Note 718](WORKING_NOTES/718-game-sixteen-word-varargs-adapter-match-20261002.md).
 
 The Game trailing marked-record compactor `func_1503DDD0` now matches its
 complete 40-word slot. It marks a selected 20-byte record with state bit `2`

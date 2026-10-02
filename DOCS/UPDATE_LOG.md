@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game sixteen-word varargs adapter byte-matched
+
+- `func_15042E3C` replaces its fixed 17-parameter implementation with the
+  retail varargs contract and copies sixteen incoming words into the array
+  passed to `func_15042ECC`.
+- IDO reproduces the complete four-way-unrolled aligned copy loop directly
+  from C after placing the `va_list` before the array declaration. No guards,
+  insertions, omissions, relocation-aware rows, or profile override are
+  required.
+- The refreshed matcher reports **3,226 / 5,456 (59.13%)** overall and
+  **2,558 / 4,788 (53.43%)** in Game, with zero address drift and 2,230
+  different C rows. See
+  [Working Note 718](WORKING_NOTES/718-game-sixteen-word-varargs-adapter-match-20261002.md).
+
 ### Game trailing marked-record compactor byte-matched
 
 - `func_1503DDD0` replaces its zero-return placeholder with index validation,

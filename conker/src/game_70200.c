@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "stdarg.h"
 
 #include "functions.h"
 #include "variables.h"
@@ -51,29 +52,16 @@ void func_15042D94(s16 arg0, s16 arg1, u8 arg2, s32 arg3,
     func_15042ECC(arg3, sp24);
 }
 
-void func_15042E3C(s32 arg0,
-                   s32 arg1, s32 arg2, s32 arg3, s32 arg4,
-                   s32 arg5, s32 arg6, s32 arg7, s32 arg8,
-                   s32 arg9, s32 argA, s32 argB, s32 argC,
-                   s32 argD, s32 argE, s32 argF, s32 arg10) {
+void func_15042E3C(s32 arg0, ...) {
+    va_list args;
     s32 sp24[16];
+    s32 i;
 
-    sp24[0] = arg1;
-    sp24[1] = arg2;
-    sp24[2] = arg3;
-    sp24[3] = arg4;
-    sp24[4] = arg5;
-    sp24[5] = arg6;
-    sp24[6] = arg7;
-    sp24[7] = arg8;
-    sp24[8] = arg9;
-    sp24[9] = argA;
-    sp24[10] = argB;
-    sp24[11] = argC;
-    sp24[12] = argD;
-    sp24[13] = argE;
-    sp24[14] = argF;
-    sp24[15] = arg10;
+    va_start(args, arg0);
+    for (i = 0; i < 16; i++) {
+        sp24[i] = va_arg(args, s32);
+    }
+    va_end(args);
     func_15042ECC(arg0, sp24);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15042ECC.s. */
