@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game special-event mode dispatch matched).**
-The current linked checkpoint is `3229 / 5456 (59.18%)` exact C functions,
-with no address-drift blockers and 2,227 genuinely different C functions.
+**Active (2026-10-02, Game selector/vector output initializer matched).**
+The current linked checkpoint is `3230 / 5456 (59.20%)` exact C functions,
+with no address-drift blockers and 2,226 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2561 / 4788 (53.49%)` exact, with 2,227 genuinely different C rows. The tree
+`2562 / 4788 (53.51%)` exact, with 2,226 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -231,8 +231,11 @@ Special-event mode dispatcher `func_15015F40`
 now matches all 31 words directly from semantic C. The retained retail asset
 proves its eight special events, and an object rodata anchor retargets IDO's
 switch to `jtbl_800966C0_game` without guards. Keep handwritten
-`func_150A76F0` in the raw-assembly workstream; resume the ordinary queue with
-41-word `func_150B060C`, currently at 35 real differences.
+`func_150A76F0` in the raw-assembly workstream. Selector/vector output
+initializer `func_150B060C` now matches all 41 words directly from semantic C
+after recovering its pointer-bearing output record and exact record-load
+lifetime. Resume the ordinary queue with 40-word `func_150DF820`, currently
+at 35 real differences.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
 followed by
@@ -326,6 +329,8 @@ The sentinel coordinate distance is recorded in
 [Working Note 720](WORKING_NOTES/720-game-sentinel-coordinate-distance-match-20261002.md).
 The special-event mode dispatcher is recorded in
 [Working Note 721](WORKING_NOTES/721-game-special-event-mode-dispatch-match-20261002.md).
+The selector/vector output initializer is recorded in
+[Working Note 722](WORKING_NOTES/722-game-selector-vector-output-initializer-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

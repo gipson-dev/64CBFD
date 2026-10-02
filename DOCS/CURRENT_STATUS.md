@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,229 / 5,456 (59.18%) | 0 | 2,227 |
+| Total | 3,230 / 5,456 (59.20%) | 0 | 2,226 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,561 / 4,788 (53.49%) | 0 | 2,227 |
+| Game | 2,562 / 4,788 (53.51%) | 0 | 2,226 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game selector/vector output initializer `func_150B060C` now matches all
+41 retail words directly from C. It stores the selector lookup, returns zero
+on failure, and on success publishes two constants plus three converted
+signed-halfword coordinates. No guards or profile override are required. See
+[Working Note 722](WORKING_NOTES/722-game-selector-vector-output-initializer-match-20261002.md).
 
 The Game special-event mode dispatcher `func_15015F40` now matches all 31
 retail words directly from C. The retained `assets/23B040.bin` data establishes

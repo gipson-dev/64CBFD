@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game selector/vector output initializer byte-matched
+
+- `func_150B060C` replaces its zero-return placeholder with selector lookup,
+  null failure handling, two float constants, and three signed-coordinate
+  conversions into a 24-byte output record.
+- Reading the successful record through the output pointer field reproduces
+  retail's exact load lifetime and schedule. All 41 words emit directly from
+  semantic C without guard rows or a profile override.
+- The refreshed matcher reports **3,230 / 5,456 (59.20%)** overall and
+  **2,562 / 4,788 (53.51%)** in Game, with zero address drift and 2,226
+  different C rows. See
+  [Working Note 722](WORKING_NOTES/722-game-selector-vector-output-initializer-match-20261002.md).
+
 ### Game special-event mode dispatcher byte-matched
 
 - `func_15015F40` replaces its zero-return placeholder with the retail

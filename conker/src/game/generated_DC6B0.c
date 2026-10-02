@@ -2,6 +2,7 @@
 void func_151CF898(s32, f32, f32);
 extern f32 D_800BE9A4;
 f32 func_15144B68(f32);
+u8 *func_151149AC(u8);
 
 /* Non-matching placeholders for the text-only asm slice asm/DC6B0.s. */
 
@@ -31,6 +32,15 @@ typedef struct {
     u8 pad14[0x5C];
     UnkAFBF4Values values;
 } UnkAFBF4;
+
+typedef struct {
+    f32 unk0;
+    f32 unk4;
+    u8 *record;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+} UnkB060C;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_DC6B0/func_150AF200.s")
 
@@ -120,6 +130,16 @@ s32 func_150B0348() {
     return 0;
 }
 
-s32 func_150B060C() {
-    return 0;
+s32 func_150B060C(u8 arg0, UnkB060C *arg1) {
+    arg1->record = func_151149AC(arg0);
+    if (arg1->record == NULL) {
+        return 0;
+    }
+
+    arg1->unk0 = -150.0f;
+    arg1->unk4 = 4.5f;
+    arg1->unkC = (f32)*(s16 *)(arg1->record + 0x10);
+    arg1->unk10 = (f32)*(s16 *)(arg1->record + 0x12);
+    arg1->unk14 = (f32)*(s16 *)(arg1->record + 0x14);
+    return 1;
 }

@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,229 / 5,456 (59.18%) | 0 | 2,227 |
+| Total | 5,456 / 6,041 (90.32%) | 3,230 / 5,456 (59.20%) | 0 | 2,226 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,561 / 4,788 (53.49%) | 0 | 2,227 |
+| Game | 4,788 / 5,321 (89.98%) | 2,562 / 4,788 (53.51%) | 0 | 2,226 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game selector/vector output initializer `func_150B060C` now matches all
+41 retail words directly from C. It restores selector lookup, failure return,
+two output constants, and three converted coordinates without guards. See
+[Working Note 722](WORKING_NOTES/722-game-selector-vector-output-initializer-match-20261002.md).
 
 The Game special-event mode dispatcher `func_15015F40` now matches all 31
 retail words directly from C. Its retained 38-entry table proves the eight

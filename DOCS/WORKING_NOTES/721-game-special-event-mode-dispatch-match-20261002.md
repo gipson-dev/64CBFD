@@ -45,6 +45,8 @@ progress is `3,229 / 5,456 (59.18%)`. Init remains
 `487 / 487 (100.00%)` and Debugger remains `181 / 181 (100.00%)`.
 `make tools-check` also passes. No fresh gameplay run was performed.
 
-Keep 32-word `func_150A76F0` in the raw-assembly workstream because its
-documented live-register contract is not an ordinary C ABI. Resume the
-ordinary queue with 41-word `func_150B060C`, currently at 35 real differences.
+Continue with
+[Working Note 722](722-game-selector-vector-output-initializer-match-20261002.md),
+which completes 41-word `func_150B060C` directly from semantic C. Keep
+32-word `func_150A76F0` in its documented raw-assembly workstream and resume
+the ordinary queue with 40-word `func_150DF820`.
