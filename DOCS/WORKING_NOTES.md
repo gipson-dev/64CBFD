@@ -88,11 +88,11 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-01, Init 64DD interrupt handler matched).**
-The current linked checkpoint is `3167 / 5456 (58.05%)` exact C functions,
-with no address-drift blockers and 2,289 genuinely different C functions.
+**Active (2026-10-01, Init path-projection query matched).**
+The current linked checkpoint is `3168 / 5456 (58.06%)` exact C functions,
+with no address-drift blockers and 2,288 genuinely different C functions.
 Init is
-`484 / 487 (99.38%)` exact, with three genuinely different C rows. Game is
+`485 / 487 (99.59%)` exact, with two genuinely different C rows. Game is
 `2502 / 4788 (52.26%)` exact, with 2,286 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
@@ -100,13 +100,12 @@ pass; fresh gameplay was not run.
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
-`__osLeoInterrupt` now matches its complete 441-word retail slot after
-restoring the 64DD PI/Leo interrupt state machine and the older retail error
-codes. Its 440-word compiler body contributes 323 direct words; 117
-stale-checked rows normalize the closed compiler and relocation layout, and
-the layout tool supplies the trailing `nop`. Resume Init at the 580-word
-`func_1000A750`, currently different in 507 words. See
-[Working Note 669](WORKING_NOTES/669-init-64dd-interrupt-handler-match-20261001.md).
+`func_1000A750` now matches all 580 retail words after restoring nearest path
+point selection, adjacent-segment projection, and its final attenuation/pan
+handoff. Its readable 404-word body is expanded to the retail unrolled layout
+by 401 stale-checked rows, including 176 insertions. Resume Init at the
+684-word `__n_CSPVoiceHandler`, currently different in 626 words. See
+[Working Note 670](WORKING_NOTES/670-init-path-projection-query-match-20261001.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

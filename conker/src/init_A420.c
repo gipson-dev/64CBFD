@@ -7,7 +7,9 @@
 s32 func_1000A420(s32 arg0, s32 arg1, s32 arg2, f32 arg3, s32 arg4,
                   s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 *arg9,
                   s32 *argA, s32 *argB);
-s32 func_1000A750();
+s32 func_1000A750(s32 arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4,
+                  s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9,
+                  s32 *argA, s32 *argB, s32 *argC);
 s32 func_1000B060(f32 arg0, f32 arg1, s32 arg2);
 /* End generated placeholder declarations. */
 
@@ -85,9 +87,126 @@ s32 func_1000A420(s32 arg0, s32 arg1, s32 arg2, f32 arg3, s32 arg4,
     return distance;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/init_A420/func_1000A750.s. */
-s32 func_1000A750() {
-    return 0;
+typedef struct {
+    s16 x;
+    s16 y;
+    s16 z;
+    s16 pad;
+} PathPoint;
+
+s32 func_1000A750(s32 arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4,
+                  s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9,
+                  s32 *argA, s32 *argB, s32 *argC) {
+    PathPoint *points;
+    PathPoint *point;
+    f32 direction[3];
+    f32 offset[3];
+    f32 projection;
+    f32 length;
+    s32 count;
+    s32 closestIndex;
+    s32 closestDistance;
+    s32 previousDistance;
+    s32 nextDistance;
+    s32 distance;
+    s32 dx;
+    s32 dy;
+    s32 dz;
+    s32 index;
+    s32 segmentIndex;
+    s32 retry;
+    s16 pathX;
+    s16 pathY;
+    s16 pathZ;
+
+    count = (*(u8 **)&D_800D2108)[arg0];
+    if (count == 0) {
+        return 0;
+    }
+
+    points = ((PathPoint **)D_800D2104)[arg0];
+    closestIndex = -2;
+    closestDistance = 0x7FFFFFFF;
+    previousDistance = 0x7FFFFFFF;
+    nextDistance = 0;
+
+    for (index = 0; index < count; index++) {
+        point = &points[index];
+        dx = arg5 - point->x;
+        dy = arg6 - point->y;
+        dz = arg7 - point->z;
+        distance = (dx * dx) + (dy * dy) + (dz * dz);
+
+        if (distance < closestDistance) {
+            closestIndex = index;
+            previousDistance = index == 0 ? 0x7FFFFFFF : nextDistance;
+            closestDistance = distance;
+        } else if (index == closestIndex + 1) {
+            nextDistance = distance;
+        }
+    }
+
+    point = &points[closestIndex];
+    pathX = point->x;
+    pathY = point->y;
+    pathZ = point->z;
+
+    if ((count >= 2) && (closestDistance >= 0x6D61)) {
+        segmentIndex = closestIndex;
+        if ((closestIndex >= count - 1) || (previousDistance < nextDistance)) {
+            segmentIndex--;
+        }
+
+        point = &points[segmentIndex];
+        direction[0] = points[segmentIndex + 1].x - point->x;
+        direction[1] = points[segmentIndex + 1].y - point->y;
+        direction[2] = points[segmentIndex + 1].z - point->z;
+        offset[0] = arg5 - point->x;
+        offset[1] = arg6 - point->y;
+        offset[2] = arg7 - point->z;
+
+        projection = func_150AD900(direction, offset);
+        retry = projection < 0.0f;
+        length = func_150AD930(direction);
+        length *= length;
+        if (length < projection) {
+            retry = 1;
+        }
+
+        if (retry != 0) {
+            if (previousDistance < nextDistance) {
+                segmentIndex++;
+            } else {
+                segmentIndex--;
+            }
+
+            point = &points[segmentIndex];
+            direction[0] = points[segmentIndex + 1].x - point->x;
+            direction[1] = points[segmentIndex + 1].y - point->y;
+            direction[2] = points[segmentIndex + 1].z - point->z;
+            offset[0] = arg5 - point->x;
+            offset[1] = arg6 - point->y;
+            offset[2] = arg7 - point->z;
+            projection = func_150AD900(direction, offset);
+            length = func_150AD930(direction);
+            length *= length;
+        }
+
+        if (length != 0.0f) {
+            if (projection < length) {
+                func_15049148((struct17 *)direction, projection / length,
+                              (struct17 *)direction);
+            }
+            point = &points[segmentIndex];
+            pathX = point->x + direction[0];
+            pathY = point->y + direction[1];
+            pathZ = point->z + direction[2];
+        }
+    }
+
+    return func_1000A420(pathX - arg1, pathY - arg2, pathZ - arg3, arg4,
+                         pathX - arg5, pathY - arg6, pathZ - arg7, arg8,
+                         arg9, argA, argB, argC);
 }
 s32 func_1000B060(f32 arg0, f32 arg1, s32 arg2) {
     s16 phi_a1;

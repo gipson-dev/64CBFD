@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,167 / 5,456 (58.05%) | 0 | 2,289 |
-| Init | 484 / 487 (99.38%) | 0 | 3 |
+| Total | 3,168 / 5,456 (58.06%) | 0 | 2,288 |
+| Init | 485 / 487 (99.59%) | 0 | 2 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init path-relative spatial query `func_1000A750` now matches all 580
+retail words. It restores nearest-node selection, adjacent-segment choice,
+point-to-segment projection, endpoint clamping, and the final handoff to the
+already matched attenuation/pan calculator. Its readable 404-word compiler
+body is expanded to retail's unrolled layout by 401 stale-checked rows,
+including 176 insertions and 19 relocation-aware rows. See
+[Working Note 670](WORKING_NOTES/670-init-path-projection-query-match-20261001.md).
 
 The Init 64DD interrupt handler `__osLeoInterrupt` now matches its complete
 441-word retail slot. It restores the disk-presence gate, DMA-busy recovery,

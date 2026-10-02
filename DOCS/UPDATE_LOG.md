@@ -16,6 +16,24 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init path-projection query byte-matched
+
+- `func_1000A750` now replaces its zero-return placeholder with the full
+  path-relative spatial query. It finds the nearest authored point, compares
+  its adjacent segments, projects and clamps the source position, and forwards
+  the resulting offsets to `func_1000A420` for attenuation and pan.
+- The readable semantic body contains 404 words. Retail's five-block unrolled
+  distance scan and closed IDO layout are reproduced by 401 stale-checked
+  rows, including 176 insertions and 19 relocation-aware rows. The already
+  matched neighboring `func_1000A420` remains byte-exact.
+- Direct comparison reports zero differences across all 2,320 bytes. Both
+  spans share SHA-256
+  `29dd260425d94890348301d23f84c2bafbc69119f06e2044f6c003c8aaabb8c1`.
+  Totals are **3,168 / 5,456 (58.06%)** overall and
+  **485 / 487 (99.59%)** in Init, with zero address drift and two different
+  Init C rows. See
+  [Working Note 670](WORKING_NOTES/670-init-path-projection-query-match-20261001.md).
+
 ### Init 64DD interrupt handler byte-matched
 
 - `__osLeoInterrupt` now replaces its zero-return placeholder with the
