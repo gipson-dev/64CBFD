@@ -23,6 +23,8 @@ different C rows. Overall byte-exact C progress is
 `3,174 / 5,456 (58.17%)`. Init remains `487 / 487 (100.00%)` and Debugger
 remains `181 / 181 (100.00%)`.
 
-Resume the ordinary small-Game queue with 34-word `func_1510E7A4`. Keep
+The next adapter-family recovery is recorded in
+[Working Note 677](677-game-render-parameter-wrapper-family-match-20261002.md).
+Resume the ordinary small-Game queue with 40-word `func_1511515C`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

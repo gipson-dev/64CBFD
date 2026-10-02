@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,174 / 5,456 (58.17%) | 0 | 2,282 |
+| Total | 5,456 / 6,041 (90.32%) | 3,177 / 5,456 (58.23%) | 0 | 2,279 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,506 / 4,788 (52.34%) | 0 | 2,282 |
+| Game | 4,788 / 5,321 (89.98%) | 2,509 / 4,788 (52.40%) | 0 | 2,279 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game render-parameter adapter family `func_1510E7A4`, `func_1510E82C`,
+and `func_1510E8BC` now matches all 34, 36, and 37 retail words directly from
+semantic C. See
+[Working Note 677](WORKING_NOTES/677-game-render-parameter-wrapper-family-match-20261002.md).
 
 The Game owner-event callback `func_15100230` now matches all 35 retail words
 using its recovered `-O1 -g3` callback profile and 28 stale-checked scheduling

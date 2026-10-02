@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,174 / 5,456 (58.17%) | 0 | 2,282 |
+| Total | 3,177 / 5,456 (58.23%) | 0 | 2,279 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,506 / 4,788 (52.34%) | 0 | 2,282 |
+| Game | 2,509 / 4,788 (52.40%) | 0 | 2,279 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game render-parameter wrappers `func_1510E7A4`, `func_1510E82C`, and
+`func_1510E8BC` now match all 34, 36, and 37 retail words. Their recovered
+word-accurate signatures preserve raw coordinate payloads, mixed stack load
+widths, default bounds, and the final mode argument while adapting calls to
+`func_1510E950`. All three emit directly from semantic C without expected-word
+guards or compiler-profile overrides. See
+[Working Note 677](WORKING_NOTES/677-game-render-parameter-wrapper-family-match-20261002.md).
 
 The Game owner-event callback `func_15100230` now matches all 35 retail words.
 It destroys the object when event `0x48` matches either owner identity field
@@ -2268,8 +2276,10 @@ end-to-end gameplay acceptance.
    now byte-exact directly from semantic C. The 33-word command-row loop
    `func_150413FC` is also byte-exact from semantic C plus nine prologue-only
    scheduling guards. The 36-word state-flag updater `func_150F9A20` and
-   35-word owner-event callback `func_15100230` are now byte-exact. Resume with
-   ordinary 34-word Game candidate `func_1510E7A4`. Keep
+   35-word owner-event callback `func_15100230` are now byte-exact. The
+   `func_1510E7A4`/`func_1510E82C`/`func_1510E8BC` render-parameter wrapper
+   family is also byte-exact. Resume with
+   ordinary 40-word Game candidate `func_1511515C`. Keep
    `func_15015F40` parked until its
    unresolved 38-entry indirect table has authoritative ownership, and keep
    handwritten register-contract fragment `func_150A76F0` in the raw-assembly

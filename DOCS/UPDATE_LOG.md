@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game render-parameter wrapper family byte-matched
+
+- `func_1510E7A4`, `func_1510E82C`, and `func_1510E8BC` now restore the
+  argument adapters around `func_1510E950`, including raw coordinate words,
+  mixed float/integer stack arguments, default bounds, and the final mode.
+- Their complete 34-, 36-, and 37-word slots emit directly from semantic C
+  without expected-word guards or compiler-profile overrides.
+- The refreshed matcher reports **3,177 / 5,456 (58.23%)** overall and
+  **2,509 / 4,788 (52.40%)** in Game, with zero address drift and 2,279
+  different C rows. See
+  [Working Note 677](WORKING_NOTES/677-game-render-parameter-wrapper-family-match-20261002.md).
+
 ### Game owner-event callback byte-matched
 
 - `func_15100230` now restores event `0x48` owner-pointer/owner-ID matching,
