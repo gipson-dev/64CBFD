@@ -16,6 +16,24 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init 64DD interrupt handler byte-matched
+
+- `__osLeoInterrupt` now replaces its zero-return placeholder with the
+  source-grounded 64DD PI/Leo interrupt state machine. It handles DMA-busy and
+  mechanical-interrupt recovery, read/write sector DMA, C1/C2 bookkeeping,
+  two-block track transitions, failure reporting, and completion delivery.
+- The compiler emits 440 words. Of those, 323 emit directly; 117
+  stale-checked rows, including 52 relocation-aware rows, normalize the closed
+  IDO allocation and scheduling difference. The existing layout tool supplies
+  the retail slot's final zero word, with no insertion or omission guards.
+- Direct comparison reports zero differences across all 1,764 bytes. Both
+  spans share SHA-256
+  `2c73138bf3c4ec93d256f0014f9526852817bf7460b691ea4fac3a36f140e695`.
+  Totals are **3,167 / 5,456 (58.05%)** overall and
+  **484 / 487 (99.38%)** in Init, with zero address drift and three different
+  Init C rows. See
+  [Working Note 669](WORKING_NOTES/669-init-64dd-interrupt-handler-match-20261001.md).
+
 ### Init conversion helper byte-matched
 
 - `func_10002718` now replaces its zero-return placeholder with the complete

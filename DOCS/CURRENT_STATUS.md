@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,166 / 5,456 (58.03%) | 0 | 2,290 |
-| Init | 483 / 487 (99.18%) | 0 | 4 |
+| Total | 3,167 / 5,456 (58.05%) | 0 | 2,289 |
+| Init | 484 / 487 (99.38%) | 0 | 3 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init 64DD interrupt handler `__osLeoInterrupt` now matches its complete
+441-word retail slot. It restores the disk-presence gate, DMA-busy recovery,
+mechanical and buffer-manager interrupt handling, read/write sector transfer,
+C1/C2 error bookkeeping, track transitions, and completion notification. The
+compiler emits 440 words; 323 match directly, 117 stale-checked rows normalize
+the closed allocation and relocation layout, and the layout tool supplies the
+retail trailing `nop`. See
+[Working Note 669](WORKING_NOTES/669-init-64dd-interrupt-handler-match-20261001.md).
 
 The Init conversion helper `func_10002718` now matches its complete 422-word
 retail span. It restores character, signed/unsigned integer, floating-point,
