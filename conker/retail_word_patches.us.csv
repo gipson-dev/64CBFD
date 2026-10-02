@@ -10095,3 +10095,12 @@ init_15550,_n_handleEvent,0x1354,0x8FB00030,0x00000000,-,-,Normalize Rare sound-
 init_15550,_n_handleEvent,0x1358,0x27BD00C8,0x00000000,-,-,Normalize Rare sound-player event dispatcher compiler layout,0x8FBF0034,-,false
 init_15550,_n_handleEvent,0x135C,0x03E00008,0x8FB0002C,-,-,Normalize Rare sound-player event dispatcher compiler layout,0x8FB10030,-,false
 init_15550,_n_handleEvent,0x1360,0x00000000,0x03E00008,-,-,Normalize Rare sound-player event dispatcher compiler layout,0x27BD00A8,-,false
+generated_6E770,func_150413FC,0x008,0x00C09825,0xAFB2001C,-,-,Normalize command-row loop prologue scheduling,,,false
+generated_6E770,func_150413FC,0x00C,0xAFBF0024,0x00809025,-,-,Normalize command-row loop prologue scheduling,,,false
+generated_6E770,func_150413FC,0x010,0xAFB2001C,0x00C09825,-,-,Normalize command-row loop prologue scheduling,,,false
+generated_6E770,func_150413FC,0x014,0xAFB10018,0xAFBF0024,-,-,Normalize command-row loop prologue scheduling,,,false
+generated_6E770,func_150413FC,0x018,0xAFB00014,0xAFB10018,-,-,Normalize command-row loop prologue scheduling,,,false
+generated_6E770,func_150413FC,0x01C,0x90EE0000,0xAFB00014,-,-,Normalize command-row loop prologue scheduling,,,false
+generated_6E770,func_150413FC,0x020,0x00809025,0x90EE0000,-,-,Normalize command-row loop prologue scheduling,,,false
+generated_6E770,func_150413FC,0x028,0x11C0000E,0x00A08825,-,-,Normalize command-row loop prologue scheduling,,,false
+generated_6E770,func_150413FC,0x02C,0x00A08825,0x11C0000D,-,-,Normalize command-row loop prologue scheduling,,,false

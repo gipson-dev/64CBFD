@@ -16,6 +16,33 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game command-row loop byte-matched
+
+- `func_150413FC` now replaces its zero-return placeholder with the complete
+  zero-terminated command loop. It translates each command, processes the
+  associated eight-byte row, and threads the returned state into the next
+  iteration.
+- Its 33-word extent, frame, calls, loop updates, and epilogue emit from
+  semantic C. Nine stale-checked words normalize only the independent
+  prologue schedule.
+- The refreshed matcher reports **3,172 / 5,456 (58.14%)** overall and
+  **2,504 / 4,788 (52.30%)** in Game, with zero address drift and 2,284
+  different C rows. See
+  [Working Note 674](WORKING_NOTES/674-game-command-row-loop-match-20261002.md).
+
+### Game object teardown byte-matched
+
+- `func_15106E78` now replaces its zero-return placeholder with the complete
+  object teardown: indexed destructor callback, two optional child releases,
+  and embedded-record cleanup.
+- All 32 words emit directly from C with no guarded normalization. The adjacent
+  `func_15106EF8` and `func_15106F24` wrappers now use the recovered pointer
+  ABI and remain byte-exact.
+- The refreshed matcher reports **3,171 / 5,456 (58.12%)** overall and
+  **2,503 / 4,788 (52.28%)** in Game, with zero address drift and 2,285
+  different C rows. See
+  [Working Note 673](WORKING_NOTES/673-game-object-teardown-match-20261002.md).
+
 ### Init sound-event dispatcher byte-matched
 
 - `_n_handleEvent` now replaces its zero-return placeholder with the complete

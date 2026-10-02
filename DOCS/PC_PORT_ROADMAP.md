@@ -8,10 +8,21 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,170 / 5,456 (58.10%) | 0 | 2,286 |
+| Total | 5,456 / 6,041 (90.32%) | 3,172 / 5,456 (58.14%) | 0 | 2,284 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
+| Game | 4,788 / 5,321 (89.98%) | 2,504 / 4,788 (52.30%) | 0 | 2,284 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game command-row loop `func_150413FC` now matches all 33 retail words. Its
+semantic C restores zero-terminated command iteration, eight-byte row
+advancement, command translation, and result threading; nine stale-checked
+words normalize only prologue scheduling. See
+[Working Note 674](WORKING_NOTES/674-game-command-row-loop-match-20261002.md).
+
+The Game object teardown `func_15106E78` now matches all 32 retail words
+directly from C, including its indexed destructor, two optional child releases,
+and embedded-record teardown. See
+[Working Note 673](WORKING_NOTES/673-game-object-teardown-match-20261002.md).
 
 Debugger is fully accounted for across all 182 rows. The table keeps the raw
 conversion distinction because `func_16003650` is original handwritten

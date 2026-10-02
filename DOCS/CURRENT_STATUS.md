@@ -32,10 +32,25 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,170 / 5,456 (58.10%) | 0 | 2,286 |
+| Total | 3,172 / 5,456 (58.14%) | 0 | 2,284 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
+| Game | 2,504 / 4,788 (52.30%) | 0 | 2,284 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game command-row loop `func_150413FC` now matches all 33 retail words. It
+walks a zero-terminated command-byte stream, advances its associated row by
+eight bytes per command, translates each command through `func_15041480`, and
+threads the result through `func_15041508`. The complete loop body and frame
+emit from semantic C; nine stale-checked words normalize only the independent
+prologue schedule. See
+[Working Note 674](WORKING_NOTES/674-game-command-row-loop-match-20261002.md).
+
+The Game object teardown `func_15106E78` now matches all 32 retail words
+directly from C. It restores the type-indexed destructor callback, releases
+the two optional child objects, and tears down the embedded record. The two
+adjacent teardown-and-finalize wrappers now carry the recovered pointer ABI;
+all three routines remain byte-exact without guarded words. See
+[Working Note 673](WORKING_NOTES/673-game-object-teardown-match-20261002.md).
 
 The Init sound-event dispatcher `_n_handleEvent` now matches all 1,363 retail
 words, completing the Init code-function matcher queue at 487 / 487. It
@@ -2235,8 +2250,11 @@ end-to-end gameplay acceptance.
    [Working Note 484](WORKING_NOTES/484-game-two-owner-linked-list-lookup-match-20260929.md).
    `func_10003BD0` is now byte-exact across its complete 28-word Init span.
    The tied Init cache-maintenance routines are now restored to original
-   handwritten assembly ownership. Resume with an ordinary small Game or Init
-   candidate. Keep
+   handwritten assembly ownership. Game object teardown `func_15106E78` is
+   now byte-exact directly from semantic C. The 33-word command-row loop
+   `func_150413FC` is also byte-exact from semantic C plus nine prologue-only
+   scheduling guards. Resume with ordinary 36-word Game candidate
+   `func_150F9A20`. Keep
    `func_15015F40` parked until its
    unresolved 38-entry indirect table has authoritative ownership, and keep
    handwritten register-contract fragment `func_150A76F0` in the raw-assembly
