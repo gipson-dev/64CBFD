@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-01:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,168 / 5,456 (58.06%) | 0 | 2,288 |
-| Init | 485 / 487 (99.59%) | 0 | 2 |
+| Total | 3,169 / 5,456 (58.08%) | 0 | 2,287 |
+| Init | 486 / 487 (99.79%) | 0 | 1 |
 | Game | 2,502 / 4,788 (52.26%) | 0 | 2,286 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Init compact-sequence voice handler `__n_CSPVoiceHandler` now matches all
+684 retail words. It restores SDK event dispatch, envelope and oscillator
+updates, MIDI/meta forwarding, Rare's mix and control events, restartable
+play/stop behavior, voice cleanup, and channel-mask transitions. Its semantic
+body compiles to 667 words; 667 stale-checked rows preserve retail's closed
+layout, including 17 insertions and 45 relocation-aware rows. See
+[Working Note 671](WORKING_NOTES/671-init-compact-sequence-voice-handler-match-20261001.md).
 
 The Init path-relative spatial query `func_1000A750` now matches all 580
 retail words. It restores nearest-node selection, adjacent-segment choice,

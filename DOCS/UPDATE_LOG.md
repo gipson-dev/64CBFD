@@ -16,6 +16,24 @@ make -C conker progress
 
 ## 2026-10-01
 
+### Init compact-sequence voice handler byte-matched
+
+- `__n_CSPVoiceHandler` now replaces its zero-return placeholder with the
+  complete compact-sequence event loop. It handles sequence references,
+  envelopes, tremolo/vibrato, MIDI/meta dispatch, master volume, Rare's two
+  custom control events, restartable play/stop state, and final voice/channel
+  cleanup.
+- The readable body compiles to 667 words. Retail's 684-word closed IDO layout
+  is reproduced by 667 stale-checked rows, including 17 insertions and 45
+  relocation-aware rows.
+- Direct comparison reports zero differences across all 2,736 bytes. Both
+  spans share SHA-256
+  `c5673a64d3bce5c9a7b63077a0d36dc5e87fa6096ea470c2902ef76c85c4331e`.
+  Totals are **3,169 / 5,456 (58.08%)** overall and
+  **486 / 487 (99.79%)** in Init, with zero address drift and one different
+  Init C row. See
+  [Working Note 671](WORKING_NOTES/671-init-compact-sequence-voice-handler-match-20261001.md).
+
 ### Init path-projection query byte-matched
 
 - `func_1000A750` now replaces its zero-return placeholder with the full
