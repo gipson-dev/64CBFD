@@ -27,6 +27,8 @@ remains `181 / 181 (100.00%)`.
 No fresh gameplay run was performed. This checkpoint is semantic recovery,
 full stale-guard rebuild, full-link, and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 35-word `func_1503EEC0`. Keep
+The next checkpoint completed 35-word `func_1503EEC0`; see
+[Working Note 693](693-game-timer-expiry-callback-match-20261002.md). Resume the
+ordinary small-Game queue with 36-word `func_150489B0`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

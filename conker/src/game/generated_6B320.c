@@ -66,8 +66,18 @@ s32 func_1503ECA0() {
 void func_1503EEB8() {
 }
 
-s32 func_1503EEC0() {
-    return 0;
+s32 func_1503EEC0(s32 index) {
+    struct106 *entry;
+    s32 value;
+
+    func_1503ECA0(index);
+    entry = &D_800C6660[index];
+    value = *(s16 *)((u8 *)entry + 0xC) - D_800BE9E4;
+    *(s16 *)((u8 *)entry + 0xC) = value;
+
+    if (value <= 0) {
+        func_15060F28(&D_800CC2D0[index], 1);
+    }
 }
 
 s32 func_1503EF4C(s32 arg0, s32 arg1, s32 arg2) {

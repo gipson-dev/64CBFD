@@ -10221,3 +10221,22 @@ generated_5D2C0,func_150333A8,0x07C,0x45030004,0x45020004,-,-,Normalize attachme
 generated_5D2C0,func_150333A8,0x080,0xA0800003,0xA0980003,-,-,Normalize attachment-state updater threshold delay-slot store,,,false
 generated_5D2C0,func_150333A8,0x088,0xA0980003,0xA0800003,-,-,Normalize attachment-state updater fallthrough store layout,,,false
 generated_5D2C0,func_150333A8,0x08C,0xA0800003,0xA0980003,-,-,Normalize attachment-state updater alternate store layout,,,false
+generated_6B320,func_1503EEC0,0x028,0x01CF1021,0x01CF1821,-,-,Normalize timer-expiry callback timer-base allocation,,,false
+generated_6B320,func_1503EEC0,0x02C,0x3C190000,0x3C180000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800BE9E4,Normalize timer-expiry callback elapsed-tick allocation,,,false
+generated_6B320,func_1503EEC0,0x030,0x8F390000,0x8462000C,R_MIPS_LO16:D_800BE9E4,-,Normalize timer-expiry callback timer-load schedule,,,false
+generated_6B320,func_1503EEC0,0x034,0x8458000C,0x8F180000,-,R_MIPS_LO16:D_800BE9E4,Normalize timer-expiry callback elapsed-tick load schedule,,,false
+generated_6B320,func_1503EEC0,0x038,0x00064080,0x0006C880,-,-,Normalize timer-expiry callback actor-index allocation,,,false
+generated_6B320,func_1503EEC0,0x03C,0x01064023,0x0326C823,-,-,Normalize timer-expiry callback actor-index allocation,,,false
+generated_6B320,func_1503EEC0,0x040,0x03191823,0x00581023,-,-,Normalize timer-expiry callback result allocation,,,false
+generated_6B320,func_1503EEC0,0x044,0x1C60000D,0x1C40000D,-,-,Normalize timer-expiry callback result branch allocation,,,false
+generated_6B320,func_1503EEC0,0x048,0xA443000C,0xA462000C,-,-,Normalize timer-expiry callback result store allocation,,,false
+generated_6B320,func_1503EEC0,0x04C,0x00084080,0x0019C880,-,-,Normalize timer-expiry callback actor-index allocation,,,false
+generated_6B320,func_1503EEC0,0x050,0x01064021,0x0326C821,-,-,Normalize timer-expiry callback actor-index allocation,,,false
+generated_6B320,func_1503EEC0,0x054,0x00084080,0x0019C880,-,-,Normalize timer-expiry callback actor-index allocation,,,false
+generated_6B320,func_1503EEC0,0x058,0x01064023,0x0326C823,-,-,Normalize timer-expiry callback actor-index allocation,,,false
+generated_6B320,func_1503EEC0,0x05C,0x00084080,0x0019C880,-,-,Normalize timer-expiry callback actor-index allocation,,,false
+generated_6B320,func_1503EEC0,0x060,0x01064023,0x0326C823,-,-,Normalize timer-expiry callback actor-index allocation,,,false
+generated_6B320,func_1503EEC0,0x064,0x3C090000,0x3C080000,R_MIPS_HI16:D_800CC2D0,R_MIPS_HI16:D_800CC2D0,Normalize timer-expiry callback actor-base allocation,,,false
+generated_6B320,func_1503EEC0,0x068,0x25290000,0x25080000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800CC2D0,Normalize timer-expiry callback actor-base allocation,,,false
+generated_6B320,func_1503EEC0,0x06C,0x00084080,0x0019C880,-,-,Normalize timer-expiry callback actor-index allocation,,,false
+generated_6B320,func_1503EEC0,0x070,0x01092021,0x03282021,-,-,Normalize timer-expiry callback actor-pointer allocation,,,false

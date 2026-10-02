@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,198 / 5,456 (58.61%) | 0 | 2,258 |
+| Total | 5,456 / 6,041 (90.32%) | 3,199 / 5,456 (58.63%) | 0 | 2,257 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,530 / 4,788 (52.84%) | 0 | 2,258 |
+| Game | 4,788 / 5,321 (89.98%) | 2,531 / 4,788 (52.86%) | 0 | 2,257 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game timer-expiry callback `func_1503EEC0` now matches all 35 retail
+words. It updates the selected entry's signed timer and dispatches its indexed
+callback when the full-width subtraction expires; nineteen stale-checked words
+preserve the retail register allocation, schedule, and relocation pairs. See
+[Working Note 693](WORKING_NOTES/693-game-timer-expiry-callback-match-20261002.md).
 
 The Game attachment-state updater `func_150333A8` now matches all 38 retail
 words. It restores the disable gate, attached-object state clear, and

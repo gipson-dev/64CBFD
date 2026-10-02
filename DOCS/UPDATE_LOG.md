@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game timer-expiry callback byte-matched
+
+- `func_1503EEC0` replaces its zero-return placeholder with the selected-entry
+  update, signed timer subtraction/store, and indexed expiry callback.
+- All 35 retail words match. Sixteen emit directly from semantic C; nineteen
+  stale-checked words preserve one closed register-allocation and scheduling
+  cycle, including relocation-aware guards for both referenced global tables.
+- The refreshed matcher reports **3,199 / 5,456 (58.63%)** overall and
+  **2,531 / 4,788 (52.86%)** in Game, with zero address drift and 2,257
+  different C rows. See
+  [Working Note 693](WORKING_NOTES/693-game-timer-expiry-callback-match-20261002.md).
+
 ### Game attachment-state updater byte-matched
 
 - `func_150333A8` replaces its zero-return placeholder with the global disable

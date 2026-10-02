@@ -32,10 +32,19 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,198 / 5,456 (58.61%) | 0 | 2,258 |
+| Total | 3,199 / 5,456 (58.63%) | 0 | 2,257 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,530 / 4,788 (52.84%) | 0 | 2,258 |
+| Game | 2,531 / 4,788 (52.86%) | 0 | 2,257 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game timer-expiry callback `func_1503EEC0` now matches all 35 retail
+words. It runs the per-entry update, subtracts the global tick count from the
+signed timer while retaining the full-width result for the expiry test, stores
+the truncated halfword, and dispatches the indexed callback on expiry.
+Sixteen words emit directly from C; nineteen stale-checked words preserve the
+retail allocation and schedule, including both global-address relocation
+pairs. See
+[Working Note 693](WORKING_NOTES/693-game-timer-expiry-callback-match-20261002.md).
 
 The Game attachment-state updater `func_150333A8` now matches its complete
 38-word slot. It handles the global disable mode, clears an attached object's
