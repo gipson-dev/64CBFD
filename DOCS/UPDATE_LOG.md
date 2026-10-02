@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game timer/position updater byte-matched
+
+- `func_150CBA30` replaces its zero-return placeholder with the signed timer
+  decrement, timer-scaled updates to two position fields, and the flag-gated
+  shifted-value clamp for byte `0x5C`.
+- All 35 retail words emit directly from semantic C without guards. Testing the
+  reloaded timer directly keeps its lifetime separate from the later signed
+  clamp value and recovers retail's register allocation.
+- The refreshed matcher reports **3,203 / 5,456 (58.71%)** overall and
+  **2,535 / 4,788 (52.94%)** in Game, with zero address drift and 2,253
+  different C rows. See
+  [Working Note 697](WORKING_NOTES/697-game-timer-position-byte-clamp-match-20261002.md).
+
 ### Game resource-teardown finalizer byte-matched
 
 - `func_15080C64` replaces its zero-return placeholder with the active-state

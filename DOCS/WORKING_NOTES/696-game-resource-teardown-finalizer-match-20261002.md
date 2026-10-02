@@ -30,6 +30,7 @@ progress is `3,202 / 5,456 (58.69%)`. Init remains
 No fresh gameplay run was performed. This checkpoint is semantic recovery,
 focused-object comparison, full-link, and linked-word comparison evidence.
 
-Resume the ordinary small-Game queue with 35-word `func_150CBA30`. Keep
+Continue from [Working Note 697](697-game-timer-position-byte-clamp-match-20261002.md),
+then resume the ordinary small-Game queue with 35-word `func_150E3340`. Keep
 `func_15015F40` parked behind unresolved indirect-table ownership and
 `func_150A76F0` in the handwritten register-contract workstream.

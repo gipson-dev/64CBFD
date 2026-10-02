@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "variables.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/F8590.s. */
 
@@ -30,8 +31,25 @@ s32 func_150CB800() {
     return 0;
 }
 
-s32 func_150CBA30() {
-    return 0;
+s32 func_150CBA30(u8 *arg0) {
+    s32 value;
+    f32 delta;
+
+    *(s16 *)(arg0 + 0x128) -= D_800BE9E4;
+    if (*(s16 *)(arg0 + 0x128) > 0) {
+        delta = *(f32 *)(arg0 + 0x12C) * D_800BE9A4;
+        *(f32 *)(arg0 + 0x2C) += delta;
+        *(f32 *)(arg0 + 0x30) += delta;
+    }
+
+    if ((*(u32 *)(arg0 + 0x58) & 1) != 0) {
+        value = *(s16 *)(arg0 + 0x1C);
+        if ((value < 0x20) && ((value << 3) < *(u8 *)(arg0 + 0x5C))) {
+            *(u8 *)(arg0 + 0x5C) = value << 3;
+        }
+    }
+
+    return 1;
 }
 
 s32 func_150CBABC() {

@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,202 / 5,456 (58.69%) | 0 | 2,254 |
+| Total | 3,203 / 5,456 (58.71%) | 0 | 2,253 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,534 / 4,788 (52.92%) | 0 | 2,254 |
+| Game | 2,535 / 4,788 (52.94%) | 0 | 2,253 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game timer/position updater `func_150CBA30` now matches all 35 retail words
+directly from C. It decrements the signed timer, applies its scaled motion to
+two position fields while the timer remains positive, and conditionally lowers
+the state byte from a shifted signed value. Testing the reloaded timer directly
+preserves retail's separate register lifetimes without guards. See
+[Working Note 697](WORKING_NOTES/697-game-timer-position-byte-clamp-match-20261002.md).
 
 The Game resource-teardown finalizer `func_15080C64` now matches all 36 retail
 words directly from C. It gates teardown on the active flag and record state,

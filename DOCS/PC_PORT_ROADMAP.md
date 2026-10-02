@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,202 / 5,456 (58.69%) | 0 | 2,254 |
+| Total | 5,456 / 6,041 (90.32%) | 3,203 / 5,456 (58.71%) | 0 | 2,253 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,534 / 4,788 (52.92%) | 0 | 2,254 |
+| Game | 4,788 / 5,321 (89.98%) | 2,535 / 4,788 (52.94%) | 0 | 2,253 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game timer/position updater `func_150CBA30` now matches all 35 retail words
+directly from C. It restores the signed timer decrement, timer-scaled paired
+position update, and flag-gated byte clamp. See
+[Working Note 697](WORKING_NOTES/697-game-timer-position-byte-clamp-match-20261002.md).
 
 The Game resource-teardown finalizer `func_15080C64` now matches all 36 retail
 words directly from C. It restores the active/record gates, teardown call,
