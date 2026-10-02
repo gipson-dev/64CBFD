@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game paired object-state transition matched).**
-The current linked checkpoint is `3219 / 5456 (59.00%)` exact C functions,
-with no address-drift blockers and 2,237 genuinely different C functions.
+**Active (2026-10-02, Game randomized record spawner matched).**
+The current linked checkpoint is `3220 / 5456 (59.02%)` exact C functions,
+with no address-drift blockers and 2,236 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2551 / 4788 (53.28%)` exact, with 2,237 genuinely different C rows. The tree
+`2552 / 4788 (53.30%)` exact, with 2,236 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -199,7 +199,9 @@ limiter `func_150BA424` now matches all 39 words directly after recovering its
 negative-delta gate, capped candidate values, and minimum-byte store. Paired
 object-state transition `func_150CF0A0` now matches all 40 words directly after
 recovering its caller-state branch and gated updates for IDs `0xFE` and `0xFD`.
-Resume with 37-word `func_1500F378`; keep
+Randomized record spawner `func_1500F378` now matches all 37 words directly
+after recovering its random type, fixed allocator arguments, and four signed
+halfword outputs. Resume with 37-word `func_1500F9D0`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -274,6 +276,8 @@ The delta-intensity limiter is recorded in
 [Working Note 710](WORKING_NOTES/710-game-delta-intensity-limiter-match-20261002.md).
 The paired object-state transition is recorded in
 [Working Note 711](WORKING_NOTES/711-game-paired-object-state-transition-match-20261002.md).
+The randomized record spawner is recorded in
+[Working Note 712](WORKING_NOTES/712-game-randomized-record-spawner-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

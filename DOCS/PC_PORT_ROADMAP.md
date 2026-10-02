@@ -8,10 +8,15 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,219 / 5,456 (59.00%) | 0 | 2,237 |
+| Total | 5,456 / 6,041 (90.32%) | 3,220 / 5,456 (59.02%) | 0 | 2,236 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,551 / 4,788 (53.28%) | 0 | 2,237 |
+| Game | 4,788 / 5,321 (89.98%) | 2,552 / 4,788 (53.30%) | 0 | 2,236 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game randomized record spawner `func_1500F378` now matches all 37 retail
+words directly from C. It restores the randomized allocation and four-value
+record publication without guards. See
+[Working Note 712](WORKING_NOTES/712-game-randomized-record-spawner-match-20261002.md).
 
 The Game paired object-state transition `func_150CF0A0` now matches all 40
 retail words directly from C. It restores the state-two dispatch and gated
