@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game sentinel coordinate distance byte-matched
+
+- `func_15086BD0` replaces its zero-return placeholder with the retail
+  `0xFF` sentinel gate and signed XYZ Euclidean distance calculation across
+  two 16-byte records.
+- Thirteen expected-word replacements normalize IDO's equivalent address,
+  pointer, and load schedule. Two checked insertions retain retail's empty
+  branch delay and unreachable duplicate return; three rows are
+  relocation-aware.
+- The refreshed matcher reports **3,228 / 5,456 (59.16%)** overall and
+  **2,560 / 4,788 (53.47%)** in Game, with zero address drift and 2,228
+  different C rows. See
+  [Working Note 720](WORKING_NOTES/720-game-sentinel-coordinate-distance-match-20261002.md).
+
 ### Game object-control reset byte-matched
 
 - `func_150634E4` replaces its zero-return placeholder with canonical

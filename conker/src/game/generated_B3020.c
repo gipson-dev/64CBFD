@@ -65,8 +65,23 @@ s32 func_15086364() {
     return 0;
 }
 
-s32 func_15086BD0() {
-    return 0;
+f32 func_15086BD0(s32 arg0, s32 arg1) {
+    u8 *first;
+    u8 *second;
+    f32 x;
+    f32 y;
+    f32 z;
+
+    if ((arg0 == 0xFF) || (arg1 == 0xFF)) {
+        return 0.0f;
+    }
+
+    first = D_800D2350 + arg0 * 16;
+    second = D_800D2350 + arg1 * 16;
+    x = (f32)(*(s16 *)(first + 0) - *(s16 *)(second + 0));
+    y = (f32)(*(s16 *)(first + 2) - *(s16 *)(second + 2));
+    z = (f32)(*(s16 *)(first + 4) - *(s16 *)(second + 4));
+    return sqrtf((x * x) + (y * y) + (z * z));
 }
 
 void func_15086C70(arg0)

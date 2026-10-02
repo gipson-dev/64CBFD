@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game object-control reset matched).**
-The current linked checkpoint is `3227 / 5456 (59.15%)` exact C functions,
-with no address-drift blockers and 2,229 genuinely different C functions.
+**Active (2026-10-02, Game sentinel coordinate distance matched).**
+The current linked checkpoint is `3228 / 5456 (59.16%)` exact C functions,
+with no address-drift blockers and 2,228 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2559 / 4788 (53.45%)` exact, with 2,229 genuinely different C rows. The tree
+`2560 / 4788 (53.47%)` exact, with 2,228 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -222,9 +222,13 @@ IDO emits the register homes and four-way-unrolled aligned array copy without
 guards. Object-control reset `func_150634E4` now matches all 35 words directly
 from typed C after recovering its pool-index canonicalization, attached-state
 resets, control calls, and object-byte clears. The unsigned array use restores
-retail's shift/add scaling without guards. Resume with 40-word
-`func_15086BD0`; keep
-the documented indirect-table and handwritten-register special cases parked.
+retail's shift/add scaling without guards. Sentinel coordinate distance
+`func_15086BD0` now matches its
+complete 40-word slot after restoring the `0xFF` index gate and signed XYZ
+Euclidean distance calculation. Thirteen replacement guards and two checked
+insertions normalize only IDO scheduling and retail's duplicate return. Resume
+with 31-word `func_15015F40`, currently at 29 real differences; preserve its
+documented indirect-table ownership boundary unless new evidence resolves it.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
 followed by
@@ -314,6 +318,8 @@ The sixteen-word varargs adapter is recorded in
 [Working Note 718](WORKING_NOTES/718-game-sixteen-word-varargs-adapter-match-20261002.md).
 The object-control reset is recorded in
 [Working Note 719](WORKING_NOTES/719-game-object-control-reset-match-20261002.md).
+The sentinel coordinate distance is recorded in
+[Working Note 720](WORKING_NOTES/720-game-sentinel-coordinate-distance-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

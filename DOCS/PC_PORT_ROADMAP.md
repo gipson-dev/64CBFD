@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,227 / 5,456 (59.15%) | 0 | 2,229 |
+| Total | 5,456 / 6,041 (90.32%) | 3,228 / 5,456 (59.16%) | 0 | 2,228 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,559 / 4,788 (53.45%) | 0 | 2,229 |
+| Game | 4,788 / 5,321 (89.98%) | 2,560 / 4,788 (53.47%) | 0 | 2,228 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game sentinel coordinate distance `func_15086BD0` now matches its complete
+40-word slot. It restores the `0xFF` sentinel gate and signed-coordinate
+Euclidean distance calculation. Thirteen replacement guards and two checked
+insertions normalize compiler scheduling only. See
+[Working Note 720](WORKING_NOTES/720-game-sentinel-coordinate-distance-match-20261002.md).
 
 The Game object-control reset `func_150634E4` now matches all 35 retail words
 directly from C. Correcting the object-pool type restores canonical indexing,

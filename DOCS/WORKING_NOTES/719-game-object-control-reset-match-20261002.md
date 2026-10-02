@@ -37,7 +37,9 @@ no duplicate patch keys. Game advances to `2,559 / 4,788 (53.45%)`, with
 remains `181 / 181 (100.00%)`. `make tools-check` also passes. No fresh
 gameplay run was performed.
 
-Resume the ordinary small-Game queue with 40-word `func_15086BD0`, currently
-at 35 real differences. Keep `func_15015F40` parked behind unresolved
-indirect-table ownership and `func_150A76F0` in the handwritten
-register-contract workstream.
+Continue with
+[Working Note 720](720-game-sentinel-coordinate-distance-match-20261002.md),
+which completes 40-word `func_15086BD0`. Its fresh matcher scan returns
+31-word `func_15015F40` as the next ordinary row at 29 real differences;
+preserve the documented indirect-table ownership boundary unless new evidence
+resolves it.
