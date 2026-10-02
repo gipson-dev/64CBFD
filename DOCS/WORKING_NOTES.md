@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game resource-descriptor chain callback matched).**
-The current linked checkpoint is `3234 / 5456 (59.27%)` exact C functions,
-with no address-drift blockers and 2,222 genuinely different C functions.
+**Active (2026-10-02, Game timed callback lifecycle matched).**
+The current linked checkpoint is `3235 / 5456 (59.29%)` exact C functions,
+with no address-drift blockers and 2,221 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2566 / 4788 (53.59%)` exact, with 2,222 genuinely different C rows. The tree
+`2567 / 4788 (53.61%)` exact, with 2,221 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -251,9 +251,12 @@ and four-entry unroll without guards. Resource-descriptor chain callback
 `func_15133FD8` now matches its complete 38-word slot after recovering the
 counted eight-byte descriptor walk and threaded display-list result. Three
 guarded words normalize only operand ordering and independent scheduling.
-Resume the ordinary queue with 41-word `func_1513B798`, currently at 35 real
-differences; keep 19-word `func_150F631C` as a separate four-difference
-near-match cleanup.
+Timed callback lifecycle `func_1513B798` now matches its complete 41-word slot
+after recovering its optional signed timer, indexed completion callback, and
+completed-record release. Two guarded words normalize only the completion
+flag's compiler spill width across the indirect call. Resume the ordinary
+queue with 50-word `func_15145128`, currently at 35 real differences; keep
+19-word `func_150F631C` as a separate four-difference near-match cleanup.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
 followed by

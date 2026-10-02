@@ -5,7 +5,7 @@
 
 /* Generated placeholder declarations. */
 s32 func_1513B5E0();
-s32 func_1513B798();
+void func_1513B798(u8 *arg0);
 s32 func_1513B83C();
 s32 func_1513BAE8();
 s32 func_1513BBFC();
@@ -14,13 +14,33 @@ s32 func_15109064(struct132 *, s32, u8);
 s32 func_151BA468(struct132 *, s32, u8);
 /* End generated placeholder declarations. */
 
+extern s32 (*D_80089C18[])();
+
 /* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B5E0.s. */
 s32 func_1513B5E0() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B798.s. */
-s32 func_1513B798() {
-    return 0;
+void func_1513B798(u8 *arg0) {
+    s32 remove = 0;
+    s8 callbackIndex;
+
+    if ((arg0[0x10] & 1) != 0) {
+        *(s16 *)(arg0 + 0x14) -= D_800BE9E4;
+        if (*(s16 *)(arg0 + 0x14) < 0) {
+            remove = 1;
+        }
+    }
+
+    if (remove == 0) {
+        callbackIndex = *(s8 *)(arg0 + 0x11);
+        if ((callbackIndex != -1) && (D_80089C18[callbackIndex]() == 0)) {
+            remove = 1;
+        }
+    }
+
+    if (remove != 0) {
+        func_1516972C((struct102 *)arg0);
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B83C.s. */
 s32 func_1513B83C() {

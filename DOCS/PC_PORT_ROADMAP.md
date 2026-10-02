@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,234 / 5,456 (59.27%) | 0 | 2,222 |
+| Total | 5,456 / 6,041 (90.32%) | 3,235 / 5,456 (59.29%) | 0 | 2,221 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,566 / 4,788 (53.59%) | 0 | 2,222 |
+| Game | 4,788 / 5,321 (89.98%) | 2,567 / 4,788 (53.61%) | 0 | 2,221 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game timed callback lifecycle `func_1513B798` now matches its complete
+41-word slot. It restores the optional timer expiry, indexed completion
+callback, and record release. Two guarded words normalize only the compiler's
+temporary spill width across the callback. See
+[Working Note 728](WORKING_NOTES/728-game-timed-callback-lifecycle-match-20261002.md).
 
 The Game resource-descriptor chain callback `func_15133FD8` now matches its
 complete 38-word slot. It walks the counted descriptor array and threads the

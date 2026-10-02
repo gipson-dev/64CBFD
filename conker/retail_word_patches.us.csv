@@ -10376,3 +10376,5 @@ generated_10CCD0,func_150DF820,0x084,0xA48B01B4,0xA49801B4,-,-,Normalize actor w
 generated_15F680,func_15133FD8,0x038,0x01F21021,0x024F1021,-,-,Preserve retail commutative descriptor pointer operand order,,,false
 generated_15F680,func_15133FD8,0x060,0x00408825,0x03008025,-,-,Normalize descriptor loop independent publication schedule,,,false
 generated_15F680,func_15133FD8,0x068,0x03008025,0x00408825,-,-,Normalize descriptor loop independent publication schedule,,,false
+game_168A90,func_1513B798,0x064,0xAFA3001C,0xA3A3001B,-,-,Normalize completion flag spill width across callback,,,false
+game_168A90,func_1513B798,0x074,0x8FA3001C,0x93A3001B,-,-,Normalize completion flag spill width across callback,,,false

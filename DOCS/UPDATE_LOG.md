@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game timed callback lifecycle byte-matched
+
+- `func_1513B798` replaces its zero-return placeholder with the optional
+  signed-timer update, indexed completion callback, and completed-record
+  release path.
+- The complete 41-word slot emits from semantic C. Two guarded words retain
+  retail's byte-width completion-flag spill across the indirect callback.
+- The refreshed matcher reports **3,235 / 5,456 (59.29%)** overall and
+  **2,567 / 4,788 (53.61%)** in Game, with zero address drift and 2,221
+  different C rows. See
+  [Working Note 728](WORKING_NOTES/728-game-timed-callback-lifecycle-match-20261002.md).
+
 ### Game resource-descriptor chain callback byte-matched
 
 - `func_15133FD8` replaces its zero-return placeholder with the counted

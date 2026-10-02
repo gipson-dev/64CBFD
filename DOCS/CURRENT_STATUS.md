@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,234 / 5,456 (59.27%) | 0 | 2,222 |
+| Total | 3,235 / 5,456 (59.29%) | 0 | 2,221 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,566 / 4,788 (53.59%) | 0 | 2,222 |
+| Game | 2,567 / 4,788 (53.61%) | 0 | 2,221 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game timed callback lifecycle `func_1513B798` now matches its complete
+41-word slot. It decrements the optional signed timer, dispatches the indexed
+completion callback, and releases the record when either path completes. Two
+guarded words normalize only IDO's completion-flag spill width across the
+indirect call. See
+[Working Note 728](WORKING_NOTES/728-game-timed-callback-lifecycle-match-20261002.md).
 
 The Game resource-descriptor chain callback `func_15133FD8` now matches its
 complete 38-word slot. It walks the counted eight-byte descriptor array and
