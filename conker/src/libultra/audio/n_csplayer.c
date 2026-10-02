@@ -329,9 +329,43 @@ ALMicroTime __n_CSPVoiceHandler(void *node)
 }
 
 extern void (*jtbl_8002C4CC[])(void);
-// jump table
-/* Keep raw assembly. */
-#pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csplayer/__n_CSPHandleNextSeqEvent.s")
+void __n_CSPHandleNextSeqEvent(N_ALCSPlayer *seqp)
+{
+    N_ALEvent evt;
+
+    if (seqp->target == NULL || seqp->state == CONKER_CSP_PAUSED) {
+        return;
+    }
+
+    n_alCSeqNextEvent(seqp->target, &evt, 1);
+
+    switch (evt.type) {
+    case AL_SEQ_MIDI_EVT:
+        __n_CSPHandleMIDIMsg(seqp, &evt);
+        __n_CSPPostNextSeqEvent(seqp);
+        break;
+
+    case AL_TEMPO_EVT:
+        __n_CSPHandleMetaMsg(seqp, &evt);
+        __n_CSPPostNextSeqEvent(seqp);
+        break;
+
+    case AL_SEQ_END_EVT:
+        seqp->state = AL_STOPPING;
+        evt.type = AL_SEQP_STOPPING_EVT;
+        n_alEvtqPostEvent(&seqp->evtq, &evt, AL_EVTQ_END, 0);
+        break;
+
+    case AL_TRACK_END:
+    case AL_CSP_LOOPSTART:
+    case AL_CSP_LOOPEND:
+        __n_CSPPostNextSeqEvent(seqp);
+        break;
+
+    default:
+        break;
+    }
+}
 // jump table
 /* Keep raw assembly. */
 #pragma GLOBAL_ASM("asm/nonmatchings/libultra/audio/n_csplayer/__n_CSPHandleMIDIMsg.s")

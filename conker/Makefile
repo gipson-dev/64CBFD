@@ -211,6 +211,9 @@ $(BUILD_DIR)/$(SRC_DIR)/init_11FA0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8002C410_in
 
 $(BUILD_DIR)/$(SRC_DIR)/libultra/audio/%.o: OPT_FLAGS := -g
 
+# __n_CSPHandleNextSeqEvent's switch emits the retail sequence-event jump table.
+$(BUILD_DIR)/$(SRC_DIR)/libultra/audio/n_csplayer.c.o: RETAIL_RODATA_SYMBOL := jtbl_8002C460_init
+
 # TODO: blindly move all of this into libultra/audio
 $(BUILD_DIR)/$(SRC_DIR)/init_17F10.c.o: OPT_FLAGS := -g
 $(BUILD_DIR)/$(SRC_DIR)/init_17F80.c.o: OPT_FLAGS := -g

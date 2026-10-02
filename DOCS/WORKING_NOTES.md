@@ -88,22 +88,30 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game timed callback lifecycle matched).**
-The current linked checkpoint is `3235 / 5456 (59.29%)` exact C functions,
-with no address-drift blockers and 2,221 genuinely different C functions.
-Init is
-`487 / 487 (100.00%)` exact, with no different C rows. Game is
+**Active (2026-10-02, Init assembly remainder audited).**
+The current linked checkpoint is `3235 / 5457 (59.28%)` exact C functions,
+with one address-drift row and 2,221 genuinely different C functions. Init is
+`487 / 488 (99.80%)` exact, with one address-drift row and no different C rows. Game is
 `2567 / 4788 (53.61%)` exact, with 2,221 genuinely different C rows. The tree
-contains 585 raw-assembly functions, so much of the percentage increase over
+contains 584 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
+
+`__n_CSPHandleNextSeqEvent` is recovered as a complete 69-word semantic C
+routine. Its only mismatch is the relocation to already shifted
+`__n_CSPHandleMetaMsg`. The remaining 50 Init assembly rows are a mix of
+intentional handwritten low-level code and a smaller candidate set; next use
+`func_10006380` for segment-splitting work or `__n_CSPHandleMIDIMsg` for the
+existing mixed-object path. See
+[Working Note 729](WORKING_NOTES/729-init-compact-sequence-event-handler-and-assembly-audit-20261002.md).
 
 The broad restoration baseline is now banked as separate build-support,
 guest-restoration, reference-tooling, asset-tooling, and documentation commits.
 `_n_handleEvent` now matches all 1,363 retail words after restoring Rare's
 extended sound-player event dispatcher. Its typed 1,241-word body is expanded
-by 122 checked insertions, with 87 relocation-aware rows. Init code matching is
-complete; resume the code-function queue in Game. The absolute
+by 122 checked insertions, with 87 relocation-aware rows. That selected Init
+matching queue was complete at the time; Note 729 now records the remaining
+assembly audit and one newly converted address-drift row. The absolute
 `jtbl_8002C708_init` table still exposes a separate shifted Init-data layout
 issue, so rebuilt-image runtime qualification remains open. See
 [Working Note 672](WORKING_NOTES/672-init-sound-event-dispatcher-match-20261002.md).

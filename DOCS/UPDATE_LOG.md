@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Init compact-sequence event handler recovered and assembly remainder audited
+
+- `__n_CSPHandleNextSeqEvent` replaces its 69-word `GLOBAL_ASM` fallback with
+  semantic C and the retail `jtbl_8002C460_init` rodata anchor.
+- The matcher finds no real instruction differences. Its one linked mismatch
+  follows the already shifted `__n_CSPHandleMetaMsg` address, so Init now has
+  487 exact C rows, one address-drift row, and zero different C rows.
+- The remaining 50 Init assembly rows were divided between established
+  handwritten low-level routines and a smaller candidate set. Init can advance
+  further, but converting all 50 would erase original assembly ownership. See
+  [Working Note 729](WORKING_NOTES/729-init-compact-sequence-event-handler-and-assembly-audit-20261002.md).
+
 ### Game timed callback lifecycle byte-matched
 
 - `func_1513B798` replaces its zero-return placeholder with the optional

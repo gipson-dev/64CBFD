@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 585 | 1,929,140 / 2,256,728 (85.48%) |
-| Init | 487 / 538 (90.52%) | 51 | 146,504 / 164,048 (89.31%) |
+| Total | 5,457 / 6,041 (90.33%) | 584 | 1,929,416 / 2,256,728 (85.50%) |
+| Init | 488 / 538 (90.71%) | 50 | 146,780 / 164,048 (89.47%) |
 | Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,235 / 5,456 (59.29%) | 0 | 2,221 |
-| Init | 487 / 487 (100.00%) | 0 | 0 |
+| Total | 3,235 / 5,457 (59.28%) | 1 | 2,221 |
+| Init | 487 / 488 (99.80%) | 1 | 0 |
 | Game | 2,567 / 4,788 (53.61%) | 0 | 2,221 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -43,6 +43,15 @@ completion callback, and releases the record when either path completes. Two
 guarded words normalize only IDO's completion-flag spill width across the
 indirect call. See
 [Working Note 728](WORKING_NOTES/728-game-timed-callback-lifecycle-match-20261002.md).
+
+The Init compact-sequence dispatcher `__n_CSPHandleNextSeqEvent` is recovered
+as semantic C across its complete 69-word slot with no guards. Its only linked
+difference is the call relocation to the already shifted
+`__n_CSPHandleMetaMsg`, so the matcher records one address-drift row and zero
+genuinely different Init C rows. The remaining 50 Init assembly rows include
+proven handwritten low-level code as well as a smaller conversion-candidate
+set; they cannot all appropriately become C. See
+[Working Note 729](WORKING_NOTES/729-init-compact-sequence-event-handler-and-assembly-audit-20261002.md).
 
 The Game resource-descriptor chain callback `func_15133FD8` now matches its
 complete 38-word slot. It walks the counted eight-byte descriptor array and

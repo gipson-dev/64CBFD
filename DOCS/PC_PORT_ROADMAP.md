@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,235 / 5,456 (59.29%) | 0 | 2,221 |
-| Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
+| Total | 5,457 / 6,041 (90.33%) | 3,235 / 5,457 (59.28%) | 1 | 2,221 |
+| Init | 488 / 538 (90.71%) | 487 / 488 (99.80%) | 1 | 0 |
 | Game | 4,788 / 5,321 (89.98%) | 2,567 / 4,788 (53.61%) | 0 | 2,221 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -18,6 +18,13 @@ The Game timed callback lifecycle `func_1513B798` now matches its complete
 callback, and record release. Two guarded words normalize only the compiler's
 temporary spill width across the callback. See
 [Working Note 728](WORKING_NOTES/728-game-timed-callback-lifecycle-match-20261002.md).
+
+The Init compact-sequence event dispatcher `__n_CSPHandleNextSeqEvent` is now
+semantic C. Its 69-word body has no real instruction differences; the matcher
+records only its call to an already shifted downstream Init symbol. The Init
+assembly audit leaves 50 rows, many of which are intentional handwritten
+entry, CP0/TLB, cache, interrupt, exception, memory, or math routines. See
+[Working Note 729](WORKING_NOTES/729-init-compact-sequence-event-handler-and-assembly-audit-20261002.md).
 
 The Game resource-descriptor chain callback `func_15133FD8` now matches its
 complete 38-word slot. It walks the counted descriptor array and threads the
