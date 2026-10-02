@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Init meta-handler body restored and assembly classification corrected
+
+- Explicit layout ownership restores the omitted 716-byte
+  `__n_CSPHandleMetaMsg` and fixes the event handler's call relocation. Both
+  handlers match all 992 bytes; Init now has 489 exact C rows and no drift.
+- The separate function raises Init's measured denominator to 539 and reduces
+  the MIDI handler's actual remaining span to 3,816 bytes. Direct guest and
+  SDK assembly evidence retains the decompressor and queue helpers as assembly.
+- The full code build, linked matcher, and direct byte comparisons pass. See
+  [Working Note 730](WORKING_NOTES/730-init-meta-handler-layout-and-assembly-provenance-correction-20261002.md).
+
 ### Init compact-sequence event handler recovered and assembly remainder audited
 
 - `__n_CSPHandleNextSeqEvent` replaces its 69-word `GLOBAL_ASM` fallback with

@@ -2,6 +2,12 @@
 
 Date: 2026-10-02
 
+Correction: the subsequent direct assembly audit and linked-body check in
+Note 730 supersede this note's candidate classification and address-drift
+explanation. `func_10006380` is an assembly fragment with a shared frame and
+live-register calling convention. The meta handler was omitted from the
+padded object, rather than merely shifted; its layout ownership is now fixed.
+
 `__n_CSPHandleNextSeqEvent` replaces its `GLOBAL_ASM` fallback with the
 complete 69-word compact-sequence event dispatcher at
 `0x10014048..0x1001415C`. The recovered body is based on the local libultra
@@ -36,8 +42,10 @@ assembly remainder is not a single convertible backlog:
   instructions. They are candidates for provenance review, not automatically
   C: the monolithic segment must be split around any converted function, and
   some small SDK queue/memory primitives may still be original assembly.
-- `func_10006380` is the strongest confirmed compiler-generated candidate in
-  that segment. `func_10007A24` is a self-contained 20-byte queue-pop helper,
+- The cross-project description of `func_10006380` as compiler-generated was
+  contradicted by direct assembly inspection in Note 730. It uses live `$s7`,
+  `$gp`, and `$fp` state and its caller's stack frame. `func_10007A24` is a
+  self-contained 20-byte queue-pop helper matching handwritten SDK assembly,
   while `func_10005BE0` is a 76-byte memory-fill routine already described by
   the port notes as handwritten; source shape must decide ownership rather
   than size alone.
@@ -46,12 +54,9 @@ assembly remainder is not a single convertible backlog:
   but Conker's 4,532-byte retail body has substantial custom event, voice,
   and synthesizer behavior and should be recovered as its own focused batch.
 
-Therefore Init can advance beyond 488 C functions, but it should not be
-reported as capable of reaching 538 C functions: a substantial part of the
-50-row remainder is intentionally handwritten. The next bounded conversion
-choice is `func_10006380` if the `init_5AB0` segment-splitting work is taken on,
-or `__n_CSPHandleMIDIMsg` if work stays inside the already supported
-`GLOBAL_ASM` object path.
+Init can advance further, but its original handwritten routines should keep
+assembly ownership. The next supported conversion is `__n_CSPHandleMIDIMsg`.
+Use Note 730's revised inventory before undertaking segment-splitting work.
 
 The focused object build, full `NON_MATCHING=1` link, and linked matcher pass.
 Current totals are 5,457 / 6,041 C functions and 3,235 / 5,457 byte-exact C

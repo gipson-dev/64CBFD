@@ -8,8 +8,8 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 3,235 / 5,457 (59.28%) | 1 | 2,221 |
-| Init | 488 / 538 (90.71%) | 487 / 488 (99.80%) | 1 | 0 |
+| Total | 5,458 / 6,042 (90.33%) | 3,237 / 5,458 (59.31%) | 0 | 2,221 |
+| Init | 489 / 539 (90.72%) | 489 / 489 (100.00%) | 0 | 0 |
 | Game | 4,788 / 5,321 (89.98%) | 2,567 / 4,788 (53.61%) | 0 | 2,221 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -19,12 +19,12 @@ callback, and record release. Two guarded words normalize only the compiler's
 temporary spill width across the callback. See
 [Working Note 728](WORKING_NOTES/728-game-timed-callback-lifecycle-match-20261002.md).
 
-The Init compact-sequence event dispatcher `__n_CSPHandleNextSeqEvent` is now
-semantic C. Its 69-word body has no real instruction differences; the matcher
-records only its call to an already shifted downstream Init symbol. The Init
-assembly audit leaves 50 rows, many of which are intentional handwritten
-entry, CP0/TLB, cache, interrupt, exception, memory, or math routines. See
-[Working Note 729](WORKING_NOTES/729-init-compact-sequence-event-handler-and-assembly-audit-20261002.md).
+The Init sequence-event and tempo-meta handlers now match all 992 bytes.
+Explicit meta-handler layout ownership restores an omitted static body and
+fixes its call relocation. A corrected assembly audit retains the decompressor,
+SDK queue, and glyph-helper assembly calling conventions. The remaining
+supported Init C conversion is the 954-word MIDI handler. See
+[Working Note 730](WORKING_NOTES/730-init-meta-handler-layout-and-assembly-provenance-correction-20261002.md).
 
 The Game resource-descriptor chain callback `func_15133FD8` now matches its
 complete 38-word slot. It walks the counted descriptor array and threads the

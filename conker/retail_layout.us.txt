@@ -264,7 +264,8 @@ init,init_128D0,func_100131FC,0x100131FC,0x10013320
 init,n_csplayer,n_alCSPNew,0x10013320,0x10013598
 init,n_csplayer,__n_CSPVoiceHandler,0x10013598,0x10014048
 init,n_csplayer,__n_CSPHandleNextSeqEvent,0x10014048,0x1001415C
-init,n_csplayer,__n_CSPHandleMIDIMsg,0x1001415C,0x10015310
+init,n_csplayer,__n_CSPHandleMIDIMsg,0x1001415C,0x10015044
+init,n_csplayer,__n_CSPHandleMetaMsg,0x10015044,0x10015310
 init,n_csplayer,__n_CSPRepostEvent,0x10015310,0x10015464
 init,n_csplayer,__n_setUsptFromTempo,0x10015464,0x100154AC
 init,n_csplayer,__n_CSPPostNextSeqEvent,0x100154AC,0x10015550

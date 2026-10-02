@@ -10,7 +10,7 @@
        ALMicroTime      __n_CSPVoiceHandler(void *node);
        void              __n_CSPHandleNextSeqEvent(N_ALCSPlayer *seqp);
        void             __n_CSPHandleMIDIMsg(N_ALCSPlayer *seqp, N_ALEvent *event);
-static void             __n_CSPHandleMetaMsg(N_ALCSPlayer *seqp, N_ALEvent *event);
+       void             __n_CSPHandleMetaMsg(N_ALCSPlayer *seqp, N_ALEvent *event);
        void             __n_CSPRepostEvent(ALEventQueue *evtq, N_ALEventListItem *item);
        void              __n_setUsptFromTempo(N_ALCSPlayer *seqp, f32 tempo);
 

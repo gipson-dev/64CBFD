@@ -25,15 +25,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,457 / 6,041 (90.33%) | 584 | 1,929,416 / 2,256,728 (85.50%) |
-| Init | 488 / 538 (90.71%) | 50 | 146,780 / 164,048 (89.47%) |
+| Total | 5,458 / 6,042 (90.33%) | 584 | 1,930,132 / 2,256,728 (85.53%) |
+| Init | 489 / 539 (90.72%) | 50 | 147,496 / 164,048 (89.91%) |
 | Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,235 / 5,457 (59.28%) | 1 | 2,221 |
-| Init | 487 / 488 (99.80%) | 1 | 0 |
+| Total | 3,237 / 5,458 (59.31%) | 0 | 2,221 |
+| Init | 489 / 489 (100.00%) | 0 | 0 |
 | Game | 2,567 / 4,788 (53.61%) | 0 | 2,221 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
@@ -44,14 +44,16 @@ guarded words normalize only IDO's completion-flag spill width across the
 indirect call. See
 [Working Note 728](WORKING_NOTES/728-game-timed-callback-lifecycle-match-20261002.md).
 
-The Init compact-sequence dispatcher `__n_CSPHandleNextSeqEvent` is recovered
-as semantic C across its complete 69-word slot with no guards. Its only linked
-difference is the call relocation to the already shifted
-`__n_CSPHandleMetaMsg`, so the matcher records one address-drift row and zero
-genuinely different Init C rows. The remaining 50 Init assembly rows include
-proven handwritten low-level code as well as a smaller conversion-candidate
-set; they cannot all appropriately become C. See
-[Working Note 729](WORKING_NOTES/729-init-compact-sequence-event-handler-and-assembly-audit-20261002.md).
+The Init sequence-event and tempo-meta handlers now match all 69 and 179
+words. The meta body had been omitted by the static-function build path and
+masked by an absolute assignment; explicit layout ownership restores it and
+the correct call relocation. Its separate inventory row raises the Init
+denominator to 539. Direct assembly review also corrects the previous
+classification of `func_10006380`: it uses shared live-register and stack
+state and retains assembly ownership. Resume with the 954-word
+`__n_CSPHandleMIDIMsg`; the other 49 Init assembly rows retain handwritten
+ownership. See
+[Working Note 730](WORKING_NOTES/730-init-meta-handler-layout-and-assembly-provenance-correction-20261002.md).
 
 The Game resource-descriptor chain callback `func_15133FD8` now matches its
 complete 38-word slot. It walks the counted eight-byte descriptor array and
@@ -1181,6 +1183,11 @@ and emits `conker.us.bin`. It does not establish a matching ROM hash or fresh
 end-to-end gameplay acceptance.
 
 ## Resume boundary
+
+Current Init task: recover the 954-word `__n_CSPHandleMIDIMsg`. Note 730
+supersedes the earlier `func_10006380` segment-splitting recommendation and
+the address-drift explanation in Note 729. Preserve the exact sequence/meta
+handlers and retain the handwritten `init_5AB0` calling conventions.
 
 1. The restoration baseline is banked. Do not fold a broad conversion batch
    into it; future work should start from a new focused commit.
