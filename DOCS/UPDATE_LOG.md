@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game effect payload constructor byte-matched
+
+- `func_150F4D5C` replaces its zero-return placeholder with a fixed
+  five-argument wrapper that builds a 12-byte owner/selector payload, requests
+  effect type `0x56`, and conditionally copies the payload into the result.
+- The complete 36-word routine emits directly from typed semantic C without
+  guard rows or a compiler-profile override.
+- The refreshed matcher reports **3,232 / 5,456 (59.24%)** overall and
+  **2,564 / 4,788 (53.55%)** in Game, with zero address drift and 2,224
+  different C rows. See
+  [Working Note 724](WORKING_NOTES/724-game-effect-payload-constructor-match-20261002.md).
+
 ### Game actor water-state flag transition byte-matched
 
 - `func_150DF820` replaces its zero-return placeholder with the staged actor
