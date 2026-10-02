@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,224 / 5,456 (59.09%) | 0 | 2,232 |
+| Total | 3,225 / 5,456 (59.11%) | 0 | 2,231 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,556 / 4,788 (53.38%) | 0 | 2,232 |
+| Game | 2,557 / 4,788 (53.40%) | 0 | 2,231 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game trailing marked-record compactor `func_1503DDD0` now matches its
+complete 40-word slot. It marks a selected 20-byte record with state bit `2`
+and removes trailing marked records from the active count. Correcting
+`D_800C6650` to its pointer-owned table contract restores retail indexing;
+sixteen expected-word guards normalize one closed compiler loop schedule. See
+[Working Note 717](WORKING_NOTES/717-game-trailing-marked-record-compactor-match-20261002.md).
 
 The Game indexed resource lazy-loader `func_1503D774` now matches all 36 retail
 words. It preserves existing entries in `D_800D1C90`, loads missing resource

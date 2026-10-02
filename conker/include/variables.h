@@ -1011,7 +1011,7 @@ extern s32 D_800C5C08[187];
 extern s32 D_800C6070[187];
 extern s32 D_800C6360[187];
 
-extern struct160 D_800C6650[];
+extern struct160 *D_800C6650;
 extern s32 D_800C6654;
 extern struct106 D_800C6660[];
 extern u8  D_800C67F0;

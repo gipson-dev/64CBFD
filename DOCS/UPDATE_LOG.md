@@ -16,6 +16,20 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game trailing marked-record compactor byte-matched
+
+- `func_1503DDD0` replaces its zero-return placeholder with index validation,
+  selected-record state marking, and backward compaction of trailing marked
+  records.
+- Correcting `D_800C6650` to its pointer-owned `struct160` table contract
+  restores retail indexing. Sixteen expected-word replacements normalize one
+  closed compiler loop schedule; no insertion, omission, relocation-aware
+  row, or profile override is required.
+- The refreshed matcher reports **3,225 / 5,456 (59.11%)** overall and
+  **2,557 / 4,788 (53.40%)** in Game, with zero address drift and 2,231
+  different C rows. See
+  [Working Note 717](WORKING_NOTES/717-game-trailing-marked-record-compactor-match-20261002.md).
+
 ### Game indexed resource lazy-loader byte-matched
 
 - `func_1503D774` replaces its zero-return placeholder with the indexed cache

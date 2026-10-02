@@ -8,10 +8,17 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,224 / 5,456 (59.09%) | 0 | 2,232 |
+| Total | 5,456 / 6,041 (90.32%) | 3,225 / 5,456 (59.11%) | 0 | 2,231 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,556 / 4,788 (53.38%) | 0 | 2,232 |
+| Game | 4,788 / 5,321 (89.98%) | 2,557 / 4,788 (53.40%) | 0 | 2,231 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game trailing marked-record compactor `func_1503DDD0` now matches its
+complete 40-word slot. It restores selected-record marking and backward
+active-count compaction after correcting `D_800C6650` to its pointer-owned
+table contract. Sixteen replacement guards normalize compiler scheduling.
+See
+[Working Note 717](WORKING_NOTES/717-game-trailing-marked-record-compactor-match-20261002.md).
 
 The Game indexed resource lazy-loader `func_1503D774` now matches all 36 retail
 words. It restores the missing-entry load, failure status, and successful
