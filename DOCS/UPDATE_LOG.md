@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Init SDK sine recovered and constant ownership repaired
+
+- Init `__sinf` replaces its 448-byte assembly slice with separate semantic
+  C ownership, preserving the unrelated Game `sinf` source.
+- All 112 words emit directly from C. A scoped linker anchor also restores
+  the original math/NaN data addresses; all 224 audited constant bytes match.
+- Init is now 490 / 539 C rows, with all 490 byte-exact. The one remaining
+  supported C conversion is `__n_CSPHandleMIDIMsg`; 48 handwritten/shared-frame
+  rows retain assembly. The full non-matching code build, matcher, and focused
+  tests pass. See
+  [Working Note 731](WORKING_NOTES/731-init-remaining-assembly-conversion-triage-20261002.md) and
+  [Working Note 732](WORKING_NOTES/732-init-sdk-sine-recovery-and-constant-layout-match-20261002.md).
+
 ### Init meta-handler body restored and assembly classification corrected
 
 - Explicit layout ownership restores the omitted 716-byte

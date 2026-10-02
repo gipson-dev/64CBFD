@@ -500,7 +500,7 @@ init,generated_unmaptlb,osUnmapTLB,0x100262D0,0x10026310
 init,generated_maptlb,osMapTLB,0x10026310,0x100263D0
 init,aisetfreq,osAiSetFrequency,0x100263D0,0x10026530
 init,sqrtf,sqrtf,0x10026530,0x10026540
-init,sinf,__sinf,0x10026540,0x10026700
+init,generated_sinf,__sinf,0x10026540,0x10026700
 init,sprawread,__osSiRawReadIo,0x10026700,0x10026750
 init,sprawwrite,__osSpRawWriteIo,0x10026750,0x100267A0
 init,pirawread,osPiRawReadIo,0x100267A0,0x10026800

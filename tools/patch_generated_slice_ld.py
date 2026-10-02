@@ -11,6 +11,14 @@ def generated_slice_replacement(name):
     return f"build/src/game/generated_{name}.c.o(.text);"
 
 
+def anchor_init_math_rodata(text):
+    # Earlier recovered audio objects omit rodata; keep SDK math constants
+    # at their retail addresses rather than relying on absolute symbol aliases.
+    marker = "        build/asm/data/2C850.rodata.s.o(.rodata);"
+    anchor = "        . = ABSOLUTE(0x8002C850);\n"
+    return text.replace(marker, anchor + marker)
+
+
 def replace_generated_slices(text, project_dir):
     asm_by_name = {}
     for path in (project_dir / "asm").rglob("*.s"):
@@ -200,6 +208,7 @@ def main() -> int:
     text = anchor_objects(
         text, load_object_layout(layout_path), project_dir
     )
+    text = anchor_init_math_rodata(text)
     path.write_text(text)
     return 0
 

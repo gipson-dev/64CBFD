@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-02 ([Note 732](WORKING_NOTES/732-init-sdk-sine-recovery-and-constant-layout-match-20261002.md)):
+Init `__sinf` matches all 112 words directly from SDK-grounded C. Separate
+source ownership preserves Game `sinf`; a scoped linker anchor restores
+the original math constant block, with all 224 audited data bytes exact.
+Init has 490 exact C rows and one supported C conversion remaining. The
+corrected assembly inventory is in
+[Note 731](WORKING_NOTES/731-init-remaining-assembly-conversion-triage-20261002.md).
+
 ## PC-port cross-project update - 2026-09-23
 
 The sibling `64CBFDOGL` host port now completes Training through the natural Windy entrance and a fresh retained-save reload in RelWithDebInfo; repeat traversal used FLY. The user has **VERIFIED the second-level Chapters unlock**. The Gargoyle held-release repair uses original `func_15073A50` (232 bytes); guest/ROM builds and exact-byte checks are recorded in [host Note 738](../../64CBFDOGL/DOCS/WORKING_NOTES/738-gargoyle-actor-and-original-held-release-20260923.md). This is scoped progression evidence, not complete retail presentation or full-game acceptance.

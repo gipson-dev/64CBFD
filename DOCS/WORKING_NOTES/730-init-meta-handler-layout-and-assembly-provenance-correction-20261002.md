@@ -2,6 +2,12 @@
 
 Date: 2026-10-02
 
+Follow-up correction: Note 731 identifies Init `__sinf` as a second supported
+compiler-generated C candidate. The blanket classification of all 23
+separated assembly rows as handwritten, and the "one supported remaining"
+conclusion below, are superseded. The audio layout repair and `init_5AB0`
+shared-register findings remain valid.
+
 This audit corrects two conclusions in Note 729 using direct guest assembly
 and linked-body evidence.
 

@@ -25,17 +25,24 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,458 / 6,042 (90.33%) | 584 | 1,930,132 / 2,256,728 (85.53%) |
-| Init | 489 / 539 (90.72%) | 50 | 147,496 / 164,048 (89.91%) |
+| Total | 5,459 / 6,042 (90.35%) | 583 | 1,930,580 / 2,256,728 (85.55%) |
+| Init | 490 / 539 (90.91%) | 49 | 147,944 / 164,048 (90.18%) |
 | Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,237 / 5,458 (59.31%) | 0 | 2,221 |
-| Init | 489 / 489 (100.00%) | 0 | 0 |
+| Total | 3,238 / 5,459 (59.31%) | 0 | 2,221 |
+| Init | 490 / 490 (100.00%) | 0 | 0 |
 | Game | 2,567 / 4,788 (53.61%) | 0 | 2,221 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Init `__sinf` now matches all 112 words directly from SDK-grounded C in a
+separate generated slice. A scoped linker anchor restores its original
+constant block, which had drifted by `0x30` bytes behind absolute symbol
+assignments. Direct comparisons confirm the complete routine and 224 bytes
+of math/NaN constants. No word guards or compiler override are required.
+See [Working Note 732](WORKING_NOTES/732-init-sdk-sine-recovery-and-constant-layout-match-20261002.md).
 
 The Game timed callback lifecycle `func_1513B798` now matches its complete
 41-word slot. It decrements the optional signed timer, dispatches the indexed
@@ -50,9 +57,11 @@ masked by an absolute assignment; explicit layout ownership restores it and
 the correct call relocation. Its separate inventory row raises the Init
 denominator to 539. Direct assembly review also corrects the previous
 classification of `func_10006380`: it uses shared live-register and stack
-state and retains assembly ownership. Resume with the 954-word
-`__n_CSPHandleMIDIMsg`; the other 49 Init assembly rows retain handwritten
-ownership. See
+state and retains assembly ownership. The follow-up audit recovered Init
+`__sinf` as a second compiler-generated candidate, now completed. Resume with
+the 954-word `__n_CSPHandleMIDIMsg`; the other 48 remaining Init assembly rows
+retain handwritten/shared-register ownership. See
+[Working Note 731](WORKING_NOTES/731-init-remaining-assembly-conversion-triage-20261002.md) and
 [Working Note 730](WORKING_NOTES/730-init-meta-handler-layout-and-assembly-provenance-correction-20261002.md).
 
 The Game resource-descriptor chain callback `func_15133FD8` now matches its
