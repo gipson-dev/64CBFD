@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game indexed resource lazy-loader byte-matched
+
+- `func_1503D774` replaces its zero-return placeholder with the indexed cache
+  check, resource-kind-`0x11` load, failure status, and successful payload
+  pointer publication.
+- Six expected-word replacements normalize the compiler stack/register
+  schedule, and one checked omission removes its redundant result copy. No
+  relocation-aware row, insertion, or profile override is required.
+- The refreshed matcher reports **3,224 / 5,456 (59.09%)** overall and
+  **2,556 / 4,788 (53.38%)** in Game, with zero address drift and 2,232
+  different C rows. See
+  [Working Note 716](WORKING_NOTES/716-game-indexed-resource-lazy-loader-match-20261002.md).
+
 ### Game table-pointer relocator byte-matched
 
 - `func_1503D484` replaces its zero-return placeholder with the

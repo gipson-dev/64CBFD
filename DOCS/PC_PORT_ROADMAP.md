@@ -8,10 +8,16 @@ measured decomp checkpoint is:
 
 | Section | C functions | Byte-exact C | Address drift | Still different |
 | --- | ---: | ---: | ---: | ---: |
-| Total | 5,456 / 6,041 (90.32%) | 3,223 / 5,456 (59.07%) | 0 | 2,233 |
+| Total | 5,456 / 6,041 (90.32%) | 3,224 / 5,456 (59.09%) | 0 | 2,232 |
 | Init | 487 / 538 (90.52%) | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 4,788 / 5,321 (89.98%) | 2,555 / 4,788 (53.36%) | 0 | 2,233 |
+| Game | 4,788 / 5,321 (89.98%) | 2,556 / 4,788 (53.38%) | 0 | 2,232 |
 | Debugger | 181 / 182 (99.45%) | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game indexed resource lazy-loader `func_1503D774` now matches all 36 retail
+words. It restores the missing-entry load, failure status, and successful
+resource-pointer publication. Six replacement guards and one checked omission
+normalize compiler scheduling. See
+[Working Note 716](WORKING_NOTES/716-game-indexed-resource-lazy-loader-match-20261002.md).
 
 The Game table-pointer relocator `func_1503D484` now matches all 35 retail
 words directly from C. It restores sentinel-terminated record traversal,

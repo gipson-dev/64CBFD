@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,223 / 5,456 (59.07%) | 0 | 2,233 |
+| Total | 3,224 / 5,456 (59.09%) | 0 | 2,232 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,555 / 4,788 (53.36%) | 0 | 2,233 |
+| Game | 2,556 / 4,788 (53.38%) | 0 | 2,232 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game indexed resource lazy-loader `func_1503D774` now matches all 36 retail
+words. It preserves existing entries in `D_800D1C90`, loads missing resource
+kind `0x11`, returns two on failure, and publishes the wrapper's first pointer
+on success. Six expected-word replacements and one checked omission normalize
+the closed IDO result-publication schedule. See
+[Working Note 716](WORKING_NOTES/716-game-indexed-resource-lazy-loader-match-20261002.md).
 
 The Game table-pointer relocator `func_1503D484` now matches all 35 retail
 words directly from C. It walks eight-byte records through sentinel `999`,

@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game table-pointer relocator matched).**
-The current linked checkpoint is `3223 / 5456 (59.07%)` exact C functions,
-with no address-drift blockers and 2,233 genuinely different C functions.
+**Active (2026-10-02, Game indexed resource lazy-loader matched).**
+The current linked checkpoint is `3224 / 5456 (59.09%)` exact C functions,
+with no address-drift blockers and 2,232 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2555 / 4788 (53.36%)` exact, with 2,233 genuinely different C rows. The tree
+`2556 / 4788 (53.38%)` exact, with 2,232 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -208,7 +208,10 @@ contract, category fast path, sentinel handling, and optional-object fallback;
 seventeen guarded words normalize the compiler schedule. Table-pointer
 relocator `func_1503D484` now matches all 35 words directly after recovering
 its sentinel-terminated record walk, pointer rebasing, and count publication.
-Resume with 36-word `func_1503D774`; keep
+Indexed resource lazy-loader `func_1503D774` now matches all 36 words after
+recovering its cache check, kind-`0x11` load, failure status, and payload
+publication; six replacement guards and one checked omission normalize the
+closed compiler schedule. Resume with 40-word `func_1503DDD0`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -291,6 +294,8 @@ The slot-state updater is recorded in
 [Working Note 714](WORKING_NOTES/714-game-slot-state-updater-match-20261002.md).
 The table-pointer relocator is recorded in
 [Working Note 715](WORKING_NOTES/715-game-table-pointer-relocator-match-20261002.md).
+The indexed resource lazy-loader is recorded in
+[Working Note 716](WORKING_NOTES/716-game-indexed-resource-lazy-loader-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and

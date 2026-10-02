@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/6A3D0.s. */
 
@@ -12,6 +13,8 @@ extern u8 *D_800D19A0[];
 extern u8 D_80098888[];
 extern u8 *D_80084410[];
 extern s16 D_800C5A90[];
+extern struct124 *D_800D1C90[];
+extern s32 func_1502B6BC(s32 *, s32, s32, s32, s32, s32);
 
 s32 func_1503CF20() {
     return 0;
@@ -72,7 +75,23 @@ s32 func_1503D660() {
     return 0;
 }
 
-s32 func_1503D774() {
+s32 func_1503D774(s32 arg0, s32 arg1) {
+    s32 output;
+    struct124 **slot = &D_800D1C90[arg0];
+    s32 loaded;
+
+    if (*slot != NULL) {
+        return 0;
+    }
+
+    loaded = func_1502B6BC(&output, 2, 0, 2, 0x11, arg0);
+    if (loaded == 0) {
+        *slot = NULL;
+        return 2;
+    }
+
+    *slot = (struct124 *)loaded;
+    *slot = *(struct124 **)loaded;
     return 0;
 }
 
