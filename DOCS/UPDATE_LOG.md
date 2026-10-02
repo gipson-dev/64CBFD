@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game scaled indexed-global updater byte-matched
+
+- `func_1509DF20` replaces its zero-return placeholder with the event-state and
+  global-mode gates, paired indexed float updates, and indexed status-byte set.
+- Both float tables receive the event value multiplied by `1/65536`. All 37
+  retail words emit directly from semantic C without guards or a compiler
+  profile override; retaining the repeated event value/index expressions
+  reproduces retail's independent load and address-calculation schedule.
+- The refreshed matcher reports **3,210 / 5,456 (58.83%)** overall and
+  **2,542 / 4,788 (53.09%)** in Game, with zero address drift and 2,246
+  different C rows. See
+  [Working Note 703](WORKING_NOTES/703-game-scaled-indexed-global-updater-match-20261002.md).
+
 ### Game payload-record initializer byte-matched
 
 - `func_1518BCD0` replaces its zero-return placeholder with the six-argument

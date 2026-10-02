@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,209 / 5,456 (58.82%) | 0 | 2,247 |
+| Total | 3,210 / 5,456 (58.83%) | 0 | 2,246 |
 | Init | 487 / 487 (100.00%) | 0 | 0 |
-| Game | 2,541 / 4,788 (53.07%) | 0 | 2,247 |
+| Game | 2,542 / 4,788 (53.09%) | 0 | 2,246 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The Game scaled indexed-global updater `func_1509DF20` now matches all 37
+retail words directly from C. After its event-state and global-mode gates, it
+scales the event value by `1/65536`, writes the result to two indexed float
+tables, and marks the corresponding status byte. Retaining the repeated event
+reads reproduces the complete leaf schedule without guards. See
+[Working Note 703](WORKING_NOTES/703-game-scaled-indexed-global-updater-match-20261002.md).
 
 The Game payload-record initializer `func_1518BCD0` now matches all 36 retail
 words directly from C. It allocates a selector-scoped record, copies the

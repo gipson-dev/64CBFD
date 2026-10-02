@@ -88,12 +88,12 @@ page and leave only the historical record here.
 
 ## Current focus
 
-**Active (2026-10-02, Game payload-record initializer matched).**
-The current linked checkpoint is `3209 / 5456 (58.82%)` exact C functions,
-with no address-drift blockers and 2,247 genuinely different C functions.
+**Active (2026-10-02, Game scaled indexed-global updater matched).**
+The current linked checkpoint is `3210 / 5456 (58.83%)` exact C functions,
+with no address-drift blockers and 2,246 genuinely different C functions.
 Init is
 `487 / 487 (100.00%)` exact, with no different C rows. Game is
-`2541 / 4788 (53.07%)` exact, with 2,247 genuinely different C rows. The tree
+`2542 / 4788 (53.09%)` exact, with 2,246 genuinely different C rows. The tree
 contains 585 raw-assembly functions, so much of the percentage increase over
 July remains denominator-driven. The non-matching code build and tool checks
 pass; fresh gameplay was not run.
@@ -176,8 +176,10 @@ result bit. Color-driver callbacks `func_150D149C` and `func_150D1B40` now
 match their complete 37- and 36-word slots directly from C after recovering
 their shared float-driver and color-publication pattern. Payload-record
 initializer `func_1518BCD0` now matches all 36 words directly from C after
-restoring its allocation, copy, and random-field initialization. Resume with
-37-word `func_1509DF20`; keep
+restoring its allocation, copy, and random-field initialization.
+Scaled indexed-global updater `func_1509DF20` now matches all 37 words directly
+from C after restoring its event gates, paired scaled stores, and status byte.
+Resume with 37-word `func_150FCF1C`; keep
 the documented indirect-table and handwritten-register special cases parked.
 See [Working Note 675](WORKING_NOTES/675-game-condition-state-flag-match-20261002.md)
 and [Working Note 676](WORKING_NOTES/676-game-owner-event-callback-match-20261002.md),
@@ -234,6 +236,8 @@ The color-driver callback family is recorded in
 [Working Note 701](WORKING_NOTES/701-game-color-driver-callback-family-match-20261002.md).
 The payload-record initializer is recorded in
 [Working Note 702](WORKING_NOTES/702-game-payload-record-initializer-match-20261002.md).
+The scaled indexed-global updater is recorded in
+[Working Note 703](WORKING_NOTES/703-game-scaled-indexed-global-updater-match-20261002.md).
 
 `func_151F3D78` now matches all 26 retail words directly from C. Its owning
 `game_21FC90` object is retail-padded, while `func_151F27E0` and
