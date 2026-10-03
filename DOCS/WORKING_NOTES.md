@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 773](WORKING_NOTES/773-game-context3-entity-lowest-height-query-recovery-20261003.md)):
+Game `func_15045D48` converts retained assembly ownership to complete semantic
+C, preserving state `3` and the cached entity flag pointer. It remains
+non-matching: 144 body words plus one padding nop, 72 differences, no new
+guards. Fifteen new tests and all 286 tool tests pass; full build/project
+checks pass. Both entire Init sections remain exact. Next: `func_150461D0`.
+
 2026-10-03 ([Note 772](WORKING_NOTES/772-game-context2-entity-highest-height-query-recovery-20261003.md)):
 Game `func_15045AE4` replaces its zero-return placeholder with the complete
 context-2 entity highest-height query. It remains non-matching: 150 body

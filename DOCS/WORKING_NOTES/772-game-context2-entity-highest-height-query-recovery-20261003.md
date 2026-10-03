@@ -97,3 +97,7 @@ Progress remains 5,459 / 6,042 C rows, 3,262 / 5,459 exact overall; Game
 Remaining Init conversion gates are unchanged in
 [Note 768](768-init-remaining-assembly-current-decision-20261003.md).
 The sibling host port and frozen Release artifacts remain untouched.
+
+Follow-up: [Note 773](773-game-context3-entity-lowest-height-query-recovery-20261003.md)
+recovers the then-pending other-context lowest-height query in semantic C.
+Its cached entity pointer is preserved; matching remains separate.
