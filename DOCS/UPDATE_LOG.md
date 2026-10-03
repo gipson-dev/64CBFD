@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init Note 799 tests volatile byte stores and saved-comparison/break loop
+  scheduling in six isolated guest trials. None matches the nineteen-word
+  bitmap slot; all 237 host shape/case combinations pass, including two alias
+  fixtures per shape. No production Init or aggregate change is made.
+
 - Init Note 798 completes two bounded guest compiler/layout trials for the
   isolated decompressor: 4,928/5,328 text bytes versus the retained 3,984-byte
   region and 2,668-byte explicit state. Neither profile is a matching owner

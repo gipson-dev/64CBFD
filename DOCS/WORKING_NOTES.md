@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 799](WORKING_NOTES/799-init-bitmap-volatile-store-scheduling-trial-20261003.md)):
+Three ordered-store bitmap forms under two IDO profiles remain non-matching.
+All 237 host shape/case combinations pass, including count/endpoint alias
+fixtures; optimized candidates still have twenty words rather than nineteen.
+Reproducible isolated tooling is retained. No production Init conversion or
+aggregate change; continue connected Game dispatcher recovery.
+
 2026-10-03 ([Note 798](WORKING_NOTES/798-init-decompressor-guest-layout-trial-and-conversion-boundary-20261003.md)):
 Two isolated IDO guest profiles produce 4,928/5,328 text bytes against the
 retained decompressor's 3,984-byte region; explicit state measures 2,668 bytes.
