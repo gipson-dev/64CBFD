@@ -37,6 +37,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 | Game | 2,578 / 4,788 (53.84%) | 0 | 2,210 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Game `func_15040CC8` now replaces its zero-return placeholder with the complete
+thirty-record callback dispatcher and post-dispatch cleanup. It remains
+non-matching: the 38-word retail slot routes to a 39-word semantic overflow
+body. Eight new 32-bit tests and all 99 tool tests pass; the full code build
+and project checks pass, and both entire Init sections remain exact. Aggregate
+counts do not change because the placeholder already counted as C. Resume
+ordinary recovery at `func_150448D0`; see
+[Working Note 752](WORKING_NOTES/752-game-record-dispatcher-semantic-recovery-20261002.md).
+
 Game `func_1501CDC0` now replaces its zero-return placeholder with the complete
 row-destination byte fill. All 37 words match; two strict guards normalize
 only independent opening arithmetic/counter scheduling. Six 32-bit behavior
@@ -179,7 +188,9 @@ and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 38-word `func_15040CC8`, currently at 36 real word differences.
+queue with 37-word `func_150448D0`, currently at 36 real word differences.
+`func_15040CC8` has a recovered semantic body but remains in the separate
+non-matching/overflow queue; its retail-slot matcher reports 36 differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and
 `func_150F631C` in its separate near-match cleanup queue.
 

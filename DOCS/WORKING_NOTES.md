@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 752](WORKING_NOTES/752-game-record-dispatcher-semantic-recovery-20261002.md)):
+Game `func_15040CC8` now has its complete thirty-record dispatcher and final
+cleanup behavior instead of a zero-return placeholder. It remains non-matching:
+the existing overflow path preserves the 38-word slot and runs a 39-word body.
+Eight new 32-bit tests and all 99 tool tests pass; the full code build passes
+and both entire Init sections remain exact. Resume at `func_150448D0`.
+
 2026-10-02 ([Note 751](WORKING_NOTES/751-init-bitmap-loop-mask-profile-trials-20261002.md)):
 The final bitmap matrix tests 55 shape/profile combinations without an exact
 `func_10005BE0` match. All eleven source shapes pass 65 positive-count host

@@ -5,7 +5,6 @@
 
 /* Generated placeholder declarations. */
 s32 func_15040A78();
-s32 func_15040CC8();
 /* End generated placeholder declarations. */
 
 void func_15040350(void *arg0, u32 arg1) {
@@ -231,38 +230,22 @@ s32 func_15040A78() {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_6D800/func_15040CC8.s. */
-s32 func_15040CC8() {
-    return 0;
+void func_15040CC8(u8 *arg0) {
+    s32 i;
+    u8 *record;
+
+    /* Retail retains this short empty delay before dispatching the records. */
+    for (i = 0; i < 16; i++) {
+    }
+
+    for (i = -20; i < 10; i++) {
+        record = arg0 + i * 8;
+        D_800844B0[record[0]]((s32)record);
+    }
+    if (D_800848B0 != 0) {
+        func_1500390C(D_800848B0);
+    }
 }
-// NON-MATCHING: todo
-// void func_15040CC8(s32 *arg0) {
-//     s32 temp_a0_2;
-//     s32 temp_s0;
-//     s32 temp_s0_2;
-//     s32 *temp_a0;
-//     s32 phi_s0;
-//     s32 phi_s0_2;
-//
-//     for (phi_s0 = 0; phi_s0 < 16; phi_s0++)
-//     {
-//         // just waste time?
-//     }
-//
-//     phi_s0_2 = -0x14;
-// loop_3:
-//     temp_a0 = arg0[phi_s0_2]; // * 8) + arg0;
-//     D_800844B0[*temp_a0](temp_a0);
-//     temp_s0_2 = phi_s0_2 + 1;
-//     phi_s0_2 = temp_s0_2;
-//     if (temp_s0_2 < 0xA) {
-//         goto loop_3;
-//     }
-//     temp_a0_2 = D_800848B0;
-//     if (temp_a0_2 != 0) {
-//         func_1500390C(temp_a0_2);
-//     }
-// }
 
 void func_15040D60(s32 arg0) {
 }

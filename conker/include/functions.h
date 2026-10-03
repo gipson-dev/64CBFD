@@ -360,6 +360,7 @@ void func_1501C860(void);
 void func_1501C870(void);
 
 void func_15040350(void *arg0, u32 arg1);
+void func_15040CC8(u8 *arg0);
 s32  func_1504082C(u32 *arg0);
 void func_150408CC(struct148 *arg0);
 void func_15042D50(void);

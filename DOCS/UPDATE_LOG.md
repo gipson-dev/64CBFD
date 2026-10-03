@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game record dispatcher semantically recovered
+
+- `func_15040CC8` replaces its zero-return placeholder with thirty direct
+  eight-byte record dispatches and post-dispatch cleanup. The obsolete draft
+  incorrectly treated the argument as an array of loaded record pointers.
+- The default compiler emits 39 words, one beyond the retail slot; the existing
+  overflow mechanism preserves the slot and following address. No guards or
+  compiler override were added, and no byte-exact progress is claimed.
+- Eight new 32-bit tests and all 99 tool tests, project checks, and the full
+  code build pass. Both complete Init sections remain exact. README totals
+  remain unchanged; next ordinary recovery is `func_150448D0`. See
+  [Working Note 752](WORKING_NOTES/752-game-record-dispatcher-semantic-recovery-20261002.md).
+
 ### Init bitmap loop and mask experiments completed
 
 - The final matrix of 55 shape/profile combinations establishes no exact
