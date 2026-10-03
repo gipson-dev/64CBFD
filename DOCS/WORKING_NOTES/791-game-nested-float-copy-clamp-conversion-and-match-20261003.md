@@ -2,6 +2,10 @@
 
 Date: 2026-10-03. Baseline: `6982d0f`.
 
+Follow-up: [Note 800](800-game-actor-step-dispatcher-recovery-and-match-20261003.md)
+recovers and matches `func_1507C22C`. Its updater/predicate remain placeholders;
+the connected system is not yet restored.
+
 ## Result
 
 `func_1507C324` is converted from its retained assembly pragma to semantic C

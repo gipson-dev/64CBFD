@@ -4,6 +4,7 @@
 
 extern f32 D_8009B688;
 extern u8 D_800B85A4[];
+extern s32 func_150229E4(struct127 *actor);
 
 typedef struct {
     u8 pad0[4];
@@ -29,14 +30,30 @@ typedef struct {
     f32 unk960;
 } DimensionCameraA9260;
 
-/* Non-matching placeholders for the text-only asm slice asm/A9260.s. */
+/* The connected updater remains a non-matching placeholder. */
 
 s32 func_1507BDB0() {
     return 0;
 }
 
-s32 func_1507C22C() {
-    return 0;
+void func_1507C22C(s32 mode) {
+    struct127 *actor = D_800CC2D0;
+    struct127 *end = (struct127 *)&D_800D121C;
+
+    do {
+        if ((actor->interaction_state != 0) && !(actor->unk25C & 0x200) &&
+            ((mode == 0) || (actor->unk5 == 4))) {
+            /* Retail tests the first byte, not the word-declared global's value. */
+            if ((D_800C3638 == 0) || (*(u8 *)&D_800C3654 != 0) ||
+                (func_150229E4(actor) != 0)) {
+                if ((actor->unk2D0 != NULL) && (actor->unk2FA != 0)) {
+                    /* Preserve a1's float bits while the updater remains untyped. */
+                    func_1507BDB0(actor->unk2D0, *(s32 *)&actor->unk48, actor, mode);
+                }
+            }
+        }
+        actor++;
+    } while (actor != end);
 }
 
 void func_1507C324(struct127 *destination, struct127 *source) {

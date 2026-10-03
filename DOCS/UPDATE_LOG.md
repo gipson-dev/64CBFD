@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game Note 800 replaces `func_1507C22C`'s placeholder with its 25-record
+  actor-step dispatcher and matches all 62 words using seven independent
+  address-setup scheduling guards. Ten new tests, forty focused tests, and
+  all 532 tool tests pass; final argument-form rerun/build/matcher checks pass.
+  Both Init sections and neighboring matches are preserved. README updates
+  only total/Game aggregate match rows. Connected updater/predicate recovery
+  remains open; no gameplay or full-system acceptance is claimed.
+
 - Init Note 799 tests volatile byte stores and saved-comparison/break loop
   scheduling in six isolated guest trials. None matches the nineteen-word
   bitmap slot; all 237 host shape/case combinations pass, including two alias

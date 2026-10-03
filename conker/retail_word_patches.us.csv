@@ -1,4 +1,11 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_A9260,func_1507C22C,0x28,0x3C120000,0x3C150000,R_MIPS_HI16:D_800D121C,R_MIPS_HI16:D_800C3654,Normalize independent actor-step dispatcher address setup schedule,,,false
+generated_A9260,func_1507C22C,0x2C,0x3C150000,0x3C140000,R_MIPS_HI16:D_800C3654,R_MIPS_HI16:D_800C3638,Normalize independent actor-step dispatcher address setup schedule,,,false
+generated_A9260,func_1507C22C,0x30,0x3C140000,0x3C120000,R_MIPS_HI16:D_800C3638,R_MIPS_HI16:D_800D121C,Normalize independent actor-step dispatcher address setup schedule,,,false
+generated_A9260,func_1507C22C,0x34,0x26100000,0x26520000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800D121C,Normalize independent actor-step dispatcher address setup schedule,,,false
+generated_A9260,func_1507C22C,0x38,0x26520000,0x26940000,R_MIPS_LO16:D_800D121C,R_MIPS_LO16:D_800C3638,Normalize independent actor-step dispatcher address setup schedule,,,false
+generated_A9260,func_1507C22C,0x3C,0x26940000,0x26B50000,R_MIPS_LO16:D_800C3638,R_MIPS_LO16:D_800C3654,Normalize independent actor-step dispatcher address setup schedule,,,false
+generated_A9260,func_1507C22C,0x40,0x26B50000,0x26100000,R_MIPS_LO16:D_800C3654,R_MIPS_LO16:D_800CC2D0,Normalize independent actor-step dispatcher address setup schedule,,,false
 generated_A9260,func_1507C324,0x18,0xC4600008,0xC4640008,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
 generated_A9260,func_1507C324,0x1C,0xC4420018,0xC4460018,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
 generated_A9260,func_1507C324,0x20,0x44812000,0x44814000,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false

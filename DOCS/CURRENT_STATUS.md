@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game actor-step dispatcher: [Note 800](WORKING_NOTES/800-game-actor-step-dispatcher-recovery-and-match-20261003.md)
+replaces `func_1507C22C`'s zero-return placeholder with its 25-record scan and
+conditional update dispatch. All 62 words match with seven independent address-
+setup scheduling guards. Ten new tests, forty focused tests, and all 532 tool
+tests pass; final argument-form rerun/build/matcher and section checks pass.
+Connected updater/predicate placeholders remain open, so this is not gameplay
+acceptance. Next recover `func_1507BDB0` and its connected interfaces.
+Init bitmap ordered-store trials in [Note 799](WORKING_NOTES/799-init-bitmap-volatile-store-scheduling-trial-20261003.md)
+remain non-matching; production Init ownership and both exact sections are preserved.
+
 Init guest-layout follow-up: [Note 798](WORKING_NOTES/798-init-decompressor-guest-layout-trial-and-conversion-boundary-20261003.md)
 compiles the isolated decompressor with IDO O2/g3 and O1: 4,928/5,328 text bytes
 versus the retained 3,984-byte region, with a 2,668-byte explicit state object.
@@ -85,9 +95,9 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,270 / 5,463 (59.86%) | 0 | 2,193 |
+| Total | 3,271 / 5,463 (59.88%) | 0 | 2,192 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,597 / 4,790 (54.22%) | 0 | 2,193 |
+| Game | 2,598 / 4,790 (54.24%) | 0 | 2,192 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
 Game `func_1507C324` converts its retained nineteen-word assembly to semantic

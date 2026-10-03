@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 800](WORKING_NOTES/800-game-actor-step-dispatcher-recovery-and-match-20261003.md)):
+Game `func_1507C22C` gains its semantic 25-record actor scan/update dispatch
+and matches all 62 words with seven independent address-setup scheduling guards.
+Ten new tests, forty focused tests, and all 532 tool tests pass; final argument-
+form rerun/build/matcher checks pass. Neighboring matches, dimension hash, and
+both whole Init sections are preserved. Total exact rises to 3,271/5,463;
+Game to 2,598/4,790. Connected updater/predicate placeholders remain the next work.
+
 2026-10-03 ([Note 799](WORKING_NOTES/799-init-bitmap-volatile-store-scheduling-trial-20261003.md)):
 Three ordered-store bitmap forms under two IDO profiles remain non-matching.
 All 237 host shape/case combinations pass, including count/endpoint alias
