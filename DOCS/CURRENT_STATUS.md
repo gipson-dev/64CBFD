@@ -25,17 +25,27 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,461 / 6,042 (90.38%) | 581 | 1,934,432 / 2,256,728 (85.72%) |
+| Total | 5,455 / 6,042 (90.28%) | 587 | 1,928,720 / 2,256,728 (85.47%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
+| Game | 4,782 / 5,321 (89.87%) | 539 | 1,757,284 / 2,072,880 (84.77%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,255 / 5,461 (59.60%) | 0 | 2,206 |
+| Total | 3,255 / 5,455 (59.67%) | 0 | 2,200 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,582 / 4,788 (53.93%) | 0 | 2,206 |
+| Game | 2,582 / 4,782 (53.99%) | 0 | 2,200 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The handwritten collector/context group now matches all 5,712 retail bytes,
+replacing 23 placeholder entries across six inventory groups. All 167 tool
+tests pass. This restores original code, not six new C conversions.
+See [Note 760](WORKING_NOTES/760-game-collector-context-assembly-restoration-20261003.md).
+
+The resumed Init assessment still finds 47 assembly rows / 12,252 bytes.
+Only the 44-byte MMIO leaf and 76-byte bitmap leaf are bounded C candidates;
+neither has a proven matching replacement. Both entire Init sections remain
+exact. See [Note 761](WORKING_NOTES/761-init-resume-conversion-decision-20261003.md).
 
 Game `func_150450CC` now has its complete highest-height candidate selection,
 vertex copy, optional metadata, and result-flag body instead of a zero-return
@@ -43,9 +53,9 @@ placeholder. It remains non-matching: 143 body words plus one padding nop fill
 the 144-word slot, with 76 differing word positions and no new guards. Eleven
 new tests and all 164 tool tests pass; the full build and project checks pass.
 Previously recovered spans and both entire Init sections remain exact.
-Matching aggregates are unchanged. Its collector `func_150A3A70` remains a
-placeholder and has a handwritten shared-register retail contract; audit that
-whole group before claiming a working query path. See
+Matching aggregates were unchanged by that C recovery. Its then-placeholder
+collector is now restored as original shared-register assembly in Note 760;
+natural gameplay qualification remains separate. See
 [Working Note 759](WORKING_NOTES/759-game-highest-height-query-semantic-recovery-20261002.md).
 
 Game `func_15044CE4` now explicitly returns the overlap result to its record

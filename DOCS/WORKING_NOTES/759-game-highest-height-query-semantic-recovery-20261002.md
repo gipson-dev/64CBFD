@@ -2,6 +2,10 @@
 
 Date: 2026-10-02
 
+Follow-up: [Note 760](760-game-collector-context-assembly-restoration-20261003.md)
+restores the then-placeholder collector/context group to original byte-exact
+assembly. The query itself remains non-matching; gameplay qualification is open.
+
 ## Result
 
 `func_150450CC` replaces its zero-return placeholder with the complete recovered

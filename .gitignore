@@ -20,6 +20,8 @@ conker/asm/nonmatchings/game_77AD0/*
 !conker/asm/nonmatchings/game_981E0/
 conker/asm/nonmatchings/game_981E0/*
 !conker/asm/nonmatchings/game_981E0/func_150721A4.s
+!conker/asm/nonmatchings/generated_D0F20/
+!conker/asm/nonmatchings/generated_D0F20/*.s
 py/
 rodata/
 rzip/

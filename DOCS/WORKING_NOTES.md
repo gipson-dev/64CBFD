@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-03 ([Note 761](WORKING_NOTES/761-init-resume-conversion-decision-20261003.md)):
+Init retains 47 assembly rows / 12,252 bytes. The MMIO and bitmap leaves remain
+bounded candidates without exact replacements; the other 45 require retained
+assembly or whole-contract rewrites. Both complete Init sections remain exact.
+
+2026-10-03 ([Note 760](WORKING_NOTES/760-game-collector-context-assembly-restoration-20261003.md)):
+Restored the original 5,712-byte collector/context assembly across 23 entries
+and six inventory groups. All bytes match retail and all 167 tool tests pass.
+False C coverage is removed; no new C matches or gameplay acceptance claimed.
+
 2026-10-02 ([Note 759](WORKING_NOTES/759-game-highest-height-query-semantic-recovery-20261002.md)):
 Game `func_150450CC` replaces its placeholder with the complete highest-height
 query/result body. It remains non-matching: 143 body words plus one padding

@@ -1,95 +1,27 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/D0F20.s. */
+/* Original shared-register collision collector and context machinery. */
 
-s32 func_150A3A70() {
-    return 0;
-}
-
-s32 func_150A3B20() {
-    return 0;
-}
-
-s32 D_150A3B88() {
-    return 0;
-}
-
-s32 func_150A3BAC() {
-    return 0;
-}
-
-s32 func_150A3CBC() {
-    return 0;
-}
-
-s32 func_150A3F5C() {
-    return 0;
-}
-
-s32 func_150A3FC4() {
-    return 0;
-}
-
-s32 func_150A40A8() {
-    return 0;
-}
-
-s32 func_150A411C() {
-    return 0;
-}
-
-s32 func_150A43E0() {
-    return 0;
-}
-
-s32 D_150A44DC() {
-    return 0;
-}
-
-s32 func_150A44F0() {
-    return 0;
-}
-
-s32 func_150A4670() {
-    return 0;
-}
-
-s32 func_150A47E8() {
-    return 0;
-}
-
-s32 func_150A47FC() {
-    return 0;
-}
-
-s32 func_150A4898() {
-    return 0;
-}
-
-s32 func_150A49F4() {
-    return 0;
-}
-
-s32 D_150A4AF4() {
-    return 0;
-}
-
-s32 func_150A4B04() {
-    return 0;
-}
-
-s32 func_150A4EF4() {
-    return 0;
-}
-
-s32 func_150A4F5C() {
-    return 0;
-}
-
-s32 func_150A4FA0() {
-    return 0;
-}
-
-s32 D_150A5070() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A3A70.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A3B20.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/D_150A3B88.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A3BAC.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A3CBC.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A3F5C.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A3FC4.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A40A8.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A411C.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A43E0.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/D_150A44DC.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A44F0.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A4670.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A47E8.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A47FC.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A4898.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A49F4.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/D_150A4AF4.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A4B04.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A4EF4.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A4F5C.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/func_150A4FA0.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D0F20/D_150A5070.s")

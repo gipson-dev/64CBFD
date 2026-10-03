@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-10-02
 
+### 2026-10-03 resume checkpoint
+
+- The original collector/context assembly replaces 23 placeholders across six
+  inventory groups; all 5,712 bytes match. All 167 tool tests pass. README
+  aggregate coverage now excludes those false C rows.
+  [Note 760](WORKING_NOTES/760-game-collector-context-assembly-restoration-20261003.md)
+- Init still has 47 retained assembly rows and two deferred small-leaf
+  candidates, neither with a proven matching C replacement. Both complete
+  sections match retail. No Init conversion is claimed.
+  [Note 761](WORKING_NOTES/761-init-resume-conversion-decision-20261003.md)
+
 ### Game highest-height query recovered semantically
 
 - `func_150450CC` replaces its zero-return placeholder with candidate selection,
