@@ -2,6 +2,11 @@
 
 Date: 2026-10-01
 
+Follow-up: [Note 789](789-init-bitmap-allocator-provenance-and-rear-bound-correction-20261003.md)
+corrects a rear-allocation C arithmetic error found by production-body host
+tests. The historical 216-row normalization below did not prove C semantics;
+the corrected body and refreshed legacy layout are recorded in that note.
+
 `func_10003C6C` occupies 258 words and 1,032 bytes at
 `0x10003C6C..0x10004074`. Its previous C body returned zero even though the
 retail routine is the core Init heap allocator used by `allocate_memory` and

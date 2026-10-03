@@ -5279,222 +5279,237 @@ init_B1B0,func_1000BF60,0x3C8,0x8FA70054,0x8FA70050,-,-,Normalize packed audio s
 init_B1B0,func_1000BF60,0x3CC,0x8FA90060,0x8FAD0060,-,-,Normalize packed audio state updater compiler allocation and layout,,,false
 init_B1B0,func_1000BF60,0x3D0,0x8FAA0058,0x8FAF0054,-,-,Normalize packed audio state updater compiler allocation and layout,,,false
 init_B1B0,func_1000BF60,0x3D4,0x012A1025,0x01AF1025,-,-,Normalize packed audio state updater compiler allocation and layout,,,false
-init_3C40,func_10003C6C,0x000,0x27BDFF60,0x27BDFF90,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x008,0x8FB000B0,0x00808025,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x010,0xAFA500A4,0xAFA50074,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x014,0xAFA700AC,0xAFA7007C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x018,0x27A30094,0x27A30038,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x01C,0x27A80088,0x27A9002C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x040,0x0080F825,0x24040001,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x054,0xAD010000,0xAD210000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x05C,0xAD190004,0xAD390004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x064,0xA5010008,0xA5210008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x068,0x8FAE00A4,0x8FAE0074,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x070,0xAC240000,0xAC300000,R_MIPS_LO16:D_800380C0,R_MIPS_LO16:D_800380C0,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x07C,0x8FAF00AC,0x8FAF007C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x088,0x3C010000,0x8FB80080,R_MIPS_HI16:D_800380CC,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x08C,0xAC2F0000,0x3C010000,R_MIPS_LO16:D_800380CC,R_MIPS_HI16:D_800380CC,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x090,0x3C010000,0xAC2F0000,R_MIPS_HI16:D_800380D0,R_MIPS_LO16:D_800380CC,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x094,0xAC300000,0x3C010000,R_MIPS_LO16:D_800380D0,R_MIPS_HI16:D_800380D0,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x098,0x24010002,0xAC380000,-,R_MIPS_LO16:D_800380D0,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x09C,0x14C10005,0x24010002,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0A0,0x00627021,0x14C10005,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0A4,0x249F000F,0x00627821,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0A8,0x2401FFF0,0x2610000F,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0AC,0x03E1C024,0x2401FFF0,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0B0,0x0300F825,0x0201C824,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0B4,0x2BE10008,0x03208025,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0B8,0x10200002,0x2A010008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0BC,0x01027821,0x10200002,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0C0,0x241F0008,0x0122C021,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0C4,0x27FF0003,0x24100008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0C8,0x2401FFFC,0x8FB90080,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0CC,0x03E1C824,0x26100003,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0D0,0x24010001,0x2401FFFC,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0D4,0x0320F825,0x02017024,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0D8,0x85CA0000,0x24010001,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0DC,0x16010008,0x01C08025,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0E0,0x85E90000,0x85EB0000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0E4,0x3C180000,0x17210008,R_MIPS_HI16:D_8002AC30,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0E8,0x8F180000,0x87080000,R_MIPS_LO16:D_8002AC30,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0EC,0x2B017800,0x3C0E0000,-,R_MIPS_HI16:D_8002AC30,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0F0,0x50200004,0x8DCE0000,-,R_MIPS_LO16:D_8002AC30,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0F4,0xAFBF0068,0x29C17800,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0F8,0x100000BE,0x50200004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x0FC,0x00001025,0xAFA80044,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x100,0xAFBF0068,0x100000BC,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x104,0x24040001,0x00001025,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x108,0xA7A90076,0xAFA80044,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x110,0xA7AA0074,0xAFAB0048,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x114,0x8FA800AC,0x8FAA007C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x118,0x87A90076,0x8FA80044,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x11C,0x87AA0074,0x8FAB0048,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x120,0x8FBF0068,0x15400006,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x124,0x15000004,0xAFA20028,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x128,0xAFA20078,0x3C050000,-,R_MIPS_HI16:D_800380B8,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x12C,0x3C070000,0x3C1F0000,R_MIPS_HI16:D_800380B8,R_MIPS_HI16:D_800380BC,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x130,0x10000003,0x27FF0000,-,R_MIPS_LO16:D_800380BC,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x134,0x8CE70000,0x10000004,R_MIPS_LO16:D_800380B8,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x138,0x3C070000,0x8CA50000,R_MIPS_HI16:D_800380BC,R_MIPS_LO16:D_800380B8,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x13C,0x8CE70000,0x3C1F0000,R_MIPS_LO16:D_800380BC,R_MIPS_HI16:D_800380BC,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x140,0x14E0000B,0x27FF0000,-,R_MIPS_LO16:D_800380BC,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x144,0x00EA7021,0x8FE50000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x148,0x0C000000,0x14A0000C,R_MIPS_26:osSetIntMask,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x14C,0x8FA40078,0x00ABC821,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x150,0x16000005,0x0C000000,-,R_MIPS_26:osSetIntMask,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x154,0x3C190C00,0x8FA40028,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x158,0x37390042,0x8FAF0080,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x15C,0x3C010000,0x3C180C00,R_MIPS_HI16:D_8003C8E0,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x160,0x0C000000,0x37180042,R_MIPS_26:func_150AD770,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x164,0xAC390000,0x15E00003,R_MIPS_LO16:D_8003C8E0,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x168,0x100000A2,0x3C010000,-,R_MIPS_HI16:D_8003C8E0,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x16C,0x00001025,0x0C000000,-,R_MIPS_26:func_150AD770,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x170,0x8CE20008,0xAC380000,-,R_MIPS_LO16:D_8003C8E0,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x174,0x25CF000C,0x1000009F,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x178,0x01E93024,0x00001025,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x17C,0x00E22021,0x8CA30008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x180,0x2485000C,0x272E000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x184,0x00DF1821,0x01C81024,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x188,0x00A3082B,0x00A32021,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x18C,0x10200007,0x2484000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x190,0x00000000,0x00507821,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x194,0x15000003,0x008F082B,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x198,0x00000000,0x10200007,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x19C,0x1000FFE8,0x00000000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1A0,0x8CE7000C,0x15400003,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1A4,0x1000FFE6,0x00000000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1A8,0x8CE70010,0x1000FFE7,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1AC,0x15000007,0x8CA5000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1B0,0x00BF7023,0x1000FFE5,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1B4,0x0083C023,0x8CA50010,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1B8,0x2719000C,0x15400007,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1BC,0x24D0FFF4,0x00A3C821,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1C0,0x00605825,0x2447FFF4,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1C4,0x10000007,0x00F03021,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1C8,0xAFB90034,0x00A3C021,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1CC,0x25CF000C,0x24C9000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1D0,0x01E91024,0x10000007,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1D4,0x2450FFF4,0x03066823,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1D8,0x8CEB0000,0x03307023,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1DC,0x02071823,0x25CF000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1E0,0xAFA30034,0x01E81024,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1E4,0x8CED0004,0x2447FFF4,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1E8,0x8CE4000C,0x8CA90000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1EC,0x15000039,0x00E56823,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1F0,0x8CEC0010,0x8CAC0004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1F4,0x8FA30034,0x8CA3000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1F8,0x8CE20000,0x15400036,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x1FC,0x020D7823,0x8CA60010,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x200,0x2C610014,0x2DA10014,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x208,0x2478FFF4,0x8CA20000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x20C,0xAD620000,0x25B8FFF4,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x210,0x10400002,0xAD220000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x214,0xAD780008,0x10400002,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x218,0xAC4B0004,0xAD380008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x21C,0x00001825,0xAC490004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x220,0xAD64000C,0x00006825,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x224,0x10800003,0xAD23000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x228,0xAD6C0010,0x10600003,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x22C,0x10000003,0xAD260010,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x230,0xAC8B0010,0x10000002,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x234,0x3C010000,0xAC690010,R_MIPS_HI16:D_800380BC,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x238,0xAC2B0000,0xAFE90000,R_MIPS_LO16:D_800380BC,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x23C,0x11800003,0x10C00003,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x244,0x1000000E,0x1000000D,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x248,0xAD8B000C,0xACC9000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x24C,0x1000000C,0x1000000B,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x250,0xAC2B0000,0xAC290000,R_MIPS_LO16:D_800380B8,R_MIPS_LO16:D_800380B8,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x254,0x10800003,0x10600003,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x258,0x00405825,0x00404825,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x25C,0x10000003,0x10000002,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x260,0xAC8C0010,0xAC660010,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x264,0x3C010000,0xAFE60000,R_MIPS_HI16:D_800380BC,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x268,0xAC2C0000,0x10C00003,R_MIPS_LO16:D_800380BC,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x26C,0x11800003,0x3C010000,-,R_MIPS_HI16:D_800380B8,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x270,0x3C010000,0x10000002,R_MIPS_HI16:D_800380B8,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x274,0x10000002,0xACC3000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x278,0xAD84000C,0xAC230000,-,R_MIPS_LO16:D_800380B8,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x27C,0xAC240000,0x15800004,R_MIPS_LO16:D_800380B8,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x280,0x15A00004,0x3C01FF00,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x284,0x3C01FF00,0x3C010000,-,R_MIPS_HI16:D_800380B4,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x288,0x3C010000,0x10000008,R_MIPS_HI16:D_800380B4,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x28C,0x10000007,0xAC270000,-,R_MIPS_LO16:D_800380B4,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x290,0xAC300000,0x8D990008,R_MIPS_LO16:D_800380B4,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x294,0x8DB90008,0x00EC7823,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x29C,0xADB00000,0x03217024,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2A0,0x03217024,0x01D8C825,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2A4,0x01D8C825,0xAD870000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2A8,0xADB90008,0xAD990008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2AC,0xAE0B0000,0xACE90000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2B0,0xAE0D0004,0xACEC0004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2B4,0x8FAF00A4,0x8FAF0074,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2B8,0x007FC021,0x01B0C021,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2C4,0x1160003F,0x1120003F,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2C8,0xAE190008,0xACF90008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2D0,0xAD700004,0xAD270004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2D4,0x8FAF0034,0x2DA10014,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2D8,0x24C3FFF4,0x14200011,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2DC,0x00A3C023,0x00ABC021,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2E0,0x2DE10014,0x8CAF0000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2E4,0x54200012,0xACE50004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2E8,0xAC6B0000,0x0087C823,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2EC,0xAE070004,0xACEF0000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2F0,0x8CE20000,0x8FAE0074,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2F4,0x01E01825,0x8CE20000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2F8,0x00B07823,0x272FFFF4,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x2FC,0xAE020000,0x000EC600,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x300,0x8FB800A4,0x030F7025,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x304,0x25EEFFF4,0x10400002,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x308,0x246FFFF4,0xACEE0008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x30C,0x0018CE00,0xAC470004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x310,0x032EC025,0x25B9FFF4,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x314,0x10400002,0xACA70000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x318,0xAE180008,0x1000002A,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x31C,0xAC500004,0xACB90008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x320,0xACF00000,0x270F000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x324,0x10000027,0x01E81024,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x328,0xACEF0008,0xAC49FFF4,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x32C,0xAC6B0000,0xAC4CFFF8,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x330,0xAC6D0004,0x8FAE0074,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x334,0x8FB900A4,0x2442FFF4,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x338,0x270FFFF4,0x0082C023,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x33C,0x00608025,0x270FFFF4,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x340,0x00197600,0x000ECE00,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x344,0x01CFC825,0x032F7025,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x348,0x10800003,0x00403825,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x34C,0xAC790008,0x10600003,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x350,0x10000003,0xAC4E0008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x354,0xAC8C0010,0x10000002,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x358,0x3C010000,0xAC660010,R_MIPS_HI16:D_800380BC,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x35C,0xAC2C0000,0xAFE60000,R_MIPS_LO16:D_800380BC,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x360,0x11800003,0x10C00003,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x36C,0xAD84000C,0xACC3000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x370,0xAC240000,0xAC230000,R_MIPS_LO16:D_800380B8,R_MIPS_LO16:D_800380B8,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x374,0x15A00004,0x15800004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x384,0xAC230000,0xAC220000,R_MIPS_LO16:D_800380B4,R_MIPS_LO16:D_800380B4,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x388,0x8DB80008,0x8D980008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x38C,0x006D7823,0x004C7823,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x390,0x25F9FFF4,0x25EEFFF4,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x394,0x03017024,0x0301C824,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x398,0x01D9C025,0x032EC025,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x39C,0xADA30000,0xAD820000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3A0,0xADB80008,0xAD980008,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3A4,0x8C620000,0x8C430000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3A8,0x50400003,0x50600003,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3AC,0x8C6D0004,0x8C430004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3B0,0xAC430004,0xAC620004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3B4,0x8C6D0004,0x8C430004,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3B8,0x11A00002,0x10600002,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3C0,0xADA30000,0xAC620000,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3CC,0x54EF0005,0x54AF0005,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3D0,0xAFB00084,0x8FA40028,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3D8,0xAFB00084,0xAFA7006C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3DC,0x8FB00084,0x8FA7006C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3E0,0xAFB00084,0x8FA40028,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3E8,0x8FA40078,0xAFA7006C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3EC,0x8FA20084,0x8FA7006C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3F0,0x2442000C,0x24E2000C,-,-,Normalize bidirectional heap allocator compiler layout,,,false
-init_3C40,func_10003C6C,0x3FC,0x27BD00A0,0x27BD0070,-,-,Normalize bidirectional heap allocator compiler layout,,,false
+init_3C40,func_10003C6C,0x000,0x27BDFF60,0x27BDFF90,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x008,0x8FB000B0,0x00808025,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x010,0xAFA500A4,0xAFA50074,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x014,0xAFA700AC,0xAFA7007C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x018,0x27A30094,0x27A30038,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x01C,0x27A80088,0x27A9002C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x040,0x0080F825,0x24040001,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x054,0xAD010000,0xAD210000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x05C,0xAD190004,0xAD390004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x064,0xA5010008,0xA5210008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x068,0x8FAE00A4,0x8FAE0074,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x070,0xAC240000,0xAC300000,R_MIPS_LO16:D_800380C0,R_MIPS_LO16:D_800380C0,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x07C,0x8FAF00AC,0x8FAF007C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x088,0x3C010000,0x8FB80080,R_MIPS_HI16:D_800380CC,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x08C,0xAC2F0000,0x3C010000,R_MIPS_LO16:D_800380CC,R_MIPS_HI16:D_800380CC,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x090,0x3C010000,0xAC2F0000,R_MIPS_HI16:D_800380D0,R_MIPS_LO16:D_800380CC,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x094,0xAC300000,0x3C010000,R_MIPS_LO16:D_800380D0,R_MIPS_HI16:D_800380D0,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x098,0x24010002,0xAC380000,-,R_MIPS_LO16:D_800380D0,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x09C,0x14C10005,0x24010002,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0A0,0x00627021,0x14C10005,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0A4,0x249F000F,0x00627821,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0A8,0x2401FFF0,0x2610000F,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0AC,0x03E1C024,0x2401FFF0,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0B0,0x0300F825,0x0201C824,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0B4,0x2BE10008,0x03208025,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0B8,0x10200002,0x2A010008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0BC,0x01027821,0x10200002,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0C0,0x241F0008,0x0122C021,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0C4,0x27FF0003,0x24100008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0C8,0x2401FFFC,0x8FB90080,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0CC,0x03E1C824,0x26100003,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0D0,0x24010001,0x2401FFFC,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0D4,0x0320F825,0x02017024,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0D8,0x85CA0000,0x24010001,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0DC,0x16010008,0x01C08025,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0E0,0x85E90000,0x85EB0000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0E4,0x3C180000,0x17210008,R_MIPS_HI16:D_8002AC30,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0E8,0x8F180000,0x87080000,R_MIPS_LO16:D_8002AC30,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0EC,0x2B017800,0x3C0E0000,-,R_MIPS_HI16:D_8002AC30,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0F0,0x50200004,0x8DCE0000,-,R_MIPS_LO16:D_8002AC30,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0F4,0xAFBF0068,0x29C17800,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0F8,0x100000BD,0x50200004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x0FC,0x00001025,0xAFA80044,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x100,0xAFBF0068,0x100000BC,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x104,0x24040001,0x00001025,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x108,0xA7A90076,0xAFA80044,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x110,0xA7AA0074,0xAFAB0048,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x114,0x8FA800AC,0x8FAA007C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x118,0x87A90076,0x8FA80044,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x11C,0x87AA0074,0x8FAB0048,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x120,0x8FBF0068,0x15400006,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x124,0x15000004,0xAFA20028,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x128,0xAFA20078,0x3C050000,-,R_MIPS_HI16:D_800380B8,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x12C,0x3C070000,0x3C1F0000,R_MIPS_HI16:D_800380B8,R_MIPS_HI16:D_800380BC,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x130,0x10000003,0x27FF0000,-,R_MIPS_LO16:D_800380BC,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x134,0x8CE70000,0x10000004,R_MIPS_LO16:D_800380B8,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x138,0x3C070000,0x8CA50000,R_MIPS_HI16:D_800380BC,R_MIPS_LO16:D_800380B8,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x13C,0x8CE70000,0x3C1F0000,R_MIPS_LO16:D_800380BC,R_MIPS_HI16:D_800380BC,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x140,0x14E0000B,0x27FF0000,-,R_MIPS_LO16:D_800380BC,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x144,0x00EA7021,0x8FE50000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x148,0x0C000000,0x14A0000C,R_MIPS_26:osSetIntMask,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x14C,0x8FA40078,0x00ABC821,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x150,0x16000005,0x0C000000,-,R_MIPS_26:osSetIntMask,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x154,0x3C190C00,0x8FA40028,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x158,0x37390042,0x8FAF0080,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x15C,0x3C010000,0x3C180C00,R_MIPS_HI16:D_8003C8E0,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x160,0x0C000000,0x37180042,R_MIPS_26:func_150AD770,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x164,0xAC390000,0x15E00003,R_MIPS_LO16:D_8003C8E0,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x168,0x100000A1,0x3C010000,-,R_MIPS_HI16:D_8003C8E0,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x16C,0x00001025,0x0C000000,-,R_MIPS_26:func_150AD770,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x170,0x8CE20008,0xAC380000,-,R_MIPS_LO16:D_8003C8E0,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x174,0x25CF000C,0x1000009F,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x178,0x01E93024,0x00001025,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x17C,0x00E22021,0x8CA30008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x180,0x2485000C,0x272E000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x184,0x00DF1821,0x01C81024,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x188,0x00A3082B,0x00A32021,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x18C,0x10200007,0x2484000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x190,0x00000000,0x00507821,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x194,0x15000003,0x008F082B,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x198,0x00000000,0x10200007,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x19C,0x1000FFE8,0x00000000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1A0,0x8CE7000C,0x15400003,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1A4,0x1000FFE6,0x00000000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1A8,0x8CE70010,0x1000FFE7,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1AC,0x15000007,0x8CA5000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1B0,0x00BF7023,0x1000FFE5,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1B4,0x0083C023,0x8CA50010,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1B8,0x2719000C,0x15400007,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1BC,0x24D0FFF4,0x00A3C821,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1C0,0x00605825,0x2447FFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1C4,0x10000006,0x00F03021,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1C8,0xAFB90034,0x00A3C021,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1CC,0x01C91024,0x24C9000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1D0,0x2450FFF4,0x10000007,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1D4,0x8CEB0000,0x03066823,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1D8,0x02071823,0x03307023,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1DC,0xAFA30034,0x25CF000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1E0,0x8CED0004,0x01E81024,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1E4,0x8CE4000C,0x2447FFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1E8,0x15000039,0x8CA90000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1EC,0x8CEC0010,0x00E56823,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1F0,0x8FA30034,0x8CAC0004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1F4,0x8CE20000,0x8CA3000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1F8,0x020D7023,0x15400036,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x1FC,0x2C610014,0x8CA60010,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x200,0x14200013,0x2DA10014,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x204,0x246FFFF4,0x14200013,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x208,0xAD620000,0x8CA20000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x20C,0x10400002,0x25B8FFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x210,0xAD6F0008,0xAD220000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x214,0xAC4B0004,0x10400002,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x218,0x00001825,0xAD380008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x21C,0xAD64000C,0xAC490004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x220,0x10800003,0x00006825,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x224,0xAD6C0010,0xAD23000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x228,0x10000003,0x10600003,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x22C,0xAC8B0010,0xAD260010,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x230,0x3C010000,0x10000002,R_MIPS_HI16:D_800380BC,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x234,0xAC2B0000,0xAC690010,R_MIPS_LO16:D_800380BC,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x238,0x11800003,0xAFE90000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x23C,0x3C010000,0x10C00003,R_MIPS_HI16:D_800380B8,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x240,0x1000000E,0x3C010000,-,R_MIPS_HI16:D_800380B8,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x244,0xAD8B000C,0x1000000D,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x248,0x1000000C,0xACC9000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x24C,0xAC2B0000,0x1000000B,R_MIPS_LO16:D_800380B8,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x250,0x10800003,0xAC290000,-,R_MIPS_LO16:D_800380B8,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x254,0x00405825,0x10600003,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x258,0x10000003,0x00404825,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x25C,0xAC8C0010,0x10000002,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x260,0x3C010000,0xAC660010,R_MIPS_HI16:D_800380BC,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x264,0xAC2C0000,0xAFE60000,R_MIPS_LO16:D_800380BC,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x268,0x11800003,0x10C00003,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x274,0xAD84000C,0xACC3000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x278,0xAC240000,0xAC230000,R_MIPS_LO16:D_800380B8,R_MIPS_LO16:D_800380B8,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x27C,0x15A00004,0x15800004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x288,0x10000007,0x10000008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x28C,0xAC300000,0xAC270000,R_MIPS_LO16:D_800380B4,R_MIPS_LO16:D_800380B4,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x290,0x8DB80008,0x8D990008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x294,0x25CFFFF4,0x00EC7823,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x298,0xADB00000,0x25F8FFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x29C,0x0301C824,0x03217024,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2A0,0x032FC025,0x01D8C825,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2A4,0xADB80008,0xAD870000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2A8,0xAE0B0000,0xAD990008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2AC,0xAE0D0004,0xACE90000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2B0,0x8FAE00A4,0xACEC0004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2B4,0x007F7821,0x8FAF0074,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2B8,0x000ECE00,0x01B0C021,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2BC,0x032FC025,0x000F7600,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2C0,0x1160003F,0x01D8C825,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2C4,0xAE180008,0x1120003F,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2C8,0x1000003D,0xACF90008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2CC,0xAD700004,0x1000003D,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2D0,0x8FAE0034,0xAD270004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2D4,0x24C3FFF4,0x2DA10014,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2D8,0x00A37823,0x14200011,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2DC,0x2DC10014,0x00ABC021,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2E0,0x54200012,0x8CAF0000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2E4,0xAC6B0000,0xACE50004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2E8,0xAE070004,0x0087C823,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2EC,0x8CE20000,0xACEF0000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2F0,0x01C01825,0x8FAE0074,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2F4,0x00B07023,0x8CE20000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2F8,0xAE020000,0x272FFFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x2FC,0x8FAF00A4,0x000EC600,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x300,0x25D9FFF4,0x030F7025,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x304,0x246EFFF4,0x10400002,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x308,0x000FC600,0xACEE0008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x30C,0x03197825,0xAC470004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x310,0x10400002,0x25B9FFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x314,0xAE0F0008,0xACA70000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x318,0xAC500004,0x1000002A,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x31C,0xACF00000,0xACB90008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x320,0x10000027,0x270F000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x324,0xACEE0008,0x01E81024,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x328,0xAC6B0000,0xAC49FFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x32C,0xAC6D0004,0xAC4CFFF8,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x330,0x8FB800A4,0x8FAE0074,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x334,0x25EEFFF4,0x2442FFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x338,0x00608025,0x0082C023,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x33C,0x0018CE00,0x270FFFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x340,0x032EC025,0x000ECE00,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x344,0x10800003,0x032F7025,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x348,0xAC780008,0x00403825,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x34C,0x10000003,0x10600003,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x350,0xAC8C0010,0xAC4E0008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x354,0x3C010000,0x10000002,R_MIPS_HI16:D_800380BC,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x358,0xAC2C0000,0xAC660010,R_MIPS_LO16:D_800380BC,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x35C,0x11800003,0xAFE60000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x360,0x3C010000,0x10C00003,R_MIPS_HI16:D_800380B8,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x364,0x10000002,0x3C010000,-,R_MIPS_HI16:D_800380B8,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x368,0xAD84000C,0x10000002,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x36C,0xAC240000,0xACC3000C,R_MIPS_LO16:D_800380B8,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x370,0x15A00004,0xAC230000,-,R_MIPS_LO16:D_800380B8,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x374,0x3C01FF00,0x15800004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x378,0x3C010000,0x3C01FF00,R_MIPS_HI16:D_800380B4,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x37C,0x10000008,0x3C010000,-,R_MIPS_HI16:D_800380B4,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x380,0xAC230000,0x10000008,R_MIPS_LO16:D_800380B4,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x384,0x8DAF0008,0xAC220000,-,R_MIPS_LO16:D_800380B4,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x388,0x006D7023,0x8D980008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x38C,0x25D8FFF4,0x004C7823,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x390,0x01E1C824,0x25EEFFF4,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x394,0x03387825,0x0301C824,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x398,0xADA30000,0x032EC025,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x39C,0xADAF0008,0xAD820000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3A0,0x8C620000,0xAD980008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3A4,0x50400003,0x8C430000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3A8,0x8C6D0004,0x50600003,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3AC,0xAC430004,0x8C430004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3B0,0x8C6D0004,0xAC620004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3B4,0x11A00002,0x8C430004,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3B8,0x00000000,0x10600002,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3BC,0xADA30000,0x00000000,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3C0,0x3C0E0000,0xAC620000,R_MIPS_HI16:D_800380B0,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3C4,0x8DCE0000,0x3C0F0000,R_MIPS_LO16:D_800380B0,R_MIPS_HI16:D_800380B0,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3C8,0x54EE0005,0x8DEF0000,-,R_MIPS_LO16:D_800380B0,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3CC,0xAFB00084,0x54AF0005,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3D0,0x0C000000,0x8FA40028,R_MIPS_26:func_1000440C,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3D4,0xAFB00084,0x0C000000,-,R_MIPS_26:func_1000440C,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3D8,0x8FB00084,0xAFA7006C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3DC,0xAFB00084,0x8FA7006C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3E0,0x0C000000,0x8FA40028,R_MIPS_26:osSetIntMask,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3E4,0x8FA40078,0x0C000000,-,R_MIPS_26:osSetIntMask,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3E8,0x8FA20084,0xAFA7006C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3EC,0x2442000C,0x8FA7006C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3F0,0x8FBF001C,0x24E2000C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3F4,0x8FB00018,0x8FBF001C,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3F8,0x27BD00A0,0x8FB00018,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x3FC,0x03E00008,0x27BD0070,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
+init_3C40,func_10003C6C,0x400,0x00000000,0x03E00008,-,-,Retain bidirectional allocator legacy layout after rear-bound semantic correction,,,false
 init_8F90,func_10008F90,0x058,0x3C090000,0x3C080000,R_MIPS_HI16:func_10009B4C,R_MIPS_HI16:func_10009B4C,Normalize audio runtime bootstrap compiler allocation and layout,,,false
 init_8F90,func_10008F90,0x068,0x25290000,0x25080000,R_MIPS_LO16:func_10009B4C,R_MIPS_LO16:func_10009B4C,Normalize audio runtime bootstrap compiler allocation and layout,,,false
 init_8F90,func_10008F90,0x07C,0xAE490020,0xAE480020,-,-,Normalize audio runtime bootstrap compiler allocation and layout,,,false

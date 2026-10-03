@@ -97,7 +97,7 @@ search:
         split = (struct54 *)(splitEnd + 0xC);
         remainderSize = ((s32)block + blockSize) - splitEnd;
     } else {
-        alignedAddress = ((blockEnd - roundedSize + 0xC) & savedAlignmentMask);
+        alignedAddress = ((blockEnd - roundedSize) & savedAlignmentMask);
         allocated = (struct54 *)(alignedAddress - 0xC);
         split = block->unk0;
         remainderSize = (s32)allocated - (s32)block;

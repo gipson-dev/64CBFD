@@ -2,6 +2,10 @@
 
 Date: 2026-10-03.
 
+Follow-up: [Note 789](789-init-bitmap-allocator-provenance-and-rear-bound-correction-20261003.md)
+establishes conditional initialized-heap separation, adds production-C allocation
+tests, and corrects a rear-bound arithmetic discrepancy in the allocator C.
+
 ## Result
 
 The remaining bitmap leaf `func_10005BE0` is still retained assembly, not a

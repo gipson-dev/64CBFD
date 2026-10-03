@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-03 ([Note 789](WORKING_NOTES/789-init-bitmap-allocator-provenance-and-rear-bound-correction-20261003.md)):
+Init bitmap heap-provenance investigation finds and corrects a duplicate header
+addition in allocator `func_10003C6C`'s rear C path. Six production-body tests
+cover initialized ownership, setup counts, rounding, mixed directions, all
+alignment classes, and failure. Refreshed legacy layout has 231 guards and
+one trailing nop; independent allocator/full Init sections remain retail-exact.
+All twenty focused Init tests, all 445 tool tests, full rebuild/matcher, and
+earlier Game regressions pass. No new conversion,
+direct compiler match, or README aggregate change is claimed.
+
 2026-10-03 ([Note 788](WORKING_NOTES/788-init-bitmap-retail-caller-domain-and-edge-contract-20261003.md)):
 Init bitmap caller audit establishes positive counts 107..362 for the only
 direct retail resize call. Eight instruction-word-driven tests protect the

@@ -37,6 +37,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,596 / 4,789 (54.21%) | 0 | 2,193 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Init allocator `func_10003C6C` now corrects a duplicate twelve-byte header
+addition in its rear-allocation C path, found by production-body host tests.
+Six allocator tests establish conditional valid-heap separation from bitmap
+configuration storage; all alignment classes and both directions are covered.
+All twenty focused Init tests and all 445 tool tests pass.
+The existing guarded retail layout is refreshed to 231 rows for the corrected
+257-word C body and trailing nop. Full rebuild/matcher, independent allocator
+and complete Init-section comparisons, and Game regressions pass. This is a
+semantic correction, not an assembly-to-C conversion or direct compiler match;
+Init/README aggregates are unchanged. See
+[Note 789](WORKING_NOTES/789-init-bitmap-allocator-provenance-and-rear-bound-correction-20261003.md).
+
 Init bitmap `func_10005BE0` now has eight instruction-word-driven contract tests,
 including invalid-count and alias timing. The only direct retail resize call
 has statically positive counts 107..362; indirect/external calls and allocator

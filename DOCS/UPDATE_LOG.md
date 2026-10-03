@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init allocator `func_10003C6C` corrects a duplicate header addition in its
+  rear C allocation path. Six production-body host tests cover bitmap setup
+  counts, heap ownership/bounds, all alignment classes, both directions, and
+  exhaustion. The legacy guarded layout is refreshed; the allocator slot and
+  both full Init sections independently remain retail-exact. Full rebuild and
+  matcher, twenty focused Init tests, and all 445 tool tests pass; aggregate
+  tables/README unchanged. This is a semantic fix,
+  not a new assembly-to-C conversion or direct compiler match.
+  [Note 789](WORKING_NOTES/789-init-bitmap-allocator-provenance-and-rear-bound-correction-20261003.md)
+
 - Init bitmap contract audit adds eight instruction-word-driven tests and
   establishes positive inputs 107..362 for the only direct retail resize call.
   Fourteen focused Init tests, all 439 tool tests, and project tool checks pass.
