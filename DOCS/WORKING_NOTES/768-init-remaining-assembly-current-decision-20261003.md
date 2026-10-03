@@ -55,6 +55,32 @@ Prior compiler results are historical evidence, not new trials in this audit:
 [Note 751](751-init-bitmap-loop-mask-profile-trials-20261002.md), and
 [Note 762](762-init-mmio-partial-volatility-trials-20261003.md).
 
+## Post-Pause Reverification
+
+The subsequent resume again inspects both candidate assembly bodies and the
+current generated Init inventory. It still contains 492 C rows and 47 assembly
+rows; no new independent ordinary-C target is established. The pending full
+build completed successfully, reporting Init 492 / 492 byte-exact, zero address
+drift, and zero different C rows. Independent extraction of both complete Init
+sections matches retail with the section lengths and hashes below. All three
+`tools.tests.test_init_mmio_assembly` tests pass.
+
+The unfinished Game `func_150461D0` source edit is retained separately. Its
+successful build is not an Init conversion, and this reassessment does not
+claim its behavioral acceptance or bank it as a finished recovery.
+
+For another bounded Init investigation, prefer `func_10005BE0` only when a
+new loop/dataflow hypothesis can explain the original inclusive-store loop
+and branch-delay decrement without broad word replacement. Existing trials
+already cover postincrement, explicit back edges, one-past-end comparison,
+initial-store loops, integer pointer comparison, both mask expressions, and
+no-unroll profiles. `func_100038E0` remains secondary until new evidence explains
+the retained MMIO address and two independent `0x4040` materializations.
+Neither candidate is currently approved as a proven matching C replacement.
+
+No new compiler matrix, Init source edit, word guard, guest execution,
+host-port build, or gameplay qualification was performed during this resume.
+
 ## Fresh Verification
 
 The live MMIO and bitmap assembly were inspected again. The linked artifact
