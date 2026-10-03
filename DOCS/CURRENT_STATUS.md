@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init stream fitting: [Note 849](WORKING_NOTES/849-init-stream-masked-dispatch-and-buffered-byte-rewind-fitting-20261003.md)
+combines opt-in masked dispatch and buffered-byte rewind. Best linked O2 is
+4,832, leaving 848 over retail; all six shapes shrink 16 with unchanged stack
+bounds. All 432 bounded contexts, 114 builders and six exact initializers pass:
+17 tests pass, one corpus skip. A zlib-valid constructed stream proves rewind
+executes (11 bits, one byte, three remaining); sampled retail pages did not.
+Continue fitting; changed corpus and ownership/hardware remain open.
+Production, defaults and README totals unchanged.
+
 Init fixed-length pointer fitting: [Note 848](WORKING_NOTES/848-init-fixed-length-pointer-ranges-and-complete-table-qualification-20261003.md)
 retains an opt-in four-range pointer initializer. Best packed O2 linked text
 falls to 4,848, leaving 864 over retail; O1 grows 48 bytes. All 420 bounded

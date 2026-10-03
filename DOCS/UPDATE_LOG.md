@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 849](WORKING_NOTES/849-init-stream-masked-dispatch-and-buffered-byte-rewind-fitting-20261003.md)
+  banks combined stream fitting with a proven active rewind gate. Best linked
+  text is 4,832, still 848 over retail; bounded/initializer checks pass and
+  stack bounds hold. Changed full corpus remains open. No production/default/
+  README aggregate edits; unrelated Game work preserved and excluded.
+
 - Init [Note 848](WORKING_NOTES/848-init-fixed-length-pointer-ranges-and-complete-table-qualification-20261003.md)
   banks smaller O2 fixed initialization with exact ordered-length/full-table
   checks and bounded contexts. Best linked text is 4,848, still 864 over

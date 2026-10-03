@@ -776,11 +776,19 @@ int init_decode_stream(InitDecodeState *s, InitDecodeEntry *fixedWorkspace) {
     do {
         header = take_bits(s, 3);
         s->allocated = 0;
+#ifdef INIT_DECODE_STREAM_MASKED_DISPATCH
+        switch (header & 6) {
+#else
         switch ((header >> 1) & 3) {
+#endif
         case 0:
             status = init_decode_stored(s);
             break;
+#ifdef INIT_DECODE_STREAM_MASKED_DISPATCH
+        case 2: {
+#else
         case 1: {
+#endif
             InitDecodeEntry *workspace = s->workspace;
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
             uint32_t address = s->workspaceAddress;
@@ -795,7 +803,11 @@ int init_decode_stream(InitDecodeState *s, InitDecodeEntry *fixedWorkspace) {
             status = 0;
             break;
         }
+#ifdef INIT_DECODE_STREAM_MASKED_DISPATCH
+        case 4:
+#else
         case 2:
+#endif
             status = init_decode_dynamic(s);
             break;
         default:
@@ -804,10 +816,18 @@ int init_decode_stream(InitDecodeState *s, InitDecodeEntry *fixedWorkspace) {
         }
         if (status) return status;
     } while (!(header & 1));
+#ifdef INIT_DECODE_STREAM_BYTE_REWIND
+    if (s->bits >= 8) {
+        uint32_t unread = (uint32_t)s->bits >> 3;
+        s->bits &= 7;
+        s->input -= unread;
+    }
+#else
     while (s->bits >= 8) {
         s->bits -= 8;
         s->input--;
     }
+#endif
     return 0;
 }
 

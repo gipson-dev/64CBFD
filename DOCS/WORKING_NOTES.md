@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 849](WORKING_NOTES/849-init-stream-masked-dispatch-and-buffered-byte-rewind-fitting-20261003.md)):
+Combined masked dispatch/byte rewind reduces best linked O2 to 4,832,
+848 over retail, with unchanged stack bounds. All 432 bounded contexts,
+114 builders and six exact initializers pass: 17 tests pass, corpus skips.
+Constructed zlib-valid stream proves rewind store executes; inactive retail
+sample gate replaced. Rejected distance/early-error branches removed.
+Production/defaults/totals unchanged; fitting and changed corpus remain open.
+
 2026-10-03 ([Note 848](WORKING_NOTES/848-init-fixed-length-pointer-ranges-and-complete-table-qualification-20261003.md)):
 Opt-in pointer-range fixed initializer reduces best linked O2 to 4,848,
 864 over retail; O1 grows 48. All 420 bounded contexts, 114 direct builders
