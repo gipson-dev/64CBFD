@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 821](WORKING_NOTES/821-init-original-core-call-adapter-and-exception-context-20261003.md)):
+An isolated original a0/a1/a2 adapter executes compiled C inside the retained
+exception wrapper. Sixty CU1-clear context runs pass; six CU1-set probes
+confirm all f1-f11 scratch effects remain different. All 95 focused tests pass.
+Adapter body/linked cost is 212/224 bytes; smallest combined text/descent is
+4,384/3,144. No production ownership or aggregate changes; ABI/storage/fitting
+requirements remain explicit.
+
 2026-10-03 ([Note 820](WORKING_NOTES/820-init-all-retail-pages-through-compiled-guest-core-20261003.md)):
 All 507 retail pages pass six compiled guest cores (3,042 runs and fixed
 initializations). Workspace/input maxima are 3,564/3,057 bytes, within owned

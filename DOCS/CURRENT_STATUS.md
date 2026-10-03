@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init original-call adapter: [Note 821](WORKING_NOTES/821-init-original-core-call-adapter-and-exception-context-20261003.md)
+executes the retained exception wrapper around an isolated compiled-core adapter.
+Sixty CU1-clear vector/retail-page context runs preserve full FPR/GPR state and
+match decoding; six CU1-set probes expose remaining f1-f11 scratch differences.
+All 95 focused checks pass. The adapter adds 224 linked text bytes: smallest
+combined text is 4,384 (400 over retail), with observed/bounded core-call descent
+3,144 bytes. Original storage ownership, CU1-set compatibility and fitting stay
+open. Production Init assembly and README counts unchanged.
+
 Init compiled retail corpus: [Note 820](WORKING_NOTES/820-init-all-retail-pages-through-compiled-guest-core-20261003.md)
 passes all 507 retail pages through six linked IDO core images: 3,042 core
 runs and compiled fixed initializations agree with retail, zlib and pristine

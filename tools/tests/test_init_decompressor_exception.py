@@ -16,47 +16,14 @@ ENTRY = 0x10005E1C
 STOP = 0x1000601C
 
 
-class ExceptionCoreFixture(streams.StreamFixture):
-    """FR=1 architectural-value model, not a pipeline/CP0 emulator."""
-
-    def __init__(self, chunk, status, stale_f0=0xABCDEF0187654321):
-        if not status & SR_FR:
-            raise ValueError("Only FR=1 context is qualified")
-        self.context_enabled = False
-        super().__init__(chunk)
-        self.code.update({pc: word for pc, word in
-                          contract.InitDecompressorContractTests.entries(
-                              "func_10005C2C") if ENTRY <= pc < STOP})
-        self.INPUT, self.OUTPUT, self.WORKSPACE = INPUT, 0x80050000, WORKSPACE
-        self.registers[17] = self.OUTPUT & 0x1FFFFFFF
-        self.registers[29] = 0x80070000
-        self.status = status
-        self.initial_status = status
-        self.status_writes = []
-        self.high = [0xC0010000 + index for index in range(32)]
-        self.fprs = [0xDEAD0000 + index for index in range(32)]
-        self.initial_fprs = [self.fpr_value(index) for index in range(32)]
-        self.initial_registers = self.registers[:]
-        self.memory.update({INPUT + i: byte for i, byte in
-                           enumerate(chunk + b"\0" * 16)})
-        self.memory.update({address: 0xA5 for address in
-                           range(CALLER_SP - 0xA88, CONTEXT_TOP + 4)})
-        self.put(CALLER_SP, stale_f0, 8)
-        self.put(0x800354F8, INPUT, 4)
-        self.reads, self.writes = [], []
-        self.fpr_loads, self.fpr_stores, self.fpr_moves = [], [], []
-        self.stack_low = self.registers[29]
-        self.capture = {0x1000625C, 0x10005F34}
-        self.context_enabled = True
-
+class Fr1ContextTransfers:
+    """Shared architectural transfers for retail and compiled guest models."""
     def fpr_value(self, index):
         high = self.high[index]
         value = self.fprs[index] | (0 if high is None else high << 32)
         return value, 0xFFFFFFFF if high is None else 0xFFFFFFFFFFFFFFFF
 
-    def execute(self, word):
-        if not self.context_enabled:
-            return super().execute(word)
+    def execute_context_transfer(self, word):
         op, rs, rt = word >> 26, (word >> 21) & 31, (word >> 16) & 31
         rd = (word >> 11) & 31
         if op == 16:
@@ -100,6 +67,47 @@ class ExceptionCoreFixture(streams.StreamFixture):
                     self.reads.append((address, 8))
                     self.fpr_loads.append((rt, address))
         else:
+            return False
+        return True
+
+
+class ExceptionCoreFixture(Fr1ContextTransfers, streams.StreamFixture):
+    """FR=1 architectural-value model, not a pipeline/CP0 emulator."""
+
+    def __init__(self, chunk, status, stale_f0=0xABCDEF0187654321):
+        if not status & SR_FR:
+            raise ValueError("Only FR=1 context is qualified")
+        self.context_enabled = False
+        super().__init__(chunk)
+        self.code.update({pc: word for pc, word in
+                          contract.InitDecompressorContractTests.entries(
+                              "func_10005C2C") if ENTRY <= pc < STOP})
+        self.INPUT, self.OUTPUT, self.WORKSPACE = INPUT, 0x80050000, WORKSPACE
+        self.registers[17] = self.OUTPUT & 0x1FFFFFFF
+        self.registers[29] = 0x80070000
+        self.status = status
+        self.initial_status = status
+        self.status_writes = []
+        self.high = [0xC0010000 + index for index in range(32)]
+        self.fprs = [0xDEAD0000 + index for index in range(32)]
+        self.initial_fprs = [self.fpr_value(index) for index in range(32)]
+        self.initial_registers = self.registers[:]
+        self.memory.update({INPUT + i: byte for i, byte in
+                           enumerate(chunk + b"\0" * 16)})
+        self.memory.update({address: 0xA5 for address in
+                           range(CALLER_SP - 0xA88, CONTEXT_TOP + 4)})
+        self.put(CALLER_SP, stale_f0, 8)
+        self.put(0x800354F8, INPUT, 4)
+        self.reads, self.writes = [], []
+        self.fpr_loads, self.fpr_stores, self.fpr_moves = [], [], []
+        self.stack_low = self.registers[29]
+        self.capture = {0x1000625C, 0x10005F34}
+        self.context_enabled = True
+
+    def execute(self, word):
+        if not self.context_enabled:
+            return super().execute(word)
+        if not self.execute_context_transfer(word):
             super().execute(word)
         self.stack_low = min(self.stack_low, self.registers[29])
 

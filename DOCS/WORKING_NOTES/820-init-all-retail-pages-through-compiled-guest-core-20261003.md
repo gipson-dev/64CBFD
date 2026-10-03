@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `efe7861`.
 
+Follow-up: [Note 821](821-init-original-core-call-adapter-and-exception-context-20261003.md)
+prototypes original-call adaptation and qualifies the retained CU1-clear wrapper
+on vectors and representative pages. CU1-set scratch effects, storage ownership
+and fitting remain open; this note's full corpus is direct-core coverage only.
+
 ## Result
 
 The new corpus test freshly compiles and links the same six IDO images used

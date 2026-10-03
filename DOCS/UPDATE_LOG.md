@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 821](WORKING_NOTES/821-init-original-core-call-adapter-and-exception-context-20261003.md)
+  adds an isolated original-call adapter and retained-wrapper execution: 60
+  CU1-clear context runs pass, six CU1-set probes retain an explicit f1-f11
+  compatibility gap. All 95 focused tests pass. Code/stack costs are measured;
+  production ownership, storage requirements and README totals are unchanged.
+
 - Init [Note 820](WORKING_NOTES/820-init-all-retail-pages-through-compiled-guest-core-20261003.md)
   qualifies all 507 retail pages across six compiled core images: 3,042 core
   runs and fixed initializations pass. All 83 focused regressions and 18
