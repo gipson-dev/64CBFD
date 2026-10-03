@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 828](WORKING_NOTES/828-init-shadow-fitting-trials-and-helper-attribution-20261003.md)):
+Five size-only fitting hypotheses fail to reduce the smallest shadow O2 text.
+Temporary cursor edits are removed; restored O2 text and O1 object match the
+starting baseline. The builder ledger includes 78 capture/lookup helper words;
+the actual builder is 346 words, 53 over retail. Combined excess remains 912
+bytes. Next investigate actual builder/control-flow and shared helper costs;
+no new execution qualification, production conversion or README changes.
+
 2026-10-03 ([Note 827](WORKING_NOTES/827-init-full-masked-shadow-corpus-20261003.md)):
 All 507 retail pages pass masked Status 0x2400FF00 with CU1 set on the smallest
 packed/remaining O2/g3 shadow profile, in 709.832 seconds. Text/descent remains

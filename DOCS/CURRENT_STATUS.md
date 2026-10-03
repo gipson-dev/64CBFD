@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init shadow fitting: [Note 828](WORKING_NOTES/828-init-shadow-fitting-trials-and-helper-attribution-20261003.md)
+rejects five size-only cursor/cache hypotheses; none reduces O2 text. All
+temporary source edits are removed and restored compilation reproduces the
+baseline. The builder's 424-word ledger includes 78 helper words; its actual
+body is 346 words (53 over retail), narrowing the next fitting investigation.
+Combined text remains 4,896 bytes; no new execution or production conversion.
+
 Init full masked shadow corpus: [Note 827](WORKING_NOTES/827-init-full-masked-shadow-corpus-20261003.md)
 passes all 507 retail pages with Status 0x2400FF00, CU1 set, and the
 packed/remaining O2/g3 profile in 709.832 seconds. Linked text/descent remains

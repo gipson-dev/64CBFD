@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 828](WORKING_NOTES/828-init-shadow-fitting-trials-and-helper-attribution-20261003.md)
+  records five rejected size-only fitting hypotheses and separates actual
+  builder code from embedded capture/lookup helpers. Temporary edits are
+  removed; fresh restored compilation reproduces baseline text. No production
+  conversion, new execution qualification or README aggregate changes.
+
 - Init [Note 827](WORKING_NOTES/827-init-full-masked-shadow-corpus-20261003.md)
   passes all 507 pages in the explicit masked context, CU1 set, smallest shadow
   profile (709.832 seconds). Text/descent remains 4,896/3,256, neighbor margin
