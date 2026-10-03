@@ -94,3 +94,7 @@ blindly copy the highest-height query's scratch/state or comparison direction.
 Keep the remaining Init gates in
 [Note 768](768-init-remaining-assembly-current-decision-20261003.md).
 The sibling host port and frozen Release artifacts remain untouched.
+
+Follow-up: [Note 771](771-game-entity-lowest-height-query-semantic-recovery-20261003.md)
+recovers the then-pending lowest-height query in semantic C. It remains
+non-matching; the original assembly reference is preserved for matching work.

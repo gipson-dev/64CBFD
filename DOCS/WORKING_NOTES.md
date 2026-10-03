@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 771](WORKING_NOTES/771-game-entity-lowest-height-query-semantic-recovery-20261003.md)):
+Game `func_15045880` converts retained assembly ownership to complete semantic
+C. It remains non-matching: 150 body words plus three padding nops in the
+153-word slot, 88 differences, no new guards. Fifteen new tests and all 256
+tool tests pass; full build/project checks pass. Both entire Init sections
+and earlier recovered spans remain exact. Next: audit `func_15045AE4`.
+
 2026-10-03 ([Note 770](WORKING_NOTES/770-game-opposite-cached-height-query-and-dispatch-direct-match-20261003.md)):
 Game `func_150470B0` and dispatch `func_15046C00` convert from retained
 assembly to direct 43/32-word C matches. The typed three-argument caller

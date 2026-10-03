@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15045880` is now the complete semantic entity lowest-height
+  query instead of retained assembly ownership. It remains non-matching:
+  150 body words plus three padding nops, 88 word differences, no new guards.
+  Fifteen new tests cover all flags, metadata, helper reloads, and alias-sensitive
+  entity-index/base reloads. All 256 tool tests pass; full build and project
+  checks pass. README aggregates add one converted row, not an exact match.
+  [Note 771](WORKING_NOTES/771-game-entity-lowest-height-query-semantic-recovery-20261003.md)
+
 - Game `func_150470B0` and `func_15046C00` convert from retained assembly
   to direct semantic C matches: 172 and 128 bytes. Eleven new tests cover
   both dispatch caller shapes and the reversed cached-height bounds. All 241

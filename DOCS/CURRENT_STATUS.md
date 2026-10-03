@@ -25,17 +25,29 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,458 / 6,042 (90.33%) | 584 | 1,928,772 / 2,256,728 (85.47%) |
+| Total | 5,459 / 6,042 (90.35%) | 583 | 1,929,384 / 2,256,728 (85.49%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,785 / 5,321 (89.93%) | 536 | 1,757,336 / 2,072,880 (84.78%) |
+| Game | 4,786 / 5,321 (89.95%) | 535 | 1,757,948 / 2,072,880 (84.81%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,262 / 5,458 (59.77%) | 0 | 2,196 |
+| Total | 3,262 / 5,459 (59.75%) | 0 | 2,197 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,589 / 4,785 (54.11%) | 0 | 2,196 |
+| Game | 2,589 / 4,786 (54.10%) | 0 | 2,197 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15045880` now has its complete entity-indexed lowest-height query
+in semantic C, replacing retained assembly ownership. Its 153-word slot is
+150 body words plus three padding nops, with 88 word differences and no new
+guards. Fifteen new tests cover metadata, helper reloads, and result/candidate/
+entity-table aliasing; all 256 tool tests, full code build, and project checks
+pass. Earlier recovered spans and both entire Init sections remain exact.
+This adds a converted row, not an exact C match. Next recover the adjacent
+`func_15045AE4` placeholder after auditing its distinct selection/sentinel
+contract; lowest/highest entity-query matching and gameplay qualification
+remain open. See
+[Note 771](WORKING_NOTES/771-game-entity-lowest-height-query-semantic-recovery-20261003.md).
 
 Game `func_150470B0` and its four-argument dispatch `func_15046C00` now
 match all 43 and 32 words directly from semantic C. Eleven new integrated
@@ -43,8 +55,8 @@ tests cover the opposite-bound cached query and both caller shapes; all 241
 tool tests, full code build, and project checks pass. Correcting the existing
 three-argument `func_1504530C` signature preserves its exact 120 bytes.
 No new guards or profile changes; retained fallback assembly remains untouched.
-Earlier recovered spans and both complete Init sections remain exact. Next
-recover retained entity-indexed lowest-height query `func_15045880`; the
+Earlier recovered spans and both complete Init sections remain exact. Its
+then-pending entity lowest-height query is recovered semantically in Note 771; the
 highest-height entity query's 72 differences and gameplay acceptance are open.
 See [Note 770](WORKING_NOTES/770-game-opposite-cached-height-query-and-dispatch-direct-match-20261003.md).
 

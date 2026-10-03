@@ -72,8 +72,10 @@ extern f32 D_800DBE68, D_800DBE6C, D_800DBE70, D_800DBE74;
 extern f32 D_80098D44;
 extern f32 D_80098D48;
 extern f32 D_80098D4C;
+extern f32 D_80098D50;
 extern f32 D_80098D5C;
 extern u8 D_800D3830[];
+extern u8 D_800D37E0[];
 extern HeightEntity71820 *D_800DBEF4;
 s32 func_150A3A70(s32 x, s32 z);
 s32 func_150A4FA0(s32 x, s32 z);
@@ -494,7 +496,66 @@ s32 func_15045800(f32 *position, u16 selector, f32 threshold, HeightResult71820 
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15045880.s")
+s32 func_15045880(f32 *position, f32 threshold, s32 *input, HeightResult71820 *result) {
+    s32 selected;
+    s32 count;
+    s32 i;
+    f32 height;
+    HeightCandidate71820 *candidate;
+    QueryTriangle71820 *triangle;
+    QueryVertex71820 *vertex;
+    QueryVertex71820 **vertexPointers;
+    s32 vertexOffset;
+    HeightEntity71820 *entity;
+    u32 *metadataTable;
+    s32 metadataIndex;
+
+    result->height = D_80098D50;
+    selected = -1;
+    func_150A44F0(input[0], D_800D37E0, 0);
+    count = func_150A43E0((s32)position[0], (s32)position[2], input[0], D_800D37E0);
+    for (i = 0; i < count; i++) {
+        height = D_800D3300[i].fixedHeight * (1.0f / 256.0f);
+        if (position[1] <= height && height < result->height) {
+            selected = i;
+            result->height = height;
+        }
+    }
+    if (selected != -1) {
+        candidate = &D_800D3300[selected];
+        triangle = candidate->triangle;
+        vertexPointers = triangle->vertices;
+        vertexOffset = candidate->vertexIndex;
+        for (i = 0; i != 3; i++) {
+            vertex = (QueryVertex71820 *)((u8 *)vertexPointers[i] + vertexOffset);
+            result->vertices[i * 3] = vertex->x;
+            result->vertices[i * 3 + 1] = vertex->y;
+            result->vertices[i * 3 + 2] = vertex->z;
+        }
+        entity = &D_800DBEF4[candidate->padC];
+        result->value = (s32)entity;
+        metadataTable = entity->metadataTable;
+        if (metadataTable != NULL) {
+            metadataIndex = (s32)((u32)(triangle - D_800DBE3C) - entity->firstTriangle);
+            result->metadata = metadataTable[metadataIndex];
+        } else {
+            result->metadata = entity->metadata;
+        }
+        result->flags |= 6;
+        /* Retail reloads both entity operands after the result publications. */
+        if ((D_800DBEF4[candidate->padC].flags & 0x80) == 0x80) {
+            result->flags |= 1;
+        }
+        result->state = 2;
+        if (result->height <= threshold) {
+            result->flags |= 2;
+            return 1;
+        }
+        return 0;
+    }
+    result->flags &= ~2;
+    return 0;
+}
 
 s32 func_15045AE4() {
     return 0;
