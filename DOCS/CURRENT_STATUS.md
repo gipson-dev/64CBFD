@@ -37,6 +37,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,594 / 4,789 (54.17%) | 0 | 2,195 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Game `func_1504715C` now replaces its zero-return placeholder with the complete
+void actor-to-height-result builder. It copies or synthesizes the nine vertex
+coordinates, preserves result padding, and publishes metadata/state/entity
+ownership with retail's alias-sensitive read order. It remains non-matching:
+85 body words plus four padding nops, 76 differences, no new guards/profiles.
+Twelve focused tests and all 354 tool tests pass; full build/project checks
+pass. Eighteen exact neighbors, five query hashes, restored spans, and both
+Init sections remain unchanged. Aggregate tables and README are unchanged.
+Next recover retained descriptor-to-height-result builder `func_150472C0`;
+this actor builder's byte matching remains open. See
+[Note 779](WORKING_NOTES/779-game-actor-height-result-builder-semantic-recovery-20261003.md).
+
 Game `func_15046D00` now replaces its zero-return placeholder with the complete
 outer highest-height combiner. All 161 words match directly without new guards
 or profiles. Ties/unordered comparisons select the context-3 non-entity result;
@@ -44,8 +56,8 @@ both failure paths clear only flag bit 2. Twelve focused tests and all 342
 tool tests pass; full build/project checks pass. Seventeen exact neighbors,
 five non-matching query hashes, restored spans, and both complete Init sections
 remain unchanged. Converted totals are fixed; one different C row becomes
-exact. Next recover actor-to-height-result placeholder `func_1504715C`, first
-establishing its source layout and caller/return contract. See
+exact. Its then-pending actor/result builder `func_1504715C` is now recovered
+in Note 779 and remains non-matching. See
 [Note 778](WORKING_NOTES/778-game-outer-highest-combiner-direct-match-20261003.md).
 
 Game `func_1504697C` now replaces its zero-return placeholder with the complete

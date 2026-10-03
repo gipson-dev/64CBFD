@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_1504715C` replaces its zero-return placeholder with the complete
+  void actor-to-height-result builder. It remains non-matching: 85 body words
+  plus four padding nops in the 89-word slot, 76 differences, no new guards/
+  profiles. Twelve focused tests and all 354 tool tests pass; full build/
+  project checks pass. Prior recovered spans and both Init sections remain
+  unchanged. Aggregate tables and README are unchanged, since the placeholder
+  was already counted as C and the recovered routine is not byte-exact.
+  [Note 779](WORKING_NOTES/779-game-actor-height-result-builder-semantic-recovery-20261003.md)
+
 - Game `func_15046D00` replaces its zero-return placeholder with the complete
   outer highest-height combiner. All 161 words match directly without new
   guards/profiles. Twelve focused tests and all 342 tool tests pass; full

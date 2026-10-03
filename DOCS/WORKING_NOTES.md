@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 779](WORKING_NOTES/779-game-actor-height-result-builder-semantic-recovery-20261003.md)):
+Game `func_1504715C` replaces its zero-return placeholder with the complete
+void actor/result builder. It remains non-matching: 85 body words plus four
+padding nops, 76 differences, no new guards/profiles. Twelve focused tests
+and all 354 tool tests pass; full build/project checks pass. Prior neighbors/
+hashes/spans and both Init sections remain unchanged; aggregates are unchanged.
+Next: retained descriptor/result builder `func_150472C0`.
+
 2026-10-03 ([Note 778](WORKING_NOTES/778-game-outer-highest-combiner-direct-match-20261003.md)):
 Game `func_15046D00` replaces its zero-return placeholder with the complete
 outer highest-height combiner. All 161 words match directly with no new guards

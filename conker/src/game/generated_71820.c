@@ -54,6 +54,26 @@ typedef struct HeightResult71820 {
     s32 value;
 } HeightResult71820;
 
+typedef struct HeightCoordinates71820 {
+    s16 values[9];
+} HeightCoordinates71820;
+
+typedef struct HeightActor71820 {
+    u8 pad0[0x14];
+    f32 x;
+    u8 pad18[4];
+    f32 z;
+    u8 pad20[0xD8];
+    u32 flags;
+    u8 padFC[0x84];
+    f32 height;
+    u32 metadata;
+    u8 pad188[4];
+    HeightCoordinates71820 vertices;
+    u8 pad19E[2];
+    u16 entityIndex;
+} HeightActor71820;
+
 typedef struct HeightEntity71820 {
     u8 pad0[0x40];
     u32 metadata;
@@ -1005,8 +1025,45 @@ s32 func_150470B0(f32 *position, f32 threshold, HeightResult71820 *result) {
     return 0;
 }
 
-s32 func_1504715C() {
-    return 0;
+void func_1504715C(HeightResult71820 *result, HeightActor71820 *actor) {
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 index;
+    s32 accepted;
+    u32 metadata;
+
+    result->height = actor->height;
+    if (actor->flags & 0x200000) {
+        x = actor->x;
+        y = actor->height;
+        z = actor->z;
+        result->vertices[0] = x + 1000;
+        result->vertices[3] = x - 1000;
+        result->vertices[2] = z + 1000;
+        result->vertices[6] = x + 1000;
+        result->vertices[8] = z - 1000;
+        result->vertices[1] = y;
+        result->vertices[4] = y;
+        result->vertices[7] = y;
+        result->vertices[5] = z;
+    } else {
+        *(HeightCoordinates71820 *)result->vertices = actor->vertices;
+    }
+    metadata = actor->metadata;
+    result->flags = 6;
+    result->metadata = metadata;
+    index = actor->entityIndex;
+    if (index) {
+        result->state = 2;
+        result->value = (s32)&D_800DBEF4[index - 1];
+        accepted = func_15145C90(index - 1) != 0;
+        result->flags |= accepted;
+    } else {
+        result->state = 1;
+        result->value = 0;
+        result->flags |= 1;
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_150472C0.s")
