@@ -229,6 +229,8 @@ def main():
                         help="track retail scratch FPR snapshots; implies distance-root seeding")
     parser.add_argument("--flat-bits", action="store_true",
                         help="flatten take_bits without changing state-access order")
+    parser.add_argument("--loop-lookup", action="store_true",
+                        help="share the opening and nested table lookup path")
     parser.add_argument("--aligned-entry", action="store_true",
                         help="give the four-byte entry its retail word alignment")
     parser.add_argument("--packed-entry", action="store_true",
@@ -277,6 +279,8 @@ def main():
         suffix += "-abi-fpr-shadow"
     if args.flat_bits:
         suffix += "-flat-bits"
+    if args.loop_lookup:
+        suffix += "-loop-lookup"
     if args.aligned_entry:
         suffix += "-aligned-entry"
     if args.packed_entry:
@@ -327,6 +331,8 @@ def main():
         common.append("-DINIT_DECODE_ABI_FPR_SHADOW")
     if args.flat_bits:
         common.append("-DINIT_DECODE_FLAT_BITS")
+    if args.loop_lookup:
+        common.append("-DINIT_DECODE_LOOP_LOOKUP")
     if args.aligned_entry:
         common.append("-DINIT_DECODE_ALIGNED_ENTRY")
     if args.packed_entry:

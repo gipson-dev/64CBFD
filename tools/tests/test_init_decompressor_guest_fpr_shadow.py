@@ -44,7 +44,8 @@ class InitDecompressorGuestFprShadowTests(unittest.TestCase):
             output = directory / (label + "-shadow")
             result = subprocess.run([sys.executable,
                 str(cls.root / "tools/experiments/compile_init_decompressor.py"),
-                "--output", str(output), *flags, "--abi-fpr-shadow"],
+                "--output", str(output), *flags, "--abi-fpr-shadow",
+                *getattr(cls, "shadow_extra_flags", ())],
                 capture_output=True, text=True, check=True)
             receipts = json.loads(result.stdout)
             if set(receipts) != {"o2g3", "o1"}:

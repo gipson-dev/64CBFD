@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 829](WORKING_NOTES/829-init-shared-lookup-loop-fitting-and-context-qualification-20261003.md)
+  retains an opt-in shared lookup loop: packed O2 saves 16 linked text bytes,
+  with 420 bounded context comparisons and an explicit nested-path gate.
+  Across two runs, 29 tests pass and one corpus skips. Default costs and
+  production remain unchanged; full new-source corpus and fitting stay open.
+
 - Init [Note 828](WORKING_NOTES/828-init-shadow-fitting-trials-and-helper-attribution-20261003.md)
   records five rejected size-only fitting hypotheses and separates actual
   builder code from embedded capture/lookup helpers. Temporary edits are

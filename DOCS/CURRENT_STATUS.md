@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init shared lookup loop: [Note 829](WORKING_NOTES/829-init-shared-lookup-loop-fitting-and-context-qualification-20261003.md)
+adds an opt-in shape with 420 bounded context comparisons across six profiles
+and both CU1 modes. Smallest linked text falls 16 bytes to 4,880 (896 over
+retail); descent/margin remain 3,256/72. The nested-path gate executes. Across
+two runs, 29 tests pass and one corpus test skips. Full changed-source corpus,
+ownership/fault bounds and fitting remain open. Defaults and production unchanged.
+
 Init shadow fitting: [Note 828](WORKING_NOTES/828-init-shadow-fitting-trials-and-helper-attribution-20261003.md)
 rejects five size-only cursor/cache hypotheses; none reduces O2 text. All
 temporary source edits are removed and restored compilation reproduces the

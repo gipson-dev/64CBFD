@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 829](WORKING_NOTES/829-init-shared-lookup-loop-fitting-and-context-qualification-20261003.md)):
+Opt-in shared lookup reduces packed O2 linked text to 4,880 bytes (16 saved,
+896 over retail) and O1 to 6,256 (48 saved). All 420 bounded context comparisons
+pass across six profiles/both CU1 modes; the nested loop is explicitly exercised.
+Defaults retain previous costs. Across two runs, 29 tests pass and one corpus
+skips. Changed-source full corpus, ownership/fault bounds and fitting remain
+open; production and README aggregates unchanged.
+
 2026-10-03 ([Note 828](WORKING_NOTES/828-init-shadow-fitting-trials-and-helper-attribution-20261003.md)):
 Five size-only fitting hypotheses fail to reduce the smallest shadow O2 text.
 Temporary cursor edits are removed; restored O2 text and O1 object match the
