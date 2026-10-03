@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init exception context: [Note 805](WORKING_NOTES/805-init-exception-decoder-fr1-full-width-fpr-context-model-20261003.md)
+adds a connected FR=1 model using the actual wrapper/core words, full-width
+FPR saves/reloads and explicitly unknown MTC1 upper halves. Both CU1 paths and
+malformed streams are covered; the unconditional f0 delay load is preserved.
+This is not hardware acceptance or allocation ownership. Production assembly,
+README aggregates and the remaining C text/stack gates are unchanged.
+
 Init retail page qualification: [Note 804](WORKING_NOTES/804-init-retail-page-dma-and-exception-core-address-qualification-20261003.md)
 checks all 507 original Game pages against pristine decompressed bytes. Maximum
 rounded DMA is 3,072 bytes, leaving 440 bytes before exception workspace.

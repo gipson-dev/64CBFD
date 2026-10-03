@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 805](WORKING_NOTES/805-init-exception-decoder-fr1-full-width-fpr-context-model-20261003.md)):
+The actual exception wrapper and decoder execute in a bounded FR=1 model.
+Full FPR save/reload values, unknown MTC1 upper halves, both CU1 branches,
+the unconditional f0 delay load, successful/malformed streams and low-word
+GPR/Status/SP restoration are covered. Full hardware context and allocation
+ownership remain open; production assembly and aggregate counts unchanged.
+
 2026-10-03 ([Note 804](WORKING_NOTES/804-init-retail-page-dma-and-exception-core-address-qualification-20261003.md)):
 All 507 retail Game pages decode and match pristine bytes. Maximum rounded DMA
 is 3,072 bytes, 440 bytes short of exception workspace. Three selected retained

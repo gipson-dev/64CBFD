@@ -124,10 +124,12 @@ class BuilderFixture:
         r[:] = [value & 0xFFFFFFFF for value in r]
         r[0] = 0
 
-    def run(self, budget=200000, entry=0x1000696C):
+    def run(self, budget=200000, entry=0x1000696C, stop_pc=None):
         # Shared low-word model for the builder and connected decoder only.
         pc = entry
         for _ in range(budget):
+            if pc == stop_pc:
+                return self.registers[2]
             if pc in self.capture:
                 self.snapshots[pc] = (self.registers[:], self.fprs[:])
             self.visits[pc] = self.visits.get(pc, 0) + 1

@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 805](WORKING_NOTES/805-init-exception-decoder-fr1-full-width-fpr-context-model-20261003.md)
+  adds a connected full-width FPR model restricted to FR=1. It preserves both
+  original CU1 paths and the unconditional f0 delay load, explicitly marks
+  MTC1 upper halves unknown, and covers success/failure context restoration.
+  No production conversion, README aggregate change or hardware acceptance.
+
 - Init [Note 804](WORKING_NOTES/804-init-retail-page-dma-and-exception-core-address-qualification-20261003.md)
   adds original-ROM-identity-checked qualification of all 507 retail pages,
   maximum DMA separation, and three retained-core calls at exception addresses.
