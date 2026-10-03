@@ -80,6 +80,7 @@ s32 func_150A4FA0(s32 x, s32 z);
 void func_150A44F0(s32 value, void *scratch, s32 mode);
 s32 func_150A43E0(s32 x, s32 z, s32 value, void *scratch);
 s32 func_150A6500(s32 x, s32 z, s32 *secondaryCount, s32 selector);
+s32 func_150A3FC4(f32 x, f32 z, QueryTriangle71820 *triangle, s16 *vertices, f32 *height);
 s32 func_15045F8C(f32 *position, f32 threshold, s32 *input, HeightResult71820 *result);
 
 extern PositionScaleRecord71820 *D_800CBE00;
@@ -99,9 +100,9 @@ void func_15047700(f32 mf[4][4], LookAt *l, f32 xEye, f32 yEye, f32 zEye,
                    f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
 void func_1505D1C4(f32 arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4,
                    u16 arg5, s32 arg6, s32 arg7);
-s32 func_1504697C(s32 arg0, u16 arg1, s32 arg2, s32 arg3);
-s32 func_15046D00(s32 arg0, u16 arg1, s32 arg2, s32 arg3);
-s32 func_15047004(s32 arg0, s32 arg1, s32 arg2);
+s32 func_1504697C(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result);
+s32 func_15046D00(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result);
+s32 func_15047004(f32 *position, f32 threshold, HeightResult71820 *result);
 PositionScaleRecord71820 *func_15044964(s32 size, s32 type, s32 arg2, s32 arg3,
                                        s32 arg4, s32 x, s32 y, s32 z);
 
@@ -479,8 +480,16 @@ s32 func_15045780(f32 *position, u16 selector, f32 threshold, HeightResult71820 
     return func_15045F8C(position, threshold, counts, result);
 }
 
-/* Note 313: original ROM implementation, retained as assembly until C conversion. */
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15045800.s")
+s32 func_15045800(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result) {
+    switch (func_15047004(position, threshold, result)) {
+        case 0:
+            return func_15045780(position, selector, threshold, result);
+        case 1:
+            return 0;
+        case 2:
+            return 1;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15045880.s")
 
@@ -559,13 +568,13 @@ s32 func_15046460() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_150466F8.s")
 
-s32 func_1504697C(s32 arg0, u16 arg1, s32 arg2, s32 arg3) {
+s32 func_1504697C(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result) {
     return 0;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15046C00.s")
 
-s32 func_15046C80(s32 arg0, u16 arg1, s32 arg2, s32 arg3) {
+s32 func_15046C80(f32 *arg0, u16 arg1, f32 arg2, HeightResult71820 *arg3) {
     switch (func_15047004(arg0, arg2, arg3)) {
         case 0:
             return func_1504697C(arg0, arg1, arg2, arg3);
@@ -576,11 +585,11 @@ s32 func_15046C80(s32 arg0, u16 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-s32 func_15046D00(s32 arg0, u16 arg1, s32 arg2, s32 arg3) {
+s32 func_15046D00(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result) {
     return 0;
 }
 
-s32 func_15046F84(s32 arg0, u16 arg1, s32 arg2, s32 arg3) {
+s32 func_15046F84(f32 *arg0, u16 arg1, f32 arg2, HeightResult71820 *arg3) {
     switch (func_15047004(arg0, arg2, arg3)) {
         case 0:
             return func_15046D00(arg0, arg1, arg2, arg3);
@@ -591,7 +600,18 @@ s32 func_15046F84(s32 arg0, u16 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-s32 func_15047004(s32 arg0, s32 arg1, s32 arg2) {
+s32 func_15047004(f32 *position, f32 threshold, HeightResult71820 *result) {
+    f32 height;
+
+    if ((result->flags & 4) &&
+        func_150A3FC4(position[0], position[2], NULL, result->vertices, &height)) {
+        if (threshold <= height && height <= position[1]) {
+            result->height = height;
+            result->flags |= 2;
+            return 2;
+        }
+        return 1;
+    }
     return 0;
 }
 

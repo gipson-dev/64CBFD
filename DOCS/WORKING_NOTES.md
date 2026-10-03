@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 769](WORKING_NOTES/769-game-cached-height-query-and-dispatch-direct-match-20261003.md)):
+Game `func_15045800` and `func_15047004` now match all 32 and 43 words
+directly from semantic C, without guards or profile changes. Twelve new
+integrated tests and all 230 tool tests pass; full build and project checks
+pass. The two sibling dispatch wrappers and both complete Init sections
+remain exact. Next: opposite-bound cached query `func_150470B0`.
+
 2026-10-03 ([Note 768](WORKING_NOTES/768-init-remaining-assembly-current-decision-20261003.md)):
 Rechecked all 47 remaining Init assembly rows / 12,252 bytes. Both entire
 Init sections remain exact. Only the MMIO and bitmap leaves are bounded C

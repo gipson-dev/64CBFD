@@ -25,17 +25,27 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,455 / 6,042 (90.28%) | 587 | 1,928,344 / 2,256,728 (85.45%) |
+| Total | 5,456 / 6,042 (90.30%) | 586 | 1,928,472 / 2,256,728 (85.45%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,782 / 5,321 (89.87%) | 539 | 1,756,908 / 2,072,880 (84.76%) |
+| Game | 4,783 / 5,321 (89.89%) | 538 | 1,757,036 / 2,072,880 (84.76%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,258 / 5,455 (59.73%) | 0 | 2,197 |
+| Total | 3,260 / 5,456 (59.75%) | 0 | 2,196 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,585 / 4,782 (54.06%) | 0 | 2,197 |
+| Game | 2,587 / 4,783 (54.09%) | 0 | 2,196 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15045800` now dispatches through the recovered cached-height
+status query `func_15047004`. Both match directly from semantic C: 32 and
+43 words, no new guards or profile changes. Twelve integrated tests exercise
+the actual cached query, dispatch, and fallback wrapper; all 230 tool tests,
+full code build, and project checks pass. Both sibling dispatch wrappers,
+earlier recovered spans, and both complete Init sections remain exact.
+Next recover the opposite-bound cached query `func_150470B0`; downstream
+entity-query matching and natural gameplay qualification remain separate.
+See [Note 769](WORKING_NOTES/769-game-cached-height-query-and-dispatch-direct-match-20261003.md).
 
 The resumed Init audit confirms 47 assembly rows / 12,252 bytes, with all
 492 C rows exact and both complete code/data sections matching retail.
@@ -50,8 +60,8 @@ without guards or profile changes. Five new tests cover the early-rejection
 flag mask, two-count buffer, raw return forwarding, helper mutations, NaNs,
 and all halfword selectors. All 218 tool tests and project checks pass;
 both complete Init sections and previously restored spans remain exact.
-The entity query retains its 72 differences. Next Game target is the retained
-dispatch wrapper `func_15045800`, subject to its `func_15047004` contract audit;
+The entity query retains its 72 differences. Its then-pending dispatch wrapper
+`func_15045800` and cached query `func_15047004` are completed in Note 769;
 natural gameplay qualification is separate. See
 [Note 767](WORKING_NOTES/767-game-entity-height-wrapper-direct-match-20261003.md).
 

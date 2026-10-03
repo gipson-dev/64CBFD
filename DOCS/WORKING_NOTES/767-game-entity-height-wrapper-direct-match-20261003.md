@@ -71,3 +71,7 @@ Audit that callee's status/return contract before recovery. It is not merely
 an opposite-threshold version of this routine. Reopen Init only under the
 gates in [Note 768](768-init-remaining-assembly-current-decision-20261003.md).
 The sibling host port and frozen Release artifacts remain untouched.
+
+Follow-up: [Note 769](769-game-cached-height-query-and-dispatch-direct-match-20261003.md)
+completes the then-pending dispatch wrapper and cached-query callee, both
+directly matching from semantic C. Gameplay qualification remains separate.

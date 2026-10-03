@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15045800` converts from retained assembly to C, and its cached
+  query `func_15047004` replaces the zero-return placeholder. Both match
+  directly: 128 and 172 bytes, no new guards or profile changes. Twelve new
+  integrated behavior tests and all 230 tool tests pass. Corrected float/
+  pointer signatures preserve both sibling dispatch wrappers' exact bytes.
+  README aggregates add one converted row and two exact rows.
+  [Note 769](WORKING_NOTES/769-game-cached-height-query-and-dispatch-direct-match-20261003.md)
+
 - Rechecked the remaining Init assembly: 47 rows / 12,252 bytes, of which
   two small leaves remain plausible but unproven matching C candidates.
   Both complete Init sections remain exact; no Init production source changed.
