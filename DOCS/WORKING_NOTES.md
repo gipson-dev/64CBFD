@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 835](WORKING_NOTES/835-init-guest-tag-sweep-and-retag-lifetime-contract-20261003.md)):
+Actual C aging/full sweeps and retag helper pass both IDO guest profiles with
+adjacent allocations, free gaps and protected tags/payloads. Pool/bitmap tag FF
+is not selected by either sweep. All 25 focused tests pass; the Game cleanup
+callback is instrumented, not qualified. Next inspect its captured-list effects
+and fatal/reservation lifetimes. Fitting and production totals remain unchanged.
+
 2026-10-03 ([Note 834](WORKING_NOTES/834-init-guest-free-reinsertion-and-resize-coalescing-20261003.md)):
 Fresh big-endian IDO guest builds qualify ordinary free and resize in O2/g3
 and O1: 512 full-reclamation cycles, middle reinsertion, two-sided coalescing

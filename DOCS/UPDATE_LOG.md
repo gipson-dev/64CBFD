@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 835](WORKING_NOTES/835-init-guest-tag-sweep-and-retag-lifetime-contract-20261003.md)
+  qualifies recovered aging/full sweeps and retag C in both IDO guest profiles.
+  Tag FF pool/bitmap storage survives both sweeps; selected adjacent blocks
+  and free gaps preserve traversal. All 25 focused tests pass. Real Game
+  callback effects, fatal/reservation ownership and fitting remain open.
+  No production, README totals, decoder/adapter or pending Game edits.
+
 - Init [Note 834](WORKING_NOTES/834-init-guest-free-reinsertion-and-resize-coalescing-20261003.md)
   qualifies actual C free/reinsertion/coalescing in fresh big-endian IDO guest
   builds. Both profiles reclaim the private heap across 512 resize cycles;

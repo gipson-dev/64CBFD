@@ -1,3 +1,4 @@
+import re
 import shutil
 import subprocess
 import unittest
@@ -71,6 +72,15 @@ class InitAllocatorGuestFreeTests(unittest.TestCase):
             'static u8 heap[0x200000] __attribute__((section(".test_heap"), aligned(16)));',
             'extern u8 heap[0x200000];').replace(
                 'for (i = 0; i < sizeof(heap); i++) heap[i] = 0xA5;', '')
+        production = (cls.project / "src/init_3C40.c").read_text()
+        sweeps = ['static s32 cleanupCalls, cleanupMask;\n'
+                  'void func_15042D50(void) { cleanupCalls++; cleanupMask = interruptMask; }\n']
+        for name in ("func_10004250", "func_10004308", "func_100043B4"):
+            match = re.search(r"void " + name + r"\([^;{]*\{\n.*?\n\}", production, re.S)
+            if match is None:
+                raise AssertionError("production function not found: " + name)
+            sweeps.append(match.group(0))
+        cls.source += "\n" + "\n".join(sweeps)
 
     def run_guest(self, body):
         for profile in (("-O2", "-g3"), ("-O1",)):
@@ -145,6 +155,75 @@ class InitAllocatorGuestFreeTests(unittest.TestCase):
         ((struct54 *)(c - 0xC))->unk8 != 0xFC000080) return 1;
     for (i = 0; i < 32; i++) if (((u8 *)a)[i] != i) return 2;
     for (i = 0; i < 128; i++) if (((u8 *)c)[i] != (i ^ 0x5A)) return 3;
+    return 0;
+''')
+
+    def test_aging_sweep_frees_tag_two_and_ages_three_four(self):
+        self.run_guest(r'''
+    s32 a, b, c, d, persistent;
+    initialize();
+    a = allocate_memory(32, 1, 0, 0);
+    b = allocate_memory(64, 2, 0, 0);
+    c = allocate_memory(96, 3, 0, 0);
+    d = allocate_memory(128, 4, 0, 0);
+    persistent = allocate_memory(160, 0xFF, 0, 0);
+    func_10004250();
+    if (!valid_lists() || ((struct54 *)(a - 12))->unk8 != 0x01000020 ||
+        ((struct54 *)(b - 12))->unk8 != 64 ||
+        ((struct54 *)(c - 12))->unk8 != 0x02000060 ||
+        ((struct54 *)(d - 12))->unk8 != 0x03000080 ||
+        ((struct54 *)(persistent - 12))->unk8 != 0xFF0000A0) return 1;
+    func_10004250();
+    if (!valid_lists() || ((struct54 *)(d - 12))->unk8 != 0x02000080) return 2;
+    func_10004250();
+    if (!valid_lists() || errors || ((struct54 *)(a - 12))->unk8 != 0x01000020 ||
+        ((struct54 *)(persistent - 12))->unk8 != 0xFF0000A0 || cleanupCalls) return 3;
+    func_10004074((void *)a);
+    func_10004074((void *)persistent);
+    if (!valid_lists() || D_800380B4->unk0 ||
+        D_800380B4->unk8 != sizeof(heap) - 0x14) return 4;
+    return 0;
+''')
+
+    def test_full_sweep_crosses_adjacent_frees_and_preserves_other_tags(self):
+        self.run_guest(r'''
+    s32 allocations[8], tags[8] = {1, 2, 3, 4, 0xFF, 1, 5, 2};
+    s32 i;
+    initialize();
+    for (i = 0; i < 8; i++) {
+        allocations[i] = allocate_memory(32, tags[i], 0, 0);
+        ((u8 *)allocations[i])[0] = 0x80 + i;
+    }
+    func_10004074((void *)allocations[1]);
+    func_10004308();
+    if (!valid_lists() || errors || cleanupCalls != 1 || cleanupMask != 1) return 1;
+    for (i = 0; i < 8; i++) {
+        if (tags[i] == 5 || tags[i] == 0xFF) {
+            if (((struct54 *)(allocations[i] - 12))->unk8 != ((tags[i] << 24) | 32) ||
+                ((u8 *)allocations[i])[0] != 0x80 + i) return 2;
+        }
+    }
+    func_10004074((void *)allocations[4]);
+    func_10004074((void *)allocations[6]);
+    if (!valid_lists() || D_800380B4->unk0 ||
+        D_800380B4->unk8 != sizeof(heap) - 0x14) return 3;
+    return 0;
+''')
+
+    def test_retag_preserves_size_and_changes_sweep_lifetime(self):
+        self.run_guest(r'''
+    s32 allocation;
+    initialize();
+    allocation = allocate_memory(64, 0xFF, 0, 0);
+    func_100043B4((s32 *)allocation, 4);
+    if (!valid_lists() || ((struct54 *)(allocation - 12))->unk8 != 0x04000040) return 1;
+    func_10004250();
+    if (!valid_lists() || ((struct54 *)(allocation - 12))->unk8 != 0x03000040) return 2;
+    func_10004250();
+    if (!valid_lists() || ((struct54 *)(allocation - 12))->unk8 != 0x02000040) return 3;
+    func_10004250();
+    if (!valid_lists() || errors || D_800380B4->unk0 ||
+        D_800380B4->unk8 != sizeof(heap) - 0x14) return 4;
     return 0;
 ''')
 

@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init guest tag lifetimes: [Note 835](WORKING_NOTES/835-init-guest-tag-sweep-and-retag-lifetime-contract-20261003.md)
+qualifies both sweep bodies and the retag helper in fresh O2/g3 and O1 IDO
+guest builds. Aging frees tag 2 and decrements 3/4; full sweep frees 1-4 while
+preserving 5/FF. Pool/bitmap tag FF survives these sweeps. All 25 focused tests
+pass. Real Game cleanup callback effects, fatal/reservation ownership and
+fitting stay open; no production or README aggregate changes.
+
 Init guest free/resize qualification: [Note 834](WORKING_NOTES/834-init-guest-free-reinsertion-and-resize-coalescing-20261003.md)
 executes fresh, unguarded IDO C in both O2/g3 and O1 big-endian guest profiles.
 All 512 private-heap resize cycles reclaim the heap; middle reinsertion,
