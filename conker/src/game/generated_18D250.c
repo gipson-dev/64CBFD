@@ -1,6 +1,9 @@
 #include <ultra64.h>
 void func_15169260(void *, s32, s32, u8);
 extern u8 D_800A6670[];
+extern s32 D_800BE9E4;
+extern s32 (*D_8008B0D0[])();
+void func_1516972C(u8 *arg0);
 
 typedef struct { s32 val; } OneWord18D250;
 
@@ -24,8 +27,25 @@ void *func_1515FF74(void *source, s32 offset, u8 selector, s32 category) {
     return record;
 }
 
-s32 func_1515FFEC() {
-    return 0;
+void func_1515FFEC(u8 *arg0) {
+    s32 remove = 0;
+    s8 callbackIndex;
+
+    if ((arg0[0xE] & 1) != 0) {
+        *(s16 *)(arg0 + 0x12) -= D_800BE9E4;
+        if (*(s16 *)(arg0 + 0x12) < 0) {
+            remove = 1;
+        }
+    }
+    if (remove == 0) {
+        callbackIndex = *(s8 *)(arg0 + 0xF);
+        if ((callbackIndex != -1) && (D_8008B0D0[callbackIndex]() == 0)) {
+            remove = 1;
+        }
+    }
+    if (remove != 0) {
+        func_1516972C(arg0);
+    }
 }
 
 void func_15160090(u8 *arg0, s32 arg1, u8 arg2) {

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game compact timed callback lifecycle matched
+
+- `func_1515FFEC` replaces its zero-return placeholder with the complete
+  41-word lifecycle body, preserving its distinct compact-record offsets
+  and callback table. Two strict guards normalize only flag spill width.
+- The lifecycle test fixture now runs eight behavior tests independently
+  against each record layout. All 47 tool tests, the full build, and project
+  checks pass. Both complete Init sections remain byte-exact.
+- Total exact C is 3,244 / 5,461 (59.40%); Game is 2,571 / 4,788 (53.70%).
+  Resume ordinary Game at `func_15163504`. See
+  [Working Note 741](WORKING_NOTES/741-game-compact-timed-callback-record-match-20261002.md).
+
 ### Game secondary timed callback lifecycle matched
 
 - `func_15158224` replaces its zero-return placeholder with the complete

@@ -2,6 +2,10 @@
 
 Date: 2026-10-02
 
+Follow-up: [Note 741](741-game-compact-timed-callback-record-match-20261002.md)
+completes `func_1515FFEC` and extends the lifecycle tests across both layouts.
+Ordinary Game work resumes at `func_15163504`.
+
 ## Recovery
 
 `func_15158224` at `0x15158224..0x151582C8` replaces its zero-return

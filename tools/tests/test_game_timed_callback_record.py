@@ -8,14 +8,22 @@ from pathlib import Path
 
 
 class GameTimedCallbackRecordTests(unittest.TestCase):
+    SOURCE = "conker/src/game/generated_185560.c"
+    FUNCTION = "func_15158224"
+    CALLBACK_TABLE = "D_8008AE00"
+    FLAGS = 0x10
+    SELECTOR = 0x12
+    TIMER = 0x14
+    NEIGHBOR = 0x11
+
     @classmethod
     def setUpClass(cls):
         compiler = shutil.which("cc")
         if compiler is None:
             raise unittest.SkipTest("host C compiler is unavailable")
-        source = (Path(__file__).resolve().parents[2] /
-                  "conker/src/game/generated_185560.c").read_text()
-        match = re.search(r"void func_15158224\(u8 \*arg0\) \{\n.*?\n\}", source, re.S)
+        source = (Path(__file__).resolve().parents[2] / cls.SOURCE).read_text()
+        match = re.search(r"void " + re.escape(cls.FUNCTION) +
+                          r"\(u8 \*arg0\) \{\n.*?\n\}", source, re.S)
         if match is None:
             raise AssertionError("timed callback record definition was not found")
         cls.directory = tempfile.TemporaryDirectory()
@@ -25,23 +33,25 @@ class GameTimedCallbackRecordTests(unittest.TestCase):
         fixture.write_text(
             "#include <stdint.h>\n"
             "typedef uint8_t u8; typedef int8_t s8;\n"
-            "typedef int16_t s16; typedef int32_t s32;\n" + r"""
+            "typedef int16_t s16; typedef int32_t s32;\n" +
+            f"#define FLAGS {cls.FLAGS}\n#define SELECTOR {cls.SELECTOR}\n" +
+            f"#define TIMER {cls.TIMER}\n#define CALLBACK_TABLE {cls.CALLBACK_TABLE}\n" + r"""
 s32 D_800BE9E4;
 u8 *currentRecord, *releasedRecord;
 s32 callbackCalls, releaseCalls, callbackResult, callbackSlot, observedTimer, mutate;
 static s32 callback(s32 slot) {
     callbackCalls++;
     callbackSlot = slot;
-    observedTimer = *(s16 *)(currentRecord + 0x14);
+    observedTimer = *(s16 *)(currentRecord + TIMER);
     if (mutate) {
-        currentRecord[0x10] ^= 0x80;
-        currentRecord[0x12] = 0xFF;
+        currentRecord[FLAGS] ^= 0x80;
+        currentRecord[SELECTOR] = 0xFF;
     }
     return callbackResult;
 }
 static s32 first(void) { return callback(0); }
 static s32 second(void) { return callback(1); }
-s32 (*D_8008AE00[])() = { first, second };
+s32 (*CALLBACK_TABLE[])() = { first, second };
 void func_1516972C(u8 *record) {
     releaseCalls++;
     releasedRecord = record;
@@ -55,7 +65,7 @@ void func_1516972C(u8 *record) {
             check=True, capture_output=True, text=True,
         )
         cls.library = ctypes.CDLL(str(library))
-        cls.update = cls.library.func_15158224
+        cls.update = getattr(cls.library, cls.FUNCTION)
         cls.update.argtypes = [ctypes.POINTER(ctypes.c_uint8)]
         cls.update.restype = None
 
@@ -64,10 +74,10 @@ void func_1516972C(u8 *record) {
 
     def setUp(self):
         self.record = (ctypes.c_uint8 * 32)(*([0xA5] * 32))
-        self.record[0x10] = 0
-        self.record[0x11] = 0
-        self.record[0x12] = 0xFF
-        self.timer = ctypes.c_int16.from_buffer(self.record, 0x14)
+        self.record[self.FLAGS] = 0
+        self.record[self.NEIGHBOR] = 0
+        self.record[self.SELECTOR] = 0xFF
+        self.timer = ctypes.c_int16.from_buffer(self.record, self.TIMER)
         self.timer.value = 100
         for name in ("callbackCalls", "releaseCalls", "callbackSlot", "observedTimer", "mutate"):
             self.integer(name).value = 0
@@ -82,8 +92,8 @@ void func_1516972C(u8 *record) {
         self.assertEqual(address, ctypes.addressof(self.record) if count else None)
 
     def test_disabled_timer_preserves_record_and_dispatches(self):
-        self.record[0x10] = 2
-        self.record[0x12] = 0
+        self.record[self.FLAGS] = 2
+        self.record[self.SELECTOR] = 0
         self.timer.value = -10
         self.integer("callbackResult").value = -7
         before = bytes(self.record)
@@ -98,8 +108,8 @@ void func_1516972C(u8 *record) {
         self.assertReleaseCount(0)
 
     def test_expired_timer_skips_callback_and_releases_once(self):
-        self.record[0x10] = 1
-        self.record[0x12] = 0
+        self.record[self.FLAGS] = 1
+        self.record[self.SELECTOR] = 0
         self.timer.value = 0
         self.update(self.record)
         self.assertEqual(self.timer.value, -1)
@@ -107,8 +117,8 @@ void func_1516972C(u8 *record) {
         self.assertReleaseCount(1)
 
     def test_zero_timer_after_update_is_not_expired(self):
-        self.record[0x10] = 1
-        self.record[0x12] = 0
+        self.record[self.FLAGS] = 1
+        self.record[self.SELECTOR] = 0
         self.timer.value = 1
         self.update(self.record)
         self.assertEqual(self.timer.value, 0)
@@ -117,7 +127,7 @@ void func_1516972C(u8 *record) {
         self.assertReleaseCount(0)
 
     def test_callback_failure_releases_once(self):
-        self.record[0x12] = 0
+        self.record[self.SELECTOR] = 0
         self.integer("callbackResult").value = 0
         self.update(self.record)
         self.assertEqual(self.integer("callbackCalls").value, 1)
@@ -128,7 +138,7 @@ void func_1516972C(u8 *record) {
                                                  (-32768, 1, 32767, 0)):
             with self.subTest(timer=timer, delta=delta):
                 self.setUp()
-                self.record[0x10] = 1
+                self.record[self.FLAGS] = 1
                 self.timer.value = timer
                 self.integer("D_800BE9E4").value = delta
                 self.update(self.record)
@@ -136,21 +146,31 @@ void func_1516972C(u8 *record) {
                 self.assertReleaseCount(removed)
 
     def test_callback_mutation_keeps_original_release_argument(self):
-        self.record[0x12] = 0
+        self.record[self.SELECTOR] = 0
         self.integer("callbackResult").value = 0
         self.integer("mutate").value = 1
         self.update(self.record)
-        self.assertEqual(self.record[0x10], 0x80)
-        self.assertEqual(self.record[0x12], 0xFF)
+        self.assertEqual(self.record[self.FLAGS], 0x80)
+        self.assertEqual(self.record[self.SELECTOR], 0xFF)
         self.assertReleaseCount(1)
 
-    def test_selector_uses_offset_12_not_neighbor(self):
-        self.record[0x11] = 0
-        self.record[0x12] = 1
+    def test_selector_uses_record_offset_not_neighbor(self):
+        self.record[self.NEIGHBOR] = 0
+        self.record[self.SELECTOR] = 1
         self.update(self.record)
         self.assertEqual(self.integer("callbackSlot").value, 1)
         self.assertEqual(self.integer("callbackCalls").value, 1)
         self.assertReleaseCount(0)
+
+
+class GameCompactTimedCallbackRecordTests(GameTimedCallbackRecordTests):
+    SOURCE = "conker/src/game/generated_18D250.c"
+    FUNCTION = "func_1515FFEC"
+    CALLBACK_TABLE = "D_8008B0D0"
+    FLAGS = 0xE
+    SELECTOR = 0xF
+    TIMER = 0x12
+    NEIGHBOR = 0x10
 
 
 if __name__ == "__main__":

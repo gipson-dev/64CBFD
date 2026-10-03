@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 741](WORKING_NOTES/741-game-compact-timed-callback-record-match-20261002.md)):
+Game `func_1515FFEC` matches its complete 41-word compact-record lifecycle.
+Two strict guards normalize completion-flag spill width. Both record layouts
+run the same eight source-behavior tests independently; all 47 tool tests
+and the full build pass. Both complete Init sections remain exact. Resume
+ordinary Game work at `func_15163504`.
+
 2026-10-02 ([Note 740](WORKING_NOTES/740-game-secondary-timed-callback-record-match-20261002.md)):
 Game `func_15158224` matches its complete 41-word timed-callback lifecycle.
 Two strict guards normalize completion-flag spill width; eight behavior tests

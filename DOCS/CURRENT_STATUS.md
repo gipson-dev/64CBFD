@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,243 / 5,461 (59.38%) | 0 | 2,218 |
+| Total | 3,244 / 5,461 (59.40%) | 0 | 2,217 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,570 / 4,788 (53.68%) | 0 | 2,218 |
+| Game | 2,571 / 4,788 (53.70%) | 0 | 2,217 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_1515FFEC` now replaces its zero-return placeholder with the complete
+41-word compact-record lifecycle: flags at `0x0E`, selector at `0x0F`, timer
+at `0x12`, and callback table `D_8008B0D0`. Two strict guards normalize only
+completion-flag spill width. The existing lifecycle fixture now tests both
+record layouts independently; all 47 tool tests and the full build pass.
+Both complete Init sections remain exact. See
+[Working Note 741](WORKING_NOTES/741-game-compact-timed-callback-record-match-20261002.md).
 
 Game `func_15158224` now replaces its zero-return placeholder with the complete
 41-word timed-callback lifecycle using selector offset `0x12` and table
@@ -94,7 +102,7 @@ and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 41-word `func_1515FFEC`, currently at 35 real word differences.
+queue with 41-word `func_15163504`, currently at 35 real word differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and
 `func_150F631C` in its separate near-match cleanup queue.
 
