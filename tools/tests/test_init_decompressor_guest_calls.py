@@ -17,6 +17,7 @@ class InitDecompressorGuestCallTests(unittest.TestCase):
         self.assertEqual([(unit["name"], unit["frame_bytes"],
                            unit["direct_call_frame_bound"]) for unit in units],
                          [("root", 16, 48), ("local_0018", 32, 32), ("local_0030", 0, 0)])
+        self.assertEqual([unit["slot_words"] for unit in units], [6, 6, 2])
 
     def test_unresolved_call_and_indirect_call_are_rejected(self):
         for word in (0x0C000000, 0x0320F809):

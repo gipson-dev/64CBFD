@@ -57,6 +57,9 @@ def retail_slot_ledger(measurements, text_bytes, source):
                     raise ValueError("invalid compiled body/slot size")
                 row.update({"c_function": name, "c_slot_words": slot,
                             "c_body_words": body, "word_delta": slot - row["retail_slot_words"]})
+                if "public_unit_words" in compiled[name]:
+                    row["c_public_unit_words"] = compiled[name]["public_unit_words"]
+                    row["c_embedded_helpers"] = compiled[name]["embedded_helpers"]
             output.append(row)
     intervals.sort()
     if any(left[1] != right[0] for left, right in zip(intervals, intervals[1:])):
@@ -99,6 +102,7 @@ def analyze_guest_calls(text, named_entries, targets):
             if word >> 26 == 0 and word & 63 == 9:
                 raise ValueError("indirect JALR needs separate call-graph qualification")
         units[start] = {"entry": start, "name": named_entries.get(start, "local_%04x" % start),
+                        "slot_words": len(words),
                         "frame_bytes": max(frames, default=0), "calls": sorted(calls),
                         "word_store_forms": {name: sum(word >> 26 == opcode for word in words)
                                              for name, opcode in (("sw", 43), ("swl", 42), ("swr", 46))}}
@@ -197,6 +201,15 @@ def inspect_object(path):
         targets[pc] = symbol[1] + ((word & 0x03FFFFFF) << 2)
     call_graph = analyze_guest_calls(data[text[4]:text[4] + text[5]],
                                     {start: label for start, label in functions}, targets)
+    units = {unit["entry"]: unit for unit in call_graph}
+    for row, (start, _) in zip(measurements, functions):
+        end = start + row["slot_words"] * 4
+        row["public_unit_words"] = units[start]["slot_words"]
+        row["embedded_helpers"] = [
+            {"entry": unit["entry"], "name": unit["name"], "slot_words": unit["slot_words"]}
+            for unit in call_graph if start < unit["entry"] < end]
+        if row["public_unit_words"] + sum(unit["slot_words"] for unit in row["embedded_helpers"]) != row["slot_words"]:
+            raise ValueError("call units do not partition the public symbol region")
     retail_source = Path(__file__).resolve().parents[2] / "conker/asm/init_5AB0.s"
     return {"text_bytes": text[5], "entry_bytes": entry_size,
             "entry_layout": entry_layout,
@@ -226,6 +239,10 @@ def main():
                         help="disable IDO loop unrolling for both guest profiles")
     parser.add_argument("--local-allocated", action="store_true",
                         help="hold builder allocation cursor locally; commit every allocation")
+    parser.add_argument("--cache-leaf-table", action="store_true",
+                        help="capture the leaf fill table base and stride for each nonempty run")
+    parser.add_argument("--bounded-length-scan", action="store_true",
+                        help="scan the nonzero 1..16 histogram after its all-zero return")
     parser.add_argument("--cache-dynamic-lengths", action="store_true",
                         help="capture the dynamic decoder's stable length-buffer base")
     parser.add_argument("--dynamic-cursor", action="store_true",
@@ -259,6 +276,10 @@ def main():
         suffix += "-no-unroll"
     if args.local_allocated:
         suffix += "-local-allocated"
+    if args.cache_leaf_table:
+        suffix += "-cached-leaf-table"
+    if args.bounded_length_scan:
+        suffix += "-bounded-length-scan"
     if args.cache_dynamic_lengths:
         suffix += "-cached-dynamic-lengths"
     if args.dynamic_cursor:
@@ -297,6 +318,10 @@ def main():
         common.append("-Wo,-loopunroll,0")
     if args.local_allocated:
         common.append("-DINIT_DECODE_LOCAL_ALLOCATED")
+    if args.cache_leaf_table:
+        common.append("-DINIT_DECODE_CACHE_LEAF_TABLE")
+    if args.bounded_length_scan:
+        common.append("-DINIT_DECODE_BOUNDED_LENGTH_SCAN")
     if args.cache_dynamic_lengths:
         common.append("-DINIT_DECODE_CACHE_DYNAMIC_LENGTHS")
     if args.dynamic_cursor:

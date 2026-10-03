@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 816](WORKING_NOTES/816-init-builder-leaf-fill-and-bounded-length-scan-trials-20261003.md)
+  gains sixteen text bytes from bounded histogram scans without frame growth.
+  Per-run leaf capture is negative. Generated receipts now separate public
+  call units and embedded helpers; production assembly/counts are unchanged.
+
 - Init [Note 815](WORKING_NOTES/815-init-decompressor-semantic-slot-ledger-correction-20261003.md)
   corrects swapped dynamic/compressed slot roles in Notes 812-813 and the
   fixed-wrapper label. Generated receipt accounting and retail-call tests

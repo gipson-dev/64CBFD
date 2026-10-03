@@ -276,8 +276,14 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
         *rootBits = 0;
         return 0;
     }
+#ifdef INIT_DECODE_BOUNDED_LENGTH_SCAN
+    /* The all-zero return leaves at least one populated bucket in 1..16. */
+    for (min = 1; BUILD_COUNTS[min] == 0; min++) {}
+    for (max = 16; BUILD_COUNTS[max] == 0; max--) {}
+#else
     for (min = 1; min < 16 && BUILD_COUNTS[min] == 0; min++) {}
     for (max = 16; max && BUILD_COUNTS[max] == 0; max--) {}
+#endif
     width = *rootBits;
     if (width < min) width = min;
     if (width > max) width = max;
@@ -386,6 +392,20 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
             ENTRY_VALUE(&entry) = value;
 #endif
             next = code >> BUILD_SHIFT(consumed);
+#ifdef INIT_DECODE_CACHE_LEAF_TABLE
+            if (next < size) {
+                InitDecodeEntry *leafTable = BUILD_WORKSPACE + table;
+                uint32_t stride = 1u << BUILD_SHIFT(bits - consumed);
+                do {
+#ifdef INIT_DECODE_PACKED_ENTRY
+                    leafTable[next].alignment = packed;
+#else
+                    leafTable[next] = entry;
+#endif
+                    next += stride;
+                } while (next < size);
+            }
+#else
             for (; next < size; next += 1u << BUILD_SHIFT(bits - consumed)) {
 #ifdef INIT_DECODE_PACKED_ENTRY
                 BUILD_WORKSPACE[table + next].alignment = packed;
@@ -393,6 +413,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                 BUILD_WORKSPACE[table + next] = entry;
 #endif
             }
+#endif
             next = 1u << BUILD_SHIFT(bits - 1);
             while (code & next) {
                 code ^= next;

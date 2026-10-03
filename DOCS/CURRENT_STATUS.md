@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init builder scan lead: [Note 816](WORKING_NOTES/816-init-builder-leaf-fill-and-bounded-length-scan-trials-20261003.md)
+removes redundant bounds after the all-zero histogram return. Packed O2 reaches
+4,192/368 and aligned 4,224/352, sixteen text bytes smaller at unchanged frame
+bounds. Leaf-base capture gives no lead benefit. New unit/helper accounting
+shows the old 413-word builder region contains 357 builder + 56 lookup words;
+the scan trial has 352 + 56. All 135 focused tests and twenty final-source
+guest compiles pass; production owners and README counts remain unchanged.
+All 1,544 project tool tests pass at this checkpoint.
+
 Init slot correction: [Note 815](WORKING_NOTES/815-init-decompressor-semantic-slot-ledger-correction-20261003.md)
 adds generated retail/C slot accounting and guards the actual retail call roles.
 Notes 812-813 had swapped dynamic `func_10006424` (257 words) with compressed

@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `6e05ce4`.
 
+Follow-up: [Note 816](816-init-builder-leaf-fill-and-bounded-length-scan-trials-20261003.md)
+separates public call units from embedded helpers: the 413-word builder
+symbol region below comprises 357 builder words and 56 lookup-helper words.
+Region totals remain valid; they are not standalone function-body sizes.
+
 ## Result
 
 The manual slot ledgers in Notes 812-813 swapped the dynamic and compressed

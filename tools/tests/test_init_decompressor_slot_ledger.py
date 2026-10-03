@@ -79,6 +79,15 @@ class InitDecompressorSlotLedgerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             retail_slot_ledger(rows, 4208, self.source)
 
+    def test_embedded_helper_is_not_presented_as_public_function_size(self):
+        rows = self.measurements()
+        rows[0].update(public_unit_words=357,
+                       embedded_helpers=[{"entry": 0x670, "name": "local_0670", "slot_words": 56}])
+        builder = retail_slot_ledger(rows, 4208, self.source)["rows"][4]
+        self.assertEqual(builder["c_slot_words"], 413)
+        self.assertEqual(builder["c_public_unit_words"], 357)
+        self.assertEqual(builder["c_embedded_helpers"][0]["slot_words"], 56)
+
 
 if __name__ == "__main__":
     unittest.main()

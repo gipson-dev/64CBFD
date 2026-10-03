@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 816](WORKING_NOTES/816-init-builder-leaf-fill-and-bounded-length-scan-trials-20261003.md)):
+Bounded histogram scans improve packed O2 to 4,192/368 and aligned to 4,224/352,
+without stack growth; smallest text is still 208 bytes over retail. Leaf fill
+capture is negative. Call-unit accounting separates builder from its embedded
+lookup helper. All 135 focused tests and twenty guest compiles pass; production
+ASM/default text hashes and README counts unchanged.
+All 1,544 project tool tests pass.
+
 2026-10-03 ([Note 815](WORKING_NOTES/815-init-decompressor-semantic-slot-ledger-correction-20261003.md)):
 Generated slot accounting corrects the swapped dynamic/compressed roles in
 Notes 812-813 and the fixed-wrapper label. Cursor dynamic is 220/257 words;
