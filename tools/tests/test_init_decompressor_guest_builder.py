@@ -97,6 +97,7 @@ class InitDecompressorCompiledGuestBuilderTests(unittest.TestCase):
                   ("packed-remaining", ["--frame-backed", "--packed-entry", "--bounded-builder-shifts",
                       "--no-unroll", "--bounded-length-scan", "--dynamic-cursor",
                       "--cache-builder", "counts-offsets", "--builder-symbol-cursor", "remaining"]))
+        cls.shape_flags = dict(shapes)
         for label, flags in shapes:
             output = Path(cls.directory.name) / label
             result = subprocess.run([sys.executable,

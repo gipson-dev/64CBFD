@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 822](WORKING_NOTES/822-init-fpr-provenance-and-failure-frame-corrections-20261003.md)
+  recovers f1-f11 write provenance and corrects signed symbol classification
+  plus an opt-in distance-root lifetime. All 103 focused tests pass. Expanded
+  failure cases distinguish matching seeded context from unseeded frame gaps;
+  complete CU1-set publication and production conversion remain unclaimed.
+
 - Init [Note 821](WORKING_NOTES/821-init-original-core-call-adapter-and-exception-context-20261003.md)
   adds an isolated original-call adapter and retained-wrapper execution: 60
   CU1-clear context runs pass, six CU1-set probes retain an explicit f1-f11

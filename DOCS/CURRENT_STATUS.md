@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init FPR/failure-frame recovery: [Note 822](WORKING_NOTES/822-init-fpr-provenance-and-failure-frame-corrections-20261003.md)
+maps f1-f11 saves to actual live GPRs and dynamic decoding variables. Sorted
+symbols now use retail signed comparisons; an opt-in frame variant preserves
+the distance-root seed on literal-builder failure. All 103 focused tests pass,
+including 90 matching seeded context runs and 30 unseeded frame-gap receipts.
+Smallest seeded combined text/descent is 4,432/3,168, 448 text bytes over retail.
+Scratch FPR publication, complete CU1-set compatibility, ownership and fitting
+remain open. Production ownership and README totals unchanged.
+
 Init original-call adapter: [Note 821](WORKING_NOTES/821-init-original-core-call-adapter-and-exception-context-20261003.md)
 executes the retained exception wrapper around an isolated compiled-core adapter.
 Sixty CU1-clear vector/retail-page context runs preserve full FPR/GPR state and

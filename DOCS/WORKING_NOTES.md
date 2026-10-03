@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 822](WORKING_NOTES/822-init-fpr-provenance-and-failure-frame-corrections-20261003.md)):
+Scratch-FPR snapshots now have measured instruction/semantic provenance.
+Two C discrepancies are corrected: signed sorted-symbol classification and
+opt-in preservation of the final code lookup index in the distance-root cell.
+All 103 focused tests pass; 90 seeded context runs match the expanded domain.
+Seeded combined text/descent is 4,432/3,168; FPR publication, CU1-set compatibility
+and production ownership remain open. README aggregates unchanged.
+
 2026-10-03 ([Note 821](WORKING_NOTES/821-init-original-core-call-adapter-and-exception-context-20261003.md)):
 An isolated original a0/a1/a2 adapter executes compiled C inside the retained
 exception wrapper. Sixty CU1-clear context runs pass; six CU1-set probes

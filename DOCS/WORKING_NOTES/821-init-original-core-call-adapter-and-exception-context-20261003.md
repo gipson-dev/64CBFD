@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `63571c2`.
 
+Follow-up: [Note 822](822-init-fpr-provenance-and-failure-frame-corrections-20261003.md)
+maps scratch-FPR lifetimes and corrects newly exposed symbol/frame discrepancies.
+The expanded seeded failure domain has different text/stack costs; this note's
+unseeded size and original test-domain receipts remain historical measurements.
+
 ## Result And Boundary
 
 An isolated assembly adapter now accepts the original three core arguments:

@@ -403,8 +403,9 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
             if (symbolIndex < count) {
                 uint32_t symbol = BUILD_SORTED[symbolIndex++];
 #endif
-                if (symbol < simple) {
-                    BUILD_ENTRY_OPERATION = symbol < 256 ? 16 : 15;
+                /* Retail classifies even stale sorted words with signed SLT. */
+                if ((int32_t)symbol < (int32_t)simple) {
+                    BUILD_ENTRY_OPERATION = (int32_t)symbol < 256 ? 16 : 15;
                     value = symbol;
                 } else {
                     BUILD_ENTRY_OPERATION = extras[symbol - simple];
@@ -579,6 +580,9 @@ int init_decode_dynamic(InitDecodeState *s) {
     uint16_t codeRoot, literalRoot, distanceRoot;
 #endif
     uint32_t i, symbol, previous = 0, repeats, total = literals + distances;
+#ifdef INIT_DECODE_SEED_DISTANCE_ROOT
+    InitDecodeEntry *lastCodeEntry = s->workspace;
+#endif
 #ifdef INIT_DECODE_DYNAMIC_CURSOR
     uint32_t *cursor, *end;
 #endif
@@ -630,6 +634,9 @@ int init_decode_dynamic(InitDecodeState *s) {
         need_bits(s, CODE_BITS(s));
         entry = &s->workspace[CODE_ROOT(s) + (s->reservoir & low_mask(CODE_BITS(s)))];
 #endif
+#ifdef INIT_DECODE_SEED_DISTANCE_ROOT
+        lastCodeEntry = entry;
+#endif
         drop_bits(s, ENTRY_BITS(entry));
         symbol = ENTRY_VALUE(entry);
         if (symbol < 16) {
@@ -648,6 +655,9 @@ int init_decode_dynamic(InitDecodeState *s) {
         if (symbol != 16) previous = 0;
     }
 #ifdef INIT_DECODE_FRAME_BACKED
+#ifdef INIT_DECODE_SEED_DISTANCE_ROOT
+    DISTANCE_ROOT(s) = (uint16_t)(lastCodeEntry - s->workspace);
+#endif
     LITERAL_BITS(s) = 9;
 #endif
     if (init_decode_build(s, DYNAMIC_LENGTHS, literals, 257, lengthBase, lengthExtra,
