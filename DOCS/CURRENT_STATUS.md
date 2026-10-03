@@ -25,17 +25,27 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,463 / 6,042 (90.42%) | 579 | 1,931,472 / 2,256,728 (85.59%) |
+| Total | 5,462 / 6,042 (90.40%) | 580 | 1,930,848 / 2,256,728 (85.56%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,790 / 5,321 (90.02%) | 531 | 1,760,036 / 2,072,880 (84.91%) |
+| Game | 4,789 / 5,321 (90.00%) | 532 | 1,759,412 / 2,072,880 (84.88%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,268 / 5,463 (59.82%) | 0 | 2,195 |
+| Total | 3,268 / 5,462 (59.83%) | 0 | 2,194 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,595 / 4,790 (54.18%) | 0 | 2,195 |
+| Game | 2,595 / 4,789 (54.19%) | 0 | 2,194 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15044660` replaces its false zero-return C placeholder with the
+complete original actor-preparation assembly. All 156 words / 624 bytes match.
+Special actor types load a stack word not initialized by the routine, so
+ordinary C recovery needs a reachability/stack-provenance decision rather than
+an invented index value. Its interface is void(actor, x, y, z), not s32(void).
+The C count decreases by one; exact-C counts are unchanged. Next recover
+context dispatcher `func_15044380`, while its dimension helper remains a
+placeholder. See
+[Note 784](WORKING_NOTES/784-game-actor-preparation-restoration-and-stack-boundary-20261003.md).
 
 Game `func_15047700` now replaces its empty body with the reflection look-at
 matrix builder, retail-specific degenerate-axis branches, and complete

@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-03 ([Note 784](WORKING_NOTES/784-game-actor-preparation-restoration-and-stack-boundary-20261003.md)):
+Game `func_15044660` replaces its false zero-return C placeholder with exact
+original assembly: 156 words / 624 bytes, no new guards/profiles. Special actor
+types read an uninitialized-in-this-routine stack index; C recovery needs
+reachability/provenance evidence. Three assembly regression tests are added.
+Earlier exact routines, eight non-matching hashes, restored spans, and Init
+sections are unchanged. C inventory decreases honestly by one function/624
+bytes; README aggregates are updated. Next: `func_15044380`, with dimension
+helper `func_1507C3E0` still a placeholder and chain acceptance open.
+
 2026-10-03 ([Note 783](WORKING_NOTES/783-game-reflection-look-at-matrix-semantic-recovery-20261003.md)):
 Game `func_15047700` replaces its empty body with the reflection look-at matrix
 builder, retail degenerate-axis branches, and SDK direction/color publication.

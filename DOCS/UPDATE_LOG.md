@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15044660` replaces a false zero-return C placeholder with the
+  complete original 156-word / 624-byte actor-preparation assembly. Special
+  actor types retain a stack-index read not initialized by the routine; no
+  guessed ordinary-C value is introduced. Three assembly regression tests
+  are added. Total C inventory is now 5,462 / 6,042, exact C remains 3,268,
+  and zero drift remains. README aggregate tables reflect the reclassification.
+  [Note 784](WORKING_NOTES/784-game-actor-preparation-restoration-and-stack-boundary-20261003.md)
+
 - Game `func_15047700` replaces its empty body with the reflection look-at
   builder, retail degenerate-axis branches, and complete SDK direction/color
   output with preserved padding. Fourteen focused tests and all 388 tool tests

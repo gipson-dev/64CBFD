@@ -163,9 +163,9 @@ s32 func_1504452C() {
 void func_15044658() {
 }
 
-s32 func_15044660() {
-    return 0;
-}
+/* Special actor types read a pre-existing stack word at retail sp+0x20. */
+void func_15044660(void *actor, f32 x, f32 y, f32 z);
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15044660.s")
 
 PositionScaleRecord71820 *func_150448D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3,
                                        s32 arg4, s32 arg5, s32 arg6,
