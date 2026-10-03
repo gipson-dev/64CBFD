@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init no-unroll lead: [Note 811](WORKING_NOTES/811-init-parent-byte-addressing-and-no-unroll-profile-20261003.md)
+reduces frame-backed aligned/bounded O2 text to 4,256 bytes and core call-frame
+bound to 384, leaving 272 bytes over retail. Parent byte addressing does not
+improve it. All 71 focused native tests and 26 warning-clean guest compiles pass;
+all 976 project tool tests also pass. Source and CLI dependency guards reject
+byte-parent mode without frame tables. The new native checks cover
+wrapped guest labels independently of native pointers. No production
+conversion, original-entry hardware qualification or README count change.
+
 Init workspace-base trial: [Note 810](WORKING_NOTES/810-init-builder-workspace-base-capture-trial-20261003.md)
 adds opt-in pointer capture and 78 passing focused tests. Sixteen warning-clean
 guest compiles and all 905 project tool tests pass. The guest receipts

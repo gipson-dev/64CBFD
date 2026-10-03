@@ -17,6 +17,9 @@ typedef signed int int32_t;
 #if defined(INIT_DECODE_PACKED_ENTRY) && !defined(INIT_DECODE_ALIGNED_ENTRY)
 #error Packed entry mode requires word-aligned entries
 #endif
+#if defined(INIT_DECODE_BYTE_PARENT) && !defined(INIT_DECODE_FRAME_BACKED)
+#error Byte parent addressing requires physical frame tables
+#endif
 
 typedef struct {
     uint8_t operation;
@@ -326,8 +329,14 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                 if (level != 0) {
                     InitDecodeEntry *parent;
                     BUILD_OFFSETS[level] = code;
+#ifdef INIT_DECODE_BYTE_PARENT
+                    parent = (InitDecodeEntry *)((uint8_t *)BUILD_WORKSPACE +
+                        ((s->frame->tables[level - 1] - s->workspaceAddress) & ~3u) +
+                        ((code >> BUILD_SHIFT(consumed - (int32_t)width)) << 2));
+#else
                     parent = &BUILD_WORKSPACE[TABLE_INDEX(s, level - 1) +
                         (code >> BUILD_SHIFT(consumed - (int32_t)width))];
+#endif
                     ENTRY_OPERATION(parent) = levelBits + 16;
                     ENTRY_BITS(parent) = width;
                     ENTRY_VALUE(parent) = next;

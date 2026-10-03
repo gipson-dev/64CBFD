@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 811](WORKING_NOTES/811-init-parent-byte-addressing-and-no-unroll-profile-20261003.md)
+  rejects byte-parent lookup as a size improvement but establishes no-unroll as
+  a strong fitting lead: 4,256-byte aligned/bounded O2 text, 384-byte core frame
+  bound, 272 bytes over retail. Wrapped-label tests and guest profile receipts
+  remain separate from hardware ABI qualification. Production remains exact.
+
 - Init [Note 810](WORKING_NOTES/810-init-builder-workspace-base-capture-trial-20261003.md)
   measures a stable workspace-base capture. All 78 focused tests pass, but
   sixteen guest compiles reject it as a size/stack improvement. Static opcode

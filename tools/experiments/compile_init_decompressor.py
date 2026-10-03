@@ -154,10 +154,16 @@ def main():
                         help="use the builder's clamped tree-width shift bounds")
     parser.add_argument("--cache-workspace", action="store_true",
                         help="capture the builder's stable workspace pointer")
+    parser.add_argument("--byte-parent", action="store_true",
+                        help="use byte-offset parent lookup; requires --frame-backed")
+    parser.add_argument("--no-unroll", action="store_true",
+                        help="disable IDO loop unrolling for both guest profiles")
     parser.add_argument("--cache-builder", nargs="?", const="all",
                         choices=("all", "counts-offsets"),
                         help="capture the builder's scratch array bases")
     args = parser.parse_args()
+    if args.byte_parent and not args.frame_backed:
+        parser.error("--byte-parent requires --frame-backed")
     if args.packed_entry:
         args.aligned_entry = True
     root = Path(__file__).resolve().parents[2]
@@ -172,6 +178,10 @@ def main():
         suffix += "-bounded-shifts"
     if args.cache_workspace:
         suffix += "-cached-workspace"
+    if args.byte_parent:
+        suffix += "-byte-parent"
+    if args.no_unroll:
+        suffix += "-no-unroll"
     if args.cache_builder:
         suffix += "-cached-builder"
         if args.cache_builder != "all":
@@ -196,6 +206,10 @@ def main():
         common.append("-DINIT_DECODE_BOUNDED_BUILDER_SHIFTS")
     if args.cache_workspace:
         common.append("-DINIT_DECODE_CACHE_WORKSPACE")
+    if args.byte_parent:
+        common.append("-DINIT_DECODE_BYTE_PARENT")
+    if args.no_unroll:
+        common.append("-Wo,-loopunroll,0")
     if args.cache_builder:
         common.append("-DINIT_DECODE_CACHE_BUILDER=" +
                       ("1" if args.cache_builder == "all" else "2"))

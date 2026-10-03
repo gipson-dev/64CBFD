@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 811](WORKING_NOTES/811-init-parent-byte-addressing-and-no-unroll-profile-20261003.md)):
+IDO no-unroll reduces frame-backed aligned/bounded O2 text from 5,200 to 4,256
+bytes and core frame bound from 400 to 384. Byte-parent lookup gives no benefit;
+71 focused tests include wrapped guest label translation. Twenty-six guest
+compiles pass; unchanged controls compare byte-for-byte. Still 272 bytes over
+retail with individual-slot/ownership/original-entry ABI gates open.
+
 2026-10-03 ([Note 810](WORKING_NOTES/810-init-builder-workspace-base-capture-trial-20261003.md)):
 Opt-in workspace pointer capture passes 78 focused tests but fails to improve
 guest size/stack across sixteen compiles. Aligned/bounded frame-backed O2 grows
