@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_150472C0` converts retained assembly to the complete void descriptor/
+  height-result builder and matches all 52 words directly. Reordering equivalent
+  flag contributions removes the last two differences without new guards or
+  profiles. Eight focused tests and all 362 tool tests pass; full build/project
+  checks pass. Prior recovered spans and both Init sections remain unchanged.
+  README adds one converted and exact row; actor-builder matching remains open.
+  [Note 780](WORKING_NOTES/780-game-descriptor-height-result-builder-direct-match-20261003.md)
+
 - Game `func_1504715C` replaces its zero-return placeholder with the complete
   void actor-to-height-result builder. It remains non-matching: 85 body words
   plus four padding nops in the 89-word slot, 76 differences, no new guards/

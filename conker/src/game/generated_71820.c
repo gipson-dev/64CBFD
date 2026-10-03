@@ -74,6 +74,18 @@ typedef struct HeightActor71820 {
     u16 entityIndex;
 } HeightActor71820;
 
+typedef struct HeightDescriptor71820 {
+    u8 pad0[0xC];
+    f32 height;
+    u8 pad10[0x34];
+    HeightCoordinates71820 vertices;
+    u8 pad56[3];
+    u8 state;
+    u8 pad5A[2];
+    s32 value;
+    u32 metadata;
+} HeightDescriptor71820;
+
 typedef struct HeightEntity71820 {
     u8 pad0[0x40];
     u32 metadata;
@@ -1066,7 +1078,16 @@ void func_1504715C(HeightResult71820 *result, HeightActor71820 *actor) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_150472C0.s")
+void func_150472C0(HeightResult71820 *result, HeightDescriptor71820 *descriptor) {
+    result->height = descriptor->height;
+    *(HeightCoordinates71820 *)result->vertices = descriptor->vertices;
+    result->metadata = descriptor->metadata;
+    result->flags = (descriptor->state == 1 ? 1 : 0) |
+                    (descriptor->state == 1 ? 2 : 0) |
+                    (descriptor->state == 1 ? 4 : 0);
+    result->state = descriptor->state == 1 ? 1 : 0;
+    result->value = descriptor->value;
+}
 
 void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye, f32 xAt,
                    f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp) {

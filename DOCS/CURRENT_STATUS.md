@@ -25,17 +25,28 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,462 / 6,042 (90.40%) | 580 | 1,931,264 / 2,256,728 (85.58%) |
+| Total | 5,463 / 6,042 (90.42%) | 579 | 1,931,472 / 2,256,728 (85.59%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,789 / 5,321 (90.00%) | 532 | 1,759,828 / 2,072,880 (84.90%) |
+| Game | 4,790 / 5,321 (90.02%) | 531 | 1,760,036 / 2,072,880 (84.91%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,267 / 5,462 (59.81%) | 0 | 2,195 |
+| Total | 3,268 / 5,463 (59.82%) | 0 | 2,195 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,594 / 4,789 (54.17%) | 0 | 2,195 |
+| Game | 2,595 / 4,790 (54.18%) | 0 | 2,195 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_150472C0` now converts retained assembly to the complete void
+descriptor-to-height-result builder. All 52 words match directly without new
+guards or profiles. It preserves the eighteen-byte coordinate copy, separate
+flag expressions, post-publication state reload, and final value read. Eight
+focused tests and all 362 tool tests pass; full build/project checks pass.
+Eighteen exact neighbors, six non-matching hashes, restored spans, and both
+Init sections remain unchanged. Next investigate empty matrix builder
+`func_15047390` against local libultra `guLookAtF` provenance; do not assume
+the SDK reference is an established retail match. See
+[Note 780](WORKING_NOTES/780-game-descriptor-height-result-builder-direct-match-20261003.md).
 
 Game `func_1504715C` now replaces its zero-return placeholder with the complete
 void actor-to-height-result builder. It copies or synthesizes the nine vertex
@@ -45,8 +56,8 @@ ownership with retail's alias-sensitive read order. It remains non-matching:
 Twelve focused tests and all 354 tool tests pass; full build/project checks
 pass. Eighteen exact neighbors, five query hashes, restored spans, and both
 Init sections remain unchanged. Aggregate tables and README are unchanged.
-Next recover retained descriptor-to-height-result builder `func_150472C0`;
-this actor builder's byte matching remains open. See
+Its then-pending descriptor/result builder `func_150472C0` is now recovered
+in Note 780; this actor builder's byte matching remains open. See
 [Note 779](WORKING_NOTES/779-game-actor-height-result-builder-semantic-recovery-20261003.md).
 
 Game `func_15046D00` now replaces its zero-return placeholder with the complete
