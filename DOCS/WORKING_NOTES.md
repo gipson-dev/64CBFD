@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 844](WORKING_NOTES/844-init-builder-histogram-cursor-fitting-and-bounded-qualification-20261003.md)):
+Opt-in histogram cursor saves 16 packed decoder bytes in both IDO profiles.
+Best linked text is 4,864, still 880 over retail. All 420 bounded context and
+114 direct builder comparisons pass; 15 tests pass and full corpus skips.
+O1 stack grows eight bytes; O2 known-neighbor clearance remains 72. Rejected
+sort/both trials are removed. Production, defaults and README totals unchanged.
+
 2026-10-03 ([Note 843](WORKING_NOTES/843-init-debugger-entry-frame-and-seeded-resume-footer-20261003.md)):
 Retail debugger early exits/frame and conditional footer return/EPC/state
 contracts pass. UI/TLB predicates are explicitly seeded, not reached naturally.

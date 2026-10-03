@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init decoder histogram fitting: [Note 844](WORKING_NOTES/844-init-builder-histogram-cursor-fitting-and-bounded-qualification-20261003.md)
+retains an opt-in histogram pointer loop, saving 16 packed core bytes in both
+IDO profiles. Best linked text is 4,864, still 880 over retail capacity.
+All 420 bounded stream/context and 114 direct builder comparisons pass;
+15 tests pass, one intentional full-corpus skip. Packed O1 stack grows eight
+bytes; O2 retains its 72-byte known-neighbor clearance. Changed full corpus,
+fitting and complete ownership remain open. Inventory is still 492 C / 47
+assembly rows; production and README totals unchanged.
+
 Init debugger entry/footer: [Note 843](WORKING_NOTES/843-init-debugger-entry-frame-and-seeded-resume-footer-20261003.md)
 executes retail early exits and explicitly seeded footer predicates. Frame is
 `0x50` bytes with `0xFA8` image gap; completed paths restore saved registers/SP.

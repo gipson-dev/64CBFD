@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 844](WORKING_NOTES/844-init-builder-histogram-cursor-fitting-and-bounded-qualification-20261003.md)
+  banks histogram-only decoder fitting: 16-byte packed reduction in both
+  profiles, 4,864 linked bytes with 880 still to remove. Bounded stream and
+  direct builder qualification passes; changed full corpus remains open.
+  No production conversion or README aggregate changes; Game work preserved.
+
 - Init [Note 843](WORKING_NOTES/843-init-debugger-entry-frame-and-seeded-resume-footer-20261003.md)
   qualifies retail debugger early exits and seeded footer return/EPC/state
   contracts, preserving bounded stack/register evidence. All 62 focused tests

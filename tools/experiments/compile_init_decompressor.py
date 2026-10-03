@@ -262,6 +262,8 @@ def main():
     parser.add_argument("--cache-builder", nargs="?", const="all",
                         choices=("all", "counts-offsets"),
                         help="capture the builder's scratch array bases")
+    parser.add_argument("--builder-histogram-cursor", action="store_true",
+                        help="traverse histogram lengths with a pointer cursor")
     args = parser.parse_args()
     if args.abi_fpr_shadow:
         args.seed_distance_root = True
@@ -315,6 +317,8 @@ def main():
         suffix += "-cached-builder"
         if args.cache_builder != "all":
             suffix += "-" + args.cache_builder
+    if args.builder_histogram_cursor:
+        suffix += "-histogram-cursor"
     output = (args.output or root / ("conker/build/init-decompressor-semantic" + suffix)).resolve()
     output.mkdir(parents=True, exist_ok=True)
     cwd = root / "conker"
@@ -364,6 +368,8 @@ def main():
     if args.cache_builder:
         common.append("-DINIT_DECODE_CACHE_BUILDER=" +
                       ("1" if args.cache_builder == "all" else "2"))
+    if args.builder_histogram_cursor:
+        common.append("-DINIT_DECODE_BUILDER_HISTOGRAM_CURSOR")
     report = {}
     for label, profile in (("o2g3", ["-O2", "-g3"]), ("o1", ["-O1"])):
         obj = output / (label + ".o")

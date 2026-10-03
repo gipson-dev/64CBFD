@@ -248,6 +248,9 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     uint16_t value = (uint16_t)s->reservoir;
     uint16_t *link = root;
     int32_t level = -1, consumed;
+#ifdef INIT_DECODE_BUILDER_HISTOGRAM_CURSOR
+    const uint32_t *lengthCursor;
+#endif
 #ifdef INIT_DECODE_BUILDER_SYMBOL_CURSOR
     uint32_t *symbolCursor;
 #if INIT_DECODE_BUILDER_SYMBOL_CURSOR == 1
@@ -284,9 +287,16 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     for (bits = 0; bits <= 16; bits++) {
         BUILD_COUNTS[bits] = 0;
     }
+#ifdef INIT_DECODE_BUILDER_HISTOGRAM_CURSOR
+    lengthCursor = lengths;
+    do {
+        BUILD_COUNTS[*lengthCursor++]++;
+    } while (lengthCursor != lengths + count);
+#else
     for (symbolIndex = 0; symbolIndex < count; symbolIndex++) {
         BUILD_COUNTS[lengths[symbolIndex]]++;
     }
+#endif
     if (BUILD_COUNTS[0] == count) {
         *root = 0;
         *rootBits = 0;
