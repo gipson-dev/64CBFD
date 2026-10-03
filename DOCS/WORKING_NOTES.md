@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 843](WORKING_NOTES/843-init-debugger-entry-frame-and-seeded-resume-footer-20261003.md)):
+Retail debugger early exits/frame and conditional footer return/EPC/state
+contracts pass. UI/TLB predicates are explicitly seeded, not reached naturally.
+All 62 focused tests pass; saved-register/SP and frame/home-cell guards hold.
+Bounded lifetime evidence is banked; return to decoder fitting with remaining
+reservation/hardware/resume limits explicit. Production and totals unchanged.
+
 2026-10-03 ([Note 842](WORKING_NOTES/842-init-post-diagnostic-page-state-cleanup-and-continuation-20261003.md)):
 Retail cleanup tail executes table/bitmap resets and selects fault/requeue
 continuation. Instrumented calls record unmap 2-31; CACHE records 513 operands.

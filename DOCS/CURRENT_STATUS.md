@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init debugger entry/footer: [Note 843](WORKING_NOTES/843-init-debugger-entry-frame-and-seeded-resume-footer-20261003.md)
+executes retail early exits and explicitly seeded footer predicates. Frame is
+`0x50` bytes with `0xFA8` image gap; completed paths restore saved registers/SP.
+Conditional runnable, syscall-EPC advance and recognized-fatal outcomes pass.
+All 62 focused tests pass. UI/TLB-generated premises, full hardware/resume and
+reservations remain unproven. Next return to decoder fitting; production,
+decoder/adapter and README totals unchanged.
+
 Init diagnostic cleanup: [Note 842](WORKING_NOTES/842-init-post-diagnostic-page-state-cleanup-and-continuation-20261003.md)
 executes real return-tail/table-clear/bitmap words under explicit external-call
 stubs: unmap indices 2-31, 1,016 table zeros, correct bitmap masks and 513

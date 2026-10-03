@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 843](WORKING_NOTES/843-init-debugger-entry-frame-and-seeded-resume-footer-20261003.md)
+  qualifies retail debugger early exits and seeded footer return/EPC/state
+  contracts, preserving bounded stack/register evidence. All 62 focused tests
+  pass. UI/TLB predicates and actual resume remain unqualified; next fitting
+  work retains those constraints. No production or README aggregate changes.
+
 - Init [Note 842](WORKING_NOTES/842-init-post-diagnostic-page-state-cleanup-and-continuation-20261003.md)
   qualifies retail return-tail/table/bitmap CPU stores with instrumented
   hardware-facing calls. Fault/requeue continuation, unmap indices and cache
