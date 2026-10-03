@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-02 ([Note 734](WORKING_NOTES/734-game-vector-normalizer-match-20261002.md)):
+The 50-word Game vector normalizer is byte-exact after restoring retail's
+optional-output expression shape and three guarded leaf-frame words. Nine
+behavior tests cover zero, optional, in-place, and aliasing paths. Both complete
+Init sections remain exact. Resume Game at 36-word `func_15157FE8`.
+
 2026-10-02 ([Note 733](WORKING_NOTES/733-init-midi-handler-and-complete-init-image-match-20261002.md)):
 The complete 954-word Init MIDI handler emits byte-exact from C. Restored
 audio data interleaving and six original constants make the entire Init code

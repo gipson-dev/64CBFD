@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game vector normalizer byte-matched
+
+- `func_15145128` matches all 50 retail words after recovering the original
+  optional-output expression shape and multiplication order. Three guarded
+  words normalize its leaf-frame allocation and fallback local address.
+- Nine behavior tests pass for ordinary, zero, optional-output, in-place,
+  and aliasing cases. The full code build, matcher, all 25 tool unit tests,
+  and project checks pass; both complete Init sections remain byte-exact.
+- Overall exact C progress is 3,240 / 5,460 (59.34%); Game is 2,568 / 4,788
+  (53.63%), with 2,220 different C rows and zero address drift. See
+  [Working Note 734](WORKING_NOTES/734-game-vector-normalizer-match-20261002.md).
+
 ### Init MIDI handler recovered and complete Init image byte-matched
 
 - `__n_CSPHandleMIDIMsg` emits all 954 retail words directly from complete

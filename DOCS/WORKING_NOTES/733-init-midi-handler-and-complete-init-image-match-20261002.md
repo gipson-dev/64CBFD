@@ -2,6 +2,10 @@
 
 Date: 2026-10-02
 
+Follow-up: Note 734 completes the Game vector-normalizer target named below
+and independently reconfirms both entire Init sections remain byte-exact.
+The current ordinary Game target is `func_15157FE8`.
+
 ## Complete MIDI Recovery
 
 `__n_CSPHandleMIDIMsg` at `0x1001415C..0x10015044` replaces its `GLOBAL_ASM`

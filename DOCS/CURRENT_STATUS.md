@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,239 / 5,460 (59.32%) | 0 | 2,221 |
+| Total | 3,240 / 5,460 (59.34%) | 0 | 2,220 |
 | Init | 491 / 491 (100.00%) | 0 | 0 |
-| Game | 2,567 / 4,788 (53.61%) | 0 | 2,221 |
+| Game | 2,568 / 4,788 (53.63%) | 0 | 2,220 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15145128` now matches all 50 words after restoring the retail
+optional-length/reciprocal expression shape and output multiply order. Three
+expected-word guards normalize only the leaf frame, fallback local address,
+and stack restore. Nine source-behavior tests cover zero vectors, omitted
+outputs, in-place operation, and output-pointer aliasing. The neighboring
+cross product remains exact, and both complete Init sections remain exact.
+See [Working Note 734](WORKING_NOTES/734-game-vector-normalizer-match-20261002.md).
 
 Init `__n_CSPHandleMIDIMsg` now matches all 954 words directly from semantic
 C, including Rare's custom envelope, oscillator, controller, and notification
@@ -48,7 +56,7 @@ original assembly rows should become C. See
 [Working Note 733](WORKING_NOTES/733-init-midi-handler-and-complete-init-image-match-20261002.md).
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 50-word `func_15145128`, currently at 35 real word differences.
+queue with 36-word `func_15157FE8`, currently at 35 real word differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and
 `func_150F631C` in its separate near-match cleanup queue.
 
