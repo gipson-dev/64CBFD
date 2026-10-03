@@ -132,9 +132,20 @@ def main():
     parser.add_argument("--output", type=Path)
     parser.add_argument("--frame-backed", action="store_true",
                         help="compile the isolated physical-frame scratch variant")
+    parser.add_argument("--flat-bits", action="store_true",
+                        help="flatten take_bits without changing state-access order")
+    parser.add_argument("--cache-builder", nargs="?", const="all",
+                        choices=("all", "counts-offsets"),
+                        help="capture the builder's scratch array bases")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
     suffix = "-frame" if args.frame_backed else ""
+    if args.flat_bits:
+        suffix += "-flat-bits"
+    if args.cache_builder:
+        suffix += "-cached-builder"
+        if args.cache_builder != "all":
+            suffix += "-" + args.cache_builder
     output = (args.output or root / ("conker/build/init-decompressor-semantic" + suffix)).resolve()
     output.mkdir(parents=True, exist_ok=True)
     cwd = root / "conker"
@@ -145,6 +156,11 @@ def main():
               "-mips2", "-o32", "-DINIT_DECODE_GUEST"]
     if args.frame_backed:
         common.append("-DINIT_DECODE_FRAME_BACKED")
+    if args.flat_bits:
+        common.append("-DINIT_DECODE_FLAT_BITS")
+    if args.cache_builder:
+        common.append("-DINIT_DECODE_CACHE_BUILDER=" +
+                      ("1" if args.cache_builder == "all" else "2"))
     report = {}
     for label, profile in (("o2g3", ["-O2", "-g3"]), ("o1", ["-O1"])):
         obj = output / (label + ".o")

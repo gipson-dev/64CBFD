@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init codegen trials: [Note 807](WORKING_NOTES/807-init-decompressor-flat-bit-helper-and-builder-base-codegen-trials-20261003.md)
+measures a flat bit helper and two builder-base capture shapes. The smallest
+frame-backed text is 5,216 bytes, still 1,232 over retail, with a larger builder
+frame. Flattening reduces the stored-path frame bound but grows text. All remain
+opt-in; no production conversion or README aggregate increase is claimed.
+All 664 project tool tests pass, including 4,056 retail-page native C calls;
+sixteen guest compiles are warning-clean and default object text is unchanged.
+
 Init storage boundaries: [Note 806](WORKING_NOTES/806-init-exception-storage-boundaries-and-all-retail-core-page-survey-20261003.md)
 extends the retained-core survey to all 507 retail pages; maximum workspace
 write span is 3,564 bytes on page 50. A fresh guest probe measures SDK

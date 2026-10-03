@@ -10,6 +10,10 @@ typedef signed int int32_t;
 #include "init_decompressor_frame.h"
 
 /* Isolated recovery candidate. Not linked into production; caller owns bounds. */
+#if defined(INIT_DECODE_CACHE_BUILDER) && INIT_DECODE_CACHE_BUILDER != 1 && INIT_DECODE_CACHE_BUILDER != 2
+#error Unsupported builder cache mode
+#endif
+
 typedef struct {
     uint8_t operation;
     uint8_t bits;
@@ -127,11 +131,35 @@ static void drop_bits(InitDecodeState *s, uint32_t width) {
 
 static uint32_t take_bits(InitDecodeState *s, uint32_t width) {
     uint32_t value;
+#ifdef INIT_DECODE_FLAT_BITS
+    while (s->bits < (int32_t)width) {
+        s->reservoir |= (uint32_t)*s->input++ << (s->bits & 31);
+        s->bits += 8;
+    }
+    value = s->reservoir & ((1u << (width & 31)) - 1);
+    s->reservoir >>= width & 31;
+    s->bits -= width;
+#else
     need_bits(s, width);
     value = s->reservoir & low_mask(width);
     drop_bits(s, width);
+#endif
     return value;
 }
+
+#ifdef INIT_DECODE_CACHE_BUILDER
+#define BUILD_COUNTS cachedCounts
+#if INIT_DECODE_CACHE_BUILDER == 1
+#define BUILD_SORTED cachedSorted
+#else
+#define BUILD_SORTED SORTED(s)
+#endif
+#define BUILD_OFFSETS cachedOffsets
+#else
+#define BUILD_COUNTS COUNTS(s)
+#define BUILD_SORTED SORTED(s)
+#define BUILD_OFFSETS OFFSETS(s)
+#endif
 
 int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                       uint32_t count, uint32_t simple, const uint16_t *bases,
@@ -141,41 +169,54 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     uint16_t value = (uint16_t)s->reservoir;
     uint16_t *link = root;
     int32_t level = -1, consumed;
+#ifdef INIT_DECODE_CACHE_BUILDER
+    uint32_t *cachedCounts, *cachedOffsets;
+#if INIT_DECODE_CACHE_BUILDER == 1
+    uint32_t *cachedSorted;
+#endif
+#endif
     if (count == 0) {
         return 1;
     }
+#ifdef INIT_DECODE_CACHE_BUILDER
+    cachedCounts = COUNTS(s);
+#if INIT_DECODE_CACHE_BUILDER == 1
+    cachedSorted = SORTED(s);
+#endif
+    cachedOffsets = OFFSETS(s);
+#endif
     for (bits = 0; bits <= 16; bits++) {
-        COUNTS(s)[bits] = 0;
+        BUILD_COUNTS[bits] = 0;
     }
     for (symbolIndex = 0; symbolIndex < count; symbolIndex++) {
-        COUNTS(s)[lengths[symbolIndex]]++;
+        BUILD_COUNTS[lengths[symbolIndex]]++;
     }
-    if (COUNTS(s)[0] == count) {
+    if (BUILD_COUNTS[0] == count) {
         *root = 0;
         *rootBits = 0;
         return 0;
     }
-    for (min = 1; min < 16 && COUNTS(s)[min] == 0; min++) {}
-    for (max = 16; max && COUNTS(s)[max] == 0; max--) {}
+    for (min = 1; min < 16 && BUILD_COUNTS[min] == 0; min++) {}
+    for (max = 16; max && BUILD_COUNTS[max] == 0; max--) {}
     width = *rootBits;
     if (width < min) width = min;
     if (width > max) width = max;
     *rootBits = width;
     available = 1u << min;
     for (bits = min; bits < max; bits++) {
-        available = (available - COUNTS(s)[bits]) << 1;
+        available = (available - BUILD_COUNTS[bits]) << 1;
     }
-    incomplete = available - COUNTS(s)[max];
-    COUNTS(s)[max] = available;
-    OFFSETS(s)[1] = 0;
+    incomplete = available - BUILD_COUNTS[max];
+    BUILD_COUNTS[max] = available;
+    BUILD_OFFSETS[1] = 0;
     for (bits = 1; bits < max; bits++) {
-        OFFSETS(s)[bits + 1] = OFFSETS(s)[bits] + COUNTS(s)[bits];
+        BUILD_OFFSETS[bits + 1] = BUILD_OFFSETS[bits] + BUILD_COUNTS[bits];
     }
     for (symbolIndex = 0; symbolIndex < count; symbolIndex++) {
         bits = lengths[symbolIndex];
-        if (bits != 0) SORTED(s)[OFFSETS(s)[bits]++] = symbolIndex;
+        if (bits != 0) BUILD_SORTED[BUILD_OFFSETS[bits]++] = symbolIndex;
     }
-    OFFSETS(s)[0] = 0;
+    BUILD_OFFSETS[0] = 0;
 #ifdef INIT_DECODE_FRAME_BACKED
     s->frame->tables[0] = 0;
 #endif
@@ -183,7 +224,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     symbolIndex = 0;
     consumed = -(int32_t)width;
     for (bits = min; bits <= max; bits++) {
-        remaining = COUNTS(s)[bits];
+        remaining = BUILD_COUNTS[bits];
         while (remaining != 0) {
             InitDecodeEntry entry;
             while ((int32_t)bits > consumed + (int32_t)width) {
@@ -202,8 +243,8 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                     while (levelBits < ceiling) {
                         slots <<= 1;
                         scan++;
-                        if (COUNTS(s)[scan] >= slots) break;
-                        slots -= COUNTS(s)[scan];
+                        if (BUILD_COUNTS[scan] >= slots) break;
+                        slots -= BUILD_COUNTS[scan];
                         levelBits++;
                     }
                 }
@@ -216,7 +257,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                 SET_TABLE(s, level, table);
                 if (level != 0) {
                     InitDecodeEntry *parent;
-                    OFFSETS(s)[level] = code;
+                    BUILD_OFFSETS[level] = code;
                     parent = &s->workspace[TABLE_INDEX(s, level - 1) +
                         (code >> ((consumed - (int32_t)width) & 31))];
                     parent->operation = levelBits + 16;
@@ -229,7 +270,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
             entry.operation = 99;
             entry.bits = bits - consumed;
             if (symbolIndex < count) {
-                uint32_t symbol = SORTED(s)[symbolIndex++];
+                uint32_t symbol = BUILD_SORTED[symbolIndex++];
                 if (symbol < simple) {
                     entry.operation = symbol < 256 ? 16 : 15;
                     value = symbol;
@@ -249,7 +290,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                 next >>= 1;
             }
             code ^= next;
-            while ((code & low_mask(consumed)) != OFFSETS(s)[level]) {
+            while ((code & low_mask(consumed)) != BUILD_OFFSETS[level]) {
                 level--;
                 consumed -= width;
             }
@@ -258,6 +299,10 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     }
     return incomplete != 0 && max != 1;
 }
+
+#undef BUILD_COUNTS
+#undef BUILD_SORTED
+#undef BUILD_OFFSETS
 
 static InitDecodeEntry *lookup(InitDecodeState *s, uint32_t root, uint32_t width) {
     InitDecodeEntry *entry;

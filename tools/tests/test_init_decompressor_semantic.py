@@ -297,6 +297,37 @@ class InitDecompressorSemanticTests(unittest.TestCase):
         candidate, _ = self.assert_model(encoder.encoded([ord("A"), (3, 2)]))
         self.assertEqual(candidate.bytes(), b"A\xa5A\xa5")
 
+    def test_all_retail_pages_against_zlib_and_pristine_image(self):
+        from tools.tests import test_init_decompressor_retail_pages as retail
+        root = Path(__file__).resolve().parents[2]
+        rom, image = root / "baserom.us.z64", root / "conker/conker.us.bin"
+        if not rom.exists() or not image.exists():
+            self.skipTest("Local retail ROM and pristine image required")
+        pages = retail.retail_pages(rom.read_bytes())
+        pristine = image.read_bytes()
+        fixed, _ = self.fixture_type(self.library).fixed()
+        for index, _, _, chunk, expected in pages:
+            with self.subTest(page=index):
+                start = 0x2D4B0 + index * 0x1000
+                self.assertEqual(expected, pristine[start:start + len(expected)])
+                candidate = self.fixture_type(self.library, chunk)
+                input_before = candidate.input.raw
+                returned = self.library.init_decode_core(
+                    ctypes.byref(candidate.state), fixed, retail.INPUT,
+                    0x80050000, retail.WORKSPACE)
+                self.assertEqual(returned, len(expected))
+                self.assertEqual(candidate.state.produced, len(expected))
+                self.assertEqual(candidate.bytes(), expected)
+                self.assertEqual(candidate.input.raw, input_before)
+                self.assertEqual(candidate.output.raw[:16], b"\xa5" * 16)
+                tail = candidate.output.raw[16 + len(expected):-1]
+                self.assertEqual(tail, b"\xa5" * len(tail))
+                if hasattr(candidate.state, "storage"):
+                    storage = candidate.state.storage
+                    self.assertEqual(ctypes.string_at(storage, 16), b"\xa5" * 16)
+                    self.assertEqual(ctypes.string_at(ctypes.byref(storage, 16 + 0xA88), 16),
+                                     b"\xa5" * 16)
+
 
 if __name__ == "__main__":
     unittest.main()

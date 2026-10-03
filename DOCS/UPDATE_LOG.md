@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 807](WORKING_NOTES/807-init-decompressor-flat-bit-helper-and-builder-base-codegen-trials-20261003.md)
+  adds isolated flat-bit-helper and two builder-base capture trials. Their
+  measured text/stack tradeoffs do not fit retail or qualify a production
+  adapter. Seventy-five variant test methods cover both scratch representations,
+  including the shared all-retail-page C corpus;
+  default candidate, production assembly and README aggregates remain unchanged.
+
 - Init [Note 806](WORKING_NOTES/806-init-exception-storage-boundaries-and-all-retail-core-page-survey-20261003.md)
   adds a fresh guest thread-layout receipt, original context extent and
   page-table DMA checks, wrapper canaries, and all-507-page retained-core survey.

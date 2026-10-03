@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 807](WORKING_NOTES/807-init-decompressor-flat-bit-helper-and-builder-base-codegen-trials-20261003.md)):
+Focused flat-bit-helper and builder-array-base captures change guest text/frame
+measurements without replacing production assembly. Best text is 5,216 bytes
+versus 3,984 retail; caching saves text but adds stack. The bit helper removes
+nested calls but grows text. Seventy-five variant semantic/physical test methods
+and shared all-retail-page C coverage are added; modes remain opt-in and
+aggregate counts unchanged.
+
 2026-10-03 ([Note 806](WORKING_NOTES/806-init-exception-storage-boundaries-and-all-retail-core-page-survey-20261003.md)):
 All 507 retail pages pass the retained core at exception addresses; maximum
 workspace write span is 3,564 bytes. Fresh IDO sizeof/offsetof shows SDK thread
