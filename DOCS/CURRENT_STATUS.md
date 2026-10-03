@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init retail page qualification: [Note 804](WORKING_NOTES/804-init-retail-page-dma-and-exception-core-address-qualification-20261003.md)
+checks all 507 original Game pages against pristine decompressed bytes. Maximum
+rounded DMA is 3,072 bytes, leaving 440 bytes before exception workspace.
+Three selected retained-core calls pass at handler input/workspace/SP addresses;
+all 98 Init tests pass. This is bounded model evidence, not full exception
+context, allocation ownership or a production conversion. Aggregates unchanged.
+
 Init frame-backed C: [Note 803](WORKING_NOTES/803-init-decompressor-frame-backed-c-and-guest-call-frame-bounds-20261003.md)
 implements isolated physical scratch, guest table-address translation, and
 fixed/dynamic root aliases. Fourteen frame-backed tests and all 95 Init tests

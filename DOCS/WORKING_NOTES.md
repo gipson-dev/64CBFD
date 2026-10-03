@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 804](WORKING_NOTES/804-init-retail-page-dma-and-exception-core-address-qualification-20261003.md)):
+All 507 retail Game pages decode and match pristine bytes. Maximum rounded DMA
+is 3,072 bytes, 440 bytes short of exception workspace. Three selected retained
+core calls pass at the handler's input/workspace/SP addresses; workspace spans
+are observed use, not inferred capacity. All 98 Init tests pass. Production
+assembly and aggregates unchanged; full context/ownership and fitting C remain open.
+
 2026-10-03 ([Note 803](WORKING_NOTES/803-init-decompressor-frame-backed-c-and-guest-call-frame-bounds-20261003.md)):
 Isolated frame-backed C uses physical scratch/root aliases and explicit guest
 table addresses. Fourteen variant tests and all 95 Init tests pass; full

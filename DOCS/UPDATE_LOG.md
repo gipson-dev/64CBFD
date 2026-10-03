@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 804](WORKING_NOTES/804-init-retail-page-dma-and-exception-core-address-qualification-20261003.md)
+  adds original-ROM-identity-checked qualification of all 507 retail pages,
+  maximum DMA separation, and three retained-core calls at exception addresses.
+  All 98 Init tests pass; no production conversion or README aggregate change.
+
 - Init [Note 803](WORKING_NOTES/803-init-decompressor-frame-backed-c-and-guest-call-frame-bounds-20261003.md)
   implements frame-backed experimental C with physical table addresses and
   root/staging aliases. Fourteen variant tests and all 95 Init tests pass;
