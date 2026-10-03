@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 812](WORKING_NOTES/812-init-rolled-scratch-cache-and-local-allocation-trials-20261003.md)
+  qualifies selected rolled scratch-cache combinations and measures a local
+  allocation cursor. Best text is 4,224 bytes, 240 over retail; lower-stack lead
+  remains uncached aligned. Local cursor gives no rolled win. The new individual
+  slot ledger keeps aggregate fit separate from entry/ABI restoration.
+
 - Init [Note 811](WORKING_NOTES/811-init-parent-byte-addressing-and-no-unroll-profile-20261003.md)
   rejects byte-parent lookup as a size improvement but establishes no-unroll as
   a strong fitting lead: 4,256-byte aligned/bounded O2 text, 384-byte core frame

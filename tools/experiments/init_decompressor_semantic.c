@@ -205,6 +205,14 @@ static uint32_t take_bits(InitDecodeState *s, uint32_t width) {
 #define BUILD_WORKSPACE (s->workspace)
 #endif
 
+#ifdef INIT_DECODE_LOCAL_ALLOCATED
+#define BUILD_ALLOCATED allocated
+#define BUILD_COMMIT_ALLOCATION (s->allocated = allocated)
+#else
+#define BUILD_ALLOCATED (s->allocated)
+#define BUILD_COMMIT_ALLOCATION ((void)0)
+#endif
+
 #ifdef INIT_DECODE_PACKED_ENTRY
 #define BUILD_ENTRY_OPERATION entryOperation
 #define BUILD_ENTRY_BITS entryBits
@@ -229,6 +237,9 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     uint16_t value = (uint16_t)s->reservoir;
     uint16_t *link = root;
     int32_t level = -1, consumed;
+#ifdef INIT_DECODE_LOCAL_ALLOCATED
+    uint32_t allocated;
+#endif
 #ifdef INIT_DECODE_CACHE_WORKSPACE
     InitDecodeEntry *cachedWorkspace;
 #endif
@@ -289,6 +300,9 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     code = 0;
     symbolIndex = 0;
     consumed = -(int32_t)width;
+#ifdef INIT_DECODE_LOCAL_ALLOCATED
+    allocated = s->allocated;
+#endif
     for (bits = min; bits <= max; bits++) {
         remaining = BUILD_COUNTS[bits];
         while (remaining != 0) {
@@ -320,9 +334,9 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                     }
                 }
                 size = 1u << BUILD_SHIFT(levelBits);
-                next = s->allocated + 1;
+                next = BUILD_ALLOCATED + 1;
                 *link = next;
-                link = &ENTRY_VALUE(&BUILD_WORKSPACE[s->allocated]);
+                link = &ENTRY_VALUE(&BUILD_WORKSPACE[BUILD_ALLOCATED]);
                 *link = 0;
                 table = next;
                 SET_TABLE(s, level, table);
@@ -342,7 +356,8 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                     ENTRY_VALUE(parent) = next;
                     value = next;
                 }
-                s->allocated += size + 1;
+                BUILD_ALLOCATED += size + 1;
+                BUILD_COMMIT_ALLOCATION;
             }
             BUILD_ENTRY_OPERATION = 99;
             BUILD_ENTRY_BITS = bits - consumed;
@@ -395,6 +410,8 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #undef BUILD_SORTED
 #undef BUILD_OFFSETS
 #undef BUILD_WORKSPACE
+#undef BUILD_ALLOCATED
+#undef BUILD_COMMIT_ALLOCATION
 #undef BUILD_ENTRY_OPERATION
 #undef BUILD_ENTRY_BITS
 #undef BUILD_SHIFT

@@ -158,6 +158,8 @@ def main():
                         help="use byte-offset parent lookup; requires --frame-backed")
     parser.add_argument("--no-unroll", action="store_true",
                         help="disable IDO loop unrolling for both guest profiles")
+    parser.add_argument("--local-allocated", action="store_true",
+                        help="hold builder allocation cursor locally; commit every allocation")
     parser.add_argument("--cache-builder", nargs="?", const="all",
                         choices=("all", "counts-offsets"),
                         help="capture the builder's scratch array bases")
@@ -182,6 +184,8 @@ def main():
         suffix += "-byte-parent"
     if args.no_unroll:
         suffix += "-no-unroll"
+    if args.local_allocated:
+        suffix += "-local-allocated"
     if args.cache_builder:
         suffix += "-cached-builder"
         if args.cache_builder != "all":
@@ -210,6 +214,8 @@ def main():
         common.append("-DINIT_DECODE_BYTE_PARENT")
     if args.no_unroll:
         common.append("-Wo,-loopunroll,0")
+    if args.local_allocated:
+        common.append("-DINIT_DECODE_LOCAL_ALLOCATED")
     if args.cache_builder:
         common.append("-DINIT_DECODE_CACHE_BUILDER=" +
                       ("1" if args.cache_builder == "all" else "2"))

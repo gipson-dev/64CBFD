@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init rolled-state trials: [Note 812](WORKING_NOTES/812-init-rolled-scratch-cache-and-local-allocation-trials-20261003.md)
+reduces packed/bounded cached O2 text to 4,224 bytes, 240 over retail, at a
+400-byte core call-frame bound. Uncached aligned remains the 4,256/384 lower-stack
+lead. Local allocation capture gives no rolled benefit. All 102 focused tests
+and all 1,078 project tool tests pass, along with 24 post-edit guest compiles.
+A verified per-routine ledger distinguishes body/alignment words and exposes remaining
+slot overruns and missing original wrappers. No production/README count change.
+
 Init no-unroll lead: [Note 811](WORKING_NOTES/811-init-parent-byte-addressing-and-no-unroll-profile-20261003.md)
 reduces frame-backed aligned/bounded O2 text to 4,256 bytes and core call-frame
 bound to 384, leaving 272 bytes over retail. Parent byte addressing does not

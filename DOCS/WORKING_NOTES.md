@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 812](WORKING_NOTES/812-init-rolled-scratch-cache-and-local-allocation-trials-20261003.md)):
+Rolled packed/bounded scratch caching reaches 4,224 text bytes / 400-byte core
+bound, 240 over retail. Uncached aligned remains the lower-stack lead at 384.
+Local allocation capture fails to improve rolled fitting. All 102 focused
+tests and 24 post-edit guest compiles pass; individual-slot ledger identifies
+builder/dynamic/other overruns and absent original ABI wrappers. Production exact.
+
 2026-10-03 ([Note 811](WORKING_NOTES/811-init-parent-byte-addressing-and-no-unroll-profile-20261003.md)):
 IDO no-unroll reduces frame-backed aligned/bounded O2 text from 5,200 to 4,256
 bytes and core frame bound from 400 to 384. Byte-parent lookup gives no benefit;
