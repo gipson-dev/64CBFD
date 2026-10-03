@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-03 ([Note 762](WORKING_NOTES/762-init-mmio-partial-volatility-trials-20261003.md)):
+Twenty new partial-volatility/profile trials for Init `func_100038E0` have
+the correct emitted store trace but no exact body. Production assembly is
+unchanged. Three new regression tests and all 170 tool tests pass. Both
+complete Init sections remain exact. Next ordinary Game target: `func_15045384`.
+
 2026-10-03 ([Note 761](WORKING_NOTES/761-init-resume-conversion-decision-20261003.md)):
 Init retains 47 assembly rows / 12,252 bytes. The MMIO and bitmap leaves remain
 bounded candidates without exact replacements; the other 45 require retained

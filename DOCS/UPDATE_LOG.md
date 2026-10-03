@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Twenty new Init MMIO partial-volatility/profile experiments produce no
+  matching conversion. Three original-assembly regression tests were added;
+  all 170 tool tests pass. Production source and README aggregates remain
+  unchanged by this experiment.
+  [Note 762](WORKING_NOTES/762-init-mmio-partial-volatility-trials-20261003.md)
+
 - The original collector/context assembly replaces 23 placeholders across six
   inventory groups; all 5,712 bytes match. All 167 tool tests pass. README
   aggregate coverage now excludes those false C rows.

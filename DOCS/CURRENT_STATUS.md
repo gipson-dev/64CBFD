@@ -47,6 +47,13 @@ Only the 44-byte MMIO leaf and 76-byte bitmap leaf are bounded C candidates;
 neither has a proven matching replacement. Both entire Init sections remain
 exact. See [Note 761](WORKING_NOTES/761-init-resume-conversion-decision-20261003.md).
 
+Twenty further partial-volatility/profile trials still do not match the
+eleven-word MMIO leaf. All emitted store traces pass; original assembly stays
+in production. Three new baseline regression tests and all 170 tool tests
+pass. Both complete Init sections remain exact. Resume ordinary Game work
+at `func_15045384`; see
+[Note 762](WORKING_NOTES/762-init-mmio-partial-volatility-trials-20261003.md).
+
 Game `func_150450CC` now has its complete highest-height candidate selection,
 vertex copy, optional metadata, and result-flag body instead of a zero-return
 placeholder. It remains non-matching: 143 body words plus one padding nop fill
