@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `dee7bf0`.
 
+Follow-up: [Note 819](819-init-compiled-guest-stream-core-and-fixed-initializer-qualification-20261003.md)
+extends the guest-only control flow and qualifies connected stream/core vectors
+and compiled fixed initialization. The retail oracle remains unchanged and
+all builder comparisons are rerun. Original-entry/hardware gates remain open.
+
 ## Result
 
 The actual IDO-generated builder now executes in a bounded big-endian MIPS

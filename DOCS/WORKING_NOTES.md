@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-03 ([Note 819](WORKING_NOTES/819-init-compiled-guest-stream-core-and-fixed-initializer-qualification-20261003.md)):
+Forty-eight connected cases across six linked IDO images give 288 stream/core
+comparisons and compiled fixed initializations. Results, scratch, error state,
+saved registers and frame bounds agree with retail on the tested domain.
+All 74 combined checks pass. No candidate/production C or aggregate changes.
+
 2026-10-03 ([Note 818](WORKING_NOTES/818-init-compiled-guest-builder-differential-execution-20261003.md)):
 Six fresh linked IDO images execute the builder under a bounded MIPS model;
 186 comparisons match actual retail tables/scratch and preserve O32 saved

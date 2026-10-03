@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init compiled connected paths: [Note 819](WORKING_NOTES/819-init-compiled-guest-stream-core-and-fixed-initializer-qualification-20261003.md)
+executes 288 linked guest stream/core comparisons and 288 compiled fixed-table
+initializations across six profiles. Stored/fixed/dynamic, mixed blocks, strict
+limits, core alignment/workspace clamps and partial errors match retail. All
+74 combined checks pass, including builder regressions. Full retail-page guest
+replay and original-entry/hardware gates remain open; production counts unchanged.
+
 Init compiled guest builder: [Note 818](WORKING_NOTES/818-init-compiled-guest-builder-differential-execution-20261003.md)
 executes six fresh linked IDO builder images (three shapes, O2/g3 and O1) in
 a bounded MIPS model. All 186 case/image comparisons agree with retail table/

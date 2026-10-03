@@ -90,6 +90,7 @@ class InitDecompressorCompiledGuestBuilderTests(unittest.TestCase):
         cls.directory = tempfile.TemporaryDirectory()
         cls.addClassCleanup(cls.directory.cleanup)
         cls.images = []
+        cls.receipts = {}
         shapes = (("frame", ["--frame-backed"]),
                   ("aligned-end", ["--frame-backed", "--aligned-entry", "--bounded-builder-shifts",
                       "--no-unroll", "--bounded-length-scan", "--dynamic-cursor", "--builder-symbol-cursor"]),
@@ -123,6 +124,7 @@ class InitDecompressorCompiledGuestBuilderTests(unittest.TestCase):
                     raise AssertionError("guest layout is not the frame-backed O32 layout")
                 unit = next(unit for unit in receipt["call_graph"] if unit["name"] == "init_decode_build")
                 cls.images.append((label, profile, image, unit["direct_call_frame_bound"]))
+                cls.receipts[label, profile] = receipt
 
     def compare(self, lengths, bits=7, simple=None, allocated=0, bases=(), extras=()):
         reference = BuilderFixture(lengths, bits=bits, simple=simple, allocated=allocated,

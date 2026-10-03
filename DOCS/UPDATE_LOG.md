@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 819](WORKING_NOTES/819-init-compiled-guest-stream-core-and-fixed-initializer-qualification-20261003.md)
+  extends linked guest execution to fixed initialization and connected stored,
+  fixed, dynamic and core paths. All 74 combined checks pass; tested state and
+  partial-error behavior match retail. No production ownership/count change.
+
 - Init [Note 818](WORKING_NOTES/818-init-compiled-guest-builder-differential-execution-20261003.md)
   adds actual linked IDO builder execution under a bounded MIPS model, not just
   native C or size receipts. Six images pass 186 retail comparisons; all 63

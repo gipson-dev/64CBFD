@@ -80,7 +80,7 @@ class GuestBuilderFixture(BuilderFixture):
                                len(lengths) if simple is None else simple]
         self.before = self.registers[:]
         self.min_sp = self.STACK
-        self.readonly = image.readonly
+        self.readonly = list(image.readonly)
         self.allowed_writes = [(self.STACK - 4096, self.STACK + 64),
                                (self.STATE, self.STATE + 40),
                                (self.FRAME, self.FRAME + 0xA88),
@@ -106,6 +106,8 @@ class GuestBuilderFixture(BuilderFixture):
             self.registers[rt] = self.registers[rs] ^ immediate
         elif op == 0 and fn == 43:
             self.registers[rd] = int(self.registers[rs] < self.registers[rt])
+        elif op == 0 and fn == 3:
+            self.registers[rd] = (self.signed(self.registers[rt]) >> (word >> 6 & 31)) & 0xFFFFFFFF
         elif op in (42, 46):
             address = (self.registers[rs] + signed) & 0xFFFFFFFF
             offset = address & 3
@@ -123,5 +125,104 @@ class GuestBuilderFixture(BuilderFixture):
         self.min_sp = min(self.min_sp, self.registers[29])
 
     def run(self, budget=200000, entry=None, stop_pc=None):
-        return super().run(budget=budget, entry=self.image.entry if entry is None else entry,
-                           stop_pc=stop_pc)
+        pc = self.image.entry if entry is None else entry
+        for _ in range(budget):
+            if pc == stop_pc:
+                return self.registers[2]
+            if pc in self.capture:
+                self.snapshots[pc] = (self.registers[:], self.fprs[:])
+            self.visits[pc] = self.visits.get(pc, 0) + 1
+            word = self.code[pc]
+            op, rs, rt = word >> 26, word >> 21 & 31, word >> 16 & 31
+            if op in (1, 4, 5, 6, 7, 20, 21, 22, 23):
+                if op == 1:
+                    if rt not in (0, 1, 2, 3):
+                        raise AssertionError("unsupported guest REGIMM branch")
+                    negative = self.signed(self.registers[rs]) < 0
+                    taken = negative if rt in (0, 2) else not negative
+                    likely = rt in (2, 3)
+                elif op in (4, 5, 20, 21):
+                    taken = self.registers[rs] == self.registers[rt]
+                    if op in (5, 21):
+                        taken = not taken
+                    likely = op in (20, 21)
+                else:
+                    value = self.signed(self.registers[rs])
+                    taken = value <= 0 if op in (6, 22) else value > 0
+                    likely = op in (22, 23)
+                immediate = word & 0xFFFF
+                offset = immediate if immediate < 0x8000 else immediate - 0x10000
+                if taken or not likely:
+                    self.execute(self.code[pc + 4])
+                pc = pc + 4 + offset * 4 if taken else pc + 8
+            elif op in (2, 3):
+                if op == 3:
+                    self.registers[31] = pc + 8
+                self.execute(self.code[pc + 4])
+                pc = ((pc + 4) & 0xF0000000) | ((word & 0x3FFFFFF) << 2)
+            elif word == 0x03E00008:
+                target = self.registers[31]
+                self.execute(self.code[pc + 4])
+                if target == 0xDEAD0000:
+                    return self.registers[2]
+                pc = target
+            else:
+                self.execute(word)
+                pc += 4
+        raise AssertionError("compiled guest instruction budget exhausted")
+
+
+class GuestStreamFixture(GuestBuilderFixture):
+    STATE = 0x60000
+    FRAME = 0x70000
+    INPUT = 0x50000
+    OUTPUT = 0x40000
+    FIXED_BASE = 0x8003BE90
+
+    def __init__(self, image, raw, limit=0x70000000):
+        super().__init__(image, [])
+        self.memory.update((address, 0xA5) for address in
+                           range(self.OUTPUT - 16, self.INPUT))
+        self.memory.update((self.INPUT + index, value) for index, value in
+                           enumerate(raw + b"\0" * 16))
+        self.memory.update((self.FIXED_BASE + index, 0xA5) for index in range(0x10000))
+        fixed_range = (self.FIXED_BASE, self.FIXED_BASE + 0x10000)
+        self.allowed_writes.extend((fixed_range, (self.OUTPUT, self.INPUT)))
+        self.put(self.STATE + 8, self.FIXED_BASE, 4)
+        self.put(self.STATE + 36, self.FIXED_BASE, 4)
+        self.registers[4] = self.STATE
+        initializer_registers = self.registers[:]
+        self.run(entry=image.symbols["init_decode_fixed_tables"], budget=2000000)
+        if self.get(self.STATE + 28, 4) != 658:
+            raise AssertionError("compiled fixed-table allocation differs from retail")
+        if [self.get(self.FRAME + offset, size) for offset, size in
+                ((0x9C8, 2), (0x9CC, 4), (0x9D0, 2), (0x9D4, 4))] != [1, 7, 626, 5]:
+            raise AssertionError("compiled fixed roots/widths differ from retail")
+        for register in (*range(16, 24), 28, 29, 30, 31):
+            if self.registers[register] != initializer_registers[register]:
+                raise AssertionError("compiled initializer changed a saved O32 register")
+        if bytes(self.memory[self.FRAME + offset] for offset in range(0xA44, 0xA88 + 16)) != b"\xa5" * 84:
+            raise AssertionError("compiled initializer overwrote reserved frame cells")
+        self.fixed_table = bytes(self.memory[self.FIXED_BASE + index] for index in range(658 * 4))
+        self.allowed_writes.remove(fixed_range)
+        self.readonly.append(fixed_range)
+        # Initializer and stream have independent caller scratch lifetimes.
+        self.memory.update((self.FRAME + index, 0xA5) for index in range(0xA88))
+        for index, value in enumerate((self.INPUT, self.OUTPUT, self.WORKSPACE, 0,
+                                       0, 0, limit, 0, self.FRAME, self.WORKSPACE)):
+            self.put(self.STATE + index * 4, value, 4)
+        self.registers[4:8] = [self.STATE, self.FIXED_BASE, 0, 0]
+        self.before = self.registers[:]
+        self.min_sp = self.STACK
+        self.reads, self.writes, self.visits = [], [], {}
+
+    def stream(self):
+        return self.run(entry=self.image.symbols["init_decode_stream"], budget=2000000)
+
+    def core(self, alignment=0, workspace=None):
+        workspace = self.WORKSPACE if workspace is None else workspace
+        self.put(self.STATE, self.INPUT + alignment, 4)
+        self.put(self.STATE + 8, workspace, 4)
+        self.registers[4:8] = [self.STATE, self.FIXED_BASE, self.INPUT + alignment, self.OUTPUT]
+        self.put(self.STACK + 16, workspace, 4)
+        return self.run(entry=self.image.symbols["init_decode_core"], budget=2000000)
