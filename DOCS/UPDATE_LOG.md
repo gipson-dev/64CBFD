@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15045AE4` replaces its zero-return placeholder with the complete
+  context-2 entity highest-height query, preserving state `2` and late
+  entity-index/base reloads. Its 153-word slot contains 150 semantic body
+  words and three padding nops, with 88 differences and no new guards.
+  Fifteen new tests and all 271 tool tests pass; full code build and project
+  checks pass. Aggregate tables, including README, remain unchanged.
+  [Note 772](WORKING_NOTES/772-game-context2-entity-highest-height-query-recovery-20261003.md)
+
 - Game `func_15045880` is now the complete semantic entity lowest-height
   query instead of retained assembly ownership. It remains non-matching:
   150 body words plus three padding nops, 88 word differences, no new guards.

@@ -106,3 +106,7 @@ its own selection, metadata, reload, and result-state contract before reuse.
 Continue lowest/highest entity-query matching separately. Remaining Init gates
 are unchanged in [Note 768](768-init-remaining-assembly-current-decision-20261003.md).
 The sibling host port and frozen Release artifacts remain untouched.
+
+Follow-up: [Note 772](772-game-context2-entity-highest-height-query-recovery-20261003.md)
+recovers the then-pending adjacent highest-height placeholder semantically.
+It remains non-matching; matching and gameplay qualification are still open.

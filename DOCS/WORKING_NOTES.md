@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 772](WORKING_NOTES/772-game-context2-entity-highest-height-query-recovery-20261003.md)):
+Game `func_15045AE4` replaces its zero-return placeholder with the complete
+context-2 entity highest-height query. It remains non-matching: 150 body
+words plus three padding nops, 88 differences, no new guards. Fifteen new
+tests and all 271 tool tests pass; full build/project checks pass. Aggregate
+tables are unchanged; both complete Init sections and recovered neighbors
+remain exact. Next: retained `func_15045D48`.
+
 2026-10-03 ([Note 771](WORKING_NOTES/771-game-entity-lowest-height-query-semantic-recovery-20261003.md)):
 Game `func_15045880` converts retained assembly ownership to complete semantic
 C. It remains non-matching: 150 body words plus three padding nops in the

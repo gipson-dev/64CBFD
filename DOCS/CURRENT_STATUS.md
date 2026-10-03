@@ -37,15 +37,26 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,589 / 4,786 (54.10%) | 0 | 2,197 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Game `func_15045AE4` now has the complete context-2 entity highest-height
+query instead of a zero-return placeholder. It uses scratch `D_800D37E0`,
+the retail -10000 sentinel, state `2`, and late entity-index/base reloads.
+Its 153-word slot contains 150 body words plus three padding nops, with
+88 differences and no new guards. Fifteen new tests and all 271 tool tests,
+full code build, and project checks pass. Previously recovered spans and
+both entire Init sections remain exact. Aggregate tables are unchanged.
+Next recover retained `func_15045D48` with its distinct scratch/state/cached
+entity contract; matching and natural gameplay qualification remain open.
+See [Note 772](WORKING_NOTES/772-game-context2-entity-highest-height-query-recovery-20261003.md).
+
 Game `func_15045880` now has its complete entity-indexed lowest-height query
 in semantic C, replacing retained assembly ownership. Its 153-word slot is
 150 body words plus three padding nops, with 88 word differences and no new
 guards. Fifteen new tests cover metadata, helper reloads, and result/candidate/
 entity-table aliasing; all 256 tool tests, full code build, and project checks
 pass. Earlier recovered spans and both entire Init sections remain exact.
-This adds a converted row, not an exact C match. Next recover the adjacent
-`func_15045AE4` placeholder after auditing its distinct selection/sentinel
-contract; lowest/highest entity-query matching and gameplay qualification
+This adds a converted row, not an exact C match. Its then-pending adjacent
+`func_15045AE4` placeholder is recovered semantically in Note 772;
+lowest/highest entity-query matching and gameplay qualification
 remain open. See
 [Note 771](WORKING_NOTES/771-game-entity-lowest-height-query-semantic-recovery-20261003.md).
 
