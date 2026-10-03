@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 788](WORKING_NOTES/788-init-bitmap-retail-caller-domain-and-edge-contract-20261003.md)):
+Init bitmap caller audit establishes positive counts 107..362 for the only
+direct retail resize call. Eight instruction-word-driven tests protect the
+inclusive fill, delay slots, post-fill count reload, pointer snapshot, and
+invalid/alias edge behavior; all fourteen focused Init tests and all 439 tool
+tests pass. No production
+conversion or matching guard is added. Allocator provenance and a new compiler
+hypothesis remain next; Init/README aggregates and pending Game work unchanged.
+
 2026-10-03 ([Note 787](WORKING_NOTES/787-game-context-forwarding-interface-recovery-20261003.md)):
 Game `func_1510F800` explicitly forwards its s32 context to the retained setter;
 all eight words remain directly exact without guards/profiles. Fifteen focused/

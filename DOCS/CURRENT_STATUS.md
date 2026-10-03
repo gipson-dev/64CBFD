@@ -37,6 +37,15 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,596 / 4,789 (54.21%) | 0 | 2,193 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Init bitmap `func_10005BE0` now has eight instruction-word-driven contract tests,
+including invalid-count and alias timing. The only direct retail resize call
+has statically positive counts 107..362; indirect/external calls and allocator
+provenance remain unproven. All fourteen focused Init tests, all 439 tool tests,
+and project tool checks pass. Assembly ownership, section parity, aggregates,
+and README are unchanged. Next establish allocator provenance and a new compiler/dataflow
+hypothesis before conversion trials. See
+[Note 788](WORKING_NOTES/788-init-bitmap-retail-caller-domain-and-edge-contract-20261003.md).
+
 Game `func_1510F800` now explicitly forwards its s32 context argument to the
 retained setter. All eight words remain directly byte-exact with no guards or
 profile changes. Fifteen focused/integrated tests and all 431 tool tests pass;
@@ -96,7 +105,11 @@ still reports 492 C / 47 assembly rows; all 492 C rows and both complete Init
 sections match retail. Six focused Init tests pass. Only bitmap `func_10005BE0`
 and MMIO `func_100038E0` remain bounded ordinary-C candidates, with no proven
 matching replacement. Prefer a genuinely new bitmap dataflow/provenance
-hypothesis; do not repeat the completed compiler matrices. Production Init and
+hypothesis; do not repeat the completed compiler matrices. The follow-up at
+clean baseline `21070c9` re-verifies both sections and six focused tests, and
+records the bitmap's unchecked resize argument, configured-pointer lifetime,
+and post-fill count reload. Caller-domain/allocator provenance remains open.
+Production Init and
 README aggregates are unchanged; pending Game work is preserved. See
 [Note 782](WORKING_NOTES/782-init-pause-resume-conversion-assessment-20261003.md).
 

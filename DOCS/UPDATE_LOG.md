@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init bitmap contract audit adds eight instruction-word-driven tests and
+  establishes positive inputs 107..362 for the only direct retail resize call.
+  Fourteen focused Init tests, all 439 tool tests, and project tool checks pass.
+  No C conversion,
+  production guard, or README aggregate change; allocator provenance and a new
+  compiler hypothesis remain open.
+  [Note 788](WORKING_NOTES/788-init-bitmap-retail-caller-domain-and-edge-contract-20261003.md)
+
 - Game `func_1510F800` now explicitly forwards its s32 context argument to the
   retained setter, preserving its direct eight-word retail match. Fifteen
   focused/integrated tests and all 431 tool tests pass; build/project checks

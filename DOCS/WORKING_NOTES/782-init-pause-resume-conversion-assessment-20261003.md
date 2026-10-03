@@ -81,7 +81,50 @@ Those figures are conditional, not achieved progress. A non-matching semantic
 rewrite is technically a different option, but would relinquish the currently
 exact Init image; it is not substituted here for a matching conversion.
 
-## Scope
+## Follow-up Caller Audit
+
+Subsequent [Note 788](788-init-bitmap-retail-caller-domain-and-edge-contract-20261003.md)
+traces the direct retail resize caller to positive counts 107..362 and adds
+eight instruction-model tests. The local-wrapper limitation below remains
+accurate, but is no longer the complete direct-caller evidence.
+
+Resumed from clean commit `21070c9` on 2026-10-03. A fresh
+`make -C conker NON_MATCHING=1 all match-progress -j4` and the six focused
+Init tests pass. Independent ELF extraction again matches both complete Init
+sections and the hashes above. The live inventory remains 492 C rows /
+151,796 bytes and 47 assembly rows / 12,252 bytes. No conversion is claimed.
+
+The bitmap caller/setup evidence narrows the next investigation:
+
+- Startup `func_10001194` calls `func_10005B04(0xEB)` before clearing the
+  bitmap. This particular count is positive: setup allocates 30 bytes and
+  computes an inclusive endpoint 29 bytes after the start; the final mask is
+  `0x07`. This is static caller arithmetic, not an observed runtime allocation.
+- Setup at `conker/asm/init_5AB0.s:37` stores the input as a halfword, reloads
+  it signed, and uses `(count + 7) >> 3` for the allocation size and
+  `start + size - 1` for the endpoint. The bitmap leaf itself does not reject
+  zero or negative counts and always performs its first store.
+- `func_100014C4(s32 arg0)` passes its argument to setup without a local range
+  check. Neither that wrapper nor the fixed startup call proves that every
+  caller supplies a positive, signed-halfword-compatible count. Zero would
+  derive an endpoint before the start; a safe C early return would change the
+  retained behavior, not recover it.
+- `func_10001444` and the assembly call at `0x100080BC` clear an already
+  configured bitmap without immediately rerunning setup. Preserve the shared
+  configuration lifetime rather than recomputing the endpoint in the leaf.
+- The retail leaf snapshots both pointers before storing, but reloads the
+  signed count after filling. A C candidate must preserve that timing if the
+  destination can alias configuration storage. The inspected setup/call sites
+  do not by themselves prove allocator non-aliasing.
+
+The recommended next Init work is a caller-domain and allocator-provenance
+investigation for `func_10005BE0`, followed by a genuinely new compiler/dataflow
+hypothesis and focused edge-case tests. The completed 55 bitmap and twenty
+partial-volatility MMIO combinations are not rerun. No evidence here makes the
+other 45 rows independent ordinary-C conversion targets. Keep the matching
+assembly and the pending Game dimension-helper handoff intact.
+
+## Follow-up Scope
 
 No Init production source, compiler profile, word guard, or README aggregate
 changed. No new compiler matrix, guest execution, host-port build, or gameplay
