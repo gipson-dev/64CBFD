@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_150466F8` converts retained assembly to the complete entity/
+  terrain lowest-height combiner. All 161 words match directly without new
+  guards/profiles. Twelve focused tests and all 318 tool tests pass; full
+  build/project checks pass. Prior neighbors/spans and both entire Init
+  sections remain unchanged. README adds one converted and exact row;
+  Game conversion rounds to 90.00%.
+  [Note 776](WORKING_NOTES/776-game-entity-terrain-lowest-combiner-direct-match-20261003.md)
+
 - Game `func_15046460` replaces its zero-return placeholder with the complete
   highest-height combiner and matches all 166 words directly. No new guards
   or profiles. Ten new tests and all 306 tool tests pass; full build/project

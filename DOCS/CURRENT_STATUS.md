@@ -25,17 +25,28 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,461 / 6,042 (90.38%) | 581 | 1,930,620 / 2,256,728 (85.55%) |
+| Total | 5,462 / 6,042 (90.40%) | 580 | 1,931,264 / 2,256,728 (85.58%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,788 / 5,321 (89.98%) | 533 | 1,759,184 / 2,072,880 (84.87%) |
+| Game | 4,789 / 5,321 (90.00%) | 532 | 1,759,828 / 2,072,880 (84.90%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,264 / 5,461 (59.77%) | 0 | 2,197 |
+| Total | 3,265 / 5,462 (59.78%) | 0 | 2,197 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,591 / 4,788 (54.11%) | 0 | 2,197 |
+| Game | 2,592 / 4,789 (54.12%) | 0 | 2,197 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_150466F8` now converts retained assembly to the complete entity/
+terrain lowest-height combiner. All 161 words match directly without new guards
+or profiles. It snapshots both records before querying, interprets both
+returns through their low byte, and gives terrain precedence on ties or
+unordered comparisons. Failure clears only flag bit 2. Twelve focused tests
+and all 318 tool tests pass; full build/project checks pass. Fifteen exact
+neighbors, four entity-query hashes, restored spans, and both entire Init
+sections remain unchanged. Next recover the highest entity/terrain placeholder
+`func_1504697C`. See
+[Note 776](WORKING_NOTES/776-game-entity-terrain-lowest-combiner-direct-match-20261003.md).
 
 Game `func_15046460` now replaces its zero-return placeholder with the complete
 highest-height combiner. All 166 words match directly with no new guards or
@@ -44,8 +55,8 @@ both-failed fallback instead retains the selected record's state/value and
 clears only bit 2. Ten new tests and all 306 tool tests pass; full build and
 project checks pass. Prior recovered neighbors/spans and both entire Init
 sections remain unchanged. Converted totals are unchanged; one different C
-row becomes exact. Next recover retained `func_150466F8`, which combines the
-entity result with a separate terrain query. See
+row becomes exact. Its then-pending entity/terrain combiner `func_150466F8`
+is now recovered in Note 776. See
 [Note 775](WORKING_NOTES/775-game-highest-height-combiner-direct-match-20261003.md).
 
 Game `func_150461D0` now has its complete lowest-height combiner in semantic
