@@ -45,6 +45,22 @@ All 91 tool tests, the full build, and project checks pass. Both entire Init
 sections remain byte-exact. See
 [Working Note 748](WORKING_NOTES/748-game-row-destination-byte-fill-match-20261002.md).
 
+The resumed Init-only assessment reconfirms all 492 C rows and both entire
+linked Init sections exact. Of 47 remaining assembly rows, two small leaves
+are deferred C rewrite candidates: `func_100038E0` and `func_10005BE0`.
+Neither has a proven matching replacement. The other 45 rows retain SDK,
+privileged, shared-frame, or nonstandard-register contracts. No source or
+progress totals changed; no rebuild was performed for this audit. The Init
+experiment order and acceptance gates are in
+[Working Note 749](WORKING_NOTES/749-init-remaining-assembly-resume-assessment-20261002.md).
+
+Twenty additional isolated MMIO trials across five source shapes and four IDO
+profiles also produce no exact `func_100038E0` body after resolving relocations
+at the retail addresses. Production assembly remains unchanged. New results
+include pointer-lifetime and return-delay evidence, not a completed conversion.
+Resume the bounded Init experiments at bitmap leaf `func_10005BE0`; see
+[Working Note 750](WORKING_NOTES/750-init-mmio-pointer-lifetime-profile-trials-20261002.md).
+
 Game `func_151DE85C` now replaces its zero-return placeholder with the complete
 menu-state reset. All 35 words match directly from C without guards or a
 compiler override. Five new tests cover call ordering, globals, object bytes,

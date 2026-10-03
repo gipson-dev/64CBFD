@@ -16,6 +16,27 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Init MMIO pointer-lifetime experiments completed
+
+- Twenty isolated compilations test five new shapes across four IDO profiles.
+  Relocation-resolved comparison finds no exact eleven-word replacement for
+  `func_100038E0`; production assembly and conversion totals are unchanged.
+- Pointer-lifetime variants either retain the previous optimized address
+  rematerialization or introduce a frame. No production build or hardware
+  execution was performed. Next bounded Init experiment: `func_10005BE0`.
+  See [Working Note 750](WORKING_NOTES/750-init-mmio-pointer-lifetime-profile-trials-20261002.md).
+
+### Remaining Init assembly reassessed on resume
+
+- Fresh inventory confirms 492 C / 47 assembly rows; all 492 Init C rows
+  match, and both complete linked Init code/data sections remain exact.
+- Two small leaves remain deferred experiments: MMIO `func_100038E0` and
+  bitmap `func_10005BE0`. Neither has a proven matching replacement; the
+  other 45 rows need retained assembly or separate whole-contract work.
+- No source, README totals, or host artifacts changed, and no rebuild was
+  performed. Candidate blockers and acceptance steps are recorded in
+  [Working Note 749](WORKING_NOTES/749-init-remaining-assembly-resume-assessment-20261002.md).
+
 ### Game row-destination byte fill matched
 
 - `func_1501CDC0` replaces its zero-return placeholder with sixteen-byte

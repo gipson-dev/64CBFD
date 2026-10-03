@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-02 ([Note 750](WORKING_NOTES/750-init-mmio-pointer-lifetime-profile-trials-20261002.md)):
+Twenty new isolated MMIO compilations across five shapes and four IDO profiles
+produce no exact `func_100038E0` replacement after relocation-resolved retail
+comparison. Keep production assembly and totals unchanged. Pointer-lifetime,
+volatile-publication, and delay-slot evidence is recorded; next bounded Init
+experiment is bitmap leaf `func_10005BE0`, not a repeat of the prior trials.
+
+2026-10-02 ([Note 749](WORKING_NOTES/749-init-remaining-assembly-resume-assessment-20261002.md)):
+Resumed Init assessment confirms 492 C / 47 assembly rows, all Init C exact,
+and both complete linked Init sections byte-exact. Only `func_100038E0` and
+`func_10005BE0` remain bounded small-leaf C experiments; neither has a proven
+matching replacement. No source conversion or build was performed. The note
+records blockers and acceptance steps; the paused Game target is unchanged.
+
 2026-10-02 ([Note 748](WORKING_NOTES/748-game-row-destination-byte-fill-match-20261002.md)):
 Game `func_1501CDC0` matches its complete 37-word row-destination byte fill.
 Two strict guards normalize only independent opening scheduling. Six 32-bit
