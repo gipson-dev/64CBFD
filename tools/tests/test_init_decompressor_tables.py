@@ -23,6 +23,8 @@ class BuilderFixture:
         self.writes = []
         self.reads = []
         self.visits = {}
+        self.capture = set()
+        self.snapshots = {}
         self.registers = [(0x5A000000 + i) for i in range(32)]
         self.registers[0] = 0
         self.fprs = [0] * 32
@@ -126,6 +128,8 @@ class BuilderFixture:
         # Shared low-word model for the builder and connected decoder only.
         pc = entry
         for _ in range(budget):
+            if pc in self.capture:
+                self.snapshots[pc] = (self.registers[:], self.fprs[:])
             self.visits[pc] = self.visits.get(pc, 0) + 1
             word = self.code[pc]
             op, rs, rt = word >> 26, (word >> 21) & 31, (word >> 16) & 31

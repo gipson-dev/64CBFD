@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init Note 797 adds an isolated connected semantic C candidate and nine
+  differential tests. All 67 focused Init tests, all 522 tool tests, and tool
+  checks pass. Table,
+  stream, output publication, header/limit, and error states match retained
+  instruction-word oracles on covered inputs. Production remains assembly;
+  no README aggregate increase or host-port build is made.
+
 - Init connected-stream Note 796 adds eleven dynamic/multiblock/core-entry
   oracle tests. All 58 focused Init tests and all 513 tool tests pass; both header forms and unaligned
   inputs, repeats, cursor rewind, limits, and partial-output failures are

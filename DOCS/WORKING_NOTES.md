@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-03 ([Note 797](WORKING_NOTES/797-init-connected-semantic-c-candidate-and-differential-oracles-20261003.md)):
+An isolated connected Init decompressor C candidate implements the builder,
+stored/fixed/dynamic blocks, stream loop, and header/limit entry setup.
+Nine differential tests, all 67 focused Init tests, and all 522 tool tests
+pass; tool checks pass.
+Output/state/table bytes agree with retained-word oracles, including pinned
+exceptional behavior. Production stays exact assembly; no aggregate increase.
+Next: remaining invalid/alias/context gates and bounded guest compiler/layout
+qualification before any production owner transition.
+
 2026-10-03 ([Note 796](WORKING_NOTES/796-init-dynamic-multiblock-and-core-entry-oracles-20261003.md)):
 Init dynamic parser, mixed block loop, and outer entrypoints gain eleven
 connected oracle tests. All 58 focused Init tests and all 513 tool tests pass.

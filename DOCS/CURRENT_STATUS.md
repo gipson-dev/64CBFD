@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init isolated C follow-up: [Note 797](WORKING_NOTES/797-init-connected-semantic-c-candidate-and-differential-oracles-20261003.md)
+implements connected semantic decompression in an experimental, unlinked file.
+Nine differential tests, all 67 focused Init tests, and all 522 tool tests
+pass; tool checks pass.
+Table/output/state comparisons include exceptional publication behavior.
+Production remains exact assembly; guest layout/ABI and remaining malformed/
+alias/context qualification precede any conversion claim.
+
 Init connected-stream follow-up: [Note 796](WORKING_NOTES/796-init-dynamic-multiblock-and-core-entry-oracles-20261003.md)
 adds eleven dynamic/mixed-block/core-entry tests; all 58 focused Init tests
 and all 513 tool tests pass. Connected oracles now cover valid stored/fixed/dynamic streams,

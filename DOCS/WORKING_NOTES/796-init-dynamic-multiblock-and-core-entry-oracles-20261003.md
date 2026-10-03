@@ -2,6 +2,10 @@
 
 Date: 2026-10-03.
 
+Follow-up: [Note 797](797-init-connected-semantic-c-candidate-and-differential-oracles-20261003.md)
+implements the isolated semantic candidate and differential comparisons.
+Production ownership, guest matching, and exceptional-context gates remain open.
+
 ## Result
 
 Eleven new tests connect the dynamic parser, table builder, decoder, stored
