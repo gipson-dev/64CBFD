@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 834](WORKING_NOTES/834-init-guest-free-reinsertion-and-resize-coalescing-20261003.md)):
+Fresh big-endian IDO guest builds qualify ordinary free and resize in O2/g3
+and O1: 512 full-reclamation cycles, middle reinsertion, two-sided coalescing
+and adjacent live data/tag preservation. All 22 focused tests pass. Instrumented
+OS/fatal stubs and a private heap are not hardware or complete ownership proof.
+Next audit tag-sweep/fatal lifetimes and reservation writers; fitting stays open.
+No production, decoder/adapter or README totals change.
+
 2026-10-03 ([Note 833](WORKING_NOTES/833-init-page-pool-retry-and-zero-count-fallback-contract-20261003.md)):
 Original setup retries the saved old count, not an old live allocation.
 Zero previous count can conditionally yield count=0/end=start-1 even with

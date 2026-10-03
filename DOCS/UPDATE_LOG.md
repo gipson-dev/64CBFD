@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 834](WORKING_NOTES/834-init-guest-free-reinsertion-and-resize-coalescing-20261003.md)
+  qualifies actual C free/reinsertion/coalescing in fresh big-endian IDO guest
+  builds. Both profiles reclaim the private heap across 512 resize cycles;
+  adjacent live data/tags survive. All 22 focused tests pass. Production,
+  README totals, decoder/adapter and pending Game work unchanged; tag-sweep,
+  fatal/reservation ownership and fitting remain open.
+
 - Init [Note 833](WORKING_NOTES/833-init-page-pool-retry-and-zero-count-fallback-contract-20261003.md)
   qualifies bounded setup retry paths and native zero-request allocation.
   Positive inputs alone do not exclude zero post-fallback geometry. All 26

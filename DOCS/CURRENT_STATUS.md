@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init guest free/resize qualification: [Note 834](WORKING_NOTES/834-init-guest-free-reinsertion-and-resize-coalescing-20261003.md)
+executes fresh, unguarded IDO C in both O2/g3 and O1 big-endian guest profiles.
+All 512 private-heap resize cycles reclaim the heap; middle reinsertion,
+two-sided coalescing and adjacent live payload/tag preservation also pass.
+All 22 focused tests pass. Real fragmentation, tag-sweep/fatal lifetimes,
+complete decoder ownership and fitting remain open. No production or README
+aggregate changes; pending Game work is preserved.
+
 Init page-pool retry contract: [Note 833](WORKING_NOTES/833-init-page-pool-retry-and-zero-count-fallback-contract-20261003.md)
 pins the complete setup slot and executes success/retry/failure cases with
 allocator stubs. Zero previous count can conditionally publish end=start-1;

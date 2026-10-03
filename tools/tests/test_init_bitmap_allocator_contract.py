@@ -86,6 +86,7 @@ s32 func_10003C6C(s32, s32, s32, s32, s32);
                         function("init_3BD0.c", "func_10003BD0"),
                         function("init_3C40.c", "allocate_memory"),
                         function("init_3C40.c", "func_10003C6C"),
+                        function("init_3C40.c", "func_10004074"),
                         function("init_3C40.c", "func_1000440C"))) + r'''
 static void initialize(void) {
     s32 i;
