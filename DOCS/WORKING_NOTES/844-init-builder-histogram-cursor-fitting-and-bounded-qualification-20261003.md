@@ -98,7 +98,8 @@ No production build, full-suite, hardware, gameplay or sibling-port run.
 - [x] Resume decoder fitting after the bounded diagnostic lifetime audit.
 - [x] Measure three cursor shapes and retain only the smaller histogram loop.
 - [x] Qualify bounded contexts and direct builder boundaries in both profiles.
-- [ ] Run all 507 pages on the changed packed O2 variant with masked CU1 set.
+- [x] Run all 507 pages on the changed packed O2 variant with masked CU1 set;
+  subsequently completed in [Note 845](845-init-histogram-cursor-full-masked-cu1-set-corpus-20261003.md).
 - [ ] Repeat the changed full corpus with CU1 clear; other profiles remain open.
 - [ ] Continue fitting: 880 linked bytes remain above retail capacity.
 - [ ] Complete outstanding reservation/hardware/resume qualification before promotion.
@@ -109,6 +110,8 @@ Full-corpus entry point, not run in this checkpoint:
 wsl env CONKER_INIT_SHADOW_CORPUS=1 CONKER_INIT_SHADOW_CORPUS_CONTEXT=exception-masked CONKER_INIT_SHADOW_CORPUS_PROFILE=packed-remaining/o2g3 python3 -m unittest tools.tests.test_init_decompressor_histogram_cursor.InitDecompressorHistogramCursorCorpusTests -v -f
 ```
 
+Subsequent [Note 845](845-init-histogram-cursor-full-masked-cu1-set-corpus-20261003.md)
+qualifies this changed source's full masked CU1-set corpus. CU1-clear remains open.
 Notes 830/831 qualify the previous lookup variant, not this changed source.
 Production Init, adapter assembly, default experimental flags and README
 aggregates stay unchanged. Unrelated Game work is preserved and excluded

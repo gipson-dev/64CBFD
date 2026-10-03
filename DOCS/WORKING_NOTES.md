@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 845](WORKING_NOTES/845-init-histogram-cursor-full-masked-cu1-set-corpus-20261003.md)):
+Changed histogram variant passes all 507 retail pages, packed O2/g3 masked
+CU1-set context. One opt-in test passes in 744.102 seconds; text 4,864,
+descent 3,256 and neighbor clearance 72 agree with the bounded receipt.
+CU1 clear, other profiles, 880-byte fitting excess and complete ownership/
+hardware/resume remain open. Production and README aggregates unchanged.
+
 2026-10-03 ([Note 844](WORKING_NOTES/844-init-builder-histogram-cursor-fitting-and-bounded-qualification-20261003.md)):
 Opt-in histogram cursor saves 16 packed decoder bytes in both IDO profiles.
 Best linked text is 4,864, still 880 over retail. All 420 bounded context and

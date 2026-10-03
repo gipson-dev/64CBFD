@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init histogram full corpus: [Note 845](WORKING_NOTES/845-init-histogram-cursor-full-masked-cu1-set-corpus-20261003.md)
+passes all 507 retail pages on the changed packed/remaining O2/g3 source,
+exception-masked entry with CU1 set. Terminal run: 744.102 seconds, linked
+text 4,864, maximum descent 3,256, minimum SP 80031D58, neighbor clearance 72.
+Next qualify CU1 clear, then continue fitting; 880 linked bytes remain over
+retail capacity. Other profiles, complete reservations and hardware/resume
+remain open. Production Init and README aggregates unchanged.
+
 Init decoder histogram fitting: [Note 844](WORKING_NOTES/844-init-builder-histogram-cursor-fitting-and-bounded-qualification-20261003.md)
 retains an opt-in histogram pointer loop, saving 16 packed core bytes in both
 IDO profiles. Best linked text is 4,864, still 880 over retail capacity.
