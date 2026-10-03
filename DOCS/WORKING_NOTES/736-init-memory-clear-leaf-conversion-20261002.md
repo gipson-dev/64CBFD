@@ -2,6 +2,10 @@
 
 Date: 2026-10-02
 
+Follow-up: [Note 737](737-init-mmio-leaf-bounded-compiler-experiment-20261002.md)
+records five bounded MMIO-leaf trials without a direct match. That routine
+remains assembly; the next Init experiment is `func_10005BE0`.
+
 ## Recovery
 
 `func_10001420` clears `0xFE0` bytes beginning at the address of

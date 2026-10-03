@@ -44,8 +44,11 @@ or removed. Three source-behavior tests pass, and both complete Init sections
 remain byte-exact after the full rebuild. Init retains 47 assembly rows /
 12,252 bytes. See
 [Working Note 736](WORKING_NOTES/736-init-memory-clear-leaf-conversion-20261002.md).
-The next Init-only experiment is `func_100038E0`; its MMIO store widths and
-order must be preserved. `func_10005BE0` is the subsequent bitmap candidate.
+Five bounded compiler trials for MMIO leaf `func_100038E0` preserve its
+assembly ownership: none establishes a direct eleven-word C match. The best
+count-matching trial still changes address reuse and the return delay slot.
+See [Working Note 737](WORKING_NOTES/737-init-mmio-leaf-bounded-compiler-experiment-20261002.md).
+The next Init-only experiment is bitmap initializer `func_10005BE0`.
 
 Game `func_15145128` now matches all 50 words after restoring the retail
 optional-length/reciprocal expression shape and output multiply order. Three
@@ -69,7 +72,8 @@ The remaining Init assembly was reassessed in
 [Working Note 735](WORKING_NOTES/735-init-retained-assembly-reassessment-20261002.md).
 No further compiler-generated recovery is established. That audit identified
 three small custom leaves as possible C rewrite experiments. Note 736 now
-completes `func_10001420`; `func_100038E0` and `func_10005BE0` remain conditional.
+completes `func_10001420`; `func_100038E0` is deferred after bounded trials,
+and `func_10005BE0` remains conditional.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game

@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-02 ([Note 737](WORKING_NOTES/737-init-mmio-leaf-bounded-compiler-experiment-20261002.md)):
+Five isolated compiler trials for Init MMIO leaf `func_100038E0` produce no
+direct match. Its assembly remains intact; complete Init code/data rechecks
+remain exact. No source conversion or aggregate change is claimed. The next
+Init-only experiment is bitmap leaf `func_10005BE0`.
+
 2026-10-02 ([Note 736](WORKING_NOTES/736-init-memory-clear-leaf-conversion-20261002.md)):
 Init `func_10001420` is represented in semantic C and matches all nine retail
 words with six register-only expected-word guards. Three source-behavior tests

@@ -16,6 +16,15 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Init MMIO leaf compiler experiment
+
+- Five isolated `func_100038E0` variants establish the current compiler
+  differences but no direct eleven-word match. Original assembly is retained.
+- No production source, word patches, profiles, or progress totals changed.
+  Fresh matcher and complete Init code/data comparisons preserve the baseline.
+- Resume Init at bitmap initializer `func_10005BE0`. See
+  [Working Note 737](WORKING_NOTES/737-init-mmio-leaf-bounded-compiler-experiment-20261002.md).
+
 ### Init memory-clear leaf converted
 
 - `func_10001420` replaces its assembly owner with a complete semantic C
