@@ -25,17 +25,29 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,460 / 6,042 (90.37%) | 582 | 1,929,964 / 2,256,728 (85.52%) |
+| Total | 5,461 / 6,042 (90.38%) | 581 | 1,930,620 / 2,256,728 (85.55%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,787 / 5,321 (89.96%) | 534 | 1,758,528 / 2,072,880 (84.84%) |
+| Game | 4,788 / 5,321 (89.98%) | 533 | 1,759,184 / 2,072,880 (84.87%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,262 / 5,460 (59.74%) | 0 | 2,198 |
+| Total | 3,263 / 5,461 (59.75%) | 0 | 2,198 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,589 / 4,787 (54.08%) | 0 | 2,198 |
+| Game | 2,590 / 4,788 (54.09%) | 0 | 2,198 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_150461D0` now has its complete lowest-height combiner in semantic
+C instead of retained assembly. All 164 words match directly without new
+guards or compiler profiles. It snapshots both complete result records before
+count preparation, truncates both query returns to bytes, and chooses the
+lower height with second-result precedence on ties/unordered comparisons.
+Ten new tests and all 296 tool tests pass; the full code build and project
+checks pass. Neighboring recovered routines, collector/producer spans, and
+both complete Init sections remain unchanged. Next recover the existing
+highest-height combiner placeholder `func_15046460`, including its distinct
+state/value reset behavior. See
+[Note 774](WORKING_NOTES/774-game-lowest-height-combiner-direct-match-20261003.md).
 
 Game `func_15045D48` now has its complete context-3 entity lowest-height query
 in semantic C instead of retained assembly ownership. It uses scratch
@@ -44,8 +56,9 @@ entity pointer for the later flag read. Its 145-word slot contains 144 body
 words plus one padding nop, with 72 differences and no new guards. Fifteen
 new tests and all 286 tool tests pass; full code build and project checks pass.
 Prior recovered spans and both complete Init sections remain exact. This adds
-a converted row, not an exact match. Next audit retained combiner
-`func_150461D0`; entity-query matching and gameplay qualification remain open.
+a converted row, not an exact match. Its then-pending combiner `func_150461D0`
+is now recovered in Note 774; entity-query matching and gameplay qualification
+remain open.
 See [Note 773](WORKING_NOTES/773-game-context3-entity-lowest-height-query-recovery-20261003.md).
 
 Game `func_15045AE4` now has the complete context-2 entity highest-height

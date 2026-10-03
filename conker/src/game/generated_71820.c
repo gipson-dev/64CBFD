@@ -741,7 +741,46 @@ s32 func_15045F8C(f32 *position, f32 threshold, s32 *input, HeightResult71820 *r
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_150461D0.s")
+s32 func_150461D0(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result) {
+    s32 counts[2];
+    HeightResult71820 first;
+    HeightResult71820 second;
+    u8 firstAccepted;
+    u8 secondAccepted;
+
+    if (threshold < position[1]) {
+        result->flags &= ~2;
+        return 0;
+    }
+    first = *result;
+    second = *result;
+    func_15045714(position, selector, &counts[1], &counts[0]);
+    firstAccepted = func_15045880(position, threshold, &counts[1], &first);
+    secondAccepted = func_15045D48(position, threshold, &counts[0], &second);
+    if (firstAccepted && secondAccepted) {
+        if (first.height < second.height) {
+            *result = first;
+        } else {
+            *result = second;
+        }
+        return 1;
+    }
+    if (firstAccepted) {
+        *result = first;
+        return 1;
+    }
+    if (secondAccepted) {
+        *result = second;
+        return 1;
+    }
+    if (first.height < second.height) {
+        *result = first;
+    } else {
+        *result = second;
+    }
+    result->flags &= ~2;
+    return 0;
+}
 
 s32 func_15046460() {
     return 0;

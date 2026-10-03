@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_150461D0` converts retained assembly to the complete lowest-height
+  combiner and matches all 164 words directly, without new guards/profile.
+  Ten new tests and all 296 tool tests pass; full build/project checks pass.
+  Recovered neighbors and both entire Init sections remain unchanged. README
+  aggregates add one converted and exact row. The Init reassessment still
+  leaves its two small matching-C candidates deferred.
+  [Note 774](WORKING_NOTES/774-game-lowest-height-combiner-direct-match-20261003.md)
+
 - Game `func_15045D48` converts retained assembly ownership to the complete
   context-3 entity lowest-height query. The cached entity pointer and state
   `3` distinguish it from the previous context's late-reload variants. It

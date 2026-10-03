@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 774](WORKING_NOTES/774-game-lowest-height-combiner-direct-match-20261003.md)):
+Game `func_150461D0` converts retained assembly to semantic C and matches all
+164 words directly, with no new guards/profile. Ten new tests and all 296
+tool tests pass; full build/project checks pass. Recovered neighbors and both
+whole Init sections are unchanged. Init's post-pause assessment still finds
+only two deferred small C candidates. Next: placeholder `func_15046460`.
+
 2026-10-03 ([Note 773](WORKING_NOTES/773-game-context3-entity-lowest-height-query-recovery-20261003.md)):
 Game `func_15045D48` converts retained assembly ownership to complete semantic
 C, preserving state `3` and the cached entity flag pointer. It remains
