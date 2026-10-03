@@ -865,6 +865,41 @@ s32 func_150466F8(f32 *position, u16 selector, f32 threshold, HeightResult71820 
 }
 
 s32 func_1504697C(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result) {
+    HeightResult71820 first;
+    HeightResult71820 second;
+    u8 firstAccepted;
+    u8 secondAccepted;
+
+    if (position[1] < threshold) {
+        result->flags &= ~2;
+        return 0;
+    }
+    first = *result;
+    second = *result;
+    firstAccepted = func_15046460(position, selector, threshold, &first);
+    secondAccepted = func_150450CC(position, threshold, &second);
+    if (firstAccepted && secondAccepted) {
+        if (second.height < first.height) {
+            *result = first;
+        } else {
+            *result = second;
+        }
+        return 1;
+    }
+    if (firstAccepted) {
+        *result = first;
+        return 1;
+    }
+    if (secondAccepted) {
+        *result = second;
+        return 1;
+    }
+    if (second.height < first.height) {
+        *result = first;
+    } else {
+        *result = second;
+    }
+    result->flags &= ~2;
     return 0;
 }
 

@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_1504697C` replaces its zero-return placeholder with the complete
+  highest entity/terrain combiner. All 161 words match directly without new
+  guards/profiles. Twelve focused tests and all 330 tool tests pass; full
+  build/project checks pass. Both Init sections and prior recovered spans
+  remain unchanged. Terrain highest retains its prior non-matching hash.
+  README changes only exact/different aggregates; converted totals stay fixed.
+  [Note 777](WORKING_NOTES/777-game-entity-terrain-highest-combiner-direct-match-20261003.md)
+
 - Game `func_150466F8` converts retained assembly to the complete entity/
   terrain lowest-height combiner. All 161 words match directly without new
   guards/profiles. Twelve focused tests and all 318 tool tests pass; full

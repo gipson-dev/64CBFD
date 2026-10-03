@@ -32,10 +32,21 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,265 / 5,462 (59.78%) | 0 | 2,197 |
+| Total | 3,266 / 5,462 (59.79%) | 0 | 2,196 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,592 / 4,789 (54.12%) | 0 | 2,197 |
+| Game | 2,593 / 4,789 (54.14%) | 0 | 2,196 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_1504697C` now replaces its zero-return placeholder with the complete
+highest entity/terrain combiner. All 161 words match directly without new
+guards/profiles. Both early rejection and the both-failed fallback clear only
+flag bit 2, preserving state/value. Twelve focused tests and all 330 tool
+tests pass; full build/project checks pass. Sixteen exact neighbors, four
+entity-query hashes, restored spans, and both Init sections remain unchanged.
+The terrain highest query retains its documented 76 differences and prior
+hash. Converted totals are unchanged; one different C row becomes exact.
+Next recover the outer highest combiner placeholder `func_15046D00`. See
+[Note 777](WORKING_NOTES/777-game-entity-terrain-highest-combiner-direct-match-20261003.md).
 
 Game `func_150466F8` now converts retained assembly to the complete entity/
 terrain lowest-height combiner. All 161 words match directly without new guards
@@ -44,8 +55,8 @@ returns through their low byte, and gives terrain precedence on ties or
 unordered comparisons. Failure clears only flag bit 2. Twelve focused tests
 and all 318 tool tests pass; full build/project checks pass. Fifteen exact
 neighbors, four entity-query hashes, restored spans, and both entire Init
-sections remain unchanged. Next recover the highest entity/terrain placeholder
-`func_1504697C`. See
+sections remain unchanged. Its then-pending highest entity/terrain combiner
+`func_1504697C` is now recovered in Note 777. See
 [Note 776](WORKING_NOTES/776-game-entity-terrain-lowest-combiner-direct-match-20261003.md).
 
 Game `func_15046460` now replaces its zero-return placeholder with the complete

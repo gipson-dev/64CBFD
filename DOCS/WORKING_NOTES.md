@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 777](WORKING_NOTES/777-game-entity-terrain-highest-combiner-direct-match-20261003.md)):
+Game `func_1504697C` replaces its zero-return placeholder with the complete
+highest entity/terrain combiner. All 161 words match directly without new
+guards/profiles. Twelve focused tests and all 330 tool tests pass; full build/
+project checks pass. Prior neighbors/hashes/spans and both Init sections are
+unchanged. Converted totals stay unchanged; one C row becomes exact. Next:
+outer highest combiner placeholder `func_15046D00`.
+
 2026-10-03 ([Note 776](WORKING_NOTES/776-game-entity-terrain-lowest-combiner-direct-match-20261003.md)):
 Game `func_150466F8` converts retained assembly to the complete entity/terrain
 lowest-height combiner. All 161 words match directly with no new guards or
