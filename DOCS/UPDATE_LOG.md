@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 808](WORKING_NOTES/808-init-decompressor-entry-alignment-packing-and-bounded-shift-trials-20261003.md)
+  adds entry alignment/packing and bounded builder-shift trials. The latter
+  improves both guest text and direct-call frame bounds without fitting retail.
+  Entry-layout/opcode receipts, sanitizer coverage and generated tree tests
+  qualify the observed domain; no production conversion or README increase.
+
 - Init [Note 807](WORKING_NOTES/807-init-decompressor-flat-bit-helper-and-builder-base-codegen-trials-20261003.md)
   adds isolated flat-bit-helper and two builder-base capture trials. Their
   measured text/stack tradeoffs do not fit retail or qualify a production

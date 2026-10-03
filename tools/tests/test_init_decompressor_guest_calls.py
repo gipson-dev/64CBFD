@@ -37,6 +37,12 @@ class InitDecompressorGuestCallTests(unittest.TestCase):
             with self.subTest(text=text), self.assertRaises(ValueError):
                 analyze_guest_calls(text, {0: "root"}, {})
 
+    def test_word_store_forms_are_counted_from_opcodes(self):
+        text = self.text(0xAC880000, 0xA8880000, 0xB8880003, 0xAC880004,
+                         0x03E00008, 0)
+        unit = analyze_guest_calls(text, {0: "root"}, {})[0]
+        self.assertEqual(unit["word_store_forms"], {"sw": 2, "swl": 1, "swr": 1})
+
 
 if __name__ == "__main__":
     unittest.main()

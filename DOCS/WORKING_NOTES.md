@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 808](WORKING_NOTES/808-init-decompressor-entry-alignment-packing-and-bounded-shift-trials-20261003.md)):
+Aligned/packed entry modes preserve the four-byte field layout; retail leaf
+replication uses packed word stores. Bounded builder shifts improve both text
+(5,200/5,424 bytes) and core frame bound (400/296), but remain overlong.
+Sanitized semantic/corpus tests and 29 generated tree comparisons establish
+bounded-domain evidence, not arbitrary-state or hardware qualification.
+Production assembly/default candidate and aggregate counts unchanged.
+
 2026-10-03 ([Note 807](WORKING_NOTES/807-init-decompressor-flat-bit-helper-and-builder-base-codegen-trials-20261003.md)):
 Focused flat-bit-helper and builder-array-base captures change guest text/frame
 measurements without replacing production assembly. Best text is 5,216 bytes

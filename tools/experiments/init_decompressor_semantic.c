@@ -5,6 +5,7 @@ typedef unsigned int uint32_t;
 typedef signed int int32_t;
 #else
 #include <stdint.h>
+#include <stddef.h>
 #endif
 
 #include "init_decompressor_frame.h"
@@ -13,12 +14,46 @@ typedef signed int int32_t;
 #if defined(INIT_DECODE_CACHE_BUILDER) && INIT_DECODE_CACHE_BUILDER != 1 && INIT_DECODE_CACHE_BUILDER != 2
 #error Unsupported builder cache mode
 #endif
+#if defined(INIT_DECODE_PACKED_ENTRY) && !defined(INIT_DECODE_ALIGNED_ENTRY)
+#error Packed entry mode requires word-aligned entries
+#endif
 
 typedef struct {
     uint8_t operation;
     uint8_t bits;
     uint16_t value;
+} InitDecodeFields;
+
+#ifdef INIT_DECODE_ALIGNED_ENTRY
+typedef union {
+    uint32_t alignment;
+    InitDecodeFields fields;
 } InitDecodeEntry;
+#define ENTRY_OPERATION(e) ((e)->fields.operation)
+#define ENTRY_BITS(e) ((e)->fields.bits)
+#define ENTRY_VALUE(e) ((e)->fields.value)
+#else
+typedef InitDecodeFields InitDecodeEntry;
+#define ENTRY_OPERATION(e) ((e)->operation)
+#define ENTRY_BITS(e) ((e)->bits)
+#define ENTRY_VALUE(e) ((e)->value)
+#endif
+
+typedef struct {
+    uint8_t lead;
+    InitDecodeEntry entry;
+} InitDecodeEntryProbe;
+
+#ifdef INIT_DECODE_GUEST
+#define FIELD_OFFSET(member) ((uint32_t)&((InitDecodeFields *)0)->member)
+#else
+#define FIELD_OFFSET(member) offsetof(InitDecodeFields, member)
+#endif
+uint32_t init_decode_entry_layout[] = {
+    sizeof(InitDecodeEntry), sizeof(InitDecodeEntryProbe) - sizeof(InitDecodeEntry),
+    FIELD_OFFSET(operation), FIELD_OFFSET(bits), FIELD_OFFSET(value)
+};
+#undef FIELD_OFFSET
 
 typedef struct {
     const uint8_t *input;
@@ -161,6 +196,22 @@ static uint32_t take_bits(InitDecodeState *s, uint32_t width) {
 #define BUILD_OFFSETS OFFSETS(s)
 #endif
 
+#ifdef INIT_DECODE_PACKED_ENTRY
+#define BUILD_ENTRY_OPERATION entryOperation
+#define BUILD_ENTRY_BITS entryBits
+#else
+#define BUILD_ENTRY_OPERATION ENTRY_OPERATION(&entry)
+#define BUILD_ENTRY_BITS ENTRY_BITS(&entry)
+#endif
+
+#ifdef INIT_DECODE_BOUNDED_BUILDER_SHIFTS
+#define BUILD_SHIFT(width) ((uint32_t)(width))
+#define BUILD_LOW_MASK(width) ((1u << BUILD_SHIFT(width)) - 1)
+#else
+#define BUILD_SHIFT(width) ((width) & 31)
+#define BUILD_LOW_MASK(width) low_mask(width)
+#endif
+
 int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                       uint32_t count, uint32_t simple, const uint16_t *bases,
                       const uint8_t *extras, uint16_t *root, uint32_t *rootBits) {
@@ -226,7 +277,12 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     for (bits = min; bits <= max; bits++) {
         remaining = BUILD_COUNTS[bits];
         while (remaining != 0) {
+#ifdef INIT_DECODE_PACKED_ENTRY
+            uint8_t entryOperation, entryBits;
+            uint32_t packed;
+#else
             InitDecodeEntry entry;
+#endif
             while ((int32_t)bits > consumed + (int32_t)width) {
                 uint32_t ceiling, slots, scan;
                 level++;
@@ -234,7 +290,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                 ceiling = max - consumed;
                 if (ceiling > width) ceiling = width;
                 levelBits = bits - consumed;
-                slots = 1u << (levelBits & 31);
+                slots = 1u << BUILD_SHIFT(levelBits);
                 if (slots > remaining) {
                     slots -= remaining;
                     scan = bits;
@@ -248,10 +304,10 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                         levelBits++;
                     }
                 }
-                size = 1u << (levelBits & 31);
+                size = 1u << BUILD_SHIFT(levelBits);
                 next = s->allocated + 1;
                 *link = next;
-                link = &s->workspace[s->allocated].value;
+                link = &ENTRY_VALUE(&s->workspace[s->allocated]);
                 *link = 0;
                 table = next;
                 SET_TABLE(s, level, table);
@@ -259,38 +315,52 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                     InitDecodeEntry *parent;
                     BUILD_OFFSETS[level] = code;
                     parent = &s->workspace[TABLE_INDEX(s, level - 1) +
-                        (code >> ((consumed - (int32_t)width) & 31))];
-                    parent->operation = levelBits + 16;
-                    parent->bits = width;
-                    parent->value = next;
+                        (code >> BUILD_SHIFT(consumed - (int32_t)width))];
+                    ENTRY_OPERATION(parent) = levelBits + 16;
+                    ENTRY_BITS(parent) = width;
+                    ENTRY_VALUE(parent) = next;
                     value = next;
                 }
                 s->allocated += size + 1;
             }
-            entry.operation = 99;
-            entry.bits = bits - consumed;
+            BUILD_ENTRY_OPERATION = 99;
+            BUILD_ENTRY_BITS = bits - consumed;
             if (symbolIndex < count) {
                 uint32_t symbol = BUILD_SORTED[symbolIndex++];
                 if (symbol < simple) {
-                    entry.operation = symbol < 256 ? 16 : 15;
+                    BUILD_ENTRY_OPERATION = symbol < 256 ? 16 : 15;
                     value = symbol;
                 } else {
-                    entry.operation = extras[symbol - simple];
+                    BUILD_ENTRY_OPERATION = extras[symbol - simple];
                     value = bases[symbol - simple];
                 }
             }
-            entry.value = value;
-            next = code >> (consumed & 31);
-            for (; next < size; next += 1u << ((bits - consumed) & 31)) {
+#ifdef INIT_DECODE_PACKED_ENTRY
+#if defined(INIT_DECODE_GUEST) || (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+            packed = ((uint32_t)entryOperation << 24) | ((uint32_t)entryBits << 16) | value;
+#elif defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+            packed = entryOperation | ((uint32_t)entryBits << 8) | ((uint32_t)value << 16);
+#else
+#error Native byte order is required for packed entry mode
+#endif
+#else
+            ENTRY_VALUE(&entry) = value;
+#endif
+            next = code >> BUILD_SHIFT(consumed);
+            for (; next < size; next += 1u << BUILD_SHIFT(bits - consumed)) {
+#ifdef INIT_DECODE_PACKED_ENTRY
+                s->workspace[table + next].alignment = packed;
+#else
                 s->workspace[table + next] = entry;
+#endif
             }
-            next = 1u << ((bits - 1) & 31);
+            next = 1u << BUILD_SHIFT(bits - 1);
             while (code & next) {
                 code ^= next;
                 next >>= 1;
             }
             code ^= next;
-            while ((code & low_mask(consumed)) != BUILD_OFFSETS[level]) {
+            while ((code & BUILD_LOW_MASK(consumed)) != BUILD_OFFSETS[level]) {
                 level--;
                 consumed -= width;
             }
@@ -303,16 +373,20 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #undef BUILD_COUNTS
 #undef BUILD_SORTED
 #undef BUILD_OFFSETS
+#undef BUILD_ENTRY_OPERATION
+#undef BUILD_ENTRY_BITS
+#undef BUILD_SHIFT
+#undef BUILD_LOW_MASK
 
 static InitDecodeEntry *lookup(InitDecodeState *s, uint32_t root, uint32_t width) {
     InitDecodeEntry *entry;
     need_bits(s, width);
     entry = &s->workspace[root + (s->reservoir & low_mask(width))];
-    while (entry->operation > 16 && entry->operation != 99) {
-        width = entry->operation - 16;
-        drop_bits(s, entry->bits);
+    while (ENTRY_OPERATION(entry) > 16 && ENTRY_OPERATION(entry) != 99) {
+        width = ENTRY_OPERATION(entry) - 16;
+        drop_bits(s, ENTRY_BITS(entry));
         need_bits(s, width);
-        entry = &s->workspace[entry->value + (s->reservoir & low_mask(width))];
+        entry = &s->workspace[ENTRY_VALUE(entry) + (s->reservoir & low_mask(width))];
     }
     return entry;
 }
@@ -323,24 +397,24 @@ int init_decode_compressed(InitDecodeState *s, uint32_t literalRoot,
     int32_t produced = s->produced;
     for (;;) {
         InitDecodeEntry *entry = lookup(s, literalRoot, literalBits);
-        uint32_t operation = entry->operation;
+        uint32_t operation = ENTRY_OPERATION(entry);
         uint32_t length, distance;
         int32_t source, end;
         if (operation == 99) return 1;
-        drop_bits(s, entry->bits);
+        drop_bits(s, ENTRY_BITS(entry));
         if (operation == 16) {
-            s->output[produced++] = entry->value;
+            s->output[produced++] = ENTRY_VALUE(entry);
             continue;
         }
         if (operation == 15) {
             s->produced = produced;
             return 0;
         }
-        length = entry->value + take_bits(s, operation);
+        length = ENTRY_VALUE(entry) + take_bits(s, operation);
         entry = lookup(s, distanceRoot, distanceBits);
-        if (entry->operation == 99) return 1;
-        drop_bits(s, entry->bits);
-        distance = entry->value + take_bits(s, entry->operation);
+        if (ENTRY_OPERATION(entry) == 99) return 1;
+        drop_bits(s, ENTRY_BITS(entry));
+        distance = ENTRY_VALUE(entry) + take_bits(s, ENTRY_OPERATION(entry));
         source = (uint32_t)produced - distance;
         end = (uint32_t)produced + length;
         if (end >= s->limit) return 1;
@@ -407,8 +481,8 @@ int init_decode_dynamic(InitDecodeState *s) {
         InitDecodeEntry *entry;
         need_bits(s, CODE_BITS(s));
         entry = &s->workspace[CODE_ROOT(s) + (s->reservoir & low_mask(CODE_BITS(s)))];
-        drop_bits(s, entry->bits);
-        symbol = entry->value;
+        drop_bits(s, ENTRY_BITS(entry));
+        symbol = ENTRY_VALUE(entry);
         if (symbol < 16) {
             LENGTHS(s)[i++] = previous = symbol;
             continue;

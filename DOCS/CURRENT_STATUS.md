@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init entry/shift trials: [Note 808](WORKING_NOTES/808-init-decompressor-entry-alignment-packing-and-bounded-shift-trials-20261003.md)
+pins entry size/alignment/fields and tests direct leaf packing. Bounded builder
+shifts improve frame-backed text to 5,200/5,424 bytes and core call-frame bounds
+to 400/296 bytes, still overlong. All 757 tests pass, including sanitized
+semantic/retail corpus and generated-tree checks; all 28 guest compiles are
+warning-clean and default instruction bytes are unchanged. All modes remain opt-in; no
+production owner or README aggregate change.
+
 Init codegen trials: [Note 807](WORKING_NOTES/807-init-decompressor-flat-bit-helper-and-builder-base-codegen-trials-20261003.md)
 measures a flat bit helper and two builder-base capture shapes. The smallest
 frame-backed text is 5,216 bytes, still 1,232 over retail, with a larger builder

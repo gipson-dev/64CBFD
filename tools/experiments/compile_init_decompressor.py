@@ -35,7 +35,9 @@ def analyze_guest_calls(text, named_entries, targets):
             if word >> 26 == 0 and word & 63 == 9:
                 raise ValueError("indirect JALR needs separate call-graph qualification")
         units[start] = {"entry": start, "name": named_entries.get(start, "local_%04x" % start),
-                        "frame_bytes": max(frames, default=0), "calls": sorted(calls)}
+                        "frame_bytes": max(frames, default=0), "calls": sorted(calls),
+                        "word_store_forms": {name: sum(word >> 26 == opcode for word in words)
+                                             for name, opcode in (("sw", 43), ("swl", 42), ("swr", 46))}}
 
     def bound(start, active=()):
         if start in active:
@@ -71,6 +73,7 @@ def inspect_object(path):
     functions = []
     size_symbol = None
     frame_symbol = None
+    entry_layout_symbol = None
     symbol_records = []
     for offset in range(symbols[4], symbols[4] + symbols[5], symbols[9]):
         symbol = struct.unpack_from(">IIIBBH", data, offset)
@@ -82,6 +85,8 @@ def inspect_object(path):
             size_symbol = symbol
         if label == "init_decode_guest_frame_layout":
             frame_symbol = symbol
+        if label == "init_decode_entry_layout":
+            entry_layout_symbol = symbol
     functions.sort()
     measurements = []
     for i, (start, label) in enumerate(functions):
@@ -97,6 +102,12 @@ def inspect_object(path):
         raise ValueError("guest layout size symbol missing")
     section = sections[size_symbol[5]]
     entry_size, state_size = struct.unpack_from(">2I", data, section[4] + size_symbol[1])
+    if entry_layout_symbol is None:
+        raise ValueError("entry layout receipt missing")
+    section = sections[entry_layout_symbol[5]]
+    entry_layout = struct.unpack_from(">5I", data, section[4] + entry_layout_symbol[1])
+    if entry_layout[0] != 4 or entry_layout[1] not in (2, 4) or entry_layout[2:] != (0, 1, 2):
+        raise ValueError("entry byte layout differs from retail")
     if frame_symbol is None:
         raise ValueError("guest frame layout symbol missing")
     section = sections[frame_symbol[5]]
@@ -123,6 +134,7 @@ def inspect_object(path):
     call_graph = analyze_guest_calls(data[text[4]:text[4] + text[5]],
                                     {start: label for start, label in functions}, targets)
     return {"text_bytes": text[5], "entry_bytes": entry_size,
+            "entry_layout": entry_layout,
             "state_bytes": state_size, "frame_layout": frame_layout,
             "functions": measurements, "call_graph": call_graph}
 
@@ -134,14 +146,28 @@ def main():
                         help="compile the isolated physical-frame scratch variant")
     parser.add_argument("--flat-bits", action="store_true",
                         help="flatten take_bits without changing state-access order")
+    parser.add_argument("--aligned-entry", action="store_true",
+                        help="give the four-byte entry its retail word alignment")
+    parser.add_argument("--packed-entry", action="store_true",
+                        help="construct a packed leaf word; implies --aligned-entry")
+    parser.add_argument("--bounded-builder-shifts", action="store_true",
+                        help="use the builder's clamped tree-width shift bounds")
     parser.add_argument("--cache-builder", nargs="?", const="all",
                         choices=("all", "counts-offsets"),
                         help="capture the builder's scratch array bases")
     args = parser.parse_args()
+    if args.packed_entry:
+        args.aligned_entry = True
     root = Path(__file__).resolve().parents[2]
     suffix = "-frame" if args.frame_backed else ""
     if args.flat_bits:
         suffix += "-flat-bits"
+    if args.aligned_entry:
+        suffix += "-aligned-entry"
+    if args.packed_entry:
+        suffix += "-packed"
+    if args.bounded_builder_shifts:
+        suffix += "-bounded-shifts"
     if args.cache_builder:
         suffix += "-cached-builder"
         if args.cache_builder != "all":
@@ -158,6 +184,12 @@ def main():
         common.append("-DINIT_DECODE_FRAME_BACKED")
     if args.flat_bits:
         common.append("-DINIT_DECODE_FLAT_BITS")
+    if args.aligned_entry:
+        common.append("-DINIT_DECODE_ALIGNED_ENTRY")
+    if args.packed_entry:
+        common.append("-DINIT_DECODE_PACKED_ENTRY")
+    if args.bounded_builder_shifts:
+        common.append("-DINIT_DECODE_BOUNDED_BUILDER_SHIFTS")
     if args.cache_builder:
         common.append("-DINIT_DECODE_CACHE_BUILDER=" +
                       ("1" if args.cache_builder == "all" else "2"))
@@ -177,6 +209,8 @@ def main():
             ["mips-linux-gnu-objdump", "-dr", "-z", str(obj)], text=True)
         (output / (label + ".asm.txt")).write_text(disassembly)
         report[label] = inspect_object(obj)
+        if report[label]["entry_layout"][1] != (4 if args.aligned_entry else 2):
+            raise ValueError("entry alignment does not match the selected representation")
     (output / "measurements.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))
 
