@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 831](WORKING_NOTES/831-init-explicit-corpus-cu1-modes-and-clear-full-pass-20261003.md)
+  adds explicit corpus CU1 mode selection and passes all 507 masked CU1-clear
+  pages on loop-lookup packed O2. Nine selector/mask tests pass; ordinary corpus
+  discovery skips. Defaults and production unchanged; other profiles,
+  ownership/fault bounds and the 896-byte text excess remain open.
+
 - Init [Note 830](WORKING_NOTES/830-init-loop-lookup-full-masked-corpus-20261003.md)
   closes the full 507-page masked corpus gate for loop-lookup packed O2/g3,
   CU1 set, in 759.786 seconds. Text/descent is 4,880/3,256; neighbor margin

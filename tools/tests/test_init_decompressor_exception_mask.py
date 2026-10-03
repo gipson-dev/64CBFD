@@ -74,6 +74,17 @@ class InitDecompressorExceptionEntryMaskTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Unknown shadow corpus context"):
             corpus.context_status("masked-maybe")
 
+    def test_corpus_cu1_selection(self):
+        self.assertEqual(corpus.cu1_modes("set"), ("set",))
+        self.assertEqual(corpus.cu1_modes("clear"), ("clear",))
+        self.assertEqual(corpus.cu1_modes("both"), ("clear", "set"))
+        self.assertEqual(corpus.context_status("generic", "clear"), 0x0400FF01)
+        self.assertEqual(corpus.context_status("exception-masked", "clear"), 0x0400FF00)
+        with self.assertRaisesRegex(ValueError, "Unknown shadow corpus CU1 selection"):
+            corpus.cu1_modes("maybe")
+        with self.assertRaisesRegex(ValueError, "Unknown shadow corpus CU1 mode"):
+            corpus.context_status("generic", "both")
+
 
 class InitDecompressorCompiledMaskedContextTests(unittest.TestCase):
     fixture_type = shadow.ShadowExceptionFixture
@@ -94,9 +105,7 @@ class InitDecompressorCompiledMaskedContextTests(unittest.TestCase):
                  (b"\x11\x72" + streams.InitDecompressorStreamTests().dynamic(overflow=True), b"")]
         for chunk, output in cases:
             for cu1 in (False, True):
-                status = corpus.context_status("exception-masked")
-                if not cu1:
-                    status &= ~exception.SR_CU1
+                status = corpus.context_status("exception-masked", "set" if cu1 else "clear")
                 self.compare(chunk, status,
                              expected_output=output, expected_result=len(output))
 
@@ -105,9 +114,7 @@ class InitDecompressorCompiledMaskedContextTests(unittest.TestCase):
             _, start, end, _, output = self.pages[index]
             dma_size = (end - start + 15) & ~15
             for cu1 in (False, True):
-                status = corpus.context_status("exception-masked")
-                if not cu1:
-                    status &= ~exception.SR_CU1
+                status = corpus.context_status("exception-masked", "set" if cu1 else "clear")
                 self.compare(self.rom[start:start + dma_size], status,
                     expected_output=output, expected_result=len(output), dma_size=dma_size)
 

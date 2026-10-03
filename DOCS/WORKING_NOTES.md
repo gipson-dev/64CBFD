@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 831](WORKING_NOTES/831-init-explicit-corpus-cu1-modes-and-clear-full-pass-20261003.md)):
+Explicit set/clear/both corpus selection preserves defaults and resets depth
+measurements per mode. Real masked CU1-clear loop-lookup packed O2 passes all
+507 pages (741.930 seconds), text/descent 4,880/3,256, margin 72. Alongside
+Note 830, both entry modes have separate one-profile full passes. Nine focused
+tests pass; synthetic dispatch tests are not MIPS evidence. Other profiles,
+ownership/fault bounds and fitting stay open; production/README unchanged.
+
 2026-10-03 ([Note 830](WORKING_NOTES/830-init-loop-lookup-full-masked-corpus-20261003.md)):
 All 507 pages pass the loop-lookup packed O2/g3 variant with masked Status
 0x2400FF00 and CU1 set, in 759.786 seconds. Text/descent is 4,880/3,256,

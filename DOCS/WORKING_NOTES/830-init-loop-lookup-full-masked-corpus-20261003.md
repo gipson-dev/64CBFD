@@ -83,3 +83,11 @@ Root `make tools-check` and `git diff --check` pass after the documentation upda
 - [ ] Complete original stack/state/workspace ownership and synchronous-fault bounds.
 - [ ] Continue builder/helper/adapter fitting; the 896-byte excess still blocks
   production replacement alongside the independent interface/ownership gates.
+
+## Follow-up
+
+[Note 831](831-init-explicit-corpus-cu1-modes-and-clear-full-pass-20261003.md)
+adds explicit CU1 mode selection and passes all 507 masked CU1-clear pages
+for the same loop-lookup packed O2 profile in 741.930 seconds. That profile
+now has separate full-page receipts for both entry modes. Other profiles,
+complete ownership/fault bounds and fitting remain open; production unchanged.

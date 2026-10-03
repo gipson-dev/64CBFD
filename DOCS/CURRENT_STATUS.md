@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init explicit CU1 corpus modes: [Note 831](WORKING_NOTES/831-init-explicit-corpus-cu1-modes-and-clear-full-pass-20261003.md)
+adds set/clear/both selection with unchanged defaults and mode-local receipts.
+All 507 masked CU1-clear pages pass loop-lookup packed O2 in 741.930 seconds;
+text/descent/margin remains 4,880/3,256/72. That profile now has separate full
+passes for both entry modes. Nine focused tests pass; ordinary corpus discovery
+still skips. Other profiles, ownership/fault bounds and the 896-byte fitting
+excess stay open. No production, decoder/adapter or README aggregate changes.
+
 Init loop-lookup full masked corpus: [Note 830](WORKING_NOTES/830-init-loop-lookup-full-masked-corpus-20261003.md)
 passes all 507 pages on the changed packed/remaining O2/g3 variant, masked
 Status 0x2400FF00 and CU1 set, in 759.786 seconds. Linked text/descent is
