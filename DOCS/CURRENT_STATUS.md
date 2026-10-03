@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init diagnostic placement: [Note 841](WORKING_NOTES/841-init-diagnostic-overlay-placement-and-positive-pool-bounds-20261003.md)
+executes retail overlay/SP/DMA/TLB argument arithmetic. Debugger reuses the
+page pool at its next 64 KiB boundary, image 4960/SP 5958/mapping span 20000.
+All 256 positive direct-count allocator cases back these extents; zero/tiny
+pools do not inherit that bound. All 54 focused tests pass. Real DMA/TLB,
+debugger/post-fault cleanup and complete ownership remain open; production,
+fitting and README totals unchanged.
+
 Init loaded table loop: [Note 840](WORKING_NOTES/840-init-retail-loaded-page-table-loop-write-footprint-20261003.md)
 executes all 19 retail words over 508 offsets. Exactly 2,032 bytes are rewritten;
 the 16-byte DMA tail and following input guard remain unchanged. Six relocated/

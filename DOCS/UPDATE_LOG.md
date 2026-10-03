@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 841](WORKING_NOTES/841-init-diagnostic-overlay-placement-and-positive-pool-bounds-20261003.md)
+  qualifies diagnostic overlay/SP/DMA/TLB arguments and allocation extents
+  for all positive direct counts. Zero/tiny pool arithmetic is explicitly
+  outside that bound. All 54 focused tests pass; no hardware/runtime failure
+  claim, production edits, decoder/adapter or README aggregate changes.
+
 - Init [Note 840](WORKING_NOTES/840-init-retail-loaded-page-table-loop-write-footprint-20261003.md)
   qualifies the original loaded-pointer startup loop: 508 offsets, 2,032
   exact write bytes, untouched DMA tail/input guard. All 41 focused tests pass.

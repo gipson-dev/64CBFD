@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 841](WORKING_NOTES/841-init-diagnostic-overlay-placement-and-positive-pool-bounds-20261003.md)):
+Retail diagnostic arithmetic reuses page-pool storage at the next 64 KiB
+boundary. Image/SP/128 KiB mapping extents fit all 256 positive direct-count
+allocator cases and eight alignment residues. Zero/tiny pools fail that bound,
+without a reachability claim. All 54 focused tests pass. DMA/TLB/debugger
+effects, cleanup, complete ownership and fitting remain open; totals unchanged.
+
 2026-10-03 ([Note 840](WORKING_NOTES/840-init-retail-loaded-page-table-loop-write-footprint-20261003.md)):
 ROM-pinned startup loop decodes all 508 offsets with exactly 2,032 ordered
 write bytes, leaving DMA tail/input guards untouched. Reloaded table pointer,

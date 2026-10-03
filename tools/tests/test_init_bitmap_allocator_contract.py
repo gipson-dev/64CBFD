@@ -255,6 +255,28 @@ static s32 valid_lists(void) {
     return 0;
 ''')
 
+    def test_debugger_overlay_extents_fit_all_direct_positive_pool_counts(self):
+        self.run_case(r'''
+    s32 count, allocation;
+    u32 pool, overlay, delta, residues = 0;
+    for (count = 107; count <= 362; count++) {
+        initialize();
+        allocation = func_10003C6C(count << 12, 0xFF, 4, 1, 2);
+        if (!allocation || !valid_lists() || errors) return 1;
+        pool = (u32)allocation & 0x0FFFFFFF;
+        overlay = (pool & 0xFFFF0000) + 0x10000;
+        delta = overlay - pool;
+        residues |= 1 << ((pool & 0xFFFF) >> 13);
+        if (delta < 0x2000 || delta > 0x10000 ||
+            delta + 0x4960 > (u32)(count << 12) ||
+            delta + 0x5958 > (u32)(count << 12) ||
+            delta + 0x20000 > (u32)(count << 12)) return 2;
+        if (!in_heap(overlay | 0x80000000, 0x20000)) return 3;
+    }
+    if (residues != 0xFF) return 4;
+    return 0;
+''')
+
 
 if __name__ == "__main__":
     unittest.main()
