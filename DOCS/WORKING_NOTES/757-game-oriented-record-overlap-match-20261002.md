@@ -2,6 +2,11 @@
 
 Date: 2026-10-02
 
+Follow-up: [Note 758](758-game-position-scale-overlap-wrapper-return-20261002.md)
+completes the position/scale wrapper's explicit callback result forwarding,
+retaining its direct 23-word match and adding six tests. The recovery and
+measurements below record the preceding overlap checkpoint.
+
 ## Recovery
 
 `func_15044B78` replaces its zero-return placeholder with the player/record

@@ -48,10 +48,12 @@ class GameOrientedRecordOverlapTests(unittest.TestCase):
         record = re.search(r"typedef struct PositionScaleRecord71820 \{\n.*?"
                            r"\n\} PositionScaleRecord71820;", source, re.S)
         body = re.search(r"s32 func_15044B78\([^;{]*\{\n.*?\n\}", source, re.S)
+        position_wrapper = re.search(r"s32 func_15044CE4\([^;{]*\{\n.*?\n\}",
+                                     source, re.S)
         wrapper_source = (root / "conker/src/game_75E60.c").read_text()
         wrapper = re.search(r"f32 func_15048A40\(u8 arg0\) \{\n.*?\n\}",
                             wrapper_source, re.S)
-        if record is None or body is None or wrapper is None:
+        if record is None or body is None or wrapper is None or position_wrapper is None:
             raise AssertionError("overlap layout, body, or float-return wrapper was not found")
         cls.wrapper = TYPES + r'''
 static s32 calls, seen;
@@ -115,6 +117,22 @@ static f32 float_bits(u32 bits) {
 }
 #define CHECK(condition) do { if (!(condition)) return __LINE__ % 254 + 1; } while (0)
 '''
+        cls.integrated_source = cls.source + position_wrapper.group(0) + "\n"
+        cls.position_wrapper_source = TYPES + record.group(0) + "\n" + r'''
+static union { PositionScaleRecord71820 value; s16 halfwords[16]; } record_storage;
+#define record record_storage.value
+static s32 overlap_calls, overlap_result, error;
+static s16 expected_x, expected_y, expected_z, expected_scale;
+s32 func_15044B78(PositionScaleRecord71820 *argument) {
+    overlap_calls++;
+    if (argument != &record || argument->x != expected_x ||
+        argument->y != expected_y || argument->z != expected_z ||
+        argument->scaleX != expected_scale || argument->scaleY != expected_scale ||
+        argument->scaleZ != expected_scale) error = 1;
+    return overlap_result;
+}
+#define CHECK(condition) do { if (!(condition)) return __LINE__ % 254 + 1; } while (0)
+''' + position_wrapper.group(0) + "\n"
 
     def run_case(self, body, source=None):
         fixture = self.path / (self._testMethodName + ".c")
@@ -286,3 +304,79 @@ for (angle = 0; angle < 256; angle++) {
         seen != ((angle - 64) & 255)) return angle % 254 + 1;
 }
 ''', source=self.wrapper)
+
+    def test_position_wrapper_forwards_full_signed_result_after_stores(self):
+        self.run_case(r'''
+s16 coordinates[3] = {-32768, 32767, -123}, scale = -33;
+s32 results[4] = {0, 1, -37, 1234567}, i;
+record.position = coordinates; record.scale = &scale;
+expected_x = -32768; expected_y = 32767; expected_z = -123; expected_scale = -1;
+for (i = 0; i < 4; i++) {
+    overlap_calls = error = 0; overlap_result = results[i];
+    CHECK(func_15044CE4(&record) == results[i] && overlap_calls == 1 && error == 0);
+}
+''', source=self.position_wrapper_source)
+
+    def test_position_wrapper_all_signed_halfword_scales_truncate_toward_zero(self):
+        self.run_case(r'''
+s16 coordinates[3] = {12, -15, 300}, scale;
+s32 value;
+record.position = coordinates; record.scale = &scale;
+expected_x = 12; expected_y = -15; expected_z = 300; overlap_result = -7;
+for (value = -32768; value <= 32767; value++) {
+    scale = value;
+    expected_scale = value < 0 ? -((-value) >> 5) : value >> 5;
+    overlap_calls = error = 0;
+    CHECK(func_15044CE4(&record) == -7 && overlap_calls == 1 && error == 0);
+    CHECK(scale == value && coordinates[0] == 12 && coordinates[1] == -15 &&
+          coordinates[2] == 300 && record.position == coordinates && record.scale == &scale);
+}
+''', source=self.position_wrapper_source)
+
+    def test_position_wrapper_preserves_unrelated_record_and_input_bytes(self):
+        self.run_case(r'''
+u8 before[32]; s16 coordinates[3] = {-11, 22, -33}, scale = 1024; s32 i;
+for (i = 0; i < 32; i++) ((u8 *)&record)[i] = 0xA5;
+record.position = coordinates; record.scale = &scale;
+for (i = 0; i < 32; i++) before[i] = ((u8 *)&record)[i];
+expected_x = -11; expected_y = 22; expected_z = -33; expected_scale = 32;
+overlap_result = 1; CHECK(func_15044CE4(&record) == 1 && error == 0);
+for (i = 0; i < 32; i++) if (!(i >= 6 && i < 12) && !(i >= 16 && i < 22))
+    CHECK(before[i] == ((u8 *)&record)[i]);
+CHECK(coordinates[0] == -11 && coordinates[1] == 22 && coordinates[2] == -33 && scale == 1024);
+''', source=self.position_wrapper_source)
+
+    def test_position_wrapper_aliases_observe_sequential_coordinate_stores(self):
+        self.run_case(r'''
+/* Source starts one halfword before destination; stores change later loads. */
+s16 scale = 64;
+record.lifetime = -12; record.x = 100; record.y = 200; record.z = 300;
+record.position = &record_storage.halfwords[2]; record.scale = &scale;
+expected_x = expected_y = expected_z = -12; expected_scale = 2;
+overlap_result = 1; CHECK(func_15044CE4(&record) == 1 && error == 0 && overlap_calls == 1);
+CHECK(record.lifetime == -12 && scale == 64);
+''', source=self.position_wrapper_source)
+
+    def test_position_wrapper_reads_aliased_scale_after_coordinate_stores(self):
+        self.run_case(r'''
+s16 coordinates[3] = {10, -65, 30};
+record.position = coordinates; record.scale = &record.y;
+record.y = 32000;
+expected_x = 10; expected_y = -65; expected_z = 30; expected_scale = -2;
+overlap_result = -3; CHECK(func_15044CE4(&record) == -3 && error == 0);
+CHECK(overlap_calls == 1 && record.scale == &record.y);
+''', source=self.position_wrapper_source)
+
+    def test_position_wrapper_calls_actual_overlap_for_inside_and_boundary(self):
+        self.run_case(r'''
+s16 coordinates[3] = {100, -20, -100}, scale = -33;
+initialize(); record.position = coordinates; record.scale = &scale;
+position(100, -25, -100);
+CHECK(func_15044CE4(&record) == 1 && calls == 2);
+CHECK(record.x == 100 && record.y == -20 && record.z == -100);
+CHECK(record.scaleX == -1 && record.scaleY == -1 && record.scaleZ == -1);
+position(101, -25, -100); CHECK(func_15044CE4(&record) == 0 && calls == 4);
+scale = 0; CHECK(func_15044CE4(&record) == 1 && calls == 6);
+scale = -64; position(100, -25, -100);
+CHECK(func_15044CE4(&record) == 0 && calls == 8);
+''', source=self.integrated_source)

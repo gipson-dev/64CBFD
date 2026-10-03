@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-02 ([Note 758](WORKING_NOTES/758-game-position-scale-overlap-wrapper-return-20261002.md)):
+Game `func_15044CE4` explicitly returns its overlap result, retaining a direct
+23-word match without guards. Six new tests cover all signed-halfword scales,
+alias-sensitive timing, result forwarding, and actual wrapper/overlap calls.
+All 153 tool tests and the full build pass; neighboring spans and both entire
+Init sections remain exact. Matching aggregates are unchanged. Next untouched
+placeholder in the slice is `func_150450CC`, 144 words / 135 differences.
+
 2026-10-02 ([Note 757](WORKING_NOTES/757-game-oriented-record-overlap-match-20261002.md)):
 Game `func_15044B78` matches all 91 words after recovering its oriented overlap
 test; six strict guards remap only three closed integer stack slots. The

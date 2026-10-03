@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game position/scale overlap wrapper return completed
+
+- `func_15044CE4` now explicitly returns `s32` and forwards the overlap result
+  consumed by the list callback caller. All 23 words remain directly exact;
+  no new word guard or compiler profile is needed.
+- Six new tests include all 65,536 signed scales, alias-sensitive load/store
+  timing, byte preservation, and actual wrapper/overlap integration. All 153
+  tool tests, the full build, and project checks pass. Neighboring spans and
+  both complete Init sections remain exact.
+- Matching totals and README aggregates do not change. See
+  [Note 758](WORKING_NOTES/758-game-position-scale-overlap-wrapper-return-20261002.md)
+  for the contract proof and next placeholder, `func_150450CC`.
+
 ### Game oriented record overlap matched
 
 - `func_15044B78` replaces its zero-return placeholder with the full player /

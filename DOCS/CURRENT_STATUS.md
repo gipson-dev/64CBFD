@@ -37,14 +37,24 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 | Game | 2,582 / 4,788 (53.93%) | 0 | 2,206 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Game `func_15044CE4` now explicitly returns the overlap result to its record
+callback caller. The complete 23-word span remains directly exact, without
+guards. Six new tests cover every signed-halfword scale, result forwarding,
+load/store aliasing, unrelated-byte preservation, and actual wrapper/overlap
+integration. All 153 tool tests, the full build, and project checks pass;
+all recovered neighboring spans and both entire Init sections remain exact.
+Matching totals do not change. Next untouched placeholder in the slice is
+`func_150450CC`, 144 words / 135 differences. See
+[Working Note 758](WORKING_NOTES/758-game-position-scale-overlap-wrapper-return-20261002.md).
+
 Game `func_15044B78` now replaces its zero-return placeholder with the complete
 oriented player/record overlap test. All 91 words match; six strict guards
 remap three private integer stack slots without changing any other instruction.
 Its angle helper `func_15048A40` now explicitly returns `f32` and remains exact
 across all twelve words. Sixteen new 32-bit tests and all 147 tool tests pass;
 the full build and project checks pass. Constructor, allocator, and list pass
-spans remain exact, as do both entire Init sections. Next dependency is the
-explicit callback return contract in `func_15044CE4`. See
+spans remain exact, as do both entire Init sections. Its then-pending callback
+return contract in `func_15044CE4` is now completed by Note 758. See
 [Working Note 757](WORKING_NOTES/757-game-oriented-record-overlap-match-20261002.md).
 
 The resumed Init audit rebuilt the production baseline and reconfirmed all
@@ -238,8 +248,10 @@ This distinction concerns C representation versus proven original provenance.
 The supported Init C-conversion queue is complete. The ordinary Game overlap
 dependency `func_15044B78` now matches all 91 words. Its record allocator,
 position/scale constructor, and list pass remain exact, without gameplay
-qualification of downstream callbacks. Resume with the explicit result
-forwarding contract in its 23-word position/scale wrapper `func_15044CE4`.
+qualification of downstream callbacks. Its 23-word position/scale wrapper
+`func_15044CE4` now explicitly forwards the result and remains directly exact.
+Resume semantic recovery at `func_150450CC`, currently 144 words / 135 real
+word differences, with its argument and output layout still to recover.
 `func_15040CC8` has a recovered semantic body but remains in the separate
 non-matching/overflow queue; its retail-slot matcher reports 36 differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and

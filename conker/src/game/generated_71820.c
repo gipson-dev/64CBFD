@@ -192,7 +192,7 @@ s32 func_15044B78(PositionScaleRecord71820 *record) {
     return 0;
 }
 
-void func_15044CE4(PositionScaleRecord71820 *arg0) {
+s32 func_15044CE4(PositionScaleRecord71820 *arg0) {
     s32 value;
     s16 *position = arg0->position;
     s16 *scale = arg0->scale;
@@ -204,7 +204,7 @@ void func_15044CE4(PositionScaleRecord71820 *arg0) {
     arg0->scaleX = value;
     arg0->scaleY = value;
     arg0->scaleZ = value;
-    func_15044B78(arg0);
+    return func_15044B78(arg0);
 }
 
 s32 func_15044D40(PositionScaleRecord71820 *arg0) {
