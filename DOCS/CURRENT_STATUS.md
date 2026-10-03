@@ -37,6 +37,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 | Game | 2,581 / 4,788 (53.91%) | 0 | 2,207 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+The resumed Init audit rebuilt the production baseline and reconfirmed all
+492 Init C rows and both entire Init code/data sections byte-exact. The 47
+remaining assembly rows / 12,252 bytes include two deferred small-leaf C
+experiments; neither has a proven matching replacement. No Init conversion
+or aggregate change is claimed. The interrupted Game `func_15044B78` draft
+exceeds its retail slot by one word and is preserved in named stash object
+`5b554b70ce671454878a1025fec26b93ad457153`, not active production source.
+See [Working Note 756](WORKING_NOTES/756-init-resume-verification-and-conversion-boundary-20261002.md)
+for the remaining groups, acceptance gates, and exact draft-resume command.
+
 Game `func_15044A28` now replaces its zero-return placeholder with the complete
 record-list callback/delay/lifetime pass. All 84 words match directly without
 guards; constructor and allocator spans remain exact. Fifteen new 32-bit tests

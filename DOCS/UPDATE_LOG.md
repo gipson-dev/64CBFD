@@ -16,6 +16,17 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Init resume and remaining assembly boundary
+
+- Rebuilt and regenerated the production baseline: Init 492 / 492 C rows
+  exact, with both complete Init code/data sections identical to retail.
+- Reconfirmed 47 assembly rows / 12,252 bytes. Two small leaf experiments
+  remain deferred; the other 45 require retained assembly or whole-contract
+  work. No completed conversion or README aggregate change is claimed.
+- Preserved the interrupted, oversized Game overlap recovery in a named Git
+  stash. [Note 756](WORKING_NOTES/756-init-resume-verification-and-conversion-boundary-20261002.md)
+  records the conversion boundaries and exact draft recovery command.
+
 ### Game record list processor directly matched
 
 - `func_15044A28` replaces its zero-return placeholder with the full callback,

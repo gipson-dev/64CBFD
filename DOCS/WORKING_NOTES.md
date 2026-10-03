@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-02 ([Note 756](WORKING_NOTES/756-init-resume-verification-and-conversion-boundary-20261002.md)):
+Init resume audit rebuilds the baseline and reconfirms 492 C rows exact and
+both complete code/data sections identical to retail. All 47 remaining
+assembly rows / 12,252 bytes are classified; two small leaves remain deferred
+after unmatched compiler trials. The unfinished 92-word Game overlap draft
+is preserved in a named stash, restoring the buildable production baseline.
+No new conversion or README aggregate change is claimed.
+
 2026-10-02 ([Note 755](WORKING_NOTES/755-game-record-list-processor-direct-match-20261002.md)):
 Game `func_15044A28` matches all 84 words directly from the recovered callback,
 delay, lifetime, unlink, and release-marking list pass. Fifteen new 32-bit
