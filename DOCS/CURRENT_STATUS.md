@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init lookup trials: [Note 814](WORKING_NOTES/814-init-dynamic-code-lookup-capture-and-inline-mask-trials-20261003.md)
+qualifies full lookup capture, mask-only capture and inline mask calculation.
+All 178 focused tests, all 1,415 project tool tests and 26 final-source guest
+compiles pass, but no mode
+improves O2 fitting. Inline removes the direct helper edge yet adds text;
+captures increase stack. Retain cursor-only 4,208/368 and 4,240/352 comparison
+points. Default hashes, production owners and README counts unchanged.
+
 Init dynamic cursor lead: [Note 813](WORKING_NOTES/813-init-dynamic-length-base-and-pointer-cursor-trials-20261003.md)
 improves packed/cached-builder O2 to 4,208 text bytes / 368-byte core call-frame
 bound, 224 bytes over retail. Aligned cursor gives 4,240/352. Length base capture

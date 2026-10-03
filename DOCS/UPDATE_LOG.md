@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 814](WORKING_NOTES/814-init-dynamic-code-lookup-capture-and-inline-mask-trials-20261003.md)
+  measures full lookup capture, mask-only capture and inline-mask forms.
+  All pass focused semantic tests, but none improves O2 size/stack. Direct-call
+  receipts distinguish removed helper dependencies from text/frame savings.
+  Cursor-only and the exact production baseline remain the comparison points.
+
 - Init [Note 813](WORKING_NOTES/813-init-dynamic-length-base-and-pointer-cursor-trials-20261003.md)
   measures length-base capture and pointer-cursor variants. Cursor-only improves
   both O2 text and stack: 4,208 bytes / 368-byte bound in the smaller shape.

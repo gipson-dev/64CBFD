@@ -164,6 +164,9 @@ def main():
                         help="capture the dynamic decoder's stable length-buffer base")
     parser.add_argument("--dynamic-cursor", action="store_true",
                         help="write decoded lengths through a bounded pointer cursor")
+    parser.add_argument("--cache-dynamic-code", nargs="?", const="all",
+                        choices=("all", "mask", "inline"),
+                        help="select captured lookup state, mask-only capture or inline mask")
     parser.add_argument("--cache-builder", nargs="?", const="all",
                         choices=("all", "counts-offsets"),
                         help="capture the builder's scratch array bases")
@@ -194,6 +197,10 @@ def main():
         suffix += "-cached-dynamic-lengths"
     if args.dynamic_cursor:
         suffix += "-dynamic-cursor"
+    if args.cache_dynamic_code:
+        suffix += "-cached-dynamic-code"
+        if args.cache_dynamic_code != "all":
+            suffix += "-" + args.cache_dynamic_code
     if args.cache_builder:
         suffix += "-cached-builder"
         if args.cache_builder != "all":
@@ -228,6 +235,9 @@ def main():
         common.append("-DINIT_DECODE_CACHE_DYNAMIC_LENGTHS")
     if args.dynamic_cursor:
         common.append("-DINIT_DECODE_DYNAMIC_CURSOR")
+    if args.cache_dynamic_code:
+        common.append("-DINIT_DECODE_CACHE_DYNAMIC_CODE=" +
+                      str({"all": 1, "mask": 2, "inline": 3}[args.cache_dynamic_code]))
     if args.cache_builder:
         common.append("-DINIT_DECODE_CACHE_BUILDER=" +
                       ("1" if args.cache_builder == "all" else "2"))

@@ -20,6 +20,9 @@ typedef signed int int32_t;
 #if defined(INIT_DECODE_BYTE_PARENT) && !defined(INIT_DECODE_FRAME_BACKED)
 #error Byte parent addressing requires physical frame tables
 #endif
+#if defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE != 1 && INIT_DECODE_CACHE_DYNAMIC_CODE != 2 && INIT_DECODE_CACHE_DYNAMIC_CODE != 3
+#error Unsupported dynamic code lookup mode
+#endif
 
 typedef struct {
     uint8_t operation;
@@ -530,6 +533,12 @@ int init_decode_dynamic(InitDecodeState *s) {
 #ifdef INIT_DECODE_CACHE_DYNAMIC_LENGTHS
     uint32_t *cachedLengths;
 #endif
+#if defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE == 1
+    uint32_t cachedCodeWidth, cachedCodeMask;
+    InitDecodeEntry *cachedCodeTable;
+#elif defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE == 2
+    uint32_t cachedCodeMask;
+#endif
     if (literals >= 287 || distances >= 31) return 1;
 #ifdef INIT_DECODE_CACHE_DYNAMIC_LENGTHS
     cachedLengths = LENGTHS(s);
@@ -540,6 +549,13 @@ int init_decode_dynamic(InitDecodeState *s) {
     CODE_BITS(s) = 7;
 #endif
     init_decode_build(s, DYNAMIC_LENGTHS, 19, 19, 0, 0, &CODE_ROOT(s), &CODE_BITS(s));
+#if defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE == 1
+    cachedCodeWidth = CODE_BITS(s);
+    cachedCodeMask = low_mask(cachedCodeWidth);
+    cachedCodeTable = &s->workspace[CODE_ROOT(s)];
+#elif defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE == 2
+    cachedCodeMask = low_mask(CODE_BITS(s));
+#endif
 #ifdef INIT_DECODE_DYNAMIC_CURSOR
     cursor = DYNAMIC_LENGTHS;
     end = cursor + total;
@@ -548,8 +564,20 @@ int init_decode_dynamic(InitDecodeState *s) {
 #endif
     while (DYNAMIC_MORE) {
         InitDecodeEntry *entry;
+#if defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE == 1
+        need_bits(s, cachedCodeWidth);
+        entry = &cachedCodeTable[s->reservoir & cachedCodeMask];
+#elif defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE == 2
+        need_bits(s, CODE_BITS(s));
+        entry = &s->workspace[CODE_ROOT(s) + (s->reservoir & cachedCodeMask)];
+#elif defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE == 3
+        need_bits(s, CODE_BITS(s));
+        entry = &s->workspace[CODE_ROOT(s) +
+            (s->reservoir & ((1u << (CODE_BITS(s) & 31)) - 1))];
+#else
         need_bits(s, CODE_BITS(s));
         entry = &s->workspace[CODE_ROOT(s) + (s->reservoir & low_mask(CODE_BITS(s)))];
+#endif
         drop_bits(s, ENTRY_BITS(entry));
         symbol = ENTRY_VALUE(entry);
         if (symbol < 16) {

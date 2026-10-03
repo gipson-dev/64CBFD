@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-03 ([Note 814](WORKING_NOTES/814-init-dynamic-code-lookup-capture-and-inline-mask-trials-20261003.md)):
+Full/mask-only/inline dynamic lookup modes pass 178 focused tests and 26 guest
+compiles but do not improve O2 fitting. Full capture raises cursor frame to 128;
+mask-only to 120; inline keeps 88 but adds two body words. Retain original
+lookup with cursor-only; default hashes/production exact and counts unchanged.
+
 2026-10-03 ([Note 813](WORKING_NOTES/813-init-dynamic-length-base-and-pointer-cursor-trials-20261003.md)):
 Dynamic cursor-only reaches 4,208/368 in packed/cached-builder O2 and 4,240/352
 aligned; dynamic frame falls from 120 to 88 bytes. Base capture plus cursor
