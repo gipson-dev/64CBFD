@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 836](WORKING_NOTES/836-init-retail-cleanup-callback-null-path-and-fatal-slot-20261003.md)):
+The actual callback clears its render list before calling the renderer. ROM-
+validated retail words execute that null path with compiled Init sweep C in
+both IDO profiles, bypassing renderer frees. Fatal callback is pinned syscall
+plus three NOPs; returning stubs do not qualify exception/resume behavior.
+All 28 focused tests pass. Next audit reservations and syscall handling;
+fitting, production and README totals remain unchanged.
+
 2026-10-03 ([Note 835](WORKING_NOTES/835-init-guest-tag-sweep-and-retag-lifetime-contract-20261003.md)):
 Actual C aging/full sweeps and retag helper pass both IDO guest profiles with
 adjacent allocations, free gaps and protected tags/payloads. Pool/bitmap tag FF

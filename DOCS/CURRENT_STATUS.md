@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init real cleanup callback: [Note 836](WORKING_NOTES/836-init-retail-cleanup-callback-null-path-and-fatal-slot-20261003.md)
+executes ROM-validated retail wrapper/renderer words with compiled Init sweep
+C in both IDO profiles. Clearing the render-list global takes the null branch,
+skips renderer frees and preserves sweep heap ownership in the fixture. The
+fatal slot is pinned as syscall plus NOPs, not a returning C callback. All 28
+focused tests pass. Async writes, syscall dispatch/resume, static reservations
+and decoder fitting remain open; production and README aggregates unchanged.
+
 Init guest tag lifetimes: [Note 835](WORKING_NOTES/835-init-guest-tag-sweep-and-retag-lifetime-contract-20261003.md)
 qualifies both sweep bodies and the retag helper in fresh O2/g3 and O1 IDO
 guest builds. Aging frees tag 2 and decrements 3/4; full sweep frees 1-4 while

@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 836](WORKING_NOTES/836-init-retail-cleanup-callback-null-path-and-fatal-slot-20261003.md)
+  replaces the callback-only stub assumption with executable retail null-path
+  evidence alongside compiled Init sweep C in both profiles. The fatal slot
+  is pinned as syscall plus NOPs. All 28 focused tests pass; async/exception/
+  reservation ownership and fitting remain open. No production, README totals,
+  decoder/adapter or pending Game edits.
+
 - Init [Note 835](WORKING_NOTES/835-init-guest-tag-sweep-and-retag-lifetime-contract-20261003.md)
   qualifies recovered aging/full sweeps and retag C in both IDO guest profiles.
   Tag FF pool/bitmap storage survives both sweeps; selected adjacent blocks

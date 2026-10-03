@@ -5,6 +5,7 @@ import unittest
 
 from tools.tests.init_decompressor_guest_oracle import GuestBuilderFixture, GuestImage
 from tools.tests import test_init_bitmap_allocator_contract as allocator
+from tools.tests import test_init_decompressor_retail_pages as retail
 
 
 class AllocatorGuestFixture(GuestBuilderFixture):
@@ -47,7 +48,21 @@ class AllocatorGuestFixture(GuestBuilderFixture):
         return super().get(address, size)
 
     def execute(self, word):
-        if word >> 26 == 33:  # Signed LH used by the production alignment tables.
+        op = word >> 26
+        if op in (53, 57, 61):
+            rs, rt, immediate = word >> 21 & 31, word >> 16 & 31, word & 0xFFFF
+            offset = immediate if immediate < 0x8000 else immediate - 0x10000
+            address = (self.registers[rs] + offset) & 0xFFFFFFFF
+            size = 4 if op == 57 else 8
+            if op == 53:
+                value = self.get(address, size)
+                self.fprs[rt], self.fprs[rt + 1] = value >> 32, value & 0xFFFFFFFF
+                self.reads.append((address, size))
+            else:
+                value = self.fprs[rt] if size == 4 else (self.fprs[rt] << 32) | self.fprs[rt + 1]
+                self.put(address, value, size)
+                self.writes.append((address, size))
+        elif op == 33:  # Signed LH used by the production alignment tables.
             rs, rt, immediate = word >> 21 & 31, word >> 16 & 31, word & 0xFFFF
             offset = immediate if immediate < 0x8000 else immediate - 0x10000
             address = (self.registers[rs] + offset) & 0xFFFFFFFF
@@ -82,7 +97,7 @@ class InitAllocatorGuestFreeTests(unittest.TestCase):
             sweeps.append(match.group(0))
         cls.source += "\n" + "\n".join(sweeps)
 
-    def run_guest(self, body):
+    def run_guest(self, body, retail_cleanup=False):
         for profile in (("-O2", "-g3"), ("-O1",)):
             with self.subTest(profile=profile):
                 source, obj, elf = (self.path / name for name in ("guest.c", "guest.o", "guest.elf"))
@@ -99,10 +114,50 @@ class InitAllocatorGuestFreeTests(unittest.TestCase):
                                         capture_output=True, text=True, timeout=30)
                 self.assertEqual(result.returncode, 0, result.stderr)
                 fixture = AllocatorGuestFixture(GuestImage(elf.read_bytes()))
+                if retail_cleanup:
+                    image = (self.project / "conker.us.bin").read_bytes()
+                    pages = retail.retail_pages((self.root / "baserom.us.z64").read_bytes())
+                    raw = b"".join(page[4] for page in pages)
+                    first, last = 0x42D50, 0x43A00
+                    payload = raw[first:last]
+                    self.assertEqual(payload, image[0x2D4B0 + first:0x2D4B0 + last])
+                    self.assertEqual(payload[:40].hex(),
+                                     "27bdffe8afbf00143c01800dac20bd640d410ce100002025"
+                                     "8fbf001427bd001803e0000800000000")
+                    assembly = (self.project / "asm/nonmatchings/game_70200/func_15043384.s").read_text()
+                    words = re.findall(r"/\* [0-9A-F]+ ([0-9A-F]+) ([0-9A-F]{8}) \*/", assembly)
+                    self.assertEqual(len(words), (0x15043A00 - 0x15043384) // 4)
+                    for pc, word in words:
+                        offset = int(pc, 16) - 0x15000000
+                        self.assertEqual(raw[offset:offset + 4].hex(), word.lower())
+                    fixture.code = dict(fixture.code)
+                    fixture.code.update((0x15000000 + first + i,
+                                         int.from_bytes(payload[i:i + 4], "big"))
+                                        for i in range(0, len(payload), 4))
+                    thunk = fixture.image.symbols["func_15042D50"]
+                    fixture.code[thunk] = (2 << 26) | ((0x15042D50 >> 2) & 0x3FFFFFF)
+                    fixture.code[thunk + 4] = 0
+                    fixture.allowed_writes.extend(((0x800CBD60, 0x800CBD84),
+                                                   (0x80085CD0, 0x80085CD4)))
+                    fixture.put(0x800CBD64, 0x800E9D1C, 4)
+                    fixture.put(0x80085CD0, 41, 4)
+                    fixture.fprs[20:22] = [0x11223344, 0x55667788]
                 self.assertEqual(fixture.run(budget=3000000), 0)
                 for register in (*range(16, 24), 28, 29, 30):
                     self.assertEqual(fixture.registers[register], fixture.before[register])
                 self.assertIn(fixture.image.symbols["func_10004074"], fixture.visits)
+                if retail_cleanup:
+                    self.assertIn(0x150433D0, fixture.visits)
+                    self.assertIn(0x1504393C, fixture.visits)
+                    self.assertNotIn(0x150433D8, fixture.visits)
+                    self.assertNotIn(0x15043918, fixture.visits)
+                    self.assertEqual(fixture.get(0x80085CD0, 4), 42)
+                    self.assertEqual(fixture.get(0x800CBD64, 4), 0)
+                    self.assertEqual(fixture.get(0x800CBD60, 4), 0xFFFFFFFF)
+                    self.assertEqual(fixture.get(0x800CBD6C, 4), 0x80)
+                    self.assertEqual(fixture.get(0x800CBD70, 4), 0x000A000A)
+                    self.assertEqual(fixture.get(0x800CBD80, 4), 0x3F800000)
+                    self.assertEqual(fixture.fprs[20:22], [0x11223344, 0x55667788])
 
     def test_resize_cycles_free_pool_before_bitmap_and_reclaim_heap(self):
         self.run_guest(r'''
@@ -227,8 +282,51 @@ class InitAllocatorGuestFreeTests(unittest.TestCase):
     return 0;
 ''')
 
+    def test_full_sweep_with_actual_retail_cleanup_null_list_path(self):
+        if not (self.project / "conker.us.bin").is_file() or not (self.root / "baserom.us.z64").is_file():
+            self.skipTest("local retail ROM and decompressed image required")
+        self.run_guest(r'''
+    s32 selected, persistent;
+    initialize();
+    selected = allocate_memory(64, 2, 0, 0);
+    persistent = allocate_memory(128, 0xFF, 0, 0);
+    ((u8 *)persistent)[0] = 0x5A;
+    func_10004308();
+    if (!valid_lists() || errors || ((struct54 *)(selected - 12))->unk8 != 64 ||
+        ((struct54 *)(persistent - 12))->unk8 != 0xFF000080 ||
+        ((u8 *)persistent)[0] != 0x5A) return 1;
+    func_10004074((void *)persistent);
+    if (!valid_lists() || D_800380B4->unk0 ||
+        D_800380B4->unk8 != sizeof(heap) - 0x14) return 2;
+    return 0;
+''', retail_cleanup=True)
+
+    def test_fatal_callback_is_retail_syscall_slot_not_returning_c_stub(self):
+        path = self.root / "baserom.us.z64"
+        if not path.is_file():
+            self.skipTest("local retail ROM required")
+        raw = b"".join(page[4] for page in retail.retail_pages(path.read_bytes()))
+        self.assertEqual(raw[0xAD770:0xAD780], bytes.fromhex(
+            "0000000C 00000000 00000000 00000000"))
+
 
 class AllocatorGuestInstructionTests(unittest.TestCase):
+    def test_fpr_pair_save_restore_and_word_store_are_big_endian(self):
+        fixture = AllocatorGuestFixture.__new__(AllocatorGuestFixture)
+        fixture.memory, fixture.reads, fixture.writes = {}, [], []
+        fixture.registers, fixture.fprs = [0] * 32, [0] * 32
+        fixture.readonly, fixture.allowed_writes = [], [(0x1000, 0x1010)]
+        fixture.image = type("Image", (), {"memory": {}})()
+        fixture.registers[1] = 0x1000
+        fixture.fprs[20:22] = [0x11223344, 0x55667788]
+        fixture.execute((61 << 26) | (1 << 21) | (20 << 16))
+        self.assertEqual(fixture.get(0x1000, 8), 0x1122334455667788)
+        fixture.fprs[20:22] = [0, 0]
+        fixture.execute((53 << 26) | (1 << 21) | (20 << 16))
+        self.assertEqual(fixture.fprs[20:22], [0x11223344, 0x55667788])
+        fixture.execute((57 << 26) | (1 << 21) | (21 << 16) | 8)
+        self.assertEqual(fixture.get(0x1008, 4), 0x55667788)
+
     def test_signed_halfword_reads_big_endian_and_sign_extends(self):
         fixture = AllocatorGuestFixture.__new__(AllocatorGuestFixture)
         fixture.memory = {0x1000: 0xFF, 0x1001: 0xFC, 0x1002: 0, 0x1003: 7}
