@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game owner and selector event handler matched
+
+- `func_151BD21C` replaces its zero-return placeholder with zero-event flag
+  handling and bidirectional event-`0x2D` owner/selector remapping. All 40
+  words match with nine strict entries, including one inserted return nop.
+- Eight 32-bit source tests cover owner/selector matching, remap directions,
+  equal-endpoint precedence, unsupported codes, and aliasing. All 75 tool
+  tests, project checks, and the full build pass. Both entire Init sections
+  remain byte-exact.
+- Total exact C is 3,248 / 5,461 (59.48%); Game is 2,575 / 4,788 (53.78%).
+  Resume ordinary Game at `func_151D2F00`. See
+  [Working Note 745](WORKING_NOTES/745-game-owner-selector-event-handler-match-20261002.md).
+
 ### Game eleven-child-slot cleanup recovered and matched
 
 - `func_151B1918` replaces its zero-return placeholder with a void cleanup

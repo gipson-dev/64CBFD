@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,247 / 5,461 (59.46%) | 0 | 2,214 |
+| Total | 3,248 / 5,461 (59.48%) | 0 | 2,213 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,574 / 4,788 (53.76%) | 0 | 2,214 |
+| Game | 2,575 / 4,788 (53.78%) | 0 | 2,213 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_151BD21C` now replaces its zero-return placeholder with the complete
+owner/selector event handler. All 40 words match; nine strict entries normalize
+register reuse, flag-store scheduling, and one inserted return-delay nop with
+its two branch-displacement adjustments. Eight 32-bit source-behavior tests
+and all 75 tool tests pass; the full build and project checks pass. Both complete
+Init sections remain byte-exact. See
+[Working Note 745](WORKING_NOTES/745-game-owner-selector-event-handler-match-20261002.md).
 
 Game `func_151B1918` now replaces its zero-return placeholder with the complete
 eleven-child-slot cleanup. All 35 words match; six strict guards normalize
@@ -125,7 +133,7 @@ and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 40-word `func_151BD21C`, currently at 35 real word differences.
+queue with 36-word `func_151D2F00`, currently at 35 real word differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and
 `func_150F631C` in its separate near-match cleanup queue.
 

@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 745](WORKING_NOTES/745-game-owner-selector-event-handler-match-20261002.md)):
+Game `func_151BD21C` matches its complete 40-word owner/selector event handler.
+Nine strict entries normalize register reuse and return scheduling, including
+one inserted nop and two displacement adjustments. Eight 32-bit behavior tests
+and all 75 tool tests pass; the full build passes and both entire Init sections
+remain exact. Resume ordinary Game work at `func_151D2F00`.
+
 2026-10-02 ([Note 744](WORKING_NOTES/744-game-eleven-child-slot-cleanup-match-20261002.md)):
 Game `func_151B1918` matches its complete 35-word eleven-child-slot cleanup.
 Six strict guards normalize an equivalent cursor address and independent

@@ -83,8 +83,26 @@ s32 func_151BCA90() {
     return 0;
 }
 
-s32 func_151BD21C() {
-    return 0;
+void func_151BD21C(u8 *arg0, u8 *arg1, u8 arg2) {
+    u8 *target = *(u8 **)(arg0 + 0x98);
+    s32 owner = *(s32 *)target;
+    s32 eventOwner;
+
+    if (arg2 == 0) {
+        if (*(s32 *)target == *(s32 *)arg1 || target[4] == arg1[4]) {
+            arg0[0x30] = 0;
+            *(u16 *)(arg0 + 0x1E) |= 8;
+        }
+    } else if (arg2 == 0x2D) {
+        eventOwner = *(s32 *)arg1;
+        if (eventOwner == owner) {
+            *(s32 *)target = *(s32 *)(arg1 + 4);
+            target[4] = arg1[9];
+        } else if (*(s32 *)(arg1 + 4) == owner) {
+            *(s32 *)target = eventOwner;
+            target[4] = arg1[8];
+        }
+    }
 }
 
 s32 func_151BD2BC(u8 *arg0) {

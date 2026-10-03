@@ -1,4 +1,13 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_1E73B0,func_151BD21C,0x01C,0x14C0000D,0x14C0000E,-,-,Adjust event branch for restored return-delay nop,,,false
+generated_1E73B0,func_151BD21C,0x028,0x50EF0006,0x506F0006,-,-,Normalize closed owner snapshot register reuse,,,false
+generated_1E73B0,func_151BD21C,0x038,0x17190016,0x17190017,-,-,Adjust unmatched selector branch for restored return-delay nop,,,false
+generated_1E73B0,func_151BD21C,0x04C,0x03E00008,0xA48A001E,-,-,Restore flag publication before leaf return,,,false
+generated_1E73B0,func_151BD21C,0x050,0xA48A001E,0x03E00008,-,-,Restore leaf return and its independent delay nop,0x00000000,-,false
+generated_1E73B0,func_151BD21C,0x05C,0x8CA40000,0x8CA30000,-,-,Normalize closed event owner register reuse,,,false
+generated_1E73B0,func_151BD21C,0x060,0x54830007,0x54670007,-,-,Normalize closed owner snapshot and event owner comparison,,,false
+generated_1E73B0,func_151BD21C,0x080,0x146D0004,0x15A70004,-,-,Normalize snapshot register reuse and commutative comparison order,,,false
+generated_1E73B0,func_151BD21C,0x088,0xAC440000,0xAC430000,-,-,Normalize closed event owner register reuse,,,false
 generated_1DD500,func_151B1918,0x028,0x24900034,0x2650000C,-,-,Preserve equivalent child-slot address from payload cursor,,,false
 generated_1DD500,func_151B1918,0x044,0x2673000C,0xAE200000,-,-,Normalize independent loop-counter schedule after slot clearing,,,false
 generated_1DD500,func_151B1918,0x050,0x2673000C,0xAE200000,-,-,Normalize independent loop-counter schedule after slot clearing,,,false
