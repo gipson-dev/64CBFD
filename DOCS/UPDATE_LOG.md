@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game descriptor-record constructor matched
+
+- `func_151D2F00` replaces its zero-return placeholder with allocation,
+  a sixteen-byte descriptor copy, flag-bit clear, and bookkeeping resets.
+  All 36 words match with six strict argument-scheduling guards.
+- Five new tests check allocation failure, forwarding, exact copy, reset
+  offsets, preserved storage, and all 256 flag-byte values. All 80 tool
+  tests, project checks, and the full build pass. Both entire Init sections
+  remain byte-exact.
+- Total exact C is 3,249 / 5,461 (59.49%); Game is 2,576 / 4,788 (53.80%).
+  Resume ordinary Game at `func_151DE85C`. See
+  [Working Note 746](WORKING_NOTES/746-game-descriptor-record-constructor-match-20261002.md).
+
 ### Game owner and selector event handler matched
 
 - `func_151BD21C` replaces its zero-return placeholder with zero-event flag

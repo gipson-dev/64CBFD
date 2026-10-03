@@ -15,7 +15,7 @@ typedef struct {
 
 /* Generated placeholder declarations. */
 s32 func_151D2C40();
-s32 func_151D2F00();
+struct224 *func_151D2F00(void * volatile arg0, s32 volatile arg1, u8 volatile arg2, s32 volatile arg3);
 s32 func_151D2F90();
 s32 func_151D3130(s32 arg0);
 s32 func_151D324C();
@@ -118,9 +118,18 @@ void func_151D2E5C(struct16 *arg0, struct223 *arg1, u8 arg2) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_1FFF60/func_151D2F00.s. */
-s32 func_151D2F00() {
-    return 0;
+struct224 *func_151D2F00(void * volatile arg0, s32 volatile arg1, u8 volatile arg2, s32 volatile arg3) {
+    struct224 *record = func_15167A68(0x3E, arg3, arg1 + 0x30, 1, arg2, 1);
+
+    if (record == NULL) {
+        return NULL;
+    }
+    memcpy(&record->unk10, arg0, 0x10);
+    record->unk20 = 0;
+    record->unk24 = 0;
+    record->unk28 = 0;
+    *(u8 *)((u8 *)record + 0x18) &= ~2;
+    return record;
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_1FFF60/func_151D2F90.s. */

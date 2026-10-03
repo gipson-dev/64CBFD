@@ -1,4 +1,10 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+game_1FFF60,func_151D2F00,0x018,0x8FA50034,0x8FA6002C,-,-,Normalize independent homed allocator argument setup schedule,,,false
+game_1FFF60,func_151D2F00,0x01C,0x8FA6002C,0x93AE0033,-,-,Normalize independent homed allocator argument setup schedule,,,false
+game_1FFF60,func_151D2F00,0x020,0x93AE0033,0x240F0001,-,-,Normalize independent homed allocator argument setup schedule,,,false
+game_1FFF60,func_151D2F00,0x024,0x240F0001,0xAFAF0014,-,-,Normalize independent homed allocator argument setup schedule,,,false
+game_1FFF60,func_151D2F00,0x028,0xAFAF0014,0x2404003E,-,-,Normalize independent homed allocator argument setup schedule,,,false
+game_1FFF60,func_151D2F00,0x02C,0x2404003E,0x8FA50034,-,-,Normalize independent homed allocator argument setup schedule,,,false
 generated_1E73B0,func_151BD21C,0x01C,0x14C0000D,0x14C0000E,-,-,Adjust event branch for restored return-delay nop,,,false
 generated_1E73B0,func_151BD21C,0x028,0x50EF0006,0x506F0006,-,-,Normalize closed owner snapshot register reuse,,,false
 generated_1E73B0,func_151BD21C,0x038,0x17190016,0x17190017,-,-,Adjust unmatched selector branch for restored return-delay nop,,,false

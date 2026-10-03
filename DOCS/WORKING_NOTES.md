@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-02 ([Note 746](WORKING_NOTES/746-game-descriptor-record-constructor-match-20261002.md)):
+Game `func_151D2F00` matches its complete 36-word descriptor-record constructor.
+Six strict guards normalize only independent argument setup. Five new behavior
+tests and all 80 tool tests pass; the full build passes and both entire Init
+sections remain exact. Resume ordinary Game work at `func_151DE85C`.
+
 2026-10-02 ([Note 745](WORKING_NOTES/745-game-owner-selector-event-handler-match-20261002.md)):
 Game `func_151BD21C` matches its complete 40-word owner/selector event handler.
 Nine strict entries normalize register reuse and return scheduling, including
