@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-02
+Last verified: 2026-10-03
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -21,7 +21,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Fresh `progress.csv` and linked retail comparison on 2026-10-02:
+Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,255 / 5,455 (59.67%) | 0 | 2,200 |
+| Total | 3,256 / 5,455 (59.69%) | 0 | 2,199 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,582 / 4,782 (53.99%) | 0 | 2,200 |
+| Game | 2,583 / 4,782 (54.02%) | 0 | 2,199 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15045384` now has its complete lowest-height query/result body.
+All 114 words match with fifteen strict guards for a private spill slot,
+closed count/index register swap, and equivalent vertex-copy pointer schedule.
+Thirteen new tests and all 183 tool tests pass; the full build and project
+checks pass. Neighbors, the collector/context group, and both whole Init
+sections remain exact. Next untouched query: `func_1504554C`. See
+[Note 763](WORKING_NOTES/763-game-lowest-height-query-recovery-20261003.md).
 
 The handwritten collector/context group now matches all 5,712 retail bytes,
 replacing 23 placeholder entries across six inventory groups. All 167 tool
@@ -50,8 +58,8 @@ exact. See [Note 761](WORKING_NOTES/761-init-resume-conversion-decision-20261003
 Twenty further partial-volatility/profile trials still do not match the
 eleven-word MMIO leaf. All emitted store traces pass; original assembly stays
 in production. Three new baseline regression tests and all 170 tool tests
-pass. Both complete Init sections remain exact. Resume ordinary Game work
-at `func_15045384`; see
+pass. Both complete Init sections remain exact. Its then-pending Game
+`func_15045384` recovery is now completed in Note 763; see
 [Note 762](WORKING_NOTES/762-init-mmio-partial-volatility-trials-20261003.md).
 
 Game `func_150450CC` now has its complete highest-height candidate selection,

@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15045384` is recovered as a lowest-height query and matches all
+  114 retail words with fifteen strict compiler-layout guards. Thirteen new
+  tests and all 183 tool tests pass; full build and project checks pass.
+  Total exact C rows are 3,256 / 5,455 and Game 2,583 / 4,782, with zero
+  drift and 2,199 different rows. README updates only aggregate matching
+  tables and the snapshot date.
+  [Note 763](WORKING_NOTES/763-game-lowest-height-query-recovery-20261003.md)
+
 - Twenty new Init MMIO partial-volatility/profile experiments produce no
   matching conversion. Three original-assembly regression tests were added;
   all 170 tool tests pass. Production source and README aggregates remain

@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 763](WORKING_NOTES/763-game-lowest-height-query-recovery-20261003.md)):
+Game `func_15045384` replaces its zero-return placeholder with the lowest-height
+query/result body. All 114 words match with fifteen strict guards normalizing
+three closed compiler-layout sets. Thirteen new tests and all 183 tool tests
+pass; the full build passes. Both entire Init sections and recovered neighbors
+remain exact. Next untouched query: `func_1504554C`.
+
 2026-10-03 ([Note 762](WORKING_NOTES/762-init-mmio-partial-volatility-trials-20261003.md)):
 Twenty new partial-volatility/profile trials for Init `func_100038E0` have
 the correct emitted store trace but no exact body. Production assembly is
