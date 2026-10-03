@@ -10,8 +10,15 @@ s32 func_10001AA8();
 s16 func_100019F0(s16 *arg0, struct05 *arg1);
 /* End generated placeholder declarations. */
 
-/* Original handwritten memory-clear loop. */
-#pragma GLOBAL_ASM("asm/nonmatchings/init_1420/func_10001420.s")
+void func_10001420(void) {
+    u32 base = (u32)&D_80043B40;
+    u32 *cursor = (u32 *)base;
+    u32 *end = (u32 *)(base + 0xFE0);
+
+    do {
+        *cursor++ = 0;
+    } while (cursor < end);
+}
 
 void func_10001444(void) {
     u32 saveMask = __osDisableInt();

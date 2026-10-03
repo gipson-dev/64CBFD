@@ -25,17 +25,27 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,460 / 6,042 (90.37%) | 582 | 1,934,396 / 2,256,728 (85.72%) |
-| Init | 491 / 539 (91.09%) | 48 | 151,760 / 164,048 (92.51%) |
+| Total | 5,461 / 6,042 (90.38%) | 581 | 1,934,432 / 2,256,728 (85.72%) |
+| Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
 | Game | 4,788 / 5,321 (89.98%) | 533 | 1,762,996 / 2,072,880 (85.05%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,240 / 5,460 (59.34%) | 0 | 2,220 |
-| Init | 491 / 491 (100.00%) | 0 | 0 |
+| Total | 3,241 / 5,461 (59.35%) | 0 | 2,220 |
+| Init | 492 / 492 (100.00%) | 0 | 0 |
 | Game | 2,568 / 4,788 (53.63%) | 0 | 2,220 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Init `func_10001420` is now represented in semantic C and matches its complete
+nine-word memory-clear slot. Six relocation-aware expected-word guards
+normalize only the closed register allocation; no instructions are inserted
+or removed. Three source-behavior tests pass, and both complete Init sections
+remain byte-exact after the full rebuild. Init retains 47 assembly rows /
+12,252 bytes. See
+[Working Note 736](WORKING_NOTES/736-init-memory-clear-leaf-conversion-20261002.md).
+The next Init-only experiment is `func_100038E0`; its MMIO store widths and
+order must be preserved. `func_10005BE0` is the subsequent bitmap candidate.
 
 Game `func_15145128` now matches all 50 words after restoring the retail
 optional-length/reciprocal expression shape and output multiply order. Three
@@ -51,9 +61,16 @@ paths. Restored interleaved audio data ownership places the physical jump
 tables at their retail addresses; six original floats restore three omitted
 constant slots. Direct whole-section comparison now confirms all 164,048
 Init code bytes and all 17,376 initialized-data bytes byte-exact. This is
-linked-image evidence, not a gameplay qualification or a claim that the 48
-original assembly rows should become C. See
+linked-image evidence, not a gameplay qualification or a claim that the
+remaining original assembly must become C. See
 [Working Note 733](WORKING_NOTES/733-init-midi-handler-and-complete-init-image-match-20261002.md).
+
+The remaining Init assembly was reassessed in
+[Working Note 735](WORKING_NOTES/735-init-retained-assembly-reassessment-20261002.md).
+No further compiler-generated recovery is established. That audit identified
+three small custom leaves as possible C rewrite experiments. Note 736 now
+completes `func_10001420`; `func_100038E0` and `func_10005BE0` remain conditional.
+This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
 queue with 36-word `func_15157FE8`, currently at 35 real word differences.
@@ -82,8 +99,8 @@ denominator to 539. Direct assembly review also corrects the previous
 classification of `func_10006380`: it uses shared live-register and stack
 state and retains assembly ownership. The follow-up audit recovered Init
 `__sinf` as a second compiler-generated candidate. Both it and the 954-word
-`__n_CSPHandleMIDIMsg` are now completed. All 48 remaining Init assembly rows
-retain handwritten/shared-register ownership. See
+`__n_CSPHandleMIDIMsg` are now completed. The following audit separated optional
+custom-leaf rewrites from the handwritten/shared-register remainder. See
 [Working Note 731](WORKING_NOTES/731-init-remaining-assembly-conversion-triage-20261002.md) and
 [Working Note 730](WORKING_NOTES/730-init-meta-handler-layout-and-assembly-provenance-correction-20261002.md).
 

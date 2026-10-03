@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-02 ([Note 736](WORKING_NOTES/736-init-memory-clear-leaf-conversion-20261002.md)):
+Init `func_10001420` is represented in semantic C and matches all nine retail
+words with six register-only expected-word guards. Three source-behavior tests
+pass; the full build and all 28 tool tests pass. Both complete Init sections
+remain exact. Init is 492 / 539 C rows, all exact, with 47 assembly rows left.
+The next Init-only experiment is eleven-word MMIO leaf `func_100038E0`.
+
+2026-10-02 ([Note 735](WORKING_NOTES/735-init-retained-assembly-reassessment-20261002.md)):
+Read-only reassessment accounts for all 48 remaining Init assembly rows and
+reconfirms the complete code/data image exact. No further compiler-generated
+recovery is established; three small custom leaves are conditional C rewrite
+experiments, not demonstrated matches. No production source or totals changed.
+
 2026-10-02 ([Note 734](WORKING_NOTES/734-game-vector-normalizer-match-20261002.md)):
 The 50-word Game vector normalizer is byte-exact after restoring retail's
 optional-output expression shape and three guarded leaf-frame words. Nine

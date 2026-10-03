@@ -1,4 +1,10 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+init_1420,func_10001420,0x000,0x3C020000,0x3C0E0000,R_MIPS_HI16:D_80043B40,R_MIPS_HI16:D_80043B40,Normalize memory-clear leaf register allocation,,,false
+init_1420,func_10001420,0x004,0x24430000,0x25C50000,R_MIPS_LO16:D_80043B40,R_MIPS_LO16:D_80043B40,Normalize memory-clear leaf register allocation,,,false
+init_1420,func_10001420,0x008,0x24640FE0,0x24A40FE0,-,-,Normalize memory-clear leaf register allocation,,,false
+init_1420,func_10001420,0x00C,0x24630004,0x24A50004,-,-,Normalize memory-clear leaf register allocation,,,false
+init_1420,func_10001420,0x010,0x0064082B,0x00A4082B,-,-,Normalize memory-clear leaf register allocation,,,false
+init_1420,func_10001420,0x018,0xAC60FFFC,0xACA0FFFC,-,-,Normalize memory-clear leaf register allocation,,,false
 init_EB00,func_10010FFC,0x008,0xAFA60048,0xAFA40040,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
 init_EB00,func_10010FFC,0x00C,0x30CEFFFF,0xAFA60048,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
 init_EB00,func_10010FFC,0x010,0x01C03025,0x308EFFFF,-,-,Normalize object-aware audio dispatch compiler allocation,,,false

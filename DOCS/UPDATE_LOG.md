@@ -16,6 +16,29 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Init memory-clear leaf converted
+
+- `func_10001420` replaces its assembly owner with a complete semantic C
+  clear loop. Six strict guards preserve only retail register allocation;
+  all nine linked words and the following function boundary match.
+- Three behavior tests check the exact 4,064-byte range, surrounding sentinels,
+  and repeat calls. All 28 tool tests, project checks, and the full build pass.
+  Entire Init code/data comparisons retain their exact baseline hashes.
+- Init reaches 492 / 539 C rows (91.28%), all exact, and 151,796 C bytes
+  (92.53%). Total exact C is 3,241 / 5,461 (59.35%). See
+  [Working Note 736](WORKING_NOTES/736-init-memory-clear-leaf-conversion-20261002.md).
+
+### Remaining Init assembly reassessed
+
+- All 48 rows / 12,288 bytes are accounted for by SDK assembly, boot/hardware
+  contracts, shared-frame decompression, custom leaves, and debug/glyph code.
+- Three small leaves are plausible C rewrite experiments, but no additional
+  compiler-generated recovery or byte-exact C replacement is established.
+- Fresh read-only checks reconfirm all 491 C rows, the entire 164,048-byte
+  code section, and 17,376 initialized-data bytes exact. No source conversion,
+  rebuild, or aggregate change was made. See
+  [Working Note 735](WORKING_NOTES/735-init-retained-assembly-reassessment-20261002.md).
+
 ### Game vector normalizer byte-matched
 
 - `func_15145128` matches all 50 retail words after recovering the original
