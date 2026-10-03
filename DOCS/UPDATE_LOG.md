@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 830](WORKING_NOTES/830-init-loop-lookup-full-masked-corpus-20261003.md)
+  closes the full 507-page masked corpus gate for loop-lookup packed O2/g3,
+  CU1 set, in 759.786 seconds. Text/descent is 4,880/3,256; neighbor margin
+  72 bytes. Other profiles/mode, ownership/fault bounds and fitting stay open.
+  Production, default profiles, README aggregates and Game work unchanged.
+
 - Init [Note 829](WORKING_NOTES/829-init-shared-lookup-loop-fitting-and-context-qualification-20261003.md)
   retains an opt-in shared lookup loop: packed O2 saves 16 linked text bytes,
   with 420 bounded context comparisons and an explicit nested-path gate.

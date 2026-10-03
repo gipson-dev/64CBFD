@@ -118,3 +118,12 @@ pending Game work and sibling repositories remain untouched.
 
 Do not promote this variant into production solely from its smaller size and
 bounded passes. The nonstandard entry/context and fitting gates still apply.
+
+## Follow-up
+
+[Note 830](830-init-loop-lookup-full-masked-corpus-20261003.md) subsequently
+passes the changed variant's full 507-page masked corpus for packed O2/g3
+with CU1 set in 759.786 seconds. That one profile/mode gate is now closed;
+other profiles/CU1-clear, complete ownership/fault bounds and fitting remain
+open. This does not transfer older receipts, expand this note's bounded count,
+or change production ownership and README totals.

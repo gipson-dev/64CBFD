@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 830](WORKING_NOTES/830-init-loop-lookup-full-masked-corpus-20261003.md)):
+All 507 pages pass the loop-lookup packed O2/g3 variant with masked Status
+0x2400FF00 and CU1 set, in 759.786 seconds. Text/descent is 4,880/3,256,
+neighbor margin 72 bytes. Other full-corpus profiles/mode, storage/fault bounds
+and the 896-byte text excess remain open. No production/default-profile or
+README changes; earlier source/context receipts remain separate.
+
 2026-10-03 ([Note 829](WORKING_NOTES/829-init-shared-lookup-loop-fitting-and-context-qualification-20261003.md)):
 Opt-in shared lookup reduces packed O2 linked text to 4,880 bytes (16 saved,
 896 over retail) and O1 to 6,256 (48 saved). All 420 bounded context comparisons
