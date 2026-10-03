@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15044380` replaces its zero-return placeholder with the complete
+  actor/context dispatcher. Fourteen focused tests and all 405 tool tests pass;
+  build/project checks pass. Its 107-word body remains non-matching at twenty
+  positions, with no new guards/profiles. Exact regression slots, prior hashes,
+  restored spans, and Init sections are unchanged; aggregate tables and README
+  remain unchanged. Dimension/context helper recovery and chain acceptance
+  remain open.
+  [Note 785](WORKING_NOTES/785-game-actor-context-dispatcher-semantic-recovery-20261003.md)
+
 - Game `func_15044660` replaces a false zero-return C placeholder with the
   complete original 156-word / 624-byte actor-preparation assembly. Special
   actor types retain a stack-index read not initialized by the routine; no

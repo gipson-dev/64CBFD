@@ -97,6 +97,21 @@ typedef struct HeightEntity71820 {
     u8 pad70[0x30];
 } HeightEntity71820;
 
+typedef struct ContextActor71820 {
+    u8 pad0[0xF8];
+    u32 flags;
+    u8 padFC[0x179];
+    u8 state;
+} ContextActor71820;
+
+extern f32 D_800CBDF4, D_800CBDF8;
+extern u8 D_800CBDD3;
+extern u8 D_80089120[];
+extern u8 D_800DBE62;
+void func_15044660(void *actor, f32 x, f32 y, f32 z);
+s32 func_150AB1F0(f32 x, f32 y, f32 z, void *actor, s32 mode);
+void func_150AC3E4(f32 x, f32 y, f32 z, void *actor, s32 mode);
+
 extern HeightCandidate71820 D_800D3300[];
 extern QueryTriangle71820 *D_800DBE3C;
 extern u32 *D_800DBE5C;
@@ -152,8 +167,41 @@ void func_15044370() {
     D_800CBD9C = 0;
 }
 
-s32 func_15044380() {
-    return 0;
+s32 func_15044380(f32 x, f32 y, f32 z, ContextActor71820 *actor,
+                  s32 mode, s32 secondPass) {
+    s32 context;
+    s32 savedContext;
+    s32 total;
+
+    D_800CBDF4 = -32768.0f;
+    D_800CBDF8 = -32768.0f;
+    total = 0;
+    actor->state = 0;
+    func_15044660(actor, x, y, z);
+    savedContext = D_800CBDD3;
+    for (context = 3; context >= 0; context--) {
+        if (D_80089120[context] == 1) {
+            if (context != 3 || !(actor->flags & 0x200)) {
+                func_1510F800(context);
+                if (D_800DBE62 != 0) {
+                    total = (s32)((u32)total + (u32)func_150AB1F0(x, y, z, actor, mode));
+                }
+            }
+        }
+    }
+    if (secondPass != 0) {
+        for (context = 0; context < 3; context++) {
+            if (D_80089120[context] == 1) {
+                func_1510F800(context);
+                if (D_800DBE62 != 0) {
+                    func_150AC3E4(x, y, z, actor, 0);
+                }
+            }
+        }
+    }
+    func_1510F800(0);
+    D_800CBDD3 = savedContext;
+    return total;
 }
 
 s32 func_1504452C() {
@@ -164,7 +212,6 @@ void func_15044658() {
 }
 
 /* Special actor types read a pre-existing stack word at retail sp+0x20. */
-void func_15044660(void *actor, f32 x, f32 y, f32 z);
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15044660.s")
 
 PositionScaleRecord71820 *func_150448D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3,

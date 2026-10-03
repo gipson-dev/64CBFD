@@ -37,14 +37,25 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,595 / 4,789 (54.19%) | 0 | 2,194 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Game `func_15044380` replaces its zero-return placeholder with the complete
+actor/context dispatcher, preserving descending/optional ascending passes,
+live eligibility, preparation-time context capture, and final reset/byte restore.
+Fourteen focused tests and all 405 tool tests pass; build/project checks pass.
+It remains non-matching: 107 body words, no padding, twenty differences, no new
+guards/profiles. All 22 exact regression slots, eight prior non-matching hashes,
+restored spans, and both Init sections are unchanged. Aggregate tables/README
+are unchanged. Next: sibling `func_1504452C`; dimension/context helpers remain
+placeholders, so whole-chain acceptance is open. See
+[Note 785](WORKING_NOTES/785-game-actor-context-dispatcher-semantic-recovery-20261003.md).
+
 Game `func_15044660` replaces its false zero-return C placeholder with the
 complete original actor-preparation assembly. All 156 words / 624 bytes match.
 Special actor types load a stack word not initialized by the routine, so
 ordinary C recovery needs a reachability/stack-provenance decision rather than
 an invented index value. Its interface is void(actor, x, y, z), not s32(void).
-The C count decreases by one; exact-C counts are unchanged. Next recover
-context dispatcher `func_15044380`, while its dimension helper remains a
-placeholder. See
+The C count decreases by one; exact-C counts are unchanged. Its then-pending
+dispatcher `func_15044380` is recovered in Note 785; its dimension helper
+remains a placeholder. See
 [Note 784](WORKING_NOTES/784-game-actor-preparation-restoration-and-stack-boundary-20261003.md).
 
 Game `func_15047700` now replaces its empty body with the reflection look-at

@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-03 ([Note 785](WORKING_NOTES/785-game-actor-context-dispatcher-semantic-recovery-20261003.md)):
+Game `func_15044380` replaces its zero-return placeholder with the actor/context
+dispatcher, including preparation-time context capture, live gates, distinct
+descending/ascending bounds, modular result accumulation, and final reset/restore.
+Fourteen focused tests and all 405 tool tests pass; build/project checks pass.
+Non-matching: 107 body words, no padding, twenty differences, no new guards or
+profiles. Twenty-two exact slots, eight prior hashes, restored spans, and Init
+sections are unchanged. Next: `func_1504452C`; dimension/context dependencies
+remain placeholders. README aggregates unchanged; no whole-chain acceptance.
+
 2026-10-03 ([Note 784](WORKING_NOTES/784-game-actor-preparation-restoration-and-stack-boundary-20261003.md)):
 Game `func_15044660` replaces its false zero-return C placeholder with exact
 original assembly: 156 words / 624 bytes, no new guards/profiles. Special actor
