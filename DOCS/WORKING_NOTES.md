@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 827](WORKING_NOTES/827-init-full-masked-shadow-corpus-20261003.md)):
+All 507 retail pages pass masked Status 0x2400FF00 with CU1 set on the smallest
+packed/remaining O2/g3 shadow profile, in 709.832 seconds. Text/descent remains
+4,896/3,256; lowest SP 0x80031D58 leaves 72 bytes above the protected neighbor.
+Other full-corpus profiles/mode, complete ownership, synchronous-fault bounds
+and fitting remain open. No production or README aggregate changes.
+
 2026-10-03 ([Note 826](WORKING_NOTES/826-init-exception-entry-mask-and-masked-context-qualification-20261003.md)):
 The actual exception prefix clears IE/EXL; its direct TLBL route is word-pinned.
 Six profiles and both CU1 modes pass 72 new masked context comparisons (420

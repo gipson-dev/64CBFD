@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 827](WORKING_NOTES/827-init-full-masked-shadow-corpus-20261003.md)
+  passes all 507 pages in the explicit masked context, CU1 set, smallest shadow
+  profile (709.832 seconds). Text/descent remains 4,896/3,256, neighbor margin
+  72 bytes. Other full-corpus profiles/mode, ownership/fault bounds and fitting
+  remain open; production, README aggregates and pending Game work unchanged.
+
 - Init [Note 826](WORKING_NOTES/826-init-exception-entry-mask-and-masked-context-qualification-20261003.md)
   pins/executes the entry Status mask and qualifies 72 masked compiled context
   comparisons across six profiles/both CU1 modes. All 29 focused tests pass.

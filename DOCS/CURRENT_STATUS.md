@@ -21,12 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init full masked shadow corpus: [Note 827](WORKING_NOTES/827-init-full-masked-shadow-corpus-20261003.md)
+passes all 507 retail pages with Status 0x2400FF00, CU1 set, and the
+packed/remaining O2/g3 profile in 709.832 seconds. Linked text/descent remains
+4,896/3,256, lowest SP 0x80031D58, neighbor margin 72 bytes. Other full-corpus
+profiles/mode, complete ownership, synchronous-fault bounds and fitting remain
+open. No production owner, implementation or README aggregate changes.
+
 Init exception-entry masking: [Note 826](WORKING_NOTES/826-init-exception-entry-mask-and-masked-context-qualification-20261003.md)
 executes the original IE/EXL clear prefix and pins the direct TLBL route.
 Six profiles/both CU1 modes pass 72 new masked vector/sample comparisons,
 bringing bounded shadow coverage to 420. All 29 focused tests pass. Corpus
 context selection now distinguishes generic from exception-masked Status;
-Note 825's full-page receipt remains generic, not relabeled. Full masked corpus,
+Note 825's full-page receipt remains generic, not relabeled. At this checkpoint,
+full masked corpus,
 storage ownership, synchronous-fault bounds and fitting stay open. No production
 implementation, ownership, cost or README aggregate changes.
 

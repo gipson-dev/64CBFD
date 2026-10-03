@@ -109,3 +109,12 @@ Omit the profile selector for all six images; that full masked gate remains open
 - [ ] Run full masked corpus and remaining profile/mode gates.
 - [ ] Recover complete stack/state/workspace owners and synchronous-fault bounds.
 - [ ] Reduce/fix fitting before changing production ownership.
+
+## Follow-up
+
+[Note 827](827-init-full-masked-shadow-corpus-20261003.md) subsequently passes
+all 507 pages with masked Status 0x2400FF00 on packed/remaining O2/g3 with CU1
+set, in 709.832 seconds. The full masked gate is closed for that profile/mode
+only; other profiles and CU1-clear full corpus remain open. This does not
+relabel Note 825's generic-context receipt or change this note's bounded-suite
+count, production ownership, storage/fault boundaries or fitting costs.
