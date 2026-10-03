@@ -17,7 +17,7 @@ s32 func_15162510();
 s32 func_1516295C();
 s32 func_15162B28();
 s32 func_151630F4();
-s32 func_15163504();
+s32 func_15163504(struct225 *arg0);
 s32 func_151638E0();
 s32 func_15163FEC();
 s32 func_15164134();
@@ -950,22 +950,17 @@ struct225 *func_15163414(Header *header, f32* arg1, f32* arg2, f32* arg3, s8 arg
     }
     return temp_v0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15163504.s. */
-s32 func_15163504() {
-    return 0;
+s32 func_15163504(struct225 *arg0) {
+    s32 ret = 1;
+
+    arg0->unk14->unkE = (s16)(s32)*(f32 *)arg0->unk18;
+    arg0->unk14->unk10 = (s16)(s32)**(f32 **)&arg0->unk1C;
+    arg0->unk14->unk12 = (s16)(s32)*(f32 *)arg0->unk20;
+    if (*(volatile s8 *)&arg0->unk24 != -1) {
+        return D_8008B36C[*(volatile s8 *)&arg0->unk24]();
+    }
+    return ret;
 }
-// NON-MATCHING: something is missing..
-// s32 func_15163504(struct225 *arg0) {
-//     s32 ret = 1;
-//     arg0->unk14->unkE = arg0->unk18->unk0;
-//     arg0->unk14->unk10 = arg0->unk18->unk4;
-//     arg0->unk14->unk12 = arg0->unk18->unk8;
-//     if (arg0->unk24 != -1) {
-//         ret = D_8008B36C[arg0->unk24]();
-//     }
-//
-//     return ret;
-// }
 
 void func_151635A8(struct225 *arg0, s32 arg1, u8 arg2) {
     if (D_8008B370[arg0->unk25] != NULL) {

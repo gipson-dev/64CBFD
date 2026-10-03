@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game position publication and callback directly matched
+
+- `func_15163504` replaces its zero-return placeholder with coordinate
+  publication from three independent float pointers and optional callback
+  dispatch. All 41 words match directly from C without guards or overrides.
+- Six source-behavior tests cover independent inputs, signed truncation,
+  sentinel handling, publication ordering, callback results and mutation,
+  and halfword narrowing. All 53 tool tests, project checks, and the full
+  build pass. Both complete Init sections remain byte-exact.
+- Total exact C is 3,245 / 5,461 (59.42%); Game is 2,572 / 4,788 (53.72%).
+  Resume ordinary Game at `func_151A4900`. See
+  [Working Note 742](WORKING_NOTES/742-game-position-publication-and-callback-direct-match-20261002.md).
+
 ### Game compact timed callback lifecycle matched
 
 - `func_1515FFEC` replaces its zero-return placeholder with the complete

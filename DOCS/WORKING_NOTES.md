@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 742](WORKING_NOTES/742-game-position-publication-and-callback-direct-match-20261002.md)):
+Game `func_15163504` publishes coordinates from three separate float pointers
+and propagates the optional callback result. All 41 words match directly from
+C without guards. Six new behavior tests and all 53 tool tests pass; the full
+build passes and both complete Init sections remain exact. Resume ordinary
+Game work at `func_151A4900`.
+
 2026-10-02 ([Note 741](WORKING_NOTES/741-game-compact-timed-callback-record-match-20261002.md)):
 Game `func_1515FFEC` matches its complete 41-word compact-record lifecycle.
 Two strict guards normalize completion-flag spill width. Both record layouts

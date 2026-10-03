@@ -32,10 +32,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,244 / 5,461 (59.40%) | 0 | 2,217 |
+| Total | 3,245 / 5,461 (59.42%) | 0 | 2,216 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,571 / 4,788 (53.70%) | 0 | 2,217 |
+| Game | 2,572 / 4,788 (53.72%) | 0 | 2,216 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15163504` now replaces its zero-return placeholder with position
+publication from three independent float pointers followed by optional callback
+dispatch. All 41 words match directly from C without guards or a compiler
+override. Six source-behavior tests and all 53 tool tests pass; the full build
+and project checks pass. Both complete Init sections remain byte-exact. See
+[Working Note 742](WORKING_NOTES/742-game-position-publication-and-callback-direct-match-20261002.md).
 
 Game `func_1515FFEC` now replaces its zero-return placeholder with the complete
 41-word compact-record lifecycle: flags at `0x0E`, selector at `0x0F`, timer
@@ -102,7 +109,7 @@ and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 41-word `func_15163504`, currently at 35 real word differences.
+queue with 39-word `func_151A4900`, currently at 35 real word differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and
 `func_150F631C` in its separate near-match cleanup queue.
 
