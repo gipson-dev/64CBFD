@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init storage boundaries: [Note 832](WORKING_NOTES/832-init-storage-boundaries-page-table-cache-and-output-pool-20261003.md)
+executes pinned startup/table, cache-operand and output-pool arithmetic. The
+2,048-byte table DMA ends at input start; max page DMA remains 3,072 with a
+440-byte workspace gap. The inclusive cache sweep emits 257 operands and
+crosses the workspace address range, so it is not input-capacity evidence.
+Ten focused tests pass. Complete reservation/free-list/fallback/fault ownership
+and fitting remain open; no production, decoder/adapter or README changes.
+
 Init explicit CU1 corpus modes: [Note 831](WORKING_NOTES/831-init-explicit-corpus-cu1-modes-and-clear-full-pass-20261003.md)
 adds set/clear/both selection with unchanged defaults and mode-local receipts.
 All 507 masked CU1-clear pages pass loop-lookup packed O2 in 741.930 seconds;

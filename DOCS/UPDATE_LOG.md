@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 832](WORKING_NOTES/832-init-storage-boundaries-page-table-cache-and-output-pool-20261003.md)
+  adds bounded original-word storage arithmetic tests. Table DMA ends at input;
+  inclusive cache operands cross workspace without proving input capacity.
+  Separate pool indexing passes; all ten focused tests pass. Full ownership
+  and fitting remain open; production/README and pending Game work unchanged.
+
 - Init [Note 831](WORKING_NOTES/831-init-explicit-corpus-cu1-modes-and-clear-full-pass-20261003.md)
   adds explicit corpus CU1 mode selection and passes all 507 masked CU1-clear
   pages on loop-lookup packed O2. Nine selector/mask tests pass; ordinary corpus

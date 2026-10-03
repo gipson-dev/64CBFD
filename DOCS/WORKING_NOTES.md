@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 832](WORKING_NOTES/832-init-storage-boundaries-page-table-cache-and-output-pool-20261003.md)):
+Pinned retail arithmetic confirms a 2,048-byte table DMA ending at input,
+257 inclusive cache operands crossing the workspace address range, and
+separate pool-based output-page indexing. Max retail DMA/gap remains 3,072/440.
+Ten focused tests pass; CACHE effects and real pool ownership are not modeled.
+Next audit allocation fallback/free-list writers and complete stack/workspace
+reservations. Production, decoder/adapter, fitting and README totals unchanged.
+
 2026-10-03 ([Note 831](WORKING_NOTES/831-init-explicit-corpus-cu1-modes-and-clear-full-pass-20261003.md)):
 Explicit set/clear/both corpus selection preserves defaults and resets depth
 measurements per mode. Real masked CU1-clear loop-lookup packed O2 passes all
