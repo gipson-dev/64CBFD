@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 837](WORKING_NOTES/837-init-syscall-fault-dispatch-and-disabled-diagnostics-route-20261003.md)
+  qualifies bounded retail syscall fault dispatch and the diagnostic-disabled,
+  no-event-queue route to the scheduler boundary. Thread remains stopped/faulted;
+  seeded EPC is not advanced. All 32 focused tests pass. Full entry/resume,
+  enabled diagnostics and reservations remain open; no production or totals edits.
+
 - Init [Note 836](WORKING_NOTES/836-init-retail-cleanup-callback-null-path-and-fatal-slot-20261003.md)
   replaces the callback-only stub assumption with executable retail null-path
   evidence alongside compiled Init sweep C in both profiles. The fatal slot

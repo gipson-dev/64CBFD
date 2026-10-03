@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 837](WORKING_NOTES/837-init-syscall-fault-dispatch-and-disabled-diagnostics-route-20261003.md)):
+ROM-pinned syscall dispatch enters generic fault. Disabled diagnostics/no queue
+reaches the scheduler with stopped/faulted state and unchanged seeded EPC;
+enabled diagnostic flag enters the debugger body. All 32 focused tests pass.
+Seeded context and explicit return boundary are not full exception/resume proof.
+Next audit static reservations and diagnostic storage; fitting/totals unchanged.
+
 2026-10-03 ([Note 836](WORKING_NOTES/836-init-retail-cleanup-callback-null-path-and-fatal-slot-20261003.md)):
 The actual callback clears its render list before calling the renderer. ROM-
 validated retail words execute that null path with compiled Init sweep C in

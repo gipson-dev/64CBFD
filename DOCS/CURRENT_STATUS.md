@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init syscall fault route: [Note 837](WORKING_NOTES/837-init-syscall-fault-dispatch-and-disabled-diagnostics-route-20261003.md)
+executes ROM-pinned dispatch/fault/diagnostic-disabled slices. Syscall routes to
+generic fault; state/flags become 1/2. With no event queue, control reaches the
+scheduler boundary and seeded EPC remains at the syscall. Diagnostic bit 2000
+instead enters the debugger body. All 32 focused tests pass. Full exception
+entry, queued delivery, scheduling/resume, enabled diagnostics and reservations
+remain unqualified; fitting and production/README totals unchanged.
+
 Init real cleanup callback: [Note 836](WORKING_NOTES/836-init-retail-cleanup-callback-null-path-and-fatal-slot-20261003.md)
 executes ROM-validated retail wrapper/renderer words with compiled Init sweep
 C in both IDO profiles. Clearing the render-list global takes the null branch,
