@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init static literal census: [Note 838](WORKING_NOTES/838-init-static-storage-literal-census-and-enclosing-bss-clear-20261003.md)
+finds 9 Init and 1 Debugger adjacent literal pairs in the audited storage
+interval; zero Game candidates is not absence proof. Startup clear-call
+arguments cover enclosing BSS 8002D4B0..80043B40, not individual reservations.
+All 17 focused tests pass. Scheduled-apart/computed/pointer/DMA writers and
+complete capacities remain open; production, fitting and README totals unchanged.
+
 Init syscall fault route: [Note 837](WORKING_NOTES/837-init-syscall-fault-dispatch-and-disabled-diagnostics-route-20261003.md)
 executes ROM-pinned dispatch/fault/diagnostic-disabled slices. Syscall routes to
 generic fault; state/flags become 1/2. With no event queue, control reaches the

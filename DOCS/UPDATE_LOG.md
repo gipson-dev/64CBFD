@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 838](WORKING_NOTES/838-init-static-storage-literal-census-and-enclosing-bss-clear-20261003.md)
+  adds a retail literal-pair census and pinned startup clear-argument test.
+  The enclosing BSS clear does not prove individual reservations; scheduled-
+  apart/computed writers remain outside the census. All 17 focused tests pass.
+  No production, fitting, decoder/adapter or README aggregate changes.
+
 - Init [Note 837](WORKING_NOTES/837-init-syscall-fault-dispatch-and-disabled-diagnostics-route-20261003.md)
   qualifies bounded retail syscall fault dispatch and the diagnostic-disabled,
   no-event-queue route to the scheduler boundary. Thread remains stopped/faulted;

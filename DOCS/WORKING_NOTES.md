@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 838](WORKING_NOTES/838-init-static-storage-literal-census-and-enclosing-bss-clear-20261003.md)):
+Retail literal-pair census records 9 Init/1 Debugger candidates; no Game pair
+is not writer-absence proof. Startup clear arguments cover the enclosing BSS,
+not individual buffer capacities. All 17 focused tests pass. Next resolve
+scheduled-apart and pointer/indexed writers; ownership and fitting stay open.
+Production, decoder/adapter and README totals unchanged.
+
 2026-10-03 ([Note 837](WORKING_NOTES/837-init-syscall-fault-dispatch-and-disabled-diagnostics-route-20261003.md)):
 ROM-pinned syscall dispatch enters generic fault. Disabled diagnostics/no queue
 reaches the scheduler with stopped/faulted state and unchanged seeded EPC;
