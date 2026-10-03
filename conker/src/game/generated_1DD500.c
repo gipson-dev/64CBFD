@@ -45,8 +45,36 @@ s32 func_151B1828() {
     return 0;
 }
 
-s32 func_151B1918() {
-    return 0;
+void func_1516972C(void *arg0);
+
+typedef struct {
+    void *child;
+    s32 first;
+    s32 second;
+} CleanupSlot1DD500;
+
+void func_151B1918(u8 *arg0) {
+    u8 *cursor = arg0 + 0x28;
+    CleanupSlot1DD500 *slot;
+    CleanupSlot1DD500 *current;
+    s32 offset;
+
+    *(s32 *)(arg0 + 0x30) = 0;
+    slot = (CleanupSlot1DD500 *)(cursor + 0xC);
+    *(f32 *)(arg0 + 0xB8) = 0.0f;
+    offset = 0;
+    do {
+        current = slot;
+        if (*(void **)(cursor + 0xC) != NULL) {
+            func_1516972C(slot->child);
+        }
+        current->child = NULL;
+        current->first = 0;
+        current->second = 0;
+        offset += 0xC;
+        cursor += 0xC;
+        slot++;
+    } while (offset != 0x84);
 }
 
 s32 func_151B19A4() {
@@ -54,12 +82,12 @@ s32 func_151B19A4() {
 }
 
 s32 func_151B1A58(s32 arg0) {
-    func_151B1918(arg0);
+    func_151B1918((u8 *)arg0);
     func_1514933C(arg0);
 }
 
 s32 func_151B1A84(s32 arg0) {
-    func_151B1918(arg0);
+    func_151B1918((u8 *)arg0);
     func_15149368(arg0);
 }
 

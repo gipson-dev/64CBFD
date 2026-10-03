@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 744](WORKING_NOTES/744-game-eleven-child-slot-cleanup-match-20261002.md)):
+Game `func_151B1918` matches its complete 35-word eleven-child-slot cleanup.
+Six strict guards normalize an equivalent cursor address and independent
+counter scheduling. Seven 32-bit source-behavior tests and all 67 tool tests
+pass; the full build passes and both complete Init sections remain exact.
+Resume ordinary Game work at `func_151BD21C`.
+
 2026-10-02 ([Note 743](WORKING_NOTES/743-game-threshold-scaled-record-update-match-20261002.md)):
 Game `func_151A4900` matches its complete 39-word threshold-scaled record
 update. Eleven strict guards normalize one independent scheduling rotation

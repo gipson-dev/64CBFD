@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game eleven-child-slot cleanup recovered and matched
+
+- `func_151B1918` replaces its zero-return placeholder with a void cleanup
+  routine: reset two fields, release each non-null child in eleven slots,
+  and clear every slot. All 35 words match with six strict guards.
+- Seven freestanding 32-bit tests preserve actual guest pointer width and
+  slot stride while checking release order, null slots, duplicates,
+  callback mutation, and repeated cleanup. All 67 tool tests, project
+  checks, and the full build pass. Both complete Init sections remain exact.
+- Total exact C is 3,247 / 5,461 (59.46%); Game is 2,574 / 4,788 (53.76%).
+  Resume ordinary Game at `func_151BD21C`. See
+  [Working Note 744](WORKING_NOTES/744-game-eleven-child-slot-cleanup-match-20261002.md).
+
 ### Game threshold-scaled record update matched
 
 - `func_151A4900` replaces its zero-return placeholder with two independent

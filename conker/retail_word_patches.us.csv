@@ -1,4 +1,10 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_1DD500,func_151B1918,0x028,0x24900034,0x2650000C,-,-,Preserve equivalent child-slot address from payload cursor,,,false
+generated_1DD500,func_151B1918,0x044,0x2673000C,0xAE200000,-,-,Normalize independent loop-counter schedule after slot clearing,,,false
+generated_1DD500,func_151B1918,0x050,0x2673000C,0xAE200000,-,-,Normalize independent loop-counter schedule after slot clearing,,,false
+generated_1DD500,func_151B1918,0x054,0xAE200000,0xAE200004,-,-,Normalize independent loop-counter schedule after slot clearing,,,false
+generated_1DD500,func_151B1918,0x058,0xAE200004,0xAE200008,-,-,Normalize independent loop-counter schedule after slot clearing,,,false
+generated_1DD500,func_151B1918,0x05C,0xAE200008,0x2673000C,-,-,Normalize independent loop-counter schedule after slot clearing,,,false
 generated_1D0840,func_151A4900,0x024,0x01E50019,0x00AF0019,-,-,Preserve commutative byte-scale multiply operand order,,,false
 generated_1D0840,func_151A4900,0x058,0x8485001A,0x00005012,-,-,Normalize independent counter reload schedule after float publication,,,false
 generated_1D0840,func_151A4900,0x05C,0x00005012,0x448A2000,-,-,Normalize independent counter reload schedule after float publication,,,false
