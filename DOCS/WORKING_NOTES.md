@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 775](WORKING_NOTES/775-game-highest-height-combiner-direct-match-20261003.md)):
+Game `func_15046460` replaces its zero-return placeholder with the complete
+highest-height combiner. All 166 words match directly with no new guards or
+profiles. Early rejection zeros state/value; both-failed selection retains
+them. Ten new tests and all 306 tool tests pass; full build/project checks
+pass. Converted totals are unchanged; exact rows increase by one. Both Init
+sections and recovered spans remain unchanged. Next: retained `func_150466F8`.
+
 2026-10-03 ([Note 774](WORKING_NOTES/774-game-lowest-height-combiner-direct-match-20261003.md)):
 Game `func_150461D0` converts retained assembly to semantic C and matches all
 164 words directly, with no new guards/profile. Ten new tests and all 296

@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15046460` replaces its zero-return placeholder with the complete
+  highest-height combiner and matches all 166 words directly. No new guards
+  or profiles. Ten new tests and all 306 tool tests pass; full build/project
+  checks pass. Both Init sections and recovered spans remain unchanged.
+  README updates only exact/different aggregates; converted totals do not
+  change because this was already counted as C.
+  [Note 775](WORKING_NOTES/775-game-highest-height-combiner-direct-match-20261003.md)
+
 - Game `func_150461D0` converts retained assembly to the complete lowest-height
   combiner and matches all 164 words directly, without new guards/profile.
   Ten new tests and all 296 tool tests pass; full build/project checks pass.

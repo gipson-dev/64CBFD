@@ -32,10 +32,21 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,263 / 5,461 (59.75%) | 0 | 2,198 |
+| Total | 3,264 / 5,461 (59.77%) | 0 | 2,197 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,590 / 4,788 (54.09%) | 0 | 2,198 |
+| Game | 2,591 / 4,788 (54.11%) | 0 | 2,197 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15046460` now replaces its zero-return placeholder with the complete
+highest-height combiner. All 166 words match directly with no new guards or
+profile changes. Early rejection clears state/value and flag bit 2; the
+both-failed fallback instead retains the selected record's state/value and
+clears only bit 2. Ten new tests and all 306 tool tests pass; full build and
+project checks pass. Prior recovered neighbors/spans and both entire Init
+sections remain unchanged. Converted totals are unchanged; one different C
+row becomes exact. Next recover retained `func_150466F8`, which combines the
+entity result with a separate terrain query. See
+[Note 775](WORKING_NOTES/775-game-highest-height-combiner-direct-match-20261003.md).
 
 Game `func_150461D0` now has its complete lowest-height combiner in semantic
 C instead of retained assembly. All 164 words match directly without new
@@ -44,9 +55,8 @@ count preparation, truncates both query returns to bytes, and chooses the
 lower height with second-result precedence on ties/unordered comparisons.
 Ten new tests and all 296 tool tests pass; the full code build and project
 checks pass. Neighboring recovered routines, collector/producer spans, and
-both complete Init sections remain unchanged. Next recover the existing
-highest-height combiner placeholder `func_15046460`, including its distinct
-state/value reset behavior. See
+both complete Init sections remain unchanged. Its then-pending highest-height
+combiner `func_15046460` is now recovered in Note 775. See
 [Note 774](WORKING_NOTES/774-game-lowest-height-combiner-direct-match-20261003.md).
 
 Game `func_15045D48` now has its complete context-3 entity lowest-height query
