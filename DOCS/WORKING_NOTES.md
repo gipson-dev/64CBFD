@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-02 ([Note 747](WORKING_NOTES/747-game-menu-state-reset-direct-match-20261002.md)):
+Game `func_151DE85C` matches its complete 35-word menu-state reset directly
+from C without guards. Five new behavior tests and all 85 tool tests pass;
+the full build passes and both entire Init sections remain byte-exact.
+Resume ordinary Game work at `func_1501CDC0`.
+
 2026-10-02 ([Note 746](WORKING_NOTES/746-game-descriptor-record-constructor-match-20261002.md)):
 Game `func_151D2F00` matches its complete 36-word descriptor-record constructor.
 Six strict guards normalize only independent argument setup. Five new behavior

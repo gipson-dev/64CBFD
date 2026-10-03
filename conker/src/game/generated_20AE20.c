@@ -50,7 +50,7 @@ extern u8 **D_800E0BD8;
 
 s32 func_151E43DC();
 s32 func_151E530C();
-s32 func_151DE85C();
+void func_151DE85C(void);
 
 extern s16 D_800E0B9A;
 extern u8 D_800E0B94;
@@ -139,8 +139,16 @@ void func_151DE81C(void) {
     }
 }
 
-s32 func_151DE85C() {
-    return 0;
+void func_151DE85C(void) {
+    D_800D2E40 = 0;
+    func_1501C730(6, 0x1D, 0, 0, 1);
+    D_800E0B94 = 3;
+    D_8008FD80 = 1;
+    D_8008FE28 = 2;
+    D_8008FDA4 = 0;
+    D_8008FDD4[0x3E] = 0;
+    D_8008FDD4[0x2B] = 5;
+    D_8008FDD4[0x2C] = D_8008FDD4[0x2B];
 }
 
 void func_151DE8E8() {

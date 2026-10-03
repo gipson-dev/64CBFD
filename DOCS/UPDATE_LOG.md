@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game menu-state reset directly matched
+
+- `func_151DE85C` replaces its zero-return placeholder with gate reset,
+  exact external-call arguments, global state setup, and object-byte reset.
+  All 35 words match directly from C without guards or overrides.
+- Five new tests cover call ordering, global and object writes, call-time
+  mutation, and repeated reset. All 85 tool tests, project checks, and the
+  full build pass. Both entire Init sections remain byte-exact.
+- Total exact C is 3,250 / 5,461 (59.51%); Game is 2,577 / 4,788 (53.82%).
+  Resume ordinary Game at `func_1501CDC0`. See
+  [Working Note 747](WORKING_NOTES/747-game-menu-state-reset-direct-match-20261002.md).
+
 ### Game descriptor-record constructor matched
 
 - `func_151D2F00` replaces its zero-return placeholder with allocation,
