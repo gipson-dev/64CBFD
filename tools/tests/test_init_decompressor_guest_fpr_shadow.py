@@ -15,6 +15,12 @@ from tools.tests import test_init_decompressor_tables as tables
 
 class ShadowExceptionFixture(adapter.GuestExceptionFixture):
     ADAPTER_EXTRA = 0x98
+    NEIGHBOR_END = 0x80031D10
+
+    def __init__(self, image, chunk, status):
+        super().__init__(image, chunk, status)
+        self.readonly.append((0x80031AE0, self.NEIGHBOR_END))
+        self.allowed_writes[-1] = (self.NEIGHBOR_END, exception.CONTEXT_TOP + 4)
 
 
 class InitDecompressorGuestFprShadowTests(unittest.TestCase):
@@ -168,6 +174,15 @@ class InitDecompressorGuestFprShadowTests(unittest.TestCase):
             "--abi-fpr-shadow"], capture_output=True, text=True)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("requires --frame-backed", result.stderr)
+
+    def test_neighbor_thread_redzone_rejects_writes(self):
+        image = self.adapter_images[0][2]
+        chunk = exception.InitDecompressorExceptionTests.chunks()[0][0]
+        fixture = self.fixture_type(image, chunk, exception.SR_FR | exception.SR_CU1 | 0xFF01)
+        with self.assertRaisesRegex(AssertionError, "read-only"):
+            fixture.put(fixture.NEIGHBOR_END - 4, 0, 4)
+        with self.assertRaisesRegex(AssertionError, "read-only"):
+            fixture.put(fixture.NEIGHBOR_END - 2, 0, 4)
 
     def test_match_history_before_dynamic_success_and_early_failure(self):
         encoder = zlib.compressobj(wbits=-15, strategy=zlib.Z_FIXED)

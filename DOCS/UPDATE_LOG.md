@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 825](WORKING_NOTES/825-init-context-neighbor-guard-and-first-shadow-corpus-20261003.md)
+  recovers retail's 0x230 thread footprint beyond the SDK's 0x1B0 header.
+  All 507 pages pass the smallest shadow profile with CU1 set and the corrected
+  neighbor guard; stack margin is 72 bytes. All 23 focused tests pass. Other
+  full-corpus profiles/mode, complete ownership and fitting remain open.
+  Production ownership, shared headers, README totals and Game work unchanged.
+
 - Init [Note 824](WORKING_NOTES/824-init-distance-builder-and-multiblock-fpr-history-20261003.md)
   qualifies distance-tree outcomes and multiblock FPR history with 144 more
   gated comparisons (348 shadow contexts total). All 19 focused tests pass,

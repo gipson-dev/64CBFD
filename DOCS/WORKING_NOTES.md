@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 825](WORKING_NOTES/825-init-context-neighbor-guard-and-first-shadow-corpus-20261003.md)):
+Guest SDK thread size is 0x1B0, but retail's 32-FPR context footprint is 0x230.
+The corrected 0x80031D10 neighbor guard passes all 507 pages for packed/remaining
+O2/g3 with CU1 set: text/descent 4,896/3,256, 72-byte minimum margin. All 23
+focused checks and the 348 bounded shadow comparisons pass. Full remaining
+corpus profiles/mode, complete ownership and fitting remain open; no production
+or shared-header changes. The weaker initial guard run is identified separately.
+
 2026-10-03 ([Note 824](WORKING_NOTES/824-init-distance-builder-and-multiblock-fpr-history-20261003.md)):
 Twelve new gated streams add 144 shadow context comparisons, for 348 total.
 Distance-builder failures/special outcomes and multiblock FPR history pass

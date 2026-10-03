@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init retail context footprint and first shadow corpus: [Note 825](WORKING_NOTES/825-init-context-neighbor-guard-and-first-shadow-corpus-20261003.md)
+finds the SDK OSThread header is 0x1B0 bytes but retail's 32-FPR save/restore
+footprint is 0x230. The neighbor guard now ends at 0x80031D10. All 507 pages
+pass packed/remaining O2/g3 with CU1 set and that corrected guard: text/descent
+4,896/3,256, lowest SP 0x80031D58, margin 72 bytes. All 23 focused tests pass;
+the six-profile bounded shadow domain still passes 348 comparisons. Remaining
+full-corpus profiles/mode, complete ownership and fitting stay open. No production
+ownership, shared SDK header or README aggregate changes.
+
 Init distance-builder/multiblock history: [Note 824](WORKING_NOTES/824-init-distance-builder-and-multiblock-fpr-history-20261003.md)
 adds 144 gated context comparisons, bringing shadow coverage to 348 across
 six profiles and both CU1 modes. Distance errors, accepted special trees,

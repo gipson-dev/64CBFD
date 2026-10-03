@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `9157895`.
 
+Follow-up: [Note 825](825-init-context-neighbor-guard-and-first-shadow-corpus-20261003.md)
+identifies the larger retail 32-FPR thread footprint, guards that neighbor,
+and qualifies all 507 pages for the smallest shadow profile with CU1 set.
+It supersedes the guest-thread-size hypothesis below; full ownership remains open.
+
 ## Result
 
 The optional shadow adapter now has stronger bounded qualification: twelve
