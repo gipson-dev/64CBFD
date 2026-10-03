@@ -5,6 +5,15 @@ from tools.tests import test_init_decompressor_exception as exception
 from tools.tests import test_init_decompressor_guest_fpr_shadow as shadow
 
 
+def context_status(mode):
+    status = exception.SR_FR | exception.SR_CU1 | 0xFF01
+    if mode == "generic":
+        return status
+    if mode == "exception-masked":
+        return status & ~3
+    raise ValueError("Unknown shadow corpus context: " + mode)
+
+
 @unittest.skipUnless(os.environ.get("CONKER_INIT_SHADOW_CORPUS") == "1",
                      "Opt-in compiled shadow corpus")
 class InitDecompressorShadowCorpusTests(unittest.TestCase):
@@ -17,6 +26,8 @@ class InitDecompressorShadowCorpusTests(unittest.TestCase):
         shadow.InitDecompressorGuestFprShadowTests.setUpClass.__func__(cls)
         if len(cls.adapter_images) != 6:
             raise AssertionError("six freshly compiled shadow images required")
+        cls.corpus_context = os.environ.get("CONKER_INIT_SHADOW_CORPUS_CONTEXT", "generic")
+        cls.corpus_status = context_status(cls.corpus_context)
         selected = os.environ.get("CONKER_INIT_SHADOW_CORPUS_PROFILE")
         if selected:
             cls.adapter_images = [row for row in cls.adapter_images
@@ -26,6 +37,8 @@ class InitDecompressorShadowCorpusTests(unittest.TestCase):
 
     def test_all_507_retail_pages_cu1_set(self):
         self.assertEqual(len(self.pages), 507)
+        print("shadow corpus context: %s status=0x%08X" %
+              (self.corpus_context, self.corpus_status), flush=True)
         completed = 0
         for index, start, end, chunk, output in self.pages:
             with self.subTest(page=index):
@@ -34,7 +47,7 @@ class InitDecompressorShadowCorpusTests(unittest.TestCase):
                 self.assertEqual(supplied[:len(chunk)], chunk)
                 offset = 0x2D4B0 + index * 0x1000
                 self.assertEqual(output, self.image[offset:offset + len(output)])
-                self.compare(supplied, exception.SR_FR | exception.SR_CU1 | 0xFF01,
+                self.compare(supplied, self.corpus_status,
                     expected_output=output, expected_result=len(output), dma_size=dma_size)
                 completed += len(self.adapter_images)
             if (index + 1) % 16 == 0 or index == 506:

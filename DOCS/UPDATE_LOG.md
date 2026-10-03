@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 826](WORKING_NOTES/826-init-exception-entry-mask-and-masked-context-qualification-20261003.md)
+  pins/executes the entry Status mask and qualifies 72 masked compiled context
+  comparisons across six profiles/both CU1 modes. All 29 focused tests pass.
+  Corpus context selection is explicit; full masked corpus and remaining
+  ownership/fitting gates are open. Production code, README totals and Game
+  work remain unchanged.
+
 - Init [Note 825](WORKING_NOTES/825-init-context-neighbor-guard-and-first-shadow-corpus-20261003.md)
   recovers retail's 0x230 thread footprint beyond the SDK's 0x1B0 header.
   All 507 pages pass the smallest shadow profile with CU1 set and the corrected

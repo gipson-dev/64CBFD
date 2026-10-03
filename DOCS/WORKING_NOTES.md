@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 826](WORKING_NOTES/826-init-exception-entry-mask-and-masked-context-qualification-20261003.md)):
+The actual exception prefix clears IE/EXL; its direct TLBL route is word-pinned.
+Six profiles and both CU1 modes pass 72 new masked context comparisons (420
+bounded shadow comparisons total), plus 16 original prefix/wrapper runs.
+All 29 focused tests pass. Corpus context selection is explicit; the historical
+507-page generic receipt is not relabeled. Full masked corpus, complete ownership,
+synchronous-fault bounds and fitting remain open; production unchanged.
+
 2026-10-03 ([Note 825](WORKING_NOTES/825-init-context-neighbor-guard-and-first-shadow-corpus-20261003.md)):
 Guest SDK thread size is 0x1B0, but retail's 32-FPR context footprint is 0x230.
 The corrected 0x80031D10 neighbor guard passes all 507 pages for packed/remaining

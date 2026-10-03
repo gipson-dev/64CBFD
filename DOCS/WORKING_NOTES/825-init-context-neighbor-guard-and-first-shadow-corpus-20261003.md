@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `b03d17a`.
 
+Follow-up: [Note 826](826-init-exception-entry-mask-and-masked-context-qualification-20261003.md)
+recovers/tests the original Status mask and adds explicit masked-context corpus
+selection. This note's full-page run used generic Status 0x2400FF01, not the
+prefix-derived 0x2400FF00; it is not relabeled as a full masked-path replay.
+
 ## Guest Layout And Protected Boundary
 
 The isolated `init_decompressor_context_layout.c` probe compiles against the

@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init exception-entry masking: [Note 826](WORKING_NOTES/826-init-exception-entry-mask-and-masked-context-qualification-20261003.md)
+executes the original IE/EXL clear prefix and pins the direct TLBL route.
+Six profiles/both CU1 modes pass 72 new masked vector/sample comparisons,
+bringing bounded shadow coverage to 420. All 29 focused tests pass. Corpus
+context selection now distinguishes generic from exception-masked Status;
+Note 825's full-page receipt remains generic, not relabeled. Full masked corpus,
+storage ownership, synchronous-fault bounds and fitting stay open. No production
+implementation, ownership, cost or README aggregate changes.
+
 Init retail context footprint and first shadow corpus: [Note 825](WORKING_NOTES/825-init-context-neighbor-guard-and-first-shadow-corpus-20261003.md)
 finds the SDK OSThread header is 0x1B0 bytes but retail's 32-FPR save/restore
 footprint is 0x230. The neighbor guard now ends at 0x80031D10. All 507 pages
