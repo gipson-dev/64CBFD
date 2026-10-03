@@ -100,7 +100,9 @@ No production build, full-suite, hardware, gameplay or sibling-port run.
 - [x] Qualify bounded contexts and direct builder boundaries in both profiles.
 - [x] Run all 507 pages on the changed packed O2 variant with masked CU1 set;
   subsequently completed in [Note 845](845-init-histogram-cursor-full-masked-cu1-set-corpus-20261003.md).
-- [ ] Repeat the changed full corpus with CU1 clear; other profiles remain open.
+- [x] Repeat the changed packed O2 full corpus with CU1 clear;
+  subsequently completed in [Note 846](846-init-histogram-cursor-full-masked-cu1-clear-corpus-20261003.md).
+- [ ] Full changed corpus for the other five shapes/profiles.
 - [ ] Continue fitting: 880 linked bytes remain above retail capacity.
 - [ ] Complete outstanding reservation/hardware/resume qualification before promotion.
 
@@ -111,7 +113,9 @@ wsl env CONKER_INIT_SHADOW_CORPUS=1 CONKER_INIT_SHADOW_CORPUS_CONTEXT=exception-
 ```
 
 Subsequent [Note 845](845-init-histogram-cursor-full-masked-cu1-set-corpus-20261003.md)
-qualifies this changed source's full masked CU1-set corpus. CU1-clear remains open.
+qualifies this changed source's full masked CU1-set corpus; subsequent
+[Note 846](846-init-histogram-cursor-full-masked-cu1-clear-corpus-20261003.md)
+also qualifies masked CU1-clear. Other profiles remain open.
 Notes 830/831 qualify the previous lookup variant, not this changed source.
 Production Init, adapter assembly, default experimental flags and README
 aggregates stay unchanged. Unrelated Game work is preserved and excluded

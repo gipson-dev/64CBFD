@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 846](WORKING_NOTES/846-init-histogram-cursor-full-masked-cu1-clear-corpus-20261003.md)
+  banks all 507 changed packed O2/g3 masked-CU1-clear comparisons, completing
+  both masked CU1 corpus gates. Size/stack remain unchanged; next return to
+  fitting with other-profile and hardware limits explicit. No production or
+  README aggregate changes; unrelated Game work remains excluded.
+
 - Init [Note 845](WORKING_NOTES/845-init-histogram-cursor-full-masked-cu1-set-corpus-20261003.md)
   banks the changed histogram variant's full 507-page masked-CU1-set pass
   in packed O2/g3. Size/stack receipt remains 4,864/3,256 with 72-byte

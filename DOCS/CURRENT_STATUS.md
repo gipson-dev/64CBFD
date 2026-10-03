@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init histogram CU1-clear corpus: [Note 846](WORKING_NOTES/846-init-histogram-cursor-full-masked-cu1-clear-corpus-20261003.md)
+passes all 507 changed packed O2/g3 pages with masked CU1 clear in 768.820
+seconds. Notes 845/846 now bank both masked CU1 modes: 1,014 paired runs.
+Text/descent/clearance remain 4,864/3,256/72. Return to builder/shared-helper/
+adapter fitting; 880 linked bytes remain. Other profiles, complete ownership
+and hardware/resume remain open. Production and README totals unchanged.
+
 Init histogram full corpus: [Note 845](WORKING_NOTES/845-init-histogram-cursor-full-masked-cu1-set-corpus-20261003.md)
 passes all 507 retail pages on the changed packed/remaining O2/g3 source,
 exception-masked entry with CU1 set. Terminal run: 744.102 seconds, linked

@@ -71,7 +71,8 @@ full ordinary test suite, hardware replay or sibling-port test is claimed.
 ## Next
 
 - [x] Full 507-page changed histogram variant, masked entry with CU1 set.
-- [ ] Same changed packed O2/g3 corpus with masked CU1 clear.
+- [x] Same changed packed O2/g3 corpus with masked CU1 clear;
+  subsequently completed in [Note 846](846-init-histogram-cursor-full-masked-cu1-clear-corpus-20261003.md).
 - [ ] Full-corpus qualification for the other five build shapes/profiles.
 - [ ] Continue fitting: remove the remaining 880 linked bytes above retail.
 - [ ] Complete outstanding reservation/hardware/resume qualification before promotion.

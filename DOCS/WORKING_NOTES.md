@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 846](WORKING_NOTES/846-init-histogram-cursor-full-masked-cu1-clear-corpus-20261003.md)):
+All 507 changed packed O2/g3 pages pass masked CU1 clear in 768.820 seconds.
+Both masked CU1 modes now have full receipts; size/descent/neighbor clearance
+remain 4,864/3,256/72. Return to fitting with 880 linked bytes still to remove.
+Other profiles and ownership/hardware/resume remain open; production and
+README aggregates unchanged, unrelated Game work preserved.
+
 2026-10-03 ([Note 845](WORKING_NOTES/845-init-histogram-cursor-full-masked-cu1-set-corpus-20261003.md)):
 Changed histogram variant passes all 507 retail pages, packed O2/g3 masked
 CU1-set context. One opt-in test passes in 744.102 seconds; text 4,864,
