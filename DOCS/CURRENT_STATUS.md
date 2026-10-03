@@ -37,14 +37,25 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 | Game | 2,582 / 4,788 (53.93%) | 0 | 2,206 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Game `func_150450CC` now has its complete highest-height candidate selection,
+vertex copy, optional metadata, and result-flag body instead of a zero-return
+placeholder. It remains non-matching: 143 body words plus one padding nop fill
+the 144-word slot, with 76 differing word positions and no new guards. Eleven
+new tests and all 164 tool tests pass; the full build and project checks pass.
+Previously recovered spans and both entire Init sections remain exact.
+Matching aggregates are unchanged. Its collector `func_150A3A70` remains a
+placeholder and has a handwritten shared-register retail contract; audit that
+whole group before claiming a working query path. See
+[Working Note 759](WORKING_NOTES/759-game-highest-height-query-semantic-recovery-20261002.md).
+
 Game `func_15044CE4` now explicitly returns the overlap result to its record
 callback caller. The complete 23-word span remains directly exact, without
 guards. Six new tests cover every signed-halfword scale, result forwarding,
 load/store aliasing, unrelated-byte preservation, and actual wrapper/overlap
 integration. All 153 tool tests, the full build, and project checks pass;
 all recovered neighboring spans and both entire Init sections remain exact.
-Matching totals do not change. Next untouched placeholder in the slice is
-`func_150450CC`, 144 words / 135 differences. See
+Matching totals do not change. Its then-pending `func_150450CC` recovery is
+now completed semantically, but remains non-matching, in Note 759. See
 [Working Note 758](WORKING_NOTES/758-game-position-scale-overlap-wrapper-return-20261002.md).
 
 Game `func_15044B78` now replaces its zero-return placeholder with the complete
@@ -250,8 +261,11 @@ dependency `func_15044B78` now matches all 91 words. Its record allocator,
 position/scale constructor, and list pass remain exact, without gameplay
 qualification of downstream callbacks. Its 23-word position/scale wrapper
 `func_15044CE4` now explicitly forwards the result and remains directly exact.
-Resume semantic recovery at `func_150450CC`, currently 144 words / 135 real
-word differences, with its argument and output layout still to recover.
+`func_150450CC` now has a recovered semantic body but remains in the
+non-matching queue at 76 real word differences. Audit its handwritten
+`func_150A3A70` collector/cleanup group as a complete register-contract unit;
+that dependency remains a placeholder. Another ordinary source recovery can
+resume at `func_15045384`, without resolving that collector gap.
 `func_15040CC8` has a recovered semantic body but remains in the separate
 non-matching/overflow queue; its retail-slot matcher reports 36 differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and

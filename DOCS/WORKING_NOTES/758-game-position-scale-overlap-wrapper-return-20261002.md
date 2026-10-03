@@ -2,6 +2,11 @@
 
 Date: 2026-10-02
 
+Follow-up: [Note 759](759-game-highest-height-query-semantic-recovery-20261002.md)
+recovers the next target's semantic body without a byte match and identifies
+its handwritten collector dependency. Measurements below retain this wrapper
+checkpoint.
+
 ## Result
 
 `func_15044CE4` now explicitly returns `s32` and forwards

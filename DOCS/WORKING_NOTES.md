@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-02 ([Note 759](WORKING_NOTES/759-game-highest-height-query-semantic-recovery-20261002.md)):
+Game `func_150450CC` replaces its placeholder with the complete highest-height
+query/result body. It remains non-matching: 143 body words plus one padding
+nop, 76 differences, no new guards. Eleven new 32-bit tests and all 164 tool
+tests pass; the full build passes and both entire Init sections remain exact.
+Audit its still-placeholder handwritten collector as a whole shared-register
+group before claiming a working gameplay path. README aggregates are unchanged.
+
 2026-10-02 ([Note 758](WORKING_NOTES/758-game-position-scale-overlap-wrapper-return-20261002.md)):
 Game `func_15044CE4` explicitly returns its overlap result, retaining a direct
 23-word match without guards. Six new tests cover all signed-halfword scales,

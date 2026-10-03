@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game highest-height query recovered semantically
+
+- `func_150450CC` replaces its zero-return placeholder with candidate selection,
+  signed vertex copying, optional metadata, and original result flags. The
+  144-word slot holds a 143-word body and one padding nop, with 76 differences.
+  No new word guards or compiler override are added.
+- Eleven new tests and all 164 tool tests pass. Full build and project checks
+  pass; recovered neighboring spans and both whole Init sections remain exact.
+- Matching totals and README aggregates do not change. The candidate collector
+  remains a placeholder with a handwritten shared-register retail interface.
+  [Note 759](WORKING_NOTES/759-game-highest-height-query-semantic-recovery-20261002.md)
+  records the semantic evidence and whole-group dependency audit.
+
 ### Game position/scale overlap wrapper return completed
 
 - `func_15044CE4` now explicitly returns `s32` and forwards the overlap result

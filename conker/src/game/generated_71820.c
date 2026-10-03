@@ -25,6 +25,42 @@ typedef struct PositionScaleRecord71820 {
     s16 *scale;
 } PositionScaleRecord71820;
 
+typedef struct QueryVertex71820 {
+    s16 x;
+    s16 y;
+    s16 z;
+    u8 pad6[10];
+} QueryVertex71820;
+
+typedef struct QueryTriangle71820 {
+    QueryVertex71820 *vertices[3];
+} QueryTriangle71820;
+
+typedef struct HeightCandidate71820 {
+    s32 fixedHeight;
+    QueryTriangle71820 *triangle;
+    s32 vertexIndex;
+    s32 padC;
+} HeightCandidate71820;
+
+typedef struct HeightResult71820 {
+    f32 height;
+    s16 vertices[9];
+    s16 pad16;
+    u32 metadata;
+    u8 flags;
+    u8 state;
+    u16 pad1E;
+    s32 value;
+} HeightResult71820;
+
+extern HeightCandidate71820 D_800D3300[];
+extern QueryTriangle71820 *D_800DBE3C;
+extern u32 *D_800DBE5C;
+extern f32 D_800DBE68, D_800DBE6C, D_800DBE70, D_800DBE74;
+extern f32 D_80098D44;
+s32 func_150A3A70(s32 x, s32 z);
+
 extern PositionScaleRecord71820 *D_800CBE00;
 extern s32 D_800BE9E4;
 extern s32 (*D_80085E80[])(PositionScaleRecord71820 *record);
@@ -239,7 +275,59 @@ void func_15044E88() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15044ED0.s")
 
-s32 func_150450CC() {
+s32 func_150450CC(f32 *position, f32 threshold, HeightResult71820 *result) {
+    s32 selected = -1;
+    s32 count;
+    s32 i;
+    f32 height;
+    HeightCandidate71820 *candidate;
+    QueryVertex71820 *vertex;
+    QueryVertex71820 **vertexPointers;
+    s32 vertexIndex;
+
+    if (position[1] < threshold) {
+        result->flags &= ~2;
+        return 0;
+    }
+    result->height = D_80098D44;
+    func_1510F800(0);
+    D_800DBE68 = position[0];
+    D_800DBE6C = position[1];
+    D_800DBE70 = position[2];
+    D_800DBE74 = threshold;
+    count = func_150A3A70((s32)position[0], (s32)position[2]);
+    for (i = 0; i < count; i++) {
+        height = D_800D3300[i].fixedHeight * (1.0f / 256.0f);
+        if (height <= position[1] && result->height < height) {
+            selected = i;
+            result->height = height;
+        }
+    }
+    if (selected != -1) {
+        candidate = &D_800D3300[selected];
+        vertexPointers = candidate->triangle->vertices;
+        vertexIndex = candidate->vertexIndex;
+        for (i = 0; i != 3; i++) {
+            vertex = &vertexPointers[i][vertexIndex];
+            result->vertices[i * 3] = vertex->x;
+            result->vertices[i * 3 + 1] = vertex->y;
+            result->vertices[i * 3 + 2] = vertex->z;
+        }
+        if (D_800DBE5C != NULL) {
+            result->metadata = D_800DBE5C[candidate->triangle - D_800DBE3C];
+        } else {
+            result->metadata = 0;
+        }
+        result->state = 1;
+        result->flags |= 7;
+        result->value = 0;
+        if (threshold <= result->height) {
+            result->flags |= 2;
+            return 1;
+        }
+        return 0;
+    }
+    result->flags &= ~2;
     return 0;
 }
 
