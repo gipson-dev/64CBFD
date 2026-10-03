@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 839](WORKING_NOTES/839-init-block-local-storage-writers-and-fr1-fixture-correction-20261003.md)
+  adds optional block-local literal tracking and identifies 33 store candidates.
+  Corrects the callback fixture to FR=1 independent FPR high/low words and
+  requalifies both profiles. All 34 focused tests pass. No production, decoder/
+  adapter or README totals changes; full ownership and fitting stay open.
+
 - Init [Note 838](WORKING_NOTES/838-init-static-storage-literal-census-and-enclosing-bss-clear-20261003.md)
   adds a retail literal-pair census and pinned startup clear-argument test.
   The enclosing BSS clear does not prove individual reservations; scheduled-

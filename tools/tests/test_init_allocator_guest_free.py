@@ -27,6 +27,7 @@ class AllocatorGuestFixture(GuestBuilderFixture):
         self.registers[31] = 0xDEAD0000
         self.before = self.registers[:]
         self.fprs = [0] * 32
+        self.high = [0] * 32
         self.reads, self.writes, self.visits = [], [], {}
         self.capture, self.snapshots = set(), {}
 
@@ -56,10 +57,10 @@ class AllocatorGuestFixture(GuestBuilderFixture):
             size = 4 if op == 57 else 8
             if op == 53:
                 value = self.get(address, size)
-                self.fprs[rt], self.fprs[rt + 1] = value >> 32, value & 0xFFFFFFFF
+                self.high[rt], self.fprs[rt] = value >> 32, value & 0xFFFFFFFF
                 self.reads.append((address, size))
             else:
-                value = self.fprs[rt] if size == 4 else (self.fprs[rt] << 32) | self.fprs[rt + 1]
+                value = self.fprs[rt] if size == 4 else (self.high[rt] << 32) | self.fprs[rt]
                 self.put(address, value, size)
                 self.writes.append((address, size))
         elif op == 33:  # Signed LH used by the production alignment tables.
@@ -142,6 +143,7 @@ class InitAllocatorGuestFreeTests(unittest.TestCase):
                     fixture.put(0x800CBD64, 0x800E9D1C, 4)
                     fixture.put(0x80085CD0, 41, 4)
                     fixture.fprs[20:22] = [0x11223344, 0x55667788]
+                    fixture.high[20] = 0xAABBCCDD
                 self.assertEqual(fixture.run(budget=3000000), 0)
                 for register in (*range(16, 24), 28, 29, 30):
                     self.assertEqual(fixture.registers[register], fixture.before[register])
@@ -158,6 +160,7 @@ class InitAllocatorGuestFreeTests(unittest.TestCase):
                     self.assertEqual(fixture.get(0x800CBD70, 4), 0x000A000A)
                     self.assertEqual(fixture.get(0x800CBD80, 4), 0x3F800000)
                     self.assertEqual(fixture.fprs[20:22], [0x11223344, 0x55667788])
+                    self.assertEqual(fixture.high[20], 0xAABBCCDD)
 
     def test_resize_cycles_free_pool_before_bitmap_and_reclaim_heap(self):
         self.run_guest(r'''
@@ -311,20 +314,23 @@ class InitAllocatorGuestFreeTests(unittest.TestCase):
 
 
 class AllocatorGuestInstructionTests(unittest.TestCase):
-    def test_fpr_pair_save_restore_and_word_store_are_big_endian(self):
+    def test_fr1_fpr_save_restore_and_word_store_are_big_endian(self):
         fixture = AllocatorGuestFixture.__new__(AllocatorGuestFixture)
         fixture.memory, fixture.reads, fixture.writes = {}, [], []
         fixture.registers, fixture.fprs = [0] * 32, [0] * 32
+        fixture.high = [0] * 32
         fixture.readonly, fixture.allowed_writes = [], [(0x1000, 0x1010)]
         fixture.image = type("Image", (), {"memory": {}})()
         fixture.registers[1] = 0x1000
-        fixture.fprs[20:22] = [0x11223344, 0x55667788]
+        fixture.high[20], fixture.fprs[20] = 0x11223344, 0x55667788
+        fixture.fprs[21] = 0xDEADBEEF
         fixture.execute((61 << 26) | (1 << 21) | (20 << 16))
         self.assertEqual(fixture.get(0x1000, 8), 0x1122334455667788)
-        fixture.fprs[20:22] = [0, 0]
+        fixture.high[20], fixture.fprs[20] = 0, 0
         fixture.execute((53 << 26) | (1 << 21) | (20 << 16))
-        self.assertEqual(fixture.fprs[20:22], [0x11223344, 0x55667788])
-        fixture.execute((57 << 26) | (1 << 21) | (21 << 16) | 8)
+        self.assertEqual((fixture.high[20], fixture.fprs[20]), (0x11223344, 0x55667788))
+        self.assertEqual(fixture.fprs[21], 0xDEADBEEF)
+        fixture.execute((57 << 26) | (1 << 21) | (20 << 16) | 8)
         self.assertEqual(fixture.get(0x1008, 4), 0x55667788)
 
     def test_signed_halfword_reads_big_endian_and_sign_extends(self):

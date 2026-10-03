@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 839](WORKING_NOTES/839-init-block-local-storage-writers-and-fr1-fixture-correction-20261003.md)):
+Opt-in lexical block tracking finds 55 Init/1 Debugger candidates, including
+33 stores; adjacent reference data unchanged. Loaded pointers/control boundaries
+remain conservative unknowns. Callback doubleword transfers are corrected to
+FR=1; both profiles pass. All 34 focused tests pass. Next audit loaded-pointer/
+loop/diagnostic storage; ownership, fitting and production totals unchanged.
+
 2026-10-03 ([Note 838](WORKING_NOTES/838-init-static-storage-literal-census-and-enclosing-bss-clear-20261003.md)):
 Retail literal-pair census records 9 Init/1 Debugger candidates; no Game pair
 is not writer-absence proof. Startup clear arguments cover the enclosing BSS,

@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init block-local writer census: [Note 839](WORKING_NOTES/839-init-block-local-storage-writers-and-fr1-fixture-correction-20261003.md)
+finds 55 Init/1 Debugger candidates, including 33 stores: startup pointer
+publications, 35500 clear and wrapper saved context. Lexical tracking is not
+all-path ownership proof. The callback fixture's old FPR-pair interpretation
+is corrected to FR=1 and passes both IDO profiles. All 34 focused tests pass;
+loaded-pointer/loop/diagnostic storage, complete ownership and fitting stay open.
+Production and README totals unchanged.
+
 Init static literal census: [Note 838](WORKING_NOTES/838-init-static-storage-literal-census-and-enclosing-bss-clear-20261003.md)
 finds 9 Init and 1 Debugger adjacent literal pairs in the audited storage
 interval; zero Game candidates is not absence proof. Startup clear-call

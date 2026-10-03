@@ -80,5 +80,57 @@ class InitStorageLiteralTests(unittest.TestCase):
         self.assertGreaterEqual(fixture.registers[4] + fixture.registers[5], literals.HIGH)
 
 
+class InitBlockLocalStorageTests(unittest.TestCase):
+    def scan(self, *words):
+        return literals.block_local_literals(b"".join(struct.pack(">I", word) for word in words),
+                                            0x10001000)
+
+    def test_scheduled_pair_copy_and_indirect_store_have_definition_chain(self):
+        rows = self.scan(0x3C088003, 0x240B0007, 0x25083400,
+                         0x01004825, 0xAD2B0004)
+        store = rows[-1]
+        self.assertEqual((store["kind"], store["address"]), ("store", 0x80033404))
+        self.assertEqual(store["definition_pcs"], [0x10001000, 0x10001008, 0x1000100C])
+
+    def test_loaded_pointer_is_unknown_and_does_not_create_following_store(self):
+        rows = self.scan(0x3C088003, 0x25083400, 0x8D080000, 0xAD000004)
+        self.assertEqual([(row["kind"], row["address"]) for row in rows],
+                         [("address", 0x80033400), ("load", 0x80033400)])
+
+    def test_call_keeps_delay_slot_candidate_but_clears_following_values(self):
+        rows = self.scan(0x3C088003, 0x25083400, 0x0C004000, 0xAD090000, 0xAD090004)
+        self.assertEqual([row["use_pc"] for row in rows if row["kind"] == "store"],
+                         [0x1000100C])
+
+    def test_branch_target_discards_incoming_constants(self):
+        rows = self.scan(0x3C088003, 0x25083400, 0x10000002, 0,
+                         0x3C088003, 0xAD093400)
+        self.assertFalse(any(row["kind"] == "store" for row in rows))
+
+    def test_unknown_opcode_discards_all_constants(self):
+        rows = self.scan(0x3C088003, 0x25083400, 0x42000018, 0xAD090000)
+        self.assertFalse(any(row["kind"] == "store" for row in rows))
+
+    def test_addi_overflow_does_not_propagate_a_trapping_result(self):
+        rows = self.scan(0x3C087FFF, 0x3508FFFF, 0x21083500, 0xAD090000)
+        self.assertEqual(rows, [])
+
+    def test_retail_scheduled_publications_and_context_stores_are_found(self):
+        path = literals.ROOT / "baserom.us.z64"
+        if not path.is_file():
+            self.skipTest("local retail ROM required")
+        report = literals.audit(path.read_bytes(), block_local=True)
+        rows = report["block_local_references"]
+        stores = {(row["use_pc"], row["address"]) for row in rows if row["kind"] == "store"}
+        self.assertIn((0x10001350, 0x800354F8), stores)
+        self.assertIn((0x1000137C, 0x800354FC), stores)
+        self.assertIn((0x10005E24, 0x80032B18), stores)
+        self.assertIn((0x10005E30, 0x80032A98), stores)
+        self.assertEqual(report["references"], literals.audit(path.read_bytes())["references"])
+        print("block-local storage census: " + ", ".join(
+            "%s=%d" % (name, sum(row["section"] == name for row in rows))
+            for name in ("Init", "Game", "Debugger")))
+
+
 if __name__ == "__main__":
     unittest.main()

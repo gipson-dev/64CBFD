@@ -1,5 +1,10 @@
 # Init Retail Cleanup Callback Null Path and Fatal Slot
 
+Follow-up correction: [Note 839](839-init-block-local-storage-writers-and-fr1-fixture-correction-20261003.md)
+replaces this checkpoint's local even/odd FPR pair-transfer model with FR=1
+independent high/low FPR words and requalifies the callback in both IDO profiles.
+The original null-list/heap findings remain; pair-transfer semantics are superseded.
+
 Date: 2026-10-03
 
 ## Findings
