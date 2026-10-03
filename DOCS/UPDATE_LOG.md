@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 803](WORKING_NOTES/803-init-decompressor-frame-backed-c-and-guest-call-frame-bounds-20261003.md)
+  implements frame-backed experimental C with physical table addresses and
+  root/staging aliases. Fourteen variant tests and all 95 Init tests pass;
+  guest text remains overlong at 5,312/5,600 bytes. The driver measures
+  conservative direct-call frame bounds including unnamed helpers. Production
+  assembly/README aggregates stay unchanged; connected adapter/context and
+  fitting code generation remain open.
+  All 570 project tool tests and guest/tool/build/matcher checks pass;
+  both complete Init sections remain independently retail-exact.
 - Init [Note 802](WORKING_NOTES/802-init-decompressor-physical-frame-mapping-and-contract-tests-20261003.md)
   implements a physical frame view and nine scratch/ABI tests. All 76 Init
   tests pass; both guest profiles validate all frame offsets. Initializer

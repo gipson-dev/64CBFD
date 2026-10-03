@@ -8,6 +8,47 @@ import subprocess
 from pathlib import Path
 
 
+def analyze_guest_calls(text, named_entries, targets):
+    """Conservative direct-JAL frame sum, including unnamed IDO helper entries."""
+    if len(text) & 3:
+        raise ValueError("text length is not word aligned")
+    starts = sorted({0, *named_entries, *targets.values()})
+    if any(start < 0 or start >= len(text) or start & 3 for start in starts):
+        raise ValueError("call target is not a text instruction")
+    units = {}
+    for index, start in enumerate(starts):
+        end = starts[index + 1] if index + 1 < len(starts) else len(text)
+        words = struct.unpack_from(">%dI" % ((end - start) // 4), text, start)
+        frames = [0x10000 - (word & 0xFFFF) for word in words
+                  if word >> 16 == 0x27BD and word & 0x8000]
+        if len(frames) > 1:
+            raise ValueError("multiple stack allocations need control-flow analysis")
+        calls = set()
+        for offset, word in enumerate(words):
+            if word >> 26 == 2:
+                raise ValueError("absolute jump needs separate tail-transfer qualification")
+            if word >> 26 == 3:
+                pc = start + offset * 4
+                if pc not in targets:
+                    raise ValueError("direct JAL lacks a resolved relocation")
+                calls.add(targets[pc])
+            if word >> 26 == 0 and word & 63 == 9:
+                raise ValueError("indirect JALR needs separate call-graph qualification")
+        units[start] = {"entry": start, "name": named_entries.get(start, "local_%04x" % start),
+                        "frame_bytes": max(frames, default=0), "calls": sorted(calls)}
+
+    def bound(start, active=()):
+        if start in active:
+            raise ValueError("recursive call graph has no finite static frame sum")
+        unit = units[start]
+        return unit["frame_bytes"] + max((bound(target, (*active, start))
+                                         for target in unit["calls"]), default=0)
+
+    for start, unit in units.items():
+        unit["direct_call_frame_bound"] = bound(start)
+    return list(units.values())
+
+
 def inspect_object(path):
     data = path.read_bytes()
     header = struct.unpack_from(">16sHHIIIIIHHHHHH", data)
@@ -30,8 +71,10 @@ def inspect_object(path):
     functions = []
     size_symbol = None
     frame_symbol = None
+    symbol_records = []
     for offset in range(symbols[4], symbols[4] + symbols[5], symbols[9]):
         symbol = struct.unpack_from(">IIIBBH", data, offset)
+        symbol_records.append(symbol)
         label = name(symbol_strings, symbol[0])
         if symbol[3] & 15 == 2 and symbol[5] == text_index:
             functions.append((symbol[1], label))
@@ -64,17 +107,35 @@ def inspect_object(path):
                        0xA80, 0xA84)
     if frame_layout != expected_layout:
         raise ValueError("guest frame differs from recovered retail offsets")
+    relocations = sections[indices[".rel.text"]]
+    targets = {}
+    for offset in range(relocations[4], relocations[4] + relocations[5], relocations[9]):
+        pc, info = struct.unpack_from(">2I", data, offset)
+        if info & 255 != 4:
+            continue
+        word = struct.unpack_from(">I", data, text[4] + pc)[0]
+        if word >> 26 != 3:
+            raise ValueError("non-JAL R_MIPS_26 transfer needs separate qualification")
+        symbol = symbol_records[info >> 8]
+        if symbol[5] != text_index:
+            raise ValueError("external call has no local frame measurement")
+        targets[pc] = symbol[1] + ((word & 0x03FFFFFF) << 2)
+    call_graph = analyze_guest_calls(data[text[4]:text[4] + text[5]],
+                                    {start: label for start, label in functions}, targets)
     return {"text_bytes": text[5], "entry_bytes": entry_size,
             "state_bytes": state_size, "frame_layout": frame_layout,
-            "functions": measurements}
+            "functions": measurements, "call_graph": call_graph}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--frame-backed", action="store_true",
+                        help="compile the isolated physical-frame scratch variant")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
-    output = (args.output or root / "conker/build/init-decompressor-semantic").resolve()
+    suffix = "-frame" if args.frame_backed else ""
+    output = (args.output or root / ("conker/build/init-decompressor-semantic" + suffix)).resolve()
     output.mkdir(parents=True, exist_ok=True)
     cwd = root / "conker"
     compiler = "../ido/ido5.3_recomp/cc"
@@ -82,6 +143,8 @@ def main():
     common = [str(compiler), "-c", "-32", "-G", "0", "-Xfullwarn", "-Xcpluscomm",
               "-signed", "-nostdinc", "-non_shared", "-Wab,-r4300_mul",
               "-mips2", "-o32", "-DINIT_DECODE_GUEST"]
+    if args.frame_backed:
+        common.append("-DINIT_DECODE_FRAME_BACKED")
     report = {}
     for label, profile in (("o2g3", ["-O2", "-g3"]), ("o1", ["-O1"])):
         obj = output / (label + ".o")

@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init frame-backed C: [Note 803](WORKING_NOTES/803-init-decompressor-frame-backed-c-and-guest-call-frame-bounds-20261003.md)
+implements isolated physical scratch, guest table-address translation, and
+fixed/dynamic root aliases. Fourteen frame-backed tests and all 95 Init tests
+pass, including the maximum 316-cell domain and five call-analysis tests.
+Guest state is 40 bytes plus a caller-owned `0xA88` frame; text is still
+5,312/5,600 bytes. Conservative direct-call C frame bounds are 416/328 bytes,
+excluding caller storage/adapter/context. No production owner changes;
+text/stack generation and connected exception/adapter qualification remain open.
+All 570 project tool tests and guest/tool/build/matcher checks pass; both
+complete Init sections remain independently retail-exact.
+
 Init decompressor frame mapping: [Note 802](WORKING_NOTES/802-init-decompressor-physical-frame-mapping-and-contract-tests-20261003.md)
 adds an explicit physical `0xA88` view, guest/native offset checks, and nine
 scratch/interface tests. All 76 Init tests pass. Sixteen table cells, 316

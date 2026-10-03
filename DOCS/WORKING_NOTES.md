@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-03 ([Note 803](WORKING_NOTES/803-init-decompressor-frame-backed-c-and-guest-call-frame-bounds-20261003.md)):
+Isolated frame-backed C uses physical scratch/root aliases and explicit guest
+table addresses. Fourteen variant tests and all 95 Init tests pass; full
+316-cell lengths and relocated workspaces are covered. Both guest profiles
+compile: text 5,312/5,600 bytes, scalar state forty bytes plus physical frame.
+Relocation-aware direct-call bounds include unnamed helpers (core 416/328
+bytes), with five analyzer tests. No production conversion or aggregate change;
+adapter/context ownership and fitting text/stack generation remain open.
+All 570 project tool tests, guest/tool/build/matcher checks, and both whole
+Init section comparisons pass.
+
 2026-10-03 ([Note 802](WORKING_NOTES/802-init-decompressor-physical-frame-mapping-and-contract-tests-20261003.md)):
 An explicit physical `0xA88` decompressor frame view matches guest/native
 offsets; nine new tests compare scratch arrays, pointer/index translations,

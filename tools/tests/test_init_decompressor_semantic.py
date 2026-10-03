@@ -30,14 +30,19 @@ class State(ctypes.Structure):
 
 
 class SemanticFixture:
+    @staticmethod
+    def make_state():
+        state = State()
+        ctypes.memset(ctypes.byref(state), 0xA5, ctypes.sizeof(state))
+        return state
+
     def __init__(self, library, raw=b"", limit=0x70000000):
         self.library = library
         self.input = ctypes.create_string_buffer(raw + b"\0" * 16)
         self.output = ctypes.create_string_buffer(b"\xa5" * 0x10020)
         self.workspace = (Entry * 16384)()
         ctypes.memset(self.workspace, 0xA5, ctypes.sizeof(self.workspace))
-        self.state = State()
-        ctypes.memset(ctypes.byref(self.state), 0xA5, ctypes.sizeof(self.state))
+        self.state = self.make_state()
         self.state.input = ctypes.addressof(self.input)
         self.state.output = ctypes.addressof(self.output) + 16
         self.state.workspace = self.workspace
@@ -48,8 +53,7 @@ class SemanticFixture:
     def fixed(self):
         fixed = (Entry * 16384)()
         ctypes.memset(fixed, 0xA5, ctypes.sizeof(fixed))
-        state = State()
-        ctypes.memset(ctypes.byref(state), 0xA5, ctypes.sizeof(state))
+        state = self.make_state()
         state.workspace = fixed
         state.reservoir = 0
         self.library.init_decode_fixed_tables(ctypes.byref(state))
@@ -66,6 +70,10 @@ class SemanticFixture:
 
 
 class InitDecompressorSemanticTests(unittest.TestCase):
+    state_type = State
+    fixture_type = SemanticFixture
+    compiler_flags = ()
+
     @classmethod
     def setUpClass(cls):
         compiler = shutil.which("cc")
@@ -76,20 +84,22 @@ class InitDecompressorSemanticTests(unittest.TestCase):
         path = Path(cls.directory.name) / "semantic.so"
         source = Path(__file__).resolve().parents[1] / "experiments/init_decompressor_semantic.c"
         result = subprocess.run([compiler, "-std=c99", "-O2", "-shared", "-fPIC", "-fwrapv",
-                        "-Wall", "-Wextra", "-Werror", str(source), "-o", str(path)],
+                        "-Wall", "-Wextra", "-Werror", *getattr(cls, "compiler_flags", ()),
+                        str(source), "-o", str(path)],
                        capture_output=True, text=True)
         if result.returncode:
             raise AssertionError(result.stderr)
         cls.library = ctypes.CDLL(str(path))
-        cls.library.init_decode_build.argtypes = [ctypes.POINTER(State),
+        state_type = ctypes.POINTER(getattr(cls, "state_type", State))
+        cls.library.init_decode_build.argtypes = [state_type,
             ctypes.POINTER(ctypes.c_uint32), ctypes.c_uint32, ctypes.c_uint32,
             ctypes.POINTER(ctypes.c_uint16), ctypes.POINTER(ctypes.c_uint8),
             ctypes.POINTER(ctypes.c_uint16), ctypes.POINTER(ctypes.c_uint32)]
-        cls.library.init_decode_compressed.argtypes = [ctypes.POINTER(State)] + [ctypes.c_uint32] * 4
-        cls.library.init_decode_stored.argtypes = [ctypes.POINTER(State)]
-        cls.library.init_decode_fixed_tables.argtypes = [ctypes.POINTER(State)]
-        cls.library.init_decode_stream.argtypes = [ctypes.POINTER(State), ctypes.POINTER(Entry)]
-        cls.library.init_decode_core.argtypes = [ctypes.POINTER(State), ctypes.POINTER(Entry)] + [ctypes.c_uint32] * 3
+        cls.library.init_decode_compressed.argtypes = [state_type] + [ctypes.c_uint32] * 4
+        cls.library.init_decode_stored.argtypes = [state_type]
+        cls.library.init_decode_fixed_tables.argtypes = [state_type]
+        cls.library.init_decode_stream.argtypes = [state_type, ctypes.POINTER(Entry)]
+        cls.library.init_decode_core.argtypes = [state_type, ctypes.POINTER(Entry)] + [ctypes.c_uint32] * 3
         contract.InitDecompressorContractTests.setUpClass.__func__(
             contract.InitDecompressorContractTests)
         decoder.InitDecompressorDecoderTests.setUpClass.__func__(
@@ -102,7 +112,7 @@ class InitDecompressorSemanticTests(unittest.TestCase):
             # candidate/model stream entries start with the same physical bytes.
             model.memory.update({model.STACK + i: scratch_pattern for i in range(0xA38)})
         model_status = model.stream()
-        candidate = SemanticFixture(self.library, raw, limit)
+        candidate = getattr(self, "fixture_type", SemanticFixture)(self.library, raw, limit)
         self.assertEqual(candidate.stream(), model_status)
         self.assertEqual(candidate.state.produced, model.fprs[17])
         self.assertEqual(candidate.state.reservoir, model.registers[28])
@@ -132,7 +142,7 @@ class InitDecompressorSemanticTests(unittest.TestCase):
         return candidate, model
 
     def test_fixed_table_allocation_and_all_written_bytes_match_model(self):
-        candidate = SemanticFixture(self.library)
+        candidate = self.fixture_type(self.library)
         fixed, state = candidate.fixed()
         model = decoder.FixedDecoderFixture(b"\x03")
         self.assertEqual(state.allocated, 658)
@@ -150,7 +160,7 @@ class InitDecompressorSemanticTests(unittest.TestCase):
                               ([1, 1, 1], 1, 0), ([2] * 5, 2, 0),
                               ([1, 2, 2], 1, 11), ([1, 2, 3, 3], 1, 11)):
             model = tables.BuilderFixture(lengths, bits=bits, allocated=allocated)
-            candidate = SemanticFixture(self.library)
+            candidate = self.fixture_type(self.library)
             candidate.state.allocated = allocated
             values = (ctypes.c_uint32 * len(lengths))(*lengths)
             root, width = ctypes.c_uint16(0xABCD), ctypes.c_uint32(bits)
@@ -214,7 +224,7 @@ class InitDecompressorSemanticTests(unittest.TestCase):
                     model = streams.StreamFixture(raw)
                     model.capture = {0x100062F0}
                     status = model.core(False, alignment, workspace)
-                    candidate = SemanticFixture(self.library, raw)
+                    candidate = self.fixture_type(self.library, raw)
                     candidate.state.input += alignment
                     fixed, _ = candidate.fixed()
                     result = self.library.init_decode_core(ctypes.byref(candidate.state), fixed,
@@ -231,7 +241,7 @@ class InitDecompressorSemanticTests(unittest.TestCase):
                     self.assertEqual(candidate.state.bits, registers[30])
         raw = b"\x11\x72\x07"
         model = streams.StreamFixture(raw)
-        candidate = SemanticFixture(self.library, raw)
+        candidate = self.fixture_type(self.library, raw)
         fixed, _ = candidate.fixed()
         self.assertEqual(self.library.init_decode_core(ctypes.byref(candidate.state), fixed,
             model.INPUT, model.OUTPUT, model.WORKSPACE), model.core(True))
@@ -255,7 +265,7 @@ class InitDecompressorSemanticTests(unittest.TestCase):
         self.assert_model(bits.data() + dynamic, b"XYBCA")
         bad = streams.InitDecompressorStreamTests().dynamic(overflow=True)
         model = streams.StreamFixture(b"\x11\x72" + stored + bad)
-        candidate = SemanticFixture(self.library, b"\x11\x72" + stored + bad)
+        candidate = self.fixture_type(self.library, b"\x11\x72" + stored + bad)
         fixed, _ = candidate.fixed()
         self.assertEqual(self.library.init_decode_core(ctypes.byref(candidate.state), fixed,
             model.INPUT, model.OUTPUT, model.WORKSPACE), model.core(True))
@@ -272,7 +282,7 @@ class InitDecompressorSemanticTests(unittest.TestCase):
             raw = encoder.encoded([(length, distance, li)])
             model = decoder.FixedDecoderFixture(raw, prefix=prefix)
             status = model.decode()
-            candidate = SemanticFixture(self.library, raw)
+            candidate = self.fixture_type(self.library, raw)
             ctypes.memmove(candidate.state.output, prefix, len(prefix))
             candidate.state.produced = len(prefix)
             candidate.state.input += 1

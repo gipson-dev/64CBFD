@@ -25,12 +25,54 @@ typedef struct {
     int32_t produced;
     int32_t limit;
     uint32_t allocated;
+#ifdef INIT_DECODE_FRAME_BACKED
+    InitDecodeFrame *frame;
+    uint32_t workspaceAddress;
+#else
     uint32_t counts[17];
     uint32_t tables[17];
     uint32_t sorted[288];
     uint32_t offsets[17];
     uint32_t lengths[320];
+#endif
 } InitDecodeState;
+
+#ifdef INIT_DECODE_FRAME_BACKED
+#define COUNTS(s) ((s)->frame->counts)
+#define SORTED(s) ((s)->frame->sorted)
+#define OFFSETS(s) ((s)->frame->offsets)
+#define LENGTHS(s) ((s)->frame->staging.lengths)
+#define SET_TABLE(s, level, index) \
+    ((s)->frame->tables[level] = (s)->workspaceAddress + 4 * (index))
+#define TABLE_INDEX(s, level) (((s)->frame->tables[level] - (s)->workspaceAddress) >> 2)
+#define CODE_ROOT(s) ((s)->frame->literalRoot)
+#define LITERAL_ROOT(s) ((s)->frame->literalRoot)
+#define DISTANCE_ROOT(s) ((s)->frame->distanceRoot)
+#define CODE_BITS(s) ((s)->frame->literalBits)
+#define LITERAL_BITS(s) ((s)->frame->literalBits)
+#define DISTANCE_BITS(s) ((s)->frame->distanceBits)
+#define FIXED_LITERAL_ROOT(s) ((s)->frame->staging.fixed.literalRoot)
+#define FIXED_DISTANCE_ROOT(s) ((s)->frame->staging.fixed.distanceRoot)
+#define FIXED_LITERAL_BITS(s) ((s)->frame->staging.fixed.literalBits)
+#define FIXED_DISTANCE_BITS(s) ((s)->frame->staging.fixed.distanceBits)
+#else
+#define COUNTS(s) ((s)->counts)
+#define SORTED(s) ((s)->sorted)
+#define OFFSETS(s) ((s)->offsets)
+#define LENGTHS(s) ((s)->lengths)
+#define SET_TABLE(s, level, index) ((s)->tables[level] = (index))
+#define TABLE_INDEX(s, level) ((s)->tables[level])
+#define CODE_ROOT(s) (codeRoot)
+#define LITERAL_ROOT(s) (literalRoot)
+#define DISTANCE_ROOT(s) (distanceRoot)
+#define CODE_BITS(s) (codeBits)
+#define LITERAL_BITS(s) (literalBits)
+#define DISTANCE_BITS(s) (distanceBits)
+#define FIXED_LITERAL_ROOT(s) (root)
+#define FIXED_DISTANCE_ROOT(s) (root)
+#define FIXED_LITERAL_BITS(s) (bits)
+#define FIXED_DISTANCE_BITS(s) (bits)
+#endif
 
 #ifdef INIT_DECODE_GUEST
 uint32_t init_decode_guest_sizes[] = {sizeof(InitDecodeEntry), sizeof(InitDecodeState)};
@@ -103,42 +145,45 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
         return 1;
     }
     for (bits = 0; bits <= 16; bits++) {
-        s->counts[bits] = 0;
+        COUNTS(s)[bits] = 0;
     }
     for (symbolIndex = 0; symbolIndex < count; symbolIndex++) {
-        s->counts[lengths[symbolIndex]]++;
+        COUNTS(s)[lengths[symbolIndex]]++;
     }
-    if (s->counts[0] == count) {
+    if (COUNTS(s)[0] == count) {
         *root = 0;
         *rootBits = 0;
         return 0;
     }
-    for (min = 1; min < 16 && s->counts[min] == 0; min++) {}
-    for (max = 16; max && s->counts[max] == 0; max--) {}
+    for (min = 1; min < 16 && COUNTS(s)[min] == 0; min++) {}
+    for (max = 16; max && COUNTS(s)[max] == 0; max--) {}
     width = *rootBits;
     if (width < min) width = min;
     if (width > max) width = max;
     *rootBits = width;
     available = 1u << min;
     for (bits = min; bits < max; bits++) {
-        available = (available - s->counts[bits]) << 1;
+        available = (available - COUNTS(s)[bits]) << 1;
     }
-    incomplete = available - s->counts[max];
-    s->counts[max] = available;
-    s->offsets[1] = 0;
+    incomplete = available - COUNTS(s)[max];
+    COUNTS(s)[max] = available;
+    OFFSETS(s)[1] = 0;
     for (bits = 1; bits < max; bits++) {
-        s->offsets[bits + 1] = s->offsets[bits] + s->counts[bits];
+        OFFSETS(s)[bits + 1] = OFFSETS(s)[bits] + COUNTS(s)[bits];
     }
     for (symbolIndex = 0; symbolIndex < count; symbolIndex++) {
         bits = lengths[symbolIndex];
-        if (bits != 0) s->sorted[s->offsets[bits]++] = symbolIndex;
+        if (bits != 0) SORTED(s)[OFFSETS(s)[bits]++] = symbolIndex;
     }
-    s->offsets[0] = 0;
+    OFFSETS(s)[0] = 0;
+#ifdef INIT_DECODE_FRAME_BACKED
+    s->frame->tables[0] = 0;
+#endif
     code = 0;
     symbolIndex = 0;
     consumed = -(int32_t)width;
     for (bits = min; bits <= max; bits++) {
-        remaining = s->counts[bits];
+        remaining = COUNTS(s)[bits];
         while (remaining != 0) {
             InitDecodeEntry entry;
             while ((int32_t)bits > consumed + (int32_t)width) {
@@ -157,8 +202,8 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                     while (levelBits < ceiling) {
                         slots <<= 1;
                         scan++;
-                        if (s->counts[scan] >= slots) break;
-                        slots -= s->counts[scan];
+                        if (COUNTS(s)[scan] >= slots) break;
+                        slots -= COUNTS(s)[scan];
                         levelBits++;
                     }
                 }
@@ -168,11 +213,11 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                 link = &s->workspace[s->allocated].value;
                 *link = 0;
                 table = next;
-                s->tables[level] = table;
+                SET_TABLE(s, level, table);
                 if (level != 0) {
                     InitDecodeEntry *parent;
-                    s->offsets[level] = code;
-                    parent = &s->workspace[s->tables[level - 1] +
+                    OFFSETS(s)[level] = code;
+                    parent = &s->workspace[TABLE_INDEX(s, level - 1) +
                         (code >> ((consumed - (int32_t)width) & 31))];
                     parent->operation = levelBits + 16;
                     parent->bits = width;
@@ -184,7 +229,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
             entry.operation = 99;
             entry.bits = bits - consumed;
             if (symbolIndex < count) {
-                uint32_t symbol = s->sorted[symbolIndex++];
+                uint32_t symbol = SORTED(s)[symbolIndex++];
                 if (symbol < simple) {
                     entry.operation = symbol < 256 ? 16 : 15;
                     value = symbol;
@@ -204,7 +249,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                 next >>= 1;
             }
             code ^= next;
-            while ((code & low_mask(consumed)) != s->offsets[level]) {
+            while ((code & low_mask(consumed)) != OFFSETS(s)[level]) {
                 level--;
                 consumed -= width;
             }
@@ -276,16 +321,23 @@ int init_decode_stored(InitDecodeState *s) {
 }
 
 void init_decode_fixed_tables(InitDecodeState *s) {
+#ifdef INIT_DECODE_FRAME_BACKED
+    uint32_t i;
+    FIXED_LITERAL_BITS(s) = 7;
+#else
     uint16_t root;
     uint32_t i, bits = 7;
+#endif
     s->allocated = 0;
     for (i = 0; i < 288; i++) {
-        s->lengths[i] = i < 144 ? 8 : i < 256 ? 9 : i < 280 ? 7 : 8;
+        LENGTHS(s)[i] = i < 144 ? 8 : i < 256 ? 9 : i < 280 ? 7 : 8;
     }
-    init_decode_build(s, s->lengths, 288, 257, lengthBase, lengthExtra, &root, &bits);
-    for (i = 0; i < 30; i++) s->lengths[i] = 5;
-    bits = 5;
-    init_decode_build(s, s->lengths, 30, 0, distanceBase, distanceExtra, &root, &bits);
+    init_decode_build(s, LENGTHS(s), 288, 257, lengthBase, lengthExtra,
+                      &FIXED_LITERAL_ROOT(s), &FIXED_LITERAL_BITS(s));
+    for (i = 0; i < 30; i++) LENGTHS(s)[i] = 5;
+    FIXED_DISTANCE_BITS(s) = 5;
+    init_decode_build(s, LENGTHS(s), 30, 0, distanceBase, distanceExtra,
+                      &FIXED_DISTANCE_ROOT(s), &FIXED_DISTANCE_BITS(s));
 }
 
 int init_decode_dynamic(InitDecodeState *s) {
@@ -293,22 +345,27 @@ int init_decode_dynamic(InitDecodeState *s) {
     uint32_t literals = (packed & 31) + 257;
     uint32_t distances = ((packed >> 5) & 31) + 1;
     uint32_t transmitted = ((packed >> 10) & 15) + 4;
+#ifndef INIT_DECODE_FRAME_BACKED
     uint32_t codeBits = 7, literalBits = 9, distanceBits = 6;
     uint16_t codeRoot, literalRoot, distanceRoot;
+#endif
     uint32_t i, symbol, previous = 0, repeats, total = literals + distances;
     if (literals >= 287 || distances >= 31) return 1;
-    for (i = 0; i < transmitted; i++) s->lengths[lengthOrder[i]] = take_bits(s, 3);
-    for (; i < 19; i++) s->lengths[lengthOrder[i]] = 0;
-    init_decode_build(s, s->lengths, 19, 19, 0, 0, &codeRoot, &codeBits);
+    for (i = 0; i < transmitted; i++) LENGTHS(s)[lengthOrder[i]] = take_bits(s, 3);
+    for (; i < 19; i++) LENGTHS(s)[lengthOrder[i]] = 0;
+#ifdef INIT_DECODE_FRAME_BACKED
+    CODE_BITS(s) = 7;
+#endif
+    init_decode_build(s, LENGTHS(s), 19, 19, 0, 0, &CODE_ROOT(s), &CODE_BITS(s));
     i = 0;
     while (i < total) {
         InitDecodeEntry *entry;
-        need_bits(s, codeBits);
-        entry = &s->workspace[codeRoot + (s->reservoir & low_mask(codeBits))];
+        need_bits(s, CODE_BITS(s));
+        entry = &s->workspace[CODE_ROOT(s) + (s->reservoir & low_mask(CODE_BITS(s)))];
         drop_bits(s, entry->bits);
         symbol = entry->value;
         if (symbol < 16) {
-            s->lengths[i++] = previous = symbol;
+            LENGTHS(s)[i++] = previous = symbol;
             continue;
         }
         if (symbol == 16) {
@@ -319,14 +376,21 @@ int init_decode_dynamic(InitDecodeState *s) {
             repeats = take_bits(s, 7) + 11;
         }
         if (i + repeats > total) return 1;
-        while (repeats--) s->lengths[i++] = symbol == 16 ? previous : 0;
+        while (repeats--) LENGTHS(s)[i++] = symbol == 16 ? previous : 0;
         if (symbol != 16) previous = 0;
     }
-    if (init_decode_build(s, s->lengths, literals, 257, lengthBase, lengthExtra,
-                          &literalRoot, &literalBits)) return 1;
-    if (init_decode_build(s, s->lengths + literals, distances, 0,
-                          distanceBase, distanceExtra, &distanceRoot, &distanceBits)) return 1;
-    return init_decode_compressed(s, literalRoot, distanceRoot, literalBits, distanceBits);
+#ifdef INIT_DECODE_FRAME_BACKED
+    LITERAL_BITS(s) = 9;
+#endif
+    if (init_decode_build(s, LENGTHS(s), literals, 257, lengthBase, lengthExtra,
+                          &LITERAL_ROOT(s), &LITERAL_BITS(s))) return 1;
+#ifdef INIT_DECODE_FRAME_BACKED
+    DISTANCE_BITS(s) = 6;
+#endif
+    if (init_decode_build(s, LENGTHS(s) + literals, distances, 0,
+                          distanceBase, distanceExtra, &DISTANCE_ROOT(s), &DISTANCE_BITS(s))) return 1;
+    return init_decode_compressed(s, LITERAL_ROOT(s), DISTANCE_ROOT(s),
+                                  LITERAL_BITS(s), DISTANCE_BITS(s));
 }
 
 int init_decode_stream(InitDecodeState *s, InitDecodeEntry *fixedWorkspace) {
@@ -373,6 +437,9 @@ int init_decode_core(InitDecodeState *s, InitDecodeEntry *fixedWorkspace,
     uint32_t opening = ((uint32_t)header[0] << 24) | ((uint32_t)header[1] << 16) |
                        ((uint32_t)header[2] << 8) | header[3];
     int32_t distance = inputAddress - outputAddress;
+#ifdef INIT_DECODE_FRAME_BACKED
+    s->workspaceAddress = workspaceAddress;
+#endif
     s->input += (opening >> 16) == 0x1172 ? 2 : 4;
     s->limit = 0x70000000;
     if (distance > 0) s->limit = distance;

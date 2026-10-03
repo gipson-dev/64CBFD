@@ -2,6 +2,12 @@
 
 Date: 2026-10-03. HEAD before this work: `47f7ce85`.
 
+Follow-up: [Note 803](803-init-decompressor-frame-backed-c-and-guest-call-frame-bounds-20261003.md)
+implements the isolated frame-backed scratch representation and measures guest
+call frames, including unnamed helpers. The candidate still has no original
+entry adapter and remains overlong; this note's first prototype step is no
+longer merely pending.
+
 ## Result
 
 The experimental decompressor now has an explicit physical retail frame view
