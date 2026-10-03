@@ -1,5 +1,10 @@
 # Init Bitmap Retail Caller Domain And Edge Contract
 
+Later [Note 833](833-init-page-pool-retry-and-zero-count-fallback-contract-20261003.md)
+distinguishes this positive requested-input domain from post-allocation fallback
+count. A saved zero old count can conditionally produce zero endpoint geometry;
+no actual gameplay failure or change to this direct-caller arithmetic is claimed.
+
 Date: 2026-10-03.
 
 Follow-up: [Note 789](789-init-bitmap-allocator-provenance-and-rear-bound-correction-20261003.md)

@@ -185,6 +185,19 @@ static s32 valid_lists(void) {
     return 0;
 ''')
 
+    def test_zero_count_pool_and_bitmap_requests_can_allocate(self):
+        self.run_case(r'''
+    s32 pool, bitmap;
+    initialize();
+    pool = func_10003C6C(0, 0xFF, 4, 1, 2);
+    bitmap = allocate_memory(0, 0xFF, 0, 0);
+    if (!pool || !bitmap || !in_heap((u32)pool, 8) || !in_heap((u32)bitmap, 8)) return 1;
+    if ((u32)pool & 0x1FFF) return 2;
+    if ((((struct54 *)((u32)bitmap - 0xC))->unk8 & 0xFFFFFF) != 8) return 3;
+    if (!valid_lists() || errors) return 4;
+    return 0;
+''')
+
     def test_repeated_mixed_direction_allocations_preserve_heap_bounds(self):
         self.run_case(r'''
     s32 i, direction, allocation, size;

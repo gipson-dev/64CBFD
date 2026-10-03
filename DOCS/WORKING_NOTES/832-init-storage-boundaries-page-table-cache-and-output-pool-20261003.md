@@ -125,3 +125,11 @@ wsl python3 -m unittest tools.tests.test_init_decompressor_storage_boundaries to
 [Note 831](831-init-explicit-corpus-cu1-modes-and-clear-full-pass-20261003.md)
 still supplies the latest loop-lookup full-page CU1-clear receipt. This note
 does not transfer that private-buffer pass into a complete ownership proof.
+
+## Follow-up
+
+[Note 833](833-init-page-pool-retry-and-zero-count-fallback-contract-20261003.md)
+executes the setup retry path with allocator stubs and adds native zero-request
+allocation coverage. Fallback reallocates the old count; a zero old count can
+conditionally produce end=start-1 despite allocation success. Complete real
+free/resize/fatal lifetime and ownership remain open; no production change.

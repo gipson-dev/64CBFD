@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 833](WORKING_NOTES/833-init-page-pool-retry-and-zero-count-fallback-contract-20261003.md)
+  qualifies bounded setup retry paths and native zero-request allocation.
+  Positive inputs alone do not exclude zero post-fallback geometry. All 26
+  focused tests pass. No runtime failure claim or behavior fix; production,
+  README totals, decoder/adapter and pending Game work unchanged.
+
 - Init [Note 832](WORKING_NOTES/832-init-storage-boundaries-page-table-cache-and-output-pool-20261003.md)
   adds bounded original-word storage arithmetic tests. Table DMA ends at input;
   inclusive cache operands cross workspace without proving input capacity.

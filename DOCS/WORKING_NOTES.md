@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 833](WORKING_NOTES/833-init-page-pool-retry-and-zero-count-fallback-contract-20261003.md)):
+Original setup retries the saved old count, not an old live allocation.
+Zero previous count can conditionally yield count=0/end=start-1 even with
+nonzero allocation results; native recovered allocator tests permit zero-size
+success. All 26 focused tests pass. This is stubbed retry/native allocator
+evidence, not observed gameplay failure or a production fix. Next audit actual
+free/resize/fatal lifetimes; ownership/fault bounds and fitting stay open.
+
 2026-10-03 ([Note 832](WORKING_NOTES/832-init-storage-boundaries-page-table-cache-and-output-pool-20261003.md)):
 Pinned retail arithmetic confirms a 2,048-byte table DMA ending at input,
 257 inclusive cache operands crossing the workspace address range, and

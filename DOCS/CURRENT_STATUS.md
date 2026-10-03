@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init page-pool retry contract: [Note 833](WORKING_NOTES/833-init-page-pool-retry-and-zero-count-fallback-contract-20261003.md)
+pins the complete setup slot and executes success/retry/failure cases with
+allocator stubs. Zero previous count can conditionally publish end=start-1;
+native production-C tests show zero requests can allocate nonzero storage.
+Positive requested counts therefore do not prove positive post-fallback count.
+All 26 focused tests pass. No real failure reachability or complete ownership
+claim; production, decoder/adapter, fitting and README aggregates unchanged.
+
 Init storage boundaries: [Note 832](WORKING_NOTES/832-init-storage-boundaries-page-table-cache-and-output-pool-20261003.md)
 executes pinned startup/table, cache-operand and output-pool arithmetic. The
 2,048-byte table DMA ends at input start; max page DMA remains 3,072 with a
