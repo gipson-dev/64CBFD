@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init loaded table loop: [Note 840](WORKING_NOTES/840-init-retail-loaded-page-table-loop-write-footprint-20261003.md)
+executes all 19 retail words over 508 offsets. Exactly 2,032 bytes are rewritten;
+the 16-byte DMA tail and following input guard remain unchanged. Six relocated/
+small-count cases and zero-count skip pass. All 41 focused tests pass. Actual
+DMA/cache, other loaded writers, diagnostic storage and full reservation ownership
+remain open; fitting, production and README totals unchanged.
+
 Init block-local writer census: [Note 839](WORKING_NOTES/839-init-block-local-storage-writers-and-fr1-fixture-correction-20261003.md)
 finds 55 Init/1 Debugger candidates, including 33 stores: startup pointer
 publications, 35500 clear and wrapper saved context. Lexical tracking is not

@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 840](WORKING_NOTES/840-init-retail-loaded-page-table-loop-write-footprint-20261003.md)):
+ROM-pinned startup loop decodes all 508 offsets with exactly 2,032 ordered
+write bytes, leaving DMA tail/input guards untouched. Reloaded table pointer,
+six relocated/count fixtures and zero-count skip pass. All 41 focused tests
+pass. DMA/cache and full reservations remain outside scope; next audit enabled
+diagnostic storage/other loaded writers. Production and fitting unchanged.
+
 2026-10-03 ([Note 839](WORKING_NOTES/839-init-block-local-storage-writers-and-fr1-fixture-correction-20261003.md)):
 Opt-in lexical block tracking finds 55 Init/1 Debugger candidates, including
 33 stores; adjacent reference data unchanged. Loaded pointers/control boundaries

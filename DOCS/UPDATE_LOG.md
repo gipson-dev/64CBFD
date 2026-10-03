@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 840](WORKING_NOTES/840-init-retail-loaded-page-table-loop-write-footprint-20261003.md)
+  qualifies the original loaded-pointer startup loop: 508 offsets, 2,032
+  exact write bytes, untouched DMA tail/input guard. All 41 focused tests pass.
+  DMA/cache, other writers and complete reservations remain open. No production,
+  decoder/adapter, fitting or README aggregate changes.
+
 - Init [Note 839](WORKING_NOTES/839-init-block-local-storage-writers-and-fr1-fixture-correction-20261003.md)
   adds optional block-local literal tracking and identifies 33 store candidates.
   Corrects the callback fixture to FR=1 independent FPR high/low words and

@@ -1,3 +1,4 @@
+import re
 import struct
 import unittest
 
@@ -34,6 +35,27 @@ class StorageAddressFixture(tables.BuilderFixture):
                 (self.registers[base] + offset) & 0xFFFFFFFF))
         else:
             super().execute(word)
+
+
+class TableLoopFixture(StorageAddressFixture):
+    def __init__(self, code, raw, address, count):
+        self.write_interval = None
+        super().__init__(code)
+        self.table, self.payload = address, raw
+        self.memory.update((address + i, byte) for i, byte in enumerate(raw))
+        self.put(0x800354FC, address, 4)
+        self.put(self.STACK + 0x28, count, 4)
+        self.put(self.STACK + 0x4C, count, 4)
+        self.registers[16] = 0x42450
+        self.reads, self.writes = [], []
+        self.write_interval = (address, address + count * 4)
+
+    def put(self, address, value, size):
+        if self.write_interval is not None:
+            first, last = self.write_interval
+            if not first <= address <= address + size <= last:
+                raise AssertionError("table decode write exceeds declared word count")
+        super().put(address, value, size)
 
 
 class InitDecompressorStorageBoundaryTests(unittest.TestCase):
@@ -122,6 +144,58 @@ class InitDecompressorStorageBoundaryTests(unittest.TestCase):
                 self.assertLessEqual(fixture.registers[17] + 0x1000, pool + count * 0x1000)
                 self.assertEqual(fixture.get(address, 1), 0xFF ^ (1 << bit))
                 self.assertEqual(fixture.writes, [(address, 1)])
+
+    def table_loop_code(self):
+        source = (contract.InitDecompressorContractTests.project /
+                  "asm/nonmatchings/init_1050/func_10001194.s").read_text()
+        entries = {int(pc, 16): int(word, 16) for pc, word in re.findall(
+            r"/\*\s*[0-9A-Fa-f]+\s+([0-9A-Fa-f]{8})\s+([0-9A-Fa-f]{8})\s*\*/", source)}
+        code = {pc: entries[pc] for pc in range(0x10001398, 0x100013E4, 4)}
+        self.assertEqual(len(code), 19)
+        for pc, word in code.items():
+            self.assertEqual(struct.unpack_from(">I", self.rom, pc - 0x10000000)[0], word)
+        return code
+
+    def test_all_retail_page_table_offsets_decode_without_tail_or_input_writes(self):
+        table, count = 0x80032B30, len(self.pages) + 1
+        self.assertEqual(count, 508)
+        raw = self.rom[0x42454:0x42454 + 2048] + b"\xA5" * 16
+        fixture = TableLoopFixture(self.table_loop_code(), raw, table, count)
+        fixture.run(entry=0x10001398, stop_pc=0x100013E4, budget=8192)
+        expected = [page[1] for page in self.pages] + [self.pages[-1][2]]
+        self.assertEqual([fixture.get(table + i * 4, 4) for i in range(count)], expected)
+        self.assertEqual(fixture.writes, [(table + i * 4, 4) for i in range(count)])
+        self.assertEqual(fixture.reads.count((0x800354FC, 4)), count)
+        self.assertEqual(fixture.visits[0x100013BC], count)
+        self.assertEqual(fixture.visits[0x100013DC], count)
+        self.assertEqual(fixture.registers[3:5], [count, count * 4])
+        self.assertEqual(fixture.get(0x800354FC, 4), table)
+        self.assertEqual(bytes(fixture.memory[table + i] for i in range(count * 4, len(raw))),
+                         raw[count * 4:])
+        self.assertEqual(table + count * 4, 0x80033320)
+        self.assertEqual(table + 2048, retail.INPUT)
+
+    def test_table_loop_loaded_pointer_and_cursor_on_relocated_small_fixtures(self):
+        code = self.table_loop_code()
+        for address in (0x80032B30, 0x81000000):
+            for count in (1, 2, 17):
+                with self.subTest(address=hex(address), count=count):
+                    values = [0x42480 + i * 0x20 for i in range(count)]
+                    raw = b"".join(struct.pack(">I", (value - 0x42450) ^ 0x8039CCCA)
+                                   for value in values) + b"\xA5" * 16
+                    fixture = TableLoopFixture(code, raw, address, count)
+                    fixture.run(entry=0x10001398, stop_pc=0x100013E4, budget=256)
+                    self.assertEqual([fixture.get(address + i * 4, 4) for i in range(count)], values)
+                    self.assertEqual(fixture.writes, [(address + i * 4, 4) for i in range(count)])
+                    self.assertEqual(bytes(fixture.memory[address + count * 4 + i]
+                                           for i in range(16)), b"\xA5" * 16)
+
+    def test_zero_table_count_skips_pointer_dereference_and_all_writes(self):
+        fixture = TableLoopFixture(self.table_loop_code(), b"\xA5" * 16, 0x80032B30, 0)
+        fixture.run(entry=0x10001398, stop_pc=0x100013E4, budget=16)
+        self.assertEqual(fixture.writes, [])
+        self.assertNotIn((0x800354FC, 4), fixture.reads)
+        self.assertNotIn(0x100013BC, fixture.visits)
 
 
 if __name__ == "__main__":
