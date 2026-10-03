@@ -1,4 +1,6 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_49D30,func_1501CDC0,0x014,0x00001025,0x0304C023,-,-,Normalize independent row-offset and counter initialization schedule,,,false
+generated_49D30,func_1501CDC0,0x01C,0x0304C023,0x00001025,-,-,Normalize independent row-offset and counter initialization schedule,,,false
 game_1FFF60,func_151D2F00,0x018,0x8FA50034,0x8FA6002C,-,-,Normalize independent homed allocator argument setup schedule,,,false
 game_1FFF60,func_151D2F00,0x01C,0x8FA6002C,0x93AE0033,-,-,Normalize independent homed allocator argument setup schedule,,,false
 game_1FFF60,func_151D2F00,0x020,0x93AE0033,0x240F0001,-,-,Normalize independent homed allocator argument setup schedule,,,false

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game row-destination byte fill matched
+
+- `func_1501CDC0` replaces its zero-return placeholder with sixteen-byte
+  fills across active destination pointers, preserving repeated pointer
+  loads and the count reread. All 37 words match with two strict guards.
+- Six 32-bit tests cover zero counts, exact bounds, 120-byte row stride,
+  thirty slots, duplicates, and a self-aliasing pointer reload case. All
+  91 tool tests, project checks, and the full build pass. Both entire Init
+  sections remain byte-exact.
+- Total exact C is 3,251 / 5,461 (59.53%); Game is 2,578 / 4,788 (53.84%).
+  Resume ordinary Game at `func_15040CC8`. See
+  [Working Note 748](WORKING_NOTES/748-game-row-destination-byte-fill-match-20261002.md).
+
 ### Game menu-state reset directly matched
 
 - `func_151DE85C` replaces its zero-return placeholder with gate reset,

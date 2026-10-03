@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-02 ([Note 748](WORKING_NOTES/748-game-row-destination-byte-fill-match-20261002.md)):
+Game `func_1501CDC0` matches its complete 37-word row-destination byte fill.
+Two strict guards normalize only independent opening scheduling. Six 32-bit
+behavior tests and all 91 tool tests pass; the full build passes and both
+entire Init sections remain byte-exact. Resume ordinary Game at `func_15040CC8`.
+
 2026-10-02 ([Note 747](WORKING_NOTES/747-game-menu-state-reset-direct-match-20261002.md)):
 Game `func_151DE85C` matches its complete 35-word menu-state reset directly
 from C without guards. Five new behavior tests and all 85 tool tests pass;

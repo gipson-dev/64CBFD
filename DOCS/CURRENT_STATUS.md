@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,250 / 5,461 (59.51%) | 0 | 2,211 |
+| Total | 3,251 / 5,461 (59.53%) | 0 | 2,210 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,577 / 4,788 (53.82%) | 0 | 2,211 |
+| Game | 2,578 / 4,788 (53.84%) | 0 | 2,210 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_1501CDC0` now replaces its zero-return placeholder with the complete
+row-destination byte fill. All 37 words match; two strict guards normalize
+only independent opening arithmetic/counter scheduling. Six 32-bit behavior
+tests cover stride, fill bounds, row isolation, duplicates, and pointer reloads.
+All 91 tool tests, the full build, and project checks pass. Both entire Init
+sections remain byte-exact. See
+[Working Note 748](WORKING_NOTES/748-game-row-destination-byte-fill-match-20261002.md).
 
 Game `func_151DE85C` now replaces its zero-return placeholder with the complete
 menu-state reset. All 35 words match directly from C without guards or a
@@ -148,7 +156,7 @@ and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 37-word `func_1501CDC0`, currently at 36 real word differences.
+queue with 38-word `func_15040CC8`, currently at 36 real word differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and
 `func_150F631C` in its separate near-match cleanup queue.
 

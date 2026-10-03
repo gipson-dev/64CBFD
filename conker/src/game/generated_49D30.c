@@ -9,6 +9,7 @@ extern s16 D_800C3598[];
 extern u8 D_800C3663;
 extern u16 *D_800C35D8[];
 extern u8 D_800C363A[];
+extern u8 *D_800C3960[][30];
 
 /* Non-matching placeholders for the text-only asm slice asm/49D30.s. */
 
@@ -36,8 +37,26 @@ s32 func_1501CC3C() {
     return 0;
 }
 
-s32 func_1501CDC0() {
-    return 0;
+void func_1501CDC0(s32 index) {
+    s32 count = 0;
+    s32 offset;
+    u8 **slot;
+
+    if (D_800C363A[index] > 0) {
+        slot = D_800C3960[index];
+        do {
+            offset = 0;
+            do {
+                (*slot)[offset] = 0xFF;
+                (*slot)[offset + 1] = 0xFF;
+                (*slot)[offset + 2] = 0xFF;
+                (*slot)[offset + 3] = 0xFF;
+                offset += 4;
+            } while (offset != 16);
+            count++;
+            slot++;
+        } while (count < D_800C363A[index]);
+    }
 }
 
 s32 func_1501CE54() {
