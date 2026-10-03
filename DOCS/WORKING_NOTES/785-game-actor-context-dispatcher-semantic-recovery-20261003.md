@@ -106,10 +106,13 @@ already counted as C: total 5,462 / 6,042 C rows and 3,268 / 5,462 exact;
 Game 4,789 / 5,321 C rows and 2,595 / 4,789 exact; zero drift, 2,194 different
 C rows. Detailed recovery updates remain in DOCS.
 
-Next recover sibling dispatcher `func_1504452C` from its full retail body.
-The current actor-preparation assembly is exact, but dimension helper
-`func_1507C3E0` and context wrapper `func_1510F800` remain placeholders.
-Recover those dependencies before claiming this actor/context chain is usable.
+The then-pending `func_1504452C`, initially described here as a sibling
+dispatcher, is actually a three-vertex transform; Note 786 recovers and matches
+it. Current actor-preparation assembly is exact, but dimension helper
+`func_1507C3E0` remains empty. Context wrapper `func_1510F800` already has a
+no-argument forwarding body; its explicit context argument remains to recover,
+not an empty-body implementation. Recover those interfaces/dependencies before
+claiming this actor/context chain is usable.
 Matching this dispatcher and the earlier matrix/actor/terrain/entity routines
 remains open; Init's two small candidates remain deferred under Note 782.
 

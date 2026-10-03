@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 786](WORKING_NOTES/786-game-three-vertex-transform-recovery-and-match-20261003.md)):
+Game `func_1504452C` is recovered as a three-vertex transform, correcting the
+prior dispatcher label. All 75 words match with twenty expected-word guards
+limited to closed register cycles and independent origin loads. Eleven focused
+tests and all 416 tool tests pass; full rebuild/project checks pass. Earlier
+exact slots, nine prior hashes, restored spans, and Init sections are unchanged.
+Matcher rises to 3,269 / 5,462 exact; README aggregate tables updated. Next:
+explicit context argument in existing forwarding wrapper `func_1510F800`.
+
 2026-10-03 ([Note 785](WORKING_NOTES/785-game-actor-context-dispatcher-semantic-recovery-20261003.md)):
 Game `func_15044380` replaces its zero-return placeholder with the actor/context
 dispatcher, including preparation-time context capture, live gates, distinct

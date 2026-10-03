@@ -204,8 +204,24 @@ s32 func_15044380(f32 x, f32 y, f32 z, ContextActor71820 *actor,
     return total;
 }
 
-s32 func_1504452C() {
-    return 0;
+void func_1504452C(QueryVertex71820 **vertices, f32 output[3][3],
+                  f32 sine, f32 cosine, f32 originX, f32 originY,
+                  f32 originZ, s32 offset) {
+    QueryVertex71820 *vertex;
+    f32 x;
+    f32 y;
+    f32 z;
+    s32 i;
+
+    for (i = 0; i < 3; i++) {
+        vertex = (QueryVertex71820 *)((u8 *)vertices[i] + offset);
+        x = vertex->x - originX;
+        z = vertex->z - originZ;
+        y = vertex->y - originY;
+        output[i][0] = x * cosine + z * sine;
+        output[i][1] = y;
+        output[i][2] = z * cosine - x * sine;
+    }
 }
 
 void func_15044658() {

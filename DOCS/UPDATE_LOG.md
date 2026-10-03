@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_1504452C` is recovered as a three-vertex transform, correcting the
+  prior dispatcher label. All 75 words match after twenty expected-word guards
+  normalize proven closed register cycles and independent origin loads. Eleven
+  focused tests and all 416 tool tests pass; full rebuild/project checks pass.
+  Exact C increases to 3,269 total / 2,596 Game, with zero drift and 2,193
+  different C rows. README changes only aggregate matcher tables.
+  [Note 786](WORKING_NOTES/786-game-three-vertex-transform-recovery-and-match-20261003.md)
+
 - Game `func_15044380` replaces its zero-return placeholder with the complete
   actor/context dispatcher. Fourteen focused tests and all 405 tool tests pass;
   build/project checks pass. Its 107-word body remains non-matching at twenty

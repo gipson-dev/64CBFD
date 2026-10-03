@@ -1,4 +1,24 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_71820,func_1504452C,0x024,0xC7B2002C,0xC7B20030,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x028,0xC7AE0030,0xC7AE002C,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x044,0x84580004,0x84590004,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x04C,0x44986000,0x44998000,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x054,0x46803420,0x46803320,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x058,0x468062A0,0x468082A0,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x05C,0x84590002,0x84580002,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x068,0x44994000,0x44984000,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x06C,0x46028181,0x46026181,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x084,0x460E5281,0x46125281,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x088,0x46124201,0x460E4201,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x0B4,0x84580004,0x84590004,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x0BC,0x44986000,0x44998000,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x0C4,0x46803420,0x46803320,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x0C8,0x468062A0,0x468082A0,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x0CC,0x84590002,0x84580002,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x0D8,0x44994000,0x44984000,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x0DC,0x46028181,0x46026181,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x0E0,0x460E5281,0x46125281,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
+generated_71820,func_1504452C,0x110,0x46124201,0x460E4201,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
 generated_49D30,func_1501CDC0,0x014,0x00001025,0x0304C023,-,-,Normalize independent row-offset and counter initialization schedule,,,false
 generated_49D30,func_1501CDC0,0x01C,0x0304C023,0x00001025,-,-,Normalize independent row-offset and counter initialization schedule,,,false
 game_1FFF60,func_151D2F00,0x018,0x8FA50034,0x8FA6002C,-,-,Normalize independent homed allocator argument setup schedule,,,false

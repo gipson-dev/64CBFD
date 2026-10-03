@@ -32,10 +32,21 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,268 / 5,462 (59.83%) | 0 | 2,194 |
+| Total | 3,269 / 5,462 (59.85%) | 0 | 2,193 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,595 / 4,789 (54.19%) | 0 | 2,194 |
+| Game | 2,596 / 4,789 (54.21%) | 0 | 2,193 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_1504452C` replaces its zero-return placeholder with the three-vertex
+offset/origin/coefficient transform, not a context dispatcher. All 75 words
+match; twenty expected-word guards normalize only closed register cycles and
+two independent origin-load schedules. Eleven focused tests and all 416 tool
+tests pass; full rebuild/project checks pass. Earlier exact slots, nine prior
+non-matching hashes, restored spans, and both Init sections are unchanged.
+README matcher aggregates are updated. Next recover explicit context forwarding
+in `func_1510F800`; it has a no-argument forwarding body, not an empty body.
+Its setter is retained assembly; dimension helper recovery remains open. See
+[Note 786](WORKING_NOTES/786-game-three-vertex-transform-recovery-and-match-20261003.md).
 
 Game `func_15044380` replaces its zero-return placeholder with the complete
 actor/context dispatcher, preserving descending/optional ascending passes,
@@ -44,8 +55,9 @@ Fourteen focused tests and all 405 tool tests pass; build/project checks pass.
 It remains non-matching: 107 body words, no padding, twenty differences, no new
 guards/profiles. All 22 exact regression slots, eight prior non-matching hashes,
 restored spans, and both Init sections are unchanged. Aggregate tables/README
-are unchanged. Next: sibling `func_1504452C`; dimension/context helpers remain
-placeholders, so whole-chain acceptance is open. See
+are unchanged for that recovery. Its then-pending `func_1504452C` is recovered
+as a vertex transform in Note 786. Dimension recovery and the context wrapper's
+explicit argument remain open, so whole-chain acceptance is open. See
 [Note 785](WORKING_NOTES/785-game-actor-context-dispatcher-semantic-recovery-20261003.md).
 
 Game `func_15044660` replaces its false zero-return C placeholder with the
