@@ -39,7 +39,23 @@ s32 func_1507C22C() {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_A9260/func_1507C324.s")
+void func_1507C324(struct127 *destination, struct127 *source) {
+    struct197 *destinationState = destination->unk2D0;
+    struct197 *sourceState = source->unk2D0;
+    volatile f32 *output;
+    f32 value;
+    f32 limit;
+
+    if ((destinationState != NULL) && (sourceState != NULL)) {
+        output = &destinationState->unk8;
+        value = sourceState->unk8;
+        limit = destinationState->unk18;
+        *output = value;
+        if ((limit - 1.0f) <= *output) {
+            *output = limit - 1.0f;
+        }
+    }
+}
 
 void func_1507C3E0(struct127 *arg0, u16 *arg1, u16 *arg2, u16 *arg3);
 

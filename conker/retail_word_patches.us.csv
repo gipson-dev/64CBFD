@@ -1,4 +1,12 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_A9260,func_1507C324,0x18,0xC4600008,0xC4640008,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
+generated_A9260,func_1507C324,0x1C,0xC4420018,0xC4460018,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
+generated_A9260,func_1507C324,0x20,0x44812000,0x44814000,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
+generated_A9260,func_1507C324,0x24,0xE4400008,0xE4440008,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
+generated_A9260,func_1507C324,0x28,0xC4460008,0xC44A0008,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
+generated_A9260,func_1507C324,0x2C,0x46041301,0x46083001,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
+generated_A9260,func_1507C324,0x30,0x4606603E,0x460A003E,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
+generated_A9260,func_1507C324,0x40,0xE44C0008,0xE4400008,-,-,Normalize nested float copy-clamp closed FPR allocation,,,false
 generated_71820,func_1504452C,0x024,0xC7B2002C,0xC7B20030,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
 generated_71820,func_1504452C,0x028,0xC7AE0030,0xC7AE002C,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false
 generated_71820,func_1504452C,0x044,0x84580004,0x84590004,-,-,Normalize closed vertex-transform register allocation and independent origin loads,,,false

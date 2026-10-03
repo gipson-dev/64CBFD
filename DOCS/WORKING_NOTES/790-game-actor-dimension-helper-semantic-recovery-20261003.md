@@ -2,6 +2,10 @@
 
 Date: 2026-10-03.
 
+Follow-up: [Note 791](791-game-nested-float-copy-clamp-conversion-and-match-20261003.md)
+completes the then-pending `func_1507C324` conversion while preserving this
+dimension helper's bytes and non-matching boundary.
+
 ## Result
 
 `func_1507C3E0` replaces its empty C body with the complete retail-grounded
