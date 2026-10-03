@@ -1,4 +1,15 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_1D0840,func_151A4900,0x024,0x01E50019,0x00AF0019,-,-,Preserve commutative byte-scale multiply operand order,,,false
+generated_1D0840,func_151A4900,0x058,0x8485001A,0x00005012,-,-,Normalize independent counter reload schedule after float publication,,,false
+generated_1D0840,func_151A4900,0x05C,0x00005012,0x448A2000,-,-,Normalize independent counter reload schedule after float publication,,,false
+generated_1D0840,func_151A4900,0x060,0x448A2000,0x00000000,-,-,Normalize independent counter reload schedule after float publication,,,false
+generated_1D0840,func_151A4900,0x064,0x00000000,0x46802020,-,-,Normalize independent counter reload schedule after float publication,,,false
+generated_1D0840,func_151A4900,0x068,0x46802020,0x46003200,-,-,Normalize independent counter reload schedule after float publication,,,false
+generated_1D0840,func_151A4900,0x06C,0x46003200,0x46005400,-,-,Normalize independent counter reload schedule after float publication,,,false
+generated_1D0840,func_151A4900,0x070,0x46005400,0xE4880038,-,-,Normalize independent counter reload schedule after float publication,,,false
+generated_1D0840,func_151A4900,0x074,0xE4880038,0xE490003C,-,-,Normalize independent counter reload schedule after float publication,,,false
+generated_1D0840,func_151A4900,0x078,0xE490003C,0x8485001A,-,-,Normalize independent counter reload schedule after float publication,,,false
+generated_1D0840,func_151A4900,0x084,0x01650019,0x00AB0019,-,-,Preserve commutative byte-scale multiply operand order,,,false
 generated_18D250,func_1515FFEC,0x064,0xAFA3001C,0xA3A3001B,-,-,Normalize completion flag spill width across callback,,,false
 generated_18D250,func_1515FFEC,0x074,0x8FA3001C,0x93A3001B,-,-,Normalize completion flag spill width across callback,,,false
 generated_185560,func_15158224,0x064,0xAFA3001C,0xA3A3001B,-,-,Normalize completion flag spill width across callback,,,false

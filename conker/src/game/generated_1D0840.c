@@ -2,6 +2,7 @@
 void func_15169260(void *, s32, s32, u8);
 void func_15143134(void *, void *, s32);
 extern u8 D_800A8D70[];
+extern s32 D_800BE9E4;
 typedef struct { s32 val; } OneWord1D0840;
 extern void (*D_8008F900[])();
 
@@ -41,8 +42,35 @@ s32 func_151A483C() {
     return 0;
 }
 
-s32 func_151A4900() {
-    return 0;
+typedef struct {
+    u8 pad0[0x1A];
+    s16 counter;
+    u8 pad1[0xF];
+    u8 firstOutput;
+    u8 secondOutput;
+    u8 pad2[0xB];
+    f32 firstValue;
+    f32 secondValue;
+    u8 pad3[0x68];
+    s16 parameters[6];
+} UpdateRecord1D0840;
+
+s32 func_151A4900(UpdateRecord1D0840 *arg0, s32 arg1) {
+    s16 *parameters = arg0->parameters;
+    s32 counter = arg0->counter;
+    f32 increment;
+
+    if (counter < parameters[2]) {
+        arg0->firstOutput = counter * parameters[3];
+    }
+    if (counter < parameters[4]) {
+        increment = (s32)((u32)parameters[5] * (u32)D_800BE9E4);
+        arg0->firstValue += increment;
+        arg0->secondValue += increment;
+        counter = arg0->counter;
+    }
+    arg0->secondOutput = counter * parameters[1];
+    return 1;
 }
 
 s32 func_151A499C() {

@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game threshold-scaled record update matched
+
+- `func_151A4900` replaces its zero-return placeholder with two independent
+  threshold gates, paired float increments, and byte-output scaling. All
+  39 words match with eleven strict scheduling/operand-order guards.
+- Seven new tests cover field offsets, threshold boundaries, independent
+  gates, signed scales, low-word wrap, unused arguments, and a 256-case
+  sweep that checks the entire record. All 60 tool tests, project checks,
+  and the full build pass. Both complete Init sections remain byte-exact.
+- Total exact C is 3,246 / 5,461 (59.44%); Game is 2,573 / 4,788 (53.74%).
+  Resume ordinary Game at `func_151B1918`. See
+  [Working Note 743](WORKING_NOTES/743-game-threshold-scaled-record-update-match-20261002.md).
+
 ### Game position publication and callback directly matched
 
 - `func_15163504` replaces its zero-return placeholder with coordinate

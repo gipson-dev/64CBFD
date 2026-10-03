@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 743](WORKING_NOTES/743-game-threshold-scaled-record-update-match-20261002.md)):
+Game `func_151A4900` matches its complete 39-word threshold-scaled record
+update. Eleven strict guards normalize one independent scheduling rotation
+and two commutative multiply operand orders. Seven new behavior tests and all
+60 tool tests pass; the full build passes and both complete Init sections
+remain exact. Resume ordinary Game work at `func_151B1918`.
+
 2026-10-02 ([Note 742](WORKING_NOTES/742-game-position-publication-and-callback-direct-match-20261002.md)):
 Game `func_15163504` publishes coordinates from three separate float pointers
 and propagates the optional callback result. All 41 words match directly from

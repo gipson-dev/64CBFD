@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,245 / 5,461 (59.42%) | 0 | 2,216 |
+| Total | 3,246 / 5,461 (59.44%) | 0 | 2,215 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,572 / 4,788 (53.72%) | 0 | 2,216 |
+| Game | 2,573 / 4,788 (53.74%) | 0 | 2,215 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_151A4900` now replaces its zero-return placeholder with the complete
+threshold-scaled record update. All 39 words match; eleven strict guards
+normalize one independent counter-reload scheduling rotation and two
+commutative multiply operand orders. Seven new source-behavior tests and all
+60 tool tests pass, along with the full build and project checks. Both complete
+Init sections remain byte-exact. See
+[Working Note 743](WORKING_NOTES/743-game-threshold-scaled-record-update-match-20261002.md).
 
 Game `func_15163504` now replaces its zero-return placeholder with position
 publication from three independent float pointers followed by optional callback
@@ -109,7 +117,7 @@ and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 39-word `func_151A4900`, currently at 35 real word differences.
+queue with 35-word `func_151B1918`, currently at 35 real word differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and
 `func_150F631C` in its separate near-match cleanup queue.
 
