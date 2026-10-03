@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 813](WORKING_NOTES/813-init-dynamic-length-base-and-pointer-cursor-trials-20261003.md)):
+Dynamic cursor-only reaches 4,208/368 in packed/cached-builder O2 and 4,240/352
+aligned; dynamic frame falls from 120 to 88 bytes. Base capture plus cursor
+regresses its frame to 136. All 159 focused tests and 28 final-source compiles
+pass, with 316-cell bounds and physical error state preserved on the tested
+domain. Default hashes/production unchanged; still 224 bytes over retail.
+
 2026-10-03 ([Note 812](WORKING_NOTES/812-init-rolled-scratch-cache-and-local-allocation-trials-20261003.md)):
 Rolled packed/bounded scratch caching reaches 4,224 text bytes / 400-byte core
 bound, 240 over retail. Uncached aligned remains the lower-stack lead at 384.

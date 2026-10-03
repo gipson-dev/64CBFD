@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init dynamic cursor lead: [Note 813](WORKING_NOTES/813-init-dynamic-length-base-and-pointer-cursor-trials-20261003.md)
+improves packed/cached-builder O2 to 4,208 text bytes / 368-byte core call-frame
+bound, 224 bytes over retail. Aligned cursor gives 4,240/352. Length base capture
+alone or combined regresses stack. All 159 focused tests and 28 final-source
+guest compiles pass, along with all 1,237 project tool tests. Cursor bounds
+retain the 316-cell physical frame and
+partial-error state. Production counts and original-entry ABI gates unchanged.
+
 Init rolled-state trials: [Note 812](WORKING_NOTES/812-init-rolled-scratch-cache-and-local-allocation-trials-20261003.md)
 reduces packed/bounded cached O2 text to 4,224 bytes, 240 over retail, at a
 400-byte core call-frame bound. Uncached aligned remains the 4,256/384 lower-stack

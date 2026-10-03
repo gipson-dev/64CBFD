@@ -498,6 +498,22 @@ void init_decode_fixed_tables(InitDecodeState *s) {
                       &FIXED_DISTANCE_ROOT(s), &FIXED_DISTANCE_BITS(s));
 }
 
+#ifdef INIT_DECODE_CACHE_DYNAMIC_LENGTHS
+#define DYNAMIC_LENGTHS cachedLengths
+#else
+#define DYNAMIC_LENGTHS LENGTHS(s)
+#endif
+
+#ifdef INIT_DECODE_DYNAMIC_CURSOR
+#define DYNAMIC_MORE (cursor < end)
+#define DYNAMIC_STORE(value) (*cursor++ = (value))
+#define DYNAMIC_OVERFLOW ((uint32_t)(end - cursor) < repeats)
+#else
+#define DYNAMIC_MORE (i < total)
+#define DYNAMIC_STORE(value) (DYNAMIC_LENGTHS[i++] = (value))
+#define DYNAMIC_OVERFLOW (i + repeats > total)
+#endif
+
 int init_decode_dynamic(InitDecodeState *s) {
     uint32_t packed = take_bits(s, 14);
     uint32_t literals = (packed & 31) + 257;
@@ -508,22 +524,36 @@ int init_decode_dynamic(InitDecodeState *s) {
     uint16_t codeRoot, literalRoot, distanceRoot;
 #endif
     uint32_t i, symbol, previous = 0, repeats, total = literals + distances;
+#ifdef INIT_DECODE_DYNAMIC_CURSOR
+    uint32_t *cursor, *end;
+#endif
+#ifdef INIT_DECODE_CACHE_DYNAMIC_LENGTHS
+    uint32_t *cachedLengths;
+#endif
     if (literals >= 287 || distances >= 31) return 1;
-    for (i = 0; i < transmitted; i++) LENGTHS(s)[lengthOrder[i]] = take_bits(s, 3);
-    for (; i < 19; i++) LENGTHS(s)[lengthOrder[i]] = 0;
+#ifdef INIT_DECODE_CACHE_DYNAMIC_LENGTHS
+    cachedLengths = LENGTHS(s);
+#endif
+    for (i = 0; i < transmitted; i++) DYNAMIC_LENGTHS[lengthOrder[i]] = take_bits(s, 3);
+    for (; i < 19; i++) DYNAMIC_LENGTHS[lengthOrder[i]] = 0;
 #ifdef INIT_DECODE_FRAME_BACKED
     CODE_BITS(s) = 7;
 #endif
-    init_decode_build(s, LENGTHS(s), 19, 19, 0, 0, &CODE_ROOT(s), &CODE_BITS(s));
+    init_decode_build(s, DYNAMIC_LENGTHS, 19, 19, 0, 0, &CODE_ROOT(s), &CODE_BITS(s));
+#ifdef INIT_DECODE_DYNAMIC_CURSOR
+    cursor = DYNAMIC_LENGTHS;
+    end = cursor + total;
+#else
     i = 0;
-    while (i < total) {
+#endif
+    while (DYNAMIC_MORE) {
         InitDecodeEntry *entry;
         need_bits(s, CODE_BITS(s));
         entry = &s->workspace[CODE_ROOT(s) + (s->reservoir & low_mask(CODE_BITS(s)))];
         drop_bits(s, ENTRY_BITS(entry));
         symbol = ENTRY_VALUE(entry);
         if (symbol < 16) {
-            LENGTHS(s)[i++] = previous = symbol;
+            DYNAMIC_STORE(previous = symbol);
             continue;
         }
         if (symbol == 16) {
@@ -533,23 +563,28 @@ int init_decode_dynamic(InitDecodeState *s) {
         } else {
             repeats = take_bits(s, 7) + 11;
         }
-        if (i + repeats > total) return 1;
-        while (repeats--) LENGTHS(s)[i++] = symbol == 16 ? previous : 0;
+        if (DYNAMIC_OVERFLOW) return 1;
+        while (repeats--) DYNAMIC_STORE(symbol == 16 ? previous : 0);
         if (symbol != 16) previous = 0;
     }
 #ifdef INIT_DECODE_FRAME_BACKED
     LITERAL_BITS(s) = 9;
 #endif
-    if (init_decode_build(s, LENGTHS(s), literals, 257, lengthBase, lengthExtra,
+    if (init_decode_build(s, DYNAMIC_LENGTHS, literals, 257, lengthBase, lengthExtra,
                           &LITERAL_ROOT(s), &LITERAL_BITS(s))) return 1;
 #ifdef INIT_DECODE_FRAME_BACKED
     DISTANCE_BITS(s) = 6;
 #endif
-    if (init_decode_build(s, LENGTHS(s) + literals, distances, 0,
+    if (init_decode_build(s, DYNAMIC_LENGTHS + literals, distances, 0,
                           distanceBase, distanceExtra, &DISTANCE_ROOT(s), &DISTANCE_BITS(s))) return 1;
     return init_decode_compressed(s, LITERAL_ROOT(s), DISTANCE_ROOT(s),
                                   LITERAL_BITS(s), DISTANCE_BITS(s));
 }
+
+#undef DYNAMIC_LENGTHS
+#undef DYNAMIC_MORE
+#undef DYNAMIC_STORE
+#undef DYNAMIC_OVERFLOW
 
 int init_decode_stream(InitDecodeState *s, InitDecodeEntry *fixedWorkspace) {
     uint32_t header;

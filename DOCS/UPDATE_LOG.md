@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 813](WORKING_NOTES/813-init-dynamic-length-base-and-pointer-cursor-trials-20261003.md)
+  measures length-base capture and pointer-cursor variants. Cursor-only improves
+  both O2 text and stack: 4,208 bytes / 368-byte bound in the smaller shape.
+  Capture-plus-cursor gives no text benefit and increases stack. Physical frame
+  and malformed/error tests remain separate from hardware ABI qualification.
+
 - Init [Note 812](WORKING_NOTES/812-init-rolled-scratch-cache-and-local-allocation-trials-20261003.md)
   qualifies selected rolled scratch-cache combinations and measures a local
   allocation cursor. Best text is 4,224 bytes, 240 over retail; lower-stack lead
