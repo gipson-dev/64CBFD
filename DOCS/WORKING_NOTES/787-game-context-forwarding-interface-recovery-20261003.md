@@ -2,6 +2,10 @@
 
 Date: 2026-10-03. Baseline: `dd0e154`.
 
+Follow-up: [Note 790](790-game-actor-dimension-helper-semantic-recovery-20261003.md)
+recovers the then-pending empty dimension helper. Matching, preparation stack
+provenance, and whole-chain acceptance remain separate/open.
+
 ## Result
 
 `func_1510F800` now explicitly takes `s32 context` and forwards it to the

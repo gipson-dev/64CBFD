@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_1507C3E0` recovers the empty dimension helper, preserving subtype
+  mappings, state precedence, distinct radii, expansion/scaling order, and
+  nullable ordered outputs. Sixteen focused tests and all 461 tool tests pass;
+  build/project checks pass. It remains non-matching with no new guards or
+  profiles. Adjacent exact routines, Game regressions, and Init sections are
+  unchanged; no aggregate/README update is needed.
+  [Note 790](WORKING_NOTES/790-game-actor-dimension-helper-semantic-recovery-20261003.md)
+
 - Init allocator `func_10003C6C` corrects a duplicate header addition in its
   rear C allocation path. Six production-body host tests cover bitmap setup
   counts, heap ownership/bounds, all alignment classes, both directions, and

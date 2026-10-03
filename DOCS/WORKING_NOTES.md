@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 790](WORKING_NOTES/790-game-actor-dimension-helper-semantic-recovery-20261003.md)):
+Game `func_1507C3E0` replaces its empty body with complete dimension rules,
+state overrides, distinct radii, attachment expansion, optional scaling, and
+ordered nullable outputs. Sixteen focused tests and all 461 tool tests pass;
+build/project checks pass. Non-matching: 310 body words plus ten padding nops,
+312 differences, no guards/profiles. Adjacent exact routines, earlier Game
+regressions, and complete Init sections are preserved; README unchanged.
+Next: nineteen-word retained `func_1507C324`, with alias/order proof first.
+
 2026-10-03 ([Note 789](WORKING_NOTES/789-init-bitmap-allocator-provenance-and-rear-bound-correction-20261003.md)):
 Init bitmap heap-provenance investigation finds and corrects a duplicate header
 addition in allocator `func_10003C6C`'s rear C path. Six production-body tests

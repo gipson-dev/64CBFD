@@ -37,6 +37,17 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,596 / 4,789 (54.21%) | 0 | 2,193 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Game dimension helper `func_1507C3E0` now replaces its empty body with retail
+type/subtype selection, state overrides, distinct radii, attachment expansion,
+optional scaling, and ordered nullable halfword outputs. Sixteen focused tests
+and all 461 tool tests pass; build/project checks pass. It remains non-matching:
+310 body words plus ten padding nops, 312 differences, no new guards/profiles.
+The adjacent refresh wrapper and retained leaf remain exact; earlier Game
+regressions and both complete Init sections are unchanged. Aggregates/README
+are unchanged. Next inspect nineteen-word `func_1507C324` for a bounded matching
+C recovery; dimension matching and whole-chain acceptance remain open. See
+[Note 790](WORKING_NOTES/790-game-actor-dimension-helper-semantic-recovery-20261003.md).
+
 Init allocator `func_10003C6C` now corrects a duplicate twelve-byte header
 addition in its rear-allocation C path, found by production-body host tests.
 Six allocator tests establish conditional valid-heap separation from bitmap
@@ -64,8 +75,9 @@ profile changes. Fifteen focused/integrated tests and all 431 tool tests pass;
 build/project checks pass. Twenty-six earlier exact slots, nine prior hashes,
 restored spans, and both Init sections are unchanged; the setter's retained
 256-byte interval independently matches. Aggregates/README are unchanged.
-Next recover empty dimension helper `func_1507C3E0`; whole-chain acceptance
-and the earlier dispatcher/matrix/query matching remain open. See
+Its then-pending dimension helper is semantically recovered in Note 790;
+whole-chain acceptance and the earlier dispatcher/matrix/query matching remain
+open. See
 [Note 787](WORKING_NOTES/787-game-context-forwarding-interface-recovery-20261003.md).
 
 Game `func_1504452C` replaces its zero-return placeholder with the three-vertex
