@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 818](WORKING_NOTES/818-init-compiled-guest-builder-differential-execution-20261003.md)
+  adds actual linked IDO builder execution under a bounded MIPS model, not just
+  native C or size receipts. Six images pass 186 retail comparisons; all 63
+  combined checks pass. No production C ownership or aggregate change.
+
 - Init [Note 817](WORKING_NOTES/817-init-builder-symbol-cursor-and-capacity-qualification-20261003.md)
   qualifies pointer-end and remaining-count symbol cursors with full-capacity
   tests. The smallest O2 candidate is 4,160 bytes, still 176 over retail,

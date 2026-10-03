@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-03 ([Note 818](WORKING_NOTES/818-init-compiled-guest-builder-differential-execution-20261003.md)):
+Six fresh linked IDO images execute the builder under a bounded MIPS model;
+186 comparisons match actual retail tables/scratch and preserve O32 saved
+registers. All 63 combined checks pass. No C/profile/production changes;
+connected guest paths and original-entry/hardware qualification remain open.
+
 2026-10-03 ([Note 817](WORKING_NOTES/817-init-builder-symbol-cursor-and-capacity-qualification-20261003.md)):
 Packed remaining-count symbol cursor reaches 4,160/376 O2; aligned/end reaches
 4,192/360; no-cursor aligned remains 4,224/352. Size improvements trade eight

@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init compiled guest builder: [Note 818](WORKING_NOTES/818-init-compiled-guest-builder-differential-execution-20261003.md)
+executes six fresh linked IDO builder images (three shapes, O2/g3 and O1) in
+a bounded MIPS model. All 186 case/image comparisons agree with retail table/
+scratch/state results and preserve saved O32 registers. All 63 combined tests
+pass. This qualifies compiler words for the builder only, not connected guest
+paths, original FPR entry ABI or hardware. Production counts/text unchanged.
+
 Init builder symbol cursors: [Note 817](WORKING_NOTES/817-init-builder-symbol-cursor-and-capacity-qualification-20261003.md)
 reaches packed remaining-count O2 4,160/376 (176 bytes over retail), trading
 eight stack bytes for 32 text bytes. Aligned/end gives 4,192/360; retain uncached
