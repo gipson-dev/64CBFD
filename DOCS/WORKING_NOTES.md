@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 809](WORKING_NOTES/809-init-decompressor-combined-builder-qualification-20261003.md)):
+Aligned/packed + bounded builder combinations pass seventy focused tests and
+eight guest compiles. Frame-backed packed O2 reaches 5,184 bytes but increases
+the core call-frame bound to 408; aligned remains 5,200/400. The packed builder
+is 607 words against retail's 293, identifying the dominant remaining size gap.
+Original-entry ABI/storage gates and production baseline remain unchanged.
+
 2026-10-03 ([Note 808](WORKING_NOTES/808-init-decompressor-entry-alignment-packing-and-bounded-shift-trials-20261003.md)):
 Aligned/packed entry modes preserve the four-byte field layout; retail leaf
 replication uses packed word stores. Bounded builder shifts improve both text

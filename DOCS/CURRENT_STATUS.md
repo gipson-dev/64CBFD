@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init combined builder qualification: [Note 809](WORKING_NOTES/809-init-decompressor-combined-builder-qualification-20261003.md)
+tests aligned/packed entries with bounded shifts. All seventy focused tests and
+all 827 project tests pass, along with eight warning-clean guest compiles.
+Frame-backed packed O2 text is 5,184
+bytes with a 408-byte core call-frame bound; aligned O2 is 5,200/400. Packing
+trades sixteen text bytes for eight stack bytes and regresses O1 text. Its
+607-word builder remains 314 words over retail, locating the main size deficit.
+Production owners and README aggregates remain unchanged.
+
 Init entry/shift trials: [Note 808](WORKING_NOTES/808-init-decompressor-entry-alignment-packing-and-bounded-shift-trials-20261003.md)
 pins entry size/alignment/fields and tests direct leaf packing. Bounded builder
 shifts improve frame-backed text to 5,200/5,424 bytes and core call-frame bounds

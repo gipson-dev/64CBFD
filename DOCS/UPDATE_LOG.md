@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 809](WORKING_NOTES/809-init-decompressor-combined-builder-qualification-20261003.md)
+  qualifies aligned/packed entries combined with bounded builder shifts. Packing
+  saves sixteen O2 text bytes but regresses frame-backed stack and O1 text;
+  seventy focused tests and eight guest compiles pass. The retail/C builder
+  instruction ledger directs the next size investigation; no production change.
+
 - Init [Note 808](WORKING_NOTES/808-init-decompressor-entry-alignment-packing-and-bounded-shift-trials-20261003.md)
   adds entry alignment/packing and bounded builder-shift trials. The latter
   improves both guest text and direct-call frame bounds without fitting retail.
