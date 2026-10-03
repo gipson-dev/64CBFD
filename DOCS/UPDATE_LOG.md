@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 810](WORKING_NOTES/810-init-builder-workspace-base-capture-trial-20261003.md)
+  measures a stable workspace-base capture. All 78 focused tests pass, but
+  sixteen guest compiles reject it as a size/stack improvement. Static opcode
+  receipts distinguish reduced state loads from increased stack traffic.
+  Default text bytes and production owners stay unchanged.
+
 - Init [Note 809](WORKING_NOTES/809-init-decompressor-combined-builder-qualification-20261003.md)
   qualifies aligned/packed entries combined with bounded builder shifts. Packing
   saves sixteen O2 text bytes but regresses frame-backed stack and O1 text;

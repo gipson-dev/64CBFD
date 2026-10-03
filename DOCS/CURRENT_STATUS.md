@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init workspace-base trial: [Note 810](WORKING_NOTES/810-init-builder-workspace-base-capture-trial-20261003.md)
+adds opt-in pointer capture and 78 passing focused tests. Sixteen warning-clean
+guest compiles and all 905 project tool tests pass. The guest receipts
+show no text/stack improvement: aligned/bounded frame-backed O2
+grows to 5,232 bytes / 408-byte core call-frame bound. Fewer workspace-field loads
+are offset by more stack accesses. Default instruction bytes remain unchanged;
+retain the previous uncached leads and exact production assembly.
+
 Init combined builder qualification: [Note 809](WORKING_NOTES/809-init-decompressor-combined-builder-qualification-20261003.md)
 tests aligned/packed entries with bounded shifts. All seventy focused tests and
 all 827 project tests pass, along with eight warning-clean guest compiles.

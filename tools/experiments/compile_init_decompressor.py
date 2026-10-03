@@ -152,6 +152,8 @@ def main():
                         help="construct a packed leaf word; implies --aligned-entry")
     parser.add_argument("--bounded-builder-shifts", action="store_true",
                         help="use the builder's clamped tree-width shift bounds")
+    parser.add_argument("--cache-workspace", action="store_true",
+                        help="capture the builder's stable workspace pointer")
     parser.add_argument("--cache-builder", nargs="?", const="all",
                         choices=("all", "counts-offsets"),
                         help="capture the builder's scratch array bases")
@@ -168,6 +170,8 @@ def main():
         suffix += "-packed"
     if args.bounded_builder_shifts:
         suffix += "-bounded-shifts"
+    if args.cache_workspace:
+        suffix += "-cached-workspace"
     if args.cache_builder:
         suffix += "-cached-builder"
         if args.cache_builder != "all":
@@ -190,6 +194,8 @@ def main():
         common.append("-DINIT_DECODE_PACKED_ENTRY")
     if args.bounded_builder_shifts:
         common.append("-DINIT_DECODE_BOUNDED_BUILDER_SHIFTS")
+    if args.cache_workspace:
+        common.append("-DINIT_DECODE_CACHE_WORKSPACE")
     if args.cache_builder:
         common.append("-DINIT_DECODE_CACHE_BUILDER=" +
                       ("1" if args.cache_builder == "all" else "2"))

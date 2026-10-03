@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-03 ([Note 810](WORKING_NOTES/810-init-builder-workspace-base-capture-trial-20261003.md)):
+Opt-in workspace pointer capture passes 78 focused tests but fails to improve
+guest size/stack across sixteen compiles. Aligned/bounded frame-backed O2 grows
+to 5,232/408; four workspace-field loads fall to one but static stack accesses
+increase. Default text bytes, production assembly and aggregate counts unchanged.
+
 2026-10-03 ([Note 809](WORKING_NOTES/809-init-decompressor-combined-builder-qualification-20261003.md)):
 Aligned/packed + bounded builder combinations pass seventy focused tests and
 eight guest compiles. Frame-backed packed O2 reaches 5,184 bytes but increases

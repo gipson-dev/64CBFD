@@ -196,6 +196,12 @@ static uint32_t take_bits(InitDecodeState *s, uint32_t width) {
 #define BUILD_OFFSETS OFFSETS(s)
 #endif
 
+#ifdef INIT_DECODE_CACHE_WORKSPACE
+#define BUILD_WORKSPACE cachedWorkspace
+#else
+#define BUILD_WORKSPACE (s->workspace)
+#endif
+
 #ifdef INIT_DECODE_PACKED_ENTRY
 #define BUILD_ENTRY_OPERATION entryOperation
 #define BUILD_ENTRY_BITS entryBits
@@ -220,6 +226,9 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     uint16_t value = (uint16_t)s->reservoir;
     uint16_t *link = root;
     int32_t level = -1, consumed;
+#ifdef INIT_DECODE_CACHE_WORKSPACE
+    InitDecodeEntry *cachedWorkspace;
+#endif
 #ifdef INIT_DECODE_CACHE_BUILDER
     uint32_t *cachedCounts, *cachedOffsets;
 #if INIT_DECODE_CACHE_BUILDER == 1
@@ -229,6 +238,9 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     if (count == 0) {
         return 1;
     }
+#ifdef INIT_DECODE_CACHE_WORKSPACE
+    cachedWorkspace = s->workspace;
+#endif
 #ifdef INIT_DECODE_CACHE_BUILDER
     cachedCounts = COUNTS(s);
 #if INIT_DECODE_CACHE_BUILDER == 1
@@ -307,14 +319,14 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                 size = 1u << BUILD_SHIFT(levelBits);
                 next = s->allocated + 1;
                 *link = next;
-                link = &ENTRY_VALUE(&s->workspace[s->allocated]);
+                link = &ENTRY_VALUE(&BUILD_WORKSPACE[s->allocated]);
                 *link = 0;
                 table = next;
                 SET_TABLE(s, level, table);
                 if (level != 0) {
                     InitDecodeEntry *parent;
                     BUILD_OFFSETS[level] = code;
-                    parent = &s->workspace[TABLE_INDEX(s, level - 1) +
+                    parent = &BUILD_WORKSPACE[TABLE_INDEX(s, level - 1) +
                         (code >> BUILD_SHIFT(consumed - (int32_t)width))];
                     ENTRY_OPERATION(parent) = levelBits + 16;
                     ENTRY_BITS(parent) = width;
@@ -349,9 +361,9 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
             next = code >> BUILD_SHIFT(consumed);
             for (; next < size; next += 1u << BUILD_SHIFT(bits - consumed)) {
 #ifdef INIT_DECODE_PACKED_ENTRY
-                s->workspace[table + next].alignment = packed;
+                BUILD_WORKSPACE[table + next].alignment = packed;
 #else
-                s->workspace[table + next] = entry;
+                BUILD_WORKSPACE[table + next] = entry;
 #endif
             }
             next = 1u << BUILD_SHIFT(bits - 1);
@@ -373,6 +385,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #undef BUILD_COUNTS
 #undef BUILD_SORTED
 #undef BUILD_OFFSETS
+#undef BUILD_WORKSPACE
 #undef BUILD_ENTRY_OPERATION
 #undef BUILD_ENTRY_BITS
 #undef BUILD_SHIFT
