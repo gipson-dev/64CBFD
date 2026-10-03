@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 770](WORKING_NOTES/770-game-opposite-cached-height-query-and-dispatch-direct-match-20261003.md)):
+Game `func_150470B0` and dispatch `func_15046C00` convert from retained
+assembly to direct 43/32-word C matches. The typed three-argument caller
+remains exact. Eleven new integrated tests and all 241 tool tests pass;
+full build/project checks and both complete Init sections pass. No new
+guards or profile changes. Next: entity lowest-height query `func_15045880`.
+
 2026-10-03 ([Note 769](WORKING_NOTES/769-game-cached-height-query-and-dispatch-direct-match-20261003.md)):
 Game `func_15045800` and `func_15047004` now match all 32 and 43 words
 directly from semantic C, without guards or profile changes. Twelve new

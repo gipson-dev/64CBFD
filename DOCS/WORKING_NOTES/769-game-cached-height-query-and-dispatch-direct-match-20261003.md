@@ -99,3 +99,7 @@ natural wrapper/gameplay qualification are still open. Remaining Init
 conversion gates are unchanged in
 [Note 768](768-init-remaining-assembly-current-decision-20261003.md).
 The sibling host port and frozen Release artifacts remain untouched.
+
+Follow-up: [Note 770](770-game-opposite-cached-height-query-and-dispatch-direct-match-20261003.md)
+completes the then-pending opposite-bound cached query and its retained
+four-argument dispatch, both as direct C matches.

@@ -25,17 +25,28 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,456 / 6,042 (90.30%) | 586 | 1,928,472 / 2,256,728 (85.45%) |
+| Total | 5,458 / 6,042 (90.33%) | 584 | 1,928,772 / 2,256,728 (85.47%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,783 / 5,321 (89.89%) | 538 | 1,757,036 / 2,072,880 (84.76%) |
+| Game | 4,785 / 5,321 (89.93%) | 536 | 1,757,336 / 2,072,880 (84.78%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,260 / 5,456 (59.75%) | 0 | 2,196 |
+| Total | 3,262 / 5,458 (59.77%) | 0 | 2,196 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,587 / 4,783 (54.09%) | 0 | 2,196 |
+| Game | 2,589 / 4,785 (54.11%) | 0 | 2,196 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_150470B0` and its four-argument dispatch `func_15046C00` now
+match all 43 and 32 words directly from semantic C. Eleven new integrated
+tests cover the opposite-bound cached query and both caller shapes; all 241
+tool tests, full code build, and project checks pass. Correcting the existing
+three-argument `func_1504530C` signature preserves its exact 120 bytes.
+No new guards or profile changes; retained fallback assembly remains untouched.
+Earlier recovered spans and both complete Init sections remain exact. Next
+recover retained entity-indexed lowest-height query `func_15045880`; the
+highest-height entity query's 72 differences and gameplay acceptance are open.
+See [Note 770](WORKING_NOTES/770-game-opposite-cached-height-query-and-dispatch-direct-match-20261003.md).
 
 Game `func_15045800` now dispatches through the recovered cached-height
 status query `func_15047004`. Both match directly from semantic C: 32 and
@@ -43,7 +54,7 @@ status query `func_15047004`. Both match directly from semantic C: 32 and
 the actual cached query, dispatch, and fallback wrapper; all 230 tool tests,
 full code build, and project checks pass. Both sibling dispatch wrappers,
 earlier recovered spans, and both complete Init sections remain exact.
-Next recover the opposite-bound cached query `func_150470B0`; downstream
+Its then-pending opposite-bound query is completed in Note 770; downstream
 entity-query matching and natural gameplay qualification remain separate.
 See [Note 769](WORKING_NOTES/769-game-cached-height-query-and-dispatch-direct-match-20261003.md).
 

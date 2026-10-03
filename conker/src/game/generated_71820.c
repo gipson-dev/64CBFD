@@ -103,6 +103,9 @@ void func_1505D1C4(f32 arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4,
 s32 func_1504697C(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result);
 s32 func_15046D00(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result);
 s32 func_15047004(f32 *position, f32 threshold, HeightResult71820 *result);
+s32 func_150470B0(f32 *position, f32 threshold, HeightResult71820 *result);
+s32 func_15044ED0(f32 *position, f32 threshold, HeightResult71820 *result);
+s32 func_150466F8(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result);
 PositionScaleRecord71820 *func_15044964(s32 size, s32 type, s32 arg2, s32 arg3,
                                        s32 arg4, s32 x, s32 y, s32 z);
 
@@ -353,7 +356,7 @@ s32 func_150450CC(f32 *position, f32 threshold, HeightResult71820 *result) {
     return 0;
 }
 
-s32 func_1504530C(s32 arg0, s32 arg1, s32 arg2) {
+s32 func_1504530C(f32 *arg0, f32 arg1, HeightResult71820 *arg2) {
     switch (func_150470B0(arg0, arg1, arg2)) {
         case 0:
             return func_15044ED0(arg0, arg1, arg2);
@@ -572,7 +575,16 @@ s32 func_1504697C(f32 *position, u16 selector, f32 threshold, HeightResult71820 
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15046C00.s")
+s32 func_15046C00(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result) {
+    switch (func_150470B0(position, threshold, result)) {
+        case 0:
+            return func_150466F8(position, selector, threshold, result);
+        case 1:
+            return 0;
+        case 2:
+            return 1;
+    }
+}
 
 s32 func_15046C80(f32 *arg0, u16 arg1, f32 arg2, HeightResult71820 *arg3) {
     switch (func_15047004(arg0, arg2, arg3)) {
@@ -615,7 +627,20 @@ s32 func_15047004(f32 *position, f32 threshold, HeightResult71820 *result) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_150470B0.s")
+s32 func_150470B0(f32 *position, f32 threshold, HeightResult71820 *result) {
+    f32 height;
+
+    if ((result->flags & 4) &&
+        func_150A3FC4(position[0], position[2], NULL, result->vertices, &height)) {
+        if (height <= threshold && position[1] <= height) {
+            result->height = height;
+            result->flags |= 2;
+            return 2;
+        }
+        return 1;
+    }
+    return 0;
+}
 
 s32 func_1504715C() {
     return 0;

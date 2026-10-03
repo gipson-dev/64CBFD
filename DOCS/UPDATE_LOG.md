@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_150470B0` and `func_15046C00` convert from retained assembly
+  to direct semantic C matches: 172 and 128 bytes. Eleven new tests cover
+  both dispatch caller shapes and the reversed cached-height bounds. All 241
+  tool tests pass; full code build and project checks pass. The corrected
+  `func_1504530C` signature preserves its 120 exact bytes. README aggregates
+  add two converted/exact rows; no new guards or compiler profiles.
+  [Note 770](WORKING_NOTES/770-game-opposite-cached-height-query-and-dispatch-direct-match-20261003.md)
+
 - Game `func_15045800` converts from retained assembly to C, and its cached
   query `func_15047004` replaces the zero-return placeholder. Both match
   directly: 128 and 172 bytes, no new guards or profile changes. Twelve new
