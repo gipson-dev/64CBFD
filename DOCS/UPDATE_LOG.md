@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15046D00` replaces its zero-return placeholder with the complete
+  outer highest-height combiner. All 161 words match directly without new
+  guards/profiles. Twelve focused tests and all 342 tool tests pass; full
+  build/project checks pass. Both Init sections and prior recovered spans
+  remain unchanged. README changes only exact/different aggregates; converted
+  totals remain fixed. Next establish `func_1504715C`'s actor/result contract.
+  [Note 778](WORKING_NOTES/778-game-outer-highest-combiner-direct-match-20261003.md)
+
 - Game `func_1504697C` replaces its zero-return placeholder with the complete
   highest entity/terrain combiner. All 161 words match directly without new
   guards/profiles. Twelve focused tests and all 330 tool tests pass; full

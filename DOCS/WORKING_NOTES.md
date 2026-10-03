@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 778](WORKING_NOTES/778-game-outer-highest-combiner-direct-match-20261003.md)):
+Game `func_15046D00` replaces its zero-return placeholder with the complete
+outer highest-height combiner. All 161 words match directly with no new guards
+or profiles. Twelve focused tests and all 342 tool tests pass; full build/
+project checks pass. Seventeen exact neighbors, five query hashes, restored
+spans, and both Init sections remain unchanged. Converted totals stay fixed;
+one C row becomes exact. Next: actor/result builder `func_1504715C`.
+
 2026-10-03 ([Note 777](WORKING_NOTES/777-game-entity-terrain-highest-combiner-direct-match-20261003.md)):
 Game `func_1504697C` replaces its zero-return placeholder with the complete
 highest entity/terrain combiner. All 161 words match directly without new

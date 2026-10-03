@@ -32,10 +32,21 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,266 / 5,462 (59.79%) | 0 | 2,196 |
+| Total | 3,267 / 5,462 (59.81%) | 0 | 2,195 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,593 / 4,789 (54.14%) | 0 | 2,196 |
+| Game | 2,594 / 4,789 (54.17%) | 0 | 2,195 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15046D00` now replaces its zero-return placeholder with the complete
+outer highest-height combiner. All 161 words match directly without new guards
+or profiles. Ties/unordered comparisons select the context-3 non-entity result;
+both failure paths clear only flag bit 2. Twelve focused tests and all 342
+tool tests pass; full build/project checks pass. Seventeen exact neighbors,
+five non-matching query hashes, restored spans, and both complete Init sections
+remain unchanged. Converted totals are fixed; one different C row becomes
+exact. Next recover actor-to-height-result placeholder `func_1504715C`, first
+establishing its source layout and caller/return contract. See
+[Note 778](WORKING_NOTES/778-game-outer-highest-combiner-direct-match-20261003.md).
 
 Game `func_1504697C` now replaces its zero-return placeholder with the complete
 highest entity/terrain combiner. All 161 words match directly without new
@@ -45,7 +56,7 @@ tests pass; full build/project checks pass. Sixteen exact neighbors, four
 entity-query hashes, restored spans, and both Init sections remain unchanged.
 The terrain highest query retains its documented 76 differences and prior
 hash. Converted totals are unchanged; one different C row becomes exact.
-Next recover the outer highest combiner placeholder `func_15046D00`. See
+Its then-pending outer combiner `func_15046D00` is now recovered in Note 778. See
 [Note 777](WORKING_NOTES/777-game-entity-terrain-highest-combiner-direct-match-20261003.md).
 
 Game `func_150466F8` now converts retained assembly to the complete entity/
