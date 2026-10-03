@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init semantic scratch-FPR publication: [Note 823](WORKING_NOTES/823-init-semantic-scratch-fpr-publication-20261003.md)
+adds an opt-in 116-byte shadow state and 320-byte adapter. All 204 new bounded
+context comparisons match retail across six compiled profiles, including both
+CU1 modes, match-copy history, partial failures and three ROM samples.
+All 110 focused tests pass, including the native all-retail-page semantic check.
+Smallest combined text/descent is 4,896/3,256: still 912 text bytes over retail.
+Full shadow corpus, original allocation ownership and fitting remain open.
+Production Init stays 492 C / 47 assembly rows; README aggregates unchanged.
+
 Init FPR/failure-frame recovery: [Note 822](WORKING_NOTES/822-init-fpr-provenance-and-failure-frame-corrections-20261003.md)
 maps f1-f11 saves to actual live GPRs and dynamic decoding variables. Sorted
 symbols now use retail signed comparisons; an opt-in frame variant preserves

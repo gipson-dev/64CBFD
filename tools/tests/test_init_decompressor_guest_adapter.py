@@ -19,6 +19,7 @@ class GuestExceptionFixture(exception.Fr1ContextTransfers, GuestStreamFixture):
     WORKSPACE_CAPACITY = 4096
     STACK = 0x10000
     FRAME = exception.CALLER_SP - 0xA88
+    ADAPTER_EXTRA = 0x48
 
     def __init__(self, image, chunk, status):
         if not status & exception.SR_FR:
@@ -57,7 +58,7 @@ class GuestExceptionFixture(exception.Fr1ContextTransfers, GuestStreamFixture):
         self.min_sp = self.stack_low = self.registers[29]
         self.capture = {target, 0x10005F34}
         self.snapshots = {}
-        self.adapter_state = self.FRAME - 0x28
+        self.adapter_state = self.FRAME - self.ADAPTER_EXTRA + 0x20
         self.context_enabled = True
 
     def execute(self, word):
@@ -72,6 +73,7 @@ class GuestExceptionFixture(exception.Fr1ContextTransfers, GuestStreamFixture):
 
 
 class InitDecompressorCompiledGuestAdapterTests(unittest.TestCase):
+    fixture_type = GuestExceptionFixture
     @classmethod
     def setUpClass(cls):
         if not shutil.which("mips-linux-gnu-as"):
@@ -116,7 +118,8 @@ class InitDecompressorCompiledGuestAdapterTests(unittest.TestCase):
         core_registers, _ = reference.snapshots[0x100062F0]
         for label, profile, image in self.adapter_images:
             with self.subTest(shape=label, profile=profile, chunk=chunk[:8]):
-                guest = GuestExceptionFixture(image, chunk, status)
+                fixture_type = getattr(self, "fixture_type", GuestExceptionFixture)
+                guest = fixture_type(image, chunk, status)
                 guest.context()
                 registers, fprs = guest.snapshots[0x10005F34]
                 self.assertEqual(registers[2], result_registers[2])
@@ -146,7 +149,7 @@ class InitDecompressorCompiledGuestAdapterTests(unittest.TestCase):
                 bound = next(unit["direct_call_frame_bound"] for unit in
                              self.receipts[label, profile]["call_graph"]
                              if unit["name"] == "init_decode_core")
-                self.assertLessEqual(guest.STACK - guest.min_sp, 0xA88 + 0x48 + bound)
+                self.assertLessEqual(guest.STACK - guest.min_sp, 0xA88 + guest.ADAPTER_EXTRA + bound)
                 self.maximum_depths[label, profile] = max(self.maximum_depths[label, profile],
                                                          guest.STACK - guest.min_sp)
                 if dma_size is not None:

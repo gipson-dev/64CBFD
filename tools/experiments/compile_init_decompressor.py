@@ -225,6 +225,8 @@ def main():
                         help="compile the isolated physical-frame scratch variant")
     parser.add_argument("--seed-distance-root", action="store_true",
                         help="preserve the final code lookup index before literal-tree failure")
+    parser.add_argument("--abi-fpr-shadow", action="store_true",
+                        help="track retail scratch FPR snapshots; implies distance-root seeding")
     parser.add_argument("--flat-bits", action="store_true",
                         help="flatten take_bits without changing state-access order")
     parser.add_argument("--aligned-entry", action="store_true",
@@ -259,6 +261,8 @@ def main():
                         choices=("all", "counts-offsets"),
                         help="capture the builder's scratch array bases")
     args = parser.parse_args()
+    if args.abi_fpr_shadow:
+        args.seed_distance_root = True
     if args.seed_distance_root and not args.frame_backed:
         parser.error("--seed-distance-root requires --frame-backed")
     if args.byte_parent and not args.frame_backed:
@@ -269,6 +273,8 @@ def main():
     suffix = "-frame" if args.frame_backed else ""
     if args.seed_distance_root:
         suffix += "-seed-distance-root"
+    if args.abi_fpr_shadow:
+        suffix += "-abi-fpr-shadow"
     if args.flat_bits:
         suffix += "-flat-bits"
     if args.aligned_entry:
@@ -317,6 +323,8 @@ def main():
         common.append("-DINIT_DECODE_FRAME_BACKED")
     if args.seed_distance_root:
         common.append("-DINIT_DECODE_SEED_DISTANCE_ROOT")
+    if args.abi_fpr_shadow:
+        common.append("-DINIT_DECODE_ABI_FPR_SHADOW")
     if args.flat_bits:
         common.append("-DINIT_DECODE_FLAT_BITS")
     if args.aligned_entry:

@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `97a0229`.
 
+Follow-up: [Note 823](823-init-semantic-scratch-fpr-publication-20261003.md)
+implements optional semantic snapshot publication and qualifies both CU1 modes
+on a bounded vector/sample domain. Full shadow corpus, ownership and fitting
+remain open; the next list below records this note's historical checkpoint.
+
 ## Result
 
 The f1-f11 gap from Note 821 now has instruction-address and semantic-variable

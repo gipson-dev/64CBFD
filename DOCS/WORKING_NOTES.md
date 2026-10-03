@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 823](WORKING_NOTES/823-init-semantic-scratch-fpr-publication-20261003.md)):
+Opt-in semantic FPR snapshots and adapter publication match both CU1 modes
+in 204 new bounded context comparisons across six profiles. Incoming and
+match-copy history, early errors, incomplete literal trees and three ROM samples
+are covered. Smallest combined text/descent is 4,896/3,256; full shadow corpus,
+actual allocation ownership and fitting remain open. No production conversion.
+All 110 focused tests pass; native all-retail-page semantic checks rerun.
+
 2026-10-03 ([Note 822](WORKING_NOTES/822-init-fpr-provenance-and-failure-frame-corrections-20261003.md)):
 Scratch-FPR snapshots now have measured instruction/semantic provenance.
 Two C discrepancies are corrected: signed sorted-symbol classification and

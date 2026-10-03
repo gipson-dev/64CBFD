@@ -76,6 +76,11 @@ typedef struct {
 #ifdef INIT_DECODE_FRAME_BACKED
     InitDecodeFrame *frame;
     uint32_t workspaceAddress;
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+    uint32_t abiSaved[6];
+    uint32_t abiFpr[12];
+    uint32_t abiDirty;
+#endif
 #else
     uint32_t counts[17];
     uint32_t tables[17];
@@ -473,6 +478,20 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #undef BUILD_SHIFT
 #undef BUILD_LOW_MASK
 
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+static void abi_capture(InitDecodeState *s, uint32_t literals, uint32_t distances) {
+    uint32_t i;
+    s->abiFpr[0] = literals;
+    s->abiFpr[1] = distances;
+    for (i = 0; i < 6; i++) s->abiFpr[i + 2] = s->abiSaved[i];
+    s->abiFpr[8] = s->workspaceAddress;
+    s->abiFpr[9] = (uint32_t)s->input;
+    s->abiFpr[10] = s->bits;
+    s->abiFpr[11] = s->reservoir;
+    s->abiDirty = 0xFFF;
+}
+#endif
+
 static InitDecodeEntry *lookup(InitDecodeState *s, uint32_t root, uint32_t width) {
     InitDecodeEntry *entry;
     need_bits(s, width);
@@ -490,15 +509,25 @@ int init_decode_compressed(InitDecodeState *s, uint32_t literalRoot,
                            uint32_t distanceRoot, uint32_t literalBits,
                            uint32_t distanceBits) {
     int32_t produced = s->produced;
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+    s->abiSaved[0] = 0x8002C0C0u;
+    s->abiSaved[4] = produced;
+#endif
     for (;;) {
         InitDecodeEntry *entry = lookup(s, literalRoot, literalBits);
         uint32_t operation = ENTRY_OPERATION(entry);
         uint32_t length, distance;
         int32_t source, end;
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+        s->abiSaved[5] = s->workspaceAddress + 4 * (entry - s->workspace);
+#endif
         if (operation == 99) return 1;
         drop_bits(s, ENTRY_BITS(entry));
         if (operation == 16) {
             s->output[produced++] = ENTRY_VALUE(entry);
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+            s->abiSaved[4] = produced;
+#endif
             continue;
         }
         if (operation == 15) {
@@ -506,13 +535,25 @@ int init_decode_compressed(InitDecodeState *s, uint32_t literalRoot,
             return 0;
         }
         length = ENTRY_VALUE(entry) + take_bits(s, operation);
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+        s->abiSaved[2] = length;
+#endif
         entry = lookup(s, distanceRoot, distanceBits);
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+        s->abiSaved[5] = s->workspaceAddress + 4 * (entry - s->workspace);
+#endif
         if (ENTRY_OPERATION(entry) == 99) return 1;
         drop_bits(s, ENTRY_BITS(entry));
         distance = ENTRY_VALUE(entry) + take_bits(s, ENTRY_OPERATION(entry));
         source = (uint32_t)produced - distance;
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+        s->abiSaved[3] = source;
+#endif
         end = (uint32_t)produced + length;
         if (end >= s->limit) return 1;
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+        s->abiSaved[4] = end;
+#endif
         while (produced != end) s->output[produced++] = s->output[source++];
     }
 }
@@ -604,6 +645,10 @@ int init_decode_dynamic(InitDecodeState *s) {
 #ifdef INIT_DECODE_FRAME_BACKED
     CODE_BITS(s) = 7;
 #endif
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+    s->abiSaved[1] = 19;
+    abi_capture(s, literals, distances);
+#endif
     init_decode_build(s, DYNAMIC_LENGTHS, 19, 19, 0, 0, &CODE_ROOT(s), &CODE_BITS(s));
 #if defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE == 1
     cachedCodeWidth = CODE_BITS(s);
@@ -654,6 +699,15 @@ int init_decode_dynamic(InitDecodeState *s) {
         while (repeats--) DYNAMIC_STORE(symbol == 16 ? previous : 0);
         if (symbol != 16) previous = 0;
     }
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+    s->abiSaved[0] = lastCodeEntry - s->workspace;
+    s->abiSaved[1] = symbol < 16 ? symbol : 0;
+    s->abiSaved[2] = previous;
+    s->abiSaved[3] = low_mask(CODE_BITS(s));
+    s->abiSaved[4] = total;
+    s->abiSaved[5] = CODE_ROOT(s);
+    abi_capture(s, literals, distances);
+#endif
 #ifdef INIT_DECODE_FRAME_BACKED
 #ifdef INIT_DECODE_SEED_DISTANCE_ROOT
     DISTANCE_ROOT(s) = (uint16_t)(lastCodeEntry - s->workspace);
@@ -691,9 +745,16 @@ int init_decode_stream(InitDecodeState *s, InitDecodeEntry *fixedWorkspace) {
             break;
         case 1: {
             InitDecodeEntry *workspace = s->workspace;
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+            uint32_t address = s->workspaceAddress;
+            s->workspaceAddress = (uint32_t)fixedWorkspace;
+#endif
             s->workspace = fixedWorkspace;
             init_decode_compressed(s, 1, 626, 7, 5);
             s->workspace = workspace;
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+            s->workspaceAddress = address;
+#endif
             status = 0;
             break;
         }
@@ -720,6 +781,11 @@ int init_decode_core(InitDecodeState *s, InitDecodeEntry *fixedWorkspace,
     uint32_t opening = ((uint32_t)header[0] << 24) | ((uint32_t)header[1] << 16) |
                        ((uint32_t)header[2] << 8) | header[3];
     int32_t distance = inputAddress - outputAddress;
+#ifdef INIT_DECODE_ABI_FPR_SHADOW
+    uint32_t i;
+    for (i = 0; i < 6; i++) s->abiSaved[i] = s->frame->savedS[i];
+    s->abiDirty = 0;
+#endif
 #ifdef INIT_DECODE_FRAME_BACKED
     s->workspaceAddress = workspaceAddress;
 #endif
