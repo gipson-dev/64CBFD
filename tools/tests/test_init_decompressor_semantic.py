@@ -143,6 +143,7 @@ class InitDecompressorSemanticTests(unittest.TestCase):
         for lengths, bits, allocated in (([], 7, 0), ([0] * 19, 7, 0), ([1, 1], 1, 0),
                               ([2, 2], 2, 0), ([1], 7, 0), ([1, 2, 2], 1, 0),
                               ([1, 2, 3, 3], 1, 0), ([1, 2, 3, 3], 2, 0),
+                              ([1, 1, 1], 1, 0), ([2] * 5, 2, 0),
                               ([1, 2, 2], 1, 11), ([1, 2, 3, 3], 1, 11)):
             model = tables.BuilderFixture(lengths, bits=bits, allocated=allocated)
             candidate = SemanticFixture(self.library)
@@ -153,6 +154,10 @@ class InitDecompressorSemanticTests(unittest.TestCase):
                 values, len(lengths), len(lengths), None, None,
                 ctypes.byref(root), ctypes.byref(width))
             self.assertEqual(status, model.run())
+            if lengths == [1, 1, 1]:
+                self.assertEqual(status, 0)
+            elif lengths == [2] * 5:
+                self.assertEqual(status, 1)
             self.assertEqual((root.value, width.value, candidate.state.allocated),
                              (model.get(model.ROOT, 2), model.get(model.BITS, 4), model.fprs[19]))
             for address, value in model.memory.items():

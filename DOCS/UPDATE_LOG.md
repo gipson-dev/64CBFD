@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init Note 798 completes two bounded guest compiler/layout trials for the
+  isolated decompressor: 4,928/5,328 text bytes versus the retained 3,984-byte
+  region and 2,668-byte explicit state. Neither profile is a matching owner
+  replacement. Added oversubscribed-tree fixtures preserve model behavior;
+  nine semantic tests, all 522 tool tests, and tool/build/matcher checks pass. Both whole Init
+  sections remain independently exact. No conversion or README total change.
+
 - Init Note 797 adds an isolated connected semantic C candidate and nine
   differential tests. All 67 focused Init tests, all 522 tool tests, and tool
   checks pass. Table,

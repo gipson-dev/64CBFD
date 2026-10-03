@@ -2,6 +2,10 @@
 
 Date: 2026-10-03. Baseline: `7536125`.
 
+Follow-up: [Note 798](798-init-decompressor-guest-layout-trial-and-conversion-boundary-20261003.md)
+measures two isolated IDO profiles and extends oversubscribed-tree comparison.
+Neither profile is a matching production replacement.
+
 ## Result
 
 The retained decompressor now has an isolated connected semantic C candidate

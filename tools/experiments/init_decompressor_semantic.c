@@ -1,4 +1,11 @@
+#ifdef INIT_DECODE_GUEST
+typedef unsigned char uint8_t;
+typedef unsigned short uint16_t;
+typedef unsigned int uint32_t;
+typedef signed int int32_t;
+#else
 #include <stdint.h>
+#endif
 
 /* Isolated recovery candidate. Not linked into production; caller owns bounds. */
 typedef struct {
@@ -22,6 +29,10 @@ typedef struct {
     uint32_t offsets[17];
     uint32_t lengths[320];
 } InitDecodeState;
+
+#ifdef INIT_DECODE_GUEST
+uint32_t init_decode_guest_sizes[] = {sizeof(InitDecodeEntry), sizeof(InitDecodeState)};
+#endif
 
 static const uint16_t lengthBase[31] = {
     3,4,5,6,7,8,9,10,11,13,15,17,19,23,27,31,35,43,51,59,67,83,99,115,

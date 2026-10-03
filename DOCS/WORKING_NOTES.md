@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 798](WORKING_NOTES/798-init-decompressor-guest-layout-trial-and-conversion-boundary-20261003.md)):
+Two isolated IDO guest profiles produce 4,928/5,328 text bytes against the
+retained decompressor's 3,984-byte region; explicit state measures 2,668 bytes.
+Neither is a production replacement. Two oversubscribed-tree cases match
+the retained model; nine semantic tests, all 522 tool tests, and tool/build/matcher checks pass.
+Both full Init sections remain independently exact. Conversion totals stay
+unchanged; matching ABI/frame representation and remaining boundary gates
+precede any production adoption.
+
 2026-10-03 ([Note 797](WORKING_NOTES/797-init-connected-semantic-c-candidate-and-differential-oracles-20261003.md)):
 An isolated connected Init decompressor C candidate implements the builder,
 stored/fixed/dynamic blocks, stream loop, and header/limit entry setup.

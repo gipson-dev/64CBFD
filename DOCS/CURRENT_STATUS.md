@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init guest-layout follow-up: [Note 798](WORKING_NOTES/798-init-decompressor-guest-layout-trial-and-conversion-boundary-20261003.md)
+compiles the isolated decompressor with IDO O2/g3 and O1: 4,928/5,328 text bytes
+versus the retained 3,984-byte region, with a 2,668-byte explicit state object.
+Neither profile is an exact owner replacement. Two oversubscribed-tree fixtures
+match the retained model; all nine semantic tests and all 522 tool tests pass. Both complete Init
+sections remain independently retail-exact, and tool/build/matcher checks pass.
+Init remains 492 C / 47 assembly rows. Next conversion work requires a new
+bitmap/MMIO code-generation hypothesis or connected ABI/frame recovery; do
+not repeat completed profile matrices or manufacture conversion with guards.
+
 Init isolated C follow-up: [Note 797](WORKING_NOTES/797-init-connected-semantic-c-candidate-and-differential-oracles-20261003.md)
 implements connected semantic decompression in an experimental, unlinked file.
 Nine differential tests, all 67 focused Init tests, and all 522 tool tests
