@@ -1,5 +1,22 @@
 # Working Notes
 
+2026-10-03 ([Note 782](WORKING_NOTES/782-init-pause-resume-conversion-assessment-20261003.md)):
+Pause resume reassesses all 47 remaining Init assembly rows / 12,252 bytes.
+Only bitmap `func_10005BE0` and MMIO `func_100038E0` are bounded ordinary-C
+candidates; neither has a proven matching replacement. Fresh matcher confirms
+492 / 492 exact C rows, both complete Init sections match retail, and six
+focused Init tests pass. No new compiler trials or production Init edits.
+Next Init investigation needs a new bitmap dataflow/provenance hypothesis.
+Pending Game work is preserved; README aggregates remain unchanged.
+
+2026-10-03 ([Note 781](WORKING_NOTES/781-game-look-at-matrix-semantic-recovery-20261003.md)):
+Game `func_15047390` replaces its empty body with the SDK-grounded look-at
+matrix builder plus retail's three exact-zero normalization fallbacks. It
+remains non-matching: 188 body words plus two padding nops, 171 differences,
+no new guards/profiles. Twelve focused tests and all 374 tool tests pass;
+full build/project checks pass. Prior spans/hashes and both Init sections are
+unchanged; aggregates are unchanged. Next: reflection builder `func_15047700`.
+
 2026-10-03 ([Note 780](WORKING_NOTES/780-game-descriptor-height-result-builder-direct-match-20261003.md)):
 Game `func_150472C0` converts retained assembly to the complete void descriptor/
 height-result builder. All 52 words match directly, without new guards or

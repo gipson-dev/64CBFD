@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15047390` replaces its empty body with the complete SDK-grounded
+  look-at matrix builder and retail-specific exact-zero normalization guards.
+  It remains non-matching: 188 body words plus two padding nops, 171 differences,
+  no new word guards/profiles. Twelve focused tests and all 374 tool tests pass;
+  full build/project checks pass. The fixed-matrix wrapper, prior restored
+  spans, and both Init sections remain exact. Aggregate tables and README
+  stay unchanged because the empty body was already counted as C.
+  [Note 781](WORKING_NOTES/781-game-look-at-matrix-semantic-recovery-20261003.md)
+
 - Game `func_150472C0` converts retained assembly to the complete void descriptor/
   height-result builder and matches all 52 words directly. Reordering equivalent
   flag contributions removes the last two differences without new guards or

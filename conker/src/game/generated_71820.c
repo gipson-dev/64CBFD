@@ -108,6 +108,9 @@ extern f32 D_80098D50;
 extern f32 D_80098D54;
 extern f32 D_80098D58;
 extern f32 D_80098D5C;
+extern f32 D_80098D60;
+extern f32 D_80098D64;
+extern f32 D_80098D68;
 extern u8 D_800D3830[];
 extern u8 D_800D37E0[];
 extern HeightEntity71820 *D_800DBEF4;
@@ -1089,9 +1092,74 @@ void func_150472C0(HeightResult71820 *result, HeightDescriptor71820 *descriptor)
     result->value = descriptor->value;
 }
 
+#pragma function sqrtf
+
 void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye, f32 xAt,
                    f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp) {
+    f32 len;
+    f32 xLook;
+    f32 yLook;
+    f32 zLook;
+    f32 xRight;
+    f32 yRight;
+    f32 zRight;
+
+    guMtxIdentF(mf);
+    xLook = xAt - xEye;
+    yLook = yAt - yEye;
+    zLook = zAt - zEye;
+    len = sqrtf(xLook * xLook + yLook * yLook + zLook * zLook);
+    if (len == 0.0f) {
+        len = D_80098D60;
+    }
+    len = -1.0f / len;
+    xLook *= len;
+    yLook *= len;
+    zLook *= len;
+
+    xRight = yUp * zLook - zUp * yLook;
+    yRight = zUp * xLook - xUp * zLook;
+    zRight = xUp * yLook - yUp * xLook;
+    len = sqrtf(xRight * xRight + yRight * yRight + zRight * zRight);
+    if (len == 0.0f) {
+        len = D_80098D64;
+    }
+    len = 1.0f / len;
+    xRight *= len;
+    yRight *= len;
+    zRight *= len;
+
+    xUp = yLook * zRight - zLook * yRight;
+    yUp = zLook * xRight - xLook * zRight;
+    zUp = xLook * yRight - yLook * xRight;
+    len = sqrtf(xUp * xUp + yUp * yUp + zUp * zUp);
+    if (len == 0.0f) {
+        len = D_80098D68;
+    }
+    len = 1.0f / len;
+    xUp *= len;
+    yUp *= len;
+    zUp *= len;
+
+    mf[0][0] = xRight;
+    mf[1][0] = yRight;
+    mf[2][0] = zRight;
+    mf[3][0] = -(xEye * xRight + yEye * yRight + zEye * zRight);
+    mf[0][1] = xUp;
+    mf[1][1] = yUp;
+    mf[2][1] = zUp;
+    mf[3][1] = -(xEye * xUp + yEye * yUp + zEye * zUp);
+    mf[0][2] = xLook;
+    mf[1][2] = yLook;
+    mf[2][2] = zLook;
+    mf[3][2] = -(xEye * xLook + yEye * yLook + zEye * zLook);
+    mf[0][3] = 0;
+    mf[1][3] = 0;
+    mf[2][3] = 0;
+    mf[3][3] = 1;
 }
+
+#pragma intrinsic (sqrtf)
 
 void func_15047688(Mtx *m, f32 xEye, f32 yEye, f32 zEye, f32 xAt, f32 yAt,
                    f32 zAt, f32 xUp, f32 yUp, f32 zUp) {

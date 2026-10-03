@@ -37,15 +37,35 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,595 / 4,790 (54.18%) | 0 | 2,195 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+The latest pause resume reassesses remaining Init assembly. Fresh inventory
+still reports 492 C / 47 assembly rows; all 492 C rows and both complete Init
+sections match retail. Six focused Init tests pass. Only bitmap `func_10005BE0`
+and MMIO `func_100038E0` remain bounded ordinary-C candidates, with no proven
+matching replacement. Prefer a genuinely new bitmap dataflow/provenance
+hypothesis; do not repeat the completed compiler matrices. Production Init and
+README aggregates are unchanged; pending Game work is preserved. See
+[Note 782](WORKING_NOTES/782-init-pause-resume-conversion-assessment-20261003.md).
+
+Game `func_15047390` now replaces its empty body with the complete SDK-grounded
+look-at matrix builder, including retail's three exact-zero length fallbacks
+and ordinary `sqrtf` calls. It remains non-matching: 188 body words plus two
+padding nops, 171 differences, no new guards or compiler profiles. Twelve
+focused tests and all 374 tool tests pass; full build/project checks pass.
+The fixed-matrix wrapper is exact; nineteen prior exact neighbors, six
+non-matching hashes, restored spans, and both Init sections remain unchanged.
+Aggregate tables/README are unchanged. Next recover empty reflection look-at
+builder `func_15047700`, inspecting its retail-specific edge cases before
+using the local SDK reference. See
+[Note 781](WORKING_NOTES/781-game-look-at-matrix-semantic-recovery-20261003.md).
+
 Game `func_150472C0` now converts retained assembly to the complete void
 descriptor-to-height-result builder. All 52 words match directly without new
 guards or profiles. It preserves the eighteen-byte coordinate copy, separate
 flag expressions, post-publication state reload, and final value read. Eight
 focused tests and all 362 tool tests pass; full build/project checks pass.
 Eighteen exact neighbors, six non-matching hashes, restored spans, and both
-Init sections remain unchanged. Next investigate empty matrix builder
-`func_15047390` against local libultra `guLookAtF` provenance; do not assume
-the SDK reference is an established retail match. See
+Init sections remain unchanged. Its then-pending matrix builder
+`func_15047390` is now recovered in Note 781 and remains non-matching. See
 [Note 780](WORKING_NOTES/780-game-descriptor-height-result-builder-direct-match-20261003.md).
 
 Game `func_1504715C` now replaces its zero-return placeholder with the complete
