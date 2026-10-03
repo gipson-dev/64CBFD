@@ -21,21 +21,67 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init connected-stream follow-up: [Note 796](WORKING_NOTES/796-init-dynamic-multiblock-and-core-entry-oracles-20261003.md)
+adds eleven dynamic/mixed-block/core-entry tests; all 58 focused Init tests
+and all 513 tool tests pass. Connected oracles now cover valid stored/fixed/dynamic streams,
+repetition/error behavior, cursor rewind, both header skips, and saved-register
+restoration. Production remains assembly. Next is isolated semantic C tested
+against these oracles before any matching owner replacement.
+
+Init compressed-decoder follow-up: [Note 795](WORKING_NOTES/795-init-compressed-decoder-fixed-stream-and-error-oracles-20261003.md)
+adds ten fixed-stream/error oracle tests. All 47 focused Init tests, all 502
+tool tests, and tool checks pass; both full Init sections remain retail-exact. Fixed streams match
+zlib; output publication and malformed-stream differences are pinned as
+bounded-model evidence. Production remains assembly; dynamic/multi-block/core
+qualification precedes a connected C replacement.
+
+Init table-builder follow-up: [Note 794](WORKING_NOTES/794-init-decompressor-table-builder-interface-and-canonical-oracles-20261003.md)
+characterizes extra register inputs, table records, canonical lookups, and
+fixed allocation indices explaining both retained root pointers. Nine builder
+tests, all 37 focused Init tests, and all 492 tool tests pass; tool checks pass. Production remains
+assembly; compressed-decoder/dynamic/error qualification is still required.
+
+Init decompressor follow-up: [Note 793](WORKING_NOTES/793-init-decompressor-shared-contract-and-stored-block-oracle-20261003.md)
+maps the shared frame and integer FPR contract and adds eight stored-block/
+interface tests. All 28 focused Init tests, all 483 tool tests, and tool checks
+pass; zlib stored
+oracles cover payloads through 65,535 bytes. Production remains assembly.
+Table-builder/fixed/dynamic/error qualification precedes connected C recovery.
+
+Latest Init-only resume: [Note 792](WORKING_NOTES/792-init-resume-remaining-assembly-conversion-decision-20261003.md)
+re-verifies all twenty focused Init tests, 492/492 exact C rows, and both
+complete retail-exact sections. The 47 remaining assembly rows are unchanged.
+Bitmap caller-domain and conditional allocator separation are characterized;
+new matching code-generation evidence is needed for bitmap/MMIO conversion.
+The other 45 rows are retained SDK/hardware or connected-interface work.
+No new conversion, production Init edit, or README aggregate change is claimed.
+
 Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,462 / 6,042 (90.40%) | 580 | 1,930,848 / 2,256,728 (85.56%) |
+| Total | 5,463 / 6,042 (90.42%) | 579 | 1,930,924 / 2,256,728 (85.56%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,789 / 5,321 (90.00%) | 532 | 1,759,412 / 2,072,880 (84.88%) |
+| Game | 4,790 / 5,321 (90.02%) | 531 | 1,759,488 / 2,072,880 (84.88%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,269 / 5,462 (59.85%) | 0 | 2,193 |
+| Total | 3,270 / 5,463 (59.86%) | 0 | 2,193 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,596 / 4,789 (54.21%) | 0 | 2,193 |
+| Game | 2,597 / 4,790 (54.22%) | 0 | 2,193 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_1507C324` converts its retained nineteen-word assembly to semantic
+nested float copy/clamp C. Eight stale-checked guards normalize only a closed
+FPR permutation; the complete 76-byte slot remains byte-exact. Fourteen new
+tests, thirty focused copy/clamp/dimension tests, and all 475 tool tests pass;
+full rebuild/project checks pass. Earlier exact slots, ten non-matching hashes,
+restored spans, and both Init sections are preserved. C count/bytes rise by
+one/76 and exact-C count rises by one; README changes only aggregate tables.
+Next inspect the connected `func_1507BDB0` / `func_1507C22C` placeholders before
+recovering their interfaces. See
+[Note 791](WORKING_NOTES/791-game-nested-float-copy-clamp-conversion-and-match-20261003.md).
 
 Game dimension helper `func_1507C3E0` now replaces its empty body with retail
 type/subtype selection, state overrides, distinct radii, attachment expansion,
@@ -44,8 +90,9 @@ and all 461 tool tests pass; build/project checks pass. It remains non-matching:
 310 body words plus ten padding nops, 312 differences, no new guards/profiles.
 The adjacent refresh wrapper and retained leaf remain exact; earlier Game
 regressions and both complete Init sections are unchanged. Aggregates/README
-are unchanged. Next inspect nineteen-word `func_1507C324` for a bounded matching
-C recovery; dimension matching and whole-chain acceptance remain open. See
+were unchanged for that checkpoint. Its then-pending `func_1507C324` conversion
+is completed in Note 791; dimension matching and whole-chain acceptance remain
+open. See
 [Note 790](WORKING_NOTES/790-game-actor-dimension-helper-semantic-recovery-20261003.md).
 
 Init allocator `func_10003C6C` now corrects a duplicate twelve-byte header

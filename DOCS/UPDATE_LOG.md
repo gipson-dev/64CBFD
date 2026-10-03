@@ -18,6 +18,39 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init connected-stream Note 796 adds eleven dynamic/multiblock/core-entry
+  oracle tests. All 58 focused Init tests and all 513 tool tests pass; both header forms and unaligned
+  inputs, repeats, cursor rewind, limits, and partial-output failures are
+  characterized. Production Init remains assembly; next is isolated semantic
+  C comparison before any owner replacement or aggregate increase.
+
+- Init compressed-decoder Note 795 adds ten fixed-stream/error oracle tests.
+  All 47 focused Init tests, all 502 tool tests, and tool checks pass; both complete linked Init
+  sections remain retail-exact. Zlib valid-output comparisons and retail-model
+  error/count/history boundaries are characterized. Production remains
+  assembly; README aggregates and host-port artifacts are unchanged.
+
+- Init table-builder Note 794 adds nine instruction-word/canonical-oracle tests.
+  All 37 focused Init tests, all 492 tool tests, and tool checks pass. Fixed allocations explain
+  root pointers 0x8003BE94/0x8003C858; incomplete-table statuses and a synthetic
+  narrow-root model boundary are recorded. Production Init remains assembly;
+  no README aggregate change or host-port build is made.
+
+- Init remaining-assembly assessment and connected decompressor contract are
+  recorded in Notes 792/793. Eight new stored-block/interface tests and all
+  28 focused Init tests and all 483 tool tests pass; tool checks pass.
+  Shared-frame/FPR ownership,
+  strict stored-block limits, and ignored fixed-wrapper decoder status are
+  characterized. No production Init conversion or README aggregate change.
+
+- Game `func_1507C324` converts its nineteen-word retained assembly to semantic
+  nested float copy/clamp C, remaining byte-exact through eight closed-FPR
+  allocation guards. Fourteen new tests, thirty focused copy/clamp/dimension
+  tests, and all 475 tool tests pass; full rebuild/project checks pass. Earlier
+  Game regressions, dimension helper, restored spans, and Init sections are
+  unchanged. C/exact-C counts rise by one; README updates only aggregate tables.
+  [Note 791](WORKING_NOTES/791-game-nested-float-copy-clamp-conversion-and-match-20261003.md)
+
 - Game `func_1507C3E0` recovers the empty dimension helper, preserving subtype
   mappings, state precedence, distinct radii, expansion/scaling order, and
   nullable ordered outputs. Sixteen focused tests and all 461 tool tests pass;

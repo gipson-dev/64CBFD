@@ -1,5 +1,60 @@
 # Working Notes
 
+2026-10-03 ([Note 796](WORKING_NOTES/796-init-dynamic-multiblock-and-core-entry-oracles-20261003.md)):
+Init dynamic parser, mixed block loop, and outer entrypoints gain eleven
+connected oracle tests. All 58 focused Init tests and all 513 tool tests pass.
+Dynamic repeats,
+zlib streams, cursor rewind, both header skips/all four input alignments,
+saved registers, overlap-derived limits, and prior-output failure effects
+are covered. No production conversion or aggregate change. Next: isolated
+connected semantic C against these oracles, retaining exact production ASM.
+
+2026-10-03 ([Note 795](WORKING_NOTES/795-init-compressed-decoder-fixed-stream-and-error-oracles-20261003.md)):
+Init compressed decoder and fixed wrapper gain ten executable oracle tests.
+All 47 focused Init tests, all 502 tool tests, and tool checks pass; both complete Init sections
+remain retail-exact. Fixed streams match zlib across all literals, extra-bit
+classes, large distances, and overlapping copies. Count publication, ignored
+wrapper status, literal-limit behavior, and synthetic history underflow are
+pinned as model evidence. No production conversion or aggregate change.
+Next: dynamic parser and multi-block/core fixtures before connected C recovery.
+
+2026-10-03 ([Note 794](WORKING_NOTES/794-init-decompressor-table-builder-interface-and-canonical-oracles-20261003.md)):
+Init table builder's extra register arguments, shared allocation state, and
+four-byte table format are characterized. Nine new tests, all 37 focused
+Init tests, and all 492 tool tests pass; tool checks pass. Fixed canonical lookups explain root
+indices 1/626 and retained addresses 0x8003BE94/0x8003C858. Incomplete fixed
+distance status and a synthetic narrow-root model boundary are pinned.
+No production conversion or README aggregate change. Next: compressed
+decoder fixtures using these tables before connected C recovery.
+
+2026-10-03 ([Note 793](WORKING_NOTES/793-init-decompressor-shared-contract-and-stored-block-oracle-20261003.md)):
+Init decompressor connected contract is mapped: 0xA88 shared frame, integer
+FPR state, block dispatch, fixed/dynamic table interfaces, and caller boundary.
+Eight new stored-block/interface tests, all 28 focused Init tests, and all
+483 tool tests pass;
+tool checks pass. Stored payloads through 65,535 bytes match zlib. Strict
+limit rejection and ignored fixed-wrapper decoder status are retained facts.
+No production conversion or aggregate change. Next: complete table-builder
+interface and fixed/dynamic/error oracle fixtures before connected C recovery.
+
+2026-10-03 ([Note 792](WORKING_NOTES/792-init-resume-remaining-assembly-conversion-decision-20261003.md)):
+Init resume re-verifies 492 C / 47 assembly rows, all twenty focused Init
+tests, the linked matcher, and both complete retail-exact Init sections.
+Bitmap caller-domain/conditional heap separation are already characterized;
+matching code generation remains unresolved. Bitmap and MMIO remain the two
+bounded C candidates. The other 45 rows require retained original assembly
+or connected interface recovery. No conversion or README aggregate change;
+pending Game edits are preserved. Detailed next steps are in the note.
+
+2026-10-03 ([Note 791](WORKING_NOTES/791-game-nested-float-copy-clamp-conversion-and-match-20261003.md)):
+Game `func_1507C324` converts retained assembly to semantic nested float
+copy/clamp C. All nineteen words match with eight guards proven to rename
+only one closed FPR allocation cycle. Fourteen new tests, thirty focused
+copy/clamp/dimension tests, and all 475 tool tests pass; full rebuild/project
+checks pass. Earlier slots/hashes, dimension recovery, and both Init sections
+are preserved. C increases one/76 bytes; exact C increases one. README changes
+only aggregate tables. Next: connected `func_1507BDB0` / `func_1507C22C` recovery.
+
 2026-10-03 ([Note 790](WORKING_NOTES/790-game-actor-dimension-helper-semantic-recovery-20261003.md)):
 Game `func_1507C3E0` replaces its empty body with complete dimension rules,
 state overrides, distinct radii, attachment expansion, optional scaling, and
