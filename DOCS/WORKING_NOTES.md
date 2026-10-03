@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 806](WORKING_NOTES/806-init-exception-storage-boundaries-and-all-retail-core-page-survey-20261003.md)):
+All 507 retail pages pass the retained core at exception addresses; maximum
+workspace write span is 3,564 bytes. Fresh IDO sizeof/offsetof shows SDK thread
+size `0x1B0` versus retail context accesses through `0x230`. Six tests pin
+context footprints, wrapper canaries, page-table/input boundary and write-fence
+acceptance/rejection. Observed gaps are not owned capacity; production unchanged.
+
 2026-10-03 ([Note 805](WORKING_NOTES/805-init-exception-decoder-fr1-full-width-fpr-context-model-20261003.md)):
 The actual exception wrapper and decoder execute in a bounded FR=1 model.
 Full FPR save/reload values, unknown MTC1 upper halves, both CU1 branches,

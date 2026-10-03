@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init storage boundaries: [Note 806](WORKING_NOTES/806-init-exception-storage-boundaries-and-all-retail-core-page-survey-20261003.md)
+extends the retained-core survey to all 507 retail pages; maximum workspace
+write span is 3,564 bytes on page 50. A fresh guest probe measures SDK
+`OSThread` at `0x1B0`, while retail 32-FPR context accesses extend to `0x230`.
+Page-table DMA ends exactly at input; wrapper tests preserve the known context
+footprint and numerical gap. These are observed boundaries, not allocation
+capacity or a new production C conversion. README aggregates unchanged.
+
 Init exception context: [Note 805](WORKING_NOTES/805-init-exception-decoder-fr1-full-width-fpr-context-model-20261003.md)
 adds a connected FR=1 model using the actual wrapper/core words, full-width
 FPR saves/reloads and explicitly unknown MTC1 upper halves. Both CU1 paths and

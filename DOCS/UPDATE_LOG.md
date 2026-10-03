@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 806](WORKING_NOTES/806-init-exception-storage-boundaries-and-all-retail-core-page-survey-20261003.md)
+  adds a fresh guest thread-layout receipt, original context extent and
+  page-table DMA checks, wrapper canaries, and all-507-page retained-core survey.
+  Maximum workspace span is 3,564 bytes; SDK size is not retail context extent.
+  No production owner, SDK header, linker or README aggregate change.
+
 - Init [Note 805](WORKING_NOTES/805-init-exception-decoder-fr1-full-width-fpr-context-model-20261003.md)
   adds a connected full-width FPR model restricted to FR=1. It preserves both
   original CU1 paths and the unconditional f0 delay load, explicitly marks
