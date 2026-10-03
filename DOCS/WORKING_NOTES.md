@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 766](WORKING_NOTES/766-game-entity-scan-producer-assembly-restoration-20261003.md)):
+Restored all 520 bytes of the shared-register entity producer/return closure.
+Five new tests cover assembly bytes/branches and actual-source count-pointer
+forwarding. Both C helpers remain exact after pointer type corrections.
+One false C inventory row is removed; no new C match is claimed. All 213 tool
+tests and full build pass; both Init sections remain exact. Next C target:
+`func_15045780`.
+
 2026-10-03 ([Note 765](WORKING_NOTES/765-game-entity-height-query-semantic-recovery-20261003.md)):
 Game `func_15045F8C` replaces its zero-return placeholder with the entity-indexed
 highest-height query and metadata/result body. It remains non-matching: 144

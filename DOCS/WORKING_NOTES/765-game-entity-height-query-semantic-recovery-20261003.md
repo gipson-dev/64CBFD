@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `bdd5577`.
 
+Follow-up: [Note 766](766-game-entity-scan-producer-assembly-restoration-20261003.md)
+restores the then-placeholder upstream producer/cleanup closure and makes its
+secondary-count pointer contract explicit. The entity query remains
+non-matching, and natural wrapper/gameplay qualification remains open.
+
 ## Result
 
 `func_15045F8C` replaces its zero-return placeholder with the complete recovered

@@ -25,26 +25,35 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,455 / 6,042 (90.28%) | 587 | 1,928,720 / 2,256,728 (85.47%) |
+| Total | 5,454 / 6,042 (90.27%) | 588 | 1,928,216 / 2,256,728 (85.44%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,782 / 5,321 (89.87%) | 539 | 1,757,284 / 2,072,880 (84.77%) |
+| Game | 4,781 / 5,321 (89.85%) | 540 | 1,756,780 / 2,072,880 (84.75%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,257 / 5,455 (59.71%) | 0 | 2,198 |
+| Total | 3,257 / 5,454 (59.72%) | 0 | 2,197 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,584 / 4,782 (54.04%) | 0 | 2,198 |
+| Game | 2,584 / 4,781 (54.05%) | 0 | 2,197 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The shared-register entity producer and its return/cleanup closure now match
+all 520 retail bytes across three entries. Explicit secondary-count pointer
+types preserve both C helpers' exact bytes. This removes one false C inventory
+row, not three, and does not add a C match. All 213 tool tests, full build, and project checks pass;
+both complete Init sections and earlier collector/query spans remain exact.
+Next recover the retained `func_15045780` wrapper in C; gameplay qualification
+and the entity query's 72 differences remain separate. See
+[Note 766](WORKING_NOTES/766-game-entity-scan-producer-assembly-restoration-20261003.md).
 
 Game `func_15045F8C` now has its complete entity-indexed highest-height query.
 It remains non-matching: 144 body words plus one padding nop, 72 differences,
 no new guards. Twelve new tests cover metadata, entity-address publication,
 flag combinations, and alias-sensitive reloads. All 208 tool tests, full build, and project checks
 pass; recovered neighbors, collector group, and both Init sections remain exact.
-Matching aggregates do not change. The upstream `func_150A6568` output-buffer
-producer remains a placeholder; audit its whole shared-register group before
-claiming a working wrapper path. See
+Matching aggregates did not change for that recovery. Its then-placeholder
+upstream `func_150A6568` producer is restored in Note 766; natural wrapper
+qualification remains open. See
 [Note 765](WORKING_NOTES/765-game-entity-height-query-semantic-recovery-20261003.md).
 
 Game `func_1504554C` now has its complete context-3 highest-height query.

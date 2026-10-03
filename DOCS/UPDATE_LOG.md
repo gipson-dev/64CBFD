@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- The original `func_150A6568` producer, interior cleanup, and shared empty
+  return replace their placeholders; all 520 bytes match retail. Both C
+  helpers remain exact with explicit secondary-count pointer contracts.
+  Five new tests cover assembly/link bytes and C forwarding. All 213 tool
+  tests pass. Full build and
+  project checks pass. README aggregates remove one false C row / 504 bytes.
+  Natural wrapper qualification remains separate.
+  [Note 766](WORKING_NOTES/766-game-entity-scan-producer-assembly-restoration-20261003.md)
+
 - Game `func_15045F8C` replaces its placeholder with the entity-indexed
   highest-height query. Its 145-word slot contains 144 semantic body words
   and one padding nop, with 72 differences and no new guards. Twelve new

@@ -79,6 +79,7 @@ s32 func_150A3A70(s32 x, s32 z);
 s32 func_150A4FA0(s32 x, s32 z);
 void func_150A44F0(s32 value, void *scratch, s32 mode);
 s32 func_150A43E0(s32 x, s32 z, s32 value, void *scratch);
+s32 func_150A6500(s32 x, s32 z, s32 *secondaryCount, s32 selector);
 
 extern PositionScaleRecord71820 *D_800CBE00;
 extern s32 D_800BE9E4;
@@ -461,9 +462,9 @@ s32 func_1504554C(f32 *position, f32 threshold, HeightResult71820 *result) {
     return 0;
 }
 
-void func_15045714(f32 *position, u16 selector, s32 *result, s32 context) {
+void func_15045714(f32 *position, u16 selector, s32 *result, s32 *secondaryCount) {
     func_1510F800(2);
-    *result = func_150A6500((s16)position[0], (s16)position[2], context, selector);
+    *result = func_150A6500((s16)position[0], (s16)position[2], secondaryCount, selector);
 }
 
 /* Note 313: original ROM implementation, retained as assembly until C conversion. */
