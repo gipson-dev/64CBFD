@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 824](WORKING_NOTES/824-init-distance-builder-and-multiblock-fpr-history-20261003.md)):
+Twelve new gated streams add 144 shadow context comparisons, for 348 total.
+Distance-builder failures/special outcomes and multiblock FPR history pass
+on six profiles and both CU1 modes. Pre-wrapper f0-f11 checks close a masking
+gap in the oracle. All 19 focused tests pass; code/stack costs and production
+ownership unchanged. Full shadow corpus, storage ownership and fitting remain open.
+
 2026-10-03 ([Note 823](WORKING_NOTES/823-init-semantic-scratch-fpr-publication-20261003.md)):
 Opt-in semantic FPR snapshots and adapter publication match both CU1 modes
 in 204 new bounded context comparisons across six profiles. Incoming and

@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 824](WORKING_NOTES/824-init-distance-builder-and-multiblock-fpr-history-20261003.md)
+  qualifies distance-tree outcomes and multiblock FPR history with 144 more
+  gated comparisons (348 shadow contexts total). All 19 focused tests pass,
+  including pre-wrapper scratch-FPR checks. Actual code/stack costs and
+  production ownership remain unchanged; Game work is preserved separately.
+
 - Init [Note 823](WORKING_NOTES/823-init-semantic-scratch-fpr-publication-20261003.md)
   adds opt-in semantic scratch-FPR publication. All 204 new bounded context
   comparisons pass across six images and both CU1 paths. State/adapter costs

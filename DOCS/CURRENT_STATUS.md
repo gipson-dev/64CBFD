@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init distance-builder/multiblock history: [Note 824](WORKING_NOTES/824-init-distance-builder-and-multiblock-fpr-history-20261003.md)
+adds 144 gated context comparisons, bringing shadow coverage to 348 across
+six profiles and both CU1 modes. Distance errors, accepted special trees,
+multiple dynamic blocks, fixed/stored history and retained-snapshot errors pass.
+Scratch f0-f11 are also checked before the wrapper's final f0 reload.
+All 19 adapter/shadow/provenance tests pass. Costs and production ownership
+are unchanged; full shadow corpus, actual storage ownership and fitting stay open.
+
 Init semantic scratch-FPR publication: [Note 823](WORKING_NOTES/823-init-semantic-scratch-fpr-publication-20261003.md)
 adds an opt-in 116-byte shadow state and 320-byte adapter. All 204 new bounded
 context comparisons match retail across six compiled profiles, including both

@@ -124,6 +124,8 @@ class InitDecompressorCompiledGuestAdapterTests(unittest.TestCase):
                 registers, fprs = guest.snapshots[0x10005F34]
                 self.assertEqual(registers[2], result_registers[2])
                 self.assertEqual(fprs[16:20], result_fprs[16:20])
+                if getattr(self, "compare_scratch_fprs", False):
+                    self.assertEqual(fprs[:12], result_fprs[:12])
                 self.assertEqual(guest.registers, reference.registers)
                 self.assertEqual(guest.status, reference.status)
                 self.assertEqual(guest.status_writes, reference.status_writes)

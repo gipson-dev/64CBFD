@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `92c2d9d2`.
 
+Follow-up: [Note 824](824-init-distance-builder-and-multiblock-fpr-history-20261003.md)
+qualifies distance-builder outcomes and multiple dynamic/fixed/stored histories,
+with stricter pre-wrapper scratch-FPR checks. Full shadow corpus, ownership
+and fitting remain open; the verification counts below are this checkpoint's.
+
 ## Result And Boundary
 
 The isolated decompressor now has an opt-in `--abi-fpr-shadow` variant.

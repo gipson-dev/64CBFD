@@ -9,6 +9,8 @@ from tools.tests import test_init_decompressor_guest_adapter as adapter
 from tools.tests import test_init_decompressor_fpr_provenance as provenance
 from tools.tests import test_init_decompressor_exception as exception
 from tools.tests import test_init_decompressor_streams as streams
+from tools.tests import test_init_decompressor_decoder as decoder
+from tools.tests import test_init_decompressor_tables as tables
 
 
 class ShadowExceptionFixture(adapter.GuestExceptionFixture):
@@ -17,6 +19,7 @@ class ShadowExceptionFixture(adapter.GuestExceptionFixture):
 
 class InitDecompressorGuestFprShadowTests(unittest.TestCase):
     fixture_type = ShadowExceptionFixture
+    compare_scratch_fprs = True
     compare = adapter.InitDecompressorCompiledGuestAdapterTests.compare
 
     @classmethod
@@ -56,6 +59,108 @@ class InitDecompressorGuestFprShadowTests(unittest.TestCase):
                 cls.adapter_images.append((label, profile, image))
                 cls.receipts[label, profile] = receipt
                 cls.maximum_depths[label, profile] = 0
+
+    @staticmethod
+    def dynamic_bits(distance_lengths=(1,), final=True):
+        bits = streams.BitStream()
+        bits.emit(4 | int(final), 3)
+        bits.emit(0, 5)
+        bits.emit(len(distance_lengths) - 1, 5)
+        bits.emit(14, 4)
+        lengths = [0] * 19
+        lengths[0], lengths[1], lengths[2] = 1, 2, 2
+        order = decoder.reference_data("2C120.rodata.s", "D_8002C15C")
+        for symbol in order[:18]:
+            bits.emit(lengths[symbol], 3)
+        codes = {symbol: (code, width) for symbol, width, code in
+                 tables.InitDecompressorTableTests.canonical(lengths)}
+        literal_lengths = [0] * 257
+        literal_lengths[65] = literal_lengths[256] = 1
+        for width in (*literal_lengths, *distance_lengths):
+            bits.emit(*codes[width])
+        bits.emit(0, 1)
+        bits.emit(1, 1)
+        return bits
+
+    def assert_builder_gate(self, raw, calls, output=b"", result=0):
+        fixture = provenance.FprProvenanceFixture(b"\x11\x72" + raw,
+            exception.SR_FR | exception.SR_CU1 | 0xFF01)
+        fixture.capture.add(0x100067E0)
+        fixture.context()
+        self.assertEqual(fixture.visits.get(0x1000696C, 0), calls)
+        registers, fprs = fixture.snapshots[0x10005F34]
+        self.assertEqual(registers[2], result)
+        self.assertEqual(fprs[17], len(output))
+        self.assertEqual(bytes(fixture.memory[fixture.OUTPUT + i]
+                               for i in range(len(output))), output)
+        return fixture
+
+    def test_distance_builder_failures_and_empty_tree(self):
+        for distance_lengths, output, result in (((2, 2), b"", 0),
+                                                  ((1, 1, 2), b"", 0),
+                                                  ((1, 1, 1), b"A", 1),
+                                                  ((0,), b"A", 1)):
+            raw = self.dynamic_bits(distance_lengths).data()
+            reference = self.assert_builder_gate(raw, 3, output, result)
+            self.assertEqual(reference.snapshots[0x100067E0][0][2] != 0, result == 0)
+            self.assertEqual(reference.visits.get(0x10006E00, 0), int(result != 0))
+            for cu1 in (False, True):
+                self.compare(b"\x11\x72" + raw,
+                    exception.SR_FR | (exception.SR_CU1 if cu1 else 0) | 0xFF01,
+                    expected_output=output, expected_result=result)
+
+    def test_multiple_dynamic_blocks_and_retained_snapshot_errors(self):
+        cases = []
+        for ending, calls, output, result in (
+                (self.dynamic_bits(), 6, b"AA", 2),
+                (self.dynamic_bits((2, 2)), 6, b"A", 0)):
+            prefix = self.dynamic_bits(final=False)
+            prefix.bits.extend(ending.bits)
+            cases.append((prefix.data(), calls, output, result))
+        for ending, calls in ((streams.InitDecompressorStreamTests().dynamic(overflow=True), 4),
+                               (b"\x07", 3)):
+            prefix = self.dynamic_bits(final=False)
+            prefix.bits.extend((byte >> i) & 1 for byte in ending for i in range(8))
+            cases.append((prefix.data(), calls, b"A", 0))
+        prefix = self.dynamic_bits(final=False)
+        prefix.emit(5, 3)
+        prefix.emit(30, 5)
+        prefix.emit(0, 9)
+        cases.append((prefix.data(), 3, b"A", 0))
+        prefix = self.dynamic_bits(final=False)
+        prefix.emit(0, 3)
+        while len(prefix.bits) % 8:
+            prefix.emit(0, 1)
+        prefix.emit(2, 16)
+        prefix.emit(0xFFFD, 16)
+        for byte in b"XY":
+            prefix.emit(byte, 8)
+        prefix.bits.extend(self.dynamic_bits().bits)
+        cases.append((prefix.data(), 6, b"AXYA", 4))
+        fixed = decoder.InitDecompressorDecoderTests
+        fixed_raw = fixed.encoded(b"BC")
+        fixed_length = 3 + sum(fixed.codes[symbol][1] for symbol in (*b"BC", 256))
+        for overflow in (False, True):
+            prefix = self.dynamic_bits(final=False)
+            fixed_bits = [(byte >> i) & 1 for byte in fixed_raw for i in range(8)][:fixed_length]
+            fixed_bits[0] = 0
+            prefix.bits.extend(fixed_bits)
+            prefix.emit(0, 3)
+            while len(prefix.bits) % 8:
+                prefix.emit(0, 1)
+            prefix.emit(0, 16)
+            prefix.emit(0xFFFF, 16)
+            ending = streams.InitDecompressorStreamTests().dynamic(overflow=True) if overflow else None
+            prefix.bits.extend(((byte >> i) & 1 for byte in ending for i in range(8))
+                               if overflow else self.dynamic_bits().bits)
+            cases.append((prefix.data(), 4 if overflow else 6,
+                          b"ABC" if overflow else b"ABCA", 0 if overflow else 4))
+        for raw, calls, output, result in cases:
+            self.assert_builder_gate(raw, calls, output, result)
+            for cu1 in (False, True):
+                self.compare(b"\x11\x72" + raw,
+                    exception.SR_FR | (exception.SR_CU1 if cu1 else 0) | 0xFF01,
+                    expected_output=output, expected_result=result)
 
     def test_shadow_requires_frame_backing(self):
         result = subprocess.run([sys.executable,
