@@ -18,6 +18,21 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 802](WORKING_NOTES/802-init-decompressor-physical-frame-mapping-and-contract-tests-20261003.md)
+  implements a physical frame view and nine scratch/ABI tests. All 76 Init
+  tests pass; both guest profiles validate all frame offsets. Initializer
+  aliases, pointer/index translation, return cells, bounded stack depth, and
+  exception FPR-delay evidence are retained. Production assembly and aggregate
+  coverage stay unchanged. All 551 project tool tests and tool/build/matcher
+  checks pass; both complete Init sections remain independently retail-exact.
+  Frame-backed C/adapter/context work remains next.
+- Init [Note 801](WORKING_NOTES/801-init-post-pause-assembly-conversion-assessment-20261003.md)
+  records the post-pause conversion decision: 492 C / 47 assembly rows,
+  all 67 Init tests passing, 492/492 exact C functions, and both complete
+  sections independently retail-exact. Small bitmap/MMIO matching gates and
+  connected decompressor ABI/layout work are distinguished from retained
+  SDK/hardware assembly. No Init owner or README aggregate changes; pending
+  Game source/tests are preserved outside the assessment.
 - Game Note 800 replaces `func_1507C22C`'s placeholder with its 25-record
   actor-step dispatcher and matches all 62 words using seven independent
   address-setup scheduling guards. Ten new tests, forty focused tests, and

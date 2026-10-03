@@ -7,6 +7,8 @@ typedef signed int int32_t;
 #include <stdint.h>
 #endif
 
+#include "init_decompressor_frame.h"
+
 /* Isolated recovery candidate. Not linked into production; caller owns bounds. */
 typedef struct {
     uint8_t operation;
@@ -32,6 +34,19 @@ typedef struct {
 
 #ifdef INIT_DECODE_GUEST
 uint32_t init_decode_guest_sizes[] = {sizeof(InitDecodeEntry), sizeof(InitDecodeState)};
+#define FRAME_OFFSET(member) ((uint32_t)&((InitDecodeFrame *)0)->member)
+uint32_t init_decode_guest_frame_layout[] = {
+    sizeof(InitDecodeFrame), FRAME_OFFSET(counts), FRAME_OFFSET(tables),
+    FRAME_OFFSET(sorted), FRAME_OFFSET(offsets), FRAME_OFFSET(staging),
+    FRAME_OFFSET(staging.fixed.literalRoot), FRAME_OFFSET(staging.fixed.literalBits),
+    FRAME_OFFSET(staging.fixed.distanceRoot), FRAME_OFFSET(staging.fixed.distanceBits),
+    FRAME_OFFSET(literalRoot), FRAME_OFFSET(distanceRoot), FRAME_OFFSET(literalBits),
+    FRAME_OFFSET(distanceBits), FRAME_OFFSET(wrapperReturn), FRAME_OFFSET(savedS),
+    FRAME_OFFSET(dispatcherReturn), FRAME_OFFSET(streamReturn), FRAME_OFFSET(finalBlock),
+    FRAME_OFFSET(savedWorkspace), FRAME_OFFSET(savedFp), FRAME_OFFSET(savedGp),
+    FRAME_OFFSET(entryReturn), FRAME_OFFSET(padA84)
+};
+#undef FRAME_OFFSET
 #endif
 
 static const uint16_t lengthBase[31] = {

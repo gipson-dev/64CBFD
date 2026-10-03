@@ -1,5 +1,24 @@
 # Working Notes
 
+2026-10-03 ([Note 802](WORKING_NOTES/802-init-decompressor-physical-frame-mapping-and-contract-tests-20261003.md)):
+An explicit physical `0xA88` decompressor frame view matches guest/native
+offsets; nine new tests compare scratch arrays, pointer/index translations,
+initializer aliases, save/return cells, direct Init call ledger, and bounded
+stack low-water. All 76 Init tests and all 551 project tool tests pass;
+guest/tool/build/matcher checks and both full Init section comparisons pass.
+Candidate text remains overlong;
+exception FPR/context and original adapter qualification remain open. No
+production owner or README aggregate change; pending Game work is preserved.
+
+2026-10-03 ([Note 801](WORKING_NOTES/801-init-post-pause-assembly-conversion-assessment-20261003.md)):
+Post-pause Init audit confirms 492 C / 47 assembly rows, 12,252 assembly bytes,
+all 67 Init tests passing, 492/492 exact C functions, and both whole sections
+retail-exact. Bitmap/MMIO C is behaviorally plausible but not a proven matching
+replacement; decompressor C exists experimentally but needs original ABI/frame
+and layout recovery. The note separates those paths from retained SDK/hardware
+assembly and provides restart gates. No production conversion or README change;
+existing uncommitted Game updater work is preserved.
+
 2026-10-03 ([Note 800](WORKING_NOTES/800-game-actor-step-dispatcher-recovery-and-match-20261003.md)):
 Game `func_1507C22C` gains its semantic 25-record actor scan/update dispatch
 and matches all 62 words with seven independent address-setup scheduling guards.

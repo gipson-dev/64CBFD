@@ -29,6 +29,7 @@ def inspect_object(path):
     symbol_strings = data[symbol_strings[4]:symbol_strings[4] + symbol_strings[5]]
     functions = []
     size_symbol = None
+    frame_symbol = None
     for offset in range(symbols[4], symbols[4] + symbols[5], symbols[9]):
         symbol = struct.unpack_from(">IIIBBH", data, offset)
         label = name(symbol_strings, symbol[0])
@@ -36,6 +37,8 @@ def inspect_object(path):
             functions.append((symbol[1], label))
         if label == "init_decode_guest_sizes":
             size_symbol = symbol
+        if label == "init_decode_guest_frame_layout":
+            frame_symbol = symbol
     functions.sort()
     measurements = []
     for i, (start, label) in enumerate(functions):
@@ -51,8 +54,19 @@ def inspect_object(path):
         raise ValueError("guest layout size symbol missing")
     section = sections[size_symbol[5]]
     entry_size, state_size = struct.unpack_from(">2I", data, section[4] + size_symbol[1])
+    if frame_symbol is None:
+        raise ValueError("guest frame layout symbol missing")
+    section = sections[frame_symbol[5]]
+    frame_layout = struct.unpack_from(">24I", data, section[4] + frame_symbol[1])
+    expected_layout = (0xA88, 0, 0x44, 0x84, 0x504, 0x548, 0x9C8, 0x9CC,
+                       0x9D0, 0x9D4, 0xA38, 0xA3A, 0xA3C, 0xA40, 0xA44,
+                       0xA48, 0xA68, 0xA6C, 0xA70, 0xA74, 0xA78, 0xA7C,
+                       0xA80, 0xA84)
+    if frame_layout != expected_layout:
+        raise ValueError("guest frame differs from recovered retail offsets")
     return {"text_bytes": text[5], "entry_bytes": entry_size,
-            "state_bytes": state_size, "functions": measurements}
+            "state_bytes": state_size, "frame_layout": frame_layout,
+            "functions": measurements}
 
 
 def main():

@@ -95,8 +95,12 @@ class InitDecompressorSemanticTests(unittest.TestCase):
         decoder.InitDecompressorDecoderTests.setUpClass.__func__(
             decoder.InitDecompressorDecoderTests)
 
-    def assert_model(self, raw, expected=None, limit=0x70000000):
+    def assert_model(self, raw, expected=None, limit=0x70000000, scratch_pattern=None):
         model = streams.StreamFixture(raw, limit=limit)
+        if scratch_pattern is not None:
+            # Fixed-table fixture setup used this frame; reset only scratch so
+            # candidate/model stream entries start with the same physical bytes.
+            model.memory.update({model.STACK + i: scratch_pattern for i in range(0xA38)})
         model_status = model.stream()
         candidate = SemanticFixture(self.library, raw, limit)
         self.assertEqual(candidate.stream(), model_status)

@@ -21,13 +21,35 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init decompressor frame mapping: [Note 802](WORKING_NOTES/802-init-decompressor-physical-frame-mapping-and-contract-tests-20261003.md)
+adds an explicit physical `0xA88` view, guest/native offset checks, and nine
+scratch/interface tests. All 76 Init tests pass. Sixteen table cells, 316
+length cells, initializer output aliases, and pointer/index translation are
+pinned; direct/wrapped modeled stack low-water is `0xA88`/`0xA98`.
+All 551 project tool tests, guest layout checks, and project checks pass;
+the linked matcher and both independent retail-exact Init sections are preserved.
+The exception caller's unconditional FPR restore delay is preserved as an
+open hardware-context boundary. This is not an adapter or production conversion;
+next prototype frame-backed scratch C and qualify connected context ownership.
+
+Post-pause Init assessment: [Note 801](WORKING_NOTES/801-init-post-pause-assembly-conversion-assessment-20261003.md)
+freshly verifies 492 C / 47 assembly rows, all 67 Init tests, 492/492 exact C
+functions, and both complete retail-exact Init sections. Bitmap/MMIO remain
+small C-expressible candidates without a demonstrated matching replacement.
+The tested decompressor C needs original ABI/frame recovery and a fitting
+layout; SDK/boot/privileged assembly is not ordinary missing-C backlog.
+No new Init conversion or aggregate change is claimed. Pending uncommitted
+Game updater source/tests are preserved and outside this assessment.
+
 Game actor-step dispatcher: [Note 800](WORKING_NOTES/800-game-actor-step-dispatcher-recovery-and-match-20261003.md)
 replaces `func_1507C22C`'s zero-return placeholder with its 25-record scan and
 conditional update dispatch. All 62 words match with seven independent address-
 setup scheduling guards. Ten new tests, forty focused tests, and all 532 tool
 tests pass; final argument-form rerun/build/matcher and section checks pass.
-Connected updater/predicate placeholders remain open, so this is not gameplay
-acceptance. Next recover `func_1507BDB0` and its connected interfaces.
+At the Note 800 checkpoint, connected updater/predicate placeholders remained
+open, so it was not gameplay acceptance. Pending uncommitted `func_1507BDB0`
+recovery needs its own final review, documentation, and coherent checkpoint;
+the current Init assessment does not finish that Game handoff.
 Init bitmap ordered-store trials in [Note 799](WORKING_NOTES/799-init-bitmap-volatile-store-scheduling-trial-20261003.md)
 remain non-matching; production Init ownership and both exact sections are preserved.
 
