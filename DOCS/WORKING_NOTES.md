@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 848](WORKING_NOTES/848-init-fixed-length-pointer-ranges-and-complete-table-qualification-20261003.md)):
+Opt-in pointer-range fixed initializer reduces best linked O2 to 4,848,
+864 over retail; O1 grows 48. All 420 bounded contexts, 114 direct builders
+and six exact initializer/table comparisons pass: 16 tests pass, corpus skips.
+Store order/table bytes/guards and stack bounds hold. Indexed trial removed;
+changed full corpus and further fitting remain open. Production, defaults
+and README totals unchanged; unrelated Game work preserved.
+
 2026-10-03 ([Note 847](WORKING_NOTES/847-init-builder-operation-selection-fitting-and-rejected-dataflow-trials-20261003.md)):
 Opt-in arithmetic operation selection reduces alternate O2 and all O1 shapes;
 packed O2's two-word builder saving is absorbed by padding. All 420 bounded

@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init fixed-length pointer fitting: [Note 848](WORKING_NOTES/848-init-fixed-length-pointer-ranges-and-complete-table-qualification-20261003.md)
+retains an opt-in four-range pointer initializer. Best packed O2 linked text
+falls to 4,848, leaving 864 over retail; O1 grows 48 bytes. All 420 bounded
+contexts, 114 direct builders and six complete initializer comparisons pass:
+16 tests pass, one corpus skip. Exact 318-store sequence, all 2,632 table
+bytes and unchanged stack bounds are verified. Continue fitting; changed full
+corpus and ownership/hardware remain open. Production/defaults/totals unchanged.
+
 Init builder operation fitting: [Note 847](WORKING_NOTES/847-init-builder-operation-selection-fitting-and-rejected-dataflow-trials-20261003.md)
 retains opt-in arithmetic operation selection. All 420 bounded contexts and
 114 direct builder comparisons pass; 15 tests pass, full corpus skips.

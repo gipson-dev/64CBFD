@@ -602,6 +602,9 @@ int init_decode_stored(InitDecodeState *s) {
 }
 
 void init_decode_fixed_tables(InitDecodeState *s) {
+#ifdef INIT_DECODE_FIXED_LENGTH_CURSOR
+    uint32_t *cursor;
+#endif
 #ifdef INIT_DECODE_FRAME_BACKED
     uint32_t i;
     FIXED_LITERAL_BITS(s) = 7;
@@ -610,9 +613,17 @@ void init_decode_fixed_tables(InitDecodeState *s) {
     uint32_t i, bits = 7;
 #endif
     s->allocated = 0;
+#ifdef INIT_DECODE_FIXED_LENGTH_CURSOR
+    cursor = LENGTHS(s);
+    do { *cursor++ = 8; } while (cursor != LENGTHS(s) + 144);
+    do { *cursor++ = 9; } while (cursor != LENGTHS(s) + 256);
+    do { *cursor++ = 7; } while (cursor != LENGTHS(s) + 280);
+    do { *cursor++ = 8; } while (cursor != LENGTHS(s) + 288);
+#else
     for (i = 0; i < 288; i++) {
         LENGTHS(s)[i] = i < 144 ? 8 : i < 256 ? 9 : i < 280 ? 7 : 8;
     }
+#endif
     init_decode_build(s, LENGTHS(s), 288, 257, lengthBase, lengthExtra,
                       &FIXED_LITERAL_ROOT(s), &FIXED_LITERAL_BITS(s));
     for (i = 0; i < 30; i++) LENGTHS(s)[i] = 5;

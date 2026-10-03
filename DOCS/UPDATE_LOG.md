@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 848](WORKING_NOTES/848-init-fixed-length-pointer-ranges-and-complete-table-qualification-20261003.md)
+  banks smaller O2 fixed initialization with exact ordered-length/full-table
+  checks and bounded contexts. Best linked text is 4,848, still 864 over
+  retail; O1 growth is explicit. Changed full corpus remains open. No
+  production/default/README aggregate changes; unrelated Game work excluded.
+
 - Init [Note 847](WORKING_NOTES/847-init-builder-operation-selection-fitting-and-rejected-dataflow-trials-20261003.md)
   banks bounded arithmetic-operation fitting and rejected prefix/countdown
   receipts. Alternate profiles shrink; best packed O2 stays 4,864 after

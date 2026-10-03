@@ -266,6 +266,8 @@ def main():
                         help="traverse histogram lengths with a pointer cursor")
     parser.add_argument("--builder-simple-operation", action="store_true",
                         help="form simple-symbol operation from its signed comparison")
+    parser.add_argument("--fixed-length-cursor", action="store_true",
+                        help="initialize fixed literal lengths through four pointer ranges")
     args = parser.parse_args()
     if args.abi_fpr_shadow:
         args.seed_distance_root = True
@@ -323,6 +325,8 @@ def main():
         suffix += "-histogram-cursor"
     if args.builder_simple_operation:
         suffix += "-simple-operation"
+    if args.fixed_length_cursor:
+        suffix += "-fixed-length-cursor"
     output = (args.output or root / ("conker/build/init-decompressor-semantic" + suffix)).resolve()
     output.mkdir(parents=True, exist_ok=True)
     cwd = root / "conker"
@@ -376,6 +380,8 @@ def main():
         common.append("-DINIT_DECODE_BUILDER_HISTOGRAM_CURSOR")
     if args.builder_simple_operation:
         common.append("-DINIT_DECODE_BUILDER_SIMPLE_OPERATION")
+    if args.fixed_length_cursor:
+        common.append("-DINIT_DECODE_FIXED_LENGTH_CURSOR")
     report = {}
     for label, profile in (("o2g3", ["-O2", "-g3"]), ("o1", ["-O1"])):
         obj = output / (label + ".o")
