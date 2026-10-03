@@ -18,6 +18,17 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Rechecked the remaining Init assembly: 47 rows / 12,252 bytes, of which
+  two small leaves remain plausible but unproven matching C candidates.
+  Both complete Init sections remain exact; no Init production source changed.
+  [Note 768](WORKING_NOTES/768-init-remaining-assembly-current-decision-20261003.md)
+
+- Game `func_15045780` is converted from retained assembly to semantic C;
+  all 128 bytes match directly without guards or profile changes. Five new
+  behavior tests and all 218 tool tests pass. README aggregate tables reflect
+  one additional converted/exact C row, not a new Init conversion.
+  [Note 767](WORKING_NOTES/767-game-entity-height-wrapper-direct-match-20261003.md)
+
 - The original `func_150A6568` producer, interior cleanup, and shared empty
   return replace their placeholders; all 520 bytes match retail. Both C
   helpers remain exact with explicit secondary-count pointer contracts.

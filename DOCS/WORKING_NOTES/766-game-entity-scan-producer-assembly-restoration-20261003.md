@@ -101,3 +101,8 @@ prove a natural working wrapper/gameplay path. Next recover the retained
 32-word `func_15045780` wrapper in C using the now-explicit primary/secondary
 buffer contract, and separately improve the non-matching entity query.
 The sibling host port and frozen Release artifacts remain untouched.
+
+Follow-up: [Note 767](767-game-entity-height-wrapper-direct-match-20261003.md)
+completes the then-pending wrapper conversion with a direct 32-word C match.
+Natural gameplay qualification and the entity query's remaining differences
+are still separate work.

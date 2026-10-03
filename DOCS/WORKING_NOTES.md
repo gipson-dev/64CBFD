@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-03 ([Note 768](WORKING_NOTES/768-init-remaining-assembly-current-decision-20261003.md)):
+Rechecked all 47 remaining Init assembly rows / 12,252 bytes. Both entire
+Init sections remain exact. Only the MMIO and bitmap leaves are bounded C
+candidates, still deferred after unsuccessful matching trials. The other
+45 rows require retained assembly or coordinated interface rewrites; no Init
+conversion or new compiler experiment is claimed.
+
+2026-10-03 ([Note 767](WORKING_NOTES/767-game-entity-height-wrapper-direct-match-20261003.md)):
+Game `func_15045780` matches all 32 words directly from semantic C, with no
+guards or profile changes. Five new behavior tests and all 218 tool tests
+pass; previously restored spans and both Init sections remain exact.
+Next ordinary Game target: dispatch wrapper `func_15045800` and its callee
+contract. Natural gameplay qualification remains separate.
+
 2026-10-03 ([Note 766](WORKING_NOTES/766-game-entity-scan-producer-assembly-restoration-20261003.md)):
 Restored all 520 bytes of the shared-register entity producer/return closure.
 Five new tests cover assembly bytes/branches and actual-source count-pointer

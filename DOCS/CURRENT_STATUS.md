@@ -25,24 +25,42 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | C functions | Raw assembly | C bytes |
 | --- | ---: | ---: | ---: |
-| Total | 5,454 / 6,042 (90.27%) | 588 | 1,928,216 / 2,256,728 (85.44%) |
+| Total | 5,455 / 6,042 (90.28%) | 587 | 1,928,344 / 2,256,728 (85.45%) |
 | Init | 492 / 539 (91.28%) | 47 | 151,796 / 164,048 (92.53%) |
-| Game | 4,781 / 5,321 (89.85%) | 540 | 1,756,780 / 2,072,880 (84.75%) |
+| Game | 4,782 / 5,321 (89.87%) | 539 | 1,756,908 / 2,072,880 (84.76%) |
 | Debugger | 181 / 182 (99.45%) | 1 | 19,640 / 19,800 (99.19%) |
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,257 / 5,454 (59.72%) | 0 | 2,197 |
+| Total | 3,258 / 5,455 (59.73%) | 0 | 2,197 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,584 / 4,781 (54.05%) | 0 | 2,197 |
+| Game | 2,585 / 4,782 (54.06%) | 0 | 2,197 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+The resumed Init audit confirms 47 assembly rows / 12,252 bytes, with all
+492 C rows exact and both complete code/data sections matching retail.
+Only `func_100038E0` (44 bytes) and `func_10005BE0` (76 bytes) remain bounded
+ordinary-C candidates; neither has a proven matching replacement after the
+documented compiler trials. The other 45 rows retain SDK, hardware, boot, or
+shared-register contracts. No Init source conversion is claimed. See
+[Note 768](WORKING_NOTES/768-init-remaining-assembly-current-decision-20261003.md).
+
+Game `func_15045780` is now semantic C and matches all 32 words directly,
+without guards or profile changes. Five new tests cover the early-rejection
+flag mask, two-count buffer, raw return forwarding, helper mutations, NaNs,
+and all halfword selectors. All 218 tool tests and project checks pass;
+both complete Init sections and previously restored spans remain exact.
+The entity query retains its 72 differences. Next Game target is the retained
+dispatch wrapper `func_15045800`, subject to its `func_15047004` contract audit;
+natural gameplay qualification is separate. See
+[Note 767](WORKING_NOTES/767-game-entity-height-wrapper-direct-match-20261003.md).
 
 The shared-register entity producer and its return/cleanup closure now match
 all 520 retail bytes across three entries. Explicit secondary-count pointer
 types preserve both C helpers' exact bytes. This removes one false C inventory
 row, not three, and does not add a C match. All 213 tool tests, full build, and project checks pass;
 both complete Init sections and earlier collector/query spans remain exact.
-Next recover the retained `func_15045780` wrapper in C; gameplay qualification
+Its then-pending `func_15045780` wrapper is converted in Note 767; gameplay qualification
 and the entity query's 72 differences remain separate. See
 [Note 766](WORKING_NOTES/766-game-entity-scan-producer-assembly-restoration-20261003.md).
 

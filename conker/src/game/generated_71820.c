@@ -80,6 +80,7 @@ s32 func_150A4FA0(s32 x, s32 z);
 void func_150A44F0(s32 value, void *scratch, s32 mode);
 s32 func_150A43E0(s32 x, s32 z, s32 value, void *scratch);
 s32 func_150A6500(s32 x, s32 z, s32 *secondaryCount, s32 selector);
+s32 func_15045F8C(f32 *position, f32 threshold, s32 *input, HeightResult71820 *result);
 
 extern PositionScaleRecord71820 *D_800CBE00;
 extern s32 D_800BE9E4;
@@ -467,8 +468,16 @@ void func_15045714(f32 *position, u16 selector, s32 *result, s32 *secondaryCount
     *result = func_150A6500((s16)position[0], (s16)position[2], secondaryCount, selector);
 }
 
-/* Note 313: original ROM implementation, retained as assembly until C conversion. */
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15045780.s")
+s32 func_15045780(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result) {
+    s32 counts[2];
+
+    if (position[1] < threshold) {
+        result->flags &= ~2;
+        return 0;
+    }
+    func_15045714(position, selector, &counts[1], &counts[0]);
+    return func_15045F8C(position, threshold, counts, result);
+}
 
 /* Note 313: original ROM implementation, retained as assembly until C conversion. */
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15045800.s")
