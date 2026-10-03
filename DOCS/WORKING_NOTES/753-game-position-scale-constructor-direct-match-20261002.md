@@ -2,6 +2,11 @@
 
 Date: 2026-10-02
 
+Follow-up: [Note 754](754-game-common-record-allocator-direct-match-20261002.md)
+now completes the common allocator body with a direct byte match and tests
+the actual constructor-to-allocator source path. The placeholder statements
+below describe the checkpoint before that follow-up, not the current body.
+
 ## Result
 
 `func_150448D0` replaces its zero-return placeholder with a complete

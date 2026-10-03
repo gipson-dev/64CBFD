@@ -32,17 +32,27 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,252 / 5,461 (59.55%) | 0 | 2,209 |
+| Total | 3,253 / 5,461 (59.57%) | 0 | 2,208 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,579 / 4,788 (53.86%) | 0 | 2,209 |
+| Game | 2,580 / 4,788 (53.88%) | 0 | 2,208 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15044964` now replaces its null-return placeholder with the complete
+common-header allocator and tail-list registration routine. All 49 words
+match directly from C without guards; its 37-word constructor remains exact.
+Ten new 32-bit tests include the actual constructor-to-allocator path with
+only the heap call mocked. All 116 tool tests, project checks, and the full
+code build pass; both entire Init sections remain exact. Next dependency is
+list processor `func_15044A28`, still a placeholder. See
+[Working Note 754](WORKING_NOTES/754-game-common-record-allocator-direct-match-20261002.md).
 
 Game `func_150448D0` now replaces its zero-return placeholder with the complete
 position/scale record constructor. All 37 words match directly from C under
 the existing profile, without guards. Seven new 32-bit tests and all 106 tool
 tests, project checks, and the full code build pass. Both entire Init sections
-remain exact. The common allocator still has a null-return placeholder;
-recover `func_15044964` next before claiming the allocation path is restored.
+remain exact. At that checkpoint the common allocator still had a null-return
+placeholder; Note 754 now completes that source dependency, without gameplay
+qualification.
 See [Working Note 753](WORKING_NOTES/753-game-position-scale-constructor-direct-match-20261002.md).
 
 Game `func_15040CC8` now replaces its zero-return placeholder with the complete
@@ -196,8 +206,8 @@ and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with dependency `func_15044964`, currently 49 words and 48 real word
-differences. Its position/scale constructor caller is now byte-exact.
+queue with dependency `func_15044A28`, currently 84 words and 81 real word
+differences. Its record allocator and position/scale constructor are now exact.
 `func_15040CC8` has a recovered semantic body but remains in the separate
 non-matching/overflow queue; its retail-slot matcher reports 36 differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and

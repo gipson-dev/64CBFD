@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 754](WORKING_NOTES/754-game-common-record-allocator-direct-match-20261002.md)):
+Game `func_15044964` matches all 49 words directly from its recovered allocator
+and tail-list insertion C, without guards. Its constructor remains exact.
+Ten new 32-bit tests cover the allocator and actual constructor integration;
+all 116 tool tests and the full code build pass. Both entire Init sections
+remain exact. Next lifecycle dependency is list processor `func_15044A28`.
+
 2026-10-02 ([Note 753](WORKING_NOTES/753-game-position-scale-constructor-direct-match-20261002.md)):
 Game `func_150448D0` matches all 37 words directly from its recovered record
 constructor C, without guards or profile changes. Seven new 32-bit tests and

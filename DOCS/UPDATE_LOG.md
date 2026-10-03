@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game common record allocator directly matched
+
+- `func_15044964` replaces its null-return placeholder with header
+  initialization and tail-list registration. All 49 words emit directly from
+  C without guards; the 37-word position/scale constructor remains exact.
+- Ten new 32-bit tests cover failure, bounds, list insertion, mutation, and
+  actual constructor integration. All 116 tool tests, project checks, and the
+  full code build pass; both complete Init sections remain exact.
+- Exact C is Total 3,253 / 5,461 (59.57%) and Game 2,580 / 4,788 (53.88%),
+  with zero drift and 2,208 different rows. README aggregate tables updated.
+  Next lifecycle dependency is `func_15044A28`; no gameplay acceptance is claimed.
+  See [Working Note 754](WORKING_NOTES/754-game-common-record-allocator-direct-match-20261002.md).
+
 ### Game position/scale constructor directly matched
 
 - `func_150448D0` replaces its zero-return placeholder with a 32-byte record

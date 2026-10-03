@@ -40,7 +40,7 @@ class GamePositionScaleConstructorTests(unittest.TestCase):
             raise unittest.SkipTest("32-bit host execution probe failed")
         source = (Path(__file__).resolve().parents[2] /
                   "conker/src/game/generated_71820.c").read_text()
-        record = re.search(r"typedef struct \{\n    u8 pad0\[6\];.*?"
+        record = re.search(r"typedef struct PositionScaleRecord71820 \{\n.*?"
                            r"\n\} PositionScaleRecord71820;", source, re.S)
         body = re.search(r"PositionScaleRecord71820 \*func_150448D0\(s32 arg0,.*?\n\}",
                          source, re.S)

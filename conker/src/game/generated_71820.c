@@ -6,12 +6,16 @@ extern s32 D_800CBD9C;
 extern u8 D_800C35EA;
 extern u8 D_800CC2D0[];
 
-typedef struct {
-    u8 pad0[6];
+typedef struct PositionScaleRecord71820 {
+    struct PositionScaleRecord71820 *next;
+    s16 owner;
     s16 x;
     s16 y;
     s16 z;
-    u8 padC[4];
+    u8 type;
+    u8 selector;
+    u8 state;
+    u8 padF;
     s16 scaleX;
     s16 scaleY;
     s16 scaleZ;
@@ -20,6 +24,9 @@ typedef struct {
     s16 *position;
     s16 *scale;
 } PositionScaleRecord71820;
+
+extern PositionScaleRecord71820 *D_800CBE00;
+s32 allocate_memory(s32 size, s32 mode, s32 arg2, s32 arg3);
 
 void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye,
                    f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
@@ -72,7 +79,36 @@ PositionScaleRecord71820 *func_150448D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3,
 
 PositionScaleRecord71820 *func_15044964(s32 size, s32 type, s32 arg2, s32 arg3,
                                        s32 arg4, s32 x, s32 y, s32 z) {
-    return NULL;
+    PositionScaleRecord71820 *record;
+    PositionScaleRecord71820 *head;
+    PositionScaleRecord71820 *current;
+    PositionScaleRecord71820 *next;
+
+    record = (PositionScaleRecord71820 *)allocate_memory(size, 1, 0, 0);
+    if (record == NULL) {
+        return NULL;
+    }
+    record->next = NULL;
+    record->owner = arg2;
+    record->type = type;
+    record->selector = arg4;
+    record->state = arg3;
+    record->x = x;
+    record->y = y;
+    record->z = z;
+    head = D_800CBE00;
+    if (head == NULL) {
+        D_800CBE00 = record;
+    } else {
+        next = head->next;
+        current = head;
+        while (next != NULL) {
+            current = next;
+            next = next->next;
+        }
+        current->next = record;
+    }
+    return record;
 }
 
 s32 func_15044A28() {
