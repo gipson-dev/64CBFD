@@ -31,6 +31,10 @@ extern s32 (*D_80085E80[])(PositionScaleRecord71820 *record);
 extern void (*D_80085E8C[])(void);
 s32 allocate_memory(s32 size, s32 mode, s32 arg2, s32 arg3);
 void func_100043B4(s32 *record, u32 mode);
+f32 func_15048A40(u8 angle);
+f32 func_150489B0(u8 angle);
+f32 fabsf(f32 value);
+#pragma intrinsic (fabsf)
 
 void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye,
                    f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
@@ -159,7 +163,32 @@ void func_15044A28(void) {
     }
 }
 
-s32 func_15044B78() {
+s32 func_15044B78(PositionScaleRecord71820 *record) {
+    u8 *player = D_800CC2D0;
+    f32 first;
+    f32 second;
+    f32 x;
+    f32 y;
+    f32 z;
+    f32 rotatedX;
+    u8 *dimensions = *(u8 **)(player + 0x31C);
+    s32 halfHeight = *(s16 *)(dimensions + 0x114) >> 1;
+    s32 extentZ = *(s16 *)(dimensions + 0x116);
+    s32 extentX = *(s16 *)(dimensions + 0x118);
+
+    x = *(f32 *)(player + 0x14) - record->x;
+    y = (*(f32 *)(player + 0x18) - record->y) + halfHeight;
+    z = *(f32 *)(player + 0x1C) - record->z;
+    first = func_15048A40(record->flags);
+    second = func_150489B0(record->flags);
+    rotatedX = z * second + x * first;
+    x = x * second - z * first;
+
+    if (fabsf(y) < (f32)(record->scaleZ + halfHeight) &&
+        fabsf(x) < (f32)(record->scaleY + extentZ) &&
+        fabsf(rotatedX) < (f32)(record->scaleX + extentX)) {
+        return 1;
+    }
     return 0;
 }
 

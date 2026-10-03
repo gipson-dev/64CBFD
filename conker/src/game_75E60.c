@@ -23,8 +23,8 @@ f32 func_150489B0(u8 arg0) {
     return ret;
 }
 
-void func_15048A40(u8 arg0) {
-    func_150489B0((arg0 - 0x40) & 0xFF);
+f32 func_15048A40(u8 arg0) {
+    return func_150489B0((arg0 - 0x40) & 0xFF);
 }
 
 f32 func_15048A70(f32 arg0, f32 arg1) {

@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-02 ([Note 757](WORKING_NOTES/757-game-oriented-record-overlap-match-20261002.md)):
+Game `func_15044B78` matches all 91 words after recovering its oriented overlap
+test; six strict guards remap only three closed integer stack slots. The
+corrected float-return angle wrapper remains exact across twelve words.
+Sixteen new 32-bit tests and all 147 tool tests pass; the full code build
+passes and both entire Init sections remain exact. Next dependency is the
+explicit callback result forwarding contract in `func_15044CE4`.
+
 2026-10-02 ([Note 756](WORKING_NOTES/756-init-resume-verification-and-conversion-boundary-20261002.md)):
 Init resume audit rebuilds the baseline and reconfirms 492 C rows exact and
 both complete code/data sections identical to retail. All 47 remaining

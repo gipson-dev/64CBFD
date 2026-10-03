@@ -32,18 +32,29 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,254 / 5,461 (59.59%) | 0 | 2,207 |
+| Total | 3,255 / 5,461 (59.60%) | 0 | 2,206 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,581 / 4,788 (53.91%) | 0 | 2,207 |
+| Game | 2,582 / 4,788 (53.93%) | 0 | 2,206 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15044B78` now replaces its zero-return placeholder with the complete
+oriented player/record overlap test. All 91 words match; six strict guards
+remap three private integer stack slots without changing any other instruction.
+Its angle helper `func_15048A40` now explicitly returns `f32` and remains exact
+across all twelve words. Sixteen new 32-bit tests and all 147 tool tests pass;
+the full build and project checks pass. Constructor, allocator, and list pass
+spans remain exact, as do both entire Init sections. Next dependency is the
+explicit callback return contract in `func_15044CE4`. See
+[Working Note 757](WORKING_NOTES/757-game-oriented-record-overlap-match-20261002.md).
 
 The resumed Init audit rebuilt the production baseline and reconfirmed all
 492 Init C rows and both entire Init code/data sections byte-exact. The 47
 remaining assembly rows / 12,252 bytes include two deferred small-leaf C
 experiments; neither has a proven matching replacement. No Init conversion
-or aggregate change is claimed. The interrupted Game `func_15044B78` draft
-exceeds its retail slot by one word and is preserved in named stash object
-`5b554b70ce671454878a1025fec26b93ad457153`, not active production source.
+or aggregate change is claimed for that audit. Its interrupted Game draft
+was preserved in stash object `5b554b70ce671454878a1025fec26b93ad457153`.
+Note 757 now completes that recovery in production; retain the stash only as
+historical WIP, not as a patch to apply over the completed source.
 See [Working Note 756](WORKING_NOTES/756-init-resume-verification-and-conversion-boundary-20261002.md)
 for the remaining groups, acceptance gates, and exact draft-resume command.
 
@@ -53,7 +64,7 @@ guards; constructor and allocator spans remain exact. Fifteen new 32-bit tests
 cover mutation, cached-next traversal, unlink-before-release-mark ordering,
 delay timing, and word wrap. All 131 tool tests, project checks, and the full
 code build pass; both entire Init sections remain exact. Next downstream
-dependency is `func_15044B78`, still a placeholder. See
+dependency was `func_15044B78`, now completed by Note 757. See
 [Working Note 755](WORKING_NOTES/755-game-record-list-processor-direct-match-20261002.md).
 
 Game `func_15044964` now replaces its null-return placeholder with the complete
@@ -224,10 +235,11 @@ completes `func_10001420`; `func_100038E0` is deferred after bounded trials,
 and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
-The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with dependency `func_15044B78`, currently 91 words and 82 real word
-differences. Its record allocator, position/scale constructor, and list pass
-are now exact, without gameplay qualification of downstream callbacks.
+The supported Init C-conversion queue is complete. The ordinary Game overlap
+dependency `func_15044B78` now matches all 91 words. Its record allocator,
+position/scale constructor, and list pass remain exact, without gameplay
+qualification of downstream callbacks. Resume with the explicit result
+forwarding contract in its 23-word position/scale wrapper `func_15044CE4`.
 `func_15040CC8` has a recovered semantic body but remains in the separate
 non-matching/overflow queue; its retail-slot matcher reports 36 differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and

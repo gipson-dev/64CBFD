@@ -10425,3 +10425,9 @@ game_168A90,func_1513B798,0x074,0x8FA3001C,0x93A3001B,-,-,Normalize completion f
 game_16EE20,func_15145128,0x000,0x27BDFFF0,0x27BDFFF8,-,-,Use retail eight-byte vector-normalizer leaf frame,,,false
 game_16EE20,func_15145128,0x00C,0x27A7000C,0x27A70000,-,-,Address fallback reciprocal at retail stack offset zero,,,false
 game_16EE20,func_15145128,0x0C4,0x27BD0010,0x27BD0008,-,-,Restore retail eight-byte vector-normalizer leaf frame,,,false
+generated_71820,func_15044B78,0x028,0xAFAF0020,0xAFAF001C,-,-,Normalize closed overlap extent-Z stack slot,,,false
+generated_71820,func_15044B78,0x034,0xAFB8001C,0xAFB80018,-,-,Normalize closed overlap extent-X stack slot,,,false
+generated_71820,func_15044B78,0x08C,0xAFAE0024,0xAFAE0020,-,-,Normalize closed overlap half-height stack slot,,,false
+generated_71820,func_15044B78,0x0BC,0x8FAB0024,0x8FAB0020,-,-,Normalize closed overlap half-height stack slot,,,false
+generated_71820,func_15044B78,0x0C8,0x8FAE0020,0x8FAE001C,-,-,Normalize closed overlap extent-Z stack slot,,,false
+generated_71820,func_15044B78,0x110,0x8FB9001C,0x8FB90018,-,-,Normalize closed overlap extent-X stack slot,,,false

@@ -16,6 +16,21 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game oriented record overlap matched
+
+- `func_15044B78` replaces its zero-return placeholder with the full player /
+  oriented-record overlap test. All 91 words match; six strict guards normalize
+  only the complete store/load pairs for three private integer stack slots.
+- `func_15048A40` now explicitly returns the float result consumed by retail;
+  its twelve-word span remains directly exact.
+- Sixteen new 32-bit tests and all 147 tool tests pass. The full code build,
+  project checks, neighboring recovered spans, and both whole Init sections
+  pass verification. Total matching C rises to 3,255 / 5,461 (59.60%);
+  Game matching C rises to 2,582 / 4,788 (53.93%).
+- README changes only its aggregate table. See
+  [Note 757](WORKING_NOTES/757-game-oriented-record-overlap-match-20261002.md)
+  for semantics, stack proof, tests, and the next wrapper-return task.
+
 ### Init resume and remaining assembly boundary
 
 - Rebuilt and regenerated the production baseline: Init 492 / 492 C rows

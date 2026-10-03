@@ -2,6 +2,11 @@
 
 Date: 2026-10-02
 
+Follow-up: [Note 757](757-game-oriented-record-overlap-match-20261002.md)
+completes the saved Game overlap recovery in production. Its pre-recovery
+stash below is historical WIP; do not apply it over that completed source.
+The Init assessment and measurements below remain the audit checkpoint.
+
 ## Decision
 
 The supported ordinary compiler-generated Init C recovery queue is complete.
