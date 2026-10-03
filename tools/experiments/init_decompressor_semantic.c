@@ -420,7 +420,11 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #endif
                 /* Retail classifies even stale sorted words with signed SLT. */
                 if ((int32_t)symbol < (int32_t)simple) {
+#ifdef INIT_DECODE_BUILDER_SIMPLE_OPERATION
+                    BUILD_ENTRY_OPERATION = 15 + ((int32_t)symbol < 256);
+#else
                     BUILD_ENTRY_OPERATION = (int32_t)symbol < 256 ? 16 : 15;
+#endif
                     value = symbol;
                 } else {
                     BUILD_ENTRY_OPERATION = extras[symbol - simple];

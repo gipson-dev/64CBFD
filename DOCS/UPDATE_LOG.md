@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 847](WORKING_NOTES/847-init-builder-operation-selection-fitting-and-rejected-dataflow-trials-20261003.md)
+  banks bounded arithmetic-operation fitting and rejected prefix/countdown
+  receipts. Alternate profiles shrink; best packed O2 stays 4,864 after
+  padding. No prior corpus receipt is reassigned to the new opt-in form.
+  Production, defaults and README aggregates unchanged; Game work excluded.
+
 - Init [Note 846](WORKING_NOTES/846-init-histogram-cursor-full-masked-cu1-clear-corpus-20261003.md)
   banks all 507 changed packed O2/g3 masked-CU1-clear comparisons, completing
   both masked CU1 corpus gates. Size/stack remain unchanged; next return to

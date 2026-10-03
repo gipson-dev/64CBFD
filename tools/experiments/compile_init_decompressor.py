@@ -264,6 +264,8 @@ def main():
                         help="capture the builder's scratch array bases")
     parser.add_argument("--builder-histogram-cursor", action="store_true",
                         help="traverse histogram lengths with a pointer cursor")
+    parser.add_argument("--builder-simple-operation", action="store_true",
+                        help="form simple-symbol operation from its signed comparison")
     args = parser.parse_args()
     if args.abi_fpr_shadow:
         args.seed_distance_root = True
@@ -319,6 +321,8 @@ def main():
             suffix += "-" + args.cache_builder
     if args.builder_histogram_cursor:
         suffix += "-histogram-cursor"
+    if args.builder_simple_operation:
+        suffix += "-simple-operation"
     output = (args.output or root / ("conker/build/init-decompressor-semantic" + suffix)).resolve()
     output.mkdir(parents=True, exist_ok=True)
     cwd = root / "conker"
@@ -370,6 +374,8 @@ def main():
                       ("1" if args.cache_builder == "all" else "2"))
     if args.builder_histogram_cursor:
         common.append("-DINIT_DECODE_BUILDER_HISTOGRAM_CURSOR")
+    if args.builder_simple_operation:
+        common.append("-DINIT_DECODE_BUILDER_SIMPLE_OPERATION")
     report = {}
     for label, profile in (("o2g3", ["-O2", "-g3"]), ("o1", ["-O1"])):
         obj = output / (label + ".o")

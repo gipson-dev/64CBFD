@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init builder operation fitting: [Note 847](WORKING_NOTES/847-init-builder-operation-selection-fitting-and-rejected-dataflow-trials-20261003.md)
+retains opt-in arithmetic operation selection. All 420 bounded contexts and
+114 direct builder comparisons pass; 15 tests pass, full corpus skips.
+Frame/aligned O2 shrink 32/16 bytes; all O1 shapes shrink 16. Packed O2 builder
+saves two words but padding absorbs them: best linked text remains 4,864,
+880 over retail. Prefix/countdown trials are removed. New-option full corpus,
+fitting and ownership/hardware remain open; production/defaults/totals unchanged.
+
 Init histogram CU1-clear corpus: [Note 846](WORKING_NOTES/846-init-histogram-cursor-full-masked-cu1-clear-corpus-20261003.md)
 passes all 507 changed packed O2/g3 pages with masked CU1 clear in 768.820
 seconds. Notes 845/846 now bank both masked CU1 modes: 1,014 paired runs.

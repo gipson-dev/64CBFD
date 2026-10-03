@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 847](WORKING_NOTES/847-init-builder-operation-selection-fitting-and-rejected-dataflow-trials-20261003.md)):
+Opt-in arithmetic operation selection reduces alternate O2 and all O1 shapes;
+packed O2's two-word builder saving is absorbed by padding. All 420 bounded
+contexts and 114 direct builder comparisons pass: 15 tests pass, corpus skips.
+Rejected prefix/countdown branches removed. Best linked text still 4,864;
+880-byte fitting excess and new-option full corpus remain open. Production,
+defaults and README totals unchanged; unrelated Game work preserved.
+
 2026-10-03 ([Note 846](WORKING_NOTES/846-init-histogram-cursor-full-masked-cu1-clear-corpus-20261003.md)):
 All 507 changed packed O2/g3 pages pass masked CU1 clear in 768.820 seconds.
 Both masked CU1 modes now have full receipts; size/descent/neighbor clearance
