@@ -123,7 +123,7 @@ static s32 nodes_match(void) {
         self.run_case(r'''
 CHECK(sizeof(void *) == 4 && sizeof(PositionScaleRecord71820) == 32);
 CHECK(__builtin_offsetof(PositionScaleRecord71820, next) == 0);
-CHECK(__builtin_offsetof(PositionScaleRecord71820, owner) == 4);
+CHECK(__builtin_offsetof(PositionScaleRecord71820, lifetime) == 4);
 CHECK(__builtin_offsetof(PositionScaleRecord71820, x) == 6);
 CHECK(__builtin_offsetof(PositionScaleRecord71820, y) == 8);
 CHECK(__builtin_offsetof(PositionScaleRecord71820, z) == 10);

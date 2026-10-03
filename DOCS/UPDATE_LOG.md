@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game record list processor directly matched
+
+- `func_15044A28` replaces its zero-return placeholder with the full callback,
+  delay, lifetime, unlink, and mode-2 release-marking pass. All 84 words emit
+  directly from C without guards; constructor and allocator remain exact.
+- Fifteen new 32-bit tests and all 131 tool tests, project checks, and the full
+  code build pass. Both complete Init sections remain exact. The halfword at
+  `0x04` is now named lifetime; release marking is not immediate deallocation.
+- Exact C is Total 3,254 / 5,461 (59.59%) and Game 2,581 / 4,788 (53.91%),
+  with zero drift and 2,207 different rows. README aggregate tables updated.
+  Next downstream dependency: `func_15044B78`. See
+  [Working Note 755](WORKING_NOTES/755-game-record-list-processor-direct-match-20261002.md).
+
 ### Game common record allocator directly matched
 
 - `func_15044964` replaces its null-return placeholder with header

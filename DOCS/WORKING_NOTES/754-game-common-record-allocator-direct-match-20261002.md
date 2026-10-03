@@ -2,6 +2,11 @@
 
 Date: 2026-10-02
 
+Follow-up: [Note 755](755-game-record-list-processor-direct-match-20261002.md)
+now recovers the list processor and establishes the halfword at `0x04` as a
+lifetime counter. The former `owner` field name is superseded without changing
+the layout. Release marking is distinguished from immediate deallocation.
+
 ## Result
 
 `func_15044964` now replaces its null-return placeholder with the complete

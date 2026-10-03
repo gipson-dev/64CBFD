@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 755](WORKING_NOTES/755-game-record-list-processor-direct-match-20261002.md)):
+Game `func_15044A28` matches all 84 words directly from the recovered callback,
+delay, lifetime, unlink, and release-marking list pass. Fifteen new 32-bit
+tests and all 131 tool tests pass; the full code build passes and both entire
+Init sections remain exact. Constructor/allocator matches remain intact.
+Next downstream placeholder is `func_15044B78`, 91 words / 82 differences.
+
 2026-10-02 ([Note 754](WORKING_NOTES/754-game-common-record-allocator-direct-match-20261002.md)):
 Game `func_15044964` matches all 49 words directly from its recovered allocator
 and tail-list insertion C, without guards. Its constructor remains exact.

@@ -8,7 +8,7 @@ extern u8 D_800CC2D0[];
 
 typedef struct PositionScaleRecord71820 {
     struct PositionScaleRecord71820 *next;
-    s16 owner;
+    s16 lifetime;
     s16 x;
     s16 y;
     s16 z;
@@ -26,7 +26,11 @@ typedef struct PositionScaleRecord71820 {
 } PositionScaleRecord71820;
 
 extern PositionScaleRecord71820 *D_800CBE00;
+extern s32 D_800BE9E4;
+extern s32 (*D_80085E80[])(PositionScaleRecord71820 *record);
+extern void (*D_80085E8C[])(void);
 s32 allocate_memory(s32 size, s32 mode, s32 arg2, s32 arg3);
+void func_100043B4(s32 *record, u32 mode);
 
 void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye,
                    f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
@@ -89,7 +93,7 @@ PositionScaleRecord71820 *func_15044964(s32 size, s32 type, s32 arg2, s32 arg3,
         return NULL;
     }
     record->next = NULL;
-    record->owner = arg2;
+    record->lifetime = arg2;
     record->type = type;
     record->selector = arg4;
     record->state = arg3;
@@ -111,8 +115,48 @@ PositionScaleRecord71820 *func_15044964(s32 size, s32 type, s32 arg2, s32 arg3,
     return record;
 }
 
-s32 func_15044A28() {
-    return 0;
+void func_15044A28(void) {
+    PositionScaleRecord71820 *record = D_800CBE00;
+    PositionScaleRecord71820 *previous = NULL;
+    PositionScaleRecord71820 *next;
+    s32 value;
+    s32 state;
+    s32 type;
+
+    while (record != NULL) {
+        state = record->state;
+        type = record->type;
+        next = record->next;
+        if (state == 0) {
+            if (D_80085E80[type](record) != 0) {
+                D_80085E8C[record->selector]();
+            }
+        } else {
+            value = (s32)((u32)state - (u32)D_800BE9E4);
+            if (value < 0) {
+                value = 0;
+            }
+            record->state = value;
+        }
+        value = record->lifetime;
+        if (value != -1) {
+            value = (s32)((u32)value - (u32)D_800BE9E4);
+            if (value <= 0) {
+                if (previous == NULL) {
+                    D_800CBE00 = record->next;
+                } else {
+                    previous->next = record->next;
+                }
+                func_100043B4((s32 *)record, 2);
+            } else {
+                record->lifetime = value;
+                previous = record;
+            }
+        } else {
+            previous = record;
+        }
+        record = next;
+    }
 }
 
 s32 func_15044B78() {
