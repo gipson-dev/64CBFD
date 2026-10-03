@@ -37,7 +37,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,595 / 4,790 (54.18%) | 0 | 2,195 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
-The latest pause resume reassesses remaining Init assembly. Fresh inventory
+Game `func_15047700` now replaces its empty body with the reflection look-at
+matrix builder, retail-specific degenerate-axis branches, and complete
+direction/color output with preserved padding. Fourteen focused tests and
+all 388 tool tests pass; build/project checks pass. It remains non-matching:
+282 body words plus six padding nops, 245 differences, no new guards/profiles.
+Both matrix wrappers and nineteen earlier exact routines remain exact; seven
+non-matching hashes, restored spans, and both Init sections are unchanged.
+Next inspect the earlier actor/context placeholder cluster `func_15044380`
+and its preparation dependency `func_15044660`. See
+[Note 783](WORKING_NOTES/783-game-reflection-look-at-matrix-semantic-recovery-20261003.md).
+
+The latest Init pause resume reassesses remaining assembly. Fresh inventory
 still reports 492 C / 47 assembly rows; all 492 C rows and both complete Init
 sections match retail. Six focused Init tests pass. Only bitmap `func_10005BE0`
 and MMIO `func_100038E0` remain bounded ordinary-C candidates, with no proven
@@ -53,9 +64,8 @@ padding nops, 171 differences, no new guards or compiler profiles. Twelve
 focused tests and all 374 tool tests pass; full build/project checks pass.
 The fixed-matrix wrapper is exact; nineteen prior exact neighbors, six
 non-matching hashes, restored spans, and both Init sections remain unchanged.
-Aggregate tables/README are unchanged. Next recover empty reflection look-at
-builder `func_15047700`, inspecting its retail-specific edge cases before
-using the local SDK reference. See
+Aggregate tables/README are unchanged. The then-pending reflection builder
+`func_15047700` is now recovered in Note 783 and remains non-matching. See
 [Note 781](WORKING_NOTES/781-game-look-at-matrix-semantic-recovery-20261003.md).
 
 Game `func_150472C0` now converts retained assembly to the complete void

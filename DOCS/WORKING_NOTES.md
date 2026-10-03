@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-03 ([Note 783](WORKING_NOTES/783-game-reflection-look-at-matrix-semantic-recovery-20261003.md)):
+Game `func_15047700` replaces its empty body with the reflection look-at matrix
+builder, retail degenerate-axis branches, and SDK direction/color publication.
+Fourteen focused tests and all 388 tool tests pass; build/project checks pass.
+Non-matching: 282 body words plus six padding nops, 245 differences, no new
+guards/profiles. Both wrappers and nineteen earlier routines remain exact;
+seven prior non-matching hashes, restored spans, and Init sections are unchanged.
+Aggregates unchanged. Next inspect actor/context placeholders `func_15044380`
+and preparation dependency `func_15044660` with their actual signatures.
+
 2026-10-03 ([Note 782](WORKING_NOTES/782-init-pause-resume-conversion-assessment-20261003.md)):
 Pause resume reassesses all 47 remaining Init assembly rows / 12,252 bytes.
 Only bitmap `func_10005BE0` and MMIO `func_100038E0` are bounded ordinary-C

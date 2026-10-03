@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15047700` replaces its empty body with the reflection look-at
+  builder, retail degenerate-axis branches, and complete SDK direction/color
+  output with preserved padding. Fourteen focused tests and all 388 tool tests
+  pass; build/project checks pass. It remains non-matching at 245 differences
+  across 288 words, with no new guards/profiles. Both matrix wrappers, earlier
+  exact routines, restored spans, and both complete Init sections remain exact.
+  Aggregates and README remain unchanged.
+  [Note 783](WORKING_NOTES/783-game-reflection-look-at-matrix-semantic-recovery-20261003.md)
+
 - Game `func_15047390` replaces its empty body with the complete SDK-grounded
   look-at matrix builder and retail-specific exact-zero normalization guards.
   It remains non-matching: 188 body words plus two padding nops, 171 differences,
