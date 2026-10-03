@@ -4,8 +4,72 @@ import argparse
 import json
 import os
 import struct
+import sys
 import subprocess
 from pathlib import Path
+
+if not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from tools.pad_generated_object import parse_retail_slice
+
+
+RETAIL_SLOT_MAP = (
+    ("init_decode_core", "func_1000625C", "func_1000632C"),
+    ("init_decode_stream", "func_1000632C", "func_10006424"),
+    ("init_decode_dynamic", "func_10006424", "func_10006828"),
+    ("init_decode_stored", "func_10006828", "func_1000692C"),
+    ("init_decode_build", "func_1000696C", "func_10006E00"),
+    ("init_decode_compressed", "func_10006E00", "func_1000709C"),
+    ("init_decode_fixed_tables", "func_1000709C", "func_100071D0"),
+)
+RETAIL_WRAPPERS = (
+    ("entry_wrapper", "func_10006240", "func_1000625C"),
+    ("fixed_decoder_wrapper", "func_1000692C", "func_1000696C"),
+)
+
+
+def retail_slot_ledger(measurements, text_bytes, source):
+    """Size accounting only; semantic grouping does not preserve retail entries."""
+    if text_bytes < 0 or text_bytes & 3:
+        raise ValueError("text size must be a nonnegative word count")
+    compiled = {row["function"]: row for row in measurements}
+    if len(compiled) != len(measurements):
+        raise ValueError("duplicate compiled function in slot ledger")
+    if set(compiled) != {name for name, _, _ in RETAIL_SLOT_MAP}:
+        raise ValueError("compiled function set differs from the recovered slot map")
+    _, _, labels, _ = parse_retail_slice(source)
+    rows, wrappers, intervals = [], [], []
+    for entries, output, is_wrapper in ((RETAIL_SLOT_MAP, rows, False),
+                                         (RETAIL_WRAPPERS, wrappers, True)):
+        for name, start, end in entries:
+            first, last = labels[start], labels[end]
+            if first & 3 or last & 3 or last <= first:
+                raise ValueError("invalid retail slot boundary")
+            intervals.append((first, last))
+            row = {"retail_entry": start, "start_address": first,
+                   "end_address": last, "retail_slot_words": (last - first) // 4}
+            if is_wrapper:
+                row.update({"role": name, "distinct_c_entry": False})
+            else:
+                slot = compiled[name]["slot_words"]
+                body = compiled[name]["body_words"]
+                if not isinstance(slot, int) or not isinstance(body, int) or not 0 <= body <= slot:
+                    raise ValueError("invalid compiled body/slot size")
+                row.update({"c_function": name, "c_slot_words": slot,
+                            "c_body_words": body, "word_delta": slot - row["retail_slot_words"]})
+            output.append(row)
+    intervals.sort()
+    if any(left[1] != right[0] for left, right in zip(intervals, intervals[1:])):
+        raise ValueError("retail slots overlap or leave gaps")
+    named_words = sum(row["c_slot_words"] for row in rows)
+    total_words = text_bytes // 4
+    if named_words > total_words:
+        raise ValueError("named slots exceed object text")
+    retail_words = sum((end - start) // 4 for start, end in intervals)
+    return {"qualification": "size-accounting-only", "rows": rows,
+            "retail_wrappers": wrappers, "retail_words": retail_words,
+            "c_named_slot_words": named_words, "c_helper_words": total_words - named_words,
+            "c_total_words": total_words, "word_delta": total_words - retail_words}
 
 
 def analyze_guest_calls(text, named_entries, targets):
@@ -133,10 +197,12 @@ def inspect_object(path):
         targets[pc] = symbol[1] + ((word & 0x03FFFFFF) << 2)
     call_graph = analyze_guest_calls(data[text[4]:text[4] + text[5]],
                                     {start: label for start, label in functions}, targets)
+    retail_source = Path(__file__).resolve().parents[2] / "conker/asm/init_5AB0.s"
     return {"text_bytes": text[5], "entry_bytes": entry_size,
             "entry_layout": entry_layout,
             "state_bytes": state_size, "frame_layout": frame_layout,
-            "functions": measurements, "call_graph": call_graph}
+            "functions": measurements, "call_graph": call_graph,
+            "retail_slot_ledger": retail_slot_ledger(measurements, text[5], retail_source)}
 
 
 def main():

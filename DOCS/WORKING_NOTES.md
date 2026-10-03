@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-03 ([Note 815](WORKING_NOTES/815-init-decompressor-semantic-slot-ledger-correction-20261003.md)):
+Generated slot accounting corrects the swapped dynamic/compressed roles in
+Notes 812-813 and the fixed-wrapper label. Cursor dynamic is 220/257 words;
+compressed is 100/167. Builder remains 413/293, the main slot overrun. The
+4,208-byte total remains 224 bytes over retail; no production counts change.
+
 2026-10-03 ([Note 814](WORKING_NOTES/814-init-dynamic-code-lookup-capture-and-inline-mask-trials-20261003.md)):
 Full/mask-only/inline dynamic lookup modes pass 178 focused tests and 26 guest
 compiles but do not improve O2 fitting. Full capture raises cursor frame to 128;
@@ -18,7 +24,7 @@ Rolled packed/bounded scratch caching reaches 4,224 text bytes / 400-byte core
 bound, 240 over retail. Uncached aligned remains the lower-stack lead at 384.
 Local allocation capture fails to improve rolled fitting. All 102 focused
 tests and 24 post-edit guest compiles pass; individual-slot ledger identifies
-builder/dynamic/other overruns and absent original ABI wrappers. Production exact.
+builder/fixed/merged-stream overruns and absent original ABI wrappers. Production exact.
 
 2026-10-03 ([Note 811](WORKING_NOTES/811-init-parent-byte-addressing-and-no-unroll-profile-20261003.md)):
 IDO no-unroll reduces frame-backed aligned/bounded O2 text from 5,200 to 4,256

@@ -98,8 +98,11 @@ words, totaling 1,052. Retail's 994 body words plus two alignment NOPs total
 996. The deficit is therefore 56 words / 224 bytes, independently checked.
 
 Relative to [Note 812](812-init-rolled-scratch-cache-and-local-allocation-trials-20261003.md),
-only the dynamic slot shrinks, from 224 to 220 words. Its retail body has 167,
-so it remains 53 words over. Builder remains 413 versus retail 293, 120 over.
+only the dynamic slot shrinks, from 224 to 220 words. Its retail slot has 257,
+so it has 37 words spare. The compressed decoder has 100 versus retail 167,
+67 spare. [Note 815](815-init-decompressor-semantic-slot-ledger-correction-20261003.md)
+corrects the previously swapped semantic slot labels; totals are unchanged.
+Builder remains 413 versus retail 293, 120 over.
 Other slot counts, helper region and missing original-wrapper qualifications
 remain unchanged. A smaller aggregate still does not prove exact-slot fitting
 or provide an original-entry adapter.

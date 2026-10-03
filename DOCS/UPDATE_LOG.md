@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 815](WORKING_NOTES/815-init-decompressor-semantic-slot-ledger-correction-20261003.md)
+  corrects swapped dynamic/compressed slot roles in Notes 812-813 and the
+  fixed-wrapper label. Generated receipt accounting and retail-call tests
+  identify the builder, not the dynamic decoder, as the main slot overrun.
+  The total deficit remains 224 bytes; production assembly/counts unchanged.
+
 - Init [Note 814](WORKING_NOTES/814-init-dynamic-code-lookup-capture-and-inline-mask-trials-20261003.md)
   measures full lookup capture, mask-only capture and inline-mask forms.
   All pass focused semantic tests, but none improves O2 size/stack. Direct-call

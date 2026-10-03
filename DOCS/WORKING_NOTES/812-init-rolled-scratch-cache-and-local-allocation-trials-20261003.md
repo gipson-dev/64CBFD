@@ -80,13 +80,13 @@ receipt. Fixed setup has 75 instructions plus two alignment NOPs at
 | --- | ---: | ---: | ---: |
 | Core `func_1000625C` | 52 | 49 | -3 |
 | Stream/dispatch `func_1000632C` + `func_10006380` | 62 | 78 | +16 |
-| Compressed decoder `func_10006424` | 257 | 100 | -157 |
+| Dynamic decoder `func_10006424` | 257 | 224 | -33 |
 | Stored decoder `func_10006828` | 65 | 55 | -10 |
 | Builder `func_1000696C` | 293 | 413 | +120 |
-| Dynamic decoder `func_10006E00` | 167 | 224 | +57 |
+| Compressed decoder `func_10006E00` | 167 | 100 | -67 |
 | Fixed tables `func_1000709C` | 77 | 82 | +5 |
 | Original entry wrapper `func_10006240` | 7 | Not emitted | -7 |
-| Original builder wrapper `func_1000692C` | 16 | Not emitted | -16 |
+| Original fixed decoder wrapper `func_1000692C` | 16 | Not emitted | -16 |
 | New leading C helper region | 0 | 55 | +55 |
 | Total | 996 | 1,056 | +60 |
 
@@ -95,8 +95,12 @@ The original wrappers are absent as distinct ABI implementations, not recovered
 zero-length equivalents. Stream and dispatch are combined in the C routine;
 this accounting is not a claim that each original entry address is preserved.
 
-Sixty words exactly account for the 240-byte net excess. Builder/dynamic/fixed
-and merged stream slots still overflow even though compressed/stored slots are
+Correction: [Note 815](815-init-decompressor-semantic-slot-ledger-correction-20261003.md)
+fixes the previously swapped dynamic/compressed roles and fixed-wrapper label.
+The compiler measurements and aggregate totals were unaffected.
+
+Sixty words exactly account for the 240-byte net excess. Builder/fixed
+and merged stream slots still overflow even though dynamic/compressed/stored slots are
 smaller. An aggregate fit alone would not establish exact-slot restoration,
 preserved internal entries or space for the missing entry adapter.
 
@@ -148,7 +152,7 @@ python3 tools/experiments/compile_init_decompressor.py --frame-backed --packed-e
 ## Next
 
 Retain both size and stack leads. Use the per-routine ledger to investigate
-the dynamic decoder's 57-word excess and rolled builder's 120-word excess,
+the rolled builder's 120-word excess and the fixed/merged-stream overruns,
 without assuming that spare compressed-decoder space resolves entry layout.
 Reject local allocation capture as the rolled fitting direction. Preserve the
 exact production baseline until code layout, original-entry ABI and storage

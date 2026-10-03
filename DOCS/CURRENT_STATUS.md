@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init slot correction: [Note 815](WORKING_NOTES/815-init-decompressor-semantic-slot-ledger-correction-20261003.md)
+adds generated retail/C slot accounting and guards the actual retail call roles.
+Notes 812-813 had swapped dynamic `func_10006424` (257 words) with compressed
+`func_10006E00` (167), and mislabeled the fixed wrapper. Cursor dynamic fits
+at 220 words; compressed fits at 100. Builder's 413/293-word overrun is now
+the main fitting target. Aggregate deficit remains 224 bytes; original-entry
+ABI/storage gates and production Init assembly remain unchanged.
+All 1,421 tool tests pass; eight fresh guest objects retain their text hashes.
+
 Init lookup trials: [Note 814](WORKING_NOTES/814-init-dynamic-code-lookup-capture-and-inline-mask-trials-20261003.md)
 qualifies full lookup capture, mask-only capture and inline mask calculation.
 All 178 focused tests, all 1,415 project tool tests and 26 final-source guest
