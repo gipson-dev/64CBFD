@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 842](WORKING_NOTES/842-init-post-diagnostic-page-state-cleanup-and-continuation-20261003.md)):
+Retail cleanup tail executes table/bitmap resets and selects fault/requeue
+continuation. Instrumented calls record unmap 2-31; CACHE records 513 operands.
+Fenced CPU stores preserve static decoder bytes/guards across 15 runs. All
+58 focused tests pass. Actual external effects/debugger/continuation execution
+remain unqualified; production, fitting and README totals unchanged.
+
 2026-10-03 ([Note 841](WORKING_NOTES/841-init-diagnostic-overlay-placement-and-positive-pool-bounds-20261003.md)):
 Retail diagnostic arithmetic reuses page-pool storage at the next 64 KiB
 boundary. Image/SP/128 KiB mapping extents fit all 256 positive direct-count

@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 842](WORKING_NOTES/842-init-post-diagnostic-page-state-cleanup-and-continuation-20261003.md)
+  qualifies retail return-tail/table/bitmap CPU stores with instrumented
+  hardware-facing calls. Fault/requeue continuation, unmap indices and cache
+  operands are bounded receipts, not resumed gameplay proof. All 58 focused
+  tests pass; no production, decoder/adapter, fitting or README totals edits.
+
 - Init [Note 841](WORKING_NOTES/841-init-diagnostic-overlay-placement-and-positive-pool-bounds-20261003.md)
   qualifies diagnostic overlay/SP/DMA/TLB arguments and allocation extents
   for all positive direct counts. Zero/tiny pool arithmetic is explicitly

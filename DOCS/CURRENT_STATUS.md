@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init diagnostic cleanup: [Note 842](WORKING_NOTES/842-init-post-diagnostic-page-state-cleanup-and-continuation-20261003.md)
+executes real return-tail/table-clear/bitmap words under explicit external-call
+stubs: unmap indices 2-31, 1,016 table zeros, correct bitmap masks and 513
+inclusive cache operands. Zero/nonzero debugger result selects saved fault/
+requeue continuation; static decoder bytes remain unchanged by CPU stores.
+All 58 focused tests pass. Debugger entry, actual hardware/stubbed effects and
+continuation execution remain open; production, fitting and totals unchanged.
+
 Init diagnostic placement: [Note 841](WORKING_NOTES/841-init-diagnostic-overlay-placement-and-positive-pool-bounds-20261003.md)
 executes retail overlay/SP/DMA/TLB argument arithmetic. Debugger reuses the
 page pool at its next 64 KiB boundary, image 4960/SP 5958/mapping span 20000.
