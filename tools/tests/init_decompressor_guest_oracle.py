@@ -56,6 +56,7 @@ class GuestImage:
 class GuestBuilderFixture(BuilderFixture):
     STATE = 0x40000
     FRAME = 0x50000
+    WORKSPACE_CAPACITY = 0x10000
 
     def __init__(self, image, lengths, bits=7, simple=None, allocated=0,
                  bases=(), extras=()):
@@ -67,8 +68,13 @@ class GuestBuilderFixture(BuilderFixture):
         self.memory.update(image.memory)
         for first, last in ((self.STACK - 4096, self.STACK + 64),
                             (self.FRAME - 16, self.FRAME + 0xA88 + 16),
-                            (self.WORKSPACE, self.WORKSPACE + 0x10000)):
+                            (self.WORKSPACE, self.WORKSPACE + self.WORKSPACE_CAPACITY)):
             self.memory.update((address, 0xA5) for address in range(first, last))
+        # Default builder outputs immediately follow its workspace.
+        for address in (*range(self.WORKSPACE - 16, self.WORKSPACE),
+                        *range(self.WORKSPACE + self.WORKSPACE_CAPACITY,
+                               self.WORKSPACE + self.WORKSPACE_CAPACITY + 16)):
+            self.memory.setdefault(address, 0xA5)
         state = (0, 0, self.WORKSPACE, 0, 0, 0, 0, allocated,
                  self.FRAME, self.WORKSPACE)
         for index, value in enumerate(state):
@@ -84,7 +90,7 @@ class GuestBuilderFixture(BuilderFixture):
         self.allowed_writes = [(self.STACK - 4096, self.STACK + 64),
                                (self.STATE, self.STATE + 40),
                                (self.FRAME, self.FRAME + 0xA88),
-                               (self.WORKSPACE, self.WORKSPACE + 0x10000),
+                               (self.WORKSPACE, self.WORKSPACE + self.WORKSPACE_CAPACITY),
                                (self.ROOT, self.ROOT + 2), (self.BITS, self.BITS + 4)]
         self.writes.clear()
 
@@ -178,16 +184,17 @@ class GuestStreamFixture(GuestBuilderFixture):
     INPUT = 0x50000
     OUTPUT = 0x40000
     FIXED_BASE = 0x8003BE90
+    OUTPUT_CAPACITY = 0x10000
 
     def __init__(self, image, raw, limit=0x70000000):
         super().__init__(image, [])
         self.memory.update((address, 0xA5) for address in
-                           range(self.OUTPUT - 16, self.INPUT))
+                           range(self.OUTPUT - 16, self.OUTPUT + self.OUTPUT_CAPACITY + 16))
         self.memory.update((self.INPUT + index, value) for index, value in
                            enumerate(raw + b"\0" * 16))
         self.memory.update((self.FIXED_BASE + index, 0xA5) for index in range(0x10000))
         fixed_range = (self.FIXED_BASE, self.FIXED_BASE + 0x10000)
-        self.allowed_writes.extend((fixed_range, (self.OUTPUT, self.INPUT)))
+        self.allowed_writes.extend((fixed_range, (self.OUTPUT, self.OUTPUT + self.OUTPUT_CAPACITY)))
         self.put(self.STATE + 8, self.FIXED_BASE, 4)
         self.put(self.STATE + 36, self.FIXED_BASE, 4)
         self.registers[4] = self.STATE

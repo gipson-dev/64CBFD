@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 820](WORKING_NOTES/820-init-all-retail-pages-through-compiled-guest-core-20261003.md)
+  qualifies all 507 retail pages across six compiled core images: 3,042 core
+  runs and fixed initializations pass. All 83 focused regressions and 18
+  final-source representative core runs pass. Explicit buffer/read guards
+  retain the original ABI/storage/hardware boundary; no production conversion.
+
 - Init [Note 819](WORKING_NOTES/819-init-compiled-guest-stream-core-and-fixed-initializer-qualification-20261003.md)
   extends linked guest execution to fixed initialization and connected stored,
   fixed, dynamic and core paths. All 74 combined checks pass; tested state and

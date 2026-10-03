@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 820](WORKING_NOTES/820-init-all-retail-pages-through-compiled-guest-core-20261003.md)):
+All 507 retail pages pass six compiled guest cores (3,042 runs and fixed
+initializations). Workspace/input maxima are 3,564/3,057 bytes, within owned
+buffers and each page's rounded input span. All 83 focused regressions and
+18 final-source representative core runs pass; the fixture correction and
+source-snapshot boundary are explicit. Original ABI/storage/fitting gates
+remain open. No production conversion or README count change.
+
 2026-10-03 ([Note 819](WORKING_NOTES/819-init-compiled-guest-stream-core-and-fixed-initializer-qualification-20261003.md)):
 Forty-eight connected cases across six linked IDO images give 288 stream/core
 comparisons and compiled fixed initializations. Results, scratch, error state,

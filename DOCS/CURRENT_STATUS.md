@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init compiled retail corpus: [Note 820](WORKING_NOTES/820-init-all-retail-pages-through-compiled-guest-core-20261003.md)
+passes all 507 retail pages through six linked IDO core images: 3,042 core
+runs and compiled fixed initializations agree with retail, zlib and pristine
+output. Maximum workspace writes are 3,564 bytes; maximum input reads are
+3,057 bytes, with every run inside its own rounded DMA span (maximum 3,072).
+All 83 focused regressions and 18 additional final-source representative core
+runs pass. The note distinguishes the corpus-loaded fixture from its later
+guard-seeding correction. Private buffers/O32 calls do not establish original
+entry ABI, allocation ownership or hardware behavior. Production counts unchanged.
+
 Init compiled connected paths: [Note 819](WORKING_NOTES/819-init-compiled-guest-stream-core-and-fixed-initializer-qualification-20261003.md)
 executes 288 linked guest stream/core comparisons and 288 compiled fixed-table
 initializations across six profiles. Stored/fixed/dynamic, mixed blocks, strict
