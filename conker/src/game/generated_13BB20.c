@@ -7,6 +7,7 @@ extern f32 D_800A2D50;
 extern f32 D_800A2D54;
 extern f32 D_800A2D58;
 extern f32 D_800A2D5C;
+void func_150A49F4(s32 context);
 extern void func_1510E950(s32, s32, s32, s32, s32, s32, s32, f32, f32, f32,
                           f32, u16, s32, f32, f32, s32);
 
@@ -44,8 +45,8 @@ s32 func_1510F720() {
     return 0;
 }
 
-void func_1510F800() {
-    func_150A49F4();
+void func_1510F800(s32 context) {
+    func_150A49F4(context);
 }
 
 s32 func_1510F820() {

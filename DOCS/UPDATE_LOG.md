@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_1510F800` now explicitly forwards its s32 context argument to the
+  retained setter, preserving its direct eight-word retail match. Fifteen
+  focused/integrated tests and all 431 tool tests pass; build/project checks
+  pass. Previous exact slots, non-matching hashes, restored spans, and Init
+  sections are unchanged. Aggregates and README remain unchanged because the
+  wrapper was already byte-exact C. Dimension helper recovery remains open.
+  [Note 787](WORKING_NOTES/787-game-context-forwarding-interface-recovery-20261003.md)
+
 - Game `func_1504452C` is recovered as a three-vertex transform, correcting the
   prior dispatcher label. All 75 words match after twenty expected-word guards
   normalize proven closed register cycles and independent origin loads. Eleven

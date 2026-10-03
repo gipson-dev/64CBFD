@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 787](WORKING_NOTES/787-game-context-forwarding-interface-recovery-20261003.md)):
+Game `func_1510F800` explicitly forwards its s32 context to the retained setter;
+all eight words remain directly exact without guards/profiles. Fifteen focused/
+integrated tests and all 431 tool tests pass; build/project checks pass. Earlier
+exact slots, nine prior hashes, restored spans, and Init sections are unchanged.
+The setter's complete retained interval is verified separately. Aggregates and
+README unchanged. Next: empty dimension helper `func_1507C3E0`; chain acceptance
+and earlier matching work remain open.
+
 2026-10-03 ([Note 786](WORKING_NOTES/786-game-three-vertex-transform-recovery-and-match-20261003.md)):
 Game `func_1504452C` is recovered as a three-vertex transform, correcting the
 prior dispatcher label. All 75 words match with twenty expected-word guards

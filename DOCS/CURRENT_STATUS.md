@@ -37,15 +37,25 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,596 / 4,789 (54.21%) | 0 | 2,193 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Game `func_1510F800` now explicitly forwards its s32 context argument to the
+retained setter. All eight words remain directly byte-exact with no guards or
+profile changes. Fifteen focused/integrated tests and all 431 tool tests pass;
+build/project checks pass. Twenty-six earlier exact slots, nine prior hashes,
+restored spans, and both Init sections are unchanged; the setter's retained
+256-byte interval independently matches. Aggregates/README are unchanged.
+Next recover empty dimension helper `func_1507C3E0`; whole-chain acceptance
+and the earlier dispatcher/matrix/query matching remain open. See
+[Note 787](WORKING_NOTES/787-game-context-forwarding-interface-recovery-20261003.md).
+
 Game `func_1504452C` replaces its zero-return placeholder with the three-vertex
 offset/origin/coefficient transform, not a context dispatcher. All 75 words
 match; twenty expected-word guards normalize only closed register cycles and
 two independent origin-load schedules. Eleven focused tests and all 416 tool
 tests pass; full rebuild/project checks pass. Earlier exact slots, nine prior
 non-matching hashes, restored spans, and both Init sections are unchanged.
-README matcher aggregates are updated. Next recover explicit context forwarding
-in `func_1510F800`; it has a no-argument forwarding body, not an empty body.
-Its setter is retained assembly; dimension helper recovery remains open. See
+README matcher aggregates are updated. Its then-pending explicit context
+forwarding is recovered in Note 787; the setter remains assembly and dimension
+helper recovery remains open. See
 [Note 786](WORKING_NOTES/786-game-three-vertex-transform-recovery-and-match-20261003.md).
 
 Game `func_15044380` replaces its zero-return placeholder with the complete
