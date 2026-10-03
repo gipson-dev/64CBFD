@@ -61,6 +61,13 @@ include pointer-lifetime and return-delay evidence, not a completed conversion.
 Resume the bounded Init experiments at bitmap leaf `func_10005BE0`; see
 [Working Note 750](WORKING_NOTES/750-init-mmio-pointer-lifetime-profile-trials-20261002.md).
 
+The bitmap follow-up completes 55 shape/profile comparisons without an exact
+`func_10005BE0` body. All eleven source shapes pass 65 host behavior cases
+twice each, but this is not a production conversion. Both small Init leaves
+remain deferred pending a new source/compiler rationale. Keep the verified
+assembly baseline; ordinary Game work can resume at `func_15040CC8`. See
+[Working Note 751](WORKING_NOTES/751-init-bitmap-loop-mask-profile-trials-20261002.md).
+
 Game `func_151DE85C` now replaces its zero-return placeholder with the complete
 menu-state reset. All 35 words match directly from C without guards or a
 compiler override. Five new tests cover call ordering, globals, object bytes,

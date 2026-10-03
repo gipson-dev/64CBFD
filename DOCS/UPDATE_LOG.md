@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Init bitmap loop and mask experiments completed
+
+- The final matrix of 55 shape/profile combinations establishes no exact
+  `func_10005BE0` replacement. All eleven candidate source shapes pass 65
+  positive-count host cases twice each, including bounds and final masks.
+- Production assembly, shared declarations, ownership, and README totals are
+  unchanged. Both small Init leaves remain deferred; ordinary Game work can
+  resume at `func_15040CC8`. No project rebuild or gameplay test was performed.
+  See [Working Note 751](WORKING_NOTES/751-init-bitmap-loop-mask-profile-trials-20261002.md).
+
 ### Init MMIO pointer-lifetime experiments completed
 
 - Twenty isolated compilations test five new shapes across four IDO profiles.
