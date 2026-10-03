@@ -23,6 +23,9 @@ typedef signed int int32_t;
 #if defined(INIT_DECODE_CACHE_DYNAMIC_CODE) && INIT_DECODE_CACHE_DYNAMIC_CODE != 1 && INIT_DECODE_CACHE_DYNAMIC_CODE != 2 && INIT_DECODE_CACHE_DYNAMIC_CODE != 3
 #error Unsupported dynamic code lookup mode
 #endif
+#if defined(INIT_DECODE_BUILDER_SYMBOL_CURSOR) && INIT_DECODE_BUILDER_SYMBOL_CURSOR != 1 && INIT_DECODE_BUILDER_SYMBOL_CURSOR != 2
+#error Unsupported builder symbol cursor mode
+#endif
 
 typedef struct {
     uint8_t operation;
@@ -240,6 +243,14 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     uint16_t value = (uint16_t)s->reservoir;
     uint16_t *link = root;
     int32_t level = -1, consumed;
+#ifdef INIT_DECODE_BUILDER_SYMBOL_CURSOR
+    uint32_t *symbolCursor;
+#if INIT_DECODE_BUILDER_SYMBOL_CURSOR == 1
+    uint32_t *symbolEnd;
+#else
+    uint32_t symbolsLeft;
+#endif
+#endif
 #ifdef INIT_DECODE_LOCAL_ALLOCATED
     uint32_t allocated;
 #endif
@@ -307,7 +318,16 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     s->frame->tables[0] = 0;
 #endif
     code = 0;
+#ifdef INIT_DECODE_BUILDER_SYMBOL_CURSOR
+    symbolCursor = BUILD_SORTED;
+#if INIT_DECODE_BUILDER_SYMBOL_CURSOR == 1
+    symbolEnd = symbolCursor + count;
+#else
+    symbolsLeft = count;
+#endif
+#else
     symbolIndex = 0;
+#endif
     consumed = -(int32_t)width;
 #ifdef INIT_DECODE_LOCAL_ALLOCATED
     allocated = s->allocated;
@@ -370,8 +390,19 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
             }
             BUILD_ENTRY_OPERATION = 99;
             BUILD_ENTRY_BITS = bits - consumed;
+#ifdef INIT_DECODE_BUILDER_SYMBOL_CURSOR
+#if INIT_DECODE_BUILDER_SYMBOL_CURSOR == 1
+            if (symbolCursor != symbolEnd) {
+                uint32_t symbol = *symbolCursor++;
+#else
+            if (symbolsLeft != 0) {
+                uint32_t symbol = *symbolCursor++;
+                symbolsLeft--;
+#endif
+#else
             if (symbolIndex < count) {
                 uint32_t symbol = BUILD_SORTED[symbolIndex++];
+#endif
                 if (symbol < simple) {
                     BUILD_ENTRY_OPERATION = symbol < 256 ? 16 : 15;
                     value = symbol;

@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 817](WORKING_NOTES/817-init-builder-symbol-cursor-and-capacity-qualification-20261003.md)):
+Packed remaining-count symbol cursor reaches 4,160/376 O2; aligned/end reaches
+4,192/360; no-cursor aligned remains 4,224/352. Size improvements trade eight
+frame bytes. All 130 native tests, two rejection tests and twenty final-source
+guest compiles pass, with explicit 288-cell model comparisons. Default hashes,
+production Init assembly and README counts remain unchanged.
+
 2026-10-03 ([Note 816](WORKING_NOTES/816-init-builder-leaf-fill-and-bounded-length-scan-trials-20261003.md)):
 Bounded histogram scans improve packed O2 to 4,192/368 and aligned to 4,224/352,
 without stack growth; smallest text is still 208 bytes over retail. Leaf fill

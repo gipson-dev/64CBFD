@@ -243,6 +243,9 @@ def main():
                         help="capture the leaf fill table base and stride for each nonempty run")
     parser.add_argument("--bounded-length-scan", action="store_true",
                         help="scan the nonzero 1..16 histogram after its all-zero return")
+    parser.add_argument("--builder-symbol-cursor", nargs="?", const="end",
+                        choices=("end", "remaining"),
+                        help="consume sorted symbols using a pointer end or remaining count")
     parser.add_argument("--cache-dynamic-lengths", action="store_true",
                         help="capture the dynamic decoder's stable length-buffer base")
     parser.add_argument("--dynamic-cursor", action="store_true",
@@ -280,6 +283,10 @@ def main():
         suffix += "-cached-leaf-table"
     if args.bounded_length_scan:
         suffix += "-bounded-length-scan"
+    if args.builder_symbol_cursor:
+        suffix += "-builder-symbol-cursor"
+        if args.builder_symbol_cursor != "end":
+            suffix += "-" + args.builder_symbol_cursor
     if args.cache_dynamic_lengths:
         suffix += "-cached-dynamic-lengths"
     if args.dynamic_cursor:
@@ -322,6 +329,9 @@ def main():
         common.append("-DINIT_DECODE_CACHE_LEAF_TABLE")
     if args.bounded_length_scan:
         common.append("-DINIT_DECODE_BOUNDED_LENGTH_SCAN")
+    if args.builder_symbol_cursor:
+        common.append("-DINIT_DECODE_BUILDER_SYMBOL_CURSOR=" +
+                      ("1" if args.builder_symbol_cursor == "end" else "2"))
     if args.cache_dynamic_lengths:
         common.append("-DINIT_DECODE_CACHE_DYNAMIC_LENGTHS")
     if args.dynamic_cursor:

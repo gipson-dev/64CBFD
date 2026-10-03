@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init builder symbol cursors: [Note 817](WORKING_NOTES/817-init-builder-symbol-cursor-and-capacity-qualification-20261003.md)
+reaches packed remaining-count O2 4,160/376 (176 bytes over retail), trading
+eight stack bytes for 32 text bytes. Aligned/end gives 4,192/360; retain uncached
+no-cursor 4,224/352 as the lower-stack point. All 130 new native tests, two
+rejection tests and twenty final-source guest compiles pass. Full-capacity
+288-cell comparisons cover both cursor modes. Production owners/counts unchanged.
+
 Init builder scan lead: [Note 816](WORKING_NOTES/816-init-builder-leaf-fill-and-bounded-length-scan-trials-20261003.md)
 removes redundant bounds after the all-zero histogram return. Packed O2 reaches
 4,192/368 and aligned 4,224/352, sixteen text bytes smaller at unchanged frame

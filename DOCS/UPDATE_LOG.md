@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 817](WORKING_NOTES/817-init-builder-symbol-cursor-and-capacity-qualification-20261003.md)
+  qualifies pointer-end and remaining-count symbol cursors with full-capacity
+  tests. The smallest O2 candidate is 4,160 bytes, still 176 over retail,
+  at a 376-byte call-frame bound. Production owners/counts remain unchanged.
+
 - Init [Note 816](WORKING_NOTES/816-init-builder-leaf-fill-and-bounded-length-scan-trials-20261003.md)
   gains sixteen text bytes from bounded histogram scans without frame growth.
   Per-run leaf capture is negative. Generated receipts now separate public
