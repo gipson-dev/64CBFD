@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-02 ([Note 739](WORKING_NOTES/739-game-dual-matrix-emitter-direct-match-20261002.md)):
+The Game dual matrix emitter `func_15157FE8` matches all 36 words directly
+from SDK-macro C, without guards. Three new behavior tests pass; all 31 tool
+tests and the full code build pass. Both complete Init sections remain exact.
+Resume ordinary Game work at 41-word `func_15158224`.
+
+2026-10-02 ([Note 738](WORKING_NOTES/738-init-bitmap-leaf-contract-and-compiler-experiment-20261002.md)):
+Init bitmap leaf contracts establish inclusive endpoints and low-bit masks.
+Three compiler trials produce no direct match; the nineteen-word candidate
+passes 65 host cases. Assembly ownership remains intact and totals unchanged.
+
 2026-10-02 ([Note 737](WORKING_NOTES/737-init-mmio-leaf-bounded-compiler-experiment-20261002.md)):
 Five isolated compiler trials for Init MMIO leaf `func_100038E0` produce no
 direct match. Its assembly remains intact; complete Init code/data rechecks

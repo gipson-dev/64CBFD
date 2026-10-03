@@ -16,6 +16,25 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game dual matrix emitter recovered and directly matched
+
+- `func_15157FE8` replaces its zero-return placeholder with both SDK matrix
+  commands and matches all 36 words directly from C, without guards.
+- Three new source-behavior tests, all 31 tool tests, project checks, and the
+  full code build pass. Both complete Init sections remain byte-exact.
+- Total exact C is 3,242 / 5,461 (59.37%); Game is 2,569 / 4,788 (53.65%).
+  Resume ordinary Game at `func_15158224`. See
+  [Working Note 739](WORKING_NOTES/739-game-dual-matrix-emitter-direct-match-20261002.md).
+
+### Init bitmap leaf contract experiment
+
+- Retail confirms inclusive bitmap endpoints and a partial final-byte mask.
+  Local candidate declarations correct the pointer interpretation without
+  altering shared headers.
+- Three compiler trials yield no direct match. The nineteen-word candidate
+  passes 65 host behavior cases; original assembly and Init totals remain.
+  See [Working Note 738](WORKING_NOTES/738-init-bitmap-leaf-contract-and-compiler-experiment-20261002.md).
+
 ### Init MMIO leaf compiler experiment
 
 - Five isolated `func_100038E0` variants establish the current compiler

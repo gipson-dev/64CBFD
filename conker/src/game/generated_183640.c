@@ -2,6 +2,8 @@
 extern u8 D_800BE9C0;
 extern u8 D_80089470[];
 extern u8 D_800DCC10[];
+extern u8 *D_800BE628;
+extern u8 *D_800DC2A0[];
 extern s32 D_80082FA0;
 void func_100043B4(s32 *, u32);
 
@@ -153,8 +155,12 @@ Gfx *func_15157F80(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {
     return arg0;
 }
 
-s32 func_15157FE8() {
-    return 0;
+Gfx *func_15157FE8(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3) {
+    gSPMatrix(arg0++, (u32)D_800BE628 + arg2 * 0x180 + D_800BE9C0 * 0x40 + 0x100,
+              G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+    gSPMatrix(arg0++, D_800DC2A0[D_800BE9C0] + arg2 * 0x40,
+              G_MTX_PROJECTION | G_MTX_MUL | G_MTX_NOPUSH);
+    return arg0;
 }
 
 void func_15158078(s32 arg0, u8 arg1) {

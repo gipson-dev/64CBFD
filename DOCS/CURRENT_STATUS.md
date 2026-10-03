@@ -32,10 +32,16 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,241 / 5,461 (59.35%) | 0 | 2,220 |
+| Total | 3,242 / 5,461 (59.37%) | 0 | 2,219 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,568 / 4,788 (53.63%) | 0 | 2,220 |
+| Game | 2,569 / 4,788 (53.65%) | 0 | 2,219 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15157FE8` now replaces its zero-return placeholder with the complete
+dual projection-matrix emitter. All 36 words match directly from SDK-macro C
+without guards or a profile override. Three source-behavior tests pass; all
+31 tool tests and the full code build pass. Both complete Init sections remain
+exact. See [Working Note 739](WORKING_NOTES/739-game-dual-matrix-emitter-direct-match-20261002.md).
 
 Init `func_10001420` is now represented in semantic C and matches its complete
 nine-word memory-clear slot. Six relocation-aware expected-word guards
@@ -48,7 +54,10 @@ Five bounded compiler trials for MMIO leaf `func_100038E0` preserve its
 assembly ownership: none establishes a direct eleven-word C match. The best
 count-matching trial still changes address reuse and the return delay slot.
 See [Working Note 737](WORKING_NOTES/737-init-mmio-leaf-bounded-compiler-experiment-20261002.md).
-The next Init-only experiment is bitmap initializer `func_10005BE0`.
+Bitmap initializer `func_10005BE0` also remains assembly after three compiler
+trials. The count-fitting candidate passes 65 host behavior cases but has no
+direct match or completed extraction from the shared assembly owner. See
+[Working Note 738](WORKING_NOTES/738-init-bitmap-leaf-contract-and-compiler-experiment-20261002.md).
 
 Game `func_15145128` now matches all 50 words after restoring the retail
 optional-length/reciprocal expression shape and output multiply order. Three
@@ -73,11 +82,11 @@ The remaining Init assembly was reassessed in
 No further compiler-generated recovery is established. That audit identified
 three small custom leaves as possible C rewrite experiments. Note 736 now
 completes `func_10001420`; `func_100038E0` is deferred after bounded trials,
-and `func_10005BE0` remains conditional.
+and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 36-word `func_15157FE8`, currently at 35 real word differences.
+queue with 41-word `func_15158224`, currently at 35 real word differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and
 `func_150F631C` in its separate near-match cleanup queue.
 
