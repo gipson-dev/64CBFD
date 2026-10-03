@@ -2,6 +2,10 @@
 
 Date: 2026-10-03. Baseline: `e6dedaf`.
 
+Follow-up: [Note 764](764-game-context3-highest-height-query-recovery-20261003.md)
+completes the then-pending `func_1504554C` counterpart. The measurements
+below remain this lowest-height recovery's checkpoint.
+
 ## Recovery
 
 `func_15045384` replaces its zero-return placeholder with the lowest eligible

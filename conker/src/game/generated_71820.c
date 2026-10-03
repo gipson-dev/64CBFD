@@ -60,6 +60,7 @@ extern u32 *D_800DBE5C;
 extern f32 D_800DBE68, D_800DBE6C, D_800DBE70, D_800DBE74;
 extern f32 D_80098D44;
 extern f32 D_80098D48;
+extern f32 D_80098D4C;
 s32 func_150A3A70(s32 x, s32 z);
 s32 func_150A4FA0(s32 x, s32 z);
 
@@ -394,7 +395,53 @@ s32 func_15045384(f32 *position, f32 threshold, HeightResult71820 *result) {
     return 0;
 }
 
-s32 func_1504554C() {
+s32 func_1504554C(f32 *position, f32 threshold, HeightResult71820 *result) {
+    s32 selected;
+    s32 count;
+    s32 i;
+    f32 height;
+    HeightCandidate71820 *candidate;
+    QueryVertex71820 *vertex;
+    QueryVertex71820 **vertexPointers;
+    s32 vertexOffset;
+
+    if (position[1] < threshold) {
+        result->flags &= ~2;
+        return 0;
+    }
+    result->height = D_80098D4C;
+    selected = -1;
+    func_1510F800(3);
+    count = func_150A4FA0((s32)position[0], (s32)position[2]);
+    for (i = 0; i < count; i++) {
+        height = D_800D3300[i].fixedHeight * (1.0f / 256.0f);
+        if (height <= position[1] && result->height < height) {
+            selected = i;
+            result->height = height;
+        }
+    }
+    if (selected != -1) {
+        candidate = &D_800D3300[selected];
+        vertexPointers = candidate->triangle->vertices;
+        vertexOffset = candidate->vertexIndex;
+        /* Context 3 supplies a byte offset, unlike the indexed context 0 query. */
+        for (i = 0; i != 3; i++) {
+            vertex = (QueryVertex71820 *)((u8 *)vertexPointers[i] + vertexOffset);
+            result->vertices[i * 3] = vertex->x;
+            result->vertices[i * 3 + 1] = vertex->y;
+            result->vertices[i * 3 + 2] = vertex->z;
+        }
+        result->metadata = 0;
+        result->flags |= 6;
+        result->state = 4;
+        result->value = 0;
+        if (threshold <= result->height) {
+            result->flags |= 2;
+            return 1;
+        }
+        return 0;
+    }
+    result->flags &= ~2;
     return 0;
 }
 

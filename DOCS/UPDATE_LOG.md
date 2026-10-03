@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_1504554C` is recovered as the context-3 highest-height query.
+  All 114 words match with fifteen strict compiler-layout guards; thirteen
+  new tests and all 196 tool tests pass. Full build and project checks pass.
+  Total exact C rows are 3,257 / 5,455 and Game 2,584 / 4,782, with zero
+  drift and 2,198 different rows. README changes only aggregate matching rows.
+  [Note 764](WORKING_NOTES/764-game-context3-highest-height-query-recovery-20261003.md)
+
 - Game `func_15045384` is recovered as a lowest-height query and matches all
   114 retail words with fifteen strict compiler-layout guards. Thirteen new
   tests and all 183 tool tests pass; full build and project checks pass.

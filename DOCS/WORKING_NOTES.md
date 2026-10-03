@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 764](WORKING_NOTES/764-game-context3-highest-height-query-recovery-20261003.md)):
+Game `func_1504554C` replaces its zero-return placeholder with the context-3
+highest-height query. All 114 words match with fifteen strict compiler-layout
+guards. Thirteen new tests and all 196 tool tests pass; full build and project
+checks pass. Both entire Init sections and recovered neighbors remain exact.
+Next: downstream `func_15045F8C` and the wrapper's two-word output/input buffer.
+
 2026-10-03 ([Note 763](WORKING_NOTES/763-game-lowest-height-query-recovery-20261003.md)):
 Game `func_15045384` replaces its zero-return placeholder with the lowest-height
 query/result body. All 114 words match with fifteen strict guards normalizing

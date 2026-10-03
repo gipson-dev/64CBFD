@@ -32,17 +32,27 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,256 / 5,455 (59.69%) | 0 | 2,199 |
+| Total | 3,257 / 5,455 (59.71%) | 0 | 2,198 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,583 / 4,782 (54.02%) | 0 | 2,199 |
+| Game | 2,584 / 4,782 (54.04%) | 0 | 2,198 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_1504554C` now has its complete context-3 highest-height query.
+All 114 words match with fifteen strict guards for the same closed compiler
+layout sets as the preceding lowest-height query. Thirteen new tests and all
+196 tool tests pass; full build and project checks pass. Recovered neighbors,
+collector/context group, and both complete Init sections remain exact.
+Next recover the placeholder `func_15045F8C` and its two-word input buffer
+before converting the retained `func_15045780` wrapper. See
+[Note 764](WORKING_NOTES/764-game-context3-highest-height-query-recovery-20261003.md).
 
 Game `func_15045384` now has its complete lowest-height query/result body.
 All 114 words match with fifteen strict guards for a private spill slot,
 closed count/index register swap, and equivalent vertex-copy pointer schedule.
 Thirteen new tests and all 183 tool tests pass; the full build and project
 checks pass. Neighbors, the collector/context group, and both whole Init
-sections remain exact. Next untouched query: `func_1504554C`. See
+sections remain exact. Its then-pending `func_1504554C` query is completed
+in Note 764. See
 [Note 763](WORKING_NOTES/763-game-lowest-height-query-recovery-20261003.md).
 
 The handwritten collector/context group now matches all 5,712 retail bytes,
