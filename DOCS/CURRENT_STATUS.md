@@ -37,13 +37,23 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-03:
 | Game | 2,584 / 4,782 (54.04%) | 0 | 2,198 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
 
+Game `func_15045F8C` now has its complete entity-indexed highest-height query.
+It remains non-matching: 144 body words plus one padding nop, 72 differences,
+no new guards. Twelve new tests cover metadata, entity-address publication,
+flag combinations, and alias-sensitive reloads. All 208 tool tests, full build, and project checks
+pass; recovered neighbors, collector group, and both Init sections remain exact.
+Matching aggregates do not change. The upstream `func_150A6568` output-buffer
+producer remains a placeholder; audit its whole shared-register group before
+claiming a working wrapper path. See
+[Note 765](WORKING_NOTES/765-game-entity-height-query-semantic-recovery-20261003.md).
+
 Game `func_1504554C` now has its complete context-3 highest-height query.
 All 114 words match with fifteen strict guards for the same closed compiler
 layout sets as the preceding lowest-height query. Thirteen new tests and all
 196 tool tests pass; full build and project checks pass. Recovered neighbors,
 collector/context group, and both complete Init sections remain exact.
-Next recover the placeholder `func_15045F8C` and its two-word input buffer
-before converting the retained `func_15045780` wrapper. See
+Its then-pending `func_15045F8C` is recovered semantically in Note 765; the
+upstream producer and wrapper qualification remain open. See
 [Note 764](WORKING_NOTES/764-game-context3-highest-height-query-recovery-20261003.md).
 
 Game `func_15045384` now has its complete lowest-height query/result body.

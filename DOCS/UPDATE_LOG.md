@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Game `func_15045F8C` replaces its placeholder with the entity-indexed
+  highest-height query. Its 145-word slot contains 144 semantic body words
+  and one padding nop, with 72 differences and no new guards. Twelve new
+  tests cover metadata and alias-sensitive reloads. All 208 tool tests pass. Full build and project
+  checks pass; matching aggregates and README tables remain unchanged.
+  The upstream shared-register producer still needs restoration.
+  [Note 765](WORKING_NOTES/765-game-entity-height-query-semantic-recovery-20261003.md)
+
 - Game `func_1504554C` is recovered as the context-3 highest-height query.
   All 114 words match with fifteen strict compiler-layout guards; thirteen
   new tests and all 196 tool tests pass. Full build and project checks pass.

@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 765](WORKING_NOTES/765-game-entity-height-query-semantic-recovery-20261003.md)):
+Game `func_15045F8C` replaces its zero-return placeholder with the entity-indexed
+highest-height query and metadata/result body. It remains non-matching: 144
+body words plus one padding nop, 72 differences, no new guards. Twelve new
+tests cover entity layout, metadata, flags, and alias-sensitive reloads.
+All 208 tool tests and full build pass; neighbors and both Init sections remain
+exact. Next audit
+the still-placeholder shared-register `func_150A6568` output-buffer producer.
+
 2026-10-03 ([Note 764](WORKING_NOTES/764-game-context3-highest-height-query-recovery-20261003.md)):
 Game `func_1504554C` replaces its zero-return placeholder with the context-3
 highest-height query. All 114 words match with fifteen strict compiler-layout

@@ -2,6 +2,10 @@
 
 Date: 2026-10-03. Baseline: `4e4734f`.
 
+Follow-up: [Note 765](765-game-entity-height-query-semantic-recovery-20261003.md)
+recovers the then-placeholder `func_15045F8C` semantically. It remains
+non-matching, and the upstream buffer producer remains an open dependency.
+
 ## Recovery
 
 `func_1504554C` replaces its zero-return placeholder with the complete
