@@ -15,7 +15,8 @@ typedef struct {
     s16 scaleX;
     s16 scaleY;
     s16 scaleZ;
-    u8 pad16[2];
+    u8 flags;
+    u8 pad17;
     s16 *position;
     s16 *scale;
 } PositionScaleRecord71820;
@@ -29,6 +30,8 @@ void func_1505D1C4(f32 arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4,
 s32 func_1504697C(s32 arg0, u16 arg1, s32 arg2, s32 arg3);
 s32 func_15046D00(s32 arg0, u16 arg1, s32 arg2, s32 arg3);
 s32 func_15047004(s32 arg0, s32 arg1, s32 arg2);
+PositionScaleRecord71820 *func_15044964(s32 size, s32 type, s32 arg2, s32 arg3,
+                                       s32 arg4, s32 x, s32 y, s32 z);
 
 void func_15044370() {
     D_800CBD9C = 0;
@@ -49,12 +52,27 @@ s32 func_15044660() {
     return 0;
 }
 
-s32 func_150448D0() {
-    return 0;
+PositionScaleRecord71820 *func_150448D0(s32 arg0, s32 arg1, s32 arg2, s32 arg3,
+                                       s32 arg4, s32 arg5, s32 arg6,
+                                       s16 *arg7, s16 *arg8) {
+    PositionScaleRecord71820 *record;
+
+    record = func_15044964(0x20, 1, arg0, arg1, arg2, 0, 0, 0);
+    if (record == NULL) {
+        return NULL;
+    }
+    record->scaleX = arg3;
+    record->scaleY = arg4;
+    record->scaleZ = arg5;
+    record->flags = arg6;
+    record->position = arg7;
+    record->scale = arg8;
+    return record;
 }
 
-s32 func_15044964() {
-    return 0;
+PositionScaleRecord71820 *func_15044964(s32 size, s32 type, s32 arg2, s32 arg3,
+                                       s32 arg4, s32 x, s32 y, s32 z) {
+    return NULL;
 }
 
 s32 func_15044A28() {

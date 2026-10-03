@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,251 / 5,461 (59.53%) | 0 | 2,210 |
+| Total | 3,252 / 5,461 (59.55%) | 0 | 2,209 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,578 / 4,788 (53.84%) | 0 | 2,210 |
+| Game | 2,579 / 4,788 (53.86%) | 0 | 2,209 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_150448D0` now replaces its zero-return placeholder with the complete
+position/scale record constructor. All 37 words match directly from C under
+the existing profile, without guards. Seven new 32-bit tests and all 106 tool
+tests, project checks, and the full code build pass. Both entire Init sections
+remain exact. The common allocator still has a null-return placeholder;
+recover `func_15044964` next before claiming the allocation path is restored.
+See [Working Note 753](WORKING_NOTES/753-game-position-scale-constructor-direct-match-20261002.md).
 
 Game `func_15040CC8` now replaces its zero-return placeholder with the complete
 thirty-record callback dispatcher and post-dispatch cleanup. It remains
@@ -188,7 +196,8 @@ and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 37-word `func_150448D0`, currently at 36 real word differences.
+queue with dependency `func_15044964`, currently 49 words and 48 real word
+differences. Its position/scale constructor caller is now byte-exact.
 `func_15040CC8` has a recovered semantic body but remains in the separate
 non-matching/overflow queue; its retail-slot matcher reports 36 differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and

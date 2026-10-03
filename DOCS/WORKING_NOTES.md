@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-02 ([Note 753](WORKING_NOTES/753-game-position-scale-constructor-direct-match-20261002.md)):
+Game `func_150448D0` matches all 37 words directly from its recovered record
+constructor C, without guards or profile changes. Seven new 32-bit tests and
+all 106 tool tests pass; the full code build passes and both entire Init
+sections remain exact. Next dependency is common allocator `func_15044964`,
+whose body remains a null-return placeholder; no gameplay path is claimed.
+
 2026-10-02 ([Note 752](WORKING_NOTES/752-game-record-dispatcher-semantic-recovery-20261002.md)):
 Game `func_15040CC8` now has its complete thirty-record dispatcher and final
 cleanup behavior instead of a zero-return placeholder. It remains non-matching:

@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game position/scale constructor directly matched
+
+- `func_150448D0` replaces its zero-return placeholder with a 32-byte record
+  constructor. All 37 words emit directly from C, with no guards or override.
+- Seven new 32-bit tests and all 106 tool tests, project checks, and the full
+  code build pass. Both complete Init sections remain exact.
+- Exact C is Total 3,252 / 5,461 (59.55%) and Game 2,579 / 4,788 (53.86%),
+  with zero drift and 2,209 different rows. README aggregate tables updated.
+- Common allocator `func_15044964` still has a null-return body and is next;
+  the constructor match is not complete allocation-path or gameplay proof.
+  See [Working Note 753](WORKING_NOTES/753-game-position-scale-constructor-direct-match-20261002.md).
+
 ### Game record dispatcher semantically recovered
 
 - `func_15040CC8` replaces its zero-return placeholder with thirty direct
