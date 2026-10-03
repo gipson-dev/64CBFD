@@ -2,6 +2,9 @@
 
 extern s32 D_80082FA0;
 extern f32 D_800A63A0;
+extern s32 D_800BE9E4;
+extern s32 (*D_8008AE00[])();
+void func_1516972C(u8 *arg0);
 void func_100043B4(s32 *, u32);
 
 typedef struct {
@@ -44,8 +47,25 @@ void func_151581D8(s32 arg0, u8 arg1, s32 arg2, u8 arg3, s32 arg4) {
     func_151580B0(arg0, 0, 0, arg1, arg2, arg3, arg4);
 }
 
-s32 func_15158224() {
-    return 0;
+void func_15158224(u8 *arg0) {
+    s32 remove = 0;
+    s8 callbackIndex;
+
+    if ((arg0[0x10] & 1) != 0) {
+        *(s16 *)(arg0 + 0x14) -= D_800BE9E4;
+        if (*(s16 *)(arg0 + 0x14) < 0) {
+            remove = 1;
+        }
+    }
+    if (remove == 0) {
+        callbackIndex = *(s8 *)(arg0 + 0x12);
+        if ((callbackIndex != -1) && (D_8008AE00[callbackIndex]() == 0)) {
+            remove = 1;
+        }
+    }
+    if (remove != 0) {
+        func_1516972C(arg0);
+    }
 }
 
 s32 func_151582C8() {

@@ -32,10 +32,18 @@ Fresh `progress.csv` and linked retail comparison on 2026-10-02:
 
 | Section | Byte-exact C | Address drift | Different C |
 | --- | ---: | ---: | ---: |
-| Total | 3,242 / 5,461 (59.37%) | 0 | 2,219 |
+| Total | 3,243 / 5,461 (59.38%) | 0 | 2,218 |
 | Init | 492 / 492 (100.00%) | 0 | 0 |
-| Game | 2,569 / 4,788 (53.65%) | 0 | 2,219 |
+| Game | 2,570 / 4,788 (53.68%) | 0 | 2,218 |
 | Debugger | 181 / 181 (100.00%) | 0 | 0 |
+
+Game `func_15158224` now replaces its zero-return placeholder with the complete
+41-word timed-callback lifecycle using selector offset `0x12` and table
+`D_8008AE00`. Two strict expected-word guards normalize only completion-flag
+spill width across the callback. Eight new source-behavior tests and all 39
+tool tests pass; the full build and linked comparison pass, and both complete
+Init sections remain exact. See
+[Working Note 740](WORKING_NOTES/740-game-secondary-timed-callback-record-match-20261002.md).
 
 Game `func_15157FE8` now replaces its zero-return placeholder with the complete
 dual projection-matrix emitter. All 36 words match directly from SDK-macro C
@@ -86,7 +94,7 @@ and `func_10005BE0` is deferred after its separate bounded experiment.
 This distinction concerns C representation versus proven original provenance.
 
 The supported Init C-conversion queue is complete. Resume the ordinary Game
-queue with 41-word `func_15158224`, currently at 35 real word differences.
+queue with 41-word `func_1515FFEC`, currently at 35 real word differences.
 Keep `func_150A76F0` in its handwritten/register-contract workstream and
 `func_150F631C` in its separate near-match cleanup queue.
 

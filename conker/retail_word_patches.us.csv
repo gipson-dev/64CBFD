@@ -1,4 +1,6 @@
 filename,function,offset,expected,replacement,expected_relocations,replacement_relocations,note,insert_after,insert_after_relocations,omit
+generated_185560,func_15158224,0x064,0xAFA3001C,0xA3A3001B,-,-,Normalize completion flag spill width across callback,,,false
+generated_185560,func_15158224,0x074,0x8FA3001C,0x93A3001B,-,-,Normalize completion flag spill width across callback,,,false
 init_1420,func_10001420,0x000,0x3C020000,0x3C0E0000,R_MIPS_HI16:D_80043B40,R_MIPS_HI16:D_80043B40,Normalize memory-clear leaf register allocation,,,false
 init_1420,func_10001420,0x004,0x24430000,0x25C50000,R_MIPS_LO16:D_80043B40,R_MIPS_LO16:D_80043B40,Normalize memory-clear leaf register allocation,,,false
 init_1420,func_10001420,0x008,0x24640FE0,0x24A40FE0,-,-,Normalize memory-clear leaf register allocation,,,false

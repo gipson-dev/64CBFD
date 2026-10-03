@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-02 ([Note 740](WORKING_NOTES/740-game-secondary-timed-callback-record-match-20261002.md)):
+Game `func_15158224` matches its complete 41-word timed-callback lifecycle.
+Two strict guards normalize completion-flag spill width; eight behavior tests
+and all 39 tool tests pass. The full build passes and both complete Init
+sections remain exact. Resume ordinary Game work at `func_1515FFEC`.
+
 2026-10-02 ([Note 739](WORKING_NOTES/739-game-dual-matrix-emitter-direct-match-20261002.md)):
 The Game dual matrix emitter `func_15157FE8` matches all 36 words directly
 from SDK-macro C, without guards. Three new behavior tests pass; all 31 tool

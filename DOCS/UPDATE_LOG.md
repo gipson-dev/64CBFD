@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### Game secondary timed callback lifecycle matched
+
+- `func_15158224` replaces its zero-return placeholder with the complete
+  41-word lifecycle body. Two strict guards normalize only the completion
+  flag's spill/reload width across the callback.
+- Eight source-behavior tests cover the timer gate, expiry, zero boundary,
+  sentinel, callback results, halfword wrap, mutation, and selector offset.
+  All 39 tool tests, the full build, and project checks pass. Both complete
+  Init sections remain byte-exact.
+- Total exact C is 3,243 / 5,461 (59.38%); Game is 2,570 / 4,788 (53.68%).
+  Resume ordinary Game at `func_1515FFEC`. See
+  [Working Note 740](WORKING_NOTES/740-game-secondary-timed-callback-record-match-20261002.md).
+
 ### Game dual matrix emitter recovered and directly matched
 
 - `func_15157FE8` replaces its zero-return placeholder with both SDK matrix

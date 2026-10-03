@@ -2,6 +2,10 @@
 
 Date: 2026-10-02
 
+Follow-up: [Note 740](740-game-secondary-timed-callback-record-match-20261002.md)
+completes the next target `func_15158224`; ordinary Game work resumes at
+`func_1515FFEC`.
+
 ## Recovery
 
 `func_15157FE8` at `0x15157FE8..0x15158078` replaces its zero-return
