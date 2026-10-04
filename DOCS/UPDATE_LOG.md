@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 892](WORKING_NOTES/892-init-builder-inplace-scan-deficit-fitting-20261004.md)
+  retains opt-in bounded in-place scan deficit: O1 core saves 32 bytes,
+  packed frames/bounds unchanged, O2 text neutral. Thirty-nine whole bounded
+  passes / one corpus skip and separate six-image branch gate pass. Default
+  packed text preserved exactly; changed-option full corpora remain open.
+
 - Init [Note 891](WORKING_NOTES/891-init-mask-before-refill-lifetime-trials-20261004.md)
   rejects pure-mask-before-refill lifetime changes in take-bits and lookup:
   both grow complete text in both profiles, bounds unchanged. Exact source

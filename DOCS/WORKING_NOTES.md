@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 892](WORKING_NOTES/892-init-builder-inplace-scan-deficit-fitting-20261004.md)):
+Opt-in in-place table-width deficit saves 32 O1 core bytes with unchanged
+packed frames/bounds; O2 text stays unchanged. Whole bounded run 39 passes /
+one corpus skip, separate branch-execution gate passes all six images.
+Default packed text matches old baseline exactly. Full changed-option corpus
+remains open; no production conversion or README change.
+
 2026-10-04 ([Note 891](WORKING_NOTES/891-init-mask-before-refill-lifetime-trials-20261004.md)):
 Pure mask evaluation before refill grows whole core sixteen bytes in take-bits,
 thirty-two in lookup, both profiles. Bounds unchanged. Both edits removed,

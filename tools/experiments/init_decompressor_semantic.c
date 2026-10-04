@@ -386,8 +386,13 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                     while (levelBits < ceiling) {
                         slots <<= 1;
                         scan++;
+#ifdef INIT_DECODE_BUILDER_SCAN_DEFICIT
+                        slots -= BUILD_COUNTS[scan];
+                        if ((int32_t)slots <= 0) break;
+#else
                         if (BUILD_COUNTS[scan] >= slots) break;
                         slots -= BUILD_COUNTS[scan];
+#endif
                         levelBits++;
                     }
                 }

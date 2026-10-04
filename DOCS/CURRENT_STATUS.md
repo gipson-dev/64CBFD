@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init scan-deficit fitting: [Note 892](WORKING_NOTES/892-init-builder-inplace-scan-deficit-fitting-20261004.md)
+adds an opt-in bounded in-place deficit scan. Packed O1 core falls 32 bytes
+to 5,792 / linked 5,984; packed O2 stays 4,384 / linked 4,576 (592 excess).
+Frames/bounds unchanged. Whole bounded run: 39 passes / one corpus skip;
+separate executed-branch gate passes across six images. Default packed text
+matches prior baseline exactly. Changed-option full corpora remain open;
+production and README unchanged.
+
 Init mask-lifetime trials: [Note 891](WORKING_NOTES/891-init-mask-before-refill-lifetime-trials-20261004.md)
 rejects moving pure masks before refill: take-bits grows both core profiles
 sixteen bytes, lookup grows both thirty-two, with unchanged call bounds.

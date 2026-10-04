@@ -286,6 +286,8 @@ def main():
                         help="walk parent offsets through a descending pointer cursor")
     parser.add_argument("--builder-allocation-table", action="store_true",
                         help="derive allocation header and commit from the new table index")
+    parser.add_argument("--builder-scan-deficit", action="store_true",
+                        help="combine bounded table-width scan subtraction and comparison")
     parser.add_argument("--dynamic-shared-repeats", action="store_true",
                         help="share dynamic repeat extraction after selecting width and base")
     parser.add_argument("--dynamic-repeat-value", action="store_true",
@@ -373,6 +375,10 @@ def main():
         suffix += "-parent-ascent-cursor"
     if args.builder_allocation_table:
         suffix += "-allocation-table"
+    if args.builder_scan_deficit:
+        if not args.bounded_builder_shifts:
+            parser.error("--builder-scan-deficit requires --bounded-builder-shifts")
+        suffix += "-scan-deficit"
     if args.dynamic_shared_repeats:
         suffix += "-dynamic-shared-repeats"
     if args.dynamic_repeat_value:
@@ -450,6 +456,8 @@ def main():
         common.append("-DINIT_DECODE_PARENT_ASCENT_CURSOR")
     if args.builder_allocation_table:
         common.append("-DINIT_DECODE_BUILDER_ALLOCATION_TABLE")
+    if args.builder_scan_deficit:
+        common.append("-DINIT_DECODE_BUILDER_SCAN_DEFICIT")
     if args.builder_simple_operation:
         common.append("-DINIT_DECODE_BUILDER_SIMPLE_OPERATION")
     if args.dynamic_shared_repeats:
