@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 857](WORKING_NOTES/857-init-simple-seed-full-masked-cu1-set-corpus-20261003.md)):
+All 507 current-combination packed O2/g3 retail pages pass with masked
+CU1 set in 784.455 seconds. Notes 856/857 now bank both masked modes:
+1,014 paired runs, text/descent/clearance 4,768/3,240/88. Corpus/helper
+checks this turn: fourteen pass, no skips. Return to structural fitting;
+784 linked bytes remain. Other-profile/ownership/hardware/resume stay open;
+production/defaults/README totals unchanged, unrelated Game work preserved.
+
 2026-10-03 ([Note 856](WORKING_NOTES/856-init-simple-seed-full-masked-cu1-clear-corpus-20261003.md)):
 The current Note 855 combination passes all 507 freshly compiled packed
 O2/g3 retail-page comparisons with exception-masked CU1 clear, in 800.807

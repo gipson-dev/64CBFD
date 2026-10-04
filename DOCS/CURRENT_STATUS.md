@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init current-combination CU1-set corpus: [Note 857](WORKING_NOTES/857-init-simple-seed-full-masked-cu1-set-corpus-20261003.md)
+passes all 507 fresh packed/remaining O2/g3 retail-page comparisons with
+exception-masked CU1 set in 784.455 seconds. Notes 856/857 bank both masked
+modes for the current combination: 1,014 paired runs. Both receipts retain
+text/descent/clearance 4,768/3,240/88; corpus/helper checks this turn total
+fourteen pass, no skips. Return to structural fitting: 784 linked bytes
+remain over retail. Other-profile/ownership/hardware/resume gates stay open;
+production/defaults/README totals unchanged.
+
 Init current-combination CU1-clear corpus: [Note 856](WORKING_NOTES/856-init-simple-seed-full-masked-cu1-clear-corpus-20261003.md)
 passes all 507 retail pages on freshly compiled packed/remaining O2/g3
 with exception-masked CU1 clear in 800.807 seconds. Linked text/descent/

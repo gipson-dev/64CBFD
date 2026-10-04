@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 857](WORKING_NOTES/857-init-simple-seed-full-masked-cu1-set-corpus-20261003.md)
+  banks all 507 fresh current-combination masked-CU1-set comparisons.
+  Notes 856/857 complete both masked modes for packed O2/g3: 1,014 paired
+  runs, unchanged text/descent/clearance 4,768/3,240/88. Related corpus
+  checklist items are checked off; return to fitting with 784 bytes left.
+  Other-profile/ownership/hardware remain open. No source/default/README
+  total edits; unrelated Game work remains preserved and excluded.
+
 - Init [Note 856](WORKING_NOTES/856-init-simple-seed-full-masked-cu1-clear-corpus-20261003.md)
   banks all 507 fresh current-combination masked-CU1-clear corpus comparisons.
   Text/descent/clearance remain 4,768/3,240/88; full context and poisoned-state

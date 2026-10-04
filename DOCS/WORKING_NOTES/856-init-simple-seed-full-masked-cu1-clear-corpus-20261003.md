@@ -7,8 +7,9 @@ Date: 2026-10-03. Baseline: `bcdf026`.
 All 507 retail pages pass on the freshly compiled packed/remaining O2/g3
 simple-operation/seed-cursor combination, with exception-masked FR=1 and
 CU1 clear. The full-corpus test passes in 800.807 seconds with no skips.
-This is the first full-corpus receipt for the current Note 855 combination;
-the other masked CU1 mode remains open for this changed implementation.
+This is the first full-corpus receipt for the current Note 855 combination.
+CU1 set was open at this checkpoint; it was subsequently completed in
+[Note 857](857-init-simple-seed-full-masked-cu1-set-corpus-20261003.md).
 
 ```text
 shadow CU1-clear corpus: pages=507/507 runs=507/507
@@ -84,7 +85,7 @@ suite, other-profile corpus, hardware replay or sibling-port test is claimed.
 ## Remaining Work
 
 - [x] Fresh changed-source masked CU1-clear full corpus: all 507 pages.
-- [ ] Fresh changed-source masked CU1-set full corpus.
+- [x] Fresh changed-source masked CU1-set full corpus, completed subsequently in Note 857.
 - [ ] Other-profile full corpora before any broader profile claim.
 - [ ] Structural fitting: selected text is still 784 bytes over retail.
 - [ ] Complete stack-reservation ownership, hardware fault/cache/bus behavior,

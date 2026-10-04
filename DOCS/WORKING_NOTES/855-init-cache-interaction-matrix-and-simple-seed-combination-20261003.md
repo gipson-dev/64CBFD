@@ -120,7 +120,7 @@ full corpus, hardware replay or sibling-port test is claimed.
 - [x] Select mask 16 and qualify literal/EOB/signed-stale boundaries.
 - [x] Rerun the full bounded module and record all six observed costs.
 - [ ] Continue structural fitting; best O2 excess is 784 bytes.
-- [ ] Changed full corpus in both masked CU1 modes before promotion.
+- [x] Changed full corpus in both masked CU1 modes, completed subsequently in Notes 856/857.
 - [ ] Other-profile corpus and remaining ownership/hardware/resume gates.
 
 Opt-in corpus class: `InitDecompressorSimpleSeedCombinationCorpusTests`
