@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init guarded CU1-clear corpus: [Note 887](WORKING_NOTES/887-init-live-sp-guard-full-masked-cu1-clear-corpus-20261004.md)
+passes all 507 live-SP-guarded packed O2/g3 paired pages in 806.976 seconds,
+no skips. Text 4,576 / 592 excess; observed descent 3,240 matches bound,
+minimum SP 0x80031D68 / known-neighbor margin 88. Twenty-six supporting
+gates pass; nine source blobs hold. Guarded CU1-clear checked off; matching
+guarded CU1-set, fitting, full reservation and hardware/ownership remain.
+Candidate/production sources and README unchanged; unrelated Game preserved.
+
 Init live-SP write guard: [Note 886](WORKING_NOTES/886-init-live-sp-write-fence-and-negative-qualification-20261004.md)
 adds a separate fixture rejecting private-stack writes below current SP.
 Executed below-frame store corruption is rejected across six builds and both

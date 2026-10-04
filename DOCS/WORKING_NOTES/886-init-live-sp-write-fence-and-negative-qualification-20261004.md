@@ -76,7 +76,8 @@ pages remain evidence for the previous fixture without this guard.
 
 ## Remaining Gates
 
-- [ ] All 507 live-SP-guarded packed O2/g3 masked CU1-clear pages.
+- [x] All 507 live-SP-guarded packed O2/g3 masked CU1-clear pages
+  ([Note 887](887-init-live-sp-guard-full-masked-cu1-clear-corpus-20261004.md)).
 - [ ] All 507 matching guarded CU1-set pages.
 - [ ] Complete retail stack reservation and entry/frame ownership.
 - [ ] Further fitting and hardware/context qualification.

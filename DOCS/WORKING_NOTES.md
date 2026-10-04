@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 887](WORKING_NOTES/887-init-live-sp-guard-full-masked-cu1-clear-corpus-20261004.md)):
+All 507 live-SP-guarded packed O2/g3 CU1-clear pages pass in 806.976 seconds,
+no skips. Text 4,576 / 592 excess, descent 3,240 equals bound, minimum SP
+0x80031D68 / neighbor margin 88. Twenty-six supporting gates pass; nine
+source blobs unchanged. Guarded CU1-clear checked off; matching CU1-set
+and production-promotion gates remain open. README unchanged.
+
 2026-10-04 ([Note 886](WORKING_NOTES/886-init-live-sp-write-fence-and-negative-qualification-20261004.md)):
 Separate live-SP write fence arms at the executed private-stack switch.
 Below-frame store corruption is rejected across six builds/both masked modes;

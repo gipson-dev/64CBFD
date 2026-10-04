@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 887](WORKING_NOTES/887-init-live-sp-guard-full-masked-cu1-clear-corpus-20261004.md)
+  qualifies all 507 live-SP-guarded packed O2/g3 masked CU1-clear pages in
+  806.976 seconds, no skips. Text 4,576 / 592 excess, descent 3,240 equals
+  bound, minimum SP 0x80031D68 / neighbor margin 88. Twenty-six supporting
+  checks pass; nine source blobs hold. Matching guarded CU1-set and fitting/
+  reservation/hardware/ownership remain; production and README unchanged.
+
 - Init [Note 886](WORKING_NOTES/886-init-live-sp-write-fence-and-negative-qualification-20261004.md)
   adds a live-SP write-only oracle fence with executed below-frame negative
   controls. Thirty-seven bounded tests pass / one corpus skip; thirteen
