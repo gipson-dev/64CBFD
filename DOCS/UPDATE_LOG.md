@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 907](WORKING_NOTES/907-init-rejected-builder-replication-span-deficit-trials-20261004.md)
+  rejects entry/byte-unit replication deficits: O2 text +32 / bound +16,
+  O1 also larger. Source restored exactly; seventeen retained-builder/size/
+  accounting checks pass. Qualified decoder and production unchanged.
+
 - Init [Note 906](WORKING_NOTES/906-init-dynamic-order-o2-full-masked-cu1-set-corpus-20261004.md)
   qualifies all 507 dynamic-order packed O2 masked CU1-set pages in 836.723
   seconds, no skips. With Note 905: 1,014 paired pages across both modes;

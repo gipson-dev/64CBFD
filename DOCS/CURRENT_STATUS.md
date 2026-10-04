@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init replication deficit trials: [Note 907](WORKING_NOTES/907-init-rejected-builder-replication-span-deficit-trials-20261004.md)
+rejects entry-unit and byte-unit remaining-span loops: both grow O2 core text
+32 bytes and call bound sixteen; O1 also grows. Source restored exactly,
+17 focused retained-builder/size/ledger tests pass. Qualified dynamic-order
+candidate remains 4,528 linked / 544 excess; production and README unchanged.
+
 Init dynamic order O2 CU1-set corpus: [Note 906](WORKING_NOTES/906-init-dynamic-order-o2-full-masked-cu1-set-corpus-20261004.md)
 passes all 507 guarded paired pages in 836.723 seconds, no skips. With Note
 905, both masked CU1 modes cover 1,014 paired pages for this unchanged

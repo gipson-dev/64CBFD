@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 907](WORKING_NOTES/907-init-rejected-builder-replication-span-deficit-trials-20261004.md)):
+Entry-unit and byte-unit replication span deficits both grow O2 text 32 bytes
+and core call bound sixteen; O1 also grows. Both removed, source restored
+exactly; 17 focused retained builder/size/accounting checks pass. Qualified
+dynamic-order candidate and production remain unchanged.
+
 2026-10-04 ([Note 906](WORKING_NOTES/906-init-dynamic-order-o2-full-masked-cu1-set-corpus-20261004.md)):
 Dynamic-order packed O2 passes all 507 masked CU1-set paired pages in
 836.723 seconds, no skips. Notes 905/906 qualify 1,014 paired pages across
