@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Extended child callback: [Note 960](WORKING_NOTES/960-game-extended-child-emission-semantic-recovery-20261004.md)
+recovers code-0x37 `func_150E93DC`, its 124-byte descriptor and typed pointer
+wrapper. C fits 206 body words / 0x138 frame in the 208-word slot, with 200
+raw differences and no guards. The wrapper remains exact across fifteen words.
+Thirteen new tests and all 145 combined checks pass, no skips; fresh link
+preserves complete Init code/data, Game data and prior recoveries. Retail's
+28-byte extra payload and descriptor holes remain unspecified. Constructor
+`func_1513264C` still returns NULL: recover its 256-word body and qualify its
+resource-helper dependency next. PC child synchronization and natural effects
+remain separate gates. Init assembly and README aggregates are unchanged.
+
 Init decoder fitting: [Note 959](WORKING_NOTES/959-init-decoder-packed-parent-and-bit-tail-fitting-trials-20261004.md)
 tests new opt-in parent packing and shared-refill/inline bit-tail shapes.
 Optimized complete images grow to 4528 and 4544 bytes, so reject both; the
@@ -47,8 +58,9 @@ new tests connect the real creator and all four actual position-writer modes;
 all 132 combined tests pass, no skips. Fresh link preserves full Init code/data,
 Game data, exact neighbors and prior recoveries. README aggregates unchanged.
 The PC source still has an emitter stub, so synchronization is separate. Next
-recover code-0x37 child `func_150E93DC` (208 words); it is still a placeholder,
-and downstream/gameplay qualification remains open.
+recover code-0x37 child `func_150E93DC` (208 words); this historical placeholder
+gate is subsequently resolved by Note 960. Its constructor and downstream/
+gameplay qualification remain open.
 
 Game child-emission callback: [Note 956](WORKING_NOTES/956-game-child-emission-callback-recovery-and-fitting-20261004.md)
 finishes `func_150E8D5C` and its typed pointer interfaces. Two flag shifts resolve

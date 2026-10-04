@@ -44,6 +44,16 @@ extern f32 D_800A13B8;
 extern f32 D_800A13BC;
 extern f32 D_800A13C0;
 extern f32 D_800A13C4;
+extern u8 D_800A12F0[];
+extern f32 D_800A12F4[];
+extern f32 D_800A13C8;
+extern f32 D_800A13CC;
+extern f32 D_800A13D0;
+extern f32 D_800A13D4;
+extern f32 D_800A13D8;
+extern f32 D_800A13DC;
+extern f32 D_800A13E0;
+extern f32 D_800A13E4;
 extern s32 D_80088A5C[2];
 extern u8 D_80088A64;
 extern s32 D_80088A68[3];
@@ -183,6 +193,51 @@ typedef struct ChildEmissionDescriptor113D60 {
     u8 reserved64[0xC];
 } ChildEmissionDescriptor113D60;
 
+typedef struct ExtendedChildEmissionDescriptor113D60 {
+    f32 field00;
+    f32 field04;
+    f32 field08;
+    f32 field0C;
+    f32 field10;
+    f32 field14;
+    f32 field18;
+    f32 field1C;
+    f32 field20;
+    f32 field24;
+    vertex position;
+    f32 field34;
+    f32 field38;
+    f32 field3C;
+    f32 field40;
+    f32 field44;
+    f32 field48;
+    f32 field4C;
+    u32 flags;
+    s16 field54;
+    u16 resource;
+    u8 field58;
+    u8 reserved59[3];
+    u32 field5C;
+    u8 field60;
+    u8 field61;
+    u8 field62;
+    u8 field63;
+    u8 field64;
+    u8 field65;
+    u8 field66;
+    u8 field67;
+    u8 field68;
+    u8 reserved69;
+    u8 field6A;
+    u8 reserved6B;
+    u32 field6C;
+    u8 field70;
+    u8 reserved71;
+    s16 field72;
+    s16 field74;
+    u8 reserved76[6];
+} ExtendedChildEmissionDescriptor113D60;
+
 typedef struct WorldEmitterDescriptor113D60 {
     s16 field00;
     s16 field02;
@@ -231,6 +286,8 @@ void func_1514470C(void *descriptor, void *position);
 f32 *func_15144B34(s32 player);
 void func_151436B4(f32 angle0, f32 angle1, f32 radius, vertex *position);
 void *func_15130374(void *descriptor, u8 mode, s32 payloadBytes, u8 slot, s32 context);
+void *func_15132A4C(void *descriptor, s32 resource, s32 value, s32 payloadBytes,
+                  u8 slot, s32 context);
 s32 func_1514ECE0(void *node, s16 key, void **result);
 void func_150E8930(void);
 void func_150E8A80(void);
@@ -876,8 +933,88 @@ void func_150E9178(u8 *record) {
     }
 }
 
-s32 func_150E93DC() {
-    return 0;
+void func_150E93DC(u8 *record) {
+    EventPositionPayload113D60 *payload;
+    ExtendedChildEmissionDescriptor113D60 descriptor;
+    u8 extra[0x1C];
+    void *result;
+    f32 sample;
+    f32 spread;
+    f32 scale;
+    f32 angle0;
+    f32 angle1;
+    f32 radius;
+    f32 period;
+
+    sample = func_150ADA68();
+    payload = (EventPositionPayload113D60 *)(record + 0x28);
+    payload->parameters.field08 +=
+        (payload->parameters.field00 + sample * payload->parameters.field04) * D_800BE9A4;
+    if (payload->parameters.field08 > 1.0f) {
+        spread = D_800A13C8;
+        scale = D_800A13CC;
+
+        /* Retail leaves descriptor holes and the extra payload unspecified. */
+        descriptor.field00 = 0.0f;
+        descriptor.field04 = 1.0f;
+        descriptor.field1C = 1.0f;
+        descriptor.field20 = 1.0f;
+        descriptor.field24 = 1.0f;
+        descriptor.flags = 0x49E8;
+        descriptor.field34 = 0.0f;
+        descriptor.field38 = 0.0f;
+        descriptor.field3C = 0.0f;
+        descriptor.field44 = 0.0f;
+        descriptor.field58 = 0;
+        descriptor.field5C = 0;
+        descriptor.field60 = 255;
+        descriptor.field62 = 0;
+        descriptor.field63 = 0;
+        descriptor.field64 = 0;
+        descriptor.field65 = 0;
+        descriptor.field66 = 0;
+        descriptor.field67 = 0;
+        descriptor.field68 = 2;
+        descriptor.field6A = 2;
+        descriptor.field6C = 0;
+        descriptor.field70 = 0;
+        descriptor.field72 = 1;
+        descriptor.field74 = 255;
+
+        do {
+            func_150ADA20();
+            descriptor.resource = D_800A12F0[0];
+            sample = func_150ADA68();
+            descriptor.field08 = ((sample * D_800A13D0 + 400.0f) * D_800A12F4[0]) * scale;
+            descriptor.field0C = descriptor.field08;
+            descriptor.field10 = func_150ADA68() * 360.0f;
+            descriptor.field14 = func_150ADA68() * 360.0f;
+            descriptor.field18 = func_150ADA68() * 360.0f;
+            sample = func_150ADA68();
+            descriptor.field4C = (sample * D_800A13D4 + D_800A13D8) * scale;
+            func_150ADA20();
+            descriptor.field54 = 100;
+            sample = func_150ADA68();
+            descriptor.field40 = (sample * spread + D_800A13DC) * scale;
+            sample = func_150ADA68();
+            descriptor.field48 = (sample * spread + D_800A13E0) * scale;
+            angle0 = func_150ADA68();
+            angle1 = func_150ADA68();
+            radius = func_150ADA68();
+            period = D_800A13E4;
+            func_151436B4(angle0 * period, angle1 * period, radius * 50.0f,
+                          &descriptor.position);
+            descriptor.position.x += payload->position.x;
+            descriptor.position.y += payload->position.y;
+            descriptor.position.z += payload->position.z;
+            descriptor.field61 = 8;
+            result = func_15132A4C(&descriptor, 3, 0xFF, 0x1C, record[0xC], record[1]);
+            if (result != NULL) {
+                memcpy((u8 *)result + 0x170, extra, 0x1C);
+            }
+            payload->parameters.field08 -= 1.0f;
+        } while (payload->parameters.field08 > 1.0f);
+    }
 }
 
 s32 func_150E971C() {

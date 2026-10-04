@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 960](WORKING_NOTES/960-game-extended-child-emission-semantic-recovery-20261004.md)
+  recovers `func_150E93DC` and its pointer wrapper: 206 body / 208 slot words,
+  0x138 frame, 200 raw differences, no guards; wrapper stays fifteen-word exact.
+  Thirteen new tests and all 145 combined checks pass, no skips. Fresh link
+  preserves complete Init code/data, Game data and prior recoveries. Retail's
+  descriptor holes and 28-byte extra payload stay unspecified. Constructor
+  `func_1513264C` remains a placeholder; recover it and qualify resource helpers
+  next. PC child synchronization remains separate; Init/README unchanged.
+
 - Init [Note 959](WORKING_NOTES/959-init-decoder-packed-parent-and-bit-tail-fitting-trials-20261004.md)
   qualifies new packed-parent and shared-refill/inline-tail experiments:
   optimized totals are 4528 / 4544 bytes, both worse than 4512 baseline.

@@ -153,7 +153,9 @@ build, binary, real save or frozen Release changes here.
 - [x] Qualify the actual creator and all four actual position-writer modes.
 - [x] Fit the complete allocation and preserve existing linked code/data gates.
 - [x] Audit and document the separate host source synchronization gap.
-- [ ] Recover code-0x37 child `func_150E93DC`, 832 bytes / 208 words.
+- [x] Recover code-0x37 child `func_150E93DC`, 832 bytes / 208 words;
+  subsequently completed in [Note 960](960-game-extended-child-emission-semantic-recovery-20261004.md).
+- [ ] Recover its extended constructor `func_1513264C` and qualify resource helpers.
 - [ ] Pursue the emitter's 54-word matching remainder separately.
 - [ ] Synchronize both recovered callbacks through the PC guest/RDRAM interfaces.
 - [ ] Qualify downstream update/rendering and natural guest effects.

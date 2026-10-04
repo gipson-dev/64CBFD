@@ -62,12 +62,12 @@ void func_151325C8(ResourceOwner15F680 *arg0) {
     }
 }
 
-s32 func_1513264C() {
-    return 0;
+void *func_1513264C() {
+    return NULL;
 }
 
-void func_15132A4C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5) {
-    func_1513264C(arg0, arg1, arg2, 0, arg3, arg4, arg5);
+void *func_15132A4C(void *arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5) {
+    return func_1513264C(arg0, arg1, arg2, 0, arg3, arg4, arg5);
 }
 
 s32 func_15132A88() {

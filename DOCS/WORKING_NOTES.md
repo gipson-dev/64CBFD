@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-04 ([Note 960](WORKING_NOTES/960-game-extended-child-emission-semantic-recovery-20261004.md)):
+Recover code-0x37 child `func_150E93DC`: 206 body words / 0x138 frame in 208
+retail words, 200 differences, no guards. Its 124-byte descriptor and pointer
+wrapper are qualified; the fifteen-word wrapper remains exact. Thirteen new
+tests and all 145 combined checks pass; fresh link preserves full Init code/data,
+Game data and prior recoveries. Descriptor holes and 28 extra bytes remain
+unspecified. Constructor `func_1513264C` remains a NULL-return placeholder;
+recover it and qualify its resource helper next. PC synchronization and natural
+effects remain open; README aggregates and retained Init assembly are unchanged.
+
 2026-10-04 ([Note 959](WORKING_NOTES/959-init-decoder-packed-parent-and-bit-tail-fitting-trials-20261004.md)):
 Test two new isolated decoder fitting hypotheses. Packed parent entries grow
 the optimized image by sixteen bytes; shared-refill/inline bit tail grows it
