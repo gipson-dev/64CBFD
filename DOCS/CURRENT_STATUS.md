@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game linked-record exit trials: [Note 921](WORKING_NOTES/921-game-linked-record-position-exit-layout-trials-20261004.md)
+tests five exit shapes across four profiles; none matches retail. Return/goto
+variants retain the 71-word shared-RA tail under O2/g3; O1 emits 89 words.
+All twenty host shape/test runs pass. Production's 15 differences and all
+aggregate counts remain unchanged; retained driver makes the trials reproducible.
+
 Game linked-record matching refinement: [Note 920](WORKING_NOTES/920-game-linked-record-position-stack-and-float-shape-20261004.md)
 reduces `func_150E6FAC` from 38 to 15 differing positions by restoring local
 declaration order and float operand source shape. All 57 non-branch words

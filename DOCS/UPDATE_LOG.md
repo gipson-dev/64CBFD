@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 921](WORKING_NOTES/921-game-linked-record-position-exit-layout-trials-20261004.md)
+  records twenty isolated exit/profile compilations and twenty passing host
+  shape/test runs. No full retail match; production's 71-word shared-RA tail,
+  fifteen differences and aggregate snapshot remain unchanged.
+
 - Game [Note 920](WORKING_NOTES/920-game-linked-record-position-stack-and-float-shape-20261004.md)
   restores linked-record position stack/float shape directly from C, reducing
   differences from 38 to 15. Thirteen tests pass; return-tail matching remains

@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 921](WORKING_NOTES/921-game-linked-record-position-exit-layout-trials-20261004.md)):
+Five linked-record exit forms / four profiles fail to reproduce retail's
+duplicated RA load. O2/g3 return/goto forms stay 71 words / 15 differences;
+early failure return reorders blocks, O1 grows to 89 words. Twenty host
+shape/test runs pass. Production source, profiles, guards and totals unchanged.
+
 2026-10-04 ([Note 920](WORKING_NOTES/920-game-linked-record-position-stack-and-float-shape-20261004.md)):
 `func_150E6FAC` local declaration and float source ordering restore retail
 stack offsets and complete computation register/operand sequence. Differences
