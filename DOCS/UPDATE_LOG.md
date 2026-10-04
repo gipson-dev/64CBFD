@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 958](WORKING_NOTES/958-init-resume-remaining-assembly-readiness-20261004.md)
+  resumes the requested assembly-conversion assessment: 102 fresh checks pass,
+  no skips; all retained owners/slots and complete existing Init code/data and
+  Game data stay exact. Seventeen entries are investigation targets, thirty
+  remain intentional assembly. Decoder is 528 bytes over; best connected
+  formatter 196 over. Small leaves lack complete matches, although older bitmap
+  forms fit. No production source or README changes; Game child left untouched.
+
 - Game [Note 957](WORKING_NOTES/957-game-extended-weighted-emitter-semantic-recovery-20261004.md)
   recovers `func_150E9178` and its 60-byte payload: 153 words / 0xF8 frame,
   54 differences, no guards. Eleven new connected tests; all 132 combined tests

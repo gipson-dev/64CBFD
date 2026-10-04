@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Requested Init resume: [Note 958](WORKING_NOTES/958-init-resume-remaining-assembly-readiness-20261004.md)
+freshly verifies 492 C / 47 assembly entries, all retained owners/slots and
+complete existing linked Init code/data and Game data. All 102 checks pass,
+no skips. Seventeen entries remain investigation targets; thirty established
+boot/hardware/context/SDK owners stay assembly. No replacement is ready to
+adopt: decoder remains 528 bytes over, best connected formatter 196 over,
+and small leaves lack complete retail matches. Older bitmap forms do fit
+nineteen words but remain non-matching. Init source and README unchanged;
+the separate Game child placeholder is not edited by this assessment.
+
 Extended weighted emitter: [Note 957](WORKING_NOTES/957-game-extended-weighted-emitter-semantic-recovery-20261004.md)
 recovers `func_150E9178`'s complete code-0x36 body and 60-byte child payload.
 C fits all 153 words / 0xF8 frame, with 54 differences and no guards. Eleven

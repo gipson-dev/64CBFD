@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-04 ([Note 958](WORKING_NOTES/958-init-resume-remaining-assembly-readiness-20261004.md)):
+Resume the requested Init assessment from the clean banked baseline. All 102
+checks pass, no skips; 492 C / 47 assembly entries and complete existing linked
+Init code/data and Game data stay exact. Seventeen entries are investigation
+targets, thirty stay assembly. No candidate is ready to adopt: decoder is 528
+bytes over, best connected formatter 196 over, and small leaves lack full matches.
+Older bitmap candidates fit nineteen words but are non-matching. Only working
+docs change; README totals and pending Game child remain untouched.
+
 2026-10-04 ([Note 957](WORKING_NOTES/957-game-extended-weighted-emitter-semantic-recovery-20261004.md)):
 Restore code-0x36 `func_150E9178` and its partially initialized 60-byte child
 payload. C fits all 153 words / 0xF8 frame, 54 differences, no guards. Eleven
