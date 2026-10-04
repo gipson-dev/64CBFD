@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init live-SP write guard: [Note 886](WORKING_NOTES/886-init-live-sp-write-fence-and-negative-qualification-20261004.md)
+adds a separate fixture rejecting private-stack writes below current SP.
+Executed below-frame store corruption is rejected across six builds and both
+masked modes, even above the old neighbor fence. Whole bounded suite has
+37 passes / one corpus skip; thirteen storage regressions pass. Size/bounds
+unchanged, packed O2 4,576 / 592 excess. New guarded corpus and full reservation
+remain open; previous corpus evidence stays scoped to its old fixture.
+Production/defaults/README and unrelated Game work unchanged.
+
 Init MMIO published-address trial: [Note 885](WORKING_NOTES/885-init-mmio-published-address-dataflow-trial-20261004.md)
 measures five profiles using D_80038070 as the hardware-store destination.
 O1 eliminates the read and retains the address, but adds a register copy

@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 886](WORKING_NOTES/886-init-live-sp-write-fence-and-negative-qualification-20261004.md)
+  adds a live-SP write-only oracle fence with executed below-frame negative
+  controls. Thirty-seven bounded tests pass / one corpus skip; thirteen
+  storage tests pass. Candidate size/bounds hold; full guarded corpus and
+  reservation remain open. Production/defaults/README unchanged.
+
 - Init [Note 885](WORKING_NOTES/885-init-mmio-published-address-dataflow-trial-20261004.md)
   probes the published address as MMIO destination in five profiles. O1
   retains the address but still differs; no matching replacement or guard

@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 886](WORKING_NOTES/886-init-live-sp-write-fence-and-negative-qualification-20261004.md)):
+Separate live-SP write fence arms at the executed private-stack switch.
+Below-frame store corruption is rejected across six builds/both masked modes;
+bounded suite 37 passes / one corpus skip, storage regressions thirteen passes.
+Linked text/bounds unchanged. New guarded corpus and full reservation remain
+open; no production or README change.
+
 2026-10-04 ([Note 885](WORKING_NOTES/885-init-mmio-published-address-dataflow-trial-20261004.md)):
 Published-address MMIO probe across five profiles: no eleven-word match.
 O1 removes the extra global read but retains an address copy and delay-slot
