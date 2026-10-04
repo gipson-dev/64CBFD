@@ -21,6 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Remaining Init decision refresh: [Note 964](WORKING_NOTES/964-init-remaining-assembly-current-conversion-decisions-20261004.md)
+confirms 492 C / 47 assembly entries (12252 ASM bytes) after the fresh production
+link. All 102 focused checks pass, no skips; every retained ASM slot and complete
+Init code/data plus Game data remain retail-exact. Seventeen investigation
+targets remain, thirty owners stay intentional assembly. No candidate is ready:
+decoder executable is 528 bytes over, best connected formatter 196 over, and
+neither small leaf has a complete match. Start with a new bitmap compiler-shape
+hypothesis; no broad Init conversion batch or README aggregate change.
+
+Asset cache and block loading: [Note 963](WORKING_NOTES/963-game-asset-table-cache-lookup-and-block-load-recovery-20261004.md)
+recovers cache installer `func_1502AB04`, lookup `func_1502AC88` and block loader
+`func_1502B350`: 87 / 97, 158 / 159 and 77 / 86 words, with 93, 156 and 78 raw
+differences, no new guards. Fourteen new tests qualify cache ordering, metadata,
+allocation/decode-result semantics and the actual lookup/block/variadic/relocation
+connection. All 188 combined checks pass, no skips; fresh link retains full
+Init code/data, Game data, prior recoveries and exact callers. Note 962's unwritten
+lookup metadata gate is now resolved in source; guest DMA/decompression, deeper
+setup/attachment, byte matching and natural effects remain separate gates.
+No sibling/Release changes. README counts remain unchanged.
+
 Variadic resource loader: [Note 962](WORKING_NOTES/962-game-variadic-resource-loader-and-offset-relocation-recovery-20261004.md)
 recovers `func_1502B6BC` and relocation helper `func_1502B4A8`. The loader fits
 all 77 words / retail 0x50 frame, 17 raw differences; relocation fits 65 body
@@ -28,9 +48,9 @@ words in 72, 71 differences. No new guards. Typed variadic caller interfaces
 preserve three complete exact caller slots. Fourteen new tests connect actual
 constructor/helper/loader/relocation and other callers; all 174 combined checks
 pass, no skips. Fresh link preserves full Init code/data, Game data and prior
-recoveries. Next recover lookup `func_1502AC88` (159 words) and block loader
-`func_1502B350` (86 words). Lookup still leaves metadata unwritten: production
-loading is not qualified, nor are zero-depth/negative-depth calls. Deeper setup/
+recoveries. At that checkpoint lookup `func_1502AC88` (159 words) and block loader
+`func_1502B350` (86 words) still had placeholders; Note 963 subsequently recovers
+both. Actual guest loading and zero-depth/negative-depth calls remain unqualified. Deeper setup/
 attachment, PC child synchronization and natural effects remain open. README unchanged.
 
 Extended child constructor: [Note 961](WORKING_NOTES/961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md)
@@ -39,8 +59,8 @@ fit 255 / 256 and 45 / 46 words, with 184 and nine raw differences, no guards.
 The pointer wrapper remains fifteen-word exact. Fifteen new tests connect the
 actual child/constructor/resource helper; all 160 combined checks pass, no skips.
 Fresh link preserves complete Init code/data, Game data and prior recoveries.
-Its loader gate is subsequently recovered by Note 962; lookup/block loading and
-deeper `func_1510CE60` / `func_15168E54` remain open. PC synchronization and natural
+Its loader gate is subsequently recovered by Note 962 and lookup/block bodies
+by Note 963. Deeper `func_1510CE60` / `func_15168E54` remain open. PC synchronization and natural
 effects remain open; retained Init assembly and README aggregates are unchanged.
 
 Extended child callback: [Note 960](WORKING_NOTES/960-game-extended-child-emission-semantic-recovery-20261004.md)

@@ -7,7 +7,7 @@
 #include "macros.h"
 
 /* Generated placeholder declarations. */
-s32 func_1502AB04();
+void func_1502AB04(s32 count, u32 *pairs, u32 generation, u32 address);
 s32 func_1502AC88(u32 arg0, s32 arg1, u32 *arg2);
 s32 func_1502AF04();
 s32 func_1502B020();
@@ -23,19 +23,70 @@ s32 func_1502B9B4();
 
 extern u8 D_AB1950[];
 
+typedef struct AssetTableCache57FA0 {
+    u32 address;
+    u32 generation;
+    u32 offset;
+    u32 descriptor;
+} AssetTableCache57FA0;
+
+extern u32 D_800C3D60;
+extern AssetTableCache57FA0 D_800C3D68[16];
+void *allocate_memory(s32, s32, s32, s32);
+s32 func_10006240(void *, void *, u32);
+
 void func_1502AAF0(void) {
 }
 
 void func_1502AAF8(s32 arg0) {
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502AB04.s. */
-s32 func_1502AB04() {
-    return 0;
+void func_1502AB04(s32 count, u32 *pairs, u32 generation, u32 address) {
+    u32 i;
+
+    if (count != 0) {
+        bcopy(&D_800C3D68[count], D_800C3D68, (16 - count) * 16);
+    }
+    for (i = 16 - (u32)count; i < 16; i++) {
+        D_800C3D68[i].offset = pairs[0];
+        D_800C3D68[i].descriptor = pairs[1];
+        D_800C3D68[i].address = address;
+        D_800C3D68[i].generation = generation;
+        pairs += 2;
+        address += 8;
+    }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502AC88.s. */
 s32 func_1502AC88(u32 arg0, s32 arg1, u32 *arg2) {
-    return 0;
+    AssetTableCache57FA0 saved;
+    u8 storage[0x40];
+    u8 *aligned;
+    u32 *pairs;
+    u32 address;
+    u32 offset;
+    u32 i;
+    u32 j;
+
+    address = (arg0 + (u32)arg1 * 8) | 0x80000000;
+    for (i = 0; i < 16; i++) {
+        if (D_800C3D68[i].address == address) {
+            saved = D_800C3D68[i];
+            for (j = i; j < 15; j++) {
+                D_800C3D68[j] = D_800C3D68[j + 1];
+            }
+            D_800C3D68[15] = saved;
+            D_800C3D68[15].generation = D_800C3D60;
+            *arg2 = D_800C3D68[15].descriptor;
+            return D_800C3D68[15].offset;
+        }
+    }
+    D_800C3D60++;
+    aligned = (u8 *)(((u32)storage + 15) & ~0xF);
+    func_10004514(address & 0x7FFFFFF0, aligned, ((address & 0xE) + 0x1F) & ~0xF, 1);
+    pairs = (u32 *)(aligned + (address & 0xF));
+    offset = pairs[0];
+    *arg2 = pairs[1];
+    func_1502AB04(2, pairs, D_800C3D60, address);
+    return offset;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502AF04.s. */
 s32 func_1502AF04() {
@@ -53,9 +104,34 @@ s32 func_1502B110() {
 s32 func_1502B224() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B350.s. */
 void *func_1502B350(u32 arg0, u32 arg1, s32 *arg2) {
-    return NULL;
+    u32 amount;
+    u32 expanded;
+    void *compressed;
+    void *result;
+
+    amount = ((arg1 & 0x0FFFFFFF) + 1) & ~1;
+    compressed = allocate_memory(amount, 1, 2, 2);
+    result = compressed;
+    if (compressed == NULL) {
+        return NULL;
+    }
+    func_10004514(arg0, compressed, (amount + 15) & ~0xF, 1);
+    if ((arg1 & 0x70000000) == 0x10000000) {
+        expanded = *(u32 *)compressed & 0x7FFFFFFF;
+        *arg2 = expanded;
+        result = NULL;
+        amount = 0;
+        if (expanded != 0 && expanded < 1000000) {
+            result = allocate_memory(expanded, 1, 2, 2);
+            if (result != NULL) {
+                amount = func_10006240(compressed, result, D_8003809C);
+            }
+        }
+        func_10004074(compressed);
+    }
+    *arg2 = amount;
+    return result;
 }
 s32 func_1502B4A8(u32 *entries, s32 count) {
     u32 *cursor;

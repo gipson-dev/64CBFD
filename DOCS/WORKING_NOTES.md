@@ -1,5 +1,24 @@
 # Working Notes
 
+2026-10-04 ([Note 964](WORKING_NOTES/964-init-remaining-assembly-current-conversion-decisions-20261004.md)):
+Refresh the requested remaining Init conversion assessment after production
+relink. All 102 focused checks pass, no skips; all 47 retained ASM owners/slots
+and complete Init code/data and Game data remain retail-exact. Seventeen
+investigation targets, thirty intentional ASM owners; no new adoption is ready.
+Decoder is 528 bytes over, best connected formatter 196 over, small leaves lack
+complete matches. Record bitmap-first pickup steps and separate fitting,
+behavior, ownership and byte-matching gates. Init source/README totals unchanged.
+
+2026-10-04 ([Note 963](WORKING_NOTES/963-game-asset-table-cache-lookup-and-block-load-recovery-20261004.md)):
+Recover `func_1502AB04`, `func_1502AC88` and `func_1502B350`: 87 / 97,
+158 / 159 and 77 / 86 words; 93, 156 and 78 differences, no new guards.
+Fourteen new tests cover cache ordering/aliases, metadata output and allocation/
+decompression-result failures plus the actual lookup/block/variadic/relocation
+connection. All 188 combined checks and fresh link pass, preserving Init
+code/data, Game data, prior identities and exact callers. Guest DMA/decoder,
+deeper setup/attachment, PC synchronization and natural effects remain separate.
+README counts unchanged; no host or frozen Release changes.
+
 2026-10-04 ([Note 962](WORKING_NOTES/962-game-variadic-resource-loader-and-offset-relocation-recovery-20261004.md)):
 Recover variadic loader `func_1502B6BC` and offset relocator `func_1502B4A8`:
 77 / 77 words, 17 differences, retail 0x50 frame; 65 / 72 words, 71 differences.

@@ -24,19 +24,32 @@ holes and 28-byte extra payload remain unspecified.
 The shared variadic loader and offset relocator are subsequently recovered in
 [Note 962](WORKING_NOTES/962-game-variadic-resource-loader-and-offset-relocation-recovery-20261004.md):
 77 / 77 and 65 / 72 words, 17 and 71 raw differences. Actual constructor/
-helper/loader/relocation connections pass bounded tests. Lookup `func_1502AC88`
-and block loader `func_1502B350` remain DECOMP placeholders; the unwritten
-metadata path does not qualify production loading. The sibling already has
-recompiled bodies for these four routines, with diagnostics and host support;
-their presence is not fresh PC runtime acceptance.
+helper/loader/relocation connections pass bounded tests. Cache installer
+`func_1502AB04`, lookup `func_1502AC88` and block loader `func_1502B350` are
+subsequently recovered in
+[Note 963](WORKING_NOTES/963-game-asset-table-cache-lookup-and-block-load-recovery-20261004.md):
+87 / 97, 158 / 159 and 77 / 86 words, 93/156/78 differences, no guards.
+Actual lookup/block/variadic/relocation connections pass bounded tests, resolving
+the unwritten metadata source gate. Actual guest DMA/decompression, deeper
+setup/attachment and natural effects remain open. The sibling already has
+recompiled bodies with diagnostics and host support; their presence is not
+fresh PC runtime acceptance. No native-pointer transplant is included.
+
+The remaining Init assessment in
+[Note 964](WORKING_NOTES/964-init-remaining-assembly-current-conversion-decisions-20261004.md)
+retains all 47 assembly entries: seventeen investigation targets and thirty
+intentional owners. No replacement is ready; full Init code/data remains
+retail-exact. These guest conversion gates do not establish PC gameplay parity.
 
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
 - [x] Audit the sibling's active CMake source input without changing its files.
 - [x] Recover DECOMP `func_1513264C` and qualify resource helper `func_151336A8`.
 - [x] Recover variadic resource loader `func_1502B6BC` and offset relocator `func_1502B4A8`.
-- [ ] Recover lookup `func_1502AC88` and block loading `func_1502B350`; qualify
-  metadata writes before claiming production resource loading.
+- [x] Recover cache installer `func_1502AB04`, lookup `func_1502AC88` and block
+  loading `func_1502B350`; qualify metadata writes in bounded source fixtures.
+- [ ] Qualify actual guest DMA/decompression and cache lifecycle before claiming
+  production resource loading or natural effects.
 - [ ] Recover deeper setup/attachment `func_1510CE60` and `func_15168E54`
   before claiming the complete resource pipeline.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a

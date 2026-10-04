@@ -18,6 +18,23 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 964](WORKING_NOTES/964-init-remaining-assembly-current-conversion-decisions-20261004.md)
+  refreshes the remaining ASM decisions after production relink: 102 focused
+  checks pass, no skips; all 47 owners/slots and complete Init code/data plus
+  Game data remain exact. Seventeen investigation targets and thirty intentional
+  ASM owners remain. No candidate is ready; decoder 528 bytes over, formatter
+  196 over, small leaves non-matching. Record bitmap-first pickup steps;
+  production Init source and README aggregates remain unchanged.
+
+- Game [Note 963](WORKING_NOTES/963-game-asset-table-cache-lookup-and-block-load-recovery-20261004.md)
+  recovers cache installer, metadata-writing lookup and block loader: 87 / 97,
+  158 / 159 and 77 / 86 words, 93/156/78 differences, no guards. Fourteen new
+  checks connect actual lookup/block/variadic/relocation and qualify cache and
+  allocation/decode-result order. All 188 combined checks and fresh link pass,
+  preserving Init code/data, Game data, previous recoveries and exact callers.
+  Deeper setup/attachment and actual guest DMA/decompression remain open.
+  No README aggregate or sibling/Release changes.
+
 - Game [Note 962](WORKING_NOTES/962-game-variadic-resource-loader-and-offset-relocation-recovery-20261004.md)
   recovers the variadic resource loader and offset relocation helper: 77 / 77
   and 65 / 72 words, 17 and 71 differences, no new guards. Typed interfaces

@@ -147,8 +147,11 @@ host build, binary, save or frozen Release change is included.
 - [x] Correct local caller interfaces and preserve three complete exact callers.
 - [x] Connect actual constructor/helper/loader/relocation and other source callers.
 - [x] Fit complete slots and preserve Init/Game-data and prior recovery identities.
-- [ ] Recover lookup `func_1502AC88` (159 words) and qualify its metadata writes.
-- [ ] Recover block loader `func_1502B350` (86 words), DMA/decompression and failures.
+- [x] Subsequently recover lookup `func_1502AC88` (159 words) and qualify its
+  metadata writes in [Note 963](963-game-asset-table-cache-lookup-and-block-load-recovery-20261004.md).
+- [x] Subsequently recover block loader `func_1502B350` (86 words) and qualify
+  allocation/decoder-result failures in bounded fixtures in Note 963.
+- [ ] Qualify actual guest DMA/decompression and cache lifecycle, beyond fixtures.
 - [ ] Recover deeper setup `func_1510CE60` and attachment `func_15168E54`.
 - [ ] Pursue raw byte matching separately and qualify natural guest effects.
 - [ ] Synchronize the still-stubbed PC child through guest/RDRAM interfaces.
@@ -157,4 +160,6 @@ Init remains 492 C / 47 assembly. Game stays 2,609 and total 3,282 byte-exact
 C functions, zero drift. Both recovered bodies were already counted as C:
 README aggregates remain unchanged, with recovery updates in these working docs.
 No complete resource-loading pipeline, compressed-ROM promotion or runtime
-acceptance is claimed while its lookup/block-load bodies remain placeholders.
+acceptance was claimed at this checkpoint while lookup/block-load bodies were
+placeholders. Their source gate is subsequently resolved by Note 963; deeper
+setup/attachment and actual guest DMA/decompression still remain open.

@@ -226,8 +226,8 @@ if(func_1502B6BC(&sizeOutput,-7,&relocatedOutput,2,items[0],items[1])!=entries
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as source:
             self.assertFalse(any(row['function'] in ('func_1502B6BC','func_1502B4A8')
                                  for row in csv.DictReader(source)))
-        self.assertRegex(self.source, r's32 func_1502AC88\([^;{}]+\) \{\s*return 0;\s*\}')
-        self.assertRegex(self.source, r'void \*func_1502B350\([^;{}]+\) \{\s*return NULL;\s*\}')
+        self.assertIn('D_800C3D68[15] = saved;', self.source)
+        self.assertIn('amount = func_10006240(compressed, result, D_8003809C);', self.source)
 
     def test_actual_resource_helper_consumes_relocated_header_and_output_counts(self):
         source=(self.root/'conker/src/game/generated_15F680.c').read_text()
