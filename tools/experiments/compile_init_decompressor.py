@@ -296,6 +296,8 @@ def main():
                         help="select repeated length once and fill to cursor end when enabled")
     parser.add_argument("--dynamic-order-cursor", action="store_true",
                         help="initialize dynamic code lengths with an order cursor and countdown")
+    parser.add_argument("--distance-operation-local", action="store_true",
+                        help="retain distance entry operation across reservoir bit removal")
     parser.add_argument("--abi-seed-cursor", action="store_true",
                         help="seed saved ABI words using pointer cursors")
     parser.add_argument("--fixed-length-cursor", action="store_true",
@@ -393,6 +395,8 @@ def main():
         suffix += "-dynamic-repeat-value"
     if args.dynamic_order_cursor:
         suffix += "-dynamic-order-cursor"
+    if args.distance_operation_local:
+        suffix += "-distance-operation-local"
     if args.abi_seed_cursor:
         suffix += "-abi-seed-cursor"
     if args.fixed_length_cursor:
@@ -478,6 +482,8 @@ def main():
         common.append("-DINIT_DECODE_DYNAMIC_REPEAT_VALUE")
     if args.dynamic_order_cursor:
         common.append("-DINIT_DECODE_DYNAMIC_ORDER_CURSOR")
+    if args.distance_operation_local:
+        common.append("-DINIT_DECODE_DISTANCE_OPERATION_LOCAL")
     if args.abi_seed_cursor:
         common.append("-DINIT_DECODE_ABI_SEED_CURSOR")
     if args.fixed_length_cursor:

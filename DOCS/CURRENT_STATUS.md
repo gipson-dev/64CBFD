@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init distance operation local: [Note 911](WORKING_NOTES/911-init-distance-operation-local-fitting-20261004.md)
+retains an opt-in distance entry operation snapshot: packed O2 linked text
+4512, sixteen saved / 528 excess; descent remains 3248. O1 complete size
+unchanged. Bounded run: 45 passes / one corpus skip; separate backreference
+storage guard passes. Default text identical; changed full corpora and
+fitting/reservation/production gates remain open. README unchanged.
+
 Init bitmap value-lifetime trials: [Note 910](WORKING_NOTES/910-init-bitmap-shared-fill-mask-lifetime-trials-20261004.md)
 rejects a shared fill/mask variable (same 20-word O2 text as control) and
 postdecrement variant (22 words), versus retail nineteen. Seven shapes pass

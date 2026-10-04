@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 911](WORKING_NOTES/911-init-distance-operation-local-fitting-20261004.md)
+  retains opt-in distance operation local: packed O2 4512 linked, sixteen
+  bytes saved, 528 excess, unchanged stack bound. Bounded qualification and
+  separate backreference storage guard pass; defaults identical. Changed full
+  corpora, fitting and production ownership remain open; README unchanged.
+
 - Init [Note 910](WORKING_NOTES/910-init-bitmap-shared-fill-mask-lifetime-trials-20261004.md)
   rejects two shared fill/mask lifetime trials: twenty/twenty-two O2 words
   versus nineteen retail. All seven host shapes pass 553 fixture combinations,

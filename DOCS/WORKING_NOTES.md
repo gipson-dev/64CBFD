@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 911](WORKING_NOTES/911-init-distance-operation-local-fitting-20261004.md)):
+Opt-in distance operation local saves sixteen complete packed O2 bytes:
+4512 linked / 528 excess, unchanged 3248 descent. O1 size neutral; default
+text exact. Bounded run 45 passes / one corpus skip, plus separate executed
+backreference table-stability guard. Changed full corpora and production gates open.
+
 2026-10-04 ([Note 910](WORKING_NOTES/910-init-bitmap-shared-fill-mask-lifetime-trials-20261004.md)):
 Shared bitmap fill/mask lifetime emits the same twenty-word O2 text as control;
 postdecrement variant grows to twenty-two. Both rejected against retail nineteen.

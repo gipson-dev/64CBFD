@@ -630,9 +630,18 @@ int init_decode_compressed(InitDecodeState *s, uint32_t literalRoot,
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
         s->abiSaved[5] = s->workspaceAddress + 4 * (entry - s->workspace);
 #endif
+#ifdef INIT_DECODE_DISTANCE_OPERATION_LOCAL
+        operation = ENTRY_OPERATION(entry);
+        if (operation == 99) return 1;
+#else
         if (ENTRY_OPERATION(entry) == 99) return 1;
+#endif
         drop_bits(s, ENTRY_BITS(entry));
+#ifdef INIT_DECODE_DISTANCE_OPERATION_LOCAL
+        distance = ENTRY_VALUE(entry) + take_bits(s, operation);
+#else
         distance = ENTRY_VALUE(entry) + take_bits(s, ENTRY_OPERATION(entry));
+#endif
         source = (uint32_t)produced - distance;
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
         s->abiSaved[3] = source;
