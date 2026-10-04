@@ -831,12 +831,34 @@ int init_decode_stream(InitDecodeState *s, InitDecodeEntry *fixedWorkspace) {
     return 0;
 }
 
+#ifdef INIT_DECODE_PACKED_HEADER
+#pragma pack(1)
+typedef struct {
+    uint32_t opening;
+} InitDecodeHeader;
+typedef struct {
+    uint8_t lead;
+    InitDecodeHeader header;
+} InitDecodeHeaderProbe;
+#pragma pack()
+#ifdef INIT_DECODE_GUEST
+uint32_t init_decode_header_layout[] = {
+    sizeof(InitDecodeHeader), (uint32_t)&((InitDecodeHeaderProbe *)0)->header
+};
+#endif
+#endif
+
 int init_decode_core(InitDecodeState *s, InitDecodeEntry *fixedWorkspace,
                      uint32_t inputAddress, uint32_t outputAddress,
                      uint32_t workspaceAddress) {
+#if defined(INIT_DECODE_PACKED_HEADER) && defined(INIT_DECODE_GUEST)
+    const volatile InitDecodeHeader *header = (const volatile InitDecodeHeader *)s->input;
+    uint32_t opening = header->opening;
+#else
     const volatile uint8_t *header = s->input;
     uint32_t opening = ((uint32_t)header[0] << 24) | ((uint32_t)header[1] << 16) |
                        ((uint32_t)header[2] << 8) | header[3];
+#endif
     int32_t distance = inputAddress - outputAddress;
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
     uint32_t i;

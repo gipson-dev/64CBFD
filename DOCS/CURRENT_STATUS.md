@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init packed header fitting: [Note 850](WORKING_NOTES/850-init-byte-packed-header-load-and-unaligned-core-qualification-20261003.md)
+retains opt-in byte-packed guest header loads with enforced (4,1) layout and
+actual LWL/LWR pairs. All six linked images shrink 32; best O2 is 4,800,
+816 over retail, with unchanged stack bounds. All 432 bounded contexts,
+114 builders, six exact initializers and 48 direct unaligned/header-format
+comparisons pass. Negative layout and helper/ledger checks pass: 34 tests
+pass, one corpus skip. Changed corpus and hardware/ownership remain open;
+production, defaults and README totals unchanged.
+
 Init stream fitting: [Note 849](WORKING_NOTES/849-init-stream-masked-dispatch-and-buffered-byte-rewind-fitting-20261003.md)
 combines opt-in masked dispatch and buffered-byte rewind. Best linked O2 is
 4,832, leaving 848 over retail; all six shapes shrink 16 with unchanged stack

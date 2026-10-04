@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 850](WORKING_NOTES/850-init-byte-packed-header-load-and-unaligned-core-qualification-20261003.md)
+  banks byte-packed header fitting with actual unaligned loads, alignment
+  metadata rejection and all-offset/header-format qualification. Best linked
+  text is 4,800, still 816 over retail; stack bounds remain unchanged.
+  Changed corpus remains open. No production/default/README aggregate edits;
+  unrelated Game work preserved and excluded.
+
 - Init [Note 849](WORKING_NOTES/849-init-stream-masked-dispatch-and-buffered-byte-rewind-fitting-20261003.md)
   banks combined stream fitting with a proven active rewind gate. Best linked
   text is 4,832, still 848 over retail; bounded/initializer checks pass and

@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 850](WORKING_NOTES/850-init-byte-packed-header-load-and-unaligned-core-qualification-20261003.md)):
+Opt-in packed header gives actual byte-aligned LWL/LWR loads and reduces
+all six linked images by 32. Best O2 is 4,800, 816 over retail. Bounded
+contexts/builders/initializers plus 48 direct all-alignment/header-format
+comparisons and metadata rejection pass: 34 tests pass, one corpus skip.
+Stack bounds hold; changed corpus and hardware/ownership remain open.
+Production/defaults/README totals unchanged; unrelated Game work preserved.
+
 2026-10-03 ([Note 849](WORKING_NOTES/849-init-stream-masked-dispatch-and-buffered-byte-rewind-fitting-20261003.md)):
 Combined masked dispatch/byte rewind reduces best linked O2 to 4,832,
 848 over retail, with unchanged stack bounds. All 432 bounded contexts,

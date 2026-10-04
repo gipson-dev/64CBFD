@@ -142,6 +142,7 @@ def inspect_object(path):
     size_symbol = None
     frame_symbol = None
     entry_layout_symbol = None
+    header_layout_symbol = None
     symbol_records = []
     for offset in range(symbols[4], symbols[4] + symbols[5], symbols[9]):
         symbol = struct.unpack_from(">IIIBBH", data, offset)
@@ -155,6 +156,8 @@ def inspect_object(path):
             frame_symbol = symbol
         if label == "init_decode_entry_layout":
             entry_layout_symbol = symbol
+        if label == "init_decode_header_layout":
+            header_layout_symbol = symbol
     functions.sort()
     measurements = []
     for i, (start, label) in enumerate(functions):
@@ -211,11 +214,18 @@ def inspect_object(path):
         if row["public_unit_words"] + sum(unit["slot_words"] for unit in row["embedded_helpers"]) != row["slot_words"]:
             raise ValueError("call units do not partition the public symbol region")
     retail_source = Path(__file__).resolve().parents[2] / "conker/asm/init_5AB0.s"
-    return {"text_bytes": text[5], "entry_bytes": entry_size,
+    report = {"text_bytes": text[5], "entry_bytes": entry_size,
             "entry_layout": entry_layout,
             "state_bytes": state_size, "frame_layout": frame_layout,
             "functions": measurements, "call_graph": call_graph,
             "retail_slot_ledger": retail_slot_ledger(measurements, text[5], retail_source)}
+    if header_layout_symbol is not None:
+        section = sections[header_layout_symbol[5]]
+        header_layout = struct.unpack_from(">2I", data, section[4] + header_layout_symbol[1])
+        if header_layout != (4, 1):
+            raise ValueError("packed header is not four bytes with byte alignment")
+        report["header_layout"] = header_layout
+    return report
 
 
 def main():
@@ -272,6 +282,8 @@ def main():
                         help="dispatch directly on the two masked block-type bits")
     parser.add_argument("--stream-byte-rewind", action="store_true",
                         help="rewind whole buffered bytes with a count and remainder")
+    parser.add_argument("--packed-header", action="store_true",
+                        help="trial a byte-packed four-byte opening header")
     args = parser.parse_args()
     if args.abi_fpr_shadow:
         args.seed_distance_root = True
@@ -335,6 +347,8 @@ def main():
         suffix += "-stream-masked-dispatch"
     if args.stream_byte_rewind:
         suffix += "-stream-byte-rewind"
+    if args.packed_header:
+        suffix += "-packed-header"
     output = (args.output or root / ("conker/build/init-decompressor-semantic" + suffix)).resolve()
     output.mkdir(parents=True, exist_ok=True)
     cwd = root / "conker"
@@ -394,6 +408,8 @@ def main():
         common.append("-DINIT_DECODE_STREAM_MASKED_DISPATCH")
     if args.stream_byte_rewind:
         common.append("-DINIT_DECODE_STREAM_BYTE_REWIND")
+    if args.packed_header:
+        common.append("-DINIT_DECODE_PACKED_HEADER")
     report = {}
     for label, profile in (("o2g3", ["-O2", "-g3"]), ("o1", ["-O1"])):
         obj = output / (label + ".o")
@@ -410,6 +426,8 @@ def main():
             ["mips-linux-gnu-objdump", "-dr", "-z", str(obj)], text=True)
         (output / (label + ".asm.txt")).write_text(disassembly)
         report[label] = inspect_object(obj)
+        if args.packed_header and report[label].get("header_layout") != (4, 1):
+            raise ValueError("packed header layout receipt missing")
         if report[label]["entry_layout"][1] != (4 if args.aligned_entry else 2):
             raise ValueError("entry alignment does not match the selected representation")
     (output / "measurements.json").write_text(json.dumps(report, indent=2) + "\n")
