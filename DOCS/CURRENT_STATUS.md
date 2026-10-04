@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init bitmap equality-exit trial: [Note 948](WORKING_NOTES/948-init-bitmap-equality-exit-lifetime-trials-20261004.md)
+tests cursor-address versus captured-end masks inside the equality exit.
+Both remove XOR but emit 21 optimized words against nineteen retail, adding
+an unconditional back edge and second return. Eight new tests / 1,002 pairs
+and twelve bounded prefixes pass; all 78 combined tests pass. Reject both.
+Production Init ownership,
+README totals and the two unfinished Game edits remain unchanged.
+
 Init remaining assembly: [Note 947](WORKING_NOTES/947-init-remaining-assembly-conversion-map-20261004.md)
 maps all retained entries and confirms 492 C / 47 assembly, 12,252 ASM bytes.
 All retained owners/slots and complete existing linked Init code/data remain

@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 948](WORKING_NOTES/948-init-bitmap-equality-exit-lifetime-trials-20261004.md)
+  tests two new exit-region/address-lifetime shapes. Eight tests qualify
+  1,002 fresh guest pairs and twelve bounded prefixes; both optimized bodies
+  are 21 words, so neither replaces the nineteen-word assembly owner.
+  All 78 combined tests pass, no skips.
+  Existing linked Init code/data, README totals and pending Game edits stay
+  unchanged; compiler/control-flow rejection evidence is retained in the docs.
+
 - Init [Note 947](WORKING_NOTES/947-init-remaining-assembly-conversion-map-20261004.md)
   maps all 47 remaining assembly entries and distinguishes C-expressible
   candidates from qualified replacements. Seventy tests pass; existing linked

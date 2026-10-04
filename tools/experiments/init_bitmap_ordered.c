@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef short s16;
 
-#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 15)
+#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 17)
 typedef char GuestAddressWidth[(sizeof(unsigned long) == 4) ? 1 : -1];
 #endif
 
@@ -24,7 +24,7 @@ void func_10005BE0(void) {
 #if SHAPE == 6 || SHAPE == 7
     int value = 0xFF;
 #endif
-#if SHAPE >= 12 && SHAPE <= 15
+#if SHAPE >= 12 && SHAPE <= 17
     unsigned long cursor = (unsigned long)D_8003BE70;
     unsigned long end = (unsigned long)D_8003BE7C;
 #if SHAPE == 13
@@ -101,9 +101,28 @@ advance:
 fill:
     *(volatile u8 *)cursor = 0xFF;
     if (cursor != end) goto advance;
+#elif SHAPE == 16 || SHAPE == 17
+    /* Keep the count reload and mask inside the equality exit region. */
+    for (;;) {
+        *(volatile u8 *)cursor = 0xFF;
+        if (cursor == end) {
+            bits = D_8003BE78 & 7;
+            if (bits) {
+#if SHAPE == 16
+                /* Equality makes the cursor the final-byte address. */
+                *(volatile u8 *)cursor = (2u << (bits - 1)) - 1;
+#else
+                *(volatile u8 *)end = (2u << (bits - 1)) - 1;
+#endif
+            }
+            return;
+        }
+        cursor++;
+    }
 #else
 #error Unknown SHAPE
 #endif
+#if SHAPE != 16 && SHAPE != 17
     bits = D_8003BE78 & 7;
 #if SHAPE == 7
     if (bits--) {
@@ -126,6 +145,7 @@ fill:
     return (u8 *)cursor;
 #elif SHAPE == 5
     return (u8 *)end + 1;
+#endif
 #endif
 }
 

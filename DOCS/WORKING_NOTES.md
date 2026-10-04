@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-04 ([Note 948](WORKING_NOTES/948-init-bitmap-equality-exit-lifetime-trials-20261004.md)):
+Two new bitmap equality-exit/lifetime forms remove XOR but grow to 21 O2 words
+against nineteen retail. Eight new tests qualify 1,002 pairs/twelve bounded
+prefixes; all 78 combined tests pass. Both remain rejected; existing linked
+Init code/data are exact.
+Opt-in experiments only; production owners, README totals and pending Game
+edits remain unchanged. A direct comparison alone does not solve fitting.
+
 2026-10-04 ([Note 947](WORKING_NOTES/947-init-remaining-assembly-conversion-map-20261004.md)):
 Requested Init resume maps all 47 assembly entries, source owners and current
 conversion gates. Existing linked Init code/data and every retained slot match
