@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 925](WORKING_NOTES/925-game-positioned-emitter-descriptor-recovery-20261004.md)
+  recovers the positioned emitter helper and pins descriptor extent through
+  the retail callee's 0x58-byte copy. Sixteen tests pass; 74 words fit the
+  76-word slot with 69 differences, no guards/drift. README aggregates unchanged.
+
 - Game [Note 924](WORKING_NOTES/924-game-probability-gated-random-dispatch-recovery-20261004.md)
   recovers both random-dispatch branches plus the shared tail. Fifteen tests
   pass; 195-word body fits its 196-word slot with 183 differences, no guards.

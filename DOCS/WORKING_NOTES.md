@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 925](WORKING_NOTES/925-game-positioned-emitter-descriptor-recovery-20261004.md)):
+`func_150E75A0` now constructs its 0x58-byte descriptor and forwards submission
+result. Sixteen tests pass, including connected dispatcher/helper execution;
+74-word body fits 76-word slot, 69 differences, no guards/drift. Uninitialized
+retail bytes preserved; alternate helper and matching remain open. README unchanged.
+
 2026-10-04 ([Note 924](WORKING_NOTES/924-game-probability-gated-random-dispatch-recovery-20261004.md)):
 Game `func_150E7290` now implements both probability-gated random dispatch
 paths and shared tail. Fifteen tests pass; 195 words fit 196-word slot, 183

@@ -20,6 +20,43 @@ extern f32 D_800A1344;
 extern f32 D_800A1348;
 extern f32 D_800A134C;
 extern s32 D_80088A5C[2];
+extern u8 D_80088A64;
+typedef struct EmitterPosition113D60 {
+    f32 x;
+    f32 y;
+} EmitterPosition113D60;
+typedef struct EmitterDescriptor113D60 {
+    EmitterPosition113D60 position;
+    f32 scale[2];
+    u8 tag;
+    u8 pad11;
+    s16 id;
+    u16 flags;
+    s16 size0;
+    s16 size1;
+    u8 kind;
+    u8 field1B;
+    u8 field1C;
+    u8 field1D;
+    u8 duration;
+    u8 field1F;
+    u8 field20;
+    u8 field21;
+    u8 field22;
+    u8 opacity;
+    s32 field24;
+    s32 field28;
+    s32 field2C;
+    s32 field30;
+    s32 field34;
+    s32 field38;
+    s32 field3C;
+    u8 field40;
+    u8 field41;
+    u8 reserved42[0x16];
+} EmitterDescriptor113D60;
+s32 func_1515548C(void *descriptor, s32 arg1, s32 *pair, s32 mode,
+                 s32 arg4, u8 slot, s32 context);
 typedef struct RandomPacket113D60 {
     u8 kind;
     u8 pad1;
@@ -168,13 +205,43 @@ void func_150E7290(u8 index, u8 slot, s32 context) {
     }
 }
 
-/* Call contracts recovered; helper bodies remain unrecovered placeholders. */
 s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, s32 duration,
                  s32 opacity, s32 size0, s32 size1, s32 *pair, s32 mode,
                  u8 slot, s32 context) {
-    return 0;
+    EmitterDescriptor113D60 descriptor;
+    u8 tag = D_80088A64;
+
+    descriptor.position = *(EmitterPosition113D60 *)position;
+    descriptor.tag = tag;
+    descriptor.id = id;
+    descriptor.flags = flags | 0x40;
+    descriptor.size1 = size1;
+    descriptor.field20 = 255;
+    descriptor.field21 = 255;
+    descriptor.kind = 4;
+    descriptor.field1B = 255;
+    descriptor.field1C = 230;
+    descriptor.field1D = 190;
+    descriptor.field1F = 255;
+    descriptor.size0 = size0;
+    descriptor.duration = duration;
+    descriptor.scale[0] = scale;
+    descriptor.scale[1] = scale;
+    descriptor.field22 = 255;
+    descriptor.field24 = 1;
+    descriptor.field28 = 0;
+    descriptor.field2C = 0;
+    descriptor.field40 = 0;
+    descriptor.field41 = 10;
+    descriptor.field30 = 7;
+    descriptor.field34 = 60;
+    descriptor.field38 = 128;
+    descriptor.field3C = 32;
+    descriptor.opacity = opacity;
+    return func_1515548C(&descriptor, 0, pair, mode, 0, slot, context);
 }
 
+/* Call contract recovered; helper body remains an unrecovered placeholder. */
 s32 func_150E76D0(f32 scale, s16 id, u8 flags, u8 duration, s32 opacity,
                  s32 size0, s32 size1, s32 *pair, s32 mode, u8 slot, s32 context) {
     return 0;

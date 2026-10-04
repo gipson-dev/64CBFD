@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game positioned emitter descriptor: [Note 925](WORKING_NOTES/925-game-positioned-emitter-descriptor-recovery-20261004.md)
+recovers `func_150E75A0`'s initialized descriptor fields, submission and result
+propagation. Callee's 0x58-byte copy pins extent; unwritten padding/tail stay
+unwritten. Six new tests / sixteen combined pass, including real dispatcher/
+helper integration. Body 74 / retail 76 words, 69 differences, no guards/drift.
+Aggregate counts unchanged; alternate helper `func_150E76D0` remains a placeholder.
+
 Game random dispatcher: [Note 924](WORKING_NOTES/924-game-probability-gated-random-dispatch-recovery-20261004.md)
 recovers both `func_150E7290` branches and shared sound/command/packet tail.
 Five new tests / fifteen combined pass. Production has 195 body words in its
