@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 918](WORKING_NOTES/918-init-bitmap-store-qualifier-and-sentinel-trials-20261004.md)
+  rejects store-qualifier and end-plus-one sentinel bitmap forms across three
+  compiler profiles. Nine shapes pass 711 host combinations; 33 retained
+  contract tests pass. No production conversion or README aggregate change.
+
 - Game [Note 917](WORKING_NOTES/917-game-random-range-position-recovery-and-match-20261004.md)
   recovers the random range position routine as a direct 37-word C match.
   Four new tests cover unsigned selection, call/data timing and overlapping

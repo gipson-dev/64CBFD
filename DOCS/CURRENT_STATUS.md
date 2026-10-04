@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init bitmap qualifier/sentinel trials: [Note 918](WORKING_NOTES/918-init-bitmap-store-qualifier-and-sentinel-trials-20261004.md)
+reject nonvolatile stores (20 O2 words, unchanged from control) and an
+end-plus-one sentinel (33 O2 words, 20 with unrolling disabled), against
+nineteen retail words. Nine shapes pass 711 host fixture combinations;
+33 retained-contract tests pass. No production conversion or aggregate change.
+
 Game random range position: [Note 917](WORKING_NOTES/917-game-random-range-position-recovery-and-match-20261004.md)
 recovers `func_150E6F18` as a direct 37-word C match without guards. Unsigned
 six-pointer selection, pointer capture before float RNG, field reads after

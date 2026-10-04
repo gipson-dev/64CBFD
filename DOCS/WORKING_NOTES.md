@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 918](WORKING_NOTES/918-init-bitmap-store-qualifier-and-sentinel-trials-20261004.md)):
+Nonvolatile bitmap stores still emit twenty O2 words; end-plus-one sentinel
+emits 33, reduced to twenty with unrolling disabled. Neither matches retail's
+nineteen. All nine shapes pass 711 host combinations, 33 contract tests pass.
+Retain reproducible rejected trials; production ownership and totals unchanged.
+
 2026-10-04 ([Note 917](WORKING_NOTES/917-game-random-range-position-recovery-and-match-20261004.md)):
 Game `func_150E6F18` now directly matches all 37 words: unsigned six-range
 selection and three sequential float interpolations. No guards; pointer/data

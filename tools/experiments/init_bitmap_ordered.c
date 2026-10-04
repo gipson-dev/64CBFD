@@ -20,13 +20,21 @@ void func_10005BE0(void) {
 #if SHAPE == 6 || SHAPE == 7
     int value = 0xFF;
 #endif
+#if SHAPE == 8
+    u8 *cursor = D_8003BE70;
+    u8 *end = D_8003BE7C;
+#else
     volatile u8 *cursor = D_8003BE70;
     volatile u8 *end = D_8003BE7C;
+#endif
+#if SHAPE == 9
+    volatile u8 *stop = end + 1;
+#endif
     int bits;
 #if SHAPE == 2
     int again;
 #endif
-#if SHAPE == 1 || SHAPE == 4 || SHAPE == 5
+#if SHAPE == 1 || SHAPE == 4 || SHAPE == 5 || SHAPE == 8
     do {
         *cursor = 0xFF;
     } while (cursor++ != end);
@@ -46,6 +54,10 @@ void func_10005BE0(void) {
     do {
         *cursor = value;
     } while (cursor++ != end);
+#elif SHAPE == 9
+    do {
+        *cursor++ = 0xFF;
+    } while (cursor != stop);
 #else
 #error Unknown SHAPE
 #endif
