@@ -69,13 +69,12 @@ are prior evidence, not rerun here. Project tool and whitespace checks pass.
 ## Remaining Gates
 
 - [x] All 507 guarded distance-operation packed O2 masked CU1-clear pages.
-- [ ] Matching distance-operation packed O2 masked CU1-set full corpus.
+- [x] Matching masked CU1-set full corpus: [Note 913](913-init-distance-operation-o2-full-masked-cu1-set-corpus-20261004.md).
 - [ ] Reduce 528-byte fitting excess and prove full reservation ownership.
 - [ ] Establish production entry/frame ownership and hardware/context behavior.
 
-Run the same corpus command with `CONKER_INIT_SHADOW_CORPUS_CU1=set` next,
-keeping this candidate fixed and checking the same hashes. Earlier configurations'
-CU1-set receipts do not qualify the changed code.
+The matching CU1-set run is now recorded in Note 913, with the same candidate
+hashes. Earlier configurations' CU1-set receipts did not qualify this changed code.
 
 Production Init remains 492 C / 47 assembly functions. Production sources,
 README totals, word guards, sibling artifacts and Release are unchanged.

@@ -100,7 +100,7 @@ SHA-256, recorded for subsequent changed-candidate corpus qualification:
 - [x] Preserve option-omitted baseline text exactly.
 - [x] Pass bounded inherited qualification and executed backreference storage gate.
 - [x] Full guarded masked CU1-clear corpus: [Note 912](912-init-distance-operation-o2-full-masked-cu1-clear-corpus-20261004.md).
-- [ ] Run matching full guarded masked CU1-set corpus for this changed candidate.
+- [x] Full guarded masked CU1-set corpus: [Note 913](913-init-distance-operation-o2-full-masked-cu1-set-corpus-20261004.md).
 - [ ] Reduce remaining 528-byte fitting excess.
 - [ ] Prove full reservation, entry/frame ownership and hardware/context behavior.
 - [ ] Only then consider production ownership, full link and aggregate refresh.

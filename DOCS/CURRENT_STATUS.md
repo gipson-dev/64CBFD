@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init distance operation O2 CU1-set corpus: [Note 913](WORKING_NOTES/913-init-distance-operation-o2-full-masked-cu1-set-corpus-20261004.md)
+passes all 507 guarded paired pages in 818.478 seconds, no skips. With Note
+912, both masked CU1 modes qualify 1014 paired runs for this fixed candidate:
+text 4512, descent 3248, low `0x80031D60` / margin 80, hashes unchanged.
+Twenty-two supporting checks pass. Next: fitting (528 excess), reservation,
+entry/frame ownership and hardware/context; production/README unchanged.
+
 Init distance operation O2 CU1-clear corpus: [Note 912](WORKING_NOTES/912-init-distance-operation-o2-full-masked-cu1-clear-corpus-20261004.md)
 passes all 507 guarded paired pages in 826.726 seconds, no skips. Text 4512,
 descent 3248, minimum SP `0x80031D60` / margin 80 confirm Note 911's saving;

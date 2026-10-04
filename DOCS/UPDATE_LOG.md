@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 913](WORKING_NOTES/913-init-distance-operation-o2-full-masked-cu1-set-corpus-20261004.md)
+  qualifies all 507 distance-operation packed O2 masked CU1-set pages in
+  818.478 seconds, no skips. With Note 912: 1014 paired runs, fixed text
+  4512 / descent 3248 / margin 80 and hashes. Fitting and ownership remain open.
+
 - Init [Note 912](WORKING_NOTES/912-init-distance-operation-o2-full-masked-cu1-clear-corpus-20261004.md)
   qualifies all 507 distance-operation packed O2 masked CU1-clear pages in
   826.726 seconds, no skips. Text 4512, descent 3248, margin 80 and source

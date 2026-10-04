@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 913](WORKING_NOTES/913-init-distance-operation-o2-full-masked-cu1-set-corpus-20261004.md)):
+Distance-operation packed O2 passes all 507 masked CU1-set paired pages
+in 818.478 seconds, no skips. Notes 912/913 qualify 1014 runs across both
+modes: text 4512 / 528 excess, descent 3248, low `0x80031D60` / margin 80.
+Six hashes hold and 22 supporting checks pass. Fitting/ownership gates remain.
+
 2026-10-04 ([Note 912](WORKING_NOTES/912-init-distance-operation-o2-full-masked-cu1-clear-corpus-20261004.md)):
 Distance-operation packed O2 passes all 507 masked CU1-clear paired pages
 in 826.726 seconds, no skips. Linked 4512 / 528 excess, descent 3248, low
