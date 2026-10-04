@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-04 ([Note 932](WORKING_NOTES/932-init-connected-glyph-c-adapter-qualification-20261004.md)):
+Glyph adapter/C path passes connected formatter and preserved-register tests:
+twenty combined tests, 280 connected and five direct-leaf pairs. Combined
+text 248 bytes / stack 56 bytes; placement and reservation gates remain open.
+
 2026-10-04 ([Note 931](WORKING_NOTES/931-init-glyph-pixel-seeding-and-countdown-fitting-20261004.md)):
 Low-halfword pixel seeding/countdown loops reduce the glyph C trial to 29
 words, below thirty retail. All 2,128 paired fixtures pass across eight

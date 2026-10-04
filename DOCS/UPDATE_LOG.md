@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 932](WORKING_NOTES/932-init-connected-glyph-c-adapter-qualification-20261004.md)
+  qualifies the connected glyph C adapter with twenty combined tests passing.
+  Added executable/stack cost is measured; production layout/ownership remain
+  open, so source owners and README aggregate tables are unchanged.
+
 - Init [Note 931](WORKING_NOTES/931-init-glyph-pixel-seeding-and-countdown-fitting-20261004.md)
   fits the experimental glyph C body in 29 words with 2,128 paired fixtures
   passing. Connected adapter and layout gates remain open; this is fitting

@@ -56,16 +56,17 @@ class FormatterFixture(glyph.GlyphFixture):
                 self.glyphs.append((self.registers[9], self.registers[11]))
             word = self.code[pc]
             op, rs, rt = word >> 26, word >> 21 & 31, word >> 16 & 31
-            if op in (1, 4, 5):
+            if op in (1, 4, 5, 20, 21):
                 if op == 1:
                     if rt not in (0, 1):
                         raise AssertionError('unsupported REGIMM')
                     taken = (self.signed(self.registers[rs]) < 0) == (rt == 0)
                 else:
-                    taken = (self.registers[rs] == self.registers[rt]) == (op == 4)
+                    taken = (self.registers[rs] == self.registers[rt]) == (op in (4, 20))
                 offset = word & 65535
                 offset = offset if offset < 32768 else offset - 65536
-                self.execute(self.code[pc + 4])
+                if taken or op not in (20, 21):
+                    self.execute(self.code[pc + 4])
                 pc = pc + 4 + offset * 4 if taken else pc + 8
             elif op == 3:
                 self.registers[31] = pc + 8

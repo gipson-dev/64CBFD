@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init glyph adapter: [Note 932](WORKING_NOTES/932-init-connected-glyph-c-adapter-qualification-20261004.md)
+qualifies the C writer through real formatter callers: 280 connected plus
+five direct-leaf pairs, seven new / twenty combined tests pass. Adapter fits
+the 120-byte leaf slot, but combined allocated text is 248 bytes and stack
+descent is 56 bytes. Production placement/stack ownership remain open.
+
 Init glyph fitting: [Note 931](WORKING_NOTES/931-init-glyph-pixel-seeding-and-countdown-fitting-20261004.md)
 reduces the ordinary-ABI semantic writer from 31 to 29 words using low-halfword
 pixel seeding and countdown loops. Eight variants / 2,128 paired fixtures pass;
