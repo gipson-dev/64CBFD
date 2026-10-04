@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init remaining assembly: [Note 947](WORKING_NOTES/947-init-remaining-assembly-conversion-map-20261004.md)
+maps all retained entries and confirms 492 C / 47 assembly, 12,252 ASM bytes.
+All retained owners/slots and complete existing linked Init code/data remain
+retail-exact; seventy focused tests pass. Bitmap/MMIO are small C candidates,
+not qualified adoptions; decoder/glyph need connected fitting and ownership.
+README totals stay unchanged. Two unfinished Game creator/test edits remain
+preserved separately; this assessment does not qualify or commit them.
+
 Game event/packet/sound dispatch: [Note 946](WORKING_NOTES/946-game-event-packet-and-sound-dispatch-direct-match-20261004.md)
 recovers `func_150E8930`, all 84 words directly matching with original 0x38
 frame and no guards. Its corrected no-argument call preserves all 28 timer

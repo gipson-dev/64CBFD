@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 947](WORKING_NOTES/947-init-remaining-assembly-conversion-map-20261004.md)
+  maps all 47 remaining assembly entries and distinguishes C-expressible
+  candidates from qualified replacements. Seventy tests pass; existing linked
+  Init sections, all retained slots and complete Game data remain exact.
+  No production conversion, rebuild or README aggregate change is claimed;
+  two unfinished Game edits remain untouched and outside this checkpoint.
+
 - Game [Note 946](WORKING_NOTES/946-game-event-packet-and-sound-dispatch-direct-match-20261004.md)
   recovers `func_150E8930`, all 84 words directly matching with no guards.
   Sixty-five tests and fresh link pass; its timer caller remains exact, and

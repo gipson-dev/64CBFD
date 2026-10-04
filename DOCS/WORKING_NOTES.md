@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 947](WORKING_NOTES/947-init-remaining-assembly-conversion-map-20261004.md)):
+Requested Init resume maps all 47 assembly entries, source owners and current
+conversion gates. Existing linked Init code/data and every retained slot match
+retail; seventy focused tests pass, complete Game data remains exact. Neither
+small C candidate is production-ready; connected decoder/glyph gates persist.
+Init owners and README totals unchanged; unfinished Game edits preserved.
+
 2026-10-04 ([Note 946](WORKING_NOTES/946-game-event-packet-and-sound-dispatch-direct-match-20261004.md)):
 Game `func_150E8930` is recovered as complete event/packet/list/sound dispatch.
 All 84 words match directly, original 0x38 frame, no guards; timer caller
