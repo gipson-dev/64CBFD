@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-04 ([Note 873](WORKING_NOTES/873-init-explicit-first-refill-lookup-fitting-20261004.md)):
+Opt-in explicit initial refill removes shared lookup's null-entry selector,
+retaining child-value read after refill. Packed O2/O1 core saves sixteen bytes,
+linked O2 4,688 / 704 excess; all shape bounds hold and observed descents match.
+Final source passes 33 guest tests / one corpus skip plus sixteen supporting
+gates. Omitted-option text matches baseline exactly. Changed corpus remains
+open; production/defaults/README unchanged, unrelated Game work preserved.
+
 2026-10-04 ([Note 872](WORKING_NOTES/872-init-allocation-table-full-masked-cu1-set-corpus-20261004.md)):
 All 507 current packed-remaining O2/g3 pages pass with masked CU1 set in
 804.532 seconds, no skips. Together with Note 871: 1,014 paired pages across

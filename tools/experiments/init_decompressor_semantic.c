@@ -552,6 +552,18 @@ static void abi_capture(InitDecodeState *s, uint32_t literals, uint32_t distance
 
 static InitDecodeEntry *lookup(InitDecodeState *s, uint32_t root, uint32_t width) {
 #ifdef INIT_DECODE_LOOP_LOOKUP
+#ifdef INIT_DECODE_LOOKUP_FIRST_REFILL
+    InitDecodeEntry *entry;
+    need_bits(s, width);
+    for (;;) {
+        entry = &s->workspace[root + (s->reservoir & low_mask(width))];
+        if (ENTRY_OPERATION(entry) <= 16 || ENTRY_OPERATION(entry) == 99) return entry;
+        width = ENTRY_OPERATION(entry) - 16;
+        drop_bits(s, ENTRY_BITS(entry));
+        need_bits(s, width);
+        root = ENTRY_VALUE(entry);
+    }
+#else
     InitDecodeEntry *entry = 0;
     for (;;) {
         need_bits(s, width);
@@ -561,6 +573,7 @@ static InitDecodeEntry *lookup(InitDecodeState *s, uint32_t root, uint32_t width
         width = ENTRY_OPERATION(entry) - 16;
         drop_bits(s, ENTRY_BITS(entry));
     }
+#endif
 #else
     InitDecodeEntry *entry;
     need_bits(s, width);

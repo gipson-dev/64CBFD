@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init explicit-first-refill lookup fitting: [Note 873](WORKING_NOTES/873-init-explicit-first-refill-lookup-fitting-20261004.md)
+adds opt-in `--lookup-first-refill` (requires shared lookup). Packed O2/O1
+core save sixteen bytes; linked O2 is 4,688 / 704 excess. No shape grows
+linked text or stack; all six observed descents match static bounds. Final
+guest run: 33 passes / one corpus skip in 241.971s, plus sixteen supporting
+passes. Omitted-option O2/O1 text matches qualified baseline exactly.
+Notes 871/872 qualify that baseline, not this changed option; changed corpus
+and fitting/ownership/hardware remain open. Production/defaults/README unchanged.
+
 Init current allocation-table CU1-set corpus: [Note 872](WORKING_NOTES/872-init-allocation-table-full-masked-cu1-set-corpus-20261004.md)
 passes all 507 fresh packed-remaining O2/g3 paired pages with masked CU1 set
 (status 0x2400FF00), 804.532 seconds, no skips. Together with Note 871 this

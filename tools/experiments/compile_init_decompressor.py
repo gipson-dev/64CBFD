@@ -241,6 +241,8 @@ def main():
                         help="flatten take_bits without changing state-access order")
     parser.add_argument("--loop-lookup", action="store_true",
                         help="share the opening and nested table lookup path")
+    parser.add_argument("--lookup-first-refill", action="store_true",
+                        help="refill initially then share dispatch without a null-entry selector")
     parser.add_argument("--aligned-entry", action="store_true",
                         help="give the four-byte entry its retail word alignment")
     parser.add_argument("--packed-entry", action="store_true",
@@ -301,6 +303,8 @@ def main():
     parser.add_argument("--stored-shared-lengths", action="store_true",
                         help="share extraction of stored length and complement words")
     args = parser.parse_args()
+    if args.lookup_first_refill and not args.loop_lookup:
+        parser.error("--lookup-first-refill requires --loop-lookup")
     if args.abi_fpr_shadow:
         args.seed_distance_root = True
     if args.abi_seed_cursor and not args.abi_fpr_shadow:
@@ -321,6 +325,8 @@ def main():
         suffix += "-flat-bits"
     if args.loop_lookup:
         suffix += "-loop-lookup"
+    if args.lookup_first_refill:
+        suffix += "-lookup-first-refill"
     if args.aligned_entry:
         suffix += "-aligned-entry"
     if args.packed_entry:
@@ -401,6 +407,8 @@ def main():
         common.append("-DINIT_DECODE_FLAT_BITS")
     if args.loop_lookup:
         common.append("-DINIT_DECODE_LOOP_LOOKUP")
+    if args.lookup_first_refill:
+        common.append("-DINIT_DECODE_LOOKUP_FIRST_REFILL")
     if args.aligned_entry:
         common.append("-DINIT_DECODE_ALIGNED_ENTRY")
     if args.packed_entry:

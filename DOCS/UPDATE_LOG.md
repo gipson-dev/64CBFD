@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 873](WORKING_NOTES/873-init-explicit-first-refill-lookup-fitting-20261004.md)
+  banks opt-in initial-refill shared lookup: packed O2/O1 core saves sixteen
+  bytes, linked O2 4,688 / 704 excess. All shape bounds hold, observed descents
+  match. Final guest run 33 passes / one corpus skip plus sixteen supporting
+  passes; omitted-option text equals qualified baseline. Changed corpus and
+  production-promotion gates remain open; no README total change.
+
 - Init [Note 872](WORKING_NOTES/872-init-allocation-table-full-masked-cu1-set-corpus-20261004.md)
   qualifies all 507 current packed O2/g3 pages with masked CU1 set in 804.532
   seconds, no skips. Together with Note 871: 1,014 paired pages on unchanged
