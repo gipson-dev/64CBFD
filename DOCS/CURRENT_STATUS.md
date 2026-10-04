@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init dynamic repeat fill fitting: [Note 858](WORKING_NOTES/858-init-dynamic-repeat-value-selection-and-cursor-end-fill-20261003.md)
+retains opt-in once-selected repeat values and cursor-end fills after the
+overflow gate. Frame O2 saves 32 linked bytes, aligned/packed O2 16, all
+O1 32; stack costs stay unchanged. Best bounded-qualified O2 is 4,752,
+768 over retail. The dynamic body fits its 257-word slot by size only.
+All 504 contexts, 132 builders and ordered zero/nonzero staging writes pass:
+43 tests pass, one corpus skip. Notes 856/857 remain full qualification for
+the prior 4,768-byte no-new-option build, not this changed fill. Fitting and
+fresh corpus/ownership/hardware gates remain open; production/defaults/totals unchanged.
+
 Init current-combination CU1-set corpus: [Note 857](WORKING_NOTES/857-init-simple-seed-full-masked-cu1-set-corpus-20261003.md)
 passes all 507 fresh packed/remaining O2/g3 retail-page comparisons with
 exception-masked CU1 set in 784.455 seconds. Notes 856/857 bank both masked

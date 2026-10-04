@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 858](WORKING_NOTES/858-init-dynamic-repeat-value-selection-and-cursor-end-fill-20261003.md)
+  banks repeat-value/cursor-end fitting with ordered nonzero/minimum/maximum
+  fills and inherited overflow gates. Best bounded O2 falls to 4,752, still
+  768 over retail; stack costs hold. Prior two-mode full corpus remains
+  scoped to the no-new-option build. Fresh changed corpus and fitting stay
+  open. Production/adapter/defaults/README totals unchanged; Game work excluded.
+
 - Init [Note 857](WORKING_NOTES/857-init-simple-seed-full-masked-cu1-set-corpus-20261003.md)
   banks all 507 fresh current-combination masked-CU1-set comparisons.
   Notes 856/857 complete both masked modes for packed O2/g3: 1,014 paired

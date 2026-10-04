@@ -746,8 +746,21 @@ int init_decode_dynamic(InitDecodeState *s) {
         }
 #endif
         if (DYNAMIC_OVERFLOW) return 1;
+#ifdef INIT_DECODE_DYNAMIC_REPEAT_VALUE
+        if (symbol != 16) previous = 0;
+#ifdef INIT_DECODE_DYNAMIC_CURSOR
+        {
+            uint32_t *repeatEnd = cursor + repeats;
+            /* Repeat codes request at least three slots; overflow was checked. */
+            do { DYNAMIC_STORE(previous); } while (cursor != repeatEnd);
+        }
+#else
+        while (repeats--) DYNAMIC_STORE(previous);
+#endif
+#else
         while (repeats--) DYNAMIC_STORE(symbol == 16 ? previous : 0);
         if (symbol != 16) previous = 0;
+#endif
     }
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
     s->abiSaved[0] = lastCodeEntry - s->workspace;

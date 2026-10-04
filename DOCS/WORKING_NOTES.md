@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 858](WORKING_NOTES/858-init-dynamic-repeat-value-selection-and-cursor-end-fill-20261003.md)):
+Opt-in repeat-value selection/cursor-end fill saves frame O2 32 linked
+bytes, aligned/packed O2 16 and all O1 32. Best bounded-qualified O2 is
+4,752, 768 over retail; stack costs are unchanged. Ordered 277-store
+zero/nonzero fills and overflow gates pass: 43 tests pass, one corpus skip.
+Dynamic O2 body fits its own slot by size only. Prior full-corpus receipts
+remain scoped to the old fill; fresh corpus/fitting/ownership/hardware open.
+Production/adapter/defaults/README totals unchanged; Game work preserved.
+
 2026-10-03 ([Note 857](WORKING_NOTES/857-init-simple-seed-full-masked-cu1-set-corpus-20261003.md)):
 All 507 current-combination packed O2/g3 retail pages pass with masked
 CU1 set in 784.455 seconds. Notes 856/857 now bank both masked modes:

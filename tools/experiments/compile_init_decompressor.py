@@ -278,6 +278,8 @@ def main():
                         help="form simple-symbol operation from its signed comparison")
     parser.add_argument("--dynamic-shared-repeats", action="store_true",
                         help="share dynamic repeat extraction after selecting width and base")
+    parser.add_argument("--dynamic-repeat-value", action="store_true",
+                        help="select repeated length once and fill to cursor end when enabled")
     parser.add_argument("--abi-seed-cursor", action="store_true",
                         help="seed saved ABI words using pointer cursors")
     parser.add_argument("--fixed-length-cursor", action="store_true",
@@ -351,6 +353,8 @@ def main():
         suffix += "-simple-operation"
     if args.dynamic_shared_repeats:
         suffix += "-dynamic-shared-repeats"
+    if args.dynamic_repeat_value:
+        suffix += "-dynamic-repeat-value"
     if args.abi_seed_cursor:
         suffix += "-abi-seed-cursor"
     if args.fixed_length_cursor:
@@ -418,6 +422,8 @@ def main():
         common.append("-DINIT_DECODE_BUILDER_SIMPLE_OPERATION")
     if args.dynamic_shared_repeats:
         common.append("-DINIT_DECODE_DYNAMIC_SHARED_REPEATS")
+    if args.dynamic_repeat_value:
+        common.append("-DINIT_DECODE_DYNAMIC_REPEAT_VALUE")
     if args.abi_seed_cursor:
         common.append("-DINIT_DECODE_ABI_SEED_CURSOR")
     if args.fixed_length_cursor:
