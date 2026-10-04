@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 935](WORKING_NOTES/935-init-shared-formatter-setup-text-stack-tradeoff-20261004.md)
+  measures shared destination setup: sixteen-byte text saving with increased
+  stack cost. Sixteen combined tests and 1,152 paired fixtures pass; retain
+  the experiment opt-in without changing production or README totals.
+
 - Init [Note 934](WORKING_NOTES/934-init-connected-semantic-c-formatters-and-layout-cost-20261004.md)
   recovers both connected C formatter trials with 576 paired fixtures passing.
   Fifteen combined tests pass; measured text/stack costs keep production

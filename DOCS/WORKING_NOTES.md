@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-04 ([Note 935](WORKING_NOTES/935-init-shared-formatter-setup-text-stack-tradeoff-20261004.md)):
+Shared C formatter setup saves sixteen linked bytes but grows O2 nested stack
+48 -> 80 bytes. All 1,152 paired fixtures / sixteen combined tests pass.
+Keep opt-in tradeoff; neither text fitting nor reservation gates are solved.
+
 2026-10-04 ([Note 934](WORKING_NOTES/934-init-connected-semantic-c-formatters-and-layout-cost-20261004.md)):
 Both semantic C formatters call the C writer directly; 576 paired fixtures
 and fifteen combined tests pass. O2 text 624 / retail connected budget 412,

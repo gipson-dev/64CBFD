@@ -45,7 +45,9 @@ class InitGlyphFormatterSemanticTests(unittest.TestCase):
         output.mkdir(parents=True, exist_ok=True)
         cls.images, cls.receipts = {}, {}
         for profile, flags in (('o2g3-no-unroll', ['-O2', '-g3', '-Wo,-loopunroll,0']),
-                               ('o1', ['-O1'])):
+                               ('o1', ['-O1']),
+                               ('shared-o2g3-no-unroll', ['-O2', '-g3', '-Wo,-loopunroll,0', '-DGLYPH_SHARED_SETUP']),
+                               ('shared-o1', ['-O1', '-DGLYPH_SHARED_SETUP'])):
             prefix = 'build/init-glyph-formatters-semantic/' + profile
             objects = []
             for name, source, options in (
@@ -71,6 +73,15 @@ class InitGlyphFormatterSemanticTests(unittest.TestCase):
             data = (cwd / binary).read_bytes()
             code = {0x10009000 + i * 4: word[0] for i, word in enumerate(struct.iter_unpack('>I', data))}
             words, _, addresses = match_progress.load_elf_functions(str(cwd / elf), 'mips-linux-gnu-objdump')
+            if 'shared' in profile:
+                # IDO omits the static symbol; pin its entry through both callers.
+                if '_ftext' in words:
+                    for caller in ('init_glyph_hex', 'init_glyph_string'):
+                        call_index = next(i for i, word in enumerate(words[caller]) if word >> 26 == 3)
+                        target = match_progress.jump_target(words[caller][call_index], addresses[caller] + call_index * 4)
+                        if target != addresses['_ftext']:
+                            raise AssertionError('unexpected shared setup call target')
+                    words['init_glyph_destination'] = words.pop('_ftext')
             cls.images[profile] = (code, addresses)
             cls.receipts[profile] = {'allocated_text_bytes': len(data), 'functions': {
                 name: {'slot_words': len(body), 'body_words': max(i for i, word in enumerate(body)
@@ -135,6 +146,14 @@ class InitGlyphFormatterSemanticTests(unittest.TestCase):
         for pointers in ((0, 0x80210000), (0x80200000, 0), (0, 0)):
             self.compare(0, value=0x12345678, pointers=pointers)
             self.compare(0, text=b'A', pointers=pointers)
+
+    def test_shared_setup_linked_text_tradeoff(self):
+        self.assertEqual(self.receipts['o2g3-no-unroll']['allocated_text_bytes'], 624)
+        self.assertEqual(self.receipts['shared-o2g3-no-unroll']['allocated_text_bytes'], 608)
+        self.assertEqual(self.receipts['o1']['allocated_text_bytes'], 704)
+        self.assertEqual(self.receipts['shared-o1']['allocated_text_bytes'], 688)
+        self.assertEqual(self.receipts['shared-o2g3-no-unroll']['functions']
+                         ['init_glyph_destination']['body_words'], 29)
 
     @classmethod
     def tearDownClass(cls):

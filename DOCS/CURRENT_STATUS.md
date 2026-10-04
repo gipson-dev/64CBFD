@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init shared setup trial: [Note 935](WORKING_NOTES/935-init-shared-formatter-setup-text-stack-tradeoff-20261004.md)
+saves sixteen linked bytes, but increases nested stack: O2 608 bytes / 80
+stack, O1 688 / 56. All 1,152 paired fixtures and sixteen combined tests pass.
+Helper measurement is call-target guarded. Retain opt-in only; fitting and
+ownership gates remain open, production counts unchanged.
+
 Init connected C formatters: [Note 934](WORKING_NOTES/934-init-connected-semantic-c-formatters-and-layout-cost-20261004.md)
 recovers both formatter bodies calling the C writer directly. Two profiles /
 576 paired fixtures and fifteen combined tests pass, including string/output
