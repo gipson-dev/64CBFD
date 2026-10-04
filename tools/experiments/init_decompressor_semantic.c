@@ -17,6 +17,12 @@ typedef signed int int32_t;
 #if defined(INIT_DECODE_PACKED_ENTRY) && !defined(INIT_DECODE_ALIGNED_ENTRY)
 #error Packed entry mode requires word-aligned entries
 #endif
+#if defined(INIT_DECODE_PACKED_PARENT) && !defined(INIT_DECODE_ALIGNED_ENTRY)
+#error Packed parent mode requires word-aligned entries
+#endif
+#if defined(INIT_DECODE_INLINE_BIT_TAIL) && defined(INIT_DECODE_FLAT_BITS)
+#error Inline bit tail and flat bits are alternative take_bits shapes
+#endif
 #if defined(INIT_DECODE_BYTE_PARENT) && !defined(INIT_DECODE_FRAME_BACKED)
 #error Byte parent addressing requires physical frame tables
 #endif
@@ -185,6 +191,11 @@ static uint32_t take_bits(InitDecodeState *s, uint32_t width) {
         s->reservoir |= (uint32_t)*s->input++ << (s->bits & 31);
         s->bits += 8;
     }
+    value = s->reservoir & ((1u << (width & 31)) - 1);
+    s->reservoir >>= width & 31;
+    s->bits -= width;
+#elif defined(INIT_DECODE_INLINE_BIT_TAIL)
+    need_bits(s, width);
     value = s->reservoir & ((1u << (width & 31)) - 1);
     s->reservoir >>= width & 31;
     s->bits -= width;
@@ -420,9 +431,21 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                     parent = &BUILD_WORKSPACE[TABLE_INDEX(s, level - 1) +
                         (code >> BUILD_SHIFT(consumed - (int32_t)width))];
 #endif
+#ifdef INIT_DECODE_PACKED_PARENT
+#if defined(INIT_DECODE_GUEST) || (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+                    parent->alignment = ((uint32_t)(uint8_t)(levelBits + 16) << 24) |
+                        ((uint32_t)(uint8_t)width << 16) | (uint16_t)BUILD_NEW_TABLE;
+#elif defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+                    parent->alignment = (uint8_t)(levelBits + 16) |
+                        ((uint32_t)(uint8_t)width << 8) | ((uint32_t)(uint16_t)BUILD_NEW_TABLE << 16);
+#else
+#error Native byte order is required for packed parent mode
+#endif
+#else
                     ENTRY_OPERATION(parent) = levelBits + 16;
                     ENTRY_BITS(parent) = width;
                     ENTRY_VALUE(parent) = BUILD_NEW_TABLE;
+#endif
                     value = BUILD_NEW_TABLE;
                 }
 #ifdef INIT_DECODE_BUILDER_ALLOCATION_TABLE

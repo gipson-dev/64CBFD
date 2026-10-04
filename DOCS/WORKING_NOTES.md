@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-04 ([Note 959](WORKING_NOTES/959-init-decoder-packed-parent-and-bit-tail-fitting-trials-20261004.md)):
+Test two new isolated decoder fitting hypotheses. Packed parent entries grow
+the optimized image by sixteen bytes; shared-refill/inline bit tail grows it
+by thirty-two. All 105 connected trial tests and twenty baseline audit/ledger
+checks pass, no skips. Reject both for adoption; best candidate stays 4512 bytes,
+528 over retail. Default-option instruction images and production Init remain
+unchanged. Full corpora, stack/entry ownership and production conversion remain open.
+
 2026-10-04 ([Note 958](WORKING_NOTES/958-init-resume-remaining-assembly-readiness-20261004.md)):
 Resume the requested Init assessment from the clean banked baseline. All 102
 checks pass, no skips; 492 C / 47 assembly entries and complete existing linked

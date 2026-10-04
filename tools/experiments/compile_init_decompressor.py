@@ -239,6 +239,8 @@ def main():
                         help="track retail scratch FPR snapshots; implies distance-root seeding")
     parser.add_argument("--flat-bits", action="store_true",
                         help="flatten take_bits without changing state-access order")
+    parser.add_argument("--inline-bit-tail", action="store_true",
+                        help="share refill but inline take_bits mask and consumption")
     parser.add_argument("--loop-lookup", action="store_true",
                         help="share the opening and nested table lookup path")
     parser.add_argument("--lookup-first-refill", action="store_true",
@@ -247,6 +249,8 @@ def main():
                         help="give the four-byte entry its retail word alignment")
     parser.add_argument("--packed-entry", action="store_true",
                         help="construct a packed leaf word; implies --aligned-entry")
+    parser.add_argument("--packed-parent", action="store_true",
+                        help="construct a packed parent word; implies --aligned-entry")
     parser.add_argument("--bounded-builder-shifts", action="store_true",
                         help="use the builder's clamped tree-width shift bounds")
     parser.add_argument("--cache-workspace", action="store_true",
@@ -311,6 +315,8 @@ def main():
     parser.add_argument("--stored-shared-lengths", action="store_true",
                         help="share extraction of stored length and complement words")
     args = parser.parse_args()
+    if args.inline_bit_tail and args.flat_bits:
+        parser.error("--inline-bit-tail and --flat-bits are alternative take_bits shapes")
     if args.lookup_first_refill and not args.loop_lookup:
         parser.error("--lookup-first-refill requires --loop-lookup")
     if args.abi_fpr_shadow:
@@ -321,7 +327,7 @@ def main():
         parser.error("--seed-distance-root requires --frame-backed")
     if args.byte_parent and not args.frame_backed:
         parser.error("--byte-parent requires --frame-backed")
-    if args.packed_entry:
+    if args.packed_entry or args.packed_parent:
         args.aligned_entry = True
     root = Path(__file__).resolve().parents[2]
     if args.core_pointer_arguments and not args.frame_backed:
@@ -335,6 +341,8 @@ def main():
         suffix += "-abi-fpr-shadow"
     if args.flat_bits:
         suffix += "-flat-bits"
+    if args.inline_bit_tail:
+        suffix += "-inline-bit-tail"
     if args.loop_lookup:
         suffix += "-loop-lookup"
     if args.lookup_first_refill:
@@ -343,6 +351,8 @@ def main():
         suffix += "-aligned-entry"
     if args.packed_entry:
         suffix += "-packed"
+    if args.packed_parent:
+        suffix += "-packed-parent"
     if args.bounded_builder_shifts:
         suffix += "-bounded-shifts"
     if args.cache_workspace:
@@ -427,6 +437,8 @@ def main():
         common.append("-DINIT_DECODE_ABI_FPR_SHADOW")
     if args.flat_bits:
         common.append("-DINIT_DECODE_FLAT_BITS")
+    if args.inline_bit_tail:
+        common.append("-DINIT_DECODE_INLINE_BIT_TAIL")
     if args.loop_lookup:
         common.append("-DINIT_DECODE_LOOP_LOOKUP")
     if args.lookup_first_refill:
@@ -435,6 +447,8 @@ def main():
         common.append("-DINIT_DECODE_ALIGNED_ENTRY")
     if args.packed_entry:
         common.append("-DINIT_DECODE_PACKED_ENTRY")
+    if args.packed_parent:
+        common.append("-DINIT_DECODE_PACKED_PARENT")
     if args.bounded_builder_shifts:
         common.append("-DINIT_DECODE_BOUNDED_BUILDER_SHIFTS")
     if args.cache_workspace:

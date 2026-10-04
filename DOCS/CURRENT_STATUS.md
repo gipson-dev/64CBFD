@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init decoder fitting: [Note 959](WORKING_NOTES/959-init-decoder-packed-parent-and-bit-tail-fitting-trials-20261004.md)
+tests new opt-in parent packing and shared-refill/inline bit-tail shapes.
+Optimized complete images grow to 4528 and 4544 bytes, so reject both; the
+retained 4512-byte candidate remains 528 bytes over retail. All 105 connected
+trial checks plus twenty baseline audit/ledger checks pass, no skips.
+Default-option instruction images remain unchanged; full existing Init code/data
+and Game data stay exact. No production adoption or README aggregate change.
+Next fitting work must reduce the complete image and resolve entry/stack ownership.
+
 Requested Init resume: [Note 958](WORKING_NOTES/958-init-resume-remaining-assembly-readiness-20261004.md)
 freshly verifies 492 C / 47 assembly entries, all retained owners/slots and
 complete existing linked Init code/data and Game data. All 102 checks pass,

@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 959](WORKING_NOTES/959-init-decoder-packed-parent-and-bit-tail-fitting-trials-20261004.md)
+  qualifies new packed-parent and shared-refill/inline-tail experiments:
+  optimized totals are 4528 / 4544 bytes, both worse than 4512 baseline.
+  All 125 trial and baseline audit/ledger tests pass, no skips; default-option
+  instruction images remain unchanged. Reject production adoption; Init/README
+  counts and exact existing linked code/data remain intact. Full corpora and
+  connected stack/entry ownership remain separate gates.
+
 - Init [Note 958](WORKING_NOTES/958-init-resume-remaining-assembly-readiness-20261004.md)
   resumes the requested assembly-conversion assessment: 102 fresh checks pass,
   no skips; all retained owners/slots and complete existing Init code/data and
