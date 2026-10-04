@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 955](WORKING_NOTES/955-init-bitmap-fill-value-right-shift-mask-trial-20261004.md)
+  rejects a new right-shift mask/value-lifetime shape: 20 optimized words
+  against nineteen retail. Eight new tests qualify 501 pairs/six prefixes;
+  34 combined tests pass, no skips. Init source, exact existing sections and
+  README totals unchanged; next recover the preserved Game child fitting gate.
+
 - Init [Note 954](WORKING_NOTES/954-init-resume-conversion-decision-and-interrupted-game-build-20261004.md)
   verifies 492 C / 47 assembly entries, exact retained owners and existing linked
   Init/Game data. Ninety-three focused tests plus one fresh decoder size check

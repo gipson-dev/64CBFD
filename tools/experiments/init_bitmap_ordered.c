@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef short s16;
 
-#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 18)
+#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 19)
 typedef char GuestAddressWidth[(sizeof(unsigned long) == 4) ? 1 : -1];
 #endif
 
@@ -23,8 +23,10 @@ void func_10005BE0(void) {
 #endif
 #if SHAPE == 6 || SHAPE == 7
     int value = 0xFF;
+#elif SHAPE == 19
+    unsigned int value = 0xFF;
 #endif
-#if SHAPE >= 12 && SHAPE <= 18
+#if SHAPE >= 12 && SHAPE <= 19
     unsigned long cursor = (unsigned long)D_8003BE70;
     unsigned long end = (unsigned long)D_8003BE7C;
 #if SHAPE == 13
@@ -128,6 +130,11 @@ fill:
         difference = cursor - end;
         cursor++;
     } while (difference);
+#elif SHAPE == 19
+    /* Reuse the fill value for a low-bit mask, without a second constant. */
+    do {
+        *(volatile u8 *)cursor = value;
+    } while (cursor++ != end);
 #else
 #error Unknown SHAPE
 #endif
@@ -135,6 +142,8 @@ fill:
     bits = D_8003BE78 & 7;
 #if SHAPE == 7
     if (bits--) {
+#elif SHAPE == 19
+    if (bits) {
 #else
     if (bits) {
         bits--;
@@ -144,6 +153,9 @@ fill:
         value <<= bits;
         value--;
         *end = value;
+#elif SHAPE == 19
+        value >>= 8 - bits;
+        *(volatile u8 *)end = value;
 #elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18
         *(volatile u8 *)end = (2u << bits) - 1;
 #else

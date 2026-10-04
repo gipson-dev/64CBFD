@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-04 ([Note 955](WORKING_NOTES/955-init-bitmap-fill-value-right-shift-mask-trial-20261004.md)):
+New shared fill-value/right-shift mask experiment emits 20 O2 words, still
+over nineteen retail; compiler rematerializes `0xFF` and retains XOR. Eight
+new tests / 501 completed pairs / six prefixes and 34 combined tests pass.
+Reject adoption; production Init and README unchanged, older fitting but
+non-matching forms remain distinct. Preserve the unfinished Game child;
+resume its one-word fitting failure and full-chain qualification next.
+
 2026-10-04 ([Note 954](WORKING_NOTES/954-init-resume-conversion-decision-and-interrupted-game-build-20261004.md)):
 Requested Init resume confirms 492 C / 47 assembly entries and exact retained
 owners/slots/full existing code/data. Ninety-three focused tests and one fresh

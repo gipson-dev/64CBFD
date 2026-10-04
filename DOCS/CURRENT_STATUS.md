@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init bitmap right-shift trial: [Note 955](WORKING_NOTES/955-init-bitmap-fill-value-right-shift-mask-trial-20261004.md)
+tests reusing `0xFF` for the final mask. IDO rematerializes the constant and
+retains XOR: 20 optimized words against nineteen retail. Eight new tests
+qualify 501 completed model pairs/six prefixes; 34 combined tests pass, no skips.
+Reject adoption; Init ownership, existing exact code/data and README unchanged.
+Older nineteen-word one-based-mask forms also exist but do not match retail.
+Next broader recovery is the preserved Game child's one-word fitting failure.
+
 Init resume: [Note 954](WORKING_NOTES/954-init-resume-conversion-decision-and-interrupted-game-build-20261004.md)
 confirms 492 C / 47 assembly entries (12,252 retained bytes). All retained
 owners/slots and the existing ELF's complete Init code/data and Game data are
