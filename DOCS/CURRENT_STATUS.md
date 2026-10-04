@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init bitmap return-lifetime trials: [Note 903](WORKING_NOTES/903-init-bitmap-return-value-lifetime-trials-20261004.md)
+tests returning the advanced cursor or captured end + 1. Both retain the XOR
+loop and grow optimized bodies to 21 words versus retail 19. Host behavior
+and return checks pass; 33 retained-contract tests pass. No production match
+or signature change; qualified pointer-owned decompressor remains unchanged.
+
 Init pointer-owned O2 CU1-set corpus: [Note 902](WORKING_NOTES/902-init-pointer-owned-o2-full-masked-cu1-set-corpus-20261004.md)
 passes all 507 guarded paired pages in 823.148 seconds, no skips. With Note
 901, both masked CU1 modes now cover 1,014 paired pages for this unchanged

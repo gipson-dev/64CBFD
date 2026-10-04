@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 903](WORKING_NOTES/903-init-bitmap-return-value-lifetime-trials-20261004.md)
+  rejects cursor-return and endpoint-return matching hypotheses: both O2
+  bodies grow to 21 words, retaining XOR comparison. Reproducible host behavior
+  and return checks pass; 33 retained-contract tests pass. No production change.
+
 - Init [Note 902](WORKING_NOTES/902-init-pointer-owned-o2-full-masked-cu1-set-corpus-20261004.md)
   qualifies all 507 combined packed O2 masked CU1-set pages in 823.148
   seconds, no skips. With Note 901: 1,014 paired pages across both modes,

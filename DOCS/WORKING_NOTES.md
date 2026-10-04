@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 903](WORKING_NOTES/903-init-bitmap-return-value-lifetime-trials-20261004.md)):
+Two new bitmap return-value shapes preserve behavior but emit 21 optimized
+words versus retail 19; XOR loop remains and final return move/increment is
+added. Five shapes pass 79 host cases each, new shapes check pointer results;
+33 retained-contract tests pass. Production and qualified decoder unchanged.
+
 2026-10-04 ([Note 902](WORKING_NOTES/902-init-pointer-owned-o2-full-masked-cu1-set-corpus-20261004.md)):
 Combined packed O2 passes all 507 masked CU1-set paired pages in 823.148
 seconds, no skips. Notes 901/902 now qualify 1,014 paired pages across both

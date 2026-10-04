@@ -1,4 +1,4 @@
-"""Bounded volatile-store bitmap scheduling trial, separate from production."""
+"""Bounded bitmap store/return-lifetime trials, separate from production."""
 
 import json
 import subprocess
@@ -13,7 +13,7 @@ def main():
     source = "../tools/experiments/init_bitmap_ordered.c"
     retail = (cwd / "conker.us.bin").read_bytes()[0x5BE0:0x5C2C]
     report = []
-    for shape in (1, 2, 3):
+    for shape in (1, 2, 3, 4, 5):
         prefix = "build/init-bitmap-ordered/shape%d" % shape
         host = prefix + "-host"
         subprocess.run(["cc", "-O2", "-std=c99", "-Wall", "-Wextra",
@@ -49,7 +49,8 @@ def main():
             (cwd / (obj + ".asm.txt")).write_text(disassembly)
             report.append({"shape": shape, "profile": profile,
                            "body_words": end, "different_positions": differences,
-                           "exact": body == retail, "host_cases": 79})
+                           "exact": body == retail, "host_cases": 79,
+                           "host_return_checked": shape in (4, 5)})
     (output / "measurements.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))
 
