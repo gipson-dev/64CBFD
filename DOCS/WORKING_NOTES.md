@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 902](WORKING_NOTES/902-init-pointer-owned-o2-full-masked-cu1-set-corpus-20261004.md)):
+Combined packed O2 passes all 507 masked CU1-set paired pages in 823.148
+seconds, no skips. Notes 901/902 now qualify 1,014 paired pages across both
+modes for unchanged candidate. Text 4,560, descent 3,240, low `0x80031D68`,
+margin 88 and hashes match. Fitting/reservation/production gates remain open.
+
 2026-10-04 ([Note 901](WORKING_NOTES/901-init-pointer-owned-o2-full-masked-cu1-clear-corpus-20261004.md)):
 Combined pointer-owned packed O2 passes all 507 masked CU1-clear paired pages
 in 819.113 seconds, no skips. Text 4,560, descent 3,240, low `0x80031D68`,

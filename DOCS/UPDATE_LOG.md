@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 902](WORKING_NOTES/902-init-pointer-owned-o2-full-masked-cu1-set-corpus-20261004.md)
+  qualifies all 507 combined packed O2 masked CU1-set pages in 823.148
+  seconds, no skips. With Note 901: 1,014 paired pages across both modes,
+  unchanged text 4,560, descent 3,240 and margin 88. Fitting and production open.
+
 - Init [Note 901](WORKING_NOTES/901-init-pointer-owned-o2-full-masked-cu1-clear-corpus-20261004.md)
   qualifies all 507 combined-candidate packed O2 masked CU1-clear pages in
   819.113 seconds, no skips. Text 4,560, descent 3,240, known-neighbor margin

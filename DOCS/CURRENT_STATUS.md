@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init pointer-owned O2 CU1-set corpus: [Note 902](WORKING_NOTES/902-init-pointer-owned-o2-full-masked-cu1-set-corpus-20261004.md)
+passes all 507 guarded paired pages in 823.148 seconds, no skips. With Note
+901, both masked CU1 modes now cover 1,014 paired pages for this unchanged
+candidate. Text 4,560, descent 3,240, low `0x80031D68`, margin 88 match;
+source hashes fixed. Fitting (576 excess), reservation and production gates open.
+
 Init pointer-owned O2 CU1-clear corpus: [Note 901](WORKING_NOTES/901-init-pointer-owned-o2-full-masked-cu1-clear-corpus-20261004.md)
 passes all 507 guarded paired pages in 819.113 seconds, no skips. Packed
 executable text 4,560, descent 3,240, minimum SP `0x80031D68`, known-neighbor
