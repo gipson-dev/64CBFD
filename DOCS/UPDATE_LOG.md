@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 923](WORKING_NOTES/923-game-fixed-random-parameter-initializer-match-20261004.md)
+  recovers the fixed/random initializer as a direct 43-word C match. Fourteen
+  focused tests pass, including complete independent IDO equality. Fresh
+  matcher Game 2603 / total 3276 exact, zero drift; README aggregates refreshed.
+
 - Game [Note 922](WORKING_NOTES/922-game-vector-random-parameter-initializer-match-20261004.md)
   recovers the vector/random parameter initializer as a direct 62-word match.
   Five new tests / fourteen combined pass, including complete independent IDO

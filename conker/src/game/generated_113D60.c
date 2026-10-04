@@ -8,6 +8,13 @@ extern f32 D_800A1314;
 extern f32 D_800A1318;
 extern f32 D_800A131C;
 extern f32 D_800A1320;
+extern f32 D_800A1324;
+extern f32 D_800A1328;
+extern f32 D_800A132C;
+extern f32 D_800A1330;
+extern f32 D_800A1334;
+extern f32 D_800A1338;
+extern f32 D_800A133C;
 f32 func_150484A0(f32 x, f32 y);
 f32 sqrtf(f32 value);
 f32 func_150ADA68(void);
@@ -85,8 +92,15 @@ void func_150E70EC(s32 arg0, s32 arg1, f32 *vector, f32 *output) {
     output[7] = func_150ADA68() * 0.5f;
 }
 
-s32 func_150E71E4() {
-    return 0;
+void func_150E71E4(s32 arg0, s32 arg1, f32 *vector, f32 *output) {
+    output[0] = func_150484A0(vector[0], vector[2]);
+    output[2] = D_800A1324;
+    output[4] = func_150ADA68() * D_800A1328;
+    output[6] = func_150ADA68() * D_800A132C;
+    output[1] = D_800A1330;
+    output[3] = D_800A1334;
+    output[5] = func_150ADA68() * D_800A1338;
+    output[7] = func_150ADA68() * D_800A133C;
 }
 
 s32 func_150E7290() {

@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 923](WORKING_NOTES/923-game-fixed-random-parameter-initializer-match-20261004.md)):
+Game `func_150E71E4` replaces its zero-return placeholder with ordered fixed/
+sampled field initialization. All 43 words match directly, no guards; fourteen
+focused tests pass. Fresh matcher Game 2603 / total 3276 exact, zero drift.
+README aggregate snapshot refreshed; unrelated actor/timeline work excluded.
+
 2026-10-04 ([Note 922](WORKING_NOTES/922-game-vector-random-parameter-initializer-match-20261004.md)):
 Game `func_150E70EC` now emits all 62 words directly from semantic C, no
 guards. Six RNG calls, two vector helper calls, square root and eight stores

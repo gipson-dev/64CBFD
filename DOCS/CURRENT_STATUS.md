@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game fixed/random parameters: [Note 923](WORKING_NOTES/923-game-fixed-random-parameter-initializer-match-20261004.md)
+recovers `func_150E71E4`'s vector-derived value, three fixed fields and four
+random samples. All 43 words match directly from C, no guards. Five new tests
+/ fourteen combined pass; fresh matcher Game 2603 / total 3276 exact, zero
+drift. README aggregate rows updated; detailed behavior remains in the note.
+
 Game vector random parameters: [Note 922](WORKING_NOTES/922-game-vector-random-parameter-initializer-match-20261004.md)
 recovers `func_150E70EC`'s two vector-derived values and six sampled fields.
 All 62 words match directly from C without guards, including square-root
