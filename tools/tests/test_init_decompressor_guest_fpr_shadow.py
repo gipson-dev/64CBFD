@@ -34,7 +34,8 @@ class InitDecompressorGuestFprShadowTests(unittest.TestCase):
         directory = Path(cls.directory.name)
         shadow_adapter = directory / "shadow-adapter.o"
         result = subprocess.run(["mips-linux-gnu-as", "-mips3", "-32", "--defsym",
-            "INIT_DECODE_ABI_FPR_SHADOW=1", "-o", str(shadow_adapter),
+            "INIT_DECODE_ABI_FPR_SHADOW=1", *getattr(cls, "shadow_adapter_flags", ()),
+            "-o", str(shadow_adapter),
             str(cls.root / "tools/experiments/init_decompressor_core_adapter.s")],
             capture_output=True, text=True, check=True)
         if result.stdout or result.stderr:
@@ -233,7 +234,7 @@ class InitDecompressorGuestFprShadowTests(unittest.TestCase):
         for label, profile, image in self.adapter_images:
             body = (image.symbols["init_decode_retail_core_adapter_end"] -
                     image.symbols["init_decode_retail_core_adapter"])
-            self.assertEqual(body, 320)
+            self.assertEqual(body, getattr(self, "shadow_adapter_bytes", 320))
             bound = next(unit["direct_call_frame_bound"] for unit in
                          self.receipts[label, profile]["call_graph"]
                          if unit["name"] == "init_decode_core")

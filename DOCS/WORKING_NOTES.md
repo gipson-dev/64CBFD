@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 853](WORKING_NOTES/853-init-core-owned-state-initialization-and-adapter-fitting-20261003.md)):
+Opt-in core-owned state removes six redundant adapter stores. Body shrinks
+320 to 296 bytes; linked text saves 16 in all six images. Best packed O2
+is 4,784, 800 over retail, with unchanged stack costs. Poison/read-before-write
+gates and all bounded checks pass: 39 tests pass, one corpus skip. Default
+adapter object is byte-identical. Production/defaults/README totals unchanged;
+structural fitting and changed corpus/ownership/hardware remain open.
+
 2026-10-03 ([Note 852](WORKING_NOTES/852-init-dynamic-shared-repeat-extraction-and-stack-fitting-20261003.md)):
 Shared dynamic repeat extraction saves eight stack bytes in all O2 shapes;
 O1 grows eight. Aligned O2 saves 16 linked bytes; best packed O2 stays

@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 853](WORKING_NOTES/853-init-core-owned-state-initialization-and-adapter-fitting-20261003.md)
+  banks opt-in adapter state ownership with poisoned read-before-write
+  qualification. All six links save 16; best packed O2 is 4,784, still
+  800 over retail. Stack bounds hold and default adapter object is unchanged.
+  Final bounded/helper/default checks pass; changed corpus and structural
+  fitting remain open. Production/defaults/README totals unchanged; unrelated
+  Game work remains preserved and excluded.
+
 - Init [Note 852](WORKING_NOTES/852-init-dynamic-shared-repeat-extraction-and-stack-fitting-20261003.md)
   banks shared dynamic repeat extraction with active code/overflow gates.
   O2 saves eight stack bytes; O1 grows eight. Best packed text stays 4,800,

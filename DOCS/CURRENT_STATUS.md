@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init adapter state fitting: [Note 853](WORKING_NOTES/853-init-core-owned-state-initialization-and-adapter-fitting-20261003.md)
+omits six redundant adapter stores behind an opt-in assembler symbol.
+Poisoned fields and read-before-write checks pass all 492 bounded contexts;
+default adapter object stays byte-identical. All six linked images save 16:
+best packed O2 is 4,784, 800 over retail, with unchanged stack depth.
+Final bounded/helper/default checks: 39 pass, one corpus skip. Structural
+fitting and changed corpus/ownership/hardware remain open; production,
+defaults and README totals unchanged.
+
 Init dynamic repeat fitting: [Note 852](WORKING_NOTES/852-init-dynamic-shared-repeat-extraction-and-stack-fitting-20261003.md)
 retains opt-in shared repeat extraction. All O2 shapes save eight stack bytes;
 all O1 shapes grow eight. Aligned O2 saves 16 linked bytes, while best packed

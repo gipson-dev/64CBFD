@@ -29,13 +29,17 @@ init_decode_retail_core_adapter:
     sw $a0, 0x20($sp)
     sw $a1, 0x24($sp)
     sw $a2, 0x28($sp)
+.ifndef INIT_DECODE_CORE_OWNS_STATE
     sw $zero, 0x2C($sp)
     sw $zero, 0x30($sp)
     sw $zero, 0x34($sp)
     sw $zero, 0x38($sp)
     sw $zero, 0x3C($sp)
+.endif
     sw $t0, 0x40($sp)
+.ifndef INIT_DECODE_CORE_OWNS_STATE
     sw $a2, 0x44($sp)
+.endif
     move $a2, $a0
     move $a3, $a1
     lui $a1, 0x8004
