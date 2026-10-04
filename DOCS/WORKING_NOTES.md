@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-04 ([Note 897](WORKING_NOTES/897-init-core-return-control-flow-trials-20261004.md)):
+Core success-first return is neutral; shared result grows O2 sixteen bytes
+and both bounds. Both removed, exact qualified source restored. Ten focused
+core/ledger/size tests pass, no skips. No production or README change.
+
 2026-10-04 ([Note 896](WORKING_NOTES/896-init-fixed-length-cursor-endpoint-trials-20261004.md)):
 Distance cursors and relative literal endpoints do not shrink whole O2 text
 and grow O1 sixteen bytes; some frames grow eight. All three removed, exact

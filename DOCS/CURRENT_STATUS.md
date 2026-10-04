@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init core return trials: [Note 897](WORKING_NOTES/897-init-core-return-control-flow-trials-20261004.md)
+rejects success-first (size/bound neutral) and shared-result (O2 text +16,
+bounds +24 O2 / +8 O1). Exact source restored; ten focused core/ledger/size
+tests pass, no skips. Qualified O1/default O2 remain unchanged; no production
+or README change.
+
 Init fixed-length endpoint trials: [Note 896](WORKING_NOTES/896-init-fixed-length-cursor-endpoint-trials-20261004.md)
 rejects distance cursors and relative literal endpoints: no complete O2
 text saving, all grow O1 sixteen bytes; some initializer frames grow eight.
