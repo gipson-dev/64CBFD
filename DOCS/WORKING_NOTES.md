@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-04 ([Note 910](WORKING_NOTES/910-init-bitmap-shared-fill-mask-lifetime-trials-20261004.md)):
+Shared bitmap fill/mask lifetime emits the same twenty-word O2 text as control;
+postdecrement variant grows to twenty-two. Both rejected against retail nineteen.
+Seven shapes pass 553 host combinations; 33 retained-contract checks pass,
+no skips. Reproducible trials retained, production and README unchanged.
+
+2026-10-04 ([Note 909](WORKING_NOTES/909-init-resume-conversion-readiness-audit-20261004.md)):
+Init resume audit verifies all 47 remaining assembly source owners and
+recounts 492 C / 151,796 bytes. Thirty-eight focused tests pass, no skips.
+Two small matching candidates and the 544-byte-over decoder remain gated;
+current work list accounts for completed corpus/startup evidence. No production
+change; pending Game recovery and unrelated actor changes preserved.
+
 2026-10-04 ([Note 908](WORKING_NOTES/908-init-startup-thread-stack-top-and-constructor-contract-20261004.md)):
 Pinned retail startup calls/constructor publish stack tops `0x8002D8B0` and
 `0x800318B0`, saved SP top-minus-sixteen. Constructor writes only through

@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init bitmap value-lifetime trials: [Note 910](WORKING_NOTES/910-init-bitmap-shared-fill-mask-lifetime-trials-20261004.md)
+rejects a shared fill/mask variable (same 20-word O2 text as control) and
+postdecrement variant (22 words), versus retail nineteen. Seven shapes pass
+553 host fixture combinations; 33 retained-contract tests pass, no skips.
+Experiments remain reproducible; production ownership and totals unchanged.
+
+Init resume readiness: [Note 909](WORKING_NOTES/909-init-resume-conversion-readiness-audit-20261004.md)
+recounts 492 C / 47 assembly functions and verifies all remaining assembly
+source owners. All 38 focused checks pass, no skips. Bitmap/MMIO matching
+remains open; the qualified dynamic-order decoder is 544 bytes too large,
+with reservation/ownership/hardware gates open. No production conversion or
+README aggregate change. The note provides the current ordered work list.
+
 Init startup thread contract: [Note 908](WORKING_NOTES/908-init-startup-thread-stack-top-and-constructor-contract-20261004.md)
 executes pinned call preparations and retail constructor. Stack tops
 `0x8002D8B0` / `0x800318B0`, saved SP top-minus-sixteen; constructor writes

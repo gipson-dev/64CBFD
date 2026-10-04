@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 910](WORKING_NOTES/910-init-bitmap-shared-fill-mask-lifetime-trials-20261004.md)
+  rejects two shared fill/mask lifetime trials: twenty/twenty-two O2 words
+  versus nineteen retail. All seven host shapes pass 553 fixture combinations,
+  and 33 retained-contract checks pass. Production conversion remains open.
+
+- Init [Note 909](WORKING_NOTES/909-init-resume-conversion-readiness-audit-20261004.md)
+  verifies all 47 remaining assembly source owners, records 38 passing focused
+  checks and updates the conversion work list. Bitmap/MMIO matches and decoder
+  fitting/ownership remain open. Production and README aggregates unchanged.
+
 - Init [Note 908](WORKING_NOTES/908-init-startup-thread-stack-top-and-constructor-contract-20261004.md)
   pins executed startup thread arguments and constructor publications/write
   extent. Constructor +0x130 is not later context +0x230; original neighbor

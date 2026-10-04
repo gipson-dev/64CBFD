@@ -13,7 +13,7 @@ def main():
     source = "../tools/experiments/init_bitmap_ordered.c"
     retail = (cwd / "conker.us.bin").read_bytes()[0x5BE0:0x5C2C]
     report = []
-    for shape in (1, 2, 3, 4, 5):
+    for shape in (1, 2, 3, 4, 5, 6, 7):
         prefix = "build/init-bitmap-ordered/shape%d" % shape
         host = prefix + "-host"
         subprocess.run(["cc", "-O2", "-std=c99", "-Wall", "-Wextra",
