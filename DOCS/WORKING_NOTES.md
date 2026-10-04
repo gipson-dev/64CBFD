@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 939](WORKING_NOTES/939-game-curve-update-direct-match-and-data-placement-gate-20261004.md)):
+Curve update `func_150E7C9C` matches all 212 words directly, original 0xA8 frame,
+no guards. Thirty-two tests pass; Game 2605 / total 3278 exact. A physical
+coefficient check fails: correct data is displaced by 0x15C0. Audit Game-data
+placement before further conversions or guest acceptance; README counts updated.
+
 2026-10-04 ([Note 938](WORKING_NOTES/938-game-random-curve-record-direct-byte-match-20261004.md)):
 `func_150E7994`'s sampled curve builder now matches all 194 words directly from
 C, with original 0xC8 frame and no guards. Twenty-six focused tests pass;

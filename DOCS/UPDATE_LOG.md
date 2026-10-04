@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 939](WORKING_NOTES/939-game-curve-update-direct-match-and-data-placement-gate-20261004.md)
+  recovers `func_150E7C9C`, all 212 words directly matching with no guards.
+  Thirty-two tests pass; README shows Game 2605 / total 3278 exact. A separate
+  physical Game-data placement check fails for the pan coefficient, so runtime
+  acceptance is open and layout auditing takes priority over another batch.
+
 - Game [Note 938](WORKING_NOTES/938-game-random-curve-record-direct-byte-match-20261004.md)
   replaces `func_150E7994`'s placeholder with its sampled curve builder and
   matches all 194 words directly from C. Twenty-six focused tests pass; no

@@ -74,7 +74,7 @@ typedef struct CurvePayload113D60 {
     f32 value;
     f32 progress;
     s16 count;
-    s16 fieldA;
+    s16 cursor;
 } CurvePayload113D60;
 s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, s32 duration,
                  s32 opacity, s32 size0, s32 size1, s32 *pair, s32 mode,
@@ -346,7 +346,7 @@ void *func_150E7994(s16 count, f32 value, u8 slot, s32 context) {
 
     payload.value = value;
     payload.count = count;
-    payload.fieldA = 0;
+    payload.cursor = 0;
     payload.progress = 0.0f;
     record = func_151491F4(300, -1, 16, 1, 12, count * 8 + 16, slot, context);
     if (record != NULL) {
@@ -381,8 +381,31 @@ void *func_150E7994(s16 count, f32 value, u8 slot, s32 context) {
     return record;
 }
 
-s32 func_150E7C9C() {
-    return 0;
+void func_150E7C9C(u8 *record) {
+    CurvePayload113D60 *payload = (CurvePayload113D60 *)(record + 0x28);
+    /* Only X/Y are initialized; the third slot retains the retail frame extent. */
+    f32 position[3];
+    f32 sample;
+    s32 flag0;
+    s32 flag1;
+
+    payload->progress += payload->value * D_800BE9A4;
+    while (payload->progress > 1.0f && payload->cursor != payload->count) {
+        position[0] = ((f32 *)payload)[payload->cursor * 2 + 4];
+        position[1] = ((f32 *)payload)[payload->cursor * 2 + 5];
+        sample = func_150ADA68();
+        flag0 = (func_150ADA20() & 1) ? 4 : 0;
+        flag1 = (func_150ADA20() & 1) ? 2 : 0;
+        func_150E75A0(position, sample * 12.0f + 30.0f, 300, (u8)(flag1 | flag0),
+                     (u32)(func_150ADA68() * 25.0f + 100.0f), 255, 1, 255,
+                     NULL, 0, record[0xC], record[1]);
+        func_10010F30(0x360, 0x7FFF, (u8)(position[0] * 0.4315068424f + 64.0f), 0, 0);
+        payload->progress -= 1.0f;
+        payload->cursor++;
+    }
+    if (payload->cursor >= payload->count) {
+        *(s16 *)(record + 0xE) = -1;
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_113D60/func_150E7FEC.s")

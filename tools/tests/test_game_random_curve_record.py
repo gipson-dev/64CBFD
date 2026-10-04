@@ -79,7 +79,7 @@ void *memcpy(void *destination,const void *source,u32 length) {
     u32 i;
     if(destination!=record+0x28 || length!=12 || allocatorCalls!=1 || copyCalls || floatCalls || weightCalls
        || bits(payload->value)!=bits(expectedValue) || bits(payload->progress)!=0
-       || payload->count!=expectedCount || payload->fieldA) error=5;
+       || payload->count!=expectedCount || payload->cursor) error=5;
     copyCalls++;
     for(i=0;i<length;i++) ((u8 *)destination)[i]=((const u8 *)source)[i];
     return destination;
@@ -88,7 +88,7 @@ f32 func_150ADA68(void) {
     int index=floatCalls++;
     CurvePayload113D60 *payload=(CurvePayload113D60 *)(record+0x28);
     if(index>=4 || copyCalls!=1 || weightCalls || bits(payload->value)!=bits(expectedValue)
-       || bits(payload->progress)!=0 || payload->count!=expectedCount || payload->fieldA) { error=6; return 0; }
+       || bits(payload->progress)!=0 || payload->count!=expectedCount || payload->cursor) { error=6; return 0; }
     return samples[index];
 }
 static f32 weight(int kind,f32 parameter) {
@@ -208,7 +208,7 @@ for(i=0;i<6;i++) for(j=0;j<5;j++) {
         self.run_host(r'''
 if(sizeof(CurvePayload113D60)!=12 || sizeof(EmitterPosition113D60)!=8 || sizeof(RandomPacket113D60)!=8) return 1;
 if(__builtin_offsetof(CurvePayload113D60,progress)!=4 || __builtin_offsetof(CurvePayload113D60,count)!=8
-   || __builtin_offsetof(CurvePayload113D60,fieldA)!=10) return 2;
+   || __builtin_offsetof(CurvePayload113D60,cursor)!=10) return 2;
 ''')
         compiler = self.root / 'ido/ido5.3_recomp/cc'
         if not compiler.is_file():

@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game curve update: [Note 939](WORKING_NOTES/939-game-curve-update-direct-match-and-data-placement-gate-20261004.md)
+recovers `func_150E7C9C` and confirms the payload cursor. All 212 words emit
+directly from C, original 0xA8 frame, no guards; builder remains 194/194 exact.
+Thirty-two focused tests pass, including the actual builder/update/helper chain.
+Fresh matcher Game 2605 / total 3278 exact, zero instruction address drift.
+**Runtime gate:** linked pan coefficient is at 0x800A2910 instead of 0x800A1350;
+the latter contains 0x4675E800, not 0x3EDCEE77. Audit Game-data placement next,
+before another conversion batch. Instruction matching is not data acceptance.
+
 Game random curve record: [Note 938](WORKING_NOTES/938-game-random-curve-record-direct-byte-match-20261004.md)
 recovers `func_150E7994`'s packet, allocator, metadata and sampled curve body.
 All 194 words emit directly from C, with original 0xC8 frame and no guards.
