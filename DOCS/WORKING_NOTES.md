@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 855](WORKING_NOTES/855-init-cache-interaction-matrix-and-simple-seed-combination-20261003.md)):
+The 32-combination cache/builder matrix selects existing simple-operation
+arithmetic with the ABI seed cursor. All O2 links save 16, O1 32/32/16;
+stack bounds remain unchanged. Best linked O2 is 4,768, 784 over retail.
+Literal/EOB/signed-stale gates and bounded qualification pass: 42 tests
+pass, one corpus skip. Production/source bodies/adapter/defaults/totals
+unchanged; structural fitting and changed corpus/ownership/hardware open.
+
 2026-10-03 ([Note 854](WORKING_NOTES/854-init-abi-seed-pointer-cursor-and-ordered-register-copy-20261003.md)):
 Opt-in six-word ABI seed cursor saves frame O2 64 linked bytes and
 aligned/packed O2 eight stack bytes. O1 linked growth is explicit. Best

@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init option interaction fitting: [Note 855](WORKING_NOTES/855-init-cache-interaction-matrix-and-simple-seed-combination-20261003.md)
+measures all 32 cache/builder combinations on both packed profiles. Adding
+only existing arithmetic simple-operation selection wins all size/bound
+metrics. All O2 links save 16; O1 saves 32/32/16, with unchanged stack costs.
+Best packed O2 is 4,768, 784 over retail; descent/clearance remain 3,240/88.
+All 492 bounded contexts and 132 builders pass, including literal/EOB and
+signed stale-word cells. Final module/helper/default checks: 42 pass, one
+corpus skip. Fitting and changed corpus/ownership/hardware remain open;
+production/source bodies/adapter/defaults/README totals unchanged.
+
 Init ABI seed fitting: [Note 854](WORKING_NOTES/854-init-abi-seed-pointer-cursor-and-ordered-register-copy-20261003.md)
 retains an opt-in six-word seed pointer cursor with ordered read/write gates.
 Frame O2 saves 64 linked bytes; aligned/packed O2 save eight stack bytes.

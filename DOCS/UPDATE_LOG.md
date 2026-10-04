@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 855](WORKING_NOTES/855-init-cache-interaction-matrix-and-simple-seed-combination-20261003.md)
+  banks a freshly qualified existing-option combination after 32-way fitting.
+  Best O2 linked text falls to 4,768, 784 over retail, with unchanged stack
+  bounds. Explicit literal/EOB/stale-word and bounded/helper/default checks
+  pass. Changed corpus and fitting remain open. Production/source bodies/
+  adapter/defaults/README totals unchanged; unrelated Game work excluded.
+
 - Init [Note 854](WORKING_NOTES/854-init-abi-seed-pointer-cursor-and-ordered-register-copy-20261003.md)
   banks opt-in ABI seed fitting with six ordered register-word reads/writes.
   Frame O2 saves 64 linked bytes; aligned/packed O2 save eight stack bytes.
