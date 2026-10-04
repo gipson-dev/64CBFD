@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init descending count-clear trials: [Note 884](WORKING_NOTES/884-init-builder-descending-count-clear-trials-20261004.md)
+measures post-/pre-decrement clears of all 17 buckets. Neither reduces
+complete O2 core text; post-decrement adds eight bytes to both core bounds,
+and both forms grow O1 text. Both removed, source restored exactly.
+Thirteen focused retained gates pass, including direct builder boundaries.
+Qualified linked O2 stays 4,576 / 592 excess; production/README unchanged.
+
 Init stored-loop fitting trials: [Note 883](WORKING_NOTES/883-init-stored-output-cursor-and-countdown-trials-20261004.md)
 measures an output pointer cursor and a length countdown. Both grow whole
 packed core text sixteen bytes in O2/O1 and enlarge the stored frame;

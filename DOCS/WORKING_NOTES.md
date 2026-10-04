@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 884](WORKING_NOTES/884-init-builder-descending-count-clear-trials-20261004.md)):
+Descending count-clear forms do not reduce whole O2 text; post-decrement
+adds eight bytes to core bounds, both grow O1 text. Both removed, source
+restored exactly. Thirteen focused retained gates pass. No production change;
+qualified linked O2 remains 4,576 / 592 excess.
+
 2026-10-04 ([Note 883](WORKING_NOTES/883-init-stored-output-cursor-and-countdown-trials-20261004.md)):
 Stored output-cursor and length-countdown forms each grow O2/O1 core text
 sixteen bytes and increase stored frames. Maximum core bound unchanged,

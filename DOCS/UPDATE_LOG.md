@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 884](WORKING_NOTES/884-init-builder-descending-count-clear-trials-20261004.md)
+  rejects descending count-clear forms: no aggregate O2 saving, O1 growth,
+  and a stack penalty for post-decrement. Source restored exactly; thirteen
+  focused retained gates pass. Production/defaults/README unchanged.
+
 - Init [Note 883](WORKING_NOTES/883-init-stored-output-cursor-and-countdown-trials-20261004.md)
   rejects stored output-pointer and countdown forms: both add sixteen core
   text bytes in each profile and increase stored-frame costs. Source restored
