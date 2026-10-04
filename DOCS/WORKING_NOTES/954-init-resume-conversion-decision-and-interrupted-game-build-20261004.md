@@ -91,6 +91,12 @@ python3 -m unittest tools.tests.test_init_decompressor_distance_operation_local.
 
 ## Interrupted Game Work
 
+**Subsequently resolved by
+[Note 956](956-game-child-emission-callback-recovery-and-fitting-20261004.md):**
+the child now fits 219 words, thirteen focused tests qualify the connected C
+bodies, and a fresh production relink succeeds. The failure below is the
+historical interrupted-build receipt, not the current build state.
+
 The interrupted production build completed with an error, not a successful
 relink. The preserved `func_150E8D5C` child-emission recovery compiles to
 `0x384` bytes (225 words), exceeding its `0x380`-byte (224-word) retail slot
@@ -115,7 +121,7 @@ separate from the requested Init conversion assessment.
 - [x] Record the interrupted Game build failure without altering its source.
 - [ ] Fit and qualify a new small-leaf implementation before adoption.
 - [ ] Resolve connected decoder/glyph text, placement and stack ownership.
-- [ ] Repair and qualify the preserved Game child callback before banking it.
+- [x] Repair and qualify the preserved Game child callback: resolved by Note 956.
 
 No production Init source/profile/guard changes, README aggregate changes,
 ROM promotion, sibling or Release changes, runtime qualification or push.

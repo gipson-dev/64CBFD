@@ -75,8 +75,9 @@ successful dirty-source production rebuild.
 - [x] Reject the oversized non-matching body without production changes.
 - [ ] Require a new full-slot compiler explanation before another bitmap trial.
 - [ ] Resolve decoder/glyph connected fitting and ownership before adoption.
-- [ ] Resume the preserved Game child callback's one-word fitting failure,
-  then qualify its complete callback chain and fresh production link.
+- [x] Resume the preserved Game child's fitting failure: resolved by
+  [Note 956](956-game-child-emission-callback-recovery-and-fitting-20261004.md),
+  with connected C tests and a fresh production link.
 
 Init remains 492 C / 47 assembly entries. README totals, production Init
 profiles/guards and both dirty Game files are unchanged by this experiment.

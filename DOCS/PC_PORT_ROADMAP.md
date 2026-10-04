@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Child-emission source boundary - 2026-10-04
+
+DECOMP `func_150E8D5C` now has its complete child-emission C body and qualified
+pointer interfaces; see [Note 956](WORKING_NOTES/956-game-child-emission-callback-recovery-and-fitting-20261004.md).
+The 219-word body fits the 224-word slot, but remains non-matching. Fresh guest
+link and bounded source/chain tests pass; this is not accepted PC gameplay.
+
+- [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
+- [x] Audit the sibling's active CMake source input without changing its files.
+- [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a
+  zero-return stub, and the scoped source search finds no named override.
+- [ ] Validate through the host guest/RDRAM interfaces and natural effect behavior.
+
+No host source/build, binary, save or frozen Release changes are included in
+this DECOMP checkpoint. The dated aggregate table below is historical; current
+DECOMP aggregates remain in README and `CURRENT_STATUS.md`.
+
 ## Cross-project progress - 2026-10-02
 
 The active Windows port remains in sibling `64CBFDOGL`; this repository owns

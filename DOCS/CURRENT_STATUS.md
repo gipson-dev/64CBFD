@@ -21,13 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game child-emission callback: [Note 956](WORKING_NOTES/956-game-child-emission-callback-recovery-and-fitting-20261004.md)
+finishes `func_150E8D5C` and its typed pointer interfaces. Two flag shifts resolve
+the interrupted 225-word build failure: C fits 219 words / 0x120 frame in the
+224-word slot, with 213 raw differences and no guards. Fresh relink preserves
+complete Init code/data, Game data and exact constructor/wrappers/helpers.
+Thirteen new tests qualify the actual child/wrapper/spherical bodies and parent
+payload connection; all 121 combined tests pass, no skips. Child-placeholder
+and fitting gates are resolved in source
+and tests, not gameplay; README aggregates unchanged. The sibling PC source
+still has a zero-return child stub, so host synchronization remains open.
+Next semantic target is `func_150E9178`, 153 words; downstream rendering and
+byte matching remain separate tasks.
+
 Init bitmap right-shift trial: [Note 955](WORKING_NOTES/955-init-bitmap-fill-value-right-shift-mask-trial-20261004.md)
 tests reusing `0xFF` for the final mask. IDO rematerializes the constant and
 retains XOR: 20 optimized words against nineteen retail. Eight new tests
 qualify 501 completed model pairs/six prefixes; 34 combined tests pass, no skips.
 Reject adoption; Init ownership, existing exact code/data and README unchanged.
 Older nineteen-word one-based-mask forms also exist but do not match retail.
-Next broader recovery is the preserved Game child's one-word fitting failure.
+Its subsequent Game-child fitting recovery is completed by Note 956.
 
 Init resume: [Note 954](WORKING_NOTES/954-init-resume-conversion-decision-and-interrupted-game-build-20261004.md)
 confirms 492 C / 47 assembly entries (12,252 retained bytes). All retained
@@ -36,10 +49,8 @@ exact. Ninety-three focused tests plus one freshly compiled decoder size check
 pass, no skips. Two small leaves remain candidates, but no replacement is ready
 to adopt; decoder is still 528 bytes over, and connected glyph fitting/ownership
 remain open. Thirty boot/hardware/SDK owners stay assembly. README unchanged.
-The interrupted Game build failed: preserved `func_150E8D5C` C is 225 words
-against its 224-word slot. Both dirty Game files remain unqualified and intact;
-the last successful ELF does not represent these edits. Resolve the one-word
-excess and child/wrapper chain tests before the next Game production checkpoint.
+Its interrupted Game build then failed at 225 words against 224; that gate is
+now resolved by Note 956's fitted child, chain tests and fresh production link.
 
 Game descriptor-position writer: [Note 953](WORKING_NOTES/953-game-descriptor-position-writer-and-weighted-chain-recovery-20261004.md)
 restores all four `func_1514470C` modes and the void interface. Semantic C fits
@@ -48,8 +59,8 @@ guards. Eleven new tests connect the actual weighted caller/writer/helpers;
 all 100 combined tests pass. Fresh relink preserves complete Init code/data,
 Game data and exact neighbors; sibling already has its recompiled writer.
 The uninitialized-position placeholder gate is resolved in source/tests, not
-accepted gameplay. Next recover child callback `func_150E8D5C` (224 words),
-then sibling `func_150E9178`; matching totals and README remain unchanged.
+accepted gameplay. Its child callback `func_150E8D5C` is subsequently recovered
+by Note 956; next is sibling `func_150E9178`. Matching totals/README unchanged.
 
 Init address-difference trial: [Note 952](WORKING_NOTES/952-init-bitmap-address-difference-induction-trial-20261004.md)
 tests a new unsigned subtraction/zero-branch shape for `func_10005BE0`.
@@ -74,8 +85,8 @@ recovers `func_150E8B1C`'s complete code-0x33 weighted emission body. It fits
 144 words and the original 0xC8 frame, but 44 words differ; no guards added.
 Eighty-two tests and fresh link pass; full Init/Game data and exact neighbors
 are preserved. Aggregates/README unchanged. Its then-placeholder position
-writer is now restored by Note 953; child callback `func_150E8D5C` remains
-unrecovered, so the actual guest pipeline is still not qualified.
+writer is now restored by Note 953 and child callback `func_150E8D5C` by Note 956.
+Downstream/runtime gates remain, so the actual guest pipeline is not qualified.
 
 Game event payload creators: [Note 949](WORKING_NOTES/949-game-event-payload-creators-and-connected-dispatch-match-20261004.md)
 finishes the preserved `func_150E8A80` and `func_150E90DC` edits. Both match

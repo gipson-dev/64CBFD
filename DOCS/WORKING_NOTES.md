@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-04 ([Note 956](WORKING_NOTES/956-game-child-emission-callback-recovery-and-fitting-20261004.md)):
+Finish the preserved child-emission recovery `func_150E8D5C`: 219 C words /
+0x120 frame in 224 retail words, 213 differences, no guards. Two one-bit flag
+shifts remove the interrupted fitting failure. Thirteen new tests connect the
+actual child, typed wrapper, spherical helper and parent payload; fresh link
+preserves full Init code/data, Game data and exact neighbors/constructor/wrappers.
+All 121 combined tests pass, no skips.
+README totals unchanged. PC source still has a child stub; synchronization and
+runtime acceptance remain open. Next semantic target: `func_150E9178`.
+
 2026-10-04 ([Note 955](WORKING_NOTES/955-init-bitmap-fill-value-right-shift-mask-trial-20261004.md)):
 New shared fill-value/right-shift mask experiment emits 20 O2 words, still
 over nineteen retail; compiler rematerializes `0xFF` and retains XOR. Eight

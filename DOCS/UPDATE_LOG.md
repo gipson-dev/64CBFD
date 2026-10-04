@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 956](WORKING_NOTES/956-game-child-emission-callback-recovery-and-fitting-20261004.md)
+  finishes `func_150E8D5C` and pointer interfaces: 219 words / 0x120 frame,
+  213 differences, no guards, resolving the 225 / 224 fitting failure.
+  Thirteen new child/chain tests and fresh relink preserve full Init code/data,
+  Game data and exact constructor/wrappers/helpers. All 121 combined tests pass,
+  no skips; README aggregates unchanged.
+  PC-port child source is still a stub: synchronization and gameplay remain
+  open, with `func_150E9178` the next DECOMP semantic target.
+
 - Init [Note 955](WORKING_NOTES/955-init-bitmap-fill-value-right-shift-mask-trial-20261004.md)
   rejects a new right-shift mask/value-lifetime shape: 20 optimized words
   against nineteen retail. Eight new tests qualify 501 pairs/six prefixes;

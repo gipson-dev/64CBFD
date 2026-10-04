@@ -21,10 +21,11 @@ are added. This is full semantic recovery, **not a byte-exact match**.
 
 The position-placeholder/uninitialized-child-coordinate gate from
 [Note 950](950-game-weighted-event-emitter-semantic-recovery-20261004.md)
-is resolved in source and the bounded connected tests below. **The complete
-effect pipeline is still incomplete:** child callback `func_150E8D5C` remains
-a placeholder. Do not claim guest gameplay, emitted child behavior or renderer
-acceptance from this recovery.
+is resolved in source and the bounded connected tests below. The child callback
+`func_150E8D5C` was still a placeholder at this checkpoint; that source gate is
+now resolved by [Note 956](956-game-child-emission-callback-recovery-and-fitting-20261004.md).
+The complete effect pipeline remains unqualified: downstream update/rendering,
+guest gameplay and host synchronization are separate from these recoveries.
 
 Representation and matching aggregates are unchanged because the replaced
 placeholder was already counted as C and the replacement is not byte-exact.
@@ -176,8 +177,8 @@ runtime acceptance is inferred, and no sibling file or frozen Release changed.
 - [x] Qualify actual weighted caller/writer/helper connections and callback timing.
 - [x] Fit the original allocation and preserve physical data/exact neighbors.
 - [x] Remove the position-placeholder gate from the current handoff.
-- [ ] Recover code-0x34 child callback `func_150E8D5C` next: 896 bytes / 224 words,
-  original 0x108 frame, owned by `generated_113D60.c` / `asm/113D60.s`.
+- [x] Recover code-0x34 child callback `func_150E8D5C`: resolved by Note 956,
+  219 C words / 0x120 frame in the 224-word slot; still non-matching.
 - [ ] Then recover sibling callback `func_150E9178`, 612 bytes / 153 words.
 - [ ] Pursue byte matching of the position writer and weighted emitter separately.
 - [ ] Qualify actual guest effect behavior only after the connected callbacks exist.

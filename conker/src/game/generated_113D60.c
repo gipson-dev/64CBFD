@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 extern void *D_800D9A20[];
 extern f32 D_800A1378;
 extern f32 D_800BE9A4;
@@ -29,6 +30,14 @@ extern f32 D_800A1380;
 extern f32 D_800A1384;
 extern f32 D_800A1388;
 extern f32 D_800A138C;
+extern f32 D_800A1390;
+extern f32 D_800A1394;
+extern f32 D_800A1398;
+extern f32 D_800A139C;
+extern f32 D_800A13A0;
+extern f32 D_800A13A4;
+extern f32 D_800A13A8;
+extern f32 D_800A13AC;
 extern f32 D_800A13B0;
 extern f32 D_800A13B4;
 extern s32 D_80088A5C[2];
@@ -119,6 +128,46 @@ typedef struct EventWeightNode113D60 {
     struct EventWeightNode113D60 *next;
 } EventWeightNode113D60;
 
+typedef struct ChildEmissionDescriptor113D60 {
+    u32 field00;
+    u32 field04;
+    s16 field08;
+    s16 field0A;
+    u32 field0C;
+    u32 field10;
+    u8 field14;
+    u8 field15;
+    u8 field16;
+    u8 field17;
+    u8 field18;
+    u8 field19;
+    u8 field1A;
+    u8 field1B;
+    u8 field1C;
+    u8 field1D;
+    s16 field1E;
+    s16 field20;
+    s16 field22;
+    f32 field24;
+    f32 field28;
+    f32 field2C;
+    vertex position;
+    f32 field3C;
+    f32 field40;
+    f32 field44;
+    f32 field48;
+    f32 field4C;
+    f32 field50;
+    f32 field54;
+    u32 flags;
+    u8 reserved5C[4];
+    u8 field60;
+    u8 field61;
+    u8 field62;
+    u8 field63;
+    u8 reserved64[0xC];
+} ChildEmissionDescriptor113D60;
+
 typedef struct WorldEmitterDescriptor113D60 {
     s16 field00;
     s16 field02;
@@ -165,6 +214,8 @@ f32 func_150ADA68(void);
 f32 func_151423D8(u8 angle);
 void func_1514470C(void *descriptor, void *position);
 f32 *func_15144B34(s32 player);
+void func_151436B4(f32 angle0, f32 angle1, f32 radius, vertex *position);
+void *func_15130374(void *descriptor, u8 mode, s32 payloadBytes, u8 slot, s32 context);
 s32 func_1514ECE0(void *node, s16 key, void **result);
 void func_150E8930(void);
 void func_150E8A80(void);
@@ -654,8 +705,85 @@ void func_150E8B1C(u8 *record) {
     }
 }
 
-s32 func_150E8D5C() {
-    return 0;
+void func_150E8D5C(u8 *record) {
+    void *result;
+    EventPositionPayload113D60 *payload;
+    ChildEmissionDescriptor113D60 descriptor;
+    f32 fraction;
+    f32 bonus;
+    f32 period;
+    f32 angle0;
+    f32 angle1;
+    f32 radius;
+    u32 firstFlag;
+    u32 secondFlag;
+    s16 size;
+
+    fraction = func_150ADA68();
+    payload = (EventPositionPayload113D60 *)(record + 0x28);
+    payload->parameters.field08 += (payload->parameters.field00 + fraction * payload->parameters.field04) * D_800BE9A4;
+    if (payload->parameters.field08 > 1.0f) {
+        bonus = D_800A1390;
+        period = D_800A1394;
+        /* Reserved bytes have no retail initializer; write only defined fields. */
+        descriptor.field00 = 0x200005;
+        descriptor.field04 = 0;
+        descriptor.field08 = 0xE01;
+        descriptor.field0C = 0;
+        descriptor.field10 = 0;
+        descriptor.field17 = 255;
+        descriptor.field1C = 255;
+        descriptor.field1D = 0x16;
+        descriptor.field1E = 30;
+        descriptor.field20 = 8;
+        descriptor.field3C = 0.0f;
+        descriptor.field40 = 0.0f;
+        descriptor.field44 = 0.0f;
+        descriptor.field48 = 0.0f;
+        descriptor.field50 = 0.0f;
+        descriptor.field54 = 0.0f;
+        descriptor.flags = 0x801E05;
+        descriptor.field60 = 3;
+        descriptor.field61 = 3;
+        descriptor.field62 = 0x1A;
+        descriptor.field63 = 255;
+
+        do {
+            size = ((u32)func_150ADA20() & 15) + 40;
+            descriptor.field0A = size;
+            descriptor.field22 = size;
+            descriptor.field1B = (u32)func_150ADA20() % 119 + 100;
+            fraction = func_150ADA68() * 59.0f + 80.0f;
+            descriptor.field28 = fraction;
+            descriptor.field2C = fraction;
+            fraction = func_150ADA68();
+            descriptor.field24 = (fraction * D_800A1398 + D_800A139C) * D_800A13A0;
+            descriptor.flags &= ~0xC0;
+            firstFlag = ((u32)func_150ADA20() & 1) << 7;
+            secondFlag = ((u32)func_150ADA20() & 1) << 6;
+            descriptor.flags |= firstFlag | secondFlag;
+            descriptor.field14 = 0xF;
+            descriptor.field15 = 0x11;
+            descriptor.field16 = 5;
+            descriptor.field18 = 0x44;
+            descriptor.field19 = 0x3C;
+            descriptor.field1A = 0x27;
+            angle0 = func_150ADA68();
+            angle1 = func_150ADA68();
+            radius = func_150ADA68() * 20.0f;
+            func_151436B4(angle0 * period, angle1 * period, radius, &descriptor.position);
+            descriptor.position.x += payload->position.x;
+            descriptor.position.y += payload->position.y;
+            descriptor.position.z += payload->position.z;
+            fraction = func_150ADA68();
+            descriptor.field4C = (fraction * D_800A13A4 + D_800A13A8) * D_800A13AC;
+            result = func_15130374(&descriptor, 0, 4, record[0xC], record[1]);
+            if (result != NULL) {
+                memcpy((u8 *)result + 0xA8, &bonus, 4);
+            }
+            payload->parameters.field08 -= 1.0f;
+        } while (payload->parameters.field08 > 1.0f);
+    }
 }
 
 void func_150E90DC(void) {

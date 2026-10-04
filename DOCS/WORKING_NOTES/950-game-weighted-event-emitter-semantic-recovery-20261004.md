@@ -172,10 +172,12 @@ incomplete guest pipeline could read an uninitialized child position. This
 note's original fixtures use an explicit position-writer stub; Note 953's
 connected tests now exercise the actual writer and its two C helpers instead.
 
-The writer now has a complete semantic body, but the code-0x34 child updater
-`func_150E8D5C` and sibling `func_150E9178` remain unrecovered. They are the next
-connected recovery steps. Byte matching of this emitter and the position writer
-remain separate open tasks; no runnable/accepted guest effect chain is claimed.
+The writer has a complete semantic body. The code-0x34 child updater
+`func_150E8D5C` is now also recovered and connected to the parent's payload in
+[Note 956](956-game-child-emission-callback-recovery-and-fitting-20261004.md).
+Sibling callback `func_150E9178` and downstream record update/rendering remain
+unfinished. Byte matching of the emitter, writer and child are separate open
+tasks; no runnable/accepted guest effect chain is claimed.
 
 No compressed-ROM or host-port promotion is warranted by this checkpoint.
 No sibling build, Release modification, real-save change, gameplay acceptance
