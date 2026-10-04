@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game/Init [Note 916](WORKING_NOTES/916-game-object-position-sound-adapter-and-init-return-contract-20261004.md)
+  recovers the 37-word nullable object-position sound adapter and corrects
+  its Init callee's u16 return contract without changing that 29-word slot.
+  Thirteen tests pass; full Init sections exact, Game 2600 / total 3273 exact.
+
 - Game [Note 915](WORKING_NOTES/915-game-status-record-reset-recovery-and-match-20261004.md)
   finishes `func_151E5034` as a direct 37-word C match without guards. Nine
   focused tests and fresh production ELF/progress refresh pass. Game 2599 exact,

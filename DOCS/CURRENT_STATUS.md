@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game position sound adapter: [Note 916](WORKING_NOTES/916-game-object-position-sound-adapter-and-init-return-contract-20261004.md)
+recovers `func_1509F6E8`'s nullable lookup, truncated coordinates and handle
+forwarding as a direct 37-word C match. Corrected Init `func_10010F88` u16
+return remains exact across 29 words; complete Init code/data remain retail.
+Thirteen tests pass; fresh matcher Game 2600 exact / total 3273, zero drift.
+README aggregate rows updated; unrelated actor/timeline work remains unstaged.
+
 Game status record reset: [Note 915](WORKING_NOTES/915-game-status-record-reset-recovery-and-match-20261004.md)
 finishes `func_151E5034` as semantic C: sixteen selected zero stores with
 retail pointer reloads. All 37 linked words match directly, no guards; nine

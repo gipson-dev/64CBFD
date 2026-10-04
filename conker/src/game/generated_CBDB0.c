@@ -75,7 +75,16 @@ void func_1509F6B0(s32 arg0, u16 arg1, s16 arg2, u8 arg3) {
 }
 
 s32 func_1509F6E8(s32 arg0, s32 arg1, u16 arg2, s32 arg3, s32 arg4) {
-    return 0;
+    u8 *object = (u8 *)func_1505EEF4(arg1);
+    s32 x, y, z;
+
+    if (object == 0) {
+        return 0;
+    }
+    x = (s32)*(f32 *)(object + 0x14);
+    y = (s32)*(f32 *)(object + 0x18);
+    z = (s32)*(f32 *)(object + 0x1C);
+    return func_10010F88(arg0, arg2, 0, 0, 0, x, y, z, arg3, arg4);
 }
 
 // Matches retail directly from the explicit coordinate temporaries.

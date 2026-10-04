@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 916](WORKING_NOTES/916-game-object-position-sound-adapter-and-init-return-contract-20261004.md)):
+Game `func_1509F6E8` now directly matches all 37 words after nullable object
+lookup and position/sound forwarding recovery. Init `func_10010F88` returns
+its u16 handle explicitly; all 29 words and complete Init code/data stay exact.
+Thirteen tests pass, Game 2600 exact / total 3273, zero drift. README aggregates only.
+
 2026-10-04 ([Note 915](WORKING_NOTES/915-game-status-record-reset-recovery-and-match-20261004.md)):
 Game `func_151E5034` replaces its false zero-return placeholder with sixteen
 selected record clears and repeated pointer loads. All 37 words match directly
