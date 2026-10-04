@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init table-derived allocation fitting: [Note 867](WORKING_NOTES/867-init-builder-table-derived-allocation-fitting-20261003.md)
+adds opt-in direct table/header/commit dataflow. Packed O2 falls to 4,704
+linked bytes / 720 excess, public builder 333 words; packed O1 text holds.
+All six stack bounds hold. The new observer is corrected to retail's s3
+counter at 0x10006C38, not its once-at-return FPR19 write, and ordered
+allocation values pass across six builds. Fresh corrected guest run has
+32 passes / one corpus skip, plus fourteen helper passes; all observed
+descents match bounds. Omitted-option text matches baseline. Defaults/production/
+README totals unchanged; changed corpus and fitting/ownership/hardware remain open.
+
 Init parent-ascent cursor fitting: [Note 866](WORKING_NOTES/866-init-parent-ascent-offset-cursor-fitting-20261003.md)
 adds opt-in descending parent-offset traversal. Packed O2 falls to 4,720
 linked bytes / 736 excess with unchanged 392-byte core bound and 200-byte

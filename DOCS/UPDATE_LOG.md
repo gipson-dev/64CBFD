@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 867](WORKING_NOTES/867-init-builder-table-derived-allocation-fitting-20261003.md)
+  banks opt-in table-derived allocation. Packed O2 saves 16 linked bytes
+  to 4,704 / 720 excess, with all six stack bounds unchanged. Ordered
+  allocation gate now observes actual retail s3 updates at 0x10006C38;
+  the original once-at-return FPR19 assumption/failure is recorded.
+  Corrected gate and omitted-option text checks pass; fresh whole run has
+  32 passes / one corpus skip, plus fourteen helper passes, observed
+  descents matching bounds. Production/defaults/README totals unchanged, unrelated
+  Game work preserved and excluded; changed corpus and fitting remain open.
+
 - Init [Note 866](WORKING_NOTES/866-init-parent-ascent-offset-cursor-fitting-20261003.md)
   banks opt-in parent-offset cursor fitting. Packed O2 linked text falls
   to 4,720 / 736 excess with unchanged stack bounds; packed O1 holds.

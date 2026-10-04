@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-03 ([Note 867](WORKING_NOTES/867-init-builder-table-derived-allocation-fitting-20261003.md)):
+Opt-in table-derived allocation saves packed O2 16 linked bytes to 4,704 /
+720 excess, with all six stack bounds unchanged. Ordered commits match
+retail s3 increments at 0x10006C38; the incorrect FPR19 lifetime gate and
+failure are recorded. Corrected observer and omitted-option text checks
+pass; fresh whole run has 32 passes / one corpus skip, plus fourteen helper
+passes, observed descents matching bounds. Changed corpus and fitting/
+ownership/hardware remain open; production/defaults/README totals unchanged.
+Unrelated Game work is preserved.
+
 2026-10-03 ([Note 866](WORKING_NOTES/866-init-parent-ascent-offset-cursor-fitting-20261003.md)):
 Opt-in parent-offset cursor saves packed O2 16 linked bytes to 4,720 /
 736 excess, with unchanged stack bounds and packed O1 text. Other-profile

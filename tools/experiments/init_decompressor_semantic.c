@@ -224,6 +224,12 @@ static uint32_t take_bits(InitDecodeState *s, uint32_t width) {
 #define BUILD_COMMIT_ALLOCATION ((void)0)
 #endif
 
+#ifdef INIT_DECODE_BUILDER_ALLOCATION_TABLE
+#define BUILD_NEW_TABLE table
+#else
+#define BUILD_NEW_TABLE next
+#endif
+
 #ifdef INIT_DECODE_PACKED_ENTRY
 #define BUILD_ENTRY_OPERATION entryOperation
 #define BUILD_ENTRY_BITS entryBits
@@ -386,11 +392,17 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                     }
                 }
                 size = 1u << BUILD_SHIFT(levelBits);
-                next = BUILD_ALLOCATED + 1;
-                *link = next;
+                BUILD_NEW_TABLE = BUILD_ALLOCATED + 1;
+                *link = BUILD_NEW_TABLE;
+#ifdef INIT_DECODE_BUILDER_ALLOCATION_TABLE
+                link = &ENTRY_VALUE(&BUILD_WORKSPACE[table - 1]);
+#else
                 link = &ENTRY_VALUE(&BUILD_WORKSPACE[BUILD_ALLOCATED]);
+#endif
                 *link = 0;
+#ifndef INIT_DECODE_BUILDER_ALLOCATION_TABLE
                 table = next;
+#endif
                 SET_TABLE(s, level, table);
                 if (level != 0) {
                     InitDecodeEntry *parent;
@@ -405,10 +417,14 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #endif
                     ENTRY_OPERATION(parent) = levelBits + 16;
                     ENTRY_BITS(parent) = width;
-                    ENTRY_VALUE(parent) = next;
-                    value = next;
+                    ENTRY_VALUE(parent) = BUILD_NEW_TABLE;
+                    value = BUILD_NEW_TABLE;
                 }
+#ifdef INIT_DECODE_BUILDER_ALLOCATION_TABLE
+                BUILD_ALLOCATED = table + size;
+#else
                 BUILD_ALLOCATED += size + 1;
+#endif
                 BUILD_COMMIT_ALLOCATION;
             }
             BUILD_ENTRY_OPERATION = 99;
@@ -514,6 +530,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #undef BUILD_WORKSPACE
 #undef BUILD_ALLOCATED
 #undef BUILD_COMMIT_ALLOCATION
+#undef BUILD_NEW_TABLE
 #undef BUILD_ENTRY_OPERATION
 #undef BUILD_ENTRY_BITS
 #undef BUILD_SHIFT
