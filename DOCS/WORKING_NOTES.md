@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-04 ([Note 876](WORKING_NOTES/876-init-unretained-pointer-argument-ownership-trials-20261004.md)):
+Three input/workspace sourcing forms offer no aggregate size benefit;
+workspace-only grows O1 sixteen bytes. Combined adapter omission yields
+248 raw / 256 aligned bytes, links unchanged at 4,640 O2 / 6,080 O1. Both
+sources restored exactly; fifteen focused gates pass. IDO declaration-order
+correction and native pointer/address boundary documented. No retained option
+or production/default/README changes; changed corpus remains open.
+
 2026-10-04 ([Note 875](WORKING_NOTES/875-init-callee-preserving-core-adapter-fitting-20261004.md)):
 Opt-in adapter drops ten duplicate callee reloads but retains retail frame
 stores and RA restore. Body/aligned text 256/256, all shapes save 48 linked

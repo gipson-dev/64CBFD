@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 876](WORKING_NOTES/876-init-unretained-pointer-argument-ownership-trials-20261004.md)
+  records three unretained pointer/address ownership trials and corresponding
+  two-store adapter omission: no linked saving, O1 workspace-only grows.
+  Core/adapter restored exactly, fifteen focused gates pass. Retained O2
+  remains 4,640 / 656 excess, current changed corpus and promotion gates open.
+
 - Init [Note 875](WORKING_NOTES/875-init-callee-preserving-core-adapter-fitting-20261004.md)
   banks opt-in callee-preserving adapter: ten reloads removed, frame stores
   retained, all six shapes save 48 linked bytes. Packed O2 4,640 / 656 excess.

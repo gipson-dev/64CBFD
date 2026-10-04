@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init pointer/argument ownership trials: [Note 876](WORKING_NOTES/876-init-unretained-pointer-argument-ownership-trials-20261004.md)
+measures direct input argument, workspace address from state and their
+combination. Neither aggregate profile improves; workspace-only grows O1
+sixteen bytes. Two corresponding adapter-store omissions shrink body to 248
+but aligned text stays 256, linked O2/O1 stays 4,640/6,080. Both sources
+restored exactly; fifteen focused retained-config gates pass. No trial
+semantic qualification, new option or production count change; current corpus
+and fitting/ownership/hardware remain open.
+
 Init callee-preserving adapter fitting: [Note 875](WORKING_NOTES/875-init-callee-preserving-core-adapter-fitting-20261004.md)
 adds opt-in omission of ten duplicate S0-S7/GP/FP reloads, retaining saved
 frame cells and RA restoration. Adapter body/aligned text is 256/256 versus
