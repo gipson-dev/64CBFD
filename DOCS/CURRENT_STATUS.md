@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-03
+Last verified: 2026-10-04
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -20,6 +20,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Init current allocation-table full corpus: [Note 871](WORKING_NOTES/871-init-allocation-table-full-masked-cu1-clear-corpus-20261004.md)
+passes all 507 freshly compiled packed-remaining O2/g3 paired retail pages
+with exception-masked CU1 clear (status 0x0400FF00), 798.099 seconds, no skips.
+Linked text 4,704 / 720 excess; observed descent 3,240 equals bound, minimum
+SP 0x80031D68 / known-neighbor margin 88. Fifteen helper/selection tests pass.
+This qualifies the current toggle/parent-cursor/allocation-table combination,
+not merely the earlier source. Current CU1-set corpus and fitting/ownership/
+hardware gates remain open. Production/defaults/README totals unchanged.
 
 Init stride-only replication trials: [Note 870](WORKING_NOTES/870-init-rejected-stride-only-replication-capture-20261003.md)
 rejects standalone stride capture with indexed for or gated do/while fills.

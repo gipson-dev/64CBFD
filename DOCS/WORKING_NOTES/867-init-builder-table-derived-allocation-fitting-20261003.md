@@ -2,6 +2,10 @@
 
 Date: 2026-10-03. Baseline: `7f08671c`.
 
+Follow-up: [Note 871](871-init-allocation-table-full-masked-cu1-clear-corpus-20261004.md)
+qualifies all 507 packed-remaining O2/g3 pages with exception-masked CU1 clear
+on the unchanged retained combination. Current CU1-set corpus remains open.
+
 ## Result
 
 Opt-in `--builder-allocation-table` carries the newly allocated table
@@ -139,5 +143,7 @@ Game work remains preserved and excluded.
 - [x] Measure direct-table and table-derived allocation forms.
 - [x] Correct the observer to the actual retail counter lifetime and compare ordered updates.
 - [x] Finish fresh corrected guest qualification before banking the option.
+- [x] Qualify all 507 current packed-remaining O2/g3 corpus pages with masked CU1 clear (Note 871).
+- [ ] Qualify the current combination's full masked CU1-set corpus.
 - [ ] Continue fitting; packed linked excess remains 720 bytes.
 - [ ] Qualify changed selections and other-profile/ownership/hardware/resume gates before promotion.

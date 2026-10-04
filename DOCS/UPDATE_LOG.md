@@ -16,6 +16,16 @@ make -C conker progress
 
 ## 2026-10-02
 
+### 2026-10-04 current Init corpus checkpoint
+
+- Init [Note 871](WORKING_NOTES/871-init-allocation-table-full-masked-cu1-clear-corpus-20261004.md)
+  qualifies all 507 current toggle/parent-cursor/allocation-table packed O2/g3
+  pages with exception-masked CU1 clear: 798.099 seconds, no skips. Text
+  4,704 / 720 excess; descent 3,240 matches bound, known-neighbor margin 88.
+  Fifteen helper/selection gates pass. Note 867 CU1-clear gate checked off;
+  current CU1-set and production-promotion gates remain open. No README totals
+  change or unrelated Game staging.
+
 ### 2026-10-03 resume checkpoint
 
 - Init [Note 870](WORKING_NOTES/870-init-rejected-stride-only-replication-capture-20261003.md)

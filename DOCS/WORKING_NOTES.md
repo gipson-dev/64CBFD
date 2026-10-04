@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-04 ([Note 871](WORKING_NOTES/871-init-allocation-table-full-masked-cu1-clear-corpus-20261004.md)):
+All 507 current-combination packed-remaining O2/g3 corpus pages pass with
+exception-masked CU1 clear in 798.099 seconds, no skips. Text 4,704 / 720
+excess, maximum descent 3,240 matches bound, minimum SP 0x80031D68 and
+known-neighbor margin 88. Fifteen helper/selection gates pass; source unchanged.
+Current CU1-set corpus remains open, as do fitting/ownership/hardware gates.
+Production/defaults/README unchanged; unrelated Game work preserved.
+
 2026-10-03 ([Note 870](WORKING_NOTES/870-init-rejected-stride-only-replication-capture-20261003.md)):
 Two indexed stride-only capture forms lose on stack (+8 bytes both profiles)
 and offer no across-profile text benefit; removed with exact restoration.
