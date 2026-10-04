@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 908](WORKING_NOTES/908-init-startup-thread-stack-top-and-constructor-contract-20261004.md)):
+Pinned retail startup calls/constructor publish stack tops `0x8002D8B0` and
+`0x800318B0`, saved SP top-minus-sixteen. Constructor writes only through
+object +0x130; later +0x230 context fence remains. Five new tests and 25
+combined checks pass, including executed crossing-store controls. Full
+reservation/fitting/production gates remain open; no production change.
+
 2026-10-04 ([Note 907](WORKING_NOTES/907-init-rejected-builder-replication-span-deficit-trials-20261004.md)):
 Entry-unit and byte-unit replication span deficits both grow O2 text 32 bytes
 and core call bound sixteen; O1 also grows. Both removed, source restored

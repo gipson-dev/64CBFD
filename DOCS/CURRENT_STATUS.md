@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init startup thread contract: [Note 908](WORKING_NOTES/908-init-startup-thread-stack-top-and-constructor-contract-20261004.md)
+executes pinned call preparations and retail constructor. Stack tops
+`0x8002D8B0` / `0x800318B0`, saved SP top-minus-sixteen; constructor writes
+end at object +0x130, but later +0x230 FPR footprint remains protected.
+Private-gap sentinels and executed crossing-store controls pass; 25 combined
+tests pass. This strengthens neighbor evidence, not full reservation ownership.
+
 Init replication deficit trials: [Note 907](WORKING_NOTES/907-init-rejected-builder-replication-span-deficit-trials-20261004.md)
 rejects entry-unit and byte-unit remaining-span loops: both grow O2 core text
 32 bytes and call bound sixteen; O1 also grows. Source restored exactly,

@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 908](WORKING_NOTES/908-init-startup-thread-stack-top-and-constructor-contract-20261004.md)
+  pins executed startup thread arguments and constructor publications/write
+  extent. Constructor +0x130 is not later context +0x230; original neighbor
+  fence retained. Twenty-five combined checks pass, including crossing-store
+  negative controls. No reservation manifest or production change claimed.
+
 - Init [Note 907](WORKING_NOTES/907-init-rejected-builder-replication-span-deficit-trials-20261004.md)
   rejects entry/byte-unit replication deficits: O2 text +32 / bound +16,
   O1 also larger. Source restored exactly; seventeen retained-builder/size/
