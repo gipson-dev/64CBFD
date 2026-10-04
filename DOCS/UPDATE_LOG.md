@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 899](WORKING_NOTES/899-init-tight-adapter-return-scheduling-and-alignment-20261004.md)
+  retains opt-in 184-byte adapter: RA in branch delay, combined SP restore,
+  word-aligned subsection. Executable text saves eight, but rodata gap prevents
+  a whole footprint claim. Forty-one bounded passes / one corpus skip and
+  separate dependency pass; default text and FPR order retained, full corpus open.
+
 - Init [Note 898](WORKING_NOTES/898-init-global-mask-and-explicit-abi-copy-trials-20261004.md)
   rejects global low-mask and explicit ABI-copy forms: no fitting improvement.
   Exact source restored; sixteen focused checks pass. Production/defaults,

@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init tight adapter: [Note 899](WORKING_NOTES/899-init-tight-adapter-return-scheduling-and-alignment-20261004.md)
+adds opt-in RA delay-slot load, combined SP restore and word-aligned subsection.
+Body/executable section falls 192 -> 184; packed text 4,568 O2 / 5,976 O1,
+bounds unchanged. Linked O2 rodata still starts at the same aligned address:
+eight-byte gap means no proven whole footprint saving. Whole bounded run
+41 passes / one corpus skip; separate dependency test passes. Default adapter
+text identical. Changed-adapter corpora/production gates open; README unchanged.
+
 Init helper trials: [Note 898](WORKING_NOTES/898-init-global-mask-and-explicit-abi-copy-trials-20261004.md)
 rejects global low-mask replacement (O2 bound +8, O1 text +16) and explicit
 ABI copy (O2 text +16). Both restored exactly; sixteen focused tests pass,

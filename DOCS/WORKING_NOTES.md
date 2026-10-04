@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 899](WORKING_NOTES/899-init-tight-adapter-return-scheduling-and-alignment-20261004.md)):
+Opt-in tight adapter saves two instructions and eight executable-text bytes;
+packed text 4,568 / 5,976, bounds unchanged. Aligned rodata leaves an eight-byte
+gap, so no full footprint saving claimed. Whole bounded run 41 passes / one
+corpus skip, separate dependency gate passes; exact default/FPR order retained.
+Changed-adapter full corpus and production ownership remain open.
+
 2026-10-04 ([Note 898](WORKING_NOTES/898-init-global-mask-and-explicit-abi-copy-trials-20261004.md)):
 Global mask elimination worsens O2 stack/O1 text; explicit ABI copies grow
 O2 text. Both rejected, exact qualified source restored. Sixteen focused
