@@ -2,6 +2,7 @@
 extern s32 D_800D9A20[];
 extern f32 D_800A1378;
 extern f32 D_800BE9A4;
+extern f32 *D_80088A44[6];
 f32 func_150ADA68(void);
 s32 func_150E8930();
 void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
@@ -25,8 +26,13 @@ void func_150E6ED8(u8 *arg0) {
     func_1514470C(D_800D9A20[func_150ADA20() & 1], arg0);
 }
 
-s32 func_150E6F18() {
-    return 0;
+void func_150E6F18(f32 *output) {
+    f32 *range = D_80088A44[(u32)func_150ADA20() % 6];
+    f32 fraction = func_150ADA68();
+
+    output[0] = range[0] + (range[3] - range[0]) * fraction;
+    output[1] = range[1] + (range[4] - range[1]) * fraction;
+    output[2] = range[2] + (range[5] - range[2]) * fraction;
 }
 
 s32 func_150E6FAC() {

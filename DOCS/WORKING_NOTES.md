@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 917](WORKING_NOTES/917-game-random-range-position-recovery-and-match-20261004.md)):
+Game `func_150E6F18` now directly matches all 37 words: unsigned six-range
+selection and three sequential float interpolations. No guards; pointer/data
+timing and overlapping outputs covered by four new tests. Fourteen combined
+checks pass; Game 2601 / total 3274 exact, zero drift. Init gates unchanged.
+
 2026-10-04 ([Note 916](WORKING_NOTES/916-game-object-position-sound-adapter-and-init-return-contract-20261004.md)):
 Game `func_1509F6E8` now directly matches all 37 words after nullable object
 lookup and position/sound forwarding recovery. Init `func_10010F88` returns

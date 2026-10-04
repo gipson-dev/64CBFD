@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game random range position: [Note 917](WORKING_NOTES/917-game-random-range-position-recovery-and-match-20261004.md)
+recovers `func_150E6F18` as a direct 37-word C match without guards. Unsigned
+six-pointer selection, pointer capture before float RNG, field reads after
+that call and sequential overlapping output are preserved. Fourteen focused
+tests pass; fresh matcher Game 2601 exact / total 3274, zero drift.
+Init remains 492 C / 47 assembly; the qualified decoder is still 528 bytes
+too large, with reservation, entry/frame ownership and hardware gates open.
+
 Game position sound adapter: [Note 916](WORKING_NOTES/916-game-object-position-sound-adapter-and-init-return-contract-20261004.md)
 recovers `func_1509F6E8`'s nullable lookup, truncated coordinates and handle
 forwarding as a direct 37-word C match. Corrected Init `func_10010F88` u16
