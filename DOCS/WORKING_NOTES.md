@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 885](WORKING_NOTES/885-init-mmio-published-address-dataflow-trial-20261004.md)):
+Published-address MMIO probe across five profiles: no eleven-word match.
+O1 removes the extra global read but retains an address copy and delay-slot
+store. Ten store traces and three assembly regressions pass; production,
+profiles, guards, decoder baseline and README unchanged.
+
 2026-10-04 ([Note 884](WORKING_NOTES/884-init-builder-descending-count-clear-trials-20261004.md)):
 Descending count-clear forms do not reduce whole O2 text; post-decrement
 adds eight bytes to core bounds, both grow O1 text. Both removed, source

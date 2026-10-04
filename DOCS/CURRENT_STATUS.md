@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init MMIO published-address trial: [Note 885](WORKING_NOTES/885-init-mmio-published-address-dataflow-trial-20261004.md)
+measures five profiles using D_80038070 as the hardware-store destination.
+O1 eliminates the read and retains the address, but adds a register copy
+and delay-slot store; no complete eleven-word match. Other profiles either
+exceed the slot or retain an extra read. Ten bounded store traces pass;
+three production MMIO assembly tests pass. No production/profile/guard or
+README changes; decoder-qualified baseline and unrelated Game work preserved.
+
 Init descending count-clear trials: [Note 884](WORKING_NOTES/884-init-builder-descending-count-clear-trials-20261004.md)
 measures post-/pre-decrement clears of all 17 buckets. Neither reduces
 complete O2 core text; post-decrement adds eight bytes to both core bounds,

@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 885](WORKING_NOTES/885-init-mmio-published-address-dataflow-trial-20261004.md)
+  probes the published address as MMIO destination in five profiles. O1
+  retains the address but still differs; no matching replacement or guard
+  batch. Ten bounded store traces and three assembly checks pass. Production
+  ownership, profiles, decoder qualification and README unchanged.
+
 - Init [Note 884](WORKING_NOTES/884-init-builder-descending-count-clear-trials-20261004.md)
   rejects descending count-clear forms: no aggregate O2 saving, O1 growth,
   and a stack penalty for post-decrement. Source restored exactly; thirteen
