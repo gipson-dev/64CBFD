@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 904](WORKING_NOTES/904-init-dynamic-order-cursor-text-stack-tradeoff-20261004.md)):
+Opt-in dynamic order-table cursor/countdown saves 32 packed O2 text bytes:
+linked 4,528, excess 544, descent +8 to 3,248. O1 grows sixteen text bytes.
+Whole bounded suite 45 passes / one corpus skip; all transmitted counts and
+separate alignment/ledger checks pass. Default text exact; new corpora open.
+
 2026-10-04 ([Note 903](WORKING_NOTES/903-init-bitmap-return-value-lifetime-trials-20261004.md)):
 Two new bitmap return-value shapes preserve behavior but emit 21 optimized
 words versus retail 19; XOR loop remains and final return move/increment is

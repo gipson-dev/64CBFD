@@ -747,8 +747,18 @@ int init_decode_dynamic(InitDecodeState *s) {
 #ifdef INIT_DECODE_CACHE_DYNAMIC_LENGTHS
     cachedLengths = LENGTHS(s);
 #endif
+#ifdef INIT_DECODE_DYNAMIC_ORDER_CURSOR
+    {
+        const uint8_t *order = lengthOrder;
+        /* The four-bit header supplies 4..19 entries, so the first run is nonempty. */
+        do { DYNAMIC_LENGTHS[*order++] = take_bits(s, 3); }
+        while (--transmitted);
+        while (order != lengthOrder + 19) DYNAMIC_LENGTHS[*order++] = 0;
+    }
+#else
     for (i = 0; i < transmitted; i++) DYNAMIC_LENGTHS[lengthOrder[i]] = take_bits(s, 3);
     for (; i < 19; i++) DYNAMIC_LENGTHS[lengthOrder[i]] = 0;
+#endif
 #ifdef INIT_DECODE_FRAME_BACKED
     CODE_BITS(s) = 7;
 #endif

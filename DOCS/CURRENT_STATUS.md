@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init dynamic order cursor: [Note 904](WORKING_NOTES/904-init-dynamic-order-cursor-text-stack-tradeoff-20261004.md)
+retains an opt-in initializer countdown: packed O2 text 4,528 (32 saved,
+544 excess) at eight more stack bytes; O1 text grows sixteen. Whole bounded
+suite 45 passes / one corpus skip; 192 all-count prefix runs and separate
+alignment/ledger checks pass. Default text exact. Changed-candidate full corpora
+and production gates remain open; qualified baseline remains Notes 901/902.
+
 Init bitmap return-lifetime trials: [Note 903](WORKING_NOTES/903-init-bitmap-return-value-lifetime-trials-20261004.md)
 tests returning the advanced cursor or captured end + 1. Both retain the XOR
 loop and grow optimized bodies to 21 words versus retail 19. Host behavior

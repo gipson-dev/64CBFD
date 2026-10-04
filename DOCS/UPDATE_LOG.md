@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 904](WORKING_NOTES/904-init-dynamic-order-cursor-text-stack-tradeoff-20261004.md)
+  retains opt-in order-table cursor/countdown: packed O2 text 4,528, saving
+  32 with eight more stack bytes; O1 text grows sixteen. Forty-five bounded
+  passes / one corpus skip, all-count prefix and alignment checks pass.
+  Defaults exact; changed-candidate full corpus and production gates open.
+
 - Init [Note 903](WORKING_NOTES/903-init-bitmap-return-value-lifetime-trials-20261004.md)
   rejects cursor-return and endpoint-return matching hypotheses: both O2
   bodies grow to 21 words, retaining XOR comparison. Reproducible host behavior
