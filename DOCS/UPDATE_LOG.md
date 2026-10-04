@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 860](WORKING_NOTES/860-init-builder-running-offset-sum-text-stack-tradeoff-20261003.md)
+  banks an opt-in running prefix sum and two rejected pointer-loop trials.
+  Packed O2 saves 16 linked bytes to 4,736 / 752 excess, at an eight-byte
+  larger call bound; known-neighbor clearance is 80. Original defaults and
+  the 4,752-byte baseline remain available. Ordered prefix stores pass;
+  43 final checks pass, one intentional corpus skip. Observed six-shape
+  descent matches static bounds. Full changed corpus,
+  fitting and ownership/hardware gates remain open; Game work excluded.
+
 - Init [Note 859](WORKING_NOTES/859-init-rejected-match-copy-refill-trials-and-size-ledger-20261003.md)
   banks four rejected copy/refill trials, exact experiment-source restoration
   and fresh size-ledger evidence. Best text stays 4,752, 768 over retail;

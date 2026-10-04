@@ -321,9 +321,19 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     incomplete = available - BUILD_COUNTS[max];
     BUILD_COUNTS[max] = available;
     BUILD_OFFSETS[1] = 0;
+#ifdef INIT_DECODE_BUILDER_OFFSET_SUM
+    {
+        uint32_t sum = 0;
+        for (bits = 1; bits < max; bits++) {
+            sum += BUILD_COUNTS[bits];
+            BUILD_OFFSETS[bits + 1] = sum;
+        }
+    }
+#else
     for (bits = 1; bits < max; bits++) {
         BUILD_OFFSETS[bits + 1] = BUILD_OFFSETS[bits] + BUILD_COUNTS[bits];
     }
+#endif
     for (symbolIndex = 0; symbolIndex < count; symbolIndex++) {
         bits = lengths[symbolIndex];
         if (bits != 0) BUILD_SORTED[BUILD_OFFSETS[bits]++] = symbolIndex;

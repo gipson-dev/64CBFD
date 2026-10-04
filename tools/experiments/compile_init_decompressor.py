@@ -276,6 +276,8 @@ def main():
                         help="traverse histogram lengths with a pointer cursor")
     parser.add_argument("--builder-simple-operation", action="store_true",
                         help="form simple-symbol operation from its signed comparison")
+    parser.add_argument("--builder-offset-sum", action="store_true",
+                        help="form builder offsets using a running histogram sum")
     parser.add_argument("--dynamic-shared-repeats", action="store_true",
                         help="share dynamic repeat extraction after selecting width and base")
     parser.add_argument("--dynamic-repeat-value", action="store_true",
@@ -351,6 +353,8 @@ def main():
         suffix += "-histogram-cursor"
     if args.builder_simple_operation:
         suffix += "-simple-operation"
+    if args.builder_offset_sum:
+        suffix += "-offset-sum"
     if args.dynamic_shared_repeats:
         suffix += "-dynamic-shared-repeats"
     if args.dynamic_repeat_value:
@@ -418,6 +422,8 @@ def main():
                       ("1" if args.cache_builder == "all" else "2"))
     if args.builder_histogram_cursor:
         common.append("-DINIT_DECODE_BUILDER_HISTOGRAM_CURSOR")
+    if args.builder_offset_sum:
+        common.append("-DINIT_DECODE_BUILDER_OFFSET_SUM")
     if args.builder_simple_operation:
         common.append("-DINIT_DECODE_BUILDER_SIMPLE_OPERATION")
     if args.dynamic_shared_repeats:

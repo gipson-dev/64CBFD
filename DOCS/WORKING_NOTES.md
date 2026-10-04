@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-03 ([Note 860](WORKING_NOTES/860-init-builder-running-offset-sum-text-stack-tradeoff-20261003.md)):
+Opt-in running prefix sum saves packed O2 16 linked bytes to 4,736,
+752 over retail, but adds eight call-bound bytes and reduces known-neighbor
+clearance to 80. Original 4,752-byte baseline/defaults remain available.
+Ordered prefix writes pass six shapes across depth boundaries; 43 final
+checks pass, one corpus skip. All observed descents match static bounds.
+Two inferior pointer-loop trials removed.
+Full changed corpus, further fitting and ownership/hardware remain open.
+Production/README totals unchanged; unrelated Game work preserved.
+
 2026-10-03 ([Note 859](WORKING_NOTES/859-init-rejected-match-copy-refill-trials-and-size-ledger-20261003.md)):
 Four match-copy/refill trials are rejected and removed. Restored baseline
 reproduces 4,752 linked bytes / 768 excess; fifteen focused tests pass.

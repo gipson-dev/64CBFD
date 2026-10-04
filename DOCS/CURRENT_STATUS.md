@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init builder offset-sum fitting: [Note 860](WORKING_NOTES/860-init-builder-running-offset-sum-text-stack-tradeoff-20261003.md)
+adds an opt-in unsigned prefix sum. Packed O2 linked text falls to 4,736,
+752 over retail, but its call bound grows from 392 to 400 and known-neighbor
+clearance falls from 88 to 80 bytes. The unchanged 4,752-byte baseline stays
+available; this is a text/stack tradeoff, not a dominating or production
+replacement. Ordered prefix stores pass all six shapes at depth boundaries.
+Fresh checks pass: 43 tests, one intentional corpus skip; observed packed
+descent matches its 3,248-byte bound. Changed full corpus,
+further fitting and ownership/hardware gates remain open. Defaults/totals unchanged.
+
 Init rejected copy/refill fitting: [Note 859](WORKING_NOTES/859-init-rejected-match-copy-refill-trials-and-size-ledger-20261003.md)
 measures four dataflow variants; none improves the selected packed profile.
 All trial branches/selectors are removed and the committed Note 858 source
