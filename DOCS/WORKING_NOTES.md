@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-04 ([Note 933](WORKING_NOTES/933-init-glyph-adapter-production-placement-and-stack-boundaries-20261004.md)):
+Glyph adapter adoption audit pins occupied text and two caller stack regimes.
+Nine early inherited-stack sites remain unqualified; conditional overlay
+containment does not prove reservation. Twenty tests pass, owners unchanged.
+
 2026-10-04 ([Note 932](WORKING_NOTES/932-init-connected-glyph-c-adapter-qualification-20261004.md)):
 Glyph adapter/C path passes connected formatter and preserved-register tests:
 twenty combined tests, 280 connected and five direct-leaf pairs. Combined

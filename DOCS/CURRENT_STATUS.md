@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init glyph adoption boundaries: [Note 933](WORKING_NOTES/933-init-glyph-adapter-production-placement-and-stack-boundaries-20261004.md)
+pins nine inherited-stack and six overlay-stack diagnostic formatter sites.
+Experimental C address is occupied by `func_10008F90`; no adjacent leaf-slot
+extension is free. Overlay frame containment is conditional, not ownership.
+Twenty focused tests pass; retain adapter as experimental, no conversion.
+
 Init glyph adapter: [Note 932](WORKING_NOTES/932-init-connected-glyph-c-adapter-qualification-20261004.md)
 qualifies the C writer through real formatter callers: 280 connected plus
 five direct-leaf pairs, seven new / twenty combined tests pass. Adapter fits

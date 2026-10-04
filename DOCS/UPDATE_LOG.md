@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 933](WORKING_NOTES/933-init-glyph-adapter-production-placement-and-stack-boundaries-20261004.md)
+  adds production adoption boundary checks: occupied experimental address,
+  fifteen caller sites and two stack regimes. Twenty tests pass; conditional
+  overlay containment is not production ownership or a C conversion.
+
 - Init [Note 932](WORKING_NOTES/932-init-connected-glyph-c-adapter-qualification-20261004.md)
   qualifies the connected glyph C adapter with twenty combined tests passing.
   Added executable/stack cost is measured; production layout/ownership remain
