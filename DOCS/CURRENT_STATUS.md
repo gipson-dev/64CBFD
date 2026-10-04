@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init scan-deficit O1 CU1-clear corpus: [Note 893](WORKING_NOTES/893-init-scan-deficit-o1-full-masked-cu1-clear-corpus-20261004.md)
+passes all 507 paired pages in 975.542 seconds, no skips. Linked text 5,984,
+maximum descent 3,200 equals bound, minimum SP 0x80031D90 / neighbor margin
+128. Twenty-six supporting gates pass; six source hashes hold. Matching O1
+CU1-set, changed-option O2 and production ownership/hardware gates remain.
+Production/README unchanged; default best O2 remains 4,576 / 592 excess.
+
 Init scan-deficit fitting: [Note 892](WORKING_NOTES/892-init-builder-inplace-scan-deficit-fitting-20261004.md)
 adds an opt-in bounded in-place deficit scan. Packed O1 core falls 32 bytes
 to 5,792 / linked 5,984; packed O2 stays 4,384 / linked 4,576 (592 excess).

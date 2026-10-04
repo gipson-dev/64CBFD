@@ -112,6 +112,7 @@ checks pass. Full guarded corpus and hardware/context remain unqualified.
 - [x] Confirm the changed branch executes across six compiled shapes.
 - [x] Pass inherited bounded guest/ABI/live-SP suite and default size regression.
 - [ ] Run full guarded corpora for the new option before assigning full-corpus credit.
+- [x] Packed O1 masked CU1-clear: all 507 pages pass in [Note 893](893-init-scan-deficit-o1-full-masked-cu1-clear-corpus-20261004.md).
 - [ ] Continue best-profile fitting, full reservation, ownership and hardware/context.
 
 Production Init, word guards, README totals, sibling-port artifacts and Release

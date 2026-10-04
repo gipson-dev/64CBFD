@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 893](WORKING_NOTES/893-init-scan-deficit-o1-full-masked-cu1-clear-corpus-20261004.md)):
+All 507 guarded scan-deficit packed O1 CU1-clear pages pass in 975.542 seconds,
+no skips. Text 5,984, descent 3,200 equals bound, minimum SP 0x80031D90 /
+neighbor margin 128. Twenty-six supporting checks pass; six hashes unchanged.
+Matching CU1-set and production gates remain open; no README change.
+
 2026-10-04 ([Note 892](WORKING_NOTES/892-init-builder-inplace-scan-deficit-fitting-20261004.md)):
 Opt-in in-place table-width deficit saves 32 O1 core bytes with unchanged
 packed frames/bounds; O2 text stays unchanged. Whole bounded run 39 passes /

@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 893](WORKING_NOTES/893-init-scan-deficit-o1-full-masked-cu1-clear-corpus-20261004.md)
+  qualifies all 507 guarded scan-deficit packed O1 CU1-clear pages, no skips.
+  Text 5,984, descent 3,200 equals bound, minimum SP 0x80031D90 / margin 128.
+  Twenty-six supporting passes and six unchanged hashes; matching CU1-set and
+  production ownership/hardware remain open. Production/README unchanged.
+
 - Init [Note 892](WORKING_NOTES/892-init-builder-inplace-scan-deficit-fitting-20261004.md)
   retains opt-in bounded in-place scan deficit: O1 core saves 32 bytes,
   packed frames/bounds unchanged, O2 text neutral. Thirty-nine whole bounded
