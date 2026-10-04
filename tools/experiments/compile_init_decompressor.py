@@ -278,6 +278,8 @@ def main():
                         help="form simple-symbol operation from its signed comparison")
     parser.add_argument("--dynamic-shared-repeats", action="store_true",
                         help="share dynamic repeat extraction after selecting width and base")
+    parser.add_argument("--abi-seed-cursor", action="store_true",
+                        help="seed saved ABI words using pointer cursors")
     parser.add_argument("--fixed-length-cursor", action="store_true",
                         help="initialize fixed literal lengths through four pointer ranges")
     parser.add_argument("--stream-masked-dispatch", action="store_true",
@@ -291,6 +293,8 @@ def main():
     args = parser.parse_args()
     if args.abi_fpr_shadow:
         args.seed_distance_root = True
+    if args.abi_seed_cursor and not args.abi_fpr_shadow:
+        parser.error("--abi-seed-cursor requires --abi-fpr-shadow")
     if args.seed_distance_root and not args.frame_backed:
         parser.error("--seed-distance-root requires --frame-backed")
     if args.byte_parent and not args.frame_backed:
@@ -347,6 +351,8 @@ def main():
         suffix += "-simple-operation"
     if args.dynamic_shared_repeats:
         suffix += "-dynamic-shared-repeats"
+    if args.abi_seed_cursor:
+        suffix += "-abi-seed-cursor"
     if args.fixed_length_cursor:
         suffix += "-fixed-length-cursor"
     if args.stream_masked_dispatch:
@@ -412,6 +418,8 @@ def main():
         common.append("-DINIT_DECODE_BUILDER_SIMPLE_OPERATION")
     if args.dynamic_shared_repeats:
         common.append("-DINIT_DECODE_DYNAMIC_SHARED_REPEATS")
+    if args.abi_seed_cursor:
+        common.append("-DINIT_DECODE_ABI_SEED_CURSOR")
     if args.fixed_length_cursor:
         common.append("-DINIT_DECODE_FIXED_LENGTH_CURSOR")
     if args.stream_masked_dispatch:

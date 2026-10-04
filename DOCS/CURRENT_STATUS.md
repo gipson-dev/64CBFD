@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init ABI seed fitting: [Note 854](WORKING_NOTES/854-init-abi-seed-pointer-cursor-and-ordered-register-copy-20261003.md)
+retains an opt-in six-word seed pointer cursor with ordered read/write gates.
+Frame O2 saves 64 linked bytes; aligned/packed O2 save eight stack bytes.
+O1 grows 32/32/16 linked bytes with unchanged bounds. Best packed O2 remains
+4,784, 800 over retail; observed descent improves to 3,240, clearance 88.
+All bounded gates pass: final module/helper/default checks total 41 pass,
+one corpus skip. Structural fitting and changed corpus/ownership/hardware
+remain open; production, adapter, defaults and README totals unchanged.
+
 Init adapter state fitting: [Note 853](WORKING_NOTES/853-init-core-owned-state-initialization-and-adapter-fitting-20261003.md)
 omits six redundant adapter stores behind an opt-in assembler symbol.
 Poisoned fields and read-before-write checks pass all 492 bounded contexts;

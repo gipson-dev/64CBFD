@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 854](WORKING_NOTES/854-init-abi-seed-pointer-cursor-and-ordered-register-copy-20261003.md)
+  banks opt-in ABI seed fitting with six ordered register-word reads/writes.
+  Frame O2 saves 64 linked bytes; aligned/packed O2 save eight stack bytes.
+  O1 growth is explicit. Best text stays 4,784, still 800 over retail;
+  bounded/helper/default checks pass. Changed corpus and fitting remain open.
+  Production/adapter/defaults/README totals unchanged; Game work excluded.
+
 - Init [Note 853](WORKING_NOTES/853-init-core-owned-state-initialization-and-adapter-fitting-20261003.md)
   banks opt-in adapter state ownership with poisoned read-before-write
   qualification. All six links save 16; best packed O2 is 4,784, still

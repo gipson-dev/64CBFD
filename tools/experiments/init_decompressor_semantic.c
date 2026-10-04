@@ -874,8 +874,14 @@ int init_decode_core(InitDecodeState *s, InitDecodeEntry *fixedWorkspace,
 #endif
     int32_t distance = inputAddress - outputAddress;
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
+#ifdef INIT_DECODE_ABI_SEED_CURSOR
+    const uint32_t *source = s->frame->savedS;
+    uint32_t *destination = s->abiSaved;
+    do { *destination++ = *source++; } while (destination != s->abiSaved + 6);
+#else
     uint32_t i;
     for (i = 0; i < 6; i++) s->abiSaved[i] = s->frame->savedS[i];
+#endif
     s->abiDirty = 0;
 #endif
 #ifdef INIT_DECODE_FRAME_BACKED

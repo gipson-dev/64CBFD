@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 854](WORKING_NOTES/854-init-abi-seed-pointer-cursor-and-ordered-register-copy-20261003.md)):
+Opt-in six-word ABI seed cursor saves frame O2 64 linked bytes and
+aligned/packed O2 eight stack bytes. O1 linked growth is explicit. Best
+packed O2 remains 4,784, 800 over retail, with descent 3,240 / clearance 88.
+Ordered copy, unsupported-option and bounded gates pass: 41 tests pass,
+one corpus skip. Rejected both-copy/countdown forms removed. Production,
+adapter/defaults/README totals unchanged; fitting and new corpus remain open.
+
 2026-10-03 ([Note 853](WORKING_NOTES/853-init-core-owned-state-initialization-and-adapter-fitting-20261003.md)):
 Opt-in core-owned state removes six redundant adapter stores. Body shrinks
 320 to 296 bytes; linked text saves 16 in all six images. Best packed O2
