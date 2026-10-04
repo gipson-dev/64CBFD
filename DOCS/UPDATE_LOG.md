@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 954](WORKING_NOTES/954-init-resume-conversion-decision-and-interrupted-game-build-20261004.md)
+  verifies 492 C / 47 assembly entries, exact retained owners and existing linked
+  Init/Game data. Ninety-three focused tests plus one fresh decoder size check
+  pass; no candidate is ready to adopt. Decoder remains 528 bytes over, and
+  connected glyph ownership/fitting is open. Interrupted Game child build
+  fails by one word (225 / 224); its source/interface edits remain preserved
+  and unqualified. No production Init or README aggregate changes.
+
 - Game [Note 953](WORKING_NOTES/953-game-descriptor-position-writer-and-weighted-chain-recovery-20261004.md)
   restores the four-mode descriptor-position writer and void interface,
   179 words / 0x78 frame in its 218-word slot, 196 differences, no guards.

@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-04 ([Note 954](WORKING_NOTES/954-init-resume-conversion-decision-and-interrupted-game-build-20261004.md)):
+Requested Init resume confirms 492 C / 47 assembly entries and exact retained
+owners/slots/full existing code/data. Ninety-three focused tests and one fresh
+decoder size check pass, no skips; decoder stays 4512 / 3984 bytes. Neither
+small leaf nor connected decoder/glyph is ready for adoption; thirty established
+boot/hardware/SDK owners stay assembly. Interrupted Game child build failed at
+225 / 224 words; its two dirty source files are preserved and unqualified.
+Init source and README totals unchanged.
+
 2026-10-04 ([Note 953](WORKING_NOTES/953-game-descriptor-position-writer-and-weighted-chain-recovery-20261004.md)):
 Game `func_1514470C`'s complete four-mode position writer replaces its placeholder,
 void interface restored. C fits 179 words / 0x78 frame in 218 retail words;

@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init resume: [Note 954](WORKING_NOTES/954-init-resume-conversion-decision-and-interrupted-game-build-20261004.md)
+confirms 492 C / 47 assembly entries (12,252 retained bytes). All retained
+owners/slots and the existing ELF's complete Init code/data and Game data are
+exact. Ninety-three focused tests plus one freshly compiled decoder size check
+pass, no skips. Two small leaves remain candidates, but no replacement is ready
+to adopt; decoder is still 528 bytes over, and connected glyph fitting/ownership
+remain open. Thirty boot/hardware/SDK owners stay assembly. README unchanged.
+The interrupted Game build failed: preserved `func_150E8D5C` C is 225 words
+against its 224-word slot. Both dirty Game files remain unqualified and intact;
+the last successful ELF does not represent these edits. Resolve the one-word
+excess and child/wrapper chain tests before the next Game production checkpoint.
+
 Game descriptor-position writer: [Note 953](WORKING_NOTES/953-game-descriptor-position-writer-and-weighted-chain-recovery-20261004.md)
 restores all four `func_1514470C` modes and the void interface. Semantic C fits
 179 words / 0x78 frame in the 218-word slot, with 196 raw differences and no
