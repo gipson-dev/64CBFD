@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 882](WORKING_NOTES/882-init-core-limit-predicate-and-local-lifetime-trials-20261004.md)
+  measures and rejects unsigned workspace-limit and local-limit forms: raw
+  word savings disappear into padding; the local form increases O1 stack
+  bound eight bytes. Qualified source restored exactly, twelve focused
+  retained gates pass. No production/default/README changes.
+
 - Init [Note 881](WORKING_NOTES/881-init-direct-fpr-adapter-full-masked-cu1-set-corpus-20261004.md)
   qualifies all 507 direct-load packed O2/g3 masked CU1-set pages in
   790.940 seconds, no skips. With Note 880: 1,014 paired pages across both

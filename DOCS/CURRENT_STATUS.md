@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init core-limit fitting trials: [Note 882](WORKING_NOTES/882-init-core-limit-predicate-and-local-lifetime-trials-20261004.md)
+measures an unsigned workspace-distance gate and a local-limit variant.
+Raw O2/O1 entry bodies save two/one words, but padding leaves core text
+4,384/5,824 unchanged; local-limit raises O1 core bound from 352 to 360.
+Both forms removed, source restored to the qualified blob. Twelve focused
+retained tests pass; Notes 880/881 corpus evidence still applies to the
+unchanged baseline. Linked O2 4,576 / 592 excess; production/README unchanged.
+
 Init direct-load CU1-set corpus: [Note 881](WORKING_NOTES/881-init-direct-fpr-adapter-full-masked-cu1-set-corpus-20261004.md)
 passes all 507 fresh packed O2/g3 paired pages with masked CU1 set in
 790.940 seconds, no skips. Together Notes 880/881 qualify 1,014 paired pages

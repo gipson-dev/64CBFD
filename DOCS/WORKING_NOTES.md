@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 882](WORKING_NOTES/882-init-core-limit-predicate-and-local-lifetime-trials-20261004.md)):
+Unsigned workspace-distance gate saves raw entry words but no complete
+text; local-limit form likewise saves no text and adds eight bytes to O1
+core bound. Both discarded, source restored exactly. Twelve focused retained
+tests pass, corpus-qualified baseline preserved. Linked O2 4,576 / 592 excess.
+
 2026-10-04 ([Note 881](WORKING_NOTES/881-init-direct-fpr-adapter-full-masked-cu1-set-corpus-20261004.md)):
 All 507 direct-load packed O2/g3 masked CU1-set pages pass in 790.940 seconds,
 no skips. With Note 880: 1,014 paired pages across both modes, callee-return
