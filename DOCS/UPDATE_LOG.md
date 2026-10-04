@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 953](WORKING_NOTES/953-game-descriptor-position-writer-and-weighted-chain-recovery-20261004.md)
+  restores the four-mode descriptor-position writer and void interface,
+  179 words / 0x78 frame in its 218-word slot, 196 differences, no guards.
+  Eleven new tests connect the actual weighted caller and helpers; 100 combined
+  tests and fresh link pass. Complete Init code/data, Game data and exact
+  neighbors remain intact. Position-placeholder
+  gate resolved in source/tests; child callback remains unrecovered. README
+  aggregates unchanged, no gameplay acceptance or sibling/Release promotion.
+
 - Init [Note 952](WORKING_NOTES/952-init-bitmap-address-difference-induction-trial-20261004.md)
   rejects a new address-difference folding trial: 22 O2 words against nineteen,
   despite removing XOR. Eight new tests / 501 pairs / six bounded prefixes and

@@ -163,7 +163,7 @@ f32 func_150484A0(f32 x, f32 y);
 f32 sqrtf(f32 value);
 f32 func_150ADA68(void);
 f32 func_151423D8(u8 angle);
-s32 func_1514470C(void *descriptor, void *position);
+void func_1514470C(void *descriptor, void *position);
 f32 *func_15144B34(s32 player);
 s32 func_1514ECE0(void *node, s16 key, void **result);
 void func_150E8930(void);

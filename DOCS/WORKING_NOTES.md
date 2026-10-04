@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-04 ([Note 953](WORKING_NOTES/953-game-descriptor-position-writer-and-weighted-chain-recovery-20261004.md)):
+Game `func_1514470C`'s complete four-mode position writer replaces its placeholder,
+void interface restored. C fits 179 words / 0x78 frame in 218 retail words;
+196 raw differences, no guards. Eleven new tests qualify actual weighted
+caller/writer/helpers, mutations, allocation failure and culling. Fresh link
+and all 100 combined tests pass; full Init code/data, Game data and exact
+neighbors are preserved. Position gate resolved in source/tests; child callback
+`150E8D5C` is next, not accepted gameplay.
+Matching counts and README aggregates unchanged.
+
 2026-10-04 ([Note 952](WORKING_NOTES/952-init-bitmap-address-difference-induction-trial-20261004.md)):
 New bitmap unsigned address-difference shape removes XOR but emits 22 O2 words
 against nineteen: second induction variable plus saved copy. Eight new tests

@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game descriptor-position writer: [Note 953](WORKING_NOTES/953-game-descriptor-position-writer-and-weighted-chain-recovery-20261004.md)
+restores all four `func_1514470C` modes and the void interface. Semantic C fits
+179 words / 0x78 frame in the 218-word slot, with 196 raw differences and no
+guards. Eleven new tests connect the actual weighted caller/writer/helpers;
+all 100 combined tests pass. Fresh relink preserves complete Init code/data,
+Game data and exact neighbors; sibling already has its recompiled writer.
+The uninitialized-position placeholder gate is resolved in source/tests, not
+accepted gameplay. Next recover child callback `func_150E8D5C` (224 words),
+then sibling `func_150E9178`; matching totals and README remain unchanged.
+
 Init address-difference trial: [Note 952](WORKING_NOTES/952-init-bitmap-address-difference-induction-trial-20261004.md)
 tests a new unsigned subtraction/zero-branch shape for `func_10005BE0`.
 IDO removes XOR but introduces a second induction variable: 22 O2 words
@@ -43,9 +53,9 @@ Game weighted emitter: [Note 950](WORKING_NOTES/950-game-weighted-event-emitter-
 recovers `func_150E8B1C`'s complete code-0x33 weighted emission body. It fits
 144 words and the original 0xC8 frame, but 44 words differ; no guards added.
 Eighty-two tests and fresh link pass; full Init/Game data and exact neighbors
-are preserved. Aggregates/README unchanged. **Runtime gate:** its position
-writer `func_1514470C` remains a placeholder and can leave position uninitialized.
-Recover that 218-word helper next before qualifying the actual guest pipeline.
+are preserved. Aggregates/README unchanged. Its then-placeholder position
+writer is now restored by Note 953; child callback `func_150E8D5C` remains
+unrecovered, so the actual guest pipeline is still not qualified.
 
 Game event payload creators: [Note 949](WORKING_NOTES/949-game-event-payload-creators-and-connected-dispatch-match-20261004.md)
 finishes the preserved `func_150E8A80` and `func_150E90DC` edits. Both match

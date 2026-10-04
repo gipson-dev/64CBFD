@@ -36,7 +36,7 @@ extern u8 *D_800DCDC4;
 f32 func_150ADA68(void);
 s32 func_150ADA20(void);
 f32 *func_15144B34(s32);
-s32 func_1514470C(void *, void *);
+void func_1514470C(void *, void *);
 void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
 void *memcpy(void *, const void *, u32);
 '''
@@ -97,7 +97,7 @@ s32 func_150ADA20(void) {
     }
     return (s32)integers[i];
 }
-s32 func_1514470C(void *descriptor, void *output) {
+void func_1514470C(void *descriptor, void *output) {
     int k=descriptor==descriptors[0]?0:descriptor==descriptors[1]?1:2, i;
     f32 *p=output;
     push('P');
@@ -105,7 +105,6 @@ s32 func_1514470C(void *descriptor, void *output) {
     selected[pointCalls++]=k;
     for(i=0;i<3;i++) p[i]=expectedPosition[i]=points[k][i];
     if(mutateOrigin && pointCalls==1) origin[0]=3;
-    return -123;
 }
 void *func_15149130(s16 duration, s8 index, s8 kind, s8 source, u8 active,
                    u8 mode, s32 bytes, u8 slot, s32 context) {

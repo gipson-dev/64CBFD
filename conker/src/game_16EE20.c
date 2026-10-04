@@ -22,7 +22,6 @@ s32 func_15143E94();
 s32 func_1514401C();
 s32 func_151441A4();
 s32 func_151442FC();
-s32 func_1514470C();
 s32 func_15144CEC();
 s32 func_15144E80();
 s32 func_151451F0();
@@ -54,6 +53,7 @@ typedef struct {
 } SixWordBlock;
 
 extern SixWordBlock D_800A5200;
+extern f32 D_800A56A0;
 
 s32 func_150A2AEC(s32 arg0, s32 arg1, s32 *arg2);
 s32 func_1514563C(struct17 *arg0, struct17 *arg1, struct17 *arg2, struct17 *arg3, f32 *arg4);
@@ -634,9 +634,61 @@ f32 func_15144598(struct134 *arg0) {
 f32 func_1514462C(s32 arg0) {
     return 0.0f;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_1514470C.s. */
-s32 func_1514470C() {
-    return 0;
+void func_1514470C(void *descriptor, void *output) {
+    u8 *record = descriptor;
+    f32 *position = output;
+    f32 width = *(s16 *)(record + 6);
+    f32 height = *(s16 *)(record + 8);
+    f32 depth = *(s16 *)(record + 0xA);
+    f32 coefficient24 = *(f32 *)(record + 0x24);
+    f32 coefficient28 = *(f32 *)(record + 0x28);
+    f32 coefficient2C = *(f32 *)(record + 0x2C);
+    f32 coefficient30 = *(f32 *)(record + 0x30);
+    f32 radius;
+    f32 x;
+    f32 y;
+    f32 z;
+    f32 transformed;
+    f32 angle0;
+    f32 angle1;
+    f32 period;
+    u8 angle;
+    vertex point;
+
+    switch (record[0x15] & 3) {
+        case 0:
+            radius = func_150ADA68() * width;
+            angle = func_150ADA20();
+            x = func_151423D8((u8)(angle - 0x40)) * radius;
+            y = func_150ADA68() * height;
+            z = func_151423D8(angle) * radius;
+            break;
+        case 2:
+            x = func_150ADA68() * (width + width) - width;
+            y = func_150ADA68() * height;
+            z = func_150ADA68() * (depth + depth) - depth;
+            break;
+        case 1:
+            angle0 = func_150ADA68();
+            angle1 = func_150ADA68();
+            radius = func_150ADA68();
+            period = D_800A56A0;
+            func_151436B4(angle0 * period, angle1 * period, radius * width, &point);
+            position[0] = *(s16 *)(record + 0) + point.x;
+            position[1] = *(s16 *)(record + 2) + point.y;
+            position[2] = *(s16 *)(record + 4) + point.z;
+            return;
+        default:
+            position[0] = *(s16 *)(record + 0);
+            position[1] = *(s16 *)(record + 2);
+            position[2] = *(s16 *)(record + 4);
+            return;
+    }
+
+    transformed = y * coefficient24 + z * coefficient28;
+    position[0] = *(s16 *)(record + 0) + (x * coefficient30 + transformed * coefficient2C);
+    position[1] = *(s16 *)(record + 2) + (y * coefficient28 - z * coefficient24);
+    position[2] = *(s16 *)(record + 4) + (transformed * coefficient30 - x * coefficient2C);
 }
 // Matched with guarded commutative-add normalization.
 f32 func_15144A74(f32 *arg0, f32 *arg1) {

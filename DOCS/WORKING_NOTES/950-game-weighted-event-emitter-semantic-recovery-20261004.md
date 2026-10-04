@@ -163,17 +163,19 @@ ROM SHA-1 against YAML confirm:
 
 ## Runtime Gate And Next Step
 
-**`func_1514470C` is still a zero-return C placeholder in
-[game_16EE20.c](../../conker/src/game_16EE20.c).** It does not fill the requested
-position. Invoking this recovered emitter through the current incomplete guest
-pipeline can therefore read an uninitialized child position. The fixtures use
-an explicit position-writer stub; they do not establish current guest behavior.
+**Original checkpoint gate, now resolved by
+[Note 953](953-game-descriptor-position-writer-and-weighted-chain-recovery-20261004.md):**
+`func_1514470C` was a zero-return C placeholder in
+[game_16EE20.c](../../conker/src/game_16EE20.c). It did not fill the requested
+position. At that checkpoint, invoking the recovered emitter through the
+incomplete guest pipeline could read an uninitialized child position. This
+note's original fixtures use an explicit position-writer stub; Note 953's
+connected tests now exercise the actual writer and its two C helpers instead.
 
-Prioritize recovering that 218-word / 872-byte descriptor-position writer next,
-starting from `conker/asm/nonmatchings/game_16EE20/func_1514470C.s`. Qualify it
-through this actual caller before claiming a runnable weighted-emission chain.
-Then recover child updater `func_150E8D5C` and sibling `func_150E9178`, with
-byte matching of this emitter remaining a separate open task.
+The writer now has a complete semantic body, but the code-0x34 child updater
+`func_150E8D5C` and sibling `func_150E9178` remain unrecovered. They are the next
+connected recovery steps. Byte matching of this emitter and the position writer
+remain separate open tasks; no runnable/accepted guest effect chain is claimed.
 
 No compressed-ROM or host-port promotion is warranted by this checkpoint.
 No sibling build, Release modification, real-save change, gameplay acceptance
