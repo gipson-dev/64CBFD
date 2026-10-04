@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 943](WORKING_NOTES/943-init-resume-linked-baseline-and-conversion-shortlist-20261004.md)):
+Requested Init resume confirms 492 C / 47 assembly entries, all current Init
+code/data bytes and retained assembly slots retail-exact. Sixty-two focused
+tests pass; no remaining replacement is production-ready. Bitmap/MMIO are
+the small candidates, decoder/glyph are connected fitting/ownership projects.
+Ordered adoption gates recorded; production owners and README totals unchanged.
+
 2026-10-04 ([Note 942](WORKING_NOTES/942-game-physical-data-order-and-literal-pool-restoration-20261004.md)):
 Game-data owner order, four missing pools and one table's assembler padding
 are repaired. Fresh full link succeeds; 189,088 bytes / 720 owners match retail.

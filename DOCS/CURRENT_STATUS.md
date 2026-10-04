@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init resume assessment: [Note 943](WORKING_NOTES/943-init-resume-linked-baseline-and-conversion-shortlist-20261004.md)
+confirms 492 C / 47 assembly entries and the current production ELF's complete
+164,048 code / 17,376 data bytes retail-exact, including all retained slots.
+Sixty-two focused tests pass. Bitmap/MMIO remain the two small C candidates;
+none is ready to adopt. Decoder remains 528 linked bytes over retail, and
+connected glyph fitting/ownership remain open. Latest requested work is Init
+assessment; the pending Game placeholder is separate. README totals unchanged.
+
 Game physical data repair: [Note 942](WORKING_NOTES/942-game-physical-data-order-and-literal-pool-restoration-20261004.md)
 restores retail owner order, four missing pools and the table's no-padding
 assembly profile. Fresh full link succeeds; all 189,088 physical Game-data

@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 943](WORKING_NOTES/943-init-resume-linked-baseline-and-conversion-shortlist-20261004.md)
+  verifies the current linked Init code/data and all 47 retained assembly
+  slots, refreshes the 492-C inventory and records the conversion shortlist.
+  Sixty-two focused tests pass; no production replacement is ready. The
+  successful up-to-date build check is distinguished from a fresh relink.
+  Detailed assessment stays in working docs; README aggregates unchanged.
+
 - Game [Note 942](WORKING_NOTES/942-game-physical-data-order-and-literal-pool-restoration-20261004.md)
   closes the physical data-layout gate: all 189,088 bytes / 720 owners match
   retail after owner-order, literal-pool and targeted padding repairs. The
