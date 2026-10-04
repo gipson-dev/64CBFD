@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game event/packet/sound dispatch: [Note 946](WORKING_NOTES/946-game-event-packet-and-sound-dispatch-direct-match-20261004.md)
+recovers `func_150E8930`, all 84 words directly matching with original 0x38
+frame and no guards. Its corrected no-argument call preserves all 28 timer
+caller words. Sixty-five tests and fresh link pass; complete Game data, Init
+sections and neighboring exact owners remain intact. Game 2607 / total 3280
+exact, zero drift; README matching rows updated. Next recover `func_150E8A80`,
+then `func_150E90DC`; both list-triggered creators are still placeholders.
+
 Game world-emitter dispatch: [Note 945](WORKING_NOTES/945-game-world-emitter-dispatch-direct-byte-match-20261004.md)
 recovers `func_150E81A8`'s selected world position, descriptor and random packet.
 All 129 words match directly from C, original 0x90 frame, no guards. Fifty-nine

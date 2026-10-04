@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 946](WORKING_NOTES/946-game-event-packet-and-sound-dispatch-direct-match-20261004.md)
+  recovers `func_150E8930`, all 84 words directly matching with no guards.
+  Sixty-five tests and fresh link pass; its timer caller remains exact, and
+  complete Game data/Init and neighbors are preserved. README matching rows
+  now show Game 2607 / total 3280 exact. Both follow-up creators remain open.
+
 - Game [Note 945](WORKING_NOTES/945-game-world-emitter-dispatch-direct-byte-match-20261004.md)
   recovers `func_150E81A8` and matches all 129 words directly from C. Fifty-nine
   tests and a fresh production relink pass; full Game data, Init code/data and

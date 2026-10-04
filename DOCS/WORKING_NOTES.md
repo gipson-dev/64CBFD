@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 946](WORKING_NOTES/946-game-event-packet-and-sound-dispatch-direct-match-20261004.md)):
+Game `func_150E8930` is recovered as complete event/packet/list/sound dispatch.
+All 84 words match directly, original 0x38 frame, no guards; timer caller
+remains 28/28 exact after correcting the no-argument interface. Sixty-five
+tests and fresh link pass; Game data/Init and neighbors stay exact. Game
+2607 / total 3280 exact, zero drift; next recover the first creator `func_150E8A80`.
+
 2026-10-04 ([Note 945](WORKING_NOTES/945-game-world-emitter-dispatch-direct-byte-match-20261004.md)):
 Game `func_150E81A8` is recovered as semantic world-emitter/packet dispatch.
 All 129 words match directly, original 0x90 frame, no guards. Fifty-nine tests
