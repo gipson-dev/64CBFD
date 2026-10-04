@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 895](WORKING_NOTES/895-init-builder-wide-operation-and-header-packing-trials-20261004.md)):
+Wide operation and combined-header trials save two public O2 words but no
+complete text and add eight bytes to both bounds. Both removed, exact source
+restored; twenty semantic/ledger/retained-scan tests pass, no skips.
+Qualified O1/default O2 unchanged; no production conversion or README change.
+
 2026-10-04 ([Note 894](WORKING_NOTES/894-init-scan-deficit-o1-full-masked-cu1-set-corpus-20261004.md)):
 All 507 scan-deficit packed O1 CU1-set pages pass in 971.161 seconds, no skips.
 With Note 893: 1,014 paired pages across both masked modes. Text 5,984,

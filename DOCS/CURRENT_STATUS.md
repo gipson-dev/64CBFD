@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init packing trials: [Note 895](WORKING_NOTES/895-init-builder-wide-operation-and-header-packing-trials-20261004.md)
+rejects wider operation and combined-header packing. Both remove two public
+O2 builder words but save no whole text and add eight bytes to both call bounds.
+Exact qualified source restored; twenty focused tests pass, no skips.
+Qualified O1 remains 5,984 linked; default O2 remains 4,576 / 592 excess.
+Production/defaults/README unchanged.
+
 Init scan-deficit O1 CU1-set corpus: [Note 894](WORKING_NOTES/894-init-scan-deficit-o1-full-masked-cu1-set-corpus-20261004.md)
 passes all 507 paired pages in 971.161 seconds, no skips. With Note 893:
 1,014 paired pages across both masked modes. Text 5,984, descent 3,200 equals

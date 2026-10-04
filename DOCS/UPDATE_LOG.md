@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 895](WORKING_NOTES/895-init-builder-wide-operation-and-header-packing-trials-20261004.md)
+  rejects wider operation and combined-header packing: no whole-text savings,
+  eight-byte call-bound growth in both profiles. Exact qualified source restored;
+  twenty focused tests pass. Production/defaults and README unchanged.
+
 - Init [Note 894](WORKING_NOTES/894-init-scan-deficit-o1-full-masked-cu1-set-corpus-20261004.md)
   qualifies all 507 scan-deficit packed O1 CU1-set pages, no skips. Together
   Notes 893/894: 1,014 paired pages across both modes. Both O1 gates checked
