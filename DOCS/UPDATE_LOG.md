@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 891](WORKING_NOTES/891-init-mask-before-refill-lifetime-trials-20261004.md)
+  rejects pure-mask-before-refill lifetime changes in take-bits and lookup:
+  both grow complete text in both profiles, bounds unchanged. Exact source
+  restored and fifteen focused checks pass; production/README unchanged.
+
 - Init [Note 890](WORKING_NOTES/890-init-builder-sort-offset-local-trials-20261004.md)
   rejects local sort offsets in both store orders: no whole O2 text saving,
   eight-byte call-bound growth in both profiles. Exact source restoration and

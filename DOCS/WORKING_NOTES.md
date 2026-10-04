@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 891](WORKING_NOTES/891-init-mask-before-refill-lifetime-trials-20261004.md)):
+Pure mask evaluation before refill grows whole core sixteen bytes in take-bits,
+thirty-two in lookup, both profiles. Bounds unchanged. Both edits removed,
+exact qualified blob restored; fifteen focused tests pass, no skips.
+No production change; retained linked O2 stays 4,576 / 592 excess.
+
 2026-10-04 ([Note 890](WORKING_NOTES/890-init-builder-sort-offset-local-trials-20261004.md)):
 Two new explicit sort-offset locals do not shrink whole O2 core and increase
 both profile call bounds eight bytes. Rejected and exact source restored;

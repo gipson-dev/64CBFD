@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init mask-lifetime trials: [Note 891](WORKING_NOTES/891-init-mask-before-refill-lifetime-trials-20261004.md)
+rejects moving pure masks before refill: take-bits grows both core profiles
+sixteen bytes, lookup grows both thirty-two, with unchanged call bounds.
+Exact source restored; fifteen focused call/ledger/lookup checks pass.
+Qualified linked O2 remains 4,576 / 592 excess; no production/README change.
+
 Init builder sort-offset trials: [Note 890](WORKING_NOTES/890-init-builder-sort-offset-local-trials-20261004.md)
 rejects explicit local offsets in both store orders: neither reduces complete
 O2 text, both raise O2/O1 call bounds eight bytes. Both edits removed, source
