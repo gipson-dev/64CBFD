@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 949](WORKING_NOTES/949-game-event-payload-creators-and-connected-dispatch-match-20261004.md)
+  completes both preserved event creator recoveries, 39/39 words each directly
+  matching with no guards. Seven new tests qualify actual dispatcher/timer
+  chains; all 72 combined tests and fresh production link pass. Full Init,
+  Game data and exact neighbors remain intact. README matching rows now show
+  Game 2609 / total 3282 exact; representation counts stay unchanged.
+
 - Init [Note 948](WORKING_NOTES/948-init-bitmap-equality-exit-lifetime-trials-20261004.md)
   tests two new exit-region/address-lifetime shapes. Eight tests qualify
   1,002 fresh guest pairs and twelve bounded prefixes; both optimized bodies

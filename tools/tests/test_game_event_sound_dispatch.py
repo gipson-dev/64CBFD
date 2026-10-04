@@ -35,8 +35,8 @@ extern f32 D_800BE9A4, D_800A1378;
 void func_15169260(void *, s32, s32, u8);
 void func_15164F0C(u8, u8, s32, u8, s32);
 s32 func_151D8868(void *, s32, s32, s32);
-s32 func_150E8A80(void);
-s32 func_150E90DC(void);
+void func_150E8A80(void);
+void func_150E90DC(void);
 s32 func_150ADA20(void);
 f32 func_150ADA68(void);
 void func_10010F30(s32, u16, u8, s16, u8);
@@ -49,7 +49,7 @@ f32 D_800BE9A4, D_800A1378;
 static u8 head0[1], head1[1], record[64];
 static u32 words[4];
 static int integers, floats, pairCalls, eventCalls, packetCalls, firstCalls, secondCalls, soundCalls;
-static int error, mutatePair, packetHead, firstMutation, secondClears, firstResult, secondResult;
+static int error, mutatePair, packetHead, firstMutation, secondClears;
 static char trace[32];
 static int traceLength, watchTimer;
 static u32 bits(f32 value) { union { f32 f; u32 u; } w; w.f=value; return w.u; }
@@ -94,19 +94,17 @@ s32 func_151D8868(void *data, s32 a, s32 b, s32 c) {
     if(packetHead>=0) D_800DCDC4=packetHead?head0:NULL;
     return -123;
 }
-s32 func_150E8A80(void) {
+void func_150E8A80(void) {
     push('A'); firstCalls++;
     if(firstCalls!=1 || !D_800DCDC4 || packetCalls!=1 || integers!=2 || secondCalls || soundCalls) error=10;
     if(firstMutation==1) D_800DCDC4=NULL;
     if(firstMutation==2) D_800DCDC4=head1;
-    return firstResult;
 }
-s32 func_150E90DC(void) {
+void func_150E90DC(void) {
     push('B'); secondCalls++;
     if(firstCalls!=1 || secondCalls!=1 || !D_800DCDC4 || packetCalls!=1 || integers!=2 || soundCalls) error=11;
     if(firstMutation==2 && D_800DCDC4!=head1) error=12;
     if(secondClears) D_800DCDC4=NULL;
-    return secondResult;
 }
 void func_10010F30(s32 id, u16 volume, u8 pan, s16 offset, u8 flags) {
     int i=soundCalls++;
@@ -126,7 +124,7 @@ static void initialize(void) {
     D_800BE9EB=0xA5; D_800DCDC4=NULL;
     words[0]=0xFFFFFFFF; words[1]=0x80000001; words[2]=0; words[3]=0xFFFFFFFF;
     integers=floats=pairCalls=eventCalls=packetCalls=firstCalls=secondCalls=soundCalls=0;
-    error=mutatePair=firstMutation=secondClears=firstResult=secondResult=traceLength=watchTimer=0;
+    error=mutatePair=firstMutation=secondClears=traceLength=watchTimer=0;
     packetHead=-1; D_800BE9A4=2; D_800A1378=200;
     for(i=0;i<64;i++) record[i]=0x5A;
 }
@@ -150,11 +148,11 @@ for(a=0;a<13;a++) for(b=0;b<13;b++) for(flags=0;flags<4;flags++) {
 
     def test_independent_list_gates_reload_after_first_callback(self):
         self.run_host(r'''
-int mode, result;
-for(mode=0;mode<4;mode++) for(result=0;result<2;result++) {
+int mode, clears;
+for(mode=0;mode<4;mode++) for(clears=0;clears<2;clears++) {
     initialize(); D_800DCDC4=mode?head0:NULL;
     firstMutation=mode==2?1:mode==3?2:0;
-    firstResult=result?-1:0; secondResult=result?0:-1; secondClears=1;
+    secondClears=clears;
     func_150E8930();
     if(complete() || firstCalls!=(mode!=0) || secondCalls!=(mode==1 || mode==3)) return 1;
     if(!trace_is(mode==0?"PEIITISIS":mode==2?"PEIITAISIS":"PEIITABISIS")) return 2;

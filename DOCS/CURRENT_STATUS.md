@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game event payload creators: [Note 949](WORKING_NOTES/949-game-event-payload-creators-and-connected-dispatch-match-20261004.md)
+finishes the preserved `func_150E8A80` and `func_150E90DC` edits. Both match
+all 39 words directly, original 0x48 frames, no guards; actual dispatcher/timer
+chains cover head mutations, failures, payload snapshots and extra RNG draws.
+Seventy-two tests and fresh production link pass; Init, Game data and exact
+neighbors remain intact. Game 2609 / total 3282 exact, zero drift. README
+matching rows updated; next inspect `func_150E8B1C` and its updater contract.
+
 Init bitmap equality-exit trial: [Note 948](WORKING_NOTES/948-init-bitmap-equality-exit-lifetime-trials-20261004.md)
 tests cursor-address versus captured-end masks inside the equality exit.
 Both remove XOR but emit 21 optimized words against nineteen retail, adding

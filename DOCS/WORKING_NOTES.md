@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 949](WORKING_NOTES/949-game-event-payload-creators-and-connected-dispatch-match-20261004.md)):
+Both preserved event payload creators now match all 39 words directly from C,
+original 0x48 frames, no guards. Actual dispatcher/timer chains qualify payload
+snapshots, allocator failures, head mutation and RNG positions. Seventy-two
+tests and fresh link pass; Init, Game data and neighbors remain exact. Game
+2609 / total 3282 exact, zero drift; README aggregates updated. Next 150E8B1C.
+
 2026-10-04 ([Note 948](WORKING_NOTES/948-init-bitmap-equality-exit-lifetime-trials-20261004.md)):
 Two new bitmap equality-exit/lifetime forms remove XOR but grow to 21 O2 words
 against nineteen retail. Eight new tests qualify 1,002 pairs/twelve bounded

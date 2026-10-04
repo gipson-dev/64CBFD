@@ -24,6 +24,10 @@ extern f32 D_800A1358;
 extern f32 D_800A135C;
 extern f32 D_800A1360;
 extern f32 D_800A1364;
+extern f32 D_800A137C;
+extern f32 D_800A1380;
+extern f32 D_800A13B0;
+extern f32 D_800A13B4;
 extern s32 D_80088A5C[2];
 extern u8 D_80088A64;
 extern s32 D_80088A68[3];
@@ -37,6 +41,11 @@ typedef struct EventPair113D60 {
     s32 first;
     s32 second;
 } EventPair113D60;
+typedef struct EventPayload113D60 {
+    f32 field00;
+    f32 field04;
+    f32 field08;
+} EventPayload113D60;
 typedef struct EmitterPosition113D60 {
     f32 x;
     f32 y;
@@ -141,8 +150,8 @@ f32 func_150ADA68(void);
 f32 func_151423D8(u8 angle);
 s32 func_1514ECE0(void *node, s16 key, void **result);
 void func_150E8930(void);
-s32 func_150E8A80(void);
-s32 func_150E90DC(void);
+void func_150E8A80(void);
+void func_150E90DC(void);
 void func_15169260(void *pair, s32 count, s32 payload, u8 kind);
 void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
                     u8 arg5, s32 arg6, u8 arg7, s32 arg8);
@@ -561,8 +570,18 @@ void func_150E8930(void) {
     func_10010F30(0x4CD, 0x5DC0, 0x40, (s16)(0x200 - (func_150ADA20() & 0x400)), 0);
 }
 
-s32 func_150E8A80() {
-    return 0;
+void func_150E8A80(void) {
+    void *result;
+    EventPayload113D60 payload;
+
+    payload.field00 = D_800A137C;
+    payload.field04 = D_800A1380;
+    payload.field08 = 0.0f;
+    result = func_15149130((s16)((u32)func_150ADA20() % 41 + 30), -1, 0x33, -1,
+                          1, 0, 12, 0xFF, 1);
+    if (result != NULL) {
+        memcpy((u8 *)result + 0x28, &payload, 12);
+    }
 }
 
 s32 func_150E8B1C() {
@@ -573,8 +592,18 @@ s32 func_150E8D5C() {
     return 0;
 }
 
-s32 func_150E90DC() {
-    return 0;
+void func_150E90DC(void) {
+    void *result;
+    EventPayload113D60 payload;
+
+    payload.field00 = D_800A13B0;
+    payload.field04 = D_800A13B4;
+    payload.field08 = 0.0f;
+    result = func_15149130((s16)((u32)func_150ADA20() % 26 + 5), -1, 0x36, -1,
+                          1, 0, 12, 0xFF, 1);
+    if (result != NULL) {
+        memcpy((u8 *)result + 0x28, &payload, 12);
+    }
 }
 
 s32 func_150E9178() {
