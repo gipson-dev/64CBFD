@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 957](WORKING_NOTES/957-game-extended-weighted-emitter-semantic-recovery-20261004.md)
+  recovers `func_150E9178` and its 60-byte payload: 153 words / 0xF8 frame,
+  54 differences, no guards. Eleven new connected tests; all 132 combined tests
+  and fresh link pass, preserving complete Init code/data, Game data and exact
+  neighbors. README unchanged. PC source synchronization is open; next recover
+  placeholder child `func_150E93DC` before claiming a complete effect pipeline.
+
 - Game [Note 956](WORKING_NOTES/956-game-child-emission-callback-recovery-and-fitting-20261004.md)
   finishes `func_150E8D5C` and pointer interfaces: 219 words / 0x120 frame,
   213 differences, no guards, resolving the 225 / 224 fitting failure.

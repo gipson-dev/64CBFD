@@ -175,8 +175,10 @@ connected tests now exercise the actual writer and its two C helpers instead.
 The writer has a complete semantic body. The code-0x34 child updater
 `func_150E8D5C` is now also recovered and connected to the parent's payload in
 [Note 956](956-game-child-emission-callback-recovery-and-fitting-20261004.md).
-Sibling callback `func_150E9178` and downstream record update/rendering remain
-unfinished. Byte matching of the emitter, writer and child are separate open
+Sibling callback `func_150E9178` is likewise recovered by
+[Note 957](957-game-extended-weighted-emitter-semantic-recovery-20261004.md).
+Its child `func_150E93DC` and downstream record update/rendering remain
+unfinished. Byte matching of the emitters, writer and child are separate open
 tasks; no runnable/accepted guest effect chain is claimed.
 
 No compressed-ROM or host-port promotion is warranted by this checkpoint.

@@ -40,6 +40,10 @@ extern f32 D_800A13A8;
 extern f32 D_800A13AC;
 extern f32 D_800A13B0;
 extern f32 D_800A13B4;
+extern f32 D_800A13B8;
+extern f32 D_800A13BC;
+extern f32 D_800A13C0;
+extern f32 D_800A13C4;
 extern s32 D_80088A5C[2];
 extern u8 D_80088A64;
 extern s32 D_80088A68[3];
@@ -120,6 +124,17 @@ typedef struct EventPositionPayload113D60 {
     WorldPosition113D60 position;
     EventPayload113D60 parameters;
 } EventPositionPayload113D60;
+
+typedef struct ExtendedEventPositionPayload113D60 {
+    EventPositionPayload113D60 payload;
+    f32 field18;
+    u8 reserved1C[0x14];
+    s32 field30;
+    u8 field34;
+    u8 field35;
+    u8 reserved36[2];
+    s32 field38;
+} ExtendedEventPositionPayload113D60;
 
 typedef struct EventWeightNode113D60 {
     void *descriptor;
@@ -800,8 +815,65 @@ void func_150E90DC(void) {
     }
 }
 
-s32 func_150E9178() {
-    return 0;
+void func_150E9178(u8 *record) {
+    void *result;
+    f32 limit;
+    f32 first;
+    f32 second;
+    f32 parameter;
+    EventPayload113D60 *payload;
+    EventWeightNode113D60 *node;
+    f32 *origin;
+    f32 fraction;
+    f32 dx;
+    f32 dy;
+    f32 dz;
+    ExtendedEventPositionPayload113D60 child;
+
+    origin = func_15144B34(D_800BE9E8);
+    fraction = func_150ADA68();
+    payload = (EventPayload113D60 *)(record + 0x28);
+    payload->field08 += ((payload->field00 + fraction * payload->field04) * D_800BE9A4) * D_800DCD90;
+    if (payload->field08 > 1.0f) {
+        parameter = D_800A13B8;
+        second = D_800A13BC;
+        first = D_800A13C0;
+        limit = D_800A13C4;
+
+        do {
+            fraction = func_150ADA68();
+            fraction *= D_800DCD90;
+            node = (EventWeightNode113D60 *)D_800DCDC4;
+            while (node->weight < fraction) {
+                fraction -= node->weight;
+                node = node->next;
+            }
+            func_1514470C(node->descriptor, &child.payload.position);
+            dx = child.payload.position.x - origin[0];
+            dy = child.payload.position.y - origin[1];
+            dz = child.payload.position.z - origin[2];
+            if ((dx * dx + dy * dy) + dz * dz < limit) {
+                s16 duration;
+
+                /* Retail leaves the reserved bytes unspecified. */
+                child.payload.parameters.field00 = first;
+                child.payload.parameters.field04 = second;
+                child.payload.parameters.field08 = 0.0f;
+                child.field18 = parameter;
+                child.field30 = 0;
+                child.field34 = 0;
+                child.field35 = 0;
+                child.field38 = 0;
+                duration = (u32)func_150ADA20() % 13 + 5;
+                result = func_15149130(duration, -1, 0x37, -1,
+                                      1, 0, 60, record[0xC], record[1]);
+                if (result != NULL) {
+                    memcpy((u8 *)result + 0x28, &child, 60);
+                }
+            }
+            payload->field08 -= 1.0f;
+        } while (payload->field08 > 1.0f);
+    }
 }
 
 s32 func_150E93DC() {

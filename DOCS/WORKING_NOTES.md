@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-04 ([Note 957](WORKING_NOTES/957-game-extended-weighted-emitter-semantic-recovery-20261004.md)):
+Restore code-0x36 `func_150E9178` and its partially initialized 60-byte child
+payload. C fits all 153 words / 0xF8 frame, 54 differences, no guards. Eleven
+new tests connect the actual creator and all actual position-writer modes;
+132 combined tests and fresh link pass. Full Init code/data, Game data, exact
+neighbors and prior recoveries stay intact; README aggregates unchanged.
+PC source remains a stub. Next child `func_150E93DC` is still a placeholder;
+synchronization, downstream rendering and gameplay acceptance remain open.
+
 2026-10-04 ([Note 956](WORKING_NOTES/956-game-child-emission-callback-recovery-and-fitting-20261004.md)):
 Finish the preserved child-emission recovery `func_150E8D5C`: 219 C words /
 0x120 frame in 224 retail words, 213 differences, no guards. Two one-bit flag

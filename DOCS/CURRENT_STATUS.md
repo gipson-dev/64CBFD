@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Extended weighted emitter: [Note 957](WORKING_NOTES/957-game-extended-weighted-emitter-semantic-recovery-20261004.md)
+recovers `func_150E9178`'s complete code-0x36 body and 60-byte child payload.
+C fits all 153 words / 0xF8 frame, with 54 differences and no guards. Eleven
+new tests connect the real creator and all four actual position-writer modes;
+all 132 combined tests pass, no skips. Fresh link preserves full Init code/data,
+Game data, exact neighbors and prior recoveries. README aggregates unchanged.
+The PC source still has an emitter stub, so synchronization is separate. Next
+recover code-0x37 child `func_150E93DC` (208 words); it is still a placeholder,
+and downstream/gameplay qualification remains open.
+
 Game child-emission callback: [Note 956](WORKING_NOTES/956-game-child-emission-callback-recovery-and-fitting-20261004.md)
 finishes `func_150E8D5C` and its typed pointer interfaces. Two flag shifts resolve
 the interrupted 225-word build failure: C fits 219 words / 0x120 frame in the
@@ -31,8 +41,8 @@ payload connection; all 121 combined tests pass, no skips. Child-placeholder
 and fitting gates are resolved in source
 and tests, not gameplay; README aggregates unchanged. The sibling PC source
 still has a zero-return child stub, so host synchronization remains open.
-Next semantic target is `func_150E9178`, 153 words; downstream rendering and
-byte matching remain separate tasks.
+Its sibling `func_150E9178` is subsequently recovered by Note 957; downstream
+rendering and byte matching remain separate tasks.
 
 Init bitmap right-shift trial: [Note 955](WORKING_NOTES/955-init-bitmap-fill-value-right-shift-mask-trial-20261004.md)
 tests reusing `0xFF` for the final mask. IDO rematerializes the constant and
@@ -60,7 +70,7 @@ all 100 combined tests pass. Fresh relink preserves complete Init code/data,
 Game data and exact neighbors; sibling already has its recompiled writer.
 The uninitialized-position placeholder gate is resolved in source/tests, not
 accepted gameplay. Its child callback `func_150E8D5C` is subsequently recovered
-by Note 956; next is sibling `func_150E9178`. Matching totals/README unchanged.
+by Note 956 and sibling `func_150E9178` by Note 957. Matching totals/README unchanged.
 
 Init address-difference trial: [Note 952](WORKING_NOTES/952-init-bitmap-address-difference-induction-trial-20261004.md)
 tests a new unsigned subtraction/zero-branch shape for `func_10005BE0`.

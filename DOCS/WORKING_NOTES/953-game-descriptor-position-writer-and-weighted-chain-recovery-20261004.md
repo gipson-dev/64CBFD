@@ -179,7 +179,8 @@ runtime acceptance is inferred, and no sibling file or frozen Release changed.
 - [x] Remove the position-placeholder gate from the current handoff.
 - [x] Recover code-0x34 child callback `func_150E8D5C`: resolved by Note 956,
   219 C words / 0x120 frame in the 224-word slot; still non-matching.
-- [ ] Then recover sibling callback `func_150E9178`, 612 bytes / 153 words.
+- [x] Recover sibling callback `func_150E9178`: resolved by
+  [Note 957](957-game-extended-weighted-emitter-semantic-recovery-20261004.md).
 - [ ] Pursue byte matching of the position writer and weighted emitter separately.
 - [ ] Qualify actual guest effect behavior only after the connected callbacks exist.
 

@@ -146,7 +146,9 @@ host build. No sibling source, build, binary or frozen Release changes here.
 - [x] Qualify actual C callback/helper/wrapper connections and raw adjacent bytes.
 - [x] Freshly relink and preserve all Init code/data and physical Game data.
 - [x] Remove the child-placeholder/build gate from current documentation.
-- [ ] Recover sibling callback `func_150E9178`, 612 bytes / 153 words.
+- [x] Recover sibling callback `func_150E9178`: resolved by
+  [Note 957](957-game-extended-weighted-emitter-semantic-recovery-20261004.md),
+  153 C words, 54 differences; code-0x37 child remains unfinished.
 - [ ] Pursue child/weighted-parent/position-writer byte matching separately.
 - [ ] Synchronize the PC-port child implementation through its guest/RDRAM API.
 - [ ] Qualify downstream record update/rendering and natural guest effects.

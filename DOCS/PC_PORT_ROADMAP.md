@@ -7,10 +7,17 @@ pointer interfaces; see [Note 956](WORKING_NOTES/956-game-child-emission-callbac
 The 219-word body fits the 224-word slot, but remains non-matching. Fresh guest
 link and bounded source/chain tests pass; this is not accepted PC gameplay.
 
+The related code-0x36 weighted emitter `func_150E9178` is also recovered in
+[Note 957](WORKING_NOTES/957-game-extended-weighted-emitter-semantic-recovery-20261004.md):
+153 words / 54 differences, with its 60-byte payload and actual position-writer
+connections qualified. Its child callback `func_150E93DC` remains a placeholder.
+
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Audit the sibling's active CMake source input without changing its files.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a
   zero-return stub, and the scoped source search finds no named override.
+- [ ] Synchronize PC-port `func_150E9178`: the same active source also retains
+  a zero-return emitter stub, with no named override in the scoped search.
 - [ ] Validate through the host guest/RDRAM interfaces and natural effect behavior.
 
 No host source/build, binary, save or frozen Release changes are included in
