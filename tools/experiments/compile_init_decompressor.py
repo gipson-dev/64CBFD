@@ -278,6 +278,8 @@ def main():
                         help="form simple-symbol operation from its signed comparison")
     parser.add_argument("--builder-offset-sum", action="store_true",
                         help="form builder offsets using a running histogram sum")
+    parser.add_argument("--builder-code-toggle", action="store_true",
+                        help="increment reversed builder codes with a toggle-first loop")
     parser.add_argument("--dynamic-shared-repeats", action="store_true",
                         help="share dynamic repeat extraction after selecting width and base")
     parser.add_argument("--dynamic-repeat-value", action="store_true",
@@ -355,6 +357,8 @@ def main():
         suffix += "-simple-operation"
     if args.builder_offset_sum:
         suffix += "-offset-sum"
+    if args.builder_code_toggle:
+        suffix += "-code-toggle"
     if args.dynamic_shared_repeats:
         suffix += "-dynamic-shared-repeats"
     if args.dynamic_repeat_value:
@@ -424,6 +428,8 @@ def main():
         common.append("-DINIT_DECODE_BUILDER_HISTOGRAM_CURSOR")
     if args.builder_offset_sum:
         common.append("-DINIT_DECODE_BUILDER_OFFSET_SUM")
+    if args.builder_code_toggle:
+        common.append("-DINIT_DECODE_BUILDER_CODE_TOGGLE")
     if args.builder_simple_operation:
         common.append("-DINIT_DECODE_BUILDER_SIMPLE_OPERATION")
     if args.dynamic_shared_repeats:

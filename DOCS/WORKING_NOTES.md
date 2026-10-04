@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-03 ([Note 864](WORKING_NOTES/864-init-builder-reversed-code-toggle-first-loop-20261003.md)):
+Opt-in toggle-first reversed-code increment saves three packed O2 builder
+words, but padding holds total text at 4,736 / 752 excess. Packed O1 and
+aligned O2/O1 save 16 linked bytes; frame O1 saves 32. Stack bounds hold.
+All 131,070 host code/mask pairs and both omitted-option text comparisons
+pass; final checks are 44 pass / one corpus skip and observed descents match
+static bounds. Changed full corpus
+and fitting/ownership/hardware remain open. Notes 862/863 stay scoped to the
+baseline. Production/defaults/README totals unchanged; Game work preserved.
+
 2026-10-03 ([Note 863](WORKING_NOTES/863-init-offset-sum-full-masked-cu1-set-corpus-20261003.md)):
 All 507 fresh revised-combination packed O2/g3 pages pass with masked CU1 set
 in 814.477 seconds. Notes 862/863 bank both masked modes: 1,014 paired pages

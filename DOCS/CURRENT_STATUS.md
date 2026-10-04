@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init reversed-code increment fitting: [Note 864](WORKING_NOTES/864-init-builder-reversed-code-toggle-first-loop-20261003.md)
+adds opt-in toggle-first increment. Packed O2 public builder falls 341 to
+338 words, with padding holding linked text at 4,736 / 752 excess. Packed
+O1 saves 16 linked bytes, frame O1 32, aligned O2/O1 16; all stack bounds
+hold. Exhaustive 131,070 host code/mask pairs pass; final checks are 44
+pass / one corpus skip, with all observed descents matching static bounds.
+Both omitted-option text sections
+match the banked baseline. Notes 862/863 remain qualification for that
+baseline, not this changed option. Defaults/production/README totals unchanged.
+
 Init revised offset-sum CU1-set corpus: [Note 863](WORKING_NOTES/863-init-offset-sum-full-masked-cu1-set-corpus-20261003.md)
 passes all 507 fresh packed/remaining O2/g3 retail pages with masked CU1 set
 in 814.477 seconds. With Note 862, both masked modes now bank 1,014 paired

@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 864](WORKING_NOTES/864-init-builder-reversed-code-toggle-first-loop-20261003.md)
+  banks opt-in reversed-code toggle-first fitting. Packed O2 public body
+  saves three words but aligned total holds at 4,736 / 752 excess; packed
+  O1 and aligned profiles save 16 bytes, frame O1 32. Stack bounds hold.
+  Exhaustive host code/mask pairs and omitted-option text comparisons pass;
+  final checks are 44 pass / one corpus skip, observed descents matching
+  static bounds. Current-option corpus
+  remains separate from Notes 862/863. Production/defaults/README totals
+  unchanged; unrelated Game work preserved and excluded.
+
 - Init [Note 863](WORKING_NOTES/863-init-offset-sum-full-masked-cu1-set-corpus-20261003.md)
   banks all 507 revised-combination packed O2/g3 retail pages with masked
   CU1 set in 814.477 seconds. Both masked modes now cover 1,014 paired

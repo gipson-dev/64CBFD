@@ -474,11 +474,19 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
             }
 #endif
             next = 1u << BUILD_SHIFT(bits - 1);
+#ifdef INIT_DECODE_BUILDER_CODE_TOGGLE
+            do {
+                code ^= next;
+                if (code & next) break;
+                next >>= 1;
+            } while (next != 0);
+#else
             while (code & next) {
                 code ^= next;
                 next >>= 1;
             }
             code ^= next;
+#endif
             while ((code & BUILD_LOW_MASK(consumed)) != BUILD_OFFSETS[level]) {
                 level--;
                 consumed -= width;
