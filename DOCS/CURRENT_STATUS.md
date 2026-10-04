@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init dynamic fitting trials: [Note 914](WORKING_NOTES/914-init-rejected-dynamic-symbol-and-header-gate-fitting-20261004.md)
+rejects symbol-before-drop (no text saving, O2 core bound +40) and encoded
+header mask gate (O2 core text +16). All 16384 header predicates agree, but
+neither fitting result improves the candidate. Qualified source restored
+exactly; fifteen focused checks pass. Current linked 4512 / 528 excess unchanged.
+
 Init distance operation O2 CU1-set corpus: [Note 913](WORKING_NOTES/913-init-distance-operation-o2-full-masked-cu1-set-corpus-20261004.md)
 passes all 507 guarded paired pages in 818.478 seconds, no skips. With Note
 912, both masked CU1 modes qualify 1014 paired runs for this fixed candidate:

@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 914](WORKING_NOTES/914-init-rejected-dynamic-symbol-and-header-gate-fitting-20261004.md)):
+Dynamic symbol-before-drop saves no complete text and raises O2 call bound
+forty bytes; encoded header mask gate grows O2 sixteen bytes despite matching
+all 16384 predicates. Both removed, qualified source exactly restored.
+Fifteen focused checks pass; candidate/corpus qualification remains unchanged.
+
 2026-10-04 ([Note 913](WORKING_NOTES/913-init-distance-operation-o2-full-masked-cu1-set-corpus-20261004.md)):
 Distance-operation packed O2 passes all 507 masked CU1-set paired pages
 in 818.478 seconds, no skips. Notes 912/913 qualify 1014 runs across both

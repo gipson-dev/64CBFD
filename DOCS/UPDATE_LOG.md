@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 914](WORKING_NOTES/914-init-rejected-dynamic-symbol-and-header-gate-fitting-20261004.md)
+  rejects dynamic symbol ordering and encoded header gate trials: no complete
+  saving / O2 bound +40, and O2 text +16 respectively. Source restored exactly;
+  fifteen focused checks pass. Qualified 4512-byte candidate remains unchanged.
+
 - Init [Note 913](WORKING_NOTES/913-init-distance-operation-o2-full-masked-cu1-set-corpus-20261004.md)
   qualifies all 507 distance-operation packed O2 masked CU1-set pages in
   818.478 seconds, no skips. With Note 912: 1014 paired runs, fixed text
