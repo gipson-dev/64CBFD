@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 888](WORKING_NOTES/888-init-live-sp-guard-full-masked-cu1-set-corpus-20261004.md)
+  qualifies all 507 live-SP-guarded packed O2/g3 masked CU1-set pages in
+  804.839 seconds, no skips. With Note 887: 1,014 paired pages across both
+  guarded modes. Text 4,576 / 592 excess, descent 3,240 equals bound, minimum
+  SP 0x80031D68 / neighbor margin 88. Twenty-six supporting checks pass, nine
+  hashes hold. Both corpus gates checked off; fitting/reservation/ownership/
+  hardware remain open. Production and README unchanged.
+
 - Init [Note 887](WORKING_NOTES/887-init-live-sp-guard-full-masked-cu1-clear-corpus-20261004.md)
   qualifies all 507 live-SP-guarded packed O2/g3 masked CU1-clear pages in
   806.976 seconds, no skips. Text 4,576 / 592 excess, descent 3,240 equals

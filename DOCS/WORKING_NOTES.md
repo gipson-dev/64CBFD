@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 888](WORKING_NOTES/888-init-live-sp-guard-full-masked-cu1-set-corpus-20261004.md)):
+All 507 guarded packed O2/g3 CU1-set pages pass in 804.839 seconds, no skips.
+With Note 887: 1,014 paired pages across both masked modes, live-SP/callee
+guards active, nine source hashes unchanged. Text 4,576 / 592 excess, descent
+3,240 equals bound, minimum SP 0x80031D68 / neighbor margin 88. Twenty-six
+supporting gates pass. Both guarded corpus gates checked off; promotion remains.
+
 2026-10-04 ([Note 887](WORKING_NOTES/887-init-live-sp-guard-full-masked-cu1-clear-corpus-20261004.md)):
 All 507 live-SP-guarded packed O2/g3 CU1-clear pages pass in 806.976 seconds,
 no skips. Text 4,576 / 592 excess, descent 3,240 equals bound, minimum SP

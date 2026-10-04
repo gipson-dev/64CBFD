@@ -69,7 +69,9 @@ OK
 ```
 
 This is the first complete live-SP-guarded CU1-clear receipt. Matching
-guarded CU1-set remains open. Time is host harness time, not guest or
+guarded CU1-set now passes in
+[Note 888](888-init-live-sp-guard-full-masked-cu1-set-corpus-20261004.md).
+Time is host harness time, not guest or
 hardware performance measurement.
 
 ## Supporting Checks
@@ -86,7 +88,7 @@ diffs. Project tool and whitespace checks pass.
 ## Remaining Gates
 
 - [x] All 507 live-SP-guarded masked CU1-clear pages.
-- [ ] All 507 matching guarded CU1-set pages.
+- [x] All 507 matching guarded CU1-set pages (Note 888).
 - [ ] Further fitting: linked candidate remains 592 bytes over retail.
 - [ ] Complete reservation, entry/frame ownership and hardware/context gates.
 

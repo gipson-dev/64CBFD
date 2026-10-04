@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init guarded CU1-set corpus: [Note 888](WORKING_NOTES/888-init-live-sp-guard-full-masked-cu1-set-corpus-20261004.md)
+passes all 507 live-SP-guarded packed O2/g3 paired pages in 804.839 seconds,
+no skips. With Note 887: 1,014 guarded paired pages across both masked modes.
+Text 4,576 / 592 excess; descent 3,240 equals bound, minimum SP 0x80031D68 /
+known-neighbor margin 88. Twenty-six supporting gates pass; nine source hashes
+hold. Both guarded corpus gates checked off; fitting, full reservation,
+entry/frame ownership and hardware/context remain. Production/README unchanged.
+
 Init guarded CU1-clear corpus: [Note 887](WORKING_NOTES/887-init-live-sp-guard-full-masked-cu1-clear-corpus-20261004.md)
 passes all 507 live-SP-guarded packed O2/g3 paired pages in 806.976 seconds,
 no skips. Text 4,576 / 592 excess; observed descent 3,240 matches bound,
