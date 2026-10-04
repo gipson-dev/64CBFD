@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init parent-ascent cursor fitting: [Note 866](WORKING_NOTES/866-init-parent-ascent-offset-cursor-fitting-20261003.md)
+adds opt-in descending parent-offset traversal. Packed O2 falls to 4,720
+linked bytes / 736 excess with unchanged 392-byte core bound and 200-byte
+builder frame. Packed O1 text/bound hold. Other profiles are mixed: frame
+O2 saves 32 bytes; frame/aligned O1 grow 16, and aligned bounds grow eight.
+Active root-descent and short-tree guard checks pass; 31 guest tests pass,
+one corpus skip, plus fifteen focused passes. All observed descents match
+static bounds. Rejected mask-reuse forms are removed, omitted-option text
+matches baseline. Defaults/production/README totals unchanged; corpus and
+fitting/ownership/hardware remain open. Unrelated Game work preserved.
+
 Init current cache/sort fitting: [Note 865](WORKING_NOTES/865-init-toggle-cache-interactions-and-rejected-sort-cursors-20261003.md)
 re-measures cache and parent/sorted-array interactions on the changed Note
 864 base. All 44 fresh object receipts are no better than the base on

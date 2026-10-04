@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 866](WORKING_NOTES/866-init-parent-ascent-offset-cursor-fitting-20261003.md)
+  banks opt-in parent-offset cursor fitting. Packed O2 linked text falls
+  to 4,720 / 736 excess with unchanged stack bounds; packed O1 holds.
+  Mixed other-profile costs and two rejected mask-reuse trials are measured.
+  Active root-descent/short-tree guard and omitted-option text checks pass;
+  31 guest tests pass, one corpus skip, plus fifteen focused passes; all
+  observed descents match bounds. Defaults/production/README totals
+  unchanged; changed corpus and fitting/ownership/hardware stay open.
+  Unrelated Game work is preserved and excluded.
+
 - Init [Note 865](WORKING_NOTES/865-init-toggle-cache-interactions-and-rejected-sort-cursors-20261003.md)
   banks changed-base cache/parent/sorted-array matrices and two rejected
   sorted-length cursor trials: 44 fresh object receipts, no improving

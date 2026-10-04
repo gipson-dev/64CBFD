@@ -487,10 +487,21 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
             }
             code ^= next;
 #endif
+#ifdef INIT_DECODE_PARENT_ASCENT_CURSOR
+            {
+                const uint32_t *offsetCursor = BUILD_OFFSETS + level;
+                while ((code & BUILD_LOW_MASK(consumed)) != *offsetCursor) {
+                    offsetCursor--;
+                    level--;
+                    consumed -= width;
+                }
+            }
+#else
             while ((code & BUILD_LOW_MASK(consumed)) != BUILD_OFFSETS[level]) {
                 level--;
                 consumed -= width;
             }
+#endif
             remaining--;
         }
     }

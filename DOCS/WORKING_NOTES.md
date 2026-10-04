@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 866](WORKING_NOTES/866-init-parent-ascent-offset-cursor-fitting-20261003.md)):
+Opt-in parent-offset cursor saves packed O2 16 linked bytes to 4,720 /
+736 excess, with unchanged stack bounds and packed O1 text. Other-profile
+tradeoffs are measured; two mask-reuse forms rejected. Active root-descent,
+short-tree guard and omitted-option text checks pass; 31 guest tests pass,
+one corpus skip, plus fifteen focused passes; observed descents match bounds.
+Changed corpus, fitting/ownership/hardware remain open.
+Defaults/production/README totals unchanged; unrelated Game work preserved.
+
 2026-10-03 ([Note 865](WORKING_NOTES/865-init-toggle-cache-interactions-and-rejected-sort-cursors-20261003.md)):
 Changed-base cache/parent/sorted-array matrices and two sorted-length cursor
 trials yield 44 fresh objects; none improves base text/bound metrics. Both
