@@ -17,16 +17,28 @@ and pointer wrapper are qualified. Its constructor `func_1513264C` and resource
 helper `func_151336A8` are subsequently recovered in
 [Note 961](WORKING_NOTES/961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md):
 255 / 256 and 45 / 46 words, with 184 and nine raw differences. The actual
-child/constructor/helper connection passes bounded tests, but three deeper
-loader/setup/attachment routines remain placeholders. Retail's descriptor
+child/constructor/helper connection passes bounded tests, leaving deeper
+loader/setup/attachment recovery gates open at that checkpoint. Retail's descriptor
 holes and 28-byte extra payload remain unspecified.
+
+The shared variadic loader and offset relocator are subsequently recovered in
+[Note 962](WORKING_NOTES/962-game-variadic-resource-loader-and-offset-relocation-recovery-20261004.md):
+77 / 77 and 65 / 72 words, 17 and 71 raw differences. Actual constructor/
+helper/loader/relocation connections pass bounded tests. Lookup `func_1502AC88`
+and block loader `func_1502B350` remain DECOMP placeholders; the unwritten
+metadata path does not qualify production loading. The sibling already has
+recompiled bodies for these four routines, with diagnostics and host support;
+their presence is not fresh PC runtime acceptance.
 
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
 - [x] Audit the sibling's active CMake source input without changing its files.
 - [x] Recover DECOMP `func_1513264C` and qualify resource helper `func_151336A8`.
-- [ ] Recover deeper resource loader/setup/attachment `func_1502B6BC`,
-  `func_1510CE60` and `func_15168E54` before claiming the complete resource pipeline.
+- [x] Recover variadic resource loader `func_1502B6BC` and offset relocator `func_1502B4A8`.
+- [ ] Recover lookup `func_1502AC88` and block loading `func_1502B350`; qualify
+  metadata writes before claiming production resource loading.
+- [ ] Recover deeper setup/attachment `func_1510CE60` and `func_15168E54`
+  before claiming the complete resource pipeline.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a
   zero-return stub, and the scoped source search finds no named override.
 - [ ] Synchronize PC-port `func_150E9178`: the same active source also retains

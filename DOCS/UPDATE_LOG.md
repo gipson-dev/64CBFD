@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 962](WORKING_NOTES/962-game-variadic-resource-loader-and-offset-relocation-recovery-20261004.md)
+  recovers the variadic resource loader and offset relocation helper: 77 / 77
+  and 65 / 72 words, 17 and 71 differences, no new guards. Typed interfaces
+  preserve three exact callers; fourteen new tests connect actual constructor/
+  helper/loader/relocation and other callers. All 174 combined checks and fresh
+  link pass, retaining Init code/data, Game data and prior recoveries. Lookup
+  and block-load placeholders still prevent production loading qualification.
+  No README aggregate, retained Init assembly or host changes.
+
 - Game [Note 961](WORKING_NOTES/961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md)
   recovers extended constructor `func_1513264C` and resource helper `func_151336A8`:
   255 / 256 and 45 / 46 words, 184 and nine differences, no guards. Fifteen new

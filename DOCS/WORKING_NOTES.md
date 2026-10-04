@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-04 ([Note 962](WORKING_NOTES/962-game-variadic-resource-loader-and-offset-relocation-recovery-20261004.md)):
+Recover variadic loader `func_1502B6BC` and offset relocator `func_1502B4A8`:
+77 / 77 words, 17 differences, retail 0x50 frame; 65 / 72 words, 71 differences.
+No new guards. Correct caller interfaces preserve three complete byte-exact
+slots. Fourteen new tests connect actual constructor/helper/loader/relocation,
+table and lazy callers; all 174 combined checks and fresh link pass. Lookup
+`func_1502AC88` and block load `func_1502B350` remain placeholders, so unwritten
+metadata and production loading are unqualified. Recover these next; existing
+Init code/data, Game data, prior identities and README aggregates stay intact.
+
 2026-10-04 ([Note 961](WORKING_NOTES/961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md)):
 Recover `func_1513264C` and resource helper `func_151336A8`: 255 / 256 and
 45 / 46 words, 184 and nine differences, no guards. Fifteen new tests connect

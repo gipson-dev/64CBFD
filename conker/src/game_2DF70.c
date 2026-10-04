@@ -1,5 +1,7 @@
 #include <ultra64.h>
 
+void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
+
 #include "functions.h"
 #include "variables.h"
 

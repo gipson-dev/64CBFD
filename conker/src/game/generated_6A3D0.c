@@ -14,7 +14,7 @@ extern u8 D_80098888[];
 extern u8 *D_80084410[];
 extern s16 D_800C5A90[];
 extern struct124 *D_800D1C90[];
-extern s32 func_1502B6BC(s32 *, s32, s32, s32, s32, s32);
+extern void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
 
 s32 func_1503CF20() {
     return 0;
@@ -78,7 +78,7 @@ s32 func_1503D660() {
 s32 func_1503D774(s32 arg0, s32 arg1) {
     s32 output;
     struct124 **slot = &D_800D1C90[arg0];
-    s32 loaded;
+    void *loaded;
 
     if (*slot != NULL) {
         return 0;

@@ -43,7 +43,7 @@ void *func_15167A68(s32, s32, s32, s32, u8, u8);
 void func_15168A9C(void *);
 u8 *func_1515D480(s32);
 u8 *func_1515D440(void);
-ExtendedResource15F680 *func_1502B6BC(s32 *, s32, s32 *, s32, s32, s32);
+void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
 void func_1510CE60(void *, s32, s32, s32, s32 *);
 void func_15168E54(void *, void *);
 s32 func_151336A8(s32, ExtendedResourceNode15F680 *, void *);
@@ -57,7 +57,7 @@ f32 sqrtf(f32);
         cls.directory = tempfile.TemporaryDirectory()
         cls.addClassCleanup(cls.directory.cleanup)
         cls.path = Path(cls.directory.name)
-        cls.fixture = cls.types + cls.layouts + cls.declarations + (
+        cls.fixture = '#include <stdarg.h>\n' + cls.types + cls.layouts + cls.declarations + (
             'static const u32 retailTable[236]={' + ','.join('0x%Xu' % w for w in cls.table) + '};\n'
             'static const u32 retailDefault=0x%Xu;\n' % cls.default) + r'''
 f32 D_800A3868;
@@ -134,7 +134,10 @@ void *allocate_memory(s32 size, s32 tag, s32 mode, s32 pool) {
     if(mutate&2) { *(u16 *)(descriptor+0x56)=10; expectedIndex=10; }
     return failNode?NULL:&nodes[0];
 }
-ExtendedResource15F680 *func_1502B6BC(s32 *a, s32 b, s32 *c, s32 d, s32 e, s32 f) {
+void *func_1502B6BC(s32 *a, s32 b, s32 *c, s32 d, ...) {
+    va_list path;
+    s32 e, f;
+    va_start(path, d); e=va_arg(path,s32); f=va_arg(path,s32); va_end(path);
     push('L'); loads++;
     if(b || d!=2 || e!=9 || f!=D_800A3880[expectedIndex] || !a || !c || a==c || copies) error=4;
     *a=123; *c=-456;
@@ -459,8 +462,9 @@ for(phase=0;phase<4;phase++) {
             self.assertEqual(words[0] & 0xFFFF, 0xFFB8 if size == 256 else 0xFFD0)
             with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as source:
                 self.assertFalse(any(row['function'] == name for row in csv.DictReader(source)))
-        for path, name in (('game_57FA0.c', 'func_1502B6BC'),
-                           ('game/generated_139FC0.c', 'func_1510CE60'),
+        self.assertIn('void *func_1502B6BC(s32 *size,',
+                      (self.root / 'conker/src/game_57FA0.c').read_text())
+        for path, name in (('game/generated_139FC0.c', 'func_1510CE60'),
                            ('game_1944C0.c', 'func_15168E54')):
             text = (self.root / 'conker/src' / path).read_text()
             self.assertRegex(text, r's32 ' + name + r'\(\) \{\s*return 0;\s*\}')

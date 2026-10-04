@@ -155,8 +155,12 @@ transplant, build, binary, save or frozen Release changes.
 - [x] Qualify the actual child-to-constructor/helper source connection.
 - [x] Preserve retail partial initialization, failures and resource search boundary.
 - [x] Fit complete slots and preserve linked Init/Game-data and prior recovery gates.
-- [ ] Recover loader `func_1502B6BC` (77 words), setup `func_1510CE60`
-  (163 words) and attachment `func_15168E54` (45 words), which remain placeholders.
+- [x] Recover loader `func_1502B6BC` (77 words) and its offset relocation helper;
+  subsequently completed in [Note 962](962-game-variadic-resource-loader-and-offset-relocation-recovery-20261004.md).
+- [ ] Recover its lookup `func_1502AC88` (159 words) and block loader `func_1502B350`
+  (86 words); unwritten metadata prevents production loading qualification.
+- [ ] Recover setup `func_1510CE60` (163 words) and attachment `func_15168E54`
+  (45 words), which remain placeholders.
 - [ ] Pursue constructor/helper raw byte matching separately.
 - [ ] Synchronize the PC child through guest/RDRAM interfaces and qualify natural effects.
 

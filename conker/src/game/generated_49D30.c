@@ -25,8 +25,7 @@ extern u8 D_800C3550[][30];
 extern u8 D_800C3670;
 extern s64 D_800C3A60[];
 extern s32 D_800C3668[];
-extern s32 func_1502B6BC(s32 *arg0, s32 arg1, s32 *arg2, s32 arg3,
-                        s32 arg4, s32 arg5, s32 arg6);
+extern void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
 u8 *func_151149AC(u8);
 
 s32 func_1501C880() {
@@ -88,7 +87,7 @@ s32 func_1501D1D4(s32 arg0, s32 arg1, s32 index) {
     s32 result0;
     s32 result;
 
-    result = func_1502B6BC(&result0, 0, &result1, 3, 6, arg0, arg1);
+    result = (s32)func_1502B6BC(&result0, 0, &result1, 3, 6, arg0, arg1);
     if (result != 0) {
         D_800C3668[index] = result;
     } else {

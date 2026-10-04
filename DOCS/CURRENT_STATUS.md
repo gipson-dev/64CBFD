@@ -21,14 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Variadic resource loader: [Note 962](WORKING_NOTES/962-game-variadic-resource-loader-and-offset-relocation-recovery-20261004.md)
+recovers `func_1502B6BC` and relocation helper `func_1502B4A8`. The loader fits
+all 77 words / retail 0x50 frame, 17 raw differences; relocation fits 65 body
+words in 72, 71 differences. No new guards. Typed variadic caller interfaces
+preserve three complete exact caller slots. Fourteen new tests connect actual
+constructor/helper/loader/relocation and other callers; all 174 combined checks
+pass, no skips. Fresh link preserves full Init code/data, Game data and prior
+recoveries. Next recover lookup `func_1502AC88` (159 words) and block loader
+`func_1502B350` (86 words). Lookup still leaves metadata unwritten: production
+loading is not qualified, nor are zero-depth/negative-depth calls. Deeper setup/
+attachment, PC child synchronization and natural effects remain open. README unchanged.
+
 Extended child constructor: [Note 961](WORKING_NOTES/961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md)
 recovers `func_1513264C` and `func_151336A8` from their placeholders. Bodies
 fit 255 / 256 and 45 / 46 words, with 184 and nine raw differences, no guards.
 The pointer wrapper remains fifteen-word exact. Fifteen new tests connect the
 actual child/constructor/resource helper; all 160 combined checks pass, no skips.
 Fresh link preserves complete Init code/data, Game data and prior recoveries.
-Next recover deeper loader/setup/attachment placeholders `func_1502B6BC`,
-`func_1510CE60` and `func_15168E54`. PC child synchronization and natural
+Its loader gate is subsequently recovered by Note 962; lookup/block loading and
+deeper `func_1510CE60` / `func_15168E54` remain open. PC synchronization and natural
 effects remain open; retained Init assembly and README aggregates are unchanged.
 
 Extended child callback: [Note 960](WORKING_NOTES/960-game-extended-child-emission-semantic-recovery-20261004.md)
