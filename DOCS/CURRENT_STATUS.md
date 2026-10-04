@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init split-validation trial: [Note 936](WORKING_NOTES/936-init-split-destination-validation-interface-trial-20261004.md)
+tests a one-cell/scalar-return setup interface. O2 624 text / 64 stack and
+O1 720 / 56 do not improve the independent controls. All 1,728 paired fixtures
+and sixteen combined tests pass. Keep assembly production owners; pick up
+Game alternate emitter helper `func_150E76D0` from Notes 924/925 next.
+
 Init shared setup trial: [Note 935](WORKING_NOTES/935-init-shared-formatter-setup-text-stack-tradeoff-20261004.md)
 saves sixteen linked bytes, but increases nested stack: O2 608 bytes / 80
 stack, O1 688 / 56. All 1,152 paired fixtures and sixteen combined tests pass.

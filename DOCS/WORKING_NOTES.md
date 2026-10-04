@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-04 ([Note 936](WORKING_NOTES/936-init-split-destination-validation-interface-trial-20261004.md)):
+Split validation/state interface passes 1,728 paired fixtures but fails to
+improve text/stack over controls. Sixteen combined tests pass. Init ownership
+unchanged; next production recovery is Game `func_150E76D0` placeholder.
+
 2026-10-04 ([Note 935](WORKING_NOTES/935-init-shared-formatter-setup-text-stack-tradeoff-20261004.md)):
 Shared C formatter setup saves sixteen linked bytes but grows O2 nested stack
 48 -> 80 bytes. All 1,152 paired fixtures / sixteen combined tests pass.

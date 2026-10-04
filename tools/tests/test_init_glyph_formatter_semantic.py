@@ -47,7 +47,9 @@ class InitGlyphFormatterSemanticTests(unittest.TestCase):
         for profile, flags in (('o2g3-no-unroll', ['-O2', '-g3', '-Wo,-loopunroll,0']),
                                ('o1', ['-O1']),
                                ('shared-o2g3-no-unroll', ['-O2', '-g3', '-Wo,-loopunroll,0', '-DGLYPH_SHARED_SETUP']),
-                               ('shared-o1', ['-O1', '-DGLYPH_SHARED_SETUP'])):
+                               ('shared-o1', ['-O1', '-DGLYPH_SHARED_SETUP']),
+                               ('split-o2g3-no-unroll', ['-O2', '-g3', '-Wo,-loopunroll,0', '-DGLYPH_SPLIT_SETUP']),
+                               ('split-o1', ['-O1', '-DGLYPH_SPLIT_SETUP'])):
             prefix = 'build/init-glyph-formatters-semantic/' + profile
             objects = []
             for name, source, options in (
@@ -73,7 +75,7 @@ class InitGlyphFormatterSemanticTests(unittest.TestCase):
             data = (cwd / binary).read_bytes()
             code = {0x10009000 + i * 4: word[0] for i, word in enumerate(struct.iter_unpack('>I', data))}
             words, _, addresses = match_progress.load_elf_functions(str(cwd / elf), 'mips-linux-gnu-objdump')
-            if 'shared' in profile:
+            if 'shared' in profile or 'split' in profile:
                 # IDO omits the static symbol; pin its entry through both callers.
                 if '_ftext' in words:
                     for caller in ('init_glyph_hex', 'init_glyph_string'):

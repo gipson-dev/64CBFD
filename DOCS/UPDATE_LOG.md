@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 936](WORKING_NOTES/936-init-split-destination-validation-interface-trial-20261004.md)
+  rejects the split-validation interface as a fitting improvement. All 1,728
+  paired fixtures and sixteen combined tests pass; keep original owners and
+  resume the unfinished Game alternate emitter recovery next.
+
 - Init [Note 935](WORKING_NOTES/935-init-shared-formatter-setup-text-stack-tradeoff-20261004.md)
   measures shared destination setup: sixteen-byte text saving with increased
   stack cost. Sixteen combined tests and 1,152 paired fixtures pass; retain

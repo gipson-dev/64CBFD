@@ -16,6 +16,16 @@ static int init_glyph_destination(u32 position, u32 *state) {
     state[1] = second - first;
     return 1;
 }
+#elif defined(GLYPH_SPLIT_SETUP)
+static u32 init_glyph_destination(u32 *displacement) {
+    u32 first = D_8002AAE8[0];
+    u32 second;
+    if (!first) return 0;
+    second = D_8002AAE8[1];
+    if (!second) return 0;
+    *displacement = second - first;
+    return first;
+}
 #endif
 
 /* Result cells belong to the trial caller, not retail framebuffer storage. */
@@ -26,6 +36,13 @@ int init_glyph_hex(u32 position, u32 value, u32 *result) {
     if (!init_glyph_destination(position + 9, state)) return 0;
     cursor = state[0];
     displacement = state[1];
+#elif defined(GLYPH_SPLIT_SETUP)
+    u32 displacement, cursor;
+    u32 first = init_glyph_destination(&displacement);
+    int count = 8;
+    if (!first) return 0;
+    position += 9;
+    cursor = first + (position & 0xFFE0) * 146 + (position & 31) * 16 + 0x4A0;
 #else
     u32 first = D_8002AAE8[0];
     u32 second, cursor;
@@ -40,7 +57,7 @@ int init_glyph_hex(u32 position, u32 value, u32 *result) {
         u32 index = (value & 15) + 9;
         value >>= 4;
         cursor = init_glyph_writer(cursor - 32,
-#ifdef GLYPH_SHARED_SETUP
+#if defined(GLYPH_SHARED_SETUP) || defined(GLYPH_SPLIT_SETUP)
                                   displacement,
 #else
                                   second - first,
@@ -58,6 +75,12 @@ int init_glyph_string(u32 position, u32 text, u32 *result) {
     if (!init_glyph_destination(position, state)) return 0;
     cursor = state[0];
     displacement = state[1];
+#elif defined(GLYPH_SPLIT_SETUP)
+    u32 displacement, cursor;
+    u32 first = init_glyph_destination(&displacement);
+    int character;
+    if (!first) return 0;
+    cursor = first + (position & 0xFFE0) * 146 + (position & 31) * 16 + 0x4A0;
 #else
     u32 first = D_8002AAE8[0];
     u32 second, cursor;
@@ -75,7 +98,7 @@ int init_glyph_string(u32 position, u32 text, u32 *result) {
         if (index < 0) index = 0;
         text++;
         cursor = init_glyph_writer(cursor,
-#ifdef GLYPH_SHARED_SETUP
+#if defined(GLYPH_SHARED_SETUP) || defined(GLYPH_SPLIT_SETUP)
                                   displacement,
 #else
                                   second - first,
