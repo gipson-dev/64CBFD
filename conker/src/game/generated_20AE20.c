@@ -72,6 +72,28 @@ extern s32 D_800BE9E4;
 extern s32 D_800E0A88;
 extern s8 D_800E0BE9;
 extern s8 *D_8008FDD4;
+typedef struct {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+    f32 unk1C;
+    s16 unk20;
+    u8 pad22[8];
+    u8 unk2A;
+    u8 unk2B;
+    u8 pad2C[0x12];
+    u8 unk3E;
+    u8 unk3F;
+    u8 pad40;
+    u8 unk41;
+    u8 pad42;
+    u8 unk43;
+    u8 unk44;
+} StatusReset20AE20;
 extern s8 D_8008FE54[23];
 s8 D_800E0BE0[23];
 extern u8 D_800AB570[];
@@ -279,8 +301,23 @@ s32 func_151E4EE8() {
     return 0;
 }
 
-s32 func_151E5034() {
-    return 0;
+void func_151E5034(void) {
+    ((StatusReset20AE20 *)D_8008FDD4)->unk0 = 0.0f;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk4 = 0.0f;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk2B = 0;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk20 = 0;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk3E = 0;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk3F = 0;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk41 = 0;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk43 = 0;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk44 = 0;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk10 = 0.0f;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk2A = 0;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk14 = 0.0f;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk18 = 0.0f;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk1C = 0.0f;
+    ((StatusReset20AE20 *)D_8008FDD4)->unkC = 0.0f;
+    ((StatusReset20AE20 *)D_8008FDD4)->unk8 = 0.0f;
 }
 
 void func_151E50C8(void) {

@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 915](WORKING_NOTES/915-game-status-record-reset-recovery-and-match-20261004.md)
+  finishes `func_151E5034` as a direct 37-word C match without guards. Nine
+  focused tests and fresh production ELF/progress refresh pass. Game 2599 exact,
+  total 3272 exact, zero drift; README aggregate snapshot updated only.
+
 - Init [Note 914](WORKING_NOTES/914-init-rejected-dynamic-symbol-and-header-gate-fitting-20261004.md)
   rejects dynamic symbol ordering and encoded header gate trials: no complete
   saving / O2 bound +40, and O2 text +16 respectively. Source restored exactly;

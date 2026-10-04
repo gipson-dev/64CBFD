@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 915](WORKING_NOTES/915-game-status-record-reset-recovery-and-match-20261004.md)):
+Game `func_151E5034` replaces its false zero-return placeholder with sixteen
+selected record clears and repeated pointer loads. All 37 words match directly
+from C, no guards; nine focused checks pass. Fresh linked totals Game 2599 exact,
+total 3272 exact, zero drift. README aggregates refreshed, detailed update here.
+
 2026-10-04 ([Note 914](WORKING_NOTES/914-init-rejected-dynamic-symbol-and-header-gate-fitting-20261004.md)):
 Dynamic symbol-before-drop saves no complete text and raises O2 call bound
 forty bytes; encoded header mask gate grows O2 sixteen bytes despite matching

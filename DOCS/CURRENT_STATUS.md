@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game status record reset: [Note 915](WORKING_NOTES/915-game-status-record-reset-recovery-and-match-20261004.md)
+finishes `func_151E5034` as semantic C: sixteen selected zero stores with
+retail pointer reloads. All 37 linked words match directly, no guards; nine
+focused tests pass. Fresh ELF/matcher: Game 2599/4790 exact, total 3272/5463,
+zero drift. Conversion totals unchanged; README aggregate rows refreshed.
+Unrelated actor/timeline work remains uncommitted and excluded from this recovery.
+
 Init dynamic fitting trials: [Note 914](WORKING_NOTES/914-init-rejected-dynamic-symbol-and-header-gate-fitting-20261004.md)
 rejects symbol-before-drop (no text saving, O2 core bound +40) and encoded
 header mask gate (O2 core text +16). All 16384 header predicates agree, but
