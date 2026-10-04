@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef short s16;
 
-#if !defined(HOST_TEST) && (SHAPE == 12 || SHAPE == 13)
+#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 15)
 typedef char GuestAddressWidth[(sizeof(unsigned long) == 4) ? 1 : -1];
 #endif
 
@@ -24,7 +24,7 @@ void func_10005BE0(void) {
 #if SHAPE == 6 || SHAPE == 7
     int value = 0xFF;
 #endif
-#if SHAPE == 12 || SHAPE == 13
+#if SHAPE >= 12 && SHAPE <= 15
     unsigned long cursor = (unsigned long)D_8003BE70;
     unsigned long end = (unsigned long)D_8003BE7C;
 #if SHAPE == 13
@@ -86,6 +86,21 @@ void func_10005BE0(void) {
     do {
         *(volatile u8 *)cursor++ = 0xFF;
     } while (remaining-- != 0);
+#elif SHAPE == 14
+    /* Separate the final store so comparison needs no old-cursor temporary. */
+    while (cursor != end) {
+        *(volatile u8 *)cursor = 0xFF;
+        cursor++;
+    }
+    *(volatile u8 *)cursor = 0xFF;
+#elif SHAPE == 15
+    /* Put the update only on the taken back edge, not the exit edge. */
+    goto fill;
+advance:
+    cursor++;
+fill:
+    *(volatile u8 *)cursor = 0xFF;
+    if (cursor != end) goto advance;
 #else
 #error Unknown SHAPE
 #endif
@@ -101,7 +116,7 @@ void func_10005BE0(void) {
         value <<= bits;
         value--;
         *end = value;
-#elif SHAPE == 12 || SHAPE == 13
+#elif SHAPE >= 12 && SHAPE <= 15
         *(volatile u8 *)end = (2u << bits) - 1;
 #else
         *end = (2u << bits) - 1;

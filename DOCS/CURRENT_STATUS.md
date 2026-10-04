@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init bitmap exit-edge trials: [Note 944](WORKING_NOTES/944-init-bitmap-exit-edge-control-flow-trials-20261004.md)
+tests separate-final-store and taken-edge-increment forms. The latter removes
+XOR but adds an entry jump: twenty words, still over nineteen retail. Eight
+new / 54 combined tests pass; 1,002 new paired executions and twelve bounded
+prefixes qualify alias/wrap traces. Reject both for production; Init owners
+and README totals unchanged. Game `func_150E81A8` remains the next actionable
+semantic recovery under the broader decomp goal.
+
 Init resume assessment: [Note 943](WORKING_NOTES/943-init-resume-linked-baseline-and-conversion-shortlist-20261004.md)
 confirms 492 C / 47 assembly entries and the current production ELF's complete
 164,048 code / 17,376 data bytes retail-exact, including all retained slots.

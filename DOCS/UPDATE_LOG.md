@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 944](WORKING_NOTES/944-init-bitmap-exit-edge-control-flow-trials-20261004.md)
+  records two new exit-edge source shapes and eight guest-fixture tests.
+  All 54 combined tests pass, with 1,002 new pairs/twelve bounded prefixes;
+  neither form improves complete-slot fitting. Original Init owners and
+  README aggregates stay unchanged; the next Game semantic target is retained.
+
 - Init [Note 943](WORKING_NOTES/943-init-resume-linked-baseline-and-conversion-shortlist-20261004.md)
   verifies the current linked Init code/data and all 47 retained assembly
   slots, refreshes the 492-C inventory and records the conversion shortlist.

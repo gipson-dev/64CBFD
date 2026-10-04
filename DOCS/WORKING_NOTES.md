@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 944](WORKING_NOTES/944-init-bitmap-exit-edge-control-flow-trials-20261004.md)):
+Two new exit-edge bitmap forms are rejected. Taken-edge increment removes XOR
+but adds an entry jump, retaining twenty words against nineteen retail.
+Eight new / 54 combined tests pass, including 1,002 new paired executions
+and twelve bounded prefixes. Keep Init assembly ownership and README totals;
+pending Game `func_150E81A8` remains actionable for semantic production recovery.
+
 2026-10-04 ([Note 943](WORKING_NOTES/943-init-resume-linked-baseline-and-conversion-shortlist-20261004.md)):
 Requested Init resume confirms 492 C / 47 assembly entries, all current Init
 code/data bytes and retained assembly slots retail-exact. Sixty-two focused
