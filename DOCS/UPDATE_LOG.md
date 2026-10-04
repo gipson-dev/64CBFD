@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 934](WORKING_NOTES/934-init-connected-semantic-c-formatters-and-layout-cost-20261004.md)
+  recovers both connected C formatter trials with 576 paired fixtures passing.
+  Fifteen combined tests pass; measured text/stack costs keep production
+  ownership and README aggregates unchanged.
+
 - Init [Note 933](WORKING_NOTES/933-init-glyph-adapter-production-placement-and-stack-boundaries-20261004.md)
   adds production adoption boundary checks: occupied experimental address,
   fifteen caller sites and two stack regimes. Twenty tests pass; conditional

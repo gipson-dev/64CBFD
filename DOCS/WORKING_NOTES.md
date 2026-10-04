@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-04 ([Note 934](WORKING_NOTES/934-init-connected-semantic-c-formatters-and-layout-cost-20261004.md)):
+Both semantic C formatters call the C writer directly; 576 paired fixtures
+and fifteen combined tests pass. O2 text 624 / retail connected budget 412,
+stack 48 bytes. Full-C recovery does not yet solve fitting or ownership.
+
 2026-10-04 ([Note 933](WORKING_NOTES/933-init-glyph-adapter-production-placement-and-stack-boundaries-20261004.md)):
 Glyph adapter adoption audit pins occupied text and two caller stack regimes.
 Nine early inherited-stack sites remain unqualified; conditional overlay

@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init connected C formatters: [Note 934](WORKING_NOTES/934-init-connected-semantic-c-formatters-and-layout-cost-20261004.md)
+recovers both formatter bodies calling the C writer directly. Two profiles /
+576 paired fixtures and fifteen combined tests pass, including string/output
+alias timing. O2 allocated text is 624 versus 412 connected retail bytes;
+both profiles descend 48 bytes. Fitting/adapter/ownership remain open.
+
 Init glyph adoption boundaries: [Note 933](WORKING_NOTES/933-init-glyph-adapter-production-placement-and-stack-boundaries-20261004.md)
 pins nine inherited-stack and six overlay-stack diagnostic formatter sites.
 Experimental C address is occupied by `func_10008F90`; no adjacent leaf-slot
