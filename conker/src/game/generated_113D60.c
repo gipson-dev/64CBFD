@@ -21,6 +21,8 @@ extern f32 D_800A1348;
 extern f32 D_800A134C;
 extern s32 D_80088A5C[2];
 extern u8 D_80088A64;
+extern s32 D_80088A68[3];
+extern s32 D_80088A74[3];
 typedef struct EmitterPosition113D60 {
     f32 x;
     f32 y;
@@ -241,10 +243,65 @@ s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, s32 duration,
     return func_1515548C(&descriptor, 0, pair, mode, 0, slot, context);
 }
 
-/* Call contract recovered; helper body remains an unrecovered placeholder. */
 s32 func_150E76D0(f32 scale, s16 id, u8 flags, u8 duration, s32 opacity,
                  s32 size0, s32 size1, s32 *pair, s32 mode, u8 slot, s32 context) {
-    return 0;
+    EmitterDescriptor113D60 descriptor;
+    s32 sideTags[3];
+    s32 topTags[3];
+    u8 variant = func_150ADA20() & 3;
+
+    descriptor.id = id;
+    descriptor.flags = flags & 0xFFF9;
+    descriptor.size0 = size0;
+    descriptor.size1 = size1;
+    descriptor.kind = 5;
+    descriptor.field1B = 255;
+    descriptor.field1C = 230;
+    descriptor.field1D = 190;
+    descriptor.duration = duration;
+    descriptor.field1F = 255;
+    descriptor.field20 = 255;
+    descriptor.field21 = 255;
+    descriptor.field22 = 255;
+    descriptor.opacity = opacity;
+    descriptor.field24 = 1;
+    descriptor.field28 = 0;
+    descriptor.field2C = 0;
+    descriptor.field40 = 0;
+    descriptor.field41 = 10;
+    descriptor.field30 = 7;
+    descriptor.field34 = 60;
+    descriptor.field38 = 128;
+    descriptor.field3C = 32;
+    descriptor.scale[0] = scale;
+    descriptor.scale[1] = scale;
+
+    if (variant < 2) {
+        sideTags[0] = D_80088A68[0];
+        sideTags[1] = D_80088A68[1];
+        sideTags[2] = D_80088A68[2];
+        descriptor.tag = sideTags[(u32)func_150ADA20() % 3];
+        descriptor.position.y = func_150ADA68() * 160.0f + -80.0f;
+        if (variant == 0) {
+            descriptor.position.x = 145.0f - scale;
+            descriptor.flags |= 2;
+        } else {
+            descriptor.position.x = scale - 145.0f;
+        }
+    } else {
+        topTags[0] = D_80088A74[0];
+        topTags[1] = D_80088A74[1];
+        topTags[2] = D_80088A74[2];
+        descriptor.tag = topTags[(u32)func_150ADA20() % 3];
+        descriptor.position.x = func_150ADA68() * 260.0f + -130.0f;
+        if (variant == 2) {
+            descriptor.position.y = 110.0f - scale;
+            descriptor.flags |= 4;
+        } else {
+            descriptor.position.y = scale - 110.0f;
+        }
+    }
+    return func_1515548C(&descriptor, 0, pair, mode, 0, slot, context);
 }
 
 s32 func_150E7994() {

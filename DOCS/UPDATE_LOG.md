@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 937](WORKING_NOTES/937-game-random-edge-emitter-semantic-recovery-20261004.md)
+  recovers alternate emitter `func_150E76D0` with twenty-one focused tests
+  passing. Both actual dispatcher/helper paths are exercised; production body
+  fits its slot with no drift or guards. Byte matching remains open and
+  README aggregates are unchanged. Init production ownership is unchanged.
+
 - Init [Note 936](WORKING_NOTES/936-init-split-destination-validation-interface-trial-20261004.md)
   rejects the split-validation interface as a fitting improvement. All 1,728
   paired fixtures and sixteen combined tests pass; keep original owners and

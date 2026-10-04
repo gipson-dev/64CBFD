@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 937](WORKING_NOTES/937-game-random-edge-emitter-semantic-recovery-20261004.md)):
+`func_150E76D0` now builds all four random edge variants and returns submission
+results. Twenty-one focused tests pass, including both actual helper paths.
+155-word body / 177-word slot, original 0xB0 frame, 171 differences, no guards
+or drift. Semantic recovery; aggregates unchanged. Next inspect `func_150E7994`.
+
 2026-10-04 ([Note 936](WORKING_NOTES/936-init-split-destination-validation-interface-trial-20261004.md)):
 Split validation/state interface passes 1,728 paired fixtures but fails to
 improve text/stack over controls. Sixteen combined tests pass. Init ownership

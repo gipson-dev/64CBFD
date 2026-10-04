@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game random edge emitter: [Note 937](WORKING_NOTES/937-game-random-edge-emitter-semantic-recovery-20261004.md)
+replaces `func_150E76D0`'s placeholder with its four-variant descriptor builder.
+Twenty-one focused tests pass, including both actual dispatcher/helper paths.
+Body 155 / slot 177 words, original 0xB0 frame, 171 differences, no guards/drift.
+Semantic recovery, not a byte match; aggregates unchanged. Next inspect
+adjacent placeholder `func_150E7994`; Init production owners remain unchanged.
+
 Init split-validation trial: [Note 936](WORKING_NOTES/936-init-split-destination-validation-interface-trial-20261004.md)
 tests a one-cell/scalar-return setup interface. O2 624 text / 64 stack and
 O1 720 / 56 do not improve the independent controls. All 1,728 paired fixtures
