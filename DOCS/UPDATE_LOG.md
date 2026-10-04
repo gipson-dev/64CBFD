@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 877](WORKING_NOTES/877-init-callee-adapter-full-masked-cu1-clear-corpus-20261004.md)
+  qualifies all 507 current first-refill/callee-adapter packed O2/g3 pages
+  with masked CU1 clear in 839.425 seconds, no skips. Callee-return guard
+  checks every page; text 4,640 / 656 excess, descent 3,240 / margin 88.
+  Sixteen supporting gates pass, source blobs unchanged. Note 875 CU1-clear
+  gate checked off; current CU1-set and promotion gates remain open.
+
 - Init [Note 876](WORKING_NOTES/876-init-unretained-pointer-argument-ownership-trials-20261004.md)
   records three unretained pointer/address ownership trials and corresponding
   two-store adapter omission: no linked saving, O1 workspace-only grows.

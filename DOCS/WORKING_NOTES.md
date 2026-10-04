@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-04 ([Note 877](WORKING_NOTES/877-init-callee-adapter-full-masked-cu1-clear-corpus-20261004.md)):
+All 507 current first-refill/callee-adapter packed O2/g3 pages pass with
+masked CU1 clear in 839.425 seconds, no skips, callee-return guard on each
+page. Text 4,640 / 656 excess; observed descent 3,240 matches bound, minimum
+SP 0x80031D68 / neighbor margin 88. Sixteen supporting gates pass and blobs
+hold. Current CU1-clear gate checked off; matching CU1-set and promotion
+gates remain. No production/default/README changes; unrelated Game preserved.
+
 2026-10-04 ([Note 876](WORKING_NOTES/876-init-unretained-pointer-argument-ownership-trials-20261004.md)):
 Three input/workspace sourcing forms offer no aggregate size benefit;
 workspace-only grows O1 sixteen bytes. Combined adapter omission yields
