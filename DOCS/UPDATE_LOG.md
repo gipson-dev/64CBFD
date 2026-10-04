@@ -18,6 +18,31 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 930](WORKING_NOTES/930-init-semantic-glyph-writer-differential-qualification-20261004.md)
+  adds a compiled semantic glyph trial and 798 paired ordered-memory/alias
+  fixtures. Sixteen combined tests pass; smallest body remains one word larger
+  than retail before adapter cost. No production conversion claimed.
+
+- Init [Note 929](WORKING_NOTES/929-init-connected-glyph-formatter-contracts-20261004.md)
+  qualifies connected formatter/setup/glyph execution and delay-slot cursor
+  behavior. Twenty-four combined tests pass; C/adapters remain experimental
+  next work, with no production conversion or README aggregate change.
+
+- Init [Note 928](WORKING_NOTES/928-init-glyph-writer-register-and-pixel-contract-20261004.md)
+  adds executable glyph register/pixel contracts across 262 rendering fixtures.
+  Nineteen combined tests pass; connected interfaces/adapters remain open,
+  production source and README aggregates unchanged.
+
+- Init [Note 927](WORKING_NOTES/927-init-bitmap-unsigned-range-comparison-trials-20261004.md)
+  retains two rejected unsigned-range bitmap trials: twenty O2 words versus
+  nineteen retail. All 869 bounded host fixtures and 33 retained-contract
+  tests pass; production ownership and README aggregates remain unchanged.
+
+- Init [Note 926](WORKING_NOTES/926-init-remaining-assembly-readiness-refresh-20261004.md)
+  refreshes the remaining assembly decision: 47 entries / 12,252 bytes,
+  two small C candidates, decoder 528 bytes too large with ownership gates
+  open. Thirty-eight focused tests pass; no production conversion claimed.
+
 - Game [Note 925](WORKING_NOTES/925-game-positioned-emitter-descriptor-recovery-20261004.md)
   recovers the positioned emitter helper and pins descriptor extent through
   the retail callee's 0x58-byte copy. Sixteen tests pass; 74 words fit the

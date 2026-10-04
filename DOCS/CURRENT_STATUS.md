@@ -21,6 +21,38 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init semantic glyph trial: [Note 930](WORKING_NOTES/930-init-semantic-glyph-writer-differential-qualification-20261004.md)
+qualifies three compiled profiles against retail ordered memory operations
+and bounded aliases: 798 paired fixtures, sixteen combined tests pass.
+Smallest body is 31 words against 30 retail, before adapter cost; O1 uses a
+32-byte frame. ABI adapter, fitting and ownership remain open. No conversion.
+
+Init connected formatters: [Note 929](WORKING_NOTES/929-init-connected-glyph-formatter-contracts-20261004.md)
+executes interior destination setup, both formatter callers and real glyph
+writer. Pins null-buffer return links, all signed-byte mappings and hex
+delay-slot predecrement/cursor effects. Five new / twenty-four combined tests
+pass. Semantic C/alias and adapter qualification remain open; no conversion.
+
+Init glyph contract: [Note 928](WORKING_NOTES/928-init-glyph-writer-register-and-pixel-contract-20261004.md)
+pins `func_10007D28`'s nonstandard register inputs, two-destination ordered
+8x8 pixel writes, 0x248 row stride and sixteen-byte cursor result. All 262
+rendering fixtures / four new tests pass; nineteen combined tests pass.
+Connected formatter/interior-entry qualification and adapter work remain open.
+No production conversion or aggregate change.
+
+Init unsigned-range bitmap trials: [Note 927](WORKING_NOTES/927-init-bitmap-unsigned-range-comparison-trials-20261004.md)
+reject two new bounded-buffer predicate shapes. Both still emit twenty O2
+words against nineteen retail; `sltu` replaces XOR without solving schedule.
+Eleven shapes / 869 host fixtures and 33 retained-contract tests pass.
+Production owners, aggregate counts and README remain unchanged.
+
+Init readiness refresh: [Note 926](WORKING_NOTES/926-init-remaining-assembly-readiness-refresh-20261004.md)
+recounts 492 C / 47 assembly routines, with 151,796 / 12,252 bytes. Bitmap
+and MMIO remain small C candidates, not production-ready replacements.
+Qualified decoder is 528 linked bytes too large; reservation, entry/frame and
+hardware/context gates remain open. All 38 focused tests pass, no skips.
+Ordered next steps are in the note; no source conversion or README change.
+
 Game positioned emitter descriptor: [Note 925](WORKING_NOTES/925-game-positioned-emitter-descriptor-recovery-20261004.md)
 recovers `func_150E75A0`'s initialized descriptor fields, submission and result
 propagation. Callee's 0x58-byte copy pins extent; unwritten padding/tail stay

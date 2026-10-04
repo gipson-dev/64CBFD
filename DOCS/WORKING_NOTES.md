@@ -1,5 +1,32 @@
 # Working Notes
 
+2026-10-04 ([Note 930](WORKING_NOTES/930-init-semantic-glyph-writer-differential-qualification-20261004.md)):
+Compiled semantic glyph writer passes 798 paired ordered-memory/alias fixtures
+across three profiles. Sixteen combined tests pass. No-unroll O2 has 31 words
+versus 30 retail; adapter/ownership work remains. Production/README unchanged.
+
+2026-10-04 ([Note 929](WORKING_NOTES/929-init-connected-glyph-formatter-contracts-20261004.md)):
+Connected retail setup/formatters/glyph execution now qualifies null-buffer
+return routing, all 255 nonzero signed bytes and hex cursor timing. Twenty-four
+combined tests pass. C/alias/adapter gates remain; production owners unchanged.
+
+2026-10-04 ([Note 928](WORKING_NOTES/928-init-glyph-writer-register-and-pixel-contract-20261004.md)):
+Retail glyph writer now has executable register/pixel contracts: 262 rendering
+fixtures, four new tests and nineteen combined tests pass. Nonstandard
+interior-entry/formatter interfaces require connected adapters; no ordinary
+C replacement or production count increase is claimed.
+
+2026-10-04 ([Note 927](WORKING_NOTES/927-init-bitmap-unsigned-range-comparison-trials-20261004.md)):
+Two new bitmap unsigned-range predicate trials still emit twenty O2 words,
+not nineteen retail. All 869 host shape/case fixtures and 33 retained-contract
+tests pass; reject both without changing production ownership or aggregates.
+
+2026-10-04 ([Note 926](WORKING_NOTES/926-init-remaining-assembly-readiness-refresh-20261004.md)):
+Init remains 492 C / 47 assembly entries. Bitmap/MMIO are the two small C
+candidates; decoder still exceeds its connected retail slots by 528 bytes
+and has ownership/hardware gates open. Thirty-eight focused tests pass.
+Readiness and ordered work list refreshed; production sources/README unchanged.
+
 2026-10-04 ([Note 925](WORKING_NOTES/925-game-positioned-emitter-descriptor-recovery-20261004.md)):
 `func_150E75A0` now constructs its 0x58-byte descriptor and forwards submission
 result. Sixteen tests pass, including connected dispatcher/helper execution;

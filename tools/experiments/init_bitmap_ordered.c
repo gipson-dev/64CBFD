@@ -58,6 +58,15 @@ void func_10005BE0(void) {
     do {
         *cursor++ = 0xFF;
     } while (cursor != stop);
+#elif SHAPE == 10
+    /* Valid nonwrapping intervals only; do not compare unrelated C pointers. */
+    do {
+        *cursor = 0xFF;
+    } while ((unsigned long)cursor++ < (unsigned long)end);
+#elif SHAPE == 11
+    do {
+        *cursor++ = 0xFF;
+    } while ((unsigned long)cursor <= (unsigned long)end);
 #else
 #error Unknown SHAPE
 #endif
