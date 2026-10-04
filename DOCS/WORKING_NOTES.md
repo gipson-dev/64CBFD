@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 865](WORKING_NOTES/865-init-toggle-cache-interactions-and-rejected-sort-cursors-20261003.md)):
+Changed-base cache/parent/sorted-array matrices and two sorted-length cursor
+trials yield 44 fresh objects; none improves base text/bound metrics. Both
+cursor trials removed; exact source restoration and sixteen focused gates
+pass, no skips. Packed O2 stays 4,736 / 752 excess. Continue allocation/
+parent-ascent or shared-call fitting; do not repeat these rejected forms.
+Production/defaults/README totals unchanged; unrelated Game work preserved.
+
 2026-10-03 ([Note 864](WORKING_NOTES/864-init-builder-reversed-code-toggle-first-loop-20261003.md)):
 Opt-in toggle-first reversed-code increment saves three packed O2 builder
 words, but padding holds total text at 4,736 / 752 excess. Packed O1 and

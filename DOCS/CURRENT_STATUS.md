@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init current cache/sort fitting: [Note 865](WORKING_NOTES/865-init-toggle-cache-interactions-and-rejected-sort-cursors-20261003.md)
+re-measures cache and parent/sorted-array interactions on the changed Note
+864 base. All 44 fresh object receipts are no better than the base on
+O2/O1 text and stack bound. Both new sorted-length cursor loops are worse
+and removed; experiment source is restored exactly. Sixteen focused gates
+pass, no skips. Packed O2 stays 4,736 / 752 excess; next structural targets
+are allocation/parent ascent and shared-call overhead. Defaults/production/
+README totals unchanged; unrelated Game work preserved.
+
 Init reversed-code increment fitting: [Note 864](WORKING_NOTES/864-init-builder-reversed-code-toggle-first-loop-20261003.md)
 adds opt-in toggle-first increment. Packed O2 public builder falls 341 to
 338 words, with padding holding linked text at 4,736 / 752 excess. Packed

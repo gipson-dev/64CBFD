@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 865](WORKING_NOTES/865-init-toggle-cache-interactions-and-rejected-sort-cursors-20261003.md)
+  banks changed-base cache/parent/sorted-array matrices and two rejected
+  sorted-length cursor trials: 44 fresh object receipts, no improving
+  text/bound metric. Exact source restored; sixteen focused gates pass,
+  no skips. Packed O2 stays 4,736 / 752 excess. Move structural fitting
+  to allocation/parent ascent or shared calls; no surviving source/default/
+  README total change. Unrelated Game work preserved and excluded.
+
 - Init [Note 864](WORKING_NOTES/864-init-builder-reversed-code-toggle-first-loop-20261003.md)
   banks opt-in reversed-code toggle-first fitting. Packed O2 public body
   saves three words but aligned total holds at 4,736 / 752 excess; packed
