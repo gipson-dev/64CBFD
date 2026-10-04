@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init direct FPR load adapter: [Note 879](WORKING_NOTES/879-init-direct-fpr-load-adapter-fitting-20261004.md)
+adds opt-in LWC1 publication of sixteen stack words, reducing adapter body
+and aligned text from 256 to 192 bytes. Packed O2/g3 linked text is 4,576,
+592 over retail; core text/bounds stay unchanged. Separate word-load receipts
+preserve existing context gates and default assembled text matches HEAD.
+Fresh bounded suite: 36 passed / one corpus skip in 254.545 seconds;
+eleven shared/default regressions pass. All six observed descents match bounds.
+New-option full corpus, fitting/ownership/hardware remain open; Notes 877/878
+qualify only the previous adapter. Production/README unchanged.
+
 Init current callee-adapter CU1-set corpus: [Note 878](WORKING_NOTES/878-init-callee-adapter-full-masked-cu1-set-corpus-20261004.md)
 passes all 507 fresh packed-remaining O2/g3 paired pages with masked CU1 set
 (0x2400FF00), 792.002 seconds, no skips. Together with Note 877 this

@@ -54,6 +54,7 @@ class GuestExceptionFixture(exception.Fr1ContextTransfers, GuestStreamFixture):
         self.initial_fprs = [self.fpr_value(i) for i in range(32)]
         self.status_writes = []
         self.fpr_loads, self.fpr_stores, self.fpr_moves = [], [], []
+        self.fpr_word_loads = []
         self.reads, self.writes, self.visits = [], [], {}
         self.min_sp = self.stack_low = self.registers[29]
         self.capture = {target, 0x10005F34}

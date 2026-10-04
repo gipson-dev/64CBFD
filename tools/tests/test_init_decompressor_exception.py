@@ -37,7 +37,7 @@ class Fr1ContextTransfers:
                     raise AssertionError("FR=0 transition is not qualified")
                 self.status = status
                 self.status_writes.append(status)
-        elif op in (17, 53, 61):
+        elif op in (17, 49, 53, 61):
             if not self.status & SR_CU1:
                 raise AssertionError("COP1 access with CU1 disabled")
             if op == 17:
@@ -52,6 +52,14 @@ class Fr1ContextTransfers:
                 offset = word & 0xFFFF
                 offset = offset if offset < 0x8000 else offset - 0x10000
                 address = (self.registers[rs] + offset) & 0xFFFFFFFF
+                if op == 49:
+                    if address & 3:
+                        raise AssertionError("Unaligned FPR word transfer")
+                    self.fprs[rt] = self.get(address, 4)
+                    self.high[rt] = None
+                    self.reads.append((address, 4))
+                    self.fpr_word_loads.append((rt, address))
+                    return True
                 if address & 7:
                     raise AssertionError("Unaligned FPR doubleword transfer")
                 if op == 61:
@@ -100,6 +108,7 @@ class ExceptionCoreFixture(Fr1ContextTransfers, streams.StreamFixture):
         self.put(0x800354F8, INPUT, 4)
         self.reads, self.writes = [], []
         self.fpr_loads, self.fpr_stores, self.fpr_moves = [], [], []
+        self.fpr_word_loads = []
         self.stack_low = self.registers[29]
         self.capture = {0x1000625C, 0x10005F34}
         self.context_enabled = True

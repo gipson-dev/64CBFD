@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-04 ([Note 879](WORKING_NOTES/879-init-direct-fpr-load-adapter-fitting-20261004.md)):
+Opt-in direct FPR word loads save 64 adapter/linked bytes, packed O2/g3
+4,576 / 592 excess, core text/bounds unchanged. Separate architectural
+word-load receipts, clean/dirty ordered transfer gates and inherited
+callee/state guards retain context checks. Default assembled text matches
+HEAD; new-option full corpus and production-promotion gates remain open.
+Fresh bounded suite 36 passes / one corpus skip; eleven shared/default
+regressions pass. All six observed stack descents match static bounds.
+
 2026-10-04 ([Note 878](WORKING_NOTES/878-init-callee-adapter-full-masked-cu1-set-corpus-20261004.md)):
 All 507 current first-refill/callee-adapter packed O2/g3 pages pass with
 masked CU1 set in 792.002 seconds, no skips. With Note 877: 1,014 paired

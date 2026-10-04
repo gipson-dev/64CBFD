@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 879](WORKING_NOTES/879-init-direct-fpr-load-adapter-fitting-20261004.md)
+  adds opt-in direct FPR loads: adapter 192 bytes, packed O2/g3 linked 4,576,
+  592 over retail, saving 64 bytes. Shared transfer model gains separate
+  word-load receipts; default assembled text remains byte-identical.
+  New-option corpus and fitting/ownership/hardware gates remain open.
+  Fresh bounded suite: 36 passed / one corpus skip; eleven shared/default
+  regressions pass, with observed stack descent matching all six bounds.
+
 - Init [Note 878](WORKING_NOTES/878-init-callee-adapter-full-masked-cu1-set-corpus-20261004.md)
   qualifies all 507 current packed O2/g3 pages with masked CU1 set in 792.002
   seconds, no skips. With Note 877: 1,014 paired pages across both masked

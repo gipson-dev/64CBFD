@@ -3,6 +3,14 @@
 .set noat
 .option pic0
 .text
+.macro publish_fpr reg, offset
+.ifdef INIT_DECODE_DIRECT_FPR_LOADS
+    lwc1 \reg, \offset($sp)
+.else
+    lw $t0, \offset($sp)
+    mtc1 $t0, \reg
+.endif
+.endm
 .ifdef INIT_DECODE_ABI_FPR_SHADOW
 .equ ADAPTER_EXTRA, 0x98
 .else
@@ -50,40 +58,24 @@ init_decode_retail_core_adapter:
     lw $t0, 0x90($sp)
     beq $t0, $zero, .Labi_no_fpr_snapshot
      nop
-    lw $t0, 0x60($sp)
-    mtc1 $t0, $f0
-    lw $t0, 0x64($sp)
-    mtc1 $t0, $f1
-    lw $t0, 0x68($sp)
-    mtc1 $t0, $f2
-    lw $t0, 0x6C($sp)
-    mtc1 $t0, $f3
-    lw $t0, 0x70($sp)
-    mtc1 $t0, $f4
-    lw $t0, 0x74($sp)
-    mtc1 $t0, $f5
-    lw $t0, 0x78($sp)
-    mtc1 $t0, $f6
-    lw $t0, 0x7C($sp)
-    mtc1 $t0, $f7
-    lw $t0, 0x80($sp)
-    mtc1 $t0, $f8
-    lw $t0, 0x84($sp)
-    mtc1 $t0, $f9
-    lw $t0, 0x88($sp)
-    mtc1 $t0, $f10
-    lw $t0, 0x8C($sp)
-    mtc1 $t0, $f11
+    publish_fpr $f0, 0x60
+    publish_fpr $f1, 0x64
+    publish_fpr $f2, 0x68
+    publish_fpr $f3, 0x6C
+    publish_fpr $f4, 0x70
+    publish_fpr $f5, 0x74
+    publish_fpr $f6, 0x78
+    publish_fpr $f7, 0x7C
+    publish_fpr $f8, 0x80
+    publish_fpr $f9, 0x84
+    publish_fpr $f10, 0x88
+    publish_fpr $f11, 0x8C
 .Labi_no_fpr_snapshot:
 .endif
-    lw $t0, 0x24($sp)
-    mtc1 $t0, $f16
-    lw $t0, 0x34($sp)
-    mtc1 $t0, $f17
-    lw $t0, 0x38($sp)
-    mtc1 $t0, $f18
-    lw $t0, 0x3C($sp)
-    mtc1 $t0, $f19
+    publish_fpr $f16, 0x24
+    publish_fpr $f17, 0x34
+    publish_fpr $f18, 0x38
+    publish_fpr $f19, 0x3C
     addiu $sp, $sp, ADAPTER_EXTRA
 .ifndef INIT_DECODE_CORE_PRESERVES_CALLEE
     lw $s0, 0xA48($sp)
