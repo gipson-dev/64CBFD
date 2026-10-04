@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init glyph fitting: [Note 931](WORKING_NOTES/931-init-glyph-pixel-seeding-and-countdown-fitting-20261004.md)
+reduces the ordinary-ABI semantic writer from 31 to 29 words using low-halfword
+pixel seeding and countdown loops. Eight variants / 2,128 paired fixtures pass;
+sixteen combined tests plus a separate footprint check pass. Body fits, but
+connected adapter/stack/layout and byte matching remain open. No conversion.
+
 Init semantic glyph trial: [Note 930](WORKING_NOTES/930-init-semantic-glyph-writer-differential-qualification-20261004.md)
 qualifies three compiled profiles against retail ordered memory operations
 and bounded aliases: 798 paired fixtures, sixteen combined tests pass.

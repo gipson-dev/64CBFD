@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-04 ([Note 931](WORKING_NOTES/931-init-glyph-pixel-seeding-and-countdown-fitting-20261004.md)):
+Low-halfword pixel seeding/countdown loops reduce the glyph C trial to 29
+words, below thirty retail. All 2,128 paired fixtures pass across eight
+variants. Adapter/layout ownership remains open; production counts unchanged.
+
 2026-10-04 ([Note 930](WORKING_NOTES/930-init-semantic-glyph-writer-differential-qualification-20261004.md)):
 Compiled semantic glyph writer passes 798 paired ordered-memory/alias fixtures
 across three profiles. Sixteen combined tests pass. No-unroll O2 has 31 words

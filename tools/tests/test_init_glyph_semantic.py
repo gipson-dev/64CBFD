@@ -45,7 +45,12 @@ class InitGlyphSemanticTests(unittest.TestCase):
         cls.images, measurements = {}, []
         for profile, flags in (('o2g3', ['-O2', '-g3']),
                                ('o2g3-no-unroll', ['-O2', '-g3', '-Wo,-loopunroll,0']),
-                               ('o1', ['-O1'])):
+                               ('o1', ['-O1']),
+                               ('seeded-o2g3', ['-O2', '-g3', '-DGLYPH_SEEDED_PIXEL']),
+                               ('seeded-o2g3-no-unroll', ['-O2', '-g3', '-Wo,-loopunroll,0', '-DGLYPH_SEEDED_PIXEL']),
+                               ('seeded-o1', ['-O1', '-DGLYPH_SEEDED_PIXEL']),
+                               ('low-o2g3-no-unroll', ['-O2', '-g3', '-Wo,-loopunroll,0', '-DGLYPH_LOW_PIXEL']),
+                               ('low-countdown-o2g3-no-unroll', ['-O2', '-g3', '-Wo,-loopunroll,0', '-DGLYPH_LOW_PIXEL', '-DGLYPH_COUNTDOWN'])):
             prefix = 'build/init-glyph-semantic/' + profile
             obj, elf, binary = (prefix + suffix for suffix in ('.o', '.elf', '.bin'))
             (cwd / obj).unlink(missing_ok=True)
@@ -72,6 +77,14 @@ class InitGlyphSemanticTests(unittest.TestCase):
                                                   cwd=cwd, text=True)
             (cwd / (prefix + '.asm.txt')).write_text(disassembly)
         (output / 'measurements.json').write_text(json.dumps(measurements, indent=2) + '\n')
+        cls.measurements = {row['profile']: row for row in measurements}
+
+    def test_fitting_candidate_body_and_stack_shape(self):
+        self.assertEqual(self.measurements['low-o2g3-no-unroll']['body_words'], 30)
+        self.assertEqual(self.measurements['low-countdown-o2g3-no-unroll']['body_words'], 29)
+        code = self.images['low-countdown-o2g3-no-unroll']
+        self.assertFalse(any(word >> 26 == 9 and word >> 21 & 31 == 29
+                             and word >> 16 & 31 == 29 for word in code.values()))
 
     def compare(self, rows, index=0, second_offset=0x10000, font_offset=None):
         for profile, code in self.images.items():

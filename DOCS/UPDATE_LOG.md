@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 931](WORKING_NOTES/931-init-glyph-pixel-seeding-and-countdown-fitting-20261004.md)
+  fits the experimental glyph C body in 29 words with 2,128 paired fixtures
+  passing. Connected adapter and layout gates remain open; this is fitting
+  progress, not a production conversion or README aggregate change.
+
 - Init [Note 930](WORKING_NOTES/930-init-semantic-glyph-writer-differential-qualification-20261004.md)
   adds a compiled semantic glyph trial and 798 paired ordered-memory/alias
   fixtures. Sixteen combined tests pass; smallest body remains one word larger
