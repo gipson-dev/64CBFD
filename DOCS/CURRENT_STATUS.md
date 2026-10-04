@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init callee-preserving adapter fitting: [Note 875](WORKING_NOTES/875-init-callee-preserving-core-adapter-fitting-20261004.md)
+adds opt-in omission of ten duplicate S0-S7/GP/FP reloads, retaining saved
+frame cells and RA restoration. Adapter body/aligned text is 256/256 versus
+296/304; all six shapes save 48 linked bytes, packed O2 4,640 / 656 excess.
+All observed descents match bounds. Fresh whole suite has 34 passes / one
+corpus skip; strengthened instruction-clobber guard and sixteen helpers pass.
+The initial mistaken S0-reload probe is documented. Omitted-option adapter
+text matches baseline. Changed corpus and fitting/ownership/hardware remain;
+production/defaults/README unchanged, unrelated Game work preserved.
+
 Init lookup exit-shape trials: [Note 874](WORKING_NOTES/874-init-lookup-exit-shape-and-offset-predicate-trials-20261004.md)
 measures child-gated common return and offset predicates on Note 873.
 Common return saves raw helper words, but neither form reduces complete

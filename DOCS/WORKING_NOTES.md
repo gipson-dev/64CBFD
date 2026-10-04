@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-04 ([Note 875](WORKING_NOTES/875-init-callee-preserving-core-adapter-fitting-20261004.md)):
+Opt-in adapter drops ten duplicate callee reloads but retains retail frame
+stores and RA restore. Body/aligned text 256/256, all shapes save 48 linked
+bytes, packed O2 4,640 / 656 excess. Core-return register gate passes; final
+instruction-injected S0 clobber is rejected across six builds after correcting
+a probe assumption. Whole suite 34 passes / one skip plus sixteen helpers
+and strengthened gate; observed descents match bounds. Omitted-option text
+identical. Changed corpus and production-promotion gates remain open.
+
 2026-10-04 ([Note 874](WORKING_NOTES/874-init-lookup-exit-shape-and-offset-predicate-trials-20261004.md)):
 Two first-refill lookup exit forms offer no aggregate text/bound benefit.
 Common return saves raw words only; offset predicate passes 256-byte host

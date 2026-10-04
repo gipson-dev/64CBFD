@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 875](WORKING_NOTES/875-init-callee-preserving-core-adapter-fitting-20261004.md)
+  banks opt-in callee-preserving adapter: ten reloads removed, frame stores
+  retained, all six shapes save 48 linked bytes. Packed O2 4,640 / 656 excess.
+  Whole bounded suite 34 passes / one corpus skip; sixteen supporting gates
+  and a strengthened executed-clobber negative gate pass. Initial failed
+  probe assumption and correction documented; omitted-option text unchanged.
+  Full changed corpus and production-promotion gates remain open.
+
 - Init [Note 874](WORKING_NOTES/874-init-lookup-exit-shape-and-offset-predicate-trials-20261004.md)
   records two unretained lookup exit forms: helper word savings are absorbed
   by padding, full text/bounds hold. Exact source restoration, fifteen focused

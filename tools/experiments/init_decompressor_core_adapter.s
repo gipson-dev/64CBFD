@@ -85,6 +85,7 @@ init_decode_retail_core_adapter:
     lw $t0, 0x3C($sp)
     mtc1 $t0, $f19
     addiu $sp, $sp, ADAPTER_EXTRA
+.ifndef INIT_DECODE_CORE_PRESERVES_CALLEE
     lw $s0, 0xA48($sp)
     lw $s1, 0xA4C($sp)
     lw $s2, 0xA50($sp)
@@ -95,6 +96,7 @@ init_decode_retail_core_adapter:
     lw $s7, 0xA64($sp)
     lw $fp, 0xA78($sp)
     lw $gp, 0xA7C($sp)
+.endif
     lw $ra, 0xA80($sp)
     jr $ra
      addiu $sp, $sp, 0xA88

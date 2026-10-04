@@ -56,7 +56,7 @@ class InitDecompressorCoreOwnedStateTests(repeats.InitDecompressorDynamicSharedR
             with self.subTest(shape=label, profile=profile):
                 entry = image.symbols["init_decode_retail_core_adapter"]
                 end = image.symbols["init_decode_retail_core_adapter_end"]
-                self.assertEqual(end - entry, 296)
+                self.assertEqual(end - entry, getattr(self, "shadow_adapter_bytes", 296))
                 stores = [word & 0xFFFF for pc, word in image.code.items()
                           if entry <= pc < end and word >> 26 == 43
                           and (word >> 21) & 31 == 29]
