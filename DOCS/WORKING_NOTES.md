@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 881](WORKING_NOTES/881-init-direct-fpr-adapter-full-masked-cu1-set-corpus-20261004.md)):
+All 507 direct-load packed O2/g3 masked CU1-set pages pass in 790.940 seconds,
+no skips. With Note 880: 1,014 paired pages across both modes, callee-return
+guard active, eight source blobs unchanged. Text 4,576 / 592 excess; descent
+3,240 equals bound, minimum SP 0x80031D68 / neighbor margin 88. Eleven
+supporting gates pass. Both corpus gates checked off; promotion gates remain.
+
 2026-10-04 ([Note 880](WORKING_NOTES/880-init-direct-fpr-adapter-full-masked-cu1-clear-corpus-20261004.md)):
 All 507 direct-load packed O2/g3 pages pass with masked CU1 clear in
 808.272 seconds, no skips. Linked text 4,576 / 592 excess, descent 3,240

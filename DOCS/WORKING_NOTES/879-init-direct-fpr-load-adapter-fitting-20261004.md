@@ -73,7 +73,8 @@ contract fixture; an explicit setUpClass fixed setup before the final run.
 
 - [x] All 507 direct-load packed O2/g3 masked CU1-clear pages
   ([Note 880](880-init-direct-fpr-adapter-full-masked-cu1-clear-corpus-20261004.md)).
-- [ ] All 507 matching masked CU1-set pages.
+- [x] All 507 matching masked CU1-set pages
+  ([Note 881](881-init-direct-fpr-adapter-full-masked-cu1-set-corpus-20261004.md)).
 - [ ] Further fitting: linked text is still 592 bytes over retail.
 - [ ] Complete entry/frame ownership, stack reservation and hardware/context gates.
 

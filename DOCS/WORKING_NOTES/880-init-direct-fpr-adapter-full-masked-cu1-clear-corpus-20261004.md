@@ -67,7 +67,9 @@ OK
 ```
 
 This is the first complete CU1-clear receipt for the smaller direct-load
-adapter. Its matching CU1-set run remains open. Time is host harness time,
+adapter. Its matching CU1-set run now passes in
+[Note 881](881-init-direct-fpr-adapter-full-masked-cu1-set-corpus-20261004.md).
+Time is host harness time,
 not a guest or hardware performance measurement.
 
 ## Supporting Checks
@@ -84,7 +86,7 @@ diffs. Project tool and whitespace checks pass.
 ## Remaining Gates
 
 - [x] All 507 direct-load packed O2/g3 masked CU1-clear pages.
-- [ ] All 507 matching masked CU1-set pages.
+- [x] All 507 matching masked CU1-set pages (Note 881).
 - [ ] Further fitting: linked decoder remains 592 bytes over retail.
 - [ ] Entry/frame ownership, full reservation and hardware/context gates.
 

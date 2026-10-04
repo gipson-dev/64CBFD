@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init direct-load CU1-set corpus: [Note 881](WORKING_NOTES/881-init-direct-fpr-adapter-full-masked-cu1-set-corpus-20261004.md)
+passes all 507 fresh packed O2/g3 paired pages with masked CU1 set in
+790.940 seconds, no skips. Together Notes 880/881 qualify 1,014 paired pages
+across both masked modes, per-page callee-return guard active. Linked text
+4,576 / 592 excess; observed descent 3,240 matches bound, minimum SP
+0x80031D68 / known-neighbor margin 88. Eleven supporting gates pass and eight
+source blobs hold. Both direct-load corpus gates checked off; fitting,
+ownership, hardware/context and full reservation remain. Production/README unchanged.
+
 Init direct-load CU1-clear corpus: [Note 880](WORKING_NOTES/880-init-direct-fpr-adapter-full-masked-cu1-clear-corpus-20261004.md)
 passes all 507 fresh packed O2/g3 paired pages with masked CU1 clear in
 808.272 seconds, no skips. Linked text 4,576 / 592 excess; observed descent
