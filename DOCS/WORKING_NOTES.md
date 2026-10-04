@@ -1,5 +1,28 @@
 # Working Notes
 
+2026-10-04 ([Note 952](WORKING_NOTES/952-init-bitmap-address-difference-induction-trial-20261004.md)):
+New bitmap unsigned address-difference shape removes XOR but emits 22 O2 words
+against nineteen: second induction variable plus saved copy. Eight new tests
+qualify 501 completed pairs/six bounded prefixes; 93 combined Init tests pass.
+Reject production adoption; all retained slots and full existing Init code/data
+and Game data stay exact. README unchanged; pending Game edits preserved.
+
+2026-10-04 ([Note 951](WORKING_NOTES/951-init-resume-conversion-readiness-and-repeatable-audit-20261004.md)):
+Resume Init: all 47 retained assembly owners/slots and full linked Init code/data
+are exact; Game data remains exact. Seven new audit checks, 78 retained tests
+and 46 fresh decoder tests pass: 131 across three runs, no skips. Packed decoder
+still needs 4512 bytes against 3984 retail. Two small leaves are C candidates,
+decoder/diagnostic paths need connected fitting, and thirty boot/hardware/SDK
+owners remain intentional assembly. No production adoption; README unchanged.
+Pending Game emitter changes are preserved separately.
+
+2026-10-04 ([Note 950](WORKING_NOTES/950-game-weighted-event-emitter-semantic-recovery-20261004.md)):
+Game `func_150E8B1C` is restored as complete weighted emitter C: 144 words,
+original 0xC8 frame, 44 differences, no guards. Ten new / 82 combined tests
+and fresh link pass; Init, Game data and exact neighbors remain intact.
+README aggregates unchanged. Position writer 1514470C is still a placeholder;
+recover its 218-word body next before claiming a runtime-ready effect chain.
+
 2026-10-04 ([Note 949](WORKING_NOTES/949-game-event-payload-creators-and-connected-dispatch-match-20261004.md)):
 Both preserved event payload creators now match all 39 words directly from C,
 original 0x48 frames, no guards. Actual dispatcher/timer chains qualify payload

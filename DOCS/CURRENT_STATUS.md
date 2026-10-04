@@ -21,6 +21,32 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init address-difference trial: [Note 952](WORKING_NOTES/952-init-bitmap-address-difference-induction-trial-20261004.md)
+tests a new unsigned subtraction/zero-branch shape for `func_10005BE0`.
+IDO removes XOR but introduces a second induction variable: 22 O2 words
+against nineteen retail. Eight new tests qualify 501 pairs/six bounded prefixes;
+93 combined Init tests pass. Reject adoption; all retained owners and linked
+Init code/data/Game data remain exact, README totals unchanged. Next broader
+semantic recovery remains the pending Game emitter's position-writer dependency.
+
+Init resumed assessment: [Note 951](WORKING_NOTES/951-init-resume-conversion-readiness-and-repeatable-audit-20261004.md)
+freshly verifies 492 C / 47 assembly and all retained raw linked slots.
+Two small leaves remain C candidates; ten decoder and five diagnostic entries
+need connected recovery, while thirty original boot/hardware/SDK owners stay
+assembly. Seven new audit checks, 78 retained contract/compiler tests and 46
+freshly compiled decoder tests pass: 131 across three runs, no skips. Best
+decoder remains 4512 bytes against 3984 retail; glyph path is also oversized.
+Full existing Init code/data and Game data are exact. No Init replacement is
+ready to adopt; production ownership and README totals stay unchanged.
+
+Game weighted emitter: [Note 950](WORKING_NOTES/950-game-weighted-event-emitter-semantic-recovery-20261004.md)
+recovers `func_150E8B1C`'s complete code-0x33 weighted emission body. It fits
+144 words and the original 0xC8 frame, but 44 words differ; no guards added.
+Eighty-two tests and fresh link pass; full Init/Game data and exact neighbors
+are preserved. Aggregates/README unchanged. **Runtime gate:** its position
+writer `func_1514470C` remains a placeholder and can leave position uninitialized.
+Recover that 218-word helper next before qualifying the actual guest pipeline.
+
 Game event payload creators: [Note 949](WORKING_NOTES/949-game-event-payload-creators-and-connected-dispatch-match-20261004.md)
 finishes the preserved `func_150E8A80` and `func_150E90DC` edits. Both match
 all 39 words directly, original 0x48 frames, no guards; actual dispatcher/timer

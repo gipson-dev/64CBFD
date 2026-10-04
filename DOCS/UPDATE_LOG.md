@@ -18,6 +18,28 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 952](WORKING_NOTES/952-init-bitmap-address-difference-induction-trial-20261004.md)
+  rejects a new address-difference folding trial: 22 O2 words against nineteen,
+  despite removing XOR. Eight new tests / 501 pairs / six bounded prefixes and
+  93 combined Init tests pass. Retained ownership and full existing Init/data
+  images remain exact; README aggregates and pending Game recovery unchanged.
+
+- Init [Note 951](WORKING_NOTES/951-init-resume-conversion-readiness-and-repeatable-audit-20261004.md)
+  refreshes the remaining-assembly decision: 47 entries / 12,252 bytes, with
+  two small C candidates, ten connected decoder and five diagnostic entries,
+  and thirty retained boot/hardware/SDK owners. Seven new audit checks,
+  78 retained tests and 46 freshly compiled decoder tests pass: 131 across three
+  runs, no skips. Decoder remains 528 bytes over; all existing Init code/data
+  and Game data stay exact.
+  No production conversion or README aggregate change; pending Game work kept.
+
+- Game [Note 950](WORKING_NOTES/950-game-weighted-event-emitter-semantic-recovery-20261004.md)
+  recovers the code-0x33 weighted emitter, 144 words / original 0xC8 frame,
+  44 differences and no guards. Ten new / 82 combined tests and fresh link
+  pass; complete Init/Game data and exact neighbors stay intact. README
+  aggregates unchanged. Its placeholder position-writer dependency is an
+  explicit runtime gate and the next recovery priority, not accepted gameplay.
+
 - Game [Note 949](WORKING_NOTES/949-game-event-payload-creators-and-connected-dispatch-match-20261004.md)
   completes both preserved event creator recoveries, 39/39 words each directly
   matching with no guards. Seven new tests qualify actual dispatcher/timer

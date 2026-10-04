@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef short s16;
 
-#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 17)
+#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 18)
 typedef char GuestAddressWidth[(sizeof(unsigned long) == 4) ? 1 : -1];
 #endif
 
@@ -24,11 +24,13 @@ void func_10005BE0(void) {
 #if SHAPE == 6 || SHAPE == 7
     int value = 0xFF;
 #endif
-#if SHAPE >= 12 && SHAPE <= 17
+#if SHAPE >= 12 && SHAPE <= 18
     unsigned long cursor = (unsigned long)D_8003BE70;
     unsigned long end = (unsigned long)D_8003BE7C;
 #if SHAPE == 13
     unsigned long remaining = end - cursor;
+#elif SHAPE == 18
+    unsigned long difference;
 #endif
 #elif SHAPE == 8
     u8 *cursor = D_8003BE70;
@@ -119,6 +121,13 @@ fill:
         }
         cursor++;
     }
+#elif SHAPE == 18
+    /* Test late zero-comparison folding without a saved Boolean or old cursor. */
+    do {
+        *(volatile u8 *)cursor = 0xFF;
+        difference = cursor - end;
+        cursor++;
+    } while (difference);
 #else
 #error Unknown SHAPE
 #endif
@@ -135,7 +144,7 @@ fill:
         value <<= bits;
         value--;
         *end = value;
-#elif SHAPE >= 12 && SHAPE <= 15
+#elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18
         *(volatile u8 *)end = (2u << bits) - 1;
 #else
         *end = (2u << bits) - 1;
