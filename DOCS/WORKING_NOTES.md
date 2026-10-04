@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 901](WORKING_NOTES/901-init-pointer-owned-o2-full-masked-cu1-clear-corpus-20261004.md)):
+Combined pointer-owned packed O2 passes all 507 masked CU1-clear paired pages
+in 819.113 seconds, no skips. Text 4,560, descent 3,240, low `0x80031D68`,
+known-neighbor margin 88; source hashes unchanged. Matching CU1-set corpus,
+fitting and production ownership/hardware remain open. No production change.
+
 2026-10-04 ([Note 900](WORKING_NOTES/900-init-pointer-owned-tight-adapter-fitting-20261004.md)):
 Paired guest pointer ownership and tight adapter remove two stores: body 176,
 packed text 4,560 / 5,968, bounds unchanged. Isolated O2 text-plus-rodata span

@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init pointer-owned O2 CU1-clear corpus: [Note 901](WORKING_NOTES/901-init-pointer-owned-o2-full-masked-cu1-clear-corpus-20261004.md)
+passes all 507 guarded paired pages in 819.113 seconds, no skips. Packed
+executable text 4,560, descent 3,240, minimum SP `0x80031D68`, known-neighbor
+margin 88; six recorded source hashes unchanged. Combined-candidate CU1-set
+qualification remains open, as do 576-byte fitting excess and production gates.
+
 Init pointer-owned tight adapter: [Note 900](WORKING_NOTES/900-init-pointer-owned-tight-adapter-fitting-20261004.md)
 combines guest input/workspace ownership with two omitted adapter stores.
 Body 176, packed executable text 4,560 O2 / 5,968 O1; bounds unchanged.

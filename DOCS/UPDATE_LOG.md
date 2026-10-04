@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 901](WORKING_NOTES/901-init-pointer-owned-o2-full-masked-cu1-clear-corpus-20261004.md)
+  qualifies all 507 combined-candidate packed O2 masked CU1-clear pages in
+  819.113 seconds, no skips. Text 4,560, descent 3,240, known-neighbor margin
+  88; source hashes fixed. Matching CU1-set and production gates remain open.
+
 - Init [Note 900](WORKING_NOTES/900-init-pointer-owned-tight-adapter-fitting-20261004.md)
   retains paired guest pointer ownership and 176-byte tight adapter: packed
   executable text 4,560 / 5,968, unchanged bounds, sixteen-byte isolated O2
