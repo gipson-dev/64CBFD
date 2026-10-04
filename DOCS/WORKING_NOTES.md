@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 919](WORKING_NOTES/919-game-linked-record-position-semantic-recovery-20261004.md)):
+Game `func_150E6FAC` now implements its linked-record lookup, radius/angle
+position calculation and failed-lookup fallback. Thirteen focused tests pass;
+71 body words fit 72-word retail slot, 38 differing positions, no guards/drift.
+Recovered semantics do not change existing C/exact totals; README unchanged.
+
 2026-10-04 ([Note 918](WORKING_NOTES/918-init-bitmap-store-qualifier-and-sentinel-trials-20261004.md)):
 Nonvolatile bitmap stores still emit twenty O2 words; end-plus-one sentinel
 emits 33, reduced to twenty with unrolling disabled. Neither matches retail's

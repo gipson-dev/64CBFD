@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 919](WORKING_NOTES/919-game-linked-record-position-semantic-recovery-20261004.md)
+  replaces the linked-record position placeholder with semantic C. Thirteen
+  tests pass; 71-word body fits its 72-word slot, with 38 differing positions,
+  no guards and no address drift. Matching/conversion totals remain unchanged.
+
 - Init [Note 918](WORKING_NOTES/918-init-bitmap-store-qualifier-and-sentinel-trials-20261004.md)
   rejects store-qualifier and end-plus-one sentinel bitmap forms across three
   compiler profiles. Nine shapes pass 711 host combinations; 33 retained

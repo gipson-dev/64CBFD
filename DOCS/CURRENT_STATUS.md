@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game linked-record position: [Note 919](WORKING_NOTES/919-game-linked-record-position-semantic-recovery-20261004.md)
+replaces `func_150E6FAC`'s zero-return placeholder with lookup, randomized
+radius/angle offsets and fallback coordinates. Five new tests / thirteen
+combined pass; independent IDO body fits. Production has 71 body words in
+the original 72-word slot, 38 differing positions, zero guards and no drift.
+This is semantic recovery, not a new exact match; README totals unchanged.
+
 Init bitmap qualifier/sentinel trials: [Note 918](WORKING_NOTES/918-init-bitmap-store-qualifier-and-sentinel-trials-20261004.md)
 reject nonvolatile stores (20 O2 words, unchanged from control) and an
 end-plus-one sentinel (33 O2 words, 20 with unrolling disabled), against
