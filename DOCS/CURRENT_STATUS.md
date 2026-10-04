@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init direct-load CU1-clear corpus: [Note 880](WORKING_NOTES/880-init-direct-fpr-adapter-full-masked-cu1-clear-corpus-20261004.md)
+passes all 507 fresh packed O2/g3 paired pages with masked CU1 clear in
+808.272 seconds, no skips. Linked text 4,576 / 592 excess; observed descent
+3,240 matches bound, minimum SP 0x80031D68 / known-neighbor margin 88.
+Eleven supporting gates pass and all eight recorded source blobs hold.
+Direct-load CU1-clear checked off; matching CU1-set, fitting/ownership/
+hardware/reservation remain open. Production/defaults/README unchanged.
+
 Init direct FPR load adapter: [Note 879](WORKING_NOTES/879-init-direct-fpr-load-adapter-fitting-20261004.md)
 adds opt-in LWC1 publication of sixteen stack words, reducing adapter body
 and aligned text from 256 to 192 bytes. Packed O2/g3 linked text is 4,576,

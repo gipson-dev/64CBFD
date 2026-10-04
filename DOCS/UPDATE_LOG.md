@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 880](WORKING_NOTES/880-init-direct-fpr-adapter-full-masked-cu1-clear-corpus-20261004.md)
+  qualifies all 507 direct-load packed O2/g3 masked CU1-clear pages in
+  808.272 seconds, no skips. Text 4,576 / 592 excess, depth 3,240 equals
+  bound, minimum SP 0x80031D68 / neighbor margin 88. Eleven supporting
+  gates pass, eight source blobs unchanged. Matching CU1-set and fitting/
+  ownership/hardware/reservation remain; production and README unchanged.
+
 - Init [Note 879](WORKING_NOTES/879-init-direct-fpr-load-adapter-fitting-20261004.md)
   adds opt-in direct FPR loads: adapter 192 bytes, packed O2/g3 linked 4,576,
   592 over retail, saving 64 bytes. Shared transfer model gains separate

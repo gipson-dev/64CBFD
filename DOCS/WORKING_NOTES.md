@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 880](WORKING_NOTES/880-init-direct-fpr-adapter-full-masked-cu1-clear-corpus-20261004.md)):
+All 507 direct-load packed O2/g3 pages pass with masked CU1 clear in
+808.272 seconds, no skips. Linked text 4,576 / 592 excess, descent 3,240
+equals bound, minimum SP 0x80031D68 / neighbor margin 88. Eleven supporting
+gates pass; eight source blobs unchanged. CU1-clear checked off; matching
+CU1-set and production-promotion gates remain open. README unchanged.
+
 2026-10-04 ([Note 879](WORKING_NOTES/879-init-direct-fpr-load-adapter-fitting-20261004.md)):
 Opt-in direct FPR word loads save 64 adapter/linked bytes, packed O2/g3
 4,576 / 592 excess, core text/bounds unchanged. Separate architectural
