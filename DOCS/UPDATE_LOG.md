@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 938](WORKING_NOTES/938-game-random-curve-record-direct-byte-match-20261004.md)
+  replaces `func_150E7994`'s placeholder with its sampled curve builder and
+  matches all 194 words directly from C. Twenty-six focused tests pass; no
+  guards or drift. README matching rows now show Game 2604 / total 3277 exact;
+  conversion counts and Init production ownership remain unchanged.
+
 - Game [Note 937](WORKING_NOTES/937-game-random-edge-emitter-semantic-recovery-20261004.md)
   recovers alternate emitter `func_150E76D0` with twenty-one focused tests
   passing. Both actual dispatcher/helper paths are exercised; production body

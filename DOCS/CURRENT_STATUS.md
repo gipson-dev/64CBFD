@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game random curve record: [Note 938](WORKING_NOTES/938-game-random-curve-record-direct-byte-match-20261004.md)
+recovers `func_150E7994`'s packet, allocator, metadata and sampled curve body.
+All 194 words emit directly from C, with original 0xC8 frame and no guards.
+Twenty-six focused tests pass; fresh link has no drift. Game 2604 / total
+3277 exact, 2186 different. README matching rows updated; conversion counts
+unchanged. Next inspect `func_150E7C9C`; Init production ownership unchanged.
+
 Game random edge emitter: [Note 937](WORKING_NOTES/937-game-random-edge-emitter-semantic-recovery-20261004.md)
 replaces `func_150E76D0`'s placeholder with its four-variant descriptor builder.
 Twenty-one focused tests pass, including both actual dispatcher/helper paths.

@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 938](WORKING_NOTES/938-game-random-curve-record-direct-byte-match-20261004.md)):
+`func_150E7994`'s sampled curve builder now matches all 194 words directly from
+C, with original 0xC8 frame and no guards. Twenty-six focused tests pass;
+Game 2604 / total 3277 exact, no drift. README matching rows updated;
+conversion counts unchanged. Next inspect adjacent placeholder `func_150E7C9C`.
+
 2026-10-04 ([Note 937](WORKING_NOTES/937-game-random-edge-emitter-semantic-recovery-20261004.md)):
 `func_150E76D0` now builds all four random edge variants and returns submission
 results. Twenty-one focused tests pass, including both actual helper paths.

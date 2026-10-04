@@ -23,6 +23,8 @@ extern s32 D_80088A5C[2];
 extern u8 D_80088A64;
 extern s32 D_80088A68[3];
 extern s32 D_80088A74[3];
+extern s32 D_800BE9E8;
+extern u8 *D_800DBFF0;
 typedef struct EmitterPosition113D60 {
     f32 x;
     f32 y;
@@ -68,6 +70,12 @@ typedef struct RandomPacket113D60 {
     s8 index;
     u8 pad7;
 } RandomPacket113D60;
+typedef struct CurvePayload113D60 {
+    f32 value;
+    f32 progress;
+    s16 count;
+    s16 fieldA;
+} CurvePayload113D60;
 s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, s32 duration,
                  s32 opacity, s32 size0, s32 size1, s32 *pair, s32 mode,
                  u8 slot, s32 context);
@@ -84,6 +92,13 @@ s32 func_1514ECE0(void *node, s16 key, void **result);
 s32 func_150E8930();
 void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
                     u8 arg5, s32 arg6, u8 arg7, s32 arg8);
+void *func_151491F4(s16 arg0, s8 arg1, s8 arg2, u8 arg3, u8 arg4,
+                    s32 arg5, u8 arg6, s32 arg7);
+void func_1512D748(void *actor, s32 arg1, s32 arg2);
+f32 func_15142A80(f32 parameter);
+f32 func_15142AC0(f32 parameter);
+f32 func_15142B04(f32 parameter);
+f32 func_15142B44(f32 parameter);
 
 /* Non-matching placeholders for the text-only asm slice asm/113D60.s. */
 
@@ -304,8 +319,66 @@ s32 func_150E76D0(f32 scale, s16 id, u8 flags, u8 duration, s32 opacity,
     return func_1515548C(&descriptor, 0, pair, mode, 0, slot, context);
 }
 
-s32 func_150E7994() {
-    return 0;
+void *func_150E7994(s16 count, f32 value, u8 slot, s32 context) {
+    u8 *record;
+    CurvePayload113D60 payload;
+    RandomPacket113D60 packet;
+    EmitterPosition113D60 controls[4];
+    f32 *output;
+    f32 parameter;
+    f32 step;
+    f32 weight2;
+    f32 weight1;
+    f32 weight0;
+    f32 weight3;
+    s16 i;
+
+    if (count < 2) {
+        return NULL;
+    }
+    func_1512D748(D_800DBFF0 + D_800BE9E8 * 0x9A0, 0, 1);
+    packet.kind = 1;
+    packet.duration = (u32)func_150ADA20() % 11 + 30;
+    packet.count = 8;
+    packet.index = -1;
+    packet.mode = 1;
+    func_151D8868(&packet, 0, 255, 0);
+
+    payload.value = value;
+    payload.count = count;
+    payload.fieldA = 0;
+    payload.progress = 0.0f;
+    record = func_151491F4(300, -1, 16, 1, 12, count * 8 + 16, slot, context);
+    if (record != NULL) {
+        memcpy(record + 0x28, &payload, sizeof(payload));
+        controls[0].x = -146.0f;
+        controls[0].y = func_150ADA68() * 160.0f - 80.0f;
+        controls[1].x = -50.0f;
+        controls[1].y = func_150ADA68() * 160.0f - 80.0f;
+        controls[2].x = 50.0f;
+        controls[2].y = func_150ADA68() * 160.0f - 80.0f;
+        controls[3].x = 146.0f;
+        controls[3].y = func_150ADA68() * 160.0f - 80.0f;
+        parameter = -1.0f;
+        step = 3.0f / (count - 1);
+        output = (f32 *)(record + 0x38);
+        for (i = 0; i < count; i++) {
+            weight2 = func_15142B04(parameter);
+            weight1 = func_15142AC0(parameter);
+            weight0 = func_15142A80(parameter);
+            weight3 = func_15142B44(parameter);
+            output[i * 2] = ((weight0 * controls[0].x + weight1 * controls[1].x) +
+                weight2 * controls[2].x) + controls[3].x * weight3;
+            weight2 = func_15142B04(parameter);
+            weight1 = func_15142AC0(parameter);
+            weight0 = func_15142A80(parameter);
+            weight3 = func_15142B44(parameter);
+            output[i * 2 + 1] = ((weight0 * controls[0].y + weight1 * controls[1].y) +
+                weight2 * controls[2].y) + controls[3].y * weight3;
+            parameter += step;
+        }
+    }
+    return record;
 }
 
 s32 func_150E7C9C() {
