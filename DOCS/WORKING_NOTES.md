@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 874](WORKING_NOTES/874-init-lookup-exit-shape-and-offset-predicate-trials-20261004.md)):
+Two first-refill lookup exit forms offer no aggregate text/bound benefit.
+Common return saves raw words only; offset predicate passes 256-byte host
+algebra. Both removed, source restored exactly; fifteen focused gates pass.
+One operation load already serves classification/width. Retained linked O2
+4,688 / 704 excess, changed corpus open; no production/default/README changes.
+
 2026-10-04 ([Note 873](WORKING_NOTES/873-init-explicit-first-refill-lookup-fitting-20261004.md)):
 Opt-in explicit initial refill removes shared lookup's null-entry selector,
 retaining child-value read after refill. Packed O2/O1 core saves sixteen bytes,

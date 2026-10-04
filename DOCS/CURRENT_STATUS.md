@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init lookup exit-shape trials: [Note 874](WORKING_NOTES/874-init-lookup-exit-shape-and-offset-predicate-trials-20261004.md)
+measures child-gated common return and offset predicates on Note 873.
+Common return saves raw helper words, but neither form reduces complete
+packed text or core bounds; both removed with exact source restoration.
+Operation caching is ruled out by the single existing load. All 256 byte
+classifications pass a host algebra probe; fifteen restored-config gates pass.
+Retained option remains 4,688 linked O2 / 704 excess, changed corpus open.
+Production/defaults/README unchanged; unrelated Game work preserved.
+
 Init explicit-first-refill lookup fitting: [Note 873](WORKING_NOTES/873-init-explicit-first-refill-lookup-fitting-20261004.md)
 adds opt-in `--lookup-first-refill` (requires shared lookup). Packed O2/O1
 core save sixteen bytes; linked O2 is 4,688 / 704 excess. No shape grows

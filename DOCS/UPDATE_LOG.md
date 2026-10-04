@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 874](WORKING_NOTES/874-init-lookup-exit-shape-and-offset-predicate-trials-20261004.md)
+  records two unretained lookup exit forms: helper word savings are absorbed
+  by padding, full text/bounds hold. Exact source restoration, fifteen focused
+  gates and 256-byte host classification probe pass. No production count change.
+
 - Init [Note 873](WORKING_NOTES/873-init-explicit-first-refill-lookup-fitting-20261004.md)
   banks opt-in initial-refill shared lookup: packed O2/O1 core saves sixteen
   bytes, linked O2 4,688 / 704 excess. All shape bounds hold, observed descents
