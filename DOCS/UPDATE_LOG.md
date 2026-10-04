@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 924](WORKING_NOTES/924-game-probability-gated-random-dispatch-recovery-20261004.md)
+  recovers both random-dispatch branches plus the shared tail. Fifteen tests
+  pass; 195-word body fits its 196-word slot with 183 differences, no guards.
+  Adjacent call ABIs typed; helper bodies still placeholders. README unchanged.
+
 - Game [Note 923](WORKING_NOTES/923-game-fixed-random-parameter-initializer-match-20261004.md)
   recovers the fixed/random initializer as a direct 43-word C match. Fourteen
   focused tests pass, including complete independent IDO equality. Fresh

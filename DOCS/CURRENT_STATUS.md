@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game random dispatcher: [Note 924](WORKING_NOTES/924-game-probability-gated-random-dispatch-recovery-20261004.md)
+recovers both `func_150E7290` branches and shared sound/command/packet tail.
+Five new tests / fifteen combined pass. Production has 195 body words in its
+196-word slot, 183 differing positions, original 0x68 frame and no guards/drift.
+Adjacent helper call ABIs are typed, but their bodies remain placeholders.
+Three preceding exact slots stay exact; aggregate counts/README unchanged.
+
 Game fixed/random parameters: [Note 923](WORKING_NOTES/923-game-fixed-random-parameter-initializer-match-20261004.md)
 recovers `func_150E71E4`'s vector-derived value, three fixed fields and four
 random samples. All 43 words match directly from C, no guards. Five new tests

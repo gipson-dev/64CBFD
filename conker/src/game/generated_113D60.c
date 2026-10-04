@@ -15,6 +15,28 @@ extern f32 D_800A1330;
 extern f32 D_800A1334;
 extern f32 D_800A1338;
 extern f32 D_800A133C;
+extern f32 D_800A1340;
+extern f32 D_800A1344;
+extern f32 D_800A1348;
+extern f32 D_800A134C;
+extern s32 D_80088A5C[2];
+typedef struct RandomPacket113D60 {
+    u8 kind;
+    u8 pad1;
+    s16 duration;
+    u8 count;
+    u8 mode;
+    s8 index;
+    u8 pad7;
+} RandomPacket113D60;
+s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, s32 duration,
+                 s32 opacity, s32 size0, s32 size1, s32 *pair, s32 mode,
+                 u8 slot, s32 context);
+s32 func_150E76D0(f32 scale, s16 id, u8 flags, u8 duration, s32 opacity,
+                 s32 size0, s32 size1, s32 *pair, s32 mode, u8 slot, s32 context);
+void func_10010F30(s32 arg0, u16 arg1, u8 arg2, s16 arg3, u8 arg4);
+void func_15164F0C(u8 kind, u8 index, s32 arg2, u8 slot, s32 context);
+s32 func_151D8868(void *packet, s32 arg1, s32 arg2, s32 arg3);
 f32 func_150484A0(f32 x, f32 y);
 f32 sqrtf(f32 value);
 f32 func_150ADA68(void);
@@ -103,15 +125,58 @@ void func_150E71E4(s32 arg0, s32 arg1, f32 *vector, f32 *output) {
     output[7] = func_150ADA68() * D_800A133C;
 }
 
-s32 func_150E7290() {
+void func_150E7290(u8 index, u8 slot, s32 context) {
+    s32 pair[2];
+    f32 position[2];
+    RandomPacket113D60 packet;
+    f32 sample;
+    u32 idWord;
+    u32 durationWord;
+    s32 flag0;
+    s32 flag1;
+
+    if (func_150ADA68() < D_800A1340) {
+        pair[0] = D_80088A5C[0];
+        pair[1] = D_80088A5C[1];
+        if (func_150ADA68() < D_800A1344) {
+            position[0] = func_150ADA68() * 300.0f + -150.0f;
+            position[1] = func_150ADA68() * 200.0f + -100.0f;
+            sample = func_150ADA68();
+            idWord = (u32)func_150ADA20();
+            flag0 = (func_150ADA20() & 1) ? 2 : 0;
+            flag1 = (func_150ADA20() & 1) ? 4 : 0;
+            durationWord = (u32)func_150ADA20();
+            func_150E75A0(position, (sample * 150.0f + 200.0f) * D_800A1348,
+                         (s16)(idWord % 201 + 500), (u8)(flag0 | flag1 | 9),
+                         durationWord % 26 + 100, 255, 64, 3, pair, 2, slot, context);
+        } else {
+            sample = func_150ADA68();
+            idWord = (u32)func_150ADA20();
+            durationWord = (u32)func_150ADA20();
+            func_150E76D0((sample * 100.0f + 150.0f) * D_800A134C,
+                         (s16)(idWord % 201 + 500), 9, (u8)(durationWord % 26 + 100),
+                         255, 64, 3, pair, 2, slot, context);
+        }
+        func_10010F30(0x360, 0x7FFF, 0, 0, 0);
+        func_15164F0C(1, index, 0, slot, context);
+        packet.kind = 1;
+        packet.duration = (u32)func_150ADA20() % 26 + 25;
+        packet.mode = 1;
+        packet.count = (u32)func_150ADA20() % 6 + 3;
+        packet.index = -1;
+        func_151D8868(&packet, 0, 255, 0);
+    }
+}
+
+/* Call contracts recovered; helper bodies remain unrecovered placeholders. */
+s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, s32 duration,
+                 s32 opacity, s32 size0, s32 size1, s32 *pair, s32 mode,
+                 u8 slot, s32 context) {
     return 0;
 }
 
-s32 func_150E75A0() {
-    return 0;
-}
-
-s32 func_150E76D0() {
+s32 func_150E76D0(f32 scale, s16 id, u8 flags, u8 duration, s32 opacity,
+                 s32 size0, s32 size1, s32 *pair, s32 mode, u8 slot, s32 context) {
     return 0;
 }
 

@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 924](WORKING_NOTES/924-game-probability-gated-random-dispatch-recovery-20261004.md)):
+Game `func_150E7290` now implements both probability-gated random dispatch
+paths and shared tail. Fifteen tests pass; 195 words fit 196-word slot, 183
+differences, no guards/drift. Typed adjacent call contracts do not recover
+their placeholder bodies. Previous three exact slots and aggregates unchanged.
+
 2026-10-04 ([Note 923](WORKING_NOTES/923-game-fixed-random-parameter-initializer-match-20261004.md)):
 Game `func_150E71E4` replaces its zero-return placeholder with ordered fixed/
 sampled field initialization. All 43 words match directly, no guards; fourteen
