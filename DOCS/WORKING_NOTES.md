@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 894](WORKING_NOTES/894-init-scan-deficit-o1-full-masked-cu1-set-corpus-20261004.md)):
+All 507 scan-deficit packed O1 CU1-set pages pass in 971.161 seconds, no skips.
+With Note 893: 1,014 paired pages across both masked modes. Text 5,984,
+descent 3,200 equals bound, minimum SP 0x80031D90 / margin 128. Twenty-six
+supporting passes and six unchanged hashes. Both O1 gates checked off;
+changed-option O2 and production-promotion gates remain open.
+
 2026-10-04 ([Note 893](WORKING_NOTES/893-init-scan-deficit-o1-full-masked-cu1-clear-corpus-20261004.md)):
 All 507 guarded scan-deficit packed O1 CU1-clear pages pass in 975.542 seconds,
 no skips. Text 5,984, descent 3,200 equals bound, minimum SP 0x80031D90 /

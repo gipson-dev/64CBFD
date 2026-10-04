@@ -68,6 +68,6 @@ test is claimed. Production/defaults/README and unrelated Game work unchanged.
 ## Remaining Gates
 
 - [x] All 507 guarded scan-deficit packed O1 masked CU1-clear pages.
-- [ ] Matching guarded packed O1 masked CU1-set corpus.
+- [x] Matching guarded packed O1 masked CU1-set corpus in [Note 894](894-init-scan-deficit-o1-full-masked-cu1-set-corpus-20261004.md).
 - [ ] Changed-option packed O2 qualification if selected for continued fitting.
 - [ ] Best-profile fitting, full reservation, entry/frame ownership and hardware/context.

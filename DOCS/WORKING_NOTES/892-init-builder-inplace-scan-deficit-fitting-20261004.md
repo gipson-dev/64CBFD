@@ -111,8 +111,10 @@ checks pass. Full guarded corpus and hardware/context remain unqualified.
 - [x] Retain only the in-place opt-in form; default text remains exact.
 - [x] Confirm the changed branch executes across six compiled shapes.
 - [x] Pass inherited bounded guest/ABI/live-SP suite and default size regression.
-- [ ] Run full guarded corpora for the new option before assigning full-corpus credit.
+- [x] Both packed O1 guarded corpora qualify the new option (Notes 893/894).
 - [x] Packed O1 masked CU1-clear: all 507 pages pass in [Note 893](893-init-scan-deficit-o1-full-masked-cu1-clear-corpus-20261004.md).
+- [x] Packed O1 masked CU1-set: all 507 pages pass in [Note 894](894-init-scan-deficit-o1-full-masked-cu1-set-corpus-20261004.md).
+- [ ] Qualify changed-option O2 if selected for further fitting.
 - [ ] Continue best-profile fitting, full reservation, ownership and hardware/context.
 
 Production Init, word guards, README totals, sibling-port artifacts and Release

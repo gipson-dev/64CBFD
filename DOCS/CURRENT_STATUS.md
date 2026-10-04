@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init scan-deficit O1 CU1-set corpus: [Note 894](WORKING_NOTES/894-init-scan-deficit-o1-full-masked-cu1-set-corpus-20261004.md)
+passes all 507 paired pages in 971.161 seconds, no skips. With Note 893:
+1,014 paired pages across both masked modes. Text 5,984, descent 3,200 equals
+bound, minimum SP 0x80031D90 / margin 128. Twenty-six supporting checks pass;
+six source hashes hold. Both O1 corpus gates checked off; changed-option O2,
+fitting/reservation/ownership/hardware remain. Production/README unchanged.
+
 Init scan-deficit O1 CU1-clear corpus: [Note 893](WORKING_NOTES/893-init-scan-deficit-o1-full-masked-cu1-clear-corpus-20261004.md)
 passes all 507 paired pages in 975.542 seconds, no skips. Linked text 5,984,
 maximum descent 3,200 equals bound, minimum SP 0x80031D90 / neighbor margin
