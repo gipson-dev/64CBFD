@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init stride-only replication trials: [Note 870](WORKING_NOTES/870-init-rejected-stride-only-replication-capture-20261003.md)
+rejects standalone stride capture with indexed for or gated do/while fills.
+Both add eight bytes to builder frames and core call bounds; neither improves
+text across profiles. Source restored exactly. Fresh retained-config guest
+suite passes 32 tests / one intentional corpus skip in 260.739 seconds;
+all six observed descents match bounds, packed O2 linked text stays 4,704.
+Production/defaults/README unchanged; full changed corpus remains open.
+
 Init remaining helper subsets: [Note 869](WORKING_NOTES/869-init-rejected-take-bits-mask-and-drop-inlining-20261003.md)
 rejects mask-only and mask-plus-drop inlining inside take_bits. Mask-only
 holds O2 but grows O1 16 bytes; combined grows both 32 bytes, with no core

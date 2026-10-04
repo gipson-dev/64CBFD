@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 870](WORKING_NOTES/870-init-rejected-stride-only-replication-capture-20261003.md)
+  rejects two stride-only indexed replication forms (+8 stack bytes both
+  profiles) and restores the source. Fresh retained-config guest suite:
+  32 passes / one intentional corpus skip, 260.739 seconds; all six observed
+  descents match static bounds. No production or README total change.
+
 - Init [Note 869](WORKING_NOTES/869-init-rejected-take-bits-mask-and-drop-inlining-20261003.md)
   closes the two remaining narrow mask/drop inlining subsets: neither improves
   both compiler profiles or the core call bound. Source restored exactly;

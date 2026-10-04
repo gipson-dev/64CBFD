@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 870](WORKING_NOTES/870-init-rejected-stride-only-replication-capture-20261003.md)):
+Two indexed stride-only capture forms lose on stack (+8 bytes both profiles)
+and offer no across-profile text benefit; removed with exact restoration.
+Retained configuration freshly passes 32 guest tests / one corpus skip in
+260.739 seconds. All six observed stack descents match bounds; packed O2
+remains 4,704 linked bytes / 720 excess. No production/default/README changes;
+unrelated Game work preserved, changed full corpus remains open.
+
 2026-10-03 ([Note 869](WORKING_NOTES/869-init-rejected-take-bits-mask-and-drop-inlining-20261003.md)):
 Mask-only and mask-plus-drop helper inlining are rejected: O2/O1 core deltas
 0/+16 and +32/+32, unchanged bounds. Together with Note 868 all three
