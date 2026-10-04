@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 883](WORKING_NOTES/883-init-stored-output-cursor-and-countdown-trials-20261004.md)
+  rejects stored output-pointer and countdown forms: both add sixteen core
+  text bytes in each profile and increase stored-frame costs. Source restored
+  exactly; thirteen focused retained tests pass, including bad-complement
+  state. No production/default/README change or trial semantic acceptance.
+
 - Init [Note 882](WORKING_NOTES/882-init-core-limit-predicate-and-local-lifetime-trials-20261004.md)
   measures and rejects unsigned workspace-limit and local-limit forms: raw
   word savings disappear into padding; the local form increases O1 stack

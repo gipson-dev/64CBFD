@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 883](WORKING_NOTES/883-init-stored-output-cursor-and-countdown-trials-20261004.md)):
+Stored output-cursor and length-countdown forms each grow O2/O1 core text
+sixteen bytes and increase stored frames. Maximum core bound unchanged,
+but per-path costs are worse. Both removed; qualified source restored exactly,
+thirteen focused retained gates pass. Linked O2 4,576 / 592 excess unchanged.
+
 2026-10-04 ([Note 882](WORKING_NOTES/882-init-core-limit-predicate-and-local-lifetime-trials-20261004.md)):
 Unsigned workspace-distance gate saves raw entry words but no complete
 text; local-limit form likewise saves no text and adds eight bytes to O1

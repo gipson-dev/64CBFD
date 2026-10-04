@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init stored-loop fitting trials: [Note 883](WORKING_NOTES/883-init-stored-output-cursor-and-countdown-trials-20261004.md)
+measures an output pointer cursor and a length countdown. Both grow whole
+packed core text sixteen bytes in O2/O1 and enlarge the stored frame;
+maximum core bounds stay 392/352 because another path dominates. Both
+removed, source restored exactly. Thirteen focused retained gates pass,
+including bad-complement bit state. Qualified linked O2 remains 4,576 /
+592 excess; production/defaults/README and unrelated Game work unchanged.
+
 Init core-limit fitting trials: [Note 882](WORKING_NOTES/882-init-core-limit-predicate-and-local-lifetime-trials-20261004.md)
 measures an unsigned workspace-distance gate and a local-limit variant.
 Raw O2/O1 entry bodies save two/one words, but padding leaves core text
