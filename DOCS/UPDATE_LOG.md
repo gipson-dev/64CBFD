@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 906](WORKING_NOTES/906-init-dynamic-order-o2-full-masked-cu1-set-corpus-20261004.md)
+  qualifies all 507 dynamic-order packed O2 masked CU1-set pages in 836.723
+  seconds, no skips. With Note 905: 1,014 paired pages across both modes;
+  unchanged text 4,528, descent 3,248 and margin 80. Production gates open.
+
 - Init [Note 905](WORKING_NOTES/905-init-dynamic-order-o2-full-masked-cu1-clear-corpus-20261004.md)
   qualifies all 507 dynamic-order packed O2 masked CU1-clear pages in 835.460
   seconds, no skips. Text 4,528, descent 3,248, known-neighbor margin 80;

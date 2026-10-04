@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init dynamic order O2 CU1-set corpus: [Note 906](WORKING_NOTES/906-init-dynamic-order-o2-full-masked-cu1-set-corpus-20261004.md)
+passes all 507 guarded paired pages in 836.723 seconds, no skips. With Note
+905, both masked CU1 modes cover 1,014 paired pages for this unchanged
+candidate. Text 4,528, descent 3,248, low `0x80031D60`, margin 80 and hashes
+match. Fitting (544 excess), reservation and production/hardware gates open.
+
 Init dynamic order O2 CU1-clear corpus: [Note 905](WORKING_NOTES/905-init-dynamic-order-o2-full-masked-cu1-clear-corpus-20261004.md)
 passes all 507 guarded paired pages in 835.460 seconds, no skips. Text 4,528,
 descent 3,248, low `0x80031D60`, known-neighbor margin 80 confirm Note 904's

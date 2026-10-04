@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 906](WORKING_NOTES/906-init-dynamic-order-o2-full-masked-cu1-set-corpus-20261004.md)):
+Dynamic-order packed O2 passes all 507 masked CU1-set paired pages in
+836.723 seconds, no skips. Notes 905/906 qualify 1,014 paired pages across
+both modes: text 4,528, descent 3,248, low `0x80031D60`, margin 80, hashes
+fixed. Fitting/reservation/production gates remain open; no production change.
+
 2026-10-04 ([Note 905](WORKING_NOTES/905-init-dynamic-order-o2-full-masked-cu1-clear-corpus-20261004.md)):
 Dynamic-order packed O2 passes all 507 masked CU1-clear paired pages in
 835.460 seconds, no skips. Text 4,528, descent 3,248, low `0x80031D60`,
