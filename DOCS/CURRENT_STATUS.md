@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init remaining helper subsets: [Note 869](WORKING_NOTES/869-init-rejected-take-bits-mask-and-drop-inlining-20261003.md)
+rejects mask-only and mask-plus-drop inlining inside take_bits. Mask-only
+holds O2 but grows O1 16 bytes; combined grows both 32 bytes, with no core
+call-bound benefit. All three mask/drop subsets now have current-base
+receipts. Source restored exactly, fourteen focused gates pass; no retained
+option, production conversion or README count change. Continue structural
+dataflow/caller fitting rather than repeating these subsets.
+
 Init shared-helper fitting: [Note 868](WORKING_NOTES/868-init-rejected-take-bits-drop-inlining-20261003.md)
 rejects drop-only inlining inside take_bits: packed O2 grows 16 core bytes,
 O1 grows 32, with no core call-bound improvement. Source is restored exactly

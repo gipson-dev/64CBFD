@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 869](WORKING_NOTES/869-init-rejected-take-bits-mask-and-drop-inlining-20261003.md)
+  closes the two remaining narrow mask/drop inlining subsets: neither improves
+  both compiler profiles or the core call bound. Source restored exactly;
+  fourteen focused gates pass. No new option or production count change.
+
 - Init [Note 868](WORKING_NOTES/868-init-rejected-take-bits-drop-inlining-20261003.md)
   records rejected drop-only helper inlining (+16 O2 / +32 O1 core bytes,
   no call-bound improvement), exact source restoration and fourteen passing

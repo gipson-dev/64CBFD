@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 869](WORKING_NOTES/869-init-rejected-take-bits-mask-and-drop-inlining-20261003.md)):
+Mask-only and mask-plus-drop helper inlining are rejected: O2/O1 core deltas
+0/+16 and +32/+32, unchanged bounds. Together with Note 868 all three
+mask/drop subsets are measured on the current base. Exact source restoration
+and fourteen focused gates pass. No production/default/README changes;
+next work needs structural dataflow/caller evidence, not repeated subsets.
+
 2026-10-03 ([Note 868](WORKING_NOTES/868-init-rejected-take-bits-drop-inlining-20261003.md)):
 Drop-only inlining inside take_bits grows packed O2/O1 core text by 16/32
 bytes with unchanged core call bounds. Trial removed, exact source restoration
