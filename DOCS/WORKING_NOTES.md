@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-03 ([Note 868](WORKING_NOTES/868-init-rejected-take-bits-drop-inlining-20261003.md)):
+Drop-only inlining inside take_bits grows packed O2/O1 core text by 16/32
+bytes with unchanged core call bounds. Trial removed, exact source restoration
+and fourteen focused gates pass. Fresh Init inventory is 492 C / 47 assembly
+rows; no production conversion or README count change. Remaining-candidate
+decision and next fitting boundaries recorded; unrelated Game work preserved.
+
 2026-10-03 ([Note 867](WORKING_NOTES/867-init-builder-table-derived-allocation-fitting-20261003.md)):
 Opt-in table-derived allocation saves packed O2 16 linked bytes to 4,704 /
 720 excess, with all six stack bounds unchanged. Ordered commits match

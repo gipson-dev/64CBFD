@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 868](WORKING_NOTES/868-init-rejected-take-bits-drop-inlining-20261003.md)
+  records rejected drop-only helper inlining (+16 O2 / +32 O1 core bytes,
+  no call-bound improvement), exact source restoration and fourteen passing
+  focused gates. Fresh inventory remains 47 assembly rows / 12,252 bytes.
+  No production conversion, README total change or unrelated Game staging.
+
 - Init [Note 867](WORKING_NOTES/867-init-builder-table-derived-allocation-fitting-20261003.md)
   banks opt-in table-derived allocation. Packed O2 saves 16 linked bytes
   to 4,704 / 720 excess, with all six stack bounds unchanged. Ordered

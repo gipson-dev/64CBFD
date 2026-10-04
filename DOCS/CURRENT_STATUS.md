@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init shared-helper fitting: [Note 868](WORKING_NOTES/868-init-rejected-take-bits-drop-inlining-20261003.md)
+rejects drop-only inlining inside take_bits: packed O2 grows 16 core bytes,
+O1 grows 32, with no core call-bound improvement. Source is restored exactly
+to HEAD and fourteen focused gates pass. Fresh inventory remains 492 C /
+47 assembly rows, with 12,252 assembly bytes. No production conversion;
+the two small candidates still lack full-slot matching C, and the retained
+decompressor experiment remains 720 linked bytes over budget. README unchanged.
+
 Init table-derived allocation fitting: [Note 867](WORKING_NOTES/867-init-builder-table-derived-allocation-fitting-20261003.md)
 adds opt-in direct table/header/commit dataflow. Packed O2 falls to 4,704
 linked bytes / 720 excess, public builder 333 words; packed O1 text holds.
