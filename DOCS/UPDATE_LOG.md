@@ -18,6 +18,17 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 890](WORKING_NOTES/890-init-builder-sort-offset-local-trials-20261004.md)
+  rejects local sort offsets in both store orders: no whole O2 text saving,
+  eight-byte call-bound growth in both profiles. Exact source restoration and
+  seventeen semantic/ledger passes; production and README unchanged.
+
+- Init [Note 889](WORKING_NOTES/889-init-current-assembly-conversion-decision-20261004.md)
+  refreshes the remaining-assembly conversion decision: 47 rows / 12,252 bytes,
+  two small matching candidates, connected decoder still 592 linked bytes over.
+  Thirty-three focused tests pass with no skips; no production conversion.
+  Frame/adapter recovery is completed experimental work, not a new first step.
+
 - Init [Note 888](WORKING_NOTES/888-init-live-sp-guard-full-masked-cu1-set-corpus-20261004.md)
   qualifies all 507 live-SP-guarded packed O2/g3 masked CU1-set pages in
   804.839 seconds, no skips. With Note 887: 1,014 paired pages across both

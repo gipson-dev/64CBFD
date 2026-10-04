@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-04 ([Note 890](WORKING_NOTES/890-init-builder-sort-offset-local-trials-20261004.md)):
+Two new explicit sort-offset locals do not shrink whole O2 core and increase
+both profile call bounds eight bytes. Rejected and exact source restored;
+seventeen semantic/ledger tests pass, no skips. No candidate or production
+change survives; retained linked O2 remains 4,576 / 592 excess.
+
+2026-10-04 ([Note 889](WORKING_NOTES/889-init-current-assembly-conversion-decision-20261004.md)):
+Fresh Init inventory remains 492 C / 47 assembly functions, with 12,252
+assembly bytes. Two small matching candidates and the connected decoder are
+distinct from original SDK/hardware/context assembly. Thirty-three focused
+tests pass. Current decoder recovery is qualified but 592 linked bytes over;
+resume fitting/ownership, not superseded frame-mapping steps. README unchanged.
+
 2026-10-04 ([Note 888](WORKING_NOTES/888-init-live-sp-guard-full-masked-cu1-set-corpus-20261004.md)):
 All 507 guarded packed O2/g3 CU1-set pages pass in 804.839 seconds, no skips.
 With Note 887: 1,014 paired pages across both masked modes, live-SP/callee

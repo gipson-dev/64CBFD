@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init builder sort-offset trials: [Note 890](WORKING_NOTES/890-init-builder-sort-offset-local-trials-20261004.md)
+rejects explicit local offsets in both store orders: neither reduces complete
+O2 text, both raise O2/O1 call bounds eight bytes. Both edits removed, source
+blob restored exactly; seventeen semantic/ledger tests pass. Qualified linked
+O2 remains 4,576 / 592 excess. No production or README change.
+
+Init current conversion decision: [Note 889](WORKING_NOTES/889-init-current-assembly-conversion-decision-20261004.md)
+rechecks 492 C / 47 assembly functions (151,796 / 12,252 bytes). Bitmap and
+MMIO remain small matching candidates; the connected decoder has qualified
+experimental C but is still 592 linked bytes too large. Thirty-three focused
+tests pass, no skips. Resume fitting and ownership gates, not already completed
+frame/adapter recovery. No production conversion or README change.
+
 Init guarded CU1-set corpus: [Note 888](WORKING_NOTES/888-init-live-sp-guard-full-masked-cu1-set-corpus-20261004.md)
 passes all 507 live-SP-guarded packed O2/g3 paired pages in 804.839 seconds,
 no skips. With Note 887: 1,014 guarded paired pages across both masked modes.
