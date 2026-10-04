@@ -284,6 +284,8 @@ def main():
                         help="rewind whole buffered bytes with a count and remainder")
     parser.add_argument("--packed-header", action="store_true",
                         help="trial a byte-packed four-byte opening header")
+    parser.add_argument("--stored-shared-lengths", action="store_true",
+                        help="share extraction of stored length and complement words")
     args = parser.parse_args()
     if args.abi_fpr_shadow:
         args.seed_distance_root = True
@@ -349,6 +351,8 @@ def main():
         suffix += "-stream-byte-rewind"
     if args.packed_header:
         suffix += "-packed-header"
+    if args.stored_shared_lengths:
+        suffix += "-stored-shared-lengths"
     output = (args.output or root / ("conker/build/init-decompressor-semantic" + suffix)).resolve()
     output.mkdir(parents=True, exist_ok=True)
     cwd = root / "conker"
@@ -410,6 +414,8 @@ def main():
         common.append("-DINIT_DECODE_STREAM_BYTE_REWIND")
     if args.packed_header:
         common.append("-DINIT_DECODE_PACKED_HEADER")
+    if args.stored_shared_lengths:
+        common.append("-DINIT_DECODE_STORED_SHARED_LENGTHS")
     report = {}
     for label, profile in (("o2g3", ["-O2", "-g3"]), ("o1", ["-O1"])):
         obj = output / (label + ".o")

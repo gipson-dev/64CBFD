@@ -589,11 +589,19 @@ int init_decode_stored(InitDecodeState *s) {
     int32_t end, produced = s->produced;
     drop_bits(s, s->bits & 7);
     length = take_bits(s, 16);
+#ifdef INIT_DECODE_STORED_SHARED_LENGTHS
+    inverse = (~take_bits(s, 16)) & 0xFFFF;
+    if (length != inverse) {
+        s->bits += 16;
+        return 1;
+    }
+#else
     need_bits(s, 16);
     inverse = (~s->reservoir) & 0xFFFF;
     s->reservoir >>= 16;
     if (length != inverse) return 1;
     s->bits -= 16;
+#endif
     end = (uint32_t)produced + length;
     if (end >= s->limit) return 1;
     while (produced != end) s->output[produced++] = take_bits(s, 8);

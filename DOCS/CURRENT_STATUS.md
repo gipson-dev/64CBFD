@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init stored length fitting: [Note 851](WORKING_NOTES/851-init-stored-shared-length-extraction-and-failure-bit-state-20261003.md)
+retains opt-in shared 16-bit extraction with explicit failure-count restoration.
+All O1 linked builds shrink 32, frame O2 16; best packed O2 stays 4,800,
+816 over retail after padding. All 444 bounded contexts, 114 builders, six
+initializers and 48 direct header/alignment comparisons pass. A delay-slot-aware
+gate proves bad/valid restoration behavior; final module/helper checks total
+35 pass, one corpus skip. Structural fitting and changed corpus/hardware/
+ownership remain open; production, defaults and README totals unchanged.
+
 Init packed header fitting: [Note 850](WORKING_NOTES/850-init-byte-packed-header-load-and-unaligned-core-qualification-20261003.md)
 retains opt-in byte-packed guest header loads with enforced (4,1) layout and
 actual LWL/LWR pairs. All six linked images shrink 32; best O2 is 4,800,

@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 851](WORKING_NOTES/851-init-stored-shared-length-extraction-and-failure-bit-state-20261003.md)):
+Shared stored-word extraction shrinks O1 32 bytes and frame O2 16; packed O2
+stays 4,800 after padding, still 816 over retail. Final bounded module and
+helper checks: 35 pass, one corpus skip. Bad-complement state and active
+restoration are verified with corrected delay-slot instrumentation. Rejected
+byte/equivalent-check variants removed. Production/defaults/totals unchanged;
+structural fitting and new-option corpus/ownership/hardware remain open.
+
 2026-10-03 ([Note 850](WORKING_NOTES/850-init-byte-packed-header-load-and-unaligned-core-qualification-20261003.md)):
 Opt-in packed header gives actual byte-aligned LWL/LWR loads and reduces
 all six linked images by 32. Best O2 is 4,800, 816 over retail. Bounded

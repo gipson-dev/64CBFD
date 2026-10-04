@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 851](WORKING_NOTES/851-init-stored-shared-length-extraction-and-failure-bit-state-20261003.md)
+  banks smaller alternate-profile stored extraction with retail failure bit
+  state and an active delay-slot-aware restoration gate. Final bounded/helper
+  tests pass; best packed O2 remains 4,800, 816 over retail. Changed corpus
+  and structural fitting stay open. No production/default/README total edits;
+  unrelated Game work remains preserved and excluded.
+
 - Init [Note 850](WORKING_NOTES/850-init-byte-packed-header-load-and-unaligned-core-qualification-20261003.md)
   banks byte-packed header fitting with actual unaligned loads, alignment
   metadata rejection and all-offset/header-format qualification. Best linked
