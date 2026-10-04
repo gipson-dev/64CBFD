@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-04 ([Note 872](WORKING_NOTES/872-init-allocation-table-full-masked-cu1-set-corpus-20261004.md)):
+All 507 current packed-remaining O2/g3 pages pass with masked CU1 set in
+804.532 seconds, no skips. Together with Note 871: 1,014 paired pages across
+both masked modes, source unchanged. Text 4,704 / 720 excess; observed
+descent 3,240 matches bound, minimum SP 0x80031D68 / neighbor margin 88.
+Fifteen supporting gates pass, corpus gates checked off. Size ledger distinguishes
+public builder, embedded helpers and adapter. Fitting/ownership/hardware remain;
+production/defaults/README unchanged, unrelated Game work preserved.
+
 2026-10-04 ([Note 871](WORKING_NOTES/871-init-allocation-table-full-masked-cu1-clear-corpus-20261004.md)):
 All 507 current-combination packed-remaining O2/g3 corpus pages pass with
 exception-masked CU1 clear in 798.099 seconds, no skips. Text 4,704 / 720

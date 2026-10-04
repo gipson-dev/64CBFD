@@ -2,6 +2,10 @@
 
 Date: 2026-10-04. Source baseline: `cf9c1afd` (unchanged Note 867 experiment).
 
+Follow-up: [Note 872](872-init-allocation-table-full-masked-cu1-set-corpus-20261004.md)
+passes the matching 507-page CU1-set corpus with unchanged source. Together
+these notes qualify 1,014 paired pages across both masked modes.
+
 ## Selection
 
 This run qualifies the current table-derived allocation combination, not the
@@ -87,7 +91,7 @@ defaults and README counts remain unchanged; unrelated Game edits preserved.
 
 ## Remaining Gates
 
-- Full current-combination masked CU1-set corpus remains required.
+- [x] Full current-combination masked CU1-set corpus (Note 872).
 - Size fitting remains required before production promotion.
 - Entry ownership, complete stack reservation and hardware/context boundaries
   remain separate requirements, regardless of corpus success.

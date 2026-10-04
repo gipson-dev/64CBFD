@@ -21,14 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init current allocation-table CU1-set corpus: [Note 872](WORKING_NOTES/872-init-allocation-table-full-masked-cu1-set-corpus-20261004.md)
+passes all 507 fresh packed-remaining O2/g3 paired pages with masked CU1 set
+(status 0x2400FF00), 804.532 seconds, no skips. Together with Note 871 this
+qualifies 1,014 paired pages across both masked modes on unchanged current
+source. Text 4,704 / 720 excess; observed descent 3,240 matches bound,
+minimum SP 0x80031D68 / known-neighbor margin 88. Fifteen supporting gates
+pass. Current full corpus gates checked off; fitting/ownership/hardware/
+complete-reservation and resume gates remain. Production/defaults/README unchanged.
+
 Init current allocation-table full corpus: [Note 871](WORKING_NOTES/871-init-allocation-table-full-masked-cu1-clear-corpus-20261004.md)
 passes all 507 freshly compiled packed-remaining O2/g3 paired retail pages
 with exception-masked CU1 clear (status 0x0400FF00), 798.099 seconds, no skips.
 Linked text 4,704 / 720 excess; observed descent 3,240 equals bound, minimum
 SP 0x80031D68 / known-neighbor margin 88. Fifteen helper/selection tests pass.
 This qualifies the current toggle/parent-cursor/allocation-table combination,
-not merely the earlier source. Current CU1-set corpus and fitting/ownership/
-hardware gates remain open. Production/defaults/README totals unchanged.
+not merely the earlier source. Its CU1-set follow-up now passes in Note 872;
+fitting/ownership/hardware gates remain open. Production/defaults/README totals unchanged.
 
 Init stride-only replication trials: [Note 870](WORKING_NOTES/870-init-rejected-stride-only-replication-capture-20261003.md)
 rejects standalone stride capture with indexed for or gated do/while fills.

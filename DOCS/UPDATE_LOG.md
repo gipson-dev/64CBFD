@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 872](WORKING_NOTES/872-init-allocation-table-full-masked-cu1-set-corpus-20261004.md)
+  qualifies all 507 current packed O2/g3 pages with masked CU1 set in 804.532
+  seconds, no skips. Together with Note 871: 1,014 paired pages on unchanged
+  current source across both masked modes. Text 4,704 / 720 excess; descent
+  3,240 and neighbor margin 88 unchanged. Fifteen supporting gates pass;
+  corpus gates checked off in Notes 867/871, fitting/ownership/hardware remain.
+  No production conversion, README total change or unrelated Game staging.
+
 - Init [Note 871](WORKING_NOTES/871-init-allocation-table-full-masked-cu1-clear-corpus-20261004.md)
   qualifies all 507 current toggle/parent-cursor/allocation-table packed O2/g3
   pages with exception-masked CU1 clear: 798.099 seconds, no skips. Text
