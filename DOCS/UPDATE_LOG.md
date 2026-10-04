@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 898](WORKING_NOTES/898-init-global-mask-and-explicit-abi-copy-trials-20261004.md)
+  rejects global low-mask and explicit ABI-copy forms: no fitting improvement.
+  Exact source restored; sixteen focused checks pass. Production/defaults,
+  qualified candidate and README unchanged.
+
 - Init [Note 897](WORKING_NOTES/897-init-core-return-control-flow-trials-20261004.md)
   rejects two core return shapes: success-first neutral, shared-result increases
   O2 text and both bounds. Exact qualified source restored; ten focused tests

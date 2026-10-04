@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-04 ([Note 898](WORKING_NOTES/898-init-global-mask-and-explicit-abi-copy-trials-20261004.md)):
+Global mask elimination worsens O2 stack/O1 text; explicit ABI copies grow
+O2 text. Both rejected, exact qualified source restored. Sixteen focused
+tests pass, no skips. No production, default or README change.
+
 2026-10-04 ([Note 897](WORKING_NOTES/897-init-core-return-control-flow-trials-20261004.md)):
 Core success-first return is neutral; shared result grows O2 sixteen bytes
 and both bounds. Both removed, exact qualified source restored. Ten focused
