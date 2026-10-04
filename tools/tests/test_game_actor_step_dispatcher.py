@@ -33,11 +33,11 @@ s32 func_150229E4(struct127 *p) {
     if (mutation == 3) p->unk2FA = 0;
     return predicate_result[i];
 }
-s32 func_1507BDB0(struct197 *state, s32 step_bits, struct127 *p, s32 mode) {
+s32 func_1507BDB0(struct197 *state, f32 step, struct127 *p, s32 mode) {
     s32 i = actor_index(p);
     if (i < 0 || i >= 25 || mode != expected_mode) { error = 2; return 0; }
     update_calls[i]++; order[events++] = i * 2 + 1;
-    observed_state[i] = state; observed_step[i] = step_bits;
+    observed_state[i] = state; observed_step[i] = *(u32 *)&step;
     if (mutation == 4) { D_800C3638 = 1; *(u8 *)&D_800C3654 = 0; }
     if (mutation == 5 && i == 0) D_800CC2D0[1].interaction_state = 0;
     return -123;

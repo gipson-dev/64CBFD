@@ -42,7 +42,8 @@ class GameActorDimensionHelperTests(unittest.TestCase):
         forward = sorted(set(re.findall(r"\bstruct\d+\b", actor.group(0))) -
                          {"struct126", "struct127"})
         layouts = [match.group(0) for match in re.finditer(
-            r"typedef struct \{\n.*?\n\} Dimension\w+A9260;", source, re.S)]
+            r"typedef struct \{\n.*?\n\} (\w+);", source, re.S)
+                   if match.group(1) in ("DimensionStateA9260", "DimensionCameraA9260")]
         if len(layouts) != 2:
             raise AssertionError("dimension views were not found")
         bodies = []

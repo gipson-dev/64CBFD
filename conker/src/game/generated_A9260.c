@@ -5,6 +5,28 @@
 extern f32 D_8009B688;
 extern u8 D_800B85A4[];
 extern s32 func_150229E4(struct127 *actor);
+extern f32 func_1506AD30(struct127 *actor, f32 frame, s32 mode);
+extern u8 D_800BEA0C;
+extern u8 D_800C365E[];
+
+typedef struct {
+    void (*callback)(void);
+    u16 flags;
+    u8 pad6[2];
+    f32 frame;
+    f32 padC;
+    f32 rate;
+    f32 pad14;
+    f32 end;
+    f32 pad1C;
+    f32 start;
+    f32 pad24;
+    s32 sequence;
+    u8 pad2C[0xE];
+    s16 decrement;
+    s16 timer;
+    u8 pad3E[2];
+} AnimationTimelineA9260;
 
 typedef struct {
     u8 pad0[4];
@@ -30,10 +52,125 @@ typedef struct {
     f32 unk960;
 } DimensionCameraA9260;
 
-/* The connected updater remains a non-matching placeholder. */
+void func_1507BDB0(struct197 *input, f32 step, struct127 *actor, s32 mode) {
+    AnimationTimelineA9260 *state = (AnimationTimelineA9260 *)input;
+    f32 frame;
+    f32 result;
+    u32 flags;
+    s32 sequence;
+    u8 changed = 0;
 
-s32 func_1507BDB0() {
-    return 0;
+    if (state->sequence == 0) {
+        return;
+    }
+    if (actor != NULL) {
+        if (D_800C35EA == 0) {
+            if (D_800BE9A4 < 2.0f) {
+                step = D_800BE9A4 * step;
+            } else {
+                step += step;
+            }
+        } else {
+            step = D_800BE9A4;
+        }
+    }
+    if (D_800BEA0C != 0) {
+        step = 0.0f;
+    }
+    frame = state->rate * step;
+    if (state->end < frame) {
+        frame = state->end + state->frame;
+    } else {
+        frame += state->frame;
+    }
+    flags = state->flags & 0x8000;
+    if (actor != NULL) {
+        actor->unk1FC &= ~4;
+        D_800C3E78 = ((s32)actor - (s32)D_800CC2D0) / 0x32C;
+        flags |= actor->unkF4 & 0xE;
+        D_800D154C = actor;
+        if (((&D_800C35EA)[mode] != 1) || (D_800C365E[mode] != 0)) {
+            result = func_1506AD30(D_800D154C, frame, 0);
+            if (result != 0.0f) {
+                frame = result;
+            }
+        }
+    }
+    if (0.0f <= state->rate) {
+        if (((state->end - 1.0f) <= frame) &&
+            (state->frame < (state->end - 1.0f)) && (state->callback != NULL)) {
+            sequence = state->sequence;
+            if ((actor != NULL) && (actor->unkF4 & 8)) {
+                actor->unk10C = 0;
+                *(s32 *)((u8 *)actor + 0x1C4) = 0;
+                state->rate = 0.0f;
+            }
+            if (D_800C35EA == 0) {
+                state->callback();
+            }
+            if (sequence != state->sequence) {
+                frame = state->frame;
+                changed = 1;
+            }
+        }
+        if ((actor != NULL) && (actor->unk1FD != 0) &&
+            ((state->end - 1.0f) <= frame)) {
+            actor->unk76 += actor->unk1FD << 8;
+            actor->unk7A = actor->unk76;
+            actor->unk78 = actor->unk76;
+            state->frame = state->start;
+            if (actor->unkF4 & 4) {
+                actor->unk21C = 0;
+            }
+        } else if ((flags == 0) && (state->end <= frame)) {
+            state->frame = (frame - state->end) + state->start;
+            changed = 1;
+            if (actor != NULL) {
+                actor->unk1FC |= 4;
+            }
+        } else if ((flags != 0) && ((state->end - 1.0f) <= frame)) {
+            if (((actor != NULL) && (actor->unkF4 & 0xA)) || (state->flags & 0x8000)) {
+                state->frame = state->end - 1.0f;
+            } else if (state->frame < (state->end - 1.0f)) {
+                state->frame = state->end - 1.0f;
+                if ((actor != NULL) && (actor->unkF4 & 4)) {
+                    actor->unk21C = 0;
+                }
+            } else {
+                state->frame = state->start;
+                if (actor != NULL) {
+                    actor->unk138 = 0;
+                    actor->unk1FC |= 2;
+                }
+            }
+            if ((actor != NULL) && (actor->unkF4 & 8)) {
+                actor->unk10C = 0;
+                *(s32 *)((u8 *)actor + 0x1C4) = 0;
+                state->rate = 0.0f;
+            }
+            if (state->frame < 0.0f) {
+                state->frame = 0.0f;
+            }
+        } else {
+            state->frame = frame;
+        }
+    } else {
+        if (frame < state->start) {
+            state->frame = (frame - state->start) + state->end;
+        } else {
+            state->frame = frame;
+        }
+    }
+    if (state->timer > 0) {
+        state->timer = (u32)(s32)state->timer - (u32)(s32)state->decrement * (u32)D_800BE9E4;
+    }
+    if (actor != NULL) {
+        if (changed != 0) {
+            func_1506AD30(D_800D154C, state->frame, 0);
+        }
+        /* The final event helper can replace the frame before publication. */
+        *(f32 *)&actor->padB4 = state->frame;
+    }
 }
 
 void func_1507C22C(s32 mode) {
@@ -47,8 +184,7 @@ void func_1507C22C(s32 mode) {
             if ((D_800C3638 == 0) || (*(u8 *)&D_800C3654 != 0) ||
                 (func_150229E4(actor) != 0)) {
                 if ((actor->unk2D0 != NULL) && (actor->unk2FA != 0)) {
-                    /* Preserve a1's float bits while the updater remains untyped. */
-                    func_1507BDB0(actor->unk2D0, *(s32 *)&actor->unk48, actor, mode);
+                    func_1507BDB0(actor->unk2D0, actor->unk48, actor, mode);
                 }
             }
         }
