@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-04 ([Note 968](WORKING_NOTES/968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md)):
+Finish interrupted metadata `func_15003570` and maintenance `func_1510D404`:
+58 / 62 and 125 / 129 words, 54/119 raw differences, no new guards.
+Maintenance's C frame is 0x40 versus retail 0x60. Seventeen new tests qualify
+metadata, all priority/work-counter bytes, callback ordering and actual bounded
+cache lifecycle. All 221 combined checks pass, no skips; fresh link preserves
+full Init code/data, Debugger code, Game data and exact initializer/startup.
+Earlier pending Game edits are now banked. Next immediate release `func_1510D7AC`;
+staged producer, real guest DMA/decoder and natural effects stay separate.
+README aggregates and sibling/frozen Release unchanged.
+
 2026-10-04 ([Note 967](WORKING_NOTES/967-init-decoder-entry-value-lifetime-fitting-trials-20261004.md)):
 Test independent literal/length, distance and combined entry-value capture in
 the connected decoder. Two variants save one O2 compressed-unit word but final

@@ -2,6 +2,10 @@
 
 Date: 2026-10-04. Starting HEAD: `dc61e219`.
 
+Subsequent Game checkpoint: [Note 968](968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md)
+qualifies and banks the separate metadata/maintenance edits described here as
+pending. This note's Init measurements and rejected conversion decision stand.
+
 ## Answer
 
 **Some remaining Init assembly can be expressed in C, but no remaining

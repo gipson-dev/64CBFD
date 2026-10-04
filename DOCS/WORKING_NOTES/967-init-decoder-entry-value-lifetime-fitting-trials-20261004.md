@@ -2,6 +2,10 @@
 
 Date: 2026-10-04. Starting HEAD: `00f89acb`.
 
+Subsequent Game checkpoint: [Note 968](968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md)
+qualifies and banks the separate metadata/maintenance edits preserved here.
+This note's default-image identities and rejected Init experiment stand.
+
 ## Decision
 
 Continue the requested Init work from

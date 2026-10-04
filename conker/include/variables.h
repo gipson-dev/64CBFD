@@ -513,7 +513,7 @@ extern s32 jtbl_80091A30[];
 
 extern s32 D_80091AF0[];
 extern s32 D_80091C04[];
-extern s32 D_80091D20[];
+extern u16 D_80091D20[];
 
 // chunk0 data starts at rom 0x80082B20
 // this chunk0 data
@@ -878,7 +878,7 @@ extern u8   D_800B0E34[];
 
 extern s32 D_800B0E58[7762];
 
-extern s32 D_800B87A0[];
+extern u16 D_800B87A0[];
 
 extern u8  D_800BC448[];
 

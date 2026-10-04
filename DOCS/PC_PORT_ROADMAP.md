@@ -40,9 +40,9 @@ Setup `func_1510CE60`, texture resolver `func_1510D0EC` and attachment
 [Note 965](WORKING_NOTES/965-game-texture-resource-setup-resolver-and-attachment-recovery-20261004.md):
 152 / 163, 155 / 162 and 45 / 45 words, 159/142/9 differences, retail frames,
 no guards. Actual helper/setup/resolver/attachment/release connections pass
-bounded fixtures, including all 7762 IDs. Metadata loading `func_15003570`
-and cache maintenance `func_1510D404` remain DECOMP placeholders; connected
-lifecycle and actual guest DMA/decompression still gate a complete pipeline.
+bounded fixtures, including all 7762 IDs. At that checkpoint metadata loading
+`func_15003570` and cache maintenance `func_1510D404` remained DECOMP placeholders;
+Note 968 below resolves their bounded source/lifecycle gates, not real DMA/decoder.
 Initial unwritten setup scratch is unqualified. No host synchronization is
 implied by recovering these guest C bodies.
 
@@ -54,9 +54,9 @@ retail-exact. All 110 focused checks pass. The new preincrement bitmap reaches
 a direct endpoint branch but still emits twenty no-unroll words against nineteen,
 with an extra cursor bias and wrong delay-slot scheduling; reject adoption.
 These guest conversion gates do not establish PC gameplay parity. Separate
-pending metadata/maintenance bodies now build in the DECOMP worktree, but their
-dedicated behavior and connected lifecycle qualification remain open; Note 965's
-placeholder statement above describes its banked checkpoint, not current edits.
+pending metadata/maintenance bodies built in the DECOMP worktree at that point;
+their dedicated bounded qualification is subsequently completed by Note 968.
+Note 965's placeholder statement describes its historical banked checkpoint.
 
 The subsequent decoder entry-value lifetime trials in
 [Note 967](WORKING_NOTES/967-init-decoder-entry-value-lifetime-fitting-trials-20261004.md)
@@ -66,6 +66,16 @@ stays 4512 bytes against 3984 retail. No Init conversion or host synchronization
 decoder fitting, private-stack reservation and entry/placement remain separate
 gates. Default-option instruction images and full production Init/data stay exact.
 
+Metadata `func_15003570` and maintenance `func_1510D404` are recovered in
+[Note 968](WORKING_NOTES/968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md):
+58 / 62 and 125 / 129 words, 54/119 raw differences, no guards. Maintenance's
+C frame is 0x40 versus retail 0x60. All 221 combined checks pass; actual extracted
+initializer/setup/resolver/lookup/release/maintenance bodies connect in bounded
+fixtures. DMA and decoder remain mocks; staged headers are fixture-supplied.
+Full Init code/data, Debugger code and Game data remain exact. Read-only sibling
+audit finds complete original recompiled bodies already in active `.c`; no host
+source, build, save or frozen Release changes, and no fresh PC runtime acceptance.
+
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
 - [x] Audit the sibling's active CMake source input without changing its files.
@@ -73,12 +83,13 @@ gates. Default-option instruction images and full production Init/data stay exac
 - [x] Recover variadic resource loader `func_1502B6BC` and offset relocator `func_1502B4A8`.
 - [x] Recover cache installer `func_1502AB04`, lookup `func_1502AC88` and block
   loading `func_1502B350`; qualify metadata writes in bounded source fixtures.
-- [ ] Qualify actual guest DMA/decompression and cache lifecycle before claiming
+- [ ] Qualify actual guest DMA/decompression and natural cache lifecycle before claiming
   production resource loading or natural effects.
 - [x] Recover setup/attachment `func_1510CE60` and `func_15168E54`, plus
   resolver `func_1510D0EC`; qualify actual helper connections in bounded fixtures.
-- [ ] Recover metadata loading `func_15003570` and cache maintenance `func_1510D404`
-  and qualify connected cache initialization/loading/maintenance/release.
+- [x] Recover metadata loading `func_15003570` and cache maintenance `func_1510D404`
+  and qualify connected cache initialization/loading/maintenance/release in bounded fixtures.
+- [ ] Recover immediate cache release `func_1510D7AC` and identify the staged-entry producer.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a
   zero-return stub, and the scoped source search finds no named override.
 - [ ] Synchronize PC-port `func_150E9178`: the same active source also retains

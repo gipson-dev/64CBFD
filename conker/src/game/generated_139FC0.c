@@ -17,6 +17,10 @@ extern u32 D_800B0E58[];
 extern u16 D_800B87A0[];
 extern u8 D_800DBDBA;
 extern u32 D_8003809C;
+extern u8 D_800D9F60;
+extern s32 D_8003C8E0;
+extern s32 D_800DBDBC;
+void func_150AD770(void);
 void func_1510D694(s32 arg0);
 void func_1510D720(s32 arg0);
 
@@ -186,8 +190,65 @@ s32 func_1510D374(s32 arg0) {
     return offset;
 }
 
-s32 func_1510D404() {
-    return 0;
+void func_1510D404(void) {
+    s32 last = D_800D9F5C;
+    s32 first;
+    s32 i;
+    s8 state;
+    u32 *entry;
+    u32 temporary;
+
+    if (last == -1) {
+        return;
+    }
+    if (D_800DBDBA == 0) {
+        if (D_800D9F60 != 0) {
+            return;
+        }
+    } else {
+        D_800DBDBA--;
+    }
+    first = D_800D9F58;
+    D_800D9F58 = 0xFFFF;
+    D_800D9F5C = -1;
+    if (first < 0 || last >= 0x1E53) {
+        D_8003C8E0 = 0x0C000046;
+        func_150AD770();
+    }
+    D_800DBDBC = -1;
+    for (i = first; i <= last; i++) {
+        state = D_800BC448[i];
+        if (state != 0) {
+            if (state < 4) {
+                D_800BC448[i] = state - 1;
+                if (D_800BC448[i] == 0) {
+                    D_800DBDBC = i;
+                    func_10004074((void *)D_800B0E58[i]);
+                    D_800B0E58[i] = 0xFFFFFFFF;
+                } else {
+                    if (i < D_800D9F58) {
+                        D_800D9F58 = i;
+                    }
+                    if (i > D_800D9F5C) {
+                        D_800D9F5C = i;
+                    }
+                }
+            } else if (state & 0x40) {
+                entry = (u32 *)D_800B0E58[i];
+                temporary = entry[0];
+                func_10006240((void *)(temporary + entry[1]), entry, D_8003809C);
+                func_10004074((void *)temporary);
+                D_800BC448[i] &= ~0x40;
+                if (i < D_800D9F58) {
+                    D_800D9F58 = i;
+                }
+                if (i > D_800D9F5C) {
+                    D_800D9F5C = i;
+                }
+            }
+        }
+    }
+    D_800DBDBC = -2;
 }
 
 void func_1510D608(s32 arg0, s32 arg1) {

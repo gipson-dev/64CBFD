@@ -6,9 +6,12 @@
 /* Generated placeholder declarations. */
 s32 func_15003120();
 s32 func_150031EC();
-s32 func_15003570();
+void func_15003570(void);
 s32 func_15003668();
 /* End generated placeholder declarations. */
+
+void *allocate_memory(s32, s32, s32, s32);
+extern u8 D_1A37E0;
 
 // what is this loop doing?
 /* Non-matching C placeholders for asm/nonmatchings/game_305D0/func_15003120.s. */
@@ -39,42 +42,33 @@ s32 func_150034B4(void) {
       }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_305D0/func_15003570.s. */
-s32 func_15003570() {
-    return 0;
+void func_15003570(void) {
+    u8 *buffer;
+    u8 *header;
+    u16 *length = D_80091D20;
+    u16 *extent = D_800B87A0;
+    u16 *end = D_800B87A0 + 7762;
+    u32 source;
+    u32 skip;
+    u32 value;
+    u32 amount;
+
+    buffer = allocate_memory(16, 1, 2, 0);
+    source = (u32)&D_1A37E0;
+    do {
+        skip = source & 1;
+        source -= skip;
+        func_10004514(source, buffer, 16, 1);
+        header = buffer + skip;
+        value = ((u32)header[0] << 24) + header[3]
+              + ((u32)header[1] << 16) + ((u32)header[2] << 8);
+        amount = *length + skip;
+        *extent++ = value;
+        length++;
+        source += amount;
+    } while (extent != end);
+    func_10004074(buffer);
 }
-// NON-MATCHING: something along these lines
-// void func_15003570(void) {
-//     s32 temp_s4;
-//     s32 phi_s0;
-//     s32 phi_s1;
-//
-//     s32 i;
-//     u8 *temp_v0;
-//     s16 *phi_s2;
-//     s16 *phi_s3;
-//
-//     temp_s4 = allocate_memory(16, 1, 2, 0);
-//
-//     phi_s0 = 0x1A37E0; // 1718240
-//     phi_s2 = D_80091D20;
-//     phi_s3 = D_800B87A0;
-//
-//     for (i = 0; i < 7762; i++) {
-//         if ((phi_s0 & 1) != 0) {
-//             phi_s0 = phi_s0 - 1;
-//             phi_s1 = 1;
-//         } else {
-//             phi_s1 = 0;
-//         }
-//         func_10004514(phi_s0, temp_s4, 16, 1);
-//         temp_v0 = temp_s4 + phi_s1;
-//         phi_s2[i] = (*temp_v0 << 24) + (*(temp_v0 + 1) << 16) + (*(temp_v0 + 2) << 8) + *(temp_v0 + 3);
-//         phi_s0 = phi_s3[i];
-//     }
-//
-//     func_10004074(temp_s4);
-// }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_305D0/func_15003668.s. */
 s32 func_15003668() {

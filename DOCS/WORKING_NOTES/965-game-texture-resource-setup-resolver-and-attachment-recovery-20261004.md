@@ -138,6 +138,11 @@ their deliberate fixture boundaries remain explicit.
 
 ## Sibling And Next
 
+Subsequent checkpoint: [Note 968](968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md)
+recovers metadata and maintenance and qualifies the connected bounded lifecycle
+including this initializer. The next-pair discussion below records this note's
+original checkpoint; real guest DMA/decompression remains unqualified.
+
 Read-only sibling audit confirms active `recomp_out/.c` already has recompiled
 setup at line 820924, resolver at 821391 and attachment at 1081473, including
 diagnostics/host support. These were not replaced or rebuilt. No mechanical
@@ -164,8 +169,8 @@ palette routine `func_1510CB10` for this cache's initializer.
 - [x] Qualify all valid IDs, allocation failures, bitmap/list ordering and aliases.
 - [x] Connect actual resource helper, setup, resolver, attachment and release bodies.
 - [x] Preserve prior identities, exact prefix/adjuster leaves and full Init/Game data.
-- [ ] Recover metadata loader `func_15003570` and cache maintainer `func_1510D404`.
-- [ ] Qualify connected cache initialization/loading/maintenance/release lifecycle.
+- [x] Recover metadata loader `func_15003570` and cache maintainer `func_1510D404` (Note 968).
+- [x] Qualify connected cache initialization/loading/maintenance/release in bounded fixtures (Note 968).
 - [ ] Pursue raw matching separately; attachment has nine remaining word differences.
 - [ ] Qualify real guest DMA/decompression and natural effects; synchronize PC child stubs separately.
 

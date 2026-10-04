@@ -18,6 +18,17 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 968](WORKING_NOTES/968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md)
+  finishes interrupted metadata/cache maintenance recovery: 58 / 62 and
+  125 / 129 words, 54/119 differences, no guards; maintenance frame 0x40
+  against retail 0x60. Seventeen new checks qualify bounded metadata, callback
+  ordering and actual connected lifecycle; all 221 combined checks pass,
+  no skips. Fresh link preserves complete Init code/data, Debugger code, Game
+  data and exact initializer/startup. Resolves the pending Game work described
+  by Notes 966/967. Real guest DMA/decoder, staged producer and natural effects
+  remain open; next 46-word immediate release `func_1510D7AC`. README/sibling/
+  frozen Release unchanged.
+
 - Init [Note 967](WORKING_NOTES/967-init-decoder-entry-value-lifetime-fitting-trials-20261004.md)
   qualifies three immutable entry-value lifetime trials: literal/length and
   combined capture save one optimized compressed-unit word, but final padding
