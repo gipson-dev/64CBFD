@@ -1,5 +1,5 @@
 #include <ultra64.h>
-extern s32 D_800D9A20[];
+extern void *D_800D9A20[];
 extern f32 D_800A1378;
 extern f32 D_800BE9A4;
 extern f32 *D_80088A44[6];
@@ -26,6 +26,9 @@ extern f32 D_800A1360;
 extern f32 D_800A1364;
 extern f32 D_800A137C;
 extern f32 D_800A1380;
+extern f32 D_800A1384;
+extern f32 D_800A1388;
+extern f32 D_800A138C;
 extern f32 D_800A13B0;
 extern f32 D_800A13B4;
 extern s32 D_80088A5C[2];
@@ -37,6 +40,7 @@ extern u8 *D_800DBFF0;
 extern s32 D_80088A80[4];
 extern u8 D_800BE9EB;
 extern u8 *D_800DCDC4;
+extern f32 D_800DCD90;
 typedef struct EventPair113D60 {
     s32 first;
     s32 second;
@@ -103,6 +107,17 @@ typedef struct WorldPosition113D60 {
     f32 y;
     f32 z;
 } WorldPosition113D60;
+typedef struct EventPositionPayload113D60 {
+    WorldPosition113D60 position;
+    EventPayload113D60 parameters;
+} EventPositionPayload113D60;
+
+typedef struct EventWeightNode113D60 {
+    void *descriptor;
+    s32 field04;
+    f32 weight;
+    struct EventWeightNode113D60 *next;
+} EventWeightNode113D60;
 
 typedef struct WorldEmitterDescriptor113D60 {
     s16 field00;
@@ -148,6 +163,8 @@ f32 func_150484A0(f32 x, f32 y);
 f32 sqrtf(f32 value);
 f32 func_150ADA68(void);
 f32 func_151423D8(u8 angle);
+s32 func_1514470C(void *descriptor, void *position);
+f32 *func_15144B34(s32 player);
 s32 func_1514ECE0(void *node, s16 key, void **result);
 void func_150E8930(void);
 void func_150E8A80(void);
@@ -584,8 +601,57 @@ void func_150E8A80(void) {
     }
 }
 
-s32 func_150E8B1C() {
-    return 0;
+void func_150E8B1C(u8 *record) {
+    void *result;
+    f32 limit;
+    f32 first;
+    f32 second;
+    EventPayload113D60 *payload;
+    EventWeightNode113D60 *node;
+    f32 *origin;
+    f32 fraction;
+    f32 dx;
+    f32 dy;
+    f32 dz;
+    EventPositionPayload113D60 child;
+
+    origin = func_15144B34(D_800BE9E8);
+    fraction = func_150ADA68();
+    payload = (EventPayload113D60 *)(record + 0x28);
+    payload->field08 += ((payload->field00 + fraction * payload->field04) * D_800BE9A4) * D_800DCD90;
+    if (payload->field08 > 1.0f) {
+        second = D_800A1384;
+        first = D_800A1388;
+        limit = D_800A138C;
+
+        do {
+            fraction = func_150ADA68();
+            fraction *= D_800DCD90;
+            node = (EventWeightNode113D60 *)D_800DCDC4;
+            while (node->weight < fraction) {
+                fraction -= node->weight;
+                node = node->next;
+            }
+            func_1514470C(node->descriptor, &child.position);
+            dx = child.position.x - origin[0];
+            dy = child.position.y - origin[1];
+            dz = child.position.z - origin[2];
+            if ((dx * dx + dy * dy) + dz * dz < limit) {
+                s16 duration;
+
+                child.parameters.field00 = first;
+                child.parameters.field04 = second;
+                child.parameters.field08 = 0.0f;
+                duration = (u32)func_150ADA20() % 13 + 5;
+                result = func_15149130(duration, -1, 0x34, -1,
+                                      1, 0, 24, record[0xC], record[1]);
+                if (result != NULL) {
+                    memcpy((u8 *)result + 0x28, &child, 24);
+                }
+            }
+            payload->field08 -= 1.0f;
+        } while (payload->field08 > 1.0f);
+    }
 }
 
 s32 func_150E8D5C() {
