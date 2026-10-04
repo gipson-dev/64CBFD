@@ -288,6 +288,8 @@ def main():
                         help="derive allocation header and commit from the new table index")
     parser.add_argument("--builder-scan-deficit", action="store_true",
                         help="combine bounded table-width scan subtraction and comparison")
+    parser.add_argument("--core-pointer-arguments", action="store_true",
+                        help="guest core owns input pointer and derives workspace address from state")
     parser.add_argument("--dynamic-shared-repeats", action="store_true",
                         help="share dynamic repeat extraction after selecting width and base")
     parser.add_argument("--dynamic-repeat-value", action="store_true",
@@ -318,7 +320,11 @@ def main():
     if args.packed_entry:
         args.aligned_entry = True
     root = Path(__file__).resolve().parents[2]
+    if args.core_pointer_arguments and not args.frame_backed:
+        parser.error("--core-pointer-arguments requires --frame-backed")
     suffix = "-frame" if args.frame_backed else ""
+    if args.core_pointer_arguments:
+        suffix += "-core-pointer-arguments"
     if args.seed_distance_root:
         suffix += "-seed-distance-root"
     if args.abi_fpr_shadow:
@@ -405,6 +411,8 @@ def main():
               "-mips2", "-o32", "-DINIT_DECODE_GUEST"]
     if args.frame_backed:
         common.append("-DINIT_DECODE_FRAME_BACKED")
+    if args.core_pointer_arguments:
+        common.append("-DINIT_DECODE_CORE_POINTER_ARGUMENTS")
     if args.seed_distance_root:
         common.append("-DINIT_DECODE_SEED_DISTANCE_ROOT")
     if args.abi_fpr_shadow:

@@ -26,7 +26,7 @@ class InitDecompressorTightAdapterTests(scan.InitDecompressorBuilderScanDeficitT
             with self.subTest(shape=label, profile=profile):
                 start = image.symbols["init_decode_retail_core_adapter"]
                 end = image.symbols["init_decode_retail_core_adapter_end"]
-                self.assertEqual(end - start, 184)
+                self.assertEqual(end - start, self.shadow_adapter_bytes)
                 words = [image.code[pc] for pc in range(start, end, 4)]
                 branches = [i for i, word in enumerate(words)
                             if word >> 26 == 4]

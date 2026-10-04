@@ -44,8 +44,10 @@ init_decode_retail_core_adapter:
     sw $ra, 0xA80($sp)
     move $t0, $sp
     addiu $sp, $sp, -ADAPTER_EXTRA
+.ifndef INIT_DECODE_CORE_POINTER_ARGUMENTS
     sw $a2, 0x10($sp)
     sw $a0, 0x20($sp)
+.endif
     sw $a1, 0x24($sp)
     sw $a2, 0x28($sp)
 .ifndef INIT_DECODE_CORE_OWNS_STATE

@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 900](WORKING_NOTES/900-init-pointer-owned-tight-adapter-fitting-20261004.md)
+  retains paired guest pointer ownership and 176-byte tight adapter: packed
+  executable text 4,560 / 5,968, unchanged bounds, sixteen-byte isolated O2
+  text-plus-rodata span saving. Corrected bounded run 44 passes / one corpus
+  skip with executed stale-read controls; defaults exact, full corpus open.
+
 - Init [Note 899](WORKING_NOTES/899-init-tight-adapter-return-scheduling-and-alignment-20261004.md)
   retains opt-in 184-byte adapter: RA in branch delay, combined SP restore,
   word-aligned subsection. Executable text saves eight, but rodata gap prevents

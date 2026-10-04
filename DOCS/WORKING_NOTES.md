@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 900](WORKING_NOTES/900-init-pointer-owned-tight-adapter-fitting-20261004.md)):
+Paired guest pointer ownership and tight adapter remove two stores: body 176,
+packed text 4,560 / 5,968, bounds unchanged. Isolated O2 text-plus-rodata span
+falls sixteen bytes from default. Corrected bounded run 44 passes / one corpus
+skip, executed stale-read controls; exact defaults preserved. Full new corpus
+and production ownership remain open, O2 executable excess 576.
+
 2026-10-04 ([Note 899](WORKING_NOTES/899-init-tight-adapter-return-scheduling-and-alignment-20261004.md)):
 Opt-in tight adapter saves two instructions and eight executable-text bytes;
 packed text 4,568 / 5,976, bounds unchanged. Aligned rodata leaves an eight-byte

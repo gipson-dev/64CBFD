@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init pointer-owned tight adapter: [Note 900](WORKING_NOTES/900-init-pointer-owned-tight-adapter-fitting-20261004.md)
+combines guest input/workspace ownership with two omitted adapter stores.
+Body 176, packed executable text 4,560 O2 / 5,968 O1; bounds unchanged.
+O2 rodata moves sixteen bytes below the original default layout, removing
+the intermediate alignment gap. Corrected bounded run: 44 passes / one corpus
+skip, executed stale-read controls active. Default text exact. O2 still 576
+over retail; new full corpora and production ownership/hardware remain open.
+
 Init tight adapter: [Note 899](WORKING_NOTES/899-init-tight-adapter-return-scheduling-and-alignment-20261004.md)
 adds opt-in RA delay-slot load, combined SP restore and word-aligned subsection.
 Body/executable section falls 192 -> 184; packed text 4,568 O2 / 5,976 O1,

@@ -939,11 +939,16 @@ uint32_t init_decode_header_layout[] = {
 int init_decode_core(InitDecodeState *s, InitDecodeEntry *fixedWorkspace,
                      uint32_t inputAddress, uint32_t outputAddress,
                      uint32_t workspaceAddress) {
+#if defined(INIT_DECODE_CORE_POINTER_ARGUMENTS) && defined(INIT_DECODE_GUEST)
+#define CORE_INPUT ((const uint8_t *)inputAddress)
+#else
+#define CORE_INPUT (s->input)
+#endif
 #if defined(INIT_DECODE_PACKED_HEADER) && defined(INIT_DECODE_GUEST)
-    const volatile InitDecodeHeader *header = (const volatile InitDecodeHeader *)s->input;
+    const volatile InitDecodeHeader *header = (const volatile InitDecodeHeader *)CORE_INPUT;
     uint32_t opening = header->opening;
 #else
-    const volatile uint8_t *header = s->input;
+    const volatile uint8_t *header = CORE_INPUT;
     uint32_t opening = ((uint32_t)header[0] << 24) | ((uint32_t)header[1] << 16) |
                        ((uint32_t)header[2] << 8) | header[3];
 #endif
@@ -960,9 +965,17 @@ int init_decode_core(InitDecodeState *s, InitDecodeEntry *fixedWorkspace,
     s->abiDirty = 0;
 #endif
 #ifdef INIT_DECODE_FRAME_BACKED
+#if defined(INIT_DECODE_CORE_POINTER_ARGUMENTS) && defined(INIT_DECODE_GUEST)
+    workspaceAddress = (uint32_t)s->workspace;
+#endif
     s->workspaceAddress = workspaceAddress;
 #endif
+#if defined(INIT_DECODE_CORE_POINTER_ARGUMENTS) && defined(INIT_DECODE_GUEST)
+    s->input = CORE_INPUT + ((opening >> 16) == 0x1172 ? 2 : 4);
+#else
     s->input += (opening >> 16) == 0x1172 ? 2 : 4;
+#endif
+#undef CORE_INPUT
     s->limit = 0x70000000;
     if (distance > 0) s->limit = distance;
     distance = workspaceAddress - outputAddress;
