@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 863](WORKING_NOTES/863-init-offset-sum-full-masked-cu1-set-corpus-20261003.md)):
+All 507 fresh revised-combination packed O2/g3 pages pass with masked CU1 set
+in 814.477 seconds. Notes 862/863 bank both masked modes: 1,014 paired pages
+for unchanged source, text/descent/clearance 4,736/3,240/88. Sixteen corpus/
+helper checks pass, no skips; current-source corpus checklist items checked.
+Return to builder/shared-helper fitting; 752 linked bytes remain over retail.
+Other-profile/ownership/hardware stay open; production/defaults/README totals
+unchanged and unrelated Game work preserved.
+
 2026-10-03 ([Note 862](WORKING_NOTES/862-init-offset-sum-full-masked-cu1-clear-corpus-20261003.md)):
 All 507 fresh revised-combination packed O2/g3 retail pages pass with masked
 CU1 clear in 790.137 seconds. Terminal text/descent/clearance are 4,736/3,240/88;

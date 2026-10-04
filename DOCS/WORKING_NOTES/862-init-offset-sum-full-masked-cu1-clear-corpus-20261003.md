@@ -2,6 +2,10 @@
 
 Date: 2026-10-03. Source baseline: `32a57ec3`.
 
+Follow-up: [Note 863](863-init-offset-sum-full-masked-cu1-set-corpus-20261003.md)
+banks the matching CU1-set run with unchanged source. Together they cover
+1,014 paired pages across both masked modes for packed/remaining O2/g3.
+
 ## Result
 
 All 507 fresh packed/remaining O2/g3 paired retail-page comparisons pass
@@ -97,6 +101,6 @@ claimed; unrelated Game edits remain preserved and excluded.
 ## Next
 
 - [x] Bank all 507 revised-combination masked CU1-clear page comparisons.
-- [ ] Run all 507 pages for the same source/profile with masked CU1 set.
+- [x] Run all 507 pages for the same source/profile with masked CU1 set (Note 863).
 - [ ] Return to builder/shared-helper fitting; revised linked text remains over retail.
 - [ ] Complete other-profile, ownership, hardware and scheduler-resume gates before promotion.

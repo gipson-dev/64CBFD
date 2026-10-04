@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 863](WORKING_NOTES/863-init-offset-sum-full-masked-cu1-set-corpus-20261003.md)
+  banks all 507 revised-combination packed O2/g3 retail pages with masked
+  CU1 set in 814.477 seconds. Both masked modes now cover 1,014 paired
+  pages for unchanged source; text/descent/clearance stay 4,736/3,240/88.
+  Sixteen corpus/helper checks pass, no skips; completed current-source
+  corpus checklist items are checked off. Return to fitting (752 bytes);
+  other-profile/ownership/hardware remain open. No production/default/README
+  total edits; unrelated Game work preserved and excluded.
+
 - Init [Note 862](WORKING_NOTES/862-init-offset-sum-full-masked-cu1-clear-corpus-20261003.md)
   banks all 507 revised-combination packed O2/g3 retail-page comparisons
   with exception-masked CU1 clear in 790.137 seconds. Text/descent/clearance

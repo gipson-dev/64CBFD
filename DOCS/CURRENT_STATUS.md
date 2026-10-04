@@ -21,12 +21,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init revised offset-sum CU1-set corpus: [Note 863](WORKING_NOTES/863-init-offset-sum-full-masked-cu1-set-corpus-20261003.md)
+passes all 507 fresh packed/remaining O2/g3 retail pages with masked CU1 set
+in 814.477 seconds. With Note 862, both masked modes now bank 1,014 paired
+page executions for the unchanged Note 861 source. Terminal text/descent/
+known-neighbor clearance match at 4,736/3,240/88. Sixteen corpus/helper
+checks pass, no skips. Return to builder/shared-helper fitting: 752 linked
+bytes remain over retail. Other profiles and ownership/hardware remain open;
+production/defaults/README totals unchanged, unrelated Game work preserved.
+
 Init revised offset-sum CU1-clear corpus: [Note 862](WORKING_NOTES/862-init-offset-sum-full-masked-cu1-clear-corpus-20261003.md)
 passes all 507 fresh packed/remaining O2/g3 paired retail pages with
 exception-masked CU1 clear in 790.137 seconds. This covers the Note 861
 repeat-value/offset-sum/reused-accumulator combination, not the older build.
 Terminal text/descent/known-neighbor clearance are 4,736/3,240/88; sixteen
-corpus/helper checks pass with no skips. Matching CU1-set corpus is next.
+corpus/helper checks pass with no skips. Matching CU1-set corpus is now
+banked in Note 863 above.
 Further fitting (752 bytes), other profiles and ownership/hardware remain
 open. Production/defaults/README totals unchanged; unrelated Game work preserved.
 
@@ -37,9 +47,10 @@ Packed O2 retains 4,736 linked bytes / 752 excess with restored 392-byte
 core bound, 200-byte builder frame and 88-byte known-neighbor clearance.
 Fresh checks pass: 43 tests, one corpus skip; all observed descents match
 static bounds and both omitted-option text sections match the banked baseline.
-This supersedes Note
-860's stack penalty, not its historical evidence. Defaults/production/README
-totals remain unchanged; further fitting and changed full corpus stay open.
+This supersedes Note 860's stack penalty, not its historical evidence.
+Notes 862/863 now qualify both masked corpus modes for this packed profile.
+Defaults/production/README totals remain unchanged; further fitting and
+other-profile/ownership/hardware gates stay open.
 
 Init builder offset-sum fitting: [Note 860](WORKING_NOTES/860-init-builder-running-offset-sum-text-stack-tradeoff-20261003.md)
 adds an opt-in unsigned prefix sum. Packed O2 linked text falls to 4,736,

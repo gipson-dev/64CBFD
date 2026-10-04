@@ -4,7 +4,9 @@ Date: 2026-10-03. Baseline: `7ce4f88e`.
 
 Follow-up: [Note 862](862-init-offset-sum-full-masked-cu1-clear-corpus-20261003.md)
 banks all 507 fresh pages for this revised combination with masked CU1 clear.
-CU1 set remains open; the bounded measurements below are unchanged.
+[Note 863](863-init-offset-sum-full-masked-cu1-set-corpus-20261003.md) banks
+the matching CU1-set run: 1,014 paired pages across both modes for this
+packed O2 profile. The historical bounded measurements below are unchanged.
 
 ## Result
 
@@ -113,7 +115,8 @@ git diff --check
 ```
 
 No production build, full retail corpus, hardware replay or sibling-port
-test is claimed. Production/defaults/README totals stay unchanged; unrelated
+test is claimed for this bounded checkpoint; later corpus receipts are
+linked above. Production/defaults/README totals stay unchanged; unrelated
 Game edits are preserved and excluded from this checkpoint.
 
 ## Next
@@ -121,5 +124,5 @@ Game edits are preserved and excluded from this checkpoint.
 - [x] Recover the offset-sum option's extra stack cost without losing its text saving.
 - [x] Finish fresh bounded qualification before banking the revised option.
 - [ ] Continue builder/shared-helper fitting; 752 linked bytes remain over retail.
-- [ ] Run the selected revised combination's full corpus in both masked CU1 modes.
+- [x] Run the selected revised combination's full corpus in both masked CU1 modes (Notes 862/863).
 - [ ] Complete other-profile, ownership, hardware and scheduler-resume gates before promotion.
