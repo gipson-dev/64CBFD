@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init dynamic repeat fitting: [Note 852](WORKING_NOTES/852-init-dynamic-shared-repeat-extraction-and-stack-fitting-20261003.md)
+retains opt-in shared repeat extraction. All O2 shapes save eight stack bytes;
+all O1 shapes grow eight. Aligned O2 saves 16 linked bytes, while best packed
+O2 remains 4,800, 816 over retail. All 492 bounded contexts, 114 builders,
+six initializers and 48 direct header/alignment comparisons pass. Active
+codes 16/17/18 and each overflow are verified; final module/helper checks:
+36 pass, one corpus skip. Changed corpus and structural fitting remain open;
+production, defaults and README totals unchanged.
+
 Init stored length fitting: [Note 851](WORKING_NOTES/851-init-stored-shared-length-extraction-and-failure-bit-state-20261003.md)
 retains opt-in shared 16-bit extraction with explicit failure-count restoration.
 All O1 linked builds shrink 32, frame O2 16; best packed O2 stays 4,800,

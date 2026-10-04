@@ -733,6 +733,10 @@ int init_decode_dynamic(InitDecodeState *s) {
             DYNAMIC_STORE(previous = symbol);
             continue;
         }
+#ifdef INIT_DECODE_DYNAMIC_SHARED_REPEATS
+        repeats = take_bits(s, symbol == 16 ? 2 : symbol == 17 ? 3 : 7);
+        repeats += 3 + ((symbol > 17) << 3);
+#else
         if (symbol == 16) {
             repeats = take_bits(s, 2) + 3;
         } else if (symbol == 17) {
@@ -740,6 +744,7 @@ int init_decode_dynamic(InitDecodeState *s) {
         } else {
             repeats = take_bits(s, 7) + 11;
         }
+#endif
         if (DYNAMIC_OVERFLOW) return 1;
         while (repeats--) DYNAMIC_STORE(symbol == 16 ? previous : 0);
         if (symbol != 16) previous = 0;

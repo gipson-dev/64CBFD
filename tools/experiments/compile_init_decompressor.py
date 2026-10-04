@@ -276,6 +276,8 @@ def main():
                         help="traverse histogram lengths with a pointer cursor")
     parser.add_argument("--builder-simple-operation", action="store_true",
                         help="form simple-symbol operation from its signed comparison")
+    parser.add_argument("--dynamic-shared-repeats", action="store_true",
+                        help="share dynamic repeat extraction after selecting width and base")
     parser.add_argument("--fixed-length-cursor", action="store_true",
                         help="initialize fixed literal lengths through four pointer ranges")
     parser.add_argument("--stream-masked-dispatch", action="store_true",
@@ -343,6 +345,8 @@ def main():
         suffix += "-histogram-cursor"
     if args.builder_simple_operation:
         suffix += "-simple-operation"
+    if args.dynamic_shared_repeats:
+        suffix += "-dynamic-shared-repeats"
     if args.fixed_length_cursor:
         suffix += "-fixed-length-cursor"
     if args.stream_masked_dispatch:
@@ -406,6 +410,8 @@ def main():
         common.append("-DINIT_DECODE_BUILDER_HISTOGRAM_CURSOR")
     if args.builder_simple_operation:
         common.append("-DINIT_DECODE_BUILDER_SIMPLE_OPERATION")
+    if args.dynamic_shared_repeats:
+        common.append("-DINIT_DECODE_DYNAMIC_SHARED_REPEATS")
     if args.fixed_length_cursor:
         common.append("-DINIT_DECODE_FIXED_LENGTH_CURSOR")
     if args.stream_masked_dispatch:

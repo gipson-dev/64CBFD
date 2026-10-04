@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 852](WORKING_NOTES/852-init-dynamic-shared-repeat-extraction-and-stack-fitting-20261003.md)
+  banks shared dynamic repeat extraction with active code/overflow gates.
+  O2 saves eight stack bytes; O1 grows eight. Best packed text stays 4,800,
+  816 over retail; bounded/helper checks pass. Changed corpus and structural
+  fitting remain open. Production/defaults/README totals unchanged; unrelated
+  Game work remains preserved and excluded.
+
 - Init [Note 851](WORKING_NOTES/851-init-stored-shared-length-extraction-and-failure-bit-state-20261003.md)
   banks smaller alternate-profile stored extraction with retail failure bit
   state and an active delay-slot-aware restoration gate. Final bounded/helper

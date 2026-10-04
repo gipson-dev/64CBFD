@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 852](WORKING_NOTES/852-init-dynamic-shared-repeat-extraction-and-stack-fitting-20261003.md)):
+Shared dynamic repeat extraction saves eight stack bytes in all O2 shapes;
+O1 grows eight. Aligned O2 saves 16 linked bytes; best packed O2 stays
+4,800, 816 over retail. Active repeat/overflow gates and complete bounded
+qualification pass: 36 tests pass, one corpus skip. Sorting-cursor and
+inferior repeat trials removed. Production/defaults/README totals unchanged;
+structural fitting and changed corpus/ownership/hardware remain open.
+
 2026-10-03 ([Note 851](WORKING_NOTES/851-init-stored-shared-length-extraction-and-failure-bit-state-20261003.md)):
 Shared stored-word extraction shrinks O1 32 bytes and frame O2 16; packed O2
 stays 4,800 after padding, still 816 over retail. Final bounded module and
