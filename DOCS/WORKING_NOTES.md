@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-04 ([Note 970](WORKING_NOTES/970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md)):
+Recover queued segment writer `func_1510D8C0` with SDK macros: 40 / 44 words,
+frameless, 38 differences, no guards. Ten new checks connect actual reset/append/
+write; 898 paired big-endian traces verify alias-visible reads/stores and cover
+every body instruction. Extended corrupt-count fixtures do not establish real
+eight-entry queue safety. All 237 combined checks pass, no skips; fresh link
+preserves exact helpers, complete Init code/data, Debugger code, Game data and
+prior identities. Next connected color emitter `func_1510CDB8`; actual full
+renderer, raw matching and staged producer remain separate. README/sibling/
+frozen Release unchanged; sibling already has the original recompiled writer.
+
 2026-10-04 ([Note 969](WORKING_NOTES/969-game-immediate-texture-cache-release-recovery-20261004.md)):
 Recover immediate cache release `func_1510D7AC`: all 46 words fit, 42 match
 directly; four frame/spill differences remain, C 0x38 versus retail 0x28.

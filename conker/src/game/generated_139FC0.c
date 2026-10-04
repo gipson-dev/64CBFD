@@ -369,6 +369,23 @@ void func_1510D874(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     }
 }
 
-s32 func_1510D8C0() {
-    return 0;
+Gfx *func_1510D8C0(Gfx *arg0, s32 arg1) {
+    s32 count = D_800D9ED0;
+    u8 *slot = D_800D9ED8;
+    s32 i = 0;
+
+    if (count > 0) {
+        do {
+            i++;
+            if (arg1 == *(s32 *)slot) {
+                gSPSegment(arg0++, slot[0xC], *(u32 *)(slot + 4));
+                if (*(u32 *)(slot + 8) != 0) {
+                    gSPSegment(arg0++, slot[0xD], *(u32 *)(slot + 8));
+                }
+                count = D_800D9ED0;
+            }
+            slot += 16;
+        } while (i < count);
+    }
+    return arg0;
 }

@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 970](WORKING_NOTES/970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md)
+  recovers SDK-based queued segment writer: 40 / 44 words, frameless, 38 raw
+  differences, no guards. Ten new checks include actual queue workflow and
+  898 paired big-endian instruction traces, all body instructions and byte
+  aliases. Corrupt-count cases use extended storage, not real queue safety.
+  All 237 combined checks pass, no skips; fresh link preserves exact helpers,
+  complete Init/Debugger/data and previous identities. Next connected color
+  emitter `func_1510CDB8`; full renderer and staged producer stay separate.
+  No README aggregate or host/frozen Release change.
+
 - Game [Note 969](WORKING_NOTES/969-game-immediate-texture-cache-release-recovery-20261004.md)
   recovers immediate cache release `func_1510D7AC`: 46 / 46 words, four frame/
   spill differences, no guards. Six new tests qualify all 65536 priority/activity

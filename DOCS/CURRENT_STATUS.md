@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Queued segment writer: [Note 970](WORKING_NOTES/970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md)
+recovers `func_1510D8C0` using the SDK macro: 40 / 44 words, frameless,
+38 raw differences, no guards. Ten new tests connect actual reset/append/write;
+898 paired big-endian instruction traces qualify data/store order, byte aliases,
+unsigned segments and cached/late count reads. Every body instruction is covered.
+Counts above eight use extended fixtures only, not real queue-safety acceptance.
+All 237 combined checks pass, no skips; fresh link preserves exact queue helpers,
+complete Init code/data, Debugger code, Game data and previous identities.
+Sibling writer is already recompiled; no host/Release change. Next direct render
+dependency: 42-word color emitter `func_1510CDB8`, then its writer connection.
+Raw matching, full caller/rendering and staged producer remain open. README unchanged.
+
 Immediate texture release: [Note 969](WORKING_NOTES/969-game-immediate-texture-cache-release-recovery-20261004.md)
 recovers `func_1510D7AC` from its zero-return stub. All 46 words fit; 42 match
 directly, with four frame/spill differences (C 0x38 versus retail 0x28).
@@ -29,8 +41,8 @@ IDs, staged callback ordering and actual resolver/retain/release/maintenance/
 reload. All 227 combined checks pass, no skips; fresh link preserves full
 Init code/data, Debugger code, Game data and prior identities. The sibling's
 active immediate-release body remains a zero-return stub; host synchronization
-and real allocator/DMA/decoder/gameplay are separate. Next recover queued segment
-writer `func_1510D8C0` (44 words); staged producer and raw matching remain open.
+and real allocator/DMA/decoder/gameplay are separate. Note 970 subsequently
+recovers queued segment writer `func_1510D8C0`; staged producer and matching remain open.
 README aggregates, production Init and frozen Release unchanged.
 
 Texture metadata and maintenance: [Note 968](WORKING_NOTES/968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md)

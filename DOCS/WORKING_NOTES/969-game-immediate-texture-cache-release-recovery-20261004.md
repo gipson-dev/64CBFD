@@ -122,6 +122,11 @@ unchanged; recovery narration stays in dedicated docs.
 
 ## Sibling And Next
 
+Subsequent checkpoint: [Note 970](970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md)
+recovers the queued segment writer and qualifies its bounded queue/alias
+behavior. Immediate-release matching and host synchronization remain open;
+this note's next-source discussion records its original checkpoint.
+
 Read-only sibling audit finds active `recomp_out/.c` line 822784 still has
 `func_1510D7AC`'s zero-return stub. The scoped search of host `src` and active
 `CMakeLists.txt` finds no named override. CMake consumes the generated `.c`.
@@ -133,7 +138,7 @@ bodies do not imply this immediate-release helper is implemented in the host.
 - [x] Qualify every priority/activity byte pair and every valid cache ID.
 - [x] Verify callback ordering and connected retain/release/maintenance/reload.
 - [x] Preserve exact Init/Debugger/data and prior recoveries.
-- [ ] Recover queued segment writer `func_1510D8C0`, the next 44-word placeholder.
+- [x] Recover queued segment writer `func_1510D8C0` (Note 970).
 - [ ] Identify and qualify the staged-entry producer separately.
 - [ ] Match the remaining frame/spill words without weakening the body contract.
 - [ ] Synchronize the PC immediate-release stub in a separately qualified host change.

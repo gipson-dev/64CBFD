@@ -87,6 +87,17 @@ This DECOMP source recovery does not synchronize the host. Real allocator,
 DMA/decompression, staged producer and natural effects remain separate gates.
 No host source/build/save or frozen Release changes.
 
+Queued segment writer `func_1510D8C0` is recovered in
+[Note 970](WORKING_NOTES/970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md):
+40 / 44 words, frameless, 38 differences, no guards. Ten new checks connect
+actual queue reset/append/write and compare 898 bounded big-endian instruction
+traces including aliases and every body instruction. All 237 combined checks
+pass; complete Init/Debugger/data and exact queue helpers stay intact. The
+sibling already has the original recompiled writer at active `.c` line 822945;
+this is not fresh PC rendering acceptance. Next direct render dependency is
+color emitter `func_1510CDB8` (42 words). Full caller/RSP/RDP/natural effects,
+corrupt-count safety and staged producer remain separate; no host/Release changes.
+
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
 - [x] Audit the sibling's active CMake source input without changing its files.
@@ -101,7 +112,10 @@ No host source/build/save or frozen Release changes.
 - [x] Recover metadata loading `func_15003570` and cache maintenance `func_1510D404`
   and qualify connected cache initialization/loading/maintenance/release in bounded fixtures.
 - [x] Recover immediate cache release `func_1510D7AC` and qualify bounded retain/release/reload.
-- [ ] Identify and qualify the staged-entry producer; recover queued segment writer `func_1510D8C0` separately.
+- [ ] Identify and qualify the staged-entry producer separately.
+- [x] Recover queued segment writer `func_1510D8C0` and qualify bounded queue/byte-alias behavior.
+- [ ] Recover color emitter `func_1510CDB8` and its actual writer connection;
+  qualify the full renderer and natural effects separately.
 - [ ] Synchronize PC-port `func_1510D7AC`: active generated source retains its
   zero-return stub, with no named override in the scoped host source search.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a
