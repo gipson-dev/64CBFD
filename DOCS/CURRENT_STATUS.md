@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Extended child constructor: [Note 961](WORKING_NOTES/961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md)
+recovers `func_1513264C` and `func_151336A8` from their placeholders. Bodies
+fit 255 / 256 and 45 / 46 words, with 184 and nine raw differences, no guards.
+The pointer wrapper remains fifteen-word exact. Fifteen new tests connect the
+actual child/constructor/resource helper; all 160 combined checks pass, no skips.
+Fresh link preserves complete Init code/data, Game data and prior recoveries.
+Next recover deeper loader/setup/attachment placeholders `func_1502B6BC`,
+`func_1510CE60` and `func_15168E54`. PC child synchronization and natural
+effects remain open; retained Init assembly and README aggregates are unchanged.
+
 Extended child callback: [Note 960](WORKING_NOTES/960-game-extended-child-emission-semantic-recovery-20261004.md)
 recovers code-0x37 `func_150E93DC`, its 124-byte descriptor and typed pointer
 wrapper. C fits 206 body words / 0x138 frame in the 208-word slot, with 200
@@ -28,8 +38,8 @@ raw differences and no guards. The wrapper remains exact across fifteen words.
 Thirteen new tests and all 145 combined checks pass, no skips; fresh link
 preserves complete Init code/data, Game data and prior recoveries. Retail's
 28-byte extra payload and descriptor holes remain unspecified. Constructor
-`func_1513264C` still returns NULL: recover its 256-word body and qualify its
-resource-helper dependency next. PC child synchronization and natural effects
+`func_1513264C` was still a placeholder at that checkpoint; its body and resource
+helper are subsequently recovered by Note 961. PC synchronization and natural effects
 remain separate gates. Init assembly and README aggregates are unchanged.
 
 Init decoder fitting: [Note 959](WORKING_NOTES/959-init-decoder-packed-parent-and-bit-tail-fitting-trials-20261004.md)

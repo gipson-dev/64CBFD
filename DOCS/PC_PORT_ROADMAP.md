@@ -13,21 +13,28 @@ The related code-0x36 weighted emitter `func_150E9178` is also recovered in
 connections qualified. Its child callback `func_150E93DC` is subsequently
 recovered in [Note 960](WORKING_NOTES/960-game-extended-child-emission-semantic-recovery-20261004.md):
 206 body / 208 slot words, 200 differences, no guards. The 124-byte descriptor
-and pointer wrapper are qualified, but `func_1513264C` still returns NULL in
-DECOMP. Retail's descriptor holes and 28-byte extra payload remain unspecified.
+and pointer wrapper are qualified. Its constructor `func_1513264C` and resource
+helper `func_151336A8` are subsequently recovered in
+[Note 961](WORKING_NOTES/961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md):
+255 / 256 and 45 / 46 words, with 184 and nine raw differences. The actual
+child/constructor/helper connection passes bounded tests, but three deeper
+loader/setup/attachment routines remain placeholders. Retail's descriptor
+holes and 28-byte extra payload remain unspecified.
 
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
 - [x] Audit the sibling's active CMake source input without changing its files.
-- [ ] Recover DECOMP `func_1513264C` and qualify resource helper `func_151336A8`
-  before claiming a complete extended-child allocation pipeline.
+- [x] Recover DECOMP `func_1513264C` and qualify resource helper `func_151336A8`.
+- [ ] Recover deeper resource loader/setup/attachment `func_1502B6BC`,
+  `func_1510CE60` and `func_15168E54` before claiming the complete resource pipeline.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a
   zero-return stub, and the scoped source search finds no named override.
 - [ ] Synchronize PC-port `func_150E9178`: the same active source also retains
   a zero-return emitter stub, with no named override in the scoped search.
 - [ ] Synchronize PC-port `func_150E93DC`: active `recomp_out/.c` still has a
   zero-return child stub. Its constructor and wrapper already have recompiled
-  bodies; synchronization must respect guest/RDRAM interfaces.
+  bodies, as does resource helper `func_151336A8`; synchronization must respect
+  guest/RDRAM interfaces.
 - [ ] Validate through the host guest/RDRAM interfaces and natural effect behavior.
 
 No host source/build, binary, save or frozen Release changes are included in

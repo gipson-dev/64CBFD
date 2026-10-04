@@ -397,7 +397,8 @@ if(error || submissions!=1 || copies!=1 || state()->parameters.field08!=0.875f |
             self.assertFalse(any(row['function'] in ('func_150E93DC', 'func_15132A4C')
                                  for row in csv.DictReader(source)))
         constructor = (self.root / 'conker/src/game/generated_15F680.c').read_text()
-        self.assertRegex(constructor, r'void \*func_1513264C\(\) \{\s*return NULL;\s*\}')
+        self.assertRegex(constructor, r'void \*func_1513264C\(u8 \*descriptor,')
+        self.assertIn('result = func_15167A68(', constructor)
 
     def test_fresh_ido_fitting_production_identity_and_exact_helpers(self):
         compiler = self.root / 'ido/ido5.3_recomp/cc'
@@ -445,7 +446,7 @@ if(error || submissions!=1 || copies!=1 || state()->parameters.field08!=0.875f |
                 self.assertEqual(len(linked[name]), size)
                 self.assertEqual(struct.pack('>' + 'I' * size, *linked[name]), self.rom[first:first+size*4])
         print('extended child slot:', {'body_words': 206, 'slot_words': 208, 'frame_bytes': 0x138,
-              'different_words': 200, 'constructor_placeholder': True})
+              'different_words': 200, 'constructor_fixture': 'opaque; actual constructor tested separately'})
 
 
 if __name__ == '__main__':

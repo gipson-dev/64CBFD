@@ -116,9 +116,10 @@ build, binary, save or frozen Release changes are included.
 - [x] Qualify the actual parent payload, callback, pointer wrapper and spherical helper.
 - [x] Preserve full Init code/data, Game data and prior recovery identities.
 - [x] Audit the separate PC source synchronization boundary.
-- [ ] Recover the 256-word / 1024-byte extended constructor `func_1513264C`.
-- [ ] Qualify its resource helper `func_151336A8`, which is also a placeholder,
-  and distinguish further loader/setup dependencies from actual recovery.
+- [x] Recover the 256-word / 1024-byte extended constructor `func_1513264C`;
+  subsequently completed in [Note 961](961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md).
+- [x] Qualify resource helper `func_151336A8`, also recovered in Note 961.
+- [ ] Recover further loader/setup/attachment dependencies before pipeline acceptance.
 - [ ] Pursue callback byte matching separately; 200 raw differences remain.
 - [ ] Synchronize the child through PC guest/RDRAM interfaces.
 - [ ] Qualify downstream update/rendering and natural effects.

@@ -5,6 +5,43 @@ extern s32 D_80082FA0;
 void func_15169260(void *, s32, s32, u8);
 void func_100043B4(s32 *, u32);
 extern u8 D_800A3860[];
+extern f32 D_800A3868;
+extern s32 D_800A3880[];
+extern s32 D_800DC63C;
+extern s16 D_800DC468[];
+extern s32 D_800DC640[];
+extern s32 D_800BE9F0;
+extern u8 D_800BE616;
+
+typedef struct ExtendedResource15F680 {
+    void *data;
+} ExtendedResource15F680;
+
+typedef struct ExtendedResourceNode15F680 {
+    ExtendedResource15F680 *resource;
+    struct ExtendedResourceNode15F680 *next;
+    struct ExtendedResourceNode15F680 *previous;
+    u16 id;
+    u8 retained;
+    u8 reserved0F;
+} ExtendedResourceNode15F680;
+
+typedef struct ExtendedState15F680 {
+    u32 words[9];
+} ExtendedState15F680;
+
+extern ExtendedResourceNode15F680 *D_800DC460;
+extern ExtendedResourceNode15F680 *D_800DC464;
+void *allocate_memory(s32, s32, s32, s32);
+void func_10004074(void *);
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+void func_15168A9C(void *);
+u8 *func_1515D480(s32);
+u8 *func_1515D440(void);
+ExtendedResource15F680 *func_1502B6BC(s32 *, s32, s32 *, s32, s32, s32);
+void func_1510CE60(void *, s32, s32, s32, s32 *);
+void func_15168E54(void *, void *);
+s32 func_151336A8(s32, ExtendedResourceNode15F680 *, void *);
 typedef struct { s32 a, b; } TwoWord15F680;
 typedef struct {
     u8 pad0[0x154];
@@ -62,8 +99,115 @@ void func_151325C8(ResourceOwner15F680 *arg0) {
     }
 }
 
-void *func_1513264C() {
-    return NULL;
+void *func_1513264C(u8 *descriptor, s32 resource, s32 value,
+                    ExtendedState15F680 *state, s32 payloadBytes, u8 slot, s32 context) {
+    u8 *result;
+    ExtendedResourceNode15F680 *node;
+    s32 kind;
+    s32 pool;
+    s32 remaining;
+    s32 i;
+    f32 x;
+    f32 y;
+    f32 z;
+
+    if (D_800DC63C > 300) {
+        return NULL;
+    }
+    kind = (*(u32 *)(descriptor + 0x50) & 0x4000) ? 0x48 : 0x19;
+    pool = (*(u32 *)(descriptor + 0x50) & 0x400000) ? 2 : 1;
+    result = func_15167A68(kind, context, payloadBytes + 0x170, 1, slot, pool);
+    if (result == NULL) {
+        return NULL;
+    }
+
+    if (D_800DC468[*(u16 *)(descriptor + 0x56)] == 0) {
+        pool = (*(u32 *)(descriptor + 0x50) & 0x400000) ? 2 : 1;
+        node = allocate_memory(0x10, 1, 2, pool);
+        if (node == NULL) {
+            func_15168A9C(result);
+            func_10004074(result);
+            return NULL;
+        }
+        if (!func_151336A8(*(u16 *)(descriptor + 0x56), node, result)) {
+            func_15168A9C(result);
+            func_10004074(result);
+            func_10004074(node);
+            return NULL;
+        }
+        node->next = D_800DC460;
+        if (D_800DC460 != NULL) {
+            D_800DC460->previous = node;
+        } else {
+            D_800DC464 = node;
+        }
+        D_800DC460 = node;
+        node->previous = NULL;
+        node->id = *(u16 *)(descriptor + 0x56);
+        node->retained = 0;
+        if ((*(u32 *)(descriptor + 0x50) & 0x100000) &&
+            D_800BE9F0 != 0x3B && D_800BE9F0 != 6 && D_800BE9F0 != 0x13 &&
+            D_800BE616 == 0 && D_800BE9F0 != 2) {
+            node->retained = 1;
+        }
+    } else {
+        node = D_800DC460;
+        remaining = 100;
+        if (node->id != *(u16 *)(descriptor + 0x56)) {
+            do {
+                remaining--;
+                node = node->next;
+                if (remaining <= 0) {
+                    break;
+                }
+            } while (node->id != *(u16 *)(descriptor + 0x56));
+        }
+        if (remaining <= 0) {
+            func_15168A9C(result);
+            func_10004074(result);
+            return NULL;
+        }
+    }
+
+    D_800DC468[*(u16 *)(descriptor + 0x56)]++;
+    *(ExtendedResourceNode15F680 **)(result + 0x8C) = node;
+    memcpy(result + 0x10, descriptor, 0x7C);
+    result[0x149] = 0;
+    *(f32 *)(result + 0x134) = 0.0f;
+    *(f32 *)(result + 0x138) = 0.0f;
+    *(f32 *)(result + 0x13C) = 0.0f;
+    x = *(f32 *)(descriptor + 0x34);
+    y = *(f32 *)(descriptor + 0x38);
+    z = *(f32 *)(descriptor + 0x3C);
+    result[0x148] = 0;
+    *(f32 *)(result + 0x144) = 1.0f;
+    *(f32 *)(result + 0x140) = sqrtf((x * x + y * y) + z * z);
+    if (state != NULL) {
+        *(ExtendedState15F680 *)(result + 0x110) = *state;
+    } else {
+        /* Retail initializes only these default-state fields. */
+        *(u32 *)(result + 0x130) = 0;
+        result[0x12D] = 0;
+        result[0x12C] = 0;
+        *(u32 *)(result + 0x128) = 0;
+        *(f32 *)(result + 0x110) = D_800A3868;
+    }
+    D_800DC63C++;
+    result[0x150] = 0;
+    *(s32 *)(result + 0x14C) = resource;
+    *(s32 *)(result + 0x168) = value;
+    for (i = 0; i < 4; i++) {
+        *(void **)(result + 0x154 + i * 4) = NULL;
+    }
+    *(void **)(result + 0x164) = NULL;
+    if (resource != 0) {
+        for (i = 0; i <= D_80082FA0; i++) {
+            *(void **)(result + 0x154 + i * 4) = func_1515D480(resource);
+        }
+        *(void **)(result + 0x164) = func_1515D440();
+    }
+    *(u32 *)(result + 0x60) &= ~0x200000;
+    return result;
 }
 
 void *func_15132A4C(void *arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5) {
@@ -106,8 +250,18 @@ s32 func_15133588() {
     return 0;
 }
 
-s32 func_151336A8() {
-    return 0;
+s32 func_151336A8(s32 index, ExtendedResourceNode15F680 *node, void *record) {
+    s32 output0;
+    s32 output1;
+
+    (void)record;
+    node->resource = func_1502B6BC(&output0, 0, &output1, 2, 9, D_800A3880[index]);
+    if (node->resource == NULL) {
+        return 0;
+    }
+    func_1510CE60(node->resource->data, 0, 1, 0x3E, &D_800DC640[index]);
+    func_15168E54(node->resource->data, node->resource);
+    return 1;
 }
 
 s32 func_15133760(u8 *arg0, u8 *arg1) {

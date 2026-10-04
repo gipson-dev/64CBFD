@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-04 ([Note 961](WORKING_NOTES/961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md)):
+Recover `func_1513264C` and resource helper `func_151336A8`: 255 / 256 and
+45 / 46 words, 184 and nine differences, no guards. Fifteen new tests connect
+actual child/constructor/helper bodies and qualify allocation failures, signed
+refcounts, exact search boundary and partial initialization. Fresh link and all
+160 combined tests pass; Init code/data, Game data and prior recoveries stay
+intact. Deeper loader/setup/attachment remain placeholders; PC synchronization
+and natural effects are separate gates. README aggregates and Init unchanged.
+
 2026-10-04 ([Note 960](WORKING_NOTES/960-game-extended-child-emission-semantic-recovery-20261004.md)):
 Recover code-0x37 child `func_150E93DC`: 206 body words / 0x138 frame in 208
 retail words, 200 differences, no guards. Its 124-byte descriptor and pointer

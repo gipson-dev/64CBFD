@@ -155,7 +155,10 @@ build, binary, real save or frozen Release changes here.
 - [x] Audit and document the separate host source synchronization gap.
 - [x] Recover code-0x37 child `func_150E93DC`, 832 bytes / 208 words;
   subsequently completed in [Note 960](960-game-extended-child-emission-semantic-recovery-20261004.md).
-- [ ] Recover its extended constructor `func_1513264C` and qualify resource helpers.
+- [x] Recover its extended constructor `func_1513264C` and qualify resource helper
+  `func_151336A8`, subsequently completed in
+  [Note 961](961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md).
+- [ ] Recover the deeper loader/setup/attachment dependencies.
 - [ ] Pursue the emitter's 54-word matching remainder separately.
 - [ ] Synchronize both recovered callbacks through the PC guest/RDRAM interfaces.
 - [ ] Qualify downstream update/rendering and natural guest effects.

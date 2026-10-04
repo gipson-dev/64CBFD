@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 961](WORKING_NOTES/961-game-extended-child-constructor-and-resource-helper-recovery-20261004.md)
+  recovers extended constructor `func_1513264C` and resource helper `func_151336A8`:
+  255 / 256 and 45 / 46 words, 184 and nine differences, no guards. Fifteen new
+  tests connect actual child/constructor/helper bodies; all 160 combined tests
+  and fresh link pass, preserving complete Init code/data, Game data and prior
+  recoveries. Three deeper loader/setup/attachment placeholders remain; no
+  pipeline/gameplay acceptance or host changes. README/Init aggregates unchanged.
+
 - Game [Note 960](WORKING_NOTES/960-game-extended-child-emission-semantic-recovery-20261004.md)
   recovers `func_150E93DC` and its pointer wrapper: 206 body / 208 slot words,
   0x138 frame, 200 raw differences, no guards; wrapper stays fifteen-word exact.
