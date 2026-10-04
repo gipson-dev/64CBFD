@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-04 ([Note 967](WORKING_NOTES/967-init-decoder-entry-value-lifetime-fitting-trials-20261004.md)):
+Test independent literal/length, distance and combined entry-value capture in
+the connected decoder. Two variants save one O2 compressed-unit word but final
+padding absorbs it; complete executable remains 4512 bytes, 528 over retail.
+All 151 trial tests and twenty ownership/section checks pass, no skips; three
+final size reruns check actual core-body versus trailing-padding attribution.
+Default instruction images and exact production Init/data remain unchanged.
+Reject adoption; stack/entry ownership and complete-image fitting still gate
+conversion. README and separate pending Game edits remain unchanged.
+
 2026-10-04 ([Note 966](WORKING_NOTES/966-init-resume-preincrement-bitmap-and-conversion-decisions-20261004.md)):
 Resume requested Init assessment and finish the interrupted build. All 110
 focused checks pass; all 47 ASM owners/slots and full Init code/data plus Game

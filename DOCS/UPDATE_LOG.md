@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 967](WORKING_NOTES/967-init-decoder-entry-value-lifetime-fitting-trials-20261004.md)
+  qualifies three immutable entry-value lifetime trials: literal/length and
+  combined capture save one optimized compressed-unit word, but final padding
+  absorbs the saving. Optimized packed images remain 4512 bytes, 528 over retail.
+  All 151 trial checks and twenty ownership/section audits pass, no skips;
+  three final size reruns verify padding attribution. Disabled-option instruction
+  images remain unchanged; full Init code/data and Game data stay exact. Reject
+  adoption; production Init/README and separate pending Game work are unchanged.
+
 - Init [Note 966](WORKING_NOTES/966-init-resume-preincrement-bitmap-and-conversion-decisions-20261004.md)
   resumes the build to success and qualifies a new preincrement bitmap shape:
   32/20/32 words against nineteen, 501 completed model pairs and six prefixes.

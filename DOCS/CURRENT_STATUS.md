@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init decoder fitting: [Note 967](WORKING_NOTES/967-init-decoder-entry-value-lifetime-fitting-trials-20261004.md)
+tests literal/length, distance and combined immutable table-value capture.
+Two variants save one optimized compressed-decoder word, but trailing alignment
+absorbs it: optimized packed images retain 4336 C bytes plus 176 adapter bytes,
+4512 executable against 3984 retail. Reject adoption; the gap remains 528 bytes. All 151 trial
+checks and twenty ownership/section audits pass, no skips; three final size
+reruns verify padding attribution. Default instruction images remain unchanged;
+full linked Init code/data and Game data stay exact. No production Init/README
+changes; pending Game metadata/maintenance work remains separate and uncommitted.
+
 Requested Init resume: [Note 966](WORKING_NOTES/966-init-resume-preincrement-bitmap-and-conversion-decisions-20261004.md)
 rechecks 492 C / 47 ASM entries after the interrupted build finishes. All 110
 focused checks pass, no skips; every retained owner/raw slot and full Init

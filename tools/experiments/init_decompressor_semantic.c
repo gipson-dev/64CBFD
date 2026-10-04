@@ -32,6 +32,9 @@ typedef signed int int32_t;
 #if defined(INIT_DECODE_BUILDER_SYMBOL_CURSOR) && INIT_DECODE_BUILDER_SYMBOL_CURSOR != 1 && INIT_DECODE_BUILDER_SYMBOL_CURSOR != 2
 #error Unsupported builder symbol cursor mode
 #endif
+#if defined(INIT_DECODE_ENTRY_VALUE_LOCAL) && INIT_DECODE_ENTRY_VALUE_LOCAL != 1 && INIT_DECODE_ENTRY_VALUE_LOCAL != 2 && INIT_DECODE_ENTRY_VALUE_LOCAL != 3
+#error Unsupported entry value capture mode
+#endif
 
 typedef struct {
     uint8_t operation;
@@ -628,14 +631,24 @@ int init_decode_compressed(InitDecodeState *s, uint32_t literalRoot,
         InitDecodeEntry *entry = lookup(s, literalRoot, literalBits);
         uint32_t operation = ENTRY_OPERATION(entry);
         uint32_t length, distance;
+#ifdef INIT_DECODE_ENTRY_VALUE_LOCAL
+        uint32_t entryValue;
+#endif
         int32_t source, end;
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
         s->abiSaved[5] = s->workspaceAddress + 4 * (entry - s->workspace);
 #endif
         if (operation == 99) return 1;
+#if defined(INIT_DECODE_ENTRY_VALUE_LOCAL) && INIT_DECODE_ENTRY_VALUE_LOCAL != 3
+        entryValue = ENTRY_VALUE(entry);
+#endif
         drop_bits(s, ENTRY_BITS(entry));
         if (operation == 16) {
+#if defined(INIT_DECODE_ENTRY_VALUE_LOCAL) && INIT_DECODE_ENTRY_VALUE_LOCAL != 3
+            s->output[produced++] = entryValue;
+#else
             s->output[produced++] = ENTRY_VALUE(entry);
+#endif
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
             s->abiSaved[4] = produced;
 #endif
@@ -645,7 +658,11 @@ int init_decode_compressed(InitDecodeState *s, uint32_t literalRoot,
             s->produced = produced;
             return 0;
         }
+#if defined(INIT_DECODE_ENTRY_VALUE_LOCAL) && INIT_DECODE_ENTRY_VALUE_LOCAL != 3
+        length = entryValue + take_bits(s, operation);
+#else
         length = ENTRY_VALUE(entry) + take_bits(s, operation);
+#endif
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
         s->abiSaved[2] = length;
 #endif
@@ -659,11 +676,22 @@ int init_decode_compressed(InitDecodeState *s, uint32_t literalRoot,
 #else
         if (ENTRY_OPERATION(entry) == 99) return 1;
 #endif
+#if defined(INIT_DECODE_ENTRY_VALUE_LOCAL) && INIT_DECODE_ENTRY_VALUE_LOCAL != 2
+        entryValue = ENTRY_VALUE(entry);
+#endif
         drop_bits(s, ENTRY_BITS(entry));
 #ifdef INIT_DECODE_DISTANCE_OPERATION_LOCAL
+#if defined(INIT_DECODE_ENTRY_VALUE_LOCAL) && INIT_DECODE_ENTRY_VALUE_LOCAL != 2
+        distance = entryValue + take_bits(s, operation);
+#else
         distance = ENTRY_VALUE(entry) + take_bits(s, operation);
+#endif
+#else
+#if defined(INIT_DECODE_ENTRY_VALUE_LOCAL) && INIT_DECODE_ENTRY_VALUE_LOCAL != 2
+        distance = entryValue + take_bits(s, ENTRY_OPERATION(entry));
 #else
         distance = ENTRY_VALUE(entry) + take_bits(s, ENTRY_OPERATION(entry));
+#endif
 #endif
         source = (uint32_t)produced - distance;
 #ifdef INIT_DECODE_ABI_FPR_SHADOW

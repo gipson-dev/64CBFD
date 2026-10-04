@@ -58,6 +58,14 @@ pending metadata/maintenance bodies now build in the DECOMP worktree, but their
 dedicated behavior and connected lifecycle qualification remain open; Note 965's
 placeholder statement above describes its banked checkpoint, not current edits.
 
+The subsequent decoder entry-value lifetime trials in
+[Note 967](WORKING_NOTES/967-init-decoder-entry-value-lifetime-fitting-trials-20261004.md)
+pass 151 connected/native checks plus twenty ownership/section audits. Two forms
+save a compressed-unit word but final padding absorbs it: the complete candidate
+stays 4512 bytes against 3984 retail. No Init conversion or host synchronization;
+decoder fitting, private-stack reservation and entry/placement remain separate
+gates. Default-option instruction images and full production Init/data stay exact.
+
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
 - [x] Audit the sibling's active CMake source input without changing its files.
