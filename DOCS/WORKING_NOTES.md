@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 922](WORKING_NOTES/922-game-vector-random-parameter-initializer-match-20261004.md)):
+Game `func_150E70EC` now emits all 62 words directly from semantic C, no
+guards. Six RNG calls, two vector helper calls, square root and eight stores
+retain original ordering/alias behavior. Fourteen tests pass; fresh matcher
+Game 2602 / total 3275 exact, zero drift. README aggregate rows updated only.
+
 2026-10-04 ([Note 921](WORKING_NOTES/921-game-linked-record-position-exit-layout-trials-20261004.md)):
 Five linked-record exit forms / four profiles fail to reproduce retail's
 duplicated RA load. O2/g3 return/goto forms stay 71 words / 15 differences;

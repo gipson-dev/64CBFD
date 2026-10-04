@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game vector random parameters: [Note 922](WORKING_NOTES/922-game-vector-random-parameter-initializer-match-20261004.md)
+recovers `func_150E70EC`'s two vector-derived values and six sampled fields.
+All 62 words match directly from C without guards, including square-root
+intrinsic and ordered publication. Five new tests / fourteen combined pass;
+fresh matcher Game 2602 exact / total 3275, zero drift. README rows refreshed.
+
 Game linked-record exit trials: [Note 921](WORKING_NOTES/921-game-linked-record-position-exit-layout-trials-20261004.md)
 tests five exit shapes across four profiles; none matches retail. Return/goto
 variants retain the 71-word shared-RA tail under O2/g3; O1 emits 89 words.

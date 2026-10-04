@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 922](WORKING_NOTES/922-game-vector-random-parameter-initializer-match-20261004.md)
+  recovers the vector/random parameter initializer as a direct 62-word match.
+  Five new tests / fourteen combined pass, including complete independent IDO
+  equality. Fresh matcher Game 2602 / total 3275 exact; README aggregates refreshed.
+
 - Game [Note 921](WORKING_NOTES/921-game-linked-record-position-exit-layout-trials-20261004.md)
   records twenty isolated exit/profile compilations and twenty passing host
   shape/test runs. No full retail match; production's 71-word shared-RA tail,

@@ -3,6 +3,13 @@ extern s32 D_800D9A20[];
 extern f32 D_800A1378;
 extern f32 D_800BE9A4;
 extern f32 *D_80088A44[6];
+extern f32 D_800A1310;
+extern f32 D_800A1314;
+extern f32 D_800A1318;
+extern f32 D_800A131C;
+extern f32 D_800A1320;
+f32 func_150484A0(f32 x, f32 y);
+f32 sqrtf(f32 value);
 f32 func_150ADA68(void);
 f32 func_151423D8(u8 angle);
 s32 func_1514ECE0(void *node, s16 key, void **result);
@@ -67,8 +74,15 @@ void func_150E70CC(f32 *arg0, u8 *arg1) {
     arg0[2] = *(f32 *)(arg1 + 0x1C);
 }
 
-s32 func_150E70EC() {
-    return 0;
+void func_150E70EC(s32 arg0, s32 arg1, f32 *vector, f32 *output) {
+    output[0] = func_150484A0(vector[0], vector[2]);
+    output[2] = func_150ADA68() * D_800A1310;
+    output[4] = func_150ADA68() * D_800A1314;
+    output[6] = func_150ADA68() * 0.5f;
+    output[1] = func_150484A0(sqrtf(vector[2] * vector[2] + vector[0] * vector[0]), vector[1]) - D_800A1318;
+    output[3] = func_150ADA68() * D_800A131C;
+    output[5] = func_150ADA68() * D_800A1320;
+    output[7] = func_150ADA68() * 0.5f;
 }
 
 s32 func_150E71E4() {
