@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 859](WORKING_NOTES/859-init-rejected-match-copy-refill-trials-and-size-ledger-20261003.md)
+  banks four rejected copy/refill trials, exact experiment-source restoration
+  and fresh size-ledger evidence. Best text stays 4,752, 768 over retail;
+  fifteen focused checks pass. Next target is builder/shared-call overhead,
+  not these inferior loops. No surviving source/default/README total edits;
+  unrelated Game work remains preserved and excluded.
+
 - Init [Note 858](WORKING_NOTES/858-init-dynamic-repeat-value-selection-and-cursor-end-fill-20261003.md)
   banks repeat-value/cursor-end fitting with ordered nonzero/minimum/maximum
   fills and inherited overflow gates. Best bounded O2 falls to 4,752, still

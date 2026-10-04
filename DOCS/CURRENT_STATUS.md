@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init rejected copy/refill fitting: [Note 859](WORKING_NOTES/859-init-rejected-match-copy-refill-trials-and-size-ledger-20261003.md)
+measures four dataflow variants; none improves the selected packed profile.
+All trial branches/selectors are removed and the committed Note 858 source
+is restored exactly. Fresh baseline and fifteen focused checks pass. Ledger
+separates 464 core-excess bytes plus 304 adapter bytes: best linked text stays
+4,752, 768 over retail. Next fitting target is builder/shared-call overhead;
+its 415-word region includes a 343-word public body and 72 helper words.
+Fresh changed-fill corpus/ownership/hardware remain open; defaults/totals unchanged.
+
 Init dynamic repeat fill fitting: [Note 858](WORKING_NOTES/858-init-dynamic-repeat-value-selection-and-cursor-end-fill-20261003.md)
 retains opt-in once-selected repeat values and cursor-end fills after the
 overflow gate. Frame O2 saves 32 linked bytes, aligned/packed O2 16, all

@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 859](WORKING_NOTES/859-init-rejected-match-copy-refill-trials-and-size-ledger-20261003.md)):
+Four match-copy/refill trials are rejected and removed. Restored baseline
+reproduces 4,752 linked bytes / 768 excess; fifteen focused tests pass.
+Fresh ledger separates builder public body and embedded helpers, core
+464-byte excess and adapter 304-byte contribution. Continue builder/shared
+call fitting; changed-fill full corpus and ownership/hardware remain open.
+No experiment source/default/README total change survives; Game work preserved.
+
 2026-10-03 ([Note 858](WORKING_NOTES/858-init-dynamic-repeat-value-selection-and-cursor-end-fill-20261003.md)):
 Opt-in repeat-value selection/cursor-end fill saves frame O2 32 linked
 bytes, aligned/packed O2 16 and all O1 32. Best bounded-qualified O2 is
