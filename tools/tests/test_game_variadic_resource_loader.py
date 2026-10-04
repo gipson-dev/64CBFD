@@ -239,12 +239,13 @@ static ExtendedResourceNode15F680 node;
 s32 D_800A3880[236], D_800DC640[234];
 static int setupCalls, attachCalls, changeHeader;
 static u8 replacement[4];
-void func_1510CE60(void *data,s32 b,s32 c,s32 d,s32 *output) {
+s32 func_1510CE60(void *data,s32 b,s32 c,s32 d,s32 *output) {
     push('S'); setupCalls++;
     if(data!=(u8 *)entries+16 || b || c!=1 || d!=0x3E || output!=D_800DC640+7
        || node.resource!=(void *)entries || blocks!=1 || relocations!=1) error=5;
     *output=333;
     if(changeHeader) node.resource->data=replacement;
+    return 1;
 }
 void func_15168E54(void *data,void *resource) {
     push('T'); attachCalls++;
@@ -309,7 +310,7 @@ if(func_1503D774(2,123)!=2 || error || D_800D1C90[2] || !trace_is("QQB")) return
         self.addCleanup(Connected.doClassCleanups)
         fixture=Connected.fixture
         for pattern in (r'void \*func_1502B6BC\([^;{}]+\) \{\n.*?\n\}',
-                        r'void func_1510CE60\([^;{}]+\) \{\n.*?\n\}',
+                        r's32 func_1510CE60\([^;{}]+\) \{\n.*?\n\}',
                         r'void func_15168E54\([^;{}]+\) \{\n.*?\n\}'):
             fixture,count=re.subn(pattern,'',fixture,flags=re.S)
             self.assertEqual(count,1)
@@ -330,11 +331,12 @@ void *func_1502B350(u32 offset,u32 descriptor,s32 *size) {
     *size=failLoad?0:16;
     return failLoad?NULL:resourceBlock;
 }
-void func_1510CE60(void *a,s32 b,s32 c,s32 d,s32 *e) {
+s32 func_1510CE60(void *a,s32 b,s32 c,s32 d,s32 *e) {
     push('S'); setups++;
     if(a!=resourceBlock+2 || b || c!=1 || d!=0x3E || e!=&D_800DC640[7]
        || nodes[0].resource!=(void *)resourceBlock || copies || relocationCalls!=1) error=22;
     *e=1234;
+    return 1;
 }
 void func_15168E54(void *a,void *b) {
     push('T'); attachments++;

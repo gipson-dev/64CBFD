@@ -39,7 +39,7 @@ void func_15168A9C(void *);
 u8 *func_1515D480(s32);
 u8 *func_1515D440(void);
 void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
-void func_1510CE60(void *, s32, s32, s32, s32 *);
+s32 func_1510CE60(void *, s32, s32, s32, s32 *);
 void func_15168E54(void *, void *);
 s32 func_151336A8(s32, ExtendedResourceNode15F680 *, void *);
 typedef struct { s32 a, b; } TwoWord15F680;

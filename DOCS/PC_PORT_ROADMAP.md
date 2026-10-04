@@ -35,6 +35,17 @@ setup/attachment and natural effects remain open. The sibling already has
 recompiled bodies with diagnostics and host support; their presence is not
 fresh PC runtime acceptance. No native-pointer transplant is included.
 
+Setup `func_1510CE60`, texture resolver `func_1510D0EC` and attachment
+`func_15168E54` are subsequently recovered in
+[Note 965](WORKING_NOTES/965-game-texture-resource-setup-resolver-and-attachment-recovery-20261004.md):
+152 / 163, 155 / 162 and 45 / 45 words, 159/142/9 differences, retail frames,
+no guards. Actual helper/setup/resolver/attachment/release connections pass
+bounded fixtures, including all 7762 IDs. Metadata loading `func_15003570`
+and cache maintenance `func_1510D404` remain DECOMP placeholders; connected
+lifecycle and actual guest DMA/decompression still gate a complete pipeline.
+Initial unwritten setup scratch is unqualified. No host synchronization is
+implied by recovering these guest C bodies.
+
 The remaining Init assessment in
 [Note 964](WORKING_NOTES/964-init-remaining-assembly-current-conversion-decisions-20261004.md)
 retains all 47 assembly entries: seventeen investigation targets and thirty
@@ -50,8 +61,10 @@ retail-exact. These guest conversion gates do not establish PC gameplay parity.
   loading `func_1502B350`; qualify metadata writes in bounded source fixtures.
 - [ ] Qualify actual guest DMA/decompression and cache lifecycle before claiming
   production resource loading or natural effects.
-- [ ] Recover deeper setup/attachment `func_1510CE60` and `func_15168E54`
-  before claiming the complete resource pipeline.
+- [x] Recover setup/attachment `func_1510CE60` and `func_15168E54`, plus
+  resolver `func_1510D0EC`; qualify actual helper connections in bounded fixtures.
+- [ ] Recover metadata loading `func_15003570` and cache maintenance `func_1510D404`
+  and qualify connected cache initialization/loading/maintenance/release.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a
   zero-return stub, and the scoped source search finds no named override.
 - [ ] Synchronize PC-port `func_150E9178`: the same active source also retains

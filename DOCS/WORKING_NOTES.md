@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-04 ([Note 965](WORKING_NOTES/965-game-texture-resource-setup-resolver-and-attachment-recovery-20261004.md)):
+Recover setup `func_1510CE60`, resolver `func_1510D0EC` and attachment
+`func_15168E54`: 152 / 163, 155 / 162 and 45 / 45 words, 159/142/9 raw
+differences, retail frames, no guards. Sixteen new checks cover all 7762 valid
+IDs, signed priorities, failure/alias ordering, cleanup and actual helper/setup/
+resolver/attachment connections. All 204 combined checks and fresh link pass;
+Init code/data, Game data, exact leaves and prior recoveries stay intact.
+First unwritten setup scratch remains unqualified. Next restore metadata loader
+`func_15003570` and cache maintainer `func_1510D404`, then connected lifecycle
+and real guest/PC behavior. README counts and sibling/Release remain unchanged.
+
 2026-10-04 ([Note 964](WORKING_NOTES/964-init-remaining-assembly-current-conversion-decisions-20261004.md)):
 Refresh the requested remaining Init conversion assessment after production
 relink. All 102 focused checks pass, no skips; all 47 retained ASM owners/slots

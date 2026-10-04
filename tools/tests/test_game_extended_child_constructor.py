@@ -44,7 +44,7 @@ void func_15168A9C(void *);
 u8 *func_1515D480(s32);
 u8 *func_1515D440(void);
 void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
-void func_1510CE60(void *, s32, s32, s32, s32 *);
+s32 func_1510CE60(void *, s32, s32, s32, s32 *);
 void func_15168E54(void *, void *);
 s32 func_151336A8(s32, ExtendedResourceNode15F680 *, void *);
 void *memcpy(void *, const void *, u32);
@@ -144,13 +144,14 @@ void *func_1502B6BC(s32 *a, s32 b, s32 *c, s32 d, ...) {
     if(mutate&4) { *(u16 *)(descriptor+0x56)=11; *(u32 *)(descriptor+0x50)=0x100000; }
     return failLoad?NULL:&loaded[0];
 }
-void func_1510CE60(void *a, s32 b, s32 c, s32 d, s32 *e) {
+s32 func_1510CE60(void *a, s32 b, s32 c, s32 d, s32 *e) {
     push('S'); setups++;
     if(a!=loaded[0].data || b || c!=1 || d!=0x3E || e!=&D_800DC640[expectedIndex]
        || loads!=1 || copies || nodes[0].resource!=&loaded[0]) error=5;
     *e=0x1357;
     if(mutate&8) nodes[0].resource=&loaded[1];
     if(mutate&16) { D_800BE9F0=6; D_800BE616=1; D_800DC63C=90; }
+    return 1;
 }
 void func_15168E54(void *a, void *b) {
     ExtendedResource15F680 *p=(mutate&8)?&loaded[1]:&loaded[0];
@@ -467,7 +468,9 @@ for(phase=0;phase<4;phase++) {
         for path, name in (('game/generated_139FC0.c', 'func_1510CE60'),
                            ('game_1944C0.c', 'func_15168E54')):
             text = (self.root / 'conker/src' / path).read_text()
-            self.assertRegex(text, r's32 ' + name + r'\(\) \{\s*return 0;\s*\}')
+            self.assertNotRegex(text, r's32 ' + name + r'\(\) \{\s*return 0;\s*\}')
+        self.assertIn('address = func_1510D0EC(resource, &extent, priority, retain);',
+                      (self.root/'conker/src/game/generated_139FC0.c').read_text())
 
     def test_fresh_ido_bodies_slots_and_exact_wrapper(self):
         compiler = self.root / 'ido/ido5.3_recomp/cc'

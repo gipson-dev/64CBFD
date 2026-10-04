@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 965](WORKING_NOTES/965-game-texture-resource-setup-resolver-and-attachment-recovery-20261004.md)
+  recovers setup/resolver/attachment: 152 / 163, 155 / 162 and 45 / 45 words,
+  159/142/9 differences, retail frames and no guards. Sixteen new tests qualify
+  all valid IDs, signed priorities, failures, cleanup and actual helper/setup/
+  resolver/attachment; all 204 combined checks and fresh link pass, preserving
+  Init code/data, Game data, exact leaves and prior recoveries. Metadata loader
+  and cache maintenance remain placeholders; original unwritten scratch and
+  actual guest DMA/decoder are unqualified. README/Init/sibling/Release unchanged.
+
 - Init [Note 964](WORKING_NOTES/964-init-remaining-assembly-current-conversion-decisions-20261004.md)
   refreshes the remaining ASM decisions after production relink: 102 focused
   checks pass, no skips; all 47 owners/slots and complete Init code/data plus

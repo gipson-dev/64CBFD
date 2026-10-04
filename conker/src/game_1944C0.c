@@ -15,7 +15,7 @@ s32 func_15168118();
 s32 func_1516865C();
 s32 func_15168870();
 s32 func_15168C4C();
-s32 func_15168E54();
+void func_15168E54(void *, void *);
 s32 func_15168F84();
 /* End generated placeholder declarations. */
 
@@ -270,9 +270,23 @@ void func_15168E34(s32 *arg0, s32 arg1) {
         *arg0 = temp_v0 + arg1;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15168E54.s. */
-s32 func_15168E54() {
-    return 0;
+void func_15168E54(void *arg0, void *arg1) {
+    s8 *cur;
+    s32 i = 0;
+    s8 opcode;
+
+    cur = arg0;
+    if (*(volatile s8 *)cur != -0x21) {
+        opcode = *(volatile s8 *)cur;
+        do {
+            if ((1 == opcode) || ((-0x24 == opcode) && (0xE == ((u8 *)cur)[3]))) {
+                func_15168E34((s32 *)(cur + 4), (s32)arg1);
+            }
+            i++;
+            cur = (s8 *)((i << 3) + (s32)arg0);
+            opcode = *(volatile s8 *)cur;
+        } while (-0x21 != opcode);
+    }
 }
 void func_15168F08(s8 *arg0, s32 arg1) {
     s8 *cur;

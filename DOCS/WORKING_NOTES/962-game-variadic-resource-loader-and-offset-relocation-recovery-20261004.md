@@ -152,7 +152,10 @@ host build, binary, save or frozen Release change is included.
 - [x] Subsequently recover block loader `func_1502B350` (86 words) and qualify
   allocation/decoder-result failures in bounded fixtures in Note 963.
 - [ ] Qualify actual guest DMA/decompression and cache lifecycle, beyond fixtures.
-- [ ] Recover deeper setup `func_1510CE60` and attachment `func_15168E54`.
+- [x] Subsequently recover deeper setup `func_1510CE60`, resolver `func_1510D0EC`
+  and attachment `func_15168E54` in
+  [Note 965](965-game-texture-resource-setup-resolver-and-attachment-recovery-20261004.md).
+- [ ] Recover expanded-size metadata loading and cache maintenance and qualify lifecycle.
 - [ ] Pursue raw byte matching separately and qualify natural guest effects.
 - [ ] Synchronize the still-stubbed PC child through guest/RDRAM interfaces.
 

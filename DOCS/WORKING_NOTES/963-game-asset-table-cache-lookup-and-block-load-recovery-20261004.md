@@ -114,7 +114,10 @@ Release or runtime change is included; source presence is not PC acceptance.
 - [x] Qualify cache ordering, bounded aliases, allocation failure and decoder-result handling.
 - [x] Connect actual lookup/block load/variadic loader/relocator in bounded fixtures.
 - [x] Preserve full Init code/data, Game data, previous recoveries and exact callers.
-- [ ] Recover deeper setup `func_1510CE60` and attachment `func_15168E54`.
+- [x] Subsequently recover deeper setup `func_1510CE60`, resolver `func_1510D0EC`
+  and attachment `func_15168E54` in
+  [Note 965](965-game-texture-resource-setup-resolver-and-attachment-recovery-20261004.md).
+- [ ] Recover expanded-size metadata loading and cache maintenance and qualify lifecycle.
 - [ ] Qualify actual guest DMA/decompression, cache lifecycle and natural effects.
 - [ ] Pursue raw byte matching separately; fit alone is not retail instruction parity.
 - [ ] Synchronize still-stubbed PC child routines through guest/RDRAM interfaces.
