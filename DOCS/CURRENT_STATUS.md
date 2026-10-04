@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init offset accumulator stack recovery: [Note 861](WORKING_NOTES/861-init-builder-offset-accumulator-lifetime-stack-recovery-20261003.md)
+reuses the dead availability variable in the opt-in prefix loop. All text
+sizes hold; aligned O2/O1 and packed O2 call bounds fall eight bytes.
+Packed O2 retains 4,736 linked bytes / 752 excess with restored 392-byte
+core bound, 200-byte builder frame and 88-byte known-neighbor clearance.
+Fresh checks pass: 43 tests, one corpus skip; all observed descents match
+static bounds and both omitted-option text sections match the banked baseline.
+This supersedes Note
+860's stack penalty, not its historical evidence. Defaults/production/README
+totals remain unchanged; further fitting and changed full corpus stay open.
+
 Init builder offset-sum fitting: [Note 860](WORKING_NOTES/860-init-builder-running-offset-sum-text-stack-tradeoff-20261003.md)
 adds an opt-in unsigned prefix sum. Packed O2 linked text falls to 4,736,
 752 over retail, but its call bound grows from 392 to 400 and known-neighbor

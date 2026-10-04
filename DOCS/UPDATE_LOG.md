@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 861](WORKING_NOTES/861-init-builder-offset-accumulator-lifetime-stack-recovery-20261003.md)
+  removes the opt-in prefix sum's stack penalty by reusing `available`.
+  Linked text stays 4,736 / 752 excess; packed call bound/builder frame
+  return to 392/200 and known-neighbor clearance to 88. Aligned O2/O1
+  also recover eight bound bytes. Fresh checks pass: 43 tests, one corpus
+  skip, all observed descents match bounds and omitted-option text bytes hold;
+  full revised corpus, further fitting and ownership/hardware remain open.
+  Defaults/production/README totals unchanged; unrelated Game edits excluded.
+
 - Init [Note 860](WORKING_NOTES/860-init-builder-running-offset-sum-text-stack-tradeoff-20261003.md)
   banks an opt-in running prefix sum and two rejected pointer-loop trials.
   Packed O2 saves 16 linked bytes to 4,736 / 752 excess, at an eight-byte

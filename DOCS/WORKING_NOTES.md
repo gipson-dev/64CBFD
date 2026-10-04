@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-03 ([Note 861](WORKING_NOTES/861-init-builder-offset-accumulator-lifetime-stack-recovery-20261003.md)):
+Reusing `available` removes the opt-in prefix loop's extra stack cost.
+All six text sizes hold; packed O2 stays 4,736 / 752 excess with restored
+392 core bound, 200 builder frame and 88 known-neighbor clearance. Aligned
+O2/O1 also recover eight bound bytes. Fresh checks pass: 43 tests, one corpus
+skip, observed descents match bounds and omitted-option text bytes hold.
+Full revised corpus, further fitting and ownership/hardware remain open.
+Production/defaults/README totals unchanged; unrelated Game work preserved.
+
 2026-10-03 ([Note 860](WORKING_NOTES/860-init-builder-running-offset-sum-text-stack-tradeoff-20261003.md)):
 Opt-in running prefix sum saves packed O2 16 linked bytes to 4,736,
 752 over retail, but adds eight call-bound bytes and reduces known-neighbor

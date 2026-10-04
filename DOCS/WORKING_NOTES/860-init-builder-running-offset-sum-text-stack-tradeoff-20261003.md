@@ -2,6 +2,11 @@
 
 Date: 2026-10-03. Baseline: `6842440f`.
 
+Follow-up: [Note 861](861-init-builder-offset-accumulator-lifetime-stack-recovery-20261003.md)
+reuses the existing accumulator and removes this variant's packed stack
+penalty without losing its text saving. Measurements below remain the
+historical Note 860 implementation, not the revised source.
+
 ## Result
 
 The isolated compiler now supports `--builder-offset-sum`. It replaces

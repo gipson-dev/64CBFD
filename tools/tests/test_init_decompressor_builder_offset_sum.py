@@ -11,13 +11,16 @@ class InitDecompressorBuilderOffsetSumTests(fill.InitDecompressorDynamicRepeatFi
                           "--builder-offset-sum")
 
     def test_packed_profile_size_reduction(self):
-        for profile, text, bound in (("o2g3", 4432, 400), ("o1", 5856, 352)):
+        for profile, text, bound in (("o2g3", 4432, 392), ("o1", 5856, 352)):
             receipt = self.receipts["packed-remaining", profile]
             self.assertEqual(receipt["text_bytes"], text)
             self.assertEqual(receipt["state_bytes"], 116)
             core = next(unit for unit in receipt["call_graph"]
                         if unit["name"] == "init_decode_core")
             self.assertEqual(core["direct_call_frame_bound"], bound)
+            builder = next(row for row in receipt["functions"]
+                           if row["function"] == "init_decode_build")
+            self.assertEqual(builder["frame_bytes"], 200 if profile == "o2g3" else 120)
             image = next(image for label, selected, image in self.adapter_images
                          if label == "packed-remaining" and selected == profile)
             self.assertEqual(len(image.code) * 4, text + 304)

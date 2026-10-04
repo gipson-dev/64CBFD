@@ -322,12 +322,10 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     BUILD_COUNTS[max] = available;
     BUILD_OFFSETS[1] = 0;
 #ifdef INIT_DECODE_BUILDER_OFFSET_SUM
-    {
-        uint32_t sum = 0;
-        for (bits = 1; bits < max; bits++) {
-            sum += BUILD_COUNTS[bits];
-            BUILD_OFFSETS[bits + 1] = sum;
-        }
+    available = 0;
+    for (bits = 1; bits < max; bits++) {
+        available += BUILD_COUNTS[bits];
+        BUILD_OFFSETS[bits + 1] = available;
     }
 #else
     for (bits = 1; bits < max; bits++) {
