@@ -21,6 +21,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init unsigned-induction trials: [Note 941](WORKING_NOTES/941-init-bitmap-unsigned-induction-guest-qualification-20261004.md)
+reject two new bitmap shapes: unsigned equality is byte-identical to the
+20-word pointer control; countdown emits 22 words against nineteen retail.
+Eight new / 46 combined tests pass, including 1,002 completed retail/C pairs
+and twelve bounded prefixes with alias/fence rejecting controls. Production
+Init ownership/counts remain unchanged; finish the preserved Game layout repair
+before claiming a new production link or starting another conversion batch.
+
+Init pause-resume decision: [Note 940](WORKING_NOTES/940-init-pause-resume-conversion-decision-20261004.md)
+recounts 492 C / 47 assembly entries and verifies all retained source owners.
+Fifty-four focused tests pass, including fresh connected formatter trials.
+Bitmap/MMIO remain the smallest C candidates; no replacement is ready to adopt.
+Decoder is still 528 linked bytes too large; glyph fitting/ownership remain open.
+Preserved pre-edit ELF Init code/data match all retail bytes, but the unfinished
+Game linker trial currently has no production ELF. Keep that distinction explicit.
+
 Game curve update: [Note 939](WORKING_NOTES/939-game-curve-update-direct-match-and-data-placement-gate-20261004.md)
 recovers `func_150E7C9C` and confirms the payload cursor. All 212 words emit
 directly from C, original 0xA8 frame, no guards; builder remains 194/194 exact.

@@ -18,6 +18,18 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 941](WORKING_NOTES/941-init-bitmap-unsigned-induction-guest-qualification-20261004.md)
+  records two rejected unsigned-induction bitmap trials and new actual guest
+  differential tests. All 46 focused tests pass; 1,002 completed pairs and
+  twelve bounded prefixes preserve alias/wrap contracts. No production owner
+  or README aggregate changes; the existing Game link repair remains separate.
+
+- Init [Note 940](WORKING_NOTES/940-init-pause-resume-conversion-decision-20261004.md)
+  refreshes the pause-resume decision: 492 C / 47 assembly entries, all source
+  owners verified, 54 focused tests passing. Remaining candidate gates and
+  ordered next steps are explicit; README aggregates stay unchanged. Preserved
+  baseline Init bytes are exact, distinct from the unfinished Game link trial.
+
 - Game [Note 939](WORKING_NOTES/939-game-curve-update-direct-match-and-data-placement-gate-20261004.md)
   recovers `func_150E7C9C`, all 212 words directly matching with no guards.
   Thirty-two tests pass; README shows Game 2605 / total 3278 exact. A separate

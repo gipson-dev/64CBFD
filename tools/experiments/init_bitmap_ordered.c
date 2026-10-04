@@ -1,6 +1,10 @@
 typedef unsigned char u8;
 typedef short s16;
 
+#if !defined(HOST_TEST) && (SHAPE == 12 || SHAPE == 13)
+typedef char GuestAddressWidth[(sizeof(unsigned long) == 4) ? 1 : -1];
+#endif
+
 #ifdef HOST_TEST
 u8 *D_8003BE70;
 u8 *D_8003BE7C;
@@ -20,7 +24,13 @@ void func_10005BE0(void) {
 #if SHAPE == 6 || SHAPE == 7
     int value = 0xFF;
 #endif
-#if SHAPE == 8
+#if SHAPE == 12 || SHAPE == 13
+    unsigned long cursor = (unsigned long)D_8003BE70;
+    unsigned long end = (unsigned long)D_8003BE7C;
+#if SHAPE == 13
+    unsigned long remaining = end - cursor;
+#endif
+#elif SHAPE == 8
     u8 *cursor = D_8003BE70;
     u8 *end = D_8003BE7C;
 #else
@@ -67,6 +77,15 @@ void func_10005BE0(void) {
     do {
         *cursor++ = 0xFF;
     } while ((unsigned long)cursor <= (unsigned long)end);
+#elif SHAPE == 12
+    /* Guest o32 unsigned arithmetic preserves the wrapping address domain. */
+    do {
+        *(volatile u8 *)cursor = 0xFF;
+    } while (cursor++ != end);
+#elif SHAPE == 13
+    do {
+        *(volatile u8 *)cursor++ = 0xFF;
+    } while (remaining-- != 0);
 #else
 #error Unknown SHAPE
 #endif
@@ -82,6 +101,8 @@ void func_10005BE0(void) {
         value <<= bits;
         value--;
         *end = value;
+#elif SHAPE == 12 || SHAPE == 13
+        *(volatile u8 *)end = (2u << bits) - 1;
 #else
         *end = (2u << bits) - 1;
 #endif

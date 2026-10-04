@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-04 ([Note 941](WORKING_NOTES/941-init-bitmap-unsigned-induction-guest-qualification-20261004.md)):
+Unsigned address equality/countdown trials do not fit the nineteen-word bitmap.
+Eight new / 46 combined tests pass; 1,002 completed guest pairs and twelve
+bounded prefixes qualify aliases/wrap behavior, with rejecting controls.
+Keep assembly production owner; finish the preserved Game layout repair next.
+
+2026-10-04 ([Note 940](WORKING_NOTES/940-init-pause-resume-conversion-decision-20261004.md)):
+Init resume assessment verifies 492 C / 47 assembly entries and source owners.
+Fifty-four tests pass; preserved baseline Init code/data are retail-exact.
+No new production conversion: bitmap/MMIO matching, decoder fitting and
+connected glyph ownership remain open. Existing Game linker trial is preserved;
+its absent production ELF is not presented as a successful current build.
+
 2026-10-04 ([Note 939](WORKING_NOTES/939-game-curve-update-direct-match-and-data-placement-gate-20261004.md)):
 Curve update `func_150E7C9C` matches all 212 words directly, original 0xA8 frame,
 no guards. Thirty-two tests pass; Game 2605 / total 3278 exact. A physical
