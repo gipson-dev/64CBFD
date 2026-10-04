@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 862](WORKING_NOTES/862-init-offset-sum-full-masked-cu1-clear-corpus-20261003.md)):
+All 507 fresh revised-combination packed O2/g3 retail pages pass with masked
+CU1 clear in 790.137 seconds. Terminal text/descent/clearance are 4,736/3,240/88;
+sixteen corpus/helper checks pass, no skips. This qualifies Note 861's
+repeat-value/offset-sum/reused-accumulator combination only in this mode/profile.
+Run matching CU1 set next; fitting, other profiles and ownership/hardware open.
+Production/defaults/README totals unchanged; unrelated Game work preserved.
+
 2026-10-03 ([Note 861](WORKING_NOTES/861-init-builder-offset-accumulator-lifetime-stack-recovery-20261003.md)):
 Reusing `available` removes the opt-in prefix loop's extra stack cost.
 All six text sizes hold; packed O2 stays 4,736 / 752 excess with restored

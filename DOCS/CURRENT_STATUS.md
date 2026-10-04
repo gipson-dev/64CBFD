@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init revised offset-sum CU1-clear corpus: [Note 862](WORKING_NOTES/862-init-offset-sum-full-masked-cu1-clear-corpus-20261003.md)
+passes all 507 fresh packed/remaining O2/g3 paired retail pages with
+exception-masked CU1 clear in 790.137 seconds. This covers the Note 861
+repeat-value/offset-sum/reused-accumulator combination, not the older build.
+Terminal text/descent/known-neighbor clearance are 4,736/3,240/88; sixteen
+corpus/helper checks pass with no skips. Matching CU1-set corpus is next.
+Further fitting (752 bytes), other profiles and ownership/hardware remain
+open. Production/defaults/README totals unchanged; unrelated Game work preserved.
+
 Init offset accumulator stack recovery: [Note 861](WORKING_NOTES/861-init-builder-offset-accumulator-lifetime-stack-recovery-20261003.md)
 reuses the dead availability variable in the opt-in prefix loop. All text
 sizes hold; aligned O2/O1 and packed O2 call bounds fall eight bytes.

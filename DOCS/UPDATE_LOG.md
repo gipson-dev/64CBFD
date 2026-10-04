@@ -18,6 +18,14 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 862](WORKING_NOTES/862-init-offset-sum-full-masked-cu1-clear-corpus-20261003.md)
+  banks all 507 revised-combination packed O2/g3 retail-page comparisons
+  with exception-masked CU1 clear in 790.137 seconds. Text/descent/clearance
+  stay 4,736/3,240/88; sixteen corpus/helper checks pass with no skips.
+  CU1 set is the next separate qualification gate. Fitting, other profiles
+  and ownership/hardware remain open; no source/default/README total edits.
+  Unrelated Game work is preserved and excluded.
+
 - Init [Note 861](WORKING_NOTES/861-init-builder-offset-accumulator-lifetime-stack-recovery-20261003.md)
   removes the opt-in prefix sum's stack penalty by reusing `available`.
   Linked text stays 4,736 / 752 excess; packed call bound/builder frame

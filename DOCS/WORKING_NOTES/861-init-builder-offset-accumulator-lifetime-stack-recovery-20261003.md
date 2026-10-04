@@ -2,6 +2,10 @@
 
 Date: 2026-10-03. Baseline: `7ce4f88e`.
 
+Follow-up: [Note 862](862-init-offset-sum-full-masked-cu1-clear-corpus-20261003.md)
+banks all 507 fresh pages for this revised combination with masked CU1 clear.
+CU1 set remains open; the bounded measurements below are unchanged.
+
 ## Result
 
 The existing opt-in `--builder-offset-sum` now reuses the builder's
