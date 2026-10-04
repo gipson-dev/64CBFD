@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init fixed-length endpoint trials: [Note 896](WORKING_NOTES/896-init-fixed-length-cursor-endpoint-trials-20261004.md)
+rejects distance cursors and relative literal endpoints: no complete O2
+text saving, all grow O1 sixteen bytes; some initializer frames grow eight.
+Exact qualified source restored; nine ledger/size/full-initializer tests pass,
+no skips. Qualified O1/default O2 unchanged; production and README untouched.
+
 Init packing trials: [Note 895](WORKING_NOTES/895-init-builder-wide-operation-and-header-packing-trials-20261004.md)
 rejects wider operation and combined-header packing. Both remove two public
 O2 builder words but save no whole text and add eight bytes to both call bounds.

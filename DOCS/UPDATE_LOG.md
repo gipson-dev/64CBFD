@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 896](WORKING_NOTES/896-init-fixed-length-cursor-endpoint-trials-20261004.md)
+  rejects three fixed-length endpoint forms: whole O2 text neutral, O1 grows
+  sixteen bytes. Exact source restored; nine ledger/size/initializer checks
+  pass. Qualified candidate, production and README unchanged.
+
 - Init [Note 895](WORKING_NOTES/895-init-builder-wide-operation-and-header-packing-trials-20261004.md)
   rejects wider operation and combined-header packing: no whole-text savings,
   eight-byte call-bound growth in both profiles. Exact qualified source restored;
