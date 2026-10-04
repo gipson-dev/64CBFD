@@ -165,6 +165,9 @@ if(phase!=5) return 3;
         end = max(i for i, word in enumerate(words) if word == 0x03E00008) + 2
         self.assertLessEqual(end, 72)
         self.assertEqual(words[0], 0x27BDFFC8)
+        retail = struct.unpack(">72I", (self.root / "conker/conker.us.bin").read_bytes()[0x11445C:0x11457C])
+        self.assertEqual(words[:10], list(retail[:10]))
+        self.assertEqual(words[11:58], list(retail[11:58]))
         calls = [word for word in words[:end] if word >> 26 == 3]
         self.assertEqual(calls, [(3 << 26) | ((address >> 2) & 0x3FFFFFF)
             for address in (0x1514ECE0, 0x150ADA68, 0x150ADA20, 0x151423D8, 0x151423D8)])

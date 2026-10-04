@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 920](WORKING_NOTES/920-game-linked-record-position-stack-and-float-shape-20261004.md)):
+`func_150E6FAC` local declaration and float source ordering restore retail
+stack offsets and complete computation register/operand sequence. Differences
+fall from 38 to 15, isolated to return-tail layout and branch displacement.
+Thirteen tests pass; no guards or aggregate change. Full match remains open.
+
 2026-10-04 ([Note 919](WORKING_NOTES/919-game-linked-record-position-semantic-recovery-20261004.md)):
 Game `func_150E6FAC` now implements its linked-record lookup, radius/angle
 position calculation and failed-lookup fallback. Thirteen focused tests pass;

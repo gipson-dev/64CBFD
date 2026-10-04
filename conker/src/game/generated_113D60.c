@@ -39,11 +39,11 @@ void func_150E6F18(f32 *output) {
 
 void func_150E6FAC(f32 *output, u8 *actor) {
     void *node;
+    u8 *record;
     f32 radius;
     s16 angle;
     f32 xOffset;
     f32 zOffset;
-    u8 *record;
 
     if (func_1514ECE0(*(void **)(actor + 0x2F4), 0x16, &node)) {
         radius = func_150ADA68() * 100.0f + 80.0f;
@@ -51,9 +51,9 @@ void func_150E6FAC(f32 *output, u8 *actor) {
         xOffset = func_151423D8((u8)(angle - 0x40));
         zOffset = func_151423D8((u8)angle);
         record = *(u8 **)((u8 *)node + 0x10);
-        output[0] = (*(f32 *)(actor + 0x14) + *(f32 *)(record + 0x38) * -80.0f) + xOffset * radius;
-        output[1] = (*(f32 *)(actor + 0x18) + *(f32 *)(record + 0x3C) * -80.0f) + 100.0f;
-        output[2] = (*(f32 *)(actor + 0x1C) + *(f32 *)(record + 0x40) * -80.0f) + zOffset * radius;
+        output[0] = (*(f32 *)(record + 0x38) * -80.0f + *(f32 *)(actor + 0x14)) + xOffset * radius;
+        output[1] = (*(f32 *)(record + 0x3C) * -80.0f + *(f32 *)(actor + 0x18)) + 100.0f;
+        output[2] = (*(f32 *)(record + 0x40) * -80.0f + *(f32 *)(actor + 0x1C)) + zOffset * radius;
     } else {
         output[0] = *(f32 *)(actor + 0x14);
         output[1] = *(f32 *)(actor + 0x18);

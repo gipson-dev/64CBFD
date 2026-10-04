@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game linked-record matching refinement: [Note 920](WORKING_NOTES/920-game-linked-record-position-stack-and-float-shape-20261004.md)
+reduces `func_150E6FAC` from 38 to 15 differing positions by restoring local
+declaration order and float operand source shape. All 57 non-branch words
+before the return tail match directly; thirteen tests pass. Still 71 body
+words versus 72 retail, no guards/drift. Return-tail layout remains open.
+
 Game linked-record position: [Note 919](WORKING_NOTES/919-game-linked-record-position-semantic-recovery-20261004.md)
 replaces `func_150E6FAC`'s zero-return placeholder with lookup, randomized
 radius/angle offsets and fallback coordinates. Five new tests / thirteen

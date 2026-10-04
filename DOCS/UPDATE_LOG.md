@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 920](WORKING_NOTES/920-game-linked-record-position-stack-and-float-shape-20261004.md)
+  restores linked-record position stack/float shape directly from C, reducing
+  differences from 38 to 15. Thirteen tests pass; return-tail matching remains
+  open. No guards, address drift or README aggregate change.
+
 - Game [Note 919](WORKING_NOTES/919-game-linked-record-position-semantic-recovery-20261004.md)
   replaces the linked-record position placeholder with semantic C. Thirteen
   tests pass; 71-word body fits its 72-word slot, with 38 differing positions,
