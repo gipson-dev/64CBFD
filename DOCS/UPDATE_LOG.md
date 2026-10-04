@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 966](WORKING_NOTES/966-init-resume-preincrement-bitmap-and-conversion-decisions-20261004.md)
+  resumes the build to success and qualifies a new preincrement bitmap shape:
+  32/20/32 words against nineteen, 501 completed model pairs and six prefixes.
+  Reject adoption: extra cursor bias and incorrect branch-delay scheduling.
+  All 110 focused checks pass, no skips; remaining owners/slots and full Init
+  code/data plus Game data stay exact. Retain 47 ASM entries; seventeen are
+  investigation targets, thirty intentional owners. Production Init/README
+  unchanged. Separate Game metadata/maintenance edits are preserved, buildable
+  but not yet behavior-qualified, and excluded from this Init checkpoint.
+
 - Game [Note 965](WORKING_NOTES/965-game-texture-resource-setup-resolver-and-attachment-recovery-20261004.md)
   recovers setup/resolver/attachment: 152 / 163, 155 / 162 and 45 / 45 words,
   159/142/9 differences, retail frames and no guards. Sixteen new tests qualify

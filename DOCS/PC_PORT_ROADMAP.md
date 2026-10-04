@@ -47,10 +47,16 @@ Initial unwritten setup scratch is unqualified. No host synchronization is
 implied by recovering these guest C bodies.
 
 The remaining Init assessment in
-[Note 964](WORKING_NOTES/964-init-remaining-assembly-current-conversion-decisions-20261004.md)
+[Note 966](WORKING_NOTES/966-init-resume-preincrement-bitmap-and-conversion-decisions-20261004.md)
 retains all 47 assembly entries: seventeen investigation targets and thirty
 intentional owners. No replacement is ready; full Init code/data remains
-retail-exact. These guest conversion gates do not establish PC gameplay parity.
+retail-exact. All 110 focused checks pass. The new preincrement bitmap reaches
+a direct endpoint branch but still emits twenty no-unroll words against nineteen,
+with an extra cursor bias and wrong delay-slot scheduling; reject adoption.
+These guest conversion gates do not establish PC gameplay parity. Separate
+pending metadata/maintenance bodies now build in the DECOMP worktree, but their
+dedicated behavior and connected lifecycle qualification remain open; Note 965's
+placeholder statement above describes its banked checkpoint, not current edits.
 
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.

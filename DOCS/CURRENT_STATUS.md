@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Requested Init resume: [Note 966](WORKING_NOTES/966-init-resume-preincrement-bitmap-and-conversion-decisions-20261004.md)
+rechecks 492 C / 47 ASM entries after the interrupted build finishes. All 110
+focused checks pass, no skips; every retained owner/raw slot and full Init
+code/data plus Game data remain exact. New preincrement bitmap emits 32/20/32
+words across O2/no-unroll/O1, against nineteen retail; 501 completed model pairs
+and six prefixes pass, but the best form has an extra bias and wrong delay-slot
+schedule. Reject adoption. Seventeen investigation targets and thirty intentional
+ASM owners remain; decoder is 528 bytes over, connected formatter 196 over.
+Pending Game metadata/maintenance edits build but are not behavior-qualified or
+banked by this Init checkpoint. README totals and production Init are unchanged.
+
 Texture setup/resolution/attachment: [Note 965](WORKING_NOTES/965-game-texture-resource-setup-resolver-and-attachment-recovery-20261004.md)
 recovers `func_1510CE60`, `func_1510D0EC` and `func_15168E54`: 152 / 163,
 155 / 162 and 45 / 45 words, with 159/142/9 differences and retail frame sizes.

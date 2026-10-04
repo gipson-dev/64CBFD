@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef short s16;
 
-#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 19)
+#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 20)
 typedef char GuestAddressWidth[(sizeof(unsigned long) == 4) ? 1 : -1];
 #endif
 
@@ -26,7 +26,7 @@ void func_10005BE0(void) {
 #elif SHAPE == 19
     unsigned int value = 0xFF;
 #endif
-#if SHAPE >= 12 && SHAPE <= 19
+#if SHAPE >= 12 && SHAPE <= 20
     unsigned long cursor = (unsigned long)D_8003BE70;
     unsigned long end = (unsigned long)D_8003BE7C;
 #if SHAPE == 13
@@ -135,6 +135,13 @@ fill:
     do {
         *(volatile u8 *)cursor = value;
     } while (cursor++ != end);
+#elif SHAPE == 20
+    /* Compare the updated cursor directly instead of retaining its old value. */
+    cursor--;
+    do {
+        cursor++;
+        *(volatile u8 *)cursor = 0xFF;
+    } while (cursor != end);
 #else
 #error Unknown SHAPE
 #endif
@@ -156,7 +163,7 @@ fill:
 #elif SHAPE == 19
         value >>= 8 - bits;
         *(volatile u8 *)end = value;
-#elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18
+#elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18 || SHAPE == 20
         *(volatile u8 *)end = (2u << bits) - 1;
 #else
         *end = (2u << bits) - 1;
