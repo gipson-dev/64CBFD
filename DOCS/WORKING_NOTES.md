@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-04 ([Note 969](WORKING_NOTES/969-game-immediate-texture-cache-release-recovery-20261004.md)):
+Recover immediate cache release `func_1510D7AC`: all 46 words fit, 42 match
+directly; four frame/spill differences remain, C 0x38 versus retail 0x28.
+No guards. Six new tests cover every priority/activity byte pair, all valid
+IDs, staged callback order and actual retain/release/maintenance/reload.
+All 227 combined checks pass, no skips; fresh link preserves full Init code/
+data, Debugger code, Game data and prior identities. Read-only sibling audit
+finds its immediate-release stub still empty; host synchronization is separate.
+Next queued segment writer `func_1510D8C0`; staged producer and real guest/
+gameplay gates remain open. README/Init/sibling/frozen Release unchanged.
+
 2026-10-04 ([Note 968](WORKING_NOTES/968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md)):
 Finish interrupted metadata `func_15003570` and maintenance `func_1510D404`:
 58 / 62 and 125 / 129 words, 54/119 raw differences, no new guards.

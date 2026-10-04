@@ -76,6 +76,17 @@ Full Init code/data, Debugger code and Game data remain exact. Read-only sibling
 audit finds complete original recompiled bodies already in active `.c`; no host
 source, build, save or frozen Release changes, and no fresh PC runtime acceptance.
 
+Immediate cache release `func_1510D7AC` is recovered in
+[Note 969](WORKING_NOTES/969-game-immediate-texture-cache-release-recovery-20261004.md):
+46 / 46 words, four frame/spill differences, no guards. Six new tests qualify
+every priority/activity byte pair, all valid IDs, callback ordering and actual
+resolver/retain/release/maintenance/reload; all 227 combined checks pass.
+The sibling's active `recomp_out/.c` still has a zero-return stub for this helper
+at line 822784; a scoped host `src`/CMake search finds no named override.
+This DECOMP source recovery does not synchronize the host. Real allocator,
+DMA/decompression, staged producer and natural effects remain separate gates.
+No host source/build/save or frozen Release changes.
+
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
 - [x] Audit the sibling's active CMake source input without changing its files.
@@ -89,7 +100,10 @@ source, build, save or frozen Release changes, and no fresh PC runtime acceptanc
   resolver `func_1510D0EC`; qualify actual helper connections in bounded fixtures.
 - [x] Recover metadata loading `func_15003570` and cache maintenance `func_1510D404`
   and qualify connected cache initialization/loading/maintenance/release in bounded fixtures.
-- [ ] Recover immediate cache release `func_1510D7AC` and identify the staged-entry producer.
+- [x] Recover immediate cache release `func_1510D7AC` and qualify bounded retain/release/reload.
+- [ ] Identify and qualify the staged-entry producer; recover queued segment writer `func_1510D8C0` separately.
+- [ ] Synchronize PC-port `func_1510D7AC`: active generated source retains its
+  zero-return stub, with no named override in the scoped host source search.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a
   zero-return stub, and the scoped source search finds no named override.
 - [ ] Synchronize PC-port `func_150E9178`: the same active source also retains

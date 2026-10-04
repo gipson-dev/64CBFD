@@ -1,4 +1,4 @@
-"""Actual metadata/cache-maintenance C with bounded DMA, allocator and decoder mocks."""
+"""Actual texture metadata/cache lifecycle with bounded allocator, DMA and decoder mocks."""
 
 import csv
 import hashlib
@@ -30,6 +30,7 @@ class GameTextureMetadataAndMaintenanceTests(unittest.TestCase):
                 ('func_15003570', 'void', cls.metadata_source),
                 ('func_150034B4', 's32', cls.metadata_source),
                 ('func_1510D404', 'void', cls.cache_source),
+                ('func_1510D7AC', 'void', cls.cache_source),
                 ('func_1510D374', 's32', cls.cache_source),
                 ('func_1510D0EC', 'u32', cls.cache_source),
                 ('func_1510CE60', 's32', cls.cache_source),
@@ -80,14 +81,18 @@ static union { u32 alignment; u8 bytes[48]; } headerStorage;
 static u8 compressed[64];
 static u32 expanded[32],staged[4],alternate[4],commands[8];
 static s16 listStorage[7764];
-enum { METADATA=1, RESOLVER=2, MAINTENANCE=3 };
+enum { METADATA=1, RESOLVER=2, MAINTENANCE=3, IMMEDIATE=4 };
 static int phase,error,allocations,listAllocations,dmas,decodes,frees,diagnostics;
 static int failHeader,mutateLength,mutateDecode,mutateFree,diagnosticStop;
 static int expectedId,freeList,diagnosticCounter;
+static int mutateImmediate;
 static u32 metadataCursor,resolverSource,resolverAmount;
 static void *expectedFree[4],*expectedDestination[4];
 static u32 expectedSource[4],expectedScratch[4];
 static s32 expectedMarker[4],decoderResult;
+static s8 expectedState[4];
+static u8 expectedActivity[4];
+static u32 expectedCache[4];
 static void stop(s32 code) {
     __asm__ volatile("int $0x80" :: "a"(1),"b"(code) : "memory");
     __builtin_unreachable();
@@ -120,9 +125,11 @@ static void reset(void) {
     for(i=0;i<4;i++) {
         staged[i]=alternate[i]=0; expectedFree[i]=expectedDestination[i]=NULL;
         expectedSource[i]=expectedScratch[i]=0; expectedMarker[i]=-1;
+        expectedState[i]=0; expectedActivity[i]=0; expectedCache[i]=0;
     }
     phase=METADATA; error=allocations=listAllocations=dmas=decodes=frees=diagnostics=0;
     failHeader=mutateLength=mutateDecode=mutateFree=diagnosticStop=freeList=0;
+    mutateImmediate=0;
     D_800D9F58=0xFFFF; D_800D9F5C=-1; D_800DBDBC=93; D_800D9F60=0;
     D_800DBDBA=0; D_800BE9F0=0; D_8003809C=0x12345678; D_8003C8E0=0;
     metadataCursor=(u32)&D_1A37E0; expectedId=5; decoderResult=0; diagnosticCounter=0;
@@ -199,6 +206,19 @@ void func_10004074(void *pointer) {
             D_800BC448[expectedId+1]=1;
             D_800D9F58=1; D_800D9F5C=100; D_800BC448[100]=1;
         }
+    } else if(phase==IMMEDIATE) {
+        if(index>=4 || pointer!=expectedFree[index] || D_800DBDBC!=expectedMarker[index]
+           || D_800B0E58[expectedId]!=expectedCache[index]
+           || D_800BC448[expectedId]!=expectedState[index]
+           || D_800D9F68[expectedId]!=expectedActivity[index]) error=19;
+        if(mutateImmediate & (1<<index)) {
+            D_800B0E58[expectedId]=index?(u32)0x13572468:(u32)alternate;
+            D_800BC448[expectedId]=(s8)(index?0x65:0x91);
+            D_800D9F68[expectedId]=201+index;
+            D_800D9F58=-17-index; D_800D9F5C=999+index;
+            D_800DBDBC=-77-index; D_800DBDBA=255-index; D_800D9F60=7+index;
+            D_8003809C=0x87654321; D_800BC448[100]=1;
+        }
     } else error=17;
 }
 void func_150AD770(void) {
@@ -211,7 +231,7 @@ void func_150AD770(void) {
 '''
         cls.fixture += cls.prototypes
         cls.fixture += '\n'.join(cls.bodies[n] for n in (
-            'func_15003570', 'func_1510D404', 'func_1510D374', 'func_1510D0EC',
+            'func_15003570', 'func_1510D404', 'func_1510D7AC', 'func_1510D374', 'func_1510D0EC',
             'func_1510D608', 'func_1510D694', 'func_1510D630')) + '\n'
         cls.fixture += '#pragma GCC diagnostic push\n#pragma GCC diagnostic ignored "-Wreturn-type"\n'
         cls.fixture += cls.bodies['func_150034B4'] + '\n#pragma GCC diagnostic pop\n'
@@ -402,6 +422,134 @@ if(frees!=1 || decodes || D_800B0E58[5]!=0xFFFFFFFF || D_800D9F58!=0xFFFF
    || D_800D9F5C!=-1 || D_800DBDBC!=-2 || !fences()) return 6;
 ''')
 
+    def test_immediate_release_all_priority_and_activity_byte_pairs(self):
+        self.run_host(r'''
+int state,count,stagedState,release;
+reset(); phase=IMMEDIATE; D_800D9F58=-9; D_800D9F5C=17;
+for(state=0;state<256;state++) for(count=0;count<256;count++) {
+    frees=0; stagedState=(state&0x40)!=0; release=state && count==1;
+    D_800BC448[5]=(s8)state; D_800D9F68[5]=(u8)count;
+    staged[0]=0x12345678; D_800B0E58[5]=stagedState?(u32)staged:0x89ABCDEF;
+    expectedFree[0]=stagedState?(void *)0x12345678:(void *)0x89ABCDEF;
+    expectedFree[1]=staged; expectedMarker[0]=expectedMarker[1]=93;
+    expectedState[0]=expectedState[1]=(s8)state;
+    expectedActivity[0]=expectedActivity[1]=0;
+    expectedCache[0]=expectedCache[1]=D_800B0E58[5];
+    func_1510D7AC(5);
+    if(error || frees!=(release?(stagedState?2:1):0) || allocations || dmas || decodes || diagnostics
+       || D_800D9F68[5]!=(state && count?count-1:count)
+       || D_800BC448[5]!=(release?0:(s8)state)
+       || D_800B0E58[5]!=(release?0xFFFFFFFF:expectedCache[0])
+       || D_800D9F58!=-9 || D_800D9F5C!=17 || D_800DBDBC!=93 || !fences()) return 1;
+}
+''')
+
+    def test_immediate_release_all_valid_ids_and_neighbor_fences(self):
+        self.run_host(r'''
+int id;
+reset(); phase=IMMEDIATE;
+for(id=0;id<7762;id++) {
+    expectedId=id; frees=0; staged[0]=0x12000000+(u32)id;
+    D_800BC448[id]=(s8)(id%2?0xC0:3); D_800D9F68[id]=1;
+    D_800B0E58[id]=id%2?(u32)staged:(u32)alternate;
+    expectedState[0]=expectedState[1]=D_800BC448[id];
+    expectedCache[0]=expectedCache[1]=D_800B0E58[id];
+    expectedFree[0]=id%2?(void *)staged[0]:(void *)alternate; expectedFree[1]=staged;
+    expectedMarker[0]=expectedMarker[1]=93;
+    func_1510D7AC(id);
+    if(error || frees!=(id%2?2:1) || D_800B0E58[id]!=0xFFFFFFFF || D_800BC448[id]
+       || D_800D9F68[id] || !fences() || D_80091D20[id]!=length_for(id)
+       || D_800B87A0[id]!=0x7777) return 1;
+    if(id+1<7762 && (D_800B0E58[id+1]!=0xFFFFFFFF || D_800BC448[id+1]
+        || D_800D9F68[id+1]!=200)) return 2;
+    if(id && (D_800B0E58[id-1]!=0xFFFFFFFF || D_800BC448[id-1] || D_800D9F68[id-1])) return 3;
+}
+if(allocations || dmas || decodes || diagnostics || D_800D9F58!=0xFFFF || D_800D9F5C!=-1
+   || D_800DBDBC!=93 || D_800DBDBA || D_800D9F60) return 4;
+''')
+
+    def test_immediate_nonstaged_callback_clear_order_and_other_mutations_persist(self):
+        self.run_host(r'''
+reset(); phase=IMMEDIATE; mutateImmediate=1;
+D_800BC448[5]=3; D_800D9F68[5]=1; D_800B0E58[5]=(u32)expanded;
+expectedFree[0]=expanded; expectedMarker[0]=93; expectedState[0]=3; expectedCache[0]=(u32)expanded;
+func_1510D7AC(5);
+if(error || frees!=1 || D_800BC448[5] || D_800B0E58[5]!=0xFFFFFFFF || D_800D9F68[5]!=201
+   || D_800BC448[100]!=1 || D_800D9F58!=-17 || D_800D9F5C!=999 || D_800DBDBC!=-77
+   || D_800DBDBA!=255 || D_800D9F60!=7 || D_8003809C!=0x87654321 || !fences()) return 1;
+''')
+
+    def test_immediate_staged_free_rereads_cache_then_clears_after_second_callback(self):
+        self.run_host(r'''
+reset(); phase=IMMEDIATE; mutateImmediate=3;
+D_800BC448[5]=(s8)0xC0; D_800D9F68[5]=1; D_800B0E58[5]=(u32)staged;
+staged[0]=(u32)compressed; staged[1]=0xA5A5A5A5;
+expectedFree[0]=compressed; expectedFree[1]=alternate;
+expectedMarker[0]=93; expectedMarker[1]=-77;
+expectedState[0]=(s8)0xC0; expectedState[1]=(s8)0x91;
+expectedActivity[1]=201; expectedCache[0]=(u32)staged; expectedCache[1]=(u32)alternate;
+func_1510D7AC(5);
+if(error || frees!=2 || D_800BC448[5] || D_800B0E58[5]!=0xFFFFFFFF || D_800D9F68[5]!=202
+   || D_800BC448[100]!=1 || D_800D9F58!=-18 || D_800D9F5C!=1000 || D_800DBDBC!=-78
+   || D_800DBDBA!=254 || D_800D9F60!=8 || D_8003809C!=0x87654321
+   || staged[0]!=(u32)compressed || staged[1]!=0xA5A5A5A5 || decodes || !fences()) return 1;
+''')
+
+    def test_immediate_pointer_values_are_forwarded_without_invented_guards(self):
+        self.run_host(r'''
+static u32 pointers[]={0,0x80000000,0xFFFFFFFF}; int p;
+for(p=0;p<3;p++) {
+    reset(); phase=IMMEDIATE;
+    D_800BC448[5]=1; D_800D9F68[5]=1; D_800B0E58[5]=pointers[p];
+    expectedFree[0]=(void *)pointers[p]; expectedMarker[0]=93;
+    expectedState[0]=1; expectedCache[0]=pointers[p];
+    func_1510D7AC(5);
+    if(error || frees!=1 || D_800BC448[5] || D_800D9F68[5] || D_800B0E58[5]!=0xFFFFFFFF) return 1;
+    reset(); phase=IMMEDIATE;
+    D_800BC448[5]=0x40; D_800D9F68[5]=1; D_800B0E58[5]=(u32)staged; staged[0]=pointers[p];
+    expectedFree[0]=(void *)pointers[p]; expectedFree[1]=staged;
+    expectedMarker[0]=expectedMarker[1]=93; expectedState[0]=expectedState[1]=0x40;
+    expectedCache[0]=expectedCache[1]=(u32)staged;
+    func_1510D7AC(5);
+    if(error || frees!=2 || D_800BC448[5] || D_800D9F68[5] || D_800B0E58[5]!=0xFFFFFFFF) return 2;
+    reset(); phase=IMMEDIATE;
+    D_800BC448[5]=0x40; D_800D9F68[5]=0; D_800B0E58[5]=pointers[p];
+    func_1510D7AC(5);
+    if(error || frees || D_800BC448[5]!=0x40 || D_800B0E58[5]!=pointers[p]) return 3;
+    D_800BC448[5]=0; D_800D9F68[5]=1;
+    func_1510D7AC(5);
+    if(error || frees || D_800D9F68[5]!=1 || D_800B0E58[5]!=pointers[p] || !fences()) return 4;
+}
+''')
+
+    def test_actual_resolver_retains_immediate_release_maintenance_and_reload(self):
+        self.run_host(r'''
+s32 extent; reset(); func_150034B4(); phase=RESOLVER;
+D_80091D20[5]=2; D_800B87A0[5]=64;
+resolverSource=(u32)&D_1A37E0;
+{ int i; for(i=0;i<5;i++) resolverSource+=D_80091D20[i]; }
+expectedSource[0]=(u32)compressed+(resolverSource&1); resolverSource&=~1u; resolverAmount=16;
+expectedDestination[0]=expanded; expectedScratch[0]=0x456789AB;
+if(func_1510D0EC(5,&extent,62,1)!=(u32)expanded || error || extent!=64 || D_800D9F68[5]!=1) return 1;
+if(func_1510D0EC(5,&extent,62,1)!=(u32)expanded || error || allocations!=2 || dmas!=1
+   || decodes!=1 || frees!=1 || D_800D9F68[5]!=2) return 2;
+phase=IMMEDIATE; frees=0; expectedFree[0]=expanded; expectedMarker[0]=93;
+expectedState[0]=62; expectedCache[0]=(u32)expanded;
+func_1510D7AC(5);
+if(error || frees || D_800D9F68[5]!=1 || D_800BC448[5]!=62 || D_800B0E58[5]!=(u32)expanded) return 3;
+func_1510D7AC(5);
+if(error || frees!=1 || D_800D9F68[5] || D_800BC448[5] || D_800B0E58[5]!=0xFFFFFFFF
+   || D_800D9F58!=5 || D_800D9F5C!=5 || D_800DBDBA!=5) return 4;
+func_1510D7AC(5);
+if(error || frees!=1) return 5;
+phase=MAINTENANCE; frees=decodes=0; D_800D9F60=1; func_1510D404();
+if(error || frees || decodes || D_800D9F58!=0xFFFF || D_800D9F5C!=-1 || D_800DBDBA!=4
+   || D_800DBDBC!=-2 || D_800B0E58[5]!=0xFFFFFFFF) return 6;
+phase=RESOLVER; allocations=dmas=decodes=frees=0;
+if(func_1510D0EC(5,&extent,62,1)!=(u32)expanded || error || allocations!=2 || dmas!=1
+   || decodes!=1 || frees!=1 || D_800D9F68[5]!=1 || D_800BC448[5]!=62 || !fences()) return 7;
+''')
+
     def test_retail_contracts_widths_and_no_new_guards(self):
         config = yaml.safe_load((self.root / 'conker/conker.us.yaml').read_text())
         rom = (self.root / 'conker/conker.us.bin').read_bytes()
@@ -419,8 +567,18 @@ if(frees!=1 || decodes || D_800B0E58[5]!=0xFFFFFFFF || D_800D9F58!=0xFFFF
             self.assertRegex(shared, r'extern\s+u16\s+' + name + r'\[\];')
         self.assertIn('last >= 0x1E53', self.bodies['func_1510D404'])
         self.assertNotIn('if (buffer', self.bodies['func_15003570'])
+        immediate = dict(zip(range(0x1510D7AC, 0x1510D864, 4),
+                             struct.unpack_from('>46I', rom, 0x13AC5C)))
+        for pc, word in ((0x1510D7AC, 0x27BDFFD8), (0x1510D7C4, 0x80C30000),
+                         (0x1510D7D8, 0x90440000), (0x1510D7EC, 0xA0580000),
+                         (0x1510D7F0, 0x30680040), (0x1510D808, 0x8D440000),
+                         (0x1510D810, 0x0C00101D), (0x1510D830, 0x8C440000),
+                         (0x1510D838, 0x0C00101D), (0x1510D84C, 0xAC4D0000),
+                         (0x1510D850, 0xA0C00000)):
+            self.assertEqual(immediate[pc], word)
+        self.assertRegex(self.cache_source, r'void func_1510D7AC\(s32 arg0\)')
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as source:
-            self.assertFalse(any(row['function'] in ('func_15003570', 'func_1510D404')
+            self.assertFalse(any(row['function'] in ('func_15003570', 'func_1510D404', 'func_1510D7AC')
                                  for row in csv.DictReader(source)))
 
     def test_fresh_ido_slots_and_unchanged_initializer_startup_and_prior_recoveries(self):
@@ -430,7 +588,7 @@ if(frees!=1 || decodes || D_800B0E58[5]!=0xFFFFFFFF || D_800D9F58!=0xFFFF
             self.skipTest('IDO/MIPS tools are unavailable')
         source, obj, elf, script = (self.path / ('maintenance' + suffix)
                                     for suffix in ('.c', '.o', '.elf', '.ld'))
-        names = ('func_15003570', 'func_1510D404')
+        names = ('func_15003570', 'func_1510D404', 'func_1510D7AC')
         source.write_text(self.types + self.declarations + '\n'.join(self.bodies[n] for n in names) + '\n')
         result = subprocess.run([str(compiler), '-c', '-32', '-G', '0', '-Xfullwarn', '-Xcpluscomm',
             '-signed', '-nostdinc', '-non_shared', '-Wab,-r4300_mul', '-mips2', '-o32', '-O2', '-g3',
@@ -440,7 +598,7 @@ if(frees!=1 || decodes || D_800B0E58[5]!=0xFFFFFFFF || D_800D9F58!=0xFFFF
         script.write_text('SECTIONS { .text 0x15003570 : SUBALIGN(4) { *(.text) } }\n')
         targets = {name: int(name[2:], 16) for name in ('D_80091D20', 'D_800B87A0', 'D_800B0E58',
             'D_8003809C', 'D_800BC448', 'D_800D9F60', 'D_800DBDBA', 'D_800D9F58', 'D_800D9F5C',
-            'D_800DBDBC', 'D_8003C8E0')}
+            'D_800DBDBC', 'D_8003C8E0', 'D_800D9F68')}
         targets.update({'D_1A37E0': 0x1A37E0, 'allocate_memory': 0x10003C40,
                         'func_10004514': 0x10004514, 'func_10004074': 0x10004074,
                         'func_10006240': 0x10006240, 'func_150AD770': 0x150AD770})
@@ -454,6 +612,7 @@ if(frees!=1 || decodes || D_800B0E58[5]!=0xFFFFFFFF || D_800D9F58!=0xFFFF
         measurements = {
             'func_15003570': (58, 62, 0x30, 54, '096cbdac52e624b1a23fd8f3f7430477801c27d22ab78fb3b57418a95138fb06'),
             'func_1510D404': (125, 129, 0x40, 119, 'eccdb2fdca0e14d179f3f0e7299448b7dd41135e17ae14d53922683f615ee991'),
+            'func_1510D7AC': (46, 46, 0x38, 4, '66c2e6b5363ad9d29b288807d7c41a9a8ddf76b95070e7f52dd94bf0ec1e55e3'),
         }
         for name, (body, size, frame, different, digest) in measurements.items():
             words = fresh[name]
@@ -468,6 +627,12 @@ if(frees!=1 || decodes || D_800B0E58[5]!=0xFFFFFFFF || D_800D9F58!=0xFFFF
             retail = struct.unpack_from('>' + str(size) + 'I', rom, first)
             self.assertEqual(sum(a != b for a, b in zip(slot, retail)), different)
             self.assertEqual(hashlib.sha256(struct.pack('>' + str(size) + 'I', *slot)).hexdigest(), digest)
+            if name == 'func_1510D7AC':
+                self.assertEqual([(i * 4, a, b) for i, (a, b) in enumerate(zip(slot, retail)) if a != b],
+                                 [(0x00, 0x27BDFFC8, 0x27BDFFD8),
+                                  (0x68, 0xAFA50038, 0xAFA50028),
+                                  (0x6C, 0x8FA50038, 0x8FA50028),
+                                  (0xAC, 0x27BD0038, 0x27BD0028)])
         for name, size in (('func_150034B4', 47), ('func_15007830', 124),
                            ('func_1510D374', 36), ('func_15168E34', 8)):
             first = 0x2D4B0 + addresses[name] - 0x15000000

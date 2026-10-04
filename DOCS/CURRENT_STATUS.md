@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Immediate texture release: [Note 969](WORKING_NOTES/969-game-immediate-texture-cache-release-recovery-20261004.md)
+recovers `func_1510D7AC` from its zero-return stub. All 46 words fit; 42 match
+directly, with four frame/spill differences (C 0x38 versus retail 0x28).
+No guards. Six new tests cover all 65536 priority/activity byte pairs, all 7762
+IDs, staged callback ordering and actual resolver/retain/release/maintenance/
+reload. All 227 combined checks pass, no skips; fresh link preserves full
+Init code/data, Debugger code, Game data and prior identities. The sibling's
+active immediate-release body remains a zero-return stub; host synchronization
+and real allocator/DMA/decoder/gameplay are separate. Next recover queued segment
+writer `func_1510D8C0` (44 words); staged producer and raw matching remain open.
+README aggregates, production Init and frozen Release unchanged.
+
 Texture metadata and maintenance: [Note 968](WORKING_NOTES/968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md)
 finishes the interrupted `func_15003570` / `func_1510D404` recoveries: 58 / 62
 and 125 / 129 words, 54/119 raw differences, no new guards. Maintenance's C
@@ -30,8 +42,8 @@ cache lifecycle. All 221 combined checks pass, no skips; fresh link retains full
 Init code/data, Debugger code, Game data and exact initializer/startup slots.
 The two pending edits described by Notes 966/967 are now qualified and banked.
 Actual guest DMA/decoder, staged producer, hardware diagnostics and natural
-effects remain separate. Next recover 46-word immediate cache release
-`func_1510D7AC`. README aggregates and sibling/frozen Release stay unchanged.
+effects remain separate. Note 969 subsequently recovers 46-word immediate cache
+release `func_1510D7AC`. README aggregates and sibling/frozen Release stay unchanged.
 
 Init decoder fitting: [Note 967](WORKING_NOTES/967-init-decoder-entry-value-lifetime-fitting-trials-20261004.md)
 tests literal/length, distance and combined immutable table-value capture.

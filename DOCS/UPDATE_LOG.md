@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 969](WORKING_NOTES/969-game-immediate-texture-cache-release-recovery-20261004.md)
+  recovers immediate cache release `func_1510D7AC`: 46 / 46 words, four frame/
+  spill differences, no guards. Six new tests qualify all 65536 priority/activity
+  pairs, every valid ID, callbacks and actual retain/release/maintenance/reload.
+  All 227 combined checks pass, no skips; fresh link preserves exact full Init
+  code/data, Debugger code, Game data and prior identities. Read-only sibling
+  audit finds this helper still a zero-return stub; separate host sync gate.
+  Next 44-word queued segment writer `func_1510D8C0`. README/Init/frozen Release
+  unchanged; no real allocator/DMA/decoder or natural-effects acceptance claimed.
+
 - Game [Note 968](WORKING_NOTES/968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md)
   finishes interrupted metadata/cache maintenance recovery: 58 / 62 and
   125 / 129 words, 54/119 differences, no guards; maintenance frame 0x40

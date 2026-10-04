@@ -143,6 +143,11 @@ stay unchanged. Recovery narration remains in dedicated documentation.
 
 ## Sibling And Next
 
+Subsequent checkpoint: [Note 969](969-game-immediate-texture-cache-release-recovery-20261004.md)
+recovers immediate release and qualifies its bounded actual resolver/retain/
+release/maintenance/reload connection. The remaining matching and real guest
+gates here stand; next-source discussion below records this note's checkpoint.
+
 Read-only audit of active sibling `recomp_out/.c` finds the complete original
 recompiled initializer at line 92867, metadata at 92983 and maintenance at
 822005. Active CMake consumes that file. A nearby stale zero-stub comment is
@@ -153,7 +158,7 @@ is made; existing recompiled bodies are not fresh PC runtime acceptance.
 - [x] Fit complete slots, with explicit non-matching frame/instruction measurements.
 - [x] Qualify bounded connected initialization/loading/maintenance/release lifecycle.
 - [x] Preserve full Init/Debugger/data sections, exact leaves and prior recoveries.
-- [ ] Recover immediate cache release `func_1510D7AC`, the next 46-word placeholder.
+- [x] Recover immediate cache release `func_1510D7AC` (Note 969).
 - [ ] Identify and qualify the staged-entry producer; do not mistake the existing
   countdown helper `func_1510D720` for that producer.
 - [ ] Pursue raw instruction matching separately.
