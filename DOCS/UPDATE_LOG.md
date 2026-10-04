@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-03 resume checkpoint
 
+- Init [Note 856](WORKING_NOTES/856-init-simple-seed-full-masked-cu1-clear-corpus-20261003.md)
+  banks all 507 fresh current-combination masked-CU1-clear corpus comparisons.
+  Text/descent/clearance remain 4,768/3,240/88; full context and poisoned-state
+  checks pass. Changed CU1-set corpus remains open, then further fitting;
+  best text is still 784 over retail. No source/default/README total edits;
+  unrelated Game work remains preserved and excluded.
+
 - Init [Note 855](WORKING_NOTES/855-init-cache-interaction-matrix-and-simple-seed-combination-20261003.md)
   banks a freshly qualified existing-option combination after 32-way fitting.
   Best O2 linked text falls to 4,768, 784 over retail, with unchanged stack

@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init current-combination CU1-clear corpus: [Note 856](WORKING_NOTES/856-init-simple-seed-full-masked-cu1-clear-corpus-20261003.md)
+passes all 507 retail pages on freshly compiled packed/remaining O2/g3
+with exception-masked CU1 clear in 800.807 seconds. Linked text/descent/
+clearance remain 4,768/3,240/88. Full context, memory and poisoned-state
+checks pass; corpus/helper checks total fourteen pass, no skips. This is
+new evidence for Note 855, not reassigned histogram-only receipts. Changed
+CU1-set corpus and 784-byte fitting gap remain open, along with other-profile/
+ownership/hardware gates. Production/defaults/README totals unchanged.
+
 Init option interaction fitting: [Note 855](WORKING_NOTES/855-init-cache-interaction-matrix-and-simple-seed-combination-20261003.md)
 measures all 32 cache/builder combinations on both packed profiles. Adding
 only existing arithmetic simple-operation selection wins all size/bound

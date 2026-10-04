@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-03 ([Note 856](WORKING_NOTES/856-init-simple-seed-full-masked-cu1-clear-corpus-20261003.md)):
+The current Note 855 combination passes all 507 freshly compiled packed
+O2/g3 retail-page comparisons with exception-masked CU1 clear, in 800.807
+seconds. Text/descent/clearance: 4,768/3,240/88. Corpus/helper checks total
+fourteen pass, no skips. Changed CU1-set corpus and 784-byte fitting gap
+remain open; older receipts are not reassigned. Production/defaults/totals
+unchanged; other-profile/ownership/hardware qualification remains open.
+
 2026-10-03 ([Note 855](WORKING_NOTES/855-init-cache-interaction-matrix-and-simple-seed-combination-20261003.md)):
 The 32-combination cache/builder matrix selects existing simple-operation
 arithmetic with the ABI seed cursor. All O2 links save 16, O1 32/32/16;
