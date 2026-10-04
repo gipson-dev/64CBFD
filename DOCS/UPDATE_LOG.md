@@ -18,6 +18,11 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 905](WORKING_NOTES/905-init-dynamic-order-o2-full-masked-cu1-clear-corpus-20261004.md)
+  qualifies all 507 dynamic-order packed O2 masked CU1-clear pages in 835.460
+  seconds, no skips. Text 4,528, descent 3,248, known-neighbor margin 80;
+  hashes fixed. Matching CU1-set and production gates remain open.
+
 - Init [Note 904](WORKING_NOTES/904-init-dynamic-order-cursor-text-stack-tradeoff-20261004.md)
   retains opt-in order-table cursor/countdown: packed O2 text 4,528, saving
   32 with eight more stack bytes; O1 text grows sixteen. Forty-five bounded

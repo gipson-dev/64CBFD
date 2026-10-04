@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-04 ([Note 905](WORKING_NOTES/905-init-dynamic-order-o2-full-masked-cu1-clear-corpus-20261004.md)):
+Dynamic-order packed O2 passes all 507 masked CU1-clear paired pages in
+835.460 seconds, no skips. Text 4,528, descent 3,248, low `0x80031D60`,
+known-neighbor margin 80; hashes fixed. Matching CU1-set qualification and
+fitting/reservation/production gates remain open. No production change.
+
 2026-10-04 ([Note 904](WORKING_NOTES/904-init-dynamic-order-cursor-text-stack-tradeoff-20261004.md)):
 Opt-in dynamic order-table cursor/countdown saves 32 packed O2 text bytes:
 linked 4,528, excess 544, descent +8 to 3,248. O1 grows sixteen text bytes.

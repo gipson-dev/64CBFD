@@ -21,6 +21,12 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init dynamic order O2 CU1-clear corpus: [Note 905](WORKING_NOTES/905-init-dynamic-order-o2-full-masked-cu1-clear-corpus-20261004.md)
+passes all 507 guarded paired pages in 835.460 seconds, no skips. Text 4,528,
+descent 3,248, low `0x80031D60`, known-neighbor margin 80 confirm Note 904's
+tradeoff; six recorded hashes fixed. Matching CU1-set corpus remains open,
+along with fitting (544 excess), reservation and production/hardware gates.
+
 Init dynamic order cursor: [Note 904](WORKING_NOTES/904-init-dynamic-order-cursor-text-stack-tradeoff-20261004.md)
 retains an opt-in initializer countdown: packed O2 text 4,528 (32 saved,
 544 excess) at eight more stack bytes; O1 text grows sixteen. Whole bounded
