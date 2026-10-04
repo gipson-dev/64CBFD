@@ -18,6 +18,13 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 878](WORKING_NOTES/878-init-callee-adapter-full-masked-cu1-set-corpus-20261004.md)
+  qualifies all 507 current packed O2/g3 pages with masked CU1 set in 792.002
+  seconds, no skips. With Note 877: 1,014 paired pages across both masked
+  modes, unchanged source, callee-return guard on every page. Text 4,640 /
+  656 excess; descent 3,240 / neighbor margin 88. Sixteen supporting gates
+  pass; corpus gates checked off, promotion gates remain. No README totals change.
+
 - Init [Note 877](WORKING_NOTES/877-init-callee-adapter-full-masked-cu1-clear-corpus-20261004.md)
   qualifies all 507 current first-refill/callee-adapter packed O2/g3 pages
   with masked CU1 clear in 839.425 seconds, no skips. Callee-return guard

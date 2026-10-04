@@ -21,14 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init current callee-adapter CU1-set corpus: [Note 878](WORKING_NOTES/878-init-callee-adapter-full-masked-cu1-set-corpus-20261004.md)
+passes all 507 fresh packed-remaining O2/g3 paired pages with masked CU1 set
+(0x2400FF00), 792.002 seconds, no skips. Together with Note 877 this
+qualifies 1,014 paired pages across both masked modes, with callee-return
+guard active on every page. Linked text 4,640 / 656 excess; observed descent
+3,240 matches bound, minimum SP 0x80031D68 / neighbor margin 88. Sixteen
+supporting gates pass; all source blobs hold. Current corpus gates checked
+off; fitting/ownership/hardware/reservation remain. Production/defaults/README unchanged.
+
 Init current callee-adapter CU1-clear corpus: [Note 877](WORKING_NOTES/877-init-callee-adapter-full-masked-cu1-clear-corpus-20261004.md)
 passes all 507 fresh packed-remaining O2/g3 paired retail pages with masked
 CU1 clear (0x0400FF00), 839.425 seconds, no skips. The callee-return boundary
 guard runs on every page. Linked text 4,640 / 656 excess; observed descent
 3,240 equals bound, minimum SP 0x80031D68 / known-neighbor margin 88.
 Sixteen supporting gates pass; decoder/adapter/test blobs unchanged. Current
-CU1-clear gate checked off, matching CU1-set and fitting/ownership/hardware
-remain open. Production/defaults/README totals unchanged.
+CU1-clear gate checked off; matching CU1-set now passes in Note 878, while
+fitting/ownership/hardware remain open. Production/defaults/README totals unchanged.
 
 Init pointer/argument ownership trials: [Note 876](WORKING_NOTES/876-init-unretained-pointer-argument-ownership-trials-20261004.md)
 measures direct input argument, workspace address from state and their

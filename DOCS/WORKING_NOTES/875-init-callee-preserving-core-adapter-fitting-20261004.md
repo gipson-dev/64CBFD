@@ -4,7 +4,8 @@ Date: 2026-10-04. Baseline: `44dadc33`.
 
 Follow-up: [Note 877](877-init-callee-adapter-full-masked-cu1-clear-corpus-20261004.md)
 qualifies all 507 current packed-remaining O2/g3 pages with masked CU1 clear
-and the active callee-return boundary guard. Matching CU1-set corpus remains open.
+and the active callee-return boundary guard. [Note 878](878-init-callee-adapter-full-masked-cu1-set-corpus-20261004.md)
+adds the matching CU1-set run, totaling 1,014 paired pages across both masked modes.
 
 ## Result
 
@@ -91,7 +92,7 @@ No entire ELF/ROM match, production build or sibling-port test is claimed.
 - [x] Verify callee values at the core return boundary and activate a clobber guard.
 - [x] Preserve saved frame cells and qualify six bounded shapes.
 - [x] Qualify the changed combination's full masked CU1-clear corpus (Note 877).
-- [ ] Qualify the matching current-combination full masked CU1-set corpus.
+- [x] Qualify the matching current-combination full masked CU1-set corpus (Note 878).
 - [ ] Continue fitting, entry ownership and hardware/context/complete-reservation gates.
 
 The new corpus class is InitDecompressorCalleePreservingAdapterCorpusTests.

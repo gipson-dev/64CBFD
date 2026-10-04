@@ -2,6 +2,11 @@
 
 Date: 2026-10-04. Source baseline: `59d050ea` (unchanged Notes 873/875).
 
+Follow-up: [Note 878](878-init-callee-adapter-full-masked-cu1-set-corpus-20261004.md)
+passes the matching CU1-set corpus with unchanged source. Together these
+receipts cover 1,014 paired pages across both masked modes for the current
+packed-remaining O2/g3 core/adapter combination.
+
 ## Selection
 
 This qualifies the retained first-refill lookup core plus callee-preserving
@@ -88,7 +93,7 @@ the terminal result. Project tool and whitespace checks pass.
 ## Remaining Gates
 
 - [x] Finish all 507 current-combination masked CU1-clear pages.
-- [ ] Qualify the matching current-combination masked CU1-set corpus.
+- [x] Qualify the matching current-combination masked CU1-set corpus (Note 878).
 - [ ] Continue size fitting and entry ownership/hardware/context/reservation gates.
 
 No production ROM build or sibling-port test is claimed. Production sources,
