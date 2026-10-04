@@ -4,7 +4,10 @@ import csv
 import re
 import struct
 import sys
+from collections import Counter
 from pathlib import Path
+
+import yaml
 
 
 def generated_slice_replacement(name):
@@ -63,6 +66,123 @@ def restore_init_audio_data_order(text):
     marker = "        build/asm/data/2C770.rodata.s.o(.rodata);"
     block = block.replace(marker, "        . = ABSOLUTE(0x8002C770);\n" + marker)
     return text[:start] + block + text[end:]
+
+
+def load_game_data_layout(project_dir):
+    config = yaml.safe_load((project_dir / "conker.us.yaml").read_text())
+    if not isinstance(config, dict) or not isinstance(config.get("segments"), list):
+        raise ValueError("Game data YAML needs a segment list")
+    segments = config["segments"]
+    matches = [i for i, segment in enumerate(segments)
+               if isinstance(segment, dict) and segment.get("name") == "game_data"]
+    if len(matches) != 1:
+        raise ValueError("expected one Game data YAML segment")
+    index = matches[0]
+    if index + 1 >= len(segments):
+        raise ValueError("Game data YAML segment needs an end boundary")
+    segment = segments[index]
+    following = segments[index + 1]
+    if not isinstance(following, dict) and not (isinstance(following, list) and following):
+        raise ValueError("invalid Game data end segment")
+    end = following.get("start") if isinstance(following, dict) else following[0]
+    start, vram = segment.get("start"), segment.get("vram")
+    entries = segment.get("subsegments")
+    if not isinstance(entries, list) or not entries:
+        raise ValueError("Game data YAML needs nonempty owner entries")
+    for entry in entries:
+        if not isinstance(entry, list) or len(entry) not in (2, 3):
+            raise ValueError(f"malformed Game data owner: {entry}")
+        if type(entry[0]) is not int or entry[0] < 0 or entry[0] & 3:
+            raise ValueError(f"unaligned or invalid Game data owner: {entry}")
+        if len(entry) == 3 and (not isinstance(entry[2], str) or
+                               not re.fullmatch(r"[A-Za-z0-9_/-]+", entry[2]) or
+                               any(part in ("", ".", "..") for part in entry[2].split("/"))):
+            raise ValueError(f"invalid Game data owner name: {entry}")
+    if any(type(value) is not int or not 0 <= value <= 0xFFFFFFFF
+           for value in (start, vram, end)) or vram & 3 or vram + end - start > 0xFFFFFFFF:
+        raise ValueError("invalid Game data segment boundaries")
+    offsets = [entry[0] for entry in entries] + [end]
+    if not offsets or offsets[0] != start or any(a >= b for a, b in zip(offsets, offsets[1:])):
+        raise ValueError("Game data YAML spans must be contiguous and increasing")
+    owners = []
+    for entry, next_offset in zip(entries, offsets[1:]):
+        offset, kind = entry[:2]
+        name = entry[2] if len(entry) == 3 else f"{offset:X}"
+        if kind in ("data", "rodata"):
+            path, section = f"asm/data/{name}.{kind}.s.o", f".{kind}"
+        elif kind == "bin":
+            path, section = f"assets/{name}.bin.o", ".data"
+        elif kind == ".rodata" and len(entry) == 3:
+            path, section = f"src/{name}.c.o", ".rodata"
+        else:
+            raise ValueError(f"unsupported Game data owner: {entry}")
+        owners.append({"rom": offset, "address": vram + offset - start,
+                       "end": vram + next_offset - start, "section": section,
+                       "input": f"build/{path}({section})"})
+    if len({owner["input"] for owner in owners}) != len(owners):
+        raise ValueError("duplicate Game data YAML owner")
+    return start, vram, end, owners
+
+
+def restore_game_data_order(text, project_dir):
+    if "game_data_DATA_START" not in text:
+        return text
+    start_marker = "        game_data_DATA_START = .;"
+    end_marker = "        game_data_RODATA_END = .;"
+    if text.count(start_marker) != 1 or text.count(end_marker) != 1:
+        raise ValueError("expected one Game data linker owner block")
+    start, end = text.index(start_marker), text.index(end_marker)
+    block = text[start:end]
+    rom_start, vram, rom_end, owners = load_game_data_layout(project_dir)
+    expected = [owner["input"] for owner in owners]
+    # Existing ignored splat scripts can still select these now-empty C pools.
+    # The updated YAML regenerates assembly owners; accept either input spelling
+    # on first repair, but retain the same strict duplicate/missing-owner gate.
+    for source, address in (("libultra/gu/guPerspectiveF", "23D870"),
+                            ("libultra/gu/guRotateF", "23D880"),
+                            ("game/done/game_75810", "23D890"),
+                            ("game/done/game_75950", "23D8A0")):
+        restored = f"build/asm/data/{address}.rodata.s.o(.rodata)"
+        if restored in expected:
+            block = block.replace(f"build/src/{source}.c.o(.rodata);", restored + ";")
+    selector = r"\s*(build/[^;\s]+\.o\([^;\n]+\));\s*"
+    for line in block.splitlines():
+        if line.strip().startswith("ASSERT("):
+            continue
+        if (".o(" in line and not re.fullmatch(selector, line)) or "*(" in line:
+            raise ValueError("Game data owners differ from YAML: unrecognized input " + line.strip())
+    inputs = re.findall("^" + selector + "$", block, re.M)
+    if Counter(inputs) != Counter(expected):
+        missing = list((Counter(expected) - Counter(inputs)).elements())
+        extra = list((Counter(inputs) - Counter(expected)).elements())
+        raise ValueError(f"Game data owners differ from YAML: missing={missing}, extra={extra}")
+
+    # Splat's type grouping loses retail's interleaving. Each YAML owner has a
+    # fixed physical span; the linker must reject overflow rather than shift it.
+    lines = [start_marker]
+    readonly_started = False
+    for owner in owners:
+        lines.append(f"        . = ABSOLUTE(0x{owner['address']:08X});")
+        if not readonly_started and owner["section"] == ".rodata":
+            lines.extend(("        game_data_DATA_END = .;",
+                          "        game_data_DATA_SIZE = ABSOLUTE(game_data_DATA_END - game_data_DATA_START);",
+                          "        game_data_RODATA_START = .;"))
+            readonly_started = True
+        lines.append(f"        {owner['input']};")
+        lines.append(f"        ASSERT(. <= ABSOLUTE(0x{owner['end']:08X}), "
+                     f'"Game data owner exceeds retail span: {owner["input"]}");')
+    if not readonly_started:
+        raise ValueError("Game data YAML has no rodata owner")
+    lines.append(f"        . = ABSOLUTE(0x{vram + rom_end - rom_start:08X});")
+    result = text[:start] + "\n".join(lines) + "\n" + text[end:]
+    header = re.compile(r"(^\s*\.game_data\s+0x([0-9A-Fa-f]+)\s*:\s*"
+                        r"AT\(game_data_ROM_START\)\s+SUBALIGN\()\d+(\))", re.M)
+    matches = list(header.finditer(result))
+    if len(matches) != 1 or int(matches[0].group(2), 16) != vram:
+        raise ValueError("Game data linker base does not match YAML")
+    # Explicit anchors own alignment, including the retail eight-byte boundary
+    # at 0x236578; SUBALIGN(16) would advance past that owner's address.
+    return header.sub(lambda match: match.group(1) + "4" + match.group(3), result)
 
 
 def replace_generated_slices(text, project_dir):
@@ -256,6 +376,7 @@ def main() -> int:
     )
     text = restore_init_audio_data_order(text)
     text = anchor_init_math_rodata(text)
+    text = restore_game_data_order(text, project_dir)
     path.write_text(text)
     return 0
 

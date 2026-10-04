@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 942](WORKING_NOTES/942-game-physical-data-order-and-literal-pool-restoration-20261004.md)
+  closes the physical data-layout gate: all 189,088 bytes / 720 owners match
+  retail after owner-order, literal-pool and targeted padding repairs. The
+  full link and 53 tests pass; Init is preserved and instruction aggregates
+  remain unchanged. Detailed results stay here, not in the README.
+
 - Init [Note 941](WORKING_NOTES/941-init-bitmap-unsigned-induction-guest-qualification-20261004.md)
   records two rejected unsigned-induction bitmap trials and new actual guest
   differential tests. All 46 focused tests pass; 1,002 completed pairs and

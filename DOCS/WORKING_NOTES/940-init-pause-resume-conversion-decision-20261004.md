@@ -2,6 +2,11 @@
 
 Date: 2026-10-04. Starting HEAD: `6b5593d7`.
 
+Follow-up: [Note 942](942-game-physical-data-order-and-literal-pool-restoration-20261004.md)
+restores a successful production link and exact Game data. The absent-ELF
+boundary below describes this assessment's earlier checkpoint, not current
+build status. Init conversion gates and production ownership are unchanged.
+
 ## Answer
 
 Some remaining Init assembly can be expressed in C, but **none of the

@@ -2,6 +2,12 @@
 
 Date: 2026-10-04. Starting HEAD: `a3e59dbe`.
 
+Follow-up: [Note 942](942-game-physical-data-order-and-literal-pool-restoration-20261004.md)
+resolves the physical layout gate in a fresh production link: all 189,088
+Game-data bytes match retail and the pan coefficient is at 0x800A1350.
+The original failing evidence below is historical; guest gameplay acceptance
+remains separate from instruction and physical-data matching.
+
 ## Result And Boundary
 
 `func_150E7C9C` now has its semantic update body instead of a zero-return

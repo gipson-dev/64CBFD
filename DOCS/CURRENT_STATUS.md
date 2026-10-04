@@ -21,30 +21,39 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game physical data repair: [Note 942](WORKING_NOTES/942-game-physical-data-order-and-literal-pool-restoration-20261004.md)
+restores retail owner order, four missing pools and the table's no-padding
+assembly profile. Fresh full link succeeds; all 189,088 physical Game-data
+bytes / 720 owners match retail. Pan coefficient is correct at 0x800A1350.
+Fifty-three tests pass; Init code/data remain exact and both curves retain
+194/212 direct matches. Aggregate counts unchanged. The earlier layout/build
+gate is resolved statically; guest gameplay acceptance is still separate.
+Next semantic target: `func_150E81A8`'s verified zero-return placeholder.
+
 Init unsigned-induction trials: [Note 941](WORKING_NOTES/941-init-bitmap-unsigned-induction-guest-qualification-20261004.md)
 reject two new bitmap shapes: unsigned equality is byte-identical to the
 20-word pointer control; countdown emits 22 words against nineteen retail.
 Eight new / 46 combined tests pass, including 1,002 completed retail/C pairs
 and twelve bounded prefixes with alias/fence rejecting controls. Production
-Init ownership/counts remain unchanged; finish the preserved Game layout repair
-before claiming a new production link or starting another conversion batch.
+Init ownership/counts remain unchanged. Its then-open Game link gate is now
+resolved by Note 942; the rejected bitmap forms are not production conversions.
 
 Init pause-resume decision: [Note 940](WORKING_NOTES/940-init-pause-resume-conversion-decision-20261004.md)
 recounts 492 C / 47 assembly entries and verifies all retained source owners.
 Fifty-four focused tests pass, including fresh connected formatter trials.
 Bitmap/MMIO remain the smallest C candidates; no replacement is ready to adopt.
 Decoder is still 528 linked bytes too large; glyph fitting/ownership remain open.
-Preserved pre-edit ELF Init code/data match all retail bytes, but the unfinished
-Game linker trial currently has no production ELF. Keep that distinction explicit.
+Preserved pre-edit ELF Init code/data matched all retail bytes. Note 942 now
+also verifies a successfully rebuilt production ELF with exact Init sections.
 
 Game curve update: [Note 939](WORKING_NOTES/939-game-curve-update-direct-match-and-data-placement-gate-20261004.md)
 recovers `func_150E7C9C` and confirms the payload cursor. All 212 words emit
 directly from C, original 0xA8 frame, no guards; builder remains 194/194 exact.
 Thirty-two focused tests pass, including the actual builder/update/helper chain.
 Fresh matcher Game 2605 / total 3278 exact, zero instruction address drift.
-**Runtime gate:** linked pan coefficient is at 0x800A2910 instead of 0x800A1350;
-the latter contains 0x4675E800, not 0x3EDCEE77. Audit Game-data placement next,
-before another conversion batch. Instruction matching is not data acceptance.
+**Layout gate resolved by Note 942:** the displaced coefficient is restored to
+0x800A1350 with value 0x3EDCEE77, and the complete data image is exact.
+Instruction/data matching still does not establish guest gameplay acceptance.
 
 Game random curve record: [Note 938](WORKING_NOTES/938-game-random-curve-record-direct-byte-match-20261004.md)
 recovers `func_150E7994`'s packet, allocator, metadata and sampled curve body.

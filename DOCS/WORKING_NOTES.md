@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 942](WORKING_NOTES/942-game-physical-data-order-and-literal-pool-restoration-20261004.md)):
+Game-data owner order, four missing pools and one table's assembler padding
+are repaired. Fresh full link succeeds; 189,088 bytes / 720 owners match retail.
+Fifty-three tests pass; Init is preserved, both curves stay direct matches,
+and five linked data-relocation words now equal raw retail. Counts unchanged.
+Static layout gate closed; next semantic placeholder is `func_150E81A8`.
+
 2026-10-04 ([Note 941](WORKING_NOTES/941-init-bitmap-unsigned-induction-guest-qualification-20261004.md)):
 Unsigned address equality/countdown trials do not fit the nineteen-word bitmap.
 Eight new / 46 combined tests pass; 1,002 completed guest pairs and twelve

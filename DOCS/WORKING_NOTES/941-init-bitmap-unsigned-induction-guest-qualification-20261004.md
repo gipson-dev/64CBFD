@@ -2,6 +2,10 @@
 
 Date: 2026-10-04. Starting HEAD: `6b5593d7`.
 
+Follow-up: [Note 942](942-game-physical-data-order-and-literal-pool-restoration-20261004.md)
+finishes the then-pending Game layout repair and production link. Both bitmap
+trials remain rejected; this note's Game repair handoff is now completed.
+
 ## New Hypothesis
 
 Following [Note 940](940-init-pause-resume-conversion-decision-20261004.md),

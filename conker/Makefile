@@ -378,7 +378,7 @@ replace: $(VERIFY) $(TARGET).header.bin $(TARGET).boot.bin $(TARGET).init.bin $(
 
 ### Recipes
 
-$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) ../tools/patch_generated_slice_ld.py $(O_FILES)
+$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(BASENAME).$(VERSION).yaml ../tools/patch_generated_slice_ld.py $(O_FILES)
 	$(CPP) -P -DBUILD_DIR=$(BUILD_DIR) -o $@ $<
 	$(PYTHON) ../tools/patch_generated_slice_ld.py $@ $(VERSION)
 
@@ -483,6 +483,13 @@ endif
 
 $(BUILD_DIR)/%.c.o: %.c
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@ $<
+
+ifeq ($(VERSION),us)
+# This retail owner starts eight bytes into a sixteen-byte boundary and owns
+# exactly fourteen words. MIPS as's default trailing padding is not table data.
+$(BUILD_DIR)/asm/data/236578.data.s.o: ASFLAGS += -no-pad-sections
+$(BUILD_DIR)/asm/data/236578.data.s.o: Makefile
+endif
 
 $(BUILD_DIR)/%.s.o: %.s
 	$(AS) $(ASFLAGS) -o $@ $<
