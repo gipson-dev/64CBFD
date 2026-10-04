@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-04 ([Note 945](WORKING_NOTES/945-game-world-emitter-dispatch-direct-byte-match-20261004.md)):
+Game `func_150E81A8` is recovered as semantic world-emitter/packet dispatch.
+All 129 words match directly, original 0x90 frame, no guards. Fifty-nine tests
+and fresh link pass; Game data, Init sections, curves and adjacent assembly
+remain exact. Game 2606 / total 3279 exact, zero drift; README rows updated.
+Next placeholder is `func_150E8930`; no Init or sibling ownership changes.
+
 2026-10-04 ([Note 944](WORKING_NOTES/944-init-bitmap-exit-edge-control-flow-trials-20261004.md)):
 Two new exit-edge bitmap forms are rejected. Taken-edge increment removes XOR
 but adds an entry jump, retaining twenty words against nineteen retail.

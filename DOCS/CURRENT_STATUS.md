@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game world-emitter dispatch: [Note 945](WORKING_NOTES/945-game-world-emitter-dispatch-direct-byte-match-20261004.md)
+recovers `func_150E81A8`'s selected world position, descriptor and random packet.
+All 129 words match directly from C, original 0x90 frame, no guards. Fifty-nine
+tests and a fresh production relink pass. Full Game data and Init code/data
+stay exact, as do both curves and all three adjacent assembly owners. Game
+2606 / total 3279 exact, zero drift; README matching rows updated. Next semantic
+target is the verified `func_150E8930` placeholder; Init ownership unchanged.
+
 Init bitmap exit-edge trials: [Note 944](WORKING_NOTES/944-init-bitmap-exit-edge-control-flow-trials-20261004.md)
 tests separate-final-store and taken-edge-increment forms. The latter removes
 XOR but adds an entry jump: twenty words, still over nineteen retail. Eight

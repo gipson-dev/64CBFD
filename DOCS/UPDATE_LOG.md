@@ -18,6 +18,12 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 945](WORKING_NOTES/945-game-world-emitter-dispatch-direct-byte-match-20261004.md)
+  recovers `func_150E81A8` and matches all 129 words directly from C. Fifty-nine
+  tests and a fresh production relink pass; full Game data, Init code/data and
+  neighboring exact bodies are preserved. README matching rows now show Game
+  2606 / total 3279 exact; detailed recovery evidence stays in working docs.
+
 - Init [Note 944](WORKING_NOTES/944-init-bitmap-exit-edge-control-flow-trials-20261004.md)
   records two new exit-edge source shapes and eight guest-fixture tests.
   All 54 combined tests pass, with 1,002 new pairs/twelve bounded prefixes;

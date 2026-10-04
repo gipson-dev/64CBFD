@@ -19,6 +19,11 @@ extern f32 D_800A1340;
 extern f32 D_800A1344;
 extern f32 D_800A1348;
 extern f32 D_800A134C;
+extern f32 D_800A1354;
+extern f32 D_800A1358;
+extern f32 D_800A135C;
+extern f32 D_800A1360;
+extern f32 D_800A1364;
 extern s32 D_80088A5C[2];
 extern u8 D_80088A64;
 extern s32 D_80088A68[3];
@@ -76,6 +81,45 @@ typedef struct CurvePayload113D60 {
     s16 count;
     s16 cursor;
 } CurvePayload113D60;
+
+typedef struct WorldPosition113D60 {
+    f32 x;
+    f32 y;
+    f32 z;
+} WorldPosition113D60;
+
+typedef struct WorldEmitterDescriptor113D60 {
+    s16 field00;
+    s16 field02;
+    s16 field04;
+    s16 field06;
+    s32 field08;
+    s32 field0C;
+    WorldPosition113D60 position;
+    f32 field1C;
+    f32 field20;
+    f32 field24;
+    f32 field28;
+    f32 field2C;
+    f32 field30;
+    s32 field34;
+    s32 field38;
+    f32 field3C;
+    f32 field40;
+    f32 field44;
+    f32 field48;
+    s16 field4C;
+    s16 field4E;
+    s16 field50;
+    s16 field52;
+    s16 field54;
+    s16 field56;
+    s8 field58;
+    u8 pad59[3];
+} WorldEmitterDescriptor113D60;
+extern WorldPosition113D60 D_800A1290[8];
+void func_151D3FF4(WorldPosition113D60 *position, u8 slot, s32 context);
+void func_1514FCE8(WorldEmitterDescriptor113D60 *descriptor, u8 slot, s32 context);
 s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, s32 duration,
                  s32 opacity, s32 size0, s32 size1, s32 *pair, s32 mode,
                  u8 slot, s32 context);
@@ -410,8 +454,49 @@ void func_150E7C9C(u8 *record) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_113D60/func_150E7FEC.s")
 
-s32 func_150E81A8() {
-    return 0;
+void func_150E81A8(u8 index, u8 slot, s32 context) {
+    WorldPosition113D60 position;
+    WorldEmitterDescriptor113D60 descriptor;
+    RandomPacket113D60 packet;
+
+    if (index == 4 || index == 5 || index == 6 || index == 7) {
+        position = D_800A1290[index];
+        position.y += 200.0f;
+        func_151D3FF4(&position, slot, context);
+        descriptor.field00 = 0;
+        descriptor.field02 = 255;
+        descriptor.field04 = -64;
+        descriptor.field06 = 77;
+        descriptor.field08 = 10;
+        descriptor.field0C = 5;
+        descriptor.position = position;
+        descriptor.field1C = 252.0f;
+        descriptor.field20 = 117.0f;
+        descriptor.field24 = 308.0f;
+        descriptor.field28 = 256.0f;
+        descriptor.field2C = D_800A1354;
+        descriptor.field30 = D_800A1358;
+        descriptor.field34 = 4;
+        descriptor.field38 = 7;
+        descriptor.field3C = 27.0f;
+        descriptor.field40 = D_800A135C;
+        descriptor.field44 = D_800A1360;
+        descriptor.field48 = D_800A1364;
+        descriptor.field4C = 25;
+        descriptor.field4E = 15;
+        descriptor.field50 = 100;
+        descriptor.field52 = 100;
+        descriptor.field54 = 12;
+        descriptor.field56 = 20;
+        descriptor.field58 = 0;
+        func_1514FCE8(&descriptor, slot, context);
+        packet.kind = 1;
+        packet.duration = (u32)func_150ADA20() % 11 + 30;
+        packet.count = 8;
+        packet.index = -1;
+        packet.mode = 1;
+        func_151D8868(&packet, 0, 255, 0);
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_113D60/func_150E83AC.s")
