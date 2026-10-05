@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-05 Game Counted Pointer Loader Direct Recovery
+
+[Note 1003](WORKING_NOTES/1003-game-counted-pointer-loader-direct-match-and-full-caller-20261005.md)
+replaces `func_1502B7F0`'s placeholder with SDK-varargs traversal, pointer
+output and separate unsigned returned size. All 60 words / frame 0x48
+emit directly under default IDO O2/g3; no guards/profile override. Original
+incoming descriptor/private size and live pointer-store/size-reload order
+are retained. Native qualification is positive descriptor-writing paths
+only. Actual lookup/cache/block and 432 full Game caller cases pass,
+including unsigned division/fallback behavior and NULL/nonzero size.
+The shared declaration/caller cast are aligned; all 6060 slots audited,
+only target changes. Rebuild/protected sections/tools/whitespace pass. All
+261 combined checks pass in 217.336 seconds, no skips. README aggregates: 3299 / 5463 overall,
+2626 / 4790 Game, zero drift. Conversion/Init ASM, patch table and sibling/
+frozen Release unchanged. Next: `func_1502B9B4`, phase-aligned header size query.
+
 ## 2026-10-05 Game Optional-Size Loader Direct Recovery
 
 [Note 1002](WORKING_NOTES/1002-game-optional-size-loader-direct-match-and-live-output-aliases-20261005.md)

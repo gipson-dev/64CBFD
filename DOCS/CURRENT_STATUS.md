@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game counted-pointer resource loader direct recovery: [Note 1003](WORKING_NOTES/1003-game-counted-pointer-loader-direct-match-and-full-caller-20261005.md)
+recovers `func_1502B7F0`: all 60 words / frame 0x48 directly from default
+IDO O2/g3, no guards/profile override. A for-loop update resolves the final
+two store schedules. Private size, incoming descriptor at entry SP-0x14,
+post-block output-home reread and final pointer-store/size-reload aliases
+remain intact; native cases use positive descriptor-writing paths only.
+All 1470 boundary, 162 actual-callee, 72 connected global-alias and 432 full
+Game caller cases pass. Shared variadic declaration and sole active caller's
+cast are aligned; its complete 112-word slot stays exact, including original
+unsigned division/fallback behavior. All 6060 slots audited: only target
+changes. Rebuild: 3299 / 5463 overall, 2626 / 4790 Game, zero drift.
+Protected sections/tools/whitespace pass. All 261 combined checks pass in
+217.336 seconds, no skips.
+README aggregates updated; conversion/Init ASM, patch table and sibling/frozen
+Release unchanged. Next: `func_1502B9B4`, size-query wrapper with compressed
+header read and stack-phase-dependent alignment, 69 body words / frame 0x68.
+
 Game optional-size resource loader direct recovery: [Note 1002](WORKING_NOTES/1002-game-optional-size-loader-direct-match-and-live-output-aliases-20261005.md)
 recovers `func_1502B5C8` from its zero-return placeholder. All 61 words / frame
 0x50 emit directly under default IDO O2/g3, no guards/profile override. The

@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `9ea429a8`.
 
+Follow-up: [Note 1003](1003-game-counted-pointer-loader-direct-match-and-full-caller-20261005.md)
+completes the next pointer-output/returned-size wrapper and its full caller.
+The results and next-target description below are this note's historical
+checkpoint, not the latest resume boundary.
+
 ## Result And Scope
 
 `func_1502B5C8`'s zero-return placeholder is replaced with semantic SDK-varargs

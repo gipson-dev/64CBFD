@@ -17,7 +17,7 @@ void func_15016690(s32 arg0) {
 
     D_800D2120 = -1;
     D_800D2124 = -1;
-    tmp = func_1502B7F0(&D_800D212C, 3, 12, arg0, 6) / 24U;
+    tmp = func_1502B7F0((void **)&D_800D212C, 3, 12, arg0, 6) / 24U;
     D_800D2128 = tmp;
     if (tmp == 0) {
         D_800D212C = allocate_memory(24, 1, 0, 0);

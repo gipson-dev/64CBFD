@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-05 ([Note 1003](WORKING_NOTES/1003-game-counted-pointer-loader-direct-match-and-full-caller-20261005.md)):
+Recover `func_1502B7F0`'s SDK-varargs pointer-output/separate-size wrapper.
+All 60 words / frame 0x48 emit directly from default IDO O2/g3 without
+guards/profile overrides; for-loop update resolves two scheduling words.
+Original incoming descriptor, private size, post-block output-home reread
+and final pointer-store/size-reload aliases remain. Native qualification
+uses positive descriptor-writing paths only. Boundary/actual-callee/global-
+alias and 432 full Game caller cases pass, including unsigned division by
+24 and both fallback layouts. Shared declaration/caller cast aligned;
+all 6060 slots audited, only target changes. Rebuild: 3299 / 5463 overall,
+2626 / 4790 Game, zero drift; protected sections/tools pass.
+All 261 combined checks pass in 217.336 seconds, no skips; tools/whitespace
+and relative links pass. README aggregates updated;
+conversion/Init ASM, patch table and sibling/frozen Release unchanged.
+Next: `func_1502B9B4`, size query and phase-aligned compressed-header read.
+
 2026-10-05 ([Note 1002](WORKING_NOTES/1002-game-optional-size-loader-direct-match-and-live-output-aliases-20261005.md)):
 Recover `func_1502B5C8`'s optional-size SDK-varargs resource wrapper. All 61
 words / frame 0x50 emit directly from default IDO O2/g3, no guards/profile

@@ -320,39 +320,32 @@ void *func_1502B6BC(s32 *size, s32 count, s32 *relocated, s32 depth, ...) {
     }
     return result;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B7F0.s. */
-s32 func_1502B7F0(s32*arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
-    return 0;
+/* Retail leaves the descriptor unwritten on the zero-depth path. */
+u32 func_1502B7F0(void **output, u32 depth, ...) {
+    va_list path;
+    s32 component;
+    u32 base;
+    s32 size;
+    u32 descriptor;
+
+    size = 1;
+    base = (u32)D_AB1950;
+    va_start(path, depth);
+    for (; depth != 0; depth--) {
+        component = va_arg(path, s32);
+        if (size != 0) {
+            base += func_1502AC88(base, component, &descriptor);
+        }
+        size = descriptor & 0x0FFFFFFF;
+    }
+    if (size != 0) {
+        *output = func_1502B350(base, descriptor, &size);
+    } else {
+        *output = NULL;
+    }
+    va_end(path);
+    return (u32)size;
 }
-// void func_1502B7F0(s32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
-//     s32 sp38;
-//     s32 sp34;
-//     s32 temp_s1;
-//     s32 offset;
-//     s32 i;
-//
-//     sp38 = 1;
-//     offset = &D_00AB1950; // 0xAB1950 - assets offsets table
-//     temp_s1 = &arg2;
-//
-//     i = arg1;
-//     if (i != 0) {
-//         do {
-//             temp_s1 = ALIGN4(temp_s1);
-//             if (sp38 != 0) {
-//                 offset += func_1502AC88(offset, temp_s1, &sp34);
-//             }
-//             sp38 = sp34 & 0xFFFFFFF;
-//             temp_s1 += 1;
-//         } while (i-- != 0);
-//     }
-//
-//     if (sp38 != 0) {
-//         *arg0 = func_1502B350(offset, sp34, &sp38);
-//     } else {
-//         *arg0 = 0;
-//     }
-// }
 
 /* Retail leaves the descriptor unwritten on the zero-depth path. */
 u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...) {

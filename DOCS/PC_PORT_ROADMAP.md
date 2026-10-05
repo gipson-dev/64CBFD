@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Game Counted Pointer Loader Direct Recovery - 2026-10-05
+
+[Note 1003](WORKING_NOTES/1003-game-counted-pointer-loader-direct-match-and-full-caller-20261005.md)
+recovers DECOMP `func_1502B7F0`, all 60 words / frame 0x48 directly from
+default IDO, no guards/profile override. Incoming descriptor seeds, private
+size and live output-home/size rereads remain intact. This preserves target
+instructions, not defined native zero-depth behavior or a host transplant.
+Actual lookup/cache/block and 432 full Game caller cases pass; its original
+unsigned division/fallback record layouts stay intact. Shared prototype
+alignment changes no other slot across all 6060 audited functions.
+Protected sections/tools/whitespace pass. All 261 combined checks pass in
+217.336 seconds, no skips. Game exact count: 2626 / 4790. Sibling already has translated original frame,
+output-home reread and returned size; no maintained PC override/reference.
+No host source, build, save or frozen Release change. Actual SDK, gameplay,
+rendering and PC runtime acceptance remain separate. Next bounded DECOMP
+target: `func_1502B9B4`, size-query and phase-aligned compressed-header read.
+
 ## Game Optional-Size Loader Direct Recovery - 2026-10-05
 
 [Note 1002](WORKING_NOTES/1002-game-optional-size-loader-direct-match-and-live-output-aliases-20261005.md)
