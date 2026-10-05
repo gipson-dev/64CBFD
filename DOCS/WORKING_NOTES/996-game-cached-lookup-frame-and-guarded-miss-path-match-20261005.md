@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `8f705752`.
 
+Follow-up: [Note 997](997-game-table-range-loader-direct-recovery-and-caller-qualification-20261005.md)
+recovers the next table-range loader directly from C, retaining this lookup's
+checked guards and connecting both through the retail variadic caller. Counts
+below are this note's historical checkpoint.
+
 ## Source Recovery
 
 Target: `func_1502AC88`, `conker/src/game_57FA0.c`. Entry/end:

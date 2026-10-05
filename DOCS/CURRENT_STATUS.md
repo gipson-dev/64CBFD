@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game table-range loader direct recovery: [Note 997](WORKING_NOTES/997-game-table-range-loader-direct-recovery-and-caller-qualification-20261005.md)
+replaces `func_1502AF04`'s false zero-return placeholder with its semantic
+DMA/in-place pair-offset body. All 71 words and the 0x40 frame emit directly
+under default IDO O2/g3, no guards/profile override. Safe call-argument shape
+avoids a rejected raw-exact unsequenced read/write trial. All 6336 native,
+12672 instruction and 60 connected retail-wrapper cases pass; both stack
+phases and buffer alignment/unsigned wrap contracts hold. All 190 final
+checks pass, no skips, with protected sections exact after rebuilding.
+Totals: 3293 / 5463 overall, 2620 / 4790 Game, zero drift. README aggregates
+updated; conversion/Init ASM and patch table unchanged. Sibling/frozen Release
+untouched. Next: recover variadic table-range wrapper `func_1502B110`,
+69 words / 0x48 frame, retaining SDK varargs and descriptor-length gating.
+
 Game cached lookup guarded match: [Note 996](WORKING_NOTES/996-game-cached-lookup-frame-and-guarded-miss-path-match-20261005.md)
 matches all 159 linked `func_1502AC88` words. Address-parameter lifetime and
 declaration order recover the full body, retail 0xA0 frame and exact cache-hit

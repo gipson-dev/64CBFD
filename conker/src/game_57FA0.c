@@ -9,7 +9,7 @@
 /* Generated placeholder declarations. */
 void func_1502AB04(s32 count, u32 *pairs, u32 generation, u32 address);
 s32 func_1502AC88(u32 arg0, s32 arg1, u32 *arg2);
-s32 func_1502AF04();
+u32 *func_1502AF04(u32 base, void *buffer, u32 component, u32 count);
 s32 func_1502B020();
 s32 func_1502B110();
 s32 func_1502B224();
@@ -94,9 +94,20 @@ s32 func_1502AC88(u32 address, s32 arg1, u32 *arg2) {
     func_1502AB04(2, pairs, D_800C3D60, address);
     return offset;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502AF04.s. */
-s32 func_1502AF04() {
-    return 0;
+u32 *func_1502AF04(u32 base, void *buffer, u32 component, u32 count) {
+    typedef struct TableRangePair57FA0 { u32 offset; u32 descriptor; } Entry;
+    u32 address;
+    u8 *aligned;
+    u32 i;
+
+    component *= 8;
+    aligned = (u8 *)(((u32)buffer + 8) & ~0xF);
+    /* Keep the saved-address assignment independent of the length argument. */
+    func_10004514((address = base + component) & ~0xF, aligned, (((base + component) & 0xE) + count * 8 + 15) & ~0xF, 1);
+    for (i = 0; i < count; i++) {
+        ((Entry *)((u32)aligned + (address & 0xF)))[i].offset += base;
+    }
+    return (u32 *)((u32)aligned + (address & 0xF));
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B020.s. */
 s32 func_1502B020() {

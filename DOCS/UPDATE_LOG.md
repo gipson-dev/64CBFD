@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-05 Game Table-Range Loader Direct Recovery
+
+[Note 997](WORKING_NOTES/997-game-table-range-loader-direct-recovery-and-caller-qualification-20261005.md)
+recovers `func_1502AF04` from its zero-return placeholder. Its 71-word DMA and
+in-place pair-offset body matches directly, including the 0x40 frame; no
+guards or profile override. The safely sequenced DMA arguments reject an
+otherwise raw-exact unsequenced form. All 6336 native, 12672 instruction and
+60 connected retail-wrapper cases pass. All 190 final checks pass, no skips,
+with protected sections exact after rebuilding. README totals:
+3293 / 5463 overall, 2620 / 4790 Game, zero drift. Conversion/Init ASM and
+patch table unchanged; sibling/frozen Release untouched. Next:
+recover variadic table-range wrapper `func_1502B110`.
+
 ## 2026-10-05 Game Cached Lookup Guarded Match
 
 [Note 996](WORKING_NOTES/996-game-cached-lookup-frame-and-guarded-miss-path-match-20261005.md)

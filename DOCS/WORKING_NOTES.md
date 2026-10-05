@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-05 ([Note 997](WORKING_NOTES/997-game-table-range-loader-direct-recovery-and-caller-qualification-20261005.md)):
+Recover `func_1502AF04`'s DMA table-range and pair-offset semantics from its
+zero-return placeholder; all 71 words / frame 0x40 emit directly under the
+default profile, no guards. The 77-form screen retains a rejected raw-exact
+unsequenced-argument control and selects a safely sequenced exact source.
+All 6336 native, 12672 instruction and 60 connected retail-wrapper cases pass.
+All 190 final checks pass, no skips; protected sections remain exact.
+Totals: 3293 / 5463 overall, 2620 / 4790 Game, zero drift. README aggregates
+updated; conversion/Init ASM, patch table and sibling/frozen Release unchanged.
+Next: recover connected variadic table-range wrapper `func_1502B110`.
+
 2026-10-05 ([Note 996](WORKING_NOTES/996-game-cached-lookup-frame-and-guarded-miss-path-match-20261005.md)):
 Match all 159 linked `func_1502AC88` words using recovered address-parameter
 lifetime/local layout and twelve checked miss-path guards, not directly from C.

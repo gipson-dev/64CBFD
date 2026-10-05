@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Table-Range Loader Direct Recovery - 2026-10-05
+
+[Note 997](WORKING_NOTES/997-game-table-range-loader-direct-recovery-and-caller-qualification-20261005.md)
+recovers the DECOMP range loader `func_1502AF04` and matches all 71 words
+directly, no guards/profile override. The 6336 native, 12672 instruction and
+60 connected retail-wrapper cases retain buffer alignment, address/offset
+wrap and pointer-return behavior. All 190 final checks pass, no skips,
+including protected sections. Read-only sibling audit finds the translated
+retail +8 buffer alignment, full source mask, spill and fixup loop already
+present; no maintained PC override is found for this function. No host
+synchronization is needed. No host source, build, save or frozen Release change.
+Game exact count: 2620 / 4790. Real SDK DMA/copy, runtime and rendering
+acceptance remain separate and open; guest recovery is not a new host fix.
+
 ## Game Cached Lookup Guarded Match - 2026-10-05
 
 [Note 996](WORKING_NOTES/996-game-cached-lookup-frame-and-guarded-miss-path-match-20261005.md)
