@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Remaining Init decision: [Note 976](WORKING_NOTES/976-init-remaining-conversion-decision-and-decoder-cache-matrix-20261004.md)
+retains 47 ASM owners: seventeen investigation targets and thirty intentional
+boot/SDK/hardware/context routines. No replacement is ready. The new sixteen-
+case byte-depth cache matrix improves neither complete text nor stack; a
+persistent parent-mask recurrence grows O2 by 32 bytes and worsens O1 stack.
+The recurrence source/selector are removed and banked source contents restored.
+Best qualified decoder remains 4496 / 3984 bytes (512 over, actual adapter
+included). Bitmap remains 20 / 19 words, MMIO full eleven-word match unresolved,
+formatter connection 196 bytes over. Details and concrete adoption gates live
+in the dedicated note. Fresh 78 decoder/owner/slot/call and 43 bitmap/MMIO/
+formatter checks pass, no skips; all existing Init code/data and Game data
+remain retail-exact. README totals and production owners stay unchanged.
+
 Init byte-depth fitting: [Note 975](WORKING_NOTES/975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)
 qualifies an opt-in byte-offset builder depth. Both packed profiles save sixteen
 complete executable bytes: optimized C 4320 + actual 176-byte adapter = 4496,

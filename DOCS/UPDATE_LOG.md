@@ -18,6 +18,17 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 976](WORKING_NOTES/976-init-remaining-conversion-decision-and-decoder-cache-matrix-20261004.md)
+  records all remaining adoption decisions: seventeen investigation targets,
+  thirty intentional owners, no approved replacement. The sixteen-case cache
+  interaction matrix has no text/stack win; a persistent parent-mask recurrence
+  grows O2 by 32 bytes and increases O1 stack, so its source/selector are
+  removed before semantic qualification. Qualified decoder remains 4496 bytes,
+  512 over retail including adapter. Bitmap/MMIO/formatter gates remain open;
+  78 decoder/owner/slot/call plus 43 bitmap/MMIO/formatter checks pass, no skips.
+  All existing Init code/data and Game data remain raw retail-exact;
+  production owners, README totals, sibling and frozen Release stay unchanged.
+
 - Init [Note 975](WORKING_NOTES/975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)
   qualifies opt-in byte-depth builder induction. Both packed profiles save
   sixteen complete bytes; optimized executable is 4496, still 512 over retail.

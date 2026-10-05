@@ -2,6 +2,11 @@
 
 Date: 2026-10-04. Starting HEAD: `859c2cad`.
 
+Subsequent [Note 976](976-init-remaining-conversion-decision-and-decoder-cache-matrix-20261004.md)
+screens sixteen cache combinations and rejects a persistent parent-mask
+recurrence. Neither improves this qualified 4496-byte lead; production
+conversion and the remaining 512-byte fitting gap stay open.
+
 ## Result
 
 Continue Init fitting from

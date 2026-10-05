@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Remaining Init Conversion Decision - 2026-10-04
+
+[Note 976](WORKING_NOTES/976-init-remaining-conversion-decision-and-decoder-cache-matrix-20261004.md)
+classifies all 47 retained ASM entries: seventeen investigation targets and
+thirty intentional boot/SDK/hardware/context owners. No replacement is ready.
+The sixteen-case cache matrix does not improve the byte-depth decoder lead;
+the larger parent-mask recurrence is removed before semantic qualification.
+Best qualified decoder is 4496 / 3984 bytes, 512 over including the actual
+adapter. Bitmap is 20 / 19 words, MMIO full match open, connected formatter
+196 bytes over. Concrete steps and adoption gates are in the dedicated note.
+Fresh 78 decoder/owner/slot/call and 43 bitmap/MMIO/formatter checks pass,
+no skips; all existing Init code/data and Game data remain retail-exact.
+No production conversion or host decoder replacement; README totals, host
+files/builds, saves and frozen Release stay unchanged.
+
 ## Init Byte-Depth Fitting - 2026-10-04
 
 [Note 975](WORKING_NOTES/975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)

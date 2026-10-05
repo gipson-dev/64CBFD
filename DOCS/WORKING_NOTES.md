@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-04 ([Note 976](WORKING_NOTES/976-init-remaining-conversion-decision-and-decoder-cache-matrix-20261004.md)):
+Reassess remaining Init adoption: 47 ASM entries, seventeen investigation
+targets and thirty intentional owners; none ready to convert. Fresh sixteen-
+case cache interaction matrix gives no text/stack improvement. Persistent
+parent-mask recurrence adds 32 O2 bytes and worsens O1 stack; remove its source
+and selector before semantic qualification. Retained byte-depth decoder stays
+4496 / 3984 bytes, 512 over including actual adapter. Bitmap/MMIO/formatter
+gates remain. All 78 decoder/owner/slot/call and 43 bitmap/MMIO/formatter checks
+pass, no skips; complete existing Init/data and Game data remain retail-exact.
+No production owner, README total, host or Release change.
+
 2026-10-04 ([Note 975](WORKING_NOTES/975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)):
 Qualify opt-in byte-depth builder induction: both packed profiles save sixteen
 complete bytes; optimized candidate 4496 / 3984 retail, 512 over. Public/region
