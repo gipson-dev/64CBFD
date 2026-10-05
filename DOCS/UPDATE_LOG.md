@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-05 Game Light Selector Experiment
+
+[Note 986](WORKING_NOTES/986-game-light-selector-candidate-fitting-and-connected-frame-witness-20261005.md)
+banks full experimental `func_1515D914` and fourteen qualification checks.
+No-unroll complete text fits at 2224 / 2404 bytes; three profiles pass 17410
+standalone pairs each and the native fixture passes 192 retail-derived cases.
+A twelve-pair connected witness rejects promotion: the renderer's changed
+frame moves the first-directional seed and changes count/cursor. All 109
+final combined checks pass, no skips, with complete existing Init/Debugger/data
+exact. No production owner, README aggregate or sibling/frozen Release change.
+The formerly paused Game experiment files are banked together in this checkpoint.
+
 ## 2026-10-05 Init Bitmap Unsigned Sentinel
 
 [Note 985](WORKING_NOTES/985-init-bitmap-unsigned-one-past-record-fitting-20261005.md)

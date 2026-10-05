@@ -2,6 +2,12 @@
 
 Date: 2026-10-05. Starting HEAD: `29fea6a0`.
 
+Follow-up: [Note 986](986-game-light-selector-candidate-fitting-and-connected-frame-witness-20261005.md)
+recovers the complete light selector as an experiment and finds a fitting
+profile. Its connected first-directional witness makes this renderer's 0xB8
+versus retail 0x98 frame observable through a shifted uninitialized seed.
+The earlier modeled-selector corpus below does not prove that connection.
+
 ## Decision
 
 Continue [Note 982](982-game-viewport-command-helper-semantic-recovery-20261005.md)

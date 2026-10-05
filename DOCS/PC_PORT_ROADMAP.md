@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Light Selector Fitting And Frame Gate - 2026-10-05
+
+[Note 986](WORKING_NOTES/986-game-light-selector-candidate-fitting-and-connected-frame-witness-20261005.md)
+banks full DECOMP light-selector C as an experiment. No-unroll text fits
+2224 / 2404 bytes; all three profiles pass 17410 standalone pairs each,
+plus 192 native cases. Twelve connected caller/callee witnesses show why
+this does not qualify promotion: the renderer's larger frame moves an
+uninitialized first-directional seed, changing count and final cursor.
+Positional-first controls agree. All 109 final combined checks pass, no skips;
+existing Init/Debugger/data remain exact. Resolve the connected stack-lifetime
+gate and actual light helpers before host integration or pixel claims.
+No production/host replacement, README total, save or frozen Release change.
+
 ## Init Bitmap Unsigned Sentinel Trial - 2026-10-05
 
 [Note 985](WORKING_NOTES/985-init-bitmap-unsigned-one-past-record-fitting-20261005.md)

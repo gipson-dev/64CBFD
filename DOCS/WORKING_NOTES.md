@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 986](WORKING_NOTES/986-game-light-selector-candidate-fitting-and-connected-frame-witness-20261005.md)):
+Bank full experimental `func_1515D914`, its fourteen arguments, SDK packets
+and three-profile qualification. No-unroll fits 2212 body / 2224 text bytes
+versus 2404 retail. All 52230 standalone pair executions and 192 native cases
+pass, but twelve connected witnesses expose a caller-frame-dependent seed:
+directional count/cursor diverge under 0xB8 versus 0x98 renderer frames;
+positional-first controls agree. All 109 final combined checks pass, no skips;
+existing Init/Debugger/data stay exact. No production adoption, README total
+or sibling/Release change. Next gate is connected renderer/selector lifetime.
+
 2026-10-05 ([Note 985](WORKING_NOTES/985-init-bitmap-unsigned-one-past-record-fitting-20261005.md)):
 Test unsigned one-past sentinel and grouped-address interaction. Record
 no-unroll body fits nineteen words and removes XOR, but sixteen differ;

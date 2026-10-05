@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game light-selector experiment: [Note 986](WORKING_NOTES/986-game-light-selector-candidate-fitting-and-connected-frame-witness-20261005.md)
+recovers full fourteen-argument `func_1515D914` as experimental C. No-unroll
+O2/g3 fits 2212 body / 2224 complete bytes in the 2404-byte slot, versus
+default 2444 / 2448. All three profiles pass 17410 standalone pairs each;
+192 retail-derived native cases and 168 caller-relative seed products hold.
+However, twelve actual caller/callee witnesses expose the C renderer's
+0xB8 versus retail 0x98 frame: a first directional light reads a different
+physical seed, changes count 1 to 3 and moves the final cursor sixteen bytes.
+Positional-first controls agree. All 109 final combined checks pass, no skips;
+complete existing Init/Debugger/data remain exact. Keep the production stub.
+Resolve connected stack lifetime before adoption; helper algorithms, hardware
+and pixels remain open. README totals and sibling/frozen Release unchanged.
+
 Init bitmap unsigned sentinel: [Note 985](WORKING_NOTES/985-init-bitmap-unsigned-one-past-record-fitting-20261005.md)
 tests one-past unsigned stop arithmetic with ordered scalar and grouped-record
 captures. No-unroll record C fits nineteen body words with no XOR, but sixteen

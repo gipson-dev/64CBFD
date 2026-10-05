@@ -181,12 +181,21 @@ class RendererOracle(palette.PaletteUpdaterOracle):
         self.r[2] = result
 
     def run(self):
-        pc = ENTRY
+        pc = self.entry
         for _ in range(20000):
             self.visits.add(pc)
             word = self.code[pc]
             op, rs, rt = word >> 26, word >> 21 & 31, word >> 16 & 31
-            if op in (1, 4, 5, 6, 7, 20, 21):
+            if op == 17 and rs == 8:
+                assert rt in (0, 1, 2, 3), ('unsupported floating branch', rt)
+                immediate = word & 65535
+                offset = immediate if immediate < 32768 else immediate - 65536
+                take = self.condition == bool(rt & 1)
+                if take or not rt & 2:
+                    self.visits.add(pc + 4)
+                    self.execute(self.code[pc + 4])
+                pc = pc + 4 + offset * 4 if take else pc + 8
+            elif op in (1, 4, 5, 6, 7, 20, 21):
                 immediate = word & 65535
                 offset = immediate if immediate < 32768 else immediate - 65536
                 if op == 1:
