@@ -16,6 +16,19 @@ make -C conker progress
 
 ## 2026-10-02
 
+### 2026-10-05 current Init full corpus checkpoint
+
+- Init [Note 979](WORKING_NOTES/979-init-byte-depth-full-masked-cu1-corpus-qualification-20261005.md)
+  qualifies the banked byte-depth packed O2/g3 decoder in both masked CU1
+  modes: 507 pages each, 1014 paired runs pass in 1604.214 seconds, no skips.
+  Both terminal stack descents are 3248 bytes with 80-byte known-neighbor
+  clearance; reservation ownership is not inferred. Candidate hash, complete
+  allocation and all eight during-run source hashes hold. After terminal
+  receipt verification, reporter-only failure gates and two mocked controls
+  are added; all 32 supporting checks pass in 1.483 seconds, no skips.
+  Still 4496 / 3984 bytes, 512 over; entry/frame/private-stack/hardware gates
+  remain open. No production adoption, README aggregate or host/Release change.
+
 ### 2026-10-05 current Init fitting checkpoint
 
 - Init [Note 978](WORKING_NOTES/978-init-mmio-record-view-fitting-and-ordered-access-qualification-20261005.md)

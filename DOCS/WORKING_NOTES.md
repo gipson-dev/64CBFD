@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-05 ([Note 979](WORKING_NOTES/979-init-byte-depth-full-masked-cu1-corpus-qualification-20261005.md)):
+Qualify the banked byte-depth packed O2/g3 decoder across 507 retail pages in
+each masked CU1 mode. All 1014 paired runs pass in 1604.214 seconds, no skips;
+both terminals retain 3248 descent and 80-byte known-neighbor clearance.
+Instruction hash, allocation and eight during-run source hashes hold. Harden
+reporter failure gates only after terminal receipt verification; five new
+selection/reporting checks join 27 existing checks, all 32 pass, no skips.
+Reporter-only edits are not another full corpus run. Candidate remains 4496 /
+3984 bytes, 512 over; entry/frame/private-stack/hardware gates remain open.
+No production conversion, README aggregate, sibling or frozen Release change.
+
 2026-10-05 ([Note 978](WORKING_NOTES/978-init-mmio-record-view-fitting-and-ordered-access-qualification-20261005.md)):
 Test grouped volatile MMIO publication fields under four profiles. Direct
 record saves sixteen complete bytes versus the scalar control in three profiles,

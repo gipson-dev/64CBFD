@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Init Byte-Depth Full Masked Corpus - 2026-10-05
+
+[Note 979](WORKING_NOTES/979-init-byte-depth-full-masked-cu1-corpus-qualification-20261005.md)
+closes the banked decoder candidate's full masked CU1-clear/set corpus gate:
+507 paired pages per mode, 1014 runs pass in 1604.214 seconds, no skips.
+Both modes retain 3248-byte descent and 80-byte known-neighbor clearance,
+not private-stack reservation proof. Instruction hash, complete allocation and
+eight during-run source hashes hold. Post-run reporter-only failure gates have
+mocked positive/negative controls; all 32 supporting checks pass, no skips.
+No host decoder replacement or production conversion: 4496 versus 3984 bytes,
+512 over. Original entry/frame/placement, reservation and hardware gates stay
+open. README aggregates, host files/builds, saves and frozen Release unchanged.
+
 ## Init MMIO Record-View Trial - 2026-10-05
 
 [Note 978](WORKING_NOTES/978-init-mmio-record-view-fitting-and-ordered-access-qualification-20261005.md)

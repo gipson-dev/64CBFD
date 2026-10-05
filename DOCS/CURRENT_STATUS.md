@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init byte-depth full corpus: [Note 979](WORKING_NOTES/979-init-byte-depth-full-masked-cu1-corpus-qualification-20261005.md)
+qualifies the banked packed O2/g3 candidate across all 507 retail pages in each
+masked CU1 mode: 1014 paired runs pass in 1604.214 seconds, no skips. Both
+terminals report 4496 executable bytes, 3248 descent and 80-byte known-neighbor
+clearance; this is not private-stack reservation proof. The instruction hash,
+allocation and eight during-run source hashes hold. After receipt verification,
+reporting-only failure gates and two mocked controls are added; all 32 supporting
+checks pass in 1.483 seconds, no skips. The full corpus is not repeated for
+that reporter-only change. No production adoption: still 512 bytes over retail,
+with original entry/frame/placement, reservation and hardware gates open.
+Init remains 492 C / 47 ASM: seventeen investigation targets, thirty intentional
+owners. README totals, production sources and host/Release stay unchanged.
+
 Init MMIO fitting: [Note 978](WORKING_NOTES/978-init-mmio-record-view-fitting-and-ordered-access-qualification-20261005.md)
 tests a new volatile record view of the adjacent RAM publications. Direct
 record text saves sixteen bytes versus the fully volatile scalar control in

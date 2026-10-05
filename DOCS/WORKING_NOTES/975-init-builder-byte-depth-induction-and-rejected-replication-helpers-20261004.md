@@ -7,6 +7,11 @@ screens sixteen cache combinations and rejects a persistent parent-mask
 recurrence. Neither improves this qualified 4496-byte lead; production
 conversion and the remaining 512-byte fitting gap stay open.
 
+Subsequent [Note 979](979-init-byte-depth-full-masked-cu1-corpus-qualification-20261005.md)
+qualifies this banked packed O2/g3 image across all 507 pages in both masked
+CU1 modes, 1014 passing paired runs. This closes its full corpus gate only;
+fitting, entry/frame/private-stack and hardware gates remain open.
+
 ## Result
 
 Continue Init fitting from
