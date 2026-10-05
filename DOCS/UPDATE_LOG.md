@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-05 Game Viewport Renderer
+
+[Note 983](WORKING_NOTES/983-game-viewport-renderer-semantic-recovery-20261005.md)
+recovers complete `func_1510B9D0`, its typed public declaration and explicit
+legacy caller casts without changing the caller's bytes. C fits 347 / 356 words,
+frame 0xB8 versus 0x98 retail, 343 differences, no guards/profile override.
+All 95 final combined checks pass after shared-header rebuild/link: 5379 paired
+renderer traces, 96 actual connected leaves, 4608 native cases, four invalid
+prefixes. Complete existing Init/Debugger/data stay exact. Downstream placeholders,
+original-frame matching and natural pixels remain open. No README aggregate,
+Init conversion, sibling/frozen Release change or push.
+
 ## 2026-10-05 Game Command Helper
 
 [Note 982](WORKING_NOTES/982-game-viewport-command-helper-semantic-recovery-20261005.md)

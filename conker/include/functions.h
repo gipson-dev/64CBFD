@@ -1110,7 +1110,7 @@ void func_150E2EA4(struct127*, s32, s32, s32, f32, f32, f32, f32, f32, f32, s32,
 void func_150EA904(s32 arg0, s32 arg1);
 void func_1510B32C(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
 void func_1510B958(s32 arg0);
-s32  func_1510B9D0(s32 arg0, s16 arg1);
+Gfx *func_1510B9D0(Gfx *arg0, s16 arg1);
 s32  func_1510FD20(s32 arg0, s32 arg1);
 s32  func_15123934(struct108 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 s32  func_151239CC(struct108 *arg0, s32 arg1);

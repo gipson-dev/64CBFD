@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 983](WORKING_NOTES/983-game-viewport-renderer-semantic-recovery-20261005.md)):
+Recover complete `func_1510B9D0`, typed public interface and unchanged-byte
+legacy caller. C fits 347 / 356 words, frame 0xB8 versus 0x98 retail, 343 raw
+differences, no guards/profile override. Fourteen checks qualify 5379 complete
+paired traces, 96 actual connected leaf traces, 4608 native cases and four
+invalid prefixes. All 95 final combined checks pass after shared-header rebuild;
+complete existing Init/Debugger/data and caller/adjacent identities hold.
+Full transform/finalizer/effect dependencies and natural pixels remain open.
+No README aggregate, Init adoption, sibling/Release change or push.
+
 2026-10-05 ([Note 982](WORKING_NOTES/982-game-viewport-command-helper-semantic-recovery-20261005.md)):
 Recover complete Game command helper `func_1510B7B4`: twelve SDK packets,
 103 / 105 words, 104 raw differences, no guards/profile override. Twelve new

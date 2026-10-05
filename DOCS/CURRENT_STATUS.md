@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game renderer: [Note 983](WORKING_NOTES/983-game-viewport-renderer-semantic-recovery-20261005.md)
+recovers full `func_1510B9D0`, its public cursor/s16 interface and legacy caller
+casts. C fits 347 / 356 words; frame 0xB8 versus retail 0x98, 343 differences,
+no guards/profile override. Fourteen new checks qualify 5379 paired traces,
+including 96 actual helper/updater/color/identity connections, 4608 native cases
+and four invalid prefixes. Captured suppression/actor and late base/page/table
+reloads hold under mutations. All 95 final combined checks pass in 52.200 seconds,
+no skips, after shared-header rebuild/link; complete existing Init/Debugger/data
+and caller/adjacent identities hold. Downstream transform/finalizer/effect
+placeholders and submission/pixels remain open. README totals, Init owners and
+sibling/frozen Release unchanged. Next full target: 601-word `func_1515D914`.
+
 Game command helper: [Note 982](WORKING_NOTES/982-game-viewport-command-helper-semantic-recovery-20261005.md)
 replaces `func_1510B7B4`'s placeholder with its complete twelve-packet SDK body.
 It emits 103 / 105 words with two padding NOPs, no frame/calls/guards/profile
@@ -29,8 +41,8 @@ cases, 97 complete ordered retail/C traces and three invalid-input prefixes.
 Late page/base/table aliases retain repeated reads; a cached-page control fails.
 All 81 combined checks pass in 19.953 seconds, no skips, after fresh owner build,
 padding and link. Complete existing Init/Debugger/data remain exact. README
-totals and sibling/frozen Release unchanged. Full renderer `func_1510B9D0`
-remains pending; these fixtures do not prove submission or pixels. Init still
+totals and sibling/frozen Release unchanged. Note 983 above subsequently recovers
+full renderer `func_1510B9D0`; these fixtures do not prove submission or pixels. Init still
 has 47 ASM owners, seventeen investigation targets and thirty intentional.
 
 Init bitmap grouped view: [Note 981](WORKING_NOTES/981-init-bitmap-record-view-fitting-and-ordered-read-qualification-20261005.md)
@@ -142,8 +154,8 @@ updater/color/writer connections pass; captures, late reloads, byte-wrap-before-
 clamp and both phase stores are retained. All 257 combined checks pass, no skips;
 fresh source compile/padding/link preserves complete Init code/data, Debugger
 code, Game data and previous identities. README aggregates unchanged. Next
-full caller `func_1510B9D0` (356 words) remains a placeholder; Note 982 above
-subsequently recovers command helper `func_1510B7B4` (105-word slot).
+full caller `func_1510B9D0` (356 words) is subsequently recovered in Note 983;
+Note 982 recovers command helper `func_1510B7B4` (105-word slot).
 Full renderer/RSP/RDP/natural effects and matching stay open.
 Sibling already has updater plus gated diagnostics; no host/Release changes.
 

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Viewport Renderer - 2026-10-05
+
+[Note 983](WORKING_NOTES/983-game-viewport-renderer-semantic-recovery-20261005.md)
+recovers full DECOMP `func_1510B9D0`: 347 / 356 words, 343 raw differences,
+frame 0xB8 versus retail 0x98, no guards/profile override. Public types and
+legacy casts are corrected with unchanged caller bytes. All 95 final combined
+checks pass after shared-header rebuild/link, including 5379 paired traces,
+96 actual connected leaves, 4608 native cases and four invalid prefixes.
+Complete existing Init/Debugger/data stay exact. Transform/finalizer/effect
+placeholders and actual submission/pixels remain open; next full target is
+601-word `func_1515D914`. Existing sibling admission logic and diagnostics are
+not overwritten. README aggregates and frozen Release remain unchanged.
+
 ## Game Initial Command Helper - 2026-10-05
 
 [Note 982](WORKING_NOTES/982-game-viewport-command-helper-semantic-recovery-20261005.md)
@@ -9,7 +22,8 @@ qualify 65600 native cases, 97 complete ordered traces and three invalid prefixe
 All 81 combined checks pass after fresh owner build/link; complete existing
 Init/Debugger/data stay exact. The sibling already retains the original helper
 and gated diagnostics; no host replacement, build, save or frozen Release change.
-Full renderer `func_1510B9D0`, submission and natural pixels remain separate gates.
+Note 983 subsequently recovers full renderer `func_1510B9D0`; downstream
+dependencies, submission and natural pixels remain separate gates.
 
 ## Init Bitmap Grouped Field Trial - 2026-10-05
 
@@ -244,8 +258,8 @@ three invalid-slot prefixes and actual angle-helper/updater/color/writer
 connections. All 257 combined checks pass after fresh source build/link;
 complete Init/Debugger/data remain exact. README aggregates stay unchanged.
 The sibling already has the original updater with gated blend diagnostics;
-no host/Release changes or fresh PC acceptance. Full caller 1510B9D0 remains
-a placeholder; Note 982 subsequently recovers command helper 1510B7B4.
+no host/Release changes or fresh PC acceptance. Note 983 subsequently recovers
+full caller 1510B9D0; Note 982 recovers command helper 1510B7B4.
 Natural RSP/RDP effects are open.
 
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
@@ -267,8 +281,10 @@ Natural RSP/RDP effects are open.
 - [x] Recover color emitter `func_1510CDB8` and qualify its actual writer connection.
 - [x] Recover palette updater `func_1510CB10` and qualify its color-emitter connection.
 - [x] Recover initial command helper `func_1510B7B4` and qualify its packet/cursor contract.
-- [ ] Recover full caller `func_1510B9D0` and remaining command-helper dependencies.
-- [ ] Recover/qualify the full renderer and natural RSP/RDP effects separately.
+- [x] Recover full caller `func_1510B9D0` and qualify its complete control flow.
+- [ ] Recover full transform `func_1515D914`, finalizer `func_1515E544`,
+  tail `func_151742EC` and effect `func_1512E5F0`; qualify actual connections.
+- [ ] Qualify actual renderer submission and natural RSP/RDP effects separately.
 - [ ] Synchronize PC-port `func_1510D7AC`: active generated source retains its
   zero-return stub, with no named override in the scoped host source search.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a

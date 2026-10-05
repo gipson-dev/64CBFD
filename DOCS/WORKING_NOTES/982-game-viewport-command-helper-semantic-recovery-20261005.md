@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `a22cbf1b`.
 
+Subsequent [Note 983](983-game-viewport-renderer-semantic-recovery-20261005.md)
+recovers the complete `func_1510B9D0` caller. Its downstream placeholders,
+original-frame matching, submission and natural pixels remain separate gates;
+pending-caller statements below describe this note's historical checkpoint.
+
 ## Decision
 
 Continue the connected Game recovery identified in

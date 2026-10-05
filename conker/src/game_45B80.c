@@ -167,7 +167,7 @@ s32 func_15019464(Gfx *arg0, s16 arg1) {
     }
 
     temp_s0 = func_1515D6D0(temp_s0, arg1);
-    temp_s0 = func_1510B9D0(temp_s0, arg1);
+    temp_s0 = (s32) func_1510B9D0((Gfx *) temp_s0, arg1);
     return temp_s0;
 }
 
