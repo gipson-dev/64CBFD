@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game resource-size query direct recovery: [Note 1004](WORKING_NOTES/1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md)
+recovers `func_1502B9B4`, all 69 body / 71 slot words and frame 0x68
+directly under default IDO O2/g3, no guards/profile override. Three-u64
+scratch, incoming descriptor at entry SP-0x14, both aligned-header choices
+and live full-word DMA header result are preserved. Native qualification
+uses positive descriptor-writing paths and explicit MIPS u64 alignment only.
+All 5670 boundary, 972 actual lookup/cache, 384 native connected and 72
+Init caller prefixes pass. The latter stops before bank load; full audio
+startup is not claimed. Caller declaration aligned and all 214 slot words
+stay retail-exact. All 6060 slots audited: only target changes.
+Rebuild: 3300 / 5463 overall, 2627 / 4790 Game, zero drift.
+Protected sections/tools/whitespace/links pass. All 272 combined checks
+pass in 239.593 seconds, no skips.
+README aggregates updated; conversion/Init ASM, patch table and sibling/
+frozen Release unchanged. Next: `func_1502BAD0`, 173-word / frame 0x48
+25-actor display-list routine in `game/generated_58F80.c`.
+
 Game counted-pointer resource loader direct recovery: [Note 1003](WORKING_NOTES/1003-game-counted-pointer-loader-direct-match-and-full-caller-20261005.md)
 recovers `func_1502B7F0`: all 60 words / frame 0x48 directly from default
 IDO O2/g3, no guards/profile override. A for-loop update resolves the final

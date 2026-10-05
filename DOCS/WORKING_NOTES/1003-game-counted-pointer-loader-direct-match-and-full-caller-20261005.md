@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `4a798e79`.
 
+Follow-up: [Note 1004](1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md)
+completes the next size-query wrapper and qualifies its Init caller prefix.
+Results and next-target description below remain this note's historical
+checkpoint, not the latest resume boundary.
+
 ## Result And Scope
 
 `func_1502B7F0`'s false zero-return placeholder is replaced with semantic

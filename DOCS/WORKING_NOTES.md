@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-05 ([Note 1004](WORKING_NOTES/1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md)):
+Recover `func_1502B9B4`'s SDK-varargs size query and aligned compressed-header
+read. All 69 body / 71 slot words and frame 0x68 emit directly from default
+IDO O2/g3, no guards/profile override. Three-u64 scratch and initialization
+order resolve the screen; incoming descriptor, zero-depth seeds, both stack
+phases and full header-word return remain intact. Native positive-depth
+qualification explicitly states MIPS u64 alignment; no native indeterminate
+descriptor claim. Boundary/actual lookup/cache/native-connected and 72
+Init prefixes pass, stopping before bank load. The complete 214-word caller
+stays exact after declaration alignment; only target changes in 6060 slots.
+Rebuild: 3300 / 5463 overall, 2627 / 4790 Game, zero drift; protected
+sections/tools/whitespace/links pass. All 272 combined checks pass in
+239.593 seconds, no skips. README aggregates
+updated; conversion/Init ASM, patch table and sibling/frozen Release unchanged.
+Next: `func_1502BAD0`, adjacent 173-word / frame 0x48 actor display-list scan.
+
 2026-10-05 ([Note 1003](WORKING_NOTES/1003-game-counted-pointer-loader-direct-match-and-full-caller-20261005.md)):
 Recover `func_1502B7F0`'s SDK-varargs pointer-output/separate-size wrapper.
 All 60 words / frame 0x48 emit directly from default IDO O2/g3 without

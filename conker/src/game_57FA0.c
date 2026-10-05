@@ -18,7 +18,7 @@ s32 func_1502B4A8(u32 *entries, s32 count);
 void *func_1502B5C8(s32 *size, u32 depth, ...);
 void *func_1502B6BC(s32 *size, s32 count, s32 *relocated, s32 depth, ...);
 u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...);
-s32 func_1502B9B4();
+u32 func_1502B9B4(u32 depth, ...);
 /* End generated placeholder declarations. */
 
 extern u8 D_AB1950[];
@@ -373,44 +373,38 @@ u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...) {
     return gate;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B9B4.s. */
-s32 func_1502B9B4() {
-    return 0;
+/* Retail leaves the descriptor unwritten on the zero-depth path. */
+u32 func_1502B9B4(u32 depth, ...) {
+    va_list path;
+    s32 component;
+    u32 base;
+    u32 size;
+    u32 descriptor;
+    u64 storage[3];
+    u32 *header;
+
+    size = 1;
+    base = (u32)D_AB1950;
+    va_start(path, depth);
+    while (depth != 0) {
+        component = va_arg(path, s32);
+        if (size != 0) {
+            base += func_1502AC88(base, component, &descriptor);
+        }
+        depth--;
+        size = descriptor & 0x0FFFFFFF;
+    }
+    if (size != 0) {
+        size = ((descriptor & 0x0FFFFFFF) + 1) & ~1U;
+        if ((descriptor & 0x70000000) == 0x10000000) {
+            header = (u32 *)storage;
+            if ((u32)header & 8) {
+                header = (u32 *)((u8 *)storage + 8);
+            }
+            func_10004514(base, header, 16, 1);
+            size = header[0];
+        }
+    }
+    va_end(path);
+    return size;
 }
-// NON-MATCHING: maybe 50% there?
-// s32 func_1502B9B4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-//
-//     s32 stack2[2];
-//     s32 stack1[2];
-//     s32 stack0[5];
-//
-//     s32 more;
-//     s32 offset;
-//     s32 *tmp;
-//     s32 i;
-//
-//     more = 1;
-//     offset = &D_00AB1950;
-//     tmp = &arg1;
-//
-//     for (i = arg0; i != 0; i--) {
-//         tmp = ALIGN4(tmp) + 4;
-//         if (more != 0) {
-//             offset += func_1502AC88(offset, tmp - 4, &stack0);
-//         }
-//         more = *stack0 & 0xFFFFFFF;
-//     }
-//
-//     if (more != 0) {
-//         more = ALIGN2(stack0[0] & 0xFFFFFFF);
-//         if ((*stack0 & 0x70000000) == 0x10000000) {
-//             if (((s32) &stack1 & 8) != 0) {
-//                 *stack1 = &stack2;
-//             }
-//             func_10004514(offset, stack1, 0x10, 1); // decompress?
-//             more = *stack1;
-//         }
-//     }
-//
-//     return more;
-// }

@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-05 Game Resource Size Query Direct Recovery
+
+[Note 1004](WORKING_NOTES/1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md)
+replaces `func_1502B9B4`'s placeholder with SDK-varargs traversal, rounded
+raw size and aligned compressed-header read. All 69 body / 71 slot words
+and frame 0x68 emit directly under default IDO O2/g3, no guards/profile
+override. Incoming descriptor and both private-header choices remain;
+native qualification uses positive descriptor-writing paths and explicit
+MIPS u64 alignment. Actual lookup/cache and Init caller prefixes pass,
+stopping before bank load without claiming full audio startup. The aligned
+caller declaration changes no caller words; only target changes in all
+6060 audited slots. Rebuild/protected sections/tools/whitespace/links pass;
+all 272 combined checks pass in 239.593 seconds, no skips.
+README aggregates: 3300 / 5463 overall,
+2627 / 4790 Game, zero drift. Conversion/Init ASM, patch table and sibling/
+frozen Release unchanged. Next: `func_1502BAD0`, 25-actor display-list scan.
+
 ## 2026-10-05 Game Counted Pointer Loader Direct Recovery
 
 [Note 1003](WORKING_NOTES/1003-game-counted-pointer-loader-direct-match-and-full-caller-20261005.md)

@@ -1,5 +1,23 @@
 # PC Port Roadmap located in another project folder
 
+## Game Resource Size Query Direct Recovery - 2026-10-05
+
+[Note 1004](WORKING_NOTES/1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md)
+recovers DECOMP `func_1502B9B4`, 69 body / 71 slot words and frame 0x68
+directly from default IDO, no guards/profile override. Incoming descriptor,
+zero-depth target seeds, both scratch-header alignments and live full-word
+header size remain. Native positive-depth checks explicitly require MIPS
+u64 alignment; this is not a portable zero-depth C or host-transplant claim.
+Actual lookup/cache/native-connected and Init caller prefixes pass; the
+latter stops before bank loading and does not prove complete audio startup.
+All 6060 slots audited: only target changes; Init caller stays exact.
+Protected sections/tools/whitespace/links pass. All 272 combined checks
+pass in 239.593 seconds, no skips. Game exact count: 2627 / 4790.
+Sibling already contains the original translated
+routine and preexisting diagnostics/caller vararg correction. No host source,
+build, save or frozen Release change. Actual SDK, audio, rendering and PC
+runtime acceptance remain separate. Next DECOMP target: `func_1502BAD0`.
+
 ## Game Counted Pointer Loader Direct Recovery - 2026-10-05
 
 [Note 1003](WORKING_NOTES/1003-game-counted-pointer-loader-direct-match-and-full-caller-20261005.md)

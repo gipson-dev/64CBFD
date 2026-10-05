@@ -55,7 +55,7 @@ void func_100155A0(N_ALSndpConfig *config);
 void func_10017870(s32 count);
 void func_10017944(s32 index, s32 value);
 u32 func_1502B020(u32 *size, u32 depth, ...);
-s32 func_1502B9B4(s32 arg0, s32 arg1, s32 arg2);
+u32 func_1502B9B4(u32 depth, ...);
 u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...);
 
 // FIXME: create header file for audio related functions
