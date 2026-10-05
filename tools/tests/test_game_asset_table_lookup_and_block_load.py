@@ -152,6 +152,29 @@ if(error || copies!=1 || D_800C3D68[14].offset!=before[2].offset
    || D_800C3D68[15].descriptor!=before[3].generation) return 1;
 ''')
 
+    def test_cache_all_bounded_word_aligned_input_aliases_keep_sequential_reads(self):
+        self.run_host(r'''
+int n,k,i,j,cases=0; u32 expected[64];
+for(n=0;n<=16;n++) for(k=0;k<=64-2*n;k++) {
+    u32 address=0xFFFFFFF8;
+    reset();
+    for(i=0;i<64;i++) expected[i]=((u32 *)D_800C3D68)[i];
+    if(n) for(i=0;i<(16-n)*4;i++) expected[i]=expected[i+n*4];
+    for(i=16-n,j=k;i<16;i++,j+=2) {
+        expected[i*4+2]=expected[j];
+        expected[i*4+3]=expected[j+1];
+        expected[i*4]=address;
+        expected[i*4+1]=41;
+        address+=8;
+    }
+    func_1502AB04(n,(u32 *)D_800C3D68+k,41,0xFFFFFFF8);
+    if(error || copies!=(n!=0) || allocations || dmas) return 1;
+    for(i=0;i<64;i++) if(((u32 *)D_800C3D68)[i]!=expected[i]) return 2;
+    cases++;
+}
+if(cases!=833) return 3;
+''')
+
     def test_hit_all_positions_and_duplicate_first_match(self):
         self.run_host(r'''
 int hit,i;
@@ -315,7 +338,7 @@ for(phase=0;phase<2;phase++) {
         relocations=subprocess.run(['mips-linux-gnu-objdump','-r',str(obj)],check=True,capture_output=True,text=True).stdout
         call_offsets=[int(offset,16) for offset in re.findall(r'(?m)^([0-9a-f]+)\s+R_MIPS_26\s+func_1502AB04\s*$',relocations)]
         self.assertEqual(len(call_offsets),1)
-        measured={'func_1502AB04':(87,97,0x20,93,'9411056ee2483732bfd3b404b7ab27b514a0af4c614b62c554dbe125f1b0719a'),
+        measured={'func_1502AB04':(87,97,0x28,74,'6acec640d1eb26a525a32a799d53abb2effeb9336ed73ec7fb4bc931e32ebad0'),
                   'func_1502AC88':(158,159,0xA0,156,'1bb0909b45c22e6029c8100583e55835d0cea88a3a28efe38ba65524a7f2ca28'),
                   'func_1502B350':(86,86,0x30,0,'f176b2891cb5a8aa6f60461047ea78f4b4e7958fcaef18fb41b9d0c1ccdc31ae')}
         rom=(self.root/'conker/conker.us.bin').read_bytes()

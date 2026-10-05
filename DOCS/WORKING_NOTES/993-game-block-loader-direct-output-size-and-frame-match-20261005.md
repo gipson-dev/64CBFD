@@ -2,6 +2,10 @@
 
 Date: 2026-10-05. Starting HEAD: `2fe135b4`.
 
+Follow-up: [Note 994](994-game-cache-installer-frame-recovery-and-pair-copy-alias-gate-20261005.md)
+recovers the next cache installer's retail frame and rejects an overlap-sensitive
+raw-exact candidate. The block loader remains directly exact.
+
 ## Result And Scope
 
 `func_1502B350` now emits its complete 86-word / 344-byte retail slot directly

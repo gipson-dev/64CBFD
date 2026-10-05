@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game cache installer frame recovery: [Note 994](WORKING_NOTES/994-game-cache-installer-frame-recovery-and-pair-copy-alias-gate-20261005.md)
+recovers `func_1502AB04`'s complete 19-word prologue and 0x28 frame by preserving
+an explicit count local across `bcopy`. Scalar pair copies remain intact.
+Production still differs: 87 / 97 body/slot words, 74 differences instead of
+93, no guards/profile change. The 128-form screen finds a raw-exact two-word
+aggregate copy, but it fails a native partial-overlap witness and is rejected.
+All 171 final combined checks pass, no skips; 833 bounded native aliases and
+2550 three-way instruction traces preserve live reads and final cache memory.
+The alias-preserving one-word-copy trial
+fits 97 words with 41 differences but remains experimental. Exact/conversion
+totals unchanged; README aggregate tables remain current. Sibling/frozen
+Release unchanged. Next: qualify the word-copy scheduling differences or find
+a directly matching scalar/word shape without weakening the alias contract.
+
 Game block loader direct match: [Note 993](WORKING_NOTES/993-game-block-loader-direct-output-size-and-frame-match-20261005.md)
 matches all 86 `func_1502B350` words directly under the unchanged default
 IDO O2/g3 profile, including retail's 0x30 frame. Output-size expression shape,

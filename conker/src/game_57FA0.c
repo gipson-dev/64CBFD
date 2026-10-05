@@ -41,9 +41,11 @@ void func_1502AAF0(void) {
 void func_1502AAF8(s32 arg0) {
 }
 
-void func_1502AB04(s32 count, u32 *pairs, u32 generation, u32 address) {
+void func_1502AB04(s32 arg0, u32 *pairs, u32 generation, u32 address) {
+    s32 count;
     u32 i;
 
+    count = arg0;
     if (count != 0) {
         bcopy(&D_800C3D68[count], D_800C3D68, (16 - count) * 16);
     }

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Cache Installer Frame And Alias Gate - 2026-10-05
+
+[Note 994](WORKING_NOTES/994-game-cache-installer-frame-recovery-and-pair-copy-alias-gate-20261005.md)
+recovers the DECOMP cache installer's 0x28 frame and count lifetime. It remains
+non-matching at 74 raw differences; scalar copies preserve the existing live
+alias behavior. A raw-exact two-word aggregate-copy trial fails native partial
+overlap and is not adopted or transplanted. All 171 final checks pass, no skips,
+including protected-section identity. The new bounded tests distinguish
+machine-word identity from source behavior across compilers. Sibling translated
+retail already has the frame, saved count and sequential pair loads/stores.
+No host source, build, save or frozen Release change. Game exact count remains
+2617 / 4790; no PC runtime/rendering acceptance is claimed.
+
 ## Game Block Loader Direct Match - 2026-10-05
 
 [Note 993](WORKING_NOTES/993-game-block-loader-direct-output-size-and-frame-match-20261005.md)

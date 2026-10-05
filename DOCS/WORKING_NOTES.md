@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-05 ([Note 994](WORKING_NOTES/994-game-cache-installer-frame-recovery-and-pair-copy-alias-gate-20261005.md)):
+Recover `func_1502AB04`'s 0x28 frame and complete 19-word prologue using an
+explicit count local across `bcopy`; retain scalar copies and all alias cases.
+Raw differences fall from 93 to 74, but production remains non-matching at
+87 / 97 body/slot words. Reject the 128-form screen's raw-exact pair-copy
+candidate because native partial overlap changes a descriptor from 115 to 215.
+All 171 final checks pass, no skips; 833 native aliases and 2550 three-way
+traces qualify live reads/cache outputs. Protected sections remain exact.
+The 97-word / 41-difference one-word trial remains experimental. Counts and
+README aggregates unchanged; sibling/frozen Release untouched. Next: word-copy
+scheduling qualification or a directly matching alias-preserving source shape.
+
 2026-10-05 ([Note 993](WORKING_NOTES/993-game-block-loader-direct-output-size-and-frame-match-20261005.md)):
 Match all 86 `func_1502B350` words directly from C with retail's 0x30 frame,
 unchanged default profile and no guards. Direct output-size tests, explicit

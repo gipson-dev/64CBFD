@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-05 Game Cache Installer Frame And Alias Gate
+
+[Note 994](WORKING_NOTES/994-game-cache-installer-frame-recovery-and-pair-copy-alias-gate-20261005.md)
+recovers the complete `func_1502AB04` prologue and retail 0x28 frame; raw
+differences fall from 93 to 74. Production remains non-matching, with scalar
+copies and no new guards/profile changes. A raw-exact aggregate-copy candidate
+is rejected for changing a native partially overlapping input descriptor.
+All 171 final checks pass, no skips; 833 bounded native aliases and 2550
+three-way instruction traces retain live reads and final cache memory.
+Protected sections remain exact. A 97-word one-word-copy trial remains experimental
+at 41 differences. Exact/conversion counts and README aggregates unchanged;
+no sibling source/build/save or frozen Release change.
+
 ## 2026-10-05 Game Block Loader Direct Match
 
 [Note 993](WORKING_NOTES/993-game-block-loader-direct-output-size-and-frame-match-20261005.md)

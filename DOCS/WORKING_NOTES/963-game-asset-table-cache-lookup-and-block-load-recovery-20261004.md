@@ -7,6 +7,11 @@ directly matches all 86 block-loader words with the retail 0x30 frame on
 2026-10-05. The original recovery measurements below remain historical;
 cache installer and cached lookup still differ.
 
+Further follow-up: [Note 994](994-game-cache-installer-frame-recovery-and-pair-copy-alias-gate-20261005.md)
+recovers the cache installer's 0x28 frame and count lifetime, reducing its raw
+differences to 74 while preserving scalar copies and expanded alias tests.
+It remains non-matching; the original measurements below are unchanged.
+
 ## Decision
 
 Finish the in-progress resource-loading recoveries following
