@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-05 ([Note 1001](WORKING_NOTES/1001-game-buffer-variadic-wrapper-direct-match-and-incoming-descriptor-frame-20261005.md)):
+Recover `func_1502B8E0`'s SDK-varargs/caller-buffer path wrapper. All 53 words /
+frame 0x48 emit directly from default IDO O2/g3, no guards/profile override.
+The 133-form screen resolves declaration/initialization scheduling without
+initializing the incoming descriptor. Zero-depth physical seeds are preserved
+in target tests; native qualification is positive descriptor-writing paths
+only, not portable indeterminate-local behavior. Boundary/actual-callee and
+48 full Game caller cases pass; both maintained caller frames/slots stay
+exact. Eight mismatch prefixes stop at syscall before cleanup. The third
+original caller remains a placeholder and is reference-only evidence.
+Rebuild: 3297 / 5463 overall, 2624 / 4790 Game, zero drift. Protected sections
+remain exact. All 232 final checks pass in 178.769 seconds, no skips;
+tools/whitespace pass. README aggregates updated; conversion/Init ASM, patch table
+and sibling/frozen Release unchanged. Next: `func_1502B5C8`, 61 words /
+frame 0x50, optional size-output aliases and unwritten descriptor boundary.
+
 2026-10-05 ([Note 1000](WORKING_NOTES/1000-game-caller-buffer-resource-loader-direct-recovery-and-syscall-boundary-20261005.md)):
 Recover `func_1502B224`'s caller-buffer raw/compressed resource loading from
 its placeholder. All 75 words / frame 0x30 emit directly from default IDO

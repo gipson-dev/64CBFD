@@ -17,7 +17,7 @@ void *func_1502B350(u32 arg0, u32 arg1, s32 *arg2);
 s32 func_1502B4A8(u32 *entries, s32 count);
 s32 func_1502B5C8();
 void *func_1502B6BC(s32 *size, s32 count, s32 *relocated, s32 depth, ...);
-s32 func_1502B8E0();
+u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...);
 s32 func_1502B9B4();
 /* End generated placeholder declarations. */
 
@@ -324,9 +324,30 @@ s32 func_1502B7F0(s32*arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
 //     }
 // }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B8E0.s. */
-s32 func_1502B8E0() {
-    return 0;
+/* Retail leaves the descriptor unwritten on the zero-depth path. */
+u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...) {
+    va_list path;
+    s32 component;
+    u32 base;
+    u32 gate;
+    u32 descriptor;
+
+    gate = 1;
+    base = (u32)D_AB1950;
+    va_start(path, depth);
+    while (depth != 0) {
+        component = va_arg(path, s32);
+        if (gate != 0) {
+            base += func_1502AC88(base, component, &descriptor);
+        }
+        depth--;
+        gate = descriptor & 0x0FFFFFFF;
+    }
+    if (gate != 0) {
+        gate = func_1502B224(base, buffer, descriptor, cap);
+    }
+    va_end(path);
+    return gate;
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B9B4.s. */

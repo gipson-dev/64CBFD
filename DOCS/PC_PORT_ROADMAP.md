@@ -1,5 +1,23 @@
 # PC Port Roadmap located in another project folder
 
+## Game Buffer Variadic Wrapper Direct Recovery - 2026-10-05
+
+[Note 1001](WORKING_NOTES/1001-game-buffer-variadic-wrapper-direct-match-and-incoming-descriptor-frame-20261005.md)
+recovers DECOMP `func_1502B8E0`, all 53 words / frame 0x48 directly from default
+IDO, no guards/profile override. Physical zero-depth descriptor seeds remain
+at entry SP-0x14; this is target-code preservation, not defined native C or
+permission to transplant the indeterminate local into the PC port. Connected
+lookup/cache/loader and full Game caller checks pass; maintained caller frames
+remain retail-exact. Eight mismatch-prefix cases stop at the real syscall
+boundary, not post-trap cleanup. Protected Init code/data, Debugger code and
+Game data remain exact after rebuilding. Game exact count: 2624 / 4790.
+All 232 final checks pass in 178.769 seconds, no skips; tools/whitespace pass.
+Read-only sibling inspection finds translated retail wrapper/frame/descriptor
+load already present, with no maintained `src/pc` override/reference. No host
+source, build, save or frozen Release change. Actual DMA/decoder, PC runtime,
+gameplay and rendering acceptance remain separate. Next bounded DECOMP
+target: `func_1502B5C8`, with size-output aliases and zero-depth seed audit.
+
 ## Game Caller-Buffer Resource Loader Direct Recovery - 2026-10-05
 
 [Note 1000](WORKING_NOTES/1000-game-caller-buffer-resource-loader-direct-recovery-and-syscall-boundary-20261005.md)

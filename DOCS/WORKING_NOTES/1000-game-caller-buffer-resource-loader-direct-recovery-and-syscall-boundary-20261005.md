@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `81255fe4`.
 
+Follow-up: [Note 1001](1001-game-buffer-variadic-wrapper-direct-match-and-incoming-descriptor-frame-20261005.md)
+recovers the 53-word `func_1502B8E0` caller directly, retaining its physical
+incoming descriptor slot and qualifying maintained caller frames. Results
+below are the historical loader checkpoint, not the updated totals.
+
 ## Result And Scope
 
 `func_1502B224`'s false zero-return placeholder is replaced with its semantic

@@ -56,8 +56,7 @@ void func_10017870(s32 count);
 void func_10017944(s32 index, s32 value);
 u32 func_1502B020(u32 *size, u32 depth, ...);
 s32 func_1502B9B4(s32 arg0, s32 arg1, s32 arg2);
-void func_1502B8E0(void *destination, s32 size, s32 arg2, s32 arg3,
-                   s32 arg4);
+u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...);
 
 // FIXME: create header file for audio related functions
 s32  func_10017A80(N_ALCSPlayer *csp);

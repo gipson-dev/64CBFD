@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game buffer variadic wrapper direct recovery: [Note 1001](WORKING_NOTES/1001-game-buffer-variadic-wrapper-direct-match-and-incoming-descriptor-frame-20261005.md)
+recovers `func_1502B8E0` from its zero-return placeholder. All 53 words / frame
+0x48 emit directly under default IDO O2/g3, no guards/profile override. The
+physical incoming descriptor at wrapper-entry SP-0x14 remains seed-sensitive
+on zero depth; this preserves target instructions, not defined native C.
+Native cases use positive depths with descriptor-writing lookup only.
+All 2268 boundary, 600 actual-callee, 14 connected zero-depth and 48 full Game
+caller cases pass; eight mismatch prefixes stop at the original syscall.
+Both maintained caller slots/frames remain exact after prototype alignment;
+`func_150169A0` is still a placeholder, so its assembly is reference-only.
+Protected Init code/data, Debugger code and Game data remain exact.
+All 232 final checks pass in 178.769 seconds, no skips; tools/whitespace pass.
+Rebuild: 3297 / 5463 overall, 2624 / 4790 Game, zero drift.
+README aggregates updated; conversion/Init ASM, patch table and sibling/
+frozen Release unchanged. Next: `func_1502B5C8`, 61 words / frame 0x50,
+including its optional size-output aliases and unwritten zero-depth descriptor.
+
 Game caller-buffer resource-loader direct recovery: [Note 1000](WORKING_NOTES/1000-game-caller-buffer-resource-loader-direct-recovery-and-syscall-boundary-20261005.md)
 recovers `func_1502B224` from its zero-return placeholder. All 75 words / frame
 0x30 emit directly under default IDO O2/g3, no guards/profile override. Cap

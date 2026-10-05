@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...);
+
 /* Generated placeholder declarations. */
 s32 func_15009334(s32 arg0);
 s32 func_1500A6D8();

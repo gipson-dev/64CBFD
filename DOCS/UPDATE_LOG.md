@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-05 Game Buffer Variadic Wrapper Direct Recovery
+
+[Note 1001](WORKING_NOTES/1001-game-buffer-variadic-wrapper-direct-match-and-incoming-descriptor-frame-20261005.md)
+replaces `func_1502B8E0`'s zero-return placeholder with semantic SDK-varargs
+traversal and caller-buffer loading. All 53 words / frame 0x48 emit directly
+under default IDO O2/g3, no guards/profile override. The unwritten descriptor
+at entry SP-0x14 remains seed-sensitive on zero depth; target tests preserve
+that instruction behavior without claiming defined native C. Native tests
+execute positive descriptor-writing paths only. Boundary/actual-callee and
+48 full Game caller cases pass; eight mismatch prefixes stop at syscall.
+Maintained Game/Init caller prototypes are aligned and full slots/frames
+remain exact. The third original caller is still a placeholder, reference only.
+Rebuild and protected-section comparisons pass. All 232 final checks pass in
+178.769 seconds, no skips; tools/whitespace pass. README aggregates:
+3297 / 5463 overall, 2624 / 4790 Game, zero drift. Conversion/Init ASM, patch
+table and sibling/frozen Release unchanged. Next: `func_1502B5C8`, 61 words /
+0x50 frame, including optional size-output aliases and zero-depth seed state.
+
 ## 2026-10-05 Game Caller-Buffer Resource Loader Direct Recovery
 
 [Note 1000](WORKING_NOTES/1000-game-caller-buffer-resource-loader-direct-recovery-and-syscall-boundary-20261005.md)
