@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-05 Game Variadic Table-Address Resolver Recovery
+
+[Note 999](WORKING_NOTES/999-game-variadic-table-address-resolver-recovery-and-connected-init-caller-20261005.md)
+recovers `func_1502B020` from its zero-return placeholder. All 60 linked words
+and frame 0x48 match with two checked independent loop-store guards; raw C
+has two differences, with no profile/insertion/omission change. Boundary and
+actual lookup/cache hit/miss checks retain zero-depth size one, full argument
+consumption, optional output aliases and final descriptor reread. Connected
+retail Init sound-caller cases cover 42/43 reachable words. Both Init caller
+prototypes now match the recovered interface; full rebuild retains Init
+exactness. All 210 final checks pass in 172.769 seconds, no skips; both caller
+slots and protected Init code/data, Debugger code and Game data remain exact.
+README totals: 3295 / 5463 overall, 2622 / 4790 Game, zero drift.
+Conversion/Init ASM unchanged; sibling/frozen Release untouched.
+Next: `func_1502B224` raw/compressed resource loader, 75 words / frame 0x30.
+
 ## 2026-10-05 Game Variadic Table-Range Wrapper Recovery
 
 [Note 998](WORKING_NOTES/998-game-variadic-table-range-wrapper-recovery-and-guarded-loop-stores-20261005.md)

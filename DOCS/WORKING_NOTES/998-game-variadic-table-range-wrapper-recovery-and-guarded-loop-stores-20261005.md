@@ -2,6 +2,10 @@
 
 Date: 2026-10-05. Starting HEAD: `b4db5527`.
 
+Follow-up: [Note 999](999-game-variadic-table-address-resolver-recovery-and-connected-init-caller-20261005.md)
+recovers the adjacent variadic address resolver and qualifies its actual Init
+sound caller. The next-target statement below describes this historical checkpoint.
+
 ## Recovery And Scope
 
 `func_1502B110`'s false zero-return placeholder is replaced with the recovered

@@ -54,7 +54,7 @@ void func_10015550(N_ALCSPlayer *csp, ALBank *bank);
 void func_100155A0(N_ALSndpConfig *config);
 void func_10017870(s32 count);
 void func_10017944(s32 index, s32 value);
-s32 func_1502B020(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+u32 func_1502B020(u32 *size, u32 depth, ...);
 s32 func_1502B9B4(s32 arg0, s32 arg1, s32 arg2);
 void func_1502B8E0(void *destination, s32 size, s32 arg2, s32 arg3,
                    s32 arg4);

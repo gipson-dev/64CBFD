@@ -7,6 +7,7 @@ extern s32 func_151F2CDC_retail(void);
 extern void func_151F2BA8_retail(void);
 extern void func_151F2D6C_retail(s32 arg0, s32 arg1);
 extern void func_151F2E4C_retail(s32 arg0, s32 arg1);
+u32 func_1502B020(u32 *size, u32 depth, ...);
 
 void func_10012560(s32 arg0, void *arg1, s32 arg2) {
     func_15043BB8(&D_800427A0, arg1, arg2);
@@ -33,7 +34,7 @@ void func_100125CC(s32 arg0) {
 
 void func_1001263C(s32 arg0, s32 arg1, s32 arg2) {
     s32 temp_v0;
-    s32 sp18;
+    u32 sp18;
 
     sp18 = 0;
     temp_v0 = func_1502B020(&sp18, 2, 22, arg0);

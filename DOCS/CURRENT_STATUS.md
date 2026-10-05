@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game variadic table-address resolver recovery: [Note 999](WORKING_NOTES/999-game-variadic-table-address-resolver-recovery-and-connected-init-caller-20261005.md)
+recovers `func_1502B020` from its zero-return placeholder. All 60 linked words
+match with frame 0x48 and two checked independent loop-store guards, not a
+direct compiler match. SDK argument consumption, initialized-one zero-depth
+behavior and final output-store/descriptor-read order remain intact. Boundary,
+actual lookup/cache hit/miss and connected retail Init sound-caller cases pass;
+the latter covers 42/43 reachable caller words without faking an impossible
+size-zero/nonzero-address result. Both Init callers use the recovered variadic
+prototype; full rebuild retains Init exactness. All 210 final checks pass in
+172.769 seconds, no skips; both caller slots and protected Init code/data,
+Debugger code and Game data remain exact. Totals: 3295 / 5463 overall,
+2622 / 4790 Game, zero drift. README aggregates updated; conversion/Init ASM
+and sibling/frozen Release unchanged. Next: resource loader `func_1502B224`,
+75 words / frame 0x30, including compressed-length mismatch handling.
+
 Game variadic table-range wrapper recovery: [Note 998](WORKING_NOTES/998-game-variadic-table-range-wrapper-recovery-and-guarded-loop-stores-20261005.md)
 recovers `func_1502B110` from its zero-return placeholder. All 69 linked words
 match with retail's 0x48 frame and two checked independent loop-store guards;

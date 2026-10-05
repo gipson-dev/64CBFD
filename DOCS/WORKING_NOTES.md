@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-05 ([Note 999](WORKING_NOTES/999-game-variadic-table-address-resolver-recovery-and-connected-init-caller-20261005.md)):
+Recover `func_1502B020`'s SDK-varargs table-address traversal and optional
+masked-size output. All 60 linked words / frame 0x48 match with two checked
+independent loop-store guards, not directly from C. The 108-form screen leaves
+two raw differences. Boundary and actual lookup/cache hit/miss cases pass;
+24 connected retail Init sound-caller cases cover 42/43 reachable words.
+Both Init caller prototypes are aligned; full rebuild preserves Init exactness.
+All 210 final checks pass in 172.769 seconds, no skips; both caller slots and
+protected Init code/data, Debugger code and Game data remain exact.
+Totals: 3295 / 5463 overall, 2622 / 4790 Game, zero drift. README aggregates
+updated; conversion/Init ASM and sibling/frozen Release unchanged.
+Next: `func_1502B224` raw/compressed resource loader, 75 words / frame 0x30.
+
 2026-10-05 ([Note 998](WORKING_NOTES/998-game-variadic-table-range-wrapper-recovery-and-guarded-loop-stores-20261005.md)):
 Recover `func_1502B110`'s SDK-varargs/default-root/descriptor-gated range
 loading from its placeholder. All 69 linked words match with two checked

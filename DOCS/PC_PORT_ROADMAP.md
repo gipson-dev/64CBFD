@@ -1,5 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Game Variadic Table-Address Resolver Recovery - 2026-10-05
+
+[Note 999](WORKING_NOTES/999-game-variadic-table-address-resolver-recovery-and-connected-init-caller-20261005.md)
+recovers DECOMP `func_1502B020` and matches all 60 linked words with two
+checked independent loop-store guards, not directly from C. Boundary and
+actual lookup/cache cases preserve zero-depth initialization, continued
+argument consumption after missing descriptors and optional size outputs.
+The actual retail Init sound caller is connected to the recovered source
+callees; no sound playback acceptance is claimed. Init caller declarations
+are aligned without linked-code drift.
+All 210 final checks pass in 172.769 seconds, no skips; both Init caller slots
+and protected Init code/data, Debugger code and Game data remain exact.
+Read-only sibling inspection finds the original translated frame/stores/output
+read already present, alongside
+an existing cadence probe; no maintained PC override is found. No sibling
+source, build, save or frozen Release artifact is changed. Game exact count:
+2622 / 4790. Real SDK DMA/copy, sound, runtime and rendering remain separate
+qualification boundaries.
+
 ## Game Variadic Table-Range Wrapper Recovery - 2026-10-05
 
 [Note 998](WORKING_NOTES/998-game-variadic-table-range-wrapper-recovery-and-guarded-loop-stores-20261005.md)
