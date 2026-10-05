@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-05 ([Note 1009](WORKING_NOTES/1009-game-actor-pass-lifetime-audit-and-helper-handoff-20261005.md)):
+Bank 176 actor-pass lifetime/scope/declaration controls. Production remains
+175 body / 176 slot words, frame 0x88, 109 differences; no new guards.
+Twenty focused checks pass in 47.471 seconds, no skips, including 48 new
+bounded guest cases. Next: connected `func_1502F3C8` phase helper while the
+caller spill/lifetime schedule remains open. README and sibling unchanged.
+
 2026-10-05 ([Note 1008](WORKING_NOTES/1008-game-actor-pass-array-layout-and-connected-selector-20261005.md)):
 Reduce `func_1502BEE4` from 115 to 109 differences; 175 body / 176 slot words,
 frame 0x88, no new guards/profile override. Depth/queue offsets 0x3C/0x58 and

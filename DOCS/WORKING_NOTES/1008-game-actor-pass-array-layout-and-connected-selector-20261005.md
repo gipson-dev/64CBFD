@@ -1,5 +1,8 @@
 # Game Actor Pass Array Layout And Connected Selector
 
+Follow-up: [Note 1009](1009-game-actor-pass-lifetime-audit-and-helper-handoff-20261005.md)
+banks bounded lifetime controls without changing this production baseline.
+
 Date: 2026-10-05. Starting HEAD: `36351570`, the tested local-storage screen
 after [Note 1007](1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md).
 The checkout was clean. Work continues on `func_1502BEE4`; this note does not

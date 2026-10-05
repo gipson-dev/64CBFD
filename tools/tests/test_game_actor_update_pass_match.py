@@ -351,6 +351,50 @@ static void reset(int pattern,int gate) {
                     count += 1
         self.assertEqual(count, 64)
 
+    def test_lifetime_and_scope_controls_do_not_prove_a_match(self):
+        families = (screen.lifetime_candidates(), screen.scope_candidates(), screen.pointer_home_candidates())
+        self.assertEqual([len(forms) for forms in families], [24, 8, 144])
+        forms = dict(form for family in families for form in family)
+        controls = [
+            ('lifetime-actor-s32-1-1', (173, 0x80, 174), (0x34, 0x3C, 0x58, 0x38)),
+            ('lifetime-index-s32-1-1', (188, 0x80, 178), (0x34, 0x3C, 0x58, 0x38)),
+            ('scope-0-0-0', (176, 0x88, 133), (0x78, 0x40, 0x5C, 0x3C)),
+            ('scope-0-1-1', (176, 0x88, 133), (0x3C, 0x44, 0x60, 0x40)),
+            ('pointer-home-0-slot-index-maxDepth-count', (175, 0x88, 113), None),
+            ('pointer-home-5-slot-index-maxDepth-count', (175, 0x88, 115), None),
+        ]
+        connection = {UPDATE + i * 4: w for i, w in enumerate(self.dispatcher)}
+        connection.update({SELECTOR + i * 4: w for i, w in enumerate(self.selector)})
+        cases = [
+            (memory_case([1] * 25 + [0], list(range(2, 27)) + [0]), None, connection),
+            (memory_case([1, 1, 1] + [0] * 23, [0, 1, 2] + [0] * 23,
+                         list(range(232, 258))), None, connection),
+            (memory_case([1, 1, 1] + [0] * 23, [0, 1, 2] + [0] * 23),
+             {(UPDATE, 1): ((ACTORS + 2 * STRIDE, 0, 4),)}, None),
+            (memory_case([1] + [0] * 25),
+             {(UPDATE, 0): ((ACTORS + STRIDE, 1, 4), (ACTORS + STRIDE + 0x65, 1, 1))}, None),
+        ]
+        count = 0
+        for name, expected, offsets in controls:
+            record, words = screen.compile_candidate(self.root, self.output, name, forms[name])
+            self.assertEqual((record['body_words'], record['frame'], record['real_differences']), expected)
+            self.assertEqual(record['diagnostics'], '')
+            if offsets:
+                maximum, depths, ordered, captured = offsets
+                zero_call = words.index(0x0C0089BC)
+                self.assertEqual(words[zero_call + 1], 0xAFA70000 | maximum)
+                self.assertIn(0x27A40000 | depths, words[:zero_call])
+                self.assertIn(0x27A50000 | ordered, words)
+                self.assertIn(0xAFA30000 | captured, words)
+            for memory, actions, connected in cases:
+                for phase in (0, 8):
+                    original = PassOracle(self.retail, memory, phase, actions, connected).run()
+                    model = PassOracle(words, memory, phase, actions, connected).run()
+                    self.assertEqual(external_memory(model.memory), external_memory(original.memory))
+                    self.assertEqual(external_events(model), external_events(original))
+                    count += 1
+        self.assertEqual(count, 48)
+
     def test_native_independent_stable_sort_reference_and_mutations(self):
         self.run_host(r'''
 static ActorUpdate58F80 expected[26];static int savedLog[64];

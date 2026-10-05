@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Pass Lifetime Audit - 2026-10-05
+
+[Note 1009](WORKING_NOTES/1009-game-actor-pass-lifetime-audit-and-helper-handoff-20261005.md)
+banks 176 DECOMP compiler controls with no production change. Twenty focused
+tests pass, including 48 bounded guest comparisons. The actor pass remains
+non-matching at 109 words; next is its `func_1502F3C8` phase helper.
+No PC source transplant, runtime acceptance claim or frozen Release change.
+
 ## Game Actor Pass Array Layout Progress - 2026-10-05
 
 [Note 1008](WORKING_NOTES/1008-game-actor-pass-array-layout-and-connected-selector-20261005.md)

@@ -480,6 +480,116 @@ def cursor_candidates():
 SELECTED = dict(interleave_candidates())['interleave-3-slot-maxDepth-index-count']
 
 
+def lifetime_candidates():
+    header = '''    ActorUpdate58F80 *actor;
+    ActorUpdate58F80 *cursor;
+    s32 slot, maxDepth, count, index;
+    u8 depths[25];
+    u8 ordered[25];'''
+    chain = '''                cursor = actor;
+                depths[slot] = 0;
+                while (cursor->predecessor != 0) {
+                    cursor = D_800CC2D0 + (cursor->predecessor - 1);
+                    depths[slot]++;
+                }'''
+    forms = []
+    for mode in ('actor', 'index'):
+        for index_type in ('s32', 's16', 'u8'):
+            for max_after in (False, True):
+                for counter_order in (False, True):
+                    body = RECOVERY
+                    if mode == 'actor':
+                        body = body.replace(chain, chain.replace('                cursor = actor;\n', '').replace('cursor', 'actor'))
+                        body = body.replace('''    slot = 0;
+    actor = D_800CC2D0;
+    do {''', '''    for (slot = 0; slot < 25; slot++) {
+        actor = D_800CC2D0 + slot;''').replace('''        slot++;
+        actor++;
+    } while (slot < 25);''', '    }')
+                    else:
+                        replacement = '''                index = slot;
+                depths[slot] = 0;
+                while (D_800CC2D0[index].predecessor != 0) {
+                    index = D_800CC2D0[index].predecessor - 1;
+                    depths[slot]++;
+                }'''
+                        body = body.replace(chain, replacement)
+                    lines = ['    ActorUpdate58F80 *actor;', '    s32 slot;',
+                             '    ' + index_type + ' index;']
+                    if not max_after:
+                        lines.append('    s32 maxDepth;')
+                    lines += ['    u8 ordered[25];', '    u8 depths[25];']
+                    counters = ['    s32 maxDepth;', '    s32 count;'] if max_after else ['    s32 count;']
+                    lines += list(reversed(counters)) if counter_order else counters
+                    body = body.replace(header, '\n'.join(lines)).replace(
+                        '    } while (actor != (D_800CC2D0 + 25));', '    } while (actor != D_800D121C);')
+                    forms.append((f'lifetime-{mode}-{index_type}-{int(max_after)}-{int(counter_order)}', body))
+    return forms
+
+
+def scope_candidates():
+    header = '''    ActorUpdate58F80 *actor;
+    ActorUpdate58F80 *cursor;
+    s32 slot, maxDepth, count, index;
+    u8 depths[25];
+    u8 ordered[25];'''
+    forms = []
+    for indexed in (False, True):
+        for max_after in (False, True):
+            for reverse in (False, True):
+                body = RECOVERY.replace('''            if (actor->predecessor != 0) {
+                cursor = actor;''', '''            if (actor->predecessor != 0) {
+                ActorUpdate58F80 *cursor = actor;''')
+                if indexed:
+                    before = '''    slot = 0;
+    actor = D_800CC2D0;
+    do {'''
+                    start, sep, remainder = body.partition(before)
+                    region, ending, suffix = remainder.partition('''        slot++;
+        actor++;
+    } while (slot < 25);''')
+                    assert sep and ending
+                    region = region.replace('actor->', 'D_800CC2D0[slot].').replace(
+                        '*cursor = actor;', '*cursor = D_800CC2D0 + slot;').replace(
+                        'func_1502BD84(actor, slot);', 'func_1502BD84(D_800CC2D0 + slot, slot);')
+                    body = start + '    for (slot = 0; slot < 25; slot++) {' + region + '    }' + suffix
+                lines = ['    ActorUpdate58F80 *actor;', '    s32 slot, index;']
+                if not max_after:
+                    lines.append('    s32 maxDepth;')
+                lines += ['    u8 ordered[25];', '    u8 depths[25];']
+                counters = ['    s32 maxDepth;', '    s32 count;'] if max_after else ['    s32 count;']
+                lines += list(reversed(counters)) if reverse else counters
+                body = body.replace(header, '\n'.join(lines)).replace(
+                    '    } while (actor != (D_800CC2D0 + 25));', '    } while (actor != D_800D121C);')
+                forms.append((f'scope-{int(indexed)}-{int(max_after)}-{int(reverse)}', body))
+    return forms
+
+
+def pointer_home_candidates():
+    header = '''    ActorUpdate58F80 *actor;
+    ActorUpdate58F80 *cursor;
+    s32 slot, maxDepth, count, index;
+    u8 depths[25];
+    u8 ordered[25];'''
+    base = RECOVERY.replace('    } while (actor != (D_800CC2D0 + 25));',
+                            '    } while (actor != D_800D121C);')
+    declarations = {
+        'actor': '    ActorUpdate58F80 *actor;',
+        'cursor': '    ActorUpdate58F80 *cursor;',
+        'arrays': '    u8 ordered[25];\n    u8 depths[25];',
+        **{name: '    s32 ' + name + ';' for name in ('slot', 'index', 'maxDepth', 'count')},
+    }
+    forms = []
+    for cursor_position in range(6):
+        for ordering in itertools.permutations(('slot', 'index', 'maxDepth', 'count')):
+            names = ['actor', *ordering[:2], 'arrays', *ordering[2:]]
+            names.insert(cursor_position + 1, 'cursor')
+            lines = '\n'.join(declarations[name] for name in names)
+            forms.append(('pointer-home-' + str(cursor_position) + '-' + '-'.join(ordering),
+                          base.replace(header, lines)))
+    return forms
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     group = parser.add_mutually_exclusive_group()
@@ -491,6 +601,9 @@ def main():
         'interleave': (interleave_candidates, 'interleave-screen.json'),
         'workspace': (workspace_candidates, 'workspace-screen.json'),
         'cursor': (cursor_candidates, 'cursor-screen.json'),
+        'lifetime': (lifetime_candidates, 'lifetime-screen.json'),
+        'scope': (scope_candidates, 'scope-screen.json'),
+        'pointer-home': (pointer_home_candidates, 'pointer-home-screen.json'),
     }
     for name in screens:
         if name != 'initial':

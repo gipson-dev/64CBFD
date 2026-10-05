@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-05 Game Actor Pass Lifetime Audit
+
+[Note 1009](WORKING_NOTES/1009-game-actor-pass-lifetime-audit-and-helper-handoff-20261005.md)
+banks 176 reproducible compiler controls and 48 bounded guest comparisons.
+Twenty focused tests pass in 47.471 seconds, no skips. Production and README
+remain unchanged; `func_1502BEE4` still has 109 differing words. Next is its
+50-word `func_1502F3C8` phase helper; caller matching remains unfinished.
+No sibling/frozen Release change or push.
+
 ## 2026-10-05 Game Actor Pass Array Layout Progress
 
 [Note 1008](WORKING_NOTES/1008-game-actor-pass-array-layout-and-connected-selector-20261005.md)

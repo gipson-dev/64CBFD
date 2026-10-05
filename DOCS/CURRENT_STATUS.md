@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor pass lifetime audit: [Note 1009](WORKING_NOTES/1009-game-actor-pass-lifetime-audit-and-helper-handoff-20261005.md)
+banks 176 reproducible compiler controls without changing production. None
+improves `func_1502BEE4`'s 109 differences; correct stack homes or 176-word
+length alone do not prove the retail schedule. Twenty focused checks pass in
+47.471 seconds, no skips, including 48 new bounded guest comparisons.
+README aggregates and linked baseline remain unchanged. Next: recover the
+connected 50-word `func_1502F3C8` phase helper; caller matching remains open.
+
 Game actor pass layout progress: [Note 1008](WORKING_NOTES/1008-game-actor-pass-array-layout-and-connected-selector-20261005.md)
 reduces `func_1502BEE4` from 115 to 109 differing words, with 175 body / 176
 slot words and frame 0x88. Depth/queue arrays now match SP+0x3C/SP+0x58 and
