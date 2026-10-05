@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Init Bitmap Grouped Field Trial - 2026-10-05
+
+[Note 981](WORKING_NOTES/981-init-bitmap-record-view-fitting-and-ordered-read-qualification-20261005.md)
+qualifies grouped volatile start/end/count reads. Optimized nineteen-word body
+retains the two-based mask, but seventeen words differ and whole text stays
+80 bytes after alignment. The extra XOR loop remains: no production adoption
+or original-record-type claim. Ten new checks qualify 1002 ordered retail/C
+traces, twelve bounded prefixes and an unused-field read rejection control.
+All 138 combined checks pass, no skips; complete existing Init/data and Game
+data remain exact. Forty-four old-shape preprocessing selections hold. No
+host replacement, README aggregate, save or frozen Release change.
+
 ## Init Packed Bit-Width Screen - 2026-10-05
 
 [Note 980](WORKING_NOTES/980-init-packed-bit-width-screen-and-restored-candidate-20261005.md)

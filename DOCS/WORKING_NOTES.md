@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 981](WORKING_NOTES/981-init-bitmap-record-view-fitting-and-ordered-read-qualification-20261005.md)):
+Qualify direct/local grouped bitmap field reads. Optimized body fits nineteen
+words with the two-based mask but seventeen differ; XOR loop and retail schedule
+remain unresolved. Complete text stays 80 bytes after alignment. Ten new checks
+qualify 1002 completed ordered retail/C traces and twelve bounded prefixes,
+including aliases and an extra-unused-field read control. All 138 combined
+checks pass, no skips; old Shapes 1..22 hold across 44 preprocessing selections.
+Complete existing Init slots/code/data and Game data stay retail-exact. No
+production conversion, original-record-type claim, README or host change.
+
 2026-10-05 ([Note 980](WORKING_NOTES/980-init-packed-bit-width-screen-and-restored-candidate-20261005.md)):
 Screen wide bit-count and both-field locals on the current byte-depth lead.
 One/three optimized builder words disappear but trailing alignment absorbs

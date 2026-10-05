@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef short s16;
 
-#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 22)
+#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 24)
 typedef char GuestAddressWidth[(sizeof(unsigned long) == 4) ? 1 : -1];
 #if SHAPE == 21 || SHAPE == 22
 typedef char GuestMaskWidth[(sizeof(unsigned int) == 4) ? 1 : -1];
@@ -18,6 +18,37 @@ extern u8 *D_8003BE7C;
 extern s16 D_8003BE78;
 #endif
 
+#if (SHAPE == 23 || SHAPE == 24) && !defined(HOST_TEST)
+typedef struct {
+    u8 *start;
+    unsigned long reserved4;
+    s16 count;
+    s16 reservedA;
+    u8 *end;
+} InitBitmapRecord;
+extern volatile InitBitmapRecord bitmapRecord;
+const unsigned long init_bitmap_record_layout[] = {
+    sizeof(InitBitmapRecord),
+    (unsigned long)&((InitBitmapRecord *)0)->start,
+    (unsigned long)&((InitBitmapRecord *)0)->count,
+    (unsigned long)&((InitBitmapRecord *)0)->end,
+    sizeof(((InitBitmapRecord *)0)->count)
+};
+#if SHAPE == 24
+#define BITMAP_START record->start
+#define BITMAP_END record->end
+#define BITMAP_COUNT record->count
+#else
+#define BITMAP_START bitmapRecord.start
+#define BITMAP_END bitmapRecord.end
+#define BITMAP_COUNT bitmapRecord.count
+#endif
+#else
+#define BITMAP_START D_8003BE70
+#define BITMAP_END D_8003BE7C
+#define BITMAP_COUNT D_8003BE78
+#endif
+
 /* Isolated scheduling trial; no production owner or instruction guards. */
 #if SHAPE == 4 || SHAPE == 5
 u8 *func_10005BE0(void) {
@@ -31,9 +62,12 @@ void func_10005BE0(void) {
 #elif SHAPE == 21 || SHAPE == 22
     unsigned int value = ~0u;
 #endif
-#if SHAPE >= 12 && SHAPE <= 22
-    unsigned long cursor = (unsigned long)D_8003BE70;
-    unsigned long end = (unsigned long)D_8003BE7C;
+#if SHAPE == 24 && !defined(HOST_TEST)
+    volatile InitBitmapRecord *record = &bitmapRecord;
+#endif
+#if SHAPE >= 12 && SHAPE <= 24
+    unsigned long cursor = (unsigned long)BITMAP_START;
+    unsigned long end = (unsigned long)BITMAP_END;
 #if SHAPE == 13
     unsigned long remaining = end - cursor;
 #elif SHAPE == 18
@@ -86,7 +120,7 @@ void func_10005BE0(void) {
     do {
         *cursor++ = 0xFF;
     } while ((unsigned long)cursor <= (unsigned long)end);
-#elif SHAPE == 12
+#elif SHAPE == 12 || SHAPE == 23 || SHAPE == 24
     /* Guest o32 unsigned arithmetic preserves the wrapping address domain. */
     do {
         *(volatile u8 *)cursor = 0xFF;
@@ -156,7 +190,7 @@ fill:
 #error Unknown SHAPE
 #endif
 #if SHAPE != 16 && SHAPE != 17
-    bits = D_8003BE78 & 7;
+    bits = BITMAP_COUNT & 7;
 #if SHAPE == 7
     if (bits--) {
 #elif SHAPE == 19 || SHAPE == 21
@@ -176,7 +210,7 @@ fill:
 #elif SHAPE == 21
         value = ~(value << bits);
         *(volatile u8 *)end = value;
-#elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18 || SHAPE == 20 || SHAPE == 22
+#elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18 || SHAPE == 20 || SHAPE == 22 || SHAPE == 23 || SHAPE == 24
         *(volatile u8 *)end = (2u << bits) - 1;
 #else
         *end = (2u << bits) - 1;

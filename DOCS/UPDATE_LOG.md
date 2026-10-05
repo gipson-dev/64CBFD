@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-05 current Init full corpus checkpoint
 
+- Init [Note 981](WORKING_NOTES/981-init-bitmap-record-view-fitting-and-ordered-read-qualification-20261005.md)
+  tests grouped volatile start/end/count field reads. Optimized nineteen-word
+  body retains the two-based mask, but seventeen differ; XOR loop/schedule
+  remain unresolved and complete standalone text stays 80 bytes. Ten new
+  checks qualify 1002 completed ordered retail/C traces, twelve bounded
+  prefixes and unused-field read rejection. All 138 combined checks pass in
+  70.804 seconds in the final rerun, no skips; complete existing Init/data and Game data hold.
+  Forty-four old-shape host/guest preprocessing comparisons hold. No production
+  conversion, original-type claim, README aggregate or host/Release change.
+
 - Init [Note 980](WORKING_NOTES/980-init-packed-bit-width-screen-and-restored-candidate-20261005.md)
   screens wide bit-count and both-field locals on the banked byte-depth lead.
   Public builder saves one/three O2 words, but total executable text stays

@@ -6,6 +6,11 @@ Subsequent [Note 978](978-init-mmio-record-view-fitting-and-ordered-access-quali
 tests the next small Init target with a new grouped-address MMIO hypothesis.
 It likewise yields bounded behavior evidence, not an adopted replacement.
 
+Subsequent [Note 981](981-init-bitmap-record-view-fitting-and-ordered-read-qualification-20261005.md)
+fits another nineteen-word body using grouped field reads and the two-based
+mask. Seventeen positions and the original loop schedule still differ; its
+ordered model qualification does not change the no-adoption boundary.
+
 ## Result
 
 Continue the nearest small Init target from

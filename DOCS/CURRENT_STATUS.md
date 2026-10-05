@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init bitmap grouped view: [Note 981](WORKING_NOTES/981-init-bitmap-record-view-fitting-and-ordered-read-qualification-20261005.md)
+tests direct/local volatile record addressing for the captured start/end and
+late signed count. Optimized body fits nineteen words while retaining the
+two-based mask, but seventeen differ: XOR loop and original schedule remain
+unresolved. Complete standalone text stays 80 bytes after alignment. Ten new
+checks qualify 1002 completed ordered retail/C traces and twelve bounded prefixes,
+including aliases, wrapping model addresses and unused-field read rejection.
+All 138 final combined checks pass in 70.804 seconds, no skips; complete existing
+Init slots/code/data and Game data remain retail-exact. All 44 old-shape host/
+guest preprocessing selections hold. No original-type provenance or production
+adoption is inferred. README, production sources and host/Release unchanged.
+
 Init packed-width fitting: [Note 980](WORKING_NOTES/980-init-packed-bit-width-screen-and-restored-candidate-20261005.md)
 screens a wide bit-count local and both packed fields on the byte-depth lead.
 Optimized public builder saves one/three words, but trailing alignment absorbs
