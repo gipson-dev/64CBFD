@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Game Cached Lookup Guarded Match - 2026-10-05
+
+[Note 996](WORKING_NOTES/996-game-cached-lookup-frame-and-guarded-miss-path-match-20261005.md)
+matches all 159 linked DECOMP lookup words with twelve checked miss-path
+guards, not directly from C. The full cache-hit path emits directly. All
+11088 three-way connected cases retain ordered memory/call events and returns;
+1056 native hit aliases, live clock mutations and both stack phases pass.
+All 183 final checks pass, no skips, with protected sections exact after the
+full consumer rebuild. Read-only sibling audit finds the translated
+retail frame, masked sp+0x68 buffer, pointer/offset spills and live-generation
+install call already present; no synchronization is needed for this matching
+change. Existing host probes remain separate. No host source, build, save or
+frozen Release change. Game exact count: 2619 / 4790. Real SDK DMA/copy,
+runtime and rendering acceptance remain separate and open.
+
 ## Game Cache Installer Alias-Preserving Guarded Match - 2026-10-05
 
 [Note 995](WORKING_NOTES/995-game-cache-installer-alias-preserving-word-copy-and-guarded-match-20261005.md)

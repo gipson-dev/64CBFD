@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `7475566c`.
 
+Follow-up: [Note 996](996-game-cached-lookup-frame-and-guarded-miss-path-match-20261005.md)
+completes the next lookup match with twelve checked miss-path guards, retaining
+this installer's alias gates and connected code. Counts below are this note's
+historical checkpoint.
+
 ## Result And Scope
 
 `func_1502AB04`'s complete 97-word / 388-byte linked slot now matches retail

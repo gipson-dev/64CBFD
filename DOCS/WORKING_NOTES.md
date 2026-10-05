@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-05 ([Note 996](WORKING_NOTES/996-game-cached-lookup-frame-and-guarded-miss-path-match-20261005.md)):
+Match all 159 linked `func_1502AC88` words using recovered address-parameter
+lifetime/local layout and twelve checked miss-path guards, not directly from C.
+All first 128 words and the complete cache-hit path emit directly. The 71-form
+screen reproduces twelve raw differences with no diagnostics. All 11088
+three-way connected cases, 1056 native hit aliases and omitted-guard controls
+pass; both N64 stack phases, live clock and offset-return alias semantics hold.
+All 183 final checks pass, no skips; full consumer rebuild and protected-section
+identity hold. Totals: 3292 / 5463 overall,
+2619 / 4790 Game, zero drift. README aggregates updated; conversion/Init ASM
+and sibling/frozen Release unchanged. Next: recover `func_1502AF04`.
+
 2026-10-05 ([Note 995](WORKING_NOTES/995-game-cache-installer-alias-preserving-word-copy-and-guarded-match-20261005.md)):
 Match all 97 linked `func_1502AB04` words with the alias-preserving word-copy
 source and 41 checked scheduling/register guards, not directly from C.

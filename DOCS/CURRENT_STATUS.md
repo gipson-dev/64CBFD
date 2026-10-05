@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game cached lookup guarded match: [Note 996](WORKING_NOTES/996-game-cached-lookup-frame-and-guarded-miss-path-match-20261005.md)
+matches all 159 linked `func_1502AC88` words. Address-parameter lifetime and
+declaration order recover the full body, retail 0xA0 frame and exact cache-hit
+path. Raw C still differs at twelve miss-path words; checked guards normalize
+closed temporaries and equivalent buffer roundup on an 8-aligned N64 stack.
+All 11088 three-way connected cases preserve ordered memory/call events and
+returns; native 1056-case hit aliases and every omitted-guard control pass.
+All 183 final combined checks pass, no skips; protected-section identity holds
+after the full consumer rebuild. Totals: 3292 / 5463 overall, 2619 / 4790 Game,
+zero drift. README aggregate tables updated; conversion/Init ASM unchanged.
+Sibling/frozen Release untouched. Next: recover `func_1502AF04`'s 71-word
+DMA table-range loader and in-place offset adjustment from its placeholder.
+
 Game cache installer guarded match: [Note 995](WORKING_NOTES/995-game-cache-installer-alias-preserving-word-copy-and-guarded-match-20261005.md)
 matches all 97 linked `func_1502AB04` words with the alias-preserving one-word
 offset copy and 41 expected-word guards. Not a direct compiler match: raw C

@@ -10578,3 +10578,15 @@ game_57FA0,func_1502AB04,0x158,0x24E70008,0xAC8EFFC4,-,-,Normalize cache install
 game_57FA0,func_1502AB04,0x15C,0xAC51FFF4,0xAC47FFF0,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
 game_57FA0,func_1502AB04,0x160,0x24C60040,0x24E70008,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
 game_57FA0,func_1502AB04,0x168,0xAC4BFFFC,0xAC51FFF4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AC88,0x200,0x27AA006F,0x27AB0068,-,-,Normalize cached lookup buffer temporary and equivalent roundup on an 8-aligned N64 stack,,,false
+game_57FA0,func_1502AC88,0x204,0x320C000E,0x320A000E,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502AC88,0x208,0x258D001F,0x254C001F,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502AC88,0x20C,0x01422824,0x01622824,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502AC88,0x224,0x01A23024,0x01823024,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502AC88,0x230,0x8FAF0034,0x8FAD0034,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502AC88,0x238,0x8FAB00A8,0x8FB900A8,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502AC88,0x23C,0x01CF2821,0x01AE2821,-,-,Normalize cached lookup temporary allocation and commutative pair-pointer sum,,,false
+game_57FA0,func_1502AC88,0x240,0x8CB80000,0x8CAF0000,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502AC88,0x24C,0xAFB80058,0xAFAF0058,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502AC88,0x250,0x8CB90004,0x8CB80004,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502AC88,0x258,0xAD790000,0xAF380000,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false

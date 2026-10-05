@@ -62,17 +62,17 @@ void func_1502AB04(s32 arg0, u32 *pairs, u32 generation, u32 address) {
         address += 8;
     }
 }
-s32 func_1502AC88(u32 arg0, s32 arg1, u32 *arg2) {
-    AssetTableCache57FA0 saved;
+s32 func_1502AC88(u32 address, s32 arg1, u32 *arg2) {
     u8 storage[0x40];
     u8 *aligned;
-    u32 *pairs;
-    u32 address;
     u32 offset;
     u32 i;
     u32 j;
+    u32 *pairs;
+    AssetTableCache57FA0 saved;
 
-    address = (arg0 + (u32)arg1 * 8) | 0x80000000;
+    address += (u32)arg1 * 8;
+    address |= 0x80000000;
     for (i = 0; i < 16; i++) {
         if (D_800C3D68[i].address == address) {
             saved = D_800C3D68[i];

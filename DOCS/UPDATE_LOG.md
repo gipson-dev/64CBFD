@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-05 Game Cached Lookup Guarded Match
+
+[Note 996](WORKING_NOTES/996-game-cached-lookup-frame-and-guarded-miss-path-match-20261005.md)
+matches all 159 linked `func_1502AC88` words. The recovered 0xA0 frame/local
+layout emits the complete hit path directly; twelve checked miss-path guards
+normalize temporaries and ABI-equivalent buffer alignment. Raw C is still
+twelve words different, with no profile, insertion or omission change. All
+11088 connected three-way cases and 1056 native hit aliases pass, including
+live clock/output alias behavior and both stack phases. All 183 final checks
+pass, no skips; full consumer rebuild and protected-section identity hold.
+README totals: 3292 / 5463 overall, 2619 / 4790 Game, zero drift.
+Conversion/Init ASM unchanged; sibling/frozen Release untouched. Next:
+recover table-range loader `func_1502AF04` from its zero-return placeholder.
+
 ## 2026-10-05 Game Cache Installer Alias-Preserving Guarded Match
 
 [Note 995](WORKING_NOTES/995-game-cache-installer-alias-preserving-word-copy-and-guarded-match-20261005.md)

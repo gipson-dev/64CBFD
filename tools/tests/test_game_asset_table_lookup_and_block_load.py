@@ -305,9 +305,9 @@ for(phase=0;phase<2;phase++) {
         finally:
             self.fixture=original
 
-    def test_lookup_and_block_have_no_guards_and_retained_alias_is_one_cache(self):
+    def test_block_has_no_guards_and_retained_alias_is_one_cache(self):
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as source:
-            self.assertFalse(any(row['function'] in ('func_1502AC88','func_1502B350')
+            self.assertFalse(any(row['function']=='func_1502B350'
                                  for row in csv.DictReader(source)))
         self.assertNotIn('D_800C3E58',self.source)
         symbols=(self.root/'conker/undefined_syms_auto.txt').read_text()
@@ -339,7 +339,7 @@ for(phase=0;phase<2;phase++) {
         call_offsets=[int(offset,16) for offset in re.findall(r'(?m)^([0-9a-f]+)\s+R_MIPS_26\s+func_1502AB04\s*$',relocations)]
         self.assertEqual(len(call_offsets),1)
         measured={'func_1502AB04':(97,97,0x28,41,'a6bca817be8a9ee74df0bc7e91206bd401525478a5f4c39ffb832a9eed82a9bf'),
-                  'func_1502AC88':(158,159,0xA0,156,'1bb0909b45c22e6029c8100583e55835d0cea88a3a28efe38ba65524a7f2ca28'),
+                  'func_1502AC88':(159,159,0xA0,12,'741808c2f0dd29cfa36ed21f352da41403212510d5803172ed14cdbbba767a35'),
                   'func_1502B350':(86,86,0x30,0,'f176b2891cb5a8aa6f60461047ea78f4b4e7958fcaef18fb41b9d0c1ccdc31ae')}
         rom=(self.root/'conker/conker.us.bin').read_bytes()
         for name,(body,size,frame,diffs,digest) in measured.items():
@@ -356,6 +356,9 @@ for(phase=0;phase<2;phase++) {
             slot=words[:count]+[0]*(size-count)
             if name=='func_1502AB04':
                 from tools.tests.test_game_cache_installer_match import apply_linked_guards
+                self.assertEqual(production[name],apply_linked_guards(slot))
+            elif name=='func_1502AC88':
+                from tools.tests.test_game_cached_lookup_match import apply_linked_guards
                 self.assertEqual(production[name],apply_linked_guards(slot))
             else:
                 self.assertEqual(production[name],slot)
