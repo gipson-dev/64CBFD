@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Init Byte-Depth Fitting - 2026-10-04
+
+[Note 975](WORKING_NOTES/975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)
+reduces both packed guest decoder profiles by sixteen complete executable bytes.
+Optimized candidate is 4496 against 3984 retail, still 512 over. All 58 bounded
+connected/native checks and twenty owner/slot/call checks pass, no skips;
+ordered sixteen-word table publications and disabled packed hashes are checked.
+Call/observed stack bounds are unchanged. Aligned-end O2 grows, so the option
+stays opt-in. Both new replication helpers regressed and were removed. No
+production conversion or host decoder replacement; full guarded corpus and
+entry/frame/private-stack gates remain. README aggregates and Release unchanged.
+
 ## Init Decoder Fitting Trial - 2026-10-04
 
 [Note 974](WORKING_NOTES/974-init-decoder-complement-low-mask-fitting-trial-20261004.md)

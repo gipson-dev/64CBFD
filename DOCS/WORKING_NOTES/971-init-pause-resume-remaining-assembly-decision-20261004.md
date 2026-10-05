@@ -10,6 +10,10 @@ below. This note's Init measurements and no-adoption decision remain unchanged.
 
 ### Latest Resume Recheck
 
+Subsequent [Note 975](975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)
+qualifies a smaller opt-in packed decoder at 4496 bytes, still 512 over retail.
+Default source ownership and this assessment's no-adoption decision stand.
+
 Subsequent [Note 974](974-init-decoder-complement-low-mask-fitting-trial-20261004.md)
 adds a new decoder fitting hypothesis and bounded qualification. Its complete
 size remains unchanged, so this assessment's no-adoption decision stands.

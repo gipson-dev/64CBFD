@@ -264,6 +264,25 @@ static uint32_t take_bits(InitDecodeState *s, uint32_t width) {
 #define BUILD_LOW_MASK(width) low_mask(width)
 #endif
 
+#ifdef INIT_DECODE_BUILDER_BYTE_LEVEL
+#define BUILD_LEVEL_STEP 4
+#define BUILD_LEVEL_OFFSET(depth) (*(uint32_t *)((uint8_t *)BUILD_OFFSETS + (depth)))
+#ifdef INIT_DECODE_FRAME_BACKED
+#define BUILD_TABLE_CELL(depth) (*(uint32_t *)((uint8_t *)s->frame->tables + (depth)))
+#define BUILD_SET_TABLE(depth, index) (BUILD_TABLE_CELL(depth) = s->workspaceAddress + 4 * (index))
+#define BUILD_TABLE_INDEX(depth) ((BUILD_TABLE_CELL(depth) - s->workspaceAddress) >> 2)
+#else
+#define BUILD_TABLE_CELL(depth) (*(uint32_t *)((uint8_t *)s->tables + (depth)))
+#define BUILD_SET_TABLE(depth, index) (BUILD_TABLE_CELL(depth) = (index))
+#define BUILD_TABLE_INDEX(depth) BUILD_TABLE_CELL(depth)
+#endif
+#else
+#define BUILD_LEVEL_STEP 1
+#define BUILD_LEVEL_OFFSET(depth) BUILD_OFFSETS[depth]
+#define BUILD_SET_TABLE(depth, index) SET_TABLE(s, depth, index)
+#define BUILD_TABLE_INDEX(depth) TABLE_INDEX(s, depth)
+#endif
+
 int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
                       uint32_t count, uint32_t simple, const uint16_t *bases,
                       const uint8_t *extras, uint16_t *root, uint32_t *rootBits) {
@@ -271,7 +290,7 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
     uint32_t bits, remaining, levelBits, size = 0, table = 0, next;
     uint16_t value = (uint16_t)s->reservoir;
     uint16_t *link = root;
-    int32_t level = -1, consumed;
+    int32_t level = -BUILD_LEVEL_STEP, consumed;
 #ifdef INIT_DECODE_BUILDER_HISTOGRAM_CURSOR
     const uint32_t *lengthCursor;
 #endif
@@ -390,7 +409,11 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #endif
             while ((int32_t)bits > consumed + (int32_t)width) {
                 uint32_t ceiling, slots, scan;
+#ifdef INIT_DECODE_BUILDER_BYTE_LEVEL
+                level += 4;
+#else
                 level++;
+#endif
                 consumed += width;
                 ceiling = max - consumed;
                 if (ceiling > width) ceiling = width;
@@ -426,16 +449,20 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #ifndef INIT_DECODE_BUILDER_ALLOCATION_TABLE
                 table = next;
 #endif
-                SET_TABLE(s, level, table);
+                BUILD_SET_TABLE(level, table);
                 if (level != 0) {
                     InitDecodeEntry *parent;
-                    BUILD_OFFSETS[level] = code;
+                    BUILD_LEVEL_OFFSET(level) = code;
 #ifdef INIT_DECODE_BYTE_PARENT
                     parent = (InitDecodeEntry *)((uint8_t *)BUILD_WORKSPACE +
+#ifdef INIT_DECODE_BUILDER_BYTE_LEVEL
+                        ((BUILD_TABLE_INDEX(level - BUILD_LEVEL_STEP) << 2) & ~3u) +
+#else
                         ((s->frame->tables[level - 1] - s->workspaceAddress) & ~3u) +
+#endif
                         ((code >> BUILD_SHIFT(consumed - (int32_t)width)) << 2));
 #else
-                    parent = &BUILD_WORKSPACE[TABLE_INDEX(s, level - 1) +
+                    parent = &BUILD_WORKSPACE[BUILD_TABLE_INDEX(level - BUILD_LEVEL_STEP) +
                         (code >> BUILD_SHIFT(consumed - (int32_t)width))];
 #endif
 #ifdef INIT_DECODE_PACKED_PARENT
@@ -540,16 +567,30 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #endif
 #ifdef INIT_DECODE_PARENT_ASCENT_CURSOR
             {
+#ifdef INIT_DECODE_BUILDER_BYTE_LEVEL
+                const uint32_t *offsetCursor =
+                    (const uint32_t *)((const uint8_t *)BUILD_OFFSETS +
+                                      level * (4 / BUILD_LEVEL_STEP));
+#else
                 const uint32_t *offsetCursor = BUILD_OFFSETS + level;
+#endif
                 while ((code & BUILD_LOW_MASK(consumed)) != *offsetCursor) {
                     offsetCursor--;
+#ifdef INIT_DECODE_BUILDER_BYTE_LEVEL
+                    level -= 4;
+#else
                     level--;
+#endif
                     consumed -= width;
                 }
             }
 #else
-            while ((code & BUILD_LOW_MASK(consumed)) != BUILD_OFFSETS[level]) {
+            while ((code & BUILD_LOW_MASK(consumed)) != BUILD_LEVEL_OFFSET(level)) {
+#ifdef INIT_DECODE_BUILDER_BYTE_LEVEL
+                level -= 4;
+#else
                 level--;
+#endif
                 consumed -= width;
             }
 #endif
@@ -570,6 +611,11 @@ int init_decode_build(InitDecodeState *s, const uint32_t *lengths,
 #undef BUILD_ENTRY_BITS
 #undef BUILD_SHIFT
 #undef BUILD_LOW_MASK
+#undef BUILD_LEVEL_STEP
+#undef BUILD_LEVEL_OFFSET
+#undef BUILD_TABLE_CELL
+#undef BUILD_SET_TABLE
+#undef BUILD_TABLE_INDEX
 
 #ifdef INIT_DECODE_ABI_FPR_SHADOW
 static void abi_capture(InitDecodeState *s, uint32_t literals, uint32_t distances) {

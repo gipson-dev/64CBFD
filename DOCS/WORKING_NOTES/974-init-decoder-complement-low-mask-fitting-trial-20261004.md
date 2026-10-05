@@ -2,6 +2,11 @@
 
 Date: 2026-10-04. Starting HEAD: `36b67c92`.
 
+Subsequent [Note 975](975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)
+qualifies a separate opt-in byte-depth counter: packed executable is sixteen
+bytes smaller in both profiles, optimized 4496 / 512 excess. The default
+candidate and this neutral-mask result remain unchanged.
+
 ## Result
 
 Continue the requested Init conversion work beyond the inventory recheck in

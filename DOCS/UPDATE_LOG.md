@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 975](WORKING_NOTES/975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)
+  qualifies opt-in byte-depth builder induction. Both packed profiles save
+  sixteen complete bytes; optimized executable is 4496, still 512 over retail.
+  All 58 connected/native and twenty owner/slot/call checks pass, no skips;
+  ordered physical table cells and disabled packed hashes are checked.
+  Aligned-end O2 grows, so no default change. Both new out-of-line replication
+  helpers regress and are removed. Production Init/README/host/Release remain
+  untouched; full guarded corpus and entry/frame/private-stack gates stay open.
+
 - Init [Note 974](WORKING_NOTES/974-init-decoder-complement-low-mask-fitting-trial-20261004.md)
   measures the opt-in complemented shared-mask trial. Two words change, but
   optimized allocation remains 4336 C + 176 adapter = 4512 bytes, 528 over.

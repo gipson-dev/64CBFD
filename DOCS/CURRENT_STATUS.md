@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init byte-depth fitting: [Note 975](WORKING_NOTES/975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)
+qualifies an opt-in byte-offset builder depth. Both packed profiles save sixteen
+complete executable bytes: optimized C 4320 + actual 176-byte adapter = 4496,
+512 over retail. Builder public/region is 330 / 398 words, frame 200, unchanged
+400-byte core call bound and 3248 total descent. All 58 connected/native tests
+plus twenty separate inventory/slot/call checks pass, no skips; ordered physical
+table publications and both disabled packed hashes are checked. Aligned-end O2
+grows sixteen bytes, so no default change. Two out-of-line replication helpers
+regressed text/stack and were removed before semantic qualification. Production
+Init remains 492 C / 47 ASM, all raw slots/full existing Init/data exact; no
+README aggregate, production relink, full corpus, hardware or host/Release claim.
+Next: another 512 complete bytes plus entry/frame/private-stack ownership.
+
 Init decoder fitting: [Note 974](WORKING_NOTES/974-init-decoder-complement-low-mask-fitting-trial-20261004.md)
 adds an opt-in complemented shared-mask expression. Two instruction words
 change, but complete optimized text stays 4336 C + 176 adapter = 4512 bytes,

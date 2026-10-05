@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-04 ([Note 975](WORKING_NOTES/975-init-builder-byte-depth-induction-and-rejected-replication-helpers-20261004.md)):
+Qualify opt-in byte-depth builder induction: both packed profiles save sixteen
+complete bytes; optimized candidate 4496 / 3984 retail, 512 over. Public/region
+builder 330 / 398 words, 200 frame, unchanged 400 call bound / 3248 descent.
+All 58 connected/native and twenty owner/slot/call checks pass, no skips;
+36 ordered physical table pairs and disabled packed hashes are checked.
+Aligned-end O2 grows, so defaults stay intact. Two new out-of-line replication
+helpers regress and are removed without semantic credit. No production owner,
+README aggregate, full corpus, hardware, sibling or Release change. Further
+whole-image fitting and entry/frame/private-stack proof remain.
+
 2026-10-04 ([Note 974](WORKING_NOTES/974-init-decoder-complement-low-mask-fitting-trial-20261004.md)):
 Trial the connected Init decoder's complemented shared low mask. Exactly two
 packed instruction words change; allocation stays 4336 C + 176 adapter = 4512
