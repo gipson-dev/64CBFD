@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-05 Game Actor Reference Coordinate Phase Match
+
+[Note 1010](WORKING_NOTES/1010-game-actor-reference-coordinate-phase-match-20261005.md)
+recovers `func_1502F3C8`, all 50 words / frame 0x30 linked exact with 16
+relocation-aware prelude/register/schedule guards. Qualification covers 3841
+three-way cases and 82944 native whole-record cases; stale-bound and missing
+joint controls fail. Only target changes in 6060 slots; protected sections
+and prior patch rows remain intact. Counts now 3303 / 5463 total,
+2630 / 4790 Game, zero drift. README aggregates updated; caller remains
+109 differences. Next: `func_1502F948`, not a full transform/PC gameplay claim.
+All 30 focused checks pass in 99.051 seconds and all 332 combined checks
+pass in 374.293 seconds, no skips. Tools, whitespace and 2941 links pass.
+
 ## 2026-10-05 Game Actor Pass Lifetime Audit
 
 [Note 1009](WORKING_NOTES/1009-game-actor-pass-lifetime-audit-and-helper-handoff-20261005.md)

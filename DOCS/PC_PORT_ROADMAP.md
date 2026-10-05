@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Reference Coordinate Phase Match - 2026-10-05
+
+[Note 1010](WORKING_NOTES/1010-game-actor-reference-coordinate-phase-match-20261005.md)
+recovers DECOMP `func_1502F3C8`, all 50 words / frame 0x30 linked exact with
+16 relocation-aware guards. Raw semantic C passes bounded guest/native
+contracts; actual transform coverage is limited to its zero-table path.
+Only target changes in 6060 slots; Game count is now 2630 / 4790 exact,
+zero drift. No host transplant, PC runtime/full transform acceptance claim,
+or sibling source/build/save/frozen Release change. Next: `func_1502F948`.
+All 30 focused and 332 combined checks pass, no skips; tools, whitespace
+and 2941 relative links pass. These are DECOMP checks, not PC acceptance.
+
 ## Game Actor Pass Lifetime Audit - 2026-10-05
 
 [Note 1009](WORKING_NOTES/1009-game-actor-pass-lifetime-audit-and-helper-handoff-20261005.md)

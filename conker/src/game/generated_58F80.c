@@ -193,7 +193,7 @@ extern u32 D_800C3E74;
 extern u8 D_800C3E70, D_800BEAC0;
 extern ActorUpdate58F80 D_800D121C[];
 void func_1503F964(void);
-s32 func_1502F3C8();
+void func_1502F3C8(void);
 s32 func_1502F948();
 s32 func_15030468();
 s32 func_1507C22C();
@@ -428,8 +428,36 @@ s32 func_1502F264() {
     return 0;
 }
 
-s32 func_1502F3C8() {
-    return 0;
+typedef struct ActorAttachment58F80 {
+    s32 active;
+    u8 pad4[0x10];
+    f32 x, y, z;
+    u8 pad20[0x160];
+    f32 boundY;
+    u8 pad184[0x1A];
+    u16 joint;
+    u8 pad1A0[0xD4];
+    u8 reference;
+    u8 pad275[0xB7];
+} ActorAttachment58F80;
+
+s32 func_1502F490();
+
+void func_1502F3C8(void) {
+    ActorAttachment58F80 *actor;
+
+    for (actor = ((ActorAttachment58F80 *)D_800CC2D0); actor != ((ActorAttachment58F80 *)D_800D121C); actor++) {
+        if (actor->active != 0 && actor->reference != 0) {
+            actor->y = actor->boundY;
+            func_1502F490(((ActorAttachment58F80 *)D_800CC2D0) + actor->reference - 1,
+                         &actor->x, &actor->y, &actor->z, actor->joint);
+            if (actor->y < actor->boundY) {
+                actor->y = actor->boundY;
+            } else {
+                actor->boundY = actor->y;
+            }
+        }
+    }
 }
 
 s32 func_1502F490() {

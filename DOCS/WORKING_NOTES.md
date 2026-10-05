@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-05 ([Note 1010](WORKING_NOTES/1010-game-actor-reference-coordinate-phase-match-20261005.md)):
+Recover `func_1502F3C8`: all 50 words / frame 0x30 linked exact, semantic C
+with 16 relocation-aware prelude/register/schedule guards. Qualification
+covers 3841 three-way guest cases, 82944 native cases, actual zero-table
+transform returns and connected caller/selector/dispatcher paths. Full
+transform/FCSR/gameplay acceptance remains separate. Only target changes
+in 6060 slots; protected sections remain exact. Counts now 3303 / 5463 total,
+2630 / 4790 Game, zero drift; README aggregates updated. Next: `func_1502F948`.
+All 30 focused checks pass in 99.051 seconds; all 332 combined checks pass
+in 374.293 seconds, no skips. Tools, whitespace and 2941 relative links pass.
+
 2026-10-05 ([Note 1009](WORKING_NOTES/1009-game-actor-pass-lifetime-audit-and-helper-handoff-20261005.md)):
 Bank 176 actor-pass lifetime/scope/declaration controls. Production remains
 175 body / 176 slot words, frame 0x88, 109 differences; no new guards.

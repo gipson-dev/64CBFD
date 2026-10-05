@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor reference coordinate phase: [Note 1010](WORKING_NOTES/1010-game-actor-reference-coordinate-phase-match-20261005.md)
+recovers `func_1502F3C8`'s 25-slot scan, five-argument transform call and fresh
+post-call Y/bound comparison. All 50 words / frame 0x30 are linked exact;
+default IDO has 16 differences closed by relocation-aware prelude/register/
+schedule guards. Only target changes in 6060 slots; protected sections and
+all 720 Game-data owners remain exact. Counts now 3303 / 5463 total,
+2630 / 4790 Game, zero drift. README aggregates updated. Caller remains
+109 differences; transform owner remains a placeholder. Full transform/FPU
+exception/gameplay acceptance is not claimed. Next: `func_1502F948`.
+All 30 focused checks pass in 99.051 seconds and all 332 combined checks
+pass in 374.293 seconds, no skips. Tools, whitespace and 2941 relative links
+pass; conversion/Init ASM and sibling/frozen Release remain unchanged.
+
 Actor pass lifetime audit: [Note 1009](WORKING_NOTES/1009-game-actor-pass-lifetime-audit-and-helper-handoff-20261005.md)
 banks 176 reproducible compiler controls without changing production. None
 improves `func_1502BEE4`'s 109 differences; correct stack homes or 176-word

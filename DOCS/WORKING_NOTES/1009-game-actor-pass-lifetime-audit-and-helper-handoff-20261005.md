@@ -1,5 +1,8 @@
 # Game Actor Pass Lifetime Audit And Helper Handoff
 
+Follow-up: [Note 1010](1010-game-actor-reference-coordinate-phase-match-20261005.md)
+recovers the connected coordinate phase; this caller baseline remains unchanged.
+
 Date: 2026-10-05
 
 ## Checkpoint

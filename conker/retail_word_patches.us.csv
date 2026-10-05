@@ -10605,3 +10605,19 @@ generated_58F80,func_1502BAD0,0x160,0x5054000E,0x5282000E,-,-,Normalize actor-sc
 generated_58F80,func_1502BAD0,0x168,0x50570020,0x52C20020,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
 generated_58F80,func_1502BAD0,0x178,0x5456001C,0x56E2001C,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
 generated_58F80,func_1502BAD0,0x204,0x16760007,0x16770007,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502F3C8,0x004,0xAFB20024,0xAFBF002C,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x008,0xAFB10020,0xAFB30028,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x00C,0x3C110000,0xAFB20024,R_MIPS_HI16:D_800CC2D0,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x010,0x3C120000,0xAFB10020,R_MIPS_HI16:D_800D121C,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x014,0x26520000,0xAFB0001C,R_MIPS_LO16:D_800D121C,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x018,0x26310000,0x3C100000,R_MIPS_LO16:D_800CC2D0,R_MIPS_HI16:D_800CC2D0,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x01C,0xAFBF002C,0x3C120000,-,R_MIPS_HI16:D_800CC2D0,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x020,0xAFB30028,0x3C110000,-,R_MIPS_HI16:D_800D121C,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x024,0xAFB0001C,0x26310000,-,R_MIPS_LO16:D_800D121C,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x028,0x12320020,0x26520000,-,R_MIPS_LO16:D_800CC2D0,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x02C,0x02208025,0x26100000,-,R_MIPS_LO16:D_800CC2D0,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x05C,0xE6040018,0x26060018,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x060,0x26060018,0x2607001C,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x064,0x2607001C,0xE6040018,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x070,0x022F2021,0x024F2021,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_58F80,func_1502F3C8,0x0A4,0x5612FFE4,0x5611FFE4,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
