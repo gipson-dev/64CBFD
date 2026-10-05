@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-05 current Init full corpus checkpoint
 
+- Init [Note 980](WORKING_NOTES/980-init-packed-bit-width-screen-and-restored-candidate-20261005.md)
+  screens wide bit-count and both-field locals on the banked byte-depth lead.
+  Public builder saves one/three O2 words, but total executable text stays
+  4496 bytes after alignment; both profiles gain eight frame/call-bound bytes.
+  Reject before semantic qualification, restore source exactly. All 83 fresh
+  restored connected/native/inventory/slot/call/reporting checks pass in
+  345.010 seconds, no skips; complete existing Init/data and Game data hold.
+  No production or test-code change, README aggregate or host/Release change.
+  Unchanged candidate retains Note 979's corpus evidence; screens receive none.
+
 - Init [Note 979](WORKING_NOTES/979-init-byte-depth-full-masked-cu1-corpus-qualification-20261005.md)
   qualifies the banked byte-depth packed O2/g3 decoder in both masked CU1
   modes: 507 pages each, 1014 paired runs pass in 1604.214 seconds, no skips.

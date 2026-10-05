@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Init Packed Bit-Width Screen - 2026-10-05
+
+[Note 980](WORKING_NOTES/980-init-packed-bit-width-screen-and-restored-candidate-20261005.md)
+rejects wide bit-count/both-field local screens. Public builder saves one/three
+optimized words, but alignment leaves complete executable text 4496 bytes and
+both profiles gain eight bytes of frame/call bound. Restore the banked source;
+no production or host replacement. All 83 fresh restored connected/native/
+inventory/slot/call/reporting checks pass, no skips; complete existing Init/data
+and Game data stay retail-exact. Unchanged byte-depth lead retains Note 979's
+masked corpus evidence; unexecuted screens receive none. Still 512 bytes over,
+entry/frame/reservation/hardware open. README totals and frozen Release unchanged.
+
 ## Init Byte-Depth Full Masked Corpus - 2026-10-05
 
 [Note 979](WORKING_NOTES/979-init-byte-depth-full-masked-cu1-corpus-qualification-20261005.md)

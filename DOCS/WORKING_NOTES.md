@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-05 ([Note 980](WORKING_NOTES/980-init-packed-bit-width-screen-and-restored-candidate-20261005.md)):
+Screen wide bit-count and both-field locals on the current byte-depth lead.
+One/three optimized builder words disappear but trailing alignment absorbs
+them; total executable text stays 4496 bytes and both profiles' frame/call
+bounds grow eight bytes. Reject before semantic qualification and restore
+the banked source. All 83 fresh connected/native/inventory/slot/call/reporting
+checks pass in 345.010 seconds, no skips; complete existing Init/data and Game
+data remain retail-exact. Unchanged candidate retains Note 979 corpus evidence;
+discarded screens do not. No production, test code, README or host change.
+Next: different whole-image lifetime fitting; 512 bytes and ownership gates remain.
+
 2026-10-05 ([Note 979](WORKING_NOTES/979-init-byte-depth-full-masked-cu1-corpus-qualification-20261005.md)):
 Qualify the banked byte-depth packed O2/g3 decoder across 507 retail pages in
 each masked CU1 mode. All 1014 paired runs pass in 1604.214 seconds, no skips;

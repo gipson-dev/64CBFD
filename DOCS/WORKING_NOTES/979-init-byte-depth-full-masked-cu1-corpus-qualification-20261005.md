@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `5238ece0`.
 
+Subsequent [Note 980](980-init-packed-bit-width-screen-and-restored-candidate-20261005.md)
+rejects whole-text-neutral, stack-growing width screens and restores this
+qualified candidate exactly. Its full masked corpus evidence remains unchanged;
+the discarded screens receive no semantic or corpus credit.
+
 ## Scope
 
 Continue connected Init qualification after

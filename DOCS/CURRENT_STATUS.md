@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init packed-width fitting: [Note 980](WORKING_NOTES/980-init-packed-bit-width-screen-and-restored-candidate-20261005.md)
+screens a wide bit-count local and both packed fields on the byte-depth lead.
+Optimized public builder saves one/three words, but trailing alignment absorbs
+them: complete C/adapter allocation stays 4496 bytes. Both profiles gain eight
+bytes of builder frame and call bound. Reject before semantic qualification;
+restore the candidate exactly, no selector or test-code change retained.
+All 83 fresh restored connected/native/owner/slot/call/reporting checks pass in
+345.010 seconds, no skips. Complete existing Init code/data and Game data remain
+retail-exact. Note 979's unchanged candidate retains its full masked corpus
+evidence; discarded trial images receive none. Still 512 bytes over, with
+entry/frame/private-stack/hardware gates open. Production, README and host/Release unchanged.
+
 Init byte-depth full corpus: [Note 979](WORKING_NOTES/979-init-byte-depth-full-masked-cu1-corpus-qualification-20261005.md)
 qualifies the banked packed O2/g3 candidate across all 507 retail pages in each
 masked CU1 mode: 1014 paired runs pass in 1604.214 seconds, no skips. Both
