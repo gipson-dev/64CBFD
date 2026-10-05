@@ -34,7 +34,10 @@ patch table stay intact. Rebuild: 3302 / 5463 overall, 2629 / 4790 Game, zero
 drift. Conversion/47 Init ASM functions, README aggregates and sibling/frozen
 Release unchanged. Next: finish this caller's stack layout and scheduling.
 All 319 combined checks pass in 305.557 seconds, no skips; protected sections,
-tools, whitespace and 2926 relative links pass.
+tools, whitespace and 2927 relative links pass.
+After banking `981ec732`, eight further local-storage controls pass 64
+boundary cases but do not improve the match. Eighteen focused checks pass
+in 39.427 seconds; production remains unchanged at 115 differences.
 
 Game actor update dispatcher direct recovery: [Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)
 recovers `func_1502BD84`, all 88 words / frame 0x20 directly under default

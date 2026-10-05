@@ -290,6 +290,33 @@ static void reset(int pattern,int gate) {
             self.assertIn(255, values)
             self.assertTrue(any(a == 255 and b == 0 for a, b in zip(values, values[1:])))
 
+    def test_post_checkpoint_local_storage_controls(self):
+        forms = screen.followup_candidates()
+        self.assertEqual(len(forms), 8)
+        connection = {0x1502BD84 + i * 4: w for i, w in enumerate(self.dispatcher)}
+        cases = [
+            (memory_case([1] * 25 + [0], list(range(2, 27)) + [0]), None, connection),
+            (memory_case([1, 1, 1] + [0] * 23, [0, 1, 2] + [0] * 23,
+                         list(range(232, 258))), None, connection),
+            (memory_case([1, 1, 1] + [0] * 23, [0, 1, 2] + [0] * 23),
+             {(UPDATE, 1): ((ACTORS + 2 * STRIDE, 0, 4),)}, None),
+            (memory_case([1] + [0] * 25),
+             {(UPDATE, 0): ((ACTORS + STRIDE, 1, 4), (ACTORS + STRIDE + 0x65, 1, 1))}, None)]
+        count = 0
+        for name, body in forms:
+            record, words = screen.compile_candidate(self.root, self.output, name, body)
+            expected = (174, 0x88, 115) if name.startswith('register-') else (172, 0x80, 175)
+            self.assertEqual((record['body_words'], record['frame'], record['real_differences']), expected)
+            self.assertEqual(record['diagnostics'], '')
+            for memory, actions, connected in cases:
+                for phase in (0, 8):
+                    original = PassOracle(self.retail, memory, phase, actions, connected).run()
+                    model = PassOracle(words, memory, phase, actions, connected).run()
+                    self.assertEqual(external_memory(model.memory), external_memory(original.memory))
+                    self.assertEqual(external_events(model), external_events(original))
+                    count += 1
+        self.assertEqual(count, 64)
+
     def test_native_independent_stable_sort_reference_and_mutations(self):
         self.run_host(r'''
 static ActorUpdate58F80 expected[26];static int savedLog[64];

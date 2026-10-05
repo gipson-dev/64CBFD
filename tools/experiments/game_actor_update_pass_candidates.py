@@ -1,5 +1,6 @@
 """Screen the live actor pass and its captured predecessor ordering."""
 
+import argparse
 import json
 import struct
 import subprocess
@@ -298,16 +299,47 @@ def production_body():
     return SELECTED.replace('D_800CC2D0', '((ActorUpdate58F80 *)D_800CC2D0)')
 
 
+def followup_candidates():
+    """Separate local-storage experiments after the semantic checkpoint."""
+    forms = []
+    for pointers in (False, True):
+        for scalars in (False, True):
+            body = SELECTED
+            if pointers:
+                body = body.replace('    ActorUpdate58F80 *', '    register ActorUpdate58F80 *')
+            if scalars:
+                body = body.replace('    s32 slot, maxDepth, count, index;',
+                                    '    register s32 slot, maxDepth, count, index;')
+            forms.append((f'register-locals-{int(pointers)}-{int(scalars)}', body))
+    for depth_size in (25, 28):
+        for ordering in ('depth-first', 'queue-first'):
+            fields = ('u8 depths[%d]; u8 ordered[25];' % depth_size if ordering == 'depth-first'
+                      else 'u8 ordered[25]; u8 depths[%d];' % depth_size)
+            body = SELECTED.replace('    u8 depths[25];\n    u8 ordered[25];',
+                                    '    struct { ' + fields + ' } scratch;')
+            body = body.replace('bzero(depths,', 'bzero(scratch.depths,').replace(
+                'depths[slot]', 'scratch.depths[slot]').replace(
+                'depths[index]', 'scratch.depths[index]').replace(
+                'ordered[count++]', 'scratch.ordered[count++]').replace(
+                'ordered[slot]', 'scratch.ordered[slot]')
+            forms.append((f'scratch-{depth_size}-{ordering}', body))
+    return forms
+
+
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--followup', action='store_true', help='screen only post-checkpoint local-storage controls')
+    args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
     output = root / 'conker/build/game-actor-update-pass'
     output.mkdir(exist_ok=True)
     records = []
-    for name, body in candidates():
+    for name, body in followup_candidates() if args.followup else candidates():
         record, _ = compile_candidate(root, output, name, body)
         records.append(record)
         print(name, record['body_words'], hex(record['frame']), record['real_differences'], flush=True)
-    (output / 'screen.json').write_text(json.dumps(records, indent=2) + '\n')
+    filename = 'followup-screen.json' if args.followup else 'screen.json'
+    (output / filename).write_text(json.dumps(records, indent=2) + '\n')
 
 
 if __name__ == '__main__':

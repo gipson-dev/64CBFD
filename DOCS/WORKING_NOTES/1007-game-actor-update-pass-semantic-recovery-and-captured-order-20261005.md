@@ -121,23 +121,48 @@ Complete protected sections remain retail-exact: Init code **164048 bytes**,
 Init data/rodata **17376 bytes**, Debugger **19800 bytes** and Game data
 **189088 bytes / 720 owners**. The full actor/viewport/SDK/resource/matching/
 tool regression passes **319 tests in 305.557 seconds, no skips**.
-Whitespace checks and all **2926 relative documentation links** pass.
+Whitespace checks and all **2927 relative documentation links** pass after
+the post-commit handoff update.
 Existing unrelated duplicate-recipe warnings remain; the isolated candidate
 emits no diagnostics.
 
 ## Reproduction And Next
 
+### Post-Commit Matching Screen
+
+After commit **`981ec732`** banked the audited semantic recovery, matching
+continued with eight additional local-storage controls. Four combinations
+of pointer/scalar `register` hints all emit the unchanged **174 words /
+frame 0x88 / 115 differences**. Four grouped-scratch forms (25/28 depth bytes,
+depth-first/queue-first) emit **172 words / frame 0x80 / 175 differences**.
+No form improves the match; no production/profile/patch change is adopted.
+
+These controls pass **64 retail-versus-candidate boundary comparisons**, 32
+with the actual dispatcher connected and 32 with live mutation hooks. Both
+stack phases, a full 25-deep chain and queue recheck counterexamples are
+included. All **18 focused pass/dispatcher tests pass in 39.427 seconds, no
+skips**; tools checks pass. The production ELF remains the audited semantic
+checkpoint. The 319-test combined result above is that checkpoint's corpus;
+the additional experimental test was run in the focused 18-test corpus.
+
+This separates failed matching hypotheses from implementation: `register`
+hints are ineffective, and grouping these byte arrays changes the frame
+away from retail. The remaining work is still the caller's original local
+layout and schedule, not a new gameplay behavior correction.
+
 Run from `64CBFD` in PowerShell:
 
 ```powershell
 wsl python3 -m tools.experiments.game_actor_update_pass_candidates
+wsl python3 -m tools.experiments.game_actor_update_pass_candidates --followup
 wsl make -C conker NON_MATCHING=1 build/conker.us.elf progress match-progress -j4
 wsl python3 -m unittest tools.tests.test_game_actor_update_pass_match tools.tests.test_game_actor_update_dispatch_match -q -f
 wsl make tools-check
 git diff --check
 ```
 
-The screen contains 60 compiler forms; unmasked-shift forms are compiler
+The initial screen contains 60 forms; `--followup` selects the eight later
+local-storage controls. Unmasked-shift forms in the initial screen are compiler
 experiments only, not native-C equivalence candidates. The selected source
 retains an explicit five-bit mask and the recovered phase/callback contracts.
 

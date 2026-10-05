@@ -14,7 +14,10 @@ intact. Game exact count remains 2629 / 4790. No host transplant, source, build,
 save or frozen Release change. Next: finish the caller's private stack layout
 and retail instruction schedule in DECOMP.
 All 319 combined checks pass in 305.557 seconds, no skips; protected sections,
-tools, whitespace and 2926 relative links pass.
+tools, whitespace and 2927 relative links pass.
+Matching continues after `981ec732`: eight tested local-storage controls
+do not improve the byte score; eighteen focused checks pass in 39.427 seconds.
+No additional production/profile/patch or sibling change is adopted.
 
 ## Game Actor Update Dispatcher Direct Recovery - 2026-10-05
 

@@ -12,7 +12,10 @@ previous exact recoveries and patch CSV unchanged. Rebuild: 3302 / 5463 total,
 2629 / 4790 Game, zero drift. Conversion/Init ASM, README aggregates and frozen
 sibling Release unchanged. Next: this caller's private layout/schedule match.
 All 319 combined checks pass in 305.557 seconds, no skips; protected sections,
-tools, whitespace and 2926 relative links pass.
+tools, whitespace and 2927 relative links pass.
+Post-commit `981ec732`: eight local-storage controls pass 64 boundary cases
+but do not improve the match; eighteen focused checks pass in 39.427 seconds.
+No further production/profile/patch change is adopted.
 
 2026-10-05 ([Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)):
 Recover `func_1502BD84` directly, all 88 words / frame 0x20, no guards/profile

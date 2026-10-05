@@ -14,7 +14,10 @@ previous exact functions/patch CSV unchanged. Build/tools pass. Counts stay
 No conversion/Init ASM or sibling/frozen Release change. Next: caller stack
 layout, register lifetimes and instruction scheduling, without broad guards.
 All 319 combined checks pass in 305.557 seconds, no skips; protected sections,
-tools, whitespace and 2926 relative links pass.
+tools, whitespace and 2927 relative links pass.
+After `981ec732`, eight local-storage controls pass 64 boundary cases;
+none improves matching. Eighteen focused checks pass in 39.427 seconds.
+Production remains the banked semantic recovery, with 115 differences.
 
 ## 2026-10-05 Game Actor Update Dispatcher Direct Recovery
 
