@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `339d56c0`.
 
+Follow-up: [Note 1000](1000-game-caller-buffer-resource-loader-direct-recovery-and-syscall-boundary-20261005.md)
+recovers the caller-buffer resource loader directly and distinguishes the real
+syscall boundary from returning error-hook continuation tests. The next-target
+statement below describes this historical checkpoint.
+
 ## Result And Scope
 
 `func_1502B020`'s false zero-return placeholder is replaced with its recovered

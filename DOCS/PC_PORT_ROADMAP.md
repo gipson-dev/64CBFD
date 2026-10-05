@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Caller-Buffer Resource Loader Direct Recovery - 2026-10-05
+
+[Note 1000](WORKING_NOTES/1000-game-caller-buffer-resource-loader-direct-recovery-and-syscall-boundary-20261005.md)
+recovers DECOMP `func_1502B224`, all 75 words / frame 0x30 directly from default
+IDO, no guards/profile override. Boundary and connected lookup/cache/caller
+checks preserve raw/compressed count handling and live decoder inputs. Real
+error handling is a handwritten syscall; prefix checks stop there, while
+returning error hooks exercise only conditional continuation. This is not
+actual trap recovery, DMA/decoder, PC runtime or rendering acceptance.
+All 221 final checks pass in 161.605 seconds, no skips; protected Init
+code/data, Debugger code and Game data remain exact after rebuilding.
+Read-only sibling audit finds the original translated routine already present,
+with no maintained PC override. No host source, build, save or frozen Release
+change. Game exact count: 2623 / 4790. The next caller recovery must preserve
+`func_1502B8E0`'s verified zero-depth incoming-frame descriptor dependency.
+
 ## Game Variadic Table-Address Resolver Recovery - 2026-10-05
 
 [Note 999](WORKING_NOTES/999-game-variadic-table-address-resolver-recovery-and-connected-init-caller-20261005.md)

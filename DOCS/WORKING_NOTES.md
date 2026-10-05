@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-05 ([Note 1000](WORKING_NOTES/1000-game-caller-buffer-resource-loader-direct-recovery-and-syscall-boundary-20261005.md)):
+Recover `func_1502B224`'s caller-buffer raw/compressed resource loading from
+its placeholder. All 75 words / frame 0x30 emit directly from default IDO
+O2/g3, no guards/profile override. The 22-form screen recovers header placement;
+6912 two-way boundary and 600 connected retail-caller cases pass. Forty
+mismatch-prefix cases stop at handwritten syscall; returning error hooks are
+conditional continuation only. All 221 final checks pass in 161.605 seconds,
+no skips; protected Init code/data, Debugger code and Game data remain exact.
+Rebuild: 3296 / 5463 overall, 2623 / 4790 Game,
+zero drift. README aggregates updated; conversion/Init ASM, patch table and
+sibling/frozen Release unchanged. Next: `func_1502B8E0`, 53 words / frame 0x48,
+with its zero-depth incoming-frame descriptor gate retained.
+
 2026-10-05 ([Note 999](WORKING_NOTES/999-game-variadic-table-address-resolver-recovery-and-connected-init-caller-20261005.md)):
 Recover `func_1502B020`'s SDK-varargs table-address traversal and optional
 masked-size output. All 60 linked words / frame 0x48 match with two checked

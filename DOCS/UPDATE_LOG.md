@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-05 Game Caller-Buffer Resource Loader Direct Recovery
+
+[Note 1000](WORKING_NOTES/1000-game-caller-buffer-resource-loader-direct-recovery-and-syscall-boundary-20261005.md)
+replaces `func_1502B224`'s zero-return placeholder with its semantic raw/
+compressed caller-buffer loader. All 75 words / frame 0x30 emit directly under
+default IDO O2/g3, no guards/profile override. Native/boundary/600 connected
+retail-caller checks preserve cap rounding, header capture/live scratch and
+retained decoded count. Forty mismatch-prefix cases stop at the actual syscall
+boundary; returning error hooks are not real trap/cleanup qualification.
+All 221 final checks pass in 161.605 seconds, no skips; protected Init
+code/data, Debugger code and Game data remain exact. Rebuild succeeds.
+README: 3296 / 5463 overall, 2623 / 4790 Game, zero drift.
+Conversion/Init ASM, patch table and sibling/frozen Release unchanged.
+Next: `func_1502B8E0`, 53 words / frame 0x48; preserve its zero-depth incoming
+descriptor seed rather than synthesizing initialization.
+
 ## 2026-10-05 Game Variadic Table-Address Resolver Recovery
 
 [Note 999](WORKING_NOTES/999-game-variadic-table-address-resolver-recovery-and-connected-init-caller-20261005.md)

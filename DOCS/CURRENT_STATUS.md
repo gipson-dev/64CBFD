@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game caller-buffer resource-loader direct recovery: [Note 1000](WORKING_NOTES/1000-game-caller-buffer-resource-loader-direct-recovery-and-syscall-boundary-20261005.md)
+recovers `func_1502B224` from its zero-return placeholder. All 75 words / frame
+0x30 emit directly under default IDO O2/g3, no guards/profile override. Cap
+rounding, raw DMA, compressed header capture/live scratch and retained decode
+count are preserved. Native/boundary/600 actual-callee caller cases pass;
+40 mismatch-prefix cases stop at the real handwritten syscall boundary.
+Returning error hooks qualify only conditional continuation, not trap recovery.
+All 221 final checks pass in 161.605 seconds, no skips; protected Init
+code/data, Debugger code and Game data remain exact.
+Rebuild succeeds: 3296 / 5463 overall, 2623 / 4790 Game, zero drift. README
+aggregates updated; conversion/Init ASM, patch table and sibling/frozen Release
+unchanged. Next: `func_1502B8E0`, 53 words / frame 0x48, retaining its verified
+zero-depth incoming-frame descriptor dependency rather than initializing it away.
+
 Game variadic table-address resolver recovery: [Note 999](WORKING_NOTES/999-game-variadic-table-address-resolver-recovery-and-connected-init-caller-20261005.md)
 recovers `func_1502B020` from its zero-return placeholder. All 60 linked words
 match with frame 0x48 and two checked independent loop-store guards, not a

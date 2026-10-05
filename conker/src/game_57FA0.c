@@ -12,7 +12,7 @@ s32 func_1502AC88(u32 arg0, s32 arg1, u32 *arg2);
 u32 *func_1502AF04(u32 base, void *buffer, u32 component, u32 count);
 u32 func_1502B020(u32 *size, u32 depth, ...);
 u32 *func_1502B110(u32 base, u32 count, void *buffer, u32 depth, ...);
-s32 func_1502B224();
+u32 func_1502B224(u32 address, void *buffer, u32 descriptor, u32 cap);
 void *func_1502B350(u32 arg0, u32 arg1, s32 *arg2);
 s32 func_1502B4A8(u32 *entries, s32 count);
 s32 func_1502B5C8();
@@ -162,9 +162,32 @@ u32 *func_1502B110(u32 base, u32 count, void *buffer, u32 depth, ...) {
     va_end(path);
     return result;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B224.s. */
-s32 func_1502B224() {
-    return 0;
+u32 func_1502B224(u32 address, void *buffer, u32 descriptor, u32 cap) {
+    u32 amount;
+    void *compressed;
+    u32 expanded;
+
+    amount = ((descriptor & 0x0FFFFFFF) + 1) & ~1;
+    if (cap != 0 && cap < amount) {
+        amount = cap;
+    }
+    if ((descriptor & 0x70000000) == 0x10000000) {
+        compressed = allocate_memory(amount, 1, 2, 2);
+        if (compressed == NULL) {
+            return 0;
+        }
+        func_10004514(address, compressed, (amount + 15) & ~0xF, 1);
+        expanded = *(u32 *)compressed & 0x7FFFFFFF;
+        amount = func_10006240(compressed, buffer, D_8003809C);
+        if (amount != expanded) {
+            D_8003C8E0 = 0x0C000036;
+            func_150AD770();
+        }
+        func_10004074(compressed);
+    } else {
+        func_10004514(address, buffer, (amount + 15) & ~0xF, 1);
+    }
+    return amount;
 }
 void *func_1502B350(u32 arg0, u32 arg1, s32 *arg2) {
     u32 amount;
