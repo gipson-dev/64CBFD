@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-04 ([Note 972](WORKING_NOTES/972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)):
+Finish pending color emitter `func_1510CDB8`: all 42 words match directly from
+actual SDK macros, no frame/guards/profile override/drift. Six added checks
+cover all 262144 native alpha pairs, 812 complete big-endian paired traces,
+three invalid-index prefixes and the actual color -> writer connection. The
+complete module receipt records 1710 pairs. All 243 combined checks pass after
+forced source rebuild/link; complete Init/Debugger/data and prior identities
+remain intact. Total 3283 / Game 2610 exact, zero drift, 2180 different; README
+aggregate matching rows updated only. Next 170-word palette updater 1510CB10;
+full renderer/RSP/RDP/natural effects remain open. No sibling/Release changes.
+
 2026-10-04 ([Note 971](WORKING_NOTES/971-init-pause-resume-remaining-assembly-decision-20261004.md)):
 Resume the requested Init assessment from banked HEAD. All 110 focused checks
 pass in 64.829 seconds, no skips; all 47 retained owners/raw slots and complete

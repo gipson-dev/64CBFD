@@ -2,6 +2,11 @@
 
 Date: 2026-10-04. Starting HEAD: `eb906080`.
 
+Subsequent [Note 972](972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)
+recovers color emitter `func_1510CDB8` with all 42 words raw-exact and qualifies
+its actual writer connection. The next upstream source is palette updater
+`func_1510CB10`; this note's writer measurements and rendering boundaries stand.
+
 ## Decision
 
 Continue [Note 969](969-game-immediate-texture-cache-release-recovery-20261004.md)
@@ -141,7 +146,7 @@ and the two-command cursor advance.
 - [x] Connect actual queue reset/append/write and retain both exact helper slots.
 - [x] Qualify big-endian aliases and every body instruction in bounded fixtures.
 - [x] Preserve complete Init/Debugger/data and previous recoveries.
-- [ ] Recover color emitter `func_1510CDB8`, then qualify its writer connection.
+- [x] Recover color emitter `func_1510CDB8`, then qualify its writer connection (Note 972).
 - [ ] Recover/qualify the full render caller and real RSP/RDP/natural effects.
 - [ ] Pursue raw matching separately; 38 word differences remain.
 - [ ] Identify and qualify the staged texture producer separately.

@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Palette color emitter: [Note 972](WORKING_NOTES/972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)
+finishes the interrupted `func_1510CDB8` recovery: all 42 words match directly
+from actual SDK macros, frameless, no guards/profile override/drift. Six added
+tests cover 262144 native alpha cases, 812 complete paired big-endian traces
+and three invalid-index prefixes; actual color -> writer connections pass.
+The complete module records 1710 paired traces. All 243 combined checks pass,
+no skips, after forced source compile/padding/link/progress/matcher; complete
+Init code/data, Debugger code and Game data remain exact. Total 3283 / 5463,
+Game 2610 / 4790 exact, 2180 different, zero drift. README changes matching
+aggregate rows only. Next source: 170-word palette updater `func_1510CB10`.
+Full render caller/RSP/RDP/natural effects and staged producer remain open.
+Sibling already has the original emitter; no host/frozen Release changes.
+
 Requested Init pause resume: [Note 971](WORKING_NOTES/971-init-pause-resume-remaining-assembly-decision-20261004.md)
 freshly passes 110 focused checks in 64.829 seconds, no skips. Init remains
 492 C / 47 ASM entries (12252 ASM bytes); every retained owner/raw slot and
@@ -29,7 +42,8 @@ entries are investigation targets, thirty intentional assembly. No replacement
 is ready: best freshly checked bitmap is 20 / 19 words, decoder 528 bytes over,
 formatter 196 over; MMIO's full eleven-word C match remains unresolved.
 No new compiler hypothesis or production relink is claimed. Two interrupted
-Game color-emitter source/test edits are preserved separately and unbanked.
+Game color-emitter source/test edits were preserved separately and unbanked
+at that checkpoint; Note 972 above completes their bounded qualification.
 Production Init, README aggregates and sibling/frozen Release unchanged.
 
 Queued segment writer: [Note 970](WORKING_NOTES/970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md)
@@ -41,7 +55,8 @@ Counts above eight use extended fixtures only, not real queue-safety acceptance.
 All 237 combined checks pass, no skips; fresh link preserves exact queue helpers,
 complete Init code/data, Debugger code, Game data and previous identities.
 Sibling writer is already recompiled; no host/Release change. Next direct render
-dependency: 42-word color emitter `func_1510CDB8`, then its writer connection.
+dependency was 42-word color emitter `func_1510CDB8`; Note 972 above completes
+its source recovery and bounded writer connection.
 Raw matching, full caller/rendering and staged producer remain open. README unchanged.
 
 Immediate texture release: [Note 969](WORKING_NOTES/969-game-immediate-texture-cache-release-recovery-20261004.md)

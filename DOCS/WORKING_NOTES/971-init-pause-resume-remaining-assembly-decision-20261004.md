@@ -2,6 +2,10 @@
 
 Date: 2026-10-04. Starting HEAD: `6a9c3a1e`.
 
+Subsequent [Note 972](972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)
+finishes and qualifies the separate pending Game color-emitter edits recorded
+below. This note's Init measurements and no-adoption decision remain unchanged.
+
 ## Result
 
 **Some remaining Init assembly is C-expressible, but no remaining replacement
@@ -120,7 +124,7 @@ that Game recovery as banked or completely qualified by these Init checks.
 - [x] Separate semantic candidates, adoption blockers and intentional ASM.
 - [ ] Qualify a complete small-leaf replacement before changing ownership.
 - [ ] Fit and qualify connected decoder/glyph entry and stack ownership.
-- [ ] Finish the separately pending Game color-emitter tests and checkpoint.
+- [x] Finish the separately pending Game color-emitter tests and checkpoint (Note 972).
 
 Only working documentation changes in this assessment. Production Init owners,
 compiler profiles, word guards and README aggregates remain unchanged. No sibling

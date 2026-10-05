@@ -1,5 +1,7 @@
 #include <ultra64.h>
 extern u8 D_800D9ED8[];
+extern u8 D_800D9B68[4][3];
+extern u8 D_800D9B78[4][3];
 extern s8 D_800BC448[];
 extern u16 D_80091D20[];
 extern s32 D_800D9F58;
@@ -30,8 +32,12 @@ s32 func_1510CB10() {
     return 0;
 }
 
-s32 func_1510CDB8() {
-    return 0;
+Gfx *func_1510CDB8(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3) {
+    gDPSetPrimColor(arg0++, 0xF2, 0,
+                   D_800D9B68[arg3][0], D_800D9B68[arg3][1], D_800D9B68[arg3][2], arg1);
+    gDPSetEnvColor(arg0++,
+                  D_800D9B78[arg3][0], D_800D9B78[arg3][1], D_800D9B78[arg3][2], arg2);
+    return arg0;
 }
 
 s32 func_1510CE60(void *data, s32 unresolvedOnly, s32 retain, s32 priority, s32 *output) {

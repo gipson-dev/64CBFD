@@ -111,6 +111,18 @@ this is not fresh PC rendering acceptance. Next direct render dependency is
 color emitter `func_1510CDB8` (42 words). Full caller/RSP/RDP/natural effects,
 corrupt-count safety and staged producer remain separate; no host/Release changes.
 
+Palette color emitter `func_1510CDB8` is subsequently recovered in
+[Note 972](WORKING_NOTES/972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md):
+all 42 words match directly from SDK macros, no guards/profile override/drift.
+Six added tests cover 262144 native alpha cases, 812 complete big-endian paired
+traces and three invalid-index prefixes; actual color -> queued writer connects
+in normal and alias fixtures. All 243 combined checks pass after forced source
+build/link; complete Init/Debugger/data remain exact. README matching aggregates
+only are updated. The sibling already has the original emitter; no host/Release
+change or PC rendering acceptance. Next upstream source is palette updater
+`func_1510CB10` (170 words), still a placeholder. Full renderer and natural
+RSP/RDP effects remain separate from the qualified leaf connection.
+
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
 - [x] Audit the sibling's active CMake source input without changing its files.
@@ -127,8 +139,9 @@ corrupt-count safety and staged producer remain separate; no host/Release change
 - [x] Recover immediate cache release `func_1510D7AC` and qualify bounded retain/release/reload.
 - [ ] Identify and qualify the staged-entry producer separately.
 - [x] Recover queued segment writer `func_1510D8C0` and qualify bounded queue/byte-alias behavior.
-- [ ] Recover color emitter `func_1510CDB8` and its actual writer connection;
-  qualify the full renderer and natural effects separately.
+- [x] Recover color emitter `func_1510CDB8` and qualify its actual writer connection.
+- [ ] Recover palette updater `func_1510CB10` and qualify its color-emitter connection.
+- [ ] Recover/qualify the full renderer and natural RSP/RDP effects separately.
 - [ ] Synchronize PC-port `func_1510D7AC`: active generated source retains its
   zero-return stub, with no named override in the scoped host source search.
 - [ ] Synchronize PC-port `func_150E8D5C`: active `recomp_out/.c` still has a

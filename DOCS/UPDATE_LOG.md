@@ -18,6 +18,17 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 972](WORKING_NOTES/972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)
+  finishes pending palette color emitter `func_1510CDB8`: 42 / 42 raw-exact
+  words from SDK macros, frameless, no guards/profile override/drift. Six new
+  checks include 262144 native alpha cases, 812 complete paired traces, three
+  invalid-index prefixes and actual color -> writer; complete module 1710 pairs.
+  All 243 combined checks pass after forced source build/link; full Init/
+  Debugger/data and prior identities remain intact. Total 3283 / Game 2610
+  exact, zero drift, 2180 different. README matching rows updated only; next
+  palette updater `func_1510CB10`. Full renderer and natural effects stay open;
+  sibling already has the emitter, no host/frozen Release changes.
+
 - Init [Note 971](WORKING_NOTES/971-init-pause-resume-remaining-assembly-decision-20261004.md)
   resumes the requested remaining-ASM decision. All 110 focused checks pass,
   no skips; 492 C / 47 ASM entries and complete existing Init code/data plus
