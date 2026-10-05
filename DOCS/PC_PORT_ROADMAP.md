@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Nullable Cleanup Retail Rematch - 2026-10-05
+
+[Note 987](WORKING_NOTES/987-game-nullable-cleanup-typed-pointer-direct-rematch-20261005.md)
+restores nineteen-word `func_150F631C` directly from typed pointer C. All 62
+combined DECOMP checks pass, including callback mutation and retail identity;
+Game exact count is now 2611 / 4790. The host generated body is complete but
+uses an older instruction schedule; no maintained named override was found.
+This is not host synchronization or real cleanup/gameplay qualification.
+No host source, build, save or frozen Release change. Next DECOMP near-match
+is `func_1510D7AC`'s four frame/spill words; the light-selector gate remains.
+
 ## Game Light Selector Fitting And Frame Gate - 2026-10-05
 
 [Note 986](WORKING_NOTES/986-game-light-selector-candidate-fitting-and-connected-frame-witness-20261005.md)

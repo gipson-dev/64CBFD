@@ -72,11 +72,11 @@ s32 func_150F6178() {
 void func_150F631C(u8 *arg0) {
     u8 *owner = arg0;
 
-    if (*(u32 volatile *) (owner + 0x30) != 0) {
-        func_1516972C(*(u32 volatile *) (owner + 0x30));
+    if (*(struct102 * volatile *) (owner + 0x30) != NULL) {
+        func_1516972C(*(struct102 * volatile *) (owner + 0x30));
     }
-    if (*(u32 *) (owner + 0x34) != 0) {
-        func_1516972C(*(u32 *) (owner + 0x34));
+    if (*(struct102 **) (owner + 0x34) != NULL) {
+        func_1516972C(*(struct102 **) (owner + 0x34));
     }
 }
 

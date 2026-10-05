@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-05 ([Note 987](WORKING_NOTES/987-game-nullable-cleanup-typed-pointer-direct-rematch-20261005.md)):
+Restore nineteen-word `func_150F631C` directly from typed pointer C, no guards
+or profile change. Five new checks cover 343 callback cases, a four-word
+integer-field rejection control and unchanged neighboring slots. All 62
+combined checks pass; complete Init/Debugger/data stay exact. Fresh exact
+totals: 3284 / 5463 overall, 2611 / 4790 Game, zero drift. README aggregates
+updated, conversion counts unchanged; no sibling/frozen Release changes.
+Next matching target: four frame/spill words in `func_1510D7AC`.
+
 2026-10-05 ([Note 986](WORKING_NOTES/986-game-light-selector-candidate-fitting-and-connected-frame-witness-20261005.md)):
 Bank full experimental `func_1515D914`, its fourteen arguments, SDK packets
 and three-profile qualification. No-unroll fits 2212 body / 2224 text bytes

@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-05 Game Nullable Cleanup Direct Rematch
+
+[Note 987](WORKING_NOTES/987-game-nullable-cleanup-typed-pointer-direct-rematch-20261005.md)
+restores all nineteen words of `func_150F631C` by reading typed pointer fields
+against the current cleanup prototype. No guards or profile changes. All 62
+combined checks pass, including 343 callback cases and protected section
+identity. Fresh exact totals: 3284 / 5463 overall, 2611 / 4790 Game, zero drift.
+README aggregate snapshot updated; details remain here and in working notes.
+No new C conversion, Init ASM reduction or sibling/frozen Release change.
+
 ## 2026-10-05 Game Light Selector Experiment
 
 [Note 986](WORKING_NOTES/986-game-light-selector-candidate-fitting-and-connected-frame-witness-20261005.md)

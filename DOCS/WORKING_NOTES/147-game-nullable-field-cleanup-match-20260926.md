@@ -2,6 +2,11 @@
 
 ## Result
 
+Current checkpoint: [Note 987](987-game-nullable-cleanup-typed-pointer-direct-rematch-20261005.md)
+recovers this direct match against the later typed callee prototype. The
+historical integer-field body below had regressed by four words in the current
+checkout; typed pointer reads restore all nineteen without guards.
+
 `func_150F631C` is byte-exact directly from C across all 19 words, or 76
 bytes, at `0x150F631C..0x150F6368`. The fresh linked matcher reports
 2,659 / 5,483 exact C functions overall and 2,091 / 4,794 in Game.

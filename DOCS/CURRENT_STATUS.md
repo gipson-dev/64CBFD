@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game cleanup rematch: [Note 987](WORKING_NOTES/987-game-nullable-cleanup-typed-pointer-direct-rematch-20261005.md)
+restores `func_150F631C`'s complete nineteen-word direct C match. Typed pointer
+fields recover four register/scheduling words against the current callee
+prototype, with no guards or profile change. Five new checks cover 343 native
+callback cases, an independent integer-field rejection control, raw retail
+identity and six unchanged neighbors. Fresh totals: 3284 / 5463 overall,
+2611 / 4790 Game, zero drift; conversion counts and Init ASM unchanged.
+All 62 combined checks pass, complete Init/Debugger/data stay exact. README
+aggregate snapshot updated; sibling/frozen Release unchanged. Next near-match
+is the four frame/spill words in `func_1510D7AC`; light-selector gate stays open.
+
 Game light-selector experiment: [Note 986](WORKING_NOTES/986-game-light-selector-candidate-fitting-and-connected-frame-witness-20261005.md)
 recovers full fourteen-argument `func_1515D914` as experimental C. No-unroll
 O2/g3 fits 2212 body / 2224 complete bytes in the 2404-byte slot, versus
