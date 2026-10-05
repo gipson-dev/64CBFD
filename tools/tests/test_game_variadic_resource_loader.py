@@ -13,6 +13,7 @@ from pathlib import Path
 from tools import match_progress
 from tools.tests import test_game_random_curve_record as curve
 from tools.tests import test_game_extended_child_constructor as constructor
+from tools.experiments import game_variadic_loader_stack_candidates as screen
 
 
 class GameVariadicResourceLoaderTests(unittest.TestCase):
@@ -229,6 +230,16 @@ if(func_1502B6BC(&sizeOutput,-7,&relocatedOutput,2,items[0],items[1])!=entries
         self.assertIn('D_800C3D68[15] = saved;', self.source)
         self.assertIn('amount = func_10006240(compressed, result, D_8003809C);', self.source)
 
+    def test_direct_match_source_retains_reproducible_baseline_and_selection(self):
+        forms = dict(screen.candidates())
+        self.assertEqual(len(forms), 83)
+        self.assertEqual(self.body, forms['separate-default-swap-descriptor-component'])
+        self.assertIn('target = &fallbackSize;\n    if (size != NULL)', self.body)
+        self.assertIn('va_start(path, depth);', self.body)
+        self.assertIn('va_end(path);', self.body)
+        self.assertNotRegex(self.body, r'u32 descriptor\s*=')
+        self.assertIn('size = &fallbackSize;', forms['baseline'])
+
     def test_actual_resource_helper_consumes_relocated_header_and_output_counts(self):
         source=(self.root/'conker/src/game/generated_15F680.c').read_text()
         helper=re.search(r's32 func_151336A8\([^;{}]+\) \{\n.*?\n\}',source,re.S).group(0)
@@ -394,7 +405,7 @@ for(phase=0;phase<4;phase++) {
         fresh,_,_=match_progress.load_elf_functions(str(elf),'mips-linux-gnu-objdump')
         production,_,addresses=match_progress.load_elf_functions(
             str(self.root/'conker/build/conker.us.elf'),'mips-linux-gnu-objdump')
-        measured={'func_1502B6BC':(77,77,0x50,17,'88bc84ea5f8007358199c4f13b52e35d517419fd40230f9a25223139fe8bd1f5'),
+        measured={'func_1502B6BC':(77,77,0x50,0,'40ead79430624c623749d0a0b9319470f3c925d306da179f6eb908c4828b3fe1'),
                   'func_1502B4A8':(65,72,0,71,'bcce58836363dffad7c081528b0be692fbdfc461a5cc8b71e9b3376e16b43262')}
         for name,(body,size,frame,diffs,digest) in measured.items():
             words=fresh[name]
@@ -409,6 +420,12 @@ for(phase=0;phase<4;phase++) {
             retail=struct.unpack_from('>'+str(size)+'I',self.rom,first)
             self.assertEqual(sum(a!=b for a,b in zip(slot,retail)),diffs)
             self.assertEqual(hashlib.sha256(struct.pack('>'+str(size)+'I',*slot)).hexdigest(),digest)
+            if name == 'func_1502B6BC':
+                self.assertEqual(slot,list(retail))
+                self.assertEqual(slot[0x30//4],0x27B20044)
+                self.assertEqual(slot[0x5C//4],0x27B40038)
+                self.assertEqual(slot[0x8C//4],0x8FA80038)
+                self.assertEqual(slot[0xB0//4],0x8FA50038)
         for name,size in (('func_1501D1D4',33),('func_1503D774',36),('func_15002FB4',86)):
             first=0x2D4B0+addresses[name]-0x15000000
             self.assertEqual(struct.pack('>'+str(size)+'I',*production[name]),self.rom[first:first+size*4])

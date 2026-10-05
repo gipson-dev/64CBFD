@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-05 Game Variadic Resource Loader Direct Match
+
+[Note 991](WORKING_NOTES/991-game-variadic-resource-loader-direct-stack-match-20261005.md)
+matches the complete 77-word `func_1502B6BC` slot directly from C, with its
+retail 0x50 frame. Local fallback selection and descriptor declaration order
+resolve seventeen differences without guards/profile/interface changes.
+All 155 combined checks pass, no skips; complete Init/Debugger/data remain
+exact. README totals: 3288 / 5463 overall, 2615 / 4790 Game, zero drift.
+Conversion/Init ASM unchanged; no sibling source/build/save or frozen Release
+change. Next matching target: offset relocator `func_1502B4A8`.
+
 ## 2026-10-05 Game Attachment Guarded Register Match
 
 [Note 990](WORKING_NOTES/990-game-attachment-walker-guarded-register-match-20261005.md)

@@ -164,33 +164,35 @@ s32 func_1502B5C8() {
     return 0;
 }
 void *func_1502B6BC(s32 *size, s32 count, s32 *relocated, s32 depth, ...) {
+    s32 *target;
     va_list path;
     s32 fallbackSize;
+    s32 component;
+    u32 offset;
     /* Retail leaves this undefined for zero depth or an unwritten lookup result. */
     u32 descriptor;
-    u32 offset;
-    s32 component;
     void *result;
 
-    if (size == NULL) {
-        size = &fallbackSize;
+    target = &fallbackSize;
+    if (size != NULL) {
+        target = size;
     }
-    *size = 1;
+    *target = 1;
     offset = (u32)D_AB1950;
     va_start(path, depth);
     if (depth != 0) {
         do {
             component = va_arg(path, s32);
-            if (*size != 0) {
+            if (*target != 0) {
                 offset += func_1502AC88(offset, component, &descriptor);
             }
-            *size = descriptor & 0x0FFFFFFF;
+            *target = descriptor & 0x0FFFFFFF;
         } while (--depth != 0);
     }
     va_end(path);
-    if (*size != 0) {
-        result = func_1502B350(offset, descriptor, size);
-        if (*size != 0 && result != NULL) {
+    if (*target != 0) {
+        result = func_1502B350(offset, descriptor, target);
+        if (*target != 0 && result != NULL) {
             count = func_1502B4A8(result, count);
         } else {
             count = 0;

@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game variadic loader direct match: [Note 991](WORKING_NOTES/991-game-variadic-resource-loader-direct-stack-match-20261005.md)
+matches all 77 words of `func_1502B6BC`, including retail's 0x50 frame,
+nullable-output prologue and private descriptor at sp+0x38. Separate fallback
+selection and local declaration order resolve all seventeen differences
+directly from C, with no guards/profile/interface changes. The 83-form screen
+reproduces the result; all 155 combined checks pass, no skips, with actual
+variadic/connected source fixtures and complete Init/Debugger/data identity.
+Totals: 3288 / 5463 overall, 2615 / 4790 Game, zero drift; conversion/Init ASM
+unchanged. README aggregates updated; no host/frozen Release change. Next:
+72-word offset relocator `func_1502B4A8` (65 body words, 71 raw differences).
+
 Game attachment guarded match: [Note 990](WORKING_NOTES/990-game-attachment-walker-guarded-register-match-20261005.md)
 matches the complete 45-word linked `func_15168E54` slot with nine expected-word
 guards for a closed cursor/opcode allocation and equality operand order.

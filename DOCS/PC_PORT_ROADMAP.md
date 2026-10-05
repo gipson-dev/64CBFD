@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Variadic Resource Loader Direct Match - 2026-10-05
+
+[Note 991](WORKING_NOTES/991-game-variadic-resource-loader-direct-stack-match-20261005.md)
+matches all 77 DECOMP `func_1502B6BC` words directly from C, no guards or
+profile changes. All 155 combined checks pass, including connected resource
+source fixtures and protected sections. Sibling translated code already uses
+the retail frame/prologue and descriptor location; no loader synchronization
+is needed for this matching change. Existing host diagnostics remain separate.
+No host source, build, save or frozen Release change. Game exact count:
+2615 / 4790. Real resource/render/runtime qualification remains open.
+
 ## Game Attachment Guarded Retail Match - 2026-10-05
 
 [Note 990](WORKING_NOTES/990-game-attachment-walker-guarded-register-match-20261005.md)

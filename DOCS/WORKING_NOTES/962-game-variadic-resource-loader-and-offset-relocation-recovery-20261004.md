@@ -2,6 +2,12 @@
 
 Date: 2026-10-04
 
+Current follow-up: [Note 991](991-game-variadic-resource-loader-direct-stack-match-20261005.md)
+matches all 77 loader words directly from C with no guards or profile changes.
+The seventeen-difference measurements below describe this recovery checkpoint;
+the relocator remains non-matching. Lookup/block bodies were recovered in the
+subsequent Note 963, so placeholder statements below are historical boundaries.
+
 ## Scope And Result
 
 Replace `func_1502B6BC` and `func_1502B4A8`'s zero-return placeholders with
