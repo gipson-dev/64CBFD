@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-05 Init Pause-Resume Decision
+
+[Note 984](WORKING_NOTES/984-init-pause-resume-current-conversion-readiness-20261005.md)
+refreshes all 47 remaining ASM owners and the conversion queue. Seventeen
+entries remain investigation targets; thirty intentionally retain assembly.
+No replacement is ready: bitmap/MMIO full matches unresolved, decoder 512
+bytes over and formatter connection 196 over, with ownership gates open.
+All 140 fresh checks pass, no skips, including current byte-depth size/hash
+reproduction and complete existing Init/data plus Game-data identity.
+Detailed next steps stay in working docs; no README aggregate or production
+change. Preserve the three paused Game experiment files outside this checkpoint.
+
 ## 2026-10-05 Game Viewport Renderer
 
 [Note 983](WORKING_NOTES/983-game-viewport-renderer-semantic-recovery-20261005.md)

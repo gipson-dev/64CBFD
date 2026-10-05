@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Init Conversion Readiness - 2026-10-05
+
+[Note 984](WORKING_NOTES/984-init-pause-resume-current-conversion-readiness-20261005.md)
+confirms 47 retained DECOMP ASM owners: seventeen investigation targets,
+thirty intentional boot/SDK/hardware/context routines. None is ready for
+production C adoption. Fresh bitmap/MMIO bodies fit but do not match; the
+current decoder is 4496 / 3984 bytes, 512 over, and formatter connection is
+608 / 412, 196 over. Entry/frame/placement/private-stack gates remain open.
+All 140 fresh checks pass, no skips; complete existing Init/data and Game
+data remain exact. Next small task: original bitmap endpoint branch and
+increment-delay/tail recovery. No production or host replacement follows
+from these fixtures. Paused Game edits, README totals, saves and frozen
+Release remain unchanged.
+
 ## Game Viewport Renderer - 2026-10-05
 
 [Note 983](WORKING_NOTES/983-game-viewport-renderer-semantic-recovery-20261005.md)

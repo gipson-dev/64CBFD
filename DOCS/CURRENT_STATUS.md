@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init pause-resume decision: [Note 984](WORKING_NOTES/984-init-pause-resume-current-conversion-readiness-20261005.md)
+freshly confirms 492 C / 47 ASM entries: seventeen investigation targets and
+thirty intentional boot/SDK/hardware/context owners. No replacement is ready
+for production adoption. Bitmap fits nineteen body words but differs at seventeen;
+MMIO fits eleven but differs at nine O2/g3 or eight O1 words. Current connected
+decoder is freshly reproduced at 4496 / 3984 bytes, 512 over; best formatter
+connection remains 608 / 412, 196 over. Entry/frame/placement/stack gates remain.
+All 140 fresh focused and byte-depth identity checks pass, no skips; complete
+existing Init code/data and Game data remain exact. Bitmap loop/tail is the
+first small target. Paused Game experiments, production owners, README totals
+and sibling/frozen Release stay unchanged; this is not a production relink.
+
 Game renderer: [Note 983](WORKING_NOTES/983-game-viewport-renderer-semantic-recovery-20261005.md)
 recovers full `func_1510B9D0`, its public cursor/s16 interface and legacy caller
 casts. C fits 347 / 356 words; frame 0xB8 versus retail 0x98, 343 differences,

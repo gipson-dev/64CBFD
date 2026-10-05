@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 984](WORKING_NOTES/984-init-pause-resume-current-conversion-readiness-20261005.md)):
+Resume remaining-Init assessment: 492 C / 47 ASM, seventeen investigation
+targets and thirty intentional owners. No replacement is production-ready.
+Fresh bitmap/MMIO fixtures fit their bodies but remain unmatched; current
+byte-depth decoder reproduces 4496 / 3984 bytes, 512 over. Best formatter
+connection remains 196 bytes over with placement/interface gates. All 140
+focused and byte-depth identity checks pass, no skips; complete existing
+Init/data and Game data stay exact. First small target is bitmap loop/tail.
+Paused Game edits, production owners, README aggregates and Release unchanged.
+
 2026-10-05 ([Note 983](WORKING_NOTES/983-game-viewport-renderer-semantic-recovery-20261005.md)):
 Recover complete `func_1510B9D0`, typed public interface and unchanged-byte
 legacy caller. C fits 347 / 356 words, frame 0xB8 versus 0x98 retail, 343 raw
