@@ -16,6 +16,18 @@ make -C conker progress
 
 ## 2026-10-02
 
+### 2026-10-05 current Init fitting checkpoint
+
+- Init [Note 978](WORKING_NOTES/978-init-mmio-record-view-fitting-and-ordered-access-qualification-20261005.md)
+  tests grouped volatile publication fields with scalar and explicit-local
+  controls. Direct record saves sixteen complete bytes in three profiles,
+  but has nine O2/g3 or eight O1 raw differences; locals worsen O1 text/stack.
+  Nine new checks qualify sixty paired traces and order/read/width rejection
+  controls with no host MMIO execution. Keep original assembly/declarations;
+  no production conversion, original-type provenance or README/host change.
+  All 128 combined checks pass, no skips; complete existing Init slots/code/data
+  and Game data stay retail-exact. No fresh production relink or hardware claim.
+
 ### 2026-10-04 current Init corpus checkpoint
 
 - Init [Note 977](WORKING_NOTES/977-init-bitmap-all-ones-mask-fitting-and-retail-loop-boundary-20261004.md)

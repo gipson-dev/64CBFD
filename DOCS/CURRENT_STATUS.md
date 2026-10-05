@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-04
+Last verified: 2026-10-05
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -20,6 +20,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Init MMIO fitting: [Note 978](WORKING_NOTES/978-init-mmio-record-view-fitting-and-ordered-access-qualification-20261005.md)
+tests a new volatile record view of the adjacent RAM publications. Direct
+record text saves sixteen bytes versus the fully volatile scalar control in
+three profiles, but still has nine O2/g3 or eight O1 word differences. Explicit
+locals regress O1 to seventeen words/eight-byte frame. Nine new checks qualify
+sixty ordered retail/C traces with no external reads and rejection controls for
+store order, width and added reads. Retain the handwritten assembly; grouped
+addressing is not original-type provenance or a closed register/schedule match.
+Production declarations, owners, README totals and host/Release stay unchanged.
+All 128 combined checks pass in 66.503 seconds, no skips; complete existing
+Init slots/code/data and Game data remain retail-exact. No production relink
+or hardware acceptance is claimed.
 
 Init bitmap fitting: [Note 977](WORKING_NOTES/977-init-bitmap-all-ones-mask-fitting-and-retail-loop-boundary-20261004.md)
 adds an opt-in unsigned all-ones mask and arithmetic control. The mask variant

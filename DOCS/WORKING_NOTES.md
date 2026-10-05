@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 978](WORKING_NOTES/978-init-mmio-record-view-fitting-and-ordered-access-qualification-20261005.md)):
+Test grouped volatile MMIO publication fields under four profiles. Direct
+record saves sixteen complete bytes versus the scalar control in three profiles,
+but remains eleven/nine-different O2/g3 or eleven/eight-different O1 words.
+Explicit locals add an O1 eight-byte frame/seventeen-word body. Nine new checks
+qualify sixty ordered retail/C traces, no reads, and order/read/width rejection
+controls. No production adoption, type/provenance claim, README or host change.
+All 128 combined checks pass, no skips; complete existing Init slots/code/data
+and Game data remain retail-exact. No fresh production relink or hardware claim.
+
 2026-10-04 ([Note 977](WORKING_NOTES/977-init-bitmap-all-ones-mask-fitting-and-retail-loop-boundary-20261004.md)):
 Test an unsigned all-ones bitmap fill/mask hypothesis and arithmetic control.
 New mask variant fits nineteen O2 words but differs at seventeen positions;

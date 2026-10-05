@@ -2,6 +2,10 @@
 
 Date: 2026-10-04. Starting HEAD: `a916e9f4`.
 
+Subsequent [Note 978](978-init-mmio-record-view-fitting-and-ordered-access-qualification-20261005.md)
+tests the next small Init target with a new grouped-address MMIO hypothesis.
+It likewise yields bounded behavior evidence, not an adopted replacement.
+
 ## Result
 
 Continue the nearest small Init target from

@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Init MMIO Record-View Trial - 2026-10-05
+
+[Note 978](WORKING_NOTES/978-init-mmio-record-view-fitting-and-ordered-access-qualification-20261005.md)
+tests grouped volatile RAM-publication fields. Direct record text saves sixteen
+bytes against the scalar control in three profiles but still differs at nine
+O2/g3 or eight O1 words; explicit locals regress O1. Nine new checks qualify
+sixty complete ordered guest-model traces and negative order/read/width controls.
+No MMIO is executed on host hardware. Retain assembly and independent production
+declarations; no host replacement, README aggregate or frozen Release change.
+All 128 combined checks pass, no skips; complete existing Init/data and Game
+data remain retail-exact. No fresh production relink or hardware claim.
+
 ## Init Bitmap Mask Fitting - 2026-10-04
 
 [Note 977](WORKING_NOTES/977-init-bitmap-all-ones-mask-fitting-and-retail-loop-boundary-20261004.md)
