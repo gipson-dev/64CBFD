@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init bitmap fitting: [Note 977](WORKING_NOTES/977-init-bitmap-all-ones-mask-fitting-and-retail-loop-boundary-20261004.md)
+adds an opt-in unsigned all-ones mask and arithmetic control. The mask variant
+fits nineteen optimized body words but has seventeen raw differences; IDO
+rematerializes the constant, keeps the XOR loop and changes the retail tail.
+Standalone optimized text stays 80 bytes: alignment absorbs the body word.
+Reject adoption: this is size fitting, not a scheduling-only match. Nine new
+checks qualify 1002 completed retail/C pairs and twelve prefixes; all 119
+combined checks pass, no skips. Forty disabled-selector preprocessing checks
+confirm unchanged Shapes 1..20. All existing Init slots/code/data and Game
+data remain exact. Production owners, README totals and host/Release unchanged.
+Next bitmap work must address the direct branch/increment delay and original
+two-based tail, not another mask-only substitution. MMIO remains next small target.
+
 Remaining Init decision: [Note 976](WORKING_NOTES/976-init-remaining-conversion-decision-and-decoder-cache-matrix-20261004.md)
 retains 47 ASM owners: seventeen investigation targets and thirty intentional
 boot/SDK/hardware/context routines. No replacement is ready. The new sixteen-

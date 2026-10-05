@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 977](WORKING_NOTES/977-init-bitmap-all-ones-mask-fitting-and-retail-loop-boundary-20261004.md)
+  tests an unsigned all-ones bitmap value/mask and an arithmetic control.
+  Optimized mask variant fits nineteen words with seventeen raw differences;
+  IDO rematerializes the constant, retaining the XOR loop and different tail.
+  Whole optimized text stays 80 bytes after alignment, checked by the receipt.
+  Reject adoption. Nine new checks qualify 1002 retail/C pairs and twelve
+  prefixes; all 119 combined checks and forty old-shape preprocessing
+  comparisons pass, no skips. Existing Init slots/code/data and Game data
+  stay exact; production owners, README totals and host/Release unchanged.
+
 - Init [Note 976](WORKING_NOTES/976-init-remaining-conversion-decision-and-decoder-cache-matrix-20261004.md)
   records all remaining adoption decisions: seventeen investigation targets,
   thirty intentional owners, no approved replacement. The sixteen-case cache

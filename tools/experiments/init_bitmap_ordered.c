@@ -1,8 +1,11 @@
 typedef unsigned char u8;
 typedef short s16;
 
-#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 20)
+#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 22)
 typedef char GuestAddressWidth[(sizeof(unsigned long) == 4) ? 1 : -1];
+#if SHAPE == 21 || SHAPE == 22
+typedef char GuestMaskWidth[(sizeof(unsigned int) == 4) ? 1 : -1];
+#endif
 #endif
 
 #ifdef HOST_TEST
@@ -25,8 +28,10 @@ void func_10005BE0(void) {
     int value = 0xFF;
 #elif SHAPE == 19
     unsigned int value = 0xFF;
+#elif SHAPE == 21 || SHAPE == 22
+    unsigned int value = ~0u;
 #endif
-#if SHAPE >= 12 && SHAPE <= 20
+#if SHAPE >= 12 && SHAPE <= 22
     unsigned long cursor = (unsigned long)D_8003BE70;
     unsigned long end = (unsigned long)D_8003BE7C;
 #if SHAPE == 13
@@ -142,6 +147,11 @@ fill:
         cursor++;
         *(volatile u8 *)cursor = 0xFF;
     } while (cursor != end);
+#elif SHAPE == 21 || SHAPE == 22
+    /* Trial an unsigned all-ones word for fill and complemented mask generation. */
+    do {
+        *(volatile u8 *)cursor = value;
+    } while (cursor++ != end);
 #else
 #error Unknown SHAPE
 #endif
@@ -149,7 +159,7 @@ fill:
     bits = D_8003BE78 & 7;
 #if SHAPE == 7
     if (bits--) {
-#elif SHAPE == 19
+#elif SHAPE == 19 || SHAPE == 21
     if (bits) {
 #else
     if (bits) {
@@ -163,7 +173,10 @@ fill:
 #elif SHAPE == 19
         value >>= 8 - bits;
         *(volatile u8 *)end = value;
-#elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18 || SHAPE == 20
+#elif SHAPE == 21
+        value = ~(value << bits);
+        *(volatile u8 *)end = value;
+#elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18 || SHAPE == 20 || SHAPE == 22
         *(volatile u8 *)end = (2u << bits) - 1;
 #else
         *end = (2u << bits) - 1;

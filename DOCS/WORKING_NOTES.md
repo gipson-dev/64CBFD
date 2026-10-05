@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-04 ([Note 977](WORKING_NOTES/977-init-bitmap-all-ones-mask-fitting-and-retail-loop-boundary-20261004.md)):
+Test an unsigned all-ones bitmap fill/mask hypothesis and arithmetic control.
+New mask variant fits nineteen O2 words but differs at seventeen positions;
+constant rematerialization, XOR loop and different mask schedule prevent adoption.
+Optimized whole text stays 80 bytes; alignment absorbs the saved body word.
+Nine new checks qualify 1002 retail/C pairs and twelve prefixes. All 119 combined
+checks pass, no skips; forty old-shape preprocessing comparisons pass. Existing
+Init slots/code/data and Game data remain exact. No production owner, README
+total, host or Release change; next fitting must recover the original loop/tail.
+
 2026-10-04 ([Note 976](WORKING_NOTES/976-init-remaining-conversion-decision-and-decoder-cache-matrix-20261004.md)):
 Reassess remaining Init adoption: 47 ASM entries, seventeen investigation
 targets and thirty intentional owners; none ready to convert. Fresh sixteen-

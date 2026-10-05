@@ -2,6 +2,11 @@
 
 Date: 2026-10-04. Starting HEAD: `ab84ebfd`.
 
+Subsequent [Note 977](977-init-bitmap-all-ones-mask-fitting-and-retail-loop-boundary-20261004.md)
+qualifies a new bitmap mask variant that fits nineteen words but differs at
+seventeen positions. It does not recover the retail loop/tail or qualify
+production adoption; the no-adoption decision and other group gates stand.
+
 ## Decision
 
 Resume the requested remaining-Init assessment from the banked baseline.

@@ -21,7 +21,7 @@ def compile_shapes(shapes):
     retail = (cwd / "conker.us.bin").read_bytes()[0x5BE0:0x5C2C]
     report = []
     for shape in shapes:
-        if shape not in range(1, 21):
+        if shape not in range(1, 23):
             raise ValueError("unknown bitmap shape: %s" % shape)
         prefix = "build/init-bitmap-ordered/shape%d" % shape
         host = prefix + "-host"
@@ -63,6 +63,8 @@ def compile_shapes(shapes):
             (cwd / (obj + ".asm.txt")).write_text(disassembly)
             report.append({"shape": shape, "profile": profile,
                            "body_words": end, "different_positions": differences,
+                           "text_bytes": len(data),
+                           "trailing_text_bytes": len(data) - len(body),
                            "exact": body == retail, "host_cases": 79,
                            "frame_bytes": sum(frames),
                            "host_return_checked": shape in (4, 5)})
@@ -72,9 +74,9 @@ def compile_shapes(shapes):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--shapes", type=int, nargs="+", choices=range(1, 21),
+    parser.add_argument("--shapes", type=int, nargs="+", choices=range(1, 23),
                         default=list(range(1, 12)),
-                        help="select isolated shapes; 12-20 use unsigned address induction")
+                        help="select isolated shapes; 12-22 use unsigned address induction")
     report = compile_shapes(parser.parse_args().shapes)
     print(json.dumps(report, indent=2))
 

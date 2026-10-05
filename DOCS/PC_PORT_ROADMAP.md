@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Init Bitmap Mask Fitting - 2026-10-04
+
+[Note 977](WORKING_NOTES/977-init-bitmap-all-ones-mask-fitting-and-retail-loop-boundary-20261004.md)
+fits an unsigned all-ones bitmap mask variant into nineteen optimized words,
+but seventeen differ from retail. IDO rematerializes the constant; the XOR
+loop and different mask tail remain. No production conversion or host change.
+Complete optimized standalone text stays 80 bytes despite the saved body word.
+Nine new bounded checks qualify 1002 retail/C pairs and twelve prefixes; all
+119 combined checks pass, no skips. Forty old-shape preprocessing comparisons
+pass. Existing Init code/data and Game data stay exact; README totals and
+frozen Release unchanged. Next fitting needs the original loop/tail schedule.
+
 ## Remaining Init Conversion Decision - 2026-10-04
 
 [Note 976](WORKING_NOTES/976-init-remaining-conversion-decision-and-decoder-cache-matrix-20261004.md)
