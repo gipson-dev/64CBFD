@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-05 ([Note 995](WORKING_NOTES/995-game-cache-installer-alias-preserving-word-copy-and-guarded-match-20261005.md)):
+Match all 97 linked `func_1502AB04` words with the alias-preserving word-copy
+source and 41 checked scheduling/register guards, not directly from C.
+The 129-form screen reproduces 97 body words, frame 0x28 and 41 raw differences;
+the overlap-sensitive raw-exact aggregate remains rejected. All 2550 new
+three-way cases preserve exact reads and disjoint store windows; every omitted
+guard fails. All 176 final checks pass, no skips; full consumer rebuild and
+protected-section identity hold. Totals: 3291 / 5463 overall,
+2618 / 4790 Game, zero drift. README aggregates updated; conversion/Init ASM
+and sibling/frozen Release unchanged. Next: cached lookup `func_1502AC88`.
+
 2026-10-05 ([Note 994](WORKING_NOTES/994-game-cache-installer-frame-recovery-and-pair-copy-alias-gate-20261005.md)):
 Recover `func_1502AB04`'s 0x28 frame and complete 19-word prologue using an
 explicit count local across `bcopy`; retain scalar copies and all alias cases.

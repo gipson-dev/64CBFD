@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Cache Installer Alias-Preserving Guarded Match - 2026-10-05
+
+[Note 995](WORKING_NOTES/995-game-cache-installer-alias-preserving-word-copy-and-guarded-match-20261005.md)
+matches all 97 linked DECOMP cache-installer words with 41 checked guards,
+not directly from C. The chosen one-word-copy source retains native partial
+overlap behavior; the raw-exact two-word aggregate stays rejected. All 2550
+new three-way traces preserve exact reads and independent store windows.
+All 176 final checks pass, no skips, including connected fixtures and protected
+sections after the full consumer rebuild. Read-only sibling audit finds the translated
+retail frame and sequential loads/stores already present; no synchronization
+is needed for this matching change. No host source, build, save or frozen
+Release change. Game exact count: 2618 / 4790. Real SDK copy/cache/runtime
+and rendering acceptance remain separate and open.
+
 ## Game Cache Installer Frame And Alias Gate - 2026-10-05
 
 [Note 994](WORKING_NOTES/994-game-cache-installer-frame-recovery-and-pair-copy-alias-gate-20261005.md)

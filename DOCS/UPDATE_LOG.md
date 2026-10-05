@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-05 Game Cache Installer Alias-Preserving Guarded Match
+
+[Note 995](WORKING_NOTES/995-game-cache-installer-alias-preserving-word-copy-and-guarded-match-20261005.md)
+matches all 97 linked `func_1502AB04` words using its one-word offset copy and
+41 checked schedule/register guards. Raw C remains 41 words different; no
+insertion, omission, profile or interface changes. All 2550 new three-way cases
+retain exact reads and independent store windows, with every omitted-guard
+control rejected. Native overlap gates remain intact. All 176 final checks pass,
+no skips; full consumer rebuild and protected-section identity hold. README
+totals: 3291 / 5463 overall, 2618 / 4790 Game, zero drift.
+Conversion/Init ASM unchanged; sibling/frozen Release untouched. Next:
+cached lookup `func_1502AC88`.
+
 ## 2026-10-05 Game Cache Installer Frame And Alias Gate
 
 [Note 994](WORKING_NOTES/994-game-cache-installer-frame-recovery-and-pair-copy-alias-gate-20261005.md)

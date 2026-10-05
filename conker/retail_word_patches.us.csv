@@ -10537,3 +10537,44 @@ game_57FA0,func_1502B4A8,0xF4,0x15A00003,0x15800003,-,-,Normalize closed resourc
 game_57FA0,func_1502B4A8,0xF8,0x00447821,0x00447021,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
 game_57FA0,func_1502B4A8,0x104,0xAC6F0008,0xAC6E0008,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
 game_57FA0,func_1502B4A8,0x110,0x8C790004,0x8C780004,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502AB04,0x94,0x8E0DFFFC,0x8E0CFFFC,-,-,Normalize cache installer peel descriptor temporary and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x98,0xAC470000,0x24420010,-,-,Normalize cache installer peel descriptor temporary and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x9C,0x24E70008,0x24630010,-,-,Normalize cache installer peel descriptor temporary and independent store schedule,,,false
+game_57FA0,func_1502AB04,0xA0,0xAC510004,0xAC6CFFF4,-,-,Normalize cache installer peel descriptor temporary and independent store schedule,,,false
+game_57FA0,func_1502AB04,0xA4,0x24420010,0xAC47FFF0,-,-,Normalize cache installer peel descriptor temporary and independent store schedule,,,false
+game_57FA0,func_1502AB04,0xA8,0x24630010,0x24E70008,-,-,Normalize cache installer peel descriptor temporary and independent store schedule,,,false
+game_57FA0,func_1502AB04,0xB0,0xAC4DFFFC,0xAC51FFF4,-,-,Normalize cache installer peel descriptor temporary and independent store schedule,,,false
+game_57FA0,func_1502AB04,0xB8,0x3C0F0000,0x3C0E0000,R_MIPS_HI16:D_800C3D68,R_MIPS_HI16:D_800C3D68,Normalize closed cache installer bulk address temporary allocation,,,false
+game_57FA0,func_1502AB04,0xBC,0x25EF0000,0x25CE0000,R_MIPS_LO16:D_800C3D68,R_MIPS_LO16:D_800C3D68,Normalize closed cache installer bulk address temporary allocation,,,false
+game_57FA0,func_1502AB04,0xC0,0x00087100,0x00086900,-,-,Normalize closed cache installer bulk address temporary allocation,,,false
+game_57FA0,func_1502AB04,0xC4,0x01CF1021,0x01AE1021,-,-,Normalize closed cache installer bulk address temporary allocation,,,false
+game_57FA0,func_1502AB04,0xF0,0x8E0AFFE4,0x8E18FFE4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0xF4,0xAC510004,0x24420040,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0xF8,0xAC470000,0x24630040,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0xFC,0xAC4A000C,0xAC78FFC4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x100,0x8E01FFE8,0xAC51FFC4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x104,0x24E70008,0xAC47FFC0,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x108,0x24420040,0x8E01FFE8,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x10C,0xACA10000,0x24E70008,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x110,0x8E0DFFEC,0x24A50040,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x114,0xAC47FFD0,0xACA1FFC0,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x118,0xAC51FFD4,0x8E0AFFEC,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x11C,0xAC4DFFDC,0x24C60040,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x120,0x8E01FFF0,0xACAAFFC4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x124,0x24E70008,0xAC47FFD0,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x128,0x24630040,0xAC51FFD4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x12C,0xACC10000,0x8E01FFF0,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x130,0x8E18FFF4,0x24E70008,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x134,0xAC47FFE0,0xACC1FFC0,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x138,0xAC51FFE4,0x8E0CFFF4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x13C,0xAC58FFEC,0xACCCFFC4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x140,0x8E01FFF8,0xAC47FFE0,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x144,0x24E70008,0xAC51FFE4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x148,0x24A50040,0x8E01FFF8,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x14C,0xAC81FFC0,0x24E70008,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x150,0x8E0BFFFC,0xAC81FFC0,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x154,0xAC47FFF0,0x8E0EFFFC,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x158,0x24E70008,0xAC8EFFC4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x15C,0xAC51FFF4,0xAC47FFF0,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x160,0x24C60040,0x24E70008,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false
+game_57FA0,func_1502AB04,0x168,0xAC4BFFFC,0xAC51FFF4,-,-,Normalize cache installer bulk descriptor temporaries and independent store schedule,,,false

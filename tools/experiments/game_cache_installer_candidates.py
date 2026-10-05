@@ -114,6 +114,11 @@ def candidates():
         '        *(AssetTablePair57FA0 *)&D_800C3D68[i].offset = *(AssetTablePair57FA0 *)pairs;\n'
         '        D_800C3D68[i].descriptor = pairs[1];')
     forms.append(('word-offset-scalar-descriptor',word))
+    selected=word.replace('AssetTablePair57FA0','AssetTableWord57FA0')
+    selected=selected.replace('        *(AssetTableWord57FA0 *)&D_800C3D68[i].offset =',
+        '        /* Keep pair reads sequential when input overlaps the cache. */\n'
+        '        *(AssetTableWord57FA0 *)&D_800C3D68[i].offset =')
+    forms.append(('word-selected',selected))
     both=word.replace('        D_800C3D68[i].descriptor = pairs[1];',
                       '        *(AssetTablePair57FA0 *)&D_800C3D68[i].descriptor = *(AssetTablePair57FA0 *)&pairs[1];')
     forms.append(('word-both',both))
@@ -207,7 +212,7 @@ def main():
     args=parser.parse_args()
     root=Path(__file__).resolve().parents[2]
     production=(root/'conker/src/game_57FA0.c').read_text()
-    assert re.search(r'void func_1502AB04\([^;{}]+\) \{\n.*?\n\}',production,re.S).group(0)==dict(candidates())['scalar-local-count']
+    assert re.search(r'void func_1502AB04\([^;{}]+\) \{\n.*?\n\}',production,re.S).group(0)==dict(candidates())['word-selected']
     assert re.search(r'typedef struct AssetTableCache57FA0 \{.*?\} AssetTableCache57FA0;',production,re.S).group(0)==LAYOUT
     output=root/'conker/build/game-cache-installer'
     output.mkdir(exist_ok=True)

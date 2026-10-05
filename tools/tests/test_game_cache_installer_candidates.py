@@ -120,10 +120,10 @@ for(n=0;n<=16;n++) for(k=0;k<=64-2*n;k++) {
 if(cases!=833) return 3;
 ''')
 
-    def test_production_keeps_scalar_copy_and_original_qualification(self):
+    def test_production_keeps_sequential_word_copy_and_original_qualification(self):
         source=(self.root/'conker/src/game_57FA0.c').read_text()
         body=re.search(r'void func_1502AB04\([^;{}]+\) \{\n.*?\n\}',source,re.S).group(0)
-        self.assertEqual(body,self.forms['scalar-local-count'])
+        self.assertEqual(body,self.forms['word-selected'])
 
     def test_complete_retail_scalar_and_word_copy_traces_keep_live_alias_reads(self):
         if not (self.root/'ido/ido5.3_recomp/cc').is_file() or any(

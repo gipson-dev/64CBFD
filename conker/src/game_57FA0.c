@@ -42,6 +42,9 @@ void func_1502AAF8(s32 arg0) {
 }
 
 void func_1502AB04(s32 arg0, u32 *pairs, u32 generation, u32 address) {
+    typedef struct AssetTableWord57FA0 {
+        u32 value;
+    } AssetTableWord57FA0;
     s32 count;
     u32 i;
 
@@ -50,10 +53,11 @@ void func_1502AB04(s32 arg0, u32 *pairs, u32 generation, u32 address) {
         bcopy(&D_800C3D68[count], D_800C3D68, (16 - count) * 16);
     }
     for (i = 16 - (u32)count; i < 16; i++) {
-        D_800C3D68[i].offset = pairs[0];
+        /* Keep pair reads sequential when input overlaps the cache. */
+        *(AssetTableWord57FA0 *)&D_800C3D68[i].offset = *(AssetTableWord57FA0 *)pairs;
         D_800C3D68[i].descriptor = pairs[1];
-        D_800C3D68[i].address = address;
         D_800C3D68[i].generation = generation;
+        D_800C3D68[i].address = address;
         pairs += 2;
         address += 8;
     }

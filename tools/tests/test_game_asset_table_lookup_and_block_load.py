@@ -305,9 +305,9 @@ for(phase=0;phase<2;phase++) {
         finally:
             self.fixture=original
 
-    def test_source_has_no_word_guards_and_retained_alias_is_one_cache(self):
+    def test_lookup_and_block_have_no_guards_and_retained_alias_is_one_cache(self):
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as source:
-            self.assertFalse(any(row['function'] in ('func_1502AB04','func_1502AC88','func_1502B350')
+            self.assertFalse(any(row['function'] in ('func_1502AC88','func_1502B350')
                                  for row in csv.DictReader(source)))
         self.assertNotIn('D_800C3E58',self.source)
         symbols=(self.root/'conker/undefined_syms_auto.txt').read_text()
@@ -338,7 +338,7 @@ for(phase=0;phase<2;phase++) {
         relocations=subprocess.run(['mips-linux-gnu-objdump','-r',str(obj)],check=True,capture_output=True,text=True).stdout
         call_offsets=[int(offset,16) for offset in re.findall(r'(?m)^([0-9a-f]+)\s+R_MIPS_26\s+func_1502AB04\s*$',relocations)]
         self.assertEqual(len(call_offsets),1)
-        measured={'func_1502AB04':(87,97,0x28,74,'6acec640d1eb26a525a32a799d53abb2effeb9336ed73ec7fb4bc931e32ebad0'),
+        measured={'func_1502AB04':(97,97,0x28,41,'a6bca817be8a9ee74df0bc7e91206bd401525478a5f4c39ffb832a9eed82a9bf'),
                   'func_1502AC88':(158,159,0xA0,156,'1bb0909b45c22e6029c8100583e55835d0cea88a3a28efe38ba65524a7f2ca28'),
                   'func_1502B350':(86,86,0x30,0,'f176b2891cb5a8aa6f60461047ea78f4b4e7958fcaef18fb41b9d0c1ccdc31ae')}
         rom=(self.root/'conker/conker.us.bin').read_bytes()
@@ -354,7 +354,11 @@ for(phase=0;phase<2;phase++) {
             self.assertEqual(count,body)
             self.assertEqual(words[count:],[0]*(len(words)-count))
             slot=words[:count]+[0]*(size-count)
-            self.assertEqual(production[name],slot)
+            if name=='func_1502AB04':
+                from tools.tests.test_game_cache_installer_match import apply_linked_guards
+                self.assertEqual(production[name],apply_linked_guards(slot))
+            else:
+                self.assertEqual(production[name],slot)
             self.assertEqual(placed[name],int(name[5:],16))
             self.assertEqual(0x10000-(slot[0]&0xFFFF),frame)
             first=0x2D4B0+placed[name]-0x15000000

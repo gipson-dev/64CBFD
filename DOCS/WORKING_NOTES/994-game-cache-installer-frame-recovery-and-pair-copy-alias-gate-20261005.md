@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `1c640686`.
 
+Follow-up: [Note 995](995-game-cache-installer-alias-preserving-word-copy-and-guarded-match-20261005.md)
+qualifies the one-word-copy schedule and matches all 97 linked words using
+41 checked guards. The partial-overlap rejection remains intact; the source
+screen and production measurements below describe this earlier checkpoint.
+
 ## Adopted Progress
 
 `func_1502AB04` now emits retail's complete first 19 words, including the
