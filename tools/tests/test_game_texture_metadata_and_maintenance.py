@@ -612,7 +612,7 @@ if(func_1510D0EC(5,&extent,62,1)!=(u32)expanded || error || allocations!=2 || dm
         measurements = {
             'func_15003570': (58, 62, 0x30, 54, '096cbdac52e624b1a23fd8f3f7430477801c27d22ab78fb3b57418a95138fb06'),
             'func_1510D404': (125, 129, 0x40, 119, 'eccdb2fdca0e14d179f3f0e7299448b7dd41135e17ae14d53922683f615ee991'),
-            'func_1510D7AC': (46, 46, 0x38, 4, '66c2e6b5363ad9d29b288807d7c41a9a8ddf76b95070e7f52dd94bf0ec1e55e3'),
+            'func_1510D7AC': (46, 46, 0x28, 0, '21edadf96d05d36e293a9788fe9cfb4dba5a4b5c7b916d978b3b21755070046e'),
         }
         for name, (body, size, frame, different, digest) in measurements.items():
             words = fresh[name]
@@ -629,10 +629,7 @@ if(func_1510D0EC(5,&extent,62,1)!=(u32)expanded || error || allocations!=2 || dm
             self.assertEqual(hashlib.sha256(struct.pack('>' + str(size) + 'I', *slot)).hexdigest(), digest)
             if name == 'func_1510D7AC':
                 self.assertEqual([(i * 4, a, b) for i, (a, b) in enumerate(zip(slot, retail)) if a != b],
-                                 [(0x00, 0x27BDFFC8, 0x27BDFFD8),
-                                  (0x68, 0xAFA50038, 0xAFA50028),
-                                  (0x6C, 0x8FA50038, 0x8FA50028),
-                                  (0xAC, 0x27BD0038, 0x27BD0028)])
+                                 [])
         for name, size in (('func_150034B4', 47), ('func_15007830', 124),
                            ('func_1510D374', 36), ('func_15168E34', 8)):
             first = 0x2D4B0 + addresses[name] - 0x15000000

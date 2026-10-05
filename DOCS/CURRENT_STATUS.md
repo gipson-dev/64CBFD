@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game immediate release match: [Note 988](WORKING_NOTES/988-game-immediate-texture-release-direct-frame-match-20261005.md)
+completes all 46 words of `func_1510D7AC` directly from table-indexed C.
+The captured signed priority remains; default O2/g3 now emits retail's 0x28
+frame and ID spill/reload. No guards/profile/padding changes. A 51-variant
+screen and three regression checks pin partial-frame rejection controls and
+five unchanged neighboring spans; the existing full lifecycle suite retains
+callback mutation and connected release/maintenance/reload qualification.
+All 65 final combined checks pass, no skips; complete Init/Debugger/data stay exact.
+Totals: 3285 / 5463 overall, 2612 / 4790 Game, zero drift; conversion and Init
+ASM counts unchanged. README aggregate snapshot updated. Sibling still has
+a placeholder, no host/frozen Release changes. Next near-match: `func_151336A8`.
+
 Game cleanup rematch: [Note 987](WORKING_NOTES/987-game-nullable-cleanup-typed-pointer-direct-rematch-20261005.md)
 restores `func_150F631C`'s complete nineteen-word direct C match. Typed pointer
 fields recover four register/scheduling words against the current callee

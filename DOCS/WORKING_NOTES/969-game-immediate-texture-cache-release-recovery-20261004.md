@@ -4,6 +4,11 @@ Date: 2026-10-04. Starting HEAD: `67e22f69`.
 
 ## Decision
 
+Completed matching checkpoint: [Note 988](988-game-immediate-texture-release-direct-frame-match-20261005.md)
+recovers the original frame and all 46 retail words directly from table-indexed
+C. The four-word difference described below records this earlier semantic
+recovery, not the current matching state. Host synchronization remains open.
+
 Continue the concrete release gap from
 [Note 968](968-game-texture-metadata-and-cache-maintenance-recovery-20261004.md).
 Replace `func_1510D7AC`'s zero-return placeholder with its actual void indexed
@@ -140,7 +145,7 @@ bodies do not imply this immediate-release helper is implemented in the host.
 - [x] Preserve exact Init/Debugger/data and prior recoveries.
 - [x] Recover queued segment writer `func_1510D8C0` (Note 970).
 - [ ] Identify and qualify the staged-entry producer separately.
-- [ ] Match the remaining frame/spill words without weakening the body contract.
+- [x] Match the remaining frame/spill words without weakening the body contract (Note 988).
 - [ ] Synchronize the PC immediate-release stub in a separately qualified host change.
 - [ ] Qualify real guest allocator/DMA/decompression and natural effects.
 

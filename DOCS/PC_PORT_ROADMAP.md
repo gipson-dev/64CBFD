@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Immediate Texture Release Retail Match - 2026-10-05
+
+[Note 988](WORKING_NOTES/988-game-immediate-texture-release-direct-frame-match-20261005.md)
+completes all 46 words of DECOMP `func_1510D7AC`, including the original
+0x28 frame, directly from C with no guards/profile changes. Lifecycle tests
+retain staged callback cache replacement and connected release/maintenance/
+reload. All 65 combined checks pass, no skips, with protected sections exact;
+this does not qualify real allocator/DMA/decode or natural gameplay.
+The sibling generated routine is still a placeholder and no maintained
+named override was found. Keep PC synchronization separate; no host source,
+build, save or frozen Release change. Game exact count: 2612 / 4790.
+
 ## Game Nullable Cleanup Retail Rematch - 2026-10-05
 
 [Note 987](WORKING_NOTES/987-game-nullable-cleanup-typed-pointer-direct-rematch-20261005.md)

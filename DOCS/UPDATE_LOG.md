@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-05 Game Immediate Texture Release Direct Match
+
+[Note 988](WORKING_NOTES/988-game-immediate-texture-release-direct-frame-match-20261005.md)
+completes all 46 words of `func_1510D7AC` without guards or profile changes.
+Full table-indexed C with captured signed priority recovers the retail 0x28
+frame and incoming-ID spill/reload. Three new checks reproduce the source
+screen and preserve neighbors; the actual lifecycle suite still qualifies
+callback changes and connected release/maintenance/reload. All 65 combined
+checks pass, no skips; complete Init/Debugger/data remain exact. README exact
+totals are now 3285 / 5463 overall, 2612 / 4790 Game, zero drift. Conversion
+and Init ASM counts unchanged; host placeholder/frozen Release untouched.
+
 ## 2026-10-05 Game Nullable Cleanup Direct Rematch
 
 [Note 987](WORKING_NOTES/987-game-nullable-cleanup-typed-pointer-direct-rematch-20261005.md)

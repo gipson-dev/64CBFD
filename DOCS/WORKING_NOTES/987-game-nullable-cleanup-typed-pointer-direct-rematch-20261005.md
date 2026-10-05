@@ -70,6 +70,9 @@ values are never dereferenced by the fixture.
 
 ## Progress And Next
 
+Subsequent checkpoint: [Note 988](988-game-immediate-texture-release-direct-frame-match-20261005.md)
+completes the immediate release near-match identified below, directly from C.
+
 | Section | Exact C Functions | Address Drift | Still Different |
 | --- | ---: | ---: | ---: |
 | Total | 3284 / 5463 (60.11%) | 0 | 2179 |

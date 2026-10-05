@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 988](WORKING_NOTES/988-game-immediate-texture-release-direct-frame-match-20261005.md)):
+Match all 46 words of immediate texture release `func_1510D7AC` directly
+from C. Full table indexing with captured signed state recovers the 0x28
+frame and ID spill lifetime, no guards/profile/padding change. Reproducible
+51-variant screen rejects partial-frame near-matches; lifecycle callback
+and neighboring/section checks hold. All 65 combined checks pass, no skips;
+complete Init/Debugger/data remain exact. Fresh exact totals: 3285 / 5463
+overall, 2612 / 4790 Game, zero drift. README aggregates updated; no conversion,
+Init ASM, sibling or frozen Release changes. Next: `func_151336A8`.
+
 2026-10-05 ([Note 987](WORKING_NOTES/987-game-nullable-cleanup-typed-pointer-direct-rematch-20261005.md)):
 Restore nineteen-word `func_150F631C` directly from typed pointer C, no guards
 or profile change. Five new checks cover 343 callback cases, a four-word

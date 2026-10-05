@@ -387,25 +387,18 @@ void func_1510D720(s32 arg0) {
 }
 
 void func_1510D7AC(s32 arg0) {
-    s8 *priority = &D_800BC448[arg0];
-    s8 state = *priority;
-    u8 *activity;
-    s32 count;
-    u32 *cache;
+    s8 state = D_800BC448[arg0];
 
     if (state != 0) {
-        activity = &D_800D9F68[arg0];
-        count = *activity;
-        if (count != 0) {
-            *activity = count - 1;
-            if (*activity == 0) {
+        if (D_800D9F68[arg0] != 0) {
+            D_800D9F68[arg0] = D_800D9F68[arg0] - 1;
+            if (D_800D9F68[arg0] == 0) {
                 if (state & 0x40) {
                     func_10004074((void *)*(u32 *)D_800B0E58[arg0]);
                 }
-                cache = &D_800B0E58[arg0];
-                func_10004074((void *)*cache);
-                *cache = 0xFFFFFFFF;
-                *priority = 0;
+                func_10004074((void *)D_800B0E58[arg0]);
+                D_800B0E58[arg0] = 0xFFFFFFFF;
+                D_800BC448[arg0] = 0;
             }
         }
     }
