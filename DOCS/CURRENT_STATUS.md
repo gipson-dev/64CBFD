@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Palette updater: [Note 973](WORKING_NOTES/973-game-palette-updater-and-connected-color-qualification-20261004.md)
+recovers `func_1510CB10`: 168 / 170 words, retail 0x68 frame, 135 raw differences,
+no guards/profile override/drift. Fourteen new checks qualify 398353 native cases,
+1251 complete paired traces and three invalid-slot prefixes. Actual angle-helper/
+updater/color/writer connections pass; captures, late reloads, byte-wrap-before-
+clamp and both phase stores are retained. All 257 combined checks pass, no skips;
+fresh source compile/padding/link preserves complete Init code/data, Debugger
+code, Game data and previous identities. README aggregates unchanged. Next
+full caller `func_1510B9D0` (356 words) and command helper `func_1510B7B4` (105)
+remain placeholders. Full renderer/RSP/RDP/natural effects and matching stay open.
+Sibling already has updater plus gated diagnostics; no host/Release changes.
+
 Palette color emitter: [Note 972](WORKING_NOTES/972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)
 finishes the interrupted `func_1510CDB8` recovery: all 42 words match directly
 from actual SDK macros, frameless, no guards/profile override/drift. Six added
@@ -30,7 +42,8 @@ The complete module records 1710 paired traces. All 243 combined checks pass,
 no skips, after forced source compile/padding/link/progress/matcher; complete
 Init code/data, Debugger code and Game data remain exact. Total 3283 / 5463,
 Game 2610 / 4790 exact, 2180 different, zero drift. README changes matching
-aggregate rows only. Next source: 170-word palette updater `func_1510CB10`.
+aggregate rows only. Note 973 above subsequently recovers palette updater
+`func_1510CB10` and qualifies its bounded color/writer connection.
 Full render caller/RSP/RDP/natural effects and staged producer remain open.
 Sibling already has the original emitter; no host/frozen Release changes.
 

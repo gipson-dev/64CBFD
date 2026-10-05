@@ -2,6 +2,10 @@
 
 Date: 2026-10-04. Starting HEAD: `104ce180`.
 
+Subsequent [Note 973](973-game-palette-updater-and-connected-color-qualification-20261004.md)
+recovers palette updater `func_1510CB10` and qualifies its actual color/writer
+connection. Full renderer and matching boundaries recorded here remain open.
+
 ## Decision
 
 Finish the interrupted `func_1510CDB8` recovery preserved by
@@ -148,7 +152,7 @@ immediate-release stub synchronization remain separate tasks.
 - [x] Connect actual color -> queue writer in normal and alias fixtures.
 - [x] Pass all 243 combined checks and retain complete exact Init/Debugger/data.
 - [x] Update README aggregate matching rows, keeping narration in docs.
-- [ ] Recover/qualify palette updater `func_1510CB10` and its color connection.
+- [x] Recover/qualify palette updater `func_1510CB10` and its color connection (Note 973).
 - [ ] Recover/qualify full render caller and real RSP/RDP/natural effects.
 - [ ] Match queued writer's remaining 38 raw differences separately.
 - [ ] Identify/qualify staged texture producer and synchronize pending PC stubs.

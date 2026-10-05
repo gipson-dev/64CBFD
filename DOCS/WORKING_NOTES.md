@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-04 ([Note 973](WORKING_NOTES/973-game-palette-updater-and-connected-color-qualification-20261004.md)):
+Recover palette updater `func_1510CB10`: 168 / 170 words, retail 0x68 frame,
+135 raw differences, no guards/profile override/drift. Fourteen new checks
+qualify 398353 native cases and 1251 complete paired traces, with three invalid-
+slot prefixes separate. Actual angle helper/updater/color/writer connect; signed
+steps, captured/local values, callback reloads, wrap-before-clamp, two phase
+stores and repeated default selection are qualified. All 257 combined checks
+pass after fresh source compile/link; full Init/Debugger/data and prior identities
+remain intact. README aggregates unchanged. Next full caller 1510B9D0 and helper
+1510B7B4; natural renderer/RSP/RDP/matching remain open. No host/Release changes.
+
 2026-10-04 ([Note 972](WORKING_NOTES/972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)):
 Finish pending color emitter `func_1510CDB8`: all 42 words match directly from
 actual SDK macros, no frame/guards/profile override/drift. Six added checks

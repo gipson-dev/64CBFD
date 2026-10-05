@@ -123,6 +123,17 @@ change or PC rendering acceptance. Next upstream source is palette updater
 `func_1510CB10` (170 words), still a placeholder. Full renderer and natural
 RSP/RDP effects remain separate from the qualified leaf connection.
 
+Palette updater `func_1510CB10` is subsequently recovered in
+[Note 973](WORKING_NOTES/973-game-palette-updater-and-connected-color-qualification-20261004.md):
+168 / 170 words, retail 0x68 frame, 135 differences, no guards/profile override.
+Fourteen new tests include 398353 native cases, 1251 complete paired traces,
+three invalid-slot prefixes and actual angle-helper/updater/color/writer
+connections. All 257 combined checks pass after fresh source build/link;
+complete Init/Debugger/data remain exact. README aggregates stay unchanged.
+The sibling already has the original updater with gated blend diagnostics;
+no host/Release changes or fresh PC acceptance. Next full caller 1510B9D0 and
+its command helper 1510B7B4 remain placeholders; natural RSP/RDP effects are open.
+
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
 - [x] Audit the sibling's active CMake source input without changing its files.
@@ -140,7 +151,8 @@ RSP/RDP effects remain separate from the qualified leaf connection.
 - [ ] Identify and qualify the staged-entry producer separately.
 - [x] Recover queued segment writer `func_1510D8C0` and qualify bounded queue/byte-alias behavior.
 - [x] Recover color emitter `func_1510CDB8` and qualify its actual writer connection.
-- [ ] Recover palette updater `func_1510CB10` and qualify its color-emitter connection.
+- [x] Recover palette updater `func_1510CB10` and qualify its color-emitter connection.
+- [ ] Recover full caller `func_1510B9D0` and command-helper dependencies.
 - [ ] Recover/qualify the full renderer and natural RSP/RDP effects separately.
 - [ ] Synchronize PC-port `func_1510D7AC`: active generated source retains its
   zero-return stub, with no named override in the scoped host source search.

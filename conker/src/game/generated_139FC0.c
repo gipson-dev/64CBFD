@@ -2,6 +2,15 @@
 extern u8 D_800D9ED8[];
 extern u8 D_800D9B68[4][3];
 extern u8 D_800D9B78[4][3];
+extern u16 D_800D9E70[4][3];
+extern u8 D_800D9E88[4][3];
+extern u8 D_800D9E98[4][3];
+extern u8 D_800D9EA8[4][3];
+extern u8 D_800D9EB4[3];
+extern u8 D_800D9EB8[4][3];
+extern u8 *D_800DBFF0;
+extern s32 D_800BE9E4;
+f32 func_150489B0(u8);
 extern s8 D_800BC448[];
 extern u16 D_80091D20[];
 extern s32 D_800D9F58;
@@ -28,8 +37,56 @@ void func_1510D720(s32 arg0);
 
 /* Non-matching placeholders for the text-only asm slice asm/139FC0.s. */
 
-s32 func_1510CB10() {
-    return 0;
+void func_1510CB10(s32 arg0) {
+    s32 channel;
+    s32 step;
+    s32 custom;
+    s32 value;
+    s32 target;
+    s32 difference;
+    s32 magnitude;
+    s32 adjustment;
+
+    if (*(u32 *)(D_800DBFF0 + arg0 * 0x9A0 + 0x5F0) & 1) {
+        step = (s32)((u32)D_800BE9E4 << 1);
+        custom = D_800D9EB8[arg0][0];
+        for (channel = 0; channel < 3; channel++) {
+            value = D_800D9EA8[arg0][channel];
+            target = custom ? D_800D9EB8[arg0][channel] : D_800D9EB4[channel];
+            difference = target - value;
+            if (difference != 0) {
+                magnitude = difference;
+                if (difference < 0) {
+                    magnitude = -difference;
+                }
+                if (magnitude < step) {
+                    value = target;
+                } else if (difference < 0) {
+                    value = (s32)((u32)value - (u32)step);
+                } else {
+                    value = (s32)((u32)value + (u32)step);
+                }
+                D_800D9EA8[arg0][channel] = value;
+            }
+            adjustment = (s32)(func_150489B0((D_800D9E70[arg0][channel] >> 4) & 0xFF)
+                               * (u32)D_800D9E98[arg0][channel]);
+            adjustment = (s32)((u32)adjustment + (u32)value - 0x7F);
+            if (adjustment >= 0) {
+                D_800D9B68[arg0][channel] += (u32)adjustment;
+            } else {
+                D_800D9B78[arg0][channel] -= (u32)adjustment;
+            }
+            if (D_800D9B68[arg0][channel] >= 0x80) {
+                D_800D9B68[arg0][channel] = 0x7F;
+            }
+            if (D_800D9B78[arg0][channel] >= 0x80) {
+                D_800D9B78[arg0][channel] = 0x7F;
+            }
+            D_800D9E70[arg0][channel] += D_800D9E88[arg0][channel];
+            D_800D9E70[arg0][channel] &= 0xFFF;
+        }
+        D_800D9EB8[arg0][0] = 0;
+    }
 }
 
 Gfx *func_1510CDB8(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3) {

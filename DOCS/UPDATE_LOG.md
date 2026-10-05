@@ -18,6 +18,17 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Game [Note 973](WORKING_NOTES/973-game-palette-updater-and-connected-color-qualification-20261004.md)
+  recovers palette updater `func_1510CB10`: 168 / 170 words, retail 0x68 frame,
+  135 raw differences, no guards/profile override/drift. Fourteen new checks
+  qualify 398353 native cases, 1251 complete paired traces and three invalid-
+  slot prefixes; actual angle helper/updater/color/writer connections pass.
+  All 257 combined checks pass after fresh source compile/link; complete
+  Init/Debugger/data and previous identities remain intact. README aggregates
+  unchanged. Next full renderer 1510B9D0 and helper 1510B7B4; RSP/RDP/natural
+  effects and matching remain open. Sibling updater/diagnostics already exist;
+  no host or frozen Release changes.
+
 - Game [Note 972](WORKING_NOTES/972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)
   finishes pending palette color emitter `func_1510CDB8`: 42 / 42 raw-exact
   words from SDK macros, frameless, no guards/profile override/drift. Six new
