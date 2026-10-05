@@ -1,7 +1,9 @@
 """Screen the live actor pass and its captured predecessor ordering."""
 
 import argparse
+import itertools
 import json
+import re
 import struct
 import subprocess
 from pathlib import Path
@@ -15,7 +17,7 @@ extern ActorUpdate58F80 D_800D121C[];
 extern u32 D_800C3E74;
 extern u8 D_800C3E90, D_800C3E70, D_800BEAC0;
 void func_1502BD84(ActorUpdate58F80 *actor, s32 slot);
-s32 func_1503F964();
+void func_1503F964(void);
 s32 func_1502F3C8();
 s32 func_1502F948();
 s32 func_15030468();
@@ -226,7 +228,7 @@ def compile_candidate(root, output, name, source):
     return record, slot
 
 
-SELECTED = '''void func_1502BEE4(void) {
+RECOVERY = '''void func_1502BEE4(void) {
     ActorUpdate58F80 *actor;
     ActorUpdate58F80 *cursor;
     s32 slot, maxDepth, count, index;
@@ -304,7 +306,7 @@ def followup_candidates():
     forms = []
     for pointers in (False, True):
         for scalars in (False, True):
-            body = SELECTED
+            body = RECOVERY
             if pointers:
                 body = body.replace('    ActorUpdate58F80 *', '    register ActorUpdate58F80 *')
             if scalars:
@@ -315,7 +317,7 @@ def followup_candidates():
         for ordering in ('depth-first', 'queue-first'):
             fields = ('u8 depths[%d]; u8 ordered[25];' % depth_size if ordering == 'depth-first'
                       else 'u8 ordered[25]; u8 depths[%d];' % depth_size)
-            body = SELECTED.replace('    u8 depths[25];\n    u8 ordered[25];',
+            body = RECOVERY.replace('    u8 depths[25];\n    u8 ordered[25];',
                                     '    struct { ' + fields + ' } scratch;')
             body = body.replace('bzero(depths,', 'bzero(scratch.depths,').replace(
                 'depths[slot]', 'scratch.depths[slot]').replace(
@@ -326,19 +328,185 @@ def followup_candidates():
     return forms
 
 
+def schedule_candidates():
+    forms = []
+    chain = '''                cursor = actor;
+                depths[slot] = 0;
+                while (cursor->predecessor != 0) {
+                    cursor = D_800CC2D0 + (cursor->predecessor - 1);
+                    depths[slot]++;
+                }'''
+    chains = [
+        ('while', chain),
+        ('clear-first', chain.replace('                cursor = actor;\n                depths[slot] = 0;',
+                                     '                depths[slot] = 0;\n                cursor = actor;')),
+        ('for', '''                for (cursor = actor, depths[slot] = 0;
+                     cursor->predecessor != 0; depths[slot]++) {
+                    cursor = D_800CC2D0 + (cursor->predecessor - 1);
+                }'''),
+        ('do', '''                cursor = actor;
+                depths[slot] = 0;
+                do {
+                    cursor = D_800CC2D0 + (cursor->predecessor - 1);
+                    depths[slot]++;
+                } while (cursor->predecessor != 0);''')]
+    for name, replacement in chains:
+        for reverse in (False, True):
+            for post_end in (False, True):
+                body = RECOVERY.replace(chain, replacement)
+                if reverse:
+                    body = body.replace('    u8 depths[25];\n    u8 ordered[25];',
+                                        '    u8 ordered[25];\n    u8 depths[25];')
+                if post_end:
+                    body = body.replace('    } while (actor != (D_800CC2D0 + 25));',
+                                        '    } while (actor != D_800D121C);')
+                forms.append((f'phase-{name}-{int(reverse)}-{int(post_end)}', body))
+    for reverse in (False, True):
+        for for_loop in (False, True):
+            body = RECOVERY.replace('    s32 slot, maxDepth, count, index;',
+                                    '    s32 slot, maxDepth, count, index;\n    u8 *depth;')
+            replacement = chain.replace('                cursor = actor;',
+                                        '                cursor = actor;\n                depth = depths + slot;').replace(
+                'depths[slot]', '(*depth)')
+            if for_loop:
+                replacement = '''                depth = depths + slot;
+                for (cursor = actor, *depth = 0;
+                     cursor->predecessor != 0; (*depth)++) {
+                    cursor = D_800CC2D0 + (cursor->predecessor - 1);
+                }'''
+            body = body.replace(chain, replacement).replace('if (maxDepth < depths[slot])',
+                                                             'if (maxDepth < *depth)').replace(
+                'maxDepth = depths[slot];', 'maxDepth = *depth;')
+            if reverse:
+                body = body.replace('    u8 depths[25];\n    u8 ordered[25];',
+                                    '    u8 ordered[25];\n    u8 depths[25];')
+            forms.append((f'depth-pointer-{int(reverse)}-{int(for_loop)}', body))
+    return forms
+
+
+def declaration_candidates():
+    forms = []
+    base = RECOVERY.replace('    u8 depths[25];\n    u8 ordered[25];',
+                            '    u8 ordered[25];\n    u8 depths[25];').replace(
+        '    } while (actor != (D_800CC2D0 + 25));', '    } while (actor != D_800D121C);')
+    for ordering in itertools.permutations(('slot', 'maxDepth', 'count', 'index')):
+        for reverse_pointers in (False, True):
+            body = base.replace('    s32 slot, maxDepth, count, index;',
+                                '    s32 ' + ', '.join(ordering) + ';')
+            if reverse_pointers:
+                body = body.replace('    ActorUpdate58F80 *actor;\n    ActorUpdate58F80 *cursor;',
+                                    '    ActorUpdate58F80 *cursor;\n    ActorUpdate58F80 *actor;')
+            forms.append(('declarations-' + '-'.join(ordering) + '-' + str(int(reverse_pointers)), body))
+    return forms
+
+
+def interleave_candidates():
+    header = '''    ActorUpdate58F80 *actor;
+    ActorUpdate58F80 *cursor;
+    s32 slot, maxDepth, count, index;
+    u8 depths[25];
+    u8 ordered[25];'''
+    base = RECOVERY.replace('    } while (actor != (D_800CC2D0 + 25));',
+                            '    } while (actor != D_800D121C);')
+    forms = []
+    for cut in (3, 2, 1):
+        for ordering in itertools.permutations(('slot', 'maxDepth', 'count', 'index')):
+            lines = ['    ActorUpdate58F80 *actor;', '    ActorUpdate58F80 *cursor;']
+            lines += ['    s32 ' + name + ';' for name in ordering[:cut]]
+            lines += ['    u8 ordered[25];', '    u8 depths[25];']
+            lines += ['    s32 ' + name + ';' for name in ordering[cut:]]
+            forms.append(('interleave-' + str(cut) + '-' + '-'.join(ordering),
+                          base.replace(header, '\n'.join(lines))))
+    return forms
+
+
+def workspace_candidates():
+    forms = []
+    for grouped_arrays in (False, True):
+        for before in (False, True):
+            for external_end in (False, True):
+                lines = ['    ActorUpdate58F80 *actor;', '    ActorUpdate58F80 *cursor;',
+                         '    s32 slot, index;']
+                fields = 's32 maxDepth; s32 count;'
+                if grouped_arrays:
+                    fields += ' u8 depths[28]; u8 ordered[25];'
+                record = '    struct { ' + fields + ' } scratch;'
+                arrays = [] if grouped_arrays else ['    u8 ordered[25];', '    u8 depths[25];']
+                lines += ([record] + arrays) if before else (arrays + [record])
+                declarations = '\n'.join(lines)
+                commands = RECOVERY[RECOVERY.index('\n\n    func_1503F964();'):]
+                for name in ('maxDepth', 'count') + (('depths', 'ordered') if grouped_arrays else ()):
+                    commands = re.sub(r'\b' + name + r'\b', 'scratch.' + name, commands)
+                body = 'void func_1502BEE4(void) {\n' + declarations + commands
+                if external_end:
+                    body = body.replace('    } while (actor != (D_800CC2D0 + 25));',
+                                        '    } while (actor != D_800D121C);')
+                forms.append((f'workspace-{int(grouped_arrays)}-{int(before)}-{int(external_end)}', body))
+    return forms
+
+
+def cursor_candidates():
+    header = '''    ActorUpdate58F80 *actor;
+    ActorUpdate58F80 *cursor;
+    s32 slot, maxDepth, count, index;
+    u8 depths[25];
+    u8 ordered[25];'''
+    body = RECOVERY.replace('cursor = actor;', 'cursor = (u8 *)actor;').replace(
+        'cursor->predecessor', '((ActorUpdate58F80 *)cursor)->predecessor').replace(
+        'cursor = D_800CC2D0 + (((ActorUpdate58F80 *)cursor)->predecessor - 1);',
+        'cursor = (u8 *)(D_800CC2D0 + (((ActorUpdate58F80 *)cursor)->predecessor - 1));')
+    body = body.replace('''            for (index = 0; index < 25; index++) {
+                if (depths[index] == slot) {
+                    ordered[count++] = index;
+                }
+            }''', '''            for (cursor = depths; cursor < depths + 25; cursor++) {
+                if (*cursor == slot) {
+                    ordered[count++] = cursor - depths;
+                }
+            }''').replace('    } while (actor != (D_800CC2D0 + 25));',
+                         '    } while (actor != D_800D121C);')
+    forms = []
+    for cut in range(4):
+        for ordering in itertools.permutations(('slot', 'maxDepth', 'count')):
+            lines = ['    ActorUpdate58F80 *actor;', '    u8 *cursor;']
+            lines += ['    s32 ' + name + ';' for name in ordering[:cut]]
+            lines += ['    u8 ordered[25];', '    u8 depths[25];']
+            lines += ['    s32 ' + name + ';' for name in ordering[cut:]]
+            forms.append(('cursor-' + str(cut) + '-' + '-'.join(ordering),
+                          body.replace(header, '\n'.join(lines))))
+    return forms
+
+
+SELECTED = dict(interleave_candidates())['interleave-3-slot-maxDepth-index-count']
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--followup', action='store_true', help='screen only post-checkpoint local-storage controls')
+    group = parser.add_mutually_exclusive_group()
+    screens = {
+        'initial': (candidates, 'screen.json'),
+        'followup': (followup_candidates, 'followup-screen.json'),
+        'schedule': (schedule_candidates, 'schedule-screen.json'),
+        'declarations': (declaration_candidates, 'declaration-screen.json'),
+        'interleave': (interleave_candidates, 'interleave-screen.json'),
+        'workspace': (workspace_candidates, 'workspace-screen.json'),
+        'cursor': (cursor_candidates, 'cursor-screen.json'),
+    }
+    for name in screens:
+        if name != 'initial':
+            group.add_argument('--' + name, dest='screen', action='store_const', const=name,
+                               help='screen ' + name + ' forms')
+    parser.set_defaults(screen='initial')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
     output = root / 'conker/build/game-actor-update-pass'
     output.mkdir(exist_ok=True)
     records = []
-    for name, body in followup_candidates() if args.followup else candidates():
+    make_forms, filename = screens[args.screen]
+    for name, body in make_forms():
         record, _ = compile_candidate(root, output, name, body)
         records.append(record)
         print(name, record['body_words'], hex(record['frame']), record['real_differences'], flush=True)
-    filename = 'followup-screen.json' if args.followup else 'screen.json'
     (output / filename).write_text(json.dumps(records, indent=2) + '\n')
 
 

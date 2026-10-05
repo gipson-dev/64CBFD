@@ -15,6 +15,7 @@ from tools.tests import test_game_actor_update_dispatch_match as dispatch
 from tools.tests import test_game_table_range_loader as table
 
 ENTRY, ACTORS, STRIDE = 0x1502BEE4, 0x800CC2D0, 0x32C
+SELECTOR, ENABLE, CURRENT = 0x1503F964, 0x800C67F0, 0x800C67F1
 MASK, FIRST, LAST, GATE = 0x800C3E74, 0x800C3E90, 0x800C3E70, 0x800BEAC0
 ZERO, UPDATE, POST, FINISH = 0x100226F0, 0x1502BD84, 0x1502F948, 0x15030468
 COUNTS = {0x1503F964: 0, ZERO: 2, UPDATE: 2, 0x1502F3C8: 0,
@@ -32,7 +33,7 @@ def memory_case(active=None, links=None, masks=None, gate=0):
                 (0xF8, 0, 4), (0x260, 0, 4), (0x1D4, 0xDEADBEEF, 4)):
             dispatch.put(memory, ACTORS + slot * STRIDE + offset, value, size)
     for address, value, size in ((MASK, 0xDEADBEEF, 4), (FIRST, 255, 1),
-                                 (LAST, 255, 1), (GATE, gate, 1)):
+                                 (LAST, 255, 1), (GATE, gate, 1), (ENABLE, 0, 1), (CURRENT, 0, 1)):
         dispatch.put(memory, address, value, size)
     return memory
 
@@ -99,16 +100,18 @@ class GameActorUpdatePassMatchTests(unittest.TestCase):
         rom = (cls.root / 'conker/conker.us.bin').read_bytes()
         cls.retail = list(struct.unpack_from('>176I', rom, 0x59394))
         cls.dispatcher = list(struct.unpack_from('>88I', rom, 0x59234))
+        cls.selector = list(struct.unpack_from('>35I', rom, 0x6CE14))
         cls.directory = tempfile.TemporaryDirectory()
         cls.addClassCleanup(cls.directory.cleanup)
         cls.path = Path(cls.directory.name)
         cls.fixture = ('typedef unsigned char u8; typedef unsigned int u32; typedef int s32;\n'
                        'void bzero(void *, unsigned int);\n' + screen.DECLARATIONS + r'''
 ActorUpdate58F80 D_800CC2D0[26];
+#define D_800D121C (D_800CC2D0 + 25)
 u32 D_800C3E74;u8 D_800C3E90,D_800C3E70,D_800BEAC0;
 static int logCount,log[64],mutation,error;
 void bzero(void *value,unsigned int length) {unsigned int i;u8 *p=value;for(i=0;i<length;i++) p[i]=0;}
-s32 func_1503F964(void) {log[logCount++]=100;return -1;}
+void func_1503F964(void) {log[logCount++]=100;}
 void func_1502BD84(ActorUpdate58F80 *actor,s32 slot) {
     if(actor!=D_800CC2D0+slot || slot<0 || slot>=25) error=1;
     log[logCount++]=slot;
@@ -168,8 +171,11 @@ static void reset(int pattern,int gate) {
 }
 ''' + screen.SELECTED + '\n')
 
-    def models(self, memory, phase=0, actions=None, connected=False):
+    def models(self, memory, phase=0, actions=None, connected=False, connected_selector=False):
         connection = {0x1502BD84 + i * 4: w for i, w in enumerate(self.dispatcher)} if connected else None
+        if connected_selector:
+            connection = connection or {}
+            connection.update({SELECTOR + i * 4: w for i, w in enumerate(self.selector)})
         models = [PassOracle(w, memory, phase, actions, connection).run()
                   for w in (self.retail, self.words, self.other)]
         for model in models[1:]:
@@ -179,8 +185,13 @@ static void reset(int pattern,int gate) {
 
     def test_compiler_boundary_and_no_broad_normalization(self):
         self.assertEqual((self.record['body_words'], self.record['frame'], self.record['real_differences']),
-                         (174, 0x88, 115))
+                         (175, 0x88, 109))
         self.assertEqual(self.record['diagnostics'], '')
+        zero_call = self.words.index(0x0C0089BC)
+        self.assertIn(0x27A4003C, self.words[:zero_call])
+        self.assertEqual(self.words[zero_call + 1], 0xAFA70078)
+        self.assertIn(0x27A50058, self.words)
+        self.assertIn(0xAFA30038, self.words)
         source = (self.root / 'conker/src/game/generated_58F80.c').read_text()
         body = re.search(r'void func_1502BEE4\(void\) \{\n.*?\n\}', source, re.S).group(0)
         self.assertEqual(body, screen.production_body())
@@ -188,8 +199,31 @@ static void reset(int pattern,int gate) {
         self.assertEqual(addresses['func_1502BEE4'], ENTRY)
         self.assertEqual(functions['func_1502BEE4'], self.words)
         self.assertEqual(functions['func_1502BD84'], self.dispatcher)
+        self.assertEqual(functions['func_1503F964'], self.selector)
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as file:
             self.assertFalse(any(r['function'] == 'func_1502BEE4' for r in csv.DictReader(file)))
+
+    def test_actual_selector_and_dispatcher_connected_before_the_live_pass(self):
+        count, coverage = 0, set()
+        for start in range(25):
+            for selected in (-1, start, (start + 1) % 25, (start + 24) % 25):
+                for enabled in (0, 1):
+                    for phase in (0, 8):
+                        memory = memory_case([1, -1, 1] + [0] * 23,
+                                             [0, 1, 2] + [0] * 23, list(range(26)))
+                        dispatch.put(memory, ENABLE, enabled, 1)
+                        dispatch.put(memory, CURRENT, start, 1)
+                        if selected >= 0:
+                            dispatch.put(memory, ACTORS + selected * STRIDE + 0xF8, 0x800000, 4)
+                        model = self.models(memory, phase, connected=True, connected_selector=True)
+                        expected = selected if enabled and selected not in (-1, start) else start
+                        self.assertEqual(model.memory[CURRENT], expected)
+                        self.assertEqual(model.memory[ENABLE], enabled)
+                        self.assertEqual([c[2] for c in model.calls if c[0] == UPDATE], [0, 1, 2])
+                        coverage.update(model.visits)
+                        count += 1
+        self.assertEqual(count, 400)
+        self.assertEqual(set(range(SELECTOR, SELECTOR + 140, 4)) - coverage, {0x1503F9C8, 0x1503F9EC})
 
     def test_mask_all_byte_values_and_reserved_slot_exclusion(self):
         coverage = set()

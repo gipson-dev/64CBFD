@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game actor pass layout progress: [Note 1008](WORKING_NOTES/1008-game-actor-pass-array-layout-and-connected-selector-20261005.md)
+reduces `func_1502BEE4` from 115 to 109 differing words, with 175 body / 176
+slot words and frame 0x88. Depth/queue arrays now match SP+0x3C/SP+0x58 and
+queue-count spill matches SP+0x38; maximum-depth spill remains SP+0x78, not
+retail SP+0x34. No new guards/profile override. Nineteen focused checks pass,
+including 400 new connections to the already-exact selector and dispatcher,
+1171 total three-way cases and 16384 native reference cases. Only target
+changes in 6060 slots; protected sections and patch CSV remain intact.
+Counts stay 3302 / 5463 total, 2629 / 4790 Game, zero drift. README aggregates,
+conversion/Init ASM and sibling/frozen Release unchanged. Next: remaining
+maximum-depth spill, address lifetimes and retail instruction schedule.
+All 321 combined checks pass in 289.549 seconds, no skips; tools and
+whitespace checks pass. The function remains non-matching at 109 words.
+All 2934 checked relative documentation links resolve.
+
 Game actor update pass semantic recovery: [Note 1007](WORKING_NOTES/1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md)
 replaces `func_1502BEE4`'s placeholder with live mask/activity scans,
 predecessor-depth capture and stable ordered updates. It is not byte-exact:

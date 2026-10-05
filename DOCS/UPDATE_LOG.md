@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-05 Game Actor Pass Array Layout Progress
+
+[Note 1008](WORKING_NOTES/1008-game-actor-pass-array-layout-and-connected-selector-20261005.md)
+recovers the caller's array offsets and queued-count spill, reducing differences
+from 115 to 109. `func_1502BEE4` remains non-matching: 175 body / 176 slot words,
+frame 0x88, no new guards/profile override. The maximum-depth spill is still
+0x78 rather than 0x34. Nineteen focused checks pass; 400 new three-way cases
+connect the existing selector and dispatcher. Only target changes across 6060
+slots; protected sections/prior exact functions/patch CSV preserved. Counts
+remain 3302 / 5463 total, 2629 / 4790 Game, zero drift; README unchanged.
+No conversion/Init ASM or sibling/frozen Release change. Next: caller max-depth
+spill, address lifetimes and complete retail schedule.
+All 321 combined checks pass in 289.549 seconds, no skips; tools and
+whitespace checks pass. No byte-exact function-count increase is claimed.
+All 2934 checked relative documentation links resolve.
+
 ## 2026-10-05 Game Actor Update Pass Semantic Recovery
 
 [Note 1007](WORKING_NOTES/1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md)

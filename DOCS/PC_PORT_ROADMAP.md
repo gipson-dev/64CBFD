@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Pass Array Layout Progress - 2026-10-05
+
+[Note 1008](WORKING_NOTES/1008-game-actor-pass-array-layout-and-connected-selector-20261005.md)
+reduces DECOMP `func_1502BEE4` from 115 to 109 differences, recovering both
+private array offsets and the queue-count spill. It still does not match:
+175 body / 176 slot words, frame 0x88; max-depth spill and scheduling remain.
+Nineteen focused checks pass, including 400 new actual selector/dispatcher
+connections. Only target changes in 6060 slots; protected sections and patch
+CSV preserved. Game exact count stays 2629 / 4790. No source transplant,
+host source/build/save/frozen Release change, or full PC gameplay claim.
+Next: remaining caller stack/register schedule in DECOMP.
+All 321 combined checks pass in 289.549 seconds, no skips; tools and
+whitespace checks pass. Gameplay and PC runtime acceptance remain separate.
+All 2934 checked relative documentation links resolve.
+
 ## Game Actor Update Pass Semantic Recovery - 2026-10-05
 
 [Note 1007](WORKING_NOTES/1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md)

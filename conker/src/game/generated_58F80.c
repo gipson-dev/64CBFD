@@ -191,7 +191,8 @@ void func_1502BD84(ActorUpdate58F80 *actor, s32 slot) {
 
 extern u32 D_800C3E74;
 extern u8 D_800C3E70, D_800BEAC0;
-s32 func_1503F964();
+extern ActorUpdate58F80 D_800D121C[];
+void func_1503F964(void);
 s32 func_1502F3C8();
 s32 func_1502F948();
 s32 func_15030468();
@@ -200,9 +201,12 @@ s32 func_1507C22C();
 void func_1502BEE4(void) {
     ActorUpdate58F80 *actor;
     ActorUpdate58F80 *cursor;
-    s32 slot, maxDepth, count, index;
-    u8 depths[25];
+    s32 slot;
+    s32 maxDepth;
+    s32 index;
     u8 ordered[25];
+    u8 depths[25];
+    s32 count;
 
     func_1503F964();
     D_800C3E90 = 0;
@@ -257,7 +261,7 @@ void func_1502BEE4(void) {
             func_1502F948(actor);
         }
         actor++;
-    } while (actor != (((ActorUpdate58F80 *)D_800CC2D0) + 25));
+    } while (actor != D_800D121C);
     func_15030468();
     if (D_800BEAC0 == 0) {
         func_1507C22C(0);

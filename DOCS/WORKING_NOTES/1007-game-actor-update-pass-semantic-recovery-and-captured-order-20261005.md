@@ -1,5 +1,10 @@
 # Game Actor Update Pass And Captured Predecessor Order
 
+Follow-up: [Note 1008](1008-game-actor-pass-array-layout-and-connected-selector-20261005.md)
+recovers the array/count offsets, reduces differences to 109 and adds actual
+selector/dispatcher connections. Measurements below describe this historical
+115-difference checkpoint; the function is still not byte-exact.
+
 Date: 2026-10-05. Starting HEAD: `db20e039`, the direct dispatcher recovery
 in [Note 1006](1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md).
 The previous checkpoint was clean before this recovery. No push is requested.

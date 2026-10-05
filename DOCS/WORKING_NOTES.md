@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-05 ([Note 1008](WORKING_NOTES/1008-game-actor-pass-array-layout-and-connected-selector-20261005.md)):
+Reduce `func_1502BEE4` from 115 to 109 differences; 175 body / 176 slot words,
+frame 0x88, no new guards/profile override. Depth/queue offsets 0x3C/0x58 and
+queue-count spill 0x38 now match; maximum spill 0x78 remains wrong. Nineteen
+focused checks pass, including 400 new actual selector/dispatcher connections,
+1171 total three-way cases and 16384 native reference cases. Only target
+changes in 6060 slots; protected sections, prior exact functions and patch
+CSV preserved. Counts stay 3302 / 5463 total, 2629 / 4790 Game, zero drift.
+README aggregates, conversion/Init ASM and sibling/frozen Release unchanged.
+Next: remaining max-depth spill and caller scheduling, not broad guards.
+All 321 combined checks pass in 289.549 seconds, no skips; tools and
+whitespace checks pass. This is layout progress, not a new exact function.
+All 2934 checked relative documentation links resolve.
+
 2026-10-05 ([Note 1007](WORKING_NOTES/1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md)):
 Recover `func_1502BEE4`'s actor pass semantically: 174 body / 176 slot words,
 frame 0x88, 115 differences, no guards/profile override. Live first/last scans
