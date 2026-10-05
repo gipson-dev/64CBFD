@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game attachment guarded match: [Note 990](WORKING_NOTES/990-game-attachment-walker-guarded-register-match-20261005.md)
+matches the complete 45-word linked `func_15168E54` slot with nine expected-word
+guards for a closed cursor/opcode allocation and equality operand order.
+Unguarded C still differs at nine words; production source/profile are unchanged.
+Thirty-six source forms do not directly match. All 154 combined checks pass,
+including 1427 actual-leaf three-way traces, twenty mutation cases, 458752
+native command cases and incomplete-allocation rejection controls. Full consumer
+rebuild succeeds; complete Init/Debugger/data and recent direct matches hold.
+Totals: 3287 / 5463 overall, 2614 / 4790 Game, zero drift; conversion/Init ASM
+unchanged. README updated; sibling already has this retail sequence, no host/
+frozen Release change. Next: 77-word variadic loader `func_1502B6BC`.
+
 Game resource helper match: [Note 989](WORKING_NOTES/989-game-resource-helper-address-word-direct-match-20261005.md)
 completes all 46 words of `func_151336A8` directly from C. The inline unsigned
 O32 address-word cast restores retail's final `v1`/`a1` handoff, without guards,

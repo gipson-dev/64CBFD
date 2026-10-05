@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Attachment Guarded Retail Match - 2026-10-05
+
+[Note 990](WORKING_NOTES/990-game-attachment-walker-guarded-register-match-20261005.md)
+matches all 45 linked DECOMP attachment words using nine closed register/
+equality guards. It is not a direct compiler match. All 154 combined checks
+pass, with actual-leaf three-way traces, exhaustive native command tests and
+full protected-section identity after a complete consumer rebuild. Sibling
+already has the retail sequence; no host synchronization, source/build/save
+or frozen Release change. Game exact count: 2614 / 4790. Real downstream
+resource/render/runtime qualification remains separate.
+
 ## Game Resource Helper Retail Match - 2026-10-05
 
 [Note 989](WORKING_NOTES/989-game-resource-helper-address-word-direct-match-20261005.md)

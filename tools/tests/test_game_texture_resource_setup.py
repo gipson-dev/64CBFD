@@ -293,6 +293,23 @@ reset(); command(0,-0x21,0,0); command(1,1,0,1); func_15168E54(commands,NULL);
 if(commands[3]!=1 || error) return 2;
 ''')
 
+    def test_attachment_all_opcode_subtype_pairs_and_word_patterns(self):
+        self.run_host(r'''
+static u32 words[]={0,1,0xFFFFFFFF,0x80000000,0x10000000,0x01000000,0x0F000000};
+int op,type,w;
+reset();
+for(op=0;op<256;op++) for(type=0;type<256;type++) for(w=0;w<7;w++) {
+    u32 value=words[w];
+    u32 expected=((op==1 || (op==0xDC && type==14)) && !(value&0x0F000000))
+                 ?value+0xFFFFFFF0u:value;
+    command(0,op,type,value); command(1,-0x21,0,0xA5A5A5A5);
+    command(2,1,14,0x1234);
+    func_15168E54(commands,(void *)0xFFFFFFF0);
+    if(error || commands[1]!=expected || commands[3]!=0xA5A5A5A5
+       || commands[5]!=0x1234 || traceLength) return 1;
+}
+''')
+
     def test_actual_resource_helper_setup_resolver_and_attachment_connection(self):
         source=(self.root/'conker/src/game/generated_15F680.c').read_text()
         helper=re.search(r's32 func_151336A8\([^;{}]+\) \{\n.*?\n\}',source,re.S).group(0)
@@ -331,12 +348,12 @@ for(phase=0;phase<4;phase++) {
         finally:
             self.fixture=original
 
-    def test_unspecified_scratch_and_no_new_guards_are_explicit(self):
+    def test_unspecified_scratch_and_unguarded_texture_bodies_are_explicit(self):
         self.assertRegex(self.bodies['func_1510CE60'],r'\bu32 address;')
         self.assertRegex(self.bodies['func_1510CE60'],r'\bs32 extent;')
         self.assertNotRegex(self.bodies['func_1510CE60'],r'(?:address|extent)\s*=\s*0;')
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as source:
-            self.assertFalse(any(row['function'] in ('func_1510CE60','func_1510D0EC','func_15168E54')
+            self.assertFalse(any(row['function'] in ('func_1510CE60','func_1510D0EC')
                                  for row in csv.DictReader(source)))
 
     def test_fresh_ido_complete_slots_and_exact_prefix_and_adjustment_leaves(self):
@@ -383,13 +400,29 @@ for(phase=0;phase<4;phase++) {
             self.assertEqual(count,body)
             self.assertEqual(words[count:],[0]*(len(words)-count))
             slot=words[:count]+[0]*(size-count)
-            self.assertEqual(production[name],slot)
+            guarded = slot[:]
+            if name == 'func_15168E54':
+                with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as source:
+                    patches = [row for row in csv.DictReader(source) if row['function'] == name]
+                self.assertEqual(len(patches), 9)
+                for row in patches:
+                    self.assertEqual(row['filename'], 'game_1944C0')
+                    index = int(row['offset'], 0) // 4
+                    self.assertEqual(guarded[index], int(row['expected'], 0))
+                    self.assertEqual(row['expected_relocations'], '-')
+                    self.assertEqual(row['replacement_relocations'], '-')
+                    self.assertFalse(row['insert_after'])
+                    self.assertEqual(row['omit'], 'false')
+                    guarded[index] = int(row['replacement'], 0)
+            self.assertEqual(production[name],guarded)
             self.assertEqual(placed[name],int(name[5:],16))
             self.assertEqual(0x10000-(slot[0]&0xFFFF),frame)
             first=0x2D4B0+placed[name]-0x15000000
             retail=struct.unpack_from('>'+str(size)+'I',rom,first)
             self.assertEqual(sum(a!=b for a,b in zip(slot,retail)),diffs)
             self.assertEqual(hashlib.sha256(struct.pack('>'+str(size)+'I',*slot)).hexdigest(),digest)
+            if name == 'func_15168E54':
+                self.assertEqual(guarded, list(retail))
         for name,size in (('func_1510D374',36),('func_15168E34',8)):
             first=0x2D4B0+placed[name]-0x15000000
             self.assertEqual(struct.pack('>'+str(size)+'I',*production[name]),rom[first:first+size*4])

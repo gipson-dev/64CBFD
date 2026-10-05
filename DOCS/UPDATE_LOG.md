@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-05 Game Attachment Guarded Register Match
+
+[Note 990](WORKING_NOTES/990-game-attachment-walker-guarded-register-match-20261005.md)
+matches the complete 45-word linked `func_15168E54` slot with nine expected-word
+guards. Unguarded C still differs at nine words; source/profile unchanged.
+All 154 combined checks pass, including full-word three-way instruction
+coverage and exhaustive native opcode/subtype tests. Full consumer rebuild
+and complete Init/Debugger/data identity hold. README exact totals: 3287 / 5463
+overall, 2614 / 4790 Game, zero drift. No conversion/Init ASM or host/frozen
+Release changes; sibling already has the retail attachment sequence.
+
 ## 2026-10-05 Game Resource Helper Direct Match
 
 [Note 989](WORKING_NOTES/989-game-resource-helper-address-word-direct-match-20261005.md)

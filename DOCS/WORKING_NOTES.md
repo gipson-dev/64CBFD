@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-05 ([Note 990](WORKING_NOTES/990-game-attachment-walker-guarded-register-match-20261005.md)):
+Match all 45 linked words of `func_15168E54` with nine guarded register/equality
+normalizations, not a direct compiler match. C/profile unchanged; 36 source
+forms retain a mismatch. All 154 final checks pass, with 1427 actual-leaf
+three-way traces, twenty mutation cases and 458752 native command cases.
+Full consumer rebuild and protected-section checks hold. Totals: 3287 / 5463
+overall, 2614 / 4790 Game, zero drift. README aggregates updated; no conversion,
+Init ASM, host or frozen Release changes. Next: variadic `func_1502B6BC`.
+
 2026-10-05 ([Note 989](WORKING_NOTES/989-game-resource-helper-address-word-direct-match-20261005.md)):
 Match all 46 words of `func_151336A8` directly from C with an unsigned O32
 address-word attachment handoff. No guards/profile/interface changes. Three

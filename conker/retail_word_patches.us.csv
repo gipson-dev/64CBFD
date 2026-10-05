@@ -10511,3 +10511,12 @@ generated_71820,func_1504554C,0x144,0x844F0002,0xA46F0006,-,-,Normalize equivale
 generated_71820,func_1504554C,0x148,0xA46F0000,0x84580004,-,-,Normalize equivalent context3 highest-height vertex-copy pointer schedule,,,false
 generated_71820,func_1504554C,0x14C,0x84580004,0xA4780008,-,-,Normalize equivalent context3 highest-height vertex-copy pointer schedule,,,false
 generated_71820,func_1504554C,0x154,0xA4780002,0x24630006,-,-,Normalize equivalent context3 highest-height vertex-copy pointer schedule,,,false
+game_1944C0,func_15168E54,0x38,0x02203025,0x02201825,-,-,Normalize closed attachment cursor-opcode register allocation,,,false
+game_1944C0,func_15168E54,0x44,0x82230000,0x82220000,-,-,Normalize closed attachment cursor-opcode register allocation,,,false
+game_1944C0,func_15168E54,0x50,0x10740006,0x12820006,-,-,Normalize closed attachment register allocation and equality operand order,,,false
+game_1944C0,func_15168E54,0x54,0x24C40004,0x24640004,-,-,Normalize closed attachment cursor-opcode register allocation,,,false
+game_1944C0,func_15168E54,0x58,0x54750007,0x56A20007,-,-,Normalize closed attachment register allocation and equality operand order,,,false
+game_1944C0,func_15168E54,0x60,0x90CF0003,0x906F0003,-,-,Normalize closed attachment cursor-opcode register allocation,,,false
+game_1944C0,func_15168E54,0x7C,0x03113021,0x03111821,-,-,Normalize closed attachment cursor-opcode register allocation,,,false
+game_1944C0,func_15168E54,0x80,0x80C30000,0x80620000,-,-,Normalize closed attachment cursor-opcode register allocation,,,false
+game_1944C0,func_15168E54,0x84,0x1473FFF2,0x1662FFF2,-,-,Normalize closed attachment register allocation and equality operand order,,,false

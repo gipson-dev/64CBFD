@@ -90,6 +90,10 @@ natural gameplay, real malformed-pointer handling or final rendering proof.
 
 ## Progress And Next
 
+Subsequent checkpoint: [Note 990](990-game-attachment-walker-guarded-register-match-20261005.md)
+completes the attachment linked-slot match identified below with nine guarded
+register/equality normalizations. It is not a direct compiler match.
+
 | Section | Exact C Functions | Address Drift | Still Different |
 | --- | ---: | ---: | ---: |
 | Total | 3286 / 5463 (60.15%) | 0 | 2177 |

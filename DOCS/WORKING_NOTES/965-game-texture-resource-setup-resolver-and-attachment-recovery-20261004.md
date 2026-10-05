@@ -4,6 +4,11 @@ Date: 2026-10-04. Starting HEAD: `56ed9c28`.
 
 ## Decision
 
+Current attachment checkpoint: [Note 990](990-game-attachment-walker-guarded-register-match-20261005.md)
+matches its complete linked slot with nine expected-word register/equality
+guards. Unguarded C still differs at nine words; setup/resolver matching
+remains open. The measurements below record the earlier semantic recovery.
+
 Continue the resource pipeline from
 [Note 963](963-game-asset-table-cache-lookup-and-block-load-recovery-20261004.md).
 Recover setup `func_1510CE60`, its texture resolver `func_1510D0EC`, and
@@ -171,7 +176,8 @@ palette routine `func_1510CB10` for this cache's initializer.
 - [x] Preserve prior identities, exact prefix/adjuster leaves and full Init/Game data.
 - [x] Recover metadata loader `func_15003570` and cache maintainer `func_1510D404` (Note 968).
 - [x] Qualify connected cache initialization/loading/maintenance/release in bounded fixtures (Note 968).
-- [ ] Pursue raw matching separately; attachment has nine remaining word differences.
+- [x] Match the complete linked attachment slot with guarded register normalization (Note 990).
+- [ ] Pursue direct attachment compiler matching and setup/resolver matching separately.
 - [ ] Qualify real guest DMA/decompression and natural effects; synchronize PC child stubs separately.
 
 Init stays 492 C / 47 assembly. Game stays 2609 and total 3282 byte-exact C
