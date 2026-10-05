@@ -102,8 +102,87 @@ Gfx *func_1502BAD0(Gfx *commands, s32 mode, s16 view) {
     return commands;
 }
 
-s32 func_1502BD84() {
-    return 0;
+typedef struct ActorUpdate58F80 {
+    s32 active;
+    u8 id;
+    u8 state;
+    u8 pad6[0x9E];
+    u8 signal;
+    u8 padA5[0x53];
+    u32 flags;
+    u8 padFC[0x38];
+    u8 eventA;
+    u8 eventB;
+    u8 pad136[0x93];
+    u8 prepare;
+    u8 pad1CA[0xA];
+    s32 work;
+    u8 pad1D8[0x24];
+    u8 status;
+    u8 pad1FD[0x63];
+    u32 optional;
+    u8 pad264[0xC8];
+} ActorUpdate58F80;
+
+extern u8 D_800C666F[];
+s32 func_1502DF38();
+s32 func_1502C608();
+s32 func_1502FBE8();
+s32 func_1502E4C4();
+s32 func_1503A08C();
+s32 func_150345E4();
+s32 func_1503A830();
+s32 func_1503DF48();
+s32 func_1502EEF4();
+s32 func_1502F264();
+s32 func_1502EAFC();
+s32 func_150A4B04();
+s32 func_1517AD00();
+
+void func_1502BD84(ActorUpdate58F80 *actor, s32 slot) {
+    s32 state;
+
+    state = actor->state;
+    actor->work = 0;
+    if (state == 5) {
+        func_1502DF38(slot, 1);
+        return;
+    }
+    if (actor->id == 255 || state == 3) {
+        return;
+    }
+    if (state == 2) {
+        func_1502C608(slot);
+        return;
+    }
+    if (actor->prepare != 0) {
+        func_1502FBE8(actor);
+    }
+    func_1502E4C4(slot);
+    func_1502DF38(slot, 0);
+    func_1503A08C(actor);
+    if (actor->work == 0) {
+        actor->status = 2;
+    } else {
+        func_150345E4(slot);
+        func_1503A830(actor);
+    }
+    if (D_800C666F[slot * 16] != 0) {
+        func_1503DF48(slot);
+    }
+    if (actor->active != 0) {
+        func_1502EEF4(slot);
+        func_1502F264(slot);
+        if (actor->signal != 0) {
+            func_1502EAFC(actor);
+        }
+        if ((actor->flags & 0x4000) != 0) {
+            func_150A4B04(actor);
+        }
+        if (actor->optional != 0) {
+            func_1517AD00(actor->eventA, actor->eventB, slot);
+        }
+    }
 }
 
 s32 func_1502BEE4() {

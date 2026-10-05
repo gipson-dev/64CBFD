@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-05 Game Actor Update Dispatcher Direct Recovery
+
+[Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)
+replaces `func_1502BD84`'s placeholder with its original callback dispatcher,
+work/status stores and live optional-field reads. All 88 words / frame 0x20
+emit directly under default IDO, no guards/profile override. The carried slot
+argument to `func_1502EEF4` is recovered from its actual prefix and covered by
+an omitted-slot counterexample. Nine focused tests pass, including 5194
+three-way cases, 49152 native cases/two mutations and 48 bounded real callee
+prefixes. Only target changes in 6060 slots; full downstream update acceptance
+is not claimed. Rebuild/protected sections/tools pass. README aggregates:
+3302 / 5463 overall, 2629 / 4790 Game, zero drift. Patch table, conversion/Init
+ASM and sibling/frozen Release unchanged. All 311 combined checks pass in
+257.161 seconds, no skips; whitespace/relative links pass. Next:
+`func_1502BEE4`, full caller.
+
 ## 2026-10-05 Game Actor Display-List Scan Recovery
 
 [Note 1005](WORKING_NOTES/1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md)

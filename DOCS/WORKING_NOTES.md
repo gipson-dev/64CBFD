@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-05 ([Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)):
+Recover `func_1502BD84` directly, all 88 words / frame 0x20, no guards/profile
+override. Actual callee inspection restores the carried slot argument to
+`func_1502EEF4`; the original omitted-argument fixture is corrected and its
+negative control now proves a wrong callback argument. All 5194 three-way
+dispatcher cases, 49152 native cases/two mutations and 48 real callee prefixes
+pass; nine focused tests, no skips. Prefixes stop before downstream actor work.
+Only target changes in 6060 slots. Rebuild: 3302 / 5463 overall, 2629 / 4790
+Game, zero drift. Protected sections/tools pass; patch table, conversion/Init
+ASM and sibling/frozen Release unchanged. All 311 combined checks pass in
+257.161 seconds, no skips; whitespace/relative links pass. Next:
+`func_1502BEE4`, full caller.
+
 2026-10-05 ([Note 1005](WORKING_NOTES/1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md)):
 Recover `func_1502BAD0`'s 25-actor SDK display-list scan, mode gates, live
 callback-state reread and returned cursor chain. All 173 words / frame 0x48

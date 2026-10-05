@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game actor update dispatcher direct recovery: [Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)
+recovers `func_1502BD84`, all 88 words / frame 0x20 directly under default
+IDO, no guards/profile override. Callee inspection recovers the carried slot
+argument to `func_1502EEF4`; the missing-slot negative control now fails the
+ABI-aware fixture. All 5194 full three-way cases, 49152 native cases/two native
+mutations and 48 actual callee prefixes pass. Nine focused tests, no skips.
+Prefixes stop before the callee loop; full gameplay/update acceptance remains
+separate. Only target changes in 6060 audited slots. Rebuild: 3302 / 5463
+overall, 2629 / 4790 Game, zero drift. Protected sections/tools pass; patch
+table, conversion/47 Init ASM functions and sibling/frozen Release unchanged.
+README aggregates updated. All 311 combined checks pass in 257.161 seconds,
+no skips; whitespace/relative links pass. Next: `func_1502BEE4`, 176-word
+caller placeholder.
+
 Game actor display-list scan recovery: [Note 1005](WORKING_NOTES/1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md)
 recovers `func_1502BAD0`, all 173 words / frame 0x48. Default IDO emits the
 semantic scan; eleven expected-word guards normalize a closed constant-register

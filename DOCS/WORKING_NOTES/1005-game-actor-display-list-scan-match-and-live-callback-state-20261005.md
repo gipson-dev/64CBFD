@@ -3,6 +3,10 @@
 Date: 2026-10-05. Starting HEAD: `1e254b76`, the direct size query in
 [Note 1004](1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md).
 
+Followup: [Note 1006](1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)
+recovers the next dispatcher directly. Counts and next-target statements below
+remain the historical scan checkpoint.
+
 ## Recovery
 
 `func_1502BAD0` in `conker/src/game/generated_58F80.c` is recovered from its

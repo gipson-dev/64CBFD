@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Update Dispatcher Direct Recovery - 2026-10-05
+
+[Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)
+recovers DECOMP `func_1502BD84`, 88 words / frame 0x20 directly from default
+IDO, no guards/profile override. The actual `func_1502EEF4` prefix proves its
+carried slot argument; ABI-aware callbacks and a missing-slot counterexample
+prevent a false zero-argument recovery. Nine focused tests pass; original
+work/status ordering and live fields remain intact. The prefix stops before
+the callee loop; complete actor updates/gameplay/PC runtime acceptance remain
+separate. Only target changes in 6060 slots; protected sections and patch table
+remain exact/unchanged. Game exact count: 2629 / 4790. No host transplant,
+source, build, save or frozen Release change. All 311 combined checks pass in
+257.161 seconds, no skips; whitespace/relative links pass. Next: `func_1502BEE4`.
+
 ## Game Actor Display-List Scan Recovery - 2026-10-05
 
 [Note 1005](WORKING_NOTES/1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md)
