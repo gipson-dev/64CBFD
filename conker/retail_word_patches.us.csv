@@ -10590,3 +10590,5 @@ game_57FA0,func_1502AC88,0x240,0x8CB80000,0x8CAF0000,-,-,Normalize cached lookup
 game_57FA0,func_1502AC88,0x24C,0xAFB80058,0xAFAF0058,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
 game_57FA0,func_1502AC88,0x250,0x8CB90004,0x8CB80004,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
 game_57FA0,func_1502AC88,0x258,0xAD790000,0xAF380000,-,-,Normalize cached lookup closed miss-path temporary allocation,,,false
+game_57FA0,func_1502B110,0xAC,0xAFA8003C,0xAFA70054,-,-,Normalize variadic table-range independent depth and descriptor store schedule,,,false
+game_57FA0,func_1502B110,0xB4,0xAFA70054,0xAFA8003C,-,-,Normalize variadic table-range independent depth and descriptor store schedule,,,false

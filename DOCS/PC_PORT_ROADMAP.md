@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Variadic Table-Range Wrapper Recovery - 2026-10-05
+
+[Note 998](WORKING_NOTES/998-game-variadic-table-range-wrapper-recovery-and-guarded-loop-stores-20261005.md)
+recovers DECOMP `func_1502B110` and matches all 69 linked words with two
+checked independent loop-store guards, not directly from C. SDK varargs,
+descriptor gates and zero/one-depth final consumption are retained. All 8316
+boundary and 200 actual-callee three-way cases pass, along with 1386 native
+boundary and 544 actual-C connected cases. Full consumer rebuild succeeds.
+All 199 final checks pass in 148.664 seconds, no skips; protected Init
+code/data, Debugger code and Game data remain exact.
+Read-only sibling audit finds the translated retail frame, original stores
+and final component load already present; no maintained PC override is found.
+No host synchronization is needed. No host source, build, save or frozen
+Release change. Game exact count: 2621 / 4790. Real SDK DMA/copy, runtime and
+rendering acceptance remain separate and open.
+
 ## Game Table-Range Loader Direct Recovery - 2026-10-05
 
 [Note 997](WORKING_NOTES/997-game-table-range-loader-direct-recovery-and-caller-qualification-20261005.md)

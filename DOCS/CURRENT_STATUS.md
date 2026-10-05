@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game variadic table-range wrapper recovery: [Note 998](WORKING_NOTES/998-game-variadic-table-range-wrapper-recovery-and-guarded-loop-stores-20261005.md)
+recovers `func_1502B110` from its zero-return placeholder. All 69 linked words
+match with retail's 0x48 frame and two checked independent loop-store guards;
+raw C differs at those two stores only, no profile override. SDK varargs,
+default root, descriptor masking/gates and unconditional final consumption
+remain intact. All 8316 boundary and 200 actual-callee three-way cases pass,
+alongside 1386 native boundary and 544 actual-C connected cases. Full consumer
+rebuild succeeds. All 199 final checks pass in 148.664 seconds, no skips;
+protected Init code/data, Debugger code and Game data remain exact.
+Totals: 3294 / 5463 overall, 2621 / 4790 Game, zero drift.
+README aggregates updated; conversion/Init ASM unchanged. Sibling/frozen
+Release untouched. Next: recover SDK-varargs table-address resolver
+`func_1502B020`, 60 words / 0x48 frame, with optional output alias gates.
+
 Game table-range loader direct recovery: [Note 997](WORKING_NOTES/997-game-table-range-loader-direct-recovery-and-caller-qualification-20261005.md)
 replaces `func_1502AF04`'s false zero-return placeholder with its semantic
 DMA/in-place pair-offset body. All 71 words and the 0x40 frame emit directly

@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-05 ([Note 998](WORKING_NOTES/998-game-variadic-table-range-wrapper-recovery-and-guarded-loop-stores-20261005.md)):
+Recover `func_1502B110`'s SDK-varargs/default-root/descriptor-gated range
+loading from its placeholder. All 69 linked words match with two checked
+independent loop-store guards, not directly from C; frame 0x48 is recovered.
+The 67-form screen reproduces two raw differences. All 8316 boundary and 200
+actual-callee three-way cases, 1386 native boundary and 544 actual-C connected
+cases pass. Full consumer rebuild succeeds. All 199 final checks pass in
+148.664 seconds, no skips; protected Init code/data, Debugger code and Game
+data remain exact. Totals: 3294 / 5463 overall,
+2621 / 4790 Game, zero drift. README aggregates updated; conversion/Init ASM
+and sibling/frozen Release unchanged. Next: resolver `func_1502B020`.
+
 2026-10-05 ([Note 997](WORKING_NOTES/997-game-table-range-loader-direct-recovery-and-caller-qualification-20261005.md)):
 Recover `func_1502AF04`'s DMA table-range and pair-offset semantics from its
 zero-return placeholder; all 71 words / frame 0x40 emit directly under the

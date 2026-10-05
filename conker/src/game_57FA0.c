@@ -11,7 +11,7 @@ void func_1502AB04(s32 count, u32 *pairs, u32 generation, u32 address);
 s32 func_1502AC88(u32 arg0, s32 arg1, u32 *arg2);
 u32 *func_1502AF04(u32 base, void *buffer, u32 component, u32 count);
 s32 func_1502B020();
-s32 func_1502B110();
+u32 *func_1502B110(u32 base, u32 count, void *buffer, u32 depth, ...);
 s32 func_1502B224();
 void *func_1502B350(u32 arg0, u32 arg1, s32 *arg2);
 s32 func_1502B4A8(u32 *entries, s32 count);
@@ -113,9 +113,32 @@ u32 *func_1502AF04(u32 base, void *buffer, u32 component, u32 count) {
 s32 func_1502B020() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B110.s. */
-s32 func_1502B110() {
-    return 0;
+u32 *func_1502B110(u32 base, u32 count, void *buffer, u32 depth, ...) {
+    va_list path;
+    s32 component;
+    u32 descriptor;
+    u32 *result;
+
+    descriptor = 1;
+    result = NULL;
+    if (base == 0) {
+        base = (u32)D_AB1950;
+    }
+    va_start(path, depth);
+    while (depth >= 2) {
+        component = va_arg(path, s32);
+        if (descriptor != 0) {
+            base += func_1502AC88(base, component, &descriptor);
+        }
+        depth--;
+        descriptor &= 0x0FFFFFFF;
+    }
+    component = va_arg(path, s32);
+    if (descriptor != 0) {
+        result = func_1502AF04(base, buffer, (u32)component, count);
+    }
+    va_end(path);
+    return result;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B224.s. */
 s32 func_1502B224() {

@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `14c48459`.
 
+Follow-up: [Note 998](998-game-variadic-table-range-wrapper-recovery-and-guarded-loop-stores-20261005.md)
+recovers this loader's variadic caller with two checked loop-store guards and
+actual-source connected fixtures. The unrecovered-caller statements and counts
+below describe this note's historical checkpoint.
+
 ## Result And Scope
 
 `func_1502AF04` is recovered from its false zero-return C placeholder as the

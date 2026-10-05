@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-05 Game Variadic Table-Range Wrapper Recovery
+
+[Note 998](WORKING_NOTES/998-game-variadic-table-range-wrapper-recovery-and-guarded-loop-stores-20261005.md)
+recovers `func_1502B110` from its zero-return placeholder. Its full 69-word /
+0x48-frame body matches with two checked independent loop-store guards;
+raw C still has two differences, no profile/insertion/omission change. All
+8316 boundary and 200 actual-callee three-way cases pass, with 1386 native
+boundary and 544 actual-C connected cases retaining SDK varargs, descriptor
+gates and original range arguments. Full consumer rebuild succeeds. All 199
+final checks pass in 148.664 seconds, no skips; protected Init code/data,
+Debugger code and Game data remain exact. README
+totals: 3294 / 5463 overall, 2621 / 4790 Game, zero drift. Conversion/Init ASM
+unchanged; sibling/frozen Release untouched. Next: `func_1502B020` resolver.
+
 ## 2026-10-05 Game Table-Range Loader Direct Recovery
 
 [Note 997](WORKING_NOTES/997-game-table-range-loader-direct-recovery-and-caller-qualification-20261005.md)
