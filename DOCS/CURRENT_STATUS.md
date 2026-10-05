@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game resource helper match: [Note 989](WORKING_NOTES/989-game-resource-helper-address-word-direct-match-20261005.md)
+completes all 46 words of `func_151336A8` directly from C. The inline unsigned
+O32 address-word cast restores retail's final `v1`/`a1` handoff, without guards,
+profile or public-interface changes. Three new checks reproduce nineteen source
+forms and pin raw slot/neighbor identities. All 148 combined checks pass,
+including actual resource/texture connections; complete Init/Debugger/data hold.
+Totals: 3286 / 5463 overall, 2613 / 4790 Game, zero drift; conversion/Init ASM
+unchanged. README aggregates updated. Sibling already has this retail-sequence
+helper; no host/frozen Release changes. Next near-match: `func_15168E54`.
+
 Game immediate release match: [Note 988](WORKING_NOTES/988-game-immediate-texture-release-direct-frame-match-20261005.md)
 completes all 46 words of `func_1510D7AC` directly from table-indexed C.
 The captured signed priority remains; default O2/g3 now emits retail's 0x28

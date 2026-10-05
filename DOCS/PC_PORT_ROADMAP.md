@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Resource Helper Retail Match - 2026-10-05
+
+[Note 989](WORKING_NOTES/989-game-resource-helper-address-word-direct-match-20261005.md)
+matches all 46 words of DECOMP `func_151336A8` directly from C. All 148
+combined checks pass, no skips, including connected resource/texture source
+fixtures and protected sections. Sibling generated code already has the
+retail helper sequence; no synchronization is needed for this function.
+The O32 pointer/address-word cast is guest-source-specific, not a host
+pointer transplant. No host source, build, save or frozen Release changes.
+Game exact count: 2613 / 4790. Natural resource/render behavior remains open.
+
 ## Game Immediate Texture Release Retail Match - 2026-10-05
 
 [Note 988](WORKING_NOTES/988-game-immediate-texture-release-direct-frame-match-20261005.md)

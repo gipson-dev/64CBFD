@@ -80,6 +80,9 @@ git diff --check
 
 ## Progress And Next
 
+Subsequent checkpoint: [Note 989](989-game-resource-helper-address-word-direct-match-20261005.md)
+completes the resource-helper match identified below, directly from C.
+
 | Section | Exact C Functions | Address Drift | Still Different |
 | --- | ---: | ---: | ---: |
 | Total | 3285 / 5463 (60.13%) | 0 | 2178 |

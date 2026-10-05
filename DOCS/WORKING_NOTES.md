@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-05 ([Note 989](WORKING_NOTES/989-game-resource-helper-address-word-direct-match-20261005.md)):
+Match all 46 words of `func_151336A8` directly from C with an unsigned O32
+address-word attachment handoff. No guards/profile/interface changes. Three
+new checks screen nineteen forms and preserve adjacent/constructor identities.
+All 148 combined checks pass, no skips; connected resource/texture source
+and complete Init/Debugger/data hold. Totals: 3286 / 5463 overall, 2613 / 4790
+Game, zero drift. README aggregates updated; no conversion/Init ASM or host/
+frozen Release changes. Next near-match: `func_15168E54`.
+
 2026-10-05 ([Note 988](WORKING_NOTES/988-game-immediate-texture-release-direct-frame-match-20261005.md)):
 Match all 46 words of immediate texture release `func_1510D7AC` directly
 from C. Full table indexing with captured signed state recovers the 0x28

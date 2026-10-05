@@ -4,6 +4,11 @@ Date: 2026-10-04
 
 ## Scope And Result
 
+Current helper checkpoint: [Note 989](989-game-resource-helper-address-word-direct-match-20261005.md)
+completes all 46 words of `func_151336A8` directly from C. Constructor matching
+remains open. Subsequent semantic stages are recorded in Notes 963 and 965;
+the measurements and placeholder boundaries below describe this older recovery.
+
 Replace two zero-return placeholders in `conker/src/game/generated_15F680.c`:
 extended child constructor `func_1513264C` and resource helper `func_151336A8`.
 Retain `func_15132A4C`'s exact pointer-return wrapper. No instruction guards,
@@ -161,7 +166,8 @@ transplant, build, binary, save or frozen Release changes.
   (86 words); unwritten metadata prevents production loading qualification.
 - [ ] Recover setup `func_1510CE60` (163 words) and attachment `func_15168E54`
   (45 words), which remain placeholders.
-- [ ] Pursue constructor/helper raw byte matching separately.
+- [x] Match resource helper `func_151336A8` directly from C (Note 989).
+- [ ] Pursue constructor raw byte matching separately.
 - [ ] Synchronize the PC child through guest/RDRAM interfaces and qualify natural effects.
 
 Init stays 492 C / 47 assembly. Game stays 2,609 and total 3,282 byte-exact C

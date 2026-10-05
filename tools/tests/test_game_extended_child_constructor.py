@@ -488,7 +488,7 @@ for(phase=0;phase<4;phase++) {
         compact, _, _ = match_progress.load_elf_functions(str(obj), 'mips-linux-gnu-objdump')
         sizes = {'func_1513264C': 256, 'func_15132A4C': 15, 'func_151336A8': 46}
         measured = {'func_1513264C': (255, 0x50, 184, '8b6d14c3eb1958344cb8b6b07419aa58f7f376269bb1717182d3f8f879ee046a'),
-                    'func_151336A8': (45, 0x30, 9, 'b9bf8563bcb9f3774bccf5094ff9f8f46b47cc2de1d93c7b05e35831022fe287'),
+                    'func_151336A8': (46, 0x30, 0, 'bcc5a75d799670a4fe870c852b34ab2a2162245941d52b98e5ba20e301106322'),
                     'func_15132A4C': (15, 0x28, 0, 'ffae9cfd67fff9633201e9af3484a65b32dbb9f1c3222dd9170fe0fc8d43ceeb')}
         for name, size in sizes.items():
             body = compact[name]

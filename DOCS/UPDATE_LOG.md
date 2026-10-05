@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-05 Game Resource Helper Direct Match
+
+[Note 989](WORKING_NOTES/989-game-resource-helper-address-word-direct-match-20261005.md)
+completes all 46 words of `func_151336A8`, including retail's final address
+handoff, directly from C with no guards/profile/interface changes. All 148
+combined checks pass, no skips; connected resource/texture tests and protected
+section identities hold. README exact totals: 3286 / 5463 overall, 2613 / 4790
+Game, zero drift. No new conversion or Init ASM reduction. Sibling already
+has this helper's retail sequence; no host or frozen Release changes.
+
 ## 2026-10-05 Game Immediate Texture Release Direct Match
 
 [Note 988](WORKING_NOTES/988-game-immediate-texture-release-direct-frame-match-20261005.md)

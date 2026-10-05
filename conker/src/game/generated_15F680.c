@@ -260,7 +260,8 @@ s32 func_151336A8(s32 index, ExtendedResourceNode15F680 *node, void *record) {
         return 0;
     }
     func_1510CE60(node->resource->data, 0, 1, 0x3E, &D_800DC640[index]);
-    func_15168E54(node->resource->data, node->resource);
+    /* Retail passes the resource address through a 32-bit word. */
+    func_15168E54(node->resource->data, (void *)(u32)node->resource);
     return 1;
 }
 
