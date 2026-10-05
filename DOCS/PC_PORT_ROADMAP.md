@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Init Bitmap Unsigned Sentinel Trial - 2026-10-05
+
+[Note 985](WORKING_NOTES/985-init-bitmap-unsigned-one-past-record-fitting-20261005.md)
+tests a DECOMP-only unsigned one-past/grouped-record interaction. No-unroll
+body fits nineteen words and removes XOR, but sixteen positions differ and
+store-delay does not recover retail increment-delay; complete text stays 80.
+Final scalar captures preserve ordered reads through explicit volatile views.
+All 154 combined checks pass, no skips, including 1098 complete pairs, eighteen
+prefixes and zero-stop/read-order controls. Existing Init/data and Game data
+remain exact. No production or host replacement, README total, save or frozen
+Release change follows from these bounded fixtures.
+
 ## Init Conversion Readiness - 2026-10-05
 
 [Note 984](WORKING_NOTES/984-init-pause-resume-current-conversion-readiness-20261005.md)

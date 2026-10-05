@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init bitmap unsigned sentinel: [Note 985](WORKING_NOTES/985-init-bitmap-unsigned-one-past-record-fitting-20261005.md)
+tests one-past unsigned stop arithmetic with ordered scalar and grouped-record
+captures. No-unroll record C fits nineteen body words with no XOR, but sixteen
+positions differ; store remains in the branch delay instead of the increment.
+Whole text stays 80 bytes. Initial scalar read reversal is caught and fixed
+experimentally with volatile views, at three words' cost. Fourteen new checks
+qualify 1098 completed pairs and eighteen prefixes, including a wrapped zero
+stop and a false-empty rejection control. All 154 combined checks pass, no skips;
+48 old preprocessing selections and complete existing Init/data plus Game data
+hold. No production adoption, README total or sibling/frozen Release change.
+
 Init pause-resume decision: [Note 984](WORKING_NOTES/984-init-pause-resume-current-conversion-readiness-20261005.md)
 freshly confirms 492 C / 47 ASM entries: seventeen investigation targets and
 thirty intentional boot/SDK/hardware/context owners. No replacement is ready

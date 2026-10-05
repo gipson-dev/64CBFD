@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-05 Init Bitmap Unsigned Sentinel
+
+[Note 985](WORKING_NOTES/985-init-bitmap-unsigned-one-past-record-fitting-20261005.md)
+adds opt-in ordered scalar/grouped unsigned one-past trials and fourteen checks.
+Record no-unroll C fits nineteen words with no XOR, but sixteen differ and
+retail's increment-delay lifetime is not recovered. Whole text stays 80 bytes.
+Final candidates pass 1098 complete paired traces and eighteen prefixes;
+zero-stop and read-order controls prevent final-memory-only qualification.
+All 154 combined checks pass, no skips; old preprocessing and complete existing
+Init/data plus Game data hold. No production adoption, README aggregate or
+sibling/frozen Release change; paused Game experiments remain excluded.
+
 ## 2026-10-05 Init Pause-Resume Decision
 
 [Note 984](WORKING_NOTES/984-init-pause-resume-current-conversion-readiness-20261005.md)

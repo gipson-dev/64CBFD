@@ -2,6 +2,10 @@
 
 Date: 2026-10-05. Starting HEAD: `3b672c6f`.
 
+Follow-up: [Note 985](985-init-bitmap-unsigned-one-past-record-fitting-20261005.md)
+tests unsigned one-past/grouped bitmap fitting. It removes XOR in a fitted
+profile but not the original delay-slot lifetime; no-adoption decision stands.
+
 ## Decision
 
 Resume the user's remaining-Init assessment, not the interrupted Game light

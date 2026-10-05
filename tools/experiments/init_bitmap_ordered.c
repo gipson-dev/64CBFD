@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef short s16;
 
-#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 24)
+#if !defined(HOST_TEST) && (SHAPE >= 12 && SHAPE <= 26)
 typedef char GuestAddressWidth[(sizeof(unsigned long) == 4) ? 1 : -1];
 #if SHAPE == 21 || SHAPE == 22
 typedef char GuestMaskWidth[(sizeof(unsigned int) == 4) ? 1 : -1];
@@ -18,7 +18,7 @@ extern u8 *D_8003BE7C;
 extern s16 D_8003BE78;
 #endif
 
-#if (SHAPE == 23 || SHAPE == 24) && !defined(HOST_TEST)
+#if (SHAPE == 23 || SHAPE == 24 || SHAPE == 26) && !defined(HOST_TEST)
 typedef struct {
     u8 *start;
     unsigned long reserved4;
@@ -43,6 +43,10 @@ const unsigned long init_bitmap_record_layout[] = {
 #define BITMAP_END bitmapRecord.end
 #define BITMAP_COUNT bitmapRecord.count
 #endif
+#elif SHAPE == 25
+#define BITMAP_START (*(u8 *volatile *)&D_8003BE70)
+#define BITMAP_END (*(u8 *volatile *)&D_8003BE7C)
+#define BITMAP_COUNT (*(volatile s16 *)&D_8003BE78)
 #else
 #define BITMAP_START D_8003BE70
 #define BITMAP_END D_8003BE7C
@@ -65,13 +69,15 @@ void func_10005BE0(void) {
 #if SHAPE == 24 && !defined(HOST_TEST)
     volatile InitBitmapRecord *record = &bitmapRecord;
 #endif
-#if SHAPE >= 12 && SHAPE <= 24
+#if SHAPE >= 12 && SHAPE <= 26
     unsigned long cursor = (unsigned long)BITMAP_START;
     unsigned long end = (unsigned long)BITMAP_END;
 #if SHAPE == 13
     unsigned long remaining = end - cursor;
 #elif SHAPE == 18
     unsigned long difference;
+#elif SHAPE == 25 || SHAPE == 26
+    unsigned long stop = end + 1;
 #endif
 #elif SHAPE == 8
     u8 *cursor = D_8003BE70;
@@ -186,6 +192,11 @@ fill:
     do {
         *(volatile u8 *)cursor = value;
     } while (cursor++ != end);
+#elif SHAPE == 25 || SHAPE == 26
+    /* An unsigned one-past sentinel also represents a wrapped zero endpoint. */
+    do {
+        *(volatile u8 *)cursor++ = 0xFF;
+    } while (cursor != stop);
 #else
 #error Unknown SHAPE
 #endif
@@ -210,7 +221,7 @@ fill:
 #elif SHAPE == 21
         value = ~(value << bits);
         *(volatile u8 *)end = value;
-#elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18 || SHAPE == 20 || SHAPE == 22 || SHAPE == 23 || SHAPE == 24
+#elif (SHAPE >= 12 && SHAPE <= 15) || SHAPE == 18 || SHAPE == 20 || (SHAPE >= 22 && SHAPE <= 26)
         *(volatile u8 *)end = (2u << bits) - 1;
 #else
         *end = (2u << bits) - 1;

@@ -21,7 +21,7 @@ def compile_shapes(shapes):
     retail = (cwd / "conker.us.bin").read_bytes()[0x5BE0:0x5C2C]
     report = []
     for shape in shapes:
-        if shape not in range(1, 25):
+        if shape not in range(1, 27):
             raise ValueError("unknown bitmap shape: %s" % shape)
         prefix = "build/init-bitmap-ordered/shape%d" % shape
         host = prefix + "-host"
@@ -41,7 +41,7 @@ def compile_shapes(shapes):
             if result.returncode or not (cwd / obj).is_file():
                 raise RuntimeError("guest compile failed: " + obj + "\n" + result.stderr)
             elf, binary = obj + ".elf", obj + ".bin"
-            record_symbols = ["--defsym=bitmapRecord=0x8003BE70"] if shape in (23, 24) else []
+            record_symbols = ["--defsym=bitmapRecord=0x8003BE70"] if shape in (23, 24, 26) else []
             subprocess.run(["mips-linux-gnu-ld", "-m", "elf32btsmip",
                 "-Ttext=0x10005BE0", "-e", "func_10005BE0",
                 "--defsym=D_8003BE70=0x8003BE70", "--defsym=D_8003BE7C=0x8003BE7C",
@@ -70,7 +70,7 @@ def compile_shapes(shapes):
                            "exact": body == retail, "host_cases": 79,
                            "frame_bytes": sum(frames),
                            "host_return_checked": shape in (4, 5)})
-            if shape in (23, 24):
+            if shape in (23, 24, 26):
                 layout = obj + ".layout.bin"
                 subprocess.run(["mips-linux-gnu-objcopy", "-O", "binary",
                     "--only-section=.rodata", elf, layout], cwd=cwd, check=True)
@@ -85,9 +85,9 @@ def compile_shapes(shapes):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--shapes", type=int, nargs="+", choices=range(1, 25),
+    parser.add_argument("--shapes", type=int, nargs="+", choices=range(1, 27),
                         default=list(range(1, 12)),
-                        help="select isolated shapes; 12-24 use unsigned address induction")
+                        help="select isolated shapes; 12-26 use unsigned address induction")
     report = compile_shapes(parser.parse_args().shapes)
     print(json.dumps(report, indent=2))
 

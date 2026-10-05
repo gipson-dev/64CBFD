@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 985](WORKING_NOTES/985-init-bitmap-unsigned-one-past-record-fitting-20261005.md)):
+Test unsigned one-past sentinel and grouped-address interaction. Record
+no-unroll body fits nineteen words and removes XOR, but sixteen differ;
+store-delay versus retail increment-delay remains unresolved, whole text 80.
+Catch scalar endpoint read reversal; explicit volatile views preserve order
+but cost three words. Fourteen checks qualify 1098 completed pairs and eighteen
+prefixes, including zero-stop and reversed-read rejection controls. All 154
+combined checks pass, no skips; 48 old preprocessing selections and existing
+Init/data plus Game data hold. No production conversion, README or host change.
+
 2026-10-05 ([Note 984](WORKING_NOTES/984-init-pause-resume-current-conversion-readiness-20261005.md)):
 Resume remaining-Init assessment: 492 C / 47 ASM, seventeen investigation
 targets and thirty intentional owners. No replacement is production-ready.
