@@ -2,6 +2,11 @@
 
 Date: 2026-10-04. Starting HEAD: `d2400309`.
 
+Subsequent [Note 982](982-game-viewport-command-helper-semantic-recovery-20261005.md)
+recovers the complete initial command helper `func_1510B7B4` and qualifies its
+twelve-packet cursor contract. The full `func_1510B9D0` renderer below remains
+pending; historical placeholder statements describe this note's checkpoint.
+
 ## Decision
 
 Continue [Note 972](972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)

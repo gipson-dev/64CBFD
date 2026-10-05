@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-05 Game Command Helper
+
+[Note 982](WORKING_NOTES/982-game-viewport-command-helper-semantic-recovery-20261005.md)
+recovers complete `func_1510B7B4` from its placeholder: 103 / 105 words,
+twelve packets, 104 raw differences, no guards/profile override. All 81 combined
+checks pass after fresh source build/padding/link, including 65600 native cases,
+97 paired traces and three invalid prefixes. Complete existing Init/Debugger/data
+remain exact. README aggregates, Init owners and sibling/frozen Release unchanged.
+Full `func_1510B9D0` renderer and natural submission/pixels remain open.
+
 ## PC-port cross-project update - 2026-09-23
 
 The sibling `64CBFDOGL` host port now completes Training through the natural Windy entrance and a fresh retained-save reload in RelWithDebInfo; repeat traversal used FLY. The user has **VERIFIED the second-level Chapters unlock**. The Gargoyle held-release repair uses original `func_15073A50` (232 bytes); guest/ROM builds and exact-byte checks are recorded in [host Note 738](../../64CBFDOGL/DOCS/WORKING_NOTES/738-gargoyle-actor-and-original-held-release-20260923.md). This is scoped progression evidence, not complete retail presentation or full-game acceptance.

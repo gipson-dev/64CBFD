@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game command helper: [Note 982](WORKING_NOTES/982-game-viewport-command-helper-semantic-recovery-20261005.md)
+replaces `func_1510B7B4`'s placeholder with its complete twelve-packet SDK body.
+It emits 103 / 105 words with two padding NOPs, no frame/calls/guards/profile
+override; 104 raw differences remain. Twelve new checks qualify 65600 native
+cases, 97 complete ordered retail/C traces and three invalid-input prefixes.
+Late page/base/table aliases retain repeated reads; a cached-page control fails.
+All 81 combined checks pass in 19.953 seconds, no skips, after fresh owner build,
+padding and link. Complete existing Init/Debugger/data remain exact. README
+totals and sibling/frozen Release unchanged. Full renderer `func_1510B9D0`
+remains pending; these fixtures do not prove submission or pixels. Init still
+has 47 ASM owners, seventeen investigation targets and thirty intentional.
+
 Init bitmap grouped view: [Note 981](WORKING_NOTES/981-init-bitmap-record-view-fitting-and-ordered-read-qualification-20261005.md)
 tests direct/local volatile record addressing for the captured start/end and
 late signed count. Optimized body fits nineteen words while retaining the
@@ -130,8 +142,9 @@ updater/color/writer connections pass; captures, late reloads, byte-wrap-before-
 clamp and both phase stores are retained. All 257 combined checks pass, no skips;
 fresh source compile/padding/link preserves complete Init code/data, Debugger
 code, Game data and previous identities. README aggregates unchanged. Next
-full caller `func_1510B9D0` (356 words) and command helper `func_1510B7B4` (105)
-remain placeholders. Full renderer/RSP/RDP/natural effects and matching stay open.
+full caller `func_1510B9D0` (356 words) remains a placeholder; Note 982 above
+subsequently recovers command helper `func_1510B7B4` (105-word slot).
+Full renderer/RSP/RDP/natural effects and matching stay open.
 Sibling already has updater plus gated diagnostics; no host/Release changes.
 
 Palette color emitter: [Note 972](WORKING_NOTES/972-game-palette-color-emitter-byte-match-and-segment-connection-20261004.md)

@@ -1,6 +1,9 @@
 #include <ultra64.h>
 
 extern u8 *D_800BE628;
+extern u8 D_80089470[];
+extern u8 D_800BE9C0;
+extern u8 *D_800DC2A0[];
 extern f32 D_800D35E0;
 extern f32 D_800D35E4;
 extern f32 D_800D9AC0[][3];
@@ -45,8 +48,19 @@ s32 func_1510B690() {
     return 0;
 }
 
-s32 func_1510B7B4() {
-    return 0;
+Gfx *func_1510B7B4(Gfx *arg0, s32 arg1) {
+    gDPPipeSync(arg0++);
+    gDPSetBlendColor(arg0++, 0, 0, 0, 1);
+    gSPMatrix(arg0++, D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    gSPPerspNormalize(arg0++, *(u16 *) (D_800BE628 + arg1 * 0x180 + 0xB8));
+    gSPClipRatio(arg0++, FRUSTRATIO_3);
+    gSPClearGeometryMode(arg0++, G_LOD);
+    gSPMatrix(arg0++, (u32) D_800BE628 + arg1 * 0x180 + D_800BE9C0 * 0x40 + 0x100,
+              G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+    gSPMatrix(arg0++, D_800DC2A0[D_800BE9C0] + arg1 * 0x40,
+              G_MTX_PROJECTION | G_MTX_MUL | G_MTX_NOPUSH);
+    gDPSetOtherMode(arg0++, 0x082C3F, 0x552230);
+    return arg0;
 }
 
 void func_1510B958(s32 arg0) {

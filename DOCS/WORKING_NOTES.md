@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-05 ([Note 982](WORKING_NOTES/982-game-viewport-command-helper-semantic-recovery-20261005.md)):
+Recover complete Game command helper `func_1510B7B4`: twelve SDK packets,
+103 / 105 words, 104 raw differences, no guards/profile override. Twelve new
+checks qualify 65600 native cases, 97 complete paired traces and three invalid
+prefixes, retaining repeated base/page/table reads under output aliases.
+All 81 combined checks pass in 19.953 seconds, no skips; fresh source build/link
+preserves complete existing Init/Debugger/data. Full `func_1510B9D0` renderer
+remains pending. No README aggregate, Init conversion or sibling/Release change.
+
 2026-10-05 ([Note 981](WORKING_NOTES/981-init-bitmap-record-view-fitting-and-ordered-read-qualification-20261005.md)):
 Qualify direct/local grouped bitmap field reads. Optimized body fits nineteen
 words with the two-based mask but seventeen differ; XOR loop and retail schedule

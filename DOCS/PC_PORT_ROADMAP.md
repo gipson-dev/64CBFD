@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Initial Command Helper - 2026-10-05
+
+[Note 982](WORKING_NOTES/982-game-viewport-command-helper-semantic-recovery-20261005.md)
+recovers complete DECOMP `func_1510B7B4`: twelve packets, 103 / 105 words,
+104 raw differences, no frame/calls/guards/profile override. Twelve new checks
+qualify 65600 native cases, 97 complete ordered traces and three invalid prefixes.
+All 81 combined checks pass after fresh owner build/link; complete existing
+Init/Debugger/data stay exact. The sibling already retains the original helper
+and gated diagnostics; no host replacement, build, save or frozen Release change.
+Full renderer `func_1510B9D0`, submission and natural pixels remain separate gates.
+
 ## Init Bitmap Grouped Field Trial - 2026-10-05
 
 [Note 981](WORKING_NOTES/981-init-bitmap-record-view-fitting-and-ordered-read-qualification-20261005.md)
@@ -233,8 +244,9 @@ three invalid-slot prefixes and actual angle-helper/updater/color/writer
 connections. All 257 combined checks pass after fresh source build/link;
 complete Init/Debugger/data remain exact. README aggregates stay unchanged.
 The sibling already has the original updater with gated blend diagnostics;
-no host/Release changes or fresh PC acceptance. Next full caller 1510B9D0 and
-its command helper 1510B7B4 remain placeholders; natural RSP/RDP effects are open.
+no host/Release changes or fresh PC acceptance. Full caller 1510B9D0 remains
+a placeholder; Note 982 subsequently recovers command helper 1510B7B4.
+Natural RSP/RDP effects are open.
 
 - [x] Recover and qualify the DECOMP child callback and retained constructor/wrappers.
 - [x] Recover and qualify the DECOMP extended code-0x37 child and exact pointer wrapper.
@@ -254,7 +266,8 @@ its command helper 1510B7B4 remain placeholders; natural RSP/RDP effects are ope
 - [x] Recover queued segment writer `func_1510D8C0` and qualify bounded queue/byte-alias behavior.
 - [x] Recover color emitter `func_1510CDB8` and qualify its actual writer connection.
 - [x] Recover palette updater `func_1510CB10` and qualify its color-emitter connection.
-- [ ] Recover full caller `func_1510B9D0` and command-helper dependencies.
+- [x] Recover initial command helper `func_1510B7B4` and qualify its packet/cursor contract.
+- [ ] Recover full caller `func_1510B9D0` and remaining command-helper dependencies.
 - [ ] Recover/qualify the full renderer and natural RSP/RDP effects separately.
 - [ ] Synchronize PC-port `func_1510D7AC`: active generated source retains its
   zero-return stub, with no named override in the scoped host source search.
