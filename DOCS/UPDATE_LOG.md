@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-05 Game Optional-Size Loader Direct Recovery
+
+[Note 1002](WORKING_NOTES/1002-game-optional-size-loader-direct-match-and-live-output-aliases-20261005.md)
+replaces `func_1502B5C8`'s zero-return placeholder with semantic optional-size
+SDK-varargs traversal and block loading. All 61 words / frame 0x50 emit
+directly under default IDO O2/g3, no guards/profile override. Incoming descriptor
+seeds, separate fallback storage, live output/descriptor aliases and distinct
+allocation-failure sizes are preserved. Native qualification is positive
+descriptor-writing paths only, not defined native zero-depth behavior.
+Boundary/actual-callee/global-alias and 108 full Game caller cases pass;
+six aligned caller declarations/casts preserve complete retail-exact slots.
+All 247 final checks pass in 246.404 seconds, no skips; tools/whitespace pass.
+Rebuild/protected-section checks pass. README aggregates: 3298 / 5463 overall,
+2625 / 4790 Game, zero drift. Conversion/Init ASM, patch table and sibling/
+frozen Release unchanged. Next: `func_1502B7F0`, 60 words / 0x48 frame,
+pointer output with separate returned size rather than commented void body.
+
 ## 2026-10-05 Game Buffer Variadic Wrapper Direct Recovery
 
 [Note 1001](WORKING_NOTES/1001-game-buffer-variadic-wrapper-direct-match-and-incoming-descriptor-frame-20261005.md)

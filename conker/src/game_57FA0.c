@@ -15,7 +15,7 @@ u32 *func_1502B110(u32 base, u32 count, void *buffer, u32 depth, ...);
 u32 func_1502B224(u32 address, void *buffer, u32 descriptor, u32 cap);
 void *func_1502B350(u32 arg0, u32 arg1, s32 *arg2);
 s32 func_1502B4A8(u32 *entries, s32 count);
-s32 func_1502B5C8();
+void *func_1502B5C8(s32 *size, u32 depth, ...);
 void *func_1502B6BC(s32 *size, s32 count, s32 *relocated, s32 depth, ...);
 u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...);
 s32 func_1502B9B4();
@@ -244,9 +244,39 @@ s32 func_1502B4A8(u32 *entries, s32 count) {
     }
     return count;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_57FA0/func_1502B5C8.s. */
-s32 func_1502B5C8() {
-    return 0;
+/* Retail leaves the descriptor unwritten on the zero-depth path. */
+void *func_1502B5C8(s32 *size, u32 depth, ...) {
+    s32 *target;
+    va_list path;
+    s32 component;
+    s32 fallbackSize;
+    u32 base;
+    u32 descriptor;
+    void *result;
+
+    target = &fallbackSize;
+    if (size != NULL) {
+        target = size;
+    }
+    *target = 1;
+    base = (u32)D_AB1950;
+    va_start(path, depth);
+    if (depth != 0) {
+        do {
+            component = va_arg(path, s32);
+            if (*target != 0) {
+                base += func_1502AC88(base, component, &descriptor);
+            }
+            *target = descriptor & 0x0FFFFFFF;
+        } while (--depth != 0);
+    }
+    va_end(path);
+    if (*target != 0) {
+        result = func_1502B350(base, descriptor, target);
+    } else {
+        result = NULL;
+    }
+    return result;
 }
 void *func_1502B6BC(s32 *size, s32 count, s32 *relocated, s32 depth, ...) {
     s32 *target;

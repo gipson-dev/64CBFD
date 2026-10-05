@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `16975bfd`.
 
+Follow-up: [Note 1002](1002-game-optional-size-loader-direct-match-and-live-output-aliases-20261005.md)
+recovers the next 61-word `func_1502B5C8` optional-size wrapper directly, with
+physical descriptor/fallback and live-output alias qualification. Results
+below remain the historical caller-buffer wrapper checkpoint.
+
 ## Result And Scope
 
 `func_1502B8E0`'s false zero-return placeholder is replaced with its semantic

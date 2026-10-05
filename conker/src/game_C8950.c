@@ -2,6 +2,8 @@
 #include "functions.h"
 #include "variables.h"
 
+void *func_1502B5C8(s32 *size, u32 depth, ...);
+
 /* Generated placeholder declarations. */
 s32 func_1509B5AC(s32 arg0, s32 arg1);
 s32 func_1509B764();
@@ -83,7 +85,7 @@ void func_1509B8FC(s16 arg0) {
     struct248 *temp_v0;
     s16 sp18[2];
 
-    temp_v0 = func_1502B5C8(&sp18, 2, 20, arg0);
+    temp_v0 = func_1502B5C8((s32 *)&sp18, 2, 20, arg0);
     temp_v0->unk0 |= arg0;
     temp_v0->unk2 = D_800BE9F0;
     func_1509B950(temp_v0);

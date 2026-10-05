@@ -5,6 +5,8 @@ void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
 #include "functions.h"
 #include "variables.h"
 
+void *func_1502B5C8(s32 *size, u32 depth, ...);
+
 #include "macros.h"
 
 void func_15002560(u8 *arg0, u8 *arg1);
@@ -255,8 +257,8 @@ void func_150025FC(void) {
     tmp1 = D_800DBE2C;
 
     D_800DBE28 = (((tmp0 + 7) / 8) + 0xF) & 0xFFF0;
-    tmp2 = func_1502B5C8(0, 2, 5, D_800BE9F0 << 1);
-    tmp3 = func_1502B5C8(0, 2, 5, (D_800BE9F0 << 1) + 1);
+    tmp2 = (s32)func_1502B5C8(0, 2, 5, D_800BE9F0 << 1);
+    tmp3 = (s32)func_1502B5C8(0, 2, 5, (D_800BE9F0 << 1) + 1);
     if (tmp2 == 0) {
         D_800BE5D0 = 0;
     } else {

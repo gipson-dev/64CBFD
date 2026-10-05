@@ -18,7 +18,7 @@ extern u8 D_800CC2D0[];
 extern s32 D_800D2394;
 extern s8 D_800D2398;
 extern s8 D_800D2399;
-s32 func_1502B5C8();
+void *func_1502B5C8(s32 *size, u32 depth, ...);
 s32 func_1509BFB0();
 s32 func_15085BE8();
 s32 func_150888A8();

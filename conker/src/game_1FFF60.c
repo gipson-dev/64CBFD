@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+void *func_1502B5C8(s32 *size, u32 depth, ...);
+
 typedef struct {
     s32 unk0;
     s32 unk4;
@@ -31,7 +33,7 @@ void func_151D2AB0(s32 arg0) {
     (&D_800E0950)[arg0] = (&D_800E0950)[arg0] + 1;
 
     if ((&D_800E0950)[arg0] < 2) {
-        D_800E0990[arg0] = func_1502B5C8(&tmp, 2, 9, D_800AB140[arg0]);
+        D_800E0990[arg0] = (s32)func_1502B5C8((s32 *)&tmp, 2, 9, D_800AB140[arg0]);
         D_800E0968[arg0] = tmp >> 4;
     }
 }

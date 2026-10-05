@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Game Optional-Size Loader Direct Recovery - 2026-10-05
+
+[Note 1002](WORKING_NOTES/1002-game-optional-size-loader-direct-match-and-live-output-aliases-20261005.md)
+recovers DECOMP `func_1502B5C8`, all 61 words / frame 0x50 directly from default
+IDO, no guards/profile override. Incoming descriptor seeds, separate fallback
+size and live output/descriptor aliases remain intact. This is target-code
+preservation, not defined native zero-depth C or a host-transplant proposal.
+Connected lookup/cache/block and 108 full Game caller checks pass; six
+maintained caller slots/frames remain retail-exact after interface alignment.
+Protected Init code/data, Debugger code and Game data remain exact. Game exact
+count: 2625 / 4790. Read-only sibling audit finds the original translated
+wrapper and frame/reads already present, with no maintained PC override.
+No host source, build, save or frozen Release change. All 247 final checks
+pass in 246.404 seconds, no skips; tools/whitespace pass. Actual SDK/decoder,
+audio, gameplay and rendering acceptance remain separate. Next bounded
+DECOMP target: `func_1502B7F0`, pointer output plus separate returned size.
+
 ## Game Buffer Variadic Wrapper Direct Recovery - 2026-10-05
 
 [Note 1001](WORKING_NOTES/1001-game-buffer-variadic-wrapper-direct-match-and-incoming-descriptor-frame-20261005.md)

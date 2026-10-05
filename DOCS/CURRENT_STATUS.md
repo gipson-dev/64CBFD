@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game optional-size resource loader direct recovery: [Note 1002](WORKING_NOTES/1002-game-optional-size-loader-direct-match-and-live-output-aliases-20261005.md)
+recovers `func_1502B5C8` from its zero-return placeholder. All 61 words / frame
+0x50 emit directly under default IDO O2/g3, no guards/profile override. The
+incoming descriptor at entry SP-0x18 remains separate from the initialized-one
+fallback at SP-0x10. Zero-depth seeds, live output/descriptor rereads and
+distinct allocation-failure sizes are preserved; native tests qualify positive
+descriptor-writing paths only, not defined native indeterminate-local behavior.
+All 2940 boundary, 324 actual-callee, 72 connected global-alias and 108 full
+Game caller cases pass. Six caller declarations/casts are aligned and complete
+retail-exact slots/frames remain unchanged. Protected Init code/data, Debugger
+code and Game data remain exact. All 247 final checks pass in 246.404 seconds,
+no skips; tools/whitespace pass. Rebuild: 3298 / 5463 overall,
+2625 / 4790 Game, zero drift. README aggregates updated; conversion/Init ASM,
+patch table and sibling/frozen Release unchanged. Next: `func_1502B7F0`,
+60 words / frame 0x48: stores a pointer through its first argument but returns
+the separate size, unlike its obsolete commented void approximation.
+
 Game buffer variadic wrapper direct recovery: [Note 1001](WORKING_NOTES/1001-game-buffer-variadic-wrapper-direct-match-and-incoming-descriptor-frame-20261005.md)
 recovers `func_1502B8E0` from its zero-return placeholder. All 53 words / frame
 0x48 emit directly under default IDO O2/g3, no guards/profile override. The
