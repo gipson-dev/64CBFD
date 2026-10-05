@@ -106,7 +106,6 @@ s32 func_1502B224() {
 }
 void *func_1502B350(u32 arg0, u32 arg1, s32 *arg2) {
     u32 amount;
-    u32 expanded;
     void *compressed;
     void *result;
 
@@ -118,15 +117,22 @@ void *func_1502B350(u32 arg0, u32 arg1, s32 *arg2) {
     }
     func_10004514(arg0, compressed, (amount + 15) & ~0xF, 1);
     if ((arg1 & 0x70000000) == 0x10000000) {
-        expanded = *(u32 *)compressed & 0x7FFFFFFF;
-        *arg2 = expanded;
-        result = NULL;
-        amount = 0;
-        if (expanded != 0 && expanded < 1000000) {
-            result = allocate_memory(expanded, 1, 2, 2);
-            if (result != NULL) {
-                amount = func_10006240(compressed, result, D_8003809C);
+        *arg2 = *(u32 *)compressed & 0x7FFFFFFF;
+        if ((u32)*arg2 != 0) {
+            result = NULL;
+            if ((u32)*arg2 < 1000000) {
+                result = allocate_memory((u32)*arg2, 1, 2, 2);
+                if (result != NULL) {
+                    amount = func_10006240(compressed, result, D_8003809C);
+                } else {
+                    amount = 0;
+                }
+            } else {
+                amount = 0;
             }
+        } else {
+            result = NULL;
+            amount = 0;
         }
         func_10004074(compressed);
     }

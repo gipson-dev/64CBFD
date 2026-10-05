@@ -2,6 +2,10 @@
 
 Date: 2026-10-05. Starting HEAD: `a9513a7d`.
 
+Follow-up: [Note 993](993-game-block-loader-direct-output-size-and-frame-match-20261005.md)
+completes the next block-loader target directly across all 86 words. The
+relocator's guarded match and this checkpoint's measurements remain unchanged.
+
 ## Result And Scope
 
 `func_1502B4A8`'s complete 72-word / 288-byte slot matches retail using its

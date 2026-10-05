@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game block loader direct match: [Note 993](WORKING_NOTES/993-game-block-loader-direct-output-size-and-frame-match-20261005.md)
+matches all 86 `func_1502B350` words directly under the unchanged default
+IDO O2/g3 profile, including retail's 0x30 frame. Output-size expression shape,
+explicit failure branches and one size local resolve all 78 prior differences;
+no guards, profile override or interface changes. The 37-form / 296-trial
+screen reproduces the match; all 165 combined checks pass, no skips.
+Connected resource fixtures and complete Init/Debugger/data identity hold.
+Totals: 3290 / 5463 overall, 2617 / 4790 Game, zero drift. Neighboring
+relocator/variadic loader remain exact. README aggregate tables updated;
+conversion/Init ASM and sibling/frozen Release unchanged. Next: 97-word
+cache installer `func_1502AB04` (87 body words, 93 differences, frames 0x20/0x28).
+
 Game offset relocator guarded match: [Note 992](WORKING_NOTES/992-game-offset-relocator-typed-scan-and-guarded-bulk-match-20261005.md)
 matches all 72 linked `func_1502B4A8` words with a typed automatic-count scan
 and seventeen checked bulk temporary-register guards. Not a direct compiler

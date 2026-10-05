@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-05 Game Block Loader Direct Match
+
+[Note 993](WORKING_NOTES/993-game-block-loader-direct-output-size-and-frame-match-20261005.md)
+matches all 86 `func_1502B350` words directly from C, including the retail
+0x30 frame, without guards or profile changes. All 165 combined checks pass,
+no skips; connected resource fixtures, neighboring exact routines and complete
+Init/Debugger/data identity hold. The 37-form / 296-trial source/profile screen
+reproduces the result. README totals: 3290 / 5463 overall, 2617 / 4790 Game,
+zero drift. Conversion/Init ASM unchanged; no sibling source/build/save or
+frozen Release change. Next: cache installer `func_1502AB04`.
+
 ## 2026-10-05 Game Offset Relocator Guarded Match
 
 [Note 992](WORKING_NOTES/992-game-offset-relocator-typed-scan-and-guarded-bulk-match-20261005.md)

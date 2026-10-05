@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Block Loader Direct Match - 2026-10-05
+
+[Note 993](WORKING_NOTES/993-game-block-loader-direct-output-size-and-frame-match-20261005.md)
+matches all 86 DECOMP `func_1502B350` words directly from C with the retail
+0x30 frame, no guards or profile changes. All 165 combined checks pass,
+including connected resource fixtures and protected sections. Read-only sibling
+audit finds the translated retail loader with the same frame, failure paths,
+decode-result preservation and cleanup-before-output-store sequence. Existing
+default-off diagnostics remain separate; no loader synchronization is needed
+for this matching change. No host source, build, save or frozen Release change.
+Game exact count: 2617 / 4790. Real allocator/DMA/decode, rendering and runtime
+qualification remain separate and open.
+
 ## Game Offset Relocator Guarded Match - 2026-10-05
 
 [Note 992](WORKING_NOTES/992-game-offset-relocator-typed-scan-and-guarded-bulk-match-20261005.md)

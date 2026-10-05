@@ -2,6 +2,11 @@
 
 Date: 2026-10-04. Starting HEAD: `d13d95be`.
 
+Follow-up: [Note 993](993-game-block-loader-direct-output-size-and-frame-match-20261005.md)
+directly matches all 86 block-loader words with the retail 0x30 frame on
+2026-10-05. The original recovery measurements below remain historical;
+cache installer and cached lookup still differ.
+
 ## Decision
 
 Finish the in-progress resource-loading recoveries following

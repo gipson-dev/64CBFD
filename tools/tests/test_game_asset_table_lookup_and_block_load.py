@@ -317,7 +317,7 @@ for(phase=0;phase<2;phase++) {
         self.assertEqual(len(call_offsets),1)
         measured={'func_1502AB04':(87,97,0x20,93,'9411056ee2483732bfd3b404b7ab27b514a0af4c614b62c554dbe125f1b0719a'),
                   'func_1502AC88':(158,159,0xA0,156,'1bb0909b45c22e6029c8100583e55835d0cea88a3a28efe38ba65524a7f2ca28'),
-                  'func_1502B350':(77,86,0x38,78,'17346d32c5e8ee8010b24eaf718d6d34eb9a1e802ee61ec8f2f226d3d3825ab4')}
+                  'func_1502B350':(86,86,0x30,0,'f176b2891cb5a8aa6f60461047ea78f4b4e7958fcaef18fb41b9d0c1ccdc31ae')}
         rom=(self.root/'conker/conker.us.bin').read_bytes()
         for name,(body,size,frame,diffs,digest) in measured.items():
             words=fresh[name][:]
