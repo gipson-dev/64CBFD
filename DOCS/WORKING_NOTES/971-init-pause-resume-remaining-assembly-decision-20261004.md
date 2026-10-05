@@ -8,6 +8,41 @@ below. This note's Init measurements and no-adoption decision remain unchanged.
 
 ## Result
 
+### Latest Resume Recheck
+
+Subsequent [Note 974](974-init-decoder-complement-low-mask-fitting-trial-20261004.md)
+adds a new decoder fitting hypothesis and bounded qualification. Its complete
+size remains unchanged, so this assessment's no-adoption decision stands.
+
+Resumed at banked HEAD `36b67c92` on 2026-10-04 with a clean worktree.
+The same focused command recorded below freshly passes **110 tests in
+63.319 seconds, no skips**. This rerun does not add distinct tests or introduce
+a new compiler hypothesis. All 47 source owners/raw slots and complete existing
+Init code/data plus Game data remain retail-exact. Inventory remains 492 C /
+47 ASM entries, with 12252 ASM bytes.
+
+Fresh compiler controls still produce 20 / 19 words for the best checked bitmap,
+4512 / 3984 executable bytes for the connected decoder (528 over), and
+608 / 412 bytes for the best retained formatter connection (196 over).
+The MMIO check reassembles the original eleven-word leaf and verifies its three
+ordered stores; it does not recompile the historical MMIO C variant matrix.
+No remaining replacement is qualified for production adoption.
+
+The requested Init continuation therefore starts with a **new bitmap
+branch/delay-slot hypothesis**, not the separate Game renderer placeholder.
+If that cannot fit without changing the captured endpoints, wrapping arithmetic,
+alias behavior or late count reload, retain assembly and move to a justified
+MMIO scheduling/provenance hypothesis. Decoder and glyph work remain connected
+fitting/ownership projects; do not convert isolated leaves and hide adapter costs.
+The thirty intentional ASM owners are not ordinary missing-C work.
+
+The interrupted Game edits below are historical: Notes 972 and 973 bank their
+color-emitter and updater work. No Game source edits are pending at this resume.
+This recheck changes working documentation only, not production Init, compiler
+profiles, word guards or README aggregates. No fresh production relink, full
+guarded decoder corpus, hardware/gameplay acceptance, sibling build, frozen
+Release change, save change or push is claimed.
+
 **Some remaining Init assembly is C-expressible, but no remaining replacement
 is currently ready for production adoption.** Resume from the banked exact
 baseline, not a broad conversion batch. The supported compiler-generated Init

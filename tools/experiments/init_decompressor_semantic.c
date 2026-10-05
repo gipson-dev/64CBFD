@@ -172,7 +172,11 @@ static const uint8_t lengthOrder[19] = {
 };
 
 static uint32_t low_mask(uint32_t width) {
+#ifdef INIT_DECODE_COMPLEMENT_LOW_MASK
+    return ~(~0u << (width & 31));
+#else
     return (1u << (width & 31)) - 1;
+#endif
 }
 
 static void need_bits(InitDecodeState *s, int32_t width) {

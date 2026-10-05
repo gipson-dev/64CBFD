@@ -305,6 +305,8 @@ def main():
     parser.add_argument("--entry-value-local", nargs="?", const="both",
                         choices=("both", "literal", "distance"),
                         help="capture immutable literal/distance values before bit removal")
+    parser.add_argument("--complement-low-mask", action="store_true",
+                        help="trial a complemented all-ones shift in the shared low-mask helper")
     parser.add_argument("--abi-seed-cursor", action="store_true",
                         help="seed saved ABI words using pointer cursors")
     parser.add_argument("--fixed-length-cursor", action="store_true",
@@ -412,6 +414,8 @@ def main():
         suffix += "-distance-operation-local"
     if args.entry_value_local:
         suffix += "-entry-value-local-" + args.entry_value_local
+    if args.complement_low_mask:
+        suffix += "-complement-low-mask"
     if args.abi_seed_cursor:
         suffix += "-abi-seed-cursor"
     if args.fixed_length_cursor:
@@ -506,6 +510,8 @@ def main():
     if args.entry_value_local:
         common.append("-DINIT_DECODE_ENTRY_VALUE_LOCAL=" +
                       str({"both": 1, "literal": 2, "distance": 3}[args.entry_value_local]))
+    if args.complement_low_mask:
+        common.append("-DINIT_DECODE_COMPLEMENT_LOW_MASK")
     if args.abi_seed_cursor:
         common.append("-DINIT_DECODE_ABI_SEED_CURSOR")
     if args.fixed_length_cursor:

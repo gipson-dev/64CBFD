@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-04 ([Note 974](WORKING_NOTES/974-init-decoder-complement-low-mask-fitting-trial-20261004.md)):
+Trial the connected Init decoder's complemented shared low mask. Exactly two
+packed instruction words change; allocation stays 4336 C + 176 adapter = 4512
+bytes, 528 over retail. All 59 trial checks across two runs and twenty
+separate inventory/slot/call checks pass, no skips. Actual compiled mask spans
+all shift classes/high widths; disabled packed hashes remain banked. Fresh
+builder region is 401 words: 333 public plus 68 embedded helpers. Reject
+adoption; next fitting is builder/shared-call structure with complete costs.
+No production Init/README aggregate/host/Release changes or full corpus claim.
+
 2026-10-04 ([Note 973](WORKING_NOTES/973-game-palette-updater-and-connected-color-qualification-20261004.md)):
 Recover palette updater `func_1510CB10`: 168 / 170 words, retail 0x68 frame,
 135 raw differences, no guards/profile override/drift. Fourteen new checks

@@ -18,6 +18,16 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 974](WORKING_NOTES/974-init-decoder-complement-low-mask-fitting-trial-20261004.md)
+  measures the opt-in complemented shared-mask trial. Two words change, but
+  optimized allocation remains 4336 C + 176 adapter = 4512 bytes, 528 over.
+  All 59 trial checks across two runs and twenty separate owner/slot/call
+  checks pass, no skips. Compiled mask classes/high widths, disabled control
+  hashes and complete existing Init/data are checked. Fresh size accounting
+  directs next fitting to builder/shared-call structure, not this neutral
+  identity. No adoption, production relink, README aggregate, host or Release
+  change; full guarded corpus and hardware acceptance remain separate.
+
 - Game [Note 973](WORKING_NOTES/973-game-palette-updater-and-connected-color-qualification-20261004.md)
   recovers palette updater `func_1510CB10`: 168 / 170 words, retail 0x68 frame,
   135 raw differences, no guards/profile override/drift. Fourteen new checks

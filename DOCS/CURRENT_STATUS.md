@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Init decoder fitting: [Note 974](WORKING_NOTES/974-init-decoder-complement-low-mask-fitting-trial-20261004.md)
+adds an opt-in complemented shared-mask expression. Two instruction words
+change, but complete optimized text stays 4336 C + 176 adapter = 4512 bytes,
+528 over retail. All 59 connected/native/ledger checks pass across two runs, no skips;
+20 separate inventory/slot/call checks and tool checks pass. Default packed
+instruction hashes remain intact; all 47 production ASM slots and complete
+existing Init code/data plus Game data remain exact. The builder's 401-word
+region contains a 333-word public unit and 68 embedded-helper words; next
+sustained Init fitting is builder/shared-call structure and whole-image costs.
+No adoption, production relink, full guarded corpus, README aggregate change,
+sibling/Release change or hardware/gameplay acceptance is claimed.
+
 Palette updater: [Note 973](WORKING_NOTES/973-game-palette-updater-and-connected-color-qualification-20261004.md)
 recovers `func_1510CB10`: 168 / 170 words, retail 0x68 frame, 135 raw differences,
 no guards/profile override/drift. Fourteen new checks qualify 398353 native cases,
@@ -48,15 +60,18 @@ Full render caller/RSP/RDP/natural effects and staged producer remain open.
 Sibling already has the original emitter; no host/frozen Release changes.
 
 Requested Init pause resume: [Note 971](WORKING_NOTES/971-init-pause-resume-remaining-assembly-decision-20261004.md)
-freshly passes 110 focused checks in 64.829 seconds, no skips. Init remains
+latest recheck starts from clean banked HEAD `36b67c92` and freshly passes
+110 focused checks in 63.319 seconds, no skips. Init remains
 492 C / 47 ASM entries (12252 ASM bytes); every retained owner/raw slot and
 complete existing Init code/data plus Game data remain retail-exact. Seventeen
 entries are investigation targets, thirty intentional assembly. No replacement
 is ready: best freshly checked bitmap is 20 / 19 words, decoder 528 bytes over,
 formatter 196 over; MMIO's full eleven-word C match remains unresolved.
-No new compiler hypothesis or production relink is claimed. Two interrupted
-Game color-emitter source/test edits were preserved separately and unbanked
-at that checkpoint; Note 972 above completes their bounded qualification.
+No new compiler hypothesis or production relink is claimed. Historical
+interrupted Game edits are now banked by Notes 972 and 973; no source edits
+were pending at this resume. Next requested Init work is a new bitmap
+branch/delay-slot fitting hypothesis, followed by justified MMIO scheduling
+or connected decoder fitting, not another broad conversion batch.
 Production Init, README aggregates and sibling/frozen Release unchanged.
 
 Queued segment writer: [Note 970](WORKING_NOTES/970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md)

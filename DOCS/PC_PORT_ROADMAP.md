@@ -1,15 +1,29 @@
 # PC Port Roadmap located in another project folder
 
+## Init Decoder Fitting Trial - 2026-10-04
+
+[Note 974](WORKING_NOTES/974-init-decoder-complement-low-mask-fitting-trial-20261004.md)
+tests an opt-in complemented mask helper in the guest decoder candidate. It
+changes two words but saves no bytes: 4512 executable against 3984 retail.
+All 59 trial checks across two runs and twenty separate ownership/slot/call
+checks pass, no skips; default instruction hashes and existing full Init/data
+stay exact. The next fitting target is builder/shared-call structure, including
+all embedded helpers and adapters. No production adoption or PC decoder change;
+bounded fixtures are not a full guarded corpus or real runtime acceptance.
+
 ## Init Resume Boundary - 2026-10-04
 
 [Note 971](WORKING_NOTES/971-init-pause-resume-remaining-assembly-decision-20261004.md)
-freshly rechecks all 47 retained Init ASM owners/raw slots and complete existing
-Init code/data plus Game data. All 110 focused checks pass, no skips. Seventeen
+latest resume at clean banked HEAD `36b67c92` freshly rechecks all 47 retained
+Init ASM owners/raw slots and complete existing Init code/data plus Game data.
+All 110 focused checks pass in 63.319 seconds, no skips. Seventeen
 entries remain investigation targets and thirty intentional assembly; none is
 ready to convert. Best checked bitmap is 20 / 19 words, connected decoder is
 528 bytes over and formatter 196 over; MMIO full match is unresolved. This is a
 guest adoption decision, not a host decoder replacement or PC runtime test.
-Separate interrupted Game color-emitter source/test edits remain unbanked.
+The historical interrupted Game edits are now banked in Notes 972 and 973.
+Next Init work needs a new bitmap branch/delay-slot fitting hypothesis;
+the separate Game renderer recovery is not part of this assessment.
 Production Init, README aggregates, host files/builds and frozen Release stay
 unchanged. The note records concrete adoption steps and verification boundaries.
 
