@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Display-List Scan Recovery - 2026-10-05
+
+[Note 1005](WORKING_NOTES/1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md)
+recovers DECOMP `func_1502BAD0`, 173 words / frame 0x48 under default IDO,
+with eleven closed constant-register/equality-order guards. Original signed
+alpha gates, live state reads, diagnostic tags and returned Gfx cursors remain.
+Three-way guest and native SDK-macro qualification passes thirteen focused
+tests. Actual downstream renderers are opaque fixtures, not complete rendering
+or PC gameplay acceptance. Only target changes in 6060 slots; protected
+sections remain exact. Game exact count: 2628 / 4790. Sibling already contains
+the translated scan and existing caller guards. No maintained host override
+is found; no host transplant, source, build, save or frozen Release change.
+All 302 combined checks pass in 265.481 seconds, no skips; relative links pass.
+Next DECOMP target: `func_1502BD84`.
+
 ## Game Resource Size Query Direct Recovery - 2026-10-05
 
 [Note 1004](WORKING_NOTES/1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md)

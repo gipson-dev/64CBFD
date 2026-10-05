@@ -2,6 +2,10 @@
 
 Date: 2026-10-05. Starting HEAD: `4d6ffa72`.
 
+Followup: [Note 1005](1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md)
+recovers the next actor display-list scan. Counts and next-target statements
+below remain the historical size-query checkpoint.
+
 ## Result And Scope
 
 `func_1502B9B4`'s false zero-return placeholder and obsolete commented

@@ -24,7 +24,7 @@ s32  func_1510B7B4(s32 arg0, s32 arg1);
 s32  func_151135C4(s32 arg0, s32 arg1, s16 arg2);
 s32  func_151D6778(s32 arg0);
 s32  func_15186794(s32 arg0, s32 arg1);
-s32  func_1502BAD0(s32 arg0, s32 arg1, s16 arg2);
+Gfx *func_1502BAD0(Gfx *commands, s32 mode, s16 view);
 s32  func_15035FE8(s32 arg0, s32 arg1);
 s32  func_15188D00(s32 arg0, s32 arg1, s16 arg2);
 s32  func_151D5E90(s32 arg0, s32 arg1, s32 arg2, s32 arg3);

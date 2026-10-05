@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-05 ([Note 1005](WORKING_NOTES/1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md)):
+Recover `func_1502BAD0`'s 25-actor SDK display-list scan, mode gates, live
+callback-state reread and returned cursor chain. All 173 words / frame 0x48
+match with eleven closed constant-allocation/equality-order guards under
+default IDO. All 4868 three-way target and 194123 native cases pass; thirteen
+focused tests, no skips. All 172 reachable words execute; one retained dead
+load is separately proved unreachable. Only target changes in 6060 slots;
+caller/renderer placeholders remain unchanged. Rebuild: 3301 / 5463 overall,
+2628 / 4790 Game, zero drift. Protected sections/tools/whitespace pass. README
+aggregates updated; no conversion/Init ASM or sibling/frozen Release change.
+All 302 combined checks pass in 265.481 seconds, no skips; relative links pass.
+Next: `func_1502BD84`, 88-word actor update dispatcher.
+
 2026-10-05 ([Note 1004](WORKING_NOTES/1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md)):
 Recover `func_1502B9B4`'s SDK-varargs size query and aligned compressed-header
 read. All 69 body / 71 slot words and frame 0x68 emit directly from default

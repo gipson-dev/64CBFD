@@ -10594,3 +10594,14 @@ game_57FA0,func_1502B110,0xAC,0xAFA8003C,0xAFA70054,-,-,Normalize variadic table
 game_57FA0,func_1502B110,0xB4,0xAFA70054,0xAFA8003C,-,-,Normalize variadic table-range independent depth and descriptor store schedule,,,false
 game_57FA0,func_1502B020,0x94,0xAFA80038,0xAFA5004C,-,-,Normalize variadic table-address independent depth and descriptor store schedule,,,false
 game_57FA0,func_1502B020,0x9C,0xAFA5004C,0xAFA80038,-,-,Normalize variadic table-address independent depth and descriptor store schedule,,,false
+generated_58F80,func_1502BAD0,0x070,0x24170007,0x24170001,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x074,0x24160001,0x24160007,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x0BC,0x54540006,0x56820006,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x0E8,0x5057002C,0x52C2002C,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x11C,0x1676000E,0x1677000E,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x124,0x50570031,0x52C20031,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x12C,0x5056002F,0x52E2002F,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x160,0x5054000E,0x5282000E,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x168,0x50570020,0x52C20020,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x178,0x5456001C,0x56E2001C,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false
+generated_58F80,func_1502BAD0,0x204,0x16760007,0x16770007,-,-,Normalize actor-scan closed constant allocation and equality operand order,,,false

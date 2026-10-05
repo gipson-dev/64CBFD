@@ -12,10 +12,94 @@ extern u8 D_80038080;
 extern s32 D_800BE9F0;
 extern u8 D_800D2040[];
 
-/* Non-matching placeholders for the text-only asm slice asm/58F80.s. */
+typedef struct ActorDisplay58F80 {
+    s32 active;
+    u8 id;
+    u8 state;
+    u8 pad6[0x17E];
+    u32 flags;
+    u8 pad188[0x1A4];
+} ActorDisplay58F80;
 
-s32 func_1502BAD0() {
-    return 0;
+extern ActorDisplay58F80 D_800CC2D0[26];
+extern Gfx D_80084160[], D_80084190[];
+extern s32 D_8003C8E0;
+s32 func_1506196C(ActorDisplay58F80 *actor, s32 view);
+Gfx *func_1502C408();
+Gfx *func_1502C974();
+Gfx *func_150368C4(Gfx *commands, s32 slot, s32 view);
+Gfx *func_15030E08(Gfx *commands, s32 view, s32 mode);
+
+Gfx *func_1502BAD0(Gfx *commands, s32 mode, s16 view) {
+    ActorDisplay58F80 *actor;
+    s32 slot;
+    s32 state;
+
+    gSPDisplayList(commands++, D_80084160);
+    actor = D_800CC2D0;
+    for (slot = 0; slot != 25; slot++, actor++) {
+        D_8003C8E0 = (slot & 0xFFFFFF) | 0x1000000;
+        state = actor->active;
+        if (state == 0) {
+            continue;
+        }
+        state = actor->state;
+        if (state == 3 || state == 5) {
+            continue;
+        }
+        if (state == 2) {
+            if (mode != 2) {
+                continue;
+            }
+        } else if (actor->id == 255) {
+            continue;
+        }
+        if (mode == 6) {
+            if (state != 7) {
+                continue;
+            }
+        } else if (mode == 0) {
+            if (((actor->flags >> 9) & 1) == 0) {
+                continue;
+            }
+        } else if (mode == 1) {
+            if (state == 7 || state == 1) {
+                continue;
+            }
+            if (state == 0 && func_1506196C(actor, view) < 255) {
+                continue;
+            }
+        } else if (mode == 2) {
+            if (state != 2) {
+                if (state == 7 || (state != 0 && state != 1)) {
+                    continue;
+                }
+                if (state == 0 && func_1506196C(actor, view) == 255) {
+                    continue;
+                }
+            }
+        }
+        /* The filter callback can change the state used to select a renderer. */
+        if (actor->state == 2) {
+            commands = func_1502C408(commands, slot);
+        } else {
+            commands = func_1502C974(commands, slot, view, mode, 0);
+            if (slot == 0) {
+                commands = func_150368C4(commands, slot, view);
+            }
+        }
+    }
+    D_8003C8E0 = 0x1FFFFFF;
+    if (mode == 1) {
+        commands = func_15030E08(commands, view, 0);
+    } else if (mode == 2) {
+        commands = func_15030E08(commands, view, 1);
+    } else if (mode == 6) {
+        commands = func_15030E08(commands, view, 2);
+    }
+    gSPDisplayList(commands++, D_80084190);
+    D_8003C8E0 = 0;
+    return commands;
 }
 
 s32 func_1502BD84() {
@@ -45,7 +129,7 @@ s32 func_1502C3BC(s32 arg0) {
     return temp_v1;
 }
 
-s32 func_1502C408() {
+Gfx *func_1502C408() {
     return 0;
 }
 
@@ -57,7 +141,7 @@ s32 func_1502C6E8() {
     return 0;
 }
 
-s32 func_1502C974() {
+Gfx *func_1502C974() {
     return 0;
 }
 

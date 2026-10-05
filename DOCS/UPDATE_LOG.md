@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-05 Game Actor Display-List Scan Recovery
+
+[Note 1005](WORKING_NOTES/1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md)
+replaces `func_1502BAD0`'s placeholder with its 25-actor SDK display-list scan.
+All 173 words / frame 0x48 match under default IDO with eleven closed
+constant-register/equality-order guards. Three-way target and native C
+qualification cover asymmetric signed alpha gates, callback-mutated state,
+cursor returns, full tables and signed-view lifetime. Thirteen focused tests
+pass, no skips. Only target changes across 6060 slots; retained caller/renderer
+placeholders are preserved, not claimed complete. Rebuild/protected sections/
+tools/whitespace pass. README aggregates: 3301 / 5463 overall, 2628 / 4790 Game,
+zero drift. Conversion/47 retained Init ASM functions and sibling/frozen Release
+unchanged. All 302 combined checks pass in 265.481 seconds, no skips; relative
+links resolve. Next: `func_1502BD84`, actor update callback dispatcher.
+
 ## 2026-10-05 Game Resource Size Query Direct Recovery
 
 [Note 1004](WORKING_NOTES/1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md)

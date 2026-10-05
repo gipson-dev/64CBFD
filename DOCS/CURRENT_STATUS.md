@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game actor display-list scan recovery: [Note 1005](WORKING_NOTES/1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md)
+recovers `func_1502BAD0`, all 173 words / frame 0x48. Default IDO emits the
+semantic scan; eleven expected-word guards normalize a closed constant-register
+cycle and equality operand order only. All 4868 three-way target cases and
+194123 native cases pass, including signed alpha gates, live callback state,
+full table/cursor chains and SDK packets. Thirteen focused tests pass, no skips.
+All 172 reachable words execute; a retained dead load is proved unreachable
+and byte-exact. Only target changes across 6060 slots; placeholder helpers/
+callers remain unchanged, not qualified as full renderers. Rebuild: 3301 / 5463
+overall, 2628 / 4790 Game, zero drift. Protected sections/tools/whitespace pass;
+README aggregates updated. Conversion/47 Init ASM functions and sibling/frozen
+Release unchanged. All 302 combined regression checks pass in 265.481 seconds,
+no skips; touched relative links resolve. Next: `func_1502BD84`, 88-word actor
+update dispatcher.
+
 Game resource-size query direct recovery: [Note 1004](WORKING_NOTES/1004-game-resource-size-query-direct-match-and-aligned-header-20261005.md)
 recovers `func_1502B9B4`, all 69 body / 71 slot words and frame 0x68
 directly under default IDO O2/g3, no guards/profile override. Three-u64
