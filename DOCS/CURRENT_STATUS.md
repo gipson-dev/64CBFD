@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Requested Init pause resume: [Note 971](WORKING_NOTES/971-init-pause-resume-remaining-assembly-decision-20261004.md)
+freshly passes 110 focused checks in 64.829 seconds, no skips. Init remains
+492 C / 47 ASM entries (12252 ASM bytes); every retained owner/raw slot and
+complete existing Init code/data plus Game data remain retail-exact. Seventeen
+entries are investigation targets, thirty intentional assembly. No replacement
+is ready: best freshly checked bitmap is 20 / 19 words, decoder 528 bytes over,
+formatter 196 over; MMIO's full eleven-word C match remains unresolved.
+No new compiler hypothesis or production relink is claimed. Two interrupted
+Game color-emitter source/test edits are preserved separately and unbanked.
+Production Init, README aggregates and sibling/frozen Release unchanged.
+
 Queued segment writer: [Note 970](WORKING_NOTES/970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md)
 recovers `func_1510D8C0` using the SDK macro: 40 / 44 words, frameless,
 38 raw differences, no guards. Ten new tests connect actual reset/append/write;

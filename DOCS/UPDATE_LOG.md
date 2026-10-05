@@ -18,6 +18,15 @@ make -C conker progress
 
 ### 2026-10-04 current Init corpus checkpoint
 
+- Init [Note 971](WORKING_NOTES/971-init-pause-resume-remaining-assembly-decision-20261004.md)
+  resumes the requested remaining-ASM decision. All 110 focused checks pass,
+  no skips; 492 C / 47 ASM entries and complete existing Init code/data plus
+  Game data remain exact. Seventeen investigation targets, thirty intentional
+  owners; no replacement is ready. Bitmap is 20 / 19 words, decoder 528 bytes
+  over, formatter 196 over; MMIO full C match unresolved. Two interrupted Game
+  color-emitter edits stay separate and unbanked. No production Init/README/
+  sibling/Release changes or new compiler hypothesis/relink claimed.
+
 - Game [Note 970](WORKING_NOTES/970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md)
   recovers SDK-based queued segment writer: 40 / 44 words, frameless, 38 raw
   differences, no guards. Ten new checks include actual queue workflow and

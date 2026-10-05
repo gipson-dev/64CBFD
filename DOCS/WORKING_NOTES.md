@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-04 ([Note 971](WORKING_NOTES/971-init-pause-resume-remaining-assembly-decision-20261004.md)):
+Resume the requested Init assessment from banked HEAD. All 110 focused checks
+pass in 64.829 seconds, no skips; all 47 retained owners/raw slots and complete
+existing Init code/data plus Game data stay exact. Seventeen investigation
+targets and thirty intentional owners remain. No approved conversion: bitmap
+20 / 19 words, decoder 528 bytes over, formatter 196 over, MMIO full match open.
+No new fitting hypothesis or production relink claimed. Preserve two unfinished
+Game color-emitter edits separately; production Init/README/sibling unchanged.
+
 2026-10-04 ([Note 970](WORKING_NOTES/970-game-queued-segment-writer-and-big-endian-alias-qualification-20261004.md)):
 Recover queued segment writer `func_1510D8C0` with SDK macros: 40 / 44 words,
 frameless, 38 differences, no guards. Ten new checks connect actual reset/append/
