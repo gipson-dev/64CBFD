@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-05 Game Offset Relocator Guarded Match
+
+[Note 992](WORKING_NOTES/992-game-offset-relocator-typed-scan-and-guarded-bulk-match-20261005.md)
+matches all 72 linked `func_1502B4A8` words with a typed automatic-count scan
+and seventeen temporary-register guards. Not a direct compiler match; the
+77-word variadic loader remains raw-exact. All 161 combined checks pass,
+including 5113 three-way relocation cases and partial-allocation rejection.
+Full consumer rebuild and complete Init/Debugger/data identity hold. README
+totals: 3289 / 5463 overall, 2616 / 4790 Game, zero drift. Conversion/Init ASM
+unchanged; no host source/build/save or frozen Release change. Next: `func_1502B350`.
+
 ## 2026-10-05 Game Variadic Resource Loader Direct Match
 
 [Note 991](WORKING_NOTES/991-game-variadic-resource-loader-direct-stack-match-20261005.md)

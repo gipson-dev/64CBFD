@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game offset relocator guarded match: [Note 992](WORKING_NOTES/992-game-offset-relocator-typed-scan-and-guarded-bulk-match-20261005.md)
+matches all 72 linked `func_1502B4A8` words with a typed automatic-count scan
+and seventeen checked bulk temporary-register guards. Not a direct compiler
+match: raw C has seventeen differences, no frame or padding; the 186-form
+screen finds no direct match. All 161 combined checks pass, including 5113
+three-way relocation cases and every omitted-guard rejection control.
+Full consumer rebuild and complete Init/Debugger/data identity hold.
+Totals: 3289 / 5463 overall, 2616 / 4790 Game, zero drift; conversion/Init ASM
+unchanged. The 77-word variadic loader remains directly exact. README aggregate
+tables updated; sibling/frozen Release unchanged. Next: 86-word block loader
+`func_1502B350` (77 body words, 78 differences, C/retail frames 0x38/0x30).
+
 Game variadic loader direct match: [Note 991](WORKING_NOTES/991-game-variadic-resource-loader-direct-stack-match-20261005.md)
 matches all 77 words of `func_1502B6BC`, including retail's 0x50 frame,
 nullable-output prologue and private descriptor at sp+0x38. Separate fallback

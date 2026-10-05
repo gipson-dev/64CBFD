@@ -134,19 +134,13 @@ void *func_1502B350(u32 arg0, u32 arg1, s32 *arg2) {
     return result;
 }
 s32 func_1502B4A8(u32 *entries, s32 count) {
-    u32 *cursor;
+    typedef struct ResourceRelocationEntry57FA0 { u32 offset; u32 length; } Entry;
     u32 base;
     s32 i;
 
     if (count == 0) {
-        cursor = entries;
-        do {
-            count++;
-            if (cursor[1] & 0x80000000) {
-                break;
-            }
-            cursor += 2;
-        } while (1);
+        while ((((Entry *)entries)[count++].length & 0x80000000) == 0) {
+        }
     }
     base = (u32)entries;
     for (i = 0; i < count; i++) {

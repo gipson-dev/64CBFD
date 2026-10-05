@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 992](WORKING_NOTES/992-game-offset-relocator-typed-scan-and-guarded-bulk-match-20261005.md)):
+Match all 72 linked `func_1502B4A8` words using its typed automatic-count scan
+and seventeen checked bulk temporary-register guards, not a direct compiler
+match. Raw C fits the body without frame/padding; 186 source forms find no
+direct match. All 161 final checks pass, no skips, with 5113 three-way cases,
+all reachable words and omitted-guard rejection controls. Full consumer rebuild
+and protected sections hold; variadic loader stays directly exact. Totals:
+3289 / 5463 overall, 2616 / 4790 Game, zero drift. README aggregates updated;
+conversion/Init ASM and sibling/frozen Release unchanged. Next: `func_1502B350`.
+
 2026-10-05 ([Note 991](WORKING_NOTES/991-game-variadic-resource-loader-direct-stack-match-20261005.md)):
 Match all 77 words of `func_1502B6BC` directly from C, no guards/profile changes.
 Separate nullable output selection and descriptor declaration placement recover

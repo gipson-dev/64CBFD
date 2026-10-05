@@ -10520,3 +10520,20 @@ game_1944C0,func_15168E54,0x60,0x90CF0003,0x906F0003,-,-,Normalize closed attach
 game_1944C0,func_15168E54,0x7C,0x03113021,0x03111821,-,-,Normalize closed attachment cursor-opcode register allocation,,,false
 game_1944C0,func_15168E54,0x80,0x80C30000,0x80620000,-,-,Normalize closed attachment cursor-opcode register allocation,,,false
 game_1944C0,func_15168E54,0x84,0x1473FFF2,0x1662FFF2,-,-,Normalize closed attachment register allocation and equality operand order,,,false
+game_57FA0,func_1502B4A8,0xA0,0x000278C0,0x000270C0,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xA4,0x0005C0C0,0x000578C0,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xA8,0x03043021,0x01E43021,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xAC,0x008F1821,0x008E1821,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xB8,0x8C790004,0x8C780004,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xC0,0x03274824,0x0307C824,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xC8,0xAC690004,0xAC790004,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xCC,0x15200003,0x17200003,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xD0,0x00445821,0x00445021,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xDC,0xAC6B0000,0xAC6A0000,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xE0,0x8C6C000C,0x8C6B000C,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xE8,0x01876824,0x01676024,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xF0,0xAC6D000C,0xAC6C000C,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xF4,0x15A00003,0x15800003,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0xF8,0x00447821,0x00447021,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0x104,0xAC6F0008,0xAC6E0008,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false
+game_57FA0,func_1502B4A8,0x110,0x8C790004,0x8C780004,-,-,Normalize closed resource-relocation bulk temporary register allocation,,,false

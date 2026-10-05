@@ -216,7 +216,7 @@ if(func_1502B6BC(&sizeOutput,-7,&relocatedOutput,2,items[0],items[1])!=entries
    || error || relocatedOutput!=-7 || entries[0]!=16 || entries[1]!=0x10000004) return 2;
 ''')
 
-    def test_retail_varargs_unspecified_zero_depth_and_no_guards(self):
+    def test_retail_varargs_unspecified_zero_depth_and_no_loader_guards(self):
         self.assertIn('va_arg(path, s32)', self.body)
         self.assertNotRegex(self.body, r'u32 descriptor\s*=')
         self.assertNotIn('depth <=', self.body)
@@ -225,7 +225,7 @@ if(func_1502B6BC(&sizeOutput,-7,&relocatedOutput,2,items[0],items[1])!=entries
         self.assertIn('if (relocated != NULL)', self.body)
         self.assertEqual(struct.unpack_from('>I', self.rom, 0x58B6C)[0], 0x27BDFFB0)
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as source:
-            self.assertFalse(any(row['function'] in ('func_1502B6BC','func_1502B4A8')
+            self.assertFalse(any(row['function'] == 'func_1502B6BC'
                                  for row in csv.DictReader(source)))
         self.assertIn('D_800C3D68[15] = saved;', self.source)
         self.assertIn('amount = func_10006240(compressed, result, D_8003809C);', self.source)
@@ -406,20 +406,29 @@ for(phase=0;phase<4;phase++) {
         production,_,addresses=match_progress.load_elf_functions(
             str(self.root/'conker/build/conker.us.elf'),'mips-linux-gnu-objdump')
         measured={'func_1502B6BC':(77,77,0x50,0,'40ead79430624c623749d0a0b9319470f3c925d306da179f6eb908c4828b3fe1'),
-                  'func_1502B4A8':(65,72,0,71,'bcce58836363dffad7c081528b0be692fbdfc461a5cc8b71e9b3376e16b43262')}
+                  'func_1502B4A8':(72,72,0,17,'1174f22c712142aeaec1cd146c214088942d94898c0a3d1a6a0a867ea121a96d')}
         for name,(body,size,frame,diffs,digest) in measured.items():
             words=fresh[name]
             count=max(i for i,w in enumerate(words) if w==0x03E00008)+2
             self.assertEqual(count,body)
             self.assertEqual(words[count:],[0]*(len(words)-count))
             slot=list(words[:count])+[0]*(size-count)
-            self.assertEqual(production[name],slot)
             self.assertEqual(addresses[name],int(name[5:],16))
             self.assertEqual(0x10000-(slot[0]&0xFFFF) if slot[0]>>16==0x27BD else 0,frame)
             first=0x2D4B0+addresses[name]-0x15000000
             retail=struct.unpack_from('>'+str(size)+'I',self.rom,first)
             self.assertEqual(sum(a!=b for a,b in zip(slot,retail)),diffs)
             self.assertEqual(hashlib.sha256(struct.pack('>'+str(size)+'I',*slot)).hexdigest(),digest)
+            if name == 'func_1502B4A8':
+                from tools.tests.test_game_offset_relocator_match import GUARDS
+                guarded=slot[:]
+                for offset,(expected,replacement) in GUARDS.items():
+                    self.assertEqual(guarded[offset//4],expected)
+                    guarded[offset//4]=replacement
+                self.assertEqual(production[name],guarded)
+                self.assertEqual(guarded,list(retail))
+            else:
+                self.assertEqual(production[name],slot)
             if name == 'func_1502B6BC':
                 self.assertEqual(slot,list(retail))
                 self.assertEqual(slot[0x30//4],0x27B20044)

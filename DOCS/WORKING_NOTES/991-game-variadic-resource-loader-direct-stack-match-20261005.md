@@ -2,6 +2,11 @@
 
 Date: 2026-10-05. Starting HEAD: `59f26b8e`.
 
+Follow-up: [Note 992](992-game-offset-relocator-typed-scan-and-guarded-bulk-match-20261005.md)
+matches the connected relocator with a typed scan and seventeen checked bulk
+register guards. The 65-word/71-difference relocator below describes this
+earlier checkpoint; the loader's direct match remains unchanged.
+
 ## Result And Scope
 
 `func_1502B6BC` now matches its complete 77-word / 308-byte retail slot

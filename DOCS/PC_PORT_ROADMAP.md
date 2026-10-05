@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Offset Relocator Guarded Match - 2026-10-05
+
+[Note 992](WORKING_NOTES/992-game-offset-relocator-typed-scan-and-guarded-bulk-match-20261005.md)
+matches all 72 linked DECOMP `func_1502B4A8` words with seventeen checked
+temporary-register guards, not directly from C. All 161 combined checks pass,
+including connected resource fixtures, 5113 three-way relocation cases and
+protected sections after a full consumer rebuild. Sibling translated code
+already has retail's bulk allocation; no synchronization is needed for this
+matching change. Existing host diagnostics remain separate. No host source,
+build, save or frozen Release change. Game exact count: 2616 / 4790.
+Real resource/render/runtime qualification remains open.
+
 ## Game Variadic Resource Loader Direct Match - 2026-10-05
 
 [Note 991](WORKING_NOTES/991-game-variadic-resource-loader-direct-stack-match-20261005.md)

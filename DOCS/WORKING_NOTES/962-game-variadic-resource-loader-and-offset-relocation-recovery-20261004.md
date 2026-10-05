@@ -5,7 +5,9 @@ Date: 2026-10-04
 Current follow-up: [Note 991](991-game-variadic-resource-loader-direct-stack-match-20261005.md)
 matches all 77 loader words directly from C with no guards or profile changes.
 The seventeen-difference measurements below describe this recovery checkpoint;
-the relocator remains non-matching. Lookup/block bodies were recovered in the
+the relocator is subsequently matched with seventeen checked register guards in
+[Note 992](992-game-offset-relocator-typed-scan-and-guarded-bulk-match-20261005.md).
+Lookup/block bodies were recovered in the
 subsequent Note 963, so placeholder statements below are historical boundaries.
 
 ## Scope And Result
