@@ -1,0 +1,314 @@
+"""Screen the live actor pass and its captured predecessor ordering."""
+
+import json
+import struct
+import subprocess
+from pathlib import Path
+
+from tools.experiments.game_actor_update_dispatch_candidates import DECLARATIONS as ACTOR_DECLARATIONS
+from tools.match_progress import load_elf_functions
+
+DECLARATIONS = ACTOR_DECLARATIONS + '''
+extern ActorUpdate58F80 D_800CC2D0[26];
+extern ActorUpdate58F80 D_800D121C[];
+extern u32 D_800C3E74;
+extern u8 D_800C3E90, D_800C3E70, D_800BEAC0;
+void func_1502BD84(ActorUpdate58F80 *actor, s32 slot);
+s32 func_1503F964();
+s32 func_1502F3C8();
+s32 func_1502F948();
+s32 func_15030468();
+s32 func_1507C22C();
+'''
+BASELINE = '''void func_1502BEE4(void) {
+    u8 depths[25];
+    u8 ordered[25];
+    ActorUpdate58F80 *actor;
+    ActorUpdate58F80 *cursor;
+    s32 slot, level, maxDepth, count, index;
+
+    func_1503F964();
+    D_800C3E90 = 0;
+    D_800C3E74 = 0;
+    maxDepth = 0;
+    for (actor = D_800CC2D0; actor < D_800D121C; actor++) {
+        if (actor->maskId != 0) {
+            D_800C3E74 |= 1u << ((actor->maskId + 31) & 31);
+        }
+    }
+    bzero(depths, 25);
+    for (slot = 0, actor = D_800CC2D0; slot < 25; slot++, actor++) {
+        if (actor->active == 0) {
+            continue;
+        }
+        if (actor->predecessor != 0) {
+            cursor = actor;
+            depths[slot] = 0;
+            while (cursor->predecessor != 0) {
+                depths[slot]++;
+                cursor = D_800CC2D0 + cursor->predecessor - 1;
+            }
+            if (maxDepth < depths[slot]) {
+                maxDepth = depths[slot];
+            }
+        } else {
+            func_1502BD84(actor, slot);
+        }
+    }
+    count = 0;
+    if (maxDepth != 0) {
+        for (level = 1; level <= maxDepth; level++) {
+            for (slot = 0; slot < 25; slot++) {
+                if (depths[slot] == level) {
+                    ordered[count++] = slot;
+                }
+            }
+        }
+        for (index = 0; index < count; index++) {
+            func_1502BD84(D_800CC2D0 + ordered[index], ordered[index]);
+        }
+    }
+    func_1502F3C8();
+    for (actor = D_800CC2D0; actor != D_800D121C; actor++) {
+        if (actor->active != 0) {
+            func_1502F948(actor);
+        }
+    }
+    func_15030468();
+    if (D_800BEAC0 == 0) {
+        func_1507C22C(0);
+    }
+    D_800C3E70 = 0;
+}'''
+
+
+def candidates():
+    forms = [('baseline', BASELINE)]
+    for a in (25, 26, 28, 32):
+        for b in (25, 26, 28, 32, 40, 48):
+            forms.append((f'arrays-{a}-{b}', BASELINE.replace('depths[25]', f'depths[{a}]')
+                          .replace('ordered[25]', f'ordered[{b}]')))
+    for name, before, after in (
+            ('subtract-index', 'D_800CC2D0 + cursor->predecessor - 1',
+             'D_800CC2D0 + (cursor->predecessor - 1)'),
+            ('count-not-equal', 'index < count', 'index != count'),
+            ('slot-not-equal', 'slot < 25', 'slot != 25'),
+            ('level-not-equal', 'level <= maxDepth', 'level != maxDepth + 1'),
+            ('base-end', 'D_800D121C', '(D_800CC2D0 + 25)'),
+            ('wrong-shift-negative-control', '((actor->maskId + 31) & 31)', '(actor->maskId & 31)'),
+            ('wrong-recheck-negative-control',
+             '            func_1502BD84(D_800CC2D0 + ordered[index], ordered[index]);',
+             '            if (D_800CC2D0[ordered[index]].active)\n'
+             '                func_1502BD84(D_800CC2D0 + ordered[index], ordered[index]);')):
+        forms.append((name, BASELINE.replace(before, after)))
+    shape = BASELINE.replace('    u8 depths[25];\n    u8 ordered[25];',
+                             '    u8 ordered[25];\n    u8 depths[25];')
+    shape = shape.replace('    for (actor = D_800CC2D0; actor < D_800D121C; actor++) {',
+                          '    actor = D_800CC2D0;\n    do {').replace(
+        '    bzero(depths, 25);',
+        '    bzero(depths, 25);')
+    shape = shape.replace('    }\n    bzero(depths, 25);',
+                          '        actor++;\n    } while (actor < D_800D121C);\n    bzero(depths, 25);')
+    shape = shape.replace('    for (actor = D_800CC2D0; actor != D_800D121C; actor++) {',
+                          '    actor = D_800CC2D0;\n    do {').replace(
+        '    }\n    func_15030468();',
+        '        actor++;\n    } while (actor != D_800D121C);\n    func_15030468();')
+    for subtract in (False, True):
+        for cached_link in (False, True):
+            body = shape
+            if subtract:
+                body = body.replace('D_800CC2D0 + cursor->predecessor - 1',
+                                    'D_800CC2D0 + (cursor->predecessor - 1)')
+            if cached_link:
+                body = body.replace('s32 slot, level, maxDepth, count, index;',
+                                    's32 slot, level, maxDepth, count, index, link;').replace(
+                    'while (cursor->predecessor != 0)',
+                    'while ((link = cursor->predecessor) != 0)').replace(
+                    'D_800CC2D0 + cursor->predecessor - 1', 'D_800CC2D0 + link - 1').replace(
+                    'D_800CC2D0 + (cursor->predecessor - 1)', 'D_800CC2D0 + (link - 1)')
+            forms.append((f'do-reversed-{int(subtract)}-{int(cached_link)}', body))
+    shape = shape.replace('D_800D121C', '(D_800CC2D0 + 25)')
+    shape = shape.replace('    u8 ordered[25];\n    u8 depths[25];',
+                          '    u8 depths[25];\n    u8 ordered[25];')
+    shape = shape.replace('for (level = 1; level <= maxDepth; level++)',
+                          'for (slot = 1; slot <= maxDepth; slot++)').replace(
+        'for (slot = 0; slot < 25; slot++)', 'for (index = 0; index < 25; index++)').replace(
+        'if (depths[slot] == level)', 'if (depths[index] == slot)').replace(
+        'ordered[count++] = slot;', 'ordered[count++] = index;').replace(
+        'for (index = 0; index < count; index++)', 'for (slot = 0; slot < count; slot++)').replace(
+        'ordered[index], ordered[index]', 'ordered[slot], ordered[slot]').replace(
+        's32 slot, level, maxDepth, count, index;', 's32 slot, maxDepth, count, index;')
+    shape = shape.replace('    for (slot = 0, actor = D_800CC2D0; slot < 25; slot++, actor++) {',
+                          '    slot = 0;\n    actor = D_800CC2D0;\n    do {').replace(
+        '        if (actor->active == 0) {\n            continue;\n        }\n',
+        '        if (actor->active != 0) {\n').replace(
+        '    }\n    count = 0;',
+        '        }\n        slot++;\n        actor++;\n    } while (slot < 25);\n    count = 0;')
+    for subtract in (False, True):
+        for cached_link in (False, True):
+            for masked in (False, True):
+                body = shape
+                if subtract:
+                    body = body.replace('D_800CC2D0 + cursor->predecessor - 1',
+                                        'D_800CC2D0 + (cursor->predecessor - 1)')
+                if cached_link:
+                    body = body.replace('s32 slot, maxDepth, count, index;',
+                                        's32 slot, maxDepth, count, index, link;').replace(
+                        'while (cursor->predecessor != 0)', 'while ((link = cursor->predecessor) != 0)').replace(
+                        'D_800CC2D0 + cursor->predecessor - 1', 'D_800CC2D0 + link - 1').replace(
+                        'D_800CC2D0 + (cursor->predecessor - 1)', 'D_800CC2D0 + (link - 1)')
+                if not masked:
+                    body = body.replace('((actor->maskId + 31) & 31)', '(actor->maskId + 31)')
+                forms.append((f'fixed-do-{int(subtract)}-{int(cached_link)}-{int(masked)}', body))
+    shape = dict(forms)['fixed-do-1-0-1']
+    for arrays_first in (False, True):
+        for reverse_arrays in (False, True):
+            for advance_first in (False, True):
+                for external_end in (False, True):
+                    body = shape
+                    if not arrays_first:
+                        body = body.replace('    u8 depths[25];\n    u8 ordered[25];\n', '').replace(
+                            '    s32 slot, maxDepth, count, index;',
+                            '    s32 slot, maxDepth, count, index;\n    u8 depths[25];\n    u8 ordered[25];')
+                    if reverse_arrays:
+                        body = body.replace('    u8 depths[25];\n    u8 ordered[25];',
+                                            '    u8 ordered[25];\n    u8 depths[25];')
+                    if advance_first:
+                        body = body.replace('                depths[slot]++;\n'
+                                            '                cursor = D_800CC2D0 + (cursor->predecessor - 1);',
+                                            '                cursor = D_800CC2D0 + (cursor->predecessor - 1);\n'
+                                            '                depths[slot]++;')
+                    if external_end:
+                        body = body.replace('(D_800CC2D0 + 25)', 'D_800D121C')
+                    forms.append((f'layout-{int(arrays_first)}-{int(reverse_arrays)}-'
+                                  f'{int(advance_first)}-{int(external_end)}', body))
+    return forms
+
+
+def compile_candidate(root, output, name, source):
+    conker = root / 'conker'
+    path = output / (name + '.c')
+    obj, elf = path.with_suffix('.o'), path.with_suffix('.elf')
+    path.write_text('#include <ultra64.h>\n' + DECLARATIONS + '\n' + source + '\n')
+    command = [str(root / 'ido/ido5.3_recomp/cc'), '-c', '-32', '-G', '0', '-Xfullwarn',
+               '-Xcpluscomm', '-signed', '-nostdinc', '-non_shared', '-Wab,-r4300_mul',
+               '-D_LANGUAGE_C', '-D_FINALROM', '-DF3DEX_GBI_2', '-D_MIPS_SZLONG=32',
+               '-woff', '649,838']
+    for include in ('.', 'include', 'include/2.0L', 'include/2.0L/PR', 'include/libc'):
+        command += ['-I', include]
+    command += ['-mips2', '-o32', '-O2', '-g3', '-o', str(obj.relative_to(conker)),
+                str(path.relative_to(conker))]
+    result = subprocess.run(command, cwd=conker, capture_output=True, text=True)
+    if result.returncode:
+        raise RuntimeError(result.stderr)
+    script = output / 'slot.ld'
+    script.write_text('SECTIONS { .text 0x1502BEE4 : SUBALIGN(4) { *(.text) } }\n')
+    symbols = {name: int(name[5:], 16) for name in (
+        'func_1502BD84', 'func_1503F964', 'func_1502F3C8', 'func_1502F948',
+        'func_15030468', 'func_1507C22C')}
+    symbols.update(D_800CC2D0=0x800CC2D0, D_800D121C=0x800D121C,
+                   D_800C3E74=0x800C3E74, D_800C3E90=0x800C3E90,
+                   D_800C3E70=0x800C3E70, D_800BEAC0=0x800BEAC0, bzero=0x100226F0)
+    subprocess.run(['mips-linux-gnu-ld', '-m', 'elf32btsmip', '-T', str(script),
+                    '-e', 'func_1502BEE4',
+                    *['--defsym=' + symbol + '=' + hex(value) for symbol, value in symbols.items()],
+                    '-o', str(elf), str(obj)], check=True, capture_output=True)
+    functions, _, _ = load_elf_functions(str(elf), 'mips-linux-gnu-objdump')
+    words = functions['func_1502BEE4']
+    size = max(i for i, word in enumerate(words) if word == 0x03E00008) + 2
+    slot = words[:size] + [0] * max(0, 176 - size)
+    retail = struct.unpack_from('>176I', (conker / 'conker.us.bin').read_bytes(), 0x59394)
+    differences = [(i * 4, f'{a:08X}', f'{b:08X}') for i, (a, b) in enumerate(zip(slot, retail)) if a != b]
+    record = dict(name=name, body_words=size, frame=(-words[0]) & 0xFFFF,
+                  real_differences=len(differences) + max(0, size - 176),
+                  differences=differences, diagnostics=result.stdout + result.stderr)
+    return record, slot
+
+
+SELECTED = '''void func_1502BEE4(void) {
+    ActorUpdate58F80 *actor;
+    ActorUpdate58F80 *cursor;
+    s32 slot, maxDepth, count, index;
+    u8 depths[25];
+    u8 ordered[25];
+
+    func_1503F964();
+    D_800C3E90 = 0;
+    D_800C3E74 = 0;
+    maxDepth = 0;
+    actor = D_800CC2D0;
+    do {
+        if (actor->maskId != 0) {
+            D_800C3E74 |= 1u << ((actor->maskId + 31) & 31);
+        }
+        actor++;
+    } while (actor < (D_800CC2D0 + 25));
+    bzero(depths, 25);
+    slot = 0;
+    actor = D_800CC2D0;
+    do {
+        if (actor->active != 0) {
+            if (actor->predecessor != 0) {
+                cursor = actor;
+                depths[slot] = 0;
+                while (cursor->predecessor != 0) {
+                    cursor = D_800CC2D0 + (cursor->predecessor - 1);
+                    depths[slot]++;
+                }
+                if (maxDepth < depths[slot]) {
+                    maxDepth = depths[slot];
+                }
+            } else {
+                func_1502BD84(actor, slot);
+            }
+        }
+        slot++;
+        actor++;
+    } while (slot < 25);
+    count = 0;
+    if (maxDepth != 0) {
+        for (slot = 1; slot <= maxDepth; slot++) {
+            for (index = 0; index < 25; index++) {
+                if (depths[index] == slot) {
+                    ordered[count++] = index;
+                }
+            }
+        }
+        for (slot = 0; slot < count; slot++) {
+            func_1502BD84(D_800CC2D0 + ordered[slot], ordered[slot]);
+        }
+    }
+    func_1502F3C8();
+    actor = D_800CC2D0;
+    do {
+        if (actor->active != 0) {
+            func_1502F948(actor);
+        }
+        actor++;
+    } while (actor != (D_800CC2D0 + 25));
+    func_15030468();
+    if (D_800BEAC0 == 0) {
+        func_1507C22C(0);
+    }
+    D_800C3E70 = 0;
+}'''
+
+
+def production_body():
+    return SELECTED.replace('D_800CC2D0', '((ActorUpdate58F80 *)D_800CC2D0)')
+
+
+def main():
+    root = Path(__file__).resolve().parents[2]
+    output = root / 'conker/build/game-actor-update-pass'
+    output.mkdir(exist_ok=True)
+    records = []
+    for name, body in candidates():
+        record, _ = compile_candidate(root, output, name, body)
+        records.append(record)
+        print(name, record['body_words'], hex(record['frame']), record['real_differences'], flush=True)
+    (output / 'screen.json').write_text(json.dumps(records, indent=2) + '\n')
+
+
+if __name__ == '__main__':
+    main()

@@ -153,8 +153,9 @@ static int compare(void) {int i;if(error || count!=wanted) return 1;for(i=0;i<co
                          '0ce9ed73235a6dfd192422f224efe6d78bcb0b07a8cd2eb9bccb942370a9d9b6')
         caller = functions['func_1502BEE4']
         self.assertEqual(len(caller), 176)
-        self.assertEqual(hashlib.sha256(struct.pack('>176I', *caller)).hexdigest(),
-                         '0fec5b32d47b6d2b7a1045ba46ba1333914fddc792e91fab482c1dca76bab842')
+        from tools.experiments import game_actor_update_pass_candidates as caller_screen
+        _, recovered_caller = caller_screen.compile_candidate(self.root, self.output, 'recovered-caller', caller_screen.SELECTED)
+        self.assertEqual(caller, recovered_caller)
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as file:
             self.assertFalse(any(r['function'] == 'func_1502BD84' for r in csv.DictReader(file)))
 

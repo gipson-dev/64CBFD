@@ -1,5 +1,10 @@
 # Game Actor Update Dispatcher And Carried Slot ABI
 
+Follow-up: [Note 1007](1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md)
+now recovers the caller semantically and connects this actual dispatcher.
+The caller-placeholder preservation statements below describe this historical
+checkpoint; the dispatcher itself remains direct and byte-exact.
+
 Date: 2026-10-05. Starting HEAD: `316a3287`, the actor display-list scan in
 [Note 1005](1005-game-actor-display-list-scan-match-and-live-callback-state-20261005.md).
 

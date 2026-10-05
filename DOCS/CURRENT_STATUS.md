@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Game actor update pass semantic recovery: [Note 1007](WORKING_NOTES/1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md)
+replaces `func_1502BEE4`'s placeholder with live mask/activity scans,
+predecessor-depth capture and stable ordered updates. It is not byte-exact:
+174 body / 176 slot words, frame 0x88, 115 differences, no new guards/profile
+override. All 771 three-way cases, including 257 actual connected dispatcher
+cases, and 16384 native independent-reference cases pass. All 176 retail words
+execute; wrong-shift/recheck controls fail and cyclic-prefix checks preserve
+retail nontermination/wrapping. Seventeen pass/dispatcher focused checks pass,
+no skips. Only target changes in 6060 slots; previous exact recoveries and
+patch table stay intact. Rebuild: 3302 / 5463 overall, 2629 / 4790 Game, zero
+drift. Conversion/47 Init ASM functions, README aggregates and sibling/frozen
+Release unchanged. Next: finish this caller's stack layout and scheduling.
+All 319 combined checks pass in 305.557 seconds, no skips; protected sections,
+tools, whitespace and 2926 relative links pass.
+
 Game actor update dispatcher direct recovery: [Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)
 recovers `func_1502BD84`, all 88 words / frame 0x20 directly under default
 IDO, no guards/profile override. Callee inspection recovers the carried slot

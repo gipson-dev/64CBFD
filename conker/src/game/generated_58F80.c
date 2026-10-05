@@ -106,7 +106,9 @@ typedef struct ActorUpdate58F80 {
     s32 active;
     u8 id;
     u8 state;
-    u8 pad6[0x9E];
+    u8 pad6[0x5F];
+    u8 predecessor;
+    u8 pad66[0x3E];
     u8 signal;
     u8 padA5[0x53];
     u32 flags;
@@ -121,7 +123,9 @@ typedef struct ActorUpdate58F80 {
     u8 status;
     u8 pad1FD[0x63];
     u32 optional;
-    u8 pad264[0xC8];
+    u8 pad264[0x10];
+    u8 maskId;
+    u8 pad275[0xB7];
 } ActorUpdate58F80;
 
 extern u8 D_800C666F[];
@@ -185,8 +189,80 @@ void func_1502BD84(ActorUpdate58F80 *actor, s32 slot) {
     }
 }
 
-s32 func_1502BEE4() {
-    return 0;
+extern u32 D_800C3E74;
+extern u8 D_800C3E70, D_800BEAC0;
+s32 func_1503F964();
+s32 func_1502F3C8();
+s32 func_1502F948();
+s32 func_15030468();
+s32 func_1507C22C();
+
+void func_1502BEE4(void) {
+    ActorUpdate58F80 *actor;
+    ActorUpdate58F80 *cursor;
+    s32 slot, maxDepth, count, index;
+    u8 depths[25];
+    u8 ordered[25];
+
+    func_1503F964();
+    D_800C3E90 = 0;
+    D_800C3E74 = 0;
+    maxDepth = 0;
+    actor = ((ActorUpdate58F80 *)D_800CC2D0);
+    do {
+        if (actor->maskId != 0) {
+            D_800C3E74 |= 1u << ((actor->maskId + 31) & 31);
+        }
+        actor++;
+    } while (actor < (((ActorUpdate58F80 *)D_800CC2D0) + 25));
+    bzero(depths, 25);
+    slot = 0;
+    actor = ((ActorUpdate58F80 *)D_800CC2D0);
+    do {
+        if (actor->active != 0) {
+            if (actor->predecessor != 0) {
+                cursor = actor;
+                depths[slot] = 0;
+                while (cursor->predecessor != 0) {
+                    cursor = ((ActorUpdate58F80 *)D_800CC2D0) + (cursor->predecessor - 1);
+                    depths[slot]++;
+                }
+                if (maxDepth < depths[slot]) {
+                    maxDepth = depths[slot];
+                }
+            } else {
+                func_1502BD84(actor, slot);
+            }
+        }
+        slot++;
+        actor++;
+    } while (slot < 25);
+    count = 0;
+    if (maxDepth != 0) {
+        for (slot = 1; slot <= maxDepth; slot++) {
+            for (index = 0; index < 25; index++) {
+                if (depths[index] == slot) {
+                    ordered[count++] = index;
+                }
+            }
+        }
+        for (slot = 0; slot < count; slot++) {
+            func_1502BD84(((ActorUpdate58F80 *)D_800CC2D0) + ordered[slot], ordered[slot]);
+        }
+    }
+    func_1502F3C8();
+    actor = ((ActorUpdate58F80 *)D_800CC2D0);
+    do {
+        if (actor->active != 0) {
+            func_1502F948(actor);
+        }
+        actor++;
+    } while (actor != (((ActorUpdate58F80 *)D_800CC2D0) + 25));
+    func_15030468();
+    if (D_800BEAC0 == 0) {
+        func_1507C22C(0);
+    }
+    D_800C3E70 = 0;
 }
 
 s32 func_1502C1A4() {

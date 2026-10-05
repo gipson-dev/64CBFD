@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-05 Game Actor Update Pass Semantic Recovery
+
+[Note 1007](WORKING_NOTES/1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md)
+replaces `func_1502BEE4`'s placeholder with live actor scans and captured stable
+predecessor-depth updates. This remains non-matching: 174 body / 176 slot
+words, frame 0x88, 115 differences, no new guards/profile override. All 771
+three-way cases, 257 connected dispatcher cases and 16384 native independent
+reference cases pass; seventeen focused checks, no skips. Full phase callees
+and gameplay acceptance remain separate. Only target changes in 6060 slots;
+previous exact functions/patch CSV unchanged. Build/tools pass. Counts stay
+3302 / 5463 total, 2629 / 4790 Game, zero drift; README aggregates unchanged.
+No conversion/Init ASM or sibling/frozen Release change. Next: caller stack
+layout, register lifetimes and instruction scheduling, without broad guards.
+All 319 combined checks pass in 305.557 seconds, no skips; protected sections,
+tools, whitespace and 2926 relative links pass.
+
 ## 2026-10-05 Game Actor Update Dispatcher Direct Recovery
 
 [Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)

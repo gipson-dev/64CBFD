@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-05 ([Note 1007](WORKING_NOTES/1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md)):
+Recover `func_1502BEE4`'s actor pass semantically: 174 body / 176 slot words,
+frame 0x88, 115 differences, no guards/profile override. Live first/last scans
+and the captured depth/slot queue have separate mutation boundaries. All 771
+three-way cases, 257 connected actual-dispatcher cases and 16384 native
+independent-reference cases pass; all 176 retail words execute. Seventeen
+focused pass/dispatcher checks pass, no skips; negative controls and bounded
+cycle prefixes retain the retail contracts. Only target changes in 6060 slots;
+previous exact recoveries and patch CSV unchanged. Rebuild: 3302 / 5463 total,
+2629 / 4790 Game, zero drift. Conversion/Init ASM, README aggregates and frozen
+sibling Release unchanged. Next: this caller's private layout/schedule match.
+All 319 combined checks pass in 305.557 seconds, no skips; protected sections,
+tools, whitespace and 2926 relative links pass.
+
 2026-10-05 ([Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)):
 Recover `func_1502BD84` directly, all 88 words / frame 0x20, no guards/profile
 override. Actual callee inspection restores the carried slot argument to

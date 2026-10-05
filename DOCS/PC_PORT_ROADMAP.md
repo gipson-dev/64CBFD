@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Update Pass Semantic Recovery - 2026-10-05
+
+[Note 1007](WORKING_NOTES/1007-game-actor-update-pass-semantic-recovery-and-captured-order-20261005.md)
+recovers DECOMP `func_1502BEE4`'s live actor scans, predecessor-depth queue and
+ordered phases. It remains non-matching: 174 body / 176 slot words, frame
+0x88, 115 differences, no new guards/profile override. All 771 three-way cases,
+257 actual connected dispatcher cases and 16384 native independent-reference
+cases pass; seventeen focused checks, no skips. Connected qualification still
+models downstream phase callees and is not full gameplay/PC runtime acceptance.
+Only target changes in 6060 slots; previous exact recoveries and patch CSV stay
+intact. Game exact count remains 2629 / 4790. No host transplant, source, build,
+save or frozen Release change. Next: finish the caller's private stack layout
+and retail instruction schedule in DECOMP.
+All 319 combined checks pass in 305.557 seconds, no skips; protected sections,
+tools, whitespace and 2926 relative links pass.
+
 ## Game Actor Update Dispatcher Direct Recovery - 2026-10-05
 
 [Note 1006](WORKING_NOTES/1006-game-actor-update-dispatch-direct-match-and-carried-slot-abi-20261005.md)

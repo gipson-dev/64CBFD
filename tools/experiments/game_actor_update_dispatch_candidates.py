@@ -12,7 +12,9 @@ DECLARATIONS = '''typedef struct ActorUpdate58F80 {
     s32 active;
     u8 id;
     u8 state;
-    u8 pad6[0x9E];
+    u8 pad6[0x5F];
+    u8 predecessor;
+    u8 pad66[0x3E];
     u8 signal;
     u8 padA5[0x53];
     u32 flags;
@@ -27,7 +29,9 @@ DECLARATIONS = '''typedef struct ActorUpdate58F80 {
     u8 status;
     u8 pad1FD[0x63];
     u32 optional;
-    u8 pad264[0xC8];
+    u8 pad264[0x10];
+    u8 maskId;
+    u8 pad275[0xB7];
 } ActorUpdate58F80;
 
 extern u8 D_800C666F[];
