@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-06 ([Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md)):
+After banked `e1298167`, investigate63-word `func_1514182C`.60 controls;
+fitting63/frame0x80/31 candidate fails24/108 alias cases. Cached origin reads
+agree in126 bounded guest cases but emit67/frame0x88/47. Identity rotation
+provider/40 connected retail coordinate-helper words, not native or gameplay
+acceptance. Alias-preserving footprint, matrix base, float-height caller and
+return ABI remain. No production edit/guards/count change; continue this boundary.
+
 2026-10-06 ([Note 1057](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md)):
 `func_151416E8`:55 direct words/frame0x18, O2/g3, no guards. Repeated volatile
 selector/table lookup, byte narrowing, live event/cleanup/status and unsigned

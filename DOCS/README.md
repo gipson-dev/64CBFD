@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Active position-projection investigation](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md):
+  63-word target,60 controls; cached origin reads fix tested alias behavior but
+  the67-word/frame0x88 candidate still exceeds retail. No installation.
+
 - [Latest actor-event dispatch match](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md):
   55 direct words/frame0x18, no guards;60724 guest/262144 native cases qualify
   byte ABI, repeated lookup and live status dispatch. Next `func_1514182C`.

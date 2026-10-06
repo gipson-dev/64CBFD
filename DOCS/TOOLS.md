@@ -4,6 +4,16 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Position-projection investigation receipts
+
+[Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md)
+records60 ignored SDK compiler controls and two126-case guest probes under
+`conker/build/game-actor-event-dispatch-test/`. The coordinate helper executes
+40 retail words; rotation is a bounded identity provider. Fitting source fails
+alias behavior; cached source passes this probe but exceeds the slot/frame.
+These are investigation receipts, not maintained native/production acceptance
+tests, an installed source recovery, or a word-normalization recipe.
+
 ## Actor-event dispatch compiler controls
 
 [Driver](../tools/experiments/game_actor_event_dispatch_candidates.py):eight

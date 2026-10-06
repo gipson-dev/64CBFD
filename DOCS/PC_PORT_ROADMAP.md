@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Game Position Projection Investigation - 2026-10-06
+
+[Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md):
+after `e1298167`, investigate guest63-word `func_1514182C`.60 compiler controls;
+fitting63/frame0x80 candidate has24/108 alias disagreements. Cached reads agree
+in126 bounded guest cases but67 words/frame0x88 exceed retail. Identity rotation
+provider/40 real coordinate-helper words, not complete helper/native/gameplay
+acceptance. Recover alias-preserving footprint and qualify ABI/caller before
+installation. No matching count/image/host/sibling/frozen Release or push change.
+
 ## Game Actor Event Dispatch Match - 2026-10-06
 
 [Note 1057](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md)

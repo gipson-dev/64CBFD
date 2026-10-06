@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Active position-projection investigation:
+[Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md)
+continues from banked `e1298167` with63-word/frame0x80 `func_1514182C`.
+60 compiler controls. The fitting63-word/31-difference candidate fails24/108
+origin-alias cases; cached origin values agree in all126 bounded guest cases
+but emit67 words/frame0x88/47 differences. Identity rotation is modeled;40
+connected retail coordinate-helper words execute. Float height/caller and
+return ABI, alias-preserving footprint, native/negative/production gates remain.
+No source/guard/count change; Game2661/4791 exact,2130 different, zero drift.
+No next-function acceptance, sibling/Release/runtime or push change.
+
 Actor-event dispatch recovery:
 [Note 1057](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md)
 recovers `func_151416E8`:55 words/frame0x18, all direct under existing O2/g3,

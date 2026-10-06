@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-06 Game Position Projection Investigation
+
+[Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md):
+continue after `e1298167` with63-word `func_1514182C`.60 controls; fitting
+63-word/frame0x80/31-difference candidate fails24/108 alias cases. Cached
+origin reads agree in all126 bounded guest cases, but67 words/frame0x88 do
+not fit. Real coordinate helper executes40 words; rotation is modeled identity.
+ABI/alias-preserving footprint/native/negative/production qualification pending.
+No source/guard/count/image change, sibling/Release/runtime or push change.
+
 ## 2026-10-06 Game Actor Event Dispatch Match
 
 [Note 1057](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md):
