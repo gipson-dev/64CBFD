@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Active effect-dispatch investigation:
+[Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md)
+continues after banked `e5bf72e0` with100-word/frame0x48 `func_15141A7C`.
+112 controls: live selector99/26; private cursor-write candidate100/21.
+All100 retail words derive from a phased S0/S1 swap, closed prefix/query
+scheduling and equivalent private cursor operations, without installation.
+13824 guest cases per pairing;100-word source adds13764 proven private cursor
+reads, all other traces/storage/calls equal. Connected real classifiers/list
+search:69632 cases pass on each99/100-word pairing,128 helper words mapped/122
+reached;100-word source binds110976 extra private reads, other traces equal.
+Native/negative/relocation/padder/production
+gates remain. All6059 production slots/10760 guards/protected sections unchanged.
+Game2662/4791 exact,2129 different, zero drift. No sibling/Release/runtime/push.
+
 Position-projection recovery:
 [Note 1059](WORKING_NOTES/1059-game-position-projection-match-20261006.md)
 recovers `func_1514182C`: all 63 words / frame 0x80 directly from C under

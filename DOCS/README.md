@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Active effect-dispatch investigation](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md):
+  100-word target,112 controls; fitting100/frame0x48/21 candidate and complete
+  closed linked derivation. Guest/live cursor and connected classifier evidence;
+  native, relocation-aware guards and production gates remain. Not installed.
+
 - [Latest position-projection match](WORKING_NOTES/1059-game-position-projection-match-20261006.md):
   63 direct words/frame 0x80, no guards; float-height caller stays 18-word exact.
   Live guest/native aliases, connected retail SDK instructions and float boundaries.

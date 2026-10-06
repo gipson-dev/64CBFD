@@ -4,6 +4,20 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Effect-dispatch investigation receipts
+
+[Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md)
+records112 ignored actual-SDK controls,13,824-case guest probes and69,632-case
+connected classifier checks under
+`conker/build/game-position-projection-test/next-effect-dispatch/`.
+Selected100-word/frame0x48 body differs in21 words; a closed linked derivation
+matches all retail words but is not an installed relocation-aware guard recipe.
+Private cursor reloads are bound at one exact opcode/site; all other traces,
+storage and calls compare independently. No broad stack filtering or raw-trace
+identity claim for this source. Switch/list instructions execute; callbacks
+remain bounded models. Native/negative/padder/production gates pending. These
+are investigation receipts, not new maintained acceptance tests.
+
 ## Position-projection compiler controls
 
 [Driver](../tools/experiments/game_position_projection_candidates.py): eight

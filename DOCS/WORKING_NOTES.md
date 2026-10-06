@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md)):
+After banked `e5bf72e0`, investigate100-word `func_15141A7C`:112 controls,
+fitting100/frame0x48/21 candidate; all words derive from closed register/
+schedule/cursor transformations.13824 guest cases per pairing; only fitting
+source's proven extra private cursor read is normalized in trace comparison.
+69632 connected classifier cases pass on each99/100-word pairing; fitting
+source binds110976 extra private reads, all other traces/storage/calls equal.
+Native/negative/relocation/padder/production gates remain; all slots/guards/
+protected sections unchanged. Continue this boundary, not another conversion.
+
 2026-10-06 ([Note 1059](WORKING_NOTES/1059-game-position-projection-match-20261006.md)):
 `func_1514182C`: 63 direct words/frame 0x80, no guards; delta-first locals
 recover matrix layout and live alias-safe output arithmetic. Typed float-height

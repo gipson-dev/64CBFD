@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Effect Dispatch Investigation
+
+[Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md):
+continue after banked `e5bf72e0` with100-word `func_15141A7C`.112 controls;
+fitting100/frame0x48/21 candidate. Closed register/schedule/private-cursor
+derivation equals all100 retail words, not yet a production guard recipe.
+13824 guest cases per pairing; fitting source's extra private read is bound
+explicitly rather than claiming raw trace identity.69632 connected classifier
+cases pass on each99/100-word pairing; fitting source binds110976 extra private
+reads, all other traces/storage/calls equal. Native and
+production gates remain. All slots/guards/protected sections unchanged, no
+matching count, sibling/Release/runtime/host-adoption or push change.
+
 ## 2026-10-06 Game Position Projection Match
 
 [Note 1059](WORKING_NOTES/1059-game-position-projection-match-20261006.md):

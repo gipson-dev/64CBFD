@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Effect Dispatch Investigation - 2026-10-06
+
+[Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md):
+after banked projection match `e5bf72e0`, investigate guest100-word
+`func_15141A7C`.112 controls; fitting100/frame0x48/21 candidate. Closed linked
+derivation equals all100 retail words. Bounded guest/live-list and connected
+retail classifiers/list-search evidence; no maintained native or production
+acceptance yet. No installation or matching-count change. All production slots,
+guards and protected sections unchanged. No host adoption, sibling/frozen
+Release, runtime or push change; continue qualification before integration.
+
 ## Game Position Projection Match - 2026-10-06
 
 [Note 1059](WORKING_NOTES/1059-game-position-projection-match-20261006.md)
