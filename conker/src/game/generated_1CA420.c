@@ -1,8 +1,17 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/1CA420.s. */
 
-extern s32 D_800E0920;
+extern u8 *D_800E0920;
+struct260 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+/* Retail copies the three untouched alignment bytes after code. */
+typedef struct {
+    u8 *object;
+    u8 code;
+    s32 reserved;
+} Packet1CA420;
 s32 func_1514933C();
 
 void func_1519CF70(u8 arg0) {
@@ -88,8 +97,19 @@ void func_1519E688(void) {
     func_15147D64(0, 9);
 }
 
-s32 func_1519E6BC() {
-    return 0;
+void func_1519E6BC(u8 *arg0) {
+    Packet1CA420 packet;
+
+    func_1519E688();
+    if (D_800E0920 == NULL) {
+        packet.reserved = 0;
+        packet.object = arg0;
+        packet.code = arg0[0x3B];
+        D_800E0920 = (u8 *)func_151491F4(0x12C, -1, 9, 0, 4, 12, 0xFF, 0);
+        if (D_800E0920 != NULL) {
+            memcpy(D_800E0920 + 0x28, &packet, sizeof(packet));
+        }
+    }
 }
 
 s32 func_1519E754() {

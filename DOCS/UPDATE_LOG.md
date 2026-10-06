@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-06 Game Conditional Packet Allocator Direct Match
+
+[Note 1041](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md)
+replaces `func_1519E6BC`'s stub with all 38 words directly, frame 0x38.
+Post-cleanup gate, failure publication and captured packet; three padding
+bytes remain untouched. 24 controls; 3072 cases in each of three two-body
+guest modes, 1536 extra code-byte sweeps and 18432 native cases. Retained
+helpers unchanged; 138 reachable chain words execute. Only target changes
+across 6059; protected sections/720 owners/10646 guards intact. Owner
+diagnostics empty. README now total 3319/5462 and Game 2646/4789 exact,
+zero drift. All 71 focused post-link tests pass in 369.862 seconds, no skips.
+Next `func_1519E970`'s record allocator.
+No sibling/Release edit, complete gameplay/host adoption or push.
+
 ## 2026-10-06 Game Random Selector Outputs Direct Match
 
 [Note 1040](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md)

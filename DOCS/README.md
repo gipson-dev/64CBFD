@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest conditional packet allocator direct match](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md):
+  38 direct words; post-cleanup gate, failure publication and untouched padding.
+  Next qualify `func_1519E970`'s seven-argument record allocator.
+
 - [Latest random selector/output direct match](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md):
   37 direct words; seven-pointer ABI, third RNG and sequential palette stores.
   Next qualify `func_1519E6BC`'s conditional allocation/packet contract.

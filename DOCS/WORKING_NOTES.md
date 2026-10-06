@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-06 ([Note 1041](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md)):
+`func_1519E6BC`: 38 words directly, frame 0x38; no new guards/profile/shared
+header/data. Post-cleanup gate, failure publication and untouched packet
+padding. 24 controls, 3072 cases each in three two-body guest modes,
+1536 code-byte sweeps and 18432 native cases. 138 reachable chain words
+covered. Only target changes across 6059; protected sections/720 owners/
+10646 guards intact. Owner diagnostics empty. README total 3319/5462, Game
+2646/4789 exact. All 71 focused post-link tests pass in 369.862 seconds,
+no skips. Next `func_1519E970`'s record
+allocator; no sibling/frozen Release change or full gameplay claim or push.
+
 2026-10-06 ([Note 1040](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md)):
 `func_1518E5D8`: 37 words directly, frame 0x18; no new guards/profile/header/
 data. 24 controls, 4096 opaque / 16384 connected-selector / 8576 fully

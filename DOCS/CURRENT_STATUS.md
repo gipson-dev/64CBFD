@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Conditional packet allocator direct match:
+[Note 1041](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md)
+recovers `func_1519E6BC`: all 38 words directly, frame 0x38, existing O2/g3;
+no new guards/profile/shared header/data. Post-cleanup global gate, failure
+publication and captured 12-byte packet with three untouched alignment bytes.
+24 controls; 3072 cases each opaque/connected-cleanup/connected-allocation,
+two bodies, plus 1536 selected code-byte sweeps and 18432 native cases.
+138 reachable chain words execute; 140 linked words bound. Only target changes
+across 6059 slots; protected sections/720 owners/10646 guards intact.
+Baseline/current owner diagnostics empty. README total 3319/5462 and Game
+2646/4789 exact, zero drift, 2143 different. All 71 focused post-link tests
+pass in 369.862 seconds, no skips. Next
+`func_1519E970`'s seven-argument record allocator. No complete caller/FCSR/
+gameplay/host adoption, sibling/frozen Release change or push; Game stays active.
+
 Random selector/output direct match:
 [Note 1040](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md)
 recovers `func_1518E5D8`: all 37 words directly, frame 0x18, existing O2/g3;

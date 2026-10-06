@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Conditional Packet Allocator Direct Match - 2026-10-06
+
+[Note 1041](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md)
+recovers guest `func_1519E6BC`: 38 words directly, frame 0x38, existing O2/g3.
+No new guards/profile/shared header/data. Post-cleanup global gate, failure
+publication and packet capture qualified with retained cleanup/allocator
+chains. 3072 cases per three two-body guest modes, 1536 code-byte sweeps and
+18432 native cases. All 71 focused post-link tests pass in 369.862 seconds,
+no skips. Only target changes across 6059;
+protected sections/720 owners/10646 guards intact. Game now 2646/4789 exact,
+zero drift, 2143 different. Next guest `func_1519E970` record allocator.
+No host adoption, full caller/FCSR/gameplay acceptance, sibling source/build/
+save/frozen Release change or push.
+
 ## Game Random Selector Outputs Direct Match - 2026-10-06
 
 [Note 1040](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md)

@@ -4,6 +4,22 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Conditional packet allocator compiler controls
+
+[Driver](../tools/experiments/game_conditional_packet_allocator_candidates.py)
+screens six forms under four profiles: 24 controls with real SDK/struct headers
+and fixed retail anchors. Reserved-first O2/g3 emits all 38 words directly;
+the tool installs no source, guards or profile. Retail ROM, IDO and MIPS tools
+required; ignored receipts under `conker/build/game-conditional-packet-allocator/`.
+[Six tests](../tools/tests/test_game_conditional_packet_allocator_match.py)
+bind the direct wrapper and unchanged cleanup/allocator chains. Guest checks
+include ordered calls/reads/stores, callback snapshots, allocation failure,
+global/source aliases and copied untouched padding. Native actual wrapper/
+cleanup C uses an opaque typed allocator and checks initialized fields without
+inventing padding values. SDK/backend callbacks remain bounded models, not
+hardware/gameplay/host adoption. See
+[Note 1041](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md).
+
 ## Random selector/output compiler controls
 
 [Driver](../tools/experiments/game_random_selector_outputs_candidates.py)
