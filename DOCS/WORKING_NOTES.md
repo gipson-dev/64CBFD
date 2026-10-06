@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-06 ([Note 1035](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md)):
+Recover `func_1514462C`: all 56 words directly, no frame/guards/profile/data.
+Correct pointer prototype/two float externs, signed/wrapped dimensions and
+ordered float work. 48 controls, 21504 three-body guest and 10752 native cases;
+55 reachable words covered, one unreachable load structurally bound.
+All 58 tests pass in 94.861 seconds, no skips.
+Only target changes across 6059; protected sections/720 owners/10646 guards
+intact. Three owner warnings equal baseline source/headers. README now
+3314/5462 total and Game 2641/4789 exact, zero drift. Next inspect 101-word
+`func_15144CEC` projection-wrapper placeholder. Pair-clamp frame remains open.
+No full callers/gameplay/FCSR, sibling/frozen Release or push claim.
+Game matching remains active.
+
 2026-10-06 ([Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md)):
 Nine accepted backend controls fail to recover `func_15143D18`'s frame.
 108 corner runs preserve traces/footprints. No production/profile/data/guard

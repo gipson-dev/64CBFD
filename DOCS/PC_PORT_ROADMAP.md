@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Descriptor Shape Measure Direct Match - 2026-10-06
+
+[Note 1035](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md)
+recovers DECOMP `func_1514462C` directly: 56 words, no frame/guards/profile.
+Signed halfwords, wrapped integer product and ordered float work are qualified
+by 21504 three-body guest and 10752 native cases, including all flag bytes.
+All 58 tests pass in 94.861 seconds, no skips.
+Only target changes across 6059; protected sections/720 owners/10646 guards
+intact. Game is now 2641/4789 exact, zero drift, 2148 different. Next inspect
+guest `func_15144CEC`'s projection/optional-output/near-far gates.
+Pair-clamp frame remains non-matching. No host adoption, full gameplay/callers/
+FCSR acceptance, sibling source/build/save/frozen Release change or push.
+
 ## Game Pair Clamp Backend Audit - 2026-10-06
 
 [Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md)

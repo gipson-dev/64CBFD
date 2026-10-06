@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-06 Game Descriptor Shape Measure Direct Match
+
+[Note 1035](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md)
+replaces `func_1514462C`'s zero-return stub with the complete 56-word measure,
+directly under O2/g3, no frame/guards/profile/data change. Correct descriptor
+pointer prototype and two float externs; signed halfwords and wrapped box
+product, ordered float work and masked shape dispatch. 48 controls, 21504
+three-body guest cases and 10752 native cases. Only target changes across
+6059; all 58 tests pass in 94.861 seconds, no skips. Protected sections/720
+owners/10646 guards intact. Owner warnings equal
+baseline source/headers. README now total 3314/5462 and Game 2641/4789 exact,
+zero drift, 2148 different. Next: 101-word `func_15144CEC` placeholder.
+Pair-clamp frame remains open; no full callers/gameplay/FCSR, sibling/frozen
+Release change or push. Game matching remains active.
+
 ## 2026-10-06 Game Pair Clamp Saved Register Backend Audit
 
 [Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md)

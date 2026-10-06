@@ -4,6 +4,23 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Descriptor shape-measure compiler controls
+
+[Measure driver](../tools/experiments/game_shape_volume_candidates.py)
+uses the real SDK/descriptor headers for six box operand orders crossed with
+two cylinder operand orders under four profiles: 48 controls. Only one O2/g3
+form emits all 56 words directly. It installs no source, guards or profile;
+requires retail ROM, IDO and MIPS tools. Receipts are ignored under
+`conker/build/game-shape-volume/`.
+[Six tests](../tools/tests/test_game_shape_volume_match.py) bind the complete
+direct slot, corrected prototype/externs, actual descriptor layout and retail
+coefficient words. Independent guest traces/native references preserve
+wrapped box multiplication and per-operation float rounding; negative tests
+detect the stub, unsigned halfwords, unmasked flags and premature float box
+multiplication. Shared guest runners are unchanged. No caller-domain/gameplay
+or complete FCSR qualification. See
+[Note 1035](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md).
+
 ## Integer pair-clamp access controls
 
 [Pair-clamp driver](../tools/experiments/game_integer_pair_clamp_candidates.py)

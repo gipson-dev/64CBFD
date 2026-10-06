@@ -2,6 +2,10 @@
 
 Date: 2026-10-06. Starting checkpoint: `8ef236d6`.
 
+Continuation: [Note 1035](1035-game-descriptor-shape-measure-direct-match-20261006.md)
+qualifies and installs the adjacent 56-word direct recovery. This backend
+audit was banked separately in `6474c718`; pair-clamp production stays unchanged.
+
 **`func_15143D18` remains non-matching; no production change.** Continue
 [Note 1033](1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)
 without repeating its parameter/local register-hint matrix.

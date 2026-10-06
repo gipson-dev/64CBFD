@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Descriptor shape-measure direct match:
+[Note 1035](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md)
+recovers `func_1514462C` across all 56 words directly under existing O2/g3,
+no frame/guards/profile/data change. Pointer prototype and two float externs
+replace the stub's false integer-address signature. 48 compiler controls;
+21504 three-body guest cases and 10752 native cases cover signed dimensions,
+all flag bytes, wrapped product and ordered float rounding. All 55 reachable
+retail words execute; the one unreachable load is structurally bound.
+All 58 combined tests pass in 94.861 seconds, no skips.
+Only target changes across 6059 slots; protected sections/720 owners/10646
+guards intact despite header-triggered rebuild. Three owner warnings equal
+the independently compiled baseline source and headers. README now total
+3314/5462, Game 2641/4789 exact, zero drift, 2148 different. Next inspect
+101-word `func_15144CEC`, still a zero-return projection-wrapper placeholder.
+Pair-clamp frame remains open. No full callers/gameplay/FCSR, sibling/frozen
+Release change or push; Game matching remains active.
+
 Pair-clamp backend audit:
 [Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md)
 banks nine locally evidenced O2/g3 uopt controls. All accepted with empty

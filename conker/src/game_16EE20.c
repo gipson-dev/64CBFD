@@ -645,9 +645,29 @@ f32 func_15144598(struct134 *arg0) {
 
     return ret;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_1514462C.s. */
-f32 func_1514462C(s32 arg0) {
-    return 0.0f;
+f32 func_1514462C(struct134 *arg0) {
+    f32 ret;
+    u8 *record = (u8 *)arg0;
+
+    switch (record[0x15] & 3) {
+        case 2:
+            /* Wrap the integer product before converting it to float. */
+            ret = (s32)((u32)*(s16 *)(record + 8) * (u32)*(s16 *)(record + 0xA) * (u32)*(s16 *)(record + 6));
+            break;
+        case 0:
+            ret = *(s16 *)(record + 8) * (*(s16 *)(record + 6) * *(s16 *)(record + 6) * D_800A5698);
+            break;
+        case 1: {
+            f32 radius = *(s16 *)(record + 6);
+            ret = radius * D_800A569C * radius * radius;
+            break;
+        }
+        default:
+            ret = 1.0f;
+            break;
+    }
+
+    return ret;
 }
 void func_1514470C(void *descriptor, void *output) {
     u8 *record = descriptor;

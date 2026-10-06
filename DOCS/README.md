@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest descriptor shape-measure direct match](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md):
+  all 56 words directly, signed/wrapped dimensions, masked dispatch and ordered
+  float work; no guards/profile. Next inspect the adjacent projection wrapper.
 - [Latest pair-clamp backend audit](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md):
   nine accepted controls, frame still open, no production change. Next
   qualify the adjacent descriptor-measure recovery.

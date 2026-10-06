@@ -1126,7 +1126,7 @@ void  func_1513E13C(struct210 *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32
 s32  func_1513E2AC(s32, s32, s32, f32, f32, f32, f32, f32, s32);
 f32  func_151423D8(u8);
 f32  func_15144598(struct134 *arg0);
-f32  func_1514462C(s32 arg0);
+f32  func_1514462C(struct134 *arg0);
 f32  func_15144B68(f32 arg0);
 void func_1514D3B0(s32, s16, u8, u8);
 s32  func_1515D6D0(s32 arg0, s32 arg1);
