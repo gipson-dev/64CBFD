@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Random Reload Timer Direct Match - 2026-10-06
+
+[Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md)
+recovers DECOMP `func_150D26F0` directly: 39 words, frame 0x20, no guards or
+profile override. 896 gate / 1920 reload / 48 trap three-way and 1408 native
+cases qualify callback ordering, wrapped decrement and unsigned reload.
+All 35 tests pass in 20.151 seconds, no skips. Only timer changes across
+6059 slots; protected sections/720 owners/10646 guards unchanged. Game is
+2639/4789 exact, zero drift, 2150 different. Next: `func_15123934` indexed
+state save/update. No host adoption, complete dispatcher/RNG/gameplay or
+hardware trap delivery, sibling source/build/save/frozen Release change
+or push claim. Game matching remains active.
+
 ## Game Float Reference Packet Wrapper Direct Match - 2026-10-06
 
 [Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md)

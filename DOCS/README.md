@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest random-reload timer direct match](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md):
+  all 39 words from typed C; wrapped countdown, unsigned remainder,
+  post-callback fields and bounded zero-divisor trap qualification.
 - [Latest float-reference packet wrapper direct match](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md):
   all 37 words directly under existing O2/g3; bounded packet/native and
   connected-retail qualification; unchanged production callee already 50/50 exact.

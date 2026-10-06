@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-06 ([Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md)):
+Recover `func_150D26F0` directly: 39 words, frame 0x20, existing O2/g3,
+no new guards/profile/data. 76 controls; 896 gate / 1920 reload / 48 trap
+three-way cases and 1408 native cases, all retail words. Preserve wrapped
+subtraction, unsigned remainder and post-callback fields. All 35 tests pass
+in 20.151 seconds, no skips. Only timer changes across 6059; protected
+sections/720 owners/10646 guards intact. README: 3312/5462 total and Game
+2639/4789 exact, zero drift. Next: 38-word `func_15123934` placeholder,
+confirmed from live source. No full dispatcher/RNG/gameplay/hardware trap
+or sibling/frozen Release claim. Game matching remains active; no push.
+
 2026-10-06 ([Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md)):
 Recover `func_150C2804` directly: 37 words, existing O2/g3, frame 0x38,
 no guards/profile/data/header change. 24 controls, 2304 opaque / 256 float

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Random Reload Timer Direct Match
+
+[Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md)
+replaces `func_150D26F0`'s stub with its gated timer/dispatch/unsigned reload.
+All 39 words emit directly, frame 0x20; no new guards/profile/data. 76 controls,
+896 gate / 1920 reload / 48 trap three-way and 1408 native cases; full word
+coverage and preserved post-callback field reads. All 35 tests pass in 20.151
+seconds, no skips. Only timer changes across 6059; protected sections/720
+owners and 10646 guards unchanged. README: total 3312/5462, Game 2639/4789
+exact, zero drift, 2150 different. Next: 38-word `func_15123934` placeholder.
+No full dispatcher/RNG/gameplay, hardware trap delivery, sibling/frozen
+Release change or push claim. Game matching remains active.
+
 ## 2026-10-06 Game Float Reference Packet Wrapper Direct Match
 
 [Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md)

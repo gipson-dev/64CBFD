@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Random-reload timer direct match:
+[Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md)
+recovers `func_150D26F0`: all 39 words directly under existing O2/g3, frame
+0x20, no new guards/profile/data. Typed record fixes the array body's 14
+differences. 76 compiler controls; 896 gate / 1920 reload / 48 trap three-way
+cases and 1408 native cases cover every retail word. Preserve wrapped timer
+subtraction, unsigned remainder, post-callback fields and break 7. All 35
+tests pass in 20.151 seconds, no skips. Only timer changes across 6059 slots;
+protected sections/720 owners and all 10646 guards intact. README: total
+3312/5462, Game 2639/4789 exact, zero drift, 2150 different. Next: recover
+38-word `func_15123934`'s indexed field-save/update/callback pass. Full
+dispatcher/RNG/gameplay and hardware trap delivery remain unqualified.
+No sibling/frozen Release change or push; Game matching goal stays active.
+
 Float-reference packet wrapper direct match:
 [Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md)
 recovers `func_150C2804`: all 37 words directly from C under existing O2/g3,

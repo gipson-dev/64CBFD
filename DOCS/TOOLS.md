@@ -4,6 +4,19 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Random-reload timer compiler controls
+
+[Timer driver](../tools/experiments/game_random_reload_timer_candidates.py)
+screens 19 forms under O2/g3, O2, O1/g3 and O1: 76 controls, ignored
+`conker/build/game-random-reload-timer/` receipts. It installs no source,
+guards or profile. Requires the retail ROM, IDO and MIPS binutils.
+[Eight timer tests](../tools/tests/test_game_random_reload_timer_match.py)
+bind the typed record/direct slot and compare three guest instruction bodies
+with independent memory/call ordering, native footprints and break-7 cases.
+The local oracle subclass adds only DIVU/MFHI/the exact trap; shared runners
+are unchanged. No full dispatcher/RNG/gameplay or hardware trap claim.
+See [Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md).
+
 ## Float-reference packet compiler controls
 
 [Packet driver](../tools/experiments/game_effect_packet_wrapper_candidates.py)

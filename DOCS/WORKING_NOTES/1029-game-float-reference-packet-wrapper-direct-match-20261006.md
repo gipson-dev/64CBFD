@@ -2,6 +2,9 @@
 
 Date: 2026-10-06. Starting checkpoint: `66a5e069`.
 
+Next-function continuation: [Note 1030](1030-game-random-reload-timer-direct-match-20261006.md)
+matches `func_150D26F0` directly and advances the queue to `func_15123934`.
+
 **Game func_150C2804 now matches all 37 words / 148 bytes directly from C.**
 Slot: 0x150C2804..0x150C2898, ROM 0xEFCB4..0xEFD48, frame 0x38.
 The zero-return placeholder in [game_EF410.c](../../conker/src/game_EF410.c)
