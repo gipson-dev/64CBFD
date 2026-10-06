@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-06 Game Float Reference Packet Wrapper Direct Match
+
+[Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md)
+replaces `func_150C2804`'s stub with its six-argument 28-byte packet dispatch.
+All 37 words emit directly under existing O2/g3; no new guards/profile/data.
+24 compiler controls, 2304 opaque / 256 float-pattern / 288 connected-retail
+three-way cases and 14400 native cases. All wrapper and original callee words
+execute; unchanged production `func_15134908` already matches all 50 words,
+correcting the stale prior handoff. Next: 39-word `func_150D26F0` placeholder.
+All 92 tests pass in 233.716 seconds; eight packet tests rerun with the callee
+equality assertion pass in 6.375 seconds, no skips.
+Only wrapper changes across 6059 slots; protected sections/owners and all
+10646 guards intact. README totals: 3311/5462 and Game 2638/4789 exact,
+zero drift, 2151 different. No sibling/frozen Release change or push;
+full production helper-chain/gameplay/FCSR acceptance remains separate.
+
 ## 2026-10-06 Game Linked Record Position Tail Match
 
 [Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md)

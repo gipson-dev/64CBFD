@@ -2,6 +2,11 @@
 
 Date: 2026-10-06. Starting checkpoint: `9db7974c`.
 
+Handoff correction: [Note 1029](1029-game-float-reference-packet-wrapper-direct-match-20261006.md)
+verifies that `func_15134908` already has semantic C and matches all 50 retail
+words. The original placeholder classification near the end of this note was
+incorrect; no callee conversion is needed. The wrapper is now matched there.
+
 **Game func_150E6FAC is now linked byte-exact across all 72 words / 288 bytes.**
 Slot: 0x150E6FAC..0x150E70CC, ROM 0x11445C..0x11457C, frame 0x38.
 The semantic C body in
@@ -139,8 +144,10 @@ matching or claiming its meaning. No conversion installed in this pass.
 The callee's [retail assembly](../../conker/asm/nonmatchings/game_161520/func_15134908.s)
 confirms a pointer/null return, ORs bit 1 into input packet byte +0x16 and
 copies all 28 packet bytes. On success its first three copied words are used
-as pointers to floats. Its current C body is still a placeholder, so qualify
-the wrapper's opaque-callback contract separately from the connected effect.
+as pointers to floats. The later live source/ELF audit in Note 1029 confirms
+that its C body already implements this behavior and is exact across all 50
+words. Qualify the wrapper's opaque-callback contract and bounded connected
+effect separately from full allocator/gameplay acceptance.
 Use `func_15136A50`'s existing packet shape as a local layout reference, not
 as proof of correct field names or argument types.
 

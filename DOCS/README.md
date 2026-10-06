@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest float-reference packet wrapper direct match](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md):
+  all 37 words directly under existing O2/g3; bounded packet/native and
+  connected-retail qualification; unchanged production callee already 50/50 exact.
 - [Latest linked-record position tail match](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md):
   all 72 linked words exact through three closed-layout guards and one RA
   insertion; 3360 guest cases, source unchanged and 6058 other slots intact.

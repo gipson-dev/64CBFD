@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Float-reference packet wrapper direct match:
+[Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md)
+recovers `func_150C2804`: all 37 words directly from C under existing O2/g3,
+frame 0x38, no guards/profile/data/header change. 24 compiler controls;
+2304 opaque and 256 float-pattern three-way cases, 288 connected-retail-callee
+cases and 14400 native cases. Full wrapper/callee word coverage; live inspection
+confirms the unchanged production callee already matches all 50 retail words,
+superseding the stale placeholder claim below. All 92 tests pass in 233.716
+seconds; eight packet tests rerun with the callee assertion pass in 6.375
+seconds, no skips. Only this slot changes across 6059; all protected
+sections/720 owners and 10646 guards unchanged. README: total 3311/5462,
+Game 2638/4789 exact, zero drift, 2151 different. Next: inspect 39-word
+`func_150D26F0`, still a placeholder. No gameplay/
+FCSR/complete allocator, sibling/frozen Release or push claim.
+
 Linked-record position tail match:
 [Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md)
 closes `func_150E6FAC` across all 72 retail words using three expected-word /

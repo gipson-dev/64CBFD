@@ -3,13 +3,30 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef struct PacketEF410 {
+    f32 *x;
+    f32 *y;
+    f32 *z;
+    f32 parameter0;
+    f32 parameter1;
+    s16 delta;
+    u8 flags;
+    u8 byte17;
+    u8 byte18;
+    s8 sentinel;
+} PacketEF410;
+
+extern f32 D_800A0280;
+extern f32 D_800A0284;
+void *func_15134908(void *arg0, s32 arg1, u8 arg2, s32 arg3);
+
 /* Generated placeholder declarations. */
 s32 func_150C1F60();
 s32 func_150C2290();
 s32 func_150C2424();
 s32 func_150C2558();
 s32 func_150C2700();
-s32 func_150C2804();
+void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
 s32 func_150C2898();
 s32 func_150C29F0();
 s32 func_150C2C00();
@@ -152,9 +169,21 @@ s32 func_150C2558() {
 s32 func_150C2700() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2804.s. */
-s32 func_150C2804() {
-    return 0;
+/* Float-reference effect packet dispatch. */
+void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context) {
+    PacketEF410 packet;
+
+    packet.parameter0 = D_800A0280;
+    packet.x = x;
+    packet.y = y;
+    packet.z = z;
+    packet.parameter1 = D_800A0284;
+    packet.delta = delta;
+    packet.flags = 5;
+    packet.byte17 = 6;
+    packet.byte18 = 3;
+    packet.sentinel = -1;
+    func_15134908(&packet, 0, channel, context);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2898.s. */
 s32 func_150C2898() {

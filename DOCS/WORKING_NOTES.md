@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-06 ([Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md)):
+Recover `func_150C2804` directly: 37 words, existing O2/g3, frame 0x38,
+no guards/profile/data/header change. 24 controls, 2304 opaque / 256 float
+pattern / 288 connected-retail cases and 14400 native cases. Only wrapper
+changes across 6059 slots; protected sections/720 owners/10646 guards intact.
+README aggregates: 3311/5462 total, Game 2638/4789 exact, zero drift.
+Live audit confirms unchanged `func_15134908` already implements its semantics
+and matches all 50 words; supersedes the stale preceding handoff. Next inspect
+39-word `func_150D26F0`, still a zero-return placeholder.
+All 92 tests pass in 233.716 seconds; corrected eight-test packet rerun passes
+in 6.375 seconds, no skips.
+No full production helper-chain/gameplay/FCSR or sibling/frozen Release claim.
+Game matching goal stays active; no push.
+
 2026-10-06 ([Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md)):
 Match `func_150E6FAC`'s 72-word slot with three closed tail-layout guards and
 one saved-RA insertion; raw semantic C remains unchanged at 71 words.

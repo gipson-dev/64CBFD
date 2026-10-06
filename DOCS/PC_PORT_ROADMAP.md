@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Float Reference Packet Wrapper Direct Match - 2026-10-06
+
+[Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md)
+recovers DECOMP `func_150C2804` directly across all 37 words, no new guards or
+profile. 2304 opaque / 256 float-pattern / 288 connected-retail cases and
+14400 native cases qualify the packet ABI. Only wrapper changes across 6059
+slots; protected sections/720 owners/10646 guards unchanged. Game is now
+2638/4789 exact, zero drift, 2151 different. Unchanged production
+`func_15134908` already matches all 50 retail words, correcting the prior
+placeholder claim. Connected tests execute those same words with bounded
+callbacks. Next: 39-word `func_150D26F0`. No host adoption, sibling source/
+build/save/frozen Release change, gameplay/FCSR acceptance or push.
+All 92 tests pass in 233.716 seconds; eight packet tests rerun with the callee
+assertion pass in 6.375 seconds, no skips.
+Game matching goal remains active.
+
 ## Game Linked Record Position Tail Match - 2026-10-06
 
 [Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md)

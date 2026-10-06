@@ -4,6 +4,19 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Float-reference packet compiler controls
+
+[Packet driver](../tools/experiments/game_effect_packet_wrapper_candidates.py)
+screens six source forms under O2/g3, O2, O1/g3 and O1: 24 bounded controls,
+empty diagnostics, ignored `conker/build/game-effect-packet-wrapper/` receipts.
+It installs no source or profile. Requires the retail ROM, IDO and MIPS
+binutils. [Eight packet tests](../tools/tests/test_game_effect_packet_wrapper_match.py)
+bind source/production words/no guards, all 28 packet bytes and padding,
+narrowing, native layout and connected original-retail-callee behavior.
+Production checks also bind the unchanged callee to all 50 retail words.
+Full wrapper/callee coverage does not qualify the complete allocator or
+gameplay. See [Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper-direct-match-20261006.md).
+
 ## Zone selection compiler controls
 
 [Edge lifetime driver](../tools/experiments/game_graph_edge_crossing_lifetimes.py)
