@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Triangle Lifetime Audit - 2026-10-05
+
+[Note 1014](WORKING_NOTES/1014-game-actor-triangle-lifetime-and-overlapping-range-audit-20261005.md)
+banks 34 DECOMP compiler controls, 1914 bounded comparisons and the explicit
+overlapping-range first-match gate. No production change or new exact
+function; frame-only and one-word-score candidates do not prove a retail
+match. Next: DECOMP reserved homes and mixed scalar/array placement.
+No host transplant, PC runtime/gameplay claim or sibling source/build/save/
+frozen Release change. README counts remain accurate; no push.
+All 57 focused DECOMP checks pass, no skips; tools, whitespace and 2981
+links pass. All 6060 slots/protected sections stay intact; these tests do
+not establish PC runtime acceptance. The prior full corpus is not rerun.
+
 ## Game Actor Triangle Layout Audit - 2026-10-05
 
 [Note 1013](WORKING_NOTES/1013-game-actor-triangle-layout-screen-20261005.md)

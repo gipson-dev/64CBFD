@@ -77,3 +77,7 @@ git diff --check
 
 The Game goal remains active. This is a bounded negative matching audit,
 not a new exact function or a reason to pause.
+
+Follow-up lifetime controls and the explicit overlapping-range first-match
+gate are banked in
+[Note 1014](1014-game-actor-triangle-lifetime-and-overlapping-range-audit-20261005.md).

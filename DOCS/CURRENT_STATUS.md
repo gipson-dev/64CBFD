@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Triangle lifetime/first-match audit:
+[Note 1014](WORKING_NOTES/1014-game-actor-triangle-lifetime-and-overlapping-range-audit-20261005.md)
+banks 34 controls; 29 fitting forms pass 1914 bounded guest comparisons.
+Frames 0x148/0x138/0x130 alone do not recover retail allocation or fitting
+length. An initialized-weight form has 274 differences but remains a
+limited-qualified candidate, not an installed fix. The explicit overlapping-
+range gate now passes and rejects last-match overwrites; native references
+expand to 64512 plus 33 aliases. Production/README counts are unchanged.
+Next: reserved homes and mixed scalar/array placement, preserving original
+argument spills and separate early/SDK pointer lifetimes.
+All 57 focused checks pass in 309.237 seconds, no skips; tools, whitespace
+and 2981 links pass. All 6060 slots and protected sections/data owners stay
+unchanged or retail-exact; the prior full corpus is not rerun in this audit.
+
 Post-checkpoint triangle layout audit:
 [Note 1013](WORKING_NOTES/1013-game-actor-triangle-layout-screen-20261005.md)
 banks ten array/output-cursor forms and 120 bounded guest comparisons after

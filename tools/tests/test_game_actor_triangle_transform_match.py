@@ -252,6 +252,9 @@ static void reset(int id,int pattern,int mode) {
     if(pattern==14) D_800C5EF8[id]=65535;
     if(pattern==15) {records[1].x=32;coordinates[0]=100000008.0f;
         for(j=0;j<4;j++) banks[0][j][12]=100000000.0f;}
+    if(pattern==16) {ranges[0].count=2;ranges[0].matrix=0;
+        ranges[1].count=2;ranges[1].matrix=2;}
+    if(pattern==17) {ranges[1].start=(u32)records;ranges[1].count=3;ranges[1].matrix=1;}
     logCount=error=0;mutation=mode;
     for(i=0;i<24;i++) ((u32 *)log)[i]=0;
 }
@@ -422,6 +425,29 @@ static void reference(f32 *x,f32 *y,f32 *z,int joint) {
                     expected = (x + 10, 25.5, z + 30) if accepted else (x, 5.5, z)
                     self.assertEqual([model.peek(OUTPUT + i * 4, 4) for i in range(3)], list(map(bits, expected)))
 
+    def test_overlapping_ranges_keep_first_match_and_stop_before_third_range(self):
+        wrong_body = screen.BASELINE.replace('if ((mask & bit) == 0)', 'if (1)')
+        _, wrong_words = screen.compile_candidate(self.root, self.output, 'last-match-negative-control', wrong_body)
+        for variant, expected in ((0, (0, 0, 2)), (1, (0, 1, 1))):
+            memory = memory_case()
+            if variant == 0:
+                put(memory, RANGES + 4, 2)
+                put(memory, RANGES + 8, 0)
+                put(memory, RANGES + 16, 2)
+                put(memory, RANGES + 20, 2)
+            else:
+                put(memory, RANGES + 12, VERTICES)
+                put(memory, RANGES + 16, 3)
+                put(memory, RANGES + 20, 1)
+            for offset in range(24, 36):
+                del memory[RANGES + offset]
+            for phase in (0, 8):
+                model = self.models(memory, phase)
+                self.assertEqual([c[1] for c in model.calls],
+                                 [base + index * 64 for base in (BUFFER, SOURCE) for index in expected])
+                wrong = TriangleOracle(wrong_words, memory, phase).run()
+                self.assertNotEqual(model.calls, wrong.calls)
+
     def test_final_coordinate_update_retains_single_precision_rounding(self):
         memory = memory_case(vertices=((0, 0, 0), (32, 2, 0), (0, 3, 4)),
                              coordinate=(100000008.0, 5.5, 1.0),
@@ -491,7 +517,7 @@ static int modes[]={0,1,2,4,8,16,32,64,3,7,15,31,63,127};
 static u8 savedActor[0x32C],savedRecords[sizeof(records)],savedBanks[sizeof(banks)];
 static u32 savedOffsets[24],savedLog[6][4],savedCoordinates[3];
 static u16 savedCounts[256];int id,pattern,m,i,j,n,savedCount;
-for(id=0;id<256;id++) for(pattern=0;pattern<16;pattern++) for(m=0;m<14;m++) {
+for(id=0;id<256;id++) for(pattern=0;pattern<18;pattern++) for(m=0;m<14;m++) {
     reset(id,pattern,modes[m]);reference(coordinates,coordinates+1,coordinates+2,pattern%8);
     if(error) return 1;
     savedCount=logCount;

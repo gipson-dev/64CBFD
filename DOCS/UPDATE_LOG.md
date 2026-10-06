@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-05 Game Actor Triangle Lifetime And First-Match Audit
+
+[Note 1014](WORKING_NOTES/1014-game-actor-triangle-lifetime-and-overlapping-range-audit-20261005.md)
+banks 34 controls with 1914 bounded guest comparisons. No production change
+or new byte-exact function; one-word raw-score improvement remains only a
+candidate, with the wrong frame/control-flow shape. Explicit overlap tests
+reject first-match overwrites and premature continued scanning; native
+reference cases expand to 64512 plus 33 aliases. Counts/README unchanged.
+Next: reserved private homes and mixed scalar/array placement for the same
+transform. No sibling/frozen Release change or push.
+All 57 focused checks pass in 309.237 seconds, no skips; tools, whitespace
+and 2981 links pass. All 6060 slots/protected sections remain intact;
+the prior full corpus is not rerun in this test/experiment/doc-only audit.
+
 ## 2026-10-05 Game Actor Triangle Layout Audit
 
 [Note 1013](WORKING_NOTES/1013-game-actor-triangle-layout-screen-20261005.md)

@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-05 ([Note 1014](WORKING_NOTES/1014-game-actor-triangle-lifetime-and-overlapping-range-audit-20261005.md)):
+Bank 34 compiler controls and 1914 bounded comparisons; no production edit.
+Frame-only forms change register allocation or exceed the slot; the 274-word-
+difference initialized-weight form stays an experimental candidate. Close
+the missing overlapping-range first-match gate, including a wrong last-match
+control; native references expand to 64512 plus 33 aliases. README/counts
+unchanged. Next: reserved homes and mixed scalar/array declaration placement.
+All 57 focused checks pass in 309.237 seconds, no skips; tools, whitespace
+and 2981 links pass. The 6060-slot/protected-section audit is unchanged;
+the prior full corpus is not rerun for these test/experiment/doc-only edits.
+
 2026-10-05 ([Note 1013](WORKING_NOTES/1013-game-actor-triangle-layout-screen-20261005.md)):
 After `623b96ae`, screen ten private-array/output-cursor forms with 120 bounded
 guest comparisons for fitting candidates. None improves frame/difference
