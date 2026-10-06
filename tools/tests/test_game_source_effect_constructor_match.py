@@ -425,11 +425,10 @@ void func_1513FFF4(u8 *helper,u8 index,u8 variant) {
     for(i=0;i<16;i++) if(actor[0x100+i]) error=6;
     store(helper,0x12345678);if(mutation) D_800A5184=-2;
 }
-s32 func_151400D0(s32 helper,s32 table) {
-    if(stage++!=4 || helper!=(s32)(actor+0xC0) || table!=expectedTable) error=7;
-    store((u8 *)helper+4,(u32)table);D_80082FA0=bounds[plan][0];
+void func_151400D0(u8 *helper,u8 *table) {
+    if(stage++!=4 || helper!=actor+0xC0 || table!=(u8 *)expectedTable) error=7;
+    store(helper+4,(u32)table);D_80082FA0=bounds[plan][0];
     if(mutation) D_800A5184=0.5f;
-    return -1;
 }
 u8 *func_1515D480(s32 resource) {
     u8 *result=handles+views*16;

@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-06 Game Vertex Attribute Initializer Direct C Conversion
+
+[Note 1048](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md)
+converts retained `func_151400D0`: 48 direct words/frame zero under existing
+O2/g3. Local void/pointer ABI and constructor pointer cast recovered without
+changing executable bytes; no guards/profile/shared header/data. 24 controls,
+456 two-body alias/trace cases, 65536 halfword cases, 131072 native standalone,
+3072 two-body actual-chain guest and 131072 actual-chain native. All 217 chain
+words covered. All 6059 slots identical; protected sections/720 owners/10660
+guards intact, 48 warnings unchanged, zero new. Converted 5464/6042, Game
+4791/5321; exact 3326/5464, Game 2653/4791, zero drift, 2138 different.
+All 60 focused post-link tests pass in 730.693 seconds, no skips;
+30 docs/3329 relative links have no breaks. Next `func_15140190` cached quad builder;
+no full backend/gameplay/host claim, sibling/Release change or push.
+
 ## 2026-10-06 Game View Corner Initializer Direct C Conversion
 
 [Note 1047](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md)

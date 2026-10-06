@@ -4,6 +4,24 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Vertex attribute initializer compiler controls
+
+[Driver](../tools/experiments/game_vertex_attribute_initializer_candidates.py)
+screens six forms/four profiles: 24 controls with real SDK types/fixed anchors.
+The direct byte-pointer loop emits all 48 words/frame zero under O2/g3;
+intermediate flag writes and the final alpha-load/clear/store schedule are
+preserved. The tool installs no source/profile/guards. Retail ROM, IDO and
+MIPS tools required; ignored receipts under
+`conker/build/game-vertex-attribute-initializer[-test]/`.
+[Eight tests](../tools/tests/test_game_vertex_attribute_initializer_match.py)
+bind all controls and installed source/slot, complete intermediate traces,
+every halfword pattern, 19 table/output relationships and actual constructor/
+two-helper chains. Native entry instrumentation forwards to both real helper
+bodies; independent byte references check entire actor/input storage. Other
+allocation/SDK/backend callbacks remain bounded, not full hardware/gameplay/
+host adoption. See
+[Note 1048](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md).
+
 ## View corner initializer compiler controls
 
 [Driver](../tools/experiments/game_view_corner_initializer_candidates.py)
@@ -41,7 +59,9 @@ Native actual C verifies whole storage and actual wrapper/construction/updater
 publication; backend helpers remain callbacks, not complete FCSR/hardware/
 gameplay/host adoption. The helper declaration/call now use the recovered
 void/pointer/byte ABI; all 97 controls and 114 constructor words remain bound.
-Connected actual corner-helper qualification is in Note 1047. See
+The attribute helper likewise uses its recovered void/two-pointer ABI.
+Connected corner qualification is in Note 1047; both actual helpers together
+are qualified in Note 1048. See
 [Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md).
 
 ## Source effect packet compiler controls

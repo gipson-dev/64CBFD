@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Game Vertex Attribute Initializer Direct C Conversion - 2026-10-06
+
+[Note 1048](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md)
+converts guest retained `func_151400D0`: 48 direct words/frame zero, existing
+O2/g3, no guards/profile/shared header/data. Actual constructor and both
+vertex helpers now execute together in bounded qualification; all 217 chain
+words covered. Preserve transient flag writes and alias-sensitive colors.
+All 6059 slots identical, protected sections/720 owners/10660 guards intact;
+48 warnings unchanged, zero new. Game converted 4791/5321, exact 2653/4791
+(55.37%), zero drift, 2138 different. All 60 focused post-link tests pass
+in 730.693 seconds, no skips; 30 docs/3329 relative links have no breaks.
+Next guest `func_15140190`'s false quad-builder stub. Not full backend/
+hardware/gameplay/host adoption; no sibling source/build/save/frozen Release
+change or push.
+
 ## Game View Corner Initializer Direct C Conversion - 2026-10-06
 
 [Note 1047](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md)

@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Vertex attribute initializer direct C conversion:
+[Note 1048](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md)
+converts retained `func_151400D0`: all 48 direct words/frame zero, existing
+O2/g3, no guards/profile/shared header/data. Owner-local void/pointer ABI and
+constructor cast corrected; all 217 constructor/two-helper words unchanged.
+Transient flag stores, signed colors and alias-sensitive read order qualified
+with 24 controls, 456 two-body guest cases, 65536 halfword cases, 131072 native
+standalone, 3072 two-body actual-chain guest and 131072 actual-chain native
+cases. All 6059 linked slots identical to assembly checkpoint; protected
+sections/720 owners/10660 guards intact. 48 preexisting warnings unchanged,
+zero new. Converted total 5464/6042, Game 4791/5321; exact total 3326/5464,
+Game 2653/4791, zero drift, 2138 different. All 60 focused post-link tests
+pass in 730.693 seconds, no skips; 30 docs/3329 relative links have no breaks.
+Next recover 134-word `func_15140190` cached quad builder's false C stub;
+no full backend/hardware/gameplay/host adoption, sibling source/build/save/
+frozen Release change or push.
+
 View corner initializer direct C conversion:
 [Note 1047](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md)
 converts retained `func_1513FFF4`: all 55 direct words/frame eight, existing

@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-06 ([Note 1048](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md)):
+`func_151400D0`: retained assembly converted to 48 direct words/frame zero,
+existing O2/g3; no guards/profile/shared header/data. Local pointer/void ABI
+recovered; transient flags/alias-sensitive signed color reads preserved.
+24 controls, 456 two-body guest, 65536 halfword, 131072 native standalone,
+3072 two-body actual constructor/two-helper guest and 131072 native-chain.
+All 217 chain words covered; all 6059 slots unchanged, protected sections/
+720 owners/10660 guards intact. 48 warnings unchanged, zero new. Converted
+5464/6042, Game 4791/5321; exact 3326/5464, Game 2653/4791, zero drift,
+2138 different. All 60 focused post-link tests pass in 730.693 seconds,
+no skips; 30 docs/3329 relative links have no breaks. Next `func_15140190`;
+no gameplay/host claim, sibling/Release change or push.
+
 2026-10-06 ([Note 1047](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md)):
 `func_1513FFF4`: retained assembly converted to all 55 direct C words/frame
 eight, existing O2/g3, no guards/profile/shared header/data. Void/pointer/

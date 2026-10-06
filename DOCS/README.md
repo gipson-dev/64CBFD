@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest vertex attribute initializer direct conversion](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md):
+  Retained assembly converted to 48 direct C words; transient flags, signed
+  colors and actual constructor/two-helper qualification. Next `func_15140190`.
+
 - [Latest view corner initializer direct conversion](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md):
   Retained assembly converted to 55 direct C words; typed byte ABI, modulo
   dimensions and actual constructor/helper qualification. Next `func_151400D0`.

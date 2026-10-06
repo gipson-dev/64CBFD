@@ -18,7 +18,7 @@ s32 func_1513F4E4();
 s32 func_1513F728();
 s32 func_1513FAB4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_1513FFF4(u8 *out, u8 index, u8 variant);
-s32 func_151400D0(s32 arg0, s32 arg1);
+void func_151400D0(u8 *out, u8 *input);
 s32 func_15140190();
 s32 func_15140410(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_151406AC();
@@ -284,7 +284,7 @@ void *func_1513D2F0(void *descriptor, s32 table, u8 kind, u8 mode, u8 first,
     result[0x74] = 0;
     bzero(result + 0x100, 0x10);
     func_1513FFF4(result + 0xC0, result[0x18], variant);
-    func_151400D0((s32)(result + 0xC0), table);
+    func_151400D0(result + 0xC0, (u8 *)table);
     *(s32 *)(result + 0x10) = 1;
     *(s32 *)(result + 0x14) = 0;
     *(f32 *)(result + 0x78) = D_800A5184;
@@ -683,8 +683,19 @@ void func_1513FFF4(u8 *out, u8 index, u8 variant) {
         *(s16 *)(out + 0x2A) = coordinate;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_151400D0.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_151400D0.s")
+void func_151400D0(u8 *out, u8 *input) {
+    s32 i;
+    for (i = 0; i < 4; i++) {
+        *(u16 *)(out + 6) = *(u16 *)(input + 8);
+        out[12] = *(s16 *)(input + 0);
+        out[13] = *(s16 *)(input + 2);
+        out[14] = *(s16 *)(input + 4);
+        out[15] = *(s16 *)(input + 6);
+        *(u16 *)(out + 6) = 0;
+        out += 16;
+        input += 10;
+    }
+}
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_15140190.s. */
 s32 func_15140190() {
     return 0;

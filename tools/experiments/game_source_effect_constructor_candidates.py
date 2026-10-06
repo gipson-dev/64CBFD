@@ -15,7 +15,7 @@ SYMBOLS = {'func_15167A68': 0x15167A68, 'memcpy': 0x10022EC0, 'bzero': 0x100226F
            'D_80082FA0': 0x80082FA0, 'D_800A5184': 0x800A5184}
 DECLARATIONS = '''extern s32 D_80082FA0;
 void func_1513FFF4(u8 *, u8, u8);
-s32 func_151400D0(s32, s32);
+void func_151400D0(u8 *, u8 *);
 '''
 BASELINE = '''void *func_1513D2F0(void *descriptor, s32 table, u8 kind, u8 mode, u8 first,
                       u8 setup, u8 variant, s32 resource, s32 extra, s32 payload,
@@ -51,7 +51,7 @@ BASELINE = '''void *func_1513D2F0(void *descriptor, s32 table, u8 kind, u8 mode,
     result[0x73] = setup;
     bzero(result + 0x100, 0x10);
     func_1513FFF4(result + 0xC0, result[0x18], variant);
-    func_151400D0((s32)(result + 0xC0), table);
+    func_151400D0(result + 0xC0, (u8 *)table);
     *(s32 *)(result + 0x10) = 1;
     *(s32 *)(result + 0x14) = 0;
     *(s32 *)(result + 0x98) = 0;
