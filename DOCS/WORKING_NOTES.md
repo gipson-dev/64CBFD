@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-06 ([Note 1055](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md)):
+After banked `adbeca4e`, investigate69-word `func_151415D4`.32 controls,
+selected68/no frame/52 differences;720 two-body finite guest storage/access
+cases and eight bounded unchecked-loop runs. Rise branch still lacks one word;
+allocation/branch differences and native/special-FP/negative/padder/production
+gates remain. No installation or count/image change.
+
 2026-10-06 ([Note 1054](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md)):
 `func_15141478`:59 words/frame0x30,50 direct plus nine private-home/FP-operand
 guards, existing O2/g3. Explicit random-call ordering and live fields retained;

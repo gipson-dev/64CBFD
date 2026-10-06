@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Active piecewise envelope investigation](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md):
+  69-word `func_151415D4`;32 controls,720 finite guest cases/eight bounded loops.
+  Candidate still68 words; original source shape and remaining gates pending.
+
 - [Latest timed interpolation match](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md):
   59 words,50 direct plus nine private-home/commutative FP guards; explicit RNG
   ordering, live fields and full-storage/access/native qualification.

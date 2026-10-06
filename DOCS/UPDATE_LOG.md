@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-06 Game Piecewise Envelope Investigation
+
+[Note 1055](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md):
+continue after `adbeca4e` with69-word `func_151415D4`.32 controls, selected68
+words/no frame/52 differences;720 finite two-body guest storage/access cases
+and eight bounded unchecked-loop runs. Missing rise-branch word, allocation
+and branch differences remain. Native/special-FP/negative/padder/production
+qualification pending; placeholder unchanged, no new guards or exact counts.
+
 ## 2026-10-06 Game Timed Interpolation Match
 
 [Note 1054](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md)

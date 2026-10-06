@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Game Piecewise Envelope Investigation - 2026-10-06
+
+[Note 1055](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md):
+guest `func_151415D4` has a69-word/no-frame retail slot. After `adbeca4e`,32
+controls and720 finite two-body guest cases establish a preliminary68-word
+semantic candidate; eight bounded runs retain unchecked period behavior.
+Source-shape/native/special-FP/negative/padder/production gates remain.
+No next-function installation, host adoption, image/count/sibling/Release,
+runtime or push change.
+
 ## Game Timed Interpolation Match - 2026-10-06
 
 [Note 1054](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md)

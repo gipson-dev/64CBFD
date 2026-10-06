@@ -21,6 +21,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Active function investigation:
+[Note 1055](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md)
+starts `func_151415D4` from banked `adbeca4e`:69-word/no-frame retail envelope,
+32 compiler controls, selected68 words/52 differences (product-first49).
+720 two-body finite guest storage/access cases and eight bounded unchecked-loop
+runs pass.65 raw/66 retail reachable words; three duplicate preludes untouched.
+One missing rise-branch word plus allocation/branch differences remain; native,
+special-FP, negative, padder and production gates pending. No installation,
+guard/profile/image change. Current exact counts below remain unchanged.
+
 Timed interpolation recovery:
 [Note 1054](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md)
 recovers `func_15141478`:59 words/frame0x30, existing O2/g3,50 direct plus nine
