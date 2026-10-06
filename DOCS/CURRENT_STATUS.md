@@ -21,6 +21,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Basis-vector quad builder recovery:
+[Note 1050](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md)
+recovers `func_15140410`: 167 words/frame 0x68, existing O2/g3, 165 direct
+plus two independent load scheduling guards. Captured scaled components,
+live translations, fresh-copy slot reloads and original-pointer return qualified
+with 24 controls, 1728 standalone/324 actual-backend/198 float/144 actual-owner
+two-body guest cases, 576 native storage and all 65536 signed-view null cases.
+Only target slot changes across 6059 fixed slots; protected sections and 720
+data owners unchanged, 10665 existing guards preserved plus two. Typed owner
+call removes exactly three old warnings, leaving 45 unchanged and zero new;
+all 13 wrapper instructions remain exact. Converted counts unchanged;
+exact total 3328/5464 (60.91%), Game 2655/4791 (55.42%), 2136 different,
+zero drift. All 75 focused post-link tests pass in 765.095 seconds, no skips;
+32 docs/3353 relative links/zero broken. Tools, compileall and diff checks pass.
+Next adjacent `func_151406AC`: 72-word body/73-word slot, non-null list and
+sentinel-key preconditions need further qualification. Preliminary 100 controls:
+correct body/frame, 18 remaining differences; 864 valid-list and 65535 nonzero
+bypass two-body guest cases agree with retail, not yet installed/native-qualified.
+Sibling generated reference
+still contains a zero-return placeholder; no host adoption/runtime claim or
+sibling source/build/save/frozen Release change or push.
+
 Cached quad builder recovery:
 [Note 1049](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md)
 recovers `func_15140190`'s false stub: 134 words/frame 0xD0 under existing

@@ -181,7 +181,7 @@ class GameCachedQuadBuilderMatchTests(unittest.TestCase):
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             rows = list(csv.DictReader(stream))
         guards = [r for r in rows if r['function']=='func_15140190']
-        self.assertEqual((len(rows),len(guards)),(10665,5))
+        self.assertEqual((len(rows),len(guards)),(10667,5))
         normalized = list(self.words)
         for index,guard in enumerate(guards,45):
             self.assertEqual(guard['filename'],'game_169510')

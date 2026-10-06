@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest basis-vector quad builder match](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md):
+  167 words, 165 direct plus two load scheduling guards; captured components,
+  live translation aliases and actual owner/backend qualification.
+  Next `func_151406AC`; sibling host adoption remains separate.
+
 - [Latest cached quad builder match](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md):
   134 words, 129 direct plus five scheduling guards; actual matrix callee,
   live fresh-copy/translation/cursor qualification. Next `func_15140410`.

@@ -20,7 +20,7 @@ s32 func_1513FAB4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_1513FFF4(u8 *out, u8 index, u8 variant);
 void func_151400D0(u8 *out, u8 *input);
 Vtx *func_15140190(u8 *actor, s16 view);
-s32 func_15140410(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+Vtx *func_15140410(u8 *actor, f32 *widthAxis, f32 *heightAxis, s16 view);
 s32 func_151406AC();
 /* End generated placeholder declarations. */
 
@@ -608,7 +608,8 @@ s32 func_1513F114() {
     return 0;
 }
 void func_1513F4B0(struct210 *arg0, s16 arg1) {
-    func_15140410(arg0, &arg0->unk110, &arg0->unk11C, arg1);
+    func_15140410((u8 *)arg0, (f32 *)((u8 *)arg0 + 0x110),
+                 (f32 *)((u8 *)arg0 + 0x11C), arg1);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513F4E4.s. */
 s32 func_1513F4E4() {
@@ -751,10 +752,46 @@ void func_151403A8(s32 arg0, u8 arg1) {
 void func_151403DC(s32 arg0, u8 arg1) {
     func_15169260(&D_800A5178, 3, arg0, arg1);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_15140410.s. */
-s32 func_15140410(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_151406AC.s. */
+Vtx *func_15140410(u8 *actor, f32 *widthAxis, f32 *heightAxis, s16 view) {
+    Vtx *cursor;
+    Vtx *first;
+    f32 wx, wy, wz, hx, hy, hz;
+    u8 fresh;
+    func_151D5D60(actor + 0x100, view, 0x40, &cursor, &fresh);
+    first = cursor;
+    if (cursor != NULL) {
+        if (fresh) {
+            memcpy(*(u8 **)(actor + 0x100 + view * 4), actor + 0xC0, 0x40);
+            memcpy(*(u8 **)(actor + 0x100 + view * 4) + 0x40, actor + 0xC0, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    wx = *(f32 *)(actor + 0x2C) * widthAxis[0];
+    wy = *(f32 *)(actor + 0x2C) * widthAxis[1];
+    wz = *(f32 *)(actor + 0x2C) * widthAxis[2];
+    hx = *(f32 *)(actor + 0x30) * heightAxis[0];
+    hy = *(f32 *)(actor + 0x30) * heightAxis[1];
+    hz = *(f32 *)(actor + 0x30) * heightAxis[2];
+    cursor[0].v.ob[0] = (s32)((*(f32 *)(actor + 0x34) + wx) + hx);
+    cursor[0].v.ob[1] = (s32)((*(f32 *)(actor + 0x38) + wy) + hy);
+    cursor[0].v.ob[2] = (s32)((*(f32 *)(actor + 0x3C) + wz) + hz);
+    cursor[0].v.flag = 0;
+    cursor[1].v.ob[0] = (s32)((*(f32 *)(actor + 0x34) - wx) + hx);
+    cursor[1].v.ob[1] = (s32)((*(f32 *)(actor + 0x38) - wy) + hy);
+    cursor[1].v.ob[2] = (s32)((*(f32 *)(actor + 0x3C) - wz) + hz);
+    cursor[1].v.flag = 0;
+    cursor[2].v.ob[0] = (s32)((*(f32 *)(actor + 0x34) - wx) - hx);
+    cursor[2].v.ob[1] = (s32)((*(f32 *)(actor + 0x38) - wy) - hy);
+    cursor[2].v.ob[2] = (s32)((*(f32 *)(actor + 0x3C) - wz) - hz);
+    cursor[2].v.flag = 0;
+    cursor[3].v.ob[0] = (s32)((*(f32 *)(actor + 0x34) + wx) - hx);
+    cursor[3].v.ob[1] = (s32)((*(f32 *)(actor + 0x38) + wy) - hy);
+    cursor[3].v.ob[2] = (s32)((*(f32 *)(actor + 0x3C) + wz) - hz);
+    cursor[3].v.flag = 0;
+    return first;
+}
+/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_151406AC.s. */
 s32 func_151406AC() {
     return 0;
 }

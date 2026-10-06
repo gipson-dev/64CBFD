@@ -1,5 +1,25 @@
 # PC Port Roadmap located in another project folder
 
+## Game Basis-Vector Quad Builder Match - 2026-10-06
+
+[Note 1050](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md)
+recovers guest `func_15140410`: 167 words/frame 0x68, 165 direct plus two
+independent scheduling guards, existing O2/g3. Actual buffer backend and
+owner wrapper execute with both raw caller bodies: 218 and 231 reachable
+chain words respectively; optional null-fresh-flag backend store is unreachable
+for this caller. 24 controls, 1728 standalone/324 backend/198 float/144 owner
+guest cases, 576 native storage and 65536 signed-view null cases. Only target
+slot changes; 6059 fixed slots, protected sections/720 owners intact, 10665
+existing guards plus two. Typed owner call removes three old warnings;
+45 unchanged, zero new. Game exact 2655/4791 (55.42%), 2136 different,
+zero drift; converted counts unchanged. All 75 focused post-link tests pass
+in 765.095 seconds, no skips; 32 docs/3353 links/zero broken.
+The sibling `recomp_out/.c` reference still has this function's false
+zero-return body. That is file evidence, not active-dispatch/executable proof;
+host regeneration/adoption remains separate. Next guest `func_151406AC`.
+No full hardware/FCSR/gameplay claim, host build/runtime, sibling source/save/
+frozen Release change or push.
+
 ## Game Cached Quad Builder Match - 2026-10-06
 
 [Note 1049](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md)

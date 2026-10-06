@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-06 ([Note 1050](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md)):
+`func_15140410`: false basis-quad stub recovered, 167 words/frame 0x68,
+165 direct plus two load scheduling guards under existing O2/g3. 24 controls;
+1728 standalone/324 actual-backend/198 float/144 actual-owner two-body guest,
+576 native storage and 65536 native signed-view null cases. Original return,
+captured basis components and live translation/slot aliases preserved.
+Only target changes across 6059 fixed slots; protected sections/720 owners
+intact, 10665 existing guards plus two. Owner call typing removes three old
+warnings, leaving 45 unchanged, zero new; wrapper's 13 words unchanged.
+Converted counts unchanged; exact total 3328/5464, Game 2655/4791, 2136
+different, zero drift. All 75 focused post-link tests pass in 765.095 seconds,
+no skips; 32 docs/3353 links/zero broken. Tools/compileall/diff checks pass.
+Next `func_151406AC`; no gameplay/host claim, sibling/Release change or push.
+
 2026-10-06 ([Note 1049](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md)):
 `func_15140190`: false quad stub recovered, 134 words/frame 0xD0, 129 direct
 and five scheduling guards, existing O2/g3. No profile/shared header/data.

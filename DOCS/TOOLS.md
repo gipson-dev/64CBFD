@@ -4,6 +4,26 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Basis-vector quad builder compiler controls
+
+[Driver](../tools/experiments/game_basis_quad_builder_candidates.py)
+screens six forms/four profiles: 24 controls, real SDK types/fixed anchors.
+Selected O2/g3 emits 167 words/frame 0x68 with two independent load scheduling
+differences; all six multiply operand orders and scalar lifetimes emit directly.
+No source/profile/guard installation by the driver.
+[Nine tests](../tools/tests/test_game_basis_quad_builder_match.py) bind controls,
+complete source/linked slot and the exact two guards, full memory/access traces,
+captured components, live translation/slot aliases and original-pointer return.
+Actual 52-word buffer backend and 13-word owner wrapper execute in connected
+guest fixtures; the optional null-fresh-flag backend store is unreachable for
+this caller. Native full-storage fixtures check ordinary aliases; all 65536
+signed-view values traverse the null path without basis/slot reads.
+Eight compiled negatives distinguish memory/return and exact backend contracts.
+SDK copy/allocation remain bounded providers, not full hardware FCSR/gameplay
+or sibling host adoption. Ignored receipts under
+`conker/build/game-basis-quad-builder[-test]/`. See
+[Note 1050](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md).
+
 ## Cached quad builder compiler controls
 
 [Driver](../tools/experiments/game_cached_quad_builder_candidates.py)

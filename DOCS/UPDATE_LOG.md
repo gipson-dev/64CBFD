@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Basis-Vector Quad Builder Match
+
+[Note 1050](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md)
+recovers `func_15140410`: 167 words/frame 0x68, existing O2/g3, 165 direct
+plus two independent load scheduling guards. 24 controls; 1728 standalone,
+324 actual-backend, 198 float and 144 actual-owner two-body guest cases;
+576 native full-storage and 65536 signed-view null cases. Captured components,
+live translation aliases and escaped-cursor/original-return behavior preserved.
+Only target changes across 6059 fixed slots; protected sections/720 owners
+intact, 10665 existing guards plus two. Typed owner call removes three old
+warnings without changing its 13 words; 45 unchanged warnings, zero new.
+Converted counts unchanged; exact total 3328/5464, Game 2655/4791 (55.42%),
+2136 different, zero drift. All 75 focused post-link tests pass in 765.095
+seconds, no skips; 32 docs/3353 relative links/zero broken. Tools/compileall/
+diff checks pass.
+Next `func_151406AC`; no full hardware/FCSR/gameplay/host adoption claim,
+sibling/Release change or push.
+
 ## 2026-10-06 Game Cached Quad Builder Match
 
 [Note 1049](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md)

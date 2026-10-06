@@ -10664,3 +10664,5 @@ game_169510,func_15140190,0x0B8,0xE7B40060,0x02402025,-,-,Normalize cached quad 
 game_169510,func_15140190,0x0BC,0xC624002C,0xE7A40058,-,-,Normalize cached quad first corner independent setup schedule,,,false
 game_169510,func_15140190,0x0C0,0xE7A40058,0xC6260030,-,-,Normalize cached quad first corner independent setup schedule,,,false
 game_169510,func_15140190,0x0C4,0xC6260030,0xE7B40060,-,-,Normalize cached quad first corner independent setup schedule,,,false
+game_169510,func_15140410,0x0A4,0xC600002C,0x8FA30070,-,-,Normalize basis quad independent width and vector pointer load schedule,,,false
+game_169510,func_15140410,0x0A8,0x8FA30070,0xC600002C,-,-,Normalize basis quad independent width and vector pointer load schedule,,,false
