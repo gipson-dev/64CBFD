@@ -4,6 +4,20 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Timed interpolation compiler controls
+
+[Driver](../tools/experiments/game_timed_interpolation_candidates.py):
+eight pointer/sample/tail forms, four profiles, **32 controls**. Explicit RNG
+sample statements give59 words/frame0x30/nine private-home/commutative FP
+differences under existing O2/g3; no driver installation. [Nine tests](../tools/tests/test_game_timed_interpolation_match.py)
+derive all words, bind actual object padder/link/production metadata, qualify
+full-storage/callback/access/saved-pointer and actual native-C behavior.
+Special-float arithmetic NaNs are classified separately from exact untouched
+storage; not N64 FCSR/exception/payload-propagation or gameplay acceptance.
+Ten compiled negatives bind live callback reads and semantic boundaries.
+Ignored receipts under `conker/build/game-timed-interpolation-test/`; see
+[Note 1054](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md).
+
 ## Grid/channel updater compiler controls
 
 [Driver](../tools/experiments/game_grid_channel_updater_candidates.py):

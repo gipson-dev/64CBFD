@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest timed interpolation match](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md):
+  59 words,50 direct plus nine private-home/commutative FP guards; explicit RNG
+  ordering, live fields and full-storage/access/native qualification.
+  Next69-word `func_151415D4`:68-word preliminary candidate, not installed.
+
 - [Latest grid/channel updater match](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md):
   96 words,53 direct plus43 closed register-cycle/address-schedule guards;
   live signed coordinates/bounds/grid aliases and byte wrap, normalized V0=4.

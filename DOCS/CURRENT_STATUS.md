@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Timed interpolation recovery:
+[Note 1054](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md)
+recovers `func_15141478`:59 words/frame0x30, existing O2/g3,50 direct plus nine
+derived private-pointer-home/commutative FP guards. Explicit RNG call ordering,
+strict-negative expiry, live post-call fields and unclamped smoothing retained.
+8640 finite/432 private-home/1008 special-FP three-body guest cases;
+4320 finite/504 special-FP native cases,32 controls and ten compiled negatives.
+Completed production audit: only target across6059 fixed slots; protected
+sections/720 owners unchanged,10738 old guards plus nine, owner warnings0->0.
+Converted unchanged; exact total3332/5464 (60.98%), Game2659/4791 (55.50%),
+2132 different, zero drift. All18 focused post-link tests pass in55.115 seconds,
+no skips: nine new plus nine changed metadata tests, not all101 earlier tests.
+36 docs/3401 links/zero broken; tools/compileall/diff checks pass.
+Next69-word `func_151415D4` piecewise envelope:16 initial controls, selected
+68 words/no frame/52 differences, still a production placeholder. No hardware/
+FCSR/gameplay/host claim or sibling/frozen Release/build/save/runtime change.
+
 Grid/channel updater recovery:
 [Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md)
 recovers `func_151412BC`: 96 words/frame0x18, existing O2/g3, 53 direct words

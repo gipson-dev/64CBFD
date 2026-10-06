@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-06 ([Note 1054](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md)):
+`func_15141478`:59 words/frame0x30,50 direct plus nine private-home/FP-operand
+guards, existing O2/g3. Explicit random-call ordering and live fields retained;
+8640 finite/432 saved-pointer/1008 special-FP three-body guest cases,4320
+finite/504 special-FP native cases,32 controls and ten compiled negatives.
+Audit: only target across6059 slots; protected sections/720 owners unchanged,
+10738 old guards plus nine, owner warnings0->0. Exact total3332/5464,
+Game2659/4791,2132 different, zero drift; converted unchanged.
+All18 focused post-link tests pass, no skips (nine new/nine changed metadata,
+not all101 earlier tests);36 docs/3401 links/zero broken, tools/compileall/diff
+checks pass. Next69-word `func_151415D4`,16
+initial controls, selected68/no frame/52 differences, no installation.
+No full hardware/FCSR/gameplay/host claim, sibling/Release change or push.
+
 2026-10-06 ([Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md)):
 `func_151412BC`: false updater stub recovered,96 words/frame0x18,53 direct
 plus43 closed register-cycle/address-schedule guards, existing O2/g3.

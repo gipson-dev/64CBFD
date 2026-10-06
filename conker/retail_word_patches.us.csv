@@ -10737,3 +10737,12 @@ game_16DC80,func_151412BC,0x158,0x03001825,0x03001025,-,-,Normalize grid updater
 game_16DC80,func_151412BC,0x15C,0x244201A0,0x248401A0,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
 game_16DC80,func_151412BC,0x160,0x5452FFBC,0x5492FFBC,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
 game_16DC80,func_151412BC,0x164,0x00001825,0x00001025,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_15141478,0x4c,0x46009102,0x46120102,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
+game_16DC80,func_15141478,0x58,0xAFA30020,0xAFA30024,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
+game_16DC80,func_15141478,0x64,0x8FA30020,0x8FA30024,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
+game_16DC80,func_15141478,0x6c,0xAFA30020,0xAFA30024,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
+game_16DC80,func_15141478,0x70,0x8FA30020,0x8FA30024,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
+game_16DC80,func_15141478,0x84,0x460A1400,0x46025400,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
+game_16DC80,func_15141478,0x94,0xAFA30020,0xAFA30024,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
+game_16DC80,func_15141478,0x98,0x8FA30020,0x8FA30024,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
+game_16DC80,func_15141478,0xac,0x46061200,0x46023200,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false

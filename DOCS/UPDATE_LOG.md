@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Timed Interpolation Match
+
+[Note 1054](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md)
+recovers `func_15141478`:59 words/frame0x30,50 direct plus nine derived
+private-home/commutative FP guards, existing O2/g3. Explicit RNG ordering and
+live timer/interval/smoothing fields preserved, no clamps.8640 finite/432
+private-home/1008 special-FP three-body guest cases,4320 finite/504 special-FP
+native cases,32 controls and ten compiled negatives. Production audit: only
+target across6059 slots, protected sections/720 owners unchanged;10738 guards
+plus nine, owner warnings0->0. Converted unchanged; exact total3332/5464,
+Game2659/4791 (55.50%),2132 different, zero drift. All18 focused post-link tests
+pass in55.115 seconds, no skips (nine new/nine changed metadata, not all101
+earlier tests);36 docs/3401 links/zero broken, tools/compileall/diff checks pass.
+Next69-word `func_151415D4`:16 initial
+controls, selected68/no frame/52 differences, no next-routine qualification or
+installation. No full FCSR/hardware/gameplay/host claim, sibling/Release change
+or push.
+
 ## 2026-10-06 Game Grid/Channel Updater Match
 
 [Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md)

@@ -8,7 +8,7 @@ u8 *func_151407D0(void *source, s32 size, u8 *descriptor, u8 kind, u8 mode,
                  u8 first, u8 variant, s8 selector, u8 channel, s32 context);
 s32 func_151408A4();
 void func_151412BC(void);
-s32 func_15141478();
+s32 func_15141478(u8 *actor);
 s32 func_151415D4();
 s32 func_151416E8();
 /* End generated placeholder declarations. */
@@ -121,9 +121,26 @@ void func_1514143C(struct210 *arg0) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_15141478.s. */
-s32 func_15141478() {
-    return 0;
+s32 func_15141478(u8 *actor) {
+    f32 sample;
+    u8 *runtime;
+    u8 *payload;
+    payload = actor + 0x110;
+    runtime = actor + 0x170;
+    *(f32 *)(actor + 0x180) -= D_800BE9A4;
+    if (*(f32 *)(actor + 0x180) < 0.0f) {
+        sample = func_150ADA68();
+        *(f32 *)(runtime + 0x10) = sample * *(f32 *)(runtime + 0x14);
+        if (func_150ADA20() & 3) {
+            sample = func_150ADA68();
+            *(f32 *)(runtime + 0xC) = sample * (*(f32 *)(runtime + 0) - *(f32 *)(runtime + 4)) + *(f32 *)(runtime + 4);
+        } else {
+            sample = func_150ADA68();
+            *(f32 *)(runtime + 0xC) = sample * (*(f32 *)(runtime + 8) - *(f32 *)(runtime + 0)) + *(f32 *)(runtime + 0);
+        }
+    }
+    *(f32 *)(payload + 0x48) += (*(f32 *)(runtime + 0xC) - *(f32 *)(payload + 0x48)) * *(f32 *)(runtime + 0x18);
+    return 1;
 }
 
 s32 func_15141564(u8 *arg0) {

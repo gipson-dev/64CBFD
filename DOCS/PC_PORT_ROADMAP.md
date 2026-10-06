@@ -1,5 +1,23 @@
 # PC Port Roadmap located in another project folder
 
+## Game Timed Interpolation Match - 2026-10-06
+
+[Note 1054](WORKING_NOTES/1054-game-timed-interpolation-match-20261006.md)
+recovers guest `func_15141478`:59 words/frame0x30,50 direct plus nine derived
+private-home/commutative FP guards, existing O2/g3. Explicit RNG ordering,
+strict-negative expiry, live reset/interval/smoothing fields, no clamps.
+Three-body full-storage/access/private-pointer/float-boundary and actual native
+C qualification,32 controls/ten negatives. Production audit: only target
+across6059 slots, protected sections/720 owners unchanged;10738 guards plus
+nine, owner warnings0->0. Game2659/4791 exact (55.50%),2132 different, zero
+drift; converted unchanged. All18 focused post-link tests pass, no skips;
+nine new/nine changed metadata tests, not all101 earlier tests.36 docs/3401
+links/zero broken; tools/compileall/diff checks pass.
+Sibling already retail-translated; no host adoption,
+FCSR/hardware/gameplay claim or sibling source/build/save/frozen Release/runtime
+change or push. Next69-word `func_151415D4`,16 initial controls; best68-word
+candidate still needs source-shape and behavioral recovery, no installation.
+
 ## Game Grid/Channel Updater Match - 2026-10-06
 
 [Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md)
