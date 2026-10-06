@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Dimensions And Position Direct Match - 2026-10-06
+
+[Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md)
+recovers guest `func_1515C1A0`: all 41 words directly, no frame/guards/profile.
+Signed dimensions and ordered overlapping XYZ outputs are qualified by
+36864 guest / 18432 native cases. All 47 post-link tests pass in 193.845
+seconds, no skips. Only target changes across 6059; protected sections/720
+owners/10646 guards intact. Game now 2642/4789 exact, zero drift,
+2147 different. Next independently qualify `func_1515C244`'s signed-field twin.
+No host adoption, complete caller/FCSR/gameplay acceptance, sibling source/
+build/save/frozen Release change or push.
+
 ## Game Projection Wrapper Audit - 2026-10-06
 
 [Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md)

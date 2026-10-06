@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 typedef struct ResetNode {
     u8 pad0[8];
@@ -69,8 +70,20 @@ void func_1515C158(void) {
     } while (row != D_800DD190);
 }
 
-s32 func_1515C1A0() {
-    return 0;
+void func_1515C1A0(struct127 *arg0, struct17 *arg1, f32 *arg2, f32 *arg3) {
+    if (arg0->id < 0xBB && arg0->id != 0xFF) {
+        *arg2 = arg0->unkD2;
+        *arg3 = arg0->unkD4;
+        arg1->unk0 = arg0->x_position;
+        arg1->unk4 = arg0->y_position + arg0->unkD6;
+        arg1->unk8 = arg0->z_position;
+    } else {
+        *arg2 = 1.0f;
+        *arg3 = 1.0f;
+        arg1->unk0 = arg0->x_position;
+        arg1->unk4 = arg0->y_position;
+        arg1->unk8 = arg0->z_position;
+    }
 }
 
 s32 func_1515C244() {

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-06 Game Actor Dimensions And Position Direct Match
+
+[Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md)
+replaces `func_1515C1A0`'s stub with all 41 retail words directly under O2/g3.
+No guards/profile/data/header change; existing actor/point layouts. Signed
+dimensions, ordered alias-sensitive XYZ and vertical adjustment; 16 controls,
+36864 guest / 18432 native cases. All 47 post-link tests pass in 193.845
+seconds, no skips. Only target changes across 6059; protected sections/720
+owners/10646 guards intact. Both owner compiles have
+empty diagnostics. README: total 3315/5462, Game 2642/4789 exact, zero drift.
+Next independently qualify `func_1515C244`; no sibling/Release edit or push.
+
 ## 2026-10-06 Game Projection Wrapper ABI And Frame Audit
 
 [Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md)

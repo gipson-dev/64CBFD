@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md)):
+`func_1515C1A0`: 41 words directly, no frame/guards/profile/data change.
+Signed fields and sequential aliased outputs; real actor/point types.
+16 controls, 36864 guest / 18432 native cases, 40 reachable words covered.
+All 47 post-link tests pass in 193.845 seconds, no skips.
+Only target changes across 6059; protected sections/720 owners/10646 guards
+intact. Baseline/current owner diagnostics empty. README now 3315/5462 total,
+2642/4789 Game exact. Next independently qualify `func_1515C244`'s signed
++0xE4/+0xE6/+0xE8 twin. No sibling/frozen Release or gameplay claim or push.
+
 2026-10-06 ([Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md)):
 Projection wrapper: 20 reproducible O2/g3 controls, no exact form; frame 0x50
 versus retail 0x48. Three compiler/identity tests pass in 14.634 seconds;

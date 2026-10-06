@@ -4,6 +4,20 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Actor-dimension query compiler controls
+
+[Driver](../tools/experiments/game_actor_dimensions_candidates.py) uses real
+SDK/actor/point headers for four forms under four profiles: 16 controls.
+Direct fields/cached ID/early return match under both O2 profiles; no source,
+guard or profile is installed by the tool. Requires retail ROM, IDO and MIPS
+tools; ignored `conker/build/game-actor-dimensions/` receipts.
+[Five tests](../tools/tests/test_game_actor_dimensions_match.py) bind the
+direct linked slot, sequential guest traces/complete footprints and the
+actual C/real actor prefix in native cases. Negative controls detect wrong
+ID threshold, unsigned fields, missing offset and the stub. Forty reachable
+words execute; the impossible likely-branch delay word is structurally bound.
+See [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md).
+
 ## Projection-wrapper compiler audit
 
 [Driver](../tools/experiments/game_projection_wrapper_candidates.py) runs

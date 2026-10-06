@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor-dimension/position direct match:
+[Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md)
+recovers `func_1515C1A0`: all 41 words directly, no frame/guards/profile/data
+change. Real actor/point layouts, signed dimensions/vertical offset and
+ordered overlapping outputs. 16 compiler controls; 36864 two-body guest
+cases / 18432 native cases. Forty reachable words execute; one unreachable
+delay word is structurally bound. All 47 post-link tests pass in 193.845
+seconds, no skips. Only target changes across 6059 slots; protected
+sections/720 owners/10646 guards intact. Both baseline/current
+owner compiles have empty diagnostics. README now total 3315/5462 and
+Game 2642/4789 exact, zero drift, 2147 different. Next `func_1515C244`,
+the adjacent signed +0xE4/+0xE6/+0xE8 twin. No full callers/FCSR/gameplay,
+sibling/frozen Release change or push; Game matching stays active.
+
 Projection-wrapper investigation:
 [Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md)
 banks 20 O2/g3 controls for `func_15144CEC`; none matches the 101-word retail

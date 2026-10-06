@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest actor-dimension/position direct match](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md):
+  41 words directly; signed dimensions, ordered alias-sensitive XYZ stores.
+  Next independently qualify the adjacent `func_1515C244` twin.
+
 - [Latest projection-wrapper ABI/frame audit](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md):
   20 controls, no match/source installation; retained helper identity verified.
   Next inspect `func_1515C1A0`; wrapper execution qualification remains open.
