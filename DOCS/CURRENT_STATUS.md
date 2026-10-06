@@ -21,6 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Random descriptor recovery:
+[Note 1065](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md)
+recovers `func_15141F78`:96 direct words/frame0x78, no guards/profile changes.
+Typed six-input void ABI, original40-byte descriptor with unsigned byte fields,
+two ordered integer draws and one float draw; submit all16 arguments, including
+the address source+4 rather than its stored value.64 controls;6912 paired guest
+cases/full traces/storage,944 byte/float-edge cases,48 guest-only home probes,
+57856 native cases,144 connected original call/delay-pair cases and12 semantic
+negatives. The original full callers/RNG/submit helper and hardware FCSR are not
+executed by those bounded fixtures. Native excludes three unspecified padding
+bytes; exact guest stack provenance retained. Only target across6059 slots;
+all10809 guards, protected sections/720 owners and two owner warnings unchanged.
+Exact3340/5464 (61.13%), Game2667/4791 (55.67%),2124 different, zero drift;
+converted counts/bytes unchanged. All54 focused post-link tests pass in528.932
+seconds, no skips/errors/failures;47 docs/3521 relative links/zero broken,
+tools/syntax/diff checks pass.
+Next80-word `func_15142180`, frame0x70:76-byte descriptor, copied three-word
+position, live constants and five-argument submit ABI. No sibling/Release/save,
+runtime, host adoption, gameplay acceptance or push change.
+
 Effect-record updater recovery:
 [Note 1064](WORKING_NOTES/1064-game-effect-record-updater-match-20261006.md)
 recovers `func_15141E38`:80 words/frame0x60,56 direct plus24 closed guards.

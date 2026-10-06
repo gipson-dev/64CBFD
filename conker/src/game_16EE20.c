@@ -3,6 +3,17 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef struct {
+    s32 flags;
+    s16 lifetime;
+    u8 slot, kind;
+    s32 zero8, zeroC;
+    u8 random, value11, value12, value13, value14, value15, zero16, seven;
+    s32 effect, sourceWord;
+    u8 value20, pad21;
+    s16 size, count;
+} GameRandomDescriptor;
+
 typedef struct { s32 index; u8 *actor; u8 identity; } GameEffectRefreshRequest;
 typedef s32 (*GameEffectClassifier)(s32, u8 *);
 typedef void (*GameEffectCallback)(u8 *, s32, s32);
@@ -19,7 +30,7 @@ void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
 s32 func_15141CC0(s32 context);
 void func_15141E38(u8 *actor, s32 index);
-s32 func_15141F78();
+void func_15141F78(u8 slot, u8 *source, f32 scale, u8 tag, f32 *position, u8 mode);
 s32 func_15142180();
 s32 func_151424F4();
 s32 func_15142600();
@@ -252,46 +263,39 @@ void func_15141E38(u8 *actor, s32 index) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15141F78.s. */
-s32 func_15141F78() {
-    return 0;
+void func_15141F78(u8 slot, u8 *source, f32 scale, u8 tag, f32 *position, u8 mode) {
+    GameRandomDescriptor descriptor;
+    f32 range;
+    s32 enabled;
+    descriptor.slot = slot;
+    descriptor.kind = 0;
+    descriptor.flags = 0x6F701;
+    descriptor.lifetime = (u32)func_150ADA20() % 61U + 100;
+    descriptor.zero8 = 0;
+    descriptor.zeroC = 0;
+    descriptor.random = (func_150ADA20() & 0x7F) + 128;
+    descriptor.value11 = 0xFF;
+    descriptor.value12 = 0xFF;
+    descriptor.value13 = 0xFF;
+    descriptor.value14 = 0xFF;
+    descriptor.value15 = 0xFF;
+    descriptor.effect = 0x3B0002;
+    descriptor.zero16 = 0;
+    descriptor.seven = 7;
+    descriptor.value20 = 0xFF;
+    descriptor.sourceWord = *(s32 *)(source + 0x18);
+    descriptor.size = 0x28;
+    descriptor.count = 6;
+    range = (func_150ADA68() * 5.0f + 10.0f) * scale;
+    if (mode == 2) {
+        enabled = 1;
+    } else {
+        enabled = 0;
+    }
+    func_1513C650((s32)&descriptor, 0, 0, (s32)(source + 4),
+        position[0], *(f32 *)source, position[2], range, range,
+        tag, enabled, 3, 1, 0, 255, 1);
 }
-// NON-MATCHING: need to determine arguments
-// void func_1513C650(s32, s32, s32, u16, s32, s32, s32, f32, f32, s32, s32, s32, s32, s32, u8, s32);
-// s32 func_1513C650(s32 arg0, u8 arg1, u8 arg2, s32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, u8 arg9, u8 argA, s32 argB, s32 argC, s32 argD, u8 argE, s32 argF);
-// void func_15141F78(u8 arg0, struct157 *arg1, f32 arg2, s32 arg3, struct157 *arg4, u8 arg5) {
-//     struct157 tmp;
-//     f32 temp_f2;
-//     s32 phi_v0;
-//
-//     tmp.unk6 = arg0;
-//     tmp.unk7 = 0;
-//     tmp.unk0 = 0x6F701;
-//     tmp.unk4 = (func_150ADA20() % 61U) + 100;
-//     tmp.unk8 = 0;
-//     tmp.unkC = 0;
-//     tmp.unk10 = (func_150ADA20() & 0x7F) + 128;
-//     tmp.unk11 = 0xFF;
-//     tmp.unk12 = 0xFF;
-//     tmp.unk13 = 0xFF;
-//     tmp.unk14 = 0xFF;
-//     tmp.unk15 = 0xFF;
-//     tmp.unk18 = 0x3B0002;
-//     tmp.unk16 = 0;
-//     tmp.unk17 = 7;
-//     tmp.unk20 = 0xFF;
-//     tmp.unk1C = arg1->unk18;
-//     tmp.unk22 = 0x28;
-//     tmp.unk24 = 6;
-//     temp_f2 = ((func_150ADA68() * 5.0f) + 10.0f) * arg2;
-//     // --- matching to here ---
-//     if (arg5 == 2) {
-//         phi_v0 = 1;
-//     } else {
-//         phi_v0 = 0;
-//     }
-//     func_1513C650(&tmp, 0, 0, arg1->unk4, arg4->unk0, arg1->unk0, arg4->unk8, temp_f2, temp_f2, arg3, phi_v0, 3, 1, 0, 0xFF, 1);
-// }
 
 s32 func_151420F8(struct127 *arg0) {
     SixWordBlock tmp;

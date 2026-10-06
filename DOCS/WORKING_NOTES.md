@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-06 ([Note1065](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md)):
+`func_15141F78`:96 direct words/frame0x78, no guards/profile change. Six typed
+inputs,40-byte unsigned descriptor, ordered RNG/live reads and complete16-arg
+submit; source+4 address, not dereference.64 controls,6912 paired guest/57856
+native/144 call-delay-pair cases,944 byte/float edges,48 private-home probes and
+12 semantic negatives. Exact guest padding provenance; native padding/NaN
+payload/FCSR and complete caller/helper execution not claimed. Only target
+across6059; protected sections/720 owners/10809 guards and two warnings unchanged.
+Exact3340/5464, Game2667/4791,2124 different, zero drift; converted unchanged.
+All54 focused post-link tests pass in528.932 seconds, no skips/errors/failures;
+47 docs/3521 relative links/zero broken, tools/syntax/diff checks pass.
+Next80-word `func_15142180`, frame0x70,
+76-byte descriptor and five-argument submit. No sibling/Release/save/runtime,
+host adoption, gameplay acceptance or push change.
+
 2026-10-06 ([Note1064](WORKING_NOTES/1064-game-effect-record-updater-match-20261006.md)):
 `func_15141E38`:80 words/frame0x60,56 direct plus24 closed guards. Minimal
 request, all-match refresh/create gates, typed void actor/index ABI and live

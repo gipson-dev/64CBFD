@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-06 Game Random Descriptor Match
+
+[Note1065](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md):
+`func_15141F78`:96 direct words/frame0x78, no guards/profile change. Original
+40-byte descriptor and six typed inputs, ordered RNG, live reads and complete
+16-argument submit including the source+4 address. Unsigned local byte fields
+resolve six signed SDK materialization differences; stale partial draft removed.
+64 controls,6912 guest/57856 native/144 original call-delay-pair cases,
+byte/float edges, guest-only home probes and12 negatives. Only target across
+6059; all10809 guards, protected sections/720 owners and two warnings unchanged.
+Exact3340/5464 (61.13%), Game2667/4791 (55.67%),2124 different, zero drift;
+converted unchanged. All54 focused tests pass in528.932 seconds, no skips/
+errors/failures;47 docs/3521 relative links/zero broken, tools/syntax/diff checks
+pass. Next80-word `func_15142180`.
+No full original-caller/RNG/submit-helper or hardware FCSR/gameplay acceptance,
+host adoption, sibling/Release/save/runtime or push change.
+
 ## 2026-10-06 Game Effect Record Updater Match
 
 [Note1064](WORKING_NOTES/1064-game-effect-record-updater-match-20261006.md):

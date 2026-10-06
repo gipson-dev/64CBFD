@@ -1,5 +1,28 @@
 # PC Port Roadmap located in another project folder
 
+## Game Random Descriptor Match - 2026-10-06
+
+[Note 1065](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md)
+recovers guest `func_15141F78`:96 direct words/frame0x78, no guards/profile
+change. Six typed inputs, unsigned byte descriptor fields, ordered RNG/live
+reads and complete16-argument submit ABI; source+4 is an address.64 controls,
+6912 paired guest/57856 native/144 call-delay-pair cases, byte/float edges,
+private-home probes and12 negatives. Only target across6059; all10809 guards,
+protected sections/720 data owners and two owner warnings unchanged.
+Game2667/4791 exact (55.67%),2124 different, zero drift; converted unchanged.
+
+All54 focused post-link tests pass in528.932 seconds, no skips/errors/failures;
+47 docs/3521 relative links/zero broken, tools/syntax/diff checks pass.
+
+- [x] Recover descriptor layout, typed inputs and all16 submit arguments.
+- [x] Qualify native/guest, byte/float, alias, negative and actual-padder gates.
+- [x] Rebuild/audit all slots, original data owners and unchanged guards.
+- [x] Finish focused post-link regression/documentation receipts.
+- [ ] Recover80-word `func_15142180`:76-byte descriptor and five-argument submit.
+
+No original full-caller/RNG/submit-helper or hardware FCSR/gameplay acceptance,
+host adoption, sibling source/build/save/frozen Release, runtime or push change.
+
 ## Game Effect Record Updater Match - 2026-10-06
 
 [Note 1064](WORKING_NOTES/1064-game-effect-record-updater-match-20261006.md)
@@ -19,7 +42,7 @@ All56 focused post-link tests pass in430.719 seconds, no skips/errors/failures;
 - [x] Qualify guest/native, negative, caller, actual padding and copied-owner gates.
 - [x] Rebuild/audit all production slots, protected sections and old guards.
 - [x] Finish focused post-link regression/documentation receipts.
-- [ ] Recover96-word `func_15141F78`: descriptor/RNG/float argument construction.
+- [x] Recover96-word `func_15141F78`: descriptor/RNG/float argument construction (Note1065).
 
 No allocator/link-helper C restoration, host adoption, hardware/gameplay
 acceptance, sibling source/build/save/frozen Release, runtime or push change.

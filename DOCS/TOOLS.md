@@ -4,6 +4,30 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Random descriptor compiler controls
+
+[Driver](../tools/experiments/game_random_descriptor_candidates.py):sixteen
+signed/unsigned descriptor, boolean and declaration-order shapes across four
+actual-SDK profiles,64 controls. Unsigned-byte descriptor with branch-shaped
+s32 boolean and original declaration order emits96 words/frame0x78 directly.
+The signed SDK descriptor materializes six -1 values instead of255; retain
+the shared SDK type and install a local layout, not six word guards.
+[Eleven tests](../tools/tests/test_game_random_descriptor_match.py) bind6912
+paired guest/full ordered trace/storage cases,944 byte/float edges,48 guest-only
+home reload probes,57856 actual32-bit native cases,144 original call/delay-pair
+cases and12 compiled negatives. Preserve two integer draws, unsigned%61,
+masked second draw, separately rounded float operations, captured source+18
+before float provider, and all16 arguments including the source+4 address.
+Actual padding preserves384 bytes and four call relocations under alternate
+targets; copied owner preserves92 other functions/relocations, pool and two
+warnings. Production binds96 words, five neighbors and all10809 guards.
+Native padding33/38/39 is unspecified. NaN results are classification-checked,
+not NaN payload/FCSR acceptance; private-home mutations are guest-only. RNG and
+submit helpers remain bounded models; caller tests execute original jal/delay
+pairs in bounded wrappers, not complete original callers. Ignored receipts:
+`conker/build/game-random-descriptor-test/`; see
+[Note1065](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md).
+
 ## Effect-record updater compiler controls
 
 [Driver](../tools/experiments/game_effect_record_updater_candidates.py):eight
