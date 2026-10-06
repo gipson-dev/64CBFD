@@ -21,7 +21,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Active effect-dispatch investigation:
+Effect-dispatch recovery:
+[Note 1061](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md)
+recovers `func_15141A7C`:100 words/frame0x48,75 direct plus25 closed guards.
+Explicit scoped helper-result sequencing preserves the live classifier lookup
+on native C as well as IDO. Repeated record selectors, signed payload/counts,
+live list links and registered cursor aliases remain.13824 three-body guest,
+69632 connected retail-classifier,70848 actual32-bit native,288 cursor-alias,
+864 guest caller/240 native wrapper cases and compiled negatives qualify the
+contract. Raw C's one extra private-read site is explicitly bound, not blanket
+stack-filtered. Only target changes across6059 slots; original10760 guard rows
+unchanged,25 appended. Protected sections/720 data owners unchanged; warnings
+3->3. Converted counts/bytes unchanged; exact3336/5464 (61.05%), Game2663/4791
+(55.58%),2128 different, zero drift. All48 focused post-link tests pass in
+495.394 seconds, no skips/errors/failures; final portable-prefix test rerun
+passes.43 documents/3473 relative links/zero broken; tools/syntax/diff pass.
+Next45-word actor classifier `func_15141C0C`:two fixed retail switch tables.
+No helper-C/gameplay/hardware/host adoption, sibling/Release/runtime or push.
+
+Historical effect-dispatch investigation, superseded by Note 1061:
 [Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md)
 continues after banked `e5bf72e0` with100-word/frame0x48 `func_15141A7C`.
 112 controls: live selector99/26; private cursor-write candidate100/21.

@@ -51,7 +51,12 @@ confirmed.
 
 ## Planning and history
 
-- [Active effect-dispatch investigation](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md):
+- [Latest effect-dispatch match](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md):
+  100 words/frame0x48,75 direct plus25 guards; explicit native live lookup,
+  repeated selectors and registered cursor mutations. Only target slot changes;
+  next45-word `func_15141C0C` needs original switch-table-preserving recovery.
+
+- [Historical effect-dispatch investigation](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md):
   100-word target,112 controls; fitting100/frame0x48/21 candidate and complete
   closed linked derivation. Guest/live cursor and connected classifier evidence;
   native, relocation-aware guards and production gates remain. Not installed.

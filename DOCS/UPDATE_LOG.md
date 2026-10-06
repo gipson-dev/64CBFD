@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-06 Game Effect Dispatch Match
+
+[Note 1061](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md):
+`func_15141A7C` matches100 words/frame0x48 with75 direct and25 closed guards.
+Explicit helper-result sequencing preserves native live callback-table changes;
+signed payloads/counts, repeated selectors, list links and registered cursor
+aliases survive mutations.13824 three-body guest,69632 connected classifiers,
+70848 actual32-bit native,288 cursor and864/240 caller cases qualify effects.
+Only target changes across6059 slots; protected sections/720 owners unchanged,
+10760 old guards unchanged plus25, warnings3->3. Exact3336/5464 (61.05%),
+Game2663/4791 (55.58%),2128 different, zero drift; converted unchanged.
+All48 focused post-link tests pass in495.394 seconds, no skips/errors/failures;
+final portable-prefix test rerun passes.43 docs/3473 links/zero broken.
+Next45-word `func_15141C0C`:recover source switch groups with original tables.
+Root README aggregates only; no sibling/Release/runtime/host adoption or push.
+
 ## 2026-10-06 Game Effect Dispatch Investigation
 
 [Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md):

@@ -403,7 +403,7 @@ for(a=0;a<256;a++) for(b=0;b<256;b++) for(f=0;f<2;f++) {
         self.assertEqual(production['func_1513D524'],self.wrapper_retail)
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream: rows = list(csv.DictReader(stream))
         guards = [row for row in rows if row['function']=='func_151407D0']
-        self.assertEqual((len(rows),len(guards)),(10760,10))
+        self.assertEqual((len(rows),len(guards)),(10785,10))
         for row,(offset,expected,replacement,old,new) in zip(guards,GUARDS):
             self.assertEqual(row['filename'],'game_16DC80')
             self.assertEqual(tuple(int(row[k],16) for k in ('offset','expected','replacement')),(offset,expected,replacement))

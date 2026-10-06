@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-06 ([Note 1061](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md)):
+`func_15141A7C`:100 words/frame0x48,75 direct plus25 closed guards, O2/g3.
+Native callback-table mutation exposes unspecified nested-call evaluation;
+scoped helper-result sequencing preserves the live lookup and retail frame.
+13824 three-body guest/69632 connected/70848 actual32-bit native cases;
+registered cursor, caller, negative, padder and relocation gates. Only target
+changes across6059 slots; protected sections/720 owners unchanged,10760 old
+guards plus25, warnings3->3. Exact3336/5464, Game2663/4791,2128 different,
+zero drift; converted unchanged. Next45-word actor classifier `func_15141C0C`.
+All48 focused post-link tests pass/no skips, portable-prefix rerun passes;
+43 docs/3473 links/zero broken, tools/syntax/diff checks pass.
+No helper-C/hardware/gameplay/host adoption, sibling/Release/runtime or push.
+
 2026-10-06 ([Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md)):
 After banked `e5bf72e0`, investigate100-word `func_15141A7C`:112 controls,
 fitting100/frame0x48/21 candidate; all words derive from closed register/

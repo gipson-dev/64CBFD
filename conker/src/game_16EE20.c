@@ -3,8 +3,17 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef s32 (*GameEffectClassifier)(s32, u8 *);
+typedef void (*GameEffectCallback)(u8 *, s32, s32);
+typedef struct { GameEffectCallback callback; s32 count; } GameEffectEntry;
+s32 func_15141C0C();
+s32 func_1510F8CC(s32);
+s32 func_15141CC0();
+s32 func_15141E38(s32, s32);
+s32 func_1514ECE0(u8 *, s16, u8 **);
+
 /* Generated placeholder declarations. */
-s32 func_15141A7C();
+void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C();
 s32 func_15141CC0();
 s32 func_15141E38(s32 arg0, s32 arg1);
@@ -94,9 +103,36 @@ void func_151419D0(u8 *arg0, u8 *arg1, u8 arg2) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15141A7C.s. */
-s32 func_15141A7C() {
-    return 0;
+/* Matched with closed register, scheduling and private cursor guards. */
+void func_15141A7C(u8 *actor, s32 context) {
+    s32 category;
+    s32 selected;
+    u8 *node;
+    u8 *record;
+    if (D_800BE616 == 0) {
+        category = func_15141C0C(actor);
+        if (((GameEffectClassifier *)D_8008A084)[category] != NULL) {
+            {
+                s32 classified = func_15141CC0(func_1510F8CC(*(s32 *)(actor + 0x184)));
+                selected = ((GameEffectClassifier *)D_8008A084)[category](classified, actor);
+            }
+            if ((selected != -1) && (((GameEffectEntry *)D_8008A0B4)[selected].callback != NULL)) {
+                if (((GameEffectEntry *)D_8008A0B4)[selected].count > 0) {
+                    func_15141E38((s32)actor, selected);
+                } else {
+                    ((GameEffectEntry *)D_8008A0B4)[selected].callback(actor, context, 0);
+                }
+            }
+        }
+        node = *(u8 **)(actor + 0x2F4);
+        while (func_1514ECE0(node, 0x1A, &node)) {
+            record = *(u8 **)(node + 0x10);
+            if (((GameEffectEntry *)D_8008A0B4)[*(volatile s32 *)(record + 0x28)].callback != NULL) {
+                ((GameEffectEntry *)D_8008A0B4)[*(volatile s32 *)(record + 0x28)].callback(actor, context, *(s16 *)(record + 0xE));
+            }
+            *(u8 *volatile *)&node = *(u8 **)(node + 0x14);
+        }
+    }
 }
 // requires jump table
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15141C0C.s. */

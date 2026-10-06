@@ -4,7 +4,25 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
-## Effect-dispatch investigation receipts
+## Effect-dispatch compiler controls
+
+[Driver](../tools/experiments/game_effect_dispatch_candidates.py):eight
+selector/cursor/loop forms across four actual-SDK profiles,32 controls, actual
+function label; selected100-word/frame0x48 source derives75 direct/25 guarded
+words. [Eleven tests](../tools/tests/test_game_effect_dispatch_match.py) bind
+raw/normalized/retail,70848 actual32-bit native cases, full-storage live aliases,
+registered cursor updates, connected retail classifiers/list search/caller,
+semantic negatives, invalid/cyclic guest boundaries, actual padding and moved
+HI/LO metadata. Alternate relocation addresses and stale guards are tested.
+Explicit scoped helper-result sequencing follows a failed native callback-table
+mutation check on the earlier nested-call source. Only one proven raw private
+cursor reload site is removed from trace comparison; normalized traces compare
+fully. Production guard prefix unchanged plus25, full slot/caller binding.
+Ignored receipts under `conker/build/game-effect-dispatch-test/`; see
+[Note 1061](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md).
+This is not restored helper C, host adoption, hardware or gameplay acceptance.
+
+## Historical effect-dispatch investigation receipts
 
 [Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md)
 records112 ignored actual-SDK controls,13,824-case guest probes and69,632-case

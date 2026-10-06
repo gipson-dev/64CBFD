@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Effect Dispatch Match - 2026-10-06
+
+[Note 1061](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md)
+recovers guest `func_15141A7C`:100 words/frame0x48,75 direct plus25 guards.
+Explicit helper-result sequencing fixes the native live classifier lookup;
+guest/native table, record, list and registered-cursor mutations are qualified.
+Only target changes across6059 slots; protected sections/720 owners unchanged,
+10760 old guard rows unchanged plus25, warnings3->3. Game2663/4791 exact
+(55.58%),2128 different, zero drift; converted counts/bytes unchanged.
+Next45-word `func_15141C0C` needs source switch groups and unchanged original
+table targets. Guest-source qualification only: no helper-C/gameplay/hardware
+acceptance, host adoption, sibling source/build/save/frozen Release or push.
+
 ## Game Effect Dispatch Investigation - 2026-10-06
 
 [Note 1060](WORKING_NOTES/1060-game-effect-dispatch-investigation-20261006.md):

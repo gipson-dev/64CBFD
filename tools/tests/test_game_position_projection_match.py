@@ -444,7 +444,7 @@ for(f=0;f<10;f++) for(e=0;e<12;e++) for(a=0;a<3;a++) for(m=0;m<2;m++) {
         self.assertEqual(functions['func_1514182C'],self.retail)
         self.assertEqual(functions['func_15141928'],self.retail_caller)
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream: rows = list(csv.DictReader(stream))
-        self.assertEqual(len(rows),10760)
+        self.assertEqual(len(rows),10785)
         self.assertFalse([row for row in rows if row['function'] in ('func_1514182C','func_15141928')])
         actual = subprocess.run(['mips-linux-gnu-objdump','-r',str(self.output/'selected.o')],
                                 check=True,capture_output=True,text=True).stdout

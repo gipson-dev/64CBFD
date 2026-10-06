@@ -10759,3 +10759,28 @@ game_16DC80,func_151415D4,0x94,0x460C1201,0x460C1101,-,-,Normalize envelope clos
 game_16DC80,func_151415D4,0x98,0xC4440020,0xC4480020,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
 game_16DC80,func_151415D4,0xAC,0xC4440004,0xC4500004,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
 game_16DC80,func_151415D4,0xB4,0x46009402,0x46009102,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16EE20,func_15141A7C,0x50,0x53200025,0x13200024,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x54,0x8E4402F4,0x00000000,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x84,0x00403825,0x2401FFFF,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x88,0x2401FFFF,0x10410016,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x8C,0x10410015,0x00403825,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x90,0x3C110000,0x3C100000,R_MIPS_HI16:D_8008A0B4,R_MIPS_HI16:D_8008A0B4,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x94,0x26310000,0x26100000,R_MIPS_LO16:D_8008A0B4,R_MIPS_LO16:D_8008A0B4,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x9C,0x022A1821,0x020A1821,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xA4,0x51600010,0x1160000F,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xA8,0x8E4402F4,0x00000000,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xBC,0x022D7021,0x020D7021,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xC4,0x00E02825,0x00402825,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xC8,0x10000007,0x10000006,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xCC,0x8E4402F4,0x00000000,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xE4,0x8E4402F4,0x3C100000,-,R_MIPS_HI16:D_8008A0B4,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xE8,0x27B0003C,0x26100000,-,R_MIPS_LO16:D_8008A0B4,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xEC,0x3C110000,0x27B1003C,R_MIPS_HI16:D_8008A0B4,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xF0,0x26310000,0x8E4402F4,R_MIPS_LO16:D_8008A0B4,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xF4,0x02003025,0x2405001A,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0xF8,0x2405001A,0x02203025,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x11C,0x02295021,0x02095021,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x13C,0x022D7021,0x020D7021,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x158,0x02003025,0x02203025,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x160,0xAE180000,0xAFB8003C,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false
+game_16EE20,func_15141A7C,0x168,0x8FA4003C,0x03002025,-,-,Normalize effect dispatch closed register schedule and private cursor operations,,,false

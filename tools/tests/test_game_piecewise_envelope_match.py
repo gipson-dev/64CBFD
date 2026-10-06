@@ -378,7 +378,7 @@ if(count!=EXPECTED) return 2;
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             rows = list(csv.DictReader(stream))
         guards = [row for row in rows if row['function'] == 'func_151415D4']
-        self.assertEqual((len(rows), len(guards)), (10760, 13))
+        self.assertEqual((len(rows), len(guards)), (10785, 13))
         for row, offset in zip(guards, OFFSETS):
             self.assertEqual(int(row['offset'], 0), offset)
             self.assertEqual((int(row['expected'], 0), int(row['replacement'], 0)),
