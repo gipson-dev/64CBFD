@@ -4,6 +4,21 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Random selector/output compiler controls
+
+[Driver](../tools/experiments/game_random_selector_outputs_candidates.py)
+screens six forms under four profiles: 24 controls. A 32-bit selector under
+O2/g3 emits all 37 words directly, retaining the callee's byte narrowing.
+The tool installs no source, guards or profile; retail ROM, IDO and MIPS tools
+required. Ignored receipts under `conker/build/game-random-selector-outputs/`.
+[Six tests](../tools/tests/test_game_random_selector_outputs_match.py) bind the
+direct wrapper, unchanged 31-word selector/18-word handwritten RNG and palette.
+Ordered external traces, output aliases and call-entry snapshots are checked;
+a local 64-bit guest extension executes the RNG without changing shared runners.
+Native fixtures use the actual wrapper/selector C plus an independent RNG-state
+model, not native execution of MIPS assembly. No hardware/FCSR/gameplay or host
+adoption claim. See [Note 1040](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md).
+
 ## Actor position-queue wrapper compiler controls
 
 [Driver](../tools/experiments/game_actor_position_queue_wrapper_candidates.py)

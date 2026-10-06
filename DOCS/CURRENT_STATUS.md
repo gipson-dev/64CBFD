@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Random selector/output direct match:
+[Note 1040](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md)
+recovers `func_1518E5D8`: all 37 words directly, frame 0x18, existing O2/g3;
+no new guards/profile/header/data. Seven-pointer ABI and ordered output stores;
+retained selector's third RNG and sequential palette reads remain intact.
+24 compiler controls; 4096 opaque / 16384 connected-selector / 8576 fully
+connected guest cases and 14528 native cases. All 86 wrapper/helper/RNG words
+covered. Whole linked audit: only target changes across 6059 slots;
+protected sections/720 data owners/10646 guards unchanged. Four owner warnings
+match baseline. README now total 3318/5462 and Game 2645/4789 exact, zero
+drift, 2144 different. All 65 focused post-link tests pass in 310.324 seconds,
+no skips. Next
+`func_1519E6BC`, conditional allocator/packet wrapper still a stub. No complete
+caller/FCSR/gameplay, sibling/frozen Release change or push; Game stays active.
+
 Actor position-queue wrapper direct match:
 [Note 1039](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md)
 recovers `func_1517D5FC`: all 37 words directly, frame 0x28, existing O2/g3;

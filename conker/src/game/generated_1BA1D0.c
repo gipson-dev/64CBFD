@@ -1,5 +1,7 @@
 #include <ultra64.h>
 f32 func_150ADA68();
+s32 func_150ADA20(void);
+void func_151429E0(u8, u8 *, u8 *, u8 *);
 extern f32 D_800BE9A4;
 extern s32 (*D_8008D67C[])(u8 *);
 extern void (*D_8008D680[])();
@@ -137,8 +139,21 @@ s32 func_1518E524() {
     return 0;
 }
 
-s32 func_1518E5D8() {
-    return 0;
+void func_1518E5D8(u8 *arg0, u8 *arg1, u8 *arg2, u8 *arg3, u8 *arg4, u8 *arg5, s16 *arg6) {
+    s32 selector;
+
+    if (func_150ADA20() & 1) {
+        *arg1 |= 1;
+    }
+    *arg0 = 0x16;
+    if (func_150ADA20() & 1) {
+        selector = 3;
+    } else {
+        selector = 4;
+    }
+    func_151429E0(selector, arg2, arg3, arg4);
+    *arg5 = 0xC8;
+    *arg6 = 0x401;
 }
 
 s32 func_1518E66C(Generated1BA1D0Setup *arg0) {

@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-06 Game Random Selector Outputs Direct Match
+
+[Note 1040](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md)
+replaces `func_1518E5D8`'s stub with all 37 words directly, frame 0x18.
+Seven output pointers, ordered RNG/flag/status/selector/tail stores;
+24 controls, 4096 opaque / 16384 connected-selector / 8576 fully connected
+guest and 14528 native cases. All 86 wrapper/selector/RNG words execute.
+Retained helpers/palette unchanged; only target changes across 6059 slots;
+protected sections/720 owners/10646 guards intact. Four owner warnings equal
+baseline. README now total 3318/5462, Game 2645/4789 exact, zero drift.
+All 65 focused post-link tests pass in 310.324 seconds, no skips.
+Next inspect `func_1519E6BC`'s conditional
+allocation/packet contract. No sibling/Release edit, host adoption or push.
+
 ## 2026-10-06 Game Actor Position Queue Wrapper Direct Match
 
 [Note 1039](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md)

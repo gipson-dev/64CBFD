@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Random Selector Outputs Direct Match - 2026-10-06
+
+[Note 1040](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md)
+recovers guest `func_1518E5D8`: all 37 words directly under existing O2/g3,
+frame 0x18; no new guards/profile/header/data. Third RNG and sequential palette
+stores qualified with retained helpers, all 86 words reached. 4096 opaque /
+16384 connected-selector / 8576 fully connected guest and 14528 native cases.
+All 65 focused post-link tests pass in 310.324 seconds, no skips.
+Only target changes across 6059 slots; protected
+sections/720 owners/10646 guards intact. Game now 2645/4789 exact, zero drift,
+2144 different. Next guest `func_1519E6BC` conditional allocator/packet wrapper.
+No host adoption, full caller/FCSR/gameplay acceptance, sibling source/build/
+save/frozen Release change or push.
+
 ## Game Actor Position Queue Wrapper Direct Match - 2026-10-06
 
 [Note 1039](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md)

@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest random selector/output direct match](WORKING_NOTES/1040-game-random-selector-outputs-direct-match-20261006.md):
+  37 direct words; seven-pointer ABI, third RNG and sequential palette stores.
+  Next qualify `func_1519E6BC`'s conditional allocation/packet contract.
+
 - [Latest actor position-queue wrapper direct match](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md):
   37 direct words; signed coordinates, actor float capture and connected queue.
   Next recover `func_1518E5D8`'s RNG/selector/output contract.
