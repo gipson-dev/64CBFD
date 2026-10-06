@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Source effect constructor direct match:
+[Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md)
+recovers `func_1513D2F0`: all 114 words directly, frame 0x38, existing O2/g3;
+no new guards/profile/shared header/data. Captured allocator flags, live
+88-byte descriptor copy, helper setup, default sentinel and inclusive live
+view bound. 97 compiler controls, 6912 two-body guest cases, 2048 width
+cases, 18 two-body raw-default cases, 576 actual-wrapper guest cases,
+131072 native constructor and 576 connected native cases. All 114 words
+covered; wrapper/constructor path covers 204 reachable words. Only target
+changes across 6059 fixed slots; protected sections/720 owners/10660 guards
+intact. The owner's 48 preexisting warnings are unchanged; zero new warnings.
+Total 3324/5462, Game 2651/4789 exact, zero drift, 2138 different.
+All 43 focused post-link tests pass in 487.777 seconds, no skips. Constructor no longer a
+placeholder; backend helpers remain callbacks in qualification. Next inspect
+raw-assembly helper `func_1513FFF4`, not full gameplay/host acceptance.
+No sibling source/build/save/frozen Release change or push.
+
 Source-backed effect packet direct match:
 [Note 1045](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md)
 recovers `func_1519ED84`: all 96 words directly, frame 0xA0, existing O2/g3;

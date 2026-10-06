@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest source effect constructor direct match](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md):
+  114 direct words; captured flags, live descriptor/helper/default/view contract
+  and actual wrapper/updater qualification. Next inspect `func_1513FFF4`.
+
 - [Latest source effect packet direct match](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md):
   96 direct words; complete 88-byte descriptor and twelve-argument handoff.
   Next recover retained placeholder constructor `func_1513D2F0`.

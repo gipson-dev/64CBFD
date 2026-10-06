@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-06 ([Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md)):
+`func_1513D2F0`: 114 direct words/frame 0x38, existing O2/g3; no new
+guards/profile/shared header/data. Full live-copy constructor and actual
+wrapper/publication/updater path, with controlled backend callbacks.
+97 controls, 6912 two-body guest cases, 2048 width, 18 raw-default,
+576 actual-wrapper guest, 131072 constructor native and 576 connected native.
+Only target changes across 6059; protected sections/720 owners/10660 guards
+intact. 48 owner warnings unchanged, zero new. Total 3324/5462,
+Game 2651/4789 exact, zero drift, 2138 different. All 43 focused post-link
+tests pass in 487.777 seconds, no skips. Next inspect `func_1513FFF4`; no full gameplay/host claim,
+sibling/Release change or push.
+
 2026-10-06 ([Note 1045](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md)):
 `func_1519ED84`: all 96 words directly, frame 0xA0, existing O2/g3;
 no guards/profile/shared header/data edits. 88-byte descriptor with five

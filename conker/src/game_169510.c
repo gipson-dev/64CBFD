@@ -250,8 +250,62 @@ void func_1513CFD0(s32 arg0, s32 arg1, s32 arg2) {
 s32 func_1513CFE4() {
     return 0;
 }/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513D2F0.s. */
-void * func_1513D2F0(void *arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, u8 arg5, u8 arg6, s32 arg7, s32 arg8, s32 arg9, u8 argA, s32 argB) {
-    return 0;
+void *func_1513D2F0(void *descriptor, s32 table, u8 kind, u8 mode, u8 first,
+                      u8 setup, u8 variant, s32 resource, s32 extra, s32 payload,
+                      u8 channel, s32 context) {
+    extern f32 D_800A5184;
+    extern void *func_15167A68(s32, s32, s32, s32, u8, u8);
+    extern u8 *func_1515D480(s32);
+    extern u8 *func_1515D440(void);
+    u8 *result;
+    u32 flags;
+    s32 category;
+    u8 allocationMode;
+    s32 i;
+
+    flags = *(u32 *)((u8 *)descriptor + 0x40);
+    if ((flags & 0x800000) != 0) {
+        category = 0x56;
+    } else if ((flags & 0x2000000) != 0) {
+        category = 0x49;
+    } else {
+        category = 0x1C;
+    }
+    allocationMode = (flags & 0x80000000) != 0 ? 2 : 1;
+    result = func_15167A68(category, context, payload + 0x110, 1, channel, allocationMode);
+    if (result == NULL) {
+        return NULL;
+    }
+    memcpy(result + 0x18, descriptor, 0x58);
+    result[0x70] = kind;
+    result[0x71] = mode;
+    result[0x72] = first;
+    result[0x73] = setup;
+    result[0x74] = 0;
+    bzero(result + 0x100, 0x10);
+    func_1513FFF4((s32)(result + 0xC0), result[0x18], variant);
+    func_151400D0((s32)(result + 0xC0), table);
+    *(s32 *)(result + 0x10) = 1;
+    *(s32 *)(result + 0x14) = 0;
+    *(f32 *)(result + 0x78) = D_800A5184;
+    *(s32 *)(result + 0x98) = 0;
+    result[0x95] = 0;
+    result[0x94] = 0;
+    *(s32 *)(result + 0x90) = 0;
+    *(s32 *)(result + 0x9C) = resource;
+    *(s32 *)(result + 0xB8) = extra;
+    result[0xA0] = 0;
+    for (i = 0; i < 4; i++) {
+        *(u8 **)(result + 0xA4 + i * 4) = NULL;
+    }
+    *(u8 **)(result + 0xB4) = NULL;
+    if (resource != 0) {
+        for (i = 0; i <= D_80082FA0; i++) {
+            *(u8 **)(result + 0xA4 + i * 4) = func_1515D480(resource);
+        }
+        *(u8 **)(result + 0xB4) = func_1515D440();
+    }
+    return result;
 }
 void func_1513D4B8(s32 arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, u8 arg5, u8 arg6, s32 arg7, u8 arg8, s32 arg9) {
     func_1513D2F0(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 0, 0, arg7, arg8, arg9);

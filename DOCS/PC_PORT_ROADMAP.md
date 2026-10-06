@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Source Effect Constructor Direct Match - 2026-10-06
+
+[Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md)
+recovers guest `func_1513D2F0`: all 114 direct words/frame 0x38, existing
+O2/g3; no new guards/profile/shared header/data. Actual wrapper construction,
+source-pointer publication and retained updater qualified with controlled
+backend callbacks, not host adoption or full gameplay. 97 controls; 6912
+two-body guest, 2048 width, 18 raw-default, 576 actual-wrapper guest,
+131072 constructor native and 576 connected native cases. Only target changes
+across 6059; protected sections/720 owners/10660 guards intact. Game
+2651/4789 exact, zero drift, 2138 different. 48 preexisting owner warnings
+unchanged; zero new. All 43 focused post-link tests pass in 487.777 seconds,
+no skips. Next guest
+raw-assembly helper `func_1513FFF4`. No sibling source/build/save/frozen
+Release change or push.
+
 ## Game Source Effect Packet Direct Match - 2026-10-06
 
 [Note 1045](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md)

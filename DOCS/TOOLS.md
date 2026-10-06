@@ -4,6 +4,24 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Source effect constructor compiler controls
+
+[Driver](../tools/experiments/game_source_effect_constructor_candidates.py)
+screens 16 forms and six schedule forms under four profiles, plus nine
+single-default ordering controls: 97 controls with real SDK types/fixed anchors.
+Explicit flag sign-bit test, early default assignment and later byte +0xA0
+clear emit all 114 words/frame 0x38 directly under O2/g3. No installation or
+profile/guard changes by the driver. Retail ROM, IDO and MIPS tools required;
+ignored receipts under `conker/build/game-source-effect-constructor[-test]/`.
+[Nine tests](../tools/tests/test_game_source_effect_constructor_match.py)
+bind all controls, complete source/linked slot, all flag branches, every byte
+width, safe payload boundaries, helper/default mutations and inclusive live
+bound. Guest traces cover all 114 words and 204 actual-wrapper path words.
+Native actual C verifies whole storage and actual wrapper/construction/updater
+publication; backend helpers remain callbacks, not complete FCSR/hardware/
+gameplay/host adoption. See
+[Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md).
+
 ## Source effect packet compiler controls
 
 [Driver](../tools/experiments/game_source_effect_packet_candidates.py) screens
@@ -16,8 +34,9 @@ guards. Retail ROM, IDO and MIPS tools required; ignored receipts under
 control and installed source/slot, compare full packet/call/memory traces for
 three bodies, and exhaust lifetime/selector/channel widths and float boundaries.
 Native opaque handoff and actual retained source-consumer C are qualified;
-the current constructor placeholder is connected separately to prove it still
-returns null without payload publication. No full constructor/backend/FCSR/
+the recovered constructor is connected separately through success/failure
+and source-pointer publication. Note 1045 records the earlier placeholder
+checkpoint; Note 1046 owns its replacement. No full backend/FCSR/
 hardware/gameplay/host adoption claim. See
 [Note 1045](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md).
 

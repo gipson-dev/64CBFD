@@ -243,29 +243,12 @@ void *memcpy(void *destination,const void *input,u32 size) {
             cases += 1
         self.assertEqual(cases,128)
 
-    def test_current_placeholder_constructor_still_returns_null_without_publication(self):
-        stub = self.production['func_1513D2F0']
-        self.assertEqual(stub[:7],[0xAFA40000,0xAFA50004,0xAFA60008,0xAFA7000C,0x00001025,0x03E00008,0])
-        self.assertFalse(any(stub[7:]))
-        connected = {screen.CONSTRUCTOR+i*4:w for i,w in enumerate(stub)}
-        cases, coverage = 0, set()
-        for args,context,phase,padding,pattern in itertools.product(ARGUMENTS,(0,-1,0x80000000,0x7FFFFFFF),
-                                                                   (0,8),(0,0xA5,0x5A),range(3)):
-            mode,lifetime,channel = args
-            memory = memory_case(pattern,padding)
-            for words in (self.baseline,self.words,self.retail):
-                model = EffectPacketOracle(words,memory,mode,lifetime,channel,context,phase,connected=connected).run()
-                self.assertEqual(model.calls,[(screen.CONSTRUCTOR,packet_bytes(memory,mode,lifetime,padding),TABLE,39,0,0,23,0,3,255,4,
-                                              channel & 255,context & 0xFFFFFFFF)])
-                self.assertEqual(external(model.memory),external(memory))
-                self.assertEqual(model.r[2],0)
-                coverage.update(model.visits)
-            cases += 1
-        self.assertEqual(cases,576)
-        expected = set(range(screen.ENTRY,screen.ENTRY+384,4))
-        expected.difference_update(screen.ENTRY+i for i in (0x160,0x164,0x168))
-        expected.update(screen.CONSTRUCTOR+i*4 for i in range(7))
-        self.assertEqual(coverage,expected)
+    def test_recovered_constructor_retail_slot_and_actual_connected_handoff(self):
+        from tools.tests.test_game_source_effect_constructor_match import connected_wrapper_cases
+        rom = (self.root/'conker/conker.us.bin').read_bytes()
+        constructor = self.production['func_1513D2F0']
+        self.assertEqual(constructor,list(struct.unpack_from('>114I',rom,0x16A7A0)))
+        connected_wrapper_cases(self,self.words,constructor)
 
     def test_native_typed_layout_all_halfwords_byte_pairs_and_whole_footprint(self):
         self.run_host(r'''
