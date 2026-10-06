@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Triangle Layout Audit - 2026-10-05
+
+[Note 1013](WORKING_NOTES/1013-game-actor-triangle-layout-screen-20261005.md)
+banks ten DECOMP compiler controls and 120 bounded guest comparisons after
+`623b96ae`. None improves the transform's frame/difference metrics; no
+production change or new exact function. Next: DECOMP spill/lifetime and
+edge/matrix-loop matching. No host transplant, runtime/gameplay acceptance
+claim, sibling source/build/save/frozen Release change or push.
+
 ## Game Actor Triangle Remap Recovery - 2026-10-05
 
 [Note 1012](WORKING_NOTES/1012-game-actor-triangle-remap-semantic-recovery-and-matrix-tail-restoration-20261005.md)

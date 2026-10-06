@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-05 Game Actor Triangle Layout Audit
+
+[Note 1013](WORKING_NOTES/1013-game-actor-triangle-layout-screen-20261005.md)
+banks ten array/output-cursor controls after `623b96ae`. All compile without
+diagnostics; fitting forms pass 120 bounded guest comparisons. None improves
+the frame/difference metrics; oversized 308-word forms are not installed.
+Production, linked slots and README counts stay unchanged. Next: actual
+spill lifetimes and edge/matrix-loop shapes. The Game goal remains active.
+
 ## 2026-10-05 Game Actor Triangle Remap Semantic Recovery
 
 [Note 1012](WORKING_NOTES/1012-game-actor-triangle-remap-semantic-recovery-and-matrix-tail-restoration-20261005.md)

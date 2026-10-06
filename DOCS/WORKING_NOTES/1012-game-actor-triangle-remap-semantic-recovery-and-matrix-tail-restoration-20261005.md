@@ -209,3 +209,7 @@ Next: continue **`func_1502F490` byte matching**, not another placeholder batch.
    Caller max-depth spill +0x78 versus retail +0x34 remains a separate open match.
 
 The Game goal remains active with **2158 differing C functions**.
+
+Post-checkpoint array/output-cursor controls are banked in
+[Note 1013](1013-game-actor-triangle-layout-screen-20261005.md).
+None improves this installed frame/difference baseline; production is unchanged.

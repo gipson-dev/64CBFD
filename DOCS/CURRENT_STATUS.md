@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Post-checkpoint triangle layout audit:
+[Note 1013](WORKING_NOTES/1013-game-actor-triangle-layout-screen-20261005.md)
+banks ten array/output-cursor forms and 120 bounded guest comparisons after
+`623b96ae`. None improves the installed 298-word/frame 0x160/275-difference
+transform. Reordering changes bytes, not these metrics; explicit XYZ cursors
+grow to 308 words and are not installed. Production/README counts remain
+unchanged. Next: actual spill/first-use lifetimes and edge/matrix-loop shapes.
+
 Actor triangle remap: [Note 1012](WORKING_NOTES/1012-game-actor-triangle-remap-semantic-recovery-and-matrix-tail-restoration-20261005.md)
 replaces `func_1502F490`'s placeholder with complete semantic C: 298 body /
 302 slot words, frame 0x160, 275 differences; retail frame is 0x138.

@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-05 ([Note 1013](WORKING_NOTES/1013-game-actor-triangle-layout-screen-20261005.md)):
+After `623b96ae`, screen ten private-array/output-cursor forms with 120 bounded
+guest comparisons for fitting candidates. None improves frame/difference
+metrics; explicit XYZ cursors grow to 308 words. Reordering changes bytes,
+not the metrics. Production/README/counts remain unchanged. Next: actual
+spill/first-use lifetimes and edge/matrix-loop shapes for `func_1502F490`.
+
 2026-10-05 ([Note 1012](WORKING_NOTES/1012-game-actor-triangle-remap-semantic-recovery-and-matrix-tail-restoration-20261005.md)):
 Recover complete `func_1502F490` semantic C: 298 / 302 words, frame 0x160,
 275 differences. Restore its required 40-word original matrix assembly leaf
