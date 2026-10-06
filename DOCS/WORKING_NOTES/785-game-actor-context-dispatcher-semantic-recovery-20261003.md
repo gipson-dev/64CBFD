@@ -118,3 +118,7 @@ remains open; Init's two small candidates remain deferred under Note 782.
 
 No compressed-ROM build, guest execution, host-port build, or gameplay test
 was performed. The sibling port and frozen Release artifacts were untouched.
+
+Matching follow-up: [Note 1018](1018-game-actor-context-dispatcher-byte-match-20261005.md)
+closes all 107 words with recovered frame/homes and a proven allocation cycle.
+The helper-chain caveats above remain separate from this dispatcher match.

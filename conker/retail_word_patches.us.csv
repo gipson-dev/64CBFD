@@ -398,6 +398,21 @@ generated_71820,func_15044CE4,0x38,0x0001C943,0x00014143,-,-,Keep the corrected 
 generated_71820,func_15044CE4,0x3C,0xA4990010,0xA4880010,-,-,Store the first scale from the retail quotient lifetime,,,false
 generated_71820,func_15044CE4,0x40,0xA4990012,0xA4880012,-,-,Store the second scale from the retail quotient lifetime,,,false
 generated_71820,func_15044CE4,0x48,0xA4990014,0xA4880014,-,-,Store the third scale from the retail quotient lifetime,,,false
+generated_71820,func_15044380,0x068,0x0000B825,0x0000B025,-,-,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x084,0x3C160000,0x3C150000,R_MIPS_HI16:D_800DBE62,R_MIPS_HI16:D_800DBE62,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x088,0x26D60000,0x26B50000,R_MIPS_LO16:D_800DBE62,R_MIPS_LO16:D_800DBE62,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x094,0x24150003,0x8FB70078,-,-,Normalize independent mode load and constant initialization schedule,,,false
+generated_71820,func_15044380,0x098,0x24140001,0x24140003,-,-,Normalize independent mode load and constant initialization schedule,,,false
+generated_71820,func_15044380,0x09C,0x8FB30078,0x24130001,-,-,Normalize independent mode load and constant initialization schedule,,,false
+generated_71820,func_15044380,0x0A8,0x568F0014,0x566F0014,-,-,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x0B0,0x16150005,0x16140005,-,-,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x0D0,0x92C80000,0x92A80000,-,-,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x0F0,0xAFB30010,0xAFB70010,-,-,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x0F4,0x0057B821,0x02C2B021,-,-,Normalize closed sum register allocation and commutative unsigned addition,,,false
+generated_71820,func_15044380,0x11C,0x568A000D,0x566A000D,-,-,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x12C,0x92CB0000,0x92AB0000,-,-,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x154,0x1615FFF0,0x1614FFF0,-,-,Normalize the closed context dispatcher saved-register allocation cycle,,,false
+generated_71820,func_15044380,0x16C,0x02E01025,0x02C01025,-,-,Normalize the closed context dispatcher saved-register allocation cycle,,,false
 generated_71820,func_15045714,0x20,0x8FA30018,0x8FA20018,-,-,Reload the position pointer through retail's v0 lifetime,,,false
 generated_71820,func_15045714,0x2C,0xC4640000,0xC4440000,-,-,Read the X coordinate through retail's v0 pointer lifetime,,,false
 generated_71820,func_15045714,0x30,0xC4680008,0xC4480008,-,-,Read the Z coordinate through retail's v0 pointer lifetime,,,false

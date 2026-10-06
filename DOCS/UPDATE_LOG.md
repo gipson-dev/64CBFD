@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-05 Game Actor Context Dispatcher Byte Match
+
+[Note 1018](WORKING_NOTES/1018-game-actor-context-dispatcher-byte-match-20261005.md)
+matches all 107 words of `func_15044380`. Direct C recovers frame/homes;
+15 guarded words normalize a proven register cycle, independent schedule
+and commutative add. 19 controls, 6184 three-way guest cases, 107/107 words;
+nine matching tests pass, no skips. Only target changes in 6060 slots;
+protected sections/720 owners and all older guards remain intact.
+Totals: 3305/5462, Game 2632/4789 exact, zero drift, 2157 different.
+README only aggregate tables updated. No sibling/frozen Release change or push.
+All 320 affected-slice tests pass in 57.212 seconds, no skips; tools,
+whitespace and 2982 relative links pass. Nineteen final controls reproduce.
+
 ## 2026-10-05 Game Actor Triangle Cached Iterator Audit
 
 [Note 1017](WORKING_NOTES/1017-game-actor-triangle-cached-iterator-audit-20261005.md)

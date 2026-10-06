@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor context dispatcher byte match:
+[Note 1018](WORKING_NOTES/1018-game-actor-context-dispatcher-byte-match-20261005.md)
+closes `func_15044380` across all 107 words. A per-visit enable pointer
+recovers frame 0x68 / saved context +0x5C; 15 relocation-aware guards close
+one complete allocation cycle, independent initialization schedule and
+commutative add. Nineteen controls; 6184 three-way guest cases cover all
+107 instructions. Nine matching tests pass, no skips. Only target changes
+in 6060 slots; all protected sections and 720 data owners remain exact.
+Counts: 3305/5462 total, 2632/4789 Game exact, zero drift, 2157 different.
+README aggregate tables updated; helper-chain/gameplay acceptance not claimed.
+Continue Game matching; triangle read/frame lifetimes remain open under 1017.
+All 320 affected-slice tests pass in 57.212 seconds, no skips; tools,
+whitespace and 2982 relative links pass. All 19 compiler controls reproduce.
+
 Triangle cached-iterator audit:
 [Note 1017](WORKING_NOTES/1017-game-actor-triangle-cached-iterator-audit-20261005.md)
 banks 78 controls and 1914 bounded comparisons. Cached reads recover 1/1,

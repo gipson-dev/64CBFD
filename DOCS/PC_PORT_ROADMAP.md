@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Context Dispatcher Byte Match - 2026-10-05
+
+[Note 1018](WORKING_NOTES/1018-game-actor-context-dispatcher-byte-match-20261005.md)
+matches DECOMP `func_15044380`'s 107 words / frame 0x68. Fifteen guarded
+words close a proven allocation/schedule/commutative difference; 6184
+three-way guest cases cover all 107 instructions. Nine matching tests pass;
+only target changes in 6060 slots, protected data remain exact.
+Game exact 2632/4789, zero drift; README aggregates updated. Continue guest
+matching. No host transplant, actor-chain/gameplay qualification or sibling
+source/build/save/frozen Release change. Helper interface caveats remain.
+All 320 affected-slice tests pass in 57.212 seconds, no skips; tools,
+whitespace and 2982 relative links pass. Nineteen final controls reproduce.
+
 ## Game Actor Triangle Cached Iterator Audit - 2026-10-05
 
 [Note 1017](WORKING_NOTES/1017-game-actor-triangle-cached-iterator-audit-20261005.md)

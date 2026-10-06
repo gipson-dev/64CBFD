@@ -169,6 +169,7 @@ void func_15044370() {
 
 s32 func_15044380(f32 x, f32 y, f32 z, ContextActor71820 *actor,
                   s32 mode, s32 secondPass) {
+    u8 *enabled;
     s32 context;
     s32 savedContext;
     s32 total;
@@ -180,7 +181,8 @@ s32 func_15044380(f32 x, f32 y, f32 z, ContextActor71820 *actor,
     func_15044660(actor, x, y, z);
     savedContext = D_800CBDD3;
     for (context = 3; context >= 0; context--) {
-        if (D_80089120[context] == 1) {
+        enabled = &D_80089120[context];
+        if (*enabled == 1) {
             if (context != 3 || !(actor->flags & 0x200)) {
                 func_1510F800(context);
                 if (D_800DBE62 != 0) {
@@ -191,7 +193,8 @@ s32 func_15044380(f32 x, f32 y, f32 z, ContextActor71820 *actor,
     }
     if (secondPass != 0) {
         for (context = 0; context < 3; context++) {
-            if (D_80089120[context] == 1) {
+            enabled = &D_80089120[context];
+            if (*enabled == 1) {
                 func_1510F800(context);
                 if (D_800DBE62 != 0) {
                     func_150AC3E4(x, y, z, actor, 0);
