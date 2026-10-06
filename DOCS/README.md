@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest effect-configuration packet direct match](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md):
+  69 direct words; complete 60-byte packet and separately captured float.
+  Callee remains a C placeholder; next inspect `func_1519EB8C`.
+
 - [Latest address-record allocator direct match](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md):
   37 direct words; seven-argument pointer ABI, retained allocation/list linking.
   Next qualify `func_1519EA78`'s configuration-packet wrapper.

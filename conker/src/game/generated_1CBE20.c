@@ -18,6 +18,29 @@ typedef struct {
     u8 pad29[3];
 } AddressRecord1CBE20;
 
+typedef struct { f32 x, y, z; } Position1CBE20;
+typedef struct {
+    s32 count;
+    s32 countRange;
+    Position1CBE20 position;
+    s16 angle;
+    s16 angleRange;
+    s16 pitch;
+    s16 pitchRange;
+    f32 speed;
+    f32 speedRange;
+    f32 vertical;
+    f32 verticalRange;
+    s16 lifetime;
+    s16 lifetimeRange;
+    f32 scale;
+    f32 scaleRange;
+    f32 spread;
+} Configuration1CBE20;
+
+extern f32 D_800A8CC0, D_800A8CC4, D_800A8CC8, D_800A8CCC, D_800A8CD0;
+void func_15152190(Configuration1CBE20 *, s32 *, f32 *, s32, f32, u8, u8, s32);
+
 /* Non-matching placeholders for the text-only asm slice asm/1CBE20.s. */
 
 AddressRecord1CBE20 *func_1519E970(s16 lifetime, u8 *owner, u8 mode, u8 *first,
@@ -59,8 +82,30 @@ void func_1519EA04(u8 *arg0) {
     func_1516972C(arg0);
 }
 
-s32 func_1519EA78() {
-    return 0;
+void func_1519EA78(Position1CBE20 *position, u16 selector, f32 scale, u8 channel, s32 context) {
+    Configuration1CBE20 packet;
+    s32 selected;
+    f32 selectedScale;
+
+    packet.count = 10;
+    packet.countRange = 7;
+    packet.position = *position;
+    packet.angle = 0;
+    packet.angleRange = 255;
+    packet.pitch = -53;
+    packet.pitchRange = 24;
+    packet.speed = 10.0f;
+    packet.speedRange = 8.0f;
+    packet.vertical = D_800A8CC0;
+    packet.verticalRange = D_800A8CC4;
+    packet.lifetime = 50;
+    packet.lifetimeRange = 20;
+    packet.scale = D_800A8CC8;
+    packet.scaleRange = D_800A8CCC;
+    packet.spread = D_800A8CD0;
+    selected = selector;
+    selectedScale = scale;
+    func_15152190(&packet, &selected, &selectedScale, 1, 0.0f, 0, channel, context);
 }
 
 s32 func_1519EB8C() {

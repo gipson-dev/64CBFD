@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Game Effect Configuration Packet Direct Match - 2026-10-06
+
+[Note 1043](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md)
+recovers guest `func_1519EA78`: 69 direct words, frame 0x70, existing O2/g3.
+No new guards/profile/shared header/data. Complete configuration packet,
+unsigned selector and captured float qualified with 32 compiler controls,
+1296 two-body guest cases, 65536 width sweeps, 100 two-body raw-float cases
+and 131072 native cases. All 26 focused post-link tests pass in 219.250
+seconds, no skips. Only target changes across
+6059; protected sections/720 owners/10646 guards intact. Game 2648/4789
+exact, zero drift, 2141 different. The effect callee `func_15152190` is still
+a C placeholder, so this does not restore the entire effect path or establish
+host adoption/gameplay/FCSR/hardware behavior. Next guest `func_1519EB8C`.
+No sibling source/build/save/frozen Release change or push.
+
 ## Game Address Record Allocator Direct Match - 2026-10-06
 
 [Note 1042](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md)

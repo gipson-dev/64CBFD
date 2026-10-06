@@ -4,6 +4,23 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Effect-configuration packet compiler controls
+
+[Driver](../tools/experiments/game_effect_configuration_packet_candidates.py)
+screens eight forms under four profiles: 32 controls with real SDK types and
+fixed anchors. A separate captured float local under O2/g3 emits all 69 words
+directly. The tool installs no source/guards/profile. IDO, retail ROM and MIPS
+tools required; ignored receipts under
+`conker/build/game-effect-configuration-packet/`.
+[Six tests](../tools/tests/test_game_effect_configuration_packet_match.py)
+check the complete 60-byte packet, scalar narrowing, call-entry snapshots,
+source/global aliases, post-capture mutations, saved registers and typed
+32-bit native layout. Guest bit transport includes signaling NaNs without
+FP arithmetic; native cases deliberately use finite/quiet-NaN patterns.
+`func_15152190` is an opaque callback and remains a C placeholder in production.
+No full effect-path/hardware/FCSR/gameplay/host claim. See
+[Note 1043](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md).
+
 ## Address-record allocator compiler controls
 
 [Driver](../tools/experiments/game_address_record_allocator_candidates.py)

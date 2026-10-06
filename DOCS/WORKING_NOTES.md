@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-06 ([Note 1043](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md)):
+`func_1519EA78`: 69 words directly, frame 0x70; no new guards/profile/shared
+header/data. Separate float local recovers the missing frame and instruction.
+32 controls, 1296 two-body guest cases, 65536 width sweeps, 100 two-body
+float-pattern cases and 131072 native cases. Only target changes across
+6059; protected sections/720 owners/10646 guards intact. Owner diagnostics
+empty. README total 3321/5462 and Game 2648/4789 exact. All 26 focused
+post-link tests pass in 219.250 seconds, no skips. Callee remains a C
+placeholder, not full effect-path acceptance.
+Next `func_1519EB8C`; no sibling/frozen Release change or push.
+
 2026-10-06 ([Note 1042](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md)):
 `func_1519E970`: all 37 words directly, frame 0x20; no new guards/profile/
 shared header/data. 48 controls; 1152 cases each in three two-body guest

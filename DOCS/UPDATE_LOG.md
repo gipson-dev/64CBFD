@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-06 Game Effect Configuration Packet Direct Match
+
+[Note 1043](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md)
+replaces `func_1519EA78`'s stub with all 69 words directly, frame 0x70.
+Separate captured float local, complete 60-byte packet and typed scalar
+handoff; 32 controls, 1296 two-body guest cases, 65536 width sweeps,
+100 two-body float-pattern cases and 131072 native cases. Only target
+changes across 6059; protected sections/720 owners/10646 guards intact.
+Owner diagnostics empty. README total 3321/5462 and Game 2648/4789 exact,
+zero drift. All 26 focused post-link tests pass in 219.250 seconds, no skips.
+Callee `func_15152190` remains a C
+placeholder; wrapper qualification is not a full effect-path restoration.
+Next `func_1519EB8C`; no sibling/Release change or push.
+
 ## 2026-10-06 Game Address Record Allocator Direct Match
 
 [Note 1042](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md)

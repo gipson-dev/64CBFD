@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Effect-configuration packet direct match:
+[Note 1043](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md)
+recovers `func_1519EA78`: all 69 words directly, frame 0x70, existing O2/g3;
+no new guards/profile/shared header/data. Complete 60-byte packet, unsigned
+selector, separate float local and eight typed call arguments. 32 controls;
+1296 two-body guest cases, 65536 width sweeps, 100 two-body raw-float cases
+and 131072 native cases. All 69 words covered. Only target changes across
+6059 slots; protected sections/720 owners/10646 guards intact. Owner
+diagnostics empty. README total 3321/5462, Game 2648/4789 exact; zero drift,
+2141 different. All 26 focused post-link tests pass in 219.250 seconds,
+no skips. The 228-word `func_15152190` callee
+is still a C placeholder; no complete effect-path/gameplay/host claim.
+Next `func_1519EB8C`'s actor packet. No sibling/frozen Release change or push.
+
 Address-record allocator direct match:
 [Note 1042](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md)
 recovers `func_1519E970`: all 37 words directly, frame 0x20, existing O2/g3;
