@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-06 ([Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md)):
+Nine accepted backend controls fail to recover `func_15143D18`'s frame.
+108 corner runs preserve traces/footprints. No production/profile/data/guard
+or aggregate change; pair clamp remains non-matching. Next qualify adjacent
+`func_1514462C`, whose isolated recovery emits all 56 retail words directly.
+No gameplay, sibling/frozen Release or push claim; Game goal stays active.
+
 2026-10-06 ([Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)):
 Post-`fe925393` screen: 128 separate parameter/local register-hint controls.
 All O2/g3 bodies equal the committed 29 words; O1/g3 frame 0x20, oversized.

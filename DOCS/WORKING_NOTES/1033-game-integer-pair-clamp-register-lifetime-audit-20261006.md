@@ -2,6 +2,9 @@
 
 Date: 2026-10-06. Starting checkpoint: `fe925393`.
 
+Continuation: [Note 1034](1034-game-pair-clamp-saved-register-backend-audit-20261006.md)
+banks nine accepted backend controls; the saved-pointer frame remains open.
+
 Continue `func_15143D18` after banking its ordered XOR access recovery in
 [Note 1032](1032-game-integer-pair-clamp-xor-access-recovery-20261006.md).
 **No direct match or production change in this follow-up.** Its 36-word slot

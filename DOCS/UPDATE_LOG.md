@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-06 Game Pair Clamp Saved Register Backend Audit
+
+[Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md)
+banks nine accepted uopt controls, 108 corner guest runs and the explicit
+non-matching boundary. None recovers the frame; all production slots/data/
+guards stay unchanged. Next qualify `func_1514462C`'s isolated 56-word direct
+shape-measure recovery. All nine pair tests pass in 35.646 seconds, no skips.
+No production/profile or aggregate-count change,
+full gameplay acceptance, sibling/frozen Release edit or push.
+
 ## 2026-10-06 Game Pair Clamp Register Lifetime Audit
 
 [Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)

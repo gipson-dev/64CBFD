@@ -20,6 +20,9 @@ ENTRY = screen.ENTRY
 BUFFER = 0x20000
 VALUES = (0x80000000, 0xFFFFFF9C, 0xFFFFFFFF, 0, 1, 100, 0x7FFFFFFF, 0x40000000)
 POINTERS = ((BUFFER + 4, BUFFER + 8), (BUFFER + 8, BUFFER + 4), (BUFFER + 4, BUFFER + 4))
+CORNERS = ((100, 1, 0, 100, 0), (0x80000000, 0x7FFFFFFF, 0x7FFFFFFF, 0x80000000, 1),
+           (100, 100, 0, 1, 0), (0xFFFFFF9C, 0xFFFFFFFF, 0, 1, 0),
+           (100, 1, 0, 100, 2), (0x80000000, 0x7FFFFFFF, 0x80000000, 0x7FFFFFFF, 0))
 
 
 def memory_case(pointers, a, b):
@@ -124,9 +127,6 @@ class GameIntegerPairClampRecoveryTests(unittest.TestCase):
         forms = screen.register_lifetimes()
         self.assertEqual((len(forms), len(dict(forms))), (64, 64))
         shapes, cases = {}, 0
-        corners = ((100, 1, 0, 100, 0), (0x80000000, 0x7FFFFFFF, 0x7FFFFFFF, 0x80000000, 1),
-                   (100, 100, 0, 1, 0), (0xFFFFFF9C, 0xFFFFFFFF, 0, 1, 0),
-                   (100, 1, 0, 100, 2), (0x80000000, 0x7FFFFFFF, 0x80000000, 0x7FFFFFFF, 0))
         for name, body in forms:
             locals_mask = int(name[-1], 16)
             for profile in ('o2g3', 'o1g3'):
@@ -144,7 +144,7 @@ class GameIntegerPairClampRecoveryTests(unittest.TestCase):
                     self.assertEqual(words, shapes[key])
                 else:
                     shapes[key] = words
-                for a, b, lower, upper, mode in corners:
+                for a, b, lower, upper, mode in CORNERS:
                     pointers = POINTERS[mode]
                     memory = memory_case(pointers, a, b)
                     wanted, trace = reference(memory, pointers, lower, upper)
@@ -155,6 +155,38 @@ class GameIntegerPairClampRecoveryTests(unittest.TestCase):
                         self.assertEqual(model.calls, [])
                         cases += 1
         self.assertEqual(cases, 1536)
+
+    def test_locally_evidenced_backend_controls_do_not_recover_saved_pointers(self):
+        self.assertEqual(len(set(screen.SAVED_REGISTER_OPTIONS)), 9)
+        cases = 0
+        for option in screen.SAVED_REGISTER_OPTIONS:
+            record, words = screen.compile_candidate(self.root, self.output, 'backend-' + option,
+                                                     extra_flags=('-Wo,-' + option,))
+            self.assertEqual(record['diagnostics'], '')
+            self.assertEqual(record['frame'], 0)
+            self.assertEqual(record['differences'], 36)
+            self.assertFalse(record['exact'])
+            if option == 'noprecolor':
+                self.assertEqual(record['body_words'], 35)
+                self.assertNotEqual(words, self.words)
+            elif option == 'nordstore':
+                expected = self.words.copy()
+                for index, shift in ((10, 11), (11, 16), (13, 16)):
+                    expected[index] = (expected[index] & ~(31 << shift)) | 9 << shift
+                self.assertEqual(words, expected)
+            else:
+                self.assertEqual(words, self.words)
+            for a, b, lower, upper, mode in CORNERS:
+                pointers = POINTERS[mode]
+                memory = memory_case(pointers, a, b)
+                wanted, trace = reference(memory, pointers, lower, upper)
+                for phase in (0, 8):
+                    model = PairOracle(words, memory, pointers, lower, upper, phase).run()
+                    self.assertEqual(external(model.memory), wanted)
+                    self.assertEqual(events(model), trace)
+                    self.assertEqual(model.calls, [])
+                    cases += 1
+        self.assertEqual(cases, 108)
 
     def test_core_opcodes_delays_and_immediates_match_under_lifetime_renaming(self):
         renames = {3: {'rd': 5}, 4: {'rs': 5}, 5: {'rt': 5}, 6: {'rs': 16, 'rt': 3},

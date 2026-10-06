@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Pair-clamp backend audit:
+[Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md)
+banks nine locally evidenced O2/g3 uopt controls. All accepted with empty
+diagnostics; none recovers the saved-pointer frame or reduces 36 differences.
+Seven emit the same body, one changes a closed three-word temporary lifetime,
+one emits 35 words with caller-home copies. No production/profile/data/guard
+or aggregate change. All nine pair tests pass in 35.646 seconds, no skips.
+Next recovery candidate: adjacent `func_1514462C`,
+still a zero-return placeholder; its isolated semantic form emits all 56
+retail words directly, pending qualification and linked installation.
+
 Pair-clamp register-lifetime follow-up:
 [Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)
 banks 128 further compiler controls after `fe925393`: separate parameter/local

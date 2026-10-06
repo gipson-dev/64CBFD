@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest pair-clamp backend audit](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md):
+  nine accepted controls, frame still open, no production change. Next
+  qualify the adjacent descriptor-measure recovery.
 - [Latest pair-clamp register-lifetime audit](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md):
   128 source/profile controls, no direct match or production change.
   Saved-pointer frame and return-tail work remains open.

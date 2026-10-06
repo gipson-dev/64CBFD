@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Game Pair Clamp Backend Audit - 2026-10-06
+
+[Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md)
+banks nine accepted compiler controls and 108 corner runs without changing
+guest production/profile/data/guards or matching counts. Pair clamp remains
+non-matching. Next qualify guest `func_1514462C`'s isolated direct recovery.
+No host adoption, sibling source/build/save/frozen Release change or push.
+
 ## Game Pair Clamp Register Lifetime Audit - 2026-10-06
 
 [Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)

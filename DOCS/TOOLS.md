@@ -16,7 +16,12 @@ four local-hint groups under O2/g3 and O1/g3: 128 controls, receipts in
 `conker/build/game-integer-pair-clamp-register-lifetimes/`. It does not
 change the default 92-control inventory. See
 [Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md).
-[Eight recovery tests](../tools/tests/test_game_integer_pair_clamp_recovery.py)
+`--saved-registers` screens nine locally evidenced `-Wo` uopt options against
+the recovered O2/g3 body; modes are mutually exclusive. Flags are passed only
+to disposable candidate builds, not production. Receipts:
+`conker/build/game-integer-pair-clamp-saved-registers/`. See
+[Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md).
+[Nine recovery tests](../tools/tests/test_game_integer_pair_clamp_recovery.py)
 bind the non-matching source/slot, compare complete guest access traces and
 native footprints, and detect wrong clamp/swap controls. A local oracle adds
 only XOR; shared runners remain unchanged. Explicit register-field renaming
@@ -25,6 +30,9 @@ normalizer or whole-function match. The saved-pointer frame and return tail
 remain open. See [Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md).
 The additional register-lifetime test compiles all 128 forms, binds complete
 word equality by profile/local group, and runs 1536 bounded corner traces.
+The backend test checks all nine accepted controls and 108 corner traces;
+`nordstore` changes only one closed temporary lifetime, while `noprecolor`
+adds caller-home copies but no saved-pointer frame. No new match is inferred.
 
 ## Indexed state-save compiler controls
 

@@ -73,6 +73,8 @@ BASELINE = '''void func_15143D18(s32 *arg0, s32 *arg1, s32 arg2, s32 arg3) {
     }
 }'''
 PROFILES = {'o2g3': ['-O2', '-g3'], 'o2': ['-O2'], 'o1g3': ['-O1', '-g3'], 'o1': ['-O1']}
+SAVED_REGISTER_OPTIONS = ('do_opt_saved_regs', 'noprecolor', 'noheurAB', 'no_r23', 'nogenvreg',
+                          'norlodrstropt', 'nordstore', 'no_const_in_reg', 'docopy')
 
 
 def candidates():
@@ -136,12 +138,13 @@ def candidates():
     return forms
 
 
-def compile_candidate(root, output, name, body=SELECTED, profile='o2g3'):
+def compile_candidate(root, output, name, body=SELECTED, profile='o2g3', extra_flags=()):
     source, obj, elf = (output / (name + suffix) for suffix in ('.c', '.o', '.elf'))
     source.write_text(TYPES + body + '\n')
     command = [str(root / 'ido/ido5.3_recomp/cc'), '-c', '-32', '-G', '0', '-Xfullwarn',
                '-Xcpluscomm', '-signed', '-nostdinc', '-non_shared', '-Wab,-r4300_mul',
-               '-mips2', '-o32', *PROFILES[profile], '-o', str(obj.relative_to(root)), str(source.relative_to(root))]
+               '-mips2', '-o32', *PROFILES[profile], *extra_flags,
+               '-o', str(obj.relative_to(root)), str(source.relative_to(root))]
     compiled = subprocess.run(command, cwd=root, capture_output=True, text=True)
     diagnostics = compiled.stdout + compiled.stderr
     if compiled.returncode or diagnostics:
@@ -162,7 +165,7 @@ def compile_candidate(root, output, name, body=SELECTED, profile='o2g3'):
     differences = [(i * 4, hex(a), hex(b)) for i, (a, b) in enumerate(zip(slot, retail)) if a != b]
     frames = [(-(word & 65535)) & 65535 for word in words
               if word & 0xFFFF0000 == 0x27BD0000 and word & 0x8000]
-    return dict(name=name, profile=profile, body_words=end, frame=max(frames, default=0),
+    return dict(name=name, profile=profile, extra_flags=list(extra_flags), body_words=end, frame=max(frames, default=0),
                 differences=len(differences) + max(0, end - WORDS), different_words=differences,
                 exact=words == retail, diagnostics=diagnostics), words
 
@@ -186,21 +189,27 @@ def register_lifetimes():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--register-lifetimes', action='store_true',
-                        help='screen separate parameter/local hints under O2/g3 and O1/g3')
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--register-lifetimes', action='store_true',
+                      help='screen separate parameter/local hints under O2/g3 and O1/g3')
+    mode.add_argument('--saved-registers', action='store_true',
+                      help='screen nine locally evidenced uopt controls against the recovered O2/g3 body')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
-    suffix = '-register-lifetimes' if args.register_lifetimes else ''
+    suffix = '-register-lifetimes' if args.register_lifetimes else '-saved-registers' if args.saved_registers else ''
     output = root / ('conker/build/game-integer-pair-clamp' + suffix)
     output.mkdir(exist_ok=True)
     records = []
-    forms = register_lifetimes() if args.register_lifetimes else candidates()
-    profiles = ('o2g3', 'o1g3') if args.register_lifetimes else PROFILES
-    for name, body in forms:
-        for profile in profiles:
-            record, _ = compile_candidate(root, output, name + '-' + profile, body, profile)
-            records.append(record)
-            print(record['name'], record['body_words'], hex(record['frame']), record['differences'], flush=True)
+    if args.saved_registers:
+        controls = [(option, SELECTED, 'o2g3', ('-Wo,-' + option,)) for option in SAVED_REGISTER_OPTIONS]
+    else:
+        forms = register_lifetimes() if args.register_lifetimes else candidates()
+        profiles = ('o2g3', 'o1g3') if args.register_lifetimes else PROFILES
+        controls = [(name + '-' + profile, body, profile, ()) for name, body in forms for profile in profiles]
+    for name, body, profile, extra_flags in controls:
+        record, _ = compile_candidate(root, output, name, body, profile, extra_flags)
+        records.append(record)
+        print(record['name'], record['body_words'], hex(record['frame']), record['differences'], flush=True)
     (output / 'measurements.json').write_text(json.dumps(records, indent=2) + '\n')
 
 
