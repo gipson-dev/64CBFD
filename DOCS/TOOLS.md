@@ -4,6 +4,24 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Cached quad builder compiler controls
+
+[Driver](../tools/experiments/game_cached_quad_builder_candidates.py)
+screens six forms/four profiles: 24 controls, real SDK types/fixed anchors.
+Selected O2/g3 gives 134 words/frame 0xD0, with only five independent
+first-corner scheduling differences. Loop-local point scope recovers register
+lifetimes and branch-delay update. No source/profile/guard installation by
+the driver. [Six tests](../tools/tests/test_game_cached_quad_builder_match.py)
+bind controls, complete production slot/source and the five guards; actual
+40-word matrix assembly runs with the caller in two-body guest tests.
+Full external memory/access traces and independent byte references qualify
+fresh-copy slot reloads, live translations and escaped cursor mutations.
+Native full-storage fixtures forward to recovered semantic matrix C; all
+signed-view values are also swept through the null gate. SDK/backend/
+orientation providers remain callbacks, not full hardware FCSR/gameplay or
+host adoption. Ignored receipts `conker/build/game-cached-quad-builder[-test]/`.
+See [Note 1049](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md).
+
 ## Vertex attribute initializer compiler controls
 
 [Driver](../tools/experiments/game_vertex_attribute_initializer_candidates.py)

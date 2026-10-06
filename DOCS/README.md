@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest cached quad builder match](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md):
+  134 words, 129 direct plus five scheduling guards; actual matrix callee,
+  live fresh-copy/translation/cursor qualification. Next `func_15140410`.
+
 - [Latest vertex attribute initializer direct conversion](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md):
   Retained assembly converted to 48 direct C words; transient flags, signed
   colors and actual constructor/two-helper qualification. Next `func_15140190`.

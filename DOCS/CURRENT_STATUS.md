@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Cached quad builder recovery:
+[Note 1049](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md)
+recovers `func_15140190`'s false stub: 134 words/frame 0xD0 under existing
+O2/g3, 129 direct plus five independent first-corner scheduling guards.
+24 controls, 864 two-body actual-matrix guest cases/all 174 chain words,
+864 native full-storage cases and all 65536 native signed-view null cases.
+Live fresh-copy slot reloads, translation reads, original return and escaped
+cursor updates preserved. Only quad slot changed across 6059 slots; all
+addresses/sizes, protected sections and 720 owners unchanged, 10660 existing
+guards preserved plus five. 48 owner warnings unchanged, zero new. Converted
+counts stay 5464/6042 and Game 4791/5321; exact total 3327/5464 and Game 2654/4791,
+2137 different, zero drift. 31 docs/3341 links/zero broken. All 66 focused
+post-link tests pass in 741.875 seconds, no skips.
+Next adjacent 167-word `func_15140410` basis-vector quad builder; no full
+backend/orientation/hardware FCSR/gameplay/host claim, sibling/Release change
+or push.
+
 Vertex attribute initializer direct C conversion:
 [Note 1048](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md)
 converts retained `func_151400D0`: all 48 direct words/frame zero, existing

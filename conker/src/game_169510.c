@@ -19,10 +19,13 @@ s32 func_1513F728();
 s32 func_1513FAB4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_1513FFF4(u8 *out, u8 index, u8 variant);
 void func_151400D0(u8 *out, u8 *input);
-s32 func_15140190();
+Vtx *func_15140190(u8 *actor, s16 view);
 s32 func_15140410(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_151406AC();
 /* End generated placeholder declarations. */
+
+void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
+void func_150A7960(f32 *, f32, f32, f32, f32 *, f32 *, f32 *);
 
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513C060.s. */
 s32 func_1513C060() {
@@ -696,9 +699,50 @@ void func_151400D0(u8 *out, u8 *input) {
         input += 10;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_15140190.s. */
-s32 func_15140190() {
-    return 0;
+Vtx *func_15140190(u8 *actor, s16 view) {
+    Vtx *cursor;
+    Vtx *first;
+    f32 matrix[4][4];
+    f32 points[4][3];
+    u8 i;
+    u8 fresh;
+    func_151D5D60(actor + 0x100, view, 0x40, &cursor, &fresh);
+    first = cursor;
+    if (cursor != NULL) {
+        if (fresh) {
+            memcpy(*(u8 **)(actor + 0x100 + view * 4), actor + 0xC0, 0x40);
+            memcpy(*(u8 **)(actor + 0x100 + view * 4) + 0x40, actor + 0xC0, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    points[0][2] = 0.0f;
+    points[0][0] = *(f32 *)(actor + 0x2C);
+    points[0][1] = *(f32 *)(actor + 0x30);
+    points[1][0] = -*(f32 *)(actor + 0x2C);
+    points[1][1] = *(f32 *)(actor + 0x30);
+    points[1][2] = 0.0f;
+    points[2][0] = -*(f32 *)(actor + 0x2C);
+    points[2][1] = -*(f32 *)(actor + 0x30);
+    points[2][2] = 0.0f;
+    points[3][0] = *(f32 *)(actor + 0x2C);
+    points[3][1] = -*(f32 *)(actor + 0x30);
+    points[3][2] = 0.0f;
+    func_150A8050(matrix, *(f32 *)(actor + 0x40), *(f32 *)(actor + 0x44), *(f32 *)(actor + 0x48));
+    matrix[3][0] = *(f32 *)(actor + 0x34);
+    matrix[3][1] = *(f32 *)(actor + 0x38);
+    matrix[3][2] = *(f32 *)(actor + 0x3C);
+    for (i = 0; i < 4; i++) {
+        f32 *point = points[i];
+        func_150A7960((f32 *)matrix, point[0], point[1], 0.0f,
+                     &point[0], &point[1], &point[2]);
+        cursor->v.ob[0] = (s32)point[0];
+        cursor->v.ob[1] = (s32)point[1];
+        cursor->v.ob[2] = (s32)point[2];
+        cursor->v.flag = 0;
+        cursor++;
+    }
+    return first;
 }
 void func_151403A8(s32 arg0, u8 arg1) {
     func_15169260(&D_800A5168, 4, arg0, arg1);

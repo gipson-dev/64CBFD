@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Cached Quad Builder Match - 2026-10-06
+
+[Note 1049](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md)
+recovers guest `func_15140190`: 134 words/frame 0xD0, existing O2/g3;
+129 direct plus five independent setup scheduling guards. Actual 40-word
+matrix helper executes with the recovered caller in bounded guest tests;
+all 174 words covered. 24 controls, 864 guest/two bodies, 864 native storage
+and 65536 native signed-view null cases. Only quad slot changed, 6059 fixed
+slots, protected sections/720 owners intact; 10660 existing guards plus five, 48
+unchanged warnings, zero new. Converted counts unchanged; Game 2654/4791
+exact (55.40%), 2137 different, zero drift. 31 docs/3341 links/zero broken.
+All 66 focused post-link tests pass in 741.875 seconds, no skips.
+Next guest `func_15140410`; not full backend/orientation/hardware
+FCSR/gameplay or sibling host adoption. No sibling source/build/save/frozen
+Release change or push.
+
 ## Game Vertex Attribute Initializer Direct C Conversion - 2026-10-06
 
 [Note 1048](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md)

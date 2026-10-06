@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-06 ([Note 1049](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md)):
+`func_15140190`: false quad stub recovered, 134 words/frame 0xD0, 129 direct
+and five scheduling guards, existing O2/g3. No profile/shared header/data.
+24 controls, 864 two-body actual-matrix guest/all 174 words, 864 native
+full-storage and 65536 native signed-view null cases. Only quad slot changed
+among 6059 fixed slots; protected sections/720 owners intact, 10660 existing guards
+plus five, 48 warnings unchanged, zero new. Converted counts unchanged;
+exact total 3327/5464, Game 2654/4791, 2137 different, zero drift. 31 docs/3341 links/
+zero broken. All 66 focused post-link tests pass in 741.875 seconds, no skips.
+Next `func_15140410`; no full gameplay/host claim,
+sibling/Release change or push.
+
 2026-10-06 ([Note 1048](WORKING_NOTES/1048-game-vertex-attribute-initializer-direct-match-20261006.md)):
 `func_151400D0`: retained assembly converted to 48 direct words/frame zero,
 existing O2/g3; no guards/profile/shared header/data. Local pointer/void ABI

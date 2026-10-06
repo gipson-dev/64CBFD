@@ -10659,3 +10659,8 @@ generated_1CBE20,func_1519EB8C,0x030,0xE7A0003C,0xAFA700C4,-,-,Normalize source 
 generated_1CBE20,func_1519EB8C,0x034,0xE7A00040,0xAFB00038,-,-,Normalize source actor descriptor independent opening schedule,,,false
 generated_1CBE20,func_1519EB8C,0x038,0x3C010000,0xE7A0003C,R_MIPS_HI16:D_800A8CD4,-,Normalize source actor descriptor independent opening schedule,,,false
 generated_1CBE20,func_1519EB8C,0x03C,0xC4220000,0xE7A00040,R_MIPS_LO16:D_800A8CD4,-,Normalize source actor descriptor independent opening schedule,,,false
+game_169510,func_15140190,0x0B4,0x02402025,0xC624002C,-,-,Normalize cached quad first corner independent setup schedule,,,false
+game_169510,func_15140190,0x0B8,0xE7B40060,0x02402025,-,-,Normalize cached quad first corner independent setup schedule,,,false
+game_169510,func_15140190,0x0BC,0xC624002C,0xE7A40058,-,-,Normalize cached quad first corner independent setup schedule,,,false
+game_169510,func_15140190,0x0C0,0xE7A40058,0xC6260030,-,-,Normalize cached quad first corner independent setup schedule,,,false
+game_169510,func_15140190,0x0C4,0xC6260030,0xE7B40060,-,-,Normalize cached quad first corner independent setup schedule,,,false

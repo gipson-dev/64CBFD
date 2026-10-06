@@ -373,7 +373,7 @@ for(m=0;m<3;m++) for(l=0;l<4;l++) for(h=0;h<2;h++) for(c=0;c<2;c++) for(f=0;f<2;
         self.assertIn(screen.SELECTED,(self.root/'conker/src/game_169510.c').read_text())
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             rows = list(csv.DictReader(stream))
-        self.assertEqual(len(rows),10660)
+        self.assertEqual(len(rows),10665)
         self.assertFalse([r for r in rows if r['function']=='func_1513D2F0'])
 
 
