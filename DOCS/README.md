@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest actor position-queue wrapper direct match](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md):
+  37 direct words; signed coordinates, actor float capture and connected queue.
+  Next recover `func_1518E5D8`'s RNG/selector/output contract.
+
 - [Latest alternate actor-dimension direct match](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md):
   41 direct words plus two retail padding words; signed +0xE8 view and ordered
   aliased outputs. Next qualify `func_1517D5FC`'s queue handoff.

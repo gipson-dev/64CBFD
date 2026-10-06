@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1039](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md)):
+`func_1517D5FC`: 37 words directly, frame 0x28, no new guards/profile/header/
+data. 32 controls; 24576 opaque / 37936 connected guest and 8192 opaque /
+49152 connected native cases. All 37 wrapper/33 helper words covered; existing
+helper and guards intact. All 59 post-link tests pass in 255.215 seconds,
+no skips. Only target changes across 6059; protected sections/
+720 owners/10646 guards unchanged. Owner diagnostics empty. README total
+3317/5462, Game 2644/4789 exact. Next `func_1518E5D8`'s RNG/output wrapper.
+No sibling/frozen Release change, complete gameplay claim or push.
+
 2026-10-06 ([Note 1038](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md)):
 `func_1515C244`: all 43 slot words exact, 41 direct C plus two padding words;
 no frame/guards/profile/header/data change. Local signed +0xE8 cast, sequential

@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/1A89B0.s. */
 
@@ -17,6 +18,8 @@ typedef struct {
 } PositionQueueEntry;
 
 extern PositionQueueEntry D_800DDD28[];
+extern struct108 *D_800DBFF0;
+extern u8 D_800DDD1C;
 
 s32 func_1517B500() {
     return 0;
@@ -86,8 +89,9 @@ void func_1517D578(s16 arg0, s16 arg1, s16 arg2, f32 arg3, s32 arg4, s32 arg5, u
     }
 }
 
-s32 func_1517D5FC() {
-    return 0;
+void func_1517D5FC(s16 arg0, s16 arg1, s16 arg2, s32 arg3, s32 arg4, s32 arg5) {
+    func_1517D578(arg0, arg1, arg2, D_800DBFF0[arg3].unk380,
+                 arg4, arg5, D_800DDD1C >> 3);
 }
 
 s32 func_1517D690() {

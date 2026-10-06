@@ -2,6 +2,9 @@
 
 Date: 2026-10-06. Starting checkpoint: `2facc8e0`.
 
+Continuation: [Note 1039](1039-game-actor-position-queue-wrapper-direct-match-20261006.md)
+completes the queued actor position-wrapper recovery and connected qualification.
+
 **`func_1515C244` matches its complete 43-word / 172-byte slot:**
 41 words directly from C, followed by two retail zero-padding words.
 VA 0x1515C244..0x1515C2F0, ROM 0x1896F4..0x1897A0, no frame.

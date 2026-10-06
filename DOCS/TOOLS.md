@@ -4,6 +4,22 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Actor position-queue wrapper compiler controls
+
+[Driver](../tools/experiments/game_actor_position_queue_wrapper_candidates.py)
+screens eight forms under four profiles: 32 controls with real SDK/actor
+headers and fixed retail anchors. Plain typed O2/g3 emits all 37 words
+directly. No source, guards or profile installed by the tool; retail ROM,
+IDO and MIPS tools required. Receipts ignored under
+`conker/build/game-actor-position-queue-wrapper/`.
+[Seven tests](../tools/tests/test_game_actor_position_queue_wrapper_match.py)
+bind the direct wrapper and unchanged helper, complete external guest traces,
+signed argument homes, callback capture/mutations and connected queue stores.
+Native cases use the actual complete actor and queue-record layouts plus
+the retained writer C body. Raw float-bit transport is qualified, not FP
+arithmetic/FCSR or gameplay. See
+[Note 1039](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md).
+
 ## Alternate actor-dimension compiler controls
 
 [Driver](../tools/experiments/game_actor_alternate_dimensions_candidates.py)

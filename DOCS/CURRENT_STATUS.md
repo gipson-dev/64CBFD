@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor position-queue wrapper direct match:
+[Note 1039](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md)
+recovers `func_1517D5FC`: all 37 words directly, frame 0x28, existing O2/g3;
+no new guards/profile/header/data. Signed coordinate ABI, actor stride/float
+capture and shifted selector. 32 controls; 24576 opaque / 37936 connected
+guest cases, 8192 opaque / 49152 connected native cases. All wrapper/helper
+words covered; retained 33-word helper and its 29 old guards unchanged.
+All 59 post-link tests pass in 255.215 seconds, no skips.
+Only target changes across 6059 slots; protected sections/720 owners/10646
+guards intact. Baseline/current owner diagnostics empty. README now total
+3317/5462 and Game 2644/4789 exact, zero drift, 2145 different. Next
+`func_1518E5D8`, RNG/selector/output wrapper still a stub. No complete caller/
+FCSR/gameplay, sibling/frozen Release change or push; Game stays active.
+
 Alternate actor-dimension direct match:
 [Note 1038](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md)
 recovers `func_1515C244`: 41 direct C words plus two retail padding words,

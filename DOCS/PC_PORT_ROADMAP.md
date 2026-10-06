@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Position Queue Wrapper Direct Match - 2026-10-06
+
+[Note 1039](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md)
+recovers guest `func_1517D5FC` directly: all 37 words, existing O2/g3, frame 0x28.
+No new guards/profile/header/data; retained helper unchanged. Signed argument
+and queue handoff qualified by 24576 opaque / 37936 connected guest and
+8192 opaque / 49152 connected native cases. All 59 post-link tests pass in
+255.215 seconds, no skips. Only target changes across 6059;
+protected sections/720 owners/10646 guards intact. Game now 2644/4789 exact,
+zero drift, 2145 different. Next qualify guest `func_1518E5D8`'s RNG/output
+wrapper. No host adoption, full caller/FCSR/gameplay acceptance, sibling source/
+build/save/frozen Release change or push.
+
 ## Game Alternate Actor Dimensions Direct Match - 2026-10-06
 
 [Note 1038](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md)

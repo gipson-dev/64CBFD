@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-06 Game Actor Position Queue Wrapper Direct Match
+
+[Note 1039](WORKING_NOTES/1039-game-actor-position-queue-wrapper-direct-match-20261006.md)
+replaces `func_1517D5FC`'s stub with all 37 words directly, frame 0x28.
+Signed coordinates, actual actor stride and captured float bits, shifted
+selector; 32 controls, 24576 opaque / 37936 connected guest and 8192 opaque /
+49152 connected native cases. All 59 post-link tests pass in 255.215 seconds,
+no skips. Existing helper/guards unchanged. Only target
+changes across 6059; protected sections/720 owners/10646 guards intact.
+README now total 3317/5462, Game 2644/4789 exact, zero drift. Next recover
+`func_1518E5D8`'s RNG/selector/output contract. No sibling/Release edit or push.
+
 ## 2026-10-06 Game Alternate Actor Dimensions Direct Match
 
 [Note 1038](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md)
