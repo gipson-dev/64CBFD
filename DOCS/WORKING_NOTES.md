@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-05 ([Note 1011](WORKING_NOTES/1011-game-actor-buffer-copy-direct-match-20261005.md)):
+Recover `func_1502F948`: all 45 words / frame 0x28 directly exact under
+default IDO, no guards/profile override. Qualification covers 13461
+three-way guest cases, 163840 native reference cases and 16384 gate cases;
+actual allocator-wrapper/SDK paths are bounded, not full heap/gameplay proof.
+Only target changes in 6060 slots; protected sections and CSV stay intact.
+Counts now 3304 / 5463 total, 2631 / 4790 Game, zero drift; README aggregate
+update only. Caller remains 109 differences. Next: complete `func_1502F490`.
+All 41 focused checks pass in 173.674 seconds; all 343 combined checks pass
+in 690.045 seconds, no skips. Tools, whitespace and 2955 relative links pass.
+
 2026-10-05 ([Note 1010](WORKING_NOTES/1010-game-actor-reference-coordinate-phase-match-20261005.md)):
 Recover `func_1502F3C8`: all 50 words / frame 0x30 linked exact, semantic C
 with 16 relocation-aware prelude/register/schedule guards. Qualification

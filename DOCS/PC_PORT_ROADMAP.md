@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Buffer Copy Direct Match - 2026-10-05
+
+[Note 1011](WORKING_NOTES/1011-game-actor-buffer-copy-direct-match-20261005.md)
+recovers DECOMP `func_1502F948`, all 45 words / frame 0x28 directly exact
+under default IDO, no guards/profile override. Bounded guest/native tests
+include cached-ID/fresh-field mutations and actual allocator-wrapper/SDK
+copy paths; the heap core is still opaque. Only target changes in 6060 slots;
+Game count is now 2631 / 4790 exact, zero drift. No host transplant, PC
+gameplay acceptance claim or sibling source/build/save/frozen Release change.
+Next: complete `func_1502F490` recovery in DECOMP; caller match remains open.
+All 41 focused and 343 combined checks pass, no skips; tools, whitespace and
+2955 relative links pass. These are DECOMP checks, not PC runtime acceptance.
+
 ## Game Actor Reference Coordinate Phase Match - 2026-10-05
 
 [Note 1010](WORKING_NOTES/1010-game-actor-reference-coordinate-phase-match-20261005.md)

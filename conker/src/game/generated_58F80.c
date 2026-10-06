@@ -189,12 +189,25 @@ void func_1502BD84(ActorUpdate58F80 *actor, s32 slot) {
     }
 }
 
+typedef struct ActorCopy58F80 {
+    u8 pad0[4];
+    u8 id;
+    u8 pad5[0xF3];
+    u32 flags;
+    u8 padFC[0xD8];
+    void *source;
+    void *buffer;
+    u8 pad1DC[0x88];
+    u32 copyState;
+    u8 pad268[0xC4];
+} ActorCopy58F80;
+
 extern u32 D_800C3E74;
 extern u8 D_800C3E70, D_800BEAC0;
 extern ActorUpdate58F80 D_800D121C[];
 void func_1503F964(void);
 void func_1502F3C8(void);
-s32 func_1502F948();
+void func_1502F948(ActorCopy58F80 *actor);
 s32 func_15030468();
 s32 func_1507C22C();
 
@@ -258,7 +271,7 @@ void func_1502BEE4(void) {
     actor = ((ActorUpdate58F80 *)D_800CC2D0);
     do {
         if (actor->active != 0) {
-            func_1502F948(actor);
+            func_1502F948((ActorCopy58F80 *)actor);
         }
         actor++;
     } while (actor != D_800D121C);
@@ -464,8 +477,21 @@ s32 func_1502F490() {
     return 0;
 }
 
-s32 func_1502F948() {
-    return 0;
+s32 allocate_memory(s32, s32, s32, s32);
+
+void func_1502F948(ActorCopy58F80 *actor) {
+    s32 id;
+
+    if ((actor->flags & 0x4000) != 0 && actor->copyState != 0 && actor->source != NULL) {
+        id = actor->id;
+        if (actor->buffer == NULL) {
+            actor->buffer = (void *)allocate_memory(D_800C4ED0[id] << 6, 1, 1, 2);
+            if (actor->buffer == NULL) {
+                return;
+            }
+        }
+        bcopy(actor->source, actor->buffer, D_800C4ED0[id] << 6);
+    }
 }
 
 s32 func_1502F9FC() {

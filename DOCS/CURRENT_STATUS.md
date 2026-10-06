@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor buffer copy: [Note 1011](WORKING_NOTES/1011-game-actor-buffer-copy-direct-match-20261005.md)
+recovers `func_1502F948`'s ordered gates, cached ID, allocation ABI and fresh
+copy inputs. All 45 words / frame 0x28 emit directly under default IDO;
+no guards or compiler override. Qualification covers 13461 three-way guest
+cases, 163840 native reference cases and 16384 native gate cases, including
+bounded actual allocator-wrapper/SDK-copy connections. Only target changes
+in 6060 slots; protected sections, all 720 data owners and CSV remain intact.
+Counts now 3304 / 5463 total, 2631 / 4790 Game, zero drift; README aggregates
+updated. Caller remains 109 differences. Next: `func_1502F490`'s complete
+302-word semantic recovery, not just its already-qualified early return.
+Heap-core/full transform/PC gameplay acceptance is not claimed.
+All 41 focused checks pass in 173.674 seconds; all 343 combined checks pass
+in 690.045 seconds, no skips. Tools, whitespace and 2955 relative links pass.
+Conversion/47 retained Init ASM and sibling/frozen Release remain unchanged.
+
 Actor reference coordinate phase: [Note 1010](WORKING_NOTES/1010-game-actor-reference-coordinate-phase-match-20261005.md)
 recovers `func_1502F3C8`'s 25-slot scan, five-argument transform call and fresh
 post-call Y/bound comparison. All 50 words / frame 0x30 are linked exact;

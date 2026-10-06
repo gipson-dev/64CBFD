@@ -298,7 +298,8 @@ RECOVERY = '''void func_1502BEE4(void) {
 
 
 def production_body():
-    return SELECTED.replace('D_800CC2D0', '((ActorUpdate58F80 *)D_800CC2D0)')
+    return SELECTED.replace('D_800CC2D0', '((ActorUpdate58F80 *)D_800CC2D0)').replace(
+        'func_1502F948(actor);', 'func_1502F948((ActorCopy58F80 *)actor);')
 
 
 def followup_candidates():

@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-05 Game Actor Buffer Copy Direct Match
+
+[Note 1011](WORKING_NOTES/1011-game-actor-buffer-copy-direct-match-20261005.md)
+recovers `func_1502F948`, all 45 words / frame 0x28 directly exact with
+default IDO and no guards/profile override. Cached-ID/fresh-copy semantics
+pass 13461 three-way guest cases, 163840 native reference cases and 16384
+native gate cases; three incorrect semantic controls fail. Actual wrapper
+and SDK-copy connections are bounded, not complete heap/gameplay acceptance.
+Only target changes in 6060 slots; protected sections and CSV remain intact.
+Counts now 3304 / 5463 total, 2631 / 4790 Game, zero drift. README aggregates
+updated; caller stays 109 differences. Next: complete `func_1502F490`.
+No sibling/frozen Release change or push.
+All 41 focused checks pass in 173.674 seconds; all 343 combined checks pass
+in 690.045 seconds, no skips. Tools, whitespace and 2955 relative links pass.
+
 ## 2026-10-05 Game Actor Reference Coordinate Phase Match
 
 [Note 1010](WORKING_NOTES/1010-game-actor-reference-coordinate-phase-match-20261005.md)

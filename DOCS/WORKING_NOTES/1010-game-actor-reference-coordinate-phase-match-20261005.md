@@ -141,8 +141,10 @@ wsl make tools-check
 git diff --check
 ```
 
-Next connected match: **`func_1502F948`**, the actor post-pass buffer-copy
-helper at 45 words / frame 0x28. The restored
+Follow-up: **`func_1502F948`**, the actor post-pass buffer-copy helper,
+is now directly matched in [Note 1011](1011-game-actor-buffer-copy-direct-match-20261005.md).
+The following allocator contract was the handoff used for that recovery.
+The helper has 45 words / frame 0x28. The restored
 [`allocate_memory`](../../conker/src/init_3C40.c) wrapper takes four `s32`
 arguments and returns an `s32` address word. Retail passes
 `D_800C4ED0[cachedId] << 6, 1, 1, 2`, then stores even a null result to
