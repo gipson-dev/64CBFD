@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-06 Game Graph Edge Crossing Recovery
+
+[Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)
+recovers `func_15086D94`'s horizontal crossing pass, replacing its zero-return
+stub. Not byte-exact: 206 emitted / 207 slot words, frame 0x78, 151 differences.
+Preserve the last-fraction result, including later rejected crossings, and
+the retail 100.0f initial minimum. 39 forms / 78 compiler controls; 2177
+three-way guest cases, 198 retail words visited, 288 native full footprints.
+All 58 combined tests pass, no skips.
+Only this slot changes in the 6059-slot audit; root/parent, protected sections,
+720 data owners and 10643 guards unchanged. README/counts unchanged:
+3309/5462 total and 2636/4789 Game exact, zero drift, 2153 different.
+Next: helper frame/private homes and normal lifetimes. No full helper-chain/
+FCSR/gameplay acceptance, sibling/frozen Release change or push.
+
 ## 2026-10-06 Game Root Neighbor Lookup Direct Match
 
 [Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)

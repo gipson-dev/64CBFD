@@ -365,11 +365,12 @@ for(c=0;c<1536;c++) {
         with self.assertRaises(ValueError):
             screen.inline_nodes('void missing_source(void) {}')
 
-    def test_production_slot_and_ray_placeholder_abi(self):
+    def test_production_slot_and_recovered_ray_abi(self):
         source = (self.root / 'conker/src/game/generated_B3020.c').read_text()
         body = re.search(r's32 func_15085DF8\([^;{]*\{\n.*?\n\}', source, re.S).group()
         self.assertEqual(body, screen.SELECTED)
-        self.assertIn('f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {\n    return 0.0f;\n}', source)
+        from tools.experiments.game_graph_edge_crossing_candidates import SELECTED
+        self.assertIn(SELECTED, source)
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'),
                                                      'mips-linux-gnu-objdump')
         self.assertEqual(functions['func_15085DF8'], self.retail)
@@ -378,21 +379,14 @@ for(c=0;c<1536;c++) {
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             self.assertFalse(any(row['function'] == 'func_15085DF8' for row in csv.DictReader(stream)))
 
-    def test_ray_placeholder_has_float_result_and_four_argument_homes(self):
+    def test_recovered_ray_preserves_five_float_argument_contract(self):
+        from tools.tests.test_game_graph_edge_crossing_match import EdgeOracle, case_memory as edge_memory
         functions, _, _ = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'),
                                              'mips-linux-gnu-objdump')
-        prefix = [0xE7AC0000, 0xE7AE0004, 0xAFA60008, 0xAFA7000C,
-                  0x44800000, 0, 0x03E00008, 0]
-        self.assertEqual(functions['func_15086D94'], prefix + [0] * (207 - len(prefix)))
         for phase in (0, 8):
-            model = TriangleOracle(prefix, case_memory(), phase=phase, entry=RAY,
-                arguments=(0, 0, bits(3.5), bits(-4.25), bits(5.75)))
-            model.f[12], model.f[14] = bits(1.25), bits(-2.75)
-            model.run()
-            self.assertEqual(model.f[0], 0)
-            self.assertEqual([event for event in model.events if event[0] == 'W'],
-                [('W', STACK + phase, 4, bits(1.25)), ('W', STACK + phase + 4, 4, bits(-2.75)),
-                 ('W', STACK + phase + 8, 4, bits(3.5)), ('W', STACK + phase + 12, 4, bits(-4.25))])
+            model = EdgeOracle(functions['func_15086D94'], edge_memory(), phase=phase).run()
+            self.assertEqual(model.f[0], bits(5.0))
+            self.assertEqual(model.calls, [(0x15085DA8, bits(2.75))])
 
     def test_finite_sqrt_and_truncate_instruction_probes(self):
         words = [0x46000004, 0x4600010D, 0x03E00008, 0]

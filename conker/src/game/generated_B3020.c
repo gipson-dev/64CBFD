@@ -168,7 +168,80 @@ s32 func_15086D48(s32 arg0) {
 }
 
 f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
-    return 0.0f;
+    s32 band;
+    s32 count;
+    s32 i;
+    s32 j;
+    s32 id;
+    u8 *nodes;
+    u8 *first;
+    u8 *second;
+    f32 minimum;
+    f32 fraction;
+    f32 ax;
+    f32 az;
+    f32 nx;
+    f32 nz;
+    f32 constant;
+    f32 start;
+    f32 end;
+    f32 swap;
+
+    band = func_15085DA8(y);
+    count = D_80087290;
+    minimum = 100.0f;
+    if (count > 0) {
+        nodes = D_800D2350;
+        for (i = 0; i < count; i++) {
+            first = nodes + i * 16;
+            if (first[14] == 1 && first[6] == band) {
+                for (j = 0; j < 5; j++) {
+                    id = first[j + 9];
+                    if (id != 255 && i < id) {
+                        second = nodes + id * 16;
+                        if (second[14] == 1) {
+                            nx = (f32)(*(s16 *)(second + 4) - *(s16 *)(first + 4));
+                            nz = -(f32)(*(s16 *)(second + 0) - *(s16 *)(first + 0));
+                            ax = (f32)*(s16 *)(first + 0);
+                            az = (f32)*(s16 *)(first + 4);
+                            constant = -(ax * nx + nz * az);
+                            start = x * nx + z * nz + constant;
+                            end = (x + dx) * nx + (z + dz) * nz + constant;
+                            if ((end < 0.0f && 0.0f <= start) ||
+                                (start < 0.0f && 0.0f <= end)) {
+                                if (end < 0.0f) {
+                                    end = -end;
+                                }
+                                if (start < 0.0f) {
+                                    start = -start;
+                                }
+                                swap = nx;
+                                nx = -nz;
+                                nz = swap;
+                                fraction = start / (start + end);
+                                constant = -(ax * nx + swap * az);
+                                start = (x + fraction * dx) * nx +
+                                        (z + fraction * dz) * nz + constant;
+                                end = (f32)*(s16 *)(second + 0) * nx +
+                                      nz * (f32)*(s16 *)(second + 4) + constant;
+                                if ((0.0f < end && 0.0f < start && start <= end) ||
+                                    (end < 0.0f && start < 0.0f && end <= start)) {
+                                    if (fraction < minimum) {
+                                        minimum = fraction;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (minimum <= 1.0f) {
+        /* Retail returns the last crossing fraction, even if that edge was rejected. */
+        return sqrtf(dx * dx + dz * dz) * fraction;
+    }
+    return -1.0f;
 }
 
 s32 func_150870D0() {

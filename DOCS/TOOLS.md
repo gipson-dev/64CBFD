@@ -6,6 +6,15 @@ says otherwise.
 
 ## Zone selection compiler controls
 
+[Edge-crossing driver](../tools/experiments/game_graph_edge_crossing_candidates.py)
+screens 39 source forms under the existing/default-unroll profiles, writing
+78 records to ignored `conker/build/game-graph-edge-crossing/screen.json`.
+It preserves the semantic baseline and marks minimum-result/narrowed-band
+negative controls. Requires the retail ROM, IDO and MIPS binutils. It does not
+install source or permit oversized bodies. See
+[Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)
+for the qualified recovery and remaining 151-word mismatch.
+
 [Root lookup driver](../tools/experiments/game_root_neighbor_lookup_candidates.py)
 measures 35 source forms under both existing/default-unroll profiles and writes
 70 records to ignored `conker/build/game-root-neighbor-lookup/screen.json`.
@@ -13,7 +22,8 @@ It preserves the pointer-based recovery and old typed placeholder; the
 unsigned-index forms are signed-count negative controls. Requires the retail
 ROM, IDO and MIPS binutils. See
 [Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)
-for the direct match and the still-placeholder geometric-helper boundary.
+for the direct match; its geometric-helper placeholder is now superseded by
+the non-matching recovery in Note 1025.
 
 [Recovery driver](../tools/experiments/game_zone_neighbor_selection_candidates.py)
 retains the original 29-form inventory and previous source checkpoint.

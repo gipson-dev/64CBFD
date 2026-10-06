@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Graph edge crossing semantic recovery:
+[Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)
+replaces `func_15086D94`'s zero-return placeholder with its complete horizontal
+crossing pass. Not byte-exact: 206 body words / 207-word slot, frame 0x78,
+151 differences. Preserve retail's last-fraction result and 100.0f initial
+minimum. Thirty-nine forms / 78 controls; 2177 three-way guest cases, 198/207
+retail words exercised, 288 native footprints; all 58 combined tests pass,
+no skips. Only the helper changes across
+6059 slots; root/parent, protected sections, 720 data owners and 10643 guards
+unchanged. README/counts stay 3309/5462 total and 2636/4789 Game exact, zero
+drift, 2153 different. Next: helper frame/private homes and normal lifetimes;
+parent remains at 282 differences. Full helper-chain/FCSR/gameplay acceptance
+is still separate. The Game matching goal remains active.
+
 Root neighbor lookup direct match:
 [Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)
 recovers `func_15085DF8` across all 168 words directly from C, frame 0x80,
@@ -30,8 +44,8 @@ All 45 lookup/parent/lifetime/visitor tests pass, no skips. All 6059 addresses/
 lengths survive; only lookup and the five-float geometric placeholder ABI
 change. Parent bytes and protected sections/720 owners/all guards unchanged.
 README aggregates updated: 3309/5462 total, 2636/4789 Game exact, zero drift,
-2153 different. Next: recover `func_15086D94`'s 207-word body; it still returns
-0.0f and is not matched. Parent remains at 282 differences. Full geometry/
+2153 different. Its still-placeholder geometric-helper boundary is superseded
+by Note 1025 above; neither helper nor parent is matched. Full geometry/
 lookup/caller/gameplay and FCSR acceptance remain separate.
 
 Zone/player selection lifetime improvement:

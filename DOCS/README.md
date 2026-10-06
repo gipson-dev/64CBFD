@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest graph edge-crossing recovery](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md):
+  complete semantic body, retail last-fraction quirk, measured 151-word
+  mismatch and remaining frame/lifetime work. Not a completed byte match.
 - [Current decomp status](CURRENT_STATUS.md) — measured build, conversion,
   byte-matching, dirty-tree, and immediate resume boundary.
 - [Numbered working notes](WORKING_NOTES/) — concise session handoffs beginning

@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Graph Edge Crossing Recovery - 2026-10-06
+
+[Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)
+recovers DECOMP `func_15086D94`'s horizontal crossing body, replacing its
+zero-return stub. Semantic recovery, not a byte match: 206 body / 207 slot
+words, frame 0x78, 151 differences. Preserve the last-fraction result and
+retail 100.0f initial minimum. 2177 three-way guest cases, 198/207 executed
+retail words, 288 native full footprints; 58 tests pass, no skips.
+Only this slot changes across 6059.
+Root/parent and protected data/guards intact; Game remains 2636/4789 exact,
+zero drift, 2153 different. Next: guest frame/private homes/normal lifetimes.
+No full helper-chain/FCSR/gameplay acceptance, host transplant, sibling
+source/build/save/frozen Release change or push. Game matching remains active.
+
 ## Game Root Neighbor Lookup Direct Match - 2026-10-06
 
 [Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)

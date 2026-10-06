@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-06 ([Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)):
+Recover `func_15086D94`'s complete horizontal edge-crossing pass. Semantic
+recovery only: 206 body / 207 slot words, frame 0x78, 151 differences. Preserve
+retail's last-fraction quirk and initial minimum 100.0f. 39 forms / 78 controls,
+2177 three-way guest cases, 198/207 retail words visited, 288 native footprints;
+58 combined tests pass, no skips.
+Only helper changes across 6059 slots; root/parent, protected data and all
+10643 guards intact. README/counts unchanged: Game 2636/4789 exact, zero drift.
+Next: helper 0x90 frame, minimum/fraction homes and normal lifetimes; parent
+still 282 differences. Full helper-chain/FCSR/gameplay remains unqualified.
+The Game matching goal stays active.
+
 2026-10-06 ([Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)):
 Recover `func_15085DF8` directly: 168 words, frame 0x80, no guards/profile/
 overflow. Seventy controls, 3275 three-way guest cases, 166 executed words
