@@ -150,3 +150,6 @@ direct table expressions are an intermediate non-matching form, not the
 final retail read shape. No broad 242-word guard batch.
 
 The full Game matching goal remains active.
+
+Follow-up: [Note 1017](1017-game-actor-triangle-cached-iterator-audit-20261005.md)
+banks cached metadata/SDK/mixed-bound controls without installing a frame regression.

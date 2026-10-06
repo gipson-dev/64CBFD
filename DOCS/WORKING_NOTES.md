@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-05 ([Note 1017](WORKING_NOTES/1017-game-actor-triangle-cached-iterator-audit-20261005.md)):
+Bank 78 cached-iterator controls and 1914 bounded comparisons. Correct
+single metadata reads and seven private homes do not recover the frame;
+best raw-score forms regress it, mixed bounds exceed the slot. Production
+and README counts unchanged. Next Game target: `func_15044380`.
+
 2026-10-05 ([Note 1016](WORKING_NOTES/1016-game-actor-triangle-reduced-frame-and-read-lifetime-screen-20261005.md)):
 Reduce `func_1502F490` to 302 / 302 words, frame 0x140 and 242 differences;
 all seven retail homes stay intact. No guards/profile/padding. Still differs

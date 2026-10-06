@@ -1,5 +1,13 @@
 # Update Log
 
+## 2026-10-05 Game Actor Triangle Cached Iterator Audit
+
+[Note 1017](WORKING_NOTES/1017-game-actor-triangle-cached-iterator-audit-20261005.md)
+banks 78 controls / 1914 bounded comparisons, without a production change.
+Cached read recovery trades for excess frame; mixed bounds exceed the slot.
+No new exact function, profile, guards, host transplant or push. Continue
+Game matching with the 107-word actor context dispatcher `func_15044380`.
+
 ## 2026-10-05 Game Actor Triangle Reduced Frame And Read Lifetime Screen
 
 [Note 1016](WORKING_NOTES/1016-game-actor-triangle-reduced-frame-and-read-lifetime-screen-20261005.md)

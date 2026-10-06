@@ -21,6 +21,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Triangle cached-iterator audit:
+[Note 1017](WORKING_NOTES/1017-game-actor-triangle-cached-iterator-audit-20261005.md)
+banks 78 controls and 1914 bounded comparisons. Cached reads recover 1/1,
+but lower raw scores require 0x150-0x160 frames; mixed bounds exceed the
+slot. None is installed. Production, counts and README are unchanged.
+Next Game target: `func_15044380`'s 107-word frame/register match.
+
 Triangle reduced-frame recovery:
 [Note 1016](WORKING_NOTES/1016-game-actor-triangle-reduced-frame-and-read-lifetime-screen-20261005.md)
 reduces `func_1502F490` from frame 0x160 / 273 differences to 0x140 / 242.

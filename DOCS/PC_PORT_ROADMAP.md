@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Triangle Cached Iterator Audit - 2026-10-05
+
+[Note 1017](WORKING_NOTES/1017-game-actor-triangle-cached-iterator-audit-20261005.md)
+banks 78 DECOMP controls / 1914 bounded comparisons. No production change:
+cached reads improve but frame regresses, mixed bounds exceed the slot.
+Counts/README unchanged. Next: Game actor context dispatcher byte matching.
+No host transplant, runtime acceptance or sibling/frozen Release change.
+
 ## Game Actor Triangle Reduced Frame And Read Lifetime Screen - 2026-10-05
 
 [Note 1016](WORKING_NOTES/1016-game-actor-triangle-reduced-frame-and-read-lifetime-screen-20261005.md)
