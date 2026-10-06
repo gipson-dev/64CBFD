@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest graph edge-crossing scope audit](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md):
+  101 rejected source controls, unchanged 102-difference baseline and 6059 slots;
+  next inspect the closest remaining C match's return tail.
 - [Latest graph edge-crossing lifetime improvement](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md):
   151 to 102 real differences, full 207-word body and matched outer loop;
   the retail frame and floating-register lifetimes remain open.

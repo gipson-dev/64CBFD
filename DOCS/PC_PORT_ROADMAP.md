@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Game Graph Edge Crossing Scope Audit - 2026-10-06
+
+[Note 1027](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md)
+banks 101 rejected source controls, no improvement beyond 102 differences.
+All 6059 linked slots equal the prior checkpoint. No production/guard/profile/
+data or README aggregate change; Game 2636/4789 exact, zero drift. Inspect
+`func_150E6FAC`'s return tail next; edge-helper matching and full-chain/FCSR/
+gameplay remain open. No host adoption, sibling/frozen Release change or push.
+
 ## Game Graph Edge Crossing Lifetime Improvement - 2026-10-06
 
 [Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)

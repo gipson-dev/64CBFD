@@ -16,6 +16,14 @@ or permits oversized code. See
 [Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)
 for the selected 207-word / 102-difference improvement and qualification limits.
 
+[Scope driver](../tools/experiments/game_graph_edge_crossing_scopes.py) freezes
+the 102-difference body and screens 101 named controls across default scopes,
+`--planes`, `--aggregates`, `--sums` and `--products`. Each writes a separate
+ignored receipt. `--verify-checkpoint` compares all live ELF slots with the
+preceding ignored lifetime-test receipt and fails if absent or different.
+Three tests bind transformation boundaries and inventory. No source is
+installed. See [Note 1027](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md).
+
 [Edge-crossing driver](../tools/experiments/game_graph_edge_crossing_candidates.py)
 screens 39 source forms under the existing/default-unroll profiles, writing
 78 records to ignored `conker/build/game-graph-edge-crossing/screen.json`.

@@ -21,6 +21,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Graph edge crossing scope audit:
+[Note 1027](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md)
+rejects 101 scope/plane/aggregate/operand controls without improving the
+102-difference helper. All 6059 slots match the prior checkpoint; no production,
+guard, profile or data change. Counts/README unchanged. Next inspect closest
+remaining C match `func_150E6FAC`'s return tail. The edge helper remains open;
+no full-chain/FCSR/gameplay, sibling/frozen Release or push claim.
+
 Graph edge crossing lifetime improvement:
 [Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)
 improves `func_15086D94` from 151 to 102 real differences. All 207 words now

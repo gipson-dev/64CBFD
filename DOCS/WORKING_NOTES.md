@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-06 ([Note 1027](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md)):
+Bank 101 source-only scope/plane/aggregate/operand controls for `func_15086D94`.
+None improve its 102 differences; all 6059 linked slots equal the preceding
+checkpoint. No production/guard/profile/data or README aggregate change.
+Next inspect `func_150E6FAC`'s return-tail layout while keeping the edge helper
+explicitly non-matching. No sibling/frozen Release change or push.
+
 2026-10-06 ([Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)):
 Improve `func_15086D94` from 151 to 102 real differences: all 207 words emit
 from C, no padding, frame 0x80 still not retail 0x90. Saved prefix and full
