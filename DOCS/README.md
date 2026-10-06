@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest source-backed actor packet recovery](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md):
+  102 semantic words with 14 opening-schedule guards; full descriptor and
+  conditional source-pointer copy. Next inspect `func_1519ED84`.
+
 - [Latest effect-configuration packet direct match](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md):
   69 direct words; complete 60-byte packet and separately captured float.
   Callee remains a C placeholder; next inspect `func_1519EB8C`.

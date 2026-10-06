@@ -10645,3 +10645,17 @@ generated_B3020,func_1508B2A8,0x048,0xA04A0036,0xA06A0036,-,-,Normalize complete
 generated_B3020,func_1508B2A8,0x0F8,0x308200FF,0x308300FF,-,-,Normalize complete visitor masked neighbor temporary from v0 to v1,,,false
 generated_B3020,func_1508B2A8,0x0FC,0x000258C3,0x000358C3,-,-,Normalize complete visitor masked neighbor temporary from v0 to v1,,,false
 generated_B3020,func_1508B2A8,0x108,0x304E0003,0x306E0003,-,-,Normalize complete visitor masked neighbor temporary from v0 to v1,,,false
+generated_1CBE20,func_1519EB8C,0x008,0xAFB00028,0x44810000,-,-,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x00C,0x3C020000,0x3C010000,R_MIPS_HI16:D_800A5480,R_MIPS_HI16:D_800A8CD4,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x010,0x44810000,0xAFB00028,-,-,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x014,0x24420000,0x3C020000,R_MIPS_LO16:D_800A5480,R_MIPS_HI16:D_800A5480,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x018,0x00808025,0x24420000,-,R_MIPS_LO16:D_800A5480,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x01C,0xAFBF002C,0x00808025,-,-,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x020,0xAFA500BC,0xC4220000,-,R_MIPS_LO16:D_800A8CD4,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x024,0xAFA600C0,0xAFBF002C,-,-,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x028,0xAFA700C4,0xAFA500BC,-,-,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x02C,0xAFB00038,0xAFA600C0,-,-,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x030,0xE7A0003C,0xAFA700C4,-,-,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x034,0xE7A00040,0xAFB00038,-,-,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x038,0x3C010000,0xE7A0003C,R_MIPS_HI16:D_800A8CD4,-,Normalize source actor descriptor independent opening schedule,,,false
+generated_1CBE20,func_1519EB8C,0x03C,0xC4220000,0xE7A00040,R_MIPS_LO16:D_800A8CD4,-,Normalize source actor descriptor independent opening schedule,,,false

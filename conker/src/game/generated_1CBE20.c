@@ -41,6 +41,58 @@ typedef struct {
 extern f32 D_800A8CC0, D_800A8CC4, D_800A8CC8, D_800A8CCC, D_800A8CD0;
 void func_15152190(Configuration1CBE20 *, s32 *, f32 *, s32, f32, u8, u8, s32);
 
+typedef struct {
+    Position1CBE20 position;
+    Position1CBE20 vector;
+    f32 width;
+    f32 height;
+} Source1CBE20;
+typedef struct {
+    f32 field00;
+    f32 field04;
+    f32 field08;
+    f32 field0C;
+    Position1CBE20 vector;
+    f32 field1C;
+    f32 field20;
+    f32 field24;
+    Position1CBE20 position;
+    Position1CBE20 first;
+    Position1CBE20 second;
+    f32 field4C;
+    u32 flags;
+    s16 lifetime;
+    u16 resource;
+    u8 field58;
+    u8 pad59[3];
+    u32 field5C;
+    u8 field60;
+    u8 field61;
+    u8 field62;
+    u8 field63;
+    u8 field64;
+    u8 field65;
+    u8 field66;
+    u8 field67;
+    u8 field68;
+    u8 pad69;
+    u8 field6A;
+    u8 pad6B;
+    u32 field6C;
+    u8 field70;
+    u8 pad71;
+    s16 field72;
+    s16 field74;
+    u8 pad76[2];
+    u32 field78;
+} ActorDescriptor1CBE20;
+
+extern Position1CBE20 D_800A5480;
+extern f32 D_800A8CD4;
+struct ExtendedState15F680;
+void *func_1513264C(u8 *, s32, s32, struct ExtendedState15F680 *, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
 /* Non-matching placeholders for the text-only asm slice asm/1CBE20.s. */
 
 AddressRecord1CBE20 *func_1519E970(s16 lifetime, u8 *owner, u8 mode, u8 *first,
@@ -108,8 +160,52 @@ void func_1519EA78(Position1CBE20 *position, u16 selector, f32 scale, u8 channel
     func_15152190(&packet, &selected, &selectedScale, 1, 0.0f, 0, channel, context);
 }
 
-s32 func_1519EB8C() {
-    return 0;
+void func_1519EB8C(Source1CBE20 *source, u16 resource, s16 lifetime, u8 channel, s32 context) {
+    ActorDescriptor1CBE20 packet;
+    Source1CBE20 *savedSource;
+    u8 *actor;
+
+    savedSource = source;
+    packet.field00 = 1.0f;
+    packet.field04 = 1.0f;
+    packet.field08 = source->width * D_800A8CD4;
+    packet.field0C = source->height * D_800A8CD4;
+    packet.vector.x = source->vector.x;
+    packet.vector.y = source->vector.y;
+    packet.vector.z = source->vector.z;
+    packet.field1C = 1.0f;
+    packet.field20 = 1.0f;
+    packet.field24 = 1.0f;
+    packet.position.x = source->position.x;
+    packet.position.y = source->position.y;
+    packet.position.z = source->position.z;
+    packet.first = D_800A5480;
+    packet.second = D_800A5480;
+    packet.field4C = 0.0f;
+    packet.flags = 0x980;
+    packet.lifetime = lifetime;
+    packet.resource = resource;
+    packet.field58 = 0;
+    packet.field5C = 0;
+    packet.field60 = 255;
+    packet.field61 = 21;
+    packet.field62 = 0;
+    packet.field63 = 0;
+    packet.field64 = 0;
+    packet.field65 = 0;
+    packet.field66 = 0;
+    packet.field67 = 0;
+    packet.field68 = 2;
+    packet.field6A = 0;
+    packet.field6C = 0;
+    packet.field70 = 0;
+    packet.field72 = 1;
+    packet.field74 = 255;
+    packet.field78 = 0;
+    actor = func_1513264C((u8 *)&packet, 3, 255, NULL, 4, channel, context);
+    if (actor != NULL) {
+        memcpy(actor + 0x170, &savedSource, sizeof(savedSource));
+    }
 }
 
 s32 func_1519ED24(u8 *arg0) {

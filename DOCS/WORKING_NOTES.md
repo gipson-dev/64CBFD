@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-06 ([Note 1044](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md)):
+`func_1519EB8C`: 102 words/frame 0xB8, 14 closed opening-schedule guards;
+no new profile/shared header/data. Full 124-byte actor descriptor with eight
+untouched alignment bytes and conditional source-pointer payload copy.
+56 controls, 3456 three-body guest cases, 65536 sweeps, 384 float-boundary
+cases, 131072 opaque native and 192 actual-constructor native cases.
+Linked audit passes: only target changes across 6059 fixed slots; protected
+sections/720 owners intact; 10660 guards with exactly 14 new rows. Owner
+diagnostics empty. README total 3322/5462, Game 2649/4789 exact, zero drift,
+2140 different. All 56 focused post-link tests pass in 281.571 seconds,
+no skips. Retained constructor
+remains non-matching. Next `func_1519ED84`; no gameplay/host/sibling/Release
+claim or change or push.
+
 2026-10-06 ([Note 1043](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md)):
 `func_1519EA78`: 69 words directly, frame 0x70; no new guards/profile/shared
 header/data. Separate float local recovers the missing frame and instruction.

@@ -21,6 +21,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Source-backed actor packet recovery:
+[Note 1044](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md)
+recovers `func_1519EB8C`: 102 words/frame 0xB8, semantic C with 14 guards
+for a closed opening schedule, existing O2/g3. No new profile/shared header/
+data. 124-byte descriptor preserves eight alignment bytes; conditional
+source-pointer payload publication. 56 controls, 3456 three-body guest cases,
+65536 halfword sweeps, 384 float-boundary cases, 131072 opaque native and 192
+actual-constructor native cases. Linked audit passes: only target changes
+across 6059 fixed slots; protected sections and 720 data owners stay intact.
+10660 guards, exactly 14 new target rows; owner diagnostics empty. README
+total 3322/5462 (60.82%), Game 2649/4789 (55.31%) exact, zero drift,
+2140 different. All 56 focused post-link tests pass in 281.571 seconds,
+no skips.
+Constructor remains semantic/non-matching, not complete backend/hardware/
+gameplay/host adoption. Next `func_1519ED84`. No sibling/Release change or push.
+
 Effect-configuration packet direct match:
 [Note 1043](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md)
 recovers `func_1519EA78`: all 69 words directly, frame 0x70, existing O2/g3;

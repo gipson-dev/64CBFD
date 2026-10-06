@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Game Source-Backed Actor Packet Recovery - 2026-10-06
+
+[Note 1044](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md)
+recovers guest `func_1519EB8C`: 102 words/frame 0xB8 with 14 relocation-aware
+opening-schedule guards, existing O2/g3. No new profile/shared header/data.
+Full 124-byte descriptor, eight untouched alignment bytes and source-pointer
+publication qualified with 56 controls, 3456 three-body guest cases, 65536
+halfword sweeps, 384 float-boundary cases, 131072 opaque native and 192
+actual-constructor native cases. Linked audit passes: only target changes
+across 6059 fixed slots; protected sections/720 owners intact; 10660 guards,
+14 new rows, owner diagnostics empty. Game 2649/4789 exact, zero drift,
+2140 different. All 56 focused post-link tests pass in 281.571 seconds,
+no skips. Constructor is
+still semantic/non-matching; backend callbacks are not hardware/gameplay or
+host adoption acceptance. Next guest `func_1519ED84`; no sibling source/build/
+save/frozen Release change or push.
+
 ## Game Effect Configuration Packet Direct Match - 2026-10-06
 
 [Note 1043](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md)

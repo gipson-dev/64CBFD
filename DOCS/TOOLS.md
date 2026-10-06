@@ -4,6 +4,24 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Source-backed actor packet compiler controls
+
+[Driver](../tools/experiments/game_actor_source_packet_candidates.py) screens
+14 forms under four profiles: 56 controls, real SDK types and fixed anchors.
+Selected O2/g3 emits 102 words/frame 0xB8 with 14 opening-schedule differences.
+The tool installs no source/profile/guards. Production uses relocation-aware
+expected-word guards for only that closed reorder. Retail ROM, IDO and MIPS
+tools required; ignored receipts under `conker/build/game-actor-source-packet/`.
+[Eight tests](../tools/tests/test_game_actor_source_packet_match.py) bind all
+controls and guard instructions/relocations, compare raw/guarded/retail full
+packet/call/memory traces, all halfwords and floating-point boundary cases.
+Native fixtures qualify initialized fields and whole storage, plus the actual
+retained constructor/resource-helper C through success and allocation failures.
+Snapshot the descriptor before its local lifetime ends; do not invent padding.
+The constructor remains non-matching and backend providers remain callbacks,
+not full caller/FCSR/hardware/gameplay/host adoption. See
+[Note 1044](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md).
+
 ## Effect-configuration packet compiler controls
 
 [Driver](../tools/experiments/game_effect_configuration_packet_candidates.py)

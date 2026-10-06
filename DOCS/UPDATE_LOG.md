@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-06 Game Source-Backed Actor Packet Recovery
+
+[Note 1044](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md)
+replaces `func_1519EB8C`'s stub with the complete 102-word semantic routine,
+frame 0xB8; 14 relocation-aware guards normalize its closed opening schedule.
+56 controls, complete 124-byte packet with eight untouched alignment bytes,
+3456 three-body guest cases, 65536 halfword sweeps, 384 boundary cases,
+131072 opaque native and 192 actual-constructor native cases. Linked audit
+passes: only target changes across 6059 fixed slots; protected sections/720
+owners intact, 10660 guards with exactly 14 new rows, owner diagnostics empty.
+README total 3322/5462, Game 2649/4789 exact, zero drift, 2140 different.
+All 56 focused post-link tests pass in 281.571 seconds, no skips. Retained constructor
+remains non-matching; no complete backend/gameplay/host claim. Next
+`func_1519ED84`; no sibling/Release change or push.
+
 ## 2026-10-06 Game Effect Configuration Packet Direct Match
 
 [Note 1043](WORKING_NOTES/1043-game-effect-configuration-packet-direct-match-20261006.md)
