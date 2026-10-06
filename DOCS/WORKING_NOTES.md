@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-05 ([Note 1015](WORKING_NOTES/1015-game-actor-triangle-private-home-recovery-20261005.md)):
+Recover all seven private array homes in `func_1502F490`; declaration-only
+change lowers differences 275 to 273. Still 298 / 302 words and frame 0x160,
+not retail 0x138. No new guards/profile/array capacity. Thirty-six controls
+and 1848 bounded comparisons; explicit cursor forms remain oversized.
+Historical controls freeze `RECOVERY` independently of installed `SELECTED`.
+Only target changes in 6060 slots; protected sections/CSV/README counts stay
+intact. Next: reserved homes and SDK-loop lifetimes, preserving these arrays.
+60 focused tests / 269.380 seconds and 362 regression tests / 818.122 seconds
+pass without skips; tools, staged whitespace and 2983 relative links pass.
+
 2026-10-05 ([Note 1014](WORKING_NOTES/1014-game-actor-triangle-lifetime-and-overlapping-range-audit-20261005.md)):
 Bank 34 compiler controls and 1914 bounded comparisons; no production edit.
 Frame-only forms change register allocation or exceed the slot; the 274-word-

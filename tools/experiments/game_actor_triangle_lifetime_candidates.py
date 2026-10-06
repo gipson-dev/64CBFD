@@ -182,10 +182,10 @@ def nonzero_weights(body, mode):
 
 
 def candidates():
-    reused = reuse(screen.SELECTED)
-    scoped_body = scoped(screen.SELECTED)
-    forms = [('checkpoint', screen.SELECTED), ('phase-scopes', scoped_body), ('reused-temporaries', reused)]
-    forms.append(('scopes-range-do', scoped(range_loop(screen.SELECTED))))
+    reused = reuse(screen.RECOVERY)
+    scoped_body = scoped(screen.RECOVERY)
+    forms = [('checkpoint', screen.RECOVERY), ('phase-scopes', scoped_body), ('reused-temporaries', reused)]
+    forms.append(('scopes-range-do', scoped(range_loop(screen.RECOVERY))))
     forms.append(('reused-range-do', range_loop(reused)))
     forms.append(('reused-edge-pointers', edge_pointers(reused)))
     forms.append(('reused-range-do-edge-pointers', edge_pointers(range_loop(reused))))
@@ -200,21 +200,21 @@ def candidates():
     direct = direct_metadata(reused)
     forms.append(('direct-metadata-indexed-vertices', indexed_vertices(direct)))
     forms.append(('direct-metadata-range-do-indexed-vertices', indexed_vertices(range_loop(direct))))
-    for label, body in [('all-phase-blocks', phase_blocks(screen.SELECTED)),
-                        ('all-phase-blocks-range-do', phase_blocks(range_loop(screen.SELECTED)))]:
+    for label, body in [('all-phase-blocks', phase_blocks(screen.RECOVERY)),
+                        ('all-phase-blocks-range-do', phase_blocks(range_loop(screen.RECOVERY)))]:
         forms.append((label, body))
         forms.append((label + '-vertex-capacity-8', body.replace('vertices[3]', 'vertices[8]', 1)))
-    ternary = ternary_weights(screen.SELECTED)
+    ternary = ternary_weights(screen.RECOVERY)
     cursors = dict(layout.candidates())['three-output-cursors']
     for label, body in [('ternary-weights', ternary), ('ternary-range-do', range_loop(ternary)),
-                        ('short-metadata', short_metadata(screen.SELECTED)),
+                        ('short-metadata', short_metadata(screen.RECOVERY)),
                         ('output-cursors-less-bound', cursors.replace('triangle != points + 6', 'triangle < points + 6')),
-                        ('checkpoint-less-bound', screen.SELECTED.replace('triangle != points + 6', 'triangle < points + 6')),
+                        ('checkpoint-less-bound', screen.RECOVERY.replace('triangle != points + 6', 'triangle < points + 6')),
                         ('output-cursors-ternary', ternary_weights(cursors)),
                         ('reused-ternary', reuse(ternary))]:
         forms.append((label, body))
     for mode in ('if', 'ternary', 'truthy', 'initialized'):
-        forms.append(('nonzero-weights-' + mode, nonzero_weights(screen.SELECTED, mode)))
+        forms.append(('nonzero-weights-' + mode, nonzero_weights(screen.RECOVERY, mode)))
     return forms
 
 

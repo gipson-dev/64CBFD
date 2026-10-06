@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Triangle private-home recovery:
+[Note 1015](WORKING_NOTES/1015-game-actor-triangle-private-home-recovery-20261005.md)
+recovers all seven retail array homes by declaration-only changes. Installed
+`func_1502F490` improves from 275 to 273 differences; 298 / 302 words, frame
+0x160 still wrong versus retail 0x138. No array enlargement, added padding, guards
+or profile change. Thirty-six declaration/loop controls include 1848 bounded
+comparisons; oversized cursor forms are not installed. Only target changes
+in 6060 slots; protected sections/data owners and CSV remain intact.
+README/counts unchanged. Next: excess reserved homes and SDK-loop lifetimes
+while retaining the now-correct array placement. Not a new exact function.
+All 60 focused tests pass in 269.380 seconds; the 362-test regression corpus
+passes in 818.122 seconds, no skips. Tools, staged whitespace and all 2983
+checked relative links pass. Fresh live ELF agrees with the accepted slots.
+
 Triangle lifetime/first-match audit:
 [Note 1014](WORKING_NOTES/1014-game-actor-triangle-lifetime-and-overlapping-range-audit-20261005.md)
 banks 34 controls; 29 fitting forms pass 1914 bounded guest comparisons.

@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Triangle Private Home Recovery - 2026-10-05
+
+[Note 1015](WORKING_NOTES/1015-game-actor-triangle-private-home-recovery-20261005.md)
+recovers DECOMP `func_1502F490`'s seven private-array homes. Declaration-only
+change lowers differences 275 to 273; frame/body still do not match retail.
+No new guards or exact function. Thirty-six controls include 1848 bounded
+guest comparisons; oversized cursor loops are not installed. Only target
+changes in 6060 slots; protected data and README counts remain intact.
+Next: DECOMP reserved homes and SDK-loop matching. No host transplant, PC
+runtime/gameplay claim or sibling source/build/save/frozen Release change.
+60 focused / 362 regression tests pass in 269.380 / 818.122 seconds, no skips;
+tools, staged whitespace and 2983 relative links pass. Guest qualification
+does not constitute PC gameplay acceptance.
+
 ## Game Actor Triangle Lifetime Audit - 2026-10-05
 
 [Note 1014](WORKING_NOTES/1014-game-actor-triangle-lifetime-and-overlapping-range-audit-20261005.md)

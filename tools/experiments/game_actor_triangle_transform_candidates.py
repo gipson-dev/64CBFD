@@ -195,7 +195,46 @@ def candidates():
     return forms
 
 
-SELECTED = dict(candidates())['pointer-transforms']
+RECOVERY = dict(candidates())['pointer-transforms']
+
+
+def retail_home_body(body):
+    begin = body.index('    ActorVertex58F80 *vertices[3];')
+    end = body.index('\n\n    id = actor->id;', begin)
+    original_begin = RECOVERY.index('    ActorVertex58F80 *vertices[3];')
+    original_end = RECOVERY.index('\n\n    id = actor->id;', original_begin)
+    if body[begin:end] != RECOVERY[original_begin:original_end]:
+        raise ValueError('original triangle declaration block no longer binds')
+    header = '''    ActorVertex58F80 **vertex;
+    u32 *matrix;
+    f32 (*point)[3];
+    f32 (*triangle)[3];
+    u32 *offsets;
+    u8 *base;
+    u8 *matrixBase;
+    ActorRange58F80 *range;
+    s32 id;
+    s32 count;
+    f32 relative[3];
+    f32 blend[3];
+    u32 matrices[3];
+    s32 pass;
+    s32 axis;
+    f32 denominator;
+    f32 weightA;
+    f32 weightB;
+    ActorVertex58F80 *vertices[3];
+    f32 points[6][3];
+    f32 edgeA[2][3];
+    f32 edgeB[2][3];
+    s32 i;
+    s32 j;
+    u32 mask;
+    u32 bit;'''
+    return body[:begin] + header + body[end:]
+
+
+SELECTED = retail_home_body(RECOVERY)
 
 MATRIX_BODY = '''void func_150A7960(f32 *matrix, f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *outZ) {
     f32 resultX, resultY, resultZ;
@@ -248,7 +287,7 @@ def main():
     output = root / 'conker/build/game-actor-triangle-transform'
     output.mkdir(exist_ok=True)
     records = []
-    for name, body in candidates():
+    for name, body in candidates() + [('retail-homes', SELECTED)]:
         record, _ = compile_candidate(root, output, name, body)
         records.append(record)
         print(name, record['body_words'], hex(record['frame']), record['real_differences'], flush=True)

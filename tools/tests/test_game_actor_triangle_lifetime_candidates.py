@@ -13,7 +13,7 @@ class GameActorTriangleLifetimeCandidateTests(unittest.TestCase):
         forms = lifetime.candidates()
         self.assertEqual(len(forms), 34)
         self.assertEqual(len({name for name, _ in forms}), 34)
-        self.assertEqual(forms[0], ('checkpoint', recovery.SELECTED))
+        self.assertEqual(forms[0], ('checkpoint', recovery.RECOVERY))
         for name, body in forms:
             with self.subTest(name=name):
                 self.assertTrue(body.startswith('void func_1502F490('))

@@ -488,20 +488,32 @@ void func_1502F3C8(void) {
 }
 
 void func_1502F490(ActorCopy58F80 *actor, f32 *x, f32 *y, f32 *z, s32 joint) {
-    ActorVertex58F80 *vertices[3];
-    u32 matrices[3];
-    f32 points[6][3];
-    f32 edgeA[2][3], edgeB[2][3];
-    f32 relative[3], blend[3];
     ActorVertex58F80 **vertex;
     u32 *matrix;
-    f32 (*point)[3], (*triangle)[3];
+    f32 (*point)[3];
+    f32 (*triangle)[3];
     u32 *offsets;
-    u8 *base, *matrixBase;
+    u8 *base;
+    u8 *matrixBase;
     ActorRange58F80 *range;
-    s32 id, count, i, j, pass, axis;
-    u32 mask, bit;
-    f32 denominator, weightA, weightB;
+    s32 id;
+    s32 count;
+    f32 relative[3];
+    f32 blend[3];
+    u32 matrices[3];
+    s32 pass;
+    s32 axis;
+    f32 denominator;
+    f32 weightA;
+    f32 weightB;
+    ActorVertex58F80 *vertices[3];
+    f32 points[6][3];
+    f32 edgeA[2][3];
+    f32 edgeB[2][3];
+    s32 i;
+    s32 j;
+    u32 mask;
+    u32 bit;
 
     id = actor->id;
     offsets = D_800C6070[id];

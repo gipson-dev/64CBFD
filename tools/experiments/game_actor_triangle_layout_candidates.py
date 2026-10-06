@@ -59,13 +59,13 @@ ORDERS = {
 
 
 def candidates():
-    begin = screen.SELECTED.index('    triangle = points;')
-    end = screen.SELECTED.index('    for (pass = 0;', begin)
-    cursors = (screen.SELECTED[:begin] + OUTPUT_LOOP + screen.SELECTED[end:]).replace(
+    begin = screen.RECOVERY.index('    triangle = points;')
+    end = screen.RECOVERY.index('    for (pass = 0;', begin)
+    cursors = (screen.RECOVERY[:begin] + OUTPUT_LOOP + screen.RECOVERY[end:]).replace(
         '    f32 (*point)[3], (*triangle)[3];',
         '    f32 (*triangle)[3];\n    f32 *outX, *outY, *outZ;\n    s32 byteCursor;')
-    forms = [('checkpoint', screen.SELECTED), ('three-output-cursors', cursors)]
-    for name, body in [('checkpoint', screen.SELECTED), ('output-cursors', cursors)]:
+    forms = [('checkpoint', screen.RECOVERY), ('three-output-cursors', cursors)]
+    for name, body in [('checkpoint', screen.RECOVERY), ('output-cursors', cursors)]:
         for order, declarations in ORDERS.items():
             for capacity in (3, 8):
                 changed = body.replace(ARRAYS, declarations.replace('vertices[3]', f'vertices[{capacity}]'))

@@ -125,3 +125,6 @@ git diff --check
 ```
 
 The Game goal remains active; no new byte-exact function is claimed here.
+
+The subsequent declaration-only private-array home recovery is recorded in
+[Note 1015](1015-game-actor-triangle-private-home-recovery-20261005.md).

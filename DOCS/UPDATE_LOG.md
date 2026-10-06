@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-05 Game Actor Triangle Private Home Recovery
+
+[Note 1015](WORKING_NOTES/1015-game-actor-triangle-private-home-recovery-20261005.md)
+recovers all seven retail private-array homes without changing operation
+text or capacities. `func_1502F490` improves 275 to 273 differences; frame
+0x160 and 298-word body still do not match retail. No guards/profile change.
+Thirty-six controls include 1848 bounded comparisons; oversized loops are
+not installed. Only target changes in 6060 slots; protected sections, data
+owners, CSV and README counts are preserved. Next: reserved homes and SDK
+loop lifetimes. No new exact function, sibling/frozen Release change or push.
+60 focused / 362 regression tests pass in 269.380 / 818.122 seconds, no skips;
+tools, staged whitespace and all 2983 checked relative links pass.
+
 ## 2026-10-05 Game Actor Triangle Lifetime And First-Match Audit
 
 [Note 1014](WORKING_NOTES/1014-game-actor-triangle-lifetime-and-overlapping-range-audit-20261005.md)
