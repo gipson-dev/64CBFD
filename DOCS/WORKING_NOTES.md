@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-06 ([Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md)):
+`func_151415D4`:69 words/no frame,56 direct plus13 FPR-lifetime guards, O2/g3.
+Scoped factors recover rise store/branch/nop;6480 guest/3240 native finite
+cases,324 special floats,18 bounded loops,32 controls/eleven negatives.
+Audit: only target across6059 slots; protected sections/720 owners unchanged,
+10747 guards plus13, owner warnings0->0. Converted unchanged; exact3333/5464,
+Game2660/4791,2131 different, zero drift.19 focused tests pass/no skips,
+38 docs/3420 links/zero broken, tools/compileall/diff checks pass.
+Next55-word `func_151416E8`,16 initial controls, selected47/frame0x18/49
+differences, not qualified or installed;
+no hardware/FCSR/gameplay/host claim, sibling/Release or push change.
+
 2026-10-06 ([Note 1055](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md)):
 After banked `adbeca4e`, investigate69-word `func_151415D4`.32 controls,
 selected68/no frame/52 differences;720 two-body finite guest storage/access

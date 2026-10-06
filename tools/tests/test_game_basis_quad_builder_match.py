@@ -261,7 +261,7 @@ class GameBasisQuadBuilderMatchTests(unittest.TestCase):
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             rows = list(csv.DictReader(stream))
         guards = [r for r in rows if r['function']=='func_15140410']
-        self.assertEqual((len(rows),len(guards)),(10747,2))
+        self.assertEqual((len(rows),len(guards)),(10760,2))
         normalized = list(self.words)
         for index,guard in enumerate(guards,41):
             self.assertEqual(guard['filename'],'game_169510');self.assertEqual(int(guard['offset'],16),index*4)

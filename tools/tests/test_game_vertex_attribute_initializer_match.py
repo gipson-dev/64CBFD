@@ -219,7 +219,7 @@ for(index=0;index<256;index++) for(variant=0;variant<256;variant++) for(f=0;f<2;
         self.assertEqual(self.production['func_1513FFF4'],list(struct.unpack_from('>55I',rom,corners.screen.ROM)))
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
-        self.assertEqual(len(guards),10747)
+        self.assertEqual(len(guards),10760)
         self.assertFalse([row for row in guards if row['function']=='func_151400D0'])
 
 

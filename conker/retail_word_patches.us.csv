@@ -10746,3 +10746,16 @@ game_16DC80,func_15141478,0x84,0x460A1400,0x46025400,-,-,Normalize timed interpo
 game_16DC80,func_15141478,0x94,0xAFA30020,0xAFA30024,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
 game_16DC80,func_15141478,0x98,0x8FA30020,0x8FA30024,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
 game_16DC80,func_15141478,0xac,0x46061200,0x46023200,-,-,Normalize timed interpolation private pointer slot and commutative FP operands,,,false
+game_16DC80,func_151415D4,0x44,0xC4520010,0xC4500010,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x48,0xC4500020,0xC4440020,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x50,0x46121101,0x46101481,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x58,0x46048002,0x46049002,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x64,0x460A3480,0x460A3400,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x68,0xE4920158,0xE4900158,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x84,0x460C1201,0x460C1101,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x88,0xC4500000,0xC4520000,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x90,0xE4900158,0xE4920158,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x94,0x460C1201,0x460C1101,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0x98,0xC4440020,0xC4480020,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0xAC,0xC4440004,0xC4500004,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false
+game_16DC80,func_151415D4,0xB4,0x46009402,0x46009102,-,-,Normalize envelope closed FPR lifetimes and commutative operands,,,false

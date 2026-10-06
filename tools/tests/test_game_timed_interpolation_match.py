@@ -431,7 +431,7 @@ for(a=0;a<12;a++) for(b=0;b<12;b++) for(c=0;c<2;c++) {
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             rows = list(csv.DictReader(stream))
         guards = [row for row in rows if row['function'] == 'func_15141478']
-        self.assertEqual((len(rows), len(guards)), (10747, 9))
+        self.assertEqual((len(rows), len(guards)), (10760, 9))
         self.assertEqual([int(row['offset'], 0) for row in guards], sorted((*STACK_WORDS, *FLOAT_WORDS)))
         for row in guards:
             offset = int(row['offset'], 0)//4

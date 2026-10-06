@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Piecewise Envelope Match - 2026-10-06
+
+[Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md)
+recovers guest `func_151415D4`:69 words/no frame,56 direct plus13 closed FPR
+lifetime guards, existing O2/g3. Scoped factors recover the missing rise word;
+strict boundaries/live timestep and unchecked wrapping retained. Three-body/
+native/float-boundary/negative qualification. Audit: only target across6059
+slots; protected sections/720 owners unchanged,10747 guards plus13, owner
+warnings0->0. Game2660/4791 exact (55.52%),2131 different, zero drift; converted
+unchanged. All19 focused tests pass, no skips;38 docs/3420 links/zero broken,
+tools/compileall/diff checks pass. Next55-word `func_151416E8`,16 initial
+controls, selected47 words/frame0x18/49 differences, not installed or qualified.
+Sibling already retail-translated; no host adoption,
+FCSR/hardware/gameplay acceptance or sibling source/build/save/frozen Release/
+runtime/push change.
+
 ## Game Piecewise Envelope Investigation - 2026-10-06
 
 [Note 1055](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md):

@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-06 Game Piecewise Envelope Match
+
+[Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md)
+recovers `func_151415D4`:69 words/no frame,56 direct plus13 FPR-lifetime guards,
+O2/g3. Scoped factors recover retail rise scheduling; strict/live/unchecked
+semantics preserved.6480 guest/3240 native finite cases,324 special floats,
+18 bounded loops,32 controls/eleven negatives. Audit: only target across6059
+slots; protected sections/720 owners unchanged,10747 guards plus13, owner
+warnings0->0. Converted unchanged; exact3333/5464, Game2660/4791 (55.52%),
+2131 different, zero drift.19 focused tests pass in61.523 seconds, no skips;
+38 docs/3420 links/zero broken, tools/compileall/diff checks pass.
+Next55-word `func_151416E8`,16 initial controls, selected47/frame0x18/49
+differences, not installed or qualified; no hardware/FCSR/gameplay/host
+claim, sibling/Release or push change.
+
 ## 2026-10-06 Game Piecewise Envelope Investigation
 
 [Note 1055](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md):

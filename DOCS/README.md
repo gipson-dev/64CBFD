@@ -51,7 +51,11 @@ confirmed.
 
 ## Planning and history
 
-- [Active piecewise envelope investigation](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md):
+- [Latest piecewise envelope match](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md):
+  69 words,56 direct plus13 FPR-lifetime guards; scoped factors recover rise
+  scheduling, guest/native/live/float-boundary qualification. Next `func_151416E8`.
+
+- [Earlier piecewise envelope investigation](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md):
   69-word `func_151415D4`;32 controls,720 finite guest cases/eight bounded loops.
   Candidate still68 words; original source shape and remaining gates pending.
 

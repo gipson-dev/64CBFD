@@ -9,7 +9,7 @@ u8 *func_151407D0(void *source, s32 size, u8 *descriptor, u8 kind, u8 mode,
 s32 func_151408A4();
 void func_151412BC(void);
 s32 func_15141478(u8 *actor);
-s32 func_151415D4();
+s32 func_151415D4(u8 *actor);
 s32 func_151416E8();
 /* End generated placeholder declarations. */
 
@@ -152,9 +152,29 @@ s32 func_15141564(u8 *arg0) {
     return 1;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151415D4.s. */
-s32 func_151415D4() {
-    return 0;
+s32 func_151415D4(u8 *actor) {
+    u8 *runtime;
+    f32 period;
+    runtime = actor + 0x170;
+    if (*(f32 *)(actor + 0x17C) < *(f32 *)(actor + 0x180)) {
+        *(f32 *)(actor + 0x158) = *(f32 *)(runtime + 4);
+    } else if (*(f32 *)(runtime + 0xC) < *(f32 *)(runtime + 0x14)) {
+        f32 factor;
+        factor = (*(f32 *)(runtime + 0xC) - *(f32 *)(runtime + 0x10)) * *(f32 *)(runtime + 0x20);
+        *(f32 *)(actor + 0x158) = *(f32 *)(runtime + 8) * factor + *(f32 *)(runtime + 4);
+    } else if (*(f32 *)(runtime + 0xC) < *(f32 *)(runtime + 0x18)) {
+        *(f32 *)(actor + 0x158) = *(f32 *)(runtime + 0);
+    } else {
+        f32 factor;
+        factor = 1.0f - (*(f32 *)(runtime + 0xC) - *(f32 *)(runtime + 0x18)) * *(f32 *)(runtime + 0x20);
+        *(f32 *)(actor + 0x158) = *(f32 *)(runtime + 4) + *(f32 *)(runtime + 8) * factor;
+    }
+    period = *(f32 *)(runtime + 0x1C);
+    *(f32 *)(runtime + 0xC) += D_800BE9A4;
+    while (period < *(f32 *)(runtime + 0xC)) {
+        *(f32 *)(runtime + 0xC) -= period;
+    }
+    return 1;
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151416E8.s. */

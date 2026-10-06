@@ -358,7 +358,7 @@ for(p=0;p<4;p++) for(a=0;a<3;a++) for(e=0;e<2;e++) {
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             rows = list(csv.DictReader(stream))
         guards = [row for row in rows if row['function'] == 'func_151412BC']
-        self.assertEqual((len(rows), len(guards)), (10747, 43))
+        self.assertEqual((len(rows), len(guards)), (10760, 43))
         self.assertEqual([int(row['offset'], 0) for row in guards],
                          [i*4 for i, pair in enumerate(zip(raw, normalized)) if pair[0] != pair[1]])
         encoding = lambda items: ';'.join('%s:%s'%item for item in items) or '-'

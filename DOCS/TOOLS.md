@@ -4,6 +4,19 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Piecewise envelope compiler controls
+
+[Driver](../tools/experiments/game_piecewise_envelope_candidates.py):
+eight scope/sum forms, four profiles, **32 controls**. Branch-local factors
+recover69 words/no frame;13 differences derive from four bounded closed FPR
+cycles and commutative operands. No driver installation. [Nine tests](../tools/tests/test_game_piecewise_envelope_match.py)
+bind actual padder/link/source/slot/metadata, full guest storage/accesses,
+native live aliases, float boundaries, bounded loops and eleven negatives.
+Only arithmetic NaNs classify; direct copies/untouched bytes exact. Reference-
+budget cases are not native terminating-call acceptance; no N64 FCSR/exception/
+flush-mode/gameplay claim. Ignored `conker/build/game-piecewise-envelope-test/`
+receipts; see [Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md).
+
 ## Timed interpolation compiler controls
 
 [Driver](../tools/experiments/game_timed_interpolation_candidates.py):

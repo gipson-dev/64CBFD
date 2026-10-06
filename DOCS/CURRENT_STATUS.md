@@ -21,7 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Active function investigation:
+Piecewise envelope recovery:
+[Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md)
+recovers `func_151415D4`:69 words/no frame, existing O2/g3,56 direct plus13
+closed FPR-lifetime guards. Scoped factors recover rise store/branch/nop
+directly;6480 three-body guest/3240 native finite cases,324 special-float
+cases,18 bounded loops,32 controls/eleven negatives. Strict/live/unchecked
+semantics retained. Audit: only target across6059 slots; protected sections/
+720 owners unchanged,10747 old guards plus13, owner warnings0->0. Converted
+unchanged; exact total3333/5464 (61.00%), Game2660/4791 (55.52%),2131 different,
+zero drift. All19 focused tests pass in61.523 seconds, no skips (nine new/ten
+changed metadata methods, not all earlier suites).38 docs/3420 links/zero
+broken, tools/compileall/diff checks pass. Next55-word `func_151416E8`,16
+initial controls; selected47/frame0x18/49 differences, no qualification or
+installation. No hardware/FCSR/gameplay/host acceptance,
+shared-header or sibling/Release/runtime change.
+
+Previous envelope investigation:
 [Note 1055](WORKING_NOTES/1055-game-piecewise-envelope-investigation-20261006.md)
 starts `func_151415D4` from banked `adbeca4e`:69-word/no-frame retail envelope,
 32 compiler controls, selected68 words/52 differences (product-first49).
