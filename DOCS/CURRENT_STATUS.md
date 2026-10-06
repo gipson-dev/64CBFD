@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor-classifier recovery:
+[Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md)
+recovers `func_15141C0C`:all45 words directly from C, no frame or new guards.
+Unsigned actor byte+4,19 mapped IDs/categories0..10, default11. Existing owner
+rodata anchor preserves both original45/89-entry switch tables and drops the
+compiler's private pool/padding.32 controls,8192 two-body guest,16384 native
+and4608 connected dispatcher cases, six compiled negatives. Only target changes
+across6059 slots; all10785 guards and protected sections/720 owners unchanged,
+warnings3->3. Exact3337/5464 (61.07%), Game2664/4791 (55.60%),2127 different,
+zero drift; converted counts/bytes unchanged. All24 focused post-link tests
+pass in257.759 seconds, no skips/errors/failures; final eight-test ownership/
+measured-frame rerun passes in36.264 seconds.44 docs/3485 links/zero broken;
+tools/syntax/diff checks pass.
+Next57-word `func_15141CC0`:16 initial controls give a direct candidate, not
+installed/qualified; preserve the neighboring context-table anchor offset.
+No sibling/Release/runtime/host adoption, hardware/gameplay acceptance or push.
+
 Effect-dispatch recovery:
 [Note 1061](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md)
 recovers `func_15141A7C`:100 words/frame0x48,75 direct plus25 closed guards.

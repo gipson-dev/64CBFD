@@ -4,6 +4,23 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Actor-classifier compiler controls
+
+[Driver](../tools/experiments/game_actor_classifier_candidates.py):eight
+identity/default shapes across four actual-SDK profiles,32 controls. s32 local
+under existing O2/g3 emits45 direct words, no frame or instruction guards.
+[Eight tests](../tools/tests/test_game_actor_classifier_match.py) bind every
+byte, exact read contract, full storage, native record alignments, connected
+dispatcher, six negatives, production source/slots and both original table
+owners. Actual padding maps four pool relocations with addends0/180; alternate
+anchor tests prove signed-low carry handling. No private pool or padding may
+replace the neighboring context table.16384 actual32-bit native cases and8192
+two-body guest cases;4608 connected dispatcher cases.
+Ignored receipts under `conker/build/game-actor-classifier-test/`; see
+[Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md).
+Dispatcher experiment now uses the recovered actor-classifier prototype;
+the pending context-classifier declaration is unchanged.
+
 ## Effect-dispatch compiler controls
 
 [Driver](../tools/experiments/game_effect_dispatch_candidates.py):eight

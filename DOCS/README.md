@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest actor-classifier match](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md):
+  45 direct words, no frame or new guards; both original switch tables preserved,
+  guest/native and connected dispatcher cases. Next57-word context classifier
+  has an initial direct candidate, not yet installed or qualified.
+
 - [Latest effect-dispatch match](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md):
   100 words/frame0x48,75 direct plus25 guards; explicit native live lookup,
   repeated selectors and registered cursor mutations. Only target slot changes;

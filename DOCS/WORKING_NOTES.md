@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-06 ([Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md)):
+`func_15141C0C`:45 direct words, no frame/guards, O2/g3. Both original switch
+tables anchored; private compiler pool/padding discarded.32 controls,8192
+guest/16384 native cases,4608 connected dispatcher cases, six negatives.
+Only target across6059 slots; protected sections/720 owners/10785 guards
+unchanged, warnings3->3. Exact3337/5464, Game2664/4791,2127 different, zero
+drift; converted unchanged. Next57-word `func_15141CC0`:16 initial controls
+give a direct candidate, still uninstalled/unqualified. No sibling/Release/
+runtime/host adoption, hardware/gameplay acceptance or push.
+All24 focused post-link tests pass/no skips, final eight-test ownership/frame
+rerun passes;44 docs/3485 links/zero broken, tools/syntax/diff checks pass.
+
 2026-10-06 ([Note 1061](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md)):
 `func_15141A7C`:100 words/frame0x48,75 direct plus25 closed guards, O2/g3.
 Native callback-table mutation exposes unspecified nested-call evaluation;

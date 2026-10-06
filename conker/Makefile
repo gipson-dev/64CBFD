@@ -183,6 +183,9 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_1C1150.c.o: RETAIL_RODATA_SYMBOL := jtbl_
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_113D60.c.o: RETAIL_RODATA_SYMBOL := D_800A1350
 $(BUILD_DIR)/$(SRC_DIR)/game/entrypoint.c.o: RETAIL_RODATA_SYMBOL := jtbl_80095A30_game
 $(BUILD_DIR)/$(SRC_DIR)/game_433F0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800966C0_game
+# Actor classification emits the original two-table pool at one fixed anchor.
+$(BUILD_DIR)/$(SRC_DIR)/game_16EE20.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A5218_game
+$(BUILD_DIR)/$(SRC_DIR)/game_16EE20.c.o: Makefile
 $(BUILD_DIR)/$(SRC_DIR)/libultra/gu/mtxutil2.c.o: OPT_FLAGS := -O3
 $(BUILD_DIR)/$(SRC_DIR)/libultra/gu/guNormalize.c.o: OPT_FLAGS := -O3
 $(BUILD_DIR)/$(SRC_DIR)/libultra/gu/guMtxIdentF.c.o: OPT_FLAGS := -O3

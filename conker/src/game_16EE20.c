@@ -6,7 +6,7 @@
 typedef s32 (*GameEffectClassifier)(s32, u8 *);
 typedef void (*GameEffectCallback)(u8 *, s32, s32);
 typedef struct { GameEffectCallback callback; s32 count; } GameEffectEntry;
-s32 func_15141C0C();
+s32 func_15141C0C(u8 *actor);
 s32 func_1510F8CC(s32);
 s32 func_15141CC0();
 s32 func_15141E38(s32, s32);
@@ -14,7 +14,7 @@ s32 func_1514ECE0(u8 *, s16, u8 **);
 
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
-s32 func_15141C0C();
+s32 func_15141C0C(u8 *actor);
 s32 func_15141CC0();
 s32 func_15141E38(s32 arg0, s32 arg1);
 s32 func_15141F78();
@@ -134,10 +134,42 @@ void func_15141A7C(u8 *actor, s32 context) {
         }
     }
 }
-// requires jump table
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15141C0C.s. */
-s32 func_15141C0C() {
-    return 0;
+/* Direct C; the owner rodata anchor retains the original switch pool. */
+s32 func_15141C0C(u8 *actor) {
+    s32 identity = actor[4];
+    switch (identity) {
+        case 0x79:
+            return 10;
+        case 0x21:
+            return 9;
+        case 0x7B:
+            return 8;
+        case 0x0:
+        case 0x1:
+        case 0x2:
+        case 0x3:
+        case 0x4:
+        case 0x96:
+            return 0;
+        case 0x10:
+        case 0x91:
+            return 1;
+        case 0x2B:
+            return 2;
+        case 0x54:
+            return 5;
+        case 0x36:
+        case 0x53:
+        case 0xA5:
+            return 6;
+        case 0x58:
+            return 7;
+        case 0x45:
+            return 3;
+        case 0x4B:
+            return 4;
+    }
+    return 11;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15141CC0.s. */
 s32 func_15141CC0() {

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Classifier Match - 2026-10-06
+
+[Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md)
+recovers guest `func_15141C0C`:45 direct words, no frame or guards. Original
+45/89-entry tables remain in their existing data owner through the established
+rodata anchor.32 controls; guest/native full-storage and connected dispatcher
+qualification. Only target across6059 slots; protected sections/720 owners and
+10785 guards unchanged, warnings3->3. Game2664/4791 exact (55.60%),2127
+different, zero drift; converted counts/bytes unchanged. Next57-word context
+classifier `func_15141CC0`:16 initial controls, direct candidate, not installed
+or qualified. No host adoption, helper/hardware/gameplay acceptance, sibling
+source/build/save/frozen Release, runtime or push change.
+
 ## Game Effect Dispatch Match - 2026-10-06
 
 [Note 1061](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md)

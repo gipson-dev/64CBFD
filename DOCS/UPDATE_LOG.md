@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-06 Game Actor Classifier Match
+
+[Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md):
+`func_15141C0C` matches45 words directly from C, no frame or new guards.
+Original45/89-entry tables stay in their existing data owner through the
+established rodata anchor.32 controls,8192 two-body guest,16384 native and4608
+connected dispatcher cases; signed/wrong-field/default/group negatives.
+Only target across6059 slots; protected sections/720 owners/10785 guards
+unchanged, warnings3->3. Exact3337/5464 (61.07%), Game2664/4791 (55.60%),
+2127 different, zero drift; converted unchanged. Next57-word context classifier
+has a direct initial candidate from16 controls, not installed or qualified.
+All24 focused post-link tests pass/no skips; final eight-test ownership/frame
+rerun passes.44 docs/3485 links/zero broken; tools/syntax/diff checks pass.
+Root README aggregates only; no sibling/Release/runtime/host adoption or push.
+
 ## 2026-10-06 Game Effect Dispatch Match
 
 [Note 1061](WORKING_NOTES/1061-game-effect-dispatch-match-20261006.md):
