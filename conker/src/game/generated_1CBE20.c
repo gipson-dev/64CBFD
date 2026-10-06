@@ -3,11 +3,39 @@
 extern f32 D_800A8CD8;
 extern s32 D_800BE9E4;
 void func_1516972C(void *);
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+
+typedef struct {
+    u8 header[0x10];
+    u32 flags;
+    s32 state;
+    u8 *first;
+    u8 *second;
+    s16 lifetime;
+    u8 pad22[2];
+    u8 *owner;
+    u8 mode;
+    u8 pad29[3];
+} AddressRecord1CBE20;
 
 /* Non-matching placeholders for the text-only asm slice asm/1CBE20.s. */
 
-s32 func_1519E970() {
-    return 0;
+AddressRecord1CBE20 *func_1519E970(s16 lifetime, u8 *owner, u8 mode, u8 *first,
+                                       u8 *second, u8 channel, s32 context) {
+    AddressRecord1CBE20 *record;
+
+    record = func_15167A68(0x26, context, sizeof(AddressRecord1CBE20), 1, channel, 1);
+    if (record == NULL) {
+        return NULL;
+    }
+    record->first = first;
+    record->second = second;
+    record->lifetime = lifetime;
+    record->mode = mode;
+    record->owner = owner;
+    record->flags = 1;
+    record->state = 0;
+    return record;
 }
 
 void func_1519EA04(u8 *arg0) {

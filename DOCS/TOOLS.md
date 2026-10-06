@@ -4,6 +4,22 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Address-record allocator compiler controls
+
+[Driver](../tools/experiments/game_address_record_allocator_candidates.py)
+screens 12 forms under four profiles: 48 controls with real SDK types and
+fixed retail anchors. Owner-before-flags O2/g3 emits all 37 words directly;
+the tool installs no source, guards or profile. Retail ROM, IDO and MIPS tools
+required; ignored receipts under `conker/build/game-address-record-allocator/`.
+[Six tests](../tools/tests/test_game_address_record_allocator_match.py) bind
+the direct wrapper and unchanged 28-word allocator/20-word list inserter.
+Guest traces cover all halfwords and mode/channel pairs with high incoming
+bits; native actual C verifies both allocator outcomes and all record/list
+footprints. The native fixture uses one explicit 32-bit heap-address cast.
+Heap remains opaque; sparse high context rows/self-head states are diagnostics,
+not full caller/hardware/FCSR/gameplay or host adoption claims. See
+[Note 1042](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md).
+
 ## Conditional packet allocator compiler controls
 
 [Driver](../tools/experiments/game_conditional_packet_allocator_candidates.py)

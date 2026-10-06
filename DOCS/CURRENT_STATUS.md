@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Address-record allocator direct match:
+[Note 1042](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md)
+recovers `func_1519E970`: all 37 words directly, frame 0x20, existing O2/g3;
+no new guards/profile/shared header/data. Seven typed arguments, pointer
+return, retained allocator/list linking and ordered payload stores. 48
+controls; 1152 cases each in three two-body guest modes, 65536 selected width
+sweeps and 131072 native cases. All 85 chain words covered. Only target
+changes across 6059 slots; protected sections/720 owners/10646 guards intact.
+Owner diagnostics empty. README total 3320/5462 and Game 2647/4789 exact,
+zero drift, 2142 different. All 77 focused post-link tests pass in 468.864
+seconds, no skips. Next `func_1519EA78`'s
+configuration-packet wrapper. No complete caller/FCSR/gameplay/host adoption,
+sibling/frozen Release change or push; Game remains active.
+
 Conditional packet allocator direct match:
 [Note 1041](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md)
 recovers `func_1519E6BC`: all 38 words directly, frame 0x38, existing O2/g3;

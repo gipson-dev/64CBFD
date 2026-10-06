@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Address Record Allocator Direct Match - 2026-10-06
+
+[Note 1042](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md)
+recovers guest `func_1519E970`: all 37 words directly, frame 0x20, existing
+O2/g3; no new guards/profile/shared header/data. Typed pointer return and
+retained allocator/list linking qualified with all 85 chain words reached.
+1152 cases per three two-body guest modes, 65536 width sweeps and 131072
+native cases. All 77 focused post-link tests pass in 468.864 seconds, no skips.
+Only target changes across 6059 slots;
+protected sections/720 owners/10646 guards intact. Game now 2647/4789 exact,
+zero drift, 2142 different. Next guest `func_1519EA78` configuration packet.
+No host adoption, full caller/FCSR/gameplay acceptance, sibling source/build/
+save/frozen Release change or push.
+
 ## Game Conditional Packet Allocator Direct Match - 2026-10-06
 
 [Note 1041](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md)

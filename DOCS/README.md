@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest address-record allocator direct match](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md):
+  37 direct words; seven-argument pointer ABI, retained allocation/list linking.
+  Next qualify `func_1519EA78`'s configuration-packet wrapper.
+
 - [Latest conditional packet allocator direct match](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md):
   38 direct words; post-cleanup gate, failure publication and untouched padding.
   Next qualify `func_1519E970`'s seven-argument record allocator.

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Address Record Allocator Direct Match
+
+[Note 1042](WORKING_NOTES/1042-game-address-record-allocator-direct-match-20261006.md)
+replaces `func_1519E970`'s stub with all 37 words directly, frame 0x20.
+Owner-before-flags source shape, typed pointer return and seven arguments;
+48 controls, 1152 cases per three two-body guest modes, 65536 extra width
+sweeps and 131072 native cases. All 85 chain words execute. Retained helpers
+unchanged; only target changes across 6059 slots; protected sections/720
+owners/10646 guards intact. Owner diagnostics empty. README now total
+3320/5462 and Game 2647/4789 exact, zero drift. All 77 focused post-link tests
+pass in 468.864 seconds, no skips.
+Next `func_1519EA78` configuration packet. No sibling/Release edit or push.
+
 ## 2026-10-06 Game Conditional Packet Allocator Direct Match
 
 [Note 1041](WORKING_NOTES/1041-game-conditional-packet-allocator-direct-match-20261006.md)
