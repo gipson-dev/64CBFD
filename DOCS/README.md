@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest projection-wrapper ABI/frame audit](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md):
+  20 controls, no match/source installation; retained helper identity verified.
+  Next inspect `func_1515C1A0`; wrapper execution qualification remains open.
+
 - [Latest descriptor shape-measure direct match](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md):
   all 56 words directly, signed/wrapped dimensions, masked dispatch and ordered
   float work; no guards/profile. Next inspect the adjacent projection wrapper.

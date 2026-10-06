@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-06 ([Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md)):
+Projection wrapper: 20 reproducible O2/g3 controls, no exact form; frame 0x50
+versus retail 0x48. Three compiler/identity tests pass in 14.634 seconds;
+retained 58-word matrix/trampoline/continuation chain equals retail. No
+production/count/guard change or behavior acceptance. All slots/data intact.
+Next inspect `func_1515C1A0`; wrapper/pair-clamp frames remain open.
+
 2026-10-06 ([Note 1035](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md)):
 Recover `func_1514462C`: all 56 words directly, no frame/guards/profile/data.
 Correct pointer prototype/two float externs, signed/wrapped dimensions and

@@ -21,6 +21,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Projection-wrapper investigation:
+[Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md)
+banks 20 O2/g3 controls for `func_15144CEC`; none matches the 101-word retail
+slot/frame 0x48. All candidates use frame 0x50. The 58-word synthetic-return
+matrix helper chain is linked retail-exact. Three compiler/identity tests pass
+in 14.634 seconds, no skips; no execution/alias qualification or source install.
+All 6059 slots/protected sections/720 data owners/10646 guards unchanged;
+matching totals remain 3314/5462 total, 2641/4789 Game, zero drift.
+Next inspect `func_1515C1A0`; projection and pair-clamp frames remain open.
+No sibling/frozen Release change or push; Game matching stays active.
+
 Descriptor shape-measure direct match:
 [Note 1035](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md)
 recovers `func_1514462C` across all 56 words directly under existing O2/g3,

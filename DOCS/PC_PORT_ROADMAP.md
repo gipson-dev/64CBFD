@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Game Projection Wrapper Audit - 2026-10-06
+
+[Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md)
+banks 20 DECOMP controls without installing source/profile/guards. The
+58-word helper chain remains retail-exact; wrapper frame/alias qualification
+remains open. Three tests pass; all slots/data/guards/counts unchanged.
+Next inspect guest `func_1515C1A0`. No host adoption, gameplay acceptance,
+sibling source/build/save/frozen Release change or push.
+
 ## Game Descriptor Shape Measure Direct Match - 2026-10-06
 
 [Note 1035](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md)

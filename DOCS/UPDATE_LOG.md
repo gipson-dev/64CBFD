@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-06 Game Projection Wrapper ABI And Frame Audit
+
+[Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md)
+banks 20 compiler controls and the observed six-argument/four-output ABI.
+No exact form or production edit. Three tests pass in 14.634 seconds;
+58 retained helper words equal retail. All linked slots/data/guards and
+matching aggregates unchanged. Output-alias/connected/native qualification
+remains required. Next inspect `func_1515C1A0`; no sibling/Release edit or push.
+
 ## 2026-10-06 Game Descriptor Shape Measure Direct Match
 
 [Note 1035](WORKING_NOTES/1035-game-descriptor-shape-measure-direct-match-20261006.md)

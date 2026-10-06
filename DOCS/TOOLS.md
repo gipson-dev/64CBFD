@@ -4,6 +4,19 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Projection-wrapper compiler audit
+
+[Driver](../tools/experiments/game_projection_wrapper_candidates.py) runs
+20 O2/g3 pointer-home/W/index-lifetime controls using real SDK/structure
+headers. None matches; it installs no source, profile or guards. Requires
+retail ROM, IDO and MIPS tools; ignored receipts under
+`conker/build/game-projection-wrapper/`.
+[Three tests](../tools/tests/test_game_projection_wrapper_audit.py) reproduce
+all measurements and bind the retained 58-word synthetic-return helper chain
+and production placeholder. These are compiler/identity checks, not connected
+execution or native/alias qualification. See
+[Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md).
+
 ## Descriptor shape-measure compiler controls
 
 [Measure driver](../tools/experiments/game_shape_volume_candidates.py)
