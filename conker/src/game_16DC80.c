@@ -7,7 +7,7 @@
 u8 *func_151407D0(void *source, s32 size, u8 *descriptor, u8 kind, u8 mode,
                  u8 first, u8 variant, s8 selector, u8 channel, s32 context);
 s32 func_151408A4();
-s32 func_151412BC();
+void func_151412BC(void);
 s32 func_15141478();
 s32 func_151415D4();
 s32 func_151416E8();
@@ -65,9 +65,52 @@ void func_15141250(struct210 *arg0) {
     D_80089FE4[*(u8 *)((u8 *)arg0 + 0x168)](arg0);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151412BC.s. */
-s32 func_151412BC() {
-    return 0;
+void func_151412BC(void) {
+    u8 *row;
+    u8 *node;
+    u8 *payload;
+    u8 bucket;
+    s32 channel;
+    s32 x;
+    s32 y;
+    u32 flags;
+    row = D_800DCE50;
+    do {
+        bucket = 0;
+        do {
+            node = ((u8 **)row)[((s32 *)&D_800A5168)[bucket]];
+            if (node != NULL) {
+                do {
+                    flags = *(u32 *)(node + 0x58);
+                    if (flags & 0x2000) {
+                        *(s16 *)(node + 0x162) = 0;
+                        *(s16 *)(node + 0x160) = 0;
+                        *(s16 *)(node + 0x15E) = 0;
+                        *(s16 *)(node + 0x15C) = 0;
+                        if (flags & 0x10) {
+                            channel = 0;
+                            payload = node + 0x110;
+                            if (D_80082FA0 >= 0) {
+                                do {
+                                    x = *(s32 *)(payload + 0x24 + channel * 4);
+                                    if (x >= 0 && x < D_800BE620 &&
+                                        (y = *(s32 *)(payload + 0x34 + channel * 4)) >= 0 && y < D_800BE624) {
+                                        *(u16 *)(payload + 0x4C + channel * 2) = (*(u16 **)&D_800BE9C4)[y * D_800BE620 + x];
+                                    } else {
+                                        *(u16 *)(payload + 0x4C + channel * 2) = 0x7FFF;
+                                    }
+                                    channel = (u8)(channel + 1);
+                                } while (channel <= D_80082FA0);
+                            }
+                        }
+                    }
+                    node = *(u8 **)(node + 8);
+                } while (node != NULL);
+            }
+            bucket++;
+        } while (bucket < 4);
+        row += 0x1A0;
+    } while (row != (u8 *)&D_800DD190);
 }
 
 void func_1514143C(struct210 *arg0) {

@@ -4,6 +4,23 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Grid/channel updater compiler controls
+
+[Driver](../tools/experiments/game_grid_channel_updater_candidates.py):
+36 declaration/return and36 payload/loop forms, two profiles, **144 controls**.
+Selected O2/g3 gives96 words/frame0x18/43 closed register/address-schedule
+differences; no installation by the driver. Two register permutations plus
+one independent LO16 schedule derive every retail word, including V0=4.
+[Nine tests](../tools/tests/test_game_grid_channel_updater_match.py) bind actual
+object relocation padding/linking, complete production slot/source/metadata,
+144 controls,1728 three-body guest storage/trace cases, signed-bound/byte-wrap
+edges,864 native actual-owner-body cases and ten compiled negatives. Shared
+false global declarations are interpreted locally, not rewritten. Native
+fixtures stay in valid storage; bound255 cycling is guest-only bounded
+evidence, not a terminating/native/hardware/gameplay claim.
+Ignored receipts under `conker/build/game-grid-channel-updater[-test]/`;
+see [Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md).
+
 ## Payload-copy wrapper compiler controls
 
 [Driver](../tools/experiments/game_payload_copy_wrapper_candidates.py):

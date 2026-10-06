@@ -338,6 +338,6 @@ return 0;
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             rows = list(csv.DictReader(stream))
         self.assertFalse([r for r in rows if r['function']=='func_1519ED84'])
-        self.assertEqual(len(rows),10695)
+        self.assertEqual(len(rows),10738)
         rom = (self.root/'conker/conker.us.bin').read_bytes()
         self.assertEqual(self.production['func_1519EF04'],list(struct.unpack_from('>27I',rom,0x1CC3B4)))

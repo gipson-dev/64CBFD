@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest grid/channel updater match](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md):
+  96 words,53 direct plus43 closed register-cycle/address-schedule guards;
+  live signed coordinates/bounds/grid aliases and byte wrap, normalized V0=4.
+  Next59-word `func_15141478`: nine remaining word differences, native/padder
+  qualification pending; its production placeholder remains untouched.
+
 - [Latest payload-copy wrapper match](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md):
   53 words, 43 direct plus ten relocation-aware closed schedule guards;
   callee pointer ABI corrected with28 unchanged direct words, connected/native

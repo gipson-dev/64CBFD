@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Grid/Channel Updater Match
+
+[Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md)
+recovers `func_151412BC`: 96 words/frame0x18, 53 direct plus43 closed register/
+address-schedule guards, existing O2/g3. Live bounds/grid aliases, signed
+coordinates, byte cycling and normalized V0=4 qualified; local global-storage
+interpretation only. Nine tests include144 controls,1728 three-body guest
+cases,864 native cases and ten negatives. Audit: only target across6059 fixed
+slots, protected sections/720 owners unchanged,10695 guards plus43, owner
+warnings0->0/zero new. Converted unchanged; exact total3331/5464, Game2658/4791
+(55.48%),2133 different, zero drift. All92 retained tests and the corrected
+nine-test rerun pass;101 unique current post-link tests qualified, no skips.
+Initial sole caller-fixture failure documented;35 docs/3389 links/zero broken.
+Next59-word `func_15141478` interpolation has112 preliminary
+controls/2160 finite guest cases; new59/frame0x30/nine-difference form's derived
+words and accesses agree, no native/padder/production qualification. No full
+hardware/gameplay/host claim, sibling/Release change or push.
+
 ## 2026-10-06 Game Payload-Copy Wrapper Match
 
 [Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md)

@@ -21,6 +21,29 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Grid/channel updater recovery:
+[Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md)
+recovers `func_151412BC`: 96 words/frame0x18, existing O2/g3, 53 direct words
+plus43 guards derived from two closed register cycles and independent LO16
+address scheduling. All branch/delay/arithmetic shapes retained, normalized
+V0=4; owner-local table/pointer casts, no shared-header or data change.
+1728 three-body guest storage/trace cases, signed bounds/byte cycling, 864
+native cases and ten negatives; nine tests include144 compiler controls.
+Only target across6059 fixed slots, protected sections/720 owners unchanged;
+10695 guards plus43, total10738, owner warnings0->0, zero new. Converted
+unchanged; exact total3331/5464 (60.96%), Game2658/4791 (55.48%), 2133 different,
+zero drift. All92 retained post-link tests and the corrected nine-test updater
+rerun pass (239.123 seconds), no skips;101 unique current tests qualified.
+Initial combined run's sole caller-fixture failure is corrected/documented;
+35 docs/3389 relative links/zero broken. Tools/compileall/diff checks pass.
+Next59-word `func_15141478` randomized interpolation:112 initial controls.
+New both-pointer-early form gives59/frame0x30/nine differences; derived six
+private-slot/three commutative FP changes reproduce all words,2160 finite guest
+storage/callback/access cases pass. No native/padder/full match installation.
+Sibling grid updater
+already retail-translated; no hardware/gameplay/host claim, sibling/Release
+change or push.
+
 Payload-copy wrapper recovery:
 [Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md)
 recovers `func_151407D0`: 53 words/frame0x40, existing O2/g3, 43 direct words

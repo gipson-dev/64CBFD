@@ -1,5 +1,27 @@
 # PC Port Roadmap located in another project folder
 
+## Game Grid/Channel Updater Match - 2026-10-06
+
+[Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md)
+recovers guest `func_151412BC`: 96 words/frame0x18, 53 direct plus43 guards
+derived from closed register cycles and independent address scheduling under
+existing O2/g3. Live bucket traversal, signed coordinates, short-circuit Y,
+live grid/bound aliases and byte wrap preserved; normalized return stateV0=4.
+No bounds/cycle fix or shared-header/data rewrite. Full-storage three-body
+guest/native qualification, ten negatives,144 controls/nine tests. Audit:
+only target across6059 fixed slots, protected sections/720 owners unchanged;
+10695 guards plus43, owner warnings0->0, zero new. Converted unchanged;
+Game2658/4791 exact (55.48%), 2133 different, zero drift. All92 retained tests
+and the corrected nine-test updater rerun pass;101 unique current post-link
+tests qualified, no skips. Initial sole caller-fixture failure documented in
+Note1053;35 docs/3389 links/zero broken, tools/compileall/diff checks pass.
+Sibling generated updater already retail-translated; no host repair/adoption,
+hardware/dispatch/gameplay acceptance claim or sibling source/build/save/frozen
+Release change, runtime or push. Next59-word `func_15141478` interpolation,
+112 initial controls/2160 finite guest cases; new59/frame0x30/nine-difference
+form has matching derived words and accesses, no native/padder/production
+qualification or installation.
+
 ## Game Payload-Copy Wrapper Match - 2026-10-06
 
 [Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md)

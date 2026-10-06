@@ -10694,3 +10694,46 @@ game_16DC80,func_151407D0,0x0A0,0x10000008,0x3C020000,-,R_MIPS_HI16:D_800DC9F0,N
 game_16DC80,func_151407D0,0x0A4,0x00001025,0x10000007,-,-,Normalize payload copy closed success join schedule,,,false
 game_16DC80,func_151407D0,0x0A8,0x10600005,0x00001025,-,-,Normalize payload copy closed success join schedule,,,false
 game_16DC80,func_151407D0,0x0AC,0x3C020000,0x10600004,R_MIPS_HI16:D_800DC9F0,-,Normalize payload copy closed success join schedule,,,false
+game_16DC80,func_151412BC,0x14,0x3C020000,0x3C040000,R_MIPS_HI16:D_800DCE50,R_MIPS_HI16:D_800DCE50,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x30,0x24420000,0x256B0000,R_MIPS_LO16:D_800DCE50,R_MIPS_LO16:D_800A5168,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x34,0x256B0000,0x258C0000,R_MIPS_LO16:D_800A5168,R_MIPS_LO16:D_80082FA0,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x38,0x258C0000,0x25AD0000,R_MIPS_LO16:D_80082FA0,R_MIPS_LO16:D_800BE620,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x3C,0x25AD0000,0x26100000,R_MIPS_LO16:D_800BE620,R_MIPS_LO16:D_800BE624,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x40,0x26100000,0x26310000,R_MIPS_LO16:D_800BE624,R_MIPS_LO16:D_800BE9C4,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x44,0x26310000,0x26520000,R_MIPS_LO16:D_800BE9C4,R_MIPS_LO16:D_800DD190,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x48,0x26520000,0x24840000,R_MIPS_LO16:D_800DD190,R_MIPS_LO16:D_800DCE50,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x50,0x00001825,0x00001025,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x54,0x00037080,0x00027080,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x60,0x24630001,0x24420001,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x68,0x00597021,0x00997021,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x6C,0x8DC40000,0x8DC30000,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x70,0x50800037,0x50600037,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x74,0x307800FF,0x305800FF,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x78,0x8C850058,0x8C650058,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x88,0xA4800162,0xA4600162,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x8C,0xA4800160,0xA4600160,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x90,0xA480015E,0xA460015E,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x98,0xA480015C,0xA460015C,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xA4,0x24860110,0x24670110,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xB0,0x00CE5021,0x00EE4021,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xB4,0x8D470024,0x8D0A0024,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xBC,0x04E20019,0x05420019,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xC0,0x00D87821,0x00F87821,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xC4,0x8DA80000,0x8DA60000,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xC8,0x00E8082A,0x0146082A,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xD0,0x00D87821,0x00F87821,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xD4,0x8D490034,0x8D090034,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xDC,0x00D87821,0x00F87821,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xEC,0x00D87821,0x00F87821,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0xF0,0x01280019,0x01260019,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x100,0x0007C840,0x000AC840,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x114,0x00CFC821,0x00EFC821,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x120,0x00D87821,0x00F87821,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x140,0x8C840008,0x8C630008,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x144,0x5480FFCD,0x5460FFCD,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x148,0x8C850058,0x8C650058,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x14C,0x307800FF,0x305800FF,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x158,0x03001825,0x03001025,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x15C,0x244201A0,0x248401A0,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x160,0x5452FFBC,0x5492FFBC,-,-,Normalize grid updater closed register cycles and independent address setup,,,false
+game_16DC80,func_151412BC,0x164,0x00001825,0x00001025,-,-,Normalize grid updater closed register cycles and independent address setup,,,false

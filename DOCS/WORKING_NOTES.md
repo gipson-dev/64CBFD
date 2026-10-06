@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-06 ([Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md)):
+`func_151412BC`: false updater stub recovered,96 words/frame0x18,53 direct
+plus43 closed register-cycle/address-schedule guards, existing O2/g3.
+Live signed bounds/grid aliases, short-circuit coordinates and byte wrap,
+normalized V0=4; shared headers/data unchanged.144 controls/nine tests,
+1728 three-body guest cases,864 native cases and ten compiled negatives.
+Only target across6059 fixed slots; protected sections/720 owners unchanged,
+10695 guards plus43, zero old/new owner warnings. Converted unchanged;
+exact total3331/5464, Game2658/4791,2133 different, zero drift. All92 retained
+post-link tests and corrected nine-test rerun pass;101 unique current tests
+qualified, no skips; initial sole caller-fixture failure documented.
+35 docs/3389 links/zero broken. Next59-word `func_15141478`,112 initial
+controls/2160 finite guest cases; new59/frame0x30/nine differences, derived words
+and accesses agree, no native/padder/production qualification. No full hardware/
+gameplay/host claim, sibling/Release change or push.
+
 2026-10-06 ([Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md)):
 `func_151407D0`: false copy-wrapper stub recovered, 53 words/frame0x40,
 43 direct plus ten relocation-aware closed success-schedule/branch guards.
