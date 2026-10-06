@@ -6,6 +6,8 @@ extern u8 *D_800D2350;
 extern u8 *D_8008FDD4;
 extern s8 D_8008FD90;
 extern u8 *D_800872A0;
+extern s8 D_8008FD8C;
+extern f32 D_8009DA5C;
 
 /* Non-matching placeholders for the text-only asm slice asm/B3020.s. */
 
@@ -53,7 +55,7 @@ s32 func_15085DA8(f32 arg0) {
     return D_800D237C[i];
 }
 
-s32 func_15085DF8() {
+s32 func_15085DF8(f32 x, f32 y, f32 z, s32 mode, s32 band) {
     return 0;
 }
 
@@ -439,8 +441,143 @@ void func_1508B2A8(u8 id, NeighborVisitQueryB3020 *query) {
     }
 }
 
-s32 func_1508B3F8() {
-    return 0;
+void func_1508B3F8(void) {
+    NeighborVisitQueryB3020 query;
+    s32 *selections;
+    u8 *zone;
+    u8 *actor;
+    u8 *nodes;
+    u8 *node;
+    s32 i;
+    s32 player;
+    s32 ready;
+    s32 root;
+    s32 best;
+    s32 j;
+    f32 x;
+    f32 y;
+    f32 z;
+    f32 dx;
+    f32 dz;
+    f32 minimum;
+    u8 *ids;
+    u8 *distances;
+    u8 *end;
+    s32 remainder;
+
+    selections = (s32 *)(D_800D23B0 + 0x55C);
+    zone = (u8 *)D_800D23B0 + 0x1748;
+    for (i = 0; i < D_8008FD8C; i++) {
+        if (selections[i] != -1) {
+            selections[i] = -2;
+        }
+    }
+    for (i = 0; i < *(s8 *)((u8 *)D_800D23B0 + 0x1745); i++, zone += 12) {
+        query.threshold = *(f32 *)(zone + 0);
+        x = (f32)*(s16 *)(zone + 4);
+        y = (f32)*(s16 *)(zone + 6);
+        z = (f32)*(s16 *)(zone + 8);
+        ready = 0;
+        for (player = D_8008FD90, actor = D_800CC2D0 + player * 0x32C;
+             player < D_8008FD8C; player++, actor += 0x32C) {
+            dz = *(f32 *)(actor + 0x18) - y;
+            if (dz < 200.0f && -100.0f < dz) {
+                dx = *(f32 *)(actor + 0x14) - x;
+                dz = *(f32 *)(actor + 0x1C) - z;
+                if (dx * dx + dz * dz < query.threshold + 100.0f) {
+                    best = 0xFF;
+                    minimum = D_8009DA5C;
+                    if (!ready) {
+                        query.count = 0;
+                        ready = 1;
+                        root = func_15085DF8(x, y, z, 0, func_15085DA8(y));
+                        if (root != -1) {
+                            query.x = x;
+                            query.z = z;
+                            query.count = 0;
+                            bzero(query.visited, 32);
+                            func_1508B2A8((u8)root, &query);
+                        }
+                    }
+                    /* Keep the remainder-first, four-candidate retail scan. */
+                    j = 0;
+                    if (query.count > 0) {
+                        nodes = D_800D2350;
+                        remainder = query.count & 3;
+                        if (remainder) {
+                            do {
+                                node = nodes + query.ids[j] * 16;
+                                dx = (f32)*(s16 *)(node + 0) - *(f32 *)(actor + 0x14);
+                                dz = (f32)*(s16 *)(node + 4) - *(f32 *)(actor + 0x1C);
+                                dz = dx * dx + dz * dz;
+                                if (dz < query.distances[j] && dz < minimum) {
+                                    best = query.ids[j];
+                                    minimum = dz;
+                                }
+                                j++;
+                            } while (j != remainder);
+                            if (j == query.count) {
+                                goto selection;
+                            }
+                        }
+                        ids = (u8 *)&query + j;
+                        distances = (u8 *)&query + j * 4;
+                        end = (u8 *)&query + query.count * 4;
+                        do {
+                            node = nodes + ids[46] * 16;
+                            dx = (f32)*(s16 *)(node + 0) - *(f32 *)(actor + 0x14);
+                            dz = (f32)*(s16 *)(node + 4) - *(f32 *)(actor + 0x1C);
+                            dz = dx * dx + dz * dz;
+                            if (dz < *(f32 *)(distances + 12) && dz < minimum) {
+                                best = ids[46];
+                                minimum = dz;
+                            }
+                            node = nodes + ids[47] * 16;
+                            dx = (f32)*(s16 *)(node + 0) - *(f32 *)(actor + 0x14);
+                            dz = (f32)*(s16 *)(node + 4) - *(f32 *)(actor + 0x1C);
+                            dz = dx * dx + dz * dz;
+                            if (dz < *(f32 *)(distances + 16) && dz < minimum) {
+                                best = ids[47];
+                                minimum = dz;
+                            }
+                            node = nodes + ids[48] * 16;
+                            dx = (f32)*(s16 *)(node + 0) - *(f32 *)(actor + 0x14);
+                            dz = (f32)*(s16 *)(node + 4) - *(f32 *)(actor + 0x1C);
+                            dz = dx * dx + dz * dz;
+                            if (dz < *(f32 *)(distances + 20) && dz < minimum) {
+                                best = ids[48];
+                                minimum = dz;
+                            }
+                            node = nodes + ids[49] * 16;
+                            dx = (f32)*(s16 *)(node + 0) - *(f32 *)(actor + 0x14);
+                            dz = (f32)*(s16 *)(node + 4) - *(f32 *)(actor + 0x1C);
+                            dz = dx * dx + dz * dz;
+                            if (dz < *(f32 *)(distances + 24) && dz < minimum) {
+                                best = ids[49];
+                                minimum = dz;
+                            }
+                            distances += 16;
+                            ids += 4;
+                        } while (distances != end);
+                    }
+                  selection:
+                    if (best != 0xFF) {
+                        node = D_800D2350 + best * 16;
+                        if (selections[player] != -2) {
+                            *(s32 *)((u8 *)D_800D23B0 + player * 4 + 0x5C) = 1;
+                        }
+                        selections[player] = node[7];
+                    }
+                }
+            }
+        }
+    }
+    for (i = 0; i < D_8008FD8C; i++) {
+        if (selections[i] < 0) {
+            selections[i] = -1;
+        }
+    }
+    *(s8 *)((u8 *)D_800D23B0 + 0x1745) = 0;
 }
 
 s32 func_1508B9BC() {

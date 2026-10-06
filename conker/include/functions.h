@@ -1096,6 +1096,7 @@ s32  func_150859AC(s16 arg0, s32 arg1); // a guess
 void func_1508B20C(f32, f32, f32, f32);
 struct NeighborVisitQueryB3020;
 void func_1508B2A8(u8, struct NeighborVisitQueryB3020 *);
+void func_1508B3F8(void);
 s32  func_150A29C8(u8, u16);
 void func_150A7CB0(f32 mtx[4][4], s32 x, s32 y, s32 z);
 void func_150A8050(f32 mtx[4][4], f32 arg1, f32 arg2, f32 arg3);

@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Zone/player neighbor selection semantic recovery:
+[Note 1022](WORKING_NOTES/1022-game-zone-neighbor-selection-recovery-20261006.md)
+replaces `func_1508B3F8`'s placeholder with the complete parent pass. Not a
+byte match: 367 body words plus two padding nops, frame 0x140, 340 differences.
+No new guards/profile/assembly/overflow. 58 controls; 2990 three-way guest
+cases, all 369 parent / 84 connected visitor words and 1424 native footprints.
+14 qualification and 60 shared-oracle regression tests pass, no skips.
+Audit preserves all 6059 slot addresses/
+lengths: only parent and four argument homes in the still-placeholder root
+lookup change. Protected sections/720 data owners and all guards intact.
+Counts/README aggregates unchanged: Game exact 2635/4789, zero drift.
+Next: parent query homes/address lifetimes; a retained 370-word / 257-difference
+form exceeds the slot by one word. Full lookup/caller/gameplay unqualified.
+
 Recursive record-neighbor visitor byte match:
 [Note 1021](WORKING_NOTES/1021-game-record-neighbor-visitor-match-20261006.md)
 replaces `func_1508B2A8`'s zero-return placeholder with its complete 84-word

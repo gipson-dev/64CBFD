@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1022](WORKING_NOTES/1022-game-zone-neighbor-selection-recovery-20261006.md)):
+Recover `func_1508B3F8`'s full queued-zone/player selection pass; not matched.
+367 body / 369 slot words, frame 0x140, 340 differences. No new guards/profile.
+58 controls, 2990 three-way guest cases, full parent/visitor word coverage,
+1424 native footprints; 14 qualification / 60 regression tests pass. All 6059
+addresses/lengths intact; parent plus four lookup argument homes change.
+Lookup body remains a zero-return placeholder. Protected data/guards and
+README/counts unchanged. Next: query homes/address lifetimes; retained 370-word
+form is one word too large, still needs allocation/scheduling recovery.
+
 2026-10-06 ([Note 1021](WORKING_NOTES/1021-game-record-neighbor-visitor-match-20261006.md)):
 Recover `func_1508B2A8`: all 84 words, frame 0x30 and five saves. Six guards
 rename two complete temporary lifetimes; no new profile or assembly change.

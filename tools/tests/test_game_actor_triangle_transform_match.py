@@ -122,15 +122,15 @@ class TriangleOracle(table.RangeOracle):
             op, rs, rt = word >> 26, word >> 21 & 31, word >> 16 & 31
             if op == 17 and rs == 8:
                 take, likely = self.condition == bool(rt & 1), bool(rt & 2)
-            elif op in (1, 4, 5, 6, 7, 20, 21):
+            elif op in (1, 4, 5, 6, 7, 20, 21, 22, 23):
                 if op == 1:
                     assert rt in (0, 1, 2, 3)
                     take, likely = signed(self.r[rs]) >= 0 if rt & 1 else signed(self.r[rs]) < 0, bool(rt & 2)
                 else:
-                    take = signed(self.r[rs]) <= 0 if op == 6 else signed(self.r[rs]) > 0 if op == 7 else self.r[rs] == self.r[rt]
+                    take = signed(self.r[rs]) <= 0 if op in (6, 22) else signed(self.r[rs]) > 0 if op in (7, 23) else self.r[rs] == self.r[rt]
                     if op in (5, 21):
                         take = not take
-                    likely = op in (20, 21)
+                    likely = op in (20, 21, 22, 23)
             else:
                 take = None
             if take is not None:

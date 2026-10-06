@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Zone Neighbor Selection Recovery - 2026-10-06
+
+[Note 1022](WORKING_NOTES/1022-game-zone-neighbor-selection-recovery-20261006.md)
+recovers DECOMP `func_1508B3F8`'s full zone/player parent body, not a byte match:
+367 body / 369 slot words, frame 0x140, 340 differences. 2990 three-way guest
+cases, full parent/visitor coverage, 1424 native footprints; 14 qualification
+and 60 regression tests pass. All addresses/lengths and protected data intact;
+parent and four
+lookup argument homes change. Root lookup still returns zero in production.
+Counts/README aggregates unchanged. Next: guest query homes/address lifetimes.
+No full helper-chain or PC gameplay acceptance, host transplant, sibling
+source/build/save/frozen Release change or push.
+
 ## Game Record Neighbor Visitor Byte Match - 2026-10-06
 
 [Note 1021](WORKING_NOTES/1021-game-record-neighbor-visitor-match-20261006.md)

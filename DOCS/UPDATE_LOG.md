@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Zone Neighbor Selection Recovery
+
+[Note 1022](WORKING_NOTES/1022-game-zone-neighbor-selection-recovery-20261006.md)
+recovers `func_1508B3F8`'s full parent pass, not a byte match: 367 body words /
+369-word slot, frame 0x140, 340 differences. 58 controls; 2990 three-way guest
+cases, full parent/visitor coverage and 1424 native footprints. Fourteen
+qualification and sixty focused regression tests pass, no skips.
+All 6059 addresses/lengths survive; only parent and exactly
+four argument homes in the still-placeholder lookup change. Protected data
+and all guards intact. README/counts remain accurate and unchanged.
+Next: parent private homes/constant-address lifetimes, not broad guards.
+No full lookup/gameplay, sibling/frozen Release change or push.
+
 ## 2026-10-06 Game Record Neighbor Visitor Byte Match
 
 [Note 1021](WORKING_NOTES/1021-game-record-neighbor-visitor-match-20261006.md)
