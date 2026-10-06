@@ -235,7 +235,7 @@ for(index=0;index<256;index++) for(variant=0;variant<256;variant++) for(f=0;f<2;
             (self.root/'conker/conker.us.bin').read_bytes(),constructor.ROM)))
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
-        self.assertEqual(len(guards),10685)
+        self.assertEqual(len(guards),10695)
         self.assertFalse([row for row in guards if row['function']=='func_1513FFF4'])
 
 

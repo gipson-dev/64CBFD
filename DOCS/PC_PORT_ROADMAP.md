@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Game Payload-Copy Wrapper Match - 2026-10-06
+
+[Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md)
+recovers guest `func_151407D0`: 53 words/frame0x40, 43 direct plus ten closed
+success-schedule/branch guards with counter HI16 movement. Callee pointer
+return/descriptor ABI recovered; all28 direct instructions unchanged. Full
+storage/byte/callback/connected/native qualification; counter aliases remain
+live after copy and payload clear. Only target across6059 fixed slots;
+protected sections/720 owners unchanged, 10685 guards plus ten. Two old ABI
+warnings removed (45->43), target owner0->0, zero new. Converted unchanged;
+Game2657/4791 exact (55.46%), 2134 different, zero drift. All92 post-link tests
+pass in901.823 seconds, no skips; 34 docs/3377 links/zero broken.
+Sibling generated wrapper already contains retail-translated code;
+not a host repair/adoption or complete allocator/dispatch/hardware/gameplay
+acceptance claim. Next guest `func_151412BC` grid lookup. No sibling source/
+build/save/frozen Release change, runtime or push.
+
 ## Game List-Key Sorter Recovery - 2026-10-06
 
 [Note 1051](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md)

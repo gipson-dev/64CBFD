@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-06 ([Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md)):
+`func_151407D0`: false copy-wrapper stub recovered, 53 words/frame0x40,
+43 direct plus ten relocation-aware closed success-schedule/branch guards.
+`func_1513D524` semantic pointer return corrected; all28 direct words unchanged.
+40 controls, 5376 ordinary/65536 byte-pair/72 join/1440 connected guest cases,
+132352 native cases/ten negatives. Only target across6059 fixed slots;
+protected sections/720 owners unchanged, 10685 guards plus ten. Two false ABI
+warnings removed (45->43), target owner0->0, zero new. Converted unchanged;
+exact total3330/5464, Game2657/4791, 2134 different, zero drift. All92 post-link
+tests pass in901.823 seconds, no skips; 34 docs/3377 links/zero broken.
+Next `func_151412BC` grid lookup; preliminary
+96-word/frame0x18 form has53 differences, not installed. No full allocator/
+gameplay/host claim, sibling/Release change or push.
+
 2026-10-06 ([Note 1051](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md)):
 `func_151406AC`: false sorter stub recovered, 72-word body/73-word slot,
 frame0x138, 54 direct instructions plus18 register-lifetime guards and nop.

@@ -4,6 +4,22 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Payload-copy wrapper compiler controls
+
+[Driver](../tools/experiments/game_payload_copy_wrapper_candidates.py):
+six forms/four profiles plus four callee ABI forms/four profiles, **40 controls**.
+Existing O2/g3 gives53 words/frame0x40/ten closed schedule differences;
+callee pointer return gives28 direct words with unchanged instructions. No
+driver installation. [Nine tests](../tools/tests/test_game_payload_copy_wrapper_match.py)
+derive the index permutation and local branch targets, parse/apply/link actual
+HI16 relocation movement, bind complete production slots and metadata.
+Full guest storage/traces, byte pairs/live join/actual callee-constructor chain,
+ten compiled negatives and132352 native cases qualify ordinary valid copies
+and counter aliases. SDK/allocator leaves remain bounded hooks; no arbitrary
+overlap/private-frame alias/hardware/dispatcher/gameplay/host qualification.
+Ignored receipts under `conker/build/game-payload-copy-wrapper[-test]/`;
+see [Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md).
+
 ## List-key sorter compiler controls
 
 [Driver](../tools/experiments/game_list_key_sort_candidates.py)

@@ -21,6 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Payload-copy wrapper recovery:
+[Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md)
+recovers `func_151407D0`: 53 words/frame0x40, existing O2/g3, 43 direct words
+plus ten closed success-schedule/branch guards with counter HI16 movement.
+Descriptor pre-mutations, failure, live copy/selector/counter and allocation
+return qualified. Correct callee `func_1513D524`'s false void/word-descriptor
+ABI; all28 direct words unchanged. 40 controls, 5376 ordinary/65536 byte-pair
+guest cases, 72 join/1440 connected cases, 132352 native cases/ten negatives.
+Only target across6059 fixed slots, protected sections/720 owners unchanged;
+10685 guards plus ten. Two ABI warnings removed (45->43), target owner0->0,
+zero new. Converted unchanged; exact total3330/5464 (60.94%), Game2657/4791
+(55.46%), 2134 different, zero drift. All92 post-link tests pass in901.823
+seconds, no skips; 34 docs/3377 relative links/zero broken.
+Next96-word `func_151412BC` grid lookup: preliminary correct frame/length,
+53 differences; 1728 two-body guest storage/trace cases agree, raw V0 still
+differs. Native/complete ABI/match unqualified, no installation. Larger
+`func_151408A4` unrecovered.
+Sibling outer wrapper already retail-translated; no full allocator/dispatch/
+hardware/gameplay/host claim, sibling/Release change or push.
+
 List-key sorter recovery:
 [Note 1051](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md)
 recovers `func_151406AC`: 72-word body/73-word slot, frame0x138, existing

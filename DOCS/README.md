@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest payload-copy wrapper match](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md):
+  53 words, 43 direct plus ten relocation-aware closed schedule guards;
+  callee pointer ABI corrected with28 unchanged direct words, connected/native
+  payload/counter qualification. Next `func_151412BC` grid lookup.
+
 - [Latest list-key sorter recovery](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md):
   72-word body/73-word slot; 54 direct instructions plus18 register-only
   guards and nop, stable keys and captured/live link qualification.

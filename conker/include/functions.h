@@ -767,7 +767,8 @@ void func_1513CAD4(struct210 *arg0);
 void func_1513CB58(struct210 *arg0);
 void func_1513CBA4(struct210 *arg0);
 void func_1513D4B8(s32 arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, u8 arg5, u8 arg6, s32 arg7, u8 arg8, s32 arg9);
-void func_1513D524(s32 arg0, u8 arg1, u8 arg2, u8 arg3, u8 arg4, u8 arg5, s32 arg6, u8 arg7, s32 arg8);
+void *func_1513D524(void *descriptor, u8 kind, u8 mode, u8 first, u8 setup,
+                  u8 variant, s32 size, u8 channel, s32 context);
 s32  func_1513D594(s32 arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, u8 arg5, s16 arg6, f32 arg7, f32 arg8, s32 arg9, s32 argA, s32 argB, s32 argC, u8 argD, s32 argE, u8 argF, s32 arg10);
 void func_1513D668(s32 arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, u8 arg5, s16 arg6, f32 arg7, f32 arg8, s32 arg9, s32 argA, u8 argB, s32 argC, u8 argD, s32 argE);
 void func_1513E070(s32 arg0, s32 arg1, s32 arg2);

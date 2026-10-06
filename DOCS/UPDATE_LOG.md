@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-06 Game Payload-Copy Wrapper Match
+
+[Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md)
+recovers `func_151407D0`: 53 words/frame0x40, 43 direct plus ten closed
+success-schedule/branch guards, moved counter HI16, existing O2/g3. Callee
+`func_1513D524` pointer-return ABI corrected; all28 direct words unchanged.
+40 controls, full-storage/byte/join/connected guest checks, 132352 native cases
+and ten negatives. Audit: only target across6059 fixed slots, protected
+sections/720 owners unchanged, 10685 guards plus ten; two ABI warnings removed
+(45->43), target owner0->0, zero new. Converted counts unchanged; exact
+total3330/5464, Game2657/4791 (55.46%), 2134 different, zero drift.
+All92 post-link tests pass in901.823 seconds, no skips; 34 docs/3377 links/zero
+broken. Next96-word `func_151412BC` grid
+lookup; no full allocator/gameplay/host claim, sibling/Release change or push.
+
 ## 2026-10-06 Game List-Key Sorter Recovery
 
 [Note 1051](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md)

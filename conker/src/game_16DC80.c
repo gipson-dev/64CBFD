@@ -4,7 +4,8 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_151407D0();
+u8 *func_151407D0(void *source, s32 size, u8 *descriptor, u8 kind, u8 mode,
+                 u8 first, u8 variant, s8 selector, u8 channel, s32 context);
 s32 func_151408A4();
 s32 func_151412BC();
 s32 func_15141478();
@@ -19,9 +20,26 @@ typedef struct {
     s32 second;
 } TwoWord16DC80;
 
-/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151407D0.s. */
-s32 func_151407D0() {
-    return 0;
+u8 *func_151407D0(void *source, s32 size, u8 *descriptor, u8 kind, u8 mode,
+                       u8 first, u8 variant, s8 selector, u8 channel, s32 context) {
+    u8 *result;
+    u8 *payload;
+    descriptor[1] = 3;
+    *(u32 *)(descriptor + 0x40) |= 0x40400000;
+    result = func_1513D524(descriptor, kind, mode, first, 1, variant, size, channel, context);
+    if (result != NULL) {
+        payload = result + 0x110;
+        memcpy(payload, source, size);
+        *(s32 *)(payload + 0x44) = 0;
+        payload[0x59] = selector;
+        goto finalize;
+    }
+    return NULL;
+finalize:
+    if (result != NULL) {
+        *(u32 *)&D_800DC9F0 += 1;
+    }
+    return result;
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151408A4.s. */
