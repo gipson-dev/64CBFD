@@ -234,7 +234,46 @@ def retail_home_body(body):
     return body[:begin] + header + body[end:]
 
 
-SELECTED = retail_home_body(RECOVERY)
+HOME_RECOVERY = retail_home_body(RECOVERY)
+
+
+def reduced_frame_body(body):
+    if body != RECOVERY:
+        raise ValueError('original triangle recovery no longer binds')
+    signature, commands = body.split('\n\n', 1)
+    signature = signature.split('\n', 1)[0]
+    commands = commands.replace('for (pass = 0; pass != 2; pass++)', 'for (i = 0; i != 2; i++)')
+    commands = commands.replace('for (axis = 0; axis != 3; axis++)', 'for (j = 0; j != 3; j++)')
+    commands = commands.replace('[pass]', '[i]').replace('pass * 3', 'i * 3').replace('[axis]', '[j]')
+    commands = commands.replace('matrixBase', 'base').replace('offsets', 'matrix').replace('denominator', 'weightB')
+    commands = commands.replace('            bit = 1u << j;\n', '')
+    commands = commands.replace('(mask & bit)', '(mask & (1u << j))').replace('mask |= bit;', 'mask |= 1u << j;')
+    commands = commands.replace('    id = actor->id;\n', '').replace('[id]', '[actor->id]')
+    commands = commands.replace('    count = D_800C5EF8[actor->id];\n', '')
+    commands = commands.replace('i == count', 'i == D_800C5EF8[actor->id]')
+    commands = commands.replace('triangle != points + 6', 'triangle < points + 6')
+    header = '''    ActorRange58F80 *range;
+    s32 i;
+    f32 relative[3];
+    f32 blend[3];
+    u32 matrices[3];
+    ActorVertex58F80 **vertex;
+    u32 *matrix;
+    f32 (*point)[3];
+    f32 (*triangle)[3];
+    u8 *base;
+    ActorVertex58F80 *vertices[3];
+    f32 points[6][3];
+    f32 edgeA[2][3];
+    f32 edgeB[2][3];
+    s32 j;
+    u32 mask;
+    f32 weightA;
+    f32 weightB;'''
+    return signature + '\n' + header + '\n\n' + commands
+
+
+SELECTED = reduced_frame_body(RECOVERY)
 
 MATRIX_BODY = '''void func_150A7960(f32 *matrix, f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *outZ) {
     f32 resultX, resultY, resultZ;
@@ -287,7 +326,7 @@ def main():
     output = root / 'conker/build/game-actor-triangle-transform'
     output.mkdir(exist_ok=True)
     records = []
-    for name, body in candidates() + [('retail-homes', SELECTED)]:
+    for name, body in candidates() + [('retail-homes', HOME_RECOVERY), ('reduced-frame', SELECTED)]:
         record, _ = compile_candidate(root, output, name, body)
         records.append(record)
         print(name, record['body_words'], hex(record['frame']), record['real_differences'], flush=True)

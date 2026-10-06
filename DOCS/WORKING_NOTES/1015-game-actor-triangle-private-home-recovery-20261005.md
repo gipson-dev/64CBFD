@@ -146,3 +146,6 @@ Do not normalize the remaining 273 words with a broad guard batch.
 
 The full Game matching goal remains active; this is layout progress, not a
 new byte-exact function.
+
+The subsequent reduced-frame and explicit read-lifetime screen is recorded
+in [Note 1016](1016-game-actor-triangle-reduced-frame-and-read-lifetime-screen-20261005.md).

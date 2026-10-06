@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Triangle reduced-frame recovery:
+[Note 1016](WORKING_NOTES/1016-game-actor-triangle-reduced-frame-and-read-lifetime-screen-20261005.md)
+reduces `func_1502F490` from frame 0x160 / 273 differences to 0x140 / 242.
+All seven retail array homes remain intact; all 302 body/slot words emit
+without new guards/profile/padding. Still non-matching: retail frame is
+0x138, and the actor argument plus early ID/count read lifetimes differ.
+Seventy-seven controls include 4488 bounded comparisons; scope-only forms
+do not reduce the frame, and frame-only forms do not match the body.
+64 focused tests and the five final frame probes pass, no skips; only target
+changes in 6060 slots. Protected sections/data/CSV and README totals stay
+intact. Next: last eight frame bytes, original read and SDK-loop lifetimes.
+All 367 regression tests pass in 527.136 seconds, no skips; includes the
+final read-history probe. Tools, staged whitespace and 2993 relative links
+pass. This is not full read-lifetime/hardware or PC gameplay acceptance.
+
 Triangle private-home recovery:
 [Note 1015](WORKING_NOTES/1015-game-actor-triangle-private-home-recovery-20261005.md)
 recovers all seven retail array homes by declaration-only changes. Installed

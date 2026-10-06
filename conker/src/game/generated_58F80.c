@@ -488,56 +488,45 @@ void func_1502F3C8(void) {
 }
 
 void func_1502F490(ActorCopy58F80 *actor, f32 *x, f32 *y, f32 *z, s32 joint) {
+    ActorRange58F80 *range;
+    s32 i;
+    f32 relative[3];
+    f32 blend[3];
+    u32 matrices[3];
     ActorVertex58F80 **vertex;
     u32 *matrix;
     f32 (*point)[3];
     f32 (*triangle)[3];
-    u32 *offsets;
     u8 *base;
-    u8 *matrixBase;
-    ActorRange58F80 *range;
-    s32 id;
-    s32 count;
-    f32 relative[3];
-    f32 blend[3];
-    u32 matrices[3];
-    s32 pass;
-    s32 axis;
-    f32 denominator;
-    f32 weightA;
-    f32 weightB;
     ActorVertex58F80 *vertices[3];
     f32 points[6][3];
     f32 edgeA[2][3];
     f32 edgeB[2][3];
-    s32 i;
     s32 j;
     u32 mask;
-    u32 bit;
+    f32 weightA;
+    f32 weightB;
 
-    id = actor->id;
-    offsets = D_800C6070[id];
-    if (offsets == NULL) {
+    matrix = D_800C6070[actor->id];
+    if (matrix == NULL) {
         return;
     }
-    base = D_800D19A0[id];
+    base = D_800D19A0[actor->id];
     for (i = 0; i != 3; i++) {
-        vertices[i] = (ActorVertex58F80 *)(base + offsets[joint * 3 + i]);
+        vertices[i] = (ActorVertex58F80 *)(base + matrix[joint * 3 + i]);
     }
-    count = D_800C5EF8[id];
     mask = 0;
     for (i = 0; ; i++) {
-        if (i == count) {
+        if (i == D_800C5EF8[actor->id]) {
             return;
         }
         for (j = 0; j != 3; j++) {
-            bit = 1u << j;
-            if ((mask & bit) == 0) {
-                range = D_800C5C08[id] + i;
+            if ((mask & (1u << j)) == 0) {
+                range = D_800C5C08[actor->id] + i;
                 if ((u32)vertices[j] >= range->start &&
                     (u32)vertices[j] < range->start + (range->count << 4)) {
                     matrices[j] = range->matrix;
-                    mask |= bit;
+                    mask |= 1u << j;
                 }
             }
         }
@@ -545,20 +534,20 @@ void func_1502F490(ActorCopy58F80 *actor, f32 *x, f32 *y, f32 *z, s32 joint) {
             break;
         }
     }
-    matrixBase = actor->buffer;
-    if (matrixBase == NULL || actor->source == NULL) {
+    base = actor->buffer;
+    if (base == NULL || actor->source == NULL) {
         return;
     }
     triangle = points;
     do {
         if (triangle == points + 3) {
-            matrixBase = actor->source;
+            base = actor->source;
         }
         vertex = vertices;
         matrix = matrices;
         point = triangle;
         do {
-            func_150A7960((f32 *)(matrixBase + (*matrix << 6)),
+            func_150A7960((f32 *)(base + (*matrix << 6)),
                          (f32)(*vertex)->x, (f32)(*vertex)->y, (f32)(*vertex)->z,
                          &(*point)[0], &(*point)[1], &(*point)[2]);
             vertex++;
@@ -566,21 +555,21 @@ void func_1502F490(ActorCopy58F80 *actor, f32 *x, f32 *y, f32 *z, s32 joint) {
             point++;
         } while (matrix != matrices + 3);
         triangle += 3;
-    } while (triangle != points + 6);
-    for (pass = 0; pass != 2; pass++) {
-        for (axis = 0; axis != 3; axis++) {
-            edgeA[pass][axis] = points[pass * 3 + 1][axis] - points[pass * 3][axis];
-            edgeB[pass][axis] = points[pass * 3 + 2][axis] - points[pass * 3][axis];
+    } while (triangle < points + 6);
+    for (i = 0; i != 2; i++) {
+        for (j = 0; j != 3; j++) {
+            edgeA[i][j] = points[i * 3 + 1][j] - points[i * 3][j];
+            edgeB[i][j] = points[i * 3 + 2][j] - points[i * 3][j];
         }
     }
     relative[0] = *x - points[0][0];
     relative[1] = *y - points[0][1];
     relative[2] = *z - points[0][2];
-    denominator = edgeA[0][0] * edgeB[0][2] - edgeB[0][0] * edgeA[0][2];
-    if (denominator == 0.0f) {
+    weightB = edgeA[0][0] * edgeB[0][2] - edgeB[0][0] * edgeA[0][2];
+    if (weightB == 0.0f) {
         weightA = -100.0f;
     } else {
-        weightA = (relative[0] * edgeB[0][2] - edgeB[0][0] * relative[2]) / denominator;
+        weightA = (relative[0] * edgeB[0][2] - edgeB[0][0] * relative[2]) / weightB;
     }
     if (weightA < 0.0f || 1.0f < weightA) {
         return;
@@ -593,8 +582,8 @@ void func_1502F490(ActorCopy58F80 *actor, f32 *x, f32 *y, f32 *z, s32 joint) {
     if (weightB < 0.0f || 1.0f < weightB) {
         return;
     }
-    for (axis = 0; axis != 3; axis++) {
-        blend[axis] = edgeB[1][axis] * weightB + weightA * edgeA[1][axis];
+    for (j = 0; j != 3; j++) {
+        blend[j] = edgeB[1][j] * weightB + weightA * edgeA[1][j];
     }
     relative[1] = edgeB[0][1] * weightB + weightA * edgeA[0][1];
     *x += ((blend[0] + points[3][0]) - relative[0]) - points[0][0];

@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-05 ([Note 1016](WORKING_NOTES/1016-game-actor-triangle-reduced-frame-and-read-lifetime-screen-20261005.md)):
+Reduce `func_1502F490` to 302 / 302 words, frame 0x140 and 242 differences;
+all seven retail homes stay intact. No guards/profile/padding. Still differs
+from retail's 0x138 frame and original argument/ID/count read lifetimes.
+77 scope/reuse controls include 4488 bounded comparisons; scope-only changes
+do not reduce the frame. 64 focused tests and five final frame probes pass.
+Only target changes in 6060 slots; protected sections/CSV/README totals stay
+intact. Next: last eight frame bytes and original read/SDK-loop lifetimes.
+367 regression tests pass in 527.136 seconds, no skips; final read probe is
+included. Tools, staged whitespace and 2993 checked relative links pass.
+
 2026-10-05 ([Note 1015](WORKING_NOTES/1015-game-actor-triangle-private-home-recovery-20261005.md)):
 Recover all seven private array homes in `func_1502F490`; declaration-only
 change lowers differences 275 to 273. Still 298 / 302 words and frame 0x160,

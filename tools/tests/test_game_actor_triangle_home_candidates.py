@@ -17,7 +17,7 @@ class GameActorTriangleHomeCandidateTests(unittest.TestCase):
         self.assertEqual(len({name for name, _ in forms}), 25)
         self.assertEqual(len({name for name, _ in loops}), 11)
         self.assertEqual(forms[0], ('checkpoint', screen.RECOVERY))
-        self.assertEqual(dict(forms)['weights-counters-retail-cut-10'], screen.SELECTED)
+        self.assertEqual(dict(forms)['weights-counters-retail-cut-10'], screen.HOME_RECOVERY)
         commands = screen.RECOVERY.split('    id = actor->id;', 1)[1]
         for name, body in forms:
             with self.subTest(name=name):
@@ -42,7 +42,8 @@ class GameActorTriangleHomeCandidateTests(unittest.TestCase):
                         points=[0xAC, 0xB8, 0xC4, 0xD0, 0xDC, 0xE8],
                         edgeA=[0x94], edgeB=[0x7C], relative_blend=[0x120, 0x12C])
         self.assertEqual(home.homes(retail, 0x138), expected)
-        self.assertEqual(home.homes(production, 0x160), expected)
+        self.assertEqual(production[0], 0x27BDFEC0)
+        self.assertEqual(home.homes(production, 0x140), expected)
 
 
 if __name__ == '__main__':

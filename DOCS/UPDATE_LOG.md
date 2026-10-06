@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-05 Game Actor Triangle Reduced Frame And Read Lifetime Screen
+
+[Note 1016](WORKING_NOTES/1016-game-actor-triangle-reduced-frame-and-read-lifetime-screen-20261005.md)
+reduces the installed frame 0x160 to 0x140 and differences 273 to 242.
+All seven array homes match; 302 body/slot words, no new guards or profile.
+The early actor/ID/count read shape remains different; it is not claimed
+retail-exact. 77 controls / 4488 bounded comparisons; scope-only frame
+reduction is disproven. 64 focused tests and five final frame probes pass.
+Only target changes in 6060 slots; protected sections/data/CSV and README
+counts stay intact. Next: last eight frame bytes and original read/SDK loop.
+No exact-function gain, sibling/frozen Release change or push.
+367 regression tests pass in 527.136 seconds, no skips, including the final
+read probe. Tools, staged whitespace and 2993 relative links pass.
+
 ## 2026-10-05 Game Actor Triangle Private Home Recovery
 
 [Note 1015](WORKING_NOTES/1015-game-actor-triangle-private-home-recovery-20261005.md)

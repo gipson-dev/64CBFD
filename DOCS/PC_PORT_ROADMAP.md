@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Triangle Reduced Frame And Read Lifetime Screen - 2026-10-05
+
+[Note 1016](WORKING_NOTES/1016-game-actor-triangle-reduced-frame-and-read-lifetime-screen-20261005.md)
+reduces DECOMP `func_1502F490` to frame 0x140 / 242 differences with all seven
+retail array homes intact. 302 body/slot words; no new guards or profile.
+Retail frame is 0x138 and early actor/ID/count read lifetimes still differ.
+77 controls include 4488 bounded comparisons; 64 focused tests and five
+final frame probes pass. Only target changes in 6060 slots; protected data
+and README totals stay intact. Next: guest frame/read/SDK-loop matching.
+No host transplant, PC runtime/gameplay claim or sibling build/save/Release
+change. These bounded guest checks do not qualify hardware/concurrent reads.
+367 regression tests pass in 527.136 seconds, no skips; final read probe is
+included. Tools, staged whitespace and 2993 relative links pass.
+
 ## Game Actor Triangle Private Home Recovery - 2026-10-05
 
 [Note 1015](WORKING_NOTES/1015-game-actor-triangle-private-home-recovery-20261005.md)

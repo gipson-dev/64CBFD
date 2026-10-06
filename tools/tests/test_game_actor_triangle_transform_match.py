@@ -328,7 +328,7 @@ static void reference(f32 *x,f32 *y,f32 *z,int joint) {
         return first
 
     def test_full_body_fits_without_guards(self):
-        self.assertEqual((self.record['body_words'], self.record['frame'], self.record['real_differences']), (298, 0x160, 273))
+        self.assertEqual((self.record['body_words'], self.record['frame'], self.record['real_differences']), (302, 0x140, 242))
         self.assertEqual(self.record['diagnostics'], '')
         self.assertEqual(len(self.words), 302)
         source = (self.root / 'conker/src/game/generated_58F80.c').read_text()
