@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Integer pair-clamp access recovery, still non-matching:
+[Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md)
+recovers `func_15143D18`'s ordered XOR exchange and sequential endpoint clamps.
+29 emitted words, frame zero, seven padding words in the 36-word slot;
+all 36 aligned words still differ. No guards/profile/header/data change.
+92 compiler controls find no exact body. 24576 guest cases cover all retail
+words; the old body agrees on final outputs but differs in 7168 access traces.
+12288 native cases pass; all 50 combined tests pass in 64.519 seconds, no skips.
+Only target changes across 6059 slots; protected
+sections/720 owners/10646 guards intact. Three owner warnings equal baseline.
+README aggregates remain total 3313/5462 and Game 2640/4789 exact, zero drift,
+2149 different. Next: this function's saved-pointer frame/register lifetimes
+and branch-likely return tail. No gameplay/caller-domain expansion, sibling
+or frozen Release change or push. Game matching remains active.
+
 Indexed state-save direct match:
 [Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md)
 recovers `func_15123934` across all 38 words directly from C, frame 0x18,

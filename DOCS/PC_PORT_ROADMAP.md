@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Integer Pair Clamp Access Recovery - 2026-10-06
+
+[Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md)
+recovers DECOMP `func_15143D18`'s ordered XOR exchange and sequential endpoint
+clamps. Still non-matching: 29 raw words versus 36 retail, missing saved-pointer
+frame and return-tail layout. 92 compiler controls; 24576 guest cases cover
+all retail words, 12288 native cases pass; all 50 tests pass, no skips.
+Old final outputs agree while
+7168 access traces differ. Only target changes across 6059; protected sections,
+720 owners and 10646 guards unchanged. Game remains 2640/4789 exact, zero drift,
+2149 different. Continue this function's frame/register/tail matching.
+No host adoption, full gameplay/caller-domain expansion acceptance, sibling
+source/build/save/frozen Release change or push. Game matching remains active.
+
 ## Game Indexed State Save Direct Match - 2026-10-06
 
 [Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md)

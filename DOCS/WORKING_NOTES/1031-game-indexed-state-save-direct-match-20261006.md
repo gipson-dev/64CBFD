@@ -2,6 +2,10 @@
 
 Date: 2026-10-06. Starting checkpoint: `fd30ea2a`.
 
+Continuation: [Note 1032](1032-game-integer-pair-clamp-xor-access-recovery-20261006.md)
+recovers the next pair-clamp function's ordered accesses; its saved-pointer
+frame and return tail remain non-matching. This state-save match is unchanged.
+
 **Game func_15123934 matches all 38 words / 152 bytes directly from C.**
 Slot: 0x15123934..0x151239CC, ROM 0x150DE4..0x150E7C, frame 0x18.
 The zero-return stub and obsolete commented draft are replaced in

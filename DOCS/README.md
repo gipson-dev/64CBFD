@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest integer pair-clamp access recovery](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md):
+  ordered XOR exchange recovered; 24576 guest and 12288 native cases.
+  Still non-matching at 36 differences; saved-pointer frame and return tail
+  remain open. No new guards or profile, aggregate counts unchanged.
 - [Latest indexed state-save direct match](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md):
   all 38 words under existing O2/g3; correct two-scale indexing, sequential
   overlap and connected bit-selector/zero-mask boundary qualification.

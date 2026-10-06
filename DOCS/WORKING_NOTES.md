@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-06 ([Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md)):
+Recover `func_15143D18`'s retail XOR access sequence, not a byte match.
+29 raw words, frame zero, seven slot-padding words, 36 aligned differences.
+92 controls; 24576 guest cases with complete retail coverage and 12288 native
+cases. All 50 combined tests pass in 64.519 seconds, no skips.
+Old final outputs agree but 7168 ordered traces differ. Only target
+changes across 6059; protected sections/720 owners/10646 guards intact.
+Three owner warnings equal baseline. No guards/profile/header/data changes;
+README totals remain 3313/5462 and Game 2640/4789 exact, zero drift.
+Next: saved-pointer frame/lifetime and upper branch-likely return tail.
+No gameplay/caller-domain expansion, sibling/frozen Release change or push.
+Game matching remains active.
+
 2026-10-06 ([Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md)):
 Recover `func_15123934` directly: 38 words, frame 0x18, real actor definitions,
 no new guards/profile/data. Preserve separate halfword/word lanes, sequential

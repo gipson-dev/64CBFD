@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-06 Game Integer Pair Clamp XOR Access Recovery
+
+[Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md)
+replaces `func_15143D18`'s temporary-swap approximation with the retail
+ordered XOR reads/writes and sequential endpoint clamps. Still non-matching:
+29 raw words, frame zero, seven padding words, 36 aligned differences.
+92 controls find no exact form. 24576 guest cases cover all 36 retail words;
+7168 old-body access traces differ despite equal final outputs. 12288 native
+cases pass; all 50 combined tests pass in 64.519 seconds, no skips.
+Only target changes across 6059; protected sections/720 owners
+and all 10646 guards unchanged. Three owner warnings equal baseline.
+README totals unchanged: 3313/5462 total, Game 2640/4789 exact, zero drift,
+2149 different. Continue saved-pointer frame/lifetime and return-tail matching.
+No new guards/profile/header/data, full gameplay claim, sibling/frozen Release
+change or push. Game matching remains active.
+
 ## 2026-10-06 Game Indexed State Save Direct Match
 
 [Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md)

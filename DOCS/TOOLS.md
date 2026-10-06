@@ -4,6 +4,21 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Integer pair-clamp access controls
+
+[Pair-clamp driver](../tools/experiments/game_integer_pair_clamp_candidates.py)
+screens 23 forms under O2/g3, O2, O1/g3 and O1: 92 controls, empty compiler
+diagnostics, no direct exact form. It installs no source, guards or profile.
+Requires retail ROM, IDO and MIPS tools; receipts are ignored under
+`conker/build/game-integer-pair-clamp/`.
+[Seven recovery tests](../tools/tests/test_game_integer_pair_clamp_recovery.py)
+bind the non-matching source/slot, compare complete guest access traces and
+native footprints, and detect wrong clamp/swap controls. A local oracle adds
+only XOR; shared runners remain unchanged. Explicit register-field renaming
+proves correspondence of the 24-word operation core, not an installed
+normalizer or whole-function match. The saved-pointer frame and return tail
+remain open. See [Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md).
+
 ## Indexed state-save compiler controls
 
 [State-save driver](../tools/experiments/game_indexed_state_save_candidates.py)
