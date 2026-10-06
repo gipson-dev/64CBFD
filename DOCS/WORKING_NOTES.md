@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1023](WORKING_NOTES/1023-game-zone-neighbor-selection-lifetime-screen-20261006.md)):
+Retain the query pointer in `func_1508B3F8`: 369 emitted words, frame 0x140,
+no padding; differences improve 340 to 282. Not byte-exact. Ninety-one new
+controls, 2990 four-way guest cases, full parent/visitor coverage and 1424 native
+footprints; 17 qualification/lifetime and 13 visitor regression tests pass.
+Only parent changes in 6059 slots; protected data/guards and README/counts
+unchanged. No query enlargement or guards/profile/overflow. Next: private
+homes and address lifetimes; 370-word / 233-difference control is oversized.
+Root lookup remains a placeholder. Game matching goal stays active.
+
 2026-10-06 ([Note 1022](WORKING_NOTES/1022-game-zone-neighbor-selection-recovery-20261006.md)):
 Recover `func_1508B3F8`'s full queued-zone/player selection pass; not matched.
 367 body / 369 slot words, frame 0x140, 340 differences. No new guards/profile.

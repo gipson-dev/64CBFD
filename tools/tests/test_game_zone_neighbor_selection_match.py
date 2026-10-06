@@ -274,6 +274,7 @@ class GameZoneNeighborSelectionMatchTests(unittest.TestCase):
         cls.output.mkdir(exist_ok=True)
         cls.record, cls.words = screen.compile_candidate(cls.root, cls.output, 'selected', screen.SELECTED)
         _, cls.baseline = screen.compile_candidate(cls.root, cls.output, 'baseline', screen.BASELINE)
+        _, cls.checkpoint = screen.compile_candidate(cls.root, cls.output, 'checkpoint', screen.CHECKPOINT)
         rom = (cls.root / 'conker/conker.us.bin').read_bytes()
         cls.retail = list(struct.unpack_from('>369I', rom, 0xB88A8))
         cls.visitor = list(struct.unpack_from('>84I', rom, 0xB8758))
@@ -285,7 +286,7 @@ class GameZoneNeighborSelectionMatchTests(unittest.TestCase):
     def check_case(self, memory, phase=0, roots=(0, 8), mode=0):
         expected_memory, calls, writes = reference(memory, roots, mode)
         models = [ZoneOracle(words, memory, self.visitor, phase, roots, mode).run()
-                  for words in (self.retail, self.words, self.baseline)]
+                  for words in (self.retail, self.words, self.baseline, self.checkpoint)]
         for model in models:
             self.assertEqual(model.calls, calls)
             self.assertEqual(external_writes(model), writes)
@@ -373,7 +374,7 @@ class GameZoneNeighborSelectionMatchTests(unittest.TestCase):
                 ('repeat-query', screen.SELECTED.replace('if (!ready)', 'if (1)')),
                 ('missing-queue-clear', screen.SELECTED.replace(
                     '    *(s8 *)((u8 *)D_800D23B0 + 0x1745) = 0;\n', '')),
-                ('inclusive-distance', screen.SELECTED.replace('dz < query.distances[j]', 'dz <= query.distances[j]')
+                ('inclusive-distance', screen.SELECTED.replace('dz < context->distances[j]', 'dz <= context->distances[j]')
                     .replace('dz < *(f32 *)(distances', 'dz <= *(f32 *)(distances')
                     .replace('dz < minimum', 'dz <= minimum'))):
             self.assertNotEqual(body, screen.SELECTED)
@@ -505,10 +506,11 @@ for(c=0;c<1424;c++) {
     def test_compiler_inventory_complete_body_and_fitting_contract(self):
         forms = screen.candidates()
         self.assertEqual((len(forms), len(dict(forms))), (29, 29))
-        self.assertEqual(screen.SELECTED, dict(forms)['retail-byte-cursors'])
+        self.assertEqual(screen.CHECKPOINT, dict(forms)['retail-byte-cursors'])
+        self.assertEqual(screen.SELECTED, screen.retain_query_pointer(screen.CHECKPOINT))
         self.assertEqual((self.record['body_words'], self.record['frame'],
-                          self.record['real_differences'], self.record['diagnostics']), (367, 0x140, 340, ''))
-        self.assertEqual(len(self.words), 367)
+                          self.record['real_differences'], self.record['diagnostics']), (369, 0x140, 282, ''))
+        self.assertEqual(len(self.words), 369)
         for name, expected in (('indexed', (249, 0x138, 333)),
                                ('explicit-four-candidates', (371, 0x140, 323)),
                                ('retail-remainder-z-reuse', (370, 0x140, 257))):
@@ -524,7 +526,7 @@ for(c=0;c<1424;c++) {
         self.assertIn('void func_1508B3F8(void);', (self.root / 'conker/include/functions.h').read_text())
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'),
                                                      'mips-linux-gnu-objdump')
-        self.assertEqual(functions['func_1508B3F8'], self.words + [0, 0])
+        self.assertEqual(functions['func_1508B3F8'], self.words)
         self.assertEqual((addresses['func_1508B3F8'], addresses['func_1508B9BC']), (ENTRY, 0x1508B9BC))
         self.assertNotIn('__retail_overflow_func_1508B3F8', functions)
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:

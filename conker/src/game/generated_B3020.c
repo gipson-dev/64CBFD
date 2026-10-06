@@ -443,6 +443,7 @@ void func_1508B2A8(u8 id, NeighborVisitQueryB3020 *query) {
 
 void func_1508B3F8(void) {
     NeighborVisitQueryB3020 query;
+    NeighborVisitQueryB3020 *context;
     s32 *selections;
     u8 *zone;
     u8 *actor;
@@ -465,6 +466,7 @@ void func_1508B3F8(void) {
     u8 *end;
     s32 remainder;
 
+    context = &query;
     selections = (s32 *)(D_800D23B0 + 0x55C);
     zone = (u8 *)D_800D23B0 + 0x1748;
     for (i = 0; i < D_8008FD8C; i++) {
@@ -473,7 +475,7 @@ void func_1508B3F8(void) {
         }
     }
     for (i = 0; i < *(s8 *)((u8 *)D_800D23B0 + 0x1745); i++, zone += 12) {
-        query.threshold = *(f32 *)(zone + 0);
+        context->threshold = *(f32 *)(zone + 0);
         x = (f32)*(s16 *)(zone + 4);
         y = (f32)*(s16 *)(zone + 6);
         z = (f32)*(s16 *)(zone + 8);
@@ -484,45 +486,45 @@ void func_1508B3F8(void) {
             if (dz < 200.0f && -100.0f < dz) {
                 dx = *(f32 *)(actor + 0x14) - x;
                 dz = *(f32 *)(actor + 0x1C) - z;
-                if (dx * dx + dz * dz < query.threshold + 100.0f) {
+                if (dx * dx + dz * dz < context->threshold + 100.0f) {
                     best = 0xFF;
                     minimum = D_8009DA5C;
                     if (!ready) {
-                        query.count = 0;
+                        context->count = 0;
                         ready = 1;
                         root = func_15085DF8(x, y, z, 0, func_15085DA8(y));
                         if (root != -1) {
-                            query.x = x;
-                            query.z = z;
-                            query.count = 0;
-                            bzero(query.visited, 32);
-                            func_1508B2A8((u8)root, &query);
+                            context->x = x;
+                            context->z = z;
+                            context->count = 0;
+                            bzero(context->visited, 32);
+                            func_1508B2A8((u8)root, context);
                         }
                     }
                     /* Keep the remainder-first, four-candidate retail scan. */
                     j = 0;
-                    if (query.count > 0) {
+                    if (context->count > 0) {
                         nodes = D_800D2350;
-                        remainder = query.count & 3;
+                        remainder = context->count & 3;
                         if (remainder) {
                             do {
-                                node = nodes + query.ids[j] * 16;
+                                node = nodes + context->ids[j] * 16;
                                 dx = (f32)*(s16 *)(node + 0) - *(f32 *)(actor + 0x14);
                                 dz = (f32)*(s16 *)(node + 4) - *(f32 *)(actor + 0x1C);
                                 dz = dx * dx + dz * dz;
-                                if (dz < query.distances[j] && dz < minimum) {
-                                    best = query.ids[j];
+                                if (dz < context->distances[j] && dz < minimum) {
+                                    best = context->ids[j];
                                     minimum = dz;
                                 }
                                 j++;
                             } while (j != remainder);
-                            if (j == query.count) {
+                            if (j == context->count) {
                                 goto selection;
                             }
                         }
-                        ids = (u8 *)&query + j;
-                        distances = (u8 *)&query + j * 4;
-                        end = (u8 *)&query + query.count * 4;
+                        ids = (u8 *)context + j;
+                        distances = (u8 *)context + j * 4;
+                        end = (u8 *)context + context->count * 4;
                         do {
                             node = nodes + ids[46] * 16;
                             dx = (f32)*(s16 *)(node + 0) - *(f32 *)(actor + 0x14);

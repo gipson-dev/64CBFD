@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Zone Selection Lifetime Improvement - 2026-10-06
+
+[Note 1023](WORKING_NOTES/1023-game-zone-neighbor-selection-lifetime-screen-20261006.md)
+improves DECOMP `func_1508B3F8` from 340 to 282 aligned differences: 369 emitted
+words, frame 0x140, no padding. Still not byte-exact; no guards/profile change
+or query enlargement. All 17 qualification/lifetime and 13 visitor regression
+tests pass; 2990 four-way guest cases, full parent/visitor coverage and 1424
+native footprints. Only parent changes in 6059 slots; data/guards intact.
+Game exact remains 2635/4789, zero drift. Next: guest private homes/address
+lifetimes. Root lookup remains a zero-return placeholder. This is not full
+helper-chain, PC gameplay or host integration acceptance. No sibling source,
+build/save/frozen Release change, transplant or push.
+
 ## Game Zone Neighbor Selection Recovery - 2026-10-06
 
 [Note 1022](WORKING_NOTES/1022-game-zone-neighbor-selection-recovery-20261006.md)

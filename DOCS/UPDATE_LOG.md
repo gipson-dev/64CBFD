@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Zone Selection Lifetime Improvement
+
+[Note 1023](WORKING_NOTES/1023-game-zone-neighbor-selection-lifetime-screen-20261006.md)
+improves `func_1508B3F8` from 340 to 282 aligned differences: 369 emitted words,
+frame 0x140, no padding. Still non-matching; no new guards/profile/overflow or
+query enlargement. Ninety-one compiler controls, 2990 four-way guest cases,
+full parent/visitor coverage and 1424 native footprints. All 17 qualification/
+lifetime and 13 visitor regression tests pass. Only parent changes across
+6059 slots; all protected sections/owners/guards intact. README aggregates
+and counts unchanged. Next: query/private homes and address lifetimes; the
+233-difference control is one word too large and remains uninstalled.
+No full lookup/gameplay, sibling/frozen Release change or push.
+
 ## 2026-10-06 Game Zone Neighbor Selection Recovery
 
 [Note 1022](WORKING_NOTES/1022-game-zone-neighbor-selection-recovery-20261006.md)

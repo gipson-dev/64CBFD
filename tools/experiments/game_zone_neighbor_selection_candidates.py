@@ -237,7 +237,25 @@ def candidates():
     return forms
 
 
-SELECTED = dict(candidates())['retail-byte-cursors']
+CHECKPOINT = dict(candidates())['retail-byte-cursors']
+
+
+def retain_query_pointer(body, flags=False):
+    body = replace(body, '    NeighborVisitQueryB3020 query;',
+                   '    NeighborVisitQueryB3020 query;\n'
+                   '    NeighborVisitQueryB3020 *context;'
+                   + ('\n    u8 *flags;' if flags else ''))
+    body = body.replace('query.', 'context->').replace('&query', 'context')
+    body = replace(body, '    selections =',
+                   '    context = &query;\n'
+                   + ('    flags = context->visited;\n' if flags else '')
+                   + '    selections =')
+    if flags:
+        body = body.replace('bzero(context->visited, 32);', 'bzero(flags, 32);')
+    return body
+
+
+SELECTED = retain_query_pointer(CHECKPOINT)
 
 
 def compile_candidate(root, output, name, body, unroll=False):

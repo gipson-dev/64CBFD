@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Zone/player selection lifetime improvement:
+[Note 1023](WORKING_NOTES/1023-game-zone-neighbor-selection-lifetime-screen-20261006.md)
+retains the typed query pointer in `func_1508B3F8`: 369 emitted words, no padding,
+frame 0x140; differences fall from 340 to 282. Still not byte-exact. No new
+guards/profile/assembly/overflow or query enlargement. Ninety-one additional
+controls; 2990 four-way guest cases, full parent/visitor coverage and 1424
+native footprints. All 17 qualification/lifetime and 13 visitor regression
+tests pass. Only parent changes across 6059 slots; protected sections, all
+720 Game-data owners and 10643 guards intact. README/counts unchanged.
+Next: retail query/private homes and saved address lifetimes; retained
+370-word / 233-difference control remains oversized and uninstalled.
+Root lookup remains a placeholder; full helper-chain/gameplay unqualified.
+
 Zone/player neighbor selection semantic recovery:
 [Note 1022](WORKING_NOTES/1022-game-zone-neighbor-selection-recovery-20261006.md)
 replaces `func_1508B3F8`'s placeholder with the complete parent pass. Not a

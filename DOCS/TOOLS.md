@@ -4,6 +4,20 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Zone selection compiler controls
+
+[Recovery driver](../tools/experiments/game_zone_neighbor_selection_candidates.py)
+retains the original 29-form inventory and previous source checkpoint.
+[Lifetime driver](../tools/experiments/game_zone_neighbor_selection_lifetimes.py)
+adds 52 lifetime, 16 cursor and 23 register-hint controls without changing the
+recovered query layout. Run the latter module normally, with `--cursors`, or
+with `--registers`; mode switches are mutually exclusive. Each mode writes a
+separate JSON receipt under ignored `conker/build/game-zone-neighbor-lifetimes/`.
+Requires the extracted retail ROM, WSL IDO and MIPS binutils. Experiment output
+does not install source, enable oversized bodies or count as a byte match.
+See [Note 1023](WORKING_NOTES/1023-game-zone-neighbor-selection-lifetime-screen-20261006.md)
+for measurements and qualification boundaries.
+
 ## Toolchain smoke test
 
 Validate the project-native raw-object, minimal-ELF, and standard vertex
