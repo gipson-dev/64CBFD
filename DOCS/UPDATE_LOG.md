@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-05 Game Position Radius Append Direct Match
+
+[Note 1019](WORKING_NOTES/1019-game-position-radius-append-direct-match-20261005.md)
+recovers `func_1508B20C`'s complete 39-word leaf directly from C, replacing
+the zero-return placeholder. No guards or profile/header/assembly change.
+34 compiler controls; nine qualification tests pass, with 8192 three-way
+guest cases, 252 bounded actual-caller cases, 65536 native cases and full
+instruction coverage. Another 57 focused regression tests pass, no skips.
+Only target changes across 6060 slots; protected sections/720 owners and
+all 10637 older guards unchanged. Totals: 3306/5462, Game 2633/4789 exact,
+zero drift, 2156 different. README only aggregate tables updated.
+No sibling/frozen Release change, full caller/gameplay acceptance or push.
+
 ## 2026-10-05 Game Actor Context Dispatcher Byte Match
 
 [Note 1018](WORKING_NOTES/1018-game-actor-context-dispatcher-byte-match-20261005.md)

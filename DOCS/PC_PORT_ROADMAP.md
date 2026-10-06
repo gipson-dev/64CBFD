@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Position Radius Append Direct Match - 2026-10-05
+
+[Note 1019](WORKING_NOTES/1019-game-position-radius-append-direct-match-20261005.md)
+matches DECOMP `func_1508B20C` directly across all 39 words: signed count,
+truncated XYZ, squared radius and fresh store bases. No guards, profile or
+header change. Nine qualification and 57 focused regression tests pass;
+8192 three-way guest / 252 bounded actual-caller / 65536 native cases.
+Only target changes in 6060 slots; protected sections/720 owners intact.
+Game exact 2633/4789, zero drift; README aggregate tables updated.
+Continue guest matching. Full caller/FCSR/gameplay and host integration
+remain separate; no sibling source/build/save/frozen Release change or push.
+
 ## Game Actor Context Dispatcher Byte Match - 2026-10-05
 
 [Note 1018](WORKING_NOTES/1018-game-actor-context-dispatcher-byte-match-20261005.md)

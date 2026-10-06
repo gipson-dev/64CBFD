@@ -382,8 +382,20 @@ void func_1508B1D4(s32 arg0) {
     }
 }
 
-s32 func_1508B20C() {
-    return 0;
+void func_1508B20C(f32 x, f32 y, f32 z, f32 radius) {
+    u8 *base;
+    s32 index;
+
+    base = (u8 *)D_800D23B0;
+    if (base != NULL) {
+        if (*(s8 *)(base + 0x1745) < 8) {
+            index = (*(s8 *)(base + 0x1745))++;
+            *(s16 *)((u8 *)D_800D23B0 + index * 12 + 0x174C) = (s16)(s32)x;
+            *(s16 *)((u8 *)D_800D23B0 + index * 12 + 0x174E) = (s16)(s32)y;
+            *(s16 *)((u8 *)D_800D23B0 + index * 12 + 0x1750) = (s16)(s32)z;
+            *(f32 *)((u8 *)D_800D23B0 + index * 12 + 0x1748) = radius * radius;
+        }
+    }
 }
 
 s32 func_1508B2A8() {

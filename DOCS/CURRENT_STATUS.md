@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Position/radius append direct match:
+[Note 1019](WORKING_NOTES/1019-game-position-radius-append-direct-match-20261005.md)
+replaces `func_1508B20C`'s false zero-return placeholder with all 39 words
+emitting directly from semantic C. Signed count, post-increment, truncated
+XYZ and squared radius preserve five fresh base reads and store order.
+No guards, header/profile/assembly change. All 34 compiler controls complete;
+nine qualification tests pass, including 8192 three-way guest cases,
+252 bounded actual-caller cases and 65536 native cases. All 39 words covered.
+Only target changes across 6060 slots; protected sections/720 data owners
+and all 10637 older guards remain intact. Another 57 regression tests pass.
+Counts: 3306/5462 total, 2633/4789 Game exact, zero drift, 2156 different.
+README aggregate tables updated; full caller/FCSR/gameplay unqualified.
+Continue Game matching; 15040CC8 needs a new saved-register/loop lifetime
+shape, while the triangle read/frame boundary remains open under 1017.
+
 Actor context dispatcher byte match:
 [Note 1018](WORKING_NOTES/1018-game-actor-context-dispatcher-byte-match-20261005.md)
 closes `func_15044380` across all 107 words. A per-visit enable pointer

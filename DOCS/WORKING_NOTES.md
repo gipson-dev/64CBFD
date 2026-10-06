@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 1019](WORKING_NOTES/1019-game-position-radius-append-direct-match-20261005.md)):
+Recover `func_1508B20C` directly: 39 words, no guards/profile/header change.
+Signed count/post-increment captures the old index; five base reads,
+ordered truncated XYZ and radius-square stores match retail. 34 controls,
+nine qualification tests, 8192 three-way guest / 252 bounded actual-caller /
+65536 native cases; full leaf coverage. Another 57 focused tests pass.
+Only target changes in 6060 slots; protected sections/720 owners and older
+guards intact. Game exact 2633/4789, zero drift; README aggregates updated.
+Continue Game matching; caller/FCSR/gameplay not qualified here.
+
 2026-10-05 ([Note 1018](WORKING_NOTES/1018-game-actor-context-dispatcher-byte-match-20261005.md)):
 Match `func_15044380`'s complete 107-word slot. Enable pointer recovers frame
 0x68 and saved context +0x5C; 15 guarded allocation/schedule/commutative
