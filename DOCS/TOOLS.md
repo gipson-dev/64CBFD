@@ -4,6 +4,23 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Context-classifier compiler controls
+
+[Driver](../tools/experiments/game_context_classifier_candidates.py):global/local
+world reads and inside/outside defaults across four actual-SDK profiles,
+16 controls; eight O2/g3 or O2 controls match57 words directly, no frame/guards.
+[Eight tests](../tools/tests/test_game_context_classifier_match.py) bind
+full32-bit inputs,15822 two-body guest cases,5308551 actual32-bit native
+cases,2688 connected dispatcher cases, eight semantic negatives, strict guest
+range/override gates and actual padding with alternate world/pool addresses.
+Full-owner compile checks all150 table targets, six pool references, addend
+0x218,608-byte private pool (eight final padding bytes), original640-byte
+data owner, unchanged neighboring code/relocations and the same three warnings.
+Compiler pool is discarded; no shared padding-tool or compiler-profile change.
+Ignored receipts: `conker/build/game-context-classifier-test/`; see
+[Note 1063](WORKING_NOTES/1063-game-context-classifier-match-20261006.md).
+Dispatcher experiment now uses both typed classifier declarations.
+
 ## Actor-classifier compiler controls
 
 [Driver](../tools/experiments/game_actor_classifier_candidates.py):eight
@@ -18,8 +35,8 @@ replace the neighboring context table.16384 actual32-bit native cases and8192
 two-body guest cases;4608 connected dispatcher cases.
 Ignored receipts under `conker/build/game-actor-classifier-test/`; see
 [Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md).
-Dispatcher experiment now uses the recovered actor-classifier prototype;
-the pending context-classifier declaration is unchanged.
+Dispatcher experiment uses the recovered actor-classifier prototype; the
+context-classifier declaration was subsequently typed in Note1063.
 
 ## Effect-dispatch compiler controls
 

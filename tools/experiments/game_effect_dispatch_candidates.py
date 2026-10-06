@@ -20,7 +20,7 @@ typedef void (*GameEffectCallback)(u8 *, s32, s32);
 typedef struct { GameEffectCallback callback; s32 count; } GameEffectEntry;
 s32 func_15141C0C(u8 *actor);
 s32 func_1510F8CC(s32);
-s32 func_15141CC0();
+s32 func_15141CC0(s32 context);
 s32 func_15141E38(s32, s32);
 s32 func_1514ECE0(u8 *, s16, u8 **);
 '''

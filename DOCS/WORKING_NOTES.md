@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-06 ([Note 1063](WORKING_NOTES/1063-game-context-classifier-match-20261006.md)):
+`func_15141CC0`:57 direct words, no frame/guards, existing O2/g3. One world
+load/four overrides/full-width context switch; shared pool addend0x218 retains
+all150 original targets.16 controls,15822 guest/5308551 native/2688 connected
+cases, eight semantic negatives; original640-byte owner preserved. Only target
+across6059 slots; protected sections/720 owners/10785 guards unchanged,
+warnings3->3. Exact3338/5464, Game2665/4791,2126 different, zero drift;
+converted unchanged. All32 focused tests pass/no skips;45 docs/3497 relative
+links/zero broken, tools/syntax/diff checks pass. Next80-word `func_15141E38`;
+eight initial controls fit80 words/frame0x58/37 differences, not installed or
+qualified (retail frame0x60).
+37-word `func_15141DA4` is already exact. No sibling/Release/runtime/host
+adoption, hardware/gameplay acceptance or push.
+
 2026-10-06 ([Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md)):
 `func_15141C0C`:45 direct words, no frame/guards, O2/g3. Both original switch
 tables anchored; private compiler pool/padding discarded.32 controls,8192

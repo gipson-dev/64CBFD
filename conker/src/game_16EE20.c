@@ -8,14 +8,14 @@ typedef void (*GameEffectCallback)(u8 *, s32, s32);
 typedef struct { GameEffectCallback callback; s32 count; } GameEffectEntry;
 s32 func_15141C0C(u8 *actor);
 s32 func_1510F8CC(s32);
-s32 func_15141CC0();
+s32 func_15141CC0(s32 context);
 s32 func_15141E38(s32, s32);
 s32 func_1514ECE0(u8 *, s16, u8 **);
 
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
-s32 func_15141CC0();
+s32 func_15141CC0(s32 context);
 s32 func_15141E38(s32 arg0, s32 arg1);
 s32 func_15141F78();
 s32 func_15142180();
@@ -171,9 +171,46 @@ s32 func_15141C0C(u8 *actor) {
     }
     return 11;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15141CC0.s. */
-s32 func_15141CC0() {
-    return 0;
+/* Direct C; its switch follows the actor tables in the same anchored pool. */
+s32 func_15141CC0(s32 context) {
+    s32 world = D_800BE9F0;
+    if (world == 47) {
+        return 6;
+    }
+    if (world == 66) {
+        return 7;
+    }
+    if (world == 39) {
+        return 8;
+    }
+    if (world == 25) {
+        return 5;
+    }
+    switch (context) {
+        case 10:
+            return 0;
+        case 7:
+            return 2;
+        case 11:
+            return 1;
+        case 15:
+            return 3;
+        case 2:
+        case 8:
+        case 12:
+            if (world == 2) {
+                return 7;
+            }
+            return 4;
+        case 5:
+            if (world == 20) {
+                return 5;
+            }
+            return 9;
+        case 0:
+            return 9;
+    }
+    return 9;
 }
 void func_15141DA4(void *arg0, s32 arg1, s32 arg2) {
     if ((arg1 < 12) && (arg1 >= 0) &&

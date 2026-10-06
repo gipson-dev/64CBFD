@@ -1,5 +1,29 @@
 # PC Port Roadmap located in another project folder
 
+## Game Context Classifier Match - 2026-10-06
+
+[Note 1063](WORKING_NOTES/1063-game-context-classifier-match-20261006.md)
+recovers guest `func_15141CC0`:57 direct words, no frame or new guards;
+world overrides and full32-bit context inputs. Original context table remains
+after the actor tables at anchor+0x218, all150 targets preserved.16 controls,
+guest/native full-storage and connected dispatcher qualification. Only target
+across6059 slots; protected sections/720 owners/10785 guards unchanged,
+warnings3->3. Game2665/4791 exact (55.63%),2126 different, zero drift;
+converted counts/bytes unchanged. All32 focused tests pass/no skips;
+45 docs/3497 relative links/zero broken, tools/syntax/diff checks pass.
+
+- [x] Recover world/context semantics and typed local declarations.
+- [x] Qualify native, guest, negative, relocation and combined-owner pool gates.
+- [x] Rebuild/audit the production slot and retained neighboring functions.
+- [x] Pass32 focused regressions and refresh aggregate/documentation receipts.
+- [ ] Recover80-word `func_15141E38`: live effect-record refresh/create/link.
+
+The intervening37-word `func_15141DA4` already matches; do not count it again.
+Eight initial updater controls give80 words/frame0x58/37 differences;
+retail frame0x60 and semantic/native/production gates remain.
+No host adoption, hardware/gameplay acceptance, sibling source/build/save,
+frozen Release, runtime or push change.
+
 ## Game Actor Classifier Match - 2026-10-06
 
 [Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md)

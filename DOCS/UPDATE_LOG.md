@@ -1,5 +1,24 @@
 # Update Log
 
+## 2026-10-06 Game Context Classifier Match
+
+[Note 1063](WORKING_NOTES/1063-game-context-classifier-match-20261006.md):
+`func_15141CC0` matches all57 words directly from C, no frame or new guards.
+One world read and full32-bit context behavior; shared anchor preserves the
+original16-entry table at addend0x218 after both actor tables.16 controls,
+15822 paired guest,5308551 native and2688 connected dispatcher cases; eight
+compiled semantic negatives and full-owner/alternate-relocation gates.
+Only target across6059 slots; protected sections/720 owners/10785 guards
+unchanged, warnings3->3. Exact3338/5464 (61.09%), Game2665/4791 (55.63%),
+2126 different, zero drift; converted unchanged. All32 focused post-link tests
+pass in277.833 seconds, no skips/errors/failures;45 docs/3497 relative links/
+zero broken, tools/syntax/diff checks pass.
+Next80-word `func_15141E38` effect-record refresh/create/link; the intervening
+37-word `func_15141DA4` is already exact. Root README aggregates only;
+eight initial updater controls fit80 words but frame0x58/37 differences, not
+retail frame0x60 or maintained semantic/native/production acceptance;
+no sibling/Release/runtime/host adoption, hardware/gameplay acceptance or push.
+
 ## 2026-10-06 Game Actor Classifier Match
 
 [Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md):

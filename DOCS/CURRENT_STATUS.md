@@ -21,6 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Context-classifier recovery:
+[Note 1063](WORKING_NOTES/1063-game-context-classifier-match-20261006.md)
+recovers `func_15141CC0`: all57 words directly from C, no frame or guards.
+One signed32-bit world read, four overrides and full-width context switch.
+Existing pool anchor retains the16-entry table at addend0x218 after both
+actor tables; all150 targets and the original640-byte owner are unchanged.
+16 controls,15822 paired guest,5308551 native and2688 connected dispatcher
+cases; eight compiled semantic negatives. Only target changes across6059
+slots; all10785 guards, protected sections and720 data owners unchanged,
+warnings3->3. Exact3338/5464 (61.09%), Game2665/4791 (55.63%),2126 different,
+zero drift; converted counts/bytes unchanged. All32 focused tests pass in
+277.833 seconds, no skips/errors/failures;45 docs/3497 links/zero broken,
+tools/syntax/diff checks pass.
+Next `func_15141E38`:80 words/frame0x60, still a placeholder. The intervening
+37-word `func_15141DA4` is already exact. Preserve live search/cursor lifetime,
+refresh all matching records, then allocate/link only when none matched.
+Eight initial controls: private-cursor O2/g3 candidate fits80 words but has
+frame0x58 instead of0x60 and37 differences; not installed or qualified.
+No sibling/Release/runtime/host adoption, hardware/gameplay acceptance or push.
+
 Actor-classifier recovery:
 [Note 1062](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md)
 recovers `func_15141C0C`:all45 words directly from C, no frame or new guards.

@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest context-classifier match](WORKING_NOTES/1063-game-context-classifier-match-20261006.md):
+  57 direct words, no frame/guards; world overrides/full-width context inputs,
+  the original table at the shared pool's addend0x218, guest/native/connected
+  qualification. Next80-word effect-record updater `func_15141E38`.
+
 - [Latest actor-classifier match](WORKING_NOTES/1062-game-actor-classifier-match-20261006.md):
   45 direct words, no frame or new guards; both original switch tables preserved,
   guest/native and connected dispatcher cases. Next57-word context classifier
