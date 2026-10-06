@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-06 Game Source Effect Packet Direct Match
+
+[Note 1045](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md)
+replaces `func_1519ED84`'s stub with all 96 words directly, frame 0xA0,
+existing O2/g3. Header-field assignment order recovers retail temporaries;
+no new guards/profile/shared header/data. 88-byte packet, five untouched
+bytes, twelve arguments and conditional source-pointer copy. 98 controls,
+3456 three-body guest cases, 65536 byte-pair/halfword sweeps, 128 boundary,
+576 connected-placeholder, 131072 native and 192 actual-consumer native cases.
+Only target changes across 6059; protected sections/720 owners/10660 guards
+intact, owner diagnostics empty. Total 3323/5462, Game 2650/4789 exact;
+zero drift, 2139 different. All 34 focused post-link tests pass in 497.803
+seconds, no skips. Constructor
+still a placeholder; next `func_1513D2F0`. No full gameplay/host adoption,
+sibling/Release change or push.
+
 ## 2026-10-06 Game Source-Backed Actor Packet Recovery
 
 [Note 1044](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md)

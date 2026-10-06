@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest source effect packet direct match](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md):
+  96 direct words; complete 88-byte descriptor and twelve-argument handoff.
+  Next recover retained placeholder constructor `func_1513D2F0`.
+
 - [Latest source-backed actor packet recovery](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md):
   102 semantic words with 14 opening-schedule guards; full descriptor and
   conditional source-pointer copy. Next inspect `func_1519ED84`.

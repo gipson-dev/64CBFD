@@ -4,6 +4,23 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Source effect packet compiler controls
+
+[Driver](../tools/experiments/game_source_effect_packet_candidates.py) screens
+13 forms under four profiles plus 46 single-field ordering forms: 98 controls
+with real SDK types and fixed anchors. Selected header order emits all 96
+words/frame 0xA0 directly under O2/g3. The tool installs no source/profile/
+guards. Retail ROM, IDO and MIPS tools required; ignored receipts under
+`conker/build/game-source-effect-packet/`.
+[Nine tests](../tools/tests/test_game_source_effect_packet_match.py) bind every
+control and installed source/slot, compare full packet/call/memory traces for
+three bodies, and exhaust lifetime/selector/channel widths and float boundaries.
+Native opaque handoff and actual retained source-consumer C are qualified;
+the current constructor placeholder is connected separately to prove it still
+returns null without payload publication. No full constructor/backend/FCSR/
+hardware/gameplay/host adoption claim. See
+[Note 1045](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md).
+
 ## Source-backed actor packet compiler controls
 
 [Driver](../tools/experiments/game_actor_source_packet_candidates.py) screens

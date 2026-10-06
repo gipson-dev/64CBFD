@@ -93,6 +93,41 @@ struct ExtendedState15F680;
 void *func_1513264C(u8 *, s32, s32, struct ExtendedState15F680 *, s32, u8, s32);
 void *memcpy(void *, const void *, u32);
 
+typedef struct {
+    u8 mode;
+    u8 field01;
+    u16 field02;
+    s16 lifetime;
+    u8 pad06[2];
+    u32 field08;
+    u32 field0C;
+    u8 field10;
+    u8 field11;
+    u8 field12;
+    u8 field13;
+    f32 width;
+    f32 height;
+    Position1CBE20 position;
+    Position1CBE20 vector;
+    f32 field34;
+    f32 field38;
+    f32 field3C;
+    u32 flags;
+    u8 field44;
+    u8 field45;
+    u8 field46;
+    u8 field47;
+    u32 field48;
+    u8 field4C;
+    u8 pad4D[3];
+    u32 field50;
+    s16 field54;
+    s16 field56;
+} SourceEffect1CBE20;
+
+extern s32 D_800A4AA0;
+void *func_1513D2F0(void *, s32, u8, u8, u8, u8, u8, s32, s32, s32, u8, s32);
+
 /* Non-matching placeholders for the text-only asm slice asm/1CBE20.s. */
 
 AddressRecord1CBE20 *func_1519E970(s16 lifetime, u8 *owner, u8 mode, u8 *first,
@@ -223,8 +258,47 @@ s32 func_1519ED24(u8 *arg0) {
     return 1;
 }
 
-s32 func_1519ED84() {
-    return 0;
+void func_1519ED84(Source1CBE20 *source, s32 mode, s16 lifetime, u8 channel, s32 context) {
+    SourceEffect1CBE20 packet;
+    Source1CBE20 *savedSource;
+    u8 *effect;
+
+    savedSource = source;
+    packet.mode = mode;
+    packet.field01 = 0;
+    packet.field02 = 0x3B03;
+    packet.lifetime = lifetime;
+    packet.field08 = 0;
+    packet.field0C = 0;
+    packet.field10 = 255;
+    packet.field11 = 255;
+    packet.field12 = 255;
+    packet.field13 = 255;
+    packet.width = source->width * 10.0f;
+    packet.height = source->height * 10.0f;
+    packet.position.x = source->position.x;
+    packet.position.y = source->position.y;
+    packet.position.z = source->position.z;
+    packet.vector.x = source->vector.x;
+    packet.vector.y = source->vector.y;
+    packet.vector.z = source->vector.z;
+    packet.field34 = 1.0f;
+    packet.field38 = 1.0f;
+    packet.field3C = 1.0f;
+    packet.flags = 0x045C0081;
+    packet.field44 = 255;
+    packet.field45 = 255;
+    packet.field46 = 0;
+    packet.field47 = 7;
+    packet.field48 = 0;
+    packet.field4C = 255;
+    packet.field50 = 0;
+    packet.field54 = 1;
+    packet.field56 = 255;
+    effect = func_1513D2F0(&packet, (s32)&D_800A4AA0, 39, 0, 0, 23, 0, 3, 255, 4, channel, context);
+    if (effect != NULL) {
+        memcpy(effect + 0x110, &savedSource, sizeof(savedSource));
+    }
 }
 
 s32 func_1519EF04(u8 *arg0) {

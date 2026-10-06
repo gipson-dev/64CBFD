@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-06 ([Note 1045](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md)):
+`func_1519ED84`: all 96 words directly, frame 0xA0, existing O2/g3;
+no guards/profile/shared header/data edits. 88-byte descriptor with five
+untouched bytes, twelve-argument handoff and source-pointer publication.
+98 controls, 3456 three-body guest cases, 65536 sweeps, 128 boundary,
+576 connected-placeholder, 131072 native and 192 actual-consumer native cases.
+Only target changes across 6059 fixed slots; protected sections/720 owners/
+10660 guards intact; owner diagnostics empty. Total 3323/5462, Game
+2650/4789 exact, zero drift, 2139 different. All 34 focused post-link tests
+pass in 497.803 seconds, no skips. Next recover placeholder constructor `func_1513D2F0`; no complete
+gameplay/host claim, sibling/Release change or push.
+
 2026-10-06 ([Note 1044](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md)):
 `func_1519EB8C`: 102 words/frame 0xB8, 14 closed opening-schedule guards;
 no new profile/shared header/data. Full 124-byte actor descriptor with eight

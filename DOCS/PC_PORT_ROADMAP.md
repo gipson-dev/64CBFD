@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Source Effect Packet Direct Match - 2026-10-06
+
+[Note 1045](WORKING_NOTES/1045-game-source-effect-packet-direct-match-20261006.md)
+recovers guest `func_1519ED84`: 96 direct words/frame 0xA0, existing O2/g3,
+no new guards/profile/shared header/data. Full 88-byte descriptor, five
+untouched bytes and source-pointer copy qualified with 98 controls, 3456
+three-body guest cases, 65536 sweeps, 128 boundary, 576 connected-placeholder,
+131072 native and 192 actual-consumer native cases. Only target changes
+across 6059; protected sections/720 owners/10660 guards intact. Game
+2650/4789 exact, zero drift, 2139 different; owner diagnostics empty.
+All 34 focused post-link tests pass in 497.803 seconds, no skips. Constructor still a placeholder;
+next guest `func_1513D2F0`, not full gameplay/backend/hardware/host adoption.
+No sibling source/build/save/frozen Release change or push.
+
 ## Game Source-Backed Actor Packet Recovery - 2026-10-06
 
 [Note 1044](WORKING_NOTES/1044-game-actor-source-packet-byte-match-20261006.md)
