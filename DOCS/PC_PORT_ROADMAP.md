@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Root Neighbor Lookup Direct Match - 2026-10-06
+
+[Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)
+recovers DECOMP `func_15085DF8` across all 168 words directly from C, frame
+0x80, no guards/profile/overflow. All 45 lookup/parent/lifetime/visitor tests
+pass: 3275 lookup guest cases, 1536 native cases, 166 executable words plus
+two always-annulled delays. Exactly two of 6059 slots change: lookup and the
+geometric helper's float ABI. Parent and protected data/guards unchanged.
+Game exact increases to 2636/4789, zero drift, 2153 different. Next: guest
+`func_15086D94`, whose 207-word body still returns 0.0f. Parent remains at
+282 differences. No full geometry/helper-chain/FCSR/gameplay acceptance,
+host transplant, sibling source/build/save/frozen Release change or push.
+
 ## Game Zone Selection Lifetime Improvement - 2026-10-06
 
 [Note 1023](WORKING_NOTES/1023-game-zone-neighbor-selection-lifetime-screen-20261006.md)

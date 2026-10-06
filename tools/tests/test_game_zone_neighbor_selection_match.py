@@ -426,7 +426,7 @@ static f32 number(u32 word) {union {u32 u;f32 f;} v;v.u=word;return v.f;}
 static u32 word(f32 value) {union {u32 u;f32 f;} v;v.f=value;return v.u;}
 static void logWord(u32 value) {digest=(digest^value)*16777619;}
 s32 func_15085DA8(f32 y) {logWord(0x15085DA8);logWord(word(y));return 17;}
-s32 func_15085DF8(f32 x,f32 y,f32 z,s32 mode,s32 band) {
+s32 func_15085DF8(f32 x,f32 y,f32 z,s8 mode,s8 band) {
  logWord(0x15085DF8);logWord(word(x));logWord(word(y));logWord(word(z));
  logWord(mode);logWord(band);
  return rootMode==1?-1:rootMode==2?255:rootMode==3?0:(lookup++%2?8:0);
@@ -522,7 +522,6 @@ for(c=0;c<1424;c++) {
         source = (self.root / 'conker/src/game/generated_B3020.c').read_text()
         body = re.search(r'void func_1508B3F8\([^;{]*\{\n.*?\n\}', source, re.S).group()
         self.assertEqual(body, screen.SELECTED)
-        self.assertIn('s32 func_15085DF8(f32 x, f32 y, f32 z, s32 mode, s32 band) {\n    return 0;\n}', source)
         self.assertIn('void func_1508B3F8(void);', (self.root / 'conker/include/functions.h').read_text())
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'),
                                                      'mips-linux-gnu-objdump')
@@ -532,21 +531,14 @@ for(c=0;c<1424;c++) {
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             self.assertFalse(any(row['function'] == 'func_1508B3F8' for row in csv.DictReader(stream)))
 
-    def test_lookup_placeholder_only_adds_required_argument_homes(self):
+    def test_lookup_body_now_matches_retail_instead_of_its_placeholder(self):
+        from tools.experiments import game_root_neighbor_lookup_candidates as lookup
+
+        record, words = lookup.compile_candidate(self.root, self.output, 'root-lookup', lookup.SELECTED)
         functions, _, _ = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'),
                                              'mips-linux-gnu-objdump')
-        prefix = [0xE7AC0000, 0xE7AE0004, 0xAFA60008, 0xAFA7000C,
-                  0x00001025, 0x03E00008, 0]
-        self.assertEqual(functions['func_15085DF8'], prefix + [0] * (168 - len(prefix)))
-        for phase in (0, 8):
-            model = TriangleOracle(prefix, case_memory(), phase=phase, entry=ROOT,
-                                   arguments=(0, 0, bits(3.5), 0x1234AB00, 17))
-            model.f[12], model.f[14] = bits(1.25), bits(-2.75)
-            model.run()
-            self.assertEqual(model.r[2], 0)
-            self.assertEqual([(event[1], event[2], event[3]) for event in model.events if event[0] == 'W'],
-                             [(STACK + phase, 4, bits(1.25)), (STACK + phase + 4, 4, bits(-2.75)),
-                              (STACK + phase + 8, 4, bits(3.5)), (STACK + phase + 12, 4, 0x1234AB00)])
+        self.assertEqual((record['body_words'], record['frame'], record['real_differences']), (168, 0x80, 0))
+        self.assertEqual(functions['func_15085DF8'], words)
 
     def test_branch_likely_sign_gates_annul_delay_when_not_taken(self):
         # Branch over an increment when taken; annul its delay when not taken.

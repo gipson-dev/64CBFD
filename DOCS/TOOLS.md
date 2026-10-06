@@ -6,6 +6,15 @@ says otherwise.
 
 ## Zone selection compiler controls
 
+[Root lookup driver](../tools/experiments/game_root_neighbor_lookup_candidates.py)
+measures 35 source forms under both existing/default-unroll profiles and writes
+70 records to ignored `conker/build/game-root-neighbor-lookup/screen.json`.
+It preserves the pointer-based recovery and old typed placeholder; the
+unsigned-index forms are signed-count negative controls. Requires the retail
+ROM, IDO and MIPS binutils. See
+[Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)
+for the direct match and the still-placeholder geometric-helper boundary.
+
 [Recovery driver](../tools/experiments/game_zone_neighbor_selection_candidates.py)
 retains the original 29-form inventory and previous source checkpoint.
 [Lifetime driver](../tools/experiments/game_zone_neighbor_selection_lifetimes.py)

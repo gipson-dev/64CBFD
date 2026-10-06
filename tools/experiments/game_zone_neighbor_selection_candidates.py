@@ -25,7 +25,7 @@ extern u8 D_800CC2D0[];
 extern u8 *D_800D2350;
 extern f32 D_8009DA5C;
 s32 func_15085DA8(f32);
-s32 func_15085DF8(f32, f32, f32, s32, s32);
+s32 func_15085DF8(f32, f32, f32, s8, s8);
 void func_1508B2A8(u8, NeighborVisitQueryB3020 *);
 '''
 BASELINE = '''void func_1508B3F8(void) {

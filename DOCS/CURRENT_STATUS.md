@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Root neighbor lookup direct match:
+[Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)
+recovers `func_15085DF8` across all 168 words directly from C, frame 0x80,
+no guards/profile/overflow. Seventy controls; 3275 three-way guest cases,
+166 executable words (two always-annulled retail delays), 1536 native cases.
+All 45 lookup/parent/lifetime/visitor tests pass, no skips. All 6059 addresses/
+lengths survive; only lookup and the five-float geometric placeholder ABI
+change. Parent bytes and protected sections/720 owners/all guards unchanged.
+README aggregates updated: 3309/5462 total, 2636/4789 Game exact, zero drift,
+2153 different. Next: recover `func_15086D94`'s 207-word body; it still returns
+0.0f and is not matched. Parent remains at 282 differences. Full geometry/
+lookup/caller/gameplay and FCSR acceptance remain separate.
+
 Zone/player selection lifetime improvement:
 [Note 1023](WORKING_NOTES/1023-game-zone-neighbor-selection-lifetime-screen-20261006.md)
 retains the typed query pointer in `func_1508B3F8`: 369 emitted words, no padding,
@@ -32,7 +45,8 @@ tests pass. Only parent changes across 6059 slots; protected sections, all
 720 Game-data owners and 10643 guards intact. README/counts unchanged.
 Next: retail query/private homes and saved address lifetimes; retained
 370-word / 233-difference control remains oversized and uninstalled.
-Root lookup remains a placeholder; full helper-chain/gameplay unqualified.
+The lookup-placeholder boundary at that checkpoint is superseded by Note 1024
+above; full helper-chain/gameplay remains unqualified.
 
 Zone/player neighbor selection semantic recovery:
 [Note 1022](WORKING_NOTES/1022-game-zone-neighbor-selection-recovery-20261006.md)

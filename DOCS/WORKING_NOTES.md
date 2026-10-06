@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)):
+Recover `func_15085DF8` directly: 168 words, frame 0x80, no guards/profile/
+overflow. Seventy controls, 3275 three-way guest cases, 166 executed words
+plus two always-annulled delays, 1536 native cases; 45 combined tests pass.
+Only lookup and geometric placeholder ABI change in 6059 slots; parent and
+protected data/guards intact. README totals: 3309/5462, Game 2636/4789 exact,
+zero drift, 2153 different. Next: `func_15086D94`, 207 words, still a 0.0f
+placeholder. Parent remains 282 differences; full helper-chain/FCSR/gameplay
+not accepted. Game matching goal stays active.
+
 2026-10-06 ([Note 1023](WORKING_NOTES/1023-game-zone-neighbor-selection-lifetime-screen-20261006.md)):
 Retain the query pointer in `func_1508B3F8`: 369 emitted words, frame 0x140,
 no padding; differences improve 340 to 282. Not byte-exact. Ninety-one new

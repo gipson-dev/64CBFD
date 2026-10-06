@@ -8,6 +8,10 @@ extern s8 D_8008FD90;
 extern u8 *D_800872A0;
 extern s8 D_8008FD8C;
 extern f32 D_8009DA5C;
+extern u8 D_8008729C;
+extern f32 D_8009D9CC;
+extern s32 D_800D2354;
+f32 func_15086D94(f32, f32, f32, f32, f32);
 
 /* Non-matching placeholders for the text-only asm slice asm/B3020.s. */
 
@@ -55,8 +59,48 @@ s32 func_15085DA8(f32 arg0) {
     return D_800D237C[i];
 }
 
-s32 func_15085DF8(f32 x, f32 y, f32 z, s32 mode, s32 band) {
-    return 0;
+s32 func_15085DF8(f32 x, f32 y, f32 z, s8 mode, s8 band) {
+    s32 i;
+    s32 best;
+    s32 check;
+    f32 dx;
+    f32 dy;
+    f32 dz;
+    f32 distance;
+    f32 minimum;
+
+    check = 0;
+    minimum = D_8009D9CC;
+    if (mode == 0) {
+        check = 1;
+    }
+    if (D_8008729C != 0xFF) {
+        dx = (f32)*(s16 *)((D_800D2350 + D_8008729C * 16) + 0) - x;
+        dy = (f32)*(s16 *)((D_800D2350 + D_8008729C * 16) + 2) - y;
+        dz = (f32)*(s16 *)((D_800D2350 + D_8008729C * 16) + 4) - z;
+        if (!check || (check && func_15086D94(x, y, z, dx, dz) < 0.0f)) {
+            minimum = dx * dx + dy * dy + dz * dz + 10.0f;
+        }
+        D_8008729C = 0xFF;
+    }
+    best = 0xFF;
+    for (i = 0; i < D_80087290; i++) {
+        if ((D_800D2350 + (i << 4))[6] == band || band == -1) {
+            if ((D_800D2350 + (i << 4))[14] == mode || mode == -1) {
+                dx = (f32)*(s16 *)((D_800D2350 + (i << 4)) + 0) - x;
+                dy = (f32)*(s16 *)((D_800D2350 + (i << 4)) + 2) - y;
+                dz = (f32)*(s16 *)((D_800D2350 + (i << 4)) + 4) - z;
+                distance = dx * dx + dy * dy + dz * dz;
+                if (distance < minimum &&
+                    (!check || (check && func_15086D94(x, y, z, dx, dz) < 0.0f))) {
+                    minimum = distance;
+                    best = i;
+                }
+            }
+        }
+    }
+    D_800D2354 = (s32)sqrtf(minimum);
+    return best;
 }
 
 s32 func_15086098() {
@@ -123,8 +167,8 @@ s32 func_15086D48(s32 arg0) {
     return 0xFF;
 }
 
-s32 func_15086D94() {
-    return 0;
+f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
+    return 0.0f;
 }
 
 s32 func_150870D0() {

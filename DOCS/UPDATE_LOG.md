@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Root Neighbor Lookup Direct Match
+
+[Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)
+recovers `func_15085DF8`: all 168 words directly from C, frame 0x80, no guards/
+profile/overflow. Seventy controls; 3275 three-way guest cases, 166 executed
+words plus two always-annulled delays, 1536 native cases. All 45 lookup/parent/
+lifetime/visitor tests pass, no skips. Exactly two slots change in the 6059-slot
+audit: lookup and the geometric helper's float ABI. Parent, protected data and
+all guards unchanged. README totals: 3309/5462, Game 2636/4789 exact, zero drift,
+2153 different. Next: recover the still-placeholder 207-word `func_15086D94`;
+parent remains 282 differences. No full helper-chain/gameplay/FCSR acceptance,
+sibling/frozen Release change or push.
+
 ## 2026-10-06 Game Zone Selection Lifetime Improvement
 
 [Note 1023](WORKING_NOTES/1023-game-zone-neighbor-selection-lifetime-screen-20261006.md)
