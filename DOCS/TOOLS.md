@@ -4,6 +4,21 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Actor-event dispatch compiler controls
+
+[Driver](../tools/experiments/game_actor_event_dispatch_candidates.py):eight
+selector/status/branch/address forms, four profiles, **32 controls**, actual SDK.
+Selected unsigned N64 address subtraction gives55 direct words/frame0x18 under
+existing O2/g3; no guards or driver installation. [Nine tests](../tools/tests/test_game_actor_event_dispatch_match.py)
+bind full production source/slot/relocations and unchanged guard metadata;
+60724 two-body guest and262144 actual32-bit native cases, repeated lookup,
+byte command, live callback/event/status aliases and nine semantic negatives.
+Saved-home/provider and invalid-target probes are guest-only; native table
+aliases use native byte order. Helpers are bounded models, not complete
+helper/hardware/gameplay acceptance. Ignored receipts under
+`conker/build/game-actor-event-dispatch-test/`; see
+[Note 1057](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md).
+
 ## Piecewise envelope compiler controls
 
 [Driver](../tools/experiments/game_piecewise_envelope_candidates.py):

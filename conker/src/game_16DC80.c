@@ -10,7 +10,7 @@ s32 func_151408A4();
 void func_151412BC(void);
 s32 func_15141478(u8 *actor);
 s32 func_151415D4(u8 *actor);
-s32 func_151416E8();
+void func_151416E8(u8 *actor, u8 *event, u8 command);
 /* End generated placeholder declarations. */
 
 f32 func_1514182C(void *arg0, void *arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5);
@@ -19,6 +19,9 @@ typedef struct {
     s32 first;
     s32 second;
 } TwoWord16DC80;
+
+typedef void (*ActorEventCallback16DC80)(u8 *, u8 *, u8);
+extern ActorEventCallback16DC80 D_8008A02C[];
 
 u8 *func_151407D0(void *source, s32 size, u8 *descriptor, u8 kind, u8 mode,
                        u8 first, u8 variant, s8 selector, u8 channel, s32 context) {
@@ -177,9 +180,22 @@ s32 func_151415D4(u8 *actor) {
     return 1;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_16DC80/func_151416E8.s. */
-s32 func_151416E8() {
-    return 0;
+void func_151416E8(u8 *actor, u8 *event, u8 command) {
+    u8 *payload;
+    if (D_8008A02C[*(volatile u8 *)(actor + 0x168)] != NULL) {
+        D_8008A02C[*(volatile u8 *)(actor + 0x168)](actor, event, command);
+    }
+    if (command == 0x22 || command == 0x24 || command == 0x25) {
+        /* Retain the retail payload base using unsigned N64 address arithmetic. */
+        payload = (u8 *)((u32)actor - (u32)-0x110);
+        if (event[0] == payload[0x58]) {
+            switch (command) {
+                case 0x22: func_1516972C((struct102 *)actor); break;
+                case 0x24: *(s8 *)(payload + 0x59) = -1; break;
+                case 0x25: *(s8 *)(payload + 0x59) = 2; break;
+            }
+        }
+    }
 }
 
 void func_151417C4(u8 arg0, u8 arg1) {

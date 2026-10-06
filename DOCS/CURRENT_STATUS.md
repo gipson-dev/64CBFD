@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor-event dispatch recovery:
+[Note 1057](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md)
+recovers `func_151416E8`:55 words/frame0x18, all direct under existing O2/g3,
+no guards. Repeated volatile selector/table lookups, byte command, live event
+gate, cleanup/signed status stores and unsigned N64 payload address retained.
+60724 two-body guest/262144 actual32-bit native cases;32 controls/nine compiled
+negatives. Only target changes across6059 slots; protected sections/720 owners
+and10760 guards unchanged, owner warnings0->0. Converted unchanged; exact
+total3334/5464 (61.02%), Game2661/4791 (55.54%),2130 different, zero drift.
+All28 focused post-link tests pass in246.167 seconds, no skips;39 docs/3432
+links/zero broken. Next63-word `func_1514182C`:16 initial controls give63 words/
+frame0x80/31 differences. Matrix translation row, float height ABI and caller need
+qualification; no next-function installation, host/hardware/gameplay acceptance
+or sibling/Release/runtime/push change.
+
 Piecewise envelope recovery:
 [Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md)
 recovers `func_151415D4`:69 words/no frame, existing O2/g3,56 direct plus13

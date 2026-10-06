@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1057](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md)):
+`func_151416E8`:55 direct words/frame0x18, O2/g3, no guards. Repeated volatile
+selector/table lookup, byte narrowing, live event/cleanup/status and unsigned
+N64 payload arithmetic.60724 guest/262144 native cases;32 controls/nine negatives.
+Only target across6059 slots; protected sections/720 owners/10760 guards
+unchanged, owner warnings0->0. Exact3334/5464, Game2661/4791,2130 different,
+zero drift, converted unchanged.28 focused tests pass/no skips. Next63-word
+`func_1514182C`:matrix translation row and float height/caller need qualification;
+no next installation, sibling/Release/runtime or push change.
+
 2026-10-06 ([Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md)):
 `func_151415D4`:69 words/no frame,56 direct plus13 FPR-lifetime guards, O2/g3.
 Scoped factors recover rise store/branch/nop;6480 guest/3240 native finite

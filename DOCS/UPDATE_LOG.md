@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Actor Event Dispatch Match
+
+[Note 1057](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md):
+`func_151416E8` is direct55-word/frame0x18 C, existing O2/g3, no guards.
+Independent repeated callback lookup, byte command, live event gate and
+cleanup/status updates retained.60724 guest/262144 native cases;32 controls,
+nine negatives. Rebuilt audit changes only target across6059 slots; protected
+sections/720 owners/10760 guards unchanged, owner warnings0->0. Exact3334/5464,
+Game2661/4791 (55.54%),2130 different, zero drift; converted counts unchanged.
+All28 focused post-link tests pass/no skips. Next63-word `func_1514182C`:
+matrix translation-row/float-height ABI and caller qualification pending.
+Root README aggregates only; no sibling/Release/runtime or push change.
+
 ## 2026-10-06 Game Piecewise Envelope Match
 
 [Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md)

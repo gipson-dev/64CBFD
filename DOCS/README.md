@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest actor-event dispatch match](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md):
+  55 direct words/frame0x18, no guards;60724 guest/262144 native cases qualify
+  byte ABI, repeated lookup and live status dispatch. Next `func_1514182C`.
+
 - [Latest piecewise envelope match](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md):
   69 words,56 direct plus13 FPR-lifetime guards; scoped factors recover rise
   scheduling, guest/native/live/float-boundary qualification. Next `func_151416E8`.

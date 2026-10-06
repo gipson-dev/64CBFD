@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Event Dispatch Match - 2026-10-06
+
+[Note 1057](WORKING_NOTES/1057-game-actor-event-dispatch-match-20261006.md)
+recovers guest `func_151416E8`:55 direct words/frame0x18, O2/g3, no guards.
+60724 guest/262144 actual32-bit native cases cover repeated lookup, byte ABI,
+live event/mutations and status/cleanup dispatch. Only target across6059 slots;
+protected sections/720 owners/10760 guards unchanged, owner warnings0->0.
+Game2661/4791 exact (55.54%),2130 different, zero drift; converted unchanged.
+28 focused post-link tests pass/no skips. Next63-word `func_1514182C`:matrix
+translation row, float-height ABI and caller need qualification. No host
+adoption, hardware/gameplay acceptance, sibling source/build/save/frozen Release,
+runtime or push change.
+
 ## Game Piecewise Envelope Match - 2026-10-06
 
 [Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261006.md)
