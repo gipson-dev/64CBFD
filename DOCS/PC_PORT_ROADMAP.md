@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Linked Record Position Tail Match - 2026-10-06
+
+[Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md)
+closes the DECOMP `func_150E6FAC` 72-word slot with three tail-layout guards
+and a saved-RA insertion. Raw semantic C remains unchanged at 71 words;
+no profile/frame change or overflow. 3360 three-way guest cases, all reachable
+words; all 84 tests pass, no skips. Only this slot changes across 6059.
+Protected data and old guards intact.
+Game now 2637/4789 exact, zero drift, 2152 different. Next ordinary candidate:
+`func_150C2804` packet/ABI recovery. Edge-helper 102 differences and full
+gameplay/FCSR/helper behavior remain open. No host adoption, sibling source/
+build/save/frozen Release change or push. Game matching goal stays active.
+
 ## Game Graph Edge Crossing Scope Audit - 2026-10-06
 
 [Note 1027](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md)

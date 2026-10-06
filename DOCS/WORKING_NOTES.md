@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md)):
+Match `func_150E6FAC`'s 72-word slot with three closed tail-layout guards and
+one saved-RA insertion; raw semantic C remains unchanged at 71 words.
+16 source/backend controls, 3360 three-way guest cases, all reachable words;
+84 combined tests pass, no skips. Only this slot changes across 6059.
+Protected data and old guards intact.
+README aggregates: 3310/5462 total, Game 2637/4789 exact, zero drift.
+Next ordinary candidate `func_150C2804`; edge helper still 102 differences.
+No sibling/frozen Release change or push; Game matching goal stays active.
+
 2026-10-06 ([Note 1027](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md)):
 Bank 101 source-only scope/plane/aggregate/operand controls for `func_15086D94`.
 None improve its 102 differences; all 6059 linked slots equal the preceding

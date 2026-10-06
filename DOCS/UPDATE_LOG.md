@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Linked Record Position Tail Match
+
+[Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md)
+matches all 72 words of `func_150E6FAC` through three closed-layout guards and
+one saved-RA insertion. Semantic source remains unchanged at 71 raw words;
+not a direct C match. 16 source/backend controls; 3360 three-way guest cases,
+71 reachable words and one structurally unreachable load. Only this slot
+changes across 6059; protected data and all old guards intact.
+All 84 combined tests pass in 267.948 seconds, no skips. README aggregate
+rows updated: total 3310/5462 and Game 2637/4789 exact, zero drift, 2152 different.
+Next ordinary candidate `func_150C2804`; edge helper stays non-matching at 102.
+No sibling/frozen Release change or push; Game goal remains active.
+
 ## 2026-10-06 Game Graph Edge Crossing Scope Audit
 
 [Note 1027](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md)

@@ -2,6 +2,11 @@
 
 Date: 2026-10-04. Starting HEAD: `83f618fd`.
 
+Matching continuation: [Note 1028](1028-game-linked-record-position-tail-match-20261006.md)
+now closes the tail through three expected-word guards and a single saved-RA
+insertion, with an independently tested control-layout proof. The 71-word
+semantic C body below remains unchanged; it is not a direct raw-C match.
+
 ## Retained Improvement
 
 Continue Note 919's semantic `func_150E6FAC` recovery. Move the record-pointer

@@ -16,6 +16,14 @@ or permits oversized code. See
 [Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)
 for the selected 207-word / 102-difference improvement and qualification limits.
 
+[Linked-record tail driver](../tools/experiments/game_linked_record_tail_candidates.py)
+freezes the original 71-word body and measures four store-volatility forms
+under four backend profiles (16 controls), with ignored receipts. Its strict
+normalizer binds the three compact words of the closed return-tail expansion;
+it does not install source or enable oversized bodies. Six tests qualify
+3360 three-way guest cases, actual emitter/relocation rejection and production
+slot equality. See [Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md).
+
 [Scope driver](../tools/experiments/game_graph_edge_crossing_scopes.py) freezes
 the 102-difference body and screens 101 named controls across default scopes,
 `--planes`, `--aggregates`, `--sums` and `--products`. Each writes a separate

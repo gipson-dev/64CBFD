@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest linked-record position tail match](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md):
+  all 72 linked words exact through three closed-layout guards and one RA
+  insertion; 3360 guest cases, source unchanged and 6058 other slots intact.
 - [Latest graph edge-crossing scope audit](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md):
   101 rejected source controls, unchanged 102-difference baseline and 6059 slots;
   next inspect the closest remaining C match's return tail.

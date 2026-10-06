@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Linked-record position tail match:
+[Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md)
+closes `func_150E6FAC` across all 72 retail words using three expected-word /
+empty-relocation guards and one saved-RA insertion. Raw C remains 71 words
+with 15 aligned differences; no source/profile/frame change. 3360 three-way
+guest cases, all reachable retail words, independent emitter/stale-anchor
+checks. Only this slot changes across 6059; protected sections/720 owners and
+all old guards intact. All 84 tests pass in 267.948 seconds, no skips.
+README: total 3310/5462 and Game 2637/4789 exact,
+zero drift, 2152 different. Next ordinary candidate: `func_150C2804`, 37-word
+packet dispatcher still a placeholder. Edge helper remains at 102 differences.
+No full gameplay/FCSR/helper implementation, sibling/frozen Release or push claim.
+
 Graph edge crossing scope audit:
 [Note 1027](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md)
 rejects 101 scope/plane/aggregate/operand controls without improving the
