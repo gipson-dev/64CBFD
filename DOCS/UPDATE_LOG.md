@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-05 Game Actor Triangle Remap Semantic Recovery
+
+[Note 1012](WORKING_NOTES/1012-game-actor-triangle-remap-semantic-recovery-and-matrix-tail-restoration-20261005.md)
+recovers complete `func_1502F490` C and restores its necessary original matrix
+leaf assembly/tail-register interface. The C still differs at 275 words:
+298 body / 302 slot, frame 0x160 versus retail 0x138. No guards/profile change.
+All 53 focused tests pass: 1715 three-way cases, actual phase/matrix/tail
+connections, 57344 native references and 33 aliases. Only two slots change
+in 6060; protected sections, 720 data owners and CSV remain intact.
+Exact C numerators stay 3304 total / 2631 Game; denominators fall to 5462 /
+4789 because the false C matrix placeholder becomes retained ASM. Zero drift;
+README aggregate update only. Next: this transform's frame/array/loop match.
+No PC gameplay claim, sibling/frozen Release change or push.
+All 355 combined tests pass in 829.704 seconds, no skips; tools, whitespace
+and 2965 relative links pass. The C transform remains non-matching.
+
 ## 2026-10-05 Game Actor Buffer Copy Direct Match
 
 [Note 1011](WORKING_NOTES/1011-game-actor-buffer-copy-direct-match-20261005.md)

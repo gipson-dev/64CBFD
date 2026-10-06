@@ -191,9 +191,10 @@ static void reference(void) {
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'), 'mips-linux-gnu-objdump')
         self.assertEqual(addresses['func_1502F3C8'], ENTRY)
         self.assertEqual(functions['func_1502F3C8'], self.retail)
-        # The unconverted transform remains a placeholder, not a full-transform claim.
-        self.assertEqual(functions['func_1502F490'][:3], [0x00001025, 0x03E00008, 0])
-        self.assertEqual(functions['func_1502F490'][3:], [0] * 299)
+        # Full semantic recovery is qualified separately; it is not byte-exact.
+        from tools.experiments import game_actor_triangle_transform_candidates as transform
+        _, recovered = transform.compile_candidate(self.root, self.output, 'recovered-transform', transform.SELECTED)
+        self.assertEqual(functions['func_1502F490'], recovered)
 
     def test_word_and_relocation_guards_fail_closed(self):
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as file:

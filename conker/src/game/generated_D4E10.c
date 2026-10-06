@@ -1,10 +1,9 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/D4E10.s. */
+/* Register-specific matrix leaf and unresolved text-only routines. */
 
-s32 func_150A7960() {
-    return 0;
-}
+/* The continuation requires A0/T9 and F0/F2/F4 to remain live. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D4E10/func_150A7960.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_D4E10/func_150A7A00.s")
 

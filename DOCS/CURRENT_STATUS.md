@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor triangle remap: [Note 1012](WORKING_NOTES/1012-game-actor-triangle-remap-semantic-recovery-and-matrix-tail-restoration-20261005.md)
+replaces `func_1502F490`'s placeholder with complete semantic C: 298 body /
+302 slot words, frame 0x160, 275 differences; retail frame is 0x138.
+The required 40-word matrix leaf is restored to original assembly, preserving
+the retained tail's A0/T9/F0/F2/F4 interface. This is not a new C byte match.
+All 53 focused tests pass; 1715 three-way guest cases, 57344 native reference
+cases and 33 native aliases include actual phase/matrix/tail connections.
+Only these two slots change in 6060; protected sections, 720 data owners and
+CSV stay intact. Counts: 3304 / 5462 total, 2631 / 4789 Game, zero drift,
+2158 different. Conversion falls by one when false C becomes retained ASM.
+README aggregates updated. Next: transform frame/array/loop byte matching.
+No full hardware-FPU/PC gameplay claim or sibling/frozen Release change.
+All 355 combined tests pass in 829.704 seconds, no skips; tools, whitespace
+and 2965 relative links pass. The C transform remains non-matching.
+
 Actor buffer copy: [Note 1011](WORKING_NOTES/1011-game-actor-buffer-copy-direct-match-20261005.md)
 recovers `func_1502F948`'s ordered gates, cached ID, allocation ABI and fresh
 copy inputs. All 45 words / frame 0x28 emit directly under default IDO;

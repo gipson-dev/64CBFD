@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-05 ([Note 1012](WORKING_NOTES/1012-game-actor-triangle-remap-semantic-recovery-and-matrix-tail-restoration-20261005.md)):
+Recover complete `func_1502F490` semantic C: 298 / 302 words, frame 0x160,
+275 differences. Restore its required 40-word original matrix assembly leaf
+and qualify the retained A0/T9/F0/F2/F4 continuation interface. No new guards
+or compiler profile; not a new C match. All 53 focused tests pass, including
+1715 three-way cases, 57344 native references and 33 aliases. Only two slots
+change in 6060; protected sections/data owners/CSV remain exact or unchanged.
+Counts: 3304 / 5462 total, 2631 / 4789 Game, zero drift. Conversion drops one
+when false C becomes ASM; README aggregate update only. Next: frame 0x138,
+array homes and SDK-loop lifetimes for this same transform.
+All 355 combined tests pass in 829.704 seconds, no skips; tools, whitespace
+and 2965 relative links pass. The C transform remains non-matching.
+
 2026-10-05 ([Note 1011](WORKING_NOTES/1011-game-actor-buffer-copy-direct-match-20261005.md)):
 Recover `func_1502F948`: all 45 words / frame 0x28 directly exact under
 default IDO, no guards/profile override. Qualification covers 13461

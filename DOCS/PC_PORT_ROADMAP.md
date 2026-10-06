@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Triangle Remap Recovery - 2026-10-05
+
+[Note 1012](WORKING_NOTES/1012-game-actor-triangle-remap-semantic-recovery-and-matrix-tail-restoration-20261005.md)
+recovers DECOMP `func_1502F490`'s complete C and required original matrix leaf
+assembly, including its retained live-register tail interface. C is not yet
+byte-exact: 298 / 302 words, frame 0x160, 275 differences. All 53 focused
+tests pass, including bounded real phase/matrix/tail connections and native
+reference/alias cases. Only two slots change in 6060; protected data stay exact.
+Game C count is 2631 / 4789 exact, zero drift; the denominator falls because
+false matrix C is now ASM. README aggregates updated. Next: transform matching
+in DECOMP. No host transplant, PC runtime/gameplay acceptance or sibling
+source/build/save/frozen Release change; no push.
+All 355 combined tests pass in 829.704 seconds, no skips; tools, whitespace
+and 2965 relative links pass. These are DECOMP checks, not PC acceptance.
+
 ## Game Actor Buffer Copy Direct Match - 2026-10-05
 
 [Note 1011](WORKING_NOTES/1011-game-actor-buffer-copy-direct-match-20261005.md)

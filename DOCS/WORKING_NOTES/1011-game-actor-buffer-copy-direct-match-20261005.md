@@ -149,6 +149,12 @@ git diff --check
 ```
 
 Next connected semantic recovery: **`func_1502F490`**, still a placeholder,
+as of this checkpoint. The subsequent complete C recovery and mandatory
+matrix-tail assembly restoration are recorded in
+[Note 1012](1012-game-actor-triangle-remap-semantic-recovery-and-matrix-tail-restoration-20261005.md).
+
+Original handoff:
+
 302 words / frame 0x138. Preserve its five-argument actor/X/Y/Z/joint ABI.
 The known zero-table return is not evidence for its nonzero-table paths.
 Work in this order:

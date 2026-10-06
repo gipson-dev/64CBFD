@@ -93,7 +93,9 @@ SELECTED = dict(candidates())['for-loop']
 
 
 def production_body():
-    return SELECTED.replace('D_800CC2D0', '((ActorAttachment58F80 *)D_800CC2D0)').replace(
+    return SELECTED.replace('func_1502F490(D_800CC2D0 + actor->reference - 1,',
+                            'func_1502F490((ActorCopy58F80 *)(D_800CC2D0 + actor->reference - 1),').replace(
+                            'D_800CC2D0', '((ActorAttachment58F80 *)D_800CC2D0)').replace(
                             'D_800D121C', '((ActorAttachment58F80 *)D_800D121C)')
 
 

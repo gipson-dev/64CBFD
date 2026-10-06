@@ -454,7 +454,21 @@ typedef struct ActorAttachment58F80 {
     u8 pad275[0xB7];
 } ActorAttachment58F80;
 
-s32 func_1502F490();
+typedef struct ActorVertex58F80 {
+    s16 x, y, z;
+    u8 pad6[10];
+} ActorVertex58F80;
+
+typedef struct ActorRange58F80 {
+    u32 start, count, matrix;
+} ActorRange58F80;
+
+extern u32 *D_800C6070[];
+extern u8 *D_800D19A0[];
+extern u16 D_800C5EF8[];
+extern ActorRange58F80 *D_800C5C08[];
+void func_150A7960(f32 *, f32, f32, f32, f32 *, f32 *, f32 *);
+void func_1502F490(ActorCopy58F80 *, f32 *, f32 *, f32 *, s32);
 
 void func_1502F3C8(void) {
     ActorAttachment58F80 *actor;
@@ -462,7 +476,7 @@ void func_1502F3C8(void) {
     for (actor = ((ActorAttachment58F80 *)D_800CC2D0); actor != ((ActorAttachment58F80 *)D_800D121C); actor++) {
         if (actor->active != 0 && actor->reference != 0) {
             actor->y = actor->boundY;
-            func_1502F490(((ActorAttachment58F80 *)D_800CC2D0) + actor->reference - 1,
+            func_1502F490((ActorCopy58F80 *)(((ActorAttachment58F80 *)D_800CC2D0) + actor->reference - 1),
                          &actor->x, &actor->y, &actor->z, actor->joint);
             if (actor->y < actor->boundY) {
                 actor->y = actor->boundY;
@@ -473,8 +487,107 @@ void func_1502F3C8(void) {
     }
 }
 
-s32 func_1502F490() {
-    return 0;
+void func_1502F490(ActorCopy58F80 *actor, f32 *x, f32 *y, f32 *z, s32 joint) {
+    ActorVertex58F80 *vertices[3];
+    u32 matrices[3];
+    f32 points[6][3];
+    f32 edgeA[2][3], edgeB[2][3];
+    f32 relative[3], blend[3];
+    ActorVertex58F80 **vertex;
+    u32 *matrix;
+    f32 (*point)[3], (*triangle)[3];
+    u32 *offsets;
+    u8 *base, *matrixBase;
+    ActorRange58F80 *range;
+    s32 id, count, i, j, pass, axis;
+    u32 mask, bit;
+    f32 denominator, weightA, weightB;
+
+    id = actor->id;
+    offsets = D_800C6070[id];
+    if (offsets == NULL) {
+        return;
+    }
+    base = D_800D19A0[id];
+    for (i = 0; i != 3; i++) {
+        vertices[i] = (ActorVertex58F80 *)(base + offsets[joint * 3 + i]);
+    }
+    count = D_800C5EF8[id];
+    mask = 0;
+    for (i = 0; ; i++) {
+        if (i == count) {
+            return;
+        }
+        for (j = 0; j != 3; j++) {
+            bit = 1u << j;
+            if ((mask & bit) == 0) {
+                range = D_800C5C08[id] + i;
+                if ((u32)vertices[j] >= range->start &&
+                    (u32)vertices[j] < range->start + (range->count << 4)) {
+                    matrices[j] = range->matrix;
+                    mask |= bit;
+                }
+            }
+        }
+        if (mask == 7) {
+            break;
+        }
+    }
+    matrixBase = actor->buffer;
+    if (matrixBase == NULL || actor->source == NULL) {
+        return;
+    }
+    triangle = points;
+    do {
+        if (triangle == points + 3) {
+            matrixBase = actor->source;
+        }
+        vertex = vertices;
+        matrix = matrices;
+        point = triangle;
+        do {
+            func_150A7960((f32 *)(matrixBase + (*matrix << 6)),
+                         (f32)(*vertex)->x, (f32)(*vertex)->y, (f32)(*vertex)->z,
+                         &(*point)[0], &(*point)[1], &(*point)[2]);
+            vertex++;
+            matrix++;
+            point++;
+        } while (matrix != matrices + 3);
+        triangle += 3;
+    } while (triangle != points + 6);
+    for (pass = 0; pass != 2; pass++) {
+        for (axis = 0; axis != 3; axis++) {
+            edgeA[pass][axis] = points[pass * 3 + 1][axis] - points[pass * 3][axis];
+            edgeB[pass][axis] = points[pass * 3 + 2][axis] - points[pass * 3][axis];
+        }
+    }
+    relative[0] = *x - points[0][0];
+    relative[1] = *y - points[0][1];
+    relative[2] = *z - points[0][2];
+    denominator = edgeA[0][0] * edgeB[0][2] - edgeB[0][0] * edgeA[0][2];
+    if (denominator == 0.0f) {
+        weightA = -100.0f;
+    } else {
+        weightA = (relative[0] * edgeB[0][2] - edgeB[0][0] * relative[2]) / denominator;
+    }
+    if (weightA < 0.0f || 1.0f < weightA) {
+        return;
+    }
+    if (edgeB[0][2] == 0.0f) {
+        weightB = -100.0f;
+    } else {
+        weightB = (relative[2] - weightA * edgeA[0][2]) / edgeB[0][2];
+    }
+    if (weightB < 0.0f || 1.0f < weightB) {
+        return;
+    }
+    for (axis = 0; axis != 3; axis++) {
+        blend[axis] = edgeB[1][axis] * weightB + weightA * edgeA[1][axis];
+    }
+    relative[1] = edgeB[0][1] * weightB + weightA * edgeA[0][1];
+    *x += ((blend[0] + points[3][0]) - relative[0]) - points[0][0];
+    *y += ((blend[1] + points[3][1]) - relative[1]) - points[0][1];
+    *z += ((blend[2] + points[3][2]) - relative[2]) - points[0][2];
 }
 
 s32 allocate_memory(s32, s32, s32, s32);
