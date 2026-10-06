@@ -341,34 +341,27 @@ s32 func_15123568(s32 arg0) {
 s32 func_151236D0() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15123934.s. */
 s32 func_15123934(struct108 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+    s16 *slot16;
+
+    slot16 = (s16 *) arg0 + arg4;
+    if (slot16[0x106] == 0) {
+        ((u16 *) slot16)[1] = arg0->unk0;
+        ((s32 *) arg0 + arg4)[0xC] = arg0->unk2C;
+        ((s32 *) arg0 + arg4)[0x22] = arg0->unk84;
+        ((s32 *) arg0 + arg4)[0x38] = arg0->unkDC;
+        ((s32 *) arg0 + arg4)[0x4E] = arg0->unk134;
+        slot16[0xDB] = arg0->unk1B4;
+        slot16[0xF1] = arg0->unk1E0;
+        arg0->unk2C = arg1;
+        arg0->unkDC = arg2;
+        arg0->unk134 = arg3;
+        slot16[0x106] = 1;
+        func_15125394(arg0);
+        return 1;
+    }
     return 0;
 }
-// NON-MATCHING: not sure what is up with arg0
-// s32 func_15123934(struct108 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
-//     struct108 *temp_v0;
-//     struct108 *temp_v1;
-//
-//     temp_v1 = &arg0[arg4]; // ???
-//     if (temp_v1->unk20C == 0) {
-//         temp_v1->unk2 = arg0->unk0;
-//         temp_v0 = &arg0[arg4 * 4]; // ???
-//         temp_v0->unk30 = arg0->unk2C;
-//         temp_v0->unk88 = arg0->unk84;
-//         temp_v0->unkE0 = arg0->unkDC;
-//         temp_v0->unk138 = arg0->unk134;
-//         temp_v1->unk1B6[0] = arg0->unk1B4;
-//         temp_v1->unk1E2 = arg0->unk1E0;
-//         arg0->unk2C = arg1;
-//         arg0->unkDC = arg2;
-//         arg0->unk134 = arg3;
-//         temp_v1->unk20C = 1;
-//         func_15125394();
-//         return 1;
-//     }
-//     return 0;
-// }
 s32 func_151239CC(struct108 *arg0, s32 arg1) {
     s16 *slot16;
 

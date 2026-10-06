@@ -2,6 +2,9 @@
 
 Date: 2026-10-06. Starting checkpoint: `52e9156c`.
 
+Next-function continuation: [Note 1031](1031-game-indexed-state-save-direct-match-20261006.md)
+recovers `func_15123934` directly and advances the queue to `func_15143D18`.
+
 **Game func_150D26F0 matches all 39 words / 156 bytes directly from C.**
 Slot: 0x150D26F0..0x150D278C, ROM 0xFFBA0..0xFFC3C, frame 0x20.
 The zero-return placeholder in

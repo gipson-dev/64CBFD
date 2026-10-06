@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Indexed State Save Direct Match - 2026-10-06
+
+[Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md)
+recovers DECOMP `func_15123934` directly: 38 words, frame 0x18, no new guards
+or profile. Sequential field saves and pre-call mark are qualified by 7680
+opaque / 4736 connected cases, six zero-mask prefixes and 2520 native cases.
+All 43 tests pass in 48.052 seconds, no skips. Only target changes across
+6059; protected sections/720 owners/10646 guards intact. Game 2640/4789 exact,
+zero drift, 2149 different. Next: guest `func_15143D18` XOR-swap/clamp matching.
+No host adoption, full gameplay/caller/valid-domain expansion acceptance,
+sibling source/build/save/frozen Release change or push. Game remains active.
+
 ## Game Random Reload Timer Direct Match - 2026-10-06
 
 [Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md)

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Indexed State Save Direct Match
+
+[Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md)
+replaces `func_15123934`'s stub and incorrect commented indexing draft with
+the complete 38-word save/install/mark/callback pass, directly under O2/g3.
+No new guards/profile/data. 32 controls; 7680 opaque / 4736 connected cases,
+six zero-mask prefixes, 2520 native cases; all 43 tests pass in 48.052 seconds,
+no skips. Only target changes across 6059; protected sections/owners/10646
+guards unchanged. Five owner warnings equal baseline. README: total 3313/5462
+and Game 2640/4789 exact, zero drift, 2149 different. Next: `func_15143D18`
+XOR-swap/clamp matching, not placeholder recovery. No sibling/frozen Release
+change, full gameplay/valid-domain expansion claim or push; Game remains active.
+
 ## 2026-10-06 Game Random Reload Timer Direct Match
 
 [Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md)

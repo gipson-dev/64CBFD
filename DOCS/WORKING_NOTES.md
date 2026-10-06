@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-06 ([Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md)):
+Recover `func_15123934` directly: 38 words, frame 0x18, real actor definitions,
+no new guards/profile/data. Preserve separate halfword/word lanes, sequential
+overlap, pre-call mark and actor callback. 32 controls, 7680 opaque / 4736
+connected cases, six zero-mask prefixes and 2520 native cases. All 43 tests
+pass in 48.052 seconds, no skips. Only target changes across 6059; protected
+sections/720 owners/10646 guards intact. Owner warnings equal baseline.
+README: 3313/5462 total and Game 2640/4789 exact, zero drift. Next inspect
+`func_15143D18`'s existing 24-word C versus retail 36-word XOR-swap/clamp.
+No gameplay/valid-domain expansion or sibling/frozen Release claim or push.
+Game matching remains active.
+
 2026-10-06 ([Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md)):
 Recover `func_150D26F0` directly: 39 words, frame 0x20, existing O2/g3,
 no new guards/profile/data. 76 controls; 896 gate / 1920 reload / 48 trap

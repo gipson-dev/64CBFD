@@ -4,6 +4,19 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Indexed state-save compiler controls
+
+[State-save driver](../tools/experiments/game_indexed_state_save_candidates.py)
+uses real actor/header definitions for eight forms under four profiles:
+32 controls, ignored `conker/build/game-indexed-state-save/` receipts. It
+installs no source, guards or profile. Requires retail ROM, IDO and MIPS tools.
+[Eight state-save tests](../tools/tests/test_game_indexed_state_save_match.py)
+bind the direct slot and unchanged exact callback, sequential byte traces,
+opaque mutation, connected bit selection, zero-mask non-returning prefixes
+and native footprints. Shared guest runners are unchanged; bounded diagnostic
+indexes do not establish valid gameplay slots or portable out-of-bounds C.
+See [Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md).
+
 ## Random-reload timer compiler controls
 
 [Timer driver](../tools/experiments/game_random_reload_timer_candidates.py)

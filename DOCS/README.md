@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest indexed state-save direct match](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md):
+  all 38 words under existing O2/g3; correct two-scale indexing, sequential
+  overlap and connected bit-selector/zero-mask boundary qualification.
 - [Latest random-reload timer direct match](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md):
   all 39 words from typed C; wrapped countdown, unsigned remainder,
   post-callback fields and bounded zero-divisor trap qualification.

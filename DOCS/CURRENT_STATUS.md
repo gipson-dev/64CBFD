@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Indexed state-save direct match:
+[Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006.md)
+recovers `func_15123934` across all 38 words directly from C, frame 0x18,
+real actor/header definitions, no guards/profile/data change. Correct 2/4-byte
+indexing, sequential overlapping saves, callback argument and pre-call mark.
+32 compiler controls; 7680 opaque / 4736 connected three-way cases, six
+zero-mask non-returning prefixes and 2520 native cases. All wrapper/callback
+words covered; unchanged production callback already 14/14 exact. All 43
+tests pass in 48.052 seconds, no skips. Only target changes across 6059;
+protected sections/720 owners/10646 guards intact. Five owner warnings
+verified identical to baseline. README: total 3313/5462, Game 2640/4789 exact,
+zero drift, 2149 different. Next: `func_15143D18`, existing 24-word C versus
+36-word retail XOR-swap/clamp, 36 differences. Full gameplay/callers/valid
+domain expansion remain unqualified. No sibling/frozen Release change or push.
+
 Random-reload timer direct match:
 [Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-20261006.md)
 recovers `func_150D26F0`: all 39 words directly under existing O2/g3, frame
