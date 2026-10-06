@@ -51,7 +51,12 @@ confirmed.
 
 ## Planning and history
 
-- [Active position-projection investigation](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md):
+- [Latest position-projection match](WORKING_NOTES/1059-game-position-projection-match-20261006.md):
+  63 direct words/frame 0x80, no guards; float-height caller stays 18-word exact.
+  Live guest/native aliases, connected retail SDK instructions and float boundaries.
+  Next `func_15141A7C` (100 words/frame 0x48).
+
+- [Historical position-projection investigation](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md):
   63-word target,60 controls; cached origin reads fix tested alias behavior but
   the67-word/frame0x88 candidate still exceeds retail. No installation.
 

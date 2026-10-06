@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Position Projection Match - 2026-10-06
+
+[Note 1059](WORKING_NOTES/1059-game-position-projection-match-20261006.md)
+recovers guest `func_1514182C`: 63 direct words/frame 0x80, no guards; the
+float-bit-safe caller remains exact across 18 words. Live origins, ordered
+products and matrix translation are qualified with guest/native aliases,
+connected retail matrix instructions, bounded trig fixtures and special floats.
+Only target changes across 6059 slots; protected sections/720 owners/10760
+guards unchanged, warnings 0->0. Game 2662/4791 exact (55.56%), 2129 different,
+zero drift; converted counts/bytes unchanged. Next 100-word `func_15141A7C`.
+This is guest-source qualification, not restored helper C, host adoption,
+real trig/hardware/FCSR/gameplay acceptance. No sibling source/build/save,
+frozen Release, runtime or push change.
+
 ## Game Position Projection Investigation - 2026-10-06
 
 [Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md):

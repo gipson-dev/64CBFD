@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-06 Game Position Projection Match
+
+[Note 1059](WORKING_NOTES/1059-game-position-projection-match-20261006.md):
+`func_1514182C` matches all 63 words directly from C, frame 0x80, no guards.
+Delta-first declaration order recovers the private matrix layout; live origin
+reads and ordered floating multiplications survive aliases. The float-bit-safe
+caller remains exact across all 18 words. Void effect-only ABI does not claim
+a native scalar return. Nine new tests cover guest/native aliases, real retail
+matrix-helper instructions with bounded trig responses, float boundaries and
+ten compiled negatives. Audit changes only target across 6059 slots; protected
+sections/720 owners/10760 guards unchanged, owner warnings 0->0. Exact total
+3335/5464 (61.04%), Game 2662/4791 (55.56%), 2129 different, zero drift;
+converted counts/bytes unchanged. Next `func_15141A7C` (100 words/frame 0x48).
+All 37 focused post-link tests pass in 206.840 seconds, no skips/errors/failures;
+41 documents/3453 links/zero broken and compileall/diff/tools checks pass.
+Root README aggregates only; no sibling/Release/runtime/host adoption or push.
+
 ## 2026-10-06 Game Position Projection Investigation
 
 [Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md):

@@ -4,7 +4,24 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
-## Position-projection investigation receipts
+## Position-projection compiler controls
+
+[Driver](../tools/experiments/game_position_projection_candidates.py): eight
+scope/sum shapes across four SDK profiles and four typed-caller controls,
+**36 controls**, no installation. Delta declarations before the matrix give
+all 63 direct words/frame 0x80 under existing O2/g3; caller 16 body words plus
+two zero padding words remains exact. [Nine tests](../tools/tests/test_game_position_projection_match.py)
+bind actual source, complete production slots, call relocations and unchanged
+10760 guards. Full-storage guest/native alias and mutation cases, connected
+retail rotation/coordinate instructions with bounded finite trig responses,
+typed caller, special-float direct bits and ten compiled semantic negatives.
+Only arithmetic NaNs classify; no real trig/FCSR/hardware/gameplay or native
+float-return claim. Guest saved-home mutation probes are not legal native
+private-frame alias claims. Ignored receipts under
+`conker/build/game-position-projection-test/`; see
+[Note 1059](WORKING_NOTES/1059-game-position-projection-match-20261006.md).
+
+## Historical position-projection investigation receipts
 
 [Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md)
 records60 ignored SDK compiler controls and two126-case guest probes under

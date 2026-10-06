@@ -21,7 +21,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Active position-projection investigation:
+Position-projection recovery:
+[Note 1059](WORKING_NOTES/1059-game-position-projection-match-20261006.md)
+recovers `func_1514182C`: all 63 words / frame 0x80 directly from C under
+existing O2/g3, no guards. Delta declarations before the matrix recover its
+retail SP+0x34 layout. Preserve all live origin reads before output stores and
+the separate scale-then-500 multiplications. The float-height caller
+`func_15141928` remains exact across its 18-word slot. Effect-only void ABI;
+incidental guest F0 is qualified separately, not a native return contract.
+15488 finite/guest-home cases, 144 connected retail SDK cases, 360 connected
+caller cases, 9600 native finite cases, 720 special-float cases on each guest
+body and native C, 36 controls and ten compiled negatives. Only target changes
+across 6059 slots; protected sections, 720 Game-data owners and 10760 guards
+unchanged, owner warnings 0->0. Converted counts/bytes unchanged; exact total
+3335/5464 (61.04%), Game 2662/4791 (55.56%), 2129 different, zero drift.
+All 37 focused post-link tests pass in 206.840 seconds, no skips/errors/failures;
+41 documents/3453 relative links/zero broken; compileall/diff/tools checks pass.
+Next `func_15141A7C`: 100 words / frame 0x48; repeated callback-table reads,
+live list iteration and connected classifier ABI need recovery. No host,
+hardware/FCSR/gameplay acceptance, sibling/Release/runtime or push change.
+
+Historical position-projection investigation, superseded by Note 1059:
 [Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md)
 continues from banked `e1298167` with63-word/frame0x80 `func_1514182C`.
 60 compiler controls. The fitting63-word/31-difference candidate fails24/108

@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1059](WORKING_NOTES/1059-game-position-projection-match-20261006.md)):
+`func_1514182C`: 63 direct words/frame 0x80, no guards; delta-first locals
+recover matrix layout and live alias-safe output arithmetic. Typed float-height
+caller remains exact across 18 words. Nine tests: 15488 finite/guest-home,
+144 connected SDK, 360 caller, 9600 native finite, 720 guest/native special
+float cases, 36 controls and ten negatives. Only target changes across 6059
+slots; protected sections/720 owners/10760 guards unchanged, warnings 0->0.
+Exact 3335/5464, Game 2662/4791, 2129 different, zero drift; converted unchanged.
+Next 100-word `func_15141A7C`; no sibling/Release/runtime/host adoption or push.
+
 2026-10-06 ([Note 1058](WORKING_NOTES/1058-game-position-projection-investigation-20261006.md)):
 After banked `e1298167`, investigate63-word `func_1514182C`.60 controls;
 fitting63/frame0x80/31 candidate fails24/108 alias cases. Cached origin reads
