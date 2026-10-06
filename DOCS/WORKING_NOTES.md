@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)):
+Post-`fe925393` screen: 128 separate parameter/local register-hint controls.
+All O2/g3 bodies equal the committed 29 words; O1/g3 frame 0x20, oversized.
+1536 corner guest runs preserve traces/footprints. All 51 tests pass in
+93.572 seconds, no skips; all linked slots/protected sections/owners/guards
+equal the checkpoint. No production/guards/
+profile/data or aggregate change. Saved-pointer frame/allocation and upper
+branch-likely/shared restore remain open; `func_15143D18` is not byte-exact.
+Game matching remains active; no sibling/frozen Release change or push.
+
 2026-10-06 ([Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md)):
 Recover `func_15143D18`'s retail XOR access sequence, not a byte match.
 29 raw words, frame zero, seven slot-padding words, 36 aligned differences.

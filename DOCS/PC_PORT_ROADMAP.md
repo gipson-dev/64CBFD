@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Pair Clamp Register Lifetime Audit - 2026-10-06
+
+[Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)
+banks 128 DECOMP compiler controls after `fe925393`; none recovers the retail
+saved-pointer frame. All O2/g3 outputs equal the preceding recovery; all O1/g3
+outputs are oversized with frame 0x20. 1536 corner guest runs pass;
+all 51 regression tests pass in 93.572 seconds, no skips. All 6059 slots,
+protected sections/720 owners/10646 guards equal the checkpoint.
+No guest production, host adoption, aggregate change, sibling source/build/
+save/frozen Release edit or push. Continue this non-matching frame/tail;
+Game remains 2640/4789 exact with zero drift and 2149 different.
+
 ## Game Integer Pair Clamp Access Recovery - 2026-10-06
 
 [Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md)

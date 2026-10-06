@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Pair-clamp register-lifetime follow-up:
+[Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)
+banks 128 further compiler controls after `fe925393`: separate parameter/local
+register hints do not recover `func_15143D18`'s frame. All O2/g3 bodies equal
+the committed 29-word recovery; O1/g3 bodies are oversized with frame 0x20.
+1536 guest corner runs preserve ordered access traces and footprints;
+all 51 combined tests pass in 93.572 seconds, no skips. All 6059 slots,
+protected sections/720 owners/10646 guards equal the committed checkpoint.
+No production/guards/profile/data or aggregate-count change. Continue the
+saved-pointer allocation/frame and branch-likely/shared restore tail.
+This function remains non-matching at 36 aligned differences; Game stays active.
+
 Integer pair-clamp access recovery, still non-matching:
 [Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md)
 recovers `func_15143D18`'s ordered XOR exchange and sequential endpoint clamps.

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Pair Clamp Register Lifetime Audit
+
+[Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)
+banks the post-`fe925393` compiler follow-up: 64 parameter/local register-hint
+forms under O2/g3 and O1/g3, 128 controls. O2/g3 bodies are unchanged; O1/g3
+uses frame 0x20 and overflows the slot. No exact form. 1536 corner guest runs
+retain retail ordered traces and full footprints. All 51 tests pass in
+93.572 seconds, no skips; all 6059 slots/protected sections/720 owners/10646
+guards equal the checkpoint. No production, guard,
+profile, data or README-count change. Continue saved-pointer/frame and tail
+matching; `func_15143D18` remains 36 differences. No sibling/frozen Release
+change, gameplay acceptance or push. Game goal remains active.
+
 ## 2026-10-06 Game Integer Pair Clamp XOR Access Recovery
 
 [Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md)

@@ -1,5 +1,6 @@
 """Screen the retail XOR-swap and saved-pointer shape of the integer pair clamp."""
 
+import argparse
 import json
 import struct
 import subprocess
@@ -166,13 +167,37 @@ def compile_candidate(root, output, name, body=SELECTED, profile='o2g3'):
                 exact=words == retail, diagnostics=diagnostics), words
 
 
+def register_lifetimes():
+    forms = []
+    parameters = ('s32 *arg0', 's32 *arg1', 's32 arg2', 's32 arg3')
+    for mask in range(16):
+        for locals_mask in range(4):
+            body = SELECTED
+            for index, parameter in enumerate(parameters):
+                if mask & 1 << index:
+                    body = body.replace(parameter, 'register ' + parameter, 1)
+            if locals_mask & 1:
+                body = body.replace('    s32 *ptr', '    register s32 *ptr')
+            if locals_mask & 2:
+                body = body.replace('    s32 value', '    register s32 value')
+            forms.append(('register-parameters-%02x-locals-%x' % (mask, locals_mask), body))
+    return forms
+
+
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--register-lifetimes', action='store_true',
+                        help='screen separate parameter/local hints under O2/g3 and O1/g3')
+    args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
-    output = root / 'conker/build/game-integer-pair-clamp'
+    suffix = '-register-lifetimes' if args.register_lifetimes else ''
+    output = root / ('conker/build/game-integer-pair-clamp' + suffix)
     output.mkdir(exist_ok=True)
     records = []
-    for name, body in candidates():
-        for profile in PROFILES:
+    forms = register_lifetimes() if args.register_lifetimes else candidates()
+    profiles = ('o2g3', 'o1g3') if args.register_lifetimes else PROFILES
+    for name, body in forms:
+        for profile in profiles:
             record, _ = compile_candidate(root, output, name + '-' + profile, body, profile)
             records.append(record)
             print(record['name'], record['body_words'], hex(record['frame']), record['differences'], flush=True)

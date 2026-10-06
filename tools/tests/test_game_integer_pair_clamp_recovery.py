@@ -120,6 +120,42 @@ class GameIntegerPairClampRecoveryTests(unittest.TestCase):
             self.assertEqual(record['frame'], 0)
             self.assertEqual(record['diagnostics'], '')
 
+    def test_separate_parameter_and_local_register_hints_do_not_recover_frame(self):
+        forms = screen.register_lifetimes()
+        self.assertEqual((len(forms), len(dict(forms))), (64, 64))
+        shapes, cases = {}, 0
+        corners = ((100, 1, 0, 100, 0), (0x80000000, 0x7FFFFFFF, 0x7FFFFFFF, 0x80000000, 1),
+                   (100, 100, 0, 1, 0), (0xFFFFFF9C, 0xFFFFFFFF, 0, 1, 0),
+                   (100, 1, 0, 100, 2), (0x80000000, 0x7FFFFFFF, 0x80000000, 0x7FFFFFFF, 0))
+        for name, body in forms:
+            locals_mask = int(name[-1], 16)
+            for profile in ('o2g3', 'o1g3'):
+                record, words = screen.compile_candidate(self.root, self.output, name + '-' + profile, body, profile)
+                self.assertFalse(record['exact'])
+                self.assertEqual(record['diagnostics'], '')
+                if profile == 'o2g3':
+                    self.assertEqual(words, self.words)
+                    self.assertEqual((record['body_words'], record['frame'], record['differences']), (29, 0, 36))
+                else:
+                    size = (50, 47, 46, 40)[locals_mask]
+                    self.assertEqual((record['body_words'], record['frame'], record['differences']), (size, 0x20, size))
+                key = (profile, locals_mask)
+                if key in shapes:
+                    self.assertEqual(words, shapes[key])
+                else:
+                    shapes[key] = words
+                for a, b, lower, upper, mode in corners:
+                    pointers = POINTERS[mode]
+                    memory = memory_case(pointers, a, b)
+                    wanted, trace = reference(memory, pointers, lower, upper)
+                    for phase in (0, 8):
+                        model = PairOracle(words, memory, pointers, lower, upper, phase).run()
+                        self.assertEqual(external(model.memory), wanted)
+                        self.assertEqual(events(model), trace)
+                        self.assertEqual(model.calls, [])
+                        cases += 1
+        self.assertEqual(cases, 1536)
+
     def test_core_opcodes_delays_and_immediates_match_under_lifetime_renaming(self):
         renames = {3: {'rd': 5}, 4: {'rs': 5}, 5: {'rt': 5}, 6: {'rs': 16, 'rt': 3},
                    7: {'rs': 17, 'rt': 5}, 8: {'rs': 3, 'rt': 5}, 10: {'rs': 5, 'rt': 3, 'rd': 2},

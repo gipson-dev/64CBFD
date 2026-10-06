@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest pair-clamp register-lifetime audit](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md):
+  128 source/profile controls, no direct match or production change.
+  Saved-pointer frame and return-tail work remains open.
 - [Latest integer pair-clamp access recovery](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md):
   ordered XOR exchange recovered; 24576 guest and 12288 native cases.
   Still non-matching at 36 differences; saved-pointer frame and return tail

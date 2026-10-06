@@ -2,6 +2,10 @@
 
 Date: 2026-10-06. Starting checkpoint: `2fd52b05`.
 
+Continuation: [Note 1033](1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md)
+banks 128 separate register-hint controls after commit `fe925393`; none solves
+the frame/tail gap or changes this production body.
+
 **`func_15143D18` has its retail ordered access sequence recovered, but is
 still non-matching.** Slot 0x15143D18..0x15143DA8, ROM 0x1711C8..0x171258,
 36 words / 144 bytes. Only its body in

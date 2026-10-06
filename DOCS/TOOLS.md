@@ -11,13 +11,20 @@ screens 23 forms under O2/g3, O2, O1/g3 and O1: 92 controls, empty compiler
 diagnostics, no direct exact form. It installs no source, guards or profile.
 Requires retail ROM, IDO and MIPS tools; receipts are ignored under
 `conker/build/game-integer-pair-clamp/`.
-[Seven recovery tests](../tools/tests/test_game_integer_pair_clamp_recovery.py)
+`--register-lifetimes` separately screens 16 parameter-hint masks times
+four local-hint groups under O2/g3 and O1/g3: 128 controls, receipts in
+`conker/build/game-integer-pair-clamp-register-lifetimes/`. It does not
+change the default 92-control inventory. See
+[Note 1033](WORKING_NOTES/1033-game-integer-pair-clamp-register-lifetime-audit-20261006.md).
+[Eight recovery tests](../tools/tests/test_game_integer_pair_clamp_recovery.py)
 bind the non-matching source/slot, compare complete guest access traces and
 native footprints, and detect wrong clamp/swap controls. A local oracle adds
 only XOR; shared runners remain unchanged. Explicit register-field renaming
 proves correspondence of the 24-word operation core, not an installed
 normalizer or whole-function match. The saved-pointer frame and return tail
 remain open. See [Note 1032](WORKING_NOTES/1032-game-integer-pair-clamp-xor-access-recovery-20261006.md).
+The additional register-lifetime test compiles all 128 forms, binds complete
+word equality by profile/local group, and runs 1536 bounded corner traces.
 
 ## Indexed state-save compiler controls
 
