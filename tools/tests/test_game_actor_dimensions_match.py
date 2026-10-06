@@ -31,18 +31,18 @@ ALIASES = ((OUTPUT, OUTPUT+32, OUTPUT+36), (OUTPUT, OUTPUT+32, OUTPUT+32),
            (ACTOR+16, OUTPUT+32, OUTPUT+36), (OUTPUT, ACTOR+4, OUTPUT+36))
 
 
-def memory_case(identity, case):
+def memory_case(identity, case, offsets=(210, 212, 214)):
     memory = {STACK+i: 0xA5 for i in range(-0x600, 0x100)}
     memory.update({ACTOR+i: 0xA5 for i in range(0x440)})
     put(memory, ACTOR+4, identity, 1)
-    for offset, value in zip((210, 212, 214), case[:3]):
+    for offset, value in zip(offsets, case[:3]):
         put(memory, ACTOR+offset, value & 65535, 2)
     for offset, value in zip((20, 24, 28), case[3]):
         put(memory, ACTOR+offset, bits(value))
     return memory
 
 
-def reference(memory, outputs):
+def reference(memory, outputs, offsets=(210, 212, 214)):
     memory, trace = dict(memory), []
     position, width, height = outputs
     def read(address, size):
@@ -57,14 +57,14 @@ def reference(memory, outputs):
         return value if value < 32768 else value-65536
     special = read(ACTOR+4, 1) < 187
     if special:
-        write(width, bits(float(half(210))))
-        write(height, bits(float(half(212))))
+        write(width, bits(float(half(offsets[0]))))
+        write(height, bits(float(half(offsets[1]))))
     else:
         write(width, bits(1.0))
         write(height, bits(1.0))
     write(position, read(ACTOR+20, 4))
     if special:
-        offset = half(214)
+        offset = half(offsets[2])
         write(position+4, bits(floating(read(ACTOR+24, 4)) + float(offset)))
     else:
         write(position+4, read(ACTOR+24, 4))
@@ -73,10 +73,10 @@ def reference(memory, outputs):
 
 
 class DimensionOracle(StateSaveOracle):
-    def __init__(self, words, memory, outputs, phase=0):
+    def __init__(self, words, memory, outputs, phase=0, entry=screen.ENTRY):
         super().__init__(words, memory, phase=phase)
-        self.code = {screen.ENTRY+i*4: word for i, word in enumerate(words)}
-        self.entry = screen.ENTRY
+        self.code = {entry+i*4: word for i, word in enumerate(words)}
+        self.entry = entry
         self.r[4:8] = (ACTOR, *outputs)
 
     def record_call(self, target):

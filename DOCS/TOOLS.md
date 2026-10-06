@@ -4,6 +4,21 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Alternate actor-dimension compiler controls
+
+[Driver](../tools/experiments/game_actor_alternate_dimensions_candidates.py)
+screens four forms under four profiles: 16 controls with real SDK/actor/point
+headers. Six O2 forms match 41 body words plus two retail padding words; the
+tool installs no source, guards or profile. Requires retail ROM, IDO and MIPS
+tools; ignored receipts under `conker/build/game-actor-alternate-dimensions/`.
+[Five tests](../tools/tests/test_game_actor_alternate_dimensions_match.py)
+bind the complete slot/padding, local signed cast and unsigned shared field,
+ordered guest traces/full footprints and actual C/real actor-prefix native
+cases. Negative controls detect premature cached fields and unsigned +0xE8,
+plus wrong threshold/dimension and stub. The preceding query's optional
+offset/entry test helpers retain their old defaults. See
+[Note 1038](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md).
+
 ## Actor-dimension query compiler controls
 
 [Driver](../tools/experiments/game_actor_dimensions_candidates.py) uses real

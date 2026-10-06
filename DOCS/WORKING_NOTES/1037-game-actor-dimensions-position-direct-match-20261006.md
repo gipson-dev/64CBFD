@@ -2,6 +2,9 @@
 
 Date: 2026-10-06. Starting checkpoint: `7a7ed06e`.
 
+Continuation: [Note 1038](1038-game-alternate-actor-dimensions-direct-match-20261006.md)
+completes the adjacent alternate-field query and its two retail padding words.
+
 **`func_1515C1A0` matches all 41 words / 164 bytes directly from C.**
 VA 0x1515C1A0..0x1515C244, ROM 0x189650..0x1896F4, no frame.
 Replace the zero-return stub in

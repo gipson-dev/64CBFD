@@ -86,6 +86,18 @@ void func_1515C1A0(struct127 *arg0, struct17 *arg1, f32 *arg2, f32 *arg3) {
     }
 }
 
-s32 func_1515C244() {
-    return 0;
+void func_1515C244(struct127 *arg0, struct17 *arg1, f32 *arg2, f32 *arg3) {
+    if (arg0->id < 0xBB && arg0->id != 0xFF) {
+        *arg2 = arg0->unkE4;
+        *arg3 = arg0->unkE6;
+        arg1->unk0 = arg0->x_position;
+        arg1->unk4 = arg0->y_position + (s16)arg0->unkE8;
+        arg1->unk8 = arg0->z_position;
+    } else {
+        *arg2 = 1.0f;
+        *arg3 = 1.0f;
+        arg1->unk0 = arg0->x_position;
+        arg1->unk4 = arg0->y_position;
+        arg1->unk8 = arg0->z_position;
+    }
 }

@@ -21,6 +21,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Alternate actor-dimension direct match:
+[Note 1038](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md)
+recovers `func_1515C244`: 41 direct C words plus two retail padding words,
+complete 43-word slot exact under existing O2/g3. No frame/guards/profile/
+header/data change; local signed +0xE8 cast preserves the shared unsigned field.
+16 controls; 43008 two-body guest cases / 21504 native cases. Forty reachable
+words execute, impossible delay and padding structurally bound. All 52
+post-link tests pass in 228.619 seconds, no skips. Only target
+changes across 6059 slots; protected sections/720 owners/10646 guards intact.
+Baseline/current owner compiles have empty diagnostics. README now total
+3316/5462 and Game 2643/4789 exact, zero drift, 2146 different.
+Next `func_1517D5FC`, 37-word coordinate/actor queue wrapper still a stub.
+No full callers/FCSR/gameplay, sibling/frozen Release change or push.
+
 Actor-dimension/position direct match:
 [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md)
 recovers `func_1515C1A0`: all 41 words directly, no frame/guards/profile/data

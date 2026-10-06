@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1038](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md)):
+`func_1515C244`: all 43 slot words exact, 41 direct C plus two padding words;
+no frame/guards/profile/header/data change. Local signed +0xE8 cast, sequential
+alias-sensitive outputs; 16 controls, 43008 guest / 21504 native cases.
+All 52 post-link tests pass in 228.619 seconds, no skips.
+Forty reachable words covered. Only target changes across 6059; protected
+sections/720 owners/10646 guards intact. Owner diagnostics empty. README
+3316/5462 total, 2643/4789 Game exact. Next `func_1517D5FC`'s actor queue
+wrapper; no sibling/frozen Release or full gameplay claim or push.
+
 2026-10-06 ([Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md)):
 `func_1515C1A0`: 41 words directly, no frame/guards/profile/data change.
 Signed fields and sequential aliased outputs; real actor/point types.

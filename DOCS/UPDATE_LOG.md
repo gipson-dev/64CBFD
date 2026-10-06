@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-06 Game Alternate Actor Dimensions Direct Match
+
+[Note 1038](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md)
+replaces `func_1515C244`'s stub: 41 direct C words plus two retail padding
+words, complete 43-word slot exact. Local signed +0xE8 view; no shared header,
+guards/profile/data change. 16 controls, 43008 guest / 21504 native cases.
+All 52 post-link tests pass in 228.619 seconds, no skips.
+Only target changes across 6059; protected sections/720 owners/10646 guards
+intact. Baseline/current owner diagnostics empty. README now total 3316/5462
+and Game 2643/4789 exact, zero drift. Next qualify `func_1517D5FC`'s queue
+handoff; no complete gameplay/caller-domain claim, sibling/Release edit or push.
+
 ## 2026-10-06 Game Actor Dimensions And Position Direct Match
 
 [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md)

@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest alternate actor-dimension direct match](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md):
+  41 direct words plus two retail padding words; signed +0xE8 view and ordered
+  aliased outputs. Next qualify `func_1517D5FC`'s queue handoff.
+
 - [Latest actor-dimension/position direct match](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md):
   41 words directly; signed dimensions, ordered alias-sensitive XYZ stores.
   Next independently qualify the adjacent `func_1515C244` twin.

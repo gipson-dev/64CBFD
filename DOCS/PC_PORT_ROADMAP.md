@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Alternate Actor Dimensions Direct Match - 2026-10-06
+
+[Note 1038](WORKING_NOTES/1038-game-alternate-actor-dimensions-direct-match-20261006.md)
+recovers guest `func_1515C244`: 41 direct C words plus two retail zero words,
+complete slot exact. Local signed +0xE8 view, ordered aliases; 43008 guest /
+21504 native cases. All 52 post-link tests pass in 228.619 seconds, no skips.
+No frame/guards/profile/header/data change. Only target
+changes across 6059; protected sections/720 owners/10646 guards intact.
+Game now 2643/4789 exact, zero drift, 2146 different. Next qualify guest
+`func_1517D5FC`'s queue handoff. No host adoption, full caller/FCSR/gameplay
+acceptance, sibling source/build/save/frozen Release edit or push.
+
 ## Game Actor Dimensions And Position Direct Match - 2026-10-06
 
 [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-20261006.md)
