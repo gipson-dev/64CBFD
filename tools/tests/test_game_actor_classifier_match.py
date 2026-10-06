@@ -206,7 +206,7 @@ if(cases!=16384) return 83;
         self.assertEqual(self.table_owners,[dict(rom=0x249CC0,address=0x800A5200,end=0x800A5480,
             section='.data',input='build/assets/249CC0.bin.o(.data)')])
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:rows=list(csv.DictReader(stream))
-        self.assertEqual(len(rows),10785);self.assertFalse([row for row in rows if row['function']==screen.FUNCTION])
+        self.assertEqual(len(rows),10809);self.assertFalse([row for row in rows if row['function']==screen.FUNCTION])
         makefile=(self.root/'conker/Makefile').read_text()
         self.assertIn('game_16EE20.c.o: RETAIL_RODATA_SYMBOL := '+screen.ANCHOR,makefile)
         self.assertIn('game_16EE20.c.o: Makefile',makefile)

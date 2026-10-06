@@ -21,6 +21,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Effect-record updater recovery:
+[Note 1064](WORKING_NOTES/1064-game-effect-record-updater-match-20261006.md)
+recovers `func_15141E38`:80 words/frame0x60,56 direct plus24 closed guards.
+Typed void actor/index ABI; refresh every matching live record, create/copy/
+link only when none matched. Minimal12-byte request retained; four private
+payload-home guards restore retail's three uninitialized tail bytes, not a
+new initialized field.7680 three-body guest/7680 native cases,1728 connected
+search cases,3072 guest/1536 native checked-caller cases,36 guest actor-home
+probes and ten semantic negatives. Normalized/retail full traces/storage agree;
+native comparison excludes only three unspecified request-tail output bytes.
+Copied owner93 functions: only target changes, warnings3->2, original pool
+unchanged. Production only target across6059 slots; old10785 guards unchanged
+plus24, protected sections/720 owners unchanged. Exact3339/5464 (61.11%),
+Game2666/4791 (55.65%),2125 different, zero drift; converted unchanged.
+All56 focused post-link tests pass in430.719 seconds, no skips/errors/failures;
+46 docs/3509 relative links/zero broken, tools/syntax/diff checks pass.
+Next96-word `func_15141F78`, frame0x78:
+descriptor/RNG construction, float call ABI and live source reads need recovery.
+The old commented draft dereferences source+4, but retail passes that address.
+No allocator/link-helper restoration, host/gameplay/hardware acceptance,
+sibling/frozen Release/runtime or push change.
+
 Context-classifier recovery:
 [Note 1063](WORKING_NOTES/1063-game-context-classifier-match-20261006.md)
 recovers `func_15141CC0`: all57 words directly from C, no frame or guards.

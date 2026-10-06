@@ -486,13 +486,13 @@ if(cases!=240) return 77;
         self.assertEqual(functions['func_15071DC8'],list(struct.unpack_from('>11I',self.rom,0x9F278)))
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             rows=list(csv.DictReader(stream))
-        self.assertEqual(len(rows),10785)
+        self.assertEqual(len(rows),10809)
         prefix=json.dumps(rows[:10760],sort_keys=True,separators=(',',':')).encode()
         self.assertEqual(hashlib.sha256(prefix).hexdigest(),
             '81681279410eb5b2409eed147dbe85366bb7a7bfb3a18c795940e15ec2a54e05')
         text,functions,relocations=parse_object(self.output/'selected.o')
         self.assertEqual(functions[screen.FUNCTION]['value'],0)
-        self.assertEqual(rows[10760:],guard_rows(list(struct.unpack_from('>100I',text)),relocations))
+        self.assertEqual(rows[10760:10785],guard_rows(list(struct.unpack_from('>100I',text)),relocations))
 
 
 def native_fixture():
@@ -552,8 +552,8 @@ s32 func_15141CC0(s32 value) {
     if(mutation&64) D_8008A084[fixtureCategory]=(s32)classify_alternate;
     return 7;
 }
-s32 func_15141E38(s32 a,s32 index) {
-    append(0x15141E38u,(u32)a,(u32)index,0);effect_actions();return -7;
+void func_15141E38(u8 *a,s32 index) {
+    append(0x15141E38u,(u32)a,(u32)index,0);effect_actions();
 }
 __attribute__((noinline)) s32 func_1514ECE0(u8 *node,s16 key,u8 **result) {
     append(0x1514ECE0u,(u32)node,(u32)(s32)key,0);
@@ -596,7 +596,7 @@ static void reference_native(u8 *a,s32 context) {
         s32 flags=func_1510F8CC((s32)load(a+0x184));s32 answer=func_15141CC0(flags);
         classifier=(GameEffectClassifier)D_8008A084[category];selected=classifier(answer,a);
         if(selected!=-1 && D_8008A0B4[selected].unk0) {
-            if(D_8008A0B4[selected].unk4>0) func_15141E38((s32)a,selected);
+            if(D_8008A0B4[selected].unk4>0) func_15141E38(a,selected);
             else {callback=(GameEffectCallback)D_8008A0B4[selected].unk0;callback(a,context,0);}
         }
     }

@@ -227,7 +227,7 @@ if(cases!='''+str(len(WORLDS)*(65536*3+5))+r'''U) return 85;
         self.assertNotEqual(baseline, selected)
         old, old_warnings = screen.compile_owner(self.root, self.output, baseline, 'owner-baseline')
         new, new_warnings = screen.compile_owner(self.root, self.output, selected, 'owner-selected')
-        self.assertEqual(old_warnings, new_warnings); self.assertEqual(len(new_warnings), 3)
+        self.assertEqual(old_warnings, new_warnings); self.assertEqual(len(new_warnings), 2)
         old_text, old_functions, old_relocations = parse_object(old)
         text, functions, relocations = parse_object(new)
         for name in ('func_15141A7C', 'func_15141C0C'):
@@ -270,7 +270,7 @@ if(cases!='''+str(len(WORLDS)*(65536*3+5))+r'''U) return 85;
         data, base = game_data(elf)
         self.assertEqual(data[0x800A5200-base:0x800A5480-base], self.rom[0x249CC0:0x249F40])
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream: rows = list(csv.DictReader(stream))
-        self.assertEqual(len(rows), 10785); self.assertFalse([row for row in rows if row['function'] == screen.FUNCTION])
+        self.assertEqual(len(rows), 10809); self.assertFalse([row for row in rows if row['function'] == screen.FUNCTION])
 
 
 if __name__ == '__main__': unittest.main()

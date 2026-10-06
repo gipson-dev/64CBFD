@@ -3,20 +3,22 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef struct { s32 index; u8 *actor; u8 identity; } GameEffectRefreshRequest;
 typedef s32 (*GameEffectClassifier)(s32, u8 *);
 typedef void (*GameEffectCallback)(u8 *, s32, s32);
 typedef struct { GameEffectCallback callback; s32 count; } GameEffectEntry;
 s32 func_15141C0C(u8 *actor);
 s32 func_1510F8CC(s32);
 s32 func_15141CC0(s32 context);
-s32 func_15141E38(s32, s32);
+void func_15141E38(u8 *actor, s32 index);
 s32 func_1514ECE0(u8 *, s16, u8 **);
+s32 func_1514EC1C(s32, s32, s32);
 
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
 s32 func_15141CC0(s32 context);
-s32 func_15141E38(s32 arg0, s32 arg1);
+void func_15141E38(u8 *actor, s32 index);
 s32 func_15141F78();
 s32 func_15142180();
 s32 func_151424F4();
@@ -118,7 +120,7 @@ void func_15141A7C(u8 *actor, s32 context) {
             }
             if ((selected != -1) && (((GameEffectEntry *)D_8008A0B4)[selected].callback != NULL)) {
                 if (((GameEffectEntry *)D_8008A0B4)[selected].count > 0) {
-                    func_15141E38((s32)actor, selected);
+                    func_15141E38(actor, selected);
                 } else {
                     ((GameEffectEntry *)D_8008A0B4)[selected].callback(actor, context, 0);
                 }
@@ -222,9 +224,33 @@ void func_15141DA4(void *arg0, s32 arg1, s32 arg2) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15141E38.s. */
-s32 func_15141E38(s32 arg0, s32 arg1) {
-    return 0;
+/* Matched with closed register/scheduling and private request/cursor guards. */
+void func_15141E38(u8 *actor, s32 index) {
+    u8 *created;
+    u8 *node;
+    u8 *matched = NULL;
+    u8 *record;
+    GameEffectRefreshRequest request;
+    node = *(u8 **)(actor + 0x2F4);
+    while (func_1514ECE0(node, 0x1A, &node)) {
+        record = *(u8 **)(node + 0x10);
+        if (*(s32 *)(record + 0x28) == index) {
+            matched = node;
+            *(s16 *)(record + 0xE) = D_8008A0B4[index].unk4;
+        }
+        *(u8 *volatile *)&node = *(u8 **)(node + 0x14);
+    }
+    if (matched == NULL) {
+        request.index = index;
+        request.actor = actor;
+        request.identity = actor[0x3B];
+        created = (u8 *)func_15149130((s16)D_8008A0B4[index].unk4,
+            -1, -1, -1, 1, 50, (struct37 *)12, 255, 1);
+        if (created != NULL) {
+            memcpy(created + 0x28, &request, 12);
+            func_1514EC1C((s32)created, (s32)actor, 0x1A);
+        }
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15141F78.s. */
 s32 func_15141F78() {

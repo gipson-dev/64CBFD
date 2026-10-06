@@ -14,14 +14,14 @@ PROFILES = {'o2g3': ('-O2', '-g3'), 'o2': ('-O2',), 'o1g3': ('-O1', '-g3'), 'o1'
 SYMBOLS = dict(func_15141C0C=0x15141C0C, func_1510F8CC=0x1510F8CC,
     func_15141CC0=0x15141CC0, func_15141E38=0x15141E38, func_1514ECE0=0x1514ECE0,
     D_800BE616=0x800BE616, D_8008A084=0x8008A084, D_8008A0B4=0x8008A0B4)
-# Keep the pending context classifier's existing placeholder declaration.
+# Keep the typed helper declarations synchronized with the production owner.
 LOCAL_DECLARATIONS = '''typedef s32 (*GameEffectClassifier)(s32, u8 *);
 typedef void (*GameEffectCallback)(u8 *, s32, s32);
 typedef struct { GameEffectCallback callback; s32 count; } GameEffectEntry;
 s32 func_15141C0C(u8 *actor);
 s32 func_1510F8CC(s32);
 s32 func_15141CC0(s32 context);
-s32 func_15141E38(s32, s32);
+void func_15141E38(u8 *actor, s32 index);
 s32 func_1514ECE0(u8 *, s16, u8 **);
 '''
 DECLARATIONS = '#include "functions.h"\n#include "variables.h"\n' + LOCAL_DECLARATIONS
@@ -40,7 +40,7 @@ SELECTED = '''void func_15141A7C(u8 *actor, s32 context) {
             }
             if ((selected != -1) && (((GameEffectEntry *)D_8008A0B4)[selected].callback != NULL)) {
                 if (((GameEffectEntry *)D_8008A0B4)[selected].count > 0) {
-                    func_15141E38((s32)actor, selected);
+                    func_15141E38(actor, selected);
                 } else {
                     ((GameEffectEntry *)D_8008A0B4)[selected].callback(actor, context, 0);
                 }

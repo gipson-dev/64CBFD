@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest effect-record updater match](WORKING_NOTES/1064-game-effect-record-updater-match-20261006.md):
+  80 words/frame0x60,56 direct plus24 closed register/private-home guards;
+  all-match refresh, create/copy/link failure gates, native/guest and checked
+  caller qualification. Next96-word descriptor constructor `func_15141F78`.
+
 - [Latest context-classifier match](WORKING_NOTES/1063-game-context-classifier-match-20261006.md):
   57 direct words, no frame/guards; world overrides/full-width context inputs,
   the original table at the shared pool's addend0x218, guest/native/connected

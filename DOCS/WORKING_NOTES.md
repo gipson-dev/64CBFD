@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-06 ([Note1064](WORKING_NOTES/1064-game-effect-record-updater-match-20261006.md)):
+`func_15141E38`:80 words/frame0x60,56 direct plus24 closed guards. Minimal
+request, all-match refresh/create gates, typed void actor/index ABI and live
+count/actor reads.7680 guest/7680 native/1728 connected search cases;3072
+guest/1536 native caller cases, private-home probes and ten negatives. Three
+raw/native request-tail bytes remain unspecified; normalized/retail full
+traces/storage match. Only target across6059 slots; old10785 guards unchanged
+plus24, protected sections/720 owners unchanged, warnings3->2. Exact3339/5464,
+Game2666/4791,2125 different, zero drift; converted unchanged. All56 focused
+post-link tests pass in430.719 seconds, no skips/errors/failures;46 docs/3509
+relative links/zero broken, tools/syntax/diff checks pass.
+Next96-word `func_15141F78`:descriptor and RNG/float call ABI.
+No allocator/link C, host/hardware/gameplay acceptance, sibling/Release/runtime
+or push change.
+
 2026-10-06 ([Note 1063](WORKING_NOTES/1063-game-context-classifier-match-20261006.md)):
 `func_15141CC0`:57 direct words, no frame/guards, existing O2/g3. One world
 load/four overrides/full-width context switch; shared pool addend0x218 retains

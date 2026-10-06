@@ -313,7 +313,7 @@ for(s=0;s<4;s++) for(c=0;c<256;c++) for(m=0;m<8;m++) for(a=0;a<4;a++) for(match=
         self.assertEqual(addresses['func_151416E8'],screen.ENTRY)
         self.assertEqual(functions['func_151416E8'],self.retail)
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream: rows = list(csv.DictReader(stream))
-        self.assertEqual(len(rows),10785)
+        self.assertEqual(len(rows),10809)
         self.assertFalse([row for row in rows if row['function']=='func_151416E8'])
         relocations = subprocess.run(['mips-linux-gnu-objdump','-r',str(self.output/'selected.o')],
                                      check=True,capture_output=True,text=True).stdout

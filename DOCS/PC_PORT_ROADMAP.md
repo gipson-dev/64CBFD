@@ -1,5 +1,29 @@
 # PC Port Roadmap located in another project folder
 
+## Game Effect Record Updater Match - 2026-10-06
+
+[Note 1064](WORKING_NOTES/1064-game-effect-record-updater-match-20261006.md)
+recovers guest `func_15141E38`:80 words/frame0x60,56 direct plus24 guards.
+All matching records refresh; allocation/copy/link occurs only without a match.
+Live counts, signed constructor halfword, original12-byte request and actor
+reload retained. Native C has three unspecified request-tail bytes; normalized
+guest code preserves retail's exact private byte provenance. Only target
+across6059 slots; old10785 guards unchanged plus24, protected sections/720
+owners unchanged, owner warnings3->2. Game2666/4791 exact (55.65%),2125
+different, zero drift; converted counts/bytes unchanged.
+
+All56 focused post-link tests pass in430.719 seconds, no skips/errors/failures;
+46 docs/3509 relative links/zero broken, tools/syntax/diff checks pass.
+
+- [x] Recover live refresh/create semantics and the typed void actor/index ABI.
+- [x] Qualify guest/native, negative, caller, actual padding and copied-owner gates.
+- [x] Rebuild/audit all production slots, protected sections and old guards.
+- [x] Finish focused post-link regression/documentation receipts.
+- [ ] Recover96-word `func_15141F78`: descriptor/RNG/float argument construction.
+
+No allocator/link-helper C restoration, host adoption, hardware/gameplay
+acceptance, sibling source/build/save/frozen Release, runtime or push change.
+
 ## Game Context Classifier Match - 2026-10-06
 
 [Note 1063](WORKING_NOTES/1063-game-context-classifier-match-20261006.md)
@@ -16,7 +40,7 @@ converted counts/bytes unchanged. All32 focused tests pass/no skips;
 - [x] Qualify native, guest, negative, relocation and combined-owner pool gates.
 - [x] Rebuild/audit the production slot and retained neighboring functions.
 - [x] Pass32 focused regressions and refresh aggregate/documentation receipts.
-- [ ] Recover80-word `func_15141E38`: live effect-record refresh/create/link.
+- [x] Recover80-word `func_15141E38`: live effect-record refresh/create/link (Note1064).
 
 The intervening37-word `func_15141DA4` already matches; do not count it again.
 Eight initial updater controls give80 words/frame0x58/37 differences;

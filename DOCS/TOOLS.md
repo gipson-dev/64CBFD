@@ -4,6 +4,28 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Effect-record updater compiler controls
+
+[Driver](../tools/experiments/game_effect_record_updater_candidates.py):eight
+record-lifetime/cursor/scope shapes across four actual-SDK profiles,32 controls.
+Minimal12-byte request and separate created-record lifetime recover80 words/
+frame0x60;56 direct plus24 guards. Derivation closes the pre-allocation S0/S1/
+S2 cycle, search-argument/payload scheduling, private cursor store/reload and
+four private request offsets. No frame rewrite, insertion or omission.
+[Eleven tests](../tools/tests/test_game_effect_record_updater_match.py) bind
+7680 three-body guest/7680 native cases,1728 connected original-search cases,
+3072 guest/1536 native checked-caller cases, private actor-home probes, full
+selector width/guest-only unchecked index cases, ten negatives and actual
+padding/alternate table relocation/stale guards. Copied owner preserves all
+92 other raw functions and pool bytes, warnings3->2; production binds all80
+words, four retained neighboring slots and the unchanged10785-row prefix.
+Raw/native request tail bytes9..11 are indeterminate; compare all other
+external storage. Normalized and retail compare complete traces and storage,
+including those three bytes. Raw extra cursor reads bind exactly to SP-8 and
+live T4. This is not raw full-trace identity or real allocator/link acceptance.
+Ignored receipts: `conker/build/game-effect-record-updater-test/`; see
+[Note1064](WORKING_NOTES/1064-game-effect-record-updater-match-20261006.md).
+
 ## Context-classifier compiler controls
 
 [Driver](../tools/experiments/game_context_classifier_candidates.py):global/local
