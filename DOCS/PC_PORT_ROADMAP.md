@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Graph Edge Crossing Lifetime Improvement - 2026-10-06
+
+[Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)
+improves DECOMP `func_15086D94` from 151 to 102 real differences: 207 emitted
+words, no padding, frame 0x80 still not retail 0x90. Saved prefix and complete
+outer loop emit directly; one count load. 209 new compiler controls, 2177
+four-way guest cases and 288 native footprints; 62 tests pass, no skips.
+Only helper changes across
+6059 slots; root/parent and protected data/guards intact. Game remains
+2636/4789 exact, zero drift, 2153 different. Next: guest frame/minimum home and
+normal/side/constant lifetimes. No full helper-chain/FCSR/gameplay acceptance,
+host transplant, sibling source/build/save/frozen Release change or push.
+
 ## Game Graph Edge Crossing Recovery - 2026-10-06
 
 [Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)

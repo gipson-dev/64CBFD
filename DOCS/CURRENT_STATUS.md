@@ -21,6 +21,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Graph edge crossing lifetime improvement:
+[Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)
+improves `func_15086D94` from 151 to 102 real differences. All 207 words now
+emit from C without padding; frame 0x80 still differs from retail 0x90.
+The saved prefix and complete outer-loop tail match directly, with one count
+load. 209 new controls; qualification now compares retail and three C bodies
+across 2177 cases, plus 288 native footprints; all 62 tests pass, no skips.
+Only the helper changes across
+6059 slots; root/parent, protected sections, 720 owners and 10643 guards intact.
+README/counts unchanged: Game 2636/4789 exact, zero drift, 2153 different.
+Next: frame/minimum home and normal/side/constant lifetimes. Full helper-chain/
+FCSR/gameplay acceptance remains separate; the Game matching goal stays active.
+
 Graph edge crossing semantic recovery:
 [Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)
 replaces `func_15086D94`'s zero-return placeholder with its complete horizontal
@@ -33,7 +46,8 @@ no skips. Only the helper changes across
 unchanged. README/counts stay 3309/5462 total and 2636/4789 Game exact, zero
 drift, 2153 different. Next: helper frame/private homes and normal lifetimes;
 parent remains at 282 differences. Full helper-chain/FCSR/gameplay acceptance
-is still separate. The Game matching goal remains active.
+is still separate. Its 151-difference checkpoint is superseded by Note 1026
+above; the Game matching goal remains active.
 
 Root neighbor lookup direct match:
 [Note 1024](WORKING_NOTES/1024-game-root-neighbor-lookup-direct-match-20261006.md)

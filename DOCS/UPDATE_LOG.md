@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-06 Game Graph Edge Crossing Lifetime Improvement
+
+[Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)
+improves `func_15086D94` from 151 to 102 real differences: 207 emitted words,
+no padding, frame 0x80 versus retail 0x90. The saved prefix and complete outer
+loop emit directly; the count is loaded once. 209 compiler controls with empty
+diagnostics; 2177 four-way guest cases and 288 native footprints. All 62 tests
+pass, no skips. Only helper
+changes across 6059 slots; root/parent and protected data/guards intact.
+README/counts unchanged: Game 2636/4789 exact, zero drift, 2153 different.
+Next: frame/minimum home and normal/side/constant lifetimes. Still not a byte
+match or full helper-chain/FCSR/gameplay acceptance. No sibling/frozen Release
+change, host transplant or push.
+
 ## 2026-10-06 Game Graph Edge Crossing Recovery
 
 [Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)

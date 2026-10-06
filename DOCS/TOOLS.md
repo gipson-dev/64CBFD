@@ -6,6 +6,16 @@ says otherwise.
 
 ## Zone selection compiler controls
 
+[Edge lifetime driver](../tools/experiments/game_graph_edge_crossing_lifetimes.py)
+adds 209 existing-profile source controls in eight modes: default layouts,
+`--loops`, `--sides`, `--coordinates`, `--registers`, `--declarations`,
+`--parameters`, or `--geometry`. Modes are mutually exclusive and each writes
+a separate ignored JSON receipt under `conker/build/game-graph-edge-lifetimes/`.
+It freezes the preceding 151-difference body; no experiment installs source
+or permits oversized code. See
+[Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)
+for the selected 207-word / 102-difference improvement and qualification limits.
+
 [Edge-crossing driver](../tools/experiments/game_graph_edge_crossing_candidates.py)
 screens 39 source forms under the existing/default-unroll profiles, writing
 78 records to ignored `conker/build/game-graph-edge-crossing/screen.json`.
@@ -13,7 +23,8 @@ It preserves the semantic baseline and marks minimum-result/narrowed-band
 negative controls. Requires the retail ROM, IDO and MIPS binutils. It does not
 install source or permit oversized bodies. See
 [Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)
-for the qualified recovery and remaining 151-word mismatch.
+for the original recovery; Note 1026 supersedes its 151-word mismatch with
+the current 102-difference form. The original 39-form inventory stays frozen.
 
 [Root lookup driver](../tools/experiments/game_root_neighbor_lookup_candidates.py)
 measures 35 source forms under both existing/default-unroll profiles and writes

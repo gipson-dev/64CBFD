@@ -176,6 +176,7 @@ f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
     u8 *nodes;
     u8 *first;
     u8 *second;
+    u8 *cursor;
     f32 minimum;
     f32 fraction;
     f32 ax;
@@ -185,20 +186,25 @@ f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
     f32 constant;
     f32 start;
     f32 end;
+    f32 a;
+    f32 b;
+    f32 cross_x;
+    f32 cross_z;
     f32 swap;
 
     band = func_15085DA8(y);
     count = D_80087290;
     minimum = 100.0f;
-    if (count > 0) {
+    i = 0;
+    if (i < count) {
         nodes = D_800D2350;
-        for (i = 0; i < count; i++) {
-            first = nodes + i * 16;
+        do {
+            first = nodes + (i << 4);
             if (first[14] == 1 && first[6] == band) {
-                for (j = 0; j < 5; j++) {
-                    id = first[j + 9];
+                for (j = 0, cursor = first; j < 5; j++, cursor++) {
+                    id = cursor[9];
                     if (id != 255 && i < id) {
-                        second = nodes + id * 16;
+                        second = nodes + (id << 4);
                         if (second[14] == 1) {
                             nx = (f32)(*(s16 *)(second + 4) - *(s16 *)(first + 4));
                             nz = -(f32)(*(s16 *)(second + 0) - *(s16 *)(first + 0));
@@ -206,26 +212,29 @@ f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
                             az = (f32)*(s16 *)(first + 4);
                             constant = -(ax * nx + nz * az);
                             start = x * nx + z * nz + constant;
+                            a = start;
                             end = (x + dx) * nx + (z + dz) * nz + constant;
+                            b = end;
                             if ((end < 0.0f && 0.0f <= start) ||
                                 (start < 0.0f && 0.0f <= end)) {
                                 if (end < 0.0f) {
-                                    end = -end;
+                                    b = -end;
                                 }
                                 if (start < 0.0f) {
-                                    start = -start;
+                                    a = -start;
                                 }
                                 swap = nx;
                                 nx = -nz;
                                 nz = swap;
-                                fraction = start / (start + end);
+                                fraction = a / (a + b);
                                 constant = -(ax * nx + swap * az);
-                                start = (x + fraction * dx) * nx +
-                                        (z + fraction * dz) * nz + constant;
-                                end = (f32)*(s16 *)(second + 0) * nx +
+                                cross_x = x + fraction * dx;
+                                cross_z = z + fraction * dz;
+                                a = cross_x * nx + cross_z * nz + constant;
+                                b = (f32)*(s16 *)(second + 0) * nx +
                                       nz * (f32)*(s16 *)(second + 4) + constant;
-                                if ((0.0f < end && 0.0f < start && start <= end) ||
-                                    (end < 0.0f && start < 0.0f && end <= start)) {
+                                if ((0.0f < b && 0.0f < a && a <= b) ||
+                                    (b < 0.0f && a < 0.0f && b <= a)) {
                                     if (fraction < minimum) {
                                         minimum = fraction;
                                     }
@@ -235,7 +244,8 @@ f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
                     }
                 }
             }
-        }
+            i++;
+        } while (i < D_80087290);
     }
     if (minimum <= 1.0f) {
         /* Retail returns the last crossing fraction, even if that edge was rejected. */

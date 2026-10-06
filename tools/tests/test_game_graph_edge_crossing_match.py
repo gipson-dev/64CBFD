@@ -11,6 +11,7 @@ import unittest
 from pathlib import Path
 
 from tools.experiments import game_graph_edge_crossing_candidates as screen
+from tools.experiments import game_graph_edge_crossing_lifetimes as lifetimes
 from tools.match_progress import load_elf_functions
 from tools.tests.test_game_actor_triangle_transform_match import TriangleOracle, put
 from tools.tests.test_game_record_neighbor_visit_match import read
@@ -147,6 +148,7 @@ class GameGraphEdgeCrossingMatchTests(unittest.TestCase):
         cls.output.mkdir(exist_ok=True)
         cls.record, cls.words = screen.compile_candidate(cls.root, cls.output, 'selected', screen.SELECTED)
         _, cls.baseline = screen.compile_candidate(cls.root, cls.output, 'baseline', screen.BASELINE)
+        _, cls.checkpoint = screen.compile_candidate(cls.root, cls.output, 'checkpoint', lifetimes.CHECKPOINT)
         cls.retail = list(struct.unpack_from('>207I', (cls.root / 'conker/conker.us.bin').read_bytes(), 0xB4244))
         cls.coverage, cls.cases = set(), 0
         cls.directory = tempfile.TemporaryDirectory()
@@ -155,7 +157,7 @@ class GameGraphEdgeCrossingMatchTests(unittest.TestCase):
 
     def check_case(self, memory, parameters=(-5.0, 2.75, 5.0, 10.0, 0.0), band=0, mutation=0, phase=0):
         wanted, calls, writes, result, trace = reference(memory, parameters, band, mutation)
-        for words in (self.retail, self.words, self.baseline):
+        for words in (self.retail, self.words, self.baseline, self.checkpoint):
             model = EdgeOracle(words, memory, parameters, band, mutation, phase).run()
             self.assertEqual(model.f[0], result, (parameters, band, trace))
             self.assertEqual(model.calls, calls)
@@ -305,16 +307,17 @@ for(c=0;c<288;c++) {
     def test_compiler_inventory_and_nonmatching_boundary(self):
         forms = screen.candidates() + screen.lifetime_candidates() + screen.cursor_candidates() + screen.parameter_candidates()
         self.assertEqual((len(forms), len(dict(forms))), (39, 39))
-        self.assertEqual(screen.SELECTED, dict(forms)['reused-side-values'])
+        self.assertEqual(lifetimes.CHECKPOINT, dict(forms)['reused-side-values'])
+        self.assertEqual(screen.SELECTED, lifetimes.SELECTED)
         self.assertEqual((self.record['body_words'], self.record['frame'], self.record['real_differences'],
-                          self.record['diagnostics']), (206, 0x78, 151, ''))
+                          self.record['diagnostics']), (207, 0x80, 102, ''))
         self.assertNotEqual(self.words, self.retail)
 
     def test_zz_record_coverage_receipt(self):
         missing = set(range(0x15087004, 0x15087028, 4))
         self.assertEqual(self.coverage, set(range(ENTRY, ENTRY + 207 * 4, 4)) - missing)
         (self.output / 'behavior.json').write_text(json.dumps(dict(
-            cases=self.cases, models=3, retail_words_visited=len(self.coverage),
+            cases=self.cases, models=4, retail_words_visited=len(self.coverage),
             missing=[hex(a) for a in range(ENTRY, ENTRY + 207 * 4, 4) if a not in self.coverage],
             selected=self.record), indent=2) + '\n')
 

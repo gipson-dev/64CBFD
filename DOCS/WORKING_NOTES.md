@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)):
+Improve `func_15086D94` from 151 to 102 real differences: all 207 words emit
+from C, no padding, frame 0x80 still not retail 0x90. Saved prefix and full
+outer-loop tail match directly; one count load. 209 controls, 2177 four-way
+guest cases and 288 native footprints; 62 tests pass, no skips.
+Only helper changes across 6059 slots;
+root/parent, protected data and guards intact. README/counts unchanged: Game
+2636/4789 exact, zero drift. Next: frame/minimum home and normal/side/constant
+lifetimes; no full helper-chain/FCSR/gameplay acceptance. Game goal stays active.
+
 2026-10-06 ([Note 1025](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md)):
 Recover `func_15086D94`'s complete horizontal edge-crossing pass. Semantic
 recovery only: 206 body / 207 slot words, frame 0x78, 151 differences. Preserve

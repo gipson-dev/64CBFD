@@ -193,7 +193,27 @@ def parameter_candidates():
     return forms
 
 
-SELECTED = dict(candidates())['reused-side-values']
+def selected_lifetimes():
+    body = dict(cursor_candidates())['edge-cursor-side-copies']
+    body = replace(body, '                            a = start;\n', '')
+    body = replace(body, '                            end = (x + dx)',
+                   '                            a = start;\n                            end = (x + dx)')
+    body = replace(body, '    if (count > 0) {\n        nodes = D_800D2350;\n'
+                   '        for (i = 0; i < count; i++) {',
+                   '    i = 0;\n    if (i < count) {\n        nodes = D_800D2350;\n        do {')
+    body = replace(body, '        }\n    }\n    if (minimum',
+                   '            i++;\n        } while (i < D_80087290);\n    }\n    if (minimum')
+    body = replace(body, '    f32 swap;', '    f32 cross_x;\n    f32 cross_z;\n    f32 swap;')
+    body = replace(body,
+                   '                                a = (x + fraction * dx) * nx +\n'
+                   '                                        (z + fraction * dz) * nz + constant;',
+                   '                                cross_x = x + fraction * dx;\n'
+                   '                                cross_z = z + fraction * dz;\n'
+                   '                                a = cross_x * nx + cross_z * nz + constant;')
+    return body
+
+
+SELECTED = selected_lifetimes()
 
 
 def compile_candidate(root, output, name, body, unroll=False):

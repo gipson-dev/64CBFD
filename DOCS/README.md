@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest graph edge-crossing lifetime improvement](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md):
+  151 to 102 real differences, full 207-word body and matched outer loop;
+  the retail frame and floating-register lifetimes remain open.
 - [Latest graph edge-crossing recovery](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md):
   complete semantic body, retail last-fraction quirk, measured 151-word
   mismatch and remaining frame/lifetime work. Not a completed byte match.
