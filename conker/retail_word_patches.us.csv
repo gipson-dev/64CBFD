@@ -10636,3 +10636,9 @@ generated_58F80,func_1502F3C8,0x060,0x26060018,0x2607001C,-,-,Normalize actor co
 generated_58F80,func_1502F3C8,0x064,0x2607001C,0xE6040018,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
 generated_58F80,func_1502F3C8,0x070,0x022F2021,0x024F2021,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
 generated_58F80,func_1502F3C8,0x0A4,0x5612FFE4,0x5611FFE4,-,-,Normalize actor coordinate phase fixed-address prelude and closed register schedule,,,false
+generated_B3020,func_1508B2A8,0x030,0x024F1021,0x024F1821,-,-,Normalize complete visitor bitmap pointer temporary from v0 to v1,,,false
+generated_B3020,func_1508B2A8,0x034,0x90580036,0x90780036,-,-,Normalize complete visitor bitmap pointer temporary from v0 to v1,,,false
+generated_B3020,func_1508B2A8,0x048,0xA04A0036,0xA06A0036,-,-,Normalize complete visitor bitmap pointer temporary from v0 to v1,,,false
+generated_B3020,func_1508B2A8,0x0F8,0x308200FF,0x308300FF,-,-,Normalize complete visitor masked neighbor temporary from v0 to v1,,,false
+generated_B3020,func_1508B2A8,0x0FC,0x000258C3,0x000358C3,-,-,Normalize complete visitor masked neighbor temporary from v0 to v1,,,false
+generated_B3020,func_1508B2A8,0x108,0x304E0003,0x306E0003,-,-,Normalize complete visitor masked neighbor temporary from v0 to v1,,,false

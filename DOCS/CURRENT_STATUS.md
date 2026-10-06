@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-05
+Last verified: 2026-10-06
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -20,6 +20,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Recursive record-neighbor visitor byte match:
+[Note 1021](WORKING_NOTES/1021-game-record-neighbor-visitor-match-20261006.md)
+replaces `func_1508B2A8`'s zero-return placeholder with its complete 84-word
+recursive X/Z threshold visitor. Frame 0x30 and five saved-register lifetimes
+match; six guards normalize two complete V0-to-V1 temporary lifetimes.
+No compiler override, insertion/omission or assembly edit. Twenty-four controls
+complete; 13 qualification tests and 49 focused regressions pass, no skips.
+4096 leaf and 4608 recursive three-way cases, full instruction coverage,
+2304 native footprints, signed-count and physical-alias checks preserve the
+retail mask collisions, strict threshold and fresh count/global reads.
+Only target changes across 6059 slots; protected sections/720 data owners and
+all 10637 older guards unchanged. Counts: 3308/5462 total, 2635/4789 Game
+exact, zero drift, 2154 different. README aggregates updated. Next: inspect
+parent `func_1508B3F8`; full parent/FCSR/gameplay remains unqualified.
 
 Record dispatcher direct match:
 [Note 1020](WORKING_NOTES/1020-game-record-dispatcher-direct-match-20261005.md)

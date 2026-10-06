@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-06 ([Note 1021](WORKING_NOTES/1021-game-record-neighbor-visitor-match-20261006.md)):
+Recover `func_1508B2A8`: all 84 words, frame 0x30 and five saves. Six guards
+rename two complete temporary lifetimes; no new profile or assembly change.
+24 controls; 13 qualification / 49 regression tests pass, no skips. 4096 leaf
+and 4608 recursive three-way cases cover all words; 2304 native footprints,
+count/global alias cases and negative controls preserve retail's exact contract.
+Only target changes across 6059 slots; protected data/older guards intact.
+Game exact 2635/4789, zero drift; README aggregates updated. Next: inspect
+parent 1508B3F8. Full parent/hardware/gameplay acceptance remains separate.
+
 2026-10-05 ([Note 1020](WORKING_NOTES/1020-game-record-dispatcher-direct-match-20261005.md)):
 Close `func_15040CC8` directly: 38 words, no overflow/guards/profile override.
 Integer record plus divide-by-one update recover signed index, three saves,

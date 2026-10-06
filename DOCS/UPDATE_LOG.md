@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-06 Game Record Neighbor Visitor Byte Match
+
+[Note 1021](WORKING_NOTES/1021-game-record-neighbor-visitor-match-20261006.md)
+recovers `func_1508B2A8` across all 84 words, frame 0x30 and five saves.
+Six guards close two complete temporary-register lifetimes; no profile override,
+insertion/omission or assembly edit. Twenty-four controls, 4096 leaf and 4608
+recursive three-way cases, full word coverage and 2304 native footprints.
+All 13 qualification tests and 49 focused regressions pass, no skips.
+Only target changes in 6059 slots; protected sections/720 owners and all older
+guards stay intact. Totals: 3308/5462, Game 2635/4789 exact, zero drift,
+2154 different. README only aggregate tables/date updated. Next: inspect parent
+1508B3F8. No full caller/gameplay, sibling/frozen Release change or push.
+
 ## 2026-10-05 Game Record Dispatcher Direct Match
 
 [Note 1020](WORKING_NOTES/1020-game-record-dispatcher-direct-match-20261005.md)

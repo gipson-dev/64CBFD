@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Record Neighbor Visitor Byte Match - 2026-10-06
+
+[Note 1021](WORKING_NOTES/1021-game-record-neighbor-visitor-match-20261006.md)
+recovers DECOMP `func_1508B2A8`'s 84-word recursive X/Z threshold visitor.
+Six guards normalize two complete register lifetimes; no profile override.
+13 qualification and 49 focused regression tests pass; 4096 leaf / 4608
+recursive three-way cases, full word coverage and 2304 native footprints.
+Only target changes in 6059 slots; protected sections/720 owners intact.
+Game exact 2635/4789, zero drift; README aggregates updated. Continue guest
+matching by inspecting parent 1508B3F8. Full parent/FCSR/gameplay and host
+integration remain separate. No sibling source/build/save/frozen Release
+change or push.
+
 ## Game Record Dispatcher Direct Match - 2026-10-05
 
 [Note 1020](WORKING_NOTES/1020-game-record-dispatcher-direct-match-20261005.md)

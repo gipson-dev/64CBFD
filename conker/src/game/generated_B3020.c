@@ -398,8 +398,45 @@ void func_1508B20C(f32 x, f32 y, f32 z, f32 radius) {
     }
 }
 
-s32 func_1508B2A8() {
-    return 0;
+typedef struct NeighborVisitQueryB3020 {
+    f32 x;
+    f32 z;
+    f32 threshold;
+    f32 distances[8];
+    s16 count;
+    u8 ids[8];
+    u8 visited[32];
+} NeighborVisitQueryB3020;
+
+void func_1508B2A8(u8 id, NeighborVisitQueryB3020 *query) {
+    u8 *node;
+    u8 *walk;
+    s32 i;
+    f32 x;
+    f32 z;
+
+    query->visited[id >> 3] |= 1 << (id & 3);
+    node = D_800D2350 + id * 16;
+    x = (f32)*(s16 *)(node + 0) - query->x;
+    z = (f32)*(s16 *)(node + 4) - query->z;
+    z = x * x + z * z;
+    if (query->threshold < z) {
+        if (query->count < 8) {
+            ((u8 *)query)[query->count + 0x2E] = id;
+            *(f32 *)((u8 *)query + query->count * 4 + 0xC) = z;
+            (query->count)++;
+        }
+    } else {
+        for (i = 0, walk = node; i < 5; i++) {
+            id = walk[9];
+            if (id != 0xFF) {
+                if (!(query->visited[(u8)(id / 1) >> 3] & (1 << ((u8)(id / 1) & 3)))) {
+                    func_1508B2A8(id, query);
+                }
+            }
+            walk++;
+        }
+    }
 }
 
 s32 func_1508B3F8() {
