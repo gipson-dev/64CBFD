@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game View Corner Initializer Direct C Conversion - 2026-10-06
+
+[Note 1047](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md)
+converts guest retained `func_1513FFF4`: 55 direct words/frame eight, existing
+O2/g3, no guards/profile/shared header/data. Typed owner-local ABI, unsigned
+dimension arithmetic and corner stores qualified standalone and through the
+actual constructor. 40 controls; all 169 chain words covered. All 6059 slots
+identical to the assembly baseline, protected sections/720 owners/10660 guards
+intact, 48 unchanged warnings, zero new. Game converted 4790/5321, exact
+2652/4790 (55.37%), zero drift, 2138 different. All 52 focused post-link
+tests pass in 713.368 seconds, no skips. Next retained guest `func_151400D0`; this is not full backend/
+hardware/gameplay/host adoption. No sibling source/build/save/frozen Release
+change or push.
+
 ## Game Source Effect Constructor Direct Match - 2026-10-06
 
 [Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md)

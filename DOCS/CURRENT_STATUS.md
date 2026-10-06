@@ -21,6 +21,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+View corner initializer direct C conversion:
+[Note 1047](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md)
+converts retained `func_1513FFF4`: all 55 direct words/frame eight, existing
+O2/g3, no guards/profile/shared header/data. Owner-local void/pointer/byte
+prototype and constructor call recovered; constructor's 114 words unchanged.
+Unsigned dimension underflow, variant corner stores, index-255 no-access gate
+and captured dimensions qualified with 40 controls, 8192 two-body guest cases,
+65536 byte-pair cases, 15 no-access cases, 256 two-body aliases, 589824 native
+helper and 131072 connected native cases. 1536 two-body actual constructor/
+helper cases cover all 169 chain words. All 6059 linked slots are identical
+to the assembly checkpoint; protected sections/720 owners/10660 guards intact.
+48 owner warnings unchanged, zero new. Converted total 5463/6042, Game
+4790/5321; exact total 3325/5463, Game 2652/4790, zero drift, 2138 different.
+All 52 focused post-link tests pass in 713.368 seconds, no skips.
+Next inspect retained 48-word
+`func_151400D0` vertex-attribute helper; no full backend/hardware/gameplay/
+host adoption, sibling source/build/save/frozen Release change or push.
+
 Source effect constructor direct match:
 [Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md)
 recovers `func_1513D2F0`: all 114 words directly, frame 0x38, existing O2/g3;

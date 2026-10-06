@@ -4,6 +4,26 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## View corner initializer compiler controls
+
+[Driver](../tools/experiments/game_view_corner_initializer_candidates.py)
+screens ten forms/four profiles: 40 controls with real SDK types and fixed
+anchors. A pointer ABI, explicit 12-byte table-record pointer, unsigned
+halfword dimensions and shared word temporary emit all 55 words/frame eight
+directly under O2/g3. No source/guard/profile installation by the driver.
+Retail ROM, IDO and MIPS tools required; ignored receipts under
+`conker/build/game-view-corner-initializer[-test]/`.
+[Nine tests](../tools/tests/test_game_view_corner_initializer_match.py) bind
+all controls and installed source/slot, index-255 no-access behavior, every
+index/variant byte pair, unsigned dimension boundaries, all eight stores,
+table/output aliases, and actual constructor/helper chains. Native fixtures
+use the byte-exact equivalent file-scope table declaration to define storage;
+only declaration scope changes, not the function's statements. Constructor
+entry instrumentation forwards to actual helper C and independent reference
+stores verify the complete actor. Backend/table providers remain callbacks,
+not full hardware/gameplay/host adoption. See
+[Note 1047](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md).
+
 ## Source effect constructor compiler controls
 
 [Driver](../tools/experiments/game_source_effect_constructor_candidates.py)
@@ -19,7 +39,9 @@ width, safe payload boundaries, helper/default mutations and inclusive live
 bound. Guest traces cover all 114 words and 204 actual-wrapper path words.
 Native actual C verifies whole storage and actual wrapper/construction/updater
 publication; backend helpers remain callbacks, not complete FCSR/hardware/
-gameplay/host adoption. See
+gameplay/host adoption. The helper declaration/call now use the recovered
+void/pointer/byte ABI; all 97 controls and 114 constructor words remain bound.
+Connected actual corner-helper qualification is in Note 1047. See
 [Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md).
 
 ## Source effect packet compiler controls

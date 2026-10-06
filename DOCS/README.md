@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest view corner initializer direct conversion](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md):
+  Retained assembly converted to 55 direct C words; typed byte ABI, modulo
+  dimensions and actual constructor/helper qualification. Next `func_151400D0`.
+
 - [Latest source effect constructor direct match](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md):
   114 direct words; captured flags, live descriptor/helper/default/view contract
   and actual wrapper/updater qualification. Next inspect `func_1513FFF4`.

@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-06 Game View Corner Initializer Direct C Conversion
+
+[Note 1047](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md)
+converts retained `func_1513FFF4`: 55 direct words/frame eight under existing
+O2/g3. Owner-local typed void ABI and caller corrected; no guards/profile/
+shared header/data changes. 40 controls; 8192 two-body guest, 65536 byte-pair,
+15 no-access, 256 two-body alias, 589824 native helper, 1536 two-body connected
+guest and 131072 connected native cases. All 169 constructor/helper words
+covered. All 6059 linked slots identical, constructor unchanged, protected
+sections/720 owners/10660 guards intact; 48 unchanged warnings, zero new.
+Converted total 5463/6042, Game 4790/5321; exact total 3325/5463, Game
+2652/4790, zero drift, 2138 different. All 52 focused post-link tests pass
+in 713.368 seconds, no skips. Next retained `func_151400D0`; no full backend/gameplay/host claim,
+sibling/Release change or push.
+
 ## 2026-10-06 Game Source Effect Constructor Direct Match
 
 [Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md)

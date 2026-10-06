@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-06 ([Note 1047](WORKING_NOTES/1047-game-view-corner-initializer-direct-match-20261006.md)):
+`func_1513FFF4`: retained assembly converted to all 55 direct C words/frame
+eight, existing O2/g3, no guards/profile/shared header/data. Void/pointer/
+byte ABI and constructor call recovered without changing linked constructor.
+40 controls; 8192 two-body guest, 65536 byte-pair, 15 no-access, 256 alias,
+589824 native helper, 1536 connected guest and 131072 connected native cases.
+All 169 chain words covered. All 6059 slots unchanged, protected sections/
+720 owners/10660 guards intact. 48 warnings unchanged, zero new. Converted
+5463/6042, Game 4790/5321; exact 3325/5463, Game 2652/4790, zero drift,
+2138 different. All 52 focused post-link tests pass in 713.368 seconds,
+no skips. Next
+`func_151400D0`; no gameplay/host claim, sibling/Release change or push.
+
 2026-10-06 ([Note 1046](WORKING_NOTES/1046-game-source-effect-constructor-direct-match-20261006.md)):
 `func_1513D2F0`: 114 direct words/frame 0x38, existing O2/g3; no new
 guards/profile/shared header/data. Full live-copy constructor and actual

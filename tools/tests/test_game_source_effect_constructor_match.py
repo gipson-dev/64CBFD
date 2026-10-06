@@ -419,11 +419,11 @@ void bzero(void *out,u32 length) {
     for(i=0;i<length;i++) ((u8 *)out)[i]=0;
     if(mutation) {actor[0x18]=0xB2;D_800A5184=-1;}
 }
-s32 func_1513FFF4(s32 helper,s32 index,s32 variant) {
+void func_1513FFF4(u8 *helper,u8 index,u8 variant) {
     int i;
-    if(stage++!=3 || helper!=(s32)(actor+0xC0) || index!=(mutation?0xB2:copied[0]) || variant!=expectedVariant) error=5;
+    if(stage++!=3 || helper!=actor+0xC0 || index!=(mutation?0xB2:copied[0]) || variant!=expectedVariant) error=5;
     for(i=0;i<16;i++) if(actor[0x100+i]) error=6;
-    store((u8 *)helper,0x12345678);if(mutation) D_800A5184=-2;return -1;
+    store(helper,0x12345678);if(mutation) D_800A5184=-2;
 }
 s32 func_151400D0(s32 helper,s32 table) {
     if(stage++!=4 || helper!=(s32)(actor+0xC0) || table!=expectedTable) error=7;

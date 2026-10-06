@@ -17,7 +17,7 @@ s32 func_1513F114();
 s32 func_1513F4E4();
 s32 func_1513F728();
 s32 func_1513FAB4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-s32 func_1513FFF4(s32 arg0, s32 arg1, s32 arg2);
+void func_1513FFF4(u8 *out, u8 index, u8 variant);
 s32 func_151400D0(s32 arg0, s32 arg1);
 s32 func_15140190();
 s32 func_15140410(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
@@ -283,7 +283,7 @@ void *func_1513D2F0(void *descriptor, s32 table, u8 kind, u8 mode, u8 first,
     result[0x73] = setup;
     result[0x74] = 0;
     bzero(result + 0x100, 0x10);
-    func_1513FFF4((s32)(result + 0xC0), result[0x18], variant);
+    func_1513FFF4(result + 0xC0, result[0x18], variant);
     func_151400D0((s32)(result + 0xC0), table);
     *(s32 *)(result + 0x10) = 1;
     *(s32 *)(result + 0x14) = 0;
@@ -651,8 +651,38 @@ void func_1513FA70(struct210 *arg0, s16 arg1) {
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513FAB4.s. */
 s32 func_1513FAB4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513FFF4.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513FFF4.s")
+}
+
+void func_1513FFF4(u8 *out, u8 index, u8 variant) {
+    typedef struct {
+        u8 prefix[6];
+        u16 width;
+        u16 height;
+        u8 tail[2];
+    } ViewDimensions169510;
+    extern ViewDimensions169510 D_80090B60[];
+    ViewDimensions169510 *record;
+    u16 width, height;
+    s32 coordinate;
+
+    if (index != 255) {
+        record = &D_80090B60[index];
+        width = record->width - 1;
+        height = record->height - 1;
+        coordinate = (variant & 1) ? width << 6 : 0;
+        *(s16 *)(out + 0x38) = coordinate;
+        *(s16 *)(out + 0x08) = coordinate;
+        coordinate = (variant & 1) ? 0 : width << 6;
+        *(s16 *)(out + 0x28) = coordinate;
+        *(s16 *)(out + 0x18) = coordinate;
+        coordinate = (variant & 2) ? height << 6 : 0;
+        *(s16 *)(out + 0x1A) = coordinate;
+        *(s16 *)(out + 0x0A) = coordinate;
+        coordinate = (variant & 2) ? 0 : height << 6;
+        *(s16 *)(out + 0x3A) = coordinate;
+        *(s16 *)(out + 0x2A) = coordinate;
+    }
+}
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_151400D0.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_151400D0.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_15140190.s. */
