@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest list-key sorter recovery](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md):
+  72-word body/73-word slot; 54 direct instructions plus18 register-only
+  guards and nop, stable keys and captured/live link qualification.
+  Next `func_151407D0`; sibling cycle safeguards remain separate.
+
 - [Latest basis-vector quad builder match](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md):
   167 words, 165 direct plus two load scheduling guards; captured components,
   live translation aliases and actual owner/backend qualification.

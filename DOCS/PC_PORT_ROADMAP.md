@@ -1,5 +1,23 @@
 # PC Port Roadmap located in another project folder
 
+## Game List-Key Sorter Recovery - 2026-10-06
+
+[Note 1051](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md)
+recovers guest `func_151406AC`: 72-word body/73-word slot, frame0x138,
+54 direct instructions plus18 register-only guards and nop. Full storage,
+stable equal keys, signed-value/bypass and retail precondition qualification;
+71 reachable body words covered, not artificial coverage of the unreferenced
+walker instruction. Only target changes across6059 fixed slots; protected
+sections/720 owners unchanged, 10667 existing guards plus18, 45 unchanged
+warnings, zero new. Converted counts unchanged; Game2656/4791 exact (55.44%),
+2135 different, zero drift. 33 docs/3365 links/zero broken; all 83 post-link
+regression tests pass in 839.818 seconds, no skips.
+Read-only sibling `recomp_out/.c` contains the retail-translated sorter with
+host-only inner/outer cycle guards. Those safeguards remain untouched;
+no regeneration or mechanical guest-C import. Next guest `func_151407D0`.
+No complete dispatch/hardware/gameplay/host acceptance claim, sibling source/
+build/save/frozen Release change, runtime launch or push.
+
 ## Game Basis-Vector Quad Builder Match - 2026-10-06
 
 [Note 1050](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md)

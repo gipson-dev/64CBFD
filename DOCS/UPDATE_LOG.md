@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-06 Game List-Key Sorter Recovery
+
+[Note 1051](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md)
+recovers `func_151406AC`: 72-word body/73-word slot/frame0x138, 54 direct
+instructions plus18 register-only guards and trailing nop, existing O2/g3.
+24 persistent controls, 5760 full-storage two-body guest cases and 65535
+nonzero bypass values; 960 native storage, 65536 signed-value and 65535 bypass
+cases. Stable equal keys, live repairs and captured successor preserved;
+null-head/sentinel preconditions remain explicit. Production audit passes:
+only target across6059 fixed slots, protected sections/720 owners intact,
+10667 existing guards plus18, 45 unchanged warnings, zero new. Converted
+counts unchanged; exact total3329/5464, Game2656/4791 (55.44%), 2135 different,
+zero drift. 33 docs/3365 links/zero broken; all 83 post-link regression tests
+pass in 839.818 seconds, no skips.
+Next `func_151407D0`; no gameplay/host claim, sibling/Release change or push.
+
 ## 2026-10-06 Game Basis-Vector Quad Builder Match
 
 [Note 1050](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md)

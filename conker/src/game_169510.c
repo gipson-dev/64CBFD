@@ -21,7 +21,7 @@ void func_1513FFF4(u8 *out, u8 index, u8 variant);
 void func_151400D0(u8 *out, u8 *input);
 Vtx *func_15140190(u8 *actor, s16 view);
 Vtx *func_15140410(u8 *actor, f32 *widthAxis, f32 *heightAxis, s16 view);
-s32 func_151406AC();
+s32 func_151406AC(s32 token, u32 column, u32 row, s16 bypass);
 /* End generated placeholder declarations. */
 
 void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
@@ -791,7 +791,69 @@ Vtx *func_15140410(u8 *actor, f32 *widthAxis, f32 *heightAxis, s16 view) {
     cursor[3].v.flag = 0;
     return first;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_151406AC.s. */
-s32 func_151406AC() {
-    return 0;
+typedef struct SortNode169510 {
+    u8 prefix[4];
+    struct SortNode169510 *prev;
+    struct SortNode169510 *next;
+    u8 padC[0xC];
+    u8 kind;
+    u8 pad19[7];
+    s32 value;
+    u8 tail[0xEC];
+} SortNode169510;
+
+s32 func_151406AC(s32 token, u32 column, u32 row, s16 bypass) {
+    SortNode169510 dummy;
+    SortNode169510 **slot;
+    SortNode169510 *head;
+    SortNode169510 *current;
+    SortNode169510 *previous;
+    SortNode169510 *next;
+    SortNode169510 *temporary;
+    s32 key;
+    s32 otherKey;
+    if (bypass != 0) {
+        return token;
+    }
+    slot = (SortNode169510 **)(D_800DCE50 + row * 0x1A0 + column * 4);
+    head = *slot;
+    dummy.kind = 0;
+    dummy.value = 0;
+    dummy.next = head;
+    head->prev = &dummy;
+    if (head != NULL) {
+        current = head->next;
+        while (current != NULL) {
+            previous = current->prev;
+            temporary = current->next;
+            next = temporary;
+            key = (current->kind << 8) + (current->value >> 16);
+            head = previous;
+            while (head != NULL) {
+                otherKey = (head->kind << 8) + (head->value >> 16);
+                if (key >= otherKey) {
+                    if (head != previous) {
+                        previous->next = temporary;
+                        temporary = current->next;
+                        if (temporary != NULL) {
+                            temporary->prev = current->prev;
+                        }
+                        temporary = head->next;
+                        current->next = temporary;
+                        if (temporary != NULL) {
+                            temporary->prev = current;
+                        }
+                        current->prev = head;
+                        head->next = current;
+                    }
+                    break;
+                }
+                head = head->prev;
+            }
+            current = next;
+        }
+    }
+    *slot = dummy.next;
+    dummy.next->prev = NULL;
+    return token;
 }

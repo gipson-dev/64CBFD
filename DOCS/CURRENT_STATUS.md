@@ -21,6 +21,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+List-key sorter recovery:
+[Note 1051](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md)
+recovers `func_151406AC`: 72-word body/73-word slot, frame0x138, existing
+O2/g3, 54 direct instructions plus 18 register-only lifetime guards and trailing
+nop. Stable equal-key ordering, captured successor and live link repairs;
+5760 two-body full-storage guest cases, 65535 two-body bypass values, 960
+native storage, 65536 native signed-value and 65535 native bypass cases.
+Strict guest boundaries preserve retail's null-head write and negative-key
+sentinel walk; no safety/cycle fixes. Production link/audit pass: only target
+changes across 6059 fixed slots, protected sections/720 owners unchanged;
+10667 existing guards plus18, 45 unchanged warnings, zero new. Converted
+counts unchanged; exact total3329/5464 (60.93%), Game2656/4791 (55.44%),
+2135 different, zero drift. 33 docs/3365 links/zero broken.
+All 83 post-link regression tests pass in 839.818 seconds, no skips.
+Next adjacent 53-word `func_151407D0` allocation/copy wrapper, including the
+false void return of its `func_1513D524` callee. Sibling sorter already has
+retail-translated instructions with host cycle guards; leave it unchanged.
+No full dispatch/hardware/gameplay/host claim, sibling/Release change or push.
+
 Basis-vector quad builder recovery:
 [Note 1050](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md)
 recovers `func_15140410`: 167 words/frame 0x68, existing O2/g3, 165 direct

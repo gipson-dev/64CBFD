@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-06 ([Note 1051](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md)):
+`func_151406AC`: false sorter stub recovered, 72-word body/73-word slot,
+frame0x138, 54 direct instructions plus18 register-lifetime guards and nop.
+24 controls, 5760 two-body storage cases, 65535 two-body bypass values;
+960 native storage, 65536 signed-value and 65535 bypass cases. Equal-key
+stability, captured successor/live repairs and retail preconditions preserved.
+Only target changes across6059 fixed slots; protected sections/720 owners
+unchanged, 10667 existing guards plus18, 45 unchanged warnings, zero new.
+Converted counts unchanged; exact total3329/5464, Game2656/4791, 2135 different,
+zero drift. 33 docs/3365 links/zero broken; all 83 post-link regression tests
+pass in 839.818 seconds, no skips.
+Next `func_151407D0` and
+callee pointer-return recovery; no host claim, sibling/Release change or push.
+
 2026-10-06 ([Note 1050](WORKING_NOTES/1050-game-basis-quad-builder-match-20261006.md)):
 `func_15140410`: false basis-quad stub recovered, 167 words/frame 0x68,
 165 direct plus two load scheduling guards under existing O2/g3. 24 controls;

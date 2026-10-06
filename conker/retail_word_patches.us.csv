@@ -10666,3 +10666,21 @@ game_169510,func_15140190,0x0C0,0xE7A40058,0xC6260030,-,-,Normalize cached quad 
 game_169510,func_15140190,0x0C4,0xC6260030,0xE7B40060,-,-,Normalize cached quad first corner independent setup schedule,,,false
 game_169510,func_15140410,0x0A4,0xC600002C,0x8FA30070,-,-,Normalize basis quad independent width and vector pointer load schedule,,,false
 game_169510,func_15140410,0x0A8,0x8FA30070,0xC600002C,-,-,Normalize basis quad independent width and vector pointer load schedule,,,false
+game_169510,func_151406AC,0x068,0x8FAF0030,0x8FB90030,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x078,0x8CA70008,0x8CA80008,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x090,0x00E04025,0x01003825,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0BC,0xACC70008,0xACC80008,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0C0,0x8CA70008,0x8CA80008,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0C4,0x50E00004,0x51000004,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0C8,0x8C470008,0x8C4F0008,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0D0,0xACF80004,0xAD180004,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0D4,0x8C470008,0x8C4F0008,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0D8,0x10E00002,0x11E00002,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0DC,0xACA70008,0xACAF0008,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0E0,0xACE50004,0xADE50004,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x0FC,0x1500FFDB,0x14E0FFDB,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x100,0x01002825,0x00E02825,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x104,0x8FAF0030,0x8FB90030,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x108,0x8FB90030,0x8FAB0030,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x110,0xAC6F0000,0xAC790000,-,-,Normalize list sorter closed pointer register lifetimes,,,false
+game_169510,func_151406AC,0x114,0xAF200004,0xAD600004,-,-,Normalize list sorter closed pointer register lifetimes,,,false

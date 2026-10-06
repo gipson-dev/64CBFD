@@ -4,6 +4,23 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## List-key sorter compiler controls
+
+[Driver](../tools/experiments/game_list_key_sort_candidates.py)
+screens six forms/four profiles: 24 controls, real SDK layouts/fixed table.
+Selected O2/g3 gives 72 words/frame0x138 with18 register-lifetime differences;
+no source/profile/guard installation by the driver.
+[Eight tests](../tools/tests/test_game_list_key_sort_match.py) bind all controls,
+complete production slot/body/prototype and register-only rewrite fields.
+Independent stable sorting checks entire node/table footprints and ordered
+guest accesses; native fixtures use independent array ordering with ordinal
+ties. Every nonzero signed-halfword bypass and signed-value-high-half is swept.
+Strict mapped guest fixtures preserve invalid null-head/sentinel walks instead
+of adding safety changes. Not full corrupt-list, hardware-exception, dispatcher,
+gameplay or sibling host qualification. Ignored receipts under
+`conker/build/game-list-key-sort[-test]/`. See
+[Note 1051](WORKING_NOTES/1051-game-list-key-sort-match-20261006.md).
+
 ## Basis-vector quad builder compiler controls
 
 [Driver](../tools/experiments/game_basis_quad_builder_candidates.py)
