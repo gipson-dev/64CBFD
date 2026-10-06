@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-05 ([Note 1020](WORKING_NOTES/1020-game-record-dispatcher-direct-match-20261005.md)):
+Close `func_15040CC8` directly: 38 words, no overflow/guards/profile override.
+Integer record plus divide-by-one update recover signed index, three saves,
+frame 0x28 and opening delay, with no divide emitted. 45 controls / 12288
+three-way guest cases / full word coverage; 16 matching/native and 39 oracle
+regression tests pass. Sixteen later overflow bodies shift -156 bytes with
+unchanged hashes; 13 trampolines only retarget their first jump. All other
+slots, retail addresses, protected data and older guards remain intact.
+Game exact 2634/4789, zero drift; README aggregates updated. Next: 1508B2A8.
+
 2026-10-05 ([Note 1019](WORKING_NOTES/1019-game-position-radius-append-direct-match-20261005.md)):
 Recover `func_1508B20C` directly: 39 words, no guards/profile/header change.
 Signed count/post-increment captures the old index; five base reads,

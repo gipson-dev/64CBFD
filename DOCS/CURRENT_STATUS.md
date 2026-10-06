@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Record dispatcher direct match:
+[Note 1020](WORKING_NOTES/1020-game-record-dispatcher-direct-match-20261005.md)
+closes `func_15040CC8` across all 38 words, removing its overflow trampoline.
+Integer record ABI plus divide-by-one index update retain retail's signed
+index, three saves and frame 0x28; no divide, guards or profile override.
+45 controls, 12288 three-way guest cases and full instruction coverage;
+16 matching/native tests and 39 shared-oracle regressions pass, no skips.
+Audit removes only the target overflow symbol: 16 later bodies shift by
+-156 bytes with identical hashes; 13 trampolines only retarget their first
+jump word. All other surviving slots/lengths and retail addresses intact.
+Protected sections/720 data owners and all 10637 older guards unchanged.
+Counts: 3307/5462 total, 2634/4789 Game exact, zero drift, 2155 different.
+README aggregate tables updated; callback bodies/timing/gameplay unqualified.
+Continue Game matching; 1508B2A8 is an 84-word recursive visitor placeholder.
+
 Position/radius append direct match:
 [Note 1019](WORKING_NOTES/1019-game-position-radius-append-direct-match-20261005.md)
 replaces `func_1508B20C`'s false zero-return placeholder with all 39 words

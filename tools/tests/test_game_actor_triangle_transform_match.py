@@ -140,18 +140,20 @@ class TriangleOracle(table.RangeOracle):
                     self.visits.add(pc + 4)
                     self.execute(self.code[pc + 4])
                 pc = pc + 4 + offset * 4 if take else pc + 8
-            elif op in (2, 3):
-                target = (pc + 4 & 0xF0000000) | ((word & 0x3FFFFFF) << 2)
-                if op == 3:
-                    self.r[31] = pc + 8
+            elif op in (2, 3) or op == 0 and word & 63 == 9:
+                target = self.r[rs] if op == 0 else (pc + 4 & 0xF0000000) | ((word & 0x3FFFFFF) << 2)
+                call = op == 3 or op == 0
+                if call:
+                    self.r[word >> 11 & 31 if op == 0 else 31] = pc + 8
+                    self.r[0] = 0
                 self.visits.add(pc + 4)
                 self.execute(self.code[pc + 4])
-                if op == 3:
+                if call:
                     self.record_call(target)
                 if target in self.code:
                     pc = target
                 else:
-                    assert op == 3
+                    assert call
                     self.hook(target)
                     pc += 8
             elif op == 0 and word & 63 == 8:

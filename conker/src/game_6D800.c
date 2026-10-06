@@ -232,15 +232,16 @@ s32 func_15040A78() {
 
 void func_15040CC8(u8 *arg0) {
     s32 i;
-    u8 *record;
+    s32 record;
 
     /* Retail retains this short empty delay before dispatching the records. */
     for (i = 0; i < 16; i++) {
     }
 
-    for (i = -20; i < 10; i++) {
-        record = arg0 + i * 8;
-        D_800844B0[record[0]]((s32)record);
+    /* Inhibit pointer strength reduction without emitting a divide. */
+    for (i = -20; i < 10; i = (i + 1) / 1) {
+        record = (s32)(arg0 + i * 8);
+        D_800844B0[*(u8 *)record]((s32)record);
     }
     if (D_800848B0 != 0) {
         func_1500390C(D_800848B0);

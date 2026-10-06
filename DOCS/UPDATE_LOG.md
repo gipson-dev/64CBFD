@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-05 Game Record Dispatcher Direct Match
+
+[Note 1020](WORKING_NOTES/1020-game-record-dispatcher-direct-match-20261005.md)
+matches all 38 words of `func_15040CC8` directly, removing the old overflow
+body. Integer record ABI and divide-by-one update retain retail index/frame/
+saves without emitting a divide; no guards/profile/header change. 45 controls,
+12288 three-way guest cases, full word coverage. All 16 matching/native tests
+and 39 shared-oracle regressions pass, no skips. Sixteen later overflow bodies
+shift -156 bytes unchanged; 13 trampoline slots only retarget one jump word.
+All other slots/retail addresses, protected sections/720 owners and guards
+remain intact. Totals: 3307/5462, Game 2634/4789 exact, zero drift, 2155 different.
+README only aggregate tables updated. No sibling/frozen Release change or push.
+
 ## 2026-10-05 Game Position Radius Append Direct Match
 
 [Note 1019](WORKING_NOTES/1019-game-position-radius-append-direct-match-20261005.md)

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Record Dispatcher Direct Match - 2026-10-05
+
+[Note 1020](WORKING_NOTES/1020-game-record-dispatcher-direct-match-20261005.md)
+matches DECOMP `func_15040CC8`'s 38 words directly and removes its overflow.
+No guards/profile change; 45 controls, 12288 three-way guest cases and full
+instruction coverage. Sixteen matching/native tests and 39 shared-oracle
+regressions pass. Overflow compaction: 16 bodies shift -156 bytes unchanged;
+13 trampolines only retarget one jump word. All other surviving slots,
+retail addresses and protected data intact. Game exact 2634/4789, zero drift.
+README aggregates updated; continue guest matching at 1508B2A8. Callback
+bodies/timing/gameplay and host integration remain separate. No sibling
+source/build/save/frozen Release change or push.
+
 ## Game Position Radius Append Direct Match - 2026-10-05
 
 [Note 1019](WORKING_NOTES/1019-game-position-radius-append-direct-match-20261005.md)
