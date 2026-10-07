@@ -136,7 +136,7 @@ s32 func_15145740();
 void func_1515C1A0(struct127 *, struct17 *, f32 *, f32 *);
 s32 func_15145AD8(struct17 *arg0, struct17 *arg1, struct127 *arg2,
     struct17 *arg3, struct17 *arg4, f32 *arg5, f32 *arg6, struct17 *arg7);
-s32 func_15145EA4();
+void func_15145EA4(struct17 **inputArgument, struct17 **destinationArgument, u8 *matrix, s32 count);
 s32 func_15146078();
 s32 func_151462C8();
 s32 func_1514654C();
@@ -1855,9 +1855,50 @@ transform:
         z += 3;
     } while (count > 0);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15145EA4.s. */
-s32 func_15145EA4() {
-    return 0;
+void func_15145EA4(struct17 **inputArgument, struct17 **destinationArgument, u8 *matrix, s32 count) {
+    f32 x;
+    f32 converted[4][4];
+    struct17 **input;
+    struct17 **destinations;
+    struct17 *point;
+    struct17 *destination;
+
+    if (D_800C3E90 != 0) {
+        guMtxL2F(converted, (Mtx *)matrix);
+        if (count > 0) {
+            input = inputArgument;
+            destinations = destinationArgument;
+            do {
+                point = *input;
+                if (point != 0 && ((x = point->unk0) != 0.0f || point->unk4 != 0.0f || point->unk8 != 0.0f)) {
+                    destination = *destinations;
+                    func_150A7960(converted, x, point->unk4, point->unk8, &destination->unk0, &destination->unk4, &destination->unk8);
+                } else {
+                    func_15142314(matrix, 0, (f32 *)*destinations);
+                }
+                count--;
+                input++;
+                destinations++;
+            } while (count > 0);
+        }
+    } else {
+        if (count > 0) {
+            input = inputArgument;
+            destinations = destinationArgument;
+            do {
+                point = *input;
+                if (point != 0 && ((x = point->unk0) != 0.0f || point->unk4 != 0.0f || point->unk8 != 0.0f)) {
+                    destination = *destinations;
+                    func_150A7960((f32 (*)[4])matrix, x, point->unk4, point->unk8, &destination->unk0, &destination->unk4, &destination->unk8);
+                } else {
+                    func_15142314(matrix, 0, (f32 *)*destinations);
+                }
+                count--;
+                input++;
+                destinations++;
+            } while (count > 0);
+        }
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15146078.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15146078.s")

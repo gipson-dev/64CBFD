@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-07 Game Matrix-List Transform Match
+
+[Note 1099](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md):
+Replace `func_15145EA4`'s zero-return stub with complete C117/frame `0xA0`,
+both matrix routes, original `sp+0x5C` matrix and incoming-home timing.
+Nineteen raw differences, unchanged O2/g3/MIPS2; nineteen closed GP/save/
+equality-operand guards match all 117 linked words without private-offset,
+relocation, insertion or omission edits. Guest/native/actual SDK/caller/home/
+private-overlap/equality/negative/owner/padder/independent-relocation gates
+qualify; 182 controls, none raw exact, 2,184 bounded executions.
+Eight core pre-install tests pass in 315.497 seconds, strengthened caller/SDK
+checks also pass. US ELF changes only target; all other bodies, addresses,
+extents, overflows, protected sections, 720 data owners and 11,042 prior guards
+intact; new guard count 11,061. Exact total 3,363/5,466 (61.53%), Game
+2,690/4,793 (56.12%), 2,103 different, zero drift; conversions unchanged.
+All 63 combined tests pass in 759.125 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 81-document / 3,947-relative-link checks pass,
+zero broken links. README aggregate rows only.
+Next original-assembly 148-word `func_15146078`; translator/sampler remain open.
+No sibling/frozen Release/save/runtime/hardware/push work.
+
 ## 2026-10-07 Game Point-Batch Transform Lifetime Match
 
 [Note 1098](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md):

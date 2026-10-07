@@ -1,5 +1,24 @@
 # Working Notes
 
+2026-10-07 ([Note 1099](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md)):
+Matrix/list wrapper `func_15145EA4`: complete C117/frame `0xA0`/matrix
+`sp+0x5C`, both fixed/float routes, lazy point gates and argument-home reloads.
+Nineteen raw differences; nineteen GP/save/equality-operand guards match every
+linked word, no private-offset/relocation/instruction/profile edits.
+10,752 guest / 1,152 connected / 72 complete caller / 1,344 home / 1,572,872
+native cases, 131,104 equality comparisons, 1,200 private overlaps, eight
+effective negatives and owner/padder/relocation gates qualify. Retain 182
+controls, none raw exact; 2,184 ordinary executions pass.
+Eight core pre-install tests pass in 315.497 seconds, strengthened caller/SDK
+checks pass. US ELF changes only target; all other bodies/addresses/extents/
+overflows/data/prior guards intact. Exact total 3,363, Game 2,690, 2,103
+different, zero drift; conversions unchanged, guard count 11,061.
+All 63 combined tests pass in 759.125 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 81-document / 3,947-relative-link checks pass,
+zero broken links. README aggregate rows only.
+Next 148-word original-assembly `func_15146078`; translator/sampler open.
+No sibling/frozen Release/save/runtime/hardware/push claim.
+
 2026-10-07 ([Note 1098](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md)):
 Point-batch transform `func_15145DB4`: original descriptor/source phase,
 three twelve-byte coordinate strides and positive-only source reload.

@@ -4,6 +4,48 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Matrix-list transform matching
+
+[Candidate driver](../tools/experiments/game_matrix_list_transform_candidates.py)
+retains 182 source/profile controls, none raw exact. Selected C117/frame
+`0xA0`/matrix `sp+0x5C`, unchanged O2/g3/MIPS2, needs nineteen guards for a
+closed GP cycle, independent save order and two equality operand orders.
+No private-offset, relocation, insertion, omission or profile edits.
+
+[Nine tests](../tools/tests/test_game_matrix_list_transform_match.py) bind
+all 117 wrapper words, the 45 executable SDK-converter words, 40 point-helper
+words, 49 translator words and complete 23-word original caller. Coverage
+includes 10,752 guest, 1,152 connected, 72 caller, 1,344 incoming-home and
+1,572,872 actual native cases, 131,104 equality comparisons, 1,200 private
+overlaps, lazy/fail-closed storage, eight effective public-storage negatives,
+88 copied-owner neighbors, actual padder and all four independently rebased
+symbols/seven relocations. The native converter is the real SDK body;
+native point/translation hooks and guest FP arithmetic remain bounded models,
+not full FCSR/hardware/64-bit port acceptance.
+
+Eight core pre-install tests pass in 315.497 seconds; strengthened SDK/caller
+checks also pass. The US ELF changes only the target, prior guards/sections/
+addresses/extents/data intact. All 63 combined tests pass in 759.125 seconds,
+zero skips/errors/failures; tools/syntax/whitespace and 81-document /
+3,947-relative-link checks pass, zero broken links. Detailed receipts in
+[Note 1099](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md).
+
+```sh
+python3 -m tools.experiments.game_matrix_list_transform_candidates
+python3 -m tools.experiments.game_matrix_list_transform_candidates --lifetime
+python3 -m tools.experiments.game_matrix_list_transform_candidates --views
+python3 -m tools.experiments.game_matrix_list_transform_candidates --scalars
+python3 -m tools.experiments.game_matrix_list_transform_candidates --comparisons
+python3 -m tools.experiments.game_matrix_list_transform_candidates --profiles
+python3 -m tools.experiments.game_matrix_list_transform_candidates --guards
+python3 -m unittest tools.tests.test_game_matrix_list_transform_match -v
+```
+
+Ignored receipts: `conker/build/game-matrix-list-transform/` and
+`conker/build/game-matrix-list-transform-test/`. Incoming-home redirections
+and private overlaps are guest ABI probes, not permission for native callees
+to rewrite caller arguments or private objects.
+
 ## Point-batch transform lifetime matching
 
 [Candidate driver](../tools/experiments/game_point_batch_transform_candidates.py)

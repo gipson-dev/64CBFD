@@ -51,7 +51,21 @@ confirmed.
 
 ## Planning and history
 
-- [Latest point-batch lifetime match](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md):
+- [Latest matrix/list wrapper match](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md):
+  Complete C117/frame `0xA0`, both matrix routes, original local matrix and
+  incoming-home reloads; nineteen GP/save/equality-operand guards, no private-
+  offset/relocation/instruction edits. Guest/native/actual SDK/complete caller/
+  home/private/equality/negative/owner/padder/relocation gates qualify; 182
+  controls, none raw exact. Eight core pre-install tests pass in 315.497
+  seconds, strengthened caller/SDK checks pass. Only target changes;
+  other bodies/addresses/extents/overflows/data/prior guards intact.
+  Exact total 3,363, Game 2,690, 2,103 different, zero drift; conversion
+  unchanged. All 63 combined tests pass in 759.125 seconds, zero skips/errors/
+  failures; tools/syntax/whitespace and 81-document / 3,947-relative-link checks
+  pass, zero broken links. Next 148-word original-
+  assembly `func_15146078`, translator/sampler still open.
+
+- [Previous point-batch lifetime match](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md):
   Complete C60/frame `0x98`, original matrix and lazy source reload;
   17 register-cycle/independent-store guards, no private-offset, FP-register,
   relocation or instruction edits. Guest/full-memory/home/native/private-

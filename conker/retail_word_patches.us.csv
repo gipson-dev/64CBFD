@@ -11041,3 +11041,22 @@ game_16EE20,func_15145DB4,0xB4,0x2694FFFF,0x2652FFFF,-,-,Normalize point-batch c
 game_16EE20,func_15145DB4,0xC0,0x2652000C,0x2673000C,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
 game_16EE20,func_15145DB4,0xC4,0x1E80FFF3,0x1E40FFF3,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
 game_16EE20,func_15145DB4,0xC8,0x2673000C,0x2694000C,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145EA4,0x8,0xAFB20038,0xAFB10034,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0xC,0x00E09025,0x00E08825,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x1C,0xAFB10034,0xAFB20038,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x50,0x1A400057,0x1A200057,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x54,0x8FB100A0,0x8FB200A0,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x60,0x8E230000,0x8E430000,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x78,0x46140032,0x4600A032,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0xE0,0x2652FFFF,0x2631FFFF,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0xEC,0x2652FFFF,0x2631FFFF,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0xF0,0x26310004,0x26520004,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0xF4,0x1E40FFDA,0x1E20FFDA,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x104,0x1A40002A,0x1A20002A,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x108,0x8FB100A0,0x8FB200A0,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x114,0x8E230000,0x8E430000,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x12C,0x46140032,0x4600A032,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x194,0x2652FFFF,0x2631FFFF,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x1A0,0x2652FFFF,0x2631FFFF,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x1A4,0x26310004,0x26520004,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_15145EA4,0x1A8,0x1E40FFDA,0x1E20FFDA,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false

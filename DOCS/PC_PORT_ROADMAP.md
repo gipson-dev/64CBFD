@@ -1,5 +1,26 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix-List Transform Match - 2026-10-07
+
+[Note 1099](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md):
+`func_15145EA4` is complete C117/frame `0xA0`, unchanged O2/g3/MIPS2,
+original `sp+0x5C` matrix, both routes and incoming-home timing.
+
+- [x] Replace the zero-return placeholder with both matrix routes, lazy null/all-zero gates, cached X and four-byte list strides; correct only its local prototype.
+- [x] Retain 182 meaningful controls, none raw exact, and qualify 2,184 ordinary candidate executions.
+- [x] Qualify 10,752 guest, 1,152 connected original-helper, 72 complete original-caller, 1,344 home-readback and 1,572,872 actual native cases.
+- [x] Qualify 131,104 equality comparisons, 1,200 private overlaps, 42 removed-home, twelve unused-list, eight required-storage fixtures and eight effective public-storage negatives.
+- [x] Prove/install nineteen GP-cycle/save-order/equality-operand guards, no private-offset/relocation/instruction/profile edits; retain owner/88 neighbors/pools/two warnings and independently rebase all four symbols/seven relocations.
+- [x] Pass eight corrected core pre-install tests in 315.497 seconds, zero skips/errors/failures, plus strengthened native SDK and complete caller checks.
+- [x] Rebuild/audit all 6,058 symbols / 6,042 slots / 16 overflows / 720 data owners; only target changes, all addresses/extents/prior guards intact, new guard count 11,061.
+- [x] Update README aggregates: total 3,363, Game 2,690 (56.12%), 2,103 different, zero drift; conversions unchanged.
+- [x] Pass all 63 combined tests in 759.125 seconds, zero skips/errors/failures, plus tools/syntax/whitespace and 81-document / 3,947-relative-link gates, zero broken links.
+- [ ] Recover/match original-assembly 148-word `func_15146078`, including zero-vector/axis paths, private byte liveness and complete vector-helper behavior.
+- [ ] Match translator scheduling and sampler per-path RA/RNG-byte lifetime; neither changed here.
+
+This is guest matching progress, not PC-port/runtime/hardware acceptance.
+No sibling/frozen Release/save/runtime/push work.
+
 ## Game Point-Batch Transform Lifetime Match - 2026-10-07
 
 [Note 1098](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md):
@@ -16,7 +37,7 @@ matrix `sp+0x58` and positive-only source reload; seventeen raw allocation words
 - [x] Rebuild/audit all 6,058 symbols / 6,042 slots / 16 overflows / 720 data owners; only target changes, all addresses/extents/prior guards intact, new guard count 11,042.
 - [x] Update README aggregates: total 3,362, Game 2,689 (56.10%), 2,104 different, zero drift; conversions unchanged.
 - [x] Pass all 43 combined tests in 460.335 seconds, zero skips/errors/failures, plus tools/syntax/whitespace and 80-document / 3,936-relative-link gates, zero broken links.
-- [ ] Recover/match 117-word matrix/list wrapper `func_15145EA4`, including fixed/float matrix routes, null/zero points, lazy reads and connected converter/translation/point-helper behavior.
+- [x] Recover/match 117-word matrix/list wrapper `func_15145EA4`, including fixed/float matrix routes, null/zero points, lazy reads and connected converter/translation/point-helper behavior; completed in Note 1099.
 - [ ] Match translator scheduling and sampler per-path RA/RNG-byte lifetime; no new controls or installation for either here.
 
 This is guest matching progress, not PC-port/runtime/hardware acceptance.
