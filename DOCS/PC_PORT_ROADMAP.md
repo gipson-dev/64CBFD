@@ -1,5 +1,27 @@
 # PC Port Roadmap located in another project folder
 
+## Game Scaled Sphere Query Boundary Audit - 2026-10-07
+
+[Note 1088](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md):
+selected `func_15145AD8` remains 111 words/frame `0x88`, 72 differences,
+not installed. Counts and root README aggregate rows stay unchanged.
+
+- [x] Add 9,216 signed vertical-offset cases through the complete original helper chain.
+- [x] Add 216 private input-window cases and private/home snapshots to all 27,440 bulk guest fixtures.
+- [x] Extend actual native complete-chain evidence to 126,720 finite calls.
+- [x] Retain 30 new gate/storage/home/shared-failure controls, 101 measured controls total, none exact.
+- [x] Bind copied-owner raw target, 88 neighbors, pools, relocations and two unchanged warnings.
+- [x] Check the real padder: current body emits overflow/trampoline, not an in-slot match.
+- [x] Pass all 76 focused tests, retained-slot/data/history/count audit and final documentation/tool gates.
+- [ ] Recover a fitting 110-word O2/g3 source with the original frame/private/home/lazy-read contract.
+- [ ] Qualify complete caller/helper-frame and instruction-read/input timing for the fitting body.
+- [ ] Finish fitting-body owner/padder/install/build/linked regression gates before claiming a match.
+
+Call-boundary equality does not establish full private-frame or instruction
+timing equivalence. No hardware/gameplay/host or sibling/Release/save/runtime/push work.
+All 76 focused tests pass in 317.745 seconds, zero skips/errors/failures;
+final retained audit, tools/syntax/whitespace and 70-document/3,800-link gate pass.
+
 ## Game Scaled Sphere Query Recovery - 2026-10-07
 
 [Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md):
@@ -14,7 +36,8 @@
 - [x] Verify retained slots/data/guard history/counts; main README aggregates unchanged.
 - [x] Finish focused regression and final documentation/tool gates.
 - [ ] Recover fitting 110-word O2/g3 source without private/frame/branch patches or padding.
-- [ ] Broaden vertical-offset/private/helper-frame/read-timing evidence, then classify closed differences.
+- [x] Broaden signed vertical-offset and private input/call-boundary evidence (Note 1088).
+- [ ] Qualify complete private/helper frames and instruction-read/input timing, then classify closed differences.
 - [ ] Finish copied-owner/padder/install/build and whole linked regression gates before claiming a match.
 
 Ten new tests pass in 45.498 seconds. Caller 109/110 words execute; one load is

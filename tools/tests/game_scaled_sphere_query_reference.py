@@ -1,7 +1,8 @@
 """Independent scaled-caller arithmetic and evolving memory for bounded probes.
 
 Private helper prologues/return-address stores are not an acceptance surface of
-this reference. The caller's original vector/scalar slots and incoming homes are.
+this reference. Call-boundary snapshots cover initialized caller locals and
+incoming homes, not a complete private frame or instruction-read schedule.
 """
 
 import math
@@ -22,7 +23,13 @@ def external(memory):
     return {a: b for a, b in memory.items() if not private(a)}
 
 
-def reference(memory, args, phase=0):
+def snapshot(memory, target, frame):
+    offsets = range(0x38, 0x88, 4)
+    return target, tuple(peek(memory, frame + offset) for offset in offsets), tuple(
+        peek(memory, frame + 0x88 + i * 4) for i in range(8))
+
+
+def reference(memory, args, phase=0, snapshots=None):
     memory, writes, calls = memory.copy(), [], []
     entry, frame = STACK + phase, STACK + phase - 0x88
     origin, direction, actor, point0, point1, radius, height, center = args
@@ -83,6 +90,8 @@ def reference(memory, args, phase=0):
     store(frame + 0x40, scale)
     local_direction = frame + 0x5C
     calls.append((NORMALIZE, local_direction, local_direction, frame + 0x4C, frame + 0x38))
+    if snapshots is not None:
+        snapshots.append(snapshot(memory, NORMALIZE, frame))
     squares = [multiply(read(local_direction + i * 4), read(local_direction + i * 4)) for i in range(3)]
     length_squared = add(add(squares[0], squares[1]), squares[2])
     if length_squared == 0.0:
@@ -100,6 +109,8 @@ def reference(memory, args, phase=0):
     calls.append((WRAPPER, *wrapper_args))
     for i, value in enumerate(wrapper_args[4:]):
         put(memory, frame + 0x10 + i * 4, value)
+    if snapshots is not None:
+        snapshots.append(snapshot(memory, WRAPPER, frame))
     helper_args = (*wrapper_args[:4], *wrapper_args[5:])
     calls.append((CALLEE, *helper_args))
     memory, helper_writes, status, dot = sphere.reference(memory, helper_args, phase - 0x88 - 0x28)

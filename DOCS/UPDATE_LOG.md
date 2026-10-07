@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-07 Game Scaled Sphere Query Boundary Audit
+
+[Note 1088](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md):
+extend `func_15145AD8` qualification without installing the oversized body.
+9,216 signed vertical-offset and 216 private-input cases are new; all 27,440
+bulk guest fixtures now check private/home call-boundary snapshots alongside
+status, helper arguments and ordered external effects. Native bank expands to
+126,720 complete-chain finite calls. Thirty new compiler controls (101 total),
+none exact; selected111/frame `0x88`/72 differences unchanged. Copied owner
+preserves 88 neighbors/pools/relocations and two warnings. Actual padder emits
+overflow/trampoline, not an in-slot match. Counts/main README unchanged; next
+110-word original-profile fit and complete frame/read-timing/install gates.
+No full-float/FCSR/NaN/hardware/gameplay/host or sibling/Release/save/runtime/push claim.
+All 76 focused tests pass in 317.745 seconds, zero skips/errors/failures;
+final retained audit, tools/syntax/whitespace and 70-document/3,800-link gate pass.
+
 ## 2026-10-07 Game Scaled Sphere Query Recovery
 
 [Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md):

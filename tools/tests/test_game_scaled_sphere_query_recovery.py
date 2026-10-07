@@ -7,14 +7,18 @@ import random
 import re
 import shutil
 import struct
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
 
 from tools.experiments import game_scaled_sphere_query_candidates as screen
+from tools.experiments import game_scaled_sphere_query_schedule_candidates as scheduling
 from tools.experiments import game_actor_dimensions_candidates as dimensions
 from tools.experiments import game_sphere_callee_allocation_candidates as callee
 from tools.experiments import game_sphere_wrapper_candidates as wrapper
+from tools.experiments.game_context_classifier_candidates import compile_owner
+from tools.pad_generated_object import parse_object
 from tools.match_progress import load_elf_functions
 from tools.tests import game_scaled_sphere_query_reference as reference
 from tools.tests.game_animation_timeline_oracle import bits, floating
@@ -22,6 +26,8 @@ from tools.tests.test_game_sphere_wrapper_match import SphereOracle
 from tools.tests.test_game_projection_lifetime_recovery import put, peek
 from tools.tests.test_game_table_range_loader import native, STACK
 from tools.tests.game_owner_pool import assert_guard_history
+from tools.tests.game_owner_pool import normalized_pools
+from tools.tests.test_game_scaled_matrix_match import emit_padded_assembly
 
 ORIGIN, DIRECTION, ACTOR, POINTS, OPTIONAL = 0x20000, 0x21000, 0x22000, 0x24000, 0x28000
 CENTERS = ((5.0, 0.0, 0.0), (-5.0, 0.0, 0.0), (1.0, 0.0, 0.0),
@@ -30,7 +36,7 @@ SCALES = ((1.0, 1.0), (2.0, 0.5), (0.5, 2.0), (-1.0, -1.0))
 
 
 def fixture(center=CENTERS[0], radius=1, height=2, scale=SCALES[0], identity=1,
-            direction=(10.0, 0.0, 0.0), layout=0, mask=0, phase=0):
+            direction=(10.0, 0.0, 0.0), layout=0, mask=0, phase=0, vertical=0):
     memory = {STACK + i: 0xA5 for i in range(-0x600, 0x100)}
     for base, count in ((ORIGIN, 32), (DIRECTION, 32), (ACTOR, 0x440), (POINTS, 128), (OPTIONAL, 32)):
         memory.update({base + i: 0xA5 for i in range(count)})
@@ -38,7 +44,7 @@ def fixture(center=CENTERS[0], radius=1, height=2, scale=SCALES[0], identity=1,
         for i, value in enumerate(values):
             put(memory, base + i * 4, bits(value))
     put(memory, ACTOR + 4, identity, 1)
-    for offset, value in ((0xD2, radius), (0xD4, height), (0xD6, 0)):
+    for offset, value in ((0xD2, radius), (0xD4, height), (0xD6, vertical)):
         put(memory, ACTOR + offset, value, 2)
     for offset, value in zip((0xDC, 0xE0), scale):
         put(memory, ACTOR + offset, bits(value))
@@ -66,11 +72,15 @@ def fixture(center=CENTERS[0], radius=1, height=2, scale=SCALES[0], identity=1,
 class QueryOracle(SphereOracle):
     def __init__(self, words, memory, args, connected, phase=0):
         super().__init__(words, memory, args, connected, phase, entry=screen.ENTRY)
+        self.caller_frame = STACK + phase - 0x88
+        self.snapshots = []
 
     def record_call(self, target):
         count = {reference.DIMENSION: 4, reference.NORMALIZE: 4, reference.WRAPPER: 9,
                  reference.CALLEE: 8, reference.DOT: 2}[target]
         self.calls.append((target, *self.arguments(count)))
+        if target in (reference.NORMALIZE, reference.WRAPPER):
+            self.snapshots.append(reference.snapshot(self.memory, target, self.caller_frame))
 
 
 class GameScaledSphereQueryRecoveryTests(unittest.TestCase):
@@ -159,7 +169,8 @@ static int independent(u8 *bytes,int p,int q){
             {'caller': (screen.ENTRY, cls.retail), **cls.helpers}.items()}, indent=2) + '\n')
 
     def check(self, memory, args, phase=0):
-        expected, writes, status, calls = reference.reference(memory, args, phase)
+        snapshots = []
+        expected, writes, status, calls = reference.reference(memory, args, phase, snapshots)
         models = []
         for words in (self.retail, self.words):
             model = QueryOracle(words, memory, args, self.connected, phase).run()
@@ -167,6 +178,7 @@ static int independent(u8 *bytes,int p,int q){
             self.assertEqual(reference.external(model.memory), reference.external(expected))
             self.assertEqual([e for e in model.events if e[0] == 'W' and not reference.private(e[1])], writes)
             self.assertEqual(model.calls, calls)
+            self.assertEqual(model.snapshots, snapshots)
             if words is self.retail:
                 self.coverage.update(model.visits)
             models.append(model)
@@ -207,6 +219,82 @@ static int independent(u8 *bytes,int p,int q){
         self.assertEqual(self.record['relocations'], {0x58: [('R_MIPS_26', 'func_1515C1A0')],
             0x100: [('R_MIPS_26', 'func_15145128')], 0x16C: [('R_MIPS_26', 'func_151451F0')]})
 
+    def test_gate_storage_and_live_home_controls_do_not_fix_the_fit(self):
+        expected = {}
+        for left, right in itertools.product(range(3), repeat=2):
+            expected['zero-left%d-right%d' % (left, right)] = (
+                (112, 136, 79) if (left == 1) != (right == 1) else (111, 136, 72))
+        expected.update({'nested-height0-radius0': (111, 136, 72),
+            'nested-height0-radius1': (111, 136, 73), 'nested-height1-radius0': (111, 136, 77),
+            'nested-height1-radius1': (112, 128, 109), 'scale-pair-union0': (111, 136, 72),
+            'scale-pair-union1': (113, 136, 76),
+            **{'array-' + name: (111, 136, 72) for name in ('origin', 'direction', 'scaledCenter')},
+            **{'live-home%d' % index: values for index, values in enumerate((
+                (114, 136, 80), (114, 136, 78), (114, 136, 95), (111, 144, 94),
+                (111, 144, 92), (113, 136, 88), (113, 136, 99), (114, 128, 112)))},
+            'shared-failure1': (111, 136, 77), 'shared-failure2': (111, 136, 73),
+            'shared-failure3': (109, 136, 77), 'shared-failure15': (105, 136, 77)})
+        records = []
+        for name, body in scheduling.candidates():
+            record, _ = screen.compile_candidate(self.root, self.out, name, body)
+            self.assertEqual((record['body_words'], record['frame'], record['differences']), expected.pop(name))
+            self.assertEqual(record['diagnostics'], '')
+            self.assertFalse(record['exact'])
+            record['layout'] = screen.local_layout(self.out / (name + '.o'))
+            records.append(record)
+        self.assertFalse(expected)
+        self.assertEqual(len(records), 30)
+        (self.out / 'schedule-records.json').write_text(json.dumps(records, indent=2) + '\n')
+
+    def test_copied_owner_preserves_neighbors_but_padder_uses_overflow(self):
+        source = (self.root / 'conker/src/game_16EE20.c').read_text()
+        selected = source.replace('s32 func_15145AD8();', screen.DECLARATIONS + screen.PROTOTYPE).replace(
+            's32 func_15145AD8() {\n    return 0;\n}', screen.SELECTED)
+        self.assertEqual(selected.count(screen.SELECTED), 1)
+        objects, warnings = [], []
+        for name, body in (('baseline', source), ('selected', selected)):
+            obj, warning = compile_owner(self.root, self.out, body, 'owner-' + name)
+            warnings.append(warning)
+            processed = self.out / ('owner-' + name + '-processed.o')
+            shutil.copyfile(obj, processed)
+            subprocess.run(['python3', str(self.root / 'tools/asm-processor/asm_processor.py'), '-O2', '-g3',
+                str((self.out / ('owner-' + name + '.c')).relative_to(self.root / 'conker')),
+                '--post-process', str(processed.relative_to(self.root / 'conker')), '--assembler',
+                'mips-linux-gnu-as -EB -mtune=vr4300 -march=vr4300 -mabi=32 -I include',
+                '--asm-prelude', 'include/asm_processor_prelude.inc'], cwd=self.root / 'conker',
+                check=True, capture_output=True)
+            objects.append(processed)
+        self.assertEqual(warnings[0], warnings[1])
+        self.assertEqual(len(warnings[0]), 2)
+        old_text, old_functions, old_rel = parse_object(objects[0])
+        text, functions, rel = parse_object(objects[1])
+        self.assertEqual(set(functions), set(old_functions))
+        self.assertEqual(len(functions), 89)
+        for name, meta in functions.items():
+            if name == screen.FUNCTION:
+                continue
+            old = old_functions[name]
+            self.assertEqual(text[meta['value']:meta['value'] + meta['size']],
+                old_text[old['value']:old['value'] + old['size']], name)
+            self.assertEqual({o - meta['value']: r for o, r in rel.items() if meta['value'] <= o < meta['value'] + meta['size']},
+                {o - old['value']: r for o, r in old_rel.items() if old['value'] <= o < old['value'] + old['size']}, name)
+        self.assertEqual(normalized_pools(objects[0]), normalized_pools(objects[1]))
+        raw, standalone, standalone_rel = parse_object(self.out / 'selected.o')
+        meta, isolated = functions[screen.FUNCTION], standalone[screen.FUNCTION]
+        self.assertEqual(meta['size'], isolated['size'])
+        self.assertEqual(text[meta['value']:meta['value'] + meta['size']],
+            raw[isolated['value']:isolated['value'] + isolated['size']])
+        self.assertEqual({o - meta['value']: r for o, r in rel.items() if meta['value'] <= o < meta['value'] + meta['size']},
+            standalone_rel)
+        assembly = emit_padded_assembly(objects[1], self.root / 'conker/retail_layout.us.txt', 'game_16EE20',
+            rodata_symbol='jtbl_800A5218_game', word_patches_path=self.root / 'conker/retail_word_patches.us.csv')
+        overflow = '__retail_overflow_' + screen.FUNCTION
+        body = assembly.split(screen.FUNCTION + ':\n', 1)[1].split('.size ' + screen.FUNCTION, 1)[0]
+        self.assertEqual(re.findall(r'\.word 0x([0-9A-F]{8})', body), ['08000000'] + ['00000000'] * 109)
+        self.assertIn('.reloc ., R_MIPS_26, ' + overflow, body)
+        self.assertIn(overflow + ':\n', assembly)
+        (self.out / 'owner-overflow.s').write_text(assembly)
+
     def test_natural_first_point_write_changes_both_late_output_pointer_homes(self):
         for phase in (0, 8):
             memory, args = fixture(scale=(2.0, 0.5), layout=11, phase=phase)
@@ -235,6 +323,35 @@ static int independent(u8 *bytes,int p,int q){
             for base in (ORIGIN, DIRECTION, ACTOR + 0x14):
                 for i in range(3): put(memory, base + i * 4, bits(rng.randrange(-32, 33) / 8.0))
             self.check(memory, args)
+
+    def test_signed_vertical_offsets_reach_the_real_geometry_chain(self):
+        count = 0
+        for vertical, identity, scale, center, direction, layout, phase in itertools.product(
+                (-32768, -187, -2, -1, 0, 1, 187, 32767), (0, 186, 187, 255), SCALES,
+                ((5.0, -1.0, 0.0), (5.0, 0.0, 0.0), (5.0, 1.0, 0.0)),
+                ((10.0, 0.0, 0.0), (10.0, 10.0, 0.0), (0.0, 10.0, 0.0)), (0, 6, 8, 10), (0, 8)):
+            memory, args = fixture(center=center, radius=2, identity=identity, scale=scale,
+                direction=direction, layout=layout, phase=phase, vertical=vertical)
+            models = self.check(memory, args, phase)
+            adjusted = floating(bits(center[1] + vertical)) if identity < 187 else center[1]
+            for model in models:
+                self.assertEqual(model.snapshots[0][1][(0x80 - 0x38) // 4], bits(adjusted))
+                self.assertEqual(model.snapshots[1][1][(0x54 - 0x38) // 4], bits(adjusted * scale[0]))
+            count += 1
+        self.assertEqual(count, 9216)
+
+    def test_private_input_windows_preserve_call_boundary_values(self):
+        count = 0
+        for offset, input_index, vector, phase in itertools.product(range(0x38, 0x80, 4), (0, 1),
+                ((1.0, 2.0, 3.0), (-1.0, -2.0, -3.0), (10.0, 10.0, 0.0)), (0, 8)):
+            memory, args = fixture(scale=(2.0, 0.5), phase=phase, vertical=1)
+            args = list(args)
+            args[input_index] = STACK + phase - 0x88 + offset
+            for axis, value in enumerate(vector):
+                put(memory, args[input_index] + axis * 4, bits(value))
+            self.check(memory, args, phase)
+            count += 1
+        self.assertEqual(count, 216)
 
     def test_required_fields_fail_closed_but_zero_dimensions_read_lazily(self):
         for mask in range(8):
@@ -271,17 +388,18 @@ static int independent(u8 *bytes,int p,int q){
         self.run_host('''
 static union {u32 words[480];u8 bytes[1920];} actual,expected;
 static int ids[4]={0,186,187,255},radii[4]={0,1,2,-1},heights[2]={0,2};
+static int verticals[5]={0,-32768,-1,1,32767};
 static f32 scales[4][2]={{1,1},{2,0.5},{0.5,2},{-1,-1}};
 static f32 centers[6][3]={{5,0,0},{-5,0,0},{1,0,0},{5,1,0},{5,4,0},{0,0,0}};
 static f32 directions[3][3]={{10,0,0},{0,10,0},{0,0,0}};
-int id,r,h,s,c,d,l,i,p,q,wanted,result,cases=0;
+int id,r,h,s,c,d,l,v,i,p,q,wanted,result,cases=0;
 struct127 *actor=(struct127 *)actual.bytes;
 if(sizeof(void *)!=4 || sizeof(struct17)!=12 || (u8 *)&actor->unkDC-actual.bytes!=0xDC
     || (u8 *)&actor->unkE0-actual.bytes!=0xE0 || (u8 *)&actor->unkD2-actual.bytes!=0xD2)return 1;
 for(id=0;id<4;id++)for(r=0;r<4;r++)for(h=0;h<2;h++)for(s=0;s<4;s++)
-for(c=0;c<6;c++)for(d=0;d<3;d++)for(l=0;l<11;l++){
+for(c=0;c<6;c++)for(d=0;d<3;d++)for(l=0;l<11;l++)for(v=0;v<5;v++){
     for(i=0;i<1920;i++)actual.bytes[i]=0xA5;
-    actor->id=ids[id];actor->unkD2=radii[r];actor->unkD4=heights[h];actor->unkD6=0;
+    actor->id=ids[id];actor->unkD2=radii[r];actor->unkD4=heights[h];actor->unkD6=verticals[v];
     actor->unkDC=scales[s][0];actor->unkE0=scales[s][1];
     for(i=0;i<3;i++){actual.words[5+i]=word(centers[c][i]);
         actual.words[300+i]=word(0);actual.words[308+i]=word(directions[d][i]);}
@@ -297,7 +415,7 @@ for(c=0;c<6;c++)for(d=0;d<3;d++)for(l=0;l<11;l++){
     for(i=0;i<1920;i++)if(actual.bytes[i]!=expected.bytes[i])return 3;
     cases++;
 }
-if(cases!=25344)return 4;
+if(cases!=126720)return 4;
 ''')
 
     def test_uninstalled_source_and_original_helper_slots_are_bound(self):

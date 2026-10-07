@@ -11,11 +11,18 @@ says otherwise.
 `func_15145AD8`. Selected O2/g3 emits 111 words/frame `0x88`, 72 differences,
 with original private locals bound through structured `.mdebug` records.
 None is raw exact; production placeholder, profiles and guards stay unchanged.
-[Ten tests](../tools/tests/test_game_scaled_sphere_query_recovery.py) connect
+[Focused scheduling driver](../tools/experiments/game_scaled_sphere_query_schedule_candidates.py)
+adds 30 O2/g3 gate/storage/live-home/shared-failure controls, none exact,
+101 measurements total. Shared failures may shrink the body but alter branches.
+[Fourteen tests](../tools/tests/test_game_scaled_sphere_query_recovery.py) connect
 all five real helpers and compare an
 [independent evolving-memory reference](../tools/tests/game_scaled_sphere_query_reference.py)
-with original retail and experimental C: 18,008 bulk guest cases, natural
-late-output-home writes, 25,344 native finite calls and effective negatives.
+with original retail and experimental C: 27,440 bulk guest cases, natural
+late-output-home writes, 126,720 native finite calls and effective negatives.
+Signed vertical offsets and private input windows are qualified; reached
+normalizer/wrapper boundaries bind 20 caller-local words and all eight homes.
+Copied owner binds the same target, 88 neighbors/pools/relocations/two warnings;
+actual padder emits overflow/trampoline, not an in-slot match.
 Caller 109/110 original words execute; unreachable duplicate load excluded.
 External footprints/observable private aliases do not prove complete private
 helper-frame bytes or identical raw instruction-read timing. Native optional
@@ -23,12 +30,15 @@ inputs are non-null and do not model guest private/home aliases.
 
 ```sh
 python3 -m tools.experiments.game_scaled_sphere_query_candidates
+python3 -m tools.experiments.game_scaled_sphere_query_schedule_candidates
 python3 -m unittest tools.tests.test_game_scaled_sphere_query_recovery -v
 ```
 
-Ignored receipts: `conker/build/game-scaled-sphere-query/` and
+Ignored receipts: `conker/build/game-scaled-sphere-query/`,
+`conker/build/game-scaled-sphere-query-schedule/` and
 `conker/build/game-scaled-sphere-query-test/`; see
-[Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md).
+[Note 1088](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md)
+and historical [Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md).
 No target installation, full-float/FCSR/NaN/hardware/gameplay or host adoption
 claim. Recover the original-profile 110-word fit and finish owner/install gates.
 

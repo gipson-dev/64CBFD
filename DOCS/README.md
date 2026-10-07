@@ -51,6 +51,13 @@ confirmed.
 
 ## Planning and history
 
+- [Latest scaled-sphere caller boundary audit](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md):
+  27,440 guest fixtures now bind caller-local/home call snapshots; 126,720
+  native finite calls include signed vertical offsets. Copied owner preserves
+  88 neighbors/pools/relocations/two warnings. Thirty new controls retain no
+  match; actual padder emits overflow. Keep placeholder/counts and finish the
+  original-profile fit, full frame/read-timing and fitting-body install gates.
+
 - [Latest scaled-sphere caller recovery](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md):
   Complete eight-position caller and five real helpers qualified in bounded
   guest/native cases. Original frame/private slots recovered, but 111 words

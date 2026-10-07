@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-07 ([Note 1088](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md)):
+`func_15145AD8` remains uninstalled C111/frame `0x88`/72 differences. Add
+30 measured gate/storage/home/shared-failure controls, none exact, 101 total.
+Qualify 9,216 signed vertical-offset and 216 private input-window cases;
+all 27,440 bulk guest fixtures now compare bounded private/home call snapshots.
+Native complete-chain bank expands to 126,720 finite calls. Copied owner binds
+the same raw target while preserving 88 neighbors/pools/relocations/two warnings;
+actual padder emits overflow/trampoline, not an in-slot match. Keep production,
+counts and main README aggregates unchanged. Next original-profile 110-word fit,
+complete caller/helper-frame/read-timing qualification and fitting-body install
+gates. No full-float/hardware/gameplay/host/sibling/Release/save/runtime/push claim.
+All 76 focused tests pass in 317.745 seconds, zero skips/errors/failures;
+final retained audit, tools/syntax/whitespace and 70-document/3,800-link gate pass.
+
 2026-10-07 ([Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md)):
 `func_15145AD8` recovered as uninstalled eight-position scaled-sphere C, original
 frame/private slots `0x88`, 111 words versus retail 110, 72 differences.

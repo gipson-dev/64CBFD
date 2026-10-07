@@ -21,7 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest scaled-sphere caller recovery, not installed:
+Latest scaled-sphere caller boundary audit, not installed:
+[Note 1088](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md).
+`func_15145AD8` remains 111 words/frame `0x88`, original private slots and
+72 differences versus retail 110. Thirty new controls, 101 maintained
+measurements, none exact. 27,440 bulk guest fixtures now compare bounded
+caller-local/incoming-home snapshots at the real normalizer/wrapper calls;
+9,216 signed vertical-offset and 216 private-input cases are new. Native bank
+expanded to 126,720 actual finite calls through all five C helpers. Copied
+owner preserves 88 neighbors, relocation/pool ownership and its two warnings;
+actual padder emits an overflow trampoline, not an in-slot match. Production
+placeholder/counts/README aggregates unchanged. Next original-profile 110-word
+fit, complete private-frame/read-timing and actual fitting-body install gates.
+No full-frame/FCSR/NaN/hardware/gameplay/host or sibling/Release/save/runtime/push claim.
+All 76 focused tests pass in 317.745 seconds, zero skips/errors/failures;
+final retained audit, tools/syntax/whitespace and 70-document/3,800-link gate pass.
+
+Historical complete caller recovery, extended by Note 1088:
 [Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md).
 `func_15145AD8` now has its complete eight-position ABI, reversed non-null
 redirections and original private slots/frame `0x88`, but emits 111 words
