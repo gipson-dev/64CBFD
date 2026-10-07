@@ -421,7 +421,8 @@ for(p=0;p<5;p++) for(v=0;v<5;v++) for(t=0;t<5;t++) for(f=0;f<7;f++) for(a=0;a<2;
         with self.assertRaisesRegex(ValueError,'stale'):emit(broken)
         broken=[dict(r) for r in rows];broken[-1]['expected_relocations']='R_MIPS_LO16:D_800BE9E4'
         with self.assertRaisesRegex(ValueError,'stale relocations'):emit(broken)
-        self.receipt('owner',dict(functions=89,neighbors_unchanged=88,pool_bytes=624,pools_equal=True,
+        self.receipt('owner',dict(functions=89,neighbors_unchanged=88,
+            pool_bytes=len(normalized_pools(new)['.rodata'][0]),pools_equal=True,
             warnings=2,new_warnings=0,raw_target_identical=True,relocations=4,padded_words=98,
             byte_exact=True,guards=46,stale_words_and_relocations_rejected=True,alternate_hi_lo_carry_link=True))
 
@@ -461,7 +462,7 @@ for(p=0;p<5;p++) for(v=0;v<5;v++) for(t=0;t<5;t++) for(f=0;f<7;f++) for(a=0;a<2;
         self.assertEqual(addresses[screen.FUNCTION],screen.ENTRY);self.assertEqual(len(words),98)
         self.assertEqual(words,self.retail)
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:guards=list(csv.DictReader(stream))
-        digest=assert_guard_history(self,guards);self.assertEqual(guards[10866:],screen.owner_guards())
+        digest=assert_guard_history(self,guards);self.assertEqual(guards[10866:10912],screen.owner_guards())
         self.receipt('production',dict(installed=True,byte_exact=True,words=98,new_guards=46,
             guards=len(guards),guard_sha256=digest))
 

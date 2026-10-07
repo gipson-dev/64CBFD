@@ -16,7 +16,8 @@ from tools.experiments.game_context_classifier_candidates import compile_owner
 from tools.match_progress import load_elf_functions
 from tools.patch_generated_slice_ld import load_game_data_layout
 from tools.pad_generated_object import parse_object
-from tools.tests.game_owner_pool import assert_guard_history
+from tools.tests.game_owner_pool import assert_guard_history, normalized_pools
+from tools.experiments import game_output_mode_candidates as output_mode
 from tools.tests import test_game_texture_cache_match as cache
 from tools.tests import test_game_random_curve_record as native
 from tools.tests.test_game_actor_triangle_transform_match import TriangleOracle
@@ -328,13 +329,28 @@ if(count!=19200 || sizeof(void *)!=4 || sizeof(GameTextureSource)!=12 || (u32)&s
         for name, f in functions.items():
             if name == screen.FUNCTION: continue
             prior = old_functions[name]
-            self.assertEqual(text[f['value']:f['value'] + f['size']], old_text[prior['value']:prior['value'] + prior['size']], name)
+            current = bytearray(text[f['value']:f['value'] + f['size']])
+            previous = bytearray(old_text[prior['value']:prior['value'] + prior['size']])
+            if name == output_mode.FUNCTION:
+                self.assertEqual(struct.unpack_from('>I', previous, 0x20)[0], 0x8C2E0258)
+                self.assertEqual(struct.unpack_from('>I', current, 0x20)[0], 0x8C2E0270)
+                # Restoring this resolver inserts 24 bytes before the later output table.
+                struct.pack_into('>I', previous, 0x20, 0x8C2E0000)
+                struct.pack_into('>I', current, 0x20, 0x8C2E0000)
+            self.assertEqual(current, previous, name)
             self.assertEqual({o - f['value']: r for o, r in relocations.items() if f['value'] <= o < f['value'] + f['size']},
                 {o - prior['value']: r for o, r in old_relocations.items() if prior['value'] <= o < prior['value'] + prior['size']}, name)
         old_pool, pool = screen.sections(old)['.rodata'][1], screen.sections(new)['.rodata'][1]
-        self.assertEqual((len(old_pool), len(pool)), (608, 624))
+        self.assertEqual((len(old_pool), len(pool)), (624, 656))
         self.assertEqual(old_pool[:600], pool[:600])
-        self.assertEqual(old_pool[600:], bytes(8))
+        old_normal, new_normal = normalized_pools(old)['.rodata'], normalized_pools(new)['.rodata']
+        self.assertEqual(old_normal[0][:600], new_normal[0][:600])
+        self.assertEqual(old_normal[0][600:620], new_normal[0][624:644])
+        self.assertEqual(old_pool[620:], bytes(4)); self.assertEqual(pool[644:], bytes(12))
+        self.assertEqual(tuple((o + 24, n, r) for o, n, r in old_normal[1] if o >= 600),
+            tuple(item for item in new_normal[1] if item[0] >= 624))
+        self.assertEqual(tuple(item for item in old_normal[1] if item[0] < 600),
+            tuple(item for item in new_normal[1] if item[0] < 600))
         target = functions[screen.FUNCTION]
         self.assertEqual(target['size'], 200)
         start = target['value']
@@ -346,7 +362,8 @@ if(count!=19200 || sizeof(void *)!=4 || sizeof(GameTextureSource)!=12 || (u32)&s
         self.assertEqual({o - start: r for o, r in relocations.items() if start <= o < start + 200}, standalone_relocations)
         self.assertEqual(screen.sections(old).get('.data'), screen.sections(new).get('.data'))
         self.receipt('owner', dict(functions=len(functions), unchanged=len(functions) - 1, warnings=2,
-            prior_pool=608, retained_payload=600, new_pool=624, table_addend=600, caller_raw_unchanged=True))
+            prior_pool=624, retained_payload=600, new_pool=656, table_addend=600,
+            later_output_table_retained=True,only_later_compact_table_addend_changes=True,caller_raw_unchanged=True))
 
     def test_owner_padder_binds_original_table_and_stale_words_or_relocations_fail(self):
         _, owner = self.copied_owner()

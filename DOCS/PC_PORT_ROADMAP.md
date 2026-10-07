@@ -1,5 +1,31 @@
 # PC Port Roadmap located in another project folder
 
+## Game Halfword Output Mode Match - 2026-10-07
+
+[Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md):
+`func_151441A4`:86 direct words/frame0, fourteen argument positions, five unsigned
+mode cases and default. Two relocation guards bind the appended compiler table
+to the preserved retail owner; no instruction/frame/schedule normalization.
+Only target changes across6059 slots; all protected sections/720 owners/
+addresses/extents/10912 prior guards unchanged,10914 total.
+Game2678/4792 exact,2114 different, zero drift; conversion unchanged.
+
+- [x] Recover all fourteen ABI positions, unused argument7 and unsigned mode paths.
+- [x] Recover original chained halfword reads/stores and duplicated scaled blocks.
+- [x] Qualify mode/input bytes, output/stack aliases and all integer byte products.
+- [x] Connect the original25-word caller setup, final delay store and four outputs.
+- [x] Bind the original table, rebuild and audit all slots/data/historical guards.
+- [x] Extend neighboring pool checks for the exact table/padding/relocation changes.
+- [x] Finish expanded153-test regression and final documentation gates.
+- [ ] Recover next120-word fourteen-mode leaf `func_151442FC`.
+- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+
+All153 tests pass in578.698s, zero skips/errors/failures.61 documents/3690
+relative links/zero broken; tools/syntax/diff and final post-regression linked
+audit pass. Native tests do not claim guest parameter-home aliasing; caller fragments do
+not prove complete callers, hardware/gameplay or host adoption. No sibling/
+frozen Release/save/runtime or push; broader matching goal stays active.
+
 ## Game Fixed-Point Cursor Updater Match - 2026-10-07
 
 [Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md):
@@ -16,7 +42,8 @@ extents/all10866 prior guards unchanged,10912 total. Game2677/4792 exact,
 - [x] Qualify actual native calls, original caller fragment and live instruction operands.
 - [x] Install checked register guards, rebuild and audit all slots/data/guard history.
 - [x] Finish expanded142-test regression and final documentation gates.
-- [ ] Recover next86-word output-mode leaf `func_151441A4` and full stack-input ABI.
+- [x] Recover next86-word output-mode leaf `func_151441A4` and full stack-input ABI
+  ([Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md)).
 - [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
 
 All142 tests pass in672.201s, zero skips/errors/failures.60 documents/3679

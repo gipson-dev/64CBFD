@@ -1,5 +1,23 @@
 # Working Notes
 
+2026-10-07 ([Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md)):
+`func_151441A4`:86 direct words/frame0, fourteen-position ABI and unsigned
+mode switch. Chained halfword rereads/stores, live input bytes, cached scale
+and separate scaled blocks recovered. Two checked table-relocation bindings;
+no instruction normalization. Retain prior624-byte normalized pool, append20
+table bytes/12 padding, and explicitly extend neighboring pool checks.
+Guest65536/stack-overlap24576/unused-input3584/native557056/caller-fragment2048,
+six negatives and owner/padder/stale/alternate-carry gates pass. All86 words
+covered. US ELF/audit changes only target across6059 slots; all addresses/
+extents/protected sections/720 owners/10912 prior guards unchanged,10914 total.
+Exact3351/5465, Game2678/4792,2114 different, zero drift; conversion unchanged.
+All153 post-link tests pass in578.698s, zero skips/errors/failures;61 documents/
+3690 relative links/zero broken, tools/syntax/diff and final post-regression
+linked audit pass. README aggregate rows only. Next120-word `func_151442FC`;
+sampler/oriented recoveries stay open.
+No whole-caller/hardware/gameplay/host adoption, native guest-home-alias,
+sibling/Release/save/runtime or push claim.
+
 2026-10-07 ([Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md)):
 `func_1514401C`:98 words/frame0, recovered fixed-point cursor updater.
 Typed low-u8 inputs, live ticks, strict limits, mode priorities, unsigned wrap

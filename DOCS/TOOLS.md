@@ -4,6 +4,34 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Halfword output-mode matching controls
+
+[Driver](../tools/experiments/game_output_mode_candidates.py) retains96
+case-order/chained-store/product/shared-case controls over four profiles.
+Selected O2/g3 and its O2 control match all86 words directly, frame0, with the
+original five destinations. Two expected-word/relocation guards bind the copied
+owner's compact table at offset624 to the original `jtbl_800A5648_game`.
+Prior624-byte normalized pool intact; new656-byte pool adds20 table bytes and12
+alignment bytes. No instruction normalization, profile/shared-header changes.
+[Eleven tests](../tools/tests/test_game_output_mode_match.py) cover65536 paired
+guest mode/alias cases,24576 argument-home overlap cases,3584 unused-byte cases,
+557056 actual32-bit native calls and2048 original25-word caller fragments.
+All86 words, full memory/ordered traces/saved state, lazy stack/table reads,
+all65536 integer products, six negatives and copied-owner/padder/HI16 carry/
+stale guards qualify. Native tests cover typed values/output aliases, not guest
+parameter-home aliasing. Neighboring pool tests explicitly check the appended
+table and the later addend shift when copying an owner without the resolver.
+No complete-caller/hardware/gameplay or host adoption claim.
+
+```sh
+python3 -m tools.experiments.game_output_mode_candidates
+python3 -m unittest tools.tests.test_game_output_mode_match -v
+```
+
+Ignored receipts:`conker/build/game-output-mode/` and
+`conker/build/game-output-mode-test/`; see
+[Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md).
+
 ## Fixed-point cursor updater matching controls
 
 [Driver](../tools/experiments/game_cursor_updater_candidates.py) retains131

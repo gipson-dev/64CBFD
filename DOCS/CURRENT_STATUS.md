@@ -21,6 +21,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Halfword output-mode direct match:
+[Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md).
+`func_151441A4`:86 direct C words/frame0, fourteen-position ABI and unsigned
+five-case/default switch. Halfword stores/rereads, live byte inputs, scale
+snapshot and duplicated scaled cases recovered. Two checked relocations bind
+the appended compact table to the original owner; no instruction normalization.
+Guest65536/stack-overlap24576/unused-input3584/native557056/caller-fragment2048
+cases, six negatives and owner/padder/stale/alternate-carry checks qualify.
+All86 words covered. Prior624-byte normalized pool intact, new656-byte pool
+contains the20-byte table plus12 alignment bytes. Neighboring pool tests now
+check this extension explicitly, not a generic allowance for drift.
+US ELF/audit changes only target across6059 slots; all addresses/extents/
+protected sections/720 owners/10912 prior guards unchanged,10914 total.
+Exact3351/5465 (61.32%), Game2678/4792 (55.88%),2114 different, zero drift.
+Conversion unchanged; README aggregate rows only. All153 post-link regression
+tests pass in578.698s, zero skips/errors/failures.61 documents/3690 relative
+links/zero broken; tools/syntax/diff and final post-regression linked audit pass.
+Next120-word `func_151442FC`.
+No whole-caller/hardware/gameplay/host adoption, sibling/Release/save/runtime
+or push claim. Sampler/oriented recoveries remain open.
+
 Fixed-point cursor updater match:
 [Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md).
 `func_1514401C`:98 words/frame0; low-u8 inputs, live tick scaling, upper/lower

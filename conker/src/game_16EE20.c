@@ -109,7 +109,9 @@ s32 func_151432BC();
 GameQueryRecord *func_151438D8(s32 start, s32 end, u16 flags, GameQueryRecord *query);
 u8 func_15143E94(s32 command, s32 flags);
 s32 func_1514401C(u8 index, s32 *velocity, s32 *position, u8 flags);
-s32 func_151441A4();
+void func_151441A4(s16 *out0, s16 *out1, s16 *out2, s16 *out3,
+    u8 input0, u8 input1, u8 input2, u8 input3,
+    u8 direct0, u8 direct1, u8 direct2, u8 direct3, u8 scale, u8 mode);
 s32 func_151442FC();
 s32 func_15144CEC();
 s32 func_15144E80();
@@ -1098,9 +1100,44 @@ s32 func_1514401C(u8 index, s32 *velocity, s32 *position, u8 flags) {
     }
     return result;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151441A4.s. */
-s32 func_151441A4() {
-    return 0;
+void func_151441A4(s16 *out0, s16 *out1, s16 *out2, s16 *out3,
+    u8 input0, u8 input1, u8 input2, u8 input3,
+    u8 direct0, u8 direct1, u8 direct2, u8 direct3, u8 scale, u8 mode) {
+    switch (mode) {
+    case 2:
+        *out0 = direct0;
+        *out1 = direct1;
+        *out2 = direct2;
+        *out3 = direct3;
+        break;
+    case 0:
+        *out3 = 0;
+        *out0 = *out1 = *out2 = *out3;
+        break;
+    case 1:
+        *out2 = 0;
+        *out0 = *out1 = *out2;
+        *out3 = direct3;
+        break;
+    case 3:
+        *out0 = (input0 * scale) >> 8;
+        *out1 = (input1 * scale) >> 8;
+        *out2 = (input2 * scale) >> 8;
+        *out3 = 0;
+        break;
+    case 4:
+        *out0 = (input0 * scale) >> 8;
+        *out1 = (input1 * scale) >> 8;
+        *out2 = (input2 * scale) >> 8;
+        *out3 = 0;
+        break;
+    default:
+        *out0 = (input0 * scale) >> 8;
+        *out1 = (input1 * scale) >> 8;
+        *out2 = (input2 * scale) >> 8;
+        *out3 = 0;
+        break;
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151442FC.s. */
 s32 func_151442FC() {

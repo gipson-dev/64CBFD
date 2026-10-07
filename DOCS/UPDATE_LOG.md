@@ -1,5 +1,27 @@
 # Update Log
 
+## 2026-10-07 Game Halfword Output Mode Direct Match
+
+[Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md):
+recover `func_151441A4`'s86-word/frame0 semantic leaf and fourteen-position ABI.
+Preserve mode/default priorities, halfword store/reread order, cached scale,
+live later stack bytes and separate duplicated scaled cases. All86 instructions
+emit directly; two expected-word/relocation guards bind the compact switch table
+to its original owner. Existing624-byte normalized pool intact,656 bytes after
+the appended20-byte table/12 padding. Extend neighboring pool tests explicitly.
+65536 paired guest/24576 stack overlap/3584 unused-input/557056 native/2048
+original caller-fragment cases and six negatives qualify. Copied owners keep
+88 neighbors and two warnings; actual padder/alternate carries/stale checks pass.
+US ELF/audit changes only target across6059 slots; all addresses/extents/
+protected sections/720 owners/10912 prior guards unchanged,10914 total.
+Exact3351/5465, Game2678/4792,2114 different, zero drift; conversion unchanged.
+README aggregate rows only. All153 regression tests pass in578.698s, zero
+skips/errors/failures.61 documents/3690 relative links/zero broken; tools/syntax/
+diff and final post-regression linked audit pass. Next120-word `func_151442FC`;
+sampler/oriented work stays open.
+No complete-caller/hardware/gameplay/host adoption, native guest-home-alias,
+sibling/Release/save/runtime or push claim.
+
 ## 2026-10-07 Game Fixed-Point Cursor Updater Match
 
 [Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md):
