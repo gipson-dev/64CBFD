@@ -1,5 +1,30 @@
 # PC Port Roadmap located in another project folder
 
+## Game Projection Wrapper Lifetime Recovery - 2026-10-07
+
+[Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md):
+`func_15144CEC`: qualified102-word/frame0x48 experimental body versus retail101.
+46 aligned differences remain; no source/profile/header/guard installation.
+All6059 slots/protected sections/720 owners/10916 guards unchanged. Counts and
+README aggregate rows unchanged; no matching increment claimed.
+
+- [x] Recover six-position ABI, original frame and three null-output private slots.
+- [x] Connect all58 original matrix/trampoline/W-continuation words.
+- [x] Qualify depth gates, live index, pre-X Y capture and post-X reciprocal/view reads.
+- [x] Retain140 compiler controls and guest/native/fail-closed/negative qualification.
+- [x] Re-audit the unchanged production baseline and bank the working handoff.
+- [ ] Fit the qualified body into101 words and resolve remaining word differences.
+- [ ] Qualify copied owner/relocations/guards, install narrowly and run full regressions.
+- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+
+All26 focused recovery/audit/helper tests pass in211.955s, zero skips/errors/
+failures;63 documents/3714 relative links/zero broken. Project tools, syntax
+and whitespace pass; full production regressions remain an installation gate.
+Details remain in working notes/update log. Seeded helper-boundary probes are
+not natural helper-home writes; finite output/dependency tests are not identical
+read schedules, FCSR/NaN/hardware/gameplay or host adoption. No sibling/frozen
+Release/save/runtime or push work; broader matching goal stays active.
+
 ## Game Secondary Halfword Output Match - 2026-10-07
 
 [Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md):
@@ -17,6 +42,9 @@ Game2679/4792 exact,2113 different, zero drift; conversion unchanged.
 - [x] Extend copied-owner tests for exact table-addend, identity and padding changes.
 - [x] Finish expanded164-test regression and final documentation gates.
 - [ ] Recover next101-word projection wrapper `func_15144CEC`, including private locals.
+  ABI/frame/lifetime qualification is banked in
+  [Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md);
+  the101-word fit and installation remain open.
 - [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
 
 All164 tests pass in736.713s, zero skips/errors/failures.62 documents/3701

@@ -883,6 +883,27 @@ See [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-2
 
 ## Projection-wrapper compiler audit
 
+### Qualified lifetime recovery
+
+[Lifetime driver](../tools/experiments/game_projection_lifetime_candidates.py):
+`python3 -m tools.experiments.game_projection_lifetime_candidates` reproduces
+140 O2/g3 lifetime forms with real headers; `--family initial` retains64
+additional source templates and `--profiles` selects existing profiles.
+The initial64 are not all measured by this recovery. No source/profile/guard
+installation. Selected body102 words/frame0x48,46 differences; retail101.
+Some controls intentionally alter alias behavior and are not qualified.
+[Ten recovery tests](../tools/tests/test_game_projection_lifetime_recovery.py)
+execute all58 original helper words, qualify optional outputs/live index/
+pre-X Y capture/post-X reciprocal/view reads and actual32-bit native C, and
+reject three compiled alias controls. These tests require ROM, IDO/MIPS tools
+and the32-bit native compiler; ignored receipts are under
+`conker/build/game-projection-lifetime/` and `game-projection-lifetime-test/`.
+See [Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md).
+Production stays the placeholder. Finite output/dependency qualification is
+not identical raw read schedules, hardware/FCSR/NaN or gameplay acceptance.
+
+### Earlier unqualified compiler audit
+
 [Driver](../tools/experiments/game_projection_wrapper_candidates.py) runs
 20 O2/g3 pointer-home/W/index-lifetime controls using real SDK/structure
 headers. None matches; it installs no source, profile or guards. Requires

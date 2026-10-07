@@ -1,5 +1,25 @@
 # Update Log
 
+## 2026-10-07 Game Projection Wrapper Lifetime Recovery
+
+[Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md):
+recover `func_15144CEC`'s original0x48 frame/private fallbacks and qualify its
+six-position ABI, real58-word matrix/W helper chain, depth gates and live
+index/reciprocal/view reads. Selected C102 words/frame0x48,46 aligned differences;
+retail101 words.140 compiler forms, none exact, zero diagnostics.
+36864 paired guest/384 depth/512 index-home/92160 native cases and fail-closed
+fields qualify; three compiled negatives fail observable alias results.
+Inline-Y emits a closer44-difference body but returns2.5 instead of retail26.5.
+Do not install oversized code or broad normalization. Production remains the
+placeholder; all6059 slots/protected sections/720 data owners/10916 guards
+unchanged in fresh retained-ELF audit. Matching/conversion and README aggregate
+rows unchanged. Next: qualified101-word fit, remaining schedule/register work,
+then narrow installation and full production regression. No FCSR/NaN/hardware/
+complete-caller/gameplay/host adoption, sibling/Release/save/runtime or push claim.
+All26 focused recovery/audit/helper regression tests pass in211.955s, zero
+skips/errors/failures;63 documents/3714 relative links/zero broken. Tools/syntax/
+whitespace pass; full production regression remains a future installation gate.
+
 ## 2026-10-07 Game Secondary Halfword Output Direct Match
 
 [Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md):

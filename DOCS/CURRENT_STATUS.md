@@ -21,6 +21,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Projection-wrapper lifetime recovery, not installed:
+[Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md).
+`func_15144CEC`: retail101 words/frame0x48; qualified experimental C102 words/
+frame0x48,46 aligned differences. Original null-output private slots and the
+real58-word synthetic-return matrix/W helper chain are recovered. Live index,
+Y-product capture, reciprocal and view reloads pass guest/native qualification.
+140 maintained compiler forms have zero diagnostics; none is byte-exact.
+36864 paired guest/384 depth/512 index-home/92160 native cases, fail-closed
+required fields and three effective compiled alias negatives qualify.
+Inline-Y's closer44-word difference score is rejected: Y2.5 versus retail26.5.
+Retained US ELF re-audit keeps every6059 slot/protected section/720 data owner/
+10916 historical guard unchanged. Counts and README aggregate rows unchanged.
+All26 focused recovery/audit/helper regression tests pass in211.955s, zero
+skips/errors/failures;63 documents/3714 relative links/zero broken. Project
+tools, Python syntax and whitespace checks pass; no new full164-test run claimed.
+Next: recover101-word fit and remaining scheduling/register differences before
+installation. No FCSR/NaN/hardware/full-caller/gameplay/host adoption claim;
+no sibling/frozen Release/save/runtime or push work.
+
 Secondary halfword output direct match:
 [Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md).
 `func_151442FC`:120 direct C words/frame0, fourteen ABI positions, fourteen

@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-07 ([Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md)):
+`func_15144CEC`: original0x48 frame/private slots and six-position ABI recovered.
+Qualified experimental C102 words/frame0x48,46 aligned differences, retail101.
+Retain140 compiler controls, none exact. Execute all58 original matrix/tail/W
+words;36864 guest/384 depth/512 index-home/92160 native cases and required-field
+fail-closed probes qualify. Three compiled alias negatives fail actual outputs;
+inline-Y returns2.5 where retail/selected return26.5. Production placeholder
+remains; every6059 slot/protected section/720 owner/10916 historical guard stays
+unchanged in fresh retained-ELF audit. Counts/README aggregate rows unchanged.
+Next: qualified101-word fit and remaining word schedule/register differences,
+then copied-owner/guard/install/full-regression gates. No identical raw read
+schedule, FCSR/NaN/hardware/full-caller/gameplay/host adoption claim. No sibling/
+frozen Release/save/runtime or push; broader matching goal active.
+All26 focused recovery/audit/helper tests pass in211.955s, zero skips/errors/
+failures;63 documents/3714 relative links/zero broken; tools/syntax/whitespace pass.
+
 2026-10-07 ([Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md)):
 `func_151442FC`:120 direct words/frame0, fourteen-position ABI, fourteen unsigned
 cases/default. Live argument7, shared2/3 and7/12, separate4/5 product blocks,

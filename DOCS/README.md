@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest projection-wrapper lifetime recovery](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md):
+  `func_15144CEC`, qualified102-word/frame0x48 experiment versus retail101;
+  six-position ABI, original private slots, real helper and live aliases.
+  140 compiler forms, none exact. Production/counts remain unchanged;
+  next recover the101-word fit and remaining word differences.
+
 - [Latest point-transform assembly-to-C match](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md):
   `func_15143134`,98 words/frame0x78, typed ABI and live diagnostics;31 checked
   saved-register allocation guards. All6059 linked slots unchanged; one more
