@@ -1,5 +1,31 @@
 # PC Port Roadmap located in another project folder
 
+## Game Secondary Halfword Output Match - 2026-10-07
+
+[Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md):
+`func_151442FC`:120 direct words/frame0, fourteen-position ABI, fourteen unsigned
+cases/default. Two table-owner bindings, no instruction normalization.
+Only target changes across6059 slots; all addresses/extents/protected sections/
+720 owners/10914 prior guards unchanged,10916 total.
+Game2679/4792 exact,2113 different, zero drift; conversion unchanged.
+
+- [x] Recover all fourteen inputs, live argument7, shared and duplicated mode cases.
+- [x] Recover chained halfword rereads, scale snapshots and ordered live byte products.
+- [x] Qualify mode/input bytes, output/argument-home aliases and all native byte products.
+- [x] Connect both leaves to the original50-word setup and both delay-slot mode stores.
+- [x] Bind the original table, rebuild and audit every slot/data owner/historical guard.
+- [x] Extend copied-owner tests for exact table-addend, identity and padding changes.
+- [x] Finish expanded164-test regression and final documentation gates.
+- [ ] Recover next101-word projection wrapper `func_15144CEC`, including private locals.
+- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+
+All164 tests pass in736.713s, zero skips/errors/failures.62 documents/3701
+relative links/zero broken; project tools, syntax, whitespace and final
+post-regression linked audit pass.
+Native tests do not claim guest parameter-home aliasing; caller fragments do
+not prove complete callers/hardware/gameplay/host adoption. No sibling/frozen
+Release/save/runtime or push; broader matching goal stays active.
+
 ## Game Halfword Output Mode Match - 2026-10-07
 
 [Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md):
@@ -17,7 +43,8 @@ Game2678/4792 exact,2114 different, zero drift; conversion unchanged.
 - [x] Bind the original table, rebuild and audit all slots/data/historical guards.
 - [x] Extend neighboring pool checks for the exact table/padding/relocation changes.
 - [x] Finish expanded153-test regression and final documentation gates.
-- [ ] Recover next120-word fourteen-mode leaf `func_151442FC`.
+- [x] Recover next120-word fourteen-mode leaf `func_151442FC`
+  ([Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md)).
 - [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
 
 All153 tests pass in578.698s, zero skips/errors/failures.61 documents/3690

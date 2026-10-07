@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-07 Game Secondary Halfword Output Direct Match
+
+[Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md):
+recover `func_151442FC` in120 direct words/frame0 with its fourteen-input ABI.
+Preserve unsigned mode/default behavior, live argument7, shared2/3 and7/12,
+separate4/5, scale snapshots, chained rereads and later-byte product read order.
+Two checked table bindings; no instruction normalization. Prior644 meaningful
+pool bytes/owner identities retained,56 table bytes/4 padding,704 total.
+Guest65536/stack-alias24576/live-input4096/native557056/two-leaf caller8192
+cases and six effective negatives qualify. Explicit copied-owner checks pin
+only measured later compact-table addend shifts and exact padding/identities.
+US ELF/audit changes only target across6059 slots; all addresses/extents/
+protected data/720 owners/10914 prior guards intact,10916 total.
+Exact3352/5465, Game2679/4792,2113 different, zero drift; conversion unchanged.
+README aggregate rows only. All164 regression tests pass in736.713s, zero skips/
+errors/failures.62 documents/3701 relative links/zero broken; tools/syntax/
+whitespace and final post-regression linked audit pass.
+Next101-word `func_15144CEC`; sampler/oriented work stays open.
+No full-caller/hardware/gameplay/host adoption, native guest-home-alias,
+sibling/Release/save/runtime or push claim.
+
 ## 2026-10-07 Game Halfword Output Mode Direct Match
 
 [Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md):

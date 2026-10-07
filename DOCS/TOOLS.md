@@ -4,6 +4,32 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Secondary halfword output matching controls
+
+[Driver](../tools/experiments/game_secondary_output_candidates.py) retains96
+case-order/chaining/product/shared-case controls across four profiles. Selected
+O2/g3 and O2 emit all120 words/frame0 directly, with fourteen original table
+destinations. Two checked relocations bind the compact table at644 to the
+preserved `jtbl_800A565C_game`; no instruction normalization.
+The copied pool retains644 meaningful bytes, appends56 table bytes and4 padding,
+total704. Related copied-owner checks pin exact earlier-table addend shifts.
+[Eleven tests](../tools/tests/test_game_secondary_output_match.py) qualify65536
+guest/24576 stack-alias/4096 live-input/557056 native/8192 connected two-leaf
+caller-fragment cases, all120 words, full memory/ordered traces/saved state,
+lazy reads, independent scale inputs and six effective compiled negatives.
+Original50-word caller setup includes both delay stores and distinct mode bytes
+at object0x29/0x2A. Native parameters do not model guest argument-home aliasing;
+bounded caller fragments do not prove complete callers/hardware/gameplay/host adoption.
+
+```sh
+python3 -m tools.experiments.game_secondary_output_candidates
+python3 -m unittest tools.tests.test_game_secondary_output_match -v
+```
+
+Ignored receipts:`conker/build/game-secondary-output/` and
+`conker/build/game-secondary-output-test/`; see
+[Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md).
+
 ## Halfword output-mode matching controls
 
 [Driver](../tools/experiments/game_output_mode_candidates.py) retains96

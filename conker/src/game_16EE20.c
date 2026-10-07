@@ -112,7 +112,9 @@ s32 func_1514401C(u8 index, s32 *velocity, s32 *position, u8 flags);
 void func_151441A4(s16 *out0, s16 *out1, s16 *out2, s16 *out3,
     u8 input0, u8 input1, u8 input2, u8 input3,
     u8 direct0, u8 direct1, u8 direct2, u8 direct3, u8 scale, u8 mode);
-s32 func_151442FC();
+void func_151442FC(s16 *out0, s16 *out1, s16 *out2, s16 *out3,
+    u8 input0, u8 input1, u8 input2, u8 input3,
+    u8 direct0, u8 direct1, u8 direct2, u8 direct3, u8 scale, u8 mode);
 s32 func_15144CEC();
 s32 func_15144E80();
 s32 func_151451F0();
@@ -1139,9 +1141,77 @@ void func_151441A4(s16 *out0, s16 *out1, s16 *out2, s16 *out3,
         break;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151442FC.s. */
-s32 func_151442FC() {
-    return 0;
+void func_151442FC(s16 *out0, s16 *out1, s16 *out2, s16 *out3,
+    u8 input0, u8 input1, u8 input2, u8 input3,
+    u8 direct0, u8 direct1, u8 direct2, u8 direct3, u8 scale, u8 mode) {
+    switch (mode) {
+    case 2:
+    case 3:
+        *out0 = input0;
+        *out1 = input1;
+        *out2 = input2;
+        *out3 = input3;
+        break;
+    case 13:
+        *out0 = input0;
+        *out1 = input1;
+        *out2 = input2;
+        *out3 = 0;
+        break;
+    case 0:
+        *out3 = 0;
+        *out0 = *out1 = *out2 = *out3;
+        break;
+    case 1:
+        *out0 = *out1 = *out2 = scale;
+        *out3 = 0;
+        break;
+    case 7:
+    case 12:
+        *out2 = 0;
+        *out0 = *out1 = *out2;
+        *out3 = direct3;
+        break;
+    case 8:
+        *out2 = 0;
+        *out0 = *out1 = *out2;
+        *out3 = input3;
+        break;
+    case 4:
+        *out0 = *out1 = *out2 = scale;
+        *out3 = (input3 * direct3) >> 8;
+        break;
+    case 5:
+        *out0 = *out1 = *out2 = scale;
+        *out3 = (input3 * direct3) >> 8;
+        break;
+    case 6:
+        *out0 = input0;
+        *out1 = input1;
+        *out2 = input2;
+        *out3 = direct3;
+        break;
+    case 10:
+        *out0 = direct0;
+        *out1 = direct1;
+        *out2 = direct2;
+        *out3 = direct3;
+        break;
+    case 11:
+        *out0 = direct0;
+        *out1 = direct1;
+        *out2 = direct2;
+        *out3 = input3;
+        break;
+    case 9:
+        *out0 = *out1 = *out2 = scale;
+        *out3 = direct3;
+        break;
+    default:
+        *out0 = *out1 = *out2 = scale;
+        *out3 = (input3 * direct3) >> 8;
+        break;
+    }
 }
 u32 func_151444DC(s32 arg0, s32 arg1, s32 arg2) {
     s32 step;

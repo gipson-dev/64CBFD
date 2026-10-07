@@ -21,6 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Secondary halfword output direct match:
+[Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md).
+`func_151442FC`:120 direct C words/frame0, fourteen ABI positions, fourteen
+unsigned modes/default, live argument7 and shared2/3,7/12 cases. Separate4/5
+product blocks, chained zero rereads, scale snapshots and live later-byte order
+are recovered. Two checked table bindings; no instruction normalization.
+Guest65536/stack-alias24576/live-input4096/native557056/two-leaf caller8192
+cases, six effective negatives and owner/padder/stale/alternate-carry gates pass.
+Pool retains644 meaningful bytes/old owner identities, adds56 table bytes/4
+padding,704 total. Earlier-table copied baselines pin exact later addend shifts.
+US ELF/audit changes only target across6059 slots; all addresses/extents/
+protected sections/720 owners/10914 prior guards unchanged,10916 total.
+Exact3352/5465 (61.34%), Game2679/4792 (55.91%),2113 different, zero drift;
+conversion unchanged. All164 post-link tests pass in736.713s, zero skips/errors/
+failures.62 documents/3701 relative links/zero broken; project tools, syntax,
+whitespace and final post-regression linked audit pass.
+README aggregate matching rows only. Next101-word `func_15144CEC`; sampler/
+oriented recoveries stay open. No full-caller/hardware/gameplay/host adoption,
+native guest-home-alias, sibling/Release/save/runtime or push claim.
+
 Halfword output-mode direct match:
 [Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md).
 `func_151441A4`:86 direct C words/frame0, fourteen-position ABI and unsigned

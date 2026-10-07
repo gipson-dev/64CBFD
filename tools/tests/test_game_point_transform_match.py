@@ -420,9 +420,9 @@ if(count!=144)return 6;
                 {o - previous['value']: r for o, r in old_relocs.items()
                     if previous['value'] <= o < previous['value'] + previous['size']}, name)
         self.assertEqual(normalized_pools(old), normalized_pools(new))
-        self.assertEqual(len(screen.sections(new)['.rodata'][1]), 656)
+        self.assertEqual(len(screen.sections(new)['.rodata'][1]), 704)
         self.receipt('owner', dict(functions=len(functions), unchanged=len(functions) - 1,
-            warnings=2, new_warnings=0, pool_bytes=656, normalized_pools_equal=True))
+            warnings=2, new_warnings=0, pool_bytes=704, normalized_pools_equal=True))
 
     def test_actual_owner_padder_guard_metadata_and_alternate_relocations(self):
         _, owner = self.copied_owner()

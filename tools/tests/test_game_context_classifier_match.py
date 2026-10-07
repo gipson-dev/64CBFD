@@ -12,6 +12,7 @@ from pathlib import Path
 from tools.tests.game_owner_pool import assert_guard_history
 from tools.experiments import game_texture_resolver_candidates as resolver
 from tools.experiments import game_output_mode_candidates as output_mode
+from tools.experiments import game_secondary_output_candidates as secondary_output
 
 from tools.experiments import game_context_classifier_candidates as screen
 from tools.experiments import game_actor_classifier_candidates as actor_screen
@@ -252,10 +253,12 @@ if(cases!='''+str(len(WORLDS)*(65536*3+5))+r'''U) return 85;
         expected_pool_offsets = {functions[actor_screen.FUNCTION]['value']+offset for offset in (0x1C, 0x24, 0x3C, 0x44)}
         resolver_start = functions[resolver.FUNCTION]['value']
         output_start = functions[output_mode.FUNCTION]['value']
+        secondary_start = functions[secondary_output.FUNCTION]['value']
         self.assertEqual(set(pool_references), expected_pool_offsets | {start+0x64, start+0x6C,
-            resolver_start+0x20, resolver_start+0x28, output_start+0x18, output_start+0x20})
+            resolver_start+0x20, resolver_start+0x28, output_start+0x18, output_start+0x20,
+            secondary_start+0x14, secondary_start+0x1C})
         pool = screen.sections(new)['.rodata'][1]
-        self.assertEqual(len(pool), 656)
+        self.assertEqual(len(pool), 704)
         for offset, count, name, entry in ((0, 134, actor_screen.FUNCTION, actor_screen.ENTRY),
                                          (536, 16, screen.FUNCTION, screen.ENTRY)):
             # Unlinked pool targets are offsets in the owner's text, not absolute standalone addresses.
@@ -267,9 +270,12 @@ if(cases!='''+str(len(WORLDS)*(65536*3+5))+r'''U) return 85;
             [0x151430B8,0x151430C0,0x151430AC,0x151430A0,0x151430D4,0x151430DC])
         self.assertEqual([target-output_start+output_mode.ENTRY for target in struct.unpack_from('>5I',pool,624)],
             [0x151441F4,0x1514420C,0x151441D0,0x15144228,0x15144270])
-        self.assertEqual(pool[644:], bytes(12))
+        self.assertEqual([target-secondary_start+secondary_output.ENTRY for target in struct.unpack_from('>14I',pool,644)],
+            list(secondary_output.TARGETS))
+        self.assertEqual(pool[700:], bytes(4))
         (self.output/'owner.json').write_text(json.dumps(dict(warnings=len(new_warnings), pool_bytes=len(pool),
-            context_addend=screen.POOL_OFFSET, resolver_addend=600, output_addend=624, table_targets=161), indent=2)+'\n')
+            context_addend=screen.POOL_OFFSET, resolver_addend=600, output_addend=624,
+            secondary_addend=644, table_targets=175), indent=2)+'\n')
         self.assertIn(screen.SELECTED, owner); self.assertEqual(owner.count(screen.PROTOTYPE), 2)
         elf = self.root/'conker/build/conker.us.elf'
         linked, _, addresses = load_elf_functions(str(elf), 'mips-linux-gnu-objdump')

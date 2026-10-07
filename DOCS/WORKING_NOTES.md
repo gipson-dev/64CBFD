@@ -1,5 +1,24 @@
 # Working Notes
 
+2026-10-07 ([Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md)):
+`func_151442FC`:120 direct words/frame0, fourteen-position ABI, fourteen unsigned
+cases/default. Live argument7, shared2/3 and7/12, separate4/5 product blocks,
+scale snapshots, chained zero rereads and live byte read/store order recovered.
+Two checked original-table bindings; no instruction normalization. Retain644
+meaningful pool bytes/owner identities;56 table bytes/4 padding,704 total.
+Guest65536/stack-alias24576/live-input4096/native557056/two-leaf caller8192
+cases, six effective negatives and owner/padder/stale/alternate-carry gates pass.
+Explicit neighboring tests pin exact later table addends, identities and padding.
+US ELF/audit changes only target across6059 slots; all addresses/extents/
+protected data/720 owners/10914 prior guards unchanged,10916 total.
+Exact3352/5465, Game2679/4792,2113 different, zero drift; conversion unchanged.
+All164 post-link tests pass in736.713s, zero skips/errors/failures.62 documents/
+3701 relative links/zero broken; tools/syntax/whitespace and final post-regression
+linked audit pass. README aggregate rows only.
+Next101-word `func_15144CEC`; sampler/oriented recoveries remain open.
+No full-caller/hardware/gameplay/host adoption, native guest-home-alias,
+sibling/Release/save/runtime or push claim.
+
 2026-10-07 ([Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md)):
 `func_151441A4`:86 direct words/frame0, fourteen-position ABI and unsigned
 mode switch. Chained halfword rereads/stores, live input bytes, cached scale

@@ -10913,3 +10913,5 @@ game_16EE20,func_1514401C,0x174,0x0480FFFD,0x05A0FFFD,-,-,Normalize cursor updat
 game_16EE20,func_1514401C,0x178,0x00804025,0x01A04825,-,-,Normalize cursor updater closed temporary register allocation and commutative add order,,,false
 game_16EE20,func_151441A4,0x18,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A5648_game,Bind output mode switch to its preserved retail jump table,,,false
 game_16EE20,func_151441A4,0x20,0x8C2E0270,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A5648_game,Bind output mode switch to its preserved retail jump table,,,false
+game_16EE20,func_151442FC,0x14,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A565C_game,Bind secondary output switch to its preserved retail jump table,,,false
+game_16EE20,func_151442FC,0x1C,0x8C2E0284,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A565C_game,Bind secondary output switch to its preserved retail jump table,,,false

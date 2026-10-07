@@ -12,6 +12,7 @@ import unittest
 from pathlib import Path
 
 from tools.experiments import game_output_mode_candidates as screen
+from tools.experiments import game_secondary_output_candidates as secondary_output
 from tools.experiments.game_context_classifier_candidates import compile_owner
 from tools.match_progress import load_elf_functions
 from tools.patch_generated_slice_ld import load_game_data_layout
@@ -281,23 +282,36 @@ for(x=0;x<256;x++)for(s=0;s<256;s++)for(m=0;m<4;m++)for(a=0;a<2;a++) {
         for name,f in functions.items():
             if name==screen.FUNCTION:continue
             previous=of[name]
-            self.assertEqual(text[f['value']:f['value']+f['size']],ot[previous['value']:previous['value']+previous['size']],name)
+            current_raw=bytearray(text[f['value']:f['value']+f['size']])
+            previous_raw=bytearray(ot[previous['value']:previous['value']+previous['size']])
+            if name==secondary_output.FUNCTION:
+                self.assertEqual(struct.unpack_from('>I',previous_raw,0x1C)[0],0x8C2E0270)
+                self.assertEqual(struct.unpack_from('>I',current_raw,0x1C)[0],0x8C2E0284)
+                # Removing this 20-byte table shifts only the later compact-table addend.
+                struct.pack_into('>I',previous_raw,0x1C,0x8C2E0000)
+                struct.pack_into('>I',current_raw,0x1C,0x8C2E0000)
+            self.assertEqual(current_raw,previous_raw,name)
             self.assertEqual({o-f['value']:r for o,r in rel.items() if f['value']<=o<f['value']+f['size']},
                 {o-previous['value']:r for o,r in orr.items() if previous['value']<=o<previous['value']+previous['size']},name)
         op,np=normalized_pools(old),normalized_pools(new)
-        self.assertEqual(op['.data'],np['.data']);self.assertEqual(len(op['.rodata'][0]),624)
-        self.assertEqual(len(np['.rodata'][0]),656);self.assertEqual(op['.rodata'][0],np['.rodata'][0][:624])
-        self.assertEqual(op['.rodata'][1],tuple(i for i in np['.rodata'][1] if i[0]<624))
-        appended=np['.rodata'][1][len(op['.rodata'][1]):]
+        self.assertEqual(op['.data'],np['.data']);self.assertEqual(len(op['.rodata'][0]),688)
+        self.assertEqual(len(np['.rodata'][0]),704);self.assertEqual(op['.rodata'][0][:624],np['.rodata'][0][:624])
+        self.assertEqual(tuple(i for i in op['.rodata'][1] if i[0]<624),
+            tuple(i for i in np['.rodata'][1] if i[0]<624))
+        self.assertEqual(op['.rodata'][0][624:680],np['.rodata'][0][644:700])
+        self.assertEqual(tuple((o+20,n,v) for o,n,v in op['.rodata'][1] if o>=624),
+            tuple(i for i in np['.rodata'][1] if i[0]>=644))
+        appended=tuple(i for i in np['.rodata'][1] if 624<=i[0]<644)
         self.assertEqual(appended,tuple((624+i*4,screen.FUNCTION,t-screen.ENTRY) for i,t in enumerate(TARGETS)))
-        self.assertEqual(np['.rodata'][0][624:],bytes(32))
+        self.assertEqual(op['.rodata'][0][680:],bytes(8));self.assertEqual(np['.rodata'][0][700:],bytes(4))
         f=functions[screen.FUNCTION];raw=list(struct.unpack_from('>86I',text,f['value']))
         self.assertEqual(raw[0x20//4],0x8C2E0270);raw[0x20//4]-=624
         standalone,_,_=parse_object(self.output/'selected.o')
         self.assertEqual(raw,list(struct.unpack_from('>86I',standalone)))
         self.receipt('owner',dict(functions=89,unchanged_neighbors=88,warnings=2,new_warnings=0,
-            previous_pool_bytes=624,new_pool_bytes=656,prior_normalized_pool_unchanged=True,
-            appended_table_bytes=20,alignment_padding=12,table_addend=624,raw_target_identical_after_addend=True))
+            previous_pool_bytes=688,new_pool_bytes=704,prior_payload_and_owner_identities_unchanged=True,
+            inserted_table_bytes=20,alignment_padding=4,table_addend=624,
+            later_secondary_table_addend_shift=20,raw_target_identical_after_addend=True))
 
     def test_actual_owner_padder_retail_binding_alternate_carries_and_stale_guards(self):
         _,owner=self.copied_owner()
@@ -366,7 +380,7 @@ for(x=0;x<256;x++)for(s=0;s<256;s++)for(m=0;m<4;m++)for(a=0;a<2;a++) {
         address,data=screen.sections(self.root/'conker/build/conker.us.elf')['.game_data']
         self.assertEqual(data[screen.TABLE-address:screen.TABLE-address+20],self.original)
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:guards=list(csv.DictReader(stream))
-        digest=assert_guard_history(self,guards);self.assertEqual(guards[10912:],screen.owner_guards())
+        digest=assert_guard_history(self,guards);self.assertEqual(guards[10912:10914],screen.owner_guards())
         self.receipt('production',dict(words=86,direct_words=True,guards=len(guards),new_table_guards=2,
             guard_sha256=digest,original_table_unchanged=True))
 
