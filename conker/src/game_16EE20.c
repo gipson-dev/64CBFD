@@ -640,28 +640,23 @@ Gfx *func_15142C10(Gfx *output, s32 red, s32 green, s32 blue, s32 alpha, u8 *syn
     return output;
 }
 
-Gfx *func_15142CF0(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, u8 *arg7) {
-    if ((arg1 == D_800DD204) && (arg2 == D_800DD206) && (arg3 == D_800DD1C0) &&
-        (arg4 == D_800DD1C2) && (arg5 == D_800DD1C4) && (arg6 == D_800DD1C6)) {
-        return arg0;
+Gfx *func_15142CF0(Gfx *output, s32 minimumLod, s32 lodFraction, s32 red,
+    s32 green, s32 blue, s32 alpha, u8 *sync) {
+    if (minimumLod != D_800DD204 || lodFraction != D_800DD206 || red != D_800DD1C0 ||
+        green != D_800DD1C2 || blue != D_800DD1C4 || alpha != D_800DD1C6) {
+        if (*sync == 1) {
+            gDPPipeSync(output++);
+            *sync = 0;
+        }
+        gDPSetPrimColor(output++, minimumLod, lodFraction, red, green, blue, alpha);
+        D_800DD204 = minimumLod;
+        D_800DD206 = lodFraction;
+        D_800DD1C0 = red;
+        D_800DD1C2 = green;
+        D_800DD1C4 = blue;
+        D_800DD1C6 = alpha;
     }
-
-    if (*arg7 == 1) {
-        gDPPipeSync(arg0++);
-        *arg7 = 0;
-    }
-
-    arg0->words.w0 = 0xFA000000 | ((arg1 & 0xFF) << 8) | (arg2 & 0xFF);
-    arg0->words.w1 = ((arg3 & 0xFF) << 24) | ((arg4 & 0xFF) << 16) | ((arg5 & 0xFF) << 8) | (arg6 & 0xFF);
-    arg0++;
-
-    D_800DD204 = arg1;
-    D_800DD206 = arg2;
-    D_800DD1C0 = arg3;
-    D_800DD1C2 = arg4;
-    D_800DD1C4 = arg5;
-    D_800DD1C6 = arg6;
-    return arg0;
+    return output;
 }
 Gfx *func_15142E24(Gfx *output, GameTextureSource *source, s32 packed, s32 width,
     s32 height, s32 value, s32 index, u8 kind, u8 *attachment, u8 *sync, s32 flags) {

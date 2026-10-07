@@ -51,6 +51,16 @@ confirmed.
 
 ## Planning and history
 
+- [Latest primitive-color direct match](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md):
+  All 77 words/frame `0x8` direct under unchanged O2/g3, SDK macro, no guards.
+  Six-field lazy gate, 48 controls/one fit; full-effect guest/native/incoming-
+  home/negative/owner/padder/six-cache relocation gates qualify. Only target
+  changes; all addresses/extents/data/guards intact. Exact total 3,360,
+  Game 2,687 (56.06%), 2,106 different, zero drift. 23 tests pass in 269.557
+  seconds; tools/syntax/whitespace and 76-document / 3,886-relative-link gates
+  pass, zero broken links. Next 49-word translator;
+  sampler remains unresolved/untouched, no new sampler measurements.
+
 - [Latest environment-color match and sampler flow audit](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md):
   All 56 words/frame `0x8` direct under O2/g3, actual SDK macro, no guards.
   48 controls/one fit; guest/native/full-effect/copied-owner/padder/cache-relocation

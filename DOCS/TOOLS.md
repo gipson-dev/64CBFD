@@ -4,6 +4,30 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Cached primitive color controls
+
+[Candidate driver](../tools/experiments/game_cached_primitive_color_candidates.py)
+retains twelve six-field cache-gate/cursor/SDK/packet forms across four profiles,
+48 measurements. Positive miss gate and actual SDK macro emit all 77 words/
+frame `0x8` directly under unchanged O2/g3, no guards. The
+[eight tests](../tools/tests/test_game_cached_primitive_color_match.py) bind
+174,720 complete-effect guest and 7,280 native 32-bit cases, 448 incoming-home
+overwrite cases, full signed32/signed16 lazy gates, LOD/RGBA packing, sync/order/
+aliases, seven negatives, copied owner, actual padding, six independently
+rebased cache symbols and installed source/slot/guard history.
+See [Note 1094](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md).
+The combined primitive/environment-color, owner-pool and padder regression
+passes 23 tests in 269.557 seconds. Tools/syntax/whitespace and the 76-document /
+3,886-relative-link gates pass, zero broken links.
+
+```sh
+python3 -m tools.experiments.game_cached_primitive_color_candidates
+python3 -m unittest tools.tests.test_game_cached_primitive_color_match tools.tests.test_game_cached_environment_color_match tools.tests.test_game_owner_pool tools.tests.test_pad_c_object_word_patches -v
+```
+
+Ignored receipts: `conker/build/game-cached-primitive-color/` and
+`conker/build/game-cached-primitive-color-test/`.
+
 ## Cached environment color and sampler flow controls
 
 [Color driver](../tools/experiments/game_cached_environment_color_candidates.py)

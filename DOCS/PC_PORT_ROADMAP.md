@@ -1,5 +1,23 @@
 # PC Port Roadmap located in another project folder
 
+## Game Primitive Color Direct Match - 2026-10-07
+
+[Note 1094](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md):
+`func_15142CF0` is direct C77/frame `0x8`, unchanged O2/g3, no guards.
+
+- [x] Recover the positive six-field cache-miss gate and actual SDK primitive-color macro; 48 controls/one exact form.
+- [x] Qualify 174,720 complete-effect guest / 7,280 native cases, lazy signed gates, both LOD fields, RGBA, sync states and aliases.
+- [x] Qualify 448 incoming-home overwrite cases and seven effective compiled negatives.
+- [x] Preserve copied owner/88 neighbors/pools/relocations/two warnings; bind actual padder and all six independently rebased cache symbols.
+- [x] Install/rebuild and audit all slots/addresses/extents/overflows/data/11,006 guards/conversions; sampler and environment-color bodies unchanged.
+- [x] Update README aggregate rows: total 3,360, Game 2,687, 2,106 different, zero drift.
+- [x] Pass 23 combined color/pool/padder tests in 269.557 seconds and final tool/syntax/whitespace gates; 76 documents / 3,886 relative links, zero broken.
+- [ ] Recover/match 49-word matrix translation extractor `func_15142314`, including separate float conversion before addition and addressing/alias behavior.
+- [ ] Recover sampler `func_151432BC`'s two per-path RA loads and circle RNG-byte schedule before installation.
+
+This is guest matching progress, not PC-port gameplay/rendering/Release acceptance.
+No sibling/frozen Release/save/runtime/push work.
+
 ## Game Environment Color Match And Sampler Flow Audit - 2026-10-07
 
 [Note 1093](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md):
@@ -15,7 +33,7 @@ Sampler flow controls are qualified but not installed.
 - [x] Install the direct color body and rebuild/audit all slots/addresses/extents/overflows/data/11,006 guards/conversions.
 - [x] Update README aggregate rows: total 3,359, Game 2,686, 2,107 different, zero drift.
 - [x] Pass 50 combined neighboring tests in 336.828 seconds and final tool/syntax/whitespace gates; 75 documents / 3,874 relative links, zero broken.
-- [ ] Match 77-word cached primitive-color neighbor `func_15142CF0`, including all six cache fields and sync/order/alias gates.
+- [x] Match 77-word cached primitive-color neighbor `func_15142CF0`, including all six cache fields and sync/order/alias gates; completed in Note 1094.
 - [ ] Recover sampler `func_151432BC`'s two per-path RA loads and circle RNG-byte schedule before installation.
 
 This is guest matching progress, not PC-port gameplay/rendering/Release acceptance.

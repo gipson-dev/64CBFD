@@ -21,6 +21,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest cached primitive-color direct match:
+[Note 1094](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md).
+`func_15142CF0` emits all 77 words/frame `0x8` directly under unchanged O2/g3,
+no guards. Six-field positive miss gate plus the actual SDK macro recovers all
+words; 48 controls/one exact form. 174,720 complete-effect guest, 448 incoming-
+home overwrite and 7,280 native cases, seven negatives and copied-owner/actual-
+padder/six independently rebased cache symbols qualify. US ELF/audit changes
+only target across 6,042 retail slots / 6,058 symbols; all addresses/extents/
+overflows/protected sections/data/11,006 guards intact. Exact total 3,360/5,466
+(61.47%), Game 2,687/4,793 (56.06%), 2,106 different, zero drift; conversion
+unchanged. Combined regression: 23 tests in 269.557 seconds, zero skips/errors/
+failures; tools/syntax/whitespace and 76-document / 3,886-relative-link gates
+pass, zero broken links. Main README aggregate rows only. Next 49-word
+translation extractor
+`func_15142314`: recover separate float conversions before addition and original
+addressing. Sampler exits/RNG remain open and untouched, no new sampler sweep.
+No host/sibling/Release/save/runtime/rendering/hardware/push claim.
+
 Latest cached environment-color direct match and sampler flow audit:
 [Note 1093](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md).
 `func_15142C10` emits all 56 words/frame `0x8` directly under unchanged O2/g3,

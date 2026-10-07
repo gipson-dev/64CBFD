@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-07 Game Primitive Color Direct Match
+
+[Note 1094](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md):
+`func_15142CF0` is direct C77/frame `0x8`, unchanged O2/g3, no guards. Positive
+six-field cache gate and actual SDK macro recover all words. 48 controls/one
+fit; 174,720 guest/full-effect, 448 incoming-home and 7,280 native cases, seven
+negatives and owner/padder/six-cache-relocation checks qualify. US ELF/audit
+changes only target; other bodies/addresses/extents/overflows/data/11,006 guards
+intact. Exact total 3,360, Game 2,687 (56.06%), 2,106 different, zero drift;
+conversion unchanged. 23 tests pass in 269.557 seconds; tools/syntax/whitespace
+and 76-document / 3,886-relative-link gates pass, zero broken links.
+README aggregate rows only. Next 49-word matrix translation
+extractor `func_15142314`; sampler exits/RNG untouched. No sibling/frozen Release/
+save/runtime/rendering/hardware acceptance or push.
+
 ## 2026-10-07 Game Environment Color Match And Sampler Flow Audit
 
 [Note 1093](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md):

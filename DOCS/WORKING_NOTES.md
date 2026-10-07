@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-07 ([Note 1094](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md)):
+`func_15142CF0` is direct C77/frame `0x8`, unchanged O2/g3, no guards. Positive
+six-field gate/SDK macro recover all words; 48 controls/one fit. 174,720 guest,
+448 incoming-home and 7,280 native cases, seven negatives and owner/padder/six
+independent cache-rebasing gates qualify. US ELF/audit changes only target;
+all other bodies/addresses/extents/overflows/data/11,006 guards unchanged.
+Exact total 3,360, Game 2,687, 2,106 different, zero drift; conversion unchanged.
+23 tests pass in 269.557 seconds; tools/syntax/whitespace clean and all 3,886
+relative links across 76 documents resolve.
+README aggregates only; next 49-word matrix translation extractor, then open
+sampler exits/RNG. No new sampler sweep or sibling/Release/save/runtime/push.
+
 2026-10-07 ([Note 1093](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md)):
 `func_15142C10` is direct C56/frame `0x8`, unchanged O2/g3, no guards. SDK
 macro/positive cache gate recovers all words; 48 controls/one direct fit.
