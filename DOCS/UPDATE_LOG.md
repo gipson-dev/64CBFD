@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-07 Game Vector-Basis Recovery And Liveness Audit
+
+[Note 1100](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md):
+Recover the complete semantic basis constructor `func_15146078` and qualify
+its original helpers, sequential aliases, native C and complete original caller.
+Audit both early private byte reads: real required reads, publicly dead initial
+values. Retain 118 source/profile controls, none exact, and ten maintained
+tests. Selected C144/frame `0x48`/93 differences still has a real private-layout
+counterexample, so original 148-word assembly remains installed. No source,
+profile, header, guard or README aggregate changes. The full linked snapshot
+stays identical across 6,058 symbols and 11,061 guards; total 3,363/5,466 exact,
+Game 2,690/4,793 exact, 2,103 different, zero drift. Continue lifetime/layout
+recovery; this is not a converted function or PC-port acceptance.
+
 ## 2026-10-07 Game Matrix-List Transform Match
 
 [Note 1099](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md):

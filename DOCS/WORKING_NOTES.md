@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-07 ([Note 1100](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md)):
+Vector-basis `func_15146078` semantic recovery and early-byte liveness audit;
+no installed C conversion or new byte match. Selected C144/frame `0x48`/93
+differences, private offsets and floating-zero case lifetime still open.
+Ten maintained tests cover 3,456 guest, 432 complete caller, 1,728 actual native,
+16,384 byte-value and 416 float-pattern fixtures, five effective negatives,
+required storage and two private-layout counterexamples. Retain 118 controls,
+none exact, with 1,320 ordinary nonoverlapping candidate executions.
+The original 148-word assembly stays installed; all 6,058 symbols / 11,061
+guards / protected sections/data/conversion hash stay banked-baseline identical.
+Matching and README aggregates unchanged; continue lifetime/layout recovery.
+
 2026-10-07 ([Note 1099](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md)):
 Matrix/list wrapper `func_15145EA4`: complete C117/frame `0xA0`/matrix
 `sp+0x5C`, both fixed/float routes, lazy point gates and argument-home reloads.

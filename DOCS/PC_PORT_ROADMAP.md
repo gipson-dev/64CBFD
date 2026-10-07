@@ -1,5 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Game Vector-Basis Recovery And Liveness Audit - 2026-10-07
+
+[Note 1100](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md):
+`func_15146078` remains original assembly; experimental C144/frame `0x48`/93
+differences is a qualified ordinary recovery, not an installed byte match.
+
+- [x] Recover zero/axis gates, retail expression, sequential cross products and in-place normalization using the actual original helpers.
+- [x] Audit early private byte liveness with 16,384 value fixtures, exact read-address checks and 28 removed-byte faults.
+- [x] Qualify 3,456 guest, 432 complete original-caller and 1,728 actual 32-bit native cases, plus float-pattern/null-output gates and five effective compiled negatives.
+- [x] Retain 118 source/profile controls, none raw exact; qualify 1,320 ordinary nonoverlapping candidate executions.
+- [x] Pin the unrecovered private scalar layout with two requested-output overlap counterexamples; preserve original assembly and all production guards/profiles/headers.
+- [x] Audit all 6,058 symbols, 6,042 slots, protected sections/data and 11,061 guard rows as banked-baseline identical; leave README aggregates unchanged.
+- [x] Pass all 19 combined tests in 114.064 seconds, zero skips/errors/failures, plus tools/syntax/whitespace and 82-document / 3,958-relative-link checks, zero broken links.
+- [ ] Recover retail's 148-word source shape, floating-zero lifetime and private length/reciprocal/axis-byte offsets before installing C or guards.
+- [ ] Qualify copied owner/pools/padder/rebased calls and full linked regression after a matching source is found.
+- [ ] Match translator scheduling and sampler per-path RA/RNG lifetime.
+
+This is guest recovery evidence, not PC-port/runtime/hardware acceptance.
+
 ## Game Matrix-List Transform Match - 2026-10-07
 
 [Note 1099](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md):

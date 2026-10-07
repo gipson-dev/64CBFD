@@ -4,6 +4,29 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Vector-basis recovery audit
+
+[Candidate driver](../tools/experiments/game_vector_basis_candidates.py) retains
+118 source/profile controls and a complete experimental `func_15146078` body.
+Use `--group` with `primary`, `lifetime`, `scalars`, `expressions`, `outputs`,
+`vectors`, `registers` or `profiles`. None is raw byte-exact; the selected
+ordinary C144/frame `0x48`/93 differences is not installed.
+
+[Ten tests](../tools/tests/test_game_vector_basis_recovery.py) qualify actual
+original guest helpers, actual recovered native C helpers, sequential aliases,
+complete original caller, early private-byte liveness, required reads and five
+effective negatives. Private-output overlaps remain different, so ordinary
+public effects are not full private-layout or installation acceptance.
+Detailed boundary and next actions are in
+[Note 1100](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md).
+
+```sh
+python3 -m tools.experiments.game_vector_basis_candidates --group lifetime
+python3 -m unittest tools.tests.test_game_vector_basis_recovery tools.tests.test_game_vector_normalizer -v
+```
+
+Ignored measurements/receipts: `conker/build/game-vector-basis*/`.
+
 ## Matrix-list transform matching
 
 [Candidate driver](../tools/experiments/game_matrix_list_transform_candidates.py)

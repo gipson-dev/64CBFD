@@ -51,6 +51,13 @@ confirmed.
 
 ## Planning and history
 
+- [Latest vector-basis recovery/liveness audit](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md):
+  Complete experimental `func_15146078` C144/frame `0x48`/93 differences,
+  real but publicly dead early byte values, original-helper/native/alias/caller
+  qualification and explicit private-layout counterexamples. Original assembly
+  remains installed; no new conversion or byte match. Linked snapshot and
+  README aggregates stay unchanged. Continue source lifetime/layout recovery.
+
 - [Latest matrix/list wrapper match](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md):
   Complete C117/frame `0xA0`, both matrix routes, original local matrix and
   incoming-home reloads; nineteen GP/save/equality-operand guards, no private-

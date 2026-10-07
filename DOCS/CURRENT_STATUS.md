@@ -21,6 +21,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest vector-basis recovery/liveness audit, **no new conversion or byte match**:
+[Note 1100](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md).
+`func_15146078` remains original 148-word assembly. Its complete experimental
+C is 144 words/frame `0x48`/93 differences, with unrecovered scalar offsets
+and special-case floating-zero lifetime. The early byte reads are real but
+their initial values are publicly dead; 16,384 fixtures and 28 required faults
+qualify that boundary. Ordinary/alias/actual-helper/native/complete-caller
+tests qualify, but two private-output overlaps still differ. Retain 118
+source/profile controls, none exact; do not install private-offset patches.
+All 6,058 linked symbols, 11,061 guards, protected sections/data and conversion
+hash remain identical to the banked baseline; README aggregates unchanged.
+All 19 combined recovery/normalizer tests pass in 114.064 seconds, zero skips/
+errors/failures; tools/syntax/whitespace and 82-document / 3,958-relative-link
+checks pass, zero broken links.
+Continue the source lifetime/layout recovery in Note 1100.
+
 Latest matrix/list wrapper match:
 [Note 1099](WORKING_NOTES/1099-game-matrix-list-transform-match-20261007.md).
 `func_15145EA4` replaces its zero-return placeholder with both original matrix
