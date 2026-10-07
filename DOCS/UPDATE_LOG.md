@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Texture Cache Submission Match
+
+[Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md):
+`func_15142E24`:102 direct words/frame0x40, no guards/profile changes.
+Recover typed cache/submit ABI, signed packed fields, live world flags and
+observable attachment self-write.32 controls; ten pre-install tests pass:
+2304 paired guest/6912 native/486 original resolver cases,88 homes, nine original
+call/delay pairs, negatives, padder and copied-owner preservation.
+US ELF/6059-slot audit passes, only target changes. Protected sections/720
+owners/10809 guards/two warnings unchanged. Exact3344/5464 (61.20%),
+Game2671/4791 (55.75%),2120 different, zero drift; conversion unchanged.
+All52 post-link tests pass in215.511s, no skips/errors/failures;53 documents/
+3596 relative links/zero broken, tools/syntax/diff checks pass.
+Root README updates aggregate rows only.
+Next50-word resolver remains placeholder; oriented27 private offsets stay open.
+No sibling/frozen Release/save/runtime, host adoption, full helper/caller/
+gameplay acceptance or push.
+
 ## 2026-10-06 Game Oriented Matrix Original Frame
 
 [Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md):

@@ -1,5 +1,30 @@
 # PC Port Roadmap located in another project folder
 
+## Game Texture Cache Submission Match - 2026-10-06
+
+[Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md):
+`func_15142E24`:102 direct words/frame0x40, no guards/profile change.
+Typed source/attachment ABI, live cache gates and retail same-value store.
+Ten pre-install tests pass; US ELF/audit changes only target across6059 slots.
+Protected sections/720 owners/10809 guards/two warnings unchanged.
+Game2671/4791 exact (55.75%),2120 different, zero drift; conversion unchanged.
+
+All52 post-link tests pass in215.511s, no skips/errors/failures;
+53 documents/3596 relative links/zero broken, tools/syntax/diff checks pass.
+
+- [x] Recover cache/submit contract, signed fields and retail self-write.
+- [x] Qualify32 controls, guest/native, original resolver and nine call/delay pairs.
+- [x] Exercise negatives, actual padder and copied-owner preservation.
+- [x] Install direct102-word body, rebuild and audit slots/data/guards.
+- [x] Finish52-test post-link regression and final documentation/tool gates.
+- [ ] Recover50-word resolver `func_1514306C` from original switch/table.
+- [ ] Finish oriented `func_15142600`'s27 private-offset differences.
+
+Resolver executes in fixtures but remains a production placeholder; submit
+helper is bounded, call pairs are not full callers. Ten oriented matrix-storage
+controls find no improvement. No sibling/frozen Release/save/runtime, host
+adoption, hardware/gameplay acceptance or push.
+
 ## Game Oriented Matrix Original Frame - 2026-10-06
 
 [Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md):

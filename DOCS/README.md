@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest texture-cache submission match](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md):
+  `func_15142E24`,102 direct words/frame0x40, no guards; typed attachment/source
+  ABI and observable retail self-write. Guest/native/original resolver and
+  call-delay pairs qualified; full6059-slot audit changes only target.
+  Next50-word resolver remains placeholder; oriented private offsets stay open.
+
 - [Latest oriented matrix original-frame recovery](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md):
   in-place normalization recovers142 words/frame0xB8; only27 private direction/
   matrix offsets remain.128 controls/thirteen tests qualify six guest bodies

@@ -4,6 +4,33 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Texture-cache submission controls
+
+[Driver](../tools/experiments/game_texture_cache_candidates.py):eight
+early-return/captured-world/volatile-world forms across four SDK profiles,
+32 controls. Only default O2/g3 emits all102 words/frame0x40 directly.
+[Eleven tests](../tools/tests/test_game_texture_cache_match.py) bind2304
+paired full-trace/storage guest cases,88 guest-only homes,486 connected
+original-resolver cases,6912 native32-bit typed-helper cases, nine original
+call/delay pairs and ten compiled negatives. Preserve signed packed shifts,
+cache-hit no-sync-read, callback-live flags/cache fields and observable
+attachment reload/same-value-store. Original resolver uses the actual exact
+Game-data jump table; submit is bounded, call pairs are not full callers.
+Actual padder preserves408 bytes, excludes eight alignment bytes and retargets
+both calls. Copied owner retains92 neighbors/pools/two warnings; production
+binds102 words/nine exact neighbors/unchanged10809 guards. Commands:
+
+```sh
+python3 -m tools.experiments.game_texture_cache_candidates
+python3 -m unittest tools.tests.test_game_texture_cache_match -v
+```
+
+Ignored receipts:`conker/build/game-texture-cache/` and
+`conker/build/game-texture-cache-test/`; see
+[Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md).
+No original submit-helper, whole-caller, native private-home, hardware/RDP/
+gameplay or64-bit host acceptance. Resolver remains a production placeholder.
+
 ## Row matrix compiler controls
 
 [Driver](../tools/experiments/game_row_matrix_candidates.py):translation-first/

@@ -38,6 +38,18 @@ void func_15141E38(u8 *actor, s32 index);
 s32 func_1514ECE0(u8 *, s16, u8 **);
 s32 func_1514EC1C(s32, s32, s32);
 
+typedef struct {
+    u32 unk0;
+    u8 unk4, pad5;
+    u16 unk6, unk8;
+    u8 unkA, unkB;
+} GameTextureSource;
+extern s32 D_800DD1B0, D_800DD208, D_800DD20C, D_800DD210;
+extern u8 *D_800DD214;
+extern s32 D_800BE9F0;
+extern u8 D_800BE616;
+s32 func_15094FE8(s32, GameTextureSource *, s32, u8 *, s32, s32, s32, s32, s32, s32, s32);
+
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
@@ -50,7 +62,8 @@ void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
 s32 func_15142600();
 void func_15142838(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     f32 tx, f32 ty, f32 tz);
-s32 func_15142E24();
+Gfx *func_15142E24(Gfx *output, GameTextureSource *source, s32 packed, s32 width,
+    s32 height, s32 value, s32 index, u8 kind, u8 *attachment, u8 *sync, s32 flags);
 s32 func_1514306C();
 s32 func_15143134();
 s32 func_151432BC();
@@ -561,9 +574,27 @@ Gfx *func_15142CF0(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, 
     D_800DD1C6 = arg6;
     return arg0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15142E24.s. */
-s32 func_15142E24() {
-    return 0;
+Gfx *func_15142E24(Gfx *output, GameTextureSource *source, s32 packed, s32 width,
+    s32 height, s32 value, s32 index, u8 kind, u8 *attachment, u8 *sync, s32 flags) {
+    s32 image = func_1514306C(source, index, packed >> 16, kind);
+    if (image != D_800DD1B0 || width != D_800DD208 ||
+        height != D_800DD20C || value != D_800DD210 || attachment != D_800DD214) {
+        if (*sync == 1) {
+            *sync = 0;
+        }
+        if (D_800BE9F0 == 0x18 || D_800BE9F0 == 0x13 || D_800BE9F0 == 6 ||
+            D_800BE9F0 == 0x3B || D_800BE9F0 == 2 || D_800BE616 != 0) {
+            flags = 3;
+        }
+        output = (Gfx *)func_15094FE8((s32)output, source, packed >> 8, attachment, 0, 0, 0,
+            width, height, value, flags);
+        D_800DD1B0 = image;
+        D_800DD208 = width;
+        D_800DD20C = height;
+        D_800DD210 = value;
+        *(u8 *volatile *)&D_800DD214 = *(u8 *volatile *)&D_800DD214;
+    }
+    return output;
 }
 Gfx *func_15142FBC(Gfx *arg0, u32 arg1, u32 arg2, u8 *arg3) {
     Gfx *cmd;

@@ -21,6 +21,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Texture-cache submission match:
+[Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md)
+recovers `func_15142E24`:102 direct retail words/frame0x40 under unchanged
+O2/g3, no guards. Typed source/attachment ABI, signed packed shifts, live flags,
+cache-hit gates and observable retail attachment same-value store.
+32 controls; ten pre-install tests pass in39.947s:2304 paired guest,88 homes,
+486 original-resolver,6912 native and nine original call/delay pairs, negatives,
+actual padding and copied-owner preservation. US ELF/6059-slot audit passes:
+only target changes; protected sections/720 exact data owners/189088 bytes,
+10809 guards and two warnings unchanged. Exact3344/5464 (61.20%),
+Game2671/4791 (55.75%),2120 different, zero drift; conversion unchanged.
+All52 post-link tests pass in215.511s, no skips/errors/failures; tools/syntax/
+diff checks pass,53 documents/3596 relative links/zero broken links.
+Root README updates aggregate rows only.
+Next50-word `func_1514306C` remains a placeholder; original instructions
+qualified, not recovered C. Oriented142/frameB8/27 private differences remain;
+ten extra matrix-storage controls find no improvement. No sibling/Release/save/
+runtime, host adoption, whole-caller/submit-helper/gameplay acceptance or push.
+
 Oriented matrix original-frame recovery, not installed:
 [Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md)
 recovers `func_15142600`'s original142 words/frame0xB8 from in-place direction

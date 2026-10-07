@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-06 ([Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md)):
+`func_15142E24`:102 direct words/frame0x40, no guards/profile changes.
+Typed source/attachment ABI, cache gates, signed fields, flags and observable
+post-submit self-write.32 controls; ten pre-install tests pass in39.947s,
+2304 paired guest/88 homes/486 original-resolver/6912 native/nine call-delay
+pairs, negatives, actual padder and copied owner. US ELF/audit:only target
+among6059 slots; protected sections/720 owners/10809 guards/two warnings unchanged.
+Exact3344/5464, Game2671/4791,2120 different, zero drift; conversion unchanged.
+All52 post-link tests pass in215.511s, no skips/errors/failures;53 documents/
+3596 relative links/zero broken, tools/syntax/diff checks pass.
+Next50-word resolver remains placeholder;
+oriented27 private differences unchanged by ten new matrix-storage controls.
+No sibling/Release/save/runtime, host adoption, whole-caller/submit-helper/
+gameplay acceptance or push. Goal stays active.
+
 2026-10-06 ([Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md)):
 `func_15142600`:in-place direction normalization recovers142 words/frame0xB8,
 only27 private offsets differ; ten direction references at retail-4, seventeen
