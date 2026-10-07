@@ -21,6 +21,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Sphere-wrapper direct match:
+[Note 1083](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md).
+`func_151451F0`: all 53 words emit directly from C, original `0x28` frame,
+nine-position ABI/eight forwarded arguments and live threshold/output homes.
+The original 126-word callee and 13-word dot helper remain byte-exact assembly/C;
+no new guards or profile/header/padder changes. Connected geometry, native
+staging, both caller fragments, natural home writes and effective negatives pass.
+Only target changes across 6,059 slots; all addresses/extents/protected sections,
+720 data owners and 10,953 guards unchanged. Exact 3,354/5,465, Game 2,681/4,792,
+2,111 different, zero drift; conversion unchanged. README aggregate rows only.
+All 13 pre-install tests pass in 40.702 seconds; all 49 focused post-link tests
+pass in 193.212 seconds, zero skips/errors/failures. Final linked audit, tools,
+syntax, whitespace and 65-document/3,738-relative-link gate pass.
+Next: fit the uninstalled 128-word/frame `0x68` callee C trial into
+retail's 126 words/frame `0x70`, preserving private layout and live final reads.
+No full-caller/hardware/FCSR/NaN arithmetic/gameplay/host-adoption or sibling/
+frozen Release/save/runtime/push claim. Sampler/oriented work remains open.
+
 Projection-wrapper match:
 [Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md).
 `func_15144CEC`:101 words/frame0x48, original six-position ABI/private fallbacks,

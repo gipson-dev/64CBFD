@@ -1,5 +1,34 @@
 # PC Port Roadmap located in another project folder
 
+## Game Sphere Wrapper Direct Match - 2026-10-07
+
+[Note 1083](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md):
+`func_151451F0`, 53 direct words/frame `0x28`, no guards. Both real dependencies
+remain exact and unchanged; callee is restored assembly, not an active stub.
+Only target changes across 6,059 slots; all addresses/extents/protected sections,
+720 data owners and 10,953 guards intact. Game 2,681/4,792 exact, 2,111 different,
+zero drift; conversion unchanged. README aggregate rows only.
+
+- [x] Recover nine incoming/eight forwarded arguments and original float-bit staging.
+- [x] Qualify live threshold/pointer homes, sign gates and lazy/unordered reads.
+- [x] Connect the complete 126-word callee and 13-word dot helper, including post-write rejection.
+- [x] Execute both original caller setups and actual argument delay stores.
+- [x] Qualify native staging, mapped-memory failures and effective compiled negatives.
+- [x] Preserve copied neighbors/pools/warnings/relocations and actual padder/link behavior.
+- [x] Install the direct wrapper, rebuild and audit all slots/data/historical guards.
+- [x] Finish the 49-test focused post-link suite and final documentation gates.
+- [ ] Fit and qualify the callee C conversion's original frame/private layout before replacing assembly.
+- [ ] Finish sampler exits/circle-byte scheduling and oriented private offsets.
+
+Pre-install: 13 tests pass in 40.702 seconds, no skips/errors/failures. Callee C
+trial remains uninstalled at 128 words/frame `0x68`, 106 differences; 1,404
+bounded finite external-alias cases pass, not private-layout/native acceptance.
+All 49 focused post-link tests pass in 193.212 seconds, zero skips/errors/failures.
+Final post-regression linked audit, project tools, syntax and whitespace pass;
+65 documents/3,738 relative links/zero broken.
+No hardware/FCSR/NaN arithmetic/gameplay/host adoption, sibling/frozen Release/
+save/runtime or push work; broader matching goal stays active.
+
 ## Game Projection Wrapper Match - 2026-10-07
 
 [Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md):
@@ -16,7 +45,8 @@ zero drift; conversion unchanged. README aggregate matching rows only.
 - [x] Preserve copied neighbors/pools/warnings/relocations; reject stale guards.
 - [x] Install narrowly, rebuild and audit all slots/data/historical guards.
 - [x] Finish expanded 206-test regression and final documentation gates.
-- [ ] Recover next53-word nine-argument wrapper `func_151451F0` and its real callee.
+- [x] Recover next 53-word nine-argument wrapper `func_151451F0` against its retained
+  real assembly callee (Note 1083); the callee C conversion remains open.
 - [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
 
 No profile/header/padder/helper change, insertion/omission or branch/frame rewrite.

@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-07 ([Note 1083](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md)):
+`func_151451F0`: 53 direct words/frame `0x28`, nine-position ABI/eight forwarded
+arguments, live threshold/pointer homes, no guards. Real 126-word assembly callee
+and 13-word dot helper retained exact. Connected/native/caller/alias/negative/
+mapped-memory and copied-owner/pool/padder/relocation checks pass. Pre-install:
+13 tests in 40.702 seconds, zero skips/errors/failures; all 49 focused post-link
+tests pass in 193.212 seconds, zero skips/errors/failures. Final linked audit,
+tools, syntax, whitespace and 65-document/3,738-relative-link gate pass.
+Only target across 6,059 slots; all addresses/extents/protected data/
+720 owners/10,953 guards intact. Exact 3,354/5,465, Game 2,681/4,792, 2,111 different,
+zero drift; conversion unchanged. README aggregate rows only. Next callee C trial
+128 words/frame `0x68` versus retail 126/frame `0x70`; finite external aliases
+qualify but fit/private/native remain open. Sampler/oriented work stays open.
+No hardware/FCSR/NaN arithmetic/gameplay/host/sibling/Release/save/runtime/push claim.
+
 2026-10-07 ([Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md)):
 `func_15144CEC`:101 words/frame0x48, six-position ABI/private slots/live reads.
 64 direct words plus37 checked temporary/commutative/four-word-schedule guards.

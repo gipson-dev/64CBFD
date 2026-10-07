@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-07 Game Sphere Wrapper Direct Match
+
+[Note 1083](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md):
+replace `func_151451F0`'s zero-return body with 53 direct words/frame `0x28`,
+no guards. Recover nine-position ABI/eight forwarded arguments and post-call
+threshold/pointer-home reads. Retain the original 126-word callee assembly and
+13-word dot helper; both remain exact. Connected geometry/aliases, native float
+staging, original caller delays, natural home writes and effective negatives
+pass. All 13 pre-install tests pass in 40.702 seconds; all 49 focused post-link
+tests pass in 193.212 seconds, zero skips/errors/failures. Final linked audit,
+tools, syntax and whitespace pass; 65 documents/3,738 links/zero broken.
+Only target across 6,059 slots; protected data/720 owners/
+addresses/extents/all 10,953 guards unchanged. Exact 3,354/5,465, Game 2,681/4,792,
+2,111 different, zero drift; conversion unchanged. README aggregate rows only.
+Next: fit the uninstalled 128-word/frame `0x68` callee trial to retail 126/frame
+`0x70`; private layout/native acceptance remains open. No full-caller/hardware/
+FCSR/NaN arithmetic/gameplay/host adoption or sibling/Release/save/runtime/push claim.
+
 ## 2026-10-07 Game Projection Wrapper Match
 
 [Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md):

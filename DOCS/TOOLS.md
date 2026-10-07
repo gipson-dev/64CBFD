@@ -883,6 +883,25 @@ See [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-2
 
 ## Projection-wrapper compiler audit
 
+### Sphere wrapper and retained dependency
+
+[Sphere driver](../tools/experiments/game_sphere_wrapper_candidates.py)
+reproduces 24 source/profile controls. Selected wrapper emits 53 direct words
+with its original `0x28` frame and sole call relocation; no new guards.
+[Fourteen tests](../tools/tests/test_game_sphere_wrapper_match.py) qualify the
+nine-position ABI, real 126-word callee/13-word dot helper, connected finite
+geometry and output aliases, live parameter homes, seeded unordered/lazy
+branches, native float staging, both original caller setups and delay stores,
+effective compiled negatives, mapped-memory failures, copied owners/pools/
+warnings/relocations and actual padder/alternate link targets. The callee C
+trial remains uninstalled at 128 words/frame `0x68`; its bounded finite external
+alias qualification does not establish the original private layout or byte fit.
+Run `python3 -m tools.experiments.game_sphere_wrapper_candidates` to reproduce
+the screen; ROM, IDO/MIPS tools and a 32-bit native compiler are required.
+Ignored receipts live under `conker/build/game-sphere-wrapper/` and
+`conker/build/game-sphere-wrapper-test/`. See
+[Note 1083](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md).
+
 ### Fitting body and byte-match guards
 
 [Schedule driver](../tools/experiments/game_projection_schedule_candidates.py)

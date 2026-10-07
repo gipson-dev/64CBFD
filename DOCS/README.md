@@ -51,6 +51,13 @@ confirmed.
 
 ## Planning and history
 
+- [Latest sphere-wrapper direct match](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md):
+  `func_151451F0`, 53 direct words/frame `0x28`, nine-position ABI, live homes,
+  no guards. Retained original callee/dot helper exact; only target across 6,059
+  audited slots. All 49 focused post-link tests pass in 193.212 seconds,
+  zero skips/errors/failures; final linked audit and documentation gates pass.
+  Next: fit and qualify the uninstalled callee C conversion.
+
 - [Latest projection-wrapper match](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md):
   `func_15144CEC`,101 words/frame0x48,64 direct words plus37 checked register/
   commutative/four-word-schedule guards. Guest/native/real-helper/caller/alias/

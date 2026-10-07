@@ -123,8 +123,10 @@ void func_151442FC(s16 *out0, s16 *out1, s16 *out2, s16 *out3,
 s32 func_15144CEC(struct17 *arg0, f32 *arg1, f32 *arg2,
     f32 *arg3, f32 *arg4, volatile u8 arg5);
 s32 func_15144E80();
-s32 func_151451F0();
-s32 func_151452C4();
+s32 func_151451F0(struct17 *arg0, struct17 *arg1, struct17 *arg2,
+    f32 arg3, f32 arg4, struct17 *arg5, struct17 *arg6, f32 *arg7, f32 *arg8);
+s32 func_151452C4(struct17 *arg0, struct17 *arg1, struct17 *arg2,
+    f32 arg3, struct17 *arg4, struct17 *arg5, f32 *arg6, f32 *arg7);
 s32 func_15145740();
 s32 func_15145AD8();
 s32 func_15145EA4();
@@ -1495,11 +1497,26 @@ s32 func_15145128(struct17 *arg0, struct17 *arg1, f32 *arg2, f32 *arg3) {
     arg1->unk8 = *arg3 * arg0->unk8;
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151451F0.s. */
-s32 func_151451F0() {
-    return 0;
+/* Note 1083: eight-argument forwarding with live sign/threshold acceptance. */
+s32 func_151451F0(struct17 *arg0, struct17 *arg1, struct17 *arg2,
+    f32 arg3, f32 arg4, struct17 *arg5, struct17 *arg6, f32 *arg7, f32 *arg8) {
+    if (func_151452C4(arg0, arg1, arg2, arg3, arg5, arg6, arg7, arg8)) {
+        if (*arg7 < 0.0f && *arg8 < 0.0f) {
+            return 0;
+        }
+        if (*arg7 >= 0.0f && *arg8 < 0.0f) {
+            return 1;
+        }
+        if (*arg7 < arg4) {
+            return 1;
+        } else {
+            return 0;
+        }
+    } else {
+        return 0;
+    }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151452C4.s. */
+/* Original sphere-intersection assembly retained; C trial is not installed. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_151452C4.s")
 s32 func_151454BC(u8 arg0, f32 arg1, struct17 *arg2) {
     f32 tmp1;
