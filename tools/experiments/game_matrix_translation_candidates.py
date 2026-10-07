@@ -115,13 +115,13 @@ def temporary_candidates():
         yield 'temporary%d-register%d-repeated%d-left%d' % (kind, register, repeated, left), body
 
 
-def compile_candidate(root, out, name, body=SELECTED, profile='o2g3', declarations=DECLARATIONS, isa='mips2'):
+def compile_candidate(root, out, name, body=SELECTED, profile='o2g3', declarations=DECLARATIONS, isa='mips2', extra_flags=()):
     source, obj, elf = (out / (name + suffix) for suffix in ('.c', '.o', '.elf'))
     source.write_text('#include <ultra64.h>\n' + declarations + body + '\n')
     result = subprocess.run(['ido/ido5.3_recomp/cc', '-c', '-32', '-G', '0', '-Xfullwarn',
         '-Xcpluscomm', '-signed', '-nostdinc', '-non_shared', '-Wab,-r4300_mul', '-' + isa, '-o32',
         '-I', 'conker/include', '-I', 'conker/include/2.0L', '-I', 'conker/include/2.0L/PR',
-        '-D_LANGUAGE_C', '-D_FINALROM', '-DF3DEX_GBI_2', '-D_MIPS_SZLONG=32', *PROFILES[profile],
+        '-D_LANGUAGE_C', '-D_FINALROM', '-DF3DEX_GBI_2', '-D_MIPS_SZLONG=32', *PROFILES[profile], *extra_flags,
         '-o', str(obj.relative_to(root)), str(source.relative_to(root))], cwd=root, text=True, capture_output=True)
     diagnostics = result.stdout + result.stderr
     if result.returncode or diagnostics:
@@ -139,7 +139,7 @@ def compile_candidate(root, out, name, body=SELECTED, profile='o2g3', declaratio
     words = words[:end]
     retail = struct.unpack_from('>%dI' % WORDS, (root / 'conker/conker.us.bin').read_bytes(), ROM)
     frames = [(-word) & 65535 for word in words if word & 0xFFFF0000 == 0x27BD0000 and word & 0x8000]
-    return dict(name=name, body_words=end, profile=profile, isa=isa, frame=frames[0] if frames else 0,
+    return dict(name=name, body_words=end, profile=profile, isa=isa, extra_flags=list(extra_flags), frame=frames[0] if frames else 0,
         pool_bytes=len(pools.get('.rodata', (0, b''))[1]),
         differences=sum(a != b for a, b in itertools.zip_longest(words, retail, fillvalue=0)),
         diagnostics=diagnostics, relocations=rel), words

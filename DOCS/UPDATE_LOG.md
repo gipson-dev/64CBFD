@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-07 Game Matrix Scheduling And Point-List Lifetime Audit
+
+[Note 1096](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md):
+Retain 26 additional translator typed-view/backend controls, none exact;
+installed C49/frame0/34 differences unchanged. Audit `func_15145CD0`, semantic
+C57/frame `0x88`/46 differences, with 48 loop/lifetime/readback measurements,
+1,344 public-effect guest, 580 connected original-point-helper and 131,076
+native cases, five effective negatives and fail-closed/installed gates.
+Two incoming-home overwrite probes confirm an open retail readback difference;
+ordinary public-effect coverage is not full ABI-home acceptance. No production
+source/profile/header/guard changes or matching increment; README aggregates
+unchanged. All 6,058 symbols/6,042 slots/data/11,006 guards unchanged; total
+3,360 exact, Game 2,687, zero drift. 25 combined tests in 376.363 seconds,
+strengthened gates and final nine-test audit pass; tools/syntax/whitespace and
+78-document / 3,910-relative-link checks pass, zero broken.
+Continue pointer-list register/readback lifetime. Translator/sampler
+still open; no sibling/frozen Release/save/runtime/push.
+
 ## 2026-10-07 Game Matrix Translation Qualified Recovery
 
 [Note 1095](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md):

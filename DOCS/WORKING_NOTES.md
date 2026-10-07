@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-07 ([Note 1096](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md)):
+Matrix scheduling / pointer-list lifetime audit, **no new byte match**.
+26 additional typed-view/backend controls, none exact; translator C49/frame0/
+34 differences unchanged. `func_15145CD0` has C57/frame `0x88`/46 differences;
+48 loop/lifetime/readback measurements remain nonmatching. 1,344 ordinary
+guest, 580 connected original-point-helper, 131,076 native cases and five
+effective negatives qualify, but two argument-home probes expose the remaining
+retail readback difference. Production sources/profiles/headers/guards and
+README aggregates unchanged. All 6,058 symbols/6,042 slots/data/11,006 guards
+unchanged; 25 combined tests in 376.363 seconds, strengthened gates and final
+nine-test audit pass. Tools/syntax/whitespace and 78-document /
+3,910-relative-link checks pass, zero broken. Continue pointer-list readback
+lifetime; translator/sampler remain open. No sibling/Release/runtime/push.
+
 2026-10-07 ([Note 1095](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md)):
 `func_15142314` recovers separate high/low float conversion, safe scaling,
 unsigned32 address wrap and sequential outputs. Complete C49/frame0/no pool,

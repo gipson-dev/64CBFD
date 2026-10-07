@@ -1,5 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix Scheduling And Point-List Lifetime Audit - 2026-10-07
+
+[Note 1096](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md):
+No new byte match. Translator stays C49/frame0/34 differences;
+`func_15145CD0` stays semantic C57/frame `0x88`/46 differences.
+
+- [x] Measure 16 real matrix views and ten locally evidenced backend controls, all nonmatching; qualify 624 bounded candidate executions.
+- [x] Retain 48 pointer-list loop/record/lifetime/readback measurements, all nonmatching; qualify 864 bounded candidate executions.
+- [x] Audit ordinary pointer-list effects on 1,344 guest, 580 connected original-point-helper and 131,076 native cases, plus five effective negatives.
+- [x] Pin the open incoming-home mismatch at both stack phases; do not label ordinary public-effect qualification full ABI-home acceptance.
+- [x] Preserve production C/profiles/headers/guards and README aggregates; no frozen sibling Release or runtime action.
+- [x] Audit all 6,058 symbols/6,042 slots/16 overflows/protected sections/720 data owners/11,006 guards; matching totals unchanged.
+- [x] Pass 25 combined tests in 376.363 seconds, strengthened native/unmapped gates and final nine-test audit; tools/syntax/whitespace and 78-document/3,910-relative-link checks pass, zero broken.
+- [ ] Recover the original descriptor-to-source cursor saved-register lifetime and incoming-list readbacks in `func_15145CD0` without dummy work or private-offset patches.
+- [ ] Match translator constant/ordinary-branch/return-delay scheduling; retain 178 measured controls, none exact.
+- [ ] Recover sampler `func_151432BC`'s per-path RA loads and circle RNG-byte schedule before installation.
+
+This is a measured guest matching audit, not a new match or PC-port acceptance.
+
 ## Game Matrix Translation Qualified Recovery - 2026-10-07
 
 [Note 1095](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md):

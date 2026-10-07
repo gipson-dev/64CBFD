@@ -4,6 +4,36 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Matrix scheduling and point-list lifetime audit
+
+[Matrix schedule driver](../tools/experiments/game_matrix_translation_schedule_candidates.py)
+adds 16 typed views and ten locally evidenced backend controls, 26 nonmatching
+measurements / 624 bounded public-effect executions. Production translator
+stays C49/frame0/34 differences. [Point-list driver](../tools/experiments/game_point_list_transform_candidates.py)
+retains 48 loop/record/lifetime/readback measurements / 864 bounded executions,
+none exact. Production `func_15145CD0` stays C57/frame `0x88`/46 differences.
+
+[Audit tests](../tools/tests/test_game_point_list_transform_audit.py) bind 1,344
+public-effect guest, 580 connected original-point-helper and 131,076 native
+cases, fail-closed storage, five public-storage-changing negatives, installed
+slots/guards and two deliberately mismatching incoming-home probes. No general
+FCSR/hardware or full ABI-home acceptance claim. See
+[Note 1096](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md).
+Combined regression passes 25 tests in 376.363 seconds; strengthened storage/
+unmapped gates and final nine-test audit pass. Tools/syntax/whitespace and
+78-document / 3,910-relative-link checks pass, zero broken links.
+
+```sh
+python3 -m tools.experiments.game_matrix_translation_schedule_candidates
+python3 -m tools.experiments.game_point_list_transform_candidates
+python3 -m unittest tools.tests.test_game_point_list_transform_audit -v
+```
+
+Receipts stay under `conker/build/game-matrix-translation-schedule/`,
+`conker/build/game-point-list-transform/` and
+`conker/build/game-point-list-transform-test/`. No production profile, guard,
+header, source, README aggregate or sibling/runtime changes.
+
 ## Matrix translation recovery controls
 
 [Candidate driver](../tools/experiments/game_matrix_translation_candidates.py)

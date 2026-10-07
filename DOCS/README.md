@@ -51,6 +51,15 @@ confirmed.
 
 ## Planning and history
 
+- [Latest matrix-scheduling / point-list lifetime audit](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md):
+  No new byte match or production change. 26 new translator controls and 48
+  pointer-list loop/lifetime/readback measurements remain nonmatching. Guest/
+  connected original-helper/native/negative gates qualify ordinary effects;
+  incoming-home probes retain the open `func_15145CD0` lifetime boundary.
+  Translator scheduling and sampler remain open; README aggregates unchanged.
+  All linked slots/data/guards unchanged; 25 combined tests, strengthened gates
+  and final nine-test audit pass; 78 documents / 3,910 relative links resolve.
+
 - [Latest qualified matrix translation recovery](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md):
   Correct high/low float stages, safe scaling/address wrap and sequential
   aliases; complete C49/frame0/no pool, no guards. **Not byte-exact**, 34

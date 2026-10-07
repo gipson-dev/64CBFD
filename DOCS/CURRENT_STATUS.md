@@ -21,6 +21,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest matrix scheduling / point-list lifetime audit, **no new byte match**:
+[Note 1096](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md).
+26 additional typed-view/backend controls do not resolve `func_15142314`;
+its installed C49/frame0/34 differences is unchanged. Begin `func_15145CD0`:
+semantic C57/frame `0x88`/46 differences; 48 nonmatching loop/lifetime/readback
+measurements retained. 1,344 public-effect guest, 580 original-point-helper
+connected and 131,076 native cases plus five effective negatives qualify the
+ordinary routes; two incoming-argument-home probes confirm the remaining
+retail readback difference. All 6,058 symbols/6,042 slots/16 overflows/data/
+11,006 guards and production sources/profiles/headers/README aggregates remain
+unchanged; total 3,360 exact, Game 2,687, 2,106 different, zero drift.
+25 combined tests pass in 376.363 seconds; strengthened two-test gate and
+final nine-test audit pass, plus tools/syntax/whitespace and 78-document /
+3,910-relative-link checks, zero broken. Continue pointer-list readback lifetime;
+translator scheduling and sampler remain open. No sibling/Release/runtime/push.
+
 Latest qualified matrix translation recovery, **not byte-exact**:
 [Note 1095](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md).
 `func_15142314` now restores separate float conversions before addition,
