@@ -21,7 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest scaled-sphere capture-lifetime recovery, not installed:
+Latest scaled-sphere direct caller match:
+[Note 1090](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md).
+`func_15145AD8` now emits all 110 words directly from semantic C under the
+unchanged O2/g3 profile. Nested scale/reciprocal lifetimes recover the original
+frame/private offsets, lazy branches and exact helper-call delay stores,
+including both scale reads before the aliased inverse spill. No target guards.
+Fifty-one new controls, 191 measurements total, three independently exact forms.
+Copied owner retains 88 neighbors/pools/relocations/two warnings; actual padder
+emits the complete direct slot, and each helper relocation independently rebases.
+US ELF rebuilt: only this slot changes; all 6,058 others, every address/extent,
+720 data owners and 11,006 guards remain unchanged. Exact total 3,356/5,466
+(61.40%), Game 2,683/4,793 (55.98%), 2,110 different, zero drift; conversion,
+Init/Debugger unchanged. README aggregate rows updated, no recovery narrative.
+All 112 tests pass in 688.694 seconds, including 37,808 fitting-caller guest
+fixtures/full memory/events/register comparisons and 126,720 native finite calls.
+Tool/syntax/whitespace and 72-document/3,826-link gates pass; no broken links.
+Next after banking this recovery: still-open sampler `func_151432BC`.
+No ROM-checksum/hardware/gameplay/host/sibling/Release/save/runtime/push claim.
+
+Historical capture-lifetime recovery, superseded by Note 1090:
 [Note 1089](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md).
 Broader actor-in-caller-frame evidence finds that the old `func_15145AD8`
 candidate spills inverse before reading aliased actor `0xDC`, changing scale

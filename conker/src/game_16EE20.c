@@ -128,7 +128,9 @@ s32 func_151451F0(struct17 *arg0, struct17 *arg1, struct17 *arg2,
 s32 func_151452C4(struct17 *arg0, struct17 *arg1, struct17 *arg2,
     f32 arg3, struct17 *arg4, struct17 *arg5, f32 *arg6, f32 *arg7);
 s32 func_15145740();
-s32 func_15145AD8();
+void func_1515C1A0(struct127 *, struct17 *, f32 *, f32 *);
+s32 func_15145AD8(struct17 *arg0, struct17 *arg1, struct127 *arg2,
+    struct17 *arg3, struct17 *arg4, f32 *arg5, f32 *arg6, struct17 *arg7);
 s32 func_15145EA4();
 s32 func_15146078();
 s32 func_151462C8();
@@ -1697,9 +1699,65 @@ void func_15145A50(struct127 *arg0) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15145AD8.s. */
-s32 func_15145AD8() {
-    return 0;
+/* Note 1090: scoped scale/reciprocal lifetimes preserve the direct retail schedule. */
+s32 func_15145AD8(struct17 *arg0, struct17 *arg1, struct127 *arg2,
+    struct17 *arg3, struct17 *arg4, f32 *arg5, f32 *arg6, struct17 *arg7) {
+    struct17 center;
+    f32 radius;
+    f32 height;
+    struct17 origin;
+    struct17 direction;
+    struct17 scaledCenter;
+    f32 length;
+    f32 first;
+    f32 second;
+
+    if (arg5 != NULL) {
+        arg5 = &radius;
+    }
+    if (arg6 != NULL) {
+        arg6 = &height;
+    }
+    if (arg7 != NULL) {
+        arg7 = &center;
+    }
+    func_1515C1A0(arg2, arg7, arg5, arg6);
+    if (*arg6 == 0.0f) {
+        return 0;
+    }
+    if (*arg5 == 0.0f) {
+        return 0;
+    }
+    {
+        f32 scale;
+        f32 inverse;
+
+        scale = arg2->unkDC;
+        inverse = arg2->unkE0;
+        origin.unk0 = arg0->unk0;
+        origin.unk4 = arg0->unk4 * scale;
+        origin.unk8 = arg0->unk8;
+        direction.unk0 = arg1->unk0;
+        direction.unk4 = arg1->unk4 * scale;
+        direction.unk8 = arg1->unk8;
+        {
+            f32 reciprocal;
+
+            if (!func_15145128(&direction, &direction, &length, &reciprocal)) {
+                return 0;
+            }
+            scaledCenter.unk0 = arg7->unk0;
+            scaledCenter.unk4 = arg7->unk4 * scale;
+            scaledCenter.unk8 = arg7->unk8;
+            if (!func_151451F0(&origin, &direction, &scaledCenter, *arg5, length,
+                    arg3, arg4, &first, &second)) {
+                return 0;
+            }
+            arg3->unk4 *= inverse;
+            arg4->unk4 *= inverse;
+            return 1;
+        }
+    }
 }
 u8 func_15145C90(s32 arg0) {
     if (arg0 < 0) {

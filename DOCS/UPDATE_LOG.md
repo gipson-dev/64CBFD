@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-07 Game Scaled Sphere Query Direct Match
+
+[Note 1090](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md):
+install the complete `func_15145AD8` as direct C110/frame `0x88`, all words exact
+under the unchanged O2/g3 profile, no target guards. Nested scale/reciprocal
+lifetimes recover the retail address/comparison schedule without losing the
+aliased scale capture. Fifty-one new controls, three direct fits; retain three
+effective inverse-first negatives. Copied owner retains 88 neighbors/pools/
+relocations/two warnings; actual padder emits the full direct slot, all three
+helper relocations independently rebase. Rebuilt US ELF changes only this slot;
+all other slots/addresses/extents/protected sections/720 data owners/11,006 guards
+remain unchanged. Exact total 3,356, Game 2,683; conversion unchanged. README
+aggregate rows only. All 112 tests pass in 688.694 seconds; final tools/syntax/
+whitespace and 72-document/3,826-link gates pass. Resume sampler `func_151432BC`.
+No full-ROM/hardware/gameplay/host or sibling/Release/save/runtime/push claim.
+
 ## 2026-10-07 Game Scaled Sphere Query Capture Lifetime
 
 [Note 1089](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md):

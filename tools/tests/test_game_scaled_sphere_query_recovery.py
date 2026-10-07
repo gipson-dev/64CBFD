@@ -246,8 +246,13 @@ static int independent(u8 *bytes,int p,int q){
         self.assertEqual(len(records), 30)
         (self.out / 'schedule-records.json').write_text(json.dumps(records, indent=2) + '\n')
 
-    def check_copied_owner(self, candidate=screen.SELECTED):
+    def check_copied_owner(self, candidate=screen.SELECTED, return_owner=False):
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
+        from tools.experiments import game_scaled_sphere_query_address_view_candidates as matching
+        if matching.SELECTED in source:
+            self.assertEqual(source.count(matching.SELECTED), 1)
+            source = source.replace(matching.SELECTED, 's32 func_15145AD8() {\n    return 0;\n}').replace(
+                matching.OWNER_DECLARATIONS + matching.PROTOTYPE, 's32 func_15145AD8();')
         selected = source.replace('s32 func_15145AD8();', screen.DECLARATIONS + screen.PROTOTYPE).replace(
             's32 func_15145AD8() {\n    return 0;\n}', candidate)
         self.assertEqual(selected.count(candidate), 1)
@@ -286,6 +291,8 @@ static int independent(u8 *bytes,int p,int q){
             raw[isolated['value']:isolated['value'] + isolated['size']])
         self.assertEqual({o - meta['value']: r for o, r in rel.items() if meta['value'] <= o < meta['value'] + meta['size']},
             standalone_rel)
+        if return_owner:
+            return objects[1]
         assembly = emit_padded_assembly(objects[1], self.root / 'conker/retail_layout.us.txt', 'game_16EE20',
             rodata_symbol='jtbl_800A5218_game', word_patches_path=self.root / 'conker/retail_word_patches.us.csv')
         overflow = '__retail_overflow_' + screen.FUNCTION
@@ -422,10 +429,19 @@ if(cases!=126720)return 4;
 ''')
 
     def test_uninstalled_source_and_original_helper_slots_are_bound(self):
+        """Historical candidates stay uninstalled after the direct recovery lands."""
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
-        self.assertIn('s32 func_15145AD8() {\n    return 0;\n}', source)
+        from tools.experiments import game_scaled_sphere_query_address_view_candidates as matching
+        installed = matching.SELECTED in source
+        if installed:
+            self.assertEqual(source.count(matching.SELECTED), 1)
+        else:
+            self.assertIn('s32 func_15145AD8() {\n    return 0;\n}', source)
         self.assertNotIn(screen.SELECTED, source)
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'), 'mips-linux-gnu-objdump')
+        if installed:
+            self.assertEqual(addresses[screen.FUNCTION], screen.ENTRY)
+            self.assertEqual(functions[screen.FUNCTION], self.retail)
         for _, (entry, words) in self.helpers.items():
             name = next(name for name, address in addresses.items() if address == entry)
             self.assertEqual(functions[name], words)

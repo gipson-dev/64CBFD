@@ -434,8 +434,12 @@ if(cases!=26244)return 3;
 
     def copied_owner(self):
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
-        baseline = source.replace(screen.SELECTED, STUB).replace(screen.PROTOTYPE, 's32 func_151451F0();')
-        selected = baseline.replace(STUB, screen.SELECTED).replace('s32 func_151451F0();', screen.PROTOTYPE)
+        # The recovered caller needs the float ABI in both copied-owner bodies.
+        typed_stub = screen.PROTOTYPE.removesuffix(';') + ' {\n    return 0;\n}'
+        baseline = source.replace(screen.SELECTED, typed_stub)
+        selected = baseline.replace(typed_stub, screen.SELECTED)
+        self.assertEqual(baseline.count(typed_stub), 1)
+        self.assertEqual(selected.count(screen.SELECTED), 1)
         objects, warnings = [], []
         for name, body in (('baseline', baseline), ('selected', selected)):
             obj, warning = compile_owner(self.root, self.output, body, 'owner-' + name)

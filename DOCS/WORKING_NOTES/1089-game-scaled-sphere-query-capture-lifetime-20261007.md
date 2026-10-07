@@ -40,8 +40,9 @@ The [preferred experimental body](../../tools/experiments/game_scaled_sphere_que
 is `SCALE_FIRST`: capture `arg2->unkDC` before `arg2->unkE0` in C. Its emitted
 instructions retain both values before the inverse spill. Tests require exactly
 one ordinary mapped read of each field before that write, preserving both
-captured values. Retail's read-pair order is reversed; complete instruction
-timing equivalence is not claimed. No MMIO, concurrent mutation or native
+captured values. Both emitted bodies read inverse then scale, despite the
+reversed C assignment order; complete instruction timing equivalence is not
+claimed for this 111-word form. No MMIO, concurrent mutation or native
 actor-in-private-stack semantics are inferred from these guest probes.
 
 The old candidate remains reproducible as an effective compiled negative.
@@ -133,8 +134,9 @@ code-generation evidence, not blanket semantic acceptance of every body.
 
 The preferred raw call relocations remain `0x58/0x100/0x16C`, versus retail
 `0x58/0xFC/0x168`; its first 34 words and structured `.mdebug` private offsets
-remain direct. Straight capture-first now duplicates the first scale load,
-not the inverse load. No closed fitting permutation has been established.
+remain direct. Straight capture-first still duplicates the inverse load;
+the important correction is reading scale before the inverse spill.
+No closed fitting permutation has been established at this checkpoint.
 
 ## Retained Baseline And Resume
 

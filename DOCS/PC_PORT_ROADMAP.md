@@ -1,5 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Game Scaled Sphere Query Direct Match - 2026-10-07
+
+[Note 1090](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md):
+`func_15145AD8` is installed as direct C110/frame `0x88`, zero differences and
+no target guards under the existing O2/g3 profile. Three nested-scope forms fit;
+select the smallest declaration-lifetime change.
+
+- [x] Recover the complete 110-word direct fit, retaining every frame/private/home/lazy/capture contract.
+- [x] Bank 51 new controls, 191 total, including three direct fits and three effective inverse-first negatives.
+- [x] Bind the copied owner, 88 neighbors/pools/relocations and two unchanged warnings.
+- [x] Assemble/link the real direct padded slot and independently rebase all three helpers.
+- [x] Install the body/local ABI and rebuild the US ELF without new guards/profile/header/padder changes.
+- [x] Audit all 6,059 slots: only this target changes; preserve addresses/extents/protected sections/data/guards.
+- [x] Update README aggregate matching rows: total 3,356, Game 2,683, 2,110 different, zero drift.
+- [x] Pass all 112 tests / 688.694 seconds, full fitting guest effects/native checks and final tool/documentation gates.
+
+Next Game recovery after banking this match: still-open sampler `func_151432BC`.
+No full-ROM/hardware/gameplay/host or sibling/Release/save/runtime/push claim.
+
 ## Game Scaled Sphere Query Capture Lifetime - 2026-10-07
 
 [Note 1089](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md):
@@ -14,8 +33,8 @@ not installed; production/counts/root README aggregates unchanged.
 - [x] Retain 39 source/access/storage/scope measurements, 140 total, none exact.
 - [x] Verify improved copied owner/neighbors/pools/relocations/two warnings and actual overflow.
 - [x] Pass 93 regression tests and three final source-binding/read/lazy-gate checks; retain all slots/data/guards and pass tool/documentation gates.
-- [ ] Recover the fitting 110-word O2/g3 source without reverting the corrected capture lifetime.
-- [ ] Finish full caller/helper-frame/read-input timing and fitting-body owner/install/build gates.
+- [x] Recover the fitting 110-word O2/g3 source without reverting the corrected capture lifetime (Note 1090).
+- [x] Finish full caller/helper-frame/read-input schedule and fitting-body owner/install/build gates (Note 1090: identical words and complete bounded guest effects).
 
 Scoped source changes the second branch decision but retains a comparison NOP.
 The older candidate stays a negative outside its prior qualified domain.
@@ -34,9 +53,9 @@ not installed. Counts and root README aggregate rows stay unchanged.
 - [x] Bind copied-owner raw target, 88 neighbors, pools, relocations and two unchanged warnings.
 - [x] Check the real padder: current body emits overflow/trampoline, not an in-slot match.
 - [x] Pass all 76 focused tests, retained-slot/data/history/count audit and final documentation/tool gates.
-- [ ] Recover a fitting 110-word O2/g3 source with the original frame/private/home/lazy-read contract.
-- [ ] Qualify complete caller/helper-frame and instruction-read/input timing for the fitting body.
-- [ ] Finish fitting-body owner/padder/install/build/linked regression gates before claiming a match.
+- [x] Recover a fitting 110-word O2/g3 source with the original frame/private/home/lazy-read contract (Note 1090).
+- [x] Qualify complete caller/helper-frame and instruction-read/input schedule for the fitting body (Note 1090: identical words and complete bounded guest effects).
+- [x] Finish fitting-body owner/padder/install/build/linked regression gates before claiming a match (Note 1090).
 
 Call-boundary equality does not establish full private-frame or instruction
 timing equivalence. No hardware/gameplay/host or sibling/Release/save/runtime/push work.
@@ -56,10 +75,10 @@ final retained audit, tools/syntax/whitespace and 70-document/3,800-link gate pa
 - [x] Retain 71 compiler controls and structured original-frame/local-allocation receipts.
 - [x] Verify retained slots/data/guard history/counts; main README aggregates unchanged.
 - [x] Finish focused regression and final documentation/tool gates.
-- [ ] Recover fitting 110-word O2/g3 source without private/frame/branch patches or padding.
+- [x] Recover fitting 110-word O2/g3 source without private/frame/branch patches or padding (Note 1090).
 - [x] Broaden signed vertical-offset and private input/call-boundary evidence (Note 1088).
-- [ ] Qualify complete private/helper frames and instruction-read/input timing, then classify closed differences.
-- [ ] Finish copied-owner/padder/install/build and whole linked regression gates before claiming a match.
+- [x] Qualify complete private/helper frames and instruction-read/input schedule (Note 1090: all words direct, no differences to guard).
+- [x] Finish copied-owner/padder/install/build and whole linked regression gates before claiming a match (Note 1090).
 
 Ten new tests pass in 45.498 seconds. Caller 109/110 words execute; one load is
 structurally unreachable. Bounded external footprints and observable private

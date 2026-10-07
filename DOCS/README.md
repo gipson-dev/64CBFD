@@ -51,6 +51,15 @@ confirmed.
 
 ## Planning and history
 
+- [Latest scaled-sphere direct caller match](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md):
+  Complete C110/frame `0x88`, all words direct under O2/g3, no target guards.
+  Nested scale/reciprocal lifetimes recover the retail schedule and aliased capture.
+  Three exact forms among 51 new controls; copied owner/pools/neighbors and real
+  padded slot bind. US ELF rebuilt, only this slot changes. Exact total 3,356,
+  Game 2,683; conversion/data/guards unchanged. All 112 tests pass in 688.694 seconds;
+  final tool/syntax/whitespace and 72-document/3,826-link gates pass.
+  Next after banking: still-open sampler `func_151432BC`.
+
 - [Latest scaled-sphere capture-lifetime recovery](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md):
   New private-actor probes expose an old inverse spill overwriting aliased scale.
   Capture-first C corrects the observed outputs; 37,808 guest fixtures and

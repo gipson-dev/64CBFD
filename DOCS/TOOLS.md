@@ -6,6 +6,29 @@ says otherwise.
 
 ## Scaled sphere caller recovery controls
 
+[Direct-match driver](../tools/experiments/game_scaled_sphere_query_address_view_candidates.py)
+retains 51 address/operand/capture/lifetime controls, three direct C110 matches
+and three effective inverse-first negatives. `SELECTED` is the smallest nested
+scale/reciprocal scope change; it matches every retail word and original private
+offset under O2/g3, with no target guards. The
+[fitting caller tests](../tools/tests/test_game_scaled_sphere_query_match.py)
+add full guest memory/events/register comparisons, direct copied-owner/padder
+and all three alternate helper relocations, source/native binding and linked
+production-slot/history gates. See
+[Note 1090](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md).
+The final combined 112-test regression passes in 688.694 seconds; tool/syntax/
+whitespace, whole-slot/data/history/count and documentation gates pass.
+
+```sh
+python3 -m tools.experiments.game_scaled_sphere_query_address_view_candidates
+python3 -m unittest tools.tests.test_game_scaled_sphere_query_match -v
+```
+
+Ignored receipts: `conker/build/game-scaled-sphere-query-address-view/` and
+`conker/build/game-scaled-sphere-query-match-test/`.
+
+Historical uninstalled capture-lifetime controls:
+
 [Source-layout/capture driver](../tools/experiments/game_scaled_sphere_query_source_layout_candidates.py)
 adds 39 access/line/storage/scope/capture measurements, 140 measured controls
 total, none exact. `SCALE_FIRST` is the preferred uninstalled body: it corrects

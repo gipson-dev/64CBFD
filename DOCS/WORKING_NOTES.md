@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-07 ([Note 1090](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md)):
+`func_15145AD8` is now installed as direct C110/frame `0x88`, all words exact
+under the existing O2/g3 profile, no target guards. Nested scale/reciprocal
+lifetimes recover the full retail schedule, including the aliased capture.
+51 new controls, three direct fits, three effective inverse-first negatives.
+Copied owner/neighbors/pools/warnings and actual padded slot/three helper
+relocations bind. US ELF rebuilt: only this slot changes; addresses/extents/
+protected sections/data/11,006 guards unchanged. Exact total 3,356, Game 2,683,
+2,110 different, zero drift. All 112 tests pass in 688.694 seconds; final tools/
+syntax/whitespace and 72-document/3,826-link gates pass. Next after banking this
+match is still-open sampler `func_151432BC`. README aggregates only.
+
 2026-10-07 ([Note 1089](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md)):
 `func_15145AD8` private-actor probes expose old inverse-first capture: aliased
 actor `0xDC` reads 0.5 instead of retail 2.0 and changes both output Y words.
