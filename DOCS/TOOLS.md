@@ -883,6 +883,24 @@ See [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-2
 
 ## Projection-wrapper compiler audit
 
+### Fitting body and byte-match guards
+
+[Schedule driver](../tools/experiments/game_projection_schedule_candidates.py)
+retains32 order/add/product/profile controls and derives37 checked guards.
+Selected C101 words/frame0x48,64 direct words; guards normalize temporary roles,
+commutative operands and one closed four-word independent schedule. All nine
+relocations remain at their original offsets/owners. No insertion, omission,
+branch/frame, header/profile/helper or padder-algorithm changes.
+[Sixteen match tests](../tools/tests/test_game_projection_schedule_match.py)
+reuse lifetime qualification, compare raw/retail/guarded behavior and read
+dependencies, close instruction inputs, exercise actual W/index-home overlap,
+varied finite matrices and the original11-word caller, and pin copied-owner/
+pool/relocation/padder/carry/stale/production boundaries. Requires ROM, IDO/MIPS
+and32-bit native compiler. `python3 -m tools.experiments.game_projection_schedule_candidates`
+reproduces the screen; ignored receipts under `conker/build/game-projection-schedule/`
+and `conker/build/game-projection-schedule-test/`. See
+[Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md).
+
 ### Qualified lifetime recovery
 
 [Lifetime driver](../tools/experiments/game_projection_lifetime_candidates.py):
@@ -911,7 +929,7 @@ retail ROM, IDO and MIPS tools; ignored receipts under
 `conker/build/game-projection-wrapper/`.
 [Three tests](../tools/tests/test_game_projection_wrapper_audit.py) reproduce
 all measurements and bind the retained 58-word synthetic-return helper chain
-and production placeholder. These are compiler/identity checks, not connected
+and the now-qualified production source/slot/guards. These are compiler/identity checks, not connected
 execution or native/alias qualification. See
 [Note 1036](WORKING_NOTES/1036-game-projection-wrapper-abi-and-frame-audit-20261006.md).
 

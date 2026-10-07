@@ -89,6 +89,11 @@ typedef struct { u8 count; u8 pad1[11]; } GameCursorLimit;
 extern GameCursorLimit D_80090B64[];
 extern s32 D_800BE9E4;
 
+extern s32 D_800D9D10[];
+extern s32 D_800BE628;
+extern f32 D_800A56B0, D_800D9B20;
+void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *outZ, f32 *outW);
+
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
@@ -115,7 +120,8 @@ void func_151441A4(s16 *out0, s16 *out1, s16 *out2, s16 *out3,
 void func_151442FC(s16 *out0, s16 *out1, s16 *out2, s16 *out3,
     u8 input0, u8 input1, u8 input2, u8 input3,
     u8 direct0, u8 direct1, u8 direct2, u8 direct3, u8 scale, u8 mode);
-s32 func_15144CEC();
+s32 func_15144CEC(struct17 *arg0, f32 *arg1, f32 *arg2,
+    f32 *arg3, f32 *arg4, volatile u8 arg5);
 s32 func_15144E80();
 s32 func_151451F0();
 s32 func_151452C4();
@@ -1417,9 +1423,43 @@ f32 func_15144C8C(f32 arg0, f32 arg1) {
     }
     return tmp;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15144CEC.s. */
-s32 func_15144CEC() {
-    return 0;
+/* Note 1082: projection with optional outputs and live view/reciprocal reads. */
+s32 func_15144CEC(struct17 *arg0, f32 *arg1, f32 *arg2, f32 *arg3, f32 *arg4, volatile u8 arg5) {
+    f32 localZ;
+    f32 localW;
+    f32 localReciprocal;
+    f32 value;
+    f32 yProduct;
+    s32 offset;
+
+    if (arg2 == NULL) {
+        arg2 = &localZ;
+    }
+    if (arg3 == NULL) {
+        arg3 = &localW;
+    }
+    offset = arg5;
+    if (arg4 == NULL) {
+        arg4 = &localReciprocal;
+    }
+    func_150A7A00((f32 (*)[4])((u8 *)D_800D9D10 + (offset << 6)),
+                 arg0->unk0, arg0->unk4, arg0->unk8, arg1, arg1 + 1, arg2, arg3);
+    value = *arg3;
+    if (D_800A56B0 <= value || value <= D_800D9B20) {
+        return 0;
+    }
+    if (value != 0.0f) {
+        *arg4 = 1.0f / value;
+    } else {
+        return 0;
+    }
+    offset = arg5 * 0x180;
+    value = *arg4 * (arg1[0] * (((struct140 *)((u8 *)D_800BE628 + offset))->unkC + 5.0f))
+        + ((struct140 *)((u8 *)D_800BE628 + offset))->unk34;
+    yProduct = arg1[1] * (((struct140 *)((u8 *)D_800BE628 + offset))->unk10 + 5.0f);
+    arg1[0] = value;
+    arg1[1] = ((struct140 *)((u8 *)D_800BE628 + offset))->unk38 - *arg4 * yProduct;
+    return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15144E80.s. */
 /* Note 374: original surface splash construction and triangle basis. */

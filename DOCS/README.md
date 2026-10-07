@@ -51,6 +51,13 @@ confirmed.
 
 ## Planning and history
 
+- [Latest projection-wrapper match](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md):
+  `func_15144CEC`,101 words/frame0x48,64 direct words plus37 checked register/
+  commutative/four-word-schedule guards. Guest/native/real-helper/caller/alias/
+  operand/owner qualification; only target across6059 audited slots.
+  All 206 tests pass in 1005.830 seconds, zero skips/errors/failures; final
+  linked audit and documentation gates pass. Next 53-word `func_151451F0`.
+
 - [Latest projection-wrapper lifetime recovery](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md):
   `func_15144CEC`, qualified102-word/frame0x48 experiment versus retail101;
   six-position ABI, original private slots, real helper and live aliases.

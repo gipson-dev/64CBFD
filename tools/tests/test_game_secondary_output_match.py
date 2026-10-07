@@ -360,11 +360,11 @@ for(x=0;x<256;x++)for(y=0;y<256;y++)for(m=0;m<4;m++)for(a=0;a<2;a++) {
         address,data=screen.sections(self.root/'conker/build/conker.us.elf')['.game_data']
         self.assertEqual(data[screen.TABLE-address:screen.TABLE-address+56],self.original)
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:guards=list(csv.DictReader(stream))
-        self.assertEqual(guards[10914:],screen.owner_guards())
+        self.assertEqual(guards[10914:10916],screen.owner_guards())
         digest=hashlib.sha256(json.dumps(guards[:10914],sort_keys=True,separators=(',',':')).encode()).hexdigest()
         self.assertEqual(digest,'f2d0df124fdbc693c980d574463aca4b495160acfc37374fea3d4ae3a2482446')
-        self.assertEqual(len(guards),10916)
-        self.receipt('production',dict(words=120,direct=True,guards=10916,new_guards=2,prior_guards_sha256=digest))
+        self.assertEqual(len(guards),10953)
+        self.receipt('production',dict(words=120,direct=True,guards=10953,new_guards=2,prior_guards_sha256=digest))
 
 
 if __name__=='__main__':unittest.main()

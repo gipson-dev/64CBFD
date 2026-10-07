@@ -1,5 +1,31 @@
 # PC Port Roadmap located in another project folder
 
+## Game Projection Wrapper Match - 2026-10-07
+
+[Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md):
+`func_15144CEC`:101 words/frame0x48,64 direct words and37 checked temporary/
+commutative/four-word-schedule guards. Complete linked slot byte-exact.
+Only target across6059 slots; all addresses/extents/protected sections/720
+owners/10916 prior guards intact,10953 total. Game2680/4792 exact,2112 different,
+zero drift; conversion unchanged. README aggregate matching rows only.
+
+- [x] Fit the recovered body into101 words with original frame/private slots.
+- [x] Qualify raw C, retail and guarded outputs/read dependencies independently.
+- [x] Close every guard's instruction inputs under the exact four-PC schedule map.
+- [x] Connect the original11-word caller setup and actual helper W/index-home overlap.
+- [x] Preserve copied neighbors/pools/warnings/relocations; reject stale guards.
+- [x] Install narrowly, rebuild and audit all slots/data/historical guards.
+- [x] Finish expanded 206-test regression and final documentation gates.
+- [ ] Recover next53-word nine-argument wrapper `func_151451F0` and its real callee.
+- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+
+No profile/header/padder/helper change, insertion/omission or branch/frame rewrite.
+All 206 tests pass in 1005.830 seconds, zero skips/errors/failures. Final
+post-regression linked audit, project tools, syntax and whitespace pass;
+64 documents/3727 relative links/zero broken.
+No full-caller/hardware/FCSR/NaN/gameplay/host adoption, sibling/frozen Release/
+save/runtime or push claim; broader matching goal stays active.
+
 ## Game Projection Wrapper Lifetime Recovery - 2026-10-07
 
 [Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md):
@@ -13,8 +39,10 @@ README aggregate rows unchanged; no matching increment claimed.
 - [x] Qualify depth gates, live index, pre-X Y capture and post-X reciprocal/view reads.
 - [x] Retain140 compiler controls and guest/native/fail-closed/negative qualification.
 - [x] Re-audit the unchanged production baseline and bank the working handoff.
-- [ ] Fit the qualified body into101 words and resolve remaining word differences.
-- [ ] Qualify copied owner/relocations/guards, install narrowly and run full regressions.
+- [x] Fit101 words and normalize the remaining37 differences with checked guards
+  ([Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md)).
+- [x] Qualify copied owner/relocations/guards, install narrowly and run full regressions
+  (completed by Note 1082).
 - [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
 
 All26 focused recovery/audit/helper tests pass in211.955s, zero skips/errors/
@@ -41,10 +69,9 @@ Game2679/4792 exact,2113 different, zero drift; conversion unchanged.
 - [x] Bind the original table, rebuild and audit every slot/data owner/historical guard.
 - [x] Extend copied-owner tests for exact table-addend, identity and padding changes.
 - [x] Finish expanded164-test regression and final documentation gates.
-- [ ] Recover next101-word projection wrapper `func_15144CEC`, including private locals.
-  ABI/frame/lifetime qualification is banked in
-  [Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md);
-  the101-word fit and installation remain open.
+- [x] Recover next 101-word projection wrapper `func_15144CEC`, including private locals.
+  ABI/frame/lifetime qualification, fit, installation and full regressions are
+  completed in [Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md).
 - [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
 
 All164 tests pass in736.713s, zero skips/errors/failures.62 documents/3701

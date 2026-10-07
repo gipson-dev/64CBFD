@@ -4,6 +4,9 @@ Date: 2026-10-07. Baseline: `44ef1423`,
 [Note 1080](1080-game-secondary-halfword-output-direct-match-20261007.md).
 Continue `func_15144CEC` from the
 [earlier ABI/frame audit](1036-game-projection-wrapper-abi-and-frame-audit-20261006.md).
+Follow-up: [Note 1082](1082-game-projection-wrapper-match-20261007.md) fits and
+installs the qualified101-word match. The remainder is the historical pre-install
+checkpoint, not the latest production status.
 Production remains the explicit zero-return placeholder. No source, shared
 header, compiler profile, padder or retail-word guard is installed or changed.
 

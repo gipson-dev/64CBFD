@@ -10915,3 +10915,40 @@ game_16EE20,func_151441A4,0x18,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_
 game_16EE20,func_151441A4,0x20,0x8C2E0270,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A5648_game,Bind output mode switch to its preserved retail jump table,,,false
 game_16EE20,func_151442FC,0x14,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A565C_game,Bind secondary output switch to its preserved retail jump table,,,false
 game_16EE20,func_151442FC,0x1C,0x8C2E0284,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A565C_game,Bind secondary output switch to its preserved retail jump table,,,false
+game_16EE20,func_15144CEC,0x44,0x8FA90058,0x8FA80058,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x4C,0x8FA90058,0x8FA80058,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x50,0x93A8005F,0x93A9005F,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x58,0x15200002,0x15000002,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x5C,0x00085180,0x00095180,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x60,0x27A9003C,0x27A8003C,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x78,0xAFA90058,0xAFA80058,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0xA4,0x8FA90058,0x8FA80058,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0xDC,0x3C040000,0x3C050000,R_MIPS_HI16:D_800BE628,R_MIPS_HI16:D_800BE628,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0xE4,0x46080032,0x46004032,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0xE8,0x24840000,0x24A50000,R_MIPS_LO16:D_800BE628,R_MIPS_LO16:D_800BE628,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x104,0xE5300000,0xE5100000,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x110,0x93A8005F,0x93A4005F,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x114,0x8C8A0000,0x8CA90000,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x11C,0x0008C880,0x0004C880,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x120,0x0328C823,0x0324C823,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x128,0x01591821,0x01391821,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x12C,0xC464000C,0xC460000C,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x134,0xC52A0000,0xC5080000,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x138,0x460C2180,0x460C0100,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x13C,0xC4640034,0xC4620010,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x140,0x24020001,0xC4700034,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x144,0x46069202,0x24020001,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x148,0xC4660010,0x46049182,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x14C,0xC6120004,0xC6040004,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x150,0x460A4402,0x46064282,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x154,0x460C3200,0x460C1200,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x158,0x46089082,0x46082182,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x15C,0x46048000,0x46105480,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x160,0xE6000000,0xE6120000,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x164,0xC5300000,0xC50A0000,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x168,0x8C8B0000,0x8CAA0000,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x16C,0x46028102,0x46065402,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x170,0x01796021,0x01595821,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x174,0xC58A0038,0xC5720038,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x178,0x46045181,0x46109101,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false
+game_16EE20,func_15144CEC,0x17C,0xE6060004,0xE6040004,-,-,Normalize projection wrapper closed temporary allocation and independent four-word capture schedule,,,false

@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-07 ([Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md)):
+`func_15144CEC`:101 words/frame0x48, six-position ABI/private slots/live reads.
+64 direct words plus37 checked temporary/commutative/four-word-schedule guards.
+Raw C/retail/guarded qualification includes real58-word helper,1728 instruction-
+input traces,1536 original caller setups,4096 varied finite cases and512 natural
+W/index-home overlaps. Copied neighbors/pools/warnings/relocations preserved;
+actual padder/carry/stale gates pass. US ELF/audit changes only target across6059
+slots; all addresses/extents/protected data/720 owners/10916 prior guards intact,
+10953 total. Exact3353/5465, Game2680/4792,2112 different, zero drift; conversion
+unchanged. README aggregate rows only. All 206 tests pass in 1005.830 seconds,
+zero skips/errors/failures; final post-regression linked audit, tools, syntax,
+whitespace and 64-document/3727-relative-link gate pass. Next 53-word nine-argument wrapper
+`func_151451F0`; sampler/oriented open. No full-caller/hardware/FCSR/NaN/gameplay/
+host adoption, sibling/frozen Release/save/runtime or push claim; goal active.
+
 2026-10-07 ([Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md)):
 `func_15144CEC`: original0x48 frame/private slots and six-position ABI recovered.
 Qualified experimental C102 words/frame0x48,46 aligned differences, retail101.

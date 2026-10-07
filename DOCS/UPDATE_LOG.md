@@ -1,5 +1,24 @@
 # Update Log
 
+## 2026-10-07 Game Projection Wrapper Match
+
+[Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md):
+replace `func_15144CEC`'s placeholder with101-word/frame0x48 projection C.
+Inlining the view pointer frees the local needed to capture X's result and Y's
+product before the X store; live index/inverse/view reads remain intact.
+64 direct words,37 checked temporary/commutative/four-word-schedule guards;
+no insertion/omission/branch/frame/profile/header/helper change.
+Guest/native/operand/caller/varied-finite/natural W-home-overlap and copied-owner/
+padder/alternate-carry/stale checks qualify. US ELF/audit changes only target
+across6059 slots; all addresses/extents/protected sections/720 owners/10916 prior
+guards unchanged,10953 total. Exact3353/5465, Game2680/4792,2112 different,
+zero drift; conversion unchanged. README aggregate rows only.
+All 206 tests pass in 1005.830 seconds, zero skips/errors/failures. Final
+post-regression linked audit, tools, syntax and whitespace pass;
+64 documents/3727 relative links/zero broken. Next 53-word
+`func_151451F0`; sampler/oriented work stays open. No full-caller/hardware/FCSR/
+NaN/gameplay/host adoption, sibling/Release/save/runtime or push claim.
+
 ## 2026-10-07 Game Projection Wrapper Lifetime Recovery
 
 [Note 1081](WORKING_NOTES/1081-game-projection-wrapper-lifetime-recovery-20261007.md):

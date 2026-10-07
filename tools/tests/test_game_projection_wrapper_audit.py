@@ -1,11 +1,13 @@
 """Compiler-screen receipts and retained helper identity, not projection qualification."""
 
 import re
+import csv
 import struct
 import unittest
 from pathlib import Path
 
 from tools.experiments import game_projection_wrapper_candidates as screen
+from tools.experiments import game_projection_schedule_candidates as matched
 from tools.match_progress import load_elf_functions
 
 
@@ -49,14 +51,18 @@ class GameProjectionWrapperAuditTests(unittest.TestCase):
         self.assertEqual(linked['func_150A7A00'][0], 0x03E0C825)
         self.assertEqual(linked['func_150A7A14'][-2:], [0x03200008, 0xE5520000])
 
-    def test_retail_frame_and_production_placeholder_remain_explicit(self):
+    def test_retail_frame_and_qualified_production_match_remain_explicit(self):
         retail = struct.unpack_from('>101I', self.rom, screen.ROM)
         self.assertEqual(retail[0], 0x27BDFFB8)
         self.assertEqual(retail[-5:], (0x8FBF002C, 0x8FB00028, 0x27BD0048, 0x03E00008, 0))
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
-        self.assertRegex(source, r's32 func_15144CEC\(\)\s*\{\s*return 0;\s*\}')
-        guards = (self.root / 'conker/retail_word_patches.us.csv').read_text()
-        self.assertIsNone(re.search(r'^.*func_15144CEC.*$', guards, re.MULTILINE))
+        self.assertIn(matched.SELECTED, source)
+        self.assertNotRegex(source, r's32 func_15144CEC\(\)\s*\{\s*return 0;\s*\}')
+        with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
+            guards = [row for row in csv.DictReader(stream) if row['function'] == matched.FUNCTION]
+        self.assertEqual(guards, matched.owner_guards())
+        linked = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'), 'mips-linux-gnu-objdump')[0]
+        self.assertEqual(linked[matched.FUNCTION], list(retail))
 
 
 if __name__ == '__main__':

@@ -104,6 +104,7 @@ def reference(memory, args, actions=(), phase=0):
     memory = memory.copy()
     point, xy, z, w, inverse, index = args
     entry_sp = STACK + phase
+    put(memory, entry_sp + 0x14, index)
     z, w, inverse = z or entry_sp - 4, w or entry_sp - 8, inverse or entry_sp - 12
     matrix = BANK + (index & 255) * 64
     xyz = [floating(peek(memory, point + i * 4)) for i in range(3)]
@@ -135,9 +136,7 @@ def reference(memory, args, actions=(), phase=0):
     if f(UPPER) <= depth or depth <= f(LOWER) or depth == 0.0:
         return memory, writes, calls, 0
     write(inverse, bits(1.0 / depth))
-    for address, value, size in actions:
-        if address == entry_sp + 0x17:
-            index = value
+    index = peek(memory, entry_sp + 0x17, 1)
     offset = (index & 255) * 384
     view = peek(memory, VIEW_WORD) + offset
     xp = rnd(f(xy) * rnd(f(view + 12) + 5.0))
