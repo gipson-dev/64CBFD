@@ -575,7 +575,7 @@ for(fixed=0;fixed<2;fixed++)for(i=0;i<4;i++){
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
         assert_guard_history(self, guards)
-        self.assertEqual(guards[11042:], screen.owner_guards())
+        self.assertEqual(guards[11042:11061], screen.owner_guards())
 
 
 if __name__ == '__main__':

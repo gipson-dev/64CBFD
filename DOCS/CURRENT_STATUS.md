@@ -21,6 +21,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest installed Game match:
+[Note 1102](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md).
+`func_151462C8` replaces its zero-return placeholder with complete C124/frame
+`0x48`, lazy resource gates, actor/global/position lighting dispatch and the
+nine-word incoming ABI. Two guards swap only an independent signed-index load
+and temporary initialization; all 124 linked words match, all 13 relocations
+retained. Full linked audit changes only target across 6,058 symbols/6,042
+slots; other bodies/addresses/extents/overflows/protected sections/720 data
+owners and 11,061 prior guards intact, new count 11,063. Exact total
+3,364/5,466 (61.54%), Game 2,691/4,793 (56.14%), 2,102 different, zero drift;
+conversions unchanged. Guest/native/candidate/owner/padder/rebasing qualification
+uses bounded renderer hooks, not connected renderer or PC-port acceptance.
+All nine lighting/prior-neighbor tests pass in 324.913 seconds, zero skips/
+errors/failures. Tools/syntax/whitespace and 84-document / 3,976-relative-link
+checks pass, zero broken links.
+Next 120-word `func_1514654C`, still a zero-return placeholder. Basis,
+translator and sampler boundaries remain open; no sibling/Release/save/push.
+
 Latest basis source-control follow-up:
 [Note 1101](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md).
 68 additional coordinate/workspace/seed forms bring the audit to 186 controls,

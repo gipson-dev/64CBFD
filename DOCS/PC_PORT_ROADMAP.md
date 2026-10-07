@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Lighting Dispatcher Match - 2026-10-07
+
+[Note 1102](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md):
+
+- [x] Restore complete C124/frame `0x48`, lazy light/ambient gates, actor/global/position routes and all nine incoming ABI words.
+- [x] Prove/install two independent index-load/temporary-clear scheduling guards, no branch/private-offset/insertion/omission/profile edits; all 124 words match.
+- [x] Qualify guest traces/full memory, native 32-bit ABI/fences, ordinary controls and effective semantic negatives using bounded renderer hooks.
+- [x] Preserve 88 owner neighbors/data pools/two warning statements, reject a stale word guard and independently rebase seven symbols/all 13 relocations through the actual padder.
+- [x] Rebuild/audit 6,058 symbols/6,042 slots/16 overflows/720 Game-data owners; only target changes, all prior 11,061 guards intact, new count 11,063.
+- [x] Update README aggregate rows only: total 3,364, Game 2,691 (56.14%), 2,102 different, zero drift; conversions unchanged.
+- [x] Pass all nine completed-build lighting/prior-neighbor tests in 324.913 seconds, zero skips/errors/failures, plus tools/syntax/whitespace and 84-document / 3,976-relative-link checks, zero broken links.
+- [ ] Recover/match next 120-word matrix-route wrapper `func_1514654C`; preserve matched neighbors `func_151464B8` and `func_15146508`.
+- [ ] Close basis layout, translator scheduling and sampler per-path lifetime; no new match for those here.
+
+This is guest matching/dispatcher qualification, not PC-port/hardware rendering acceptance.
+
 ## Game Vector-Basis Additional Source Controls - 2026-10-07
 
 [Note 1101](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md):

@@ -51,6 +51,9 @@ confirmed.
 
 ## Planning and history
 
+- [Latest lighting-dispatcher match](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md):
+  complete 124-word actor/global/position dispatcher, two scheduling guards;
+  bounded renderer hooks, not connected renderer or PC-port acceptance.
 - [Vector-basis additional source controls](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md):
   186 controls, none exact; original assembly and private-layout boundary retained.
 - [Vector-basis recovery/liveness audit](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md):

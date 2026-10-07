@@ -98,6 +98,19 @@ extern s32 D_800BE628;
 extern f32 D_800A56B0, D_800D9B20;
 void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *outZ, f32 *outW);
 
+typedef struct {
+    s32 capacity;
+    u8 count;
+    u8 pad5[3];
+    u8 *lights[4];
+    u8 *ambient;
+    s32 channels;
+} GameLightingDescriptor;
+extern u8 D_800D9E21;
+Gfx *func_1515E544(Gfx *, s32, u8, u8, u8 *);
+Gfx *func_1515D914(Gfx *, s32, s32, s32, s32, s32, u8 *, s32,
+    u8 *, u8 *, s32, u8 *, s32, u8 **);
+
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
@@ -138,7 +151,8 @@ s32 func_15145AD8(struct17 *arg0, struct17 *arg1, struct127 *arg2,
     struct17 *arg3, struct17 *arg4, f32 *arg5, f32 *arg6, struct17 *arg7);
 void func_15145EA4(struct17 **inputArgument, struct17 **destinationArgument, u8 *matrix, s32 count);
 s32 func_15146078();
-s32 func_151462C8();
+Gfx *func_151462C8(Gfx *commands, GameLightingDescriptor *descriptor,
+    u8 mode, u8 *actor, u8 slot, s16 index, struct17 *position, u8 flags, s32 extra);
 s32 func_1514654C();
 /* End generated placeholder declarations. */
 
@@ -1902,9 +1916,53 @@ void func_15145EA4(struct17 **inputArgument, struct17 **destinationArgument, u8 
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15146078.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15146078.s")
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151462C8.s. */
-s32 func_151462C8() {
-    return 0;
+Gfx *func_151462C8(Gfx *commands, GameLightingDescriptor *descriptor,
+    u8 mode, u8 *actor, u8 slot, s16 index, struct17 *position, u8 flags, s32 extra) {
+    u8 *lights = descriptor->lights[index];
+    u8 *ambient;
+    u32 selected;
+    s32 direction;
+    s32 environment;
+
+    if (lights != 0 && (ambient = descriptor->ambient) != 0) {
+        selected = mode;
+        if (mode == 1U) {
+            if (actor != 0) {
+                if (*(s32 *)actor == 0 || actor[0x3B] != slot || actor[4] == 255 || actor[0x302] == 0) {
+                    selected = 2;
+                }
+            } else {
+                selected = 0;
+            }
+        }
+        switch (selected) {
+        case 1:
+            commands = func_1515E544(commands, ((s32 *)(actor + 0x304))[index],
+                actor[0x301], actor[0x302], *(u8 **)(actor + 0x314));
+            break;
+        case 2:
+            commands = func_1515E544(commands, D_800D9E10[index], D_800D9E20,
+                D_800D9E21, D_800D9BD0[index][D_800BE9C0]);
+            break;
+        case 0:
+        default:
+            if (flags & 1) {
+                direction = 2;
+            } else {
+                direction = 0;
+            }
+            if (flags & 2) {
+                environment = 16;
+            } else {
+                environment = 0;
+            }
+            commands = func_1515D914(commands, index, (s32)position->unk0,
+                (s32)position->unk4, (s32)position->unk8, extra, lights, descriptor->capacity,
+                ambient, &descriptor->count, descriptor->channels, 0, environment | 8 | direction, 0);
+            break;
+        }
+    }
+    return commands;
 }
 u8 func_151464B8(s16 *arg0) {
     s16 mask;

@@ -11060,3 +11060,5 @@ game_16EE20,func_15145EA4,0x194,0x2652FFFF,0x2631FFFF,-,-,"Normalize matrix-list
 game_16EE20,func_15145EA4,0x1A0,0x2652FFFF,0x2631FFFF,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
 game_16EE20,func_15145EA4,0x1A4,0x26310004,0x26520004,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
 game_16EE20,func_15145EA4,0x1A8,0x1E40FFDA,0x1E20FFDA,-,-,"Normalize matrix-list closed GP cycle, independent save order and equality operand order",,,false
+game_16EE20,func_151462C8,0x138,0x00004025,0x87A5005E,-,-,Normalize independent lighting-dispatch index load and temporary initialization schedule,,,false
+game_16EE20,func_151462C8,0x13C,0x87A5005E,0x00004025,-,-,Normalize independent lighting-dispatch index load and temporary initialization schedule,,,false

@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-07 ([Note 1102](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md)):
+Lighting dispatcher `func_151462C8`: complete C124/frame `0x48`, lazy resource
+gates, actor/global/position routes and nine incoming words. Two independent
+index-load/temporary-clear scheduling guards match all linked words; all 13
+relocations retained. Guest/native/owner/padder/rebasing/candidate gates use
+bounded renderer hooks, not connected renderer or PC-port acceptance.
+US ELF changes only target across 6,058 symbols; prior 11,061 guards/data/
+addresses/extents/overflows/conversion hash intact, new guard count 11,063.
+Exact total 3,364, Game 2,691 (56.14%), 2,102 different, zero drift;
+conversions unchanged, README aggregate rows only. Next 120-word
+`func_1514654C`; basis/translator/sampler remain open.
+All nine combined tests pass in 324.913 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 84-document / 3,976-relative-link checks pass,
+zero broken links.
+
 2026-10-07 ([Note 1101](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md)):
 Add 68 coordinate/workspace/seed forms for `func_15146078`: 186 total
 controls, none raw exact; 2,136 ordinary candidate executions qualify.

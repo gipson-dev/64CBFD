@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-07 Game Lighting Dispatcher Match
+
+[Note 1102](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md):
+Replace `func_151462C8`'s zero-return placeholder with complete C124/frame
+`0x48`, lazy light/ambient gates, actor/global/position routes and typed
+nine-word ABI. Two expected-word guards normalize only an independent load/
+temporary-clear schedule; all 124 linked words match with all 13 relocations.
+244 controls remain raw nonmatching; 5,856 ordinary candidate executions and
+six effective semantic negatives qualify. Guest/native/owner/padder/rebasing
+checks use bounded validating renderer hooks, not connected renderer execution.
+The linked audit changes only target; all other bodies/addresses/extents/
+overflows/protected sections/720 Game-data owners and 11,061 prior guards
+remain intact, new guard count 11,063. Exact total 3,364/5,466 (61.54%),
+Game 2,691/4,793 (56.14%), 2,102 different, zero drift; conversions unchanged.
+README aggregate rows only. Next 120-word `func_1514654C`; basis layout,
+translator scheduling and sampler lifetime remain open. No sibling/Release/
+save/runtime/hardware/push work.
+All nine combined tests pass in 324.913 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 84-document / 3,976-relative-link checks pass,
+zero broken links.
+
 ## 2026-10-07 Game Vector-Basis Coordinate And Workspace Controls
 
 [Note 1101](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md):
