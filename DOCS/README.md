@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest sphere-callee storage recovery](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md):
+  `func_151452C4`, uninstalled 126 words/frame `0x70`, 60 differences and 64
+  compiler controls. 2,808 finite external-alias cases pass, but a private-slot
+  probe gives retail 24.0 versus C 10.0. Original assembly/counts remain intact;
+  next recover original private storage and qualify incoming/private aliases.
+
 - [Latest sphere-wrapper direct match](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md):
   `func_151451F0`, 53 direct words/frame `0x28`, nine-position ABI, live homes,
   no guards. Retained original callee/dot helper exact; only target across 6,059

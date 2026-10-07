@@ -1,5 +1,27 @@
 # PC Port Roadmap located in another project folder
 
+## Game Sphere Callee Storage Recovery - 2026-10-07
+
+[Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md):
+`func_151452C4` experimental C126 words/frame `0x70`, 60 differences, not installed.
+The private output-alias counterexample produces retail second-X 24.0 versus
+trial 10.0. All slots/data/guards/counts and README aggregate rows unchanged.
+
+- [x] Recover the 126-word fit and original frame using meaningful direction storage.
+- [x] Retain 64 reproducible array/union/radius/root controls, none exact.
+- [x] Qualify 2,808 finite external-alias cases and effective live-read negatives.
+- [x] Prove private-slot incompatibility and retain original production assembly.
+- [x] Pass focused regression, retained-slot audit and documentation/tool gates.
+- [ ] Recover direction `+0x58`, origin `+0x4C`, relative `+0x28` through C lifetimes.
+- [ ] Qualify private-copy and incoming helper-home aliases before classifying guards.
+- [ ] Finish owner/caller/padder gates, install narrowly, rebuild and audit regressions.
+
+Seven new tests pass in 14.016 seconds, zero skips/errors/failures. Retained
+baseline audit equals all 6,059 slots, 720 data owners and 10,953 guards.
+No new native geometry/hardware/FCSR/NaN/gameplay/host-adoption or sibling work.
+All 40 focused tests pass in 160.675 seconds, zero skips/errors/failures;
+tools/syntax/whitespace/final retained audit and 66-document/3,749-link gate pass.
+
 ## Game Sphere Wrapper Direct Match - 2026-10-07
 
 [Note 1083](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md):

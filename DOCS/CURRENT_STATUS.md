@@ -21,6 +21,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Current callee recovery, not installed:
+[Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md).
+`func_151452C4` now fits 126 words/frame `0x70`, with 60 differences. Sixty-four
+compiler controls retain no exact form. Its direction/origin/relative private
+slots remain wrong: a frame `+0x58` output alias produces retail second-X 24.0
+versus trial 10.0. Retain the exact assembly and existing direct wrapper;
+private offsets must not be word-patched. 2,808 bounded finite external-alias
+cases pass; seven new tests pass in 14.016 seconds. All 6,059 retained slots,
+protected sections, 720 data owners, 10,953 guards and counts stay unchanged.
+Next recover original private storage/lifetimes and qualify private/home aliases.
+README aggregate rows are already current; no new native geometry acceptance.
+All 40 focused recovery/wrapper/projection/owner-pool tests pass in 160.675
+seconds, zero skips/errors/failures. Tools/syntax/whitespace/final retained
+audit pass; 66 documents/3,749 relative links/zero broken.
+
 Sphere-wrapper direct match:
 [Note 1083](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md).
 `func_151451F0`: all 53 words emit directly from C, original `0x28` frame,

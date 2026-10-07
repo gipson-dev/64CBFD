@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-07 Game Sphere Callee Storage Recovery
+
+[Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md):
+recover an uninstalled 126-word/frame `0x70` C form of `func_151452C4`,
+60 differences; retain 64 compiler controls. A direction union recovers natural
+perpendicular spill/reload without volatile. 2,808 bounded external-alias cases
+agree, but a private `+0x58` output produces retail second-X 24.0 versus trial
+10.0. Seven new tests pass in 14.016 seconds, including two effective compiled
+live-read negatives. Retain original assembly; no private-offset normalization.
+All 6,059 slots/protected sections/720 owners/10,953 guards/counts unchanged.
+README aggregate rows untouched. Next recover original private storage and
+qualify private/home aliases. No new native geometry/full-caller/hardware/FCSR/
+NaN/gameplay/host-adoption, sibling/Release/save/runtime or push claim.
+
 ## 2026-10-07 Game Sphere Wrapper Direct Match
 
 [Note 1083](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md):

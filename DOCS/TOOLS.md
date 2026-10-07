@@ -883,6 +883,22 @@ See [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-2
 
 ## Projection-wrapper compiler audit
 
+### Sphere callee storage recovery
+
+[Callee driver](../tools/experiments/game_sphere_callee_candidates.py) reproduces
+64 O2/g3 array/union/radius/root controls, none exact. Selected direction-union C
+fits 126 words/frame `0x70` with 60 differences, but wrong private slots prevent
+installation. Array overlays are compiler controls, not qualified replacements.
+[Seven tests](../tools/tests/test_game_sphere_callee_recovery.py) cover 2,808
+finite external-alias cases, original callee/dot word coverage, lazy miss reads,
+compiled live-read negatives, selected compiler controls and production retention.
+Two private-slot probes demonstrate retail second-X 24.0 versus selected 10.0.
+Run `python3 -m tools.experiments.game_sphere_callee_candidates`; ROM and IDO/MIPS
+tools required. No new native geometry or private-layout acceptance claim.
+Ignored receipts under `conker/build/game-sphere-callee/` and
+`conker/build/game-sphere-callee-test/`. See
+[Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md).
+
 ### Sphere wrapper and retained dependency
 
 [Sphere driver](../tools/experiments/game_sphere_wrapper_candidates.py)

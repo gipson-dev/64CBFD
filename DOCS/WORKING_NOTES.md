@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-07 ([Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md)):
+`func_151452C4`: uninstalled C now fits 126 words/frame `0x70`, 60 differences;
+64 maintained compiler controls, none exact. Direction union recovers coordinate
+registers and the natural perpendicular-square spill/reload without volatile.
+2,808 bounded finite external-alias cases agree, but private `+0x58` output alias
+produces retail second-X 24.0 versus trial 10.0. Retain exact original assembly;
+do not patch private offsets. Seven new tests pass in 14.016 seconds; compiled
+stale-origin/direction negatives change actual helper returns. All 6,059 retained
+slots/protected sections/720 owners/10,953 guards/counts unchanged. Next recover
+direction `+0x58`, origin `+0x4C`, relative `+0x28`, then qualify private/home
+aliases before installation. README aggregate rows untouched. No new native
+geometry/full-caller/FCSR/NaN/hardware/gameplay/host/sibling/Release/save/push claim.
+All 40 focused recovery/wrapper/projection/owner-pool tests pass in 160.675
+seconds, zero skips/errors/failures. Tools/syntax/whitespace and final retained
+audit pass; 66 documents/3,749 relative links/zero broken.
+
 2026-10-07 ([Note 1083](WORKING_NOTES/1083-game-sphere-wrapper-direct-match-20261007.md)):
 `func_151451F0`: 53 direct words/frame `0x28`, nine-position ABI/eight forwarded
 arguments, live threshold/pointer homes, no guards. Real 126-word assembly callee
