@@ -262,7 +262,7 @@ class GamePointListTransformMatchTests(unittest.TestCase):
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
         assert_guard_history(self, guards)
-        self.assertEqual(guards[-19:], screen.owner_guards())
+        self.assertEqual(guards[11006:11025], screen.owner_guards())
 
 
 if __name__ == '__main__':

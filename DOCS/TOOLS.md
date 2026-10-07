@@ -4,6 +4,40 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Point-batch transform lifetime matching
+
+[Candidate driver](../tools/experiments/game_point_batch_transform_candidates.py)
+retains 119 meaningful loop/view/storage/profile/backend/reload/gate controls,
+none raw exact. Selected C60/frame `0x98`/matrix `sp+0x58`, unchanged O2/g3/
+MIPS2, has seventeen closed-register/store-order guards, no private-offset,
+FP-register, call-relocation, insertion or omission changes.
+
+[Nine tests](../tools/tests/test_game_point_batch_transform_match.py) bind all
+60 wrapper/all 40 original point-helper words, 1,792 guest, 768 connected,
+5,376 independent/both incoming-home and 524,296 actual native cases, all four
+record aliases, complete memory/public traces/calls/saved state, 384 private-
+overlap cases, seven effective public-storage negatives and lazy-home/fail-
+closed/owner/padder/independently rebased calls. Native matrix validation uses
+a copy hook, not full SDK arithmetic; no full FCSR/hardware/64-bit port claim.
+Eight corrected pre-install tests pass in 128.524 seconds; all 43 combined
+tests pass in 460.335 seconds, zero skips/errors/failures. Tools/syntax/
+whitespace and 80-document / 3,936-relative-link checks pass, zero broken
+links. The one-body linked audit and detailed regression are recorded in
+[Note 1098](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md).
+
+```sh
+python3 -m tools.experiments.game_point_batch_transform_candidates
+python3 -m tools.experiments.game_point_batch_transform_candidates --storage
+python3 -m tools.experiments.game_point_batch_transform_candidates --reload
+python3 -m tools.experiments.game_point_batch_transform_candidates --gate
+python3 -m unittest tools.tests.test_game_point_batch_transform_match -v
+```
+
+Ignored receipts: `conker/build/game-point-batch-transform/` and
+`conker/build/game-point-batch-transform-test/`. Deliberate incoming-home and
+private-overlap probes are guest ABI evidence, not native C permission to
+rewrite a caller's arguments or private objects.
+
 ## Point-list transform lifetime matching
 
 [Point-list driver](../tools/experiments/game_point_list_transform_candidates.py)

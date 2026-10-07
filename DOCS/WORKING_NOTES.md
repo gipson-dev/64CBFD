@@ -1,5 +1,22 @@
 # Working Notes
 
+2026-10-07 ([Note 1098](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md)):
+Point-batch transform `func_15145DB4`: original descriptor/source phase,
+three twelve-byte coordinate strides and positive-only source reload.
+C60/frame `0x98`/matrix `sp+0x58`, unchanged O2/g3/MIPS2; 17 raw differences,
+17 closed allocation/store-order guards, no private-offset/FP/relocation/
+instruction edits. 1,792 guest / 768 connected helper / 5,376 home / 524,296
+native / 384 private-overlap cases, seven public-storage negatives and a
+lazy-home counterexample qualify. Retain 119 controls, none raw exact;
+eight corrected pre-install tests pass in 128.524 seconds. US ELF changes only
+target; all other bodies/addresses/extents/overflows/data/prior guards intact.
+Exact total 3,362, Game 2,689, 2,104 different, zero drift; conversions unchanged,
+guard count 11,042. All 43 combined tests pass in 460.335 seconds, zero
+skips/errors/failures; tools/syntax/whitespace and 80-document /
+3,936-relative-link checks pass, zero broken links.
+Next 117-word matrix/list wrapper `func_15145EA4`;
+translator/sampler remain open, no sibling/Release/save/runtime/push claim.
+
 2026-10-07 ([Note 1097](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md)):
 Point-list transform `func_15145CD0`: recovered descriptor/input cursor phase,
 original argument-home reloads, complete C57/frame `0x88`, 19 raw differences

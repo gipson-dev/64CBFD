@@ -15,6 +15,7 @@ from tools.experiments import game_secondary_output_candidates as secondary_outp
 from tools.experiments import game_projection_schedule_candidates as projection
 from tools.experiments import game_sphere_callee_allocation_candidates as sphere
 from tools.experiments import game_point_list_transform_candidates as point_list
+from tools.experiments import game_point_batch_transform_candidates as point_batch
 from tools.pad_generated_object import ELF_HEADER, SECTION_HEADER, SYMBOL, RELOCATION, parse_object, read_c_string
 
 
@@ -57,7 +58,7 @@ def normalized_pools(path):
 
 
 def assert_guard_history(test, guards):
-    test.assertEqual(len(guards), 11025)
+    test.assertEqual(len(guards), 11042)
     digest = hashlib.sha256(json.dumps(guards[:10809], sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     test.assertEqual(digest, 'e021c108eef6c84112743955be809d3bdf4ce4e1de0cba474897ed3b0bcabb8a')
     test.assertEqual(guards[10809:10811], resolver.owner_guards())
@@ -83,5 +84,6 @@ def assert_guard_history(test, guards):
     test.assertEqual(prior_projection, '274d281be870d4ace85151c43ea73aa28044e182ac5d68d1ba4db5a02b3a0dfd')
     test.assertEqual(guards[10916:10953], projection.owner_guards())
     test.assertEqual(guards[10953:11006], sphere.owner_guards())
-    test.assertEqual(guards[11006:], point_list.owner_guards())
+    test.assertEqual(guards[11006:11025], point_list.owner_guards())
+    test.assertEqual(guards[11025:], point_batch.owner_guards())
     return hashlib.sha256(json.dumps(guards, sort_keys=True, separators=(',', ':')).encode()).hexdigest()

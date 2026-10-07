@@ -1823,20 +1823,37 @@ void func_15145CD0(u8 *cursor, struct17 **input, struct17 **destinations, s32 co
     }
 }
 
-void func_15145DB4(u8 *arg0, struct17 *arg1, struct17 *arg2, s32 arg3) {
-    f32 mtx[4][4];
+void func_15145DB4(u8 *cursor, struct17 *input, struct17 *destination, s32 count) {
+    f32 matrix[4][4];
+    s32 translationY;
+    s32 translationZ;
+    f32 *x;
+    f32 *y;
+    f32 *z;
 
-    func_150A8050(mtx, *(f32 *)(arg0 + 0), *(f32 *)(arg0 + 4), *(f32 *)(arg0 + 8));
-    mtx[3][0] = *(s16 *)(arg0 + 0x10);
-    mtx[3][1] = *(s16 *)(arg0 + 0x12);
-    mtx[3][2] = *(s16 *)(arg0 + 0x14);
+    func_150A8050(matrix, *(f32 *)(cursor + 0), *(f32 *)(cursor + 4), *(f32 *)(cursor + 8));
+    x = &destination->unk0;
+    y = &destination->unk4;
+    z = &destination->unk8;
+    matrix[3][0] = *(s16 *)(cursor + 0x10);
+    translationY = *(s16 *)(cursor + 0x12);
+    matrix[3][1] = translationY;
+    translationZ = *(s16 *)(cursor + 0x14);
+    matrix[3][2] = translationZ;
 
-    while (arg3 > 0) {
-        func_150A7960(mtx, arg1->unk0, arg1->unk4, arg1->unk8, &arg2->unk0, &arg2->unk4, &arg2->unk8);
-        arg3--;
-        arg1++;
-        arg2++;
-    }
+    /* Keep the source reload on the positive-count path. */
+    if (count > 0) goto transform;
+    return;
+transform:
+    cursor = (u8 *)input;
+    do {
+        func_150A7960(matrix, ((struct17 *)cursor)->unk0, ((struct17 *)cursor)->unk4, ((struct17 *)cursor)->unk8, x, y, z);
+        count--;
+        cursor += 12;
+        x += 3;
+        y += 3;
+        z += 3;
+    } while (count > 0);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15145EA4.s. */
 s32 func_15145EA4() {

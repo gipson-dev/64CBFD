@@ -21,7 +21,32 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest point-list lifetime match:
+Latest point-batch lifetime match:
+[Note 1098](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md).
+`func_15145DB4` recovers the original descriptor/source phase, three twelve-
+byte-stride coordinate cursors and source reload only for positive counts.
+Complete C60/frame `0x98`/matrix `sp+0x58` under unchanged O2/g3/MIPS2;
+17 raw differences, down from 60 across the old padded slot. Seventeen
+expected-word guards close saved/halfword-register cycles and a three-store
+prologue permutation; all 60 normalized words match, with no private-offset,
+FP-register, relocation, insertion, omission or ABI changes. Meaningful signed
+translation temporaries recover the frame; a plain-C label preserves the gate.
+1,792 guest, 768 connected original-helper, 5,376 incoming-home and 524,296
+native cases qualify, plus 384 private-overlap cases (368 completed, 16 matched
+faults), seven public-storage negatives and a lazy-home negative. All 119
+controls remain raw nonmatching; 2,856 bounded candidate executions qualify.
+Eight pre-install tests pass in 128.524 seconds. US ELF audit changes only target
+across 6,042 retail slots / 6,058 symbols; other bodies/addresses/extents/16
+overflows/protected sections/720 data owners and previous 11,025 guards stay
+intact, new guard count 11,042. Exact total 3,362/5,466 (61.51%), Game
+2,689/4,793 (56.10%), 2,104 different, zero drift; conversions unchanged.
+All 43 combined tests pass in 460.335 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 80-document / 3,936-relative-link checks pass,
+zero broken links. Next: 117-word matrix/list wrapper
+`func_15145EA4`, still a zero-return placeholder. Translator scheduling and
+sampler remain open. No sibling/Release/save/runtime/hardware/push action.
+
+Previous point-list lifetime match:
 [Note 1097](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md).
 `func_15145CD0` reuses the descriptor cursor for the input list after its final
 descriptor read. Complete C57/frame `0x88` under unchanged O2/g3/MIPS2;

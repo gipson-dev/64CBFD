@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-07 Game Point-Batch Transform Lifetime Match
+
+[Note 1098](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md):
+Recover `func_15145DB4`'s descriptor/source phase, three coordinate cursors,
+original matrix/frame and lazy positive-count source reload. Complete C60/
+frame `0x98`, unchanged O2/g3/MIPS2, 17 raw differences versus the old padded
+slot's 60. Seventeen closed register-cycle/prologue-store guards match all 60
+words without private-offset, FP-register, relocation or instruction edits.
+Guest/full-memory/original-helper/home/native/private-overlap/negative/owner/
+padder/rebased-call gates qualify; 119 controls, none raw exact. Eight corrected
+pre-install tests pass in 128.524 seconds. US ELF changes only target; 6,041
+other retail bodies, all addresses/extents/16 overflows/protected sections/720
+data owners and previous 11,025 guards stay intact; new guard count 11,042.
+Exact total 3,362/5,466 (61.51%), Game 2,689/4,793 (56.10%), 2,104 different,
+zero drift; conversions unchanged. All 43 combined tests pass in 460.335
+seconds, zero skips/errors/failures; tools/syntax/whitespace and 80-document /
+3,936-relative-link checks pass, zero broken links.
+README aggregate rows only; next 117-word
+matrix/list wrapper `func_15145EA4`. Translator/sampler remain open.
+No sibling/frozen Release/save/runtime/hardware/push work.
+
 ## 2026-10-07 Game Point-List Transform Lifetime Match
 
 [Note 1097](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md):

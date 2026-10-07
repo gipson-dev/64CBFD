@@ -51,7 +51,20 @@ confirmed.
 
 ## Planning and history
 
-- [Latest point-list lifetime match](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md):
+- [Latest point-batch lifetime match](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md):
+  Complete C60/frame `0x98`, original matrix and lazy source reload;
+  17 register-cycle/independent-store guards, no private-offset, FP-register,
+  relocation or instruction edits. Guest/full-memory/home/native/private-
+  overlap/negative/owner/padder/rebased-call gates qualify, 119 controls, none
+  raw exact. Eight corrected pre-install tests pass in 128.524 seconds.
+  Only target changes; other bodies/addresses/extents/overflows/data/prior
+  guards intact. Exact total 3,362, Game 2,689, 2,104 different, zero drift;
+  conversions unchanged. All 43 combined tests pass in 460.335 seconds, zero
+  skips/errors/failures; tools/syntax/whitespace and 80-document /
+  3,936-relative-link checks pass, zero broken links. Next 117-word matrix/list wrapper
+  `func_15145EA4`, translator/sampler still open.
+
+- [Previous point-list lifetime match](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md):
   Descriptor/input cursor phases recover C57/frame `0x88`, both incoming-list
   reloads and original private offsets. Nineteen closed register-cycle and
   independent prologue guards match all 57 words, no relocation/instruction

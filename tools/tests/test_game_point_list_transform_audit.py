@@ -1,4 +1,4 @@
-"""Bounded public effects and the still-open pointer-list saved-register lifetime."""
+"""Historical public effects and the installed pointer-list lifetime match."""
 
 import csv
 import itertools

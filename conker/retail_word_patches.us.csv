@@ -11024,3 +11024,20 @@ game_16EE20,func_15145CD0,0xB8,0x2652FFFF,0x2610FFFF,-,-,Normalize point-list cl
 game_16EE20,func_15145CD0,0xBC,0x26100004,0x26310004,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
 game_16EE20,func_15145CD0,0xC0,0x1E40FFF1,0x1E00FFF1,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
 game_16EE20,func_15145CD0,0xC4,0x26310004,0x26520004,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145DB4,0x8,0xAFB40034,0xAFB2002C,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x14,0x00E0A025,0x00E09025,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x20,0xAFB30030,0xAFB40034,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x24,0xAFB2002C,0xAFB30030,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x54,0x26320004,0x26330004,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x58,0x26330008,0x26340008,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x64,0x86020012,0x860F0012,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x68,0x44824000,0x448F4000,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x78,0x86030014,0x86180014,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x7C,0x44838000,0x44988000,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0x88,0x1A800010,0x1A400010,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0xA0,0xAFB30018,0xAFB40018,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0xA4,0xAFB20014,0xAFB30014,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0xB4,0x2694FFFF,0x2652FFFF,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0xC0,0x2652000C,0x2673000C,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0xC4,0x1E80FFF3,0x1E40FFF3,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false
+game_16EE20,func_15145DB4,0xC8,0x2673000C,0x2694000C,-,-,Normalize point-batch closed register cycles and independent saved-register store schedule,,,false

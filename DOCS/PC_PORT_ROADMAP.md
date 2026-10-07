@@ -1,5 +1,27 @@
 # PC Port Roadmap located in another project folder
 
+## Game Point-Batch Transform Lifetime Match - 2026-10-07
+
+[Note 1098](WORKING_NOTES/1098-game-point-batch-transform-lifetime-match-20261007.md):
+`func_15145DB4` is complete C60/frame `0x98`, unchanged O2/g3/MIPS2, original
+matrix `sp+0x58` and positive-only source reload; seventeen raw allocation words.
+
+- [x] Recover descriptor/source phases, three real twelve-byte coordinate cursors and meaningful signed translation temporaries.
+- [x] Retain 119 meaningful controls, none raw exact, and qualify 2,856 bounded candidate executions.
+- [x] Qualify 1,792 guest, 768 connected original-helper, 5,376 home-readback and 524,296 native cases plus seven effective public-storage negatives.
+- [x] Qualify 384 private-overlap cases, including sixteen matched required faults, sixteen old-layout output counterexamples and sixteen old-body missing faults.
+- [x] Pin eighteen required-storage, 28 removed-home and four unused-record fixtures; nonpositive counts skip the source home, destination home remains required; reject the eager-home negative.
+- [x] Prove/install seventeen closed register-cycle/save-store guards with no private-offset, FP-register, relocation or instruction edits; preserve owner/88 neighbors/pools/relocations/two warnings and both rebased calls.
+- [x] Pass eight corrected pre-install tests in 128.524 seconds, zero skips/errors/failures.
+- [x] Rebuild/audit all 6,058 symbols / 6,042 slots / 16 overflows / 720 data owners; only target changes, all addresses/extents/prior guards intact, new guard count 11,042.
+- [x] Update README aggregates: total 3,362, Game 2,689 (56.10%), 2,104 different, zero drift; conversions unchanged.
+- [x] Pass all 43 combined tests in 460.335 seconds, zero skips/errors/failures, plus tools/syntax/whitespace and 80-document / 3,936-relative-link gates, zero broken links.
+- [ ] Recover/match 117-word matrix/list wrapper `func_15145EA4`, including fixed/float matrix routes, null/zero points, lazy reads and connected converter/translation/point-helper behavior.
+- [ ] Match translator scheduling and sampler per-path RA/RNG-byte lifetime; no new controls or installation for either here.
+
+This is guest matching progress, not PC-port/runtime/hardware acceptance.
+No sibling/frozen Release/save/runtime/push work.
+
 ## Game Point-List Transform Lifetime Match - 2026-10-07
 
 [Note 1097](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md):
@@ -14,7 +36,7 @@ C57/frame `0x88`, unchanged O2/g3/MIPS2; 19 raw allocation/scheduling words.
 - [x] Rebuild/audit all 6,058 symbols / 6,042 slots / 16 overflows / 720 data owners; only target changes, all addresses/extents/prior guards intact, new guard count 11,025.
 - [x] Update README aggregates: total 3,361, Game 2,688 (56.08%), 2,105 different, zero drift; conversions unchanged.
 - [x] Pass all 34 combined tests in 319.291 seconds, zero skips/errors/failures, plus tools/syntax/whitespace and 79-document / 3,924-relative-link gates, zero broken links.
-- [ ] Recover/match contiguous point-batch transform `func_15145DB4` without importing the pointer-list ABI into its record-stride loop.
+- [x] Recover/match contiguous point-batch transform `func_15145DB4` without importing the pointer-list ABI into its record-stride loop; completed in Note 1098.
 - [ ] Match translator `func_15142314` scheduling; sampler `func_151432BC` exit/RNG lifetime remains open.
 
 This is guest matching progress, not PC-port/runtime/hardware acceptance.
