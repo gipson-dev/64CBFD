@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Area-sampler recovery, not installed:
+[Note 1074](WORKING_NOTES/1074-game-area-sampler-qualified-recovery-20261006.md).
+`func_151432BC` now has a qualified signed-descriptor/five-input C candidate:
+252 words, original frame0x50, 109 positional differences against254 retail
+words. Remaining work is two shortened block exits/shared RA reload and the
+circle RNG-byte store schedule. No broad guards, source/profile changes or
+new matching count. Ten tests pass in18.864s:1024 independent guest cases,
+48 conversion controls,1536 original-angle cases,64 complete original caller
+cases,256 actual32-bit native cases, six negatives and copied-owner gates.
+Candidate and original preserve external writes/calls and saved state under
+these bounded tests; general FCSR/real RNG/gameplay remain unqualified.
+Root README and production totals remain Note1073. See the note's resume steps.
+Final24-test neighboring regression passes in34.986s, zero skips/errors/failures;
+152 compiler controls find no exact candidate. All6059 production slots,
+protected sections/720 data owners/10842 guards unchanged;56 docs/3633 relative
+links/zero broken. Tools/syntax/diff checks pass. No production rebuild or push.
+
 Point-transform assembly-to-C match:
 [Note1073](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md)
 converts `func_15143134`:98 words/frame0x78, typed three-input ABI, live

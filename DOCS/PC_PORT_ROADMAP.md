@@ -1,5 +1,27 @@
 # PC Port Roadmap located in another project folder
 
+## Game Area Sampler Recovery - 2026-10-06
+
+[Note 1074](WORKING_NOTES/1074-game-area-sampler-qualified-recovery-20261006.md):
+qualified candidate for `func_151432BC`,252 words/frame0x50 versus254 retail
+words,109 positional differences. Ten tests pass; all production totals and
+root README remain Note1073. No installed source, guards or profile change.
+Final24-test regression passes in34.986s, zero skips/errors/failures;
+152 compiler controls/no exact form. All6059 slots/protected sections/720
+owners/10842 guards unchanged;56 documents/3633 relative links/zero broken.
+
+- [x] Recover signed descriptor, float angle, five-input ABI and four modes.
+- [x] Qualify unsigned conversion, live callback fields and output aliases.
+- [x] Execute original angle helper and complete20-word `func_151A8F1C` caller.
+- [x] Qualify actual32-bit C caller, semantic negatives and copied-owner neighbors.
+- [ ] Recover two per-path RA reloads and circle RNG-byte scheduling from C.
+- [ ] Qualify the complete slot and actual padder/relocations before installation.
+- [ ] Install, rebuild/audit and refresh matching aggregates only when qualified.
+
+This is an uninstalled recovery, not an additional byte match or host/runtime
+acceptance. General FCSR, real RNG and gameplay remain outside the bounded tests.
+No sibling/frozen Release/save/runtime or push; oriented matrix work stays open.
+
 ## Game Point Transform Assembly To C - 2026-10-06
 
 [Note1073](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md):

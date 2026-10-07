@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Area Sampler Recovery
+
+[Note 1074](WORKING_NOTES/1074-game-area-sampler-qualified-recovery-20261006.md):
+bank compiler driver and ten qualification tests for `func_151432BC` without
+installing an incomplete match. Candidate252 words/frame0x50 versus retail254;
+109 positional differences, concentrated in shortened exits/block shifts and
+RNG-byte scheduling. Signed local descriptor and unsigned angle conversion
+replace the draft's incorrect shared types in the candidate only.
+Independent guest/native/original-angle/complete-caller cases and six negatives
+qualify the recovered public behavior; copied owner preserves all88 neighbors,
+624-byte pool and two warnings. Production and root README stay unchanged.
+Next:recover retail per-path RA reloads and the two circle-byte store schedules.
+No new guards/profiles, matching count, sibling/Release/save/runtime or push.
+Final24-test regression passes in34.986s with zero skips/errors/failures;
+152 controls/no exact form, all6059 slots/protected sections/720 owners/10842
+guards unchanged.56 documents/3633 relative links/zero broken; tool/syntax/diff
+checks pass. Prior92-test post-link result is historical, not re-run this turn.
+
 ## 2026-10-06 Game Point Transform Assembly To C
 
 [Note1073](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md):

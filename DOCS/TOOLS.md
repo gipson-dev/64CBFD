@@ -4,6 +4,31 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Area-sampler recovery controls
+
+[Driver](../tools/experiments/game_area_sampler_candidates.py) retains38 forms
+across four SDK profiles (152 controls), including switch/exit structure,
+scratch lifetimes, RNG temporaries, signed flags and scaling alternatives.
+Selected candidate252 words/frame0x50, not yet254-word retail. Integer scaling
+recovers the count but not the arithmetic sequence. No guards/profiles installed.
+[Ten tests](../tools/tests/test_game_area_sampler_recovery.py) cover1024
+independent-reference guest cases,48 bounded conversion cases,1536 original
+angle-helper cases,64 complete original caller cases,256 native cases,
+six compiled negatives and copied-owner/pool/warning preservation.
+Native conversion inputs are finite and nonnegative within the unsigned domain;
+invalid conversion paths are guest-only bounded models, not FCSR emulation.
+
+```sh
+python3 -m tools.experiments.game_area_sampler_candidates
+python3 -m unittest tools.tests.test_game_area_sampler_recovery -v
+```
+
+Ignored receipts:`conker/build/game-area-sampler/` and
+`conker/build/game-area-sampler-test/`; see
+[Note 1074](WORKING_NOTES/1074-game-area-sampler-qualified-recovery-20261006.md).
+This suite deliberately checks that the candidate is uninstalled and no target
+guards exist. Update that gate only with a qualified future installation.
+
 ## Point-transform compiler and diagnostic controls
 
 [Driver](../tools/experiments/game_point_transform_candidates.py):17 source

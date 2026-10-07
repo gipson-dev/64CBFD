@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-06 ([Note 1074](WORKING_NOTES/1074-game-area-sampler-qualified-recovery-20261006.md)):
+`func_151432BC`:qualified, uninstalled252-word/frame0x50 C sampler;
+retail254 words,109 positional differences. Recover signed descriptor fields,
+float angle/unsigned conversion, four modes and live callback/output effects.
+Ten tests pass in18.864s:1024 independent guest/48 conversion/1536 original
+angle-helper/64 complete original caller/256 actual native cases; six negatives,
+copied owner preserves88 neighbors/624-byte pool/two warnings. Production,
+guard CSV, profiles and root README unchanged; no additional match counted.
+Next recover two per-path RA reloads and circle RNG-byte store scheduling.
+No sibling/Release/save/runtime, general FCSR/hardware/gameplay or push.
+All24 final neighboring tests pass in34.986s, zero skips/errors/failures;
+152 compiler controls/no exact form. All6059 slots/protected sections/720 data
+owners/10842 guards unchanged;56 docs/3633 relative links/zero broken.
+Tools/syntax/diff checks pass; no production rebuild, new match or README edit.
+
 2026-10-06 ([Note1073](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md)):
 `func_15143134`:original assembly converted to98-word/frame0x78 semantic C;
 three-input ABI, status/diagnostic lifetime and fixed/float/translation paths.
