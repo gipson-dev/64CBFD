@@ -51,6 +51,15 @@ confirmed.
 
 ## Planning and history
 
+- [Latest qualified matrix translation recovery](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md):
+  Correct high/low float stages, safe scaling/address wrap and sequential
+  aliases; complete C49/frame0/no pool, no guards. **Not byte-exact**, 34
+  differences remain; 152 controls/zero matches. Guest/native/original-parent/
+  negative/owner/padder/relocation gates qualify. Only target changes; matching/
+  conversions/README aggregates unchanged. Translator scheduling remains open.
+  38 tests pass in 322.863 seconds; strengthened negative/tool/syntax/whitespace/
+  77-document/3,897-relative-link gates pass, zero broken links.
+
 - [Latest primitive-color direct match](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md):
   All 77 words/frame `0x8` direct under unchanged O2/g3, SDK macro, no guards.
   Six-field lazy gate, 48 controls/one fit; full-effect guest/native/incoming-

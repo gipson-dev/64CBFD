@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-07 Game Matrix Translation Qualified Recovery
+
+[Note 1095](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md):
+Recover `func_15142314`'s separate high/low float conversions, safe signed-high
+scaling, unsigned32 addressing and sequential alias effects. Complete C49/
+frame0/no pool, unchanged O2/g3/MIPS2, no guards. **Not byte-exact**: 34
+differences, down from 46; all 152 controls remain nonmatching. Guest/full-
+effect/native/original-parent/negative/owner/padder/flag-relocation gates
+qualify. US ELF/audit changes only target; other bodies/addresses/extents/
+overflows/data/11,006 guards unchanged. Matching total 3,360, Game 2,687,
+2,106 different, zero drift; conversions/README aggregates unchanged.
+38 tests pass in 322.863 seconds; strengthened negative gate and tools/syntax/
+whitespace/77-document/3,897-relative-link checks pass, zero broken links.
+Continue translator constant/branch/return scheduling, sampler still open.
+No sibling/frozen Release/save/runtime/rendering/hardware acceptance or push.
+
 ## 2026-10-07 Game Primitive Color Direct Match
 
 [Note 1094](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md):

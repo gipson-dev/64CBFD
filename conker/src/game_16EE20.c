@@ -433,18 +433,19 @@ s32 func_151422F8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     return arg4;
 }
 
-void func_15142314(u8 *arg0, s32 arg1, f32 *arg2) {
-    u8 *ptr = arg0 + (arg1 << 6);
+void func_15142314(u8 *matrix, s32 index, f32 *output) {
+    u8 *selected;
     f32 scale = 1.0f / 65536.0f;
-
     if (D_800C3E90 != 0) {
-        arg2[0] = (f32)(((*(s16 *)(ptr + 0x18)) << 16) + *(s16 *)(ptr + 0x38)) * scale;
-        arg2[1] = (f32)(((*(s16 *)(ptr + 0x1A)) << 16) + *(s16 *)(ptr + 0x3A)) * scale;
-        arg2[2] = (f32)(((*(s16 *)(ptr + 0x1C)) << 16) + *(s16 *)(ptr + 0x3C)) * scale;
+        selected = (u8 *)((u32)matrix + ((u32)index << 6));
+        output[0] = ((f32)(*(s16 *)(selected + 0x18) * 65536) + (f32)*(s16 *)(selected + 0x38)) * scale;
+        output[1] = ((f32)(*(s16 *)(selected + 0x1A) * 65536) + (f32)*(s16 *)(selected + 0x3A)) * scale;
+        output[2] = ((f32)(*(s16 *)(selected + 0x1C) * 65536) + (f32)*(s16 *)(selected + 0x3C)) * scale;
     } else {
-        arg2[0] = *(f32 *)(ptr + 0x30);
-        arg2[1] = *(f32 *)(ptr + 0x34);
-        arg2[2] = *(f32 *)(ptr + 0x38);
+        selected = (u8 *)((u32)matrix + ((u32)index << 6));
+        output[0] = *(f32 *)(selected + 0x30);
+        output[1] = *(f32 *)(selected + 0x34);
+        output[2] = *(f32 *)(selected + 0x38);
     }
 }
 f32 func_151423D8(u8 arg0) {

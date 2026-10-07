@@ -1,5 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix Translation Qualified Recovery - 2026-10-07
+
+[Note 1095](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md):
+`func_15142314` is qualified C49/frame0/no pool, unchanged O2/g3/MIPS2, no guards.
+**Not byte-exact**: 34 differences remain, down from 46; no matching increment.
+
+- [x] Recover separate signed-high/low float conversions before addition and safe signed-high multiplication.
+- [x] Recover unsigned32 matrix addressing and sequential output/input/flag aliases without changing the ABI.
+- [x] Qualify 65,536 guest halfword tuples / 20,576 edge-alias / 66,816 native / 1,152 complete parent null/zero-route cases and seven negatives.
+- [x] Retain 152 meaningful primary/flow/temporary/ISA-access measurements, none exact, with bounded public-effect qualification.
+- [x] Preserve copied owner/88 neighbors/pools/relocations/two warnings; bind real padder/full slot/rebased flag.
+- [x] Install/rebuild and audit all bodies/addresses/extents/overflows/data/11,006 guards; matching/conversions/README aggregates unchanged.
+- [x] Pass 38 combined translator/point/oriented-matrix/pool/padder tests in 322.863 seconds, strengthened public-storage/wrong-sign negatives and final tool/syntax/whitespace gates; 77 documents / 3,897 relative links, zero broken.
+- [ ] Match translator constant/ordinary-branch/return-delay scheduling while preserving the recovered arithmetic and aliases.
+- [ ] Recover sampler `func_151432BC`'s two per-path RA loads and circle RNG-byte schedule before installation.
+
+This is qualified guest C recovery, not byte matching or PC-port/hardware acceptance.
+No sibling/frozen Release/save/runtime/push work.
+
 ## Game Primitive Color Direct Match - 2026-10-07
 
 [Note 1094](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md):

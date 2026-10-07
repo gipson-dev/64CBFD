@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-07 ([Note 1095](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md)):
+`func_15142314` recovers separate high/low float conversion, safe scaling,
+unsigned32 address wrap and sequential outputs. Complete C49/frame0/no pool,
+unchanged O2/g3/MIPS2, no guards; **not exact**, 34 differences versus old 46.
+152 controls/zero matches, 65,536 guest halfword tuples, 20,576 alias/edge,
+66,816 native and 1,152 original-parent null/zero-route cases qualify, plus
+seven negatives/owner/padder/flag relocation. Only target changes; all other
+bodies/addresses/extents/overflows/data/11,006 guards unchanged. Matching/
+conversions/README aggregates unchanged: total 3,360, Game 2,687, zero drift.
+38 tests pass in 322.863 seconds; strengthened negative gate, tools/syntax/
+whitespace and 77-document / 3,897-relative-link checks pass, zero broken.
+Continue translator constant/branch/return-delay scheduling; sampler untouched.
+No sibling/Release/save/runtime/push claim.
+
 2026-10-07 ([Note 1094](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md)):
 `func_15142CF0` is direct C77/frame `0x8`, unchanged O2/g3, no guards. Positive
 six-field gate/SDK macro recover all words; 48 controls/one fit. 174,720 guest,

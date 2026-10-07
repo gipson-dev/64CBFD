@@ -21,6 +21,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest qualified matrix translation recovery, **not byte-exact**:
+[Note 1095](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md).
+`func_15142314` now restores separate float conversions before addition,
+safe signed-high multiplication, unsigned32 address wrap and sequential
+outputs. Complete C49/frame0/no pool, unchanged O2/g3/MIPS2, no guards.
+34 word differences remain, down from 46; 152 controls, none exact. 65,536
+halfword guest tuples, 20,576 aliases/edges, 66,816 native and 1,152 complete
+parent null/zero-route cases qualify, plus seven negatives and owner/padder/
+flag-relocation gates. Only target changes across 6,042 slots / 6,058 symbols;
+other bodies/addresses/extents/overflows/data/11,006 guards unchanged. Converted/
+matching totals unchanged: total 3,360, Game 2,687, 2,106 different, zero drift.
+38 tests pass in 322.863 seconds, zero skips/errors/failures; strengthened
+public-storage/wrong-sign negative gate also passes. Tools/syntax/whitespace
+and 77-document / 3,897-relative-link gates pass, zero broken links.
+README aggregates already current and unchanged. Continue this translator's
+constant/ordinary-branch/return-delay schedule; do not treat recovery as a match.
+Sampler exits/RNG remain untouched. No sibling/Release/save/runtime/push claim.
+
 Latest cached primitive-color direct match:
 [Note 1094](WORKING_NOTES/1094-game-cached-primitive-color-direct-match-20261007.md).
 `func_15142CF0` emits all 77 words/frame `0x8` directly under unchanged O2/g3,

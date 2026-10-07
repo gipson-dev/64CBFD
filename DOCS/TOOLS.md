@@ -4,6 +4,34 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Matrix translation recovery controls
+
+[Candidate driver](../tools/experiments/game_matrix_translation_candidates.py)
+retains 64 primary, 48 flow, 24 scalar-temporary and 16 ISA/access measurements.
+None of the 152 is exact; selected C49/frame0/no pool/O2/g3/MIPS2 has 34
+differences, no guards. [Nine tests](../tools/tests/test_game_matrix_translation_recovery.py)
+bind 65,536 complete-effect signed-halfword tuples, 20,576 aliases/edges,
+66,816 actual native cases, 1,152 complete original-parent null/zero-route
+cases, seven effective negatives, 3,648 bounded candidate executions and
+owner/padder/flag-relocation/installed-body gates. General FCSR/hardware/64-bit
+host acceptance and every control's read-order identity are not claimed.
+See [Note 1095](WORKING_NOTES/1095-game-matrix-translation-qualified-recovery-20261007.md).
+The combined translator/point/oriented-matrix/pool/padder regression passes
+38 tests in 322.863 seconds. The strengthened public-storage/wrong-sign
+negative gate also passes; tools/syntax/whitespace and 77-document /
+3,897-relative-link checks pass, zero broken links.
+
+```sh
+python3 -m tools.experiments.game_matrix_translation_candidates
+python3 -m tools.experiments.game_matrix_translation_candidates --flow
+python3 -m tools.experiments.game_matrix_translation_candidates --temporaries
+python3 -m tools.experiments.game_matrix_translation_candidates --access
+python3 -m unittest tools.tests.test_game_matrix_translation_recovery tools.tests.test_game_point_transform_match tools.tests.test_game_oriented_matrix_match tools.tests.test_game_owner_pool tools.tests.test_pad_c_object_word_patches -v
+```
+
+Ignored receipts: `conker/build/game-matrix-translation/` and
+`conker/build/game-matrix-translation-test/`.
+
 ## Cached primitive color controls
 
 [Candidate driver](../tools/experiments/game_cached_primitive_color_candidates.py)
