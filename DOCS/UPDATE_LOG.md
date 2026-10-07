@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-07 Game Sphere Callee Frame Alias Audit
+
+[Note 1085](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md):
+add independent direct-helper full-frame reference and six tests. Complete
+memory/ordered writes qualify 1,404 external-alias and 1,296 private-output/home
+cases against each implementation's layout. Early point pointers and late
+distance-pointer homes are confirmed; retail second-X 24.0 versus trial 10.0
+remains. Forty-eight new compiler controls, none exact; selected C stays
+126 words/frame `0x70`, 60 differences, uninstalled. Six tests pass in 6.698
+seconds. Production/counts/main README aggregates unchanged; next allocation/
+lifetime evidence and original private slots, not private-offset normalization.
+No native frame/full-float/FCSR/NaN/hardware/gameplay/host/sibling/push claim.
+All 46 focused tests pass in 212.519 seconds, zero skips/errors/failures;
+final retained audit, tools/syntax/whitespace and 67-document/3,762-link gate pass.
+
 ## 2026-10-07 Game Sphere Callee Storage Recovery
 
 [Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md):

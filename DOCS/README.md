@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest sphere-callee frame audit](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md):
+  Complete private memory, ordered writes and helper homes checked in 2,700
+  direct-helper cases against separate retail/trial layouts. Forty-eight new
+  controls recover no match; original assembly/counts remain unchanged. Next
+  original private allocation/lifetimes; external success is not frame equivalence.
+
 - [Latest sphere-callee storage recovery](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md):
   `func_151452C4`, uninstalled 126 words/frame `0x70`, 60 differences and 64
   compiler controls. 2,808 finite external-alias cases pass, but a private-slot

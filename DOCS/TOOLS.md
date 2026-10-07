@@ -883,6 +883,24 @@ See [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-2
 
 ## Projection-wrapper compiler audit
 
+### Sphere callee full-frame audit
+
+[Layout driver](../tools/experiments/game_sphere_callee_layout_candidates.py)
+screens 48 meaningful workspace/type/scalar-initializer controls. None recovers
+the original private layout; no production profile/source/guard changes.
+[Reference](../tools/tests/game_sphere_frame_reference.py) computes evolving
+frame snapshots, prologue/homes, rounded geometry, live private-copy rereads,
+late scalar pointers and dot arguments separately from the instruction oracle.
+[Six tests](../tools/tests/test_game_sphere_callee_frame_recovery.py) compare
+complete memory and ordered writes in 1,404 external-alias plus 1,296 private-
+output/home cases, pin the mismatch and fail closed on missing storage.
+Retail/trial use separate explicit layouts; equal private behavior is not claimed.
+Run `python3 -m tools.experiments.game_sphere_callee_layout_candidates`;
+requires ROM and IDO/MIPS tools. Ignored receipts under
+`conker/build/game-sphere-callee-layout-controls/` and
+`conker/build/game-sphere-callee-frame-test/`. See
+[Note 1085](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md).
+
 ### Sphere callee storage recovery
 
 [Callee driver](../tools/experiments/game_sphere_callee_candidates.py) reproduces

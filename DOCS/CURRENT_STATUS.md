@@ -21,6 +21,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest callee frame audit:
+[Note 1085](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md).
+1,404 direct-helper external-alias and 1,296 private-output/home cases now
+check complete memory and ordered writes against layout-specific references.
+Early point pointers and late distance-pointer homes are confirmed. Retail
+second-X 24.0 versus trial 10.0 remains an installation blocker. Forty-eight
+new meaningful layout controls recover no exact form. Six new tests pass in
+6.698 seconds. No production change or new matching increment. Next inspect
+IDO allocation/lifetimes and recover original private slots before installation.
+All 46 focused tests pass in 212.519 seconds, zero skips/errors/failures.
+Final retained audit, tools/syntax/whitespace and 67-document/3,762-link gate pass.
+
 Current callee recovery, not installed:
 [Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md).
 `func_151452C4` now fits 126 words/frame `0x70`, with 60 differences. Sixty-four

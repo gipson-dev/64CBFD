@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-07 ([Note 1085](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md)):
+`func_151452C4`: full-frame direct-helper reference now checks complete memory,
+all ordered writes, dot pointers and status. 1,404 external-alias plus 1,296
+private-output/home cases qualify each implementation's explicit layout, not
+equal retail/trial private behavior. Pin early point pointers, late distance
+homes and retail second-X 24.0 versus trial 10.0. Six new tests pass in 6.698
+seconds. Forty-eight workspace/type/initializer controls recover no exact form;
+126 words/frame `0x70`/60 differences and wrong private slots remain. Retain
+original assembly; all production slots/data/guards/counts and README aggregates
+unchanged. Next inspect allocation/lifetimes, not more equivalent declarations
+or private-offset patches. No native frame/full-float/hardware/gameplay claim.
+All 46 focused tests pass in 212.519 seconds, zero skips/errors/failures.
+Final retained audit, tools/syntax/whitespace and 67-document/3,762-link gate pass.
+
 2026-10-07 ([Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md)):
 `func_151452C4`: uninstalled C now fits 126 words/frame `0x70`, 60 differences;
 64 maintained compiler controls, none exact. Direction union recovers coordinate

@@ -1,5 +1,25 @@
 # PC Port Roadmap located in another project folder
 
+## Game Sphere Callee Frame Alias Audit - 2026-10-07
+
+[Note 1085](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md):
+`func_151452C4` remains uninstalled at 126 words/frame `0x70`, 60 differences.
+Retain exact production assembly; private-slot mismatch remains observable.
+
+- [x] Add independent direct-helper reference including private locals and argument homes.
+- [x] Compare complete memory/ordered writes for 1,404 external-alias cases.
+- [x] Qualify 1,296 private-output/home cases against each implementation's own layout.
+- [x] Pin early point pointers, late distance-pointer reloads and fail-closed fields.
+- [x] Retain 48 meaningful workspace/type/initializer controls, none exact.
+- [x] Pass focused regression, retained baseline audit and documentation/tool gates.
+- [ ] Recover original private offsets through C allocation/lifetimes, without padding or guards.
+- [ ] Establish retail/trial frame equivalence, then finish owner/caller/install/build gates.
+
+Six new tests pass in 6.698 seconds. Counts and main README aggregate rows remain
+unchanged. Layout-specific acceptance is not equal retail/trial private behavior.
+All 46 focused tests pass in 212.519 seconds, zero skips/errors/failures;
+tools/syntax/whitespace/final retained audit and 67-document/3,762-link gate pass.
+
 ## Game Sphere Callee Storage Recovery - 2026-10-07
 
 [Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md):
