@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-07 Game Actor Lookup Byte ABI Direct Match
+
+[Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md):
+`func_15142444` now emits all 44 words directly, frame `0x18`, original O2/g3,
+no guards. Nest final validity checks and recover the helper's byte ABI only in
+this owner. 62 source/ABI measurements, 17 direct fits; reference-backed guest,
+native typed-caller, actual original-helper, effective negatives and copied
+owner/padder/relocation gates pass. Protected sections, 720 data owners, 11,006
+guards and conversions unchanged. All 6,042 retail addresses/extents remain
+fixed; 6,040 other slots unchanged. Target overflow disappears, following
+overflow body is identical at -184 bytes, and its one-word trampoline target
+rebases. Exact total 3,357, Game 2,684 (56.00%), 2,109 different, zero drift.
+Root README aggregate rows only. Sampler: 16 scalar-scope controls remain
+identical C252/frame `0x50`/109 differences; no installation. Next sampler
+exit/RNG schedule or oriented builder; no sibling/Release/save/runtime/push work.
+All 44 focused tests pass in 156.500 seconds; tools/syntax/whitespace and
+73-document/3,843-relative-link gates pass, zero broken links.
+
 ## 2026-10-07 Game Scaled Sphere Query Direct Match
 
 [Note 1090](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md):

@@ -1,5 +1,26 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Lookup Direct Match - 2026-10-07
+
+[Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md):
+`func_15142444` is direct C44/frame `0x18`, no guards under unchanged O2/g3.
+Keep the retail byte helper declaration local to this owner.
+
+- [x] Retain 16 sampler scalar-lifetime controls: all identical C252/109, no match or installation.
+- [x] Recover actor-lookup nested exits and the original byte helper ABI; bank 62 measurements/17 direct fits.
+- [x] Qualify 24,552 guest, eight callback, 1,664 original-helper and 12,276 native cases plus six effective negatives.
+- [x] Preserve copied-owner 88 neighbors/pools/relocations/two warnings and bind actual padder/helper rebasing.
+- [x] Install the local ABI/body and rebuild the US ELF without shared-header/profile/padder/guard changes.
+- [x] Audit all 6,042 retail addresses/extents, 6,040 unchanged slots, protected sections/data/guards/conversions.
+- [x] Bind target-overflow removal and following overflow's -184-byte move / unchanged body / one-word trampoline rebase.
+- [x] Update README aggregates: total 3,357, Game 2,684, 2,109 different, zero drift.
+- [x] Pass all 44 tests / 156.500 seconds and final tool/syntax/whitespace/documentation gates.
+- [ ] Recover sampler `func_151432BC`'s two per-path RA loads and circle RNG-byte schedule before installation.
+- [ ] Finish oriented matrix `func_15142600`'s remaining original-profile private-layout match (Note 1070).
+
+This is guest decomp progress, not a new PC-port gameplay or Release acceptance.
+No sibling/frozen Release/save/runtime/push work.
+
 ## Game Scaled Sphere Query Direct Match - 2026-10-07
 
 [Note 1090](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md):

@@ -14,6 +14,7 @@ import unittest
 from pathlib import Path
 
 from tools.experiments import game_area_sampler_candidates as screen
+from tools.experiments import game_area_sampler_lifetime_candidates as lifetimes
 from tools.experiments.game_context_classifier_candidates import compile_owner
 from tools.pad_generated_object import parse_object
 from tools.tests.game_owner_pool import normalized_pools, assert_guard_history
@@ -223,6 +224,22 @@ class GameAreaSamplerRecoveryTests(unittest.TestCase):
         integer = next(r for r in records if r['name'] == 'storage-int-scale')
         self.assertEqual((integer['body_words'], integer['frame'], integer['differences']), (254, 80, 158))
         self.receipt('controls', dict(measurements=records, installed_profile_change=False))
+
+    def test_scalar_case_lifetimes_preserve_the_same_short_body(self):
+        records = []
+        forms = list(lifetimes.candidates())
+        self.assertEqual(len(forms), 16)
+        self.assertEqual(len({body for _, body in forms}), 16)
+        for name, body in forms:
+            record, words = screen.compile_candidate(self.root, self.output, name, body)
+            self.assertEqual((record['body_words'], record['frame'], record['differences']), (252, 80, 109), name)
+            self.assertEqual(words, self.words, name)
+            self.assertEqual(record['relocations'], self.record['relocations'], name)
+            self.assertEqual(record['diagnostics'], '')
+            self.assertEqual(record['profile'], 'o2g3')
+            records.append(record)
+        self.receipt('scalar-lifetimes', dict(controls=16, new_scoped_controls=14,
+            all_raw_words_identical=True, measurements=records))
 
     def test_four_modes_signed_fields_aliases_mutations_and_preserved_state(self):
         coverage, count = [set(), set()], 0

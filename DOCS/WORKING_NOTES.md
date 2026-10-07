@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-07 ([Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md)):
+`func_15142444` is direct C44/frame `0x18` under unchanged O2/g3, no guards.
+Nested final checks and the retail byte lookup ABI recover all words; keep the
+header correction owner-local. 62 measurements/17 direct fits, 24,552 guest,
+eight callback, 1,664 original-helper and 12,276 native cases qualify. Copied
+owner retains 88 neighbors/pools/relocations/two warnings; actual padder fits.
+US ELF/audit retains every retail address/extent and 6,040 other slots. Remove
+the old target overflow; following overflow moves -184 bytes with identical
+body and a single collateral trampoline rebase. Data/protected sections/11,006
+guards/conversion unchanged. Exact total 3,357, Game 2,684, 2,109 different,
+zero drift. Sampler's 16 new lifetime measurements all retain C252/109; no
+sampler installation. Next sampler exits/RNG scheduling or oriented matrix.
+All 44 focused tests / 156.500 seconds and final tools/syntax/whitespace/
+73-document/3,843-link gates pass; no broken links.
+README aggregates only; no sibling/Release/save/runtime/push work.
+
 2026-10-07 ([Note 1090](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md)):
 `func_15145AD8` is now installed as direct C110/frame `0x88`, all words exact
 under the existing O2/g3 profile, no target guards. Nested scale/reciprocal

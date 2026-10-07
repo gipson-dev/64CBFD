@@ -51,6 +51,16 @@ confirmed.
 
 ## Planning and history
 
+- [Latest actor-lookup direct match](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md):
+  All 44 words/frame `0x18` direct under O2/g3, original byte helper ABI,
+  no target guards. 62 controls/17 direct fits; guest/native/actual-helper,
+  copied-owner/padder and full linked audits qualify. Target overflow removed;
+  following body identical at -184 bytes with one collateral trampoline rebase.
+  All retail addresses/extents fixed; exact total 3,357, Game 2,684 (56.00%).
+  Sampler's 16 scalar-lifetime controls retain C252/109; do not install it.
+  All 44 focused tests pass in 156.500 seconds; final tools/documentation gates pass.
+  Next sampler exits/RNG schedule or oriented matrix (Note 1070).
+
 - [Latest scaled-sphere direct caller match](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md):
   Complete C110/frame `0x88`, all words direct under O2/g3, no target guards.
   Nested scale/reciprocal lifetimes recover the retail schedule and aliased capture.

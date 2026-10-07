@@ -21,6 +21,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest actor-lookup direct match:
+[Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md).
+`func_15142444` emits all 44 words/frame `0x18` directly under O2/g3, no guards.
+Nested final checks plus the original byte helper ABI recover its full exits;
+correct only this owner's helper declaration, not the shared header.
+62 source/ABI measurements, 17 exact forms; copied owner retains 88 neighbors,
+pools/relocations and two warnings. 24,552 reference-backed guest cases, eight
+callback cases, 1,664 complete original-helper cases and 12,276 native cases
+qualify. Helper coverage is 68/72, with four unreachable return-tail loads.
+US ELF rebuilt: all 6,042 retail addresses/extents fixed, 6,040 other slots
+unchanged. Target overflow removed; following overflow moves -184 bytes with
+identical body and one collateral trampoline word rebased. 6,058 linked symbols
+now include 16 compiler overflows; do not count overflows as retail slots.
+Protected sections/720 data owners/11,006 guards and conversion counts unchanged.
+Exact total 3,357/5,466 (61.42%), Game 2,684/4,793 (56.00%), 2,109 different,
+zero drift. README aggregate rows only. New sampler lifetime screen: 16 controls
+all identical C252/frame `0x50`/109 differences; sampler remains uninstalled.
+All 44 focused tests pass in 156.500 seconds, zero skips/errors/failures;
+tool/syntax/whitespace and 73-document/3,843-link gates pass, zero broken links.
+Next sampler exit/RNG schedule or oriented matrix `func_15142600` (Note 1070).
+No full-ROM/hardware/gameplay/host/helper-C/sibling/Release/save/runtime/push claim.
+
 Latest scaled-sphere direct caller match:
 [Note 1090](WORKING_NOTES/1090-game-scaled-sphere-query-direct-match-20261007.md).
 `func_15145AD8` now emits all 110 words directly from semantic C under the

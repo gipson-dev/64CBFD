@@ -2,8 +2,12 @@
 
 /* The retail checker receives complete words, not the legacy narrow ABI. */
 #define func_150A29C8 func_150A29C8_legacy_narrow_signature
+/* The retail actor lookup narrows its selector to an unsigned byte. */
+#define func_15083E90 func_15083E90_legacy_word_signature
 #include "functions.h"
 #undef func_150A29C8
+#undef func_15083E90
+extern u8 *func_15083E90(u8);
 /* This owner uses the retail pointer, not the legacy inline-array declaration. */
 #define D_800D3098 D_800D3098_legacy_array
 #include "variables.h"
@@ -476,13 +480,12 @@ void *func_15142444(u8 arg0, u8 *arg1) {
     }
 
     found = (u8 *)func_15083E90(arg0);
-    if (found == NULL) {
-        return NULL;
+    if (found != NULL) {
+        if (*(s32 *)(found + 0x1D4) != 0) {
+            return found;
+        }
     }
-    if (*(s32 *)(found + 0x1D4) == 0) {
-        return NULL;
-    }
-    return found;
+    return NULL;
 }
 void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     f32 cx, f32 cy, f32 cz, f32 tx, f32 ty, f32 tz) {

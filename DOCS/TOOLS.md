@@ -4,6 +4,37 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Actor lookup and sampler lifetime controls
+
+[Actor driver](../tools/experiments/game_actor_lookup_candidates.py) retains
+31 source forms under both word and byte lookup declarations: 62 unchanged
+O2/g3 measurements, 17 direct C44 matches under the retail byte declaration.
+[Ten tests](../tools/tests/test_game_actor_lookup_match.py) bind the direct slot,
+24,552 guest cases/full effects, eight callback cases, 1,664 original-helper
+cases, 12,276 actual native typed calls, six effective negatives, copied owner,
+real padding/alternate helper relocation, production source/history and the
+single collateral overflow-trampoline rebase. Helper source stays a placeholder;
+its original instructions execute in the connected guest fixtures.
+
+[Sampler lifetime driver](../tools/experiments/game_area_sampler_lifetime_candidates.py)
+adds 16 scalar case-scope measurements (14 new forms/two anchors) while retaining
+the original scratch. All raw words/relocations equal the existing short body.
+The [expanded eleven-test sampler suite](../tools/tests/test_game_area_sampler_recovery.py)
+pins C252/frame `0x50`/109 differences; no sampler installation or new guards.
+See [Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md).
+Final combined regression: 44 tests / 156.500 seconds, zero skips/errors/failures;
+tool/syntax/whitespace and 73-document/3,843-link gates pass, no broken links.
+
+```sh
+python3 -m tools.experiments.game_actor_lookup_candidates
+python3 -m tools.experiments.game_area_sampler_lifetime_candidates
+python3 -m unittest tools.tests.test_game_actor_lookup_match tools.tests.test_game_area_sampler_recovery -v
+```
+
+Ignored receipts: `conker/build/game-actor-lookup/`,
+`conker/build/game-actor-lookup-test/`, `conker/build/game-area-sampler-lifetimes/`
+and `conker/build/game-area-sampler-test/`.
+
 ## Scaled sphere caller recovery controls
 
 [Direct-match driver](../tools/experiments/game_scaled_sphere_query_address_view_candidates.py)
