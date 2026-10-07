@@ -1516,8 +1516,55 @@ s32 func_151451F0(struct17 *arg0, struct17 *arg1, struct17 *arg2,
         return 0;
     }
 }
-/* Original sphere-intersection assembly retained; C trial is not installed. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_151452C4.s")
+/* Note 1086: original private layout; checked FP/schedule guards only. */
+s32 func_151452C4(struct17 *arg0, struct17 *arg1, struct17 *arg2,
+    f32 arg3, struct17 *arg4, struct17 *arg5, f32 *arg6, f32 *arg7) {
+    f32 x;
+    f32 y;
+    f32 z;
+    union {struct17 point; f32 values[3];} direction;
+    struct17 origin;
+    f32 projection;
+    f32 radiusSquared;
+    f32 perpendicularSquared;
+    f32 root;
+    f32 first;
+    f32 second;
+    struct17 relative;
+
+    x = arg2->unk0 - arg0->unk0;
+    y = arg2->unk4 - arg0->unk4;
+    z = arg2->unk8 - arg0->unk8;
+    direction.point = *arg1;
+    origin = *arg0;
+    projection = x * direction.values[0] + y * direction.values[1] + z * direction.values[2];
+    radiusSquared = arg3 * arg3;
+    perpendicularSquared = x * x + y * y + z * z - projection * projection;
+    if (radiusSquared < perpendicularSquared) {
+        return 0;
+    }
+    root = sqrtf(radiusSquared - perpendicularSquared);
+    if (projection < root) {
+        root = -root;
+    }
+    first = projection - root;
+    second = projection + root;
+    arg4->unk0 = first * direction.values[0] + origin.unk0;
+    arg4->unk4 = first * direction.values[1] + origin.unk4;
+    arg4->unk8 = first * direction.values[2] + origin.unk8;
+    *arg6 = first;
+    arg5->unk0 = second * direction.values[0] + origin.unk0;
+    arg5->unk4 = second * direction.values[1] + origin.unk4;
+    arg5->unk8 = second * direction.values[2] + origin.unk8;
+    *arg7 = second;
+    relative.unk0 = arg4->unk0 - arg0->unk0;
+    relative.unk4 = arg4->unk4 - arg0->unk4;
+    relative.unk8 = arg4->unk8 - arg0->unk8;
+    if (func_15144A74((f32 *)&relative, (f32 *)arg1) < 0.0f) {
+        return 0;
+    }
+    return 1;
+}
 s32 func_151454BC(u8 arg0, f32 arg1, struct17 *arg2) {
     f32 tmp1;
     f32 tmp2;

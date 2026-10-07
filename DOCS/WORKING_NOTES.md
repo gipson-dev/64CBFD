@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-07 ([Note 1086](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md)):
+`func_151452C4` converted from restored assembly to semantic C, complete
+126-word slot/frame `0x70` exact. Meaningful declaration order plus direction
+union recover original private slots; the former 24.0/10.0 counterexample now
+returns 24.0 for both raw C and retail. 73 raw aligned words plus 53 checked
+FP/closed-schedule guards, no private/frame/branch/insert/omit changes.
+3,724 full-memory/operand-trace guest cases and 6,318 native finite external-
+alias calls qualify. Copied owner/pools/relocations/warnings and actual padder/
+alternate-target/stale gates pass. US ELF/audit preserves all 6,059 slots,
+720 data owners and 10,953 prior guards; 11,006 total. Converted +1/504 bytes:
+5,466/6,042, Game 4,793/5,321; exact 3,355/5,466, Game 2,682/4,793,
+2,111 different, zero drift. Main README aggregate rows only. Next 110-word
+`func_15145AD8`; no full-caller/FCSR/NaN/hardware/gameplay/host or sibling work.
+All 57 focused tests pass in 187.474 seconds, zero skips/errors/failures;
+final linked audit, tools/syntax/whitespace and 68-document/3,776-link gate pass.
+
 2026-10-07 ([Note 1085](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md)):
 `func_151452C4`: full-frame direct-helper reference now checks complete memory,
 all ordered writes, dot pointers and status. 1,404 external-alias plus 1,296

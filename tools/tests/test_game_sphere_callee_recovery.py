@@ -126,17 +126,18 @@ class GameSphereCalleeRecoveryTests(unittest.TestCase):
             bad = SphereOracle(words, memory, helper_args, connected, entry=screen.ENTRY).run()
             self.assertEqual((good.r[2], bad.r[2]), (1, 0), name)
 
-    def test_production_retains_original_assembly_and_has_no_target_guards(self):
+    def test_production_retains_original_words_with_new_allocation_body(self):
         production = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'), 'mips-linux-gnu-objdump')[0]
         self.assertEqual(production[screen.FUNCTION], self.retail)
         self.assertEqual(production[prior.FUNCTION], self.wrapper)
         self.assertEqual(production['func_15144A74'], self.dot)
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
-        self.assertIn('#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_151452C4.s")', source)
+        from tools.experiments import game_sphere_callee_allocation_candidates as allocation
+        self.assertIn(allocation.SELECTED, source)
         self.assertNotIn(screen.SELECTED, source)
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
-        self.assertFalse(any(row['function'] == screen.FUNCTION for row in guards))
+        self.assertEqual([row for row in guards if row['function'] == screen.FUNCTION], allocation.owner_guards())
 
 
 if __name__ == '__main__':

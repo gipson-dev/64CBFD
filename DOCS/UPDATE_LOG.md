@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-07 Game Sphere Callee Allocation Match
+
+[Note 1086](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md):
+convert `func_151452C4` from restored assembly to semantic sphere-intersection
+C, all 126 linked words/frame `0x70` exact. Meaningful local ordering plus
+direction union recover the actual private slots; the former alias blocker now
+agrees at 24.0. 73 raw aligned words plus 53 checked FP/closed-schedule guards,
+no private/frame/branch/insert/omit normalization. 3,724 full-memory/instruction-
+input guest cases, 6,318 native finite external-alias calls and copied-owner/
+padder/relocation/stale gates qualify. US ELF/fresh audit preserves all 6,059
+slots, 720 data owners and 10,953 prior guards; 11,006 total. Converted +1/504
+bytes, exact 3,355/5,466 total, Game 2,682/4,793, 2,111 different, zero drift.
+README aggregate rows only; check off superseded private-layout recovery work.
+Next active 110-word `func_15145AD8`; full-caller/FCSR/NaN/hardware/gameplay/
+host-adoption and sibling/frozen Release/save/runtime/push remain unclaimed.
+All 57 focused tests pass in 187.474 seconds, zero skips/errors/failures;
+final linked audit, tools/syntax/whitespace and 68-document/3,776-link gate pass.
+
 ## 2026-10-07 Game Sphere Callee Frame Alias Audit
 
 [Note 1085](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md):

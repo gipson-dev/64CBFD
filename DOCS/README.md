@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest sphere-callee allocation match](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md):
+  Semantic C replaces restored assembly; all 126 words/frame/private slots
+  exact. 53 checked FP/schedule guards, 3,724 guest and 6,318 native finite
+  cases. All linked slots preserved; conversion +1/504 bytes, Game exact
+  2,682/4,793. Next recover the complete 110-word `func_15145AD8` placeholder.
+
 - [Latest sphere-callee frame audit](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md):
   Complete private memory, ordered writes and helper homes checked in 2,700
   direct-helper cases against separate retail/trial layouts. Forty-eight new

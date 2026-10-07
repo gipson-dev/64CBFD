@@ -280,7 +280,8 @@ s32 func_151452C4(struct17 *a,struct17 *b,struct17 *c,f32 r,
         self.assertEqual(production[screen.CALLEE_FUNCTION], self.callee)
         self.assertEqual(production['func_15144A74'], self.dot)
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
-        self.assertIn('#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_151452C4.s")', source)
+        from tools.experiments import game_sphere_callee_allocation_candidates as allocation
+        self.assertIn(allocation.SELECTED, source)
         self.assertNotIn(screen.CALLEE_BODY, source)
 
     def test_callee_c_trial_bounded_finite_external_aliases_not_private_layout(self):
@@ -434,10 +435,7 @@ if(cases!=26244)return 3;
     def copied_owner(self):
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
         baseline = source.replace(screen.SELECTED, STUB).replace(screen.PROTOTYPE, 's32 func_151451F0();')
-        callee_proto = screen.DECLARATIONS.split('f32 func_15144A74')[0].rstrip()
-        baseline = baseline.replace(callee_proto, 's32 func_151452C4();')
         selected = baseline.replace(STUB, screen.SELECTED).replace('s32 func_151451F0();', screen.PROTOTYPE)
-        selected = selected.replace('s32 func_151452C4();', callee_proto)
         objects, warnings = [], []
         for name, body in (('baseline', baseline), ('selected', selected)):
             obj, warning = compile_owner(self.root, self.output, body, 'owner-' + name)
@@ -506,7 +504,7 @@ if(cases!=26244)return 3;
         self.assertEqual(functions[screen.FUNCTION], self.retail)
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
-        self.assertEqual(len(guards), 10953)
+        self.assertEqual(len(guards), 11006)
         self.assertFalse(any(g['function'] == screen.FUNCTION for g in guards))
 
 

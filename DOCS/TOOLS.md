@@ -4,6 +4,34 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Sphere callee allocation matching controls
+
+[Allocation driver](../tools/experiments/game_sphere_callee_allocation_candidates.py)
+retains 32 meaningful union/declaration/scalar-order controls and reads the
+bundled compiler's structured `.mdebug` frame/local records. Selected source
+recovers 126 words/frame `0x70`, direction/origin/relative private offsets
+`0x58/0x4C/0x28`, without padding or private-offset patches. 73 raw aligned words
+plus 53 expected-word guards normalize FP allocation and a closed 33-PC schedule;
+the dot-helper call relocation remains unchanged.
+[Eleven tests](../tools/tests/test_game_sphere_callee_allocation_match.py)
+check 3,724 full-memory guest cases, all instruction inputs through the exact
+permutation, 6,318 actual 32-bit native finite external-alias calls, copied
+owner/pools/warnings, original/alternate helper relocation and stale guards.
+Native cases do not model guest private-frame/home aliases. No full-float/FCSR/
+NaN/hardware/complete-caller/gameplay/host-adoption claim.
+
+```sh
+python3 -m tools.experiments.game_sphere_callee_allocation_candidates
+python3 -m unittest tools.tests.test_game_sphere_callee_allocation_match -v
+```
+
+Ignored receipts: `conker/build/game-sphere-callee-allocation-match/` and
+`conker/build/game-sphere-callee-allocation-test/`; see
+[Note 1086](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md).
+Exploratory compiler `-v` aborts on an unimplemented recomp `fprintf` format;
+normal compilation and structured allocation inspection work. No toolchain
+implementation or production compiler profile was changed.
+
 ## Secondary halfword output matching controls
 
 [Driver](../tools/experiments/game_secondary_output_candidates.py) retains96

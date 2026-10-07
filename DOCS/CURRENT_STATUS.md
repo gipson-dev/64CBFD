@@ -21,7 +21,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest callee frame audit:
+Latest callee allocation match:
+[Note 1086](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md).
+`func_151452C4` is now semantic C, all 126 linked words/frame `0x70` exact.
+Meaningful local order plus the direction union recover original private slots;
+raw C and retail both produce 24.0 in the former private-alias counterexample.
+73 raw aligned words plus 53 checked FP/closed-schedule guards; no private/frame/
+branch/insert/omit changes. 3,724 full-memory/operand-trace guest cases and
+6,318 native finite external-alias calls qualify. Copied owner/pools/warnings/
+relocations and actual padder/alternate-target/stale gates pass. US ELF/fresh
+audit preserves all 6,059 slots/protected sections/720 owners and 10,953 prior
+guards, 11,006 total. Converted +1/504 bytes: 5,466/6,042 (90.47%, bytes 85.61%),
+Game 4,793/5,321 (90.08%, bytes 84.94%). Exact 3,355/5,466 (61.38%), Game
+2,682/4,793 (55.96%), 2,111 different, zero drift. README aggregate rows only.
+Next active 110-word/frame `0x88` placeholder `func_15145AD8`; recover full
+ABI/dependency/private-output lifetimes before fitting and installation.
+No complete-caller/FCSR/NaN/hardware/gameplay/host adoption or sibling/frozen
+Release/save/runtime/push claim. Sampler/oriented work remains open.
+All 57 focused tests pass in 187.474 seconds, zero skips/errors/failures;
+final linked audit, tools/syntax/whitespace and 68-document/3,776-link gate pass.
+
+Historical callee frame audit, superseded by Note 1086:
 [Note 1085](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md).
 1,404 direct-helper external-alias and 1,296 private-output/home cases now
 check complete memory and ordered writes against layout-specific references.
@@ -33,7 +53,7 @@ IDO allocation/lifetimes and recover original private slots before installation.
 All 46 focused tests pass in 212.519 seconds, zero skips/errors/failures.
 Final retained audit, tools/syntax/whitespace and 67-document/3,762-link gate pass.
 
-Current callee recovery, not installed:
+Historical callee recovery, not installed:
 [Note 1084](WORKING_NOTES/1084-game-sphere-callee-storage-recovery-20261007.md).
 `func_151452C4` now fits 126 words/frame `0x70`, with 60 differences. Sixty-four
 compiler controls retain no exact form. Its direction/origin/relative private

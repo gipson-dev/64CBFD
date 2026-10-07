@@ -1,5 +1,28 @@
 # PC Port Roadmap located in another project folder
 
+## Game Sphere Callee Allocation Match - 2026-10-07
+
+[Note 1086](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md):
+`func_151452C4` converted from restored assembly to semantic C, all 126 words
+exact, original frame/private slots recovered without offset guards or padding.
+73 raw aligned words and 53 checked FP/closed-schedule normalizations.
+
+- [x] Recover original private allocation with meaningful local order and direction union.
+- [x] Establish full retail/raw/guarded memory equivalence, including the former private-alias blocker.
+- [x] Qualify 3,724 guest cases, mapped instruction inputs and 6,318 native finite calls.
+- [x] Preserve copied owner/pools/warnings/relocations and actual padder/alternate-target/stale gates.
+- [x] Install narrowly, rebuild US ELF and audit all slots/data/historical guards.
+- [x] Refresh conversion/matching counts and main README aggregate rows only.
+- [x] Finish the focused post-link regression and final documentation/tool gates.
+- [ ] Recover the full next 110-word `func_15145AD8`, its dependency and private/home lifetimes.
+
+All 6,059 linked slots remain byte-identical; 720 data owners and 10,953 prior
+guards unchanged, 11,006 total. Converted +1/504 bytes; exact total 3,355/5,466,
+Game 2,682/4,793, 2,111 different, zero drift. No full-caller/hardware/gameplay/
+host-adoption or sibling/frozen Release/save/runtime/push claim.
+All 57 focused tests pass in 187.474 seconds, zero skips/errors/failures;
+final linked audit, tools/syntax/whitespace and 68-document/3,776-link gate pass.
+
 ## Game Sphere Callee Frame Alias Audit - 2026-10-07
 
 [Note 1085](WORKING_NOTES/1085-game-sphere-callee-frame-alias-audit-20261007.md):
@@ -12,8 +35,8 @@ Retain exact production assembly; private-slot mismatch remains observable.
 - [x] Pin early point pointers, late distance-pointer reloads and fail-closed fields.
 - [x] Retain 48 meaningful workspace/type/initializer controls, none exact.
 - [x] Pass focused regression, retained baseline audit and documentation/tool gates.
-- [ ] Recover original private offsets through C allocation/lifetimes, without padding or guards.
-- [ ] Establish retail/trial frame equivalence, then finish owner/caller/install/build gates.
+- [x] Recover original private offsets through C allocation/lifetimes, without padding or guards (Note 1086).
+- [x] Establish retail/trial frame equivalence and finish copied-owner/install/build gates (Note 1086; complete-caller acceptance remains separate).
 
 Six new tests pass in 6.698 seconds. Counts and main README aggregate rows remain
 unchanged. Layout-specific acceptance is not equal retail/trial private behavior.
@@ -32,9 +55,9 @@ trial 10.0. All slots/data/guards/counts and README aggregate rows unchanged.
 - [x] Qualify 2,808 finite external-alias cases and effective live-read negatives.
 - [x] Prove private-slot incompatibility and retain original production assembly.
 - [x] Pass focused regression, retained-slot audit and documentation/tool gates.
-- [ ] Recover direction `+0x58`, origin `+0x4C`, relative `+0x28` through C lifetimes.
-- [ ] Qualify private-copy and incoming helper-home aliases before classifying guards.
-- [ ] Finish owner/caller/padder gates, install narrowly, rebuild and audit regressions.
+- [x] Recover direction `+0x58`, origin `+0x4C`, relative `+0x28` through C lifetimes (Note 1086).
+- [x] Qualify private-copy and incoming helper-home aliases before classifying guards (Note 1086).
+- [x] Finish copied-owner/padder gates, install narrowly, rebuild and audit regressions (Note 1086; bounded caller evidence only).
 
 Seven new tests pass in 14.016 seconds, zero skips/errors/failures. Retained
 baseline audit equals all 6,059 slots, 720 data owners and 10,953 guards.
@@ -59,7 +82,7 @@ zero drift; conversion unchanged. README aggregate rows only.
 - [x] Preserve copied neighbors/pools/warnings/relocations and actual padder/link behavior.
 - [x] Install the direct wrapper, rebuild and audit all slots/data/historical guards.
 - [x] Finish the 49-test focused post-link suite and final documentation gates.
-- [ ] Fit and qualify the callee C conversion's original frame/private layout before replacing assembly.
+- [x] Fit and qualify the callee C conversion's original frame/private layout before replacing assembly (Note 1086).
 - [ ] Finish sampler exits/circle-byte scheduling and oriented private offsets.
 
 Pre-install: 13 tests pass in 40.702 seconds, no skips/errors/failures. Callee C
