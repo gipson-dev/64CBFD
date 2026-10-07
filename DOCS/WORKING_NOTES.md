@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-06 ([Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md)):
+`func_15142600`:in-place direction normalization recovers142 words/frame0xB8,
+only27 private offsets differ; ten direction references at retail-4, seventeen
+matrix references at retail-8.128 maintained controls, no exact candidate.
+Thirteen tests pass in120.279s:2448 six-body guest,1224 native cases per each
+of five candidates,144 original caller/converter cases per body, eighteen
+negatives, two padder bodies and five copied owners. All6059 production slots/
+720 owners/protected sections/10809 guards unchanged; aggregates/root README
+remain Note1069. No installed candidate, new match or guards. Recover remaining
+private placement from legitimate C. Homogeneous private-exact/frameC0 forms
+and consumed-normalizer scheduling changes rejected. No sibling/Release/save/
+runtime, host adoption, hardware/gameplay acceptance or push. Goal stays active.
+All41 focused neighboring tests pass in185.411s, zero skips/errors/failures;
+52 docs/3585 relative links/zero broken, tools/syntax/diff checks pass.
+
 2026-10-06 ([Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md)):
 `func_15142838`:55 direct words/frame0x58, no guards/profile change. Typed
 nine-input ABI, original provider, translation-before-row-scaling and converter.

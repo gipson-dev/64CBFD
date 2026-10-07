@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest oriented matrix original-frame recovery](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md):
+  in-place normalization recovers142 words/frame0xB8; only27 private direction/
+  matrix offsets remain.128 controls/thirteen tests qualify six guest bodies
+  and five native candidates. Still uninstalled; matching totals unchanged.
+
 - [Latest row matrix match and oriented layout](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md):
   `func_15142838`,55 direct words/frame0x58, no guards; typed caller stays
   24-word exact. Forty post-link tests pass. Oriented recovery now has64

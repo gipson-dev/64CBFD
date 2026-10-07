@@ -33,23 +33,30 @@ Ignored receipts:`conker/build/game-row-matrix/` and
 
 [Driver](../tools/experiments/game_oriented_matrix_candidates.py):eight
 array/reversed-struct up-vector, row/column store-order and early-first-element
-forms plus eight direction-layout/captured-start forms across four actual SDK
-profiles,64 controls. This is an uninstalled recovery driver:142 words/frameB8/
-84 differences, or142/frameC8/57,142/frameC8/47 and142/frameD0/44 differences
+forms, eight direction-layout/captured-start forms and sixteen in-place direction/
+up normalization and horizontal-vector forms across four actual SDK profiles,
+128 controls. This is an uninstalled recovery driver:142 words/frameB8/
+84 differences,142/frameB8/27 private differences, or142/frameC8/57,
+142/frameC8/47 and142/frameD0/44 differences
 confined to stack immediates. It does not patch the frame or install guards.
-[Twelve tests](../tools/tests/test_game_oriented_matrix_recovery.py) bind2448
-five-body guest cases,1224 actual32-bit native typed-caller cases per candidate,
+[Thirteen tests](../tools/tests/test_game_oriented_matrix_recovery.py) bind2448
+six-body guest cases,1224 actual32-bit native typed-caller cases per candidate,
 144 complete original caller/builder/converter cases per body, all142 builder
-words, nine compiled negatives and native integer-load rejection. Preserve
+words, eighteen compiled negatives across two source bodies and native
+integer-load rejection. Preserve
 three independent normalizations, separate multiply rounding, start-point
 translation and retail's lack of a degenerate fallback. Converter execution
 is restricted to finite exactly integral fixed results; native conversion
 uses a float-payload capture. Arithmetic NaNs are classification-compared,
 not native payload/FCSR/exception-mode acceptance. Actual padder retains568
-bytes and retargets one call. All four copied builder owners preserve92 neighbors/
+bytes in both the original fitting and new in-place candidate, and retargets
+one call in each. All five copied builder owners preserve92 neighbors/
 pools/two warnings; the typed caller copy preserves all eight raw functions,
 pools and zero warnings. Private trace identity across differing layouts is
-not claimed. Four native candidates and four copied builder owners are qualified.
+not claimed. Five native candidates and five copied builder owners are qualified.
+The new candidate has the original frame/homes and only ten direction references
+at retail-4 plus seventeen matrix references at retail-8; the test checks this
+without rewriting any words.
 No oriented production change. Commands:
 
 ```sh
@@ -59,6 +66,8 @@ python3 -m unittest tools.tests.test_game_oriented_matrix_recovery -v
 
 Ignored receipts:`conker/build/game-oriented-matrix/` and
 `conker/build/game-oriented-matrix-test/`; resume the stack-only challenger in
+[Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md).
+The prior layout follow-up is in
 [Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md),
 with the initial checkpoint in
 [Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md).

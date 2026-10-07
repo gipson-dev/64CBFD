@@ -21,6 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Oriented matrix original-frame recovery, not installed:
+[Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md)
+recovers `func_15142600`'s original142 words/frame0xB8 from in-place direction
+normalization. Only27 private stack immediates differ:ten direction references
+are four bytes low; seventeen matrix references are eight bytes low. All input
+homes, early temporaries, arithmetic, call position and saved-state words agree.
+128 maintained controls, no exact candidate. Thirteen tests pass in120.279s:
+2448 six-body guest cases,1224 native caller cases per candidate across five
+candidates,144 original caller/converter cases per body, eighteen compiled
+negatives, two actual padder bodies and five copied builder owners.
+All6059 production slots/720 data owners/10809 guards/protected sections remain
+the Note1069 baseline; source and root README unchanged. No new matching count.
+Recover the remaining private placement from legitimate C before installation.
+General FCSR/conversion, native NaN payload/private trace identity and gameplay
+acceptance remain outside the bounded gates. No sibling/Release/save/runtime,
+host adoption or push.
+
+All41 focused neighboring tests pass in185.411s, zero skips/errors/failures;
+52 documents/3585 relative links/zero broken links, tools/syntax/diff checks pass.
+
 Row-scaled matrix match and oriented-layout follow-up:
 [Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md)
 recovers `func_15142838`:55 direct words/frame0x58 under unchanged O2/g3,

@@ -1,5 +1,30 @@
 # PC Port Roadmap located in another project folder
 
+## Game Oriented Matrix Original Frame - 2026-10-06
+
+[Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md):
+in-place direction normalization recovers142 words and the original frame0xB8.
+Only27 private offsets differ:ten direction references at retail-4, seventeen
+matrix references at retail-8. All nonprivate instructions already agree.
+128 maintained controls, no exact candidate; thirteen focused tests pass
+in120.279s with six guest bodies/five native candidates, eighteen negatives,
+two actual padder bodies and five copied owners. Production and aggregates
+stay at Note1069:Game2670/4791 exact,2121 different, zero drift.
+
+- [x] Recover the original142-word/frame0xB8 shape without guards or profiles.
+- [x] Isolate remaining differences to the direction and matrix private regions.
+- [x] Qualify the new candidate's behavior, caller, saved state, padder and owner.
+- [x] Audit unchanged production slots/data/guards and recheck current totals.
+- [ ] Recover retail direction68/6C/70 and matrix78..B4 within the original frame.
+- [ ] Install oriented builder and typed caller only after the full match gate.
+
+Homogeneous forms recover every private offset but retain an oversized frameC0;
+reject them as a match. No production candidate/guards, frame normalization,
+sibling/Release/save/runtime, hardware FCSR/gameplay acceptance or push.
+
+All41 focused neighboring tests pass in185.411s, no skips/errors/failures;
+52 docs/3585 relative links/zero broken, tools/syntax/diff checks pass.
+
 ## Game Row Matrix Match And Oriented Layout - 2026-10-06
 
 [Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md):

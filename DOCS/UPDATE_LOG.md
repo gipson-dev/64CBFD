@@ -1,5 +1,24 @@
 # Update Log
 
+## 2026-10-06 Game Oriented Matrix Original Frame
+
+[Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md):
+bank original142-word/frame0xB8 recovery for `func_15142600` through in-place
+direction normalization. Only27 private stack immediates differ:ten direction
+references four bytes low and seventeen matrix references eight bytes low.
+All nonprivate words match;128 controls find no complete match. Thirteen tests
+pass in120.279s:2448 six-body guest,1224 native cases per five candidates,
+144 complete original caller/converter cases per body, eighteen semantic
+negatives, two actual padder bodies and five copied-owner gates.
+All production source/6059 slots/720 data owners/protected sections/10809 guards
+remain Note1069; matching totals and root README unchanged. Candidate is not
+installed or counted. Next:recover private placement within the original frame.
+No frame normalization, new guards, sibling/Release/save/runtime, hardware/
+gameplay acceptance, host adoption or push.
+
+All41 focused neighboring tests pass in185.411s, no skips/errors/failures;
+52 docs/3585 relative links/zero broken, tools/syntax/diff checks pass.
+
 ## 2026-10-06 Game Row Matrix Match And Oriented Layout
 
 [Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md):

@@ -2,6 +2,7 @@
 
 import itertools
 import json
+import re
 import struct
 import subprocess
 from pathlib import Path
@@ -146,12 +147,33 @@ def layout_candidates():
         yield 'layout%d-reverse%d-capture%d' % (late_direction, reverse_direction, capture_start), body
 
 
+def inplace_candidates():
+    layouts = dict(layout_candidates())
+    for point_left, direction_inplace, up_inplace, capture in itertools.product((False, True), repeat=4):
+        body = layouts['layout1-reverse1-capture%d' % capture]
+        if point_left:
+            body = body.replace('    OrientedHorizontal left;', '    struct17 left;')
+            body = body.replace('left.x', 'left.unk0').replace('left.z', 'left.unk8')
+        if direction_inplace:
+            body = body.replace('    f32 dx, dy, dz;\n', '')
+            for old, field in zip(('dx', 'dy', 'dz'), ('unk8', 'unk4', 'unk0')):
+                body = body.replace('    direction.%s = %s * inverse;\n' % (field, old),
+                    '    direction.%s *= inverse;\n' % field)
+                body = re.sub(r'\b' + old + r'\b', 'direction.' + field, body)
+        if up_inplace:
+            assignments = ''.join('    up.%s *= inverse;\n' % field for field in ('unk8', 'unk4', 'unk0'))
+            body = body.replace('    matrix[0][0]', assignments + '    matrix[0][0]', 1)
+            for field in ('unk8', 'unk4', 'unk0'):
+                body = body.replace('up.%s * inverse *' % field, 'up.%s *' % field)
+        yield 'inplace%d%d%d%d' % (point_left, direction_inplace, up_inplace, capture), body
+
+
 def main():
     root = Path(__file__).resolve().parents[2]
     output = root / 'conker/build/game-oriented-matrix'
     output.mkdir(exist_ok=True)
     records = []
-    for name, body in itertools.chain(candidates(), layout_candidates()):
+    for name, body in itertools.chain(candidates(), layout_candidates(), inplace_candidates()):
         for profile in PROFILES:
             record, _ = compile_candidate(root, output, name + '-' + profile, body, profile)
             records.append(record)

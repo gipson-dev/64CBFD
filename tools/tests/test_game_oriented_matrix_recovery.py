@@ -208,6 +208,8 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
         cls.captured_body = layouts['layout1-reverse1-capture1']
         cls.ordered_record, cls.ordered = screen.compile_candidate(cls.root, cls.output, 'ordered', cls.ordered_body)
         cls.captured_record, cls.captured = screen.compile_candidate(cls.root, cls.output, 'captured', cls.captured_body)
+        cls.inplace_body = dict(screen.inplace_candidates())['inplace0100']
+        cls.inplace_record, cls.inplace = screen.compile_candidate(cls.root, cls.output, 'inplace', cls.inplace_body)
         cls.rom = (cls.root / 'conker/conker.us.bin').read_bytes()
         cls.retail = list(struct.unpack_from('>142I', cls.rom, screen.ROM))
         cls.caller = list(struct.unpack_from('>30I', cls.rom, 0xE71C4))
@@ -237,7 +239,7 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
         if fixed:
             connected.update({CONVERT + i * 4: w for i, w in enumerate(self.converter)})
         models = []
-        for words in (self.words, self.challenger, self.ordered, self.captured, self.retail):
+        for words in (self.words, self.challenger, self.ordered, self.captured, self.inplace, self.retail):
             model = OrientedOracle(words, memory, args, phase, connected, mutation)
             if caller:
                 model.entry = CALLER
@@ -315,32 +317,74 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
         self.receipt('layout-controls', dict(controls=records, ordered=self.ordered_record, captured=self.captured_record,
             direction_slots_exact=True, early_slots_exact=True, installed=False, guards=0))
 
+    def test_inplace_controls_recover_retail_frame_and_all_nonprivate_words(self):
+        records = []
+        for name, body in screen.inplace_candidates():
+            for profile in screen.PROFILES:
+                record, _ = screen.compile_candidate(self.root, self.output, name + '-' + profile, body, profile)
+                records.append(record)
+        self.assertEqual(len(records), 64)
+        self.assertFalse(any(r['differences'] == 0 for r in records))
+        self.assertTrue(all(not r['diagnostics'] for r in records))
+        self.assertEqual((self.inplace_record['body_words'], self.inplace_record['frame'],
+            self.inplace_record['differences']), (142, 0xB8, 27))
+        self.assertEqual(self.inplace_record['relocations'], {0x21C: [('R_MIPS_26', 'guMtxF2L')]})
+        directions, matrices = [], []
+        for index, (actual, retail) in enumerate(zip(self.inplace, self.retail)):
+            if actual == retail:
+                continue
+            self.assertEqual(actual >> 16, retail >> 16)
+            self.assertEqual(actual >> 21 & 31, 29)
+            expected_offset, actual_offset = retail & 65535, actual & 65535
+            if expected_offset in (0x68, 0x6C, 0x70):
+                self.assertIn(actual >> 26, (49, 57))
+                self.assertEqual(actual_offset, expected_offset - 4)
+                directions.append(index * 4)
+            else:
+                self.assertIn(expected_offset, range(0x78, 0xB8, 4))
+                self.assertIn(actual >> 26, (9, 49, 57))
+                self.assertEqual(actual_offset, expected_offset - 8)
+                matrices.append(index * 4)
+        self.assertEqual(len(directions) + len(matrices), 27)
+        self.assertTrue(directions and matrices)
+        self.assertEqual(self.inplace[:0x58 // 4], self.retail[:0x58 // 4])
+        self.assertEqual(self.inplace[0x224 // 4:], self.retail[0x224 // 4:])
+        self.receipt('inplace-controls', dict(controls=records, best=self.inplace_record,
+            direction_word_offsets=directions, matrix_word_offsets=matrices,
+            original_frame_and_argument_homes=True, nonprivate_words_exact=True,
+            installed=False, guards=0))
+
     def test_actual_padder_preserves_uninstalled_slot_and_retargets_converter(self):
         text, functions, relocations = parse_object(self.output / 'selected.o')
         self.assertEqual(functions[screen.FUNCTION]['size'], 568)
         layout = self.output / 'layout.csv'
         layout.write_text('version,section,filename,function,address,end\n'
             'us,game,game_16EE20,func_15142600,0x15142600,0x15142838\n')
-        assembly = self.output / 'padded.s'
-        assembly.write_text(scaled.emit_padded_assembly(self.output / 'selected.o', layout, 'game_16EE20'))
-        obj = self.output / 'padded.o'
-        subprocess.run(['mips-linux-gnu-as', '-EB', '-march=vr4300', '-o', str(obj), str(assembly)], check=True, capture_output=True)
-        padded, symbols, mapped = parse_object(obj)
-        self.assertEqual(symbols[screen.FUNCTION]['size'], 568)
-        self.assertEqual(padded[:568], text[:568])
-        self.assertEqual(mapped, relocations)
-        for target in (CONVERT, CONVERT + 0x1000000):
-            elf = self.output / ('padded-%X.elf' % target)
-            subprocess.run(['mips-linux-gnu-ld', '-m', 'elf32btsmip', '-T', str(self.output / 'oriented.ld'),
-                '-e', screen.FUNCTION, '--defsym=guMtxF2L=0x%X' % target, '-o', str(elf), str(obj)], check=True, capture_output=True)
-            words = list(struct.unpack_from('>142I', screen.sections(elf)['.text'][1]))
-            expected = list(self.words)
-            expected[0x21C // 4] = 0x0C000000 | (target >> 2 & 0x3FFFFFF)
-            self.assertEqual(words, expected)
-        self.receipt('padding', dict(bytes=568, guards=0, retargeted_calls=1, installed=False))
+        for variant, raw_words in (('selected', self.words), ('inplace', self.inplace)):
+            source_object = self.output / (variant + '.o')
+            text, functions, relocations = parse_object(source_object)
+            self.assertEqual(functions[screen.FUNCTION]['size'], 568)
+            self.assertEqual(relocations, {0x21C: [('R_MIPS_26', 'guMtxF2L')]})
+            assembly = self.output / ('padded-' + variant + '.s')
+            assembly.write_text(scaled.emit_padded_assembly(source_object, layout, 'game_16EE20'))
+            obj = self.output / ('padded-' + variant + '.o')
+            subprocess.run(['mips-linux-gnu-as', '-EB', '-march=vr4300', '-o', str(obj), str(assembly)], check=True, capture_output=True)
+            padded, symbols, mapped = parse_object(obj)
+            self.assertEqual(symbols[screen.FUNCTION]['size'], 568)
+            self.assertEqual(padded[:568], text[:568])
+            self.assertEqual(mapped, relocations)
+            for target in (CONVERT, CONVERT + 0x1000000):
+                elf = self.output / ('padded-%s-%X.elf' % (variant, target))
+                subprocess.run(['mips-linux-gnu-ld', '-m', 'elf32btsmip', '-T', str(self.output / 'oriented.ld'),
+                    '-e', screen.FUNCTION, '--defsym=guMtxF2L=0x%X' % target, '-o', str(elf), str(obj)], check=True, capture_output=True)
+                words = list(struct.unpack_from('>142I', screen.sections(elf)['.text'][1]))
+                expected = list(raw_words)
+                expected[0x21C // 4] = 0x0C000000 | (target >> 2 & 0x3FFFFFF)
+                self.assertEqual(words, expected)
+        self.receipt('padding', dict(bytes=568, bodies=2, guards=0, retargeted_calls=1, installed=False))
 
     def test_guest_every_input_basis_sign_degenerate_float_edges_aliases_and_saved_state(self):
-        coverage = [set() for _ in range(5)]
+        coverage = [set() for _ in range(6)]
         count = 0
         for original, alias, phase, mutation in itertools.product(self.inputs, range(3), (0, 8), (False, True)):
             args = ((OUTPUT, ACTOR + 0x18, ACTOR + 0x20)[alias], *original[1:])
@@ -348,11 +392,11 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
                 coverage[index].update(model.visits)
             count += 1
         self.assertEqual(count, 2448)
-        self.assertEqual([len(c) for c in coverage], [142] * 5)
-        self.receipt('guest', dict(cases=count, bodies=5, covered_words=[len(c) for c in coverage], external_storage=True, private_trace_identity=False, arithmetic_nan_classification=True, hardware_fcsr=False))
+        self.assertEqual([len(c) for c in coverage], [142] * 6)
+        self.receipt('guest', dict(cases=count, bodies=6, covered_words=[len(c) for c in coverage], external_storage=True, private_trace_identity=False, arithmetic_nan_classification=True, hardware_fcsr=False))
 
     def test_original_thirty_word_caller_and_complete_fixed_converter_exact_domain(self):
-        coverage = [set() for _ in range(5)]
+        coverage = [set() for _ in range(6)]
         count = 0
         for delta, rows, column, alias, phase in itertools.product(((4, 0, 0), (-4, 0, 0), (0, 0, 4), (0, 0, -4)),
                 ((0.5, 2), (-2, 0.25)), ((2, -0.5, 3), (-2, 0.25, -1), (0, 0, 0)), range(3), (0, 8)):
@@ -362,21 +406,21 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
                 coverage[index].update(model.visits)
             count += 1
         expected = set(range(screen.ENTRY, screen.ENTRY + 568, 4)) | set(range(CALLER, CALLER + 120, 4)) | set(range(CONVERT, CONVERT + 460, 4))
-        self.assertEqual(coverage, [expected] * 5)
+        self.assertEqual(coverage, [expected] * 6)
         self.assertEqual(count, 144)
-        self.receipt('connected', dict(cases=count, bodies=5, caller_words=30, builder_words=142, converter_words=115, all_words=True, domain='finite exact integral signed32 after scaling', hardware_fcsr=False))
+        self.receipt('connected', dict(cases=count, bodies=6, caller_words=30, builder_words=142, converter_words=115, all_words=True, domain='finite exact integral signed32 after scaling', hardware_fcsr=False))
 
     def test_actual_32_bit_native_typed_caller_all_external_bytes_and_nan_classification(self):
         original = self.fixture
         try:
-            for body in (screen.SELECTED, self.challenger_body, self.ordered_body, self.captured_body):
+            for body in (screen.SELECTED, self.challenger_body, self.ordered_body, self.captured_body, self.inplace_body):
                 self.fixture = original.replace(screen.SELECTED, body)
                 self.run_host('int n,a,m,count=0;\nfor(n=0;n<204;n++)for(a=0;a<3;a++)for(m=0;m<2;m++){\n'
                     'initialize(n,a,m);if(func_150B9D14(output,source)!=1 || check())return 20+error;count++;}\n'
                     'if(count!=1224 || sizeof(Mtx)!=64 || sizeof(f32)!=4)return 30;\n')
         finally:
             self.fixture = original
-        self.receipt('native', dict(cases_per_body=1224, bodies=4, bits=32, actual_source=True, caller=True, external_storage=True, converter='bounded float payload capture', arithmetic_nan_classification=True))
+        self.receipt('native', dict(cases_per_body=1224, bodies=5, bits=32, actual_source=True, caller=True, external_storage=True, converter='bounded float payload capture', arithmetic_nan_classification=True))
 
     def test_native_integer_loads_under_float_prototype_change_known_outputs(self):
         caller = screen.CALLER
@@ -390,25 +434,28 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
             self.fixture = original
 
     def test_compiled_semantic_negatives_change_known_matrix_or_call(self):
-        forms = {'placeholder': screen.PROTOTYPE[:-1] + ' { }',
-            'missing-converter': screen.SELECTED.replace('    guMtxF2L(matrix, output);', ''),
-            'wrong-direction': screen.SELECTED.replace('ex - sx', 'sx - ex'),
-            'wrong-cross': screen.SELECTED.replace('up[2] = -direction.unk4', 'up[2] = direction.unk4'),
-            'missing-up-normalization': screen.SELECTED.replace('up[0] * inverse *', 'up[0] *'),
-            'wrong-row': screen.SELECTED.replace('cy * row1', 'cy * row0'),
-            'wrong-column': screen.SELECTED.replace('left.x * cx', 'left.x * cy'),
-            'view-translation': screen.SELECTED.replace('matrix[3][0] = sx;', 'matrix[3][0] = -sx;'),
-            'wrong-output': screen.SELECTED.replace('matrix, output);', 'matrix, (Mtx *)((u8 *)output + 4));')}
         args = (OUTPUT, *map(bits, (1, 2, 2, -0.5, 3, 7, -9, 11, 10, -7, 15)))
         expected = reference(args)
         receipts = []
-        for name, body in forms.items():
-            _, words = screen.compile_candidate(self.root, self.output, name, body)
-            model = OrientedOracle(words, memory_case(args), args).run()
-            changed = len(model.calls) != 1 or model.calls[0][1] != OUTPUT or any(
-                not equal_word(a, b) for a, b in zip(model.calls[0][0], expected))
-            self.assertTrue(changed, name)
-            receipts.append(dict(name=name, valid_mapped_case=True, known_semantic_difference=True))
+        for variant, source in (('array', screen.SELECTED), ('inplace', self.inplace_body)):
+            up_x, up_z = ('up[0]', 'up[2]') if variant == 'array' else ('up.unk8', 'up.unk0')
+            forms = {'placeholder': screen.PROTOTYPE[:-1] + ' { }',
+                'missing-converter': source.replace('    guMtxF2L(matrix, output);', ''),
+                'wrong-direction': source.replace('ex - sx', 'sx - ex'),
+                'wrong-cross': source.replace(up_z + ' = -direction.unk4', up_z + ' = direction.unk4'),
+                'missing-up-normalization': source.replace(up_x + ' * inverse *', up_x + ' *'),
+                'wrong-row': source.replace('cy * row1', 'cy * row0'),
+                'wrong-column': source.replace('left.x * cx', 'left.x * cy'),
+                'view-translation': source.replace('matrix[3][0] = sx;', 'matrix[3][0] = -sx;'),
+                'wrong-output': source.replace('matrix, output);', 'matrix, (Mtx *)((u8 *)output + 4));')}
+            for name, body in forms.items():
+                self.assertNotEqual(body, source, name)
+                _, words = screen.compile_candidate(self.root, self.output, variant + '-' + name, body)
+                model = OrientedOracle(words, memory_case(args), args).run()
+                changed = len(model.calls) != 1 or model.calls[0][1] != OUTPUT or any(
+                    not equal_word(a, b) for a, b in zip(model.calls[0][0], expected))
+                self.assertTrue(changed, (variant, name))
+                receipts.append(dict(variant=variant, name=name, valid_mapped_case=True, known_semantic_difference=True))
         self.receipt('negatives', receipts)
 
     def test_missing_source_private_matrix_or_destination_fails_mapped_memory_gate(self):
@@ -462,7 +509,7 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
         old_text, old_functions, old_relocations = parse_object(original_object)
         receipts = []
         for variant, body in (('selected', screen.SELECTED), ('challenger', self.challenger_body),
-                ('ordered', self.ordered_body), ('captured', self.captured_body)):
+                ('ordered', self.ordered_body), ('captured', self.captured_body), ('inplace', self.inplace_body)):
             selected = source.replace(stub, body).replace('s32 func_15142600();', screen.PROTOTYPE)
             obj, warnings = compile_owner(self.root, self.output, selected, 'builder-' + variant)
             self.assertEqual(warnings, original_warnings)
