@@ -51,6 +51,16 @@ confirmed.
 
 ## Planning and history
 
+- [Latest oriented-matrix direct match](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md):
+  All 142 words/frame `0xB8` direct under unchanged O2/g3, original private
+  offsets, no guards. Forty-eight meaningful controls/four direct fits;
+  typed caller retains all eight raw owner functions. Guest/native/full-effect/
+  private-overlap/copied-owner/actual-padder gates qualify. US ELF rebuilt;
+  only target changes, all 6,042 retail addresses/extents remain fixed.
+  Exact total 3,358, Game 2,685 (56.02%), 2,108 different, zero drift.
+  All 64 focused tests pass in 353.549 seconds; final tools/documentation gates pass.
+  Oriented layout complete; next sampler exit/RNG schedule or another Game function.
+
 - [Latest actor-lookup direct match](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md):
   All 44 words/frame `0x18` direct under O2/g3, original byte helper ABI,
   no target guards. 62 controls/17 direct fits; guest/native/actual-helper,

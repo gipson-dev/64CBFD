@@ -1,6 +1,7 @@
 #include <ultra64.h>
 
-s32 func_15142600(s32, s32, s32, s32, f32, f32, f32, f32, f32, f32, f32, f32);
+void func_15142600(Mtx *output, f32 row0, f32 row1, f32 cx, f32 cy, f32 cz,
+    f32 sx, f32 sy, f32 sz, f32 ex, f32 ey, f32 ez);
 
 /* Non-matching placeholders for the text-only asm slice asm/E5E90.s. */
 
@@ -38,13 +39,19 @@ s32 func_150B963C() {
     return 0;
 }
 
-s32 func_150B9D14(s32 arg0, u8 *arg1) {
-    func_15142600(arg0, *(s32 *) (arg1 + 0x18), *(s32 *) (arg1 + 0x1C),
-                   *(s32 *) (arg1 + 0x2C), *(f32 *) (arg1 + 0x30),
-                   *(f32 *) (arg1 + 0x34), *(f32 *) (arg1 + 0x38),
-                   *(f32 *) (arg1 + 0x3C), *(f32 *) (arg1 + 0x40),
-                   *(f32 *) (arg1 + 0x20), *(f32 *) (arg1 + 0x24),
-                   *(f32 *) (arg1 + 0x28));
+s32 func_150B9D14(Mtx *output, u8 *source) {
+    func_15142600(output,
+                  *(f32 *)(source + 0x18),
+                  *(f32 *)(source + 0x1C),
+                  *(f32 *)(source + 0x2C),
+                  *(f32 *)(source + 0x30),
+                  *(f32 *)(source + 0x34),
+                  *(f32 *)(source + 0x38),
+                  *(f32 *)(source + 0x3C),
+                  *(f32 *)(source + 0x40),
+                  *(f32 *)(source + 0x20),
+                  *(f32 *)(source + 0x24),
+                  *(f32 *)(source + 0x28));
     return 1;
 }
 

@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-07 ([Note 1092](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md)):
+`func_15142600` is direct C142/frame `0xB8`, unchanged O2/g3, no guards.
+Matrix-first declarations and meaningful split horizontal scalars recover all
+private offsets; four exact forms among 48 maintained controls. Typed caller
+retains all eight raw functions. 2,448 full-effect guest, 144 original-chain,
+288 private-overlap and 1,224 native cases qualify; old layout changes 156
+overlap outputs. Copied builder/pools/88 neighbors/two warnings and actual
+padder/converter rebasing bind. US ELF/audit: only target among 6,042 retail
+slots / 6,058 symbols; addresses/extents/overflows/data/guards unchanged.
+Exact total 3,358, Game 2,685, 2,108 different, zero drift; conversion unchanged.
+README aggregates only. Oriented work complete; next sampler exit/RNG schedule
+or another ordinary Game function. No sibling/Release/save/runtime/push work.
+All 64 focused tests / 353.549 seconds and final tools/syntax/whitespace/
+74-document/3,857-link gates pass, zero skips/errors/failures/broken links.
+
 2026-10-07 ([Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md)):
 `func_15142444` is direct C44/frame `0x18` under unchanged O2/g3, no guards.
 Nested final checks and the retail byte lookup ABI recover all words; keep the

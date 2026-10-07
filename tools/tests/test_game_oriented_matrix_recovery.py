@@ -474,6 +474,8 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
 
     def test_copied_typed_caller_retains_all_raw_functions_pools_and_warnings(self):
         source = (self.root / 'conker/src/game/generated_E5E90.c').read_text()
+        source = source.replace(screen.CALLER, screen.LEGACY_CALLER).replace(
+            screen.PROTOTYPE, screen.OLD_CALLER_PROTOTYPE)
         old = re.search(r's32 func_150B9D14\([^;{}]+\) \{\n.*?\n\}', source, re.S)
         self.assertIsNotNone(old)
         self.assertIn(screen.OLD_CALLER_PROTOTYPE, source)
@@ -502,8 +504,10 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
             caller_retail_words=30, prototype_correction='copied owner only', installed=False))
 
     def test_copied_builder_preserves_neighbors_pools_warnings_and_standalone_candidates(self):
+        from tools.experiments import game_oriented_matrix_lifetime_candidates as matching
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
         stub = 's32 func_15142600() {\n    return 0;\n}'
+        source = source.replace(matching.SELECTED, stub).replace(screen.PROTOTYPE, 's32 func_15142600();')
         self.assertIn(stub, source)
         original_object, original_warnings = compile_owner(self.root, self.output, source, 'builder-baseline')
         old_text, old_functions, old_relocations = parse_object(original_object)

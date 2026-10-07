@@ -107,7 +107,8 @@ void func_15141F78(u8 slot, u8 *source, f32 scale, u8 tag, f32 *position, u8 mod
 void func_15142180(u8 slot, struct17 *source, s32 word, f32 width, f32 height);
 void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     f32 cx, f32 cy, f32 cz, f32 tx, f32 ty, f32 tz);
-s32 func_15142600();
+void func_15142600(Mtx *output, f32 row0, f32 row1, f32 cx, f32 cy, f32 cz,
+    f32 sx, f32 sy, f32 sz, f32 ex, f32 ey, f32 ez);
 void func_15142838(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     f32 tx, f32 ty, f32 tz);
 Gfx *func_15142E24(Gfx *output, GameTextureSource *source, s32 packed, s32 width,
@@ -505,9 +506,47 @@ void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     matrix[2][2] *= cz * row0;
     guMtxF2L(matrix, output);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15142600.s. */
-s32 func_15142600() {
-    return 0;
+void func_15142600(Mtx *output, f32 row0, f32 row1, f32 cx, f32 cy, f32 cz,
+    f32 sx, f32 sy, f32 sz, f32 ex, f32 ey, f32 ez) {
+    f32 matrix[4][4];
+    f32 leftX;
+    struct17 direction;
+    f32 leftZ;
+    struct17 up;
+    f32 inverse;
+    direction.unk8 = ex - sx;
+    direction.unk4 = ey - sy;
+    direction.unk0 = ez - sz;
+    inverse = 1.0f / sqrtf(direction.unk8 * direction.unk8 + direction.unk4 * direction.unk4 + direction.unk0 * direction.unk0);
+    direction.unk8 *= inverse;
+    direction.unk4 *= inverse;
+    direction.unk0 *= inverse;
+    leftX = direction.unk0;
+    leftZ = -direction.unk8;
+    inverse = 1.0f / sqrtf(leftX * leftX + leftZ * leftZ);
+    leftX *= inverse;
+    leftZ *= inverse;
+    up.unk8 = direction.unk4 * leftZ;
+    up.unk4 = direction.unk0 * leftX - direction.unk8 * leftZ;
+    up.unk0 = -direction.unk4 * leftX;
+    inverse = 1.0f / sqrtf(up.unk8 * up.unk8 + up.unk4 * up.unk4 + up.unk0 * up.unk0);
+    matrix[0][0] = leftX * cx * row0;
+    matrix[1][0] = up.unk8 * inverse * cx * row1;
+    matrix[2][0] = direction.unk8 * cx * row0;
+    matrix[3][0] = sx;
+    matrix[0][1] = 0.0f;
+    matrix[1][1] = up.unk4 * inverse * cy * row1;
+    matrix[2][1] = direction.unk4 * cy * row0;
+    matrix[3][1] = sy;
+    matrix[0][2] = leftZ * cz * row0;
+    matrix[1][2] = up.unk0 * inverse * cz * row1;
+    matrix[2][2] = direction.unk0 * cz * row0;
+    matrix[3][2] = sz;
+    matrix[0][3] = 0.0f;
+    matrix[1][3] = 0.0f;
+    matrix[2][3] = 0.0f;
+    matrix[3][3] = 1.0f;
+    guMtxF2L(matrix, output);
 }
 void func_15142838(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     f32 tx, f32 ty, f32 tz) {

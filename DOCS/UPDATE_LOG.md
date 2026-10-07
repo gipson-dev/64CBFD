@@ -1,5 +1,25 @@
 # Update Log
 
+## 2026-10-07 Game Oriented Matrix Direct Match
+
+[Note 1092](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md):
+install `func_15142600` as direct C142/frame `0xB8`, zero differences under
+unchanged O2/g3, no guards. Forty-eight meaningful storage/lifetime controls,
+four exact forms; matrix-first plus split horizontal scalars recovers every
+original direction/matrix offset. Typed caller correction retains all eight
+raw owner functions. 2,448 guest, 144 connected original caller/converter,
+288 private-overlap and 1,224 native cases qualify; 156 old-layout output
+negatives prove the private offsets matter. Copied owner retains 88 neighbors/
+pools/relocations/two warnings; actual padded slot and alternate converter call
+bind. US ELF/fresh audit: only target across 6,042 retail slots / 6,058 symbols;
+all addresses/extents/overflows/data/11,006 guards/conversions unchanged.
+Exact total 3,358, Game 2,685 (56.02%), 2,108 different, zero drift.
+README aggregates only; check off oriented recovery/install tasks. Next sampler
+exit/RNG schedule or another ordinary Game function, no sibling/Release/save/
+runtime/push work or new FCSR/hardware/gameplay/host acceptance.
+All 64 focused tests pass in 353.549 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 74-document/3,857-link gates pass, zero broken links.
+
 ## 2026-10-07 Game Actor Lookup Byte ABI Direct Match
 
 [Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md):

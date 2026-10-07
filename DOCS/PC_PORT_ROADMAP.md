@@ -1,5 +1,25 @@
 # PC Port Roadmap located in another project folder
 
+## Game Oriented Matrix Direct Match - 2026-10-07
+
+[Note 1092](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md):
+`func_15142600` is direct C142/frame `0xB8`, no guards under unchanged O2/g3.
+The original private layout and typed caller are installed together.
+
+- [x] Retain 48 meaningful storage/lifetime controls, including four direct fits; 176 measurements with historical controls.
+- [x] Recover direction `+0x68/+0x6C/+0x70` and matrix `+0x78..+0xB4` using matrix-first / split-horizontal declarations.
+- [x] Qualify 2,448 guest, 144 complete original caller/converter, 288 private-overlap and 1,224 native cases.
+- [x] Retain nine effective semantic negatives and 156 old-layout overlap-output counterexamples.
+- [x] Preserve copied-builder 88 neighbors/pools/relocations/two warnings and all eight raw typed-caller owner functions.
+- [x] Bind the actual direct padded slot and alternate converter relocation; install both owners and rebuild the US ELF.
+- [x] Audit all 6,042 retail addresses/extents, 6,041 unchanged bodies, 16 unchanged overflows, data/sections/11,006 guards/conversions.
+- [x] Update README aggregate rows: total 3,358, Game 2,685, 2,108 different, zero drift.
+- [x] Pass all 64 focused tests / 353.549 seconds and final tool/syntax/whitespace/74-document/3,857-link gates.
+- [ ] Recover sampler `func_151432BC`'s two per-path RA loads and circle RNG-byte schedule before installation, or proceed with another ordinary Game function.
+
+Oriented private-layout recovery is complete. This is guest decomp progress,
+not new PC-port gameplay or Release acceptance. No sibling/save/runtime/push work.
+
 ## Game Actor Lookup Direct Match - 2026-10-07
 
 [Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md):
@@ -16,7 +36,7 @@ Keep the retail byte helper declaration local to this owner.
 - [x] Update README aggregates: total 3,357, Game 2,684, 2,109 different, zero drift.
 - [x] Pass all 44 tests / 156.500 seconds and final tool/syntax/whitespace/documentation gates.
 - [ ] Recover sampler `func_151432BC`'s two per-path RA loads and circle RNG-byte schedule before installation.
-- [ ] Finish oriented matrix `func_15142600`'s remaining original-profile private-layout match (Note 1070).
+- [x] Finish oriented matrix `func_15142600`'s remaining original-profile private-layout match (Note 1092).
 
 This is guest decomp progress, not a new PC-port gameplay or Release acceptance.
 No sibling/frozen Release/save/runtime/push work.
@@ -191,7 +211,8 @@ zero drift; conversion unchanged. README aggregate rows only.
 - [x] Install the direct wrapper, rebuild and audit all slots/data/historical guards.
 - [x] Finish the 49-test focused post-link suite and final documentation gates.
 - [x] Fit and qualify the callee C conversion's original frame/private layout before replacing assembly (Note 1086).
-- [ ] Finish sampler exits/circle-byte scheduling and oriented private offsets.
+- [ ] Finish sampler exits/circle-byte scheduling.
+- [x] Finish oriented private offsets (Note 1092).
 
 Pre-install: 13 tests pass in 40.702 seconds, no skips/errors/failures. Callee C
 trial remains uninstalled at 128 words/frame `0x68`, 106 differences; 1,404
@@ -220,7 +241,8 @@ zero drift; conversion unchanged. README aggregate matching rows only.
 - [x] Finish expanded 206-test regression and final documentation gates.
 - [x] Recover next 53-word nine-argument wrapper `func_151451F0` against its retained
   real assembly callee (Note 1083); the callee C conversion remains open.
-- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+- [ ] Finish sampler exits/circle-byte scheduling.
+- [x] Finish oriented27 private offsets (Note 1092).
 
 No profile/header/padder/helper change, insertion/omission or branch/frame rewrite.
 All 206 tests pass in 1005.830 seconds, zero skips/errors/failures. Final
@@ -246,7 +268,8 @@ README aggregate rows unchanged; no matching increment claimed.
   ([Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md)).
 - [x] Qualify copied owner/relocations/guards, install narrowly and run full regressions
   (completed by Note 1082).
-- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+- [ ] Finish sampler exits/circle-byte scheduling.
+- [x] Finish oriented27 private offsets (Note 1092).
 
 All26 focused recovery/audit/helper tests pass in211.955s, zero skips/errors/
 failures;63 documents/3714 relative links/zero broken. Project tools, syntax
@@ -275,7 +298,8 @@ Game2679/4792 exact,2113 different, zero drift; conversion unchanged.
 - [x] Recover next 101-word projection wrapper `func_15144CEC`, including private locals.
   ABI/frame/lifetime qualification, fit, installation and full regressions are
   completed in [Note 1082](WORKING_NOTES/1082-game-projection-wrapper-match-20261007.md).
-- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+- [ ] Finish sampler exits/circle-byte scheduling.
+- [x] Finish oriented27 private offsets (Note 1092).
 
 All164 tests pass in736.713s, zero skips/errors/failures.62 documents/3701
 relative links/zero broken; project tools, syntax, whitespace and final
@@ -303,7 +327,8 @@ Game2678/4792 exact,2114 different, zero drift; conversion unchanged.
 - [x] Finish expanded153-test regression and final documentation gates.
 - [x] Recover next120-word fourteen-mode leaf `func_151442FC`
   ([Note 1080](WORKING_NOTES/1080-game-secondary-halfword-output-direct-match-20261007.md)).
-- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+- [ ] Finish sampler exits/circle-byte scheduling.
+- [x] Finish oriented27 private offsets (Note 1092).
 
 All153 tests pass in578.698s, zero skips/errors/failures.61 documents/3690
 relative links/zero broken; tools/syntax/diff and final post-regression linked
@@ -329,7 +354,8 @@ extents/all10866 prior guards unchanged,10912 total. Game2677/4792 exact,
 - [x] Finish expanded142-test regression and final documentation gates.
 - [x] Recover next86-word output-mode leaf `func_151441A4` and full stack-input ABI
   ([Note 1079](WORKING_NOTES/1079-game-halfword-output-mode-direct-match-20261007.md)).
-- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+- [ ] Finish sampler exits/circle-byte scheduling.
+- [x] Finish oriented27 private offsets (Note 1092).
 
 All142 tests pass in672.201s, zero skips/errors/failures.60 documents/3679
 relative links/zero broken; tools/syntax/diff and final post-regression linked
@@ -355,7 +381,8 @@ prior guards/addresses/extents unchanged,10866 total. Game2676/4792 exact,
 - [x] Finish expanded131-test regression and final documentation gates.
 - [x] Recover next98-word cursor updater `func_1514401C`
   ([Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md)).
-- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+- [ ] Finish sampler exits/circle-byte scheduling.
+- [x] Finish oriented27 private offsets (Note 1092).
 
 All131 tests pass in692.507s; final10 packet tests rerun after trace/frame
 reporting changes pass in61.780s, zero skips/errors/failures.59 documents/
@@ -452,7 +479,7 @@ All92 post-link tests pass in371.491s, no skips/errors/failures;
 - [x] Install C, rebuild/audit all slots/data/guards and refresh conversion CSV.
 - [x] Finish expanded92-test regression and final documentation/tool gates.
 - [ ] Recover254-word descriptor sampler `func_151432BC` from its placeholder.
-- [ ] Finish oriented `func_15142600`'s27 private-layout differences.
+- [x] Finish oriented `func_15142600`'s27 private-layout differences (Note 1092).
 
 Original helper execution is bounded; whole callers, hardware/gameplay and
 host adoption remain unclaimed. No sibling/frozen Release/save/runtime or push.
@@ -479,7 +506,7 @@ All81 post-link tests pass in315.971s, no skips/errors/failures;
 - [x] Rebuild/audit all slots/data/guards and refresh aggregate matching rows.
 - [x] Finish expanded81-test regression and final documentation/tool gates.
 - [x] Recover98-word `func_15143134` point-transform/status routine from assembly (Note1073).
-- [ ] Finish oriented `func_15142600`'s27 private offsets.
+- [x] Finish oriented `func_15142600`'s27 private offsets (Note 1092).
 
 Submit remains bounded; original rendering/gameplay and host adoption not
 claimed. No sibling/frozen Release/save/runtime or push.
@@ -502,7 +529,7 @@ All52 post-link tests pass in215.511s, no skips/errors/failures;
 - [x] Install direct102-word body, rebuild and audit slots/data/guards.
 - [x] Finish52-test post-link regression and final documentation/tool gates.
 - [x] Recover50-word resolver `func_1514306C` from original switch/table (Note1072).
-- [ ] Finish oriented `func_15142600`'s27 private-offset differences.
+- [x] Finish oriented `func_15142600`'s27 private-offset differences (Note 1092).
 
 Resolver was a production placeholder at this checkpoint; Note1072 restores
 it. Submit helper is bounded, call pairs are not full callers. Ten oriented matrix-storage
@@ -510,6 +537,8 @@ controls find no improvement. No sibling/frozen Release/save/runtime, host
 adoption, hardware/gameplay acceptance or push.
 
 ## Game Oriented Matrix Original Frame - 2026-10-06
+
+Historical layout handoff, completed and superseded by Note 1092 above.
 
 [Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md):
 in-place direction normalization recovers142 words and the original frame0xB8.
@@ -524,8 +553,8 @@ stay at Note1069:Game2670/4791 exact,2121 different, zero drift.
 - [x] Isolate remaining differences to the direction and matrix private regions.
 - [x] Qualify the new candidate's behavior, caller, saved state, padder and owner.
 - [x] Audit unchanged production slots/data/guards and recheck current totals.
-- [ ] Recover retail direction68/6C/70 and matrix78..B4 within the original frame.
-- [ ] Install oriented builder and typed caller only after the full match gate.
+- [x] Recover retail direction68/6C/70 and matrix78..B4 within the original frame (Note 1092).
+- [x] Install oriented builder and typed caller only after the full match gate (Note 1092).
 
 Homogeneous forms recover every private offset but retain an oversized frameC0;
 reject them as a match. No production candidate/guards, frame normalization,
@@ -551,8 +580,8 @@ seconds. Only target across6059 slots; protected sections/720 data owners,
 - [x] Qualify guest/native, original caller/converter, negatives and padder.
 - [x] Rebuild, audit all slots, run focused regressions and refresh progress.
 - [x] Expand oriented controls to64 and qualification to five guest/four native bodies.
-- [ ] Recover `func_15142600`'s legitimate142-word/frame0xB8 layout.
-- [ ] Install oriented builder and typed caller only after matching/qualification.
+- [x] Recover `func_15142600`'s legitimate142-word/frame0xB8 layout (Note 1092).
+- [x] Install oriented builder and typed caller only after matching/qualification (Note 1092).
 
 New oriented candidates142/frameC8/47 and142/frameD0/44 retain stack-only
 differences; direction or early local slots now match, but neither frame does.
@@ -560,6 +589,8 @@ No frame/stack guards, original rotation-helper restoration, general FCSR/
 conversion or gameplay acceptance, sibling/Release/save/runtime changes or push.
 
 ## Game Oriented Matrix Recovery - 2026-10-06
+
+Historical uninstalled recovery, completed and superseded by Note 1092 above.
 
 [Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md):
 `func_15142600` is behavior-qualified in copies, **not installed or matched**.
@@ -575,9 +606,9 @@ baseline and aggregate progress remain unchanged; root README is untouched.
 - [x] Qualify original caller/converter in the finite exact conversion domain.
 - [x] Prove proposed caller correction preserves all eight raw owner functions.
 - [x] Bank maintained compiler controls, negatives, padding and owner tests.
-- [ ] Recover original142-word/frameB8 private layout from legitimate C.
-- [ ] Install matching builder and typed local caller together.
-- [ ] Rebuild/audit, neighboring regressions and actual progress refresh.
+- [x] Recover original142-word/frameB8 private layout from legitimate C (Note 1092).
+- [x] Install matching builder and typed local caller together (Note 1092).
+- [x] Rebuild/audit, neighboring regressions and actual progress refresh (Note 1092).
 
 No stack/frame guards, sibling/Release/save/runtime, hardware FCSR, gameplay
 acceptance, host adoption or push. Resume the stack-only challenger in Note1068.
@@ -603,7 +634,7 @@ All77 focused post-link tests pass in531.767 seconds, no skips/errors/failures;
 - [x] Qualify native/guest, original caller/converter, negatives and actual padder.
 - [x] Rebuild/audit all slots, original data owners and unchanged guards.
 - [x] Finish focused post-link regression/documentation receipts.
-- [ ] Recover142-word `func_15142600`: normalized oriented basis from two points.
+- [x] Recover142-word `func_15142600`: normalized oriented basis from two points (Note 1092).
 
 Sixteen scratch next-function controls:in-place O2/g3 emits143 words/frame0xC8/
 138 differences, not retail142/frame0xB8. No control is installed or qualified;

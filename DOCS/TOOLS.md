@@ -4,6 +4,33 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Oriented matrix direct-match controls
+
+[Lifetime driver](../tools/experiments/game_oriented_matrix_lifetime_candidates.py)
+retains 48 unchanged-O2/g3 meaningful vector/storage/scope/declaration forms.
+Matrix-first reduces the old 27 differences to ten; four split-horizontal
+scalar orders emit all 142 retail words with frame `0xB8` and original private
+offsets. Selected form needs no union, padding locals, guards or profile change.
+[Ten fitting tests](../tools/tests/test_game_oriented_matrix_match.py) bind
+2,448 guest/full-effect, 144 original caller/converter, 288 private-overlap and
+1,224 actual native 32-bit cases, nine effective semantic negatives, copied
+builder/caller owners, real padder/converter rebasing and installed source/
+slots/guard history. The old 27-difference layout changes 156 overlap outputs.
+Historical recovery tests reconstruct their old stub/caller baseline explicitly.
+See [Note 1092](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md).
+General FCSR/native NaN payload/native fixed conversion/hardware/gameplay and
+host adoption are not claimed.
+Final combined regression: 64 tests / 353.549 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 74-document/3,857-link gates pass, zero broken links.
+
+```sh
+python3 -m tools.experiments.game_oriented_matrix_lifetime_candidates
+python3 -m unittest tools.tests.test_game_oriented_matrix_match tools.tests.test_game_oriented_matrix_recovery -v
+```
+
+Ignored receipts: `conker/build/game-oriented-matrix-lifetimes/` and
+`conker/build/game-oriented-matrix-match-test/`.
+
 ## Actor lookup and sampler lifetime controls
 
 [Actor driver](../tools/experiments/game_actor_lookup_candidates.py) retains
@@ -494,7 +521,9 @@ not claimed. Five native candidates and five copied builder owners are qualified
 The new candidate has the original frame/homes and only ten direction references
 at retail-4 plus seventeen matrix references at retail-8; the test checks this
 without rewriting any words.
-No oriented production change. Commands:
+This is the historical uninstalled control bank, superseded by the direct
+production match in Note 1092. Its copied-owner tests now reconstruct the old
+stub/caller baseline explicitly. Commands:
 
 ```sh
 python3 -m tools.experiments.game_oriented_matrix_candidates
@@ -502,7 +531,7 @@ python3 -m unittest tools.tests.test_game_oriented_matrix_recovery -v
 ```
 
 Ignored receipts:`conker/build/game-oriented-matrix/` and
-`conker/build/game-oriented-matrix-test/`; resume the stack-only challenger in
+`conker/build/game-oriented-matrix-test/`; historical stack-only challenger in
 [Note1070](WORKING_NOTES/1070-game-oriented-matrix-original-frame-recovery-20261006.md).
 The prior layout follow-up is in
 [Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md),

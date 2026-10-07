@@ -21,6 +21,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest oriented-matrix direct match:
+[Note 1092](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md).
+`func_15142600` emits all 142 words/frame `0xB8` directly under unchanged O2/g3,
+no guards. Matrix-first storage plus meaningful split horizontal scalars recover
+every original private offset. Forty-eight maintained controls, four exact
+forms; 176 measurements including historical controls. Install the typed
+`func_150B9D14` caller without changing any of its owner's eight raw functions.
+2,448 guest/full-effect, 144 original caller/converter, 288 private-overlap and
+1,224 native cases qualify; the old layout changes output in 156 overlap cases.
+Copied builder retains 88 neighbors/pools/relocations/two warnings; actual
+padder emits the direct slot and preserves the rebased converter call.
+US ELF rebuilt: only target changes across 6,042 retail slots / 6,058 linked
+symbols; all addresses/extents/overflows/protected sections/data/11,006 guards
+unchanged. Exact total 3,358/5,466 (61.43%), Game 2,685/4,793 (56.02%),
+2,108 different, zero drift; conversions unchanged. README aggregate rows only.
+Oriented layout is complete; next sampler's legitimate exit/RNG schedule or
+another ordinary Game function. All 64 focused tests pass in 353.549 seconds,
+zero skips/errors/failures; tools/syntax/whitespace and 74-document/3,857-link
+gates pass, zero broken links. No FCSR/hardware/gameplay/host/sibling/Release/
+save/runtime/push claim.
+
 Latest actor-lookup direct match:
 [Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md).
 `func_15142444` emits all 44 words/frame `0x18` directly under O2/g3, no guards.

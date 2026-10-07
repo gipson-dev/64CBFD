@@ -74,6 +74,15 @@ CALLER = '''s32 func_150B9D14(Mtx *output, u8 *source) {
                   *(f32 *)(source + 0x28));
     return 1;
 }'''
+LEGACY_CALLER = '''s32 func_150B9D14(s32 arg0, u8 *arg1) {
+    func_15142600(arg0, *(s32 *) (arg1 + 0x18), *(s32 *) (arg1 + 0x1C),
+                   *(s32 *) (arg1 + 0x2C), *(f32 *) (arg1 + 0x30),
+                   *(f32 *) (arg1 + 0x34), *(f32 *) (arg1 + 0x38),
+                   *(f32 *) (arg1 + 0x3C), *(f32 *) (arg1 + 0x40),
+                   *(f32 *) (arg1 + 0x20), *(f32 *) (arg1 + 0x24),
+                   *(f32 *) (arg1 + 0x28));
+    return 1;
+}'''
 
 
 def candidates():
