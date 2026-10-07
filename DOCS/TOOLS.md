@@ -4,6 +4,34 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Actor-gated packet matching controls
+
+[Driver](../tools/experiments/game_actor_gated_packet_candidates.py) retains116
+compiler measurements:64 gate/type/order profile controls,48 short-flag storage
+controls and four selected profiles. O2/g3 recovers98 words/frame0x38 and the
+original packet/result private slots. Eleven expected-word/relocation guards
+normalize only the closed opening schedule, including a moved branch with the
+same absolute destination; no frame/private-offset or production-profile edits.
+[Ten tests](../tools/tests/test_game_actor_gated_packet_match.py) cover8192 paired
+guest cases,362 callback/RNG cases,18856 actual32-bit native calls and12 original
+call-delay pairs. Full eight-byte guest payload, poisoned untouched bytes,
+snapshot count/live context, full-word inputs, ignored submission result,
+semantic negatives, copied owner/pools/warnings and actual guarded padding
+are checked. Alternate relocation carries/targets and stale metadata fail closed.
+96 reachable words are covered; two dead branch-likely increments are identified.
+Native padding, real actor bounds beyond26, helper/gameplay/hardware behavior
+and complete callers are not claimed. Storage/profile controls qualify bounded
+defined behavior, not equivalent private memory for alternate layouts.
+
+```sh
+python3 -m tools.experiments.game_actor_gated_packet_candidates
+python3 -m unittest tools.tests.test_game_actor_gated_packet_match -v
+```
+
+Ignored receipts:`conker/build/game-actor-gated-packet/` and
+`conker/build/game-actor-gated-packet-test/`; see
+[Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md).
+
 ## Record-query matching controls
 
 [Driver](../tools/experiments/game_record_query_candidates.py) retains98

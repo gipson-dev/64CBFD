@@ -1,5 +1,24 @@
 # Working Notes
 
+2026-10-07 ([Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md)):
+`func_15143E94`:98 words/frame0x38, recovered actor/checker-gated packet routine.
+Full-word ABI, signed snapshot count, live context and two RNG calls;
+packet byte1/byte7 remain untouched, submission status ignored. Original private
+layout recovered directly; eleven checked guards normalize the opening schedule
+with unchanged absolute branch target/dependencies. Prior10855 rows pinned,
+10866 total. Guest8192/callback-RNG362/native18856/original caller-pair12 cases,
+six negatives and copied-owner/pool/padder/stale guards qualify.
+US ELF/audit changes only target across6059 slots; addresses/extents/protected
+sections/720 owners unchanged. Exact3349/5465, Game2676/4792,
+2116 different, zero drift; conversion unchanged, README aggregate rows only.
+All131 regression tests pass in692.507s; final10 packet tests rerun after
+trace/frame-reporting improvements pass in61.780s, zero skips/errors/failures.
+59 documents/3668 relative links/zero broken, tools/syntax/diff and final
+post-regression linked audit pass.
+Next98-word `func_1514401C`; sampler/oriented recoveries remain open.
+No sibling/Release/save/runtime, complete-caller/hardware/gameplay/host adoption
+or push work.
+
 2026-10-07 ([Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md)):
 `func_151438D8`:272 direct words/frame0x60, recovered record-query pointer ABI,
 eleven field groups, any/all masks, matched clipping helper and last-match result.

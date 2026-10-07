@@ -1,6 +1,9 @@
 #include <ultra64.h>
 
+/* The retail checker receives complete words, not the legacy narrow ABI. */
+#define func_150A29C8 func_150A29C8_legacy_narrow_signature
 #include "functions.h"
+#undef func_150A29C8
 /* This owner uses the retail pointer, not the legacy inline-array declaration. */
 #define D_800D3098 D_800D3098_legacy_array
 #include "variables.h"
@@ -72,6 +75,16 @@ extern s32 D_800D3094;
 extern GameQueryRecord *D_800D3098;
 void func_15143D18(s32 *, s32 *, s32, s32);
 
+typedef struct {
+    u8 kind, pad1;
+    s16 duration;
+    u8 count, mode;
+    s8 index;
+    u8 pad7;
+} GameGatedPacket;
+s32 func_150A29C8(s32, s32);
+void *func_151D8868(void *, s32, s32, s32);
+
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
@@ -90,7 +103,7 @@ s32 func_1514306C(GameTextureSource *source, s32 index, s32 subindex, u8 kind);
 void func_15143134(f32 *point, f32 *output, u8 *matrix);
 s32 func_151432BC();
 GameQueryRecord *func_151438D8(s32 start, s32 end, u16 flags, GameQueryRecord *query);
-s32 func_15143E94();
+u8 func_15143E94(s32 command, s32 flags);
 s32 func_1514401C();
 s32 func_151441A4();
 s32 func_151442FC();
@@ -998,9 +1011,47 @@ f32 func_15143E64(f32 *arg0) {
     f32 z = arg0[2];
     return sqrtf(x * x + y * y + z * z);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15143E94.s. */
-s32 func_15143E94() {
-    return 0;
+/* Submission copies all eight bytes; preserve the untouched packet padding. */
+u8 func_15143E94(s32 command, s32 flags) {
+    u8 result = 0;
+    s8 count;
+    s8 index;
+    s16 active;
+    s16 ready;
+    GameGatedPacket packet;
+
+    count = (u32)D_80082FA0 + 1;
+    index = 0;
+    active = 0;
+    while (active == 0 && index < count) {
+        if (D_800CC2D0[index].health != 0) {
+            active = 1;
+        } else {
+            index++;
+        }
+    }
+    if (active != 0) {
+        index = 0;
+        ready = 0;
+        while (ready == 0 && index < count) {
+            if (func_150A29C8(index, flags) == 0) {
+                ready = 1;
+            } else {
+                index++;
+            }
+        }
+        if (ready != 0) {
+            func_1512D748(&D_800DBFF0[D_800BE9E8], command, 1);
+            packet.kind = 1;
+            packet.duration = (func_150ADA20() & 0xF) + 20;
+            packet.count = (func_150ADA20() & 3) + 4;
+            packet.index = -1;
+            packet.mode = 1;
+            func_151D8868(&packet, 0, 255, 0);
+            result = 1;
+        }
+    }
+    return result;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_1514401C.s. */
 s32 func_1514401C() {

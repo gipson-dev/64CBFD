@@ -21,6 +21,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor-gated packet match:
+[Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md).
+`func_15143E94`:98 words/frame0x38, full-word command/flags and byte return.
+Signed-byte snapshot count, health/checker gates, live context, two RNG calls
+and partially initialized eight-byte packet recovered. Eleven checked guards
+normalize only the closed opening schedule; branch target/dependencies and
+private layout unchanged. Scope the checker ABI locally, shared headers untouched.
+8192 paired guest/362 callback-RNG/18856 native/12 original caller-pair cases,
+six negatives, poisoned padding and actual owner/pool/padder/stale gates qualify.
+US ELF/audit passes; only target changes across6059 slots, all addresses/extents/
+protected sections/720 owners/10855 prior guards unchanged,10866 total.
+Exact3349/5465 (61.28%), Game2676/4792 (55.84%),2116 different, zero drift;
+conversion unchanged. README aggregate matching rows only.
+All131 post-link regression tests pass in692.507s; final10 packet tests rerun
+after trace/frame-reporting improvements pass in61.780s. Zero skips/errors/
+failures.59 documents/3668 relative links/zero broken; tools/syntax/diff and
+final post-regression linked audit pass.
+Next98-word cursor updater `func_1514401C`; sampler exits/oriented27 offsets
+stay open. No sibling/Release/save/runtime, complete-caller/hardware/gameplay,
+host adoption or push.
+
 Record-query direct match:
 [Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md).
 `func_151438D8`:272 direct C words/frame0x60, no guards/profile changes.

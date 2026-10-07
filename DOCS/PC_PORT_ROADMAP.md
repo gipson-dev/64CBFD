@@ -1,5 +1,30 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor-Gated Packet Match - 2026-10-07
+
+[Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md):
+`func_15143E94`:98 words/frame0x38, eleven relocation-checked opening-schedule
+guards. Private offsets and absolute branch target recovered/preserved.
+Only target changes across6059 slots; protected sections/720 owners/all10855
+prior guards/addresses/extents unchanged,10866 total. Game2676/4792 exact,
+2116 different, zero drift; conversion unchanged. README aggregate rows only.
+
+- [x] Recover full-word ABI, signed count/index and independent health/checker gates.
+- [x] Recover original frame/result/packet placement through legitimate C declarations.
+- [x] Qualify live context, RNG order, untouched padding and ignored submission return.
+- [x] Qualify guest/native/caller pairs, negatives and copied-owner/padder/stale guards.
+- [x] Install, rebuild and audit every linked slot, protected data and guard prefix.
+- [x] Finish expanded131-test regression and final documentation gates.
+- [ ] Recover next98-word cursor updater `func_1514401C`.
+- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+
+All131 tests pass in692.507s; final10 packet tests rerun after trace/frame
+reporting changes pass in61.780s, zero skips/errors/failures.59 documents/
+3668 relative links/zero broken, tools/syntax/diff and final linked audit pass.
+Bounded tests do not prove real actor-array bounds beyond26 entries, original
+helper execution, complete callers, hardware/gameplay or host adoption.
+No sibling/frozen Release/save/runtime or push; goal stays active.
+
 ## Game Record Query Match - 2026-10-07
 
 [Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md):
@@ -14,7 +39,8 @@ zero drift; conversion unchanged. README aggregate matching rows only.
 - [x] Install, rebuild and audit all linked slots/data/guard history.
 - [x] Finish expanded121-test regression and final documentation gates.
 - [ ] Recover sampler's two missing exits and circle-byte scheduling from C.
-- [ ] Inspect/reconstruct forward placeholder `func_15143E94`.
+- [x] Inspect/reconstruct forward placeholder `func_15143E94`
+  ([Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md)).
 
 No complete original caller, hardware/gameplay or host adoption claim;
 oriented27 private-layout differences remain open. No sibling/Release/save/runtime

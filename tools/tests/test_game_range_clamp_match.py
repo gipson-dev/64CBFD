@@ -257,7 +257,7 @@ for(i=0;i<5;i++)for(j=0;j<5;j++)for(k=0;k<5;k++)for(l=0;l<5;l++)for(alias=0;alia
         self.assertEqual(functions[screen.FUNCTION],self.retail)
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:guards=list(csv.DictReader(stream))
         digest=assert_guard_history(self,guards)
-        self.assertEqual(guards[10842:],screen.owner_guards())
+        self.assertEqual(guards[10842:10855],screen.owner_guards())
         self.receipt('production',dict(words=36,guards=len(guards),guard_sha256=digest,byte_exact=True))
 
 

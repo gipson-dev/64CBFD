@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-07 Game Actor-Gated Packet Match
+
+[Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md):
+recover `func_15143E94`'s98-word/frame0x38 semantic body and full-word input ABI.
+Preserve snapshot count, separate health/checker scans, live context, RNG order,
+untouched descriptor bytes and unconditional post-submission success. Eleven
+checked opening-schedule guards retain the same dependencies/branch destination;
+no private-offset/frame/production-profile/shared-header changes.
+8192 paired guest/362 callback-RNG/18856 native/12 original call-delay cases,
+six negatives and owner/pool/padder/stale checks qualify. US ELF/audit changes
+only target across6059 slots; protected sections/720 owners/all10855 prior
+guards/addresses/extents unchanged,10866 total. Exact3349/5465,
+Game2676/4792,2116 different, zero drift; conversion unchanged.
+README aggregate rows only. All131 regression tests pass in692.507s;
+final10 packet tests rerun after trace/frame-reporting improvements pass
+in61.780s, zero skips/errors/failures.59 documents/3668 relative links/zero
+broken; tools/syntax/diff and final post-regression linked audit pass.
+Next98-word cursor updater `func_1514401C`; sampler/oriented recoveries stay open.
+No complete caller/hardware/gameplay/host adoption, sibling/Release/save/runtime
+or push work.
+
 ## 2026-10-07 Game Record Query Direct Match
 
 [Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md):

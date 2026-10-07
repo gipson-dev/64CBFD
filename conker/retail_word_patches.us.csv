@@ -10854,3 +10854,14 @@ game_16EE20,func_15143D18,0x5C,0x0066082A,0x00A6082A,-,-,Normalize range clamp t
 game_16EE20,func_15143D18,0x64,0x8E180000,0x8E190000,-,-,Normalize range clamp temporary register allocation,,,false
 game_16EE20,func_15143D18,0x6C,0x8E180000,0x8E190000,-,-,Normalize range clamp temporary register allocation,,,false
 game_16EE20,func_15143D18,0x70,0x00F8082A,0x00F9082A,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143E94,0x20,0x3C120000,0xA3A00037,R_MIPS_HI16:D_80082FA0,-,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x24,0x8E520000,0x3C120000,R_MIPS_LO16:D_80082FA0,R_MIPS_HI16:D_80082FA0,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x28,0xA3A00037,0x8E520000,-,R_MIPS_LO16:D_80082FA0,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x30,0x26520001,0x00001025,-,-,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x34,0x00127600,0x26520001,-,-,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x38,0x000E9603,0x00127600,-,-,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x3C,0x1A400013,0x000E9603,-,-,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x40,0x00001025,0x1A400012,-,-,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x44,0x3C030000,0x2404032C,R_MIPS_HI16:D_800CC2D0,-,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x48,0x24630000,0x3C030000,R_MIPS_LO16:D_800CC2D0,R_MIPS_HI16:D_800CC2D0,Normalize actor gated packet opening initialization schedule,,,false
+game_16EE20,func_15143E94,0x4C,0x2404032C,0x24630000,-,R_MIPS_LO16:D_800CC2D0,Normalize actor gated packet opening initialization schedule,,,false
