@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-06 Game Oriented Matrix Recovery
+
+[Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md):
+bank maintained compiler recovery and qualification for `func_15142600`;
+production remains a placeholder.32 SDK controls:142/frameB8/84 differences,
+or142/frameC8/57 stack-only differences with every non-stack word agreeing.
+Eleven tests pass in39.018 seconds;2448 three-body guest cases,1224 native
+caller cases per candidate,144 original caller/converter cases per body,
+all142 words, nine compiled negatives, native integer-load rejection, actual
+padding and copied owners. Proposed local caller correction retains all eight
+raw functions; both builder copies retain92 neighbors, pools and two warnings.
+No installed source/guards, new matching count or root README change. Resume
+the stack-only challenger's meaningful layout and original frameB8; do not
+normalize its oversized frame. Production remains the Note1067 baseline.
+No sibling/frozen Release/save/runtime, host adoption, hardware/gameplay
+acceptance or push.
+
 ## 2026-10-06 Game Scaled Matrix Match
 
 [Note1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md):

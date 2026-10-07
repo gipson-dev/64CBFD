@@ -21,6 +21,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Oriented matrix recovery, not yet installed:
+[Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md)
+qualifies `func_15142600`'s two-point basis, normalization, row/column scaling,
+start-point translation and twelve-input caller ABI.32 maintained SDK controls:
+142 words/frame0xB8/84 differences; a closer142/frame0xC8 challenger has57
+differences, all stack immediates. Every non-stack instruction already agrees.
+Eleven tests pass in39.018 seconds:2448 three-body guest cases,1224 native
+caller cases per candidate,144 complete original caller/converter cases per
+body, nine compiled negatives, native integer-load rejection, actual padding
+and copied-owner preservation. Typed caller correction is copy-only; eight
+caller-owner functions stay unchanged. Both builder copies preserve92 neighbors,
+pools and two warnings. No candidate or guards installed; root README and
+production baseline stay unchanged. Recover the challenger's private layout
+and original frame0xB8 next, without a stack/frame rewrite. Scope and remaining
+verification gates are recorded in Note1068.
+
 Scaled matrix recovery:
 [Note 1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md)
 recovers `func_151424F4`:67 direct words/frame0x68, no guards/profile changes.
@@ -41,9 +57,10 @@ unchanged. All77 focused post-link tests pass in531.767 seconds, no skips/
 errors/failures;49 docs/3546 relative links/zero broken, tools/syntax/diff
 checks pass.
 Next142-word `func_15142600`, frame0xB8: oriented basis from two points,
-normalization, scaling, translation and fixed conversion. Sixteen scratch
-controls give143 words/frame0xC8/138 differences at best under O2/g3;
-not installed or qualified. No sibling/Release/
+normalization, scaling, translation and fixed conversion. That checkpoint's
+sixteen initial scratch controls gave143 words/frame0xC8/138 differences under
+O2/g3, then uninstalled/unqualified. Current qualified controls and remaining
+frame recovery are in the oriented-matrix section above. No sibling/Release/
 save, runtime, host adoption, gameplay acceptance or push change.
 
 Scaled descriptor recovery:

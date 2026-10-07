@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest oriented matrix recovery](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md):
+  two-point basis, scaling and caller ABI qualified in copies;142-word/frameB8
+  candidate has84 differences, closer frameC8 candidate has57 stack-only
+  differences. Maintained controls/native/guest/original caller-converter,
+  padding and owner tests pass. Not installed or counted as a new match.
+
 - [Latest scaled matrix match](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md):
   67 direct words/frame0x68, no guards; correct twelve-input pointer/float ABI,
   typed caller without guest-code changes, row/column products and translations.

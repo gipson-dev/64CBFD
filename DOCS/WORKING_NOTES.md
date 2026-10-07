@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-06 ([Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md)):
+`func_15142600`:two-point oriented matrix qualified in copies, not installed.
+32 maintained SDK controls:142/frameB8/84 differences, closer142/frameC8/57
+stack-only differences. All non-stack instructions agree. Eleven tests pass
+in39.018 seconds;2448 three-body guest,1224 native caller cases per candidate,
+144 complete original caller/converter cases per body; negatives, actual
+padding and copied-owner preservation. Eight typed-caller owner functions
+stay raw unchanged; both builder copies preserve92 neighbors/pools/two warnings.
+Production/root README unchanged; no new matching count or guards. Resume
+private-layout/frameB8 recovery, then install builder and caller together.
+No sibling/Release/save/runtime, host adoption, hardware/gameplay acceptance
+or push. Goal stays active.
+
 2026-10-06 ([Note1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md)):
 `func_151424F4`:67 direct words/frame0x68, no guards/profile change. Twelve-
 input pointer/float ABI, original rotation/translation/scale/conversion order;

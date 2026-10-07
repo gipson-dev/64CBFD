@@ -1,5 +1,28 @@
 # PC Port Roadmap located in another project folder
 
+## Game Oriented Matrix Recovery - 2026-10-06
+
+[Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md):
+`func_15142600` is behavior-qualified in copies, **not installed or matched**.
+32 maintained SDK controls:142 words/frameB8/84 differences; a closer
+142/frameC8 candidate differs only in57 SP-relative immediates. All non-stack
+instructions agree. Eleven tests pass in39.018 seconds;2448 three-body guest,
+1224 native caller cases per candidate and144 complete original caller/
+converter cases per body, plus negatives/padding/copied owners. Production
+baseline and aggregate progress remain unchanged; root README is untouched.
+
+- [x] Recover two-point basis, three normalizations and twelve-input ABI.
+- [x] Qualify signs, degenerate points, float edges, aliases and saved state.
+- [x] Qualify original caller/converter in the finite exact conversion domain.
+- [x] Prove proposed caller correction preserves all eight raw owner functions.
+- [x] Bank maintained compiler controls, negatives, padding and owner tests.
+- [ ] Recover original142-word/frameB8 private layout from legitimate C.
+- [ ] Install matching builder and typed local caller together.
+- [ ] Rebuild/audit, neighboring regressions and actual progress refresh.
+
+No stack/frame guards, sibling/Release/save/runtime, hardware FCSR, gameplay
+acceptance, host adoption or push. Resume the stack-only challenger in Note1068.
+
 ## Game Scaled Matrix Match - 2026-10-06
 
 [Note 1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md)
