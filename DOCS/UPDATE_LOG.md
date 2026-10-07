@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Scaled Matrix Match
+
+[Note1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md):
+`func_151424F4`:67 direct words/frame0x68, no guards/profile change. Original
+matrix provider, translations, two-step row/column products and conversion call.
+Correct twelve-input ABI and caller's three raw float loads without changing
+caller instructions or its31-function owner.16 controls,6480 guest/3372 native,
+696 float edges,48 guest-only home probes, ten compiled negatives and native
+integer-load rejection.432 connected cases cover complete original caller/
+builder/converter on finite exactly integral conversions. Only target across
+6059; all10809 guards, protected sections/720 owners and both owners' two
+warnings unchanged. Exact3342/5464 (61.16%), Game2669/4791 (55.71%),2122
+different, zero drift; converted unchanged. All77 focused post-link tests pass
+in531.767 seconds, no skips/errors/failures;49 docs/3546 relative links/zero
+broken, tools/syntax/diff checks pass. Next142-word `func_15142600`.
+No rotation-helper restoration, general FCSR/NaN/out-of-range conversion or
+gameplay acceptance, host adoption, sibling/Release/save/runtime or push.
+
 ## 2026-10-06 Game Scaled Descriptor Match
 
 [Note1066](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md):

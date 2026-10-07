@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest scaled matrix match](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md):
+  67 direct words/frame0x68, no guards; correct twelve-input pointer/float ABI,
+  typed caller without guest-code changes, row/column products and translations.
+  Native/guest, original caller/converter and actual padding qualified within
+  documented bounds. Next142-word `func_15142600`.
+
 - [Latest scaled descriptor match](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md):
   80 direct words/frame0x70, no guards;76-byte descriptor, position copy,
   live original constants and five-argument submit. Native/guest, original

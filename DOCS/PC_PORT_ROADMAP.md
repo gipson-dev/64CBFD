@@ -1,5 +1,36 @@
 # PC Port Roadmap located in another project folder
 
+## Game Scaled Matrix Match - 2026-10-06
+
+[Note 1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md)
+recovers guest `func_151424F4`:67 direct words/frame0x68, no guards/profile
+change. Correct twelve-input pointer/float ABI and the local caller's three
+float loads; caller remains30-word exact with its whole owner unchanged.
+16 controls,6480 paired guest/3372 native cases,696 float edges,48 guest-only
+home probes, ten compiled negatives and a native integer-load negative.
+432 connected cases cover all original caller/builder/converter instructions
+on finite exactly integral fixed conversions; rotation remains a bounded model.
+Only target across6059; all10809 guards, protected sections/720 data owners and
+both owners' two warnings unchanged. Game2669/4791 exact (55.71%),2122
+different, zero drift; converted counts/bytes unchanged.
+All77 focused post-link tests pass in531.767 seconds, no skips/errors/failures;
+49 docs/3546 relative links/zero broken, tools/syntax/diff checks pass.
+
+- [x] Recover matrix fields, multiply ordering and twelve-input call ABI.
+- [x] Correct the caller types without numeric conversion or guest-code churn.
+- [x] Qualify native/guest, original caller/converter, negatives and actual padder.
+- [x] Rebuild/audit all slots, original data owners and unchanged guards.
+- [x] Finish focused post-link regression/documentation receipts.
+- [ ] Recover142-word `func_15142600`: normalized oriented basis from two points.
+
+Sixteen scratch next-function controls:in-place O2/g3 emits143 words/frame0xC8/
+138 differences, not retail142/frame0xB8. No control is installed or qualified;
+recover private-vector placement and saved F20/F22 lifetime next.
+
+No rotation-helper C restoration, general FCSR/NaN/out-of-range conversion,
+full gameplay acceptance, host adoption, sibling source/build/save/frozen
+Release, runtime or push change.
+
 ## Game Scaled Descriptor Match - 2026-10-06
 
 [Note 1066](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md)
@@ -18,7 +49,7 @@ All65 focused post-link tests pass in513.711 seconds, no skips/errors/failures;
 - [x] Qualify native/guest, alias, float, negative and actual-padder gates.
 - [x] Rebuild/audit all slots, original data owners and unchanged guards.
 - [x] Finish focused post-link regression/documentation receipts.
-- [ ] Recover67-word `func_151424F4`: scaled matrix and fixed-point conversion.
+- [x] Recover67-word `func_151424F4`: scaled matrix and fixed-point conversion (Note1067).
 
 Sixteen initial next-function controls find67 direct words/frame0x68 under
 O2/g3, explicit element updates and translation-first order. Candidate is

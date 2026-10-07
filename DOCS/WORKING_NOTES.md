@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-06 ([Note1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md)):
+`func_151424F4`:67 direct words/frame0x68, no guards/profile change. Twelve-
+input pointer/float ABI, original rotation/translation/scale/conversion order;
+typed caller correction leaves all31 owner functions unchanged.16 controls,
+6480 paired guest/3372 native/432 original caller-builder-converter cases,
+696 edges,48 private-home probes, ten compiled negatives and one native caller
+negative. Original conversion gate is finite/exact integral only; provider,
+general FCSR/NaN conversion and gameplay not claimed. Only target across6059;
+protected sections/720 owners/10809 guards and both owners' two warnings
+unchanged. Exact3342/5464, Game2669/4791,2122 different, zero drift; converted
+unchanged. All77 focused post-link tests pass in531.767 seconds, no skips/
+errors/failures;49 docs/3546 relative links/zero broken, tools/syntax/diff
+checks pass.
+Next142-word `func_15142600`, frame0xB8: normalized oriented matrix.
+No sibling/Release/save/runtime, host adoption, gameplay acceptance or push.
+
 2026-10-06 ([Note1066](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md)):
 `func_15142180`:80 direct words/frame0x70, no guards/profile change. Five typed
 inputs,76-byte descriptor, aggregate position copy, four scale products, two

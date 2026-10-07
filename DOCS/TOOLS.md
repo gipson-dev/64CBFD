@@ -4,6 +4,28 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Scaled matrix compiler controls
+
+[Driver](../tools/experiments/game_scaled_matrix_candidates.py):four explicit/
+common-product and translation-order shapes across four actual-SDK profiles,
+16 controls. Explicit element updates and translation-first order recover67
+direct words/frame0x68 under O2/g3. No guards or shared profile/header changes.
+[Twelve tests](../tools/tests/test_game_scaled_matrix_match.py) bind6480 paired
+guest/full trace/storage cases,696 float edges,48 guest-only home probes,
+3372 actual32-bit native caller cases, ten compiled negatives and a native
+integer-load rejection. All12 arguments are typed; integer field loads must
+not numerically convert raw float bits under the corrected declaration.
+432 connected cases execute the original30-word caller and115-word converter
+around both67-word bodies, restricted to finite exactly integral fixed values.
+General rounding modes, FCSR flags, NaN/out-of-range conversion and the original
+rotation provider remain outside that gate. Actual padder retains268 symbol
+bytes, excludes the four-byte section alignment tail, and retargets both calls.
+Copied owners preserve92 other builder functions and all31 caller functions/
+relocations/pools, warnings2->2 in each. Production binds target, exact caller,
+seven neighbors and10809 unchanged guards. Ignored receipts:
+`conker/build/game-scaled-matrix-test/`; see
+[Note1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md).
+
 ## Scaled descriptor compiler controls
 
 [Driver](../tools/experiments/game_scaled_descriptor_candidates.py):sixteen

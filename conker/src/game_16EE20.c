@@ -45,7 +45,8 @@ s32 func_15141CC0(s32 context);
 void func_15141E38(u8 *actor, s32 index);
 void func_15141F78(u8 slot, u8 *source, f32 scale, u8 tag, f32 *position, u8 mode);
 void func_15142180(u8 slot, struct17 *source, s32 word, f32 width, f32 height);
-s32 func_151424F4();
+void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
+    f32 cx, f32 cy, f32 cz, f32 tx, f32 ty, f32 tz);
 s32 func_15142600();
 s32 func_15142838();
 s32 func_15142E24();
@@ -416,9 +417,23 @@ void *func_15142444(u8 arg0, u8 *arg1) {
     }
     return found;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151424F4.s. */
-s32 func_151424F4() {
-    return 0;
+void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
+    f32 cx, f32 cy, f32 cz, f32 tx, f32 ty, f32 tz) {
+    f32 matrix[4][4];
+    func_150A8050(matrix, rx, ry, rz);
+    matrix[3][0] = tx;
+    matrix[3][1] = ty;
+    matrix[3][2] = tz;
+    matrix[0][0] *= cx * row0;
+    matrix[0][1] *= cy * row0;
+    matrix[0][2] *= cz * row0;
+    matrix[1][0] *= cx * row1;
+    matrix[1][1] *= cy * row1;
+    matrix[1][2] *= cz * row1;
+    matrix[2][0] *= cx * row0;
+    matrix[2][1] *= cy * row0;
+    matrix[2][2] *= cz * row0;
+    guMtxF2L(matrix, output);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15142600.s. */
 s32 func_15142600() {

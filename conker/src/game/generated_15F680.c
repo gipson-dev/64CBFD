@@ -53,7 +53,8 @@ typedef struct {
 
 
 s32 func_15133EEC();
-s32 func_151424F4(s32, s32, s32, s32, f32, f32, f32, f32, f32, f32, f32, f32);
+void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
+    f32 cx, f32 cy, f32 cz, f32 tx, f32 ty, f32 tz);
 s32 func_15142838(void *, f32, f32, f32, f32, f32, f32, f32, f32);
 
 s32 func_151321D0() {
@@ -230,19 +231,19 @@ s32 func_151332DC() {
     return 0;
 }
 
-s32 func_15133510(s32 arg0, u8 *arg1) {
-    func_151424F4(arg0,
-                  *(s32 *)(arg1 + 0x18),
-                  *(s32 *)(arg1 + 0x1C),
-                  *(s32 *)(arg1 + 0x20),
-                  *(f32 *)(arg1 + 0x24),
-                  *(f32 *)(arg1 + 0x28),
-                  *(f32 *)(arg1 + 0x2C),
-                  *(f32 *)(arg1 + 0x30),
-                  *(f32 *)(arg1 + 0x34),
-                  *(f32 *)(arg1 + 0x38),
-                  *(f32 *)(arg1 + 0x3C),
-                  *(f32 *)(arg1 + 0x40));
+s32 func_15133510(Mtx *output, u8 *source) {
+    func_151424F4(output,
+                  *(f32 *)(source + 0x18),
+                  *(f32 *)(source + 0x1C),
+                  *(f32 *)(source + 0x20),
+                  *(f32 *)(source + 0x24),
+                  *(f32 *)(source + 0x28),
+                  *(f32 *)(source + 0x2C),
+                  *(f32 *)(source + 0x30),
+                  *(f32 *)(source + 0x34),
+                  *(f32 *)(source + 0x38),
+                  *(f32 *)(source + 0x3C),
+                  *(f32 *)(source + 0x40));
     return 1;
 }
 

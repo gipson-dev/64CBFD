@@ -21,6 +21,31 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Scaled matrix recovery:
+[Note 1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md)
+recovers `func_151424F4`:67 direct words/frame0x68, no guards/profile changes.
+Typed output pointer and eleven float inputs; original rotation call, translation
+stores, separately rounded column*row and matrix-element products, guMtxF2L ABI.
+Correct local caller declaration/three float loads in `func_15133510` without
+changing its30 retail words or any of its owner's31 raw functions.
+16 controls;6480 paired guest/full trace/storage cases,696 float edges,48
+guest-only home probes,3372 native caller cases, ten compiled negatives and
+a native integer-load rejection.432 connected cases execute all30 original
+caller/67 builder/115 converter words on finite exactly integral conversions.
+Rotation provider remains a model; general FCSR/NaN conversion, helper
+restoration and gameplay acceptance are not claimed.
+Only builder changes across6059 slots; all10809 guards, protected sections/
+720 owners and both owners' two warnings unchanged. Exact3342/5464 (61.16%),
+Game2669/4791 (55.71%),2122 different, zero drift; converted counts/bytes
+unchanged. All77 focused post-link tests pass in531.767 seconds, no skips/
+errors/failures;49 docs/3546 relative links/zero broken, tools/syntax/diff
+checks pass.
+Next142-word `func_15142600`, frame0xB8: oriented basis from two points,
+normalization, scaling, translation and fixed conversion. Sixteen scratch
+controls give143 words/frame0xC8/138 differences at best under O2/g3;
+not installed or qualified. No sibling/Release/
+save, runtime, host adoption, gameplay acceptance or push change.
+
 Scaled descriptor recovery:
 [Note 1066](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md)
 recovers `func_15142180`:80 direct words/frame0x70, no guards/profile changes.
