@@ -1,5 +1,33 @@
 # PC Port Roadmap located in another project folder
 
+## Game Scaled Descriptor Match - 2026-10-06
+
+[Note 1066](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md)
+recovers guest `func_15142180`:80 direct words/frame0x70, no guards/profile
+change. Five typed inputs,76-byte descriptor, aggregate position copy, four
+scale products and two live original constants; five-argument submit ABI.
+64 controls,10800 paired guest/20992 native/42 original call-delay-pair cases,
+2240 byte/float/constant edges,28 guest-only private probes and12 negatives.
+Only target across6059; all10809 guards, protected sections/720 data owners,
+original pool and two owner warnings unchanged. Game2668/4791 exact (55.69%),
+2123 different, zero drift; converted counts/bytes unchanged.
+All65 focused post-link tests pass in513.711 seconds, no skips/errors/failures;
+48 docs/3533 relative links/zero broken, tools/syntax/diff checks pass.
+
+- [x] Recover full descriptor layout, typed inputs and five submit arguments.
+- [x] Qualify native/guest, alias, float, negative and actual-padder gates.
+- [x] Rebuild/audit all slots, original data owners and unchanged guards.
+- [x] Finish focused post-link regression/documentation receipts.
+- [ ] Recover67-word `func_151424F4`: scaled matrix and fixed-point conversion.
+
+Sixteen initial next-function controls find67 direct words/frame0x68 under
+O2/g3, explicit element updates and translation-first order. Candidate is
+scratch-only; behavior, caller, owner, padding and production gates remain.
+
+No original full-caller/submit-helper or hardware FCSR/gameplay acceptance,
+native private-overlap/padding parity, host adoption, sibling source/build/save/
+frozen Release, runtime or push change.
+
 ## Game Random Descriptor Match - 2026-10-06
 
 [Note 1065](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md)
@@ -18,7 +46,7 @@ All54 focused post-link tests pass in528.932 seconds, no skips/errors/failures;
 - [x] Qualify native/guest, byte/float, alias, negative and actual-padder gates.
 - [x] Rebuild/audit all slots, original data owners and unchanged guards.
 - [x] Finish focused post-link regression/documentation receipts.
-- [ ] Recover80-word `func_15142180`:76-byte descriptor and five-argument submit.
+- [x] Recover80-word `func_15142180`:76-byte descriptor and five-argument submit (Note1066).
 
 No original full-caller/RNG/submit-helper or hardware FCSR/gameplay acceptance,
 host adoption, sibling source/build/save/frozen Release, runtime or push change.

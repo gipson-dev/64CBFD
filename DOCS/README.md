@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest scaled descriptor match](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md):
+  80 direct words/frame0x70, no guards;76-byte descriptor, position copy,
+  live original constants and five-argument submit. Native/guest, original
+  call-delay pairs and actual padding qualified. Next67-word `func_151424F4`.
+
 - [Latest random descriptor match](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md):
   96 direct words/frame0x78, no guards;40-byte unsigned descriptor, ordered
   RNG/live reads and all16 submit arguments. Native/guest, original call-delay

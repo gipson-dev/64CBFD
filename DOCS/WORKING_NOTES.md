@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-06 ([Note1066](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md)):
+`func_15142180`:80 direct words/frame0x70, no guards/profile change. Five typed
+inputs,76-byte descriptor, aggregate position copy, four scale products, two
+live original constants and five submit arguments.64 controls,10800 paired
+guest/20992 native/42 call-delay-pair cases,2240 edge cases,28 guest-only private
+probes and12 semantic negatives. Native excludes three unspecified padding
+bytes; full callers/helper, hardware FCSR and gameplay not claimed. Only target
+across6059; protected sections/720 owners/10809 guards, pool and two warnings
+unchanged. Exact3341/5464, Game2668/4791,2123 different, zero drift; converted
+unchanged. All65 focused post-link tests pass in513.711 seconds, no skips/
+errors/failures;48 docs/3533 relative links/zero broken, tools/syntax/diff checks
+pass.
+Next67-word `func_151424F4`, frame0x68:scaled matrix/guMtxF2L ABI.
+No sibling/Release/save/runtime, host adoption, gameplay acceptance or push.
+
 2026-10-06 ([Note1065](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md)):
 `func_15141F78`:96 direct words/frame0x78, no guards/profile change. Six typed
 inputs,40-byte unsigned descriptor, ordered RNG/live reads and complete16-arg

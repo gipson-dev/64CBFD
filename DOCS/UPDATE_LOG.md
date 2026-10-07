@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Scaled Descriptor Match
+
+[Note1066](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md):
+`func_15142180`:80 direct words/frame0x70, no guards/profile change. Original
+76-byte descriptor and five typed inputs, three-word copy, separately rounded
+scale products and live original constants. Aggregate copy, integer literal2
+and recovered header store order resolve all compiler differences.64 controls,
+10800 guest/20992 native/42 original call-delay-pair cases,2240 edge cases,
+28 guest-only private overlap/home probes and12 negatives. Only target across
+6059; all10809 guards, protected sections/720 owners, pool and two warnings
+unchanged. Exact3341/5464 (61.15%), Game2668/4791 (55.69%),2123 different,
+zero drift; converted unchanged. All65 focused post-link tests pass in513.711
+seconds, no skips/errors/failures;48 docs/3533 relative links/zero broken,
+tools/syntax/diff checks pass.
+Next67-word `func_151424F4`:scaled float matrix and fixed-point conversion.
+No full original-caller/submit-helper, native private-overlap/padding or hardware
+FCSR/gameplay acceptance, host adoption, sibling/Release/save/runtime or push.
+
 ## 2026-10-06 Game Random Descriptor Match
 
 [Note1065](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md):

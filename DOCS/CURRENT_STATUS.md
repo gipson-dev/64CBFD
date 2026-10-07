@@ -21,6 +21,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Scaled descriptor recovery:
+[Note 1066](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md)
+recovers `func_15142180`:80 direct words/frame0x70, no guards/profile changes.
+Typed five-input void ABI, original76-byte descriptor, three-word position copy,
+four separately rounded scale products and live D_800A5470/5474 reads. Submit
+descriptor/position-subrecord pointers with0,255,1; opaque third input retains
+all32 bits.64 controls;10800 paired guest cases/full traces/storage,2240 edge
+cases,28 guest-only private overlap/home probes,20992 native cases,42 original
+call/delay-pair cases and12 semantic negatives. Native excludes only private
+padding61..63; helper/full callers, hardware FCSR and gameplay remain unvalidated.
+Only target changes across6059 slots; all10809 guards, protected sections/720
+owners, original pool and two owner warnings unchanged.
+Exact3341/5464 (61.15%), Game2668/4791 (55.69%),2123 different, zero drift;
+converted counts/bytes unchanged. All65 focused post-link tests pass in513.711
+seconds, no skips/errors/failures;48 docs/3533 relative links/zero broken,
+tools/syntax/diff checks pass.
+Next67-word `func_151424F4`, frame0x68: float matrix construction, separately
+rounded row/column scaling, translation and guMtxF2L call. Sixteen initial
+controls find a direct candidate, not installed or qualified. No sibling/Release/
+save, runtime, host adoption, gameplay acceptance or push change.
+
 Random descriptor recovery:
 [Note 1065](WORKING_NOTES/1065-game-random-descriptor-match-20261006.md)
 recovers `func_15141F78`:96 direct words/frame0x78, no guards/profile changes.

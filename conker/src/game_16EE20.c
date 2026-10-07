@@ -14,6 +14,19 @@ typedef struct {
     s16 size, count;
 } GameRandomDescriptor;
 
+typedef struct {
+    s16 value0, value2, value4, value6;
+    struct17 point;
+    f32 value14, value18, value1C, value20, value24, value28;
+    s16 value2C, value2E, value30, value32, value34, value36, value38, value3A;
+    u8 slot, pad3D[3];
+    f32 value40;
+    s16 value44, value46;
+    s32 word48;
+} GameScaledDescriptor;
+extern f32 D_800A5470, D_800A5474;
+void func_15153F18(GameScaledDescriptor *, struct17 *, s32, u8, s32);
+
 typedef struct { s32 index; u8 *actor; u8 identity; } GameEffectRefreshRequest;
 typedef s32 (*GameEffectClassifier)(s32, u8 *);
 typedef void (*GameEffectCallback)(u8 *, s32, s32);
@@ -31,7 +44,7 @@ s32 func_15141C0C(u8 *actor);
 s32 func_15141CC0(s32 context);
 void func_15141E38(u8 *actor, s32 index);
 void func_15141F78(u8 slot, u8 *source, f32 scale, u8 tag, f32 *position, u8 mode);
-s32 func_15142180();
+void func_15142180(u8 slot, struct17 *source, s32 word, f32 width, f32 height);
 s32 func_151424F4();
 s32 func_15142600();
 s32 func_15142838();
@@ -307,9 +320,33 @@ s32 func_151420F8(struct127 *arg0) {
     }
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15142180.s. */
-s32 func_15142180() {
-    return 0;
+void func_15142180(u8 slot, struct17 *source, s32 word, f32 width, f32 height) {
+    GameScaledDescriptor descriptor;
+    descriptor.point = *source;
+    descriptor.value14 = 2.5f * width;
+    descriptor.value18 = 2 * width;
+    descriptor.value1C = D_800A5470;
+    descriptor.value20 = D_800A5474;
+    descriptor.value2C = 3;
+    descriptor.value2E = 3;
+    descriptor.value2 = 255;
+    descriptor.value4 = -25;
+    descriptor.value6 = 10;
+    descriptor.value30 = 3;
+    descriptor.value24 = 3.0f * height;
+    descriptor.value28 = 3.5f * height;
+    descriptor.value0 = 0;
+    descriptor.value32 = 1;
+    descriptor.value34 = 9;
+    descriptor.value36 = 15;
+    descriptor.value38 = 180;
+    descriptor.value3A = 75;
+    descriptor.value44 = 12;
+    descriptor.value46 = 21;
+    descriptor.value40 = 0.0f;
+    descriptor.word48 = word;
+    descriptor.slot = slot;
+    func_15153F18(&descriptor, &descriptor.point, 0, 255, 1);
 }
 s32 func_151422C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return (arg3 + arg2) >> 1;

@@ -4,6 +4,28 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Scaled descriptor compiler controls
+
+[Driver](../tools/experiments/game_scaled_descriptor_candidates.py):sixteen
+aggregate/field-wise copy, integer/float literal, header-placement and constant-
+read-order shapes across four actual-SDK profiles,64 controls. Aggregate copy,
+integer literal `2 * width` and original header store order recover all80 words/
+frame0x70 directly under O2/g3. No guards, profile/frame rewriting or shared
+header changes. [Eleven tests](../tools/tests/test_game_scaled_descriptor_match.py)
+bind10800 paired guest/full ordered trace/storage cases,2240 byte/float/constant
+edges,28 guest-only private overlap/home probes,20992 actual32-bit native cases,
+42 original jal/delay-pair cases and12 compiled negatives. Preserve opaque32-bit
+word, low-byte slot, all76 descriptor bytes and the position-subrecord pointer.
+Native padding61..63 is unspecified; arithmetic NaNs are classification-compared,
+not FCSR/NaN-payload acceptance. Actual padding preserves320 bytes and five
+HI16/LO16/call relocations, including alternate constant addresses with low-half
+carry. Copied owner preserves92 other raw functions/relocations, original pool
+and two warnings; production binds80 words, six neighbors and10809 unchanged
+guards. Submit helper and connected caller continuations are bounded models,
+not original helper/full-caller execution. Ignored receipts:
+`conker/build/game-scaled-descriptor-test/`; see
+[Note1066](WORKING_NOTES/1066-game-scaled-descriptor-match-20261006.md).
+
 ## Random descriptor compiler controls
 
 [Driver](../tools/experiments/game_random_descriptor_candidates.py):sixteen
