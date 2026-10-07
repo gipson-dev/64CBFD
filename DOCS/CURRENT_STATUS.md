@@ -21,6 +21,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest cached environment-color direct match and sampler flow audit:
+[Note 1093](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md).
+`func_15142C10` emits all 56 words/frame `0x8` directly under unchanged O2/g3,
+no guards. Positive cache-miss gate plus the actual SDK macro recovers the
+original lazy reads, packet allocation and cache-store schedule. Forty-eight
+measurements, one exact form; 62,400 full-effect guest and 5,200 native cases,
+six negatives and copied-owner/actual-padder/independent cache-rebasing gates
+qualify. Only target changes across 6,042 retail slots / 6,058 linked symbols;
+all addresses/extents/overflows/data/protected sections/11,006 guards unchanged.
+Exact total 3,359/5,466 (61.45%), Game 2,686/4,793 (56.04%), 2,107 different,
+zero drift; conversions unchanged. Main README aggregate rows only.
+Combined regression: 50 tests in 336.828 seconds; tools/syntax/whitespace pass,
+75 documents / 3,874 relative links, zero broken.
+Sampler: 54 new flow/register measurements, none exact, all one RA reload
+versus retail three. 82,944 public-reference candidate runs and 2,592 conversion
+runs qualify; no sampler installation. Next 77-word primitive-color neighbor
+`func_15142CF0`, then remaining sampler exit/RNG schedule. No hardware/rendering/
+host/sibling/Release/save/runtime/push claim.
+
 Latest oriented-matrix direct match:
 [Note 1092](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md).
 `func_15142600` emits all 142 words/frame `0xB8` directly under unchanged O2/g3,

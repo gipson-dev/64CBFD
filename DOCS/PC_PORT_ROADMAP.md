@@ -1,5 +1,26 @@
 # PC Port Roadmap located in another project folder
 
+## Game Environment Color Match And Sampler Flow Audit - 2026-10-07
+
+[Note 1093](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md):
+`func_15142C10` is direct C56/frame `0x8`, no guards under unchanged O2/g3.
+Sampler flow controls are qualified but not installed.
+
+- [x] Retain 54 sampler source-order/chain/split-case/RNG-register controls; one RA reload each versus retail three, none exact.
+- [x] Qualify every flow form on 1,536 public-reference / 48 conversion fixtures, 82,944 / 2,592 candidate executions.
+- [x] Preserve sampler placeholder, original scratch/live fields/unsigned conversion and zero target guards.
+- [x] Recover environment-color positive cache-miss gate and actual SDK macro; 48 measurements/one direct fit.
+- [x] Qualify 62,400 complete-effect guest / 5,200 native cases, signed/full-word cache gates, sync states, aliases and six negatives.
+- [x] Preserve copied owner/88 neighbors/pools/relocations/two warnings; bind actual padder and all four independently rebased cache symbols.
+- [x] Install the direct color body and rebuild/audit all slots/addresses/extents/overflows/data/11,006 guards/conversions.
+- [x] Update README aggregate rows: total 3,359, Game 2,686, 2,107 different, zero drift.
+- [x] Pass 50 combined neighboring tests in 336.828 seconds and final tool/syntax/whitespace gates; 75 documents / 3,874 relative links, zero broken.
+- [ ] Match 77-word cached primitive-color neighbor `func_15142CF0`, including all six cache fields and sync/order/alias gates.
+- [ ] Recover sampler `func_151432BC`'s two per-path RA loads and circle RNG-byte schedule before installation.
+
+This is guest matching progress, not PC-port gameplay/rendering/Release acceptance.
+No sibling/frozen Release/save/runtime/push work.
+
 ## Game Oriented Matrix Direct Match - 2026-10-07
 
 [Note 1092](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md):

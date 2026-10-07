@@ -51,6 +51,16 @@ confirmed.
 
 ## Planning and history
 
+- [Latest environment-color match and sampler flow audit](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md):
+  All 56 words/frame `0x8` direct under O2/g3, actual SDK macro, no guards.
+  48 controls/one fit; guest/native/full-effect/copied-owner/padder/cache-relocation
+  gates qualify. Only target changes; all addresses/extents/data/guards intact.
+  Exact total 3,359, Game 2,686 (56.04%), 2,107 different, zero drift.
+  50 tests pass in 336.828 seconds; tools/syntax/whitespace and 75-document /
+  3,874-relative-link gates pass, zero broken links.
+  Sampler's 54 flow/register controls all retain one RA reload versus three;
+  behavior-qualified but uninstalled. Next 77-word primitive-color neighbor.
+
 - [Latest oriented-matrix direct match](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md):
   All 142 words/frame `0xB8` direct under unchanged O2/g3, original private
   offsets, no guards. Forty-eight meaningful controls/four direct fits;

@@ -625,25 +625,19 @@ Gfx *func_15142B7C(Gfx *arg0, u32 arg1, u32 arg2) {
     return arg0;
 }
 
-Gfx *func_15142C10(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, u8 *arg5) {
-    if ((arg1 == D_800DD1C8) && (arg2 == D_800DD1CA) && (arg3 == D_800DD1CC) && (arg4 == D_800DD1CE)) {
-        return arg0;
+Gfx *func_15142C10(Gfx *output, s32 red, s32 green, s32 blue, s32 alpha, u8 *sync) {
+    if (red != D_800DD1C8 || green != D_800DD1CA || blue != D_800DD1CC || alpha != D_800DD1CE) {
+        if (*sync == 1) {
+            gDPPipeSync(output++);
+            *sync = 0;
+        }
+        gDPSetEnvColor(output++, red, green, blue, alpha);
+        D_800DD1C8 = red;
+        D_800DD1CA = green;
+        D_800DD1CC = blue;
+        D_800DD1CE = alpha;
     }
-
-    if (*arg5 == 1) {
-        gDPPipeSync(arg0++);
-        *arg5 = 0;
-    }
-
-    arg0->words.w0 = 0xFB000000;
-    arg0->words.w1 = ((arg1 & 0xFF) << 24) | ((arg2 & 0xFF) << 16) | ((arg3 & 0xFF) << 8) | (arg4 & 0xFF);
-    arg0++;
-
-    D_800DD1C8 = arg1;
-    D_800DD1CA = arg2;
-    D_800DD1CC = arg3;
-    D_800DD1CE = arg4;
-    return arg0;
+    return output;
 }
 
 Gfx *func_15142CF0(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, u8 *arg7) {

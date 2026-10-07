@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-07 Game Environment Color Match And Sampler Flow Audit
+
+[Note 1093](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md):
+`func_15142C10` is direct C56/frame `0x8`, unchanged O2/g3, no guards. Positive
+cache-miss control plus the actual SDK command macro recovers all retail words.
+48 controls/one exact form; 62,400 guest/full-effect and 5,200 native cases,
+lazy unmapped gates, six negatives and copied-owner/padder/cache-relocation
+checks pass. US ELF rebuilt: only target among 6,042 retail slots / 6,058
+symbols; all addresses/extents/overflows/data/11,006 guards/conversions intact.
+Exact total 3,359, Game 2,686 (56.04%), 2,107 different, zero drift.
+Combined regression: 50 tests in 336.828 seconds; tools/syntax/whitespace and
+75-document / 3,874-relative-link gates pass, zero broken links.
+Sampler: 54 flow/register controls all retain one RA reload versus retail three,
+none exact. Four tests qualify 82,944 candidate public-effect and 2,592 conversion
+runs; production placeholder remains unchanged. Main README aggregate rows only.
+Next 77-word cached primitive-color neighbor; sampler exits/RNG still open.
+No sibling/frozen Release/save/runtime/rendering/hardware acceptance or push.
+
 ## 2026-10-07 Game Oriented Matrix Direct Match
 
 [Note 1092](WORKING_NOTES/1092-game-oriented-matrix-direct-match-20261007.md):

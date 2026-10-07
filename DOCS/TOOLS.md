@@ -4,6 +4,39 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Cached environment color and sampler flow controls
+
+[Color driver](../tools/experiments/game_cached_environment_color_candidates.py)
+retains twelve cache-gate/cursor/SDK/packet forms across four SDK profiles,
+48 measurements. Positive miss gate and actual SDK macro under unchanged O2/g3
+emit the complete 56-word/frame `0x8` slot directly, no guards. The
+[seven fitting tests](../tools/tests/test_game_cached_environment_color_match.py)
+bind 62,400 complete-effect guest and 5,200 native 32-bit cases, signed/full-word
+channels, lazy cache/sync reads, aliases, six negatives, copied owner, actual
+padding/independent global relocations and installed source/slot/history.
+
+[Sampler flow driver](../tools/experiments/game_area_sampler_flow_candidates.py)
+adds 54 source-order/chain/split-case/RNG temporary/register measurements.
+All retain one RA reload versus retail three; none exact, no new pool or profile
+change. [Four tests](../tools/tests/test_game_area_sampler_flow.py) qualify
+1,536 public-reference fixtures across every form (82,944 candidate executions)
+and 48 unsigned-conversion fixtures (2,592 executions). Private trace/native
+invalid-cast/hardware FCSR equivalence is not claimed; sampler stays uninstalled.
+See [Note 1093](WORKING_NOTES/1093-game-cached-environment-color-match-and-sampler-flow-audit-20261007.md).
+The combined color/flow/prior-sampler/oriented-matrix/actor-lookup/pool/padder
+regression passes 50 tests in 336.828 seconds. Tools/syntax/whitespace and the
+75-document / 3,874-relative-link gates pass, zero broken links.
+
+```sh
+python3 -m tools.experiments.game_cached_environment_color_candidates
+python3 -m tools.experiments.game_area_sampler_flow_candidates
+python3 -m unittest tools.tests.test_game_cached_environment_color_match tools.tests.test_game_area_sampler_flow -v
+```
+
+Ignored receipts: `conker/build/game-cached-environment-color/`,
+`conker/build/game-cached-environment-color-test/`,
+`conker/build/game-area-sampler-flow/` and `conker/build/game-area-sampler-flow-test/`.
+
 ## Oriented matrix direct-match controls
 
 [Lifetime driver](../tools/experiments/game_oriented_matrix_lifetime_candidates.py)
