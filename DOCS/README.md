@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest scaled-sphere caller recovery](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md):
+  Complete eight-position caller and five real helpers qualified in bounded
+  guest/native cases. Original frame/private slots recovered, but 111 words
+  versus retail 110; retain placeholder and counts. Next original-profile fit
+  and stronger private/helper-frame/read-timing evidence before installation.
+
 - [Latest sphere-callee allocation match](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md):
   Semantic C replaces restored assembly; all 126 words/frame/private slots
   exact. 53 checked FP/schedule guards, 3,724 guest and 6,318 native finite

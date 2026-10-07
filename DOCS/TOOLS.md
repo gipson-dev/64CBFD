@@ -4,6 +4,34 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Scaled sphere caller recovery controls
+
+[Driver](../tools/experiments/game_scaled_sphere_query_candidates.py) retains
+71 branch/profile/commutative/storage/address-preparation controls for the full
+`func_15145AD8`. Selected O2/g3 emits 111 words/frame `0x88`, 72 differences,
+with original private locals bound through structured `.mdebug` records.
+None is raw exact; production placeholder, profiles and guards stay unchanged.
+[Ten tests](../tools/tests/test_game_scaled_sphere_query_recovery.py) connect
+all five real helpers and compare an
+[independent evolving-memory reference](../tools/tests/game_scaled_sphere_query_reference.py)
+with original retail and experimental C: 18,008 bulk guest cases, natural
+late-output-home writes, 25,344 native finite calls and effective negatives.
+Caller 109/110 original words execute; unreachable duplicate load excluded.
+External footprints/observable private aliases do not prove complete private
+helper-frame bytes or identical raw instruction-read timing. Native optional
+inputs are non-null and do not model guest private/home aliases.
+
+```sh
+python3 -m tools.experiments.game_scaled_sphere_query_candidates
+python3 -m unittest tools.tests.test_game_scaled_sphere_query_recovery -v
+```
+
+Ignored receipts: `conker/build/game-scaled-sphere-query/` and
+`conker/build/game-scaled-sphere-query-test/`; see
+[Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md).
+No target installation, full-float/FCSR/NaN/hardware/gameplay or host adoption
+claim. Recover the original-profile 110-word fit and finish owner/install gates.
+
 ## Sphere callee allocation matching controls
 
 [Allocation driver](../tools/experiments/game_sphere_callee_allocation_candidates.py)

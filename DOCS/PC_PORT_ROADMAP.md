@@ -1,5 +1,29 @@
 # PC Port Roadmap located in another project folder
 
+## Game Scaled Sphere Query Recovery - 2026-10-07
+
+[Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md):
+`func_15145AD8` full experimental C111/frame `0x88`, original private slots,
+72 differences versus retail 110 words; production placeholder retained.
+
+- [x] Recover complete eight-position ABI, reversed non-null redirection and private/home lifetimes.
+- [x] Connect real dimension/normalizer/wrapper/sphere/dot helpers, not seeded returns.
+- [x] Qualify 18,008 bulk guest cases, natural home writes, lazy failure paths and effective negatives.
+- [x] Execute 25,344 actual native finite calls with all real C helpers and external aliases.
+- [x] Retain 71 compiler controls and structured original-frame/local-allocation receipts.
+- [x] Verify retained slots/data/guard history/counts; main README aggregates unchanged.
+- [x] Finish focused regression and final documentation/tool gates.
+- [ ] Recover fitting 110-word O2/g3 source without private/frame/branch patches or padding.
+- [ ] Broaden vertical-offset/private/helper-frame/read-timing evidence, then classify closed differences.
+- [ ] Finish copied-owner/padder/install/build and whole linked regression gates before claiming a match.
+
+Ten new tests pass in 45.498 seconds. Caller 109/110 words execute; one load is
+structurally unreachable. Bounded external footprints and observable private
+aliases do not establish complete helper-frame or installed-caller acceptance.
+No sibling/frozen Release/save/runtime/push work.
+All 72 focused tests pass in 273.813 seconds, zero skips/errors/failures;
+final retained audit, tools/syntax/whitespace and 69-document/3,789-link gate pass.
+
 ## Game Sphere Callee Allocation Match - 2026-10-07
 
 [Note 1086](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md):
@@ -14,7 +38,7 @@ exact, original frame/private slots recovered without offset guards or padding.
 - [x] Install narrowly, rebuild US ELF and audit all slots/data/historical guards.
 - [x] Refresh conversion/matching counts and main README aggregate rows only.
 - [x] Finish the focused post-link regression and final documentation/tool gates.
-- [ ] Recover the full next 110-word `func_15145AD8`, its dependency and private/home lifetimes.
+- [x] Recover the full next 110-word `func_15145AD8`, its dependencies and private/home lifetimes (Note 1087; fitting and installation remain open).
 
 All 6,059 linked slots remain byte-identical; 720 data owners and 10,953 prior
 guards unchanged, 11,006 total. Converted +1/504 bytes; exact total 3,355/5,466,

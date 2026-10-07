@@ -21,7 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest callee allocation match:
+Latest scaled-sphere caller recovery, not installed:
+[Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md).
+`func_15145AD8` now has its complete eight-position ABI, reversed non-null
+redirections and original private slots/frame `0x88`, but emits 111 words
+versus retail 110, 72 differences. Seventy-one compiler controls, none exact.
+18,008 bulk guest cases plus natural late-pointer-home/fail-closed probes and
+25,344 native finite calls connect all five real helpers. Caller coverage
+109/110; unreachable duplicate load explicitly excluded. Ten tests pass in
+45.498 seconds, zero skips/errors/failures. Retain production placeholder;
+all 6,059 slots/720 data owners/11,006 guards/counts and README aggregates
+unchanged. Next 110-word O2/g3 fit, broader private/helper-frame/read-timing
+qualification and owner/install gates. No installed-caller, full-float/FCSR/
+NaN/hardware/gameplay/host or sibling/frozen Release/save/runtime/push claim.
+All 72 focused tests pass in 273.813 seconds, zero skips/errors/failures;
+final retained audit, tools/syntax/whitespace and 69-document/3,789-link gate pass.
+
+Last installed callee allocation match:
 [Note 1086](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md).
 `func_151452C4` is now semantic C, all 126 linked words/frame `0x70` exact.
 Meaningful local order plus the direction union recover original private slots;

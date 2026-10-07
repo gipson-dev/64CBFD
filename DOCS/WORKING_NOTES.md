@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-07 ([Note 1087](WORKING_NOTES/1087-game-scaled-sphere-query-recovery-20261007.md)):
+`func_15145AD8` recovered as uninstalled eight-position scaled-sphere C, original
+frame/private slots `0x88`, 111 words versus retail 110, 72 differences.
+Preserve non-null private redirection, lazy dimensions and late point homes.
+71 meaningful compiler controls, none exact. 18,008 bulk guest cases and
+25,344 actual native finite calls connect all five real helpers; 109/110 caller
+words execute, unreachable duplicate load excluded. Ten tests pass in 45.498
+seconds. Effective compiled negatives and natural pointer-home writes qualify.
+All 6,059 retained slots/protected sections/720 owners/11,006 guards/counts and
+README aggregates unchanged. Next original-profile 110-word fit and stronger
+private/helper-frame/read-timing plus owner/install gates, not private patches.
+No installed-caller/full-float/FCSR/NaN/hardware/gameplay/host or sibling claim.
+All 72 focused tests pass in 273.813 seconds, zero skips/errors/failures;
+final retained audit, tools/syntax/whitespace and 69-document/3,789-link gate pass.
+
 2026-10-07 ([Note 1086](WORKING_NOTES/1086-game-sphere-callee-allocation-match-20261007.md)):
 `func_151452C4` converted from restored assembly to semantic C, complete
 126-word slot/frame `0x70` exact. Meaningful declaration order plus direction
