@@ -1,5 +1,23 @@
 # Working Notes
 
+2026-10-07 ([Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md)):
+`func_1514401C`:98 words/frame0, recovered fixed-point cursor updater.
+Typed low-u8 inputs, live ticks, strict limits, mode priorities, unsigned wrap
+and alias-sensitive reflection rereads. Corrected loop controls recover the
+retail copy/delay shape;52 direct words plus46 checked register-field guards.
+Four relocations and all instruction order/branch/immediate/frame fields intact.
+Guest18944/extremes3500/traps1024/native20182/caller-fragment192 and11776 paired
+instruction-input cases, six negatives, owner/pool/padder/stale/alternate-link
+checks qualify. Only target changes across6059 slots; all addresses/extents/
+protected sections/720 owners/10866 prior guards unchanged,10912 total.
+Exact3350/5465, Game2677/4792,2115 different, zero drift; conversion unchanged.
+All142 post-link tests pass in672.201s, zero skips/errors/failures;60 documents/
+3679 relative links/zero broken, tools/syntax/diff and final post-regression
+linked audit pass. README aggregate rows only.
+Next86-word `func_151441A4`; sampler/oriented recoveries stay open.
+No invalid-native-division/hardware HI/complete-caller/gameplay/host adoption,
+sibling/Release/save/runtime or push claim.
+
 2026-10-07 ([Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md)):
 `func_15143E94`:98 words/frame0x38, recovered actor/checker-gated packet routine.
 Full-word ABI, signed snapshot count, live context and two RNG calls;

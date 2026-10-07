@@ -1,5 +1,27 @@
 # Update Log
 
+## 2026-10-07 Game Fixed-Point Cursor Updater Match
+
+[Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md):
+replace `func_1514401C`'s placeholder with98-word/frame0 semantic C. Preserve
+live tick scaling, mode priorities, strict limits, modular wrap arithmetic,
+alias-sensitive reflection rereads and the original count0 trap boundary.
+Corrected loop experiment substitutions recover both cursor copies and branch
+delay updates directly.52 exact words plus46 checked temporary-register guards;
+no opcode/immediate/branch/frame/order/relocation or production-profile changes.
+18944 paired guest/3500 extremes/1024 trap/20182 actual32-bit native/192 original
+caller-fragment cases,11776 paired instruction-input traces and six negatives
+qualify. Copied-owner/pool/warnings and guarded padder/alternate HI16/stale checks
+pass. US ELF/audit changes only target across6059 slots; all addresses/extents/
+protected sections/720 owners/10866 prior guards unchanged,10912 total.
+Exact3350/5465, Game2677/4792,2115 different, zero drift; conversion unchanged.
+README aggregate rows only. All142 regression tests pass in672.201s, zero skips/
+errors/failures.60 documents/3679 relative links/zero broken, tools/syntax/diff
+and final post-regression linked audit pass.
+Next86-word `func_151441A4`; sampler/oriented work remains open.
+No complete caller, native invalid-division/hardware HI/gameplay/host adoption,
+sibling/Release/save/runtime or push claim.
+
 ## 2026-10-07 Game Actor-Gated Packet Match
 
 [Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md):

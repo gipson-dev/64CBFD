@@ -85,6 +85,10 @@ typedef struct {
 s32 func_150A29C8(s32, s32);
 void *func_151D8868(void *, s32, s32, s32);
 
+typedef struct { u8 count; u8 pad1[11]; } GameCursorLimit;
+extern GameCursorLimit D_80090B64[];
+extern s32 D_800BE9E4;
+
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
@@ -104,7 +108,7 @@ void func_15143134(f32 *point, f32 *output, u8 *matrix);
 s32 func_151432BC();
 GameQueryRecord *func_151438D8(s32 start, s32 end, u16 flags, GameQueryRecord *query);
 u8 func_15143E94(s32 command, s32 flags);
-s32 func_1514401C();
+s32 func_1514401C(u8 index, s32 *velocity, s32 *position, u8 flags);
 s32 func_151441A4();
 s32 func_151442FC();
 s32 func_15144CEC();
@@ -1053,9 +1057,46 @@ u8 func_15143E94(s32 command, s32 flags) {
     }
     return result;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_1514401C.s. */
-s32 func_1514401C() {
-    return 0;
+s32 func_1514401C(u8 index, s32 *velocity, s32 *position, u8 flags) {
+    s32 result = 0;
+    s32 limit;
+    s32 value;
+
+    limit = (D_80090B64[index].count << 16) - 1;
+    *position = (u32)*position + (u32)*velocity * (u32)D_800BE9E4;
+    value = *position;
+    if (value > limit) {
+        if (flags & 1) {
+            result = 1;
+        } else if (flags & 2) {
+            *velocity = 0;
+            *position = limit;
+        } else if (flags & 4) {
+            *position = limit - value % limit;
+            *velocity = 0U - (u32)*velocity;
+        } else {
+            do {
+                *position = (u32)value - (u32)limit;
+                value = *position;
+            } while (value > limit);
+        }
+    } else if (value < 0) {
+        if (!(flags & 8)) {
+            if (flags & 16) {
+                *velocity = 0;
+                *position = 0;
+            } else if (flags & 4) {
+                *position = (s32)(0U - (u32)value) % limit;
+                *velocity = 0U - (u32)*velocity;
+            } else {
+                do {
+                    *position = (u32)value + (u32)limit;
+                    value = *position;
+                } while (value < 0);
+            }
+        }
+    }
+    return result;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151441A4.s. */
 s32 func_151441A4() {

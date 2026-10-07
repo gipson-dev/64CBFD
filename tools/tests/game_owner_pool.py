@@ -9,6 +9,7 @@ from tools.experiments import game_texture_resolver_candidates as resolver
 from tools.experiments import game_point_transform_candidates as point
 from tools.experiments import game_range_clamp_candidates as clamp
 from tools.experiments import game_actor_gated_packet_candidates as packet
+from tools.experiments import game_cursor_updater_candidates as cursor
 from tools.pad_generated_object import ELF_HEADER, SECTION_HEADER, SYMBOL, RELOCATION, parse_object, read_c_string
 
 
@@ -51,7 +52,7 @@ def normalized_pools(path):
 
 
 def assert_guard_history(test, guards):
-    test.assertEqual(len(guards), 10866)
+    test.assertEqual(len(guards), 10912)
     digest = hashlib.sha256(json.dumps(guards[:10809], sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     test.assertEqual(digest, 'e021c108eef6c84112743955be809d3bdf4ce4e1de0cba474897ed3b0bcabb8a')
     test.assertEqual(guards[10809:10811], resolver.owner_guards())
@@ -63,5 +64,8 @@ def assert_guard_history(test, guards):
     test.assertEqual(guards[10842:10855], clamp.owner_guards())
     prior_packet = hashlib.sha256(json.dumps(guards[:10855], sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     test.assertEqual(prior_packet, '07904caf0a4b949a8e5b39f87e8aad4c0a1cc62cb92b3e999dd8d9c6b90211a4')
-    test.assertEqual(guards[10855:], packet.owner_guards())
+    test.assertEqual(guards[10855:10866], packet.owner_guards())
+    prior_cursor = hashlib.sha256(json.dumps(guards[:10866], sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    test.assertEqual(prior_cursor, 'cb153350711c5eac3aa8190db9e59d6ef48f5c989b5013be34ff5ddb8af50a53')
+    test.assertEqual(guards[10866:], cursor.owner_guards())
     return hashlib.sha256(json.dumps(guards, sort_keys=True, separators=(',', ':')).encode()).hexdigest()

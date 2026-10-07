@@ -4,6 +4,33 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Fixed-point cursor updater matching controls
+
+[Driver](../tools/experiments/game_cursor_updater_candidates.py) retains131
+declaration/initialization/loop/flow/storage/profile measurements. Corrected
+and asserted lower-loop transformations recover98 words/frame0.52 direct words
+and46 checked guards differ only in temporary-register fields and a commutative
+addition's operand order, not instructions, branch/immediate fields or frame.
+All four global relocation identities/positions stay unchanged.
+[Eleven tests](../tools/tests/test_game_cursor_updater_match.py) cover18944 paired
+guest cases,3500 modular/global/stack alias cases,1024 count0/trap cases,11776
+paired instruction-input traces,20182 actual32-bit native calls and192 original
+setup/call/delay/mask fragments. Full memory/ordered reads-writes/saved state,
+mode priority, live velocity rereads, lazy byte access, six negatives, copied
+owner/pools/warnings, actual guarded padding and alternate HI16 carries qualify.
+Stale words and relocation expectations fail closed.95 reachable words covered;
+three dead trap guards are justified by the count domain. Native division
+overflow and hardware HI behavior, complete callers and gameplay are unqualified.
+
+```sh
+python3 -m tools.experiments.game_cursor_updater_candidates
+python3 -m unittest tools.tests.test_game_cursor_updater_match -v
+```
+
+Ignored receipts:`conker/build/game-cursor-updater/` and
+`conker/build/game-cursor-updater-test/`; see
+[Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md).
+
 ## Actor-gated packet matching controls
 
 [Driver](../tools/experiments/game_actor_gated_packet_candidates.py) retains116

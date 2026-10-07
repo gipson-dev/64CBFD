@@ -1,5 +1,31 @@
 # PC Port Roadmap located in another project folder
 
+## Game Fixed-Point Cursor Updater Match - 2026-10-07
+
+[Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md):
+`func_1514401C`:98 words/frame0,52 direct words and46 checked temporary-register
+guards. Original instruction order, branch/immediate fields, pointer bases and
+four relocations unchanged; opening addition uses a qualified commutative order.
+Only target changes across6059 slots; protected sections/720 owners/addresses/
+extents/all10866 prior guards unchanged,10912 total. Game2677/4792 exact,
+2115 different, zero drift; conversion unchanged, README aggregate rows only.
+
+- [x] Recover typed inputs, live tick scaling and separate upper/lower mode priority.
+- [x] Recover both cursor-copy/branch-delay loop shapes through legitimate C.
+- [x] Qualify pointer aliases, modular extremes and original count0 trap boundaries.
+- [x] Qualify actual native calls, original caller fragment and live instruction operands.
+- [x] Install checked register guards, rebuild and audit all slots/data/guard history.
+- [x] Finish expanded142-test regression and final documentation gates.
+- [ ] Recover next86-word output-mode leaf `func_151441A4` and full stack-input ABI.
+- [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
+
+All142 tests pass in672.201s, zero skips/errors/failures.60 documents/3679
+relative links/zero broken; tools/syntax/diff and final post-regression linked
+audit pass. Bounded tests do not prove complete callers, real asset table bounds, hardware
+overflow-HI behavior, gameplay or host adoption. Invalid native division is
+excluded; original guest trap instructions are preserved. No sibling/frozen
+Release/save/runtime or push; goal stays active.
+
 ## Game Actor-Gated Packet Match - 2026-10-07
 
 [Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md):
@@ -15,7 +41,8 @@ prior guards/addresses/extents unchanged,10866 total. Game2676/4792 exact,
 - [x] Qualify guest/native/caller pairs, negatives and copied-owner/padder/stale guards.
 - [x] Install, rebuild and audit every linked slot, protected data and guard prefix.
 - [x] Finish expanded131-test regression and final documentation gates.
-- [ ] Recover next98-word cursor updater `func_1514401C`.
+- [x] Recover next98-word cursor updater `func_1514401C`
+  ([Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md)).
 - [ ] Finish sampler exits/circle-byte scheduling and oriented27 private offsets.
 
 All131 tests pass in692.507s; final10 packet tests rerun after trace/frame

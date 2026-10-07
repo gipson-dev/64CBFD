@@ -21,6 +21,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Fixed-point cursor updater match:
+[Note 1078](WORKING_NOTES/1078-game-cursor-updater-match-20261007.md).
+`func_1514401C`:98 words/frame0; low-u8 inputs, live tick scaling, upper/lower
+mode priorities and alias-sensitive wrap/reflection stores recovered.
+52 direct words,46 checked register-field/commutative-add guards; instruction
+order, branches, immediates, frame and four relocations remain unchanged.
+Guest18944/extremes3500/traps1024/native20182/caller-fragment192 cases,
+11776 paired instruction-input traces, six negatives and owner/pool/padder/
+stale/alternate-HI16 checks qualify.95 reachable words, three dead trap guards.
+US ELF/audit changes only target across6059 slots; addresses/extents/protected
+sections/720 owners/all10866 prior guards unchanged,10912 total.
+Exact3350/5465 (61.30%), Game2677/4792 (55.86%),2115 different, zero drift.
+Conversion unchanged; README aggregate rows only. All142 post-link regression
+tests pass in672.201s, zero skips/errors/failures.60 documents/3679 relative
+links/zero broken; tools/syntax/diff and final post-regression linked audit pass.
+Next86-word `func_151441A4`; sampler/oriented recoveries remain open.
+Invalid native division and hardware overflow-HI behavior are not claimed.
+No complete-caller/gameplay/host adoption, sibling/Release/save/runtime or push.
+
 Actor-gated packet match:
 [Note 1077](WORKING_NOTES/1077-game-actor-gated-packet-match-20261007.md).
 `func_15143E94`:98 words/frame0x38, full-word command/flags and byte return.
