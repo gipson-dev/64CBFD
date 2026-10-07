@@ -4,6 +4,32 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Record-query matching controls
+
+[Driver](../tools/experiments/game_record_query_candidates.py) retains98
+measurements:64 mask/loop/order/input-type profile controls,30 storage/declaration
+controls and four selected profiles. Index-before-result declarations recover
+272 direct words/frame0x60. No guards, shared-header edits or production-profile
+change. This owner isolates the legacy inline-array declaration and uses the
+original table pointer; other owners are unchanged.
+[Ten tests](../tools/tests/test_game_record_query_match.py) cover all2048 field
+selections/both modes in12288 paired guest cases,196608 native calls across all
+u16 flags,1470 range cases,120 field corners and32 original caller setup-call-delay
+fragments. Ordered reads/writes, memory/saved state, last matching pointer,
+negative controls, copied-owner/pools/warnings and actual padding/linking gates
+are checked.267 reachable words covered; five dead branch-likely else words
+are identified, not claimed as executed. A seeded fragment is not a complete
+original caller, and guest float checks are not hardware FCSR acceptance.
+
+```sh
+python3 -m tools.experiments.game_record_query_candidates
+python3 -m unittest tools.tests.test_game_record_query_match -v
+```
+
+Ignored receipts:`conker/build/game-record-query/` and
+`conker/build/game-record-query-test/`; see
+[Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md).
+
 ## Range-clamp matching controls
 
 [Driver](../tools/experiments/game_range_clamp_candidates.py):baseline and

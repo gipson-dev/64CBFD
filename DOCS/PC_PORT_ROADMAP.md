@@ -1,5 +1,27 @@
 # PC Port Roadmap located in another project folder
 
+## Game Record Query Match - 2026-10-07
+
+[Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md):
+`func_151438D8`:272 direct words/frame0x60, no guards/profile changes.
+Only target changes across6059 slots; protected sections/720 owners/all10855
+guards/addresses/extents unchanged. Game2675/4792 exact,2117 different,
+zero drift; conversion unchanged. README aggregate matching rows only.
+
+- [x] Recover typed query/pointer-return ABI,11 groups and last-match masks.
+- [x] Recover result private placement through legitimate declaration order.
+- [x] Qualify guest/native/caller fragment, negatives and copied owner/padder.
+- [x] Install, rebuild and audit all linked slots/data/guard history.
+- [x] Finish expanded121-test regression and final documentation gates.
+- [ ] Recover sampler's two missing exits and circle-byte scheduling from C.
+- [ ] Inspect/reconstruct forward placeholder `func_15143E94`.
+
+No complete original caller, hardware/gameplay or host adoption claim;
+oriented27 private-layout differences remain open. No sibling/Release/save/runtime
+or push. All121 tests pass in445.383s, zero skips/errors/failures;
+58 docs/3657 relative links/zero broken, tool/syntax/diff and final post-regression
+audit pass. Full goal stays active.
+
 ## Game Range Clamp Match - 2026-10-07
 
 [Note 1075](WORKING_NOTES/1075-game-range-clamp-byte-match-20261007.md):
@@ -14,7 +36,8 @@ Only target changes across6059 slots; protected sections/720 owners/all prior
 - [x] Install, rebuild and audit all linked slots/data/guard history.
 - [x] Finish expanded111-test post-link regression and final documentation gates.
 - [ ] Recover sampler's two missing exits and circle-byte scheduling from C.
-- [ ] Reconstruct272-word record query `func_151438D8` with the matched clamp.
+- [x] Reconstruct272-word record query `func_151438D8` with the matched clamp
+  ([Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md)).
 
 Thirty additional sampler storage/exit controls find no exact candidate.
 All111 tests pass in368.274s, zero skips/errors/failures;57 docs/3646 relative

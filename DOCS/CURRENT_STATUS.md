@@ -21,6 +21,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Record-query direct match:
+[Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md).
+`func_151438D8`:272 direct C words/frame0x60, no guards/profile changes.
+Typed pointer return,11 field groups, u16 any/all masks, matched range helper
+and last-match selection recovered. Scope the legacy table-array declaration
+to this owner; shared headers/other owners stay unchanged.
+12288 paired guest/196608 native/1470 range/120 field/32 original caller-fragment
+cases, four negatives, copied owner/624-byte pool/two warnings and actual
+padder qualify. US ELF passes; only target changes across6059 slots, all
+addresses/extents/protected sections/720 owners/10855 guards unchanged.
+Exact3348/5465 (61.26%), Game2675/4792 (55.82%),2117 different, zero drift;
+conversion unchanged, README aggregate rows only. All121 post-link tests pass
+in445.383s, zero skips/errors/failures;58 docs/3657 relative links/zero broken,
+tool/syntax/diff checks pass. Final post-regression audit passes.
+Next sampler exit recovery or
+forward placeholder `func_15143E94`; oriented27 private offsets remain open.
+No sibling/Release/save/runtime, whole-caller/hardware/gameplay or push.
+
 Range-clamp byte match:
 [Note 1075](WORKING_NOTES/1075-game-range-clamp-byte-match-20261007.md).
 `func_15143D18`:36 words/frame0x10; using the argument pointers directly recovers

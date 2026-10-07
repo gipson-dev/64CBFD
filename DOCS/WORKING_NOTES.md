@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-07 ([Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md)):
+`func_151438D8`:272 direct words/frame0x60, recovered record-query pointer ABI,
+eleven field groups, any/all masks, matched clipping helper and last-match result.
+Index-before-result declaration recovers the original private slot; no guards.
+Legacy array declaration is isolated to this owner, shared headers untouched.
+98 compiler measurements;12288 paired guest/196608 native/1470 range/120 field/
+32 original setup-call-delay cases, negative/profile/owner/pool/padder gates.
+US ELF/audit passes, only target among6059 slots; protected sections/720 data
+owners/addresses/extents and10855 guards unchanged. Exact3348/5465,
+Game2675/4792,2117 different, zero drift; conversion unchanged.
+README aggregate matching rows only. All121 post-link tests pass in445.383s,
+zero skips/errors/failures;58 docs/3657 relative links/zero broken,
+tool/syntax/diff and final post-regression audit pass. Sampler/oriented recovery
+remains open; next forward `func_15143E94`.
+No sibling/Release/save/runtime, whole-caller/hardware/gameplay or push.
+
 2026-10-07 ([Note 1075](WORKING_NOTES/1075-game-range-clamp-byte-match-20261007.md)):
 `func_15143D18`:36-word/frame0x10 range ordering/clipping match; remove pointer
 copies, retain live XOR stores and signed one-sided limits. Thirteen checked

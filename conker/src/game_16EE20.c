@@ -1,7 +1,10 @@
 #include <ultra64.h>
 
 #include "functions.h"
+/* This owner uses the retail pointer, not the legacy inline-array declaration. */
+#define D_800D3098 D_800D3098_legacy_array
 #include "variables.h"
+#undef D_800D3098
 
 typedef struct {
     s32 flags;
@@ -58,6 +61,17 @@ extern volatile s32 D_800DCA00;
 extern u8 *D_800DCA04;
 extern f32 D_800DCA08, D_800DCA0C, D_800DCA10;
 
+typedef struct {
+    s16 x, y, z, radius, height, width;
+    f32 valueC, value10;
+    u8 value14, flags, value16, value17;
+    s32 word18, word1C, word20;
+    u8 pad24[0x10];
+} GameQueryRecord;
+extern s32 D_800D3094;
+extern GameQueryRecord *D_800D3098;
+void func_15143D18(s32 *, s32 *, s32, s32);
+
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
@@ -75,7 +89,7 @@ Gfx *func_15142E24(Gfx *output, GameTextureSource *source, s32 packed, s32 width
 s32 func_1514306C(GameTextureSource *source, s32 index, s32 subindex, u8 kind);
 void func_15143134(f32 *point, f32 *output, u8 *matrix);
 s32 func_151432BC();
-s32 func_151438D8();
+GameQueryRecord *func_151438D8(s32 start, s32 end, u16 flags, GameQueryRecord *query);
 s32 func_15143E94();
 s32 func_1514401C();
 s32 func_151441A4();
@@ -788,9 +802,120 @@ void func_15143874(s16 arg0, f32 arg1, f32 *arg2, f32 *arg3) {
     *arg2 = arg1 * angleValue;
     *arg3 = arg1 * tmp;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151438D8.s. */
-s32 func_151438D8() {
-    return 0;
+GameQueryRecord *func_151438D8(s32 start, s32 end, u16 flags, GameQueryRecord *query) {
+    s32 index;
+    GameQueryRecord *result = NULL;
+    u16 pass;
+    u16 match;
+
+    if (query == NULL) {
+        return NULL;
+    }
+    func_15143D18(&start, &end, 0, D_800D3094);
+    for (index = start; index < end; index++) {
+        pass = 0;
+        match = 0;
+        if (flags & 0x1) {
+            if (query->x == D_800D3098[index].x &&
+                query->y == D_800D3098[index].y &&
+                query->z == D_800D3098[index].z) {
+                pass |= 0x1;
+                match |= 0x1;
+            }
+        } else {
+            pass |= 0x1;
+        }
+        if (flags & 0x2) {
+            if (query->radius == D_800D3098[index].radius &&
+                query->height == D_800D3098[index].height &&
+                query->width == D_800D3098[index].width) {
+                pass |= 0x2;
+                match |= 0x2;
+            }
+        } else {
+            pass |= 0x2;
+        }
+        if (flags & 0x4) {
+            if (query->valueC == D_800D3098[index].valueC) {
+                pass |= 0x4;
+                match |= 0x4;
+            }
+        } else {
+            pass |= 0x4;
+        }
+        if (flags & 0x8) {
+            if (query->value10 == D_800D3098[index].value10) {
+                pass |= 0x8;
+                match |= 0x8;
+            }
+        } else {
+            pass |= 0x8;
+        }
+        if (flags & 0x10) {
+            if (query->value14 == D_800D3098[index].value14) {
+                pass |= 0x10;
+                match |= 0x10;
+            }
+        } else {
+            pass |= 0x10;
+        }
+        if (flags & 0x20) {
+            if (query->flags == (D_800D3098[index].flags >> 2)) {
+                pass |= 0x20;
+                match |= 0x20;
+            }
+        } else {
+            pass |= 0x20;
+        }
+        if (flags & 0x40) {
+            if (query->value16 == D_800D3098[index].value16) {
+                pass |= 0x40;
+                match |= 0x40;
+            }
+        } else {
+            pass |= 0x40;
+        }
+        if (flags & 0x80) {
+            if (query->value17 == D_800D3098[index].value17) {
+                pass |= 0x80;
+                match |= 0x80;
+            }
+        } else {
+            pass |= 0x80;
+        }
+        if (flags & 0x100) {
+            if (query->word18 == D_800D3098[index].word18) {
+                pass |= 0x100;
+                match |= 0x100;
+            }
+        } else {
+            pass |= 0x100;
+        }
+        if (flags & 0x200) {
+            if (query->word1C == D_800D3098[index].word1C) {
+                pass |= 0x200;
+                match |= 0x200;
+            }
+        } else {
+            pass |= 0x200;
+        }
+        if (flags & 0x400) {
+            if (query->word20 == D_800D3098[index].word20) {
+                pass |= 0x400;
+                match |= 0x400;
+            }
+        } else {
+            pass |= 0x400;
+        }
+        if (flags & 0x1000) {
+            if (pass == 0x7FF) {
+                result = &D_800D3098[index];
+            }
+        } else if (match != 0) {
+            result = &D_800D3098[index];
+        }
+    }
+    return result;
 }
 void func_15143D18(s32 *arg0, s32 *arg1, s32 arg2, s32 arg3) {
     s32 value1;

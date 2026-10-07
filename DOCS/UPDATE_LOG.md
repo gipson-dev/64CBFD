@@ -1,5 +1,24 @@
 # Update Log
 
+## 2026-10-07 Game Record Query Direct Match
+
+[Note 1076](WORKING_NOTES/1076-game-record-query-direct-match-20261007.md):
+replace `func_151438D8`'s zero-return placeholder with272 direct retail words,
+frame0x60, typed four-input/pointer-return ABI. Preserve signed range-helper
+clipping,11 selected field groups, u16 masks, live reads and last-match selection.
+Declaration order recovers the private result slot without guards or profile
+changes. Scope the old inline-array declaration to this owner; no shared edits.
+Guest12288/native196608/range1470/field120/original caller-fragment32 cases
+and negative/profile/owner/pool/padder gates qualify. US ELF/6059-slot audit:
+only target changes, all protected sections/720 owners/addresses/extents and
+10855 guards unchanged. Exact3348/5465, Game2675/4792,2117 different, zero drift.
+Conversion unchanged; README aggregate matching rows only. All121 post-link
+tests pass in445.383s, zero skips/errors/failures;58 docs/3657 relative links/
+zero broken, tool/syntax/diff and final post-regression audit pass.
+Sampler/oriented recovery still open;
+next forward placeholder `func_15143E94`. No sibling/frozen Release/save/runtime,
+whole-caller/hardware/gameplay acceptance, host adoption or push.
+
 ## 2026-10-07 Game Range Clamp Byte Match
 
 [Note 1075](WORKING_NOTES/1075-game-range-clamp-byte-match-20261007.md):
