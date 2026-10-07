@@ -21,20 +21,40 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest matrix-route recovery/private-frame audit, **no installed match**:
+Latest installed matrix-route semantic recovery, **not byte-exact**:
+[Note 1104](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md).
+`func_1514654C` replaces its padded zero-return placeholder with complete
+C120/frame `0xA0`, matrix `sp+4C`, resolver outputs `sp+90/+8C`, all four
+routes and incoming-home timing. No new guards; 60 instruction differences
+remain versus 115 in the old placeholder. All sixteen previous private-matrix
+counterexamples now agree, plus 560 additional original-helper overlaps;
+ordinary/public/private-argument/home/native/owner/padder/rebasing gates pass.
+77 additional controls bring the source audit to 285 forms, none raw exact.
+All twenty combined tests pass in 313.807 seconds, zero skips/errors/failures.
+Tools/syntax/whitespace and 86-document / 3,996-relative-link checks pass,
+zero broken links; three receipt-only rechecks pass in 4.211 seconds.
+The linked audit changes only target; other bodies/addresses/extents/overflows/
+protected sections/720 data owners/11,063 guards/conversion hash remain intact.
+Exact total 3,364, Game 2,691 (56.14%), 2,102 different, zero drift; README
+aggregates unchanged. Continue key-branch, primary-read and saved-register
+lifetime fitting, not bulk instruction normalization. The production resolver
+still needs separate recovery; no PC-port or full stack-memory acceptance.
+Authoritative ignored checkpoint: `game-matrix-route-layout-test/after.json`.
+
+Previous matrix-route recovery/private-frame audit, **no installed match at that checkpoint**:
 [Note 1103](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md).
 `func_1514654C`'s complete experimental six-word-ABI wrapper emits C119/frame
 `0xA8`/58 differences; retail is 120 words/frame `0xA0`. Ordinary routes,
 home reloads, connected original helpers, native SDK and copied-owner gates
 qualify, but actual private-matrix overlaps change public outputs. Do not
-normalize private offsets or install the candidate. The live production slot
-remains the padded three-word zero-return placeholder; original assembly is
-the reference only. Retain 208 source/profile controls, none exact. Full
+normalize private offsets or install that candidate. At that checkpoint the
+production slot remained the padded three-word zero-return placeholder;
+original assembly was the reference only. Retain 208 source/profile controls, none exact. Full
 linked snapshot/11,063 guards/data/conversion hash and README aggregates
 remain unchanged. All eight tests pass in 497.879 seconds, zero skips/errors/
 failures, with 4,992 ordinary candidate executions and six effective negatives.
 Tools/syntax/whitespace and 85-document / 3,985-relative-link checks pass,
-zero broken links. Continue the retail source/private-frame fit in Note 1103.
+zero broken links. Note 1104 supersedes this private-frame/installed-source handoff.
 
 Latest installed Game match:
 [Note 1102](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md).
@@ -51,7 +71,8 @@ uses bounded renderer hooks, not connected renderer or PC-port acceptance.
 All nine lighting/prior-neighbor tests pass in 324.913 seconds, zero skips/
 errors/failures. Tools/syntax/whitespace and 84-document / 3,976-relative-link
 checks pass, zero broken links.
-Next 120-word `func_1514654C`, still a zero-return placeholder. Basis,
+That checkpoint's next target was 120-word `func_1514654C`, now complete
+nonmatching C in Note 1104. Basis,
 translator and sampler boundaries remain open; no sibling/Release/save/push.
 
 Latest basis source-control follow-up:

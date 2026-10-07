@@ -1,5 +1,24 @@
 # Update Log
 
+## 2026-10-07 Game Matrix-Route Private Layout And Semantic Recovery
+
+[Note 1104](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md):
+Replace `func_1514654C`'s padded zero-return slot with complete semantic C120,
+retail frame `0xA0`, matrix `sp+4C`, resolver outputs `sp+90/+8C` and original
+incoming-home timing. Sixty raw differences remain; no new guards. All sixteen
+earlier private-matrix counterexamples close, plus 560 additional connected
+overlaps. Guest/native/owner/padder/rebasing qualification passes; 77 new
+controls / 1,848 ordinary executions bring the audit to 285 forms, none exact.
+All twenty combined tests pass in 313.807 seconds, zero skips/errors/failures.
+Only target changes across 6,058 symbols/6,042 slots; other bodies, addresses,
+extents, overflows, protected sections, 720 data owners, 11,063 guard rows and
+conversion hash remain intact. Matching totals and root README aggregates stay
+unchanged: total 3,364, Game 2,691, 2,102 different, zero drift. Byte matching
+remains open at the key branch, primary read order and saved-register phases.
+Production resolver recovery is separate; no sibling/Release/runtime/push work.
+Tools/syntax/whitespace and 86-document / 3,996-relative-link checks pass,
+zero broken links; three receipt-only rechecks pass in 4.211 seconds.
+
 ## 2026-10-07 Game Matrix-Route Recovery And Private-Frame Audit
 
 [Note 1103](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md):

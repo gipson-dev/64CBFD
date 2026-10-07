@@ -51,10 +51,16 @@ confirmed.
 
 ## Planning and history
 
+- [Latest matrix-route private-layout and semantic recovery](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md):
+  installed complete C120/frame `0xA0`, retail private matrix/resolver outputs;
+  closes the sixteen old private counterexamples, no new guards. Sixty words
+  still differ; key branch, primary read order and register phases remain open.
+  Twenty combined tests pass; linked audit changes only target, totals unchanged.
 - [Matrix-route recovery/private-frame audit](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md):
   complete experimental C119/frame `0xA8`/58 differences, 208 controls,
   original-helper/native/owner qualification and real private-overlap
-  counterexamples. Production placeholder unchanged; source fitting remains open.
+  counterexamples. The production placeholder was unchanged at that checkpoint;
+  Note 1104 supersedes the installed-source/private-layout handoff.
 - [Latest lighting-dispatcher match](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md):
   complete 124-word actor/global/position dispatcher, two scheduling guards;
   bounded renderer hooks, not connected renderer or PC-port acceptance.

@@ -287,7 +287,7 @@ class GameMatrixRouteRecoveryTests(unittest.TestCase):
             self.assertEqual(model.calls, calls)
         return models
 
-    def test_complete_source_still_open_and_installed_placeholder_unchanged(self):
+    def test_old_source_still_open_and_installed_baseline_explicit(self):
         self.assertEqual((self.record['body_words'], self.record['frame'], self.record['differences']), (119, 0xA8, 58))
         self.assertEqual((self.record['pool_bytes'], self.record['diagnostics']), (0, ''))
         self.assertEqual(self.words[0], 0x27BDFF58)
@@ -297,16 +297,22 @@ class GameMatrixRouteRecoveryTests(unittest.TestCase):
         self.assertEqual(self.words[0x16C//4:0x1AC//4], self.retail[0x16C//4:0x1AC//4])
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'), 'mips-linux-gnu-objdump')
         self.assertEqual(addresses[screen.FUNCTION], screen.ENTRY)
-        self.assertEqual(functions[screen.FUNCTION], [0x00001025, 0x03E00008, 0] + [0] * 117)
+        source = (self.root / 'conker/src/game_16EE20.c').read_text()
+        installed_kind, installed_words = 'zero-return-placeholder', 3
+        expected = [0x00001025, 0x03E00008, 0] + [0] * 117
+        if 's32 func_1514654C() {\n    return 0;\n}' not in source:
+            from tools.experiments import game_matrix_route_layout_candidates as fit
+            self.assertIn(fit.SELECTED, source)
+            _, expected = screen.compile_candidate(self.root, self.out, 'installed-selected', fit.SELECTED)
+            installed_kind, installed_words = 'complete-nonmatching-C', 120
+        self.assertEqual(functions[screen.FUNCTION], expected)
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
         assert_guard_history(self, guards)
         self.assertFalse(any(row['function'] == screen.FUNCTION for row in guards))
-        source = (self.root / 'conker/src/game_16EE20.c').read_text()
-        self.assertIn('s32 func_1514654C() {\n    return 0;\n}', source)
         self.receipt('slot', dict(retail_words=120, candidate_words=119, retail_frame=160,
             candidate_frame=168, differences=58, raw_exact=False, original_is_reference_only=True,
-            installed_placeholder_body_words=3,
+            installed_kind=installed_kind, installed_body_words=installed_words,
             candidate_installed=False, guards_added=0, matrix_private_offsets=[104, 76]))
 
     def test_all_four_routes_failures_signed_counts_aliases_and_home_mutation(self):
@@ -448,7 +454,7 @@ class GameMatrixRouteRecoveryTests(unittest.TestCase):
         self.assertEqual({tuple(pair) for pair in offsets}, {(-0x40, -0x54)})
         self.receipt('private', dict(cases=cases, observed_public_output_counterexamples=changed,
             absolute_matrix_offsets_from_entry_sp=[-64, -84], raw_candidate_not_fully_equivalent=True,
-            normalization_permitted=False, production_placeholder_unchanged=True))
+            normalization_permitted=False, old_candidate_remains_uninstalled=True))
 
     def test_source_and_profile_corpus_and_output_detected_negatives(self):
         forms = [(n, b, 'o2g3') for group in (screen.candidates, screen.lifetime_candidates,
@@ -491,7 +497,7 @@ class GameMatrixRouteRecoveryTests(unittest.TestCase):
             exact=0, measurements=records, negative_output_detections=detected,
             ABI_home_mutations_not_claimed_for_every_source_form=True))
 
-    def test_native_32bit_actual_sdk_conversion_and_typed_six_word_wrapper(self):
+    def qualify_native_candidate(self, candidate):
         sdk = (self.root / 'conker/src/libultra/gu/mtxutil2.c').read_text().split('void guMtxL2F', 1)[1]
         self.fixture = r'''typedef unsigned char u8;typedef unsigned short u16;
 typedef int s32;typedef unsigned int u32;typedef float f32;
@@ -575,7 +581,7 @@ static void init(int r,int page,int index,int n,int a,int pattern){
         transform(expectedMatrix,s->unk0,s->unk4,s->unk8,out);
     }
 }
-''' + screen.SELECTED + '\n'
+''' + candidate + '\n'
         self.run_host(r'''
 int r,p,i,n,a,k,j,res;static int counts[]={-2147483647-1,-1,0,1,2,4};
 for(r=0;r<8;r++)for(p=0;p<2;p++)for(i=-1;i<=2;i++)for(n=0;n<6;n++)for(a=0;a<3;a++)for(k=0;k<8;k++){
@@ -596,13 +602,21 @@ if(func_1514654C(&actor,descriptor.bytes,0,0,0,2)||conversions||lookups||resolve
         self.receipt('native', dict(cases=8*2*4*6*3*8, lazy_cases=3, pointer_bytes=4,
             actual_complete_candidate_C=True, actual_SDK_converter_C=True,
             other_helpers='bounded validating native callbacks', finite_coordinates=True,
-            candidate_private_frame_not_installed=True))
+            guest_private_frame_not_claimed_by_native_test=True))
 
-    def test_copied_owner_only_target_changes_and_no_new_pools_or_warnings(self):
+    def test_native_32bit_actual_sdk_conversion_and_typed_six_word_wrapper(self):
+        self.qualify_native_candidate(screen.SELECTED)
+
+    def qualify_copied_owner(self, candidate):
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
         stub = 's32 func_1514654C() {\n    return 0;\n}'
+        if stub not in source:
+            from tools.experiments import game_matrix_route_layout_candidates as fit
+            self.assertEqual(source.count(fit.SELECTED), 1)
+            source = source.replace(fit.SELECTED, stub).replace(screen.PROTOTYPE, 's32 func_1514654C();')
+            source = source.replace(screen.DECLARATIONS.splitlines(keepends=True)[0], '', 1)
         self.assertEqual(source.count(stub), 1)
-        selected = source.replace(stub, screen.SELECTED).replace('s32 func_1514654C();',
+        selected = source.replace(stub, candidate).replace('s32 func_1514654C();',
             screen.DECLARATIONS + screen.PROTOTYPE)
         objects, warnings = [], []
         for name, body in (('baseline', source), ('selected', selected)):
@@ -639,4 +653,7 @@ if(func_1514654C(&actor,descriptor.bytes,0,0,0,2)||conversions||lookups||resolve
         self.assertEqual({o - target['value']: r for o, r in rel.items() if target['value'] <= o < target['value'] + size}, isolated_rel)
         self.receipt('owner', dict(functions=89, unchanged_neighbors=88, warnings=2,
             normalized_pools_equal=True, target_matches_isolated=True, object_words=size//4,
-            meaningful_body_words=119, no_production_edit=True))
+            meaningful_body_words=self.record['body_words'], no_production_edit=True))
+
+    def test_copied_owner_only_target_changes_and_no_new_pools_or_warnings(self):
+        self.qualify_copied_owner(screen.SELECTED)

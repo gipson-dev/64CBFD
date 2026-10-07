@@ -153,7 +153,9 @@ void func_15145EA4(struct17 **inputArgument, struct17 **destinationArgument, u8 
 s32 func_15146078();
 Gfx *func_151462C8(Gfx *commands, GameLightingDescriptor *descriptor,
     u8 mode, u8 *actor, u8 slot, s16 index, struct17 *position, u8 flags, s32 extra);
-s32 func_1514654C();
+s32 func_15031070(struct126 *, struct127 *, Mtx **, Mtx **);
+s32 func_1514654C(struct127 *actor, u8 *descriptor, s32 index,
+    struct17 **inputArgument, struct17 **outputArgument, s32 count);
 /* End generated placeholder declarations. */
 
 extern u8 D_800C3E90;
@@ -1988,9 +1990,65 @@ void func_15146508(struct127 *arg0, struct127 *arg1) {
     tmp.unk9 = arg1->unique_id;
     func_15169040(&tmp, 45, arg0, arg1);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_1514654C.s. */
-s32 func_1514654C() {
-    return 0;
+/* Non-matching: complete matrix-route recovery; see Working Note 1104. */
+s32 func_1514654C(struct127 *actor, u8 *descriptor, s32 index,
+    struct17 **inputArgument, struct17 **outputArgument, s32 count) {
+    Mtx *matrix;
+    u8 *attachment;
+    struct17 **input;
+    Mtx *lookupMatrix;
+    Mtx *other;
+    f32 converted[4][4];
+    struct17 **outputs;
+    s32 i;
+
+    if (actor == 0 || descriptor == 0 || (matrix = (Mtx *)actor->unk1D4) == 0) {
+        return 0;
+    }
+    attachment = *(u8 **)(descriptor + 0x48);
+    if (attachment != 0) {
+        if (attachment[0x3F6] == 0) {
+            return 0;
+        }
+        matrix = ((Mtx **)(attachment + 0x3E8))[D_800BE9C0] + index;
+    } else if (*(u16 *)(descriptor + 0x1E) != 0) {
+        input = (struct17 **)func_1503195C(actor, *(u16 *)(descriptor + 0x1E), 0);
+        if (input == 0) {
+            return 0;
+        }
+        if (func_15031070((struct126 *)input, actor, &lookupMatrix, &other) == 0) {
+            return 0;
+        }
+        if (*(u8 **)((u8 *)input + 0x48) != 0) {
+            matrix = lookupMatrix + *(u16 *)(descriptor + 0x20);
+        } else {
+            matrix = lookupMatrix;
+        }
+    } else if (*(Mtx **)(descriptor + 0x34) != 0) {
+        matrix = *(Mtx **)(descriptor + 0x34) + D_800BE9C0;
+    } else {
+        func_15145EA4(inputArgument, outputArgument, (u8 *)matrix + descriptor[2] * 64, count);
+        return 1;
+    }
+    if (matrix != 0) {
+        guMtxL2F(converted, matrix);
+        i = 0;
+        input = inputArgument;
+        outputs = outputArgument;
+        if (count > 0) {
+            do {
+                func_150A7960(converted, (*input)->unk0, (*input)->unk4, (*input)->unk8,
+                    &(*outputs)->unk0, &(*outputs)->unk4, &(*outputs)->unk8);
+                input++;
+                outputs++;
+                i++;
+            } while (i != count);
+            return 1;
+        }
+    } else {
+        return 0;
+    }
+    return 1;
 }
 // Matched with guarded opening-load scheduling normalization.
 s32 func_1514672C(struct17 *arg0) {

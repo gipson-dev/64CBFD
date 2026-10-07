@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-07 ([Note 1104](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md)):
+Install complete semantic C for `func_1514654C`: 120 meaningful words,
+retail frame `0xA0`, matrix `sp+4C`, primary/secondary `sp+90/+8C` and all
+four routes. Sixty differences remain versus 115 in the old padded placeholder;
+no new guards or private-offset/instruction/profile edits. Sixteen old private
+counterexamples close, plus 560 additional original-helper overlaps; guest/
+home/native/owner/padder/independent-rebase gates qualify. 77 additional
+controls bring the audit to 285 forms, none raw exact. All twenty combined
+tests pass in 313.807 seconds, zero skips/errors/failures. US ELF changes only
+target; other bodies/addresses/extents/overflows/data/11,063 guards/conversion
+hash and README aggregates unchanged. Continue key branch, primary-read and
+register lifetime fitting; this is not a byte match or PC-port acceptance.
+Tools/syntax/whitespace and 86-document / 3,996-relative-link checks pass,
+zero broken links; three receipt-only rechecks pass in 4.211 seconds.
+
 2026-10-07 ([Note 1103](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md)):
 Matrix-route `func_1514654C`: complete experimental C119/frame `0xA8`/58
 differences, six incoming words, four routes, signed counts and lazy home

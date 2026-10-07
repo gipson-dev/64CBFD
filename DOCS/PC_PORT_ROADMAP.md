@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix-Route Private Layout And Semantic Recovery - 2026-10-07
+
+[Note 1104](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md):
+
+- [x] Recover the real retail frame `0xA0`, matrix `sp+4C`, resolver outputs `sp+90/+8C` and complete 120-word C body through pointer lifetimes and declaration order.
+- [x] Requalify incoming homes/private argument addresses; close all sixteen prior private-output counterexamples and pass 560 additional original-helper overlaps.
+- [x] Install complete nonmatching semantic C, replacing the padded zero-return placeholder without new guards, private-offset/instruction changes or compiler-profile edits.
+- [x] Retain 77 new controls / 1,848 ordinary executions, 285 total forms, none raw byte-exact; qualify native SDK, owner, actual padder and independent symbol rebasing.
+- [x] Rebuild/audit all 6,058 symbols / 6,042 slots; only target changes, all other bodies/addresses/extents/overflows/data/11,063 guards/conversion hash unchanged.
+- [x] Pass all twenty combined tests in 313.807 seconds, zero skips/errors/failures; matching totals and root README aggregates unchanged.
+- [x] Pass tools/syntax/whitespace and 86-document / 3,996-relative-link checks, zero broken links; three receipt-only rechecks pass in 4.211 seconds.
+- [ ] Match the sixty remaining raw differences: lookup-key branch, resolver primary read/reload order and saved-register lifetime phases. No bulk sixty-word guards.
+- [ ] Recover the production resolver separately; connected original-helper tests are not production-callee or PC-port acceptance.
+
+This is installed guest semantic recovery, not a byte match. Resume from the
+new ignored `game-matrix-route-layout-test/after.json` checkpoint.
+
 ## Game Matrix-Route Recovery And Private-Frame Audit - 2026-10-07
 
 [Note 1103](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md):
@@ -11,10 +28,12 @@
 - [x] Audit all 6,058 linked symbols, protected sections, 720 data owners, 11,063 guards and conversion hash as unchanged; leave root README totals unchanged.
 - [x] Pass all eight source/profile, negative, lazy/home/private/native/owner tests in 497.879 seconds, zero skips/errors/failures; 4,992 ordinary executions and six effective negatives.
 - [x] Pass tools/syntax/whitespace and 85-document / 3,985-relative-link checks, zero broken links; bank this audit separately from production matching.
-- [ ] Recover retail frame `0xA0`, matrix `sp+4C`, resolver outputs `sp+90/+8C`, primary read order and complete 120-word branch/return topology.
-- [ ] Requalify private overlaps and ABI homes before installing a match; preserve the three matched neighboring routines.
+- [x] Recover retail frame `0xA0`, matrix `sp+4C`, resolver outputs `sp+90/+8C` and complete 120-word body in Note 1104.
+- [x] Requalify private overlaps and ABI homes and preserve the three matched neighbors in Note 1104; install semantic C without claiming a byte match.
+- [ ] Finish primary read order, key branch and saved-register lifetime matching in Note 1104.
 
-This is experimental guest recovery, not an installed C conversion or PC-port acceptance.
+This historical checkpoint was experimental recovery only; Note 1104
+supersedes its installed-source/private-layout boundary, not PC-port acceptance.
 
 ## Game Lighting Dispatcher Match - 2026-10-07
 
