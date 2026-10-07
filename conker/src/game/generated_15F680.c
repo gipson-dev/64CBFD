@@ -55,7 +55,8 @@ typedef struct {
 s32 func_15133EEC();
 void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     f32 cx, f32 cy, f32 cz, f32 tx, f32 ty, f32 tz);
-s32 func_15142838(void *, f32, f32, f32, f32, f32, f32, f32, f32);
+void func_15142838(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
+    f32 tx, f32 ty, f32 tz);
 
 s32 func_151321D0() {
     return 0;
@@ -268,7 +269,7 @@ s32 func_151336A8(s32 index, ExtendedResourceNode15F680 *node, void *record) {
 
 s32 func_15133760(u8 *arg0, u8 *arg1) {
     func_15142838(
-        arg0,
+        (Mtx *)arg0,
         *(f32 *)(arg1 + 0x18),
         *(f32 *)(arg1 + 0x1C),
         *(f32 *)(arg1 + 0x20),

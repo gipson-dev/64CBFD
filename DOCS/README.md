@@ -51,7 +51,12 @@ confirmed.
 
 ## Planning and history
 
-- [Latest oriented matrix recovery](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md):
+- [Latest row matrix match and oriented layout](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md):
+  `func_15142838`,55 direct words/frame0x58, no guards; typed caller stays
+  24-word exact. Forty post-link tests pass. Oriented recovery now has64
+  controls and qualified47/44 stack-only challengers, still uninstalled.
+
+- [Initial oriented matrix recovery checkpoint](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md):
   two-point basis, scaling and caller ABI qualified in copies;142-word/frameB8
   candidate has84 differences, closer frameC8 candidate has57 stack-only
   differences. Maintained controls/native/guest/original caller-converter,

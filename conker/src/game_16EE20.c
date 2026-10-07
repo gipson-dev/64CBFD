@@ -48,7 +48,8 @@ void func_15142180(u8 slot, struct17 *source, s32 word, f32 width, f32 height);
 void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     f32 cx, f32 cy, f32 cz, f32 tx, f32 ty, f32 tz);
 s32 func_15142600();
-s32 func_15142838();
+void func_15142838(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
+    f32 tx, f32 ty, f32 tz);
 s32 func_15142E24();
 s32 func_1514306C();
 s32 func_15143134();
@@ -439,9 +440,23 @@ void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
 s32 func_15142600() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_15142838.s. */
-s32 func_15142838() {
-    return 0;
+void func_15142838(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
+    f32 tx, f32 ty, f32 tz) {
+    f32 matrix[4][4];
+    func_150A8050(matrix, rx, ry, rz);
+    matrix[3][0] = tx;
+    matrix[3][1] = ty;
+    matrix[3][2] = tz;
+    matrix[0][0] *= row0;
+    matrix[0][1] *= row0;
+    matrix[0][2] *= row0;
+    matrix[1][0] *= row1;
+    matrix[1][1] *= row1;
+    matrix[1][2] *= row1;
+    matrix[2][0] *= row0;
+    matrix[2][1] *= row0;
+    matrix[2][2] *= row0;
+    guMtxF2L(matrix, output);
 }
 void func_15142914(f32 *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8) {
     func_150A8050((f32 (*)[4])arg0, arg3, arg4, arg5);

@@ -203,6 +203,11 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
         cls.record, cls.words = screen.compile_candidate(cls.root, cls.output, 'selected')
         cls.challenger_body = dict(screen.candidates())['up1-columns1-early0']
         cls.challenger_record, cls.challenger = screen.compile_candidate(cls.root, cls.output, 'challenger', cls.challenger_body)
+        layouts = dict(screen.layout_candidates())
+        cls.ordered_body = layouts['layout1-reverse1-capture0']
+        cls.captured_body = layouts['layout1-reverse1-capture1']
+        cls.ordered_record, cls.ordered = screen.compile_candidate(cls.root, cls.output, 'ordered', cls.ordered_body)
+        cls.captured_record, cls.captured = screen.compile_candidate(cls.root, cls.output, 'captured', cls.captured_body)
         cls.rom = (cls.root / 'conker/conker.us.bin').read_bytes()
         cls.retail = list(struct.unpack_from('>142I', cls.rom, screen.ROM))
         cls.caller = list(struct.unpack_from('>30I', cls.rom, 0xE71C4))
@@ -232,7 +237,7 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
         if fixed:
             connected.update({CONVERT + i * 4: w for i, w in enumerate(self.converter)})
         models = []
-        for words in (self.words, self.challenger, self.retail):
+        for words in (self.words, self.challenger, self.ordered, self.captured, self.retail):
             model = OrientedOracle(words, memory, args, phase, connected, mutation)
             if caller:
                 model.entry = CALLER
@@ -285,6 +290,31 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
         self.assertEqual((selected['body_words'], selected['frame'], selected['differences']), (142, 0xB8, 84))
         self.receipt('controls', records)
 
+    def test_layout_controls_recover_direction_and_early_slots_without_frame_patching(self):
+        records = []
+        for name, body in screen.layout_candidates():
+            for profile in screen.PROFILES:
+                record, _ = screen.compile_candidate(self.root, self.output, name + '-' + profile, body, profile)
+                records.append(record)
+        self.assertEqual(len(records), 32)
+        self.assertFalse(any(r['differences'] == 0 for r in records))
+        self.assertTrue(all(not r['diagnostics'] for r in records))
+        for record, words, frame, differences in ((self.ordered_record, self.ordered, 0xC8, 47),
+                (self.captured_record, self.captured, 0xD0, 44)):
+            self.assertEqual((record['body_words'], record['frame'], record['differences']), (142, frame, differences))
+            for left, right in zip(words, self.retail):
+                if left != right:
+                    self.assertEqual(left >> 16, right >> 16)
+                    self.assertEqual(left >> 21 & 31, 29)
+                    self.assertIn(left >> 26, (9, 43, 49, 57))
+        for index, word in enumerate(self.retail):
+            if word >> 26 in (49, 57) and word >> 21 & 31 == 29 and word & 65535 in (0x68, 0x6C, 0x70):
+                self.assertEqual(self.ordered[index], word)
+            if word >> 26 in (49, 57) and word >> 21 & 31 == 29 and word & 65535 in (0x3C, 0x44, 0x48, 0x4C, 0x50):
+                self.assertEqual(self.captured[index], word)
+        self.receipt('layout-controls', dict(controls=records, ordered=self.ordered_record, captured=self.captured_record,
+            direction_slots_exact=True, early_slots_exact=True, installed=False, guards=0))
+
     def test_actual_padder_preserves_uninstalled_slot_and_retargets_converter(self):
         text, functions, relocations = parse_object(self.output / 'selected.o')
         self.assertEqual(functions[screen.FUNCTION]['size'], 568)
@@ -310,7 +340,7 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
         self.receipt('padding', dict(bytes=568, guards=0, retargeted_calls=1, installed=False))
 
     def test_guest_every_input_basis_sign_degenerate_float_edges_aliases_and_saved_state(self):
-        coverage = [set(), set(), set()]
+        coverage = [set() for _ in range(5)]
         count = 0
         for original, alias, phase, mutation in itertools.product(self.inputs, range(3), (0, 8), (False, True)):
             args = ((OUTPUT, ACTOR + 0x18, ACTOR + 0x20)[alias], *original[1:])
@@ -318,11 +348,11 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
                 coverage[index].update(model.visits)
             count += 1
         self.assertEqual(count, 2448)
-        self.assertEqual([len(c) for c in coverage], [142, 142, 142])
-        self.receipt('guest', dict(cases=count, bodies=3, covered_words=[len(c) for c in coverage], external_storage=True, private_trace_identity=False, arithmetic_nan_classification=True, hardware_fcsr=False))
+        self.assertEqual([len(c) for c in coverage], [142] * 5)
+        self.receipt('guest', dict(cases=count, bodies=5, covered_words=[len(c) for c in coverage], external_storage=True, private_trace_identity=False, arithmetic_nan_classification=True, hardware_fcsr=False))
 
     def test_original_thirty_word_caller_and_complete_fixed_converter_exact_domain(self):
-        coverage = [set(), set(), set()]
+        coverage = [set() for _ in range(5)]
         count = 0
         for delta, rows, column, alias, phase in itertools.product(((4, 0, 0), (-4, 0, 0), (0, 0, 4), (0, 0, -4)),
                 ((0.5, 2), (-2, 0.25)), ((2, -0.5, 3), (-2, 0.25, -1), (0, 0, 0)), range(3), (0, 8)):
@@ -332,21 +362,21 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
                 coverage[index].update(model.visits)
             count += 1
         expected = set(range(screen.ENTRY, screen.ENTRY + 568, 4)) | set(range(CALLER, CALLER + 120, 4)) | set(range(CONVERT, CONVERT + 460, 4))
-        self.assertEqual(coverage, [expected] * 3)
+        self.assertEqual(coverage, [expected] * 5)
         self.assertEqual(count, 144)
-        self.receipt('connected', dict(cases=count, bodies=3, caller_words=30, builder_words=142, converter_words=115, all_words=True, domain='finite exact integral signed32 after scaling', hardware_fcsr=False))
+        self.receipt('connected', dict(cases=count, bodies=5, caller_words=30, builder_words=142, converter_words=115, all_words=True, domain='finite exact integral signed32 after scaling', hardware_fcsr=False))
 
     def test_actual_32_bit_native_typed_caller_all_external_bytes_and_nan_classification(self):
         original = self.fixture
         try:
-            for body in (screen.SELECTED, self.challenger_body):
+            for body in (screen.SELECTED, self.challenger_body, self.ordered_body, self.captured_body):
                 self.fixture = original.replace(screen.SELECTED, body)
                 self.run_host('int n,a,m,count=0;\nfor(n=0;n<204;n++)for(a=0;a<3;a++)for(m=0;m<2;m++){\n'
                     'initialize(n,a,m);if(func_150B9D14(output,source)!=1 || check())return 20+error;count++;}\n'
                     'if(count!=1224 || sizeof(Mtx)!=64 || sizeof(f32)!=4)return 30;\n')
         finally:
             self.fixture = original
-        self.receipt('native', dict(cases_per_body=1224, bodies=2, bits=32, actual_source=True, caller=True, external_storage=True, converter='bounded float payload capture', arithmetic_nan_classification=True))
+        self.receipt('native', dict(cases_per_body=1224, bodies=4, bits=32, actual_source=True, caller=True, external_storage=True, converter='bounded float payload capture', arithmetic_nan_classification=True))
 
     def test_native_integer_loads_under_float_prototype_change_known_outputs(self):
         caller = screen.CALLER
@@ -431,7 +461,8 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
         original_object, original_warnings = compile_owner(self.root, self.output, source, 'builder-baseline')
         old_text, old_functions, old_relocations = parse_object(original_object)
         receipts = []
-        for variant, body in (('selected', screen.SELECTED), ('challenger', self.challenger_body)):
+        for variant, body in (('selected', screen.SELECTED), ('challenger', self.challenger_body),
+                ('ordered', self.ordered_body), ('captured', self.captured_body)):
             selected = source.replace(stub, body).replace('s32 func_15142600();', screen.PROTOTYPE)
             obj, warnings = compile_owner(self.root, self.output, selected, 'builder-' + variant)
             self.assertEqual(warnings, original_warnings)

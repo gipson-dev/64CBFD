@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Row Matrix Match And Oriented Layout
+
+[Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md):
+`func_15142838`:55 direct words/frame0x58, no guards/profile change. Nine-input
+ABI, rotation provider, translations before row scaling and fixed conversion.
+Local typed declaration/output cast preserve24 caller words and all31 owner
+functions. Sixteen controls;2160 paired guest,1176 native,288 original caller/
+converter,192 edges,36 home probes, nine negatives and actual padding.
+Only target across6059; protected sections/720 owners/10809 guards and both
+owners' two warnings unchanged. Exact3343/5464 (61.18%), Game2670/4791
+(55.73%),2121 different, zero drift; conversion counts/bytes unchanged.
+All40 focused post-link tests pass in119.063 seconds, no skips/errors/failures.
+Oriented recovery expands to64 controls/twelve tests/five guest/four native
+bodies. New142/frameC8/47 and142/frameD0/44 candidates have stack-only
+differences; neither is installed or matched. Resume legitimate frameB8.
+Root README changes only aggregate matching rows. No sibling/frozen Release/
+save/runtime, host adoption, hardware/gameplay acceptance or push.
+
 ## 2026-10-06 Game Oriented Matrix Recovery
 
 [Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md):

@@ -21,7 +21,31 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Oriented matrix recovery, not yet installed:
+Row-scaled matrix match and oriented-layout follow-up:
+[Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md)
+recovers `func_15142838`:55 direct words/frame0x58 under unchanged O2/g3,
+no guards. Nine-input pointer/float ABI, original rotation provider, translations
+before row scaling, and original guMtxF2L call. Typed local declaration and
+output cast leave `func_15133760`'s24 retail words and all31 caller-owner raw
+functions unchanged. Sixteen controls;2160 paired guest/full trace/storage,
+192 float-edge,36 guest-only home,288 original caller/converter and1176 native
+caller cases, nine compiled negatives and actual padding qualification.
+Only this builder changes across6059 slots; all10809 guards, protected sections,
+720 Game-data owners and both owners' two warnings unchanged.
+Exact3343/5464 (61.18%), Game2670/4791 (55.73%),2121 different, zero drift;
+converted counts/bytes unchanged. All40 focused post-link tests pass in119.063
+seconds, no skips/errors/failures.
+
+Oriented `func_15142600` remains uninstalled:64 maintained controls now include
+142/frameC8/47 and142/frameD0/44 stack-only candidates. The former recovers
+direction slots exactly; the latter recovers early delta/horizontal/up slots.
+Twelve tests qualify five guest bodies and four native candidates, retaining
+all previous acceptance boundaries. Recover legitimate142/frameB8 layout next;
+do not install stack/frame rewriting. Rotation provider is still bounded and
+original conversion qualification finite/exact integral only. No sibling/
+Release/save/runtime, hardware FCSR, gameplay acceptance, host adoption or push.
+
+Initial oriented matrix recovery checkpoint, not installed:
 [Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md)
 qualifies `func_15142600`'s two-point basis, normalization, row/column scaling,
 start-point translation and twelve-input caller ABI.32 maintained SDK controls:

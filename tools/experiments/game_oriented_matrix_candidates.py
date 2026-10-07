@@ -123,12 +123,35 @@ def compile_candidate(root, output, name, body=SELECTED, profile='o2g3'):
         differences=sum(a != b for a, b in itertools.zip_longest(words, retail, fillvalue=0))), words
 
 
+def layout_candidates():
+    base = dict(candidates())['up1-columns1-early0']
+    declarations = ('    struct17 direction;\n', '    OrientedHorizontal left;\n',
+                    '    struct17 up;\n', '    f32 matrix[4][4];\n')
+    for late_direction, reverse_direction, capture_start in itertools.product((False, True), repeat=3):
+        body = base
+        if late_direction:
+            for declaration in declarations:
+                body = body.replace(declaration, '')
+            body = body.replace('    f32 dx, dy, dz;\n',
+                '    f32 dx, dy, dz;\n' + ''.join(declarations[i] for i in (1, 3, 0, 2)))
+        if reverse_direction:
+            body = body.replace('direction.unk0', 'direction.TEMP').replace(
+                'direction.unk8', 'direction.unk0').replace('direction.TEMP', 'direction.unk8')
+        if capture_start:
+            body = body.replace('    dx =', '    f32 px, py, pz;\n'
+                '    px = sx;\n    py = sy;\n    pz = sz;\n    dx =', 1)
+            for index, axis in enumerate('xyz'):
+                body = body.replace('e%s - s%s' % (axis, axis), 'e%s - p%s' % (axis, axis)).replace(
+                    'matrix[3][%d] = s%s;' % (index, axis), 'matrix[3][%d] = p%s;' % (index, axis))
+        yield 'layout%d-reverse%d-capture%d' % (late_direction, reverse_direction, capture_start), body
+
+
 def main():
     root = Path(__file__).resolve().parents[2]
     output = root / 'conker/build/game-oriented-matrix'
     output.mkdir(exist_ok=True)
     records = []
-    for name, body in candidates():
+    for name, body in itertools.chain(candidates(), layout_candidates()):
         for profile in PROFILES:
             record, _ = compile_candidate(root, output, name + '-' + profile, body, profile)
             records.append(record)

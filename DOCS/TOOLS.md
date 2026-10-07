@@ -4,15 +4,41 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Row matrix compiler controls
+
+[Driver](../tools/experiments/game_row_matrix_candidates.py):translation-first/
+last and row/column store ordering across four actual SDK profiles,16 controls.
+Translation-first, row-order O2/g3 emits55 direct words/frame0x58 without guards.
+[Eleven tests](../tools/tests/test_game_row_matrix_match.py) bind2160 paired
+guest/full ordered trace/storage cases,192 float edges,36 guest-only live-home
+probes,1176 actual32-bit native caller cases and nine compiled semantic negatives.
+288 connected cases cover all24 original caller/55 builder/115 converter words
+on finite exactly integral fixed conversions. Rotation remains a bounded model;
+native converter captures float payloads, with classification-only arithmetic
+NaN comparison. Actual padder retains220 symbol bytes, excludes four alignment
+bytes and retargets both calls. Copied owners preserve92 builder neighbors,
+all31 caller functions/pools/relocations and warnings2->2 in each. Production
+binds target, caller, eight neighbors and unchanged10809 guards. Commands:
+
+```sh
+python3 -m tools.experiments.game_row_matrix_candidates
+python3 -m unittest tools.tests.test_game_row_matrix_match -v
+```
+
+Ignored receipts:`conker/build/game-row-matrix/` and
+`conker/build/game-row-matrix-test/`; see
+[Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md).
+
 ## Oriented matrix recovery controls
 
 [Driver](../tools/experiments/game_oriented_matrix_candidates.py):eight
 array/reversed-struct up-vector, row/column store-order and early-first-element
-forms across four actual SDK profiles,32 controls. This is an uninstalled
-recovery driver:142 words/frameB8/84 differences, or142/frameC8/57 differences
+forms plus eight direction-layout/captured-start forms across four actual SDK
+profiles,64 controls. This is an uninstalled recovery driver:142 words/frameB8/
+84 differences, or142/frameC8/57,142/frameC8/47 and142/frameD0/44 differences
 confined to stack immediates. It does not patch the frame or install guards.
-[Eleven tests](../tools/tests/test_game_oriented_matrix_recovery.py) bind2448
-three-body guest cases,1224 actual32-bit native typed-caller cases per candidate,
+[Twelve tests](../tools/tests/test_game_oriented_matrix_recovery.py) bind2448
+five-body guest cases,1224 actual32-bit native typed-caller cases per candidate,
 144 complete original caller/builder/converter cases per body, all142 builder
 words, nine compiled negatives and native integer-load rejection. Preserve
 three independent normalizations, separate multiply rounding, start-point
@@ -20,10 +46,11 @@ translation and retail's lack of a degenerate fallback. Converter execution
 is restricted to finite exactly integral fixed results; native conversion
 uses a float-payload capture. Arithmetic NaNs are classification-compared,
 not native payload/FCSR/exception-mode acceptance. Actual padder retains568
-bytes and retargets one call. Copied builder owners preserve92 neighbors/
+bytes and retargets one call. All four copied builder owners preserve92 neighbors/
 pools/two warnings; the typed caller copy preserves all eight raw functions,
 pools and zero warnings. Private trace identity across differing layouts is
-not claimed. No production change. Commands:
+not claimed. Four native candidates and four copied builder owners are qualified.
+No oriented production change. Commands:
 
 ```sh
 python3 -m tools.experiments.game_oriented_matrix_candidates
@@ -32,6 +59,8 @@ python3 -m unittest tools.tests.test_game_oriented_matrix_recovery -v
 
 Ignored receipts:`conker/build/game-oriented-matrix/` and
 `conker/build/game-oriented-matrix-test/`; resume the stack-only challenger in
+[Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md),
+with the initial checkpoint in
 [Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md).
 
 ## Scaled matrix compiler controls

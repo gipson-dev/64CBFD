@@ -1,5 +1,30 @@
 # PC Port Roadmap located in another project folder
 
+## Game Row Matrix Match And Oriented Layout - 2026-10-06
+
+[Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md):
+`func_15142838` emits all55 retail words/frame0x58 directly under unchanged
+O2/g3. Typed nine-input ABI and local caller correction preserve24 retail
+caller words and its whole31-function owner. Sixteen controls,2160 paired guest,
+192 float edges,36 home probes,288 original caller/converter,1176 native cases,
+nine negatives and actual padding. All40 focused post-link tests pass in119.063
+seconds. Only target across6059 slots; protected sections/720 data owners,
+10809 guards and both owners' two warnings unchanged. Game2670/4791 exact
+(55.73%),2121 different, zero drift; converted counts/bytes unchanged.
+
+- [x] Recover rotation, translation-before-scaling and row-factor assignment.
+- [x] Correct local output/float ABI without changing caller instructions.
+- [x] Qualify guest/native, original caller/converter, negatives and padder.
+- [x] Rebuild, audit all slots, run focused regressions and refresh progress.
+- [x] Expand oriented controls to64 and qualification to five guest/four native bodies.
+- [ ] Recover `func_15142600`'s legitimate142-word/frame0xB8 layout.
+- [ ] Install oriented builder and typed caller only after matching/qualification.
+
+New oriented candidates142/frameC8/47 and142/frameD0/44 retain stack-only
+differences; direction or early local slots now match, but neither frame does.
+No frame/stack guards, original rotation-helper restoration, general FCSR/
+conversion or gameplay acceptance, sibling/Release/save/runtime changes or push.
+
 ## Game Oriented Matrix Recovery - 2026-10-06
 
 [Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md):

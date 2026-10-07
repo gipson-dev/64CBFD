@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-06 ([Note1069](WORKING_NOTES/1069-game-row-matrix-match-and-oriented-layout-20261006.md)):
+`func_15142838`:55 direct words/frame0x58, no guards/profile change. Typed
+nine-input ABI, original provider, translation-before-row-scaling and converter.
+Caller remains24-word exact; all31 raw caller-owner functions unchanged.
+Sixteen controls;2160 paired guest/1176 native/288 complete original caller-
+builder-converter cases,192 edges,36 home probes, nine negatives and padding.
+Only target across6059 slots; protected sections/720 owners/10809 guards and
+both owners' two warnings unchanged. Exact3343/5464, Game2670/4791,2121
+different, zero drift; converted unchanged. All40 focused post-link tests pass
+in119.063 seconds, no skips/errors/failures.
+Oriented `func_15142600` remains uninstalled:64 controls, twelve tests, five
+guest bodies/four native candidates; new142/frameC8/47 and142/frameD0/44
+stack-only layouts. Resume legitimate142/frameB8 recovery, not stack rewriting.
+No sibling/Release/save/runtime, host adoption, hardware/gameplay acceptance
+or push. Goal stays active.
+
 2026-10-06 ([Note1068](WORKING_NOTES/1068-game-oriented-matrix-recovery-20261006.md)):
 `func_15142600`:two-point oriented matrix qualified in copies, not installed.
 32 maintained SDK controls:142/frameB8/84 differences, closer142/frameC8/57
