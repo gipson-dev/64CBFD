@@ -21,7 +21,29 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest matrix scheduling / point-list lifetime audit, **no new byte match**:
+Latest point-list lifetime match:
+[Note 1097](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md).
+`func_15145CD0` reuses the descriptor cursor for the input list after its final
+descriptor read. Complete C57/frame `0x88` under unchanged O2/g3/MIPS2;
+19 raw differences, down from 46. Nineteen expected-word guards close one
+saved-register cycle and two independent prologue permutations; all 57 linked
+words match retail. No private offsets, incoming homes, call relocations,
+instructions, ABI types or pools are changed by normalization.
+1,344 guest, 576 connected original-point-helper, 2,304 independent/both-home
+readback and 131,076 native cases qualify, plus seven effective negatives,
+fail-closed storage and copied-owner/actual-padder/two-call relocation gates.
+Forty new meaningful measurements are retained; none is raw byte-exact.
+US ELF audit changes only target across 6,042 retail slots / 6,058 symbols;
+all other bodies/addresses/extents/16 overflows/protected sections/720 data
+owners and previous 11,006 guards stay intact. Nineteen new guards bring the
+count to 11,025. Exact total 3,361/5,466 (61.49%), Game 2,688/4,793 (56.08%),
+2,105 different, zero drift; conversions unchanged. All 34 combined tests
+pass in 319.291 seconds, zero skips/errors/failures; tools/syntax/whitespace
+and 79-document / 3,924-relative-link checks pass, zero broken links.
+Next: contiguous point-batch transform `func_15145DB4`; translator scheduling
+and sampler remain open. No sibling/Release/save/runtime/push acceptance.
+
+Previous matrix scheduling / point-list lifetime audit, **no new byte match**:
 [Note 1096](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md).
 26 additional typed-view/backend controls do not resolve `func_15142314`;
 its installed C49/frame0/34 differences is unchanged. Begin `func_15145CD0`:

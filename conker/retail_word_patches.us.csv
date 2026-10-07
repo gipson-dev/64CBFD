@@ -11005,3 +11005,22 @@ game_16EE20,func_151452C4,0x1B8,0xC4480008,0xC44A0008,-,-,Normalize sphere calle
 game_16EE20,func_151452C4,0x1BC,0x46064101,0x46065101,-,-,Normalize sphere callee closed FP allocation and independent relative-address schedule,,,false
 game_16EE20,func_151452C4,0x1C8,0x44805000,0x44804000,-,-,Normalize sphere callee closed FP allocation and independent relative-address schedule,,,false
 game_16EE20,func_151452C4,0x1D0,0x460A003C,0x4608003C,-,-,Normalize sphere callee closed FP allocation and independent relative-address schedule,,,false
+game_16EE20,func_15145CD0,0x8,0xAFB2002C,0xAFB10028,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x10,0x00808025,0x00E08025,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x14,0x00E09025,0x00808825,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x20,0xAFB10028,0xAFB2002C,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x30,0x8E050000,0x8E250000,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x34,0x8E060004,0x8E260004,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x3C,0x8E070008,0x8E270008,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x40,0x860E0010,0x862E0010,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x44,0x8FB10090,0x8FB20090,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x58,0x860F0012,0x862F0012,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x6C,0x86180014,0x86380014,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x70,0x8FB0008C,0x8FB1008C,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x80,0x1A400011,0x1A000011,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x88,0x8E020000,0x8E220000,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0x8C,0x8E230000,0x8E430000,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0xB8,0x2652FFFF,0x2610FFFF,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0xBC,0x26100004,0x26310004,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0xC0,0x1E40FFF1,0x1E00FFF1,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false
+game_16EE20,func_15145CD0,0xC4,0x26310004,0x26520004,-,-,Normalize point-list closed saved-register cycle and independent prologue schedule,,,false

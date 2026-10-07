@@ -112,8 +112,10 @@ class PointListOracle(TriangleOracle):
                 self.put(self.matrix + i * 4, value, 4)
             for address, value, size in mutations(self.change):
                 self.put(address, value, size)
-            if self.home:
+            mask = 3 if self.home is True else self.home
+            if mask & 1:
                 self.put(STACK + self.phase + 4, INPUT + 4, 4)
+            if mask & 2:
                 self.put(STACK + self.phase + 8, OUTPUT + 4, 4)
         else:
             _, values, coordinates, outputs = self.calls[-1]
@@ -126,6 +128,7 @@ class PointListOracle(TriangleOracle):
 
 class GamePointListTransformAuditTests(unittest.TestCase):
     run_host = native.GameRandomCurveRecordTests.run_host
+    BODY = screen.BASELINE
 
     @classmethod
     def setUpClass(cls):
@@ -247,7 +250,7 @@ static void initialize(u32 n,int mode){
         if(i<4){sources[i]=input+i;destinations[i]=output+i;}
     }
 }
-''' + screen.BASELINE + '\n'
+''' + self.BODY + '\n'
         self.run_host(r'''
 u32 n;int mode,i,j;static s32 counts[]={(-2147483647-1),-3,-1,0};
 for(n=0;n<65536;n++)for(mode=0;mode<2;mode++){
@@ -273,7 +276,7 @@ for(i=0;i<4;i++){
         self.receipt('native', dict(cases=131076, actual_32bit_C=True, every_halfword_in_each_translation_field=True,
             provider_mutation=True, transform_is_validating_copy_hook=True, not_cartesian_domain=True))
 
-    def test_callback_argument_home_readback_is_still_an_open_nonstandard_boundary(self):
+    def test_historical_callback_argument_home_mismatch_remains_reproduced(self):
         detected = 0
         for phase in (0, 8):
             memory, args = fixture(1)
@@ -285,7 +288,7 @@ for(i=0;i<4;i++){
             self.assertEqual(raw.calls[1][3], tuple(RESULTS + axis * 4 for axis in range(3)))
             self.assertEqual(original.calls[1][3], tuple(RESULTS + 12 + axis * 4 for axis in range(3)))
             detected += 1
-        self.receipt('argument-homes', dict(cases=detected, production_C_still_differs=True,
+        self.receipt('argument-homes', dict(cases=detected, historical_C_still_differs=True,
             original_reads_spilled_lists_after_provider=True, full_ABI_home_acceptance_not_claimed=True))
 
     def test_five_compiled_negatives_change_public_storage(self):
@@ -344,13 +347,17 @@ for(i=0;i<4;i++){
         self.receipt('translation-controls', dict(count=26, measurements=records, public_effect_cases=624,
             exact=0, production_profile_unchanged=True, all_public_read_order_identity=False))
 
-    def test_production_sources_linked_slots_and_guard_history_are_unchanged(self):
+    def test_historical_baseline_and_current_installed_match_with_guard_history(self):
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
-        self.assertEqual(source.count(screen.BASELINE), 1)
+        self.assertEqual(source.count(screen.BASELINE), 0)
+        self.assertEqual(source.count(screen.SELECTED), 1)
         self.assertEqual(source.count(translation.SELECTED), 1)
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'), 'mips-linux-gnu-objdump')
         self.assertEqual((self.record['body_words'], self.record['frame'], self.record['differences']), (57, 0x88, 46))
-        self.assertEqual(functions[screen.FUNCTION], self.words)
+        selected, selected_words = screen.compile_candidate(self.root, self.out, 'point-list-production', screen.SELECTED)
+        self.assertEqual((selected['body_words'], selected['frame'], selected['differences']), (57, 0x88, 19))
+        self.assertEqual(functions[screen.FUNCTION], screen.normalize(selected_words))
+        self.assertEqual(functions[screen.FUNCTION], self.retail)
         self.assertEqual(addresses[screen.FUNCTION], screen.ENTRY)
         record, words = translation.compile_candidate(self.root, self.out, 'translation-production')
         self.assertEqual((record['body_words'], record['differences']), (49, 34))
@@ -358,7 +365,8 @@ for(i=0;i<4;i++){
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
         assert_guard_history(self, guards)
-        self.assertFalse(any(row['function'] in (screen.FUNCTION, translation.FUNCTION) for row in guards))
+        self.assertEqual([row for row in guards if row['function'] == screen.FUNCTION], screen.owner_guards())
+        self.assertFalse(any(row['function'] == translation.FUNCTION for row in guards))
 
 
 if __name__ == '__main__':

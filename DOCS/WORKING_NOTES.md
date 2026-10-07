@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-07 ([Note 1097](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md)):
+Point-list transform `func_15145CD0`: recovered descriptor/input cursor phase,
+original argument-home reloads, complete C57/frame `0x88`, 19 raw differences
+versus historical 46. Nineteen closed-cycle/independent-prologue guards match
+all 57 words without private-offset, relocation, insertion or omission edits.
+1,344 guest / 576 connected original-helper / 2,304 home-readback / 131,076
+native cases, seven effective negatives and owner/padder/rebased-call gates
+qualify; 40 new controls retained, none raw exact. US ELF changes only target;
+6,041 other retail bodies/addresses/extents/overflows/data/prior guards intact.
+Guard count 11,025; exact total 3,361, Game 2,688, 2,105 different, zero drift;
+conversions unchanged. All 34 combined tests pass in 319.291 seconds, zero
+skips/errors/failures; tools/syntax/whitespace and 79-document /
+3,924-relative-link gates pass, zero broken links. README aggregate rows only;
+next contiguous point-batch transform `func_15145DB4`. Translator/sampler
+remain open; no sibling/Release/save/runtime/push claim.
+
 2026-10-07 ([Note 1096](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md)):
 Matrix scheduling / pointer-list lifetime audit, **no new byte match**.
 26 additional typed-view/backend controls, none exact; translator C49/frame0/

@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-07 Game Point-List Transform Lifetime Match
+
+[Note 1097](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md):
+Recover `func_15145CD0`'s descriptor-to-input cursor lifetime and both original
+incoming-list reloads. Complete C57/frame `0x88`, unchanged O2/g3/MIPS2,
+19 raw differences instead of 46. Nineteen expected-word guards close only a
+saved-register allocation cycle and two independent prologue permutations;
+no private-offset movement, insertion, omission or call-relocation changes.
+All 57 normalized words match retail. Full-memory/public-trace guest, connected
+original-helper, independent incoming-home, native, effective-negative and
+copied-owner/actual-padder/rebased-call gates qualify. Forty new meaningful
+measurements retained, none raw exact. US ELF changes only target; 6,041 other
+retail bodies, all addresses/extents/16 overflows/protected sections/720 data
+owners and 11,006 previous guards stay intact; new guard count 11,025. Exact
+total 3,361/5,466 (61.49%), Game 2,688/4,793 (56.08%), 2,105 different, zero
+drift; conversions unchanged. All 34 combined tests pass in 319.291 seconds,
+zero skips/errors/failures; tools/syntax/whitespace and 79-document /
+3,924-relative-link checks pass, zero broken links. README aggregate rows only; next contiguous
+point-batch transform `func_15145DB4`. Translator/sampler remain open.
+No sibling/frozen Release/save/runtime/hardware/push work.
+
 ## 2026-10-07 Game Matrix Scheduling And Point-List Lifetime Audit
 
 [Note 1096](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md):

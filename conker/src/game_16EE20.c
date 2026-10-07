@@ -1799,23 +1799,27 @@ u8 func_15145C90(s32 arg0) {
     }
 }
 
-void func_15145CD0(u8 *arg0, struct17 **arg1, struct17 **arg2, s32 arg3) {
-    f32 mtx[4][4];
+void func_15145CD0(u8 *cursor, struct17 **input, struct17 **destinations, s32 count) {
+    f32 matrix[4][4];
+    struct17 **output;
     struct17 *src;
     struct17 *dst;
 
-    func_150A8050(mtx, *(f32 *)(arg0 + 0), *(f32 *)(arg0 + 4), *(f32 *)(arg0 + 8));
-    mtx[3][0] = *(s16 *)(arg0 + 0x10);
-    mtx[3][1] = *(s16 *)(arg0 + 0x12);
-    mtx[3][2] = *(s16 *)(arg0 + 0x14);
+    func_150A8050(matrix, *(f32 *)(cursor + 0), *(f32 *)(cursor + 4), *(f32 *)(cursor + 8));
+    output = destinations;
+    matrix[3][0] = *(s16 *)(cursor + 0x10);
+    matrix[3][1] = *(s16 *)(cursor + 0x12);
+    matrix[3][2] = *(s16 *)(cursor + 0x14);
 
-    while (arg3 > 0) {
-        src = *arg1;
-        dst = *arg2;
-        func_150A7960(mtx, src->unk0, src->unk4, src->unk8, &dst->unk0, &dst->unk4, &dst->unk8);
-        arg3--;
-        arg1++;
-        arg2++;
+    /* The descriptor and input-list cursor have disjoint lifetimes. */
+    cursor = (u8 *)input;
+    while (count > 0) {
+        src = *(struct17 **)cursor;
+        dst = *output;
+        func_150A7960(matrix, src->unk0, src->unk4, src->unk8, &dst->unk0, &dst->unk4, &dst->unk8);
+        count--;
+        cursor += 4;
+        output++;
     }
 }
 

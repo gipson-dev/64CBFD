@@ -1,5 +1,25 @@
 # PC Port Roadmap located in another project folder
 
+## Game Point-List Transform Lifetime Match - 2026-10-07
+
+[Note 1097](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md):
+`func_15145CD0` recovers the original descriptor/input cursor lifetime,
+C57/frame `0x88`, unchanged O2/g3/MIPS2; 19 raw allocation/scheduling words.
+
+- [x] Recover both original incoming-list reloads by reusing the descriptor cursor after its final read.
+- [x] Retain 40 new address/structure/phase/count measurements and qualify 720 bounded public-effect candidate executions; none raw exact.
+- [x] Qualify 1,344 guest, 576 connected original-point-helper, 2,304 independent/both-home readback and 131,076 native cases, plus seven effective negatives and fail-closed storage.
+- [x] Prove one closed saved-register cycle and two independent prologue swaps; install exactly 19 expected-word guards without private-offset, relocation, insertion or omission edits.
+- [x] Preserve copied-owner 88 neighbors/pools/relocations/two warnings; qualify actual padder and both independently rebased calls.
+- [x] Rebuild/audit all 6,058 symbols / 6,042 slots / 16 overflows / 720 data owners; only target changes, all addresses/extents/prior guards intact, new guard count 11,025.
+- [x] Update README aggregates: total 3,361, Game 2,688 (56.08%), 2,105 different, zero drift; conversions unchanged.
+- [x] Pass all 34 combined tests in 319.291 seconds, zero skips/errors/failures, plus tools/syntax/whitespace and 79-document / 3,924-relative-link gates, zero broken links.
+- [ ] Recover/match contiguous point-batch transform `func_15145DB4` without importing the pointer-list ABI into its record-stride loop.
+- [ ] Match translator `func_15142314` scheduling; sampler `func_151432BC` exit/RNG lifetime remains open.
+
+This is guest matching progress, not PC-port/runtime/hardware acceptance.
+No sibling/frozen Release/save/runtime/push work.
+
 ## Game Matrix Scheduling And Point-List Lifetime Audit - 2026-10-07
 
 [Note 1096](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md):
@@ -13,7 +33,7 @@ No new byte match. Translator stays C49/frame0/34 differences;
 - [x] Preserve production C/profiles/headers/guards and README aggregates; no frozen sibling Release or runtime action.
 - [x] Audit all 6,058 symbols/6,042 slots/16 overflows/protected sections/720 data owners/11,006 guards; matching totals unchanged.
 - [x] Pass 25 combined tests in 376.363 seconds, strengthened native/unmapped gates and final nine-test audit; tools/syntax/whitespace and 78-document/3,910-relative-link checks pass, zero broken.
-- [ ] Recover the original descriptor-to-source cursor saved-register lifetime and incoming-list readbacks in `func_15145CD0` without dummy work or private-offset patches.
+- [x] Recover the original descriptor-to-source cursor saved-register lifetime and incoming-list readbacks in `func_15145CD0` without dummy work or private-offset patches; completed in Note 1097.
 - [ ] Match translator constant/ordinary-branch/return-delay scheduling; retain 178 measured controls, none exact.
 - [ ] Recover sampler `func_151432BC`'s per-path RA loads and circle RNG-byte schedule before installation.
 

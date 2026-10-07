@@ -4,14 +4,47 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
-## Matrix scheduling and point-list lifetime audit
+## Point-list transform lifetime matching
+
+[Point-list driver](../tools/experiments/game_point_list_transform_candidates.py)
+retains the historical 48 measurements and adds 40 address-readback/typed-view/
+phase-lifetime/count measurements. None is raw byte-exact. Selected semantic
+C57/frame `0x88` has 19 differences under unchanged O2/g3/MIPS2; normalization
+is a closed s0/s1/s2 allocation cycle and two independent prologue swaps,
+without private-offset, call-relocation, insertion or omission changes.
+
+[Eight match tests](../tools/tests/test_game_point_list_transform_match.py)
+bind all 57 wrapper words and all 40 original point-helper words, 1,344 guest,
+576 connected helper, 2,304 independent/both incoming-home readback and
+131,076 native cases, complete memory/public traces/calls, seven effective
+negatives, fail-closed storage and copied-owner/actual-padder/independently
+rebased call relocations. The historical audit retains its old mismatch
+fixtures while pinning the currently installed match. See
+[Note 1097](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md).
+The US ELF changes only the target, with prior guards/addresses/extents/data
+unchanged. All 34 combined tests pass in 319.291 seconds, zero skips/errors/
+failures; tools/syntax/whitespace and 79-document / 3,924-relative-link gates
+pass, zero broken links.
+
+```sh
+python3 -m tools.experiments.game_point_list_transform_candidates --readback
+python3 -m unittest tools.tests.test_game_point_list_transform_match tools.tests.test_game_point_list_transform_audit tools.tests.test_game_matrix_translation_recovery tools.tests.test_game_owner_pool tools.tests.test_pad_c_object_word_patches -v
+```
+
+Ignored receipts: `conker/build/game-point-list-readback/` and
+`conker/build/game-point-list-match-test/`. No full FCSR/hardware/64-bit host
+acceptance; incoming-home overwrite fixtures are nonstandard guest ABI probes,
+not permission for an ordinary native C callee to rewrite caller arguments.
+
+## Historical matrix scheduling and point-list lifetime audit
 
 [Matrix schedule driver](../tools/experiments/game_matrix_translation_schedule_candidates.py)
 adds 16 typed views and ten locally evidenced backend controls, 26 nonmatching
 measurements / 624 bounded public-effect executions. Production translator
 stays C49/frame0/34 differences. [Point-list driver](../tools/experiments/game_point_list_transform_candidates.py)
 retains 48 loop/record/lifetime/readback measurements / 864 bounded executions,
-none exact. Production `func_15145CD0` stays C57/frame `0x88`/46 differences.
+none exact. Historical `func_15145CD0` was C57/frame `0x88`/46 differences;
+its recovered lifetime and guarded match now supersede that installed shape.
 
 [Audit tests](../tools/tests/test_game_point_list_transform_audit.py) bind 1,344
 public-effect guest, 580 connected original-point-helper and 131,076 native

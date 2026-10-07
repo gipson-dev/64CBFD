@@ -51,7 +51,20 @@ confirmed.
 
 ## Planning and history
 
-- [Latest matrix-scheduling / point-list lifetime audit](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md):
+- [Latest point-list lifetime match](WORKING_NOTES/1097-game-point-list-transform-lifetime-match-20261007.md):
+  Descriptor/input cursor phases recover C57/frame `0x88`, both incoming-list
+  reloads and original private offsets. Nineteen closed register-cycle and
+  independent prologue guards match all 57 words, no relocation/instruction
+  edits. Guest/full-memory/home-readback/native/negative/owner/padder/rebased-
+  call gates qualify; 40 new controls retained, none raw exact. Next contiguous
+  point-batch transform `func_15145DB4`; translator/sampler remain open.
+  Only target changes; other bodies/addresses/extents/overflows/data/prior
+  guards intact. Exact total 3,361, Game 2,688, 2,105 different, zero drift;
+  conversions unchanged. All 34 combined tests pass in 319.291 seconds,
+  zero skips/errors/failures; tools/syntax/whitespace and 79-document /
+  3,924-relative-link gates pass, zero broken links.
+
+- [Previous matrix-scheduling / point-list lifetime audit](WORKING_NOTES/1096-game-matrix-scheduling-and-point-list-lifetime-audit-20261007.md):
   No new byte match or production change. 26 new translator controls and 48
   pointer-list loop/lifetime/readback measurements remain nonmatching. Guest/
   connected original-helper/native/negative gates qualify ordinary effects;

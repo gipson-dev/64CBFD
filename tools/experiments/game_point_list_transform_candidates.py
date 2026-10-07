@@ -1,5 +1,6 @@
 """Match the pointer-list point transformer using real loop and record views."""
 
+import argparse
 import itertools
 import json
 import struct
@@ -85,9 +86,158 @@ def readback_candidates():
         yield 'readback%d-early-output%d' % (mask, early_output), body
 
 
-def compile_candidate(root, out, name, body=BASELINE, profile='o2g3'):
+def address_candidates():
+    cursor_body = dict(lifetime_candidates())['lifetime-matrix1-input1-count0']
+    for words, mask, early_output in itertools.product((False, True), (1, 2, 3), (False, True)):
+        body = cursor_body
+        for bit, cursor, argument in ((1, 'input', 'arg1'), (2, 'output', 'arg2')):
+            if mask & bit:
+                view = '(struct17 **)*(volatile u32 *)&' if words else '*(struct17 ** volatile *)&'
+                body = body.replace('%s = %s;' % (cursor, argument), '%s = %s%s;' % (cursor, view, argument))
+        if early_output:
+            assignment = next(line for line in body.splitlines() if line.startswith('    output = ')) + '\n'
+            body = body.replace(assignment, '')
+            body = body.replace('    mtx[3][0]', assignment + '    mtx[3][0]', 1)
+        yield 'address-words%d-mask%d-early%d' % (words, mask, early_output), body
+
+
+DESCRIPTOR = '''typedef struct {
+    f32 rotation[3];
+    u8 padC[4];
+    s16 translation[3];
+} PointListDescriptor;
+'''
+
+
+def structured_candidates():
+    cursor_body = dict(lifetime_candidates())['lifetime-matrix1-input1-count0']
+    for cursors, inline, descriptor, word_args in itertools.product((False, True), repeat=4):
+        body = cursor_body if cursors else BASELINE
+        declarations = DECLARATIONS + (DESCRIPTOR if descriptor else '')
+        body = body.replace('    struct17 *src;\n    struct17 *dst;\n', '')
+        if inline:
+            source, output = ('input', 'output') if cursors else ('arg1', 'arg2')
+            body = body.replace('        src = *%s;\n        dst = *%s;\n' % (source, output), '')
+            body = body.replace('src->', '(*%s)->' % source).replace('dst->', '(*%s)->' % output)
+        else:
+            source, output = ('input', 'output') if cursors else ('arg1', 'arg2')
+            body = body.replace('        src = *%s;\n        dst = *%s;' % (source, output),
+                '        struct17 *src = *%s;\n        struct17 *dst = *%s;' % (source, output))
+        if descriptor:
+            body = body.replace('u8 *arg0', 'PointListDescriptor *arg0')
+            for i, offset in enumerate((0, 4, 8)):
+                body = body.replace('*(f32 *)(arg0 + %d)' % offset, 'arg0->rotation[%d]' % i)
+            for i, offset in enumerate((0x10, 0x12, 0x14)):
+                body = body.replace('*(s16 *)(arg0 + 0x%X)' % offset, 'arg0->translation[%d]' % i)
+        if word_args:
+            if not cursors:
+                continue
+            body = body.replace('struct17 **arg1, struct17 **arg2', 'u32 arg1, u32 arg2')
+            body = body.replace('input = arg1;', 'input = (struct17 **)arg1;')
+            body = body.replace('output = arg2;', 'output = (struct17 **)arg2;')
+        yield 'structured-cursors%d-inline%d-descriptor%d-words%d' % (cursors, inline, descriptor, word_args), body, declarations
+
+
+def phase_candidates():
+    for union, early_output, inline in itertools.product((False, True), repeat=3):
+        body = BASELINE.replace('    f32 mtx[4][4];', '    f32 mtx[4][4];\n    struct17 **output;')
+        if union:
+            body = body.replace('    struct17 **output;',
+                '    struct17 **output;\n    union { u8 *descriptor; struct17 **input; } cursor;')
+            body = body.replace('    func_150A8050(', '    cursor.descriptor = arg0;\n    func_150A8050(', 1)
+            body = body.replace('(arg0 + ', '(cursor.descriptor + ')
+            switch, load, increment = 'cursor.input = arg1;', '*cursor.input', 'cursor.input++;'
+        else:
+            switch, load, increment = 'arg0 = (u8 *)arg1;', '*(struct17 **)arg0', 'arg0 += 4;'
+        body = body.replace('    while (arg3 > 0)', '    %s\n    while (arg3 > 0)' % switch)
+        assignment = '    output = arg2;\n'
+        if early_output:
+            body = body.replace('    mtx[3][0]', assignment + '    mtx[3][0]', 1)
+        else:
+            body = body.replace('    ' + switch, assignment + '    ' + switch)
+        body = body.replace('        src = *arg1;', '        src = %s;' % load)
+        body = body.replace('        dst = *arg2;', '        dst = *output;')
+        body = body.replace('        arg1++;', '        ' + increment).replace('        arg2++;', '        output++;')
+        if inline:
+            body = body.replace('    struct17 *src;\n    struct17 *dst;\n', '')
+            body = body.replace('        src = %s;\n        dst = *output;\n' % load, '')
+            body = body.replace('src->', '(%s)->' % load).replace('dst->', '(*output)->')
+        yield 'phase-union%d-early%d-inline%d' % (union, early_output, inline), body
+
+
+def count_candidates():
+    selected = dict(phase_candidates())['phase-union0-early1-inline0']
+    for pointer, count in itertools.product((False, True), repeat=2):
+        body = selected
+        if pointer:
+            body = body.replace('u8 *arg0', 'register u8 *arg0')
+        if count:
+            body = body.replace('s32 arg3)', 'register s32 arg3)')
+        yield 'count-register-pointer%d-count%d' % (pointer, count), body
+    for first, register in itertools.product((False, True), repeat=2):
+        declaration = '    %ss32 remaining = arg3;\n' % ('register ' if register else '')
+        body = selected.replace('    f32 mtx[4][4];\n', declaration + '    f32 mtx[4][4];\n' if first else
+            '    f32 mtx[4][4];\n' + declaration)
+        body = body.replace('arg3 > 0', 'remaining > 0').replace('        arg3--;', '        remaining--;')
+        yield 'count-local-first%d-register%d' % (first, register), body
+
+
+SELECTED = dict(phase_candidates())['phase-union0-early1-inline0'].replace('arg0', 'cursor').replace(
+    'arg1', 'input').replace('arg2', 'destinations').replace('arg3', 'count').replace('mtx', 'matrix')
+SELECTED = SELECTED.replace('    cursor = (u8 *)input;',
+    '    /* The descriptor and input-list cursor have disjoint lifetimes. */\n    cursor = (u8 *)input;')
+
+
+def normalize(words):
+    """Close one saved-register allocation cycle and two independent prologue swaps."""
+    assert len(words) == WORDS
+    result = list(words)
+    rename = {16: 17, 17: 18, 18: 16}
+    for i in range(4, 50):
+        word = result[i]
+        op = word >> 26
+        fields = (21, 16, 11) if op == 0 else (21, 16) if op in (6, 7, 9, 33, 35, 37, 43) else ()
+        for shift in fields:
+            register = word >> shift & 31
+            if register in rename:
+                word = word & ~(31 << shift) | rename[register] << shift
+        result[i] = word
+    # Saved registers keep their own physical homes and restores.
+    result[2], result[8] = words[8], words[2]
+    result[4], result[5] = result[5], result[4]
+    return result
+
+
+def owner_guards():
+    root = Path(__file__).resolve().parents[2]
+    out = root / 'conker/build/game-point-list-readback'
+    out.mkdir(exist_ok=True)
+    record, words = compile_candidate(root, out, 'guard-source', SELECTED)
+    assert (record['body_words'], record['frame'], record['differences']) == (57, 0x88, 19)
+    result = normalize(words)
+    retail = list(struct.unpack_from('>57I', (root / 'conker/conker.us.bin').read_bytes(), ROM))
+    assert result == retail
+    raw, functions, rel = parse_object(out / 'guard-source.o')
+    assert functions[FUNCTION]['size'] == 228
+    assert rel == {0x38: [('R_MIPS_26', 'func_150A8050')], 0xB0: [('R_MIPS_26', 'func_150A7960')]}
+    rows = []
+    for i, (expected, replacement) in enumerate(zip(words, result)):
+        if expected == replacement:
+            continue
+        assert i * 4 not in rel
+        assert struct.unpack_from('>I', raw, i * 4)[0] == expected
+        rows.append(dict(filename='game_16EE20', function=FUNCTION, offset='0x%X' % (i * 4),
+            expected='0x%08X' % expected, replacement='0x%08X' % replacement,
+            expected_relocations='-', replacement_relocations='-',
+            note='Normalize point-list closed saved-register cycle and independent prologue schedule',
+            insert_after='', insert_after_relocations='', omit='false'))
+    assert len(rows) == 19
+    return rows
+
+
+def compile_candidate(root, out, name, body=BASELINE, profile='o2g3', declarations=DECLARATIONS):
     source, obj, elf = (out / (name + suffix) for suffix in ('.c', '.o', '.elf'))
-    source.write_text('#include <ultra64.h>\n#include "functions.h"\n' + DECLARATIONS + body + '\n')
+    source.write_text('#include <ultra64.h>\n#include "functions.h"\n' + declarations + body + '\n')
     result = subprocess.run(['ido/ido5.3_recomp/cc', '-c', '-32', '-G', '0', '-Xfullwarn', '-Xcpluscomm',
         '-signed', '-nostdinc', '-non_shared', '-Wab,-r4300_mul', '-mips2', '-o32',
         '-I', 'conker/include', '-I', 'conker/include/2.0L', '-I', 'conker/include/2.0L/PR',
@@ -115,10 +265,24 @@ def compile_candidate(root, out, name, body=BASELINE, profile='o2g3'):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--readback', action='store_true', help='measure the 40 additional address/structure/phase/count controls')
+    args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
-    out = root / 'conker/build/game-point-list-transform'
+    out = root / ('conker/build/game-point-list-readback' if args.readback else 'conker/build/game-point-list-transform')
     out.mkdir(exist_ok=True)
     records = []
+    if args.readback:
+        forms = [(name, body, DECLARATIONS) for name, body in address_candidates()]
+        forms += list(structured_candidates())
+        forms += [(name, body, DECLARATIONS) for name, body in itertools.chain(phase_candidates(), count_candidates())]
+        assert len(forms) == 40
+        for name, body, declarations in forms:
+            record, _ = compile_candidate(root, out, name, body, declarations=declarations)
+            records.append(record)
+            print(record['name'], record['body_words'], hex(record['frame']), record['differences'], flush=True)
+        (out / 'measurements.json').write_text(json.dumps(records, indent=2) + '\n')
+        return
     for name, body in candidates():
         for profile in PROFILES:
             record, _ = compile_candidate(root, out, name + '-' + profile, body, profile)
