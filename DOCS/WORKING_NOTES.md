@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-07 ([Note 1089](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md)):
+`func_15145AD8` private-actor probes expose old inverse-first capture: aliased
+actor `0xDC` reads 0.5 instead of retail 2.0 and changes both output Y words.
+New `SCALE_FIRST` C corrects it, but remains uninstalled 111/frame `0x88`/
+72 differences. Model the two real caller-save stores in the private-actor
+reference; qualify 10,368 new cases, 37,808 bulk guest fixtures and 126,720
+native finite calls for the improved body. Thirty-nine new controls, none
+exact, 140 measurements total; scoped source removes the duplicate inverse
+load but retains a comparison NOP/111 words. Copied owner binds target and
+88 neighbors/pools/relocations/two warnings; actual padder still overflows.
+93 tests / 529.685 seconds and three final rechecks / 4.276 seconds pass;
+fresh slot/data/guard audit and tool/syntax/whitespace/documentation gates pass.
+Production/counts/main README unchanged. Next new-body fit and full-frame/
+read-timing/install gates. Old candidate remains an effective negative.
+
 2026-10-07 ([Note 1088](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md)):
 `func_15145AD8` remains uninstalled C111/frame `0x88`/72 differences. Add
 30 measured gate/storage/home/shared-failure controls, none exact, 101 total.

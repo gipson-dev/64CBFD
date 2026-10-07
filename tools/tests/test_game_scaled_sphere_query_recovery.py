@@ -246,11 +246,11 @@ static int independent(u8 *bytes,int p,int q){
         self.assertEqual(len(records), 30)
         (self.out / 'schedule-records.json').write_text(json.dumps(records, indent=2) + '\n')
 
-    def test_copied_owner_preserves_neighbors_but_padder_uses_overflow(self):
+    def check_copied_owner(self, candidate=screen.SELECTED):
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
         selected = source.replace('s32 func_15145AD8();', screen.DECLARATIONS + screen.PROTOTYPE).replace(
-            's32 func_15145AD8() {\n    return 0;\n}', screen.SELECTED)
-        self.assertEqual(selected.count(screen.SELECTED), 1)
+            's32 func_15145AD8() {\n    return 0;\n}', candidate)
+        self.assertEqual(selected.count(candidate), 1)
         objects, warnings = [], []
         for name, body in (('baseline', source), ('selected', selected)):
             obj, warning = compile_owner(self.root, self.out, body, 'owner-' + name)
@@ -294,6 +294,9 @@ static int independent(u8 *bytes,int p,int q){
         self.assertIn('.reloc ., R_MIPS_26, ' + overflow, body)
         self.assertIn(overflow + ':\n', assembly)
         (self.out / 'owner-overflow.s').write_text(assembly)
+
+    def test_copied_owner_preserves_neighbors_but_padder_uses_overflow(self):
+        self.check_copied_owner()
 
     def test_natural_first_point_write_changes_both_late_output_pointer_homes(self):
         for phase in (0, 8):

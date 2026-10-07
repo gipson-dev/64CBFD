@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-07 Game Scaled Sphere Query Capture Lifetime
+
+[Note 1089](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md):
+find an observable private-actor lifetime defect in the prior `func_15145AD8`
+candidate. An inverse spill overwrites aliased scale before its read; scale
+2.0 becomes 0.5 and both output Y words differ despite success status one.
+New capture-first C corrects this case and qualifies 37,808 bulk guest fixtures
+including 10,368 private-actor cases, plus 126,720 native complete-chain calls.
+It remains 111 words/frame `0x88`/72 differences, not installed. Thirty-nine
+new source/access/storage/scope controls, none exact; plain scoped `bc1f`
+still leaves a comparison NOP. Copied owner/pools/neighbors/two warnings and
+actual overflow padder bind. Production/counts/main README remain unchanged.
+93 regression tests / 529.685 seconds and three final rechecks / 4.276 seconds
+pass; fresh slot/data/guard audit and tool/documentation gates remain green.
+Resume from the improved candidate, not the old body, before fit/frame/install gates.
+No MMIO/full-float/hardware/gameplay/host or sibling/Release/save/runtime/push claim.
+
 ## 2026-10-07 Game Scaled Sphere Query Boundary Audit
 
 [Note 1088](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md):

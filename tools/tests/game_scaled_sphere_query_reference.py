@@ -29,10 +29,13 @@ def snapshot(memory, target, frame):
         peek(memory, frame + 0x88 + i * 4) for i in range(8))
 
 
-def reference(memory, args, phase=0, snapshots=None):
+def reference(memory, args, phase=0, snapshots=None, caller_saves=None):
     memory, writes, calls = memory.copy(), [], []
     entry, frame = STACK + phase, STACK + phase - 0x88
     origin, direction, actor, point0, point1, radius, height, center = args
+    if caller_saves is not None:
+        put(memory, frame + 0x34, caller_saves[1])
+        put(memory, frame + 0x30, caller_saves[0])
     for i, word in enumerate(args):
         put(memory, entry + i * 4, word)
 

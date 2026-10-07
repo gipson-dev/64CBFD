@@ -6,6 +6,33 @@ says otherwise.
 
 ## Scaled sphere caller recovery controls
 
+[Source-layout/capture driver](../tools/experiments/game_scaled_sphere_query_source_layout_candidates.py)
+adds 39 access/line/storage/scope/capture measurements, 140 measured controls
+total, none exact. `SCALE_FIRST` is the preferred uninstalled body: it corrects
+the prior inverse spill overwriting an aliased actor scale, while retaining
+111 words/frame `0x88`, original private offsets and 72 differences.
+[Seventeen expanded tests](../tools/tests/test_game_scaled_sphere_query_source_layout.py)
+qualify 37,808 bulk guest fixtures including 10,368 new private-actor cases,
+126,720 native finite calls, the actual copied owner and overflow padder.
+The combined 93-test regression passes, followed by three final source-binding,
+read-lifetime and lazy-gate rechecks; retained ELF/tool/documentation gates pass.
+The independent reference optionally models two caller-save stores for the
+private-actor domain; it still does not qualify complete helper frames or
+identical instruction timing. Old inverse-first C stays reproducible as a
+negative for that new domain, not a preferred installation candidate.
+Scoped source removes the inverse duplicate but leaves a comparison NOP and
+111 words. See [Note 1089](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md).
+
+```sh
+python3 -m tools.experiments.game_scaled_sphere_query_source_layout_candidates
+python3 -m unittest tools.tests.test_game_scaled_sphere_query_source_layout -v
+```
+
+Ignored receipts: `conker/build/game-scaled-sphere-query-source-layout/` and
+`conker/build/game-scaled-sphere-query-source-layout-test/`.
+
+Historical complete caller and boundary-audit controls:
+
 [Driver](../tools/experiments/game_scaled_sphere_query_candidates.py) retains
 71 branch/profile/commutative/storage/address-preparation controls for the full
 `func_15145AD8`. Selected O2/g3 emits 111 words/frame `0x88`, 72 differences,

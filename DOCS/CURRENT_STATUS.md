@@ -21,7 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest scaled-sphere caller boundary audit, not installed:
+Latest scaled-sphere capture-lifetime recovery, not installed:
+[Note 1089](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md).
+Broader actor-in-caller-frame evidence finds that the old `func_15145AD8`
+candidate spills inverse before reading aliased actor `0xDC`, changing scale
+2.0 to 0.5 and both output Y words. Prefer the new `SCALE_FIRST` experimental
+body; it retains frame/private offsets and corrects the observed lifetime,
+but remains 111 words/72 differences versus retail 110. 10,368 private-actor
+cases extend the requalified guest bank to 37,808; 126,720 native finite calls
+run the improved body. Thirty-nine new code-generation controls, 140 measured
+controls total, none exact. Scoped source changes the second branch to plain
+`bc1f` but leaves a comparison NOP and still 111 words. Copied owner retains
+88 neighbors/pools/relocations/two warnings; real padder still uses overflow.
+Final regression: 93 tests / 529.685 seconds, then three source-binding/read/
+lazy-gate checks / 4.276 seconds. Fresh audit retains all 6,059 slots, 720 data
+owners and 11,006 guards; tool/syntax/whitespace/documentation gates pass.
+Counts/main README unchanged. Next fitting source, full frame/read-timing and
+actual fitting-body installation gates; the older candidate stays a negative.
+No full-float/FCSR/NaN/MMIO/hardware/gameplay/host or sibling/push claim.
+
+Historical caller boundary audit, extended by Note 1089:
 [Note 1088](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md).
 `func_15145AD8` remains 111 words/frame `0x88`, original private slots and
 72 differences versus retail 110. Thirty new controls, 101 maintained

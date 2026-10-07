@@ -1,5 +1,26 @@
 # PC Port Roadmap located in another project folder
 
+## Game Scaled Sphere Query Capture Lifetime - 2026-10-07
+
+[Note 1089](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md):
+prefer capture-first `func_15145AD8` C after proving the old inverse spill
+overwrites an aliased actor scale. New body still 111/frame `0x88`/72 differences,
+not installed; production/counts/root README aggregates unchanged.
+
+- [x] Pin the natural private-actor counterexample and both differing output Y words.
+- [x] Model the two real caller-save stores, preserving live dimension-field effects.
+- [x] Qualify 10,368 private-actor cases and requalify the 37,808-fixture guest bank for capture-first C.
+- [x] Requalify 126,720 actual native finite calls with all five real C helpers.
+- [x] Retain 39 source/access/storage/scope measurements, 140 total, none exact.
+- [x] Verify improved copied owner/neighbors/pools/relocations/two warnings and actual overflow.
+- [x] Pass 93 regression tests and three final source-binding/read/lazy-gate checks; retain all slots/data/guards and pass tool/documentation gates.
+- [ ] Recover the fitting 110-word O2/g3 source without reverting the corrected capture lifetime.
+- [ ] Finish full caller/helper-frame/read-input timing and fitting-body owner/install/build gates.
+
+Scoped source changes the second branch decision but retains a comparison NOP.
+The older candidate stays a negative outside its prior qualified domain.
+No full-frame/MMIO/full-float/hardware/gameplay/host or sibling/Release/save/runtime/push claim.
+
 ## Game Scaled Sphere Query Boundary Audit - 2026-10-07
 
 [Note 1088](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md):

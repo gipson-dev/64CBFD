@@ -51,6 +51,16 @@ confirmed.
 
 ## Planning and history
 
+- [Latest scaled-sphere capture-lifetime recovery](WORKING_NOTES/1089-game-scaled-sphere-query-capture-lifetime-20261007.md):
+  New private-actor probes expose an old inverse spill overwriting aliased scale.
+  Capture-first C corrects the observed outputs; 37,808 guest fixtures and
+  126,720 native finite calls qualify, but 111 words still exceed retail 110.
+  Thirty-nine new controls, no match; scoped source leaves a comparison NOP.
+  Final regression passes 93 tests plus three binding/read/lazy-gate rechecks;
+  retained slot/data/guard and tool/documentation audits pass.
+  Resume from the improved body, keep the old one as a negative and finish
+  fit/full-frame/install gates before changing production or counts.
+
 - [Latest scaled-sphere caller boundary audit](WORKING_NOTES/1088-game-scaled-sphere-query-boundary-audit-20261007.md):
   27,440 guest fixtures now bind caller-local/home call snapshots; 126,720
   native finite calls include signed vertical offsets. Copied owner preserves
