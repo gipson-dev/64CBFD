@@ -1,5 +1,32 @@
 # PC Port Roadmap located in another project folder
 
+## Game Texture Resolver Match - 2026-10-06
+
+[Note1072](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md):
+`func_1514306C`:50 C-emitted words/no frame,72 controls/two exact O2/g3 forms.
+Two checked relocations bind its compact jump table to original asset800A562C.
+No opcode/scheduling/frame rewrite. Twelve pre-install checks pass:guest/native,
+complete original cache caller, negatives, actual padding and relocation-owned
+pool checks. US ELF/audit changes only resolver across6059 slots; protected
+sections/720 owners/two warnings unchanged;10811 guards, prior10809 preserved.
+Game2672/4791 exact (55.77%),2119 different, zero drift; conversion unchanged.
+
+All81 post-link tests pass in315.971s, no skips/errors/failures;
+54 documents/3611 relative links/zero broken, tools/syntax/diff checks pass.
+
+- [x] Recover all six kinds, default12-byte records and unsigned pointer threshold.
+- [x] Recover the original50-word/no-frame shape and typed caller contract.
+- [x] Qualify72 controls, guest/native, original caller and compiled negatives.
+- [x] Bind original table through two checked relocations and test stale rejection.
+- [x] Qualify relocated pools without weakening exact literal/relative-target gates.
+- [x] Rebuild/audit all slots/data/guards and refresh aggregate matching rows.
+- [x] Finish expanded81-test regression and final documentation/tool gates.
+- [ ] Recover98-word `func_15143134` point-transform/status routine from assembly.
+- [ ] Finish oriented `func_15142600`'s27 private offsets.
+
+Submit remains bounded; original rendering/gameplay and host adoption not
+claimed. No sibling/frozen Release/save/runtime or push.
+
 ## Game Texture Cache Submission Match - 2026-10-06
 
 [Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md):

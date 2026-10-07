@@ -9,6 +9,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from tools.tests.game_owner_pool import normalized_pools
 
 from tools.experiments import game_oriented_matrix_candidates as screen
 from tools.experiments.game_context_classifier_candidates import compile_owner
@@ -488,8 +489,7 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
             self.assertEqual(text[meta['value']:meta['value'] + meta['size']], old_text[old_meta['value']:old_meta['value'] + old_meta['size']], name)
             self.assertEqual({a - meta['value']: r for a, r in relocations.items() if meta['value'] <= a < meta['value'] + meta['size']},
                 {a - old_meta['value']: r for a, r in old_relocations.items() if old_meta['value'] <= a < old_meta['value'] + old_meta['size']}, name)
-        for section in ('.rodata', '.data'):
-            self.assertEqual(screen.sections(original_object).get(section), screen.sections(selected_object).get(section))
+        self.assertEqual(normalized_pools(original_object), normalized_pools(selected_object))
         caller = functions['func_150B9D14']
         self.assertEqual(caller['size'], 120)
         caller_words = list(struct.unpack_from('>30I', text, caller['value']))
@@ -527,8 +527,7 @@ class GameOrientedMatrixRecoveryTests(unittest.TestCase):
             self.assertEqual(target['size'], standalone_functions[screen.FUNCTION]['size'])
             self.assertEqual(text[target['value']:target['value'] + target['size']], standalone[:target['size']])
             self.assertEqual({a - target['value']: r for a, r in relocations.items() if target['value'] <= a < target['value'] + target['size']}, standalone_relocations)
-            for section in ('.rodata', '.data'):
-                self.assertEqual(screen.sections(original_object).get(section), screen.sections(obj).get(section))
+            self.assertEqual(normalized_pools(original_object), normalized_pools(obj))
             receipts.append(dict(variant=variant, functions=len(functions), warnings=len(warnings), raw_neighbors_unchanged=True, installed=False))
         self.receipt('builder-owner', receipts)
 

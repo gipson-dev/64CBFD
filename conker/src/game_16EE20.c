@@ -50,6 +50,10 @@ extern s32 D_800BE9F0;
 extern u8 D_800BE616;
 s32 func_15094FE8(s32, GameTextureSource *, s32, u8 *, s32, s32, s32, s32, s32, s32, s32);
 
+extern s32 D_800915B0, D_80091514;
+extern s32 D_80091564[];
+extern GameTextureSource D_80090B60[];
+
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
@@ -64,7 +68,7 @@ void func_15142838(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     f32 tx, f32 ty, f32 tz);
 Gfx *func_15142E24(Gfx *output, GameTextureSource *source, s32 packed, s32 width,
     s32 height, s32 value, s32 index, u8 kind, u8 *attachment, u8 *sync, s32 flags);
-s32 func_1514306C();
+s32 func_1514306C(GameTextureSource *source, s32 index, s32 subindex, u8 kind);
 s32 func_15143134();
 s32 func_151432BC();
 s32 func_151438D8();
@@ -616,9 +620,37 @@ Gfx *func_15142FBC(Gfx *arg0, u32 arg1, u32 arg2, u8 *arg3) {
 s16 func_15143044(u8 arg0, s32 arg1) {
     return (s16)(0x7FFF - arg0);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_1514306C.s. */
-s32 func_1514306C() {
-    return 0;
+s32 func_1514306C(GameTextureSource *source, s32 index, s32 subindex, u8 kind) {
+    s32 result;
+    switch (kind) {
+        case 4:
+            result = D_800915B0;
+            break;
+        case 3:
+            result = D_80091514;
+            break;
+        case 1:
+            result = 0;
+            break;
+        case 2:
+            result = D_80091564[index];
+            break;
+        case 5:
+            result = index;
+            break;
+        case 6:
+            index = source->unk0;
+            if ((u32)index >= 0x10000000U) {
+                result = ((s32 *)source->unk0)[subindex];
+            } else {
+                result = index;
+            }
+            break;
+        default:
+            result = ((s32 *)D_80090B60[index].unk0)[subindex];
+            break;
+    }
+    return result;
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15143134.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151432BC.s. */

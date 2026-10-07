@@ -4,6 +4,41 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Texture resolver compiler and owner-pool controls
+
+[Driver](../tools/experiments/game_texture_resolver_candidates.py):18 forms
+across four SDK profiles,72 controls. Two repeated-source-field O2/g3 forms
+emit all50 words/no frame; separate-word/index-only forms emit49 instead.
+[Ten resolver tests](../tools/tests/test_game_texture_resolver_match.py) bind
+13824 paired full-storage/trace guest cases,19200 actual32-bit native cases,
+486 complete original102-word cache-caller/50-word resolver cases and ten
+compiled negatives. Preserve low-byte kind, signed indices, unsigned10000000
+threshold and original six-case jump-table order. Native uses valid arrays/
+real pointers; exact threshold/negative-index probes are guest-only.
+Actual padder retains200 bytes, excludes eight text-alignment bytes and tests
+all five relocation pairs at normal/alternate carry addresses. Copied owner
+retains92 neighbors/two warnings/prior600 payload bytes and appends six table
+targets at offset600. Two expected-word/relocation guards bind this pair to
+original jtbl_800A562C_game, without a scheduling/register/frame rewrite.
+Full owner assembly post-processing is required before actual padding.
+
+[Pool comparator](../tools/tests/game_owner_pool.py) uses actual R_MIPS_32
+text relocations to compare function-relative targets while keeping every other
+byte exact. [Three independent fixtures](../tools/tests/test_game_owner_pool.py)
+reject changed targets/literals, missing/unsupported relocations and unowned
+targets. Neighbor guard checks pin the original10809-row digest and only the
+two exact new table-binding rows. Commands:
+
+```sh
+python3 -m tools.experiments.game_texture_resolver_candidates
+python3 -m unittest tools.tests.test_game_texture_resolver_match tools.tests.test_game_owner_pool -v
+```
+
+Ignored receipts:`conker/build/game-texture-resolver/` and
+`conker/build/game-texture-resolver-test/`; see
+[Note1072](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md). Submit remains a bounded model;
+no original rendering/gameplay, native private-home or64-bit host acceptance.
+
 ## Texture-cache submission controls
 
 [Driver](../tools/experiments/game_texture_cache_candidates.py):eight
@@ -18,7 +53,8 @@ attachment reload/same-value-store. Original resolver uses the actual exact
 Game-data jump table; submit is bounded, call pairs are not full callers.
 Actual padder preserves408 bytes, excludes eight alignment bytes and retargets
 both calls. Copied owner retains92 neighbors/pools/two warnings; production
-binds102 words/nine exact neighbors/unchanged10809 guards. Commands:
+binds102 words/nine exact neighbors/the unchanged10809-row prefix plus two
+resolver-table bindings (10811 total). Commands:
 
 ```sh
 python3 -m tools.experiments.game_texture_cache_candidates
@@ -29,7 +65,7 @@ Ignored receipts:`conker/build/game-texture-cache/` and
 `conker/build/game-texture-cache-test/`; see
 [Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md).
 No original submit-helper, whole-caller, native private-home, hardware/RDP/
-gameplay or64-bit host acceptance. Resolver remains a production placeholder.
+gameplay or64-bit host acceptance. Resolver is now recovered as described above.
 
 ## Row matrix compiler controls
 
@@ -45,7 +81,8 @@ native converter captures float payloads, with classification-only arithmetic
 NaN comparison. Actual padder retains220 symbol bytes, excludes four alignment
 bytes and retargets both calls. Copied owners preserve92 builder neighbors,
 all31 caller functions/pools/relocations and warnings2->2 in each. Production
-binds target, caller, eight neighbors and unchanged10809 guards. Commands:
+binds target, caller, eight neighbors/the unchanged10809-row prefix plus two
+resolver-table bindings (10811 total). Commands:
 
 ```sh
 python3 -m tools.experiments.game_row_matrix_candidates
@@ -117,7 +154,8 @@ rotation provider remain outside that gate. Actual padder retains268 symbol
 bytes, excludes the four-byte section alignment tail, and retargets both calls.
 Copied owners preserve92 other builder functions and all31 caller functions/
 relocations/pools, warnings2->2 in each. Production binds target, exact caller,
-seven neighbors and10809 unchanged guards. Ignored receipts:
+seven neighbors/the unchanged10809-row prefix plus two resolver-table bindings
+(10811 total). Ignored receipts:
 `conker/build/game-scaled-matrix-test/`; see
 [Note1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md).
 

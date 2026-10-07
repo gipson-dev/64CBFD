@@ -9,6 +9,8 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from tools.tests.game_owner_pool import assert_guard_history
+from tools.experiments import game_texture_resolver_candidates as resolver
 
 from tools.experiments import game_context_classifier_candidates as screen
 from tools.experiments import game_actor_classifier_candidates as actor_screen
@@ -247,9 +249,10 @@ if(cases!='''+str(len(WORLDS)*(65536*3+5))+r'''U) return 85;
         pool_references = {offset: items for offset, items in relocations.items()
                            if any(symbol == '.rodata' for _, symbol in items)}
         expected_pool_offsets = {functions[actor_screen.FUNCTION]['value']+offset for offset in (0x1C, 0x24, 0x3C, 0x44)}
-        self.assertEqual(set(pool_references), expected_pool_offsets | {start+0x64, start+0x6C})
+        resolver_start = functions[resolver.FUNCTION]['value']
+        self.assertEqual(set(pool_references), expected_pool_offsets | {start+0x64, start+0x6C, resolver_start+0x20, resolver_start+0x28})
         pool = screen.sections(new)['.rodata'][1]
-        self.assertEqual(len(pool), 608); self.assertEqual(pool[600:], bytes(8))
+        self.assertEqual(len(pool), 624)
         for offset, count, name, entry in ((0, 134, actor_screen.FUNCTION, actor_screen.ENTRY),
                                          (536, 16, screen.FUNCTION, screen.ENTRY)):
             # Unlinked pool targets are offsets in the owner's text, not absolute standalone addresses.
@@ -257,8 +260,10 @@ if(cases!='''+str(len(WORLDS)*(65536*3+5))+r'''U) return 85;
             expected = struct.unpack('>%dI' % count, linked)
             self.assertEqual([target-functions[name]['value']+entry for target in struct.unpack_from('>%dI' % count, pool, offset)],
                              list(expected))
+        self.assertEqual([target-resolver_start+resolver.ENTRY for target in struct.unpack_from('>6I',pool,600)],
+            [0x151430B8,0x151430C0,0x151430AC,0x151430A0,0x151430D4,0x151430DC])
         (self.output/'owner.json').write_text(json.dumps(dict(warnings=len(new_warnings), pool_bytes=len(pool),
-            context_addend=screen.POOL_OFFSET, table_targets=150), indent=2)+'\n')
+            context_addend=screen.POOL_OFFSET, resolver_addend=600, table_targets=156), indent=2)+'\n')
         self.assertIn(screen.SELECTED, owner); self.assertEqual(owner.count(screen.PROTOTYPE), 2)
         elf = self.root/'conker/build/conker.us.elf'
         linked, _, addresses = load_elf_functions(str(elf), 'mips-linux-gnu-objdump')
@@ -270,7 +275,7 @@ if(cases!='''+str(len(WORLDS)*(65536*3+5))+r'''U) return 85;
         data, base = game_data(elf)
         self.assertEqual(data[0x800A5200-base:0x800A5480-base], self.rom[0x249CC0:0x249F40])
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream: rows = list(csv.DictReader(stream))
-        self.assertEqual(len(rows), 10809); self.assertFalse([row for row in rows if row['function'] == screen.FUNCTION])
+        assert_guard_history(self,rows); self.assertFalse([row for row in rows if row['function'] == screen.FUNCTION])
 
 
 if __name__ == '__main__': unittest.main()

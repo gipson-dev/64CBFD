@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Texture Resolver Match
+
+[Note1072](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md):
+`func_1514306C`:50 C-emitted words/no frame, correct kind/index/pointer contract.
+72 controls/two exact O2/g3 forms; two checked relocations retain the original
+jump-table asset, no scheduling/register/frame rewrite. Twelve pre-install
+checks pass:13824 paired guest/19200 native/486 complete original cache caller,
+negatives, actual padder/stale guards and relocation-owned pool qualification.
+US ELF/6059-slot audit passes, only target changes; protected sections/720
+owners/warnings2->2 unchanged.10809 historical guards retained,10811 total.
+Exact3345/5464 (61.22%), Game2672/4791 (55.77%),2119 different, zero drift;
+conversion unchanged. README aggregate rows only. All81 post-link tests pass
+in315.971s, no skips/errors/failures;54 documents/3611 relative links/zero
+broken, tools/syntax/diff checks pass.
+Next98-word original-assembly `func_15143134`; oriented private
+placement stays open. No sibling/frozen Release/save/runtime, host adoption,
+original submit/render/gameplay acceptance or push.
+
 ## 2026-10-06 Game Texture Cache Submission Match
 
 [Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md):

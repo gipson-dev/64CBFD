@@ -1,13 +1,14 @@
 """Cached submission, original resolver execution and live callback boundaries."""
 
 import csv
-import hashlib
 import itertools
 import json
 import struct
 import tempfile
 import unittest
 from pathlib import Path
+from tools.tests.game_owner_pool import normalized_pools, assert_guard_history
+from tools.experiments import game_texture_resolver_candidates as resolver
 
 from tools.experiments import game_texture_cache_candidates as screen
 from tools.experiments.game_context_classifier_candidates import compile_owner
@@ -398,17 +399,20 @@ if(count!=6912 || sizeof(void *)!=4 || sizeof(GameTextureSource)!=12 || sizeof(G
     def test_copied_owner_retains_all_other_functions_pool_warnings_and_standalone(self):
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
         stub = 's32 func_15142E24() {\n    return 0;\n}'
-        # The resolver is still an unprototyped placeholder in the owner.
+        # The recovered resolver also needs this shared source-record type.
         declarations = screen.DECLARATIONS.replace(
             's32 func_1514306C(GameTextureSource *source, s32 index, s32 subindex, u8 kind);\n', '')
         if screen.SELECTED in source:
             baseline = source.replace(screen.SELECTED, stub).replace(screen.PROTOTYPE, 's32 func_15142E24();')
-            baseline = baseline.replace(declarations + '\n', '')
+            if 's32 func_1514306C() {' in baseline:
+                baseline = baseline.replace(declarations + '\n', '')
         else:
             baseline = source
         self.assertIn(stub, baseline)
-        selected = baseline.replace('/* Generated placeholder declarations. */',
-            declarations + '\n/* Generated placeholder declarations. */')
+        selected = baseline
+        if declarations not in selected:
+            selected = selected.replace('/* Generated placeholder declarations. */',
+                declarations + '\n/* Generated placeholder declarations. */')
         selected = selected.replace(stub, screen.SELECTED).replace('s32 func_15142E24();', screen.PROTOTYPE)
         old, old_warnings = compile_owner(self.root, self.output, baseline, 'owner-baseline')
         new, warnings = compile_owner(self.root, self.output, selected, 'owner-selected')
@@ -430,10 +434,10 @@ if(count!=6912 || sizeof(void *)!=4 || sizeof(GameTextureSource)!=12 || sizeof(G
         self.assertEqual(text[target['value']:target['value'] + 408], standalone[:408])
         self.assertEqual({a - target['value']: r for a, r in relocations.items() if target['value'] <= a < target['value'] + 408},
             standalone_relocations)
-        for section in ('.rodata', '.data'):
-            self.assertEqual(screen.sections(old).get(section), screen.sections(new).get(section))
+        self.assertEqual(normalized_pools(old), normalized_pools(new))
         self.receipt('owner', dict(functions=len(functions), unchanged=len(functions) - 1,
-            warnings=len(warnings), raw_target_standalone=True, resolver_stub_unchanged=True))
+            warnings=len(warnings), raw_target_standalone=True, resolver_raw_unchanged=True,
+            pools='relocation-owned function-relative targets and exact other bytes'))
 
     def test_nine_original_caller_call_delay_pairs_preserve_argument_vector(self):
         sources = list((self.root / 'conker/asm/nonmatchings').rglob('*.s'))
@@ -500,7 +504,7 @@ if(count!=6912 || sizeof(void *)!=4 || sizeof(GameTextureSource)!=12 || sizeof(G
         source = (self.root / 'conker/src/game_16EE20.c').read_text()
         self.assertIn(screen.SELECTED, source)
         self.assertEqual(source.count(screen.PROTOTYPE), 1)
-        self.assertIn('s32 func_1514306C() {\n    return 0;\n}', source)
+        self.assertIn(resolver.SELECTED, source)
         self.assertIn('s32 func_15142600() {\n    return 0;\n}', source)
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'), 'mips-linux-gnu-objdump')
         self.assertEqual(addresses[screen.FUNCTION], screen.ENTRY)
@@ -514,12 +518,10 @@ if(count!=6912 || sizeof(void *)!=4 || sizeof(GameTextureSource)!=12 || sizeof(G
             self.assertEqual(functions[name], list(struct.unpack_from('>%dI' % count, self.rom, rom)))
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
-        self.assertEqual(len(guards), 10809)
         self.assertFalse(any(row['function'] == screen.FUNCTION for row in guards))
-        digest = hashlib.sha256(json.dumps(guards, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
-        self.assertEqual(digest, 'e021c108eef6c84112743955be809d3bdf4ce4e1de0cba474897ed3b0bcabb8a')
-        self.receipt('production', dict(words=102, direct=True, guards=10809,
-            guard_sha256=digest, exact_neighbors=len(neighbors), resolver_stub_unchanged=True))
+        digest = assert_guard_history(self, guards)
+        self.receipt('production', dict(words=102, direct=True, guards=len(guards),
+            guard_sha256=digest, exact_neighbors=len(neighbors), resolver_restored=True))
 
 
 if __name__ == '__main__':

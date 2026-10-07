@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest texture resolver match and table binding](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md):
+  `func_1514306C`,50 C-emitted words/no frame; two checked relocations bind
+  original jump-table data. Guest/native/full original cache caller and
+  fail-closed pool/guard qualification. Only target across6059 audited slots.
+  Next98-word original-assembly point-transform/status routine.
+
 - [Latest texture-cache submission match](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md):
   `func_15142E24`,102 direct words/frame0x40, no guards; typed attachment/source
   ABI and observable retail self-write. Guest/native/original resolver and

@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-06 ([Note1072](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md)):
+`func_1514306C`:50 C-emitted words/no frame,72 controls/two exact O2/g3 forms.
+Typed four-input ABI, six kinds/default12-byte records, signed indices and
+unsigned threshold. Two checked table bindings, no scheduling/frame rewrite.
+Twelve pre-install checks pass in53.365s:13824 paired guest/19200 native/
+486 complete original cache-caller/resolver cases, ten negatives, actual padding/
+stale guards and three relocation-owned pool tests. US ELF/6059-slot audit:
+only target changes; protected sections/720 owners/warnings2->2 unchanged.
+10809 guard prefix preserved,10811 total. Exact3345/5464, Game2672/4791,
+2119 different, zero drift; conversion unchanged. All81 post-link tests pass
+in315.971s, no skips/errors/failures;54 documents/3611 relative links/zero
+broken, tools/syntax/diff checks pass.
+Next98-word original-assembly `func_15143134`; oriented27 private
+offsets remain open. No sibling/Release/save/runtime, host adoption, original
+submit/render/gameplay acceptance or push. Goal stays active.
+
 2026-10-06 ([Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md)):
 `func_15142E24`:102 direct words/frame0x40, no guards/profile changes.
 Typed source/attachment ABI, cache gates, signed fields, flags and observable

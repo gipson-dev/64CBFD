@@ -1,7 +1,6 @@
 """Row-scaled rotation matrix, live parameter homes and complete caller ABI."""
 
 import csv
-import hashlib
 import itertools
 import json
 import struct
@@ -9,6 +8,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from tools.tests.game_owner_pool import normalized_pools, assert_guard_history
 
 from tools.experiments import game_row_matrix_candidates as screen
 from tools.experiments.game_context_classifier_candidates import compile_owner
@@ -351,8 +351,7 @@ if(count!=1176)return 40;
                 self.assertEqual(words[offset // 4], 0x0C000000)
                 words[offset // 4] = 0x0C000000 | (screen.ENTRY >> 2 & 0x3FFFFFF)
                 self.assertEqual(words, self.caller)
-            for section in ('.rodata', '.data'):
-                self.assertEqual(screen.sections(old).get(section), screen.sections(new).get(section))
+            self.assertEqual(normalized_pools(old), normalized_pools(new))
             receipts.append(dict(owner=prefix, functions=len(functions), warnings=len(warnings), unchanged=len(functions) - (1 if target else 0)))
         self.receipt('owners', receipts)
 
@@ -373,11 +372,9 @@ if(count!=1176)return 40;
             self.assertEqual(functions[name], list(struct.unpack_from('>%dI' % count, self.rom, rom)))
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
-        self.assertEqual(len(guards), 10809)
         self.assertFalse(any(row['function'] == screen.FUNCTION for row in guards))
-        digest = hashlib.sha256(json.dumps(guards, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
-        self.assertEqual(digest, 'e021c108eef6c84112743955be809d3bdf4ce4e1de0cba474897ed3b0bcabb8a')
-        self.receipt('production', dict(words=55, direct=True, caller_words=24, guards=10809, guard_sha256=digest, exact_neighbors=8))
+        digest = assert_guard_history(self, guards)
+        self.receipt('production', dict(words=55, direct=True, caller_words=24, guards=len(guards), guard_sha256=digest, exact_neighbors=8))
 
 
 if __name__ == '__main__':

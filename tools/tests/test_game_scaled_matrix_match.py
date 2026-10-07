@@ -1,7 +1,6 @@
 """Scaled float-matrix fields, twelve-input ABI and bounded fixed conversion."""
 
 import csv
-import hashlib
 import itertools
 import json
 import math
@@ -12,6 +11,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from tools.tests.game_owner_pool import normalized_pools, assert_guard_history
 
 from tools.experiments import game_scaled_matrix_candidates as screen
 from tools.experiments.game_context_classifier_candidates import compile_owner
@@ -469,9 +469,7 @@ if(!changed)return 42;
                 selected_text,_,selected_relocs=parse_object(self.output/'selected.o')
                 self.assertEqual(text[start:start+268],selected_text[:268])
                 self.assertEqual({a-start:r for a,r in relocs.items() if start<=a<start+268},selected_relocs)
-            old_sections,new_sections=screen.sections(old),screen.sections(new)
-            for section in ('.rodata','.data'):
-                self.assertEqual(old_sections.get(section),new_sections.get(section))
+            self.assertEqual(normalized_pools(old),normalized_pools(new))
             receipts.append(dict(owner=prefix,functions=len(functions),warnings=len(warnings),
                 unchanged=len(functions)-(1 if target else 0),raw_caller_unchanged=target is None))
         self.receipt('owners',receipts)
@@ -497,10 +495,8 @@ if(!changed)return 42;
             self.assertEqual(functions[name],list(struct.unpack_from('>%dI'%count,self.rom,rom)))
         with (self.root/'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards=list(csv.DictReader(stream))
-        self.assertEqual(len(guards),10809)
         self.assertFalse([row for row in guards if row['function']==screen.FUNCTION])
-        digest=hashlib.sha256(json.dumps(guards,sort_keys=True,separators=(',',':')).encode()).hexdigest()
-        self.assertEqual(digest,'e021c108eef6c84112743955be809d3bdf4ce4e1de0cba474897ed3b0bcabb8a')
+        digest=assert_guard_history(self,guards)
         self.receipt('production',dict(words=67,direct=True,caller_words=30,guards=len(guards),
             guard_sha256=digest,exact_neighbors=7))
 

@@ -10808,3 +10808,5 @@ game_16EE20,func_15141E38,0xAC,0x001170C0,0xAFA20044,-,-,Normalize effect update
 game_16EE20,func_15141E38,0xB0,0xAFA20048,0x001070C0,-,-,Normalize effect updater closed register schedule and private payload/cursor homes,,,false
 game_16EE20,func_15141E38,0xF8,0xA3AD004C,0xA3AD0048,-,-,Normalize effect updater closed register schedule and private payload/cursor homes,,,false
 game_16EE20,func_15141E38,0x108,0x27A50044,0x27A50040,-,-,Normalize effect updater closed register schedule and private payload/cursor homes,,,false
+game_16EE20,func_1514306C,0x20,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A562C_game,Bind texture resolver switch to its preserved retail jump table,,,false
+game_16EE20,func_1514306C,0x28,0x8C2F0258,0x8C2F0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A562C_game,Bind texture resolver switch to its preserved retail jump table,,,false

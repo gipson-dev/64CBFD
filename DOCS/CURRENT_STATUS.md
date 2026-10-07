@@ -21,6 +21,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Texture resolver match and original table binding:
+[Note1072](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md)
+recovers `func_1514306C`:50 C-emitted words, no frame, exact signed-index/
+low-kind-byte/unsigned-threshold behavior.72 compiler controls, two exact O2/g3
+forms. Two checked HI16/LO16 guards bind only the compact table reference to
+the original800A562C asset table; no instruction scheduling/register/frame edits.
+All12 pre-install checks pass in53.365s:13824 paired guest,19200 native,
+486 complete102-word cache-caller/50-word resolver cases, ten negatives,
+actual post-processing/padding/stale guards and three independent pool checks.
+US ELF/6059-slot audit passes, only target changes. Protected sections/720
+data owners/189088 bytes and warnings2->2 unchanged;10809 historical guards
+retained,10811 total. Exact3345/5464 (61.22%), Game2672/4791 (55.77%),
+2119 different, zero drift; conversion unchanged. README aggregate rows only.
+All81 focused post-link tests pass in315.971s, no skips/errors/failures;
+54 documents/3611 relative links/zero broken, tools/syntax/diff checks pass.
+Next98-word `func_15143134`,
+currently original assembly; recover point/output/Mtx ABI and status/helper
+boundaries. Oriented27 private offsets remain open. No sibling/Release/save/
+runtime, host adoption, original submit/render/gameplay acceptance or push.
+
 Texture-cache submission match:
 [Note1071](WORKING_NOTES/1071-game-texture-cache-submission-match-20261006.md)
 recovers `func_15142E24`:102 direct retail words/frame0x40 under unchanged
