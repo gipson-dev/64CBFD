@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix-Route Recovery And Private-Frame Audit - 2026-10-07
+
+[Note 1103](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md):
+
+- [x] Recover the complete experimental six-word ABI, four matrix routes, lookup/resolver gates, signed count loop and incoming-home timing for `func_1514654C`.
+- [x] Qualify actual original lookup/resolver/converter/point/list/translation paths, native 32-bit SDK conversion and copied-owner isolation on ordinary inputs.
+- [x] Pin real public-output private-matrix overlap counterexamples; do not install C119/frame `0xA8`/58-difference source or private-offset guards.
+- [x] Confirm the installed slot is still a padded three-word C placeholder; original assembly is reference only, not the production implementation.
+- [x] Audit all 6,058 linked symbols, protected sections, 720 data owners, 11,063 guards and conversion hash as unchanged; leave root README totals unchanged.
+- [x] Pass all eight source/profile, negative, lazy/home/private/native/owner tests in 497.879 seconds, zero skips/errors/failures; 4,992 ordinary executions and six effective negatives.
+- [x] Pass tools/syntax/whitespace and 85-document / 3,985-relative-link checks, zero broken links; bank this audit separately from production matching.
+- [ ] Recover retail frame `0xA0`, matrix `sp+4C`, resolver outputs `sp+90/+8C`, primary read order and complete 120-word branch/return topology.
+- [ ] Requalify private overlaps and ABI homes before installing a match; preserve the three matched neighboring routines.
+
+This is experimental guest recovery, not an installed C conversion or PC-port acceptance.
+
 ## Game Lighting Dispatcher Match - 2026-10-07
 
 [Note 1102](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md):

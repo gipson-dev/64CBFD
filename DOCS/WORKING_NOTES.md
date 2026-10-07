@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-07 ([Note 1103](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md)):
+Matrix-route `func_1514654C`: complete experimental C119/frame `0xA8`/58
+differences, six incoming words, four routes, signed counts and lazy home
+reloads. Original-helper/native/owner qualification preserves ordinary public
+behavior, but private matrix overlaps still change outputs. Retain 208
+source/profile controls, none exact; no candidate/guard installation.
+The production slot remains a padded zero-return C placeholder, not restored
+assembly. Full linked snapshot/11,063 guards/data/conversion hash and README
+aggregates unchanged. All eight tests pass in 497.879 seconds, zero skips/
+errors/failures; 4,992 ordinary candidate executions and six effective negatives.
+Tools/syntax/whitespace and 85-document / 3,985-relative-link checks pass,
+zero broken links. Recover retail's 120-word/frame `0xA0`/private-layout shape
+before installation.
+
 2026-10-07 ([Note 1102](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md)):
 Lighting dispatcher `func_151462C8`: complete C124/frame `0x48`, lazy resource
 gates, actor/global/position routes and nine incoming words. Two independent

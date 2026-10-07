@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-07 Game Matrix-Route Recovery And Private-Frame Audit
+
+[Note 1103](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md):
+Recover the complete experimental six-word-ABI wrapper `func_1514654C`:
+four matrix routes, lookup/resolver failures, signed count gate and incoming
+home reloads. Selected C119/frame `0xA8`/58 differences remains nonmatching;
+actual connected-helper private overlaps produce public-output differences.
+Retain 208 source/profile controls, native SDK and copied-owner gates, and
+explicit negative/failure probes. No installation or new guards. Live ELF
+still contains the padded three-word zero-return placeholder; original
+assembly is reference only. All 6,058 symbols/11,063 guards/data/conversion
+hash and README totals unchanged. All eight tests pass in 497.879 seconds,
+zero skips/errors/failures; 4,992 ordinary candidate executions and six
+effective negatives. Tools/syntax/whitespace and 85-document /
+3,985-relative-link checks pass, zero broken links. Continue retail's
+120-word/frame `0xA0`/private-layout source fit.
+
 ## 2026-10-07 Game Lighting Dispatcher Match
 
 [Note 1102](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md):

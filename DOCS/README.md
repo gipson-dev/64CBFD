@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Matrix-route recovery/private-frame audit](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md):
+  complete experimental C119/frame `0xA8`/58 differences, 208 controls,
+  original-helper/native/owner qualification and real private-overlap
+  counterexamples. Production placeholder unchanged; source fitting remains open.
 - [Latest lighting-dispatcher match](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md):
   complete 124-word actor/global/position dispatcher, two scheduling guards;
   bounded renderer hooks, not connected renderer or PC-port acceptance.
