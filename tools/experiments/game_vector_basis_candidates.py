@@ -218,6 +218,80 @@ def register_candidates():
         yield 'register-%s-init%d' % (declaration.replace(' ', '-'), initialized), body
 
 
+def coordinate_candidates():
+    for cached_y, cached_z, quotient, nested, initialize in itertools.product((False, True), repeat=5):
+        body = SELECTED
+        if nested:
+            body = body.replace('    if ((x = point[0]) == 0.0f && point[1] == 0.0f && point[2] == 0.0f) {\n        return 0;\n    }',
+                '    if ((x = point[0]) == 0.0f) {\n        if (point[1] == 0.0f) {\n            if (point[2] == 0.0f) {\n                return 0;\n            }\n        }\n    }')
+        if initialize:
+            body = body.replace('    f32 x;', '    f32 x = point[0];').replace('(x = point[0])', 'x')
+        for cached, axis, name in ((cached_y, 1, 'y'), (cached_z, 2, 'z')):
+            if cached:
+                body = body.replace('    f32 length;', '    f32 %s;\n    f32 length;' % name, 1)
+                position = body.index('    zeroCount = 0;')
+                body = body[:position] + body[position:].replace('if (point[%d] == 0.0f)' % axis,
+                    'if ((%s = point[%d]) == 0.0f)' % (name, axis), 1)
+        if quotient:
+            body = body.replace('    f32 length;', '    f32 quotient;\n    f32 length;', 1)
+            body = body.replace('        first[secondAxis] = -point[0] - point[firstAxis] / point[secondAxis];',
+                '        quotient = point[firstAxis] / point[secondAxis];\n        first[secondAxis] = -point[0] - quotient;')
+        yield 'coordinate-y%d-z%d-quotient%d-nested%d-init%d' % (cached_y, cached_z, quotient, nested, initialize), body
+
+
+def workspace_candidates():
+    for reverse_axes, reverse_indices, placement in itertools.product((False, True), (False, True), range(3)):
+        axes = ['zeroCount', 'zeroAxis', 'nonzeroAxis']
+        indices = ['firstAxis', 'secondAxis']
+        if reverse_axes:
+            axes.reverse()
+        if reverse_indices:
+            indices.reverse()
+        groups = [ [('f32', 'reciprocal'), ('f32', 'length')],
+                   [('s32', name) for name in indices], [('f32', 'x')], [('u8', name) for name in axes] ]
+        if placement == 1:
+            groups = [groups[3], groups[2], groups[1], groups[0]]
+        if placement == 2:
+            groups = [groups[2], groups[3], groups[0], groups[1]]
+        fields = list(itertools.chain.from_iterable(groups))
+        body = SELECTED
+        for kind, name in fields:
+            body = body.replace('    %s %s;\n' % (kind, name), '')
+        mapping = {name: 'work.' + name for kind, name in fields}
+        body = re.sub(r'\b(' + '|'.join(mapping) + r')\b', lambda m: mapping[m[0]], body)
+        declaration = '    struct {\n' + ''.join('        %s %s;\n' % field for field in fields) + '    } work;\n'
+        body = body.replace('second) {\n', 'second) {\n' + declaration, 1)
+        yield 'workspace-axes%d-indices%d-placement%d' % (reverse_axes, reverse_indices, placement), body
+
+
+def seed_candidates():
+    for refresh_x, operand_y, operand_z, quotient in itertools.product(range(3), (False, True), (False, True), (False, True)):
+        body = SELECTED
+        statements = []
+        numerator, denominator, x = 'point[firstAxis]', 'point[secondAxis]', 'point[0]'
+        for cached, axis, name in ((operand_y, 'firstAxis', 'y'), (operand_z, 'secondAxis', 'z')):
+            if cached:
+                body = body.replace('    f32 length;', '    f32 %s;\n    f32 length;' % name, 1)
+                statements.append('        %s = point[%s];' % (name, axis))
+                if name == 'y':
+                    numerator = name
+                else:
+                    denominator = name
+        if refresh_x == 1:
+            statements.append('        x = point[0];')
+            x = 'x'
+        elif refresh_x == 2:
+            x = '(x = point[0])'
+        division = numerator + ' / ' + denominator
+        if quotient:
+            body = body.replace('    f32 length;', '    f32 quotient;\n    f32 length;', 1)
+            statements.append('        quotient = %s;' % division)
+            division = 'quotient'
+        statements.append('        first[secondAxis] = -%s - %s;' % (x, division))
+        body = body.replace('        first[secondAxis] = -point[0] - point[firstAxis] / point[secondAxis];', '\n'.join(statements))
+        yield 'seed-refresh%d-y%d-z%d-quotient%d' % (refresh_x, operand_y, operand_z, quotient), body
+
+
 def compile_candidate(root, out, name, body=BASELINE, profile='o2g3', extra_flags=()):
     out.mkdir(exist_ok=True)
     source, obj, elf = (out / (name + suffix) for suffix in ('.c', '.o', '.elf'))
@@ -253,7 +327,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     groups = dict(primary=candidates, lifetime=lifetime_candidates, scalars=scalar_candidates,
         expressions=expression_candidates, outputs=output_candidates, vectors=vector_candidates,
-        registers=register_candidates)
+        registers=register_candidates, coordinates=coordinate_candidates, workspace=workspace_candidates,
+        seed=seed_candidates)
     parser.add_argument('--group', choices=(*groups, 'profiles'), default='primary')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]

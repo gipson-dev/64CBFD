@@ -21,6 +21,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest basis source-control follow-up:
+[Note 1101](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md).
+68 additional coordinate/workspace/seed forms bring the audit to 186 controls,
+none raw exact, and 2,136 ordinary candidate executions. All 19 combined
+basis/normalizer tests pass in 151.122 seconds, zero skips/errors/failures.
+The selected C144/frame `0x48`/93-difference boundary and installed original
+assembly remain unchanged. Continue the layout/lifetime recovery below;
+adjacent lighting-dispatch matching is a separate batch.
+
 Latest vector-basis recovery/liveness audit, **no new conversion or byte match**:
 [Note 1100](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md).
 `func_15146078` remains original 148-word assembly. Its complete experimental

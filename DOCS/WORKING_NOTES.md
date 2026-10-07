@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-07 ([Note 1101](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md)):
+Add 68 coordinate/workspace/seed forms for `func_15146078`: 186 total
+controls, none raw exact; 2,136 ordinary candidate executions qualify.
+Selected C144/frame `0x48`/93 differences and its private-layout boundary
+remain unchanged. All 19 basis/normalizer tests pass in 151.122 seconds,
+zero skips/errors/failures. Original assembly remains installed; no basis
+production/profile/guard/README changes. Adjacent lighting recovery is separate.
+
 2026-10-07 ([Note 1100](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md)):
 Vector-basis `func_15146078` semantic recovery and early-byte liveness audit;
 no installed C conversion or new byte match. Selected C144/frame `0x48`/93

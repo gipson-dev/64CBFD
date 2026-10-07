@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-07 Game Vector-Basis Coordinate And Workspace Controls
+
+[Note 1101](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md):
+Retain 68 additional coordinate/workspace/seed controls and qualify 2,136
+ordinary candidate executions across 178 single-precision forms. All 186
+source/profile controls remain nonmatching; selected C144/frame `0x48`/93
+differences unchanged. All 19 basis/normalizer tests pass in 151.122 seconds,
+zero skips/errors/failures. Preserve original 148-word assembly and the
+private-output overlap counterexample; no basis production or README changes.
+
 ## 2026-10-07 Game Vector-Basis Recovery And Liveness Audit
 
 [Note 1100](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md):

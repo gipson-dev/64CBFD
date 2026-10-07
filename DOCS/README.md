@@ -51,7 +51,9 @@ confirmed.
 
 ## Planning and history
 
-- [Latest vector-basis recovery/liveness audit](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md):
+- [Vector-basis additional source controls](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md):
+  186 controls, none exact; original assembly and private-layout boundary retained.
+- [Vector-basis recovery/liveness audit](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md):
   Complete experimental `func_15146078` C144/frame `0x48`/93 differences,
   real but publicly dead early byte values, original-helper/native/alias/caller
   qualification and explicit private-layout counterexamples. Original assembly

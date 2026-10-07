@@ -185,7 +185,8 @@ static u32 storage[28];
     def test_ordinary_source_controls_and_profiles_remain_nonmatching(self):
         groups = (screen.candidates, screen.lifetime_candidates, screen.scalar_candidates,
                   screen.expression_candidates, screen.output_candidates, screen.vector_candidates,
-                  screen.register_candidates)
+                  screen.register_candidates, screen.coordinate_candidates, screen.workspace_candidates,
+                  screen.seed_candidates)
         records, executions = [], 0
         coordinates = ((0, 0, 0), (bits(2), 0, 0), (0, bits(-2), 0), (0, 0, bits(2)),
             (0, bits(2), bits(3)), (bits(2), 0, bits(3)), (bits(2), bits(3), 0),
@@ -209,7 +210,7 @@ static u32 storage[28];
             record, _ = screen.compile_candidate(self.root, self.output, 'profile-' + profile, profile=profile)
             self.assertEqual((record['body_words'], record['frame'], record['differences']), expected)
             records.append(record)
-        self.assertEqual((len(records), executions), (118, 1320))
+        self.assertEqual((len(records), executions), (186, 2136))
         (self.output / 'measurements.json').write_text(json.dumps(dict(records=records,
             ordinary_public_executions=executions, installed=False), indent=2) + '\n')
 

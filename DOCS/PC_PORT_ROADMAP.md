@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Game Vector-Basis Additional Source Controls - 2026-10-07
+
+[Note 1101](WORKING_NOTES/1101-game-vector-basis-coordinate-and-workspace-controls-20261007.md):
+
+- [x] Retain 68 additional coordinate/workspace/seed forms, 186 total controls, none raw exact.
+- [x] Qualify 2,136 ordinary nonoverlapping candidate executions and re-pass all 19 basis/normalizer tests in 151.122 seconds, zero skips/errors/failures.
+- [x] Preserve original assembly and the real private-layout counterexample; no basis production/profile/guard/README changes.
+- [ ] Recover the 148-word floating-zero lifetime and private scalar layout before installation; the C144/frame `0x48`/93-difference boundary remains open.
+
 ## Game Vector-Basis Recovery And Liveness Audit - 2026-10-07
 
 [Note 1100](WORKING_NOTES/1100-game-vector-basis-recovery-and-liveness-audit-20261007.md):
