@@ -4,6 +4,42 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Point-transform compiler and diagnostic controls
+
+[Driver](../tools/experiments/game_point_transform_candidates.py):17 source
+shapes/plain versus volatile global declarations,34 O2/g3 measurements;
+selected body additionally checked under all four SDK profiles. Early fixed-path
+clear/return recovers98 words/frame0x78.31 checked allocation/save-order guards
+close the s1/s2/s3 cycle; no arithmetic/control/frame/insert/omit normalization.
+[Eleven tests](../tools/tests/test_game_point_transform_match.py) bind1950
+paired guest cases/all98 words/full memory/external traces,180 connected original
+SDK/matrix/translation cases,144 actual32-bit native callers and39 original
+call/delay sites/234 seeded cases. Preserve diagnostics, zero/null fallback,
+signed-zero gate and conversion input rereads. Six compiled negatives and
+mapped-memory gates reject incorrect status/outputs/call contracts.
+Native uses the actual SDK conversion body with bounded transform/translation
+helpers; guest original connections are separate, finite-qualified evidence.
+Original translation helper is49 words, not the stale handoff's53.
+
+Copied owners preserve88 typed neighbors,624-byte relocation-owned pool and
+two warnings after assembly post-processing; all6059 final linked slots are
+unchanged. Actual padder checks expected words/relocations and alternate global
+carry/helper addresses. Guard history now pins10811 prior rows plus exactly31
+new rows,10842 total. Commands:
+
+```sh
+python3 -m tools.experiments.game_point_transform_candidates
+python3 -m unittest tools.tests.test_game_point_transform_match -v
+make -C conker VERSION=us NON_MATCHING=1 progress
+```
+
+The progress target's normal checksum gate still fails for the nonmatching
+whole project; NON_MATCHING=1 refreshes reporting, not retail acceptance.
+Ignored receipts:`conker/build/game-point-transform/` and
+`conker/build/game-point-transform-test/`; see
+[Note1073](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md).
+No FCSR/NaN-payload,64-bit host, whole-caller or gameplay acceptance.
+
 ## Texture resolver compiler and owner-pool controls
 
 [Driver](../tools/experiments/game_texture_resolver_candidates.py):18 forms
@@ -26,8 +62,8 @@ Full owner assembly post-processing is required before actual padding.
 text relocations to compare function-relative targets while keeping every other
 byte exact. [Three independent fixtures](../tools/tests/test_game_owner_pool.py)
 reject changed targets/literals, missing/unsupported relocations and unowned
-targets. Neighbor guard checks pin the original10809-row digest and only the
-two exact new table-binding rows. Commands:
+targets. Neighbor guard checks pin the original10809-row digest, two exact
+resolver-table bindings and the31 point-transform guards described above. Commands:
 
 ```sh
 python3 -m tools.experiments.game_texture_resolver_candidates
@@ -54,7 +90,7 @@ Game-data jump table; submit is bounded, call pairs are not full callers.
 Actual padder preserves408 bytes, excludes eight alignment bytes and retargets
 both calls. Copied owner retains92 neighbors/pools/two warnings; production
 binds102 words/nine exact neighbors/the unchanged10809-row prefix plus two
-resolver-table bindings (10811 total). Commands:
+resolver-table bindings plus31 point-transform guards (10842 total). Commands:
 
 ```sh
 python3 -m tools.experiments.game_texture_cache_candidates
@@ -82,7 +118,7 @@ NaN comparison. Actual padder retains220 symbol bytes, excludes four alignment
 bytes and retargets both calls. Copied owners preserve92 builder neighbors,
 all31 caller functions/pools/relocations and warnings2->2 in each. Production
 binds target, caller, eight neighbors/the unchanged10809-row prefix plus two
-resolver-table bindings (10811 total). Commands:
+resolver-table bindings plus31 point-transform guards (10842 total). Commands:
 
 ```sh
 python3 -m tools.experiments.game_row_matrix_candidates
@@ -155,7 +191,7 @@ bytes, excludes the four-byte section alignment tail, and retargets both calls.
 Copied owners preserve92 other builder functions and all31 caller functions/
 relocations/pools, warnings2->2 in each. Production binds target, exact caller,
 seven neighbors/the unchanged10809-row prefix plus two resolver-table bindings
-(10811 total). Ignored receipts:
+and31 point-transform guards (10842 total). Ignored receipts:
 `conker/build/game-scaled-matrix-test/`; see
 [Note1067](WORKING_NOTES/1067-game-scaled-matrix-match-20261006.md).
 

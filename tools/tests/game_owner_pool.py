@@ -6,6 +6,7 @@ import struct
 
 from tools.experiments.game_actor_classifier_candidates import sections
 from tools.experiments import game_texture_resolver_candidates as resolver
+from tools.experiments import game_point_transform_candidates as point
 from tools.pad_generated_object import ELF_HEADER, SECTION_HEADER, SYMBOL, RELOCATION, parse_object, read_c_string
 
 
@@ -48,8 +49,11 @@ def normalized_pools(path):
 
 
 def assert_guard_history(test, guards):
-    test.assertEqual(len(guards), 10811)
+    test.assertEqual(len(guards), 10842)
     digest = hashlib.sha256(json.dumps(guards[:10809], sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     test.assertEqual(digest, 'e021c108eef6c84112743955be809d3bdf4ce4e1de0cba474897ed3b0bcabb8a')
-    test.assertEqual(guards[10809:], resolver.owner_guards())
+    test.assertEqual(guards[10809:10811], resolver.owner_guards())
+    prior = hashlib.sha256(json.dumps(guards[:10811], sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    test.assertEqual(prior, '9e8f11db1c07370f470888d62e63b3b8ced846afa67a1db81ca94f0c44e601da')
+    test.assertEqual(guards[10811:], point.owner_guards())
     return hashlib.sha256(json.dumps(guards, sort_keys=True, separators=(',', ':')).encode()).hexdigest()

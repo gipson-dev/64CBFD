@@ -54,6 +54,10 @@ extern s32 D_800915B0, D_80091514;
 extern s32 D_80091564[];
 extern GameTextureSource D_80090B60[];
 
+extern volatile s32 D_800DCA00;
+extern u8 *D_800DCA04;
+extern f32 D_800DCA08, D_800DCA0C, D_800DCA10;
+
 /* Generated placeholder declarations. */
 void func_15141A7C(u8 *actor, s32 context);
 s32 func_15141C0C(u8 *actor);
@@ -69,7 +73,7 @@ void func_15142838(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
 Gfx *func_15142E24(Gfx *output, GameTextureSource *source, s32 packed, s32 width,
     s32 height, s32 value, s32 index, u8 kind, u8 *attachment, u8 *sync, s32 flags);
 s32 func_1514306C(GameTextureSource *source, s32 index, s32 subindex, u8 kind);
-s32 func_15143134();
+void func_15143134(f32 *point, f32 *output, u8 *matrix);
 s32 func_151432BC();
 s32 func_151438D8();
 s32 func_15143E94();
@@ -652,7 +656,37 @@ s32 func_1514306C(GameTextureSource *source, s32 index, s32 subindex, u8 kind) {
     }
     return result;
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16EE20/func_15143134.s")
+void func_15143134(f32 *point, f32 *output, u8 *matrix) {
+    f32 converted[4][4];
+    D_800DCA00 = 1;
+    if (point != NULL && (point[0] != 0.0f || point[1] != 0.0f || point[2] != 0.0f)) {
+        D_800DCA00 = 2;
+        D_800DCA08 = point[0];
+        D_800DCA0C = point[1];
+        D_800DCA10 = point[2];
+        if (D_800C3E90 != 0) {
+            D_800DCA00 = 3;
+            D_800DCA04 = matrix;
+            guMtxL2F(converted, (Mtx *)matrix);
+            func_150A7960(converted, point[0], point[1], point[2],
+                &output[0], &output[1], &output[2]);
+            D_800DCA00 = 4;
+            D_800DCA00 = 0;
+            return;
+        } else {
+            D_800DCA00 = 5;
+            D_800DCA04 = matrix;
+            func_150A7960((f32 (*)[4])matrix, point[0], point[1], point[2],
+                &output[0], &output[1], &output[2]);
+            D_800DCA00 = 6;
+        }
+    } else {
+        D_800DCA00 = 7;
+        func_15142314(matrix, 0, output);
+        D_800DCA00 = 8;
+    }
+    D_800DCA00 = 0;
+}
 /* Non-matching C placeholders for asm/nonmatchings/game_16EE20/func_151432BC.s. */
 s32 func_151432BC() {
     return 0;

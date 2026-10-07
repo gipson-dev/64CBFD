@@ -51,6 +51,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest point-transform assembly-to-C match](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md):
+  `func_15143134`,98 words/frame0x78, typed ABI and live diagnostics;31 checked
+  saved-register allocation guards. All6059 linked slots unchanged; one more
+  exact C conversion. Guest/native/original-helper/call-delay qualification.
+  Next254-word descriptor sampler placeholder; oriented private offsets open.
+
 - [Latest texture resolver match and table binding](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md):
   `func_1514306C`,50 C-emitted words/no frame; two checked relocations bind
   original jump-table data. Guest/native/full original cache caller and

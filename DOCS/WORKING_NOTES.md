@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-06 ([Note1073](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md)):
+`func_15143134`:original assembly converted to98-word/frame0x78 semantic C;
+three-input ABI, status/diagnostic lifetime and fixed/float/translation paths.
+31 checked allocation/save-order guards;10811 prior rows unchanged,10842 total.
+1950 paired guest,180 original-helper,144 native,39 original call/delay sites/
+234 seeded cases, negatives, copied owner and actual padder qualification.
+All6059 linked slots/addresses/extents/protected sections unchanged;720 data
+owners exact, warnings2->2. Converted5465/6042, Game4792/5321; exact3346/5465,
+Game2673/4792,2119 different, zero drift. All92 post-link tests pass in371.491s,
+no skips/errors/failures;55 documents/3623 relative links/zero broken,
+tools/syntax/diff checks pass.
+Root README updates aggregate rows only. Next254-word `func_151432BC` placeholder;
+oriented27 private offsets stay open. No sibling/Release/save/runtime, host
+adoption, whole-caller/hardware/gameplay acceptance or push. Goal stays active.
+
 2026-10-06 ([Note1072](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md)):
 `func_1514306C`:50 C-emitted words/no frame,72 controls/two exact O2/g3 forms.
 Typed four-input ABI, six kinds/default12-byte records, signed indices and

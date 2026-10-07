@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-06 Game Point Transform Assembly To C
+
+[Note1073](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md):
+convert `func_15143134` from original assembly to semantic C,98 words/frame0x78.
+Typed point/output/generic matrix ABI, observable status sequence, diagnostics,
+conversion rereads and translation fallback.31 checked allocation/save-order
+guards;10811 historical rows unchanged,10842 total. Guest1950/original helpers180/
+native144/original call-delay39 sites234 cases, negatives and actual owner/padder
+qualification. US ELF passes; all6059 slots/addresses/extents/protected sections
+unchanged, all720 data owners exact, warnings2->2. Converted5465/6042,
+Game4792/5321; exact3346/5465, Game2673/4792,2119 different, zero drift.
+Root README updates aggregate tables only. All92 post-link tests pass in371.491s,
+no skips/errors/failures;55 documents/3623 relative links/zero broken,
+tools/syntax/diff checks pass.
+Next254-word `func_151432BC`; oriented27 private offsets remain open.
+No sibling/frozen Release/save/runtime, host adoption, hardware/gameplay
+acceptance, whole-caller acceptance or push.
+
 ## 2026-10-06 Game Texture Resolver Match
 
 [Note1072](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md):

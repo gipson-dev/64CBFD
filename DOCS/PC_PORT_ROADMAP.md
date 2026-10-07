@@ -1,5 +1,30 @@
 # PC Port Roadmap located in another project folder
 
+## Game Point Transform Assembly To C - 2026-10-06
+
+[Note1073](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md):
+`func_15143134`:98 words/frame0x78, original assembly converted to semantic C.
+Recover three-input ABI, status/diagnostic lifetime, fixed/float transformation
+and null/zero translation fallback.31 checked allocation/save-order guards;
+no frame, arithmetic or control-flow rewrite. All6059 linked slots, protected
+sections and720 data owners unchanged, warnings2->2;10811 prior guards retained,
+10842 total. Game4792/5321 converted (90.06%),2673/4792 exact (55.78%),
+2119 different, zero drift. Root README updates aggregate tables only.
+
+All92 post-link tests pass in371.491s, no skips/errors/failures;
+55 documents/3623 relative links/zero broken, tools/syntax/diff checks pass.
+
+- [x] Recover typed ABI, zero gate, diagnostic lifetime and conversion rereads.
+- [x] Qualify guest/native/original helpers,39 call-delay sites and negatives.
+- [x] Qualify owner/pools and relocation-checked register-cycle normalization.
+- [x] Install C, rebuild/audit all slots/data/guards and refresh conversion CSV.
+- [x] Finish expanded92-test regression and final documentation/tool gates.
+- [ ] Recover254-word descriptor sampler `func_151432BC` from its placeholder.
+- [ ] Finish oriented `func_15142600`'s27 private-layout differences.
+
+Original helper execution is bounded; whole callers, hardware/gameplay and
+host adoption remain unclaimed. No sibling/frozen Release/save/runtime or push.
+
 ## Game Texture Resolver Match - 2026-10-06
 
 [Note1072](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md):
@@ -21,7 +46,7 @@ All81 post-link tests pass in315.971s, no skips/errors/failures;
 - [x] Qualify relocated pools without weakening exact literal/relative-target gates.
 - [x] Rebuild/audit all slots/data/guards and refresh aggregate matching rows.
 - [x] Finish expanded81-test regression and final documentation/tool gates.
-- [ ] Recover98-word `func_15143134` point-transform/status routine from assembly.
+- [x] Recover98-word `func_15143134` point-transform/status routine from assembly (Note1073).
 - [ ] Finish oriented `func_15142600`'s27 private offsets.
 
 Submit remains bounded; original rendering/gameplay and host adoption not
@@ -44,11 +69,11 @@ All52 post-link tests pass in215.511s, no skips/errors/failures;
 - [x] Exercise negatives, actual padder and copied-owner preservation.
 - [x] Install direct102-word body, rebuild and audit slots/data/guards.
 - [x] Finish52-test post-link regression and final documentation/tool gates.
-- [ ] Recover50-word resolver `func_1514306C` from original switch/table.
+- [x] Recover50-word resolver `func_1514306C` from original switch/table (Note1072).
 - [ ] Finish oriented `func_15142600`'s27 private-offset differences.
 
-Resolver executes in fixtures but remains a production placeholder; submit
-helper is bounded, call pairs are not full callers. Ten oriented matrix-storage
+Resolver was a production placeholder at this checkpoint; Note1072 restores
+it. Submit helper is bounded, call pairs are not full callers. Ten oriented matrix-storage
 controls find no improvement. No sibling/frozen Release/save/runtime, host
 adoption, hardware/gameplay acceptance or push.
 

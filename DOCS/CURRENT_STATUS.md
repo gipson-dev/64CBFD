@@ -21,6 +21,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Point-transform assembly-to-C match:
+[Note1073](WORKING_NOTES/1073-game-point-transform-assembly-to-c-match-20261006.md)
+converts `func_15143134`:98 words/frame0x78, typed three-input ABI, live
+diagnostics, fixed/float matrix paths and null/zero translation fallback.
+31 relocation-checked guards normalize only the closed saved-register cycle
+and independent save ordering; no frame/control/arithmetic rewrite.
+1950 paired guest,180 original-helper,144 native and39 original call/delay
+sites/234 seeded cases qualified; six negatives, actual padding/stale metadata
+and copied-owner preservation. All6059 linked slots are unchanged from the
+exact assembly baseline, including all addresses/extents and protected sections.
+All720 Game-data owners/189088 bytes exact, warnings2->2,10811 prior guards
+unchanged,10842 total. Converted5465/6042 (90.45%), Game4792/5321 (90.06%);
+exact3346/5465 (61.23%), Game2673/4792 (55.78%),2119 different, zero drift.
+Next254-word placeholder `func_151432BC`; oriented27 private offsets stay open.
+All92 focused post-link tests pass in371.491s, no skips/errors/failures.
+55 documents/3623 relative links/zero broken, tools/syntax/diff checks pass.
+README changes aggregate tables only. No sibling/Release/save/runtime, host
+adoption, whole-caller/hardware/gameplay acceptance or push.
+
 Texture resolver match and original table binding:
 [Note1072](WORKING_NOTES/1072-game-texture-resolver-match-and-table-binding-20261006.md)
 recovers `func_1514306C`:50 C-emitted words, no frame, exact signed-index/
