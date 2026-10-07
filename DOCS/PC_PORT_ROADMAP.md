@@ -1,5 +1,27 @@
 # PC Port Roadmap located in another project folder
 
+## Game Range Clamp Match - 2026-10-07
+
+[Note 1075](WORKING_NOTES/1075-game-range-clamp-byte-match-20261007.md):
+`func_15143D18`:36 words/frame0x10,13 checked temporary-allocation guards.
+Only target changes across6059 slots; protected sections/720 owners/all prior
+10842 guards/addresses/extents unchanged,10855 total. Game2674/4792 exact,
+2118 different, zero drift; conversion unchanged. README aggregate rows only.
+
+- [x] Recover saved-pointer shape while retaining signed XOR/clip semantics.
+- [x] Qualify guest/native, original call-delay boundary and semantic negatives.
+- [x] Qualify copied owner/pools/warnings and actual padder/stale guards.
+- [x] Install, rebuild and audit all linked slots/data/guard history.
+- [x] Finish expanded111-test post-link regression and final documentation gates.
+- [ ] Recover sampler's two missing exits and circle-byte scheduling from C.
+- [ ] Reconstruct272-word record query `func_151438D8` with the matched clamp.
+
+Thirty additional sampler storage/exit controls find no exact candidate.
+All111 tests pass in368.274s, zero skips/errors/failures;57 docs/3646 relative
+links/zero broken, tool/syntax/diff checks pass.
+Oriented27 private-layout differences stay open. No sibling/Release/save/runtime,
+whole-caller/hardware/gameplay acceptance, host adoption or push.
+
 ## Game Area Sampler Recovery - 2026-10-06
 
 [Note 1074](WORKING_NOTES/1074-game-area-sampler-qualified-recovery-20261006.md):

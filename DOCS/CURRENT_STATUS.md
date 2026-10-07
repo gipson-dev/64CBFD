@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-06
+Last verified: 2026-10-07
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -20,6 +20,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Range-clamp byte match:
+[Note 1075](WORKING_NOTES/1075-game-range-clamp-byte-match-20261007.md).
+`func_15143D18`:36 words/frame0x10; using the argument pointers directly recovers
+the original saved-pointer shape. Thirteen expected-word guards normalize only
+temporary GPR allocation, with no frame/arithmetic/control/ordering changes.
+3750 paired guest/1250 native/250 original call-delay cases and copied-owner/
+actual-padder gates pass. Only target changes across6059 slots; all addresses,
+protected sections/720 data owners and10842 prior guards unchanged,10855 total.
+Exact3347/5465 (61.24%), Game2674/4792 (55.80%),2118 different, zero drift.
+Conversion unchanged; README updates aggregate rows/date only.
+All111 post-link tests pass in368.274s, zero skips/errors/failures;
+57 documents/3646 relative links/zero broken, tool/syntax/diff checks pass.
+Thirty further sampler exit/storage controls find no exact form. Sampler and
+oriented builder remain uninstalled. Next sampler exit recovery or272-word
+record query `func_151438D8`. No sibling/Release/save/runtime, gameplay or push.
 
 Area-sampler recovery, not installed:
 [Note 1074](WORKING_NOTES/1074-game-area-sampler-qualified-recovery-20261006.md).

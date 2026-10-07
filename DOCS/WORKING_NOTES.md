@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-07 ([Note 1075](WORKING_NOTES/1075-game-range-clamp-byte-match-20261007.md)):
+`func_15143D18`:36-word/frame0x10 range ordering/clipping match; remove pointer
+copies, retain live XOR stores and signed one-sided limits. Thirteen checked
+temporary-allocation guards; all10842 prior rows pinned,10855 total.
+3750 paired guest/1250 native/250 original call-delay cases, four negatives,
+copied owner/624-byte pool/two warnings and actual padder/stale gates qualify.
+US ELF passes; only target changes across6059 slots, all protected sections/
+720 owners/addresses/extents unchanged. Exact3347/5465, Game2674/4792,
+2118 different, zero drift; conversion unchanged, README aggregate rows only.
+All111 post-link tests pass in368.274s, zero skips/errors/failures;
+57 documents/3646 relative links/zero broken, tool/syntax/diff checks pass.
+Thirty sampler exit/storage controls find no exact form; sampler/oriented
+builder stay open. No sibling/Release/save/runtime, hardware/gameplay or push.
+
 2026-10-06 ([Note 1074](WORKING_NOTES/1074-game-area-sampler-qualified-recovery-20261006.md)):
 `func_151432BC`:qualified, uninstalled252-word/frame0x50 C sampler;
 retail254 words,109 positional differences. Recover signed descriptor fields,

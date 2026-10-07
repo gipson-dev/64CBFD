@@ -4,6 +4,34 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Range-clamp matching controls
+
+[Driver](../tools/experiments/game_range_clamp_candidates.py):baseline and
+direct-pointer forms under four SDK profiles, eight maintained measurements.
+Selected O2/g3 recovers36 words/frame0x10. Thirteen expected-word guards change
+only temporary GPR operand fields; no opcode, address, branch, ordering or
+frame rewrite. Leaf has no relocations. Prior10842 guard rows remain pinned;
+10855 total. [Nine tests](../tools/tests/test_game_range_clamp_match.py) qualify
+3750 paired full-memory guest cases/all36 words,1250 native typed-caller cases,
+250 original call-delay fragments, four negatives, actual padding/stale words
+and complete copied-owner neighbor/pool/warning preservation. A call fragment
+with seeded context/synthetic return is not complete original caller execution.
+
+```sh
+python3 -m tools.experiments.game_range_clamp_candidates
+python3 -m unittest tools.tests.test_game_range_clamp_match -v
+python3 -m tools.experiments.game_area_sampler_exit_candidates
+```
+
+[Sampler exit driver](../tools/experiments/game_area_sampler_exit_candidates.py)
+adds30 O2/g3 controls to the existing152 measurements:output volatility,
+aggregate/scalar/per-case scratch, byte/word angle storage and descriptor
+volatility. None closes the sampler's missing exits; new scalar variants are
+screening only, not qualified replacements. Ignored receipts:
+`conker/build/game-range-clamp/`, `conker/build/game-range-clamp-test/`,
+`conker/build/game-area-sampler-exits/`; see
+[Note 1075](WORKING_NOTES/1075-game-range-clamp-byte-match-20261007.md).
+
 ## Area-sampler recovery controls
 
 [Driver](../tools/experiments/game_area_sampler_candidates.py) retains38 forms
@@ -49,8 +77,9 @@ Original translation helper is49 words, not the stale handoff's53.
 Copied owners preserve88 typed neighbors,624-byte relocation-owned pool and
 two warnings after assembly post-processing; all6059 final linked slots are
 unchanged. Actual padder checks expected words/relocations and alternate global
-carry/helper addresses. Guard history now pins10811 prior rows plus exactly31
-new rows,10842 total. Commands:
+carry/helper addresses. At Note1073, guard history pinned10811 prior rows plus
+exactly31 point-transform rows,10842 total. The range-clamp section above
+describes the current10855-row history, including the thirteen new rows. Commands:
 
 ```sh
 python3 -m tools.experiments.game_point_transform_candidates
@@ -88,7 +117,8 @@ text relocations to compare function-relative targets while keeping every other
 byte exact. [Three independent fixtures](../tools/tests/test_game_owner_pool.py)
 reject changed targets/literals, missing/unsupported relocations and unowned
 targets. Neighbor guard checks pin the original10809-row digest, two exact
-resolver-table bindings and the31 point-transform guards described above. Commands:
+resolver-table bindings, the31 point-transform guards and the thirteen clamp
+rows described above. Commands:
 
 ```sh
 python3 -m tools.experiments.game_texture_resolver_candidates

@@ -508,7 +508,7 @@ if(count!=144)return 6;
         self.assertEqual(functions[screen.FUNCTION], self.retail)
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream: guards = list(csv.DictReader(stream))
         digest = assert_guard_history(self, guards)
-        self.assertEqual(guards[-31:], screen.owner_guards())
+        self.assertEqual(guards[10811:10842], screen.owner_guards())
         self.receipt('production', dict(words=98, guards=len(guards), guard_sha256=digest, byte_exact=True))
 
 

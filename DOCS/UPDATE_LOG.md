@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-07 Game Range Clamp Byte Match
+
+[Note 1075](WORKING_NOTES/1075-game-range-clamp-byte-match-20261007.md):
+match `func_15143D18`,36 words/frame0x10, with direct argument-pointer usage
+and13 checked temporary-register guards. Keep signed limit ordering, live XOR
+stores and independent endpoint clipping. Guest3750/native1250/original
+call-delay250 cases, four negatives, owner/pool/warnings and actual padder pass.
+US ELF/audit:only target among6059 slots; protected sections/720 data owners/
+10842 prior guards and all addresses/extents unchanged,10855 guards total.
+Exact3347/5465, Game2674/4792,2118 different, zero drift; conversion unchanged.
+Root README updates aggregate rows/date only. All111 post-link tests pass
+in368.274s, zero skips/errors/failures;57 docs/3646 relative links/zero broken,
+tool/syntax/diff checks pass. Thirty additional sampler controls do not
+close its two-word exit discrepancy; sampler and oriented builder remain open.
+No sibling/frozen Release/save/runtime, whole caller/gameplay, host adoption or push.
+
 ## 2026-10-06 Game Area Sampler Recovery
 
 [Note 1074](WORKING_NOTES/1074-game-area-sampler-qualified-recovery-20261006.md):

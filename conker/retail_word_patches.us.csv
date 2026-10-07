@@ -10841,3 +10841,16 @@ game_16EE20,func_15143134,0x150,0x02602025,0x02402025,-,-,Normalize point transf
 game_16EE20,func_15143134,0x15C,0x02403025,0x02203025,-,-,Normalize point transform closed saved-register cycle and independent save schedule,,,false
 game_16EE20,func_15143134,0x164,0xAE380000,0xAE780000,-,-,Normalize point transform closed saved-register cycle and independent save schedule,,,false
 game_16EE20,func_15143134,0x168,0xAE200000,0xAE600000,-,-,Normalize point transform closed saved-register cycle and independent save schedule,,,false
+game_16EE20,func_15143D18,0x2C,0x8E020000,0x8E030000,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x30,0x8E230000,0x8E250000,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x34,0x0043082A,0x0065082A,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x3C,0x00622026,0x00A31026,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x40,0xAE240000,0xAE220000,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x48,0x01C41026,0x01C22026,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x4C,0xAE020000,0xAE040000,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x54,0x01E21826,0x01E42826,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x58,0xAE230000,0xAE250000,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x5C,0x0066082A,0x00A6082A,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x64,0x8E180000,0x8E190000,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x6C,0x8E180000,0x8E190000,-,-,Normalize range clamp temporary register allocation,,,false
+game_16EE20,func_15143D18,0x70,0x00F8082A,0x00F9082A,-,-,Normalize range clamp temporary register allocation,,,false
