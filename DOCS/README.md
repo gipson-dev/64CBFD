@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest matrix-pair resolver semantic recovery](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md):
+  installed complete recursive C84/frame `0x20`, four routes and original
+  output/reread/home lifetime; slot85 with one padding nop, 44 differences,
+  no new guards. Real wrapper/helpers/native/owner/padder qualification;
+  only target changes, matching totals unchanged. V0 key source fit remains open.
 - [Latest matrix-route register phases and branch source audit](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md):
   experimental C119 recovers the retail opening, matrix A1 and complete shifted
   point loop with correct private addresses; key/primary topology still open.

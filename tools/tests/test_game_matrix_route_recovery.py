@@ -405,7 +405,8 @@ class GameMatrixRouteRecoveryTests(unittest.TestCase):
         self.receipt('connected', dict(cases=cases, helper_words_visited=helpers,
             acyclic_recursive_resolver_cases=recursive,
             original_instructions=True, full_stack_equivalence=False, hardware_FCSR=False,
-            production_resolver_is_still_placeholder=True))
+            production_resolver_is_still_placeholder='s32 func_15031070() {\n    return 0;\n}' in
+                (self.root / 'conker/src/game/generated_5D2C0.c').read_text()))
 
     def test_lazy_gates_required_storage_and_unclamped_index(self):
         lazy = 0

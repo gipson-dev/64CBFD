@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 D_800BE9C0;
 extern u8 *D_800C3EE0;
 extern u8 D_800C35EA;
 extern s32 D_800BE9E4;
@@ -77,8 +78,37 @@ s32 func_15030F94() {
     return 0;
 }
 
-s32 func_15031070() {
-    return 0;
+/* Complete non-matching recovery; byte-match boundary in Working Note 1106. */
+s32 func_15031070(u8 *node, u8 *actor, Mtx **primary, Mtx **secondary) {
+    u8 *attachment;
+    u8 *parent;
+
+    attachment = *(u8 **)(node + 0x48);
+    if (attachment != 0) {
+        if (attachment[0x3F6] == 0) {
+            return 0;
+        }
+        *primary = ((Mtx **)(attachment + 0x3E8))[D_800BE9C0];
+        *secondary = ((Mtx **)(*(u8 **)(node + 0x48) + 0x3E0))[D_800BE9C0];
+    } else if (*(u8 **)(node + 0x34) != 0) {
+        *primary = *(Mtx **)(node + 0x34) + D_800BE9C0;
+        *secondary = *(Mtx **)(actor + 0x1D4) + node[2];
+    } else if (*(u16 *)(node + 0x1E) != 0) {
+        parent = (u8 *)func_1503195C(actor, *(u16 *)(node + 0x1E), 0);
+        if (parent == 0) {
+            return 0;
+        }
+        if (func_15031070(parent, actor, primary, secondary) == 0) {
+            return 0;
+        }
+        *primary += *(u16 *)(node + 0x20);
+        return 1;
+    } else {
+        *primary = *(Mtx **)(actor + 0x1D4);
+        *primary += node[2];
+        *secondary = *primary;
+    }
+    return 1;
 }
 
 s32 func_150311C4() {

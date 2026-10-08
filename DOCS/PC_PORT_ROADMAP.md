@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix-Pair Resolver Semantic Recovery - 2026-10-07
+
+[Note 1106](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md):
+
+- [x] Recover/install `func_15031070`'s complete recursive C, four matrix routes, primary-induced rereads, intermediate default store and incoming actor/secondary homes; no new null/bounds/recursion policy.
+- [x] Preserve the original frame `0x20`; identify C84 in a retail85-word slot with one actual padding nop, 44 differences versus 85 in the old placeholder, not byte-exact.
+- [x] Retain 69 source/profile controls / 1,104 ordinary executions, none exact; qualify guest aliases, lazy/fault/home paths, valid native32 C and actual complete matrix-wrapper connections.
+- [x] Preserve 39 owner neighbors, normalized pools and zero warnings; verify the real generated-slice padder's six relocations and symbolic recursive self-call with independent symbol rebasing.
+- [x] Rebuild/audit 6,058 symbols/6,042 slots; only target changes, other bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards/conversion hash intact. Matching totals/README aggregates unchanged.
+- [x] Pass all 40 combined tests in 495.848 seconds, zero skips/errors/failures, three receipt rechecks in 11.533 seconds, tools/syntax/CLI/whitespace and 88-document / 4,016-relative-link checks, zero broken links.
+- [ ] Recover the original V0 key lifetime and key-to-A1 move in a complete 85-word body before narrow GP/schedule matching. Do not insert a missing instruction or normalize branch/read order.
+- [ ] Finish the wrapper key/primary-read fit, basis private layout, translator scheduling and sampler lifetime separately; no PC-port/full stack-memory acceptance here.
+
+Resume from `game-matrix-pair-resolver-test/after.json`, superseding the prior
+wrapper-only snapshot as the current linked baseline.
+
 ## Game Matrix-Route Register Phases And Branch Source Audit - 2026-10-07
 
 [Note 1105](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md):
@@ -24,7 +40,7 @@
 - [x] Pass all twenty combined tests in 313.807 seconds, zero skips/errors/failures; matching totals and root README aggregates unchanged.
 - [x] Pass tools/syntax/whitespace and 86-document / 3,996-relative-link checks, zero broken links; three receipt-only rechecks pass in 4.211 seconds.
 - [ ] Match the sixty remaining raw differences: lookup-key branch, resolver primary read/reload order and saved-register lifetime phases. No bulk sixty-word guards.
-- [ ] Recover the production resolver separately; connected original-helper tests are not production-callee or PC-port acceptance.
+- [x] Recover the production resolver separately in Note 1106; complete nonmatching C is now installed and connected in bounded wrapper tests, not PC-port acceptance.
 
 This is installed guest semantic recovery, not a byte match. Resume from the
 new ignored `game-matrix-route-layout-test/after.json` checkpoint.

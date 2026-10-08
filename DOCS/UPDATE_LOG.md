@@ -1,5 +1,24 @@
 # Update Log
 
+## 2026-10-07 Game Matrix-Pair Resolver Semantic Recovery
+
+[Note 1106](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md):
+Replace `func_15031070`'s zero-return placeholder with complete recursive C84,
+retail frame `0x20`, four matrix routes and original output/reread/home timing.
+Its 85-word slot has one padding nop, not a recovered instruction. Forty-four
+word differences remain versus 85 in the old placeholder; no new guards,
+profile, header or ledger changes. Sixty-nine source/profile controls qualify
+1,104 ordinary executions, none exact. Guest/alias/home/lazy/native/owner and
+actual matrix-wrapper/helper connections qualify. Only target changes across
+6,058 symbols/6,042 slots; other bodies/addresses/extents/overflows/protected
+sections/720 data owners/11,063 guards/conversion hash remain intact. Matching
+totals and root README aggregates unchanged. Continue V0 key/argument-move
+source fitting before GP/schedule normalization; no PC-port/full stack claim.
+All 40 combined tests pass in 495.848 seconds, zero skips/errors/failures;
+three installed/padder/previous-receipt rechecks pass in 11.533 seconds.
+Tools/syntax/CLI/whitespace and 88-document / 4,016-relative-link checks pass,
+zero broken links; the old connection receipt now reads actual resolver status.
+
 ## 2026-10-07 Game Matrix-Route Register Phases And Branch Source Audit
 
 [Note 1105](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md):

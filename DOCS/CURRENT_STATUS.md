@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest installed matrix-pair resolver recovery, **not byte-exact**:
+[Note 1106](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md).
+`func_15031070` now replaces its zero-return placeholder with complete recursive
+C84/frame `0x20`, four matrix routes, store-induced rereads and original actor/
+secondary incoming-home lifetime. The 85-word retail slot contains one trailing
+padding nop; 44 raw differences remain versus 85 in the placeholder, no new
+guards. Guest/alias/home/lazy/native/owner and complete actual-wrapper checks
+qualify; 69 source/profile forms / 1,104 ordinary executions, none exact.
+The completed linked audit changes only target; all other slot bodies, addresses,
+extents, overflows, protected sections, 720 data owners, 11,063 guards and
+conversion hash stay intact. Matching totals and root README aggregates remain
+unchanged. Resume key V0/argument-move source fitting before GP/schedule guards.
+All 40 combined tests pass in 495.848 seconds, zero skips/errors/failures;
+three receipt rechecks pass in 11.533 seconds. Tools/syntax/CLI/whitespace
+and 88-document / 4,016-relative-link checks pass, zero broken links.
+Authoritative ignored checkpoint: `game-matrix-pair-resolver-test/after.json`.
+
 Latest matrix-route register-phase/source follow-up, **no new byte match**:
 [Note 1105](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md).
 Experimental C119/frame `0xA0` now emits the original seventeen opening words,
@@ -53,9 +70,9 @@ The linked audit changes only target; other bodies/addresses/extents/overflows/
 protected sections/720 data owners/11,063 guards/conversion hash remain intact.
 Exact total 3,364, Game 2,691 (56.14%), 2,102 different, zero drift; README
 aggregates unchanged. Continue key-branch, primary-read and saved-register
-lifetime fitting, not bulk instruction normalization. The production resolver
-still needs separate recovery; no PC-port or full stack-memory acceptance.
-Authoritative ignored checkpoint: `game-matrix-route-layout-test/after.json`.
+lifetime fitting, not bulk instruction normalization. Note 1106 now separately
+recovers the production resolver; no PC-port or full stack-memory acceptance.
+That checkpoint: `game-matrix-route-layout-test/after.json`.
 
 Previous matrix-route recovery/private-frame audit, **no installed match at that checkpoint**:
 [Note 1103](WORKING_NOTES/1103-game-matrix-route-recovery-and-private-frame-audit-20261007.md).

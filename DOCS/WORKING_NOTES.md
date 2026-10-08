@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-07 ([Note 1106](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md)):
+Install complete recursive matrix-pair resolver `func_15031070`, replacing its
+zero-return placeholder: C84/frame `0x20`, original four routes, output-induced
+rereads and actor/secondary home lifetime. Retail slot85 with one actual gap
+nop; 44 differences remain versus 85 in the placeholder, no new guards.
+Sixty-nine source/profile forms / 1,104 ordinary executions, none exact;
+guest/alias/home/lazy/native/owner/real-padder/complete-wrapper checks qualify.
+The linked audit changes only target, preserving other slots/overflows/sections/
+720 data owners/11,063 guards/conversion hash and README totals. New ignored
+checkpoint `game-matrix-pair-resolver-test/after.json`; continue the V0 key and
+argument-move source fit. This is semantic recovery, not a new byte match.
+All 40 combined tests pass in 495.848 seconds, zero skips/errors/failures;
+three receipt rechecks pass in 11.533 seconds. Tools/syntax/CLI/whitespace
+and 88-document / 4,016-relative-link checks pass, zero broken links.
+
 2026-10-07 ([Note 1105](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md)):
 Recover retail opening and point-loop register phases for `func_1514654C`:
 experimental C119/frame `0xA0`/74 differences, matrix A1, actor/output S2,
