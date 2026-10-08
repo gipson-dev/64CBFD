@@ -22,6 +22,29 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery work:
+[Note 1121](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md).
+Complete `func_150339C8` is installed: all 68 words/frame0x40 directly exact,
+no guards, filler, data or profile changes. Recover tile-scroll-before-gates,
+freeze/unregister/clear order, existing handles and twelve-argument effect
+creation with signed16 coordinates/high handle bit. Qualification: 14,208
+guest cases, 576 actual-helper-connected cases, 1,572,864 native32 executions,
+67/68 reachable words, lazy/fault/alias/negative checks, 39 owner neighbors and
+eight independent symbol/entry links. Native arrays prove all u16 results and
+signed16 X coordinates observed at creation; invalid FP/FCSR stay unqualified.
+Only target changes across 6,058 symbols; 6,057 other bodies, addresses/extents,
+protected sections, 720 data owners, 11,144 guards and conversions unchanged.
+Exact total 3,376/5,467 (61.75%), Game 2,703/4,794 (56.38%), 2,091 different,
+zero drift. README aggregates only. New baseline:
+`game-node-effect-registration-test/after.json`. Eight strengthened pre-install
+tests pass in96.321s. Final 37 post-install focused tests pass in221.412s,
+zero skips/errors/failures, including six added connected faults. Preserve
+two shared prototypes in the earlier cleanup fixture; strict comparisons
+unchanged. Ten padder tests/tools/syntax/driver/profile/CLI/whitespace pass.
+Documentation:103 documents/4,200 relative links, zero broken.
+Next local `func_15033AD8`, 65 words/frame0x40,
+timer-gated effect creation; inventory only. Wider Game/full runtime open.
+
+Previous Game recovery work:
 [Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md).
 Complete `func_15033838` is installed: all 100 words/frame0x20 directly exact,
 no guards, padding, generated data or profile changes. Recover action/type/

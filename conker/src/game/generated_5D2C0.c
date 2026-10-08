@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern u8 D_800BEA0C;
+u16 func_1000FA64(u16, s16, s16, s16, s32, u16, s16, s32, void *, s32, s32, s32);
 void func_151026BC(u8 *, s32, s32, s32, s32, s32);
 u8 *func_15083568(u8 *, s32, f32, s32);
 void func_15048B10(f32 [4][4], f32 [4][4]);
@@ -1267,7 +1269,21 @@ done:
     return 0;
 }
 
-s32 func_150339C8() {
+s32 func_150339C8(u8 *node, u8 *actor) {
+    func_150334B8(node, actor);
+    if (D_800C35EA != 1) {
+        if (D_800BEA0C != 0) {
+            if (*(u32 *)(node + 0x3C) != 0) {
+                func_1000FD38(func_15033BDC, node, actor);
+            }
+            *(u32 *)(node + 0x3C) = 0;
+        } else if (*(u32 *)(node + 0x3C) == 0) {
+            *(u32 *)(node + 0x3C) = func_1000FA64(0x448,
+                (s16)*(f32 *)(actor + 0x14), (s16)*(f32 *)(actor + 0x18),
+                (s16)*(f32 *)(actor + 0x1C), 32000, 1000, 500,
+                (s32)func_15033BDC, node, (s32)actor, 0, 0) | 0x80000000;
+        }
+    }
     return 0;
 }
 

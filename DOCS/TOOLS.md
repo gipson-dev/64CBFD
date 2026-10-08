@@ -4,6 +4,38 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Effect Registration Matching
+
+[Candidate driver](../tools/experiments/game_node_effect_registration_candidates.py)
+retains complete `func_150339C8`, all 68 words/frame0x40 directly exact under
+existing O2/g3. Recover the first tile-scroll call, mode/freeze/handle lifecycle
+and the existing Init allocator's twelve-argument interface. Eighteen forms,
+27 ordinary executions and nine effective negatives retain source-fit evidence.
+Implicit coordinate narrowing is an exact control, not a negative. Alternate
+profile controls stay within the defined float-to-s16 domain; no guards, filler,
+data or production-profile changes.
+
+[Eight tests](../tools/tests/test_game_node_effect_registration_match.py) cover
+14,208 guest cases, 576 actual-helper-connected cases and 1,572,864 native32
+executions. All global bytes, sixteen finite coordinate patterns, legal u16
+results, saved pointers, callback observations and handle overwrites qualify.
+Native coverage arrays prove all 65,536 results and signed16 X coordinates
+reach creation. Six connected helper faults precede global gates; eight other
+faults, lazy cases, three aliases and semantic negatives remain explicit.
+Actual owner/padder preserves 39 neighbors/pools/relocations; eight independent
+symbol/entry links include signed-LO carries. NaN/invalid FP/FCSR, complete
+allocator/callback libraries and hardware/gameplay acceptance are not claimed.
+
+```sh
+python3 -m tools.experiments.game_node_effect_registration_candidates
+python3 -m tools.experiments.game_node_effect_registration_candidates --profiles
+python3 -m unittest tools.tests.test_game_node_effect_registration_match -v
+```
+
+Ignored receipts/current installed baseline:
+`conker/build/game-node-effect-registration-test/after.json`.
+See [Note 1121](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md).
+
 ## Attachment State Latch Matching
 
 [Candidate driver](../tools/experiments/game_node_attachment_latch_candidates.py)

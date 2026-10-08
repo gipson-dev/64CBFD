@@ -330,6 +330,11 @@ for(action=0;action<256;action++)for(k=0;k<4;k++)for(c=0;c<5;c++)for(m=0;m<3;m++
         self.assertEqual(source.count(STUB), 1)
         selected = source.replace(STUB, screen.SELECTED).replace('#include <ultra64.h>\n',
             '#include <ultra64.h>\n'+screen.DECLARATIONS+'\n', 1)
+        # The later effect caller still needs these when cleanup is replaced by its stub.
+        shared = 's32 func_15033BDC();\nvoid func_1000FD38(s32 (*)(), u8 *, u8 *);\n'
+        source = source.replace('#include <ultra64.h>\n', '#include <ultra64.h>\n'+shared, 1)
+        self.assertEqual(source.count(shared), 1)
+        self.assertEqual(selected.count(shared), 1)
         objects = []
         for name, body in (('baseline', source), ('selected', selected)):
             obj, warnings = compile_owner(self.root, self.out, body, 'owner-'+name)

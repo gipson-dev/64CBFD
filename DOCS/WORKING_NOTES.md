@@ -1,5 +1,23 @@
 # Working Notes
 
+2026-10-08 ([Note 1121](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md)):
+Install complete effect registration `func_150339C8`, all 68 words/frame0x40
+directly exact, no guards/filler/data/profile changes. Recover first tile-scroll
+call, mode/freeze/handle lifecycle and twelve-word signed16 creation interface.
+14,208 guest/576 connected/1,572,864 native32 cases qualify; all u16 results
+actually observed at creation, 67 reachable words, faults/aliases/nine negatives,
+39 owner neighbors and eight independent entry/symbol links. Only target changes
+across 6,058 symbols; sections/data/guards/conversions intact. Exact total 3,376,
+Game 2,703, 2,091 different, zero drift. README aggregates only; new baseline
+`game-node-effect-registration-test/after.json`. Strengthened eight tests pass
+in96.321s. Final 37 post-install focused tests pass in221.412s, zero skips/
+errors/failures, including extra connected faults; cleanup stub owner retains
+two shared prototypes with all strict checks unchanged. Ten padder tests/tools/
+syntax/driver/profile/CLI/whitespace pass. Documentation:103 documents/4,200
+relative links, zero broken.
+Next local `func_15033AD8`, 65 words/frame0x40, inventory only; full callee/
+runtime and wider Game remain open.
+
 2026-10-08 ([Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md)):
 Install complete attachment-state latch `func_15033838`, all 100 words/frame0x20
 directly exact, no guards/padding/data/profile changes. Shared return recovers

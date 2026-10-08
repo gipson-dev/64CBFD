@@ -51,7 +51,13 @@ confirmed.
 
 ## Planning and history
 
-- [Latest attachment state latch direct match](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md):
+- [Latest effect registration direct match](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md):
+  complete `func_150339C8`, all 68 words/frame0x40 directly exact. Tile scroll
+  precedes mode/freeze gates; callback handle observations, clearing and
+  signed16 effect creation qualify with connected guest/native checks.
+  Only target changes; data/guards/conversions intact. New baseline
+  `game-node-effect-registration-test/after.json`; next local `func_15033AD8`.
+- [Previous attachment state latch direct match](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md):
   complete `func_15033838`, all 100 words/frame0x20 directly exact. Ordered
   activation/hold gates and callback latch lifetime qualify with guest/native,
   fault/alias/negative/owner/padder checks. Only target changes; data/guards/

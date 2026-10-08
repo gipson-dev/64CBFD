@@ -1,5 +1,28 @@
 # Update Log
 
+## 2026-10-08 Game Effect Registration Direct Match
+
+[Note 1121](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md):
+Install complete `func_150339C8`, all 68 words/frame0x40 directly exact,
+down from 68 placeholder differences. Restore tile scroll before global gates,
+freeze/unregister/clear order and typed twelve-word effect creation/high-bit
+handle storage. No guards/filler/data/profile/header changes. Qualify 14,208
+guest/576 actual-helper-connected/1,572,864 native32 cases; all u16 results
+observed, finite coordinate boundaries, callback lifetime/faults/aliases/nine
+negatives, 39 owner neighbors and eight independent entry/symbol links. Only
+target changes across 6,058 symbols; all addresses/extents/protected sections/
+720 data owners/11,144 guards/conversions intact. Exact total 3,376/5,467
+(61.75%), Game 2,703/4,794 (56.38%), 2,091 different, zero drift; README
+aggregates only. New `game-node-effect-registration-test/after.json`.
+Eight strengthened pre-install tests pass in96.321s. Final 37 post-install
+focused tests pass in221.412s, zero skips/errors/failures, including six extra
+connected faults. Cleanup stub owner retains two shared prototypes; all strict
+comparisons remain. Ten padder tests/tools/syntax/driver/profile/CLI/whitespace
+pass. Documentation:103 documents/4,200 relative links, zero broken.
+Next local `func_15033AD8`, 65 words/
+frame0x40, inventory only. Wider Game, full callbacks/allocator and hardware/
+gameplay/PC-port acceptance remain open.
+
 ## 2026-10-08 Game Attachment State Latch Direct Match
 
 [Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md):

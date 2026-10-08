@@ -1,5 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Game Effect Registration Direct Match - 2026-10-08
+
+[Note 1121](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md):
+
+- [x] Recover complete `func_150339C8`: tile scrolling before gates, mode/freeze bytes, existing handles, twelve-argument creation and high handle bit on zero result.
+- [x] Preserve saved pointer lifetime, callback observations and clear/store after callbacks; use the recovered Init allocator interface.
+- [x] Emit all 68 words/frame0x40 directly under existing O2/g3, no guards, filler, data or profile changes.
+- [x] Qualify 14,208 guest/576 actual-helper-connected/1,572,864 native32 cases; all global bytes, finite coordinates, all u16 results actually observed, callbacks/faults/aliases and nine effective negatives. Keep alternate-profile/native float-to-s16 claims within the defined range.
+- [x] Check 39 owner neighbors, pools/relative relocations, real padder and eight independent entry/symbol links, including three signed-LO carry cases.
+- [x] Rebuild/audit 6,058 symbols: only target changes; all addresses/extents/protected sections/720 data owners/11,144 guards/conversions unchanged. Bank `game-node-effect-registration-test/after.json`.
+- [x] Update README aggregates only: total 3,376, Game 2,703, 2,091 different, zero drift. Detailed recovery stays in Note1121.
+- [x] Preserve shared callback/unregister prototypes in the cleanup stub-owner fixture, retaining all strict comparisons. Pass all 37 post-install focused tests in221.412s, zero skips/errors/failures.
+- [x] Pass ten shared padder tests/tools/syntax/driver/profile/CLI/whitespace; validate 103 documents/4,200 relative links, zero broken; bank the coherent recovery.
+- [ ] Recover next local `func_15033AD8`, 65 words/frame0x40, timer-gated effect creation. Static inventory only.
+- [ ] Continue wider Game/resolver/full callee/hardware/gameplay/PC-port qualification.
+
+Resume from `game-node-effect-registration-test/after.json`; actual tile-scroll
+execution qualifies ordering, not complete effect allocation/callback behavior.
+
 ## Game Attachment State Latch Direct Match - 2026-10-08
 
 [Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md):
@@ -13,7 +32,7 @@
 - [x] Update README aggregates only: total 3,375, Game 2,702, 2,092 different, zero drift. Detailed recovery stays in Note1120.
 - [x] Pass all 29 post-install focused tests in233.647s, zero skips/errors/failures; ten shared padder tests/tools/syntax/driver/profile/whitespace checks pass.
 - [x] Validate 102 documents/4,183 relative links, zero broken; bank the coherent source, candidate screen, tests and handoff.
-- [ ] Recover next local `func_150339C8`, 68 words/frame0x40, effect-registration gate. Static inventory only.
+- [x] Recover/match `func_150339C8` directly in [Note 1121](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md).
 - [ ] Continue wider Game/resolver/full callee/hardware/gameplay/PC-port qualification.
 
 Resume from `game-node-attachment-latch-test/after.json`; controlled callback
