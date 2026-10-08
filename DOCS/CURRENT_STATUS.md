@@ -22,6 +22,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery work:
+[Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md).
+Complete `func_15033838` is installed: all 100 words/frame0x20 directly exact,
+no guards, padding, generated data or profile changes. Recover action/type/
+subtype gates, mode-6 bypass, ordered activation/hold fields and latch writes
+before callbacks. Qualification: 33,792 guest cases, 794,368 actual native32
+executions, 99/100 reachable words, six lazy gates, 23 faults, four aliases,
+eight effective negatives, 39 owner neighbors and three padder/call links.
+Only target changes across 6,058 symbols; other 6,057 bodies, all addresses,
+protected sections, 720 data owners, 11,144 guards and conversions unchanged.
+Exact total 3,375/5,467 (61.73%), Game 2,702/4,794 (56.36%), 2,092 different,
+zero drift. README aggregates only. New baseline:
+`game-node-attachment-latch-test/after.json`. Initial seven tests pass in43.922s;
+strengthened native test passes in1.141s. All 29 post-install focused tests
+pass in233.647s, zero skips/errors/failures; ten shared padder tests/tools/
+syntax/driver/profile/whitespace checks pass. Documentation validation:
+102 documents/4,183 relative links, zero broken.
+Next local `func_150339C8`, 68 words/frame0x40, effect-registration gate;
+inventory only. Full callback/runtime and wider Game work remain open.
+
+Previous Game recovery work:
 [Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md).
 Complete `func_150335C8` and its final helper `func_15030D54` are installed:
 113 words/frame0x168 and45 words/frame0x20 directly exact, no guards/padding/

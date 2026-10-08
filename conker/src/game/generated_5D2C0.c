@@ -1,4 +1,5 @@
 #include <ultra64.h>
+void func_151026BC(u8 *, s32, s32, s32, s32, s32);
 u8 *func_15083568(u8 *, s32, f32, s32);
 void func_15048B10(f32 [4][4], f32 [4][4]);
 void func_150A9B0C(f32 [4][4], f32, f32, f32, f32, f32, f32);
@@ -1211,7 +1212,58 @@ s32 func_150337E4(u8 *arg0, s32 arg1) {
     return 0;
 }
 
-s32 func_15033838() {
+s32 func_15033838(u8 *node, u8 *actor) {
+    s32 valid;
+    s32 mode;
+    u8 *attached;
+
+    valid = 0;
+    if (node[6] == 0x16) {
+        mode = 4;
+        if (*(u16 *)(actor + 0x84) == 0x165) {
+            valid = 1;
+        }
+    } else if (node[6] == 0x89) {
+        mode = 6;
+        if (*(u16 *)(actor + 0x84) == 0x221 ||
+            *(u16 *)(actor + 0x84) == 0x223 ||
+            *(u16 *)(actor + 0x84) == 0x31B) {
+            if ((*(u8 **)(actor + 0x31C))[0x198] == 2) {
+                valid = 1;
+            }
+        }
+    } else {
+        mode = 5;
+        if (*(u16 *)(actor + 0x84) == 0x157) {
+            valid = 1;
+        }
+    }
+    if (*(s32 *)(node + 0x38) == 0) {
+        if (valid != 0) {
+            attached = *(u8 **)(actor + 0x31C);
+            if ((attached[0x197] != 0 || mode == 6) &&
+                (*(u16 *)(attached + 0x8A) & 0x2000) == 0x2000 &&
+                *(u16 *)(attached + 0x19E) == 0) {
+                *(s32 *)(node + 0x38) = 1;
+                func_151026BC(actor, -1, mode, 1, 255, 1);
+            }
+        }
+    } else {
+        if (valid != 0) {
+            attached = *(u8 **)(actor + 0x31C);
+            if ((*(u16 *)(attached + 0x8A) & 0x2000) != 0) {
+                if (attached[0x197] != 0) {
+                    goto done;
+                }
+                if (mode == 6) {
+                    goto done;
+                }
+            }
+        }
+        *(s32 *)(node + 0x38) = 0;
+        func_151027E8(actor);
+    }
+done:
     return 0;
 }
 

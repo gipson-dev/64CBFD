@@ -1,5 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Game Attachment State Latch Direct Match - 2026-10-08
+
+[Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md):
+
+- [x] Recover complete `func_15033838`: action/type/subtype modes, required attachment fields, lazy gates, any-nonzero latch and distinct activation/hold read order.
+- [x] Recover latch writes before enable/disable callbacks, actor-home reload after an alias store, and unchanged callback mutations on return.
+- [x] Emit all 100 words/frame0x20 directly under existing O2/g3; common return label, no guards, filler, data or profile changes.
+- [x] Qualify 33,792 guest cases, 794,368 actual native32 executions, 99 reachable words, six lazy gates, 23 fault prefixes, four aliases and eight effective semantic negatives. Add independent native mode-6 activation cases beyond the correlated type sweep.
+- [x] Check 39 actual owner neighbors, pools/relative relocations and real padder slot across three independent entry/call links.
+- [x] Rebuild/audit 6,058 symbols: only target changes, all addresses/extents/protected sections/720 data owners/11,144 guards/conversions unchanged. Bank `game-node-attachment-latch-test/after.json`.
+- [x] Update README aggregates only: total 3,375, Game 2,702, 2,092 different, zero drift. Detailed recovery stays in Note1120.
+- [x] Pass all 29 post-install focused tests in233.647s, zero skips/errors/failures; ten shared padder tests/tools/syntax/driver/profile/whitespace checks pass.
+- [x] Validate 102 documents/4,183 relative links, zero broken; bank the coherent source, candidate screen, tests and handoff.
+- [ ] Recover next local `func_150339C8`, 68 words/frame0x40, effect-registration gate. Static inventory only.
+- [ ] Continue wider Game/resolver/full callee/hardware/gameplay/PC-port qualification.
+
+Resume from `game-node-attachment-latch-test/after.json`; controlled callback
+hooks qualify this routine's contract, not complete original callees.
+
 ## Game Matrix Creation And Transform Setup Direct Matches - 2026-10-08
 
 [Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md):
@@ -14,7 +33,7 @@
 - [x] Pass28 post-install focused tests in176.922s, no skips/errors/failures; ten shared padder tests/tools/syntax/CLI/owner/profiles/whitespace pass.
 - [x] Strengthen required helper-storage probes; final eight-test run passes in48.566s, including all twenty fault prefixes/native cases, no skips/errors/failures.
 - [x] Validate101 documents/4,169 relative links,zero broken; bank the coherent caller/helper recovery, tests and handoff.
-- [ ] Recover next local `func_15033838`,100 words/frame0x20, attachment-state latch. Static inventory only.
+- [x] Recover/match `func_15033838` directly in [Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md).
 - [ ] Continue wider Game, resolver and complete callee/hardware/gameplay/PC-port qualification.
 
 Resume from `game-node-matrix-creation-test/after.json`; controlled matrix callbacks

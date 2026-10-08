@@ -4,6 +4,36 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Attachment State Latch Matching
+
+[Candidate driver](../tools/experiments/game_node_attachment_latch_candidates.py)
+retains complete `func_15033838`, C100/frame0x20 directly exact under existing
+O2/g3. A shared zero return and separate hold-condition jumps recover the
+retail branch-likely layout; nested early return is C102/21 differences.
+Eighteen forms, four profiles, 80 ordinary executions and eight effective
+semantic negatives retain source-fit evidence. No guards/padding/data/profile
+or shared-header changes.
+
+[Seven tests](../tools/tests/test_game_node_attachment_latch_match.py) qualify
+33,792 guest cases, all selector/active/subtype bytes, unsigned type boundaries,
+flags/counters/nonzero latch patterns, callback observations/mutations and two
+SP phases. Six lazy cases, 23 faults and four aliases preserve read order and
+pre-callback writes. Native32 executes 794,368 cases with all unsigned types
+and separate mode-6 activation grids; all input canaries and callback arguments
+are checked. Actual owner/padder preserves 39 neighbors and pools/relocations;
+three links qualify both calls independently of entry. Complete callback
+implementations and gameplay/hardware/PC-port acceptance are not claimed.
+
+```sh
+python3 -m tools.experiments.game_node_attachment_latch_candidates
+python3 -m tools.experiments.game_node_attachment_latch_candidates --profiles
+python3 -m unittest tools.tests.test_game_node_attachment_latch_match -v
+```
+
+Ignored receipts/current installed baseline:
+`conker/build/game-node-attachment-latch-test/after.json`.
+See [Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md).
+
 ## Matrix Creation And Transform Setup Matching
 
 [Caller driver](../tools/experiments/game_node_matrix_creation_candidates.py)

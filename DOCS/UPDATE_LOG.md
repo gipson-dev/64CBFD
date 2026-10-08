@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-08 Game Attachment State Latch Direct Match
+
+[Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md):
+Install complete `func_15033838`, all 100 words/frame0x20 directly exact,
+down from 98 placeholder differences. Recover action/type/subtype modes,
+distinct activation/hold gates and latch writes before callbacks. No new
+guards, padding, data, profile or shared-header changes. Qualify 33,792 guest
+and 794,368 actual native32 cases, 99 reachable words, six lazy gates, 23
+faults, four aliases, eight effective negatives, 39 actual owner neighbors
+and three padder entry/call links. Only target changes across 6,058 symbols;
+all addresses/extents/protected sections/720 data owners/11,144 guards and
+conversions intact. Exact total 3,375/5,467 (61.73%), Game 2,702/4,794 (56.36%),
+2,092 different, zero drift. README aggregates only; new baseline
+`game-node-attachment-latch-test/after.json`. Initial seven tests pass in43.922s;
+strengthened native test passes in1.141s. All 29 post-install focused tests
+pass in233.647s, zero skips/errors/failures; ten shared padder tests/tools/
+syntax/driver/profile/whitespace pass. Documentation:102 documents/4,183
+relative links, zero broken.
+Next local `func_150339C8`, 68 words/frame0x40, inventory only. Wider Game,
+complete callbacks, hardware/gameplay/PC-port acceptance remain open.
+
 ## 2026-10-08 Game Matrix Creation And Transform Setup Direct Matches
 
 [Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md):

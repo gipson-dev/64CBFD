@@ -51,7 +51,13 @@ confirmed.
 
 ## Planning and history
 
-- [Latest matrix creation and transform setup direct matches](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md):
+- [Latest attachment state latch direct match](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-20261008.md):
+  complete `func_15033838`, all 100 words/frame0x20 directly exact. Ordered
+  activation/hold gates and callback latch lifetime qualify with guest/native,
+  fault/alias/negative/owner/padder checks. Only target changes; data/guards/
+  conversions intact. New `game-node-attachment-latch-test/after.json`;
+  next local `func_150339C8`. Full callback/runtime work remains open.
+- [Previous matrix creation and transform setup direct matches](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md):
   complete caller/helper C113/frame0x168 andC45/frame0x20 directly exact.
   Live argument homes, matrix outputs, position reset and allocation/alias
   contracts qualify with connected guest/native checks; full matrix libraries
