@@ -54,6 +54,33 @@ confirmed.
 
 ## Planning and history
 
+- [Latest selected-player state direct conversion and banking](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md):
+  `func_151D87E0`,34 words/frame0 directly exact; ordered selected mapping/
+  flag reads and early returns qualify. Eight installed tests pass,173,184
+  guest /3,608,576 native32 cases and bounded actual caller gate. All bodies/
+  data/guards unchanged; sole136-byte conversion. Authorized tools/source
+  checkpoint banks Notes1126-1129, no push. Next retained111-word full caller
+  `func_151D8868`; positive continuation and wider gameplay remain open.
+
+- [Latest record player-mask direct conversion](WORKING_NOTES/1128-game-record-player-mask-direct-conversion-20261008.md):
+  `func_151D8B24`,25 words/frame0x20 directly exact; live mask/callback
+  lifetime, actual clearer aliases and both complete direct callers qualify.
+  Eight installed tests pass; all bodies/data/guards unchanged, sole100-byte
+  conversion. Next34-word `func_151D87E0` has a direct complete candidate,
+  pending qualification and installation.
+
+- [Latest record distance-level direct conversion](WORKING_NOTES/1127-game-record-distance-level-direct-conversion-20261008.md):
+  `func_151D8C00`,87 words/frame0x38 directly exact; typed layout/caller,
+  complete unsigned conversion and wrapper connection qualify. All bodies/
+  data/guards unchanged; sole348-byte conversion. Focused workflow, zero
+  Claude calls; next25-word `func_151D8B24` live player-mask loop.
+
+- [Latest embedded record callback conversion](WORKING_NOTES/1126-game-embedded-record-callback-direct-conversion-20261008.md):
+  `func_151D8BE0`,8 words/frame 0x18 directly exact. Callback table/JALR and
+  embedded+0x18 transport qualify; all bodies/data/guards unchanged. Eight
+  post tests pass in 33.021s; focused workflow, zero Claude calls. External Git
+  commits preserved. Next 87-word helper has a directly exact complete C
+  candidate, but behavior/owner qualification and installation remain open.
 - [Latest node group swap direct conversion and workflow](WORKING_NOTES/1125-game-node-group-swap-direct-conversion-20261008.md):
   complete `func_15033EC4`, 18 words/frame0 directly exact; full32 comparisons,
   byte swaps and captured-current/live-future links qualify. Eight post-install

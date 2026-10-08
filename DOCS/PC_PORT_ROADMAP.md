@@ -1,5 +1,64 @@
 # PC Port Roadmap located in another project folder
 
+## Selected-Player State And Commit Checkpoint - 2026-10-08
+
+[Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md):
+
+- [x] Convert complete `func_151D87E0`:34 words/frame0 directly exact; ordered selected-only byte reads and invalid-first/ready-first returns preserved.
+- [x] Pass173,184 guest /3,608,576 native32 cases, all34 reachable words,24 fault prefixes and seven effective compiled negatives.
+- [x] Preserve ten owner neighbors/pools/relocations; actual padder emits136 bytes, eight independently rebased links/32 executions pass.
+- [x] Execute24,576 actual caller-prefix/real-epilogue gate cases; explicitly retain synthetic positive-continuation and full-caller/gameplay boundary.
+- [x] Pass all eight installed tests, ten shared checks and both tools checks; audit all6,058 bodies/data/11,146 guards unchanged, sole136-byte conversion. New baseline; root README aggregates only.
+- [x] Bank completed Notes1126-1129 in coherent tools/source checkpoints per "Keep commited" request; tools7f3c323/fbd3fd8 first, parent records fbd3fd8 pin. No push.
+- [x] Inventory retained next `func_151D8868`:111 words/frame0x30, ordered gates, live player loop, allocator/copy/registration flow; static evidence only.
+- [ ] Recover/fit/qualify the complete `func_151D8868`, including positive continuation, byte argument widths, failures, mutations/copy aliases and saved-register lifetime.
+- [ ] Resolve Graphify reduced-corpus refresh separately; preserve old graph and existing ignore changes.
+- [ ] Continue wider Game/full callee/hardware/gameplay/PC-port work.
+
+## Record Player-Mask Direct Conversion - 2026-10-08
+
+[Note 1128](WORKING_NOTES/1128-game-record-player-mask-direct-conversion-20261008.md):
+
+- [x] Convert complete `func_151D8B24`:25 words/frame0x20 directly exact; per-player mask reloads, byte counter and captured owner preserved.
+- [x] Qualify all197,120 guest /1,114,368 native32 cases, twelve faults, seven negatives and all25 reachable words.
+- [x] Execute actual13-word clearer across25,600 mapping/alias cases and both11-word callers across3,072 cases; retain controlled later-helper boundary.
+- [x] Preserve ten owner neighbors, pools/relocations and symbolic call; real padder and five independent links pass. Caller pointer casts do not alter instructions.
+- [x] Pass installed eight-test suite and shared/tools checks; audit all6,058 bodies/data/11,146 guards unchanged, sole100-byte conversion. Record baseline and README aggregate rows only.
+- [x] Screen complete next `func_151D87E0`:34 words/frame0 directly exact, no pools/diagnostics; preserve ignored candidate.
+- [x] Qualify/convert `func_151D87E0` in [Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md): byte mask, ordered reads/returns, lazy accesses, native32, owner/rebases and bounded actual caller gate pass; installed directly.
+- [ ] Resolve Graphify reduced-corpus refresh separately; preserve old graph, external commits and dirty work.
+- [ ] Continue wider Game/full caller/hardware/gameplay/PC-port work.
+
+
+## Record Distance-Level Direct Conversion - 2026-10-08
+
+[Note 1127](WORKING_NOTES/1127-game-record-distance-level-direct-conversion-20261008.md):
+
+- [x] Convert complete `func_151D8C00`:87 words/frame0x38 directly exact, no guards/filler/data/profile changes.
+- [x] Recover local typed parameters and forward declaration; explicit embedded-record cast preserves all8 wrapper words.
+- [x] Pass focused helper/wrapper qualification:49,152 guest /6,144 native32 helper cases,72 mutations/aliases, ten faults, six negatives,48 connections, ten neighbors and five independent links.
+- [x] Audit all6,058 bodies/addresses/extents/protected sections/data/11,146 guards unchanged; only348-byte asm-to-C row changes. Record distance-level baseline; README aggregates only.
+- [x] Pass shared padder/tools checks and mirror target fixtures; zero Claude calls, preserve external commits and unrelated dirty work.
+- [x] Screen complete adjacent `func_151D8B24`:25 words/frame0x20 directly exact under O2/g3, no pools/diagnostics; ignored candidate retained.
+- [x] Qualify and convert `func_151D8B24` in [Note 1128](WORKING_NOTES/1128-game-record-player-mask-direct-conversion-20261008.md): repeated mask reads, mutations, native32, actual caller/clearer and copied-owner gates pass; installed directly.
+- [ ] Resolve Graphify reduced-corpus refresh separately; preserve old graph, no forced overwrite.
+- [ ] Continue wider Game/full caller/hardware/gameplay/PC-port work.
+
+
+## Embedded Record Callback Direct Conversion - 2026-10-08
+
+[Note 1126](WORKING_NOTES/1126-game-embedded-record-callback-direct-conversion-20261008.md):
+
+- [x] Recover `func_151D8BE0` as a void one-record callback, forwarding original pointer and embedded+0x18; verify actual table and signed-selector JALR interface.
+- [x] Emit all 8 words/frame 0x18 directly; no guards, filler, data, profile or header changes. Preserve reference assembly and symbolic call.
+- [x] Pass eight pre/post tests in 29.054s/33.021s,131,248 guest /1,048,576 native32 cases,96 mutation/alias and 96 dispatch cases, ten faults, ten owner neighbors and six links.
+- [x] Audit all 6,058 bodies/addresses/extents/protected sections/data/11,146 guards unchanged, actual linked table/prefix retail-exact; only 32-byte asm-to-C row changes. Record wrapper baseline and README aggregates only.
+- [x] Pass ten shared checks and tools/syntax/driver/profile/CLI gates; use zero Claude calls and explicit prior-receipt reuse.
+- [x] Screen complete adjacent `func_151D8C00`:87 words/frame 0x38 directly exact, no pools/diagnostics, but no production installation yet.
+- [x] Qualify and install helper in [Note 1127](WORKING_NOTES/1127-game-record-distance-level-direct-conversion-20261008.md); FP/unsigned conversion, callbacks/homes/aliases, native32, actual wrapper connection and typed owner-local declaration pass, preserving all linked bodies.
+- [ ] Resolve Graphify corpus refresh separately; preserve external source/tools commits and unrelated dirty work. No commit/push by Codex this turn.
+- [ ] Continue wider Game/resolver/full caller/hardware/gameplay/PC-port work.
+
 ## Workflow And Node Group Swap - 2026-10-08
 
 [Note 1125](WORKING_NOTES/1125-game-node-group-swap-direct-conversion-20261008.md):
@@ -10,8 +69,9 @@
 - [x] Preserve all 6,058 linked bodies/addresses/extents/protected sections/data/11,146 guards; only the 72-byte conversion row changes. Record swap baseline; README aggregate rows only.
 - [x] Pass ten shared padder checks and tools/syntax/driver/profile/CLI checks; reuse unchanged broad-suite receipts explicitly, not as freshly rerun tests.
 - [ ] Resolve Graphify reduced-corpus refresh separately; do not force replace the old graph or undo user ignore changes.
-- [ ] Commit/publish when requested; preserve pre-existing mounted 35dd106 versus parent ddbdd16 tools-pin difference and unrelated changes.
-- [ ] Recover/convert next retained `func_151D8BE0`, 8-word wrapper, after verifying actual caller/return contract.
+- [x] Commit completed local work in later [Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md) authorized checkpoint; bank tools first and parent pin second, preserving prior commits/unrelated changes.
+- [ ] Publish tools before the parent when requested; no push authorized by the local commit request.
+- [x] Recover/convert `func_151D8BE0` directly in [Note 1126](WORKING_NOTES/1126-game-embedded-record-callback-direct-conversion-20261008.md), preserving callback-table ABI and embedded-record transport.
 - [ ] Continue wider Game/resolver/full caller/hardware/gameplay/PC-port qualification.
 
 ## Game Node Group Collector Direct Conversion - 2026-10-08

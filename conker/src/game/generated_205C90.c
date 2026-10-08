@@ -3,31 +3,85 @@ extern u8 D_800E0A00;
 
 /* Non-matching placeholders for the text-only asm slice asm/205C90.s. */
 
-s32 func_151D8C00();
+typedef struct {
+    f32 x, y, z;
+    f32 inner, width, inverseWidth;
+    u8 player;
+} RecordDistanceLevel;
+f32 *func_15144B34(s32 player);
+f32 func_15143E64(f32 *vector);
+
+void func_151D8C00(u8 *owner, RecordDistanceLevel *parameters);
+extern u8 D_80084060[];
+extern u8 D_800BE944[];
+void func_1501C17C(u8 player);
 void func_15169260(s32, s32, s32, u8);
 extern u8 D_800AB300[];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D87E0.s")
+s32 func_151D87E0(u8 mask) {
+    u8 player;
+    u8 index;
+    for (player = 0; player < 4; player++) {
+        if (mask & (1 << player)) {
+            index = D_80084060[player];
+            if (index >= 4) {
+                return 0;
+            }
+            if (D_800BE944[index] != 0) {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8868.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8A24.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8B24.s")
+void func_151D8B24(u8 *owner) {
+    u8 player;
+    for (player = 0; player < 4; player++) {
+        if (owner[0x13] & (1 << player)) {
+            func_1501C17C(player);
+        }
+    }
+}
 
 s32 func_151D8B88(s32 arg0) {
-    func_151D8B24(arg0);
+    func_151D8B24((u8 *)arg0);
     func_15169804(arg0);
 }
 
 s32 func_151D8BB4(s32 arg0) {
-    func_151D8B24(arg0);
+    func_151D8B24((u8 *)arg0);
     func_15169824(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8BE0.s")
+void func_151D8BE0(u8 *record) {
+    func_151D8C00(record, (RecordDistanceLevel *)(record + 0x18));
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8C00.s")
+void func_151D8C00(u8 *owner, RecordDistanceLevel *parameters) {
+    f32 *origin;
+    f32 delta[3];
+    f32 distance;
+    f32 level;
+
+    origin = func_15144B34(parameters->player);
+    delta[0] = parameters->x - origin[0];
+    delta[1] = parameters->y - origin[1];
+    delta[2] = parameters->z - origin[2];
+    distance = func_15143E64(delta);
+    if (distance < parameters->inner) {
+        level = 1.0f;
+    } else if (parameters->inner + parameters->width < distance) {
+        level = 0.0f;
+    } else {
+        level = 1.0f - (distance - parameters->inner) * parameters->inverseWidth;
+    }
+    owner[0x12] = (u32)(level * 8.0f);
+}
 
 void func_151D8D5C(u8 *arg0, f32 arg1, u8 arg2) {
     if (arg2 == 0x58) {

@@ -1,5 +1,56 @@
 # Update Log
 
+## 2026-10-08 Selected-Player State Conversion And Banking
+
+[Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md):
+`func_151D87E0` converts directly,34 words/frame0; ordered selected reads,
+invalid-first/ready-first returns and byte argument preserved. Installed eight
+tests pass in102.672s:173,184 guest /3,608,576 native32 cases,24 faults, seven
+negatives, copied owner/rebases and24,576 bounded actual caller-gate cases.
+All bodies/data/11,146 guards unchanged; sole136-byte conversion. Converted
+5,473/Game4,800; exact3,384/Game2,711;2,089 different/zero drift. README
+aggregates only. Tools7f3c323/fbd3fd8 bank completed fixtures first; source
+checkpoint includes Notes1126-1129 and fbd3fd8 pin per "Keep commited" request.
+No push; older dirty standalone tools preserved. Zero Claude calls; graph
+refresh incomplete. Next full111-word `func_151D8868`, still retained assembly.
+
+## 2026-10-08 Record Player-Mask Direct Conversion
+
+[Note 1128](WORKING_NOTES/1128-game-record-player-mask-direct-conversion-20261008.md): `func_151D8B24` converts
+directly,25 words/frame0x20, preserving per-player live mask reads and callbacks.
+Installed eight tests pass in145.264s;197,120 guest /1,114,368 native32 cases,
+twelve faults, seven negatives and actual clearer/both complete caller paths.
+All bodies/data/11,146 guards unchanged; sole100-byte conversion changes.
+Converted5,472/Game4,799; exact3,383/Game2,710;2,089 different/zero drift.
+Mirrored target tools, zero Claude calls, no Codex commit/push. Next complete
+34-word `func_151D87E0` candidate already directly exact, still uninstalled.
+
+
+## 2026-10-08 Record Distance-Level Direct Conversion
+
+[Note 1127](WORKING_NOTES/1127-game-record-distance-level-direct-conversion-20261008.md): `func_151D8C00` converts
+directly,87 words/frame0x38; typed parameters/caller cast and complete unsigned
+conversion retained. Focused helper/wrapper gates pass,49,152 guest /6,144
+native32 helper cases, six negatives and48 complete connected cases.
+All bodies/data/11,146 guards unchanged; only348-byte conversion changes.
+Converted5,471/Game4,798; exact3,382/Game2,709;2,089 different/zero drift.
+Mirrored tools, zero Claude calls; external commits preserved, no Codex
+commit/push. Next25-word `func_151D8B24` live player-mask loop.
+
+
+## 2026-10-08 Embedded Record Callback Direct Conversion
+
+[Note 1126](WORKING_NOTES/1126-game-embedded-record-callback-direct-conversion-20261008.md):
+`func_151D8BE0` converts directly,8 words/frame 0x18, no guards/data/profile
+changes. Qualify actual callback table/JALR, original pointer/embedded+0x18
+and ignored result. Eight pre/post tests pass in 29.054s/33.021s;131,248 guest,
+1,048,576 native32,96 aliases and 96 dispatch cases; ten shared checks pass.
+All bodies/data/guards unchanged; sole 32-byte conversion row changes.
+Converted 5,470/Game 4,797; exact 3,381/Game 2,708; 2,089 different/zero drift.
+Preserve external c73a85af source/8d84f4b tools commits; no Codex commit/push
+or runtime operation. Next complete `func_151D8C00` candidate emits all 87
+words directly but remains uninstalled pending behavioral/owner qualification.
+
 ## 2026-10-08 Workflow And Game Node Group Swap
 
 [Note 1125](WORKING_NOTES/1125-game-node-group-swap-direct-conversion-20261008.md):

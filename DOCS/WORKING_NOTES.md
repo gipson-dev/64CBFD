@@ -1,5 +1,52 @@
 # Working Notes
 
+2026-10-08 ([Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md)):
+Convert `func_151D87E0`,34 words/frame0 directly exact, no guards/data/profile
+changes. Ordered selected-byte reads and invalid/ready early returns qualify.
+Installed eight tests pass in102.672s:173,184 guest /3,608,576 native32 cases,
+24 faults, seven negatives, ten neighbors/eight links and24,576 bounded real
+caller-prefix/epilogue cases. Full positive continuation remains open.
+All bodies/data/11,146 guards unchanged; sole136-byte conversion. New baseline;
+converted5,473/Game4,800, exact3,384/Game2,711,2,089 different/zero drift.
+Authorized checkpoint banks completed Notes1126-1129; tools7f3c323/fbd3fd8
+committed first, source/docs include new pin. No push or standalone reset.
+Zero Claude calls; graph refresh incomplete. Next retained111-word caller
+`func_151D8868`; complete contract/source/continuation qualification pending.
+
+2026-10-08 ([Note 1128](WORKING_NOTES/1128-game-record-player-mask-direct-conversion-20261008.md)):
+Convert `func_151D8B24`,25 words/frame0x20 directly exact, no new guards/
+data/profile changes; reload mask each player and preserve owner across calls.
+Installed eight tests pass in145.264s,197,120 guest /1,114,368 native32 cases,
+twelve faults, seven negatives,25,600 actual clearer/alias and3,072 complete
+caller cases. All linked bodies/data/11,146 guards unchanged; sole100-byte
+conversion. New baseline; converted5,472/Game4,799, exact3,383/Game2,710,
+2,089 different/zero drift. Zero Claude calls; no Codex Git mutation.
+Next34-word `func_151D87E0` direct candidate remains uninstalled/unqualified.
+
+
+2026-10-08 ([Note 1127](WORKING_NOTES/1127-game-record-distance-level-direct-conversion-20261008.md)):
+Convert complete `func_151D8C00`,87 words/frame0x38 directly exact, no
+guards/data/profile changes. Typed declaration and embedded-record cast
+retain8-word wrapper. Pre/installed helper and wrapper suites pass;49,152
+guest /6,144 native32 helper cases,72 mutations/aliases, ten faults, six
+negatives,48 connected cases and ten owner neighbors. All linked bodies/
+data/11,146 guards unchanged, sole348-byte conversion. New baseline;
+converted5,471/Game4,798, exact3,382/Game2,709,2,089 different/zero drift.
+Zero Claude calls; no Codex Git mutation. Next25-word `func_151D8B24`.
+
+
+2026-10-08 ([Note 1126](WORKING_NOTES/1126-game-embedded-record-callback-direct-conversion-20261008.md)):
+Convert `func_151D8BE0` callback directly,8 words/frame 0x18, preserving table
+dispatch and record/embedded+0x18 ABI. Eight pre/post tests pass in 29.054s/
+33.021s;131,248 guest /1,048,576 native32 cases,96 aliases, ten faults,
+96 dispatch cases, ten neighbors/six links. All linked bodies/data/guards
+unchanged; only 32-byte conversion changes. Converted 5,470/Game 4,797,
+exact 3,381/Game 2,708, 2,089 different/zero drift. Ten shared checks pass,
+zero Claude calls. Preserve external source/tools commits; no Codex Git
+mutation. New wrapper baseline. Next 87-word `func_151D8C00` semantic body
+already directly exact in experiment, not installed/behavior-qualified.
+Graph refresh incomplete; wider Game/caller/runtime work remains open.
+
 2026-10-08 ([Note 1125](WORKING_NOTES/1125-game-node-group-swap-direct-conversion-20261008.md)):
 Apply [workflow](AGENT_WORKFLOW.md) and convert `func_15033EC4` directly:
 18 words/frame0, no guards/filler/data/profile change. Eight pre/post tests

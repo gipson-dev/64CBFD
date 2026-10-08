@@ -11,8 +11,10 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Branch: `master`
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
-  2026-10-08 split and existing-checkout bootstrap. Game matching totals and
-  the next-function boundary below are unchanged.
+  2026-10-08 split and existing-checkout bootstrap. The latest authorized
+  checkpoint pins tools fbd3fd8; tools are committed before the source pin.
+  No push requested/performed. Preserve the independently dirty older
+  standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
   `2ed3523` (`tool updates`): generated-slice assembly support, restored guest
   routines, OGL reference tooling, RGBA5551 tooling, and documentation.
@@ -25,7 +27,72 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game recovery work:
+Latest Game recovery and authorized banking:
+[Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md).
+Convert retained `func_151D87E0`:34 words/frame0 directly exact, no guards/
+data/profile changes. Selected-only byte reads and invalid-first/ready-first
+returns qualify. Installed eight tests pass in102.672s:173,184 guest /
+3,608,576 native32 cases,24 fault prefixes, seven negatives, eight independent
+links and24,576 bounded actual caller-prefix/real-epilogue cases. Positive
+caller continuation is synthetic; full caller/gameplay remains open.
+All6,058 bodies/data/11,146 guards unchanged; sole136-byte conversion.
+Converted5,473/Game4,800; exact3,384/Game2,711;2,089 different/zero drift.
+New selected-player baseline; root README aggregates only. Bank completed
+Notes1126-1129 in coherent tools/source commits per "Keep commited" request.
+Tools7f3c323/fbd3fd8 committed locally; no push. Zero Claude calls.
+Next retained `func_151D8868`:111 words/frame0x30, complete contract/fitting
+and positive-continuation qualification pending. Graph refresh incomplete.
+
+Previous Game recovery work:
+[Note 1128](WORKING_NOTES/1128-game-record-player-mask-direct-conversion-20261008.md).
+Convert retained `func_151D8B24`:25 words/frame0x20 directly exact, no guards/
+data/profile changes. Live per-player mask reads, captured owner and byte
+counter qualify; explicit pointer casts retain both caller bodies.
+Installed eight tests pass in145.264s:197,120 guest /1,114,368 native32 cases,
+twelve faults, seven negatives,25,600 actual clearer/alias and3,072 complete
+caller cases. All6,058 bodies/data/11,146 guards unchanged; sole100-byte
+conversion. Converted5,472/Game4,799; exact3,383/Game2,710;2,089 different/
+zero drift. New player-mask baseline; root README aggregates only.
+Next retained `func_151D87E0` has a complete34-word direct candidate, not
+installed/behavior-qualified. Graph refresh incomplete; zero Claude calls,
+external source/tools commits preserved, no Codex commit/push.
+
+Previous Game recovery work:
+[Note 1127](WORKING_NOTES/1127-game-record-distance-level-direct-conversion-20261008.md).
+Convert retained `func_151D8C00`:87 words/frame 0x38 directly exact,
+typed parameters and forward declaration; wrapper cast retains its8 words.
+Eight pre tests pass, installed helper/wrapper16 tests pass; latest typed
+wrapper8 tests pass. Qualify49,152 guest /6,144 native32 helper cases,
+72 mutation/alias cases, ten faults, six negatives,48 connected cases and
+ten unchanged neighbors. All6,058 bodies/data/11,146 guards unchanged;
+sole348-byte conversion. Converted5,471/Game4,798; exact3,382/Game2,709;
+2,089 different/zero drift. Fresh distance-level baseline and README
+aggregates only. Source/tools commits and frozen OGL Release preserved.
+Next retained `func_151D8B24`:25-word four-player live-mask loop.
+Its complete ignored candidate already matches all25 words under O2/g3;
+mutation/native/caller qualification and installation remain pending.
+Graph refresh remains incomplete; no Codex commit/push or Claude calls.
+
+Previous Game recovery work:
+[Note 1126](WORKING_NOTES/1126-game-embedded-record-callback-direct-conversion-20261008.md).
+Convert retained `func_151D8BE0` callback to complete C: all 8 words/frame 0x18
+directly exact, no guards/data/profile changes. Actual table/dispatcher
+confirms one record argument, embedded+0x18 forwarding and ignored result.
+Eight pre/post tests pass in 29.054s/33.021s:131,248 guest /1,048,576 native32
+cases,96 mutation/alias cases, ten faults,96 actual indirect dispatch cases,
+ten owner neighbors and six independent links. All6,058 linked bodies/data/
+guards unchanged; only 32-byte conversion row changes. Converted 5,470,
+Game 4,797; exact 3,381, Game 2,708, 2,089 different/zero drift. Fresh baseline
+`game-record-embedded-callback-test/after.json`; ten shared checks pass.
+External commits advance source to c73a85af and parent/mounted tools pin to
+8d84f4b; preserve them. No commit/push by Codex; own source/test work remains
+local, standalone tools mirrored. Graph refresh still incomplete; old graph
+preserved. Zero Claude calls under the focused workflow.
+Next `func_151D8C00` complete candidate is already87 words/frame 0x38 directly
+exact, but remains assembly-backed pending FP/conversion/mutation/native/
+copied-owner and connected-wrapper qualification. Wider Game remains open.
+
+Previous Game recovery work:
 [Note 1125](WORKING_NOTES/1125-game-node-group-swap-direct-conversion-20261008.md).
 Convert retained `func_15033EC4` to complete C: all 18 words/frame0 directly
 exact, no new guards/filler/data/profile changes. Preserve full32 key
