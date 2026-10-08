@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-08 Game Node Cleanup Dispatcher Direct Match
+
+[Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md):
+Replace `func_15031C14`'s zero-return placeholder with complete void C134/frame
+`0x38`, reducing 129 differences to zero. Restore the null actor gate, 48-entry
+switch, flag clears/counter decrement, registration callback, private packet
+pair and final cleanup keys. Document the explicit volatile pointer home as
+a matching annotation, not a recovered original declaration. No guards,
+profile, Makefile or shared-header changes. Six pre-install tests pass in
+110.238 seconds, native32 separately in 0.917 seconds: 51,200 guest, 1,024
+null actor and 30,720 native32 cases, faults/controls/negatives, owner/padder/
+rebases. Only target changes across 6,058 symbols, all other bodies/addresses/
+extents/overflows/protected sections/720 data owners/11,063 guards/conversion
+hash unchanged. Exact total 3,369 (61.62%), Game 2,696 (56.24%), 2,098 different,
+zero drift. README aggregate matching rows only. New checkpoint
+`game-node-cleanup-test/after.json`; next local placeholder `func_15031E7C`.
+Bounded callbacks/native fixtures are not full callee, hardware or PC-port proof.
+All 66 installed cleanup/action/attachment/lookup/resolver regressions pass in
+439.488 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and
+94-document / 4,076-relative-link checks pass, zero broken links.
+
 ## 2026-10-08 Game Node Action Dispatcher Direct Match
 
 [Note 1111](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md):

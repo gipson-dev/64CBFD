@@ -1,5 +1,23 @@
 # Working Notes
 
+2026-10-08 ([Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md)):
+Recover complete direct C134/frame `0x38` for `func_15031C14`; 129 prior word
+differences become zero. Restore null actor gate, counter/flag clears, callback
+registration, private packet pair, post-call homes and cleanup keys. Explicit
+volatile pointer is a documented matching annotation, not original-source proof.
+No guards/profile/Makefile/shared-header changes. Six pre-install tests pass in
+110.238 seconds; native32 separately in 0.917 seconds. Qualify 51,200 guest,
+1,024 null actor, 30,720 native32 cases, faults/controls/negatives, shared pools,
+owner/padder/rebases. Only target changes across 6,058 symbols; all other
+bytes/addresses/extents/overflows/sections/720 data owners/11,063 guards and
+conversion hash preserved. Exact total 3,369, Game 2,696 (56.24%), 2,098
+different, zero drift; README aggregate matching rows only. New checkpoint
+`game-node-cleanup-test/after.json`. Next local placeholder `func_15031E7C`;
+`func_15031E2C` already exact; full callbacks/PC-port and matrix work stay open.
+All 66 installed cleanup/action/attachment/lookup/resolver regressions pass in
+439.488 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and
+94-document / 4,076-relative-link checks pass, zero broken links.
+
 2026-10-08 ([Note 1111](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md)):
 Recover exact C113/frame `0x28` for `func_15031A50`, complete two-table action
 dispatch, flags/counter wrap, call ABI, signed threshold and node incoming home.

@@ -4,6 +4,29 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Node cleanup dispatcher matching
+
+[Candidate driver](../tools/experiments/game_node_cleanup_candidates.py) fits
+the complete `func_15031C14`, C134/frame `0x38`, direct under existing O2/g3.
+Ten source forms and three additional profiles yield 13 controls / 3,328
+ordinary executions, two raw exact forms. The explicit volatile pointer home
+preserves retail's paired-call save/reload; it is not an original-source claim.
+
+[Seven tests](../tools/tests/test_game_node_cleanup_match.py) qualify 51,200
+guest cases, 1,024 null-actor cases, 30,720 actual native32 cases, fault prefixes,
+effective negatives, shared table ownership, 39 neighbors and actual padder/
+rebases. The earlier action-dispatcher owner test now preserves the later
+cleanup pool while explicitly checking its expected packed addend shift.
+Full callbacks, hardware and PC-port acceptance remain separate.
+See [Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md).
+
+```sh
+python3 -m tools.experiments.game_node_cleanup_candidates --profiles
+python3 -m unittest tools.tests.test_game_node_cleanup_match tools.tests.test_game_node_action_match -v
+```
+
+Ignored receipts/checkpoints: `conker/build/game-node-cleanup-test/`.
+
 ## Vector-basis recovery audit
 
 [Candidate driver](../tools/experiments/game_vector_basis_candidates.py) retains

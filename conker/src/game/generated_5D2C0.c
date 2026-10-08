@@ -1,4 +1,19 @@
 #include <ultra64.h>
+typedef struct {
+    u8 *actor;
+    u8 group;
+} NodeCleanupPacket;
+u8 *func_15083E90(s32);
+s32 func_15033BDC();
+void func_1000FD38(s32 (*)(), u8 *, u8 *);
+void func_15100180(u8 *);
+void func_151616D0(s32, s32, NodeCleanupPacket *);
+void func_15147D64(NodeCleanupPacket *, s32);
+void func_151494E0(NodeCleanupPacket *, s32);
+void func_151BD7F4(u8 *);
+void func_151D4668(u8 *);
+void func_151D747C(u8 *);
+void func_151027E8(u8 *);
 void func_151001B4(u8 *);
 void func_15163BE8(u8 *, s32, s32);
 void func_150D3360(u8 *, s32, s32);
@@ -242,8 +257,77 @@ void func_15031A50(u8 *node, u8 *actor) {
     }
 }
 
-s32 func_15031C14() {
-    return 0;
+void func_15031C14(u8 *node) {
+    u8 *actor;
+    NodeCleanupPacket first;
+    NodeCleanupPacket second;
+    u8 *state;
+    /* Preserve the retail private pointer home across the paired callbacks. */
+    NodeCleanupPacket *volatile packet;
+
+    actor = func_15083E90(node[0]);
+    if (actor == 0) {
+        return;
+    }
+    switch (node[1]) {
+        case 0x5A:
+            state = *(u8 **)(actor + 0x31C);
+            if (state != 0) {
+                *(u16 *)(state + 0x1A6) -= 0xAA;
+            }
+            break;
+        case 0x90:
+            *(u32 *)(actor + 0x9C) &= ~0x70;
+            break;
+        case 0x8F:
+            *(u32 *)(actor + 0x9C) &= ~0xE00;
+            break;
+        case 0x37:
+        case 0x4B:
+        case 0x4C:
+            func_1000FD38(func_15033BDC, node, actor);
+            if (node[1] == 0x37) {
+                func_15100180(actor);
+            }
+            break;
+        case 0x49:
+            first.actor = actor;
+            first.group = actor[0x3B];
+            func_151616D0(0x10, 0x29, &first);
+            break;
+        case 0x5D:
+            second.actor = actor;
+            second.group = actor[0x3B];
+            packet = &second;
+            func_15147D64(&second, 0x2E);
+            func_151494E0(packet, 0x2F);
+            break;
+        case 0x3D:
+            func_151BD7F4(actor);
+            break;
+        case 0x1A:
+        case 0x1B:
+        case 0x5F:
+        case 0x65:
+        case 0x66:
+            func_151D4668(actor);
+            break;
+        case 0x1D:
+        case 0x82:
+            func_151D747C(actor);
+            break;
+        case 0x85:
+        case 0x5E:
+            *(u32 *)(actor + 0x9C) &= ~0x6000;
+            break;
+    }
+    switch (node[6]) {
+        case 0x16:
+        case 0x63:
+        case 0x89:
+            func_151027E8(actor);
+            func_151D4668(actor);
+    }
 }
 
 s32 func_15031E2C(u8 *arg0, s32 arg1) {

@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Node Cleanup Dispatcher Direct Match - 2026-10-08
+
+[Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md):
+
+- [x] Recover/install complete `func_15031C14`, all 134 words/frame `0x38` directly exact; no guards, profile, Makefile or shared-header changes.
+- [x] Preserve actor-resolution null gate, 48-target switch, decrement wrap, flag clears, registration and paired packet callbacks, post-call node/cached actor homes and final cleanup keys.
+- [x] Explicitly document the volatile pointer home as a matching annotation, not an original-source declaration claim; preserve selected incidental V0 without inventing a C return value.
+- [x] Qualify 51,200 guest, 1,024 null-actor and 30,720 native32 cases, nine required faults, 13 controls / 3,328 ordinary executions and four effective negatives.
+- [x] Preserve 39 copied-owner neighbors and existing 55 table targets; qualify the new 48 targets at shared pool offset 220, real padder and independent symbol/entry/carry rebases.
+- [x] Rebuild/audit all 6,058 symbols/6,042 slots; only target changes, all other bodies/addresses/extents/overflows/protected sections/720 data owners/11,063 guards/conversion hash unchanged. README matching aggregates only.
+- [x] Pass all 66 installed cleanup/action/attachment/lookup/resolver regressions in 439.488 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and 94-document / 4,076-relative-link checks pass, zero broken links. Bank the qualified match.
+- [ ] Continue remaining Game functions, next local `func_15031E7C`; `func_15031E2C` already exact. Full callbacks/hardware/PC-port and matrix boundaries remain open.
+
+Resume from `game-node-cleanup-test/after.json`. The replaced C placeholder
+was already counted as converted; conversion totals and byte percentages do not change.
+
 ## Game Node Action Dispatcher Direct Match - 2026-10-08
 
 [Note 1111](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md):
@@ -10,7 +26,8 @@
 - [x] Pass seven pre-install tests in 68.216 seconds: 61,440 guest / 30,720 native32 cases, all instructions/selectors, lazy/faults, 15 controls/3,840 ordinary executions, effective negatives, 39 owner neighbors and padder/symbol rebases.
 - [x] Rebuild/audit 6,058 symbols/6,042 slots; only target changes, all other bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards/conversion hash preserved. README aggregate rows only.
 - [x] Pass all 59 installed action/attachment/lookup/resolver regression tests in 436.351 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and 93-document / 4,062-relative-link checks pass, zero broken links. Bank this match.
-- [ ] Continue remaining Game functions, next local `func_15031C14`; full callbacks/hardware/PC-port, resolver key move and matrix boundaries remain open.
+- [x] Recover the next local cleanup routine `func_15031C14`; see [Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md).
+- [ ] Continue remaining Game functions; full callbacks/hardware/PC-port, resolver key move and matrix boundaries remain open.
 
 Resume from `game-node-action-test/after.json`. This replaces an already-counted
 C placeholder; conversion counts and byte percentages do not change.

@@ -293,7 +293,9 @@ for(action=0;action<256;action++)for(r=0;r<6;r++)for(c=0;c<5;c++)for(m=0;m<4;m++
             invalid_pointers_private_homes_full_callees_not_claimed=True))
 
     def qualify_owner(self):
+        from tools.experiments import game_node_cleanup_candidates as cleanup
         source = (self.root / 'conker/src/game/generated_5D2C0.c').read_text()
+        has_cleanup = cleanup.SELECTED in source
         if screen.SELECTED in source:
             source = source.replace(screen.SELECTED, STUB).replace(screen.DECLARATIONS+'\n', '', 1)
         self.assertEqual(source.count(STUB), 1)
@@ -318,14 +320,30 @@ for(action=0;action<256;action++)for(r=0;r<6;r++)for(c=0;c<5;c++)for(m=0;m<4;m++
             if name == screen.FUNCTION:
                 continue
             previous = old_functions[name]
+            expected_text = bytearray(old_text[previous['value']:previous['value']+previous['size']])
+            if has_cleanup and name == cleanup.FUNCTION:
+                # Removing this earlier dispatcher shifts the later pool by 55 entries.
+                self.assertEqual(struct.unpack_from('>I', expected_text, 132)[0]&65535, 0)
+                struct.pack_into('>I', expected_text, 132, struct.unpack_from('>I', expected_text, 132)[0]+220)
             self.assertEqual(text[current['value']:current['value']+current['size']],
-                old_text[previous['value']:previous['value']+previous['size']], name)
+                expected_text, name)
             self.assertEqual({o-current['value']: r for o, r in rel.items()
                 if current['value'] <= o < current['value']+current['size']},
                 {o-previous['value']: r for o, r in old_rel.items()
                 if previous['value'] <= o < previous['value']+previous['size']}, name)
-        self.assertEqual(normalized_pools(objects[0]), {'.rodata': None, '.data': None})
-        self.assertEqual(normalized_pools(objects[1]), normalized_pools(self.out / 'selected.o'))
+        before, after, target_pool = (normalized_pools(o) for o in (*objects, self.out / 'selected.o'))
+        if has_cleanup:
+            self.assertEqual(before['.data'], after['.data'])
+            old_raw, old_ids = before['.rodata']
+            new_raw, new_ids = after['.rodata']
+            self.assertEqual((len(old_raw), len(new_raw)), (192, 416))
+            self.assertEqual(new_raw[:220], target_pool['.rodata'][0][:220])
+            self.assertEqual(tuple(i for i in new_ids if i[1] == screen.FUNCTION), target_pool['.rodata'][1])
+            self.assertEqual(new_raw[220:], old_raw+bytes(4))
+            self.assertEqual(tuple((o-220, n, v) for o, n, v in new_ids if n != screen.FUNCTION), old_ids)
+        else:
+            self.assertEqual(before, {'.rodata': None, '.data': None})
+            self.assertEqual(after, target_pool)
         isolated_text, isolated, isolated_rel = parse_object(self.out / 'selected.o')
         target = functions[screen.FUNCTION]
         self.assertEqual(target['size'], isolated[screen.FUNCTION]['size'])
@@ -333,7 +351,8 @@ for(action=0;action<256;action++)for(r=0;r<6;r++)for(c=0;c<5;c++)for(m=0;m<4;m++
         self.assertEqual({o-target['value']: r for o, r in rel.items()
             if target['value'] <= o < target['value']+452}, isolated_rel)
         self.receipt('owner', dict(functions=len(functions), unchanged_neighbors=len(functions)-1,
-            target_isolated_equal=True, generated_pool_only_target_owned=True, warnings=0))
+            target_isolated_equal=True, added_pool_only_target_owned=True, warnings=0,
+            later_cleanup_pool_preserved=has_cleanup, expected_later_pool_addend_shift=220 if has_cleanup else 0))
         return objects[1]
 
     def test_copied_owner_and_real_padder_fixed_anchor_rebases(self):

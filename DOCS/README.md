@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest node cleanup dispatcher direct match](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md):
+  placeholder becomes exact C134/frame `0x38`, null actor gate, callback
+  registration, private packet pair and final cleanup keys. Documented volatile
+  pointer-home annotation; no guards/profile edits. Guest/native/owner/padder/
+  rebase checks qualify; only target changes, full callbacks/PC-port stay open.
 - [Latest node action dispatcher direct match](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md):
   placeholder becomes exact C113/frame `0x28`, recovered void API, both switch
   tables, flag/counter mutations and callback ABI. No instruction guards or

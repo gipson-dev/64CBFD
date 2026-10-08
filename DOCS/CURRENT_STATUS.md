@@ -22,6 +22,29 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest direct Game placeholder recovery:
+[Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md).
+`func_15031C14` now emits all 134 words/frame `0x38` directly, zero differences
+versus 129 previously. The complete cleanup dispatcher retains the null-actor
+gate, counter/flag clears, registration callback, two private packets, paired
+event lifetime and final cleanup keys. A documented volatile pointer home is
+a matching annotation, not proof of the original source declaration.
+No guards, compiler-profile, Makefile or shared-header changes. Six pre-install
+tests pass in 110.238 seconds; the native32 test passes separately in 0.917
+seconds. Qualification covers 51,200 guest / 1,024 null-actor / 30,720 native32
+cases, nine required faults, 13 controls / 3,328 ordinary executions and four
+effective negatives, complete table targets, copied owner/padder and rebases.
+Only target changes across 6,058 symbols; all other bytes/addresses/extents/
+overflows/protected sections/720 Game-data owners/11,063 guards/conversion hash
+remain intact. Exact total 3,369/5,467 (61.62%), Game 2,696/4,794 (56.24%),
+2,098 different, zero drift; conversion totals unchanged. Root README matching
+aggregates only. Checkpoint: `game-node-cleanup-test/after.json`.
+All 66 installed cleanup/action/attachment/lookup/resolver regression tests
+pass in 439.488 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace
+and 94-document / 4,076-relative-link checks pass, zero broken links.
+Next local placeholder: `func_15031E7C`; intervening `func_15031E2C` is already
+exact. Full callbacks/hardware/PC-port acceptance and matrix boundaries stay open.
+
+Previous direct Game placeholder recovery:
 [Note 1111](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md).
 `func_15031A50` now emits complete exact C113/frame `0x28`, both original
 switch tables, action/callback ABIs, flag/counter mutations and signed random
