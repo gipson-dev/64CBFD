@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Record Allocation And Player Registration - 2026-10-08
+
+[Note 1130](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md):
+
+- [x] Convert complete `func_151D8868`:111 words/444 bytes/frame0x30,109 direct words plus two strictly checked branch/limit-load scheduling guards.
+- [x] Qualify ordered early gates, live masks/limit, selected checks, allocation failure, eight-byte copy, registration reloads and captured-owner lifetime.
+- [x] Pass110,604 guest /2,163,968 native32 cases,2,056 lazy cases,68 fault prefixes,2,256 public mutation/alias cases and eight effective compiled negatives.
+- [x] Preserve ten owner neighbors/pools/relocations; actual padder emits444 bytes, six independent links/576 rebased executions check18 symbolic relocations.
+- [x] Execute9,216 complete actual predicate/constructor cases; keep later checks/allocator/SDK copy/registration and hardware/gameplay boundaries explicit.
+- [x] Pass all41 fresh constructor/four-neighbor tests, ten shared checks and both tools project checks; strict historical guard checks accept only original prefix plus exact two-row append.
+- [x] Audit all6,058 bodies/addresses/extents/protected sections/data unchanged, prior11,146 guards preserved plus two, sole444-byte conversion; record baseline and README aggregate rows only.
+- [x] Commit tools6e2e24d first and record its exact parent pin per "Keep commited" request; no push and preserve the older dirty standalone mirror.
+- [x] Screen next retained `func_151D8A24`:64 words/frame0x28, complete natural/wrapping-subtraction candidates each have four raw differences; ignored evidence retained.
+- [ ] Fit and qualify the complete `func_151D8A24`: signed timer truncation, callback selector/table, live mask/level reloads, clear-before-register calls and expiry/free lifetime.
+- [ ] Resolve Graphify reduced-corpus refresh separately; preserve old graph and existing ignore changes.
+- [ ] Continue wider Game/full callee/hardware/gameplay/PC-port work; OGL Release remains frozen.
+
 ## Selected-Player State And Commit Checkpoint - 2026-10-08
 
 [Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md):
@@ -11,7 +28,7 @@
 - [x] Pass all eight installed tests, ten shared checks and both tools checks; audit all6,058 bodies/data/11,146 guards unchanged, sole136-byte conversion. New baseline; root README aggregates only.
 - [x] Bank completed Notes1126-1129 in coherent tools/source checkpoints per "Keep commited" request; tools7f3c323/fbd3fd8 first, parent records fbd3fd8 pin. No push.
 - [x] Inventory retained next `func_151D8868`:111 words/frame0x30, ordered gates, live player loop, allocator/copy/registration flow; static evidence only.
-- [ ] Recover/fit/qualify the complete `func_151D8868`, including positive continuation, byte argument widths, failures, mutations/copy aliases and saved-register lifetime.
+- [x] Recover/fit/qualify the complete `func_151D8868` in [Note 1130](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md), including its positive continuation, byte widths, failures, mutations/nonoverlapping copy aliases and saved-register lifetime; later callees remain controlled.
 - [ ] Resolve Graphify reduced-corpus refresh separately; preserve old graph and existing ignore changes.
 - [ ] Continue wider Game/full callee/hardware/gameplay/PC-port work.
 

@@ -14,6 +14,15 @@ f32 func_15143E64(f32 *vector);
 void func_151D8C00(u8 *owner, RecordDistanceLevel *parameters);
 extern u8 D_80084060[];
 extern u8 D_800BE944[];
+#include <string.h>
+extern u8 D_800E0B94;
+extern u8 D_800BEAC0, D_800BEAC1, D_800BEAC2, D_800BEAC3;
+extern s32 D_80082FA0;
+s32 func_151D87E0(u8 mask);
+s32 func_15181CC8(s32 player);
+s32 func_1517EF00(s32 player);
+void *func_15167A68(s32 kind, s32 context, s32 bytes, s32 flag, u8 slot, u8 pool);
+void func_1501C010(u8 player, u8 level);
 void func_1501C17C(u8 player);
 void func_15169260(s32, s32, s32, u8);
 extern u8 D_800AB300[];
@@ -35,7 +44,40 @@ s32 func_151D87E0(u8 mask) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8868.s")
+u8 *func_151D8868(u8 *owner, s32 payloadBytes, u8 slot, s32 context) {
+    u8 validationPlayer;
+    u8 player;
+    u8 *record;
+
+    if (D_800E0B94 != 0) {
+        return NULL;
+    }
+    if (func_151D87E0(owner[5]) == 0) {
+        return NULL;
+    }
+    if (D_800BEAC0 || D_800BEAC1 || D_800BEAC2 || D_800BEAC3) {
+        return NULL;
+    }
+    for (validationPlayer = 0; validationPlayer <= D_80082FA0; validationPlayer++) {
+        if (owner[5] & (1U << validationPlayer)) {
+            if (func_15181CC8(validationPlayer) == 0 || func_1517EF00(validationPlayer) != 0) {
+                return NULL;
+            }
+        }
+    }
+    record = func_15167A68(0x3F, context, payloadBytes + 0x18, 1, slot, 1);
+    if (record == NULL) {
+        return NULL;
+    }
+    memcpy(record + 0xE, owner, 8);
+    for (player = 0; player < 4; player++) {
+        if (record[0x13] & (1U << player)) {
+            func_1501C010(player, owner[4]);
+        }
+    }
+    record[0x16] = owner[4];
+    return record;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8A24.s")
 

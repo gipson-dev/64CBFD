@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-08 ([Note 1130](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md)):
+Convert complete `func_151D8868`,111 words/frame0x30:109 direct words plus
+two guarded branch/limit-load scheduling words. Fresh41-test suite passes,
+110,604 guest /2,163,968 native32 constructor cases,68 fault prefixes, eight
+negatives,576 rebases and9,216 complete predicate connections. Later callees
+remain controlled; native C domains and hardware fault boundary explicit.
+All6,058 bodies/data unchanged; prior11,146 guards preserved plus two,
+sole444-byte conversion. Converted5,474/Game4,801, exact3,385/Game2,712,
+2,089 different/zero drift. Tools6e2e24d first, parent pin second, no push;
+older dirty mirror preserved. Next retained64-word `func_151D8A24` has four
+raw differences, still uninstalled/unqualified. Graph refresh incomplete.
+
 2026-10-08 ([Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md)):
 Convert `func_151D87E0`,34 words/frame0 directly exact, no guards/data/profile
 changes. Ordered selected-byte reads and invalid/ready early returns qualify.

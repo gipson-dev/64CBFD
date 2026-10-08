@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-08 Record Allocation And Player Registration
+
+[Note 1130](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md):
+`func_151D8868` is complete C,111 words/frame0x30;109 direct words and two
+strict scheduling guards. Ordered gates, live masks/limit, failure paths,
+copy and registration lifetime qualify. Expanded41 tests pass in601.805s,
+including nine target tests,110,604 guest /2,163,968 native32 cases and9,216
+complete predicate connections. All6,058 linked bodies/data unchanged;
+prior11,146 guards preserved plus two; sole444-byte conversion changes.
+Converted5,474/Game4,801; exact3,385/Game2,712;2,089 different/zero drift.
+Tools6e2e24d committed before parent pin; no push or standalone reset.
+Next64-word `func_151D8A24` candidate has four raw differences, uninstalled
+and unqualified. Wider callee/hardware/gameplay work and graph refresh open.
+README aggregates only; zero Claude calls, no OGL Release/runtime changes.
+
 ## 2026-10-08 Selected-Player State Conversion And Banking
 
 [Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md):

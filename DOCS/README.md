@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record allocation and player registration](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md):
+  `func_151D8868`,111 words/frame0x30;109 direct words plus two guarded
+  scheduling words. All41 fresh target/neighbor tests pass; complete predicate
+  connection, mutations, native32, copied owner and rebases qualify. All
+  bodies/data unchanged; two guards appended, sole444-byte conversion.
+  Tools6e2e24d committed first, parent pins it, no push. Next retained64-word
+  `func_151D8A24` candidate has four raw differences, not yet qualified.
+
 - [Latest selected-player state direct conversion and banking](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md):
   `func_151D87E0`,34 words/frame0 directly exact; ordered selected mapping/
   flag reads and early returns qualify. Eight installed tests pass,173,184

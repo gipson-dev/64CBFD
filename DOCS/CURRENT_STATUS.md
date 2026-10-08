@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools fbd3fd8; tools are committed before the source pin.
+  checkpoint pins tools 6e2e24d; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery and authorized banking:
+[Note 1130](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md).
+Convert complete `func_151D8868`:111 words/444 bytes/frame0x30;
+109 words direct plus two strict branch/limit-load scheduling guards.
+Ordered gates, live validation mask/limit, allocation failure, eight-byte copy,
+live registration mask/level and captured-owner lifetime qualify.
+Fresh expanded41-test suite passes in601.805s, including nine target tests:
+110,604 guest /2,163,968 native32 cases,68 required fault prefixes, eight
+effective negatives, six links/576 rebases and9,216 complete predicate links.
+Controlled later callees and bounded C-domain/fault limitations remain explicit.
+All6,058 bodies/addresses/extents/protected sections/data unchanged; prior
+11,146 guards preserved plus two, sole444-byte asm-to-C conversion row.
+Converted5,474/Game4,801; exact3,385/Game2,712;2,089 different/zero drift.
+New registration baseline; root README aggregates only. Tools6e2e24d banked
+before parent pin; no push. Dirty older standalone mirror preserved.
+Next retained `func_151D8A24`:64 words/frame0x28, complete candidate has four
+raw differences, uninstalled and not behavior-qualified. Graph refresh
+incomplete; zero Claude calls, no runtime/Release changes.
+
+Previous Game recovery work:
 [Note 1129](WORKING_NOTES/1129-game-selected-player-state-direct-conversion-20261008.md).
 Convert retained `func_151D87E0`:34 words/frame0 directly exact, no guards/
 data/profile changes. Selected-only byte reads and invalid-first/ready-first
