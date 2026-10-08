@@ -1,5 +1,25 @@
 # Update Log
 
+## 2026-10-08 Game Fourth Tile Scroll Direct Match
+
+[Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md):
+Install complete semantic `func_150334B8`; all68 words/frame0 directly exact,
+down from65 placeholder differences. Action0x37's fourth signed tile-size scan,
+S-100/span+2 and single subtract/add wrapping, not modulo. No guards, filler,
+generated data or profile changes. Seven pre-install tests pass in43.357s:
+45,063 guest/16,384 native32 cases, full axis/selectors,67 reachable words,
+faults/five aliases/controls/nine effective negatives/39 owner neighbors/padder/
+three entry bases. Preserve the native endian qualification boundary.
+Fresh ELF/progress build and6,058-symbol audit pass: only target changes,
+addresses/extents/protected sections/720 data owners/11,144 guards/conversion
+hash unchanged. Exact total3,372/5,467 (61.68%),Game2,699/4,794 (56.30%),
+2,095 different,zero drift. README matching aggregates only; new baseline
+`game-node-tile-scroll-test/after.json`. All20 post-install focused tests pass
+in112.504s, no skips/errors/failures; ten shared padder tests/tools/syntax/CLI/
+profiles/whitespace pass. Next local `func_150335C8`,113 words/
+frame0x168, inventory only. Documentation:100 documents/4,153 relative links,
+zero broken. Wider Game/hardware/gameplay/PC-port remain open.
+
 ## 2026-10-08 Game Attachment Selection Closed Scheduling Match
 
 [Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md):

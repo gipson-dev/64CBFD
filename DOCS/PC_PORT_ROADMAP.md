@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Game Fourth Tile Scroll Direct Match - 2026-10-08
+
+[Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md):
+
+- [x] Recover action0x37's fourth signed tile-size scan, required container/list storage, unused actor home and null-command gate.
+- [x] Recover twelve-bit coordinates, S-100, span+2 and one-step wrapping without replacing it with modulo or adding scan bounds.
+- [x] Emit all68 words/frame0 directly from semantic SDK C; chained coordinate initialization recovers allocation, no guards/padding/new data/profile changes.
+- [x] Pass seven pre-install tests in43.357s:45,063 guest/16,384 native32 cases, all selectors/axis values,67 reachable words, five aliases/thirteen faults,18 controls/nine effective negatives,39 owner neighbors and three entry bases.
+- [x] Rebuild/audit6,058 symbols; only target changes, all addresses/extents/protected sections/720 data owners/11,144 guards/conversion hash unchanged. Bank `game-node-tile-scroll-test/after.json`.
+- [x] Update README matching aggregates only: total3,372/5,467,Game2,699/4,794,2,095 different,zero drift; keep detailed recovery in its own document.
+- [x] Pass all20 post-install focused tests in112.504s, no skips/errors/failures; earlier owner/padder and dispatcher binding/scheduling checks remain intact. Ten shared padder tests/tools/syntax/CLI/profiles/whitespace pass.
+- [x] Validate100 documents/4,153 relative links,zero broken; bank this scoped recovery with its tests and handoff.
+- [ ] Independently recover next local `func_150335C8`,113 words/frame0x168, matrix-backed creation path. Static inventory only.
+- [ ] Continue wider Game, resolver and full callee/hardware/gameplay/PC-port qualification.
+
+Resume from `game-node-tile-scroll-test/after.json` and the next function's retail body.
+
 ## Game Attachment Selection Closed Scheduling Match - 2026-10-08
 
 [Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md):
@@ -12,7 +29,7 @@
 - [x] Update README aggregate matching rows only: total3,371/5,467,Game2,698/4,794,2,096 different,zero drift. Bank the linked evidence in `game-node-selection-test/after.json`.
 - [x] Correct focused coverage receipt's old80-case overcount:3,925 measured cases, same1,125/1,148 words and all674 keys. Keep full callee/FCSR/hardware/PC-port boundaries separate.
 - [x] Verify all40 unique checks across combined/targeted runs; final20 focused tests pass in116.371s, no skips/errors/failures. Correct copied-owner pool assumptions, pass ten padder tests/tools/syntax/CLI/whitespace and99-document /4,139-relative-link checks, zero broken links; bank the coherent checkpoint.
-- [ ] Recover next local `func_150334B8`,68-word leaf/frame0, fourth tile-size scan/signed wrapping. Static inventory only; do not claim a match yet.
+- [x] Recover/match `func_150334B8`,68-word leaf/frame0, directly in [Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md).
 - [ ] Continue wider Game, resolver and matrix/callee/runtime work.
 
 Resume after banking this dispatcher from `game-node-selection-test/after.json`.

@@ -4,6 +4,36 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Fourth Tile Scroll Matching
+
+[Candidate driver](../tools/experiments/game_node_tile_scroll_candidates.py)
+retains complete `func_150334B8`, C68/frame0/directly exact under existing
+O2/g3. Positive list guard/common return and chained coordinate initialization
+recover the retail shape and registers. Signed opcode scans select match4;
+coordinate S-100/span+2 operations wrap once, not periodically. Eighteen forms,
+45 ordinary control executions and nine effective semantic negatives are measured.
+No guards, pool, profile, Makefile or shared-header changes.
+
+[Seven tests](../tools/tests/test_game_node_tile_scroll_match.py) check45,063
+guest /16,384 native32 cases, all selector bytes/each axis's4,096 values,
+67 reachable words, lazy/fault prefixes, five aliases, caller-home lifetime,
+39 postprocessed neighbors, real padder and three entry bases. Reuse the
+existing signed-byte oracle. Native first-byte opcode seeding overlaps host T
+low bytes; actual seeded words drive expectations, not a big-endian coverage
+claim. Guest tests qualify big-endian words. Full hardware/gameplay/PC-port
+acceptance remains separate.
+
+```sh
+python3 -m tools.experiments.game_node_tile_scroll_candidates --profiles
+python3 -m tools.experiments.game_node_tile_scroll_candidates
+python3 -m unittest tools.tests.test_game_node_tile_scroll_match -v
+```
+
+Ignored receipts/latest installed baseline:
+`conker/build/game-node-tile-scroll-test/after.json`.
+Only target changes across6,058 symbols; all data/guards/conversion bytes intact.
+See [Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md).
+
 ## Attachment selection dispatcher matching
 
 [Candidate driver](../tools/experiments/game_node_selection_candidates.py)

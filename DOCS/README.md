@@ -51,12 +51,18 @@ confirmed.
 
 ## Planning and history
 
-- [Latest attachment selection closed scheduling match](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md):
+- [Latest fourth tile scroll direct match](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md):
+  complete semantic `func_150334B8`, all68 words/frame0 directly exact. Signed
+  fourth-command scan and one-step coordinate wrap, no guards/new data.
+  Guest/native/fault/alias/owner/padder checks qualify; only target changes.
+  New baseline `game-node-tile-scroll-test/after.json`; next local placeholder
+  `func_150335C8`,113 words/frame0x168. Full runtime remains open.
+- [Previous attachment selection closed scheduling match](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md):
   complete semantic C installed, all1148 words/frame0x48 exact with14 table
   bindings and67 closed scheduling guards, not a direct compiler-only match.
   All674 retained table targets fit; every instruction origin occurs once.
-  Only target changes; sections/data/conversions unchanged. Next local
-  placeholder is68-word leaf `func_150334B8`; full runtime remains open.
+  Only target changes; sections/data/conversions unchanged. Its next local
+  leaf is subsequently matched in Note1118; full runtime remains open.
 - [Previous attachment selection frame and opening recovery](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md):
   complete experimental C1148/frame0x48/319 differences; original private homes,
   first19 and final68 words exact. Twelve field-pointer forms retain identical

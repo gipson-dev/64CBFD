@@ -1054,7 +1054,62 @@ s32 func_15033440(u8 *arg0, u8 *arg1) {
     return 0;
 }
 
-s32 func_150334B8() {
+s32 func_150334B8(u8 *node, u8 *actor) {
+    Gfx *commands;
+    s32 remaining;
+    s32 shift;
+    s32 index;
+    s32 first;
+    s32 last;
+    s32 original_s;
+    s32 original_t;
+    s32 span_s;
+    s32 span_t;
+    s32 wrapped_s;
+    s32 wrapped_t;
+
+    commands = 0;
+    remaining = 0;
+    shift = 0;
+    if (node[1] == 0x37) {
+        commands = *(Gfx **)*(u8 **)(node + 0x24);
+        remaining = 4;
+        shift = -100;
+    }
+    if (commands != 0) {
+        index = 0;
+        if (remaining != 0) {
+            do {
+                remaining--;
+                while (*(s8 *)&commands[index] != (s8)G_SETTILESIZE) {
+                    index++;
+                }
+                if (remaining != 0) {
+                    index++;
+                }
+            } while (remaining != 0);
+        }
+        first = commands[index].words.w0;
+        last = commands[index].words.w1;
+        span_s = ((last >> 12) & 0xFFF) + 2;
+        original_s = wrapped_s = ((first >> 12) & 0xFFF) + shift;
+        original_t = wrapped_t = first & 0xFFF;
+        if (original_s >= span_s) {
+            wrapped_s = original_s - span_s;
+        }
+        if (wrapped_s < 0) {
+            wrapped_s += span_s;
+        }
+        span_t = (last & 0xFFF) + 2;
+        if (original_t >= span_t) {
+            wrapped_t = original_t - span_t;
+        }
+        if (wrapped_t < 0) {
+            wrapped_t += span_t;
+        }
+        commands[index].words.w0 = _SHIFTL(G_SETTILESIZE, 24, 8) |
+            _SHIFTL(wrapped_s, 12, 12) | (wrapped_t & 0xFFF);
+    }
     return 0;
 }
 

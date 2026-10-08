@@ -22,6 +22,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery work:
+[Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md).
+`func_150334B8` is installed: all68 words/frame0 emit directly from C, no
+guards/padding/relocations/generated data. Recover action0x37's fourth signed
+tile-size scan, S-100 and per-axis span+2 one-step wrapping, not modulo.
+Seven pre-install tests pass in43.357s:45,063 guest/16,384 native32 cases,
+all selector bytes and4,096 coordinate values per axis,67/68 reachable words,
+faults/aliases/controls/owner/padder/entry rebases. Native opcode seeding's
+host-endian T-byte overlap is explicit; guest tests provide big-endian coverage.
+Only target changes across6,058 symbols; all addresses/extents/protected sections,
+720 data owners/11,144 guards/conversion hash intact. Exact total3,372/5,467
+(61.68%),Game2,699/4,794 (56.30%),2,095 different,zero drift. README matching
+aggregates only. New baseline: `game-node-tile-scroll-test/after.json`.
+All20 post-install focused tests pass in112.504s, zero skips/errors/failures,
+including earlier owner/padder and dispatcher binding/scheduling checks.
+Ten shared padder tests/tools/syntax/CLI/profiles/whitespace pass.
+Documentation:100 documents/4,153 relative links,zero broken.
+Next local placeholder `func_150335C8`,113 words/frame0x168, matrix-backed
+creation path; inventory only. Full callee/hardware/gameplay/PC-port and wider
+Game work remain open.
+
+Previous Game recovery work:
 [Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md).
 Complete semantic `func_15031FC8` is installed and byte-exact across all1148
 words/frame0x48. Raw C has304 differences;14 symbolic table bindings and67

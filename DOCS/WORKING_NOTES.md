@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-08 ([Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md)):
+Install complete `func_150334B8`,68 words/frame0 directly exact, no guards/new
+data/profile changes. Fourth signed tile-size scan, action0x37, S-100/span+2,
+one-step wrapping; common return/chained initialization recover compiler shape.
+Seven pre-install tests pass in43.357s:45,063 guest/16,384 native32 cases,
+all selectors/axis values,67 reachable words,faults/five aliases,18 forms/nine
+effective negatives,owner/padder/three entry bases. Only target changes across
+6,058 symbols;data/sections/11,144 guards/conversions intact. Exact total3,372,
+Game2,699,2,095 different,zero drift. README aggregates only; new baseline
+`game-node-tile-scroll-test/after.json`. All20 post-install focused tests pass
+in112.504s, no skips/errors/failures; ten shared padder tests/tools/syntax/CLI/
+profiles/whitespace pass. Next local `func_150335C8`,113 words/
+frame0x168, inventory only;100 documents/4,153 relative links,zero broken.
+Wider Game/full runtime remains open.
+
 2026-10-08 ([Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md)):
 Install complete `func_15031FC8`, all1148 words/frame0x48 byte-exact.
 Raw C304 differences;14 original-symbol bindings and67 checked scheduling
