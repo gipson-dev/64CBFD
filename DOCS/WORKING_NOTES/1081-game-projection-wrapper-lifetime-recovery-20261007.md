@@ -54,7 +54,7 @@ reread both reciprocal and view-base word before finishing Y.
 
 ## Compiler Evidence
 
-[Maintained driver](../../tools/experiments/game_projection_lifetime_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_projection_lifetime_candidates.py)
 retains140 lifetime forms:32 local-elimination/register-hint,36 depth-reuse/
 index/control-shape,48 partial-zero/temp,16 reuse-partial and8 comma-placement
 controls. All140 were compiled under the retail O2/g3 profile with actual
@@ -83,7 +83,7 @@ score is not qualification.
 
 ## Qualification
 
-[Ten tests](../../tools/tests/test_game_projection_lifetime_recovery.py):
+[Ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_projection_lifetime_recovery.py):
 
 - 36864 paired guest cases: all256 low-byte indices with poisoned high words,
   eight optional-output masks, nine output/input/view/matrix alias layouts and

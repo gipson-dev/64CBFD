@@ -5,7 +5,7 @@ Date: 2026-10-07. Baseline: `c05f617e`,
 
 Recover the complete `func_15145AD8`, VA `0x15145AD8..0x15145C90`,
 ROM `0x172F88..0x173140`, 110 words/frame `0x88`.
-The [experimental body](../../tools/experiments/game_scaled_sphere_query_candidates.py)
+The [experimental body](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_sphere_query_candidates.py)
 now has the original ABI, frame and private-local offsets. It emits **111 words
 with 72 aligned differences**, so it remains uninstalled. Production retains
 the zero-return placeholder; no guard/profile/shared-header/padder changes and
@@ -74,9 +74,9 @@ closed register/scheduling normalizations. No proposed target guards exist.
 
 ## Qualification
 
-[Ten tests](../../tools/tests/test_game_scaled_sphere_query_recovery.py) use the
+[Ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_sphere_query_recovery.py) use the
 existing instruction runner and an
-[independent rounded-float/evolving-memory reference](../../tools/tests/game_scaled_sphere_query_reference.py).
+[independent rounded-float/evolving-memory reference](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_scaled_sphere_query_reference.py).
 Both original retail and experimental C execute all real connected helpers,
 not seeded replacement returns.
 

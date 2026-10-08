@@ -40,7 +40,7 @@ actual callee, not just an idealized matrix callback.
 
 ## Compiler Evidence
 
-[Driver](../../tools/experiments/game_cached_quad_builder_candidates.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cached_quad_builder_candidates.py):
 **six forms x four profiles = 24 controls**, real SDK types/fixed call anchors,
 empty diagnostics. Selected O2/g3: 134 words/frame 0xD0/five differences;
 plain O2: 134/0xD0/35. O1 profiles: 160/0xA8/160. Moving first Z initialization
@@ -66,7 +66,7 @@ branch delay, match directly. No insertion/omission/trampoline.
 
 ## Qualification
 
-[Six tests](../../tools/tests/test_game_cached_quad_builder_match.py):
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cached_quad_builder_match.py):
 
 - All 24 compiler controls and exact five-word permutation bound.
 - **864 guest cases / two bodies** execute selected raw C and retail plus

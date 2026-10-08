@@ -33,7 +33,7 @@ Do not cache all fields or substitute unsigned halfword loads.
 
 ## Compiler Controls
 
-[Driver](../../tools/experiments/game_actor_dimensions_candidates.py) uses
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_dimensions_candidates.py) uses
 the real SDK, actor and point headers. Four forms (direct fields, cached ID,
 reversed floating-add operands and early return) under O2/g3, O2, O1/g3 and O1:
 **16 controls**, empty isolated diagnostics. The first direct-fields O2/g3
@@ -50,7 +50,7 @@ Ignored receipts: `conker/build/game-actor-dimensions/` and
 
 ## Qualification
 
-[Five tests](../../tools/tests/test_game_actor_dimensions_match.py) bind the
+[Five tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_dimensions_match.py) bind the
 direct linked slot, no guards, real source and compiler inventory; compare
 an independent ordered-access reference with retail and recovered guest C;
 and run the actual C in native fixtures:

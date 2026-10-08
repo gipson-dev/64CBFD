@@ -44,7 +44,7 @@ remains non-matching at 282 differences; its linked bytes do not change here.
 
 ## Compiler Evidence
 
-[Candidate driver](../../tools/experiments/game_root_neighbor_lookup_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_root_neighbor_lookup_candidates.py)
 freezes the straightforward pointer-based semantic body and the preceding
 typed placeholder. **35 source forms / 70 profile controls** complete with
 empty diagnostics. The unsigned-index forms are negative controls for the
@@ -85,7 +85,7 @@ an assertion of the new complete direct match.
 
 ## Qualification And Linked Audit
 
-[Lookup tests](../../tools/tests/test_game_root_neighbor_lookup_match.py)
+[Lookup tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_root_neighbor_lookup_match.py)
 provide **3275 three-way guest cases** against an independent float32 reference:
 retail, installed source and the frozen pointer-based semantic recovery.
 They compare the full non-stack memory footprint, ordered external writes,

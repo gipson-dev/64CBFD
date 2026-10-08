@@ -39,7 +39,7 @@ the rebuilt ELF; searching that placeholder does not establish retail callers.
 
 ## Compiler And Normalization Evidence
 
-The persisted [driver](../../tools/experiments/game_grid_channel_updater_candidates.py)
+The persisted [driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_grid_channel_updater_candidates.py)
 screens declaration orders, byte/direct/typed payloads, return-type controls,
 and byte-loop shapes against two profiles. It installs nothing. Earlier
 ignored controls in Note 1052 remain useful history, not current source.
@@ -73,7 +73,7 @@ The actual object padder parses, validates, applies, assembles and links all
 
 ## Tests And Audit
 
-[Nine focused tests](../../tools/tests/test_game_grid_channel_updater_match.py):
+[Nine focused tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_grid_channel_updater_match.py):
 
 - **144 persisted compiler controls**: 36 declaration/return forms and 36
   payload/loop forms, each under O2/g3 and O2; empty compiler diagnostics.

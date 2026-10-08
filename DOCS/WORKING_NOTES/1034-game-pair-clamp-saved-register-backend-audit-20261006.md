@@ -18,7 +18,7 @@ the following spellings; acceptance and output are then measured, not inferred
 from option names. An ignored decoder receipt is under
 `conker/build/game-integer-pair-clamp-test/compiler-options.py`.
 
-The [driver](../../tools/experiments/game_integer_pair_clamp_candidates.py)
+The [driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_integer_pair_clamp_candidates.py)
 adds `--saved-registers`, nine controls against the unchanged recovered O2/g3
 body: `do_opt_saved_regs`, `noprecolor`, `noheurAB`, `no_r23`, `nogenvreg`,
 `norlodrstropt`, `nordstore`, `no_const_in_reg`, `docopy`. Each uses
@@ -35,7 +35,7 @@ no control installs a flag, source change, guard or arbitrary frame padding.
 
 ## Qualification And Scope
 
-The added [backend test](../../tools/tests/test_game_integer_pair_clamp_recovery.py)
+The added [backend test](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_integer_pair_clamp_recovery.py)
 checks every accepted control's exact shape and **108 corner guest runs**:
 six signed/extreme/equal-pointer/reversed-bound cases times two stack phases
 times nine controls. Ordered external reads/writes, complete external byte

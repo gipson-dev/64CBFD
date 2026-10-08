@@ -55,7 +55,7 @@ value is claimed.
 
 ## Compiler And Guard Audit
 
-[Candidate driver](../../tools/experiments/game_record_neighbor_visit_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_record_neighbor_visit_candidates.py)
 freezes the raw byte-query baseline independently. **24 unique controls**
 complete with empty compiler diagnostics.
 
@@ -94,7 +94,7 @@ omitting any one guard has a behavioral counterexample.
 
 ## Qualification
 
-[Matching tests](../../tools/tests/test_game_record_neighbor_visit_match.py)
+[Matching tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_record_neighbor_visit_match.py)
 pass **13 tests in 57.942 seconds**, no skips, against the final linked build.
 
 - **4096 three-way leaf cases** compare retail, raw selected C and guarded C,

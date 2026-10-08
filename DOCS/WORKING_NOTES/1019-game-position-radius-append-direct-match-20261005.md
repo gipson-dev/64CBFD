@@ -34,7 +34,7 @@ by low-halfword storage for representable values outside the s16 range.
 
 ## Compiler Screen
 
-[Candidate driver](../../tools/experiments/game_position_radius_append_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_position_radius_append_candidates.py)
 freezes the initial recovery and placeholder separately from production.
 All **34 controls** complete with empty compiler diagnostics. The selected
 body is 39 / zero differences under both the isolated default profile and
@@ -62,7 +62,7 @@ retail's negative-count appends; cached bases fail alias-sensitive ordering.
 
 ## Qualification
 
-[Matching tests](../../tools/tests/test_game_position_radius_append_match.py)
+[Matching tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_position_radius_append_match.py)
 pass **nine tests in 22.789 seconds**, no skips. Source identity, the
 existing prototype/profile, no target guards, frozen controls and all
 39 production words are bound independently to retail.

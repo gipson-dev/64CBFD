@@ -44,7 +44,7 @@ hardware FCSR/exception behavior is not qualified by these bounded models.
 
 ## Direct Compiler Recovery
 
-[Driver](../../tools/experiments/game_record_query_candidates.py) reproduces
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_record_query_candidates.py) reproduces
 98 measurements: 16 mask/loop/order/input-type forms under four profiles,
 30 declaration/storage controls and four selected-profile controls.
 The first u16 candidate already emits 272 words/frame0x60, but saves its
@@ -66,7 +66,7 @@ was screened but altered four final temporary-register words; it is not used.
 
 ## Qualification
 
-[Ten maintained tests](../../tools/tests/test_game_record_query_match.py):
+[Ten maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_record_query_match.py):
 
 - 12288 paired raw-C/retail guest cases: every 11-field selection, both modes,
   three record-match patterns and alternating stack phases. Complete mapped

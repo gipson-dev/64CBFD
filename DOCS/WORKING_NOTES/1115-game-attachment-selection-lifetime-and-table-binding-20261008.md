@@ -6,7 +6,7 @@ Date: 2026-10-08
 
 Continue **`func_15031FC8`** from
 [Note 1114](1114-game-attachment-selection-dispatcher-recovery-20261008.md).
-The [complete semantic candidate](../../tools/experiments/game_node_selection_candidates.py)
+The [complete semantic candidate](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_selection_candidates.py)
 now emits **1,148 words / 4,592 bytes**, frame **0x38**, **349 fixed-slot word
 differences**, down from 394. Retail's body is also 1,148 words, but its frame
 is **0x48**. This is a fit improvement, **not a byte match or installed recovery**.
@@ -86,7 +86,7 @@ Each expected-word/expected-relocation pair replaces only the address immediate
 and binds it to that table's existing physical symbol. Registers/opcodes remain
 unchanged. No insertion, omission, new data or shared-tool change is needed.
 
-[Four binding tests](../../tools/tests/test_game_node_selection_binding.py)
+[Four binding tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_selection_binding.py)
 pass in **6.223 seconds** after strengthening the original-target PC measurement:
 
 - Compile and asm-processor-postprocess both complete owners. All 40 function

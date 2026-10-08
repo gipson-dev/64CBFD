@@ -54,7 +54,7 @@ these controlled callback tests.
 
 ## Compiler Evidence
 
-[Driver](../../tools/experiments/game_source_effect_constructor_candidates.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_source_effect_constructor_candidates.py):
 **16 forms x four profiles + six schedule forms x four profiles + nine
 default-order forms = 97 controls**. Baseline has 113 words/frame 0x38 and
 81 differences. Explicit sign-bit test produces 114 words with 23 differences;
@@ -68,7 +68,7 @@ every candidate length/frame/difference count, including overflowing tails.
 
 ## Qualification
 
-[Nine constructor tests](../../tools/tests/test_game_source_effect_constructor_match.py)
+[Nine constructor tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_source_effect_constructor_match.py)
 use unchanged shared guest/native runners and an independent byte reference:
 
 - **6912 guest cases / two bodies**, selected C and retail: eight flag

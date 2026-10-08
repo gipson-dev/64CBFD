@@ -34,7 +34,7 @@ and signed-count homes. Positive counts use the seven-word point-transform
 ABI and four-byte list strides; nonpositive counts do not dereference lists.
 There are no index clamps or delegated null/zero-point fallbacks on common routes.
 
-The [layout driver](../../tools/experiments/game_matrix_route_layout_candidates.py)
+The [layout driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_route_layout_candidates.py)
 fits real C storage rather than injecting padding or changing instructions:
 
 - `matrix` holds the initial actor bank, then the selected fixed matrix.
@@ -75,8 +75,8 @@ Full byte matching remains the objective, separate from this semantic checkpoint
 
 ## Maintained Qualification
 
-[Layout tests](../../tools/tests/test_game_matrix_route_layout_recovery.py)
-extend the [previous recovery tests](../../tools/tests/test_game_matrix_route_recovery.py)
+[Layout tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_route_layout_recovery.py)
+extend the [previous recovery tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_route_recovery.py)
 without discarding the old private-overlap rejection evidence.
 
 - **1,728 ordinary fixtures**, all routes/failures, signed counts, two pages,

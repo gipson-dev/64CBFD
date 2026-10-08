@@ -44,7 +44,7 @@ RA restoration all match retail. No insertion/omission normalization.
 
 ## Compiler Controls
 
-[Induction driver](../../tools/experiments/game_record_dispatch_induction_candidates.py)
+[Induction driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_record_dispatch_induction_candidates.py)
 freezes the old body independently of production. **45 controls** complete
 with empty diagnostics. This is a new bounded index-canonicalization screen,
 not a repetition of the historical 52 profile/for/do/goto trials.
@@ -75,7 +75,7 @@ these are different measurements and are not interchangeable.
 
 ## Qualification
 
-[Matching tests](../../tools/tests/test_game_record_dispatch_match.py) pass
+[Matching tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_record_dispatch_match.py) pass
 all eight tests. A fresh installed-source run, together with the existing
 eight native semantic tests, passes **16 tests in 54.978 seconds**, no skips.
 An earlier pre-install run passes seven qualification tests in 54.013 seconds.
@@ -99,12 +99,12 @@ An earlier pre-install run passes seven qualification tests in 54.013 seconds.
   negative controls fail the retail contract. The signed-selector control
   may fail on its out-of-table address rather than a completed call trace.
 - The selected body passes all eight existing source-extracted 32-bit native
-  cases from [test_game_record_dispatch.py](../../tools/tests/test_game_record_dispatch.py),
+  cases from [test_game_record_dispatch.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_record_dispatch.py),
   including sentinel preservation and future callback/selector mutations.
 - Production source/slot identity, no target overflow symbol, unchanged next
   symbol/prototype, frame/saves, no divide and no guards are asserted.
 
-The existing shared [TriangleOracle](../../tools/tests/test_game_actor_triangle_transform_match.py)
+The existing shared [TriangleOracle](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_triangle_transform_match.py)
 adds JALR dispatch to its existing call path. Target capture precedes the
 encoded link-register write; zero-register writes remain discarded. A focused
 same-register target/link test binds this ordering. Existing J/JAL handling

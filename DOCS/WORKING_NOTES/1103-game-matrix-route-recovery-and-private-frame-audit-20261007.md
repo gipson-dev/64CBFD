@@ -17,7 +17,7 @@ header, compiler profile, guard row or root README edit.
 
 ## Recovered Contract
 
-The [candidate driver](../../tools/experiments/game_matrix_route_candidates.py)
+The [candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_route_candidates.py)
 recovers six incoming ABI words: actor, raw descriptor, signed matrix index,
 input-point pointer list, output-point pointer list and signed count.
 
@@ -80,7 +80,7 @@ insertion, omission or bulk instruction replacement is added.
 
 ## Maintained Qualification
 
-[Recovery tests](../../tools/tests/test_game_matrix_route_recovery.py) bind
+[Recovery tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_route_recovery.py) bind
 the complete experimental wrapper, independent routing/math reference,
 ordinary public-storage equivalence and explicit non-equivalence boundary.
 

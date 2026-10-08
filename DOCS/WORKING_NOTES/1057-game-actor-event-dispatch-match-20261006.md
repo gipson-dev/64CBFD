@@ -33,7 +33,7 @@ pointer forms remain ten words different. This is deliberately32-bit guest
 address arithmetic, not a portable64-bit pointer idiom. Native qualification
 uses a real32-bit executable and valid allocated storage.
 
-[Maintained driver](../../tools/experiments/game_actor_event_dispatch_candidates.py):
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_event_dispatch_candidates.py):
 eight source forms/four profiles, **32 controls**, actual SDK, empty diagnostics.
 Only selected and equivalent unsigned-hex subtraction under O2/g3 are exact.
 No driver installation. Historical16 initial controls remain intact. Ignored
@@ -43,7 +43,7 @@ forms are not claimed as a unique-source-form count.
 
 ## Qualification
 
-[Nine tests](../../tools/tests/test_game_actor_event_dispatch_match.py):
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_event_dispatch_match.py):
 
 - **60724 guest cases / two bodies**, actual compiled C and retail instructions:
   full external storage, ordered owner accesses/call records, saved GPR/FPR/

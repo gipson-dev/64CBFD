@@ -38,7 +38,7 @@ The separate context-classifier table starts immediately afterward at800A5430.
 
 ## Direct Source And Table Ownership
 
-[Compiler driver](../../tools/experiments/game_actor_classifier_candidates.py)
+[Compiler driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_classifier_candidates.py)
 screens inline/s32/u32/u8 identity expressions, inside/outside defaults and
 four actual-SDK profiles: **32 controls**, empty standalone diagnostics.
 Inline and s32 forms with either default placement are direct under O2/g3
@@ -69,7 +69,7 @@ shared headers remain untouched.
 
 ## Bounded Qualification
 
-[Eight maintained tests](../../tools/tests/test_game_actor_classifier_match.py):
+[Eight maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_classifier_match.py):
 
 - All45 compiled words and all134 compiler table targets equal their pristine
   references; the two original table spans are also compared against pristine

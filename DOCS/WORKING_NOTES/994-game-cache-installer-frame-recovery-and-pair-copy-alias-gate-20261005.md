@@ -38,7 +38,7 @@ Retail slot SHA-256:
 
 ## Compiler Screen
 
-[game_cache_installer_candidates.py](../../tools/experiments/game_cache_installer_candidates.py)
+[game_cache_installer_candidates.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cache_installer_candidates.py)
 screens 128 named forms under the existing default IDO O2/g3 profile. All
 compile without diagnostics. The immutable baseline is retained independently
 of the current production source. The driver checks both the selected count-local
@@ -85,7 +85,7 @@ or treating an exact-match counter as acceptance. No host transplant is made.
 
 ## Qualification
 
-[test_game_cache_installer_candidates.py](../../tools/tests/test_game_cache_installer_candidates.py)
+[test_game_cache_installer_candidates.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cache_installer_candidates.py)
 adds five checks: fresh compiler controls and prologue identity; the partial
 overlap rejection; all 833 native one-word-copy aliases; production source
 selection; and complete three-way instruction traces.

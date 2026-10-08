@@ -45,7 +45,7 @@ corrects the native type contract without another conversion/matching count.
 
 ## Direct Compiler Recovery
 
-[Maintained driver](../../tools/experiments/game_scaled_matrix_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_matrix_candidates.py)
 screens four source shapes times four actual-SDK profiles:16 controls, empty
 standalone diagnostics. Explicit matrix updates with translations before
 scaling under existing O2/g3 emit **all67 words/frame0x68 directly**.
@@ -59,7 +59,7 @@ Actual padding keeps the symbol extent, not the unrelated section tail.
 
 ## Qualification
 
-[Twelve maintained tests](../../tools/tests/test_game_scaled_matrix_match.py):
+[Twelve maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_matrix_match.py):
 
 - **6480 paired guest cases**:five first-row/four second-row factors, three
   column sets, three translations, three provider matrices, three output

@@ -87,7 +87,7 @@ to accommodate the invalid ordinary-allocation fixture.
 
 ## Compiler Screen
 
-The [132-form screen](../../tools/experiments/game_counted_pointer_loader_candidates.py)
+The [132-form screen](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_counted_pointer_loader_candidates.py)
 uses default IDO O2/g3, actual SDK stdarg and fixed retail relocations. The
 initial 127 forms include 120 local-declaration permutations; five additional
 loop/update variants pursue the best two-word result. Production identity is
@@ -112,7 +112,7 @@ call at 0x78, block call at 0xB4.
 
 ## Qualification
 
-The [fourteen-check module](../../tools/tests/test_game_counted_pointer_loader_match.py)
+The [fourteen-check module](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_counted_pointer_loader_match.py)
 passes against the rebuilt ELF. It pins complete raw/linked/retail identity,
 frame/hash, source/prototype, caller slot, relocations and absence of guards.
 

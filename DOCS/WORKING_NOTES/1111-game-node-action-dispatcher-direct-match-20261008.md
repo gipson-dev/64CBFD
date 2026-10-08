@@ -67,8 +67,8 @@ compiler alignment bytes. Both retail tables remain physically owned by
 the two HI/LO relocation pairs to the existing fixed anchor with addends zero
 and 60; it does not link the duplicate generated pool or rewrite Game data.
 
-The [candidate driver](../../tools/experiments/game_node_action_candidates.py)
-and [seven tests](../../tools/tests/test_game_node_action_match.py) retain
+The [candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_action_candidates.py)
+and [seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_action_match.py) retain
 **15 distinct source/profile combinations / 3,840 ordinary executions**.
 Eight inline/signed-local/register/default forms are raw exact; unsigned-local
 forms differ at two signed-versus-unsigned range checks. All controls preserve

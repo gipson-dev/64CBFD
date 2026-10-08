@@ -45,7 +45,7 @@ the frame, several register lifetimes and instruction schedule still do not.
 
 ## Reproducible Controls
 
-[Home driver](../../tools/experiments/game_actor_triangle_home_candidates.py)
+[Home driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_triangle_home_candidates.py)
 contains **25 declaration controls** and **11 loop controls** (`--loops`).
 Both five-scalar gap groups and six declaration cuts are measured against
 retail homes, with a frozen original recovery as the baseline.
@@ -66,14 +66,14 @@ do not qualify their body lengths or schedules.
 | XYZ cursors, for-range, correct homes | 308 | 0x170 | 282 |
 | XYZ cursors, do-range, correct homes | 306 | 0x170 | 281 |
 
-[Recovery driver](../../tools/experiments/game_actor_triangle_transform_candidates.py)
+[Recovery driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_triangle_transform_candidates.py)
 now distinguishes frozen `RECOVERY` from installed `SELECTED`; a fail-closed
 home rewriter binds the selected declarations. The historical layout/lifetime
 drivers explicitly retain `RECOVERY`, so changing production does not silently
 change their measured controls. The standard recovery screen also includes
 the installed home form.
 
-[Home tests](../../tools/tests/test_game_actor_triangle_home_candidates.py)
+[Home tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_triangle_home_candidates.py)
 assert both inventories, unchanged operation text for the declaration forms,
 source/candidate identity, fail-closed rewriter anchors and the live/retail
 private-home map. The initial source-binding gate caught pass/axis ordering

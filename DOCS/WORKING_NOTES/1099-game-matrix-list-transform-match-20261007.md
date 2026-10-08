@@ -68,7 +68,7 @@ branch displacement, private offset or instruction count.
 
 ## Maintained Qualification
 
-[Candidate driver](../../tools/experiments/game_matrix_list_transform_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_list_transform_candidates.py)
 retains **182** ordinary source/profile controls: 64 loop/condition/list-view/
 branch-order forms, 48 cursor/count lifetimes, 32 inline/scope/order/views,
 28 scalar forms, six comparison forms and four compiler profiles.
@@ -76,7 +76,7 @@ None is raw byte-exact. Each passes twelve ordinary bounded public-effect
 fixtures: **2,184 candidate executions**. These ordinary fixtures do not
 grant every control incoming-home or private-layout equivalence.
 
-[Nine match tests](../../tools/tests/test_game_matrix_list_transform_match.py)
+[Nine match tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_list_transform_match.py)
 qualify the selected source, normalized words and retail:
 
 - **10,752 guest cases**, all 117 wrapper words, complete memory, public

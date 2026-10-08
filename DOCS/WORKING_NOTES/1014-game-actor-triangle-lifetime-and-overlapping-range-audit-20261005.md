@@ -10,7 +10,7 @@ retained assembly. No guards or compiler profiles are added.
 
 ## Compiler Controls
 
-[Lifetime driver](../../tools/experiments/game_actor_triangle_lifetime_candidates.py)
+[Lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_triangle_lifetime_candidates.py)
 banks **34 controls**: partial/full phase scopes, dead temporary reuse,
 range-do loops, edge cursors, vertex capacities 3/8, direct metadata accesses,
 indexed vertex cursors, pointer bounds and four weight-selection shapes.
@@ -58,7 +58,7 @@ FCSR/traps/subnormals/legacy NaNs or PC gameplay.
 
 ## First-Match Gate Closed
 
-[Transform tests](../../tools/tests/test_game_actor_triangle_transform_match.py)
+[Transform tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_triangle_transform_match.py)
 now explicitly test two overlapping-range shapes under both stack phases.
 Expected matrix indexes are `(0,0,2)` and `(0,1,1)`, for both matrix banks.
 The third range is unmapped so premature continued scanning fails. An
@@ -72,7 +72,7 @@ now includes the same overlap shapes: **64512 whole-state/reference cases**
 (256 IDs x 18 patterns x 14 mutation modes), plus **33 alias cases**.
 An initial two-test overlap/native run passes in **25.173 seconds**, no skips.
 
-[Driver tests](../../tools/tests/test_game_actor_triangle_lifetime_candidates.py)
+[Driver tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_triangle_lifetime_candidates.py)
 check its 34-name inventory, source anchors, fail-closed replacements, weight
 mode validation and unchanged production-source binding. No shared oracle
 or production assertion is weakened.

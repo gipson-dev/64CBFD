@@ -15,7 +15,7 @@ padding locals, inserted instructions or an assembly fallback.
 
 ## Matrix Scheduling Controls
 
-[Schedule driver](../../tools/experiments/game_matrix_translation_schedule_candidates.py)
+[Schedule driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_translation_schedule_candidates.py)
 adds **26 measurements** to the retained 152 historical measurements:
 
 - Sixteen O2/g3 typed views: a size-checked 64-byte union of fixed halfword
@@ -65,7 +65,7 @@ The new bank is 26 measurements, not 26 distinct emitted bodies. The existing
    outputs overlapping future source records must affect subsequent calls;
    do not snapshot the whole list or all points.
 
-[Candidate driver](../../tools/experiments/game_point_list_transform_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_point_list_transform_candidates.py)
 retains **48 nonmatching measurements**:
 
 - Eight loop/record forms across O2/g3, O2, O1/g3 and O1: ordinary while,
@@ -106,7 +106,7 @@ before claiming complete retail matching. The production source stays put.
 
 ## Maintained Qualification
 
-[Audit tests](../../tools/tests/test_game_point_list_transform_audit.py) cover:
+[Audit tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_point_list_transform_audit.py) cover:
 
 - **1,344 guest fixtures** over seven signed count patterns, 16 angle/halfword
   patterns, three output/source alias arrangements, provider mutation and two

@@ -48,7 +48,7 @@ out-of-bounds C semantics, graceful handling, or physical N64 fault behavior.
 ## Verification
 
 Six added tests extend
-[`test_game_queued_segment_writer.py`](../../tools/tests/test_game_queued_segment_writer.py)
+[`test_game_queued_segment_writer.py`](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_queued_segment_writer.py)
 from ten to sixteen checks. They extract the actual production bodies and the
 actual SDK macros from local headers, rather than duplicate the implementation.
 

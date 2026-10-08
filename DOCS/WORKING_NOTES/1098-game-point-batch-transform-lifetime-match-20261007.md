@@ -51,7 +51,7 @@ ABI types remain `u8 *`, two `struct17 *` arguments and signed32 count.
 
 ## Maintained Controls
 
-[Candidate driver](../../tools/experiments/game_point_batch_transform_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_point_batch_transform_candidates.py)
 retains **119 meaningful controls**, plus the baseline measurement:
 
 - 24 descriptor/source-phase, destination-initialization, loop and record/
@@ -75,7 +75,7 @@ backend options, qualifiers and alternate ABI views stay out of production.
 
 ## Qualification
 
-[Nine tests](../../tools/tests/test_game_point_batch_transform_match.py) bind
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_point_batch_transform_match.py) bind
 the complete raw selected, normalized and original bodies:
 
 - **1,792 guest fixtures** over seven signed count patterns, 16 data patterns,

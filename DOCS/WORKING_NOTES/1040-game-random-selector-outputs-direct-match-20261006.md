@@ -43,7 +43,7 @@ promoted into a meaningful public integer-return API.
 
 ## Compiler Controls
 
-[Driver](../../tools/experiments/game_random_selector_outputs_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_random_selector_outputs_candidates.py)
 screens six forms under O2/g3, O2, O1/g3 and O1: **24 controls**, each with
 empty isolated diagnostics. The installed 32-bit selector and the inline
 ternary call form both match directly under O2/g3. A byte selector omits
@@ -61,7 +61,7 @@ Ignored receipts: `conker/build/game-random-selector-outputs/` and
 
 ## Qualification
 
-[Six tests](../../tools/tests/test_game_random_selector_outputs_match.py)
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_random_selector_outputs_match.py)
 compare the independently linked selected C and pristine retail against an
 independent ordered-memory reference:
 

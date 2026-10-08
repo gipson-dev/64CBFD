@@ -53,7 +53,7 @@ The original behavior remains:
 
 ## Reproducible Screen
 
-[game_block_loader_candidates.py](../../tools/experiments/game_block_loader_candidates.py)
+[game_block_loader_candidates.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_block_loader_candidates.py)
 retains the immutable pre-match baseline and screens 37 source forms across
 eight profiles: 296 trials. Exactly two trials match directly, both using
 `-O2 -g3`: the single-size form with and without a result register hint.
@@ -76,7 +76,7 @@ semantic endorsement of every experimental form.
 
 ## Qualification
 
-[test_game_block_loader_direct_match.py](../../tools/tests/test_game_block_loader_direct_match.py)
+[test_game_block_loader_direct_match.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_block_loader_direct_match.py)
 adds four checks: fresh default-profile full-slot identity; original and
 extra-local rejection controls; register-hint equivalence; and independently
 pinned production/neighbor identity with no block-loader guards.

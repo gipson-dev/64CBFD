@@ -12,7 +12,7 @@ it does not increase conversion or matching counts.
 
 ## Full-Frame Reference
 
-[Independent reference](../../tools/tests/game_sphere_frame_reference.py)
+[Independent reference](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_sphere_frame_reference.py)
 models the eight-argument helper directly, separately from the nine-argument
 wrapper. Retail and selected C are checked against their own explicit layouts,
 not claimed to have equal private memory. It models:
@@ -26,7 +26,7 @@ not claimed to have equal private memory. It models:
 - Relative-vector stores followed by live original direction reads in the dot.
 - Miss versus post-write rejection and the final helper status.
 
-[Six frame tests](../../tools/tests/test_game_sphere_callee_frame_recovery.py)
+[Six frame tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_sphere_callee_frame_recovery.py)
 pass in 6.698 seconds, zero skips/errors/failures.
 
 1. 1,404 direct-helper external-alias cases now compare **complete memory**, all
@@ -57,7 +57,7 @@ native frame aliases, hardware or complete-caller acceptance claim.
 
 ## Layout Controls
 
-[New driver](../../tools/experiments/game_sphere_callee_layout_candidates.py)
+[New driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_sphere_callee_layout_candidates.py)
 reproduces 48 controls, all compiling without diagnostics, none exact:
 
 | Family | Controls | Result |

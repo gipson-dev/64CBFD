@@ -42,7 +42,7 @@ remain identical; their experiment/native declarations are updated consistently.
 
 ## Compiler Evidence
 
-[Driver](../../tools/experiments/game_vertex_attribute_initializer_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_vertex_attribute_initializer_candidates.py)
 screens **six forms x four profiles = 24 controls**, isolated diagnostics
 empty. Direct byte-pointer loop: **48 words/frame zero/zero differences**
 under O2/g3. Plain O2 gives 47 words and two differences. O1/g3 and O1
@@ -58,7 +58,7 @@ original default full-unroll O2/g3 profile, not a new compile override.
 
 ## Qualification
 
-[Eight tests](../../tools/tests/test_game_vertex_attribute_initializer_match.py)
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_vertex_attribute_initializer_match.py)
 use unchanged shared guest/native runners and an independent sequential
 byte reference, not a whole-input snapshot:
 

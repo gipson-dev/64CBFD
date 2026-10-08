@@ -47,7 +47,7 @@ context structures in production; synthetic padded types belong only to tests.
 
 ## Compiler Recovery
 
-[Driver](../../tools/experiments/game_actor_gated_packet_candidates.py) retains
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_gated_packet_candidates.py) retains
 116 measurements: 64 gate/declaration/flag/input-type controls, 48 short-flag
 storage controls and four selected-profile controls. Additional disposable
 screens explored packet representations, gate lifetimes and opening forms;
@@ -71,7 +71,7 @@ describe these as eleven identical branch/delay words or as a frame fix.
 
 ## Qualification
 
-[Ten maintained tests](../../tools/tests/test_game_actor_gated_packet_match.py):
+[Ten maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_gated_packet_match.py):
 
 - 8192 paired raw-C/retail guest cases exhaust every count byte, four health
   positions, four checker-stop positions and both stack phases. Results and

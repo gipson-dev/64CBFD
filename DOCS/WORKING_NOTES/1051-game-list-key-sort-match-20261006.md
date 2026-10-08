@@ -47,7 +47,7 @@ the observed failures, not native execution of undefined-input C.
 
 ## Compiler Evidence
 
-[Persistent driver](../../tools/experiments/game_list_key_sort_candidates.py):
+[Persistent driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_list_key_sort_candidates.py):
 **six forms x four profiles = 24 controls**, real SDK integer/pointer layout,
 fixed table anchor, empty diagnostics. Selected O2/g3: **72/0x138/18**
 (words/frame/differences); plain O2: 72/0x138/26. O1/g3:102/0x130/102;
@@ -83,7 +83,7 @@ and ordering already match before normalization.
 
 ## Qualification
 
-[Eight tests](../../tools/tests/test_game_list_key_sort_match.py):
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_list_key_sort_match.py):
 
 - Complete 72-word raw body/frame and 18 register-only rewrites; all normalized
   73 slot words equal retail, including the unreferenced walker instruction.

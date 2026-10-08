@@ -47,7 +47,7 @@ separately rounded float operations, not fused multiply-add.
 
 ## Compiler Evidence
 
-[Maintained driver](../../tools/experiments/game_area_sampler_candidates.py):
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_area_sampler_candidates.py):
 38 forms across four SDK profiles, 152 measurements. Controls cover the
 commented-draft if chain, switch/local selector, masks, float-double shape,
 scratch order, early returns, tangent temporary, goto exits, RNG temporaries,
@@ -81,7 +81,7 @@ are installed to hide the discrepancy.
 
 ## Qualification
 
-[Ten maintained tests](../../tools/tests/test_game_area_sampler_recovery.py)
+[Ten maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_area_sampler_recovery.py)
 pass in 18.864 seconds, with no skips, errors or failures:
 
 - 1024 independent-reference cases compare raw C and retail instructions:

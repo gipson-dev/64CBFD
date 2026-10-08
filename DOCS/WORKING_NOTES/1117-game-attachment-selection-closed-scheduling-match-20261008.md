@@ -41,7 +41,7 @@ five compiled semantic negatives remain effective.
 
 ## Closed Scheduling Transformation
 
-[Normalizer](../../tools/experiments/game_node_selection_schedule.py) accepts
+[Normalizer](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_selection_schedule.py) accepts
 the measured compiler body, **not retail ROM words**. It checks extent,
 eleven instruction anchors and the exact four cached-model branch uses.
 

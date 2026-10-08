@@ -9,7 +9,7 @@ Continue the source-only matching audit of `func_15086D94` from
 
 ## Bounded Screen
 
-[Scope driver](../../tools/experiments/game_graph_edge_crossing_scopes.py)
+[Scope driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_graph_edge_crossing_scopes.py)
 freezes the preceding selected source independently of future recovery edits.
 Its five modes compile 101 named controls under the existing no-unroll profile.
 All diagnostics are empty; no candidate improves on 102 differences.

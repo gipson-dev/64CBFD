@@ -17,9 +17,9 @@ edit, overflow, insertion/omission or query enlargement.
 
 ## Independent Compiler Screen
 
-[Lifetime driver](../../tools/experiments/game_zone_neighbor_selection_lifetimes.py)
+[Lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_zone_neighbor_selection_lifetimes.py)
 preserves the original 29-form / 58-profile inventory in
-[recovery driver](../../tools/experiments/game_zone_neighbor_selection_candidates.py).
+[recovery driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_zone_neighbor_selection_candidates.py).
 Its `CHECKPOINT` is the old 367-word production source, independent of the
 new `SELECTED` pointer form. Three separate receipts cover **91 additional
 controls**, all with empty compiler diagnostics:
@@ -75,7 +75,7 @@ full lookup/caller/gameplay or PC-port acceptance.
 
 ## Qualification And Audit
 
-[Parent qualification](../../tools/tests/test_game_zone_neighbor_selection_match.py)
+[Parent qualification](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_zone_neighbor_selection_match.py)
 now compares retail, installed C, the frozen indexed recovery and the previous
 production checkpoint: **2990 four-way guest cases**, with complete non-stack
 memory, ordered external writes and ordered calls. It retains helper mutations,
@@ -89,7 +89,7 @@ footprints**. Negative-start fixtures remain guest-address tests, not strict-C
 array-portability claims. Repeat-query, missing-clear and inclusive-comparison
 negative controls continue to fail as expected.
 
-[Lifetime tests](../../tools/tests/test_game_zone_neighbor_selection_lifetimes.py)
+[Lifetime tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_zone_neighbor_selection_lifetimes.py)
 bind all three inventories, fail-closed source transformations, the unchanged
 query/helper contract, the old checkpoint, the installed score and the two
 explicit oversized controls. **17 combined tests pass in 94.742 seconds**,

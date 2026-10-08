@@ -66,7 +66,7 @@ path tests; their producer remains a separate gate.
 ## Verification
 
 Extend the existing actual-body fixtures in
-[`test_game_texture_metadata_and_maintenance.py`](../../tools/tests/test_game_texture_metadata_and_maintenance.py)
+[`test_game_texture_metadata_and_maintenance.py`](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_texture_metadata_and_maintenance.py)
 with six host tests:
 
 - All 65536 priority/activity byte pairs, including negative staged priorities,

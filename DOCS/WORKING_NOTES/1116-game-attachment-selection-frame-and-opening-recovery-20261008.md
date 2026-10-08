@@ -11,7 +11,7 @@ frame**, all six measured private homes and **319 fixed-slot word differences**,
 down from 349. The **first 19 words** and **final 68 words** are directly exact.
 The complete dispatcher remains **experimental, non-matching and uninstalled**.
 
-The [candidate driver](../../tools/experiments/game_node_selection_candidates.py)
+The [candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_selection_candidates.py)
 retains the earlier C1147/frame0x38/394 as `BASELINE`, C1148/frame0x38/349
 as `LIFETIME`, and C1148/frame0x48/321 as `FRAME`. No dummy storage,
 volatile annotation, instruction insertion/omission, production guard, profile,

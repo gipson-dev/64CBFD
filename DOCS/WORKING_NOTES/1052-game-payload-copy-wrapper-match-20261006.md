@@ -44,7 +44,7 @@ found; old commented calls are not ABI authority.
 
 ## Compiler And Schedule Evidence
 
-[Driver](../../tools/experiments/game_payload_copy_wrapper_candidates.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_payload_copy_wrapper_candidates.py):
 **six forms x four profiles plus four callee ABI forms x four profiles =40
 controls**, real SDK layouts/fixed symbols, empty diagnostics. No installation
 by the driver. Selected explicit success join: O2/g3 **53/0x40/10**
@@ -74,7 +74,7 @@ section-alignment nops outside the symbol are checked zero, not slot content.
 
 ## Qualification
 
-[Nine tests](../../tools/tests/test_game_payload_copy_wrapper_match.py):
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_payload_copy_wrapper_match.py):
 
 - Raw shape, closed schedule/branch remapping, direct43 words, relocation move,
   complete independently padded/linked slot.

@@ -60,7 +60,7 @@ values in diagnostics do not prove real constructor table indexing is valid.
 
 ## Compiler Evidence
 
-[Driver](../../tools/experiments/game_source_effect_packet_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_source_effect_packet_candidates.py)
 screens **13 forms x four profiles = 52 controls**, plus **46 single-field
 ordering controls** under O2/g3: **98 controls**, all isolated diagnostics empty.
 The initial field-order form has correct 96-word length/frame 0xA0 but 16
@@ -78,7 +78,7 @@ only the winning profile. Selected C and the installed owner are bound too.
 
 ## Qualification
 
-[Nine tests](../../tools/tests/test_game_source_effect_packet_match.py) use an
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_source_effect_packet_match.py) use an
 independent byte-packet reference and unchanged shared guest/native runners:
 
 - **3456 guest cases / three bodies**: initial field-order, selected direct C

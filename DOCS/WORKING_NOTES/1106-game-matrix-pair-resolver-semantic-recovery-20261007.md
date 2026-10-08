@@ -52,7 +52,7 @@ The acyclic fixture recursion bound belongs only to the tests.
 
 ## Source Fit Still Open
 
-The [candidate driver](../../tools/experiments/game_matrix_pair_resolver_candidates.py)
+The [candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_pair_resolver_candidates.py)
 retains **69 source/profile forms**, none raw exact: 32 register/key/bank/reread
 forms, twelve matrix/byte-pointer/lifetime forms, sixteen switch/key/prototype
 forms, five structured/label/carrier forms and four compiler profiles.
@@ -75,7 +75,7 @@ with a bulk 44-word guard list. Recover the complete retail source shape first.
 
 ## Maintained Qualification
 
-[Eleven resolver tests](../../tools/tests/test_game_matrix_pair_resolver_recovery.py)
+[Eleven resolver tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_pair_resolver_recovery.py)
 compare the complete C-derived MIPS body and original retail instructions:
 
 - **640 ordinary guest cases**, all four routes, all failure returns, four

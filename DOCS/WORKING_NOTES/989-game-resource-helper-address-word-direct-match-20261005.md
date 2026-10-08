@@ -36,7 +36,7 @@ Independent isolated C, complete production slot and pristine ROM at
 ## Source Screen And Tests
 
 Opt-in screen:
-[game_resource_helper_schedule_candidates.py](../../tools/experiments/game_resource_helper_schedule_candidates.py).
+[game_resource_helper_schedule_candidates.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_resource_helper_schedule_candidates.py).
 It rebuilds nineteen named forms in ignored
 `conker/build/game-resource-helper-schedule/`. Source-identical/emission-identical
 forms are not independent algorithms. Screen results are raw words, never
@@ -53,14 +53,14 @@ match exactly; adopt the unsigned form to represent the address word.
 | Adopted inline unsigned address-word cast | 46 | 0x30 | 0 |
 
 Three new checks in
-[test_game_resource_helper_schedule.py](../../tools/tests/test_game_resource_helper_schedule.py)
+[test_game_resource_helper_schedule.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_resource_helper_schedule.py)
 reproduce the screen, reject pointer/volatile near-matches, prove the selected
 candidate is the production body, verify all retail bytes and preserve five
 constructor/wrapper/adjacent hashes and addresses. Standalone linker alignment
 NOPs outside the function are excluded from the 46-word match.
 
 The existing actual-body
-[constructor/helper fixture](../../tools/tests/test_game_extended_child_constructor.py)
+[constructor/helper fixture](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_extended_child_constructor.py)
 now independently requires 46 body words, zero differences and the retail
 digest. Its 234 indexed helper cases retain load failure, store-before-test,
 setup arguments and resource/data reload after setup mutation. Actual child,

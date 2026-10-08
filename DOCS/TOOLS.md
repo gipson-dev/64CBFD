@@ -1,12 +1,16 @@
 # Project Tools
 
-This page documents repository-local tooling, especially scripts that are not
-upstream submodules. Run commands from the repository root unless a section
-says otherwise.
+This page documents the decomp tools, now owned by
+[64CBFD-Tools](https://github.com/gipson-dev/64CBFD-Tools) and pinned at this
+repository's `tools/` submodule. Run commands from the **decomp repository
+root** unless a section says otherwise. Matching fixtures require the decomp
+sources and local inputs; the standalone tools checkout is not a game project.
+See [tools repository setup](TOOLS_REPOSITORY.md) for checkout, migration,
+and contribution instructions.
 
 ## Effect Registration Matching
 
-[Candidate driver](../tools/experiments/game_node_effect_registration_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_effect_registration_candidates.py)
 retains complete `func_150339C8`, all 68 words/frame0x40 directly exact under
 existing O2/g3. Recover the first tile-scroll call, mode/freeze/handle lifecycle
 and the existing Init allocator's twelve-argument interface. Eighteen forms,
@@ -15,7 +19,7 @@ Implicit coordinate narrowing is an exact control, not a negative. Alternate
 profile controls stay within the defined float-to-s16 domain; no guards, filler,
 data or production-profile changes.
 
-[Eight tests](../tools/tests/test_game_node_effect_registration_match.py) cover
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_effect_registration_match.py) cover
 14,208 guest cases, 576 actual-helper-connected cases and 1,572,864 native32
 executions. All global bytes, sixteen finite coordinate patterns, legal u16
 results, saved pointers, callback observations and handle overwrites qualify.
@@ -38,7 +42,7 @@ See [Note 1121](WORKING_NOTES/1121-game-effect-registration-direct-match-2026100
 
 ## Attachment State Latch Matching
 
-[Candidate driver](../tools/experiments/game_node_attachment_latch_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_attachment_latch_candidates.py)
 retains complete `func_15033838`, C100/frame0x20 directly exact under existing
 O2/g3. A shared zero return and separate hold-condition jumps recover the
 retail branch-likely layout; nested early return is C102/21 differences.
@@ -46,7 +50,7 @@ Eighteen forms, four profiles, 80 ordinary executions and eight effective
 semantic negatives retain source-fit evidence. No guards/padding/data/profile
 or shared-header changes.
 
-[Seven tests](../tools/tests/test_game_node_attachment_latch_match.py) qualify
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_attachment_latch_match.py) qualify
 33,792 guest cases, all selector/active/subtype bytes, unsigned type boundaries,
 flags/counters/nonzero latch patterns, callback observations/mutations and two
 SP phases. Six lazy cases, 23 faults and four aliases preserve read order and
@@ -68,8 +72,8 @@ See [Note 1120](WORKING_NOTES/1120-game-attachment-state-latch-direct-match-2026
 
 ## Matrix Creation And Transform Setup Matching
 
-[Caller driver](../tools/experiments/game_node_matrix_creation_candidates.py)
-and [helper driver](../tools/experiments/game_node_transform_setup_candidates.py)
+[Caller driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_matrix_creation_candidates.py)
+and [helper driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_transform_setup_candidates.py)
 retain complete `func_150335C8` / `func_15030D54`:113 words/frame0x168 and45
 words/frame0x20 directly exact under existing O2/g3. Recovered helper signature
 permits the original direct float call in the shared owner, without a cast/
@@ -78,7 +82,7 @@ Twenty-four measured forms,14 ordinary executions and ten effective negatives
 cover required bank/record rereads, index width, flags, matrix operand order,
 position zeroing and allocation/float-store contracts.
 
-[Eight tests](../tools/tests/test_game_node_matrix_creation_match.py) cover
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_matrix_creation_match.py) cover
 10,058 caller/961 helper/480 connected guest cases and65,536 native32 executions.
 Modeled callbacks mutate argument homes and source fields. Actual caller/helper
 bodies connect; all flag bytes, seven index patterns, fifteen raw float patterns,
@@ -100,7 +104,7 @@ See [Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-dire
 
 ## Fourth Tile Scroll Matching
 
-[Candidate driver](../tools/experiments/game_node_tile_scroll_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_tile_scroll_candidates.py)
 retains complete `func_150334B8`, C68/frame0/directly exact under existing
 O2/g3. Positive list guard/common return and chained coordinate initialization
 recover the retail shape and registers. Signed opcode scans select match4;
@@ -108,7 +112,7 @@ coordinate S-100/span+2 operations wrap once, not periodically. Eighteen forms,
 45 ordinary control executions and nine effective semantic negatives are measured.
 No guards, pool, profile, Makefile or shared-header changes.
 
-[Seven tests](../tools/tests/test_game_node_tile_scroll_match.py) check45,063
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_tile_scroll_match.py) check45,063
 guest /16,384 native32 cases, all selector bytes/each axis's4,096 values,
 67 reachable words, lazy/fault prefixes, five aliases, caller-home lifetime,
 39 postprocessed neighbors, real padder and three entry bases. Reuse the
@@ -130,7 +134,7 @@ See [Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008
 
 ## Attachment selection dispatcher matching
 
-[Candidate driver](../tools/experiments/game_node_selection_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_selection_candidates.py)
 retains the complete installed semantic `func_15031FC8`. Explicit
 case/value lists cover the seven retail tables and sparse type branches.
 Four profiles and source controls measure body size, frame, raw differences,
@@ -146,7 +150,7 @@ Raw compiler output is not the installed byte-exact body.
 Thirty-nine neighbors remain intact;
 the seven new tables pack four bytes before their original physical offsets.
 
-[Nine tests](../tools/tests/test_game_node_selection_recovery.py) independently
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_selection_recovery.py) independently
 check original table keys/values, 92,992 guest dispatch and 2,415 callback/float
 cases, required fault prefixes, six valid aliases, compiled controls/negatives,
 12,348 actual native32 C executions and 3,925 measured focused coverage cases. All674
@@ -156,7 +160,7 @@ hardware/PC-port do not. Installed byte-exact body and guard history are checked
 The earlier4,005 focused-case receipt overcounted80 cases; its actual execution
 and coverage were unchanged.
 
-[Four binding tests](../tools/tests/test_game_node_selection_binding.py) use
+[Four binding tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_selection_binding.py) use
 `table_binding_guards()` to check exact owner extent/addends/HI-LO/topology and
 generate14 address-only expected-word/relocation rows. The real
 padder binds seven original symbols across the scalar gap without new data,
@@ -166,8 +170,8 @@ fully postprocessed neighbor bodies/relocations/past useful pools.
 The same tests retain the raw boundary:590/674 exact original label PCs;
 84 entries are one word late without the closed scheduling transformation.
 
-[Closed normalizer](../tools/experiments/game_node_selection_schedule.py) and
-[six schedule tests](../tools/tests/test_game_node_selection_schedule.py)
+[Closed normalizer](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_selection_schedule.py) and
+[six schedule tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_selection_schedule.py)
 qualify the actual padder/link at zero differences. Every compiler instruction
 origin occurs once, four cached-model comparisons retarget A0 to V1, and57
 local branch displacements derive from the permutation. The original model
@@ -204,12 +208,12 @@ all6,058 symbols. See
 
 ## Fourth tile-size command matching
 
-[Candidate driver](../tools/experiments/game_node_tile_candidates.py) fits
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_tile_candidates.py) fits
 `func_15031E7C`, complete C83/frame0, SDK Gfx/signed opcode scan and two-step
 factor, directly under existing O2/g3. Twelve source/profile controls / 960
 ordinary executions yield five raw exact forms; no guards or new data.
 
-[Seven tests](../tools/tests/test_game_node_tile_match.py) cover 13,152 guest /
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_tile_match.py) cover 13,152 guest /
 19,728 native32 cases, float threshold neighbors, fourth-match scan layouts,
 lazy/required/malformed-list faults, five aliases, effective negatives, 39 owner
 neighbors/pools and real padder/scale rebases. Local oracle extends signed-byte
@@ -227,13 +231,13 @@ Ignored receipts/checkpoint and next-dispatcher inventory:
 
 ## Node cleanup dispatcher matching
 
-[Candidate driver](../tools/experiments/game_node_cleanup_candidates.py) fits
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_cleanup_candidates.py) fits
 the complete `func_15031C14`, C134/frame `0x38`, direct under existing O2/g3.
 Ten source forms and three additional profiles yield 13 controls / 3,328
 ordinary executions, two raw exact forms. The explicit volatile pointer home
 preserves retail's paired-call save/reload; it is not an original-source claim.
 
-[Seven tests](../tools/tests/test_game_node_cleanup_match.py) qualify 51,200
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_cleanup_match.py) qualify 51,200
 guest cases, 1,024 null-actor cases, 30,720 actual native32 cases, fault prefixes,
 effective negatives, shared table ownership, 39 neighbors and actual padder/
 rebases. The earlier action-dispatcher owner test now preserves the later
@@ -250,13 +254,13 @@ Ignored receipts/checkpoints: `conker/build/game-node-cleanup-test/`.
 
 ## Vector-basis recovery audit
 
-[Candidate driver](../tools/experiments/game_vector_basis_candidates.py) retains
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_vector_basis_candidates.py) retains
 118 source/profile controls and a complete experimental `func_15146078` body.
 Use `--group` with `primary`, `lifetime`, `scalars`, `expressions`, `outputs`,
 `vectors`, `registers` or `profiles`. None is raw byte-exact; the selected
 ordinary C144/frame `0x48`/93 differences is not installed.
 
-[Ten tests](../tools/tests/test_game_vector_basis_recovery.py) qualify actual
+[Ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_vector_basis_recovery.py) qualify actual
 original guest helpers, actual recovered native C helpers, sequential aliases,
 complete original caller, early private-byte liveness, required reads and five
 effective negatives. Private-output overlaps remain different, so ordinary
@@ -273,13 +277,13 @@ Ignored measurements/receipts: `conker/build/game-vector-basis*/`.
 
 ## Matrix-list transform matching
 
-[Candidate driver](../tools/experiments/game_matrix_list_transform_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_list_transform_candidates.py)
 retains 182 source/profile controls, none raw exact. Selected C117/frame
 `0xA0`/matrix `sp+0x5C`, unchanged O2/g3/MIPS2, needs nineteen guards for a
 closed GP cycle, independent save order and two equality operand orders.
 No private-offset, relocation, insertion, omission or profile edits.
 
-[Nine tests](../tools/tests/test_game_matrix_list_transform_match.py) bind
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_list_transform_match.py) bind
 all 117 wrapper words, the 45 executable SDK-converter words, 40 point-helper
 words, 49 translator words and complete 23-word original caller. Coverage
 includes 10,752 guest, 1,152 connected, 72 caller, 1,344 incoming-home and
@@ -315,13 +319,13 @@ to rewrite caller arguments or private objects.
 
 ## Point-batch transform lifetime matching
 
-[Candidate driver](../tools/experiments/game_point_batch_transform_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_point_batch_transform_candidates.py)
 retains 119 meaningful loop/view/storage/profile/backend/reload/gate controls,
 none raw exact. Selected C60/frame `0x98`/matrix `sp+0x58`, unchanged O2/g3/
 MIPS2, has seventeen closed-register/store-order guards, no private-offset,
 FP-register, call-relocation, insertion or omission changes.
 
-[Nine tests](../tools/tests/test_game_point_batch_transform_match.py) bind all
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_point_batch_transform_match.py) bind all
 60 wrapper/all 40 original point-helper words, 1,792 guest, 768 connected,
 5,376 independent/both incoming-home and 524,296 actual native cases, all four
 record aliases, complete memory/public traces/calls/saved state, 384 private-
@@ -349,14 +353,14 @@ rewrite a caller's arguments or private objects.
 
 ## Point-list transform lifetime matching
 
-[Point-list driver](../tools/experiments/game_point_list_transform_candidates.py)
+[Point-list driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_point_list_transform_candidates.py)
 retains the historical 48 measurements and adds 40 address-readback/typed-view/
 phase-lifetime/count measurements. None is raw byte-exact. Selected semantic
 C57/frame `0x88` has 19 differences under unchanged O2/g3/MIPS2; normalization
 is a closed s0/s1/s2 allocation cycle and two independent prologue swaps,
 without private-offset, call-relocation, insertion or omission changes.
 
-[Eight match tests](../tools/tests/test_game_point_list_transform_match.py)
+[Eight match tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_point_list_transform_match.py)
 bind all 57 wrapper words and all 40 original point-helper words, 1,344 guest,
 576 connected helper, 2,304 independent/both incoming-home readback and
 131,076 native cases, complete memory/public traces/calls, seven effective
@@ -381,15 +385,15 @@ not permission for an ordinary native C callee to rewrite caller arguments.
 
 ## Historical matrix scheduling and point-list lifetime audit
 
-[Matrix schedule driver](../tools/experiments/game_matrix_translation_schedule_candidates.py)
+[Matrix schedule driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_translation_schedule_candidates.py)
 adds 16 typed views and ten locally evidenced backend controls, 26 nonmatching
 measurements / 624 bounded public-effect executions. Production translator
-stays C49/frame0/34 differences. [Point-list driver](../tools/experiments/game_point_list_transform_candidates.py)
+stays C49/frame0/34 differences. [Point-list driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_point_list_transform_candidates.py)
 retains 48 loop/record/lifetime/readback measurements / 864 bounded executions,
 none exact. Historical `func_15145CD0` was C57/frame `0x88`/46 differences;
 its recovered lifetime and guarded match now supersede that installed shape.
 
-[Audit tests](../tools/tests/test_game_point_list_transform_audit.py) bind 1,344
+[Audit tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_point_list_transform_audit.py) bind 1,344
 public-effect guest, 580 connected original-point-helper and 131,076 native
 cases, fail-closed storage, five public-storage-changing negatives, installed
 slots/guards and two deliberately mismatching incoming-home probes. No general
@@ -412,10 +416,10 @@ header, source, README aggregate or sibling/runtime changes.
 
 ## Matrix translation recovery controls
 
-[Candidate driver](../tools/experiments/game_matrix_translation_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_translation_candidates.py)
 retains 64 primary, 48 flow, 24 scalar-temporary and 16 ISA/access measurements.
 None of the 152 is exact; selected C49/frame0/no pool/O2/g3/MIPS2 has 34
-differences, no guards. [Nine tests](../tools/tests/test_game_matrix_translation_recovery.py)
+differences, no guards. [Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_translation_recovery.py)
 bind 65,536 complete-effect signed-halfword tuples, 20,576 aliases/edges,
 66,816 actual native cases, 1,152 complete original-parent null/zero-route
 cases, seven effective negatives, 3,648 bounded candidate executions and
@@ -440,11 +444,11 @@ Ignored receipts: `conker/build/game-matrix-translation/` and
 
 ## Cached primitive color controls
 
-[Candidate driver](../tools/experiments/game_cached_primitive_color_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cached_primitive_color_candidates.py)
 retains twelve six-field cache-gate/cursor/SDK/packet forms across four profiles,
 48 measurements. Positive miss gate and actual SDK macro emit all 77 words/
 frame `0x8` directly under unchanged O2/g3, no guards. The
-[eight tests](../tools/tests/test_game_cached_primitive_color_match.py) bind
+[eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cached_primitive_color_match.py) bind
 174,720 complete-effect guest and 7,280 native 32-bit cases, 448 incoming-home
 overwrite cases, full signed32/signed16 lazy gates, LOD/RGBA packing, sync/order/
 aliases, seven negatives, copied owner, actual padding, six independently
@@ -464,19 +468,19 @@ Ignored receipts: `conker/build/game-cached-primitive-color/` and
 
 ## Cached environment color and sampler flow controls
 
-[Color driver](../tools/experiments/game_cached_environment_color_candidates.py)
+[Color driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cached_environment_color_candidates.py)
 retains twelve cache-gate/cursor/SDK/packet forms across four SDK profiles,
 48 measurements. Positive miss gate and actual SDK macro under unchanged O2/g3
 emit the complete 56-word/frame `0x8` slot directly, no guards. The
-[seven fitting tests](../tools/tests/test_game_cached_environment_color_match.py)
+[seven fitting tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cached_environment_color_match.py)
 bind 62,400 complete-effect guest and 5,200 native 32-bit cases, signed/full-word
 channels, lazy cache/sync reads, aliases, six negatives, copied owner, actual
 padding/independent global relocations and installed source/slot/history.
 
-[Sampler flow driver](../tools/experiments/game_area_sampler_flow_candidates.py)
+[Sampler flow driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_area_sampler_flow_candidates.py)
 adds 54 source-order/chain/split-case/RNG temporary/register measurements.
 All retain one RA reload versus retail three; none exact, no new pool or profile
-change. [Four tests](../tools/tests/test_game_area_sampler_flow.py) qualify
+change. [Four tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_area_sampler_flow.py) qualify
 1,536 public-reference fixtures across every form (82,944 candidate executions)
 and 48 unsigned-conversion fixtures (2,592 executions). Private trace/native
 invalid-cast/hardware FCSR equivalence is not claimed; sampler stays uninstalled.
@@ -497,12 +501,12 @@ Ignored receipts: `conker/build/game-cached-environment-color/`,
 
 ## Oriented matrix direct-match controls
 
-[Lifetime driver](../tools/experiments/game_oriented_matrix_lifetime_candidates.py)
+[Lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_oriented_matrix_lifetime_candidates.py)
 retains 48 unchanged-O2/g3 meaningful vector/storage/scope/declaration forms.
 Matrix-first reduces the old 27 differences to ten; four split-horizontal
 scalar orders emit all 142 retail words with frame `0xB8` and original private
 offsets. Selected form needs no union, padding locals, guards or profile change.
-[Ten fitting tests](../tools/tests/test_game_oriented_matrix_match.py) bind
+[Ten fitting tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_oriented_matrix_match.py) bind
 2,448 guest/full-effect, 144 original caller/converter, 288 private-overlap and
 1,224 actual native 32-bit cases, nine effective semantic negatives, copied
 builder/caller owners, real padder/converter rebasing and installed source/
@@ -524,20 +528,20 @@ Ignored receipts: `conker/build/game-oriented-matrix-lifetimes/` and
 
 ## Actor lookup and sampler lifetime controls
 
-[Actor driver](../tools/experiments/game_actor_lookup_candidates.py) retains
+[Actor driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_lookup_candidates.py) retains
 31 source forms under both word and byte lookup declarations: 62 unchanged
 O2/g3 measurements, 17 direct C44 matches under the retail byte declaration.
-[Ten tests](../tools/tests/test_game_actor_lookup_match.py) bind the direct slot,
+[Ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_lookup_match.py) bind the direct slot,
 24,552 guest cases/full effects, eight callback cases, 1,664 original-helper
 cases, 12,276 actual native typed calls, six effective negatives, copied owner,
 real padding/alternate helper relocation, production source/history and the
 single collateral overflow-trampoline rebase. Helper source stays a placeholder;
 its original instructions execute in the connected guest fixtures.
 
-[Sampler lifetime driver](../tools/experiments/game_area_sampler_lifetime_candidates.py)
+[Sampler lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_area_sampler_lifetime_candidates.py)
 adds 16 scalar case-scope measurements (14 new forms/two anchors) while retaining
 the original scratch. All raw words/relocations equal the existing short body.
-The [expanded eleven-test sampler suite](../tools/tests/test_game_area_sampler_recovery.py)
+The [expanded eleven-test sampler suite](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_area_sampler_recovery.py)
 pins C252/frame `0x50`/109 differences; no sampler installation or new guards.
 See [Note 1091](WORKING_NOTES/1091-game-actor-lookup-byte-abi-direct-match-20261007.md).
 Final combined regression: 44 tests / 156.500 seconds, zero skips/errors/failures;
@@ -555,12 +559,12 @@ and `conker/build/game-area-sampler-test/`.
 
 ## Scaled sphere caller recovery controls
 
-[Direct-match driver](../tools/experiments/game_scaled_sphere_query_address_view_candidates.py)
+[Direct-match driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_sphere_query_address_view_candidates.py)
 retains 51 address/operand/capture/lifetime controls, three direct C110 matches
 and three effective inverse-first negatives. `SELECTED` is the smallest nested
 scale/reciprocal scope change; it matches every retail word and original private
 offset under O2/g3, with no target guards. The
-[fitting caller tests](../tools/tests/test_game_scaled_sphere_query_match.py)
+[fitting caller tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_sphere_query_match.py)
 add full guest memory/events/register comparisons, direct copied-owner/padder
 and all three alternate helper relocations, source/native binding and linked
 production-slot/history gates. See
@@ -578,12 +582,12 @@ Ignored receipts: `conker/build/game-scaled-sphere-query-address-view/` and
 
 Historical uninstalled capture-lifetime controls:
 
-[Source-layout/capture driver](../tools/experiments/game_scaled_sphere_query_source_layout_candidates.py)
+[Source-layout/capture driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_sphere_query_source_layout_candidates.py)
 adds 39 access/line/storage/scope/capture measurements, 140 measured controls
 total, none exact. `SCALE_FIRST` is the preferred uninstalled body: it corrects
 the prior inverse spill overwriting an aliased actor scale, while retaining
 111 words/frame `0x88`, original private offsets and 72 differences.
-[Seventeen expanded tests](../tools/tests/test_game_scaled_sphere_query_source_layout.py)
+[Seventeen expanded tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_sphere_query_source_layout.py)
 qualify 37,808 bulk guest fixtures including 10,368 new private-actor cases,
 126,720 native finite calls, the actual copied owner and overflow padder.
 The combined 93-test regression passes, followed by three final source-binding,
@@ -605,17 +609,17 @@ Ignored receipts: `conker/build/game-scaled-sphere-query-source-layout/` and
 
 Historical complete caller and boundary-audit controls:
 
-[Driver](../tools/experiments/game_scaled_sphere_query_candidates.py) retains
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_sphere_query_candidates.py) retains
 71 branch/profile/commutative/storage/address-preparation controls for the full
 `func_15145AD8`. Selected O2/g3 emits 111 words/frame `0x88`, 72 differences,
 with original private locals bound through structured `.mdebug` records.
 None is raw exact; production placeholder, profiles and guards stay unchanged.
-[Focused scheduling driver](../tools/experiments/game_scaled_sphere_query_schedule_candidates.py)
+[Focused scheduling driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_sphere_query_schedule_candidates.py)
 adds 30 O2/g3 gate/storage/live-home/shared-failure controls, none exact,
 101 measurements total. Shared failures may shrink the body but alter branches.
-[Fourteen tests](../tools/tests/test_game_scaled_sphere_query_recovery.py) connect
+[Fourteen tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_sphere_query_recovery.py) connect
 all five real helpers and compare an
-[independent evolving-memory reference](../tools/tests/game_scaled_sphere_query_reference.py)
+[independent evolving-memory reference](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_scaled_sphere_query_reference.py)
 with original retail and experimental C: 27,440 bulk guest cases, natural
 late-output-home writes, 126,720 native finite calls and effective negatives.
 Signed vertical offsets and private input windows are qualified; reached
@@ -643,14 +647,14 @@ claim. Recover the original-profile 110-word fit and finish owner/install gates.
 
 ## Sphere callee allocation matching controls
 
-[Allocation driver](../tools/experiments/game_sphere_callee_allocation_candidates.py)
+[Allocation driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_sphere_callee_allocation_candidates.py)
 retains 32 meaningful union/declaration/scalar-order controls and reads the
 bundled compiler's structured `.mdebug` frame/local records. Selected source
 recovers 126 words/frame `0x70`, direction/origin/relative private offsets
 `0x58/0x4C/0x28`, without padding or private-offset patches. 73 raw aligned words
 plus 53 expected-word guards normalize FP allocation and a closed 33-PC schedule;
 the dot-helper call relocation remains unchanged.
-[Eleven tests](../tools/tests/test_game_sphere_callee_allocation_match.py)
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_sphere_callee_allocation_match.py)
 check 3,724 full-memory guest cases, all instruction inputs through the exact
 permutation, 6,318 actual 32-bit native finite external-alias calls, copied
 owner/pools/warnings, original/alternate helper relocation and stale guards.
@@ -671,14 +675,14 @@ implementation or production compiler profile was changed.
 
 ## Secondary halfword output matching controls
 
-[Driver](../tools/experiments/game_secondary_output_candidates.py) retains96
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_secondary_output_candidates.py) retains96
 case-order/chaining/product/shared-case controls across four profiles. Selected
 O2/g3 and O2 emit all120 words/frame0 directly, with fourteen original table
 destinations. Two checked relocations bind the compact table at644 to the
 preserved `jtbl_800A565C_game`; no instruction normalization.
 The copied pool retains644 meaningful bytes, appends56 table bytes and4 padding,
 total704. Related copied-owner checks pin exact earlier-table addend shifts.
-[Eleven tests](../tools/tests/test_game_secondary_output_match.py) qualify65536
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_secondary_output_match.py) qualify65536
 guest/24576 stack-alias/4096 live-input/557056 native/8192 connected two-leaf
 caller-fragment cases, all120 words, full memory/ordered traces/saved state,
 lazy reads, independent scale inputs and six effective compiled negatives.
@@ -697,14 +701,14 @@ Ignored receipts:`conker/build/game-secondary-output/` and
 
 ## Halfword output-mode matching controls
 
-[Driver](../tools/experiments/game_output_mode_candidates.py) retains96
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_output_mode_candidates.py) retains96
 case-order/chained-store/product/shared-case controls over four profiles.
 Selected O2/g3 and its O2 control match all86 words directly, frame0, with the
 original five destinations. Two expected-word/relocation guards bind the copied
 owner's compact table at offset624 to the original `jtbl_800A5648_game`.
 Prior624-byte normalized pool intact; new656-byte pool adds20 table bytes and12
 alignment bytes. No instruction normalization, profile/shared-header changes.
-[Eleven tests](../tools/tests/test_game_output_mode_match.py) cover65536 paired
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_output_mode_match.py) cover65536 paired
 guest mode/alias cases,24576 argument-home overlap cases,3584 unused-byte cases,
 557056 actual32-bit native calls and2048 original25-word caller fragments.
 All86 words, full memory/ordered traces/saved state, lazy stack/table reads,
@@ -725,13 +729,13 @@ Ignored receipts:`conker/build/game-output-mode/` and
 
 ## Fixed-point cursor updater matching controls
 
-[Driver](../tools/experiments/game_cursor_updater_candidates.py) retains131
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cursor_updater_candidates.py) retains131
 declaration/initialization/loop/flow/storage/profile measurements. Corrected
 and asserted lower-loop transformations recover98 words/frame0.52 direct words
 and46 checked guards differ only in temporary-register fields and a commutative
 addition's operand order, not instructions, branch/immediate fields or frame.
 All four global relocation identities/positions stay unchanged.
-[Eleven tests](../tools/tests/test_game_cursor_updater_match.py) cover18944 paired
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cursor_updater_match.py) cover18944 paired
 guest cases,3500 modular/global/stack alias cases,1024 count0/trap cases,11776
 paired instruction-input traces,20182 actual32-bit native calls and192 original
 setup/call/delay/mask fragments. Full memory/ordered reads-writes/saved state,
@@ -752,13 +756,13 @@ Ignored receipts:`conker/build/game-cursor-updater/` and
 
 ## Actor-gated packet matching controls
 
-[Driver](../tools/experiments/game_actor_gated_packet_candidates.py) retains116
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_gated_packet_candidates.py) retains116
 compiler measurements:64 gate/type/order profile controls,48 short-flag storage
 controls and four selected profiles. O2/g3 recovers98 words/frame0x38 and the
 original packet/result private slots. Eleven expected-word/relocation guards
 normalize only the closed opening schedule, including a moved branch with the
 same absolute destination; no frame/private-offset or production-profile edits.
-[Ten tests](../tools/tests/test_game_actor_gated_packet_match.py) cover8192 paired
+[Ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_gated_packet_match.py) cover8192 paired
 guest cases,362 callback/RNG cases,18856 actual32-bit native calls and12 original
 call-delay pairs. Full eight-byte guest payload, poisoned untouched bytes,
 snapshot count/live context, full-word inputs, ignored submission result,
@@ -780,13 +784,13 @@ Ignored receipts:`conker/build/game-actor-gated-packet/` and
 
 ## Record-query matching controls
 
-[Driver](../tools/experiments/game_record_query_candidates.py) retains98
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_record_query_candidates.py) retains98
 measurements:64 mask/loop/order/input-type profile controls,30 storage/declaration
 controls and four selected profiles. Index-before-result declarations recover
 272 direct words/frame0x60. No guards, shared-header edits or production-profile
 change. This owner isolates the legacy inline-array declaration and uses the
 original table pointer; other owners are unchanged.
-[Ten tests](../tools/tests/test_game_record_query_match.py) cover all2048 field
+[Ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_record_query_match.py) cover all2048 field
 selections/both modes in12288 paired guest cases,196608 native calls across all
 u16 flags,1470 range cases,120 field corners and32 original caller setup-call-delay
 fragments. Ordered reads/writes, memory/saved state, last matching pointer,
@@ -806,12 +810,12 @@ Ignored receipts:`conker/build/game-record-query/` and
 
 ## Range-clamp matching controls
 
-[Driver](../tools/experiments/game_range_clamp_candidates.py):baseline and
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_range_clamp_candidates.py):baseline and
 direct-pointer forms under four SDK profiles, eight maintained measurements.
 Selected O2/g3 recovers36 words/frame0x10. Thirteen expected-word guards change
 only temporary GPR operand fields; no opcode, address, branch, ordering or
 frame rewrite. Leaf has no relocations. Prior10842 guard rows remain pinned;
-10855 total. [Nine tests](../tools/tests/test_game_range_clamp_match.py) qualify
+10855 total. [Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_range_clamp_match.py) qualify
 3750 paired full-memory guest cases/all36 words,1250 native typed-caller cases,
 250 original call-delay fragments, four negatives, actual padding/stale words
 and complete copied-owner neighbor/pool/warning preservation. A call fragment
@@ -823,7 +827,7 @@ python3 -m unittest tools.tests.test_game_range_clamp_match -v
 python3 -m tools.experiments.game_area_sampler_exit_candidates
 ```
 
-[Sampler exit driver](../tools/experiments/game_area_sampler_exit_candidates.py)
+[Sampler exit driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_area_sampler_exit_candidates.py)
 adds30 O2/g3 controls to the existing152 measurements:output volatility,
 aggregate/scalar/per-case scratch, byte/word angle storage and descriptor
 volatility. None closes the sampler's missing exits; new scalar variants are
@@ -834,12 +838,12 @@ screening only, not qualified replacements. Ignored receipts:
 
 ## Area-sampler recovery controls
 
-[Driver](../tools/experiments/game_area_sampler_candidates.py) retains38 forms
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_area_sampler_candidates.py) retains38 forms
 across four SDK profiles (152 controls), including switch/exit structure,
 scratch lifetimes, RNG temporaries, signed flags and scaling alternatives.
 Selected candidate252 words/frame0x50, not yet254-word retail. Integer scaling
 recovers the count but not the arithmetic sequence. No guards/profiles installed.
-[Ten tests](../tools/tests/test_game_area_sampler_recovery.py) cover1024
+[Ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_area_sampler_recovery.py) cover1024
 independent-reference guest cases,48 bounded conversion cases,1536 original
 angle-helper cases,64 complete original caller cases,256 native cases,
 six compiled negatives and copied-owner/pool/warning preservation.
@@ -859,12 +863,12 @@ guards exist. Update that gate only with a qualified future installation.
 
 ## Point-transform compiler and diagnostic controls
 
-[Driver](../tools/experiments/game_point_transform_candidates.py):17 source
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_point_transform_candidates.py):17 source
 shapes/plain versus volatile global declarations,34 O2/g3 measurements;
 selected body additionally checked under all four SDK profiles. Early fixed-path
 clear/return recovers98 words/frame0x78.31 checked allocation/save-order guards
 close the s1/s2/s3 cycle; no arithmetic/control/frame/insert/omit normalization.
-[Eleven tests](../tools/tests/test_game_point_transform_match.py) bind1950
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_point_transform_match.py) bind1950
 paired guest cases/all98 words/full memory/external traces,180 connected original
 SDK/matrix/translation cases,144 actual32-bit native callers and39 original
 call/delay sites/234 seeded cases. Preserve diagnostics, zero/null fallback,
@@ -896,10 +900,10 @@ No FCSR/NaN-payload,64-bit host, whole-caller or gameplay acceptance.
 
 ## Texture resolver compiler and owner-pool controls
 
-[Driver](../tools/experiments/game_texture_resolver_candidates.py):18 forms
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_texture_resolver_candidates.py):18 forms
 across four SDK profiles,72 controls. Two repeated-source-field O2/g3 forms
 emit all50 words/no frame; separate-word/index-only forms emit49 instead.
-[Ten resolver tests](../tools/tests/test_game_texture_resolver_match.py) bind
+[Ten resolver tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_texture_resolver_match.py) bind
 13824 paired full-storage/trace guest cases,19200 actual32-bit native cases,
 486 complete original102-word cache-caller/50-word resolver cases and ten
 compiled negatives. Preserve low-byte kind, signed indices, unsigned10000000
@@ -912,9 +916,9 @@ targets at offset600. Two expected-word/relocation guards bind this pair to
 original jtbl_800A562C_game, without a scheduling/register/frame rewrite.
 Full owner assembly post-processing is required before actual padding.
 
-[Pool comparator](../tools/tests/game_owner_pool.py) uses actual R_MIPS_32
+[Pool comparator](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_owner_pool.py) uses actual R_MIPS_32
 text relocations to compare function-relative targets while keeping every other
-byte exact. [Three independent fixtures](../tools/tests/test_game_owner_pool.py)
+byte exact. [Three independent fixtures](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_owner_pool.py)
 reject changed targets/literals, missing/unsupported relocations and unowned
 targets. Neighbor guard checks pin the original10809-row digest, two exact
 resolver-table bindings, the31 point-transform guards and the thirteen clamp
@@ -932,10 +936,10 @@ no original rendering/gameplay, native private-home or64-bit host acceptance.
 
 ## Texture-cache submission controls
 
-[Driver](../tools/experiments/game_texture_cache_candidates.py):eight
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_texture_cache_candidates.py):eight
 early-return/captured-world/volatile-world forms across four SDK profiles,
 32 controls. Only default O2/g3 emits all102 words/frame0x40 directly.
-[Eleven tests](../tools/tests/test_game_texture_cache_match.py) bind2304
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_texture_cache_match.py) bind2304
 paired full-trace/storage guest cases,88 guest-only homes,486 connected
 original-resolver cases,6912 native32-bit typed-helper cases, nine original
 call/delay pairs and ten compiled negatives. Preserve signed packed shifts,
@@ -960,10 +964,10 @@ gameplay or64-bit host acceptance. Resolver is now recovered as described above.
 
 ## Row matrix compiler controls
 
-[Driver](../tools/experiments/game_row_matrix_candidates.py):translation-first/
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_row_matrix_candidates.py):translation-first/
 last and row/column store ordering across four actual SDK profiles,16 controls.
 Translation-first, row-order O2/g3 emits55 direct words/frame0x58 without guards.
-[Eleven tests](../tools/tests/test_game_row_matrix_match.py) bind2160 paired
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_row_matrix_match.py) bind2160 paired
 guest/full ordered trace/storage cases,192 float edges,36 guest-only live-home
 probes,1176 actual32-bit native caller cases and nine compiled semantic negatives.
 288 connected cases cover all24 original caller/55 builder/115 converter words
@@ -986,7 +990,7 @@ Ignored receipts:`conker/build/game-row-matrix/` and
 
 ## Oriented matrix recovery controls
 
-[Driver](../tools/experiments/game_oriented_matrix_candidates.py):eight
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_oriented_matrix_candidates.py):eight
 array/reversed-struct up-vector, row/column store-order and early-first-element
 forms, eight direction-layout/captured-start forms and sixteen in-place direction/
 up normalization and horizontal-vector forms across four actual SDK profiles,
@@ -994,7 +998,7 @@ up normalization and horizontal-vector forms across four actual SDK profiles,
 84 differences,142/frameB8/27 private differences, or142/frameC8/57,
 142/frameC8/47 and142/frameD0/44 differences
 confined to stack immediates. It does not patch the frame or install guards.
-[Thirteen tests](../tools/tests/test_game_oriented_matrix_recovery.py) bind2448
+[Thirteen tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_oriented_matrix_recovery.py) bind2448
 six-body guest cases,1224 actual32-bit native typed-caller cases per candidate,
 144 complete original caller/builder/converter cases per body, all142 builder
 words, eighteen compiled negatives across two source bodies and native
@@ -1031,11 +1035,11 @@ with the initial checkpoint in
 
 ## Scaled matrix compiler controls
 
-[Driver](../tools/experiments/game_scaled_matrix_candidates.py):four explicit/
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_matrix_candidates.py):four explicit/
 common-product and translation-order shapes across four actual-SDK profiles,
 16 controls. Explicit element updates and translation-first order recover67
 direct words/frame0x68 under O2/g3. No guards or shared profile/header changes.
-[Twelve tests](../tools/tests/test_game_scaled_matrix_match.py) bind6480 paired
+[Twelve tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_matrix_match.py) bind6480 paired
 guest/full trace/storage cases,696 float edges,48 guest-only home probes,
 3372 actual32-bit native caller cases, ten compiled negatives and a native
 integer-load rejection. All12 arguments are typed; integer field loads must
@@ -1054,12 +1058,12 @@ and31 point-transform guards (10842 total). Ignored receipts:
 
 ## Scaled descriptor compiler controls
 
-[Driver](../tools/experiments/game_scaled_descriptor_candidates.py):sixteen
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_descriptor_candidates.py):sixteen
 aggregate/field-wise copy, integer/float literal, header-placement and constant-
 read-order shapes across four actual-SDK profiles,64 controls. Aggregate copy,
 integer literal `2 * width` and original header store order recover all80 words/
 frame0x70 directly under O2/g3. No guards, profile/frame rewriting or shared
-header changes. [Eleven tests](../tools/tests/test_game_scaled_descriptor_match.py)
+header changes. [Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_descriptor_match.py)
 bind10800 paired guest/full ordered trace/storage cases,2240 byte/float/constant
 edges,28 guest-only private overlap/home probes,20992 actual32-bit native cases,
 42 original jal/delay-pair cases and12 compiled negatives. Preserve opaque32-bit
@@ -1076,13 +1080,13 @@ not original helper/full-caller execution. Ignored receipts:
 
 ## Random descriptor compiler controls
 
-[Driver](../tools/experiments/game_random_descriptor_candidates.py):sixteen
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_random_descriptor_candidates.py):sixteen
 signed/unsigned descriptor, boolean and declaration-order shapes across four
 actual-SDK profiles,64 controls. Unsigned-byte descriptor with branch-shaped
 s32 boolean and original declaration order emits96 words/frame0x78 directly.
 The signed SDK descriptor materializes six -1 values instead of255; retain
 the shared SDK type and install a local layout, not six word guards.
-[Eleven tests](../tools/tests/test_game_random_descriptor_match.py) bind6912
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_random_descriptor_match.py) bind6912
 paired guest/full ordered trace/storage cases,944 byte/float edges,48 guest-only
 home reload probes,57856 actual32-bit native cases,144 original call/delay-pair
 cases and12 compiled negatives. Preserve two integer draws, unsigned%61,
@@ -1100,13 +1104,13 @@ pairs in bounded wrappers, not complete original callers. Ignored receipts:
 
 ## Effect-record updater compiler controls
 
-[Driver](../tools/experiments/game_effect_record_updater_candidates.py):eight
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_effect_record_updater_candidates.py):eight
 record-lifetime/cursor/scope shapes across four actual-SDK profiles,32 controls.
 Minimal12-byte request and separate created-record lifetime recover80 words/
 frame0x60;56 direct plus24 guards. Derivation closes the pre-allocation S0/S1/
 S2 cycle, search-argument/payload scheduling, private cursor store/reload and
 four private request offsets. No frame rewrite, insertion or omission.
-[Eleven tests](../tools/tests/test_game_effect_record_updater_match.py) bind
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_effect_record_updater_match.py) bind
 7680 three-body guest/7680 native cases,1728 connected original-search cases,
 3072 guest/1536 native checked-caller cases, private actor-home probes, full
 selector width/guest-only unchecked index cases, ten negatives and actual
@@ -1122,10 +1126,10 @@ Ignored receipts: `conker/build/game-effect-record-updater-test/`; see
 
 ## Context-classifier compiler controls
 
-[Driver](../tools/experiments/game_context_classifier_candidates.py):global/local
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_context_classifier_candidates.py):global/local
 world reads and inside/outside defaults across four actual-SDK profiles,
 16 controls; eight O2/g3 or O2 controls match57 words directly, no frame/guards.
-[Eight tests](../tools/tests/test_game_context_classifier_match.py) bind
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_context_classifier_match.py) bind
 full32-bit inputs,15822 two-body guest cases,5308551 actual32-bit native
 cases,2688 connected dispatcher cases, eight semantic negatives, strict guest
 range/override gates and actual padding with alternate world/pool addresses.
@@ -1139,10 +1143,10 @@ Dispatcher experiment now uses both typed classifier declarations.
 
 ## Actor-classifier compiler controls
 
-[Driver](../tools/experiments/game_actor_classifier_candidates.py):eight
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_classifier_candidates.py):eight
 identity/default shapes across four actual-SDK profiles,32 controls. s32 local
 under existing O2/g3 emits45 direct words, no frame or instruction guards.
-[Eight tests](../tools/tests/test_game_actor_classifier_match.py) bind every
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_classifier_match.py) bind every
 byte, exact read contract, full storage, native record alignments, connected
 dispatcher, six negatives, production source/slots and both original table
 owners. Actual padding maps four pool relocations with addends0/180; alternate
@@ -1156,10 +1160,10 @@ context-classifier declaration was subsequently typed in Note1063.
 
 ## Effect-dispatch compiler controls
 
-[Driver](../tools/experiments/game_effect_dispatch_candidates.py):eight
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_effect_dispatch_candidates.py):eight
 selector/cursor/loop forms across four actual-SDK profiles,32 controls, actual
 function label; selected100-word/frame0x48 source derives75 direct/25 guarded
-words. [Eleven tests](../tools/tests/test_game_effect_dispatch_match.py) bind
+words. [Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_effect_dispatch_match.py) bind
 raw/normalized/retail,70848 actual32-bit native cases, full-storage live aliases,
 registered cursor updates, connected retail classifiers/list search/caller,
 semantic negatives, invalid/cyclic guest boundaries, actual padding and moved
@@ -1188,11 +1192,11 @@ are investigation receipts, not new maintained acceptance tests.
 
 ## Position-projection compiler controls
 
-[Driver](../tools/experiments/game_position_projection_candidates.py): eight
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_position_projection_candidates.py): eight
 scope/sum shapes across four SDK profiles and four typed-caller controls,
 **36 controls**, no installation. Delta declarations before the matrix give
 all 63 direct words/frame 0x80 under existing O2/g3; caller 16 body words plus
-two zero padding words remains exact. [Nine tests](../tools/tests/test_game_position_projection_match.py)
+two zero padding words remains exact. [Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_position_projection_match.py)
 bind actual source, complete production slots, call relocations and unchanged
 10760 guards. Full-storage guest/native alias and mutation cases, connected
 retail rotation/coordinate instructions with bounded finite trig responses,
@@ -1215,10 +1219,10 @@ tests, an installed source recovery, or a word-normalization recipe.
 
 ## Actor-event dispatch compiler controls
 
-[Driver](../tools/experiments/game_actor_event_dispatch_candidates.py):eight
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_event_dispatch_candidates.py):eight
 selector/status/branch/address forms, four profiles, **32 controls**, actual SDK.
 Selected unsigned N64 address subtraction gives55 direct words/frame0x18 under
-existing O2/g3; no guards or driver installation. [Nine tests](../tools/tests/test_game_actor_event_dispatch_match.py)
+existing O2/g3; no guards or driver installation. [Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_event_dispatch_match.py)
 bind full production source/slot/relocations and unchanged guard metadata;
 60724 two-body guest and262144 actual32-bit native cases, repeated lookup,
 byte command, live callback/event/status aliases and nine semantic negatives.
@@ -1230,10 +1234,10 @@ helper/hardware/gameplay acceptance. Ignored receipts under
 
 ## Piecewise envelope compiler controls
 
-[Driver](../tools/experiments/game_piecewise_envelope_candidates.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_piecewise_envelope_candidates.py):
 eight scope/sum forms, four profiles, **32 controls**. Branch-local factors
 recover69 words/no frame;13 differences derive from four bounded closed FPR
-cycles and commutative operands. No driver installation. [Nine tests](../tools/tests/test_game_piecewise_envelope_match.py)
+cycles and commutative operands. No driver installation. [Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_piecewise_envelope_match.py)
 bind actual padder/link/source/slot/metadata, full guest storage/accesses,
 native live aliases, float boundaries, bounded loops and eleven negatives.
 Only arithmetic NaNs classify; direct copies/untouched bytes exact. Reference-
@@ -1243,10 +1247,10 @@ receipts; see [Note 1056](WORKING_NOTES/1056-game-piecewise-envelope-match-20261
 
 ## Timed interpolation compiler controls
 
-[Driver](../tools/experiments/game_timed_interpolation_candidates.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_timed_interpolation_candidates.py):
 eight pointer/sample/tail forms, four profiles, **32 controls**. Explicit RNG
 sample statements give59 words/frame0x30/nine private-home/commutative FP
-differences under existing O2/g3; no driver installation. [Nine tests](../tools/tests/test_game_timed_interpolation_match.py)
+differences under existing O2/g3; no driver installation. [Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_timed_interpolation_match.py)
 derive all words, bind actual object padder/link/production metadata, qualify
 full-storage/callback/access/saved-pointer and actual native-C behavior.
 Special-float arithmetic NaNs are classified separately from exact untouched
@@ -1257,12 +1261,12 @@ Ignored receipts under `conker/build/game-timed-interpolation-test/`; see
 
 ## Grid/channel updater compiler controls
 
-[Driver](../tools/experiments/game_grid_channel_updater_candidates.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_grid_channel_updater_candidates.py):
 36 declaration/return and36 payload/loop forms, two profiles, **144 controls**.
 Selected O2/g3 gives96 words/frame0x18/43 closed register/address-schedule
 differences; no installation by the driver. Two register permutations plus
 one independent LO16 schedule derive every retail word, including V0=4.
-[Nine tests](../tools/tests/test_game_grid_channel_updater_match.py) bind actual
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_grid_channel_updater_match.py) bind actual
 object relocation padding/linking, complete production slot/source/metadata,
 144 controls,1728 three-body guest storage/trace cases, signed-bound/byte-wrap
 edges,864 native actual-owner-body cases and ten compiled negatives. Shared
@@ -1274,11 +1278,11 @@ see [Note 1053](WORKING_NOTES/1053-game-grid-channel-updater-match-20261006.md).
 
 ## Payload-copy wrapper compiler controls
 
-[Driver](../tools/experiments/game_payload_copy_wrapper_candidates.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_payload_copy_wrapper_candidates.py):
 six forms/four profiles plus four callee ABI forms/four profiles, **40 controls**.
 Existing O2/g3 gives53 words/frame0x40/ten closed schedule differences;
 callee pointer return gives28 direct words with unchanged instructions. No
-driver installation. [Nine tests](../tools/tests/test_game_payload_copy_wrapper_match.py)
+driver installation. [Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_payload_copy_wrapper_match.py)
 derive the index permutation and local branch targets, parse/apply/link actual
 HI16 relocation movement, bind complete production slots and metadata.
 Full guest storage/traces, byte pairs/live join/actual callee-constructor chain,
@@ -1290,11 +1294,11 @@ see [Note 1052](WORKING_NOTES/1052-game-payload-copy-wrapper-match-20261006.md).
 
 ## List-key sorter compiler controls
 
-[Driver](../tools/experiments/game_list_key_sort_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_list_key_sort_candidates.py)
 screens six forms/four profiles: 24 controls, real SDK layouts/fixed table.
 Selected O2/g3 gives 72 words/frame0x138 with18 register-lifetime differences;
 no source/profile/guard installation by the driver.
-[Eight tests](../tools/tests/test_game_list_key_sort_match.py) bind all controls,
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_list_key_sort_match.py) bind all controls,
 complete production slot/body/prototype and register-only rewrite fields.
 Independent stable sorting checks entire node/table footprints and ordered
 guest accesses; native fixtures use independent array ordering with ordinal
@@ -1307,12 +1311,12 @@ gameplay or sibling host qualification. Ignored receipts under
 
 ## Basis-vector quad builder compiler controls
 
-[Driver](../tools/experiments/game_basis_quad_builder_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_basis_quad_builder_candidates.py)
 screens six forms/four profiles: 24 controls, real SDK types/fixed anchors.
 Selected O2/g3 emits 167 words/frame 0x68 with two independent load scheduling
 differences; all six multiply operand orders and scalar lifetimes emit directly.
 No source/profile/guard installation by the driver.
-[Nine tests](../tools/tests/test_game_basis_quad_builder_match.py) bind controls,
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_basis_quad_builder_match.py) bind controls,
 complete source/linked slot and the exact two guards, full memory/access traces,
 captured components, live translation/slot aliases and original-pointer return.
 Actual 52-word buffer backend and 13-word owner wrapper execute in connected
@@ -1327,12 +1331,12 @@ or sibling host adoption. Ignored receipts under
 
 ## Cached quad builder compiler controls
 
-[Driver](../tools/experiments/game_cached_quad_builder_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cached_quad_builder_candidates.py)
 screens six forms/four profiles: 24 controls, real SDK types/fixed anchors.
 Selected O2/g3 gives 134 words/frame 0xD0, with only five independent
 first-corner scheduling differences. Loop-local point scope recovers register
 lifetimes and branch-delay update. No source/profile/guard installation by
-the driver. [Six tests](../tools/tests/test_game_cached_quad_builder_match.py)
+the driver. [Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cached_quad_builder_match.py)
 bind controls, complete production slot/source and the five guards; actual
 40-word matrix assembly runs with the caller in two-body guest tests.
 Full external memory/access traces and independent byte references qualify
@@ -1345,14 +1349,14 @@ See [Note 1049](WORKING_NOTES/1049-game-cached-quad-builder-match-20261006.md).
 
 ## Vertex attribute initializer compiler controls
 
-[Driver](../tools/experiments/game_vertex_attribute_initializer_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_vertex_attribute_initializer_candidates.py)
 screens six forms/four profiles: 24 controls with real SDK types/fixed anchors.
 The direct byte-pointer loop emits all 48 words/frame zero under O2/g3;
 intermediate flag writes and the final alpha-load/clear/store schedule are
 preserved. The tool installs no source/profile/guards. Retail ROM, IDO and
 MIPS tools required; ignored receipts under
 `conker/build/game-vertex-attribute-initializer[-test]/`.
-[Eight tests](../tools/tests/test_game_vertex_attribute_initializer_match.py)
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_vertex_attribute_initializer_match.py)
 bind all controls and installed source/slot, complete intermediate traces,
 every halfword pattern, 19 table/output relationships and actual constructor/
 two-helper chains. Native entry instrumentation forwards to both real helper
@@ -1363,14 +1367,14 @@ host adoption. See
 
 ## View corner initializer compiler controls
 
-[Driver](../tools/experiments/game_view_corner_initializer_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_view_corner_initializer_candidates.py)
 screens ten forms/four profiles: 40 controls with real SDK types and fixed
 anchors. A pointer ABI, explicit 12-byte table-record pointer, unsigned
 halfword dimensions and shared word temporary emit all 55 words/frame eight
 directly under O2/g3. No source/guard/profile installation by the driver.
 Retail ROM, IDO and MIPS tools required; ignored receipts under
 `conker/build/game-view-corner-initializer[-test]/`.
-[Nine tests](../tools/tests/test_game_view_corner_initializer_match.py) bind
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_view_corner_initializer_match.py) bind
 all controls and installed source/slot, index-255 no-access behavior, every
 index/variant byte pair, unsigned dimension boundaries, all eight stores,
 table/output aliases, and actual constructor/helper chains. Native fixtures
@@ -1383,14 +1387,14 @@ not full hardware/gameplay/host adoption. See
 
 ## Source effect constructor compiler controls
 
-[Driver](../tools/experiments/game_source_effect_constructor_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_source_effect_constructor_candidates.py)
 screens 16 forms and six schedule forms under four profiles, plus nine
 single-default ordering controls: 97 controls with real SDK types/fixed anchors.
 Explicit flag sign-bit test, early default assignment and later byte +0xA0
 clear emit all 114 words/frame 0x38 directly under O2/g3. No installation or
 profile/guard changes by the driver. Retail ROM, IDO and MIPS tools required;
 ignored receipts under `conker/build/game-source-effect-constructor[-test]/`.
-[Nine tests](../tools/tests/test_game_source_effect_constructor_match.py)
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_source_effect_constructor_match.py)
 bind all controls, complete source/linked slot, all flag branches, every byte
 width, safe payload boundaries, helper/default mutations and inclusive live
 bound. Guest traces cover all 114 words and 204 actual-wrapper path words.
@@ -1405,13 +1409,13 @@ are qualified in Note 1048. See
 
 ## Source effect packet compiler controls
 
-[Driver](../tools/experiments/game_source_effect_packet_candidates.py) screens
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_source_effect_packet_candidates.py) screens
 13 forms under four profiles plus 46 single-field ordering forms: 98 controls
 with real SDK types and fixed anchors. Selected header order emits all 96
 words/frame 0xA0 directly under O2/g3. The tool installs no source/profile/
 guards. Retail ROM, IDO and MIPS tools required; ignored receipts under
 `conker/build/game-source-effect-packet/`.
-[Nine tests](../tools/tests/test_game_source_effect_packet_match.py) bind every
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_source_effect_packet_match.py) bind every
 control and installed source/slot, compare full packet/call/memory traces for
 three bodies, and exhaust lifetime/selector/channel widths and float boundaries.
 Native opaque handoff and actual retained source-consumer C are qualified;
@@ -1423,13 +1427,13 @@ hardware/gameplay/host adoption claim. See
 
 ## Source-backed actor packet compiler controls
 
-[Driver](../tools/experiments/game_actor_source_packet_candidates.py) screens
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_source_packet_candidates.py) screens
 14 forms under four profiles: 56 controls, real SDK types and fixed anchors.
 Selected O2/g3 emits 102 words/frame 0xB8 with 14 opening-schedule differences.
 The tool installs no source/profile/guards. Production uses relocation-aware
 expected-word guards for only that closed reorder. Retail ROM, IDO and MIPS
 tools required; ignored receipts under `conker/build/game-actor-source-packet/`.
-[Eight tests](../tools/tests/test_game_actor_source_packet_match.py) bind all
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_source_packet_match.py) bind all
 controls and guard instructions/relocations, compare raw/guarded/retail full
 packet/call/memory traces, all halfwords and floating-point boundary cases.
 Native fixtures qualify initialized fields and whole storage, plus the actual
@@ -1441,13 +1445,13 @@ not full caller/FCSR/hardware/gameplay/host adoption. See
 
 ## Effect-configuration packet compiler controls
 
-[Driver](../tools/experiments/game_effect_configuration_packet_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_effect_configuration_packet_candidates.py)
 screens eight forms under four profiles: 32 controls with real SDK types and
 fixed anchors. A separate captured float local under O2/g3 emits all 69 words
 directly. The tool installs no source/guards/profile. IDO, retail ROM and MIPS
 tools required; ignored receipts under
 `conker/build/game-effect-configuration-packet/`.
-[Six tests](../tools/tests/test_game_effect_configuration_packet_match.py)
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_effect_configuration_packet_match.py)
 check the complete 60-byte packet, scalar narrowing, call-entry snapshots,
 source/global aliases, post-capture mutations, saved registers and typed
 32-bit native layout. Guest bit transport includes signaling NaNs without
@@ -1458,12 +1462,12 @@ No full effect-path/hardware/FCSR/gameplay/host claim. See
 
 ## Address-record allocator compiler controls
 
-[Driver](../tools/experiments/game_address_record_allocator_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_address_record_allocator_candidates.py)
 screens 12 forms under four profiles: 48 controls with real SDK types and
 fixed retail anchors. Owner-before-flags O2/g3 emits all 37 words directly;
 the tool installs no source, guards or profile. Retail ROM, IDO and MIPS tools
 required; ignored receipts under `conker/build/game-address-record-allocator/`.
-[Six tests](../tools/tests/test_game_address_record_allocator_match.py) bind
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_address_record_allocator_match.py) bind
 the direct wrapper and unchanged 28-word allocator/20-word list inserter.
 Guest traces cover all halfwords and mode/channel pairs with high incoming
 bits; native actual C verifies both allocator outcomes and all record/list
@@ -1474,12 +1478,12 @@ not full caller/hardware/FCSR/gameplay or host adoption claims. See
 
 ## Conditional packet allocator compiler controls
 
-[Driver](../tools/experiments/game_conditional_packet_allocator_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_conditional_packet_allocator_candidates.py)
 screens six forms under four profiles: 24 controls with real SDK/struct headers
 and fixed retail anchors. Reserved-first O2/g3 emits all 38 words directly;
 the tool installs no source, guards or profile. Retail ROM, IDO and MIPS tools
 required; ignored receipts under `conker/build/game-conditional-packet-allocator/`.
-[Six tests](../tools/tests/test_game_conditional_packet_allocator_match.py)
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_conditional_packet_allocator_match.py)
 bind the direct wrapper and unchanged cleanup/allocator chains. Guest checks
 include ordered calls/reads/stores, callback snapshots, allocation failure,
 global/source aliases and copied untouched padding. Native actual wrapper/
@@ -1490,12 +1494,12 @@ hardware/gameplay/host adoption. See
 
 ## Random selector/output compiler controls
 
-[Driver](../tools/experiments/game_random_selector_outputs_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_random_selector_outputs_candidates.py)
 screens six forms under four profiles: 24 controls. A 32-bit selector under
 O2/g3 emits all 37 words directly, retaining the callee's byte narrowing.
 The tool installs no source, guards or profile; retail ROM, IDO and MIPS tools
 required. Ignored receipts under `conker/build/game-random-selector-outputs/`.
-[Six tests](../tools/tests/test_game_random_selector_outputs_match.py) bind the
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_random_selector_outputs_match.py) bind the
 direct wrapper, unchanged 31-word selector/18-word handwritten RNG and palette.
 Ordered external traces, output aliases and call-entry snapshots are checked;
 a local 64-bit guest extension executes the RNG without changing shared runners.
@@ -1505,13 +1509,13 @@ adoption claim. See [Note 1040](WORKING_NOTES/1040-game-random-selector-outputs-
 
 ## Actor position-queue wrapper compiler controls
 
-[Driver](../tools/experiments/game_actor_position_queue_wrapper_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_position_queue_wrapper_candidates.py)
 screens eight forms under four profiles: 32 controls with real SDK/actor
 headers and fixed retail anchors. Plain typed O2/g3 emits all 37 words
 directly. No source, guards or profile installed by the tool; retail ROM,
 IDO and MIPS tools required. Receipts ignored under
 `conker/build/game-actor-position-queue-wrapper/`.
-[Seven tests](../tools/tests/test_game_actor_position_queue_wrapper_match.py)
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_position_queue_wrapper_match.py)
 bind the direct wrapper and unchanged helper, complete external guest traces,
 signed argument homes, callback capture/mutations and connected queue stores.
 Native cases use the actual complete actor and queue-record layouts plus
@@ -1521,12 +1525,12 @@ arithmetic/FCSR or gameplay. See
 
 ## Alternate actor-dimension compiler controls
 
-[Driver](../tools/experiments/game_actor_alternate_dimensions_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_alternate_dimensions_candidates.py)
 screens four forms under four profiles: 16 controls with real SDK/actor/point
 headers. Six O2 forms match 41 body words plus two retail padding words; the
 tool installs no source, guards or profile. Requires retail ROM, IDO and MIPS
 tools; ignored receipts under `conker/build/game-actor-alternate-dimensions/`.
-[Five tests](../tools/tests/test_game_actor_alternate_dimensions_match.py)
+[Five tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_alternate_dimensions_match.py)
 bind the complete slot/padding, local signed cast and unsigned shared field,
 ordered guest traces/full footprints and actual C/real actor-prefix native
 cases. Negative controls detect premature cached fields and unsigned +0xE8,
@@ -1536,12 +1540,12 @@ offset/entry test helpers retain their old defaults. See
 
 ## Actor-dimension query compiler controls
 
-[Driver](../tools/experiments/game_actor_dimensions_candidates.py) uses real
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_dimensions_candidates.py) uses real
 SDK/actor/point headers for four forms under four profiles: 16 controls.
 Direct fields/cached ID/early return match under both O2 profiles; no source,
 guard or profile is installed by the tool. Requires retail ROM, IDO and MIPS
 tools; ignored `conker/build/game-actor-dimensions/` receipts.
-[Five tests](../tools/tests/test_game_actor_dimensions_match.py) bind the
+[Five tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_dimensions_match.py) bind the
 direct linked slot, sequential guest traces/complete footprints and the
 actual C/real actor prefix in native cases. Negative controls detect wrong
 ID threshold, unsigned fields, missing offset and the stub. Forty reachable
@@ -1552,13 +1556,13 @@ See [Note 1037](WORKING_NOTES/1037-game-actor-dimensions-position-direct-match-2
 
 ### Sphere callee full-frame audit
 
-[Layout driver](../tools/experiments/game_sphere_callee_layout_candidates.py)
+[Layout driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_sphere_callee_layout_candidates.py)
 screens 48 meaningful workspace/type/scalar-initializer controls. None recovers
 the original private layout; no production profile/source/guard changes.
-[Reference](../tools/tests/game_sphere_frame_reference.py) computes evolving
+[Reference](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_sphere_frame_reference.py) computes evolving
 frame snapshots, prologue/homes, rounded geometry, live private-copy rereads,
 late scalar pointers and dot arguments separately from the instruction oracle.
-[Six tests](../tools/tests/test_game_sphere_callee_frame_recovery.py) compare
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_sphere_callee_frame_recovery.py) compare
 complete memory and ordered writes in 1,404 external-alias plus 1,296 private-
 output/home cases, pin the mismatch and fail closed on missing storage.
 Retail/trial use separate explicit layouts; equal private behavior is not claimed.
@@ -1570,11 +1574,11 @@ requires ROM and IDO/MIPS tools. Ignored receipts under
 
 ### Sphere callee storage recovery
 
-[Callee driver](../tools/experiments/game_sphere_callee_candidates.py) reproduces
+[Callee driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_sphere_callee_candidates.py) reproduces
 64 O2/g3 array/union/radius/root controls, none exact. Selected direction-union C
 fits 126 words/frame `0x70` with 60 differences, but wrong private slots prevent
 installation. Array overlays are compiler controls, not qualified replacements.
-[Seven tests](../tools/tests/test_game_sphere_callee_recovery.py) cover 2,808
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_sphere_callee_recovery.py) cover 2,808
 finite external-alias cases, original callee/dot word coverage, lazy miss reads,
 compiled live-read negatives, selected compiler controls and production retention.
 Two private-slot probes demonstrate retail second-X 24.0 versus selected 10.0.
@@ -1586,10 +1590,10 @@ Ignored receipts under `conker/build/game-sphere-callee/` and
 
 ### Sphere wrapper and retained dependency
 
-[Sphere driver](../tools/experiments/game_sphere_wrapper_candidates.py)
+[Sphere driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_sphere_wrapper_candidates.py)
 reproduces 24 source/profile controls. Selected wrapper emits 53 direct words
 with its original `0x28` frame and sole call relocation; no new guards.
-[Fourteen tests](../tools/tests/test_game_sphere_wrapper_match.py) qualify the
+[Fourteen tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_sphere_wrapper_match.py) qualify the
 nine-position ABI, real 126-word callee/13-word dot helper, connected finite
 geometry and output aliases, live parameter homes, seeded unordered/lazy
 branches, native float staging, both original caller setups and delay stores,
@@ -1605,13 +1609,13 @@ Ignored receipts live under `conker/build/game-sphere-wrapper/` and
 
 ### Fitting body and byte-match guards
 
-[Schedule driver](../tools/experiments/game_projection_schedule_candidates.py)
+[Schedule driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_projection_schedule_candidates.py)
 retains32 order/add/product/profile controls and derives37 checked guards.
 Selected C101 words/frame0x48,64 direct words; guards normalize temporary roles,
 commutative operands and one closed four-word independent schedule. All nine
 relocations remain at their original offsets/owners. No insertion, omission,
 branch/frame, header/profile/helper or padder-algorithm changes.
-[Sixteen match tests](../tools/tests/test_game_projection_schedule_match.py)
+[Sixteen match tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_projection_schedule_match.py)
 reuse lifetime qualification, compare raw/retail/guarded behavior and read
 dependencies, close instruction inputs, exercise actual W/index-home overlap,
 varied finite matrices and the original11-word caller, and pin copied-owner/
@@ -1623,14 +1627,14 @@ and `conker/build/game-projection-schedule-test/`. See
 
 ### Qualified lifetime recovery
 
-[Lifetime driver](../tools/experiments/game_projection_lifetime_candidates.py):
+[Lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_projection_lifetime_candidates.py):
 `python3 -m tools.experiments.game_projection_lifetime_candidates` reproduces
 140 O2/g3 lifetime forms with real headers; `--family initial` retains64
 additional source templates and `--profiles` selects existing profiles.
 The initial64 are not all measured by this recovery. No source/profile/guard
 installation. Selected body102 words/frame0x48,46 differences; retail101.
 Some controls intentionally alter alias behavior and are not qualified.
-[Ten recovery tests](../tools/tests/test_game_projection_lifetime_recovery.py)
+[Ten recovery tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_projection_lifetime_recovery.py)
 execute all58 original helper words, qualify optional outputs/live index/
 pre-X Y capture/post-X reciprocal/view reads and actual32-bit native C, and
 reject three compiled alias controls. These tests require ROM, IDO/MIPS tools
@@ -1642,12 +1646,12 @@ not identical raw read schedules, hardware/FCSR/NaN or gameplay acceptance.
 
 ### Earlier unqualified compiler audit
 
-[Driver](../tools/experiments/game_projection_wrapper_candidates.py) runs
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_projection_wrapper_candidates.py) runs
 20 O2/g3 pointer-home/W/index-lifetime controls using real SDK/structure
 headers. None matches; it installs no source, profile or guards. Requires
 retail ROM, IDO and MIPS tools; ignored receipts under
 `conker/build/game-projection-wrapper/`.
-[Three tests](../tools/tests/test_game_projection_wrapper_audit.py) reproduce
+[Three tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_projection_wrapper_audit.py) reproduce
 all measurements and bind the retained 58-word synthetic-return helper chain
 and the now-qualified production source/slot/guards. These are compiler/identity checks, not connected
 execution or native/alias qualification. See
@@ -1655,13 +1659,13 @@ execution or native/alias qualification. See
 
 ## Descriptor shape-measure compiler controls
 
-[Measure driver](../tools/experiments/game_shape_volume_candidates.py)
+[Measure driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_shape_volume_candidates.py)
 uses the real SDK/descriptor headers for six box operand orders crossed with
 two cylinder operand orders under four profiles: 48 controls. Only one O2/g3
 form emits all 56 words directly. It installs no source, guards or profile;
 requires retail ROM, IDO and MIPS tools. Receipts are ignored under
 `conker/build/game-shape-volume/`.
-[Six tests](../tools/tests/test_game_shape_volume_match.py) bind the complete
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_shape_volume_match.py) bind the complete
 direct slot, corrected prototype/externs, actual descriptor layout and retail
 coefficient words. Independent guest traces/native references preserve
 wrapped box multiplication and per-operation float rounding; negative tests
@@ -1672,7 +1676,7 @@ or complete FCSR qualification. See
 
 ## Integer pair-clamp access controls
 
-[Pair-clamp driver](../tools/experiments/game_integer_pair_clamp_candidates.py)
+[Pair-clamp driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_integer_pair_clamp_candidates.py)
 screens 23 forms under O2/g3, O2, O1/g3 and O1: 92 controls, empty compiler
 diagnostics, no direct exact form. It installs no source, guards or profile.
 Requires retail ROM, IDO and MIPS tools; receipts are ignored under
@@ -1687,7 +1691,7 @@ the recovered O2/g3 body; modes are mutually exclusive. Flags are passed only
 to disposable candidate builds, not production. Receipts:
 `conker/build/game-integer-pair-clamp-saved-registers/`. See
 [Note 1034](WORKING_NOTES/1034-game-pair-clamp-saved-register-backend-audit-20261006.md).
-[Nine recovery tests](../tools/tests/test_game_integer_pair_clamp_recovery.py)
+[Nine recovery tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_integer_pair_clamp_recovery.py)
 bind the non-matching source/slot, compare complete guest access traces and
 native footprints, and detect wrong clamp/swap controls. A local oracle adds
 only XOR; shared runners remain unchanged. Explicit register-field renaming
@@ -1702,11 +1706,11 @@ adds caller-home copies but no saved-pointer frame. No new match is inferred.
 
 ## Indexed state-save compiler controls
 
-[State-save driver](../tools/experiments/game_indexed_state_save_candidates.py)
+[State-save driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_indexed_state_save_candidates.py)
 uses real actor/header definitions for eight forms under four profiles:
 32 controls, ignored `conker/build/game-indexed-state-save/` receipts. It
 installs no source, guards or profile. Requires retail ROM, IDO and MIPS tools.
-[Eight state-save tests](../tools/tests/test_game_indexed_state_save_match.py)
+[Eight state-save tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_indexed_state_save_match.py)
 bind the direct slot and unchanged exact callback, sequential byte traces,
 opaque mutation, connected bit selection, zero-mask non-returning prefixes
 and native footprints. Shared guest runners are unchanged; bounded diagnostic
@@ -1715,11 +1719,11 @@ See [Note 1031](WORKING_NOTES/1031-game-indexed-state-save-direct-match-20261006
 
 ## Random-reload timer compiler controls
 
-[Timer driver](../tools/experiments/game_random_reload_timer_candidates.py)
+[Timer driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_random_reload_timer_candidates.py)
 screens 19 forms under O2/g3, O2, O1/g3 and O1: 76 controls, ignored
 `conker/build/game-random-reload-timer/` receipts. It installs no source,
 guards or profile. Requires the retail ROM, IDO and MIPS binutils.
-[Eight timer tests](../tools/tests/test_game_random_reload_timer_match.py)
+[Eight timer tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_random_reload_timer_match.py)
 bind the typed record/direct slot and compare three guest instruction bodies
 with independent memory/call ordering, native footprints and break-7 cases.
 The local oracle subclass adds only DIVU/MFHI/the exact trap; shared runners
@@ -1728,11 +1732,11 @@ See [Note 1030](WORKING_NOTES/1030-game-random-reload-timer-direct-match-2026100
 
 ## Float-reference packet compiler controls
 
-[Packet driver](../tools/experiments/game_effect_packet_wrapper_candidates.py)
+[Packet driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_effect_packet_wrapper_candidates.py)
 screens six source forms under O2/g3, O2, O1/g3 and O1: 24 bounded controls,
 empty diagnostics, ignored `conker/build/game-effect-packet-wrapper/` receipts.
 It installs no source or profile. Requires the retail ROM, IDO and MIPS
-binutils. [Eight packet tests](../tools/tests/test_game_effect_packet_wrapper_match.py)
+binutils. [Eight packet tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_effect_packet_wrapper_match.py)
 bind source/production words/no guards, all 28 packet bytes and padding,
 narrowing, native layout and connected original-retail-callee behavior.
 Production checks also bind the unchanged callee to all 50 retail words.
@@ -1741,7 +1745,7 @@ gameplay. See [Note 1029](WORKING_NOTES/1029-game-float-reference-packet-wrapper
 
 ## Zone selection compiler controls
 
-[Edge lifetime driver](../tools/experiments/game_graph_edge_crossing_lifetimes.py)
+[Edge lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_graph_edge_crossing_lifetimes.py)
 adds 209 existing-profile source controls in eight modes: default layouts,
 `--loops`, `--sides`, `--coordinates`, `--registers`, `--declarations`,
 `--parameters`, or `--geometry`. Modes are mutually exclusive and each writes
@@ -1751,7 +1755,7 @@ or permits oversized code. See
 [Note 1026](WORKING_NOTES/1026-game-graph-edge-crossing-lifetime-improvement-20261006.md)
 for the selected 207-word / 102-difference improvement and qualification limits.
 
-[Linked-record tail driver](../tools/experiments/game_linked_record_tail_candidates.py)
+[Linked-record tail driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_linked_record_tail_candidates.py)
 freezes the original 71-word body and measures four store-volatility forms
 under four backend profiles (16 controls), with ignored receipts. Its strict
 normalizer binds the three compact words of the closed return-tail expansion;
@@ -1759,7 +1763,7 @@ it does not install source or enable oversized bodies. Six tests qualify
 3360 three-way guest cases, actual emitter/relocation rejection and production
 slot equality. See [Note 1028](WORKING_NOTES/1028-game-linked-record-position-tail-match-20261006.md).
 
-[Scope driver](../tools/experiments/game_graph_edge_crossing_scopes.py) freezes
+[Scope driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_graph_edge_crossing_scopes.py) freezes
 the 102-difference body and screens 101 named controls across default scopes,
 `--planes`, `--aggregates`, `--sums` and `--products`. Each writes a separate
 ignored receipt. `--verify-checkpoint` compares all live ELF slots with the
@@ -1767,7 +1771,7 @@ preceding ignored lifetime-test receipt and fails if absent or different.
 Three tests bind transformation boundaries and inventory. No source is
 installed. See [Note 1027](WORKING_NOTES/1027-game-graph-edge-crossing-scope-audit-20261006.md).
 
-[Edge-crossing driver](../tools/experiments/game_graph_edge_crossing_candidates.py)
+[Edge-crossing driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_graph_edge_crossing_candidates.py)
 screens 39 source forms under the existing/default-unroll profiles, writing
 78 records to ignored `conker/build/game-graph-edge-crossing/screen.json`.
 It preserves the semantic baseline and marks minimum-result/narrowed-band
@@ -1777,7 +1781,7 @@ install source or permit oversized bodies. See
 for the original recovery; Note 1026 supersedes its 151-word mismatch with
 the current 102-difference form. The original 39-form inventory stays frozen.
 
-[Root lookup driver](../tools/experiments/game_root_neighbor_lookup_candidates.py)
+[Root lookup driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_root_neighbor_lookup_candidates.py)
 measures 35 source forms under both existing/default-unroll profiles and writes
 70 records to ignored `conker/build/game-root-neighbor-lookup/screen.json`.
 It preserves the pointer-based recovery and old typed placeholder; the
@@ -1787,9 +1791,9 @@ ROM, IDO and MIPS binutils. See
 for the direct match; its geometric-helper placeholder is now superseded by
 the non-matching recovery in Note 1025.
 
-[Recovery driver](../tools/experiments/game_zone_neighbor_selection_candidates.py)
+[Recovery driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_zone_neighbor_selection_candidates.py)
 retains the original 29-form inventory and previous source checkpoint.
-[Lifetime driver](../tools/experiments/game_zone_neighbor_selection_lifetimes.py)
+[Lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_zone_neighbor_selection_lifetimes.py)
 adds 52 lifetime, 16 cursor and 23 register-hint controls without changing the
 recovered query layout. Run the latter module normally, with `--cursors`, or
 with `--registers`; mode switches are mutually exclusive. Each mode writes a

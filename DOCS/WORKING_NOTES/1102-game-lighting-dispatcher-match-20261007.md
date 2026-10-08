@@ -13,7 +13,7 @@ The original assembly remains the reference, not the implementation.
 
 ## Recovered Contract
 
-The [driver](../../tools/experiments/game_lighting_dispatch_candidates.py)
+The [driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_lighting_dispatch_candidates.py)
 retains the complete nine-word ABI: command pointer, descriptor pointer,
 unsigned-byte mode, actor pointer, unsigned-byte slot, signed-halfword index,
 position pointer, unsigned-byte flags and full extra word.
@@ -67,7 +67,7 @@ unexpected faults are not accepted as detections.
 
 ## Maintained Qualification
 
-[Eight dispatcher tests](../../tools/tests/test_game_lighting_dispatch_match.py)
+[Eight dispatcher tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_lighting_dispatch_match.py)
 and the previous matrix-list installed-slot regression bind:
 
 - **30,722 guest fixtures**, all 256 mode/flag bytes, six actor states, four

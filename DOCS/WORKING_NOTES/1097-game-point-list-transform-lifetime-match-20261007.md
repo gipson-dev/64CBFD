@@ -40,7 +40,7 @@ ABI types remain `u8 *`, two `struct17 **` lists and signed32 count.
 
 ## Measured Controls
 
-[Candidate driver](../../tools/experiments/game_point_list_transform_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_point_list_transform_candidates.py)
 adds **40 meaningful measurements** while retaining the historical 48:
 
 - Twelve address-taking/volatile parameter views produce genuine reloads but
@@ -61,7 +61,7 @@ complete incoming-home and full-memory qualification below.
 
 ## Maintained Qualification
 
-[Eight match tests](../../tools/tests/test_game_point_list_transform_match.py)
+[Eight match tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_point_list_transform_match.py)
 compare raw selected C, normalized C and all 57 original wrapper words:
 
 - **1,344 guest fixtures**, including seven signed count patterns, 16 data
@@ -92,11 +92,11 @@ compare raw selected C, normalized C and all 57 original wrapper words:
   57 words without overflow; both call targets independently rebase by
   `0x01000000` with the corresponding linked call changed and others intact.
 
-The [historical audit](../../tools/tests/test_game_point_list_transform_audit.py)
+The [historical audit](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_point_list_transform_audit.py)
 retains its old body, controls and mismatch fixtures. Its installed-source
 gate now explicitly pins the recovered match, while the retained mismatch
 receipt is named historical, not current-production.
-[Guard-history helper](../../tools/tests/game_owner_pool.py) preserves every
+[Guard-history helper](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_owner_pool.py) preserves every
 earlier checkpoint and pins the new nineteen-row suffix at index 11,006.
 
 The normalizer's initial probe omitted the `LH` register-field opcode; its

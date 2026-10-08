@@ -36,7 +36,7 @@ do not establish legal out-of-array access in native C.
 
 ## Source And Closed Derivation
 
-[Maintained driver](../../tools/experiments/game_effect_record_updater_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_effect_record_updater_candidates.py)
 screens separate/shared created-record lifetimes, private/plain cursor stores,
 inner/outer request scopes and four actual-SDK profiles: **32 controls**, empty
 standalone diagnostics. Select the separate created-record local and outer
@@ -79,7 +79,7 @@ never dereference it or claim original allocator execution.
 
 ## Qualification Boundaries
 
-[Eleven maintained tests](../../tools/tests/test_game_effect_record_updater_match.py):
+[Eleven maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_effect_record_updater_match.py):
 
 - All80 normalized words equal retail. Actual padding emits320 bytes with
   unchanged relocation metadata. Alternate table90018004 exercises signed-low

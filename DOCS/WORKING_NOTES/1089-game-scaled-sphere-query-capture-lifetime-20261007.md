@@ -36,7 +36,7 @@ thereby reading back 0.5 as the scale. The discrepancy reaches both output point
 | First output Y | `0x41427C98` | `0x409A7C98` |
 | Second output Y | `0xC009F25D` | `0xC014F92F` |
 
-The [preferred experimental body](../../tools/experiments/game_scaled_sphere_query_source_layout_candidates.py)
+The [preferred experimental body](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_sphere_query_source_layout_candidates.py)
 is `SCALE_FIRST`: capture `arg2->unkDC` before `arg2->unkE0` in C. Its emitted
 instructions retain both values before the inverse spill. Tests require exactly
 one ordinary mapped read of each field before that write, preserving both
@@ -52,9 +52,9 @@ from that older candidate or treat its earlier results as full-frame acceptance.
 
 ## Expanded Qualification
 
-[Seventeen caller tests](../../tools/tests/test_game_scaled_sphere_query_source_layout.py)
+[Seventeen caller tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_sphere_query_source_layout.py)
 reuse the maintained complete-caller bank with the new emitted candidate and
-[independent evolving-memory reference](../../tools/tests/game_scaled_sphere_query_reference.py).
+[independent evolving-memory reference](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_scaled_sphere_query_reference.py).
 The existing suite stays reproducible; only the new private-actor checks opt
 into the two known caller-save stores. Private helper prologues and whole-frame
 byte/timing acceptance remain outside this reference's scope.
@@ -110,7 +110,7 @@ with its smaller scope; it is not the full-run coverage receipt.
 
 ## Source And Scope Controls
 
-The [driver](../../tools/experiments/game_scaled_sphere_query_source_layout_candidates.py)
+The [driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_sphere_query_source_layout_candidates.py)
 retains **39 new measurements**, all with empty isolated diagnostics and none
 raw exact; 140 measured controls including the earlier 101. Controls are
 code-generation evidence, not blanket semantic acceptance of every body.

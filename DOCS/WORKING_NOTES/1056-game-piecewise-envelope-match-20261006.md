@@ -34,7 +34,7 @@ rows. Derive all69 retail words; exactly **13 guards** at
 No opcode, float function, memory offset, branch/likely target/delay, count,
 frame, GPR, call or relocation change; no insertion, omission or copied ASM.
 
-[Maintained driver](../../tools/experiments/game_piecewise_envelope_candidates.py):
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_piecewise_envelope_candidates.py):
 eight scope/sum forms, four profiles, **32 controls**, actual SDK, empty
 diagnostics; installs nothing. Historical ignored artifacts remain intact in
 `game-timed-interpolation-test/`. New `next-volatile.py/log` adds eight correct
@@ -45,7 +45,7 @@ branch-local scope does.
 
 ## Qualification
 
-[Nine tests](../../tools/tests/test_game_piecewise_envelope_match.py):
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_piecewise_envelope_match.py):
 
 - **6480 finite guest cases / three bodies**: raw, derived, retail full external
   storage, ordered accesses, V0=1, saved GPR/FPR/SP/RA, two SP phases, signed/

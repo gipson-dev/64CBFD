@@ -40,7 +40,7 @@ All **18 slot words / 72 bytes** remain exact: **16 body words**, two zero pad
 words, frame **0x20**, VA **0x15141928**, ROM **0x16EDD8**. Its linked bytes
 are unchanged. Helper/caller ABI changes stay in this owner.
 
-[Maintained driver](../../tools/experiments/game_position_projection_candidates.py):
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_position_projection_candidates.py):
 eight matrix/product scopes and sum orders, four actual SDK profiles, plus
 four caller profiles: **36 controls**, empty diagnostics. Exact main controls
 are shape-000/001/100/101 under O2/g3; only O2/g3 is exact for the caller.
@@ -50,7 +50,7 @@ and register/scope screens led to the direct declaration-order recovery.
 
 ## Qualification
 
-[Nine maintained tests](../../tools/tests/test_game_position_projection_match.py):
+[Nine maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_position_projection_match.py):
 
 - **15360 finite guest cases / two bodies**, actual compiled C and retail:
   eight origin aliases, four matrices, five heights, six scales, eight callback

@@ -6,7 +6,7 @@ Date: 2026-10-08
 
 Recover the complete semantic C candidate for **`func_15031FC8`**, not another
 small substitute target. The candidate is retained in the
-[experiment driver](../../tools/experiments/game_node_selection_candidates.py);
+[experiment driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_selection_candidates.py);
 **the production zero-return placeholder is deliberately unchanged**.
 
 Retail: [5D2C0.s](../../conker/asm/5D2C0.s), VA
@@ -108,7 +108,7 @@ text guard. Owner pool binding remains an explicit separate gate.
 
 ## Qualification
 
-[Nine recovery tests](../../tools/tests/test_game_node_selection_recovery.py)
+[Nine recovery tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_selection_recovery.py)
 pass across targeted runs. Evidence is bounded to defined return, callback
 arguments, exact public read/store order, object memory and required faults.
 Saved GP/FP/SP/RA are checked by the guest runner; incidental caller GP/FP and

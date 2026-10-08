@@ -10,7 +10,7 @@ The installed semantic C remains 298 body / 302 slot words, frame 0x160,
 
 ## Reproducible Screen
 
-[Candidate driver](../../tools/experiments/game_actor_triangle_layout_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_triangle_layout_candidates.py)
 provides ten forms, written only under `conker/build/game-actor-triangle-layout`.
 It combines the checkpoint or an explicit three-output-cursor loop with two
 array declaration orders and vertex capacities 3/8. These larger capacities

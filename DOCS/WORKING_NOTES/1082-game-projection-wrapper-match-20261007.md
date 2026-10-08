@@ -15,7 +15,7 @@ alias-sensitive Y scale and gives the scheduler independent work between the
 floating multiplies. Do not move the Y product after X or retain stale inverse/
 view-base values. The selected body fits101 words/frame0x48,37 aligned differences.
 
-[Driver](../../tools/experiments/game_projection_schedule_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_projection_schedule_candidates.py)
 retains eight order/add/product controls across four profiles,32 measurements.
 Four O2/g3 controls fit101 words/frame0x48 with37 differences; reversed capture
 order adds a NOP and emits102 words/45 differences. O2 without g3 emits99/100
@@ -41,7 +41,7 @@ relocations remain at their original offsets with their original owners.
 
 ## Qualification
 
-[Match tests](../../tools/tests/test_game_projection_schedule_match.py)
+[Match tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_projection_schedule_match.py)
 reuse the maintained lifetime corpus and add fitting-body/guard/owner/caller
 checks. Raw C, original retail and guarded code are tested separately.
 

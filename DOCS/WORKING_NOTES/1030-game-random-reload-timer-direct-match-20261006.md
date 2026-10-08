@@ -45,7 +45,7 @@ not complete effect execution or a connected random engine.
 
 ## Compiler Controls
 
-[Timer driver](../../tools/experiments/game_random_reload_timer_candidates.py)
+[Timer driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_random_reload_timer_candidates.py)
 measures **19 source forms under four profiles: 76 controls**, all with empty
 compiler diagnostics. The initial unsigned-array body emits 39 words, frame
 0x28, 14 differences. Reversing final addends reduces that to seven but does
@@ -63,7 +63,7 @@ separately frozen in the driver; receipts are ignored under
 
 ## Qualification
 
-[Eight timer tests](../../tools/tests/test_game_random_reload_timer_match.py)
+[Eight timer tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_random_reload_timer_match.py)
 compare retail, direct typed C and the 14-difference array C body with an
 independent byte-memory reference:
 

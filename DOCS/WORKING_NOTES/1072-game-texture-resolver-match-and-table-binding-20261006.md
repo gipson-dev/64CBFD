@@ -14,7 +14,7 @@ by assigning index from source->unk0, then spelling the dereference path with
 source->unk0 again. The compiler emits a single actual source-word read.
 A separate word local or using only index emits49 words and loses that copy.
 
-[Compiler driver](../../tools/experiments/game_texture_resolver_candidates.py):
+[Compiler driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_texture_resolver_candidates.py):
 18 source shapes across four SDK profiles,72 controls without diagnostics.
 Exactly two match:plain index/repeated-source and condition-assignment/repeated-
 source under O2/g3. Early returns, local/inline words, alternate threshold order,
@@ -61,8 +61,8 @@ or scheduling rewrite. Original10809 rows remain unchanged; two rows appended.
 
 ## Qualification
 
-[Resolver tests](../../tools/tests/test_game_texture_resolver_match.py) and
-[pool tests](../../tools/tests/test_game_owner_pool.py):all12 pre-install checks
+[Resolver tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_texture_resolver_match.py) and
+[pool tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_owner_pool.py):all12 pre-install checks
 pass in53.365s, zero skips/errors/failures. Ten resolver tests include a further
 post-link production gate; three independent pool tests reject incorrect targets.
 
@@ -91,7 +91,7 @@ post-link production gate; three independent pool tests reject incorrect targets
   all50 retail words and alternate carries. Wrong expected word/relocation
   fails with stale-guard error before emission.
 
-[Pool comparator](../../tools/tests/game_owner_pool.py) normalizes only actual
+[Pool comparator](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_owner_pool.py) normalizes only actual
 R_MIPS_32 text relocations to function name/relative offset. Every other pool
 byte remains exact. This qualifies neighboring copied-owner tests when their
 earlier C functions change packed addresses of the new switch targets. Three

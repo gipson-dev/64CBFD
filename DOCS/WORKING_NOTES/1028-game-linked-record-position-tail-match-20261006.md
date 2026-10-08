@@ -52,7 +52,7 @@ the aligned 15-word difference as 15 independent scheduling instructions.
 
 ## Source And Backend Controls
 
-[Tail driver](../../tools/experiments/game_linked_record_tail_candidates.py)
+[Tail driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_linked_record_tail_candidates.py)
 freezes the prior source. Four source forms (control and final-store volatile
 casts on either/both paths) run under four profiles: standard, `-Wc,-notailopt`,
 `-Wb,-nopeep`, and both options. **Sixteen controls**, empty diagnostics.
@@ -61,12 +61,12 @@ All standard/no-tail forms emit the unchanged 71-word / 15-difference body.
 No-peep forms emit 74 words / 52 differences and are oversized, uninstalled.
 Neither volatile stores nor these backend flags explains a direct retail
 tail. Earlier explicit-return/goto and O1/O2 controls remain rejected in
-the [original exit driver](../../tools/experiments/compile_game_linked_record_exits.py).
+the [original exit driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/compile_game_linked_record_exits.py).
 Receipts: ignored `conker/build/game-linked-record-tail/measurements.json`.
 
 ## Qualification
 
-[Tail tests](../../tools/tests/test_game_linked_record_tail_match.py) compare
+[Tail tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_linked_record_tail_match.py) compare
 retail, raw C and normalized instructions with an independent float32
 reference across **3360 guest cases**, both stack phases. Cases cover failed
 and positive/negative successful lookup results, seven RNG words, five finite

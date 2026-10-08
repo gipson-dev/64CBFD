@@ -56,7 +56,7 @@ and the private query homes are not yet instruction-exact.
 
 ## Compiler Screen
 
-[Candidate driver](../../tools/experiments/game_zone_neighbor_selection_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_zone_neighbor_selection_candidates.py)
 freezes the straightforward indexed recovery independently of production.
 **29 source forms / 58 profile controls** complete with empty diagnostics.
 The existing generated_B3020 no-unroll profile remains unchanged.
@@ -103,7 +103,7 @@ full production lookup/caller/gameplay chain or a PC-port transplant.
 
 ## Qualification And Linked Audit
 
-[Qualification tests](../../tools/tests/test_game_zone_neighbor_selection_match.py)
+[Qualification tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_zone_neighbor_selection_match.py)
 pass **14 tests in 68.607 seconds**, no skips, against the final installed build.
 The tests
 compare retail, the installed source shape and the independently frozen indexed

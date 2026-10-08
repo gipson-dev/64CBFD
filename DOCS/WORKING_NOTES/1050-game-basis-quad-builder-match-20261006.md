@@ -43,7 +43,7 @@ this does not claim qualification of every caller or a shared-header change.
 
 ## Compiler Evidence
 
-[Driver](../../tools/experiments/game_basis_quad_builder_candidates.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_basis_quad_builder_candidates.py):
 **six forms x four profiles = 24 controls**, real SDK types/fixed backend and
 copy anchors, empty diagnostics. Selected O2/g3: 167 words/frame 0x68/two
 differences; plain O2: 167/0x68/eleven. O1 variants: 210/0x48/209.
@@ -67,7 +67,7 @@ order and return emit directly. No insertion/omission/trampoline.
 
 ## Qualification
 
-[Nine tests](../../tools/tests/test_game_basis_quad_builder_match.py):
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_basis_quad_builder_match.py):
 
 - All 24 compiler controls, complete 167-word shape and exact two-load swap.
 - **1728 guest cases / two raw bodies**: six incoming view patterns including

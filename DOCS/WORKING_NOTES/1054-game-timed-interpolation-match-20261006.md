@@ -27,7 +27,7 @@ Zero, negative zero and unordered timer comparisons bypass expiry.
 
 ## Compiler And Guard Evidence
 
-[Persisted driver](../../tools/experiments/game_timed_interpolation_candidates.py):
+[Persisted driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_timed_interpolation_candidates.py):
 eight pointer/sample/tail forms under four profiles, **32 controls**, no
 installation. Actual SDK headers, fixed symbol anchors, empty diagnostics.
 Selected explicit-sample form: **59 words/frame0x30/nine differences**;
@@ -46,7 +46,7 @@ checks a **236-byte symbol / complete59-word slot**, not a padded prefix.
 
 ## Qualification
 
-[Nine focused tests](../../tools/tests/test_game_timed_interpolation_match.py):
+[Nine focused tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_timed_interpolation_match.py):
 
 - **8640 finite guest cases / three bodies** (raw, derived, retail): whole
   external storage, callback snapshots, ordered external accesses, V0=1,

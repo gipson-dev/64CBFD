@@ -37,7 +37,7 @@ not establish a complete gameplay meaning for every field.
 
 ## Compiler Controls
 
-[Packet driver](../../tools/experiments/game_effect_packet_wrapper_candidates.py)
+[Packet driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_effect_packet_wrapper_candidates.py)
 freezes the recovered body and measures six source forms under four profiles:
 **24 controls**, all with empty compiler diagnostics. Retained-order and
 field-order forms emit 37 exact words under both O2/g3 and O1/g3. Plain O2
@@ -49,7 +49,7 @@ No profile override is installed. Receipts are ignored under
 
 ## Qualification
 
-[Packet tests](../../tools/tests/test_game_effect_packet_wrapper_match.py)
+[Packet tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_effect_packet_wrapper_match.py)
 compare retail, exact C and independently scheduled plain-O2 instructions:
 
 - **2304 opaque-callback cases**: four pointer-word patterns, six delta

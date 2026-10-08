@@ -42,7 +42,7 @@ return; other caller domains are not comprehensively qualified here.
 
 ## Compiler Controls
 
-[Driver](../../tools/experiments/game_conditional_packet_allocator_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_conditional_packet_allocator_candidates.py)
 screens six forms under O2/g3, O2, O1/g3 and O1: **24 controls**, isolated
 diagnostics empty. Reserved-first order, an equivalent early return, and an
 explicit copy-size literal all match directly under O2/g3. The installed
@@ -61,7 +61,7 @@ Ignored receipts: `conker/build/game-conditional-packet-allocator/` and
 
 ## Qualification
 
-[Six tests](../../tools/tests/test_game_conditional_packet_allocator_match.py)
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_conditional_packet_allocator_match.py)
 use an independent ordered-memory reference, actual retail/selected words,
 and actual selected wrapper/retained cleanup C natively:
 

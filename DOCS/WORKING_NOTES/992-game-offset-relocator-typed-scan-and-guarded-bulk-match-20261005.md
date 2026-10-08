@@ -69,7 +69,7 @@ input, both independently and through the production padder.
 
 ## Source Screen
 
-[game_offset_relocator_candidates.py](../../tools/experiments/game_offset_relocator_candidates.py)
+[game_offset_relocator_candidates.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_offset_relocator_candidates.py)
 retains the original source fixture and screens 186 named forms. None matches
 directly; all isolated compilations have no diagnostics. It tests scan flags,
 pre/post-increment and comma conditions, cursor/index/address forms, integer
@@ -91,7 +91,7 @@ scan strictly inside `count == 0`.
 
 ## Qualification
 
-[test_game_offset_relocator_match.py](../../tools/tests/test_game_offset_relocator_match.py)
+[test_game_offset_relocator_match.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_offset_relocator_match.py)
 adds six independent checks. The bounded big-endian low-word oracle reuses
 the existing leaf/delay-slot runner and adds only AND and unsigned immediate
 comparison support. This is not a full emulator or hardware acceptance.

@@ -61,7 +61,7 @@ only short modular boundary cases are qualified.
 
 ## Compiler Recovery
 
-[Driver](../../tools/experiments/game_cursor_updater_candidates.py) retains131
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cursor_updater_candidates.py) retains131
 measurements across declaration/initialization controls, five selected profiles,
 loop assignment forms, result/flow controls, table/wrap shapes, compound stores,
 signedness/register qualifiers and explicit temporaries. No direct exact form
@@ -91,7 +91,7 @@ Only truly commutative operands are sorted for comparison.
 
 ## Qualification
 
-[Eleven maintained tests](../../tools/tests/test_game_cursor_updater_match.py):
+[Eleven maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cursor_updater_match.py):
 
 - 18944 paired raw-C/retail guest cases exhaust mode bytes and index low bytes,
   limits, strict boundaries, distinct/identical pointers and two stack phases.

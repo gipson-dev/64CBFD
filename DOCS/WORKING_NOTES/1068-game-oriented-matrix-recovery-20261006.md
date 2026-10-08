@@ -32,7 +32,7 @@ survive the sole helper call. No scalar result is consumed by the caller.
 
 ## Compiler Findings
 
-[Maintained driver](../../tools/experiments/game_oriented_matrix_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_oriented_matrix_candidates.py)
 reproduces eight source forms across four actual SDK profiles:32 controls,
 empty standalone diagnostics, no exact candidate. It does not import ignored
 scratch files or dynamically rewrite another driver's implementation.
@@ -71,7 +71,7 @@ the earlier forms; don't resume that theory without new evidence.
 
 ## Qualification
 
-[Eleven maintained tests](../../tools/tests/test_game_oriented_matrix_recovery.py)
+[Eleven maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_oriented_matrix_recovery.py)
 pass in39.018 seconds, no skips/errors/failures:
 
 - 32 compiler controls, including explicit assertions that the selected

@@ -39,7 +39,7 @@ old undefined signed shifts/overflow is deliberately not used as a reference.
 
 ## Source Measurements
 
-[Candidate driver](../../tools/experiments/game_matrix_translation_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_translation_candidates.py)
 retains **152 measurements**, not distinct emitted bodies:
 
 - 64 primary measurements: repeated/common address, sum operand order,
@@ -67,7 +67,7 @@ differences, not 34 independent arithmetic errors. Do not blindly patch them.
 
 ## Qualification
 
-[Nine maintained tests](../../tools/tests/test_game_matrix_translation_recovery.py):
+[Nine maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_translation_recovery.py):
 
 - **65,536 guest tuples** cover every signed-halfword bit pattern in each of
   all six fields, all 255 nonzero flag bytes, ten signed/full-word index

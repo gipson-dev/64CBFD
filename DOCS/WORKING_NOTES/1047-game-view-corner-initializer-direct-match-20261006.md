@@ -43,7 +43,7 @@ Historical Note 1046 describes its earlier signed-word helper boundary.
 
 ## Compiler Evidence
 
-[Driver](../../tools/experiments/game_view_corner_initializer_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_view_corner_initializer_candidates.py)
 screens **ten forms x four profiles = 40 controls**, isolated diagnostics
 empty. Repeated conditional stores emit 71 words/frame eight and 49
 differences. Shared halfword coordinate emits 63 words/42 differences;
@@ -62,7 +62,7 @@ local declaration remains the narrowest production data/type scope.
 
 ## Qualification
 
-[Nine tests](../../tools/tests/test_game_view_corner_initializer_match.py)
+[Nine tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_view_corner_initializer_match.py)
 use unchanged shared runners and an independent byte-store reference:
 
 - **8192 guest cases / two bodies**: every index, eight variant bundles,

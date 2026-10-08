@@ -47,9 +47,9 @@ Source and reproducible controls:
   five-argument transform; layout cast at its existing coordinate-phase call.
 - [generated_D4E10.c](../../conker/src/game/generated_D4E10.c): original matrix
   leaf assembly inclusion beside the already-retained trampoline/continuation.
-- [Candidate driver](../../tools/experiments/game_actor_triangle_transform_candidates.py):
+- [Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_triangle_transform_candidates.py):
   bounded layout and semantic controls, including the rejected ordinary C leaf.
-- [Focused tests](../../tools/tests/test_game_actor_triangle_transform_match.py):
+- [Focused tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_triangle_transform_match.py):
   retail/raw-C/live-ELF execution comparisons, real matrix connections,
   independently written native reference and tail-register checks.
 

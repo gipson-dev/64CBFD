@@ -34,7 +34,7 @@ above describes ordinary non-aliasing inputs, not immutable diagnostic storage.
 
 ## Compiler And Guards
 
-[Driver](../../tools/experiments/game_point_transform_candidates.py) retains
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_point_transform_candidates.py) retains
 17 shapes under O2/g3 with plain/volatile declarations:34 measurements. Shapes
 cover direct versus explicit status pointer, inverted zero equality, separate
 outer clear, goto, per-write volatile casts, array/struct global storage and
@@ -63,13 +63,13 @@ exercise HI/LO carry handling; alternate helper addresses retarget all calls.
 All10811 prior guard rows are immutable; append only these31,10842 total.
 Prior canonical SHA256:
 `9e8f11db1c07370f470888d62e63b3b8ced846afa67a1db81ca94f0c44e601da`.
-[Neighbor guard-history helper](../../tools/tests/game_owner_pool.py) pins that
+[Neighbor guard-history helper](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_owner_pool.py) pins that
 prefix, the older10809 prefix, the two resolver table bindings and exactly the
 31 new rows. It does not accept an arbitrary suffix.
 
 ## Qualification
 
-[Eleven maintained tests](../../tools/tests/test_game_point_transform_match.py)
+[Eleven maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_point_transform_match.py)
 include ten pre-install checks and one production gate:
 
 - 1950 paired guest cases cover all98 words in both raw C and original bodies:

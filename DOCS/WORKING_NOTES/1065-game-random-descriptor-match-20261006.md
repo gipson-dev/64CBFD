@@ -41,7 +41,7 @@ their types; full32-bit guest input aliases verify original byte homes.
 
 ## Direct Compiler Recovery
 
-[Maintained driver](../../tools/experiments/game_random_descriptor_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_random_descriptor_candidates.py)
 screens16 shapes times four actual-SDK profiles:64 controls. Controls cover
 the existing signed SDK descriptor versus a local unsigned-byte descriptor,
 s32/u8 boolean local, explicit if versus equality expression, and local
@@ -61,7 +61,7 @@ effect-system taxonomy or downstream helper restoration.
 
 ## Qualification
 
-[Eleven maintained tests](../../tools/tests/test_game_random_descriptor_match.py):
+[Eleven maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_random_descriptor_match.py):
 
 - **6912 paired guest cases**:six first random words/four second words, three
   float samples/two scales, three modes, disjoint/overlapping source-position,

@@ -44,7 +44,7 @@ retail return-delay stores. Zero paths retain the signed halfword reread.
 
 ## Compiler Recovery
 
-[Driver](../../tools/experiments/game_secondary_output_candidates.py) retains
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_secondary_output_candidates.py) retains
 96 case-order/chaining/product-order/shared-product controls over four profiles.
 The screen passes in 48.734 seconds. Only the selected form under O2/g3 and its
 O2 control match all 120 words directly. O1 variants emit 140 words/frame0x8;
@@ -67,7 +67,7 @@ only the compact644-byte addend is removed.
 
 ## Qualification
 
-[Eleven tests](../../tools/tests/test_game_secondary_output_match.py):
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_secondary_output_match.py):
 
 - 65536 paired guest cases: all256 modes,16 distinct patterns,8 output-alias
   layouts and2 stack phases. Complete mapped memory, ordered reads/writes,

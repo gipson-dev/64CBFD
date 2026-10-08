@@ -44,8 +44,8 @@ Required reads/stores and preceding partial effects are original behavior.
 
 ## Compiler Evidence
 
-The [candidate driver](../../tools/experiments/game_attachment_copy_candidates.py)
-and [ten tests](../../tools/tests/test_game_attachment_copy_match.py) retain
+The [candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_attachment_copy_candidates.py)
+and [ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_attachment_copy_match.py) retain
 **11 distinct source/profile combinations / 396 ordinary executions**.
 All eight register/comparison/signed-index forms are raw exact at `-O2 -g3`.
 All-control homes/faults/read-order/private equivalence is not claimed.

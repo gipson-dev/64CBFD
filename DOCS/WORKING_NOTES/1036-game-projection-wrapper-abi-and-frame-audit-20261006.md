@@ -41,7 +41,7 @@ helper prototype. No header is changed by this investigation.
 
 ## Compiler Controls
 
-[Driver](../../tools/experiments/game_projection_wrapper_candidates.py) uses
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_projection_wrapper_candidates.py) uses
 real SDK/structure headers, existing O2/g3 and fixed retail external anchors.
 The default run now contains all 20 measured controls: 16 pointer-home
 qualifier masks, uncached-W and grouped-nonzero forms, and the latter two
@@ -65,7 +65,7 @@ Ignored receipts: `conker/build/game-projection-wrapper/` and
 
 ## Audit And Boundary
 
-[Three tests](../../tools/tests/test_game_projection_wrapper_audit.py) pass in
+[Three tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_projection_wrapper_audit.py) pass in
 14.634 seconds, no skips. They reproduce all 20 compiler measurements, bind
 the complete linked helper chain and its synthetic return, and confirm the
 retail frame, production placeholder and absence of wrapper guards.

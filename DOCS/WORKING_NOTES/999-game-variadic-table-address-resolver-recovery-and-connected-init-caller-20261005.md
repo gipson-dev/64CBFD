@@ -58,7 +58,7 @@ unbounded argument storage are not qualified or made safe by this recovery.
 
 ## Compiler Screen And Guards
 
-The [108-form source screen](../../tools/experiments/game_variadic_table_address_candidates.py)
+The [108-form source screen](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_variadic_table_address_candidates.py)
 uses the real SDK stdarg header and fixed retail relocations. All forms
 compile without isolated diagnostics; best residual is two words, none is a
 direct match. Ignored reports live in `conker/build/game-variadic-table-address/`.
@@ -94,7 +94,7 @@ duplicate numeric owner/function/offset keys. Omitting either guard is rejected.
 
 ## Qualification
 
-The [eleven-check module](../../tools/tests/test_game_variadic_table_address_match.py)
+The [eleven-check module](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_variadic_table_address_match.py)
 pins full raw/guarded hashes, complete linked identity, original frame,
 compiler controls, SDK relocations, caller declarations and complete caller
 slots, omitted-guard rejection and connected behavior.

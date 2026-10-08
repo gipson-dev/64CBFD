@@ -81,7 +81,7 @@ runtime qualification. It is untouched by this recovery.
 
 ## Compiler Screen
 
-The [133-form screen](../../tools/experiments/game_buffer_variadic_loader_candidates.py)
+The [133-form screen](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_buffer_variadic_loader_candidates.py)
 uses SDK stdarg, default IDO O2/g3 and fixed retail relocations. It includes
 all 120 local-declaration permutations, ordering/register/control variants
 and zero/one descriptor-initialization negative controls. All isolated forms
@@ -105,7 +105,7 @@ call at 0x70 and buffer-loader call at 0xA4.
 
 ## Qualification
 
-The [eleven-check module](../../tools/tests/test_game_buffer_variadic_loader_match.py)
+The [eleven-check module](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_buffer_variadic_loader_match.py)
 passes against the rebuilt ELF and pins source, compiler controls, full
 retail identity, caller frames, relocations and absence of guards.
 

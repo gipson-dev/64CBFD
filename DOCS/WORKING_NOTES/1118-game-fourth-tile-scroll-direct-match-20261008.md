@@ -43,7 +43,7 @@ Caller `func_150339C8` submits its first two arguments at `0x150339E4`.
 
 ## Source And Compiler Fit
 
-[Candidate driver](../../tools/experiments/game_node_tile_scroll_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_tile_scroll_candidates.py)
 retains the full routine and source/profile/negative controls. An early-return
 shape emits C70/frame0/58 differences. A common return behind the positive
 command-pointer guard recovers C68/frame0 with17 register differences.
@@ -64,7 +64,7 @@ while scanning instead of finding a command; the other negatives change output.
 
 ## Qualification
 
-[Seven tests](../../tools/tests/test_game_node_tile_scroll_match.py) pass
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_tile_scroll_match.py) pass
 pre-install in **43.357s**, zero skips/errors/failures.
 
 - **45,063 guest cases**:1,024 selector/unused-actor/SP cases,27,648 coordinate/

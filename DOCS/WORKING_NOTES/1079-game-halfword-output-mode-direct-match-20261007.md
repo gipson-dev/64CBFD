@@ -39,7 +39,7 @@ the default's original final store/JR/NOP shape.
 
 ## Compiler Recovery
 
-[Driver](../../tools/experiments/game_output_mode_candidates.py) retains96
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_output_mode_candidates.py) retains96
 case-order/chained-store/signed-product/shared-case controls over four profiles.
 Exactly two forms match: selected case order2/0/1/3/4, chained zero propagation,
 integer-promoted byte products and separate cases, under O2/g3 and O2.
@@ -65,7 +65,7 @@ table rewrite, insertion or omission is involved.
 
 ## Qualification
 
-[Eleven tests](../../tools/tests/test_game_output_mode_match.py):
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_output_mode_match.py):
 
 - 65536 paired raw-C/retail guest cases cover all256 mode bytes,16 distinct
   input patterns, eight output-alias layouts and two stack phases. Complete

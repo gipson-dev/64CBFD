@@ -30,7 +30,7 @@ helper declarations use the existing O32 argument shapes.
 
 ## Source Sequencing And Derivation
 
-[Maintained compiler driver](../../tools/experiments/game_effect_dispatch_candidates.py)
+[Maintained compiler driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_effect_dispatch_candidates.py)
 uses the actual target label and SDK includes: eight live-selector/cursor/loop
 shapes across four profiles, **32 controls**. O2/g3 shape110 and111 give
 **100 words / frame0x48 / 25 differences**. Empty standalone diagnostics.
@@ -69,7 +69,7 @@ expected error regex; fixing the test to the actual diagnostic makes it pass.
 
 ## Bounded Qualification
 
-[Eleven maintained tests](../../tools/tests/test_game_effect_dispatch_match.py)
+[Eleven maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_effect_dispatch_match.py)
 compare raw C, normalized C and retail, not just retail against patched retail.
 
 - **13824 three-body guest cases**: every category, -1/0/5/20 selections,

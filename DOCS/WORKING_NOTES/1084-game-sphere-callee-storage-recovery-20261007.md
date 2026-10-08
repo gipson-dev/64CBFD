@@ -11,7 +11,7 @@ wrapper and 13-word dot helper. No guards or production source changes.
 
 ## Compiler Results
 
-[Maintained driver](../../tools/experiments/game_sphere_callee_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_sphere_callee_candidates.py)
 screens 64 O2/g3 forms: 32 array-storage/radius/root controls and 32 union-
 storage/member-address/root controls. All compile without diagnostics; none
 is exact. The array-overlay forms are compiler controls, not qualified C
@@ -62,7 +62,7 @@ either known game caller naturally creates this alias.
 
 ## Qualification
 
-[Seven recovery tests](../../tools/tests/test_game_sphere_callee_recovery.py)
+[Seven recovery tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_sphere_callee_recovery.py)
 pass in 14.016 seconds, zero skips/errors/failures.
 
 - 1,404 finite cases cover nine centers, six signed/zero radii, thirteen

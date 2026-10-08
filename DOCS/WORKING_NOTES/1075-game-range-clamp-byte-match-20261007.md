@@ -27,7 +27,7 @@ words; its values are correct, but its linked instructions do not match.
 
 ## Register Normalization
 
-[Driver](../../tools/experiments/game_range_clamp_candidates.py) reproduces
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_range_clamp_candidates.py) reproduces
 baseline/selected forms under four SDK profiles: eight maintained controls.
 Selected O2/g3: 36 words/frame16/13 raw differences. Other profiles do not
 remove those differences. Disposable pointer, XOR-expression and lifetime
@@ -52,14 +52,14 @@ Append exactly 13 rows to the existing guard CSV: 10842 prior rows are immutable
 `500b722e15c6ce30c740e6b55bc6feb0afe0a24e46df571c8aa94955b7b94639`.
 New canonical SHA256:
 `07904caf0a4b949a8e5b39f87e8aad4c0a1cc62cb92b3e999dd8d9c6b90211a4`.
-[Guard-history helper](../../tools/tests/game_owner_pool.py) pins the prior
+[Guard-history helper](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_owner_pool.py) pins the prior
 prefix and exactly the new rows. Point-transform checks now bind their exact
 31-row block rather than assuming it remains the end of the shared CSV.
 No historical guard check is weakened to accept an arbitrary suffix.
 
 ## Qualification
 
-[Nine maintained tests](../../tools/tests/test_game_range_clamp_match.py)
+[Nine maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_range_clamp_match.py)
 include eight pre-install checks and a production source/slot/history gate.
 The eight pre-install checks passed in 12.207 seconds:
 
@@ -110,7 +110,7 @@ alongside the previous 92-test neighboring suite. Tool/syntax/diff checks pass;
 
 ## Sampler Exit Controls And Resume
 
-[Supplementary exit/storage driver](../../tools/experiments/game_area_sampler_exit_candidates.py)
+[Supplementary exit/storage driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_area_sampler_exit_candidates.py)
 adds 30 reproducible O2/g3 controls to Note 1074's 152 measurements:
 all output-volatility subsets, scalar versus aggregate scratch storage,
 function-wide versus per-case locals, byte/word angle storage, declaration

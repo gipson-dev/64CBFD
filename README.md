@@ -69,7 +69,7 @@ toolchain.
 5. Replace the rebuilt code sections and rebuild the ROM.
 
 ```sh
-git clone --recursive <repository-url>
+git clone --recursive https://github.com/gipson-dev/64CBFD.git
 cd 64CBFD
 
 make check
@@ -83,6 +83,14 @@ make --jobs
 Validate the repository-local MIPS object wrappers independently with
 `make tools-check`; this does not require a ROM. See
 [project tools](DOCS/TOOLS.md) for usage and compatibility notes.
+
+The decomp tools now live in
+[64CBFD-Tools](https://github.com/gipson-dev/64CBFD-Tools), pinned here as the
+`tools/` submodule. After pulling the split, existing checkouts can run
+`bash scripts/bootstrap-tools.sh` to preserve their nested dependencies and
+initialize the new tools parent. See
+[tools repository setup](DOCS/TOOLS_REPOSITORY.md) for the migration and
+contribution workflow.
 
 An unmatched development build may end with `build/conker.us.z64: FAILED`.
 That means the rebuilt ROM differs from retail; it does not necessarily mean

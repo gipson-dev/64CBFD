@@ -33,7 +33,7 @@ function-interior code targets at **800A5430**, not category integers.
 
 ## Direct Source And Pool Ownership
 
-[Maintained driver](../../tools/experiments/game_context_classifier_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_context_classifier_candidates.py)
 screens global/local world reads, inside/outside defaults and four actual-SDK
 profiles:16 controls, empty standalone diagnostics. All eight O2/g3 or O2
 controls match57 words directly. Select the explicit signed32-bit local and
@@ -60,7 +60,7 @@ No owner Makefile edit or data replacement is required.
 
 ## Bounded Qualification
 
-[Eight maintained tests](../../tools/tests/test_game_context_classifier_match.py):
+[Eight maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_context_classifier_match.py):
 
 - Compare all57 compiled words and all16 table targets with retail; screen all
   16 controls and measure frame size from actual stack instructions.

@@ -18,7 +18,7 @@ header/profile/padder changes.
 The previous in-place candidate already matched all nonprivate instructions,
 but ten direction references were four bytes low and seventeen matrix
 references eight bytes low. The new
-[lifetime driver](../../tools/experiments/game_oriented_matrix_lifetime_candidates.py)
+[lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_oriented_matrix_lifetime_candidates.py)
 retains 48 measured O2/g3 forms:
 
 - Sixteen homogeneous-vector, SDK-aligned matrix and nested-scope controls.
@@ -68,7 +68,7 @@ The original assembly references remain intact.
 
 ## Qualification
 
-[Ten fitting tests](../../tools/tests/test_game_oriented_matrix_match.py) bind
+[Ten fitting tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_oriented_matrix_match.py) bind
 the selected source, direct object, production owners and linked slots:
 
 - **2,448 guest fixtures**: 204 finite/special-bit inputs, three destination

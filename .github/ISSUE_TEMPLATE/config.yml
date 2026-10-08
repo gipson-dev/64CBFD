@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Decomp Tool Issue
+    url: https://github.com/gipson-dev/64CBFD-Tools/issues
+    about: Report extraction, matching-driver, padder, or tool regression failures in the tools repository.

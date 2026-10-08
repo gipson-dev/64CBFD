@@ -32,7 +32,7 @@ and pristine ROM slot `conker/conker.us.bin+0x13AC5C` share SHA-256:
 ## Qualification
 
 The opt-in source-only screen is
-[game_immediate_release_frame_candidates.py](../../tools/experiments/game_immediate_release_frame_candidates.py).
+[game_immediate_release_frame_candidates.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_immediate_release_frame_candidates.py).
 It builds 51 named variants into ignored `conker/build/game-immediate-release-frame/`.
 Some variants emit identical bodies; do not count these as 51 independent
 algorithms or semantic qualifications. It reconstructs the former explicit-local
@@ -48,13 +48,13 @@ Only `inline-priority-inline-activity-both` matches every retail word.
 | Adopted full table-indexed form | 46 | 0x28 | 0 |
 
 Three new checks in
-[test_game_immediate_release_frame.py](../../tools/tests/test_game_immediate_release_frame.py)
+[test_game_immediate_release_frame.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_immediate_release_frame.py)
 reproduce the screen, pin both partial-frame rejection controls, prove the
 exact candidate is the production source and retain five neighboring
 maintenance/queue byte hashes and addresses. No screen result is normalized.
 
 The existing actual-body
-[texture lifecycle fixture](../../tools/tests/test_game_texture_metadata_and_maintenance.py)
+[texture lifecycle fixture](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_texture_metadata_and_maintenance.py)
 now requires the smaller retail frame, zero differences and retail digest in
 its independent fresh compiler/link check. It still covers all 65536 signed
 priority/unsigned activity byte pairs and all 7762 valid IDs. It qualifies

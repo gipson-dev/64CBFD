@@ -78,7 +78,7 @@ No extra initialization, free, fallback or allocation-success return is added.
 
 ## Source Fit
 
-[Caller driver](../../tools/experiments/game_node_matrix_creation_candidates.py)
+[Caller driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_matrix_creation_candidates.py)
 uses typed matrix/callback declarations, a positive creation guard/common zero
 return, and the created-pointer declaration before four matrix arrays. These
 recover all113 words/frame0x168 without instruction normalization. The retained
@@ -86,7 +86,7 @@ early-return control is C113/88 differences; ordinary-node is also direct.
 Volatile-result is C119/101. O2 without g3 is C111/110; O1 with or without g3
 is C134/frame0x158/133.
 
-[Helper driver](../../tools/experiments/game_node_transform_setup_candidates.py)
+[Helper driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_transform_setup_candidates.py)
 recovers all45 words/frame0x20. Expressing the first float destination through
 the node's record field resolves12 temporary-register allocation differences;
 the optimizer still eliminates that redundant first read. Ordinary-node and
@@ -101,7 +101,7 @@ No warning suppression or production-profile change was added.
 
 ## Qualification
 
-[Eight tests](../../tools/tests/test_game_node_matrix_creation_match.py):
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_matrix_creation_match.py):
 
 - **10,058 caller guest cases**, all256 flag bytes, seven index patterns,
   fifteen binary32 patterns, four modeled callback mutation modes and two SP

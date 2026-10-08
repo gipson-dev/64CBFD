@@ -65,7 +65,7 @@ retain their qualified external effects. No weight-sum gate is added.
 
 ## Compiler Controls
 
-[Frame driver](../../tools/experiments/game_actor_triangle_frame_candidates.py)
+[Frame driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_triangle_frame_candidates.py)
 freezes the previous private-home checkpoint independently of installed
 `SELECTED`. It supplies **29 scope controls** and **48 reuse controls**
 (`--reuse`), all compiling without diagnostics. Sixty-eight fitting forms
@@ -80,13 +80,13 @@ can combine the exact 0x138 frame and all seven homes, but those forms have
 recover the retail routine. The selected form is
 `direct-id-count-for-less-cut-2`: 302 words / 0x140 frame / 242 differences.
 
-[Recovery driver](../../tools/experiments/game_actor_triangle_transform_candidates.py)
+[Recovery driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_triangle_transform_candidates.py)
 now separates original `RECOVERY`, prior `HOME_RECOVERY`, and installed
 `SELECTED`. A fail-closed reduced-frame helper binds the original recovery;
 its output must equal the independently generated selected frame control.
 Historical layout, lifetime and home controls keep their original bodies.
 
-[Frame tests](../../tools/tests/test_game_actor_triangle_frame_candidates.py)
+[Frame tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_triangle_frame_candidates.py)
 bind both inventories, scoped operation sequences, unchanged capacities,
 fail-closed anchors, selected source identity, typed reuse, the live read
 mismatch, and the separate relative/blend histories. Existing production

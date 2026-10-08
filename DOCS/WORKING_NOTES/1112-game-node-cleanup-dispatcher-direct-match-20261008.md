@@ -80,8 +80,8 @@ preserving actual owner/offset identities.
 
 ## Qualification
 
-[Driver](../../tools/experiments/game_node_cleanup_candidates.py) and
-[seven tests](../../tools/tests/test_game_node_cleanup_match.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_cleanup_candidates.py) and
+[seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_cleanup_match.py):
 
 - Six pre-install tests: **110.238 seconds**, zero skips/errors/failures.
 - Native32 test separately: **0.917 seconds**, zero skips/errors/failures.

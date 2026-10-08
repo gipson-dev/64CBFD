@@ -42,7 +42,7 @@ Guarded production and pristine ROM `conker/conker.us.bin+0x196304` SHA-256:
 
 ## Source Investigation
 
-[game_attachment_cursor_candidates.py](../../tools/experiments/game_attachment_cursor_candidates.py)
+[game_attachment_cursor_candidates.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_attachment_cursor_candidates.py)
 reproduces 36 named source forms under default IDO 5.3 O2/g3 in ignored
 `conker/build/game-attachment-cursor/`. No form matches directly. Trials cover
 opcode width, pointer/signed/unsigned address cursors, declaration order,
@@ -58,7 +58,7 @@ the original signed-byte local remains in production.
 
 ## Qualification
 
-[test_game_attachment_cursor_match.py](../../tools/tests/test_game_attachment_cursor_match.py)
+[test_game_attachment_cursor_match.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_attachment_cursor_match.py)
 adds five checks: reproduce the screen; pin raw input and all nine guard
 rows; compare whole instruction traces; reject partial allocations; retain
 four neighboring byte hashes and addresses. The trace runner extends the

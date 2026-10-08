@@ -59,7 +59,7 @@ depth, absent variadic arguments or arbitrary invalid pointers.
 
 ## Source Screen And Regression
 
-[game_variadic_loader_stack_candidates.py](../../tools/experiments/game_variadic_loader_stack_candidates.py)
+[game_variadic_loader_stack_candidates.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_variadic_loader_stack_candidates.py)
 retains the pre-match source as an explicit fixture and reproduces 83 named
 forms with default IDO 5.3 O2/g3. It screens nullable selection, separate output
 pointers, declaration permutations, loop-local component scope and offset/result
@@ -73,7 +73,7 @@ not adopted. Plain permutations of the path/fallback/descriptor group do not
 match. The experiment asserts that production is exactly the winning source
 form, so future screens cannot silently redefine the earlier baseline.
 
-[test_game_variadic_resource_loader.py](../../tools/tests/test_game_variadic_resource_loader.py)
+[test_game_variadic_resource_loader.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_variadic_resource_loader.py)
 now has fifteen checks. A new source-screen identity check retains the baseline
 and real variadic macros. Its independent IDO fixture demands full raw C =
 production = ROM identity, pins all four stack-address words, and still checks

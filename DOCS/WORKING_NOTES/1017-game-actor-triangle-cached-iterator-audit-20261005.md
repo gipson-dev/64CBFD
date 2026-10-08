@@ -9,7 +9,7 @@ all seven retail private homes but early ID/count reads 10/3 versus 1/1.
 
 ## Measured Controls
 
-[Cached iterator driver](../../tools/experiments/game_actor_triangle_cached_iterator_candidates.py)
+[Cached iterator driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_triangle_cached_iterator_candidates.py)
 freezes the recovery independently of production. It screens 32 cached
 metadata/output-cursor forms, 14 isolated early-pointer/determinant forms,
 and 32 mixed early-range/late-edge bounds: **78 controls**, two IDO O2/g3
@@ -46,7 +46,7 @@ semantic/home-qualified controls. Do not infer correctness from them.
 
 ## Tests And Handoff
 
-[Inventory tests](../../tools/tests/test_game_actor_triangle_cached_iterator_candidates.py)
+[Inventory tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_triangle_cached_iterator_candidates.py)
 bind all 78 names, unchanged capacities, cached reads, distinct mixed bounds,
 fail-closed isolation/placement anchors, and three representative compiler
 receipts. Two fitting representatives rerun all 66 bounded comparisons.

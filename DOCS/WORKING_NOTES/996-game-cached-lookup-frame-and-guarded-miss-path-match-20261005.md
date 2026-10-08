@@ -22,7 +22,7 @@ rotation instructions. It has twelve raw differences confined to the miss path.
 
 The 71-form default IDO O2/g3 screen reproduces these measurements without
 diagnostics; no trial is directly exact. The immutable baseline remains in
-[the screen driver](../../tools/experiments/game_cached_lookup_candidates.py).
+[the screen driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cached_lookup_candidates.py).
 Reports are ignored artifacts under `conker/build/game-cached-lookup/`.
 Integer buffer and aligned-pointer-update trials can exceed the slot and are
 not adopted. Signed-shift trials are compiler experiments only, not qualified
@@ -40,7 +40,7 @@ Guarded/retail full-slot SHA-256:
 This is a **guarded match, not a direct compiler match**: 147 / 159 words
 already agree; twelve expected-word guards normalize the remainder. The
 [patch table](../../conker/retail_word_patches.us.csv) and independent
-[match tests](../../tools/tests/test_game_cached_lookup_match.py) pin each
+[match tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cached_lookup_match.py) pin each
 unlinked expected/replacement word. None of the guarded offsets has a
 relocation. All existing calls and branch/delay-slot control words are intact.
 

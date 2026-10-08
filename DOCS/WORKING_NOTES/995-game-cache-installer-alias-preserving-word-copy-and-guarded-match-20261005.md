@@ -49,7 +49,7 @@ Its sole raw-exact aggregate trial is still rejected for alias behavior.
 ## Guard Classification
 
 The [patch table](../../conker/retail_word_patches.us.csv) and independent
-[match tests](../../tools/tests/test_game_cache_installer_match.py) pin every
+[match tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cache_installer_match.py) pin every
 expected and replacement word.
 
 | Group | Guarded Words | Effect |

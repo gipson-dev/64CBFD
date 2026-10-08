@@ -41,7 +41,7 @@ is changed by the normalization.
 
 ## Qualification
 
-[Pointer driver](../../tools/experiments/game_actor_context_pointer_candidates.py)
+[Pointer driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_context_pointer_candidates.py)
 freezes the old body independently of the live source. Nineteen controls
 measure enable/eligibility pointer declarations and sum operand order.
 Enable-pointer-before/middle forms recover frame 0x68 / 15 differences;
@@ -49,7 +49,7 @@ after forms retain 0x60 / 20. Explicit eligibility-pointer forms canonicalize
 to 105 words / 99-100 differences and are not installed. Swapping the C sum
 operands does not change compiler output. All controls have empty diagnostics.
 
-[Matching tests](../../tools/tests/test_game_actor_context_dispatch_match.py)
+[Matching tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_context_dispatch_match.py)
 pass **nine tests in 14.461 seconds**, no skips. They bind source identity,
 the 19-form inventory, frozen baseline, frame/homes, complete allocation
 cycle, actual object words/relocations, and production slot equality.

@@ -54,7 +54,7 @@ works end to end.
 |   `-- Makefile         Code build and progress targets
 |-- DOCS/                Project documentation
 |-- ido/                 Recompiled IDO compiler used for matching
-|-- tools/               Split, diff, compression, and conversion tools
+|-- tools/               Pinned 64CBFD-Tools repository and nested dependencies
 |-- *.yaml               Top-level split and compression configs
 |-- *.sha1               Expected ROM and section hashes
 |-- Dockerfile           Reproducible build environment
@@ -300,5 +300,7 @@ Important external tools and references:
   required by `tools/render_rgba5551.py`; install it with
   `python3 -m pip install --upgrade Pillow`.
 
-The `tools/` submodules keep their upstream READMEs. Project-specific guidance
+The `tools/` path is the pinned `64CBFD-Tools` repository. Its nested upstream
+dependencies keep their own READMEs. See [tools repository setup](TOOLS_REPOSITORY.md)
+for migrating an existing checkout. Project-specific guidance
 stays under `DOCS/`.

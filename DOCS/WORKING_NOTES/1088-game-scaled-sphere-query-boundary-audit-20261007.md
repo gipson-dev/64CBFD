@@ -12,8 +12,8 @@ matching increment, production-source/profile/shared-header/padder change or tar
 
 ## Signed Offset And Call Boundaries
 
-Extend the [maintained caller tests](../../tools/tests/test_game_scaled_sphere_query_recovery.py)
-and [independent reference](../../tools/tests/game_scaled_sphere_query_reference.py):
+Extend the [maintained caller tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_sphere_query_recovery.py)
+and [independent reference](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_scaled_sphere_query_reference.py):
 
 - 9,216 new connected guest cases vary signed actor `unkD6` values
   `-32768/-187/-2/-1/0/1/187/32767`, IDs `0/186/187/255`, four Y-scale pairs,
@@ -51,7 +51,7 @@ native stack aliases, hardware, gameplay or host adoption.
 
 ## Scheduling Controls
 
-The [new focused driver](../../tools/experiments/game_scaled_sphere_query_schedule_candidates.py)
+The [new focused driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_sphere_query_schedule_candidates.py)
 retains 30 O2/g3 controls, all with empty isolated compiler diagnostics and
 none raw exact. Together with the prior 71 controls, **101 measurements**
 are maintained. The selected source/profile and its ABI remain unchanged.

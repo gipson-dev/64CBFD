@@ -49,7 +49,7 @@ absolute symbol definitions and all original switch-table targets.
 
 ## Direct Compiler Recovery
 
-[Maintained driver](../../tools/experiments/game_scaled_descriptor_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_descriptor_candidates.py)
 screens16 source shapes across four actual-SDK profiles:64 controls. Empty
 standalone diagnostics throughout. Only shape-1110-o2g3 matches all80 words.
 
@@ -69,7 +69,7 @@ the full descriptor; the unrelated small SDK struct218 is not adopted.
 
 ## Qualification
 
-[Eleven maintained tests](../../tools/tests/test_game_scaled_descriptor_match.py):
+[Eleven maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_descriptor_match.py):
 
 - **10800 paired guest cases**:six opaque words, five width/five height values,
   three source aliases, three output aliases, four slot bytes and two stack

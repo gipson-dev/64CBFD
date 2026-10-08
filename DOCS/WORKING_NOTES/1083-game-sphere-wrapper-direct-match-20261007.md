@@ -31,7 +31,7 @@ origin and direction. That check can reject after all eight output stores.
 
 ## Compiler Controls
 
-[Driver](../../tools/experiments/game_sphere_wrapper_candidates.py) reproduces
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_sphere_wrapper_candidates.py) reproduces
 24 measurements: five wrapper source shapes and one callee trial under four
 profiles. The selected nested-return body and explicit cached-first form both
 match all 53 words with retail O2/g3. O2 without g3 differs five words. Early-
@@ -44,7 +44,7 @@ retail 126 words/frame `0x70`; O2 differs 120, O1/g3 and O1 emit 164 words/frame
 
 ## Qualification
 
-[Tests](../../tools/tests/test_game_sphere_wrapper_match.py) distinguish natural
+[Tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_sphere_wrapper_match.py) distinguish natural
 connected execution from seeded boundary probes and the uninstalled callee trial.
 
 - 8,424 finite connected cases exercise nine center patterns, six signed/zero

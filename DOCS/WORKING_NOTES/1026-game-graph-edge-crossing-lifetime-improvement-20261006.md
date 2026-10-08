@@ -40,7 +40,7 @@ the complete body is byte-exact.
 
 ## Compiler Screen
 
-[Lifetime driver](../../tools/experiments/game_graph_edge_crossing_lifetimes.py)
+[Lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_graph_edge_crossing_lifetimes.py)
 retains the previous 151-difference source as an independently compiled
 checkpoint. Eight mutually exclusive screen modes provide **209 unique
 source controls**, all compiled under the existing no-unroll profile with
@@ -75,7 +75,7 @@ promising physical-register fix. No arbitrary unused padding local is added.
 
 ## Qualification
 
-[Edge tests](../../tools/tests/test_game_graph_edge_crossing_match.py) now
+[Edge tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_graph_edge_crossing_match.py) now
 compare **four** guest bodies with the independent float32 reference: retail,
 installed source, original semantic baseline and the frozen 151-difference
 checkpoint. The 2177-case corpus preserves ordered height calls, external
@@ -84,7 +84,7 @@ The 288 native cases extract the actual installed source and check all 8192
 record bytes and globals. Retail's late-rejected-crossing, endpoint, full-band,
 wide-ID, signed-count, mutation and unordered-coordinate boundaries remain.
 
-[Lifetime tests](../../tools/tests/test_game_graph_edge_crossing_lifetimes.py)
+[Lifetime tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_graph_edge_crossing_lifetimes.py)
 bind the 209-control inventory, complete fitting length, exact saved prefix
 and loop tail, single count load, selected-source identity and frozen
 checkpoint hash. The paired-local rewriter protects struct member declarations

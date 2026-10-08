@@ -12,7 +12,7 @@ ROM1702D4..17046C. Complete semantic C emits every word directly under existing
 O2/g3, including return/delay. Linked SHA256:
 `ea35a13398e09c276736658a9e7205577c4b8ea7b29aaa7ed297242691ef634d`.
 
-[Driver](../../tools/experiments/game_texture_cache_candidates.py):eight
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_texture_cache_candidates.py):eight
 early-return/captured-world/volatile-world shapes across four SDK profiles,
 32 final controls without diagnostics. Only default O2/g3 matches102/frame40.
 Default O2 without g3:101/96 differences; O1/g3:104/90; O1:104/101.
@@ -44,7 +44,7 @@ without a float/default-promotion correction at this boundary.
 
 ## Qualification
 
-[Maintained tests](../../tools/tests/test_game_texture_cache_match.py):
+[Maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_texture_cache_match.py):
 all ten pre-install tests pass in39.947s, zero skips/errors/failures.
 
 - 2304 paired guest cases:hit/each miss, eight worlds, two override bytes,

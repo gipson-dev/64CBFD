@@ -35,6 +35,8 @@ and progress explanations.
   and clean commit scope.
 - [Project tools](TOOLS.md) — local wrappers, smoke tests, toolchain
   overrides, active Conker asset utilities, and reference-only generators.
+- [Tools repository setup](TOOLS_REPOSITORY.md) - separate tools ownership,
+  recursive checkout, migration, and pinned dependency updates.
 - [IDO 5.3 recomp toolchain](IDO_RECOMP.md) — reproducing the compiler used by
   byte-matching builds.
 
@@ -578,6 +580,7 @@ confirmed.
 | Installation, build, CI, repository layout | `PROJECT.md` |
 | Function conversion and byte matching | `CONTRIBUTING.md` |
 | Local tool usage and compatibility | `TOOLS.md` |
+| Tools repository checkout and ownership | `TOOLS_REPOSITORY.md` |
 | `conker/` section build mechanics | `CODE_SUBPROJECT.md` |
 | Confirmed ROM and asset behavior | `ASSET_FORMATS.md` or `CONFIG.md` |
 | Future PC-port decisions | `PC_PORT_ROADMAP.md` |
@@ -589,5 +592,7 @@ confirmed.
 | Active debugger byte-matching handoff | `TEMP_DEBUGGER_TODO.md` |
 | 64CBFDOGL hand-port reference bodies, with 2026-08-16 stale-snapshot caveat | `64CBFDOGL_FUNCTION_PULL.md` |
 
-The `tools/` subdirectories are mostly submodules and retain their own upstream
-documentation. Do not move or rewrite those READMEs as project documentation.
+The `tools/` path is the pinned
+[64CBFD-Tools](https://github.com/gipson-dev/64CBFD-Tools) repository. Its seven
+upstream dependencies retain their own documentation. Do not move or rewrite
+those READMEs as project documentation.

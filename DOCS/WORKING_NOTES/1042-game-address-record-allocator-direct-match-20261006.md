@@ -44,7 +44,7 @@ pointee formats and full caller execution remain outside this checkpoint.
 
 ## Compiler Controls
 
-[Driver](../../tools/experiments/game_address_record_allocator_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_address_record_allocator_candidates.py)
 screens **12 forms / four profiles = 48 controls**, isolated diagnostics empty.
 Owner-before-flags and its equivalent byte-view mode form match directly under
 O2/g3. The fully typed owner-before-flags form is installed. The initial
@@ -64,7 +64,7 @@ Ignored receipts: `conker/build/game-address-record-allocator/` and
 
 ## Qualification
 
-[Six tests](../../tools/tests/test_game_address_record_allocator_match.py)
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_address_record_allocator_match.py)
 compare selected/retail words with an independent ordered-memory reference:
 
 - **1152 opaque guest cases, two bodies**: eight argument bundles spanning

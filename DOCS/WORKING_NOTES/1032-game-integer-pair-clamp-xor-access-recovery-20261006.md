@@ -34,7 +34,7 @@ return contract. There are no helper calls.
 
 ## Compiler Evidence
 
-[Driver](../../tools/experiments/game_integer_pair_clamp_candidates.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_integer_pair_clamp_candidates.py):
 23 forms under O2/g3, O2, O1/g3 and O1, **92 controls**, empty isolated compiler
 diagnostics. Pointer/value declaration and capture order, register hints,
 volatile pointer/pointee variants, explicit XOR stores, lower reload and
@@ -60,7 +60,7 @@ installed. Receipts: ignored `conker/build/game-integer-pair-clamp/`.
 
 ## Qualification
 
-[Seven tests](../../tools/tests/test_game_integer_pair_clamp_recovery.py)
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_integer_pair_clamp_recovery.py)
 use a local guest XOR implementation without changing shared runners.
 Independent signed-bound and sequential byte-memory references compare:
 

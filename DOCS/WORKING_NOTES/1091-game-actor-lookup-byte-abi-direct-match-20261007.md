@@ -16,7 +16,7 @@ Resume `func_151432BC` from
 [Note 1074](1074-game-area-sampler-qualified-recovery-20261006.md), retaining
 the supplementary controls in
 [Note 1075](1075-game-range-clamp-byte-match-20261007.md).
-The new [scalar-lifetime driver](../../tools/experiments/game_area_sampler_lifetime_candidates.py)
+The new [scalar-lifetime driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_area_sampler_lifetime_candidates.py)
 keeps the original 48-byte `struct209` scratch and moves only real rectangle
 width / circle distance declarations into their individual case scopes.
 Eight scope masks across break/early-return forms give 16 measurements:
@@ -46,7 +46,7 @@ signature, although its body remains a placeholder. Correct the declaration
 There is only one call to this helper in the owner. Do not broaden this change
 to the shared header or claim the helper's C implementation is recovered.
 
-The [actor driver](../../tools/experiments/game_actor_lookup_candidates.py)
+The [actor driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_lookup_candidates.py)
 retains 31 source shapes under both word and byte helper declarations:
 **62 O2/g3 measurements, 17 direct matches**, all under the byte declaration.
 Controls cover flat/nested exits, outer else blocks, result reuse/scopes,
@@ -67,7 +67,7 @@ Contract:
 
 ## Qualification
 
-[Ten actor tests](../../tools/tests/test_game_actor_lookup_match.py) cover:
+[Ten actor tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_lookup_match.py) cover:
 
 - **24,552 guest fixtures**: every byte selector with high incoming bits,
   NULL/inactive/matching/mismatching candidates, zero/nonzero validity,

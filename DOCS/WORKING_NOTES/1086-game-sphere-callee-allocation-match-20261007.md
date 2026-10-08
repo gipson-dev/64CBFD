@@ -12,7 +12,7 @@ baseline. The conversion and byte-exact C counts each increase by one.
 
 ## Allocation Recovery
 
-[Allocation driver](../../tools/experiments/game_sphere_callee_allocation_candidates.py)
+[Allocation driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_sphere_callee_allocation_candidates.py)
 combines the meaningful direction union recovered in Note 1084 with scalar-first
 and relative-vector-last declaration order. The previous declaration-order
 screen used ordinary structures: its useful offsets alone did not recover the
@@ -59,8 +59,8 @@ The neighboring 53-word wrapper and 13-word dot helper remain unchanged.
 
 ## Qualification
 
-[Eleven allocation tests](../../tools/tests/test_game_sphere_callee_allocation_match.py)
-retain the independent [full-frame reference](../../tools/tests/game_sphere_frame_reference.py)
+[Eleven allocation tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_sphere_callee_allocation_match.py)
+retain the independent [full-frame reference](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/game_sphere_frame_reference.py)
 and separately execute raw C, original retail and guarded code.
 
 - 1,404 external-alias and 1,296 private-output/incoming-home cases compare

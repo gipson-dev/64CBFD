@@ -47,7 +47,7 @@ byte-for-byte unchanged; the parent still has 282 differences.
 
 ## Compiler Evidence
 
-[Candidate driver](../../tools/experiments/game_graph_edge_crossing_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_graph_edge_crossing_candidates.py)
 retains the straightforward semantic baseline, indexed/do-while/cursor forms,
 side-copy lifetime controls and reused parameter-normal controls. It also
 includes explicit wrong-minimum-result and narrowed-band negative controls.
@@ -71,7 +71,7 @@ The inventory writes an ignored `screen.json` under
 
 ## Qualification
 
-[Edge tests](../../tools/tests/test_game_graph_edge_crossing_match.py) compare
+[Edge tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_graph_edge_crossing_match.py) compare
 retail instructions, installed source and the frozen semantic baseline with
 an independent float32 reference. They bind the float result, ordered height
 calls, ordered external writes, full non-stack footprints and saved GPR/FPR

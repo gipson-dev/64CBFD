@@ -38,7 +38,7 @@ replace or re-normalize the retained helper.
 
 ## Compiler Controls
 
-[Driver](../../tools/experiments/game_actor_position_queue_wrapper_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_position_queue_wrapper_candidates.py)
 uses actual SDK/actor headers and fixed retail anchors. Eight forms under
 O2/g3, O2, O1/g3 and O1: **32 controls**, isolated diagnostics empty.
 Five O2/g3 forms match directly: plain typed parameters, coordinate locals,
@@ -57,7 +57,7 @@ from body length alone. Ignored receipts:
 
 ## Qualification
 
-[Seven tests](../../tools/tests/test_game_actor_position_queue_wrapper_match.py)
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_position_queue_wrapper_match.py)
 use unchanged shared guest instruction runners, an independent ordered-access
 and queue reference, and the actual recovered C plus existing writer natively:
 

@@ -49,7 +49,7 @@ establish valid gameplay slots or a portable out-of-bounds C contract.
 
 ## Compiler Controls
 
-[State-save driver](../../tools/experiments/game_indexed_state_save_candidates.py)
+[State-save driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_indexed_state_save_candidates.py)
 compiles with the **real repository actor definitions and function headers**.
 Eight forms under O2/g3, O2, O1/g3 and O1 give **32 controls**, empty compiler
 diagnostics. The selected halfword-pointer form emits all 38 retail words.
@@ -63,7 +63,7 @@ Receipts are ignored under `conker/build/game-indexed-state-save/`.
 
 ## Qualification
 
-[Eight state-save tests](../../tools/tests/test_game_indexed_state_save_match.py)
+[Eight state-save tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_indexed_state_save_match.py)
 compare retail, direct C and the independently scheduled plain-O2 body with
 an independent sequential byte-memory reference:
 

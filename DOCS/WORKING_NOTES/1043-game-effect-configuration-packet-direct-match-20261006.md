@@ -55,7 +55,7 @@ guest/native tests use a typed opaque callback.
 
 ## Compiler Evidence
 
-[Driver](../../tools/experiments/game_effect_configuration_packet_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_effect_configuration_packet_candidates.py)
 screens eight forms under four profiles, **32 controls**, empty isolated
 diagnostics. The initial direct `&scale` parameter-address form emits 68
 words/frame 0x68, with 40 different words under O2/g3. Retail instead captures
@@ -74,7 +74,7 @@ Ignored receipts: `conker/build/game-effect-configuration-packet/` and
 
 ## Qualification
 
-[Six tests](../../tools/tests/test_game_effect_configuration_packet_match.py):
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_effect_configuration_packet_match.py):
 
 - **1296 two-body guest cases** compare selected/retail with an independent
   packet-byte reference. Vary source versus global aliases, three memory

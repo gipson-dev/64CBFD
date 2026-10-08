@@ -82,7 +82,7 @@ entries read fresh state, cache and scratch. Activity counts are untouched.
 ## Verification
 
 Seventeen new checks in
-[`test_game_texture_metadata_and_maintenance.py`](../../tools/tests/test_game_texture_metadata_and_maintenance.py)
+[`test_game_texture_metadata_and_maintenance.py`](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_texture_metadata_and_maintenance.py)
 extract actual production C bodies. Strict 32-bit host fixtures cover:
 
 - All 7762 metadata entries, odd-source alignment, big-endian assembly,

@@ -73,7 +73,7 @@ these globals.
 ## Qualification
 
 Fourteen new tests in
-[`test_game_palette_updater.py`](../../tools/tests/test_game_palette_updater.py)
+[`test_game_palette_updater.py`](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_palette_updater.py)
 extract the actual production updater, color emitter, queue helpers/writer and
 SDK macros. They do not substitute a duplicate updater implementation.
 

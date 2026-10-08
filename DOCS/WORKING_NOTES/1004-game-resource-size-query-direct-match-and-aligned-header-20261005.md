@@ -87,7 +87,7 @@ and hardware DMA semantics are not qualified.
 
 ## Compiler Screen
 
-The [136-form screen](../../tools/experiments/game_resource_size_query_candidates.py)
+The [136-form screen](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_resource_size_query_candidates.py)
 uses default IDO O2/g3, actual SDK stdarg and fixed retail relocations. It
 includes all 120 central-local permutations, u32/u64/byte scratch forms,
 initialization/update controls and zero/one descriptor-initialization negatives.
@@ -114,7 +114,7 @@ header-DMA call at 0xE4.
 
 ## Qualification
 
-The [eleven-check module](../../tools/tests/test_game_resource_size_query_match.py)
+The [eleven-check module](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_resource_size_query_match.py)
 passes against the rebuilt ELF, pinning complete raw/linked/retail words,
 frame/padding, controls, source/prototypes, no guards, relocations and full
 Init caller slot/hash.

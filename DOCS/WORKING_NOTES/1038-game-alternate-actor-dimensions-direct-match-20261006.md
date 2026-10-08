@@ -39,7 +39,7 @@ results when the first dimension output overwrites +0xE4/+0xE6.
 
 ## Compiler Controls
 
-[Driver](../../tools/experiments/game_actor_alternate_dimensions_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_alternate_dimensions_candidates.py)
 uses actual SDK/structure headers. Four source forms under four profiles:
 **16 controls**, all isolated diagnostics empty.
 
@@ -58,7 +58,7 @@ and `conker/build/game-actor-alternate-dimensions-test/`.
 
 ## Qualification
 
-[Five tests](../../tools/tests/test_game_actor_alternate_dimensions_match.py)
+[Five tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_alternate_dimensions_match.py)
 bind the complete direct slot/padding, source, preserved unsigned header
 field and absence of guards; reproduce all 16 compiler controls; compare
 an independent sequential reference with retail and selected guest bodies;

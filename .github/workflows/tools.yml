@@ -1,0 +1,50 @@
+name: Pinned Decomp Tools
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - tools
+      - .gitmodules
+      - Makefile
+      - scripts/bootstrap-tools.sh
+      - .github/workflows/tools.yml
+  pull_request:
+    branches: [master]
+    paths:
+      - tools
+      - .gitmodules
+      - Makefile
+      - scripts/bootstrap-tools.sh
+      - .github/workflows/tools.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rom-free:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout decomp and pinned tools
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - name: Verify recursive checkout
+        run: |
+          bash scripts/bootstrap-tools.sh
+          test -f tools/.gitmodules
+          test -f tools/n64splat/requirements.txt
+          test -f tools/asm-processor/asm_processor.py
+      - name: Install MIPS binutils
+        run: sudo apt-get update && sudo apt-get install -y binutils-mips-linux-gnu
+      - name: Check tools repository setup
+        run: python3 -m unittest tools.tests.test_repository_setup -v
+      - name: Check MIPS wrappers and vertex converter
+        run: make tools-check
+      - name: Check byte matcher and guarded padding
+        run: |
+          python3 -m unittest tools.tests.test_match_progress -v
+          python3 -m unittest tools.tests.test_pad_c_object_word_patches -v
+          python3 -m unittest tools.tests.test_pad_generated_pc16 -v

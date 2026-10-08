@@ -60,7 +60,7 @@ qualification here does not make those dependencies hardware-complete.
 
 ## Compiler and Guard Evidence
 
-[Driver](../../tools/experiments/game_actor_source_packet_candidates.py)
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_actor_source_packet_candidates.py)
 screens **14 forms / four profiles = 56 controls**, isolated diagnostics empty.
 Plain field order, delayed field4C, factor capture/assignment, chained unit
 fields and unit-from-first-field all retain 102 words/frame 0xB8/14 differences
@@ -87,7 +87,7 @@ this reorder is valid under those excluded conditions.
 
 ## Qualification
 
-[Eight tests](../../tools/tests/test_game_actor_source_packet_match.py) use
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_actor_source_packet_match.py) use
 an independent byte-packet reference, the existing guest runner and actual C:
 
 - **3456 guest cases / three bodies**: raw compiler, guarded and retail. Eight

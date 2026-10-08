@@ -55,9 +55,9 @@ rejects that hypothesis: the ordinary source matches under the owner's existing
 | `-O1 -g3` | 45 | `0x28` | 42 |
 | `-O1` | 45 | `0x28` | 41 |
 
-The [candidate driver](../../tools/experiments/game_attachment_progress_candidates.py)
+The [candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_attachment_progress_candidates.py)
 retains sixteen comparison/mask/return/register forms. The
-[ten tests](../../tools/tests/test_game_attachment_progress_match.py)
+[ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_attachment_progress_match.py)
 qualify **19 distinct source/profile combinations / 684 ordinary executions**.
 Four source forms emit raw exact; current-first/end-first comparisons and the
 register keyword do not change the selected body. Comparing the full masked

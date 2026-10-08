@@ -12,7 +12,7 @@ The adjacent lighting-dispatch recovery is a separate batch.
 
 ## Additional Controls
 
-The [driver](../../tools/experiments/game_vector_basis_candidates.py) adds
+The [driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_vector_basis_candidates.py) adds
 68 meaningful source forms to the existing 118 source/profile controls:
 
 - 32 coordinate forms: cached Y/Z classification, a named quotient, nested
@@ -34,7 +34,7 @@ is justified by these measurements.
 
 ## Qualification
 
-The [maintained recovery suite](../../tools/tests/test_game_vector_basis_recovery.py)
+The [maintained recovery suite](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_vector_basis_recovery.py)
 now executes **2,136 ordinary nonoverlapping candidate fixtures**, up from
 1,320. This qualifies public effects for 178 single-precision controls on
 twelve bounded inputs. Four double-promoted forms and four compiler-profile

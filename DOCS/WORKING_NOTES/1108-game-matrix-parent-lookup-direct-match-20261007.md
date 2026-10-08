@@ -48,9 +48,9 @@ different ordinary results.
 
 ## Source And Behavioral Qualification
 
-The [candidate driver](../../tools/experiments/game_matrix_parent_lookup_candidates.py)
+The [candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_parent_lookup_candidates.py)
 retains **52 source forms** and the two existing `-O2`/`-O1` profile screens.
-The [ten tests](../../tools/tests/test_game_matrix_parent_lookup_match.py)
+The [ten tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_parent_lookup_match.py)
 qualify **58 distinct source/profile combinations / 2,784 ordinary executions**;
 only `combined-inverse1-advance1` is raw exact. Required-read order and private
 stack behavior are not claimed for every control. The lower-optimization

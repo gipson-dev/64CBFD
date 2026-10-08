@@ -13,7 +13,7 @@ The previous early-return/manual-packet C body was semantic but nonmatching.
 
 ## Source Controls
 
-The [candidate driver](../../tools/experiments/game_cached_primitive_color_candidates.py)
+The [candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cached_primitive_color_candidates.py)
 retains twelve cache-gate/cursor/SDK/explicit-packet forms across four SDK
 profiles: **48 measurements**. Only `positive1-cursor0-sdk-o2g3` is exact,
 77 words/frame `0x8`, empty diagnostics. Using the same positive gate with
@@ -45,7 +45,7 @@ narrowing inputs before comparison would change cache hits.
 
 ## Qualification
 
-[Eight maintained tests](../../tools/tests/test_game_cached_primitive_color_match.py)
+[Eight maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cached_primitive_color_match.py)
 bind the full direct slot and original assembly:
 
 - **174,720 guest fixtures**: every byte value in each of six fields, four

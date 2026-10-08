@@ -33,7 +33,7 @@ The root README aggregate tables stay unchanged.
 
 ## Key And Source-Lifetime Evidence
 
-The [key-fit driver](../../tools/experiments/game_matrix_pair_resolver_key_candidates.py)
+The [key-fit driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_pair_resolver_key_candidates.py)
 retains **86 additional measured forms**, none raw exact:
 
 - 24 signed/unsigned key-parent-child-result carriers, common/early returns
@@ -83,7 +83,7 @@ keeps its original four-word pointer ABI.
 
 ## Maintained Qualification
 
-[Eleven key-fit tests](../../tools/tests/test_game_matrix_pair_resolver_key_fit.py)
+[Eleven key-fit tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_pair_resolver_key_fit.py)
 reuse the independent reference and established resolver/caller/owner gates:
 
 - **640 ordinary cases** and all four routes/failure returns, four slots through

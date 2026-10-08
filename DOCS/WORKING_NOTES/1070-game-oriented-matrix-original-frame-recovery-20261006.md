@@ -12,7 +12,7 @@ Retail:142 words/568 bytes, frame0xB8, VA15142600..15142838,
 ROM16FAB0..16FCE8. The twelve-input ABI and oriented-basis contract are unchanged
 from [Note1068](1068-game-oriented-matrix-recovery-20261006.md).
 
-[Maintained driver](../../tools/experiments/game_oriented_matrix_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_oriented_matrix_candidates.py)
 now adds sixteen source forms across four actual SDK profiles:horizontal
 two-component/three-component struct, separate/in-place direction normalization,
 expression/in-place up normalization, and direct/captured start point.
@@ -47,7 +47,7 @@ guMtxF2L's sole R_MIPS_26 remains at offset21C.
 
 ## Qualification
 
-[Thirteen maintained tests](../../tools/tests/test_game_oriented_matrix_recovery.py)
+[Thirteen maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_oriented_matrix_recovery.py)
 pass in120.279s, no skips/errors/failures:
 
 - 128 compiler controls; exact frame/length and private-only assertions for

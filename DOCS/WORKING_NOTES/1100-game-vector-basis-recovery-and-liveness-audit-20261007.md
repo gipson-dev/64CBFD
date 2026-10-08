@@ -12,7 +12,7 @@ does **not** install the experimental C or claim another converted function.
 
 ## Recovered Behavior
 
-The [candidate driver](../../tools/experiments/game_vector_basis_candidates.py)
+The [candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_vector_basis_candidates.py)
 retains a complete semantic body:
 
 - Reject all-zero input, treating both zero signs equally; return zero without
@@ -89,7 +89,7 @@ unrecovered boundary. No production source, profile, header or guard is changed.
 
 ## Maintained Qualification
 
-[Ten recovery tests](../../tools/tests/test_game_vector_basis_recovery.py) bind:
+[Ten recovery tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_vector_basis_recovery.py) bind:
 
 - **3,456 guest cases**, 216 coordinate triples, eight sequential aliases,
   two stack phases, actual original helpers, independent binary32 final

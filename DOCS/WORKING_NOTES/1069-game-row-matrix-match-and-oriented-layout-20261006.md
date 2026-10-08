@@ -33,13 +33,13 @@ unchanged. Both production owners retain their two existing warnings.
 
 ## Maintained Controls And Qualification
 
-[Driver](../../tools/experiments/game_row_matrix_candidates.py):four store-order
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_row_matrix_candidates.py):four store-order
 forms across four SDK profiles,16 controls, empty standalone diagnostics.
 Translation-first/row-order/O2g3 is the unique exact control. Its non-g3 O2
 counterpart differs in four words; translation-last O2g3 differs in37, column
 ordering in19. O1 controls grow to72 words.
 
-[Eleven tests](../../tools/tests/test_game_row_matrix_match.py):
+[Eleven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_row_matrix_match.py):
 
 - 2160 paired guest cases:five first-row/four second-row scales, three translation
   sets, three provider patterns, aliases, source mutations and two stack phases.
@@ -73,7 +73,7 @@ NaN/out-of-range fixed conversion or gameplay acceptance is claimed.
 
 `func_15142600` still remains a zero-return production placeholder. Its retail
 142 words/frame0xB8 are not yet recovered from legitimate C.
-[Maintained driver](../../tools/experiments/game_oriented_matrix_candidates.py)
+[Maintained driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_oriented_matrix_candidates.py)
 now has64 controls:the prior32 plus32 direction-order/captured-start controls.
 
 | Maintained O2/g3 Control | Words | Frame | Differences |
@@ -91,7 +91,7 @@ instead of retail78. The44-difference captured-start form recovers deltaZ
 at SP3C, horizontalZ at44 and upZ/Y/X at48/4C/50; direction moves to70/74/78,
 matrix to7C. Neither recovers the frame0xB8 allocation.
 
-[Twelve maintained tests](../../tools/tests/test_game_oriented_matrix_recovery.py)
+[Twelve maintained tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_oriented_matrix_recovery.py)
 passed in69.874s before the production regression:2448 five-body guest cases,
 1224 native caller cases per candidate across four candidates,144 original
 caller/builder/converter cases per body, nine semantic negatives, native

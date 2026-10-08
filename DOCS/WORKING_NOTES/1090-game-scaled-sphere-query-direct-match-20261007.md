@@ -13,7 +13,7 @@ instruction insertion/deletion are needed.
 
 ## Scope Recovery
 
-The [selected source](../../tools/experiments/game_scaled_sphere_query_address_view_candidates.py)
+The [selected source](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_scaled_sphere_query_address_view_candidates.py)
 uses the corrected capture-first assignments from Note 1089. Put the two real
 scale locals in a success scope after the dimension gates, then introduce the
 real reciprocal local in a nested scope immediately before the normalizer.
@@ -87,7 +87,7 @@ routine was already counted as a C placeholder.
 
 ## Qualification And Audit
 
-[Nineteen fitting-caller tests](../../tools/tests/test_game_scaled_sphere_query_match.py)
+[Nineteen fitting-caller tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_scaled_sphere_query_match.py)
 bind the selected source into the real native fixture and reuse the complete
 guest/reference bank: **37,808 bulk fixtures**, including **10,368 private-actor
 cases**, and **126,720 actual 32-bit native finite calls** with all five real

@@ -54,8 +54,8 @@ O2 without g3 is also raw exact, but production retains its existing profile.
 
 ## Qualification
 
-[Driver](../../tools/experiments/game_node_tile_candidates.py) and
-[seven tests](../../tools/tests/test_game_node_tile_match.py):
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_tile_candidates.py) and
+[seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_tile_match.py):
 
 - Seven pre-install tests pass in **29.428 seconds**, zero skips/errors/failures.
   Strengthened alias/fault checks pass separately in **3.194 seconds**.

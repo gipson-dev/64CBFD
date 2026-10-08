@@ -14,7 +14,7 @@ the upper branch-likely/shared return tail.
 
 ## Bounded Controls
 
-[Existing driver](../../tools/experiments/game_integer_pair_clamp_candidates.py)
+[Existing driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_integer_pair_clamp_candidates.py)
 adds optional `--register-lifetimes`, preserving the default 92-control mode.
 Sixteen subsets of parameter register hints cross four local groups:
 none, pointers only, values only, both. Each of the 64 source forms compiles
@@ -42,7 +42,7 @@ temporaries; it is not one of these 64 forms and remains frame 0x20 with
 
 ## Qualification And Audit
 
-[Register-lifetime test](../../tools/tests/test_game_integer_pair_clamp_recovery.py)
+[Register-lifetime test](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_integer_pair_clamp_recovery.py)
 compiles all 128 controls and checks the complete byte groups, sizes, frames,
 differences and empty diagnostics. Six corner inputs across two stack phases
 for every control give **1536 guest runs**, verifying independent full

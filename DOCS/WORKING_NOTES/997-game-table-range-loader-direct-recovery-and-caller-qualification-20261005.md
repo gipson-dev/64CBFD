@@ -49,7 +49,7 @@ instructions, not a claimed recovery of that wrapper's source.
 
 ## Compiler Evidence And Rejected Exact Form
 
-The [77-form source screen](../../tools/experiments/game_table_range_candidates.py)
+The [77-form source screen](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_table_range_candidates.py)
 uses only the existing default profile and fixed retail call relocation.
 Ignored artifacts are under `conker/build/game-table-range/`. All forms compile
 without isolated diagnostics; source-shape controls are retained in tests.
@@ -82,7 +82,7 @@ rejection remains a source-language gate, not a machine-word mismatch claim.
 
 ## Qualification
 
-[The new seven-check module](../../tools/tests/test_game_table_range_loader.py)
+[The new seven-check module](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_table_range_loader.py)
 pins the raw full slot/hash, source-shape controls, safe call-argument shape,
 native semantics, full instruction corpus, connected retail caller, production
 source and guard-free linked identity. The unlinked object has exactly one

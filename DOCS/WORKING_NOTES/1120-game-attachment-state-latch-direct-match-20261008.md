@@ -50,7 +50,7 @@ remain unqualified.
 
 ## Source Fit And Controls
 
-[Candidate driver](../../tools/experiments/game_node_attachment_latch_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_attachment_latch_candidates.py)
 retains the complete source, four profiles and source/semantic controls.
 The initial nested early-return form has C102/frame0x20/21 differences.
 A common zero-return label and separate hold-condition jumps recover every
@@ -76,7 +76,7 @@ Alternate profiles qualify public effects, not identical private frames or trace
 
 ## Qualification
 
-[Seven tests](../../tools/tests/test_game_node_attachment_latch_match.py):
+[Seven tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_attachment_latch_match.py):
 
 - **33,792 guest cases**: all 256 selector bytes, 17 unsigned type boundaries,
   all 256 active/subtype bytes, eight flag patterns, five counter values,

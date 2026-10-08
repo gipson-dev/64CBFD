@@ -31,7 +31,7 @@ Retail reference offset: `conker/conker.us.bin+0x1237CC`.
 
 ## Qualification
 
-New fixture: [test_game_nullable_cleanup.py](../../tools/tests/test_game_nullable_cleanup.py).
+New fixture: [test_game_nullable_cleanup.py](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_nullable_cleanup.py).
 It extracts the actual production function instead of maintaining a C copy.
 
 - Forty-nine nullable pointer pairs cover zero, low values, the signed boundary,

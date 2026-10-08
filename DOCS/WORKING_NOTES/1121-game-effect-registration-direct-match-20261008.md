@@ -52,7 +52,7 @@ required storage or faults.
 
 ## Source Fit And Controls
 
-[Candidate driver](../../tools/experiments/game_node_effect_registration_candidates.py)
+[Candidate driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_node_effect_registration_candidates.py)
 recovers the direct match on its first complete source form. The positive
 mode guard/if-else lifecycle and the allocator's recovered signed-16 argument
 types fit the retail calls and coordinate schedule naturally.
@@ -81,7 +81,7 @@ outside the defined conversion domain are not inferred from the bounded oracle.
 
 ## Qualification
 
-[Eight tests](../../tools/tests/test_game_node_effect_registration_match.py):
+[Eight tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_effect_registration_match.py):
 
 - **14,208 guest cases**: 2,048 global-axis, 8,064 lifecycle and 4,096
   coordinate-grid cases. Each global covers all 256 bytes. Eight handle
@@ -126,7 +126,7 @@ these fixture-only corrections. The final post-install run also includes the
 six added connected fault prefixes.
 
 The first 37-test post-install run takes **202.786s**: 36 pass, the earlier
-[cleanup owner fixture](../../tools/tests/test_game_node_cleanup_match.py)
+[cleanup owner fixture](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_node_cleanup_match.py)
 fails compilation because stripping its declaration block also removes the
 callback/unregister prototypes now shared with this effect caller. Retain
 exactly those two declarations in the stub baseline, with count assertions;

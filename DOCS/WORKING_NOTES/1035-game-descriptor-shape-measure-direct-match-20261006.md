@@ -39,7 +39,7 @@ address mapping or data object is introduced.
 
 ## Compiler Controls
 
-[Driver](../../tools/experiments/game_shape_volume_candidates.py): real SDK
+[Driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_shape_volume_candidates.py): real SDK
 and descriptor headers; six box operand orders times two cylinder operand
 orders under O2/g3, O2, O1/g3 and O1, **48 controls**, empty isolated diagnostics.
 The selected source's height/depth/width expression yields retail's ordered
@@ -53,7 +53,7 @@ No experimental profile is installed. Ignored receipts:
 
 ## Qualification
 
-[Six tests](../../tools/tests/test_game_shape_volume_match.py) use unchanged
+[Six tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_shape_volume_match.py) use unchanged
 shared guest runners, an independent mathematical/ordered-access reference,
 and the actual recovered C with the real descriptor layout in native fixtures:
 

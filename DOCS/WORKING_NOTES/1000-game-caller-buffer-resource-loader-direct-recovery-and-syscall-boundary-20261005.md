@@ -55,7 +55,7 @@ state must not replace the captured header or retained decoded count.
 
 ## Compiler Screen
 
-The [22-form source screen](../../tools/experiments/game_buffer_resource_loader_candidates.py)
+The [22-form source screen](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_buffer_resource_loader_candidates.py)
 uses fixed retail relocations and the ordinary O2/g3 profile. All candidates
 compile without isolated diagnostics. The original three-word/no-frame
 placeholder differs across all 75 slot words. Initial semantic C has 75 words
@@ -75,7 +75,7 @@ entry exists for this function.
 
 ## Qualification
 
-The [eleven-check module](../../tools/tests/test_game_buffer_resource_loader.py)
+The [eleven-check module](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_buffer_resource_loader.py)
 pins complete direct/linked identity and hash, original frame, source-shape
 controls, all relocations, absence of guards and native/connected behavior.
 

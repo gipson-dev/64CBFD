@@ -9,6 +9,10 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Repository state
 
 - Branch: `master`
+- Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
+  `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
+  2026-10-08 split and existing-checkout bootstrap. Game matching totals and
+  the next-function boundary below are unchanged.
 - The restoration baseline is banked in coherent commits beginning after
   `2ed3523` (`tool updates`): generated-slice assembly support, restored guest
   routines, OGL reference tooling, RGBA5551 tooling, and documentation.

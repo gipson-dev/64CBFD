@@ -16,7 +16,7 @@ compiler profile, shared header, conversion-ledger or root README change.
 
 ## Recovered Register Phases
 
-The [branch driver](../../tools/experiments/game_matrix_route_branch_candidates.py)
+The [branch driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_matrix_route_branch_candidates.py)
 separates the temporary actor bank from the selected matrix. It reuses the
 actor variable for the later output cursor, while retaining the lookup-node /
 input-cursor reuse from Note 1104. These are disjoint pointer lifetimes, not
@@ -75,7 +75,7 @@ not justify inventing private-memory volatility in production. Alternate
 array/struct/union output storage and explicit labels also fail to recover the
 full original read/branch topology.
 
-[Branch tests](../../tools/tests/test_game_matrix_route_branch_recovery.py)
+[Branch tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_matrix_route_branch_recovery.py)
 reuse the established independent route/math oracle and original helpers:
 
 - All **92 controls / 2,208 ordinary executions** qualify public effects.

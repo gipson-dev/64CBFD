@@ -53,7 +53,7 @@ unclamped behavior, not safety of indexing beyond the real queue.
 ## Verification
 
 Ten new checks in
-[`test_game_queued_segment_writer.py`](../../tools/tests/test_game_queued_segment_writer.py)
+[`test_game_queued_segment_writer.py`](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_queued_segment_writer.py)
 extract the actual reset/append/writer C and SDK macros from project headers.
 Strict 32-bit native fixtures connect reset -> append -> writer, verify command
 words and return cursor, and exercise all 256 append-count values: counts at

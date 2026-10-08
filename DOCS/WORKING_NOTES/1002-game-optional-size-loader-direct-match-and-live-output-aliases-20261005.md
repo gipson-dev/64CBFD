@@ -108,7 +108,7 @@ static full-slot preservation, not full audio/script/scene execution.
 
 ## Compiler Screen
 
-The [128-form screen](../../tools/experiments/game_optional_size_loader_candidates.py)
+The [128-form screen](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_optional_size_loader_candidates.py)
 uses SDK stdarg, default IDO O2/g3 and fixed retail relocations. It includes
 all 120 permutations of the five central locals, target/loop/return controls
 and zero/one descriptor-initialization negatives. All isolated candidates
@@ -133,7 +133,7 @@ block-loader call at 0xBC.
 
 ## Qualification
 
-The [fifteen-check module](../../tools/tests/test_game_optional_size_loader_match.py)
+The [fifteen-check module](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_optional_size_loader_match.py)
 passes against the rebuilt ELF, pinning compiler/source controls, complete
 direct/linked identity and hash, relocations, no guards and all caller slots.
 

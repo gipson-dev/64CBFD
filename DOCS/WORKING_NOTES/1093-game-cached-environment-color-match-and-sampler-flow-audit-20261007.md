@@ -18,7 +18,7 @@ Resume `func_151432BC` from
 [Note 1074](1074-game-area-sampler-qualified-recovery-20261006.md) and the
 scalar-lifetime screen in
 [Note 1091](1091-game-actor-lookup-byte-abi-direct-match-20261007.md).
-The new [flow driver](../../tools/experiments/game_area_sampler_flow_candidates.py)
+The new [flow driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_area_sampler_flow_candidates.py)
 retains **54 O2/g3 measurements**: 24 switch-source permutations, 12 early-return
 if/else chain forms, six single-case/switch splits and twelve real RNG
 temporary/type/register controls. Keep the original 48-byte scratch, signed
@@ -36,7 +36,7 @@ RNG declarations with `register` do not recover the original store schedule.
 These measurements extend the maintained bank to **252 measurements**
 (152 original + 30 supplementary + 16 lifetime + 54 flow), not distinct bodies.
 
-[Four flow tests](../../tools/tests/test_game_area_sampler_flow.py) pass in
+[Four flow tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_area_sampler_flow.py) pass in
 75.122 seconds before production editing:
 
 - **1,536 input fixtures / 82,944 candidate executions** qualify all 54 forms
@@ -62,7 +62,7 @@ The sampler remains uninstalled, with no guards or matching increment.
 
 ## Environment Color Contract
 
-The [color driver](../../tools/experiments/game_cached_environment_color_candidates.py)
+The [color driver](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_cached_environment_color_candidates.py)
 retains twelve gate/cursor/SDK/explicit-packet forms across four SDK profiles,
 **48 measurements**. Only `positive1-cursor0-sdk-o2g3` is direct 56/8/zero.
 
@@ -79,7 +79,7 @@ retains twelve gate/cursor/SDK/explicit-packet forms across four SDK profiles,
 
 ## Color Qualification
 
-[Seven color tests](../../tools/tests/test_game_cached_environment_color_match.py)
+[Seven color tests](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_cached_environment_color_match.py)
 bind the complete direct body and original assembly reference:
 
 - **62,400 guest fixtures** cover every byte value in each channel (not every

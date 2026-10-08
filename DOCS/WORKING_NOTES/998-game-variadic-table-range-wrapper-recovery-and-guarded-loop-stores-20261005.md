@@ -54,7 +54,7 @@ recovery; no new constructor/runtime acceptance is claimed.
 
 ## Compiler Screen And Guards
 
-The [67-form screen](../../tools/experiments/game_variadic_table_range_candidates.py)
+The [67-form screen](https://github.com/gipson-dev/64CBFD-Tools/blob/master/experiments/game_variadic_table_range_candidates.py)
 uses the real `conker/include/libc/stdarg.h`, default IDO O2/g3 and fixed retail
 relocations. All forms compile without isolated diagnostics; none is directly
 exact. Ignored reports live under `conker/build/game-variadic-table-range/`.
@@ -89,7 +89,7 @@ with zero duplicate numeric owner/function/offset keys.
 
 ## Qualification
 
-[The new nine-check module](../../tools/tests/test_game_variadic_table_range_match.py)
+[The new nine-check module](https://github.com/gipson-dev/64CBFD-Tools/blob/master/tests/test_game_variadic_table_range_match.py)
 pins complete raw/guarded slots and hashes, compiler/source controls, SDK
 relocations, every omitted-guard rejection, production source/table identity,
 and boundary/native/actual-callee behavior.
