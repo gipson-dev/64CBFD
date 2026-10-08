@@ -1,5 +1,29 @@
 #include <ultra64.h>
 
+typedef struct {
+    f32 x, y, z;
+} AttachmentPosition151D7830;
+
+typedef struct {
+    AttachmentPosition151D7830 position;
+    u16 duration;
+    u16 flags;
+    s32 kind;
+    u8 mode;
+    u8 count;
+    s32 value;
+} AttachmentRequest151D7830;
+
+typedef struct {
+    u8 *owner;
+    AttachmentPosition151D7830 position;
+    AttachmentPosition151D7830 velocity;
+} AttachmentPayload151D7830;
+
+u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, void *, u8, s32);
+
+void func_151D7830(u8 *owner);
+
 /* Non-matching placeholders for the text-only asm slice asm/204660.s. */
 
 void func_151D77C8(u8 *owner);
@@ -130,7 +154,31 @@ void func_151D77C8(u8 *owner) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D7830.s")
+void func_151D7830(u8 *owner) {
+    u8 *record;
+    AttachmentPayload151D7830 payload;
+    AttachmentRequest151D7830 request;
+    AttachmentPosition151D7830 *position;
+
+    position = (AttachmentPosition151D7830 *)(owner + 0x30);
+    payload.owner = owner;
+    payload.position = *position;
+    payload.velocity.x = 0.0f;
+    payload.velocity.y = 0.0f;
+    payload.velocity.z = 0.0f;
+    request.count = 25;
+    request.position = *position;
+    request.duration = 300;
+    request.flags = 0x76;
+    request.kind = 0x12;
+    request.mode = 4;
+    request.value = 0;
+    record = func_15147A80(&request, 0x20, sizeof(payload), 0xD, 0x10, 0x10, 0, 0, NULL, owner[0xC], owner[1]);
+    if (record != NULL) {
+        memcpy(*(void **)(record + 0x98), &payload, sizeof(payload));
+        *(u8 **)(owner + 0x28) = record;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D792C.s")
 

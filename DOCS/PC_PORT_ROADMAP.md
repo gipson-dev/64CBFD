@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Attachment Allocation - 2026-10-08
+
+[Note 1134](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md):
+
+- [x] Convert complete `func_151D7830`: 63 words / 252 bytes / frame 0x88 directly exact; no guards, filler, data or profile changes.
+- [x] Recover two 28-byte packets and eleven supplied O32 arguments; preserve uninitialized request padding and pre-allocation XYZ capture.
+- [x] Qualify lazy failure, unsigned bytes, fresh nested destination, captured owner/record lifetime and copy-before-attachment order.
+- [x] Pass 4,114 guest / 138,752 native32 cases, 632 fault prefixes, two lazy failures and eight effective negatives; all 63 words reached.
+- [x] Preserve 22 owner neighbors/pools/relative relocations and four existing warnings; real padder emits 252 bytes, six independent links / 180 executions verify both symbolic calls.
+- [x] Execute 64 bounded full caller/constructor cases against compiled and retail bodies, including real epilogues; keep live constructor placeholder and alternate branches explicit.
+- [x] Pass all eight installed tests in 54.737s, ten shared tests, both tools checks and CLI/syntax checks; mirror task tools without conflicting work.
+- [x] Audit all 6,058 bodies/addresses/extents/protected sections/data/11,155 guards unchanged, sole 252-byte conversion; record new baseline and README aggregates only.
+- [x] Bank mounted tools 56c4132 first, source/docs/exact pin second per "Keep commited"; no push or older standalone reset.
+- [ ] Fit and qualify retained `func_151D792C`: 67 words / frame 0x30, signed gate, backward circular cursor, live goal/state/global reloads and final XYZ copy/zero.
+- [ ] Restore linked constructor and qualify alternate branches/hardware/gameplay separately; resolve reduced-corpus Graphify refresh without forced overwrite. OGL Release remains frozen.
+
 ## Attached-Record Cleanup - 2026-10-08
 
 [Note 1133](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md):
@@ -13,7 +29,7 @@
 - [x] Pass ten installed target/integrator-owner/caller tests in47.235s, ten shared tests, both tools checks, CLI and syntax checks in both mirrors.
 - [x] Audit all6,058 bodies/addresses/extents/protected sections/data/11,155 guards unchanged, sole104-byte conversion; record baseline and README aggregate rows only.
 - [x] Bank mounted tools6f18cf1 first, source/docs/exact pin second per "Keep commited"; no push or older standalone reset.
-- [ ] Fit and qualify next retained `func_151D7830`:63 words/frame0x88, stack packets, allocator failure, nested28-byte copy and captured allocation/owner lifetime.
+- [x] Fit and qualify complete `func_151D7830` in [Note 1134](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md): 63 words / frame 0x88 directly exact; packets, eleven arguments, failure and captured lifetime, with bounded original caller/constructor connections.
 - [ ] Resolve Graphify reduced-corpus refresh separately without forced overwrite; continue wider Game/hardware/gameplay work with OGL Release frozen.
 
 ## Record Vertical Velocity Integration - 2026-10-08

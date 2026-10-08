@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Latest attachment allocation direct conversion](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md):
+  `func_151D7830`, 63 words / frame 0x88 directly exact; no guards. Eight installed
+  tests qualify packets, eleven arguments, allocation failure, captured lifetime
+  and bounded original caller/constructor connections. All bodies/data/guards
+  unchanged; sole 252-byte conversion. Tools 56c4132 banked first, parent pins it;
+  no push or older standalone reset. Next `func_151D792C`, 67 words / frame 0x30.
+  Linked constructor restoration, alternate branches and hardware/gameplay stay
+  separate; graph refresh remains open.
+
 - [Latest attached-record cleanup direct conversion](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md):
   func_151D77C8,26 words/frame0 directly exact; typed void interface, captured
   nested link and live owner/flag writes qualify. All ten installed target/

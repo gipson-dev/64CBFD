@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-08 Attachment Allocation Direct Conversion
+
+[Note 1134](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md):
+Complete `func_151D7830`, 63 words / frame 0x88 directly exact with no guards.
+Qualify two packets, eleven arguments, lazy failure and copy-before-attachment
+lifetime. Eight installed tests pass in 54.737s: 4,114 guest / 138,752 native32
+cases, 632 faults, eight negatives, 180 rebases and 64 connected cases / 128
+executions. All 6,058 bodies/data/11,155 guards unchanged; sole 252-byte conversion.
+Converted 5,478 / Game 4,805; exact 3,389 / Game 2,716; zero drift. Tools 56c4132
+banked first, parent records exact pin; no push or older standalone reset.
+Next `func_151D792C`, 67 words / frame 0x30. Retail constructor connection is not
+restoration of its linked zero-return C body. Alternate branches, hardware,
+gameplay and graph refresh remain open; README aggregates only.
+
 ## 2026-10-08 Attached-Record Cleanup Direct Conversion
 
 [Note 1133](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md):

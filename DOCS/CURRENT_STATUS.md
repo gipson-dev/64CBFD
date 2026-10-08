@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6f18cf1; tools are committed before the source pin.
+  checkpoint pins tools 56c4132; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery and authorized banking:
+[Note 1134](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md).
+Convert retained `func_151D7830`: 63 words / 252 bytes / frame 0x88 directly
+exact, no guards. Two position packets, eleven-argument ABI, lazy allocation
+failure and captured owner/record lifetime qualify. Eight installed tests pass
+in 54.737s: 4,114 guest / 138,752 native32 cases, 632 fault prefixes, eight
+negatives, 180 rebases and 64 connected cases / 128 executions. Original retail
+constructor connection is separate from its still-placeholder linked C body.
+All 6,058 bodies/addresses/extents/protected sections/data/11,155 guards unchanged;
+sole 252-byte conversion. Converted 5,478 / Game 4,805; exact 3,389 / Game 2,716;
+2,089 different / zero drift. New allocation baseline; README aggregates only.
+Tools 56c4132 committed first; parent records its exact pin, no push or older
+standalone reset. Next retained `func_151D792C`: 67 words / frame 0x30, backward
+ring cursor, live goal/state reloads and captured ring-buffer recovery pending.
+Graph refresh, alternate caller/constructor branches and hardware/gameplay
+remain open; no host/runtime/Release changes.
+
+Previous Game recovery and authorized banking:
 [Note 1133](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md).
 Convert retained `func_151D77C8`:26 words/104 bytes/frame0 directly exact,
 no guards. Typed void interface, captured nested link, unsigned flag updates,

@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-08 ([Note 1134](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md)):
+Convert retained `func_151D7830`: 63 words / frame 0x88 directly exact, no guards.
+Packet layouts, eleven arguments, allocation failure and captured payload/record
+lifetime qualify. Eight installed tests pass in 54.737s: 4,114 guest / 138,752
+native32 cases, 632 faults, eight negatives, 180 rebases and 64 connected cases
+against both bodies. All 6,058 bodies/data/11,155 guards unchanged; sole 252-byte
+conversion. Converted 5,478 / Game 4,805; exact 3,389 / Game 2,716; zero drift.
+Tools 56c4132 banked first, parent pins it; no push or older standalone reset.
+Next retained `func_151D792C`, 67 words / frame 0x30. Live linked constructor,
+alternate caller branches, hardware/gameplay and graph refresh remain open.
+
 2026-10-08 ([Note 1133](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md)):
 Convert retainedfunc_151D77C8:26 words/frame0 directly exact, no guards.
 Typed void interface, captured nested link and live owner/unsigned flag updates
