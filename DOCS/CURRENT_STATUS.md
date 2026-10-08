@@ -22,6 +22,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery work:
+[Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md).
+Complete experimental `func_15031FC8` now emits C1148/frame0x48/319 differences,
+down30 from349. Retail's six measured private homes, first19 and final68 words
+are directly exact. Twelve field-pointer controls emit identical text/pools;
+no dummy storage or guards. The C321 intermediate passes all34 combined
+recovery/binding/installed regressions. All13 final C319 recovery/binding tests
+pass in495.191s:92,992 dispatch,2,415 callback/float,12,348 native32,all674 keys,
+1,125 words,faults/aliases/504 controls/effective negatives. Ten padder tests
+and tools/syntax/CLI/whitespace checks pass;98 documents/4,123 relative links,
+zero broken. All6,058 installed symbols/sections/data/guards/conversion hash
+remain unchanged against `game-node-tile-test/after.json`.
+Original model-copy/flags scheduling and84 one-word-late table entries remain
+open. Production/README/data/guards unchanged; no installed match credit.
+Continue the same dispatcher from the recovered frame and tail.
+
+Previous Game recovery work:
 [Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md).
 Complete experiment-only `func_15031FC8` improves to C1148/frame0x38/349
 differences, down from394, recovering retail's A3 tail attachment lifetime.

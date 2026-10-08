@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-08 ([Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md)):
+Continue complete experimental `func_15031FC8`, now C1148/frame0x48/319
+differences, down30. Field-pointer locals recover six private homes and original
+FP/tail; final68 words exact. Opening copy-state placement recovers the first19
+words with a closed two-word swap, no guards or dummy storage. Twelve retained
+field forms emit identical text/pools. C321 intermediate's34 tests pass in
+586.460s; all13 final C319 tests pass in495.191s,504 controls/five negatives,
+92,992 guest/12,348 native32 cases,owner/padder/rebases/faults/aliases.
+Ten padder tests and tools/syntax/CLI/whitespace checks pass;98 documents /
+4,123 relative links, zero broken. Original model/flags scheduling
+and84 shifted table entries remain open. Production/README/sections/data/guards/
+conversion hash unchanged; installed baseline stays `game-node-tile-test/after.json`.
+
 2026-10-08 ([Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md)):
 Continue complete `func_15031FC8`: selected C1148/frame0x38/349 differences,
 down45 from prior fit, original A3 tail restored. Frame0x48/private homes and

@@ -51,7 +51,12 @@ confirmed.
 
 ## Planning and history
 
-- [Latest attachment selection lifetime and table binding](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md):
+- [Latest attachment selection frame and opening recovery](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md):
+  complete experimental C1148/frame0x48/319 differences; original private homes,
+  first19 and final68 words exact. Twelve field-pointer forms retain identical
+  emitted text/pools. Original model/flags scheduling and84 shifted table
+  targets still block installation; production/README aggregates unchanged.
+- [Previous attachment selection lifetime and table binding](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md):
   complete experimental C1148/frame0x38/349 differences, A3 tail recovered.
   Seven original table addresses qualify with14 experimental rows, real padder,
   56 rebases and stale/effective controls;39 postprocessed neighbors unchanged.

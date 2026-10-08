@@ -372,10 +372,58 @@ BASELINE = '''s32 func_15031FC8(u8 *node, u8 *actor) {
     '@BROAD@', choice_cases(BROAD_CHOICES, '                        '))
 
 # Explicitly initialize the shared attachment on both sides of the reset branch.
-SELECTED = BASELINE.replace('    u8 *initial;\n', '').replace('initial', 'attachment').replace(
+LIFETIME = BASELINE.replace('    u8 *initial;\n', '').replace('initial', 'attachment').replace(
     '            attachment = *(u8 **)(node + 0x48);\n        }\n        *(f32 *)',
     '            attachment = *(u8 **)(node + 0x48);\n        } else {\n'
     '            attachment = *(u8 **)(node + 0x48);\n        }\n        *(f32 *)')
+
+# Name the final fields without extending their loaded float lifetimes.
+FIELD_DECLARATIONS = '''s32 func_15031FC8(u8 *node, u8 *actor) {
+    u8 *source;
+    s32 choice;
+    u8 *attachment;
+    f32 *end_field;
+    f32 *current_field;
+    s32 old_flags;
+    s32 model;
+    s32 type;
+    s32 copy_state;
+    f32 limit;'''
+
+
+def field_candidate(kind='f32', copying=False, order='both', after_flags=True):
+    if kind not in ('f32', 'u8') or order not in ('both', 'end-first', 'current-first'):
+        raise ValueError('unknown attachment-selection field form')
+    declarations = FIELD_DECLARATIONS.replace('    f32 *', '    %s *' % kind)
+    body = LIFETIME.replace(LIFETIME.split('\n\n', 1)[0], declarations)
+    end, current = ('(f32 *)(attachment + 0x18)', '(f32 *)(attachment + 8)') if kind == 'f32' else (
+        'attachment + 0x18', 'attachment + 8')
+    load_end, load_current = ('*end_field', '*current_field') if kind == 'f32' else (
+        '*(f32 *)end_field', '*(f32 *)current_field')
+    ending = '        limit = *(f32 *)(attachment + 0x18) - 1.0f;\n        if (limit <= *(f32 *)(attachment + 8)) {\n            *(f32 *)(attachment + 8) = limit;'
+    assignments = {'both': ['end_field = '+end, 'current_field = '+current, 'limit = '+load_end+' - 1.0f'],
+        'end-first': ['end_field = '+end, 'limit = '+load_end+' - 1.0f', 'current_field = '+current],
+        'current-first': ['current_field = '+current, 'end_field = '+end, 'limit = '+load_end+' - 1.0f']}
+    replacement = ''.join('        '+value+';\n' for value in assignments[order])
+    replacement += '        if (limit <= %s) {\n            %s = limit;' % (load_current, load_current)
+    body = body.replace(ending, replacement)
+    if copying:
+        body = body.replace('        *(f32 *)(attachment + 8) = *(f32 *)(source + 8);',
+            '        current_field = %s;\n        %s = *(f32 *)(source + 8);' % (current, load_current))
+    if after_flags:
+        body = body.replace('    copy_state = 1;\n', '', 1).replace(
+            '    old_flags = *(u16 *)(attachment + 4) & ~0x8000;',
+            '    old_flags = *(u16 *)(attachment + 4) & ~0x8000;\n    copy_state = 1;', 1)
+    return body
+
+
+def field_candidates():
+    for kind, copying, order in itertools.product(('f32', 'u8'), (False, True), ('both', 'end-first', 'current-first')):
+        yield '%s-%s-%s' % (kind, 'all-tail' if copying else 'fields-only', order), field_candidate(kind, copying, order)
+
+
+FRAME = field_candidate(after_flags=False)
+SELECTED = field_candidate()
 
 
 def compile_candidate(root, out, name, body=SELECTED, profile='o2g3'):
@@ -411,6 +459,8 @@ def compile_candidate(root, out, name, body=SELECTED, profile='o2g3'):
 
 def candidates():
     yield 'previous-lifetime', BASELINE
+    yield 'previous-frame', LIFETIME
+    yield 'previous-field-homes', FRAME
     yield 'shared-initial-pointer', BASELINE.replace('    u8 *initial;\n', '').replace('initial', 'attachment')
     yield 'literal-low-mask', SELECTED.replace('& ~0x8000', '& 0x7FFF')
     yield 'register-locals', SELECTED.replace('    s32 ', '    register s32 ').replace('    u8 *', '    register u8 *')
@@ -523,6 +573,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--owner', action='store_true')
     parser.add_argument('--controls', action='store_true')
+    parser.add_argument('--field-forms', action='store_true')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
     out = root / 'conker/build/game-node-selection'
@@ -532,6 +583,16 @@ def main():
         records.append(record)
         print(profile, record['body_words'], hex(record['frame']), record['differences'], record['pool_bytes'], flush=True)
     (out / 'profiles.json').write_text(json.dumps(records, indent=2)+'\n')
+    if args.field_forms:
+        _, selected_words, selected_pool = compile_candidate(root, out, 'field-selected')
+        fields = []
+        for name, body in field_candidates():
+            record, words, pool = compile_candidate(root, out, 'field-'+name, body)
+            record['text_and_pool_equal_selected'] = words == selected_words and pool == selected_pool
+            fields.append(record)
+            print(name, record['body_words'], hex(record['frame']), record['differences'],
+                record['text_and_pool_equal_selected'], flush=True)
+        (out / 'fields.json').write_text(json.dumps(fields, indent=2)+'\n')
     if args.controls:
         controls = []
         for name, body in candidates():

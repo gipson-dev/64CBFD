@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Attachment Selection Frame And Opening Recovery - 2026-10-08
+
+[Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md):
+
+- [x] Recover complete C1148/frame0x48 with all six measured private homes using meaningful end/current field pointers and measured declaration order. Document matching annotation, not original-declaration proof.
+- [x] Preserve A3/reset lifetime and make the final68 words directly exact; keep all required pointer reloads and FP order.
+- [x] Recover opening ORI/copy-state delay order from C, reducing321 to319 differences; first19 words directly exact, no guard/insertion/omission/padding.
+- [x] Retain twelve field-pointer source forms with identical text/pools, old selected controls and an explicit two-word-swap check. Preserve the complete original model/action/type contract.
+- [x] Pass the C321 intermediate's34 recovery/binding/installed regressions in586.460s, zero skips/errors/failures; strengthened field-form binding checks pass separately.
+- [x] Pass all13 final C319 recovery/binding tests in495.191s,504 ordinary controls and five effective negatives; ten padder tests, tools/syntax/CLI/whitespace and98-document /4,123-relative-link checks pass, zero broken links. Audit all6,058 installed symbols/sections/data/guards/conversion hash unchanged; bank this checkpoint.
+- [ ] Recover original model-copy/flags scheduling and all674 original table target PCs;84 entries remain one word late. Do not promote experimental rows or install this body yet.
+- [ ] Continue broader Game matching and full callee/FCSR/hardware/PC-port qualification.
+
+Candidate: `game_node_selection_candidates.py --field-forms --owner --controls`.
+Installed baseline remains `game-node-tile-test/after.json`; README aggregates unchanged.
+
 ## Game Attachment Selection Lifetime And Table Binding - 2026-10-08
 
 [Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md):
@@ -11,7 +27,7 @@
 - [x] Measure original target-PC fit:590/674 entries exact,84 one word late. Reject installation until original target compatibility qualifies.
 - [x] Audit all6,058 installed symbols, protected sections,720 Game-data owners,11,063 guards and conversion hash unchanged. Keep production stub and README aggregates unchanged.
 - [x] Pass all34 combined recovery/binding/installed regressions in578.223s and ten padder tests in0.044s, zero skips/errors/failures; tools/syntax/CLI/whitespace and97-document /4,115-relative-link checks pass, zero broken links. Bank this experiment-only checkpoint.
-- [ ] Recover original frame0x48/private homes and opening/nested-model scheduling; match the remaining349 words.
+- [x] Recover original frame0x48/private homes and opening initialization in [Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md). Remaining model/flags scheduling and319 differences stay open.
 - [ ] Qualify original table jump-target PCs against emitted C labels before promoting binding rows or installing the candidate.
 - [ ] Continue wider Game matching; full callee/FCSR/hardware/PC-port boundaries remain open.
 

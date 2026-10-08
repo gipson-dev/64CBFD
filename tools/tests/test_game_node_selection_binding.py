@@ -34,7 +34,7 @@ class GameNodeSelectionBindingTests(unittest.TestCase):
                 'mips-linux-gnu-as -EB -mtune=vr4300 -march=vr4300 -mabi=32 -I include',
                 '--asm-prelude','include/asm_processor_prelude.inc'],cwd=cls.root / 'conker',check=True,capture_output=True)
         cls.rows = screen.table_binding_guards(cls.obj)
-        cls.record, cls.words, _ = screen.compile_candidate(cls.root, cls.out, 'selected')
+        cls.record, cls.words, cls.pool = screen.compile_candidate(cls.root, cls.out, 'selected')
         with (cls.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             reader = csv.DictReader(stream)
             cls.fields, cls.history = reader.fieldnames, list(reader)
@@ -70,7 +70,25 @@ class GameNodeSelectionBindingTests(unittest.TestCase):
         return list(struct.unpack_from('>1148I', sections(elf)['.text'][1]))
 
     def test_01_seven_checked_pairs_bind_only_address_addends_and_relocations(self):
-        self.assertEqual((self.record['body_words'],self.record['frame'],self.record['differences']), (1148,0x38,349))
+        self.assertEqual((self.record['body_words'],self.record['frame'],self.record['differences']), (1148,0x48,319))
+        retail = list(struct.unpack_from('>1148I', (self.root / 'conker/conker.us.bin').read_bytes(),screen.ROM))
+        self.assertEqual(self.words[:19],retail[:19])
+        self.assertEqual(self.words[-68:],retail[-68:])
+        homes = {word>>16&31:word&65535 for word in self.words
+            if word>>26 == 43 and word>>21&31 == 29 and word>>16&31 in (6,8,9,10)}
+        self.assertEqual(homes,{6:0x40,8:0x44,9:0x24,10:0x30})
+        field_forms = 0
+        for name, source in screen.field_candidates():
+            record, words, pool = screen.compile_candidate(self.root,self.out,'field-'+name,source)
+            self.assertEqual((record['body_words'],record['frame'],record['differences']),(1148,0x48,319),name)
+            self.assertEqual((words,pool),(self.words,self.pool),name)
+            field_forms += 1
+        self.assertEqual(field_forms,12)
+        previous, words, pool = screen.compile_candidate(self.root,self.out,'previous-field-homes',screen.FRAME)
+        self.assertEqual((previous['body_words'],previous['frame'],previous['differences']),(1148,0x48,321))
+        self.assertEqual({i for i,(old,new) in enumerate(zip(words,self.words)) if old != new},{8,10})
+        self.assertEqual((self.words[8],self.words[10]),(words[10],words[8]))
+        self.assertEqual(pool,self.pool)
         self.assertEqual(len(self.rows),14)
         obj, body = self.padded()
         text, funcs, relocs = parse_object(obj)
@@ -120,7 +138,10 @@ class GameNodeSelectionBindingTests(unittest.TestCase):
         self.receipt('target-pcs',dict(tables=fit,entries=674,exact_target_PCs=590,
             target_PCs_four_bytes_late=84,original_target_PC_compatibility=False,
             padded_C_execution_and_installation_not_claimed=True))
-        self.receipt('binding',dict(body_words=1148,frame=0x38,differences=349,checked_rows=14,
+        self.receipt('binding',dict(body_words=1148,frame=0x48,differences=319,checked_rows=14,
+            original_private_homes=True,final_68_words_direct_exact=True,
+            first_19_words_direct_exact=True,opening_change_is_only_independent_words_8_and_10=True,
+            field_forms_with_identical_text_and_pool=field_forms,
             seven_physical_symbols=True,only_address_immediates_and_relocations_changed=True,
             no_padding_insert_omit_or_generated_data=True,equals_isolated_C_linked_text=True,
             postprocessed_neighbors_unchanged=39,existing_useful_pools_unchanged=True,

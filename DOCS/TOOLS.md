@@ -10,9 +10,13 @@ says otherwise.
 retains the complete semantic `func_15031FC8` without installing it. Explicit
 case/value lists cover the seven retail tables and sparse type branches.
 Four profiles and source controls measure body size, frame, raw differences,
-relocations and actual copied-owner pools. Selected O2/g3 is C1148/frame0x38/
-349 differences, not retail1148/frame0x48. Explicit reset/no-reset assignments
-recover A3's attachment lifetime; the prior C1147/394 form remains a control.
+relocations and actual copied-owner pools. Selected O2/g3 is C1148/frame0x48/
+319 differences, with the original six private homes, first19/final68 words
+directly exact. Named end/current field addresses and measured declaration order
+recover the frame without extending float lifetimes. Explicit reset/no-reset
+assignments retain A3; previous C1147/394, C1148/frame0x38/349 and C1148/frame0x48/
+321 forms remain controls. Opening copy-state placement changes only two
+independent words, explicitly checked. This is not a full byte match.
 Thirty-nine neighbors remain intact;
 the seven new tables pack four bytes before their original physical offsets.
 
@@ -36,16 +40,22 @@ with the C body is a separate, still-open installation gate.
 The same tests measure590/674 exact original label PCs;84 entries are one
 word late, so current original-target compatibility is explicitly rejected.
 
+`--field-forms` retains twelve source controls across f32/u8 field pointers,
+progress-copy use and address-assignment orders. Every form emits identical
+selected text/pools; the binding tests verify this independently alongside
+frame/homes/exact regions. Declaration order is a matching annotation, not
+proof of original source declarations. Six ordinary controls cover504 executions.
+
 ```sh
-python3 -m tools.experiments.game_node_selection_candidates --owner --controls
+python3 -m tools.experiments.game_node_selection_candidates --field-forms --owner --controls
 python3 -m unittest tools.tests.test_game_node_selection_recovery tools.tests.test_game_node_selection_binding -v
 ```
 
 Ignored receipts are in `conker/build/game-node-selection/` and
 `conker/build/game-node-selection-test/` and `conker/build/game-node-selection-binding-test/`. Installed baseline stays
-`conker/build/game-node-tile-test/after.json`. Continue frame/scheduling and
+`conker/build/game-node-tile-test/after.json`. Continue model/flags scheduling and
 original table-target PC fit from
-[Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md).
+[Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md).
 
 ## Fourth tile-size command matching
 

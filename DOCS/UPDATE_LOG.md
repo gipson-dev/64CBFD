@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-08 Game Attachment Selection Frame And Opening Recovery
+
+[Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md):
+Continue complete `func_15031FC8` from C1148/frame0x38/349 to C1148/frame0x48/
+319 differences. Meaningful field-pointer locals and measured declaration order
+recover the six private homes and original tail FP allocation; final68 words
+directly exact. Move copy-state initialization after flags to recover the opening
+two-word order; first19 words exact. Retain twelve text/pool-identical field
+forms and previous candidates. C321 intermediate passes all34 combined tests
+in586.460s; all13 final C319 recovery/binding tests pass in495.191s, including
+92,992 guest/12,348 native32 cases,504 controls and effective negatives.
+Ten padder tests and tools/syntax/CLI/whitespace checks pass;98 documents/
+4,123 relative links, zero broken. All6,058 installed symbols/sections/data/
+guards/conversion hash unchanged. Original model-copy/flags
+scheduling and84 shifted target PCs remain open; no production/data/guard/
+profile/README changes or aggregate credit. Continue this dispatcher before
+installation, with full callee/FCSR/hardware/PC-port boundaries separate.
+
 ## 2026-10-08 Game Attachment Selection Lifetime And Table Binding
 
 [Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md):
