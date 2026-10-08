@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Record Vertical Velocity Integration - 2026-10-08
+
+[Note 1132](WORKING_NOTES/1132-game-record-velocity-integrator-conversion-20261008.md):
+
+- [x] Convert complete `func_151D8718`:19 words/76 bytes/frame0,16 direct words plus three strict captured-velocity FP allocation/operand-order guards.
+- [x] Qualify mixed pointer/pointer/float ABI, captured old velocity, FP grouping, aliases/live loads and bounded special-value cases; hardware FCSR/NaN payloads are not modeled.
+- [x] Pass34,692 guest /12,240 native32 cases,23 required fault prefixes and eight effective compiled negatives; all19 words reached.
+- [x] Preserve22 owner neighbors/pools/relocations and four existing warnings; real padder emits76bytes, six independent links/840 executions verify four relocations.
+- [x] Execute768 complete actual67-word `func_151D792C` ring-caller connections, including wrap/no-work/gate/coordinate copy and real epilogue.
+- [x] Pass eight installed target tests, ten shared checks, both tools project checks, CLI and syntax checks in both mirrors.
+- [x] Audit all6,058 bodies/addresses/extents/protected sections/data unchanged, prior11,152 guards plus three, sole76-byte conversion. Record baseline and README aggregates only.
+- [x] Pass four affected state/constructor owner/connection checks and callback guard-history check; bank mounted toolsf36e9af first, source/docs/exact pin second per "Keep commited", no push or older standalone reset.
+- [ ] Fit and qualify next retained `func_151D77C8`:26 words/frame0; attached-record cleanup, return address, captured nested pointer and live owner reloads/aliases.
+- [ ] Qualify the second integrator caller, hardware/FCSR and gameplay separately; OGL Release remains frozen.
+- [ ] Resolve Graphify reduced-corpus refresh separately without forced overwrite or ignore changes.
+
 ## Record Timer And Player-State Update - 2026-10-08
 
 [Note 1131](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md):
@@ -14,7 +30,7 @@
 - [x] Pass all49 installed target/five-neighbor tests in867.646s after strict guard-history extension and constructor manifest-check adjustment; preserve every original prefix hash/exact suffix check.
 - [x] Bank tools8e1a208 first, then source/docs/exact pin per "Keep commited" request; no push or older standalone mirror reset.
 - [x] Screen retained next `func_151D8718`:19 words/frame0, complete float integration candidate has three raw differences; ignored evidence retained.
-- [ ] Fit and qualify complete `func_151D8718`: mixed ABI, captured old velocity, FP rounding/grouping/exceptional values, aliases/live loads, owner/rebases and actual caller connection.
+- [x] Fit and qualify complete `func_151D8718` in [Note 1132](WORKING_NOTES/1132-game-record-velocity-integrator-conversion-20261008.md): mixed ABI, captured old velocity, FP grouping, aliases/live loads, owner/rebases and complete ring-caller connection. Hardware/FCSR and second caller remain open.
 - [ ] Resolve Graphify reduced-corpus refresh separately; preserve old graph and existing ignore changes.
 - [ ] Continue wider Game/full callee/hardware/gameplay/PC-port work; OGL Release remains frozen.
 

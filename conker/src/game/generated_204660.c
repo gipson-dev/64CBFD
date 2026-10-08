@@ -126,7 +126,12 @@ s32 func_151D779C(u8 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D80C4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D8718.s")
+void func_151D8718(f32 *position, f32 *velocity, f32 delta) {
+    f32 oldVelocity = *velocity;
+
+    *velocity = oldVelocity + D_800AB2EC * delta;
+    position[1] += oldVelocity * delta + D_800AB2F0 * (delta * delta);
+}
 
 void func_151D8764(u8 *arg0) {
     u8 *temp_v0 = *(u8 **)(arg0 + 0x98);

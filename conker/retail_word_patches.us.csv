@@ -11151,3 +11151,6 @@ generated_205C90,func_151D8A24,0x14,0xA3A00026,0xA3A00023,-,-,Normalize complete
 generated_205C90,func_151D8A24,0x4C,0xA3AA0026,0xA3AA0023,-,-,Normalize complete private expiry-byte stack-slot allocation,,,false
 generated_205C90,func_151D8A24,0x8C,0x93AA0026,0x93AA0023,-,-,Normalize complete private expiry-byte stack-slot allocation,,,false
 generated_205C90,func_151D8A24,0xD8,0x93AA0026,0x93AA0023,-,-,Normalize complete private expiry-byte stack-slot allocation,,,false
+generated_204660,func_151D8718,0xC,0xC4A00000,0xC4A20000,-,-,Normalize captured velocity FP register and retain retail add operand order,,,false
+generated_204660,func_151D8718,0x18,0x46003200,0x46061200,-,-,Normalize captured velocity FP register and retain retail add operand order,,,false
+generated_204660,func_151D8718,0x34,0x460C0102,0x460C1102,-,-,Normalize captured velocity FP register and retain retail add operand order,,,false

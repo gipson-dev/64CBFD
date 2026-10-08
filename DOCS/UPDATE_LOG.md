@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-08 Record Vertical Velocity Integration
+
+[Note 1132](WORKING_NOTES/1132-game-record-velocity-integrator-conversion-20261008.md):
+Complete `func_151D8718`,19 words/frame0;16 direct words plus three strict
+FP allocation/operand-order guards. Mixed ABI, captured velocity, grouped FP
+operations and live aliased loads qualify. Eight installed target tests pass:
+34,692 guest /12,240 native32 cases,23 faults, eight negatives,840 rebases and
+768 complete actual ring-caller connections. All6,058 bodies/data unchanged;
+prior11,152 guards plus three, sole76-byte conversion. Converted5,476/Game4,803;
+exact3,387/Game2,714;2,089 different/zero drift. Five affected guard/owner
+checks also pass; toolsf36e9af banked first, parent pins it, no push or mirror
+reset. Next26-wordfunc_151D77C8
+needs return/cleanup/live-reload recovery. Hardware/FCSR, second caller,
+gameplay and graph refresh remain open; root README aggregates only.
+
 ## 2026-10-08 Record Timer And Player-State Update
 
 [Note 1131](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md):

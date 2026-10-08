@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record vertical velocity integration](WORKING_NOTES/1132-game-record-velocity-integrator-conversion-20261008.md):
+  `func_151D8718`,19 words/frame0,16 direct plus three FP guards; mixed ABI,
+  alias order, native32 and complete ring caller qualify. Eight installed tests
+  pass; all bodies/data unchanged, sole76-byte conversion. Next26-word
+  `func_151D77C8` needs return/cleanup/reload recovery. Hardware/FCSR and graph
+  refresh remain open. Five affected checks pass; toolsf36e9af committed first,
+  parent records the exact pin, no push or older standalone reset.
+
 - [Latest record timer and player-state update](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md):
   `func_151D8A24`,64 words/frame0x28;60 direct words plus four private-byte
   guards. Timer/callback/live updates/free ordering qualify; all49 installed

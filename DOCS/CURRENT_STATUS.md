@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 8e1a208; tools are committed before the source pin.
+  checkpoint pins tools f36e9af; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery and authorized banking:
+[Note 1132](WORKING_NOTES/1132-game-record-velocity-integrator-conversion-20261008.md).
+Convert retained `func_151D8718`:19 words/76 bytes/frame0;16 direct words
+plus three strict captured-velocity FP allocation/operand-order guards.
+Eight installed target tests pass:34,692 guest /12,240 native32 cases,
+23 fault prefixes, eight negatives,840 rebases and768 complete ring-caller
+connections. All6,058 bodies/addresses/extents/protected sections/data
+unchanged; prior11,152 guards plus three, sole76-byte asm-to-C conversion.
+Converted5,476/Game4,803; exact3,387/Game2,714;2,089 different/zero drift.
+New velocity baseline; root README aggregates only. Four affected state/
+constructor checks and the callback guard-history check also pass. Tools
+f36e9af committed first; source checkpoint records its exact pin, no push.
+Next retained `func_151D77C8`:26 words/frame0; recover return/attached-record
+cleanup and live pointer reloads before fitting. Second caller, hardware/FCSR,
+gameplay and Graphify refresh remain open; no host/runtime/Release changes.
+
+Previous Game recovery and authorized banking:
 [Note 1131](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md).
 Convert final retained `func_151D8A24` in generated_205C90:64 words/256 bytes/
 frame0x28,60 direct words plus four strict private expiry-byte guards.
