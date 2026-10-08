@@ -21,6 +21,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest direct Game placeholder recovery:
+[Note 1109](WORKING_NOTES/1109-game-attachment-progress-direct-match-20261007.md).
+`func_1503327C` now emits complete exact C43/frame `0x28`, attachment setup
+gate, post-call node-home/pointer reload and binary32 end-minus-one predicate.
+No guards, profile/Makefile or shared-header changes. Ten pre-install tests
+pass in 57.072 seconds: 45,000 guest cases, 45,000 native32 cases, aliases,
+faults, 19 controls and owner/padder/independent call-rebase checks.
+Only target changes across 6,058 linked symbols; other bodies/addresses/extents/
+overflows/sections/720 data owners/11,063 guards/conversion hash stay intact.
+Exact total 3,366/5,467 (61.57%), Game 2,693/4,794 (56.17%), 2,101 different,
+zero drift. Conversion counts unchanged; README matching rows only.
+Setup is a validating callback, not full setup/hardware/PC-port acceptance.
+Authoritative ignored checkpoint: `game-attachment-progress-test/after.json`.
+All 42 installed attachment/lookup/resolver regression tests pass in 265.112
+seconds, zero skips/errors/failures; tools/syntax/CLI/staged whitespace and
+91-document / 4,043-relative-link checks pass, zero broken links.
+
 Latest direct Game assembly-to-C match:
 [Note 1108](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md).
 `func_1503195C`, the recursive resolver's group/key/ordinal list lookup,

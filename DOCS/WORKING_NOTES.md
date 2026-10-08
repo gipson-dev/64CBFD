@@ -1,5 +1,22 @@
 # Working Notes
 
+2026-10-07 ([Note 1109](WORKING_NOTES/1109-game-attachment-progress-direct-match-20261007.md)):
+Recover exact C43/frame `0x28` for `func_1503327C`, replacing its padded
+zero-return placeholder. Original setup ABI, flag gate, incoming-home/pointer
+reload and binary32 end-minus-one predicate; all words direct, no new guards
+or profile/Makefile/shared-header changes. Ten pre-install tests pass in
+57.072 seconds: 45,000 guest / 45,000 native32 cases, aliases/faults/controls/
+effective negatives and copied-owner/real-padder/rebase qualification.
+Only target changes across 6,058 symbols, preserving all other bodies/addresses/
+extents/overflows/protected sections/720 data owners/11,063 guards/conversion hash.
+Exact total 3,366, Game 2,693 (56.17%), 2,101 different, zero drift; conversions
+unchanged, README aggregate matching rows only. Setup callback is validating,
+not full callee/hardware/PC-port acceptance; resolver C84/40 remains open.
+New ignored checkpoint `game-attachment-progress-test/after.json`.
+All 42 installed attachment/lookup/resolver regression tests pass in 265.112
+seconds, zero skips/errors/failures; tools/syntax/CLI/staged whitespace and
+91-document / 4,043-relative-link checks pass, zero broken links.
+
 2026-10-07 ([Note 1108](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md)):
 Convert retained `func_1503195C` assembly to direct exact C28/frame zero,
 group/key/ordinal linked-list lookup. No guards/profile/header changes; all

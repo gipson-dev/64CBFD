@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Attachment Progress Direct Match - 2026-10-07
+
+[Note 1109](WORKING_NOTES/1109-game-attachment-progress-direct-match-20261007.md):
+
+- [x] Recover/install `func_1503327C`'s full attachment setup/progress predicate, all 43 words/frame `0x28` directly exact under existing `-O2 -g3`; no new guards/profile/Makefile/shared-header edits.
+- [x] Preserve six-word setup ABI, two incoming homes, post-call node and attachment reload, end-before-current reads and binary32 subtraction/comparison. No new node/post-setup null gate.
+- [x] Qualify 45,000 guest / 45,000 native32 cases, 128 alias/unused-word cases, ten required faults, lazy paths and effective compiled negatives. Keep FCSR/private/full setup-callee claims separate.
+- [x] Retain 19 source/profile controls / 684 ordinary executions, four raw exact forms; preserve 39 owner neighbors/pools/relocations/zero warnings and actual 172-byte padder with independent call/entry rebases.
+- [x] Rebuild/audit all 6,058 symbols/6,042 slots; only target changes, other bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards/conversion hash intact. Update README matching aggregates only.
+- [x] Pass all 42 installed attachment/lookup/resolver regression tests in 265.112 seconds, zero skips/errors/failures; tools/syntax/CLI/staged whitespace and 91-document / 4,043-relative-link checks pass, zero broken links. Bank the completed match.
+- [ ] Continue remaining Game functions; resolver V0 key move, matrix-wrapper/basis/translator/sampler boundaries remain open. No PC-port/full setup acceptance here.
+
+Resume from `game-attachment-progress-test/after.json`. The function's
+previous C placeholder was already counted as converted; this adds one exact
+function without changing conversion totals.
+
 ## Game Matrix Parent Lookup Direct Match - 2026-10-07
 
 [Note 1108](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md):

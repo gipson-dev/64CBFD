@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest attachment progress direct match](WORKING_NOTES/1109-game-attachment-progress-direct-match-20261007.md):
+  placeholder becomes exact C43/frame `0x28`, setup gate and post-call home/
+  pointer reload, binary32 threshold. No guards/profile changes; guest/native/
+  owner/padder qualification, only target changes. Setup remains a validating
+  callback; no full setup-callee or PC-port acceptance.
 - [Latest matrix parent lookup direct match](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md):
   retained assembly becomes exact C28, no guards/profile changes; qualified
   group/key/ordinal reads, native32 and recursive connections. Linked bytes

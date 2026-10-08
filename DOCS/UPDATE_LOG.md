@@ -1,5 +1,24 @@
 # Update Log
 
+## 2026-10-07 Game Attachment Progress Direct Match
+
+[Note 1109](WORKING_NOTES/1109-game-attachment-progress-direct-match-20261007.md):
+Replace `func_1503327C`'s zero-return placeholder with complete exact C43,
+frame `0x28`, setup bit gate, six-word call ABI, post-call incoming-node-home
+and attachment reload, and single-precision end-minus-one predicate. All words
+emit directly under existing `-O2 -g3`; no guards/profile/Makefile/header changes.
+Ten pre-install tests pass in 57.072 seconds: 45,000 guest and 45,000 native32
+cases, aliases/lazy/faults, effective negatives, 19 controls, owner/padder/rebase.
+Only target changes across 6,058 linked symbols; protected sections/data,
+other bodies/addresses/extents/overflows/11,063 guards/conversion hash intact.
+Exact total 3,366 (61.57%), Game 2,693 (56.17%), 2,101 different, zero drift;
+conversion counts unchanged. README aggregate matching rows only. Setup is
+a validating callback, not full setup-callee or PC-port acceptance.
+New ignored checkpoint `game-attachment-progress-test/after.json`.
+All 42 installed attachment/lookup/resolver regression tests pass in 265.112
+seconds, zero skips/errors/failures; tools/syntax/CLI/staged whitespace and
+91-document / 4,043-relative-link checks pass, zero broken links.
+
 ## 2026-10-07 Game Matrix Parent Lookup Direct Match
 
 [Note 1108](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md):

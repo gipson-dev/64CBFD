@@ -1,4 +1,5 @@
 #include <ultra64.h>
+void func_1503F5B8(u8 *, s32, s32, f32, f32, s32);
 extern u8 D_800BE9C0;
 extern u8 *D_800C3EE0;
 extern u8 D_800C35EA;
@@ -221,7 +222,20 @@ s32 func_150331B8() {
     return 0;
 }
 
-s32 func_1503327C() {
+s32 func_1503327C(u8 *node, u8 *actor) {
+    u8 *attachment;
+
+    attachment = *(u8 **)(node + 0x48);
+    if (attachment == 0) {
+        return 0;
+    }
+    if ((*(u16 *)(attachment + 4) & 0x8000) != 0x8000) {
+        func_1503F5B8(attachment, 0, 0, 1.0f, 0.0f, 1);
+        attachment = *(u8 **)(node + 0x48);
+    }
+    if (*(f32 *)(attachment + 0x18) - 1.0f <= *(f32 *)(attachment + 8)) {
+        return 1;
+    }
     return 0;
 }
 
