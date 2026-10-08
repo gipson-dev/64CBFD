@@ -11,6 +11,20 @@ s32 func_151D792C(u8 *owner);
 
 typedef struct {
     f32 x, y, z;
+} SamplingPosition151D7A38;
+
+typedef struct {
+    u8 *actor;
+    SamplingPosition151D7A38 position;
+    f32 time;
+    f32 progress;
+} SamplingPayload151D7A38;
+
+
+s32 func_151D7A38(u8 *owner);
+
+typedef struct {
+    f32 x, y, z;
 } AttachmentPosition151D7830;
 
 typedef struct {
@@ -219,7 +233,76 @@ s32 func_151D792C(u8 *owner) {
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D7A38.s")
+s32 func_151D7A38(u8 *owner) {
+    SamplingPayload151D7A38 *payload;
+    u8 *records;
+    SamplingPosition151D7A38 current;
+    f32 xDelta;
+    f32 yDelta;
+    f32 zDelta;
+    f32 fraction;
+    f32 time;
+    f32 timeStep;
+    f32 xStep;
+    f32 yStep;
+    SamplingPosition151D7A38 point;
+    f32 zStep;
+    u8 *record;
+    SamplingPosition151D7A38 *output;
+    SamplingPosition151D7A38 *previous;
+
+    payload = *(SamplingPayload151D7A38 **)(owner + 0x98);
+    records = *(u8 **)(owner + 0x94);
+    if ((payload->actor[0x2D] & 1) == 0) {
+        return 0;
+    }
+    output = &point;
+    current = *(SamplingPosition151D7A38 *)(payload->actor + 0x30);
+    *(SamplingPosition151D7A38 *)(owner + 0x10) = current;
+    payload->progress += 0.25f * D_800BE9A4;
+    if (payload->progress > 1.0f) {
+        fraction = 1.0f / payload->progress;
+        previous = &payload->position;
+        time = payload->time + D_800BE9A4;
+        point = *previous;
+        xDelta = current.x - previous->x;
+        yDelta = current.y - previous->y;
+        zDelta = current.z - previous->z;
+        timeStep = time * fraction;
+        xStep = xDelta * fraction;
+        yStep = yDelta * fraction;
+        zStep = zDelta * fraction;
+        do {
+            record = records + *(s8 *)(owner + 0x2E) * 0x1C;
+            *(SamplingPosition151D7A38 *)record = *output;
+            *(f32 *)(record + 0xC) = 0.0f;
+            *(f32 *)(record + 0x10) = 0.0f;
+            record[0x14] = 0;
+            *(f32 *)(record + 0x18) = 0.0f;
+            func_151D8718((f32 *)record, (f32 *)(record + 0xC), time);
+            owner[0x2E] = *(s8 *)(owner + 0x2E) + 1;
+            time -= timeStep;
+            if (*(s8 *)(owner + 0x2E) == owner[0x25]) {
+                owner[0x2E] = 0;
+            }
+            owner[0x2C] = *(s8 *)(owner + 0x2C) + 1;
+            if (*(s8 *)(owner + 0x2D) == *(s8 *)(owner + 0x2E)) {
+                owner[0x2D] = *(s8 *)(owner + 0x2D) + 1;
+                if (*(s8 *)(owner + 0x2D) == owner[0x25]) {
+                    owner[0x2D] = 0;
+                }
+                owner[0x2C] = *(s8 *)(owner + 0x2C) - 1;
+            }
+            point.x += xStep;
+            point.y += yStep;
+            point.z += zStep;
+            payload->progress -= 1.0f;
+        } while (payload->progress > 1.0f);
+        *previous = point;
+        payload->time = time;
+    }
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D7CD0.s")
 

@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-08 Record Ring Sampling Conversion
+
+[Note 1136](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md):
+Complete `func_151D7A38`, 166 words / frame 0xC8; 129 direct words plus 37
+closed register/spill/loop guards. Captured actor/payload/buffer, fractional
+interpolation, mixed-ABI calls and live signed ring updates qualify.
+Seven installed tests pass in 104.050s; nine older checks in 112.141s after
+a copied-owner fixture declaration/history correction. All 6,058 bodies/data
+unchanged; prior 11,168 guards/raw prefix plus 37, sole 664-byte conversion.
+Converted 5,480 / Game 4,807; exact 3,391 / Game 2,718; zero drift.
+Tools 9fb0eb2 banked first, parent pins exact revision; no push or older
+standalone reset. Next `func_151D7CD0`, 253 words / frame 0xB8. Original
+dispatcher connection is not linked-placeholder restoration; FCSR/hardware/
+gameplay and graph refresh remain open. README aggregates only.
+
 ## 2026-10-08 Record Ring Update Conversion
 
 [Note 1135](WORKING_NOTES/1135-game-record-ring-update-conversion-20261008.md):

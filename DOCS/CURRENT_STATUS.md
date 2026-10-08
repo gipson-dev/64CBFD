@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 74cbbdc; tools are committed before the source pin.
+  checkpoint pins tools 9fb0eb2; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery and authorized banking:
+[Note 1136](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md).
+Convert retained `func_151D7A38`: 166 words / 664 bytes / frame 0xC8;
+129 direct words plus 37 closed register/spill/loop-scheduling guards.
+Seven installed tests pass in 104.050s: 1,889 guest / 264,704 native32 cases,
+314 faults, eleven negatives, 120 rebases and 96 connected cases across raw,
+normalized and retail bodies. Nine affected older checks pass in 112.141s
+after preserving shared declarations/later guards in the ring fixture.
+All 6,058 bodies/addresses/extents/protected sections/data unchanged; prior
+11,168 guards/raw prefix preserved plus 37, sole 664-byte conversion.
+Converted 5,480 / Game 4,807; exact 3,391 / Game 2,718; zero drift.
+Tools 9fb0eb2 banked first, parent records exact pin; no push or older
+standalone reset. New sampling baseline; README aggregates only.
+Next retained `func_151D7CD0`: 253 words / frame 0xB8; backward passes and
+FCSR conversion require fresh callee/lifetime qualification. Original
+dispatcher connections do not restore its linked placeholder; hardware/
+gameplay and graph refresh remain open. No host/runtime/Release changes.
+
+Previous Game recovery and authorized banking:
 [Note 1135](WORKING_NOTES/1135-game-record-ring-update-conversion-20261008.md).
 Convert retained `func_151D792C`: 67 words / 268 bytes / frame 0x30;
 54 direct words plus 13 strict final-output scheduling/register guards.

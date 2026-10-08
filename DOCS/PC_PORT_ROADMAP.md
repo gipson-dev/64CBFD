@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ring Sampling - 2026-10-08
+
+[Note 1136](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md):
+
+- [x] Convert complete `func_151D7A38`: 166 words / 664 bytes / frame 0xC8; 129 direct words plus 37 strict closed register/spill/loop-scheduling guards.
+- [x] Recover captured actor/payload/buffer, raw XYZ packets, fractional position/time steps, mixed-ABI integrator calls and live signed current/goal/state with unsigned count.
+- [x] Pass 1,889 guest / 264,704 native32 cases, 314 fault prefixes, eight lazy cases and eleven effective negatives; cover 165 reachable words and preserve original compiler-dead +0x60.
+- [x] Preserve 22 owner neighbors/pools/relative relocations and four warnings; real padding emits 664 bytes, six independent links / 120 executions verify three symbolic sites.
+- [x] Execute 96 connected cases / 288 raw-C, normalized and retail executions with the actual integrator and complete original dispatcher; verify callback index 16 and consumed false return while retaining linked-placeholder/release-hook limits.
+- [x] Pass seven installed tests in 104.050s and nine affected older checks in 112.141s; fix copied-owner shared declarations and later-guard preservation without production neighbor changes.
+- [x] Pass ten shared tests, mounted/standalone project checks and CLI/syntax checks; mirror 33 relevant tools files without overwriting conflicting work.
+- [x] Audit all 6,058 bodies/addresses/extents/protected sections/data unchanged, prior 11,168 guards/raw prefix plus 37, sole 664-byte conversion; record new baseline and README aggregates only.
+- [x] Bank mounted tools 9fb0eb2 first, source/docs/exact pin second per "Keep commited"; no push or older standalone reset.
+- [ ] Fit and qualify retained `func_151D7CD0`: 253 words / frame 0xB8; inspect actual callees/extended payload and qualify FCSR unsigned conversion before fitting backward ring passes.
+- [ ] Restore linked dispatcher/constructor and qualify alternate branches/hardware/gameplay separately; resolve reduced-corpus Graphify refresh without forced overwrite. OGL Release remains frozen.
+
 ## Record Ring Update - 2026-10-08
 
 [Note 1135](WORKING_NOTES/1135-game-record-ring-update-conversion-20261008.md):
@@ -13,7 +29,7 @@
 - [x] Pass ten shared tests, both tools checks and CLI/syntax checks; mirror 31 relevant tools files without overwriting conflicting work.
 - [x] Audit all 6,058 bodies/addresses/extents/protected sections/data unchanged, prior 11,155 guards/raw CSV prefix plus 13, sole 268-byte conversion; record new baseline and README aggregates only.
 - [x] Bank mounted tools 74cbbdc first, source/docs/exact pin second per "Keep commited"; no push or older standalone reset.
-- [ ] Fit and qualify retained `func_151D7A38`: 166 words / frame 0xC8, captured packets, interpolation, integrator calls and live cursor/count/state/goal updates.
+- [x] Fit and qualify complete `func_151D7A38` in [Note 1136](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md): 166 words / frame 0xC8, captured packets, interpolation, integrator calls and live ring-state updates, with 37 closed guards.
 - [ ] Restore linked dispatcher/constructor and qualify alternate branches/hardware/gameplay separately; resolve reduced-corpus Graphify refresh without forced overwrite. OGL Release remains frozen.
 
 ## Attachment Allocation - 2026-10-08
@@ -61,7 +77,8 @@
 - [x] Audit all6,058 bodies/addresses/extents/protected sections/data unchanged, prior11,152 guards plus three, sole76-byte conversion. Record baseline and README aggregates only.
 - [x] Pass four affected state/constructor owner/connection checks and callback guard-history check; bank mounted toolsf36e9af first, source/docs/exact pin second per "Keep commited", no push or older standalone reset.
 - [x] Fit and qualify complete `func_151D77C8` in [Note 1133](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md):26 words/frame0 directly exact; used void interface, captured nested link, live owner reloads/aliases and complete wrapper connection.
-- [ ] Qualify the second integrator caller, hardware/FCSR and gameplay separately; OGL Release remains frozen.
+- [x] Qualify the second integrator caller in [Note 1136](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md), including raw/normalized/retail sampling and bounded complete dispatcher connections.
+- [ ] Qualify hardware/FCSR and gameplay separately; OGL Release remains frozen.
 - [ ] Resolve Graphify reduced-corpus refresh separately without forced overwrite or ignore changes.
 
 ## Record Timer And Player-State Update - 2026-10-08

@@ -11167,3 +11167,40 @@ generated_204660,func_151D792C,0xC4,0x8C610008,0xAE2A0058,-,-,Normalize closed f
 generated_204660,func_151D792C,0xC8,0xAE21005C,0x8D010008,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
 generated_204660,func_151D792C,0xCC,0x10000007,0x10000006,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
 generated_204660,func_151D792C,0xD0,0x24020001,0xAE21005C,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D7A38,0x74,0x8C590034,0x8C480034,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x80,0xAC790004,0xAC680004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x94,0x8C690004,0x8C6B0004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x98,0xAE090014,0xAE0B0014,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0xEC,0x8C4B0004,0x8C4D0004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0xF8,0xAE8B0004,0xAE8D0004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x130,0xAFA20074,0xAFA20070,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x148,0x820C002E,0x820E002E,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x154,0x01920019,0x01D20019,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x158,0x00006812,0x00007812,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x15C,0x01B32021,0x01F32021,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x164,0x8E980004,0x8E880004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x16C,0xAC980004,0xAC880004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x190,0x8219002E,0x820A002E,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x198,0x92090025,0x920B0025,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x19C,0x27280001,0x25490001,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1A0,0xA208002E,0xA209002E,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1AC,0x54490004,0x55620004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1B0,0x820A002C,0x820C002C,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1BC,0x820A002C,0x820C002C,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1C4,0x254B0001,0x258D0001,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1CC,0xA20B002C,0xA20D002C,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1D0,0x246C0001,0x246E0001,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1D4,0xA20C002D,0xA20E002D,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1D8,0x820D002D,0x8218002D,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1E0,0x55AF0003,0x55F80003,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1E4,0x820E002C,0x8219002C,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1EC,0x820E002C,0x8219002C,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1F0,0x25D8FFFF,0x2728FFFF,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x1F4,0xA218002C,0xA208002C,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x234,0x4503FFC5,0x4501FFC4,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x238,0x820C002E,0x00000000,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x23C,0x8FB90074,0x8FAA0070,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x244,0xAF210000,0xAD410000,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x248,0x8E890004,0x8E8B0004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x24C,0xAF290004,0xAD4B0004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7A38,0x254,0xAF210008,0xAD410008,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
