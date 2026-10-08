@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-07 ([Note 1105](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md)):
+Recover retail opening and point-loop register phases for `func_1514654C`:
+experimental C119/frame `0xA0`/74 differences, matrix A1, actor/output S2,
+node/input S1, real matrix/resolver offsets unchanged. Seventeen opening,
+sixteen shifted loop and eight epilogue words emit directly; key branch and
+primary-read topology remain open. Retain 92 new controls / 2,208 ordinary
+executions, 377 forms total, none exact. All nine new guest/private/home/
+actual-helper/native/owner tests pass in 114.007 seconds. Do not install a
+119-word form or insert/normalize an instruction. Production C120/60, all
+6,058 symbols/data/11,063 guards/conversion hash and README totals unchanged.
+All 29 combined tests pass in 419.377 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 87-document / 4,005-relative-link checks pass,
+zero broken links.
+
 2026-10-07 ([Note 1104](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md)):
 Install complete semantic C for `func_1514654C`: 120 meaningful words,
 retail frame `0xA0`, matrix `sp+4C`, primary/secondary `sp+90/+8C` and all

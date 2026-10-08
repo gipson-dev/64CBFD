@@ -51,6 +51,10 @@ confirmed.
 
 ## Planning and history
 
+- [Latest matrix-route register phases and branch source audit](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md):
+  experimental C119 recovers the retail opening, matrix A1 and complete shifted
+  point loop with correct private addresses; key/primary topology still open.
+  92 new controls, no raw match or installation; production C120/60 unchanged.
 - [Latest matrix-route private-layout and semantic recovery](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md):
   installed complete C120/frame `0xA0`, retail private matrix/resolver outputs;
   closes the sixteen old private counterexamples, no new guards. Sixty words

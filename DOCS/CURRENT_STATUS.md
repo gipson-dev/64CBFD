@@ -21,6 +21,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest matrix-route register-phase/source follow-up, **no new byte match**:
+[Note 1105](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md).
+Experimental C119/frame `0xA0` now emits the original seventeen opening words,
+matrix in A1, node/input S1, actor/output S2 and all sixteen shifted loop words
+directly as retail, with unchanged actual private addresses. Key branch and
+primary-read topology still differ; 74 full-slot differences remain, and the
+body is one word short of retail. Do not install it or insert a word. Retain 92
+new controls / 2,208 ordinary executions, 377 total forms, none raw exact.
+Private/home/actual-helper/native/owner gates pass; all nine new tests pass in
+114.007 seconds. The installed C120/60-difference body, all linked symbols,
+11,063 guards, data/conversion hash and README totals remain unchanged.
+All 29 combined tests pass in 419.377 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 87-document / 4,005-relative-link checks pass,
+zero broken links.
+Continue the key/primary source fit with this qualified register-phase evidence.
+
 Latest installed matrix-route semantic recovery, **not byte-exact**:
 [Note 1104](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md).
 `func_1514654C` replaces its padded zero-return placeholder with complete

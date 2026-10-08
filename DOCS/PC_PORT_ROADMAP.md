@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix-Route Register Phases And Branch Source Audit - 2026-10-07
+
+[Note 1105](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md):
+
+- [x] Recover the retail seventeen-word opening and saved-register phases in experimental C: matrix A1, lookup/input S1, actor/output S2 and exact sixteen-word shifted point loop.
+- [x] Preserve the real frame `0xA0`, matrix `sp+4C`, resolver outputs `sp+90/+8C`; requalify homes, private overlaps, actual helpers, native SDK and copied owner.
+- [x] Retain 92 new controls / 2,208 ordinary executions, 377 forms total, none raw exact; all nine new tests pass in 114.007 seconds.
+- [x] Confirm all 6,058 linked symbols, protected sections/data, 11,063 guards, conversion hash and root README aggregates remain unchanged; no production rebuild required.
+- [x] Pass all 29 combined tests in 419.377 seconds, zero skips/errors/failures, plus tools/syntax/whitespace and 87-document / 4,005-relative-link checks, zero broken links.
+- [ ] Recover the original key normal-branch/delay move and primary pre-branch read plus attached reload in a complete 120-word body. The experimental C119/74 form is not installed.
+- [ ] Finish the byte match without inserting a word or normalizing branch/read topology; installed C120/60 remains the qualified baseline.
+
 ## Game Matrix-Route Private Layout And Semantic Recovery - 2026-10-07
 
 [Note 1104](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md):

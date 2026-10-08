@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-07 Game Matrix-Route Register Phases And Branch Source Audit
+
+[Note 1105](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md):
+Separating actor-bank and selected-matrix lifetimes and reusing the actor as
+output cursor recovers the retail seventeen-word opening, matrix A1, lookup/
+input S1 and actor/output S2. The full sixteen-word loop is exact at its shifted
+location; frame/private addresses and eight epilogue words agree. Experimental
+C119/74 differences is still one word short of retail and lacks its key/primary-
+read topology. Ninety-two new controls / 2,208 ordinary executions qualify, 377
+forms retained, none raw exact; nine private/home/guest/actual-helper/native/
+owner tests pass in 114.007 seconds. No installation, insertion or guards.
+Production C120/60 and the complete linked snapshot/11,063 guards/data/
+conversion hash/README aggregates unchanged. Continue source fitting, not
+bulk branch/read normalization; resolver recovery is a separate function batch.
+All 29 combined tests pass in 419.377 seconds, zero skips/errors/failures;
+tools/syntax/whitespace and 87-document / 4,005-relative-link checks pass,
+zero broken links.
+
 ## 2026-10-07 Game Matrix-Route Private Layout And Semantic Recovery
 
 [Note 1104](WORKING_NOTES/1104-game-matrix-route-private-layout-and-semantic-recovery-20261007.md):
