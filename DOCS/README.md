@@ -51,11 +51,16 @@ confirmed.
 
 ## Planning and history
 
+- [Latest attachment selection dispatcher recovery](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md):
+  complete qualified experiment-only C1147/frame0x38/394 differences; all model/
+  action/type routes, callbacks/state/clamp, guest/native/fault/alias qualification.
+  Owner measurement confirms the scalar gap. Production and aggregate counts
+  unchanged; continue original frame/scheduling and physical table binding.
 - [Latest fourth tile-size command direct match](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md):
   placeholder becomes exact C83/frame0, SDK Gfx/opcode scan, type/progress
   arithmetic and first-word-only update. No guards/profile edits; qualified
   guest/native/owner/padder/rebases, only target changes. Next large dispatcher
-  has a static table inventory; its semantic recovery and full runtime stay open.
+  has the experiment-only semantic recovery above; matching and full runtime stay open.
 - [Latest node cleanup dispatcher direct match](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md):
   placeholder becomes exact C134/frame `0x38`, null actor gate, callback
   registration, private packet pair and final cleanup keys. Documented volatile

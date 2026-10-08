@@ -1,5 +1,24 @@
 # Update Log
 
+## 2026-10-08 Game Attachment Selection Dispatcher Recovery
+
+[Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md):
+Recover complete semantic `func_15031FC8` in experiments, not production.
+Selected C1147/frame0x38/394 differences versus retail1148/frame0x48. All seven
+table routes/674 entries, required source read, conditional node stores, early
+returns, setup/reset ABI, cached source, attachment rereads, state copies and
+inclusive clamp qualify. Nine tests pass across targeted runs:92,992 dispatch,
+2,415 callback/float,12,348 native32 and4,005 coverage cases,1,125 retail words,
+13 required faults,six aliases,252 control executions,five effective negatives.
+Copied owner39 neighbors unchanged; seven checked pool-addend differences
+only, original useful tables intact. New tables start at412, not original416;
+the intervening scalar gap is a confirmed binding gate. All21 installed tile/
+cleanup/action regressions pass in225.613 seconds. All6,058 installed symbols,
+protected sections,720 data owners,11,063 guards and conversion hash unchanged.
+No production/profile/README changes or aggregate credit. Continue this
+dispatcher frame/private homes/scheduling and physical table binding before
+installation; full callee/FCSR/hardware/PC-port remain open.
+
 ## 2026-10-08 Game Fourth Tile-Size Command Direct Match
 
 [Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md):

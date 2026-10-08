@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Game Attachment Selection Recovery - 2026-10-08
+
+[Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md):
+
+- [x] Recover the complete semantic `func_15031FC8` candidate, all model/action/type routes, early returns, callback ABI, cached source, state copies and inclusive binary32 clamp.
+- [x] Verify all674 original table keys and literal choice values; selected C1147/frame0x38/394 differences remains explicitly non-matching and uninstalled.
+- [x] Qualify92,992 dispatch,2,415 callback/float,12,348 native32 and4,005 focused-coverage cases,1,125 retail words,13 faults,six aliases,252 control executions and five effective negatives.
+- [x] Measure complete copied owner:39 neighbors unchanged; seven new tables pack at412 rather than original416, preserving useful prior tables but exposing the original scalar gap.
+- [x] Preserve all6,058 installed symbol bodies/addresses/extents, sections,720 Game-data owners,11,063 guards and conversion hash. Keep root README counts/history unchanged.
+- [x] Pass nine recovery tests across targeted runs and all21 installed tile/cleanup/action regressions; bank the experiment-only recovery and measured handoff.
+- [ ] Match this dispatcher's original1148-word body/frame0x48/private homes and register/scheduling lifetimes without dummy padding or broad guards.
+- [ ] Qualify physical table binding across D_800970DC's four-byte gap, actual padder and independent relocations/rebases before installation.
+- [ ] Continue remaining Game matching; full callee/FCSR/hardware/PC-port boundaries remain open.
+
+Candidate/receipts: `game-node-selection` and `game-node-selection-test`.
+Installed baseline stays `game-node-tile-test/after.json`; no aggregate credit yet.
+
 ## Game Fourth Tile-Size Command Direct Match - 2026-10-08
 
 [Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md):
@@ -11,7 +28,8 @@
 - [x] Rebuild/audit 6,058 symbols/6,042 slots; only target changes, all other bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards/conversion hash preserved. Update README matching aggregates only.
 - [x] Inventory next `func_15031FC8`: complete 1,148-word slot, seven original tables/674 targets, two calls and original scalar gap; retain read-only grouped table targets without claiming semantic recovery.
 - [x] Pass all 73 installed tile/cleanup/action/attachment/lookup/resolver regressions in 433.831 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and 95-document / 4,090-relative-link checks pass, zero broken links. Bank the qualified match.
-- [ ] Recover remaining Game functions, next local `func_15031FC8`; measure complete-owner pool addends across the original four-byte scalar gap before table binding. Full matrix/callee/hardware/PC-port boundaries remain open.
+- [x] Recover complete experiment-only `func_15031FC8` and measure the owner gap; see [Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md). Matching/installation remain open.
+- [ ] Recover/match remaining Game functions. Full matrix/callee/hardware/PC-port boundaries remain open.
 
 Resume from `game-node-tile-test/after.json`; static next-dispatcher inventory
 is `game-node-tile-test/next-dispatcher.json`. Converted totals/bytes do not change.

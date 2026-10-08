@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-08 ([Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md)):
+Recover complete experiment-only `func_15031FC8`, selected C1147/frame0x38/
+394 differences against retail1148/frame0x48. Seven tables/674 keys, all model/
+action/type routes, early returns, callbacks, cached source, state copies and
+inclusive binary32 clamp qualify. Nine tests across targeted runs:92,992 guest
+dispatch,2,415 callback/float,12,348 native32,4,005 coverage cases/1,125 words,
+faults/aliases/controls/negatives. All21 installed regressions pass in225.613s.
+Owner39 neighbors/past useful tables unchanged; new pool first addend412 versus
+physical416 confirms original scalar gap. Seven target addend differences only.
+All6,058 installed symbols/sections/720 data owners/11,063 guards/conversion
+hash unchanged. Production stub and README intact; no new byte-match credit.
+Continue original frame/private homes/scheduling and physical table binding.
+Authoritative installed baseline stays `game-node-tile-test/after.json`.
+
 2026-10-08 ([Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md)):
 Recover complete C83/frame0 `func_15031E7C`, fourth SDK tile-size command
 first-word update, null gates, signed byte scan and binary32 type/progress

@@ -4,6 +4,35 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Attachment selection dispatcher recovery
+
+[Candidate driver](../tools/experiments/game_node_selection_candidates.py)
+retains the complete semantic `func_15031FC8` without installing it. Explicit
+case/value lists cover the seven retail tables and sparse type branches.
+Four profiles and source controls measure body size, frame, raw differences,
+relocations and actual copied-owner pools. Selected O2/g3 is C1147/frame0x38/
+394 differences, not retail1148/frame0x48. Thirty-nine neighbors remain intact;
+the seven new tables pack four bytes before their original physical offsets.
+
+[Nine tests](../tools/tests/test_game_node_selection_recovery.py) independently
+check original table keys/values, 92,992 guest dispatch and 2,415 callback/float
+cases, required fault prefixes, six valid aliases, compiled controls/negatives,
+12,348 actual native32 C executions and 4,005 focused coverage cases. All674
+original table keys and 1,125 retail words execute. Defined return/call/public
+trace/object memory qualify; private frame, incidental GP/FP, full FCSR/callees/
+hardware/PC-port do not. Existing installed placeholder and guards are checked.
+
+```sh
+python3 -m tools.experiments.game_node_selection_candidates --owner --controls
+python3 -m unittest tools.tests.test_game_node_selection_recovery -v
+```
+
+Ignored receipts are in `conker/build/game-node-selection/` and
+`conker/build/game-node-selection-test/`. Installed baseline stays
+`conker/build/game-node-tile-test/after.json`. Continue frame/scheduling and
+original scalar-gap table binding from
+[Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md).
+
 ## Fourth tile-size command matching
 
 [Candidate driver](../tools/experiments/game_node_tile_candidates.py) fits

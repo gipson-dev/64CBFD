@@ -21,6 +21,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest Game recovery work:
+[Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md).
+Complete semantic `func_15031FC8` candidate is retained in experiments, not
+installed. Selected C1147/frame0x38 has394 differences against retail1148/
+frame0x48; no guards or production/profile edits. Nine tests pass across targeted
+runs:92,992 guest dispatch,2,415 callback/float,12,348 native32,all674 table keys,
+1,125 retail words,aliases/faults/controls/negatives. All21 installed tile/
+cleanup/action regressions pass in225.613 seconds. Owner39 neighbors unchanged;
+new table addends start412 instead of original416, confirming the scalar gap.
+All6,058 installed symbols/sections/data/guards/conversion hash unchanged;
+README totals remain unchanged. Continue this dispatcher's frame/scheduling and
+physical table binding from the qualified candidate before installation.
+Authoritative installed baseline remains `game-node-tile-test/after.json`.
+Tools/syntax/CLI/whitespace and96-document /4,104-relative-link checks pass,
+zero broken links; no full callee/FCSR/hardware/PC-port acceptance claim.
+
 Latest direct Game placeholder recovery:
 [Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md).
 `func_15031E7C` now emits all 83 words / 332 bytes directly, no frame, zero
@@ -41,10 +57,9 @@ README matching aggregates only. Checkpoint: `game-node-tile-test/after.json`.
 All 73 installed tile/cleanup/action/attachment/lookup/resolver regression
 tests pass in 433.831 seconds, zero skips/errors/failures; tools/syntax/CLI/
 whitespace and 95-document / 4,090-relative-link checks pass, zero broken links.
-Next `func_15031FC8`: 1,148 words/frame0x48, seven tables/674 targets, two
-calls, 1,119 placeholder differences. Static inventory is not a recovery.
-Measure its complete-owner pools: original float at 0x800970DC creates a four-byte
-gap before its first table; do not assume packed addends equal physical offsets.
+`func_15031FC8` now has the complete qualified experiment-only recovery above;
+its production placeholder still has1,119 differences. Complete-owner pool
+measurement confirms the four-byte scalar gap; matching/binding remain open.
 Remaining Game and matrix/callee/runtime boundaries stay open.
 
 Previous direct Game placeholder recovery:
