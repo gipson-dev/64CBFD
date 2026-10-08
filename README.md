@@ -41,16 +41,16 @@ Snapshot verified on 2026-10-07. "Converted" means a function has C source;
 
 | Section | Converted functions | Converted bytes |
 | --- | ---: | ---: |
-| Total | 5,466 / 6,042 (90.47%) | 85.61% |
+| Total | 5,467 / 6,042 (90.48%) | 85.62% |
 | Init | 492 / 539 (91.28%) | 92.53% |
-| Game | 4,793 / 5,321 (90.08%) | 84.94% |
+| Game | 4,794 / 5,321 (90.10%) | 84.94% |
 | Debugger | 181 / 182 (99.45%) | 99.19% |
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[##############----------]` 3,364 / 5,466 (61.54%) | 0 | 2,102 |
+| Total | `[##############----------]` 3,365 / 5,467 (61.55%) | 0 | 2,102 |
 | Init | `[########################]` 492 / 492 (100.00%) | 0 | 0 |
-| Game | `[#############-----------]` 2,691 / 4,793 (56.14%) | 0 | 2,102 |
+| Game | `[#############-----------]` 2,692 / 4,794 (56.15%) | 0 | 2,102 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Function-by-function recovery updates and their supporting working-note links

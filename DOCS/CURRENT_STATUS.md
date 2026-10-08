@@ -21,6 +21,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest direct Game assembly-to-C match:
+[Note 1108](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md).
+`func_1503195C`, the recursive resolver's group/key/ordinal list lookup,
+now emits all 28 retail words directly from C: no frame, guards, profile or
+header changes. All 6,058 linked symbols retain identical bytes/addresses/
+extents; all protected sections/720 data owners/11,063 guards remain intact.
+The conversion CSV adds exactly one function / 112 bytes. Total converted
+5,467/6,042 (90.48%), Game 4,794/5,321 (90.10%); byte-exact total
+3,365/5,467 (61.55%), Game 2,692/4,794 (56.15%), 2,102 different, zero drift.
+Ten pre-install tests pass in 66.371 seconds: 7,168 guest cases, 12,779,520
+native32 cases, 58 source/profile controls and actual recursive connections.
+All 32 installed lookup/resolver regression tests pass in 206.762 seconds,
+zero skips/errors/failures; tools/syntax/CLI/whitespace and 90-document / 4,034-relative-link
+checks pass, zero broken links.
+Root README aggregate rows updated; detailed progress stays in these docs.
+Resolver C84/40 and wrapper/basis/translator/sampler boundaries remain open.
+Authoritative ignored checkpoint: `game-matrix-parent-lookup-test/after.json`.
+
 Latest matrix-pair bank-phase/key-lifetime fit, **still not byte-exact**:
 [Note 1107](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md).
 A one-expression slot-first pointer addition recovers the retail actor/slot/
@@ -107,7 +125,7 @@ failures, with 4,992 ordinary candidate executions and six effective negatives.
 Tools/syntax/whitespace and 85-document / 3,985-relative-link checks pass,
 zero broken links. Note 1104 supersedes this private-frame/installed-source handoff.
 
-Latest installed Game match:
+Previous installed lighting Game match:
 [Note 1102](WORKING_NOTES/1102-game-lighting-dispatcher-match-20261007.md).
 `func_151462C8` replaces its zero-return placeholder with complete C124/frame
 `0x48`, lazy resource gates, actor/global/position lighting dispatch and the

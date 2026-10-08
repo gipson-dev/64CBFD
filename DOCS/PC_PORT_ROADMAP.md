@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix Parent Lookup Direct Match - 2026-10-07
+
+[Note 1108](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md):
+
+- [x] Recover/install `func_1503195C`'s complete group/key/ordinal linked-list lookup, all 28 words directly exact, no frame/guards/profile/header changes.
+- [x] Preserve lazy zero-group behavior, required next-word read, full incoming key/ordinal bits and match-only unsigned decrement; no new null/bounds/cycle policy.
+- [x] Qualify 7,168 guest cases, nine required faults, 12,779,520 native32 cases, effective negatives and 32 connected recursive fixtures / 128 executions.
+- [x] Retain 52 source forms / 58 distinct source-profile combinations, 2,784 ordinary executions, one raw exact shape; do not claim all-control read/private equivalence.
+- [x] Preserve 39 owner neighbors, target bytes, pools, relocations and zero warnings; qualify the real padder's 112-byte body/slot and both head HI/LO relocations under a carry rebase.
+- [x] Rebuild/audit all 6,058 symbols/6,042 slots, identical bytes/addresses/extents/overflows/sections/720 data owners/11,063 guards. Conversion adds exactly one function / 112 bytes; update README aggregates only.
+- [x] Pass all 32 installed lookup/resolver regression tests in 206.762 seconds, zero skips/errors/failures; syntax/CLI and 90-document / 4,034-relative-link checks pass, zero broken links.
+- [x] Pass tooling/staged whitespace checks and bank this bounded conversion, preserving the original assembly reference and all linked bytes.
+- [ ] Continue resolver's missing V0 key move and recursive return/store scheduling, or another separate Game match; wrapper/basis/translator/sampler boundaries remain open.
+
+Resume from `game-matrix-parent-lookup-test/after.json`; this converts already
+correct assembly to matching C, not a PC-port or full private-stack acceptance.
+
 ## Game Matrix-Pair Bank Phase And Key-Lifetime Fit - 2026-10-07
 
 [Note 1107](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md):

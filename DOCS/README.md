@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest matrix parent lookup direct match](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md):
+  retained assembly becomes exact C28, no guards/profile changes; qualified
+  group/key/ordinal reads, native32 and recursive connections. Linked bytes
+  unchanged; conversion and byte-exact counts each gain one function / 112 bytes.
+  Resolver C84/40 and its missing key move stay open.
 - [Latest matrix-pair bank phase and key-lifetime fit](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md):
   one-expression pointer addition closes four retail GP words directly;
   installed C84/40 remains one word short, no new guards/types/profiles.

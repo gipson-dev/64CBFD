@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-07 Game Matrix Parent Lookup Direct Match
+
+[Note 1108](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md):
+Replace `func_1503195C`'s retained assembly with complete group/key/ordinal
+list-lookup C. Branch-local advancement and explicit nonzero ordinal test
+recover all 28 words directly, zero frame/guards/profile/header changes.
+Preserve required next-word reads, lazy zero-group gate and full argument bits.
+Ten pre-install tests pass in 66.371 seconds: 7,168 guest cases, 12,779,520
+native32 cases, 58 controls / 2,784 ordinary executions, actual recursive
+connections, effective negatives and owner/padder/head-rebasing checks.
+The completed US ELF retains all 6,058 symbols' bytes/addresses/extents,
+protected sections, 720 data owners and 11,063 guards. Conversion adds exactly
+one function / 112 bytes: total converted 5,467, Game 4,794; exact total
+3,365 (61.55%), Game 2,692 (56.15%), 2,102 different, zero drift.
+README aggregate rows only. Resolver C84/40 is unchanged; old-style/shared-
+carrier and rejected compiler-option probes do not recover its key move.
+New ignored checkpoint `game-matrix-parent-lookup-test/after.json`.
+All 32 installed lookup/resolver regression tests pass in 206.762 seconds,
+zero skips/errors/failures; tools/syntax/CLI/whitespace and 90-document / 4,034-relative-link
+checks pass, zero broken links.
+
 ## 2026-10-07 Game Matrix-Pair Bank Phase And Key-Lifetime Fit
 
 [Note 1107](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md):

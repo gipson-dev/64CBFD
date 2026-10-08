@@ -1,5 +1,22 @@
 # Working Notes
 
+2026-10-07 ([Note 1108](WORKING_NOTES/1108-game-matrix-parent-lookup-direct-match-20261007.md)):
+Convert retained `func_1503195C` assembly to direct exact C28/frame zero,
+group/key/ordinal linked-list lookup. No guards/profile/header changes; all
+6,058 linked symbol bytes/addresses/extents stay identical to Note 1107.
+Ten pre-install tests pass in 66.371 seconds: 7,168 guest cases, 12,779,520
+native32 cases, 58 controls / 2,784 ordinary executions, required-read/lazy/
+negative/recursive-connection/owner/padder/head-rebase qualification.
+Conversion adds one function / 112 bytes: total 5,467, Game 4,794; exact
+total 3,365 (61.55%), Game 2,692 (56.15%), 2,102 different, zero drift.
+README aggregate rows updated, detailed progress in docs. Resolver C84/40
+and missing key move remain open; exploratory K&R/shared carriers and rejected
+compiler options do not become production changes. New ignored authoritative
+checkpoint `game-matrix-parent-lookup-test/after.json`.
+All 32 installed lookup/resolver regression tests pass in 206.762 seconds,
+zero skips/errors/failures; tools/syntax/CLI/whitespace and 90-document / 4,034-relative-link
+checks pass, zero broken links.
+
 2026-10-07 ([Note 1107](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md)):
 Install the one-expression slot-first matrix addition for `func_15031070`:
 four target words directly equal retail, node-bank GP cycle recovered without

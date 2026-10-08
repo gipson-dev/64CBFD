@@ -123,7 +123,32 @@ void func_1503192C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_5D2C0/func_1503195C.s")
+s32 func_1503195C(u8 *actor, s32 key, u32 ordinal) {
+    u32 group = actor[0x3B];
+    u8 *current;
+    u8 *next;
+
+    if (group == 0) {
+        return 0;
+    }
+    current = D_800C3EE0;
+    if (current != 0) {
+        do {
+            next = *(u8 **)(current + 0x54);
+            if (group == current[0] && key == current[6]) {
+                if (ordinal != 0) {
+                    ordinal--;
+                } else {
+                    return (s32)current;
+                }
+                current = next;
+            } else {
+                current = next;
+            }
+        } while (current != 0);
+    }
+    return 0;
+}
 
 s32 func_150319CC(s32 arg0, u8 *arg1) {
     u8 *node;
