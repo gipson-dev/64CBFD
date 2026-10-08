@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest node action dispatcher direct match](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md):
+  placeholder becomes exact C113/frame `0x28`, recovered void API, both switch
+  tables, flag/counter mutations and callback ABI. No instruction guards or
+  profile edits; fixed original table anchor, qualified guest/native/owner/
+  padder/rebases. Only target changes; full callbacks/PC-port not qualified.
 - [Latest attachment progress copy direct match](WORKING_NOTES/1110-game-attachment-progress-copy-direct-match-20261008.md):
   placeholder becomes exact C49/frame `0x30`, cached actor source, setup index
   gate, copy-induced pointer reload and inclusive float clamp. No guards/profile

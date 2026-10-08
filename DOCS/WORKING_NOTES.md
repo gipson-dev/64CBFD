@@ -1,5 +1,22 @@
 # Working Notes
 
+2026-10-08 ([Note 1111](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md)):
+Recover exact C113/frame `0x28` for `func_15031A50`, complete two-table action
+dispatch, flags/counter wrap, call ABI, signed threshold and node incoming home.
+Original caller ignores incidental V0; recovered `void` still emits retail V0
+directly in the selected body. No guards/profile/shared-header changes, one
+Makefile fixed-table anchor. Seven pre-install tests pass in 68.216 seconds:
+61,440 guest / 30,720 native32 cases, all 113 words/55 targets, faults/lazy/
+controls/negatives, owner/padder/rebases. Only target changes across 6,058
+symbols; bodies/addresses/extents/overflows/sections/720 data owners/11,063
+guards/conversion hash preserved. Exact total 3,368, Game 2,695 (56.22%),
+2,099 different, zero drift; conversion unchanged, README aggregate rows only.
+New `game-node-action-test/after.json`. Next `func_15031C14`; full callbacks/
+hardware/PC-port, resolver C84/40 and matrix boundaries remain open.
+All 59 installed action/attachment/lookup/resolver regression tests pass in
+436.351 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and
+93-document / 4,062-relative-link checks pass, zero broken links.
+
 2026-10-08 ([Note 1110](WORKING_NOTES/1110-game-attachment-progress-copy-direct-match-20261008.md)):
 Recover exact C49/frame `0x30` for `func_150331B8`: cached source, setup low-byte
 gate/ABI, incoming home, copy-induced pointer reload and inclusive binary32 clamp.

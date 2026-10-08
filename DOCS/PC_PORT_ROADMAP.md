@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Game Node Action Dispatcher Direct Match - 2026-10-08
+
+[Note 1111](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md):
+
+- [x] Recover/install complete `func_15031A50`, C113/frame `0x28`, all words direct under existing profile; no instruction guards/insertion/omission/shared-header edits.
+- [x] Recover void action API, preserve selected incidental V0, lazy actor/state reads, flag masks, halfword wrap/truncation, signed random threshold, saved actor and incoming-node-home reload.
+- [x] Verify both generated tables' 55 targets; map their HI/LO pairs to the fixed original anchor with the existing Makefile mechanism, retaining physical Game-data owners.
+- [x] Pass seven pre-install tests in 68.216 seconds: 61,440 guest / 30,720 native32 cases, all instructions/selectors, lazy/faults, 15 controls/3,840 ordinary executions, effective negatives, 39 owner neighbors and padder/symbol rebases.
+- [x] Rebuild/audit 6,058 symbols/6,042 slots; only target changes, all other bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards/conversion hash preserved. README aggregate rows only.
+- [x] Pass all 59 installed action/attachment/lookup/resolver regression tests in 436.351 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and 93-document / 4,062-relative-link checks pass, zero broken links. Bank this match.
+- [ ] Continue remaining Game functions, next local `func_15031C14`; full callbacks/hardware/PC-port, resolver key move and matrix boundaries remain open.
+
+Resume from `game-node-action-test/after.json`. This replaces an already-counted
+C placeholder; conversion counts and byte percentages do not change.
+
 ## Game Attachment Progress Copy Direct Match - 2026-10-08
 
 [Note 1110](WORKING_NOTES/1110-game-attachment-progress-copy-direct-match-20261008.md):

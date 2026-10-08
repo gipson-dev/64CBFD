@@ -22,6 +22,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest direct Game placeholder recovery:
+[Note 1111](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md).
+`func_15031A50` now emits complete exact C113/frame `0x28`, both original
+switch tables, action/callback ABIs, flag/counter mutations and signed random
+threshold. Recover `void` signature; the original caller overwrites V0 and the
+selected guest body preserves all incidental retail V0 values. No instruction
+guards/profile/shared-header changes; one Makefile table-anchor mapping retains
+physical Game-data ownership. Seven pre-install tests pass in 68.216 seconds:
+61,440 guest / 30,720 native32 cases, all words/selectors/table targets, lazy/
+fault paths, 15 controls, owner/padder and independent symbolic rebases.
+Only target changes across 6,058 symbols; all other bodies/addresses/extents/
+overflows/sections/720 data owners/11,063 guards/conversion hash unchanged.
+Exact total 3,368/5,467 (61.61%), Game 2,695/4,794 (56.22%), 2,099 different,
+zero drift; conversion counts unchanged, README aggregate matching rows only.
+Authoritative ignored checkpoint: `game-node-action-test/after.json`.
+All 59 installed action/attachment/lookup/resolver regression tests pass in
+436.351 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and
+93-document / 4,062-relative-link checks pass, zero broken links.
+Next local function: `func_15031C14`; full callbacks/hardware/PC-port acceptance,
+resolver C84/40 and matrix boundaries remain open.
+
+Previous direct Game placeholder recovery:
 [Note 1110](WORKING_NOTES/1110-game-attachment-progress-copy-direct-match-20261008.md).
 `func_150331B8` now emits complete exact C49/frame `0x30`, setup index gate,
 cached actor source, post-call incoming node home, copy-induced pointer reload

@@ -1,4 +1,13 @@
 #include <ultra64.h>
+void func_151001B4(u8 *);
+void func_15163BE8(u8 *, s32, s32);
+void func_150D3360(u8 *, s32, s32);
+void func_150D5440(u8 *, s32, s32);
+void func_151BD828(u8 *, s32, s32);
+void func_151D74B0(u8 *, s32, s32, s32, s32);
+s32 func_150859AC(s32, s32);
+extern s32 D_80090228;
+extern s32 D_8009022C;
 void func_1503F5B8(u8 *, s32, s32, f32, f32, s32);
 extern u8 D_800BE9C0;
 extern u8 *D_800C3EE0;
@@ -184,8 +193,53 @@ s32 func_150319CC(s32 arg0, u8 *arg1) {
     return 0;
 }
 
-s32 func_15031A50() {
-    return 0;
+void func_15031A50(u8 *node, u8 *actor) {
+    u8 *state;
+
+    switch (node[1]) {
+        case 0x37:
+            func_151001B4(actor);
+            break;
+        case 0x5A:
+            state = *(u8 **)(actor + 0x31C);
+            if (state != 0) {
+                *(u16 *)(state + 0x1A6) += 0xAA;
+            }
+            break;
+        case 0x90:
+            *(u32 *)(actor + 0x9C) |= 0x70;
+            break;
+        case 0x8F:
+            *(u32 *)(actor + 0x9C) |= 0xE00;
+            break;
+        case 0x49:
+            func_15163BE8(actor, 0xFF, 1);
+            break;
+        case 0x5D:
+            func_150D3360(actor, 0xFF, 1);
+            func_150D5440(actor, 0xFF, 1);
+            break;
+        case 0x3D:
+            func_151BD828(actor, 0xFF, 1);
+            break;
+        case 0x1D:
+            func_151D74B0(actor, 0, 2, 0xFF, 1);
+            break;
+        case 0x85:
+        case 0x5E:
+            *(u32 *)(actor + 0x9C) |= 0x6000;
+            break;
+        case 0x8D:
+            if (func_150859AC(0, 6) < 100) {
+                *(s16 *)(node + 0x18) = D_80090228;
+            } else {
+                *(s16 *)(node + 0x18) = D_8009022C;
+            }
+            break;
+        case 0x82:
+            func_151D74B0(actor, 6, -1, 0xFF, 1);
+            break;
+    }
 }
 
 s32 func_15031C14() {

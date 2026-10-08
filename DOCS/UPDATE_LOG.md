@@ -1,5 +1,25 @@
 # Update Log
 
+## 2026-10-08 Game Node Action Dispatcher Direct Match
+
+[Note 1111](WORKING_NOTES/1111-game-node-action-dispatcher-direct-match-20261008.md):
+Replace `func_15031A50`'s zero-return placeholder with complete exact C113/frame
+`0x28`, original action tables and ABIs, saved actor, flag/counter updates,
+signed random threshold and post-call incoming node home. Recover `void` API;
+selected raw V0 matches retail, not a defined C return. All words direct with
+no guards/profile/shared-header edits; one Makefile fixed-table anchor mapping.
+Seven pre-install tests pass in 68.216 seconds: 61,440 guest / 30,720 native32
+cases, all 113 words / 55 table targets, lazy/faults, 15 controls / 3,840 ordinary
+executions, effective negatives, owner/padder/symbol rebases. Only target changes
+across 6,058 symbols; all other bodies/addresses/extents/overflows/protected
+sections/720 data owners/11,063 guards/conversion hash intact. Exact total 3,368
+(61.61%), Game 2,695 (56.22%), 2,099 different, zero drift; conversions unchanged.
+README aggregate rows only. Bounded callbacks, not full callee or PC-port proof.
+New checkpoint `game-node-action-test/after.json`; next local `func_15031C14`.
+All 59 installed action/attachment/lookup/resolver regression tests pass in
+436.351 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and
+93-document / 4,062-relative-link checks pass, zero broken links.
+
 ## 2026-10-08 Game Attachment Progress Copy Direct Match
 
 [Note 1110](WORKING_NOTES/1110-game-attachment-progress-copy-direct-match-20261008.md):
