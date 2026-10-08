@@ -69,6 +69,11 @@ publication workflow now also checks out recursively because its Dockerfile
 copies `tools/n64splat/requirements.txt`. A new read-only, ROM-free workflow
 checks the consumer's recorded tools pin without private game secrets.
 
+As verified through GitHub's repository API on 2026-10-08, Actions are disabled
+on `64CBFD` (`enabled: false`). That existing setting was preserved, so the
+consumer workflow is installed but has not run on GitHub for this split.
+The independent tools repository has Actions enabled and its checks pass.
+
 ## Split Checkpoint
 
 The 2026-10-08 import started at decomp commit
