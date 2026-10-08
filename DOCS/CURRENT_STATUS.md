@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f36e9af; tools are committed before the source pin.
+  checkpoint pins tools 6f18cf1; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery and authorized banking:
+[Note 1133](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md).
+Convert retained `func_151D77C8`:26 words/104 bytes/frame0 directly exact,
+no guards. Typed void interface, captured nested link, unsigned flag updates,
+live owner reloads and nested-before-owner clear qualify. All ten installed
+target/neighbor tests pass in47.235s:66,304 guest /786,432 native32 cases,
+93 fault prefixes, eight negatives,768 rebases and224 complete wrapper links.
+All6,058 bodies/addresses/extents/protected sections/data/11,155 guards unchanged;
+sole104-byte conversion. Converted5,477/Game4,804; exact3,388/Game2,715;
+2,089 different/zero drift. New cleanup baseline; README aggregates only.
+Tools6f18cf1 committed first; parent records its exact pin, no push or older
+standalone reset. Next retainedfunc_151D7830:
+63 words/frame0x88, stack-packet allocation/copy recovery pending. Graph refresh,
+larger gate caller, hardware/gameplay remain open; no host/runtime/Release changes.
+
+Previous Game recovery and authorized banking:
 [Note 1132](WORKING_NOTES/1132-game-record-velocity-integrator-conversion-20261008.md).
 Convert retained `func_151D8718`:19 words/76 bytes/frame0;16 direct words
 plus three strict captured-velocity FP allocation/operand-order guards.

@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Latest attached-record cleanup direct conversion](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md):
+  func_151D77C8,26 words/frame0 directly exact; typed void interface, captured
+  nested link and live owner/flag writes qualify. All ten installed target/
+  neighbor tests pass, all bodies/data/guards unchanged; sole104-byte conversion.
+  Nextfunc_151D7830,63 words/frame0x88: packets/allocator/copy recovery pending.
+  Tools6f18cf1 banked first, parent records exact pin, no push or older standalone
+  reset; graph/hardware/gameplay remain open.
+
 - [Latest record vertical velocity integration](WORKING_NOTES/1132-game-record-velocity-integrator-conversion-20261008.md):
   `func_151D8718`,19 words/frame0,16 direct plus three FP guards; mixed ABI,
   alias order, native32 and complete ring caller qualify. Eight installed tests

@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-08 Attached-Record Cleanup Direct Conversion
+
+[Note 1133](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md):
+Completefunc_151D77C8,26 words/frame0 directly exact; no guards or data/profile
+changes. Typed void interface, unsigned flags, captured nested link and live
+owner reloads qualify. Ten installed target/neighbor tests pass in47.235s:
+66,304 guest /786,432 native32 cases,93 faults, eight negatives,768 rebases and
+224 complete wrapper links. All6,058 bodies/data/11,155 guards unchanged;
+sole104-byte conversion. Converted5,477/Game4,804; exact3,388/Game2,715;
+2,089 different/zero drift. New baseline; tools6f18cf1 banked first, parent
+records exact pin, no push or older mirror reset. Nextfunc_151D7830,63 words/frame0x88: packets,
+allocator and copy not yet recovered. Graph/full gate caller/hardware/gameplay
+remain open; zero Claude calls, root README aggregates only.
+
 ## 2026-10-08 Record Vertical Velocity Integration
 
 [Note 1132](WORKING_NOTES/1132-game-record-velocity-integrator-conversion-20261008.md):

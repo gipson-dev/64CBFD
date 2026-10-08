@@ -2,7 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/204660.s. */
 
-s32 func_151D77C8();
+void func_151D77C8(u8 *owner);
 void *memcpy(void *dst, const void *src, unsigned int len);
 
 extern void (*D_8008FCA4[])(u8 *, s32, u8);
@@ -114,7 +114,21 @@ s32 func_151D779C(u8 *arg0) {
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D77C8.s")
+void func_151D77C8(u8 *owner) {
+    u8 **slot = (u8 **)(owner + 0x28);
+    s32 *nested;
+
+    if (*slot != NULL) {
+        nested = *(s32 **)(*slot + 0x98);
+        (*slot)[0x30] = 0;
+        *(u16 *)(*slot + 0x1E) &= 0xFFFD;
+        *(u16 *)(*slot + 0x1E) |= 8;
+        *(u16 *)(*slot + 0x1E) |= 1;
+        *(u16 *)(*slot + 0x1C) = 20;
+        *nested = 0;
+        *slot = NULL;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D7830.s")
 

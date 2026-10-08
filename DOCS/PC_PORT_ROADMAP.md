@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Attached-Record Cleanup - 2026-10-08
+
+[Note 1133](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md):
+
+- [x] Convert complete `func_151D77C8`:26 words/104 bytes/frame0 directly exact, no guards, filler, data or profile changes.
+- [x] Recover used typed void interface without exposing incidental V0 as a new API; preserve actual caller bodies with the typed local prototype.
+- [x] Qualify all65,536 unsigned flag/old-timer patterns, captured nested link, live owner reloads, three separate flag writes and nested-before-owner unlink order.
+- [x] Pass66,304 guest /786,432 native32 cases,93 fault prefixes, two lazy null cases and eight effective behavior/order negatives; all26 words reached.
+- [x] Preserve22 owner neighbors/pools/relocations and four existing warnings; real padder emits104 bytes, six independent links/768 executions, no target relocations.
+- [x] Execute224 complete actual eight-word wrapper links including null/aliases and real epilogue; larger gate caller/hardware/gameplay remain separate.
+- [x] Pass ten installed target/integrator-owner/caller tests in47.235s, ten shared tests, both tools checks, CLI and syntax checks in both mirrors.
+- [x] Audit all6,058 bodies/addresses/extents/protected sections/data/11,155 guards unchanged, sole104-byte conversion; record baseline and README aggregate rows only.
+- [x] Bank mounted tools6f18cf1 first, source/docs/exact pin second per "Keep commited"; no push or older standalone reset.
+- [ ] Fit and qualify next retained `func_151D7830`:63 words/frame0x88, stack packets, allocator failure, nested28-byte copy and captured allocation/owner lifetime.
+- [ ] Resolve Graphify reduced-corpus refresh separately without forced overwrite; continue wider Game/hardware/gameplay work with OGL Release frozen.
+
 ## Record Vertical Velocity Integration - 2026-10-08
 
 [Note 1132](WORKING_NOTES/1132-game-record-velocity-integrator-conversion-20261008.md):
@@ -12,7 +28,7 @@
 - [x] Pass eight installed target tests, ten shared checks, both tools project checks, CLI and syntax checks in both mirrors.
 - [x] Audit all6,058 bodies/addresses/extents/protected sections/data unchanged, prior11,152 guards plus three, sole76-byte conversion. Record baseline and README aggregates only.
 - [x] Pass four affected state/constructor owner/connection checks and callback guard-history check; bank mounted toolsf36e9af first, source/docs/exact pin second per "Keep commited", no push or older standalone reset.
-- [ ] Fit and qualify next retained `func_151D77C8`:26 words/frame0; attached-record cleanup, return address, captured nested pointer and live owner reloads/aliases.
+- [x] Fit and qualify complete `func_151D77C8` in [Note 1133](WORKING_NOTES/1133-game-attached-record-cleanup-direct-conversion-20261008.md):26 words/frame0 directly exact; used void interface, captured nested link, live owner reloads/aliases and complete wrapper connection.
 - [ ] Qualify the second integrator caller, hardware/FCSR and gameplay separately; OGL Release remains frozen.
 - [ ] Resolve Graphify reduced-corpus refresh separately without forced overwrite or ignore changes.
 
