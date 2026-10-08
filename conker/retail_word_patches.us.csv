@@ -11147,3 +11147,7 @@ generated_5D2C0,func_15033BDC,0x108,0x00001025,0xAD0F0038,-,-,Normalize independ
 generated_5D2C0,func_15033BDC,0x110,0xAD0F0038,0x00001025,-,-,Normalize independent effect callback type-store and zero-return schedule,,,false
 generated_205C90,func_151D8868,0x94,0x51000004,0x11000003,-,-,Normalize final zero-gate branch and equivalent conditional limit-load schedule,,,false
 generated_205C90,func_151D8868,0x98,0x8E490000,0x00000000,-,-,Normalize final zero-gate branch and equivalent conditional limit-load schedule,,,false
+generated_205C90,func_151D8A24,0x14,0xA3A00026,0xA3A00023,-,-,Normalize complete private expiry-byte stack-slot allocation,,,false
+generated_205C90,func_151D8A24,0x4C,0xA3AA0026,0xA3AA0023,-,-,Normalize complete private expiry-byte stack-slot allocation,,,false
+generated_205C90,func_151D8A24,0x8C,0x93AA0026,0x93AA0023,-,-,Normalize complete private expiry-byte stack-slot allocation,,,false
+generated_205C90,func_151D8A24,0xD8,0x93AA0026,0x93AA0023,-,-,Normalize complete private expiry-byte stack-slot allocation,,,false

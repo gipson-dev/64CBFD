@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record timer and player-state update](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md):
+  `func_151D8A24`,64 words/frame0x28;60 direct words plus four private-byte
+  guards. Timer/callback/live updates/free ordering qualify; all49 installed
+  target/five-neighbor tests pass. All bodies/data unchanged;
+  sole256-byte conversion. Tools8e1a208 banked first, parent pins it, no push. Next
+  retained19-word `func_151D8718` has three raw differences, not qualified.
+
 - [Latest record allocation and player registration](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md):
   `func_151D8868`,111 words/frame0x30;109 direct words plus two guarded
   scheduling words. All41 fresh target/neighbor tests pass; complete predicate

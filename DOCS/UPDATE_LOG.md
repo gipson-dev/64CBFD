@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-08 Record Timer And Player-State Update
+
+[Note 1131](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md):
+Complete `func_151D8A24`,64 words/frame0x28;60 direct words and four strict
+private expiry-byte guards. This owner has no remaining GLOBAL_ASM directives.
+All49 installed target/five-neighbor tests pass in867.646s. Qualify
+267,364 guest /1,607,424 native32 cases,38 faults,640 mutations, nine negatives,
+216 rebases and1,152 actual wrapper/clearer connections. All bodies/data stay
+unchanged; prior11,148 guards preserved plus four, sole256-byte conversion.
+Converted5,475/Game4,802; exact3,386/Game2,713;2,089 different/zero drift.
+Tools8e1a208 banked first, parent records exact pin; no push or standalone reset.
+Next retained19-word `func_151D8718` candidate has three raw differences,
+uninstalled/unqualified. Controlled later callees, hardware/gameplay and graph
+refresh remain open. Root README aggregates only; zero Claude calls.
+
 ## 2026-10-08 Record Allocation And Player Registration
 
 [Note 1130](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md):

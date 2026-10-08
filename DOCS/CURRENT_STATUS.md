@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6e2e24d; tools are committed before the source pin.
+  checkpoint pins tools 8e1a208; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery and authorized banking:
+[Note 1131](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md).
+Convert final retained `func_151D8A24` in generated_205C90:64 words/256 bytes/
+frame0x28,60 direct words plus four strict private expiry-byte guards.
+Timer truncation, signed callback selector, captured expiry/owner, live
+mask/level and clear-before-register/free-last ordering qualify.
+Fresh all49 installed target/five-neighbor tests pass in867.646s, no skips.
+267,364 guest /1,607,424 native32 cases,38 fault prefixes,640 mutations,
+nine negatives,216 rebases and1,152 complete wrapper/clearer connections pass.
+All6,058 bodies/addresses/extents/protected sections/data unchanged; prior
+11,148 guards preserved plus four, sole256-byte asm-to-C conversion.
+Converted5,475/Game4,802; exact3,386/Game2,713;2,089 different/zero drift.
+New state-update baseline; root README aggregates only. Tools8e1a208 banked
+before source/docs/exact pin; no push, older dirty mirror preserved.
+Next retained `func_151D8718`:19 words/frame0, complete float integration
+candidate has three raw differences, uninstalled/unqualified. Graph refresh
+incomplete; controlled later callees and hardware/gameplay remain open.
+
+Previous Game recovery work:
 [Note 1130](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md).
 Convert complete `func_151D8868`:111 words/444 bytes/frame0x30;
 109 words direct plus two strict branch/limit-load scheduling guards.

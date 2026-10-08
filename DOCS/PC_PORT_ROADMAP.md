@@ -1,5 +1,23 @@
 # PC Port Roadmap located in another project folder
 
+## Record Timer And Player-State Update - 2026-10-08
+
+[Note 1131](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md):
+
+- [x] Convert complete `func_151D8A24`:64 words/256 bytes/frame0x28,60 direct words plus four strict private expiry-byte guards; no GLOBAL_ASM directives remain in this owner.
+- [x] Qualify unsigned wrapping subtraction/signed16 timer truncation, signed callback selector, captured expiry/owner, live mask/level, clear-before-register and free-last lifetime.
+- [x] Pass267,364 guest /1,607,424 native32 cases,38 fault prefixes,640 mutations and nine effective compiled negatives; all64 words reached.
+- [x] Preserve ten owner neighbors/pools/relocations; real padder emits256 bytes, six independent links/216 executions verify seven relocations.
+- [x] Execute1,152 complete actual wrapper/clearer connections and verify linked callback/metadata tables; later distance/registration/release and hardware/gameplay remain controlled/open.
+- [x] Pass all eight installed target tests, ten shared checks, both tools project checks, CLI and syntax checks in both mirrors.
+- [x] Audit all6,058 bodies/addresses/extents/protected sections/data unchanged, prior11,148 guards preserved plus four, sole256-byte conversion. New baseline; README aggregates only.
+- [x] Pass all49 installed target/five-neighbor tests in867.646s after strict guard-history extension and constructor manifest-check adjustment; preserve every original prefix hash/exact suffix check.
+- [x] Bank tools8e1a208 first, then source/docs/exact pin per "Keep commited" request; no push or older standalone mirror reset.
+- [x] Screen retained next `func_151D8718`:19 words/frame0, complete float integration candidate has three raw differences; ignored evidence retained.
+- [ ] Fit and qualify complete `func_151D8718`: mixed ABI, captured old velocity, FP rounding/grouping/exceptional values, aliases/live loads, owner/rebases and actual caller connection.
+- [ ] Resolve Graphify reduced-corpus refresh separately; preserve old graph and existing ignore changes.
+- [ ] Continue wider Game/full callee/hardware/gameplay/PC-port work; OGL Release remains frozen.
+
 ## Record Allocation And Player Registration - 2026-10-08
 
 [Note 1130](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md):
@@ -13,7 +31,7 @@
 - [x] Audit all6,058 bodies/addresses/extents/protected sections/data unchanged, prior11,146 guards preserved plus two, sole444-byte conversion; record baseline and README aggregate rows only.
 - [x] Commit tools6e2e24d first and record its exact parent pin per "Keep commited" request; no push and preserve the older dirty standalone mirror.
 - [x] Screen next retained `func_151D8A24`:64 words/frame0x28, complete natural/wrapping-subtraction candidates each have four raw differences; ignored evidence retained.
-- [ ] Fit and qualify the complete `func_151D8A24`: signed timer truncation, callback selector/table, live mask/level reloads, clear-before-register calls and expiry/free lifetime.
+- [x] Fit and qualify complete `func_151D8A24` in [Note 1131](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md): timer truncation, signed callback/table, live mask/level, clear-before-register and captured expiry/free lifetime; wider callee/hardware/gameplay boundary remains explicit.
 - [ ] Resolve Graphify reduced-corpus refresh separately; preserve old graph and existing ignore changes.
 - [ ] Continue wider Game/full callee/hardware/gameplay/PC-port work; OGL Release remains frozen.
 

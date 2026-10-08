@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-08 ([Note 1131](WORKING_NOTES/1131-game-record-state-update-conversion-20261008.md)):
+Convert final retained `func_151D8A24`:64 words/frame0x28,60 direct plus four
+closed private expiry-byte guards. Timer/callback/live mask/level/free ordering
+qualifies; all49 installed target/five-neighbor tests pass in867.646s.
+267,364 guest /1,607,424 native32 cases,38 faults,640 mutations, nine negatives,
+216 rebases and1,152 actual wrapper/clearer connections. All6,058 bodies/data
+unchanged; prior11,148 guards preserved plus four, sole256-byte conversion.
+Converted5,475/Game4,802, exact3,386/Game2,713,2,089 different/zero drift.
+New baseline; tools8e1a208 banked first, parent records pin, no push/mirror reset.
+Next retained19-word `func_151D8718` has three raw differences, not qualified.
+Graph refresh incomplete; zero Claude calls, no host/runtime/Release changes.
+
 2026-10-08 ([Note 1130](WORKING_NOTES/1130-game-record-player-registration-conversion-20261008.md)):
 Convert complete `func_151D8868`,111 words/frame0x30:109 direct words plus
 two guarded branch/limit-load scheduling words. Fresh41-test suite passes,

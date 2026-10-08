@@ -23,6 +23,9 @@ s32 func_15181CC8(s32 player);
 s32 func_1517EF00(s32 player);
 void *func_15167A68(s32 kind, s32 context, s32 bytes, s32 flag, u8 slot, u8 pool);
 void func_1501C010(u8 player, u8 level);
+extern s32 D_800BE9E4;
+extern void (*D_8008FCC0[])(u8 *);
+void func_1516972C(u8 *);
 void func_1501C17C(u8 player);
 void func_15169260(s32, s32, s32, u8);
 extern u8 D_800AB300[];
@@ -79,7 +82,32 @@ u8 *func_151D8868(u8 *owner, s32 payloadBytes, u8 slot, s32 context) {
     return record;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_205C90/func_151D8A24.s")
+void func_151D8A24(u8 *record) {
+    u8 player;
+    u8 expired = 0;
+
+    if (record[0xE] & 1) {
+        *(s16 *)(record + 0x10) = (s16)((u32)(s32)*(s16 *)(record + 0x10) - (u32)D_800BE9E4);
+        if (*(s16 *)(record + 0x10) < 0) {
+            expired = 1;
+        }
+    }
+    if (*(s8 *)(record + 0x14) != -1) {
+        D_8008FCC0[*(s8 *)(record + 0x14)](record);
+    }
+    if (record[0x12] != record[0x16]) {
+        for (player = 0; player < 4; player++) {
+            if (record[0x13] & (1U << player)) {
+                func_1501C17C(player);
+                func_1501C010(player, record[0x12]);
+            }
+        }
+        record[0x16] = record[0x12];
+    }
+    if (expired) {
+        func_1516972C(record);
+    }
+}
 
 void func_151D8B24(u8 *owner) {
     u8 player;
