@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-08 Record Ring Shaping Recovery
+
+[Note 1137](WORKING_NOTES/1137-game-record-ring-shaping-recovery-20261008.md):
+Recover complete uninstalled `func_151D7CD0`, not a conversion or match.
+Retail 253 words/frame0xB8; natural C 256/frame0x98/253 differences.
+Seven tests pass in 71.119s: 1,861 guest, 84 bounded conversion, 66 faults,
+eleven negatives and 48 connected cases / 96 executions. Qualify correct
+third-table callback 4, actual helpers and copied-owner neighbors; real
+padder rejects oversize. All installed bodies/data/progress/11,205 guards
+and README aggregates unchanged. Tools 856ba00 banked first, parent exact
+pin second; older dirty mirror preserved, no push. Same target remains active
+for frame/extent/lifetime fitting, native32 and rebases before installation.
+Reduced-corpus graph refresh, linked dispatcher and hardware/gameplay open.
+
 ## 2026-10-08 Record Ring Sampling Conversion
 
 [Note 1136](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md):

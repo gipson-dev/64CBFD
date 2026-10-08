@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9fb0eb2; tools are committed before the source pin.
+  checkpoint pins tools 856ba00; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game recovery and authorized banking:
+Latest Game recovery checkpoint:
+[Note 1137](WORKING_NOTES/1137-game-record-ring-shaping-recovery-20261008.md).
+Complete uninstalled `func_151D7CD0` recovery: retail 253 words/frame0xB8,
+natural C 256/frame0x98/253 differences. Seven tests pass in 71.119s:
+1,861 guest cases, 84 bounded conversion cases, 66 faults, eleven negatives
+and 48 connected cases / 96 executions. Correct third-table callback 4
+and preserve original dispatcher/linked-placeholder distinction.
+Copied owners preserve 22 neighbors/pools/relocations; real padder rejects
+the oversized candidate. All 6,058 installed bodies/data/progress/11,205
+guards unchanged. Tools 856ba00 banked first, parent records exact pin;
+older dirty mirror preserved, no push. No conversion credit or README change.
+Next: fit this same target's complete extent/frame/saved lifetimes, then
+native32, independent rebases and installation qualification. Graph refresh
+refuses reduced corpus; hardware/gameplay and linked dispatcher remain open.
+
+Previous Game recovery and authorized banking:
 [Note 1136](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md).
 Convert retained `func_151D7A38`: 166 words / 664 bytes / frame 0xC8;
 129 direct words plus 37 closed register/spill/loop-scheduling guards.

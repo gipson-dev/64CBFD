@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record ring shaping recovery](WORKING_NOTES/1137-game-record-ring-shaping-recovery-20261008.md):
+  Complete uninstalled `func_151D7CD0`, retail 253 words/frame0xB8 versus
+  natural C 256/frame0x98. Seven tests pass; third-table callback 4 and
+  real helper connections qualify. The real padder rejects oversize.
+  All installed bodies/data/progress/guards and README aggregates unchanged.
+  Tools 856ba00 banked first, exact parent pin second; no push or older mirror
+  reset. Fit this same target's extent/frame/lifetimes before installation;
+  native32, rebases, graph repair and hardware/gameplay remain open.
+
 - [Latest record ring sampling conversion](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md):
   `func_151D7A38`, 166 words / frame 0xC8; 129 direct plus 37 closed guards.
   Seven installed tests and nine affected older checks qualify captured

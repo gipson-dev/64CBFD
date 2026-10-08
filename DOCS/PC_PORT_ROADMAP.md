@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ring Shaping Recovery - 2026-10-08
+
+[Note 1137](WORKING_NOTES/1137-game-record-ring-shaping-recovery-20261008.md):
+
+- [x] Recover all three passes of retained `func_151D7CD0`: backward length trimming, wrapped phase and unsigned fade; preserve captured pointers and live signed-byte fields.
+- [x] Measure 28 full source forms and four profiles; natural C is 256 words/frame0x98/253 differences versus retail 253/frame0xB8, not an exact or installed conversion.
+- [x] Pass seven tests in 71.119s: 1,861 guest, 84 bounded conversion cases, 66 retail fault prefixes, three lazy layouts, 425 ordinary executions and eleven effective negatives.
+- [x] Verify third-table callback index 4, not second-table 22; execute 48 connected cases / 96 executions with both actual helpers and complete original dispatcher, consuming the true result.
+- [x] Preserve 22 copied-owner neighbors/pools/relocations and four diagnostics; real padder accepts baseline and rejects the 0x400-byte candidate in its 0x3F4-byte slot.
+- [x] Audit all 6,058 installed bodies/addresses/extents/protected sections/data, progress and 11,205 guards unchanged; no conversion credit or root README narrative.
+- [x] Pass nine shared tests, both tools checks, CLI/syntax checks; mirror the two new reviewed tools files without changing older standalone history.
+- [x] Bank mounted tools 856ba00 first, documentation and exact consumer pin second per "Keep commited"; no push or standalone reset.
+- [ ] Fit this same complete target's 253-word extent/frame0xB8, vector/total stack locations and saved-register lifetimes; do not use the behaviorally wrong 253-word live-buffer form.
+- [ ] Add finite native32 qualification and independent symbol rebases; qualify any closed normalization's full private state/access behavior, then install/rebuild/audit and refresh progress.
+- [ ] Restore linked dispatcher and qualify alternate branches/hardware/gameplay separately; resolve reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Ring Sampling - 2026-10-08
 
 [Note 1136](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md):
@@ -13,7 +29,7 @@
 - [x] Pass ten shared tests, mounted/standalone project checks and CLI/syntax checks; mirror 33 relevant tools files without overwriting conflicting work.
 - [x] Audit all 6,058 bodies/addresses/extents/protected sections/data unchanged, prior 11,168 guards/raw prefix plus 37, sole 664-byte conversion; record new baseline and README aggregates only.
 - [x] Bank mounted tools 9fb0eb2 first, source/docs/exact pin second per "Keep commited"; no push or older standalone reset.
-- [ ] Fit and qualify retained `func_151D7CD0`: 253 words / frame 0xB8; inspect actual callees/extended payload and qualify FCSR unsigned conversion before fitting backward ring passes.
+- [ ] Finish fitting retained `func_151D7CD0`: complete semantic recovery and bounded callee/FCSR tests now banked in [Note 1137](WORKING_NOTES/1137-game-record-ring-shaping-recovery-20261008.md); extent/frame, native32, rebases and installation remain pending.
 - [ ] Restore linked dispatcher/constructor and qualify alternate branches/hardware/gameplay separately; resolve reduced-corpus Graphify refresh without forced overwrite. OGL Release remains frozen.
 
 ## Record Ring Update - 2026-10-08

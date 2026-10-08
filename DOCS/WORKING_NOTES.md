@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-08 ([Note 1137](WORKING_NOTES/1137-game-record-ring-shaping-recovery-20261008.md)):
+Recover complete uninstalled `func_151D7CD0`: retail 253 words/frame0xB8,
+natural C 256/frame0x98/253 differences. Seven tests pass in 71.119s:
+1,861 guest / 84 conversion cases, 66 faults, eleven negatives and 48
+connected cases. Correct third-table callback 4 and copied asm postprocessing;
+preserve 22 neighbors and reject oversize through the real padder.
+Installed bodies/data/progress/11,205 guards unchanged; totals unchanged.
+Tools 856ba00 first, parent exact pin second; preserve older dirty mirror,
+no push. Next same target: frame/extent/lifetimes, native32, independent
+rebases and installation gates. Graph refresh and hardware/gameplay open.
+
 2026-10-08 ([Note 1136](WORKING_NOTES/1136-game-record-ring-sampling-conversion-20261008.md)):
 Convert retained `func_151D7A38`: 166 words / frame 0xC8, 129 direct plus 37
 closed register/spill/loop guards. Seven installed tests pass in 104.050s:
