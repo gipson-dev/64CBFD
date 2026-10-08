@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 856ba00; tools are committed before the source pin.
+  checkpoint pins tools 5c9e50b; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game recovery checkpoint:
+Latest Game conversion:
+[Note 1138](WORKING_NOTES/1138-game-record-ring-shaping-conversion-20261008.md).
+Finish complete `func_151D7CD0`: 253 words / 1,012 bytes / frame 0xB8,
+183 direct words plus 70 closed allocation/spill/scheduling guards.
+Eight installed tests pass in 163.182s; eleven affected-neighbor checks
+pass in 117.305s. Tools 5c9e50b is banked first; source/docs record its exact
+pin. Native32 covers 155,964 cases; six independent links
+verify 13 relocation sites with 240 executions. All 6,058 linked bodies,
+addresses, extents and protected sections/data unchanged; prior 11,205
+guard rows/raw prefix preserved, sole 1,012-byte ASM-to-C conversion.
+Converted 5,481 / Game 4,808; exact 3,392 / Game 2,719; zero drift.
+README aggregates only. Next retained `func_151D80C4`: 405 words/frame0xD0.
+Linked dispatcher restoration, hardware/gameplay and reduced-corpus graph
+repair remain open. No host/runtime/Release changes or push.
+
+Previous Game recovery checkpoint:
 [Note 1137](WORKING_NOTES/1137-game-record-ring-shaping-recovery-20261008.md).
 Complete uninstalled `func_151D7CD0` recovery: retail 253 words/frame0xB8,
 natural C 256/frame0x98/253 differences. Seven tests pass in 71.119s:

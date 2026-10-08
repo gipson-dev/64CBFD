@@ -47,6 +47,10 @@ u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, void *, u8, s32);
 
 void func_151D7830(u8 *owner);
 
+extern f32 D_800AB2DC, D_800AB2E0, D_800AB2E4, D_800AB2E8;
+f32 func_15143E64(f32 *vector);
+f32 func_15144528(f32 value, f32 upper, f32 lower);
+
 /* Non-matching placeholders for the text-only asm slice asm/204660.s. */
 
 void func_151D77C8(u8 *owner);
@@ -304,7 +308,129 @@ s32 func_151D7A38(u8 *owner) {
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D7CD0.s")
+s32 func_151D7CD0(u8 *owner) {
+    f32 *payload;
+    u8 *records;
+    f32 *previous;
+    f32 total;
+    f32 xTrim;
+    f32 vector[3];
+    f32 yTrim;
+    f32 zTrim;
+    f32 excess;
+    f32 reciprocal;
+    f32 length;
+    f32 fraction;
+    f32 start;
+    f32 width;
+    f32 inverse;
+
+    payload = *(f32 **)(owner + 0x98);
+    records = *(u8 **)(owner + 0x94);
+    if (*(s8 *)(owner + 0x2C) >= 2) {
+        s32 index;
+        f32 *record;
+
+        total = 0.0f;
+        index = *(s8 *)(owner + 0x2E);
+        if (*(u16 *)(owner + 0x1E) & 2) {
+            previous = (f32 *)(owner + 0x10);
+        } else {
+            index--;
+            if (index < 0) {
+                index = owner[0x25] - 1;
+            }
+            previous = (f32 *)(records + index * 0x1C);
+        }
+        do {
+            index--;
+            if (index < 0) {
+                index = owner[0x25] - 1;
+            }
+            record = (f32 *)(records + index * 0x1C);
+            vector[0] = record[0] - previous[0];
+            vector[1] = record[1] - previous[1];
+            vector[2] = record[2] - previous[2];
+            fraction = func_15143E64(vector);
+            total += fraction;
+            record[4] = fraction;
+            if (total > 80.0f) {
+                length = record[4];
+                if (length) {
+                    reciprocal = 1.0f / length;
+                    excess = total - 80.0f;
+                    fraction = excess * reciprocal;
+                    xTrim = vector[0] * fraction;
+                    record[0] -= xTrim;
+                    yTrim = vector[1] * fraction;
+                    record[1] -= yTrim;
+                    zTrim = vector[2] * fraction;
+                    record[2] -= zTrim;
+                    record[4] = length * (1.0f - fraction);
+                }
+                total = 80.0f;
+                while (index != *(s8 *)(owner + 0x2D)) {
+                    owner[0x2D] = *(s8 *)(owner + 0x2D) + 1;
+                    if (*(s8 *)(owner + 0x2D) == owner[0x25]) {
+                        owner[0x2D] = 0;
+                    }
+                    owner[0x2C] = *(s8 *)(owner + 0x2C) - 1;
+                }
+            }
+            previous = record;
+        } while (index != *(s8 *)(owner + 0x2D));
+    }
+    if (*(s8 *)(owner + 0x2C) >= 2) {
+        s32 index;
+        f32 *record;
+        f32 distance;
+
+        payload[6] += -41.0f * D_800BE9A4;
+        payload[6] = func_15144528(payload[6], D_800AB2DC, -16384.0f);
+        distance = 0.0f;
+        index = *(s8 *)(owner + 0x2E);
+        do {
+            index--;
+            if (index < 0) {
+                index = owner[0x25] - 1;
+            }
+            record = (f32 *)(records + index * 0x1C);
+            distance += record[4];
+            record[6] = func_15144528(payload[6] + distance * D_800AB2E0,
+                D_800AB2E4, -16384.0f);
+        } while (index != *(s8 *)(owner + 0x2D));
+    }
+    if (*(s8 *)(owner + 0x2C) >= 2) {
+        s32 index;
+        f32 *record;
+        f32 distance;
+
+        start = total * D_800AB2E8;
+        width = total - start;
+        inverse = 1.0f / width;
+        distance = 0.0f;
+        index = *(s8 *)(owner + 0x2E);
+        do {
+            index--;
+            if (index < 0) {
+                index = owner[0x25] - 1;
+            }
+            record = (f32 *)(records + index * 0x1C);
+            if (start < distance) {
+                fraction = distance - start;
+                if (width < fraction) {
+                    fraction = width;
+                }
+                ((u8 *)record)[0x14] = (u32)((width - fraction) * inverse * 60.0f);
+                distance += record[4];
+            } else {
+                ((u8 *)record)[0x14] = 60;
+                distance += record[4];
+            }
+        } while (index != *(s8 *)(owner + 0x2D));
+    }
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D80C4.s")
 

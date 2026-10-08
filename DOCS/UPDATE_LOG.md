@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-08 Record Ring Shaping Conversion
+
+[Note 1138](WORKING_NOTES/1138-game-record-ring-shaping-conversion-20261008.md):
+Finish `func_151D7CD0`, complete 253 words/frame0xB8, 183 direct plus 70
+closed guards. Native32, private normalized state, fault traces, actual
+helpers/dispatcher and 13-site independent rebases qualify. All 6,058
+linked bodies/data unchanged; prior 11,205 guards/raw prefix preserved,
+sole 1,012-byte conversion. Converted 5,481 / Game 4,808; exact 3,392 /
+Game 2,719; zero drift. Eight installed tests pass in 163.182s; eleven
+affected checks in 117.305s. Tools 5c9e50b is banked first, exact parent pin
+second; no push or older mirror reset. Next retained `func_151D80C4`,
+405 words/frame0xD0.
+
 ## 2026-10-08 Record Ring Shaping Recovery
 
 [Note 1137](WORKING_NOTES/1137-game-record-ring-shaping-recovery-20261008.md):

@@ -11204,3 +11204,73 @@ generated_204660,func_151D7A38,0x244,0xAF210000,0xAD410000,-,-,Normalize closed 
 generated_204660,func_151D7A38,0x248,0x8E890004,0x8E8B0004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
 generated_204660,func_151D7A38,0x24C,0xAF290004,0xAD4B0004,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
 generated_204660,func_151D7A38,0x254,0xAF210008,0xAD410008,-,-,Normalize closed sampling copy registers captured position spill and loop delay schedule,,,false
+generated_204660,func_151D7CD0,0x10C,0x820C002D,0x02201025,-,-,Normalize closed previous point goal read schedule and branch operand order,,,false
+generated_204660,func_151D7CD0,0x110,0xC6220010,0xC62C0010,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x11C,0x46061032,0x460C3032,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x12C,0x4602C283,0x460CC083,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x134,0xC6260000,0xC62A0000,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x13C,0x460A4002,0x46024002,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x144,0x46002302,0x46002182,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x14C,0x460C3201,0x46065201,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x158,0x46005382,0x46005182,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x160,0x460E2181,0x46062201,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x164,0xE6260004,0xE6280004,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x168,0xC7A800A0,0xC7A400A0,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x16C,0x4600C181,0x46002182,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x170,0x46004402,0x4600C101,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x174,0x46105101,0x46065201,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x178,0x46023202,0x46046282,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x17C,0xE6240008,0xE6280008,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x180,0xE6280010,0xE62A0010,-,-,Normalize closed trim FP allocation and independent retained length schedule,,,false
+generated_204660,func_151D7CD0,0x1A0,0x54490004,0x55220004,-,-,Normalize closed previous point goal read schedule and branch operand order,,,false
+generated_204660,func_151D7CD0,0x1C0,0x820C002D,0x02201025,-,-,Normalize closed previous point goal read schedule and branch operand order,,,false
+generated_204660,func_151D7CD0,0x1C4,0x02201025,0x820C002D,-,-,Normalize closed previous point goal read schedule and branch operand order,,,false
+generated_204660,func_151D7CD0,0x1D4,0xE7B600A8,0xE7B600AC,-,-,Normalize paired private total spill slot from SP+A8 to SP+AC,,,false
+generated_204660,func_151D7CD0,0x1EC,0xC7B600A8,0xC7B600AC,-,-,Normalize paired private total spill slot from SP+A8 to SP+AC,,,false
+generated_204660,func_151D7CD0,0x1F4,0x44815000,0x44813000,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x1FC,0xC4240000,0xC4280000,R_MIPS_LO16:D_800BE9A4,R_MIPS_LO16:D_800BE9A4,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x200,0xC6A80018,0xC6AA0018,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x208,0x46045182,0x46083102,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x210,0x46064280,0x46045180,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x214,0xE6AA0018,0xE6A60018,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x24C,0xC4260000,0xC4240000,R_MIPS_LO16:D_800AB2E0,R_MIPS_LO16:D_800AB2E0,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x250,0xC6A80018,0xC6AA0018,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x268,0xC6440010,0xC6480010,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x26C,0x4604A500,0x4608A500,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x270,0x4606A282,0x4604A182,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x278,0x460A4300,0x46065300,-,-,Normalize closed phase FP allocation preserving live loads and callee ABI,,,false
+generated_204660,func_151D7CD0,0x29C,0xC4240000,0xC4280000,R_MIPS_LO16:D_800AB2E8,R_MIPS_LO16:D_800AB2E8,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2A4,0x44801000,0x44806000,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2A8,0x4604B402,0x4608B402,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2B0,0x8203002E,0x8202002E,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2C0,0x2463FFFF,0x2442FFFF,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2C4,0x04630004,0x04430004,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2C8,0x4602803C,0x460C803C,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2CC,0x92030025,0x92020025,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2D0,0x2463FFFF,0x2442FFFF,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2D4,0x4602803C,0x460C803C,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2D8,0x000378C0,0x000278C0,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2DC,0x01E37823,0x01E27823,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2E8,0x01F31021,0x01F31821,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2EC,0x46101301,0x46106081,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x2F4,0x460C703C,0x4602703C,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x300,0x460C7181,0x46027101,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x304,0x46007306,0x46007086,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x308,0x460C7181,0x46027101,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x310,0x46123202,0x46122282,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x318,0x46144282,0x46145182,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x328,0x46005124,0x46003224,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x340,0x44812000,0x44814000,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x348,0x46045101,0x46083201,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x354,0x46002124,0x46004224,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x36C,0x44192000,0x44194000,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x384,0x44192000,0x44194000,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x398,0xC4460010,0xA0790014,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x39C,0xA0590014,0x00000000,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x3A0,0x10000004,0x10000003,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x3A4,0x46061080,0xC4640010,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x3A8,0xC4480010,0xA0640014,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x3AC,0xA0440014,0xC4640010,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x3B0,0x46081080,0x46046300,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x3B8,0x5468FFC2,0x5448FFC2,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false
+generated_204660,func_151D7CD0,0x3BC,0x2463FFFF,0x2442FFFF,-,-,Normalize closed fade GP FP allocation and output length branch delay schedule,,,false

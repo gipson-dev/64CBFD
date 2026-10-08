@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-08 ([Note 1138](WORKING_NOTES/1138-game-record-ring-shaping-conversion-20261008.md)):
+Finish complete `func_151D7CD0`, 253 words/frame0xB8, 183 direct plus 70
+closed guards. Eight installed tests pass in 163.182s; eleven affected
+checks in 117.305s. Tools 5c9e50b is banked first, exact parent pin second.
+All linked bodies/data
+unchanged; prior 11,205 guards/raw prefix preserved, sole 1,012-byte conversion.
+Converted 5,481 / Game 4,808; exact 3,392 / Game 2,719; zero drift.
+Next retained `func_151D80C4`, 405 words/frame0xD0; no host/Release or push.
+
 2026-10-08 ([Note 1137](WORKING_NOTES/1137-game-record-ring-shaping-recovery-20261008.md)):
 Recover complete uninstalled `func_151D7CD0`: retail 253 words/frame0xB8,
 natural C 256/frame0x98/253 differences. Seven tests pass in 71.119s:
