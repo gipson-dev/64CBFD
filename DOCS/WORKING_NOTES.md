@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-08 ([Note 1139](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md)):
+Recover complete uninstalled `func_151D80C4`: retail 405 words/frame0xD0,
+natural C 405/frame0xE0/319 differences. Nine tests pass in 63.057s:
+988 guest, 512 cursor/count, 1,086 native32 cases, eight negatives,
+22 fault gates and 256 connected cases. Correct render-table callback 16;
+actual backend/original caller qualify with bounded setup/deep calls.
+Preserve 22 copied-owner neighbors and all installed bodies/data/source/
+progress/11,275 guards. Tools a22175b first, exact parent pin second;
+older mirror preserved, no push. Counts unchanged; same target next for
+frame/lifetime fitting, aliases/rebases and installation gates.
+
 2026-10-08 ([Note 1138](WORKING_NOTES/1138-game-record-ring-shaping-conversion-20261008.md)):
 Finish complete `func_151D7CD0`, 253 words/frame0xB8, 183 direct plus 70
 closed guards. Eight installed tests pass in 163.182s; eleven affected

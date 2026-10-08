@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5c9e50b; tools are committed before the source pin.
+  checkpoint pins tools a22175b; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest Game recovery:
+[Note 1139](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md).
+Complete uninstalled `func_151D80C4` ribbon recovery: retail 405 words/frame
+0xD0; natural C 405/frame0xE0/319 raw differences. Nine tests pass in
+63.057s: 988 guest cases, 512 cursor/count cases, 1,086 native32 cases,
+22 missing-byte gates, eight negatives and 256 connected cases. Qualify
+render-table entry 16 through original caller/actual backend; setup/deep
+calls stay bounded. Preserve 22 copied-owner neighbors and every installed
+body/data/source/progress/11,275 guards. Tools a22175b banked first, exact
+parent pin second; older dirty mirror preserved, no push. Counts and README
+aggregates unchanged. Next fit this same target's extent/frame/private and
+saved lifetimes, then aliases, independent rebases and installation gates.
+Linked dispatcher/combiner, graph repair and hardware/gameplay remain open.
 
 Latest Game conversion:
 [Note 1138](WORKING_NOTES/1138-game-record-ring-shaping-conversion-20261008.md).

@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record ring renderer recovery](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md):
+  Complete uninstalled `func_151D80C4`, retail 405 words/frame0xD0;
+  natural C 405/frame0xE0/319 differences. Nine tests pass; 1,086 native32
+  cases and original render-table callback 16/actual backend qualify.
+  Preserve 22 neighbors and all installed bodies/data/progress/guards.
+  Tools a22175b first, exact parent pin second; older mirror preserved,
+  no push. Counts unchanged; same target next for frame/lifetime fitting,
+  aliases/rebases and installation gates. Linked setup and wider gates open.
+
 - [Latest record ring shaping conversion](WORKING_NOTES/1138-game-record-ring-shaping-conversion-20261008.md):
   Complete `func_151D7CD0`, 253 words/frame0xB8; 183 direct plus 70 closed
   guards. Native32, private normalized state, fault traces and 13-site

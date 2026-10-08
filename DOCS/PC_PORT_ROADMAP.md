@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ring Renderer Recovery - 2026-10-08
+
+[Note 1139](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md):
+
+- [x] Inspect complete retained `func_151D80C4`, original render dispatcher, table and direct interfaces; recover full backward ribbon, seed modes, alpha scaling, graphics commands and phase-wrap copy/old-pair updates.
+- [x] Screen 14 complete semantic source forms and four natural profiles: C 405 words/frame0xE0/319 differences versus retail 405/frame0xD0; do not install or grant conversion credit.
+- [x] Pass nine focused tests in 63.057s: 988 guest cases, 512 cursor/count cases plus three lazy layouts, 1,086 native32 cases, 22 missing-byte gates and eight effective compiled negatives.
+- [x] Run 256 connected cases / 512 executions through complete original `func_15147C4C` and actual 52-word backend; verify render-table callback 16, signed view and nine transform arguments, allocation gates and framebuffer halves.
+- [x] Preserve 22 copied-owner neighbors/pools/relocations/four diagnostics; actual padder accepts 1,620 bytes without padding/new guards, not proof of a matched frame or schedule.
+- [x] Verify complete installed ELF identity and all source/layout/progress/11,275 guards unchanged; keep README aggregates unchanged and detailed recovery in its own note.
+- [x] Pass 14 shared tests, both tools checks and CLI help; mirror two new reviewed files without overwriting existing older standalone work.
+- [x] Bank mounted tools a22175b first and parent documentation/exact pin second per "Keep commited"; no push or older standalone reset.
+- [ ] Fit this same target's 405-word/frame0xD0 extent and private/saved lifetimes, qualify aliases/fault prefixes/independent rebases and any closed schedule before installation.
+- [ ] Restore linked dispatcher/combiner separately; qualify real setup/deep chain, alternate branches and hardware/gameplay. Preserve reduced-corpus graph refusal and frozen OGL Release.
+
 ## Record Ring Shaping Conversion - 2026-10-08
 
 [Note 1138](WORKING_NOTES/1138-game-record-ring-shaping-conversion-20261008.md):
@@ -11,7 +26,7 @@
 - [x] Install/rebuild/audit all 6,058 linked bodies/addresses/extents/protected sections/data unchanged, prior 11,205 guards/raw prefix plus 70, sole 1,012-byte conversion; refresh measured README aggregates only.
 - [x] Pass 14 shared tests, both tools project checks, CLI/syntax checks and reviewed six-file mirror equality; preserve older standalone history and exact dirty status.
 - [x] Pass eight installed tests in 163.182s and eleven affected-neighbor checks in 117.305s; bank mounted tools 5c9e50b first and source/docs/exact pin second per "Keep commited", no push or older standalone reset.
-- [ ] Recover next retained `func_151D80C4`, 405 words / 1,620 bytes / frame0xD0, after complete caller/callee inspection.
+- [x] Recover next retained `func_151D80C4` in [Note 1139](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md): complete uninstalled ribbon recovery and bounded qualification; frame/lifetime fitting and installation still open.
 - [ ] Restore linked dispatcher and qualify alternate branches/hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Record Ring Shaping Recovery - 2026-10-08

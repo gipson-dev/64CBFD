@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-08 Record Ring Renderer Recovery
+
+[Note 1139](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md):
+Recover complete uninstalled `func_151D80C4`, retail 405 words/frame0xD0;
+natural C 405/frame0xE0/319 differences. Nine tests pass in 63.057s:
+988 guest, 512 cursor/count, 1,086 native32 cases, 22 fault gates, eight
+negatives and 256 connected cases. Verify render-table callback 16, original
+caller/actual backend and 22 copied-owner neighbors; setup/deep calls bounded.
+All installed bodies/data/source/progress/11,275 guards and README unchanged.
+Tools a22175b first, exact parent pin second; no push or older mirror reset.
+Same target remains active for frame/lifetime fitting, aliases/rebases and
+installation gates. Linked dispatcher/combiner and wider acceptance open.
+
 ## 2026-10-08 Record Ring Shaping Conversion
 
 [Note 1138](WORKING_NOTES/1138-game-record-ring-shaping-conversion-20261008.md):
