@@ -302,10 +302,12 @@ for(kind=0;kind<4;kind++)for(actor=0;actor<3;actor++){
         source = (self.root / 'conker/src/game/generated_5D2C0.c').read_text()
         if screen.SELECTED in source:
             self.assertEqual(source.count(screen.SELECTED), 1)
-            source = source.replace(screen.SELECTED, STUB).replace(screen.DECLARATION+'\n', '', 1)
+            source = source.replace(screen.SELECTED, STUB)
         self.assertEqual(source.count(STUB), 1)
-        selected = source.replace(STUB, screen.SELECTED).replace('#include <ultra64.h>\n',
-            '#include <ultra64.h>\n'+screen.DECLARATION+'\n', 1)
+        selected = source.replace(STUB, screen.SELECTED)
+        if screen.DECLARATION not in selected:
+            selected = selected.replace('#include <ultra64.h>\n',
+                '#include <ultra64.h>\n'+screen.DECLARATION+'\n', 1)
         objects = []
         for name, body in (('baseline', source), ('selected', selected)):
             obj, warnings = compile_owner(self.root, self.out, body, 'owner-'+name)

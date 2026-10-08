@@ -51,6 +51,11 @@ confirmed.
 
 ## Planning and history
 
+- [Latest attachment progress copy direct match](WORKING_NOTES/1110-game-attachment-progress-copy-direct-match-20261008.md):
+  placeholder becomes exact C49/frame `0x30`, cached actor source, setup index
+  gate, copy-induced pointer reload and inclusive float clamp. No guards/profile
+  edits; guest/native/alias/fault/owner/padder qualification. Only target changes;
+  setup remains a validating callback, not full callee or PC-port acceptance.
 - [Latest attachment progress direct match](WORKING_NOTES/1109-game-attachment-progress-direct-match-20261007.md):
   placeholder becomes exact C43/frame `0x28`, setup gate and post-call home/
   pointer reload, binary32 threshold. No guards/profile changes; guest/native/

@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Game Attachment Progress Copy Direct Match - 2026-10-08
+
+[Note 1110](WORKING_NOTES/1110-game-attachment-progress-copy-direct-match-20261008.md):
+
+- [x] Recover/install complete `func_150331B8` C49/frame `0x30`; all words direct at existing profile, no guards/Makefile/shared-header changes.
+- [x] Preserve required early actor source, full-word low-byte index gate, setup ABI, cached source, incoming node home, copy-induced attachment reload and binary32 inclusive clamp.
+- [x] Qualify 60,000 guest / 75,000 native32 cases, 97 aliases, 13 required faults, lazy paths and five effective compiled negatives; keep private/FCSR/full setup-callee claims separate.
+- [x] Retain 11 controls / 396 ordinary executions, eight raw exact forms; preserve 39 owner neighbors/pools/relocations/zero warnings, real 196-byte padder and independent entry/callee rebases.
+- [x] Rebuild/audit 6,058 symbols/6,042 slots; only target changes, other bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards/conversion hash intact. README date/aggregate matching rows only.
+- [x] Pass all 52 installed copy/progress/lookup/key-fit/resolver regression tests in 452.150 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and 92-document / 4,052-relative-link checks pass, zero broken links. Bank this match.
+- [ ] Continue remaining Game functions, next local `func_15031A50`; resolver key move and matrix boundaries remain open. No PC-port/full setup acceptance.
+
+Resume from `game-attachment-copy-test/after.json`. An already-counted C
+placeholder becomes exact, so conversion counts and byte percentages do not change.
+
 ## Game Attachment Progress Direct Match - 2026-10-07
 
 [Note 1109](WORKING_NOTES/1109-game-attachment-progress-direct-match-20261007.md):

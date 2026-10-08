@@ -218,7 +218,27 @@ s32 func_15031FC8() {
     return 0;
 }
 
-s32 func_150331B8() {
+s32 func_150331B8(u8 *node, u8 *actor) {
+    u8 *source;
+    u8 *attachment;
+    s32 index;
+
+    source = *(u8 **)(actor + 0x2D0);
+    attachment = *(u8 **)(node + 0x48);
+    if (attachment == 0) {
+        return 0;
+    }
+    index = *(s32 *)(actor + 0x2E4) & 0xFF;
+    if (index != 0xFF) {
+        func_1503F5B8(attachment, 0, index, 1.0f, 0.0f, 1);
+    }
+    if (source != 0) {
+        *(f32 *)(*(u8 **)(node + 0x48) + 8) = *(f32 *)(source + 8);
+        attachment = *(u8 **)(node + 0x48);
+        if (*(f32 *)(attachment + 0x18) <= *(f32 *)(attachment + 8)) {
+            *(f32 *)(attachment + 8) = *(f32 *)(attachment + 0x18) - 1.0f;
+        }
+    }
     return 0;
 }
 

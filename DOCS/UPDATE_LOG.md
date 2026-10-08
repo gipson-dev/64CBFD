@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-08 Game Attachment Progress Copy Direct Match
+
+[Note 1110](WORKING_NOTES/1110-game-attachment-progress-copy-direct-match-20261008.md):
+Replace `func_150331B8`'s zero-return placeholder with complete exact C49,
+frame `0x30`, original setup index mask/ABI, cached actor source, node incoming
+home and copy-induced attachment reload, binary32 inclusive clamp. All words
+direct under existing profile, no guards/Makefile/header changes. Ten pre-install
+tests pass in 45.008 seconds: 60,000 guest / 75,000 native32 cases, 97 aliases,
+13 faults, 11 controls, owner/padder/rebases; added fifth negative passes.
+Only target changes across 6,058 symbols; sections/data/other bodies/addresses/
+extents/overflows/11,063 guards/conversion hash intact. Exact total 3,367
+(61.59%), Game 2,694 (56.20%), 2,100 different, zero drift; conversions unchanged.
+README snapshot date/aggregate rows only. Setup remains a validating callback,
+not full callee or PC-port acceptance. Resume `game-attachment-copy-test/after.json`.
+All 52 installed copy/progress/lookup/key-fit/resolver regression tests pass in
+452.150 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and
+92-document / 4,052-relative-link checks pass, zero broken links.
+
 ## 2026-10-07 Game Attachment Progress Direct Match
 
 [Note 1109](WORKING_NOTES/1109-game-attachment-progress-direct-match-20261007.md):

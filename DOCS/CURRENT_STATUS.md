@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-07
+Last verified: 2026-10-08
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -22,6 +22,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest direct Game placeholder recovery:
+[Note 1110](WORKING_NOTES/1110-game-attachment-progress-copy-direct-match-20261008.md).
+`func_150331B8` now emits complete exact C49/frame `0x30`, setup index gate,
+cached actor source, post-call incoming node home, copy-induced pointer reload
+and binary32 inclusive end clamp. No guards/profile/Makefile/shared-header edits.
+Ten pre-install tests pass in 45.008 seconds: 60,000 guest / 75,000 native32
+cases, 97 aliases, 13 required faults, 11 controls, owner/padder/rebase gates.
+Five compiled negatives and prior progress-owner fixture recheck pass before
+installation. Only target changes across 6,058 symbols, preserving all other
+bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards and
+conversion hash. Exact total 3,367/5,467 (61.59%), Game 2,694/4,794 (56.20%),
+2,100 different, zero drift; conversion totals unchanged. README date and
+aggregate matching rows only. Setup remains a validating callback, not full
+setup-callee/hardware/PC-port acceptance.
+Authoritative ignored checkpoint: `game-attachment-copy-test/after.json`.
+All 52 installed copy/progress/lookup/key-fit/resolver regression tests pass in
+452.150 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and
+92-document / 4,052-relative-link checks pass, zero broken links.
+Next local function: `func_15031A50`; resolver C84/40 and matrix boundaries remain open.
+
+Previous direct Game placeholder recovery:
 [Note 1109](WORKING_NOTES/1109-game-attachment-progress-direct-match-20261007.md).
 `func_1503327C` now emits complete exact C43/frame `0x28`, attachment setup
 gate, post-call node-home/pointer reload and binary32 end-minus-one predicate.
