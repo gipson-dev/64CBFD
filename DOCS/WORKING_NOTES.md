@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-08 ([Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md)):
+Install complete matrix creation `func_150335C8` and final setup `func_15030D54`:
+113/45 words, frames0x168/0x20 directly exact, no guards/padding/data/profile
+changes. Typed helper resolves the shared-owner float interface; live homes,
+matrix outputs, allocation/alias contracts and position reset qualify.
+10,058 caller/961 helper/480 connected guest and65,536 actual native32 cases;
+38 owner neighbors and six independent padder entry/call links. Only two
+targets change across6,058 symbols;data/guards/conversion hash intact. Exact
+total3,374,Game2,701,2,093 different,zero drift. README aggregates only; new
+`game-node-matrix-creation-test/after.json`. All28 focused post-install tests
+pass in176.922s, no skips/errors/failures; ten shared padder tests/tools/syntax/
+CLI/owner/profiles/whitespace pass. Strengthened eight tests pass in48.566s,
+including twenty fault prefixes. Next local `func_15033838`,100 words/frame0x20,
+inventory only; full callee/runtime and wider Game remain open.
+Documentation:101 documents/4,169 relative links,zero broken.
+
 2026-10-08 ([Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md)):
 Install complete `func_150334B8`,68 words/frame0 directly exact, no guards/new
 data/profile changes. Fourth signed tile-size scan, action0x37, S-100/span+2,

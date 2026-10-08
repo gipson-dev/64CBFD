@@ -1,4 +1,11 @@
 #include <ultra64.h>
+u8 *func_15083568(u8 *, s32, f32, s32);
+void func_15048B10(f32 [4][4], f32 [4][4]);
+void func_150A9B0C(f32 [4][4], f32, f32, f32, f32, f32, f32);
+void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
+void func_1503E5F8(f32 [4][4], f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *);
+void func_15030D54(u8 *, f32, f32, f32, f32, f32, f32);
+void *allocate_memory(s32, s32, s32, s32);
 extern f32 D_800970DC;
 void func_1503F5B8(u8 *, s32, s32, f32, f32, s32);
 void func_1505E060(u8 *);
@@ -96,8 +103,22 @@ s32 func_15030AF4() {
     return 0;
 }
 
-s32 func_15030D54() {
-    return 0;
+void func_15030D54(register u8 *node, f32 x, f32 y, f32 z, f32 angle_x, f32 angle_y, f32 angle_z) {
+    u8 *values;
+
+    values = allocate_memory(0x18, 1, 0, 2);
+    *(u8 **)(node + 0x44) = values;
+    if (values != 0) {
+        *(f32 *)*(u8 **)(node + 0x44) = x;
+        *(f32 *)(*(u8 **)(node + 0x44) + 4) = y;
+        *(f32 *)(*(u8 **)(node + 0x44) + 8) = z;
+        *(f32 *)(*(u8 **)(node + 0x44) + 0xC) = angle_x;
+        *(f32 *)(*(u8 **)(node + 0x44) + 0x10) = angle_y;
+        *(f32 *)(*(u8 **)(node + 0x44) + 0x14) = angle_z;
+        if (*(u8 **)(node + 0x34) == 0) {
+            *(u8 **)(node + 0x34) = allocate_memory(0x80, 1, 2, 2);
+        }
+    }
 }
 
 s32 func_15030E08() {
@@ -1113,7 +1134,57 @@ s32 func_150334B8(u8 *node, u8 *actor) {
     return 0;
 }
 
-s32 func_150335C8() {
+u8 *func_150335C8(register u8 *node, u8 *actor, s32 kind, s32 index, s32 clear_flag, s32 zero_position) {
+    u8 *created;
+    f32 converted[4][4];
+    f32 inverse[4][4];
+    f32 transform[4][4];
+    f32 combined[4][4];
+    f32 position_x;
+    f32 position_y;
+    f32 position_z;
+    f32 scale_x;
+    f32 scale_y;
+    f32 scale_z;
+    f32 angle_x;
+    f32 angle_y;
+    f32 angle_z;
+
+    if (*(Mtx **)(actor + 0x1D4) == 0) {
+        return 0;
+    }
+    created = func_15083568(actor, kind, 1.0f, 0);
+    if (created != 0) {
+        created[2] = index;
+        *(f32 *)(created + 0x40) = *(f32 *)(node + 0x14C);
+        if (clear_flag != 0) {
+            created[0x16] &= ~4;
+        } else {
+            created[0x16] |= 4;
+        }
+        guMtxL2F(converted, *(Mtx **)(actor + 0x1D4) + index);
+        func_15048B10(converted, inverse);
+        func_150A9B0C(transform, *(f32 *)(node + 0xB8), *(f32 *)(node + 0x40),
+            *(f32 *)(node + 0xC4), *(f32 *)(node + 0x14C), *(f32 *)(node + 0x150),
+            *(f32 *)(node + 0x14C));
+        transform[3][0] = *(f32 *)(node + 0x14);
+        transform[3][1] = *(f32 *)(node + 0x18);
+        transform[3][2] = *(f32 *)(node + 0x1C);
+        transform[0][3] = 0.0f;
+        transform[1][3] = 0.0f;
+        transform[2][3] = 0.0f;
+        transform[3][3] = 1.0f;
+        func_150A7A48(transform, inverse, combined);
+        func_1503E5F8(combined, &position_x, &position_y, &position_z,
+            &angle_x, &angle_y, &angle_z, &scale_x, &scale_y, &scale_z);
+        if (zero_position != 0) {
+            position_z = 0.0f;
+            position_y = 0.0f;
+            position_x = 0.0f;
+        }
+        func_15030D54(created, position_x, position_y, position_z, angle_x, angle_y, angle_z);
+        return created;
+    }
     return 0;
 }
 

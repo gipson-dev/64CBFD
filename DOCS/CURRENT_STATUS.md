@@ -22,6 +22,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery work:
+[Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md).
+Complete `func_150335C8` and its final helper `func_15030D54` are installed:
+113 words/frame0x168 and45 words/frame0x20 directly exact, no guards/padding/
+new data/profile changes. Recover matrix-backed creation, post-callback homes,
+position/angle decomposition and six-float record allocation with live pointer
+reloads. Qualification:10,058 caller/961 helper/480 connected guest cases,
+65,536 native32 executions,112/113 and45/45 reachable words, allocation failures,
+faults/aliases/controls/padder/call rebases. Matrix/allocator callbacks remain
+controlled hooks, not complete-library/hardware/gameplay acceptance.
+Only these two targets change across6,058 symbols; all other6,056 bodies,
+addresses/extents/protected sections/720 data owners/11,144 guards/conversion
+hash intact. Exact total3,374/5,467 (61.72%),Game2,701/4,794 (56.34%),2,093
+different,zero drift. README aggregates only; new baseline:
+`game-node-matrix-creation-test/after.json`. All28 post-install focused tests
+pass in176.922s, no skips/errors/failures; ten shared padder tests/tools/syntax/
+CLI/owner/profiles/whitespace pass. Strengthened eight tests pass in48.566s,
+including twenty fault prefixes. Next local `func_15033838`,100 words/
+frame0x20, attachment-state latch; inventory only. Wider Game/full runtime open.
+Documentation:101 documents/4,169 relative links,zero broken.
+
+Previous Game recovery work:
 [Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md).
 `func_150334B8` is installed: all68 words/frame0 emit directly from C, no
 guards/padding/relocations/generated data. Recover action0x37's fourth signed

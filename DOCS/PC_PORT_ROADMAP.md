@@ -1,5 +1,25 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix Creation And Transform Setup Direct Matches - 2026-10-08
+
+[Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md):
+
+- [x] Recover complete matrix-backed `func_150335C8`, including six-argument homes, post-call bank/index reads, four matrix buffers, nine decomposition outputs and optional position zeroing.
+- [x] Recover final helper `func_15030D54`'s typed six-float interface, allocation-failure behavior, repeated record-pointer reloads and conditional matrix-bank allocation. Do not retain the indirect-call prototype bridge.
+- [x] Emit all113/45 words and frames0x168/0x20 directly under existing O2/g3, no guards/padding/new data/profile changes.
+- [x] Qualify10,058 caller/961 helper/480 connected guest cases and65,536 actual native32 executions; live callback homes, all flag bytes, signed index formation, float patterns, aliases, allocation failures and effective negatives.
+- [x] Check38 postprocessed owner neighbors/useful pools/relative relocations and actual padder slots across six independent entry/call links.
+- [x] Rebuild/audit all6,058 symbols; only two targets change, other6,056 bodies and all addresses/extents/data owners/11,144 guards/conversions intact. Bank `game-node-matrix-creation-test/after.json`.
+- [x] Update README matching aggregates only: total3,374,Game2,701,2,093 different,zero drift; detailed recovery stays in Note1119.
+- [x] Pass28 post-install focused tests in176.922s, no skips/errors/failures; ten shared padder tests/tools/syntax/CLI/owner/profiles/whitespace pass.
+- [x] Strengthen required helper-storage probes; final eight-test run passes in48.566s, including all twenty fault prefixes/native cases, no skips/errors/failures.
+- [x] Validate101 documents/4,169 relative links,zero broken; bank the coherent caller/helper recovery, tests and handoff.
+- [ ] Recover next local `func_15033838`,100 words/frame0x20, attachment-state latch. Static inventory only.
+- [ ] Continue wider Game, resolver and complete callee/hardware/gameplay/PC-port qualification.
+
+Resume from `game-node-matrix-creation-test/after.json`; controlled matrix callbacks
+qualify the caller contract, not complete original matrix libraries.
+
 ## Game Fourth Tile Scroll Direct Match - 2026-10-08
 
 [Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md):
@@ -12,7 +32,7 @@
 - [x] Update README matching aggregates only: total3,372/5,467,Game2,699/4,794,2,095 different,zero drift; keep detailed recovery in its own document.
 - [x] Pass all20 post-install focused tests in112.504s, no skips/errors/failures; earlier owner/padder and dispatcher binding/scheduling checks remain intact. Ten shared padder tests/tools/syntax/CLI/profiles/whitespace pass.
 - [x] Validate100 documents/4,153 relative links,zero broken; bank this scoped recovery with its tests and handoff.
-- [ ] Independently recover next local `func_150335C8`,113 words/frame0x168, matrix-backed creation path. Static inventory only.
+- [x] Recover/match `func_150335C8` and its final setup helper directly in [Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md).
 - [ ] Continue wider Game, resolver and full callee/hardware/gameplay/PC-port qualification.
 
 Resume from `game-node-tile-scroll-test/after.json` and the next function's retail body.

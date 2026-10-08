@@ -51,7 +51,13 @@ confirmed.
 
 ## Planning and history
 
-- [Latest fourth tile scroll direct match](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md):
+- [Latest matrix creation and transform setup direct matches](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md):
+  complete caller/helper C113/frame0x168 andC45/frame0x20 directly exact.
+  Live argument homes, matrix outputs, position reset and allocation/alias
+  contracts qualify with connected guest/native checks; full matrix libraries
+  remain open. Only two targets change; all data/guards/conversions intact.
+  New `game-node-matrix-creation-test/after.json`; next local `func_15033838`.
+- [Previous fourth tile scroll direct match](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md):
   complete semantic `func_150334B8`, all68 words/frame0 directly exact. Signed
   fourth-command scan and one-step coordinate wrap, no guards/new data.
   Guest/native/fault/alias/owner/padder checks qualify; only target changes.

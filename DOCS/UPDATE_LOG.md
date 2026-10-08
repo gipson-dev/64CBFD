@@ -1,5 +1,25 @@
 # Update Log
 
+## 2026-10-08 Game Matrix Creation And Transform Setup Direct Matches
+
+[Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md):
+Install complete `func_150335C8` and final helper `func_15030D54`, all113/45
+words and frames0x168/0x20 directly exact. Recover post-callback homes, matrix
+composition/decomposition, optional position reset and typed six-float record
+setup with allocation failures/required pointer reloads. No guards/new data/
+padding/profile changes or indirect prototype bridge. Qualify10,058 caller/
+961 helper/480 connected guest and65,536 native32 cases; full matrix/allocator
+libraries remain open. Only two targets change across6,058 symbols, other6,056
+bodies/addresses/extents/protected sections/720 data owners/11,144 guards/
+conversion hash intact. Exact total3,374/5,467 (61.72%),Game2,701/4,794 (56.34%),
+2,093 different,zero drift; README aggregates only. New baseline
+`game-node-matrix-creation-test/after.json`. All28 post-install focused tests
+pass in176.922s, no skips/errors/failures; ten shared padder tests/tools/syntax/
+CLI/owner/profiles/whitespace pass. Strengthened eight tests pass in48.566s,
+including twenty faults. Next local `func_15033838`,100 words/frame0x20,
+inventory only. Wider Game/hardware/gameplay/PC-port work remains open.
+Documentation:101 documents/4,169 relative links,zero broken.
+
 ## 2026-10-08 Game Fourth Tile Scroll Direct Match
 
 [Note 1118](WORKING_NOTES/1118-game-fourth-tile-scroll-direct-match-20261008.md):

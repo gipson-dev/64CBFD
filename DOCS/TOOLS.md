@@ -4,6 +4,38 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Matrix Creation And Transform Setup Matching
+
+[Caller driver](../tools/experiments/game_node_matrix_creation_candidates.py)
+and [helper driver](../tools/experiments/game_node_transform_setup_candidates.py)
+retain complete `func_150335C8` / `func_15030D54`:113 words/frame0x168 and45
+words/frame0x20 directly exact under existing O2/g3. Recovered helper signature
+permits the original direct float call in the shared owner, without a cast/
+indirect-call bridge. No guards/padding/data/profile/Makefile/header changes.
+Twenty-four measured forms,14 ordinary executions and ten effective negatives
+cover required bank/record rereads, index width, flags, matrix operand order,
+position zeroing and allocation/float-store contracts.
+
+[Eight tests](../tools/tests/test_game_node_matrix_creation_match.py) cover
+10,058 caller/961 helper/480 connected guest cases and65,536 native32 executions.
+Modeled callbacks mutate argument homes and source fields. Actual caller/helper
+bodies connect; all flag bytes, seven index patterns, fifteen raw float patterns,
+allocation failures, alias-redirection and ordered fault prefixes qualify.
+Thirty-eight owner neighbors/pool identities/relocations remain unchanged;
+real padder slots and six independent entry/call rebases qualify. Matrix/
+creation/allocator callbacks remain controlled hooks, not full original-library,
+FCSR/hardware/gameplay/PC-port acceptance.
+
+```sh
+python3 -m tools.experiments.game_node_matrix_creation_candidates --profiles
+python3 -m tools.experiments.game_node_matrix_creation_candidates --owner
+python3 -m tools.experiments.game_node_transform_setup_candidates --profiles
+python3 -m unittest tools.tests.test_game_node_matrix_creation_match -v
+```
+
+Ignored receipts/latest baseline: `conker/build/game-node-matrix-creation-test/after.json`.
+See [Note 1119](WORKING_NOTES/1119-game-matrix-creation-and-transform-setup-direct-matches-20261008.md).
+
 ## Fourth Tile Scroll Matching
 
 [Candidate driver](../tools/experiments/game_node_tile_scroll_candidates.py)
