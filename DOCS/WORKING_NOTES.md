@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-08 ([Note 1135](WORKING_NOTES/1135-game-record-ring-update-conversion-20261008.md)):
+Convert retained `func_151D792C`: 67 words / frame 0x30, 54 direct plus 13
+strict final-output guards. Eight installed tests pass in 113.683s: 2,743 guest /
+404,131 native32 cases, 157 faults, ten negatives, 144 rebases and 512 connected
+cases against both bodies; six older checks pass. All bodies/data unchanged,
+11,155 prior guards preserved plus 13; sole 268-byte conversion. Converted
+5,479 / Game 4,806; exact 3,390 / Game 2,717; zero drift. Tools 74cbbdc first,
+parent exact pin second, no push or older standalone reset. Next retained
+`func_151D7A38`, 166 words / frame 0xC8. Linked dispatcher/constructor,
+hardware/gameplay and graph refresh remain separate/open.
+
 2026-10-08 ([Note 1134](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md)):
 Convert retained `func_151D7830`: 63 words / frame 0x88 directly exact, no guards.
 Packet layouts, eleven arguments, allocation failure and captured payload/record

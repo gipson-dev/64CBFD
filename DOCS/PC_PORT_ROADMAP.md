@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ring Update - 2026-10-08
+
+[Note 1135](WORKING_NOTES/1135-game-record-ring-update-conversion-20261008.md):
+
+- [x] Convert complete `func_151D792C`: 67 words / 268 bytes / frame 0x30; 54 direct words plus 13 strict closed final-output scheduling/register guards.
+- [x] Recover signed state/cursors, unsigned wrap count, backward traversal, captured buffer, live goal/state/delta and raw XYZ copy/zero return contract.
+- [x] Pass 2,743 guest / 404,131 native32 cases, 157 fault prefixes, eight lazy cases and ten effective negatives; reach all 65 reachable words and preserve two original compiler-dead words.
+- [x] Preserve 22 owner neighbors/pools/relative relocations and four existing warnings; real padder emits 268 bytes, six independent links / 144 executions verify three symbolic sites.
+- [x] Execute 512 connected cases against both bodies with the actual 19-word integrator and complete original 100-word dispatcher; verify consumed false result and callback table, retaining linked placeholder/release-hook boundaries.
+- [x] Pass eight installed tests in 113.683s and six affected older checks in 66.113s; fix fixture declaration placement without changing production neighbors.
+- [x] Pass ten shared tests, both tools checks and CLI/syntax checks; mirror 31 relevant tools files without overwriting conflicting work.
+- [x] Audit all 6,058 bodies/addresses/extents/protected sections/data unchanged, prior 11,155 guards/raw CSV prefix plus 13, sole 268-byte conversion; record new baseline and README aggregates only.
+- [x] Bank mounted tools 74cbbdc first, source/docs/exact pin second per "Keep commited"; no push or older standalone reset.
+- [ ] Fit and qualify retained `func_151D7A38`: 166 words / frame 0xC8, captured packets, interpolation, integrator calls and live cursor/count/state/goal updates.
+- [ ] Restore linked dispatcher/constructor and qualify alternate branches/hardware/gameplay separately; resolve reduced-corpus Graphify refresh without forced overwrite. OGL Release remains frozen.
+
 ## Attachment Allocation - 2026-10-08
 
 [Note 1134](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md):
@@ -13,7 +29,7 @@
 - [x] Pass all eight installed tests in 54.737s, ten shared tests, both tools checks and CLI/syntax checks; mirror task tools without conflicting work.
 - [x] Audit all 6,058 bodies/addresses/extents/protected sections/data/11,155 guards unchanged, sole 252-byte conversion; record new baseline and README aggregates only.
 - [x] Bank mounted tools 56c4132 first, source/docs/exact pin second per "Keep commited"; no push or older standalone reset.
-- [ ] Fit and qualify retained `func_151D792C`: 67 words / frame 0x30, signed gate, backward circular cursor, live goal/state/global reloads and final XYZ copy/zero.
+- [x] Fit and qualify complete `func_151D792C` in [Note 1135](WORKING_NOTES/1135-game-record-ring-update-conversion-20261008.md): 67 words / frame 0x30; signed gate/cursors, live reloads, captured buffer and consumed result, with 13 closed final-output guards.
 - [ ] Restore linked constructor and qualify alternate branches/hardware/gameplay separately; resolve reduced-corpus Graphify refresh without forced overwrite. OGL Release remains frozen.
 
 ## Attached-Record Cleanup - 2026-10-08

@@ -2,6 +2,15 @@
 
 typedef struct {
     f32 x, y, z;
+} RingPosition151D792C;
+
+extern f32 D_800BE9A4;
+void func_151D8718(f32 *, f32 *, f32);
+
+s32 func_151D792C(u8 *owner);
+
+typedef struct {
+    f32 x, y, z;
 } AttachmentPosition151D7830;
 
 typedef struct {
@@ -180,7 +189,35 @@ void func_151D7830(u8 *owner) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D792C.s")
+s32 func_151D792C(u8 *owner) {
+    s32 state;
+    u8 *records;
+    s32 cursor;
+
+    state = *(s8 *)(owner + 0x2C);
+    records = *(u8 **)(owner + 0x94);
+    if (state < 2 && (*(u16 *)(owner + 0x1E) & 8)) {
+        return 0;
+    }
+    cursor = *(s8 *)(owner + 0x2E);
+    while (cursor != *(s8 *)(owner + 0x2D)) {
+        cursor--;
+        if (cursor < 0) {
+            cursor = owner[0x25] - 1;
+        }
+        func_151D8718((f32 *)(records + cursor * 0x1C),
+                     (f32 *)(records + cursor * 0x1C + 0xC), D_800BE9A4);
+    }
+    if (*(s8 *)(owner + 0x2C) > 0) {
+        RingPosition151D792C *position = (RingPosition151D792C *)(records + *(s8 *)(owner + 0x2D) * 0x1C);
+        *(RingPosition151D792C *)(owner + 0x54) = *position;
+    } else {
+        *(f32 *)(owner + 0x54) = 0.0f;
+        *(f32 *)(owner + 0x58) = 0.0f;
+        *(f32 *)(owner + 0x5C) = 0.0f;
+    }
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D7A38.s")
 

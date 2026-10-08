@@ -11154,3 +11154,16 @@ generated_205C90,func_151D8A24,0xD8,0x93AA0026,0x93AA0023,-,-,Normalize complete
 generated_204660,func_151D8718,0xC,0xC4A00000,0xC4A20000,-,-,Normalize captured velocity FP register and retain retail add operand order,,,false
 generated_204660,func_151D8718,0x18,0x46003200,0x46061200,-,-,Normalize captured velocity FP register and retain retail add operand order,,,false
 generated_204660,func_151D8718,0x34,0x460C0102,0x460C1102,-,-,Normalize captured velocity FP register and retain retail add operand order,,,false
+generated_204660,func_151D792C,0xA0,0x1860000C,0x2413001C,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xA4,0x2413001C,0x5860000C,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xA8,0x00530019,0x44800000,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xAC,0x0000C812,0x00530019,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xB0,0x03341821,0x0000C812,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xB4,0x8C610000,0x02994021,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xB8,0xAE210054,0x8D010000,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xBC,0x8C690004,0xAE210054,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xC0,0xAE290058,0x8D0A0004,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xC4,0x8C610008,0xAE2A0058,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xC8,0xAE21005C,0x8D010008,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xCC,0x10000007,0x10000006,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false
+generated_204660,func_151D792C,0xD0,0x24020001,0xAE21005C,-,-,Normalize closed final XYZ copy registers and branch-likely zero delay schedule,,,false

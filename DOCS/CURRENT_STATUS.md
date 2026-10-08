@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 56c4132; tools are committed before the source pin.
+  checkpoint pins tools 74cbbdc; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery and authorized banking:
+[Note 1135](WORKING_NOTES/1135-game-record-ring-update-conversion-20261008.md).
+Convert retained `func_151D792C`: 67 words / 268 bytes / frame 0x30;
+54 direct words plus 13 strict final-output scheduling/register guards.
+Eight installed tests pass in 113.683s: 2,743 guest / 404,131 native32 cases,
+157 faults, ten negatives, 144 rebases and 512 connected cases against both
+bodies. Six affected older checks pass in 66.113s. Original dispatcher
+connection is separate from its still-placeholder linked C body.
+All 6,058 bodies/addresses/extents/protected sections/data unchanged; prior
+11,155 guards/raw prefix preserved plus 13, sole 268-byte conversion.
+Converted 5,479 / Game 4,806; exact 3,390 / Game 2,717; zero drift.
+Tools 74cbbdc banked first, parent records exact pin; no push or older
+standalone reset. New ring-update baseline; README aggregates only.
+Next retained `func_151D7A38`: 166 words / frame 0xC8, interpolation and
+live ring-state recovery pending. Graph refresh, linked dispatcher/constructor,
+hardware/gameplay remain open; no host/runtime/Release changes.
+
+Previous Game recovery and authorized banking:
 [Note 1134](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md).
 Convert retained `func_151D7830`: 63 words / 252 bytes / frame 0x88 directly
 exact, no guards. Two position packets, eleven-argument ABI, lazy allocation

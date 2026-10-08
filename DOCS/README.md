@@ -54,6 +54,16 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record ring update conversion](WORKING_NOTES/1135-game-record-ring-update-conversion-20261008.md):
+  `func_151D792C`, 67 words / frame 0x30; 54 direct words plus 13 closed
+  final-output guards. Eight installed tests and six affected older checks
+  qualify signed/live ring state, captured storage and consumed callback return.
+  All bodies/data unchanged; sole 268-byte conversion. Tools 74cbbdc banked
+  first, parent pins it; no push or older standalone reset. Next retained
+  `func_151D7A38`, 166 words / frame 0xC8. Original dispatcher connection,
+  linked placeholder restoration and hardware/gameplay remain distinct;
+  graph refresh remains open.
+
 - [Latest attachment allocation direct conversion](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md):
   `func_151D7830`, 63 words / frame 0x88 directly exact; no guards. Eight installed
   tests qualify packets, eleven arguments, allocation failure, captured lifetime

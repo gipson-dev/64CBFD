@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-08 Record Ring Update Conversion
+
+[Note 1135](WORKING_NOTES/1135-game-record-ring-update-conversion-20261008.md):
+Complete `func_151D792C`, 67 words / frame 0x30; 54 direct words plus 13
+closed final-output guards. Signed gates/cursors, unsigned wrap count,
+captured buffer, live state/goal/delta and consumed callback return qualify.
+Eight installed tests pass in 113.683s, six affected older checks in 66.113s.
+All 6,058 bodies/data unchanged; prior 11,155 guards/raw prefix plus 13,
+sole 268-byte conversion. Converted 5,479 / Game 4,806; exact 3,390 / Game
+2,717; zero drift. Tools 74cbbdc banked first, parent records exact pin;
+no push or older standalone reset. Next `func_151D7A38`, 166 words / frame
+0xC8. Original dispatcher connection does not restore its linked placeholder;
+hardware/gameplay and graph refresh remain open. README aggregates only.
+
 ## 2026-10-08 Attachment Allocation Direct Conversion
 
 [Note 1134](WORKING_NOTES/1134-game-attachment-allocation-direct-conversion-20261008.md):
