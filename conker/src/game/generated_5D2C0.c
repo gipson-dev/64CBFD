@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern f32 D_800970DC;
 typedef struct {
     u8 *actor;
     u8 group;
@@ -348,7 +349,44 @@ s32 func_15031E2C(u8 *arg0, s32 arg1) {
     return 0;
 }
 
-s32 func_15031E7C() {
+s32 func_15031E7C(u8 *node, u8 *actor) {
+    u8 *source;
+    Gfx *commands;
+    f32 factor;
+    s32 index;
+    s32 remaining;
+
+    source = *(u8 **)(actor + 0x2D0);
+    if (source == 0) {
+        return 0;
+    }
+    commands = *(Gfx **)*(u8 **)(node + 0x24);
+    if (commands == 0) {
+        return 0;
+    }
+    if (*(u16 *)(actor + 0x84) == 0x55) {
+        factor = 1.0f;
+    } else if (*(u16 *)(actor + 0x84) == 0x56) {
+        factor = 0.0f;
+    } else if (0.0f <= *(f32 *)(source + 8) && *(f32 *)(source + 8) <= 120.0f) {
+        factor = *(f32 *)(source + 8) * D_800970DC;
+        factor = 1.0f - factor;
+    } else {
+        factor = 0.0f;
+    }
+    index = 0;
+    remaining = 4;
+    do {
+        remaining--;
+        while (*(s8 *)&commands[index] != (s8)G_SETTILESIZE) {
+            index++;
+        }
+        if (remaining != 0) {
+            index++;
+        }
+    } while (remaining != 0);
+    commands[index].words.w0 = _SHIFTL(G_SETTILESIZE, 24, 8) | _SHIFTL(2, 12, 12) |
+        ((s32)(25.0f * factor + 2.0f) & 0xFFF);
     return 0;
 }
 

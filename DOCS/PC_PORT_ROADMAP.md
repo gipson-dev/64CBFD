@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Fourth Tile-Size Command Direct Match - 2026-10-08
+
+[Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md):
+
+- [x] Recover/install complete `func_15031E7C`, all 83 words/frame0 directly exact; no guards, padding, compiler-profile, Makefile or shared-header changes.
+- [x] Preserve actor-source and list null gates, required container dereference, signed opcode scan, fourth-match selection, first-word-only store, type overrides and inclusive binary32 progress arithmetic.
+- [x] Qualify 13,152 guest / 19,728 native32 cases, 137 float patterns, six layouts, lazy/fault prefixes, five valid aliases, 12 controls / 960 ordinary executions and four effective public-output negatives.
+- [x] Preserve 39 owner neighbors, pools and relocations; qualify the actual 332-byte padder and symbolic scale HI/LO under independent entry/carry rebases.
+- [x] Rebuild/audit 6,058 symbols/6,042 slots; only target changes, all other bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards/conversion hash preserved. Update README matching aggregates only.
+- [x] Inventory next `func_15031FC8`: complete 1,148-word slot, seven original tables/674 targets, two calls and original scalar gap; retain read-only grouped table targets without claiming semantic recovery.
+- [x] Pass all 73 installed tile/cleanup/action/attachment/lookup/resolver regressions in 433.831 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and 95-document / 4,090-relative-link checks pass, zero broken links. Bank the qualified match.
+- [ ] Recover remaining Game functions, next local `func_15031FC8`; measure complete-owner pool addends across the original four-byte scalar gap before table binding. Full matrix/callee/hardware/PC-port boundaries remain open.
+
+Resume from `game-node-tile-test/after.json`; static next-dispatcher inventory
+is `game-node-tile-test/next-dispatcher.json`. Converted totals/bytes do not change.
+
 ## Game Node Cleanup Dispatcher Direct Match - 2026-10-08
 
 [Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md):
@@ -11,7 +27,8 @@
 - [x] Preserve 39 copied-owner neighbors and existing 55 table targets; qualify the new 48 targets at shared pool offset 220, real padder and independent symbol/entry/carry rebases.
 - [x] Rebuild/audit all 6,058 symbols/6,042 slots; only target changes, all other bodies/addresses/extents/overflows/protected sections/720 data owners/11,063 guards/conversion hash unchanged. README matching aggregates only.
 - [x] Pass all 66 installed cleanup/action/attachment/lookup/resolver regressions in 439.488 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and 94-document / 4,076-relative-link checks pass, zero broken links. Bank the qualified match.
-- [ ] Continue remaining Game functions, next local `func_15031E7C`; `func_15031E2C` already exact. Full callbacks/hardware/PC-port and matrix boundaries remain open.
+- [x] Recover next local placeholder `func_15031E7C`; see [Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md).
+- [ ] Continue remaining Game functions; full callbacks/hardware/PC-port and matrix boundaries remain open.
 
 Resume from `game-node-cleanup-test/after.json`. The replaced C placeholder
 was already counted as converted; conversion totals and byte percentages do not change.

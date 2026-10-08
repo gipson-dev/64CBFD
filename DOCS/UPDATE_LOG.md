@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-08 Game Fourth Tile-Size Command Direct Match
+
+[Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md):
+Replace `func_15031E7C`'s zero-return placeholder with complete direct C83,
+frame0, reducing 77 differences to zero. SDK Gfx/opcode macros, two-step factor
+calculation, fourth tile-size selection and first-word-only update emit retail
+without guards/profile/Makefile/header changes. Seven pre-install tests pass
+in 29.428 seconds; alias strengthening in 3.194 seconds: 13,152 guest / 19,728
+native32 cases, float thresholds/scan layouts/lazy/faults/controls/negatives,
+39 owner neighbors/pools, actual padder/symbolic scale rebases. Native opcode
+bytes are host-endian fixtures, not graphics runtime/FCSR/PC-port proof.
+Only target changes across 6,058 symbols; all other bodies/addresses/extents/
+overflows/sections/720 data owners/11,063 guards/conversion hash intact. Exact
+total 3,370 (61.64%), Game 2,697 (56.26%), 2,097 different, zero drift; conversions
+unchanged. README aggregate matching rows only. New `game-node-tile-test/after.json`.
+Read-only next-dispatcher inventory: `func_15031FC8`, 1,148 words, seven tables/
+674 targets, two calls; original four-byte scalar gap requires owner-pool measurement.
+All 73 installed tile/cleanup/action/attachment/lookup/resolver regressions pass
+in 433.831 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and
+95-document / 4,090-relative-link checks pass, zero broken links.
+
 ## 2026-10-08 Game Node Cleanup Dispatcher Direct Match
 
 [Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md):

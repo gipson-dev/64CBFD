@@ -22,6 +22,32 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest direct Game placeholder recovery:
+[Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md).
+`func_15031E7C` now emits all 83 words / 332 bytes directly, no frame, zero
+differences versus 77 previously. Recover SDK Gfx/signed opcode scanning, the
+fourth tile-size first-word update, actor-type overrides and inclusive binary32
+progress arithmetic. Two-step factor computation recovers the retail FP sequence
+without guards/profile/Makefile/header changes or generated data.
+Seven pre-install tests pass in 29.428 seconds; strengthened alias checks pass
+separately in 3.194 seconds. Qualification covers 13,152 guest / 19,728 native32
+cases, 137 float patterns, six scan layouts, lazy/faults, five aliases, 12 controls
+/ 960 ordinary executions, effective negatives, owner/padder/carry rebases.
+Native raw opcode bytes are seeded for host endian; this is not graphics runtime,
+full FCSR/hardware or PC-port acceptance. Only target changes across 6,058
+symbols; all other bytes/addresses/extents/overflows/sections/720 Game-data
+owners/11,063 guards/conversion hash intact. Exact total 3,370/5,467 (61.64%),
+Game 2,697/4,794 (56.26%), 2,097 different, zero drift; conversions unchanged.
+README matching aggregates only. Checkpoint: `game-node-tile-test/after.json`.
+All 73 installed tile/cleanup/action/attachment/lookup/resolver regression
+tests pass in 433.831 seconds, zero skips/errors/failures; tools/syntax/CLI/
+whitespace and 95-document / 4,090-relative-link checks pass, zero broken links.
+Next `func_15031FC8`: 1,148 words/frame0x48, seven tables/674 targets, two
+calls, 1,119 placeholder differences. Static inventory is not a recovery.
+Measure its complete-owner pools: original float at 0x800970DC creates a four-byte
+gap before its first table; do not assume packed addends equal physical offsets.
+Remaining Game and matrix/callee/runtime boundaries stay open.
+
+Previous direct Game placeholder recovery:
 [Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md).
 `func_15031C14` now emits all 134 words/frame `0x38` directly, zero differences
 versus 129 previously. The complete cleanup dispatcher retains the null-actor

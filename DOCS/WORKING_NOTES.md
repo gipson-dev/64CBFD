@@ -1,5 +1,24 @@
 # Working Notes
 
+2026-10-08 ([Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md)):
+Recover complete C83/frame0 `func_15031E7C`, fourth SDK tile-size command
+first-word update, null gates, signed byte scan and binary32 type/progress
+factor. Two-step factor recovers retail FP scheduling directly; 77 prior word
+differences become zero, no guards/profile/Makefile/header edits or new data.
+Seven pre-install tests pass in 29.428 seconds, alias strengthening in 3.194
+seconds: 13,152 guest / 19,728 native32 cases, 137 float patterns, six layouts,
+faults/lazy/aliases/controls/negatives/owner/padder/rebases. Native raw-byte
+fixtures are not big-endian graphics runtime, full FCSR or PC-port acceptance.
+Only target changes across 6,058 symbols; all other bytes/addresses/extents/
+overflows/sections/720 data owners/11,063 guards/conversion hash intact. Exact
+total 3,370, Game 2,697 (56.26%), 2,097 different, zero drift; conversions
+unchanged, README matching aggregates only. New `game-node-tile-test/after.json`.
+Next `func_15031FC8`: static 1,148-word / seven-table / 674-target inventory,
+not recovered; measure packed pools across original four-byte scalar gap.
+All 73 installed tile/cleanup/action/attachment/lookup/resolver regressions pass
+in 433.831 seconds, zero skips/errors/failures; tools/syntax/CLI/whitespace and
+95-document / 4,090-relative-link checks pass, zero broken links.
+
 2026-10-08 ([Note 1112](WORKING_NOTES/1112-game-node-cleanup-dispatcher-direct-match-20261008.md)):
 Recover complete direct C134/frame `0x38` for `func_15031C14`; 129 prior word
 differences become zero. Restore null actor gate, counter/flag clears, callback

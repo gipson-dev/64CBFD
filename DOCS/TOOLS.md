@@ -4,6 +4,29 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
+## Fourth tile-size command matching
+
+[Candidate driver](../tools/experiments/game_node_tile_candidates.py) fits
+`func_15031E7C`, complete C83/frame0, SDK Gfx/signed opcode scan and two-step
+factor, directly under existing O2/g3. Twelve source/profile controls / 960
+ordinary executions yield five raw exact forms; no guards or new data.
+
+[Seven tests](../tools/tests/test_game_node_tile_match.py) cover 13,152 guest /
+19,728 native32 cases, float threshold neighbors, fourth-match scan layouts,
+lazy/required/malformed-list faults, five aliases, effective negatives, 39 owner
+neighbors/pools and real padder/scale rebases. Local oracle extends signed-byte
+load support. Native opcode bytes are seeded for host endian, not full graphics
+runtime or FCSR/hardware/PC-port qualification.
+See [Note 1113](WORKING_NOTES/1113-game-fourth-tile-size-command-direct-match-20261008.md).
+
+```sh
+python3 -m tools.experiments.game_node_tile_candidates --profiles
+python3 -m unittest tools.tests.test_game_node_tile_match tools.tests.test_game_node_cleanup_match -v
+```
+
+Ignored receipts/checkpoint and next-dispatcher inventory:
+`conker/build/game-node-tile-test/`.
+
 ## Node cleanup dispatcher matching
 
 [Candidate driver](../tools/experiments/game_node_cleanup_candidates.py) fits
