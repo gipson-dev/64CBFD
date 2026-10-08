@@ -11143,3 +11143,5 @@ generated_5D2C0,func_15031FC8,0x4F8,0x100002F9,0x100002FA,-,-,Normalize closed a
 generated_5D2C0,func_15031FC8,0x500,0x100002F7,0x100002F8,-,-,Normalize closed attachment-selection scheduling and branch targets,,,false
 generated_5D2C0,func_15031FC8,0x504,0x24060002,0x24060002,-,-,Normalize closed attachment-selection scheduling and branch targets,0x8FAE0048,-,false
 generated_5D2C0,func_15031FC8,0xF20,0x14810005,0x14610005,-,-,Normalize closed attachment-selection scheduling and branch targets,,,false
+generated_5D2C0,func_15033BDC,0x108,0x00001025,0xAD0F0038,-,-,Normalize independent effect callback type-store and zero-return schedule,,,false
+generated_5D2C0,func_15033BDC,0x110,0xAD0F0038,0x00001025,-,-,Normalize independent effect callback type-store and zero-return schedule,,,false

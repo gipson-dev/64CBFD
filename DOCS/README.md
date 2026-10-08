@@ -18,6 +18,7 @@ do not compete with one another.
 | Resume the current decomp work | [Current status](CURRENT_STATUS.md) |
 | Work specifically in `conker/` | [Code sub-project](CODE_SUBPROJECT.md) |
 | Match or convert a function | [Contributor and byte-matching guide](CONTRIBUTING.md) |
+| Use Codex with selective Claude review | [Agent workflow](AGENT_WORKFLOW.md) and [handoff templates](AGENT_PROMPTS.md) |
 | Inspect the latest headline progress | [Update log](UPDATE_LOG.md) |
 
 New contributors should read the project overview first, then the contributor
@@ -53,7 +54,35 @@ confirmed.
 
 ## Planning and history
 
-- [Latest effect registration direct match](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md):
+- [Latest node group swap direct conversion and workflow](WORKING_NOTES/1125-game-node-group-swap-direct-conversion-20261008.md):
+  complete `func_15033EC4`, 18 words/frame0 directly exact; full32 comparisons,
+  byte swaps and captured-current/live-future links qualify. Eight post-install
+  tests pass in 48.169s; all bodies/data/guards unchanged, only the 72-byte conversion
+  changes. Focused gates/prior-receipt reuse, zero Claude calls. Graph refresh
+  incomplete; no commit/push. Next retained 8-word `func_151D8BE0` wrapper.
+- [Latest node group collector direct conversion](WORKING_NOTES/1124-game-node-group-collector-direct-conversion-20261008.md):
+  complete `func_15033E28`, 23 words/frame0 directly exact, converting retained
+  assembly rather than a placeholder. Per-node actor group and captured next
+  preserve aliased output behavior. All bodies/data/guards stay unchanged;
+  only the 92-byte conversion row changes. New baseline
+  `game-node-group-collector-test/after.json`; next local `func_15033EC4`,
+  retained assembly, 18 words/frame0. Mirrored tools changes uncommitted;
+  complete caller/runtime and wider Game work remain open.
+- [Previous effect callback scheduling match](WORKING_NOTES/1123-game-effect-callback-scheduling-match-20261008.md):
+  complete `func_15033BDC`, 137 words/frame0x40 byte-exact, 135 directly
+  emitted words and two independent scheduling guards. Actual Init callback
+  ABI, volume/type/audio lifecycle and state-before-call qualify. Only target
+  changes; data/conversions/prior guards intact. New baseline
+  `game-node-effect-callback-test/after.json`; next local `func_15033E28`,
+  retained assembly, 23 words/frame0. Mirrored tools changes uncommitted;
+  full callees/runtime and wider Game work remain open.
+- [Previous delayed effect direct match](WORKING_NOTES/1122-game-delayed-effect-direct-match-20261008.md):
+  complete `func_15033AD8`,65 words/frame0x40 directly exact. Proximity-before-
+  state, signed timer, twelve-word allocation and callback overwrite qualify.
+  Only target changes; data/guards/conversions intact. New baseline
+  `game-node-delayed-effect-test/after.json`; next local `func_15033BDC`.
+  Tools working changes mirrored but uncommitted; full callees/runtime open.
+- [Previous effect registration direct match](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md):
   complete `func_150339C8`, all 68 words/frame0x40 directly exact. Tile scroll
   precedes mode/freeze gates; callback handle observations, clearing and
   signed16 effect creation qualify with connected guest/native checks.

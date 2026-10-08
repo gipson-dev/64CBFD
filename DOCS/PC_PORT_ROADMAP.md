@@ -1,5 +1,80 @@
 # PC Port Roadmap located in another project folder
 
+## Workflow And Node Group Swap - 2026-10-08
+
+[Note 1125](WORKING_NOTES/1125-game-node-group-swap-direct-conversion-20261008.md):
+
+- [x] Install [Codex/Claude workflow](AGENT_WORKFLOW.md), four templates and agent pointers; routine work uses zero Claude calls.
+- [x] Convert complete `func_15033EC4`: 18 words/frame0 directly exact, full32 comparisons/low-byte writes and captured-current/live-future link behavior; no new guards/data/profile/filler.
+- [x] Pass all eight pre/post tests in 98.473s/48.169s, with 114,945 guest /16,951,557 native32 cases, ten faults, three aliases, seven negatives, 39 neighbors, six links and 50 actual caller-prefix/callee cases.
+- [x] Preserve all 6,058 linked bodies/addresses/extents/protected sections/data/11,146 guards; only the 72-byte conversion row changes. Record swap baseline; README aggregate rows only.
+- [x] Pass ten shared padder checks and tools/syntax/driver/profile/CLI checks; reuse unchanged broad-suite receipts explicitly, not as freshly rerun tests.
+- [ ] Resolve Graphify reduced-corpus refresh separately; do not force replace the old graph or undo user ignore changes.
+- [ ] Commit/publish when requested; preserve pre-existing mounted 35dd106 versus parent ddbdd16 tools-pin difference and unrelated changes.
+- [ ] Recover/convert next retained `func_151D8BE0`, 8-word wrapper, after verifying actual caller/return contract.
+- [ ] Continue wider Game/resolver/full caller/hardware/gameplay/PC-port qualification.
+
+## Game Node Group Collector Direct Conversion - 2026-10-08
+
+[Note 1124](WORKING_NOTES/1124-game-node-group-collector-direct-conversion-20261008.md):
+
+- [x] Convert complete `func_15033E28`, retaining captured head, per-node actor-group reload, next-pointer capture before aliased output stores and count-returned pointer append.
+- [x] Verify the retail actor/stack-output/count caller interface; leave complete caller/runtime acceptance separate.
+- [x] Emit all 23 words/frame0 directly under existing O2/g3, no guards, filler, data, profile or declaration changes; retain reference assembly.
+- [x] Qualify 69,633 guest /262,152 native32 cases, all byte pairs, match masks, two topologies/SP phases, all 23 words, thirteen faults, five aliases and seven effective negatives. Preserve finite mapped-list/native-endianness boundaries.
+- [x] Check 39 owner neighbors, normalized pools/relative relocations, actual padder and six independent entry/global links with eighteen executions.
+- [x] Rebuild/audit all 6,058 bodies/addresses/extents/protected sections/720 data owners/11,146 guards unchanged; only the 92-byte conversion record changes asm -> c. Record `game-node-group-collector-test/after.json`.
+- [x] Update README aggregates only: converted total 5,468, Game 4,795; exact total 3,379, Game 2,706, 2,089 different, zero drift. Detailed recovery stays in Note1124.
+- [x] Pass seven corrected pre-install tests in 57.702s; retain strict selected-body traces/faults while modeling alternate-profile private frames/read schedules separately.
+- [x] Pass all 61 combined post-install tests in 852.236s, then all eight strengthened collector tests in 88.381s, including six stack-output cases; 62 unique focused checks, zero skips/errors/failures. Ten shared padder tests/tools/syntax/driver/profile/CLI/whitespace pass; validate 107 documents /3,868 relative links, zero broken; all eight changed tools files byte-identical.
+- [ ] Commit/publish coherent tools changes, then update the decomp pin and commit source/docs when requested. Both local tools copies have uncommitted changes; no publication claimed.
+- [x] Convert `func_15033EC4` directly in [Note 1125](WORKING_NOTES/1125-game-node-group-swap-direct-conversion-20261008.md), preserving full32 comparisons, low-byte writes and captured-current/live-future link lifetime.
+- [ ] Continue wider Game/resolver/full caller/hardware/gameplay/PC-port qualification.
+
+Resume from `game-node-group-collector-test/after.json`; original assembly was
+already exact, so this adds C conversion without changing linked routine bytes.
+
+## Game Effect Callback Scheduling Match - 2026-10-08
+
+[Note 1123](WORKING_NOTES/1123-game-effect-callback-scheduling-match-20261008.md):
+
+- [x] Recover complete `func_15033BDC` and the actual seven-pointer Init callback ABI; distinguish third-argument volume from unused value/pan/cents/fx pointees.
+- [x] Preserve interleaved coordinate copies, low16 cached type, RNG/play/stop behavior, state-before-allocation, private-home reloads and halfword output/handle lifetime.
+- [x] Emit 137 words/frame0x40 under existing O2/g3; 135 directly exact words and exactly two independent scheduling guards, no filler/insertion/omission/data/profile changes.
+- [x] Qualify 12,352 guest /524,288 native32 cases, all selectors, type/counter boundaries, all u16 results/signed16 X observed, callbacks, twenty faults, three aliases and eleven effective negatives. Preserve FP/FCSR/native-range boundaries.
+- [x] Check 39 owner neighbors, normalized pools/relative relocations, actual padder and seven independent entry/symbol links, including one signed-LO carry. Reject stale words/relocations.
+- [x] Rebuild/audit 6,058 symbols: only target changes; all addresses/extents/protected sections/720 data owners/conversions and 11,144 prior guards unchanged; exactly two rows appended (11,146). Record `game-node-effect-callback-test/after.json`.
+- [x] Update README aggregates only: total 3,378, Game 2,705, 2,089 different, zero drift. Detailed recovery stays in Note1123.
+- [x] Correct stack-overlapping guest buffers and undersized native attachment fixture; seven pre-install tests pass in 96.442s without changing the production body or weakening comparisons.
+- [x] Pass all 54 post-install neighboring-function tests in 439.695s, zero skips/errors/failures; ten shared padder tests/tools/syntax/driver/profile/CLI/whitespace checks pass. Validate 106 documents /3,856 relative links, zero broken; all six changed tools files byte-identical in both copies.
+- [ ] Commit/publish the coherent tools changes, then update the decomp pin and commit source/docs when requested. Both local tools copies have uncommitted changes; no publication claimed.
+- [x] Convert/match `func_15033E28` directly in [Note 1124](WORKING_NOTES/1124-game-node-group-collector-direct-conversion-20261008.md), preserving repeated group reads and captured traversal pointer.
+- [ ] Continue wider Game/resolver/full callee/FP/FCSR/hardware/gameplay/PC-port qualification.
+
+Resume from `game-node-effect-callback-test/after.json`; controlled sound,
+allocator and dispatcher interfaces do not qualify complete original callees.
+This is a guard-normalized match, not a direct compiler-only match.
+
+## Game Delayed Effect Direct Match - 2026-10-08
+
+[Note 1122](WORKING_NOTES/1122-game-delayed-effect-direct-match-20261008.md):
+
+- [x] Recover complete `func_15033AD8`: optional proximity-before-state, signed timer/step, twelve-word effect0x513 allocation, returned handle then state store, including zero result.
+- [x] Preserve saved node/actor pointers, live callback mutations, lazy reads and symbolic call/global/callback relocations.
+- [x] Emit all65 words/frame0x40 directly under existing O2/g3, no guards, filler, data or profile changes.
+- [x] Qualify10,360 guest/524,288 native32 cases; all65 words,256 flag bytes, thresholds/wrap, all u16 results/signed16 X observed, callbacks/faults/aliases/ten negatives. Bound native/alternate-profile conversion and overflow claims.
+- [x] Check39 owner neighbors, normalized pools/relative relocations, real padder and seven independent entry/symbol links, including three signed-LO carry cases.
+- [x] Rebuild/audit6,058 symbols: only target changes; all addresses/extents/protected sections/720 data owners/11,144 guards/conversions unchanged. Record `game-node-delayed-effect-test/after.json`.
+- [x] Update README aggregates only: total3,377,Game2,704,2,090 different,zero drift. Detailed recovery stays in Note1122.
+- [x] Preserve the allocator prototype shared with the new caller in the previous effect-registration stub-owner fixture, retaining strict comparisons.
+- [x] Pass all47 post-install focused tests in544.431s, zero skips/errors/failures, plus ten shared padder tests/tools/syntax/driver/profile/CLI/whitespace. Validate105 documents/3,844 relative links, zero broken; both tools copies byte-identical.
+- [ ] Commit/publish the coherent tools changes, then update the decomp tools pin and commit the source/docs when requested. Both local tools copies contain the same uncommitted changes.
+- [x] Recover/match `func_15033BDC` with its verified Init callback ABI and two scheduling guards in [Note 1123](WORKING_NOTES/1123-game-effect-callback-scheduling-match-20261008.md).
+- [ ] Continue wider Game/resolver/full callee/hardware/gameplay/PC-port qualification.
+
+Resume from `game-node-delayed-effect-test/after.json`; modeled proximity and
+allocator callbacks do not qualify the complete original callee bodies.
+
 ## Game Effect Registration Direct Match - 2026-10-08
 
 [Note 1121](WORKING_NOTES/1121-game-effect-registration-direct-match-20261008.md):
@@ -13,7 +88,7 @@
 - [x] Update README aggregates only: total 3,376, Game 2,703, 2,091 different, zero drift. Detailed recovery stays in Note1121.
 - [x] Preserve shared callback/unregister prototypes in the cleanup stub-owner fixture, retaining all strict comparisons. Pass all 37 post-install focused tests in221.412s, zero skips/errors/failures.
 - [x] Pass ten shared padder tests/tools/syntax/driver/profile/CLI/whitespace; validate 103 documents/4,200 relative links, zero broken; bank the coherent recovery.
-- [ ] Recover next local `func_15033AD8`, 65 words/frame0x40, timer-gated effect creation. Static inventory only.
+- [x] Recover/match `func_15033AD8` directly in [Note 1122](WORKING_NOTES/1122-game-delayed-effect-direct-match-20261008.md).
 - [ ] Continue wider Game/resolver/full callee/hardware/gameplay/PC-port qualification.
 
 Resume from `game-node-effect-registration-test/after.json`; actual tile-scroll

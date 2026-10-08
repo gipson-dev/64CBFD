@@ -1,4 +1,9 @@
 #include <ultra64.h>
+s32 func_150ADA20(void);
+u16 func_10010FFC(s32, s32, u16, s16, u8, void *);
+void func_100111C8(u16);
+extern u8 D_800BE616;
+void func_1508B20C(f32, f32, f32, f32);
 extern u8 D_800BEA0C;
 u16 func_1000FA64(u16, s16, s16, s16, s32, u16, s16, s32, void *, s32, s32, s32);
 void func_151026BC(u8 *, s32, s32, s32, s32, s32);
@@ -1287,12 +1292,76 @@ s32 func_150339C8(u8 *node, u8 *actor) {
     return 0;
 }
 
-s32 func_15033AD8() {
+s32 func_15033AD8(u8 *node, u8 *actor) {
+    if (D_800BE616 != 0) {
+        func_1508B20C(*(f32 *)(actor + 0x14), *(f32 *)(actor + 0x18),
+            *(f32 *)(actor + 0x1C), 900.0f);
+    }
+    if (*(s32 *)(node + 0x38) == 0) {
+        if (*(s32 *)(node + 0x3C) < 30) {
+            *(s32 *)(node + 0x3C) += D_800BE9E4;
+        } else {
+            *(s32 *)(node + 0x3C) = func_1000FA64(0x513,
+                (s16)*(f32 *)(actor + 0x14), (s16)*(f32 *)(actor + 0x18),
+                (s16)*(f32 *)(actor + 0x1C), 32000, 1000, 500,
+                (s32)func_15033BDC, node, (s32)actor, 0, 0);
+            *(s32 *)(node + 0x38) = 0x513;
+        }
+    }
     return 0;
 }
 
-s32 func_15033BDC() {
-    return 0;
+s32 func_15033BDC(u8 *packet, s32 *value, s32 *volume, s32 *pan,
+    s32 *cents, s32 *fx, u16 *sound) {
+    u8 *node;
+    u8 *actor;
+    u8 *state;
+    s32 soundId;
+    s32 cached;
+
+    node = *(u8 **)(packet + 0x18);
+    actor = *(u8 **)(packet + 0x1C);
+    if ((node != 0) && (actor != 0) && (*(s32 *)actor != 0)) {
+        *(s16 *)(packet + 2) = (s16)*(f32 *)(actor + 0x14);
+        *(s16 *)(packet + 4) = (s16)*(f32 *)(actor + 0x18);
+        *(s16 *)(packet + 6) = (s16)*(f32 *)(actor + 0x1C);
+        if (*volume != 0) {
+            if (node[1] == 0x37) {
+                cached = *(s32 *)(node + 0x38);
+                soundId = -1;
+                if ((cached & 0xFFFF) != *(u16 *)(actor + 0x84)) {
+                    if (*(u16 *)(actor + 0x84) == 0x15F) {
+                        soundId = (func_150ADA20() & 3) + 0x444;
+                    }
+                }
+                if (soundId != -1) {
+                    func_10010FFC(0, soundId, 24000, 0, 0, actor);
+                }
+                *(s32 *)(node + 0x38) = *(u16 *)(actor + 0x84);
+                return 0;
+            } else {
+                state = *(u8 **)(actor + 0x31C);
+                if ((state != 0) && (*(u16 *)(state + 0x19C) < 120) &&
+                    (*(s32 *)(node + 0x38) == 0x513)) {
+                    *(s32 *)(node + 0x38) = 0x3A1;
+                    *(s32 *)(node + 0x3C) = func_1000FA64(0x3A1,
+                        (s16)*(f32 *)(actor + 0x14), (s16)*(f32 *)(actor + 0x18),
+                        (s16)*(f32 *)(actor + 0x1C), 32000, 1000, 500,
+                        (s32)func_15033BDC, node, (s32)actor, 0, 0);
+                    return 1;
+                }
+                return 0;
+            }
+        } else if (node[1] == 0x37) {
+            if (*(u16 *)(packet + 0x24) != 0) {
+                func_100111C8(*(u16 *)(packet + 0x24));
+                *(u16 *)(packet + 0x24) = 0;
+            }
+            *sound = 0;
+            return 0;
+        }
+    }
+    return 1;
 }
 
 s32 func_15033E00(s32 arg0, u8 *arg1) {
@@ -1302,7 +1371,25 @@ s32 func_15033E00(s32 arg0, u8 *arg1) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_5D2C0/func_15033E28.s")
+s32 func_15033E28(u8 *actor, u8 **output) {
+    u8 *node;
+    u8 *next;
+    s32 count;
+
+    next = D_800C3EE0;
+    count = 0;
+    if (next == 0) {
+        return 0;
+    }
+    for (node = next; node != 0; node = next) {
+        next = *(u8 **)(node + 0x54);
+        if (actor[0x3B] == node[0]) {
+            output[count] = node;
+            count++;
+        }
+    }
+    return count;
+}
 
 s32 func_15033E84(u8 *arg0) {
     u8 *node = D_800C3EE0;
@@ -1322,7 +1409,25 @@ s32 func_15033E84(u8 *arg0) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_5D2C0/func_15033EC4.s")
+void func_15033EC4(s32 first, s32 second) {
+    u8 *node;
+    u8 *next;
+    s32 group;
+    s32 firstKey;
+
+    firstKey = first;
+    node = D_800C3EE0;
+    while (node != 0) {
+        next = *(u8 **)(node + 0x54);
+        group = node[0];
+        if (firstKey == group) {
+            node[0] = second;
+        } else if (second == group) {
+            node[0] = firstKey;
+        }
+        node = next;
+    }
+}
 
 s32 func_15033F0C(u8 *arg0, u8 *arg1) {
     u8 *ptr;
