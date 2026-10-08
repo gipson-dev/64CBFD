@@ -1,5 +1,26 @@
 # Update Log
 
+## 2026-10-08 Game Attachment Selection Lifetime And Table Binding
+
+[Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md):
+Improve complete `func_15031FC8` from C1147/frame0x38/394 differences to
+C1148/frame0x38/349 by explicit reset/no-reset attachment assignment. A3 tail
+and pre-reset argument lifetime recover; original frame0x48/private homes and
+opening/nested model schedule remain open. Retain prior form as control,336
+ordinary executions and five effective negatives. Four new binding tests
+qualify14 experimental rows/seven original physical symbols through the real
+padder,56 independent links,six stale failures,two effective negatives and39
+postprocessed neighbors/past useful pools. No production CSV/data/owner/profile
+or README changes. Original target PCs are590/674 exact;84 entries are one
+word late, explicitly rejecting current original-table compatibility.
+All6,058 installed symbols/sections/data/guards/conversion
+hash unchanged. Table-address qualification is not original jump-target PC
+fit or installation; continue this dispatcher before promoting experimental rows.
+All34 recovery/binding/installed tile-cleanup-action regressions pass in578.223s;
+ten padder tests pass in0.044s. Tools/syntax/CLI/whitespace and97-document /
+4,115-relative-link checks pass, zero broken links. Full callee/FCSR/hardware/
+PC-port acceptance remains open.
+
 ## 2026-10-08 Game Attachment Selection Dispatcher Recovery
 
 [Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md):

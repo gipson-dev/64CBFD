@@ -15,6 +15,8 @@ from tools.tests.game_owner_pool import normalized_pools
 
 ENTRY, ROM, WORDS = 0x15031FC8, 0x5F478, 1148
 FUNCTION, TABLE = 'func_15031FC8', 0x800970E0
+TABLE_LAYOUT = ((0x800970E0, 35), (0x8009716C, 43), (0x80097218, 29),
+    (0x8009728C, 16), (0x800972CC, 463), (0x80097A08, 78), (0x80097B40, 10))
 STUB = 's32 func_15031FC8() {\n    return 0;\n}'
 SYMBOLS = {'func_1503F5B8': 0x1503F5B8, 'func_1505E060': 0x1505E060,
     'D_800902D0': 0x800902D0, 'D_800902D4': 0x800902D4}
@@ -88,7 +90,7 @@ def choice_cases(pairs, indent):
     return '\n'.join(result)
 
 
-SELECTED = '''s32 func_15031FC8(u8 *node, u8 *actor) {
+BASELINE = '''s32 func_15031FC8(u8 *node, u8 *actor) {
     u8 *source;
     u8 *attachment;
     u8 *initial;
@@ -369,6 +371,12 @@ SELECTED = '''s32 func_15031FC8(u8 *node, u8 *actor) {
     '@JOINT@', choice_cases(JOINT_CHOICES, '                                ')).replace(
     '@BROAD@', choice_cases(BROAD_CHOICES, '                        '))
 
+# Explicitly initialize the shared attachment on both sides of the reset branch.
+SELECTED = BASELINE.replace('    u8 *initial;\n', '').replace('initial', 'attachment').replace(
+    '            attachment = *(u8 **)(node + 0x48);\n        }\n        *(f32 *)',
+    '            attachment = *(u8 **)(node + 0x48);\n        } else {\n'
+    '            attachment = *(u8 **)(node + 0x48);\n        }\n        *(f32 *)')
+
 
 def compile_candidate(root, out, name, body=SELECTED, profile='o2g3'):
     out.mkdir(exist_ok=True)
@@ -402,14 +410,15 @@ def compile_candidate(root, out, name, body=SELECTED, profile='o2g3'):
 
 
 def candidates():
-    yield 'shared-initial-pointer', SELECTED.replace('    u8 *initial;\n', '').replace('initial', 'attachment')
+    yield 'previous-lifetime', BASELINE
+    yield 'shared-initial-pointer', BASELINE.replace('    u8 *initial;\n', '').replace('initial', 'attachment')
     yield 'literal-low-mask', SELECTED.replace('& ~0x8000', '& 0x7FFF')
     yield 'register-locals', SELECTED.replace('    s32 ', '    register s32 ').replace('    u8 *', '    register u8 *')
     yield 'negative-missing-choice', SELECTED.replace('case 0x34D: choice = 0xF0;', 'case 0x34D: choice = 0xEF;')
     yield 'negative-always-copy-state', SELECTED.replace('                    copy_state = 0;', '                    copy_state = 1;')
     yield 'negative-skip-reset', SELECTED.replace('choice == old_flags &&', 'choice != old_flags &&')
     yield 'negative-strict-clamp', SELECTED.replace('if (limit <=', 'if (limit <')
-    yield 'negative-no-postsetup-reload', SELECTED.replace('attachment = *(u8 **)(node + 0x48);\n        if (choice',
+    yield 'negative-no-postsetup-reload', BASELINE.replace('attachment = *(u8 **)(node + 0x48);\n        if (choice',
         'attachment = initial;\n        if (choice')
 
 
@@ -465,6 +474,49 @@ def measure_owner(root, out):
         old_raw_pool_sha256=hashlib.sha256(old_pool['.rodata'][0]).hexdigest(),
         new_raw_pool_sha256=hashlib.sha256(new_pool['.rodata'][0]).hexdigest(), table_loads=table_loads,
         original_first_table_owner_offset=416, fixed_anchor_binding_not_installed=True)
+
+
+def table_binding_guards(object_path):
+    """Generate checked symbolic table bindings for a measured complete owner."""
+    text, functions, relocations = parse_object(object_path)
+    target = functions[FUNCTION]
+    start, end = target['value'], target['value']+target['size']
+    identities = normalized_pools(object_path)['.rodata'][1]
+    owner_offsets = {offset for offset, name, _ in identities if name == FUNCTION}
+    if owner_offsets != set(range(412, 412+674*4, 4)):
+        raise ValueError('attachment-selection table ownership changed')
+    pool_offsets, offset = {}, 412
+    for address, entries in TABLE_LAYOUT:
+        pool_offsets[offset] = 'jtbl_%08X_game' % address
+        offset += entries*4
+    bindings = []
+    used = set()
+    for location, relocs in sorted(relocations.items()):
+        if not start <= location < end or relocs != [('R_MIPS_LO16', '.rodata')]:
+            continue
+        word = struct.unpack_from('>I', text, location)[0]
+        addend = word&65535
+        hi = location-8
+        if addend not in pool_offsets or addend in used:
+            raise ValueError('attachment-selection table addend changed')
+        if relocations.get(hi) != [('R_MIPS_HI16', '.rodata')]:
+            raise ValueError('attachment-selection table HI/LO pair changed')
+        high, index = struct.unpack_from('>II', text, hi)
+        cursor = word>>16&31
+        expected_index = 0x00200821 | cursor<<16
+        if high != 0x3C010000 or word&0xFFE00000 != 0x8C200000 or index != expected_index:
+            raise ValueError('attachment-selection table address topology changed')
+        used.add(addend)
+        symbol = pool_offsets[addend]
+        for address, value, relocation in ((hi, high, 'R_MIPS_HI16'), (location, word, 'R_MIPS_LO16')):
+            bindings.append(dict(filename='generated_5D2C0', function=FUNCTION, offset='0x%X' % (address-start),
+                expected='0x%08X' % value, replacement='0x%08X' % (value&0xFFFF0000),
+                expected_relocations=relocation+':.rodata', replacement_relocations=relocation+':'+symbol,
+                note='Bind attachment-selection table to original physical symbol', insert_after='',
+                insert_after_relocations='', omit='false'))
+    if used != pool_offsets.keys() or len(bindings) != 14:
+        raise ValueError('attachment-selection table bindings incomplete')
+    return bindings
 
 
 def main():

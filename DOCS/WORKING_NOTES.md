@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-08 ([Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md)):
+Continue complete `func_15031FC8`: selected C1148/frame0x38/349 differences,
+down45 from prior fit, original A3 tail restored. Frame0x48/private homes and
+early model-copy schedule remain open. Four binding tests qualify seven physical
+symbols with14 experimental rows,56 rebases,six stale controls,two effective
+negatives and39 postprocessed owner neighbors/past useful pools. Retain prior
+source control;336 ordinary executions and five negatives pass. Correct table
+addresses do not prove original target-PC fit:590/674 exact,84 one word late.
+All6,058 installed symbols/data/
+sections/11,063 guards/conversion hash unchanged; production stub and README
+intact. Continue this dispatcher before installation; authoritative baseline
+stays `game-node-tile-test/after.json`.
+All34 recovery/binding/installed regressions pass in578.223s; ten padder tests
+in0.044s. Tools/syntax/CLI/whitespace and97-document /4,115-relative-link checks
+pass, zero broken links; no full callee/FCSR/hardware/PC-port acceptance claim.
+
 2026-10-08 ([Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md)):
 Recover complete experiment-only `func_15031FC8`, selected C1147/frame0x38/
 394 differences against retail1148/frame0x48. Seven tables/674 keys, all model/

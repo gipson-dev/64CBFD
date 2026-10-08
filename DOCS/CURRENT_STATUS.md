@@ -22,6 +22,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery work:
+[Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md).
+Complete experiment-only `func_15031FC8` improves to C1148/frame0x38/349
+differences, down from394, recovering retail's A3 tail attachment lifetime.
+Four binding tests pass:14 experimental rows qualify seven physical table
+addresses across the scalar gap,56 rebases,six stale controls,two effective
+negatives and39 fully postprocessed owner neighbors. No generated data,
+padding/insertion/omission, production CSV or README changes. Frame0x48,
+private homes/scheduling and original table-target PC fit remain open; correct
+table bases alone do not qualify installation. Target PCs are590/674 exact;
+the other84 entries are one word late in C. All6,058 installed symbols,
+protected sections/data/11,063 guards/conversion hash remain unchanged against
+`game-node-tile-test/after.json`. Continue this dispatcher before installation.
+All34 recovery/binding/installed tile-cleanup-action tests pass in578.223s;
+ten padder/word-patch regressions pass in0.044s. Tools/syntax/CLI/whitespace
+and97-document /4,115-relative-link checks pass, zero broken links. Defined
+effects qualify; full callee/FCSR/hardware/PC-port boundaries remain open.
+
+Previous Game recovery work:
 [Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md).
 Complete semantic `func_15031FC8` candidate is retained in experiments, not
 installed. Selected C1147/frame0x38 has394 differences against retail1148/

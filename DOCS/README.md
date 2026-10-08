@@ -51,7 +51,13 @@ confirmed.
 
 ## Planning and history
 
-- [Latest attachment selection dispatcher recovery](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md):
+- [Latest attachment selection lifetime and table binding](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md):
+  complete experimental C1148/frame0x38/349 differences, A3 tail recovered.
+  Seven original table addresses qualify with14 experimental rows, real padder,
+  56 rebases and stale/effective controls;39 postprocessed neighbors unchanged.
+  Frame/private scheduling and original target-PC compatibility still block
+  installation. Production/README counts unchanged.
+- [Previous attachment selection dispatcher recovery](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md):
   complete qualified experiment-only C1147/frame0x38/394 differences; all model/
   action/type routes, callbacks/state/clamp, guest/native/fault/alias qualification.
   Owner measurement confirms the scalar gap. Production and aggregate counts

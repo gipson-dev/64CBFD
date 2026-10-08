@@ -10,8 +10,10 @@ says otherwise.
 retains the complete semantic `func_15031FC8` without installing it. Explicit
 case/value lists cover the seven retail tables and sparse type branches.
 Four profiles and source controls measure body size, frame, raw differences,
-relocations and actual copied-owner pools. Selected O2/g3 is C1147/frame0x38/
-394 differences, not retail1148/frame0x48. Thirty-nine neighbors remain intact;
+relocations and actual copied-owner pools. Selected O2/g3 is C1148/frame0x38/
+349 differences, not retail1148/frame0x48. Explicit reset/no-reset assignments
+recover A3's attachment lifetime; the prior C1147/394 form remains a control.
+Thirty-nine neighbors remain intact;
 the seven new tables pack four bytes before their original physical offsets.
 
 [Nine tests](../tools/tests/test_game_node_selection_recovery.py) independently
@@ -22,16 +24,28 @@ original table keys and 1,125 retail words execute. Defined return/call/public
 trace/object memory qualify; private frame, incidental GP/FP, full FCSR/callees/
 hardware/PC-port do not. Existing installed placeholder and guards are checked.
 
+[Four binding tests](../tools/tests/test_game_node_selection_binding.py) use
+`table_binding_guards()` to check exact owner extent/addends/HI-LO/topology and
+generate14 experimental address-only expected-word/relocation rows. The real
+padder binds seven original symbols across the scalar gap without new data,
+padding/insertion/omission or shared-tool changes. Qualification includes56
+independent carry/entry links,six stale controls,two effective negatives and39
+fully postprocessed neighbor bodies/relocations/past useful pools. Rows stay
+in ignored CSVs, not production. Original table jump-target PC compatibility
+with the C body is a separate, still-open installation gate.
+The same tests measure590/674 exact original label PCs;84 entries are one
+word late, so current original-target compatibility is explicitly rejected.
+
 ```sh
 python3 -m tools.experiments.game_node_selection_candidates --owner --controls
-python3 -m unittest tools.tests.test_game_node_selection_recovery -v
+python3 -m unittest tools.tests.test_game_node_selection_recovery tools.tests.test_game_node_selection_binding -v
 ```
 
 Ignored receipts are in `conker/build/game-node-selection/` and
-`conker/build/game-node-selection-test/`. Installed baseline stays
+`conker/build/game-node-selection-test/` and `conker/build/game-node-selection-binding-test/`. Installed baseline stays
 `conker/build/game-node-tile-test/after.json`. Continue frame/scheduling and
-original scalar-gap table binding from
-[Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md).
+original table-target PC fit from
+[Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md).
 
 ## Fourth tile-size command matching
 

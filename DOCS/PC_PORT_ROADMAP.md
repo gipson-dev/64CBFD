@@ -1,5 +1,23 @@
 # PC Port Roadmap located in another project folder
 
+## Game Attachment Selection Lifetime And Table Binding - 2026-10-08
+
+[Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md):
+
+- [x] Improve the complete `func_15031FC8` candidate to C1148/frame0x38/349 differences, down45; recover A3 tail attachment and pre-reset argument lifetime without padding or forced instructions.
+- [x] Retain the previous C1147/394 form as a qualified control; pass callback/float, fault-prefix, owner, alias, native and336 ordinary control executions plus five effective negatives.
+- [x] Qualify seven original physical table addresses across the scalar gap using14 experimental expected-word/relocation rows through the existing padder. Preserve all data and production guards.
+- [x] Pass four binding tests:56 independent links/carry rebases,six rejected stale controls,two effective binding negatives,39 postprocessed neighbor bodies/relocations and existing useful pools unchanged.
+- [x] Measure original target-PC fit:590/674 entries exact,84 one word late. Reject installation until original target compatibility qualifies.
+- [x] Audit all6,058 installed symbols, protected sections,720 Game-data owners,11,063 guards and conversion hash unchanged. Keep production stub and README aggregates unchanged.
+- [x] Pass all34 combined recovery/binding/installed regressions in578.223s and ten padder tests in0.044s, zero skips/errors/failures; tools/syntax/CLI/whitespace and97-document /4,115-relative-link checks pass, zero broken links. Bank this experiment-only checkpoint.
+- [ ] Recover original frame0x48/private homes and opening/nested-model scheduling; match the remaining349 words.
+- [ ] Qualify original table jump-target PCs against emitted C labels before promoting binding rows or installing the candidate.
+- [ ] Continue wider Game matching; full callee/FCSR/hardware/PC-port boundaries remain open.
+
+Resume from the complete selected candidate and `game-node-selection-binding-test`.
+Installed baseline remains `game-node-tile-test/after.json`; no new aggregate credit.
+
 ## Game Attachment Selection Recovery - 2026-10-08
 
 [Note 1114](WORKING_NOTES/1114-game-attachment-selection-dispatcher-recovery-20261008.md):
@@ -11,7 +29,7 @@
 - [x] Preserve all6,058 installed symbol bodies/addresses/extents, sections,720 Game-data owners,11,063 guards and conversion hash. Keep root README counts/history unchanged.
 - [x] Pass nine recovery tests across targeted runs and all21 installed tile/cleanup/action regressions; bank the experiment-only recovery and measured handoff.
 - [ ] Match this dispatcher's original1148-word body/frame0x48/private homes and register/scheduling lifetimes without dummy padding or broad guards.
-- [ ] Qualify physical table binding across D_800970DC's four-byte gap, actual padder and independent relocations/rebases before installation.
+- [x] Qualify physical table addresses across D_800970DC's four-byte gap, actual padder and independent relocations/rebases in [Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md). Original target-PC fit and installation remain open.
 - [ ] Continue remaining Game matching; full callee/FCSR/hardware/PC-port boundaries remain open.
 
 Candidate/receipts: `game-node-selection` and `game-node-selection-test`.

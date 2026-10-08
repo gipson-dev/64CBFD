@@ -318,7 +318,7 @@ class GameNodeSelectionRecoveryTests(unittest.TestCase):
                 for model, command, actor_type in itertools.product((0, 0x58, 0x5A, 0x87, 0x8B, 0x99, 0xB5),
                         (0x8F, 0x9B, 0x9A, 0x9E), (0, 0x13, 0x34D)):
                     self.compare(fixture(model, command, actor_type), compiled=(words, pool), ordered=False)
-        self.receipt('controls', dict(records=records, ordinary_control_executions=252, effective_negatives=5))
+        self.receipt('controls', dict(records=records, ordinary_control_executions=336, effective_negatives=5))
 
     def test_08_actual_native32_C_route_effects_callbacks_and_object_snapshots(self):
         specs = [(m, 0x9B, 0x13, 0, 0) for m in range(256)]
