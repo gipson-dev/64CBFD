@@ -78,7 +78,7 @@ s32 func_15030F94() {
     return 0;
 }
 
-/* Complete non-matching recovery; byte-match boundary in Working Note 1106. */
+/* Complete non-matching recovery; byte-match boundary in Working Note 1107. */
 s32 func_15031070(u8 *node, u8 *actor, Mtx **primary, Mtx **secondary) {
     u8 *attachment;
     u8 *parent;
@@ -92,7 +92,7 @@ s32 func_15031070(u8 *node, u8 *actor, Mtx **primary, Mtx **secondary) {
         *secondary = ((Mtx **)(*(u8 **)(node + 0x48) + 0x3E0))[D_800BE9C0];
     } else if (*(u8 **)(node + 0x34) != 0) {
         *primary = *(Mtx **)(node + 0x34) + D_800BE9C0;
-        *secondary = *(Mtx **)(actor + 0x1D4) + node[2];
+        *secondary = node[2] + *(Mtx **)(actor + 0x1D4);
     } else if (*(u16 *)(node + 0x1E) != 0) {
         parent = (u8 *)func_1503195C(actor, *(u16 *)(node + 0x1E), 0);
         if (parent == 0) {

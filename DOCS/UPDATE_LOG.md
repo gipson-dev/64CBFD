@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-07 Game Matrix-Pair Bank Phase And Key-Lifetime Fit
+
+[Note 1107](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md):
+Place the node slot first in the secondary matrix-pointer addition. Four target
+words now emit directly as retail, closing the node-bank GP phase without new
+guards, production types or profile changes. Complete C84/frame `0x20` remains
+one word short; raw differences improve from 44 to 40, not a new byte match.
+86 new source/lookup/flow controls qualify 2,752 ordinary executions, 155 total
+forms, none exact. Eleven pre-install alias/home/lazy/native/owner/padder/
+actual-wrapper tests pass in 81.271 seconds. The linked audit changes only four
+target words, preserving all other symbols/slots/overflows/sections/data/guards/
+relocations/conversion hash and README totals. Continue the V0 key/argument-move
+source fit before independent recursive return/store schedule normalization.
+All 51 combined tests pass in 577.143 seconds, zero skips/errors/failures;
+tools/syntax/CLI/whitespace and 89-document / 4,025-relative-link checks pass,
+zero broken links. Six isolated argument-view probes remain C84/40; they do
+not extend the 86-form ordinary qualification claim.
+
 ## 2026-10-07 Game Matrix-Pair Resolver Semantic Recovery
 
 [Note 1106](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md):

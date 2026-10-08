@@ -329,7 +329,7 @@ class GameMatrixPairResolverRecoveryTests(unittest.TestCase):
             measurements=records, four_effective_public_output_negatives=differences,
             aliases_homes_and_faults_not_claimed_for_all_controls=True))
 
-    def test_native_32bit_complete_recursive_C_valid_objects_and_output_aliases(self):
+    def qualify_native_candidate(self, candidate):
         self.fixture = r'''typedef unsigned char u8;typedef unsigned short u16;
 typedef int s32;typedef unsigned int u32;
 typedef union {u32 words[16];unsigned long long alignment;} Mtx;
@@ -407,7 +407,7 @@ static void arguments(int alias,Mtx ***primary,Mtx ***secondary){
     if(alias==2)*primary=(Mtx **)(nodes[0].bytes+0x48);
     if(alias==3)*primary=(Mtx **)(actor.bytes+0x1D4);
 }
-''' + screen.SELECTED + '\n'
+''' + candidate + '\n'
         self.run_host(r'''
 int kind,page,s,o,alias,pattern,want,expectedCalls,actual;Mtx **primary,**secondary;
 static int slots[4]={0,1,2,255},offsets[3]={0,1,127};
@@ -433,14 +433,19 @@ if(func_15031070(nodes[0].bytes,actor.bytes,0,0)||calls!=1||error)return 5;
             valid_matrix_objects=True, lookup='bounded validating native callback',
             guest_wrapping_and_private_home_mutations_not_claimed=True))
 
-    def qualify_owner(self):
+    def test_native_32bit_complete_recursive_C_valid_objects_and_output_aliases(self):
+        self.qualify_native_candidate(screen.SELECTED)
+
+    def qualify_owner(self, candidate=screen.SELECTED):
         source = (self.root / 'conker/src/game/generated_5D2C0.c').read_text()
         stub = 's32 func_15031070() {\n    return 0;\n}'
         if stub not in source:
-            self.assertEqual(source.count(screen.SELECTED), 1)
-            source = source.replace(screen.SELECTED, stub).replace('extern u8 D_800BE9C0;\n', '', 1)
+            from tools.experiments import game_matrix_pair_resolver_key_candidates as key
+            installed = key.SELECTED if key.SELECTED in source else screen.SELECTED
+            self.assertEqual(source.count(installed), 1)
+            source = source.replace(installed, stub).replace('extern u8 D_800BE9C0;\n', '', 1)
         self.assertEqual(source.count(stub), 1)
-        selected = source.replace(stub, screen.SELECTED).replace('#include <ultra64.h>\n',
+        selected = source.replace(stub, candidate).replace('#include <ultra64.h>\n',
             '#include <ultra64.h>\nextern u8 D_800BE9C0;\n', 1)
         objects, warnings = [], []
         for name, body in (('baseline', source), ('selected', selected)):
@@ -577,9 +582,12 @@ if(func_15031070(nodes[0].bytes,actor.bytes,0,0)||calls!=1||error)return 5;
         source = (self.root / 'conker/src/game/generated_5D2C0.c').read_text()
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'),
             'mips-linux-gnu-objdump')
-        installed = screen.SELECTED in source
-        self.assertEqual(source.count(screen.SELECTED), int(installed))
-        expected = self.words+[0] if installed else [0x00001025, 0x03E00008, 0]+[0]*82
+        from tools.experiments import game_matrix_pair_resolver_key_candidates as key
+        installed = screen.SELECTED in source or key.SELECTED in source
+        body = key.SELECTED if key.SELECTED in source else screen.SELECTED
+        self.assertEqual(source.count(body), int(installed))
+        _, expected = screen.compile_candidate(self.root, self.out, 'installed-current', body)
+        expected = expected+[0] if installed else [0x00001025, 0x03E00008, 0]+[0]*82
         self.assertEqual((addresses[screen.FUNCTION], functions[screen.FUNCTION]), (screen.ENTRY, expected))
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))

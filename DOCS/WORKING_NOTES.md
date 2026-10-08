@@ -1,5 +1,21 @@
 # Working Notes
 
+2026-10-07 ([Note 1107](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md)):
+Install the one-expression slot-first matrix addition for `func_15031070`:
+four target words directly equal retail, node-bank GP cycle recovered without
+guards or production structs. Complete C84/frame `0x20` improves from 44 to 40
+differences but remains one meaningful word short. 86 new controls / 2,752
+ordinary executions, 155 total forms, none raw exact; all eleven pre-install
+alias/home/lazy/native/owner/padder/actual-wrapper tests pass in 81.271 seconds.
+Only four target words change in the linked audit; other slots/overflows/sections/
+720 data owners/11,063 guards/relocations/conversion hash/README totals intact.
+Resume the V0 key move before return/store schedule guards, not bulk word patches.
+New ignored checkpoint `game-matrix-pair-key-test/after.json`.
+All 51 combined tests pass in 577.143 seconds, zero skips/errors/failures;
+tools/syntax/CLI/whitespace and 89-document / 4,025-relative-link checks pass,
+zero broken links. Six separate argument-view probes also remain C84/40,
+not additional ordinarily qualified controls.
+
 2026-10-07 ([Note 1106](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md)):
 Install complete recursive matrix-pair resolver `func_15031070`, replacing its
 zero-return placeholder: C84/frame `0x20`, original four routes, output-induced

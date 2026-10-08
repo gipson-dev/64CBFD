@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Game Matrix-Pair Bank Phase And Key-Lifetime Fit - 2026-10-07
+
+[Note 1107](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md):
+
+- [x] Recover retail's node-bank GP sequence through a slot-first matrix-pointer addition; only four target words change and each directly equals retail, no guards or production structs.
+- [x] Preserve complete C84/frame `0x20` in the retail85-word slot; reduce raw differences from 44 to 40 without inserting a missing instruction or changing profiles.
+- [x] Retain 86 new source/flow/lookup controls / 2,752 ordinary executions, 155 total forms, none raw exact; keep the unsuccessful key-lifetime evidence explicit.
+- [x] Pass all eleven pre-install alias/home/lazy/native/owner/padder/actual-wrapper tests in 81.271 seconds, zero skips/errors/failures; preserve 39 owner neighbors and all six target relocations.
+- [x] Rebuild/audit 6,058 symbols/6,042 slots; only four target words change, other slot bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards/conversion hash and README totals intact.
+- [x] Pass all 51 combined tests in 577.143 seconds, zero skips/errors/failures, plus tools/syntax/CLI/whitespace and 89-document / 4,025-relative-link checks, zero broken links.
+- [ ] Recover original V0 key load and key-to-A1 move in a genuine 85-word C body, then qualify the independent recursive return/store scheduling difference. No bulk forty-word guards or padding promotion.
+- [ ] Finish the separate wrapper key/primary-read, basis, translator and sampler boundaries; no PC-port/full stack-memory acceptance here.
+
+Resume from `game-matrix-pair-key-test/after.json`; the resolver is complete
+semantic C but its byte match remains open.
+
 ## Game Matrix-Pair Resolver Semantic Recovery - 2026-10-07
 
 [Note 1106](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md):
@@ -11,6 +27,7 @@
 - [x] Rebuild/audit 6,058 symbols/6,042 slots; only target changes, other bodies/addresses/extents/overflows/sections/720 data owners/11,063 guards/conversion hash intact. Matching totals/README aggregates unchanged.
 - [x] Pass all 40 combined tests in 495.848 seconds, zero skips/errors/failures, three receipt rechecks in 11.533 seconds, tools/syntax/CLI/whitespace and 88-document / 4,016-relative-link checks, zero broken links.
 - [ ] Recover the original V0 key lifetime and key-to-A1 move in a complete 85-word body before narrow GP/schedule matching. Do not insert a missing instruction or normalize branch/read order.
+- [x] Recover the node-bank GP cycle directly in Note 1107; four more words match without guards, C84/40 remains nonmatching.
 - [ ] Finish the wrapper key/primary-read fit, basis private layout, translator scheduling and sampler lifetime separately; no PC-port/full stack-memory acceptance here.
 
 Resume from `game-matrix-pair-resolver-test/after.json`, superseding the prior

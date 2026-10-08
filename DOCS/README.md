@@ -51,7 +51,12 @@ confirmed.
 
 ## Planning and history
 
-- [Latest matrix-pair resolver semantic recovery](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md):
+- [Latest matrix-pair bank phase and key-lifetime fit](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md):
+  one-expression pointer addition closes four retail GP words directly;
+  installed C84/40 remains one word short, no new guards/types/profiles.
+  86 additional qualified controls, native/alias/home/owner/padder/caller gates;
+  only four target words change, matching totals unchanged. V0 key move still open.
+- [Previous matrix-pair resolver semantic recovery](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md):
   installed complete recursive C84/frame `0x20`, four routes and original
   output/reread/home lifetime; slot85 with one padding nop, 44 differences,
   no new guards. Real wrapper/helpers/native/owner/padder qualification;

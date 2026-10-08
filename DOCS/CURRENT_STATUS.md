@@ -21,7 +21,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest installed matrix-pair resolver recovery, **not byte-exact**:
+Latest matrix-pair bank-phase/key-lifetime fit, **still not byte-exact**:
+[Note 1107](WORKING_NOTES/1107-game-matrix-pair-bank-phase-and-key-lifetime-fit-20261007.md).
+A one-expression slot-first pointer addition recovers the retail actor/slot/
+bank/shift GP sequence directly. Only four target words change; each now equals
+retail. Installed complete C84/frame `0x20` improves from 44 to 40 full-slot
+differences, no new guards, instructions, production types or profile changes.
+86 new controls / 2,752 ordinary executions, 155 total forms, none raw exact.
+All eleven pre-install guest/alias/home/lazy/native/owner/padder/actual-wrapper
+tests pass in 81.271 seconds. The linked audit preserves all other slots,
+overflows/sections/data/11,063 guards/relocations/conversion hash and README
+aggregates. The key still loads directly into A1; recover the original V0 move
+in a genuine 85-word body before scheduling guards.
+All 51 combined tests pass in 577.143 seconds, zero skips/errors/failures;
+tools/syntax/CLI/whitespace and 89-document / 4,025-relative-link checks pass,
+zero broken links. Six isolated word/void argument probes also stay C84/40,
+without an additional ordinary-contract claim.
+Authoritative ignored checkpoint: `game-matrix-pair-key-test/after.json`.
+
+Previous installed matrix-pair resolver recovery, **not byte-exact**:
 [Note 1106](WORKING_NOTES/1106-game-matrix-pair-resolver-semantic-recovery-20261007.md).
 `func_15031070` now replaces its zero-return placeholder with complete recursive
 C84/frame `0x20`, four matrix routes, store-induced rereads and original actor/
@@ -36,7 +54,7 @@ unchanged. Resume key V0/argument-move source fitting before GP/schedule guards.
 All 40 combined tests pass in 495.848 seconds, zero skips/errors/failures;
 three receipt rechecks pass in 11.533 seconds. Tools/syntax/CLI/whitespace
 and 88-document / 4,016-relative-link checks pass, zero broken links.
-Authoritative ignored checkpoint: `game-matrix-pair-resolver-test/after.json`.
+That checkpoint: `game-matrix-pair-resolver-test/after.json`.
 
 Latest matrix-route register-phase/source follow-up, **no new byte match**:
 [Note 1105](WORKING_NOTES/1105-game-matrix-route-register-phases-and-branch-source-audit-20261007.md).

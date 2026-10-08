@@ -151,10 +151,10 @@ def flow_candidates():
 SELECTED = dict(lifetime_candidates())['lifetime-matrices1-carrierrepeat-return0']
 
 
-def compile_candidate(root, out, name, body=BASELINE, profile='o2g3'):
+def compile_candidate(root, out, name, body=BASELINE, profile='o2g3', lookup_declaration='s32 func_1503195C();'):
     out.mkdir(exist_ok=True)
     source, obj, elf = (out / (name + suffix) for suffix in ('.c', '.o', '.elf'))
-    source.write_text('#include <ultra64.h>\nextern u8 D_800BE9C0;\ns32 func_1503195C();\n' + body + '\n')
+    source.write_text('#include <ultra64.h>\nextern u8 D_800BE9C0;\n' + lookup_declaration + '\n' + body + '\n')
     result = subprocess.run(['ido/ido5.3_recomp/cc', '-c', '-32', '-G', '0', '-Xfullwarn', '-Xcpluscomm',
         '-signed', '-nostdinc', '-non_shared', '-Wab,-r4300_mul', '-mips2', '-o32',
         '-I', 'conker/include', '-I', 'conker/include/2.0L', '-I', 'conker/include/2.0L/PR',
