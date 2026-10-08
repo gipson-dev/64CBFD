@@ -1,5 +1,23 @@
 # PC Port Roadmap located in another project folder
 
+## Game Attachment Selection Closed Scheduling Match - 2026-10-08
+
+[Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md):
+
+- [x] Recover action0x85's if/else shape and action0x98's node-store/choice order from C, reducing319 to304 raw differences while preserving frame0x48, six homes, first19/final68 words and tables.
+- [x] Qualify a closed1148-origin permutation: existing flags/model/constant/node-load scheduling, four cached-model comparison retargets and57 derived branch displacements. No retail-word blob, filler or semantic case guards.
+- [x] Verify all1148 words through the actual owner/padder/link, all674 original table target PCs and actual assembled label offsets. Preserve original table symbols/scalar gap and all Game data.
+- [x] Execute6,352 actual padded/original-table cases, aliases/callbacks/faults/float boundaries and all674 keys; reject18 stale scheduling controls and preserve five compiled semantic negatives. Qualify56 normalized carry/entry links and39 owner neighbors.
+- [x] Install complete semantic C with14 symbolic-binding/67 scheduling rows. Rebuild/audit all6,058 symbols; only target changes, all addresses/extents/protected sections/720 data owners/conversion hash and11,063 prior rows intact.
+- [x] Update README aggregate matching rows only: total3,371/5,467,Game2,698/4,794,2,096 different,zero drift. Bank the linked evidence in `game-node-selection-test/after.json`.
+- [x] Correct focused coverage receipt's old80-case overcount:3,925 measured cases, same1,125/1,148 words and all674 keys. Keep full callee/FCSR/hardware/PC-port boundaries separate.
+- [x] Verify all40 unique checks across combined/targeted runs; final20 focused tests pass in116.371s, no skips/errors/failures. Correct copied-owner pool assumptions, pass ten padder tests/tools/syntax/CLI/whitespace and99-document /4,139-relative-link checks, zero broken links; bank the coherent checkpoint.
+- [ ] Recover next local `func_150334B8`,68-word leaf/frame0, fourth tile-size scan/signed wrapping. Static inventory only; do not claim a match yet.
+- [ ] Continue wider Game, resolver and matrix/callee/runtime work.
+
+Resume after banking this dispatcher from `game-node-selection-test/after.json`.
+This is a guard-normalized match, not a direct compiler-only match.
+
 ## Game Attachment Selection Frame And Opening Recovery - 2026-10-08
 
 [Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md):
@@ -10,7 +28,7 @@
 - [x] Retain twelve field-pointer source forms with identical text/pools, old selected controls and an explicit two-word-swap check. Preserve the complete original model/action/type contract.
 - [x] Pass the C321 intermediate's34 recovery/binding/installed regressions in586.460s, zero skips/errors/failures; strengthened field-form binding checks pass separately.
 - [x] Pass all13 final C319 recovery/binding tests in495.191s,504 ordinary controls and five effective negatives; ten padder tests, tools/syntax/CLI/whitespace and98-document /4,123-relative-link checks pass, zero broken links. Audit all6,058 installed symbols/sections/data/guards/conversion hash unchanged; bank this checkpoint.
-- [ ] Recover original model-copy/flags scheduling and all674 original table target PCs;84 entries remain one word late. Do not promote experimental rows or install this body yet.
+- [x] Qualify original model-copy/flags scheduling and all674 original table target PCs, then install the guarded match in [Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md). The raw C319 form above remains historical, not the installed body.
 - [ ] Continue broader Game matching and full callee/FCSR/hardware/PC-port qualification.
 
 Candidate: `game_node_selection_candidates.py --field-forms --owner --controls`.
@@ -28,7 +46,7 @@ Installed baseline remains `game-node-tile-test/after.json`; README aggregates u
 - [x] Audit all6,058 installed symbols, protected sections,720 Game-data owners,11,063 guards and conversion hash unchanged. Keep production stub and README aggregates unchanged.
 - [x] Pass all34 combined recovery/binding/installed regressions in578.223s and ten padder tests in0.044s, zero skips/errors/failures; tools/syntax/CLI/whitespace and97-document /4,115-relative-link checks pass, zero broken links. Bank this experiment-only checkpoint.
 - [x] Recover original frame0x48/private homes and opening initialization in [Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md). Remaining model/flags scheduling and319 differences stay open.
-- [ ] Qualify original table jump-target PCs against emitted C labels before promoting binding rows or installing the candidate.
+- [x] Qualify original table target PCs against the closed normalized body and assembled labels, then install in [Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md).
 - [ ] Continue wider Game matching; full callee/FCSR/hardware/PC-port boundaries remain open.
 
 Resume from the complete selected candidate and `game-node-selection-binding-test`.
@@ -44,7 +62,7 @@ Installed baseline remains `game-node-tile-test/after.json`; no new aggregate cr
 - [x] Measure complete copied owner:39 neighbors unchanged; seven new tables pack at412 rather than original416, preserving useful prior tables but exposing the original scalar gap.
 - [x] Preserve all6,058 installed symbol bodies/addresses/extents, sections,720 Game-data owners,11,063 guards and conversion hash. Keep root README counts/history unchanged.
 - [x] Pass nine recovery tests across targeted runs and all21 installed tile/cleanup/action regressions; bank the experiment-only recovery and measured handoff.
-- [ ] Match this dispatcher's original1148-word body/frame0x48/private homes and register/scheduling lifetimes without dummy padding or broad guards.
+- [x] Match this dispatcher's1148-word body/frame0x48/homes with checked closed scheduling, not dummy padding or broad retail-word replacement; see [Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md).
 - [x] Qualify physical table addresses across D_800970DC's four-byte gap, actual padder and independent relocations/rebases in [Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md). Original target-PC fit and installation remain open.
 - [ ] Continue remaining Game matching; full callee/FCSR/hardware/PC-port boundaries remain open.
 

@@ -297,7 +297,7 @@ class GameNodeSelectionRecoveryTests(unittest.TestCase):
             arbitrary_private_stack_alias_not_claimed=True))
 
     def test_07_compiled_controls_and_effective_semantic_negatives(self):
-        records = []
+        records, ordinary = [], 0
         for name, body in screen.candidates():
             record, words, pool = screen.compile_candidate(self.root, self.out, name, body)
             records.append(record)
@@ -318,7 +318,9 @@ class GameNodeSelectionRecoveryTests(unittest.TestCase):
                 for model, command, actor_type in itertools.product((0, 0x58, 0x5A, 0x87, 0x8B, 0x99, 0xB5),
                         (0x8F, 0x9B, 0x9A, 0x9E), (0, 0x13, 0x34D)):
                     self.compare(fixture(model, command, actor_type), compiled=(words, pool), ordered=False)
-        self.receipt('controls', dict(records=records, ordinary_control_executions=504, effective_negatives=5))
+                    ordinary += 1
+        self.assertEqual(ordinary,588)
+        self.receipt('controls', dict(records=records, ordinary_control_executions=ordinary, effective_negatives=5))
 
     def test_08_actual_native32_C_route_effects_callbacks_and_object_snapshots(self):
         specs = [(m, 0x9B, 0x13, 0, 0) for m in range(256)]
@@ -409,6 +411,7 @@ for(c=0;c<sizeof(cases)/sizeof(cases[0]);c++) {
 
     def test_09_original_table_domains_and_retail_word_coverage(self):
         self.coverage.clear()
+        initial_cases = self.cases
         cases = [(model, 0x84, 0) for model in range(256)]
         cases += [(0x5A, 0x84, t) for t in (*range(43), 0x50, 0x51, 0xFFFF)]
         cases += [(0, a, 0) for a in range(256)]
@@ -445,7 +448,9 @@ for(c=0;c<sizeof(cases)/sizeof(cases[0]);c++) {
             self.compare(memory)
         missing = sorted((pc-screen.ENTRY)//4 for pc in set(range(screen.ENTRY, screen.ENTRY+4592, 4))-self.coverage)
         self.assertGreaterEqual(len(self.coverage), 1120, missing)
-        self.receipt('coverage', dict(cases=len(cases)+168, words_executed=len(self.coverage), total_words=1148,
+        measured_cases = self.cases-initial_cases
+        self.assertEqual(measured_cases,3925)
+        self.receipt('coverage', dict(cases=measured_cases, words_executed=len(self.coverage), total_words=1148,
             missing_word_indices=missing, all_674_original_table_keys_exercised=True,
             missing_words_not_a_byte_match_or_full_FCSR_claim=True))
 
@@ -516,7 +521,7 @@ for(c=0;c<sizeof(cases)/sizeof(cases[0]);c++) {
         self.receipt('callbacks', dict(cases=cases, caller_saved_GP_FP_clobbered=True, initial_source_cached=True,
             attachment_reloads_checked=True, six_callback_modes=True, two_SP_phases=True,
             state_byte_patterns=4, active_byte_patterns=3, float_patterns=len(floats),
-            private_home_layout_not_matching=True))
+            private_home_layout_matches_retail=True, raw_instruction_schedule_not_matching=True))
 
     def test_04_absent_attachment_lazy_reads_early_returns_and_required_fault_prefixes(self):
         memory = fixture(attached=0)
@@ -549,7 +554,7 @@ for(c=0;c<sizeof(cases)/sizeof(cases[0]);c++) {
         self.receipt('gates', dict(required_faults=len(faults), early_return_routes=5, absent_attachment_source_still_required=True,
             exact_fault_public_prefixes=True, no_postcallback_null_gate=True))
 
-    def test_05_copied_owner_neighbors_pool_gap_and_uninstalled_guard_history(self):
+    def test_05_copied_owner_neighbors_pool_gap_and_installed_guard_history(self):
         record = screen.measure_owner(self.root, self.out)
         self.assertEqual((record['neighbors_unchanged'], record['strict_diagnostics'], record['old_useful_pool_preserved']), (39, 0, True))
         self.assertEqual(record['table_loads'][0]['pool_addend'], 412)
@@ -557,16 +562,19 @@ for(c=0;c<sizeof(cases)/sizeof(cases[0]);c++) {
         self.assertEqual(len(record['new_pool_identities'])-len(record['old_pool_identities']), 674)
         self.receipt('owner', record)
         source = (self.root / 'conker/src/game/generated_5D2C0.c').read_text()
-        self.assertEqual(source.count(screen.STUB), 1)
         functions, _, addresses = load_elf_functions(str(self.root / 'conker/build/conker.us.elf'), 'mips-linux-gnu-objdump')
-        self.assertEqual((addresses[screen.FUNCTION], functions[screen.FUNCTION]),
-            (screen.ENTRY, [0x1025, 0x03E00008]+[0]*1146))
+        installed = source.count(screen.SELECTED) == 1
+        self.assertEqual(source.count(screen.STUB),int(not installed))
+        self.assertEqual(addresses[screen.FUNCTION],screen.ENTRY)
+        self.assertEqual(functions[screen.FUNCTION], self.retail if installed else [0x1025,0x03E00008]+[0]*1146)
         with (self.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             guards = list(csv.DictReader(stream))
         assert_guard_history(self, guards)
-        self.assertFalse(any(row['function'] == screen.FUNCTION for row in guards))
-        self.receipt('installed', dict(C_installed=False, complete_candidate_only=True, guards_added=0,
-            layout_gap_open=True, byte_exact_not_claimed=True))
+        target = [row for row in guards if row['function'] == screen.FUNCTION]
+        self.assertEqual(len(target),81 if installed else 0)
+        self.receipt('installed', dict(C_installed=installed, guards_added=len(target),
+            linked_byte_exact=installed, original_data_retained=True,
+            full_callees_hardware_runtime_not_claimed=True))
 
 
 if __name__ == '__main__':

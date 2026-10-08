@@ -59,8 +59,28 @@ def normalized_pools(path):
     return result
 
 
+def rebind_selection_neighbor(test, body, old_object, new_object, old_pool_offset):
+    """Check only the seven pool addends moved by removing an earlier dispatcher."""
+    from tools.experiments import game_node_selection_candidates as selection
+
+    before = selection.table_binding_guards(old_object, old_pool_offset)
+    after = selection.table_binding_guards(new_object)
+    expected = bytearray(body)
+    for old, new in zip(before, after):
+        test.assertEqual({k:v for k,v in old.items() if k != 'expected'},
+            {k:v for k,v in new.items() if k != 'expected'})
+        offset = int(old['offset'],0)
+        old_word, new_word = int(old['expected'],0),int(new['expected'],0)
+        test.assertEqual(struct.unpack_from('>I',expected,offset)[0],old_word)
+        delta = 412-old_pool_offset if old['expected_relocations'].startswith('R_MIPS_LO16:') else 0
+        test.assertEqual(new_word,old_word+delta)
+        test.assertEqual(old_word&0xFFFF0000,new_word&0xFFFF0000)
+        struct.pack_into('>I',expected,offset,new_word)
+    return bytes(expected)
+
+
 def assert_guard_history(test, guards):
-    test.assertEqual(len(guards), 11063)
+    test.assertEqual(len(guards), 11144)
     digest = hashlib.sha256(json.dumps(guards[:10809], sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     test.assertEqual(digest, 'e021c108eef6c84112743955be809d3bdf4ce4e1de0cba474897ed3b0bcabb8a')
     test.assertEqual(guards[10809:10811], resolver.owner_guards())
@@ -89,5 +109,11 @@ def assert_guard_history(test, guards):
     test.assertEqual(guards[11006:11025], point_list.owner_guards())
     test.assertEqual(guards[11025:11042], point_batch.owner_guards())
     test.assertEqual(guards[11042:11061], matrix_list.owner_guards())
-    test.assertEqual(guards[11061:], lighting.owner_guards())
+    test.assertEqual(guards[11061:11063], lighting.owner_guards())
+    previous = hashlib.sha256(json.dumps(guards[:11063], sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    test.assertEqual(previous, '8cb7bc4aa4d8dbe41ffb93831e3c0a13f967786cbed400dcc1e5109bdc842a7f')
+    selection = guards[11063:]
+    test.assertTrue(all(row['function'] == 'func_15031FC8' and row['filename'] == 'generated_5D2C0' for row in selection))
+    digest = hashlib.sha256(json.dumps(selection, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    test.assertEqual(digest, '2c2bbfea6b82ea53a2cfe40f33528b7f82225d29b9bade7733b5dd284fb19d36')
     return hashlib.sha256(json.dumps(guards, sort_keys=True, separators=(',', ':')).encode()).hexdigest()

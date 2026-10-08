@@ -1,4 +1,4 @@
-"""Recover the complete attachment-selection dispatcher without installing it."""
+"""Compile and qualify the complete attachment-selection dispatcher."""
 
 import argparse
 import hashlib
@@ -12,6 +12,7 @@ from tools.experiments.game_actor_classifier_candidates import PROFILES, section
 from tools.experiments.game_context_classifier_candidates import compile_owner
 from tools.pad_generated_object import parse_object
 from tools.tests.game_owner_pool import normalized_pools
+from tools.experiments import game_node_selection_schedule as schedule
 
 ENTRY, ROM, WORDS = 0x15031FC8, 0x5F478, 1148
 FUNCTION, TABLE = 'func_15031FC8', 0x800970E0
@@ -391,7 +392,7 @@ FIELD_DECLARATIONS = '''s32 func_15031FC8(u8 *node, u8 *actor) {
     f32 limit;'''
 
 
-def field_candidate(kind='f32', copying=False, order='both', after_flags=True):
+def field_candidate(kind='f32', copying=False, order='both', after_flags=True, routes=True):
     if kind not in ('f32', 'u8') or order not in ('both', 'end-first', 'current-first'):
         raise ValueError('unknown attachment-selection field form')
     declarations = FIELD_DECLARATIONS.replace('    f32 *', '    %s *' % kind)
@@ -414,6 +415,26 @@ def field_candidate(kind='f32', copying=False, order='both', after_flags=True):
         body = body.replace('    copy_state = 1;\n', '', 1).replace(
             '    old_flags = *(u16 *)(attachment + 4) & ~0x8000;',
             '    old_flags = *(u16 *)(attachment + 4) & ~0x8000;\n    copy_state = 1;', 1)
+    if routes:
+        body = body.replace('''                case 0x85:
+                    switch (type) {
+                        case 0x13E: choice = 5; break;
+                        case 0x13F: choice = 4; break;
+                        case 0x7C: choice = 2; break;
+                        default: choice = 0.0f < *(f32 *)(actor + 0x3C) ? 1 : 0; break;
+                    }
+                    break;''', '''                case 0x85:
+                    if (type == 0x13E) {
+                        choice = 5;
+                    } else if (type == 0x13F) {
+                        choice = 4;
+                    } else if (type == 0x7C) {
+                        choice = 2;
+                    } else {
+                        choice = 0.0f < *(f32 *)(actor + 0x3C) ? 1 : 0;
+                    }
+                    break;''').replace('                        choice = 5;\n                        node[2] = 6;',
+            '                        node[2] = 6;\n                        choice = 5;')
     return body
 
 
@@ -422,7 +443,8 @@ def field_candidates():
         yield '%s-%s-%s' % (kind, 'all-tail' if copying else 'fields-only', order), field_candidate(kind, copying, order)
 
 
-FRAME = field_candidate(after_flags=False)
+FRAME = field_candidate(after_flags=False, routes=False)
+OPENING = field_candidate(routes=False)
 SELECTED = field_candidate()
 
 
@@ -461,6 +483,7 @@ def candidates():
     yield 'previous-lifetime', BASELINE
     yield 'previous-frame', LIFETIME
     yield 'previous-field-homes', FRAME
+    yield 'previous-opening', OPENING
     yield 'shared-initial-pointer', BASELINE.replace('    u8 *initial;\n', '').replace('initial', 'attachment')
     yield 'literal-low-mask', SELECTED.replace('& ~0x8000', '& 0x7FFF')
     yield 'register-locals', SELECTED.replace('    s32 ', '    register s32 ').replace('    u8 *', '    register u8 *')
@@ -474,9 +497,15 @@ def candidates():
 
 def measure_owner(root, out):
     original = (root / 'conker/src/game/generated_5D2C0.c').read_text()
-    assert original.count(STUB) == 1
-    candidate = original.replace(STUB, SELECTED).replace('extern f32 D_800970DC;',
-        'extern f32 D_800970DC;\n'+DECLARATIONS)
+    installed = original.count(STUB) == 0
+    if installed:
+        assert original.count(SELECTED) == original.count(DECLARATIONS) == 1
+        candidate = original
+        original = original.replace(SELECTED, STUB).replace('\n'+DECLARATIONS, '')
+    else:
+        assert original.count(STUB) == 1
+        candidate = original.replace(STUB, SELECTED).replace('extern f32 D_800970DC;',
+            'extern f32 D_800970DC;\n'+DECLARATIONS)
     old, warnings = compile_owner(root, out, original, 'owner-stub')
     assert not warnings
     new, warnings = compile_owner(root, out, candidate, 'owner-candidate')
@@ -523,19 +552,19 @@ def measure_owner(root, out):
             old_pool['.rodata'][1] == tuple(i for i in new_pool['.rodata'][1] if i[0] < 412),
         old_raw_pool_sha256=hashlib.sha256(old_pool['.rodata'][0]).hexdigest(),
         new_raw_pool_sha256=hashlib.sha256(new_pool['.rodata'][0]).hexdigest(), table_loads=table_loads,
-        original_first_table_owner_offset=416, fixed_anchor_binding_not_installed=True)
+        original_first_table_owner_offset=416, production_C_installed=installed)
 
 
-def table_binding_guards(object_path):
+def table_binding_guards(object_path, pool_offset=412):
     """Generate checked symbolic table bindings for a measured complete owner."""
     text, functions, relocations = parse_object(object_path)
     target = functions[FUNCTION]
     start, end = target['value'], target['value']+target['size']
     identities = normalized_pools(object_path)['.rodata'][1]
     owner_offsets = {offset for offset, name, _ in identities if name == FUNCTION}
-    if owner_offsets != set(range(412, 412+674*4, 4)):
+    if owner_offsets != set(range(pool_offset, pool_offset+674*4, 4)):
         raise ValueError('attachment-selection table ownership changed')
-    pool_offsets, offset = {}, 412
+    pool_offsets, offset = {}, pool_offset
     for address, entries in TABLE_LAYOUT:
         pool_offsets[offset] = 'jtbl_%08X_game' % address
         offset += entries*4
@@ -567,6 +596,31 @@ def table_binding_guards(object_path):
     if used != pool_offsets.keys() or len(bindings) != 14:
         raise ValueError('attachment-selection table bindings incomplete')
     return bindings
+
+
+def schedule_guards(object_path):
+    text, functions, relocations = parse_object(object_path)
+    target = functions[FUNCTION]
+    start, size = target['value'], target['size']
+    words = list(struct.unpack_from('>%dI' % (size//4),text,start))
+    normalized = schedule.normalize_words(words)
+    rows = []
+    for index,expected in enumerate(words):
+        token = schedule.emitted_token(index)
+        replacement = normalized['words'][normalized['positions'][token]]
+        omit = index == schedule.MODEL_COPY
+        insert = index == schedule.CASE99-1
+        if expected == replacement and not omit and not insert:
+            continue
+        if relocations.get(start+4*index):
+            raise ValueError('attachment-selection scheduling relocation changed')
+        rows.append(dict(filename='generated_5D2C0',function=FUNCTION,offset='0x%X' % (4*index),
+            expected='0x%08X' % expected,replacement='0x%08X' % replacement,
+            expected_relocations='-',replacement_relocations='-',
+            note='Normalize closed attachment-selection scheduling and branch targets',
+            insert_after='0x%08X' % words[schedule.NODE_HOME] if insert else '',
+            insert_after_relocations='-' if insert else '',omit='true' if omit else 'false'))
+    return rows
 
 
 def main():

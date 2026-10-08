@@ -22,20 +22,39 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game recovery work:
+[Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md).
+Complete semantic `func_15031FC8` is installed and byte-exact across all1148
+words/frame0x48. Raw C has304 differences;14 symbolic table bindings and67
+checked closed-scheduling rows normalize existing instructions and derived
+branch destinations. This is not a direct compiler-only match. Every compiler
+instruction origin occurs once; four cached-model reads retarget A0 to V1.
+All674 retained table targets and assembled label offsets fit, no generated
+data or filler. Source action0x85/0x98 shapes recover the last15 raw differences.
+Only target changes across6,058 symbols;6,057 other bodies and all addresses/
+extents/protected sections/720 data owners/conversion hash remain intact.
+Prior11,063 guards preserved;81 target rows added. Exact total3,371/5,467
+(61.66%), Game2,698/4,794 (56.28%),2,096 different,zero drift. Converted counts
+unchanged; README matching aggregates only. New baseline:
+`game-node-selection-test/after.json`.
+All40 unique checks qualify across combined/targeted runs; final20 focused
+tests pass in116.371s, zero skips/errors/failures. Two copied-owner assumptions
+were corrected with checked pool relocation/ownership, not production edits.
+Exhaustive92,992 dispatch and12,348 native32 cases pass. Ten padder tests,
+tools/syntax/CLI/whitespace and99-document /4,139-relative-link checks pass,
+zero broken links. The focused coverage receipt is
+corrected from the older overcount4,005 to3,925 actual executions; coverage
+remains1,125 words. The normalized actual-padder execution checks6,352 cases.
+Next local placeholder: `func_150334B8`,68-word leaf/frame0; static inventory
+only. Full callee/FCSR/hardware/PC-port and broader Game boundaries remain open.
+
+Previous Game recovery work:
 [Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md).
-Complete experimental `func_15031FC8` now emits C1148/frame0x48/319 differences,
-down30 from349. Retail's six measured private homes, first19 and final68 words
-are directly exact. Twelve field-pointer controls emit identical text/pools;
-no dummy storage or guards. The C321 intermediate passes all34 combined
-recovery/binding/installed regressions. All13 final C319 recovery/binding tests
-pass in495.191s:92,992 dispatch,2,415 callback/float,12,348 native32,all674 keys,
-1,125 words,faults/aliases/504 controls/effective negatives. Ten padder tests
-and tools/syntax/CLI/whitespace checks pass;98 documents/4,123 relative links,
-zero broken. All6,058 installed symbols/sections/data/guards/conversion hash
-remain unchanged against `game-node-tile-test/after.json`.
-Original model-copy/flags scheduling and84 one-word-late table entries remain
-open. Production/README/data/guards unchanged; no installed match credit.
-Continue the same dispatcher from the recovered frame and tail.
+Experimental C1148/frame0x48/319 recovered the six private homes, first19 and
+final68 words without guards. Twelve field-pointer forms emit identical raw
+text/pools. Its C321 intermediate passes34 tests, then13 final C319 tests pass
+in495.191s. Model/flags scheduling and84 shifted table targets were still open
+at that checkpoint; Note1117 above closes installation. The older focused-case
+receipt4,005 was an80-case reporting overcount, now corrected to3,925.
 
 Previous Game recovery work:
 [Note 1115](WORKING_NOTES/1115-game-attachment-selection-lifetime-and-table-binding-20261008.md).

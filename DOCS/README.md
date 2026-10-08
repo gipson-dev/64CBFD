@@ -51,7 +51,13 @@ confirmed.
 
 ## Planning and history
 
-- [Latest attachment selection frame and opening recovery](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md):
+- [Latest attachment selection closed scheduling match](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md):
+  complete semantic C installed, all1148 words/frame0x48 exact with14 table
+  bindings and67 closed scheduling guards, not a direct compiler-only match.
+  All674 retained table targets fit; every instruction origin occurs once.
+  Only target changes; sections/data/conversions unchanged. Next local
+  placeholder is68-word leaf `func_150334B8`; full runtime remains open.
+- [Previous attachment selection frame and opening recovery](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md):
   complete experimental C1148/frame0x48/319 differences; original private homes,
   first19 and final68 words exact. Twelve field-pointer forms retain identical
   emitted text/pools. Original model/flags scheduling and84 shifted table

@@ -294,8 +294,12 @@ for(action=0;action<256;action++)for(r=0;r<6;r++)for(c=0;c<5;c++)for(m=0;m<4;m++
 
     def qualify_owner(self):
         from tools.experiments import game_node_cleanup_candidates as cleanup
+        from tools.experiments import game_node_selection_candidates as selection
+        from tools.tests.game_owner_pool import rebind_selection_neighbor
+
         source = (self.root / 'conker/src/game/generated_5D2C0.c').read_text()
         has_cleanup = cleanup.SELECTED in source
+        has_selection = selection.SELECTED in source
         if screen.SELECTED in source:
             source = source.replace(screen.SELECTED, STUB).replace(screen.DECLARATIONS+'\n', '', 1)
         self.assertEqual(source.count(STUB), 1)
@@ -325,6 +329,8 @@ for(action=0;action<256;action++)for(r=0;r<6;r++)for(c=0;c<5;c++)for(m=0;m<4;m++
                 # Removing this earlier dispatcher shifts the later pool by 55 entries.
                 self.assertEqual(struct.unpack_from('>I', expected_text, 132)[0]&65535, 0)
                 struct.pack_into('>I', expected_text, 132, struct.unpack_from('>I', expected_text, 132)[0]+220)
+            if has_selection and name == selection.FUNCTION:
+                expected_text = rebind_selection_neighbor(self,expected_text,*objects,192)
             self.assertEqual(text[current['value']:current['value']+current['size']],
                 expected_text, name)
             self.assertEqual({o-current['value']: r for o, r in rel.items()
@@ -336,10 +342,14 @@ for(action=0;action<256;action++)for(r=0;r<6;r++)for(c=0;c<5;c++)for(m=0;m<4;m++
             self.assertEqual(before['.data'], after['.data'])
             old_raw, old_ids = before['.rodata']
             new_raw, new_ids = after['.rodata']
-            self.assertEqual((len(old_raw), len(new_raw)), (192, 416))
+            old_end = 192+(2696 if has_selection else 0)
+            new_end = old_end+220
+            self.assertEqual((len(old_raw),len(new_raw)),((old_end+15)//16*16,(new_end+15)//16*16))
             self.assertEqual(new_raw[:220], target_pool['.rodata'][0][:220])
             self.assertEqual(tuple(i for i in new_ids if i[1] == screen.FUNCTION), target_pool['.rodata'][1])
-            self.assertEqual(new_raw[220:], old_raw+bytes(4))
+            self.assertEqual(new_raw[220:new_end],old_raw[:old_end])
+            self.assertEqual(old_raw[old_end:],bytes(len(old_raw)-old_end))
+            self.assertEqual(new_raw[new_end:],bytes(len(new_raw)-new_end))
             self.assertEqual(tuple((o-220, n, v) for o, n, v in new_ids if n != screen.FUNCTION), old_ids)
         else:
             self.assertEqual(before, {'.rodata': None, '.data': None})
@@ -352,7 +362,9 @@ for(action=0;action<256;action++)for(r=0;r<6;r++)for(c=0;c<5;c++)for(m=0;m<4;m++
             if target['value'] <= o < target['value']+452}, isolated_rel)
         self.receipt('owner', dict(functions=len(functions), unchanged_neighbors=len(functions)-1,
             target_isolated_equal=True, added_pool_only_target_owned=True, warnings=0,
-            later_cleanup_pool_preserved=has_cleanup, expected_later_pool_addend_shift=220 if has_cleanup else 0))
+            later_cleanup_pool_preserved=has_cleanup,expected_later_pool_addend_shift=220 if has_cleanup else 0,
+            retained_selection_table_targets=674 if has_selection else 0,
+            checked_selection_LO_addend_shifts=7 if has_selection else 0))
         return objects[1]
 
     def test_copied_owner_and_real_padder_fixed_anchor_rebases(self):

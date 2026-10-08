@@ -38,6 +38,7 @@ class GameNodeSelectionBindingTests(unittest.TestCase):
         with (cls.root / 'conker/retail_word_patches.us.csv').open(newline='') as stream:
             reader = csv.DictReader(stream)
             cls.fields, cls.history = reader.fieldnames, list(reader)
+        cls.history = [row for row in cls.history if row['function'] != screen.FUNCTION]
         cls.symbols = {'jtbl_%08X_game' % address:address for address,_ in screen.TABLE_LAYOUT}
 
     def receipt(self, name, value):
@@ -70,7 +71,7 @@ class GameNodeSelectionBindingTests(unittest.TestCase):
         return list(struct.unpack_from('>1148I', sections(elf)['.text'][1]))
 
     def test_01_seven_checked_pairs_bind_only_address_addends_and_relocations(self):
-        self.assertEqual((self.record['body_words'],self.record['frame'],self.record['differences']), (1148,0x48,319))
+        self.assertEqual((self.record['body_words'],self.record['frame'],self.record['differences']), (1148,0x48,304))
         retail = list(struct.unpack_from('>1148I', (self.root / 'conker/conker.us.bin').read_bytes(),screen.ROM))
         self.assertEqual(self.words[:19],retail[:19])
         self.assertEqual(self.words[-68:],retail[-68:])
@@ -80,15 +81,18 @@ class GameNodeSelectionBindingTests(unittest.TestCase):
         field_forms = 0
         for name, source in screen.field_candidates():
             record, words, pool = screen.compile_candidate(self.root,self.out,'field-'+name,source)
-            self.assertEqual((record['body_words'],record['frame'],record['differences']),(1148,0x48,319),name)
+            self.assertEqual((record['body_words'],record['frame'],record['differences']),(1148,0x48,304),name)
             self.assertEqual((words,pool),(self.words,self.pool),name)
             field_forms += 1
         self.assertEqual(field_forms,12)
         previous, words, pool = screen.compile_candidate(self.root,self.out,'previous-field-homes',screen.FRAME)
         self.assertEqual((previous['body_words'],previous['frame'],previous['differences']),(1148,0x48,321))
-        self.assertEqual({i for i,(old,new) in enumerate(zip(words,self.words)) if old != new},{8,10})
-        self.assertEqual((self.words[8],self.words[10]),(words[10],words[8]))
-        self.assertEqual(pool,self.pool)
+        opening, opening_words, opening_pool = screen.compile_candidate(self.root,self.out,'previous-opening',screen.OPENING)
+        self.assertEqual((opening['body_words'],opening['frame'],opening['differences']),(1148,0x48,319))
+        self.assertEqual({i for i,(old,new) in enumerate(zip(words,opening_words)) if old != new},{8,10})
+        self.assertEqual((opening_words[8],opening_words[10]),(words[10],words[8]))
+        self.assertEqual(pool,opening_pool)
+        self.assertEqual(opening_pool,self.pool)
         self.assertEqual(len(self.rows),14)
         obj, body = self.padded()
         text, funcs, relocs = parse_object(obj)
@@ -138,9 +142,9 @@ class GameNodeSelectionBindingTests(unittest.TestCase):
         self.receipt('target-pcs',dict(tables=fit,entries=674,exact_target_PCs=590,
             target_PCs_four_bytes_late=84,original_target_PC_compatibility=False,
             padded_C_execution_and_installation_not_claimed=True))
-        self.receipt('binding',dict(body_words=1148,frame=0x48,differences=319,checked_rows=14,
+        self.receipt('binding',dict(body_words=1148,frame=0x48,differences=304,checked_rows=14,
             original_private_homes=True,final_68_words_direct_exact=True,
-            first_19_words_direct_exact=True,opening_change_is_only_independent_words_8_and_10=True,
+            first_19_words_direct_exact=True,previous_opening_change_is_only_independent_words_8_and_10=True,
             field_forms_with_identical_text_and_pool=field_forms,
             seven_physical_symbols=True,only_address_immediates_and_relocations_changed=True,
             no_padding_insert_omit_or_generated_data=True,equals_isolated_C_linked_text=True,
@@ -209,7 +213,7 @@ class GameNodeSelectionBindingTests(unittest.TestCase):
         obj, _ = self.padded(rows,'wrong-table')
         self.assertNotEqual(self.linked(obj,name='wrong-table-linked'),self.words)
         self.receipt('negatives',dict(effective_negatives=2,missing_LO_hits_original_scalar_not_table=True,
-            wrong_symbol_changes_table_address=True,guards_remain_experimental=True))
+            wrong_symbol_changes_table_address=True,raw_binding_alone_not_installation_proof=True))
 
 
 if __name__ == '__main__':

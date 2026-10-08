@@ -4,58 +4,79 @@ This page documents repository-local tooling, especially scripts that are not
 upstream submodules. Run commands from the repository root unless a section
 says otherwise.
 
-## Attachment selection dispatcher recovery
+## Attachment selection dispatcher matching
 
 [Candidate driver](../tools/experiments/game_node_selection_candidates.py)
-retains the complete semantic `func_15031FC8` without installing it. Explicit
+retains the complete installed semantic `func_15031FC8`. Explicit
 case/value lists cover the seven retail tables and sparse type branches.
 Four profiles and source controls measure body size, frame, raw differences,
 relocations and actual copied-owner pools. Selected O2/g3 is C1148/frame0x48/
-319 differences, with the original six private homes, first19/final68 words
+304 raw differences, with the original six private homes, first19/final68 words
 directly exact. Named end/current field addresses and measured declaration order
 recover the frame without extending float lifetimes. Explicit reset/no-reset
 assignments retain A3; previous C1147/394, C1148/frame0x38/349 and C1148/frame0x48/
-321 forms remain controls. Opening copy-state placement changes only two
-independent words, explicitly checked. This is not a full byte match.
+321 and319 forms remain controls. Opening copy-state placement changes only two
+independent words, explicitly checked against the prior controls. Action0x85's
+if/else and action0x98's store/choice shapes recover15 further differences.
+Raw compiler output is not the installed byte-exact body.
 Thirty-nine neighbors remain intact;
 the seven new tables pack four bytes before their original physical offsets.
 
 [Nine tests](../tools/tests/test_game_node_selection_recovery.py) independently
 check original table keys/values, 92,992 guest dispatch and 2,415 callback/float
 cases, required fault prefixes, six valid aliases, compiled controls/negatives,
-12,348 actual native32 C executions and 4,005 focused coverage cases. All674
+12,348 actual native32 C executions and 3,925 measured focused coverage cases. All674
 original table keys and 1,125 retail words execute. Defined return/call/public
-trace/object memory qualify; private frame, incidental GP/FP, full FCSR/callees/
-hardware/PC-port do not. Existing installed placeholder and guards are checked.
+trace/object memory qualify; arbitrary private-frame aliases, incidental GP/FP, full FCSR/callees/
+hardware/PC-port do not. Installed byte-exact body and guard history are checked.
+The earlier4,005 focused-case receipt overcounted80 cases; its actual execution
+and coverage were unchanged.
 
 [Four binding tests](../tools/tests/test_game_node_selection_binding.py) use
 `table_binding_guards()` to check exact owner extent/addends/HI-LO/topology and
-generate14 experimental address-only expected-word/relocation rows. The real
+generate14 address-only expected-word/relocation rows. The real
 padder binds seven original symbols across the scalar gap without new data,
 padding/insertion/omission or shared-tool changes. Qualification includes56
 independent carry/entry links,six stale controls,two effective negatives and39
-fully postprocessed neighbor bodies/relocations/past useful pools. Rows stay
-in ignored CSVs, not production. Original table jump-target PC compatibility
-with the C body is a separate, still-open installation gate.
-The same tests measure590/674 exact original label PCs;84 entries are one
-word late, so current original-target compatibility is explicitly rejected.
+fully postprocessed neighbor bodies/relocations/past useful pools.
+The same tests retain the raw boundary:590/674 exact original label PCs;
+84 entries are one word late without the closed scheduling transformation.
+
+[Closed normalizer](../tools/experiments/game_node_selection_schedule.py) and
+[six schedule tests](../tools/tests/test_game_node_selection_schedule.py)
+qualify the actual padder/link at zero differences. Every compiler instruction
+origin occurs once, four cached-model comparisons retarget A0 to V1, and57
+local branch displacements derive from the permutation. The original model
+copy and node load relocate; one insertion/omission pair is not filler.
+No retail words are read by the transform. All674 original targets and
+assembled label offsets fit;6,352 padded/original-table executions,18 stale
+controls, five compiled semantic negatives and56 carry/entry links qualify.
+The14 bindings plus67 schedule rows are static production expected-word/
+relocation guards, independently checked against the measured complete owner.
+No generated Game data or shared padder implementation change.
+`table_binding_guards()` defaults to the production pool base412; the two
+older copied-owner fixtures explicitly qualify bases220/192 when an earlier
+dispatcher is removed. The shared test helper checks all14 address words and
+allows only seven LO shifts; all other neighbor words/relocations and674 table
+identities remain checked. This does not change production guards or data.
 
 `--field-forms` retains twelve source controls across f32/u8 field pointers,
 progress-copy use and address-assignment orders. Every form emits identical
 selected text/pools; the binding tests verify this independently alongside
 frame/homes/exact regions. Declaration order is a matching annotation, not
-proof of original source declarations. Six ordinary controls cover504 executions.
+proof of original source declarations. Seven ordinary controls cover588 executions.
 
 ```sh
 python3 -m tools.experiments.game_node_selection_candidates --field-forms --owner --controls
-python3 -m unittest tools.tests.test_game_node_selection_recovery tools.tests.test_game_node_selection_binding -v
+python3 -m unittest tools.tests.test_game_node_selection_recovery tools.tests.test_game_node_selection_binding tools.tests.test_game_node_selection_schedule -v
 ```
 
 Ignored receipts are in `conker/build/game-node-selection/` and
-`conker/build/game-node-selection-test/` and `conker/build/game-node-selection-binding-test/`. Installed baseline stays
-`conker/build/game-node-tile-test/after.json`. Continue model/flags scheduling and
-original table-target PC fit from
-[Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md).
+`conker/build/game-node-selection-test/`, `conker/build/game-node-selection-binding-test/`
+and `conker/build/game-node-selection-schedule-test/`. Installed baseline is
+`conker/build/game-node-selection-test/after.json`; only target changes across
+all6,058 symbols. See
+[Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md).
 
 ## Fourth tile-size command matching
 

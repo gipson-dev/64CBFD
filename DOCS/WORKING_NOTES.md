@@ -1,5 +1,22 @@
 # Working Notes
 
+2026-10-08 ([Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md)):
+Install complete `func_15031FC8`, all1148 words/frame0x48 byte-exact.
+Raw C304 differences;14 original-symbol bindings and67 checked scheduling
+rows preserve every instruction origin once, four cached-model uses and
+derived local branch destinations. All674 original targets/assembled labels
+fit;6,352 actual-padded execution cases and56 normalized carry/entry links.
+Eighteen stale controls rejected; semantic negatives remain effective.
+Only target changes across6,058 symbols;sections/data/conversion hash and
+prior11,063 guards preserved. Exact total3,371,Game2,698,2,096 different,
+zero drift. New `game-node-selection-test/after.json`. Older coverage count
+4,005 corrected to3,925 actual cases, coverage unchanged. All40 unique checks
+verified across combined/targeted runs; final20 focused tests pass in116.371s,
+no skips/errors/failures. Two neighboring fixtures now check seven LO shifts
+and actual pool ownership; production untouched. Tools/syntax/CLI/whitespace,
+ten padder tests and99-document /4,139-relative-link checks pass, zero broken.
+Next local leaf `func_150334B8`; full runtime remains open.
+
 2026-10-08 ([Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md)):
 Continue complete experimental `func_15031FC8`, now C1148/frame0x48/319
 differences, down30. Field-pointer locals recover six private homes and original

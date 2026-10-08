@@ -320,7 +320,11 @@ for(action=0;action<256;action++)for(k=0;k<4;k++)for(c=0;c<5;c++)for(m=0;m<3;m++
             defined_C_return_guest_private_homes_full_callees_and_hardware_not_claimed=True))
 
     def qualify_owner(self):
+        from tools.experiments import game_node_selection_candidates as selection
+        from tools.tests.game_owner_pool import rebind_selection_neighbor
+
         source = (self.root / 'conker/src/game/generated_5D2C0.c').read_text()
+        has_selection = selection.SELECTED in source
         if screen.SELECTED in source:
             source = source.replace(screen.SELECTED, STUB).replace(screen.DECLARATIONS+'\n', '', 1)
         self.assertEqual(source.count(STUB), 1)
@@ -345,21 +349,28 @@ for(action=0;action<256;action++)for(k=0;k<4;k++)for(c=0;c<5;c++)for(m=0;m<3;m++
             if name == screen.FUNCTION:
                 continue
             previous = old_functions[name]
+            expected_text = old_text[previous['value']:previous['value']+previous['size']]
+            if has_selection and name == selection.FUNCTION:
+                expected_text = rebind_selection_neighbor(self,expected_text,*objects,220)
             self.assertEqual(text[current['value']:current['value']+current['size']],
-                old_text[previous['value']:previous['value']+previous['size']], name)
+                expected_text, name)
             self.assertEqual({o-current['value']: r for o, r in rel.items() if current['value'] <= o < current['value']+current['size']},
                 {o-previous['value']: r for o, r in old_rel.items() if previous['value'] <= o < previous['value']+previous['size']}, name)
         before, after, isolated = (normalized_pools(o) for o in (*objects, self.out / 'selected.o'))
         self.assertEqual(before['.data'], after['.data'])
         old_raw, old_ids = before['.rodata']
         new_raw, new_ids = after['.rodata']
-        self.assertEqual((len(old_raw), len(new_raw)), (224, 416))
-        self.assertEqual(old_raw[220:], bytes(4))
+        old_end = 220+(2696 if has_selection else 0)
+        new_end = old_end+192
+        self.assertEqual((len(old_raw),len(new_raw)),((old_end+15)//16*16,(new_end+15)//16*16))
+        self.assertEqual(old_raw[old_end:],bytes(len(old_raw)-old_end))
         self.assertEqual(new_raw[:220], old_raw[:220])
-        self.assertEqual(tuple(i for i in new_ids if i[1] != screen.FUNCTION), old_ids)
+        self.assertEqual(new_raw[412:new_end],old_raw[220:old_end])
+        self.assertEqual(tuple((o-(192 if o>=412 else 0),n,v) for o,n,v in new_ids
+            if n != screen.FUNCTION),old_ids)
         self.assertEqual(tuple((o-220, n, v) for o, n, v in new_ids if n == screen.FUNCTION), isolated['.rodata'][1])
         self.assertEqual(new_raw[220:412], isolated['.rodata'][0])
-        self.assertEqual(new_raw[412:], bytes(4))
+        self.assertEqual(new_raw[new_end:],bytes(len(new_raw)-new_end))
         target = functions[screen.FUNCTION]
         isolated_text, _, isolated_rel = parse_object(self.out / 'selected.o')
         expected_text = bytearray(isolated_text[:536])
@@ -371,8 +382,10 @@ for(action=0;action<256;action++)for(k=0;k<4;k++)for(c=0;c<5;c++)for(m=0;m<3;m++
         target_rel = {o-target['value']: r for o, r in rel.items() if target['value'] <= o < target['value']+536}
         self.assertEqual(target_rel, isolated_rel)
         self.receipt('owner', dict(functions=len(functions), unchanged_neighbors=len(functions)-1,
-            existing_pool_targets_preserved=55, added_targets=48, generated_pool_bytes=416,
-            cleanup_pool_addend=220, end_alignment_bytes=4, strict_diagnostics=0))
+            existing_pool_targets_preserved=len(old_ids),added_targets=48,generated_pool_bytes=len(new_raw),
+            retained_selection_table_targets=674 if has_selection else 0,
+            checked_selection_LO_addend_shifts=7 if has_selection else 0,
+            cleanup_pool_addend=220,end_alignment_bytes=len(new_raw)-new_end,strict_diagnostics=0))
         return objects[1]
 
     def test_copied_owner_padder_fixed_pool_offset_and_symbol_rebases(self):

@@ -1,5 +1,28 @@
 # Update Log
 
+## 2026-10-08 Game Attachment Selection Closed Scheduling Match
+
+[Note 1117](WORKING_NOTES/1117-game-attachment-selection-closed-scheduling-match-20261008.md):
+Replace `func_15031FC8`'s placeholder with the complete semantic dispatcher.
+All1148 linked words/frame0x48 byte-exact; raw C304 differences normalize
+through14 symbolic bindings and67 checked scheduling rows. Preserve all
+instruction origins once and derive57 local branch updates; retarget four
+cached-model comparisons to V1. Source action0x85/0x98 shapes recover15 raw
+differences. All674 retained table targets/assembled offsets fit; no new data,
+filler, compiler-profile, Makefile or shared-header changes. Actual padded
+execution qualifies6,352 cases. Only target changes across6,058 symbols;
+protected sections/720 data owners/conversion hash and prior11,063 guards
+unchanged,81 rows added. Exact total3,371/5,467 (61.66%),Game2,698/4,794 (56.28%),
+2,096 different,zero drift. README matching aggregates only; new baseline
+`game-node-selection-test/after.json`. Correct older focused receipt's80-case
+overcount to3,925 executions, coverage unchanged. All40 unique checks verified
+across combined/targeted runs; final20 focused tests pass in116.371s, zero
+skips/errors/failures. Two copied-owner fixtures now check actual pool ownership
+and seven LO shifts; production unchanged. Ten padder tests and tools/syntax/
+CLI/whitespace /99-document /4,139-relative-link checks pass, zero broken links.
+Next local leaf `func_150334B8`. Full callee/FCSR/hardware/PC-port
+qualification stays open.
+
 ## 2026-10-08 Game Attachment Selection Frame And Opening Recovery
 
 [Note 1116](WORKING_NOTES/1116-game-attachment-selection-frame-and-opening-recovery-20261008.md):
