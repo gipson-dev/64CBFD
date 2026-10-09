@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner companion setup recovery checkpoint](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md):
+  Recover two retained requests and a late40-byte effect; nine tests pass.
+  Original176-word assembly stays installed, no new credit. Resume2690 fitting.
+
 - [Owner link setup guarded C match](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md):
   Convert210-word original assembly with25 certified closed GPR guards;
   nine installed tests qualify raw holes and actual allocator-wrapper chain.

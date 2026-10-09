@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Companion Setup Recovery - 2026-10-09
+
+[Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md):
+
+- [x] Recover complete176-word func_151B2690, two retained56-byte requests/48-byte link packets and distinct40-byte late-captured effect packet.
+- [x] Preserve first-request coordinates/codes/limits across helper mutation, unconditional NULL stores, captured endpoint/pair identities and nine-argument factory ABI.
+- [x] Pass nine tests:384 guest/16,384 native32,64 rebase/64 actual53-word wrapper-chain cases, six effective negatives and12 public fault-prefix cases.
+- [x] Preserve17 copied-owner neighbors/pools/relocations/four old warnings; actual asmprocessor and scratch padder accept without authorizing matching installation.
+- [x] Reject all56 persisted nonmatching profile rows; retain original assembly and unchanged source/ELF/guards/progress/protected data, no new conversion credit.
+- [ ] Fit the same2690 initialS1 actor retention and delayed incoming-home schedule; selected176/frame0xD8 has122 differences.
+- [ ] Qualify a byte-matching complete C form before installation, then rebuild/audit linked ELF and fresh progress; the ignored69-difference probe is not qualified.
+- [ ] Keep full caller/factory/resource/SDK/hardware/gameplay and renderer integration separate from bounded helper tests.
+
 ## Owner Link Setup Guarded C Match - 2026-10-09
 
 [Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md):
@@ -10,7 +23,8 @@
 - [x] Preserve17 owner neighbors/pools/relocations/four existing warnings; actual asmprocessor and padder accept.
 - [x] Audit byte-identical whole ELF/189,088 protected data bytes; append only25 guards and change exactly one ASM-to-C progress row.
 - [x] Add840 converted bytes; refresh README aggregate rows to total5,488 converted/3,412 exact and Game4,815 converted/2,739 exact, zero drift.
-- [ ] Recover and qualify original176-word/frame0xD8 companion func_151B2690 separately.
+- [x] Recover and qualify original176-word/frame0xD8 companion func_151B2690 semantics separately in [Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md).
+- [ ] Finish2690 byte matching and installation; semantic recovery does not complete this gate.
 - [ ] Keep common allocator/resource/SDK/hardware/gameplay and full renderer as separate integration gates; removing25 guards is future compiler-style work.
 
 ## Owner Link Allocator Direct Match - 2026-10-09
@@ -48,7 +62,8 @@
 - [x] Audit only three reviewed code slots/sizes and symbol/string order, with all20,318 symbol meanings preserved except intended sizes; protected Game data/guards unchanged.
 - [x] Refresh aggregate README rows:total3,410/5,487 exact/Game2,737/4,814; converted totals5,487/6,042 and85.91% bytes reflect two removed false C bodies.
 - [x] Recover and install semantic C for210-word func_151B2348, packet layouts/holes/reuse, actual151B30B0 ABI, failed allocations and callee mutation in [Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md).
-- [ ] Recover176-word func_151B2690 separately; full helper-chain/hardware/gameplay and ribbon renderer remain open.
+- [x] Recover176-word func_151B2690 separately in [Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md).
+- [ ] Finish2690 byte matching; full helper-chain/hardware/gameplay and ribbon renderer remain open.
 
 ## Owner Descriptor Constructor Direct Match - 2026-10-09
 

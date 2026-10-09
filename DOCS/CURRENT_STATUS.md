@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f3bb1e7; tools are committed before the consumer pin.
+  checkpoint pins tools fc54d7f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner companion recovery checkpoint:
+[Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md).
+Recover complete176-word func_151B2690's two retained link requests and late
+40-byte effect packet. Nine tests pass61.269s:384 guest/16,384 native32,
+64 independent rebase and64 actual53-word wrapper-chain cases. Complete guest
+memory/raw copied holes agree, but access traces and emitted words do not match.
+Selected C is176/frame0xD8/122 differences; all56 persisted profile rows are
+rejected for installation. Original assembly/source/ELF/guards/progress stay
+unchanged, with no new matching/conversion credit. Totals remain those below.
+Resume the same2690 actor-home/initialS1 scheduling fit; the ignored69-difference
+volatile probe has an exact105-word suffix but is not qualified for installation.
 
 Latest owner link setup C match:
 [Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md).

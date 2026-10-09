@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md)):
+Bank complete176-word func_151B2690 companion semantics and nine-test recovery
+suite:384 guest/16,384 native32/64 rebases/64 actual-wrapper chain cases.
+Full guest memory and copied holes agree; instruction/access scheduling does not.
+Reject all56 persisted profiles; original assembly/source/ELF/guards/progress
+unchanged, no new credit. Next resolve the same2690 actor-home/initialS1 fit.
+Tools fc54d7f committed first; ignored69-difference probe is not installed.
+
 2026-10-09 ([Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md)):
 Install210-word func_151B2348 as semantic C with25 certified GPR-only guards,
 original0xA8 frame/packetSP34/requestSP64. Nine installed tests qualify raw

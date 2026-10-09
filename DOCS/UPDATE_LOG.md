@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Owner Companion Setup Recovery Checkpoint
+
+[Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md):
+Recover176-word func_151B2690's two retained requests and distinct40-byte effect.
+Nine tests pass61.269s:384 guest,16,384 native32, rebases, six effective negatives
+and actual53-word wrapper chain. All56 persisted profiles remain nonmatching;
+selected176/frame0xD8 differs122 words. Keep original assembly and unchanged
+source/ELF/guards/progress; no new credit. Tools fc54d7f banked first.
+Resume2690 initialS1/incoming actor-home fitting, not another function.
+
 ## 2026-10-09 Owner Link Setup Guarded C Match
 
 [Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md):
