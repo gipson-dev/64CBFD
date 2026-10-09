@@ -346,7 +346,7 @@ u8 *func_15148F1C(u8 kind, f32 x, f32 y, f32 z, s32 count,
 
 s32 func_151490C8(u8 *arg0) {
     u8 *temp_v0 = *(u8 **) (arg0 + 0x98);
-    s32 temp_v1 = *(s16 *) (arg0 + 0x1C) << 3;
+    s32 temp_v1 = *(s16 *) (arg0 + 0x1C) * 8;
 
     if (temp_v1 >= 0x100) {
         temp_v1 = 0xFF;

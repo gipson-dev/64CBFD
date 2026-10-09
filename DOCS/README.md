@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Ribbon alpha defined signed scaling](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md):
+  Remove negative signed-shift UB while preserving the already-exact15-word
+  body and every ELF byte; seven tests, exhaustive guest/native32 values.
+  No new credit. Next recover actual39-word callback func_151B2F04.
 - [Ribbon effect constructor direct match](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md):
   Install all107 retail words directly, no guards; eight tests qualify the
   mixed ABI, connected callees, native32 calls, rebases and whole-ELF audit.

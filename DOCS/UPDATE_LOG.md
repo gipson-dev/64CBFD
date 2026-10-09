@@ -1,5 +1,13 @@
 # Update Log
 
+## 2026-10-09 Ribbon Alpha Defined Signed Scaling
+
+[Note 1168](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md):
+func_151490C8 was already15-word exact. Safe multiplication by8 removes
+negative signed-shift UB without changing any linked ELF byte. Seven tests
+pass in30.800s, including exhaustive guest/native32 domains and callback table.
+No new credit/root README changes. Next recover39-word func_151B2F04.
+
 ## 2026-10-09 Ribbon Effect Constructor Direct Match
 
 [Note 1167](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md):

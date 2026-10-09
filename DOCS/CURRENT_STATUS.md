@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 468cd97; tools are committed before the consumer pin.
+  checkpoint pins tools 0269fbb; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest byte-preserving callback qualification:
+[Note 1168](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md).
+`func_151490C8` was already15-word exact. Replace negative signed left
+shift with safe multiplication by8; the entire rebuilt ELF is byte-identical.
+Seven installed tests pass in30.800s:65,536 guest cases,589,824 native32
+calls,192 alias/phase cases, seven fault pairs, four negatives and rebases.
+Actual selector6/table pointer remains correct. No new matching/conversion
+credit; root README unchanged. Next recover complete39-word `func_151B2F04`,
+currently a zero-return placeholder; renderer and handwritten fragments stay open.
+Tools0269fbb banked first; source/docs and exact consumer pin follow.
 
 Latest installed constructor match:
 [Note 1167](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md).

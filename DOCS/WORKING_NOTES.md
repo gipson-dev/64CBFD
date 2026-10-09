@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1168](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md)):
+Preserve already-exact15-word func_151490C8 while removing negative signed
+shift UB via multiplication by8. Seven tests pass in30.800s:65,536 guest,
+589,824 native32,192 alias/phase cases, seven fault pairs and rebases.
+Every ELF byte/guard/progress row unchanged; no new credit/root README edit.
+Next recover full39-word func_151B2F04; wider Game goal remains active.
+
 2026-10-09 ([Note 1167](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md)):
 Install full107-word func_15148F1C directly from semantic C, frame0xB8,
 zero guards. Eight tests pass in37.223s, including5,504 guest cases,

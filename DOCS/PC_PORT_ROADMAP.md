@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Ribbon Alpha Defined Signed Scaling - 2026-10-09
+
+[Note 1168](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md):
+
+- [x] Confirm func_151490C8 already matches15 words; retain retail redundant byte-sign branch, no new credit.
+- [x] Replace negative signed left shift with safe signed16-times8; preserve every rebuilt ELF byte, guard/progress row and protected data byte.
+- [x] Pass seven installed tests in30.800s:65,536 guest cases,589,824 native32 calls,192 aliases/phases, seven fault pairs, four negatives and four independent symbol sets.
+- [x] Verify actual selector6 callback-table pointer and typed interface; preserve ten owner neighbors and real padder acceptance.
+- [ ] Recover full39-word func_151B2F04, kind0x2D gate, endpoint/byte swaps and alias/read order, then qualify the actual callback interface before installation.
+- [ ] Keep full ribbon renderer register/FP matching and handwritten register-contract work separate and pending.
+
 ## Ribbon Effect Constructor Direct Match - 2026-10-09
 
 [Note 1167](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md):
@@ -9,7 +20,7 @@
 - [x] Pass eight installed tests in37.223s:5,504 guest cases,512 connected cases,688 native32 cases, four symbol sets and five effective compiled negatives.
 - [x] Preserve ten owner neighbors; audit all ELF bytes except target428-byte slot and st_size12->428; retain progress CSV, guards and189,088 exact Game data bytes.
 - [x] Refresh aggregate README counts:Game2,734/4,816 exact, total3,407/5,489, zero drift and2,082 remaining differences; no conversion credit.
-- [ ] Audit neighboring func_151490C8's complete retail body, redundant byte-sign gate and signed-shift C behavior; keep func_1514803C renderer register/FP matching open.
+- [x] Audit neighboring func_151490C8's complete retail body, redundant byte-sign gate and signed-shift C behavior in Note1168; keep func_1514803C renderer register/FP matching open.
 - [ ] Qualify whole script caller, allocator and hardware/gameplay separately; bounded guest/native tests do not prove those integrations.
 
 ## Camera Ribbon Register Exclusions - 2026-10-09
