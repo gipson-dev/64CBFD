@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Camera Ribbon Color Homes And Callback - 2026-10-09
+
+[Note 1165](WORKING_NOTES/1165-game-camera-ribbon-renderer-color-homes-callback-20261009.md):
+
+- [x] Recover eight retail color homes by scoping four real FP locals with colors; primary545/frame0x120/509 differences retains13 private homes and retail save slots.
+- [x] Recover direct byte-buffer callback signature in complete537/frame0x120/538 form; keep its different GPR/FP saves explicit.
+- [x] Screen51 complete representations/36 instruction streams with three finite controls each; no dummy locals, fake work or production guard changes.
+- [x] Pass twelve tests in212.922s: each primary form804 guest,92 mutations,94 missing-byte pairs,five aliases,two cyclic prefixes,536 native32,128 nonlinear,14 raw views and16 dispatcher cases.
+- [x] Qualify fresh primary original/candidate rebases under four symbol sets/eight links/25 relocation uses; preserve ten owner neighbors and actual padder acceptance per form.
+- [x] Bank tools426c56c before exact parent pin; preserve production/root README and all82 older-checkout entries, mirroring only two absent files.
+- [ ] Recover S2 payload/T5 records/S3 context and FP roles, complete raw schedule and native whole-caller integration before installation/whole-ELF audit.
+
 ## Camera Ribbon Exit Flow Qualification - 2026-10-09
 
 [Note 1164](WORKING_NOTES/1164-game-camera-ribbon-renderer-exit-flow-qualification-20261009.md):

@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1165](WORKING_NOTES/1165-game-camera-ribbon-renderer-color-homes-callback-20261009.md)):
+Recover all eight retail color homes in the full545/frame0x120/509 form,
+retaining13 private homes and retail saves. Direct byte-buffer537/frame0x120/
+538 form type-checks recovered callback but changes saves;51 forms/36
+instruction streams screened. Twelve tests pass in212.922s with fresh primary
+independent rebases. Tools426c56c banked first; production bytes/credit/root README unchanged.
+Next recover original register roles and raw schedule; Game goal stays active.
+
 2026-10-09 ([Note 1164](WORKING_NOTES/1164-game-camera-ribbon-renderer-exit-flow-qualification-20261009.md)):
 Recover complete 16-bit-input outer-active/explicit-null-return body at 545
 words/frame0x120/509 raw differences. Retain five private slots and all save

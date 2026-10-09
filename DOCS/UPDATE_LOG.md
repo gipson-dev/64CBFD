@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-09 Camera Ribbon Color Homes And Callback
+
+[Note 1165](WORKING_NOTES/1165-game-camera-ribbon-renderer-color-homes-callback-20261009.md):
+Scope four used FP locals alongside colors to recover all eight color
+homes, retaining five earlier private homes and retail save slots in the
+complete545-word primary form. Direct byte-buffer537-word callback form
+type-checks the recovered table signature but changes GPR/FP saves.
+Twelve tests pass in212.922s, including fresh primary independent rebases.
+51 complete forms/36 instruction streams screened. Neither installed or
+exact; raw schedule/register roles/native whole-caller integration remain.
+Keep production bytes/credit and root README unchanged; tools426c56c first.
+
 ## 2026-10-09 Camera Ribbon Exit Flow Qualification
 
 [Note 1164](WORKING_NOTES/1164-game-camera-ribbon-renderer-exit-flow-qualification-20261009.md):

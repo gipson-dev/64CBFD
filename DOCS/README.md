@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Current camera ribbon color homes/callback](WORKING_NOTES/1165-game-camera-ribbon-renderer-color-homes-callback-20261009.md):
+  Complete545-word form matches13 private homes and retail save slots;
+  directly typed537-word byte-buffer reference retains different saves.
+  Twelve tests pass in212.922s; fresh primary rebases and tools426c56c.
+  Raw matching and production installation remain open.
 - [Current camera ribbon exit-flow qualification](WORKING_NOTES/1164-game-camera-ribbon-renderer-exit-flow-qualification-20261009.md):
   Complete 545-word short-input body fits the slot and retains five retail
   private slots with corrected active/cursor exit shapes. Four independent
