@@ -1,5 +1,13 @@
 # Update Log
 
+## 2026-10-09 Camera Ribbon Register Exclusions
+
+[Note 1166](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md):
+18 full forms/12 instruction streams/54 finite controls; two tests pass
+in16.292s. Shared phase/output reuse exceeds the slot or shifts FP saves.
+Retain the13-home primary; next recover neighboring constructor15148F1C.
+Production bytes/credit/root README unchanged at this checkpoint.
+
 ## 2026-10-09 Camera Ribbon Color Homes And Callback
 
 [Note 1165](WORKING_NOTES/1165-game-camera-ribbon-renderer-color-homes-callback-20261009.md):

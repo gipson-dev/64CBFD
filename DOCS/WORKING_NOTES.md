@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-09 ([Note 1166](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md)):
+Two tests in16.292s exclude shared-phase/ray-output register layouts over18
+complete forms/12 streams/54 finite controls. Retain qualified13-home primary;
+next recover full107-word constructor15148F1C. No production/credit changes.
+
 2026-10-09 ([Note 1165](WORKING_NOTES/1165-game-camera-ribbon-renderer-color-homes-callback-20261009.md)):
 Recover all eight retail color homes in the full545/frame0x120/509 form,
 retaining13 private homes and retail saves. Direct byte-buffer537/frame0x120/

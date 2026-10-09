@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Camera ribbon register exclusions](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md):
+  Two passing tests exclude shared-phase/output-reuse layouts across18
+  complete forms; retain the13-home primary and continue constructor recovery.
 - [Current camera ribbon color homes/callback](WORKING_NOTES/1165-game-camera-ribbon-renderer-color-homes-callback-20261009.md):
   Complete545-word form matches13 private homes and retail save slots;
   directly typed537-word byte-buffer reference retains different saves.

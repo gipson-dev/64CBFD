@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 426c56c; tools are committed before the consumer pin.
+  checkpoint pins tools 5f4973d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current renderer register exclusions:
+[Note 1166](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md).
+18 complete forms/12 instruction streams/54 finite controls eliminate the
+shared-phase/ray-output installation path; two tests pass in16.292s.
+Retain the qualified13-home primary; new forms exceed the slot or shift
+saves. Next recover neighboring107-word constructor func_15148F1C's
+zero-return placeholder. Production bytes/credit/root README unchanged.
 
 Current renderer color-home/callback qualification:
 [Note 1165](WORKING_NOTES/1165-game-camera-ribbon-renderer-color-homes-callback-20261009.md).

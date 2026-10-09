@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Camera Ribbon Register Exclusions - 2026-10-09
+
+[Note 1166](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md):
+
+- [x] Screen18 full forms/12 streams/54 finite cases; shared phase/output reuse does not recover retail allocation. Two tests pass in16.292s.
+- [x] Retain the13-home primary and reject oversize/six-FP-pair alternatives without production guards or credit.
+- [ ] Recover complete neighboring107-word func_15148F1C constructor, its mixed ABI and28-byte request; preserve pending renderer matching work.
+
 ## Camera Ribbon Color Homes And Callback - 2026-10-09
 
 [Note 1165](WORKING_NOTES/1165-game-camera-ribbon-renderer-color-homes-callback-20261009.md):
