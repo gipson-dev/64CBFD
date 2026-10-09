@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Record Actor Position Conversion - 2026-10-08
+
+[Note 1146](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md):
+
+- [x] Recover complete 88-word `func_151D75C4`: actor/identity/optional gates, unsigned joint mapping, live transform updates and signed secondary callback with forwarded return.
+- [x] Fit 38 complete forms/four profiles; derive six owned-frame/home guards from the fingerprinted complete stream, preserving all seven relocation words and every other instruction.
+- [x] Qualify 14,912 three-stream cases, 1,404 missing-byte pairs, 32 table aliases, 73,728 native cases, five compiled negatives and six effective partial-frame negatives.
+- [x] Connect actual seven-entry joint tables, complete point/SDK/matrix/translation helpers and complete primary slot-0 caller/distance/clear; keep bounded secondary-callback and hardware/gameplay boundaries explicit.
+- [x] Preserve 22 copied-owner neighbors/pools/relative relocations and existing diagnostics. Qualify actual 352-byte padding, six stale guards, 88 stale source controls and four independent GNU symbol sets.
+- [x] Install complete C plus exactly six guards, rebuild and preserve every ELF byte, all 6,058 symbol slots and protected data; exactly one progress row changes asm -> c.
+- [x] Measure fresh totals: 5,484 converted / 3,395 exact; Game 4,811 / 2,722; zero drift, 2,089 different and 11,475 guards. Keep root README aggregate-only.
+- [x] Pass ten focused post-install tests in 134.082s, no skips; 24 shared tests, both project tools checks and ten-file parse/mirror checks pass. Verify 132 docs / 4,133 relative links / zero broken.
+- [x] Bank tools de603ef before the exact parent source/docs pin; preserve independently dirty older mirror history and unrelated edits without pushing.
+- [ ] Recover false-zero C constructor `func_151D71B0` (45 words/frame0x50), complete creation-call ABI, payload/conditional copy and return before fitting or installation.
+- [ ] Qualify remaining linked setup and hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Callback Update Conversion - 2026-10-08
 
 [Note 1145](WORKING_NOTES/1145-game-record-callback-update-conversion-20261008.md):
@@ -12,7 +28,7 @@
 - [x] Measure fresh totals: 5,483 converted / 3,394 byte-exact; Game 4,810 / 2,721; zero drift, 2,089 different and 11,469 guards. Keep README aggregate-only.
 - [x] Pass all 11 focused post-install tests in 77.792s, no skips; 24 shared padder/linker tests and both project tools checks pass. Verify eight-file parse/mirror checks and 131 docs / 4,125 relative links / zero broken.
 - [x] Bank tools f7272ba before the parent source/docs pin; preserve independently dirty older mirror history and unrelated edits, without pushing.
-- [ ] Recover retained `func_151D75C4` (88 words/frame0x30), actual callback table slot 0: actor gates, joint-position transform and optional secondary callback.
+- [x] Recover and install retained `func_151D75C4` (88 words/frame0x30), including complete actor gates, joint transform, live flag and signed secondary callback; see Note 1146.
 - [ ] Qualify table slot 1, linked setup and hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Record Ring Renderer Conversion - 2026-10-08

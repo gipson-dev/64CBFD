@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-08 Record Actor Position Conversion
+
+[Note 1146](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md):
+Install complete `func_151D75C4`, 88 words/frame0x30, with six qualified frame
+guards and seven unchanged relocation words. Full ELF/data stays byte-identical;
+one 352-byte row changes asm -> c. Total 5,484 converted / 3,395 exact, Game
+4,811 / 2,722, zero drift and 2,089 different. Complete native, public-prefix,
+point/SDK and primary slot-0 caller qualification passes. Tools de603ef first,
+exact parent pin/source/docs second; preserve older dirty work without pushing.
+Next false C constructor `func_151D71B0`, 45 words/frame0x50. Wider gates stay open.
+
 ## 2026-10-08 Record Callback Update Conversion
 
 [Note 1145](WORKING_NOTES/1145-game-record-callback-update-conversion-20261008.md):

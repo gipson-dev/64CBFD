@@ -77,6 +77,11 @@ typedef struct {
 typedef struct { u8 padding[0x28]; CallbackRecord151D7264 record; } CallbackOwner151D7264;
 extern s32 (*D_8008FCA0[])(u8 *);
 
+extern f32 D_800AB280[][3];
+extern u8 D_800AB2D4[];
+extern s32 (*D_8008FCA8[])(u8 *);
+void func_15143134(f32 *, f32 *, u8 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/204660.s. */
 
 void func_151D77C8(u8 *owner);
@@ -190,7 +195,44 @@ void func_151D7538(volatile s32 arg0, s32 * volatile arg1, volatile u8 arg2) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D75C4.s")
+s32 func_151D75C4(u8 *owner) {
+    u8 *actor;
+    u8 *binding;
+    u8 *record;
+    u8 *matrices;
+    u8 *secondary;
+    s32 index;
+
+    actor = *(u8 **)(owner + 0x40);
+    binding = owner + 0x40;
+    if (!*(s32 *)actor || binding[4] != actor[0x3B]) {
+        return 0;
+    }
+    matrices = *(u8 **)(actor + 0x1D4);
+    record = owner + 0x28;
+    if (matrices == NULL) {
+        record[5] &= ~1;
+        return 1;
+    }
+    secondary = *(u8 **)(actor + 0x31C);
+    if (secondary != NULL && secondary[0x197] && *(u8 **)(actor + 0x318) != NULL) {
+        record[5] &= ~1;
+        return 1;
+    }
+    if (actor[7] != 0xFF) {
+        record[5] &= ~1;
+        return 1;
+    }
+    index = binding[5];
+    func_15143134(D_800AB280[index], (f32 *)(record + 8),
+        matrices + D_800AB2D4[index] * 0x40);
+    record[5] |= 1;
+    index = *(s8 *)(binding + 6);
+    if (index != -1) {
+        return D_8008FCA8[index](owner);
+    }
+    return 1;
+}
 
 s32 func_151D7724(u8 *arg0) {
     u8 *temp_v0 = *(u8 **)(arg0 + 0x40);

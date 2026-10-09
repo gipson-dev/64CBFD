@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f7272ba; tools are committed before the source pin.
+  checkpoint pins tools de603ef; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game conversion:
+[Note 1146](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md).
+Install complete `func_151D75C4`: 88 words / 352 bytes / retail frame 0x30.
+Recover actor/identity/optional gates, unsigned joint mapping, the complete
+point transform and signed secondary callback with forwarded s32 return.
+Raw C has six frame differences; a closed fingerprinted frame/home mapping
+derives six guards. All seven relocation words and every other instruction
+stay unchanged. Fresh full audit preserves every ELF byte, all 6,058 symbols
+and protected data; only this 352-byte row changes asm -> c. Total 5,484
+converted / 3,395 exact; Game 4,811 / 2,722; zero drift, 2,089 different and
+11,475 guards. Tools de603ef banked first, exact parent pin/source/docs second;
+no push. Root README aggregates only. Qualify 14,912 three-stream cases,
+73,728 native cases, complete point/SDK helpers and actual primary slot-0 caller.
+Next `func_151D71B0`, 45 words/frame0x50, is still a false zero-return C
+constructor. `func_151D7538` is already restored as a three-argument event
+handler, not an unqualified primary callback. No GLOBAL_ASM remains in this
+owner, but semantic placeholders remain. Linked setup, graph repair and
+hardware/gameplay stay open; host Release remains frozen. All ten post-install
+tests pass in 134.082s, no skips; 24 shared tests and both tools checks pass.
+132 docs / 4,133 relative links / zero broken. See Note 1146 for detailed receipts.
+
+Previous Game callback update conversion:
 [Note 1145](WORKING_NOTES/1145-game-record-callback-update-conversion-20261008.md).
 Install complete `func_151D7264`: 81 words / 324 bytes / frame 0x40.
 Recover the unsigned callback selector, pre-call position/flag capture, live

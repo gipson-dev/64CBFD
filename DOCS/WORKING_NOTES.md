@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-08 ([Note 1146](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md)):
+Install complete 88-word/frame0x30 `func_151D75C4` after actor/joint/callback
+recovery and fingerprinted six-word frame closure. Whole ELF/data unchanged;
+one 352-byte conversion row, six new guards and seven unchanged relocation
+words. Totals 5,484 converted / 3,395 exact; Game 4,811 / 2,722, zero drift.
+Tools de603ef first, exact parent pin/source/docs second, no push or older
+standalone reset. Next false C constructor `func_151D71B0` (45 words/frame0x50).
+`func_151D7538` is already an exact three-argument event handler; wider gates open.
+
 2026-10-08 ([Note 1145](WORKING_NOTES/1145-game-record-callback-update-conversion-20261008.md)):
 Install complete 81-word/frame0x40 `func_151D7264` after semantic recovery,
 whole-entry/native/public-prefix qualification and closed nine-word scheduling

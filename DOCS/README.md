@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record actor position conversion](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md):
+  Complete `func_151D75C4` is C and matches all 88 words with six qualified
+  frame guards. Full rebuilt ELF/data unchanged; totals 5,484 converted /
+  3,395 exact, zero drift. Tools de603ef first, exact parent pin second, no push.
+  Next false C constructor `func_151D71B0`, 45 words; wider acceptance stays open.
+
 - [Latest record callback update conversion](WORKING_NOTES/1145-game-record-callback-update-conversion-20261008.md):
   Complete `func_151D7264` is C and matches all 81 words with nine qualified
   scheduling guards. Full rebuilt ELF/data unchanged; totals 5,483 converted /
