@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Link Setup Recovery - 2026-10-09
+
+[Note 1172](WORKING_NOTES/1172-game-owner-link-setup-recovery-checkpoint-20261009.md):
+
+- [x] Recover three48-byte attachment packets,56-byte reusable request and actual five-argument151B30B0 ABI.
+- [x] Qualify defined fields/failure stores/captured endpoints with384 guest cases, five compiled negatives and native32 layout checks.
+- [x] Measure17 complete O2/g3 forms; preserve original210-word assembly and unchanged source/ELF/guards/progress.
+- [ ] Fit210 words with original parameter-home lifetime, retainedS2 and private packetSP34/requestSP64.
+- [ ] Qualify raw private packet provenance, actual allocator integration, native semantics, rebases and copied owner/padder before installation.
+
 ## Owner State Callback Direct Match - 2026-10-09
 
 [Note 1171](WORKING_NOTES/1171-game-owner-state-callback-direct-match-20261009.md):

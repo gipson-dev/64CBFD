@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-09 ([Note 1172](WORKING_NOTES/1172-game-owner-link-setup-recovery-checkpoint-20261009.md)):
+Bank complete three-request candidate and bounded384-case recovery suite for
+func_151B2348. Five tests pass; packet/ABI/failed-store behavior recovered,
+but stack/register shape does not match. Original assembly stays installed;
+no production changes or new credit. Next fit210 words with retail private homes.
+
 2026-10-09 ([Note 1171](WORKING_NOTES/1171-game-owner-state-callback-direct-match-20261009.md)):
 Install complete67-word func_151B2100 directly, frame0x38/no guards; typed
 void contracts restore two false C helpers as original210/176-word assembly.

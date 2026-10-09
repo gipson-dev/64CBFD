@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner link setup recovery checkpoint](WORKING_NOTES/1172-game-owner-link-setup-recovery-checkpoint-20261009.md):
+  Three-request semantics and allocator ABI recovered; five bounded tests pass.
+  Stack/register fitting remains open, original210-word assembly retained.
+
 - [Owner state callback direct match](WORKING_NOTES/1171-game-owner-state-callback-direct-match-20261009.md):
   Restore67-word callback directly/no guards and two falsely typed helpers
   as original assembly. Game2,737/4,814 exact; two fewer C conversion rows.

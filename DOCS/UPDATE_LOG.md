@@ -1,5 +1,13 @@
 # Update Log
 
+## 2026-10-09 Owner Link Setup Recovery Checkpoint
+
+[Note 1172](WORKING_NOTES/1172-game-owner-link-setup-recovery-checkpoint-20261009.md):
+Recover all three func_151B2348 requests and the actual five-argument allocator
+ABI. Five tests pass23.790s:384 guest cases/768 runs, failure masks, aliases,
+mutations and five compiled negatives. No measured C form matches210 words;
+keep complete retail assembly. Source/ELF/guards/progress unchanged, no new credit.
+
 ## 2026-10-09 Owner State Callback Direct Match
 
 [Note 1171](WORKING_NOTES/1171-game-owner-state-callback-direct-match-20261009.md):
