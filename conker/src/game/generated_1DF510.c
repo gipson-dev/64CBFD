@@ -3,12 +3,39 @@ extern u8 D_800CC2D0[];
 void func_151B47D8(u8 *, u8 *, s32, u8);
 void func_1516972C(u8 *);
 
+typedef struct {
+    u8 *owner;
+    u8 ownerCode, reserved05[3];
+    u8 *resource;
+    u8 active, state, reserved0E[2];
+    u8 cleared[12];
+    s32 value;
+} OwnerDescriptor151B2060;
+u8 *func_15083E90(s32);
+u8 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
 /* Non-matching placeholders for the text-only asm slice asm/1DF510.s. */
 
 void func_151B222C(u8 *);
 
-s32 func_151B2060() {
-    return 0;
+void func_151B2060(u8 *owner) {
+    u8 *created;
+    OwnerDescriptor151B2060 descriptor;
+
+    if (owner != NULL) {
+        descriptor.owner = owner;
+        descriptor.ownerCode = owner[0x3B];
+        descriptor.resource = func_15083E90(1);
+        descriptor.active = 1;
+        descriptor.state = 0;
+        bzero(descriptor.cleared, 12);
+        descriptor.value = 0;
+        created = func_151491F4(300, -1, 0x16, 0, 0x12, 32, 255, 1);
+        if (created != NULL) {
+            memcpy(created + 0x28, &descriptor, 32);
+        }
+    }
 }
 
 s32 func_151B2100() {

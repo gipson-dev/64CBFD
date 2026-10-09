@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1170](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md)):
+Install complete40-word func_151B2060 directly, frame0x50/no guards. Eight
+tests pass in51.065s:6,146 guest,7,680 native32,96 rebases and60 connected
+cases. Preserve pre-helper capture/five holes,17 neighbors/four warnings;
+whole ELF changes only target slot/st_size. Game exact2,736/4,816, no new
+conversion credit. Next67-word func_151B2100; broader Game goal stays active.
+
 2026-10-09 ([Note 1169](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md)):
 Install complete39-word func_151B2F04 directly, frame0/no guards. Eight tests
 pass in12.221s:4,352 guest,13,056 native32,194 fault pairs, rebases and actual

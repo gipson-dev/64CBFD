@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c6b2d59; tools are committed before the consumer pin.
+  checkpoint pins tools 0353bcb; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner descriptor constructor match:
+[Note 1170](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md).
+`func_151B2060` emits all40 retail words directly, original0x50 frame/four
+relocations and no guards. Eight installed tests pass in51.065s:6,146 guest,
+7,680 native32,96 rebase cases and60 connected cases using actual caller/
+allocation wrapper. Preserve five raw packet holes and pre-helper capture.
+Whole ELF changes only target160-byte slot/st_size12->160; preserve17
+neighbors/four existing warnings, guard/progress rows and protected data.
+Game exact2,736/4,816 (56.81%), total3,409/5,489 (62.11%), zero drift,
+2,080 differences; no conversion credit. Next recover descriptor consumer
+`func_151B2100`,67 words; renderer remains pending.
+Tools0353bcb banked first; source/docs and exact consumer pin follow.
 
 Latest endpoint-pair callback match:
 [Note 1169](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md).

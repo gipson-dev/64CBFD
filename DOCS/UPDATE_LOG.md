@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-09 Owner Descriptor Constructor Direct Match
+
+[Note 1170](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md):
+func_151B2060 now emits all40 retail words directly, frame0x50/no guards.
+Eight installed tests pass in51.065s:6,146 guest,7,680 native32, actual caller/
+allocation wrapper and rebases. Preserve five private holes,17 neighbors,
+existing warnings and all ELF bytes except target slot/st_size. Game exact
+2,736/4,816; no conversion credit. Next recover67-word func_151B2100.
+
 ## 2026-10-09 Endpoint Pair Callback Direct Match
 
 [Note 1169](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md):

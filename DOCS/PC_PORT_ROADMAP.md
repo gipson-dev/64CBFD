@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Descriptor Constructor Direct Match - 2026-10-09
+
+[Note 1170](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md):
+
+- [x] Recover full40-word func_151B2060, NULL gate,32-byte packet/five untouched holes, pre-helper owner capture and allocator failure path.
+- [x] Match all40 words directly under existing O2/g3, frame0x50/four relocation uses/no guards; recover private packetSP2C using two real local declarations.
+- [x] Pass eight installed tests in51.065s:6,146 guest,7,680 native32,96 rebases and60 actual caller/allocation-wrapper cases; retain bounded helper/hardware boundaries.
+- [x] Preserve17 owner neighbors/four existing Warning712 messages, actual padder acceptance and four independent original/candidate symbol sets.
+- [x] Whole-ELF audit permits only target160-byte slot/st_size12->160; guards/progress and189,088 protected Game data bytes unchanged.
+- [x] Refresh README aggregates only:Game2,736/4,816 exact, total3,409/5,489, zero drift and2,080 differences; no conversion credit.
+- [ ] Recover full67-word func_151B2100 descriptor validation/state-transition callback, lazy endpoint gates, state capture/reloads and callee-mutation paths.
+- [ ] Keep common allocator/resource/SDK/hardware integration and complete ribbon renderer as separate open gates.
+
 ## Endpoint Pair Callback Direct Match - 2026-10-09
 
 [Note 1169](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md):
@@ -10,7 +23,7 @@
 - [x] Execute actual23-word dispatcher over2,048 cases/4,096 runs, with other slots bounded NULL; preserve17 owner neighbors and four existing Warning712 messages.
 - [x] Audit all ELF bytes except target156-byte slot and st_size12->156; preserve guard/progress CSV and189,088 exact protected Game data bytes.
 - [x] Refresh README aggregates only:Game2,735/4,816 exact, total3,408/5,489, zero drift and2,081 differences; no new conversion credit.
-- [ ] Recover complete40-word func_151B2060 null-gated32-byte descriptor constructor, original holes, allocator failure behavior and actual caller/return contract.
+- [x] Recover complete40-word func_151B2060 null-gated32-byte descriptor constructor, original holes, allocator failure behavior and actual caller/return contract in Note1170.
 - [ ] Keep complete renderer/native-port declaration reconciliation and other callback-table routes as separate open gates.
 
 ## Ribbon Alpha Defined Signed Scaling - 2026-10-09

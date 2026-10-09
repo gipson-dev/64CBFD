@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner descriptor constructor direct match](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md):
+  Restore all40 words directly, no guards; eight installed tests qualify
+  raw holes/capture order, native32, connected caller/wrapper and whole ELF.
+  Game exact2,736/4,816; next67-word descriptor consumer func_151B2100.
 - [Endpoint-pair callback direct match](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md):
   Restore all39 words directly, no guards; eight installed tests qualify
   alias/reload behavior, native32, actual dispatcher and whole-ELF preservation.
