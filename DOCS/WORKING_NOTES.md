@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-09 ([Note 1153](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md)):
+Restore complete void `func_15147740`, C100/frame0x20, linked exact with
+six private failure-flag spill guards, not direct raw matching. Timer wrap,
+live signed/unsigned selectors, failure suppression, validation and cleanup
+recovered. All 6,058 slots/other code/data remain unchanged; target size
+12 -> 400 and exact ABS-symbol ordering permutation audited. All logical
+symbols otherwise preserved. Old 11,475 guards/bytes unchanged, six appended;
+conversion CSV unchanged. Total 5,484 / 3,401 exact, Game 4,811 / 2,728;
+zero drift, 2,083 different. Eight final tests/native32/table identities,
+25 shared tests and both tools checks pass. Tools b3086e2 first, parent pin
+second, no push or older mirror reset. Next 97-word `func_15147EB8`;
+trail's 61 differences and wider acceptance remain open.
+
 2026-10-09 ([Note 1152](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md)):
 Restore complete `func_15147C4C`, C52/frame0x38, directly exact without
 guards. Signed index, lazy optional word, nine-argument graphics call,

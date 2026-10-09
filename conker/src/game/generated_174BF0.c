@@ -34,6 +34,11 @@ u8 *func_151462C8(u8 *, void *, u8, u8 *, u8, s16, void *, u8, s32);
 void func_1516972C(u8 *);
 extern u8 *(*D_8008A2A4[])(u8 *, u8 *, s16);
 
+extern s32 D_800BE9E4;
+extern s32 (*D_8008A200[])(u8 *);
+extern s32 (*D_8008A23C[])(u8 *);
+extern s32 (*D_8008A284[])(u8 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/174BF0.s. */
 
 s32 func_151D5E30();
@@ -41,8 +46,53 @@ void func_1514795C(ResourceOwner174BF0 *);
 void func_15169260(s32, s32, s32, u8);
 extern u8 D_800A5760[];
 
-s32 func_15147740() {
-    return 0;
+void func_15147740(u8 *actor) {
+    s8 expired = 0;
+    u8 first;
+    u8 second;
+    s8 action;
+
+    if (*(u16 *)(actor + 0x1E) & 1) {
+        *(s16 *)(actor + 0x1C) = (u32)*(s16 *)(actor + 0x1C) - (u32)D_800BE9E4;
+        if (*(s16 *)(actor + 0x1C) < 0) {
+            expired = 1;
+        }
+    }
+    first = actor[0x2F];
+    if (first >= 15) {
+        func_1516972C(actor);
+        return;
+    }
+    if (first != 0 && !expired) {
+        if (D_8008A200[first](actor) == 0) {
+            expired = 1;
+        }
+    }
+    second = actor[0x30];
+    if (second >= 18) {
+        func_1516972C(actor);
+        return;
+    }
+    if (second != 0 && !expired) {
+        if (D_8008A23C[second](actor) == 0) {
+            expired = 1;
+        }
+    }
+    if (*(u16 *)(actor + 0x1E) & 0x10) {
+        action = *(s8 *)(actor + 0x24);
+        if (action < -1 || action >= 8) {
+            func_1516972C(actor);
+            return;
+        }
+        if (action != -1 && !expired) {
+            if (D_8008A284[action](actor) == 0) {
+                expired = 1;
+            }
+        }
+    }
+    if (expired) {
+        func_1516972C(actor);
+    }
 }
 
 void func_151478D0(u8 *arg0) {

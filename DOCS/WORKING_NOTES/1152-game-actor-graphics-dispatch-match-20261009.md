@@ -154,6 +154,13 @@ compiler and independent tests settle this target's return/ABI decisions.
 
 ## Next Work
 
+Follow-up [Note 1153](1153-game-actor-timer-callbacks-match-20261009.md)
+restores complete `func_15147740`, 100 words/frame0x20, linked exact with
+six private failure-flag spill guards. All graphics-dispatch bytes stay
+unchanged. Next recover its first-table callback `func_15147EB8`,
+97 words/frame0x30, or continue the trail constructor's 61 differences.
+The original handoff below is historical:
+
 Recover false-zero **func_15147740**, VA **0x15147740..0x151478D0**,
 ROM **0x174BF0..0x174D80**, **100 words / 400 bytes / frame0x20**, in this
 same owner. Its full retail routine subtracts a live global from a signed

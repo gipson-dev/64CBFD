@@ -1,5 +1,23 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Timer Callbacks Match - 2026-10-09
+
+[Note 1153](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md):
+
+- [x] Restore complete void `func_15147740`, 100 words/frame0x20, linked exact with six private spill-slot guards; raw C remains six differences, not a direct compiler match.
+- [x] Recover signed-halfword timer wrap/reload, two unsigned selectors, signed -1 sentinel, live callback fields/tables, continued validation after failure and conditional cleanup.
+- [x] Screen 44 complete ordinary forms/four profiles; prove the closed SP+0x1F -> SP+0x1B failure-flag lifetime and stale-word rejection, without changing frame/branches/registers/relocations/other 94 words.
+- [x] Qualify 9,600 cases/28,800 executions, all 99 reachable words, 524 missing-public-byte triples, 721,664 native32 cases, live mutations/home clobbers and six effective compiled negatives.
+- [x] Preserve 10 neighbors/pools/relative relocations/seven owner diagnostics; actual padder emits 400 bytes without filler, four independent GNU links pass over 512 cases.
+- [x] Qualify 656 bounded cases using all 39 actual callback identities and two incoming pointer witnesses; actual callback bodies/upstream dispatch remain separate.
+- [x] Complete the normal manifest-triggered rebuild; audit every ELF byte/all 6,058 slots, target size 12 -> 400 and the precise six-byte ABS-symbol ordering permutation. All logical symbols except target size and all other code/data stay unchanged.
+- [x] Preserve all 11,475 old guard rows/bytes and conversion CSV; append exactly six target rows, total 11,481.
+- [x] Measure 5,484 converted / 3,401 exact, Game 4,811 / 2,728; zero drift and 2,083 different. Root README aggregate rows only.
+- [x] Pass eight post-install tests in 64.224s, 25 shared tests and both tools checks; bank tools b3086e2 before exact parent source/guards/docs/gitlink, preserving older mirror without pushing or pausing.
+- [x] Check twenty-five mounted/mirrored tools with parse/exact-byte validation; validate 139 documents / 4,201 relative links / zero broken.
+- [ ] Recover complete first-table callback `func_15147EB8`, 97 words/frame0x30, and connect it to this banked updater; alternatively continue trail constructor's unchanged 61 differences.
+- [ ] Qualify actual callback/cleanup/upstream/hardware/gameplay paths and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Actor Graphics Dispatch Match - 2026-10-09
 
 [Note 1152](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md):
@@ -13,7 +31,8 @@
 - [x] Measure 5,484 converted / 3,400 exact, Game 4,811 / 2,727; zero drift and 2,084 different. Root README aggregate rows only.
 - [x] Pass eight post-install tests in 27.622s, 25 shared tests and both tools checks; bank tools 7b88702 before exact parent source/docs/gitlink, preserving older mirror without pushing or pausing.
 - [x] Check twenty-three mounted/mirrored tools with parse/exact-byte validation; validate 138 documents / 4,190 relative links / zero broken.
-- [ ] Recover false-zero `func_15147740`, 100 words/frame0x20, or continue trail constructor `func_151DA6F8`'s unchanged 61 differences.
+- [x] Recover complete `func_15147740`, 100 words/frame0x20, linked exact with six private spill-slot guards; see Note 1153.
+- [ ] Continue trail constructor `func_151DA6F8`'s unchanged 61 differences.
 - [ ] Qualify actual graphics/cleanup/callback/upstream/hardware/gameplay paths and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Effect Allocation Core Match - 2026-10-09

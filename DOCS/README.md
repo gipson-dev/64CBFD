@@ -54,7 +54,17 @@ confirmed.
 
 ## Planning and history
 
-- [Latest actor graphics dispatch match](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md):
+- [Latest actor timer callbacks match](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md):
+  Complete void `func_15147740`, C100/frame0x20, linked exact with six
+  guarded private spill accesses; raw C has six differences. Timer/selector/
+  callback/cleanup order recovered. All other code/data and logical symbols
+  preserved; precise ABS-symbol ordering swap audited separately. Totals
+  5,484 converted / 3,401 exact, zero drift. Eight focused tests/native32/
+  retail table identities and 25 shared tests pass. Tools b3086e2 first,
+  parent pin second, no push. Next 97-word callback `func_15147EB8`;
+  trail's 61 differences and wider acceptance remain open.
+
+- [Previous actor graphics dispatch match](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md):
   Complete `func_15147C4C`, C52/frame0x38, directly byte-exact without
   guards; signed index, lazy optional word, live selector/table and distinct
   callback result recovered. Only target ELF slot/symbol size change;

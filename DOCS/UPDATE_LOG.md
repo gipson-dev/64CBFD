@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-09 Actor Timer Callbacks Match
+
+[Note 1153](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md):
+Restore complete void `func_15147740`, 100 words/frame0x20, linked exact
+with six private spill-slot guards; raw C has six differences. Recover wrapped
+timer, unsigned/signed selectors, live callbacks, continued validation after
+failure and cleanup. All 6,058 slots and other code/data stay unchanged;
+target size 12 -> 400 and an exact ABS-symbol ordering swap are audited,
+with all logical symbols preserved except target size. Preserve 11,475 old
+guard rows/bytes, append six, total 11,481. Conversion CSV unchanged.
+Total 5,484 / 3,401 exact, Game 4,811 / 2,728; zero drift, 2,083 different.
+Eight final tests, 721,664 native32 cases, table identities, 25 shared tests
+and both tools checks pass. Tools b3086e2 first, parent source/guards pin
+second, no push or older mirror reset. Next first-table callback
+`func_15147EB8`, 97 words/frame0x30; wider acceptance remains open.
+
 ## 2026-10-09 Actor Graphics Dispatch Match
 
 [Note 1152](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7b88702; tools are committed before the source pin.
+  checkpoint pins tools b3086e2; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game actor graphics dispatch match:
+Latest Game actor timer callbacks match:
+[Note 1153](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md).
+Restore false-zero `func_15147740`, 100 words / 400 bytes / frame0x20,
+linked exact with six guarded private failure-flag spill accesses; raw C
+has six differences, not a direct compiler match. Recover wrapped signed
+timer, two unsigned selectors, signed -1 sentinel, live flags/tables,
+callback failure suppression, continued validation, cleanup and void return.
+Eight post-install tests pass in 64.224s, including 721,664 native32 cases,
+all 99 reachable words, six effective negatives and actual table identities.
+All 6,058 slots and other code/data remain unchanged; target size 12 -> 400
+and an exact six-byte ABS-symbol ordering permutation are audited against
+the saved baseline. Every logical symbol remains unchanged except target size.
+Preserve all 11,475 old guards/bytes; append six, total 11,481. Conversion
+CSV unchanged. Fresh totals: 5,484 converted / 3,401 exact, Game 4,811 /
+2,728; zero drift and 2,083 different. Twenty-five shared tests and both
+tools checks pass. Tools b3086e2 first, exact parent pin second, no push or
+older mirror reset. Next first-table callback `func_15147EB8`, 97 words/
+frame0x30; trail remains 61 differences. Wider callback/cleanup/upstream/
+hardware/gameplay and graph corpus gates remain open.
+
+Previous Game actor graphics dispatch match:
 [Note 1152](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md).
 Restore false-zero `func_15147C4C`, 52 words / 208 bytes / frame0x38,
 directly byte-exact without guards. Recover signed-halfword forwarding,

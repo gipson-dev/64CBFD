@@ -11474,3 +11474,9 @@ generated_204660,func_151D75C4,0x100,0xAFA70038,0xAFA70030,-,-,Normalize closed 
 generated_204660,func_151D75C4,0x104,0x8FA30018,0x8FA30020,-,-,Normalize closed actor position owned frame and pointer home mapping,,,false
 generated_204660,func_151D75C4,0x10C,0x8FA70038,0x8FA70030,-,-,Normalize closed actor position owned frame and pointer home mapping,,,false
 generated_204660,func_151D75C4,0x154,0x27BD0038,0x27BD0030,-,-,Normalize closed actor position owned frame and pointer home mapping,,,false
+generated_174BF0,func_15147740,0x80,0xA3A5001F,0xA3A5001B,-,-,Normalize closed actor callback failure flag private spill slot,,,false
+generated_174BF0,func_15147740,0x94,0x83A5001F,0x83A5001B,-,-,Normalize closed actor callback failure flag private spill slot,,,false
+generated_174BF0,func_15147740,0xDC,0xA3A5001F,0xA3A5001B,-,-,Normalize closed actor callback failure flag private spill slot,,,false
+generated_174BF0,func_15147740,0xF0,0x83A5001F,0x83A5001B,-,-,Normalize closed actor callback failure flag private spill slot,,,false
+generated_174BF0,func_15147740,0x154,0xA3A5001F,0xA3A5001B,-,-,Normalize closed actor callback failure flag private spill slot,,,false
+generated_174BF0,func_15147740,0x168,0x83A5001F,0x83A5001B,-,-,Normalize closed actor callback failure flag private spill slot,,,false
