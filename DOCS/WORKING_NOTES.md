@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1160](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md)):
+Qualify complete camera-ribbon frame0x120 forms:543/544 raw differences and
+546/513. Eight tests pass in138.152s, each form804 guest/536 native32 cases,
+ten unchanged neighbors and16-case/32-execution dispatcher connection.
+No production installation or matching credit. Next recover fourth GPR/S3
+view-to-stride lifetime and original private layout. Tools b2c37ee banked
+first; preserve independent checkout, then exact parent pin and notes.
+
 2026-10-09 ([Note 1159](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md)):
 Recover the complete camera-facing func_1514803C renderer as an uninstalled
 semantic candidate:547/frame0x130/443 differences versus retail546/frame0x120.

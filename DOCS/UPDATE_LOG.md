@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Camera Ribbon Frame Fitting
+
+[Note 1160](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md):
+Two complete forms reach retail0x120 frame with543/544 and546/513 word/
+difference counts. Eight tests pass in138.152s, including536 native32
+cases per form, copied-owner isolation and actual dispatcher16 cases/32
+executions. Correct prior doubled dispatcher prose from saved receipts.
+Production/aggregate credit unchanged; S3/private-layout fitting remains.
+Tools b2c37ee banked before the exact parent pin, without push or pause.
+
 ## 2026-10-09 Camera Ribbon Renderer Recovery
 
 [Note 1159](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md):

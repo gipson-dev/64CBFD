@@ -1,12 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Camera Ribbon Frame Fitting - 2026-10-09
+
+[Note 1160](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md):
+
+- [x] Reach retail0x120 frame in two complete semantic forms: inline543/544 differences and mixed546/513; retain measured saved-register mismatches instead of claiming matching from size.
+- [x] Pass eight fitting tests in138.152s; qualify each form over804 guest cases,92 setup mutation cases,94 missing-byte pairs,five aliases,two cyclic prefixes and536 actual native32 cases.
+- [x] Preserve ten owner neighbors/pools/relative relocations/zero diagnostics; verify actual padder acceptance and16 cases/32 executions through the complete52-word dispatcher/protected table.
+- [x] Exclude scale/output overlap mappings with an effective compiled negative; correct previous doubled dispatcher prose to the saved16-case/32-execution receipt.
+- [x] Bank tools b2c37ee first; preserve production bytes, all aggregate credit and the independently dirty older checkout. Root README unchanged.
+- [ ] Recover retail S3 view-to-stride lifetime/fourth saved GPR and original private color/position layout; resolve full raw matching.
+- [ ] Qualify independent rebases and remaining alias/mutation domains, then production installation and whole-ELF/progress audit. Hardware/gameplay and other callees remain separate gates.
+
 ## Camera Ribbon Renderer Recovery - 2026-10-09
 
 [Note 1159](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md):
 
 - [x] Read all546 retail words and direct helper interfaces; reconstruct complete setup, cross-product width, paired vertices, triangle commands, backward wrap and final prefetch.
 - [x] Qualify uninstalled547-word/frame0x130 candidate: nine tests in106.260s,804 guest cases/all544 reachable retail words,536 actual native32 cases, eight effective negatives,94 missing-byte pairs and five public aliases.
-- [x] Preserve ten copied-owner neighbors/pools/relative relocations/zero diagnostics; actual padder rejects0x88C bytes in0x888 span. Connect actual52-word dispatcher and protected D_8008A2A4[1] over32 cases/64 executions.
+- [x] Preserve ten copied-owner neighbors/pools/relative relocations/zero diagnostics; actual padder rejects0x88C bytes in0x888 span. Connect actual52-word dispatcher and protected D_8008A2A4[1] over16 cases/32 executions (receipt correction in Note1160).
 - [x] Screen18 complete forms/four profiles and two cyclic emitted prefixes without adding production bounds. Preserve all production source/ELF/guards/progress bytes and aggregate counts.
 - [ ] Fit retail0x120 private layout and captured record-pointer lifetime across setup calls; resolve full raw matching without dropping behavior or installing a merely shorter form.
 - [ ] Qualify independent rebases, remaining alias/mutation domains and installation; rebuild/audit whole ELF and fresh progress before claiming conversion or exact-match credit.

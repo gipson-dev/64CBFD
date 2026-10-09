@@ -107,7 +107,7 @@ asm postprocessor and pool helpers. No shared helper changes.
   are unchanged, with zero diagnostics. The actual padder rejects installation:
   **`patched func_1514803C is 0x88C bytes but its retail span is only 0x888`**.
   No filler, broad normalization or dropped instructions are used.
-- **32 cases /64 executions** connect the complete52-word dispatcher and
+- **16 cases /32 executions** connect the complete52-word dispatcher and
   full547-word candidate /546-word retail leaf through the actual protected
   table. Signed view and optional transform argument are checked. Transform
   and graphics helpers are bounded hooks, not complete callee acceptance.

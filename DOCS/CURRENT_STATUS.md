@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 8c7bd4a; tools are committed before the consumer pin.
+  checkpoint pins tools b2c37ee; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current complete renderer recovery:
+Current renderer frame fitting:
+[Note 1160](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md).
+Two complete forms reach frame0x120: inline rays543 words/544 raw differences,
+and mixed lifetimes546/513. Eight tests pass in138.152s; both forms receive
+804 guest and536 native32 cases, owner isolation and actual dispatcher16
+cases/32 executions. Neither is installed or exact: inline saves only three
+GPRs, mixed adds an FP pair. Next recover retail S3 view/stride lifetime and
+original private layout. Production bytes, root README and credit unchanged.
+
+Previous complete renderer recovery:
 [Note 1159](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md).
 Full func_1514803C semantic candidate is qualified but **not installed**:
 547 words/frame0x130/443 raw differences versus retail546/frame0x120.

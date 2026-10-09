@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Current camera ribbon frame fitting](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md):
+  Two complete0x120-frame forms qualified by eight tests; register layouts
+  still differ, production uninstalled. Next recover S3 view/stride lifetime.
 - [Current camera ribbon renderer recovery](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md):
   Full semantic candidate and nine passing tests; production remains exact
   assembly.547 words/frame0x130/443 raw differences; frame fitting open.
