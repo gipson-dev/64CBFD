@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Companion Setup Guarded C Match - 2026-10-09
+
+[Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md):
+
+- [x] Fit full176-word func_151B2690/frame0xD8 with correct endpoint/pair and retained request lifetimes.
+- [x] Certify69 private-home forwarding/prefix guards with equal boundary GPR/FP/private state and ordered public reads; retain22 relocation uses.
+- [x] Pass nine installed tests:384 guest/16,384 native32,64 rebases/64 actual-wrapper chain cases, effective negatives, faults and copied-owner/padder checks.
+- [x] Audit byte-identical whole ELF and189,088 protected bytes; preserve17 neighbors/four old warnings, append only69 guards/change one ASM-to-C row.
+- [x] Add704 converted bytes; refresh README aggregates to total5,489 converted/3,413 exact and Game4,816 converted/2,740 exact, zero drift.
+- [x] Commit tools first and pin211a2f1; preserve the independently dirty older checkout.
+- [ ] Recover next340-word/frame0xB8 func_151B2974's full caller/graphics ABI before fitting.
+- [ ] Keep full caller/factory/resource/SDK/hardware/gameplay and renderer acceptance separate; guard removal is future compiler-style work.
+
 ## Owner Companion Setup Recovery - 2026-10-09
 
 [Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md):
@@ -9,8 +22,8 @@
 - [x] Pass nine tests:384 guest/16,384 native32,64 rebase/64 actual53-word wrapper-chain cases, six effective negatives and12 public fault-prefix cases.
 - [x] Preserve17 copied-owner neighbors/pools/relocations/four old warnings; actual asmprocessor and scratch padder accept without authorizing matching installation.
 - [x] Reject all56 persisted nonmatching profile rows; retain original assembly and unchanged source/ELF/guards/progress/protected data, no new conversion credit.
-- [ ] Fit the same2690 initialS1 actor retention and delayed incoming-home schedule; selected176/frame0xD8 has122 differences.
-- [ ] Qualify a byte-matching complete C form before installation, then rebuild/audit linked ELF and fresh progress; the ignored69-difference probe is not qualified.
+- [x] Resolve2690 initialS1/home schedule with the complete volatile form and69 certified prefix guards in [Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md).
+- [x] Qualify/install the guarded C match, rebuild/audit linked ELF and fresh totals in Note1176; the earlier unqualified probe alone was not acceptance.
 - [ ] Keep full caller/factory/resource/SDK/hardware/gameplay and renderer integration separate from bounded helper tests.
 
 ## Owner Link Setup Guarded C Match - 2026-10-09
@@ -24,7 +37,7 @@
 - [x] Audit byte-identical whole ELF/189,088 protected data bytes; append only25 guards and change exactly one ASM-to-C progress row.
 - [x] Add840 converted bytes; refresh README aggregate rows to total5,488 converted/3,412 exact and Game4,815 converted/2,739 exact, zero drift.
 - [x] Recover and qualify original176-word/frame0xD8 companion func_151B2690 semantics separately in [Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md).
-- [ ] Finish2690 byte matching and installation; semantic recovery does not complete this gate.
+- [x] Finish2690 byte matching and installation in [Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md); semantic recovery alone did not complete this gate.
 - [ ] Keep common allocator/resource/SDK/hardware/gameplay and full renderer as separate integration gates; removing25 guards is future compiler-style work.
 
 ## Owner Link Allocator Direct Match - 2026-10-09

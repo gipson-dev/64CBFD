@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md)):
+Install full176-word func_151B2690/frame0xD8 using69 certified private-home/
+prefix guards. Nine installed tests pass14.788s, zero skips; normalized access
+traces match retail while raw private volatile-home order is not claimed.
+Entire ELF byte-identical; append69 guards/change one ASM-to-C row/add704 bytes.
+Game2,740/4,816 exact,total3,413/5,489; tools211a2f1 committed first.
+Next340-word func_151B2974 graphics recovery; full hardware/renderer stay open.
+
 2026-10-09 ([Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md)):
 Bank complete176-word func_151B2690 companion semantics and nine-test recovery
 suite:384 guest/16,384 native32/64 rebases/64 actual-wrapper chain cases.

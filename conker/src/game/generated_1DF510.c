@@ -18,7 +18,7 @@ void *memcpy(void *, const void *, u32);
 s32 func_151B22F4(u8 *);
 void func_151B222C(u8 *);
 void func_151B2348(u8 *);
-void func_151B2690(u8 *);
+void func_151B2690(u8 *volatile);
 
 typedef struct { f32 x, y, z; } OwnerLinkVector2348;
 typedef struct {
@@ -46,6 +46,16 @@ extern OwnerLinkVector2348 D_800AA338, D_800AA32C, D_800AA344;
 extern f32 D_800AA380, D_800AA384;
 u8 *func_151B30B0(void *, f32, s32, u8, s32);
 
+
+typedef struct {
+    OwnerLinkEndpoint2348 endpoint;
+    OwnerLinkVector2348 end;
+    f32 width;
+    u8 *actor;
+} OwnerEffectPacket2690;
+extern OwnerLinkVector2348 D_800AA368, D_800AA374;
+extern f32 D_800AA388, D_800AA38C;
+void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/1DF510.s. */
 
@@ -226,7 +236,69 @@ void func_151B2348(u8 *actor) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_1DF510/func_151B2690.s")
+void func_151B2690(u8 *volatile actor) {
+    u8 *pair = actor;
+    u8 *endpoint = *(u8 **)(pair + 0x28);
+    struct { OwnerEffectPacket2690 effect; OwnerLinkPacket2348 packet; OwnerLinkRequest2348 request; } work;
+    u8 *created;
+
+    work.packet.actor = pair;
+    work.packet.route = 1;
+    work.packet.first.owner = endpoint;
+    work.packet.first.code = endpoint[0x3B];
+    work.packet.first.kind = 5;
+    work.packet.first.offset = D_800AA320;
+    work.packet.second.owner = endpoint;
+    work.packet.second.code = endpoint[0x3B];
+    work.packet.second.kind = 2;
+    work.packet.second.offset = D_800AA368;
+    work.request.tail = 0;
+    work.request.flags = 0;
+    work.request.duration = 100;
+    work.request.start.x = *(f32 *)(endpoint + 0x14);
+    work.request.start.y = *(f32 *)(endpoint + 0x18);
+    work.request.start.z = *(f32 *)(endpoint + 0x1C);
+    work.request.end.x = *(f32 *)(endpoint + 0x14);
+    work.request.end.y = *(f32 *)(endpoint + 0x18);
+    work.request.end.z = *(f32 *)(endpoint + 0x1C);
+    work.request.active = 1;
+    work.request.enabled = 1;
+    work.request.extra = 1;
+    work.request.kind = 3;
+    work.request.width = 5.0f;
+    work.request.distance = 180.0f;
+    work.request.limitA = D_800AA388;
+    work.request.limitB = D_800AA38C;
+    created = func_151B30B0(&work.request, 0.0015f, 48, 255, 0);
+    pair = *(u8 **)&actor + 0x28;
+    *(u8 **)(pair + 0x14) = created;
+    if (created != NULL) {
+        memcpy((*(u8 **)(pair + 0x14)) + 0x150, &work.packet, 48);
+    }
+
+    work.packet.route = 0;
+    work.packet.first.offset = D_800AA32C;
+    work.packet.second.offset = D_800AA374;
+    work.request.extra = 1;
+    created = func_151B30B0(&work.request, 0.0015f, 48, 255, 0);
+    *(u8 **)(pair + 0x10) = created;
+    if (created != NULL) {
+        memcpy((*(u8 **)(pair + 0x10)) + 0x150, &work.packet, 48);
+    }
+
+    work.effect.endpoint.owner = endpoint;
+    work.effect.endpoint.code = endpoint[0x3B];
+    work.effect.endpoint.kind = 2;
+    work.effect.endpoint.offset = D_800AA368;
+    work.effect.end = D_800AA374;
+    work.effect.width = 5.0f;
+    work.effect.actor = *(u8 **)&actor;
+    created = func_15149130(300, -1, -1, 0, 0, 19, 40, 255, 1);
+    *(u8 **)(pair + 0x1C) = created;
+    if (created != NULL) {
+        memcpy((*(u8 **)(pair + 0x1C)) + 0x28, &work.effect, 40);
+    }
+}
 
 void func_151B2950(u8 *arg0) {
     u8 *temp_v0 = *(u8 **)(arg0 + 0x178);

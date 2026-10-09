@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools fc54d7f; tools are committed before the consumer pin.
+  checkpoint pins tools 211a2f1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner companion setup C match:
+[Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md).
+func_151B2690 matches all176 words/frame0xD8 with69 certified private-home/
+prefix guards; not direct compiler output or a GPR-only permutation.
+Nine installed tests pass14.788s, zero skips:384 guest/16,384 native32,
+64 independent rebase and64 actual-wrapper chain cases, negatives and faults.
+Entire ELF remains byte-identical; preserve17 neighbors/189,088 protected bytes.
+Append only69 guards/change one ASM-to-C row, adding704 converted bytes.
+Game2,740/4,816 exact,total3,413/5,489,zero drift/2,076 differences.
+Converted5,489/6,042 (90.85%),85.98% bytes; Game4,816/5,321 (90.51%),85.33%.
+Next same-owner340-word/frame0xB8 func_151B2974, currently a false zero-return
+placeholder; recover full caller/graphics ABI before fitting. Hardware/full
+renderer gates remain separate. Earlier checkpoints below are historical.
 
 Latest owner companion recovery checkpoint:
 [Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md).

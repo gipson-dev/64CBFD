@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-09 Owner Companion Setup Guarded C Match
+
+[Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md):
+Convert176-word func_151B2690 to full C with69 certified private-home forwarding/
+prefix guards, not direct output or a GPR-only permutation. Nine installed tests
+pass14.788s:384 guest,16,384 native32, independent rebases, actual-wrapper chain,
+negatives/faults and immutable audit. Whole ELF remains byte-identical;
+preserve17 neighbors/189,088 protected bytes, append69 guards/one ASM-to-C row.
+Add704 converted bytes: Game2,740/4,816 exact,total3,413/5,489,zero drift.
+Tools211a2f1 banked first; next340-word func_151B2974 graphics recovery.
+
 ## 2026-10-09 Owner Companion Setup Recovery Checkpoint
 
 [Note 1175](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md):

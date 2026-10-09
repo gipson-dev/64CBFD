@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Owner companion setup guarded C match](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md):
+  Convert all176 words with69 certified private-home/prefix guards; nine installed
+  tests pass. Whole ELF stays byte-identical; add704 converted bytes.
+  Next340-word func_151B2974; hardware/full renderer gates remain open.
+
 - [Owner companion setup recovery checkpoint](WORKING_NOTES/1175-game-owner-companion-setup-recovery-checkpoint-20261009.md):
   Recover two retained requests and a late40-byte effect; nine tests pass.
   Original176-word assembly stays installed, no new credit. Resume2690 fitting.
