@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Owner Endpoint Quad Recovery And Frame Fit
+
+[Note 1177](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md):
+Recover340-word func_151B2974's actual graphics callback, lazy exits, retained
+matrix/origin and four partial-write vertices. Frame fit improves200->184 bytes;
+140 instruction differences remain. Nine tests pass29.375s, zero skips,
+including11,520 native32 and the real20-word registered dispatcher.
+Production source/ELF/guards/progress remain unchanged; no new matching credit.
+Tools71976ff banked first; resume the same2974 workspace/register fitting.
+
 ## 2026-10-09 Owner Companion Setup Guarded C Match
 
 [Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md):

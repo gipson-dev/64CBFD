@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Endpoint Quad Recovery And Frame Fit - 2026-10-09
+
+[Note 1177](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md):
+
+- [x] Recover complete340-word func_151B2974 and actual three-argument graphics callback/returned cursor ABI.
+- [x] Qualify real20-word func_15149490 and registered D_8008A670[0] pointer, signed view and selector0/-1 paths.
+- [x] Preserve lazy invalid/resource/allocation exits, captured matrix/origin, late render-state/width reads and24 untouched vertex-hole bytes.
+- [x] Fit the original0xB8 frame with real float-local reuse; selected340 words still differ140 instructions.
+- [x] Pass nine tests:384 guest/11,520 native32,96 rebases/48 actual dispatcher cases, six effective negatives and20 fault-prefix cases.
+- [x] Preserve17 owner neighbors/pools/relocations/four old warnings and unchanged production source/ELF/guards/progress/protected data; no new credit.
+- [x] Bank tools first and pin71976ff; preserve the independently dirty older checkout.
+- [ ] Fit the same2974 private workspace addresses and register schedules, then qualify byte-exact installation.
+- [ ] Keep full helpers/SDK/renderer/hardware/gameplay acceptance separate from bounded tests.
+
 ## Owner Companion Setup Guarded C Match - 2026-10-09
 
 [Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md):
@@ -10,7 +24,7 @@
 - [x] Audit byte-identical whole ELF and189,088 protected bytes; preserve17 neighbors/four old warnings, append only69 guards/change one ASM-to-C row.
 - [x] Add704 converted bytes; refresh README aggregates to total5,489 converted/3,413 exact and Game4,816 converted/2,740 exact, zero drift.
 - [x] Commit tools first and pin211a2f1; preserve the independently dirty older checkout.
-- [ ] Recover next340-word/frame0xB8 func_151B2974's full caller/graphics ABI before fitting.
+- [x] Recover340-word func_151B2974's full caller/graphics ABI and qualify its initial frame fit in [Note 1177](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md); matching remains open.
 - [ ] Keep full caller/factory/resource/SDK/hardware/gameplay and renderer acceptance separate; guard removal is future compiler-style work.
 
 ## Owner Companion Setup Recovery - 2026-10-09

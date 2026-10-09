@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner endpoint quad recovery and frame fit](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md):
+  Recover full340-word graphics callback and real dispatcher ABI; nine tests pass.
+  Correct0xB8 frame,140 differences remain. No installation/credit; resume2974.
+
 - [Owner companion setup guarded C match](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md):
   Convert all176 words with69 certified private-home/prefix guards; nine installed
   tests pass. Whole ELF stays byte-identical; add704 converted bytes.

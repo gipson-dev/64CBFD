@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 211a2f1; tools are committed before the consumer pin.
+  checkpoint pins tools 71976ff; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest endpoint quad recovery/frame fit:
+[Note 1177](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md).
+Recover complete340-word func_151B2974, actual three-argument graphics ABI,
+endpoint/matrix/origin lifetimes, four partial-write vertices and two triangles.
+Selected C now has the correct0xB8 frame but140 word differences; not installed.
+Nine tests pass29.375s:384 guest/11,520 native32,96 rebase and48 actual20-word
+dispatcher cases, effective negatives and faults. Reach339 retail words;
+the unreachable duplicate at151B2A14 is separately verified.
+Production placeholder/source/ELF/guards/progress stay unchanged, no new credit.
+Resume the same2974 private-workspace fit, not another target. Full helpers,
+hardware/gameplay and renderer remain open. Totals below remain current.
 
 Latest owner companion setup C match:
 [Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md).

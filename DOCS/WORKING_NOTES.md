@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1177](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md)):
+Bank full340-word func_151B2974 recovery and nine tests:384 guest/11,520 native32,
+96 independent rebase/48 real20-word dispatcher cases. Correct0xB8 frame now,
+140 word differences remain; production placeholder/source/ELF/guards/progress
+unchanged, no credit. Reach339 words with one proven unreachable duplicate.
+Tools71976ff committed first; continue the same2974 private-workspace fit.
+
 2026-10-09 ([Note 1176](WORKING_NOTES/1176-game-owner-companion-setup-guarded-c-match-20261009.md)):
 Install full176-word func_151B2690/frame0xD8 using69 certified private-home/
 prefix guards. Nine installed tests pass14.788s, zero skips; normalized access
