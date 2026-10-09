@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-08 Record Ring Renderer Conversion
+
+[Note 1144](WORKING_NOTES/1144-game-record-ring-renderer-conversion-20261008.md):
+Complete `func_151D80C4` is installed as semantic C and byte-exact across
+405 words, using 185 qualified GP/save/factor guards; all 16 relocated words
+stay unchanged. Full rebuilt ELF and protected data are byte-identical to
+the saved baseline. One 1,620-byte row changes asm -> c; totals 5,482 converted /
+3,393 exact, Game 4,809 / 2,720, zero drift and 2,089 different. Tools 36bead0
+first, exact parent pin/source/docs second; preserve older dirty work, no push.
+Next retained `func_151D7264`, 81 words/frame0x40. Wider acceptance stays open.
+
 ## 2026-10-08 Record Ring Renderer Live-Value Proof
 
 [Note 1143](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md):

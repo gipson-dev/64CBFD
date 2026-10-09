@@ -51,6 +51,22 @@ extern f32 D_800AB2DC, D_800AB2E0, D_800AB2E4, D_800AB2E8;
 f32 func_15143E64(f32 *vector);
 f32 func_15144528(f32 value, f32 upper, f32 lower);
 
+typedef struct { f32 x, y, z; } RibbonPosition151D80C4;
+typedef struct {
+    RibbonPosition151D80C4 position;
+    f32 velocity, length;
+    u8 alpha, padding[3];
+    f32 phase;
+} RibbonRecord151D80C4;
+extern u8 D_80090CD4[];
+extern u32 D_800D2C9C, D_800A4AC8[];
+extern f32 D_800DD1E8[], D_800DD1D8[];
+void func_151D5D60(void *slots, s16 view, s32 size, Vtx **cursor, u8 *fresh);
+Gfx *func_15142E24(Gfx *, void *, s32, s32, s32, s32, s32, u8, u8 *, u8 *, s32);
+Gfx *func_15142B7C(Gfx *, u32, u32);
+Gfx *func_1513F4E4(Gfx *, u8, u8 *);
+Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/204660.s. */
 
 void func_151D77C8(u8 *owner);
@@ -432,7 +448,144 @@ s32 func_151D7CD0(u8 *owner) {
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D80C4.s")
+Gfx *func_151D80C4(u8 *owner, Gfx *output, s16 view) {
+    s32 index;
+    RibbonPosition151D80C4 currentPosition;
+    RibbonPosition151D80C4 previousPosition;
+    RibbonRecord151D80C4 *payload;
+    u8 *point;
+    u8 *records;
+    u8 sync;
+    f32 previousPhase;
+    f32 currentPhase;
+    f32 xOffset;
+    f32 zOffset;
+    s32 previousIndex;
+    Vtx *cursor;
+    s32 previousAlpha;
+    u8 currentAlpha;
+    u8 factor;
+
+    if (*(s8 *)(owner + 0x2C) < 2) {
+        return output;
+    }
+    records = *(u8 **)(owner + 0x94);
+    payload = *(RibbonRecord151D80C4 **)(owner + 0x98);
+    func_151D5D60(owner + 0x84, view, owner[0x25] * 32 + 160, &cursor, NULL);
+    if (cursor == NULL) {
+        return output;
+    }
+    sync = 1;
+    output = func_15142E24(output, D_80090CD4, 0, 0, 0, 0, 31, 0, NULL, &sync, 62);
+    output = func_15142B7C(output, 0x200005, 0x1F0600);
+    output = func_1513F4E4(output, 0x4C, &sync);
+    output = func_15142FBC(output, D_800D2C9C | 0x80000 | 0x2CA0,
+        D_800A4AC8[2] | D_800A4AC8[3], &sync);
+    if (*(u16 *)(owner + 0x1E) & 2) {
+        index = *(s8 *)(owner + 0x2E) - 1;
+        if (index < 0) {
+            index = owner[0x25] - 1;
+        }
+        previousPosition = *(RibbonPosition151D80C4 *)(owner + 0x10);
+        previousAlpha = 0;
+        previousPhase = payload->phase;
+    } else {
+        previousIndex = *(s8 *)(owner + 0x2E) - 1;
+        if (previousIndex < 0) {
+            previousIndex = owner[0x25] - 1;
+        }
+        index = previousIndex - 1;
+        if (index < 0) {
+            index = owner[0x25] - 1;
+        }
+        previousPosition = *(RibbonPosition151D80C4 *)(records + (previousIndex * 8 - previousIndex) * 4);
+        previousAlpha = records[(previousIndex * 8 - previousIndex) * 4 + 0x14];
+        previousPhase = *(f32 *)(records + (previousIndex * 8 - previousIndex) * 4 + 0x18);
+    }
+    point = records + (index * 8 - index) * 4;
+    currentPosition = *(RibbonPosition151D80C4 *)point;
+    xOffset = D_800DD1E8[view] * 5.5f;
+    zOffset = D_800DD1D8[view] * 5.5f;
+    currentAlpha = point[0x14];
+    currentPhase = *(f32 *)(point + 0x18);
+    if (!(*(u16 *)(owner + 0x1E) & 8)) {
+        factor = 255;
+    } else {
+        factor = (*(s16 *)(owner + 0x1C) * 3) * 4;
+    }
+    previousAlpha = (previousAlpha * factor) >> 8;
+    previousIndex = (s32)previousPhase;
+    cursor->v.ob[0] = (s32)(previousPosition.x + xOffset);
+    cursor->v.ob[1] = (s32)previousPosition.y;
+    cursor->v.ob[2] = (s32)(previousPosition.z - zOffset);
+    cursor->v.tc[0] = previousIndex;
+    cursor->v.tc[1] = 0x800;
+    cursor->v.cn[0] = 255;
+    cursor->v.cn[1] = 255;
+    cursor->v.cn[2] = 255;
+    cursor->v.cn[3] = previousAlpha;
+    cursor->v.flag = 0;
+    cursor++;
+    cursor->v.ob[0] = (s32)(previousPosition.x - xOffset);
+    cursor->v.ob[1] = (s32)previousPosition.y;
+    cursor->v.ob[2] = (s32)(previousPosition.z + zOffset);
+    cursor->v.tc[0] = previousIndex;
+    cursor->v.tc[1] = 0;
+    cursor->v.cn[0] = 255;
+    cursor->v.cn[1] = 255;
+    cursor->v.cn[2] = 255;
+    cursor->v.cn[3] = previousAlpha;
+    cursor->v.flag = 0;
+    cursor++;
+    do {
+        currentAlpha = (currentAlpha * factor) >> 8;
+        previousIndex = (s32)currentPhase;
+        cursor->v.ob[0] = (s32)(currentPosition.x + xOffset);
+        cursor->v.ob[1] = (s32)currentPosition.y;
+        cursor->v.ob[2] = (s32)(currentPosition.z - zOffset);
+        cursor->v.tc[0] = previousIndex;
+        cursor->v.tc[1] = 0x800;
+        cursor->v.cn[0] = 255;
+        cursor->v.cn[1] = 255;
+        cursor->v.cn[2] = 255;
+        cursor->v.cn[3] = currentAlpha;
+        cursor->v.flag = 0;
+        cursor++;
+        cursor->v.ob[0] = (s32)(currentPosition.x - xOffset);
+        cursor->v.ob[1] = (s32)currentPosition.y;
+        cursor->v.ob[2] = (s32)(currentPosition.z + zOffset);
+        cursor->v.tc[0] = previousIndex;
+        cursor->v.tc[1] = 0;
+        cursor->v.cn[0] = 255;
+        cursor->v.cn[1] = 255;
+        cursor->v.cn[2] = 255;
+        cursor->v.cn[3] = currentAlpha;
+        cursor->v.flag = 0;
+        cursor++;
+        gSPVertex(output++, cursor - 4, 4, 0);
+        gSP1Triangle(output++, 0, 1, 2, 0);
+        gSP1Triangle(output++, 1, 3, 2, 0);
+        if (currentPhase < previousPhase) {
+            memcpy(cursor, cursor - 2, 32);
+            cursor[-2].v.tc[0] -= 0x8000;
+            cursor++;
+            cursor[-2].v.tc[0] -= 0x8000;
+            cursor++;
+        }
+        previousIndex = index;
+        index--;
+        point -= 28;
+        if (index < 0) {
+            index = owner[0x25] - 1;
+            point = records + (index * 8 - index) * 4;
+        }
+        currentPosition = *(RibbonPosition151D80C4 *)point;
+        currentAlpha = point[0x14];
+        previousPhase = *(f32 *)(records + (previousIndex * 8 - previousIndex) * 4 + 0x18);
+        currentPhase = *(f32 *)(point + 0x18);
+    } while (previousIndex != *(s8 *)(owner + 0x2D));
+    return output;
+}
 
 void func_151D8718(f32 *position, f32 *velocity, f32 delta) {
     f32 oldVelocity = *velocity;

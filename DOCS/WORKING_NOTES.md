@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-08 ([Note 1144](WORKING_NOTES/1144-game-record-ring-renderer-conversion-20261008.md)):
+Install complete 405-word/frame0xD0 `func_151D80C4` after closed GP/save/factor
+normalization and private-boundary qualification. All retail words match;
+complete rebuilt ELF/data unchanged, one 1,620-byte conversion row and 185
+new guards only. Totals 5,482 converted / 3,393 exact; Game 4,809 / 2,720,
+zero drift. Tools 36bead0 first, exact parent pin/source/docs second; no push
+or older standalone reset. Next retained 81-word `func_151D7264`; wider gates open.
+
 2026-10-08 ([Note 1143](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md)):
 Same complete uninstalled `func_151D80C4`, still 405 words/frame0xD0/185 raw
 differences. Close factor-arm/delay reorder and conditionally check GP live

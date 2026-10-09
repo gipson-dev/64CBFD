@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4253f3a; tools are committed before the source pin.
+  checkpoint pins tools 36bead0; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game live-value proof:
+Latest Game conversion:
+[Note 1144](WORKING_NOTES/1144-game-record-ring-renderer-conversion-20261008.md).
+Install complete `func_151D80C4`: 405 words / 1,620 bytes / frame 0xD0.
+Raw C differs at 185 words; the qualified GP/save/factor normalizer derives
+185 guarded adjustments without a retail-word lookup, insertion or padding.
+All 16 relocated words remain unchanged. Fresh linked audit confirms the
+complete ELF, all 6,058 bodies/addresses/extents and protected data unchanged;
+only this 1,620-byte progress row changes asm -> c. Total 5,482 converted /
+3,393 exact; Game 4,809 / 2,720; zero drift and 2,089 different. Guards 11,460,
+with the old 11,275-row prefix preserved byte-for-byte. Tools 36bead0 banked
+first; parent source/docs pin follows, no push. Root README aggregates only.
+Next retained `func_151D7264`: 81 words / frame 0x40, callback-driven record
+update and distance gate. Linked setup, graph refresh repair and hardware/
+gameplay acceptance remain separate and open; host Release stays frozen.
+Fresh 31 post-install tests pass in 227.669s, no skips; 14 shared tests and
+both tools checks pass. 130 docs / 4,117 relative links / zero broken.
+
+Previous Game live-value proof:
 [Note 1143](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md).
 Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0 and 185 raw
 differences. Derive the closed factor-arm/delay reorder; validate GP live
@@ -92,7 +109,7 @@ aggregates unchanged. Next fit this same target's extent/frame/private and
 saved lifetimes, then aliases, independent rebases and installation gates.
 Linked dispatcher/combiner, graph repair and hardware/gameplay remain open.
 
-Latest Game conversion:
+Previous Game shaping conversion:
 [Note 1138](WORKING_NOTES/1138-game-record-ring-shaping-conversion-20261008.md).
 Finish complete `func_151D7CD0`: 253 words / 1,012 bytes / frame 0xB8,
 183 direct words plus 70 closed allocation/spill/scheduling guards.

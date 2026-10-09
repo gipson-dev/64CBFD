@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record ring renderer conversion](WORKING_NOTES/1144-game-record-ring-renderer-conversion-20261008.md):
+  Complete `func_151D80C4` is C and matches all 405 words with 185 qualified
+  GP/save/factor guards. Full rebuilt ELF/data unchanged; totals 5,482 converted /
+  3,393 exact, zero drift. Tools 36bead0 first, exact parent pin second, no push.
+  Next retained 81-word `func_151D7264`; linked/hardware/gameplay gates stay open.
+
 - [Latest record ring renderer live-value proof](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md):
   Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0/185 raw
   differences. Close factor-arm/delay reorder and conditionally check live

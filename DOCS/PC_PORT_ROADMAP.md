@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ring Renderer Conversion - 2026-10-08
+
+[Note 1144](WORKING_NOTES/1144-game-record-ring-renderer-conversion-20261008.md):
+
+- [x] Derive the pure complete GP/save/factor normalizer; require the whole masked source fingerprint and all 16 relocation records. No retail-word lookup, insertion, omission or padding.
+- [x] Qualify 432 complete-entry cases, 9,096 injected access-boundary pairs and 2,664 real missing-byte pairs, preserving normalized/retail complete model state. Reject effective partial transforms and stale inputs.
+- [x] Preserve 22 copied-owner neighbors/pools/relative relocations and four existing diagnostics; qualify actual 1,620-byte padding, all 185 stale-guard controls and four independently linked symbol sets.
+- [x] Install the complete semantic C renderer plus exactly 185 guards; rebuild and preserve the complete linked ELF, all 6,058 symbols and protected data byte-for-byte. Only the target progress row changes asm -> c.
+- [x] Measure fresh totals: 5,482 converted / 3,393 byte-exact; Game 4,809 / 2,720; zero drift and 2,089 different. Keep root README aggregate-only.
+- [x] Pass all 31 focused tests after installation in 227.669s, no skips; 14 shared tests, both tools checks and six-file parse/mirror checks pass. Verify 130 docs / 4,117 relative links / zero broken.
+- [x] Bank tools 36bead0 before the parent source/docs pin; preserve independently dirty older tools history and unrelated edits, without pushing.
+- [ ] Recover retained `func_151D7264` (81 words/frame0x40): original callback, copied previous position, distance test and complete update branches before fitting or installation.
+- [ ] Restore linked setup/dispatcher/combiner and qualify hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Ring Renderer Live-Value Proof - 2026-10-08
 
 [Note 1143](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md):
@@ -10,7 +24,7 @@
 - [x] Pass four independently linked original/candidate symbol-set proofs and 432 three-stream complete-renderer cases; qualify raw/factor-order full exit state and raw/retail public prefixes without claiming raw/retail private fault-state identity.
 - [x] Reject six mask-preserving live-operand errors, seven structural errors, six unknown callees and two unsupported branch subtypes. Pass 30 distinct focused tests across selected runs, 14 shared tests and both tools checks.
 - [x] Bank tools 4253f3a first, then exact parent pin/docs; preserve all installed bodies/data/source/progress/11,275 guards and README aggregates. Add only two new older-mirror paths, preserving unrelated dirty work/history without push.
-- [ ] Derive and qualify a relocation-aware GP/save/factor normalizer, complete private fault-state boundaries and effective partial-transform negatives. Only then install/rebuild/full-audit/progress credit. Raw SETUP_FITTED still differs at 185 words.
+- [x] Derive and qualify the relocation-aware GP/save/factor normalizer, complete private fault-state boundaries and effective partial-transform negatives; install/rebuild/full-audit and credit the complete renderer in Note 1144. Raw SETUP_FITTED has 185 differences before normalization.
 - [ ] Restore linked setup/dispatcher/combiner and qualify hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Record Ring Renderer Setup Fitting - 2026-10-08
