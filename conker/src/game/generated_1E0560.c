@@ -1,5 +1,9 @@
 #include <ultra64.h>
 
+extern f32 D_800AA390;
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+void *memcpy(void *, const void *, u32);
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -7,8 +11,23 @@ extern void (*D_8008FB70[])(u8 *);
 
 s32 func_151D5E30();
 
-s32 func_151B30B0() {
-    return 0;
+u8 *func_151B30B0(void *request, f32 parameter, s32 extraBytes, u8 slot, s32 context) {
+    u8 *created;
+    f32 distance;
+    f32 scaled;
+
+    created = func_15167A68(0x33, context, extraBytes + 0x150, 1, slot, 1);
+    if (created == NULL) {
+        return NULL;
+    }
+    memcpy(created + 0x10, request, 56);
+    distance = *(f32 *)(created + 0x38);
+    created[0x10] |= 0xE;
+    scaled = distance * distance / D_800AA390;
+    *(f32 *)(created + 0x138) = scaled + scaled;
+    *(s32 *)(created + 0x13C) = (s32)(distance * parameter * 4096.0f);
+    bzero(created + 0x140, 16);
+    return created;
 }
 
 s32 func_151B3184() {

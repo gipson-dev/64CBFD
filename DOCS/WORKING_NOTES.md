@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-09 ([Note 1173](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md)):
+Install complete53-word func_151B30B0 directly, frame0x28/no guards. Eight tests
+qualify7,168 guest/774,144 native32,128 actual setup-chain and32 rebase cases.
+Preserve16 neighbors and protected data; audit only target code/size meaning
+plus verified symbol ordering. Game2,738/4,814 exact; resume210-word setup C.
+
 2026-10-09 ([Note 1172](WORKING_NOTES/1172-game-owner-link-setup-recovery-checkpoint-20261009.md)):
 Bank complete three-request candidate and bounded384-case recovery suite for
 func_151B2348. Five tests pass; packet/ABI/failed-store behavior recovered,

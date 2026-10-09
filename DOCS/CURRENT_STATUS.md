@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b7cdf23; tools are committed before the consumer pin.
+  checkpoint pins tools 3b7e4c1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner link allocator match:
+[Note 1173](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md).
+func_151B30B0 emits all53 words directly, frame0x28/no guards. Eight installed
+tests pass29.437s:7,168 guest/774,144 native32 cases and128 actual setup-chain
+cases. Only target loadable code/size meaning change; verified symbol ordering
+is permitted, all20,318 symbols otherwise retain meaning. Guards/progress and
+protected data unchanged. Game2,738/4,814 exact,total3,411/5,487,zero drift,
+2,076 differences; no new conversion credit. Resume210-word func_151B2348
+with its now-exact allocator dependency and real-local declaration-order fitting.
 
 Latest recovery checkpoint:
 [Note 1172](WORKING_NOTES/1172-game-owner-link-setup-recovery-checkpoint-20261009.md).

@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-09 Owner Link Allocator Direct Match
+
+[Note 1173](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md):
+Replace func_151B30B0's false placeholder with all53 directly matching words,
+correct five-argument pointer/float ABI and post-copy derived fields. Eight
+installed tests pass29.437s, including128 actual setup-chain cases. Preserve16
+neighbors/guards/progress/data; audit target-only code/size and symbol order.
+Game2,738/4,814 exact; resume210-word setup fitting with the real dependency.
+
 ## 2026-10-09 Owner Link Setup Recovery Checkpoint
 
 [Note 1172](WORKING_NOTES/1172-game-owner-link-setup-recovery-checkpoint-20261009.md):

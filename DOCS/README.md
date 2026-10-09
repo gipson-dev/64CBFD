@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner link allocator direct match](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md):
+  Restore all53 words directly; eight installed tests qualify the mixed ABI,
+  derived floats and actual setup chain. Game2,738/4,814 exact; setup fitting next.
+
 - [Owner link setup recovery checkpoint](WORKING_NOTES/1172-game-owner-link-setup-recovery-checkpoint-20261009.md):
   Three-request semantics and allocator ABI recovered; five bounded tests pass.
   Stack/register fitting remains open, original210-word assembly retained.

@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Link Allocator Direct Match - 2026-10-09
+
+[Note 1173](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md):
+
+- [x] Recover func_151B30B0's five-argument pointer/float ABI,56-byte copy, post-copy distance/flag reads, derived fields and failure return.
+- [x] Match all53 words directly under existing O2/g3, original0x28 frame/five relocation uses/no guards.
+- [x] Pass eight installed tests:7,168 guest/774,144 native32,128 actual210-word setup-chain and32 independent rebase cases, five effective negatives.
+- [x] Preserve16 neighbors/pools/relocations; actual padder accepts, whole ELF changes only target loadable code/size meaning and verified symbol order.
+- [x] Preserve guards/conversion CSV/189,088 protected data bytes; update README aggregates to Game2,738/4,814 exact with no new conversion credit.
+- [ ] Resume210-word func_151B2348 real-local declaration-order/private-stack fitting; full common allocator/SDK/hardware/gameplay integration remains open.
+
 ## Owner Link Setup Recovery - 2026-10-09
 
 [Note 1172](WORKING_NOTES/1172-game-owner-link-setup-recovery-checkpoint-20261009.md):
