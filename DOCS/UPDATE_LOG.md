@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-09 Owner Ribbon Renderer Shared Copy And GPR Proof
+
+[Note 1183](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md):
+Complete func_151B32C8 recovers the initial second-copy shared base directly;
+475 words/frame 328/private homes retained, raw differences 163 to 161.
+Certify 107 GPR allocation words on the independently FP-normalized body;
+120 combined changed words leave 44 differences. Vertex/loop/epilogue phases now
+agree completely after normalization. Fifteen full tests pass 60.131s plus final
+focused composed-proof/collision check 1.348s, zero skips. Fourteen full source
+forms/all 32 fixtures pass; owner/padder/neighbors/data preserved. Not installed,
+no guards or credit. Tools ea649be first; finish setup and initial scheduling.
+
 ## 2026-10-09 Owner Ribbon Renderer Induction And FP Proof
 
 [Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md):

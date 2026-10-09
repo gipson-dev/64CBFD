@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Owner ribbon renderer shared copy and GPR proof](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md):
+  Full 475-word/frame 0x148 C recovers the initial shared copy base. Certify 107
+  GPR allocation words; combined FP/GPR normalization leaves 44 differences.
+  Fifteen tests and final composed-proof check pass. Not installed/no credit;
+  continue setup and initial scheduling in the same complete renderer.
+
 - [Owner ribbon renderer induction and FP proof](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md):
   Complete 475-word/frame 0x148 C recovers original loop induction; 163 raw /151
   certified FP-normalized differences remain. Fourteen tests pass, including full

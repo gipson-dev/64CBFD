@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-09 ([Note 1183](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md)):
+Fit complete func_151B32C8's initial second-copy shared base directly, retaining
+475 words/frame 0x148/private homes; raw differences 163 to 161. Certify 107
+GPR allocation words on the FP-normalized body. 120 combined changes leave 44
+differences, with vertex/loop/epilogue phases agreeing fully. Fifteen tests pass
+60.131s plus focused final proof check 1.348s. Full raw/native/normalized gates,
+effective collision control, owner/padder/neighbors and production preservation.
+Tools ea649be first, older dirty work preserved, not installed/no guards/credit.
+Continue outgoing argument setup, render-mode/table and initial scheduling.
+
 2026-10-09 ([Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md)):
 Recover complete func_151B32C8's original byte-offset/two-pointer loop directly
 from C, retaining 475 words/frame 0x148/private homes. Raw differences 243 to 163;

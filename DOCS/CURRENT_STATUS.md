@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5a069ec; tools are committed before the consumer pin.
+  checkpoint pins tools ea649be; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner ribbon-renderer shared-copy and GPR allocation checkpoint:
+[Note 1183](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md).
+Complete func_151B32C8 retains 475 words/frame 0x148 and original private homes.
+Moving the real points-base assignment before the last helper recovers all three
+initial second-copy shared-base loads directly; raw differences fall 163 to 161.
+Certify 107 closed GPR allocation words on the separately FP-normalized body;
+120 combined FP/GPR changed words leave 44 differences, down from 151.
+All vertex/loop/epilogue words now agree after certified normalization.
+Fifteen full tests pass in 60.131s, zero skips; final composed-proof/collision
+check passes 1.348s after tightening proof composition. Full raw/native and
+combined normalized guest/mutation/rebase/material/walker/fault/FP preservation.
+Fourteen full source forms pass all 32 bounded fixtures each; copied owner and
+padder accept the raw slot, 16 neighbors/pools/relocations preserved.
+No installation/guards/credit. Production hashes/protected data/README totals
+unchanged. Finish argument-home setup, render-mode/table preparation and initial
+copy/FP-load scheduling before installation; full hardware/gameplay is separate.
 
 Latest owner ribbon-renderer induction and FP allocation checkpoint:
 [Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md).
@@ -77,8 +94,8 @@ Whole ELF changes only target slot/st_size; preserve16 neighbors,189,088
 protected bytes and byte-identical guard/conversion rows. No conversion credit.
 Game2,742/4,816 exact,total3,415/5,489,zero drift/2,074 differences.
 The next same-owner renderer func_151B32C8 is recovered and frame/slot-fit, but
-not installed; [Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md)
-records 163 raw /151 FP-normalized word differences. Full helpers/hardware/gameplay remain
+not installed; [Note 1183](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md)
+records 161 raw /44 combined-normalized word differences. Full helpers/hardware/gameplay remain
 open; original connected walker is not installed C. Earlier entries are history.
 
 Earlier endpoint quad guarded C match:
