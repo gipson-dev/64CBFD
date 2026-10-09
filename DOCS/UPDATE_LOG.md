@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-08 Record Ring Renderer Live-Value Proof
+
+[Note 1143](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md):
+Same complete uninstalled `func_151D80C4`, still 405 words/frame0xD0/185 raw
+differences. Derive factor-arm/delay reorder and conditionally check live
+values across 383 CFG nodes/404 words/560 obligations/six calls, loop joins,
+independent volatile kills and owned-frame save closure. Four independent
+rebases, 131,072 opacity pairs and 432 whole-entry three-stream cases pass.
+30 distinct focused tests pass across selected runs, with effective mapping
+and delay negatives. Installed state/README unchanged. Tools 4253f3a first,
+exact parent pin second; older dirty work preserved, no push. Next qualify
+relocation-aware normalization/private fault boundaries before installation;
+linked setup, graph repair and hardware/gameplay stay open.
+
 ## 2026-10-08 Record Ring Renderer Setup Fitting
 
 [Note 1142](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md):

@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record ring renderer live-value proof](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md):
+  Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0/185 raw
+  differences. Close factor-arm/delay reorder and conditionally check live
+  values across 383 CFG nodes/404 words/560 obligations/six calls, with four
+  independent rebases. 131,072 opacity pairs, 432 three-stream cases and 30
+  distinct focused tests pass across selected runs. Installed state/README
+  unchanged. Tools 4253f3a first, exact parent pin second; older dirty work
+  preserved, no push. Normalization/private fault-state gates remain open.
+
 - [Latest record ring renderer setup fitting](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md):
   Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0, raw
   differences 198 -> 185 and retail mode-input order restored. 22 focused

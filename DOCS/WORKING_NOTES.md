@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-08 ([Note 1143](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md)):
+Same complete uninstalled `func_151D80C4`, still 405 words/frame0xD0/185 raw
+differences. Close factor-arm/delay reorder and conditionally check GP live
+relationships over 383 CFG nodes/404 words/560 obligations/six calls; four
+independent rebases pass. 131,072 opacity pairs, 432 three-stream cases and
+effective bad-mapping controls pass; 30 distinct focused tests pass across
+selected runs. Installed state/README unchanged. Tools 4253f3a first, exact
+parent pin second; older dirty work preserved, no push. Next derive/qualify
+relocation-aware normalization and private fault-state boundaries before
+installation. Wider gates remain open.
+
 2026-10-08 ([Note 1142](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md)):
 Fit the same complete uninstalled `func_151D80C4`: 405 words/frame0xD0,
 raw differences 198 -> 185, retail mode read order and unhoisted default.

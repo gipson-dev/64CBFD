@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ring Renderer Live-Value Proof - 2026-10-08
+
+[Note 1143](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md):
+
+- [x] Derive the closed factor-arm/predicate/delay reorder from the complete expected candidate block; retain the non-annulled conversion, optional halfword read and original join.
+- [x] Pass all 65,536 signed opacity values on both flag paths: 131,072 pairs/262,144 reused-oracle executions, plus 120 FP edge pairs and four optional-read fault pairs; reject an effective annulled-delay negative.
+- [x] Conditionally check GP live relationships across 383 CFG nodes/404 words/560 obligations and all six calls, with loop fixed points, intersected join facts, independent volatile kills and owned-frame S2/S3 save closure; verify the unchanged unreachable word.
+- [x] Pass four independently linked original/candidate symbol-set proofs and 432 three-stream complete-renderer cases; qualify raw/factor-order full exit state and raw/retail public prefixes without claiming raw/retail private fault-state identity.
+- [x] Reject six mask-preserving live-operand errors, seven structural errors, six unknown callees and two unsupported branch subtypes. Pass 30 distinct focused tests across selected runs, 14 shared tests and both tools checks.
+- [x] Bank tools 4253f3a first, then exact parent pin/docs; preserve all installed bodies/data/source/progress/11,275 guards and README aggregates. Add only two new older-mirror paths, preserving unrelated dirty work/history without push.
+- [ ] Derive and qualify a relocation-aware GP/save/factor normalizer, complete private fault-state boundaries and effective partial-transform negatives. Only then install/rebuild/full-audit/progress credit. Raw SETUP_FITTED still differs at 185 words.
+- [ ] Restore linked setup/dispatcher/combiner and qualify hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Ring Renderer Setup Fitting - 2026-10-08
 
 [Note 1142](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md):

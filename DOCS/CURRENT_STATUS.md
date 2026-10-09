@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b0f5e40; tools are committed before the source pin.
+  checkpoint pins tools 4253f3a; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game setup fitting:
+Latest Game live-value proof:
+[Note 1143](WORKING_NOTES/1143-game-record-ring-renderer-live-value-proof-20261008.md).
+Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0 and 185 raw
+differences. Derive the closed factor-arm/delay reorder; validate GP live
+relationships over 383 CFG nodes/404 words/560 obligations and all six calls,
+including loop joins, volatile kills and owned-frame save closure. Four
+independent rebases pass. 131,072 exhaustive opacity pairs and 432 whole-entry
+three-stream cases pass; 30 distinct focused tests pass across selected runs.
+No production normalization/source/progress/guard/README change. Tools 4253f3a
+first, exact parent pin second; older unrelated dirty work preserved, no push.
+Next derive/qualify relocation-aware normalization and private fault-state
+boundaries before installation/rebuild/credit. Wider acceptance stays open.
+
+Previous Game setup fitting:
 [Note 1142](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md).
 Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0; raw differences
 198 -> 185, mode-input order restored and default-factor hoisting removed.
