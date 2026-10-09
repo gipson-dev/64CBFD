@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md)):
+Install210-word func_151B2348 as semantic C with25 certified GPR-only guards,
+original0xA8 frame/packetSP34/requestSP64. Nine installed tests qualify raw
+stack provenance, native32, aliases, rebases and actual53-word wrapper chain.
+Entire ELF remains byte-identical; one ASM-to-C row adds840 converted bytes.
+Game2,739/4,815 exact,total3,412/5,488; tools f3bb1e7 committed first.
+Next genuine176-word/frame0xD8 func_151B2690; hardware/full renderer stay open.
+
 2026-10-09 ([Note 1173](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md)):
 Install complete53-word func_151B30B0 directly, frame0x28/no guards. Eight tests
 qualify7,168 guest/774,144 native32,128 actual setup-chain and32 rebase cases.

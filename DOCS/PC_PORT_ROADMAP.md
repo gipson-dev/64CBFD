@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Link Setup Guarded C Match - 2026-10-09
+
+[Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md):
+
+- [x] Fit complete210-word func_151B2348/frame0xA8, actor-home lifetime, retainedS2 and packetSP34/requestSP64 using real declarations.
+- [x] Certify25 GPR-only T6/T7 guards in three closed straight-line regions, retaining all22 relocation uses and rejecting live-in/live-out corruption controls.
+- [x] Pass nine installed tests:768 guest/32,768 native32,384 actual53-word wrapper chain and64 independently rebased cases; preserve copied raw packet holes.
+- [x] Preserve17 owner neighbors/pools/relocations/four existing warnings; actual asmprocessor and padder accept.
+- [x] Audit byte-identical whole ELF/189,088 protected data bytes; append only25 guards and change exactly one ASM-to-C progress row.
+- [x] Add840 converted bytes; refresh README aggregate rows to total5,488 converted/3,412 exact and Game4,815 converted/2,739 exact, zero drift.
+- [ ] Recover and qualify original176-word/frame0xD8 companion func_151B2690 separately.
+- [ ] Keep common allocator/resource/SDK/hardware/gameplay and full renderer as separate integration gates; removing25 guards is future compiler-style work.
+
 ## Owner Link Allocator Direct Match - 2026-10-09
 
 [Note 1173](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md):
@@ -9,7 +22,8 @@
 - [x] Pass eight installed tests:7,168 guest/774,144 native32,128 actual210-word setup-chain and32 independent rebase cases, five effective negatives.
 - [x] Preserve16 neighbors/pools/relocations; actual padder accepts, whole ELF changes only target loadable code/size meaning and verified symbol order.
 - [x] Preserve guards/conversion CSV/189,088 protected data bytes; update README aggregates to Game2,738/4,814 exact with no new conversion credit.
-- [ ] Resume210-word func_151B2348 real-local declaration-order/private-stack fitting; full common allocator/SDK/hardware/gameplay integration remains open.
+- [x] Finish210-word func_151B2348 real-local declaration-order/private-stack fitting and guarded C installation in [Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md).
+- [ ] Keep full common allocator/SDK/hardware/gameplay integration open; actual53-word wrapper chain alone is bounded evidence.
 
 ## Owner Link Setup Recovery - 2026-10-09
 
@@ -18,8 +32,9 @@
 - [x] Recover three48-byte attachment packets,56-byte reusable request and actual five-argument151B30B0 ABI.
 - [x] Qualify defined fields/failure stores/captured endpoints with384 guest cases, five compiled negatives and native32 layout checks.
 - [x] Measure17 complete O2/g3 forms; preserve original210-word assembly and unchanged source/ELF/guards/progress.
-- [ ] Fit210 words with original parameter-home lifetime, retainedS2 and private packetSP34/requestSP64.
-- [ ] Qualify raw private packet provenance, actual allocator integration, native semantics, rebases and copied owner/padder before installation.
+- [x] Fit210 words with original parameter-home lifetime, retainedS2 and private packetSP34/requestSP64 in [Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md).
+- [x] Qualify raw private packet provenance, actual53-word wrapper chain, defined-field native semantics, rebases and copied owner/padder before installing guarded C in Note1174.
+- [ ] Keep common allocator/SDK/hardware/gameplay integration separate from the bounded wrapper chain.
 
 ## Owner State Callback Direct Match - 2026-10-09
 
@@ -32,7 +47,7 @@
 - [x] Preserve15 other owner routines, pools/relative relocations/four existing warnings; actual padder accepts all three intended changes.
 - [x] Audit only three reviewed code slots/sizes and symbol/string order, with all20,318 symbol meanings preserved except intended sizes; protected Game data/guards unchanged.
 - [x] Refresh aggregate README rows:total3,410/5,487 exact/Game2,737/4,814; converted totals5,487/6,042 and85.91% bytes reflect two removed false C bodies.
-- [ ] Recover semantic C for210-word func_151B2348, packet layouts/holes/reuse, actual151B30B0 ABI, failed allocations and callee mutation.
+- [x] Recover and install semantic C for210-word func_151B2348, packet layouts/holes/reuse, actual151B30B0 ABI, failed allocations and callee mutation in [Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md).
 - [ ] Recover176-word func_151B2690 separately; full helper-chain/hardware/gameplay and ribbon renderer remain open.
 
 ## Owner Descriptor Constructor Direct Match - 2026-10-09

@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Owner link setup guarded C match](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md):
+  Convert210-word original assembly with25 certified closed GPR guards;
+  nine installed tests qualify raw holes and actual allocator-wrapper chain.
+  Whole ELF remains byte-identical; add840 converted bytes. Next176-word2690.
+
 - [Owner link allocator direct match](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md):
   Restore all53 words directly; eight installed tests qualify the mixed ABI,
   derived floats and actual setup chain. Game2,738/4,814 exact; setup fitting next.

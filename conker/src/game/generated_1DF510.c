@@ -20,6 +20,33 @@ void func_151B222C(u8 *);
 void func_151B2348(u8 *);
 void func_151B2690(u8 *);
 
+typedef struct { f32 x, y, z; } OwnerLinkVector2348;
+typedef struct {
+    u8 *owner;
+    u8 code, kind, reserved06[2];
+    OwnerLinkVector2348 offset;
+} OwnerLinkEndpoint2348;
+typedef struct {
+    OwnerLinkEndpoint2348 first, second;
+    u8 *actor;
+    u8 route, reserved2D[3];
+} OwnerLinkPacket2348;
+typedef struct {
+    u8 flags, reserved01;
+    s16 duration;
+    OwnerLinkVector2348 start, end;
+    u8 active, enabled, extra, reserved1F;
+    f32 width;
+    u8 kind, reserved25[3];
+    f32 distance, limitA, limitB;
+    u8 tail, reserved35[3];
+} OwnerLinkRequest2348;
+extern OwnerLinkVector2348 D_800AA350, D_800AA35C, D_800AA320;
+extern OwnerLinkVector2348 D_800AA338, D_800AA32C, D_800AA344;
+extern f32 D_800AA380, D_800AA384;
+u8 *func_151B30B0(void *, f32, s32, u8, s32);
+
+
 /* Non-matching placeholders for the text-only asm slice asm/1DF510.s. */
 
 void func_151B222C(u8 *);
@@ -112,7 +139,92 @@ s32 func_151B22F4(u8 *arg0) {
     return 2;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_1DF510/func_151B2348.s")
+void func_151B2348(u8 *actor) {
+    u8 *second = *(u8 **)(actor + 0x30);
+    u8 *first = *(u8 **)(actor + 0x28);
+    u8 *pair;
+    struct { OwnerLinkPacket2348 packet; OwnerLinkRequest2348 request; } work;
+    u8 *created;
+
+    work.packet.route = 2;
+    work.packet.actor = actor;
+    work.packet.first.owner = second;
+    work.packet.first.code = second[0x3B];
+    work.packet.first.kind = 5;
+    work.packet.first.offset = D_800AA350;
+    work.packet.second.owner = second;
+    work.packet.second.code = second[0x3B];
+    work.packet.second.kind = 10;
+    work.packet.second.offset = D_800AA35C;
+    work.request.tail = 0;
+    work.request.flags = 0;
+    work.request.duration = 1000;
+    work.request.start.x = *(f32 *)(second + 0x14);
+    work.request.start.y = *(f32 *)(second + 0x18);
+    work.request.start.z = *(f32 *)(second + 0x1C);
+    work.request.end.x = *(f32 *)(second + 0x14);
+    work.request.end.y = *(f32 *)(second + 0x18);
+    work.request.end.z = *(f32 *)(second + 0x1C);
+    work.request.active = 1;
+    work.request.enabled = 1;
+    work.request.extra = 0;
+    work.request.kind = 3;
+    work.request.width = 5.0f;
+    work.request.distance = 80.0f;
+    work.request.limitA = D_800AA380;
+    work.request.limitB = D_800AA384;
+    created = func_151B30B0(&work.request, 0.0015f, 48, 255, 0);
+    pair = *(u8 **)&actor + 0x28;
+    *(u8 **)(pair + 0x18) = created;
+    if (created != NULL) {
+        memcpy((*(u8 **)(pair + 0x18)) + 0x150, &work.packet, 48);
+    }
+
+    work.packet.route = 1;
+    work.packet.first.owner = first;
+    work.packet.first.code = first[0x3B];
+    work.packet.first.kind = 5;
+    work.packet.first.offset = D_800AA320;
+    work.packet.second.owner = second;
+    work.packet.second.code = second[0x3B];
+    work.packet.second.kind = 5;
+    work.packet.second.offset = D_800AA338;
+    work.request.start.x = *(f32 *)(first + 0x14);
+    work.request.start.y = *(f32 *)(first + 0x18);
+    work.request.start.z = *(f32 *)(first + 0x1C);
+    work.request.end.x = *(f32 *)(second + 0x14);
+    work.request.end.y = *(f32 *)(second + 0x18);
+    work.request.end.z = *(f32 *)(second + 0x1C);
+    work.request.extra = 0;
+    work.request.distance = 170.0f;
+    created = func_151B30B0(&work.request, 0.0015f, 48, 255, 0);
+    *(u8 **)(pair + 0x14) = created;
+    if (created != NULL) {
+        memcpy((*(u8 **)(pair + 0x14)) + 0x150, &work.packet, 48);
+    }
+
+    work.packet.route = 0;
+    work.packet.first.owner = first;
+    work.packet.first.code = first[0x3B];
+    work.packet.first.kind = 5;
+    work.packet.first.offset = D_800AA32C;
+    work.packet.second.owner = second;
+    work.packet.second.code = second[0x3B];
+    work.packet.second.kind = 10;
+    work.packet.second.offset = D_800AA344;
+    work.request.start.x = *(f32 *)(first + 0x14);
+    work.request.start.y = *(f32 *)(first + 0x18);
+    work.request.start.z = *(f32 *)(first + 0x1C);
+    work.request.end.x = *(f32 *)(second + 0x14);
+    work.request.end.y = *(f32 *)(second + 0x18);
+    work.request.end.z = *(f32 *)(second + 0x1C);
+    work.request.extra = 0;
+    created = func_151B30B0(&work.request, 0.0015f, 48, 255, 0);
+    *(u8 **)(pair + 0x10) = created;
+    if (created != NULL) {
+        memcpy((*(u8 **)(pair + 0x10)) + 0x150, &work.packet, 48);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1DF510/func_151B2690.s")
 

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3b7e4c1; tools are committed before the consumer pin.
+  checkpoint pins tools f3bb1e7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner link setup C match:
+[Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md).
+func_151B2348 matches all210 words/frame0xA8 with25 certified closed T6/T7
+guards; this is not direct compiler output. Nine installed tests pass25.020s:
+768 guest/32,768 native32/384 actual-wrapper chain cases, independent rebases,
+faults and copied-owner preservation. Entire ELF remains byte-identical;
+all11,510 old guards and189,088 protected data bytes are preserved.
+Exactly one ASM-to-C row adds840 converted bytes. Game2,739/4,815 exact,
+total3,412/5,488,zero drift/2,076 differences. Converted5,488/6,042 (90.83%),
+85.95% bytes; Game4,815/5,321 (90.49%),85.30% bytes.
+Resume original176-word/frame0xD8 companion func_151B2690.
 
 Latest owner link allocator match:
 [Note 1173](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md).

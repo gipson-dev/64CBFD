@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Owner Link Setup Guarded C Match
+
+[Note 1174](WORKING_NOTES/1174-game-owner-link-setup-guarded-c-match-20261009.md):
+Convert genuine210-word func_151B2348 assembly to complete C with25 certified
+closed T6/T7 guards. Match original frame/private workspace and raw copied holes;
+nine installed tests pass25.020s, including384 actual-wrapper chain cases.
+Whole ELF remains byte-identical; append only25 guards/change one ASM-to-C row.
+Add840 converted bytes: Game2,739/4,815 exact,total3,412/5,488,zero drift.
+Tools f3bb1e7 banked first; next original176-word companion func_151B2690.
+
 ## 2026-10-09 Owner Link Allocator Direct Match
 
 [Note 1173](WORKING_NOTES/1173-game-owner-link-allocator-direct-match-20261009.md):

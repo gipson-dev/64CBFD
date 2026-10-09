@@ -11509,3 +11509,28 @@ generated_175250,func_15148AF4,0x40,0x01C23021,0x004E3021,-,-,Normalize commutat
 generated_175250,func_15148BA4,0x48,0x016A6021,0x014B6021,-,-,Normalize record height response commutative pointer or closed payload spill slot,,,false
 generated_175250,func_15148BA4,0x170,0xAFA80054,0xAFA80050,-,-,Normalize record height response commutative pointer or closed payload spill slot,,,false
 generated_175250,func_15148BA4,0x178,0x8FA80054,0x8FA80050,-,-,Normalize record height response commutative pointer or closed payload spill slot,,,false
+generated_1DF510,func_151B2348,0x64,0x240F000A,0x240E000A,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x78,0xA3AF004D,0xA3AE004D,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x88,0x27AE0050,0x27AF0050,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x90,0xADC10000,0xADE10000,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x98,0xADCA0004,0xADEA0004,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0xA0,0xADC10008,0xADE10008,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x168,0x240F0001,0x240E0001,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x16C,0xA3AF0060,0xA3AE0060,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x190,0x27AE003C,0x27AF003C,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x198,0xADC10000,0xADE10000,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x1A0,0xADC90004,0xADE90004,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x1A8,0xADC10008,0xADE10008,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x1C8,0x27AF0050,0x27AE0050,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x1D0,0xADE10000,0xADC10000,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x1D8,0xADEA0004,0xADCA0004,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x1E0,0xADE10008,0xADC10008,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x25C,0x922E003B,0x922F003B,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x270,0xA3AE0038,0xA3AF0038,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x298,0x920F003B,0x920E003B,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x29C,0x3C0E0000,0x3C0F0000,R_MIPS_HI16:D_800AA344,R_MIPS_HI16:D_800AA344,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x2A4,0x25CE0000,0x25EF0000,R_MIPS_LO16:D_800AA344,R_MIPS_LO16:D_800AA344,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x2A8,0xA3AF004C,0xA3AE004C,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x2AC,0x8DC10000,0x8DE10000,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x2B4,0x8DCD0004,0x8DED0004,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
+generated_1DF510,func_151B2348,0x2BC,0x8DC10008,0x8DE10008,-,-,Normalize three closed owner-link setup T6/T7 allocation permutations,,,false
