@@ -1,12 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Ribbon Effect Constructor Direct Match - 2026-10-09
+
+[Note 1167](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md):
+
+- [x] Recover complete107-word func_15148F1C, mixed12-argument ABI and actual28-byte request; replace its false zero-return placeholder.
+- [x] Match every word directly with ordinary O2/g3, frame0xB8 and zero guards; retain retail uninitialized holes and ordered float products.
+- [x] Pass eight installed tests in37.223s:5,504 guest cases,512 connected cases,688 native32 cases, four symbol sets and five effective compiled negatives.
+- [x] Preserve ten owner neighbors; audit all ELF bytes except target428-byte slot and st_size12->428; retain progress CSV, guards and189,088 exact Game data bytes.
+- [x] Refresh aggregate README counts:Game2,734/4,816 exact, total3,407/5,489, zero drift and2,082 remaining differences; no conversion credit.
+- [ ] Audit neighboring func_151490C8's complete retail body, redundant byte-sign gate and signed-shift C behavior; keep func_1514803C renderer register/FP matching open.
+- [ ] Qualify whole script caller, allocator and hardware/gameplay separately; bounded guest/native tests do not prove those integrations.
+
 ## Camera Ribbon Register Exclusions - 2026-10-09
 
 [Note 1166](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md):
 
 - [x] Screen18 full forms/12 streams/54 finite cases; shared phase/output reuse does not recover retail allocation. Two tests pass in16.292s.
 - [x] Retain the13-home primary and reject oversize/six-FP-pair alternatives without production guards or credit.
-- [ ] Recover complete neighboring107-word func_15148F1C constructor, its mixed ABI and28-byte request; preserve pending renderer matching work.
+- [x] Recover complete neighboring107-word func_15148F1C constructor, its mixed ABI and28-byte request in Note1167; preserve pending renderer matching work.
 
 ## Camera Ribbon Color Homes And Callback - 2026-10-09
 

@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Ribbon Effect Constructor Direct Match
+
+[Note 1167](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md):
+Replace func_15148F1C's false placeholder with its complete107-word mixed-ABI
+constructor; ordinary O2/g3 matches directly, frame0xB8, zero guards.
+Eight installed tests pass in37.223s, including actual lookup/delegate,
+native32, independent rebases and whole-ELF audit. Game exact increases to
+2,734/4,816; no conversion rows or protected data change. Root README keeps
+only aggregate status rows. Next audit func_151490C8; renderer remains open.
+
 ## 2026-10-09 Camera Ribbon Register Exclusions
 
 [Note 1166](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md):

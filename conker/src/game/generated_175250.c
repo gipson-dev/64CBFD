@@ -38,6 +38,19 @@ s32 func_15046C80(f32 *, u16, f32, HeightResult71820 *);
 extern s32 (*D_8008A430[])(u8 *, f32, f32, f32, f32, void *);
 extern s32 (*D_8008A450[])(u8 *, f32, f32, f32, f32, void *);
 
+typedef struct {
+    f32 x, y, z;
+    s16 duration, mode;
+    s32 active;
+    u8 reserved14, count, reserved16[2];
+    s32 value;
+} RibbonRequest15148F1C;
+typedef struct {
+    f32 gravity, velocityX, velocityY, velocityZ, threshold;
+    u8 reserved14[4], flags, kind, channel, alpha, reserved1C[4];
+} RibbonPayload15148F1C;
+f32 func_151423D8(u8);
+
 /* Non-matching placeholders for the text-only asm slice asm/175250.s. */
 
 s32 func_151478F4(s32 arg0);
@@ -285,8 +298,50 @@ s32 func_15148EF8(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     return 1;
 }
 
-s32 func_15148F1C() {
-    return 0;
+u8 *func_15148F1C(u8 kind, f32 x, f32 y, f32 z, s32 count,
+    s32 yaw, s32 pitch, f32 speed, s16 duration, f32 gravity, f32 threshold, u8 channel) {
+    RibbonRequest15148F1C request;
+    RibbonPayload15148F1C payload;
+    f32 pitchValue;
+    f32 pitchQuarter;
+    f32 yawValue;
+    f32 yawQuarter;
+    RenderRecord15147DA0 render;
+
+    pitchValue = func_151423D8(pitch);
+    pitchQuarter = func_151423D8((u8)((u32)pitch - 0x40));
+    yawValue = func_151423D8(yaw);
+    yawQuarter = func_151423D8((u8)((u32)yaw - 0x40));
+    request.active = 1;
+    request.mode = 1;
+    payload.channel = 255;
+    payload.flags = 8;
+    payload.kind = kind;
+    if (kind == 10) {
+        payload.flags = 0x28;
+    }
+    request.x = x;
+    request.y = y;
+    request.z = z;
+    payload.gravity = gravity;
+    payload.threshold = threshold;
+    payload.velocityX = (speed * pitchValue) * yawQuarter;
+    payload.velocityY = -speed * pitchQuarter;
+    payload.velocityZ = (speed * pitchValue) * yawValue;
+    payload.alpha = 255;
+    request.count = (u32)count + 3;
+    request.duration = duration;
+    render.words[0] = 0;
+    render.words[1] = 1;
+    render.words[2] = 0x160600;
+    render.words[3] = 3;
+    render.words[4] = 0x10;
+    render.words[5] = 0x80;
+    render.words[6] = 0x20;
+    ((u8 *)&render)[0x1C] = 0;
+    ((u8 *)&render)[0x1D] = 9;
+    return func_15147DA0(&request, &payload, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+        &render, 0, channel, 1);
 }
 
 s32 func_151490C8(u8 *arg0) {

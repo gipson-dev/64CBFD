@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1167](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md)):
+Install full107-word func_15148F1C directly from semantic C, frame0xB8,
+zero guards. Eight tests pass in37.223s, including5,504 guest cases,
+512 connected cases,688 native32 cases and four independent symbol sets.
+Whole-ELF audit permits only target slot and symbol size; progress CSV,
+guards and189,088 protected data bytes unchanged. Game exact2,734/4,816.
+Next audit func_151490C8; pending renderer work and Game goal remain active.
+
 2026-10-09 ([Note 1166](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md)):
 Two tests in16.292s exclude shared-phase/ray-output register layouts over18
 complete forms/12 streams/54 finite controls. Retain qualified13-home primary;

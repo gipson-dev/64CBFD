@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5f4973d; tools are committed before the consumer pin.
+  checkpoint pins tools 468cd97; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed constructor match:
+[Note 1167](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md).
+`func_15148F1C` emits all 107 retail words directly from semantic C, with
+the original 0xB8 frame and no guards. Eight tests pass in37.223s after
+installation, including actual lookup/delegate callees, native32 typed
+calls, four independent symbol sets and whole-ELF preservation.
+Game exact rises to2,734/4,816 (56.77%); total3,407/5,489 (62.07%).
+Conversion rows,11,510 guards and189,088 protected Game data bytes remain
+unchanged. Root README changes aggregate rows only. Next audit neighboring
+`func_151490C8`; full ribbon renderer matching remains pending.
+Older renderer suites retain their historical pre-install fingerprints;
+this real restoration deliberately supersedes those whole-source/ELF hashes.
+Tools468cd97 banked first; source/docs and exact consumer pin follow.
 
 Current renderer register exclusions:
 [Note 1166](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md).

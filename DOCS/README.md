@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Ribbon effect constructor direct match](WORKING_NOTES/1167-game-ribbon-effect-constructor-direct-match-20261009.md):
+  Install all107 retail words directly, no guards; eight tests qualify the
+  mixed ABI, connected callees, native32 calls, rebases and whole-ELF audit.
+  Game exact2,734/4,816; conversion rows and protected data unchanged.
 - [Camera ribbon register exclusions](WORKING_NOTES/1166-game-camera-ribbon-register-lifetime-exclusions-20261009.md):
   Two passing tests exclude shared-phase/output-reuse layouts across18
   complete forms; retain the13-home primary and continue constructor recovery.
