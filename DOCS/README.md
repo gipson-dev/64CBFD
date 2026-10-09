@@ -54,7 +54,11 @@ confirmed.
 
 ## Planning and history
 
-- [Latest record growth match](WORKING_NOTES/1157-game-record-growth-match-20261009.md):
+- [Latest record height response match](WORKING_NOTES/1158-game-record-height-response-match-20261009.md):
+  Complete C143/frame0x58 linked exact with three closed guards; conditional
+  snapshot, backwards integration, height query and six-argument responses.
+  Entire ELF unchanged, one conversion row, actual nine-word response connected.
+- [Previous record growth match](WORKING_NOTES/1157-game-record-growth-match-20261009.md):
   Complete C140/frame0x10 directly exact; conditional stack-step behavior,
   ordered integration/insertion/phase loops and the actual dispatch chain.
   Entire ELF unchanged, one conversion row, no new guards.

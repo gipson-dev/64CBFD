@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9d3bfa0; tools are committed before the source pin.
+  checkpoint pins tools f0818a5; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game record growth match:
+Latest Game record height response match:
+[Note 1158](WORKING_NOTES/1158-game-record-height-response-match-20261009.md).
+Convert GLOBAL_ASM `func_15148BA4` to complete C143/frame0x58, linked exact
+with three expected-word guards: one commutative addition and a closed
+payload carry slot. Raw C retains three differences, not direct matching.
+Recover conditional old-position snapshot, backwards integration, strict
+height comparison/query and two live six-argument response tables. Preserve
+the flags&7 versus flags&0x17 private lifetime without a guessed initializer.
+Nine final tests pass in 69.618s, including 50,689 native32 defined cases, 37 public aliases,
+eight effective negatives and complete 100+97+143+9-word dispatch through
+the actual `func_15148EF8` response body. Height query is still a bounded
+model, not newly proven hardware/gameplay. Every ELF byte/all 6,058 slots
+remain unchanged; one asm -> c row and exactly three guard rows, total
+11,510. Thirty-five shared tests and both tools checks pass. Fresh totals
+5,489 converted /3,406 exact, Game 4,816 /2,733; zero drift, 2,083 different.
+Tools f0818a5 first, exact parent pin second, no push/older mirror reset.
+Next full `func_1514803C` renderer: 546 words/frame0x120, the owner's last
+GLOBAL_ASM. Other response/cleanup/upstream/hardware/gameplay and graph
+corpus repair remain open. Root README receives aggregate rows only.
+
+Previous Game record growth match:
 [Note 1157](WORKING_NOTES/1157-game-record-growth-match-20261009.md).
 Convert GLOBAL_ASM `func_151488C4` to complete 140-word C/frame0x10,
 directly byte-exact without guards or profile changes. Recover forward

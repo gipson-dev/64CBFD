@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-09 Record Height Response Match
+
+[Note 1158](WORKING_NOTES/1158-game-record-height-response-match-20261009.md):
+Convert full GLOBAL_ASM `func_15148BA4` to C143/frame0x58, linked exact
+with three expected-word guards, not a direct raw match. Recover old-position
+snapshot, backwards integration, height query and live six-argument responses.
+Preserve the distinct flags&7 /flags&0x17 stack lifetime without a guessed
+default. Nine focused tests include 50,689 native32 defined cases, eight
+effective negatives, 37 aliases and complete 100+97+143+9-word dispatch
+through actual func_15148EF8; the height query remains a bounded model.
+Entire ELF/all 6,058 slots unchanged; one asm -> c row gains one function/
+572 bytes, preserve old guard bytes and append three, total 11,510.
+Fresh totals 5,489 converted/3,406 exact, Game 4,816/2,733; zero drift,
+2,083 different. Thirty-five shared tests and both tools checks pass.
+Nine final tests pass in69.618s; tools f0818a5 first, exact parent pin second,
+no push/older mirror reset. Next full
+func_1514803C renderer, 546 words; wider matching/runtime/graph gates open.
+
 ## 2026-10-09 Record Growth Match
 
 [Note 1157](WORKING_NOTES/1157-game-record-growth-match-20261009.md):

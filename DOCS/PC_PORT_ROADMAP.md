@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Record Height Response Match - 2026-10-09
+
+[Note 1158](WORKING_NOTES/1158-game-record-height-response-match-20261009.md):
+
+- [x] Convert complete GLOBAL_ASM `func_15148BA4` to C143/frame0x58, linked exact with three expected-word guards; raw C has three differences, not direct matching.
+- [x] Recover narrower flags&7 snapshot, backwards integration/live time, flags&0x17 strict height query, live result kind/selectors/tables, six-argument calls and boolean response result.
+- [x] Preserve conditional old-position lifetime without a guessed default; qualify bit16-only emitted prior-stack behavior separately from defined native C and retain invalid prefixes without a production bound.
+- [x] Qualify 4,194 cases/12,582 executions, all 142 reachable words, 144 snapshot cases, 333 missing-byte triples, 37 public aliases, eight effective negatives and 50,689 native32 cases with full canaries.
+- [x] Prove stale-word rejection and the closed payload SP+0x54 -> SP+0x50 save/reload lifetime under query mutations, scratch-register and argument-home clobbers; preserve seven relocation sites.
+- [x] Preserve ten post-processed owner neighbors/pools/relative relocations/zero diagnostics; actual padder emits 572 bytes without filler, four independent GNU links pass over 96 cases.
+- [x] Connect complete 100+97+143+9-word timer/dispatcher/leaf/actual response through protected D_8008A200[1], D_8008A3E0[3], D_8008A430[1], 16 cases/48 executions. Height query remains a bounded hook.
+- [x] Complete normal rebuild and byte-identical whole-ELF check: every byte/all 6,058 slots unchanged, one conversion row gains one function/572 bytes; preserve 11,507 old guards/bytes and append three, total 11,510.
+- [x] Measure 5,489 converted/3,406 exact, Game 4,816/2,733, zero drift, 2,083 different; root README aggregate rows only. Thirty-five shared tests and both tools checks pass.
+- [x] Pass nine final tests in69.618s; bank tools f0818a5 before exact parent pin, preserve older checkout without push/pause, and validate 144 documents /4,252 relative links /zero broken plus 35 exact mounted/mirrored tool files.
+- [ ] Recover full `func_1514803C`, 546 words/frame0x120: D_8008A2A4[1] renderer, complete setup/graphics/vertex loops and command-pointer result; read all assembly and direct helper interfaces before fitting.
+- [ ] Qualify other response/cleanup/upstream/hardware/gameplay paths and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Growth Match - 2026-10-09
 
 [Note 1157](WORKING_NOTES/1157-game-record-growth-match-20261009.md):
@@ -14,7 +31,7 @@
 - [x] Measure 5,488 converted/3,405 exact, Game 4,815/2,732, zero drift and 2,083 different; root README receives aggregate rows only.
 - [x] Pass eight final tests in 32.874s, 35 shared tests and both tools checks; bank tools 9d3bfa0 before exact parent pin, preserving older mirror without pushing or pausing.
 - [x] Validate 143 documents /4,241 relative links /zero broken and 33 mounted/mirrored tools with parse/exact-byte checks; preserve all 66 older standalone status lines, its HEAD and both dirty-file hashes.
-- [ ] Recover complete `func_15148BA4`, 143 words/frame0x58: conditional old position, backwards integration, height query and selected six-argument response calls. Preserve the low-bit snapshot versus wider post-integration flag gate.
+- [x] Recover complete `func_15148BA4`, 143 words/frame0x58: conditional old position, backwards integration, height query and selected six-argument response calls. Preserve the low-bit snapshot versus wider post-integration flag gate. See Note 1158.
 - [ ] Qualify other callback/cleanup/upstream/hardware/gameplay paths and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Record Phase Shaping Match - 2026-10-09

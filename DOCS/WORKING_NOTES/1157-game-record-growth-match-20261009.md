@@ -168,3 +168,9 @@ ABI and the complete dispatcher connection before installation. The owner
 renderer func_1514803C and trail constructor func_151DA6F8's unchanged
 61 differences remain open, as do other callback/cleanup/upstream/hardware/
 gameplay and graph-corpus gates. Wider Game completion is not claimed.
+
+Follow-up 2026-10-09: the full 143-word height-response callback above is
+now linked byte-exact C with three closed guards. Retain its narrower
+snapshot gate/private lifetime; do not call the raw source directly exact.
+See [Note 1158](1158-game-record-height-response-match-20261009.md) for fresh
+qualification and the next complete 546-word renderer target.

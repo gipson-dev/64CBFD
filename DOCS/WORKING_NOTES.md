@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-09 ([Note 1158](WORKING_NOTES/1158-game-record-height-response-match-20261009.md)):
+Convert complete GLOBAL_ASM func_15148BA4 to C143/frame0x58, linked exact
+with three closed guards; raw C still has three differences. Conditional
+snapshot, backwards integration, height query, live selectors/tables and
+six-argument response ABI recovered without guessed private defaults.
+Nine focused tests, 50,689 native32 defined cases, 37 aliases, eight
+effective negatives and full 100+97+143+9-word actual response dispatch.
+Every ELF byte/all 6,058 slots unchanged; one conversion row/572 bytes,
+three appended guards, total 11,510. Thirty-five shared tests/both tools
+checks pass. Totals 5,489 converted/3,406 exact, Game 4,816/2,733;
+zero drift, 2,083 different. Tools first, exact parent pin second.
+Final nine tests pass in69.618s; tools f0818a5 is banked first.
+Next full C546 func_1514803C; wider Game/hardware/gameplay/graph gates open.
+
 2026-10-09 ([Note 1157](WORKING_NOTES/1157-game-record-growth-match-20261009.md)):
 Convert full GLOBAL_ASM `func_151488C4` to directly exact C140/frame0x10
 without guards. Recover forward integration/insertion/phase shaping and
