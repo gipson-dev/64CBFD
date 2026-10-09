@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point initializer frame and private home fit](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md):
+  Complete157-word func_151B3A7C now has its original0x60 frame and actual private
+  position/saved-FP homes. Eleven tests pass, including exact final private bytes
+  and actual layout qualification.137 word differences remain; not installed/no
+  credit. Continue integer induction, second-vector zeros and scheduling.
+
 - [Owner point initializer recovery](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md):
   Recover complete ten-point func_151B3A7C and registered callback contract.
   Nine tests pass, including 2,048 guest/8,192 native32 cases and constant aliases.

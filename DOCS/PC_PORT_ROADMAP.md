@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Initializer Frame And Private Home Fit - 2026-10-09
+
+[Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md):
+
+- [x] Recover the actual typed actor/24-byte point layout and live delta/position/step declaration order; retain the complete ten-point contract.
+- [x] Fit original 157 words/frame 0x60 and SP+0x44 position/SP+0x08 saved-FP homes directly from C, with no unused padding or frame guards; raw differences 143 to 137.
+- [x] Pass eleven full tests, including 2,048 guest/8,192 native32 cases, original callback dispatch, aliases/negatives/faults/rebases and all-word saved-register coverage.
+- [x] Qualify exact final private-frame memory and the original write footprint in 16 cases/two stack phases; verify actual native32 field offsets and full actor/point sizes.
+- [x] Preserve 16 owner neighbors/pools/relocations, unchanged production hashes/data/guards/progress and README totals; commit tools 977010c before consumer pin, preserve older dirty work.
+- [ ] Fit integer induction/control, second-vector zero-store shape, initial FP/setup scheduling and register allocation in this complete function; 137 word differences remain.
+- [ ] Install only after every linked word plus whole owner/ELF/data/guard-history qualification pass. Full hardware/FCSR/live rendering/gameplay remains separate.
+
 ## Owner Point Initializer Recovery - 2026-10-09
 
 [Note 1185](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md):
@@ -9,7 +21,8 @@
 - [x] Pass nine tests: 2,048 guest/8,192 native32 cases, constant aliases, six effective negatives, eight independent links, saved-register/all-word coverage and missing-byte public prefixes.
 - [x] Confirm copied owner preserves 16 neighbors/pools/relative relocations and the actual padder accepts the 628-byte slot. Reject installation while frame/private homes/words differ.
 - [x] Preserve source/ELF/guards/progress and 189,088 protected bytes, unchanged README totals; commit tools b3a58e3 first and preserve older dirty work.
-- [ ] Fit the complete current 157-word/frame 0x58 candidate to original frame 0x60/private position home, loop pointers/control and scheduling; 143 word differences remain before guards or installation.
+- [x] Fit the complete candidate to original 157 words/frame 0x60/private position and saved-FP homes in [Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md).
+- [ ] Finish loop induction/control, second-vector zeros and scheduling before guards/installation; Note 1186 leaves 137 word differences.
 - [ ] Keep full caller cleanup/walker, SDK/FCSR/hardware/live rendering/gameplay acceptance separate from bounded equivalence.
 
 ## Owner Ribbon Renderer Guarded C Match - 2026-10-09

@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-09 Owner Point Initializer Frame And Private Home Fit
+
+[Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md):
+Complete func_151B3A7C fits original 157 words/frame 0x60 and actual private homes
+from typed actor fields/live locals; raw differences 143 to 137. Eleven full tests
+pass 122.336s, including exact final private memory/no extra writes, native32 field
+offsets and retained full guest/native/alias/dispatch/rebase/fault qualification.
+Twenty-nine source forms pass all eight ordinary fixtures each. Not installed,
+no guards/credit; production/data/progress hashes and README totals unchanged.
+Tools 977010c first; continue integer induction, zero stores and scheduling.
+
 ## 2026-10-09 Owner Point Initializer Recovery
 
 [Note 1185](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md):

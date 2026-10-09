@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-09 ([Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md)):
+Fit complete func_151B3A7C to157 words/frame0x60, SP+0x44 position and SP+0x08
+saved-FP homes using real actor fields/live locals. Raw differences143 to137.
+Eleven full tests pass122.336s, including exact final private bytes/footprint and
+actual native32 layout, with all earlier semantic/alias/dispatch/rebase gates.
+Twenty-nine full forms/eight fixtures each pass; copied owner/padder/neighbors
+and unchanged production/data preserved. Tools977010c first, no installation/
+guards/credit. Continue integer induction, zero-store and scheduling fit.
+
 2026-10-09 ([Note 1185](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md)):
 Recover complete ten-point func_151B3A7C, registered callback ABI, independent
 post-first-record scales, repeated binary32 additions and flag clear/success return.

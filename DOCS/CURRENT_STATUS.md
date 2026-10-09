@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b3a58e3; tools are committed before the consumer pin.
+  checkpoint pins tools 977010c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest owner point-initializer recovery checkpoint:
+Latest owner point-initializer frame/private-home fitting checkpoint:
+[Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md).
+Complete func_151B3A7C now fits all 157 words/frame 0x60 and original SP+0x44
+position/SP+0x08 saved-FP homes directly from actual actor fields and live locals.
+Raw differences fall 143 to 137. Eleven tests pass in 122.336s, zero skips:
+full guest/native32/alias/dispatch/rebase/fault gates plus exact final private bytes
+and no extra private writes. Twenty-nine full source forms pass eight fixtures
+each; actual copied owner/padder preserves 16 neighbors/pools/relocations.
+Still uninstalled/nonmatching, no guards/credit. Source/ELF/guards/progress and
+protected data remain unchanged. Continue its integer induction, second-vector
+zero emission and independent FP/setup scheduling; do not patch frame words.
+
+Earlier owner point-initializer recovery checkpoint:
 [Note 1185](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md).
 Recover complete func_151B3A7C's ten 24-byte point records, ordered binary32
 increments, zero second vectors and flag-bit-2 clear/success return. Actual
