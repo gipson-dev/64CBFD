@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b2c37ee; tools are committed before the consumer pin.
+  checkpoint pins tools 799d9be; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current renderer frame fitting:
+Current renderer lifetime qualification:
+[Note 1161](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md).
+Ten tests pass in220.493s for complete typed547/frame0x130/440 differences
+and stride545/frame0x120/526 differences forms. Each receives804 guest,
+536 native32 and128 additional nonlinear guest/native32 cases. Three
+compiled negatives reject unsafe decompiler capture/head/texture changes.
+Catalog73 forms produces35 distinct instruction streams; sampled controls
+are not full qualification of all forms. Neither installed or exact: typed
+still exceeds the slot, stride saves only three GPRs. Next recover typed
+private slots and retail view/texture/stride lifetime. All credit unchanged.
+
+Previous renderer frame fitting:
 [Note 1160](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md).
 Two complete forms reach frame0x120: inline rays543 words/544 raw differences,
 and mixed lifetimes546/513. Eight tests pass in138.152s; both forms receive

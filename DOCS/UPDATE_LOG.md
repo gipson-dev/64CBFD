@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-09 Camera Ribbon Lifetime Qualification
+
+[Note 1161](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md):
+Ten final tests pass in220.493s for complete typed547/frame0x130/440 and
+stride545/frame0x120/526 forms. Each receives128 additional nonlinear
+guest/native32 cases; three compiled negatives reject unsafe decompiler
+capture/head/texture transformations. Catalog73 forms/35 instruction streams
+avoids repeating source-only variations. Production/credit unchanged:
+typed exceeds the slot, stride lacks a fourth saved GPR. Tools799d9be first,
+exact parent pin second; preserve older checkout, no push or pause.
+
 ## 2026-10-09 Camera Ribbon Frame Fitting
 
 [Note 1160](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md):

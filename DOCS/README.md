@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Current camera ribbon lifetime qualification](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md):
+  Ten passing tests, typed/stride full bodies and128 nonlinear guest/native32
+  cases per form; three unsafe decompiler negatives. Neither installed/exact.
 - [Current camera ribbon frame fitting](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md):
   Two complete0x120-frame forms qualified by eight tests; register layouts
   still differ, production uninstalled. Next recover S3 view/stride lifetime.

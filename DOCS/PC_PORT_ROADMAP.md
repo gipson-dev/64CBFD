@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Camera Ribbon Lifetime Qualification - 2026-10-09
+
+[Note 1161](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md):
+
+- [x] Qualify complete typed547/frame0x130/440 differences and stride545/frame0x120/526 differences forms; preserve full fields, capture order and signed widths.
+- [x] Pass ten final tests in220.493s; each form receives804 guest cases,92 mutation cases,94 missing-byte pairs,five aliases,two cyclic prefixes,536 native32 and128 additional nonlinear guest/native32 cases.
+- [x] Preserve ten owner neighbors/pools/relative relocations/zero diagnostics and actual dispatcher16 cases/32 executions. Verify typed padder rejection and stride acceptance without claiming installation or matching.
+- [x] Screen73 complete forms/35 distinct instruction streams with three finite controls each; reject premature records capture, early head read and texture narrowing with effective compiled negatives.
+- [x] Bank tools799d9be before exact consumer pin, preserve independent checkout and all production bytes/credit. Root README unchanged.
+- [ ] Recover correctly typed private stack slots and retail S3 view/texture/stride plus FP schedule; resolve complete raw matching without synthetic padding/work or broad guards.
+- [ ] Qualify independent rebases, remaining alias/mutation domains and installation, then whole-ELF/progress audit. Hardware/gameplay and other callees remain separate.
+
 ## Camera Ribbon Frame Fitting - 2026-10-09
 
 [Note 1160](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md):

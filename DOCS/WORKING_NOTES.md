@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1161](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md)):
+Qualify complete typed547/frame0x130/440 and stride545/frame0x120/526
+renderer forms with ten tests in220.493s, including128 nonlinear guest/native32
+cases each and three effective unsafe-decompiler negatives. Screen73 full
+forms/35 instruction streams, not full qualification of every form. Neither
+installed or exact; recover private slots and retail context/FP schedule next.
+Tools799d9be first; preserve production bytes/credit and independent checkout.
+
 2026-10-09 ([Note 1160](WORKING_NOTES/1160-game-camera-ribbon-renderer-frame-fitting-20261009.md)):
 Qualify complete camera-ribbon frame0x120 forms:543/544 raw differences and
 546/513. Eight tests pass in138.152s, each form804 guest/536 native32 cases,
