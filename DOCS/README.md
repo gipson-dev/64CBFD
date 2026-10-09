@@ -54,7 +54,14 @@ confirmed.
 
 ## Planning and history
 
-- [Latest table-driven effect constructor restoration](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md):
+- [Latest effect-record constructor match](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md):
+  Complete `func_15147DA0`, C70/frame0x40, directly byte-exact without
+  guards. Corrected caller prototype leaves its entire owner unchanged;
+  `func_151DA6F8` remains 61 differences. Only callee slot/symbol size change.
+  Totals 5,484 converted / 3,398 exact, zero drift. Tools 658b615 first,
+  parent pin second, no push. Allocation/core/caller/hardware gates stay open.
+
+- [Previous table-driven effect constructor restoration](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md):
   Complete semantic `func_151DA6F8`, C144/frame0xD0, improves 143 -> 61
   linked differences; still non-matching, no guards or progress credit.
   Only target slot/symbol size change; all other ELF bytes/data are unchanged.

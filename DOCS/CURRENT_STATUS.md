@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 77001d3; tools are committed before the source pin.
+  checkpoint pins tools 658b615; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,29 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game table-driven effect constructor restoration:
+Latest Game effect-record constructor match:
+[Note 1150](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md).
+Restore false-zero `func_15147DA0`, 70 words / 280 bytes / frame0x40,
+directly byte-exact without guards. Recover its full fifteen-word interface,
+request state, eleven-argument allocation call, lazy null path, descriptor
+copy, six low-byte stores, eight-word render copy and original return pointer.
+Correct the caller's prototype to full-word active/fade parameters; every
+instruction in its 62-function owner remains unchanged, including the
+144-word `func_151DA6F8` with 61 actual differences. None of 73 additional
+caller fitting forms is installed; the render-prefix placement is unresolved.
+All nine post-install tests pass in 39.334s, including 65,536 native32 cases
+and the complete 225-word caller/callee/memcpy path. Only the target's ELF
+slot and symbol-size field 12 -> 280 change; all other ELF bytes, all 6,058
+addresses/extents, converted rows/bytes and 11,475 guards are unchanged.
+Fresh totals: 5,484 converted / 3,398 exact, Game 4,811 / 2,725;
+zero drift and 2,086 different. Twenty-five shared tests and both tools
+checks pass. Bank tools 658b615 first, then exact parent source/docs pin;
+preserve older standalone edits/history without pushing. Next recover the
+115-word allocation core `func_15147A80` or continue the caller's 61
+remaining differences. Original callers, unspecified padding, graph repair
+and hardware/gameplay remain open. OGL Release remains frozen.
+
+Previous Game table-driven effect constructor restoration:
 [Note 1149](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md).
 Replace false-zero `func_151DA6F8` with complete semantic C, 144 words /
 576 bytes / frame0xD0. Recover the 18-argument ABI, four records, table/flag

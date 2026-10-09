@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-09 ([Note 1150](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md)):
+Restore `func_15147DA0`, complete 70-word/frame0x40 C, directly exact
+without guards. Full-word active/fade interface, allocation/null path,
+descriptor/six-byte/render construction and original-pointer return recovered.
+Caller prototype correction preserves all 62 owner functions; its 144-word
+constructor remains 61 words different. Screen 73 further complete forms,
+none installed. Whole ELF changes only callee slot/symbol size 12 -> 280;
+all other bytes/data, 6,058 addresses/extents, converted rows/bytes and 11,475
+guards unchanged. Total 5,484 / 3,398 exact, Game 4,811 / 2,725; zero drift
+and 2,086 different. Nine focused tests, 25 shared tests and both tools checks
+pass. Tools 658b615 first, parent pin second, no push or older mirror reset.
+Continue allocation core/caller matching; wider acceptance remains open.
+
 2026-10-09 ([Note 1149](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md)):
 Replace false-zero `func_151DA6F8` with complete semantic C144/frame0xD0.
 Recover mixed 18-argument ABI, four records, table/flag decisions, creation

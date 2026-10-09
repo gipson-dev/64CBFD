@@ -29,8 +29,8 @@ typedef struct {
 } TrailRender151DA6F8;
 extern u8 D_800AB404[], D_800AB330[], D_800AB3F4[];
 extern f32 D_800AB498;
-u8 *func_15147DA0(void *, void *, s32, u8, u8, u8, u8, u8, u8,
-    u8, u8, void *, s32, u8, s32);
+u8 *func_15147DA0(void *, void *, s32, s32, s32, s32, s32, s32, s32,
+    s32, s32, void *, s32, u8, s32);
 
 /* Generated placeholder declarations. */
 void *func_151D9014(void *, f32 *, u8, f32, s16, u8, f32, u8,

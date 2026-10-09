@@ -1,11 +1,34 @@
 #include <ultra64.h>
 
+typedef struct { s32 words[8]; } RenderRecord15147DA0;
+u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, s32, u8, s32);
+
 /* Non-matching placeholders for the text-only asm slice asm/175250.s. */
 
 s32 func_151478F4(s32 arg0);
 
-s32 func_15147DA0() {
-    return 0;
+u8 *func_15147DA0(void *request, void *descriptor, s32 payloadBytes,
+    s32 active, s32 first, s32 second, s32 third, s32 fourth, s32 fifth,
+    s32 fadeFlag, s32 fadeAlpha, void *render, s32 extraBytes, u8 channel, s32 context) {
+    u8 *created;
+    u8 *payload;
+
+    *(s32 *)((u8 *)request + 0x10) = 1;
+    created = func_15147A80(request, (u32)payloadBytes + 0x48, 0x14, 1, 0, 1,
+        fadeFlag, fadeAlpha, extraBytes, channel, context);
+    if (created == NULL) {
+        return NULL;
+    }
+    payload = *(u8 **)(created + 0x98);
+    memcpy(payload, descriptor, 32);
+    payload[0x20] = active;
+    payload[0x21] = first;
+    payload[0x22] = second;
+    payload[0x23] = third;
+    payload[0x24] = fourth;
+    payload[0x25] = fifth;
+    *(RenderRecord15147DA0 *)(payload + 0x28) = *(RenderRecord15147DA0 *)render;
+    return created;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_175250/func_15147EB8.s")

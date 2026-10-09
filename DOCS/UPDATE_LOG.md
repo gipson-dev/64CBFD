@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-09 Effect-Record Constructor Match
+
+[Note 1150](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md):
+Restore complete `func_15147DA0`, 70 words/frame0x40, directly exact with
+no guards. Recover the full fifteen-word interface, eleven-argument allocation
+call, lazy null path, descriptor/render copies, six low-byte stores and
+original-pointer return. Correct the active/fade caller prototype without
+changing any of its 62 functions; `func_151DA6F8` remains 144 words/61
+differences. Screen 73 complete additional caller forms, none installed.
+Only the callee ELF slot and symbol size change; data, all other ELF bytes,
+6,058 addresses/extents, conversion rows and 11,475 guards stay unchanged.
+Fresh totals 5,484 / 3,398 exact, Game 4,811 / 2,725; zero drift and 2,086
+different. Nine focused tests, 25 shared tests and both tools checks pass.
+Bank tools 658b615 first and parent source/docs pin second; preserve older
+mirror edits/history without pushing. Allocation core, caller matching,
+complete upstream callers, graph and hardware/gameplay remain open.
+
 ## 2026-10-09 Table-Driven Effect Constructor Restoration
 
 [Note 1149](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md):

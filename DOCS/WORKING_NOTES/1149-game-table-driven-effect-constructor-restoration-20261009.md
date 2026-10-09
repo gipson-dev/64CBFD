@@ -171,6 +171,14 @@ open.
 
 ## Next Work
 
+Follow-up [Note 1150](1150-game-effect-record-constructor-match-20261009.md)
+restores the complete 70-word `func_15147DA0` callee directly from C without
+guards. Its active/fade parameters are full incoming words, narrowed only at
+the six byte stores where applicable; the caller prototype is corrected
+without changing any of its instructions. Seventy-three additional caller
+forms remain uninstalled. This constructor still has 61 differences; the
+allocation core and complete upstream callers remain separate work.
+
 Continue **this constructor's matching**, starting from the complete selected
 144-word/frame0xD0 body and **61 real differences**, not its removed zero
 placeholder. First resolve the render-prefix local placement without inventing
