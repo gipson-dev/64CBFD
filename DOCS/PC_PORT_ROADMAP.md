@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Camera Ribbon Renderer Recovery - 2026-10-09
+
+[Note 1159](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md):
+
+- [x] Read all546 retail words and direct helper interfaces; reconstruct complete setup, cross-product width, paired vertices, triangle commands, backward wrap and final prefetch.
+- [x] Qualify uninstalled547-word/frame0x130 candidate: nine tests in106.260s,804 guest cases/all544 reachable retail words,536 actual native32 cases, eight effective negatives,94 missing-byte pairs and five public aliases.
+- [x] Preserve ten copied-owner neighbors/pools/relative relocations/zero diagnostics; actual padder rejects0x88C bytes in0x888 span. Connect actual52-word dispatcher and protected D_8008A2A4[1] over32 cases/64 executions.
+- [x] Screen18 complete forms/four profiles and two cyclic emitted prefixes without adding production bounds. Preserve all production source/ELF/guards/progress bytes and aggregate counts.
+- [ ] Fit retail0x120 private layout and captured record-pointer lifetime across setup calls; resolve full raw matching without dropping behavior or installing a merely shorter form.
+- [ ] Qualify independent rebases, remaining alias/mutation domains and installation; rebuild/audit whole ELF and fresh progress before claiming conversion or exact-match credit.
+- [ ] Complete other graphics/response/upstream/hardware/gameplay and Graphify corpus gates; OGL Release remains frozen.
+
 ## Record Height Response Match - 2026-10-09
 
 [Note 1158](WORKING_NOTES/1158-game-record-height-response-match-20261009.md):

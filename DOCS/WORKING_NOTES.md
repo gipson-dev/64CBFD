@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1159](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md)):
+Recover the complete camera-facing func_1514803C renderer as an uninstalled
+semantic candidate:547/frame0x130/443 differences versus retail546/frame0x120.
+Nine tests pass in106.260s:804 guest /536 native32 cases, eight effective
+negatives, ten unchanged neighbors and actual52-word dispatcher connection.
+Production source/ELF/guards/progress and aggregate credit unchanged. Next
+fit private local layout and record-pointer lifetime, then linked acceptance.
+
 2026-10-09 ([Note 1158](WORKING_NOTES/1158-game-record-height-response-match-20261009.md)):
 Convert complete GLOBAL_ASM func_15148BA4 to C143/frame0x58, linked exact
 with three closed guards; raw C still has three differences. Conditional

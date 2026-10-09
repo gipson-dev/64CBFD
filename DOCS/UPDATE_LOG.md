@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-09 Camera Ribbon Renderer Recovery
+
+[Note 1159](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md):
+Complete func_1514803C C recovery remains uninstalled at547 words/frame0x130/
+443 differences. Nine tests pass in106.260s, including536 actual native32
+cases and the actual52-word graphics dispatcher. Preserve production bytes
+and counts; no new matching credit. Next recover retail local/register
+lifetimes and0x120 frame before normalization, linking and installation.
+
 ## 2026-10-09 Record Height Response Match
 
 [Note 1158](WORKING_NOTES/1158-game-record-height-response-match-20261009.md):

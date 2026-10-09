@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f0818a5; tools are committed before the source pin.
+  checkpoint pins tools 8c7bd4a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current complete renderer recovery:
+[Note 1159](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md).
+Full func_1514803C semantic candidate is qualified but **not installed**:
+547 words/frame0x130/443 raw differences versus retail546/frame0x120.
+Nine tests pass in106.260s, including804 guest cases,536 native32 cases,
+eight effective negatives, ten owner neighbors and actual52-word graphics
+dispatcher connection. All production source/ELF/guards/progress bytes stay
+unchanged; no conversion or exact-match credit. Next fit private locals and
+record-pointer lifetime across setup, then qualify linking/installation.
+Root README aggregates stay unchanged. Preserve the independent tools mirror.
 
 Latest Game record height response match:
 [Note 1158](WORKING_NOTES/1158-game-record-height-response-match-20261009.md).

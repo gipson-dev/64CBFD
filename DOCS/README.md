@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Current camera ribbon renderer recovery](WORKING_NOTES/1159-game-camera-ribbon-renderer-recovery-20261009.md):
+  Full semantic candidate and nine passing tests; production remains exact
+  assembly.547 words/frame0x130/443 raw differences; frame fitting open.
 - [Latest record height response match](WORKING_NOTES/1158-game-record-height-response-match-20261009.md):
   Complete C143/frame0x58 linked exact with three closed guards; conditional
   snapshot, backwards integration, height query and six-argument responses.
