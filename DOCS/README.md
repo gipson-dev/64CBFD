@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Owner ribbon renderer guarded C match](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md):
+  Install full 475-word/frame 0x148 renderer with 161 certified relocation-aware
+  allocation/scheduling guards. Eighteen installed tests pass; whole-ELF changes
+  only target slot/st_size. Game 2,743/4,816 and total 3,416/5,489 exact, zero drift;
+  no conversion credit. Next: adjacent func_151B3A7C point-preparation recovery.
+
 - [Owner ribbon renderer shared copy and GPR proof](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md):
   Full 475-word/frame 0x148 C recovers the initial shared copy base. Certify 107
   GPR allocation words; combined FP/GPR normalization leaves 44 differences.

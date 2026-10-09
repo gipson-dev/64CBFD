@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-09 ([Note 1184](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md)):
+Install complete475-word/frame0x148 func_151B32C8 guarded C match. Certify four
+closed setup windows and compose FP/GPR allocation;161 relocation-aware guards,
+zero linked differences. Eighteen installed tests pass42.269s; entire ELF only
+target slot/st_size changes,16 neighbors/189,088 protected bytes/old guard prefix/
+conversion rows preserved. Game2,743/4,816,total3,416/5,489 exact,zero drift/2,073
+different; no conversion credit. Tools713023c first,older dirty work preserved.
+Next157-word func_151B3A7C point preparation; full helpers/hardware/gameplay open.
+
 2026-10-09 ([Note 1183](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md)):
 Fit complete func_151B32C8's initial second-copy shared base directly, retaining
 475 words/frame 0x148/private homes; raw differences 163 to 161. Certify 107

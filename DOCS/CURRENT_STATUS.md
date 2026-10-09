@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ea649be; tools are committed before the consumer pin.
+  checkpoint pins tools 713023c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest owner ribbon-renderer shared-copy and GPR allocation checkpoint:
+Latest installed owner ribbon-renderer guarded C match:
+[Note 1184](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md).
+func_151B32C8 now matches all 475 linked words/frame 0x148. Complete semantic C
+emits 314 words unchanged; 161 certified relocation-aware guards close allocation
+and four setup scheduling windows. Ordinary read-only table loads may reorder;
+this is not direct compiler output or a hardware/FCSR/gameplay proof.
+Eighteen installed tests pass in 42.269s, zero skips. Whole ELF changes only the
+target slot/st_size; preserve 16 neighbors, 189,088 protected bytes, old guard
+prefix and byte-identical conversion rows. Eleven shared guard/progress tests and
+project tools-check pass. Game 2,743/4,816 exact; total 3,416/5,489, zero drift
+and 2,073 different. Converted counts/bytes unchanged; no conversion credit.
+Next: recover adjacent 157-word/frame 0x60 func_151B3A7C's point-preparation ABI,
+registration and complete mutation/alias contract before matching or installation.
+Full helpers/second material/caller overflow/hardware/gameplay remain separate.
+
+Earlier owner ribbon-renderer shared-copy and GPR allocation checkpoint:
 [Note 1183](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md).
 Complete func_151B32C8 retains 475 words/frame 0x148 and original private homes.
 Moving the real points-base assignment before the last helper recovers all three
@@ -93,10 +108,10 @@ original74-word registered walker, independent rebases, lazy reads and faults.
 Whole ELF changes only target slot/st_size; preserve16 neighbors,189,088
 protected bytes and byte-identical guard/conversion rows. No conversion credit.
 Game2,742/4,816 exact,total3,415/5,489,zero drift/2,074 differences.
-The next same-owner renderer func_151B32C8 is recovered and frame/slot-fit, but
-not installed; [Note 1183](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md)
-records 161 raw /44 combined-normalized word differences. Full helpers/hardware/gameplay remain
-open; original connected walker is not installed C. Earlier entries are history.
+The same-owner renderer func_151B32C8 is now installed and guarded byte-exact;
+[Note 1184](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md)
+supersedes Note 1183's remaining 44 differences. Full helpers/hardware/gameplay
+remain open; original connected walker is not installed C. Earlier entries are history.
 
 Earlier endpoint quad guarded C match:
 [Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md).

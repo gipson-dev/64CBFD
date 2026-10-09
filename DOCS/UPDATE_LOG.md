@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-09 Owner Ribbon Renderer Guarded C Match
+
+[Note 1184](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md):
+Install complete func_151B32C8: 475 linked words/frame 0x148, 161 certified
+relocation-aware allocation/scheduling guards, no literal retail lookup in the
+normalizer. Eighteen installed tests pass 42.269s; full ELF changes only target
+slot/st_size, old guard prefix/conversion rows/protected bytes/neighbors preserved.
+Game 2,743/4,816 exact; total 3,416/5,489, zero drift/2,073 different. No conversion
+credit. Tools 713023c committed first; older dirty checkout preserved. Next is
+157-word func_151B3A7C's point-preparation contract, not hardware/gameplay acceptance.
+
 ## 2026-10-09 Owner Ribbon Renderer Shared Copy And GPR Proof
 
 [Note 1183](WORKING_NOTES/1183-game-owner-ribbon-renderer-shared-copy-and-gpr-proof-20261009.md):

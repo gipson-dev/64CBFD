@@ -9,6 +9,21 @@ extern s32 (*D_8008FAF0[])(u8 *, void *, s32);
 extern s32 (*D_8008FAF8[])(u8 *);
 void func_1516972C(u8 *);
 
+typedef struct { f32 x, y, z; } OwnerRibbonPosition32C8;
+extern u8 *D_800DBFF0;
+extern u8 D_80090DE8[];
+extern u32 D_800D2C9C, D_800A4AC8[];
+void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
+Gfx *func_15142B7C(Gfx *, u32, u32);
+Gfx *func_15142E24(Gfx *, void *, s32, s32, s32, s32, s32, u8, u8 *, u8 *, s32);
+Gfx *func_15142C10(Gfx *, s32, s32, s32, s32, u8 *);
+Gfx *func_15142CF0(Gfx *, s32, s32, s32, s32, s32, s32, u8 *);
+Gfx *func_1513F4E4(Gfx *, u8, u8 *);
+Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
+extern s32 (*D_8008FB10[])(u8 *, s32 *, s32 *, s32 *, s32 *, s32 *,
+    s32 *, s32 *, s32 *, s32 *, s32 *, s32 *, u8 *, u8 *);
+
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -72,8 +87,142 @@ void func_151B3184(u8 *actor) {
     }
 }
 
-s32 func_151B32C8() {
-    return 0;
+Gfx *func_151B32C8(Gfx *output, u8 *actor, s16 view) {
+    u32 textureT;
+    Vtx *cursor;
+    OwnerRibbonPosition32C8 first, second;
+    s32 offset;
+    OwnerRibbonPosition32C8 *origin;
+    f32 rx, ry, rz;
+    f32 dx, dy, dz;
+    f32 nx, ny, nz;
+    f32 ox, oy, oz;
+    u8 sync;
+    s32 mode1, mode2, envR, envG, envB, alpha, primR, primG, primB, primA, renderMode;
+    u8 bank, combine;
+    f32 squaredZ;
+    u8 *points;
+    f32 length, squared;
+
+    if (actor[0x10] & 4) {
+        return output;
+    }
+    if (actor[0x10] & 8) {
+        return output;
+    }
+    if (actor[0x10] & 2) {
+        return output;
+    }
+    func_151D5D60(actor + 0x140, view, 0x190, &cursor, NULL);
+    if (cursor != NULL) {
+        origin = (OwnerRibbonPosition32C8 *)(D_800DBFF0 + view * 0x9A0 + 0x2F8);
+        sync = 1;
+        if (!D_8008FB10[actor[0x2E]](actor, &mode1, &mode2, &envR, &envG, &envB,
+                &alpha, &primR, &primG, &primB, &primA, &renderMode, &bank, &combine)) {
+            return output;
+        }
+        output = func_15142B7C(output, mode1, mode2);
+        output = func_15142C10(output, primR, primG, primB, primA, &sync);
+        output = func_15142CF0(output, 0, 0, envR, envG, envB, alpha, &sync);
+        output = func_1513F4E4(output, combine, &sync);
+        output = func_15142E24(output, D_80090DE8, 0, 0, 0, 0, 54, 0, NULL, &sync, 3);
+        points = actor + 0x48;
+        output = func_15142FBC(output, renderMode | 0x80000 | D_800D2C9C | 0x2CA0,
+            D_800A4AC8[bank * 2 + 1] | D_800A4AC8[bank * 2], &sync);
+        first = *(OwnerRibbonPosition32C8 *)points;
+        second = *(OwnerRibbonPosition32C8 *)(points + 0x18);
+        dx = second.x - first.x;
+        dy = second.y - first.y;
+        dz = second.z - first.z;
+        rx = first.x - origin->x;
+        ry = first.y - origin->y;
+        rz = first.z - origin->z;
+        nx = dy * rz - ry * dz;
+        ny = dz * rx - rz * dx;
+        nz = dx * ry - rx * dy;
+        squaredZ = nz * nz;
+        squared = (nx * nx) + (ny * ny) + squaredZ;
+        if (squared == 0.0f) {
+            ox = 0.0f; oy = 0.0f; oz = 0.0f;
+        } else {
+            length = sqrtf(squared);
+            dz = *(f32 *)(actor + 0x30) / length;
+            ox = nx * dz;
+            oy = ny * dz;
+            oz = nz * dz;
+        }
+        cursor->v.ob[0] = (s32)(first.x + ox);
+        cursor->v.ob[1] = (s32)(first.y + oy);
+        cursor->v.ob[2] = (s32)(first.z + oz);
+        cursor->v.tc[0] = 0;
+        cursor->v.tc[1] = 0;
+        cursor->v.cn[0] = 255;
+        cursor->v.cn[1] = 100;
+        cursor->v.cn[2] = 100;
+        cursor->v.cn[3] = 255;
+        cursor++;
+        cursor->v.ob[0] = (s32)(first.x - ox);
+        cursor->v.ob[1] = (s32)(first.y - oy);
+        cursor->v.ob[2] = (s32)(first.z - oz);
+        cursor->v.tc[0] = 0x3C0;
+        cursor->v.tc[1] = 0;
+        cursor->v.cn[0] = 255;
+        cursor->v.cn[1] = 100;
+        cursor->v.cn[2] = 100;
+        cursor->v.cn[3] = 255;
+        cursor++;
+        textureT = *(s32 *)(actor + 0x13C);
+        for (offset = 0x18; offset != 0xF0; offset += 0x18) {
+            first = *(OwnerRibbonPosition32C8 *)(points + offset - 0x18);
+            second = *(OwnerRibbonPosition32C8 *)(points + offset);
+            dx = second.x - first.x;
+            dy = second.y - first.y;
+            dz = second.z - first.z;
+            rx = second.x - origin->x;
+            ry = second.y - origin->y;
+            rz = second.z - origin->z;
+            nx = dy * rz - ry * dz;
+            ny = dz * rx - rz * dx;
+            nz = dx * ry - rx * dy;
+            squaredZ = nz * nz;
+            squared = (nx * nx) + (ny * ny) + squaredZ;
+            if (squared == 0.0f) {
+                ox = 0.0f; oy = 0.0f; oz = 0.0f;
+            } else {
+                length = sqrtf(squared);
+                dz = *(f32 *)(actor + 0x30) / length;
+                ox = nx * dz;
+                oy = ny * dz;
+                oz = nz * dz;
+            }
+            cursor->v.ob[0] = (s32)(second.x + ox);
+            cursor->v.ob[1] = (s32)(second.y + oy);
+            cursor->v.ob[2] = (s32)(second.z + oz);
+            cursor->v.tc[0] = 0;
+            cursor->v.tc[1] = textureT;
+            cursor->v.cn[0] = 255;
+            cursor->v.cn[1] = 100;
+            cursor->v.cn[2] = 100;
+            cursor->v.cn[3] = 255;
+            cursor++;
+            cursor->v.ob[0] = (s32)(second.x - ox);
+            cursor->v.ob[1] = (s32)(second.y - oy);
+            cursor->v.ob[2] = (s32)(second.z - oz);
+            cursor->v.tc[0] = 0x3C0;
+            cursor->v.tc[1] = textureT;
+            cursor->v.cn[0] = 255;
+            cursor->v.cn[1] = 100;
+            cursor->v.cn[2] = 100;
+            cursor->v.cn[3] = 255;
+            cursor++;
+
+            textureT += *(s32 *)(actor + 0x13C);
+            gSPVertex(output++, cursor - 4, 4, 0);
+            gSP1Triangle(output++, 0, 1, 2, 0);
+            gSP1Triangle(output++, 1, 3, 2, 0);
+        }
+    }
+    return output;
 }
 
 void func_151B3A34(u8 *arg0, s32 arg1, u8 arg2) {
