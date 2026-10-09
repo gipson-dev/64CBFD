@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md)):
+Match full340-word func_151B2974 with recovered0xB8 workspace and84 certified
+closed GPR guards. Ten installed tests pass17.255s; whole ELF changes only
+target slot/st_size. All11,604 old guards/conversion rows remain intact.
+Game2,741/4,816 exact,total3,414/5,489; tools7986e98 committed first.
+Next81-word func_151B3184 actor-update dispatcher, then full151B32C8 renderer.
+
 2026-10-09 ([Note 1177](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md)):
 Bank full340-word func_151B2974 recovery and nine tests:384 guest/11,520 native32,
 96 independent rebase/48 real20-word dispatcher cases. Correct0xB8 frame now,

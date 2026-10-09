@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Owner endpoint quad guarded C match](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md):
+  Match all340 words with84 certified GPR allocation guards; ten installed tests
+  pass. Only target ELF slot/size changes; no conversion credit.
+  Next81-word actor-update dispatcher func_151B3184, then renderer151B32C8.
+
 - [Owner endpoint quad recovery and frame fit](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md):
   Recover full340-word graphics callback and real dispatcher ABI; nine tests pass.
   Correct0xB8 frame,140 differences remain. No installation/credit; resume2974.

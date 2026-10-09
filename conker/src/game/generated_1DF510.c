@@ -57,6 +57,19 @@ extern OwnerLinkVector2348 D_800AA368, D_800AA374;
 extern f32 D_800AA388, D_800AA38C;
 void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
 
+typedef struct { f32 x, y, z; } OwnerQuadPosition2974;
+extern u8 *D_800DBFF0;
+extern u8 D_80090DE8[];
+extern u32 D_800D2C9C, D_800A4AC8[];
+void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
+void func_15143134(void *, void *, u8 *);
+Gfx *func_15142B7C(Gfx *, u32, u32);
+Gfx *func_15142E24(Gfx *, void *, s32, s32, s32, s32, s32, u8, u8 *, u8 *, s32);
+Gfx *func_15142C10(Gfx *, s32, s32, s32, s32, u8 *);
+Gfx *func_15142CF0(Gfx *, s32, s32, s32, s32, s32, s32, u8 *);
+Gfx *func_1513F4E4(Gfx *, u8, u8 *);
+Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/1DF510.s. */
 
 void func_151B222C(u8 *);
@@ -308,8 +321,93 @@ void func_151B2950(u8 *arg0) {
     }
 }
 
-s32 func_151B2974() {
-    return 0;
+Gfx *func_151B2974(Gfx *output, u8 *actor, s16 view) {
+    u8 *pair;
+    u8 invalid;
+    u8 sync;
+    Vtx *cursor;
+    OwnerQuadPosition2974 *origin;
+    f32 dx, dy, dz, rx, ry, rz;
+    f32 length;
+    OwnerQuadPosition2974 first, second;
+    f32 nx, ny, nz;
+    u8 *matrix;
+    f32 scale;
+
+    invalid = 0;
+    pair = actor + 0x28;
+    if (**(s32 **)pair == 0 || pair[4] != (*(u8 **)pair)[0x3B]) {
+        invalid = 1;
+    }
+    pair = actor + 0x28;
+    if (!invalid && *(u8 **)(*(u8 **)pair + 0x1D4) != NULL) {
+        func_151D5D60(actor + 0x14, view, 64, &cursor, NULL);
+        if (cursor == NULL) {
+            return output;
+        }
+        matrix = (pair[5] << 6) + *(u8 **)(*(u8 **)pair + 0x1D4);
+        func_15143134(pair + 8, &first, matrix);
+        func_15143134(pair + 0x14, &second, matrix);
+        sync = 1;
+        origin = (OwnerQuadPosition2974 *)(D_800DBFF0 + view * 0x9A0 + 0x2F8);
+        output = func_15142B7C(output, 0x200005, 0x60600);
+        output = func_15142E24(output, D_80090DE8, 0, 0, 0, 0, 54, 0, NULL, &sync, 3);
+        output = func_15142C10(output, 255, 255, 255, 255, &sync);
+        output = func_15142CF0(output, 0, 0, 255, 255, 255, 255, &sync);
+        output = func_1513F4E4(output, 0x2B, &sync);
+        output = func_15142FBC(output, D_800D2C9C | 0x80000 | 0x2CA0,
+            D_800A4AC8[10] | D_800A4AC8[11], &sync);
+        dx = second.x - first.x;
+        dy = second.y - first.y;
+        dz = second.z - first.z;
+        rx = dx * 0.5f + first.x - origin->x;
+        ry = dy * 0.5f + first.y - origin->y;
+        rz = dz * 0.5f + first.z - origin->z;
+        nx = dy * rz - ry * dz;
+        ny = dz * rx - rz * dx;
+        nz = dx * ry - rx * dy;
+        length = nx * nx + ny * ny + nz * nz;
+        if (length == 0.0f) {
+            nx = 0.0f; ny = 0.0f; nz = 0.0f;
+        } else {
+            length = sqrtf(length);
+            scale = *(f32 *)(pair + 0x20) / length;
+            nx = nx * scale;
+            ny = ny * scale;
+            nz = nz * scale;
+        }
+        cursor->v.ob[0] = (s32)(second.x + nx);
+        cursor->v.ob[1] = (s32)(second.y + ny);
+        cursor->v.ob[2] = (s32)(second.z + nz);
+        cursor->v.tc[0] = 0;
+        cursor->v.tc[1] = 0;
+        cursor++;
+        cursor->v.ob[0] = (s32)(second.x - nx);
+        cursor->v.ob[1] = (s32)(second.y - ny);
+        cursor->v.ob[2] = (s32)(second.z - nz);
+        cursor->v.tc[0] = 0x3C0;
+        cursor->v.tc[1] = 0;
+        cursor++;
+        cursor->v.ob[0] = (s32)(first.x - nx);
+        cursor->v.ob[1] = (s32)(first.y - ny);
+        cursor->v.ob[2] = (s32)(first.z - nz);
+        cursor->v.tc[0] = 0x3C0;
+        cursor->v.tc[1] = 0x3C0;
+        cursor++;
+        cursor->v.ob[0] = (s32)(first.x + nx);
+        cursor->v.ob[1] = (s32)(first.y + ny);
+        cursor->v.ob[2] = (s32)(first.z + nz);
+        cursor->v.tc[0] = 0;
+        cursor->v.tc[1] = 0x3C0;
+        cursor++;
+        gSPVertex(output++, cursor - 4, 4, 0);
+        gSP1Triangle(output++, 0, 1, 2, 0);
+        gSP1Triangle(output++, 0, 2, 3, 0);
+    }
+    if (invalid) {
+        *(s16 *)(actor + 0xE) = -1;
+    }
+    return output;
 }
 
 void func_151B2EC4(u8 *arg0, s32 arg1, u8 arg2) {

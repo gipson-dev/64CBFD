@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Endpoint Quad Guarded C Match - 2026-10-09
+
+[Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md):
+
+- [x] Recover actual2974 private declaration order and original0xB8 frame/homes, FP arithmetic schedule and public access order.
+- [x] Certify84 GPR-only expected-word guards across27 conservative paths; retain all17 relocation sites/uses and339 reachable words.
+- [x] Pass ten installed tests:384 guest/11,520 native32, actual20-word dispatcher, independent raw/normalized rebases, negatives and fault prefixes.
+- [x] Audit all340 linked words exact; entire ELF changes only target slot/st_size, all other symbols/sections and17 neighbors preserved.
+- [x] Preserve189,088 protected bytes, all11,604 old guard rows and byte-identical conversion/progress rows; no new conversion credit.
+- [x] Refresh README aggregate matching counts only: total3,414/5,489 and Game2,741/4,816 exact, zero drift/2,075 different.
+- [x] Commit tools first and pin7986e98; preserve older dirty checkout and mirror only two new authored files.
+- [ ] Recover adjacent-owner81-word/frame0x20 func_151B3184's actor-update dispatcher ABI, timer narrowing, callback mutation and cleanup gates.
+- [ ] Continue neighboring full renderer151B32C8 after the update path is qualified; keep full helpers/SDK/hardware/gameplay acceptance separate.
+
 ## Owner Endpoint Quad Recovery And Frame Fit - 2026-10-09
 
 [Note 1177](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md):
@@ -11,7 +25,7 @@
 - [x] Pass nine tests:384 guest/11,520 native32,96 rebases/48 actual dispatcher cases, six effective negatives and20 fault-prefix cases.
 - [x] Preserve17 owner neighbors/pools/relocations/four old warnings and unchanged production source/ELF/guards/progress/protected data; no new credit.
 - [x] Bank tools first and pin71976ff; preserve the independently dirty older checkout.
-- [ ] Fit the same2974 private workspace addresses and register schedules, then qualify byte-exact installation.
+- [x] Fit the same2974 private workspace and qualify byte-exact installation in [Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md).
 - [ ] Keep full helpers/SDK/renderer/hardware/gameplay acceptance separate from bounded tests.
 
 ## Owner Companion Setup Guarded C Match - 2026-10-09

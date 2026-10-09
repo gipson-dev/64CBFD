@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 71976ff; tools are committed before the consumer pin.
+  checkpoint pins tools 7986e98; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest endpoint quad recovery/frame fit:
+Latest endpoint quad guarded C match:
+[Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md).
+func_151B2974 matches all340 words/frame0xB8 with84 certified closed GPR
+allocation guards; this is not direct compiler output. Ten installed tests
+pass17.255s, zero skips:384 guest/11,520 native32, rebases, actual20-word caller,
+effective negatives and faults. Whole ELF changes only target slot/st_size;
+preserve17 neighbors/189,088 protected bytes and all11,604 old guard rows.
+Conversion rows stay unchanged: the old false placeholder was already C.
+Game2,741/4,816 exact,total3,414/5,489,zero drift/2,075 differences.
+Next adjacent-owner81-word/frame0x20 func_151B3184 actor-update dispatcher,
+then its neighboring full renderer151B32C8. Full helpers/hardware/gameplay and
+renderer remain open. Checkpoints below are historical, not the current handoff.
+
+Earlier endpoint quad recovery/frame fit, superseded by Note1178:
 [Note 1177](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md).
 Recover complete340-word func_151B2974, actual three-argument graphics ABI,
 endpoint/matrix/origin lifetimes, four partial-write vertices and two triangles.

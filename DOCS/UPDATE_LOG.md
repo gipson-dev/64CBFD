@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-09 Owner Endpoint Quad Guarded C Match
+
+[Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md):
+Match all340 func_151B2974 words with recovered stack homes and84 certified
+GPR allocation guards. Ten installed tests pass17.255s, zero skips; complete
+ELF audit permits only target slot/st_size changes. Preserve17 neighbors,
+189,088 protected bytes and all11,604 old guard rows. Conversion rows stay
+unchanged; the previous false placeholder was already classified as C.
+Game2,741/4,816 exact,total3,414/5,489,zero drift/2,075 differences.
+Tools7986e98 banked first. Next81-word func_151B3184 actor-update dispatcher,
+then adjacent full renderer151B32C8; hardware/gameplay acceptance stays open.
+
 ## 2026-10-09 Owner Endpoint Quad Recovery And Frame Fit
 
 [Note 1177](WORKING_NOTES/1177-game-owner-endpoint-quad-recovery-and-frame-fit-20261009.md):
