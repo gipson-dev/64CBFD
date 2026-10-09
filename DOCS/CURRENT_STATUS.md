@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ae5a4de; tools are committed before the consumer pin.
+  checkpoint pins tools 5a82484; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest owner actor-update direct C match:
+Latest owner ribbon-renderer recovery checkpoint:
+[Note 1180](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md).
+Recover complete475-word func_151B32C8, all nine quads/20 vertices and14-argument
+material ABI. Eleven tests pass23.776s, zero skips:512 guest/385 mutation/7,680
+native32,64 rebases, actual34-word material callback and348-word original walker.
+All475 retail words reached; preserve40 vertex flag bytes and fresh texture steps.
+Selected C477 words/frame304/432 differences; target475/frame328. Actual padder
+rejects overflow; no installation. Production source/ELF/guards/progress and
+189,088 protected bytes unchanged; no new matching/conversion credit.
+Resume the same32C8 real-local workspace/loop fit. Full helpers, caller overflow/
+rollback, hardware/live rendering/gameplay stay separate. Totals remain Note1179.
+
+Latest installed owner actor-update direct C match:
 [Note 1179](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md).
 func_151B3184 emits all81 words directly/frame0x20, no guards. Nine installed
 tests pass11.396s, zero skips:6,048 guest/102,400 native32, mutations, complete

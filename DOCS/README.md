@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Owner ribbon renderer recovery checkpoint](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md):
+  Complete nine-quad recovery; eleven tests pass, including actual material and
+  full graphics walker. Selected477 words/frame304, not installed/no credit.
+  Continue the same func_151B32C8 workspace/loop fit toward475 words/frame328.
+
 - [Owner actor update direct match](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md):
   All81 words emit directly, no guards; nine installed tests pass, including the
   original74-word registered walker. Only target ELF slot/size changes;

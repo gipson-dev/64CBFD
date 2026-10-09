@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Owner Ribbon Renderer Recovery Checkpoint
+
+[Note 1180](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md):
+Recover full475-word func_151B32C8's nine quads/20 vertices, material outputs,
+retained origin and fresh texture steps. Eleven tests pass23.776s, zero skips;
+include7,680 native32, real34-word callback and348-word graphics walker.
+Selected C477/frame304/432 differences; production source/ELF/guards/progress
+unchanged, no credit. Tools 5a82484 banked first; resume this same32C8 frame/
+loop fit, not another target. Hardware/full helper acceptance stays separate.
+
 ## 2026-10-09 Owner Actor Update Direct Match
 
 [Note 1179](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md):

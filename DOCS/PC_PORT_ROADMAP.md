@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Ribbon Renderer Recovery Checkpoint - 2026-10-09
+
+[Note 1180](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md):
+
+- [x] Recover complete475-word func_151B32C8, actual graphics/material ABI, three flag exits, retained origin, fresh geometry/width/texture steps and all nine quads.
+- [x] Preserve20 vertices,40 untouched flag bytes, wrapping texture coordinates and27 original SDK commands.
+- [x] Pass eleven tests:512 guest/385 mutations/7,680 native32,64 rebases, actual34-word material callback, complete348-word graphics walker, six effective negatives and fault prefixes.
+- [x] Preserve16 owner neighbors/pools/relocations, unchanged source/ELF/guards/progress and189,088 protected bytes; reject actual padder overflow, no matching/conversion credit.
+- [x] Bank tools 5a82484 first; preserve older dirty checkout and mirror only two absent authored files. Root README aggregate rows remain unchanged.
+- [ ] Fit this same32C8 real declaration/lifetime workspace and loop induction to475 words/frame0x148, then qualify scheduling/register fitting before installation.
+- [ ] Keep full helpers/caller overflow/rollback/SDK/hardware/live rendering/gameplay acceptance separate.
+
 ## Owner Actor Update Direct Match - 2026-10-09
 
 [Note 1179](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md):
@@ -10,7 +22,7 @@
 - [x] Audit entire ELF: only target324-byte slot/st_size changes; preserve16 neighbors,189,088 protected bytes and all existing guards/conversion rows.
 - [x] Update README aggregate matching rows only: total3,415/5,489 and Game2,742/4,816 exact, zero drift/2,074 different; no conversion credit.
 - [x] Commit tools ae5a4de first; preserve older dirty checkout and mirror only two absent authored files.
-- [ ] Recover complete475-word/frame0x148 func_151B32C8 renderer and qualify full geometry/resource/helper lifetimes before fitting.
+- [x] Recover complete475-word/frame0x148 func_151B32C8 renderer and qualify full geometry/resource/helper lifetimes before fitting in [Note 1180](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md); not installed/matched yet.
 - [ ] Keep full actual helper/caller recovery, SDK/hardware/rendering/gameplay acceptance separate from bounded models.
 
 ## Owner Endpoint Quad Guarded C Match - 2026-10-09

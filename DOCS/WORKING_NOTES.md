@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1180](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md)):
+Bank complete475-word func_151B32C8 semantic recovery and eleven passing tests:
+512 guest/385 mutations/7,680 native32,64 rebases,32 actual material and32 full
+graphics walker cases. All475 retail words reached,40 vertex holes preserved.
+Selected477/frame304/432 differences, not installed; source/ELF/guards/progress
+remain unchanged, no credit. Tools 5a82484 first; continue same32C8 workspace/
+loop fitting toward retail475 words/frame328.
+
 2026-10-09 ([Note 1179](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md)):
 Match full81-word func_151B3184 directly from C, original0x20 frame/no guards.
 Nine installed tests pass11.396s:6,048 guest/102,400 native32, full registered
