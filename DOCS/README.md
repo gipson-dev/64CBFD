@@ -54,7 +54,15 @@ confirmed.
 
 ## Planning and history
 
-- [Latest actor timer callbacks match](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md):
+- [Latest payload callback update match](WORKING_NOTES/1154-game-payload-callback-update-match-20261009.md):
+  Convert complete GLOBAL_ASM `func_15147EB8` to C97, linked exact with
+  25 frame/return guards; raw is 25 differences. Full ELF byte-identical,
+  one conversion row changes. Nine final tests/native32/connected timer
+  updater/public aliases pass. Totals 5,485 converted/3,402 exact, zero
+  drift. Tools a2e5ea7 first, parent pin second, no push. Next C44 candidate
+  `func_15148AF4`; wider callback/hardware/gameplay/graph gates remain open.
+
+- [Previous actor timer callbacks match](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md):
   Complete void `func_15147740`, C100/frame0x20, linked exact with six
   guarded private spill accesses; raw C has six differences. Timer/selector/
   callback/cleanup order recovered. All other code/data and logical symbols

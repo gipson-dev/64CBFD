@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Payload Callback Update Match - 2026-10-09
+
+[Note 1154](WORKING_NOTES/1154-game-payload-callback-update-match-20261009.md):
+
+- [x] Convert GLOBAL_ASM `func_15147EB8` to complete C97/frame0x20, linked exact with 25 closed frame/boolean-return guards and retail frame0x30; not direct raw matching.
+- [x] Recover captured payload, live unsigned selectors, callback failure order, signed fade arithmetic, live position publication and s32 callback-compatible signed-byte success.
+- [x] Qualify 10,216 cases/30,648 executions, all 96 reachable words, 151 fault pairs, 100 complete forms/seven effective negatives, and 328,448 native32 cases.
+- [x] Preserve ten actual post-processed owner neighbors/pools/relocations/zero diagnostics; actual padder emits 388 bytes without filler, four independent links pass over 288 cases.
+- [x] Connect the complete banked 100-word timer updater to this complete 97-word callback through actual D_8008A200[1], 72 cases/216 executions; qualify 56 public aliases separately.
+- [x] Complete normal and incremental builds; verify every ELF byte/all 6,058 slots unchanged, no symbol-size/metadata exception. Preserve all 11,481 old guard rows/bytes; append 25, total 11,506.
+- [x] Change exactly one conversion row asm -> c; measure 5,485 converted/3,402 exact, Game 4,812/2,729, zero drift and 2,083 different. Root README aggregate rows only.
+- [x] Pass nine final tests in 162.883s, 25 shared tests and both tools checks; bank tools a2e5ea7 before exact parent pin, preserving older mirror without push or pause.
+- [x] Check twenty-seven mounted/mirrored tools with parse/exact-byte validation; validate 140 documents / 4,211 relative links / zero broken.
+- [ ] Recover complete frameless `func_15148AF4`, 44 words, and connect its wrapped record/float update to this dispatcher.
+- [ ] Qualify actual inner callbacks/cleanup/upstream/hardware/gameplay and repair reduced-corpus graph refresh without force. OGL Release stays frozen.
+
 ## Actor Timer Callbacks Match - 2026-10-09
 
 [Note 1153](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md):
@@ -15,7 +31,8 @@
 - [x] Measure 5,484 converted / 3,401 exact, Game 4,811 / 2,728; zero drift and 2,083 different. Root README aggregate rows only.
 - [x] Pass eight post-install tests in 64.224s, 25 shared tests and both tools checks; bank tools b3086e2 before exact parent source/guards/docs/gitlink, preserving older mirror without pushing or pausing.
 - [x] Check twenty-five mounted/mirrored tools with parse/exact-byte validation; validate 139 documents / 4,201 relative links / zero broken.
-- [ ] Recover complete first-table callback `func_15147EB8`, 97 words/frame0x30, and connect it to this banked updater; alternatively continue trail constructor's unchanged 61 differences.
+- [x] Convert complete first-table callback `func_15147EB8` from GLOBAL_ASM to C, 97 words/retail frame0x30, and connect it to the banked updater; see Note 1154.
+- [ ] Continue trail constructor's unchanged 61 differences.
 - [ ] Qualify actual callback/cleanup/upstream/hardware/gameplay paths and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Actor Graphics Dispatch Match - 2026-10-09

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b3086e2; tools are committed before the source pin.
+  checkpoint pins tools a2e5ea7; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game actor timer callbacks match:
+Latest Game payload callback update match:
+[Note 1154](WORKING_NOTES/1154-game-payload-callback-update-match-20261009.md).
+Convert GLOBAL_ASM `func_15147EB8` to complete 97-word C, linked exact with
+25 closed frame/return-lifetime guards; raw frame0x20 has 25 differences,
+retail frame0x30. The entire rebuilt ELF is byte-identical to its assembly
+baseline. Only one conversion row changes, asm -> c, and 25 guards append.
+Nine final tests pass in 162.883s, including 328,448 native32 cases and
+connected execution of the banked timer updater into this callback.
+Fresh totals: 5,485 converted / 3,402 exact, Game 4,812 / 2,729; zero drift,
+2,083 different. Tools a2e5ea7 first, exact parent pin second, no push or
+older mirror reset. Next 44-word GLOBAL_ASM callback `func_15148AF4`.
+Actual inner callback/cleanup/upstream/hardware/gameplay and graph corpus
+gates remain open. Root README contains aggregate rows only.
+
+Previous Game actor timer callbacks match:
 [Note 1153](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md).
 Restore false-zero `func_15147740`, 100 words / 400 bytes / frame0x20,
 linked exact with six guarded private failure-flag spill accesses; raw C

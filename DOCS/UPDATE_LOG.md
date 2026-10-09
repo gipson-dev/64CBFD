@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-09 Payload Callback Update Match
+
+[Note 1154](WORKING_NOTES/1154-game-payload-callback-update-match-20261009.md):
+Convert GLOBAL_ASM `func_15147EB8` to complete C97, linked exact with 25
+closed frame/return guards; raw C retains 25 differences. Full ELF is
+byte-identical, including all 6,058 slots/data/symbols/metadata. One conversion
+row changes asm -> c; 25 guards append, total 11,506. Nine final tests,
+328,448 native32 cases, connected timer updater/public aliases, 25 shared
+tests and both tools checks pass. Total 5,485 converted/3,402 exact, Game
+4,812/2,729, zero drift and 2,083 different. Tools a2e5ea7 first, exact
+parent pin second, no push/older mirror reset. Next `func_15148AF4`, 44
+words; actual inner callbacks/hardware/gameplay/graph gates remain open.
+
 ## 2026-10-09 Actor Timer Callbacks Match
 
 [Note 1153](WORKING_NOTES/1153-game-actor-timer-callbacks-match-20261009.md):

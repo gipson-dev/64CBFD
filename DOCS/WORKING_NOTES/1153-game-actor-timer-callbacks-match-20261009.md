@@ -192,6 +192,13 @@ tests settle the current source/ABI/private-slot questions.
 
 ## Next Work
 
+Follow-up [Note 1154](1154-game-payload-callback-update-match-20261009.md)
+converts the complete 97-word `func_15147EB8` from GLOBAL_ASM to C, linked
+exact with 25 closed frame/return guards, and connects it to the banked timer
+updater. Correct the old description below: this callback was GLOBAL_ASM,
+not false-zero. The full linked ELF remains byte-identical. Next recover
+44-word first-stage callback `func_15148AF4`; original handoff is historical.
+
 Recover false-zero **func_15147EB8**, the actual first-table slot-1 callback,
 in [generated_175250.c](../../conker/src/game/generated_175250.c):
 VA **0x15147EB8..0x1514803C**, ROM **0x175368..0x1754EC**,
