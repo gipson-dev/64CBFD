@@ -169,7 +169,15 @@ work. Graph repair and hardware/gameplay remain open.
 
 ## Next Work
 
-Recover complete **func_15147A80**, VA 0x15147A80..0x15147C4C,
+Follow-up [Note 1151](1151-game-effect-allocation-core-match-20261009.md)
+restores the complete 115-word core directly from C with no guards. Its
+argument 8 is a nullable 36-byte record address; this wrapper's existing word
+named extraBytes is transported as that address, not interpreted as a size.
+Direct-call declarations/casts are corrected without changing any caller
+instructions. The trail constructor remains 61 differences. The allocation
+core's restoration does not qualify actual hardware/gameplay.
+
+Original handoff: recover complete **func_15147A80**, VA 0x15147A80..0x15147C4C,
 **115 words / 460 bytes**, in generated_174BF0.c, preserving this exact
 wrapper and its full eleven-word allocation interface. Alternatively continue
 the unchanged caller's 61 actual layout/register/scheduling differences from

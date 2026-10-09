@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-09 ([Note 1151](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md)):
+Restore complete `func_15147A80`, 115 words/frame0x38, directly exact,
+no guards. Recover eleven-word ABI, unsigned size, 160-byte header, request/
+optional copy and live resource-count loop. Correct two direct-call interfaces
+without changing their instructions; 10 neighbors and 42 caller-owner functions
+preserved. Whole ELF changes only core slot/symbol size 12 -> 460; all other
+bytes/data, 6,058 addresses/extents, conversion rows/bytes and 11,475 guards
+unchanged. Total 5,484 / 3,399 exact, Game 4,811 / 2,726; zero drift and
+2,085 different. Eight focused tests, native32 and four complete caller paths,
+25 shared tests and both tools checks pass. Tools 2807f51 first, parent pin
+second, no push or older mirror reset. Trail remains 61 differences; next
+neighboring 52-word `func_15147C4C`. Wider acceptance remains open.
+
 2026-10-09 ([Note 1150](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md)):
 Restore `func_15147DA0`, complete 70-word/frame0x40 C, directly exact
 without guards. Full-word active/fade interface, allocation/null path,

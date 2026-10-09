@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Effect Allocation Core Match - 2026-10-09
+
+[Note 1151](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md):
+
+- [x] Restore complete `func_15147A80`, 115 words/frame0x38, directly byte-exact without guards: eleven-word ABI, unsigned allocation size, null path, request/header/optional record, resource loop and original return pointer.
+- [x] Recover the 36-byte optional-record pointer at argument 8; correct two direct-call declarations/casts with no caller instruction changes. Preserve 10 neighbors and all 42 functions across three caller owners, pools, relocations and existing diagnostics.
+- [x] Screen 68 complete ordinary forms/four profiles; resolve the last three scheduling words directly with the recovered resource/value/state store order, without guards or fake padding.
+- [x] Qualify 1,498 paired guest cases, 682 missing-public-byte pairs, six optional-record aliases, 65,536 native32 cases, six effective compiled negatives and live resource-count mutations.
+- [x] Run 192 connected cases / 384 executions through all three complete direct callers plus the banked trail constructor; preserve actual 11-word memcpy and bounded allocator/resource/bzero boundaries.
+- [x] Qualify actual 460-byte generated-slice padding without filler and four independent GNU links / 288 cases, including HI/LO carry and J26 regions.
+- [x] Audit every ELF byte/all 6,058 slots: only core instructions and symbol-size field 12 -> 460 change; all other bytes/data, converted rows/bytes and 11,475 guards remain unchanged.
+- [x] Measure 5,484 converted / 3,399 exact, Game 4,811 / 2,726; zero drift and 2,085 different. Root README aggregate rows only.
+- [x] Pass eight post-install tests in 73.219s, 25 shared tests and both local tools checks; bank tools 2807f51 before exact parent source/docs/gitlink, preserving older mirror edits/history without pushing or pausing.
+- [x] Validate twenty-one mounted/mirrored tools with exact bytes and parse checks; check 137 documents / 4,180 relative links / zero broken.
+- [ ] Recover neighboring false-zero `func_15147C4C`, 52 words/frame0x38, or continue `func_151DA6F8`'s unchanged 61 layout/register/scheduling differences.
+- [ ] Qualify wider allocator/resource/hardware/gameplay paths and repair Graphify reduced-corpus refresh without force. OGL Release remains frozen.
+
 ## Effect-Record Constructor Match - 2026-10-09
 
 [Note 1150](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md):
@@ -14,7 +31,8 @@
 - [x] Pass nine final post-install tests in 39.334s, 25 shared tests and both local tools checks; preserve existing build warnings and independently dirty older mirror.
 - [x] Validate nineteen mounted/mirrored tools with exact bytes and parse checks; check 136 documents / 4,169 relative links / zero broken.
 - [x] Bank tools 658b615 first, then exact parent source/docs/gitlink; no push, pause or older mirror history reset.
-- [ ] Recover the remaining 115-word allocation core `func_15147A80`; continue the caller's 61 layout/register/scheduling differences without speculative padding.
+- [x] Recover the complete 115-word allocation core `func_15147A80` directly from C without guards; qualify all three direct callers plus the complete trail constructor with no caller instruction changes. See Note 1151.
+- [ ] Continue the trail caller's unchanged 61 layout/register/scheduling differences without speculative padding.
 - [ ] Qualify complete upstream callers and hardware/gameplay separately; repair Graphify reduced-corpus refresh without force. OGL Release remains frozen.
 
 ## Table-Driven Effect Constructor Restoration - 2026-10-09

@@ -10,7 +10,7 @@ s32 func_1515C6F4();
 s32 func_1515D130();
 /* End generated placeholder declarations. */
 
-void *func_15147A80(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, u8 arg9, s32 arg10);
+u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, void *, u8, s32);
 
 typedef struct {
     s32 x;
@@ -22,7 +22,7 @@ void *func_1515C2F0(u8 *arg0, u8 *arg1, void *arg2, s32 arg3, u8 arg4, s32 arg5)
     u8 *temp_v0;
 
     *(s32 *)(arg0 + 0x10) = 0xA;
-    temp_v0 = func_15147A80(arg0, arg1 + 0x40, 0x10, 8, 8, 8, 0, 0, arg3, arg4, arg5);
+    temp_v0 = func_15147A80(arg0, (u32)arg1 + 0x40, 0x10, 8, 8, 8, 0, 0, (void *)arg3, arg4, arg5);
     if (temp_v0 == NULL) {
         return NULL;
     }

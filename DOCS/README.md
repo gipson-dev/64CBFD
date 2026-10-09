@@ -54,7 +54,15 @@ confirmed.
 
 ## Planning and history
 
-- [Latest effect-record constructor match](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md):
+- [Latest effect allocation core match](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md):
+  Complete `func_15147A80`, C115/frame0x38, directly byte-exact without
+  guards; request/header/optional record and live resource-count loop recovered.
+  Corrected direct-call interfaces leave their instructions unchanged. Only
+  core slot/symbol size change; totals 5,484 converted / 3,399 exact, zero drift.
+  Tools 2807f51 first, parent pin second, no push. Next 52-word `func_15147C4C`;
+  trail's 61 differences and wider acceptance remain open.
+
+- [Previous effect-record constructor match](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md):
   Complete `func_15147DA0`, C70/frame0x40, directly byte-exact without
   guards. Corrected caller prototype leaves its entire owner unchanged;
   `func_151DA6F8` remains 61 differences. Only callee slot/symbol size change.

@@ -11,6 +11,25 @@ typedef struct {
     s32 trailing;
 } ResourceOwner174BF0;
 
+typedef struct { s32 words[9]; } EffectOptional15147A80;
+typedef struct {
+    u8 prefix[0x10], request[0x1C];
+    u8 flags[6], padding32[2];
+    s32 resourceBytes;
+    u8 state, padding39[3];
+    u8 *entries[4], *trailing;
+    s32 value;
+    f32 position[3];
+    EffectOptional15147A80 optional;
+    u8 cleared[0x10];
+    u8 *end, *payload;
+    s32 padding9C;
+} EffectCore15147A80;
+
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+u8 *func_1515D480(s32);
+u8 *func_1515D440(void);
+
 /* Non-matching placeholders for the text-only asm slice asm/174BF0.s. */
 
 s32 func_151D5E30();
@@ -73,8 +92,61 @@ void func_15147A30(u8 *arg0) {
     D_8008A340[idx]();
 }
 
-s32 func_15147A80() {
-    return 0;
+u8 *func_15147A80(void *request, s32 payloadBytes, s32 entryBytes,
+    s32 active, s32 first, s32 second, s32 resourceBytes, s32 value,
+    void *optional, u8 channel, s32 context) {
+    EffectCore15147A80 *created;
+    u8 *payload;
+    u8 kind;
+    s32 i;
+    u32 extra;
+
+    extra = (u32)((u8 *)request)[0x15] * (u32)entryBytes;
+    kind = 0x22;
+    if (*(u16 *)((u8 *)request + 0xE) & 0x40) {
+        kind = 0x4D;
+    } else {
+        kind = 0x22;
+    }
+    created = (EffectCore15147A80 *)func_15167A68(kind, context,
+        (u32)payloadBytes + extra + 0xA0,
+        1, channel, 1);
+    if (created == NULL) {
+        return NULL;
+    }
+    payload = (u8 *)(created + 1);
+    created->payload = payload;
+    created->end = created->payload + payloadBytes;
+    memcpy(created->request, request, 28);
+    created->flags[0] = 0;
+    created->flags[1] = 0;
+    created->flags[2] = 0;
+    created->flags[3] = active;
+    created->flags[4] = first;
+    created->flags[5] = second;
+    if (optional != NULL) {
+        created->optional = *(EffectOptional15147A80 *)optional;
+    } else {
+        ((u8 *)&created->optional)[0x1C] = 0;
+    }
+    created->resourceBytes = resourceBytes;
+    created->value = value;
+    created->state = 0;
+    for (i = 0; i < 4; i++) {
+        created->entries[i] = 0;
+    }
+    created->trailing = 0;
+    if (resourceBytes != 0) {
+        for (i = 0; i <= D_80082FA0; i++) {
+            created->entries[i] = func_1515D480(resourceBytes);
+        }
+        created->trailing = func_1515D440();
+    }
+    created->position[0] = 0.0f;
+    created->position[1] = 0.0f;
+    created->position[2] = 0.0f;
+    bzero(created->cleared, 0x10);
+    return (u8 *)created;
 }
 
 s32 func_15147C4C() {

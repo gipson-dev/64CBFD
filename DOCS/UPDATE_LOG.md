@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-09 Effect Allocation Core Match
+
+[Note 1151](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md):
+Restore complete `func_15147A80`, 115 words/frame0x38, directly exact
+without guards. Recover eleven-word ABI, unsigned size computation, request
+copy, payload pointers, optional 36-byte record and live resource-count loop.
+Correct two direct-call declarations/casts; all caller instructions remain
+unchanged. Only the core ELF slot/symbol size change; all other bytes/data,
+6,058 addresses/extents, conversion rows/bytes and 11,475 guards unchanged.
+Total 5,484 / 3,399 exact, Game 4,811 / 2,726; zero drift and 2,085 different.
+Eight post-install tests, 65,536 native32 cases, four complete emitted caller
+paths, 25 shared tests and both tools checks pass. Tools 2807f51 first,
+parent source/docs pin second, no push or older mirror reset. Trail constructor
+still 61 differences; next neighboring `func_15147C4C`, 52 words/frame0x38.
+Hardware/gameplay and graph repair remain open.
+
 ## 2026-10-09 Effect-Record Constructor Match
 
 [Note 1150](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md):

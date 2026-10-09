@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 658b615; tools are committed before the source pin.
+  checkpoint pins tools 2807f51; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game effect-record constructor match:
+Latest Game effect allocation core match:
+[Note 1151](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md).
+Restore false-zero `func_15147A80`, 115 words / 460 bytes / frame0x38,
+directly byte-exact without guards. Recover its eleven-word ABI, unsigned
+allocation size, live request copy, 160-byte header, optional 36-byte record,
+live resource-count loop, null path and original-pointer return. Argument 8
+is the nullable optional-record address, not an extra byte count. Correct two
+direct-call declarations/casts without changing their instructions; preserve
+10 owner neighbors and all 42 functions in three direct-caller owners.
+Eight post-install tests pass in 73.219s, including 65,536 native32 cases
+and 192 connected cases through all three direct callers plus the complete
+trail constructor. Only the core ELF slot and symbol-size field 12 -> 460
+change; all other ELF bytes, 6,058 addresses/extents, conversion rows/bytes
+and 11,475 guards are unchanged. Fresh totals: 5,484 converted / 3,399 exact,
+Game 4,811 / 2,726; zero drift and 2,085 different. Twenty-five shared tests
+and both tools checks pass. Bank tools 2807f51 first, parent source/docs pin
+second, no push or older standalone reset. The 144-word trail constructor
+remains 61 differences. Next recover neighboring 52-word `func_15147C4C`
+or continue that caller's matching. Wider allocator/resource/hardware/gameplay
+and graph gates stay open; OGL Release remains frozen.
+
+Previous Game effect-record constructor match:
 [Note 1150](WORKING_NOTES/1150-game-effect-record-constructor-match-20261009.md).
 Restore false-zero `func_15147DA0`, 70 words / 280 bytes / frame0x40,
 directly byte-exact without guards. Recover its full fifteen-word interface,

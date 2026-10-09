@@ -1,7 +1,7 @@
 #include <ultra64.h>
 
 typedef struct { s32 words[8]; } RenderRecord15147DA0;
-u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, s32, u8, s32);
+u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, void *, u8, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/175250.s. */
 
@@ -15,7 +15,7 @@ u8 *func_15147DA0(void *request, void *descriptor, s32 payloadBytes,
 
     *(s32 *)((u8 *)request + 0x10) = 1;
     created = func_15147A80(request, (u32)payloadBytes + 0x48, 0x14, 1, 0, 1,
-        fadeFlag, fadeAlpha, extraBytes, channel, context);
+        fadeFlag, fadeAlpha, (void *)extraBytes, channel, context);
     if (created == NULL) {
         return NULL;
     }
