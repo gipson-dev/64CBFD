@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-09 Record Growth Match
+
+[Note 1157](WORKING_NOTES/1157-game-record-growth-match-20261009.md):
+Convert complete GLOBAL_ASM `func_151488C4` to C140/frame0x10, directly
+byte-exact without guards or profile changes. Recover forward integration,
+position/velocity insertion, signed head wrap, phase shaping and selector
+transition. Preserve conditional SP+0 step without inventing an initializer;
+native tests exclude uninitialized reads, emitted tests seed prior stack.
+Eight final tests pass in 32.874s, covering 81,534 native32 cases, nine
+effective negatives, 49 aliases and full 100+97+140-word dispatch. Thirty-five
+shared tests and both tools checks pass. Entire ELF/all 6,058 slots and all 11,507 guard rows/bytes stay
+unchanged; one conversion row gains one function/560 bytes. Fresh totals
+5,488 converted/3,405 exact, Game 4,815/2,732, zero drift, 2,083 different.
+Tools 9d3bfa0 first, exact parent pin second, no push or older mirror reset.
+Next complete `func_15148BA4`, 143 words/frame0x58; other callbacks,
+hardware/gameplay and graph corpus repair remain open.
+
 ## 2026-10-09 Record Phase Shaping Match
 
 [Note 1156](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md):

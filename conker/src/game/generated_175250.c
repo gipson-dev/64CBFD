@@ -18,6 +18,11 @@ typedef struct {
     u16 phase, reserved;
 } PhaseRecord15148DE0;
 
+typedef struct {
+    f32 x, y, z, velocityY;
+    u16 phase, reserved;
+} GrowthRecord151488C4;
+
 /* Non-matching placeholders for the text-only asm slice asm/175250.s. */
 
 s32 func_151478F4(s32 arg0);
@@ -97,7 +102,60 @@ s32 func_15147EB8(u8 *actor) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_175250/func_1514803C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_175250/func_151488C4.s")
+s32 func_151488C4(u8 *actor) {
+    s32 index;
+    u8 *payload;
+    GrowthRecord151488C4 *records;
+    u16 phase;
+    u16 step;
+    s32 active;
+
+    records = *(GrowthRecord151488C4 **)(actor + 0x94);
+    payload = *(u8 **)(actor + 0x98);
+    index = *(s8 *)(actor + 0x2D);
+    while (index != *(s8 *)(actor + 0x2E)) {
+        records[index].velocityY -= *(f32 *)(payload + 0x10) * D_800BE9A4;
+        records[index].x += *(f32 *)(payload + 0x04) * D_800BE9A4;
+        records[index].y += records[index].velocityY * D_800BE9A4;
+        records[index].z += *(f32 *)(payload + 0x0C) * D_800BE9A4;
+        if (++index == actor[0x25]) {
+            index = 0;
+        }
+    }
+    active = *(s8 *)(actor + 0x2C);
+    if (active < actor[0x25] - 1) {
+        phase = (payload[0x18] & 0x20) ? 0x1000 : 0;
+        /* Retail leaves the stack step untouched when active is zero. */
+        if (active != 0) {
+            step = 0x1000 / active;
+        }
+        actor[0x2C] = active + 1;
+        *(ActorPosition15147EB8 *)(records + *(s8 *)(actor + 0x2E)) = *(ActorPosition15147EB8 *)(actor + 0x10);
+        records[*(s8 *)(actor + 0x2E)].velocityY = *(f32 *)(payload + 0x08);
+        if (actor[0x25] == ++(*(s8 *)(actor + 0x2E))) {
+            actor[0x2E] = 0;
+        }
+        index = *(s8 *)(actor + 0x2D);
+        while (index != *(s8 *)(actor + 0x2E)) {
+            records[index].phase = phase;
+            if (payload[0x18] & 0x20) {
+                phase -= step;
+            } else {
+                phase += step;
+            }
+            if (++index == actor[0x25]) {
+                index = 0;
+            }
+        }
+    } else {
+        if (payload[0x18] & 0x17) {
+            payload[0x20] = 3;
+        } else {
+            payload[0x20] = 2;
+        }
+    }
+    return 1;
+}
 
 s32 func_15148AF4(u8 *actor) {
     MotionRecord15148AF4 *records = *(MotionRecord15148AF4 **)(actor + 0x94);

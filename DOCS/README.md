@@ -54,7 +54,11 @@ confirmed.
 
 ## Planning and history
 
-- [Latest record phase shaping match](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md):
+- [Latest record growth match](WORKING_NOTES/1157-game-record-growth-match-20261009.md):
+  Complete C140/frame0x10 directly exact; conditional stack-step behavior,
+  ordered integration/insertion/phase loops and the actual dispatch chain.
+  Entire ELF unchanged, one conversion row, no new guards.
+- [Previous record phase shaping match](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md):
   Convert complete GLOBAL_ASM `func_15148DE0` to frameless C70, directly
   exact without guards. Entire ELF and all guards remain byte-identical;
   one conversion row changes. Nine final tests/native32/public aliases/

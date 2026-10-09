@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-09 ([Note 1157](WORKING_NOTES/1157-game-record-growth-match-20261009.md)):
+Convert full GLOBAL_ASM `func_151488C4` to directly exact C140/frame0x10
+without guards. Recover forward integration/insertion/phase shaping and
+selector transition; preserve conditional SP+0 step without a guessed
+initializer. Eight focused tests, 81,534 native32 defined cases, 49 aliases,
+nine effective negatives and actual 100+97+140-word dispatch pass.
+Whole ELF/all 6,058 slots/all 11,507 guards unchanged; one asm -> c row
+gains one function/560 bytes. Thirty-five shared tests/both tools checks pass.
+Totals 5,488 converted/3,405 exact, Game 4,815/2,732; zero drift, 2,083
+different. Tools first, exact parent pin second, no push/older mirror reset.
+Final eight tests pass in 32.874s; tools 9d3bfa0 is banked first.
+Next complete C143 `func_15148BA4`; wider matching/runtime/graph gates open.
+
 2026-10-09 ([Note 1156](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md)):
 Convert complete GLOBAL_ASM `func_15148DE0` to frameless C70, directly
 byte-exact without guards or profile changes. Recover signed gate/head

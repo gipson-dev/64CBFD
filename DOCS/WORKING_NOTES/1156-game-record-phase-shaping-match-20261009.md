@@ -197,3 +197,9 @@ initializing it. Do not invent a default or claim portable behavior from
 an uninitialized stack read. Connect the whole callback to the banked
 dispatcher. Slot-3 func_15148BA4 and trail constructor func_151DA6F8's
 61 differences remain open.
+
+Follow-up 2026-10-09: the complete 140-word growth callback above is now
+directly byte-exact C with no guards and unchanged ELF/guard bytes. Its
+conditional SP+0 lifetime is retained, not initialized by guesswork. See
+[Note 1157](1157-game-record-growth-match-20261009.md) for fresh evidence and
+the next complete 143-word `func_15148BA4` target.

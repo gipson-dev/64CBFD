@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 741b405; tools are committed before the source pin.
+  checkpoint pins tools 9d3bfa0; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game record phase shaping match:
+Latest Game record growth match:
+[Note 1157](WORKING_NOTES/1157-game-record-growth-match-20261009.md).
+Convert GLOBAL_ASM `func_151488C4` to complete 140-word C/frame0x10,
+directly byte-exact without guards or profile changes. Recover forward
+integration, bitwise position insertion, initial vertical velocity, stored
+head narrowing/wrap, phase shaping and full-capacity selector transition.
+Preserve conditional SP+0 u16 step: zero active skips initialization, so
+qualify emitted prior-stack behavior separately from defined native C.
+Eight final tests pass in 32.874s, including 81,534 native32 cases, 49 public aliases,
+nine effective negatives and the complete 100+97+140-word dispatch chain.
+All ELF bytes/all 6,058 slots and all 11,507 guard rows/bytes are unchanged;
+exactly one conversion row changes asm -> c. Thirty-five shared tests and
+both tools checks pass. Fresh totals: 5,488 converted / 3,405 exact, Game
+4,815 / 2,732; zero drift, 2,083 different. Tools 9d3bfa0 first, exact
+parent pin second; no push or older mirror reset. Next complete slot-3
+`func_15148BA4`, 143 words/frame0x58, including conditional position snapshot,
+backwards integration, height query and six-argument response callbacks.
+Other callbacks/cleanup/upstream/hardware/gameplay and graph corpus repair
+remain open. Root README has aggregate rows only.
+
+Previous Game record phase shaping match:
 [Note 1156](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md).
 Convert GLOBAL_ASM `func_15148DE0` to complete 70-word frameless C,
 directly byte-exact without guards or profile changes. Recover signed active

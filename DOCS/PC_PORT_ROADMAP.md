@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Record Growth Match - 2026-10-09
+
+[Note 1157](WORKING_NOTES/1157-game-record-growth-match-20261009.md):
+
+- [x] Convert complete GLOBAL_ASM `func_151488C4` to C140/frame0x10, directly byte-exact without guards, filler or profile changes.
+- [x] Recover forward gravity/XYZ integration, bitwise position insertion, live velocity/head/count reloads, signed byte narrowing, phase shaping and selector 2/3 transition.
+- [x] Preserve conditional u16 step at SP+0 without a guessed initializer; qualify prior-stack emitted behavior separately from native defined cases and retain invalid prefixes without a production bound.
+- [x] Qualify 2,806 cases/5,612 executions, all 135 reachable words, 265 missing-byte pairs, 49 public aliases, nine effective negatives and 81,534 native32 cases with full actor/payload/record canaries.
+- [x] Preserve ten post-processed owner neighbors/pools/relative relocations/zero diagnostics; actual padder emits 560 bytes without guards or filler, four independent GNU links pass over 64 cases.
+- [x] Connect complete 100+97+140-word timer/dispatcher/leaf through actual D_8008A200[1] and D_8008A3E0[1], 24 cases/48 executions, without external callback or cleanup hooks in these fixtures.
+- [x] Finish normal builds and strict linked audit: every ELF byte/all 6,058 slots and all 11,507 guard rows/bytes unchanged; exactly one asm -> c conversion row gains one function/560 bytes.
+- [x] Measure 5,488 converted/3,405 exact, Game 4,815/2,732, zero drift and 2,083 different; root README receives aggregate rows only.
+- [x] Pass eight final tests in 32.874s, 35 shared tests and both tools checks; bank tools 9d3bfa0 before exact parent pin, preserving older mirror without pushing or pausing.
+- [x] Validate 143 documents /4,241 relative links /zero broken and 33 mounted/mirrored tools with parse/exact-byte checks; preserve all 66 older standalone status lines, its HEAD and both dirty-file hashes.
+- [ ] Recover complete `func_15148BA4`, 143 words/frame0x58: conditional old position, backwards integration, height query and selected six-argument response calls. Preserve the low-bit snapshot versus wider post-integration flag gate.
+- [ ] Qualify other callback/cleanup/upstream/hardware/gameplay paths and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Phase Shaping Match - 2026-10-09
 
 [Note 1156](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md):
@@ -14,7 +31,7 @@
 - [x] Measure 5,487 converted/3,404 exact, Game 4,814/2,731, zero drift and 2,083 different; root README receives aggregate rows only.
 - [x] Pass nine final tests in 90.033s, 35 shared tests and both tools checks; bank tools 741b405 before exact parent pin, preserving older mirror without push or pause.
 - [x] Validate 142 documents / 4,231 relative links / zero broken and all 31 mounted/mirrored tools with parse/exact-byte checks; preserve all 64 older standalone status lines and dirty-file hashes.
-- [ ] Recover full `func_151488C4`, 140 words/frame0x10, including integration, insertion, halfword shaping and selector transitions; resolve its conditional SP+0 step lifetime without a guessed initializer.
+- [x] Recover full `func_151488C4`, 140 words/frame0x10, including integration, insertion, halfword shaping and selector transitions; resolve its conditional SP+0 step lifetime without a guessed initializer. See Note 1157.
 - [ ] Qualify failure-to-cleanup, other callback/upstream/hardware/gameplay paths and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Wrapped Record Step Match - 2026-10-09
