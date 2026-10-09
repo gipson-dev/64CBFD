@@ -186,6 +186,13 @@ work. Graph repair and hardware/gameplay remain open.
 
 ## Next Work
 
+Follow-up [Note 1152](1152-game-actor-graphics-dispatch-match-20261009.md)
+restores the complete neighboring 52-word `func_15147C4C` directly from C
+without guards. Its live selector and distinct callback return are qualified;
+all allocation-core bytes remain unchanged. Next false-zero `func_15147740`
+is 100 words/frame0x20, or continue the trail constructor's 61 differences.
+The original handoff below is historical:
+
 Recover neighboring false-zero **func_15147C4C**, VA 0x15147C4C..0x15147D1C,
 ROM 0x1750FC..0x1751CC, **52 words / 208 bytes / frame0x38**, in the same
 owner. It selects an optional input from flags, forwards a signed-halfword

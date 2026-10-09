@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-09 Actor Graphics Dispatch Match
+
+[Note 1152](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md):
+Restore complete `func_15147C4C`, 52 words/frame0x38, directly exact
+without guards. Recover signed index, lazy optional word, nine-argument
+graphics call, live selector/table and distinct callback-result return.
+Preserve 10 neighbors, seven diagnostics and all other ELF bytes/data;
+only target slot and symbol size 12 -> 208 change. All 6,058 slots,
+conversion CSV and 11,475 guards unchanged. Total 5,484 / 3,400 exact,
+Game 4,811 / 2,727; zero drift and 2,084 different. Eight post-install tests,
+655,616 native32 cases, protected table identities, 25 shared tests and both
+tools checks pass. Tools 7b88702 first, parent pin second, no push or older
+mirror reset. Next false-zero `func_15147740`, 100 words/frame0x20;
+trail's 61 differences and actual helper/callback/upstream/hardware/gameplay
+and graph corpus gates stay open.
+
 ## 2026-10-09 Effect Allocation Core Match
 
 [Note 1151](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md):

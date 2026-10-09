@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Graphics Dispatch Match - 2026-10-09
+
+[Note 1152](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md):
+
+- [x] Restore complete `func_15147C4C`, 52 words/frame0x38, directly exact without guards: lazy optional word, nine-argument graphics call, signed-halfword index, live selector/table, cleanup and distinct callback-result return.
+- [x] Qualify 5,002 paired guest cases, all 52 words, 196 missing-public-byte pairs, 655,616 native32 cases, helper mutations/home clobbers and six effective compiled negatives.
+- [x] Screen six complete ordinary forms/four profiles; reject unsigned public index as an ineffective negative because callee declarations re-narrow it to s16.
+- [x] Qualify 1,344 cases with all 18 protected callback targets and verify two incoming pointer witnesses; actual callback bodies/upstream dispatch are not newly exercised.
+- [x] Preserve 10 owner neighbors/pools/relative relocations/seven diagnostics; actual padder emits 208 bytes without filler, four independent GNU links pass over 240 cases.
+- [x] Audit every ELF byte/all 6,058 slots: only target instructions and symbol size 12 -> 208 change. Protected data, converted rows/bytes and all 11,475 guards unchanged.
+- [x] Measure 5,484 converted / 3,400 exact, Game 4,811 / 2,727; zero drift and 2,084 different. Root README aggregate rows only.
+- [x] Pass eight post-install tests in 27.622s, 25 shared tests and both tools checks; bank tools 7b88702 before exact parent source/docs/gitlink, preserving older mirror without pushing or pausing.
+- [x] Check twenty-three mounted/mirrored tools with parse/exact-byte validation; validate 138 documents / 4,190 relative links / zero broken.
+- [ ] Recover false-zero `func_15147740`, 100 words/frame0x20, or continue trail constructor `func_151DA6F8`'s unchanged 61 differences.
+- [ ] Qualify actual graphics/cleanup/callback/upstream/hardware/gameplay paths and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Effect Allocation Core Match - 2026-10-09
 
 [Note 1151](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md):
@@ -14,7 +30,8 @@
 - [x] Measure 5,484 converted / 3,399 exact, Game 4,811 / 2,726; zero drift and 2,085 different. Root README aggregate rows only.
 - [x] Pass eight post-install tests in 73.219s, 25 shared tests and both local tools checks; bank tools 2807f51 before exact parent source/docs/gitlink, preserving older mirror edits/history without pushing or pausing.
 - [x] Validate twenty-one mounted/mirrored tools with exact bytes and parse checks; check 137 documents / 4,180 relative links / zero broken.
-- [ ] Recover neighboring false-zero `func_15147C4C`, 52 words/frame0x38, or continue `func_151DA6F8`'s unchanged 61 layout/register/scheduling differences.
+- [x] Recover neighboring `func_15147C4C`, 52 words/frame0x38, directly exact without guards; see Note 1152.
+- [ ] Continue `func_151DA6F8`'s unchanged 61 layout/register/scheduling differences.
 - [ ] Qualify wider allocator/resource/hardware/gameplay paths and repair Graphify reduced-corpus refresh without force. OGL Release remains frozen.
 
 ## Effect-Record Constructor Match - 2026-10-09

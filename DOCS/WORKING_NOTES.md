@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-09 ([Note 1152](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md)):
+Restore complete `func_15147C4C`, C52/frame0x38, directly exact without
+guards. Signed index, lazy optional word, nine-argument graphics call,
+live selector/table and distinct callback result recovered. Preserve 10
+neighbors and every other ELF byte/data; only target slot/symbol size
+12 -> 208 change. All 6,058 slots, conversion CSV and 11,475 guards
+unchanged. Total 5,484 / 3,400 exact, Game 4,811 / 2,727; zero drift,
+2,084 different. Eight focused tests, 655,616 native32 cases, protected
+table identities and 25 shared tests pass. Tools 7b88702 first, parent
+pin second, no push or older mirror reset. Next 100-word `func_15147740`;
+trail's 61 differences and wider acceptance remain open.
+
 2026-10-09 ([Note 1151](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md)):
 Restore complete `func_15147A80`, 115 words/frame0x38, directly exact,
 no guards. Recover eleven-word ABI, unsigned size, 160-byte header, request/

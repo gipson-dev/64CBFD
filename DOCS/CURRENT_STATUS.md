@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 2807f51; tools are committed before the source pin.
+  checkpoint pins tools 7b88702; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game effect allocation core match:
+Latest Game actor graphics dispatch match:
+[Note 1152](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md).
+Restore false-zero `func_15147C4C`, 52 words / 208 bytes / frame0x38,
+directly byte-exact without guards. Recover signed-halfword forwarding,
+lazy optional word, nine-argument graphics call, live selector/table reads,
+cleanup/zero-selector graphics return and distinct callback-result return.
+Eight post-install tests pass in 27.622s, including 655,616 native32 cases,
+all 52 words, six effective compiled negatives and 1,344 bounded cases
+using actual retail table identities. Preserve 10 neighbors/pools/relocations
+and seven diagnostics. Only target ELF slot and symbol size 12 -> 208 change;
+all other bytes/data, 6,058 slots, conversion CSV and 11,475 guards unchanged.
+Fresh totals: 5,484 converted / 3,400 exact, Game 4,811 / 2,727;
+zero drift and 2,084 different. Twenty-five shared tests and both tools
+checks pass. Bank tools 7b88702 before exact parent pin; preserve older
+mirror changes/history, no push. Next false-zero `func_15147740`,
+100 words/frame0x20; trail remains 61 differences. Actual helper/callback/
+upstream/hardware/gameplay and graph corpus repair remain open.
+
+Previous Game effect allocation core match:
 [Note 1151](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md).
 Restore false-zero `func_15147A80`, 115 words / 460 bytes / frame0x38,
 directly byte-exact without guards. Recover its eleven-word ABI, unsigned

@@ -54,7 +54,16 @@ confirmed.
 
 ## Planning and history
 
-- [Latest effect allocation core match](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md):
+- [Latest actor graphics dispatch match](WORKING_NOTES/1152-game-actor-graphics-dispatch-match-20261009.md):
+  Complete `func_15147C4C`, C52/frame0x38, directly byte-exact without
+  guards; signed index, lazy optional word, live selector/table and distinct
+  callback result recovered. Only target ELF slot/symbol size change;
+  totals 5,484 converted / 3,400 exact, zero drift. Eight focused tests,
+  native32, retail-table identities and 25 shared tests pass. Tools 7b88702
+  first, parent pin second, no push. Next 100-word `func_15147740`;
+  trail's 61 differences and wider acceptance remain open.
+
+- [Previous effect allocation core match](WORKING_NOTES/1151-game-effect-allocation-core-match-20261009.md):
   Complete `func_15147A80`, C115/frame0x38, directly byte-exact without
   guards; request/header/optional record and live resource-count loop recovered.
   Corrected direct-call interfaces leave their instructions unchanged. Only

@@ -30,6 +30,10 @@ void *func_15167A68(s32, s32, s32, s32, u8, u8);
 u8 *func_1515D480(s32);
 u8 *func_1515D440(void);
 
+u8 *func_151462C8(u8 *, void *, u8, u8 *, u8, s16, void *, u8, s32);
+void func_1516972C(u8 *);
+extern u8 *(*D_8008A2A4[])(u8 *, u8 *, s16);
+
 /* Non-matching placeholders for the text-only asm slice asm/174BF0.s. */
 
 s32 func_151D5E30();
@@ -149,8 +153,26 @@ u8 *func_15147A80(void *request, s32 payloadBytes, s32 entryBytes,
     return (u8 *)created;
 }
 
-s32 func_15147C4C() {
-    return 0;
+u8 *func_15147C4C(u8 *commands, u8 *actor, s16 index) {
+    s32 optional;
+    u8 selector;
+
+    if (*(u16 *)(actor + 0x1E) & 0x20) {
+        optional = *(s32 *)(actor + 0x28);
+    } else {
+        optional = 0;
+    }
+    commands = func_151462C8(commands, actor + 0x34, 0, NULL, 0,
+        index, actor + 0x54, 2, optional);
+    selector = actor[0x31];
+    if (selector >= 0x13) {
+        func_1516972C(actor);
+        return commands;
+    }
+    if (selector != 0) {
+        return D_8008A2A4[selector](actor, commands, index);
+    }
+    return commands;
 }
 
 void func_15147D1C(u8 *arg0, s32 arg1, u8 arg2) {
