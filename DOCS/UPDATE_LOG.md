@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-09 Table-Driven Effect Constructor Restoration
+
+[Note 1149](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md):
+Restore complete semantic `func_151DA6F8`, 144 words/frame0xD0, mixed
+18-argument ABI, four records, flag choices, creation/null/copy path and
+returned-pointer lifetime. Improve 143 -> 61 differing linked words;
+explicitly non-matching, no guards or converted/exact credit. Only the target
+ELF slot and symbol-size field change; every other ELF byte/address/data and
+all 11,475 guards/progress rows remain unchanged. Eight focused tests, native32,
+connected original retail callee/copy path, 25 shared tests and both tools
+checks pass. Bank tools 77001d3 first and parent pin/source/docs second,
+preserving older mirror history without pushing. Continue this target's 61
+layout/scheduling differences; allocation/callers/hardware/graph gates stay open.
+
 ## 2026-10-09 Random-Effect Timer Restoration
 
 [Note 1148](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md):

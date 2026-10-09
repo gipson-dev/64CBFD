@@ -3,6 +3,35 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef struct { f32 x, y, z; } TrailPosition151DA6F8;
+typedef struct {
+    TrailPosition151DA6F8 position;
+    s16 duration, kind;
+    s32 active;
+    s8 mode;
+    u8 selector, padding[2];
+    s32 value;
+} TrailRequest151DA6F8;
+typedef struct {
+    f32 time;
+    TrailPosition151DA6F8 velocity;
+    f32 scale, limit;
+    u8 flags, kind, alpha, mode;
+    s16 first, second;
+} TrailDescriptor151DA6F8;
+typedef struct {
+    f32 first, second;
+    u8 selector, padding[3];
+} TrailPayload151DA6F8;
+typedef struct {
+    s32 zero, command, mode, kind, width, alpha, count;
+    u8 flags, payloadBytes, padding[2];
+} TrailRender151DA6F8;
+extern u8 D_800AB404[], D_800AB330[], D_800AB3F4[];
+extern f32 D_800AB498;
+u8 *func_15147DA0(void *, void *, s32, u8, u8, u8, u8, u8, u8,
+    u8, u8, void *, s32, u8, s32);
+
 /* Generated placeholder declarations. */
 void *func_151D9014(void *, f32 *, u8, f32, s16, u8, f32, u8,
     f32, f32, u8, s32, u8, u8, u8, s32);
@@ -10,7 +39,8 @@ s32 func_151D9450(s32 arg0, s32 arg1);
 s32 func_151D9534(s32 arg0, s32 arg1);
 void func_151D9EB0(u8 *owner);
 s32 func_151DA368();
-s32 func_151DA6F8();
+u8 *func_151DA6F8(void *, void *, f32, s16, u8, f32, s32, u8,
+    f32, f32, u8, u8, s32, s16, s16, s32, u8, s32);
 s32 func_151DA938();
 s32 func_151DAA88();
 s32 func_151DAB58();
@@ -219,8 +249,74 @@ void func_151D9FC0(u8 arg0, f32 arg1, u8 arg2, s32 arg3, s32 arg4, u8 arg5, s32 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA368.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA6A8.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DA6F8.s. */
-s32 func_151DA6F8() {
-    return 0;
+u8 *func_151DA6F8(void *position, void *velocity, f32 scale, s16 duration,
+    u8 mode, f32 time, s32 requestSelector, u8 opaque, f32 first, f32 second,
+    u8 fade, u8 selector, s32 extraBytes, s16 firstValue, s16 secondValue,
+    s32 requestValue, u8 channel, s32 context) {
+    u8 *created;
+    TrailRequest151DA6F8 request;
+    TrailDescriptor151DA6F8 descriptor;
+    TrailPayload151DA6F8 payload;
+    TrailRender151DA6F8 render;
+    u8 flags;
+    s32 firstContribution, secondContribution;
+    s32 firstFlag, secondFlag, fadeFlag, fadeAlpha;
+
+    request.selector = requestSelector;
+    request.position = *(TrailPosition151DA6F8 *)position;
+    request.duration = duration + 16;
+    request.kind = 53;
+    request.active = 1;
+    request.mode = -1;
+    request.value = requestValue;
+    descriptor.time = time;
+    descriptor.velocity = *(TrailPosition151DA6F8 *)velocity;
+    descriptor.scale = scale;
+    descriptor.limit = D_800AB498;
+    firstContribution = D_800AB404[selector] ? 0x20 : 0;
+    secondContribution = D_800AB330[selector] ? 0x80 : 0;
+    flags = (secondContribution | 8) | firstContribution;
+    flags |= 0x40;
+    descriptor.flags = flags;
+    descriptor.kind = D_800AB3F4[selector];
+    descriptor.alpha = 255;
+    descriptor.mode = mode;
+    descriptor.first = firstValue;
+    descriptor.second = secondValue;
+    if (opaque) {
+        descriptor.flags |= 3;
+        firstFlag = 7;
+        secondFlag = 4;
+    } else {
+        firstFlag = 0;
+        secondFlag = 0;
+    }
+    payload.first = first;
+    payload.second = second;
+    payload.selector = selector;
+    render.zero = 0;
+    render.command = 0x220005;
+    render.mode = 0x50600;
+    render.kind = 3;
+    render.width = 70;
+    render.alpha = 128;
+    render.count = 32;
+    render.flags = 0;
+    render.payloadBytes = 12;
+    if (fade) {
+        fadeFlag = 2;
+        fadeAlpha = 255;
+    } else {
+        fadeFlag = 0;
+        fadeAlpha = 0;
+    }
+    created = func_15147DA0(&request, &descriptor, 16, 1, 0, 0,
+        firstFlag, secondFlag, 0, fadeFlag, fadeAlpha, &render,
+        extraBytes, channel, context);
+    if (created != NULL) {
+        memcpy(*(u8 **)(created + 0x98) + 0x48, &payload, sizeof(payload));
+    }
+    return created;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DA938.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DA938.s")

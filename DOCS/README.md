@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Latest table-driven effect constructor restoration](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md):
+  Complete semantic `func_151DA6F8`, C144/frame0xD0, improves 143 -> 61
+  linked differences; still non-matching, no guards or progress credit.
+  Only target slot/symbol size change; all other ELF bytes/data are unchanged.
+  Tools 77001d3 first, exact parent pin second, no push. Continue its remaining
+  layout/scheduling differences; wider acceptance remains open.
+
 - [Latest random-effect timer restoration](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md):
   Complete void `func_151D9EB0` matches all 68 words directly, no guards;
   61 owner neighbors/data stay unchanged. Only target ELF slot/symbol size

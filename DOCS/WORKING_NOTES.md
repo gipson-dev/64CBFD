@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-09 ([Note 1149](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md)):
+Replace false-zero `func_151DA6F8` with complete semantic C144/frame0xD0.
+Recover mixed 18-argument ABI, four records, table/flag decisions, creation
+failure, payload copy and preserved result. Linked differences 143 -> 61,
+still non-matching, no guards or progress credit. Only its ELF slot and symbol
+size change; all 61 neighbors and remaining ELF bytes/data/guards/progress
+stay unchanged. Eight focused tests, native32/connected original callee/copy,
+25 shared tests and both tools checks pass. Tools 77001d3 first, parent pin
+second, no push or older mirror reset. Continue this target's 61 layout/
+scheduling differences; unspecified padding and wider acceptance stay open.
+
 2026-10-09 ([Note 1148](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md)):
 Restore complete 68-word/frame0x60 `func_151D9EB0` directly from C, no guards.
 Recover void callback ABI, wrapped timer, live RNG/effect order and reset.

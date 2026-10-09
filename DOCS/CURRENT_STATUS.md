@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 061d223; tools are committed before the source pin.
+  checkpoint pins tools 77001d3; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game random-effect timer restoration:
+Latest Game table-driven effect constructor restoration:
+[Note 1149](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md).
+Replace false-zero `func_151DA6F8` with complete semantic C, 144 words /
+576 bytes / frame0xD0. Recover the 18-argument ABI, four records, table/flag
+choices, 15-argument creation call, null path, payload copy and preserved
+pointer. Linked differences improve 143 -> 61; explicitly still non-matching,
+no new guards or progress credit. Whole ELF changes only its target slot and
+symbol-size field 12 -> 576; all 61 owner neighbors, other ELF bytes/data,
+6,058 addresses/extents, conversion rows and 11,475 guards are unchanged.
+Totals remain 5,484 converted / 3,397 exact, Game 4,811 / 2,724, zero drift.
+Eight post-install tests pass, including native32 and connected original
+retail callee/copy qualification; 25 shared tests and both tools checks pass.
+Tools 77001d3 first, exact parent source/docs pin second; no push or older
+standalone reset. Continue this target's 61 remaining layout/scheduling words.
+Unspecified render padding, allocation core, original callers, graph repair
+and hardware/gameplay stay open. OGL Release remains frozen.
+
+Previous Game random-effect timer restoration:
 [Note 1148](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md).
 Replace false-zero `func_151D9EB0` with complete 68-word / 272-byte /
 frame0x60 semantic C, directly matching retail without guards. Recover its

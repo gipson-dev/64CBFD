@@ -165,3 +165,8 @@ request/payload construction, live table/flag choices, 15-argument
 preserved returned pointer. Keep unspecified padding and allocation failure
 explicit. Capture its actual owner/linked baseline before fitting; do not
 infer completion from retained neighboring assembly or this callback's match.
+
+Follow-up: [Note 1149](1149-game-table-driven-effect-constructor-restoration-20261009.md)
+installs that complete semantic constructor, C144/frame0xD0, with 61 remaining
+linked differences and no guards/progress credit. Continue its layout/
+scheduling work from the qualified body, not the removed zero placeholder.

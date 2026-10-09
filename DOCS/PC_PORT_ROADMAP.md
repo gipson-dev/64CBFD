@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Table-Driven Effect Constructor Restoration - 2026-10-09
+
+[Note 1149](WORKING_NOTES/1149-game-table-driven-effect-constructor-restoration-20261009.md):
+
+- [x] Recover and install complete semantic `func_151DA6F8`, 144 words/frame0xD0: mixed 18-argument ABI, four local records, flags, 15-argument creation call, null path, payload copy and preserved pointer.
+- [x] Screen complete forms; improve 143 -> 61 differing linked words, explicitly non-matching. Install only the consumed 32-byte render prefix; no artificial tail, zero-filled padding or new guards.
+- [x] Qualify 1,330 paired guest cases, 32 aliases/home-clobber cases, 156 missing-public-byte pairs, 65,536 native32 cases and four effective compiled negatives.
+- [x] Connect all 70 original retail callee words and 11 exact memcpy words over 128 cases; keep allocation core, installed callee placeholder and unspecified padding boundaries explicit.
+- [x] Preserve 61 owner neighbors, pools, relative relocations and six diagnostics. Actual padder emits all 576 bytes without filler; qualify four independent GNU links over 64 cases.
+- [x] Audit every ELF byte/all 6,058 slots: only target instructions and symbol size 12 -> 576 change; protected data, progress CSV bytes and 11,475 guards unchanged.
+- [x] Remeasure unchanged totals: 5,484 converted / 3,397 exact; Game 4,811 / 2,724; zero drift and 2,087 different. Root README aggregate rows remain correct and untouched.
+- [x] Pass eight final post-install tests in 51.971s, no skips; 25 shared tests and both local tools checks pass. Sixteen tool files parse/mirror exactly; validate 135 docs / 4,159 relative links / zero broken.
+- [x] Bank tools 77001d3 before exact parent source/docs pin, preserving unrelated older mirror history and changes; no push or pause.
+- [ ] Match the remaining 61 words in this constructor: render-prefix local placement, flag registers/independent scheduling and return-pointer branch delay. Do not infer exactness from a correct frame/word count.
+- [ ] Recover allocation/callee/direct callers and qualify hardware/gameplay separately; repair Graphify reduced-corpus refresh without force. OGL Release remains frozen.
+
 ## Random-Effect Timer Restoration - 2026-10-09
 
 [Note 1148](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md):
@@ -12,7 +28,7 @@
 - [x] Measure 5,484 converted / 3,397 exact; Game 4,811 / 2,724; zero drift and 2,087 different. Root README aggregate rows only.
 - [x] Pass eight post-install tests in 36.990s, no skips; 24 shared tests, both tools checks and fourteen-file parse/mirror checks pass. Validate 134 docs / 4,150 relative links / zero broken.
 - [x] Bank tools 061d223 first, then exact parent source/docs pin; preserve older mirror history and unrelated edits without pushing.
-- [ ] Recover false-zero `func_151DA6F8`, 144 words/frame0xD0: complete mixed ABI, request/payload construction, allocator failure and returned-pointer lifetime.
+- [x] Recover false-zero `func_151DA6F8`, 144 words/frame0xD0: complete mixed ABI, request/payload construction, allocator failure and returned-pointer lifetime; semantic body installed but still 61 words different, see Note 1149.
 - [ ] Qualify hardware/gameplay and effect/cleanup paths separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Record Constructor Restoration - 2026-10-09
