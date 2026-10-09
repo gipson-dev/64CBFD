@@ -4,10 +4,11 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_151D9014(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15);
+void *func_151D9014(void *, f32 *, u8, f32, s16, u8, f32, u8,
+    f32, f32, u8, s32, u8, u8, u8, s32);
 s32 func_151D9450(s32 arg0, s32 arg1);
 s32 func_151D9534(s32 arg0, s32 arg1);
-s32 func_151D9EB0();
+void func_151D9EB0(u8 *owner);
 s32 func_151DA368();
 s32 func_151DA6F8();
 s32 func_151DA938();
@@ -189,8 +190,22 @@ u8 func_151D9B34(void) {
 /* Note 374: original surface splash construction and triangle basis. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151D9B8C.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151D9EB0.s. */
-s32 func_151D9EB0() {
-    return 0;
+void func_151D9EB0(u8 *owner) {
+    u8 *record;
+    u32 value;
+    f32 random;
+
+    record = owner + 0x28;
+    *(s16 *)(owner + 0x28) -= (u32)D_800BE9E4;
+    if (*(s16 *)(owner + 0x28) < 0) {
+        random = func_150ADA68();
+        value = func_150ADA20();
+        func_151D9014(record + 8, &D_800A5480, record[0x16],
+            random * D_800AB464 + D_800AB468, value % 41U + 35,
+            record[0x14], *(f32 *)(record + 4), 0, 1.0f, 1.0f,
+            record[0x15], 0, 1, 0, owner[0xC], owner[1]);
+        *(s16 *)record = func_150ADA20() % 111U + 30;
+    }
 }
 void func_151D9FC0(u8 arg0, f32 arg1, u8 arg2, s32 arg3, s32 arg4, u8 arg5, s32 arg6) {
     func_151DBCBC(arg0, arg1 * 0.5f, arg2, arg3, arg4, arg5, arg6);

@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-09 ([Note 1148](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md)):
+Restore complete 68-word/frame0x60 `func_151D9EB0` directly from C, no guards.
+Recover void callback ABI, wrapped timer, live RNG/effect order and reset.
+Only its ELF slot and symbol size change; all 61 owner neighbors, protected
+data, converted rows/bytes and 11,475 guards unchanged. Total 5,484 / 3,397
+exact, Game 4,811 / 2,724; zero drift and 2,087 different. Eight focused
+tests and shared checks pass. Tools 061d223 first, exact parent pin second;
+no push or older standalone reset. Next false-zero 144-word `func_151DA6F8`.
+Wider graph/hardware/gameplay gates remain open.
+
 2026-10-09 ([Note 1147](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md)):
 Restore complete `func_151D71B0`, 45 words/frame0x50, directly from C with
 no guards; typed caller bytes unchanged and all 23 owner functions exact.

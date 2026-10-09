@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ce159a5; tools are committed before the source pin.
+  checkpoint pins tools 061d223; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game constructor restoration:
+Latest Game random-effect timer restoration:
+[Note 1148](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md).
+Replace false-zero `func_151D9EB0` with complete 68-word / 272-byte /
+frame0x60 semantic C, directly matching retail without guards. Recover its
+void contract, signed-halfword timer wrap, ordered RNG calls, live field reads,
+16-argument effect call and timer reset. Preserve all 61 copied-owner neighbors,
+pools, relative relocations and six existing diagnostics. Whole ELF changes
+only the target slot and its symbol-size field 12 -> 272; all 6,058 slot
+addresses/extents, protected data, converted rows/bytes and 11,475 guards stay
+unchanged. Total 5,484 converted / 3,397 exact; Game 4,811 / 2,724;
+zero drift and 2,087 different. All eight post-install tests pass in 36.990s,
+no skips; 24 shared tests and both tools checks pass. Qualify 8,092 guest
+cases, 328,968 native32 cases and the actual callback table slot-74 path.
+Tools 061d223 first, exact parent source/docs pin second, no push or older
+mirror reset. Next false-zero `func_151DA6F8`, 144 words/frame0xD0,
+is a constructor in the same owner. Graph repair and hardware/gameplay stay
+open; OGL Release remains frozen. See Note 1148 for receipts and limits.
+
+Previous Game constructor restoration:
 [Note 1147](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md).
 Replace false-zero `func_151D71B0` with its complete 45-word / 180-byte /
 frame0x50 C body. It emits every retail word directly, without guards.

@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Random-Effect Timer Restoration - 2026-10-09
+
+[Note 1148](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md):
+
+- [x] Restore complete void `func_151D9EB0`, 68 words/frame0x60: signed timer wrap/store/reload, float/integer RNG order, live effect-call fields and second integer RNG reset.
+- [x] Fit 29 complete forms/four profiles; selected C emits all retail words directly with no guards. Qualify five effective compiled negatives and unsigned timer arithmetic.
+- [x] Qualify 8,092 paired guest cases, 288 real missing-byte pairs, 328,968 native32 cases and 120 connected slot-74 dispatcher cases; preserve void return and bounded RNG/effect/hardware limits.
+- [x] Preserve 61 copied-owner neighbors, pools, relative relocations and six diagnostics. Qualify actual 272-byte padding and four independent GNU symbol sets over 144 cases.
+- [x] Install and audit the full ELF/all 6,058 slots: only target instructions and symbol-size field 12 -> 272 change. Protected data, converted rows/bytes and all 11,475 guards unchanged.
+- [x] Measure 5,484 converted / 3,397 exact; Game 4,811 / 2,724; zero drift and 2,087 different. Root README aggregate rows only.
+- [x] Pass eight post-install tests in 36.990s, no skips; 24 shared tests, both tools checks and fourteen-file parse/mirror checks pass. Validate 134 docs / 4,150 relative links / zero broken.
+- [x] Bank tools 061d223 first, then exact parent source/docs pin; preserve older mirror history and unrelated edits without pushing.
+- [ ] Recover false-zero `func_151DA6F8`, 144 words/frame0xD0: complete mixed ABI, request/payload construction, allocator failure and returned-pointer lifetime.
+- [ ] Qualify hardware/gameplay and effect/cleanup paths separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Constructor Restoration - 2026-10-09
 
 [Note 1147](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md):
@@ -12,7 +27,7 @@
 - [x] Measure 5,484 converted / 3,396 exact; Game 4,811 / 2,723; zero drift and 2,088 different. All 23 functions in generated_204660.c are exact; root README remains aggregate-only.
 - [x] Pass eight post-install tests in 33.365s, no skips; 24 shared tests, both project tools checks and twelve-file parse/mirror checks pass. Validate 133 docs / 4,142 relative links / zero broken.
 - [x] Bank tools ce159a5 first, then exact parent source/docs pin; preserve independently dirty older mirror history and unrelated edits without pushing.
-- [ ] Recover false-zero `func_151D9EB0`, 68 words/frame0x60: signed timer wrap, random float/integer call order, effect-call ABI and timer reset.
+- [x] Recover and install false-zero `func_151D9EB0`, 68 words/frame0x60: signed timer wrap, random float/integer call order, effect-call ABI and timer reset; see Note 1148.
 - [ ] Qualify hardware/gameplay separately and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Record Actor Position Conversion - 2026-10-08

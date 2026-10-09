@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-09 Random-Effect Timer Restoration
+
+[Note 1148](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md):
+Restore complete void `func_151D9EB0`, 68 words/frame0x60, directly from C
+with no guards. Recover signed timer wrap, ordered RNG/live reads, effect ABI
+and timer reset. Preserve all 61 owner neighbors and protected data; only the
+target ELF slot and symbol size change. Converted counts/bytes and 11,475
+guards unchanged; total 5,484 / 3,397 exact, Game 4,811 / 2,724, zero drift
+and 2,087 different. Eight tests, native32, real slot-74 dispatcher path,
+24 shared tests and both tools checks pass. Tools 061d223 first, exact parent
+pin/source/docs second; no push or older mirror reset. Next false-zero
+144-word `func_151DA6F8`; hardware/gameplay and graph repair remain open.
+
 ## 2026-10-09 Record Constructor Restoration
 
 [Note 1147](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md):

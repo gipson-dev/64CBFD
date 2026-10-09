@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Latest random-effect timer restoration](WORKING_NOTES/1148-game-random-effect-timer-restoration-20261009.md):
+  Complete void `func_151D9EB0` matches all 68 words directly, no guards;
+  61 owner neighbors/data stay unchanged. Only target ELF slot/symbol size
+  change; totals 5,484 converted / 3,397 exact, zero drift. Tools 061d223
+  first, exact parent pin second, no push. Next false-zero 144-word
+  `func_151DA6F8`; wider acceptance stays open.
+
 - [Latest record constructor restoration](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md):
   Complete `func_151D71B0` matches all 45 words directly, no guards; typed
   caller bytes stay unchanged. All 23 owner functions exact. Only its ELF
