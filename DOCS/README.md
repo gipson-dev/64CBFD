@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Current camera ribbon exit-flow qualification](WORKING_NOTES/1164-game-camera-ribbon-renderer-exit-flow-qualification-20261009.md):
+  Complete 545-word short-input body fits the slot and retains five retail
+  private slots with corrected active/cursor exit shapes. Four independent
+  symbol sets qualify relocation behavior; twelve tests pass in145.688s.
+  Tools8a71e51 banked first; raw matching/production installation remain open.
 - [Current camera ribbon private slots/view staging](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md):
   Fourteen tests; five retail private slots and16-bit input retained in a
   complete547-word form. Color homes/register roles/raw matching still open.

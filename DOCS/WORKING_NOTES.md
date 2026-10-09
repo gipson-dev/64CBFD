@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-09 ([Note 1164](WORKING_NOTES/1164-game-camera-ribbon-renderer-exit-flow-qualification-20261009.md)):
+Recover complete 16-bit-input outer-active/explicit-null-return body at 545
+words/frame0x120/509 raw differences. Retain five private slots and all save
+slots, improve active/cursor branch shapes, and qualify four independent
+symbol sets. Twelve tests pass in145.688s;62 forms/39 instruction streams
+screened with finite controls. Tools8a71e51 first, exact parent pin second.
+Exact register/color/FP roles and callback integration remain
+open; production bytes/credit and root README stay unchanged.
+
 2026-10-09 ([Note 1163](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md)):
 Qualify complete short-input547/frame0x120/433 and wide-input545/519 forms:
 five retail private slots plus frame/save slots, fourteen tests in204.038s.

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-09 Camera Ribbon Exit Flow Qualification
+
+[Note 1164](WORKING_NOTES/1164-game-camera-ribbon-renderer-exit-flow-qualification-20261009.md):
+Complete outer-active/explicit-null-return form now fits at 545 words with
+retail frame/save slots and five private slots retained. Active/cursor branch
+shapes improve, but 509 raw differences remain; this is not byte matching.
+Four independent original/candidate symbol sets qualify relocation behavior.
+Twelve tests pass in145.688s, including804 guest,536 native32,128 nonlinear
+and14 view cases. Screen62 full forms/39 instruction streams; actual
+fingerprints correct the initial same-shape/byte-identity assumption.
+Register/color/FP roles and callback integration remain open. Keep production
+bytes/credit and root README unchanged. Tools8a71e51 first, exact parent pin second.
+
 ## 2026-10-09 Camera Ribbon Private Slots And View Staging
 
 [Note 1163](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md):

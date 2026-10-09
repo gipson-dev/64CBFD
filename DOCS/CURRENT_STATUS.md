@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d940c7e; tools are committed before the consumer pin.
+  checkpoint pins tools 8a71e51; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current renderer exit-flow qualification:
+[Note 1164](WORKING_NOTES/1164-game-camera-ribbon-renderer-exit-flow-qualification-20261009.md).
+The complete 16-bit-input outer-active form emits 545 words, fits the slot,
+and retains the retail 0x120 frame, save slots and five private slots.
+Its active/null-cursor branch shapes are now retail-shaped; 509 raw word
+differences remain. Independent original/candidate links qualify four
+symbol sets (eight links/25 relocation uses/184 cases). Twelve tests pass
+in145.688s, including804 guest,536 native32,128 nonlinear and14 view cases.
+The62-form catalog has39 instruction streams; compare fingerprints, not
+shape metrics alone. Tools8a71e51 first, exact parent pin second.
+Exact register roles, color homes, FP schedule and callback
+integration remain open. Production source/ELF/guards/credit unchanged;
+root README unchanged. Bank tools before the exact consumer pin.
 
 Current renderer private-slot/view qualification:
 [Note 1163](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md).

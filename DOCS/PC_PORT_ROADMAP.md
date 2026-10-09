@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Camera Ribbon Exit Flow Qualification - 2026-10-09
+
+[Note 1164](WORKING_NOTES/1164-game-camera-ribbon-renderer-exit-flow-qualification-20261009.md):
+
+- [x] Recover the outer active block and explicit null-cursor return in a complete 16-bit-input 545-word form; retain frame/save slots and all five measured private slots.
+- [x] Verify retail backend-call index and active/cursor branch shapes; actual padder accepts. Keep 509 raw differences and register/color/FP mismatches explicit.
+- [x] Qualify four independent original/candidate symbol sets, eight links and 25 relocation uses across HI16 carries, signed LO16 values and JAL regions.
+- [x] Pass twelve tests in145.688s:804 guest cases,92 mutations,94 missing-byte pairs,five aliases,two cyclic prefixes,536 native32,128 nonlinear,14 raw views and actual dispatcher16 cases.
+- [x] Screen62 full source forms/39 instruction streams with three finite controls each; correct the fixture's same-shape/byte-identity assumption and retain both effective compiled negatives.
+- [x] Bank tools8a71e51 before the exact parent pin; preserve production bytes/credit, root README and all80 pre-existing older-checkout entries.
+- [ ] Recover S3 phase lifetime, S2 payload/T5 spills, color homes, FP roles and complete raw schedule; reconcile callback signature before installation and whole-ELF/progress audit.
+
 ## Camera Ribbon Private Slots And View Staging - 2026-10-09
 
 [Note 1163](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md):
