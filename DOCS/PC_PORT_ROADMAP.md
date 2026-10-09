@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Ribbon Renderer Frame And Slot Fit - 2026-10-09
+
+[Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md):
+
+- [x] Fit the complete475-word func_151B32C8 to its0x148 frame and actual cursor/point/origin/sync/material homes using real geometry temporaries; no unused padding.
+- [x] Close the two-word excess with allocation scope; reduce432 to243 real differences without changing the full nine-quad contract.
+- [x] Pass twelve tests, including7,680 native32 cases, guest/mutations/rebases, real material/walker and all475 candidate words/12 saved FP words; reject reordered O2 command writes.
+- [x] Confirm actual owner and padder accept the1,900-byte body unchanged; preserve16 neighbors/pools/relocations and unchanged source/ELF/guards/progress/protected data.
+- [x] Commit tools1b0e633 first, preserve older dirty work and mirror only two absent authored fitting files. No README aggregate change or matching/conversion credit.
+- [ ] Fit the same renderer's initial shared copy base, loop induction and FP/GPR scheduling/allocation; certify residual closed changes before any guards or installation.
+- [ ] Keep full helper/caller overflow/rollback/hardware/live rendering/gameplay acceptance separate.
+
 ## Owner Ribbon Renderer Recovery Checkpoint - 2026-10-09
 
 [Note 1180](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md):
@@ -9,7 +21,8 @@
 - [x] Pass eleven tests:512 guest/385 mutations/7,680 native32,64 rebases, actual34-word material callback, complete348-word graphics walker, six effective negatives and fault prefixes.
 - [x] Preserve16 owner neighbors/pools/relocations, unchanged source/ELF/guards/progress and189,088 protected bytes; reject actual padder overflow, no matching/conversion credit.
 - [x] Bank tools 5a82484 first; preserve older dirty checkout and mirror only two absent authored files. Root README aggregate rows remain unchanged.
-- [ ] Fit this same32C8 real declaration/lifetime workspace and loop induction to475 words/frame0x148, then qualify scheduling/register fitting before installation.
+- [x] Fit this same32C8 real declaration/lifetime workspace to475 words/frame0x148 in [Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md); actual padder accepts the slot.
+- [ ] Finish original loop induction and qualify scheduling/register fitting before installation;243 real word differences remain.
 - [ ] Keep full helpers/caller overflow/rollback/SDK/hardware/live rendering/gameplay acceptance separate.
 
 ## Owner Actor Update Direct Match - 2026-10-09

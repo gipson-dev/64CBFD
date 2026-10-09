@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Owner ribbon renderer frame and slot fit](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md):
+  Complete475-word/0x148-frame C, original private homes,243 real differences
+  remaining. Twelve tests pass, actual owner/padder accepts slot, not installed.
+  Continue the same renderer's shared copy base, loop and FP/GPR fitting.
+
 - [Owner ribbon renderer recovery checkpoint](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md):
   Complete nine-quad recovery; eleven tests pass, including actual material and
   full graphics walker. Selected477 words/frame304, not installed/no credit.

@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md)):
+Fit full func_151B32C8 to475 words/frame0x148 and original private homes;243 real
+differences remain, down from432. Twelve tests pass55.814s, zero skips, including
+full candidate coverage and saved FP lifetime;43 source forms/46 profile rows.
+Actual owner/padder accepts complete slot unchanged. Not installed, no guards or
+credit; source/ELF/progress unchanged. Tools1b0e633 first; preserve older dirty work.
+Continue the same renderer's shared copy base, loop and FP/GPR scheduling fitting.
+
 2026-10-09 ([Note 1180](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md)):
 Bank complete475-word func_151B32C8 semantic recovery and eleven passing tests:
 512 guest/385 mutations/7,680 native32,64 rebases,32 actual material and32 full

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5a82484; tools are committed before the consumer pin.
+  checkpoint pins tools 1b0e633; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest owner ribbon-renderer recovery checkpoint:
+Latest owner ribbon-renderer frame/slot fitting checkpoint:
+[Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md).
+The complete func_151B32C8 C now emits475 words/frame0x148 with original cursor,
+point, origin, sync and material homes. Real squared-normal and offset temporaries,
+allocation scope and source ordering reduce432 to243 real word differences.
+Twelve tests pass55.814s, zero skips; full guest/native/mutation/rebase/callback/
+walker/fault qualification plus all475 candidate words and12 saved FP words.
+43 full source forms/46 profile rows; reject O2's reordered command writes.
+Actual copied owner and padder accept the1,900-byte slot unchanged;16 neighbors/
+pools/relative relocations preserved. No installation, guards or matching credit.
+Source/ELF/guards/progress and189,088 protected bytes remain unchanged.
+Continue the same32C8 shared-copy-base/loop and FP/GPR scheduling/allocation fit;
+do not synthesize retail words. Full helpers/hardware/gameplay remain separate.
+
+Earlier owner ribbon-renderer recovery checkpoint:
 [Note 1180](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md).
 Recover complete475-word func_151B32C8, all nine quads/20 vertices and14-argument
 material ABI. Eleven tests pass23.776s, zero skips:512 guest/385 mutation/7,680
@@ -47,9 +61,9 @@ original74-word registered walker, independent rebases, lazy reads and faults.
 Whole ELF changes only target slot/st_size; preserve16 neighbors,189,088
 protected bytes and byte-identical guard/conversion rows. No conversion credit.
 Game2,742/4,816 exact,total3,415/5,489,zero drift/2,074 differences.
-Next same-owner475-word/frame0x148 full renderer func_151B32C8. Its actual ABI
-is returned Gfx cursor, actor pointer and signed16 view; recover full geometry/
-resource/helper lifetimes before fitting. Full helpers/hardware/gameplay remain
+The next same-owner renderer func_151B32C8 is recovered and frame/slot-fit, but
+not installed; [Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md)
+records the remaining243 word differences. Full helpers/hardware/gameplay remain
 open; original connected walker is not installed C. Earlier entries are history.
 
 Earlier endpoint quad guarded C match:

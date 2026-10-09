@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Owner Ribbon Renderer Frame And Slot Fit
+
+[Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md):
+Complete func_151B32C8 fits475 words/frame328 and original private homes;432 to243
+real differences. Twelve tests pass55.814s, zero skips, including complete candidate
+coverage and all12 saved FP words.43 source forms/46 rows; reordered O2 writes
+rejected. Actual owner/padder accepts full1,900-byte slot unchanged, no installation/
+guards/credit. Production source/ELF/progress preserved. Tools1b0e633 committed first;
+continue the same renderer's shared copy base, loop and FP/GPR allocation fitting.
+
 ## 2026-10-09 Owner Ribbon Renderer Recovery Checkpoint
 
 [Note 1180](WORKING_NOTES/1180-game-owner-ribbon-renderer-recovery-checkpoint-20261009.md):
