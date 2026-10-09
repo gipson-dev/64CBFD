@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ring Renderer Frame Fitting - 2026-10-08
+
+[Note 1140](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md):
+
+- [x] Fit this same complete `func_151D80C4` to 405 words/frame0xD0, retail cursor/sync/buffer/XYZ/saved slots and loop/memcpy offsets; reduce raw differences from 319 to 198 without dead locals, inserted words or guards.
+- [x] Retain 37 complete fitting forms and four fitted profiles; add a named full-body `--fit --form` screen without replacing the fourteen original recovery forms.
+- [x] Pass 21 tests in 148.226s, requalifying original and fitted bodies: each has 988 guest, 512 cursor/count, 1,086 native32, 22 fault gates, eight negatives and 256 connected cases.
+- [x] Pass 64 guest aliases / 128 executions and four independent symbol sets / 768 executions through separately GNU-linked original and fitted bodies; preserve all sixteen symbolic uses and ordered public outputs.
+- [x] Preserve 22 copied-owner neighbors/pools/relocations/four diagnostics; real padder accepts 1,620 bytes without padding or new guards, not proof of a byte match.
+- [x] Verify complete installed ELF/source/assembly/Makefile/progress/11,275 guards unchanged; no conversion credit or root README change.
+- [x] Pass 14 shared tests, both tools checks and CLI help; mirror only two reviewed files after prior-hash checks, retaining the exact older standalone dirty status/history.
+- [x] Bank tools 9d466ca first, then documentation/exact parent pin per "Keep commited"; no push, host/runtime/Release change or forced graph overwrite.
+- [ ] Fit this same body's GP roles and instruction schedule; qualify raw/retail fault prefixes and any closed transformation before installation/rebuild/progress credit. Do not introduce a broad 198-word guard batch.
+- [ ] Restore actual linked setup/dispatcher/combiner and qualify alternate branches/hardware/gameplay separately; repair reduced-corpus Graphify refresh without force.
+
 ## Record Ring Renderer Recovery - 2026-10-08
 
 [Note 1139](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md):
@@ -12,7 +27,7 @@
 - [x] Verify complete installed ELF identity and all source/layout/progress/11,275 guards unchanged; keep README aggregates unchanged and detailed recovery in its own note.
 - [x] Pass 14 shared tests, both tools checks and CLI help; mirror two new reviewed files without overwriting existing older standalone work.
 - [x] Bank mounted tools a22175b first and parent documentation/exact pin second per "Keep commited"; no push or older standalone reset.
-- [ ] Fit this same target's 405-word/frame0xD0 extent and private/saved lifetimes, qualify aliases/fault prefixes/independent rebases and any closed schedule before installation.
+- [x] Fit this same target's 405-word/frame0xD0 extent and private/saved slots, and qualify guest aliases/independent rebases in [Note 1140](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md); GP roles/schedule and fault prefixes remain open before installation.
 - [ ] Restore linked dispatcher/combiner separately; qualify real setup/deep chain, alternate branches and hardware/gameplay. Preserve reduced-corpus graph refusal and frozen OGL Release.
 
 ## Record Ring Shaping Conversion - 2026-10-08

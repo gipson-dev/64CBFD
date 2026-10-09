@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-08 Record Ring Renderer Frame Fitting
+
+[Note 1140](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md):
+Fit complete uninstalled `func_151D80C4`: 405 words/frame0xD0, retail private/
+saved slots, 198 raw differences versus previous 319. 21 tests pass in
+148.226s; requalify both bodies plus 64 guest aliases and 768 independent
+rebased executions. Preserve 22 neighbors and all installed bodies/data/
+source/progress/11,275 guards; no conversion credit or README change.
+Tools 9d466ca first, exact parent pin second; older dirty mirror preserved,
+no push. Same target remains active for GP roles/schedule and fault-prefix/
+closed-transform qualification before installation. Wider setup/graph gates open.
+
 ## 2026-10-08 Record Ring Renderer Recovery
 
 [Note 1139](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md):

@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-08 ([Note 1140](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md)):
+Fit complete uninstalled `func_151D80C4` to 405 words/frame0xD0 and retail
+private/saved slots; raw differences 319 -> 198. 21 tests pass in 148.226s,
+requalifying both complete bodies plus 64 aliases and 768 independent
+rebased executions. Preserve 22 neighbors and all installed bodies/data/
+source/progress/11,275 guards. Tools 9d466ca first, exact parent pin second;
+older dirty mirror preserved, no push or README change. Next same target:
+GP allocation/schedule and fault-prefix/closed-transform qualification,
+then installation gates; no broad 198-word normalization batch.
+
 2026-10-08 ([Note 1139](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md)):
 Recover complete uninstalled `func_151D80C4`: retail 405 words/frame0xD0,
 natural C 405/frame0xE0/319 differences. Nine tests pass in 63.057s:

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a22175b; tools are committed before the source pin.
+  checkpoint pins tools 9d466ca; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game recovery:
+Latest Game fitting:
+[Note 1140](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md).
+Same complete uninstalled `func_151D80C4`: C now matches the 405-word/frame
+0xD0 extent and retail private/saved slots; raw differences fall 319 -> 198.
+21 tests pass in 148.226s, requalifying original and fitted bodies, plus
+64 guest aliases and 768 independently linked rebased executions. Preserve
+22 neighbors and all installed bodies/data/source/progress/11,275 guards.
+Tools 9d466ca banked first, exact parent pin second; older dirty mirror
+preserved, no push or README change. Next fit this same body's GP roles and
+schedule, then qualify fault prefixes/closed transformations before installing.
+Linked setup, graph repair and hardware/gameplay remain open.
+
+Previous Game recovery:
 [Note 1139](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md).
 Complete uninstalled `func_151D80C4` ribbon recovery: retail 405 words/frame
 0xD0; natural C 405/frame0xE0/319 raw differences. Nine tests pass in

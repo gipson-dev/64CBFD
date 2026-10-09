@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record ring renderer frame fitting](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md):
+  Same complete uninstalled `func_151D80C4`, now 405 words/frame0xD0 and
+  retail private/saved slots; raw differences 319 -> 198. 21 tests pass,
+  including 64 guest aliases and 768 independent rebased executions.
+  Preserve all installed bodies/data/progress/guards and 22 neighbors.
+  Tools 9d466ca first, exact parent pin second; older mirror preserved,
+  no push or root README change. Next fit GP roles/schedule and qualify
+  fault prefixes/closed transformations before installing; wider gates open.
+
 - [Latest record ring renderer recovery](WORKING_NOTES/1139-game-record-ring-renderer-recovery-20261008.md):
   Complete uninstalled `func_151D80C4`, retail 405 words/frame0xD0;
   natural C 405/frame0xE0/319 differences. Nine tests pass; 1,086 native32
