@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Owner State Callback Direct Match
+
+[Note 1171](WORKING_NOTES/1171-game-owner-state-callback-direct-match-20261009.md):
+func_151B2100 emits all67 words directly, frame0x38/no guards. Correct void
+callee contracts restore two false C helpers to complete retail assembly.
+Only three code slots/sizes change; preserve all symbols' meaning, allowing
+verified symbol/string order only. Guest21,552/native32 150,528 and actual
+registered dispatcher qualify; Game2,737/4,814 exact. Converted totals fall
+by two false C rows/1,544 bytes. Next genuine210-word func_151B2348 recovery.
+
 ## 2026-10-09 Owner Descriptor Constructor Direct Match
 
 [Note 1170](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md):

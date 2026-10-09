@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0353bcb; tools are committed before the consumer pin.
+  checkpoint pins tools d6552d0; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner state callback match:
+[Note 1171](WORKING_NOTES/1171-game-owner-state-callback-direct-match-20261009.md).
+func_151B2100 emits all67 words directly, frame0x38/four relocations/no guards.
+Ten installed tests pass64.965s, zero skips; tools d6552d0 is banked first.
+Correct void callee contracts require removing two false zero-return C bodies:
+func_151B2348/151B2690 are restored as complete210/176-word retail assembly,
+not new C matches. Guest21,552/native32 150,528, actual classifier/cleanup96
+and registered-dispatcher672 cases qualify lazy gates and callee mutations.
+Only three reviewed code slots/sizes change; symbol/string order may change,
+but all20,318 symbols retain meaning except the three intended sizes.
+Protected data/guards unchanged; exactly two C-to-ASM progress rows.
+Game exact2,737/4,814 (56.86%), total3,410/5,487 (62.15%), zero drift,
+2,077 differences. Converted5,487/6,042,85.91% bytes; Game4,814/5,321,85.26%.
+Next recover genuine210-word func_151B2348; renderer remains pending.
 
 Latest owner descriptor constructor match:
 [Note 1170](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md).

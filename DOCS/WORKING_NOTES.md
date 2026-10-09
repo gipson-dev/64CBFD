@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1171](WORKING_NOTES/1171-game-owner-state-callback-direct-match-20261009.md)):
+Install complete67-word func_151B2100 directly, frame0x38/no guards; typed
+void contracts restore two false C helpers as original210/176-word assembly.
+Guest21,552/native32 150,528/actual classifier-cleanup96/dispatcher672 qualify
+mutation and lazy gates. Only three code slots/sizes and verified symbol order
+change. Game2,737/4,814 exact; next210-word func_151B2348 semantic recovery.
+
 2026-10-09 ([Note 1170](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md)):
 Install complete40-word func_151B2060 directly, frame0x50/no guards. Eight
 tests pass in51.065s:6,146 guest,7,680 native32,96 rebases and60 connected

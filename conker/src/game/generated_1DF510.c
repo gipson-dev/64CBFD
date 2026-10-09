@@ -15,6 +15,11 @@ u8 *func_15083E90(s32);
 u8 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
 void *memcpy(void *, const void *, u32);
 
+s32 func_151B22F4(u8 *);
+void func_151B222C(u8 *);
+void func_151B2348(u8 *);
+void func_151B2690(u8 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/1DF510.s. */
 
 void func_151B222C(u8 *);
@@ -38,8 +43,28 @@ void func_151B2060(u8 *owner) {
     }
 }
 
-s32 func_151B2100() {
-    return 0;
+void func_151B2100(u8 *actor) {
+    u8 *first = *(u8 **)(actor + 0x28);
+    u8 *second = *(u8 **)(actor + 0x30);
+    u8 *pair = actor + 0x28;
+    u8 previous;
+
+    if (*(s32 *)first == 0 || first[4] == 255 || pair[4] != first[0x3B] ||
+        *(s32 *)second == 0 || second[4] == 255 || pair[12] != second[0x3B]) {
+        *(s16 *)(actor + 0xE) = -1;
+    } else {
+        previous = pair[13];
+        pair[13] = func_151B22F4(actor);
+        if (previous != pair[13]) {
+            func_151B222C(actor);
+            if (pair[13] == 1) {
+                func_151B2348(actor);
+            }
+            if (pair[13] == 2 || pair[13] == 0) {
+                func_151B2690(actor);
+            }
+        }
+    }
 }
 
 void func_151B220C(u8 *arg0) {
@@ -87,13 +112,9 @@ s32 func_151B22F4(u8 *arg0) {
     return 2;
 }
 
-s32 func_151B2348() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1DF510/func_151B2348.s")
 
-s32 func_151B2690() {
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1DF510/func_151B2690.s")
 
 void func_151B2950(u8 *arg0) {
     u8 *temp_v0 = *(u8 **)(arg0 + 0x178);

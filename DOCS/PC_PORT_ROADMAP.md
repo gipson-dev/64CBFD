@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Owner State Callback Direct Match - 2026-10-09
+
+[Note 1171](WORKING_NOTES/1171-game-owner-state-callback-direct-match-20261009.md):
+
+- [x] Recover complete67-word func_151B2100 lazy endpoint validation, signed invalidation and byte-state capture/reloads across mutations.
+- [x] Match directly under existing O2/g3, frame0x38/four relocations/no guards by correcting the actual void callee contracts.
+- [x] Restore false zero-return helpers2348/2690 to complete210/176-word original assembly; explicitly remove two false C conversion rows, not award C matching credit.
+- [x] Qualify21,552 guest/150,528 native32,96 actual classifier/cleanup and672 registered45-word dispatcher cases, faults, negatives and rebases.
+- [x] Preserve15 other owner routines, pools/relative relocations/four existing warnings; actual padder accepts all three intended changes.
+- [x] Audit only three reviewed code slots/sizes and symbol/string order, with all20,318 symbol meanings preserved except intended sizes; protected Game data/guards unchanged.
+- [x] Refresh aggregate README rows:total3,410/5,487 exact/Game2,737/4,814; converted totals5,487/6,042 and85.91% bytes reflect two removed false C bodies.
+- [ ] Recover semantic C for210-word func_151B2348, packet layouts/holes/reuse, actual151B30B0 ABI, failed allocations and callee mutation.
+- [ ] Recover176-word func_151B2690 separately; full helper-chain/hardware/gameplay and ribbon renderer remain open.
+
 ## Owner Descriptor Constructor Direct Match - 2026-10-09
 
 [Note 1170](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md):
@@ -10,7 +24,7 @@
 - [x] Preserve17 owner neighbors/four existing Warning712 messages, actual padder acceptance and four independent original/candidate symbol sets.
 - [x] Whole-ELF audit permits only target160-byte slot/st_size12->160; guards/progress and189,088 protected Game data bytes unchanged.
 - [x] Refresh README aggregates only:Game2,736/4,816 exact, total3,409/5,489, zero drift and2,080 differences; no conversion credit.
-- [ ] Recover full67-word func_151B2100 descriptor validation/state-transition callback, lazy endpoint gates, state capture/reloads and callee-mutation paths.
+- [x] Recover full67-word func_151B2100 descriptor validation/state-transition callback, lazy endpoint gates, state capture/reloads and callee-mutation paths in Note1171.
 - [ ] Keep common allocator/resource/SDK/hardware integration and complete ribbon renderer as separate open gates.
 
 ## Endpoint Pair Callback Direct Match - 2026-10-09

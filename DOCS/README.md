@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Owner state callback direct match](WORKING_NOTES/1171-game-owner-state-callback-direct-match-20261009.md):
+  Restore67-word callback directly/no guards and two falsely typed helpers
+  as original assembly. Game2,737/4,814 exact; two fewer C conversion rows.
+  Actual classifier/cleanup and registered dispatcher qualify mutation order;
+  next recover210-word func_151B2348 as semantic C.
 - [Owner descriptor constructor direct match](WORKING_NOTES/1170-game-owner-descriptor-constructor-direct-match-20261009.md):
   Restore all40 words directly, no guards; eight installed tests qualify
   raw holes/capture order, native32, connected caller/wrapper and whole ELF.
