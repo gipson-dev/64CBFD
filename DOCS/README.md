@@ -54,7 +54,16 @@ confirmed.
 
 ## Planning and history
 
-- [Latest payload callback update match](WORKING_NOTES/1154-game-payload-callback-update-match-20261009.md):
+- [Latest wrapped record step match](WORKING_NOTES/1155-game-wrapped-record-step-match-20261009.md):
+  Convert complete GLOBAL_ASM `func_15148AF4` to frameless C44, linked
+  exact with one commutative-add guard; raw C has one difference. Full ELF
+  stays byte-identical, one conversion row changes. Eight focused tests,
+  native32, live time alias and complete timer/payload/leaf connection pass.
+  Totals 5,486 converted/3,403 exact, zero drift. Tools 919a0c1 first,
+  exact parent pin second, no push. Next C70 callback `func_15148DE0`;
+  wider callback/hardware/gameplay/graph gates remain open.
+
+- [Previous payload callback update match](WORKING_NOTES/1154-game-payload-callback-update-match-20261009.md):
   Convert complete GLOBAL_ASM `func_15147EB8` to C97, linked exact with
   25 frame/return guards; raw is 25 differences. Full ELF byte-identical,
   one conversion row changes. Nine final tests/native32/connected timer

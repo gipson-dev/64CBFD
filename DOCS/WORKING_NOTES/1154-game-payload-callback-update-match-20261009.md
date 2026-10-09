@@ -193,6 +193,12 @@ change; the parent hook is checked separately. Reduced-corpus repair is open.
 
 ## Next Work
 
+Completed in [Note 1155](1155-game-wrapped-record-step-match-20261009.md):
+the 44-word callback is now complete semantic C with one commutative-add
+guard, and its complete timer/payload/leaf chain is qualified. The ELF stays
+byte-identical. The historical next-target description below records this
+note's original handoff, not an outstanding conversion.
+
 Recover **func_15148AF4**, first-stage table **D_8008A3E0[2]**, still
 GLOBAL_ASM in this owner: VA **0x15148AF4..0x15148BA4**, ROM
 **0x175FA4..0x176054**, **44 words / 176 bytes**, frameless. Its complete

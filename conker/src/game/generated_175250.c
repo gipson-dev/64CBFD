@@ -8,6 +8,11 @@ extern s32 (*D_8008A3E0[])(u8 *);
 extern s32 (*D_8008A3F8[])(u8 *);
 extern s32 (*D_8008A42C[])(u8 *);
 
+typedef struct {
+    f32 x, y, z, velocityY, reserved;
+} MotionRecord15148AF4;
+extern f32 D_800BE9A4;
+
 /* Non-matching placeholders for the text-only asm slice asm/175250.s. */
 
 s32 func_151478F4(s32 arg0);
@@ -89,7 +94,25 @@ s32 func_15147EB8(u8 *actor) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_175250/func_151488C4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_175250/func_15148AF4.s")
+s32 func_15148AF4(u8 *actor) {
+    MotionRecord15148AF4 *records = *(MotionRecord15148AF4 **)(actor + 0x94);
+    u8 *payload = *(u8 **)(actor + 0x98);
+    s32 index = *(s8 *)(actor + 0x2E);
+    MotionRecord15148AF4 *record;
+
+    do {
+        index--;
+        if (index < 0) {
+            index = actor[0x25] - 1;
+        }
+        record = records + index;
+        record->velocityY -= *(f32 *)(payload + 0x10) * D_800BE9A4;
+        record->x += *(f32 *)(payload + 0x04) * D_800BE9A4;
+        record->y += record->velocityY * D_800BE9A4;
+        record->z += *(f32 *)(payload + 0x0C) * D_800BE9A4;
+    } while (index != *(s8 *)(actor + 0x2D));
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_175250/func_15148BA4.s")
 

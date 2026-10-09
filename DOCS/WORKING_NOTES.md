@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-09 ([Note 1155](WORKING_NOTES/1155-game-wrapped-record-step-match-20261009.md)):
+Convert complete GLOBAL_ASM `func_15148AF4` to frameless C44, linked exact
+with one commutative pointer-add guard; not direct raw matching. Signed
+wrap/end bytes, unsigned count, ordered float updates and live time loads
+are recovered without inventing empty/cycle exits. All ELF bytes/all 6,058
+slots stay unchanged; one conversion row and one appended guard, total
+11,507. Eight focused tests/native32/actual complete timer-payload-leaf
+chain, 35 shared tests and both tools checks pass. Totals 5,486 converted /
+3,403 exact, Game 4,813/2,730, zero drift and 2,083 different.
+Tools 919a0c1 first, exact parent pin second, no push or older mirror reset.
+Next full 70-word `func_15148DE0`; wider acceptance remains open.
+
 2026-10-09 ([Note 1154](WORKING_NOTES/1154-game-payload-callback-update-match-20261009.md)):
 Convert complete GLOBAL_ASM `func_15147EB8` to C97, linked exact with 25
 closed frame/boolean-return guards; not direct raw matching. Entire ELF

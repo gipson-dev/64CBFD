@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-09 Wrapped Record Step Match
+
+[Note 1155](WORKING_NOTES/1155-game-wrapped-record-step-match-20261009.md):
+Convert complete GLOBAL_ASM `func_15148AF4` to frameless C44, linked exact
+with one commutative pointer-add guard; raw C remains one difference.
+Preserve signed wrap/end bytes, unsigned count, live time reloads, ordered
+float updates and zero-count/cyclic behavior. Eight focused tests, 66,176
+native32 cases, nine effective negatives, complete 100+97+44-word dispatch,
+35 shared tests and both tools checks pass. Entire ELF/all 6,058 slots are
+byte-identical. One conversion row changes and one guard appends, total
+11,507. Fresh totals 5,486 converted/3,403 exact, Game 4,813/2,730;
+zero drift and 2,083 different. Bank tools 919a0c1 first, exact parent
+pin second, no push/older mirror reset. Next `func_15148DE0`, 70 words;
+other callbacks/hardware/gameplay/graph corpus repair remain open.
+
 ## 2026-10-09 Payload Callback Update Match
 
 [Note 1154](WORKING_NOTES/1154-game-payload-callback-update-match-20261009.md):

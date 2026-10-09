@@ -11505,3 +11505,4 @@ generated_175250,func_15147EB8,0x168,0x2CC20001,0x00051600,-,-,Normalize closed 
 generated_175250,func_15147EB8,0x16C,0x00025600,0x00025603,-,-,Normalize closed payload callback frame and boolean return lifetime,,,false
 generated_175250,func_15147EB8,0x170,0x000A1603,0x01401025,-,-,Normalize closed payload callback frame and boolean return lifetime,,,false
 generated_175250,func_15147EB8,0x178,0x27BD0020,0x27BD0030,-,-,Normalize closed payload callback frame and boolean return lifetime,,,false
+generated_175250,func_15148AF4,0x40,0x01C23021,0x004E3021,-,-,Normalize commutative wrapped record pointer addition,,,false

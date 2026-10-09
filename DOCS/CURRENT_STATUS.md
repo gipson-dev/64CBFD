@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a2e5ea7; tools are committed before the source pin.
+  checkpoint pins tools 919a0c1; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game payload callback update match:
+Latest Game wrapped record step match:
+[Note 1155](WORKING_NOTES/1155-game-wrapped-record-step-match-20261009.md).
+Convert GLOBAL_ASM `func_15148AF4` to complete 44-word frameless C,
+linked exact with one commutative pointer-add guard; raw C has one
+difference, not a direct compiler match. Recover backwards wrapped records,
+signed start/endpoint, unsigned live count and four ordered float updates
+with live time reloads. Entire rebuilt ELF/all 6,058 slots are byte-identical;
+one asm -> c conversion row changes, one guard appends, total 11,507.
+Eight focused tests cover 66,176 native32 cases, all 44 words, nine effective
+negatives and the actual complete 100+97+44-word dispatch chain. Thirty-five
+shared tests and both tools checks pass. Fresh totals: 5,486 converted /
+3,403 exact, Game 4,813 / 2,730; zero drift, 2,083 different.
+Tools 919a0c1 first, exact parent pin second, no push or older mirror reset.
+Next complete 70-word GLOBAL_ASM phase-shaping callback `func_15148DE0`.
+Other callbacks/cleanup/upstream/hardware/gameplay and graph corpus gates
+remain open. Root README contains aggregate rows only.
+
+Previous Game payload callback update match:
 [Note 1154](WORKING_NOTES/1154-game-payload-callback-update-match-20261009.md).
 Convert GLOBAL_ASM `func_15147EB8` to complete 97-word C, linked exact with
 25 closed frame/return-lifetime guards; raw frame0x20 has 25 differences,
