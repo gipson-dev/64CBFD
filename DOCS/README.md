@@ -54,6 +54,16 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record ring renderer setup fitting](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md):
+  Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0, raw
+  differences 198 -> 185 and retail mode-input order restored. 22 focused
+  tests pass, including 432 whole-entry public prefixes, 668 early fault
+  pairs and 16 output-equivalent mode-order negatives. Use SETUP_FITTED;
+  GP-only +0x28C is part of the factor block, not a proven rename.
+  Tools b0f5e40 first, exact parent pin second; installed state/README
+  aggregates unchanged, older mirror preserved, no push. CFG/private-state/
+  whole-body GP mapping remain gates before installation; wider gates open.
+
 - [Latest record ring renderer scheduling audit](WORKING_NOTES/1141-game-record-ring-renderer-scheduling-audit-20261008.md):
   Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0 and 198
   raw differences after 26 full forms. 25 tests pass, including 408 bounded

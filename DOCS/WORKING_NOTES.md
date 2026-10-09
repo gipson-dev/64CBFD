@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-08 ([Note 1142](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md)):
+Fit the same complete uninstalled `func_151D80C4`: 405 words/frame0xD0,
+raw differences 198 -> 185, retail mode read order and unhoisted default.
+22 focused tests pass in 134.298s, including 432 whole-entry public prefixes,
+668 early fault pairs, 408 final-lookahead pairs and 16 effective mode-order
+negatives. 176 GP-only / nine other is not mapping proof; +0x28C belongs to
+the reordered factor block. All installed bodies/data/source/progress/11,275
+guards and README unchanged. Tools b0f5e40 first, exact parent pin second;
+older mirror preserved, no push. SETUP_FITTED next for factor CFG/whole-body
+GP/private mapping before installation; wider gates remain open.
+
 2026-10-08 ([Note 1141](WORKING_NOTES/1141-game-record-ring-renderer-scheduling-audit-20261008.md)):
 Audit the same complete uninstalled `func_151D80C4`: 26 full forms, still
 405 words/frame0xD0/198 raw differences. 167 GP-field-only / 31 other is

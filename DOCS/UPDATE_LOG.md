@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-08 Record Ring Renderer Setup Fitting
+
+[Note 1142](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md):
+Fit the same complete uninstalled `func_151D80C4`, 405 words/frame0xD0;
+raw differences 198 -> 185, retail mode-input order restored and default
+factor no longer hoisted. 22 focused tests pass in 134.298s, including 432
+whole-entry public prefixes, 668 early fault pairs, 408 final-lookahead pairs
+and 16 effective mode-order negatives. 176 GP-only / nine other is syntactic;
++0x28C also belongs to the factor-block reorder. All installed bodies/data/
+source/progress/11,275 guards and README unchanged. Tools b0f5e40 first,
+exact parent pin second; older mirror preserved, no push. SETUP_FITTED next
+for factor CFG and whole-body GP/private mapping before installation.
+Linked setup, graph repair and hardware/gameplay stay open.
+
 ## 2026-10-08 Record Ring Renderer Scheduling Audit
 
 [Note 1141](WORKING_NOTES/1141-game-record-ring-renderer-scheduling-audit-20261008.md):

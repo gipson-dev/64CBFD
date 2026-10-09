@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ring Renderer Setup Fitting - 2026-10-08
+
+[Note 1142](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md):
+
+- [x] Fit the same full 405-word/frame0xD0 `func_151D80C4`: raw differences 198 -> 185, retail mode-input order restored and default-factor hoisting removed, with private/saved slots and loop/memcpy offsets unchanged.
+- [x] Preserve old recovery/fitting/scheduling controls; add fourteen complete setup forms and four new-body profiles, with SETUP_FITTED as the next baseline, not an installed conversion.
+- [x] Pass 22 focused tests in 134.298s: sixteen new complete-body tests, four older scheduling tests and two original/fitted baseline checks; preserve native32, aliases, independent rebases, connections and 22 copied-owner neighbors.
+- [x] Qualify 432 whole-entry public prefix cases and complete private memory at completed exit; 668 early public fault-prefix pairs and 408 post-MODE final-lookahead pairs pass, with private fault state/hardware/portable C faults explicitly excluded.
+- [x] Reject sixteen effective mode-load-order prefix witnesses that ordinary outputs and the same 185-word difference count miss.
+- [x] Partition 176 GP-field-only / nine other differences; identify GP-only +0x28C as part of the eight-word factor-block reorder, not a standalone rename.
+- [x] Preserve installed bodies/data/source/progress/11,275 guards and aggregate-only README; pass shared/both tools checks and reviewed mirror checks, banking tools b0f5e40 first and exact parent pin second without push or older standalone reset.
+- [ ] Fit or prove the closed factor-arm/predicate/delay-slot CFG transformation, and consistent whole-body GP/saved/private-state mapping. Requalify before installation/rebuild/progress credit; no broad 185-word normalization batch.
+- [ ] Restore linked setup/dispatcher/combiner and qualify hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Ring Renderer Scheduling Audit - 2026-10-08
 
 [Note 1141](WORKING_NOTES/1141-game-record-ring-renderer-scheduling-audit-20261008.md):

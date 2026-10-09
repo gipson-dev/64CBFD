@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 1f3f5be; tools are committed before the source pin.
+  checkpoint pins tools b0f5e40; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game scheduling audit:
+Latest Game setup fitting:
+[Note 1142](WORKING_NOTES/1142-game-record-ring-renderer-setup-fitting-20261008.md).
+Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0; raw differences
+198 -> 185, mode-input order restored and default-factor hoisting removed.
+Use SETUP_FITTED next. 22 focused tests pass in 134.298s: new complete-body
+qualification, 432 whole-entry public prefix cases, 668 early fault pairs,
+408 final-lookahead pairs and 16 effective mode-order negatives. 176 GP-only /
+nine other is not a proven remap; GP-only +0x28C belongs to the factor CFG block.
+All installed bodies/data/source/progress/11,275 guards and README unchanged.
+Tools b0f5e40 first, exact parent pin second; older mirror preserved, no push.
+Next factor-arm CFG and consistent GP/private-state mapping before installation;
+linked setup, reduced-corpus graph repair and hardware/gameplay stay open.
+
+Previous Game scheduling audit:
 [Note 1141](WORKING_NOTES/1141-game-record-ring-renderer-scheduling-audit-20261008.md).
 Same complete uninstalled `func_151D80C4`, still 405 words/frame0xD0 and
 198 raw differences after 26 full forms. Partition: 167 GP-field-only,
