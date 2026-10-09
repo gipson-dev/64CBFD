@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 799d9be; tools are committed before the consumer pin.
+  checkpoint pins tools df3bbd1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current renderer lifetime qualification:
+Current renderer retail-frame/save-slot qualification:
+[Note 1162](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md).
+Two complete forms now match retail0x120 frame, four GPR save slots and five
+FP pairs: selected547/463 raw differences, outer545/512. Eleven tests pass
+in221.346s, including804 guest,536 native32 and128 nonlinear guest/native32
+cases per form. Safe last-output scale reuse is qualified; early overwrite
+still fails. Neither is exact or installed. Next resolve payload/records/
+view register roles and private stack slots; all production bytes/credit
+stay unchanged. Tools df3bbd1 first, exact parent pin second.
+
+Previous renderer lifetime qualification:
 [Note 1161](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md).
 Ten tests pass in220.493s for complete typed547/frame0x130/440 differences
 and stride545/frame0x120/526 differences forms. Each receives804 guest,

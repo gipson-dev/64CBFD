@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Current camera ribbon retail frame/save slots](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md):
+  Two complete same-frame/save-slot forms and eleven passing tests; safe
+  last-output scale reuse. Register roles/private layout/raw matching open.
 - [Current camera ribbon lifetime qualification](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md):
   Ten passing tests, typed/stride full bodies and128 nonlinear guest/native32
   cases per form; three unsafe decompiler negatives. Neither installed/exact.

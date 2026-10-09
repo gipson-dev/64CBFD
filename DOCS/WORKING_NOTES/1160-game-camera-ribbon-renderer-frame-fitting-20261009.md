@@ -51,11 +51,13 @@ The actual padder accepts both copied-owner objects, unlike the prior
 oversized selected form; this is slot-fit evidence only. Neither candidate
 is byte-exact or installed, and no padding-based recovery is claimed.
 
-Exclude scale/offset reuse mappings where the scale variable is one of the
-three output targets: the first multiply overwrites the scale needed by
-later multiplies. A compiled negative control demonstrates changed public
-vertex output on ordinary finite geometry. Invalid earlier screen results
-are not accepted candidates or evidence of correctness.
+Exclude scale/offset reuse mappings that overwrite scale before the
+remaining multiplies consume it. The earlier first-output overwrite is
+invalid: its compiled negative changes public vertex output on finite
+geometry. [Note 1162](1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md)
+later qualifies safe overlap with the last output only, after all normal
+inputs are computed. The blanket exclusion of all overlap was too broad;
+invalid earlier screen results remain rejected.
 
 ## Fresh Qualification
 

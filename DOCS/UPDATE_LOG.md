@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Camera Ribbon Retail Frame And Save Slots
+
+[Note 1162](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md):
+Two complete forms now reach retail0x120 frame and all four GPR/five FP save
+slots: selected547/463 raw differences, outer545/512. Eleven tests pass
+in221.346s, with128 nonlinear guest/native32 cases per form. Safe last-output
+scale reuse is qualified; refine the blanket overlap exclusion, retaining
+the early-overwrite negative. Exact register roles/private layout remain
+open; production bytes/credit unchanged. Tools df3bbd1 first, exact pin second.
+
 ## 2026-10-09 Camera Ribbon Lifetime Qualification
 
 [Note 1161](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md):

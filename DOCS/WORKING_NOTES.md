@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1162](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md)):
+Qualify two complete same0x120-frame/four-GPR/five-FP-save-slot forms,
+selected547/463 raw differences and outer545/512, with eleven tests
+in221.346s. Safe last-output scale reuse and typed private-layout evidence
+advance fitting; role/stack/schedule differences remain, neither installed
+or exact. Tools df3bbd1 first; preserve production credit and older checkout.
+
 2026-10-09 ([Note 1161](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md)):
 Qualify complete typed547/frame0x130/440 and stride545/frame0x120/526
 renderer forms with ten tests in220.493s, including128 nonlinear guest/native32

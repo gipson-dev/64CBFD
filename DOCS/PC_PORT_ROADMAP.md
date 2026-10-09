@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Camera Ribbon Retail Frame And Save Slots - 2026-10-09
+
+[Note 1162](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md):
+
+- [x] Reach retail0x120 frame and all four GPR/five FP save slots in two complete forms: selected547/463 raw differences and outer545/512. Retain role/schedule mismatches; neither installed/exact.
+- [x] Pass eleven tests in221.346s: each form804 guest cases,92 mutations,94 missing-byte pairs,five aliases,two cyclic prefixes,536 native32 and128 additional nonlinear guest/native32 cases.
+- [x] Preserve ten owner neighbors/pools/relative relocations/zero diagnostics, actual dispatcher16 cases/32 executions and selected rejection versus outer padder acceptance.
+- [x] Qualify safe last-output scale reuse and an effective early-overwrite negative; refine Note1160's blanket overlap exclusion without changing its failing receipt.
+- [x] Screen61 complete forms/46 instruction streams; verify native32 typed private-layout offsets and retain unresolved raw decompiler output without installation.
+- [x] Bank tools df3bbd1 before exact parent pin; preserve production bytes/credit, root README and independently dirty older checkout.
+- [ ] Recover original S2 payload/S3 context/record spills and exact private color/position/origin/sync/cursor slots, then full raw schedule.
+- [ ] Qualify independent rebases, remaining alias/mutation domains and installation, then whole-ELF/progress audit. Hardware/gameplay/callees remain separate gates.
+
 ## Camera Ribbon Lifetime Qualification - 2026-10-09
 
 [Note 1161](WORKING_NOTES/1161-game-camera-ribbon-renderer-lifetime-qualification-20261009.md):
