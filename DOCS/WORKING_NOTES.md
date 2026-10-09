@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-08 ([Note 1141](WORKING_NOTES/1141-game-record-ring-renderer-scheduling-audit-20261008.md)):
+Audit the same complete uninstalled `func_151D80C4`: 26 full forms, still
+405 words/frame0xD0/198 raw differences. 167 GP-field-only / 31 other is
+syntactic, not a proven remap. 25 tests pass in 200.736s, including 408
+post-MODE final-lookahead prefix pairs and four ordinary-output-passing
+early-exit negative witnesses. All installed bodies/data/source/progress/
+11,275 guards and README aggregates unchanged. Tools 1f3f5be first, exact parent pin second;
+older mirror preserved, no push. Next factor/mode-input schedule, full-entry/
+private fault state and closed mapping before installation; wider gates open.
+
 2026-10-08 ([Note 1140](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md)):
 Fit complete uninstalled `func_151D80C4` to 405 words/frame0xD0 and retail
 private/saved slots; raw differences 319 -> 198. 21 tests pass in 148.226s,

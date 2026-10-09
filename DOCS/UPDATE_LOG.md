@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-08 Record Ring Renderer Scheduling Audit
+
+[Note 1141](WORKING_NOTES/1141-game-record-ring-renderer-scheduling-audit-20261008.md):
+Screen 26 complete forms of uninstalled `func_151D80C4`; baseline remains
+405 words/frame0xD0/198 raw differences. Partition 167 GP-field-only / 31
+other without proving a remap. 25 tests pass in 200.736s, including 408
+post-MODE final-lookahead fault-prefix pairs and four effective early-exit
+witnesses that ordinary outputs miss. Installed bodies/data/source/progress/
+11,275 guards and README unchanged. Tools 1f3f5be first, exact parent pin
+second; older dirty mirror preserved, no push. Same target next for factor
+and mode-input schedule; full-entry/private fault state and closed mapping
+remain installation gates. Linked setup, graph repair and gameplay stay open.
+
 ## 2026-10-08 Record Ring Renderer Frame Fitting
 
 [Note 1140](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md):

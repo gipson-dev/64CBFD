@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record ring renderer scheduling audit](WORKING_NOTES/1141-game-record-ring-renderer-scheduling-audit-20261008.md):
+  Same complete uninstalled `func_151D80C4`, 405 words/frame0xD0 and 198
+  raw differences after 26 full forms. 25 tests pass, including 408 bounded
+  post-MODE lookahead fault-prefix pairs and an ordinary-output-passing
+  early-exit negative. 167 GP-only / 31 other is not a proven remap.
+  Tools 1f3f5be first, exact parent pin second; installed state and README
+  aggregates unchanged, older mirror preserved, no push. Next factor/setup
+  schedule, full-entry/private fault state and closed mapping; wider gates open.
+
 - [Latest record ring renderer frame fitting](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md):
   Same complete uninstalled `func_151D80C4`, now 405 words/frame0xD0 and
   retail private/saved slots; raw differences 319 -> 198. 21 tests pass,

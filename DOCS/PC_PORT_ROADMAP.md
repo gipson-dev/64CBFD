@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ring Renderer Scheduling Audit - 2026-10-08
+
+[Note 1141](WORKING_NOTES/1141-game-record-ring-renderer-scheduling-audit-20261008.md):
+
+- [x] Screen 26 complete scheduling forms / 364 bounded cases without changing FITTED's 405-word/frame0xD0 baseline or installing it; no improvement below 198 raw differences.
+- [x] Partition raw differences into 167 GP-field-only and 31 other words; record save-slot, mode-input load-order and default-factor schedule boundaries, without claiming a proven register mapping.
+- [x] Qualify 408 final-lookahead fault-prefix pairs / 816 executions after MODE setup, preserving public read/write prefixes, memory and calls; explicitly exclude full-entry/private fault state and portable C faults.
+- [x] Reject a compiled early-exit negative that passes ordinary outputs in four flag modes but loses all four required final-lookahead fault witnesses.
+- [x] Pass all 25 renderer tests in 200.736s and 14 shared tests; both tools checks/CLI/mirror checks pass, preserving all installed source/data/bodies/progress/11,275 guards and 22 neighbors.
+- [x] Bank tools 1f3f5be first, then concise documentation and exact parent pin; preserve older standalone dirty work/history, aggregate-only README and graph refusal, with no push or host/Release changes.
+- [ ] Fit the same body's factor initialization and mode-input load order; qualify full-entry/private fault state and any closed GP transformation before installation/rebuild/progress credit. No broad 198-word guard batch.
+- [ ] Restore actual linked setup/dispatcher/combiner and qualify hardware/gameplay separately; repair reduced-corpus Graphify refresh without force.
+
 ## Record Ring Renderer Frame Fitting - 2026-10-08
 
 [Note 1140](WORKING_NOTES/1140-game-record-ring-renderer-frame-fitting-20261008.md):
