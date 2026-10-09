@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Owner ribbon renderer induction and FP proof](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md):
+  Complete 475-word/frame 0x148 C recovers original loop induction; 163 raw /151
+  certified FP-normalized differences remain. Fourteen tests pass, including full
+  normalized-body qualification and unsafe-map controls. Not installed/no credit.
+  Continue the same renderer's initial copy base and remaining GPR/scheduling fit.
+
 - [Owner ribbon renderer frame and slot fit](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md):
   Complete475-word/0x148-frame C, original private homes,243 real differences
   remaining. Twelve tests pass, actual owner/padder accepts slot, not installed.

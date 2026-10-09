@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Ribbon Renderer Induction And FP Proof - 2026-10-09
+
+[Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md):
+
+- [x] Recover retail byte-offset counter and two advancing point pointers directly from complete C; retain 475 words/frame 0x148 and private homes.
+- [x] Fit actual point-base and dead-tangent scale lifetimes; reduce 243 to 163 raw word differences without changing ordered geometry or writes.
+- [x] Certify the 13-word FP-field-only remap over all 1,024 nine-loop paths; reject an effective unsafe live mapping and three stale shape/induction controls. 151 differences remain after normalization.
+- [x] Pass fourteen tests, including 7,680 native32 cases, full raw/normalized guest and mutation checks, independent rebases, actual material/walker and all-word/saved-FP preservation.
+- [x] Preserve 16 owner neighbors, pools/relocations and unchanged production source/ELF/guards/progress/protected data. Bank tools 5a069ec before the parent pin; preserve older dirty work.
+- [ ] Fit the remaining initial shared copy base, GPR allocation and scheduling; certify any residual changes before guards or installation.
+- [ ] Install only after all 475 linked words and whole-owner/data qualification pass. Keep full helper/hardware/gameplay acceptance separate.
+
 ## Owner Ribbon Renderer Frame And Slot Fit - 2026-10-09
 
 [Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md):
@@ -9,7 +21,8 @@
 - [x] Pass twelve tests, including7,680 native32 cases, guest/mutations/rebases, real material/walker and all475 candidate words/12 saved FP words; reject reordered O2 command writes.
 - [x] Confirm actual owner and padder accept the1,900-byte body unchanged; preserve16 neighbors/pools/relocations and unchanged source/ELF/guards/progress/protected data.
 - [x] Commit tools1b0e633 first, preserve older dirty work and mirror only two absent authored fitting files. No README aggregate change or matching/conversion credit.
-- [ ] Fit the same renderer's initial shared copy base, loop induction and FP/GPR scheduling/allocation; certify residual closed changes before any guards or installation.
+- [x] Recover original loop induction and certify a closed FP allocation remap in [Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md).
+- [ ] Finish initial shared copy base and remaining FP/GPR scheduling/allocation before guards or installation; 163 raw /151 normalized differences remain.
 - [ ] Keep full helper/caller overflow/rollback/hardware/live rendering/gameplay acceptance separate.
 
 ## Owner Ribbon Renderer Recovery Checkpoint - 2026-10-09
@@ -22,7 +35,8 @@
 - [x] Preserve16 owner neighbors/pools/relocations, unchanged source/ELF/guards/progress and189,088 protected bytes; reject actual padder overflow, no matching/conversion credit.
 - [x] Bank tools 5a82484 first; preserve older dirty checkout and mirror only two absent authored files. Root README aggregate rows remain unchanged.
 - [x] Fit this same32C8 real declaration/lifetime workspace to475 words/frame0x148 in [Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md); actual padder accepts the slot.
-- [ ] Finish original loop induction and qualify scheduling/register fitting before installation;243 real word differences remain.
+- [x] Recover original byte-offset/two-pointer induction in [Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md).
+- [ ] Finish remaining scheduling/register fitting before installation; 163 raw /151 FP-normalized differences remain.
 - [ ] Keep full helpers/caller overflow/rollback/SDK/hardware/live rendering/gameplay acceptance separate.
 
 ## Owner Actor Update Direct Match - 2026-10-09

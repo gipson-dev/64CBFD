@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 1b0e633; tools are committed before the consumer pin.
+  checkpoint pins tools 5a069ec; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner ribbon-renderer induction and FP allocation checkpoint:
+[Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md).
+Complete func_151B32C8 retains 475 words/frame 0x148 and original private homes.
+Real point-base and dead-tangent scale lifetimes recover the original byte-offset
+loop and two advancing pointers directly from C; raw differences fall 243 to 163.
+A 13-word FP-field-only remap leaves 151 differences. Its ordered-operand proof
+covers all 1,024 paths through nine iterations and closes saved FP lifetimes.
+Fourteen tests pass in 62.407s, zero skips; full raw/native and normalized guest/
+mutation/rebase/material/walker/fault/coverage checks, effective unsafe-map controls.
+45 complete source forms pass 32 bounded contract fixtures each. Owner/padder
+accepts the raw slot unchanged; 16 neighbors, pools and relocations preserved.
+No installation, new guards or credit. Source/ELF/guards/progress/protected data
+unchanged. Continue the same renderer's initial copy base and remaining GPR/
+scheduling fit; full helper/hardware/gameplay acceptance remains separate.
 
 Latest owner ribbon-renderer frame/slot fitting checkpoint:
 [Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md).
@@ -62,8 +77,8 @@ Whole ELF changes only target slot/st_size; preserve16 neighbors,189,088
 protected bytes and byte-identical guard/conversion rows. No conversion credit.
 Game2,742/4,816 exact,total3,415/5,489,zero drift/2,074 differences.
 The next same-owner renderer func_151B32C8 is recovered and frame/slot-fit, but
-not installed; [Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md)
-records the remaining243 word differences. Full helpers/hardware/gameplay remain
+not installed; [Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md)
+records 163 raw /151 FP-normalized word differences. Full helpers/hardware/gameplay remain
 open; original connected walker is not installed C. Earlier entries are history.
 
 Earlier endpoint quad guarded C match:

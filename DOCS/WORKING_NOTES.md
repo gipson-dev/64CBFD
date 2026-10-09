@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-09 ([Note 1182](WORKING_NOTES/1182-game-owner-ribbon-renderer-induction-and-fp-proof-20261009.md)):
+Recover complete func_151B32C8's original byte-offset/two-pointer loop directly
+from C, retaining 475 words/frame 0x148/private homes. Raw differences 243 to 163;
+13 certified FP-field changes leave 151. Fourteen tests pass in 62.407s, including
+full normalized-body qualification, unsafe-map controls and all-word FP lifetime.
+45 complete source forms, all 32 bounded fixtures each pass; proof covers 1,024
+nine-loop paths. Not installed, no guards/credit, production unchanged. Tools
+5a069ec first; preserve older dirty work. Continue initial copy-base/GPR/scheduling.
+
 2026-10-09 ([Note 1181](WORKING_NOTES/1181-game-owner-ribbon-renderer-frame-and-slot-fit-20261009.md)):
 Fit full func_151B32C8 to475 words/frame0x148 and original private homes;243 real
 differences remain, down from432. Twelve tests pass55.814s, zero skips, including
