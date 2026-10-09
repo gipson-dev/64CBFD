@@ -1,5 +1,12 @@
 # Update Log
 
+## 2026-10-09 Owner Point Initializer Zero Read And Induction Audit
+
+[Note 1187](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md):
+Remove two extra public zero reads per call and qualify the complete 158-word/
+110-difference diagnostic in twelve tests. Actual padder rejects overflow; no
+production/guard/credit changes. Tools 563f37f first; direct loop control remains.
+
 ## 2026-10-09 Owner Point Initializer Frame And Private Home Fit
 
 [Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md):

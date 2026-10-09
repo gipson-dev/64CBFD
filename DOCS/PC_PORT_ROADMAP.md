@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Initializer Zero Read And Induction Audit - 2026-10-09
+
+[Note 1187](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md):
+
+- [x] Remove the extra zero-load instruction executed twice; qualify retail's 13-read public footprint/multiplicity with an effective prior-body negative.
+- [x] Retain full ten-point semantics, frame/private homes, native32/caller/alias/rebase/fault gates and 16 owner neighbors; all twelve tests pass, 135 complete controls screened.
+- [x] Reject actual padder installation of the 158-word/frame96/110-difference diagnostic; preserve earlier 157-word fit and unchanged production/progress/data/README totals.
+- [x] Commit tools 563f37f before consumer pin and preserve independent older tools work.
+- [ ] Recover the direct integer counter/end branch and 157-word slot without redundant masks or instruction synthesis; then fit closed allocation and independent scheduling.
+- [ ] Install only after complete linked qualification; hardware/FCSR/live behavior remains separate.
+
 ## Owner Point Initializer Frame And Private Home Fit - 2026-10-09
 
 [Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md):
@@ -9,7 +20,8 @@
 - [x] Pass eleven full tests, including 2,048 guest/8,192 native32 cases, original callback dispatch, aliases/negatives/faults/rebases and all-word saved-register coverage.
 - [x] Qualify exact final private-frame memory and the original write footprint in 16 cases/two stack phases; verify actual native32 field offsets and full actor/point sizes.
 - [x] Preserve 16 owner neighbors/pools/relocations, unchanged production hashes/data/guards/progress and README totals; commit tools 977010c before consumer pin, preserve older dirty work.
-- [ ] Fit integer induction/control, second-vector zero-store shape, initial FP/setup scheduling and register allocation in this complete function; 137 word differences remain.
+- [x] Remove the public zero reload and recover a separate zero cursor in the complete diagnostic in [Note 1187](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md); it is still one word too long, not installed.
+- [ ] Finish integer control/slot, scheduling and allocation. Preserve this 157-word/137-difference fit separately from Note 1187's 158-word/110-difference diagnostic.
 - [ ] Install only after every linked word plus whole owner/ELF/data/guard-history qualification pass. Full hardware/FCSR/live rendering/gameplay remains separate.
 
 ## Owner Point Initializer Recovery - 2026-10-09

@@ -1,5 +1,10 @@
 # Working Notes
 
+2026-10-09 ([Note 1187](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md)):
+Qualify removal of extra public zero reads from complete func_151B3A7C.
+Twelve tests pass; selected 158-word/frame96/110-difference diagnostic is rejected
+by actual padder. Preserve prior full-slot fit; continue direct counter/end control.
+
 2026-10-09 ([Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md)):
 Fit complete func_151B3A7C to157 words/frame0x60, SP+0x44 position and SP+0x08
 saved-FP homes using real actor fields/live locals. Raw differences143 to137.

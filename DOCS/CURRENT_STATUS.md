@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 977010c; tools are committed before the consumer pin.
+  checkpoint pins tools 563f37f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest owner point-initializer frame/private-home fitting checkpoint:
+Latest owner point-initializer zero-read/induction audit:
+[Note 1187](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md).
+Explicit second-vector stores remove two extra public reads per call; the complete
+diagnostic has 158 words/frame 0x60 and 110 differences. Twelve tests pass in
+112.575s, zero skips. Actual owner/padder rejects the one-word overflow; no
+installation/guards/credit. Keep Note 1186's 157-word fit separately. Continue
+direct counter/end control, then allocation/scheduling. Production and totals unchanged.
+
+Earlier owner point-initializer frame/private-home fitting checkpoint:
 [Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md).
 Complete func_151B3A7C now fits all 157 words/frame 0x60 and original SP+0x44
 position/SP+0x08 saved-FP homes directly from actual actor fields and live locals.

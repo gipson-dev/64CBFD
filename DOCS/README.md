@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point initializer zero-read and induction audit](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md):
+  Remove extra public zero reads; twelve tests pass. Complete 158-word diagnostic
+  is one word too long and remains uninstalled. Continue direct counter/end control.
+
 - [Owner point initializer frame and private home fit](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md):
   Complete157-word func_151B3A7C now has its original0x60 frame and actual private
   position/saved-FP homes. Eleven tests pass, including exact final private bytes
