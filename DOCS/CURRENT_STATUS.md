@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 36bead0; tools are committed before the source pin.
+  checkpoint pins tools f7272ba; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Latest Game conversion:
+[Note 1145](WORKING_NOTES/1145-game-record-callback-update-conversion-20261008.md).
+Install complete `func_151D7264`: 81 words / 324 bytes / frame 0x40.
+Recover the unsigned callback selector, pre-call position/flag capture, live
+distance/attachment gate and failure writes. Selected C has nine raw word
+differences; a closed nine-word reorder derives nine guards without looking
+up retail words. All seven relocated words remain unchanged. Fresh full
+linked audit preserves every ELF byte, all 6,058 symbols and protected data;
+exactly one progress row changes asm -> c. Total 5,483 converted / 3,394 exact;
+Game 4,810 / 2,721; zero drift, 2,089 different and 11,469 guards. Tools f7272ba
+banked first, exact parent source/docs pin second, no push. README aggregates only.
+Focused qualification covers raw/normalized/retail public access order,
+fault prefixes, 67,736 native C cases, real table callbacks 2/3/4, complete
+allocation/constructor bodies, copied-owner neighbors and effective negatives.
+Next retained `func_151D75C4`, 88 words/frame0x30, is actual callback table slot 0.
+Table slot 1, linked setup, Graphify reduced-corpus repair and hardware/gameplay
+acceptance remain open. Host Release stays frozen. All 11 post-install tests
+pass in 77.792s, no skips; 24 shared tests and both tools checks pass.
+131 docs / 4,125 relative links / zero broken. See Note 1145 for detailed receipts.
+
+Previous Game renderer conversion:
 [Note 1144](WORKING_NOTES/1144-game-record-ring-renderer-conversion-20261008.md).
 Install complete `func_151D80C4`: 405 words / 1,620 bytes / frame 0xD0.
 Raw C differs at 185 words; the qualified GP/save/factor normalizer derives

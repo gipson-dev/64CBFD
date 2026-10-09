@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-08 ([Note 1145](WORKING_NOTES/1145-game-record-callback-update-conversion-20261008.md)):
+Install complete 81-word/frame0x40 `func_151D7264` after semantic recovery,
+whole-entry/native/public-prefix qualification and closed nine-word scheduling
+normalization. Full rebuilt ELF/data unchanged, exactly one 324-byte conversion
+row, nine new guards and all seven relocation words unchanged. Totals 5,483
+converted / 3,394 exact; Game 4,810 / 2,721, zero drift. Tools f7272ba first,
+exact parent pin/source/docs second; no push or older standalone reset.
+Next retained `func_151D75C4` (88 words/frame0x30); wider gates stay open.
+
 2026-10-08 ([Note 1144](WORKING_NOTES/1144-game-record-ring-renderer-conversion-20261008.md)):
 Install complete 405-word/frame0xD0 `func_151D80C4` after closed GP/save/factor
 normalization and private-boundary qualification. All retail words match;

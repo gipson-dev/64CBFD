@@ -67,6 +67,16 @@ Gfx *func_15142B7C(Gfx *, u32, u32);
 Gfx *func_1513F4E4(Gfx *, u8, u8 *);
 Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
 
+typedef struct { f32 x, y, z; } CallbackPosition151D7264;
+typedef struct {
+    u8 *attached;
+    u8 selector, flags, padding[2];
+    CallbackPosition151D7264 position;
+    f32 threshold;
+} CallbackRecord151D7264;
+typedef struct { u8 padding[0x28]; CallbackRecord151D7264 record; } CallbackOwner151D7264;
+extern s32 (*D_8008FCA0[])(u8 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/204660.s. */
 
 void func_151D77C8(u8 *owner);
@@ -80,7 +90,39 @@ s32 func_151D71B0() {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_204660/func_151D7264.s")
+void func_151D7264(u8 *owner) {
+    CallbackRecord151D7264 *record;
+    CallbackPosition151D7264 previous;
+    u8 priorFlag;
+    CallbackPosition151D7264 delta;
+
+    previous = *(CallbackPosition151D7264 *)(owner + 0x30);
+    priorFlag = owner[0x2D] & 1;
+    if (!D_8008FCA0[owner[0x2C]](owner)) {
+        *(s16 *)(owner + 0xE) = -1;
+        owner[0xD] |= 1;
+    } else {
+        record = (CallbackRecord151D7264 *)(owner + 0x28);
+        if (record->flags & 1) {
+            if (priorFlag) {
+                delta.x = record->position.x - previous.x;
+                delta.y = record->position.y - previous.y;
+                delta.z = record->position.z - previous.z;
+                if (func_15143E64((f32 *)&delta) < record->threshold) {
+                    if (record->attached == NULL) {
+                        func_151D7830(owner);
+                    }
+                } else {
+                    func_151D77C8(owner);
+                }
+            } else {
+                func_151D77C8(owner);
+            }
+        } else {
+            func_151D77C8(owner);
+        }
+    }
+}
 
 void func_151D73A8(u8 *arg0, s32 arg1, u8 arg2) {
     void (* volatile *table)(u8 *, s32, u8) = D_8008FCA4;

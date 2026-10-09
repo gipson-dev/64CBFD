@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Record Callback Update Conversion - 2026-10-08
+
+[Note 1145](WORKING_NOTES/1145-game-record-callback-update-conversion-20261008.md):
+
+- [x] Recover the complete 81-word/frame0x40 `func_151D7264`, including pre-callback position/flag capture, unsigned selector, live distance/attachment gate and failure writes.
+- [x] Fit 60 complete forms and four compiler profiles; derive a closed nine-word schedule change without retail lookup, insertion or padding. Preserve all seven relocation words.
+- [x] Qualify 3,360 three-stream cases, 624 missing-byte pairs, 67,736 native C cases, 120 connected callback cases, 16 complete allocation/constructor cases, 96 table aliases and effective negatives.
+- [x] Preserve 22 copied-owner neighbors/pools/relative relocations and four existing diagnostics. Qualify actual 324-byte padding, nine stale guards and four GNU rebases.
+- [x] Install complete C plus exactly nine guards, rebuild and preserve every ELF byte, all 6,058 symbols and protected data; only one progress row changes asm -> c.
+- [x] Measure fresh totals: 5,483 converted / 3,394 byte-exact; Game 4,810 / 2,721; zero drift, 2,089 different and 11,469 guards. Keep README aggregate-only.
+- [x] Pass all 11 focused post-install tests in 77.792s, no skips; 24 shared padder/linker tests and both project tools checks pass. Verify eight-file parse/mirror checks and 131 docs / 4,125 relative links / zero broken.
+- [x] Bank tools f7272ba before the parent source/docs pin; preserve independently dirty older mirror history and unrelated edits, without pushing.
+- [ ] Recover retained `func_151D75C4` (88 words/frame0x30), actual callback table slot 0: actor gates, joint-position transform and optional secondary callback.
+- [ ] Qualify table slot 1, linked setup and hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Ring Renderer Conversion - 2026-10-08
 
 [Note 1144](WORKING_NOTES/1144-game-record-ring-renderer-conversion-20261008.md):
@@ -11,7 +26,7 @@
 - [x] Measure fresh totals: 5,482 converted / 3,393 byte-exact; Game 4,809 / 2,720; zero drift and 2,089 different. Keep root README aggregate-only.
 - [x] Pass all 31 focused tests after installation in 227.669s, no skips; 14 shared tests, both tools checks and six-file parse/mirror checks pass. Verify 130 docs / 4,117 relative links / zero broken.
 - [x] Bank tools 36bead0 before the parent source/docs pin; preserve independently dirty older tools history and unrelated edits, without pushing.
-- [ ] Recover retained `func_151D7264` (81 words/frame0x40): original callback, copied previous position, distance test and complete update branches before fitting or installation.
+- [x] Recover and install retained `func_151D7264` (81 words/frame0x40), including callback, captured position, distance gate and complete branches; see Note 1145.
 - [ ] Restore linked setup/dispatcher/combiner and qualify hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Record Ring Renderer Live-Value Proof - 2026-10-08

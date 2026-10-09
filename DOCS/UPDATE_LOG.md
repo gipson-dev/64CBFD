@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-08 Record Callback Update Conversion
+
+[Note 1145](WORKING_NOTES/1145-game-record-callback-update-conversion-20261008.md):
+Install complete `func_151D7264`: 81 words/frame0x40, nine qualified scheduling
+guards and seven unchanged relocation words. Full ELF and protected data remain
+byte-identical; only this 324-byte row changes asm -> c. Total 5,483 converted /
+3,394 exact, Game 4,810 / 2,721, zero drift and 2,089 different. Qualify strict
+public access order, native C, real table callbacks 2/3/4 and complete allocation
+and original constructor bodies; helper and gameplay boundaries remain explicit.
+Tools f7272ba first, exact parent pin/source/docs second; older dirty work
+preserved without push. Next retained `func_151D75C4`, 88 words/frame0x30.
+
 ## 2026-10-08 Record Ring Renderer Conversion
 
 [Note 1144](WORKING_NOTES/1144-game-record-ring-renderer-conversion-20261008.md):

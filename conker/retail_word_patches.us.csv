@@ -11459,3 +11459,12 @@ generated_204660,func_151D80C4,0x604,0x8299002D,0x828B002D,-,-,Normalize proven 
 generated_204660,func_151D80C4,0x60C,0xC5E20018,0xC5A20018,-,-,Normalize proven whole-CFG ribbon GP live-value allocation,,,false
 generated_204660,func_151D80C4,0x610,0x1479FF74,0x146BFF74,-,-,Normalize proven whole-CFG ribbon GP live-value allocation,,,false
 generated_204660,func_151D80C4,0x618,0x02601025,0x02401025,-,-,Normalize proven whole-CFG ribbon GP live-value allocation,,,false
+generated_204660,func_151D7264,0x78,0x90AF002D,0x24A20028,-,-,Normalize closed callback record address flag gates and private coordinate load order,,,false
+generated_204660,func_151D7264,0x7C,0x93A8002F,0x904F0005,-,-,Normalize closed callback record address flag gates and private coordinate load order,,,false
+generated_204660,func_151D7264,0x80,0x31EE0001,0x93A8002F,-,-,Normalize closed callback record address flag gates and private coordinate load order,,,false
+generated_204660,func_151D7264,0x84,0x11C00029,0x31EE0001,-,-,Normalize closed callback record address flag gates and private coordinate load order,,,false
+generated_204660,func_151D7264,0x88,0x00000000,0x11C00028,-,-,Normalize closed callback record address flag gates and private coordinate load order,,,false
+generated_204660,func_151D7264,0x8C,0x11000023,0x00000000,-,-,Normalize closed callback record address flag gates and private coordinate load order,,,false
+generated_204660,func_151D7264,0x90,0x24A20028,0x11000022,-,-,Normalize closed callback record address flag gates and private coordinate load order,,,false
+generated_204660,func_151D7264,0x94,0xC4440008,0xC7A60030,-,-,Normalize closed callback record address flag gates and private coordinate load order,,,false
+generated_204660,func_151D7264,0x98,0xC7A60030,0xC4440008,-,-,Normalize closed callback record address flag gates and private coordinate load order,,,false
