@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point initializer recovery](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md):
+  Recover complete ten-point func_151B3A7C and registered callback contract.
+  Nine tests pass, including 2,048 guest/8,192 native32 cases and constant aliases.
+  Candidate fits 157 words but has frame 0x58 versus retail 0x60 and 143 differences;
+  not installed/no credit. Continue the same routine's frame/private-home fit.
+
 - [Owner ribbon renderer guarded C match](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md):
   Install full 475-word/frame 0x148 renderer with 161 certified relocation-aware
   allocation/scheduling guards. Eighteen installed tests pass; whole-ELF changes

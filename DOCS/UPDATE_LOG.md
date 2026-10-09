@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-09 Owner Point Initializer Recovery
+
+[Note 1185](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md):
+Recover complete ten-point func_151B3A7C and actual registered callback dispatch.
+Nine tests pass 35.481s, including 2,048 guest/8,192 native32 cases, independent
+scales, first-record constant aliases, effective negatives and rebases. Candidate
+fits 157 words but frame 0x58 differs from retail 0x60; 143 word differences remain.
+Not installed/no guards/credit; production/data/progress hashes and README totals
+unchanged. Tools b3a58e3 committed first; continue this routine's frame/private
+homes and induction/scheduling fit rather than move to another placeholder.
+
 ## 2026-10-09 Owner Ribbon Renderer Guarded C Match
 
 [Note 1184](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md):

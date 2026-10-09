@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-09 ([Note 1185](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md)):
+Recover complete ten-point func_151B3A7C, registered callback ABI, independent
+post-first-record scales, repeated binary32 additions and flag clear/success return.
+Nine tests pass 35.481s: 2,048 guest/8,192 native32 cases, aliases/negatives/faults,
+original update, rebases and owner/padder. Candidate 157 words/frame 0x58/143
+differences; retail frame 0x60. Not installed, no guards/credit, production and
+README unchanged. Tools b3a58e3 first, older dirty work preserved. Continue its
+workspace/private position home, loop control and scheduling fit.
+
 2026-10-09 ([Note 1184](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md)):
 Install complete475-word/frame0x148 func_151B32C8 guarded C match. Certify four
 closed setup windows and compose FP/GPR allocation;161 relocation-aware guards,

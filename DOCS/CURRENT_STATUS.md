@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 713023c; tools are committed before the consumer pin.
+  checkpoint pins tools b3a58e3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest owner point-initializer recovery checkpoint:
+[Note 1185](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md).
+Recover complete func_151B3A7C's ten 24-byte point records, ordered binary32
+increments, zero second vectors and flag-bit-2 clear/success return. Actual
+D_8008FAF8[0] callback ABI is qualified through the complete 81-word update.
+Nine tests pass in 35.481s, zero skips: 2,048 guest/8,192 native32 cases,
+independent scales/first-record constant aliases, effective negatives, fault
+prefixes, independent rebases and actual owner/padder qualification.
+Candidate fits 157 words but has frame 0x58 versus retail 0x60 and 143 real
+word differences. It is not installed or matched; production hashes, old guards,
+protected data and aggregate totals remain unchanged. Continue this function's
+real workspace/private position home, induction and scheduling fit before guards.
+
 Latest installed owner ribbon-renderer guarded C match:
 [Note 1184](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md).
 func_151B32C8 now matches all 475 linked words/frame 0x148. Complete semantic C
@@ -38,8 +51,8 @@ target slot/st_size; preserve 16 neighbors, 189,088 protected bytes, old guard
 prefix and byte-identical conversion rows. Eleven shared guard/progress tests and
 project tools-check pass. Game 2,743/4,816 exact; total 3,416/5,489, zero drift
 and 2,073 different. Converted counts/bytes unchanged; no conversion credit.
-Next: recover adjacent 157-word/frame 0x60 func_151B3A7C's point-preparation ABI,
-registration and complete mutation/alias contract before matching or installation.
+Adjacent 157-word/frame 0x60 func_151B3A7C's point-preparation ABI and complete
+candidate are recovered in Note 1185; frame/word fitting remains before installation.
 Full helpers/second material/caller overflow/hardware/gameplay remain separate.
 
 Earlier owner ribbon-renderer shared-copy and GPR allocation checkpoint:

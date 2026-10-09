@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Initializer Recovery - 2026-10-09
+
+[Note 1185](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md):
+
+- [x] Recover the complete ten-point func_151B3A7C routine, actual one-argument callback ABI and D_8008FAF8[0] registration; qualify the full original 81-word actor-update dispatch.
+- [x] Preserve repeated binary32 coordinate increments, three independent scale inputs loaded after the first record, zero velocity vectors, all flag bits except bit 2, and success return.
+- [x] Pass nine tests: 2,048 guest/8,192 native32 cases, constant aliases, six effective negatives, eight independent links, saved-register/all-word coverage and missing-byte public prefixes.
+- [x] Confirm copied owner preserves 16 neighbors/pools/relative relocations and the actual padder accepts the 628-byte slot. Reject installation while frame/private homes/words differ.
+- [x] Preserve source/ELF/guards/progress and 189,088 protected bytes, unchanged README totals; commit tools b3a58e3 first and preserve older dirty work.
+- [ ] Fit the complete current 157-word/frame 0x58 candidate to original frame 0x60/private position home, loop pointers/control and scheduling; 143 word differences remain before guards or installation.
+- [ ] Keep full caller cleanup/walker, SDK/FCSR/hardware/live rendering/gameplay acceptance separate from bounded equivalence.
+
 ## Owner Ribbon Renderer Guarded C Match - 2026-10-09
 
 [Note 1184](WORKING_NOTES/1184-game-owner-ribbon-renderer-guarded-c-match-20261009.md):
@@ -10,7 +22,7 @@
 - [x] Audit whole ELF: only target slot/st_size changes; preserve 16 neighbors, 189,088 protected bytes, old guard prefix and byte-identical conversion rows.
 - [x] Refresh README aggregate rows only: total 3,416/5,489 and Game 2,743/4,816 exact; zero drift/2,073 different, no conversion credit.
 - [x] Commit tools 713023c before consumer source/guards/docs/tools pin; preserve independently dirty older checkout.
-- [ ] Recover adjacent 157-word/frame 0x60 func_151B3A7C's actual point-preparation ABI, registration, alias/mutation/FP contract and full-body qualifications before matching.
+- [x] Recover adjacent 157-word/frame 0x60 func_151B3A7C's point-preparation ABI, registration and full-body bounded qualification in [Note 1185](WORKING_NOTES/1185-game-owner-point-initializer-recovery-20261009.md); actual frame/word matching remains open above.
 - [ ] Keep full helper/second material/caller overflow/hardware/FCSR/live rendering/gameplay acceptance separate from bounded equivalence.
 
 ## Owner Ribbon Renderer Shared Copy And GPR Proof - 2026-10-09
