@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Actor Update Direct Match - 2026-10-09
+
+[Note 1179](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md):
+
+- [x] Recover actual actor-update ABI, signed16 timer narrowing/reload, fresh signed selectors and flags, callback failure/mutation and cleanup gates.
+- [x] Fit all81 words/frame0x20 directly with a real selector local; no guards or compiler-profile changes.
+- [x] Pass nine installed tests:6,048 guest/102,400 native32, mutations, original74-word registered walker, independent rebases and lazy-read/fault prefixes.
+- [x] Audit entire ELF: only target324-byte slot/st_size changes; preserve16 neighbors,189,088 protected bytes and all existing guards/conversion rows.
+- [x] Update README aggregate matching rows only: total3,415/5,489 and Game2,742/4,816 exact, zero drift/2,074 different; no conversion credit.
+- [x] Commit tools ae5a4de first; preserve older dirty checkout and mirror only two absent authored files.
+- [ ] Recover complete475-word/frame0x148 func_151B32C8 renderer and qualify full geometry/resource/helper lifetimes before fitting.
+- [ ] Keep full actual helper/caller recovery, SDK/hardware/rendering/gameplay acceptance separate from bounded models.
+
 ## Owner Endpoint Quad Guarded C Match - 2026-10-09
 
 [Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md):
@@ -11,7 +24,7 @@
 - [x] Preserve189,088 protected bytes, all11,604 old guard rows and byte-identical conversion/progress rows; no new conversion credit.
 - [x] Refresh README aggregate matching counts only: total3,414/5,489 and Game2,741/4,816 exact, zero drift/2,075 different.
 - [x] Commit tools first and pin7986e98; preserve older dirty checkout and mirror only two new authored files.
-- [ ] Recover adjacent-owner81-word/frame0x20 func_151B3184's actor-update dispatcher ABI, timer narrowing, callback mutation and cleanup gates.
+- [x] Recover adjacent-owner81-word/frame0x20 func_151B3184's actor-update dispatcher ABI, timer narrowing, callback mutation and cleanup gates in [Note 1179](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md).
 - [ ] Continue neighboring full renderer151B32C8 after the update path is qualified; keep full helpers/SDK/hardware/gameplay acceptance separate.
 
 ## Owner Endpoint Quad Recovery And Frame Fit - 2026-10-09

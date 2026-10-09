@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Owner actor update direct match](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md):
+  All81 words emit directly, no guards; nine installed tests pass, including the
+  original74-word registered walker. Only target ELF slot/size changes;
+  no conversion credit. Next complete475-word renderer func_151B32C8.
+
 - [Owner endpoint quad guarded C match](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md):
   Match all340 words with84 certified GPR allocation guards; ten installed tests
   pass. Only target ELF slot/size changes; no conversion credit.

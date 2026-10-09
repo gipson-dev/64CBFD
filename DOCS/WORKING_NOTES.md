@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-09 ([Note 1179](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md)):
+Match full81-word func_151B3184 directly from C, original0x20 frame/no guards.
+Nine installed tests pass11.396s:6,048 guest/102,400 native32, full registered
+walker, mutations, rebases and faults. Whole ELF changes only target slot/size;
+preserve16 neighbors, protected data and guard/conversion rows. No conversion
+credit. Game2,742/4,816 exact,total3,415/5,489; tools ae5a4de banked first.
+Next complete475-word/frame0x148 renderer151B32C8; keep wider Game goal active.
+
 2026-10-09 ([Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md)):
 Match full340-word func_151B2974 with recovered0xB8 workspace and84 certified
 closed GPR guards. Ten installed tests pass17.255s; whole ELF changes only

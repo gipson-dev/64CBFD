@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7986e98; tools are committed before the consumer pin.
+  checkpoint pins tools ae5a4de; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest endpoint quad guarded C match:
+Latest owner actor-update direct C match:
+[Note 1179](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md).
+func_151B3184 emits all81 words directly/frame0x20, no guards. Nine installed
+tests pass11.396s, zero skips:6,048 guest/102,400 native32, mutations, complete
+original74-word registered walker, independent rebases, lazy reads and faults.
+Whole ELF changes only target slot/st_size; preserve16 neighbors,189,088
+protected bytes and byte-identical guard/conversion rows. No conversion credit.
+Game2,742/4,816 exact,total3,415/5,489,zero drift/2,074 differences.
+Next same-owner475-word/frame0x148 full renderer func_151B32C8. Its actual ABI
+is returned Gfx cursor, actor pointer and signed16 view; recover full geometry/
+resource/helper lifetimes before fitting. Full helpers/hardware/gameplay remain
+open; original connected walker is not installed C. Earlier entries are history.
+
+Earlier endpoint quad guarded C match:
 [Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md).
 func_151B2974 matches all340 words/frame0xB8 with84 certified closed GPR
 allocation guards; this is not direct compiler output. Ten installed tests

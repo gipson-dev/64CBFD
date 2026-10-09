@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-09 Owner Actor Update Direct Match
+
+[Note 1179](WORKING_NOTES/1179-game-owner-actor-update-direct-match-20261009.md):
+func_151B3184 emits all81 words directly, frame0x20/no guards. Nine installed
+tests pass11.396s:6,048 guest/102,400 native32, callback mutation, complete74-word
+registered walker, rebases and faults. Entire ELF changes only target slot/size;
+preserve16 neighbors,189,088 protected bytes and all guard/conversion rows.
+Game2,742/4,816 exact,total3,415/5,489,zero drift/2,074 different; no conversion
+credit. Tools ae5a4de committed first. Next complete475-word renderer151B32C8;
+full helpers/hardware/gameplay remain separate.
+
 ## 2026-10-09 Owner Endpoint Quad Guarded C Match
 
 [Note 1178](WORKING_NOTES/1178-game-owner-endpoint-quad-guarded-c-match-20261009.md):

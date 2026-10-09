@@ -4,6 +4,11 @@ extern f32 D_800AA390;
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 void *memcpy(void *, const void *, u32);
 
+extern s32 D_800BE9E4;
+extern s32 (*D_8008FAF0[])(u8 *, void *, s32);
+extern s32 (*D_8008FAF8[])(u8 *);
+void func_1516972C(u8 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -30,8 +35,41 @@ u8 *func_151B30B0(void *request, f32 parameter, s32 extraBytes, u8 slot, s32 con
     return created;
 }
 
-s32 func_151B3184() {
-    return 0;
+void func_151B3184(u8 *actor) {
+    s32 selector;
+    u8 remove;
+
+    remove = 0;
+    if (actor[0x10] & 1) {
+        *(s16 *)(actor + 0x12) -= D_800BE9E4;
+        if (*(s16 *)(actor + 0x12) < 0) {
+            remove = 1;
+        }
+    }
+    if (!remove) {
+        selector = (s8)actor[0x2C];
+        if (selector != -1) {
+            if (!D_8008FAF0[selector](actor, actor + 0x14, 1)) {
+                remove = 1;
+            }
+        }
+        selector = (s8)actor[0x2D];
+        if (selector != -1) {
+            if (!D_8008FAF0[selector](actor, actor + 0x20, 0)) {
+                remove = 1;
+            }
+        }
+        if ((actor[0x10] & 4) || (actor[0x10] & 8)) {
+            actor[0x10] |= 2;
+        } else if ((s8)actor[0x34] != -1) {
+            if (!D_8008FAF8[(s8)actor[0x34]](actor)) {
+                remove = 1;
+            }
+        }
+    }
+    if (remove) {
+        func_1516972C(actor);
+    }
 }
 
 s32 func_151B32C8() {
