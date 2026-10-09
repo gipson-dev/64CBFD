@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-09 Camera Ribbon Private Slots And View Staging
+
+[Note 1163](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md):
+Complete short-input547/frame0x120/433 differences form matches five retail
+private slots plus frame/save slots. Fourteen tests pass in204.038s,
+including raw-view boundaries and a native callback-type projection.
+No-unroll and word-sized records do not fix allocation; compact arithmetic
+changes frame/save counts. Neither primary form installed/exact; original
+signature integration, color homes and register roles remain. Tools d940c7e
+first, exact pin second; production bytes/credit and root README unchanged.
+
 ## 2026-10-09 Camera Ribbon Retail Frame And Save Slots
 
 [Note 1162](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md):

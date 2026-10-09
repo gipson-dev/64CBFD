@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools df3bbd1; tools are committed before the consumer pin.
+  checkpoint pins tools d940c7e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current renderer retail-frame/save-slot qualification:
+Current renderer private-slot/view qualification:
+[Note 1163](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md).
+Complete short-input547/frame0x120/433 differences form now matches five
+retail private slots plus frame/save slots. Fourteen tests pass in204.038s,
+including804 guest,536 native32,128 nonlinear and14 raw-view cases per form.
+Keep16-bit input; wide-input545/519 is a layout experiment, not a proven
+original signature. Color homes, register roles, exit CFG and callback
+integration remain open. Neither installed/exact; production bytes/credit
+unchanged. Tools d940c7e first, exact parent pin second.
+
+Previous renderer retail-frame/save-slot qualification:
 [Note 1162](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md).
 Two complete forms now match retail0x120 frame, four GPR save slots and five
 FP pairs: selected547/463 raw differences, outer545/512. Eleven tests pass

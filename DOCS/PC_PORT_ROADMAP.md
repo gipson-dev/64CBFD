@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Camera Ribbon Private Slots And View Staging - 2026-10-09
+
+[Note 1163](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md):
+
+- [x] Qualify complete short-input547/frame0x120/433 differences and wide-input545/519 forms; match cursor118/sync117/originF0/previousFC/current108 plus four GPR/five FP save slots.
+- [x] Pass fourteen tests in204.038s: each primary form804 guest,92 mutations,94 missing-byte pairs,five aliases,two cyclic prefixes,536 native32,128 nonlinear and14 raw view values.
+- [x] Preserve ten owner neighbors/pools/relative relocations/zero diagnostics and actual dispatcher16 cases/32 executions; retain short padder rejection and wide acceptance without installation credit.
+- [x] Audit recovered16-bit callback declaration; type-check native callback projection over14 view values. Keep original signature/native whole-caller acceptance separate from raw ABI/layout experiments.
+- [x] Screen20 forms/60 profile rows/34 instruction streams; no-unroll changes none. Retain compact arithmetic's limited128-case qualification and two effective negatives; preserve compiler warning gates.
+- [x] Bank tools d940c7e before exact parent pin, preserving production bytes/credit, root README and older checkout.
+- [ ] Recover exit CFG, S2 payload/T5 spills/S3 phase lifetime and color homes while retaining five exact private slots; resolve full raw schedule and callback signature.
+- [ ] Qualify rebases, remaining aliases/mutations, installation and whole-ELF/progress audit; hardware/gameplay/callees remain separate gates.
+
 ## Camera Ribbon Retail Frame And Save Slots - 2026-10-09
 
 [Note 1162](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md):

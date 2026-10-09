@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Current camera ribbon private slots/view staging](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md):
+  Fourteen tests; five retail private slots and16-bit input retained in a
+  complete547-word form. Color homes/register roles/raw matching still open.
 - [Current camera ribbon retail frame/save slots](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md):
   Two complete same-frame/save-slot forms and eleven passing tests; safe
   last-output scale reuse. Register roles/private layout/raw matching open.

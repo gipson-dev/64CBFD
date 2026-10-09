@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1163](WORKING_NOTES/1163-game-camera-ribbon-renderer-private-slots-view-staging-20261009.md)):
+Qualify complete short-input547/frame0x120/433 and wide-input545/519 forms:
+five retail private slots plus frame/save slots, fourteen tests in204.038s.
+Keep16-bit input and explicit callback gate; color homes/register roles/CFG
+and raw matching remain. Profile/dedup/compact-math evidence narrows next
+steps. Tools d940c7e first; production bytes/credit and older checkout preserved.
+
 2026-10-09 ([Note 1162](WORKING_NOTES/1162-game-camera-ribbon-renderer-retail-frame-save-slots-20261009.md)):
 Qualify two complete same0x120-frame/four-GPR/five-FP-save-slot forms,
 selected547/463 raw differences and outer545/512, with eleven tests
