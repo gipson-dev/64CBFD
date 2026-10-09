@@ -54,7 +54,16 @@ confirmed.
 
 ## Planning and history
 
-- [Latest wrapped record step match](WORKING_NOTES/1155-game-wrapped-record-step-match-20261009.md):
+- [Latest record phase shaping match](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md):
+  Convert complete GLOBAL_ASM `func_15148DE0` to frameless C70, directly
+  exact without guards. Entire ELF and all guards remain byte-identical;
+  one conversion row changes. Nine final tests/native32/public aliases/
+  complete successful timer-payload-leaf connection and 35 shared tests
+  pass. Totals 5,487 converted/3,404 exact, zero drift. Tools 741b405
+  first, exact parent pin second, no push. Next full C140 `func_151488C4`;
+  conditional stack step and wider acceptance remain open.
+
+- [Previous wrapped record step match](WORKING_NOTES/1155-game-wrapped-record-step-match-20261009.md):
   Convert complete GLOBAL_ASM `func_15148AF4` to frameless C44, linked
   exact with one commutative-add guard; raw C has one difference. Full ELF
   stays byte-identical, one conversion row changes. Eight focused tests,

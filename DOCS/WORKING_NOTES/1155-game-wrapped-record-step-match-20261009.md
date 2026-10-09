@@ -175,6 +175,12 @@ post-commit hook separately before the final clean-state report.
 
 ## Next Work
 
+Completed in [Note 1156](1156-game-record-phase-shaping-match-20261009.md):
+the 70-word callback now emits directly from semantic C without guards;
+its complete successful timer/payload/leaf connection is qualified and the
+whole ELF remains byte-identical. The original next-target description
+below records this note's historical handoff, not an outstanding conversion.
+
 Recover full first-stage callback **func_15148DE0**,
 **D_8008A3E0[4]**, still GLOBAL_ASM in this owner: VA
 **0x15148DE0..0x15148EF8**, ROM **0x176290..0x1763A8**,

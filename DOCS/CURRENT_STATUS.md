@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 919a0c1; tools are committed before the source pin.
+  checkpoint pins tools 741b405; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game wrapped record step match:
+Latest Game record phase shaping match:
+[Note 1156](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md).
+Convert GLOBAL_ASM `func_15148DE0` to complete 70-word frameless C,
+directly byte-exact without guards or profile changes. Recover signed active
+gate/decrement, narrowed signed head, captured pointers, u16 division/phase
+and the forward loop's live flags/count/head. All ELF bytes/all 6,058 slots,
+data/symbols/metadata and all 11,507 guard rows/bytes remain unchanged;
+exactly one conversion row changes asm -> c. Nine final tests pass in
+90.033s, including 66,560 native32 cases, 26 public aliases, seven effective
+negatives and the complete 100+97+70-word successful dispatch chain.
+Thirty-five shared tests and both tools checks pass. Fresh totals: 5,487
+converted / 3,404 exact, Game 4,814 / 2,731; zero drift, 2,083 different.
+Tools 741b405 first, exact parent pin second, no push or older mirror reset.
+Next complete 140-word GLOBAL_ASM callback `func_151488C4`, preserving
+its conditional SP+0 step lifetime. Other callbacks/cleanup/upstream/
+hardware/gameplay and graph corpus gates remain open. Root README has
+aggregate rows only.
+
+Previous Game wrapped record step match:
 [Note 1155](WORKING_NOTES/1155-game-wrapped-record-step-match-20261009.md).
 Convert GLOBAL_ASM `func_15148AF4` to complete 44-word frameless C,
 linked exact with one commutative pointer-add guard; raw C has one

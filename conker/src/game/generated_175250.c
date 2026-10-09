@@ -13,6 +13,11 @@ typedef struct {
 } MotionRecord15148AF4;
 extern f32 D_800BE9A4;
 
+typedef struct {
+    u32 words[4];
+    u16 phase, reserved;
+} PhaseRecord15148DE0;
+
 /* Non-matching placeholders for the text-only asm slice asm/175250.s. */
 
 s32 func_151478F4(s32 arg0);
@@ -116,7 +121,39 @@ s32 func_15148AF4(u8 *actor) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_175250/func_15148BA4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_175250/func_15148DE0.s")
+s32 func_15148DE0(u8 *actor) {
+    u8 *payload;
+    PhaseRecord15148DE0 *records;
+    s32 index;
+    u16 step;
+    u16 phase;
+
+    if (*(s8 *)(actor + 0x2C) >= 3) {
+        (*(s8 *)(actor + 0x2C))--;
+        records = *(PhaseRecord15148DE0 **)(actor + 0x94);
+        payload = *(u8 **)(actor + 0x98);
+        index = *(s8 *)(actor + 0x2D);
+        step = 0x1000 / *(s8 *)(actor + 0x2C);
+        phase = (payload[0x18] & 0x20) ? 0x1000 : 0;
+        (*(s8 *)(actor + 0x2E))--;
+        if (*(s8 *)(actor + 0x2E) < 0) {
+            actor[0x2E] = actor[0x25] - 1;
+        }
+        while (index != *(s8 *)(actor + 0x2E)) {
+            records[index].phase = phase;
+            if (payload[0x18] & 0x20) {
+                phase -= step;
+            } else {
+                phase += step;
+            }
+            if (++index == actor[0x25]) {
+                index = 0;
+            }
+        }
+        return 1;
+    }
+    return 0;
+}
 
 s32 func_15148EF8(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     u8 *temp_v1 = *(u8 **) (arg0 + 0x98);

@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-09 ([Note 1156](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md)):
+Convert complete GLOBAL_ASM `func_15148DE0` to frameless C70, directly
+byte-exact without guards or profile changes. Recover signed gate/head
+narrowing, captured pointers, u16 division/phase and live forward-loop
+flags/count/head. Every ELF byte/all 6,058 slots and all 11,507 guard
+rows/bytes stay unchanged; exactly one asm -> c row gains one function/
+280 bytes. Nine final tests/native32/public aliases/complete successful
+dispatch, 35 shared tests and both tools checks pass. Totals 5,487 converted /
+3,404 exact, Game 4,814/2,731, zero drift and 2,083 different.
+Tools 741b405 first, exact parent pin second, no push or older mirror reset.
+Next full C140 `func_151488C4`; conditional SP+0 step and wider gates open.
+
 2026-10-09 ([Note 1155](WORKING_NOTES/1155-game-wrapped-record-step-match-20261009.md)):
 Convert complete GLOBAL_ASM `func_15148AF4` to frameless C44, linked exact
 with one commutative pointer-add guard; not direct raw matching. Signed

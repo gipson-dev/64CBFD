@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-09 Record Phase Shaping Match
+
+[Note 1156](WORKING_NOTES/1156-game-record-phase-shaping-match-20261009.md):
+Convert complete GLOBAL_ASM `func_15148DE0` to frameless C70, directly
+byte-exact without guards or profile changes. Recover signed gate/head
+narrowing, captured pointers, u16 phase/division and live loop fields.
+Nine final tests, 66,560 native32 cases, seven effective negatives, public
+aliases, full successful 100+97+70-word dispatch, 35 shared tests and both
+tools checks pass. Every ELF byte/all 6,058 slots and all 11,507 guard
+rows/bytes remain unchanged; exactly one conversion row gains one function
+and 280 bytes. Fresh totals 5,487 converted/3,404 exact, Game 4,814/2,731;
+zero drift and 2,083 different. Tools 741b405 first, exact parent pin
+second, no push/older mirror reset. Next full `func_151488C4`, 140 words;
+conditional SP+0 step and broader callback/hardware/gameplay/graph gates
+remain open.
+
 ## 2026-10-09 Wrapped Record Step Match
 
 [Note 1155](WORKING_NOTES/1155-game-wrapped-record-step-match-20261009.md):
