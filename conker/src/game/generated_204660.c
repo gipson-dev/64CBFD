@@ -82,6 +82,8 @@ extern u8 D_800AB2D4[];
 extern s32 (*D_8008FCA8[])(u8 *);
 void func_15143134(f32 *, f32 *, u8 *);
 
+void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
+
 /* Non-matching placeholders for the text-only asm slice asm/204660.s. */
 
 void func_151D77C8(u8 *owner);
@@ -91,8 +93,24 @@ extern void (*D_8008FCA4[])(u8 *, s32, u8);
 extern f32 D_800AB2EC;
 extern f32 D_800AB2F0;
 
-s32 func_151D71B0() {
-    return 0;
+u8 *func_151D71B0(s16 duration, u8 active, u8 selector, f32 threshold,
+    s32 extraBytes, u8 slot, s32 context) {
+    u8 *created;
+    CallbackRecord151D7264 record;
+
+    record.attached = NULL;
+    record.selector = selector;
+    record.flags = 0;
+    record.position.x = 0.0f;
+    record.position.y = 0.0f;
+    record.position.z = 0.0f;
+    record.threshold = threshold;
+    created = func_15149130(duration, -1, 0x42, -1, active, 0x36,
+        extraBytes + sizeof(record), slot, context);
+    if (created != NULL) {
+        memcpy(created + 0x28, &record, sizeof(record));
+    }
+    return created;
 }
 
 void func_151D7264(u8 *owner) {
@@ -161,13 +179,13 @@ s32 func_151D747C(u8 *arg0) {
 
 void func_151D74B0(u8 *arg0, u8 arg1, s8 arg2, u8 arg3, s32 arg4) {
     struct { u8 *word0; u8 byte0; u8 byte1; s8 byte2; } rec;
-    s32 temp_v0;
+    u8 *temp_v0;
 
     rec.word0 = arg0;
     rec.byte0 = arg0[0x3B];
     rec.byte1 = arg1;
     rec.byte2 = arg2;
-    temp_v0 = func_151D71B0(0x12C, 0, 0, 0x41400000, 8, arg3, arg4);
+    temp_v0 = func_151D71B0(0x12C, 0, 0, 12.0f, 8, arg3, arg4);
     if (temp_v0 != 0) {
         memcpy((u8 *)(temp_v0 + 0x40), &rec, 8);
     }

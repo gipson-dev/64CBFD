@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Record Constructor Restoration - 2026-10-09
+
+[Note 1147](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md):
+
+- [x] Replace false-zero `func_151D71B0` with its complete 45-word/frame0x50 constructor, recovered mixed O32 ABI, 24-byte payload and preserved result pointer.
+- [x] Fit 24 complete forms/four profiles; selected C matches directly with no guards. Record eight physical-width rejections and five effective compiled negatives.
+- [x] Qualify 4,224 paired guest cases, 152 real missing-byte pairs, 69,120 native32 cases and 96 connected creator/memcpy/typed-caller cases; keep unspecified padding and bounded allocator limits explicit.
+- [x] Preserve the typed caller's bytes, 22 copied-owner neighbors, pools, relative relocations and four diagnostics; qualify actual 180-byte padding and four independent GNU links.
+- [x] Rebuild and audit all 6,058 slots and the entire ELF: only target instructions and its symbol-size field 12 -> 180 change. Converted rows/bytes, protected data and all 11,475 guards stay unchanged.
+- [x] Measure 5,484 converted / 3,396 exact; Game 4,811 / 2,723; zero drift and 2,088 different. All 23 functions in generated_204660.c are exact; root README remains aggregate-only.
+- [x] Pass eight post-install tests in 33.365s, no skips; 24 shared tests, both project tools checks and twelve-file parse/mirror checks pass. Validate 133 docs / 4,142 relative links / zero broken.
+- [x] Bank tools ce159a5 first, then exact parent source/docs pin; preserve independently dirty older mirror history and unrelated edits without pushing.
+- [ ] Recover false-zero `func_151D9EB0`, 68 words/frame0x60: signed timer wrap, random float/integer call order, effect-call ABI and timer reset.
+- [ ] Qualify hardware/gameplay separately and repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
+
 ## Record Actor Position Conversion - 2026-10-08
 
 [Note 1146](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md):
@@ -13,7 +28,7 @@
 - [x] Measure fresh totals: 5,484 converted / 3,395 exact; Game 4,811 / 2,722; zero drift, 2,089 different and 11,475 guards. Keep root README aggregate-only.
 - [x] Pass ten focused post-install tests in 134.082s, no skips; 24 shared tests, both project tools checks and ten-file parse/mirror checks pass. Verify 132 docs / 4,133 relative links / zero broken.
 - [x] Bank tools de603ef before the exact parent source/docs pin; preserve independently dirty older mirror history and unrelated edits without pushing.
-- [ ] Recover false-zero C constructor `func_151D71B0` (45 words/frame0x50), complete creation-call ABI, payload/conditional copy and return before fitting or installation.
+- [x] Recover and install false-zero C constructor `func_151D71B0` (45 words/frame0x50), complete creation-call ABI, payload/conditional copy and preserved return; see Note 1147.
 - [ ] Qualify remaining linked setup and hardware/gameplay separately; repair reduced-corpus Graphify refresh without force. OGL Release remains frozen.
 
 ## Record Callback Update Conversion - 2026-10-08

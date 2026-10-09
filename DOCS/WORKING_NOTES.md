@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-09 ([Note 1147](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md)):
+Restore complete `func_151D71B0`, 45 words/frame0x50, directly from C with
+no guards; typed caller bytes unchanged and all 23 owner functions exact.
+Only the target ELF slot and symbol-size field change. Converted counts/bytes
+and 11,475 guards unchanged; total 5,484 / 3,396 exact, Game 4,811 / 2,723,
+zero drift and 2,088 different. Eight focused tests and shared checks pass.
+Tools ce159a5 first, exact parent source/docs pin second; no push or older
+standalone reset. Next false-zero 68-word/frame0x60 `func_151D9EB0`.
+Wider graph/hardware/gameplay gates remain open.
+
 2026-10-08 ([Note 1146](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md)):
 Install complete 88-word/frame0x30 `func_151D75C4` after actor/joint/callback
 recovery and fingerprinted six-word frame closure. Whole ELF/data unchanged;

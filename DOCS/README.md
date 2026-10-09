@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Latest record constructor restoration](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md):
+  Complete `func_151D71B0` matches all 45 words directly, no guards; typed
+  caller bytes stay unchanged. All 23 owner functions exact. Only its ELF
+  slot/symbol size change; totals 5,484 converted / 3,396 exact, zero drift.
+  Tools ce159a5 first, exact parent pin second, no push. Next false-zero
+  68-word `func_151D9EB0`; wider acceptance stays open.
+
 - [Latest record actor position conversion](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md):
   Complete `func_151D75C4` is C and matches all 88 words with six qualified
   frame guards. Full rebuilt ELF/data unchanged; totals 5,484 converted /

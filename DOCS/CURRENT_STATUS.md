@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-08
+Last verified: 2026-10-09
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools de603ef; tools are committed before the source pin.
+  checkpoint pins tools ce159a5; tools are committed before the source pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest Game conversion:
+Latest Game constructor restoration:
+[Note 1147](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md).
+Replace false-zero `func_151D71B0` with its complete 45-word / 180-byte /
+frame0x50 C body. It emits every retail word directly, without guards.
+Recover the mixed O32 ABI, 24-byte initial payload, conditional copy and
+preserved allocation result. The typed `func_151D74B0` caller remains
+byte-identical. All 23 functions in generated_204660.c now match retail.
+Full linked audit permits only the target's 180-byte slot and its symbol-size
+field 12 -> 180; every other ELF byte and all 6,058 slot addresses/extents
+remain unchanged. Converted counts/bytes and all 11,475 guards are unchanged.
+Total 5,484 converted / 3,396 exact; Game 4,811 / 2,723; zero drift and
+2,088 different. All eight post-install tests pass in 33.365s, no skips;
+24 shared tests and both tools checks pass. Tools ce159a5 banked first,
+exact parent source/docs pin second, no push; preserve older mirror edits.
+Next false-zero `func_151D9EB0`, 68 words/frame0x60, is a timer/randomized
+effect callback in game_2062D0.c. Graph repair and hardware/gameplay stay
+open; OGL Release remains frozen. See Note 1147 for receipts and limits.
+
+Previous Game actor position conversion:
 [Note 1146](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md).
 Install complete `func_151D75C4`: 88 words / 352 bytes / retail frame 0x30.
 Recover actor/identity/optional gates, unsigned joint mapping, the complete

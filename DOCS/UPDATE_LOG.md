@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-09 Record Constructor Restoration
+
+[Note 1147](WORKING_NOTES/1147-game-record-constructor-restoration-20261009.md):
+Replace false-zero `func_151D71B0` with complete semantic C matching all
+45 words/frame0x50 directly, no guards. Preserve the typed caller's bytes;
+all 23 functions in its owner now match. Full ELF changes only the target
+slot and its symbol-size field 12 -> 180; all other bodies/data stay exact.
+Converted counts/bytes remain unchanged; total 5,484 / 3,396 exact, Game
+4,811 / 2,723, zero drift, 2,088 different and unchanged 11,475 guards.
+Eight focused tests, native32/connected callers, 24 shared tests and both
+tools checks pass. Tools ce159a5 first, exact parent pin/source/docs second,
+no push or older mirror reset. Next false-zero 68-word `func_151D9EB0`.
+Hardware/gameplay and graph repair remain open.
+
 ## 2026-10-08 Record Actor Position Conversion
 
 [Note 1146](WORKING_NOTES/1146-game-record-actor-position-conversion-20261008.md):
