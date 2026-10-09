@@ -84,8 +84,25 @@ void func_151B2EC4(u8 *arg0, s32 arg1, u8 arg2) {
     func_15169850(arg1, arg2, (s32) (arg0 + 0x28), (s32) (arg0 + 0x2C), (s32) arg0);
 }
 
-s32 func_151B2F04() {
-    return 0;
+void func_151B2F04(u8 *owner, u8 *packet, u8 kind) {
+    u8 *pair = owner + 0x28;
+
+    if (kind == 0x2D) {
+        if (*(s32 *)packet == *(s32 *)pair) {
+            *(s32 *)pair = *(s32 *)(packet + 4);
+            pair[4] = packet[9];
+        } else if (*(s32 *)(packet + 4) == *(s32 *)pair) {
+            *(s32 *)pair = *(s32 *)packet;
+            pair[4] = packet[8];
+        }
+        if (*(s32 *)packet == *(s32 *)(pair + 8)) {
+            *(s32 *)(pair + 8) = *(s32 *)(packet + 4);
+            pair[12] = packet[9];
+        } else if (*(s32 *)(packet + 4) == *(s32 *)(pair + 8)) {
+            *(s32 *)(pair + 8) = *(s32 *)packet;
+            pair[12] = packet[8];
+        }
+    }
 }
 
 void func_151B2FA0(u8 *arg0, s32 arg1, u8 arg2) {

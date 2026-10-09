@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Endpoint Pair Callback Direct Match - 2026-10-09
+
+[Note 1169](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md):
+
+- [x] Recover complete39-word func_151B2F04, kind0x2D gate, two endpoint/byte associations and retail aliased read/update order.
+- [x] Match all39 words directly under existing O2/g3, frame0, no guards; qualify actual selector18 pointer and void three-argument O32 dispatcher contract.
+- [x] Pass eight installed tests in12.221s:4,352 guest,13,056 native32,194 fault pairs,48 argument-home aliases, five final-memory negatives and four independent symbol sets.
+- [x] Execute actual23-word dispatcher over2,048 cases/4,096 runs, with other slots bounded NULL; preserve17 owner neighbors and four existing Warning712 messages.
+- [x] Audit all ELF bytes except target156-byte slot and st_size12->156; preserve guard/progress CSV and189,088 exact protected Game data bytes.
+- [x] Refresh README aggregates only:Game2,735/4,816 exact, total3,408/5,489, zero drift and2,081 differences; no new conversion credit.
+- [ ] Recover complete40-word func_151B2060 null-gated32-byte descriptor constructor, original holes, allocator failure behavior and actual caller/return contract.
+- [ ] Keep complete renderer/native-port declaration reconciliation and other callback-table routes as separate open gates.
+
 ## Ribbon Alpha Defined Signed Scaling - 2026-10-09
 
 [Note 1168](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md):
@@ -8,7 +21,7 @@
 - [x] Replace negative signed left shift with safe signed16-times8; preserve every rebuilt ELF byte, guard/progress row and protected data byte.
 - [x] Pass seven installed tests in30.800s:65,536 guest cases,589,824 native32 calls,192 aliases/phases, seven fault pairs, four negatives and four independent symbol sets.
 - [x] Verify actual selector6 callback-table pointer and typed interface; preserve ten owner neighbors and real padder acceptance.
-- [ ] Recover full39-word func_151B2F04, kind0x2D gate, endpoint/byte swaps and alias/read order, then qualify the actual callback interface before installation.
+- [x] Recover full39-word func_151B2F04, kind0x2D gate, endpoint/byte swaps and alias/read order; qualify actual callback interface and install in Note1169.
 - [ ] Keep full ribbon renderer register/FP matching and handwritten register-contract work separate and pending.
 
 ## Ribbon Effect Constructor Direct Match - 2026-10-09

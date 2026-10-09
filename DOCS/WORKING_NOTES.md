@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1169](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md)):
+Install complete39-word func_151B2F04 directly, frame0/no guards. Eight tests
+pass in12.221s:4,352 guest,13,056 native32,194 fault pairs, rebases and actual
+23-word dispatcher2,048 cases. Preserve17 neighbors/four existing warnings;
+whole ELF changes only target slot/st_size. Game exact2,735/4,816; no new
+conversion credit. Next recover40-word func_151B2060; wider goal stays active.
+
 2026-10-09 ([Note 1168](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md)):
 Preserve already-exact15-word func_151490C8 while removing negative signed
 shift UB via multiplication by8. Seven tests pass in30.800s:65,536 guest,

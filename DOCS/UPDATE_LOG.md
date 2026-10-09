@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-09 Endpoint Pair Callback Direct Match
+
+[Note 1169](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md):
+func_151B2F04 now emits all39 retail words directly under existing O2/g3,
+no guards. Eight installed tests pass in12.221s, including actual dispatcher,
+aliased packet reloads, native32, rebases and whole-ELF audit. Preserve17
+neighbors/four existing warnings, guards/progress and protected data.
+Game exact2,735/4,816; no conversion credit. Next recover func_151B2060.
+
 ## 2026-10-09 Ribbon Alpha Defined Signed Scaling
 
 [Note 1168](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md):

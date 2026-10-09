@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Endpoint-pair callback direct match](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md):
+  Restore all39 words directly, no guards; eight installed tests qualify
+  alias/reload behavior, native32, actual dispatcher and whole-ELF preservation.
+  Game exact2,735/4,816; next same-owner constructor func_151B2060.
 - [Ribbon alpha defined signed scaling](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md):
   Remove negative signed-shift UB while preserving the already-exact15-word
   body and every ELF byte; seven tests, exhaustive guest/native32 values.

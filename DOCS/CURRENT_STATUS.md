@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0269fbb; tools are committed before the consumer pin.
+  checkpoint pins tools c6b2d59; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest endpoint-pair callback match:
+[Note 1169](WORKING_NOTES/1169-game-endpoint-pair-callback-direct-match-20261009.md).
+`func_151B2F04` replaces its false placeholder with all39 retail words
+directly under existing O2/g3, frame0 and no guards. Eight installed tests
+pass in12.221s:4,352 guest,13,056 native32,194 fault pairs, independent
+rebases and actual23-word dispatcher2,048 routing cases. Preserve17 owner
+neighbors, four existing warnings, actual table pointer and all other ELF
+bytes; only target156-byte slot/st_size12->156 change. Game exact2,735/4,816
+(56.79%), total3,408/5,489 (62.09%), zero drift and2,081 differences.
+No conversion credit; protected data/guards/progress CSV unchanged.
+Next recover same-owner40-word `func_151B2060`; renderer remains pending.
+Toolsc6b2d59 banked first; source/docs and exact consumer pin follow.
 
 Latest byte-preserving callback qualification:
 [Note 1168](WORKING_NOTES/1168-game-ribbon-alpha-defined-signed-scaling-20261009.md).
