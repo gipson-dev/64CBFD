@@ -60,6 +60,8 @@ void func_15143134(f32 *, f32 *, u8 *);
 
 extern f32 D_800AA3C4;
 
+extern f32 D_800AA3C8;
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -493,8 +495,20 @@ s32 func_151B4A14() {
     return 0;
 }
 
-s32 func_151B4B78() {
-    return 0;
+s32 func_151B4B78(OwnerPoints3A7C *owner) {
+    f32 x, step;
+    s32 i;
+
+    x = -1000.0f;
+    step = D_800AA3C8;
+    for (i = 0; i < 10; i++) {
+        owner->points[i].position.x = x;
+        owner->points[i].position.y = 0.0f;
+        owner->points[i].position.z = 0.0f;
+        x += step;
+    }
+    owner->flags &= ~2;
+    return 1;
 }
 
 void func_151B4C1C(u8 *arg0) {

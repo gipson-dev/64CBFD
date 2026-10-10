@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Fixed-Span Point Initializer Byte Match - 2026-10-10
+
+[Note 1205](WORKING_NOTES/1205-game-owner-fixed-span-point-initializer-byte-match-20261010.md):
+
+- [x] Restore complete41-word func_151B4B78 with early step read, ten rounded X positions and untouched velocities.
+- [x] Qualify closed41-word recipe:27 changed words/14 unchanged dependencies; no omissions/pools/padding.
+- [x] Pass nine tests before/after, full-memory guest/native32, aliases, six effective negatives and41 stale-word rejections.
+- [x] Preserve16 neighbors/every other linked ELF byte, old guard prefix, conversion rows and189,088 data bytes.
+- [x] Measure Game2,749/4,816 (57.08%), total3,422/5,489 (62.34%), zero drift /2,067 different.
+- [x] Bank tools1e345c1 before consumer source/guards/docs/pin; preserve older independent dirty work and curve handoff.
+- [ ] Recover89-word func_151B4A14's full output ABI, original helper contract, custom/fallback paths and0x68 frame.
+- [ ] Retain Note1202 curve frame/private/slot rejection gates and fresh-baseline requirement for later neighbor work.
+- [ ] Keep wider Game goal and actual hardware/FCSR/live qualification separate.
+
 ## Owner X-Axis Point Interpolation Byte Match - 2026-10-10
 
 [Note 1204](WORKING_NOTES/1204-game-owner-x-axis-point-interpolation-byte-match-20261010.md):
@@ -10,7 +24,7 @@
 - [x] Preserve16 neighbors/every other linked ELF byte, old guard prefix, conversion rows and189,088 data bytes.
 - [x] Measure Game2,748/4,816 (57.06%), total3,421/5,489 (62.32%), zero drift /2,068 different.
 - [x] Bank toolsd9f391d before consumer source/guards/docs/pin; preserve older independent dirty work and curve handoff.
-- [ ] Recover41-word func_151B4B78's fixed-span sequence and early constant read with exact unrolled scheduling.
+- [x] Recover41-word func_151B4B78's fixed-span sequence and early constant read with exact unrolled scheduling; Note1205.
 - [ ] Keep Note1202 curve frame/private/slot rejection gates and fresh-baseline requirement for authorized neighbor changes.
 - [ ] Keep wider Game goal and actual hardware/FCSR/live qualification separate.
 
@@ -24,7 +38,7 @@
 - [x] Preserve16 owner neighbors and every other linked ELF byte; guards/conversion rows/data unchanged.
 - [x] Measure Game2,747/4,816 (57.04%), total3,420/5,489 (62.31%), zero drift /2,069 different.
 - [x] Bank toolsb4e101a before consumer source/docs/pin; preserve older independent dirty work and curve receipts.
-- [ ] Recover adjacent44-word func_151B48DC with exact constant, ten-point unrolled interpolation and leaf ABI.
+- [x] Recover adjacent44-word func_151B48DC with exact constant, ten-point unrolled interpolation and leaf ABI; Note1204.
 - [ ] Retain Note1202 curve frame/private/slot rejection gates; record a fresh whole-owner baseline for future curve work.
 - [ ] Keep wider Game goal and actual hardware/FCSR/live qualification separate.
 

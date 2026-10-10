@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-10 Owner Fixed-Span Point Initializer Byte Match
+
+[Note 1205](WORKING_NOTES/1205-game-owner-fixed-span-point-initializer-byte-match-20261010.md):
+Complete func_151B4B78 matches41 words through41 guarded dependencies, no
+omissions, retaining leaf ABI, early constant read, rounding and velocities.
+Nine tests pass in17.087s before and16.048s after; whole ELF changes only target
+164-byte slot/symbol extent. Old guard prefix,16 neighbors/conversion rows/data
+unchanged. Game2,749/4,816 (57.08%), total3,422/5,489 (62.34%), zero drift /
+2,067 different. Tools1e345c1 first; next89-word func_151B4A14. Preserve curve
+rejection gates, historical receipts and older independent dirty work.
+
 ## 2026-10-10 Owner X-Axis Point Interpolation Byte Match
 
 [Note 1204](WORKING_NOTES/1204-game-owner-x-axis-point-interpolation-byte-match-20261010.md):

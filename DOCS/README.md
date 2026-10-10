@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner fixed-span point initializer byte match](WORKING_NOTES/1205-game-owner-fixed-span-point-initializer-byte-match-20261010.md):
+  All41 linked words match through41 guarded dependencies/no omissions.
+  Nine tests pass before/after; Game2,749 exact. Next:89-word func_151B4A14.
+
 - [Owner X-axis point interpolation byte match](WORKING_NOTES/1204-game-owner-x-axis-point-interpolation-byte-match-20261010.md):
   All44 linked words match through a closed46-row recipe/two omissions.
   Nine tests pass before/after; Game2,748 exact. Next:41-word func_151B4B78.

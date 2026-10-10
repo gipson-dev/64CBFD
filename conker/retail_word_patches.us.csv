@@ -12181,3 +12181,44 @@ generated_1E0560,func_151B48DC,0xA8,0x31CFFFFD,0x31CFFFFD,-,-,Normalize certifie
 generated_1E0560,func_151B48DC,0xAC,0xA08F0010,0xA08F0010,-,-,Normalize certified X-axis line producer schedule and folded point pointer,,,false
 generated_1E0560,func_151B48DC,0xB0,0x03E00008,0x03E00008,-,-,Normalize certified X-axis line producer schedule and folded point pointer,,,false
 generated_1E0560,func_151B48DC,0xB4,0x00000000,0x00000000,-,-,Normalize certified X-axis line producer schedule and folded point pointer,,,false
+generated_1E0560,func_151B4B78,0x0,0x3C01C47A,0x3C01C47A,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x4,0x44816000,0x44811000,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x8,0x3C010000,0x3C010000,R_MIPS_HI16:D_800AA3C8,R_MIPS_HI16:D_800AA3C8,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0xC,0xC4220000,0xC42E0000,R_MIPS_LO16:D_800AA3C8,R_MIPS_LO16:D_800AA3C8,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x10,0x44807000,0x44806000,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x14,0xE48C0048,0xE4820048,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x18,0x46026000,0x460E1000,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x1C,0x24020002,0x24020002,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x20,0x24830030,0x24830030,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x24,0x2405000A,0x2405000A,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x28,0xE4800060,0xE4800060,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x2C,0x46020000,0x460E0000,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x30,0xE48E004C,0xE48C004C,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x34,0xE48E0050,0xE48C0050,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x38,0xE48E0064,0xE48C0064,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x3C,0xE48E0068,0xE48C0068,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x40,0xE4600048,0xE4600048,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x44,0x46020000,0xE46C004C,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x48,0x24420004,0xE46C0050,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x4C,0xE46E0064,0x460E0000,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x50,0xE46E0068,0x24420004,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x54,0xE4600060,0xE46C0064,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x58,0x46020000,0xE46C0068,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x5C,0xE46E007C,0xE4600060,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x60,0xE46E0080,0x460E0000,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x64,0xE46E0094,0xE46C007C,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x68,0xE4600078,0xE46C0080,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x6C,0x46020000,0xE46C0094,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x70,0xE46E0098,0xE4600078,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x74,0x24630060,0x460E0000,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x78,0xE46EFFEC,0xE46C0098,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x7C,0xE4600030,0x24630060,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x80,0x46020000,0xE4600030,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x84,0x1445FFEE,0x1445FFEE,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x88,0xE46EFFF0,0x460E0000,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x8C,0x908E0010,0x908E0010,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x90,0x24020001,0x24020001,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x94,0x31CFFFFD,0x31CFFFFD,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x98,0xA08F0010,0xA08F0010,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0x9C,0x03E00008,0x03E00008,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false
+generated_1E0560,func_151B4B78,0xA0,0x00000000,0x00000000,-,-,Normalize certified fixed-span floating roles and point zero-store schedule,,,false

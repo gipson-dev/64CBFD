@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1205](WORKING_NOTES/1205-game-owner-fixed-span-point-initializer-byte-match-20261010.md)):
+Restore41-word func_151B4B78 with41 dependency guards/no omissions, leaf ABI,
+early constant read and untouched velocities. Nine tests pass before/after;
+only target slot/symbol extent changes. Old guard prefix,16 neighbors/data/
+conversion rows unchanged. Game2,749 exact, total3,422 exact, zero drift /
+2,067 different. Tools1e345c1 first; next89-word func_151B4A14. Preserve curve
+rejection handoff and older independent dirty work.
+
 2026-10-10 ([Note 1204](WORKING_NOTES/1204-game-owner-x-axis-point-interpolation-byte-match-20261010.md)):
 Restore44-word func_151B48DC with46 dependency guards/two omissions, no frame/
 padding. Nine tests pass before/after; only target slot/symbol extent changes.
