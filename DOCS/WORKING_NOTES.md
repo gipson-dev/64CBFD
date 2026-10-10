@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md)):
+Certify shared Z-delta/half branch definitions and actual guarded 142-word fit,
+original frame/private homes/six reads retained. 102 differences remain, raw C
+still 144 words; 35 source-only forms do not fit. Actual owner/padder/rebases and
+stale/live-value controls qualify. All 60 combined tests and final twelve-test
+rerun pass; tools c5260a6 first. No production/guard/credit changes; continue
+FP/counter/cursor/branch-delay matching, real trig/FCSR/live separate.
+
 2026-10-09 ([Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md)):
 Recover six single endpoint reads without losing original frame/homes or full
 final private memory. All 48 combined tests pass; 62 full forms qualify, effective

@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Arc Certified Branch Fold - 2026-10-10
+
+[Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md):
+
+- [x] Qualify 35 complete source-only forms; retain their failure to reach 142 words.
+- [x] Certify all three short-circuit paths; preserve required Z-delta/half values with ten fail-closed window guards.
+- [x] Fit actual guarded 142-word diagnostic with original 136-byte frame, full private memory and six reads; raw C remains 144 words.
+- [x] Qualify all-word guests, actual native32/dispatch/rebases/owner/fault/data/helper gates and effective stale/live-value controls.
+- [x] Pass all 60 combined tests and final twelve-test fold rerun; bank tools c5260a6 before parent docs/pin, preserving independently dirty older work.
+- [ ] Finish 102 differing words: original FP allocation, counter/current-next cursor and branch-delay angle advance.
+- [ ] Install only after full linked owner/ELF/data/guard-history qualification; no source-only, retail-trig or hardware/live claim.
+
 ## Owner Point Arc Endpoint Read Recovery - 2026-10-09
 
 [Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md):
@@ -9,7 +21,7 @@
 - [x] Pass all 48 combined tests; qualify native32/dispatch/rebases/owner/fault/data/helper gates and effective independent read/home negatives.
 - [x] Measure exact six-word read multiplicity in every selected guest case; keep full access ordering/FCSR/live acceptance separate.
 - [x] Preserve production/guards/progress/README totals; commit tools aafc036 before parent docs/pin and preserve independent older work.
-- [ ] Fit complete 142-word slot, Z-delta/half-constant scheduling, original FP allocation and counter/current-next cursor/branch-delay angle advance.
+- [x] Fit the guarded diagnostic slot and certify shared Z-delta/half definitions in [Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md); source-only fit and original FP/counter/cursor/branch-delay matching remain open.
 - [ ] Install only after whole linked owner/ELF/data/guard-history qualification; real trig/hardware/live rendering/gameplay remain separate.
 
 ## Owner Point Arc Delta-Y Home Recovery - 2026-10-09

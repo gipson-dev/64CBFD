@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Owner Point Arc Certified Branch Fold
+
+[Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md):
+Certify three short-circuit paths and fit the actual guarded diagnostic at
+142 words/frame136/102 differences, retaining full private memory and six reads.
+Ten guards cover the proof window, including four unchanged words; two copies
+omitted, no frame patches/insertions. 35 source-only forms do not fit; raw C
+remains 144 words/138 differences. No installation/production guards/credit.
+All 60 combined tests pass in 463.986s; final twelve-test rerun passes in 96.182s.
+Tools c5260a6 banked before parent docs/pin; preserve independently dirty older work.
+Continue FP/counter/cursor/branch-delay matching; real trig/FCSR/live remain separate.
+
 ## 2026-10-09 Owner Point Arc Endpoint Read Recovery
 
 [Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md):

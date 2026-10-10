@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-09
+Last verified: 2026-10-10
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools aafc036; tools are committed before the consumer pin.
+  checkpoint pins tools c5260a6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner point-arc certified branch fold:
+[Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md).
+Guarded diagnostic fits 142 words / frame136 / 102 differences, retaining full
+private memory and six input reads. Raw C remains 144 words / 138 differences;
+35 source-only forms do not fit. Actual padder/owner/rebases and stale-window
+controls qualify. All 60 combined tests pass in 463.986s; the final twelve-test
+fold rerun passes in 96.182s. Not installed or byte-exact; production/guards/totals unchanged.
+Continue FP/cursor/counter/branch-delay matching; real trig/FCSR/live remain separate.
 
 Latest owner point-arc endpoint-read recovery:
 [Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md).

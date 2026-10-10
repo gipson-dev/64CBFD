@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point arc certified branch fold](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md):
+  Guarded 142-word/frame136 diagnostic preserves private memory and six reads.
+  All 60 combined tests and final twelve-test rerun pass. Raw C still overflows;
+  102 differences remain. Tools c5260a6 first; not installed, no production credit.
+
 - [Owner point arc endpoint-read recovery](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md):
   Six single input reads with original frame/homes and full final memory retained.
   All 48 combined tests pass; 144-word overflow and scheduling remain, no production credit.
