@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools baacebd; tools are committed before the consumer pin.
+  checkpoint pins tools cc74178; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed color provider and complete actor renderer byte match:
+[Note 1226](WORKING_NOTES/1226-game-actor-color-provider-and-complete-renderer-byte-match-20261010.md): install complete func_1502CC34 and func_1502CCFC.
+All 50 color words emit directly from C; full 532-word renderer uses its
+certified 531 guards. Eight post-install tests and tools-check pass; only
+2,328 target bytes/two symbol extents change, old guard prefix and data exact.
+Game 2,762/4,816 (57.35%), total 3,435/5,489 (62.58%), zero drift / 2,054
+different. Tools cc74178 first, no push; bounded callbacks/hardware remain open.
 
 Latest complete actor renderer actual color/matrix connections, not installed:
 [Note 1225](WORKING_NOTES/1225-game-complete-actor-renderer-actual-color-and-matrix-connections-20261010.md).

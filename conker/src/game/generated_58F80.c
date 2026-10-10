@@ -421,7 +421,7 @@ s32 func_150229E4(u8 *);
 s32 func_150849CC(u8 *,s32 *);
 void func_1502D54C(s32, s32 *);
 void func_1502D630(u8 *, s32 *, s32);
-s32 func_1502CCFC();
+Gfx *func_1502CCFC(Gfx *, s32, s32, u8 *, s32, s32 *, s32, s32);
 
 Gfx *func_1502C974(Gfx *commands, s32 slot, s32 view, s32 mode, s32 extra) {
     Gfx *original;
@@ -483,12 +483,180 @@ Gfx *func_1502C974(Gfx *commands, s32 slot, s32 view, s32 mode, s32 extra) {
     return commands;
 }
 
-s32 func_1502CC34() {
-    return 0;
+extern u8 D_800D9B68[], D_800D9B78[];
+void func_1502EC34(u8 *, s32 *, s32 *, s32 *, s32 *);
+
+void func_1502CC34(u8 *actor, s32 view, s32 alpha, s32 *parameters,
+    s32 *primitiveR, s32 *primitiveG, s32 *primitiveB,
+    s32 *environmentR, s32 *environmentG, s32 *environmentB,
+    s32 *fogR, s32 *fogG, s32 *fogB, s32 *fogA) {
+    u8 *primitive = D_800D9B68 + (u32)view * 3;
+    u8 *environment = D_800D9B78 + (u32)view * 3;
+
+    *primitiveR = primitive[0];
+    *primitiveG = primitive[1];
+    *primitiveB = primitive[2];
+    *environmentR = environment[0];
+    *environmentG = environment[1];
+    *environmentB = environment[2];
+    *fogR = 0;
+    *fogG = 0;
+    *fogB = 0;
+    *fogA = parameters[3];
+    if (actor[0xA4] != 0) {
+        func_1502EC34(actor, fogR, fogG, fogB, fogA);
+    }
 }
 
-s32 func_1502CCFC() {
-    return 0;
+extern u8 D_800BE9C0, D_800D9900, D_800DD2E4[];
+extern u8 *D_800B0DF0;
+extern s32 D_800DCD7C;
+extern u16 D_800C4778[];
+extern Gfx **D_800C48F0[], **D_800C4488[];
+extern Gfx D_80084160[], D_80084190[], D_800832C0[], D_80082FC0[], D_80083140[];
+extern Mtx D_800C3E98, D_C3E98;
+extern u8 D_800D9E28[];
+s32 func_150849CC(u8 *, s32 *);
+s32 func_1503DA9C(u8 *, s32, s32, s32);
+Gfx *func_1502F01C(Gfx *, s32);
+Gfx *func_1502F9FC();
+
+Gfx *func_1515D914(Gfx *, s32, s32, s32, s32, s32, s32, s32,
+    u8 *, u8 *, s32, u8 *, s32, u8 *);
+void func_151EFE88(Mtx *);
+void func_1502FD70(u8 *);
+Gfx *func_15030F94(Gfx *, u8 *, s32, s32);
+
+Gfx *func_1502CCFC(Gfx *commands, s32 slot, s32 view, u8 *matrix,
+    s32 alpha, s32 *parameters, s32 mode, s32 extra) {
+    u8 *actor;
+    s32 selectedMode, tier, identity, colorState, flags, allowed, enabled, lighting;
+    s32 primitiveR, primitiveG, primitiveB;
+    s32 environmentR, environmentG, environmentB;
+    s32 fogR, fogG, fogB, fogA;
+    s32 part, page;
+
+    selectedMode = mode;
+    actor = (u8 *)D_800CC2D0 + (u32)slot * 0x32C;
+    identity = actor[4];
+    if (selectedMode == 3 || selectedMode == 4 || selectedMode == 5) {
+        identity = func_150849CC(actor, &tier);
+        selectedMode = mode;
+    } else {
+        tier = actor[0x1C8];
+    }
+    if (selectedMode == 3) { allowed = 0; } else { allowed = 1; }
+    if (func_1503DA9C(actor, identity, tier, allowed) != 0) {
+        return commands;
+    }
+    page = D_800BE9C0;
+    if (*(u8 **)(actor + 0x28C + tier * 8 + page * 4) == NULL) {
+        return commands;
+    }
+    if (extra != 0) {
+        gSPDisplayList(commands++, D_80084160);
+    } else {
+        gDPPipeSync(commands++);
+    }
+    commands = func_1502F01C(commands, slot);
+    commands = func_1502F9FC(commands, slot);
+    gSPSegment(commands++, 3, matrix);
+    gSPSegment(commands++, 1, *(u8 **)(actor + 0x28C + tier * 8 + page * 4) - 0x38);
+    func_1502CC34(actor, view, alpha, parameters, &primitiveR, &primitiveG,
+        &primitiveB, &environmentR, &environmentG, &environmentB,
+        &fogR, &fogG, &fogB, &fogA);
+    if (mode == 5) {
+        gSPSegment(commands++, 8, D_800832C0);
+    } else if (mode == 3) {
+        gSPSegment(commands++, 8, D_800832C0);
+    } else if (alpha < 255) {
+        gSPSegment(commands++, 8, D_80082FC0);
+    } else {
+        gSPSegment(commands++, 8, D_80083140);
+    }
+    gSPClearGeometryMode(commands++, G_CULL_BOTH);
+    if (mode == 0) {
+        gSPSetGeometryMode(commands++, G_CULL_FRONT);
+    } else {
+        gSPSetGeometryMode(commands++, G_CULL_BACK);
+    }
+    enabled = *(s16 *)(D_800B0DF0 + 0x3E);
+    lighting = 1;
+    if ((actor[0x66] & 0xC) == 0xC) {
+        gSPSetGeometryMode(commands++, G_LIGHTING);
+        gSPClearGeometryMode(commands++, 0x400000);
+    } else if ((actor[0x66] & 0xC) != 8) {
+        gSPClearGeometryMode(commands++, G_LIGHTING | 0x400000);
+        lighting = 0;
+    } else if (D_800DCD7C != 0) {
+        gSPSetGeometryMode(commands++, G_LIGHTING | 0x400000);
+    } else {
+        gSPClearGeometryMode(commands++, G_LIGHTING | 0x400000);
+        lighting = 0;
+    }
+    if (mode == 3) {
+        gSPClearGeometryMode(commands++, G_LIGHTING | 0x400000);
+        lighting = 0;
+    }
+    if (lighting != 0) {
+        flags = actor[0x2FE] == 0 ? 10 : 2;
+        if (D_800D9900 != 0) {
+            flags |= 8;
+        }
+        commands = func_1515D914(commands, view, (s32)*(f32 *)(actor + 0x14),
+            (s32)*(f32 *)(actor + 0x18), (s32)*(f32 *)(actor + 0x1C),
+            *(s32 *)(actor + 0x184), *(s32 *)(actor + 0x304 + view * 4),
+            actor[0x301], *(u8 **)(actor + 0x314) + D_800BE9C0 * 8,
+            actor + 0x302, 2, actor + 0x1DD, flags, D_800D9E28);
+    }
+    colorState = -1;
+    for (part = 0; part < D_800C4778[identity]; part++) {
+        if ((*(u32 *)(actor + 0x94) & (1U << (part & 31))) != 0) {
+            continue;
+        }
+        if ((*(u32 *)(actor + 0x98) & (1U << (part & 31))) == 0) {
+            if (colorState != 0) {
+                gDPPipeSync(commands++);
+                colorState = 0;
+                if (enabled == 0) {
+                    gDPSetFogColor(commands++, fogR, fogG, fogB, fogA);
+                } else {
+                    gDPSetFogColor(commands++, D_800DD2E4[0], D_800DD2E4[1],
+                        D_800DD2E4[2], fogA);
+                }
+                gDPSetPrimColor(commands++, 0xF2, 0, primitiveR, primitiveG, primitiveB, 0);
+                gDPSetEnvColor(commands++, environmentR, environmentG, environmentB, alpha);
+            }
+        } else if (colorState != 1) {
+            gDPPipeSync(commands++);
+            gDPSetFogColor(commands++, 0, 0, 0, 255);
+            gDPSetPrimColor(commands++, 0xF2, 0, 0, 0, 0, 0);
+            gDPSetEnvColor(commands++, 0, 0, 0, 255);
+            colorState = 1;
+        }
+        if (mode == 3) {
+            if (D_800C48F0[identity] != NULL) {
+                gSPDisplayList(commands++, D_800C48F0[identity][part]);
+            }
+        } else {
+            func_151EFE88(&D_800C3E98);
+            gSPMatrix(commands++, &D_C3E98,
+                G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+            gSPDisplayList(commands++, D_800C4488[identity][part]);
+        }
+    }
+    func_1502FD70(actor);
+    actor[0x2FE] = 1;
+    if (mode == 0) {
+        commands = func_15030F94(commands, actor, view, 1);
+    }
+    if (extra != 0) {
+        gSPDisplayList(commands++, D_80084190);
+    }
+    if (mode == 0) {
+        gSPGeometryMode(commands++, G_CULL_FRONT, G_CULL_BACK);
+    }
+    return commands;
 }
 
 void func_1502D54C(s32 slot, s32 *parameters) {
@@ -1030,7 +1198,7 @@ void func_1502F948(ActorCopy58F80 *actor) {
     }
 }
 
-s32 func_1502F9FC() {
+Gfx *func_1502F9FC() {
     return 0;
 }
 

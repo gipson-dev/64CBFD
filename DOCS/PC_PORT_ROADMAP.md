@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Color Provider And Complete Renderer Byte Match - 2026-10-10
+
+[Note 1226](WORKING_NOTES/1226-game-actor-color-provider-and-complete-renderer-byte-match-20261010.md):
+
+- [x] Recover all 50 color words directly from C, original frame/argument home, no guards.
+- [x] Qualify live aliases, all fog modes, fired full faults and fresh complete-body negatives.
+- [x] Pass 224 connected cases and 1,296 actual native32 color/fog executions.
+- [x] Install both complete bodies and 531 certified renderer guards; preserve old guard bytes exactly.
+- [x] Rebuild/audit entire linked ELF: only two slots/extents change, 36 neighbors/data exact.
+- [x] Pass all eight post-install tests/tools-check; Game 2,762/4,816, total 3,435/5,489, zero drift.
+- [x] Bank tools cc74178 first; preserve older dirty tools, no push.
+- [ ] Audit/recover remaining bounded production dependencies, beginning with func_1502F9FC.
+- [ ] Keep actual cosine/other callbacks, FCSR/traps and hardware/live acceptance separate and open.
+
 ## Complete Actor Renderer Actual Color And Matrix Connections - 2026-10-10
 
 [Note 1225](WORKING_NOTES/1225-game-complete-actor-renderer-actual-color-and-matrix-connections-20261010.md):
@@ -9,8 +23,8 @@
 - [x] Fire all 758 selected connected fault-prefix triples; raw comparison adjusts only proven saved return PCs.
 - [x] Pass fresh complete renderer negatives, five missing-helper rejections and scalar-preserving return-PC control; all 21 combined tests pass.
 - [x] Bank tools baacebd first; preserve production/counts/older dirty tools, no push.
-- [ ] Recover and qualify full semantic C for the still-empty 50-word color provider func_1502CC34.
-- [ ] Qualify/install both bodies in their copied owner, rebuild/audit linked ELF and measure fresh credit.
+- [x] Recover and qualify full semantic C for the 50-word color provider func_1502CC34 in Note 1226.
+- [x] Qualify/install both bodies in their copied owner, rebuild/audit linked ELF and measure fresh credit in Note 1226.
 - [ ] Keep actual cosine/other callbacks, FCSR/traps and hardware/live acceptance separate and open.
 
 ## Complete Actor Renderer Native32 SDK Qualification - 2026-10-10
@@ -22,7 +36,8 @@
 - [x] Pass four effective native negatives, explicit pointer/scalar regression and all 13 combined native/schedule tests.
 - [x] Preserve immutable production/baselines/counts; bank tools e5f59e3 first and preserve older dirty tools, no push.
 - [x] Connect full actual dispatcher/RGB/shading/renderer/color-helper and matrix-helper bodies in Note 1225; cosine/other callbacks remain bounded.
-- [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; hardware/live acceptance stays separate.
+- [x] Install both qualified bodies, rebuild/audit linked ELF and measure fresh credit in Note 1226.
+- [ ] Keep hardware/live acceptance separate and open.
 
 ## Complete Actor Renderer Certified Schedule And Padding - 2026-10-10
 
@@ -36,7 +51,8 @@
 - [x] Bank tools e59626e first, preserve production/counts and older dirty tools; no installation or push.
 - [x] Qualify native32 SDK output in Note 1224.
 - [x] Qualify complete actual dispatcher/RGB/shading/renderer/color-helper chain in Note 1225; recover production color provider before installation.
-- [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; hardware/live acceptance stays separate.
+- [x] Install both qualified bodies, rebuild/audit linked ELF and measure fresh credit in Note 1226.
+- [ ] Keep hardware/live acceptance separate and open.
 
 ## Complete Actor Renderer Original Private Layout - 2026-10-10
 
@@ -50,7 +66,7 @@
 - [x] Close 532-word instruction layout and certified stale-dependent recipe/padding; completed in Note 1223, raw portable body remains 531 words.
 - [x] Qualify native32 SDK output in Note 1224.
 - [x] Qualify complete actual dispatcher/RGB/shading/renderer/color-helper chain in Note 1225; recover production color provider before installation.
-- [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; no current matching claim.
+- [x] Install both qualified bodies, rebuild/audit linked ELF and measure fresh credit in Note 1226.
 
 ## Complete Actor Renderer Recovery - 2026-10-10
 
@@ -65,7 +81,7 @@
 - [x] Close scheduling and padding; completed in Note 1223.
 - [x] Qualify native32 SDK output in Note 1224.
 - [x] Qualify complete real helper/dispatcher/RGB/shading/renderer chain in Note 1225; cosine/other callbacks remain bounded.
-- [ ] Install qualified body, rebuild/audit linked ELF and measure fresh credit. Current matching remains unchanged.
+- [x] Install both qualified bodies, rebuild/audit linked ELF and measure fresh credit in Note 1226.
 
 ## Actor Alpha-Shading Byte Match - 2026-10-10
 
@@ -78,7 +94,7 @@
 - [x] Execute 168 complete banked dispatcher connections with the real RGB writer, shading caller and all 58 matrix-chain words.
 - [x] Audit whole ELF: only target 500-byte slot/symbol extent changes; 37 neighbors, old guards, conversion rows and data exact.
 - [x] Measure Game 2,760/4,816 (57.31%), total 3,433/5,489 (62.54%), zero drift / 2,056 different; update root README aggregates only.
-- [ ] Recover and qualify the complete 532-word eight-argument renderer func_1502CCFC, not only its early gates.
+- [x] Recover, qualify and install the complete 532-word eight-argument renderer func_1502CCFC in Notes 1221-1226.
 - [ ] Preserve separate curve rejection gates and hardware/FCSR/live boundaries.
 
 ## Actor RGB Parameter Writer Direct Match - 2026-10-10

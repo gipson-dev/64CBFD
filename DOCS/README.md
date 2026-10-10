@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor color provider and complete renderer byte match](WORKING_NOTES/1226-game-actor-color-provider-and-complete-renderer-byte-match-20261010.md):
+  install both full bodies; eight post-install tests, whole linked audit,
+  preserved guards/data and +2 matching credit. Bounded callbacks remain open.
+
 - [Complete actor renderer actual color and matrix connections](WORKING_NOTES/1225-game-complete-actor-renderer-actual-color-and-matrix-connections-20261010.md):
   qualify complete original color/fog and both banked matrix chains, full
   caller paths and fired connected faults. Original/fitted private state exact;
