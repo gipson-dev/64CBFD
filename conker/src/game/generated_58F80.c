@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern s32 D_800BE9E4;
 extern f32 D_80096F38, D_80096F3C;
 f32 cosf(f32);
 
@@ -142,7 +143,7 @@ s32 func_1503A830();
 s32 func_1503DF48();
 s32 func_1502EEF4();
 s32 func_1502F264();
-s32 func_1502EAFC();
+void func_1502EAFC(u8 *object);
 s32 func_150A4B04();
 s32 func_1517AD00();
 
@@ -181,7 +182,7 @@ void func_1502BD84(ActorUpdate58F80 *actor, s32 slot) {
         func_1502EEF4(slot);
         func_1502F264(slot);
         if (actor->signal != 0) {
-            func_1502EAFC(actor);
+            func_1502EAFC((u8 *)actor);
         }
         if ((actor->flags & 0x4000) != 0) {
             func_150A4B04(actor);
@@ -410,8 +411,52 @@ void func_1502EA7C(u8 *arg0, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_58F80/func_1502EA98.s")
 
-s32 func_1502EAFC() {
-    return 0;
+void func_1502EAFC(u8 *object) {
+    s32 delta, phase;
+
+    switch (object[0xA4]) {
+    case 2:
+    case 3:
+        delta = (u32)object[0xA6] * (u32)D_800BE9E4;
+        phase = object[0xA5];
+        if (delta < phase) {
+            object[0xA5] = (u32)phase - (u32)delta;
+        } else {
+            object[0xA5] = 0;
+        }
+        break;
+    case 5:
+        delta = (u32)D_800BE9E4 * 10;
+        phase = object[0xA7];
+        if (delta < phase) {
+            object[0xA7] = (u32)phase - (u32)delta;
+        } else {
+            object[0xA4] = 0;
+        }
+        /* Fall through. */
+    case 4:
+        object[0xA5] += (u32)object[0xA6] * (u32)D_800BE9E4;
+        break;
+    case 6:
+        delta = (u32)object[0xA6] * (u32)D_800BE9E4;
+        phase = object[0xA5];
+        if (phase < (s32)(255u - (u32)delta)) {
+            object[0xA5] = (u32)phase + (u32)delta;
+        } else {
+            object[0xA5] = 255;
+        }
+        object[0xA4] = 7;
+        break;
+    case 7:
+        delta = (u32)object[0xA6] * (u32)D_800BE9E4;
+        phase = object[0xA5];
+        if (delta < phase) {
+            object[0xA5] = (u32)phase - (u32)delta;
+        } else {
+            object[0xA4] = 0;
+        }
+        break;
+    }
 }
 
 void func_1502EC34(u8 *object, s32 *red, s32 *green, s32 *blue, s32 *opacity) {

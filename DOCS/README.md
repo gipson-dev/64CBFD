@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Object phase-updater byte match](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md):
+  All 78 linked words match with signed/wrapping products and fresh tick reloads.
+  Ten tests pass before/after; one neighboring table guard requalified, its code
+  unchanged. Game 2,752 exact. Next: 74-word slot updater func_1502EEF4.
+
 - [Object color-mode helper byte match](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md):
   All 150 linked words match with original frame/case starts and protected table.
   Ten tests pass before/after; Game 2,751 exact. Next: 78-word phase updater.

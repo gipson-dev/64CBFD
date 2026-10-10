@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-10 Object Phase-Updater Byte Match
+
+[Note 1209](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md):
+Complete func_1502EAFC matches all 78 linked words, original leaf ABI and six
+case starts through 75 closed guards/three insertions/no omissions. Ten tests
+pass before/after, final 55.695s: 7,868 guest cases, 168 faults, 720,896 native32
+cases, five effective compiled controls and actual dispatcher gates. Fresh
+renderer/adapter regression passes in 7.314s. Requalify only the neighboring
+color guard's expected pool addend 0x100 -> 0x118; its padded/linked code stays
+unchanged. Whole ELF changes only target 312-byte slot/symbol extent; conversion
+rows/protected data unchanged. Game 2,752/4,816 (57.14%), total 3,425/5,489
+(62.40%), zero drift / 2,064 different. Tools 7ae085c first; next 74-word
+func_1502EEF4. Preserve the separate curve rejection handoff and older dirty work.
+
 ## 2026-10-10 Object Color-Mode Helper Byte Match
 
 [Note 1208](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md):

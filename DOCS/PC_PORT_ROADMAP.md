@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Object Phase-Updater Byte Match - 2026-10-10
+
+[Note 1209](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md):
+
+- [x] Restore complete void func_1502EAFC, its typed caller interface and all 78 retail words with no frame.
+- [x] Qualify wrapping products, signed gates, all modes, overlapping tick bytes and mode-5 fresh-read fall-through.
+- [x] Certify 75 closed guards: 19 changed words, 56 dependencies, three insertions, no omissions.
+- [x] Bind the protected six-entry table directly and requalify one neighboring color expected addend from 0x100 to 0x118.
+- [x] Pass ten tests before/after, 7,868 guest cases, 168 faults, 720,896 native32 cases and five effective compiled negatives.
+- [x] Verify actual dispatcher/leaf gates and fresh banked renderer/adapter regression with the unchanged installed color helper.
+- [x] Audit whole ELF: only target 312-byte slot/symbol extent changes; every neighbor and all protected data/conversion rows preserved.
+- [x] Measure Game 2,752/4,816 (57.14%), total 3,425/5,489 (62.40%), zero drift / 2,064 different.
+- [x] Bank tools 7ae085c before consumer source/guards/docs/pin; preserve independently dirty older tools and historical baselines.
+- [ ] Recover 74-word func_1502EEF4, two +0x6C/+0x6D byte updates, slot ABI and final actor callback.
+- [ ] Preserve Note 1202's curve frame/extent rejection gates; hardware and live gameplay acceptance remain separate.
+
 ## Object Color-Mode Helper Byte Match - 2026-10-10
 
 [Note 1208](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md):
@@ -12,7 +28,7 @@
 - [x] Prove only target 600-byte slot/symbol extent changes; old guards/conversion rows/protected data unchanged.
 - [x] Measure Game 2,751/4,816 (57.12%), total 3,424/5,489 (62.38%), zero drift / 2,065 different.
 - [x] Bank tools 9f71a62 before consumer source/guards/docs/pin; preserve older independently dirty work and historical receipts.
-- [ ] Recover adjacent 78-word leaf func_1502EAFC, its six-way protected table and signed/wrapping phase updates.
+- [x] Recover adjacent 78-word leaf func_1502EAFC, its six-way protected table and signed/wrapping phase updates in Note 1209.
 - [ ] Preserve separate curve rejection gates and wider Game goal; actual trig/hardware/FCSR/live acceptance remains separate.
 
 ## Object Color-Mode Recovery And Table Gates - 2026-10-10

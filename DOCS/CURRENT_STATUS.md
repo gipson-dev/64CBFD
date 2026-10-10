@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9f71a62; tools are committed before the consumer pin.
+  checkpoint pins tools 7ae085c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest object phase-updater byte match:
+[Note 1209](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md).
+Complete func_1502EAFC replaces its zero-return stub; all 78 linked words match
+with 75 closed dependency guards, three insertions and the original leaf ABI.
+Ten tests pass before/after: 7,868 guest cases, 168 fault prefixes, 720,896
+native32 cases and actual banked dispatcher connections. A fresh renderer/
+adapter regression also passes. The new compact switch shifts the neighboring
+color table by 24 bytes; one existing expected-addend field is requalified,
+while its padded/linked code stays unchanged. Whole ELF changes only the
+312-byte target slot/symbol extent; conversion rows and protected data remain
+exact. Game 2,752/4,816 (57.14%), total 3,425/5,489 (62.40%), zero drift /
+2,064 different. Next: 74-word slot updater func_1502EEF4; preserve curve gates.
 
 Latest object color-mode helper byte match:
 [Note 1208](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md).

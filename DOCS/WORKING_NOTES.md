@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1209](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md)):
+Restore all 78 words of func_1502EAFC with wrapping/signed arithmetic, fresh
+mode-5 tick reloads and protected table. Ten tests pass before/after plus fresh
+renderer regression. Requalify one neighboring expected addend; its code and
+all other linked bytes stay unchanged. Only target slot/symbol extent changes;
+conversion rows/data preserved. Game 2,752 exact, total 3,425 exact, zero drift /
+2,064 different. Tools 7ae085c first; next func_1502EEF4. Preserve curve gates.
+
 2026-10-10 ([Note 1208](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md)):
 Restore all 150 words of func_1502EC34, original frame/private homes/case starts,
 through 148 guarded dependencies and two insertions. Ten tests pass before/
