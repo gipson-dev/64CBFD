@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 1e345c1; tools are committed before the consumer pin.
+  checkpoint pins tools 89d71af; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest captured-object metadata adapter byte match:
+[Note 1206](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md).
+Complete func_151B4A14 replaces its zero-return stub; all89 linked words match
+with89 dependency guards/15 register renames, original0x68 frame/private homes
+and full14-argument ABI. Ten tests pass before/after, including complete original
+renderer/helper connections; only target356-byte slot/symbol extent changes.
+Old guard prefix, conversion rows and protected data unchanged. Game2,750/4,816
+(57.10%), total3,423/5,489 (62.36%), zero drift /2,066 different. Next:150-word
+func_1502EC34, still a production zero-return stub; preserve curve rejection gates.
 
 Latest owner fixed-span point initializer byte match:
 [Note 1205](WORKING_NOTES/1205-game-owner-fixed-span-point-initializer-byte-match-20261010.md).

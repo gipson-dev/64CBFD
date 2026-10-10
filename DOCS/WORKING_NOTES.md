@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1206](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md)):
+Restore89-word func_151B4A14 with original0x68 frame/private homes and closed15
+register renames. Ten tests pass before/after, including complete renderer/
+original-helper connections; only target slot/symbol extent changes. Old guard
+prefix,16 neighbors/data/conversion rows unchanged. Game2,750 exact, total3,423
+exact, zero drift /2,066 different. Tools89d71af first; next production helper
+func_1502EC34. Preserve older dirty work and curve frame/private/slot gates.
+
 2026-10-10 ([Note 1205](WORKING_NOTES/1205-game-owner-fixed-span-point-initializer-byte-match-20261010.md)):
 Restore41-word func_151B4B78 with41 dependency guards/no omissions, leaf ABI,
 early constant read and untouched velocities. Nine tests pass before/after;

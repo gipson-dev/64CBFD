@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-10 Captured-Object Metadata Adapter Byte Match
+
+[Note 1206](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md):
+Complete func_151B4A14 matches89 words through15 register renames/89 dependency
+guards, original0x68 frame/private homes and full14-argument ABI. Ten tests pass
+in20.265s before and22.991s after, including complete renderer/original-helper
+connections. Whole ELF changes only target356-byte slot/symbol extent; old guard
+prefix,16 neighbors/conversion rows/data unchanged. Game2,750/4,816 (57.10%),
+total3,423/5,489 (62.36%), zero drift /2,066 different. Tools89d71af first.
+Next:150-word func_1502EC34, still a production stub; keep curve rejection gates.
+
 ## 2026-10-10 Owner Fixed-Span Point Initializer Byte Match
 
 [Note 1205](WORKING_NOTES/1205-game-owner-fixed-span-point-initializer-byte-match-20261010.md):

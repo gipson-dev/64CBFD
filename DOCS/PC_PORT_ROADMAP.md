@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Captured-Object Metadata Adapter Byte Match - 2026-10-10
+
+[Note 1206](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md):
+
+- [x] Restore complete89-word func_151B4A14 with full14-argument ABI, post-helper captured-object gate and byte return.
+- [x] Recover original0x68 frame/private homes; qualify15 closed register renames/74 unchanged dependencies, no padding.
+- [x] Pass ten tests before/after, full-memory guest/native32, aliases, six effective negatives and166 fault prefixes.
+- [x] Connect complete475-word renderer,150-word original mode helper and34-word fallback; preserve16 neighbors/data/ELF.
+- [x] Measure Game2,750/4,816 (57.10%), total3,423/5,489 (62.36%), zero drift /2,066 different.
+- [x] Bank tools89d71af before source/guards/docs/pin; preserve older independent dirty work and historical curve receipts.
+- [ ] Restore150-word func_1502EC34 from its production stub; recover seven-way outputs, pool, aliases and0x28 frame.
+- [ ] Requalify the adapter/renderer against that installed helper; actual cosine/hardware/FCSR/live acceptance remains separate.
+- [ ] Preserve Note1202 curve frame/private/slot gates and the wider Game matching goal.
+
 ## Owner Fixed-Span Point Initializer Byte Match - 2026-10-10
 
 [Note 1205](WORKING_NOTES/1205-game-owner-fixed-span-point-initializer-byte-match-20261010.md):
@@ -10,7 +24,7 @@
 - [x] Preserve16 neighbors/every other linked ELF byte, old guard prefix, conversion rows and189,088 data bytes.
 - [x] Measure Game2,749/4,816 (57.08%), total3,422/5,489 (62.34%), zero drift /2,067 different.
 - [x] Bank tools1e345c1 before consumer source/guards/docs/pin; preserve older independent dirty work and curve handoff.
-- [ ] Recover89-word func_151B4A14's full output ABI, original helper contract, custom/fallback paths and0x68 frame.
+- [x] Recover89-word func_151B4A14's full output ABI, original helper contract, custom/fallback paths and0x68 frame; Note1206.
 - [ ] Retain Note1202 curve frame/private/slot rejection gates and fresh-baseline requirement for later neighbor work.
 - [ ] Keep wider Game goal and actual hardware/FCSR/live qualification separate.
 

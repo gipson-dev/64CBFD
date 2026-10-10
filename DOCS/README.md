@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Captured-object metadata adapter byte match](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md):
+  All89 linked words match with original0x68 frame and closed register renames.
+  Ten tests pass before/after; Game2,750 exact. Next: production helper func_1502EC34.
+
 - [Owner fixed-span point initializer byte match](WORKING_NOTES/1205-game-owner-fixed-span-point-initializer-byte-match-20261010.md):
   All41 linked words match through41 guarded dependencies/no omissions.
   Nine tests pass before/after; Game2,749 exact. Next:89-word func_151B4A14.

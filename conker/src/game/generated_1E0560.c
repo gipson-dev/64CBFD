@@ -62,6 +62,11 @@ extern f32 D_800AA3C4;
 
 extern f32 D_800AA3C8;
 
+void func_1502EC34(u8 *, s32 *, s32 *, s32 *, s32 *);
+s32 func_151B498C(u8 *owner, s32 *mode1, s32 *mode2, s32 *envR, s32 *envG,
+                  s32 *envB, s32 *alpha, s32 *primR, s32 *primG, s32 *primB,
+                  s32 *primA, s32 *renderMode, u8 *bank, u8 *combine);
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -491,8 +496,38 @@ s32 func_151B498C(u8 *arg0, s32 *arg1, s32 *arg2, s32 *arg3, s32 *arg4,
     return 1;
 }
 
-s32 func_151B4A14() {
-    return 0;
+s32 func_151B4A14(u8 *owner, s32 *mode1, s32 *mode2, s32 *envR, s32 *envG,
+                  s32 *envB, s32 *alpha, s32 *primR, s32 *primG, s32 *primB,
+                  s32 *primA, s32 *renderMode, u8 *bank, u8 *combine) {
+    u8 result;
+    /* Retain retail scratch allocation; reserved words are never accessed. */
+    s32 reserved1, reserved2;
+    u8 *object;
+    s32 red, green, blue, opacity;
+    s32 reserved3;
+
+    result = 1;
+    object = *(u8 **)(owner + 0x150);
+    func_1502EC34(object, &red, &green, &blue, &opacity);
+    if (object[0xA4] & 1) {
+        *mode1 = 0x200005;
+        *mode2 = 0x60600;
+        *envR = red;
+        *envG = green;
+        *envB = blue;
+        *alpha = 0xFF;
+        *primB = opacity;
+        *primG = opacity;
+        *primR = opacity;
+        *primA = 0xFF;
+        *renderMode = 0x100000;
+        *bank = 5;
+        *combine = 0x2F;
+    } else {
+        result = func_151B498C(owner, mode1, mode2, envR, envG, envB, alpha,
+            primR, primG, primB, primA, renderMode, bank, combine);
+    }
+    return result;
 }
 
 s32 func_151B4B78(OwnerPoints3A7C *owner) {
