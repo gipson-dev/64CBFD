@@ -138,7 +138,8 @@ func_1502F01C remains a zero-return placeholder in this owner: VA
 0x1502F01C..0x1502F264, ROM 0x5C4CC..0x5C714, 146 words / 584 bytes.
 Frame 0x88 saves s0..s7, fp and ra at +0x18 through +0x3C. Recover
 Gfx *func_1502F01C(Gfx *commands,s32 slot), preserving returned advanced cursor.
-Original func_1502C974 calls it at VA 0x1502CE50 / ROM 0x5A300 and consumes v0.
+Original func_1502CCFC calls it at VA 0x1502CE50 / ROM 0x5A300 and consumes v0.
+Caller ownership corrected in Note 1211; its current C source remains a stub.
 Take a fresh baseline before changing this authorized neighbor.
 
 Cache actor ID +4 before the two-byte loop for D_800D1C90[id]. Bytes +0x6C/

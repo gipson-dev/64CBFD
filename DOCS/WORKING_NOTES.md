@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-10 ([Note 1211](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md)):
+Recover complete func_1502F01C diagnostic C and callback-sensitive segment
+selection. Nine tests pass, including aliases, native32, public faults and
+actual override/animation-reader connections. Reject installation on 149-word/
+0x90-frame gates; retail needs 146 / 0x88 and exact private homes. All 37
+neighbors/pools and production hashes/data unchanged; matching totals unchanged.
+Tools dede4a8 first; correct retail caller to func_1502CCFC, still a source stub.
+Continue physical/layout recovery and preserve the separate curve handoff.
+
 2026-10-10 ([Note 1210](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md)):
 Restore all 74 words of func_1502EEF4, typed slot ABI and original frame/saved
 homes. Eleven tests pass before/after, including full private fault prefixes,

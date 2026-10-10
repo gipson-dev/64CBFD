@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-10 Actor Segment-Selector Recovery And Layout Gates
+
+[Note 1211](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md):
+Recover complete func_1502F01C diagnostic C with cached/reloaded IDs, retained
+pair/NULL retry and four ordered SDK segment writes. Nine tests pass in 22.702s:
+1,013 boundary/mutation cases, 420 aliases, 494 faults, 425,984 native32 cases,
+seven effective compiled negatives and both actual banked override callees.
+All 37 neighbors/pools and production hashes/data remain unchanged. Not installed:
+149 words / 0x90 frame / 135 differences versus retail 146 / 0x88. Correct
+retail caller to func_1502CCFC; its current source is still a placeholder.
+Tools dede4a8 first. Next: private homes, full extent and closed layout; matching
+totals stay Game 2,753 and total 3,426 exact, zero drift / 2,063 different.
+
 ## 2026-10-10 Slot Byte-Updater Byte Match
 
 [Note 1210](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md):

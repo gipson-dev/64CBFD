@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Segment-Selector Recovery And Layout Gates - 2026-10-10
+
+[Note 1211](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md):
+
+- [x] Recover complete diagnostic Gfx-pointer/slot routine with cached-loop and reloaded-output IDs, retained pair and NULL retry.
+- [x] Qualify four ordered SDK segment commands, row stride, byte gates, selector changes, callback mutations and output aliases.
+- [x] Measure 36 complete/profile forms; selected 149 words / 0x90 frame remains different from retail 146 / 0x88.
+- [x] Pass nine tests: 1,013 boundary cases, 420 aliases, 494 public faults, 425,984 native32 cases and seven effective compiled negatives.
+- [x] Connect actual 24-word override and 11-word animation reader, preserving NULL exits and selector-times-ten addressing.
+- [x] Preserve all 37 copied-owner neighbors/pools and production source/ELF/guards/data; no new matching credit.
+- [x] Correct caller ownership to retail func_1502CCFC; do not claim its current zero-return source is a complete banked caller.
+- [x] Bank tools dede4a8 before documentation/pin; preserve historical baselines and older independently dirty tools.
+- [ ] Recover original 0x88 physical frame, pair word homes +0x68/+0x6C, selection bytes +0x80/+0x81 and 146-word extent.
+- [ ] Certify closed raw words/relocations, complete private access/fault lifetimes, actual padder, copied owner and whole linked installation.
+- [ ] Qualify the retail caller boundary without substituting its current placeholder; preserve the separate curve rejection gates.
+
 ## Slot Byte-Updater Byte Match - 2026-10-10
 
 [Note 1210](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md):
@@ -12,7 +28,7 @@
 - [x] Audit whole ELF: only target 296-byte slot/symbol extent changes; old guards, all 37 neighbors, conversion rows and data unchanged.
 - [x] Measure Game 2,753/4,816 (57.16%), total 3,426/5,489 (62.42%), zero drift / 2,063 different.
 - [x] Bank tools da955e6 before consumer source/guards/docs/pin; preserve older independently dirty tools and historical baselines.
-- [ ] Recover 146-word func_1502F01C, typed graphics cursor/slot ABI, override-pair callback and four segment writes.
+- [x] Recover complete diagnostic func_1502F01C, typed graphics cursor/slot ABI, override-pair callback and four segment writes in Note 1211; retail frame/extent gates remain open.
 - [ ] Preserve Note 1202's curve rejection gates; hardware and live gameplay acceptance remain separate.
 
 ## Object Phase-Updater Byte Match - 2026-10-10

@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor segment-selector recovery and layout gates](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md):
+  qualify complete callback-sensitive selection and ordered SDK commands; reject
+  installation pending the original physical frame and 146-word extent.
 - [Slot byte-updater byte match](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md):
   restore all 74 words, qualify real classifier/flag-helper/dispatcher connections,
   and preserve every other linked byte; next is the four-segment graphics selector.

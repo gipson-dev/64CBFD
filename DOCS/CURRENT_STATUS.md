@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools da955e6; tools are committed before the consumer pin.
+  checkpoint pins tools dede4a8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest actor segment-selector semantic recovery:
+[Note 1211](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md).
+Complete diagnostic C for func_1502F01C preserves cached/reloaded actor IDs,
+NULL retry/retained override pair and four ordered SDK segment writes. Nine
+tests pass: 1,013 boundary/mutation cases, 420 aliases, 494 public fault prefixes,
+425,984 native32 cases and both actual banked override callees. All 37 copied-
+owner neighbors/pools and production source/ELF/guards/data remain unchanged.
+Not installed: selected body has 149 words / 0x90 frame instead of 146 / 0x88,
+with 135 isolated-link differences. Recover physical homes and closed layout
+before installation. The retail caller is func_1502CCFC, not func_1502C974;
+its current source is a placeholder, not a qualified complete banked caller.
+Matching totals stay Game 2,753/4,816 (57.16%), total 3,426/5,489 (62.42%).
 
 Latest slot byte-updater byte match:
 [Note 1210](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md).
