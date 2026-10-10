@@ -1,4 +1,8 @@
 #include <ultra64.h>
+typedef struct { u32 address; u32 reserved[2]; } ActorSegmentRow58F80;
+extern u8 *D_800D1C90[];
+extern ActorSegmentRow58F80 *D_800C5338[];
+u8 *func_1507E908(u8 *, s32);
 void func_1507E3C0(u8 *);
 extern s32 D_800BE9E4;
 extern f32 D_80096F38, D_80096F3C;
@@ -555,8 +559,49 @@ void func_1502EEF4(s32 slot) {
     func_1507E3C0((u8 *)D_800CC2D0 + ((u32)slot * 0xCB << 2));
 }
 
-s32 func_1502F01C() {
-    return 0;
+Gfx *func_1502F01C(Gfx *commands, s32 slot) {
+    u8 *actor;
+    u8 *cursor;
+    u8 *pair;
+    s32 index;
+    u8 identity;
+    u8 selected[2];
+    ActorSegmentRow58F80 *rows;
+
+    actor = (u8 *)D_800CC2D0 + (u32)slot * 0x32C;
+    identity = actor[4];
+    pair = NULL;
+    cursor = actor;
+    for (index = 0; index != 2; index++, cursor++) {
+        if (cursor[0x6C] >= 10) {
+            selected[index] = cursor[0x6C] - 10;
+        } else {
+            selected[index] = D_800D1C90[identity][((u32)index << 2) - index + cursor[0x6C] + 8];
+            if (actor[0x6F] != 0 && pair == NULL) {
+                pair = func_1507E908(actor, actor[0x6F]);
+            }
+            if (pair != NULL) {
+                s32 pairValues[2];
+                pairValues[0] = pair[0];
+                pairValues[1] = pair[1];
+                if (pair != NULL) {
+                    if (pairValues[index] == (D_800D1C90[identity] + (u32)index * 4 - index)[10]) {
+                        selected[index] = pairValues[index];
+                    } else if (cursor[0x6C] == 0) {
+                        selected[index] = pairValues[index];
+                    }
+                }
+            }
+        }
+    }
+    rows = D_800C5338[actor[4]];
+    if (rows != NULL) {
+        gSPSegment(commands++, 6, rows[selected[0]].address);
+        gSPSegment(commands++, 7, rows[selected[1]].address);
+        gSPSegment(commands++, 10, rows[actor[0x68]].address);
+        gSPSegment(commands++, 11, rows[actor[0x69]].address);
+    }
+    return commands;
 }
 
 s32 func_1502F264() {

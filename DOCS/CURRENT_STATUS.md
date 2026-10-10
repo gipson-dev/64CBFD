@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools dede4a8; tools are committed before the consumer pin.
+  checkpoint pins tools 35a4757; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest actor segment-selector byte match:
+[Note 1212](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md).
+Complete typed func_1502F01C matches all 146 linked words and original 0x88
+frame/private homes through 144 closed guards, 40 changed rows, three producer
+insertions and one certified NOP omission. Twelve tests pass before/after,
+final 75.781s: 5,228 full fault prefixes, 425,984 native32 cases and actual
+banked override/animation-reader connections. Forty-eight literal call-site
+cases qualify cursor/slot forwarding, not the complete placeholder caller.
+Only target 584-byte slot/symbol extent changes; old guards, 37 neighbors,
+conversion rows and protected data unchanged. Game 2,754/4,816 (57.18%),
+total 3,427/5,489 (62.43%), zero drift / 2,062 different. Tools 35a4757 first.
+Next: 89-word attachment updater func_1502F264; preserve separate curve gates.
 
 Latest actor segment-selector semantic recovery:
 [Note 1211](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md).

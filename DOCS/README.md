@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor segment-selector byte match](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md):
+  restore all 146 words and private homes; qualify complete fault traces,
+  actual callees and bounded call-site forwarding. Next: attachment updater.
 - [Actor segment-selector recovery and layout gates](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md):
   qualify complete callback-sensitive selection and ordered SDK commands; reject
   installation pending the original physical frame and 146-word extent.

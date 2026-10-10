@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-10 Actor Segment-Selector Byte Match
+
+[Note 1212](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md):
+Complete typed func_1502F01C matches all 146 linked words and original 0x88
+frame/private homes with 144 guards, 40 changed rows, three inserted producers
+and one certified NOP omission. Twelve tests pass before/after, final 75.781s:
+5,228 full fault prefixes, 425,984 native32 cases, actual banked callees and
+48 bounded literal call-site cases. The complete caller remains a placeholder.
+Whole ELF changes only target 584-byte slot/symbol extent; old guards,
+37 neighbors, conversion rows and data remain exact. Game 2,754/4,816 (57.18%),
+total 3,427/5,489 (62.43%), zero drift / 2,062 different. Tools 35a4757 first.
+Next: 89-word func_1502F264; preserve curve gates and independently dirty tools.
+
 ## 2026-10-10 Actor Segment-Selector Recovery And Layout Gates
 
 [Note 1211](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md):

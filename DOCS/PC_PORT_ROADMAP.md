@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Segment-Selector Byte Match - 2026-10-10
+
+[Note 1212](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md):
+
+- [x] Install complete typed func_1502F01C, all 146 linked words, original 0x88 frame and private homes.
+- [x] Measure 149 layout forms; scope pair words to remove cursor spill without changing callback-sensitive reads.
+- [x] Certify 144 closed guards: 40 changed rows, 104 dependencies, three inserted producers and one certified NOP omission.
+- [x] Preserve SDK commands, cached/reloaded IDs, retained pair, NULL retry, ordered output aliases and unreachable retail word.
+- [x] Pass twelve tests before/after, 5,228 full fault prefixes, 425,984 native32 cases and seven effective compiled negatives.
+- [x] Connect actual banked 24/11-word callees and qualify every stale word/relocation plus twelve independent links.
+- [x] Qualify 48 literal retail call-site cases; keep synthetic wrapper/downstream bounds and complete placeholder caller explicit.
+- [x] Audit whole ELF: only target 584-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows and data unchanged.
+- [x] Measure Game 2,754/4,816 (57.18%), total 3,427/5,489 (62.43%), zero drift / 2,062 different.
+- [x] Bank tools 35a4757 before consumer source/guards/docs/pin; preserve older independently dirty tools and historical receipts.
+- [ ] Recover adjacent 89-word attachment updater func_1502F264, its leaf ABI, fresh flags and signed inclusive copy limit.
+- [ ] Preserve separate curve rejection gates; full-caller restoration, hardware and live acceptance remain separate.
+
 ## Actor Segment-Selector Recovery And Layout Gates - 2026-10-10
 
 [Note 1211](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md):
@@ -12,9 +29,9 @@
 - [x] Preserve all 37 copied-owner neighbors/pools and production source/ELF/guards/data; no new matching credit.
 - [x] Correct caller ownership to retail func_1502CCFC; do not claim its current zero-return source is a complete banked caller.
 - [x] Bank tools dede4a8 before documentation/pin; preserve historical baselines and older independently dirty tools.
-- [ ] Recover original 0x88 physical frame, pair word homes +0x68/+0x6C, selection bytes +0x80/+0x81 and 146-word extent.
-- [ ] Certify closed raw words/relocations, complete private access/fault lifetimes, actual padder, copied owner and whole linked installation.
-- [ ] Qualify the retail caller boundary without substituting its current placeholder; preserve the separate curve rejection gates.
+- [x] Recover original 0x88 physical frame, pair word homes +0x68/+0x6C, selection bytes +0x80/+0x81 and 146-word extent in Note 1212.
+- [x] Certify closed raw words/relocations, complete private access/fault lifetimes, actual padder, copied owner and whole linked installation in Note 1212.
+- [x] Qualify the literal retail call-site boundary in Note 1212 without claiming the current placeholder is a complete banked caller; preserve curve gates.
 
 ## Slot Byte-Updater Byte Match - 2026-10-10
 

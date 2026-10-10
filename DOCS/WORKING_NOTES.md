@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-10 ([Note 1212](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md)):
+Restore all 146 words of typed func_1502F01C and original private homes with
+closed compiler-derived fitting. Twelve tests pass before/after, including
+5,228 full fault prefixes, native32, actual banked callees and 48 bounded
+literal call-site cases. Complete caller is still a placeholder. Only target
+584-byte slot/symbol extent changes; old guards, 37 neighbors and data exact.
+Game 2,754 exact, total 3,427 exact, zero drift / 2,062 different. Tools 35a4757
+first; next 89-word func_1502F264. Preserve separate uninstalled curve gates.
+
 2026-10-10 ([Note 1211](WORKING_NOTES/1211-game-actor-segment-selector-recovery-and-layout-gates-20261010.md)):
 Recover complete func_1502F01C diagnostic C and callback-sensitive segment
 selection. Nine tests pass, including aliases, native32, public faults and
