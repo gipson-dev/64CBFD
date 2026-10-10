@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor attachment-updater byte match](WORKING_NOTES/1213-game-actor-attachment-updater-byte-match-20261010.md):
+  restore all 89 words; qualify raw float copies, aliases, fresh inclusive
+  limits and actual dispatcher/updater connections. Next: state-2 counter.
 - [Actor segment-selector byte match](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md):
   restore all 146 words and private homes; qualify complete fault traces,
   actual callees and bounded call-site forwarding. Next: attachment updater.

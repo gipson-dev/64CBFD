@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-10 ([Note 1213](WORKING_NOTES/1213-game-actor-attachment-updater-byte-match-20261010.md)):
+Restore all 89 words of func_1502F264, its typed slot ABI and complete leaf
+attachment copies. Twelve tests pass before/after with raw float payloads,
+1,428 fault prefixes, 319,488 native32 cases, aliases and 320 actual banked
+dispatcher/updater connections. Only target 356-byte slot/symbol extent
+changes; old guards, 37 neighbors, conversion rows and data exact. Game 2,755
+exact, total 3,428 exact, zero drift / 2,061 different. Tools 9f1e85e first;
+next 56-word func_1502C608. Preserve separate uninstalled curve gates.
+
 2026-10-10 ([Note 1212](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md)):
 Restore all 146 words of typed func_1502F01C and original private homes with
 closed compiler-derived fitting. Twelve tests pass before/after, including

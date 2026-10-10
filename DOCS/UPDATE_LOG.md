@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-10 Actor Attachment-Updater Byte Match
+
+[Note 1213](WORKING_NOTES/1213-game-actor-attachment-updater-byte-match-20261010.md):
+Complete void/slot func_1502F264 matches all 89 linked words and original leaf
+ABI with 89 guards, 29 changed words and no insertions/omissions. Preserve
+one-based lookup, raw float copies, fresh flags and inclusive limit reloads.
+Twelve tests pass before/after, final 22.409s: 14,106 guest cases, 1,428 faults,
+319,488 native32 cases, eight effective negatives and 320 banked dispatcher/
+updater connections. Whole ELF changes only target 356-byte slot/symbol extent;
+old guards, 37 neighbors, conversion rows and data exact. Game 2,755/4,816
+(57.21%), total 3,428/5,489 (62.45%), zero drift / 2,061 different.
+Tools 9f1e85e first. Next: 56-word func_1502C608; preserve curve rejection gates.
+
 ## 2026-10-10 Actor Segment-Selector Byte Match
 
 [Note 1212](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md):

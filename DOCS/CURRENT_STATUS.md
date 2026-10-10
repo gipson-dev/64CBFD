@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 35a4757; tools are committed before the consumer pin.
+  checkpoint pins tools 9f1e85e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest actor attachment-updater byte match:
+[Note 1213](WORKING_NOTES/1213-game-actor-attachment-updater-byte-match-20261010.md).
+Complete void/slot func_1502F264 matches all 89 linked words and original leaf
+ABI through 89 closed guards, 29 changed words and no insertions/omissions.
+Preserve one-based attachment lookup, raw float copies, fresh flags, repeated
+halfword access and signed inclusive limit reloads. Twelve tests pass before/
+after, final 22.409s: 14,106 guest cases, 1,428 fault prefixes, 319,488 native32
+cases, eight effective negatives and 320 actual banked dispatcher/updater
+connections. Only target 356-byte slot/symbol extent changes; old guards,
+37 neighbors, conversion rows and protected data unchanged. Game 2,755/4,816
+(57.21%), total 3,428/5,489 (62.45%), zero drift / 2,061 different.
+Tools 9f1e85e first. Next: 56-word state-2 counter updater func_1502C608;
+preserve separate uninstalled curve gates and hardware/live boundaries.
 
 Latest actor segment-selector byte match:
 [Note 1212](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md).

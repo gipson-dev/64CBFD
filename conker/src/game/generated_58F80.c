@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern s32 D_80082FA0;
 typedef struct { u32 address; u32 reserved[2]; } ActorSegmentRow58F80;
 extern u8 *D_800D1C90[];
 extern ActorSegmentRow58F80 *D_800C5338[];
@@ -147,7 +148,7 @@ s32 func_150345E4();
 s32 func_1503A830();
 s32 func_1503DF48();
 void func_1502EEF4(s32 slot);
-s32 func_1502F264();
+void func_1502F264(s32 slot);
 void func_1502EAFC(u8 *object);
 s32 func_150A4B04();
 s32 func_1517AD00();
@@ -604,8 +605,64 @@ Gfx *func_1502F01C(Gfx *commands, s32 slot) {
     return commands;
 }
 
-s32 func_1502F264() {
-    return 0;
+void func_1502F264(s32 slot) {
+    u8 *actor;
+    u8 *attached;
+    u8 *source;
+    u8 *target;
+    f32 *matrix;
+    s32 index;
+    u32 flags;
+    u16 angle;
+
+    actor = (u8 *)D_800CC2D0 + slot * 0x32C;
+    if (actor[0x65] != 0) {
+        attached = (u8 *)D_800CC2D0 + actor[0x65] * 0x32C - 0x32C;
+        if ((actor[0x101] & 2) != 2) {
+            matrix = *(f32 **)(attached + 0x1D4);
+            if (matrix == NULL) {
+                *(f32 *)(actor + 0x14) = *(f32 *)(attached + 0x14);
+                *(f32 *)(actor + 0x18) = *(f32 *)(attached + 0x18);
+                *(f32 *)(actor + 0x1C) = *(f32 *)(attached + 0x1C);
+            } else {
+                matrix = (f32 *)((u8 *)matrix + *(u32 *)(actor + 0x5C) * 0x40);
+                *(f32 *)(actor + 0x14) = matrix[12];
+                *(f32 *)(actor + 0x18) = matrix[13];
+                *(f32 *)(actor + 0x1C) = matrix[14];
+            }
+            flags = *(volatile u8 *)(actor + 0x101);
+            *(f32 *)(actor + 0x180) = *(f32 *)(attached + 0x180);
+            *(f32 *)(actor + 0x20) = -4.0f;
+            if ((flags & 0x20) == 0) {
+                angle = *(u16 *)(attached + 0x76);
+                flags = *(volatile u8 *)(actor + 0x101);
+                *(u16 *)(actor + 0x76) = angle;
+                *(f32 *)(actor + 0x3C) = *(f32 *)(attached + 0x3C);
+                *(f32 *)(actor + 0x40) = *(f32 *)(attached + 0x40);
+                *(u16 *)(actor + 0x76) = *(u16 *)(attached + 0x76);
+                *(u16 *)(actor + 0x7A) = *(u16 *)(attached + 0x7A);
+                *(u16 *)(actor + 0x78) = *(u16 *)(attached + 0x78);
+            }
+            if ((flags & 0x40) == 0) {
+                ((volatile u8 *)actor)[7] = attached[7];
+                ((volatile u8 *)actor)[8] = attached[8];
+                ((volatile u8 *)actor)[9] = attached[9];
+                ((volatile u8 *)actor)[10] = attached[10];
+                ((volatile u8 *)actor)[15] = attached[15];
+                index = 0;
+                source = attached;
+                target = actor;
+                if (*(volatile s32 *)&D_80082FA0 >= 0) {
+                    do {
+                        ((volatile u8 *)target)[11] = source[11];
+                        index++;
+                        source++;
+                        target++;
+                    } while (*(volatile s32 *)&D_80082FA0 >= index);
+                }
+            }
+        }
+    }
 }
 
 typedef struct ActorAttachment58F80 {

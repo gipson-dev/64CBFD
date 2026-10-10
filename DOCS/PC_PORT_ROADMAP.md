@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Attachment-Updater Byte Match - 2026-10-10
+
+[Note 1213](WORKING_NOTES/1213-game-actor-attachment-updater-byte-match-20261010.md):
+
+- [x] Install complete void/slot func_1502F264 and all 89 retail words with the original frameless ABI.
+- [x] Preserve one-based attachment lookup, bit gates, matrix/fallback float-bit copies and repeated halfword access.
+- [x] Retain signed inclusive limit and fresh post-store reloads; qualify matrix/global aliases and self-attachment.
+- [x] Measure 39 forms and certify 89 closed guards: 29 changed words, 60 dependencies, no insertions/omissions/padding.
+- [x] Pass twelve tests before/after: 14,106 guest cases, 1,428 fault prefixes, 319,488 native32 cases and eight effective negatives.
+- [x] Qualify twelve independent links, every stale word/relocation, all flag/attachment bytes and raw float payloads.
+- [x] Connect actual banked dispatcher, slot updater, classifier and final helper across 320 cases; other callbacks remain bounded opaque.
+- [x] Audit whole ELF: only target 356-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows and data exact.
+- [x] Measure Game 2,755/4,816 (57.21%), total 3,428/5,489 (62.45%), zero drift / 2,061 different.
+- [x] Bank tools 9f1e85e before consumer source/guards/docs/pin; preserve older independently dirty tools and historical receipts.
+- [ ] Recover 56-word state-2 counter updater func_1502C608, captured signed halves, callback and single wrapped correction.
+- [ ] Preserve separate curve rejection gates; hardware and live gameplay acceptance remain separate.
+
 ## Actor Segment-Selector Byte Match - 2026-10-10
 
 [Note 1212](WORKING_NOTES/1212-game-actor-segment-selector-byte-match-20261010.md):
@@ -14,7 +31,7 @@
 - [x] Audit whole ELF: only target 584-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows and data unchanged.
 - [x] Measure Game 2,754/4,816 (57.18%), total 3,427/5,489 (62.43%), zero drift / 2,062 different.
 - [x] Bank tools 35a4757 before consumer source/guards/docs/pin; preserve older independently dirty tools and historical receipts.
-- [ ] Recover adjacent 89-word attachment updater func_1502F264, its leaf ABI, fresh flags and signed inclusive copy limit.
+- [x] Recover adjacent 89-word attachment updater func_1502F264, its leaf ABI, fresh flags and signed inclusive copy limit in Note 1213.
 - [ ] Preserve separate curve rejection gates; full-caller restoration, hardware and live acceptance remain separate.
 
 ## Actor Segment-Selector Recovery And Layout Gates - 2026-10-10
