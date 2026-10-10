@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Slot Byte-Updater Byte Match - 2026-10-10
+
+[Note 1210](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md):
+
+- [x] Restore complete void func_1502EEF4, typed slot interface and all 74 retail words with original 0x30 frame/saved homes.
+- [x] Preserve two byte gates, low-byte classifier results, callback-sensitive reloads and original-actor final callback.
+- [x] Certify 74 guards: 27 changed words, 47 unchanged dependencies, no insertions, omissions or padding.
+- [x] Pass eleven tests before/after, 7,664 guest cases, 450 faults, 239,616 native32 cases and five effective compiled negatives.
+- [x] Connect actual banked classifier, flag helper and dispatcher; verify callback and early-return gates.
+- [x] Audit whole ELF: only target 296-byte slot/symbol extent changes; old guards, all 37 neighbors, conversion rows and data unchanged.
+- [x] Measure Game 2,753/4,816 (57.16%), total 3,426/5,489 (62.42%), zero drift / 2,063 different.
+- [x] Bank tools da955e6 before consumer source/guards/docs/pin; preserve older independently dirty tools and historical baselines.
+- [ ] Recover 146-word func_1502F01C, typed graphics cursor/slot ABI, override-pair callback and four segment writes.
+- [ ] Preserve Note 1202's curve rejection gates; hardware and live gameplay acceptance remain separate.
+
 ## Object Phase-Updater Byte Match - 2026-10-10
 
 [Note 1209](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md):
@@ -13,7 +28,7 @@
 - [x] Audit whole ELF: only target 312-byte slot/symbol extent changes; every neighbor and all protected data/conversion rows preserved.
 - [x] Measure Game 2,752/4,816 (57.14%), total 3,425/5,489 (62.40%), zero drift / 2,064 different.
 - [x] Bank tools 7ae085c before consumer source/guards/docs/pin; preserve independently dirty older tools and historical baselines.
-- [ ] Recover 74-word func_1502EEF4, two +0x6C/+0x6D byte updates, slot ABI and final actor callback.
+- [x] Recover 74-word func_1502EEF4, two +0x6C/+0x6D byte updates, slot ABI and final actor callback in Note 1210.
 - [ ] Preserve Note 1202's curve frame/extent rejection gates; hardware and live gameplay acceptance remain separate.
 
 ## Object Color-Mode Helper Byte Match - 2026-10-10

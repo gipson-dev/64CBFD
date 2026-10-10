@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1210](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md)):
+Restore all 74 words of func_1502EEF4, typed slot ABI and original frame/saved
+homes. Eleven tests pass before/after, including full private fault prefixes,
+native32 and actual classifier/flag-helper/dispatcher connections. Only target
+296-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows
+and data unchanged. Game 2,753 exact, total 3,426 exact, zero drift /
+2,063 different. Tools da955e6 first; next func_1502F01C. Preserve curve gates.
+
 2026-10-10 ([Note 1209](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md)):
 Restore all 78 words of func_1502EAFC with wrapping/signed arithmetic, fresh
 mode-5 tick reloads and protected table. Ten tests pass before/after plus fresh

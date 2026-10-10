@@ -1,4 +1,5 @@
 #include <ultra64.h>
+void func_1507E3C0(u8 *);
 extern s32 D_800BE9E4;
 extern f32 D_80096F38, D_80096F3C;
 f32 cosf(f32);
@@ -141,7 +142,7 @@ s32 func_1503A08C();
 s32 func_150345E4();
 s32 func_1503A830();
 s32 func_1503DF48();
-s32 func_1502EEF4();
+void func_1502EEF4(s32 slot);
 s32 func_1502F264();
 void func_1502EAFC(u8 *object);
 s32 func_150A4B04();
@@ -528,8 +529,30 @@ s32 func_1502EE8C(s32 arg0, s32 arg1) {
     return result;
 }
 
-s32 func_1502EEF4() {
-    return 0;
+void func_1502EEF4(s32 slot) {
+    u8 *actor;
+    s32 index;
+    u8 state;
+
+    actor = (u8 *)D_800CC2D0 + (u32)slot * 0x32C;
+    for (index = 0; index != 2; index++, actor++) {
+        if (actor[0x6C] < 10) {
+            state = func_1502EE8C(slot, index);
+            if (state == 0) {
+                if (actor[0x6C] > 0) {
+                    actor[0x6C]--;
+                }
+            } else if (state == 1) {
+                if (actor[0x6C] < 2) {
+                    actor[0x6C]++;
+                }
+            } else {
+                actor[0x6C] = 1;
+            }
+        }
+    }
+    /* Keep the final slot lookup separate from the advanced byte cursor. */
+    func_1507E3C0((u8 *)D_800CC2D0 + ((u32)slot * 0xCB << 2));
 }
 
 s32 func_1502F01C() {

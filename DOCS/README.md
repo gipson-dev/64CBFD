@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Slot byte-updater byte match](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md):
+  restore all 74 words, qualify real classifier/flag-helper/dispatcher connections,
+  and preserve every other linked byte; next is the four-segment graphics selector.
 - [Object phase-updater byte match](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md):
   All 78 linked words match with signed/wrapping products and fresh tick reloads.
   Ten tests pass before/after; one neighboring table guard requalified, its code

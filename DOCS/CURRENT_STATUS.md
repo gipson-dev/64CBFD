@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7ae085c; tools are committed before the consumer pin.
+  checkpoint pins tools da955e6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest slot byte-updater byte match:
+[Note 1210](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md).
+Complete void func_1502EEF4 replaces its zero-return stub; all 74 linked words
+match with 74 closed guards, 27 changed words and no insertions or omissions.
+Original 0x30 frame/saved homes, slot ABI, two byte gates and callback-sensitive
+reloads qualify. Eleven tests pass before/after: 7,664 guest cases, 450 fault
+prefixes, 239,616 native32 cases, actual banked classifier/flag-helper and
+dispatcher connections. Only target 296-byte slot/symbol extent changes;
+old guard prefix, all 37 owner neighbors, conversion rows and data unchanged.
+Game 2,753/4,816 (57.16%), total 3,426/5,489 (62.42%), zero drift /
+2,063 different. Next: 146-word segment selector func_1502F01C; preserve curve gates.
 
 Latest object phase-updater byte match:
 [Note 1209](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md).

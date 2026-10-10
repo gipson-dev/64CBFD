@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-10 Slot Byte-Updater Byte Match
+
+[Note 1210](WORKING_NOTES/1210-game-slot-byte-updater-byte-match-20261010.md):
+Complete void func_1502EEF4 matches all 74 linked words and original 0x30 frame
+through 74 closed guards, 27 changed words, no insertions or omissions. Eleven
+tests pass before/after, final 21.251s: 7,664 guest cases, 450 faults, 239,616
+native32 cases, five effective compiled controls and actual banked classifier,
+flag-helper and dispatcher gates. Whole ELF changes only target 296-byte slot/
+symbol extent; old guard prefix, all 37 neighbors, conversion rows and data
+unchanged. Game 2,753/4,816 (57.16%), total 3,426/5,489 (62.42%), zero drift /
+2,063 different. Tools da955e6 first; next 146-word func_1502F01C. Preserve
+the separate curve rejection handoff and independently dirty older tools.
+
 ## 2026-10-10 Object Phase-Updater Byte Match
 
 [Note 1209](WORKING_NOTES/1209-game-object-phase-updater-byte-match-20261010.md):
