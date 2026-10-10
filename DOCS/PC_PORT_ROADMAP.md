@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Arc Endpoint Read Recovery - 2026-10-09
+
+[Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md):
+
+- [x] Remove all four redundant start-coordinate reads; retain original frame, saved/vector/delta-Y homes and full final private memory.
+- [x] Qualify 62 full forms' public contracts and extend all-word/all-flags coverage with the Z-only active path.
+- [x] Pass all 48 combined tests; qualify native32/dispatch/rebases/owner/fault/data/helper gates and effective independent read/home negatives.
+- [x] Measure exact six-word read multiplicity in every selected guest case; keep full access ordering/FCSR/live acceptance separate.
+- [x] Preserve production/guards/progress/README totals; commit tools aafc036 before parent docs/pin and preserve independent older work.
+- [ ] Fit complete 142-word slot, Z-delta/half-constant scheduling, original FP allocation and counter/current-next cursor/branch-delay angle advance.
+- [ ] Install only after whole linked owner/ELF/data/guard-history qualification; real trig/hardware/live rendering/gameplay remain separate.
+
 ## Owner Point Arc Delta-Y Home Recovery - 2026-10-09
 
 [Note 1192](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md):
@@ -9,7 +21,7 @@
 - [x] Pass all 36 combined tests; retain all-word guest/native32/dispatch/rebase/owner/fault/data/helper qualification and effective home negatives.
 - [x] Measure six retail versus ten active candidate endpoint reads; reject the six-read control for frame/private-memory mismatch, despite preserved relative saved offsets.
 - [x] Preserve production/guards/progress/README totals; commit tools 83c1d66 before parent docs/pin and preserve independent older work.
-- [ ] Remove four redundant start-coordinate reads without losing original homes.
+- [x] Remove all four redundant start-coordinate reads with original homes retained in [Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md).
 - [ ] Fit all 142 words, FP allocation, counter/current-next cursor and branch-delay angle advance; actual padder rejects current two-word overflow.
 - [ ] Install only after whole linked owner/ELF/data/guard-history qualification; real trig/FCSR/live rendering/gameplay remain separate.
 
@@ -22,7 +34,7 @@
 - [x] Pass all 25 combined tests, 114 complete source forms and fresh selected native32/dispatch/rebase/owner/fault/data/helper audits.
 - [x] Preserve production/guards/progress/README totals; commit tools b9f09b3 before consumer docs/pin and preserve independent older work.
 - [x] Emit original SP+0x80 delta-Y store/load and complete private memory in [Note 1192](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md).
-- [ ] Remove the remaining four redundant start-coordinate reads; see the current delta-Y handoff above.
+- [x] Remove the remaining four redundant start-coordinate reads in [Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md); full-slot fitting remains open.
 - [ ] Fit the complete 142-word slot and FP/counter/cursor/branch-delay schedule; current 143-word diagnostic is rejected by the actual padder.
 - [ ] Install only after full linked qualification; recover sine/cosine separately before real rendering/hardware/gameplay acceptance.
 

@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point arc endpoint-read recovery](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md):
+  Six single input reads with original frame/homes and full final memory retained.
+  All 48 combined tests pass; 144-word overflow and scheduling remain, no production credit.
+
 - [Owner point arc delta-Y home recovery](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md):
   Original delta-Y and complete final private memory recovered; 36 combined tests pass.
   144-word overflow/four redundant start reads remain; production/totals unchanged.

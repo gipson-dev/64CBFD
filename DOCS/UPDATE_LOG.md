@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-09 Owner Point Arc Endpoint Read Recovery
+
+[Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md):
+Remove all four redundant start-coordinate reads from the complete diagnostic;
+retain original frame/homes and full final private memory. All 48 combined tests pass.
+62 full forms qualify public contracts; all-word coverage now includes Z-only.
+Actual padder still rejects 144 words; 138 raw differences remain. Tools
+aafc036 first; no production/guard/credit changes. Continue full-slot scheduling.
+
 ## 2026-10-09 Owner Point Arc Delta-Y Home Recovery
 
 [Note 1192](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md):

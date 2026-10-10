@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md)):
+Recover six single endpoint reads without losing original frame/homes or full
+final private memory. All 48 combined tests pass; 62 full forms qualify, effective
+read/home negatives and Z-only all-word coverage retained. 144 words/138 raw
+differences remain; actual padder rejects. Tools aafc036 first, no credit;
+continue Z-delta/half-constant, FP/cursor and branch-delay scheduling.
+
 2026-10-09 ([Note 1192](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md)):
 Recover original delta-Y home and complete final memory, retaining 0x88 frame
 and saved/vector homes. All 36 combined tests pass; 28 full forms qualify,
