@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point arc delta-Y home recovery](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md):
+  Original delta-Y and complete final private memory recovered; 36 combined tests pass.
+  144-word overflow/four redundant start reads remain; production/totals unchanged.
+
 - [Owner point arc saved and vector home recovery](WORKING_NOTES/1191-game-owner-point-arc-saved-and-vector-home-recovery-20261009.md):
   Original frame/saved homes/nine vector homes recovered; 25 combined tests pass.
   Delta-Y and 143-word overflow remain; no production or totals changes.

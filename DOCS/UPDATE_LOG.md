@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Owner Point Arc Delta-Y Home Recovery
+
+[Note 1192](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md):
+Recover the original SP+0x80 delta-Y store/load and complete final private memory
+without losing the 0x88 frame or saved/vector homes. All 36 combined tests pass.
+Selected 144 words / 135 differences remain rejected by the actual padder.
+28 complete forms qualify; two snapshot collisions and two double-expanded
+forms are explicitly rejected. Tools 83c1d66 first; no production/guard/
+credit changes. Continue four redundant start reads and full-slot scheduling.
+
 ## 2026-10-09 Owner Point Arc Saved And Vector Home Recovery
 
 [Note 1191](WORKING_NOTES/1191-game-owner-point-arc-saved-and-vector-home-recovery-20261009.md):

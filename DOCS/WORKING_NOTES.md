@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1192](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md)):
+Recover original delta-Y home and complete final memory, retaining 0x88 frame
+and saved/vector homes. All 36 combined tests pass; 28 full forms qualify,
+four rejected controls retained. 144 words/135 differences remain, actual padder rejects.
+Tools 83c1d66 first; no installation/guards/credit. Continue four redundant
+start-coordinate reads and full-slot FP/cursor/branch-delay scheduling.
+
 2026-10-09 ([Note 1191](WORKING_NOTES/1191-game-owner-point-arc-saved-and-vector-home-recovery-20261009.md)):
 Recover original frame/saved homes/nine vector homes; qualify final memory except
 delta-Y's four-byte home. All 25 combined tests pass, 114 full forms qualify.

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Arc Delta-Y Home Recovery - 2026-10-09
+
+[Note 1192](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md):
+
+- [x] Emit original SP+0x80 delta-Y store/load; preserve original frame, all saved/vector homes and entire final private memory.
+- [x] Qualify 28 complete forms and reject two endpoint/threshold collisions and two double-expanded forms explicitly.
+- [x] Pass all 36 combined tests; retain all-word guest/native32/dispatch/rebase/owner/fault/data/helper qualification and effective home negatives.
+- [x] Measure six retail versus ten active candidate endpoint reads; reject the six-read control for frame/private-memory mismatch, despite preserved relative saved offsets.
+- [x] Preserve production/guards/progress/README totals; commit tools 83c1d66 before parent docs/pin and preserve independent older work.
+- [ ] Remove four redundant start-coordinate reads without losing original homes.
+- [ ] Fit all 142 words, FP allocation, counter/current-next cursor and branch-delay angle advance; actual padder rejects current two-word overflow.
+- [ ] Install only after whole linked owner/ELF/data/guard-history qualification; real trig/FCSR/live rendering/gameplay remain separate.
+
 ## Owner Point Arc Saved And Vector Home Recovery - 2026-10-09
 
 [Note 1191](WORKING_NOTES/1191-game-owner-point-arc-saved-and-vector-home-recovery-20261009.md):
@@ -8,7 +21,8 @@
 - [x] Eliminate the projection spill; qualify complete final memory except original delta-Y's four-byte home, including effective wrong-home controls.
 - [x] Pass all 25 combined tests, 114 complete source forms and fresh selected native32/dispatch/rebase/owner/fault/data/helper audits.
 - [x] Preserve production/guards/progress/README totals; commit tools b9f09b3 before consumer docs/pin and preserve independent older work.
-- [ ] Emit the original SP+0x80 delta-Y store/load and remove five redundant endpoint reads without losing the recovered layout.
+- [x] Emit original SP+0x80 delta-Y store/load and complete private memory in [Note 1192](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md).
+- [ ] Remove the remaining four redundant start-coordinate reads; see the current delta-Y handoff above.
 - [ ] Fit the complete 142-word slot and FP/counter/cursor/branch-delay schedule; current 143-word diagnostic is rejected by the actual padder.
 - [ ] Install only after full linked qualification; recover sine/cosine separately before real rendering/hardware/gameplay acceptance.
 
