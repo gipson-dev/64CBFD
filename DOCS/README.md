@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor distance-tier updater byte match](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md):
+  restore all 163 words and private homes; qualify ordered float thresholds,
+  selector clamp, real identity leaf and bounded caller forwarding.
+  Next: complete 176-word caller func_1502C974.
 - [Actor counter-updater direct byte match](WORKING_NOTES/1214-game-actor-counter-updater-byte-match-20261010.md):
   restore all 56 words and private homes directly without guards; qualify
   signed wraps, callback mutations and actual dispatcher/classifier connections.

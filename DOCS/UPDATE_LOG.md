@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-10 Actor Distance-Tier Updater Byte Match
+
+[Note 1215](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md):
+Complete typed func_1502C6E8 matches all 163 words with 33 closed changes
+and original 0x50 frame. Eleven tests pass before/after, final 20.308s:
+2,303 guest cases, 430 fault prefixes, 1,437,800 native32 cases and seven
+effective negatives. Actor selector caps tiers, not view. Real identity
+leaf qualifies; second callback is bounded opaque and literal call-site
+forwarding is not full caller acceptance. Only target 652-byte slot/symbol
+extent changes; old guards, 37 neighbors, conversion rows and data exact.
+Game 2,757/4,816 (57.25%), total 3,430/5,489 (62.49%), zero drift /
+2,059 different. Tools 6c5b8a4 first. Next: complete func_1502C974;
+preserve separate uninstalled curve gates and hardware/live boundaries.
+
 ## 2026-10-10 Actor Counter-Updater Direct Byte Match
 
 [Note 1214](WORKING_NOTES/1214-game-actor-counter-updater-byte-match-20261010.md):

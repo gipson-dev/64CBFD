@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-10 ([Note 1215](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md)):
+Restore all 163 words of func_1502C6E8 and original 0x50 frame through
+33 closed changes. Qualify ordered single-precision thresholds, actor-selector
+clamp, private aliases, 430 fault prefixes, 1,437,800 native32 cases and
+actual identity leaf. Eleven tests pass before/after; complete caller remains
+unqualified. Only target 652-byte slot/symbol extent changes; old guards,
+37 neighbors, conversion rows and data exact. Game 2,757 exact, total
+3,430 exact, zero drift / 2,059 different. Tools 6c5b8a4 first;
+next complete 176-word func_1502C974. Preserve separate curve rejection gates.
+
 2026-10-10 ([Note 1214](WORKING_NOTES/1214-game-actor-counter-updater-byte-match-20261010.md)):
 Restore all 56 words of void/slot func_1502C608 and original private homes
 directly without guards. Ten tests pass before/after: signed wraps, private

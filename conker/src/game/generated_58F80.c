@@ -340,8 +340,75 @@ void func_1502C608(s32 slot) {
     }
 }
 
-s32 func_1502C6E8() {
-    return 0;
+extern u8 *D_800DBFF0;
+extern u8 D_800BE616, D_800C35EA;
+extern f32 D_80096DE0, D_80096DE4;
+s32 func_150849A0(u8 *);
+void func_150837D4(s32, s32, s32);
+
+void func_1502C6E8(s32 slot, s16 view, s32 unused) {
+    u8 *actor;
+    u8 *player;
+    f32 thresholds[4];
+    f32 delta, distance, square;
+    s32 selector, identity, tier;
+
+    actor = (u8 *)D_800CC2D0 + (u32)slot * 0x32C;
+    player = D_800DBFF0 + view * 0x9A0;
+    if (actor[0x1C9] != 0 || actor[5] == 7) { return; }
+    {
+        thresholds[0] = 500.0f;
+        thresholds[1] = D_80096DE0;
+        thresholds[2] = D_80096DE4;
+        thresholds[3] = 2000.0f;
+        selector = actor[0x2C8] - 1;
+        if (selector == -1) { return; }
+        {
+            identity = func_150849A0(actor);
+            delta = *(f32 *)(player + 0x2F8) - *(f32 *)(actor + 0x14);
+            distance = delta * delta;
+            delta = *(f32 *)(player + 0x2FC) - *(f32 *)(actor + 0x18);
+            square = delta * delta;
+            distance = distance + square;
+            delta = *(f32 *)(player + 0x300) - *(f32 *)(actor + 0x1C);
+            square = delta * delta;
+            distance = distance + square;
+            if (distance < thresholds[0] * thresholds[0]) {
+                tier = 0;
+            } else if (distance < thresholds[1] * thresholds[1]) {
+                tier = 1;
+            } else if (distance < thresholds[2] * thresholds[2]) {
+                tier = 2;
+            } else if (distance < thresholds[3] * thresholds[3]) {
+                tier = 3;
+            } else {
+                tier = 4;
+            }
+            if (tier >= 2 && *(f32 *)(actor + 0x3C) < 3.0f) {
+                tier--;
+            }
+            if (identity != 0) {
+                if (identity == 0x5A && tier == 0) {
+                    tier = 1;
+                }
+            } else if (D_800BE616 != 0) {
+                tier = 1;
+            }
+            if (D_800C35EA == 1) {
+                tier = 0;
+            }
+            if (selector < tier) {
+                tier = selector;
+                if (selector < 0) {
+                    tier = 0;
+                }
+            }
+            if (tier != -1 && tier != actor[0x1C8]) {
+                func_150837D4(slot, (*(u8 **)(actor + 0x2C4))[tier], 0);
+                actor[0x1C8] = tier;
+            }
+        }
+    }
 }
 
 Gfx *func_1502C974() {

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0483bc8; tools are committed before the consumer pin.
+  checkpoint pins tools 6c5b8a4; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest actor distance-tier updater byte match:
+[Note 1215](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md).
+Complete typed func_1502C6E8 matches all 163 words and original 0x50 frame
+through 163 closed guards, 33 changed words and no insertions/omissions.
+The actor selector caps tiers; signed view only selects the player record.
+Eleven tests pass before/after, final 20.308s: 2,303 guest cases, 430 fault
+prefixes, 1,437,800 native32 cases and seven effective negatives. Actual
+11-word identity leaf qualifies; update callback is bounded opaque and the
+four-instruction caller receipt is not complete caller acceptance.
+Only target 652-byte slot/symbol extent changes; old guard prefix, 37 neighbors,
+conversion rows and protected data exact. Game 2,757/4,816 (57.25%), total
+3,430/5,489 (62.49%), zero drift / 2,059 different. Tools 6c5b8a4 first.
+Next: complete 176-word caller func_1502C974; preserve separate curve gates
+and hardware/live boundaries.
 
 Latest actor counter-updater direct byte match:
 [Note 1214](WORKING_NOTES/1214-game-actor-counter-updater-byte-match-20261010.md).

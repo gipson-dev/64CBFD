@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Distance-Tier Updater Byte Match - 2026-10-10
+
+[Note 1215](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md):
+
+- [x] Restore complete typed func_1502C6E8: 163 words / 0x50 frame, 163 guards with 33 closed changes, no insertions/omissions.
+- [x] Recover signed player-view lookup, captured thresholds/selector and fresh coordinates, overrides and configuration pointer.
+- [x] Confirm the actor selector caps tiers, not view; reject a fresh effective wrong-view-cap control.
+- [x] Measure 61 complete/profile forms and qualify private homes plus the closed floating schedule under unchanged O2/g3.
+- [x] Pass 11 tests before/after: 2,303 guest cases, 430 fault prefixes, 1,437,800 native32 cases and seven effective negatives.
+- [x] Qualify actual 11-word identity leaf, bounded opaque update callback, private aliases and six independent links.
+- [x] Audit whole ELF: only target 652-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows and data exact.
+- [x] Measure Game 2,757/4,816 (57.25%), total 3,430/5,489 (62.49%), zero drift / 2,059 different.
+- [x] Bank tools 6c5b8a4 first; preserve older dirty tools, historical receipts and frozen host Release.
+- [ ] Recover complete 176-word caller func_1502C974; four literal forwarding instructions are not full caller acceptance.
+- [ ] Preserve separate curve rejection gates; full hardware/live acceptance remains separate.
+
 ## Actor Counter-Updater Direct Byte Match - 2026-10-10
 
 [Note 1214](WORKING_NOTES/1214-game-actor-counter-updater-byte-match-20261010.md):
@@ -12,7 +28,7 @@
 - [x] Audit whole ELF: only target 224-byte slot/symbol extent changes; guards, 37 neighbors, conversion rows and data exact.
 - [x] Measure Game 2,756/4,816 (57.23%), total 3,429/5,489 (62.47%), zero drift / 2,060 different.
 - [x] Bank tools 0483bc8 first; preserve older dirty tools, historical receipts and frozen host Release.
-- [ ] Recover 163-word distance-tier updater func_1502C6E8 and qualify float/callback/private-lifetime gates before installation.
+- [x] Recover 163-word distance-tier updater func_1502C6E8 and qualify float/callback/private-lifetime gates before installation in Note 1215.
 - [ ] Preserve separate curve rejection gates; full hardware/live acceptance remains separate.
 
 ## Actor Attachment-Updater Byte Match - 2026-10-10
