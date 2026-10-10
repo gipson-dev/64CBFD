@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern u8 *D_8008CA4C[];
 extern s32 D_80082FA0;
 typedef struct { u32 address; u32 reserved[2]; } ActorSegmentRow58F80;
 extern u8 *D_800D1C90[];
@@ -140,7 +141,7 @@ typedef struct ActorUpdate58F80 {
 
 extern u8 D_800C666F[];
 s32 func_1502DF38();
-s32 func_1502C608();
+void func_1502C608(s32 slot);
 s32 func_1502FBE8();
 s32 func_1502E4C4();
 s32 func_1503A08C();
@@ -315,8 +316,28 @@ Gfx *func_1502C408() {
     return 0;
 }
 
-s32 func_1502C608() {
-    return 0;
+void func_1502C608(s32 slot) {
+    u8 *actor;
+    s16 value;
+    s16 step;
+    s32 period;
+
+    if (D_800BEAC0 == 0) {
+        actor = (u8 *)D_800CC2D0 + (u32)slot * 0x32C;
+        value = *(volatile s16 *)(actor + 0x60);
+        step = *(volatile s16 *)(actor + 0x62);
+        if (actor[7] != 0) {
+            period = func_1502C3BC(slot);
+            period = D_8008CA4C[period][4] << 8;
+            value = value + step;
+            if (value >= period) {
+                value = value - period;
+            } else if (value < 0) {
+                value = value + period;
+            }
+            *(s16 *)(actor + 0x60) = value;
+        }
+    }
 }
 
 s32 func_1502C6E8() {

@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor counter-updater direct byte match](WORKING_NOTES/1214-game-actor-counter-updater-byte-match-20261010.md):
+  restore all 56 words and private homes directly without guards; qualify
+  signed wraps, callback mutations and actual dispatcher/classifier connections.
+  Next: 163-word distance-tier updater func_1502C6E8.
 - [Actor attachment-updater byte match](WORKING_NOTES/1213-game-actor-attachment-updater-byte-match-20261010.md):
   restore all 89 words; qualify raw float copies, aliases, fresh inclusive
   limits and actual dispatcher/updater connections. Next: state-2 counter.

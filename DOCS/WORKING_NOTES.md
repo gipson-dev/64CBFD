@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-10 ([Note 1214](WORKING_NOTES/1214-game-actor-counter-updater-byte-match-20261010.md)):
+Restore all 56 words of void/slot func_1502C608 and original private homes
+directly without guards. Ten tests pass before/after: signed wraps, private
+aliases, 162 fault prefixes, 1,992,704 native32 cases and actual banked
+dispatcher/classifier connections. Only target 224-byte slot/symbol extent
+changes; guards, 37 neighbors, conversion rows and data exact. Game 2,756
+exact, total 3,429 exact, zero drift / 2,060 different. Tools 0483bc8 first;
+next 163-word func_1502C6E8. Preserve separate uninstalled curve gates.
+
 2026-10-10 ([Note 1213](WORKING_NOTES/1213-game-actor-attachment-updater-byte-match-20261010.md)):
 Restore all 89 words of func_1502F264, its typed slot ABI and complete leaf
 attachment copies. Twelve tests pass before/after with raw float payloads,

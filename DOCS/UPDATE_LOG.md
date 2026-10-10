@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Actor Counter-Updater Direct Byte Match
+
+[Note 1214](WORKING_NOTES/1214-game-actor-counter-updater-byte-match-20261010.md):
+Complete void/slot func_1502C608 emits all 56 retail words, original 0x28 frame
+and private homes directly, without guards. Ten tests pass before/after,
+final 10.830s: 4,330 guest cases, 162 fault prefixes, 1,992,704 native32 cases,
+six effective negatives and actual banked dispatcher/classifier connections.
+Only target 224-byte slot/symbol extent changes; guards, 37 neighbors,
+conversion rows and data unchanged. Game 2,756/4,816 (57.23%), total
+3,429/5,489 (62.47%), zero drift / 2,060 different. Tools 0483bc8 first.
+Next: 163-word func_1502C6E8; preserve separate uninstalled curve gates.
+
 ## 2026-10-10 Actor Attachment-Updater Byte Match
 
 [Note 1213](WORKING_NOTES/1213-game-actor-attachment-updater-byte-match-20261010.md):

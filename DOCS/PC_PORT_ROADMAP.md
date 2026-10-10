@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Counter-Updater Direct Byte Match - 2026-10-10
+
+[Note 1214](WORKING_NOTES/1214-game-actor-counter-updater-byte-match-20261010.md):
+
+- [x] Restore void/slot func_1502C608: all 56 words, original 0x28 frame/private homes directly, no guards.
+- [x] Preserve captured signed halves, both byte gates, fresh configuration lookup and single wrapped correction.
+- [x] Measure 49 complete/profile forms; recover classifier-result assignment before the period lookup.
+- [x] Pass ten tests before/after: 4,330 guest cases, 162 fault prefixes, 1,992,704 native32 cases and six effective negatives.
+- [x] Qualify private aliases, reserved stack hole, independent symbol links and actual banked dispatcher/classifier connections.
+- [x] Audit whole ELF: only target 224-byte slot/symbol extent changes; guards, 37 neighbors, conversion rows and data exact.
+- [x] Measure Game 2,756/4,816 (57.23%), total 3,429/5,489 (62.47%), zero drift / 2,060 different.
+- [x] Bank tools 0483bc8 first; preserve older dirty tools, historical receipts and frozen host Release.
+- [ ] Recover 163-word distance-tier updater func_1502C6E8 and qualify float/callback/private-lifetime gates before installation.
+- [ ] Preserve separate curve rejection gates; full hardware/live acceptance remains separate.
+
 ## Actor Attachment-Updater Byte Match - 2026-10-10
 
 [Note 1213](WORKING_NOTES/1213-game-actor-attachment-updater-byte-match-20261010.md):
@@ -14,7 +29,7 @@
 - [x] Audit whole ELF: only target 356-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows and data exact.
 - [x] Measure Game 2,755/4,816 (57.21%), total 3,428/5,489 (62.45%), zero drift / 2,061 different.
 - [x] Bank tools 9f1e85e before consumer source/guards/docs/pin; preserve older independently dirty tools and historical receipts.
-- [ ] Recover 56-word state-2 counter updater func_1502C608, captured signed halves, callback and single wrapped correction.
+- [x] Recover 56-word state-2 counter updater func_1502C608, captured signed halves, callback and single wrapped correction in Note 1214.
 - [ ] Preserve separate curve rejection gates; hardware and live gameplay acceptance remain separate.
 
 ## Actor Segment-Selector Byte Match - 2026-10-10
