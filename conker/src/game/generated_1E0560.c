@@ -35,6 +35,16 @@ typedef struct {
 } OwnerPoints3A7C;
 extern f32 D_800AA394, D_800AA398, D_800AA39C;
 
+extern f32 D_800AA3A0, D_800AA3A4, D_800AA3A8;
+f32 func_150484A0(f32, f32);
+f32 sinf(f32), cosf(f32), sqrtf(f32), fabsf(f32);
+#pragma intrinsic (fabsf)
+typedef struct {
+    f32 x;
+    volatile f32 y;
+    f32 z;
+} OwnerArcDeltaY;
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -307,8 +317,57 @@ s32 func_151B3A7C(u8 *actor) {
     return 1;
 }
 
-s32 func_151B3CF0() {
-    return 0;
+s32 func_151B3CF0(u8 *actor) {
+    OwnerArcDeltaY delta;
+    OwnerRibbonPosition32C8 midpoint;
+    volatile OwnerRibbonPosition32C8 first, last;
+    f32 inverse, nx, nz;
+    f32 vertical, angle, radius, angleStep;
+    f32 sine, along;
+    s32 offset;
+    OwnerRibbonPosition32C8 *cursor;
+
+    nz = *(f32 *)(actor + 0x20);
+    along = *(f32 *)(actor + 0x14);
+    nx = *(f32 *)(actor + 0x24);
+    angle = *(f32 *)(actor + 0x18);
+    angleStep = *(f32 *)(actor + 0x28);
+    sine = *(f32 *)(actor + 0x1C);
+    delta.x = nz - along;
+    delta.y = nx - angle;
+    delta.z = angleStep - sine;
+    if (D_800AA3A0 < fabsf(delta.x) || D_800AA3A0 < fabsf(delta.z)) {
+        midpoint.x = along + delta.x * 0.5f;
+        first.x = along - midpoint.x;
+        last.x = nz - midpoint.x;
+        midpoint.y = angle + delta.y * 0.5f;
+        first.y = angle - midpoint.y;
+        last.y = nx - midpoint.y;
+        midpoint.z = sine + delta.z * 0.5f;
+        first.z = sine - midpoint.z;
+        last.z = angleStep - midpoint.z;
+        inverse = 1.0f / sqrtf(delta.x * delta.x + delta.z * delta.z);
+        nz = delta.z * inverse;
+        nx = delta.x * inverse;
+        angleStep = (last.z * nz + last.x * nx) - (first.z * nz + first.x * nx);
+        vertical = last.y - first.y;
+        angle = func_150484A0(vertical, angleStep);
+        radius = sqrtf(angleStep * angleStep + vertical * vertical) * 0.5f;
+        angle -= D_800AA3A4;
+        angleStep = D_800AA3A8;
+        cursor = (OwnerRibbonPosition32C8 *)(actor + 0x48);
+        for (offset = 0; offset != 0xF0; offset += 0x18) {
+            actor = (u8 *)cursor;
+            sine = sinf(angle);
+            along = radius * cosf(angle);
+            ((OwnerRibbonPosition32C8 *)actor)->x = along * nx + midpoint.x;
+            ((OwnerRibbonPosition32C8 *)actor)->y = radius * sine + midpoint.y;
+            ((OwnerRibbonPosition32C8 *)actor)->z = along * nz + midpoint.z;
+            angle += angleStep;
+            cursor = (OwnerRibbonPosition32C8 *)((u8 *)cursor + 0x18);
+        }
+    }
+    return 1;
 }
 
 s32 func_151B3F28() {

@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-10 ([Note 1195](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md)):
+Complete func_151B3CF0 installed; all 142 linked words match via certified
+register/scheduling guards. Twelve tests pass before/after, whole ELF changes
+only target slot/symbol size; data/registration/old guards unchanged. Game57.00%,
+total62.27%. Tools 704e5f8 first; next 45-word func_151B3F28, real trig separate.
+
 2026-10-10 ([Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md)):
 Certify shared Z-delta/half branch definitions and actual guarded 142-word fit,
 original frame/private homes/six reads retained. 102 differences remain, raw C

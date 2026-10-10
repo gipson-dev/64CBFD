@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Arc Byte Match - 2026-10-10
+
+[Note 1195](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md):
+
+- [x] Recover all FP/GPR roles and retail counter/cursor/branch-delay scheduling; match all 142 words.
+- [x] Replace false zero-return C placeholder with the full one-argument ten-point arc body; no profile/frame patch/insertions.
+- [x] Pass all twelve focused tests before and after installation; qualify raw/native/guest/dispatch/rebases/owner/fault/negative gates.
+- [x] Rebuild linked ELF/progress and prove only target slot/symbol size change; protected data, registration and old guards unchanged.
+- [x] Measure Game2,745/4,816 (57.00%), total3,418/5,489 (62.27%), zero drift / 2,071 different; converted rows unchanged.
+- [x] Bank tools 704e5f8 before parent source/guards/docs/pin and preserve independently dirty older work.
+- [ ] Next: func_151B3F28, 45-word attached-object position/fallback provider; preserve three-argument/u8 ABI and pointer/output aliases.
+- [ ] Recover real trig separately before full rendering/hardware/gameplay acceptance.
+
 ## Owner Point Arc Certified Branch Fold - 2026-10-10
 
 [Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md):
@@ -9,8 +22,8 @@
 - [x] Fit actual guarded 142-word diagnostic with original 136-byte frame, full private memory and six reads; raw C remains 144 words.
 - [x] Qualify all-word guests, actual native32/dispatch/rebases/owner/fault/data/helper gates and effective stale/live-value controls.
 - [x] Pass all 60 combined tests and final twelve-test fold rerun; bank tools c5260a6 before parent docs/pin, preserving independently dirty older work.
-- [ ] Finish 102 differing words: original FP allocation, counter/current-next cursor and branch-delay angle advance.
-- [ ] Install only after full linked owner/ELF/data/guard-history qualification; no source-only, retail-trig or hardware/live claim.
+- [x] Finish all 102 differences in [Note 1195](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md): full guarded body is byte-exact, not plain-C.
+- [x] Install after full linked owner/ELF/data/guard-history qualification in Note 1195; real trig/hardware/live remain separate.
 
 ## Owner Point Arc Endpoint Read Recovery - 2026-10-09
 
@@ -21,8 +34,8 @@
 - [x] Pass all 48 combined tests; qualify native32/dispatch/rebases/owner/fault/data/helper gates and effective independent read/home negatives.
 - [x] Measure exact six-word read multiplicity in every selected guest case; keep full access ordering/FCSR/live acceptance separate.
 - [x] Preserve production/guards/progress/README totals; commit tools aafc036 before parent docs/pin and preserve independent older work.
-- [x] Fit the guarded diagnostic slot and certify shared Z-delta/half definitions in [Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md); source-only fit and original FP/counter/cursor/branch-delay matching remain open.
-- [ ] Install only after whole linked owner/ELF/data/guard-history qualification; real trig/hardware/live rendering/gameplay remain separate.
+- [x] Fit the guarded diagnostic slot in [Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md), then complete all FP/counter/cursor/branch-delay matching in Note 1195; plain-C matching is not claimed.
+- [x] Install after whole linked owner/ELF/data/guard-history qualification in Note 1195; real trig/hardware/live rendering/gameplay remain separate.
 
 ## Owner Point Arc Delta-Y Home Recovery - 2026-10-09
 
@@ -34,8 +47,8 @@
 - [x] Measure six retail versus ten active candidate endpoint reads; reject the six-read control for frame/private-memory mismatch, despite preserved relative saved offsets.
 - [x] Preserve production/guards/progress/README totals; commit tools 83c1d66 before parent docs/pin and preserve independent older work.
 - [x] Remove all four redundant start-coordinate reads with original homes retained in [Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md).
-- [ ] Fit all 142 words, FP allocation, counter/current-next cursor and branch-delay angle advance; actual padder rejects current two-word overflow.
-- [ ] Install only after whole linked owner/ELF/data/guard-history qualification; real trig/FCSR/live rendering/gameplay remain separate.
+- [x] Fit all 142 words and FP/counter/cursor/branch-delay scheduling in Note 1195; retain the earlier overflowing raw diagnostic as history.
+- [x] Install after whole linked owner/ELF/data/guard-history qualification in Note 1195; real trig/FCSR/live rendering/gameplay remain separate.
 
 ## Owner Point Arc Saved And Vector Home Recovery - 2026-10-09
 
@@ -46,9 +59,9 @@
 - [x] Pass all 25 combined tests, 114 complete source forms and fresh selected native32/dispatch/rebase/owner/fault/data/helper audits.
 - [x] Preserve production/guards/progress/README totals; commit tools b9f09b3 before consumer docs/pin and preserve independent older work.
 - [x] Emit original SP+0x80 delta-Y store/load and complete private memory in [Note 1192](WORKING_NOTES/1192-game-owner-point-arc-delta-y-home-recovery-20261009.md).
-- [x] Remove the remaining four redundant start-coordinate reads in [Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md); full-slot fitting remains open.
-- [ ] Fit the complete 142-word slot and FP/counter/cursor/branch-delay schedule; current 143-word diagnostic is rejected by the actual padder.
-- [ ] Install only after full linked qualification; recover sine/cosine separately before real rendering/hardware/gameplay acceptance.
+- [x] Remove the remaining four redundant start-coordinate reads in [Note 1193](WORKING_NOTES/1193-game-owner-point-arc-endpoint-read-recovery-20261009.md); full-slot matching subsequently completes in Note 1195.
+- [x] Fit the complete 142-word slot and FP/counter/cursor/branch-delay schedule in Note 1195; earlier rejected diagnostics remain historical evidence.
+- [x] Install after full linked qualification in Note 1195; sine/cosine and real rendering/hardware/gameplay acceptance remain separate.
 
 ## Owner Point Arc Workspace And Frame Audit - 2026-10-09
 
@@ -58,8 +71,8 @@
 - [x] Qualify 39 complete forms / 48 form-profile combinations; preserve retained compact recovery and reject the 178-word O1 frame coincidence.
 - [x] Pass all 14 combined tests: full guest/native32, boundaries, seven effective new negatives and retained actual dispatch/rebase/owner/fault/helper audit.
 - [x] Preserve production/data/guards/progress/README totals; commit tools 7a13098 before consumer docs/pin and preserve independent older work.
-- [ ] Fit original 0x88 frame AND private/saved homes; the new 147-word/frame152 midpoint-pointer diagnostic still overflows the slot.
-- [ ] Recover original saved-FP and current/next cursor lifetimes, then complete 142-word scheduling; install only after whole linked qualification.
+- [x] Fit original frame/private/saved homes in Notes 1191-1193; retain the rejected 147-word/frame152 midpoint-pointer diagnostic as history.
+- [x] Recover all saved-FP/current-next cursor roles, match 142 words and install after whole linked qualification in Note 1195.
 - [ ] Recover original sine/cosine separately before real arc-rendering acceptance; retain hardware/FCSR/gameplay boundaries.
 
 ## Owner Point Arc Recovery And Helper Audit - 2026-10-09
@@ -71,8 +84,8 @@
 - [x] Preserve 16 owner neighbors/pools/relocations and every other padded owner byte; qualify slot fit but reject installation for frame/full-word mismatch.
 - [x] Measure actual linked helpers: sinf/cosf return zero; func_150484A0's full 80-word slot is exact. Keep real helper math/live rendering acceptance separate.
 - [x] Preserve production/data/guards/progress/README totals and commit tools 1f57235 before consumer docs/pin; preserve all independent older work.
-- [ ] Fit original frame 0x88/private vector homes/saved-FP reuse and full 142-word schedule; selected diagnostic remains 141/frame 0xD0/118 differences.
-- [ ] Install only after every linked word and whole owner/ELF/data/guard-history qualification pass.
+- [x] Fit original frame/private homes/saved-FP roles and full 142-word schedule in Notes 1191-1195; retain the earlier compact diagnostic as history.
+- [x] Install after every linked word and whole owner/ELF/data/guard-history qualification pass in Note 1195.
 - [ ] Recover sine/cosine separately before real arc-rendering acceptance; retain FCSR/hardware/gameplay boundaries.
 
 ## Owner Point Initializer Guarded C Match - 2026-10-09
@@ -85,7 +98,7 @@
 - [x] Preserve 16 owner neighbors, all other linked code/data and non-target symbol metadata, 189,088 protected bytes, old guard prefix and byte-identical conversion rows.
 - [x] Refresh README aggregate rows only: total 3,417/5,489 and Game 2,744/4,816 exact; zero drift / 2,072 different, no conversion-count credit.
 - [x] Commit tools 94a6a0b before consumer source/guards/docs/tools pin; preserve older standalone HEAD and all pre-existing dirty work.
-- [x] Recover 142-word/frame 0x88 func_151B3CF0's complete contract and audit actual helpers in [Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md); candidate frame/word matching remains open above.
+- [x] Recover func_151B3CF0's contract and audit actual helpers in [Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md); all 142 words subsequently match and install in Note 1195.
 - [ ] Keep helper/FCSR/hardware/live rendering/gameplay acceptance separate.
 
 ## Owner Point Initializer Zero Read And Induction Audit - 2026-10-09

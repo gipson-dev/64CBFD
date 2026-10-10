@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point arc byte match](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md):
+  Complete func_151B3CF0 installed; all 142 linked words exact via certified guards.
+  Twelve tests pass before/after; whole ELF/data/history audit passes. Game reaches 57.00%.
+
 - [Owner point arc certified branch fold](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md):
   Guarded 142-word/frame136 diagnostic preserves private memory and six reads.
   All 60 combined tests and final twelve-test rerun pass. Raw C still overflows;

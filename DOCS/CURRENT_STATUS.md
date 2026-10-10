@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c5260a6; tools are committed before the consumer pin.
+  checkpoint pins tools 704e5f8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner point-arc byte match:
+[Note 1195](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md).
+Complete func_151B3CF0 replaces the zero-return placeholder and matches all
+142 linked words with original frame/homes/ABI. Raw C is 144 words; 144 guards
+cover register/scheduling edits, two omissions and unchanged proof dependencies.
+All twelve tests pass before and after installation; whole ELF changes only the
+target slot/symbol size. Game2,745/4,816 (57.00%), total3,418/5,489 (62.27%).
+Next: adjacent 45-word func_151B3F28; actual trig/hardware/live acceptance separate.
 
 Latest owner point-arc certified branch fold:
 [Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md).

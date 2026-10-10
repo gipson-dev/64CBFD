@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-10 Owner Point Arc Byte Match
+
+[Note 1195](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md):
+Install complete semantic func_151B3CF0 and match all 142 words via certified
+register/scheduling guards. All twelve focused tests pass before/after; fresh
+whole-ELF audit proves only target slot/symbol size change, data/history unchanged.
+Game2,745/4,816 (57.00%), total3,418/5,489 (62.27%), zero drift / 2,071 different.
+Tools 704e5f8 first; next func_151B3F28. Real trig/FCSR/live acceptance separate.
+
 ## 2026-10-10 Owner Point Arc Certified Branch Fold
 
 [Note 1194](WORKING_NOTES/1194-game-owner-point-arc-certified-branch-fold-20261010.md):
