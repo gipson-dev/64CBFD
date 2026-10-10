@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Threshold Curve Slot And Delta-Y Read Recovery - 2026-10-10
+
+[Note 1199](WORKING_NOTES/1199-game-owner-threshold-curve-slot-and-delta-y-read-recovery-20261010.md):
+
+- [x] Qualify72 complete vector/workspace forms; retain distinct frame/saved-home/private-word gaps.
+- [x] Fit complete170-word diagnostic with original0x118 frame and saved homes; actual padder leaves32 bytes padding.
+- [x] Match delta-Y store, read multiplicity and final value at the real home on all three paths, including no-work.
+- [x] Pass nine focused tests and final independent-control rerun; reject four semantic negatives and one public-only/private-read control.
+- [x] Preserve production/data/guards/totals and bank toolsb403c1c before parent docs/pin; preserve independently dirty older work.
+- [ ] Recover remaining vector/scalar homes, private values/lifetimes, FP/GPR roles and exact access scheduling.
+- [ ] Match all178 words, qualify complete private memory/fault prefixes and audit linked installation.
+- [ ] Keep real trig/hardware/FCSR/live acceptance separate; no matching credit for diagnostics.
+
 ## Owner Threshold Curve Frame And Delta-Y Fitting - 2026-10-10
 
 [Note 1198](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md):
@@ -9,8 +22,9 @@
 - [x] Pass final nine tests, including all-word guests, native32, dispatcher/real initializer, rebases and sixteen copied-owner neighbors.
 - [x] Retain actual padder rejection of the40-byte overflow; preserve production/data/guards/totals unchanged.
 - [x] Bank tools4668149 before parent docs/pin; mirror only absent new files and preserve independently dirty older work.
-- [ ] Recover no-work delta-Y read, remaining private vector/scalar homes, FP roles and input-read scheduling.
-- [ ] Fit and match all178 words, qualify complete private memory/fault prefixes, then audit linked installation.
+- [x] Recover full-path delta-Y read and fit the actual slot in [Note 1199](WORKING_NOTES/1199-game-owner-threshold-curve-slot-and-delta-y-read-recovery-20261010.md), retaining original frame/saved homes.
+- [ ] Recover remaining private vector/scalar homes, FP roles and input-read scheduling.
+- [ ] Match all178 words, qualify complete private memory/fault prefixes, then audit linked installation.
 - [ ] Keep real trig/hardware/FCSR/live acceptance separate; no matching credit for diagnostics.
 
 ## Owner Threshold Curve Recovery - 2026-10-10

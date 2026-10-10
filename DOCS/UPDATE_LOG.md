@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-10 Owner Threshold Curve Slot And Delta-Y Read Recovery
+
+[Note 1199](WORKING_NOTES/1199-game-owner-threshold-curve-slot-and-delta-y-read-recovery-20261010.md):
+Complete170-word func_151B3FDC diagnostic fits the retail slot with original
+0x118 frame/saved homes and full-path delta-Y store/read/value.72 complete
+forms qualify; nine tests and final independent-control rerun pass.
+Actual padder leaves32 bytes padding, not a byte match. Other private/read/
+FP/GPR/full178-word gaps remain. Not installed; toolsb403c1c first,
+production/guards/totals unchanged.
+
 ## 2026-10-10 Owner Threshold Curve Frame And Delta-Y Fitting
 
 [Note 1198](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md):

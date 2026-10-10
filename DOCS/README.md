@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner threshold curve slot and delta-Y read recovery](WORKING_NOTES/1199-game-owner-threshold-curve-slot-and-delta-y-read-recovery-20261010.md):
+  Complete170-word diagnostic fits; original frame/saved homes and full-path
+  delta-Y home/read qualify. Nine tests pass; private/full-word gaps remain.
+
 - [Owner threshold curve frame and delta-Y fitting](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md):
   76 full forms qualify; nine tests pass. Original frame/saved homes/delta-Y store
   recovered, but188-word diagnostic overflows; private/read/full-word gaps remain.

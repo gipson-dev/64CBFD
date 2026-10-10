@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-10 ([Note 1199](WORKING_NOTES/1199-game-owner-threshold-curve-slot-and-delta-y-read-recovery-20261010.md)):
+Complete170-word func_151B3FDC diagnostic fits with original0x118 frame/saved
+homes and delta-Y store/read/value on every path.72 full forms qualify; nine
+tests and final independent-control rerun pass. Actual padder leaves32 bytes
+padding; private homes/read order/full178-word match remain open.
+Toolsb403c1c first; production/guards/totals unchanged, no installation/credit.
+
 2026-10-10 ([Note 1198](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md)):
 76 complete func_151B3FDC forms qualify; final nine tests pass. Selected188 words
 restores original0x118 frame, physical saved homes and delta-Y store, but actual
