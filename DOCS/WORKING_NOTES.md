@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1219](WORKING_NOTES/1219-game-actor-rgb-parameter-writer-direct-match-20261010.md)):
+Restore complete frame-free 57-word func_1502D54C directly from C, no guards.
+Nine tests pass before/after: full ordered aliases/faults, 399,872 native32
+cases, independent links and 336 complete real dispatcher connections.
+Only target 228-byte slot/symbol extent changes; neighbors, guards and data
+exact. Game 2,759 exact, total 3,432 exact. Next: complete 125-word
+shading/alpha callback func_1502D630 and actual matrix-helper contract.
+
 2026-10-10 ([Note 1218](WORKING_NOTES/1218-game-actor-render-dispatch-byte-match-20261010.md)):
 Restore full 176-word func_1502C974 with original 0x58 frame/private homes.
 Certify complete guards and one redundant shift-mask omission. Fifteen tests

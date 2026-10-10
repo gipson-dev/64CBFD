@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Actor RGB Parameter Writer Direct Match - 2026-10-10
+
+[Note 1219](WORKING_NOTES/1219-game-actor-rgb-parameter-writer-direct-match-20261010.md):
+
+- [x] Restore complete frame-free func_1502D54C: all 57 words directly from typed C, no guards or padding.
+- [x] Pass nine tests before/after: 1,683 guest cases, 1,248 aliases, 115 verified fault prefixes and 399,872 native32 cases.
+- [x] Qualify nine independent links, seven effective compiled negatives and 336 actual banked dispatcher connections.
+- [x] Audit whole ELF: only target 228-byte slot/symbol extent changes; 37 neighbors, guards, conversion rows and protected data exact.
+- [x] Measure Game 2,759/4,816 (57.29%), total 3,432/5,489 (62.53%), zero drift / 2,057 different; update root README aggregates only.
+- [ ] Recover complete 125-word shading/alpha callback func_1502D630, actual matrix-helper contract and private outputs before installation.
+- [ ] Preserve separate curve rejection gates and full hardware/live boundaries.
+
 ## Actor Render-Dispatch Byte Match - 2026-10-10
 
 [Note 1218](WORKING_NOTES/1218-game-actor-render-dispatch-byte-match-20261010.md):
@@ -11,7 +23,7 @@
 - [x] Execute full banked 173-word parent in 112 cases and actual selector/distance/identity helper connections.
 - [x] Audit whole ELF: only target 704-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows and protected data exact.
 - [x] Measure Game 2,758/4,816 (57.27%), total 3,431/5,489 (62.51%), zero drift / 2,058 different; update root README aggregates only.
-- [ ] Recover complete 57-word RGB parameter callback func_1502D54C and qualify its actual connection to this dispatcher.
+- [x] Recover complete 57-word RGB parameter callback func_1502D54C and qualify its actual connection to this dispatcher; completed in Note 1219.
 - [ ] Preserve separate curve rejection gates and full hardware/live boundaries.
 
 ## Actor Render-Dispatch Lifetime Checkpoint - 2026-10-10

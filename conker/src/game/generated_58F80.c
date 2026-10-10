@@ -419,7 +419,7 @@ s32 func_150229E4(u8 *);
 
 
 s32 func_150849CC(u8 *,s32 *);
-s32 func_1502D54C();
+void func_1502D54C(s32, s32 *);
 s32 func_1502D630();
 s32 func_1502CCFC();
 
@@ -491,8 +491,19 @@ s32 func_1502CCFC() {
     return 0;
 }
 
-s32 func_1502D54C() {
-    return 0;
+void func_1502D54C(s32 slot, s32 *parameters) {
+    u8 *actor = (u8 *)D_800CC2D0 + (u32)slot * 0x32C;
+
+    if ((actor[0x66] & 0xC) == 4) {
+        parameters[0] = (actor[0x1E0] + actor[0x1DD]) / 2;
+        parameters[1] = (actor[0x1E1] + actor[0x1DE]) / 2;
+        parameters[2] = (actor[0x1E2] + actor[0x1DF]) / 2;
+        parameters[0] = 255 - parameters[0];
+        parameters[1] = 255 - parameters[1];
+        parameters[2] = 255 - parameters[2];
+        return;
+    }
+    parameters[0] = parameters[1] = parameters[2] = 255;
 }
 
 s32 func_1502D630() {

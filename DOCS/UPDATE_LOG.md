@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Actor RGB Parameter Writer Direct Match
+
+[Note 1219](WORKING_NOTES/1219-game-actor-rgb-parameter-writer-direct-match-20261010.md):
+Restore all 57 words of func_1502D54C directly from typed complete C, no guards.
+Nine tests pass before/after with 1,248 aliases, 115 verified fault prefixes,
+399,872 native32 cases and 336 actual banked dispatcher connections.
+Only target 228-byte slot/symbol extent changes; all 37 neighbors, guard
+history, conversion rows and protected data exact. Game 2,759 exact, total
+3,432 exact, zero drift / 2,057 different. Tools b216274 first; no push.
+Next: complete 125-word shading/alpha callback func_1502D630 and its actual
+matrix-helper contract. No hardware/live acceptance claim.
+
 ## 2026-10-10 Complete Actor Render-Dispatch Byte Match
 
 [Note 1218](WORKING_NOTES/1218-game-actor-render-dispatch-byte-match-20261010.md):

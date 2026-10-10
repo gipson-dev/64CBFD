@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 2136f14; tools are committed before the consumer pin.
+  checkpoint pins tools b216274; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest direct actor RGB parameter match:
+[Note 1219](WORKING_NOTES/1219-game-actor-rgb-parameter-writer-direct-match-20261010.md).
+Restore full frame-free func_1502D54C: all 57 words directly from C, no guards.
+Nine tests pass before/after: 1,683 guest cases, 1,248 aliases, 115 verified
+fault prefixes, 399,872 native32 cases and 336 real dispatcher connections.
+Only target 228-byte slot/symbol extent changes; 37 neighbors, guards,
+conversion rows and protected data exact. Game 2,759/4,816 (57.29%), total
+3,432/5,489 (62.53%), zero drift / 2,057 different. Tools b216274 first.
+Next: full 125-word shading/alpha callback func_1502D630, including its actual
+matrix-helper contract. Renderer and hardware/live acceptance remain separate.
 
 Latest complete actor render-dispatch byte match:
 [Note 1218](WORKING_NOTES/1218-game-actor-render-dispatch-byte-match-20261010.md).

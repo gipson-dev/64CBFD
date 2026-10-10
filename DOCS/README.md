@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor RGB parameter writer direct match](WORKING_NOTES/1219-game-actor-rgb-parameter-writer-direct-match-20261010.md):
+  restore all 57 words directly from C; qualify ordered aliases/faults,
+  native32, independent links and complete actual dispatcher connections.
+  Next: full shading/alpha callback func_1502D630 and matrix-helper contract.
 - [Complete actor render-dispatch byte match](WORKING_NOTES/1218-game-actor-render-dispatch-byte-match-20261010.md):
   restore all 176 words and original private homes; qualify closed guards,
   complete fault prefixes, aliases and real parent/helper connections.
