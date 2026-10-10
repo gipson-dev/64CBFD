@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Texture Tile Updater Qualified Schedule - 2026-10-10
+
+[Note 1228](WORKING_NOTES/1228-game-actor-texture-tile-updater-qualified-schedule-and-padding-20261010.md):
+
+- [x] Emit complete 120-word C with original 0x20 frame and close all 123 retail words using checked producer provenance.
+- [x] Retain all emitted producers, copy three address/move producers only; actual 492-byte symbol/slot has no missing-body fill.
+- [x] Pass three-form full private order, boundaries, live aliases and all 518 fired original/raw/fitted fault prefixes.
+- [x] Pass 12 independent rebased links, all 120 stale-word and five actual/CSV relocation dependency controls.
+- [x] Pass native SDK/effective full-C negatives and actual banked renderer boundaries; all 37 neighbors remain exact.
+- [x] Pass 17 scheduling/install regressions and root tools-check; preserve five snapshots/artifacts/counts, bank tools f2dd1c3 first.
+- [ ] Execute and independently qualify actual 52-word special helper func_150C3160, including aliases/faults.
+- [ ] Install afterward, rebuild/audit entire linked ELF and measure fresh matching credit.
+- [ ] Keep other callbacks, FCSR/traps and hardware/live acceptance separate and open.
+
 ## Complete Actor Texture Tile Updater Recovery - 2026-10-10
 
 [Note 1227](WORKING_NOTES/1227-game-actor-texture-tile-updater-recovery-and-layout-gates-20261010.md):
@@ -10,8 +24,9 @@
 - [x] Pass 40,960 native SDK executions, three fresh native negatives and 88 complete actual-caller cases.
 - [x] Keep all 37 copied-owner neighbors/relocations/pools exact; distinguish 12 padding words from matching.
 - [x] Pass all 17 final regressions/tools-check, preserve five production artifacts/counts, bank tools c5df5cc first.
-- [ ] Close full 123-word actor-address/load/register/schedule layout with certified stale-dependent recipe or direct C.
-- [ ] Qualify fitted private order, rebases, stale dependencies and actual special helper separately.
+- [x] Close full 123-word actor-address/load/register/schedule layout with checked producer recipe in Note 1228.
+- [x] Qualify fitted private order, rebases and stale dependencies in Note 1228.
+- [ ] Qualify actual special helper separately; bounded callback model is not completion.
 - [ ] Install only afterward, rebuild/audit entire linked ELF and measure fresh credit.
 - [ ] Keep actual callbacks, FCSR/traps and hardware/live acceptance separate and open.
 

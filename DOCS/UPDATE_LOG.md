@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Texture Tile Updater Qualified Schedule
+
+[Note 1228](WORKING_NOTES/1228-game-actor-texture-tile-updater-qualified-schedule-and-padding-20261010.md): full func_1502F9FC now fits all 123 retail words.
+Complete 120-word C/original 0x20 frame; all producers retained, three existing
+address/move copies, no missing-body padding. Pass three-form private order,
+518 fired prefixes, 12 rebased links, all stale dependencies, native SDK and
+actual renderer boundaries. All 17 scheduling/install regressions pass.
+Production/counts unchanged; tools f2dd1c3 first, no push. Next: execute actual
+52-word special helper, then install/rebuild/audit and measure fresh credit.
+
 ## 2026-10-10 Complete Actor Texture Tile Updater Recovery
 
 [Note 1227](WORKING_NOTES/1227-game-actor-texture-tile-updater-recovery-and-layout-gates-20261010.md): recover full func_1502F9FC semantic C.

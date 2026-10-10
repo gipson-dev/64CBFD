@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor texture tile updater qualified schedule and padding](WORKING_NOTES/1228-game-actor-texture-tile-updater-qualified-schedule-and-padding-20261010.md):
+  all 123 fitted words exact, complete 120-word C, no missing-body fill; pass
+  private order/faults/rebases/stale/native/caller checks. Actual special helper
+  and production installation remain open; no new matching credit.
+
 - [Complete actor texture tile updater recovery and layout gates](WORKING_NOTES/1227-game-actor-texture-tile-updater-recovery-and-layout-gates-20261010.md):
   qualify full commands/callbacks, aliases/faults, native SDK and actual callers.
   Original 123-word layout remains open; production/counts unchanged.

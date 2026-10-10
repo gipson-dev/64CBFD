@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c5df5cc; tools are committed before the consumer pin.
+  checkpoint pins tools f2dd1c3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest complete texture-tile updater scheduling qualification, not installed:
+[Note 1228](WORKING_NOTES/1228-game-actor-texture-tile-updater-qualified-schedule-and-padding-20261010.md): full func_1502F9FC now fits all 123 retail words.
+Complete C emits 120 words, original 0x20 frame; retain every producer and copy
+three address/move producers, no omitted behavior or missing-body padding.
+Pass three-form memory/order, 518 fired prefixes, 12 rebased links, every word/
+relocation stale gate, native SDK and actual renderer boundary checks.
+All 17 scheduling/install regressions pass; production/counts unchanged.
+Tools f2dd1c3 first, no push. Next: execute actual 52-word special helper,
+then install/rebuild/audit. Bounded helper model is not that gate's completion.
+
 Latest complete texture-tile updater recovery, not installed:
 [Note 1227](WORKING_NOTES/1227-game-actor-texture-tile-updater-recovery-and-layout-gates-20261010.md): recover full func_1502F9FC semantic C.
 Retail is 123 words / 492 bytes; selected C is 111 words, original 0x20 frame,
@@ -34,7 +44,7 @@ Retail is 123 words / 492 bytes; selected C is 111 words, original 0x20 frame,
 Cover all types/words, 85 aliases, 518 fired fault pairs, 40,960 native SDK
 executions and 88 complete actual-caller cases. Copied owner's 37 neighbors
 exact; production/counts unchanged. Tools c5df5cc first, no push.
-Next: close complete retail instruction layout, then qualify/install/audit.
+Layout/rebase/stale gates are closed in Note 1228; actual special helper and installation remain open.
 
 Latest installed color provider and complete actor renderer byte match:
 [Note 1226](WORKING_NOTES/1226-game-actor-color-provider-and-complete-renderer-byte-match-20261010.md): install complete func_1502CC34 and func_1502CCFC.
