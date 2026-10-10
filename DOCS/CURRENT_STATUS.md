@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b71d5d0; tools are committed before the consumer pin.
+  checkpoint pins tools b4e101a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest linked-node endpoint transform direct match:
+[Note 1203](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md).
+Complete func_151B47D8 replaces its zero-return stub; all65 words emit directly
+from C with original frame0x18, no new guards/padding. Nine tests pass before/
+after; only target260-byte slot/symbol extent changes in the whole linked ELF.
+Guards/conversion rows/protected data unchanged. Game2,747/4,816 (57.04%),
+total3,420/5,489 (62.31%), zero drift /2,069 different. Next:44-word leaf
+func_151B48DC; curve fitting/rejection handoff remains preserved in Note1202.
 
 Latest owner threshold-curve squared-copy/frame separation:
 [Note 1202](WORKING_NOTES/1202-game-owner-threshold-curve-squared-copy-and-physical-frame-gates-20261010.md).

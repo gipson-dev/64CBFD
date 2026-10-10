@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-10 Linked Node Endpoint Transform Direct Match
+
+[Note 1203](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md):
+Complete func_151B47D8 emits all65 retail words directly, original frame0x18,
+no new guards/padding. Nine tests pass in12.721s before and12.653s after;
+whole ELF changes only target260-byte slot/symbol extent. All16 neighbors,
+guards/conversion rows and189,088 protected data bytes unchanged.
+Game2,747/4,816 (57.04%), total3,420/5,489 (62.31%), zero drift /2,069 different.
+Toolsb4e101a first; older independent work/curve handoff preserved.
+Next:44-word func_151B48DC; actual hardware/FCSR/live acceptance separate.
+
 ## 2026-10-10 Owner Threshold Curve Squared Copy And Frame Gates
 
 [Note 1202](WORKING_NOTES/1202-game-owner-threshold-curve-squared-copy-and-physical-frame-gates-20261010.md):

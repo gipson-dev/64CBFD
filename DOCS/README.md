@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Linked-node endpoint transform direct match](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md):
+  All65 words emit directly from C; nine tests pass before/after and only target
+  slot/symbol extent changes. Game2,747 exact; next44-word func_151B48DC.
+
 - [Owner threshold curve squared-copy/physical-frame gates](WORKING_NOTES/1202-game-owner-threshold-curve-squared-copy-and-physical-frame-gates-20261010.md):
   One squared copy and prior float boundaries qualify in a frame-shifted form.
   Eleven tests pass; saved writes/slot gates reject installation. Prior forms unchanged.

@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-10 ([Note 1203](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md)):
+Restore65-word func_151B47D8 directly from typed C with original0x18 frame and
+no guards/padding. Nine tests pass before/after; only target slot/symbol extent
+changes,16 neighbors/data/guards/conversion rows unchanged. Game2,747 exact,
+total3,420 exact, zero drift /2,069 different. Toolsb4e101a first; preserve
+curve rejection handoff and older dirty work. Next:44-word func_151B48DC.
+
 2026-10-10 ([Note 1202](WORKING_NOTES/1202-game-owner-threshold-curve-squared-copy-and-physical-frame-gates-20261010.md)):
 Qualify first squared copy at incoming SP-0xB4 with all prior float boundaries,
 but complete186-word form has0x120 frame and saved writes all8 bytes too low.

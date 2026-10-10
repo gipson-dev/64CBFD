@@ -48,6 +48,16 @@ typedef struct {
 typedef struct { u8 *actor; u8 epoch; } OwnerPositionLink3F28;
 extern f32 D_800AA3AC;
 
+typedef struct {
+    u8 *first;
+    u8 firstEpoch, firstMatrix, padding06[2];
+    f32 firstPosition[3];
+    u8 *second;
+    u8 secondEpoch, secondMatrix, padding1A[2];
+    f32 secondPosition[3];
+} OwnerMatrixLink47D8;
+void func_15143134(f32 *, f32 *, u8 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -408,8 +418,33 @@ s32 func_151B42A4() {
     return 0;
 }
 
-s32 func_151B47D8() {
-    return 0;
+s32 func_151B47D8(u8 *actor, OwnerMatrixLink47D8 *link,
+    f32 *destination, u8 firstEndpoint) {
+    u8 *first;
+    u8 *second;
+    f32 *point;
+    union { s32 mask; u8 *matrix; } selected;
+
+    first = link->first;
+    second = link->second;
+    if (*(u8 **)(first + 0x1D4) == NULL || *(u8 **)(second + 0x1D4) == NULL) {
+        actor[0x10] |= 0xC;
+        return 1;
+    }
+    if (*(s32 *)first == 0 || link->firstEpoch != first[0x3B] ||
+        *(s32 *)second == 0 || link->secondEpoch != second[0x3B]) {
+        return 0;
+    }
+    selected.mask = firstEndpoint ? 4 : 8;
+    actor[0x10] &= ~selected.mask;
+    point = firstEndpoint ? link->firstPosition : link->secondPosition;
+    if (firstEndpoint) {
+        selected.matrix = *(u8 **)(first + 0x1D4) + (link->firstMatrix << 6);
+    } else {
+        selected.matrix = *(u8 **)(second + 0x1D4) + (link->secondMatrix << 6);
+    }
+    func_15143134(point, destination, selected.matrix);
+    return 1;
 }
 
 s32 func_151B48DC() {

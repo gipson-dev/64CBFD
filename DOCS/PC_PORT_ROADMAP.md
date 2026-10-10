@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Linked Node Endpoint Transform Direct Match - 2026-10-10
+
+[Note 1203](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md):
+
+- [x] Restore complete65-word func_151B47D8 directly from typed C; preserve frame0x18 with no new guards/padding.
+- [x] Qualify byte mode, linked-node gates, post-flag palette/index reloads, aliases, six effective negatives and native32.
+- [x] Pass nine tests before/after, independent rebases and complete original wrapper/dispatcher/point-transform connections.
+- [x] Preserve16 owner neighbors and every other linked ELF byte; guards/conversion rows/data unchanged.
+- [x] Measure Game2,747/4,816 (57.04%), total3,420/5,489 (62.31%), zero drift /2,069 different.
+- [x] Bank toolsb4e101a before consumer source/docs/pin; preserve older independent dirty work and curve receipts.
+- [ ] Recover adjacent44-word func_151B48DC with exact constant, ten-point unrolled interpolation and leaf ABI.
+- [ ] Retain Note1202 curve frame/private/slot rejection gates; record a fresh whole-owner baseline for future curve work.
+- [ ] Keep wider Game goal and actual hardware/FCSR/live qualification separate.
+
 ## Owner Threshold Curve Squared Copy And Physical Frame Gates - 2026-10-10
 
 [Note 1202](WORKING_NOTES/1202-game-owner-threshold-curve-squared-copy-and-physical-frame-gates-20261010.md):
