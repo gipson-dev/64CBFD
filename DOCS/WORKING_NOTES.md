@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1220](WORKING_NOTES/1220-game-actor-alpha-shading-byte-match-20261010.md)):
+Restore full 125-word func_1502D630 with original frame/private outputs and
+closed constant-lifetime guards. Nine tests pass before/after: 358 full fault
+prefixes, 203,972 native32 cases and real dispatcher/RGB/shading/matrix chain.
+Only target 500-byte slot/symbol extent changes; 37 neighbors, old guards and
+data exact. Game 2,760 exact, total 3,433 exact. Next full target: 532-word
+eight-argument actor renderer func_1502CCFC; hardware/live gates remain open.
+
 2026-10-10 ([Note 1219](WORKING_NOTES/1219-game-actor-rgb-parameter-writer-direct-match-20261010.md)):
 Restore complete frame-free 57-word func_1502D54C directly from C, no guards.
 Nine tests pass before/after: full ordered aliases/faults, 399,872 native32

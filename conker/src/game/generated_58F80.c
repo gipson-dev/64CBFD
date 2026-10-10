@@ -420,7 +420,7 @@ s32 func_150229E4(u8 *);
 
 s32 func_150849CC(u8 *,s32 *);
 void func_1502D54C(s32, s32 *);
-s32 func_1502D630();
+void func_1502D630(u8 *, s32 *, s32);
 s32 func_1502CCFC();
 
 Gfx *func_1502C974(Gfx *commands, s32 slot, s32 view, s32 mode, s32 extra) {
@@ -506,8 +506,39 @@ void func_1502D54C(s32 slot, s32 *parameters) {
     parameters[0] = parameters[1] = parameters[2] = 255;
 }
 
-s32 func_1502D630() {
-    return 0;
+extern f32 D_800D9B1C, D_800D9B20;
+extern u16 D_800DD2E8, D_800DD2EC;
+extern f32 D_800D2CA8[][16];
+extern f32 D_80096DE8, D_80096DEC, D_80096DF0, D_80096DF4;
+void func_150A7A00(f32 *, f32, f32, f32, f32 *, f32 *, f32 *, f32 *);
+
+void func_1502D630(u8 *actor, s32 *parameters, s32 view) {
+    f32 end, start, first, second, step;
+    f32 x, y, z, w;
+    f32 factor;
+
+    if (D_800D9B1C != 0.0f) { first = 1.0f / D_800D9B1C; } else { first = D_80096DE8; }
+    if (D_800D9B20 != 0.0f) { second = 1.0f / D_800D9B20; } else { second = D_80096DEC; }
+    step = (first - second) * D_80096DF0;
+    start = (f32)(u32)D_800DD2E8 * step + second;
+    end = (f32)(u32)D_800DD2EC * step + second;
+    func_150A7A00(D_800D2CA8[view], *(f32 *)(actor + 0x14),
+        *(f32 *)(actor + 0x18), *(f32 *)(actor + 0x1C), &x, &y, &z, &w);
+    if (w != 0.0f) {
+        w = 1.0f / w;
+    } else {
+        w = D_80096DF4;
+    }
+    if (w < 0.0f) {
+        factor = 0.0f;
+    } else if (end <= w) {
+        factor = 0.0f;
+    } else if (w <= start) {
+        factor = 1.0f;
+    } else {
+        factor = (w - end) / (start - end);
+    }
+    parameters[3] = (s32)((1.0f - factor) * 255.0f);
 }
 
 s32 func_1502D824() {

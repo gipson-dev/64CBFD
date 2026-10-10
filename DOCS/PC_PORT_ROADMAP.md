@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Alpha-Shading Byte Match - 2026-10-10
+
+[Note 1220](WORKING_NOTES/1220-game-actor-alpha-shading-byte-match-20261010.md):
+
+- [x] Restore complete typed func_1502D630: all 125 words, original 0x58 frame and private matrix/endpoints.
+- [x] Certify 121 closed guards, 16 replacements and four constant/setup insertions; no omissions or missing-body padding.
+- [x] Pass nine tests before/after: 703 guest cases, 1,728 bounded FP edge cases, 358 full fault prefixes and 203,972 native32 cases.
+- [x] Qualify nine independent links, seven effective negatives and every stale word/relocation dependency.
+- [x] Execute 168 complete banked dispatcher connections with the real RGB writer, shading caller and all 58 matrix-chain words.
+- [x] Audit whole ELF: only target 500-byte slot/symbol extent changes; 37 neighbors, old guards, conversion rows and data exact.
+- [x] Measure Game 2,760/4,816 (57.31%), total 3,433/5,489 (62.54%), zero drift / 2,056 different; update root README aggregates only.
+- [ ] Recover and qualify the complete 532-word eight-argument renderer func_1502CCFC, not only its early gates.
+- [ ] Preserve separate curve rejection gates and hardware/FCSR/live boundaries.
+
 ## Actor RGB Parameter Writer Direct Match - 2026-10-10
 
 [Note 1219](WORKING_NOTES/1219-game-actor-rgb-parameter-writer-direct-match-20261010.md):
@@ -9,7 +23,7 @@
 - [x] Qualify nine independent links, seven effective compiled negatives and 336 actual banked dispatcher connections.
 - [x] Audit whole ELF: only target 228-byte slot/symbol extent changes; 37 neighbors, guards, conversion rows and protected data exact.
 - [x] Measure Game 2,759/4,816 (57.29%), total 3,432/5,489 (62.53%), zero drift / 2,057 different; update root README aggregates only.
-- [ ] Recover complete 125-word shading/alpha callback func_1502D630, actual matrix-helper contract and private outputs before installation.
+- [x] Recover complete 125-word shading/alpha callback func_1502D630, actual matrix-helper contract and private outputs before installation; completed in Note 1220.
 - [ ] Preserve separate curve rejection gates and full hardware/live boundaries.
 
 ## Actor Render-Dispatch Byte Match - 2026-10-10

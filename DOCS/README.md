@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor alpha-shading byte match](WORKING_NOTES/1220-game-actor-alpha-shading-byte-match-20261010.md):
+  restore all 125 words and original private outputs; qualify closed guards,
+  full fault prefixes and real dispatcher/RGB/shading/matrix connections.
+  Next: complete 532-word eight-argument renderer func_1502CCFC.
 - [Actor RGB parameter writer direct match](WORKING_NOTES/1219-game-actor-rgb-parameter-writer-direct-match-20261010.md):
   restore all 57 words directly from C; qualify ordered aliases/faults,
   native32, independent links and complete actual dispatcher connections.

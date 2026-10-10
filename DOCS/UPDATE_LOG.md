@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Alpha-Shading Byte Match
+
+[Note 1220](WORKING_NOTES/1220-game-actor-alpha-shading-byte-match-20261010.md):
+Restore full 125-word func_1502D630 and original 0x58 frame/private outputs.
+121 closed guards normalize 16 words and insert four constant/setup producers.
+Nine tests pass before/after: 358 verified fault prefixes, 203,972 native32
+cases and 168 actual dispatcher/RGB/shading/matrix-chain connections.
+Only target 500-byte slot/symbol extent changes; 37 neighbors, conversion rows,
+old guards and data exact. Game 2,760 exact, total 3,433 exact, zero drift /
+2,056 different. Tools 89e8ece first. Next: complete 532-word func_1502CCFC;
+hardware/FCSR/live acceptance remains separate. No push.
+
 ## 2026-10-10 Actor RGB Parameter Writer Direct Match
 
 [Note 1219](WORKING_NOTES/1219-game-actor-rgb-parameter-writer-direct-match-20261010.md):
