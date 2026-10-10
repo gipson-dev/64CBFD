@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 64139c2; tools are committed before the consumer pin.
+  checkpoint pins tools 9f71a62; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest object color-mode helper byte match:
+[Note 1208](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md).
+Complete func_1502EC34 replaces its zero-return stub; all 150 linked words
+match with 148 dependency guards and two inserted lifetime/scheduling words.
+Original 0x28 frame, private homes, seven case starts and protected table remain
+exact. Ten tests pass before/after, including 73,728 native32 cases, 210 fault
+prefixes and the complete banked renderer/adapter using the installed helper.
+Whole ELF changes only the 600-byte slot/symbol extent; all 37 owner neighbors,
+old guard prefix, conversion rows and data unchanged. Game 2,751/4,816 (57.12%),
+total 3,424/5,489 (62.38%), zero drift / 2,065 different. Next: 78-word leaf
+func_1502EAFC's six-way phase updater; preserve the separate curve handoff.
 
 Latest object color-mode semantic recovery:
 [Note 1207](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md).

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Object Color-Mode Helper Byte Match
+
+[Note 1208](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md):
+Complete func_1502EC34 matches all 150 linked words with 148 dependency guards,
+two inserted lifetime/scheduling words, original 0x28 frame and exact case starts.
+Protected-table relocation is direct; no data or neighbor changes. Ten tests
+pass before/after, final 19.044s, including 73,728 native32 cases, 210 faults
+and complete banked renderer/adapter using the installed helper. Whole ELF
+changes only target 600-byte slot/symbol extent; old guards/conversion rows/data
+unchanged. Game 2,751/4,816 (57.12%), total 3,424/5,489 (62.38%), zero drift /
+2,065 different. Tools 9f71a62 first; next 78-word func_1502EAFC. Preserve curve gates.
+
 ## 2026-10-10 Object Color-Mode Recovery And Table Gates
 
 [Note 1207](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md):

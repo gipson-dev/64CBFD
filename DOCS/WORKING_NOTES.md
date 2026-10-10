@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1208](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md)):
+Restore all 150 words of func_1502EC34, original frame/private homes/case starts,
+through 148 guarded dependencies and two insertions. Ten tests pass before/
+after, including native32, full private faults and installed-helper renderer.
+Only target slot/symbol extent changes; 37 neighbors/data/conversion rows and
+old guard prefix unchanged. Game 2,751 exact, total 3,424 exact, zero drift /
+2,065 different. Tools 9f71a62 first; next func_1502EAFC. Preserve curve handoff.
+
 2026-10-10 ([Note 1207](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md)):
 Recover complete 148-word func_1502EC34 diagnostic, retail frame/private homes,
 and alias-sensitive outputs. Seven tests pass, including 1,697 guest cases,

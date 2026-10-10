@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Object Color-Mode Helper Byte Match - 2026-10-10
+
+[Note 1208](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md):
+
+- [x] Restore complete func_1502EC34 semantic C and all 150 retail words, original 0x28 frame/private homes/case starts.
+- [x] Qualify closed 148-row recipe: 71 changed words, 77 unchanged dependencies, two insertions and no omissions/padding.
+- [x] Resolve protected-table ownership directly; preserve constants, existing pools and all 37 owner neighbors.
+- [x] Pass ten tests before/after, 1,697 guest cases, 210 faults, 73,728 native32 cases and every stale word/relocation gate.
+- [x] Requalify complete banked renderer/adapter against the actual installed helper and independent strip reference.
+- [x] Prove only target 600-byte slot/symbol extent changes; old guards/conversion rows/protected data unchanged.
+- [x] Measure Game 2,751/4,816 (57.12%), total 3,424/5,489 (62.38%), zero drift / 2,065 different.
+- [x] Bank tools 9f71a62 before consumer source/guards/docs/pin; preserve older independently dirty work and historical receipts.
+- [ ] Recover adjacent 78-word leaf func_1502EAFC, its six-way protected table and signed/wrapping phase updates.
+- [ ] Preserve separate curve rejection gates and wider Game goal; actual trig/hardware/FCSR/live acceptance remains separate.
+
 ## Object Color-Mode Recovery And Table Gates - 2026-10-10
 
 [Note 1207](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md):
@@ -10,9 +25,9 @@
 - [x] Preserve all 37 copied-owner neighbors, existing pool prefix and every other padded owner byte; production unchanged.
 - [x] Reject installation: modes 6/7 start four bytes early and owner table addend 0x100 differs from required 0x124.
 - [x] Bank tools 64139c2 before documentation/pin; preserve independently dirty older tools and curve receipts.
-- [ ] Recover original case starts and complete 150-word extent; certify instruction scheduling and register lifetimes.
-- [ ] Qualify actual owner table relocation/addends, protected table/constants and every linked ELF byte before installation.
-- [ ] Requalify adapter/renderer against the installed helper; preserve separate curve and hardware/FCSR/live boundaries.
+- [x] Recover original case starts and complete 150-word extent; certify scheduling/register lifetimes in Note 1208.
+- [x] Qualify actual owner table relocation, protected table/constants and every linked ELF byte in Note 1208.
+- [x] Requalify adapter/renderer against the installed helper in Note 1208; hardware/FCSR/live and curve work remain separate.
 
 ## Captured-Object Metadata Adapter Byte Match - 2026-10-10
 
@@ -24,8 +39,8 @@
 - [x] Connect complete475-word renderer,150-word original mode helper and34-word fallback; preserve16 neighbors/data/ELF.
 - [x] Measure Game2,750/4,816 (57.10%), total3,423/5,489 (62.36%), zero drift /2,066 different.
 - [x] Bank tools89d71af before source/guards/docs/pin; preserve older independent dirty work and historical curve receipts.
-- [ ] Restore150-word func_1502EC34 from its production stub; recover seven-way outputs, pool, aliases and0x28 frame.
-- [ ] Requalify the adapter/renderer against that installed helper; actual cosine/hardware/FCSR/live acceptance remains separate.
+- [x] Restore150-word func_1502EC34 from its production stub in Note1208; seven-way outputs, pool, aliases and0x28 frame qualify.
+- [x] Requalify adapter/renderer against the installed helper in Note1208; actual cosine/hardware/FCSR/live acceptance remains separate.
 - [ ] Preserve Note1202 curve frame/private/slot gates and the wider Game matching goal.
 
 ## Owner Fixed-Span Point Initializer Byte Match - 2026-10-10

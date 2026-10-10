@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern f32 D_80096F38, D_80096F3C;
+f32 cosf(f32);
+
 extern u8 D_800CC406[];
 extern s32 D_800C3E80[];
 extern u8 D_800BE9C0;
@@ -411,8 +414,59 @@ s32 func_1502EAFC() {
     return 0;
 }
 
-s32 func_1502EC34() {
-    return 0;
+void func_1502EC34(u8 *object, s32 *red, s32 *green, s32 *blue, s32 *opacity) {
+    /* Retain retail scratch extent; these reserved words are not accessed. */
+    s32 reserved0, reserved1;
+    s32 high, value;
+    f32 amount;
+
+    switch (object[0xA4]) {
+    case 1:
+        *red = object[0xA5];
+        *green = object[0xA6];
+        *blue = object[0xA7];
+        value = *(s32 *)(object + 0xA0);
+        if ((u32)value >= 256) {
+            amount = *(f32 *)value;
+            amount = amount < 0.0f ? 0.0f : (amount > 255.0f ? 255.0f : amount);
+            *opacity = (s32)(amount * D_80096F38);
+        } else {
+            *opacity = value;
+        }
+        break;
+    case 2:
+    case 3:
+        *red = 0;
+        *green = 0;
+        *blue = 0;
+        value = object[0xA5];
+        *opacity = value;
+        if (object[0xA4] == 3) {
+            *opacity = 255 - value;
+        }
+        break;
+    case 4:
+    case 5:
+        value = *(s32 *)(object + 0xA0);
+        high = (value >> 24) & 255;
+        *red = (value >> 16) & 255;
+        *green = (*(s32 *)(object + 0xA0) >> 8) & 255;
+        *blue = *(s32 *)(object + 0xA0) & 255;
+        amount = cosf((u32)object[0xA5] * D_80096F3C);
+        value = (s32)(high + 64.0f * ((amount + 1.0f) * 0.5f));
+        *opacity = value;
+        *opacity = value + (((255 - value) * (255 - object[0xA7])) >> 8);
+        break;
+    case 6:
+    case 7:
+        value = *(s32 *)(object + 0xA0);
+        *red = (value >> 16) & 255;
+        high = (value >> 24) & 255;
+        *green = (*(s32 *)(object + 0xA0) >> 8) & 255;
+        *blue = *(s32 *)(object + 0xA0) & 255;
+        *opacity = 255 - ((object[0xA5] * high) >> 8);
+        break;
+    }
 }
 
 s32 func_1502EE8C(s32 arg0, s32 arg1) {

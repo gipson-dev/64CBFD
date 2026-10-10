@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Object color-mode helper byte match](WORKING_NOTES/1208-game-object-color-mode-helper-byte-match-20261010.md):
+  All 150 linked words match with original frame/case starts and protected table.
+  Ten tests pass before/after; Game 2,751 exact. Next: 78-word phase updater.
+
 - [Object color-mode recovery and table gates](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md):
   Complete 148-word diagnostic with original frame; seven tests pass.
   Not installed: case starts, owner pool addend and full-word matching remain.
