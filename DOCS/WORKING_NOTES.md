@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-10 ([Note 1225](WORKING_NOTES/1225-game-complete-actor-renderer-actual-color-and-matrix-connections-20261010.md)):
+Qualify full renderer/caller with actual color/fog and both matrix chains.
+326 renderer cases, 168 caller cases, 18 aliases/mutations and 758 fired fault
+triples; all 21 combined tests pass. Original/fitted private state exact,
+raw saved-PC adjustment explicit. Production/counts unchanged; tools baacebd
+first, no push. Recover full production color C before combined installation.
+
 2026-10-10 ([Note 1224](WORKING_NOTES/1224-game-complete-actor-renderer-native32-sdk-qualification-20261010.md)):
 Qualify complete renderer with actual SDK graphics macros on native32:
 660 executions, full command/callback/public-state checks, expanded wrapped

@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor renderer actual color and matrix connections](WORKING_NOTES/1225-game-complete-actor-renderer-actual-color-and-matrix-connections-20261010.md):
+  qualify complete original color/fog and both banked matrix chains, full
+  caller paths and fired connected faults. Original/fitted private state exact;
+  raw saved-PC adjustment is explicit. Recover production color C before installation.
+
 - [Complete actor renderer native32 SDK qualification](WORKING_NOTES/1224-game-complete-actor-renderer-native32-sdk-qualification-20261010.md):
   pass 660 complete executions with actual SDK macros, expanded boundaries,
   four effective negatives and pointer-provenance regression. Not installed;

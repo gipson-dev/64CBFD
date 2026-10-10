@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e5f59e3; tools are committed before the consumer pin.
+  checkpoint pins tools baacebd; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete actor renderer native32 SDK qualification, not installed:
+Latest complete actor renderer actual color/matrix connections, not installed:
+[Note 1225](WORKING_NOTES/1225-game-complete-actor-renderer-actual-color-and-matrix-connections-20261010.md).
+326 renderer and 168 complete caller cases execute actual color/fog and both
+matrix chains; all 21 connected/native/schedule tests pass. Original/fitted
+private bytes/order are exact; raw comparison adjusts proven saved PCs only.
+Production/counts unchanged. Tools baacebd first, no push. Next: recover the
+still-empty 50-word color provider before combined owner installation/audit.
+
+Earlier complete actor renderer native32 SDK qualification, not installed:
 [Note 1224](WORKING_NOTES/1224-game-complete-actor-renderer-native32-sdk-qualification-20261010.md).
 330 complete cases at -O2/-O0 pass with actual SDK graphics macros; four
 effective negatives and explicit pointer/scalar provenance checks pass.

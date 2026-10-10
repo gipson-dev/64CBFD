@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Renderer Actual Color And Matrix Connections
+
+[Note 1225](WORKING_NOTES/1225-game-complete-actor-renderer-actual-color-and-matrix-connections-20261010.md):
+326 renderer and 168 full caller cases execute actual color/fog and both matrix
+chains. All 758 selected full fault-prefix triples fire; original/fitted
+private bytes/order exact, raw saved-PC adjustment explicit. Fresh negatives
+and all 21 connected/native/schedule tests pass. Production/counts unchanged;
+tools baacebd first, no push. Recover production color C before installing.
+
 ## 2026-10-10 Complete Actor Renderer Native32 SDK Qualification
 
 [Note 1224](WORKING_NOTES/1224-game-complete-actor-renderer-native32-sdk-qualification-20261010.md):

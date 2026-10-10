@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Renderer Actual Color And Matrix Connections - 2026-10-10
+
+[Note 1225](WORKING_NOTES/1225-game-complete-actor-renderer-actual-color-and-matrix-connections-20261010.md):
+
+- [x] Execute complete original color/fog bodies and banked dispatcher/RGB/shading plus both actual matrix chains.
+- [x] Pass 326 renderer and 168 full caller cases with independent public/color checks and strict original/fitted private bytes/order.
+- [x] Fire all 758 selected connected fault-prefix triples; raw comparison adjusts only proven saved return PCs.
+- [x] Pass fresh complete renderer negatives, five missing-helper rejections and scalar-preserving return-PC control; all 21 combined tests pass.
+- [x] Bank tools baacebd first; preserve production/counts/older dirty tools, no push.
+- [ ] Recover and qualify full semantic C for the still-empty 50-word color provider func_1502CC34.
+- [ ] Qualify/install both bodies in their copied owner, rebuild/audit linked ELF and measure fresh credit.
+- [ ] Keep actual cosine/other callbacks, FCSR/traps and hardware/live acceptance separate and open.
+
 ## Complete Actor Renderer Native32 SDK Qualification - 2026-10-10
 
 [Note 1224](WORKING_NOTES/1224-game-complete-actor-renderer-native32-sdk-qualification-20261010.md):
@@ -8,7 +21,7 @@
 - [x] Qualify wrapped count/shift boundaries through 65,535; keep metamorphic skipping distinct from guest fault/order proof.
 - [x] Pass four effective native negatives, explicit pointer/scalar regression and all 13 combined native/schedule tests.
 - [x] Preserve immutable production/baselines/counts; bank tools e5f59e3 first and preserve older dirty tools, no push.
-- [ ] Connect full actual dispatcher/RGB/shading/renderer/color-helper and matrix-helper bodies; bounded callbacks are not this gate.
+- [x] Connect full actual dispatcher/RGB/shading/renderer/color-helper and matrix-helper bodies in Note 1225; cosine/other callbacks remain bounded.
 - [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; hardware/live acceptance stays separate.
 
 ## Complete Actor Renderer Certified Schedule And Padding - 2026-10-10
@@ -22,7 +35,7 @@
 - [x] Pass nine independent links; reject every one of 531 stale words and 47 relocation dependencies plus three compiled negatives.
 - [x] Bank tools e59626e first, preserve production/counts and older dirty tools; no installation or push.
 - [x] Qualify native32 SDK output in Note 1224.
-- [ ] Qualify complete actual dispatcher/RGB/shading/renderer/color-helper chain.
+- [x] Qualify complete actual dispatcher/RGB/shading/renderer/color-helper chain in Note 1225; recover production color provider before installation.
 - [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; hardware/live acceptance stays separate.
 
 ## Complete Actor Renderer Original Private Layout - 2026-10-10
@@ -36,7 +49,7 @@
 - [x] Bank tools 755a04d first; preserve production and matching counts, independently dirty older tools and frozen Release.
 - [x] Close 532-word instruction layout and certified stale-dependent recipe/padding; completed in Note 1223, raw portable body remains 531 words.
 - [x] Qualify native32 SDK output in Note 1224.
-- [ ] Qualify complete actual dispatcher/RGB/shading/renderer/color-helper chain.
+- [x] Qualify complete actual dispatcher/RGB/shading/renderer/color-helper chain in Note 1225; recover production color provider before installation.
 - [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; no current matching claim.
 
 ## Complete Actor Renderer Recovery - 2026-10-10
@@ -51,7 +64,7 @@
 - [x] Qualify aliases and fired full private fault prefixes; completed in Note 1222.
 - [x] Close scheduling and padding; completed in Note 1223.
 - [x] Qualify native32 SDK output in Note 1224.
-- [ ] Qualify complete real helper/dispatcher/RGB/shading/renderer chain.
+- [x] Qualify complete real helper/dispatcher/RGB/shading/renderer chain in Note 1225; cosine/other callbacks remain bounded.
 - [ ] Install qualified body, rebuild/audit linked ELF and measure fresh credit. Current matching remains unchanged.
 
 ## Actor Alpha-Shading Byte Match - 2026-10-10
