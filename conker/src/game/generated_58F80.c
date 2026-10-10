@@ -411,8 +411,76 @@ void func_1502C6E8(s32 slot, s16 view, s32 unused) {
     }
 }
 
-Gfx *func_1502C974() {
-    return 0;
+extern u8 D_800C3638,D_800C3656,D_800DF7C4,D_800BE9C0;
+extern u8 *D_800B0DF0,*D_800DF7C0;
+extern Gfx *D_800BE9C8[];
+extern s32 D_800BEBA4;
+s32 func_150229E4(u8 *);
+
+
+s32 func_150849CC(u8 *,s32 *);
+s32 func_1502D54C();
+s32 func_1502D630();
+s32 func_1502CCFC();
+
+Gfx *func_1502C974(Gfx *commands, s32 slot, s32 view, s32 mode, s32 extra) {
+    Gfx *original;
+    u8 *actor;
+    u8 *matrix;
+    s32 parameters[4];
+    s32 tier;
+    s32 alpha;
+    s32 overflow;
+
+    original = commands;
+    if (D_800C3638 != 0 && D_800C3656 == 0) {
+        if (func_150229E4((u8 *)D_800CC2D0 + (u32)slot * 0x32C) == 0) {
+            return commands;
+        }
+    }
+    actor = (u8 *)D_800CC2D0 + (u32)slot * 0x32C;
+    if ((actor[0x74] & (1U << (view & 31))) == (1U << (view & 31))) {
+        return commands;
+    }
+    if (func_1506196C((ActorDisplay58F80 *)actor, view) == 0) {
+        return commands;
+    }
+    if (*(u8 **)(actor + 0x1D4) == NULL) {
+        return commands;
+    }
+    if (mode != 4 && mode != 5 && mode != 3) {
+        func_1502C6E8(slot, (s16)view, mode);
+        tier = actor[0x1C8];
+    } else {
+        func_150849CC(actor, &tier);
+    }
+    func_1502D54C(slot, parameters);
+    if (*(s16 *)(D_800B0DF0 + 0x3E) != 0) {
+        func_1502D630(actor, parameters, view);
+    } else {
+        parameters[3] = 255;
+    }
+    alpha = func_1506196C((ActorDisplay58F80 *)actor, view);
+    if (alpha < 255) {
+        u8 *owner = *(u8 **)(actor + 0x318);
+        if (owner != NULL && *(s32 *)(owner + 0x2C) == 0x100 && view != actor[0x127]) {
+            alpha = 255;
+        }
+    }
+    if (mode == 4) {
+        matrix = D_800DF7C0;
+        alpha = (s32)((u32)D_800DF7C4 * (u32)alpha) >> 8;
+    } else {
+        matrix = *(u8 **)(actor + 0x1D4);
+    }
+    commands = (Gfx *)func_1502CCFC(commands, slot, view, matrix, alpha, parameters, mode, extra);
+    overflow = (D_800BEBA4 < ((s32)((u32)commands - (u32)D_800BE9C8[D_800BE9C0]) >> 3)) ? 1 : 0;
+    if (overflow == 0) {
+        return commands;
+    } else {
+        return original;
+    }
+    return commands;
 }
 
 s32 func_1502CC34() {

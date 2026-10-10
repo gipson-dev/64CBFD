@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor render-dispatch byte match](WORKING_NOTES/1218-game-actor-render-dispatch-byte-match-20261010.md):
+  restore all 176 words and original private homes; qualify closed guards,
+  complete fault prefixes, aliases and real parent/helper connections.
+  Next: full RGB parameter callback func_1502D54C.
 - [Actor render-dispatch lifetime and private counterexamples](WORKING_NOTES/1217-game-actor-render-dispatch-lifetime-and-private-counterexamples-20261010.md):
   measure 62 full/profile forms; scoped flag reaches 176 words, but original
   frame/private homes remain open. Bank public/native tests and explicit

@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1218](WORKING_NOTES/1218-game-actor-render-dispatch-byte-match-20261010.md)):
+Restore full 176-word func_1502C974 with original 0x58 frame/private homes.
+Certify complete guards and one redundant shift-mask omission. Fifteen tests
+pass before/after: full private/public traces, 590 fault prefixes, 144 aliases,
+native32, stale dependencies and complete real parent/helper connections.
+Only target 704-byte slot/symbol extent changes; Game 2,758 exact, total 3,431
+exact. Next full target: 57-word RGB parameter callback func_1502D54C.
+
 2026-10-10 ([Note 1217](WORKING_NOTES/1217-game-actor-render-dispatch-lifetime-and-private-counterexamples-20261010.md)):
 Measure 62 full/profile dispatch bodies. Explicit flag restores actor-in-a3
 lifetime; scoped flag reaches 176 words but retains the wrong 0x60 frame.

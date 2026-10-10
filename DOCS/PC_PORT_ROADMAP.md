@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Render-Dispatch Byte Match - 2026-10-10
+
+[Note 1218](WORKING_NOTES/1218-game-actor-render-dispatch-byte-match-20261010.md):
+
+- [x] Restore complete five-argument func_1502C974: all 176 words, original 0x58 frame and private/incoming/outgoing homes.
+- [x] Certify 177 closed guards, 111 replacements and one redundant shift-mask omission; no insertions or missing-body padding.
+- [x] Pass 15 tests before/after: 2,160 guest cases, 590 complete fault prefixes, 144 private aliases and 1,491,048 native32 cases.
+- [x] Reject all 177 stale words and 28 relocation dependencies; qualify six independent links and seven effective negatives.
+- [x] Execute full banked 173-word parent in 112 cases and actual selector/distance/identity helper connections.
+- [x] Audit whole ELF: only target 704-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows and protected data exact.
+- [x] Measure Game 2,758/4,816 (57.27%), total 3,431/5,489 (62.51%), zero drift / 2,058 different; update root README aggregates only.
+- [ ] Recover complete 57-word RGB parameter callback func_1502D54C and qualify its actual connection to this dispatcher.
+- [ ] Preserve separate curve rejection gates and full hardware/live boundaries.
+
 ## Actor Render-Dispatch Lifetime Checkpoint - 2026-10-10
 
 [Note 1217](WORKING_NOTES/1217-game-actor-render-dispatch-lifetime-and-private-counterexamples-20261010.md):
@@ -10,8 +24,8 @@
 - [x] Record O1/g3 wide-view ABI mismatches and actual private callback/fault address counterexamples.
 - [x] Rerun ten original recovery tests; preserve production, all 37 baseline owner neighbors and matching totals.
 - [x] Bank tools 2b91082 first, mirror absent files only and preserve older dirty tools and frozen Release.
-- [ ] Recover this full caller's original 0x58 frame, complete private homes and closed 176-word schedule together.
-- [ ] Qualify private aliases/faults, stale guards, copied-owner padding and linked audit before installation or matching credit.
+- [x] Recover this full caller's original 0x58 frame, complete private homes and closed 176-word schedule together; completed in Note 1218.
+- [x] Qualify private aliases/faults, stale guards, copied-owner padding and linked audit before installation or matching credit; completed in Note 1218.
 
 ## Actor Render-Dispatch Recovery And Layout Gates - 2026-10-10
 
@@ -25,8 +39,8 @@
 - [x] Execute the complete original 176-word caller with banked alternate selector, distance updater and identity leaf; other callbacks are bounded.
 - [x] Preserve all 37 owner neighbors/pools and production source/ELF/guards/conversion/rodata/data unchanged.
 - [x] Bank tools 3dba67b first and preserve older dirty tools, historical receipts and frozen host Release.
-- [ ] Recover this full caller's original private homes and complete 176-word extent; current forms are 162 and 167 words.
-- [ ] Qualify complete private aliases/fault prefixes, closed stale guards, actual padding and whole linked audit before installation.
+- [x] Recover this full caller's original private homes and complete 176-word extent; completed in Note 1218.
+- [x] Qualify complete private aliases/fault prefixes, closed stale guards, actual padding and whole linked audit before installation; completed in Note 1218.
 - [ ] Preserve separate curve rejection gates; full hardware/live acceptance remains separate.
 
 ## Actor Distance-Tier Updater Byte Match - 2026-10-10
@@ -42,7 +56,7 @@
 - [x] Audit whole ELF: only target 652-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows and data exact.
 - [x] Measure Game 2,757/4,816 (57.25%), total 3,430/5,489 (62.49%), zero drift / 2,059 different.
 - [x] Bank tools 6c5b8a4 first; preserve older dirty tools, historical receipts and frozen host Release.
-- [ ] Finish matching complete 176-word caller func_1502C974; semantic recovery is banked in Note 1216, physical layout remains open.
+- [x] Finish matching complete 176-word caller func_1502C974; completed in Note 1218.
 - [ ] Preserve separate curve rejection gates; full hardware/live acceptance remains separate.
 
 ## Actor Counter-Updater Direct Byte Match - 2026-10-10

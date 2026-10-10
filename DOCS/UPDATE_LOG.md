@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Render-Dispatch Byte Match
+
+[Note 1218](WORKING_NOTES/1218-game-actor-render-dispatch-byte-match-20261010.md):
+Restore full func_1502C974: 176 words / original 0x58 frame and private homes.
+177 complete guards normalize 111 words and omit only the redundant emitted
+shift mask. Fifteen tests pass before/after with 590 full fault prefixes,
+144 private aliases, 1,491,048 native32 cases and complete actual banked parent
+execution. Only target 704-byte slot/symbol extent changes; neighbors,
+conversion rows, old guard prefix and protected data exact. Game 2,758 exact,
+total 3,431 exact, zero drift / 2,058 different. Root README aggregates only.
+Next: complete RGB parameter callback func_1502D54C; no hardware/live claim.
+
 ## 2026-10-10 Actor Render-Dispatch Lifetime And Private Counterexamples
 
 [Note 1217](WORKING_NOTES/1217-game-actor-render-dispatch-lifetime-and-private-counterexamples-20261010.md):
