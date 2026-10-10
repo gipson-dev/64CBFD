@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner threshold curve private vector-home recovery](WORKING_NOTES/1200-game-owner-threshold-curve-private-vector-home-recovery-20261010.md):
+  Complete178-word diagnostic retains retail frame/saved homes with zero padding.
+  Nine vector values/write multisets qualify; scalar/access/full-word gaps remain.
+
 - [Owner threshold curve slot and delta-Y read recovery](WORKING_NOTES/1199-game-owner-threshold-curve-slot-and-delta-y-read-recovery-20261010.md):
   Complete170-word diagnostic fits; original frame/saved homes and full-path
   delta-Y home/read qualify. Nine tests pass; private/full-word gaps remain.

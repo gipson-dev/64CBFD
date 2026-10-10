@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Threshold Curve Private Vector Homes - 2026-10-10
+
+[Note 1200](WORKING_NOTES/1200-game-owner-threshold-curve-private-vector-home-recovery-20261010.md):
+
+- [x] Qualify58 complete forms and prove16 whole/member qualification pairs emit identical objects.
+- [x] Fit178 words/712 bytes with original0x118 frame/saved homes and zero actual padding.
+- [x] Qualify all nine vector write multisets/final values and full-path delta-Y boundary across matrix, mutations and rebases.
+- [x] Pass nine focused tests; reject four semantic and two public-only/private-boundary controls.
+- [x] Bank tools7972c93 before parent docs/pin; preserve production/data/guards/totals and older dirty work.
+- [ ] Recover remaining scalar homes/values, FP/GPR lifetimes and exact public/private access scheduling.
+- [ ] Resolve154 raw word differences; qualify whole private memory/fault prefixes before linked installation.
+- [ ] Keep wider Game goal and real trig/hardware/FCSR/live acceptance separate.
+
 ## Owner Threshold Curve Slot And Delta-Y Read Recovery - 2026-10-10
 
 [Note 1199](WORKING_NOTES/1199-game-owner-threshold-curve-slot-and-delta-y-read-recovery-20261010.md):
@@ -9,7 +22,8 @@
 - [x] Match delta-Y store, read multiplicity and final value at the real home on all three paths, including no-work.
 - [x] Pass nine focused tests and final independent-control rerun; reject four semantic negatives and one public-only/private-read control.
 - [x] Preserve production/data/guards/totals and bank toolsb403c1c before parent docs/pin; preserve independently dirty older work.
-- [ ] Recover remaining vector/scalar homes, private values/lifetimes, FP/GPR roles and exact access scheduling.
+- [x] Qualify all nine vector homes/values without shifting saved homes in [Note 1200](WORKING_NOTES/1200-game-owner-threshold-curve-private-vector-home-recovery-20261010.md).
+- [ ] Recover remaining scalar homes, private values/lifetimes, FP/GPR roles and exact access scheduling.
 - [ ] Match all178 words, qualify complete private memory/fault prefixes and audit linked installation.
 - [ ] Keep real trig/hardware/FCSR/live acceptance separate; no matching credit for diagnostics.
 

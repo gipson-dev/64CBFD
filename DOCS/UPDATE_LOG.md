@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-10 Owner Threshold Curve Private Vector Homes
+
+[Note 1200](WORKING_NOTES/1200-game-owner-threshold-curve-private-vector-home-recovery-20261010.md):
+Complete178-word func_151B3FDC diagnostic fits712 bytes without padding and
+retains original0x118 frame/saved homes. All nine vector write multisets/final
+values and full-path delta-Y boundary qualify.58 full forms/16 identical
+whole-member pairs measured; final nine tests pass in63.127s.154 raw word
+differences and scalar/access gaps remain; not installed. Tools7972c93 first,
+production/guards/totals unchanged; independently dirty older work preserved.
+
 ## 2026-10-10 Owner Threshold Curve Slot And Delta-Y Read Recovery
 
 [Note 1199](WORKING_NOTES/1199-game-owner-threshold-curve-slot-and-delta-y-read-recovery-20261010.md):

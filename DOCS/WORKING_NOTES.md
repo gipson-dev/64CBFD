@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1200](WORKING_NOTES/1200-game-owner-threshold-curve-private-vector-home-recovery-20261010.md)):
+Complete178-word func_151B3FDC diagnostic fits without padding, retaining
+original0x118 frame/saved homes. All nine vector write multisets/final values
+and full-path delta-Y qualify; final nine tests pass.58 forms/16 identical
+whole-member pairs measured;154 raw word differences remain. Resume scalar
+homes/lifetimes and exact access order; tools7972c93 first, no installation,
+production/guards/totals unchanged.
+
 2026-10-10 ([Note 1199](WORKING_NOTES/1199-game-owner-threshold-curve-slot-and-delta-y-read-recovery-20261010.md)):
 Complete170-word func_151B3FDC diagnostic fits with original0x118 frame/saved
 homes and delta-Y store/read/value on every path.72 full forms qualify; nine
