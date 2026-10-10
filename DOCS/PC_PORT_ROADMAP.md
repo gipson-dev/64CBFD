@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Arc Workspace And Frame Audit - 2026-10-09
+
+[Note 1190](WORKING_NOTES/1190-game-owner-point-arc-workspace-and-frame-audit-20261009.md):
+
+- [x] Audit original private midpoint/endpoint homes, saved-FP lifetime reuse and distinct current/next cursor.
+- [x] Qualify 39 complete forms / 48 form-profile combinations; preserve retained compact recovery and reject the 178-word O1 frame coincidence.
+- [x] Pass all 14 combined tests: full guest/native32, boundaries, seven effective new negatives and retained actual dispatch/rebase/owner/fault/helper audit.
+- [x] Preserve production/data/guards/progress/README totals; commit tools 7a13098 before consumer docs/pin and preserve independent older work.
+- [ ] Fit original 0x88 frame AND private/saved homes; the new 147-word/frame152 midpoint-pointer diagnostic still overflows the slot.
+- [ ] Recover original saved-FP and current/next cursor lifetimes, then complete 142-word scheduling; install only after whole linked qualification.
+- [ ] Recover original sine/cosine separately before real arc-rendering acceptance; retain hardware/FCSR/gameplay boundaries.
+
 ## Owner Point Arc Recovery And Helper Audit - 2026-10-09
 
 [Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md):

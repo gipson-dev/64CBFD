@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-09 ([Note 1190](WORKING_NOTES/1190-game-owner-point-arc-workspace-and-frame-audit-20261009.md)):
+Audit func_151B3CF0's private/saved homes and qualify 39 forms / 48 profile combinations;
+14 combined tests pass. Midpoint-pointer 147 words/frame152 and O1 178/frame136
+remain rejected; retain compact141/frame208/118 differences. Tools 7a13098 first,
+no production/guard/credit changes. Continue original FP lifetimes and cursor fit.
+
 2026-10-09 ([Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md)):
 Recover full 142-word retail point-arc contract and qualify the complete 141-word
 diagnostic in ten tests. Frame 0xD0 versus 0x88 and 118 differences remain.

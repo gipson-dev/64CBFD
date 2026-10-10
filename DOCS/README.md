@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point arc workspace and frame audit](WORKING_NOTES/1190-game-owner-point-arc-workspace-and-frame-audit-20261009.md):
+  39 complete source forms / 48 profile combinations qualify in 14 combined tests.
+  Frame coincidences/slot overflow remain rejected; no production or totals change.
+
 - [Owner point arc recovery and helper audit](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md):
   Complete func_151B3CF0 contract passes ten tests; selected diagnostic is
   141 words/frame 0xD0/118 differences, not installed. Actual trig gaps are measured.

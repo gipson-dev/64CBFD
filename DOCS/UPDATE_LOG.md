@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-09 Owner Point Arc Workspace And Frame Audit
+
+[Note 1190](WORKING_NOTES/1190-game-owner-point-arc-workspace-and-frame-audit-20261009.md):
+Audit original private/saved homes and qualify 39 forms / 48 profile combinations.
+Four new tests plus ten retained recovery tests pass in 71.805s. Midpoint-pointer
+frame shrinks to 152 bytes but its 147 words overflow; the O1 136-byte frame
+coincidence emits 178 words with wrong saved homes. Neither is installed.
+Tools 7a13098 first; production/guards/totals unchanged. Continue lifetime/cursor fit.
+
 ## 2026-10-09 Owner Point Arc Recovery And Helper Audit
 
 [Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md):
