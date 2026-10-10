@@ -519,7 +519,7 @@ extern u8 D_800D9E28[];
 s32 func_150849CC(u8 *, s32 *);
 s32 func_1503DA9C(u8 *, s32, s32, s32);
 Gfx *func_1502F01C(Gfx *, s32);
-Gfx *func_1502F9FC();
+Gfx *func_1502F9FC(Gfx *, s32);
 
 Gfx *func_1515D914(Gfx *, s32, s32, s32, s32, s32, s32, s32,
     u8 *, u8 *, s32, u8 *, s32, u8 *);
@@ -1198,8 +1198,47 @@ void func_1502F948(ActorCopy58F80 *actor) {
     }
 }
 
-Gfx *func_1502F9FC() {
-    return 0;
+Gfx *func_150C3160(Gfx *, u8 *);
+
+Gfx *func_1502F9FC(Gfx *commands, s32 slot) {
+    u8 *actor;
+    s16 *coordinates;
+    u8 *record;
+    s32 kind, selected, part;
+    u16 left, top, right, bottom;
+
+    actor = (u8 *)D_800CC2D0 + (u32)slot * 0x32C;
+    kind = actor[4];
+    if (kind == 0x89 || kind == 0xBA) {
+        return func_150C3160(commands, actor);
+    }
+    if (kind == 0) {
+        selected = 14;
+    } else if (kind == 0x96) {
+        selected = 7;
+    } else if (kind == 0x28) {
+        selected = 4;
+    } else if (kind == 1 || kind == 2 || kind == 3 || kind == 4) {
+        selected = 5;
+    } else {
+        selected = 0;
+    }
+    if (D_800C5338[kind] != NULL) {
+        coordinates = (s16 *)D_800CC2D0 + (u32)slot * 0x196;
+        for (part = 0; part != 2; part++, coordinates++) {
+            record = (u8 *)D_800C5338[kind] + selected * 12;
+            left = coordinates[0x13D];
+            top = coordinates[0x13F];
+            right = *(u16 *)(record + 8);
+            bottom = *(u16 *)(record + 10);
+            left += 2;
+            top += 2;
+            right = right * 4 - 2;
+            bottom = bottom * 4 - 2;
+            gDPSetTileSize(commands++, 5 - part, left, top, right, bottom);
+        }
+    }
+    return commands;
 }
 
 s32 func_1502FBE8() {

@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Tile Updater And Special Helper Byte Match - 2026-10-10
+
+[Note 1229](WORKING_NOTES/1229-game-complete-tile-updater-and-special-helper-byte-match-20261010.md):
+
+- [x] Recover complete 52-word special helper directly from C, no guards/frame/pool.
+- [x] Execute actual helper with all three updater forms; qualify float/state/wrap order, live aliases and 2,592 fired prefixes.
+- [x] Pass 12 actual-helper rebased links, complete renderer boundaries, native SDK C and effective fresh negatives.
+- [x] Keep special owner's 17 neighbors exact; install both full bodies and 120 qualified updater guards, preserving old prefix.
+- [x] Rebuild/audit whole linked ELF: only two slots/extents change, 700 bytes, protected data/conversion rows exact.
+- [x] Pass eight final tests/tools-check and measure +2 credit: Game 2,764/4,816, total 3,437/5,489, zero drift.
+- [x] Bank tools 041a6fa first; preserve older dirty mirror, no push; root README aggregate rows only.
+- [ ] Recover and qualify complete 98-word func_1502FBE8 in the same owner.
+- [ ] Keep extreme loops, nonfinite/FCSR/traps, other callbacks and hardware/live acceptance separate and open.
+
 ## Complete Actor Texture Tile Updater Qualified Schedule - 2026-10-10
 
 [Note 1228](WORKING_NOTES/1228-game-actor-texture-tile-updater-qualified-schedule-and-padding-20261010.md):
@@ -10,8 +24,8 @@
 - [x] Pass 12 independent rebased links, all 120 stale-word and five actual/CSV relocation dependency controls.
 - [x] Pass native SDK/effective full-C negatives and actual banked renderer boundaries; all 37 neighbors remain exact.
 - [x] Pass 17 scheduling/install regressions and root tools-check; preserve five snapshots/artifacts/counts, bank tools f2dd1c3 first.
-- [ ] Execute and independently qualify actual 52-word special helper func_150C3160, including aliases/faults.
-- [ ] Install afterward, rebuild/audit entire linked ELF and measure fresh matching credit.
+- [x] Execute and independently qualify actual 52-word special helper func_150C3160, including aliases/faults, in Note 1229.
+- [x] Install both bodies, rebuild/audit entire linked ELF and measure fresh matching credit in Note 1229.
 - [ ] Keep other callbacks, FCSR/traps and hardware/live acceptance separate and open.
 
 ## Complete Actor Texture Tile Updater Recovery - 2026-10-10
@@ -26,8 +40,8 @@
 - [x] Pass all 17 final regressions/tools-check, preserve five production artifacts/counts, bank tools c5df5cc first.
 - [x] Close full 123-word actor-address/load/register/schedule layout with checked producer recipe in Note 1228.
 - [x] Qualify fitted private order, rebases and stale dependencies in Note 1228.
-- [ ] Qualify actual special helper separately; bounded callback model is not completion.
-- [ ] Install only afterward, rebuild/audit entire linked ELF and measure fresh credit.
+- [x] Qualify actual special helper separately in Note 1229; bounded callback model was not completion.
+- [x] Install both bodies, rebuild/audit entire linked ELF and measure fresh credit in Note 1229.
 - [ ] Keep actual callbacks, FCSR/traps and hardware/live acceptance separate and open.
 
 ## Actor Color Provider And Complete Renderer Byte Match - 2026-10-10

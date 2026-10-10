@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f2dd1c3; tools are committed before the consumer pin.
+  checkpoint pins tools 041a6fa; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete texture-tile updater scheduling qualification, not installed:
+Latest complete tile updater and actual special helper installed byte-exact:
+[Note 1229](WORKING_NOTES/1229-game-complete-tile-updater-and-special-helper-byte-match-20261010.md): func_1502F9FC matches all 123 words with 120 checked guards;
+func_150C3160 emits all 52 words directly from C, no guards. Eight post-install
+tests and root tools-check pass. Only two linked slots/extents change, 700 bytes;
+old guard prefix/data/conversion rows exact. Game 2,764/4,816 (57.39%), total
+3,437/5,489 (62.62%), zero drift / 2,052 different. Tools 041a6fa first, no push.
+Next: recover complete 98-word func_1502FBE8; keep separate runtime/FCSR gates.
+
+Earlier complete texture-tile updater scheduling qualification, not installed then:
 [Note 1228](WORKING_NOTES/1228-game-actor-texture-tile-updater-qualified-schedule-and-padding-20261010.md): full func_1502F9FC now fits all 123 retail words.
 Complete C emits 120 words, original 0x20 frame; retain every producer and copy
 three address/move producers, no omitted behavior or missing-body padding.

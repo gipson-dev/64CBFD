@@ -32,7 +32,7 @@ s32 func_150C29F0();
 s32 func_150C2C00();
 s32 func_150C2FCC();
 s32 func_150C308C();
-s32 func_150C3160();
+Gfx *func_150C3160(Gfx *, u8 *);
 void func_150C3230();
 s32 func_150C3574();
 s32 func_150C3994();
@@ -237,9 +237,25 @@ s32 func_150C308C() {
 //     return 1;
 // }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3160.s. */
-s32 func_150C3160() {
-    return 0;
+/* Emit the special actor texture phase and retain the previous phase for wrapping. */
+Gfx *func_150C3160(Gfx *commands, u8 *actor) {
+    f32 ratio;
+    s32 coordinate, previous;
+
+    if (*(s32 *)(actor + 0x2E8) != 0) {
+        ratio = (f32)*(s32 *)(actor + 0x2E4) / (f32)*(s32 *)(actor + 0x2E8);
+    } else {
+        ratio = 1.0f;
+    }
+    ratio = 1.0f - ratio;
+    coordinate = (s32)(500.0f * ratio + 2.0f);
+    previous = (s32)(2U - *(u32 *)(actor + 0x2EC));
+    *(s32 *)(actor + 0x2EC) = coordinate / 3;
+    while (previous < 0) {
+        previous += 64;
+    }
+    gDPSetTileSize(commands++, 4, coordinate, previous, 0x1FE, 0x3E);
+    return commands;
 }
 /* Original bomb animation, fuse and explosion lifecycle. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_EF410/func_150C3230.s")

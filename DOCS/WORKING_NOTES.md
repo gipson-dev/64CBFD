@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-10:
+[Note 1229](WORKING_NOTES/1229-game-complete-tile-updater-and-special-helper-byte-match-20261010.md): install func_1502F9FC and func_150C3160.
+Full updater matches all 123 words with 120 checked guards; special helper
+emits all 52 words directly from C. Eight final tests/tools-check pass; actual
+helper calls/aliases/faults/native/rebases qualify. Whole ELF changes only two
+slots/extents, 700 bytes, old guard prefix/data/conversion rows exact.
+Game 2,764/4,816, total 3,437/5,489, zero drift; +2 credit. Tools 041a6fa first,
+no push. Next: complete 98-word func_1502FBE8, keeping separate runtime gates.
+
+2026-10-10:
 [Note 1228](WORKING_NOTES/1228-game-actor-texture-tile-updater-qualified-schedule-and-padding-20261010.md): full func_1502F9FC now fits all 123 retail words.
 Complete 120-word C/original 0x20 frame; all producers retained, three existing
 address/move copies, no missing-body padding. Pass three-form private order,

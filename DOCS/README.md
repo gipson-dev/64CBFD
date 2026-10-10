@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Complete tile updater and actual special helper byte match](WORKING_NOTES/1229-game-complete-tile-updater-and-special-helper-byte-match-20261010.md):
+  install both full bodies, 123 guarded/direct 52-word matches; eight final
+  tests, whole linked audit, preserved prefix/data and +2 matching credit.
+  Next: complete func_1502FBE8; separate runtime/FCSR gates remain open.
+
 - [Complete actor texture tile updater qualified schedule and padding](WORKING_NOTES/1228-game-actor-texture-tile-updater-qualified-schedule-and-padding-20261010.md):
   all 123 fitted words exact, complete 120-word C, no missing-body fill; pass
   private order/faults/rebases/stale/native/caller checks. Actual special helper
