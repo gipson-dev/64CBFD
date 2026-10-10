@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-10 ([Note 1224](WORKING_NOTES/1224-game-complete-actor-renderer-native32-sdk-qualification-20261010.md)):
+Qualify complete renderer with actual SDK graphics macros on native32:
+660 executions, full command/callback/public-state checks, expanded wrapped
+boundaries and four effective negatives. All 13 native/schedule tests pass.
+Production/counts unchanged; tools e5f59e3 first, no push. Continue complete
+actual helper-chain qualification before installing the same renderer.
+
 2026-10-10 ([Note 1223](WORKING_NOTES/1223-game-complete-actor-renderer-certified-schedule-and-padding-20261010.md)):
 Fit full 532-word renderer and original private homes with closed register/
 branch scheduling. Eight tests pass: complete private semantics, fired faults,

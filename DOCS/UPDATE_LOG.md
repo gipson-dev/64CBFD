@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Renderer Native32 SDK Qualification
+
+[Note 1224](WORKING_NOTES/1224-game-complete-actor-renderer-native32-sdk-qualification-20261010.md):
+330 complete func_1502CCFC cases pass at each of -O2/-O0 with actual SDK
+graphics macros. Full commands/cursor/callback ABI and actor/configuration
+checks, four effective negatives and scalar/pointer regression pass.
+All 13 native/schedule tests pass; production/counts unchanged.
+Tools e5f59e3 first, no push. Next: complete actual helper chain before installation.
+
 ## 2026-10-10 Complete Actor Renderer Certified Schedule And Padding
 
 [Note 1223](WORKING_NOTES/1223-game-complete-actor-renderer-certified-schedule-and-padding-20261010.md):

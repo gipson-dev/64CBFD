@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Renderer Native32 SDK Qualification - 2026-10-10
+
+[Note 1224](WORKING_NOTES/1224-game-complete-actor-renderer-native32-sdk-qualification-20261010.md):
+
+- [x] Pass 330 complete cases at each of -O2/-O0 with actual SDK macros, full command/cursor/callback and actor/configuration checks.
+- [x] Qualify wrapped count/shift boundaries through 65,535; keep metamorphic skipping distinct from guest fault/order proof.
+- [x] Pass four effective native negatives, explicit pointer/scalar regression and all 13 combined native/schedule tests.
+- [x] Preserve immutable production/baselines/counts; bank tools e5f59e3 first and preserve older dirty tools, no push.
+- [ ] Connect full actual dispatcher/RGB/shading/renderer/color-helper and matrix-helper bodies; bounded callbacks are not this gate.
+- [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; hardware/live acceptance stays separate.
+
 ## Complete Actor Renderer Certified Schedule And Padding - 2026-10-10
 
 [Note 1223](WORKING_NOTES/1223-game-complete-actor-renderer-certified-schedule-and-padding-20261010.md):
@@ -10,7 +21,8 @@
 - [x] Qualify actual whole-owner postprocessing/padding: only target 2,128-byte slot changes; all 37 neighbors/relocations/pools exact.
 - [x] Pass nine independent links; reject every one of 531 stale words and 47 relocation dependencies plus three compiled negatives.
 - [x] Bank tools e59626e first, preserve production/counts and older dirty tools; no installation or push.
-- [ ] Qualify native32 SDK output and complete actual dispatcher/RGB/shading/renderer/color-helper chain.
+- [x] Qualify native32 SDK output in Note 1224.
+- [ ] Qualify complete actual dispatcher/RGB/shading/renderer/color-helper chain.
 - [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; hardware/live acceptance stays separate.
 
 ## Complete Actor Renderer Original Private Layout - 2026-10-10
@@ -23,7 +35,8 @@
 - [x] Correct prior case arithmetic to 273 primary cases / 819 three-form executions; preserve old receipts/baselines.
 - [x] Bank tools 755a04d first; preserve production and matching counts, independently dirty older tools and frozen Release.
 - [x] Close 532-word instruction layout and certified stale-dependent recipe/padding; completed in Note 1223, raw portable body remains 531 words.
-- [ ] Qualify native32 SDK output and complete actual dispatcher/RGB/shading/renderer/color-helper chain.
+- [x] Qualify native32 SDK output in Note 1224.
+- [ ] Qualify complete actual dispatcher/RGB/shading/renderer/color-helper chain.
 - [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; no current matching claim.
 
 ## Complete Actor Renderer Recovery - 2026-10-10
@@ -37,7 +50,8 @@
 - [x] Recover retail 0x150 frame, private homes and saved-register lifetime; completed in Note 1222.
 - [x] Qualify aliases and fired full private fault prefixes; completed in Note 1222.
 - [x] Close scheduling and padding; completed in Note 1223.
-- [ ] Qualify native32 SDK output and complete real helper/dispatcher/RGB/shading/renderer chain.
+- [x] Qualify native32 SDK output in Note 1224.
+- [ ] Qualify complete real helper/dispatcher/RGB/shading/renderer chain.
 - [ ] Install qualified body, rebuild/audit linked ELF and measure fresh credit. Current matching remains unchanged.
 
 ## Actor Alpha-Shading Byte Match - 2026-10-10

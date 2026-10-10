@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor renderer native32 SDK qualification](WORKING_NOTES/1224-game-complete-actor-renderer-native32-sdk-qualification-20261010.md):
+  pass 660 complete executions with actual SDK macros, expanded boundaries,
+  four effective negatives and pointer-provenance regression. Not installed;
+  complete actual helper-chain qualification remains open.
+
 - [Complete actor renderer certified schedule and padding](WORKING_NOTES/1223-game-complete-actor-renderer-certified-schedule-and-padding-20261010.md):
   fit all 532 words with original private homes; qualify closed guards,
   actual whole-owner padding, full fault prefixes and independent links.
