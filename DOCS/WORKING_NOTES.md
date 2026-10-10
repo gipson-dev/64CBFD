@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-10 ([Note 1217](WORKING_NOTES/1217-game-actor-render-dispatch-lifetime-and-private-counterexamples-20261010.md)):
+Measure 62 full/profile dispatch bodies. Explicit flag restores actor-in-a3
+lifetime; scoped flag reaches 176 words but retains the wrong 0x60 frame.
+Four tests pass: 19,344 candidate executions, three native32 forms and 64
+private-fault executions. Record actual ABI/private-home counterexamples.
+Original recovery suite passes; production/counts unchanged. Tools 2b91082
+first, no installation or push. Continue this same complete caller's homes
+and schedule before qualifying installation.
+
 2026-10-10 ([Note 1216](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md)):
 Recover complete five-argument func_1502C974. Ten tests pass with ordered
 public callbacks, signed alpha/product/limit boundaries, 1,491,048 native32

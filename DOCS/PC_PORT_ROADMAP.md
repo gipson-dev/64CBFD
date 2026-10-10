@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Render-Dispatch Lifetime Checkpoint - 2026-10-10
+
+[Note 1217](WORKING_NOTES/1217-game-actor-render-dispatch-lifetime-and-private-counterexamples-20261010.md):
+
+- [x] Measure 62 complete/profile bodies and recover actor-in-a3 lifetime without a volatile actor local.
+- [x] Reach the complete 176-word extent with scoped flag; retain the wrong 0x60 frame as an open gate.
+- [x] Pass four tests: 19,344 candidate executions, three native32 forms and 64 verified private-fault executions.
+- [x] Record O1/g3 wide-view ABI mismatches and actual private callback/fault address counterexamples.
+- [x] Rerun ten original recovery tests; preserve production, all 37 baseline owner neighbors and matching totals.
+- [x] Bank tools 2b91082 first, mirror absent files only and preserve older dirty tools and frozen Release.
+- [ ] Recover this full caller's original 0x58 frame, complete private homes and closed 176-word schedule together.
+- [ ] Qualify private aliases/faults, stale guards, copied-owner padding and linked audit before installation or matching credit.
+
 ## Actor Render-Dispatch Recovery And Layout Gates - 2026-10-10
 
 [Note 1216](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md):

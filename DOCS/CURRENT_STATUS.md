@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3dba67b; tools are committed before the consumer pin.
+  checkpoint pins tools 2b91082; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest actor render-dispatch lifetime checkpoint:
+[Note 1217](WORKING_NOTES/1217-game-actor-render-dispatch-lifetime-and-private-counterexamples-20261010.md).
+Measure 62 full/profile bodies; an explicit overflow flag restores nonvolatile
+actor-in-a3 lifetime. Scoped flag reaches 176 words but keeps a 0x60 frame.
+Four tests pass: 19,344 candidate executions, three native32 forms and 64
+verified private-fault executions. All 31 O2/g3 public traces agree; O1/g3
+wide-view ABI mismatches and wrong private callback homes remain recorded.
+Original ten-test recovery suite also passes. Tools 2b91082 first; production
+and matching totals unchanged. Continue the same caller's original homes,
+complete schedule and private qualification before installation.
 
 Latest complete actor render-dispatch semantic recovery:
 [Note 1216](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md).

@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor render-dispatch lifetime and private counterexamples](WORKING_NOTES/1217-game-actor-render-dispatch-lifetime-and-private-counterexamples-20261010.md):
+  measure 62 full/profile forms; scoped flag reaches 176 words, but original
+  frame/private homes remain open. Bank public/native tests and explicit
+  private/ABI counterexamples without installation or matching credit.
 - [Actor render-dispatch recovery and layout gates](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md):
   qualify the complete caller's public behavior and real helper connections;
   retain installation gates for 176-word length and original private homes.

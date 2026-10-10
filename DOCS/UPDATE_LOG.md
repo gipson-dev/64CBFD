@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Actor Render-Dispatch Lifetime And Private Counterexamples
+
+[Note 1217](WORKING_NOTES/1217-game-actor-render-dispatch-lifetime-and-private-counterexamples-20261010.md):
+Measure 62 complete/profile bodies for the same full func_1502C974.
+Explicit overflow flag restores nonvolatile actor-in-a3 lifetime; scoped flag
+reaches 176 words but retains a 0x60 frame. Four tests pass with 19,344
+candidate executions, three native32 forms and 64 verified private-fault
+executions. Record O1/g3 wide-view ABI mismatches and different private homes.
+Ten original recovery tests also pass. Tools 2b91082 first; production and
+matching counts unchanged, no installation or push. Next: original private
+homes, complete schedule and qualification for this same caller.
+
 ## 2026-10-10 Actor Render-Dispatch Recovery And Layout Gates
 
 [Note 1216](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md):
