@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5a2c6f8; tools are committed before the consumer pin.
+  checkpoint pins tools 0329f70; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner threshold-curve recovery:
+[Note 1197](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md).
+Complete func_151B3FDC diagnostic qualifies all three paths; nine tests pass.
+Selected169 words/frame0x110 versus retail178/frame0x118. Original dispatcher,
+actual157-word initializer, native/guest/rebases and sixteen neighbors qualify.
+Not installed; production/guards/totals unchanged. Continue original private
+workspace, saved-value lifetimes and input schedule before full-word matching.
 
 Latest linked-owner position provider match:
 [Note 1196](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md).

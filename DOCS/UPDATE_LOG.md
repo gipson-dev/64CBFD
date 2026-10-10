@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-10 Owner Threshold Curve Recovery
+
+[Note 1197](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md):
+Recover complete func_151B3FDC and qualify nine tests, including all-word guest
+coverage, native32, full original dispatcher and actual157-word initializer.
+Seven positive forms measured; selected169 words/frame0x110 versus retail178/
+frame0x118. Not installed or byte-exact; production/guards/credit unchanged.
+Tools0329f70 first. Continue private homes, saved lifetime and input schedule.
+
 ## 2026-10-10 Linked Owner Position Provider Match
 
 [Note 1196](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md):

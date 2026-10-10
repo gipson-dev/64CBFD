@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner threshold curve recovery](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md):
+  Complete func_151B3FDC diagnostic and nine passing tests; not installed or exact.
+  Continue original frame/private homes/lifetimes/input schedule. No matching credit.
+
 - [Linked owner position provider match](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md):
   Complete func_151B3F28 installed; all45 words exact with narrow return/FP guards.
   Nine tests pass before/after; full owner/ELF/data audit passes. Game reaches57.02%.

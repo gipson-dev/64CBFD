@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-10 ([Note 1197](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md)):
+Complete func_151B3FDC diagnostic qualifies three public paths; nine tests pass.
+Selected169 words/frame0x110 versus retail178/frame0x118; original/candidate
+all-word coverage, native32, dispatcher/actual initializer/rebases/owner qualify.
+No installation/guards/credit. Tools0329f70 first; continue original private
+workspace, saved-value lifetime and input-read schedule before full-word fit.
+
 2026-10-10 ([Note 1196](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md)):
 Complete func_151B3F28 installed and all45 words exact; byte-mode leaf ABI,
 pointer/output aliases and fallback access order retained. Nine tests pass

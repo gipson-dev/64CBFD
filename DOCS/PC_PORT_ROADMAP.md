@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Threshold Curve Recovery - 2026-10-10
+
+[Note 1197](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md):
+
+- [x] Recover complete func_151B3FDC: no-write gate, threshold fallback and ten-point curve with fresh step loads.
+- [x] Pass nine focused tests; cover every original/candidate word and effective semantic negatives.
+- [x] Verify actual registration, full81-word dispatcher, actual157-word initializer, native32, rebases and sixteen owner neighbors.
+- [x] Measure seven positive forms and exact public/private read/store footprints; preserve production/guards/totals unchanged.
+- [x] Bank tools0329f70 before parent docs/pin and preserve the independently dirty older checkout.
+- [ ] Recover original0x118 frame, private workspace, saved-value lifetimes and input-read schedule.
+- [ ] Match all178 words and qualify full private memory/fault prefixes before linked installation.
+- [ ] Keep real trig/hardware/FCSR/live acceptance separate; no credit for the uninstalled diagnostic.
+
 ## Linked Owner Position Provider Match - 2026-10-10
 
 [Note 1196](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md):
@@ -10,7 +23,7 @@
 - [x] Rebuild and prove only target ELF slot/symbol size change; preserve720 data owners, conversion rows and old guard prefix.
 - [x] Measure Game2,746/4,816 (57.02%), total3,419/5,489 (62.29%), zero drift /2,070 different.
 - [x] Bank tools5a2c6f8 before parent source/guards/docs/pin; preserve independently dirty older work.
-- [ ] Next: func_151B3FDC,178 words /712 bytes /frame0x118; recover complete callback with original saved homes.
+- [x] Recover complete func_151B3FDC in [Note 1197](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md); nine tests pass, frame/private-word matching and installation remain open.
 - [ ] Keep real trig/hardware/FCSR/live rendering/gameplay acceptance separate.
 
 ## Owner Point Arc Byte Match - 2026-10-10
