@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-10 Owner X-Axis Point Interpolation Byte Match
+
+[Note 1204](WORKING_NOTES/1204-game-owner-x-axis-point-interpolation-byte-match-20261010.md):
+Complete func_151B48DC matches44 words through46 guarded dependencies/two
+omissions, retaining leaf ABI, repeated rounding and constant/velocity contract.
+Nine tests pass in21.744s before and21.622s after; whole ELF changes only target
+176-byte slot/symbol extent. Old guard prefix,16 neighbors/conversion rows/data
+unchanged. Game2,748/4,816 (57.06%), total3,421/5,489 (62.32%), zero drift /
+2,068 different. Toolsd9f391d first; next41-word func_151B4B78.
+
 ## 2026-10-10 Linked Node Endpoint Transform Direct Match
 
 [Note 1203](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md):

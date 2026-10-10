@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-10 ([Note 1204](WORKING_NOTES/1204-game-owner-x-axis-point-interpolation-byte-match-20261010.md)):
+Restore44-word func_151B48DC with46 dependency guards/two omissions, no frame/
+padding. Nine tests pass before/after; only target slot/symbol extent changes.
+Old guard prefix,16 neighbors/data/conversion rows unchanged. Game2,748 exact,
+total3,421 exact, zero drift /2,068 different. Toolsd9f391d first; next41-word
+func_151B4B78. Preserve curve handoff and older independent dirty work.
+
 2026-10-10 ([Note 1203](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md)):
 Restore65-word func_151B47D8 directly from typed C with original0x18 frame and
 no guards/padding. Nine tests pass before/after; only target slot/symbol extent

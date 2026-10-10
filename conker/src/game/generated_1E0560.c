@@ -58,6 +58,8 @@ typedef struct {
 } OwnerMatrixLink47D8;
 void func_15143134(f32 *, f32 *, u8 *);
 
+extern f32 D_800AA3C4;
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -447,8 +449,25 @@ s32 func_151B47D8(u8 *actor, OwnerMatrixLink47D8 *link,
     return 1;
 }
 
-s32 func_151B48DC() {
-    return 0;
+s32 func_151B48DC(OwnerPoints3A7C *owner) {
+    f32 start, step, x;
+    s32 i;
+
+    start = owner->start.x;
+    step = -(start - owner->end.x);
+    owner->points[0].position.x = start;
+    owner->points[0].position.y = 0.0f;
+    owner->points[0].position.z = 0.0f;
+    step *= D_800AA3C4;
+    x = start + step;
+    for (i = 1; i < 10; i++) {
+        owner->points[i].position.x = x;
+        owner->points[i].position.y = 0.0f;
+        owner->points[i].position.z = 0.0f;
+        x += step;
+    }
+    owner->flags &= ~2;
+    return 1;
 }
 
 s32 func_151B498C(u8 *arg0, s32 *arg1, s32 *arg2, s32 *arg3, s32 *arg4,

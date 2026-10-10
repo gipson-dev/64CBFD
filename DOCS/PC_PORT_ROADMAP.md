@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Owner X-Axis Point Interpolation Byte Match - 2026-10-10
+
+[Note 1204](WORKING_NOTES/1204-game-owner-x-axis-point-interpolation-byte-match-20261010.md):
+
+- [x] Restore complete44-word func_151B48DC with leaf ABI, protected0.1f read order and untouched velocities.
+- [x] Qualify closed46-word raw recipe:37 retained edits/seven unchanged dependencies/two omissions; no padding.
+- [x] Pass nine tests before/after, full-memory guest/native32, aliases, six effective negatives and every stale-word rejection.
+- [x] Preserve16 neighbors/every other linked ELF byte, old guard prefix, conversion rows and189,088 data bytes.
+- [x] Measure Game2,748/4,816 (57.06%), total3,421/5,489 (62.32%), zero drift /2,068 different.
+- [x] Bank toolsd9f391d before consumer source/guards/docs/pin; preserve older independent dirty work and curve handoff.
+- [ ] Recover41-word func_151B4B78's fixed-span sequence and early constant read with exact unrolled scheduling.
+- [ ] Keep Note1202 curve frame/private/slot rejection gates and fresh-baseline requirement for authorized neighbor changes.
+- [ ] Keep wider Game goal and actual hardware/FCSR/live qualification separate.
+
 ## Linked Node Endpoint Transform Direct Match - 2026-10-10
 
 [Note 1203](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md):

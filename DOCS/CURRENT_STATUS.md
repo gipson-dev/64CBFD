@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b4e101a; tools are committed before the consumer pin.
+  checkpoint pins tools d9f391d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner X-axis point interpolation byte match:
+[Note 1204](WORKING_NOTES/1204-game-owner-x-axis-point-interpolation-byte-match-20261010.md).
+Complete func_151B48DC replaces its zero-return stub; all44 linked words match
+with46 guarded dependencies/two omissions, preserving the leaf ABI, repeated
+rounding, constant alias order and untouched velocities. Nine tests pass before/
+after; only target176-byte slot/symbol extent changes. Old guard prefix, conversion
+rows and protected data unchanged. Game2,748/4,816 (57.06%), total3,421/5,489
+(62.32%), zero drift /2,068 different. Next:41-word leaf func_151B4B78.
 
 Latest linked-node endpoint transform direct match:
 [Note 1203](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md).

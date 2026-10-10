@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner X-axis point interpolation byte match](WORKING_NOTES/1204-game-owner-x-axis-point-interpolation-byte-match-20261010.md):
+  All44 linked words match through a closed46-row recipe/two omissions.
+  Nine tests pass before/after; Game2,748 exact. Next:41-word func_151B4B78.
+
 - [Linked-node endpoint transform direct match](WORKING_NOTES/1203-game-linked-node-endpoint-transform-direct-match-20261010.md):
   All65 words emit directly from C; nine tests pass before/after and only target
   slot/symbol extent changes. Game2,747 exact; next44-word func_151B48DC.
