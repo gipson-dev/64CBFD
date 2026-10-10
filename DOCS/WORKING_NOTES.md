@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-10 ([Note 1221](WORKING_NOTES/1221-game-complete-actor-renderer-recovery-and-private-layout-gates-20261010.md)):
+Recover full 532-word eight-argument actor renderer. Nine tests pass: all
+original words, 417 cases, eight negatives, six links and 37 exact neighbors.
+Public order agrees, but raw frame/private homes differ. No installation or
+matching credit. Next: this target's physical lifetime and full connected gates.
+
 2026-10-10 ([Note 1220](WORKING_NOTES/1220-game-actor-alpha-shading-byte-match-20261010.md)):
 Restore full 125-word func_1502D630 with original frame/private outputs and
 closed constant-lifetime guards. Nine tests pass before/after: 358 full fault

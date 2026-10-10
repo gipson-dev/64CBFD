@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 89e8ece; tools are committed before the consumer pin.
+  checkpoint pins tools 4d76cac; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest complete actor renderer recovery, not installed:
+[Note 1221](WORKING_NOTES/1221-game-complete-actor-renderer-recovery-and-private-layout-gates-20261010.md).
+Full eight-argument func_1502CCFC: all 532 retail words exercised. Nine tests
+pass: 417 cases, eight effective negatives, six links and 37 exact neighbors.
+Public semantics/order agree; raw 0x148 frame and color homes still differ
+from retail 0x150, so source/ELF/guards/progress/rodata stay unchanged.
+Next: close this renderer's physical lifetime and complete connected gates.
+Tools 4d76cac first; no push, matching credit or hardware/live claim.
 
 Latest complete actor alpha-shading byte match:
 [Note 1220](WORKING_NOTES/1220-game-actor-alpha-shading-byte-match-20261010.md).

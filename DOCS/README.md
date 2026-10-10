@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor renderer recovery and private gates](WORKING_NOTES/1221-game-complete-actor-renderer-recovery-and-private-layout-gates-20261010.md):
+  recover the full 532-word renderer; nine tests pass, with public order and
+  37 neighbors exact. Frame/private homes remain unclosed; not installed.
+  Next: physical lifetime and complete connected qualification for this target.
 - [Complete actor alpha-shading byte match](WORKING_NOTES/1220-game-actor-alpha-shading-byte-match-20261010.md):
   restore all 125 words and original private outputs; qualify closed guards,
   full fault prefixes and real dispatcher/RGB/shading/matrix connections.

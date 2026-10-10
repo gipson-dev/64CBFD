@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Renderer Recovery - 2026-10-10
+
+[Note 1221](WORKING_NOTES/1221-game-complete-actor-renderer-recovery-and-private-layout-gates-20261010.md):
+
+- [x] Recover full eight-argument func_1502CCFC, including graphics, lighting, live part loop, callbacks and tail.
+- [x] Pass nine tests: all 532 original words, 417 cases, eight effective negatives, six independent links and exact public access order.
+- [x] Keep 37 copied-owner neighbors/relocations/pools exact; measure fourteen complete compiler forms.
+- [x] Confirm physical refusal: raw 0x148 frame and ten color homes differ; no production or guard edits.
+- [ ] Recover retail 0x150 frame, private homes and saved-register lifetime; close scheduling only afterward.
+- [ ] Qualify aliases/fired full fault prefixes, padding, native32 SDK output and complete real helper/dispatcher/RGB/shading/renderer chain.
+- [ ] Install qualified body, rebuild/audit linked ELF and measure fresh credit. Current matching remains unchanged.
+
 ## Actor Alpha-Shading Byte Match - 2026-10-10
 
 [Note 1220](WORKING_NOTES/1220-game-actor-alpha-shading-byte-match-20261010.md):

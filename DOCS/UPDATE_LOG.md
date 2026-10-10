@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Renderer Recovery, Not Installed
+
+[Note 1221](WORKING_NOTES/1221-game-complete-actor-renderer-recovery-and-private-layout-gates-20261010.md):
+Recover full 532-word eight-argument func_1502CCFC. Nine tests pass: 417 cases,
+all original words, eight effective negatives, six links and 37 exact neighbors.
+Public order agrees; private frame/color homes do not. Source/ELF/guards/data
+and matching counts remain unchanged. Tools 4d76cac first; no push.
+Next: close physical lifetime and complete native/real-helper connection gates.
+
 ## 2026-10-10 Complete Actor Alpha-Shading Byte Match
 
 [Note 1220](WORKING_NOTES/1220-game-actor-alpha-shading-byte-match-20261010.md):
