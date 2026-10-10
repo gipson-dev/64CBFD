@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1207](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md)):
+Recover complete 148-word func_1502EC34 diagnostic, retail frame/private homes,
+and alias-sensitive outputs. Seven tests pass, including 1,697 guest cases,
+65 faults and 144 banked linked-adapter cases; 37 owner neighbors unchanged.
+Reject installation on mode 6/7 entry, pool addend and full-word gates; no
+production or matching credit change. Tools 64139c2 first. Resume table/extent
+recovery and preserve the separate curve handoff and older dirty work.
+
 2026-10-10 ([Note 1206](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md)):
 Restore89-word func_151B4A14 with original0x68 frame/private homes and closed15
 register renames. Ten tests pass before/after, including complete renderer/

@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Object color-mode recovery and table gates](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md):
+  Complete 148-word diagnostic with original frame; seven tests pass.
+  Not installed: case starts, owner pool addend and full-word matching remain.
+
 - [Captured-object metadata adapter byte match](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md):
   All89 linked words match with original0x68 frame and closed register renames.
   Ten tests pass before/after; Game2,750 exact. Next: production helper func_1502EC34.

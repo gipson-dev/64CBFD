@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 89d71af; tools are committed before the consumer pin.
+  checkpoint pins tools 64139c2; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest object color-mode semantic recovery:
+[Note 1207](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md).
+Complete diagnostic C for func_1502EC34 emits 148 words with the original
+0x28 frame and private store homes. Seven tests pass: 1,697 guest cases,
+65 public fault prefixes, four effective compiled negatives and 144 connections
+to the banked linked adapter. All 37 copied-owner neighbors stay unchanged.
+Not installed: modes 6/7 start four bytes early, the owner table addend is 0x100
+instead of 0x124, and 77 isolated-link word differences remain. Production
+source/ELF/guards/conversion rows/data and matching totals stay unchanged.
+Resolve these table/extent gates, then qualify the installed helper with the
+adapter/renderer. Preserve Note 1202's separate curve rejection handoff.
 
 Latest captured-object metadata adapter byte match:
 [Note 1206](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md).

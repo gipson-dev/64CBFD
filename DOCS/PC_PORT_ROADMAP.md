@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Object Color-Mode Recovery And Table Gates - 2026-10-10
+
+[Note 1207](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md):
+
+- [x] Recover complete seven-mode func_1502EC34 diagnostic C with alias-sensitive reloads and bounded cosine ABI.
+- [x] Measure 20 complete/profile forms; selected form has 148 words, original 0x28 frame and private store homes.
+- [x] Pass seven tests: 1,697 guest cases, 65 fault prefixes, four compiled negatives and 144 linked-adapter connections.
+- [x] Preserve all 37 copied-owner neighbors, existing pool prefix and every other padded owner byte; production unchanged.
+- [x] Reject installation: modes 6/7 start four bytes early and owner table addend 0x100 differs from required 0x124.
+- [x] Bank tools 64139c2 before documentation/pin; preserve independently dirty older tools and curve receipts.
+- [ ] Recover original case starts and complete 150-word extent; certify instruction scheduling and register lifetimes.
+- [ ] Qualify actual owner table relocation/addends, protected table/constants and every linked ELF byte before installation.
+- [ ] Requalify adapter/renderer against the installed helper; preserve separate curve and hardware/FCSR/live boundaries.
+
 ## Captured-Object Metadata Adapter Byte Match - 2026-10-10
 
 [Note 1206](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md):

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Object Color-Mode Recovery And Table Gates
+
+[Note 1207](WORKING_NOTES/1207-game-object-color-mode-semantic-recovery-and-table-gates-20261010.md):
+Complete func_1502EC34 diagnostic emits 148 words with retail 0x28 frame and
+private store homes. Seven tests pass in 7.039s: 1,697 guest cases, 65 public
+fault prefixes, four effective compiled controls and 144 banked-adapter cases.
+Twenty complete/profile forms measured; 37 copied-owner neighbors and every
+other padded owner byte unchanged. Not installed: mode 6/7 entry is four bytes
+early, table addend is 0x100 rather than 0x124, and 77 isolated-link differences
+remain. Production/guards/data/totals unchanged. Tools 64139c2 first; resolve
+table/extent gates and retain the separate curve rejection handoff.
+
 ## 2026-10-10 Captured-Object Metadata Adapter Byte Match
 
 [Note 1206](WORKING_NOTES/1206-game-owner-captured-object-metadata-adapter-byte-match-20261010.md):
