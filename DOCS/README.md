@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Linked owner position provider match](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md):
+  Complete func_151B3F28 installed; all45 words exact with narrow return/FP guards.
+  Nine tests pass before/after; full owner/ELF/data audit passes. Game reaches57.02%.
+
 - [Owner point arc byte match](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md):
   Complete func_151B3CF0 installed; all 142 linked words exact via certified guards.
   Twelve tests pass before/after; whole ELF/data/history audit passes. Game reaches 57.00%.

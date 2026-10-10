@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 704e5f8; tools are committed before the consumer pin.
+  checkpoint pins tools 5a2c6f8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest linked-owner position provider match:
+[Note 1196](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md).
+Complete func_151B3F28 replaces its zero-return stub and matches all45 words.
+Raw C44 words; nine word edits and one shared-return copy retain the leaf ABI,
+pointer reloads and fallback access order. Nine tests pass before/after; whole
+ELF changes only target slot/symbol size. Game2,746/4,816 (57.02%),
+total3,419/5,489 (62.29%), zero drift /2,070 different. Next: func_151B3FDC,
+178 words/frame0x118. Hardware/FCSR/live acceptance remains separate.
 
 Latest owner point-arc byte match:
 [Note 1195](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md).

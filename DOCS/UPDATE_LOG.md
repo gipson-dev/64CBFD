@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-10 Linked Owner Position Provider Match
+
+[Note 1196](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md):
+Install complete func_151B3F28 and match all45 words with nine word edits and
+one shared-return copy. Nine tests pass before/after; aliases, byte-mode ABI,
+full original dispatcher and whole-ELF/data/history audit qualify.
+Game2,746/4,816 (57.02%), total3,419/5,489 (62.29%), zero drift /2,070 different.
+Tools5a2c6f8 first; next178-word func_151B3FDC. Hardware/live acceptance separate.
+
 ## 2026-10-10 Owner Point Arc Byte Match
 
 [Note 1195](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md):

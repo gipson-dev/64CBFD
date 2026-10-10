@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-10 ([Note 1196](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md)):
+Complete func_151B3F28 installed and all45 words exact; byte-mode leaf ABI,
+pointer/output aliases and fallback access order retained. Nine tests pass
+before/after; only target ELF slot/symbol size changes, data/old guards unchanged.
+Game57.02%, total62.29%. Tools5a2c6f8 first; next178-word func_151B3FDC.
+
 2026-10-10 ([Note 1195](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md)):
 Complete func_151B3CF0 installed; all 142 linked words match via certified
 register/scheduling guards. Twelve tests pass before/after, whole ELF changes

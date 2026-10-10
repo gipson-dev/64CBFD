@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Linked Owner Position Provider Match - 2026-10-10
+
+[Note 1196](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md):
+
+- [x] Recover complete func_151B3F28, byte-mode leaf ABI/full-word argument home, pointer reloads and fallback access order.
+- [x] Match all45 words using nine word edits and one existing shared-return move copy; no profile/frame changes.
+- [x] Pass nine focused tests before/after, including effective alias/stale controls, faults, rebases and full81-word dispatcher.
+- [x] Rebuild and prove only target ELF slot/symbol size change; preserve720 data owners, conversion rows and old guard prefix.
+- [x] Measure Game2,746/4,816 (57.02%), total3,419/5,489 (62.29%), zero drift /2,070 different.
+- [x] Bank tools5a2c6f8 before parent source/guards/docs/pin; preserve independently dirty older work.
+- [ ] Next: func_151B3FDC,178 words /712 bytes /frame0x118; recover complete callback with original saved homes.
+- [ ] Keep real trig/hardware/FCSR/live rendering/gameplay acceptance separate.
+
 ## Owner Point Arc Byte Match - 2026-10-10
 
 [Note 1195](WORKING_NOTES/1195-game-owner-point-arc-byte-match-20261010.md):
@@ -10,7 +23,7 @@
 - [x] Rebuild linked ELF/progress and prove only target slot/symbol size change; protected data, registration and old guards unchanged.
 - [x] Measure Game2,745/4,816 (57.00%), total3,418/5,489 (62.27%), zero drift / 2,071 different; converted rows unchanged.
 - [x] Bank tools 704e5f8 before parent source/guards/docs/pin and preserve independently dirty older work.
-- [ ] Next: func_151B3F28, 45-word attached-object position/fallback provider; preserve three-argument/u8 ABI and pointer/output aliases.
+- [x] Complete func_151B3F28 in [Note 1196](WORKING_NOTES/1196-game-linked-owner-position-provider-match-20261010.md), preserving byte-mode leaf ABI and pointer/output aliases; all45 words exact.
 - [ ] Recover real trig separately before full rendering/hardware/gameplay acceptance.
 
 ## Owner Point Arc Certified Branch Fold - 2026-10-10

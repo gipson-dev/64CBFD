@@ -45,6 +45,9 @@ typedef struct {
     f32 z;
 } OwnerArcDeltaY;
 
+typedef struct { u8 *actor; u8 epoch; } OwnerPositionLink3F28;
+extern f32 D_800AA3AC;
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -370,8 +373,31 @@ s32 func_151B3CF0(u8 *actor) {
     return 1;
 }
 
-s32 func_151B3F28() {
-    return 0;
+s32 func_151B3F28(u8 *actor, f32 *output, u8 enabled) {
+    OwnerPositionLink3F28 *link;
+    s32 result;
+    f32 y;
+
+    result = 1;
+    if (enabled) {
+        link = (OwnerPositionLink3F28 *)(actor + 0x150);
+        if (*(s32 *)link->actor != 0 && link->epoch == link->actor[0x3B]) {
+            output[0] = *(f32 *)(link->actor + 0x14);
+            output[1] = *(f32 *)(link->actor + 0x18);
+            output[2] = *(f32 *)(link->actor + 0x1C);
+            actor[0x10] &= ~4;
+        } else {
+            result = 0;
+            actor[0x10] |= 0xC;
+        }
+    } else {
+        output[0] = 0.0f;
+        y = D_800AA3AC;
+        output[2] = 0.0f;
+        output[1] = y;
+        actor[0x10] &= ~8;
+    }
+    return result;
 }
 
 s32 func_151B3FDC() {

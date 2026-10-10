@@ -12091,3 +12091,47 @@ generated_1E0560,func_151B3CF0,0x230,0x8FB2004C,0x8FB2004C,-,-,Normalize certifi
 generated_1E0560,func_151B3CF0,0x234,0x8FB30050,0x8FB30050,-,-,Normalize certified complete arc register roles and scheduling,,,false
 generated_1E0560,func_151B3CF0,0x238,0x03E00008,0x03E00008,-,-,Normalize certified complete arc register roles and scheduling,,,false
 generated_1E0560,func_151B3CF0,0x23C,0x27BD0088,0x27BD0088,-,-,Normalize certified complete arc register roles and scheduling,,,false
+generated_1E0560,func_151B3F28,0x000,0xAFA60008,0xAFA60008,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x004,0x30CE00FF,0x30CE00FF,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x008,0x01C03025,0x01C03025,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x00C,0x10C0001C,0x10C0001D,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x010,0x24030001,0x24030001,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x014,0x8C8F0150,0x8C8F0150,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x018,0x24820150,0x24820150,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x01C,0x8DF80000,0x8DF80000,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x020,0x53000013,0x53000013,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x024,0x908D0010,0x908D0010,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x028,0x8C460000,0x8C460000,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x02C,0x90590004,0x90590004,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x030,0x90C8003B,0x90C8003B,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x034,0x5728000E,0x5728000E,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x038,0x908D0010,0x908D0010,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x03C,0xC4C40014,0xC4C40014,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x040,0xE4A40000,0xE4A40000,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x044,0x8C490000,0x8C490000,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x048,0xC5260018,0xC5260018,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x04C,0xE4A60004,0xE4A60004,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x050,0x8C4A0000,0x8C4A0000,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x054,0xC548001C,0xC548001C,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x058,0xE4A80008,0xE4A80008,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x05C,0x908B0010,0x908B0010,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x060,0x316CFFFB,0x316CFFFB,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x064,0x1000000F,0x10000010,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x068,0xA08C0010,0xA08C0010,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x06C,0x908D0010,0x908D0010,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x070,0x00001825,0x00001825,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x074,0x35AE000C,0x35AE000C,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x078,0x1000000A,0xA08E0010,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x07C,0xA08E0010,0x1000000B,-,-,Normalize certified linked-owner return copy and disabled FP roles,0x00601025,-,false
+generated_1E0560,func_151B3F28,0x080,0x44801000,0x44800000,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x084,0x3C010000,0x3C010000,R_MIPS_HI16:D_800AA3AC,R_MIPS_HI16:D_800AA3AC,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x088,0xE4A20000,0xE4A00000,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x08C,0xC4200000,0xC42A0000,R_MIPS_LO16:D_800AA3AC,R_MIPS_LO16:D_800AA3AC,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x090,0xE4A20008,0xE4A00008,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x094,0xE4A00004,0xE4AA0004,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x098,0x908F0010,0x908F0010,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x09C,0x31F8FFF7,0x31F8FFF7,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x0A0,0xA0980010,0xA0980010,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x0A4,0x00601025,0x00601025,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x0A8,0x03E00008,0x03E00008,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
+generated_1E0560,func_151B3F28,0x0AC,0x00000000,0x00000000,-,-,Normalize certified linked-owner return copy and disabled FP roles,,,false
