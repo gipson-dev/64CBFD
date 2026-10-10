@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point arc saved and vector home recovery](WORKING_NOTES/1191-game-owner-point-arc-saved-and-vector-home-recovery-20261009.md):
+  Original frame/saved homes/nine vector homes recovered; 25 combined tests pass.
+  Delta-Y and 143-word overflow remain; no production or totals changes.
+
 - [Owner point arc workspace and frame audit](WORKING_NOTES/1190-game-owner-point-arc-workspace-and-frame-audit-20261009.md):
   39 complete source forms / 48 profile combinations qualify in 14 combined tests.
   Frame coincidences/slot overflow remain rejected; no production or totals change.

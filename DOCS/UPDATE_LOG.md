@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-09 Owner Point Arc Saved And Vector Home Recovery
+
+[Note 1191](WORKING_NOTES/1191-game-owner-point-arc-saved-and-vector-home-recovery-20261009.md):
+Recover original 0x88 frame, saved-register homes and nine vector homes for the
+complete func_151B3CF0 diagnostic. Only delta-Y's four-byte home differs in final
+qualified memory. All 25 combined tests pass; 114 full forms qualify. Actual
+padder rejects 143-word overflow; 140 raw differences remain. Tools b9f09b3 first,
+no installation/guards/credit. Continue delta-Y/endpoint reads/full-slot scheduling.
+
 ## 2026-10-09 Owner Point Arc Workspace And Frame Audit
 
 [Note 1190](WORKING_NOTES/1190-game-owner-point-arc-workspace-and-frame-audit-20261009.md):

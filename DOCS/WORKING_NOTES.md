@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-09 ([Note 1191](WORKING_NOTES/1191-game-owner-point-arc-saved-and-vector-home-recovery-20261009.md)):
+Recover original frame/saved homes/nine vector homes; qualify final memory except
+delta-Y's four-byte home. All 25 combined tests pass, 114 full forms qualify.
+143 words/140 differences remain; actual padder rejects overflow. Tools b9f09b3
+first, no installation/guards/credit; continue delta-Y/read/slot/scheduling fit.
+
 2026-10-09 ([Note 1190](WORKING_NOTES/1190-game-owner-point-arc-workspace-and-frame-audit-20261009.md)):
 Audit func_151B3CF0's private/saved homes and qualify 39 forms / 48 profile combinations;
 14 combined tests pass. Midpoint-pointer 147 words/frame152 and O1 178/frame136

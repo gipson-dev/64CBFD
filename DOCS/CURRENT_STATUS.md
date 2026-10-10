@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7a13098; tools are committed before the consumer pin.
+  checkpoint pins tools b9f09b3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner point-arc saved/vector-home recovery:
+[Note 1191](WORKING_NOTES/1191-game-owner-point-arc-saved-and-vector-home-recovery-20261009.md).
+Complete diagnostic now has original frame 0x88, all saved-register homes and
+all nine private vector homes. Final memory differs only in the missing four-byte
+delta-Y home in qualified cases. All 25 combined tests pass in 174.430s; 114
+full source forms qualify. Still 143 words / 140 differences, and actual padder
+rejects one-word overflow. No production/guard/credit changes. Continue delta-Y
+storage, redundant endpoint reads, full-slot and FP/cursor/branch-delay scheduling.
 
 Latest owner point-arc workspace/frame fitting audit:
 [Note 1190](WORKING_NOTES/1190-game-owner-point-arc-workspace-and-frame-audit-20261009.md).
