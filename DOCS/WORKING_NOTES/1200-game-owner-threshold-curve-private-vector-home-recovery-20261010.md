@@ -146,6 +146,7 @@ conker/build/game-owner-points-threshold-member-homes-test/.
 - [x] Retain full-path delta-Y boundary and fill178 words/712 bytes without padding.
 - [x] Qualify complete diagnostic and independent semantic/private negative controls.
 - [x] Bank tools first, preserve production and older independent work.
-- [ ] Recover scalar homes/values and FP/GPR lifetimes; match exact access scheduling.
+- [x] Qualify limit/projection homes in [Note 1201](1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md); its complete186-word diagnostic still overflows.
+- [ ] Recover five remaining scalar homes/values and FP/GPR lifetimes; match exact access scheduling.
 - [ ] Resolve154 raw word differences, full private memory/fault prefixes and linked installation audits.
 - [ ] Keep wider Game goal active and real trig/hardware/live acceptance separate.

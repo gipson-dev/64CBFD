@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1201](WORKING_NOTES/1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md)):
+Qualify threshold/quarter stores/two reads/final values at0x68/0x6C and projection
+home0xD0, retaining original frame/saved/vector/delta-Y boundaries. Final ten tests
+pass; 67 complete forms/eight profiles measured. Complete186-word diagnostic
+overflows by32 bytes; prior178-word slot object unchanged. Resume five remaining
+scalar homes, spill/lifetime/access fitting and combine both proofs before
+installation. Tools9ab2fae first; production/guards/totals unchanged.
+
 2026-10-10 ([Note 1200](WORKING_NOTES/1200-game-owner-threshold-curve-private-vector-home-recovery-20261010.md)):
 Complete178-word func_151B3FDC diagnostic fits without padding, retaining
 original0x118 frame/saved homes. All nine vector write multisets/final values

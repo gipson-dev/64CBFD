@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Threshold Curve Limit And Projection Homes - 2026-10-10
+
+[Note 1201](WORKING_NOTES/1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md):
+
+- [x] Qualify67 complete source forms and eight profile forms; preserve prior178-word slot form object exactly.
+- [x] Qualify threshold/quarter stores, two reads each and final values at0x68/0x6C on active/fallback paths.
+- [x] Qualify projection store/read/final value at0xD0 while retaining original frame/saved/vector/delta-Y homes.
+- [x] Pass ten focused tests, eight compiled negatives and actual copied-owner overflow rejection.
+- [x] Bank tools9ab2fae before parent docs/pin; preserve production/data/guards/totals and older independent work.
+- [ ] Combine private-home recovery with178-word slot fitting; current186-word diagnostic overflows by32 bytes.
+- [ ] Recover endpoint-Z, both squared-length and both radius homes/values; remove extra spill traffic.
+- [ ] Match FP/GPR lifetimes, exact accesses, full private memory/fault prefixes and all178 words before installation.
+- [ ] Keep wider Game goal and real trig/hardware/FCSR/live qualification separate.
+
 ## Owner Threshold Curve Private Vector Homes - 2026-10-10
 
 [Note 1200](WORKING_NOTES/1200-game-owner-threshold-curve-private-vector-home-recovery-20261010.md):
@@ -9,7 +23,8 @@
 - [x] Qualify all nine vector write multisets/final values and full-path delta-Y boundary across matrix, mutations and rebases.
 - [x] Pass nine focused tests; reject four semantic and two public-only/private-boundary controls.
 - [x] Bank tools7972c93 before parent docs/pin; preserve production/data/guards/totals and older dirty work.
-- [ ] Recover remaining scalar homes/values, FP/GPR lifetimes and exact public/private access scheduling.
+- [x] Qualify limit/projection homes in [Note 1201](WORKING_NOTES/1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md); complete186-word diagnostic still overflows.
+- [ ] Recover five remaining scalar homes/values, FP/GPR lifetimes and exact public/private access scheduling.
 - [ ] Resolve154 raw word differences; qualify whole private memory/fault prefixes before linked installation.
 - [ ] Keep wider Game goal and real trig/hardware/FCSR/live acceptance separate.
 

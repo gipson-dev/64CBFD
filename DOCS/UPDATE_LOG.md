@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-10 Owner Threshold Curve Limit And Projection Homes
+
+[Note 1201](WORKING_NOTES/1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md):
+Retail threshold/quarter stores/two reads/final values and projection home
+qualify, retaining original frame/saved/vector/delta-Y boundaries. Ten tests
+pass in82.186s; 67 complete forms and eight profile forms measured. Complete
+186-word diagnostic overflows by32 bytes; prior178-word slot object unchanged.
+Five scalar homes, spill/lifetime/access/full-word work remains. Tools9ab2fae
+first; no installation, production/guards/totals unchanged.
+
 ## 2026-10-10 Owner Threshold Curve Private Vector Homes
 
 [Note 1200](WORKING_NOTES/1200-game-owner-threshold-curve-private-vector-home-recovery-20261010.md):

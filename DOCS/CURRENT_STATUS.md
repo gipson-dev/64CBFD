@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7972c93; tools are committed before the consumer pin.
+  checkpoint pins tools 9ab2fae; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner threshold-curve scalar-home qualification:
+[Note 1201](WORKING_NOTES/1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md).
+Threshold/quarter stores, two reads each, and projection store/read/final values
+now qualify at their retail homes, retaining the nine vector/delta-Y boundaries.
+Ten tests pass; 67 complete forms and eight profile forms measured. The complete
+186-word diagnostic overflows by32 bytes; prior178-word slot form is unchanged.
+Five scalar homes, spill/access scheduling and full-word matching remain open.
+Not installed; production/guards/totals unchanged.
 
 Latest owner threshold-curve private vector-home recovery:
 [Note 1200](WORKING_NOTES/1200-game-owner-threshold-curve-private-vector-home-recovery-20261010.md).
