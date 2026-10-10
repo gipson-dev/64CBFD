@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Renderer Certified Schedule And Padding - 2026-10-10
+
+[Note 1223](WORKING_NOTES/1223-game-complete-actor-renderer-certified-schedule-and-padding-20261010.md):
+
+- [x] Close full 532-word renderer with original frame/private homes and two closed register-allocation cycles.
+- [x] Certify 531 guards: 122 normalizations, two existing branch/read insertions and one redundant shift-mask omission; no missing-body padding.
+- [x] Pass eight tests: 273 original/raw/fitted cases, all 532 words, 16 aliases and 1,963 fired full fault-prefix pairs.
+- [x] Qualify actual whole-owner postprocessing/padding: only target 2,128-byte slot changes; all 37 neighbors/relocations/pools exact.
+- [x] Pass nine independent links; reject every one of 531 stale words and 47 relocation dependencies plus three compiled negatives.
+- [x] Bank tools e59626e first, preserve production/counts and older dirty tools; no installation or push.
+- [ ] Qualify native32 SDK output and complete actual dispatcher/RGB/shading/renderer/color-helper chain.
+- [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; hardware/live acceptance stays separate.
+
 ## Complete Actor Renderer Original Private Layout - 2026-10-10
 
 [Note 1222](WORKING_NOTES/1222-game-complete-actor-renderer-original-private-layout-20261010.md):
@@ -9,7 +22,7 @@
 - [x] Keep 37 copied-owner neighbors/relocations/pools exact and qualify six independent links with private access agreement.
 - [x] Correct prior case arithmetic to 273 primary cases / 819 three-form executions; preserve old receipts/baselines.
 - [x] Bank tools 755a04d first; preserve production and matching counts, independently dirty older tools and frozen Release.
-- [ ] Close 532-word instruction layout and certified stale-dependent recipe/padding; raw portable body is still 531 words.
+- [x] Close 532-word instruction layout and certified stale-dependent recipe/padding; completed in Note 1223, raw portable body remains 531 words.
 - [ ] Qualify native32 SDK output and complete actual dispatcher/RGB/shading/renderer/color-helper chain.
 - [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; no current matching claim.
 
@@ -23,7 +36,8 @@
 - [x] Confirm physical refusal: raw 0x148 frame and ten color homes differ; no production or guard edits.
 - [x] Recover retail 0x150 frame, private homes and saved-register lifetime; completed in Note 1222.
 - [x] Qualify aliases and fired full private fault prefixes; completed in Note 1222.
-- [ ] Close scheduling, padding, native32 SDK output and complete real helper/dispatcher/RGB/shading/renderer chain.
+- [x] Close scheduling and padding; completed in Note 1223.
+- [ ] Qualify native32 SDK output and complete real helper/dispatcher/RGB/shading/renderer chain.
 - [ ] Install qualified body, rebuild/audit linked ELF and measure fresh credit. Current matching remains unchanged.
 
 ## Actor Alpha-Shading Byte Match - 2026-10-10

@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-10 ([Note 1223](WORKING_NOTES/1223-game-complete-actor-renderer-certified-schedule-and-padding-20261010.md)):
+Fit full 532-word renderer and original private homes with closed register/
+branch scheduling. Eight tests pass: complete private semantics, fired faults,
+aliases, actual owner padding, rebases and every stale dependency. Production
+and counts unchanged. Tools e59626e first, no push. Next: complete native32
+SDK and actual renderer/color-helper chain before installation.
+
 2026-10-10 ([Note 1222](WORKING_NOTES/1222-game-complete-actor-renderer-original-private-layout-20261010.md)):
 Recover complete renderer's original 0x150 frame and exact private homes.
 Eight tests pass: 273 full memory/access cases, 16 aliases, 1,963 fired fault

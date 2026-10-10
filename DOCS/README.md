@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor renderer certified schedule and padding](WORKING_NOTES/1223-game-complete-actor-renderer-certified-schedule-and-padding-20261010.md):
+  fit all 532 words with original private homes; qualify closed guards,
+  actual whole-owner padding, full fault prefixes and independent links.
+  Not installed; native32 SDK and complete real-helper chain remain open.
 - [Complete actor renderer original private layout](WORKING_NOTES/1222-game-complete-actor-renderer-original-private-layout-20261010.md):
   recover original frame and private homes; eight tests qualify complete
   private access order, aliases, fired fault prefixes and exact neighbors.

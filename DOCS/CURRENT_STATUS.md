@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 755a04d; tools are committed before the consumer pin.
+  checkpoint pins tools e59626e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete actor renderer original private layout, not installed:
+Latest complete actor renderer certified schedule/padding, not installed:
+[Note 1223](WORKING_NOTES/1223-game-complete-actor-renderer-certified-schedule-and-padding-20261010.md).
+Full func_1502CCFC now fits all 532 words with original 0x150/private homes.
+531 guards normalize 122 words, insert two existing branch/read copies and
+omit only the redundant emitted mask. Eight tests pass: complete private order,
+actual whole-owner padding, nine links and every stale dependency. Production
+and matching counts stay unchanged. Tools e59626e first, no push. Next:
+native32 SDK and complete actual dispatcher/RGB/shading/renderer/helper chain.
+
+Earlier complete actor renderer original private layout, not installed:
 [Note 1222](WORKING_NOTES/1222-game-complete-actor-renderer-original-private-layout-20261010.md).
 Full func_1502CCFC now emits original 0x150 frame and all ten exact color homes.
 Eight tests pass: 273 full private/public cases, 16 aliases, 1,963 fired fault

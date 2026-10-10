@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Renderer Certified Schedule And Padding
+
+[Note 1223](WORKING_NOTES/1223-game-complete-actor-renderer-certified-schedule-and-padding-20261010.md):
+Fit all 532 words of complete func_1502CCFC with original private homes.
+531 guards certify 122 changes, two branch/read copies and one redundant-mask
+omission. Eight tests pass: 819 primary executions, full private faults/aliases,
+actual owner padding and all stale dependencies. Only copied target slot
+changes; production/counts unchanged. Tools e59626e first, no push. Next:
+native32 SDK and complete actual renderer/helper chain before installation.
+
 ## 2026-10-10 Complete Actor Renderer Original Private Layout
 
 [Note 1222](WORKING_NOTES/1222-game-complete-actor-renderer-original-private-layout-20261010.md):
