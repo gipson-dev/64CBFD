@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Threshold Curve Squared Copy And Physical Frame Gates - 2026-10-10
+
+[Note 1202](WORKING_NOTES/1202-game-owner-threshold-curve-squared-copy-and-physical-frame-gates-20261010.md):
+
+- [x] Measure40 complete spill/record/lifetime/midpoint forms; preserve prior slot/scalar objects exactly.
+- [x] Qualify squared-copy store/final value at incoming SP-0xB4 in the frame-shifted form, retaining prior float boundaries.
+- [x] Pass eleven tests and focused saved-write rerun; independently reject missing squared-copy control.
+- [x] Prove all saved writes shift downward8 bytes despite identical relative signature; frame and actual32-byte overflow gates reject installation.
+- [x] Bank toolsb71d5d0 before parent docs/pin; preserve production/data/guards/totals and older dirty work.
+- [ ] Recover one complete form combining original0x118 frame/saved homes, private float boundaries and178-word extent.
+- [ ] Recover remaining endpoint-Z, second squared and radius homes/values without sacrificing prior boundaries.
+- [ ] Match exact accesses, FP/GPR lifetimes, full private memory/fault prefixes and all words before linked installation.
+- [ ] Keep wider Game goal and actual trig/hardware/FCSR/live acceptance separate.
+
 ## Owner Threshold Curve Limit And Projection Homes - 2026-10-10
 
 [Note 1201](WORKING_NOTES/1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md):

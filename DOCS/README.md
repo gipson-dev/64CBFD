@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner threshold curve squared-copy/physical-frame gates](WORKING_NOTES/1202-game-owner-threshold-curve-squared-copy-and-physical-frame-gates-20261010.md):
+  One squared copy and prior float boundaries qualify in a frame-shifted form.
+  Eleven tests pass; saved writes/slot gates reject installation. Prior forms unchanged.
+
 - [Owner threshold curve limit/projection home qualification](WORKING_NOTES/1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md):
   Retail limit copies/two reads and projection home qualify; ten tests pass.
   Complete186-word diagnostic overflows; prior178-word slot form remains unchanged.

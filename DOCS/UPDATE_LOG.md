@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-10 Owner Threshold Curve Squared Copy And Frame Gates
+
+[Note 1202](WORKING_NOTES/1202-game-owner-threshold-curve-squared-copy-and-physical-frame-gates-20261010.md):
+One squared copy qualifies at incoming SP-0xB4, retaining prior float boundaries,
+but the186-word diagnostic's0x120 frame moves all saved writes downward8 bytes.
+Eleven tests pass in54.131s; strengthened saved-write rerun passes in1.520s.
+40 complete forms measured; prior slot/scalar objects exact to prior receipts.
+Frame and32-byte overflow gates reject installation. Toolsb71d5d0 first;
+production/guards/totals unchanged, no matching credit.
+
 ## 2026-10-10 Owner Threshold Curve Limit And Projection Homes
 
 [Note 1201](WORKING_NOTES/1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md):

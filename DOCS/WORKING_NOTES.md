@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-10 ([Note 1202](WORKING_NOTES/1202-game-owner-threshold-curve-squared-copy-and-physical-frame-gates-20261010.md)):
+Qualify first squared copy at incoming SP-0xB4 with all prior float boundaries,
+but complete186-word form has0x120 frame and saved writes all8 bytes too low.
+Eleven tests plus focused saved-write rerun pass;40 full forms measured and
+prior slot/scalar objects unchanged. Frame/32-byte overflow gates reject
+installation. Resume a single frame/private/slot-correct form; toolsb71d5d0
+first, production/guards/totals unchanged.
+
 2026-10-10 ([Note 1201](WORKING_NOTES/1201-game-owner-threshold-curve-limit-and-projection-home-qualification-20261010.md)):
 Qualify threshold/quarter stores/two reads/final values at0x68/0x6C and projection
 home0xD0, retaining original frame/saved/vector/delta-Y boundaries. Final ten tests
