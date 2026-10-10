@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Texture Tile Updater Recovery - 2026-10-10
+
+[Note 1227](WORKING_NOTES/1227-game-actor-texture-tile-updater-recovery-and-layout-gates-20261010.md):
+
+- [x] Recover complete func_1502F9FC: special types, row selection, live two-command loop and returned cursor.
+- [x] Verify actual 123-word / 492-byte retail span; selected C 111 words, original 0x20 frame, 118 differences.
+- [x] Pass all types/words, 548 boundary cases, 85 aliases, 518 fired full fault pairs and seven fresh IDO negatives.
+- [x] Pass 40,960 native SDK executions, three fresh native negatives and 88 complete actual-caller cases.
+- [x] Keep all 37 copied-owner neighbors/relocations/pools exact; distinguish 12 padding words from matching.
+- [x] Pass all 17 final regressions/tools-check, preserve five production artifacts/counts, bank tools c5df5cc first.
+- [ ] Close full 123-word actor-address/load/register/schedule layout with certified stale-dependent recipe or direct C.
+- [ ] Qualify fitted private order, rebases, stale dependencies and actual special helper separately.
+- [ ] Install only afterward, rebuild/audit entire linked ELF and measure fresh credit.
+- [ ] Keep actual callbacks, FCSR/traps and hardware/live acceptance separate and open.
+
 ## Actor Color Provider And Complete Renderer Byte Match - 2026-10-10
 
 [Note 1226](WORKING_NOTES/1226-game-actor-color-provider-and-complete-renderer-byte-match-20261010.md):
@@ -11,7 +26,8 @@
 - [x] Rebuild/audit entire linked ELF: only two slots/extents change, 36 neighbors/data exact.
 - [x] Pass all eight post-install tests/tools-check; Game 2,762/4,816, total 3,435/5,489, zero drift.
 - [x] Bank tools cc74178 first; preserve older dirty tools, no push.
-- [ ] Audit/recover remaining bounded production dependencies, beginning with func_1502F9FC.
+- [x] Audit/recover complete semantic C for func_1502F9FC in Note 1227; original layout/installation remain open.
+- [ ] Audit/recover the renderer's other bounded production dependencies.
 - [ ] Keep actual cosine/other callbacks, FCSR/traps and hardware/live acceptance separate and open.
 
 ## Complete Actor Renderer Actual Color And Matrix Connections - 2026-10-10

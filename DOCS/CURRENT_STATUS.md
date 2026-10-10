@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools cc74178; tools are committed before the consumer pin.
+  checkpoint pins tools c5df5cc; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest complete texture-tile updater recovery, not installed:
+[Note 1227](WORKING_NOTES/1227-game-actor-texture-tile-updater-recovery-and-layout-gates-20261010.md): recover full func_1502F9FC semantic C.
+Retail is 123 words / 492 bytes; selected C is 111 words, original 0x20 frame,
+118 word differences. Nine new tests plus eight installation regressions pass.
+Cover all types/words, 85 aliases, 518 fired fault pairs, 40,960 native SDK
+executions and 88 complete actual-caller cases. Copied owner's 37 neighbors
+exact; production/counts unchanged. Tools c5df5cc first, no push.
+Next: close complete retail instruction layout, then qualify/install/audit.
 
 Latest installed color provider and complete actor renderer byte match:
 [Note 1226](WORKING_NOTES/1226-game-actor-color-provider-and-complete-renderer-byte-match-20261010.md): install complete func_1502CC34 and func_1502CCFC.

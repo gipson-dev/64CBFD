@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor texture tile updater recovery and layout gates](WORKING_NOTES/1227-game-actor-texture-tile-updater-recovery-and-layout-gates-20261010.md):
+  qualify full commands/callbacks, aliases/faults, native SDK and actual callers.
+  Original 123-word layout remains open; production/counts unchanged.
+
 - [Actor color provider and complete renderer byte match](WORKING_NOTES/1226-game-actor-color-provider-and-complete-renderer-byte-match-20261010.md):
   install both full bodies; eight post-install tests, whole linked audit,
   preserved guards/data and +2 matching credit. Bounded callbacks remain open.

@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-10:
+[Note 1227](WORKING_NOTES/1227-game-actor-texture-tile-updater-recovery-and-layout-gates-20261010.md): recover full func_1502F9FC semantic C.
+Retail is 123 words / 492 bytes; selected C is 111 words, original 0x20 frame,
+118 word differences. Nine new tests plus eight installation regressions pass.
+Cover all types/words, 85 aliases, 518 fired fault pairs, 40,960 native SDK
+executions and 88 complete actual-caller cases. Copied owner's 37 neighbors
+exact; production/counts unchanged. Tools c5df5cc first, no push.
+Next: close complete retail instruction layout, then qualify/install/audit.
+
+2026-10-10:
 [Note 1226](WORKING_NOTES/1226-game-actor-color-provider-and-complete-renderer-byte-match-20261010.md): install complete func_1502CC34 and func_1502CCFC.
 All 50 color words emit directly from C; full 532-word renderer uses its
 certified 531 guards. Eight post-install tests and tools-check pass; only
