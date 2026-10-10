@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4d76cac; tools are committed before the consumer pin.
+  checkpoint pins tools 755a04d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,13 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete actor renderer recovery, not installed:
+Latest complete actor renderer original private layout, not installed:
+[Note 1222](WORKING_NOTES/1222-game-complete-actor-renderer-original-private-layout-20261010.md).
+Full func_1502CCFC now emits original 0x150 frame and all ten exact color homes.
+Eight tests pass: 273 full private/public cases, 16 aliases, 1,963 fired fault
+prefix pairs, six links and 37 exact neighbors. Raw remains 531/532 words;
+production/counts unchanged. Tools 755a04d first, no push. Next: close full
+instruction layout, actual padding, native32 SDK and complete real-helper chain.
+
+Earlier complete actor renderer recovery, not installed:
 [Note 1221](WORKING_NOTES/1221-game-complete-actor-renderer-recovery-and-private-layout-gates-20261010.md).
 Full eight-argument func_1502CCFC: all 532 retail words exercised. Nine tests
-pass: 417 cases, eight effective negatives, six links and 37 exact neighbors.
-Public semantics/order agree; raw 0x148 frame and color homes still differ
-from retail 0x150, so source/ELF/guards/progress/rodata stay unchanged.
-Next: close this renderer's physical lifetime and complete connected gates.
+pass: 273 cases, eight effective negatives, six links and 37 exact neighbors.
+Public semantics/order agreed; that candidate's 0x148 frame and color homes
+differed from retail. Note 1222 closes frame/private qualification without
+installing the renderer; full layout and connected gates remain open.
 Tools 4d76cac first; no push, matching credit or hardware/live claim.
 
 Latest complete actor alpha-shading byte match:

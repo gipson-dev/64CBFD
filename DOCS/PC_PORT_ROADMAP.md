@@ -1,15 +1,29 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Renderer Original Private Layout - 2026-10-10
+
+[Note 1222](WORKING_NOTES/1222-game-complete-actor-renderer-original-private-layout-20261010.md):
+
+- [x] Recover original 0x150 frame, exact private color/identity/tier homes and saved-register lifetime from full semantic C.
+- [x] Pass eight tests: 273 primary cases/all 532 words, 16 aliases and 1,963 fired full private/public fault-prefix pairs.
+- [x] Keep 37 copied-owner neighbors/relocations/pools exact and qualify six independent links with private access agreement.
+- [x] Correct prior case arithmetic to 273 primary cases / 819 three-form executions; preserve old receipts/baselines.
+- [x] Bank tools 755a04d first; preserve production and matching counts, independently dirty older tools and frozen Release.
+- [ ] Close 532-word instruction layout and certified stale-dependent recipe/padding; raw portable body is still 531 words.
+- [ ] Qualify native32 SDK output and complete actual dispatcher/RGB/shading/renderer/color-helper chain.
+- [ ] Install only afterward, rebuild/audit linked ELF and measure fresh credit; no current matching claim.
+
 ## Complete Actor Renderer Recovery - 2026-10-10
 
 [Note 1221](WORKING_NOTES/1221-game-complete-actor-renderer-recovery-and-private-layout-gates-20261010.md):
 
 - [x] Recover full eight-argument func_1502CCFC, including graphics, lighting, live part loop, callbacks and tail.
-- [x] Pass nine tests: all 532 original words, 417 cases, eight effective negatives, six independent links and exact public access order.
+- [x] Pass nine tests: all 532 original words, 273 cases, eight effective negatives, six independent links and exact public access order.
 - [x] Keep 37 copied-owner neighbors/relocations/pools exact; measure fourteen complete compiler forms.
 - [x] Confirm physical refusal: raw 0x148 frame and ten color homes differ; no production or guard edits.
-- [ ] Recover retail 0x150 frame, private homes and saved-register lifetime; close scheduling only afterward.
-- [ ] Qualify aliases/fired full fault prefixes, padding, native32 SDK output and complete real helper/dispatcher/RGB/shading/renderer chain.
+- [x] Recover retail 0x150 frame, private homes and saved-register lifetime; completed in Note 1222.
+- [x] Qualify aliases and fired full private fault prefixes; completed in Note 1222.
+- [ ] Close scheduling, padding, native32 SDK output and complete real helper/dispatcher/RGB/shading/renderer chain.
 - [ ] Install qualified body, rebuild/audit linked ELF and measure fresh credit. Current matching remains unchanged.
 
 ## Actor Alpha-Shading Byte Match - 2026-10-10

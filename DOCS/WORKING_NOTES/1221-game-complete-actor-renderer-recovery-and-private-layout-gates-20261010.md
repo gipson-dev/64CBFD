@@ -58,8 +58,8 @@ make tools-check
 ```
 
 All nine tests pass in 13.441s. Fresh project tool checks pass.
-417 primary guest cases execute all 532 original words and two complete
-compiled C forms: 1,251 executions. Independent semantic reference checks
+273 primary guest cases execute all 532 original words and two complete
+compiled C forms: 819 executions. Independent semantic reference checks
 complete command words, callback ABI, returned cursor and public memory;
 original/candidate public access traces also agree in those cases.
 

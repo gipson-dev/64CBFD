@@ -1,8 +1,15 @@
 # Working Notes
 
+2026-10-10 ([Note 1222](WORKING_NOTES/1222-game-complete-actor-renderer-original-private-layout-20261010.md)):
+Recover complete renderer's original 0x150 frame and exact private homes.
+Eight tests pass: 273 full memory/access cases, 16 aliases, 1,963 fired fault
+prefix pairs, independent links and 37 exact neighbors. Raw 531/532 words;
+not installed, counts unchanged. Next: full layout/padding and complete
+native32/real-helper qualification. Tools 755a04d first, no push.
+
 2026-10-10 ([Note 1221](WORKING_NOTES/1221-game-complete-actor-renderer-recovery-and-private-layout-gates-20261010.md)):
 Recover full 532-word eight-argument actor renderer. Nine tests pass: all
-original words, 417 cases, eight negatives, six links and 37 exact neighbors.
+original words, 273 cases, eight negatives, six links and 37 exact neighbors.
 Public order agrees, but raw frame/private homes differ. No installation or
 matching credit. Next: this target's physical lifetime and full connected gates.
 

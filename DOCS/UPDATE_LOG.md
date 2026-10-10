@@ -1,9 +1,19 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Renderer Original Private Layout
+
+[Note 1222](WORKING_NOTES/1222-game-complete-actor-renderer-original-private-layout-20261010.md):
+Recover full func_1502CCFC's original frame and exact private homes from C.
+Eight tests pass: 273 full memory/access cases, 16 aliases, 1,963 fired fault
+prefix pairs, six links and 37 exact neighbors. Raw remains 531/532 words;
+production/counts unchanged. Correct prior arithmetic, preserve all baselines.
+Tools 755a04d first, no push. Next: closed complete layout, actual padding,
+native32 SDK and real-helper chain before installation or matching credit.
+
 ## 2026-10-10 Complete Actor Renderer Recovery, Not Installed
 
 [Note 1221](WORKING_NOTES/1221-game-complete-actor-renderer-recovery-and-private-layout-gates-20261010.md):
-Recover full 532-word eight-argument func_1502CCFC. Nine tests pass: 417 cases,
+Recover full 532-word eight-argument func_1502CCFC. Nine tests pass: 273 cases,
 all original words, eight effective negatives, six links and 37 exact neighbors.
 Public order agrees; private frame/color homes do not. Source/ELF/guards/data
 and matching counts remain unchanged. Tools 4d76cac first; no push.
