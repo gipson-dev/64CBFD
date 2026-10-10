@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-10 Owner Threshold Curve Frame And Delta-Y Fitting
+
+[Note 1198](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md):
+Qualify76 complete forms and pass final nine tests. Complete selected188-word
+func_151B3FDC diagnostic restores original0x118 frame, physical saved homes
+and delta-Y store. Actual padder rejects40-byte overflow; no-work private read,
+other homes/FP/input schedule and full178-word matching remain open.
+No installation/guards/credit. Tools4668149 first; production/totals unchanged.
+
 ## 2026-10-10 Owner Threshold Curve Recovery
 
 [Note 1197](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md):

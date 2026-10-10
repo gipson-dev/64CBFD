@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-10 ([Note 1198](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md)):
+76 complete func_151B3FDC forms qualify; final nine tests pass. Selected188 words
+restores original0x118 frame, physical saved homes and delta-Y store, but actual
+padder rejects40-byte overflow. Private no-work read/other homes/FP/input schedule
+and full178-word fit remain open. Not installed; production/guards/totals unchanged.
+Tools4668149 first; preserve independently dirty older checkout.
+
 2026-10-10 ([Note 1197](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md)):
 Complete func_151B3FDC diagnostic qualifies three public paths; nine tests pass.
 Selected169 words/frame0x110 versus retail178/frame0x118; original/candidate

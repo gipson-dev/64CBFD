@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner threshold curve frame and delta-Y fitting](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md):
+  76 full forms qualify; nine tests pass. Original frame/saved homes/delta-Y store
+  recovered, but188-word diagnostic overflows; private/read/full-word gaps remain.
+
 - [Owner threshold curve recovery](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md):
   Complete func_151B3FDC diagnostic and nine passing tests; not installed or exact.
   Continue original frame/private homes/lifetimes/input schedule. No matching credit.

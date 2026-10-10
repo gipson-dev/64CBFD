@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Threshold Curve Frame And Delta-Y Fitting - 2026-10-10
+
+[Note 1198](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md):
+
+- [x] Qualify76 complete workspace/lifetime forms; separate length/frame coincidences from full matching.
+- [x] Restore original0x118 frame, physical saved-register homes and actual delta-Y store at SP+0x110 in the complete diagnostic.
+- [x] Pass final nine tests, including all-word guests, native32, dispatcher/real initializer, rebases and sixteen copied-owner neighbors.
+- [x] Retain actual padder rejection of the40-byte overflow; preserve production/data/guards/totals unchanged.
+- [x] Bank tools4668149 before parent docs/pin; mirror only absent new files and preserve independently dirty older work.
+- [ ] Recover no-work delta-Y read, remaining private vector/scalar homes, FP roles and input-read scheduling.
+- [ ] Fit and match all178 words, qualify complete private memory/fault prefixes, then audit linked installation.
+- [ ] Keep real trig/hardware/FCSR/live acceptance separate; no matching credit for diagnostics.
+
 ## Owner Threshold Curve Recovery - 2026-10-10
 
 [Note 1197](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md):
@@ -9,7 +22,8 @@
 - [x] Verify actual registration, full81-word dispatcher, actual157-word initializer, native32, rebases and sixteen owner neighbors.
 - [x] Measure seven positive forms and exact public/private read/store footprints; preserve production/guards/totals unchanged.
 - [x] Bank tools0329f70 before parent docs/pin and preserve the independently dirty older checkout.
-- [ ] Recover original0x118 frame, private workspace, saved-value lifetimes and input-read schedule.
+- [x] Recover original0x118 frame, saved homes and delta-Y store in [Note 1198](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md); complete188-word diagnostic still overflows.
+- [ ] Finish remaining private workspace, saved-value lifetimes, no-work delta-Y read and input-read schedule.
 - [ ] Match all178 words and qualify full private memory/fault prefixes before linked installation.
 - [ ] Keep real trig/hardware/FCSR/live acceptance separate; no credit for the uninstalled diagnostic.
 

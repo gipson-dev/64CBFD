@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0329f70; tools are committed before the consumer pin.
+  checkpoint pins tools 4668149; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest owner threshold-curve frame/delta-Y fitting:
+[Note 1198](WORKING_NOTES/1198-game-owner-threshold-curve-frame-and-delta-y-fitting-20261010.md).
+76 complete forms qualify; final nine tests pass. Selected188 words restores
+original0x118 frame, physical saved homes and delta-Y store at SP+0x110,
+but overflows by40 bytes. No-work private read, other homes/input schedule and
+full-word matching remain open. Not installed; production/guards/totals unchanged.
 
 Latest owner threshold-curve recovery:
 [Note 1197](WORKING_NOTES/1197-game-owner-threshold-curve-recovery-20261010.md).
