@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point initializer guarded C match](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md):
+  Complete 157-word func_151B3A7C is installed and exact with 99 certified
+  guards; fourteen installed tests and whole linked audit pass. Next 151B3CF0.
+
 - [Owner point initializer zero-read and induction audit](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md):
   Remove extra public zero reads; twelve tests pass. Complete 158-word diagnostic
   is one word too long and remains uninstalled. Continue direct counter/end control.

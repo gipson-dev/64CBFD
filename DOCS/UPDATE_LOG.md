@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Owner Point Initializer Guarded C Match
+
+[Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md):
+Install complete func_151B3A7C; all 157 linked words match using 99 certified
+guards, one dead SLT omission and no inserted words/frame changes. Fourteen
+installed tests pass in 19.579s, including actual padder/rebases and full owner/
+ELF/data/guard-history audit. Game 2,744/4,816 and total 3,417/5,489 exact,
+zero drift / 2,072 different; no conversion credit. Tools 94a6a0b first.
+Next: 142-word func_151B3CF0's threshold, helper and point-loop contract.
+
 ## 2026-10-09 Owner Point Initializer Zero Read And Induction Audit
 
 [Note 1187](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md):

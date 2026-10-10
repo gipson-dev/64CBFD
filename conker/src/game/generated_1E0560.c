@@ -24,6 +24,17 @@ extern s32 (*D_8008FB10[])(u8 *, s32 *, s32 *, s32 *, s32 *, s32 *,
     s32 *, s32 *, s32 *, s32 *, s32 *, s32 *, u8 *, u8 *);
 
 
+typedef struct { OwnerRibbonPosition32C8 position, velocity; } OwnerPointRecord3A7C;
+typedef struct {
+    u8 header[0x10];
+    u8 flags;
+    u8 gap11[3];
+    OwnerRibbonPosition32C8 start, end;
+    u8 metadata[0x1C];
+    OwnerPointRecord3A7C points[10];
+} OwnerPoints3A7C;
+extern f32 D_800AA394, D_800AA398, D_800AA39C;
+
 /* Non-matching placeholders for the text-only asm slice asm/1E0560.s. */
 
 extern void (*D_8008FB68[])(u8 *, s32, u8);
@@ -233,8 +244,67 @@ void func_151B3A34(u8 *arg0, s32 arg1, u8 arg2) {
     }
 }
 
-s32 func_151B3A7C() {
-    return 0;
+s32 func_151B3A7C(u8 *actor) {
+    OwnerPoints3A7C *owner = (OwnerPoints3A7C *)actor;
+    OwnerRibbonPosition32C8 delta, position, step;
+    s32 i, count;
+    OwnerPointRecord3A7C *points;
+
+    points = owner->points;
+    delta.x = owner->end.x - owner->start.x;
+    delta.y = owner->end.y - owner->start.y;
+    delta.z = owner->end.z - owner->start.z;
+    position = owner->start;
+        points[0].position = position;
+        *(f32 *)(actor + 0x5C + (0) * 24) = 0.0f;
+        *(f32 *)(actor + 0x58 + (0) * 24) = 0.0f;
+        *(f32 *)(actor + 0x54 + (0) * 24) = 0.0f;
+        step.x = delta.x * D_800AA394;
+        position.x += step.x;
+        step.y = delta.y * D_800AA398;
+        position.y += step.y;
+        step.z = delta.z * D_800AA39C;
+        position.z += step.z;
+        points[1].position = position;
+        *(f32 *)(actor + 0x5C + (1) * 24) = 0.0f;
+        *(f32 *)(actor + 0x58 + (1) * 24) = 0.0f;
+        *(f32 *)(actor + 0x54 + (1) * 24) = 0.0f;
+        position.x += step.x;
+        position.y += step.y;
+        position.z += step.z;
+    count = 10;
+    for (i = 2; i < count; i += 4) {
+        points[i + 0].position = position;
+        *(f32 *)(actor + 0x5C + (i + 0) * 24) = 0.0f;
+        *(f32 *)(actor + 0x58 + (i + 0) * 24) = 0.0f;
+        *(f32 *)(actor + 0x54 + (i + 0) * 24) = 0.0f;
+        position.x += step.x;
+        position.y += step.y;
+        position.z += step.z;
+        points[i + 1].position = position;
+        *(f32 *)(actor + 0x5C + (i + 1) * 24) = 0.0f;
+        *(f32 *)(actor + 0x58 + (i + 1) * 24) = 0.0f;
+        *(f32 *)(actor + 0x54 + (i + 1) * 24) = 0.0f;
+        position.x += step.x;
+        position.y += step.y;
+        position.z += step.z;
+        points[i + 2].position = position;
+        *(f32 *)(actor + 0x5C + (i + 2) * 24) = 0.0f;
+        *(f32 *)(actor + 0x58 + (i + 2) * 24) = 0.0f;
+        *(f32 *)(actor + 0x54 + (i + 2) * 24) = 0.0f;
+        position.x += step.x;
+        position.y += step.y;
+        position.z += step.z;
+        points[i + 3].position = position;
+        *(f32 *)(actor + 0x5C + (i + 3) * 24) = 0.0f;
+        *(f32 *)(actor + 0x58 + (i + 3) * 24) = 0.0f;
+        *(f32 *)(actor + 0x54 + (i + 3) * 24) = 0.0f;
+        position.x += step.x;
+        position.y += step.y;
+        position.z += step.z;
+    }
+    owner->flags &= ~2;
+    return 1;
 }
 
 s32 func_151B3CF0() {

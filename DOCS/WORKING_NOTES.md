@@ -1,5 +1,11 @@
 # Working Notes
 
+2026-10-09 ([Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md)):
+Install complete 157-word func_151B3A7C with 99 certified control/allocation/
+scheduling guards; fourteen installed tests pass, whole linked audit preserves
+all other code/data and symbol metadata apart from target size. Game 2,744/4,816,
+total 3,417/5,489 exact; no conversion credit. Tools 94a6a0b first; next 151B3CF0.
+
 2026-10-09 ([Note 1187](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md)):
 Qualify removal of extra public zero reads from complete func_151B3A7C.
 Twelve tests pass; selected 158-word/frame96/110-difference diagnostic is rejected

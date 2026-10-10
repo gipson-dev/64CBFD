@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Initializer Guarded C Match - 2026-10-09
+
+[Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md):
+
+- [x] Certify direct two-pass counter/end control and omit only the dead SLT result, preserving the loop target and delay store.
+- [x] Close allocation/scheduling with full instruction permutations and address/lifetime proofs; install complete semantic C with 99 expected-word/relocation guards, no inserted words or frame patches.
+- [x] Match all 157 linked words / 628 bytes; pass fourteen installed tests, native32/raw/normalized execution, actual padder, four independent rebases and effective negatives.
+- [x] Preserve 16 owner neighbors, all other linked code/data and non-target symbol metadata, 189,088 protected bytes, old guard prefix and byte-identical conversion rows.
+- [x] Refresh README aggregate rows only: total 3,417/5,489 and Game 2,744/4,816 exact; zero drift / 2,072 different, no conversion-count credit.
+- [x] Commit tools 94a6a0b before consumer source/guards/docs/tools pin; preserve older standalone HEAD and all pre-existing dirty work.
+- [ ] Recover 142-word/frame 0x88 func_151B3CF0's threshold/early exit, midpoint/normalization, trigonometric helpers and ten-record position loop before matching.
+- [ ] Keep helper/FCSR/hardware/live rendering/gameplay acceptance separate.
+
 ## Owner Point Initializer Zero Read And Induction Audit - 2026-10-09
 
 [Note 1187](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md):
@@ -8,8 +21,8 @@
 - [x] Retain full ten-point semantics, frame/private homes, native32/caller/alias/rebase/fault gates and 16 owner neighbors; all twelve tests pass, 135 complete controls screened.
 - [x] Reject actual padder installation of the 158-word/frame96/110-difference diagnostic; preserve earlier 157-word fit and unchanged production/progress/data/README totals.
 - [x] Commit tools 563f37f before consumer pin and preserve independent older tools work.
-- [ ] Recover the direct integer counter/end branch and 157-word slot without redundant masks or instruction synthesis; then fit closed allocation and independent scheduling.
-- [ ] Install only after complete linked qualification; hardware/FCSR/live behavior remains separate.
+- [x] Certify the direct integer counter/end branch and 157-word slot, then fit closed allocation and independent scheduling in [Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md); no redundant masks or padding.
+- [x] Install after complete linked qualification in Note 1188; hardware/FCSR/live behavior remains separate.
 
 ## Owner Point Initializer Frame And Private Home Fit - 2026-10-09
 
@@ -21,8 +34,8 @@
 - [x] Qualify exact final private-frame memory and the original write footprint in 16 cases/two stack phases; verify actual native32 field offsets and full actor/point sizes.
 - [x] Preserve 16 owner neighbors/pools/relocations, unchanged production hashes/data/guards/progress and README totals; commit tools 977010c before consumer pin, preserve older dirty work.
 - [x] Remove the public zero reload and recover a separate zero cursor in the complete diagnostic in [Note 1187](WORKING_NOTES/1187-game-owner-point-initializer-zero-read-and-induction-audit-20261009.md); it is still one word too long, not installed.
-- [ ] Finish integer control/slot, scheduling and allocation. Preserve this 157-word/137-difference fit separately from Note 1187's 158-word/110-difference diagnostic.
-- [ ] Install only after every linked word plus whole owner/ELF/data/guard-history qualification pass. Full hardware/FCSR/live rendering/gameplay remains separate.
+- [x] Finish integer control/slot, scheduling and allocation in [Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md); preserve the earlier diagnostics as historical evidence.
+- [x] Install after every linked word plus whole owner/ELF/data/guard-history qualification passes in Note 1188. Full hardware/FCSR/live rendering/gameplay remains separate.
 
 ## Owner Point Initializer Recovery - 2026-10-09
 
@@ -34,7 +47,7 @@
 - [x] Confirm copied owner preserves 16 neighbors/pools/relative relocations and the actual padder accepts the 628-byte slot. Reject installation while frame/private homes/words differ.
 - [x] Preserve source/ELF/guards/progress and 189,088 protected bytes, unchanged README totals; commit tools b3a58e3 first and preserve older dirty work.
 - [x] Fit the complete candidate to original 157 words/frame 0x60/private position and saved-FP homes in [Note 1186](WORKING_NOTES/1186-game-owner-point-initializer-frame-and-private-home-fit-20261009.md).
-- [ ] Finish loop induction/control, second-vector zeros and scheduling before guards/installation; Note 1186 leaves 137 word differences.
+- [x] Finish loop induction/control, second-vector zeros and scheduling, then qualify guards/installation in [Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md); all 157 linked words exact.
 - [ ] Keep full caller cleanup/walker, SDK/FCSR/hardware/live rendering/gameplay acceptance separate from bounded equivalence.
 
 ## Owner Ribbon Renderer Guarded C Match - 2026-10-09
