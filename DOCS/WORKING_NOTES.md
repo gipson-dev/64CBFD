@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-10 ([Note 1216](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md)):
+Recover complete five-argument func_1502C974. Ten tests pass with ordered
+public callbacks, signed alpha/product/limit boundaries, 1,491,048 native32
+cases and 60 complete-caller connections to actual banked helpers.
+Production remains unchanged. Initial C is 162 words / 0x60 frame;
+volatile actor recovers 0x58 but has 167 words and wrong private homes.
+No installation or matching credit. Tools 3dba67b first; next remains the
+same full caller's 176-word extent and private lifetime qualification.
+
 2026-10-10 ([Note 1215](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md)):
 Restore all 163 words of func_1502C6E8 and original 0x50 frame through
 33 closed changes. Qualify ordered single-precision thresholds, actor-selector

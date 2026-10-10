@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Render-Dispatch Recovery And Layout Gates - 2026-10-10
+
+[Note 1216](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md):
+
+- [x] Recover complete five-argument func_1502C974: early visibility/mask/alpha/matrix gates, two alpha queries and full render call.
+- [x] Qualify signed product/shift, owner override, fresh post-render table/index/limit and strict cursor rollback.
+- [x] Measure 38 complete/profile forms; volatile actor recovers the 0x58 frame but not retail private homes or length.
+- [x] Pass ten tests: 2,160 guest cases, 2,228 factor/cursor cases, 63 public fault prefixes and 1,491,048 native32 cases.
+- [x] Reject seven effective compiled negatives; qualify 64 mutations, independent links and actual banked helper connections.
+- [x] Execute the complete original 176-word caller with banked alternate selector, distance updater and identity leaf; other callbacks are bounded.
+- [x] Preserve all 37 owner neighbors/pools and production source/ELF/guards/conversion/rodata/data unchanged.
+- [x] Bank tools 3dba67b first and preserve older dirty tools, historical receipts and frozen host Release.
+- [ ] Recover this full caller's original private homes and complete 176-word extent; current forms are 162 and 167 words.
+- [ ] Qualify complete private aliases/fault prefixes, closed stale guards, actual padding and whole linked audit before installation.
+- [ ] Preserve separate curve rejection gates; full hardware/live acceptance remains separate.
+
 ## Actor Distance-Tier Updater Byte Match - 2026-10-10
 
 [Note 1215](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md):
@@ -13,7 +29,7 @@
 - [x] Audit whole ELF: only target 652-byte slot/symbol extent changes; old guards, 37 neighbors, conversion rows and data exact.
 - [x] Measure Game 2,757/4,816 (57.25%), total 3,430/5,489 (62.49%), zero drift / 2,059 different.
 - [x] Bank tools 6c5b8a4 first; preserve older dirty tools, historical receipts and frozen host Release.
-- [ ] Recover complete 176-word caller func_1502C974; four literal forwarding instructions are not full caller acceptance.
+- [ ] Finish matching complete 176-word caller func_1502C974; semantic recovery is banked in Note 1216, physical layout remains open.
 - [ ] Preserve separate curve rejection gates; full hardware/live acceptance remains separate.
 
 ## Actor Counter-Updater Direct Byte Match - 2026-10-10

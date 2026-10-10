@@ -54,6 +54,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor render-dispatch recovery and layout gates](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md):
+  qualify the complete caller's public behavior and real helper connections;
+  retain installation gates for 176-word length and original private homes.
 - [Actor distance-tier updater byte match](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md):
   restore all 163 words and private homes; qualify ordered float thresholds,
   selector clamp, real identity leaf and bounded caller forwarding.

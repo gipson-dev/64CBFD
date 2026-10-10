@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-10 Actor Render-Dispatch Recovery And Layout Gates
+
+[Note 1216](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md):
+Recover complete func_1502C974, including both alpha queries, callback-sensitive
+parameter/matrix reads and signed cursor rollback. Ten tests pass in 20.258s:
+2,160 guest cases, 2,228 factor/cursor cases, 63 public fault prefixes,
+1,491,048 native32 cases, seven effective negatives and complete caller
+execution with actual banked selector/distance/identity helpers.
+Production source/ELF/guards/data and all 37 owner neighbors remain unchanged.
+No match credited: C has 162 words / 0x60 frame; volatile actor has 167 / 0x58
+and wrong private homes. Tools 3dba67b first. Continue this same full caller;
+Game 2,757 exact and total 3,430 exact remain unchanged.
+
 ## 2026-10-10 Actor Distance-Tier Updater Byte Match
 
 [Note 1215](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md):

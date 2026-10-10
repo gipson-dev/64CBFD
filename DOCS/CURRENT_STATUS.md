@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6c5b8a4; tools are committed before the consumer pin.
+  checkpoint pins tools 3dba67b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest complete actor render-dispatch semantic recovery:
+[Note 1216](WORKING_NOTES/1216-game-actor-render-dispatch-recovery-and-layout-gates-20261010.md).
+Full five-argument func_1502C974 preserves early gates, two alpha queries,
+ordered parameter callbacks, signed factor product and fresh cursor rollback.
+Ten tests pass in 20.258s: 2,160 public guest cases, 2,228 factor/cursor cases,
+63 public fault prefixes, 1,491,048 native32 cases, seven effective negatives
+and 60 complete-caller connections to banked selector/distance/identity bodies.
+All 37 owner neighbors/pools and production source/ELF/guards/data unchanged.
+Not installed: initial form is 162 words / 0x60 frame; volatile-actor form
+recovers 0x58 but remains 167 words with wrong private homes. Retail needs 176.
+Tools 3dba67b first. Matching totals stay Game 2,757/4,816 (57.25%), total
+3,430/5,489 (62.49%). Next remains this full caller: recover physical homes
+and complete extent, then qualify private aliases/faults before installation.
 
 Latest actor distance-tier updater byte match:
 [Note 1215](WORKING_NOTES/1215-game-actor-distance-tier-updater-byte-match-20261010.md).
