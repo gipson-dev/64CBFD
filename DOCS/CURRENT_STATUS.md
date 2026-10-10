@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 94a6a0b; tools are committed before the consumer pin.
+  checkpoint pins tools 1f57235; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest owner point-initializer guarded C match:
+Latest owner point-arc recovery and linked-helper audit:
+[Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md).
+Complete func_151B3CF0 is recovered and qualified in ten tests / 26.746s.
+Selected diagnostic has 141 words/frame 0xD0/118 differences; retail is 142
+words/frame 0x88. Not installed, no guards or matching/conversion credit.
+Actual sinf/cosf return zero; the full 80-word angle-helper slot is already exact.
+Production/data/progress and README totals remain unchanged. Continue the arc
+routine's frame/private homes and saved-FP scheduling; real trig/live parity is separate.
+
+Earlier owner point-initializer guarded C match:
 [Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md).
 Complete func_151B3A7C is installed and exact across all 157 linked words,
 with 99 certified expected-word/relocation guards, one dead-control omission

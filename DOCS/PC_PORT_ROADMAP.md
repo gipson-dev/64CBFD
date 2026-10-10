@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Point Arc Recovery And Helper Audit - 2026-10-09
+
+[Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md):
+
+- [x] Recover complete func_151B3CF0's threshold/early exit, endpoint midpoint/offsets, normalization, ordered angle/trigonometric calls and ten position records.
+- [x] Pass ten tests: 2,048 guest/512 native32 cases, all-word/saved-register coverage, actual registered update, independent rebases, callback mutations, seven effective source negatives and six fault prefixes.
+- [x] Preserve 16 owner neighbors/pools/relocations and every other padded owner byte; qualify slot fit but reject installation for frame/full-word mismatch.
+- [x] Measure actual linked helpers: sinf/cosf return zero; func_150484A0's full 80-word slot is exact. Keep real helper math/live rendering acceptance separate.
+- [x] Preserve production/data/guards/progress/README totals and commit tools 1f57235 before consumer docs/pin; preserve all independent older work.
+- [ ] Fit original frame 0x88/private vector homes/saved-FP reuse and full 142-word schedule; selected diagnostic remains 141/frame 0xD0/118 differences.
+- [ ] Install only after every linked word and whole owner/ELF/data/guard-history qualification pass.
+- [ ] Recover sine/cosine separately before real arc-rendering acceptance; retain FCSR/hardware/gameplay boundaries.
+
 ## Owner Point Initializer Guarded C Match - 2026-10-09
 
 [Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md):
@@ -10,7 +23,7 @@
 - [x] Preserve 16 owner neighbors, all other linked code/data and non-target symbol metadata, 189,088 protected bytes, old guard prefix and byte-identical conversion rows.
 - [x] Refresh README aggregate rows only: total 3,417/5,489 and Game 2,744/4,816 exact; zero drift / 2,072 different, no conversion-count credit.
 - [x] Commit tools 94a6a0b before consumer source/guards/docs/tools pin; preserve older standalone HEAD and all pre-existing dirty work.
-- [ ] Recover 142-word/frame 0x88 func_151B3CF0's threshold/early exit, midpoint/normalization, trigonometric helpers and ten-record position loop before matching.
+- [x] Recover 142-word/frame 0x88 func_151B3CF0's complete contract and audit actual helpers in [Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md); candidate frame/word matching remains open above.
 - [ ] Keep helper/FCSR/hardware/live rendering/gameplay acceptance separate.
 
 ## Owner Point Initializer Zero Read And Induction Audit - 2026-10-09

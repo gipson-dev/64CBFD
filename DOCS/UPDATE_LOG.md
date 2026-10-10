@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-09 Owner Point Arc Recovery And Helper Audit
+
+[Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md):
+Recover complete func_151B3CF0 and registered one-argument callback contract.
+Ten tests pass in 26.746s, including 2,048 guest/512 native32 cases, mutations/
+faults/rebases and owner/padder. Selected diagnostic is 141 words/frame 0xD0/
+118 differences versus retail 142/frame 0x88; not installed/no credit.
+Actual linked sinf/cosf return zero; the 80-word angle-helper slot is exact.
+Tools 1f57235 first; production/README totals unchanged. Continue frame/private homes.
+
 ## 2026-10-09 Owner Point Initializer Guarded C Match
 
 [Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md):

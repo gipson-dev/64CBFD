@@ -54,6 +54,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner point arc recovery and helper audit](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md):
+  Complete func_151B3CF0 contract passes ten tests; selected diagnostic is
+  141 words/frame 0xD0/118 differences, not installed. Actual trig gaps are measured.
+
 - [Owner point initializer guarded C match](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md):
   Complete 157-word func_151B3A7C is installed and exact with 99 certified
   guards; fourteen installed tests and whole linked audit pass. Next 151B3CF0.

@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-09 ([Note 1189](WORKING_NOTES/1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md)):
+Recover full 142-word retail point-arc contract and qualify the complete 141-word
+diagnostic in ten tests. Frame 0xD0 versus 0x88 and 118 differences remain.
+Actual linked sinf/cosf return zero; angle helper's full slot is exact.
+Tools 1f57235 first, no installation/guards/credit; production/totals unchanged.
+Continue the same function's frame/private-home and saved-FP scheduling fit.
+
 2026-10-09 ([Note 1188](WORKING_NOTES/1188-game-owner-point-initializer-guarded-c-match-20261009.md)):
 Install complete 157-word func_151B3A7C with 99 certified control/allocation/
 scheduling guards; fourteen installed tests pass, whole linked audit preserves

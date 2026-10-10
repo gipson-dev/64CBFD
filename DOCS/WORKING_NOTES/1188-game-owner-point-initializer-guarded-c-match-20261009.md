@@ -105,7 +105,9 @@ and conker/build/game-owner-points-initializer-matching/.
 - [x] Install complete semantic C and certified control/allocation/scheduling recipe.
 - [x] Qualify complete linked slot, rebases, owner, ELF, protected data and history.
 - [x] Refresh aggregate status and bank tools before the consumer checkpoint.
-- [ ] Recover adjacent func_151B3CF0: 142 words / 568 bytes, frame 0x88,
+- [x] Recover adjacent func_151B3CF0's complete bounded contract in
+  [Note 1189](1189-game-owner-point-arc-recovery-and-helper-audit-20261009.md); frame/full-word fitting remains open:
+  142 words / 568 bytes, frame 0x88,
   ROM 0x1E11A0..0x1E13D8. Audit threshold/early exit, midpoint and horizontal
   normalization, func_150484A0/sinf/cosf contracts, ten-record position loop,
   original saved GPR/FP lifetime and branch-delay angle advance before matching.
