@@ -54,13 +54,20 @@ confirmed.
 
 ## Planning and history
 
+- [Animation scratch loop shape improvement](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):
+  guarded do-loop drops raw/linked differences 162 -> 102 without guards;
+  ten final tests/both tools checks pass, public faults/native32 and actual
+  refresh/caller requalified. All 37 neighbors/other ELF/data/guards/CSV exact;
+  no matching credit. Next: same routine's original 191-word/0x68 frame,
+  constant/register schedule; private fault order and runtime stay open.
+
 - [Animation scratch preparation reconstruction](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
   complete one/two-bank C, aligned PI packets and wrap/live reloads; ten final
   tests, nine scoped submit regressions and both tools checks pass. Actual
   refresh/caller connections, native32 and public fault/alias qualification;
   37 neighbors/all other ELF/data/CSV unchanged. Typed void declaration retires
   three submit guards, preserving its exact body with two. No matching credit:
-  preparation still has 162 differences. Next: original 191-word/0x68 match;
+  preparation had 162 differences, improved to 102 in Note 1245. Original match,
   private frame, actual PI/hardware and full renderer/gameplay remain open.
 
 - [Complete node transform submission byte match](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):

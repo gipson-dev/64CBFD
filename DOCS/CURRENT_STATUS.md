@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ee484d7; tools are committed before the consumer pin.
+  checkpoint pins tools 995fcc3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete animation scratch preparation restored; matching remains open:
+Latest animation scratch loop matching improvement:
+[Note 1245](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):
+func_1502D824 now uses retail's guarded do-loop shape. Full unguarded C emits
+187 words / 0x50 frame, reducing raw/linked differences 162 -> 102 against
+retail 191 / 0x68. Ten final tests and both tools checks pass; ordered public
+aliases/faults, 24,576 native32 runs and actual refresh/caller connections
+requalified. Only target slot/extent changes, all 37 neighbors/other ELF/data/
+guards/CSV exact; caller stays exact. Matching totals unchanged, no credit.
+Tools 995fcc3 first, no push, older dirty mirror preserved. Next: same
+routine's original frame/home, constant materialization and register schedule;
+private fault order, actual PI/hardware and full renderer/gameplay stay open.
+
+Previous complete animation scratch preparation restored; matching remains open:
 [Note 1244](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
 func_1502D824's zero placeholder is replaced with full semantic C for one/two
 banks, frame/stride selection, aligned PI packets and wrap copies. C emits

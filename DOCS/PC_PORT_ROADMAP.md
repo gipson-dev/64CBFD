@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Animation Scratch Loop Shape Improvement - 2026-10-11
+
+[Note 1245](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):
+
+- [x] Recover guarded do-loop opening schedule in complete func_1502D824; reduce raw/linked differences 162 -> 102 without guards.
+- [x] Qualify ten final tests, ordered public aliases/faults, rebased calls, native32 and actual refresh/caller connections.
+- [x] Preserve 37 neighbors, all other ELF/data/guards/CSV and exact caller; both tools checks pass.
+- [x] Bank tools 995fcc3 first, preserve older dirty mirror, verify unchanged README totals, no push or extra matching credit.
+- [ ] Finish original 191-word / 0x68 match; current full C emits 187 / 0x50. Recover frame/home, separate constant and register scheduling.
+- [ ] Qualify private frame/fault order; actual PI/hardware, complete renderer and gameplay remain separate acceptance work.
+
 ## Animation Scratch Preparation Reconstruction - 2026-10-11
 
 [Note 1244](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
@@ -12,7 +23,7 @@
 - [x] Correct typed void caller declaration; keep all four caller-owner routines exact and reduce submit guards from five to two.
 - [x] Pass nine scoped submit regressions/both tools checks; bank tools ee484d7 first and preserve older dirty mirror, no push.
 - [x] Verify unchanged matching totals: Game 2,778/4,821, total 3,451/5,494, zero drift; no extra conversion credit.
-- [ ] Match original 191 words / 0x68 frame; current unguarded full C emits 188 / 0x50 with 162 linked word differences.
+- [ ] Match original 191 words / 0x68 frame; Note 1245 improves current unguarded full C to 187 / 0x50 with 102 linked word differences.
 - [ ] Qualify private frame/fault order and invalid-conversion/FCSR cases; actual PI/hardware, full renderer and gameplay remain separate.
 
 ## Complete Node Transform Submission Byte Match - 2026-10-11

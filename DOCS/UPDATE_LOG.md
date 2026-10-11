@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-11 Animation Scratch Loop Shape Improvement
+
+[Note 1245](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):
+recover retail's guarded do-loop opening in complete func_1502D824; raw/linked
+differences drop 162 -> 102 without guards. Ten final tests and both tools
+checks pass, including public faults/native32 and actual refresh/caller.
+Only target slot/extent changes; all 37 neighbors/other ELF/data/guards/CSV
+exact, caller unchanged. Game 2,778/4,821, total 3,451/5,494, zero drift;
+no matching/converted credit. Tools 995fcc3 first, no push, older dirty mirror
+preserved. Next: original 191-word/0x68 frame and constant/register schedule;
+private fault order, actual PI/hardware and full renderer/gameplay stay open.
+
 ## 2026-10-11 Animation Scratch Preparation Reconstruction
 
 [Note 1244](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):

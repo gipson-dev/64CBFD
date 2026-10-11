@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1245](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):
+recover guarded do-loop shape in full func_1502D824; raw/linked differences
+162 -> 102 without guards. Ten final tests/both tools checks pass, public
+faults/native32 and actual refresh/caller requalified. All 37 neighbors/other
+ELF/data/guards/CSV exact; no matching credit, totals unchanged. Tools 995fcc3
+first, no push, older dirty mirror preserved. Next: same routine's original
+191-word/0x68 frame/home and constant/register schedule; private faults,
+actual PI/hardware and complete renderer/gameplay stay open.
+
+2026-10-11:
 [Note 1244](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
 recover complete func_1502D824 preparation C, one/two banks, aligned PI packets,
 frame/stride selection and wrap/live reloads. Ten final tests, nine scoped
