@@ -377,16 +377,28 @@ u8 *func_15083AC8(u8 *actor, s32 attachment, s32 identity, s32 kind,
     return created;
 }
 
-s32 func_15083DA0() {
-    return 0;
-}
-
 typedef struct {
     u8 padding[0x28];
     u8 identity;
     u8 tail[7];
 } IndexRecord15083E0C;
 extern IndexRecord15083E0C *D_800D20FC;
+
+s32 func_15083DA0(void) {
+    s32 identity = 1;
+    s32 i;
+
+    for (i = 0; i < D_800D2100; i++) {
+        if (D_800D20FC[i].identity == identity) {
+            identity++;
+            i = 0;
+        }
+    }
+    if (identity >= 0x100) {
+        identity = 0xFF;
+    }
+    return identity;
+}
 
 s32 func_15083E0C(u8 selector) {
     s32 i;

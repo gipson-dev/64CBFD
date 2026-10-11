@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Record Identity Selector Direct Match - 2026-10-11
+
+[Note 1254](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):
+
+- [x] Recover full func_15083DA0; all 27 words directly from C, no frame/guards.
+- [x] Preserve unsigned cached count/base, 48-byte records, candidate 1, restart at index one and saturated 0xFF result.
+- [x] Pass nine final tests: exhaustive byte pairs/every count, 434 all-access fault pairs plus four sampled saturation faults, twelve effective IDO controls and 133,120 native32 cases.
+- [x] Reuse the proven guest runner with a local finite 400,000-step budget for saturation; no shared oracle edits or skipped cap path.
+- [x] Execute complete 477-word retail caller in 90 cases/180 runs; verify 228 helper calls per form and identity stores into zero-ID records. Category/scene/callback limits documented.
+- [x] Move existing record typedef above the selector without changing 30 neighbor fingerprints/pools; both padding routes and whole-ELF audit pass, both WSL tools checks pass.
+- [x] Bank tools e2237b9 first, preserve older dirty mirror, update README matching rows only; no push.
+- [x] Measure Game 2,786/4,822, total 3,459/5,495, zero drift; +1 matching only, no converted credit.
+- [ ] Recover complete 194-word func_15084044 buffer pair ownership/preparation, including modes, sharing counts, allocation/copy and failure rollback.
+- [ ] Finish timeline matching and real caller/resource/initializer/allocator/hardware/renderer/gameplay acceptance.
+
 ## Actor Identity Lookup Direct Match - 2026-10-11
 
 [Note 1253](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):
@@ -12,7 +27,7 @@
 - [x] Preserve 30 neighbors/data/guards/CSV through both padding routes and whole linked ELF audit; only target slot/size changes, both WSL tools checks pass.
 - [x] Bank tools 69e37a6 first, preserve older dirty mirror, update README matching rows only; no push.
 - [x] Measure Game 2,785/4,822, total 3,458/5,495, zero drift; +1 matching only, no converted credit.
-- [ ] Recover complete 27-word func_15083DA0 record-table identity selector, including retail restart/index-zero quirk and 0xFF cap.
+- [x] Recover complete 27-word func_15083DA0 record-table identity selector in Note 1254, including retail restart/index-zero quirk and 0xFF cap.
 - [ ] Finish timeline matching and real initializer/child/allocator/hardware/renderer/gameplay acceptance.
 
 ## Record Index Query Direct Match And Census - 2026-10-11

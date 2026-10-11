@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-11 Record Identity Selector Direct Match
+
+[Note 1254](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):
+recover func_15083DA0, all 27 words directly from C, no frame/guards.
+Preserve cached unsigned count/base, candidate identity 1, restart at index
+one and final 0xFF cap. Nine final tests/both WSL tools checks pass, 434
+all-access fault pairs plus four sampled saturation faults, 133,120 native32
+cases and complete 477-word retail caller within explicit category/scene/
+callback bounds. Existing record type moves above selector, all 30 neighbors/
+data/guards/CSV exact. Only target slot/size changes, 77 ELF bytes. Game
+2,786/4,822 (57.78%), total 3,459/5,495 (62.95%), zero drift / 2,036
+different; +1 matching only. Tools e2237b9 first, no push, older dirty mirror
+preserved. Next: full 194-word func_15084044 buffer pair ownership/preparation;
+deeper resource/caller/allocator/hardware/gameplay remains separate.
+
 ## 2026-10-11 Actor Identity Lookup Direct Match
 
 [Note 1253](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):

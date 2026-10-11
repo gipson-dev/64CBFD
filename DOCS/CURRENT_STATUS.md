@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 69e37a6; tools are committed before the consumer pin.
+  checkpoint pins tools e2237b9; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete actor-identity lookup direct match:
+Latest complete record-table identity selector direct match:
+[Note 1254](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):
+func_15083DA0 emits all 27 words directly from C, no frame/guards.
+Preserve unsigned cached count/base, identity candidate 1, retail restart at
+index one and final 0xFF cap. Nine final tests/both WSL tools checks pass:
+131,646 reference guest runs, 434 all-access fault pairs plus four sampled
+saturation faults, 133,120 native32 cases and complete retail caller identity
+publication within bounded category-zero/scene-mask-zero paths. All 30
+neighbors/data/guards/CSV exact; only target slot/12 -> 108 size changes,
+77 ELF bytes. Game 2,786/4,822 (57.78%), total 3,459/5,495 (62.95%),
+zero drift / 2,036 different; +1 matching only. Tools e2237b9 first,
+no push, older mirror preserved. Next: full 194-word func_15084044 buffer
+pair ownership/preparation; deeper caller/resources/hardware/gameplay open.
+
+Previous complete actor-identity lookup; selector finished in Note 1254:
 [Note 1253](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):
 func_15083E90 emits all 72 words directly from C, no frame/guards.
 Retail scans 26 slots (0..25), correcting the preceding handoff's 25-slot

@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Record identity selector direct match](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):
+  all 27 words directly from C, no frame/guards; preserve retail restart
+  at index one and 0xFF cap. Nine final tests/both WSL tools checks pass,
+  exhaustive pairs/native32/fault prefixes and complete retail caller within
+  explicit callback/category bounds. All 30 neighbors/data/guards/CSV exact,
+  +1 matching only. Next: full 194-word buffer pair ownership/preparation;
+  deeper caller/resources/hardware/gameplay remains open.
+
 - [Actor-identity lookup direct match](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):
   all 72 words directly from C, no frame/guards; original scans 26 slots,
   correcting the previous handoff bound. Ten final tests/both WSL tools

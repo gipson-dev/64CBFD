@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1254](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):
+recover full func_15083DA0, all 27 words directly from C, no frame/guards.
+Retail restart resumes at index one; candidate is a word and caps to 0xFF.
+Nine final tests/both WSL tools checks pass, exhaustive pairs/native32,
+434 full fault pairs/four sampled cap faults and complete retail caller within
+bounded category/scene/callback scope. All 30 neighbors/data/guards/CSV exact;
+only target slot/size changes. Game 2,786/4,822, total 3,459/5,495, zero
+drift; +1 matching only. Tools e2237b9 first, older mirror preserved, no push.
+Next: full 194-word func_15084044 buffer pair ownership; runtime remains open.
+
+2026-10-11:
 [Note 1253](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):
 recover complete func_15083E90, all 72 words directly from C, no frame/guards.
 Correct handoff to 26 slots, 0..25. Ten final tests/both WSL tools checks
