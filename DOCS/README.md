@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor definition count direct conversion](WORKING_NOTES/1235-game-actor-definition-count-direct-conversion-20261010.md):
+  all 32 words emit directly from C without guards; ten final tests pass.
+  Actual channel/count/lookup/classifier/list chain and original animation
+  bytes qualify. Whole ELF/guards/data/symbols/14 neighbors exact; +128 C bytes.
+  Next: full func_1507EA44; animation/finish/runtime acceptance stays open.
+
 - [Actor definition lookup direct conversion](WORKING_NOTES/1234-game-actor-definition-lookup-direct-conversion-20261010.md):
   all 24 words emit directly from C without guards; nine final tests pass.
   Actual classifier/channel caller and native callbacks qualify. Whole ELF,

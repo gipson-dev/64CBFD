@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Definition Count Direct Conversion - 2026-10-10
+
+[Note 1235](WORKING_NOTES/1235-game-actor-definition-count-direct-conversion-20261010.md):
+
+- [x] Recover ID-150 classifier bypass, ID-255 zero, live nullable archive and unsigned header division by ten.
+- [x] Emit all 32 words directly from C/original 0x18 frame; zero guards, insertions or profile changes.
+- [x] Pass 32,704 ordered guest runs, actual classifier, private aliases and 100 fired fault pairs.
+- [x] Pass eight rebased links, six effective IDO negatives and 3,670,016 native32 runs.
+- [x] Execute actual channel/count/lookup/classifier chain and actual 19-word list/default bytes; retain strict count gate.
+- [x] Preserve all 14 neighbors; rebuild/audit entire ELF/guards/data/symbols exact, only one asm-to-c row changes.
+- [x] Pass ten final tests/both tools checks; +1 converted function / 128 C bytes and matching credit.
+- [x] Bank tools 2c8eae2 first; preserve older dirty mirror, no push, root README aggregate rows only.
+- [ ] Convert full 30-word func_1507EA44 with mixed O32 integer/float callback and actual list connection.
+- [ ] Qualify other complete callers, nonnull list-output paths, animation/finish bodies and live gameplay separately.
+
 ## Actor Definition Lookup Direct Conversion - 2026-10-10
 
 [Note 1234](WORKING_NOTES/1234-game-actor-definition-lookup-direct-conversion-20261010.md):
@@ -12,7 +27,7 @@
 - [x] Preserve all 14 neighbors; rebuild/audit whole ELF/guards/data/symbols exact, only one asm-to-c row changes.
 - [x] Pass nine final tests/both tools checks; +1 converted function / 96 C bytes and +1 matching credit.
 - [x] Bank tools 6bc9c5a first; preserve older dirty mirror, no push, root README aggregate rows only.
-- [ ] Convert full 32-word func_1507E968 and qualify the caller's actual count connection.
+- [x] Convert full 32-word func_1507E968 and qualify the caller's actual count connection in Note 1235.
 - [ ] Keep other complete callers, deeper callbacks, real assets, hardware and live gameplay acceptance separate.
 
 ## Complete Actor Channel Transition Conversion - 2026-10-10

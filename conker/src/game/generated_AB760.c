@@ -68,7 +68,21 @@ u8 *func_1507E908(u8 *actor, s32 index) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E968.s")
+s32 func_1507E968(u8 *actor) {
+    s32 identity;
+    u8 *archive;
+
+    identity = actor[4] != 150 ? func_150849A0(actor) : actor[4];
+    if (identity == 255) {
+        return 0;
+    }
+    archive = D_800D1C90[identity];
+    if (archive != 0) {
+        archive -= 8;
+        return *(u32 *)(archive + 4) / 10;
+    }
+    return 0;
+}
 
 void func_1507E9E8(s32 arg0, s32 arg1) {
 }

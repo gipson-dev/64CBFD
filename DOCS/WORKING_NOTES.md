@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-10:
+[Note 1235](WORKING_NOTES/1235-game-actor-definition-count-direct-conversion-20261010.md):
+convert full func_1507E968, all 32 words / original 0x18 frame, directly from C
+without guards. Ten final tests/both tools checks pass; unsigned size, special/
+sentinel paths and actual channel/count/lookup/classifier/list chain qualify.
+Whole ELF/guards/data/symbols/14 neighbors exact; only one asm-to-c row changes.
+Game 2,770/4,820, total 3,443/5,493, zero drift; +1 conversion / 128 C bytes
+and matching credit. Tools 2c8eae2 first, no push.
+Next: full 30-word func_1507EA44; animation/finish/runtime acceptance stays open.
+
+2026-10-10:
 [Note 1234](WORKING_NOTES/1234-game-actor-definition-lookup-direct-conversion-20261010.md):
 convert full func_1507E908, all 24 words / original 0x18 frame, directly from C
 without guards. Nine final tests/both tools checks pass; actual classifier and
