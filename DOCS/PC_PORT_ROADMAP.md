@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Child Actor Constructor Reconstruction - 2026-10-11
+
+[Note 1247](WORKING_NOTES/1247-game-child-actor-constructor-reconstruction-20261011.md):
+
+- [x] Recover complete nine-argument func_15083AC8: parent/status/scale fields, live allocation limit and global-toggle bracket.
+- [x] Preserve ordered repeated writes, live incoming homes, unconditional allocation access and late raw float word without changing adjacent placeholders.
+- [x] Emit full 182-word C without new guards; pass nine final tests, 390 public fault pairs, seven IDO negatives and 36,864 native32 cases.
+- [x] Execute actual 89-word descriptor caller and 70-word resource helper with eight linked descriptors, including 28 type-zero calls per form.
+- [x] Preserve all 30 neighbors/other ELF/data/guards/CSV; both tools checks pass, tools 03d8ec2 banked first, older dirty mirror preserved, no push.
+- [x] Verify unchanged README totals: Game 2,779/4,821, total 3,452/5,494, zero drift; no matching/converted credit for this recovery.
+- [ ] Match original 0x38 frame and remaining 125 compiler scheduling/register words; qualify private frame/fault order before publishing normalization.
+- [ ] Finish timeline matching and actual deeper resource/allocator/hardware/gameplay acceptance.
+
 ## Animation Scratch Preparation Byte Match - 2026-10-11
 
 [Note 1246](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):
@@ -11,7 +24,8 @@
 - [x] Preserve 37 neighbors/all other ELF/data/CSV, unchanged C/caller and old manifest prefix; both tools checks pass.
 - [x] Bank tools 672c03d first, preserve older dirty mirror and update README aggregate rows only, no push.
 - [x] Measure Game 2,779/4,821, total 3,452/5,494, zero drift; +1 matching credit, no new converted credit.
-- [ ] Recover complete 182-word func_15083AC8 and continue timeline matching.
+- [x] Recover complete 182-word func_15083AC8 in Note 1247; no byte-match claim yet.
+- [ ] Match constructor frame/register schedule and continue timeline matching.
 - [ ] Validate actual resource/PI/hardware, full renderer and gameplay; raw-frame aliases and invalid-conversion/FCSR remain separate.
 
 ## Animation Scratch Loop Shape Improvement - 2026-10-11
@@ -56,7 +70,8 @@
 - [x] Pass ten final target tests, nine scoped alternate behavior regressions and both tools checks; Game 2,778/4,821, total 3,451/5,494, zero drift.
 - [x] Bank tools e999db1 first, preserve older dirty mirror, root README aggregate rows only, no push.
 - [x] Restore complete func_1502D824 preparation semantics in Note 1244; its 191-word retail byte match remains open.
-- [ ] Restore full 182-word func_15083AC8 and match the timeline helper; resource/allocator/hardware/gameplay acceptance stays separate.
+- [x] Restore full 182-word func_15083AC8 semantics in Note 1247; matching remains open.
+- [ ] Match constructor and timeline helper; resource/allocator/hardware/gameplay acceptance stays separate.
 
 ## Complete Alternate Resource Loader Byte Match - 2026-10-11
 
@@ -72,7 +87,7 @@
 - [x] Pass ten final target tests, 17 scoped regressions and both tools checks; Game 2,777/4,821, total 3,450/5,494, zero drift.
 - [x] Bank tools 030412c first, preserve older dirty mirror, root README aggregate rows only, no push.
 - [x] Recover full 66-word func_1503F4B0 in Note 1243; all four owner routines now match retail.
-- [ ] Restore full 182-word func_15083AC8; actual resource/allocator/hardware/gameplay acceptance remains separate.
+- [x] Restore full 182-word func_15083AC8 semantics in Note 1247; actual resource/allocator/hardware/gameplay acceptance remains separate.
 
 ## Complete Default Resource Loader Direct Byte Match - 2026-10-11
 

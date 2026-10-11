@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Child actor constructor reconstruction](WORKING_NOTES/1247-game-child-actor-constructor-reconstruction-20261011.md):
+  all 182 C words without new guards, ordered status/scale writes, live
+  allocation limit and incoming homes. Nine final tests/both tools checks
+  pass, public faults/native32 and actual caller/resource helper qualified.
+  All 30 neighbors/other ELF/data/guards/CSV exact; no matching credit.
+  Next: original 0x38 frame and 125 remaining word differences; runtime open.
+
 - [Animation scratch preparation byte match](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):
   all 191 words/original 0x68 frame with checked closed normalization;
   thirteen final tests/both tools checks pass. Public/native32/actual caller

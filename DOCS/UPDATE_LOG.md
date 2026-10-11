@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Child Actor Constructor Reconstruction
+
+[Note 1247](WORKING_NOTES/1247-game-child-actor-constructor-reconstruction-20261011.md):
+replace func_15083AC8's zero placeholder with the complete nine-argument
+constructor, all 182 C words without new guards. Ordered public accesses,
+live incoming homes/count and cached toggle bracket qualify. Nine final
+tests/both tools checks pass: 390 public fault pairs, 36,864 native32 cases
+and actual caller/resource helper with eight linked descriptors. All 30
+neighbors/other ELF/data/guards/CSV unchanged. Still not byte-exact: frame
+0x50 versus retail 0x38, 125 differences. No extra credit; Game 2,779/4,821,
+total 3,452/5,494, zero drift / 2,042 different. Tools 03d8ec2 first, no push,
+older dirty mirror preserved. Next: this constructor's frame/register match
+and private fault order; actual resources/hardware/gameplay stay open.
+
 ## 2026-10-11 Animation Scratch Preparation Byte Match
 
 [Note 1246](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):

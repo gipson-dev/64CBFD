@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 672c03d; tools are committed before the consumer pin.
+  checkpoint pins tools 03d8ec2; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete animation scratch preparation byte match:
+Latest complete child actor constructor recovery; matching remains open:
+[Note 1247](WORKING_NOTES/1247-game-child-actor-constructor-reconstruction-20261011.md):
+func_15083AC8's nine-argument zero placeholder is replaced with all 182 C
+words: parent/status/scale fields, live inclusive allocation loop and cached
+global-toggle bracket. Full C fits without guards but frame 0x50 versus retail
+0x38 and 125 linked differences remain. Nine final tests/both tools checks
+pass, including 390 public fault pairs, 36,864 native32 cases and actual
+89-word caller/70-word resource helper with eight linked descriptors. All 30
+neighbors/other ELF/data/guards/CSV unchanged, both adjacent placeholders
+preserved. Matching stays Game 2,779/4,821 (57.64%), total 3,452/5,494
+(62.83%), zero drift / 2,042 different; no extra credit. Tools 03d8ec2 first,
+no push, older dirty mirror preserved. Next: this constructor's original
+frame/register schedule and private fault order; actual resources/gameplay open.
+
+Previous complete animation scratch preparation byte match:
 [Note 1246](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):
 func_1502D824 matches all 191 words/original 0x68 frame. Existing full semantic
 C is unchanged; 187 expectation rows protect the complete compiler fingerprint,

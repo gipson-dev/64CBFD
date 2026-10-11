@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1247](WORKING_NOTES/1247-game-child-actor-constructor-reconstruction-20261011.md):
+recover full nine-argument func_15083AC8, all 182 C words without new guards;
+ordered public state, live homes/allocation limit and cached toggle qualify.
+Nine final tests/both tools checks pass, public faults/native32 and actual
+caller/resource helper with eight linked descriptors. All 30 neighbors/
+other ELF/data/guards/CSV exact; no matching credit. Game 2,779/4,821,
+total 3,452/5,494, zero drift. Tools 03d8ec2 first, no push, older dirty
+mirror preserved. Next: original 0x38 frame and 125 remaining differences;
+private faults and actual resource/hardware/gameplay remain open.
+
+2026-10-11:
 [Note 1246](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):
 match complete func_1502D824, all 191 words/original 0x68 frame using unchanged
 semantic C and closed normalization, 46 changed words/four inserts protected

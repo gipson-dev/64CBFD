@@ -183,9 +183,111 @@ s32 func_150839B8() {
     return 0;
 }
 
-u8 *func_15083AC8(u8 *actor, s32 arg1, s32 arg2, s32 arg3,
-    s32 arg4, s32 arg5, s32 arg6, s32 arg7, f32 scale) {
-    return 0;
+extern u8 D_800CC2D0[];
+extern u8 *D_800D1C90[];
+extern s32 D_80082FA0;
+extern u8 D_800C35EA, D_800C3638;
+void func_1503D774(s32, s32);
+void func_1503D660(s32, s32);
+u8 *func_1505ED34(void);
+void func_150615DC(u8 *);
+u32 func_1515D480(s32);
+u32 func_1515D440(void);
+s32 func_150839B8();
+void func_150837D4(s32, s32, s32);
+s32 func_150838EC();
+
+u8 *func_15083AC8(u8 *actor, s32 attachment, s32 identity, s32 kind,
+    s32 value, s32 flags, s32 inheritScale, s32 state, f32 scale) {
+    u8 *created;
+    u8 *cursor;
+    s32 i;
+    s32 mode;
+    s32 active;
+    u32 bits;
+    u32 maskedBits;
+    u32 magnitude;
+    s32 parentSlot;
+
+    func_1503D774(identity, 0);
+    func_1503D660(identity, 0);
+    created = func_1505ED34();
+    created[0x3B] = 255 - (s32)((u32)created - (u32)D_800CC2D0) / 0x32C;
+    created[0xAB] = kind;
+    *(s32 *)(created + 0) = value;
+    func_150615DC(created);
+    parentSlot = (s32)((u32)actor - (u32)D_800CC2D0) / 0x32C + 1;
+    created[0x232] = 1;
+    created[0x1CA] = 1;
+    created[0x125] = 255;
+    /* Preserve retail's ordered status stores, including the repeated flag writes. */
+    *(volatile u8 *)(created + 0x65) = parentSlot;
+    *(volatile s32 *)(created + 0x5C) = attachment;
+    *(volatile u8 *)(created + 0x123) = 1;
+    *(volatile u8 *)(created + 4) = identity;
+    bits = actor[0x66];
+    *(volatile u8 *)(created + 0x66) = bits;
+    maskedBits = bits & ~0x10;
+    *(volatile u8 *)(created + 0x66) = maskedBits;
+    *(volatile u8 *)(created + 0x66) = maskedBits;
+    created[0x1DD] = actor[0x1DD];
+    created[0x1DE] = actor[0x1DE];
+    created[0x1DF] = actor[0x1DE];
+    created[0x1E0] = actor[0x1E0];
+    created[0x1E1] = actor[0x1E1];
+    created[0x1E2] = actor[0x1E2];
+    if (inheritScale == 0) {
+        *(f32 *)(created + 0x14C) = 1.0f;
+        *(f32 *)(created + 0x150) = 1.0f;
+        *(f32 *)(created + 0x154) = 1.0f;
+        *(f32 *)(created + 0x158) = 1.0f;
+    } else {
+        *(f32 *)(created + 0x14C) = *(f32 *)(actor + 0x14C);
+        *(f32 *)(created + 0x150) = *(f32 *)(actor + 0x150);
+        *(f32 *)(created + 0x154) = *(f32 *)(actor + 0x154);
+        *(f32 *)(created + 0x158) = *(f32 *)(actor + 0x158);
+    }
+    created[0x101] = inheritScale;
+    created[0xAC] = flags;
+    func_1503D774(identity, 0);
+    if (flags & 1) {
+        *(u32 *)(created + 0xF8) |= 0x4000;
+        magnitude = *(volatile u16 *)(D_800D1C90[identity] + 0xE);
+        *(f32 *)(created + 0x270) = (f32)magnitude * *(volatile f32 *)(created + 0x14C);
+    }
+    mode = 0;
+    if (flags & 2) {
+        mode = 1;
+    }
+    i = 0;
+    cursor = created;
+    if (D_80082FA0 >= 0) {
+        do {
+            *(u32 *)(cursor + 0x304) = func_1515D480(1);
+            i++;
+            cursor += 4;
+        } while (i <= D_80082FA0);
+    }
+    if (*(u32 *)(created + i * 4 + 0x300) != 0) {
+        created[0x301] = 1;
+    }
+    *(u32 *)(created + 0x314) = func_1515D440();
+    if (D_800C35EA == 1) {
+        active = 1;
+    } else {
+        active = 0;
+    }
+    if (active) {
+        D_800C3638 = 0;
+    }
+    func_150839B8(created, identity, 0);
+    func_150837D4((s32)((u32)created - (u32)D_800CC2D0) / 0x32C, identity, 1);
+    /* The unrecovered helper takes the float's raw fourth O32 argument word. */
+    func_150838EC(created, state, mode, *(u32 *)&scale);
+    if (active) {
+        D_800C3638 = 1;
+    }
+    return created;
 }
 
 s32 func_15083DA0() {
