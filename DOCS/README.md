@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Record motion guarded tail match](WORKING_NOTES/1281-game-record-motion-guarded-tail-match-20261011.md):
+  all 71 reachable words direct C, one checked dead-return insertion, all 73
+  linked exact but not full direct C. Twelve pre-install/twelve installed
+  tests, native32 and actual five-body caller chain pass within documented
+  boundaries. Only 226 target/extent ELF bytes change; 21 neighbors/data/six
+  inputs exact, old guard prefix plus one row. Tools 6f16f59 first, older work
+  preserved/no push, README aggregates only. Next func_1503EB78, 74/72
+  differences; guard removal and full Game goal remain open.
+
 - [Record matrix update direct match](WORKING_NOTES/1280-game-record-matrix-update-direct-match-20261011.md):
   complete138 direct C, no guards/profile/header/caller-body changes; thirteen
   pre-install/thirteen installed tests, native32 and actual matrix helpers/

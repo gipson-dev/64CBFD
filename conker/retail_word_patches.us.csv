@@ -14515,3 +14515,4 @@ generated_6A3D0,func_1503D804,0xA8,0x8FA80038,0x8FA80034,-,-,Normalize closed ve
 generated_6A3D0,func_1503D804,0x174,0x27BD0040,0x27BD0038,-,-,Normalize closed vertex-coordinate copy frame and spill pairs,,,false
 generated_6B320,func_1503E260,0x120,0xAFA20038,0xAFA2003C,-,-,Normalize closed record teardown actor-address spill pair,,,false
 generated_6B320,func_1503E260,0x124,0x8FA20038,0x8FA2003C,-,-,Normalize closed record teardown actor-address spill pair,,,false
+generated_6B320,func_1503EA54,0x118,0x00000000,0x00000000,-,-,Retain unreachable retail duplicate motion return,0x03E00008,-,false

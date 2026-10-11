@@ -17,7 +17,7 @@ void func_1503E3C4(s32, s32, s32, struct04 *, s32);
 void func_150499A0(f32 [4][4], f32 [4][4]);
 void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
 void func_1503E5F8(f32 [4][4], f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *);
-s32 func_1503EA54();
+void func_1503EA54(s32);
 void func_1503E82C(s32);
 void func_150A7DA0(f32 [4][4], u32, u32, u32);
 void func_150A8050(f32 [4][4], f32, f32, f32);
@@ -234,8 +234,24 @@ void func_1503E82C(s32 slot) {
     }
 }
 
-s32 func_1503EA54() {
-    return 0;
+void func_1503EA54(s32 slot) {
+    s32 count = D_80098914[((u8 *)&D_800C6660[slot])[0xE]];
+    f32 step = D_800BE9E4;
+    s32 index;
+    struct04 *element;
+
+    for (index = 0; index < count; index++) {
+        if (((struct04 *)D_800C6660[slot].unk0)[index].unk64 != 0 && D_80084454[((u8 *)&D_800C6660[slot])[0xE]][index] == -1) {
+            element = (struct04 *)D_800C6660[slot].unk0 + index;
+            ((f32 *)element)[9] += ((f32 *)element)[18] * step;
+            ((f32 *)element)[10] += ((f32 *)element)[19] * step;
+            ((f32 *)element)[11] += ((f32 *)element)[20] * step;
+            ((f32 *)element)[12] += ((f32 *)element)[21] * step;
+            ((f32 *)element)[13] += ((f32 *)element)[22] * step;
+            ((f32 *)element)[14] += ((f32 *)element)[23] * step;
+            ((f32 *)element)[19] += ((f32 *)element)[24] * step;
+        }
+    }
 }
 
 s32 func_1503EB78(s32 arg0, f32 arg1, f32 arg2, s32 arg3) {

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Record Motion Guarded Tail Match - 2026-10-11
+
+[Note 1281](WORKING_NOTES/1281-game-record-motion-guarded-tail-match-20261011.md):
+
+- [x] Recover complete signed-step motion integration, cached count/timestep, live buffer/group, flag/type gates and ordered position/rotation/vertical-rate updates.
+- [x] Emit all 71 reachable words directly under existing O2/g3; preserve the 73-word slot with one checked unreachable-return insertion and padding, not full direct C.
+- [x] Pass twelve pre-install/twelve installed tests, native32 full count domain, self-alias/rebase/fault/control gates and actual five-body dispatcher chain.
+- [x] Preserve 21 neighbors/pools/both padders and every other ELF byte/data/six inputs; only 226 target/extent bytes change, old guard prefix plus one row.
+- [x] Measure +1 matching only: Game 2,802/4,822, total 3,475/5,495, zero drift / 2,020 different; root README aggregates only.
+- [x] Bank tools 6f16f59 before consumer source/guard/docs/pin; shared checks green, older HEAD/53 fingerprints preserved/two absent copies, no push.
+- [ ] Recover and qualify next func_1503EB78, 74 words / 72 differences, including its full four-argument body and direct callers.
+- [ ] Remove the dead-tail insertion and existing guards; remaining callees and independent hardware/FCSR/gameplay acceptance stay open, full Game goal active.
+
 ## Record Matrix Update Direct Match - 2026-10-11
 
 [Note 1280](WORKING_NOTES/1280-game-record-matrix-update-direct-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve 21 neighbors/pools/both padders and all other ELF bytes/data/guards/seven inputs; only 460 target/extent bytes change.
 - [x] Measure +1 matching only: Game 2,801/4,822, total 3,474/5,495, zero drift / 2,021 different; root README aggregates only.
 - [x] Bank tools 73745f6 before consumer source/docs/pin; shared checks green, older HEAD/51 fingerprints preserved/two absent copies, no push.
-- [ ] Recover and qualify next func_1503EA54, 73 words / 71 differences, including its complete auxiliary-update contract and actual caller.
+- [x] Recover and qualify complete func_1503EA54 in Note 1281, 71 direct reachable words plus one checked dead-tail insertion, all 73 linked exact.
 - [ ] Recover remaining callees and remove existing guards; independent hardware/FCSR/gameplay acceptance and full Game goal remain open.
 
 ## Record Transform Setup Direct Match - 2026-10-11

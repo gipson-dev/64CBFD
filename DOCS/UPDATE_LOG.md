@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Record Motion Guarded Tail Match
+
+[Note 1281](WORKING_NOTES/1281-game-record-motion-guarded-tail-match-20261011.md):
+func_1503EA54 emits all 71 reachable words directly; one checked insertion
+retains a dead return, all 73 linked exact, not full direct C. Twelve pre-install/
+twelve installed tests pass, native32 and actual five-body dispatcher chain.
+Only 226 target/extent ELF bytes change; 21 neighbors/data/six other inputs
+exact, original guard prefix plus one row. Fresh Game 2,802/4,822, total
+3,475/5,495, zero drift / 2,020 different; +1 matching only. Tools 6f16f59
+first, older HEAD/53 fingerprints preserved/two absent copies, no push;
+README aggregates only. Next func_1503EB78, 74/72 differences. Tail/earlier
+guard removal and deeper hardware/gameplay stay open, full Game goal active.
+
 ## 2026-10-11 Record Matrix Update Direct Match
 
 [Note 1280](WORKING_NOTES/1280-game-record-matrix-update-direct-match-20261011.md):
