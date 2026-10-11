@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9aa880b; tools are committed before the consumer pin.
+  checkpoint pins tools f8fac55; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed main resource-loader original-frame improvement:
+[Note 1263](WORKING_NOTES/1263-game-main-resource-loader-original-frame-improvement-20261011.md):
+complete func_1503CF20 retains all 274 words, restores original 0x78 frame,
+saved S0..S6/early status and removes the redundant count-pointer stack copy.
+Raw differences 271 -> 98, no guards/profile changes; not yet byte-exact.
+Eleven final selected tests plus 21 fresh older loader tests pass, public
+faults/native32/owner/padders/actual chain within documented helper bounds.
+Only 882 target ELF bytes change; every other byte/extent/metadata/data/
+guard/CSV exact. No credit, README aggregates unchanged, tools first/no push.
+Mounted tools f8fac55 is banked; 46 diagnostic forms/five prior-experiment
+tests and all tools checks pass, older 16 fingerprints/history preserved.
+Continue this same complete function's private slots and remaining schedule.
 
 Latest uninstalled main resource-loader status-join experiment:
 [Note 1262](WORKING_NOTES/1262-game-main-resource-loader-status-join-experiment-20261011.md):

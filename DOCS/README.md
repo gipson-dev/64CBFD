@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Main resource-loader original-frame improvement](WORKING_NOTES/1263-game-main-resource-loader-original-frame-improvement-20261011.md):
+  full 274-word loader restores original 0x78 frame/S0..S6 and removes the
+  count-pointer stack copy; raw differences 271 -> 98, no guards. Eleven
+  final selected tests and 21 older tests pass; only 882 target ELF bytes
+  change, every other byte/data/guard/CSV exact. No credit; same full
+  function's private slots and remaining schedule stay next.
+
 - [Main resource-loader status-join experiment](WORKING_NOTES/1262-game-main-resource-loader-status-join-experiment-20261011.md):
   controlled return join selects S6; five tests/31 complete isolated candidates
   pass. Frame still wrong, no installation or matching credit. Eleven fresh

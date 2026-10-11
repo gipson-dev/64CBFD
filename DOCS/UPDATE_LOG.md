@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-11 Main Resource Loader Original-Frame Improvement
+
+[Note 1263](WORKING_NOTES/1263-game-main-resource-loader-original-frame-improvement-20261011.md):
+complete 274-word func_1503CF20 restores original 0x78 frame/early S6 and
+removes redundant count-pointer stack transfer. Direct typed arrays plus
+qualified request-error join reduce raw differences 271 -> 98, no guards.
+Eleven final selected tests and 21 older loader tests pass. Only 882 target
+ELF bytes change; all other bytes/extent/metadata/data/guards/CSV exact.
+No matching credit, README aggregates unchanged. Tools first, older dirty
+work preserved, no push; same full function's private slots/schedule remain.
+
 ## 2026-10-11 Main Resource Loader Status-Join Experiment
 
 [Note 1262](WORKING_NOTES/1262-game-main-resource-loader-status-join-experiment-20261011.md):

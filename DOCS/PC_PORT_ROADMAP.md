@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Main Resource Loader Original-Frame Improvement - 2026-10-11
+
+[Note 1263](WORKING_NOTES/1263-game-main-resource-loader-original-frame-improvement-20261011.md):
+
+- [x] Preserve all complete func_1503CF20 semantics and retail 274-word length under the existing compiler profile, no guards.
+- [x] Recover original 0x78 frame, saved S0..S6/early S6 status and continuous S5 count lifetime without a redundant private stack copy.
+- [x] Install qualified direct typed table expressions and request-error status join; raw differences 271 -> 98, explicitly not yet byte-exact.
+- [x] Pass eleven final selected tests and 21 fresh older loader tests, reachable original/current coverage, aliases/public faults/native32 and actual bounded chain.
+- [x] Preserve all 14 owner neighbors through both padders; audit only 882 target ELF bytes changed, every other byte/extent/metadata/data/guard/CSV exact.
+- [x] Preserve correct unchanged README aggregate rows and separate detailed updates; no matching/conversion credit.
+- [x] Pass five fresh prior-experiment regressions, the 46-form complete diagnostic sweep, consumer/mounted/older WSL tools checks and native py_compile; preserve the older sibling's 16 existing fingerprints/history.
+- [x] Bank mounted tools f8fac55 before the consumer source/docs/pin commit; no push or older-sibling history changes.
+- [ ] Recover original private stack slots, initial count store/mask/delay, event initialization and request-error control; finish the remaining 98 raw differences in this same full function.
+- [ ] Recover deeper helper/heap/hardware/renderer/gameplay behavior separately; the wider Game goal remains active.
+
 ## Main Resource Loader Status-Join Experiment - 2026-10-11
 
 [Note 1262](WORKING_NOTES/1262-game-main-resource-loader-status-join-experiment-20261011.md):
@@ -8,7 +23,8 @@
 - [x] Qualify 31 complete candidates with five tests, isolated entries, live callback mutations, 96 links/ignored-word cases and an effective request-error control.
 - [x] Requalify installed complete loader with eleven fresh tests; preserve source/whole ELF/data/guards/CSV/README exactly, no credit.
 - [x] Pass WSL tools checks/new-file native py_compile; bank tools 9aa880b first and copy only absent paths to the older sibling, no push.
-- [ ] Remove the redundant count-pointer stack copy/reload while preserving S5, recover original 0x78 frame/private slots and all delay/control joins for this same full function; do not install the larger-frame experiment.
+- [x] Remove the redundant count-pointer stack copy/reload while preserving S5 and recover original 0x78 frame/S6 lifetime in the qualified Note 1263 successor; the larger-frame experiment stays uninstalled.
+- [ ] Recover original private slots and all delay/control joins for this same full function.
 - [ ] Finish byte matching and deeper runtime acceptance separately; the wider Game goal remains active.
 
 ## Main Resource Loader Retail-Length Improvement - 2026-10-11
@@ -22,7 +38,8 @@
 - [x] Audit only 566 changed ELF bytes, 565 target and one extent; all other bytes/14 neighbors/data/guards/CSV exact, both padders qualified.
 - [x] Pass consumer/mounted/older WSL tools checks and native new-file py_compile; bank tools e06635c first, preserve older hashes/history, no push.
 - [x] Remeasure unchanged Game 2,789/4,822 and total 3,462/5,495, zero drift / 2,033 different; no credit or root README narrative.
-- [ ] Match this same complete function's original 0x78 frame, S6 status lifetime, private slots and retail instruction schedule.
+- [x] Recover this same complete function's original 0x78 frame and early S6 status lifetime in Note 1263.
+- [ ] Match its original private slots and retail instruction schedule.
 - [ ] Recover deeper helpers and qualify heap/hardware/renderer/gameplay separately; full Game matching remains active.
 
 ## Main Resource Loader Recovery - 2026-10-11
@@ -38,7 +55,8 @@
 - [x] Preserve all 14 neighbors/pools through both padders; audit 828 ELF bytes only in target/extent/verified metadata ordering, all protected data/guards/CSV exact.
 - [x] Pass consumer/mounted/older WSL tools checks and native new-file py_compile; bank tools b503474 first, preserve older dirty work, no push.
 - [x] Remeasure unchanged Game 2,789/4,822 and total 3,462/5,495, zero drift; no matching/conversion credit and no README narrative.
-- [ ] Match this same complete function's retail 274 words/original 0x78 frame, saved S6 error lifetime, private layout and scheduling.
+- [x] Recover this same complete function's retail 274-word length/original 0x78 frame and saved S6 error lifetime in Notes 1261/1263.
+- [ ] Match its original private layout and remaining retail scheduling.
 - [ ] Recover deeper helper implementations and qualify real heap/hardware/renderer/gameplay separately; full Game matching goal remains active.
 
 ## Resource Extras Loader Direct Match - 2026-10-11
