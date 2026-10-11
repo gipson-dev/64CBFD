@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Animation Selector Byte Match - 2026-10-10
+
+[Note 1230](WORKING_NOTES/1230-game-complete-actor-animation-selector-byte-match-20261010.md):
+
+- [x] Recover full selector transition, retained callback values, unsigned phase/length and conditional mode reloads.
+- [x] Emit complete 98-word C/original 0x40 frame; qualify 14 closed register/spill/schedule guards, no body fill.
+- [x] Pass all byte domains, live public/private aliases, 456 fired fault pairs and 15 independent links.
+- [x] Qualify actual 88-word dispatcher, native32 float ABI at O2/O0 and effective complete-C negatives.
+- [x] Preserve all 37 owner neighbors; install/rebuild/audit only 392 target bytes and symbol extent.
+- [x] Pass nine final tests/both tools checks; data/conversion/guard prefix exact, +1 matching credit.
+- [x] Bank tools 0474fdc first and preserve independently dirty older mirror; no push, root README aggregates only.
+- [ ] Recover full 70-word func_150837D4 and independently qualify actual callback connections.
+- [ ] Keep other callbacks, hardware and live gameplay acceptance separate and open.
+
 ## Complete Tile Updater And Special Helper Byte Match - 2026-10-10
 
 [Note 1229](WORKING_NOTES/1229-game-complete-tile-updater-and-special-helper-byte-match-20261010.md):
@@ -11,7 +25,7 @@
 - [x] Rebuild/audit whole linked ELF: only two slots/extents change, 700 bytes, protected data/conversion rows exact.
 - [x] Pass eight final tests/tools-check and measure +2 credit: Game 2,764/4,816, total 3,437/5,489, zero drift.
 - [x] Bank tools 041a6fa first; preserve older dirty mirror, no push; root README aggregate rows only.
-- [ ] Recover and qualify complete 98-word func_1502FBE8 in the same owner.
+- [x] Recover, qualify and install complete 98-word func_1502FBE8 in Note 1230.
 - [ ] Keep extreme loops, nonfinite/FCSR/traps, other callbacks and hardware/live acceptance separate and open.
 
 ## Complete Actor Texture Tile Updater Qualified Schedule - 2026-10-10

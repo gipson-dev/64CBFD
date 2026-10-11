@@ -13953,3 +13953,17 @@ generated_58F80,func_1502F9FC,0x1D0,0x8FB00018,0x8FB00018,-,-,Normalize complete
 generated_58F80,func_1502F9FC,0x1D4,0x27BD0020,0x27BD0020,-,-,Normalize complete tile updater address producer lifetime and closed register scheduling,,,false
 generated_58F80,func_1502F9FC,0x1D8,0x03E00008,0x03E00008,-,-,Normalize complete tile updater address producer lifetime and closed register scheduling,,,false
 generated_58F80,func_1502F9FC,0x1DC,0x00000000,0x00000000,-,-,Normalize complete tile updater address producer lifetime and closed register scheduling,,,false
+generated_58F80,func_1502FBE8,0x10,0x920201C9,0x920301C9,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x1C,0x10400055,0x10600055,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x38,0x14410004,0x14610004,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x50,0x2442FFFF,0x2462FFFF,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x84,0xAFA70034,0xAFA70038,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x90,0xAFA50030,0xAFA50034,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x98,0x8FA50030,0x8FA50034,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x9C,0x8FA70034,0x8FA70038,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0xDC,0x96020084,0x96030084,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0xEC,0x004F082A,0x006F082A,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0xF4,0x3045FFFF,0x3065FFFF,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x134,0xA6190084,0x3C063F80,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x138,0xAFA00018,0xA6190084,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_58F80,func_1502FBE8,0x140,0x3C063F80,0xAFA00018,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false

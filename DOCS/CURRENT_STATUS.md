@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 041a6fa; tools are committed before the consumer pin.
+  checkpoint pins tools 0474fdc; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete tile updater and actual special helper installed byte-exact:
+Latest complete actor animation selector installed byte-exact:
+[Note 1230](WORKING_NOTES/1230-game-complete-actor-animation-selector-byte-match-20261010.md): func_1502FBE8 matches all 98 words, original 0x40 frame,
+with 14 qualified register/spill/schedule guards. Nine post-install tests and
+both tools checks pass; only its 392-byte slot/extent changes. Prior guard
+prefix/data/conversion rows exact. Game 2,765/4,816 (57.41%), total
+3,438/5,489 (62.63%), zero drift / 2,051 different. Tools 0474fdc first, no push.
+Next: full 70-word func_150837D4; callbacks/runtime acceptance remain separate.
+
+Earlier complete tile updater and actual special helper installed byte-exact:
 [Note 1229](WORKING_NOTES/1229-game-complete-tile-updater-and-special-helper-byte-match-20261010.md): func_1502F9FC matches all 123 words with 120 checked guards;
 func_150C3160 emits all 52 words directly from C, no guards. Eight post-install
 tests and root tools-check pass. Only two linked slots/extents change, 700 bytes;

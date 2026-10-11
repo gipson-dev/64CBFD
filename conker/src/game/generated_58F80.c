@@ -142,7 +142,7 @@ typedef struct ActorUpdate58F80 {
 extern u8 D_800C666F[];
 s32 func_1502DF38();
 void func_1502C608(s32 slot);
-s32 func_1502FBE8();
+void func_1502FBE8(u8 *);
 s32 func_1502E4C4();
 s32 func_1503A08C();
 s32 func_150345E4();
@@ -171,7 +171,7 @@ void func_1502BD84(ActorUpdate58F80 *actor, s32 slot) {
         return;
     }
     if (actor->prepare != 0) {
-        func_1502FBE8(actor);
+        func_1502FBE8((u8 *)actor);
     }
     func_1502E4C4(slot);
     func_1502DF38(slot, 0);
@@ -1241,8 +1241,53 @@ Gfx *func_1502F9FC(Gfx *commands, s32 slot) {
     return commands;
 }
 
-s32 func_1502FBE8() {
-    return 0;
+extern u32 D_800D1588[];
+extern u16 D_800C5A90[];
+void func_1505E650(u8 *, u16, f32, f32, f32, f32, s32);
+void func_1507EABC(u8 *);
+
+void func_1502FBE8(u8 *actor) {
+    s32 index, mode;
+    u32 resource;
+    s32 animation;
+    s32 frame;
+
+    index = actor[0x1C9];
+    if (index != 0) {
+        resource = D_800D1588[actor[4]];
+        if (index == 255) {
+            actor[0x1C9] = 0;
+            index = 0;
+        } else {
+            index--;
+            if (index >= actor[0x2C9] || index == actor[0x1C8]) {
+                return;
+            }
+        }
+        animation = (*(u8 **)(actor + 0x2C4))[index];
+        func_150837D4((s32)((u32)actor - (u32)D_800CC2D0) / 0x32C, animation, 0);
+        actor[0x1C8] = index;
+        mode = D_800C35EA;
+        if (mode == 1) {
+            D_800C3638 = 0;
+        }
+        if (resource != D_800D1588[animation]) {
+            frame = *(u16 *)(actor + 0x84);
+            if (frame >= D_800C5A90[animation]) {
+                *(u16 *)(actor + 0x84) = 0xFFFF;
+                func_1505E650(actor, 0, 1.0f, 0.0f, 0.0f, 0.0f, 0);
+                mode = D_800C35EA;
+            } else {
+                *(u16 *)(actor + 0x84) = 0xFFFF;
+                func_1505E650(actor, frame, 1.0f, 0.0f, 0.0f, 0.0f, 0);
+                mode = D_800C35EA;
+            }
+        }
+        if (mode == 1) {
+            D_800C3638 = 1;
+        }
+        func_1507EABC(actor);
+    }
 }
 
 // Matched with guarded sentinel allocation and fallback scheduling.

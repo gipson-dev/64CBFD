@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Animation Selector Byte Match
+
+[Note 1230](WORKING_NOTES/1230-game-complete-actor-animation-selector-byte-match-20261010.md): install full func_1502FBE8, all 98 words / 392 bytes,
+original 0x40 frame and 14 closed register/spill/schedule guards. Nine final
+tests/both tools checks pass; callback captures, mode reloads, unsigned phases,
+aliases, fired prefixes, native float ABI and actual dispatcher qualify.
+Whole ELF changes only its slot/extent; old guard prefix/data/conversion exact.
+Game 2,765/4,816, total 3,438/5,489, zero drift; +1 credit. Tools 0474fdc first,
+no push. Next: full 70-word func_150837D4, keeping actual callbacks/runtime open.
+
 ## 2026-10-10 Complete Tile Updater And Special Helper Byte Match
 
 [Note 1229](WORKING_NOTES/1229-game-complete-tile-updater-and-special-helper-byte-match-20261010.md): install func_1502F9FC and func_150C3160.

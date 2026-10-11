@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor animation selector byte match](WORKING_NOTES/1230-game-complete-actor-animation-selector-byte-match-20261010.md):
+  install full 98-word routine with 14 qualified guards; nine final tests,
+  full linked audit, retained prefix/data and +1 matching credit.
+  Next: full func_150837D4; actual callbacks and runtime acceptance stay open.
+
 - [Complete tile updater and actual special helper byte match](WORKING_NOTES/1229-game-complete-tile-updater-and-special-helper-byte-match-20261010.md):
   install both full bodies, 123 guarded/direct 52-word matches; eight final
   tests, whole linked audit, preserved prefix/data and +2 matching credit.
