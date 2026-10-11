@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1255](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):
+complete func_15084044 semantic recovery, all modes/sharing/copies/rollback;
+192 emitted words/retail frame, no new guards, not yet byte-exact.
+Eleven final tests pass, 3,632 full fault pairs, native32/rebases and bounded
+SDK/caller connections. All 30 neighbors/data/guards/CSV exact; target slot,
+size and verified metadata order only. Tools 7f64ce9 first, no push.
+No progress credit; next is this same function's 130-word matching gap.
+
+2026-10-11:
 [Note 1254](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):
 recover full func_15083DA0, all 27 words directly from C, no frame/guards.
 Retail restart resumes at index one; candidate is a word and caps to 0xFF.

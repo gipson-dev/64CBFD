@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Resource Buffer Preparation Recovery
+
+[Note 1255](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):
+recover complete func_15084044 modes, parent config, zero-ID override,
+sharing/counts, copies and failure rollback. Emit 192 words in the 194-word
+slot/retail 0x60 frame, no new guards; 130 word differences remain.
+Eleven final tests pass, including 3,632 full fault pairs, 24,576 native32
+cases and bounded real wrapper/SDK/caller connections. All 30 neighbors/
+data/guards/CSV unchanged; 620 ELF bytes change only in target slot, size
+and verified existing metadata ordering. Fresh matching totals unchanged,
+no conversion/matching credit. Tools 7f64ce9 first, older mirror preserved,
+no push. Continue matching this same function; full runtime remains open.
+
 ## 2026-10-11 Record Identity Selector Direct Match
 
 [Note 1254](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):

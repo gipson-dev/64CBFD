@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Resource Buffer Preparation Recovery - 2026-10-11
+
+[Note 1255](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):
+
+- [x] Recover complete func_15084044 semantics: all modes, one-based parent config, zero-ID override, sharing/counts, allocation/copy and failure rollback.
+- [x] Fit complete C into the 194-word slot with retail 0x60 frame/private offsets; 192 emitted words, no new guards.
+- [x] Pass eleven final tests, 3,632 fired full fault pairs, 24,576 native32 cases, effective negatives, independent rebases/aliases and both padding routes.
+- [x] Connect actual Init wrapper/SDK copy and complete original caller under documented bounds; qualify live helper mutations and failure propagation.
+- [x] Audit all 30 neighbors/protected data/guards/CSV unchanged; permit only target slot, size and verified existing symbol/string ordering.
+- [x] Bank tools 7f64ce9 first, preserve older dirty mirror, no push; README aggregate rows stay correct and unchanged.
+- [x] Fresh matching totals remain Game 2,786/4,822 and total 3,459/5,495, zero drift; no inflated matching or conversion credit.
+- [ ] Finish byte matching this same function: 130 word differences, opening register lifetimes, mode-one join and mode-two cursor CSE remain.
+- [ ] Complete actual resource loader/current C caller/heap/hardware/renderer/gameplay acceptance separately.
+
 ## Record Identity Selector Direct Match - 2026-10-11
 
 [Note 1254](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):
@@ -12,7 +26,7 @@
 - [x] Move existing record typedef above the selector without changing 30 neighbor fingerprints/pools; both padding routes and whole-ELF audit pass, both WSL tools checks pass.
 - [x] Bank tools e2237b9 first, preserve older dirty mirror, update README matching rows only; no push.
 - [x] Measure Game 2,786/4,822, total 3,459/5,495, zero drift; +1 matching only, no converted credit.
-- [ ] Recover complete 194-word func_15084044 buffer pair ownership/preparation, including modes, sharing counts, allocation/copy and failure rollback.
+- [x] Recover complete 194-word func_15084044 buffer pair ownership/preparation semantics in Note 1255, including modes, sharing counts, allocation/copy and failure rollback; byte matching remains open.
 - [ ] Finish timeline matching and real caller/resource/initializer/allocator/hardware/renderer/gameplay acceptance.
 
 ## Actor Identity Lookup Direct Match - 2026-10-11

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e2237b9; tools are committed before the consumer pin.
+  checkpoint pins tools 7f64ce9; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete record-table identity selector direct match:
+Latest complete resource-buffer preparation recovery, not yet byte-exact:
+[Note 1255](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):
+func_15084044 replaces its zero-return stub with all modes, sharing/counts,
+allocation/copy and failure rollback. Semantic C emits 192 of 194 slot words
+with the retail 0x60 frame, no new guards; 130 word differences remain.
+Eleven final tests pass: 3,632 full fault pairs, 24,576 native32 cases,
+rebases/aliases, actual wrapper/SDK copy and complete original caller within
+explicit resource/callback bounds. All 30 neighbors/data/guards/CSV exact;
+620 ELF bytes change only in target slot and size/existing symbol order.
+Fresh matching totals unchanged: Game 2,786/4,822, total 3,459/5,495,
+zero drift, no converted or matching credit. Tools 7f64ce9 first, no push;
+older mirror preserved. Next: finish matching this same complete function.
+
+Previous complete record-table identity selector direct match:
 [Note 1254](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):
 func_15083DA0 emits all 27 words directly from C, no frame/guards.
 Preserve unsigned cached count/base, identity candidate 1, retail restart at

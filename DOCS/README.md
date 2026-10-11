@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Resource buffer preparation recovery](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):
+  complete func_15084044 modes/sharing/copy/failure rollback, retail frame;
+  eleven final tests, native32/faults/rebases and bounded SDK/caller connections.
+  All neighbors/data/guards unchanged, no new guards or progress credit.
+  Not yet byte-exact: 130 word differences remain; continue this function.
+
 - [Record identity selector direct match](WORKING_NOTES/1254-game-record-identity-selector-direct-match-20261011.md):
   all 27 words directly from C, no frame/guards; preserve retail restart
   at index one and 0xFF cap. Nine final tests/both WSL tools checks pass,

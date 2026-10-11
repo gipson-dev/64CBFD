@@ -448,8 +448,116 @@ s32 func_15084000(s32 arg0) {
     return -1;
 }
 
-s32 func_15084044() {
-    return 0;
+typedef struct {
+    u8 *config;
+    u8 padding[0x328];
+} ResourceParent15084044;
+extern ResourceParent15084044 D_800CC0E8[];
+extern u8 *D_800D19A0[];
+extern u8 D_800D1F80[];
+extern u16 D_800C57A0[];
+void *allocate_memory(s32, s32, s32, s32);
+void func_10004074(void *);
+
+s32 func_15084044(u8 *actor, s32 channel) {
+    u8 *config;
+    s32 mode;
+    s32 identity;
+    u8 *pair;
+    u8 *first;
+    s32 failed;
+    s32 size;
+    s32 offset;
+    u8 *cursor;
+
+    pair = actor + channel * 8;
+    if (actor[0x65] != 0) {
+        config = D_800CC0E8[actor[0x65]].config;
+    } else {
+        config = *(u8 **)(actor + 0x144);
+    }
+    identity = (*(u8 **)(actor + 0x2C4))[channel];
+    if (config != NULL) {
+        mode = config[0x10] & 3;
+    } else {
+        mode = 0;
+    }
+    if (identity == 0) {
+        mode = 2;
+    }
+    first = *(u8 **)(pair + 0x28C);
+    if ((first != NULL) && (*(u8 **)(pair + 0x290) != NULL)) {
+        return 0;
+    }
+    config = D_800D19A0[identity];
+    if (config == NULL) {
+        return 0;
+    }
+    failed = 0;
+    if (mode == 0) {
+        *(u8 **)(pair + 0x28C) = *(u8 **)(pair + 0x290) = config;
+        D_800D1F80[identity] += 2;
+    } else if (mode == 1) {
+        if ((first == NULL) || (first == config)) {
+            if (D_800D1F80[identity] != 0) {
+                size = D_800C57A0[identity] * 16;
+                config = allocate_memory(size, 1, 2, 2);
+                *(u8 **)(pair + 0x28C) = config;
+                if (config == NULL) {
+                    failed = 1;
+                } else {
+                    first = *(u8 **)(pair + 0x28C);
+                    if (first != NULL) {
+                        bcopy(D_800D19A0[identity], first, size);
+                    } else {
+                        *(u8 **)(pair + 0x28C) = D_800D19A0[identity];
+                    }
+                }
+            } else {
+                *(u8 **)(pair + 0x28C) = *(u8 **)(pair + 0x290) = config;
+                D_800D1F80[identity] += 2;
+            }
+            first = *(u8 **)(pair + 0x28C);
+        }
+        *(u8 **)(pair + 0x290) = first;
+    } else if (mode == 2) {
+        cursor = actor + channel * 8;
+        for (offset = 0; offset != 8; offset += 4, cursor += 4) {
+            if ((*(u8 **)(cursor + 0x28C) == NULL) ||
+                (*(u8 **)(cursor + 0x28C) == D_800D19A0[identity]) ||
+                ((offset == 4) && (*(u8 **)(pair + 0x28C) == *(u8 **)(pair + 0x290)))) {
+                if (D_800D1F80[identity] != 0) {
+                    size = D_800C57A0[identity] * 16;
+                    config = allocate_memory(size, 1, 2, 2);
+                    *(u8 **)(cursor + 0x28C) = config;
+                    if (config == NULL) {
+                        failed = 1;
+                        if (offset == 4) {
+                            first = *(u8 **)(pair + 0x28C);
+                            if (first != D_800D19A0[identity]) {
+                                func_10004074(first);
+                            } else {
+                                D_800D1F80[identity] -= 1;
+                            }
+                            *(u8 **)(pair + 0x28C) = NULL;
+                        }
+                        break;
+                    } else {
+                        config = *(u8 **)(cursor + 0x28C);
+                        if (config != NULL) {
+                            bcopy(D_800D19A0[identity], config, size);
+                        } else {
+                            *(u8 **)(cursor + 0x28C) = D_800D19A0[identity];
+                        }
+                    }
+                } else {
+                    *(u8 **)(cursor + 0x28C) = D_800D19A0[identity];
+                    D_800D1F80[identity] += 1;
+                }
+            }
+        }
+    }
+    return failed;
 }
 
 void func_1508434C(u8 *arg0) {
