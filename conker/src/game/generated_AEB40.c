@@ -545,9 +545,9 @@ s32 func_15084044(u8 *actor, s32 channel) {
                         }
                         break;
                     } else {
-                        config = *(u8 **)(cursor + 0x28C);
-                        if (config != NULL) {
-                            bcopy(D_800D19A0[identity], config, size);
+                        mode = (s32)*(u8 **)(cursor + 0x28C);
+                        if (mode != 0) {
+                            bcopy(D_800D19A0[identity], (void *)mode, size);
                         } else {
                             *(u8 **)(cursor + 0x28C) = D_800D19A0[identity];
                         }

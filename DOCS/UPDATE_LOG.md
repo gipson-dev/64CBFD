@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-11 Resource Buffer Preparation Guarded Match
+
+[Note 1257](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):
+func_15084044 matches all 194 linked words/retail 0x60 frame. Complete C
+emits 165 words directly; 26 register-only and three copy-branch schedule
+guards normalize the remaining 29. Fourteen final tests/both WSL tools
+checks pass, high-bit destination cases and all 116 stale word/relocation
+rejections through both padders. Wider dependency rebuild succeeds with
+unrelated source warnings. Only 47 ELF bytes change from Note 1256, all in
+target slot; all other bytes/extent/data/CSV and old guard history exact.
+Game 2,787/4,822 (57.80%), total 3,460/5,495 (62.97%), zero drift / 2,035
+different; +1 matching, no converted credit. Tools 8e07c9e first, older
+existing files preserved, no push. Next: full 104-word func_1503DA9C caller;
+guard elimination and actual resource/hardware/gameplay remain separate.
+
 ## 2026-10-11 Resource Buffer Retail-Length Improvement
 
 [Note 1256](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):

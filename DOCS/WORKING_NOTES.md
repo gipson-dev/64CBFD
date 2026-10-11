@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1257](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):
+complete func_15084044 guarded match, all 194 linked words/0x60 frame.
+165 words direct, 26 register-field/three copy-schedule guards; not a direct
+C match. Fourteen final tests/both WSL tools checks pass, high-bit destination
+cases and 116 fired stale guard checks. Only 47 target ELF bytes change,
+all other bytes/old guards exact. Game 2,787/4,822, total 3,460/5,495, zero
+drift; +1 matching only. Tools 8e07c9e first, older dirty work preserved,
+no push. Next: full 104-word func_1503DA9C resource caller; runtime open.
+
+2026-10-11:
 [Note 1256](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):
 func_15084044 retail-length improvement, 192 -> 194 words/0x60 frame,
 raw differences 130 -> 39, no guards. Twelve final tests/both WSL tools

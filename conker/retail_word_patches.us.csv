@@ -14463,3 +14463,32 @@ generated_AEB40,func_15083AC8,0x2C8,0x8FB2001C,0x8FB2001C,-,-,Check complete chi
 generated_AEB40,func_15083AC8,0x2CC,0x8FB30020,0x8FB30020,-,-,Check complete child constructor; normalize closed frame base register schedule,,,false
 generated_AEB40,func_15083AC8,0x2D0,0x03E00008,0x03E00008,-,-,Check complete child constructor; normalize closed frame base register schedule,,,false
 generated_AEB40,func_15083AC8,0x2D4,0x27BD0050,0x27BD0038,-,-,Check complete child constructor; normalize closed frame base register schedule,,,false
+generated_AEB40,func_15084044,0x20,0x00A03025,0x00803025,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x24,0x90830065,0x90C30065,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x28,0x000640C0,0x000540C0,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x2C,0x0104A021,0x00C8A021,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x68,0x8C820144,0x8CC20144,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x6C,0x8C8F02C4,0x8CCF02C4,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x70,0x00002825,0x00001825,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x78,0x01E6C021,0x01E5C021,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x84,0x90450010,0x90430010,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x88,0x30B90003,0x30790003,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x90,0x03202825,0x03201825,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x9C,0x24050002,0x24030002,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0xB0,0x8E620000,0x8E640000,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0xBC,0x8E620000,0x8E640000,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0xC8,0x8E620000,0x8E640000,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0xCC,0x14400003,0x14800003,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0xDC,0x14A0000A,0x1460000A,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0xEC,0xAE820290,0xAE840290,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0xF0,0xAE82028C,0xAE84028C,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x10C,0x54A1002C,0x5461002C,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x11C,0x14E20025,0x14E40025,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x19C,0xAE820290,0xAE840290,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x1A0,0xAE82028C,0xAE84028C,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x1C0,0x14A10047,0x14610047,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x1C8,0x000668C0,0x000568C0,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x1CC,0x01A48021,0x00CD8021,-,-,Normalize closed buffer preparation register lifetimes,,,false
+generated_AEB40,func_15084044,0x290,0x8E05028C,0x8E02028C,-,-,Normalize buffer copy destination register and branch-delay schedule,,,false
+generated_AEB40,func_15084044,0x298,0x50A00006,0x10400005,-,-,Normalize buffer copy destination register and branch-delay schedule,,,false
+generated_AEB40,func_15084044,0x29C,0x8E6F0000,0x00402825,-,-,Normalize buffer copy destination register and branch-delay schedule,,,false

@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Resource Buffer Preparation Guarded Match - 2026-10-11
+
+[Note 1257](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):
+
+- [x] Preserve complete 194-word func_15084044 semantics and original 0x60 frame; no stub or opaque instruction body.
+- [x] Qualify reuse of the dispatched O32 mode word for the live copy destination, reducing raw differences 39 -> 29.
+- [x] Match all linked retail words with 26 closed register-field guards and three copy-branch schedule guards; distinguish guarded from direct matching.
+- [x] Pass fourteen final tests, including all earlier gates, high-bit destination/cleanup cases and 116 fired word/relocation rejections through both padders.
+- [x] Audit only 47 changed target ELF bytes from Note 1256; every other byte/extent/data/CSV and all old guard bytes exact, only 29 target rows appended.
+- [x] Complete wider dependency rebuild and both WSL tools checks, preserving unrelated compiler and graph safety warnings.
+- [x] Bank tools 8e07c9e first, preserve older dirty files, update only aggregate README rows; no push.
+- [x] Measure Game 2,787/4,822 (57.80%), total 3,460/5,495 (62.97%), zero drift / 2,035 different; +1 matching only, no converted credit.
+- [ ] Recover and qualify complete 104-word func_1503DA9C caller, including auxiliary and extras resource paths beyond the earlier bounded 60-word execution coverage.
+- [ ] Eliminate normalization guards for a direct C match as further compiler recovery permits; do not describe the current guarded match as direct.
+- [ ] Complete actual resource loader/heap/hardware/renderer/gameplay acceptance separately.
+
 ## Resource Buffer Retail-Length Improvement - 2026-10-11
 
 [Note 1256](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):
@@ -12,7 +28,7 @@
 - [x] Pass consumer and mounted WSL tools checks; older WSL check/new-file py_compile pass, native WinError 193 documented separately.
 - [x] Bank tools 2a4183d first, preserve older dirty files, no push; README aggregate rows unchanged.
 - [x] Remeasure Game 2,786/4,822 and total 3,459/5,495, zero drift; no matching/conversion credit.
-- [ ] Finish this same function's 39 raw differences: opening actor/config/mode/resource allocation and mode-two copy/fallback branch.
+- [x] Finish this same function's linked byte matching in Note 1257: reduce raw differences to 29 and qualify bounded register/copy-schedule normalization; direct C matching remains separate.
 - [ ] Complete actual resource loader/current C caller/heap/hardware/renderer/gameplay acceptance separately.
 
 ## Resource Buffer Preparation Recovery - 2026-10-11
@@ -27,7 +43,7 @@
 - [x] Bank tools 7f64ce9 first, preserve older dirty mirror, no push; README aggregate rows stay correct and unchanged.
 - [x] Fresh matching totals remain Game 2,786/4,822 and total 3,459/5,495, zero drift; no inflated matching or conversion credit.
 - [x] Recover mode-one join and mode-two cursor setup in Note 1256; emit full retail length and reduce differences 130 -> 39.
-- [ ] Finish byte matching this same function: 39 word differences in opening register allocation and mode-two copy/fallback remain.
+- [x] Finish this function's guarded linked byte match in Note 1257; 29 raw differences remain in unnormalized C, direct matching is not claimed.
 - [ ] Complete actual resource loader/current C caller/heap/hardware/renderer/gameplay acceptance separately.
 
 ## Record Identity Selector Direct Match - 2026-10-11

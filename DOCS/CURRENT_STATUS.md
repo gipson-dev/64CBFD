@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 2a4183d; tools are committed before the consumer pin.
+  checkpoint pins tools 8e07c9e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest resource-buffer retail-length improvement, not yet byte-exact:
+Latest complete resource-buffer preparation guarded byte match:
+[Note 1257](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):
+func_15084044 now matches all 194 linked retail words/original 0x60 frame.
+Complete semantic C has 29 raw differences after a qualified O32 scratch-word
+lifetime recovery; 26 register-field guards and three copy-branch schedule
+guards normalize them. This is guarded, not direct C matching. All fourteen
+final tests pass, including high-bit pointer round trips and 116 fired stale
+word/relocation rejections through both padders. Only 47 ELF bytes change
+from Note 1256, all inside the target; every other byte/extent/data/CSV exact.
+All old guard bytes preserved, only 29 target rows appended. Both WSL tools
+checks pass; wider dependency rebuild retains unrelated source warnings.
+Game 2,787/4,822 (57.80%), total 3,460/5,495 (62.97%), zero drift / 2,035
+different; +1 matching only. Tools 8e07c9e first, no push, older work preserved.
+Next: complete 104-word caller func_1503DA9C, including auxiliary/extras
+resource paths; its current C and deeper loaders/hardware/gameplay stay open.
+
+Previous resource-buffer retail-length improvement; matched in Note 1257:
 [Note 1256](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):
 func_15084044 now emits all 194 retail words with the original 0x60 frame,
 no guards; raw differences fall 130 -> 39. Recover mode-one reload joins

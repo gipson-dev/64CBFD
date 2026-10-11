@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Resource buffer preparation guarded match](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):
+  full 194-word func_15084044/retail frame, complete C plus 29 bounded
+  register/copy-schedule guards, not a direct C match. Fourteen final tests,
+  high-bit pointer cases and 116 fired stale-guard rejections pass.
+  Only 47 target ELF bytes change; all other bytes/old guard history exact.
+  +1 matching only. Next: complete 104-word resource-preparation caller;
+  deeper resource loading/hardware/gameplay remains open.
+
 - [Resource buffer retail-length improvement](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):
   func_15084044 emits all 194 words/retail frame without guards; raw
   differences 130 -> 39. Twelve final tests and both WSL tools checks pass.
