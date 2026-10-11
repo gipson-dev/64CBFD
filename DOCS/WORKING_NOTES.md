@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1266](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):
+full 274-word loader guarded match, unchanged semantic C/original frame;
+252 direct words plus 22 closed guards. All 76 installed/older tests pass,
+complete stack/public fault and stale-guard tests; only 26 target ELF bytes
+change, other bytes/metadata/extents/data/CSV exact. One matching credit.
+Next full 52-word func_1503D368 recovery; raw guard elimination/runtime
+separate, tools first, older history preserved/no push.
+
+2026-10-11:
 [Note 1265](WORKING_NOTES/1265-game-main-resource-loader-first-loop-delay-initialization-match-20261011.md):
 full 274-word/original-frame loader recovers two independent first-loop
 initialization words, raw differences 24 -> 22, no guards/profile/ABI changes.

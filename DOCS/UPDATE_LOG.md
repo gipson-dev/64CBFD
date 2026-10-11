@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Main Resource Loader Full Guarded Match
+
+[Note 1266](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):
+complete func_1503CF20 now matches all 274 production words with unchanged
+semantic C/original frame/ABI/profile: 252 directly exact words plus 22
+closed spill/request-return/cleanup guards. All 76 installed/older tests pass,
+4,180 full stack/public fault pairs, 88 stale-word/relocation rejections and
+eight manifest rejections. Only 26 target ELF bytes change; all other bytes,
+metadata/extents/data/CSV exact and historical guard prefix preserved.
+Fresh Game 2,790/4,822, total 3,463/5,495, zero drift / 2,032 different.
+One matching credit only; README aggregate rows only. Tools first, older
+history preserved, no push. Next full 52-word func_1503D368 recovery; direct-C
+guard elimination and deeper runtime remain separate open gates.
+
 ## 2026-10-11 Main Resource Loader First-Loop Delay Initialization
 
 [Note 1265](WORKING_NOTES/1265-game-main-resource-loader-first-loop-delay-initialization-match-20261011.md):

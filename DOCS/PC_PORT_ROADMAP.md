@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Main Resource Loader Full Guarded Match - 2026-10-11
+
+[Note 1266](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):
+
+- [x] Preserve complete 274-word/original-frame semantic C, ABI/profile and saved-register lifetimes unchanged; distinguish 252 direct words from 22 guarded words.
+- [x] Measure 65 complete binding/layout diagnostic forms without diagnostics or pools; minimum raw differences remain 22, not a direct-C completion claim.
+- [x] Qualify and append exactly 22 expected-word/empty-relocation guards for closed spill, request-return and cleanup sequences; preserve every historical guard byte.
+- [x] Match all 274 production words; pass fifteen installed target tests and all 61 older/historical tests freshly, 76 total.
+- [x] Fire 4,180 original/padded private-stack/public fault pairs, 88 stale-word/relocation rejections and eight manifest-successor rejections; retain raw-C private fault boundary.
+- [x] Preserve both complete padded owners/all 14 neighbors and actual bounded parent/main/extras/relocator/buffer chain; pass native32/public aliases/callback controls.
+- [x] Audit exactly 26 changed target ELF bytes, all other bytes/metadata/extents/data/CSV exact; add one matching credit only and update README aggregate rows.
+- [x] Preserve older sibling HEAD/all 22 existing fingerprints, copy only three absent paths, and pass consumer/mounted/older tools checks plus native py_compile.
+- [x] Bank mounted tools f54c9fb first, then the consumer guards/docs/aggregate-row/pin checkpoint; no push or older-sibling history changes.
+- [ ] Recover complete 52-word func_1503D368 command-stream relocator and replace that bounded chain helper with its actual qualified body.
+- [ ] Eliminate this loader's 22 guards through real source fitting; raw C still differs.
+- [ ] Qualify deeper helper/heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
+
 ## Main Resource Loader First-Loop Initialization - 2026-10-11
 
 [Note 1265](WORKING_NOTES/1265-game-main-resource-loader-first-loop-delay-initialization-match-20261011.md):

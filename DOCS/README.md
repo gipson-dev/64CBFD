@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Main resource-loader full guarded match](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):
+  all 274 linked words exact, unchanged semantic C/original frame; 252 direct
+  words plus 22 closed guards. All 76 installed/older tests pass, complete
+  stack/public faults and stale-guard rejection; only 26 target ELF bytes
+  change, all other bytes/data/CSV exact. One matching credit only.
+  Next full 52-word command-stream relocator func_1503D368; raw guard
+  elimination and deeper runtime remain separate, tools first/no push.
+
 - [Main resource-loader first-loop delay initialization](WORKING_NOTES/1265-game-main-resource-loader-first-loop-delay-initialization-match-20261011.md):
   same full 274-word/original-frame loader recovers two independent initialization
   words; raw differences 24 -> 22, no guards. Twelve installed tests pass;

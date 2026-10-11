@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b9eae47; tools are committed before the consumer pin.
+  checkpoint pins tools f54c9fb; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed main resource-loader full guarded match:
+[Note 1266](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):
+complete func_1503CF20 matches all 274 linked words with its original 0x78
+frame/S0..S6. Source stays unchanged: 252 directly exact words, 22 guarded
+spill/request-return/cleanup words, not a direct C match. All 76 installed
+and older regression tests pass, including 4,180 complete stack/public fault
+pairs and 88 stale-word/relocation rejections. Only 26 target ELF bytes change;
+all other bytes/metadata/extents/data/CSV exact, original guard prefix intact.
+Fresh Game 2,790/4,822, total 3,463/5,495, zero drift / 2,032 different.
+One matching credit only, no conversion. README aggregate rows updated only.
+Tools first, no push; older HEAD/22 fingerprints preserved, three absent-path
+copies only. Next connected recovery: full 52-word func_1503D368 command-stream
+relocator, still a zero-return placeholder. Loader guard elimination and
+deeper helper/heap/hardware/renderer/gameplay acceptance remain separate.
 
 Latest installed main resource-loader first-loop initialization improvement:
 [Note 1265](WORKING_NOTES/1265-game-main-resource-loader-first-loop-delay-initialization-match-20261011.md):

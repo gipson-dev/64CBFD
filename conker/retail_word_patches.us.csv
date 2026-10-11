@@ -14492,3 +14492,25 @@ generated_AEB40,func_15084044,0x1CC,0x01A48021,0x00CD8021,-,-,Normalize closed b
 generated_AEB40,func_15084044,0x290,0x8E05028C,0x8E02028C,-,-,Normalize buffer copy destination register and branch-delay schedule,,,false
 generated_AEB40,func_15084044,0x298,0x50A00006,0x10400005,-,-,Normalize buffer copy destination register and branch-delay schedule,,,false
 generated_AEB40,func_15084044,0x29C,0x8E6F0000,0x00402825,-,-,Normalize buffer copy destination register and branch-delay schedule,,,false
+generated_6A3D0,func_1503CF20,0x98,0xAFA20054,0xAFA2005C,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0x9C,0xAFA30050,0xAFA30058,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0xB0,0x100000DA,0x100000DB,-,-,Normalize main loader request-error epilogue join,,,false
+generated_6A3D0,func_1503CF20,0xB4,0x24160001,0x24020001,-,-,Normalize main loader request-error epilogue join,,,false
+generated_6A3D0,func_1503CF20,0xB8,0x8FA80050,0x8FA80058,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0xC8,0x8FA90054,0x8FA9005C,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0xD8,0x8FAC0054,0x8FAC005C,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0xF0,0x8FAF0054,0x8FAF005C,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0x108,0x8FA90054,0x8FA9005C,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0x384,0x8FAA0054,0x8FAA005C,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0x3AC,0x8FAB0054,0x8FAB005C,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0x3BC,0x8E040000,0x8E020000,-,-,Normalize closed main loader cleanup value transfer,,,false
+generated_6A3D0,func_1503CF20,0x3C0,0x50800005,0x50400005,-,-,Normalize closed main loader cleanup value transfer,,,false
+generated_6A3D0,func_1503CF20,0x3C4,0x8FAC0054,0x8FAC005C,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0x3CC,0x00000000,0x00402025,-,-,Normalize closed main loader cleanup value transfer,,,false
+generated_6A3D0,func_1503CF20,0x3D4,0x8FAC0054,0x8FAC005C,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0x3E4,0x8E040000,0x8E020000,-,-,Normalize closed main loader cleanup value transfer,,,false
+generated_6A3D0,func_1503CF20,0x3E8,0x50800005,0x50400005,-,-,Normalize closed main loader cleanup value transfer,,,false
+generated_6A3D0,func_1503CF20,0x3EC,0x8FAE0050,0x8FAE0058,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0x3F4,0x00000000,0x00402025,-,-,Normalize closed main loader cleanup value transfer,,,false
+generated_6A3D0,func_1503CF20,0x3FC,0x8FAE0050,0x8FAE0058,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503CF20,0x414,0x8FAF0050,0x8FAF0058,-,-,Normalize closed main loader private spill pair,,,false
