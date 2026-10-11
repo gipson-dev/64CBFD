@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 036e55c; tools are committed before the consumer pin.
+  checkpoint pins tools 73745f6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest direct record-transform setup:
+Latest direct record-matrix rebuild:
+[Note 1280](WORKING_NOTES/1280-game-record-matrix-update-direct-match-20261011.md):
+func_1503E82C replaces its placeholder with all 138 words directly from C,
+no guards/profile/header/caller-body changes. Thirteen pre-install and thirteen
+installed tests pass, native32 and actual helpers/four-body dispatcher chain
+within documented boundaries. Only 460 target/extent ELF bytes change;
+other bytes/data/guards/seven inputs and 21 neighbors exact. Fresh Game
+2,801/4,822 (58.09%), total 3,474/5,495 (63.22%), zero drift / 2,021 different;
++1 matching only. Tools 73745f6 first, older HEAD/51 fingerprints preserved,
+two absent copies/no push; README aggregates only. Next func_1503EA54,
+73 words/71 differences. Remaining callees, existing guard removal and deeper
+hardware/FCSR/gameplay acceptance remain separate; full Game goal active.
+
+Previous direct record-transform setup:
 [Note 1279](WORKING_NOTES/1279-game-record-transform-setup-direct-match-20261011.md):
 func_1503E3C4 replaces its placeholder with all 141 words directly from C,
 no guards/profile/caller-body changes. Thirteen pre-install and thirteen
@@ -36,8 +49,9 @@ within documented boundaries. Only 445 target/extent ELF bytes change;
 other bytes/data/guards/seven inputs and 21 neighbors exact. Fresh Game
 2,800/4,822 (58.07%), total 3,473/5,495 (63.20%), zero drift / 2,022 different;
 +1 matching only. Tools 036e55c first, older HEAD/49 fingerprints preserved,
-two absent copies/no push; README aggregates only. Next func_1503E82C,
-138 words/138 differences. Decomposer/other callees, existing guard removal
+two absent copies/no push; README aggregates only. Its former next target
+func_1503E82C is directly matched in Note 1280. Decomposer/other callees,
+existing guard removal
 and deeper hardware/gameplay acceptance remain separate; Game goal active.
 
 Previous guarded record-mask teardown:

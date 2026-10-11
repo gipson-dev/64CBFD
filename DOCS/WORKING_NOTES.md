@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1280](WORKING_NOTES/1280-game-record-matrix-update-direct-match-20261011.md):
+func_1503E82C complete138 direct C, no guards/profile/header/caller-body
+changes. Thirteen pre-install/thirteen installed tests pass, native32 and actual
+matrix helpers/four-body dispatcher chain within documented boundaries. Only
+460 target/extent ELF bytes change, 21 neighbors/data/guards/seven inputs exact.
+Game 2,801/4,822, total 3,474/5,495, zero drift / 2,021 different; +1 matching.
+Tools 73745f6 first, older HEAD/51 fingerprints preserved/two absent copies,
+no push; README aggregates only. Next func_1503EA54, 73/71 differences.
+Remaining callees/guards and independent hardware/gameplay work stay open.
+
+2026-10-11:
 [Note 1279](WORKING_NOTES/1279-game-record-transform-setup-direct-match-20261011.md):
 func_1503E3C4 complete141 direct C, no guards/profile/caller-body changes.
 Thirteen pre-install/thirteen installed tests pass, native32 and connected

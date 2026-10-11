@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Record Matrix Update Direct Match - 2026-10-11
+
+[Note 1280](WORKING_NOTES/1280-game-record-matrix-update-direct-match-20261011.md):
+
+- [x] Recover complete active-record rebuild, NULL/count/flag gates, signed -2/-1 paths, raw float words and live/cached callback lifetimes.
+- [x] Emit all 138 words directly with existing O2/g3/frame 0xB8; no guards/drops/profile/header/caller-body changes, earlier setup and assembly decomposer preserved.
+- [x] Pass thirteen pre-install/thirteen installed tests, native32 O2/O0, actual matrix helpers and dispatcher/setup/predicate/update chain within documented boundaries.
+- [x] Preserve 21 neighbors/pools/both padders and all other ELF bytes/data/guards/seven inputs; only 460 target/extent bytes change.
+- [x] Measure +1 matching only: Game 2,801/4,822, total 3,474/5,495, zero drift / 2,021 different; root README aggregates only.
+- [x] Bank tools 73745f6 before consumer source/docs/pin; shared checks green, older HEAD/51 fingerprints preserved/two absent copies, no push.
+- [ ] Recover and qualify next func_1503EA54, 73 words / 71 differences, including its complete auxiliary-update contract and actual caller.
+- [ ] Recover remaining callees and remove existing guards; independent hardware/FCSR/gameplay acceptance and full Game goal remain open.
+
 ## Record Transform Setup Direct Match - 2026-10-11
 
 [Note 1279](WORKING_NOTES/1279-game-record-transform-setup-direct-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve 21 neighbors/pools/both padders and every other ELF byte/data/guard/seven inputs; only 445 target/extent bytes change.
 - [x] Measure +1 matching only: Game 2,800/4,822, total 3,473/5,495, zero drift / 2,022 different; root README aggregates only.
 - [x] Bank tools 036e55c before consumer source/docs/pin; shared checks green, older HEAD/49 fingerprints preserved/two absent copies, no push.
-- [ ] Recover and qualify next func_1503E82C, 138 words / 138 differences, including its complete record-transform/update contract.
+- [x] Recover and qualify complete func_1503E82C directly in Note 1280, including its complete record-transform/update contract.
 - [ ] Recover remaining callees and remove existing guards; independent hardware/FCSR/gameplay acceptance and full Game goal remain open.
 
 ## Record Mask Teardown Guarded Match - 2026-10-11

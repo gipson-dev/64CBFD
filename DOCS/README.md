@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Record matrix update direct match](WORKING_NOTES/1280-game-record-matrix-update-direct-match-20261011.md):
+  complete138 direct C, no guards/profile/header/caller-body changes; thirteen
+  pre-install/thirteen installed tests, native32 and actual matrix helpers/
+  dispatcher chain pass within documented boundaries. Only 460 target/extent
+  ELF bytes change, 21 neighbors/data/guards/seven inputs exact; +1 matching.
+  Tools 73745f6 first, older work preserved/no push, README aggregates only.
+  Next func_1503EA54, 73/71 differences; remaining callees/Game goal stay open.
+
 - [Record transform setup direct match](WORKING_NOTES/1279-game-record-transform-setup-direct-match-20261011.md):
   complete141 direct C, no guards/profile/caller-body changes; thirteen
   pre-install/thirteen installed tests, native32 and connected retail helpers/

@@ -18,7 +18,11 @@ void func_150499A0(f32 [4][4], f32 [4][4]);
 void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
 void func_1503E5F8(f32 [4][4], f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *);
 s32 func_1503EA54();
-s32 func_1503E82C();
+void func_1503E82C(s32);
+void func_150A7DA0(f32 [4][4], u32, u32, u32);
+void func_150A8050(f32 [4][4], f32, f32, f32);
+void func_150A7CB0(u32 *, u32, u32, u32);
+void func_15043EC8(f32 [4][4], f32, f32, f32, f32, f32, f32);
 extern u8 *D_80084460[];
 void func_10004074(void *);
 
@@ -187,8 +191,47 @@ void func_1503E3C4(s32 slot, s32 index, s32 offset, struct04 *record, s32 absolu
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_6B320/func_1503E5F8.s")
 
-s32 func_1503E82C() {
-    return 0;
+void func_1503E82C(s32 slot) {
+    s32 count;
+    f32 (*destination)[4];
+    s8 *types;
+    s32 index;
+    s32 type;
+    f32 matrix[4][4];
+
+    if (D_800CC2D0[slot].unk1D4 != NULL) {
+        struct04 *element;
+        count = D_80098914[((u8 *)&D_800C6660[slot])[0xE]];
+        types = D_80084454[((u8 *)&D_800C6660[slot])[0xE]];
+        for (index = 0; index < count; index++) {
+            switch (types[index]) {
+            case -2:
+                break;
+            default:
+                element = (struct04 *)D_800C6660[slot].unk0 + index;
+                if (element->unk64 != 0) {
+                    destination = ((f32 (*)[4][4])D_800CC2D0[slot].unk1D4)[index];
+                    type = D_80084454[((u8 *)&D_800C6660[slot])[0xE]][index];
+                    if (type != -1) {
+                        func_150A7DA0(matrix, ((u32 *)element)[9], ((u32 *)element)[10], ((u32 *)element)[11]);
+                        func_150A7A48(matrix, ((f32 (*)[4][4])D_800CC2D0[slot].unk1D4)[type], matrix);
+                        element = (struct04 *)D_800C6660[slot].unk0 + index;
+                        func_150A8050(destination, ((f32 *)element)[12], ((f32 *)element)[13], ((f32 *)element)[14]);
+                        func_150A7A48(destination, matrix, destination);
+                        element = (struct04 *)D_800C6660[slot].unk0 + index;
+                        func_150A7CB0((u32 *)matrix, element->unk3C, element->unk40, element->unk44);
+                        func_150A7A48(matrix, destination, destination);
+                    } else {
+                        func_150A8050(destination, ((f32 *)element)[12], ((f32 *)element)[13], ((f32 *)element)[14]);
+                        element = (struct04 *)D_800C6660[slot].unk0 + index;
+                        func_15043EC8(destination, ((f32 *)element)[15], ((f32 *)element)[16], ((f32 *)element)[17],
+                            ((f32 *)element)[9], ((f32 *)element)[10], ((f32 *)element)[11]);
+                    }
+                }
+                break;
+            }
+        }
+    }
 }
 
 s32 func_1503EA54() {
