@@ -14051,3 +14051,15 @@ generated_5D2C0,func_15030AF4,0x1AC,0xA0400005,0xAC40004C,-,-,Normalize checked 
 generated_5D2C0,func_15030AF4,0x1B0,0xA4400022,0xAC400050,-,-,Normalize checked animation node initialization schedule and closed temporary register swap,,,false
 generated_5D2C0,func_15030AF4,0x1B4,0xA44E001E,0xA0400005,-,-,Normalize checked animation node initialization schedule and closed temporary register swap,,,false
 generated_5D2C0,func_15030AF4,0x1B8,0x8FAF0060,0xA4400022,-,-,Normalize checked animation node initialization schedule and closed temporary register swap,,,false
+generated_5D2C0,func_1502FFD8,0x5C,0x920C0004,0x8FA90044,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0x8C,0x920C0004,0x8FA90044,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0x98,0x920C0004,0x8FA90044,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0x9C,0x8E090024,0x920D0004,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0xA0,0x8FAA003C,0x8E0B0024,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0xA4,0x8FAB0044,0x8FAC003C,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0xA8,0x318D0010,0x91220066,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0xAC,0x012A2023,0x31AE0010,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0xB0,0x15A00027,0x016C2023,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0xB4,0x91620066,0x15C00026,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0xB8,0x304E000C,0x304A000C,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_1502FFD8,0xC0,0x55C10024,0x55410024,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false

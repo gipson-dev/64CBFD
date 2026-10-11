@@ -62,7 +62,48 @@ s32 func_1502FE10() {
     return 0;
 }
 
-s32 func_1502FFD8() {
+s32 func_1503F62C();
+void func_10004074(void *);
+
+s32 func_1502FFD8(u8 *node, u8 *actor) {
+    u8 *source;
+    u32 actorFlags;
+    s32 size;
+
+    if (*(u8 **)(node + 0x24) == 0) {
+        if (*(s8 *)(node + 0x17) == -1) {
+            if (func_1502FE10(node[1], (u8 **)(node + 0x24), node + 0x14,
+                    &source, (u8 **)(node + 0x30), 0, 0) != 0) {
+                return 1;
+            }
+        } else {
+            if (func_1503F62C(node[1], *(s8 *)(node + 0x17), (u8 **)(node + 0x24),
+                    node + 0x14, &source, (u8 **)(node + 0x30), (u8 **)(node + 0x48)) != 0) {
+                return 1;
+            }
+        }
+        size = (u32)*(u8 **)(node + 0x24) - (u32)source;
+        actorFlags = actor[0x66];
+        if (!(node[4] & 0x10) && (actorFlags & 0xC) == 8 && *(u8 **)(node + 0x30) != 0) {
+            *(u8 **)(node + 0x28) = allocate_memory(size, 1, 2, 2);
+            if (*(u8 **)(node + 0x28) == 0) {
+                return 1;
+            }
+            *(u8 **)(node + 0x2C) = allocate_memory(size, 1, 2, 2);
+            if (*(u8 **)(node + 0x2C) == 0) {
+                func_10004074(*(u8 **)(node + 0x28));
+                *(u8 **)(node + 0x28) = 0;
+                return 1;
+            }
+            bcopy(source, *(u8 **)(node + 0x28), size);
+            bcopy(source, *(u8 **)(node + 0x2C), size);
+            node[8] = 1;
+        } else {
+            *(u8 **)(node + 0x28) = source;
+            *(u8 **)(node + 0x2C) = source;
+        }
+        node[9] = 1;
+    }
     return 0;
 }
 

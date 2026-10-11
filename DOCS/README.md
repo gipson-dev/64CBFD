@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Complete node resource initializer byte match](WORKING_NOTES/1239-game-complete-node-resource-initializer-byte-match-20261011.md):
+  full 96-word C with 12 checked guards; ten final tests and both tools checks
+  pass. Both loader packets, allocation rollback, native32 and actual caller/
+  factory/action connection qualify. All 39 neighbors/other ELF/data/CSV exact;
+  +1 matching credit. Deeper zero loaders lack required outputs, not restored
+  resources. Next: full func_15030158; cleanup/gameplay remain open.
+
 - [Complete animation node constructor byte match](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):
   full 152-word C with 47 checked scheduling guards; ten final tests pass.
   Actual caller/action consumer, native32 and eight retail samples qualify.

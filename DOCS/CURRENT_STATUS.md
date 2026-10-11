@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-10
+Last verified: 2026-10-11
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d2ad015; tools are committed before the consumer pin.
+  checkpoint pins tools 8ec8484; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest complete node resource initializer restored and byte-exact:
+[Note 1239](WORKING_NOTES/1239-game-complete-node-resource-initializer-byte-match-20261011.md):
+func_1502FFD8 replaces its zero placeholder with all 96 semantic words,
+original 0x40 frame and 12 checked read-schedule/register/delay-mask guards.
+Ten final tests and both tools checks pass; both seven-argument loaders,
+paired allocation/copy/rollback, 25,604 native32 runs and actual caller/
+factory/action connection with eight retail samples qualify. All 39 neighbors
+and other ELF/data/CSV bytes exact; +1 matching credit only. Game 2,774/4,821
+(57.54%), total 3,447/5,494 (62.74%), zero drift / 2,047 different.
+Tools 8ec8484 first, no push. Deeper zero loaders do not satisfy the required
+success-output contract; cleanup and hardware/live gameplay remain open.
+Next: full 102-word func_15030158.
 
 Latest complete animation node constructor restored and byte-exact:
 [Note 1238](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):

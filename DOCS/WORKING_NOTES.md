@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-11:
+[Note 1239](WORKING_NOTES/1239-game-complete-node-resource-initializer-byte-match-20261011.md):
+recover full func_1502FFD8, 96 words / original 0x40 frame and 12 checked
+read-schedule/register/delay-mask guards. Ten final tests/both tools checks
+pass; loader ABI, rollback, native32 and actual caller/factory/action chain
+qualify. All 39 neighbors/other ELF/data/CSV exact. Game 2,774/4,821,
+total 3,447/5,494, zero drift; +1 matching credit only. Tools 8ec8484 first,
+no push. Deeper zero loaders lack required outputs; next full 102-word
+func_15030158. Complete resources/cleanup and runtime remain open.
+
 2026-10-10:
 [Note 1238](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):
 recover full func_15030AF4, all 152 words / original 0x30 frame and 47 checked

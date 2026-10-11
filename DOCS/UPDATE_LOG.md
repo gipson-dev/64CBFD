@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Complete Node Resource Initializer Byte Match
+
+[Note 1239](WORKING_NOTES/1239-game-complete-node-resource-initializer-byte-match-20261011.md):
+restore full func_1502FFD8, all 96 words / 384 bytes, original 0x40 frame
+and 12 checked read-schedule/register/delay-mask guards. Ten final tests/both
+tools checks pass; signed loader packets, live buffers/copies, rollback,
+native32 and actual caller/factory/action chain with eight retail samples
+qualify. Only target slot/extent changes; all 39 neighbors/other ELF/data/CSV
+exact. Game 2,774/4,821, total 3,447/5,494, zero drift / 2,047 different.
++1 matching credit only. Tools 8ec8484 first, no push. Deeper zero loaders
+lack required success outputs; next full 102-word func_15030158. Complete
+resources, cleanup and hardware/live gameplay remain open.
+
 ## 2026-10-10 Complete Animation Node Constructor Byte Match
 
 [Note 1238](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):

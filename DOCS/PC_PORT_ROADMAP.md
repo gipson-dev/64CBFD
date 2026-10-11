@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Node Resource Initializer Byte Match - 2026-10-11
+
+[Note 1239](WORKING_NOTES/1239-game-complete-node-resource-initializer-byte-match-20261011.md):
+
+- [x] Recover cached gate, both seven-argument loaders, paired buffers, live copies and allocation rollback.
+- [x] Emit all 96 semantic words/original 0x40 frame; qualify 12 checked read-schedule/register/delay-mask guards.
+- [x] Pass 30,336 guest runs, 1,240 fired alias/fault pairs and nine independent rebased links.
+- [x] Pass ten effective IDO/two native negatives and 25,604 native32 optimized/unoptimized runs.
+- [x] Connect actual caller/factory/initializer/action consumer and eight ROM samples; 1,925 connected fault pairs.
+- [x] Expose actual deeper zero loaders' unwritten output in guest-only tests; keep their required success contract explicit.
+- [x] Preserve 39 neighbors and protected inputs; audit only target slot/extent changed, conversion CSV exact.
+- [x] Pass ten final tests/both tools checks; +1 matching credit, no extra conversion credit.
+- [x] Bank tools 8ec8484 first; preserve older dirty mirror, no push, root README aggregate rows only.
+- [ ] Restore full 102-word func_15030158 and qualify actual factory rollback/unlink/free behavior.
+- [ ] Restore deeper func_1502FE10/func_1503F62C loaders and full 182-word func_15083AC8; gameplay acceptance stays separate.
+
 ## Complete Animation Node Constructor Byte Match - 2026-10-10
 
 [Note 1238](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):
@@ -13,7 +29,7 @@
 - [x] Preserve all 39 neighbors and protected data; audit only target slot/extent changed, all other ELF/CSV exact.
 - [x] Pass ten final tests/both tools checks; +1 matching credit, no extra conversion credit.
 - [x] Bank tools d2ad015 first; preserve older dirty mirror, no push, root README aggregate rows only.
-- [ ] Recover full 96-word func_1502FFD8 and qualify the actual resource-loading connection.
+- [x] Recover full 96-word func_1502FFD8 and qualify the actual factory connection with bounded loaders in Note 1239.
 - [ ] Restore full 102-word func_15030158 cleanup and 182-word func_15083AC8; runtime remains separate acceptance.
 
 ## Complete Actor Animation Constructor Byte Match - 2026-10-10
