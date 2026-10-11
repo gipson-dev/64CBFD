@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1261](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):
+full func_1503CF20 emits all 274 words, frame 0x88 -> 0x80, raw differences
+273 -> 271, no guards/profile changes; still not matching. Eleven final
+tests and ten fresh recovery tests pass, all reachable original/current
+words, ignored-word scratch, public faults/native32/actual chain qualified.
+Only 566 target/extent ELF bytes change; all other code/data/guards/CSV exact.
+No credit; tools e06635c first, older preserved, no push. Keep this same full
+routine's original frame/S6/private layout and byte matching as next work.
+
+2026-10-11:
 [Note 1260](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):
 complete func_1503CF20 semantic recovery, all publication/loop/error cleanup
 paths; 272 words in 274-word slot, frame 0x88, 273 raw differences, no guards.

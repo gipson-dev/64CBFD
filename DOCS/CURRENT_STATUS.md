@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b503474; tools are committed before the consumer pin.
+  checkpoint pins tools e06635c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete main resource-loader semantic recovery, not yet matching:
+Latest complete main resource-loader retail-length improvement:
+[Note 1261](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):
+func_1503CF20 now emits all 274 slot words, frame 0x88 -> 0x80, raw
+differences 273 -> 271, no guards/profile changes; still not byte-exact.
+Recover mixed indexed/byte cursors and qualify ignored second-word scratch
+reuse without installing cleanup pointer casts. Eleven final tests plus
+ten fresh recovery tests pass, all reachable original/current words,
+public faults/native32/actual five-routine chain within documented bounds.
+Only 566 ELF bytes change: 565 target, one extent; every other byte,
+14 neighbors/data/guards/CSV exact. WSL checks pass. Matching unchanged:
+Game 2,789/4,822, total 3,462/5,495, zero drift / 2,033 different; no credit.
+README aggregate rows stay unchanged. Tools e06635c first, older preserved,
+no push. Continue this same full function's original 0x78 frame/S6 status
+lifetime/private layout/scheduling; deeper runtime remains separate.
+
+Previous complete main resource-loader semantic recovery, not yet matching:
 [Note 1260](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):
 func_1503CF20 replaces its zero-return stub with complete publication,
 both relocation loops, extras/event/helper gates and every failure rollback.

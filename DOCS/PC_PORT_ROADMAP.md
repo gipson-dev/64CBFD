@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Main Resource Loader Retail-Length Improvement - 2026-10-11
+
+[Note 1261](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):
+
+- [x] Preserve the complete func_1503CF20 publication, loop, helper-gate and failure-cleanup recovery from Note 1260.
+- [x] Recover retail mixed indexed-address/byte-offset cursors in both relocation loops; emit all 274 words without padding or guards.
+- [x] Qualify ignored second-word status scratch and correctly typed direct first-table accesses; frame 0x88 -> 0x80, raw differences 273 -> 271.
+- [x] Pass eleven final tests and ten fresh recovery tests, every reachable original/current word, aliases/public faults/native32 and actual connected chain within documented bounds.
+- [x] Audit only 566 changed ELF bytes, 565 target and one extent; all other bytes/14 neighbors/data/guards/CSV exact, both padders qualified.
+- [x] Pass consumer/mounted/older WSL tools checks and native new-file py_compile; bank tools e06635c first, preserve older hashes/history, no push.
+- [x] Remeasure unchanged Game 2,789/4,822 and total 3,462/5,495, zero drift / 2,033 different; no credit or root README narrative.
+- [ ] Match this same complete function's original 0x78 frame, S6 status lifetime, private slots and retail instruction schedule.
+- [ ] Recover deeper helpers and qualify heap/hardware/renderer/gameplay separately; full Game matching remains active.
+
 ## Main Resource Loader Recovery - 2026-10-11
 
 [Note 1260](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):

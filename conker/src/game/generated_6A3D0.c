@@ -43,15 +43,14 @@ s32 func_1503D660();
 s32 func_1503DD1C();
 void func_10004074(void *);
 
-s32 func_1503CF20(s32 identity, s32 unused, u8 *config, s32 extras, s32 flags) {
+s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
+    /* Ignore the incoming second word; later reuse it as the status value. */
     s32 output;
     u32 *block;
     u8 **mainSlot;
-    u32 *first;
     u32 **primary;
     u32 **secondary;
     u16 *count;
-    s32 failed;
     s32 index;
     s32 offset;
     u32 boundary;
@@ -72,8 +71,7 @@ s32 func_1503CF20(s32 identity, s32 unused, u8 *config, s32 extras, s32 flags) {
         return 1;
     }
     *mainSlot = (u8 *)block + 0x38;
-    first = &D_800C4020[identity];
-    *first = block[0];
+    D_800C4020[identity] = block[0];
     primary = &D_800C4488[identity];
     *primary = (u32 *)block[2];
     secondary = &D_800C48F0[identity];
@@ -82,8 +80,8 @@ s32 func_1503CF20(s32 identity, s32 unused, u8 *config, s32 extras, s32 flags) {
     D_800C5338[identity] = (u32 *)block[6];
     D_800C5048[identity] = block[8];
     D_800C4310[identity] = block[1] >> 2;
-    if (*first != 0) {
-        boundary = *first;
+    if (D_800C4020[identity] != 0) {
+        boundary = D_800C4020[identity];
     } else {
         boundary = (u32)*primary;
     }
@@ -93,7 +91,7 @@ s32 func_1503CF20(s32 identity, s32 unused, u8 *config, s32 extras, s32 flags) {
     if ((*count = block[3] >> 2) > 0) {
         offset = 0;
         do {
-            func_1503D438((u32 *)((u8 *)*primary + offset), (u32)block);
+            func_1503D438(&(*primary)[index], (u32)block);
             func_1503D368(*(u32 *)((u8 *)*primary + offset), (u32)block);
             index++;
             offset += 4;
@@ -104,7 +102,7 @@ s32 func_1503CF20(s32 identity, s32 unused, u8 *config, s32 extras, s32 flags) {
     offset = 0;
     if (boundary != 0) {
         do {
-            func_1503D438((u32 *)((u8 *)*secondary + offset), (u32)block);
+            func_1503D438(&(*secondary)[index], (u32)block);
             func_1503D368(*(u32 *)((u8 *)*secondary + offset), (u32)block);
             index++;
             offset += 4;

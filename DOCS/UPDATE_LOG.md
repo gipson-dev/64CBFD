@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Main Resource Loader Retail-Length Improvement
+
+[Note 1261](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):
+func_1503CF20 recovers separate indexed/byte cursors and ignored-word scratch
+lifetime. Emit all 274 words, frame 0x88 -> 0x80, raw differences 273 -> 271,
+no guards/profile changes; not byte-exact. Eleven final tests plus ten fresh
+recovery tests pass, current/original reachable words and full public
+memory/access/calls/failure behavior within documented deeper-helper bounds.
+Only 566 ELF bytes change, 565 target and one extent; all other bytes,
+neighbors/data/guards/CSV exact. Matching unchanged, no credit or README
+narrative. Tools e06635c first, preserve older work, no push. Next: this
+same complete function's original 0x78 frame, S6 status and private layout.
+
 ## 2026-10-11 Main Resource Loader Recovery
 
 [Note 1260](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):

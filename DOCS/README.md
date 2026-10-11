@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Main resource-loader retail-length improvement](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):
+  full func_1503CF20 emits all 274 words, smaller 0x80 frame/271 raw
+  differences, no guards; not yet byte-exact. Eleven final tests plus ten
+  fresh recovery tests pass. Only 566 target/extent ELF bytes change,
+  all other code/data/guards/CSV exact. No matching credit; continue this
+  same complete function's original frame, S6 status and byte matching.
+
 - [Main resource-loader recovery](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):
   complete func_1503CF20 replaces its zero-return stub; 272 emitted words
   in the 274-word slot, larger frame/273 raw differences, no guards.
