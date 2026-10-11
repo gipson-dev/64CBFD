@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Main resource-loader private layout and count schedule](WORKING_NOTES/1264-game-main-resource-loader-private-layout-and-count-schedule-improvement-20261011.md):
+  full 274-word/original-frame loader recovers three private slots, unmasked
+  count store/register cycle and event order; raw differences 98 -> 24,
+  no guards. Twelve final/32 older/five historical tests pass; only 92 target
+  ELF bytes change, all other bytes/data/guards/CSV exact. Same full function remains
+  next, no matching credit or README aggregate change.
+
 - [Main resource-loader original-frame improvement](WORKING_NOTES/1263-game-main-resource-loader-original-frame-improvement-20261011.md):
   full 274-word loader restores original 0x78 frame/S0..S6 and removes the
   count-pointer stack copy; raw differences 271 -> 98, no guards. Eleven

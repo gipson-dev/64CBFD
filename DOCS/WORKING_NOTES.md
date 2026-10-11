@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1264](WORKING_NOTES/1264-game-main-resource-loader-private-layout-and-count-schedule-improvement-20261011.md):
+full 274-word/original-frame loader recovers three private slots, count
+store/register cycle and event opening. Raw differences 98 -> 24, no guards;
+twelve final/32 older/five historical tests pass, only 92 target ELF bytes
+change and all other bytes/data/guards/CSV exact. No credit, README aggregates unchanged;
+tools first/older preserved/no push. Same full function's two spills, initial
+delay, request-error return and cleanup register transfers remain next.
+
+2026-10-11:
 [Note 1263](WORKING_NOTES/1263-game-main-resource-loader-original-frame-improvement-20261011.md):
 full 274-word func_1503CF20 recovers original 0x78 frame/S0..S6 and removes
 the redundant count-pointer stack transfer. Raw differences 271 -> 98,

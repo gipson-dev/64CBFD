@@ -45,12 +45,13 @@ void func_10004074(void *);
 
 s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
     /* Ignore the incoming second word; later reuse it as the status value. */
-    s32 output;
     u32 *block;
     s32 index;
-    s32 offset;
+    s32 output;
     u32 boundary;
+    s32 offset;
     u8 **cleanupSlot;
+    s32 wordIndex;
 
     if (identity == 0xFF) {
         return 0;
@@ -58,8 +59,9 @@ s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
     if (identity >= 0xBB) {
         return 0;
     }
+    wordIndex = identity * 4;
     failed = 0;
-    if (D_800D19A0[identity] != NULL) {
+    if ((*(u8 **)((u8 *)D_800D19A0 + wordIndex)) != NULL) {
         return 0;
     }
     block = func_1502B6BC(&output, 7, 0, 2, 1, identity);
@@ -67,26 +69,27 @@ s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
         failed = 1;
         goto done;
     }
-    D_800D19A0[identity] = (u8 *)block + 0x38;
-    D_800C4020[identity] = block[0];
-    D_800C4488[identity] = (u32 *)block[2];
-    D_800C48F0[identity] = (u32 *)block[10];
-    D_800C4BE0[identity] = block[4];
-    D_800C5338[identity] = (u32 *)block[6];
-    D_800C5048[identity] = block[8];
+    (*(u8 **)((u8 *)D_800D19A0 + wordIndex)) = (u8 *)block + 0x38;
+    (*(u32 *)((u8 *)D_800C4020 + wordIndex)) = block[0];
+    (*(u32 **)((u8 *)D_800C4488 + wordIndex)) = (u32 *)block[2];
+    (*(u32 **)((u8 *)D_800C48F0 + wordIndex)) = (u32 *)block[10];
+    (*(u32 *)((u8 *)D_800C4BE0 + wordIndex)) = block[4];
+    (*(u32 **)((u8 *)D_800C5338 + wordIndex)) = (u32 *)block[6];
+    (*(u32 *)((u8 *)D_800C5048 + wordIndex)) = block[8];
     D_800C4310[identity] = block[1] >> 2;
-    if (D_800C4020[identity] != 0) {
-        boundary = D_800C4020[identity];
+    if ((*(u32 *)((u8 *)D_800C4020 + wordIndex)) != 0) {
+        boundary = (*(u32 *)((u8 *)D_800C4020 + wordIndex));
     } else {
-        boundary = (u32)D_800C4488[identity];
+        boundary = (u32)(*(u32 **)((u8 *)D_800C4488 + wordIndex));
     }
     D_800C57A0[identity] = (boundary - (u32)block - 0x38) >> 4;
+    D_800C4778[identity] = block[3] >> 2;
     index = 0;
-    if ((D_800C4778[identity] = block[3] >> 2) > 0) {
+    if (D_800C4778[identity] > 0) {
         offset = 0;
         do {
-            func_1503D438(&(D_800C4488[identity])[index], (u32)block);
-            func_1503D368(*(u32 *)((u8 *)D_800C4488[identity] + offset), (u32)block);
+            func_1503D438(&((*(u32 **)((u8 *)D_800C4488 + wordIndex)))[index], (u32)block);
+            func_1503D368(*(u32 *)((u8 *)(*(u32 **)((u8 *)D_800C4488 + wordIndex)) + offset), (u32)block);
             index++;
             offset += 4;
         } while (index < D_800C4778[identity]);
@@ -96,8 +99,8 @@ s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
     offset = 0;
     if (boundary != 0) {
         do {
-            func_1503D438(&(D_800C48F0[identity])[index], (u32)block);
-            func_1503D368(*(u32 *)((u8 *)D_800C48F0[identity] + offset), (u32)block);
+            func_1503D438(&((*(u32 **)((u8 *)D_800C48F0 + wordIndex)))[index], (u32)block);
+            func_1503D368(*(u32 *)((u8 *)(*(u32 **)((u8 *)D_800C48F0 + wordIndex)) + offset), (u32)block);
             index++;
             offset += 4;
         } while ((u32)index < boundary);
@@ -107,10 +110,14 @@ s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
     if (extras != 0) {
         failed = func_1503DC3C(identity);
         if (failed == 0) {
+            index = 0;
             offset = 0;
-            for (index = 0; index < D_800C4778[identity]; index++) {
-                func_1510CE60(*(u32 *)((u8 *)D_800C4488[identity] + offset), 0, 0, 0x3E, 0);
-                offset += 4;
+            if (D_800C4778[identity] > 0) {
+                do {
+                    func_1510CE60(*(u32 *)((u8 *)(*(u32 **)((u8 *)D_800C4488 + wordIndex)) + offset), 0, 0, 0x3E, 0);
+                    index++;
+                    offset += 4;
+                } while (index < D_800C4778[identity]);
             }
         }
     }
@@ -133,23 +140,23 @@ s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
         }
     }
     if (failed != 0) {
-        if (D_800C6360[identity] != NULL) {
-            func_10004074(D_800C6360[identity]);
+        if ((*(u8 **)((u8 *)D_800C6360 + wordIndex)) != NULL) {
+            func_10004074((*(u8 **)((u8 *)D_800C6360 + wordIndex)));
         }
         func_1503DD1C(identity);
-        cleanupSlot = &D_800C5C08[identity];
+        cleanupSlot = &(*(u8 **)((u8 *)D_800C5C08 + wordIndex));
         if (*cleanupSlot != NULL) {
             func_10004074(*cleanupSlot);
             *cleanupSlot = NULL;
         }
-        cleanupSlot = &D_800C6070[identity];
+        cleanupSlot = &(*(u8 **)((u8 *)D_800C6070 + wordIndex));
         if (*cleanupSlot != NULL) {
             func_10004074(*cleanupSlot);
             *cleanupSlot = NULL;
         }
-        if (D_800D19A0[identity] != NULL) {
-            func_10004074(D_800D19A0[identity] - 0x38);
-            D_800D19A0[identity] = NULL;
+        if ((*(u8 **)((u8 *)D_800D19A0 + wordIndex)) != NULL) {
+            func_10004074((*(u8 **)((u8 *)D_800D19A0 + wordIndex)) - 0x38);
+            (*(u8 **)((u8 *)D_800D19A0 + wordIndex)) = NULL;
         }
     }
 done:

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f8fac55; tools are committed before the consumer pin.
+  checkpoint pins tools 5a5e17e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed main resource-loader private-layout/count-schedule improvement:
+[Note 1264](WORKING_NOTES/1264-game-main-resource-loader-private-layout-and-count-schedule-improvement-20261011.md):
+complete func_1503CF20 keeps 274 words/original 0x78 frame/S0..S6 and recovers
+request output +0x6C, boundary +0x68, half-index +0x4C, unmasked count store,
+temporary-register cycle and event-opening order. Raw differences 98 -> 24,
+no guards/profile changes; still not byte-exact. Twelve final tests and 32
+fresh older loader tests pass, public faults/native32/owner/padders/actual
+chain within documented bounds. Only 92 target ELF bytes change; every other
+byte/extent/metadata/data/guard/CSV exact. No credit, README unchanged.
+Five historical experiment tests pass; the exact remaining-word partition
+is verified, with 250 words directly byte-exact and no broad normalization.
+Fresh matching totals stay Game 2,789/4,822, total 3,462/5,495, zero address
+drift / 2,033 different. Mounted tools 5a5e17e is banked; no push.
+Continue this same full function's two spill slots, request-error return,
+first-count delay initialization and cleanup register transfers.
 
 Latest installed main resource-loader original-frame improvement:
 [Note 1263](WORKING_NOTES/1263-game-main-resource-loader-original-frame-improvement-20261011.md):

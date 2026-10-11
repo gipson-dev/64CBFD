@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Main Resource Loader Private Layout And Count Schedule - 2026-10-11
+
+[Note 1264](WORKING_NOTES/1264-game-main-resource-loader-private-layout-and-count-schedule-improvement-20261011.md):
+
+- [x] Preserve the complete 274-word loader/original 0x78 frame/S0..S6 and continuous S5 lifetime, without guards or profile changes.
+- [x] Recover original request-output +0x6C, boundary +0x68 and half-index +0x4C slots using declaration order and the explicit typed word-table byte displacement.
+- [x] Recover unmasked initial count store, separate masked branch value, temporary-register cycle and index-before-offset event opening; raw differences 98 -> 24.
+- [x] Pass twelve final selected tests and 32 fresh older loader tests, all reachable original/current words, public faults/aliases/native32/owner/padders and actual bounded chain.
+- [x] Pass five historical status-join regressions and verify the exact 24-word partition; all other 250 words emit directly byte-exact from C.
+- [x] Audit only 92 changed target ELF bytes; every other byte/extent/metadata/data/guard/CSV exact, no matching or conversion credit, README aggregates unchanged.
+- [x] Complete the 60-form diagnostic sweep, all WSL tools checks/native py_compile and verify the older sibling's 18 old fingerprints/HEAD unchanged, copying only two absent new paths.
+- [x] Verify fresh unchanged matching totals and bank mounted tools 5a5e17e before the consumer source/docs/pin checkpoint; no push.
+- [ ] Recover the two remaining spill slots, first-count delay initialization, request-error return and cleanup register transfers in this same full routine; finish all 24 raw differences.
+- [ ] Qualify original private-frame faults and deeper helper/heap/hardware/renderer/gameplay behavior separately; the wider Game goal remains active.
+
 ## Main Resource Loader Original-Frame Improvement - 2026-10-11
 
 [Note 1263](WORKING_NOTES/1263-game-main-resource-loader-original-frame-improvement-20261011.md):
@@ -12,7 +27,8 @@
 - [x] Preserve correct unchanged README aggregate rows and separate detailed updates; no matching/conversion credit.
 - [x] Pass five fresh prior-experiment regressions, the 46-form complete diagnostic sweep, consumer/mounted/older WSL tools checks and native py_compile; preserve the older sibling's 16 existing fingerprints/history.
 - [x] Bank mounted tools f8fac55 before the consumer source/docs/pin commit; no push or older-sibling history changes.
-- [ ] Recover original private stack slots, initial count store/mask/delay, event initialization and request-error control; finish the remaining 98 raw differences in this same full function.
+- [x] Recover original request-output/boundary/half-index slots, initial unmasked store/separate masked branch operand and event initialization in Note 1264.
+- [ ] Recover remaining main/word spill slots, first-count delay initialization, request-error control and cleanup register transfers; 24 raw differences remain in this same full function.
 - [ ] Recover deeper helper/heap/hardware/renderer/gameplay behavior separately; the wider Game goal remains active.
 
 ## Main Resource Loader Status-Join Experiment - 2026-10-11

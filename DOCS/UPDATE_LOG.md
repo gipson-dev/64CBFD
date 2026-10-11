@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-11 Main Resource Loader Private Layout And Count Schedule
+
+[Note 1264](WORKING_NOTES/1264-game-main-resource-loader-private-layout-and-count-schedule-improvement-20261011.md):
+complete 274-word/original-frame func_1503CF20 recovers output/boundary/
+half-index slots, unmasked count store/register cycle and event opening.
+Raw differences 98 -> 24, no guards/profile changes; twelve final selected,
+32 older and five historical tests pass. Only 92 target ELF bytes change;
+every other byte/extent/metadata/data/guard/CSV exact. No credit or root README narrative.
+Tools first, older preserved/no push; same function's remaining four groups
+of raw differences and separate runtime gates stay open.
+
 ## 2026-10-11 Main Resource Loader Original-Frame Improvement
 
 [Note 1263](WORKING_NOTES/1263-game-main-resource-loader-original-frame-improvement-20261011.md):
