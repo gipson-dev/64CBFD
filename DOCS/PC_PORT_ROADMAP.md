@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Record Transform Setup Direct Match - 2026-10-11
+
+[Note 1279](WORKING_NOTES/1279-game-record-transform-setup-direct-match-20261011.md):
+
+- [x] Recover complete five-argument setup, signed -1 type gate, live homes/bank/group, ten-argument decomposition, snapshot and ordered normalized direction.
+- [x] Emit all 141 words directly with existing O2/g3/frame 0xD8; no guards/drops/profile/header/caller-body changes, assembly decomposer preserved.
+- [x] Pass thirteen pre-install/thirteen installed tests, native32 O2/O0, actual retail copy/inverse/multiply and dispatcher/predicate/setup chain within documented boundaries.
+- [x] Preserve 21 neighbors/pools/both padders and every other ELF byte/data/guard/seven inputs; only 445 target/extent bytes change.
+- [x] Measure +1 matching only: Game 2,800/4,822, total 3,473/5,495, zero drift / 2,022 different; root README aggregates only.
+- [x] Bank tools 036e55c before consumer source/docs/pin; shared checks green, older HEAD/49 fingerprints preserved/two absent copies, no push.
+- [ ] Recover and qualify next func_1503E82C, 138 words / 138 differences, including its complete record-transform/update contract.
+- [ ] Recover remaining callees and remove existing guards; independent hardware/FCSR/gameplay acceptance and full Game goal remain open.
+
 ## Record Mask Teardown Guarded Match - 2026-10-11
 
 [Note 1278](WORKING_NOTES/1278-game-record-mask-teardown-guarded-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve all 21 owner neighbors/pools/both padders and all other ELF bytes; only 287 target/extent bytes change, original guard prefix plus two rows only.
 - [x] Measure +1 matching only: Game 2,799/4,822, total 3,472/5,495, zero drift / 2,023 different; root README aggregates only.
 - [x] Bank tools 1c81a02 before consumer source/guards/docs/pin; shared checks pass, older HEAD/47 fingerprints preserved/two absent copies, no push.
-- [ ] Recover and qualify next func_1503E3C4, 141 words / 136 differences, including its five-argument setup and floating-point contract.
+- [x] Recover and qualify complete func_1503E3C4 directly in Note 1279, including its five-argument setup and bounded floating-point contract.
 - [ ] Remove the new spill pair and remaining third-loader/parent/pair guards; deeper callbacks/allocator/hardware/gameplay and full Game goal stay open.
 
 ## Record State Dispatcher Direct Match - 2026-10-11

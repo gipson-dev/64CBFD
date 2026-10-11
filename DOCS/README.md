@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Record transform setup direct match](WORKING_NOTES/1279-game-record-transform-setup-direct-match-20261011.md):
+  complete141 direct C, no guards/profile/caller-body changes; thirteen
+  pre-install/thirteen installed tests, native32 and connected retail helpers/
+  dispatcher chain pass within documented boundaries. Only 445 target/extent
+  ELF bytes change; 21 neighbors/data/guards/seven inputs exact, +1 matching.
+  Tools 036e55c first, older work preserved/no push, README aggregates only.
+  Next func_1503E82C, 138/138 differences; deeper callees/Game goal remain open.
+
 - [Record mask teardown guarded match](WORKING_NOTES/1278-game-record-mask-teardown-guarded-match-20261011.md):
   complete 89-word body, 87 direct words/two closed spill guards,
   linked exact but not direct C;

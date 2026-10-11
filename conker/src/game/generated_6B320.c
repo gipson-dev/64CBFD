@@ -13,7 +13,10 @@ extern void (*D_8008443C[])(s32);
 extern void (*D_80084448[])(s32);
 s32 allocate_memory(s32, s32, s32, s32);
 s32 func_1503E1F4(s32, s32);
-s32 func_1503E3C4();
+void func_1503E3C4(s32, s32, s32, struct04 *, s32);
+void func_150499A0(f32 [4][4], f32 [4][4]);
+void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
+void func_1503E5F8(f32 [4][4], f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32 *);
 s32 func_1503EA54();
 s32 func_1503E82C();
 extern u8 *D_80084460[];
@@ -133,8 +136,53 @@ void func_1503E260(s32 slot) {
     }
 }
 
-s32 func_1503E3C4() {
-    return 0;
+void func_1503E3C4(s32 slot, s32 index, s32 offset, struct04 *record, s32 absolute) {
+    s32 type;
+    f32 matrix[4][4];
+    f32 inverse[4][4];
+    struct127 *actor;
+    f32 x;
+    f32 y;
+    f32 z;
+    f32 length;
+
+    actor = &D_800CC2D0[slot];
+    bcopy((f32 (*)[4][4])actor->unk1D4 + (index + offset), matrix, sizeof(matrix));
+    if (absolute != 0) {
+        type = -1;
+    } else {
+        type = D_80084454[((u8 *)&D_800C6660[slot])[0xE]][index];
+    }
+    if (type != -1) {
+        func_150499A0(((f32 (*)[4][4])actor->unk1D4)[type], inverse);
+        matrix[1][3] = 0.0f;
+        matrix[0][3] = 0.0f;
+        matrix[2][3] = 0.0f;
+        matrix[3][3] = 1.0f;
+        func_150A7A48(matrix, inverse, matrix);
+    }
+    func_1503E5F8(matrix, &((f32 *)record)[0], &((f32 *)record)[1], &((f32 *)record)[2],
+        &((f32 *)record)[3], &((f32 *)record)[4], &((f32 *)record)[5], &((f32 *)record)[6], &((f32 *)record)[7], &((f32 *)record)[8]);
+    ((f32 *)record)[9] = ((f32 *)record)[0];
+    ((f32 *)record)[10] = ((f32 *)record)[1];
+    ((f32 *)record)[11] = ((f32 *)record)[2];
+    ((f32 *)record)[12] = ((f32 *)record)[3];
+    ((f32 *)record)[13] = ((f32 *)record)[4];
+    ((f32 *)record)[14] = ((f32 *)record)[5];
+    ((f32 *)record)[15] = ((f32 *)record)[6];
+    ((f32 *)record)[16] = ((f32 *)record)[7];
+    ((f32 *)record)[17] = ((f32 *)record)[8];
+    x = ((f32 *)record)[9] - actor->x_position;
+    y = ((f32 *)record)[10] - actor->y_position - 30.0f;
+    z = ((f32 *)record)[11] - actor->z_position;
+    length = sqrtf(x*x + y*y + z*z);
+    if (length == 0.0f) {
+        length = 1.0f;
+    }
+    length = 1.0f / length;
+    ((f32 *)record)[18] = x * length;
+    ((f32 *)record)[19] = y * length;
+    ((f32 *)record)[20] = z * length;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_6B320/func_1503E5F8.s")

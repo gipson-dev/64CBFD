@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1279](WORKING_NOTES/1279-game-record-transform-setup-direct-match-20261011.md):
+func_1503E3C4 complete141 direct C, no guards/profile/caller-body changes.
+Thirteen pre-install/thirteen installed tests pass, native32 and connected
+retail helpers/dispatcher chain within documented boundaries. Only 445
+target/extent ELF bytes change, 21 neighbors/data/guards/seven inputs exact.
+Game 2,800/4,822, total 3,473/5,495, zero drift / 2,022 different; +1 matching.
+Tools 036e55c first, older HEAD/49 fingerprints preserved/two absent copies,
+no push; README aggregates only. Next func_1503E82C, 138/138 differences.
+Remaining callees/guards and independent hardware/gameplay work stay open.
+
+2026-10-11:
 [Note 1278](WORKING_NOTES/1278-game-record-mask-teardown-guarded-match-20261011.md):
 func_1503E260: complete 89-word body, 87 direct words and two closed private
 spill guards, all linked exact, not direct C. Eleven pre-install/eleven
