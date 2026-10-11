@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Animation child cleanup direct match](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):
+  all 66 words/original 0x30 frame directly from C, no guards. Nine final
+  tests/both tools checks pass, full fault pairs/native32, both padding
+  routes and actual complete two-call caller; 30 neighbors/data/guards/CSV
+  exact, +1 matching only. Next: full 33-word record-index query; runtime open.
+
 - [Animation state allocation direct match](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):
   all 51 words/original 0x28 frame directly from C, no new guards. Typed
   constructor scale call preserves its full fingerprint. Ten final tests/

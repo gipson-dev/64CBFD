@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1251](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):
+recover full func_150836CC, all 66 words/original 0x30 frame directly from
+C, no guards. Nine final tests/both tools checks pass, full fault pairs/
+native32/rebases, both padding routes and actual complete two-call caller.
+All 30 neighbors/data/guards/CSV exact; only target slot/extent changes.
+Game 2,783/4,821, total 3,456/5,494, zero drift; +1 matching only.
+Tools 71822b6 first, older dirty mirror preserved, no push. Next: full
+33-word func_15083E0C; real reset/child/allocator/gameplay stays separate.
+
+2026-10-11:
 [Note 1250](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):
 recover typed func_150838EC, all 51 words/original 0x28 frame directly from
 C, no guards. Clean typed constructor scale call without changing its full

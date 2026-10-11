@@ -136,8 +136,37 @@ u8 *func_15083568(u8 *actor, s32 animation, f32 scale, s32 mode) {
     return created;
 }
 
-s32 func_150836CC() {
-    return 0;
+void func_150302F0(u8 *, s32);
+u8 *func_1505F0AC(u8);
+void func_15060F28(u8 *, s32);
+
+void func_150836CC(u8 *actor, s32 animation) {
+    AnimationDescriptor15083568 *descriptor;
+    u8 *record;
+    u8 *records;
+    u8 *child;
+    s32 i;
+
+    func_150302F0(actor, animation);
+    animation--;
+    descriptor = &D_80086CC4[(u32)animation];
+    records = descriptor->records;
+    i = 0;
+    if (descriptor->count > 0) {
+        record = records;
+        do {
+            if (record[3] == 0) {
+                child = func_1505F0AC(record[0]);
+                if (child != NULL) {
+                    if ((s32)((u32)actor - (u32)D_800CC2D0) / 0x32C + 1 == child[0x65]) {
+                        func_15060F28(child, 0);
+                    }
+                }
+            }
+            i++;
+            record += 16;
+        } while (i < descriptor->count);
+    }
 }
 
 extern u8 *D_800D1C90[];

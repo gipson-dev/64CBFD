@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-11 Animation Child Cleanup Direct Match
+
+[Note 1251](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):
+recover func_150836CC, all 66 words/original 0x30 frame directly from C,
+no guards. Preserve reset ordering, cached records, live count and signed
+parent-slot cleanup. Nine final tests/both tools checks pass, 866 full fault
+pairs, 8,192 native32 cases, both padding routes and actual two-call caller.
+All 30 neighbors/data/guards/CSV exact; only target slot/extent changes.
+Game 2,783/4,821 (57.73%), total 3,456/5,494 (62.90%), zero drift / 2,038
+different; +1 matching only. Tools 71822b6 first, no push, older dirty mirror
+preserved. Next: full 33-word func_15083E0C; real child/SDK/gameplay open.
+
 ## 2026-10-11 Animation State Allocation Direct Match
 
 [Note 1250](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):

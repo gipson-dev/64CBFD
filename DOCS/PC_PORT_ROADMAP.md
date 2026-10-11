@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Animation Child Cleanup Direct Match - 2026-10-11
+
+[Note 1251](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):
+
+- [x] Recover full void func_150836CC; all 66 words/original 0x30 frame emit directly from C, no new guards.
+- [x] Preserve reset-before-descriptor lookup, cached record cursor, live unsigned count, signed parent-slot comparison and conditional cleanup.
+- [x] Pass nine final tests: independent references, 866 fired full fault pairs, eleven effective IDO negatives, rebases and 8,192 native32 cases.
+- [x] Execute actual complete 35-word two-call caller in 32 cases/64 runs and qualify ordered helper calls/final actor clears.
+- [x] Preserve 30 neighbors/data/guards/CSV through both production padding routes and the whole linked ELF audit; both tools checks pass.
+- [x] Bank tools 71822b6 first, preserve older dirty mirror, update README aggregate rows only; no push.
+- [x] Measure Game 2,783/4,821, total 3,456/5,494, zero drift; +1 matching, no converted credit.
+- [ ] Recover complete 33-word func_15083E0C record-index query and its actual caller return contract.
+- [ ] Finish timeline matching and real reset/child/allocator/hardware/renderer/gameplay acceptance.
+
 ## Animation State Allocation Direct Match - 2026-10-11
 
 [Note 1250](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):
@@ -12,7 +26,7 @@
 - [x] Preserve 30 neighbors/data/guards/CSV; only target ELF slot and 12-to-204 symbol extent change, both tools checks pass.
 - [x] Bank tools ed89891 first, preserve older dirty mirror and update README aggregate rows only, no push.
 - [x] Measure Game 2,782/4,821, total 3,455/5,494, zero drift; +1 matching credit, no converted credit.
-- [ ] Recover full 66-word func_150836CC with actual callback/descriptor/child-parent cleanup semantics.
+- [x] Recover and directly match full 66-word func_150836CC in Note 1251 with actual callback/descriptor/child-parent cleanup semantics.
 - [ ] Finish timeline matching and actual allocator/SDK/resource/hardware/renderer/gameplay acceptance.
 
 ## Actor Resource Fields Direct Match - 2026-10-11

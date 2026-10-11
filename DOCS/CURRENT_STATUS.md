@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ed89891; tools are committed before the consumer pin.
+  checkpoint pins tools 71822b6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete animation-state allocation direct match:
+Latest complete descriptor-driven child cleanup direct match:
+[Note 1251](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):
+func_150836CC emits all 66 words/original 0x30 frame directly from C,
+no guards. Recover reset-before-lookup, cached records, live descriptor count,
+signed parent-slot division and gated child cleanup. Nine final tests/both
+tools checks pass: 866 full fault pairs, 8,192 native32 cases, rebases,
+both production padding routes and actual complete two-call caller. All 30
+neighbors/data/guards/CSV exact; only target ELF slot/extent changes. Game
+2,783/4,821 (57.73%), total 3,456/5,494 (62.90%), zero drift / 2,038
+different; +1 matching only. Tools 71822b6 first, no push, older mirror
+preserved. Next: full 33-word func_15083E0C record-index query; runtime open.
+
+Previous complete animation-state allocation direct match; cleanup finished in Note 1251:
 [Note 1250](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):
 func_150838EC emits all 51 words/original 0x28 frame directly from C,
 no new guards. Recover table gates, NULL result store/failure return, 64-byte
