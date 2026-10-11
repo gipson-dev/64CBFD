@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Complete Animation Node Constructor Byte Match
+
+[Note 1238](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):
+restore full func_15030AF4, all 152 words / 608 bytes, original 0x30 frame
+and 47 checked initialization-scheduling/register guards. Ten final tests/
+both tools checks pass; complete stacked ABI, failure gates, native32 and
+actual caller/action-consumer chain with eight retail samples qualify.
+Only target slot/extent changes; 39 neighbors and all other ELF/data/CSV
+bytes exact. Game 2,773/4,821, total 3,446/5,494, zero drift / 2,048 different.
++1 matching credit, no conversion credit. Tools d2ad015 first, no push.
+Next: full 96-word func_1502FFD8; resource/cleanup stubs and runtime stay open.
+
 ## 2026-10-10 Complete Actor Animation Constructor Byte Match
 
 [Note 1237](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 975e23b; tools are committed before the consumer pin.
+  checkpoint pins tools d2ad015; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest complete animation node constructor restored and byte-exact:
+[Note 1238](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):
+func_15030AF4 replaces its zero placeholder with all 152 semantic words,
+original 0x30 frame and 47 checked initialization-scheduling/register guards.
+Ten final tests and both tools checks pass; typed thirteen-argument ABI,
+nullable allocations/rollback decisions, 528,384 native32 runs, actual
+89-word caller and 113-word action consumer/eight retail samples qualify.
+All 39 neighbors and other ELF/data/symbol bytes are exact; only target
+slot/extent changes. Conversion CSV unchanged; +1 matching credit only.
+Game 2,773/4,821 (57.52%), total 3,446/5,494 (62.72%), zero drift /
+2,048 different. Tools d2ad015 first, no push. Next: full 96-word
+func_1502FFD8; resource/cleanup stubs and hardware/live gameplay remain open.
 
 Latest complete actor animation constructor restored and byte-exact:
 [Note 1237](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):

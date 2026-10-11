@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Animation Node Constructor Byte Match - 2026-10-10
+
+[Note 1238](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):
+
+- [x] Recover the complete thirteen-argument factory: duplicates, live linking, fields, optional allocation and rollback calls.
+- [x] Emit all 152 semantic words/original 0x30 frame; qualify 47 checked scheduling/register guards with no body fill.
+- [x] Pass 36,960 ordered guest runs, 948 fired alias/fault pairs and nine independent rebased links.
+- [x] Pass eight effective IDO/two native negatives and 528,384 native32 optimized/unoptimized runs.
+- [x] Connect actual 89-word caller/113-word action consumer and eight ROM-verified descriptor samples; 1,049 fault pairs.
+- [x] Qualify all 256 downstream action bytes against an independent reference in 4,096 runs.
+- [x] Preserve all 39 neighbors and protected data; audit only target slot/extent changed, all other ELF/CSV exact.
+- [x] Pass ten final tests/both tools checks; +1 matching credit, no extra conversion credit.
+- [x] Bank tools d2ad015 first; preserve older dirty mirror, no push, root README aggregate rows only.
+- [ ] Recover full 96-word func_1502FFD8 and qualify the actual resource-loading connection.
+- [ ] Restore full 102-word func_15030158 cleanup and 182-word func_15083AC8; runtime remains separate acceptance.
+
 ## Complete Actor Animation Constructor Byte Match - 2026-10-10
 
 [Note 1237](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):
@@ -14,7 +30,7 @@
 - [x] Preserve 29 unaffected neighbors; audit only two explicit slots/extents changed, all other ELF/data/CSV exact.
 - [x] Pass nine final tests/both tools checks; +1 matching credit, no extra conversion credit.
 - [x] Bank tools 975e23b first; preserve older dirty mirror, no push, root README aggregate rows only.
-- [ ] Recover full 152-word func_15030AF4 and qualify its actual constructor connection.
+- [x] Recover full 152-word func_15030AF4 and qualify its actual constructor connection in Note 1238.
 - [ ] Restore full 182-word func_15083AC8; typed stub, sampled inputs and models are not gameplay acceptance.
 
 ## Actor Animation Request Direct Conversion - 2026-10-10

@@ -107,8 +107,96 @@ s32 func_15030468() {
     return 0;
 }
 
-s32 func_15030AF4() {
-    return 0;
+void func_15031A50(u8 *, u8 *);
+
+u8 *func_15030AF4(u8 *actor, s32 kind, s32 index, s32 flags,
+    s32 slot, s32 mode, s32 duration, s32 key, s32 extra, u8 *values,
+    s32 selector, s32 parent, s32 joint) {
+    u8 *node;
+    u8 *next;
+    s32 failed;
+
+    if (actor[0x3B] == 0) {
+        return 0;
+    }
+    if (!(flags & 8)) {
+        node = D_800C3EE0;
+        if (node != 0) {
+            do {
+                next = *(u8 **)(node + 0x54);
+                if (actor[0x3B] == node[0] && key == node[6] && kind == node[1]) {
+                    return 0;
+                }
+                node = next;
+            } while (next != 0);
+        }
+    }
+    node = allocate_memory(0x5C, 1, 0, 2);
+    if (node == 0) {
+        return 0;
+    }
+    failed = 0;
+    if (D_800C3EE0 != 0) {
+        *(u8 **)(D_800C3EE0 + 0x58) = node;
+    }
+    *(u8 **)(node + 0x54) = D_800C3EE0;
+    *(u8 **)(node + 0x58) = 0;
+    D_800C3EE0 = node;
+    node[0] = actor[0x3B];
+    node[1] = kind;
+    *(s32 *)(node + 0x24) = 0;
+    *(s32 *)(node + 0x28) = 0;
+    *(s32 *)(node + 0x2C) = 0;
+    *(s32 *)(node + 0x30) = 0;
+    node[3] = 0xFF;
+    *(u8 **)(node + 0x44) = 0;
+    node[4] = flags;
+    node[6] = key;
+    *(f32 *)(node + 0x40) = 1.0f;
+    node[2] = index;
+    *(s32 *)(node + 0x38) = 0;
+    *(s32 *)(node + 0x3C) = 0;
+    node[8] = 0;
+    node[9] = 0;
+    *(s16 *)(node + 0x18) = 0;
+    *(s16 *)(node + 0x1A) = 0;
+    node[7] = extra;
+    *(u16 *)(node + 0xA) = *(u16 *)(values + 0);
+    *(u16 *)(node + 0xC) = *(u16 *)(values + 2);
+    *(u16 *)(node + 0xE) = *(u16 *)(values + 4);
+    *(u8 **)(node + 0x48) = 0;
+    node[0x17] = selector;
+    node[0x16] = mode;
+    node[0x15] = slot;
+    *(s16 *)(node + 0x1E) = parent;
+    node[0x13] = 0;
+    *(u8 **)(node + 0x4C) = 0;
+    *(u8 **)(node + 0x50) = 0;
+    node[5] = 0;
+    *(s16 *)(node + 0x22) = 0;
+    *(s16 *)(node + 0x20) = joint;
+    if (mode == 4 || (flags & 4)) {
+        *(u8 **)(node + 0x34) = allocate_memory(0x80, 1, 2, 2);
+        if (*(u8 **)(node + 0x34) == 0) {
+            failed = 1;
+        }
+    } else {
+        *(u8 **)(node + 0x34) = 0;
+    }
+    if (duration == 0) {
+        *(u16 *)(node + 0x1C) = 0xFFFF;
+    } else {
+        *(u16 *)(node + 0x1C) = duration;
+    }
+    if (failed == 0) {
+        failed |= func_1502FFD8(node, actor);
+    }
+    if (failed != 0) {
+        func_15030158(node, 1);
+        return 0;
+    }
+    func_15031A50(node, actor);
+    return node;
 }
 
 void func_15030D54(register u8 *node, f32 x, f32 y, f32 z, f32 angle_x, f32 angle_y, f32 angle_z) {

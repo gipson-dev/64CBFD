@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Complete animation node constructor byte match](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):
+  full 152-word C with 47 checked scheduling guards; ten final tests pass.
+  Actual caller/action consumer, native32 and eight retail samples qualify.
+  All 39 neighbors and other ELF/data/CSV bytes exact; +1 matching credit.
+  Next: full func_1502FFD8; actual resource/cleanup bodies and gameplay stay open.
+
 - [Complete actor animation constructor byte match](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):
   full 89-word C with 17 checked guards; nine final tests pass. Actual caller
   chain and eight retail descriptor samples qualify. Explicit helper signature

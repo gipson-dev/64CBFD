@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-10:
+[Note 1238](WORKING_NOTES/1238-game-complete-animation-node-constructor-byte-match-20261010.md):
+recover full func_15030AF4, all 152 words / original 0x30 frame and 47 checked
+scheduling guards. Ten final tests/both tools checks pass; typed stacked ABI,
+native32, actual caller/action consumer and eight retail samples qualify.
+All 39 neighbors and other ELF/data/CSV bytes exact. Game 2,773/4,821,
+total 3,446/5,494, zero drift; +1 matching credit only. Tools d2ad015 first,
+no push. Next: full 96-word func_1502FFD8; resource/cleanup bodies stay open.
+
+2026-10-10:
 [Note 1237](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):
 recover full func_15083568, all 89 words / original 0x68 frame and 17 checked
 guards. Nine final tests/both tools checks pass; actual caller chain, live
