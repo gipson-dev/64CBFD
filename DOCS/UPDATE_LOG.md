@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Resource Transition Byte Match
+
+[Note 1231](WORKING_NOTES/1231-game-complete-actor-resource-transition-byte-match-20261010.md): install full func_150837D4, all 70 words / 280 bytes,
+original 0x30 frame and 15 checked register/common-epilogue guards. Nine final
+tests/both tools checks pass; signed height, live table reloads, mixed float ABI,
+all fired prefixes and actual banked-selector connection qualify.
+Whole ELF changes only its slot/extent; old guard prefix/data/conversion exact.
+Game 2,766/4,816, total 3,439/5,489, zero drift; +1 credit. Tools 49e2558 first,
+no push. Next: full 28-word func_1507EABC; actual helpers/runtime remain open.
+
 ## 2026-10-10 Complete Actor Animation Selector Byte Match
 
 [Note 1230](WORKING_NOTES/1230-game-complete-actor-animation-selector-byte-match-20261010.md): install full func_1502FBE8, all 98 words / 392 bytes,

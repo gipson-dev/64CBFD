@@ -13967,3 +13967,18 @@ generated_58F80,func_1502FBE8,0xF4,0x3045FFFF,0x3065FFFF,-,-,"Normalize closed a
 generated_58F80,func_1502FBE8,0x134,0xA6190084,0x3C063F80,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
 generated_58F80,func_1502FBE8,0x138,0xAFA00018,0xA6190084,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
 generated_58F80,func_1502FBE8,0x140,0x3C063F80,0xAFA00018,-,-,"Normalize closed animation selector register lives, retained spills and independent call schedule",,,false
+generated_AEB40,func_150837D4,0x88,0x03191021,0x03191821,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0x8C,0x8C480000,0x8C680000,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0x9C,0xAFA20020,0xAFA30020,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xB8,0x8FA20020,0x8FA30020,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xBC,0x8C4A0000,0x8C620000,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xC0,0x914B0012,0x904A0012,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xC4,0xA20B0005,0xA20A0005,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xD0,0x304700FF,0x304300FF,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xD4,0x00076040,0x00035840,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xD8,0x3C0D0000,0x3C0C0000,R_MIPS_HI16:D_800C5A90,R_MIPS_HI16:D_800C5A90,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xE0,0x01AC6821,0x018B6021,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xE4,0x95AD0000,0x958C0000,R_MIPS_LO16:D_800C5A90,R_MIPS_LO16:D_800C5A90,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xF0,0x51A00005,0x11800004,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xF4,0x8FBF001C,0x24060002,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AEB40,func_150837D4,0xFC,0x24060002,0x00603825,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false

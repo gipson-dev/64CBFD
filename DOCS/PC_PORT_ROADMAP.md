@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Resource Transition Byte Match - 2026-10-10
+
+[Note 1231](WORKING_NOTES/1231-game-complete-actor-resource-transition-byte-match-20261010.md):
+
+- [x] Recover full identity/reset/resource transition, signed height and live table-entry reread.
+- [x] Emit complete 70-word C/original 0x30 frame; qualify 15 register/common-epilogue guards without body fill.
+- [x] Pass full-width sentinel, all byte domains, live public/private aliases, 428 fired fault triplets and 15 independent links.
+- [x] Qualify actual 98-word selector, native32 mixed float ABI at O2/O0 and nine effective IDO/three native negatives.
+- [x] Preserve all 30 owner neighbors; install/rebuild/audit only 280 target bytes and symbol extent.
+- [x] Pass nine final tests/both tools checks; data/conversion/guard prefix exact, +1 matching credit.
+- [x] Bank tools 49e2558 first; preserve older dirty mirror, no push, root README aggregate rows only.
+- [ ] Convert full 28-word func_1507EABC and qualify its five-argument callback and post-call resets.
+- [ ] Independently qualify actual scale/canonical/archive helpers, hardware and live gameplay acceptance.
+
 ## Complete Actor Animation Selector Byte Match - 2026-10-10
 
 [Note 1230](WORKING_NOTES/1230-game-complete-actor-animation-selector-byte-match-20261010.md):
@@ -11,7 +25,8 @@
 - [x] Preserve all 37 owner neighbors; install/rebuild/audit only 392 target bytes and symbol extent.
 - [x] Pass nine final tests/both tools checks; data/conversion/guard prefix exact, +1 matching credit.
 - [x] Bank tools 0474fdc first and preserve independently dirty older mirror; no push, root README aggregates only.
-- [ ] Recover full 70-word func_150837D4 and independently qualify actual callback connections.
+- [x] Recover, qualify and install complete 70-word func_150837D4 in Note 1231.
+- [ ] Independently qualify actual scale/canonical/archive helper connections and runtime.
 - [ ] Keep other callbacks, hardware and live gameplay acceptance separate and open.
 
 ## Complete Tile Updater And Special Helper Byte Match - 2026-10-10

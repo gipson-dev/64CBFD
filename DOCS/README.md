@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor resource transition byte match](WORKING_NOTES/1231-game-complete-actor-resource-transition-byte-match-20261010.md):
+  install full 70-word routine with 15 checked guards; nine final tests,
+  full linked audit, preserved prefix/data and +1 matching credit.
+  Next: full func_1507EABC; actual helpers/runtime remain separate open gates.
+
 - [Complete actor animation selector byte match](WORKING_NOTES/1230-game-complete-actor-animation-selector-byte-match-20261010.md):
   install full 98-word routine with 14 qualified guards; nine final tests,
   full linked audit, retained prefix/data and +1 matching credit.

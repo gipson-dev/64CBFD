@@ -106,8 +106,39 @@ s32 func_150836CC() {
     return 0;
 }
 
-s32 func_150837D4() {
-    return 0;
+extern u8 *D_800D1C90[];
+extern u16 D_800C5A90[];
+void func_15062BDC(u8 *, f32, f32);
+s32 func_15084D00(u8 *);
+u32 func_1502B020(u32 *, u32, ...);
+
+void func_150837D4(s32 slot, s32 identity, s32 unused) {
+    u8 *actor;
+    u8 **resource;
+
+    actor = D_800CC2D0 + (u32)slot * 0x32C;
+    actor[4] = identity;
+    if (identity == 255) {
+        *(s16 *)(actor + 0xE4) = 0;
+        *(s16 *)(actor + 0xE6) = 0;
+        *(s16 *)(actor + 0xE8) = 0;
+        *(s16 *)(actor + 0xD2) = 70;
+        *(s16 *)(actor + 0xD4) = 70;
+        *(s16 *)(actor + 0xD6) = 0;
+        *(s16 *)(actor + 0x160) = 0;
+        *(f32 *)(actor + 0xC8) = 0.0f;
+    } else {
+        resource = &D_800D1C90[identity];
+        *(f32 *)(actor + 0xC8) = (f32)*(s16 *)(*resource + 6);
+        func_15062BDC(actor, *(f32 *)(actor + 0x14C), *(f32 *)(actor + 0x150));
+        actor[5] = (*resource)[0x12];
+    }
+    identity = func_15084D00(actor);
+    actor[6] = identity;
+    identity &= 255;
+    if (D_800C5A90[identity] != 0) {
+        *(u32 *)(actor + 0x58) = func_1502B020(NULL, 2, 2, identity);
+    }
 }
 
 s32 func_150838EC() {
