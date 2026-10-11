@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Resource Preparation Caller Direct Match
+
+[Note 1258](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):
+func_1503DA9C replaces its zero-return stub with the full auxiliary/extras/
+live-callback/failure routine. All 104 words/original 0x48 frame directly
+match, no guards. Ten final tests pass: full caller coverage, 36,864 native32
+cases, 3,200 fired fault pairs, ten effective controls and actual buffer
+callee. All 14 neighbors/data/guards/CSV exact; 364 ELF bytes change only in
+target/extent/existing metadata order. Game 2,788/4,822 (57.82%), total
+3,461/5,495 (62.98%), zero drift / 2,034 different; +1 matching only.
+Tools 160bba0 first, older dirty work preserved, no push. Next: complete
+56-word func_1503DC3C extras loader; actual deeper loading/runtime stays open.
+
 ## 2026-10-11 Resource Buffer Preparation Guarded Match
 
 [Note 1257](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):

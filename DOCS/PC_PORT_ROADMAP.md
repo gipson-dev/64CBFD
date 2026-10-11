@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Resource Preparation Caller Direct Match - 2026-10-11
+
+[Note 1258](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):
+
+- [x] Recover full func_1503DA9C, all 104 words/original 0x48 frame directly from C, no guards or placeholder paths.
+- [x] Preserve word ABI, five loader arguments, auxiliary short circuit/cache gate, unsigned extras threshold and live count/list callback reloads.
+- [x] Reach all 104 retail words against an independent access/call/memory reference; qualify failure propagation and helper mutations.
+- [x] Pass ten final tests: 36,864 native32 cases, 3,200 fired fault pairs, nine independent links, aliases and ten effective IDO controls.
+- [x] Execute 4,608 cases through the actual matched 194-word buffer callee, covering all 104 caller words and allocation failures within documented deeper-helper bounds.
+- [x] Preserve all 14 owner neighbors/pools through both real padders; audit 364 changed ELF bytes only in target/extent/existing metadata ordering.
+- [x] Verify all 189,088 protected data bytes/720 owners, guard history, conversion CSV, tracked symbols/layout and auto assignments unchanged.
+- [x] Pass consumer/mounted/older WSL tools checks and new-file native py_compile; bank tools 160bba0 first, preserve older dirty files, no push.
+- [x] Measure Game 2,788/4,822 (57.82%), total 3,461/5,495 (62.98%), zero drift / 2,034 different; +1 matching only.
+- [ ] Recover and qualify complete 56-word func_1503DC3C extras loader, including live descriptor/count mutations and 0x80000000 failure sentinel.
+- [ ] Complete main resource loader, deeper callbacks/heap/hardware/renderer/gameplay acceptance separately.
+
 ## Resource Buffer Preparation Guarded Match - 2026-10-11
 
 [Note 1257](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):
@@ -12,7 +28,7 @@
 - [x] Complete wider dependency rebuild and both WSL tools checks, preserving unrelated compiler and graph safety warnings.
 - [x] Bank tools 8e07c9e first, preserve older dirty files, update only aggregate README rows; no push.
 - [x] Measure Game 2,787/4,822 (57.80%), total 3,460/5,495 (62.97%), zero drift / 2,035 different; +1 matching only, no converted credit.
-- [ ] Recover and qualify complete 104-word func_1503DA9C caller, including auxiliary and extras resource paths beyond the earlier bounded 60-word execution coverage.
+- [x] Recover and qualify complete 104-word func_1503DA9C caller in Note 1258; all words reached, auxiliary/extras paths and actual buffer-callee connection tested.
 - [ ] Eliminate normalization guards for a direct C match as further compiler recovery permits; do not describe the current guarded match as direct.
 - [ ] Complete actual resource loader/heap/hardware/renderer/gameplay acceptance separately.
 
@@ -29,7 +45,7 @@
 - [x] Bank tools 2a4183d first, preserve older dirty files, no push; README aggregate rows unchanged.
 - [x] Remeasure Game 2,786/4,822 and total 3,459/5,495, zero drift; no matching/conversion credit.
 - [x] Finish this same function's linked byte matching in Note 1257: reduce raw differences to 29 and qualify bounded register/copy-schedule normalization; direct C matching remains separate.
-- [ ] Complete actual resource loader/current C caller/heap/hardware/renderer/gameplay acceptance separately.
+- [ ] Complete actual resource loader/heap/hardware/renderer/gameplay acceptance separately; full C caller recovered in Note 1258.
 
 ## Resource Buffer Preparation Recovery - 2026-10-11
 
@@ -44,7 +60,7 @@
 - [x] Fresh matching totals remain Game 2,786/4,822 and total 3,459/5,495, zero drift; no inflated matching or conversion credit.
 - [x] Recover mode-one join and mode-two cursor setup in Note 1256; emit full retail length and reduce differences 130 -> 39.
 - [x] Finish this function's guarded linked byte match in Note 1257; 29 raw differences remain in unnormalized C, direct matching is not claimed.
-- [ ] Complete actual resource loader/current C caller/heap/hardware/renderer/gameplay acceptance separately.
+- [ ] Complete actual resource loader/heap/hardware/renderer/gameplay acceptance separately; full C caller recovered in Note 1258.
 
 ## Record Identity Selector Direct Match - 2026-10-11
 

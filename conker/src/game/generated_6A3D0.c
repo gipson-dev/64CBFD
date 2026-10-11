@@ -120,8 +120,48 @@ s32 func_1503DA3C(s32 arg0, u32 arg1) {
     return result;
 }
 
-s32 func_1503DA9C() {
-    return 0;
+extern u8 *D_800C5C08[];
+extern u16 D_800C5628[];
+extern u32 *D_800C5338[];
+extern u16 D_800C4778[];
+extern u32 *D_800C4488[];
+s32 func_1503CF20();
+s32 func_1503DC3C();
+void func_150028BC(s32);
+void func_1510CE60(u32, s32, s32, s32, s32);
+s32 func_15084044(u8 *, s32);
+
+s32 func_1503DA9C(u8 *actor, s32 identity, s32 channel, s32 extras) {
+    u8 *config;
+    s32 index;
+    s32 result;
+    s32 tableOffset;
+
+    tableOffset = identity * 4;
+    config = *(u8 **)(actor + 0x144);
+    if ((*(u8 **)((u8 *)D_800D19A0 + tableOffset)) == NULL) {
+        result = func_1503CF20(identity, 0, config, extras, actor[0xAC]);
+    } else {
+        result = 0;
+        if (((config != NULL) && (*(u32 *)(config + 0x18) & 0x4000)) ||
+            (actor[0xAC] & 1)) {
+            if ((*(u8 **)((u8 *)D_800C5C08 + tableOffset)) == NULL) {
+                func_150028BC(identity);
+            }
+        }
+        if ((extras != 0) && (D_800C5628[identity] != 0)) {
+            if (*(*(u32 **)((u8 *)D_800C5338 + tableOffset)) < 0x10000000U) {
+                result = func_1503DC3C(identity);
+                for (index = 0; index < D_800C4778[identity]; index++) {
+                    func_1510CE60((*(u32 **)((u8 *)D_800C4488 + tableOffset))[index], 0, 0, 0x3E, 0);
+                }
+            }
+        }
+    }
+    if (result == 0) {
+        result = func_15084044(actor, channel);
+    }
+    return result;
 }
 
 s32 func_1503DC3C() {

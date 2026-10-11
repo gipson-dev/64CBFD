@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-11:
+[Note 1258](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):
+complete 104-word func_1503DA9C direct match, original 0x48 frame, no guards.
+Ten final tests/full caller coverage/native32/faults/live extras mutations/
+actual buffer callee pass. All 14 neighbors/data/guards/CSV exact; only
+target/extent/existing metadata order changes. +1 matching, zero drift;
+tools 160bba0 first, older preserved, no push. Next: full 56-word extras loader.
+
+2026-10-11:
 [Note 1257](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):
 complete func_15084044 guarded match, all 194 linked words/0x60 frame.
 165 words direct, 26 register-field/three copy-schedule guards; not a direct
