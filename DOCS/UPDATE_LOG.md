@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-11 Resource Extras Loader Direct Match
+
+[Note 1259](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):
+func_1503DC3C replaces its zero-return stub with complete live descriptor
+loading/publication, unsigned count and exact failure-sentinel handling.
+All 56 words/original 0x38 frame directly match, no guards. Ten final tests
+pass: publication/table/count aliases, 936 fired fault pairs, eleven
+effective IDO controls, 4,032 native32 cases and actual caller/extras/buffer
+chain. All other ELF bytes/14 neighbors/data/guards/CSV exact; only 170
+bytes change, 169 target and one extent. Game 2,789/4,822 (57.84%), total
+3,462/5,495 (63.00%), zero drift / 2,033 different; +1 matching only.
+Tools 563924a first, older dirty work preserved, no push. Next: complete
+274-word func_1503CF20 main loader, all publication and failure cleanup;
+deeper helper/hardware/gameplay acceptance remains separate.
+
 ## 2026-10-11 Resource Preparation Caller Direct Match
 
 [Note 1258](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):

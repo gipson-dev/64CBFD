@@ -54,11 +54,19 @@ confirmed.
 
 ## Planning and history
 
+- [Resource extras loader direct match](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):
+  all 56 func_1503DC3C words/original frame directly from complete C, no
+  guards. Ten final tests, live count/base publication aliases and actual
+  caller/extras/buffer chain pass. Only 170 target/extent ELF bytes change;
+  all other bytes/guards/CSV exact, +1 matching. Next: full 274-word main
+  loader including every failure cleanup; deeper runtime remains open.
+
 - [Resource preparation caller direct match](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):
   all 104 func_1503DA9C words/original frame directly from complete C, no
   guards. Ten final tests, full caller coverage, live extras mutations and
   actual buffer-callee failures pass. All other code/data/guards/CSV exact;
-  +1 matching only. Next: full 56-word extras loader; deeper runtime open.
+  +1 matching only. Its then-open extras loader is finished in Note 1259;
+  main resource loader/deeper runtime remain open.
 
 - [Resource buffer preparation guarded match](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):
   full 194-word func_15084044/retail frame, complete C plus 29 bounded

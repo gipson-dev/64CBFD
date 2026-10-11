@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Resource Extras Loader Direct Match - 2026-10-11
+
+[Note 1259](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):
+
+- [x] Recover complete func_1503DC3C, all 56 words/original 0x38 frame directly from C, no guards or placeholder paths.
+- [x] Preserve unsigned live count, 12-byte descriptor stride, four request arguments, post-callback/post-store base reloads and exact 0x80000000 error bit.
+- [x] Qualify descriptor publication that aliases/rebinds the pointer table or count; zero count never reads the descriptor base.
+- [x] Pass ten final tests: all 56 words reached, 936 fired fault pairs, eleven effective IDO controls, nine independent links and 4,032 native32 cases.
+- [x] Execute 6,144 connected cases through actual 104-word caller/56-word extras/194-word buffer code; reach all caller/extras words, with deeper callbacks explicitly bounded.
+- [x] Preserve all 14 owner neighbors/pools through both padders; only 170 ELF bytes change, 169 target and one extent.
+- [x] Verify every other ELF byte, 189,088 protected data bytes/720 owners, guard history, conversion CSV, tracked symbols/layout and auto assignments exact.
+- [x] Pass consumer/mounted/older WSL tools checks and new-file native py_compile; bank tools 563924a first, preserve older dirty work, no push.
+- [x] Measure Game 2,789/4,822 (57.84%), total 3,462/5,495 (63.00%), zero drift / 2,033 different; +1 matching only.
+- [ ] Recover and qualify complete 274-word func_1503CF20 main loader, original 0x78 frame, including all descriptor loops, helper failures and cleanup/free paths.
+- [ ] Complete deeper callbacks/heap/hardware/renderer/gameplay acceptance separately; full Game matching goal remains active.
+
 ## Resource Preparation Caller Direct Match - 2026-10-11
 
 [Note 1258](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):
@@ -13,7 +29,7 @@
 - [x] Verify all 189,088 protected data bytes/720 owners, guard history, conversion CSV, tracked symbols/layout and auto assignments unchanged.
 - [x] Pass consumer/mounted/older WSL tools checks and new-file native py_compile; bank tools 160bba0 first, preserve older dirty files, no push.
 - [x] Measure Game 2,788/4,822 (57.82%), total 3,461/5,495 (62.98%), zero drift / 2,034 different; +1 matching only.
-- [ ] Recover and qualify complete 56-word func_1503DC3C extras loader, including live descriptor/count mutations and 0x80000000 failure sentinel.
+- [x] Recover and qualify complete 56-word func_1503DC3C extras loader in Note 1259, including live descriptor/count mutations, self-aliasing publication and 0x80000000 failure sentinel.
 - [ ] Complete main resource loader, deeper callbacks/heap/hardware/renderer/gameplay acceptance separately.
 
 ## Resource Buffer Preparation Guarded Match - 2026-10-11

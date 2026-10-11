@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1259](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):
+complete 56-word func_1503DC3C direct match, original 0x38 frame, no guards.
+Ten final tests/all-word coverage/native32/faults/live publication aliases/
+actual caller-extras-buffer chain pass. All 14 neighbors/data/guards/CSV
+and all other ELF bytes exact; only 169 target/one extent byte changes.
++1 matching, zero drift; tools 563924a first, older preserved, no push.
+Next: full 274-word main loader, including every cleanup path; runtime open.
+
+2026-10-11:
 [Note 1258](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):
 complete 104-word func_1503DA9C direct match, original 0x48 frame, no guards.
 Ten final tests/full caller coverage/native32/faults/live extras mutations/

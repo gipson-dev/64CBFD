@@ -126,7 +126,7 @@ extern u32 *D_800C5338[];
 extern u16 D_800C4778[];
 extern u32 *D_800C4488[];
 s32 func_1503CF20();
-s32 func_1503DC3C();
+s32 func_1503DC3C(s32);
 void func_150028BC(s32);
 void func_1510CE60(u32, s32, s32, s32, s32);
 s32 func_15084044(u8 *, s32);
@@ -164,8 +164,37 @@ s32 func_1503DA9C(u8 *actor, s32 identity, s32 channel, s32 extras) {
     return result;
 }
 
-s32 func_1503DC3C() {
-    return 0;
+u32 func_1510D0EC(u32, s32, s32, s32);
+
+s32 func_1503DC3C(s32 identity) {
+    u16 *count;
+    s32 failed;
+    s32 index;
+    u32 **slot;
+    u32 *cursor;
+    s32 offset;
+    u32 loaded;
+
+    count = &D_800C5628[identity];
+    failed = 0;
+    index = 0;
+    if (*count > 0) {
+        slot = &D_800C5338[identity];
+        cursor = *slot;
+        offset = 0;
+        do {
+            loaded = func_1510D0EC(cursor[1], 0, 0x3E, 1);
+            *(u32 *)((u8 *)*slot + offset) = loaded;
+            cursor = (u32 *)((u8 *)*slot + offset);
+            if (*cursor == 0x80000000U) {
+                failed |= 0x10;
+            }
+            index++;
+            offset += 12;
+            cursor += 3;
+        } while (index < *count);
+    }
+    return failed;
 }
 
 s32 func_1503DD1C() {

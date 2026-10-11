@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 160bba0; tools are committed before the consumer pin.
+  checkpoint pins tools 563924a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete resource-preparation caller direct match:
+Latest complete resource-extras loader direct match:
+[Note 1259](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):
+func_1503DC3C emits all 56 words/original 0x38 frame directly from complete
+C, no guards. Preserve unsigned live count, 12-byte descriptors, publication
+base reloads including self-aliasing stores, and exact 0x80000000 failure
+sentinel. Ten final tests pass: all words reached, 936 fired fault pairs,
+eleven effective IDO controls, 4,032 native32 cases and 6,144 connected cases
+through actual 104-word caller/56-word extras/194-word buffer code.
+Only 170 ELF bytes change: 169 target and one extent; every other byte,
+all 14 neighbors/data/guards/CSV exact. WSL checks pass. Game 2,789/4,822
+(57.84%), total 3,462/5,495 (63.00%), zero drift / 2,033 different; +1 matching
+only. Tools 563924a first, no push, older dirty work preserved.
+Next: complete 274-word func_1503CF20 main loader, original 0x78 frame,
+including descriptor publication/relocation and every error-cleanup path.
+Deeper helpers/heap/hardware/renderer/gameplay remain separately open.
+
+Previous complete resource-preparation caller direct match:
 [Note 1258](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):
 func_1503DA9C emits all 104 retail words/original 0x48 frame directly from
 complete C, with no guards. Recover auxiliary/extras gates, unsigned descriptor
@@ -39,8 +55,8 @@ change: 324 target, two extent, 38 existing metadata-order bytes; all other
 code/data/names/values/guards/CSV exact. WSL checks pass. Game 2,788/4,822
 (57.82%), total 3,461/5,495 (62.98%), zero drift / 2,034 different; +1 matching
 only. Tools 160bba0 first, no push, older dirty work preserved.
-Next: full 56-word func_1503DC3C extras loader; main loader, deeper callbacks,
-heap/hardware/renderer/gameplay remain separate and open.
+The then-open full 56-word func_1503DC3C extras loader is directly matched
+in Note 1259; main loader, deeper callbacks/heap/hardware/gameplay stay open.
 
 Previous complete resource-buffer preparation guarded byte match:
 [Note 1257](WORKING_NOTES/1257-game-resource-buffer-preparation-guarded-match-20261011.md):
