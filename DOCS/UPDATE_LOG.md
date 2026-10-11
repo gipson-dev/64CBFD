@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-11 Child Actor Constructor Byte Match
+
+[Note 1248](WORKING_NOTES/1248-game-child-actor-constructor-byte-match-20261011.md):
+match all 182 words/original 0x38 frame of func_15083AC8 with unchanged
+semantic C and checked closed frame/base/register/schedule normalization.
+Full 182-word/22-relocation expectations protect 125 changed words and
+57 identity checks, no inserts/omissions. Thirteen final tests/both tools
+checks pass, including private frame/2,214 full fault pairs, public/native32/
+rebased/actual caller-helper qualification. All 30 neighbors/other ELF/
+metadata/data/CSV exact; old guard prefix retained. Game 2,780/4,821 (57.66%),
+total 3,453/5,494 (62.85%), zero drift / 2,041 different; +1 matching only.
+Tools a9694bd first, no push, older dirty mirror preserved. Next: full
+68-word func_150839B8; raw C still 182/0x50 with 125 differences and actual
+resource/allocator/hardware/gameplay behavior remains open.
+
 ## 2026-10-11 Child Actor Constructor Reconstruction
 
 [Note 1247](WORKING_NOTES/1247-game-child-actor-constructor-reconstruction-20261011.md):

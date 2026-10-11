@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Child Actor Constructor Byte Match - 2026-10-11
+
+[Note 1248](WORKING_NOTES/1248-game-child-actor-constructor-byte-match-20261011.md):
+
+- [x] Match all 182 words/original 0x38 frame using unchanged semantic C and checked closed frame/base/register/schedule normalization.
+- [x] Guard all 182 raw words/22 relocations; qualify 125 changed words, 57 identity checks and no inserts/omissions.
+- [x] Pass thirteen final tests, three-way public references/faults, native32, rebases and actual caller/resource-helper connections.
+- [x] Qualify independent private save/home/mode/restore contract, 2,214 full-access fault pairs, private aliases and callback-mutated mode home.
+- [x] Preserve 30 neighbors/all other ELF/metadata/data/CSV and old guard prefix; both tools checks pass.
+- [x] Bank tools a9694bd first, preserve older dirty mirror and update README aggregate rows only, no push.
+- [x] Measure Game 2,780/4,821, total 3,453/5,494, zero drift; +1 matching credit, no new converted credit.
+- [ ] Recover full 68-word func_150839B8 and adjacent 51-word func_150838EC without weakening the matched constructor fingerprint.
+- [ ] Finish timeline matching and actual resource/allocator/hardware/renderer/gameplay acceptance; raw C frame remains different.
+
 ## Child Actor Constructor Reconstruction - 2026-10-11
 
 [Note 1247](WORKING_NOTES/1247-game-child-actor-constructor-reconstruction-20261011.md):
@@ -10,7 +24,7 @@
 - [x] Execute actual 89-word descriptor caller and 70-word resource helper with eight linked descriptors, including 28 type-zero calls per form.
 - [x] Preserve all 30 neighbors/other ELF/data/guards/CSV; both tools checks pass, tools 03d8ec2 banked first, older dirty mirror preserved, no push.
 - [x] Verify unchanged README totals: Game 2,779/4,821, total 3,452/5,494, zero drift; no matching/converted credit for this recovery.
-- [ ] Match original 0x38 frame and remaining 125 compiler scheduling/register words; qualify private frame/fault order before publishing normalization.
+- [x] Match original 0x38 frame and 125 scheduling/register words with checked normalization in Note 1248; qualify original private frame/fault order.
 - [ ] Finish timeline matching and actual deeper resource/allocator/hardware/gameplay acceptance.
 
 ## Animation Scratch Preparation Byte Match - 2026-10-11
@@ -25,7 +39,8 @@
 - [x] Bank tools 672c03d first, preserve older dirty mirror and update README aggregate rows only, no push.
 - [x] Measure Game 2,779/4,821, total 3,452/5,494, zero drift; +1 matching credit, no new converted credit.
 - [x] Recover complete 182-word func_15083AC8 in Note 1247; no byte-match claim yet.
-- [ ] Match constructor frame/register schedule and continue timeline matching.
+- [x] Match constructor frame/register schedule in Note 1248; raw C retains its different frame.
+- [ ] Continue timeline matching and actual runtime qualification.
 - [ ] Validate actual resource/PI/hardware, full renderer and gameplay; raw-frame aliases and invalid-conversion/FCSR remain separate.
 
 ## Animation Scratch Loop Shape Improvement - 2026-10-11
@@ -71,7 +86,8 @@
 - [x] Bank tools e999db1 first, preserve older dirty mirror, root README aggregate rows only, no push.
 - [x] Restore complete func_1502D824 preparation semantics in Note 1244; its 191-word retail byte match remains open.
 - [x] Restore full 182-word func_15083AC8 semantics in Note 1247; matching remains open.
-- [ ] Match constructor and timeline helper; resource/allocator/hardware/gameplay acceptance stays separate.
+- [x] Match complete constructor with checked normalization in Note 1248.
+- [ ] Match timeline helper; resource/allocator/hardware/gameplay acceptance stays separate.
 
 ## Complete Alternate Resource Loader Byte Match - 2026-10-11
 

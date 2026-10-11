@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1248](WORKING_NOTES/1248-game-child-actor-constructor-byte-match-20261011.md):
+match complete func_15083AC8, all 182 words/original 0x38 frame using unchanged
+semantic C and checked closed normalization. Thirteen final tests/both tools
+checks pass, private frame/2,214 full fault pairs and public/native32/actual
+caller-helper qualification. All 30 neighbors/other ELF/metadata/data/CSV exact,
+old manifest prefix retained; +1 matching only. Game 2,780/4,821, total
+3,453/5,494, zero drift. Tools a9694bd first, no push, older dirty mirror
+preserved. Next: full 68-word func_150839B8; raw C's different frame and actual
+deeper resource/allocator/hardware/gameplay remain separate.
+
+2026-10-11:
 [Note 1247](WORKING_NOTES/1247-game-child-actor-constructor-reconstruction-20261011.md):
 recover full nine-argument func_15083AC8, all 182 C words without new guards;
 ordered public state, live homes/allocation limit and cached toggle qualify.

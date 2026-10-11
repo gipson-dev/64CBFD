@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 03d8ec2; tools are committed before the consumer pin.
+  checkpoint pins tools a9694bd; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete child actor constructor recovery; matching remains open:
+Latest complete child actor constructor byte match:
+[Note 1248](WORKING_NOTES/1248-game-child-actor-constructor-byte-match-20261011.md):
+func_15083AC8 matches all 182 words/original 0x38 frame with unchanged
+semantic C and checked closed frame/base/register/scheduling normalization.
+All 182 raw words/22 relocations guarded; 125 changed words, 57 identity
+checks, no inserts/omissions. Thirteen final tests/both tools checks pass:
+public/native32/actual caller-helper and private frame/2,214 full fault pairs
+qualify. All 30 neighbors/other ELF/metadata/data/CSV unchanged, old manifest
+prefix preserved. Game 2,780/4,821 (57.66%), total 3,453/5,494 (62.85%),
+zero drift / 2,041 different; +1 matching only. Tools a9694bd first, no push,
+older dirty mirror preserved. Next: full 68-word func_150839B8 resource-field
+initializer. Raw C still 182/0x50 with 125 differences, not direct exact;
+actual deeper resource/hardware/gameplay acceptance remains open.
+
+Previous complete child actor constructor recovery; matching finished in Note 1248:
 [Note 1247](WORKING_NOTES/1247-game-child-actor-constructor-reconstruction-20261011.md):
 func_15083AC8's nine-argument zero placeholder is replaced with all 182 C
 words: parent/status/scale fields, live inclusive allocation loop and cached
