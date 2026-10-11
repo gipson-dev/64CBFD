@@ -41,7 +41,21 @@ u8 *func_1507E9F8(u8 *arg0, s32 *arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507EA44.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507EABC.s")
+void func_1507E7E4(u8 *, u8, u8, u16, s32);
+
+void func_1507EABC(u8 *actor) {
+    func_1507E7E4(actor, actor[0x70], 3, 0xFFFF, 10);
+    actor[0x71] = 0;
+    *(u16 *)(actor + 0x72) = 0;
+    if (actor[0x6C] >= 10) {
+        actor[0x6C] = 0;
+        actor[0x6A] = 0;
+    }
+    if (actor[0x6D] >= 10) {
+        actor[0x6D] = 0;
+        actor[0x6B] = 0;
+    }
+}
 
 void func_1507EB2C(register s32 arg0) {
     func_1507EB4C(arg0, 0);

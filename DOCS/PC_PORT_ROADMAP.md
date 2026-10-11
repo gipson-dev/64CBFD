@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Channel Reset Direct Conversion - 2026-10-10
+
+[Note 1232](WORKING_NOTES/1232-game-actor-channel-reset-direct-conversion-20261010.md):
+
+- [x] Recover full five-argument channel refresh and post-callback unsigned threshold resets.
+- [x] Emit all 28 words directly from C/original 0x20 frame; zero guards or profile changes.
+- [x] Pass all byte domains, live/private aliases, 146 fired fault pairs and six independent links.
+- [x] Execute actual 73-word priority-3 helper context, including its real fifth-argument load and 40 connected fault pairs.
+- [x] Qualify all native threshold pairs at O2/O0, eight effective IDO/three native negatives and actual direct caller.
+- [x] Preserve all 14 owner neighbors; rebuild/audit whole ELF/guards/data unchanged and only one asm-to-c row.
+- [x] Pass ten final tests/both tools checks; +1 converted function / 112 bytes and +1 matching credit.
+- [x] Bank tools 8355983 first; preserve older dirty mirror, no push, root README aggregate rows only.
+- [ ] Convert full 73-word func_1507E7E4, broadening to priority !=3 and its other callers.
+- [ ] Keep deeper callback bodies, real asset domains, hardware and live gameplay acceptance separate.
+
 ## Complete Actor Resource Transition Byte Match - 2026-10-10
 
 [Note 1231](WORKING_NOTES/1231-game-complete-actor-resource-transition-byte-match-20261010.md):
@@ -11,7 +26,7 @@
 - [x] Preserve all 30 owner neighbors; install/rebuild/audit only 280 target bytes and symbol extent.
 - [x] Pass nine final tests/both tools checks; data/conversion/guard prefix exact, +1 matching credit.
 - [x] Bank tools 49e2558 first; preserve older dirty mirror, no push, root README aggregate rows only.
-- [ ] Convert full 28-word func_1507EABC and qualify its five-argument callback and post-call resets.
+- [x] Convert full 28-word func_1507EABC and qualify its five-argument callback and post-call resets in Note 1232.
 - [ ] Independently qualify actual scale/canonical/archive helpers, hardware and live gameplay acceptance.
 
 ## Complete Actor Animation Selector Byte Match - 2026-10-10

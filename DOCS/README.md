@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor channel reset direct conversion](WORKING_NOTES/1232-game-actor-channel-reset-direct-conversion-20261010.md):
+  all 28 words emit directly from C without guards; ten final tests and actual
+  helper/caller checks pass. Whole ELF/guards/data unchanged, +1 conversion.
+  Next: complete func_1507E7E4, including its other priority branches.
+
 - [Complete actor resource transition byte match](WORKING_NOTES/1231-game-complete-actor-resource-transition-byte-match-20261010.md):
   install full 70-word routine with 15 checked guards; nine final tests,
   full linked audit, preserved prefix/data and +1 matching credit.

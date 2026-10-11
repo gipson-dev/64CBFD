@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-10 Actor Channel Reset Direct Conversion
+
+[Note 1232](WORKING_NOTES/1232-game-actor-channel-reset-direct-conversion-20261010.md): convert full func_1507EABC from GLOBAL_ASM to direct C.
+All 28 words / 112 bytes and original 0x20 frame match without guards.
+Ten final tests/both tools checks pass; actual 73-word helper connection,
+private aliases/faults, all native threshold pairs and direct caller qualify.
+Whole ELF/guards/data/14 neighbors unchanged; only one conversion row changes.
+Game 2,767/4,817, total 3,440/5,490, zero drift; +1 conversion / 112 bytes / +1
+matching credit. Tools 8355983 first, no push. Next: full func_1507E7E4,
+including priority !=3; deeper callbacks/runtime acceptance remain open.
+
 ## 2026-10-10 Complete Actor Resource Transition Byte Match
 
 [Note 1231](WORKING_NOTES/1231-game-complete-actor-resource-transition-byte-match-20261010.md): install full func_150837D4, all 70 words / 280 bytes,

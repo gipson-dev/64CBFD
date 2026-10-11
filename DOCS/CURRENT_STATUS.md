@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 49e2558; tools are committed before the consumer pin.
+  checkpoint pins tools 8355983; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete actor resource transition installed byte-exact:
+Latest actor channel reset converted directly to byte-exact C:
+[Note 1232](WORKING_NOTES/1232-game-actor-channel-reset-direct-conversion-20261010.md): func_1507EABC emits all 28 words, original 0x20 frame,
+without guards. Ten post-install tests and both tools checks pass; whole ELF,
+guards/data and all 14 owner neighbors unchanged. Only its asm-to-c row changes:
++1 converted function / 112 bytes and +1 matching credit. Game 2,767/4,817
+(57.44%), total 3,440/5,490 (62.66%), zero drift / 2,050 different.
+Tools 8355983 first, no push. Next: complete 73-word func_1507E7E4, including
+priority !=3; current actual helper proof is its priority-3 context only.
+
+Earlier complete actor resource transition installed byte-exact:
 [Note 1231](WORKING_NOTES/1231-game-complete-actor-resource-transition-byte-match-20261010.md): func_150837D4 matches all 70 words, original 0x30 frame,
 with 15 checked register/common-epilogue guards. Nine post-install tests and
 both tools checks pass; only its 280-byte slot/extent changes. Data/conversion
