@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7f64ce9; tools are committed before the consumer pin.
+  checkpoint pins tools 2a4183d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete resource-buffer preparation recovery, not yet byte-exact:
+Latest resource-buffer retail-length improvement, not yet byte-exact:
+[Note 1256](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):
+func_15084044 now emits all 194 retail words with the original 0x60 frame,
+no guards; raw differences fall 130 -> 39. Recover mode-one reload joins
+and mode-two cursor recomputation/initialization. Twelve final tests pass,
+including all eleven prior semantic gates and a direct committed-recovery
+delta audit. Exactly 317 ELF bytes change from Note 1255: 316 target bytes
+and one extent byte (768 -> 776); every other ELF byte and all protected
+inputs are identical. Both WSL tools checks pass; native older-mirror
+check hits WinError 193, its WSL check and new-file py_compile pass.
+Fresh totals unchanged: Game 2,786/4,822, total 3,459/5,495, zero drift;
+no matching/conversion credit. Tools 2a4183d first, no push, older dirty
+work preserved. Next: finish this function's opening register allocation
+and mode-two copy/fallback branch; actual resource/hardware/gameplay open.
+
+Previous complete resource-buffer preparation recovery; improved in Note 1256:
 [Note 1255](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):
 func_15084044 replaces its zero-return stub with all modes, sharing/counts,
 allocation/copy and failure rollback. Semantic C emits 192 of 194 slot words

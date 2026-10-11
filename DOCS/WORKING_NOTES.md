@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1256](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):
+func_15084044 retail-length improvement, 192 -> 194 words/0x60 frame,
+raw differences 130 -> 39, no guards. Twelve final tests/both WSL tools
+checks pass; all original qualification gates retained. Direct banked ELF
+delta is 317 bytes in target slot/extent only, every other byte exact.
+Totals unchanged, no matching/conversion credit. Tools 2a4183d first,
+older dirty work preserved, no push. Continue opening allocation and
+mode-two copy/fallback branch, not an easier function; runtime open.
+
+2026-10-11:
 [Note 1255](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):
 complete func_15084044 semantic recovery, all modes/sharing/copies/rollback;
 192 emitted words/retail frame, no new guards, not yet byte-exact.

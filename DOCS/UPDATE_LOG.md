@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Resource Buffer Retail-Length Improvement
+
+[Note 1256](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):
+func_15084044 emits all 194 retail words/original 0x60 frame from semantic
+C, no guards. Recovered joins/cursor setup reduce raw differences 130 -> 39.
+Twelve final tests pass, retaining all prior semantic/fault/native32/rebase/
+SDK/caller gates and adding exact committed-recovery delta qualification.
+Only 317 ELF bytes change from Note 1255: 316 target bytes, one size byte;
+all other ELF bytes/data/guards/CSV exact. Both WSL tools checks pass;
+older native check WinError 193 is separate, WSL/py_compile pass.
+Tools 2a4183d first, older existing work preserved, no push. Fresh matching
+totals unchanged, no matching/conversion credit. Continue this same
+function's opening register allocation and copy/fallback branch.
+
 ## 2026-10-11 Resource Buffer Preparation Recovery
 
 [Note 1255](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):

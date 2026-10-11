@@ -513,16 +513,18 @@ s32 func_15084044(u8 *actor, s32 channel) {
                         *(u8 **)(pair + 0x28C) = D_800D19A0[identity];
                     }
                 }
+                first = *(u8 **)(pair + 0x28C);
             } else {
                 *(u8 **)(pair + 0x28C) = *(u8 **)(pair + 0x290) = config;
                 D_800D1F80[identity] += 2;
+                first = *(u8 **)(pair + 0x28C);
             }
-            first = *(u8 **)(pair + 0x28C);
         }
         *(u8 **)(pair + 0x290) = first;
     } else if (mode == 2) {
-        cursor = actor + channel * 8;
-        for (offset = 0; offset != 8; offset += 4, cursor += 4) {
+        offset = 0;
+        cursor = actor + (channel << 3);
+        for (; offset != 8; offset += 4, cursor += 4) {
             if ((*(u8 **)(cursor + 0x28C) == NULL) ||
                 (*(u8 **)(cursor + 0x28C) == D_800D19A0[identity]) ||
                 ((offset == 4) && (*(u8 **)(pair + 0x28C) == *(u8 **)(pair + 0x290)))) {

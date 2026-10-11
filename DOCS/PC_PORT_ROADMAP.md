@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Resource Buffer Retail-Length Improvement - 2026-10-11
+
+[Note 1256](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):
+
+- [x] Recover mode-one branch-local post-copy/sharing reload joins without changing access order.
+- [x] Recover mode-two cursor recomputation and offset initialization; emit all 194 retail words with original 0x60 frame, no guards.
+- [x] Reduce raw word differences 130 -> 39; preserve complete sharing/allocation/copy/failure semantics.
+- [x] Pass twelve final tests, including all eleven previous gates and exact delta qualification against the committed recovery.
+- [x] Audit 317 changed ELF bytes only: 316 target-slot bytes, one size byte (768 -> 776); every other ELF byte/protected input exact.
+- [x] Pass consumer and mounted WSL tools checks; older WSL check/new-file py_compile pass, native WinError 193 documented separately.
+- [x] Bank tools 2a4183d first, preserve older dirty files, no push; README aggregate rows unchanged.
+- [x] Remeasure Game 2,786/4,822 and total 3,459/5,495, zero drift; no matching/conversion credit.
+- [ ] Finish this same function's 39 raw differences: opening actor/config/mode/resource allocation and mode-two copy/fallback branch.
+- [ ] Complete actual resource loader/current C caller/heap/hardware/renderer/gameplay acceptance separately.
+
 ## Resource Buffer Preparation Recovery - 2026-10-11
 
 [Note 1255](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):
@@ -11,7 +26,8 @@
 - [x] Audit all 30 neighbors/protected data/guards/CSV unchanged; permit only target slot, size and verified existing symbol/string ordering.
 - [x] Bank tools 7f64ce9 first, preserve older dirty mirror, no push; README aggregate rows stay correct and unchanged.
 - [x] Fresh matching totals remain Game 2,786/4,822 and total 3,459/5,495, zero drift; no inflated matching or conversion credit.
-- [ ] Finish byte matching this same function: 130 word differences, opening register lifetimes, mode-one join and mode-two cursor CSE remain.
+- [x] Recover mode-one join and mode-two cursor setup in Note 1256; emit full retail length and reduce differences 130 -> 39.
+- [ ] Finish byte matching this same function: 39 word differences in opening register allocation and mode-two copy/fallback remain.
 - [ ] Complete actual resource loader/current C caller/heap/hardware/renderer/gameplay acceptance separately.
 
 ## Record Identity Selector Direct Match - 2026-10-11

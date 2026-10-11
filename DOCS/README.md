@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Resource buffer retail-length improvement](WORKING_NOTES/1256-game-resource-buffer-retail-length-improvement-20261011.md):
+  func_15084044 emits all 194 words/retail frame without guards; raw
+  differences 130 -> 39. Twelve final tests and both WSL tools checks pass.
+  Only target slot/extent change from the committed recovery, 317 ELF bytes;
+  all other bytes and protected inputs exact. Byte matching stays open,
+  no inflated progress credit; continue opening allocation/copy fallback.
+
 - [Resource buffer preparation recovery](WORKING_NOTES/1255-game-resource-buffer-preparation-recovery-20261011.md):
   complete func_15084044 modes/sharing/copy/failure rollback, retail frame;
   eleven final tests, native32/faults/rebases and bounded SDK/caller connections.
