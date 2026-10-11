@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Third-loader exit scheduling and drop removal](WORKING_NOTES/1275-game-third-resource-loader-exit-scheduling-and-drop-removal-20261011.md):
+  raw37/7 -> 36/2, two final scheduling guards/no drop, 34 direct words and
+  linked36 exact; not direct C. Fourteen pre-install/151 installed and regression
+  tests pass; entire ELF/data/seven other inputs/counts unchanged. Tools 36adf10
+  first, older work preserved/no push, root README unchanged. Next unmatched
+  func_1503DE70, 39 words/38 linked differences; final raw guards stay open.
+
 - [Third-loader lifetime and guard reduction](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):
   raw 37/15 -> 37/7, six normalizations -> three plus one drop; linked 36
   exact, not direct C. Thirteen pre-install/137 installed and regression tests

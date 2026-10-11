@@ -292,13 +292,13 @@ s32 func_1503D774(s32 identity, s32 loaded) {
     loaded = (s32)func_1502B6BC(&output, 2, 0, 2, 0x11, identity);
     if (loaded == 0) {
         *slot = NULL;
-        loaded = 2;
-        goto done;
+        return loaded = 2;
     }
 
     *slot = (struct124 *)loaded;
     *slot = *(struct124 **)loaded;
     loaded = 0;
+    goto done;
 done:
     return loaded;
 }

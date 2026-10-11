@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1275](WORKING_NOTES/1275-game-third-resource-loader-exit-scheduling-and-drop-removal-20261011.md):
+third-loader exit/drop removal: raw37/7 -> 36/2, two final scheduling guards,
+no drop, 34 direct/36 linked exact; not direct C. Fourteen pre-install/151 final
+installed and regression tests pass, actual seventeen-body chain and exact
+predecessor views. Entire ELF/data/seven other inputs/counts unchanged, zero
+matching credit. Tools 36adf10 first, older HEAD/41 fingerprints preserved/two
+absent copies, no push or root README churn. Next unmatched func_1503DE70,
+complete39/38 linked differences; two raw scheduling words remain open.
+
+2026-10-11:
 [Note 1274](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):
 third-loader incoming-result/shared-status lifetime installed: raw37/15 ->
 37/7, normalizations six -> three plus one drop. Linked36 exact, not direct C.

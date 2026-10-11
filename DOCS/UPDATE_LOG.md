@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-11 Third Resource Loader Exit Scheduling And Drop Removal
+
+[Note 1275](WORKING_NOTES/1275-game-third-resource-loader-exit-scheduling-and-drop-removal-20261011.md):
+func_1503D774 raw37/7 -> 36/2, three normalizations/one drop -> two final
+scheduling normalizations/no drop. Linked36 exact, 34 direct words, not direct
+C. Fourteen pre-install/151 final installed and regression tests pass; entire
+ELF/data/seven other inputs unchanged, zero matching credit. Fresh Game
+2,796/4,822, total 3,469/5,495, zero drift / 2,026 different. Tools 36adf10 first,
+older HEAD/41 fingerprints preserved/two absent copies, no push or README churn.
+Next unmatched func_1503DE70: complete39, 38 linked differences, placeholder.
+
 ## 2026-10-11 Third Resource Loader Lifetime And Guard Reduction
 
 [Note 1274](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):

@@ -10431,10 +10431,8 @@ generated_58F80,func_1502FD70,0x080,0x10200004,0x00000000,-,-,Normalize slot-sta
 generated_58F80,func_1502FD70,0x084,0x00000000,0x03E00008,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
 generated_58F80,func_1502FD70,0x088,0x03E00008,0xA0620000,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
 generated_58F80,func_1502FD70,0x08C,0xA0620000,0x24080003,-,-,Normalize slot-state sentinel allocation and fallback schedule,,,false
-generated_6A3D0,func_1503D774,0x038,0x10000012,0x10000011,-,-,Adjust lazy-loader cached exit across omitted status copy,,,false
-generated_6A3D0,func_1503D774,0x06C,0x24040002,0x24020002,-,-,Normalize lazy-loader shared status to return register,,,false
-generated_6A3D0,func_1503D774,0x078,0x00002025,0x00001025,-,-,Normalize lazy-loader shared status to return register,,,false
-generated_6A3D0,func_1503D774,0x080,0x00801025,0x00801025,-,-,Omit redundant lazy-loader shared status copy,,,true
+generated_6A3D0,func_1503D774,0x078,0xAC6A0000,0x00001025,-,-,Normalize lazy-loader final independent status and publication schedule,,,false
+generated_6A3D0,func_1503D774,0x07C,0x00001025,0xAC6A0000,-,-,Normalize lazy-loader final independent status and publication schedule,,,false
 generated_6B280,func_1503DDD0,0x048,0x00000000,0x2444FFFF,-,-,Normalize trailing marked-record compaction schedule,,,false
 generated_6B280,func_1503DDD0,0x04C,0x00470019,0x00870019,-,-,Normalize trailing marked-record compaction schedule,,,false
 generated_6B280,func_1503DDD0,0x050,0x8CCA0000,0x8CC90000,-,-,Normalize trailing marked-record compaction schedule,,,false

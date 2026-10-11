@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Third Resource Loader Exit Scheduling And Drop Removal - 2026-10-11
+
+[Note 1275](WORKING_NOTES/1275-game-third-resource-loader-exit-scheduling-and-drop-removal-20261011.md):
+
+- [x] Qualify early failure assignment/shared success exit; preserve cached destination, full request identity, status two and publication/header order.
+- [x] Emit the correct 36-word length with no instruction drop; raw37/7 -> 36/2, 34 direct words, two independent final scheduling guards remain.
+- [x] Pass fourteen pre-install and 151 installed/regression tests, both predecessor views, effective controls and actual seventeen-body caller chain.
+- [x] Preserve all 14 owner neighbors/both padders, exact actual source/guard successor and entire ELF/data/seven other inputs; no matching credit.
+- [x] Bank tools 36adf10 before source/guards/docs/pin; preserve older HEAD/41 fingerprints, two absent copies only, shared checks green, no push or README churn.
+- [ ] Remove the two final scheduling normalizations before claiming direct C; parent/pair guards and deeper runtime remain separate.
+- [ ] Recover and qualify the next unmatched 39-word func_1503DE70 actor/group/entry command wrapper; current placeholder has 38 linked differences.
+
 ## Third Resource Loader Lifetime And Guard Reduction - 2026-10-11
 
 [Note 1274](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):
@@ -9,7 +21,8 @@
 - [x] Pass thirteen pre-install and 137 installed/regression tests, effective controls, all focused words and actual seventeen-body parent chain.
 - [x] Preserve both padded owners/all 14 neighbors, exact historical views and a separate literal installed audit; entire ELF/data/seven other inputs unchanged.
 - [x] Bank tools 5eb0c4a before source/guards/docs/pin; preserve older HEAD/39 fingerprints, copy only two absent paths, no push or README/count churn.
-- [ ] Eliminate the remaining three status/exit normalizations and one drop; this is guarded-exact, not direct C or another matching credit.
+- [x] Remove the status/exit corrections and instruction drop in Note 1275; only two independent final scheduling words remain.
+- [ ] Eliminate the remaining two scheduling normalizations; guarded-exact is not direct C or another matching credit.
 - [ ] Eliminate parent/pair guards and qualify deeper SDK/allocator/heap/hardware/renderer/gameplay separately; wider Game goal active, Release frozen.
 
 ## Third Resource Loader Guard Audit And Actual Chain - 2026-10-11
@@ -22,7 +35,7 @@
 - [x] Resolve both complete padded owner routes against current ELF bytes and preserve all 14 neighbors, extents and existing D804 selector.
 - [x] Preserve all nine production inputs/data, no matching credit or README churn; bank tools b6877d5 before the consumer docs/pin, preserve older HEAD/37 fingerprints, no push.
 - [x] Recover the incoming result/cached-slot/branch lifetime and reduce six normalizations to three in Note 1274.
-- [ ] Eliminate func_1503D774's remaining three normalizations and one drop; raw 37/7 is not direct C.
+- [ ] Eliminate func_1503D774's remaining two scheduling normalizations after Note 1275; raw 36/2 is not direct C.
 - [ ] Eliminate parent/pair guards and qualify deeper SDK/allocator/heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Record Resource Cleanup Direct Match - 2026-10-11
@@ -37,7 +50,7 @@
 - [x] Audit exactly 149 changed ELF bytes, protected data/all other inputs exact, +1 matching only; update concise indexes/README aggregate rows and correct the prior hash transcription.
 - [x] Preserve older HEAD/35 fingerprints, copy only two absent files, pass shared checks/native py_compile and bank tools 663f63b before the consumer checkpoint, no push.
 - [x] Qualify func_1503D774's actual parent-chain body in Note 1273; already linked-exact, no new matching credit.
-- [ ] Eliminate func_1503D774's remaining three normalizations and one drop after Note 1274's qualified reduction; raw direct matching stays open.
+- [ ] Eliminate func_1503D774's remaining two scheduling normalizations after Note 1275's drop removal; raw direct matching stays open.
 - [ ] Eliminate parent/pair guards and qualify deeper allocator/heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Group Publication Propagation Direct Match - 2026-10-11
