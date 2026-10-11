@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9359eb3; tools are committed before the consumer pin.
+  checkpoint pins tools 0e3d520; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed group publication-propagation direct match:
+[Note 1271](WORKING_NOTES/1271-game-group-publication-propagation-direct-match-20261011.md):
+complete func_1503D510 emits all 56 retail words directly, void/full-word
+identity contract, cached group count/list and ordered live pointer/halfword
+propagation. No new guards/frame/profile/recipe/global-declaration changes.
+Twelve pre-install and 85 installed/regression tests pass, actual seven-body
+helper chain/all 56 words and 14-body parent chain. Only 165 ELF bytes change
+(164 target, one extent); every other byte/data/guard/recipe/conversion input
+exact. Fresh Game 2,795/4,822, total 3,468/5,495, zero drift / 2,027 different.
++1 matching only; README aggregate rows only. Tools 0e3d520 first, older HEAD/
+33 fingerprints preserved/two absent copies, no push. Next func_1503DD1C:
+43-word cleanup body / 45-word padded slot. Third loader already guarded-exact;
+parent/pair/third guard elimination and deeper runtime remain separate.
 
 Latest installed descriptor resource-loader direct match:
 [Note 1270](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):

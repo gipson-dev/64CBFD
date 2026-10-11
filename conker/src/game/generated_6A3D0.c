@@ -215,8 +215,22 @@ void func_1503D484(u8 *arg0, s32 arg1) {
     D_800C5A90[arg1] = (s32)(arg0 - start) >> 3;
 }
 
-s32 func_1503D510() {
-    return 0;
+void func_1503D510(s32 identity) {
+    s32 group;
+    s32 member;
+    s32 copy;
+
+    for (group = 0; group < 5; group++) {
+        for (member = 0; member < D_80098888[group]; member++) {
+            if (identity == D_80084410[group][member]) {
+                for (copy = 0; copy < D_80098888[group]; copy++) {
+                    D_800D1588[D_80084410[group][copy]] = D_800D1588[identity];
+                    ((u16 *)D_800C5A90)[D_80084410[group][copy]] = ((u16 *)D_800C5A90)[identity];
+                }
+                return;
+            }
+        }
+    }
 }
 
 s32 func_1503D5F0(s32 value) {

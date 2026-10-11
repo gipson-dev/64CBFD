@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Group Publication Propagation Direct Match
+
+[Note 1271](WORKING_NOTES/1271-game-group-publication-propagation-direct-match-20261011.md):
+complete func_1503D510 emits all 56 words directly with void/full-word identity
+contract and ordered live pointer/halfword propagation. No new guards/frame/
+profile/recipe/global-declaration changes. Twelve pre-install/85 installed
+and regression tests pass, actual seven-body helper/all 56 words and 14-body
+parent chain. Only 165 ELF bytes change (164 target, one extent); all other
+bytes/data/guards/recipe/conversion inputs exact. Fresh Game 2,795/4,822, total
+3,468/5,495, zero drift / 2,027 different. +1 matching only; README aggregate
+rows only. Tools 0e3d520 first, older HEAD/33 fingerprints preserved/two absent
+copies, no push. Next func_1503DD1C, 43-word cleanup body/45-word padded slot;
+third loader already guarded-exact, raw guards/deeper runtime remain open.
+
 ## 2026-10-11 Descriptor Resource Loader Direct Match
 
 [Note 1270](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):

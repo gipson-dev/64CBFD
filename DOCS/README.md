@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Group publication-propagation direct match](WORKING_NOTES/1271-game-group-publication-propagation-direct-match-20261011.md):
+  all 56 words directly exact, void/full-word identity, cached group inputs/
+  live ordered values, no new guards/profile changes. Twelve pre-install/85
+  installed and regression tests pass, actual seven-/14-body chains. Only
+  165 ELF bytes change; all other bytes/data/guards/recipe/CSV exact.
+  +1 matching, tools 0e3d520 first, older history preserved/no push.
+  Next full 43-word func_1503DD1C / 45-word padded slot; third loader already
+  guarded-exact, raw guard elimination and deeper runtime remain separate.
+
 - [Descriptor resource-loader direct match](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):
   all 69 words directly exact, original frame/lifetimes, no new guards/profile
   changes. Twelve pre-install/73 installed and regression tests pass, actual

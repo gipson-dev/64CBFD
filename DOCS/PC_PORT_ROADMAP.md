@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Group Publication Propagation Direct Match - 2026-10-11
+
+[Note 1271](WORKING_NOTES/1271-game-group-publication-propagation-direct-match-20261011.md):
+
+- [x] Recover the full-word identity/five-group scan, first match only, cached count/list, member rereads and live pointer/halfword propagation with void return contract.
+- [x] Emit all 56 words directly under both existing profiles; preserve original leaf ABI and all 14 neighbors through both padders, no new guards or recipe changes.
+- [x] Pass twelve pre-install and 85 installed/regression tests, all 56 words, 61 fault triples, 15 alias/payload cases and 71,680 native32 cases per profile.
+- [x] Replace the finish hook with actual 56-word instructions in the seven-body helper and 14-body parent chains; preserve caller status and real success/failure publications.
+- [x] Preserve frozen audits with exact verified source/slot/extent projections and effective rejection controls; audit exactly 165 changed ELF bytes with all other inputs exact.
+- [x] Add one matching credit only, update concise indexes/README aggregate rows, preserve older HEAD/33 fingerprints and copy only two absent tools.
+- [x] Pass shared tools checks/native py_compile and commit tools 0e3d520 before the consumer checkpoint, no push or older-history changes.
+- [x] Confirm the third loader already has all 36 linked words exact under existing guards; do not double-count or label it an unrecovered body.
+- [ ] Recover and qualify func_1503DD1C's complete 43-word cleanup body and 45-word padded slot, including live count/cursor/callback behavior and parent cleanup.
+- [ ] Eliminate parent/pair/third raw guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
+
 ## Descriptor Resource Loader Direct Match - 2026-10-11
 
 [Note 1270](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):
@@ -12,7 +27,7 @@
 - [x] Audit exactly 197 changed ELF bytes (195 target, two extent), all other bytes/data/guards/recipe/conversion inputs exact; add one matching credit only.
 - [x] Preserve older HEAD/all 31 existing fingerprints, copy only two absent paths, pass shared tools checks/native py_compile, and bank tools 9359eb3 before the consumer checkpoint.
 - [x] Update concise indexes and only README aggregate rows; no push or older-sibling history changes.
-- [ ] Recover and qualify complete 56-word func_1503D510 group pointer/count propagation and replace the remaining finish-helper model.
+- [x] Recover and qualify complete 56-word func_1503D510 group pointer/count propagation and replace the remaining finish-helper model in Note 1271.
 - [ ] Eliminate parent/pair raw guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Vertex Coordinate Copy Guarded Match - 2026-10-11

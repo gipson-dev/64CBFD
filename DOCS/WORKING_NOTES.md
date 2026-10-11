@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1271](WORKING_NOTES/1271-game-group-publication-propagation-direct-match-20261011.md):
+full 56-word group pointer/count propagation directly exact, void/full-word
+identity, ordered live values, no new guards/profile changes. Twelve
+pre-install/85 installed and regression tests pass; actual seven-/14-body
+chains. Only 165 ELF bytes change; all other bytes/data/guards/recipe/CSV exact.
++1 matching only, tools 0e3d520 first, older history preserved/no push.
+Next full 43-word func_1503DD1C / 45-word padded slot; third loader already
+guarded-exact, parent/pair/third guard elimination and runtime stay separate.
+
+2026-10-11:
 [Note 1270](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):
 full 69-word descriptor resource loader directly exact, original frame/
 lifetimes, no new guards/profile changes. Twelve pre-install/73 installed
