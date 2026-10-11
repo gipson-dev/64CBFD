@@ -3,13 +3,20 @@
 s32 func_1503EB78(s32, f32, f32, s32);
 extern u8 D_800CC364[];
 extern s32 *D_8008446C[];
+void func_1503DF0C(s32, s32, s32, s32);
 extern u8 D_800C6664[];
 extern u8 D_800C6668[];
 
 /* Non-matching placeholders for the text-only asm slice asm/6B320.s. */
 
-s32 func_1503DE70() {
-    return 0;
+void func_1503DE70(struct127 *actor, s32 group, s32 entry) {
+    if (entry != -1) {
+        func_1503DF0C(((s32)actor - (s32)D_800CC2D0) / (s32)sizeof(struct127),
+            group, ((s32 (*)[2])D_8008446C[group])[entry][0], ((s32 (*)[2])D_8008446C[group])[entry][1]);
+    } else {
+        func_1503DF0C(((s32)actor - (s32)D_800CC2D0) / (s32)sizeof(struct127),
+            group, -1, -1);
+    }
 }
 
 void func_1503DF0C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {

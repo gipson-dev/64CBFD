@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1276](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):
+actor/group mask command func_1503DE70: complete39 direct C/no guards;
+ten pre-install / eleven installed tests plus focused controls pass, actual
+helper/three callers qualified. Exactly 127 target/extent ELF bytes change,
+21 neighbors/data/guards/seven other inputs exact, +1 matching only.
+Game 2,797/4,822, total 3,470/5,495, zero drift / 2,025 different.
+Tools 3b4d8ec first, older work preserved/no push, README aggregates only;
+next unmatched func_1503DF48, 171 words/168 linked differences.
+
+2026-10-11:
 [Note 1275](WORKING_NOTES/1275-game-third-resource-loader-exit-scheduling-and-drop-removal-20261011.md):
 third-loader exit/drop removal: raw37/7 -> 36/2, two final scheduling guards,
 no drop, 34 direct/36 linked exact; not direct C. Fourteen pre-install/151 final

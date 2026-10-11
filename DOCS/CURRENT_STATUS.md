@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 36adf10; tools are committed before the consumer pin.
+  checkpoint pins tools 3b4d8ec; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Latest direct actor/group mask command:
+[Note 1276](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):
+func_1503DE70 replaces its placeholder with all 39 words directly from C,
+no guards/profile changes. Ten pre-install / eleven installed tests plus a
+focused integrity rerun pass; actual helper and all three callers qualified.
+Exactly 127 ELF bytes change in the target slot/extent; 21 neighbors/data/
+guards/seven other inputs exact. Fresh Game 2,797/4,822 (58.00%), total
+3,470/5,495 (63.15%), zero drift / 2,025 different; +1 matching only.
+Tools 3b4d8ec first, older HEAD/43 fingerprints preserved, no push. README
+gets aggregate rows only. Next unmatched func_1503DF48: 171 words / 168
+linked differences; two third-loader scheduling guards remain open.
+
 Latest installed third-loader exit/drop removal:
 [Note 1275](WORKING_NOTES/1275-game-third-resource-loader-exit-scheduling-and-drop-removal-20261011.md):
 func_1503D774 emits 36 raw words / two differences, versus 37/7. Three
@@ -36,7 +48,7 @@ Fourteen pre-install and 151 installed/regression tests pass. Entire ELF/data/
 seven other inputs unchanged, zero matching credit. Fresh Game 2,796/4,822,
 total 3,469/5,495, zero drift / 2,026 different. Tools 36adf10 first, older HEAD/
 41 fingerprints preserved/two absent copies, no push or root README churn.
-Next unmatched body: func_1503DE70, 39 words / 38 linked differences.
+The former next target func_1503DE70 is directly matched in Note 1276.
 
 Latest installed third-loader lifetime and guard reduction:
 [Note 1274](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):

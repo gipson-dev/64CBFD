@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Group Mask Command Direct Match - 2026-10-11
+
+[Note 1276](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):
+
+- [x] Recover the complete actor/group/entry command and signed 0x32C slot division, sole -1 sentinel and live eight-byte mask pair.
+- [x] Emit all 39 words directly under the existing owner profile; no word guards, drops, caller/header changes or broad conversion batch.
+- [x] Pass ten pre-install / eleven installed tests and focused integrity rerun, native32, effective controls and actual three-caller/15-word helper chain.
+- [x] Preserve all 21 owner neighbors/GLOBAL_ASM body/pools through production post-processing and both padders; audit only 127 target/extent ELF bytes, data/guards/other inputs exact.
+- [x] Measure +1 matching only: Game 2,797/4,822, total 3,470/5,495, zero drift / 2,025 different; README aggregate rows only.
+- [x] Bank tools 3b4d8ec before consumer source/docs/pin; preserve older HEAD/43 fingerprints, two absent copies only, shared checks green, no push.
+- [ ] Recover and qualify the next complete func_1503DF48 record-state dispatcher: 171 words / 168 linked differences, still a placeholder.
+- [ ] Remove the third-loader's two final scheduling guards and parent/pair guards; qualify deeper hardware/gameplay separately, full Game goal active.
+
 ## Third Resource Loader Exit Scheduling And Drop Removal - 2026-10-11
 
 [Note 1275](WORKING_NOTES/1275-game-third-resource-loader-exit-scheduling-and-drop-removal-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve all 14 owner neighbors/both padders, exact actual source/guard successor and entire ELF/data/seven other inputs; no matching credit.
 - [x] Bank tools 36adf10 before source/guards/docs/pin; preserve older HEAD/41 fingerprints, two absent copies only, shared checks green, no push or README churn.
 - [ ] Remove the two final scheduling normalizations before claiming direct C; parent/pair guards and deeper runtime remain separate.
-- [ ] Recover and qualify the next unmatched 39-word func_1503DE70 actor/group/entry command wrapper; current placeholder has 38 linked differences.
+- [x] Recover and qualify the complete 39-word func_1503DE70 actor/group/entry command wrapper directly in Note 1276.
 
 ## Third Resource Loader Lifetime And Guard Reduction - 2026-10-11
 

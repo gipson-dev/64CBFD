@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-11 Actor Group Mask Command Direct Match
+
+[Note 1276](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):
+func_1503DE70 complete39 now emits directly, no guards/profile changes.
+Ten pre-install / eleven installed tests and focused integrity rerun pass;
+actual helper/three callers qualified. Only 127 target/extent ELF bytes change,
+21 neighbors/data/guards/seven other inputs exact. Fresh Game 2,797/4,822,
+total 3,470/5,495, zero drift / 2,025 different; +1 matching only.
+Tools 3b4d8ec first, older HEAD/43 fingerprints preserved/two absent copies,
+no push; README aggregates only. Next func_1503DF48, 171/168 differences.
+
 ## 2026-10-11 Third Resource Loader Exit Scheduling And Drop Removal
 
 [Note 1275](WORKING_NOTES/1275-game-third-resource-loader-exit-scheduling-and-drop-removal-20261011.md):

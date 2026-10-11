@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor group mask command direct match](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):
+  complete39 direct C/no guards, actual helper/three callers, ten pre-install /
+  eleven installed tests plus focused controls green. Exactly 127 ELF bytes
+  change, 21 neighbors/data/guards/other inputs exact, +1 matching only.
+  Tools 3b4d8ec first, older work preserved/no push; README aggregates only.
+  Next unmatched func_1503DF48, 171 words/168 linked differences.
+
 - [Third-loader exit scheduling and drop removal](WORKING_NOTES/1275-game-third-resource-loader-exit-scheduling-and-drop-removal-20261011.md):
   raw37/7 -> 36/2, two final scheduling guards/no drop, 34 direct words and
   linked36 exact; not direct C. Fourteen pre-install/151 installed and regression
