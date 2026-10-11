@@ -13982,3 +13982,8 @@ generated_AEB40,func_150837D4,0xE4,0x95AD0000,0x958C0000,R_MIPS_LO16:D_800C5A90,
 generated_AEB40,func_150837D4,0xF0,0x51A00005,0x11800004,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
 generated_AEB40,func_150837D4,0xF4,0x8FBF001C,0x24060002,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
 generated_AEB40,func_150837D4,0xFC,0x24060002,0x00603825,-,-,Normalize closed actor resource register lives and equivalent common epilogue schedule,,,false
+generated_AB760,func_1507E7E4,0x3C,0x97B8003E,0x97B9003E,-,-,Normalize closed channel arbitration register swap and symmetric equality operands,,,false
+generated_AB760,func_1507E7E4,0x40,0x14CF0004,0x15E60004,-,-,Normalize closed channel arbitration register swap and symmetric equality operands,,,false
+generated_AB760,func_1507E7E4,0x48,0x96190072,0x96180072,-,-,Normalize closed channel arbitration register swap and symmetric equality operands,,,false
+generated_AB760,func_1507E7E4,0x60,0x5069000A,0x5123000A,-,-,Normalize closed channel arbitration register swap and symmetric equality operands,,,false
+generated_AB760,func_1507E7E4,0x68,0x50680008,0x51030008,-,-,Normalize closed channel arbitration register swap and symmetric equality operands,,,false

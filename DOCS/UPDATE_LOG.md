@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Channel Transition Conversion
+
+[Note 1233](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
+convert full func_1507E7E4, all 73 words / 292 bytes, original 0x30 frame and
+five checked register/equality guards. Nine final tests/both tools checks pass.
+All code/data/14 neighbors unchanged; remove one stale absolute assignment,
+changing two ELF symbol-section bytes and recovering its omitted CSV boundary.
+Game 2,768/4,818, total 3,441/5,491, zero drift / 2,050 different. +1 counted/
+converted function, 292 C bytes and matching credit; conversion denominators
+are now 5,322 Game / 6,043 total. Tracked Splat declaration prevents regenerated
+overrides. Tools 4da6c0b first, no push.
+Next: full 24-word func_1507E908; actual deeper callbacks/runtime remain open.
+
 ## 2026-10-10 Actor Channel Reset Direct Conversion
 
 [Note 1232](WORKING_NOTES/1232-game-actor-channel-reset-direct-conversion-20261010.md): convert full func_1507EABC from GLOBAL_ASM to direct C.

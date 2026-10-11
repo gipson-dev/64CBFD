@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor channel transition conversion](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
+  full 73-word C with five checked guards; nine final tests pass. Code/data
+  unchanged; remove one stale absolute assignment and recover the omitted map
+  boundary; tracked Splat declaration prevents regeneration. +1 counted/converted
+  function and 292 C bytes. Next: func_1507E908.
+
 - [Actor channel reset direct conversion](WORKING_NOTES/1232-game-actor-channel-reset-direct-conversion-20261010.md):
   all 28 words emit directly from C without guards; ten final tests and actual
   helper/caller checks pass. Whole ELF/guards/data unchanged, +1 conversion.

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 8355983; tools are committed before the consumer pin.
+  checkpoint pins tools 4da6c0b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest actor channel reset converted directly to byte-exact C:
+Latest complete actor channel arbitration converted to byte-exact C:
+[Note 1233](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
+func_1507E7E4 matches all 73 words / original 0x30 frame with five checked
+register/equality guards. Nine final tests and both tools checks pass. All
+code/data and 14 neighbors are unchanged; only two ELF symbol-section bytes
+change after removing its stale absolute assignment. Recover its omitted map
+boundary: +1 counted/converted function, +292 C bytes, +1 matching credit.
+Game 2,768/4,818 (57.45%), total 3,441/5,491 (62.67%), zero drift / 2,050 different.
+Tracked Splat defined-symbol declaration prevents regenerated stale overrides.
+Corrected conversion totals: 5,491/6,043 and Game 4,818/5,322. Tools 4da6c0b
+first, no push. Next: full 24-word func_1507E908; deeper callbacks/runtime remain open.
+
+Earlier actor channel reset converted directly to byte-exact C:
 [Note 1232](WORKING_NOTES/1232-game-actor-channel-reset-direct-conversion-20261010.md): func_1507EABC emits all 28 words, original 0x20 frame,
 without guards. Ten post-install tests and both tools checks pass; whole ELF,
 guards/data and all 14 owner neighbors unchanged. Only its asm-to-c row changes:

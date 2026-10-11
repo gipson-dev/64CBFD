@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-10:
+[Note 1233](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
+convert full func_1507E7E4, all 73 words / original 0x30 frame and five checked
+register/equality guards. Nine final tests and both tools checks pass.
+Code/data/14 neighbors unchanged; one stale absolute assignment removed,
+two symbol-section bytes changed and an omitted CSV boundary recovered.
+Game 2,768/4,818, total 3,441/5,491, zero drift; +1 counted/converted function,
+292 C bytes and matching credit. Tracked Splat declaration prevents regenerated
+overrides. Tools 4da6c0b first, no push.
+Next: full 24-word func_1507E908; deeper callbacks/runtime stay separate.
+
+2026-10-10:
 [Note 1232](WORKING_NOTES/1232-game-actor-channel-reset-direct-conversion-20261010.md): convert full func_1507EABC from GLOBAL_ASM to direct C.
 All 28 words / 112 bytes and original 0x20 frame match without guards.
 Ten final tests/both tools checks pass; actual 73-word helper connection,

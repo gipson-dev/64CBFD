@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Channel Transition Conversion - 2026-10-10
+
+[Note 1233](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
+
+- [x] Recover all priority branches, equal-field return, signed count gate and live descriptor/list rereads.
+- [x] Emit complete 73-word C/original 0x30 frame; qualify five closed register/equality guards, no body fill.
+- [x] Pass 41,760 ordered guest runs, high-word argument carriers, aliases and 972 fired fault triples.
+- [x] Pass nine rebased links, actual 28-word reset caller, 4,194,304 native32 cases and effective negatives.
+- [x] Preserve 14 owner neighbors; remove only the stale absolute assignment hiding the target's map boundary.
+- [x] Rebuild/audit all code/data unchanged; only two symbol-section bytes and the explicit CSV boundary split change.
+- [x] Make the correction durable with a tracked defined-symbol declaration and actual Splat parser/writer test.
+- [x] Pass nine final tests and both tools checks; +1 counted/converted function, 292 C bytes and matching credit.
+- [x] Bank tools 4da6c0b first; preserve the older dirty mirror, no push, root README aggregate rows only.
+- [ ] Convert full 24-word func_1507E908, preserving its full-word index and nullable archive/data pointers.
+- [ ] Qualify the other script/Init callers, actual deeper callbacks, real asset domains and live gameplay separately.
+
 ## Actor Channel Reset Direct Conversion - 2026-10-10
 
 [Note 1232](WORKING_NOTES/1232-game-actor-channel-reset-direct-conversion-20261010.md):
@@ -12,7 +28,7 @@
 - [x] Preserve all 14 owner neighbors; rebuild/audit whole ELF/guards/data unchanged and only one asm-to-c row.
 - [x] Pass ten final tests/both tools checks; +1 converted function / 112 bytes and +1 matching credit.
 - [x] Bank tools 8355983 first; preserve older dirty mirror, no push, root README aggregate rows only.
-- [ ] Convert full 73-word func_1507E7E4, broadening to priority !=3 and its other callers.
+- [x] Convert full 73-word func_1507E7E4 including priority !=3 in Note 1233; other two callers remain interface-only.
 - [ ] Keep deeper callback bodies, real asset domains, hardware and live gameplay acceptance separate.
 
 ## Complete Actor Resource Transition Byte Match - 2026-10-10

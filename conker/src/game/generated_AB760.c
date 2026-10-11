@@ -17,7 +17,38 @@ void func_1507EB4C();
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E73C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E7E4.s")
+s32 func_1507E968(u8 *);
+u8 *func_1507E908(u8 *, s32);
+u8 *func_1507E9F8(u8 *, s32 *);
+void func_150302F0(s32, s32);
+void func_1507E5C8(u8 *, s32);
+
+void func_1507E7E4(u8 *actor, u8 channel, u8 priority, u16 duration, s32 amount) {
+    u8 *definition;
+    u8 *animations;
+    s32 oldChannel = actor[0x6F];
+
+    if (oldChannel == channel && actor[0x71] == priority &&
+        *(u16 *)(actor + 0x72) == duration) {
+        return;
+    }
+    if (priority == 3 || actor[0x70] == oldChannel || channel == oldChannel ||
+        *(u16 *)(actor + 0x72) == 0 || actor[0x71] < priority) {
+        if (channel < func_1507E968(actor)) {
+            definition = func_1507E908(actor, actor[0x6F]);
+            if (definition[4] != 0) {
+                animations = func_1507E9F8(actor, 0);
+                if (animations != 0) {
+                    func_150302F0((s32)actor, animations[definition[4] - 1]);
+                }
+            }
+            actor[0x6F] = channel;
+            *(u16 *)(actor + 0x72) = duration;
+            actor[0x71] = priority;
+            func_1507E5C8(actor, amount);
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E908.s")
 
