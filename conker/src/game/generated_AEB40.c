@@ -98,8 +98,42 @@ s32 func_15083384() {
     return 0;
 }
 
-s32 func_15083568() {
-    return 0;
+typedef struct {
+    u8 *records;
+    u8 count;
+    u8 padding[3];
+} AnimationDescriptor15083568;
+extern AnimationDescriptor15083568 D_80086CC4[];
+u8 *func_15083AC8(u8 *, s32, s32, s32, s32, s32, s32, s32, f32);
+u8 *func_15030AF4(u8 *, s32, s32, s32, s32, s32, s32, s32, s32, u8 *, s32, s32, s32);
+
+u8 *func_15083568(u8 *actor, s32 animation, f32 scale, s32 mode) {
+    AnimationDescriptor15083568 *descriptor;
+    u8 *record;
+    u8 *records;
+    u8 *created = 0;
+    s32 i;
+
+    animation--;
+    descriptor = &D_80086CC4[(u32)animation];
+    records = descriptor->records;
+    i = 0;
+    if (descriptor->count > 0) {
+        record = records;
+        do {
+            if (record[3] == 0) {
+                created = func_15083AC8(actor, record[1], record[0], 0,
+                    record[2], record[4], record[5], record[6], scale);
+            } else {
+                created = func_15030AF4(actor, record[0], record[1], record[7],
+                    record[4], record[5], mode, animation + 1, record[2],
+                    record + 8, record[3] == 2 ? record[6] : -1, record[14], record[15]);
+            }
+            i++;
+            record += 16;
+        } while (i < descriptor->count);
+    }
+    return created;
 }
 
 s32 func_150836CC() {
@@ -149,7 +183,8 @@ s32 func_150839B8() {
     return 0;
 }
 
-s32 func_15083AC8() {
+u8 *func_15083AC8(u8 *actor, s32 arg1, s32 arg2, s32 arg3,
+    s32 arg4, s32 arg5, s32 arg6, s32 arg7, f32 scale) {
     return 0;
 }
 

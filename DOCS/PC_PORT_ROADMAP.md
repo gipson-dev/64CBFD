@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Actor Animation Constructor Byte Match - 2026-10-10
+
+[Note 1237](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):
+
+- [x] Recover full descriptor/record walk, both stacked argument packets, live count and last-result return.
+- [x] Emit all 89 semantic words/original 0x68 frame; qualify 17 closed register/scheduling guards without body fill.
+- [x] Pass 46,890 ordered guest runs, private aliases, 1,144 fired fault triples and nine independent links.
+- [x] Pass nine effective IDO/three native negatives and 524,800 native32 runs with typed float forwarding.
+- [x] Connect actual record caller/request/lookup/list/classifier/constructor chain and 276 fault triples.
+- [x] Verify eight real descriptor/record samples against the retail ROM and execute 1,152 runs.
+- [x] Qualify the explicit local helper ABI change and four home stores; its body still returns zero.
+- [x] Preserve 29 unaffected neighbors; audit only two explicit slots/extents changed, all other ELF/data/CSV exact.
+- [x] Pass nine final tests/both tools checks; +1 matching credit, no extra conversion credit.
+- [x] Bank tools 975e23b first; preserve older dirty mirror, no push, root README aggregate rows only.
+- [ ] Recover full 152-word func_15030AF4 and qualify its actual constructor connection.
+- [ ] Restore full 182-word func_15083AC8; typed stub, sampled inputs and models are not gameplay acceptance.
+
 ## Actor Animation Request Direct Conversion - 2026-10-10
 
 [Note 1236](WORKING_NOTES/1236-game-actor-animation-request-direct-conversion-20261010.md):
@@ -12,7 +29,7 @@
 - [x] Preserve all 14 neighbors; rebuild/audit whole ELF/guards/data/symbols exact, only one asm-to-c row changes.
 - [x] Pass nine final tests/both tools checks; +1 converted function / 120 C bytes and +1 matching credit.
 - [x] Bank tools da7086a first; preserve older dirty mirror, no push, root README aggregate rows only.
-- [ ] Recover full 89-word func_15083568 from its false zero-return C placeholder and qualify the actual constructor.
+- [x] Recover full 89-word func_15083568 from its false zero-return C placeholder and qualify the actual constructor in Note 1237.
 - [ ] Qualify nonnull list-output paths, real resources, FCSR/nonfinite/hardware behavior and live gameplay separately.
 
 ## Actor Definition Count Direct Conversion - 2026-10-10

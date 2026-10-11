@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools da7086a; tools are committed before the consumer pin.
+  checkpoint pins tools 975e23b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest actor animation request converted directly to byte-exact C:
+Latest complete actor animation constructor restored and byte-exact:
+[Note 1237](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):
+func_15083568 replaces its zero placeholder with all 89 semantic words,
+original 0x68 frame and 17 checked register/scheduling guards. Nine final
+tests and both tools checks pass; actual record-caller/helper chain, native32,
+live count and eight ROM-verified descriptor samples qualify. Explicit
+func_15083AC8 ABI correction emits four home stores but remains a zero stub;
+29 other neighbors and all remaining ELF/data/symbol bytes are unchanged.
+Conversion CSV is byte-identical; +1 matching credit only. Game 2,772/4,821
+(57.50%), total 3,445/5,494 (62.70%), zero drift / 2,049 different.
+Tools 975e23b first, no push. Next: full 152-word func_15030AF4;
+both deeper helper restorations and hardware/live gameplay remain open.
+
+Earlier actor animation request converted directly to byte-exact C:
 [Note 1236](WORKING_NOTES/1236-game-actor-animation-request-direct-conversion-20261010.md):
 func_1507EA44 emits all 30 words / original 0x18 frame without guards.
 Nine final tests and both tools checks pass: exact signed-integer/single-float

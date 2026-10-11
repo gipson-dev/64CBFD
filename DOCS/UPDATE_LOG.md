@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-10 Complete Actor Animation Constructor Byte Match
+
+[Note 1237](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):
+replace func_15083568's false zero return with all 89 semantic words / 356
+bytes, original 0x68 frame and 17 checked register/scheduling guards. Nine
+final tests/both tools checks pass; live-count loop, stacked packets, native32,
+actual record-caller chain and eight retail descriptor samples qualify.
+Local helper ABI correction adds four incoming-home stores; its body remains
+zero. Audit only these two slots/extents changed; 29 other neighbors and all
+remaining ELF/data/CSV bytes exact. Game 2,772/4,821, total 3,445/5,494,
+zero drift / 2,049 different. +1 matching credit, no conversion credit.
+Tools 975e23b first, no push. Next: full 152-word func_15030AF4;
+actual deeper factories and hardware/live gameplay remain open.
+
 ## 2026-10-10 Actor Animation Request Direct Conversion
 
 [Note 1236](WORKING_NOTES/1236-game-actor-animation-request-direct-conversion-20261010.md):

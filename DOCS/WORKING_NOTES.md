@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-10:
+[Note 1237](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):
+recover full func_15083568, all 89 words / original 0x68 frame and 17 checked
+guards. Nine final tests/both tools checks pass; actual caller chain, live
+count, typed packets and retail samples qualify. Explicit helper ABI change
+adds four home stores but remains a zero stub; 29 other neighbors and all
+remaining ELF/data/CSV bytes exact. Game 2,772/4,821, total 3,445/5,494,
+zero drift; +1 matching credit, no conversion credit. Tools 975e23b first,
+no push. Next: full 152-word func_15030AF4; deeper factories/runtime stay open.
+
+2026-10-10:
 [Note 1236](WORKING_NOTES/1236-game-actor-animation-request-direct-conversion-20261010.md):
 convert full func_1507EA44, all 30 words / original 0x18 frame, directly from C
 without guards. Nine final tests/both tools checks pass; signed integer/single

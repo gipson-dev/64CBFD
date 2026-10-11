@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Complete actor animation constructor byte match](WORKING_NOTES/1237-game-complete-actor-animation-constructor-byte-match-20261010.md):
+  full 89-word C with 17 checked guards; nine final tests pass. Actual caller
+  chain and eight retail descriptor samples qualify. Explicit helper signature
+  correction adds four incoming home stores but remains a zero stub; all 29
+  other neighbors and remaining ELF/data/CSV bytes exact. +1 matching credit.
+  Next: full func_15030AF4; actual deeper helpers and gameplay remain open.
+
 - [Actor animation request direct conversion](WORKING_NOTES/1236-game-actor-animation-request-direct-conversion-20261010.md):
   all 30 words emit directly from C without guards; nine final tests pass.
   Signed scale/typed float packet and actual record caller/lookup/list/classifier

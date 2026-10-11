@@ -13987,3 +13987,20 @@ generated_AB760,func_1507E7E4,0x40,0x14CF0004,0x15E60004,-,-,Normalize closed ch
 generated_AB760,func_1507E7E4,0x48,0x96190072,0x96180072,-,-,Normalize closed channel arbitration register swap and symmetric equality operands,,,false
 generated_AB760,func_1507E7E4,0x60,0x5069000A,0x5123000A,-,-,Normalize closed channel arbitration register swap and symmetric equality operands,,,false
 generated_AB760,func_1507E7E4,0x68,0x50680008,0x51030008,-,-,Normalize closed channel arbitration register swap and symmetric equality operands,,,false
+generated_AEB40,func_15083568,0x54,0x8EA60000,0x8EA20000,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0x60,0x00C08025,0x00408025,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0x6C,0x260E0008,0x26830001,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0x88,0x92080004,0x92090004,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0x94,0xAFA80014,0xAFA90014,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0x98,0x92090005,0x920A0005,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0x9C,0xAFA90018,0xAFAA0018,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xA0,0x920A0006,0x920B0006,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xAC,0xAFAA001C,0xAFAB001C,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xBC,0x26830001,0x26080008,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xCC,0x920B0004,0x920C0004,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xDC,0xAFAB0010,0xAFAC0010,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xE0,0x920C0005,0x920D0005,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xEC,0xAFAC0014,0xAFAD0014,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xF0,0x920D0002,0x920E0002,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xF8,0xAFAE0024,0xAFA80024,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
+generated_AEB40,func_15083568,0xFC,0xAFAD0020,0xAFAE0020,-,-,Normalize closed actor animation constructor register cycles and independent expression schedule,,,false
