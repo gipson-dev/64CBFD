@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-11 Record Index Query Direct Match And Census
+
+[Note 1252](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):
+recover func_15083E0C, all 33 words directly from C, no frame/guards.
+Preserve byte selector/argument home, first-match 48-byte record query and
+signed index/-1 result. Ten final tests/both WSL tools checks pass: 584 full
+fault pairs, 10,240 native32 cases, both padding routes and complete retail
+caller, whose current C implementation remains a stub. Fix omitted layout
+boundary and stale ABS assignment through durable tracked Splat definition.
+Only target slot/size/section change (102 ELF bytes); 30 neighbors/data/guards
+exact. Census now 5,495/6,044 and Game 4,822/5,323; converted bytes unchanged,
+not an asm-to-C conversion. Matching Game 2,784/4,822 (57.74%), total
+3,457/5,495 (62.91%), zero drift / 2,038 different. Tools 630eaf9 first,
+no push, older dirty mirror preserved. Next: full 72-word func_15083E90;
+deeper callbacks/hardware/gameplay stay open.
+
 ## 2026-10-11 Animation Child Cleanup Direct Match
 
 [Note 1251](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):

@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1252](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):
+recover full func_15083E0C, all 33 words directly from C, no frame/guards.
+Ten final tests/both WSL tools checks pass, 584 full fault pairs, native32,
+both padding routes and complete retail caller (current C caller is a stub).
+Durable Splat definition/layout correction restores one omitted C census row;
+only target ELF slot/size/section changes, all 30 neighbors/data/guards exact.
+Game 2,784/4,822, total 3,457/5,495, zero drift / 2,038 different; converted
+bytes unchanged. Tools 630eaf9 first, older dirty mirror preserved, no push.
+Next: complete 72-word func_15083E90 actor-identity lookup; runtime open.
+
+2026-10-11:
 [Note 1251](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):
 recover full func_150836CC, all 66 words/original 0x30 frame directly from
 C, no guards. Nine final tests/both tools checks pass, full fault pairs/

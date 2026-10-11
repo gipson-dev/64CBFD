@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Record-index query direct match and census](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):
+  all 33 words directly from C, no frame/guards. Ten final tests/both WSL
+  tools checks pass; full access faults/native32/rebases and complete retail
+  caller (current C caller still a stub). Correct omitted native symbol/layout
+  row; 30 neighbors/data/guards exact, converted bytes unchanged. Next:
+  full 72-word actor-identity lookup; actual runtime remains open.
+
 - [Animation child cleanup direct match](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):
   all 66 words/original 0x30 frame directly from C, no guards. Nine final
   tests/both tools checks pass, full fault pairs/native32, both padding

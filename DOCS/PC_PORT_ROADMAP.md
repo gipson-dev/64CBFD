@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Record Index Query Direct Match And Census - 2026-10-11
+
+[Note 1252](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):
+
+- [x] Recover complete func_15083E0C; all 33 words directly from C, no frame/guards.
+- [x] Preserve byte selector, full argument home, zero/count short circuits, cached 48-byte records and first-match signed index/-1 result.
+- [x] Pass ten fresh tests: 23,088 reference guest runs, 584 full fault pairs, six effective IDO negatives, rebases and 10,240 native32 cases.
+- [x] Execute complete 47-word retail caller in 144 cases/288 runs; document current C caller remains unrecovered and peer callbacks modeled.
+- [x] Correct omitted function boundary and ABS override; qualify actual Splat parser/writer, effective missing-defined negative and canary.
+- [x] Preserve all 30 neighbors/data/guards; whole rebuilt ELF changes only target slot/size/section, 102 bytes. Both WSL tools checks pass.
+- [x] Bank tools 630eaf9 first, preserve older dirty mirror and update README aggregate tables only; no push.
+- [x] Measure Game 2,784/4,822, total 3,457/5,495, zero drift; +1 exact and one omitted C census row, unchanged converted bytes/2,038 differences.
+- [ ] Recover complete 72-word func_15083E90 actor-identity lookup and its presence-gated pool traversal.
+- [ ] Finish timeline matching and real child/allocator/hardware/renderer/gameplay acceptance.
+
 ## Animation Child Cleanup Direct Match - 2026-10-11
 
 [Note 1251](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):
@@ -11,7 +26,7 @@
 - [x] Preserve 30 neighbors/data/guards/CSV through both production padding routes and the whole linked ELF audit; both tools checks pass.
 - [x] Bank tools 71822b6 first, preserve older dirty mirror, update README aggregate rows only; no push.
 - [x] Measure Game 2,783/4,821, total 3,456/5,494, zero drift; +1 matching, no converted credit.
-- [ ] Recover complete 33-word func_15083E0C record-index query and its actual caller return contract.
+- [x] Recover complete 33-word func_15083E0C record-index query and its retail caller return contract in Note 1252; current C caller remains a stub.
 - [ ] Finish timeline matching and real reset/child/allocator/hardware/renderer/gameplay acceptance.
 
 ## Animation State Allocation Direct Match - 2026-10-11

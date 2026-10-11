@@ -277,3 +277,4 @@ func_15195824 = 0x15195824; // type:func
 func_16000B14 = 0x16000B14; // type:func
 D_1600487C = 0x1600487C; // type:label
 func_1507E7E4 = 0x1507E7E4; // type:func defined:true
+func_15083E0C = 0x15083E0C; // type:func defined:true

@@ -381,8 +381,25 @@ s32 func_15083DA0() {
     return 0;
 }
 
-s32 func_15083E0C() {
-    return 0;
+typedef struct {
+    u8 padding[0x28];
+    u8 identity;
+    u8 tail[7];
+} IndexRecord15083E0C;
+extern IndexRecord15083E0C *D_800D20FC;
+
+s32 func_15083E0C(u8 selector) {
+    s32 i;
+
+    if (selector == 0) {
+        return -1;
+    }
+    for (i = 0; i < D_800D2100; i++) {
+        if (D_800D20FC[i].identity == selector) {
+            return &D_800D20FC[i] - D_800D20FC;
+        }
+    }
+    return -1;
 }
 
 u8 *func_15083E90(u8 arg0) {

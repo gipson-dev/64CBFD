@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 71822b6; tools are committed before the consumer pin.
+  checkpoint pins tools 630eaf9; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete descriptor-driven child cleanup direct match:
+Latest complete record-index query direct match and corrected census:
+[Note 1252](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):
+func_15083E0C emits all 33 words directly from C, no frame or guards.
+Recover byte selector, zero/-1 sentinels, cached 48-byte record traversal,
+first identity match and pointer-difference return. Ten final tests/both WSL
+tools checks pass: 23,088 reference guest runs, 584 fired full fault pairs,
+10,240 native32 cases and complete retail caller connection (current C caller
+remains a stub). Fix omitted layout boundary and tracked Splat defined symbol;
+one previously omitted C function is counted, not an asm conversion. Only
+102 ELF bytes change in target slot/size/section; 30 neighbors/data/guards
+exact. Converted 5,495/6,044, Game 4,822/5,323; converted bytes unchanged.
+Matching Game 2,784/4,822 (57.74%), total 3,457/5,495 (62.91%), zero drift /
+2,038 different. Tools 630eaf9 first, no push, older dirty mirror preserved.
+Next: full 72-word func_15083E90 actor-identity lookup; actual runtime open.
+
+Previous complete descriptor-driven child cleanup; query finished in Note 1252:
 [Note 1251](WORKING_NOTES/1251-game-animation-child-cleanup-direct-match-20261011.md):
 func_150836CC emits all 66 words/original 0x30 frame directly from C,
 no guards. Recover reset-before-lookup, cached records, live descriptor count,
