@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Definition Lookup Direct Conversion - 2026-10-10
+
+[Note 1234](WORKING_NOTES/1234-game-actor-definition-lookup-direct-conversion-20261010.md):
+
+- [x] Recover nullable archive/records, full-word saved index, live table lookup and ten-byte stride.
+- [x] Emit all 24 words directly from C/original 0x18 frame; no guards, insertions or profile changes.
+- [x] Pass 6,150 ordered guest runs, actual classifier, private aliases and 136 fired fault pairs.
+- [x] Pass eight rebased links, effective negatives and 1,572,864 native32 cases with live callbacks.
+- [x] Execute actual 73-word channel caller and classifier together; preserve descriptor and null-fault boundaries.
+- [x] Preserve all 14 neighbors; rebuild/audit whole ELF/guards/data/symbols exact, only one asm-to-c row changes.
+- [x] Pass nine final tests/both tools checks; +1 converted function / 96 C bytes and +1 matching credit.
+- [x] Bank tools 6bc9c5a first; preserve older dirty mirror, no push, root README aggregate rows only.
+- [ ] Convert full 32-word func_1507E968 and qualify the caller's actual count connection.
+- [ ] Keep other complete callers, deeper callbacks, real assets, hardware and live gameplay acceptance separate.
+
 ## Complete Actor Channel Transition Conversion - 2026-10-10
 
 [Note 1233](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
@@ -13,7 +28,7 @@
 - [x] Make the correction durable with a tracked defined-symbol declaration and actual Splat parser/writer test.
 - [x] Pass nine final tests and both tools checks; +1 counted/converted function, 292 C bytes and matching credit.
 - [x] Bank tools 4da6c0b first; preserve the older dirty mirror, no push, root README aggregate rows only.
-- [ ] Convert full 24-word func_1507E908, preserving its full-word index and nullable archive/data pointers.
+- [x] Convert full 24-word func_1507E908, preserving its full-word index and nullable pointers, in Note 1234.
 - [ ] Qualify the other script/Init callers, actual deeper callbacks, real asset domains and live gameplay separately.
 
 ## Actor Channel Reset Direct Conversion - 2026-10-10

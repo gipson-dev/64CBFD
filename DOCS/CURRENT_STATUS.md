@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4da6c0b; tools are committed before the consumer pin.
+  checkpoint pins tools 6bc9c5a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete actor channel arbitration converted to byte-exact C:
+Latest actor definition lookup converted directly to byte-exact C:
+[Note 1234](WORKING_NOTES/1234-game-actor-definition-lookup-direct-conversion-20261010.md):
+func_1507E908 emits all 24 words / original 0x18 frame without guards.
+Nine final tests and both tools checks pass; actual classifier/channel caller,
+full-word indices, aliases/faults and native32 callbacks qualify. Whole ELF,
+guards/data/symbols and 14 neighbors unchanged; only one asm-to-c row changes:
++1 converted function / 96 bytes and +1 matching credit. Game 2,769/4,819
+(57.46%), total 3,442/5,492 (62.67%), zero drift / 2,050 different.
+Conversion totals: 5,492/6,043 and Game 4,819/5,322. Tools 6bc9c5a first,
+no push. Next: full 32-word func_1507E968; other callbacks/runtime remain open.
+
+Earlier complete actor channel arbitration converted to byte-exact C:
 [Note 1233](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
 func_1507E7E4 matches all 73 words / original 0x30 frame with five checked
 register/equality guards. Nine final tests and both tools checks pass. All

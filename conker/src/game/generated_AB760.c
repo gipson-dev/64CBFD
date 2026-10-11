@@ -50,7 +50,23 @@ void func_1507E7E4(u8 *actor, u8 channel, u8 priority, u16 duration, s32 amount)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E908.s")
+extern u8 *D_800D1C90[];
+s32 func_150849A0(u8 *);
+
+u8 *func_1507E908(u8 *actor, s32 index) {
+    u8 *archive;
+    u8 *records;
+
+    archive = D_800D1C90[func_150849A0(actor)];
+    if (archive != 0) {
+        archive -= 8;
+        records = *(u8 **)archive;
+        if (records != 0) {
+            return records + (u32)index * 10;
+        }
+    }
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507E968.s")
 

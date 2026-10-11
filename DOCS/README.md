@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor definition lookup direct conversion](WORKING_NOTES/1234-game-actor-definition-lookup-direct-conversion-20261010.md):
+  all 24 words emit directly from C without guards; nine final tests pass.
+  Actual classifier/channel caller and native callbacks qualify. Whole ELF,
+  guards/data/symbols and 14 neighbors exact; +1 conversion / 96 C bytes.
+  Next: full func_1507E968; real assets/runtime remain separate open gates.
+
 - [Complete actor channel transition conversion](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
   full 73-word C with five checked guards; nine final tests pass. Code/data
   unchanged; remove one stale absolute assignment and recover the omitted map

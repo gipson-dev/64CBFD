@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-10:
+[Note 1234](WORKING_NOTES/1234-game-actor-definition-lookup-direct-conversion-20261010.md):
+convert full func_1507E908, all 24 words / original 0x18 frame, directly from C
+without guards. Nine final tests/both tools checks pass; actual classifier and
+channel caller, full-word indices, aliases/faults and native callbacks qualify.
+Whole ELF/guards/data/symbols/14 neighbors exact; only one asm-to-c row changes.
+Game 2,769/4,819, total 3,442/5,492, zero drift; +1 converted function / 96 bytes
+and matching credit. Tools 6bc9c5a first, no push.
+Next: full 32-word func_1507E968; other callers/deeper callbacks/runtime stay open.
+
+2026-10-10:
 [Note 1233](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
 convert full func_1507E7E4, all 73 words / original 0x30 frame and five checked
 register/equality guards. Nine final tests and both tools checks pass.

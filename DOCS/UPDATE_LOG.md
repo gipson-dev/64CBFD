@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-10 Actor Definition Lookup Direct Conversion
+
+[Note 1234](WORKING_NOTES/1234-game-actor-definition-lookup-direct-conversion-20261010.md):
+convert full func_1507E908, all 24 words / 96 bytes and original 0x18 frame,
+directly from C without guards. Nine final tests/both tools checks pass;
+actual classifier/channel caller, full-word indices, aliases/faults and native
+live callbacks qualify. Whole ELF/guards/data/symbols/14 neighbors unchanged;
+only one asm-to-c row changes. Game 2,769/4,819, total 3,442/5,492, zero drift /
+2,050 different. +1 conversion / 96 C bytes / +1 matching credit; conversion
+totals 5,492/6,043 and Game 4,819/5,322. Tools 6bc9c5a first, no push.
+Next: full 32-word func_1507E968; other callers/deeper callbacks/runtime stay open.
+
 ## 2026-10-10 Complete Actor Channel Transition Conversion
 
 [Note 1233](WORKING_NOTES/1233-game-complete-actor-channel-transition-conversion-20261010.md):
