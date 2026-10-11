@@ -128,7 +128,7 @@ guard inputs and negative controls are unchanged; the new suite audits
 the literal current installation.
 
 Installed source SHA-256:
-0621f5de4f8c8b3f9c931d07bcf6838566b204eafbbae45869e54d572d82a3c.
+0621f5de4f8c8b3f9c931d07bcf6838566b204eafbbeae45869e54d572d82a3c.
 Installed ELF SHA-256:
 e00c6867c8189e07472107ef036ca016267b22fce90e0b32cba5bdc9f410e6e2.
 Exactly 165 ELF bytes change: 164 target-slot bytes and one extent byte,

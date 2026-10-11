@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Record Resource Cleanup Direct Match - 2026-10-11
+
+[Note 1272](WORKING_NOTES/1272-game-record-resource-cleanup-direct-match-20261011.md):
+
+- [x] Recover the full 43-word void cleanup, unsigned live halfword count, 12-byte cursor, sentinel/equal skips and resource-identity release calls.
+- [x] Emit all body words directly under both existing profiles with original 0x30 frame/S0..S4/RA, branch-likely updates and two-NOP 180-byte slot; no new guards/recipe changes.
+- [x] Pass twelve pre-install and 97 installed/regression tests, all 43 focused words, 164 fault triples, independent rebases and native32 full count/callback/max-scan checks.
+- [x] Replace cleanup and release hooks with actual 43/46-word bodies in the sixteen-body parent failure chain; preserve public rollback/free trace and caller status.
+- [x] Preserve all 14 owner neighbors through both padders, frozen audits and effective corruption controls; admit only the measured two-absolute-symbol metadata permutation.
+- [x] Audit exactly 149 changed ELF bytes, protected data/all other inputs exact, +1 matching only; update concise indexes/README aggregate rows and correct the prior hash transcription.
+- [x] Preserve older HEAD/35 fingerprints, copy only two absent files, pass shared checks/native py_compile and bank tools 663f63b before the consumer checkpoint, no push.
+- [ ] Eliminate func_1503D774's six normalization guards and one instruction drop, and qualify its actual parent-chain body; already linked-exact, no new matching credit.
+- [ ] Eliminate parent/pair guards and qualify deeper allocator/heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
+
 ## Group Publication Propagation Direct Match - 2026-10-11
 
 [Note 1271](WORKING_NOTES/1271-game-group-publication-propagation-direct-match-20261011.md):
@@ -12,7 +26,7 @@
 - [x] Add one matching credit only, update concise indexes/README aggregate rows, preserve older HEAD/33 fingerprints and copy only two absent tools.
 - [x] Pass shared tools checks/native py_compile and commit tools 0e3d520 before the consumer checkpoint, no push or older-history changes.
 - [x] Confirm the third loader already has all 36 linked words exact under existing guards; do not double-count or label it an unrecovered body.
-- [ ] Recover and qualify func_1503DD1C's complete 43-word cleanup body and 45-word padded slot, including live count/cursor/callback behavior and parent cleanup.
+- [x] Recover and qualify func_1503DD1C's complete 43-word cleanup body and 45-word padded slot, including live count/cursor/callback behavior and parent cleanup, in Note 1272.
 - [ ] Eliminate parent/pair/third raw guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Descriptor Resource Loader Direct Match - 2026-10-11

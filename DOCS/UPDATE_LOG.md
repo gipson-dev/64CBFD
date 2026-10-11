@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-11 Record Resource Cleanup Direct Match
+
+[Note 1272](WORKING_NOTES/1272-game-record-resource-cleanup-direct-match-20261011.md):
+complete func_1503DD1C directly exact over 43 words, original frame/lifetimes
+and callback-aware count/table loop, 172-byte extent / 180-byte slot. No new
+guards/profile/recipe changes. Twelve pre-install and 97 installed/regression
+tests pass, actual cleanup/release and sixteen-body parent chains. Exactly
+149 ELF bytes change (134 target, one extent, fourteen checked metadata bytes);
+other bytes/data/guards/recipe/conversion inputs exact. Fresh Game 2,796/4,822,
+total 3,469/5,495, zero drift / 2,026 different. +1 matching only, tools 663f63b
+first; older HEAD/35 fingerprints preserved/two absent copies, no push.
+README aggregate rows only; correct Note 1271's prior source-hash transcription.
+Next third-loader guard elimination/actual chain, not another matching credit;
+parent/pair guards and deeper runtime remain separate.
+
 ## 2026-10-11 Group Publication Propagation Direct Match
 
 [Note 1271](WORKING_NOTES/1271-game-group-publication-propagation-direct-match-20261011.md):

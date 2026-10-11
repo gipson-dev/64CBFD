@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1272](WORKING_NOTES/1272-game-record-resource-cleanup-direct-match-20261011.md):
+complete 43-word record-resource cleanup directly exact, original frame and
+callback-aware live count/table loop, 172-byte extent / 180-byte slot. Twelve
+pre-install/97 installed and regression tests pass; actual cleanup/release and
+sixteen-body parent chain. Exactly 149 ELF bytes change including fourteen
+checked metadata bytes; other bytes/data/inputs exact. +1 matching only,
+tools 663f63b first, older history preserved/no push. Next already-exact
+third-loader guard elimination/actual chain; parent/pair guards/runtime open.
+
+2026-10-11:
 [Note 1271](WORKING_NOTES/1271-game-group-publication-propagation-direct-match-20261011.md):
 full 56-word group pointer/count propagation directly exact, void/full-word
 identity, ordered live values, no new guards/profile changes. Twelve

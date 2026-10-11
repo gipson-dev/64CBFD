@@ -44,7 +44,7 @@ s32 func_1503D804(s32);
 s32 func_150028BC(s32);
 s32 func_1503D774(s32, s32);
 s32 func_1503D660(s32, s32);
-s32 func_1503DD1C();
+void func_1503DD1C(s32);
 void func_10004074(void *);
 
 s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
@@ -426,6 +426,7 @@ s32 func_1503DA9C(u8 *actor, s32 identity, s32 channel, s32 extras) {
 }
 
 u32 func_1510D0EC(u32, s32, s32, s32);
+void func_1510D7AC(s32);
 
 s32 func_1503DC3C(s32 identity) {
     u16 *count;
@@ -458,6 +459,14 @@ s32 func_1503DC3C(s32 identity) {
     return failed;
 }
 
-s32 func_1503DD1C() {
-    return 0;
+void func_1503DD1C(s32 identity) {
+    s32 index;
+    u32 *record;
+
+    for (index = 0; index < D_800C5628[identity]; index++) {
+        record = (u32 *)((u8 *)D_800C5338[identity] + index * 12);
+        if (record[0] != 0x80000000U && record[0] != record[1]) {
+            func_1510D7AC(record[1]);
+        }
+    }
 }

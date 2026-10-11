@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Record resource-cleanup direct match](WORKING_NOTES/1272-game-record-resource-cleanup-direct-match-20261011.md):
+  all 43 body words directly exact, original frame/lifetimes and live callback
+  loop, 172-byte extent / 180-byte slot. Twelve pre-install/97 installed and
+  regression tests pass, actual cleanup/release and sixteen-body parent chains.
+  Exactly 149 ELF bytes change including fourteen checked metadata bytes;
+  other bytes/data/inputs exact. +1 matching, tools 663f63b first, older history
+  preserved/no push. Next already-exact third-loader guard elimination and
+  actual chain qualification, not another matching credit; runtime stays open.
+
 - [Group publication-propagation direct match](WORKING_NOTES/1271-game-group-publication-propagation-direct-match-20261011.md):
   all 56 words directly exact, void/full-word identity, cached group inputs/
   live ordered values, no new guards/profile changes. Twelve pre-install/85
