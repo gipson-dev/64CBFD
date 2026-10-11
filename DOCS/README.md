@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Record mask teardown guarded match](WORKING_NOTES/1278-game-record-mask-teardown-guarded-match-20261011.md):
+  complete 89-word body, 87 direct words/two closed spill guards,
+  linked exact but not direct C;
+  eleven pre-install/eleven installed tests and actual retail caller/predicate/
+  query chain pass. Only 287 target/extent ELF bytes change, other bytes/inputs
+  and 21 neighbors exact; +1 matching only. Tools 1c81a02 first, older work
+  preserved/no push, README aggregates only. Next func_1503E3C4, 141/136
+  differences; direct guard removal and full Game goal remain open.
+
 - [Record-state dispatcher direct match](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
   complete171 direct C/no guards, actual caller/predicate chain; thirteen
   pre-install/22 installed and caller tests green. Only 562 target/extent/

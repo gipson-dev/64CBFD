@@ -16,6 +16,8 @@ s32 func_1503E1F4(s32, s32);
 s32 func_1503E3C4();
 s32 func_1503EA54();
 s32 func_1503E82C();
+extern u8 *D_80084460[];
+void func_10004074(void *);
 
 /* Non-matching placeholders for the text-only asm slice asm/6B320.s. */
 
@@ -106,8 +108,29 @@ s32 func_1503E1F4(s32 bit, s32 index) {
     return 0;
 }
 
-s32 func_1503E260() {
-    return 0;
+void func_1503E260(s32 slot) {
+    struct106 *record = &D_800C6660[slot];
+    u8 *bits;
+    s32 count;
+    s32 index;
+
+    if (record->unkF != 0) {
+        bits = D_80084460[((u8 *)record)[0xE]];
+        if (bits != NULL) {
+            count = D_80098914[((u8 *)record)[0xE]];
+            for (index = 0; index < count; index++) {
+                if (bits[index] != 255 && func_1503E1F4(index, slot) != 0) {
+                    D_800CC2D0[slot].unk94 |= 1U << bits[index];
+                }
+            }
+        }
+        record->unkF = 0;
+        if (record->unk0 != 0) {
+            func_10004074((void *)record->unk0);
+        }
+        record->unk0 = 0;
+        D_800CC2D0[slot].unk74 &= ~0x80;
+    }
 }
 
 s32 func_1503E3C4() {

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Record Mask Teardown Guarded Match - 2026-10-11
+
+[Note 1278](WORKING_NOTES/1278-game-record-mask-teardown-guarded-match-20261011.md):
+
+- [x] Recover the complete 89-word teardown, NULL/count/sentinel gates, selector reload and callback-aware state/buffer/actor lifetimes.
+- [x] Emit 87 words directly under existing O2/g3; normalize only two closed private spill instructions, all 89 linked exact, no drops/profile changes, not direct C.
+- [x] Pass eleven pre-install/eleven installed tests, actual retail caller/predicate/query chain, native32, fired fault prefixes and effective controls.
+- [x] Preserve all 21 owner neighbors/pools/both padders and all other ELF bytes; only 287 target/extent bytes change, original guard prefix plus two rows only.
+- [x] Measure +1 matching only: Game 2,799/4,822, total 3,472/5,495, zero drift / 2,023 different; root README aggregates only.
+- [x] Bank tools 1c81a02 before consumer source/guards/docs/pin; shared checks pass, older HEAD/47 fingerprints preserved/two absent copies, no push.
+- [ ] Recover and qualify next func_1503E3C4, 141 words / 136 differences, including its five-argument setup and floating-point contract.
+- [ ] Remove the new spill pair and remaining third-loader/parent/pair guards; deeper callbacks/allocator/hardware/gameplay and full Game goal stay open.
+
 ## Record State Dispatcher Direct Match - 2026-10-11
 
 [Note 1277](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve 21 target-owner and 38 caller-owner functions/pools through production post-processing/both padders; exact 562-byte target/extent/verified metadata delta only.
 - [x] Measure +1 matching only: Game 2,798/4,822, total 3,471/5,495, zero drift / 2,024 different; root README aggregates only.
 - [x] Bank tools 72fe857 before consumer source/docs/pin; preserve older HEAD/45 fingerprints, two absent copies only, shared checks green, no push.
-- [ ] Recover and qualify the next complete func_1503E260 body, 89 words / 89 differences, still a placeholder.
+- [x] Recover and qualify complete func_1503E260 in Note 1278; 87 direct words plus two closed spill guards, all 89 linked exact.
 - [ ] Recover actual setup/callback/tail implementations and remove remaining third-loader/parent/pair guards; deeper hardware/gameplay and full Game goal stay open.
 
 ## Actor Group Mask Command Direct Match - 2026-10-11

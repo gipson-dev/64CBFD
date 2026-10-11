@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 72fe857; tools are committed before the consumer pin.
+  checkpoint pins tools 1c81a02; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest direct record-state dispatcher:
+Latest guarded record-mask teardown:
+[Note 1278](WORKING_NOTES/1278-game-record-mask-teardown-guarded-match-20261011.md):
+func_1503E260 replaces its placeholder with a complete 89-word body,
+87 direct words and
+two closed private spill guards; all 89 linked exact, not direct C. Eleven
+pre-install/eleven installed tests pass, native32 and actual retail caller/
+predicate/query chain qualified within documented boundaries. Only 287 ELF
+bytes change: 285 target/two extent; all other bytes/data/six inputs and 21
+owner neighbors exact, old guard byte prefix plus two rows only. Fresh Game
+2,799/4,822 (58.05%), total 3,472/5,495 (63.18%), zero drift / 2,023 different;
++1 matching only. Tools 1c81a02 first, older HEAD/47 fingerprints preserved,
+two absent copies/no push; README aggregates only. Next unmatched
+func_1503E3C4, 141 words/136 differences. Spill guard removal and deeper
+setup/callback/allocator/hardware/gameplay acceptance remain separate.
+
+Previous direct record-state dispatcher checkpoint:
 [Note 1277](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
 func_1503DF48 replaces its placeholder with all 171 words directly from C,
 no guards/profile changes. Thirteen pre-install and 22 installed/caller tests
@@ -37,8 +52,9 @@ other bytes/data/guards/inputs exact, 21 target/38 caller-owner neighbors.
 Fresh Game 2,798/4,822 (58.03%), total 3,471/5,495 (63.17%), zero drift /
 2,024 different; +1 matching only. Tools 72fe857 first, older HEAD/45
 fingerprints preserved/two absent copies, no push; README aggregates only.
-Next unmatched func_1503E260, 89 words/89 differences. Setup/callback/tail
-implementations and third-loader guard elimination remain separate open work.
+Its former next target func_1503E260 is guarded-exact in Note 1278.
+Setup/callback/tail implementations and third-loader guard elimination
+remain separate open work.
 
 Latest direct actor/group mask command:
 [Note 1276](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):

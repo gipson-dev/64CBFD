@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-11:
+[Note 1278](WORKING_NOTES/1278-game-record-mask-teardown-guarded-match-20261011.md):
+func_1503E260: complete 89-word body, 87 direct words and two closed private
+spill guards, all linked exact, not direct C. Eleven pre-install/eleven
+installed tests pass, actual
+retail caller/predicate/query chain and native32, callback/fault/control gates.
+Only 287 target/extent ELF bytes change; 21 neighbors/data/six other inputs
+exact, old guard byte prefix plus two rows. Game 2,799/4,822, total 3,472/5,495,
+zero drift / 2,023 different, +1 matching only. Tools 1c81a02 first, older work
+preserved/no push; README aggregates only. Next func_1503E3C4, 141/136
+differences; direct guard removal and wider Game goal remain open.
+
+2026-10-11:
 [Note 1277](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
 func_1503DF48 complete171 direct C/no guards, caller void contract corrected
 without linked caller change. Thirteen pre-install/22 installed and caller

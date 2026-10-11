@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Record Mask Teardown Guarded Match
+
+[Note 1278](WORKING_NOTES/1278-game-record-mask-teardown-guarded-match-20261011.md):
+func_1503E260 replaces its placeholder with a complete 89-word body,
+87 direct words and two closed spill guards; all linked exact, not direct C.
+Eleven pre-install /
+eleven installed tests pass, native32 and actual retail caller/predicate/query
+chain. Only 287 target/extent ELF bytes change; all other bytes/data/six inputs
+and 21 neighbors exact, complete old guard prefix plus two rows only. Fresh
+Game 2,799/4,822, total 3,472/5,495, zero drift / 2,023 different, +1 matching
+only. Tools 1c81a02 first, older HEAD/47 fingerprints preserved/two absent
+copies/no push; README aggregates only. Next func_1503E3C4, 141/136
+differences; spill guard elimination and full Game goal remain open.
+
 ## 2026-10-11 Record State Dispatcher Direct Match
 
 [Note 1277](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
