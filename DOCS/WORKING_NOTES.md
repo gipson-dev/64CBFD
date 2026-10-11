@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1268](WORKING_NOTES/1268-game-command-weight-counter-direct-match-20261011.md):
+full 46-word weighted command counter directly exact, no frame/new guards.
+Eleven pre-install/49 installed and regression tests pass; actual counter
+replaces its hook in the seven-body loader chain, all counter words reached.
+Only 126 ELF bytes change; every other byte/data/guard/CSV exact. +1 matching
+only, tools 23570e9 first, older history preserved/no push. Next full 96-word
+func_1503D804; parent guards and runtime stay separate.
+
+2026-10-11:
 [Note 1267](WORKING_NOTES/1267-game-command-stream-relocator-direct-match-20261011.md):
 full 52-word command-stream relocator directly exact, SDK Gfx/void/u32,
 original frame/S0..S6, no new guards. Eleven pre-install/38 installed and

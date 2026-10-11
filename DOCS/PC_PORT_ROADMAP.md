@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Command Weight Counter Direct Match - 2026-10-11
+
+[Note 1268](WORKING_NOTES/1268-game-command-weight-counter-direct-match-20261011.md):
+
+- [x] Recover the complete first-stream word-loaded/signed-opcode scan, DF termination, weights 1/2/4 and low-half publication without adding gates or extra table entries.
+- [x] Type the void/identity contract and missing signed-half global declaration; preserve parent instructions and the original compiler profile.
+- [x] Emit all 46 retail words directly with no stack frame, guards, diagnostics or pools; finish the 77-form diagnostic sweep.
+- [x] Pass eleven pre-install and 49 fresh installed/regression tests, all 46 words, 66 complete fault triples, aliases/rebases and 67,864 native32 cases per profile.
+- [x] Preserve both actual padded owners/all 14 neighbors and replace the counter helper model in the actual seven-body loader chain; all 46 counter words reached.
+- [x] Admit only the exact verified counter source/slot/extent in historical audits, retaining immutable baselines and effective rejection controls.
+- [x] Audit exactly 126 changed ELF bytes (125 target, one extent), every other byte/data/guard/CSV exact. Add one matching credit only; README aggregate rows only.
+- [x] Preserve older HEAD/all 27 protected fingerprints, copy only two absent paths and pass consumer/mounted/older tools checks/native py_compile.
+- [x] Bank tools 23570e9 before the consumer source/docs/pin checkpoint, no push or older-sibling history changes.
+- [ ] Recover and qualify complete 96-word func_1503D804 allocation/signed-half pair copy helper before replacing that loader-chain model.
+- [ ] Eliminate the parent loader's 22 raw guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
+
 ## Command-Stream Relocator Direct Match - 2026-10-11
 
 [Note 1267](WORKING_NOTES/1267-game-command-stream-relocator-direct-match-20261011.md):
@@ -13,7 +29,7 @@
 - [x] Audit exactly 159 changed ELF bytes (158 target, one extent); all other bytes/data/guards/CSV exact. Add one matching credit only; README aggregate rows only.
 - [x] Preserve older HEAD/all 25 protected fingerprints; copy only two absent paths, pass consumer/mounted/older tools checks and native py_compile.
 - [x] Bank tools 349aa21 before the consumer source/docs/pin checkpoint, no push or older history changes.
-- [ ] Recover and qualify complete 46-word func_1503D984 command counter and replace its bounded loader helper model.
+- [x] Recover and qualify complete 46-word func_1503D984 command counter and replace its bounded loader helper model in Note 1268.
 - [ ] Eliminate the parent loader's 22 raw guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Main Resource Loader Full Guarded Match - 2026-10-11

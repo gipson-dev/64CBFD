@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Command Weight Counter Direct Match
+
+[Note 1268](WORKING_NOTES/1268-game-command-weight-counter-direct-match-20261011.md):
+complete func_1503D984 emits all 46 retail words directly from indexed
+word-loaded opcode counting, no frame/new guards/profile change. Eleven
+pre-install/49 installed and regression tests pass, 66 full fault triples,
+67,864 native32 cases per profile and the actual counter in the seven-body
+loader chain. Only 126 ELF bytes change (125 target, one extent); every other
+byte/data/guard/CSV exact. Fresh Game 2,792/4,822, total 3,465/5,495, zero
+drift / 2,030 different. +1 matching only; README aggregate rows only.
+Tools 23570e9 first, older HEAD/27 fingerprints preserved/two absent copies,
+no push. Next full 96-word func_1503D804; parent guards/runtime stay open.
+
 ## 2026-10-11 Command-Stream Relocator Direct Match
 
 [Note 1267](WORKING_NOTES/1267-game-command-stream-relocator-direct-match-20261011.md):

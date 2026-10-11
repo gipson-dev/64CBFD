@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Command weight counter direct match](WORKING_NOTES/1268-game-command-weight-counter-direct-match-20261011.md):
+  all 46 words directly exact, no frame or new guards. Eleven pre-install/49
+  installed and regression tests pass, every counter word reached in the
+  actual seven-body loader chain. Only 126 ELF bytes change; all other bytes/
+  data/guards/CSV exact. +1 matching, tools 23570e9 first/no push. Next full
+  96-word func_1503D804; parent guard elimination and runtime stay separate.
+
 - [Command-stream relocator direct match](WORKING_NOTES/1267-game-command-stream-relocator-direct-match-20261011.md):
   full 52-word SDK Gfx scan emits directly, original frame, no new guards.
   Eleven pre-install/38 installed and regression checks pass, including the
