@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 1310ff7; tools are committed before the consumer pin.
+  checkpoint pins tools 9359eb3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed descriptor resource-loader direct match:
+[Note 1270](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):
+complete func_1503D660 emits all 69 retail words directly, original frame/
+saved lifetimes, no new guards/profile/recipe changes. Twelve pre-install and
+73 installed/regression tests pass, including the actual 13-body loader chain
+and all 69 target words. Only 197 ELF bytes change (195 target, two extent);
+other bytes/data/guards/Makefile/conversion inputs exact. Fresh Game
+2,794/4,822, total 3,467/5,495, zero drift / 2,028 different. +1 matching only;
+README aggregate rows only. Tools 9359eb3 first, older HEAD/31 fingerprints
+preserved/two absent copies, no push. Next complete 56-word func_1503D510.
+Parent/pair guard elimination and deeper heap/hardware/renderer/gameplay stay open.
 
 Latest installed vertex-coordinate copy guarded match:
 [Note 1269](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):

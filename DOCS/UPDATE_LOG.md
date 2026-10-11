@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Descriptor Resource Loader Direct Match
+
+[Note 1270](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):
+complete func_1503D660 emits all 69 retail words directly with original
+frame/lifetimes, returned-pointer request and live descriptor relocations.
+No new guards/profile/recipe changes. Twelve pre-install/73 installed and
+regression tests pass, 83 complete fault triples, 77,824 native32 cases per
+profile and the actual 13-body loader chain/all target words. Only 197 ELF
+bytes change (195 target, two extent); other bytes/data/guards/Makefile/
+conversion inputs exact. Fresh Game 2,794/4,822, total 3,467/5,495, zero drift /
+2,028 different. +1 matching only; README aggregate rows only. Tools 9359eb3
+first, older HEAD/31 fingerprints preserved/two absent copies, no push.
+Next full 56-word func_1503D510; parent/pair guards and deeper runtime stay open.
+
 ## 2026-10-11 Vertex Coordinate Copy Guarded Match
 
 [Note 1269](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):

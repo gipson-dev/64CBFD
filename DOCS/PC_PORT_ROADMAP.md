@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Descriptor Resource Loader Direct Match - 2026-10-11
+
+[Note 1270](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):
+
+- [x] Recover the complete publication gate, remapped variadic request, returned-pointer/unused-size contract, status four, live header relocations and downstream calls.
+- [x] Emit all 69 retail words directly with original frame/S0/RA/private lifetimes; finish 62 source/profile measurements, no new guards or Makefile changes.
+- [x] Pass twelve pre-install and 73 installed/regression tests, all 69 words, 83 fault triples, 130 callback/alias cases and 77,824 native32 cases per profile.
+- [x] Preserve both padded owners/all 14 neighbors and qualify actual six-body helper and 13-body parent chains; real fourth failure returns status four.
+- [x] Extend only exact verified descriptor source/slot/extent projections, keep immutable historical audits and effective rejection controls.
+- [x] Audit exactly 197 changed ELF bytes (195 target, two extent), all other bytes/data/guards/recipe/conversion inputs exact; add one matching credit only.
+- [x] Preserve older HEAD/all 31 existing fingerprints, copy only two absent paths, pass shared tools checks/native py_compile, and bank tools 9359eb3 before the consumer checkpoint.
+- [x] Update concise indexes and only README aggregate rows; no push or older-sibling history changes.
+- [ ] Recover and qualify complete 56-word func_1503D510 group pointer/count propagation and replace the remaining finish-helper model.
+- [ ] Eliminate parent/pair raw guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
+
 ## Vertex Coordinate Copy Guarded Match - 2026-10-11
 
 [Note 1269](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):
@@ -13,7 +28,7 @@
 - [x] Audit exactly 298 changed ELF bytes (296 target, two extent), other bytes/data/conversion inputs exact and original guard prefix intact; add one matching credit only.
 - [x] Preserve older HEAD/all 29 existing fingerprints, copy only two absent paths and pass consumer/mounted/older tools checks and native py_compile.
 - [x] Bank tools 1310ff7 before the consumer source/guards/recipe/docs/pin checkpoint, no push or older-sibling history changes; README aggregate rows only.
-- [ ] Recover and qualify complete 69-word func_1503D660 descriptor loader, including its actual helper contracts and original private/saved-register lifetimes.
+- [x] Recover and qualify complete 69-word func_1503D660 descriptor loader, including its actual helper contracts and original private/saved-register lifetimes, in Note 1270.
 - [ ] Eliminate raw child/parent guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Command Weight Counter Direct Match - 2026-10-11

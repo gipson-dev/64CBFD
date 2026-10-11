@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Descriptor resource-loader direct match](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):
+  all 69 words directly exact, original frame/lifetimes, no new guards/profile
+  changes. Twelve pre-install/73 installed and regression tests pass, actual
+  13-body chain/all target words. Only 197 ELF bytes change; other bytes/data/
+  guards/recipe/conversion inputs exact. +1 matching, tools 9359eb3 first,
+  older history preserved/no push. Next full 56-word func_1503D510;
+  parent/pair guard elimination and deeper runtime remain separate.
+
 - [Vertex-coordinate copy guarded match](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):
   full 96 linked words exact, 92 direct plus four frame/count-spill guards.
   Per-function unrolled selection preserves all 14 neighbors. Twelve

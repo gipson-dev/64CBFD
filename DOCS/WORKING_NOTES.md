@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1270](WORKING_NOTES/1270-game-descriptor-resource-loader-direct-match-20261011.md):
+full 69-word descriptor resource loader directly exact, original frame/
+lifetimes, no new guards/profile changes. Twelve pre-install/73 installed
+and regression tests pass; actual 13-body chain reaches all target words.
+Only 197 ELF bytes change; other bytes/data/guards/recipe/conversion inputs
+exact. +1 matching only, tools 9359eb3 first, older history preserved/no push.
+Next full 56-word func_1503D510; parent/pair guards and runtime stay separate.
+
+2026-10-11:
 [Note 1269](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):
 full 96-word vertex-coordinate copy guarded match, 92 direct plus four
 frame/count-spill guards, selected unrolled object only for this function.

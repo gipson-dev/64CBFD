@@ -29,6 +29,8 @@ extern u16 D_800C4778[];
 extern u16 D_800C5628[];
 extern u16 D_800C4ED0[];
 extern u8 *D_800C6360[];
+extern u8 *D_800D1588[];
+void *func_1502B5C8(s32 *, u32, ...);
 s32 allocate_memory(s32, s32, s32, s32);
 extern u8 *D_800C5C08[];
 extern u8 *D_800C6070[];
@@ -41,7 +43,7 @@ void func_1503D984(s32);
 s32 func_1503D804(s32);
 s32 func_150028BC(s32);
 s32 func_1503D774(s32, s32);
-s32 func_1503D660();
+s32 func_1503D660(s32, s32);
 s32 func_1503DD1C();
 void func_10004074(void *);
 
@@ -232,7 +234,35 @@ s32 func_1503D5F0(s32 value) {
     return value;
 }
 
-s32 func_1503D660() {
+s32 func_1503D660(s32 identity, s32 loaded) {
+    /* Ignore the incoming second word; reuse it for the returned address. */
+    s32 size;
+    u8 **slot = &D_800D1588[identity];
+
+    if (*slot != NULL) {
+        return 0;
+    }
+    loaded = (s32)func_1502B5C8(&size, 2, 15, func_1503D5F0(identity));
+    if (loaded == 0) {
+        *slot = NULL;
+        D_800C5A90[identity] = 0;
+        func_1503D510(identity);
+        return 4;
+    }
+    *slot = (u8 *)loaded;
+    if (*(u32 *)*slot != 0) {
+        *(u32 *)*slot += (u32)*slot;
+        func_1503D45C((s32 *)*(u32 *)*slot, (s32)(*slot + 0x10));
+    }
+    if (*(u32 *)(*slot + 4) != 0) {
+        *(u32 *)(*slot + 4) += (u32)*slot;
+    }
+    if (*(u32 *)(*slot + 8) != 0) {
+        *(u32 *)(*slot + 8) += (u32)*slot;
+    }
+    *slot += 0x10;
+    func_1503D484(*slot, identity);
+    func_1503D510(identity);
     return 0;
 }
 
